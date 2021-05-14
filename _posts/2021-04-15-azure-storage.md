@@ -19,11 +19,217 @@ comments: true
 
 Here are the notes I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
 
+PROTIP: My contribution to the world here are tables that organize complex information to make them easier to remember.
+
 ## Introductions 
 
 * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
 
 * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
+
+
+<a name="StorageAccount"></a>
+
+## Create Storage account
+
+REMEMBER: PROTIP: Storage accounts are under Subscriptions, separate from (not under) any Resource Group.
+
+A subscription is needed if you want to use the CLI.
+
+### CLI to create Storage account
+
+Use my Bash shell code: <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> az-storacct-init.sh
+
+<pre>https://github.com/
+
+### Manual Portal UI
+
+1. Get to blade <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
+
+1. Click "+ Add". Specify Resource Group, Name, Location, 
+1. Performance: Standard (default) 
+1. See <a href="#Redunancy">Redundancy</a>
+
+1. After creation,
+1. In the Access Keys blade of your newly created storage account, click "Show keys"
+
+1. Triple-Click in the key1 Key field to highlight the contents.
+1. Copy to Clipboard by Ctrl+C.
+1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
+
+1. Triple-Click in the key1 Connection string field to highlight the contents.
+1. Copy to Clipboard by Ctrl+V.
+1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
+
+
+
+
+<hr />
+
+<a name="Replication"></a>
+
+## Redundancy (from Replication)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
+
+   https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tbody>
+   <tr valign="top"><td>
+   <p><strong>Replication Strategy</strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p><strong><a href="#LRS" title="Locally Redundant Storage">LRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p><strong><a href="#ZRS" title="Zone Redundant Storage">ZRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>x<strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p><strong><a href="#RA-GRS" title="Geo-Zone Redundant Storage">RA-GRS</a></strong></p>
+   </td>
+   </tr>
+
+   <tr valign="top"><td>
+   <p>Number of copies of data maintained</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>3</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>3</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>6</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>6</p>
+   </td>
+   </tr>
+
+   <tr valign="top"><td>
+   <p>Data is replicated across multiple availability zones (data centers)</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Y</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Y</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>Y</p>
+   </td>
+   </tr>
+
+   <tr valign="top"><td>
+   <p>Data is replicated across multiple regions</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Y</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>Y</p>
+   </td>
+   </tr>
+
+   <tr valign="top"><td>
+   <p>Data can be read from a secondary location after regional disaster</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p style="text-align: center;">Y</p>
+   </td>
+   </tr>
+
+   <tr valign="top"><td>
+   <p>Storage account types</p>
+   </td><td style="text-align: center;" width="60">
+   GPV1,
+   GPV2,
+   Blob
+   </td><td style="text-align: center;" width="60">
+   <strong>Standard,
+   GPV2</strong>
+   </td><td style="text-align: center;" width="60">
+   GPV1,
+   GPV2,
+   Blob
+   </td><td style="text-align: center;" width="66">
+   GPV1,
+   GPV2,
+   Blob
+   </td></tr>
+   </tbody>
+   </table>
+
+* LRS (Locally redundant storage) copies data synchronously three times within a <strong>single physical location</strong> in the primary region. LRS is the least expensive replication option. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year. But is not recommended for applications requiring high availability because disasters at a zone. PROTIP: Use this for dev testing when storage can be recreated easily and speed is not important.
+
+   "Lowest-cost option with basic protection against server rack and drive faiures. Recommended for non-critical scenarios."
+
+* ZRS (Zone-redundant storage) copies your data synchronously across <strong>three Azure availability zones</strong> in the primary region (12 nines). REMEMBER: (General Purpose v2 Storage Account Type only). For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. 
+
+   "Intermediate option with protection against datacenter-level failures."
+
+* RA-GRS (Read-Access Geo-Redundant Storage) aka RA-GZRS (Read-Access Geo-Zone-Redundant Storage) provides geo-redundant storage with the additional benefit of read access to the secondary endpoint (16 nines). It's the <strong>default</strong>. If an outage occurs in the primary endpoint, applications configured for read access to the secondary and designed for high availability can continue to read from the secondary endpoint. 
+
+   <em>Not selected in storage account setup dialog</em>
+
+* GRS (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
+
+   "Intermediate option with failover capabilities in a secondary region. Recommended for backup scenarios"
+
+* GZRS (geo-zone-redundant storage) copies data asynchronously in <strong>three geographic regions</strong>
+
+   "Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data scenarios."
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
+
+
+<hr />
+1. Enable blob public access: CAUTION: default is enabled!
+
+
+
+## Upload a blob
+
+   1. Go to a storage account.
+
+   1. In the Data service section, select the Containers link.
+
+   1. Click "+ Container" to create a new storage container with the following settings:
+
+        Name: images
+
+        Public access level: "Blob (anonymous read access for blobs only)"
+
+   1. Click "Create".
+   1. Click the storage container you created ("images").
+   1. Click "Upload".
+   1. Click the file icon and select an image file. If you had downloaded or cloned to your laptop the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/tree/master/Allfiles/Labs/01/Starter/Images">repo for Microsoft's AZ-204 class</a>, navigate to select the "grilledcheese.jpg" file.
+
+   1. Enable "Overwrite if files already exist option."
+   1. Click "Upload"
+
 
 ## Types of Storage and Data
 
@@ -128,13 +334,13 @@ https://github.com/Azure-Samples/azure-files-samples
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Type </th><th> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
 
-   <tr valign="top"><td align="right"> Standard HHD
+   <tr valign="top" align="right"><td> Standard HHD
       </td><td> 250 </td><td>  500 </td><td> 60 </td></tr> 
 
-   <tr valign="top"><td align="right"> Standard SSD
+   <tr valign="top" align="right"><td> Standard SSD
       </td><td> 250 </td><td>  ? </td><td> ? </td></tr>
 
-   <tr valign="top" align="right"><td align="left"> Premium SSD 
+   <tr valign="top" align="right"><td> Premium SSD 
       </td><td> 250 </td><td> 1100 </td><td> 125 </td></tr> 
    </table>
 
@@ -359,153 +565,23 @@ Examples: 30 days after blog is created, take a snapshot.
 
 __ Days after last modification:
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> 30 days
+<tr><th align="center"> 30 days
    </th><th> 180 days
    </th><th> 365 days
    </th></tr>
-<tr valign="top"><td> To cool storage 
+
+<tr valign="top" align="center"><td> To cool storage 
    </td><td> To archive storage
    </td><td> Delete blob
    </td></tr>
+
 </table>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-rehydration?tabs=azure-portal">DOCS</a>:
 mechanism for rehydraring from cold/archive
 
 
-<a name="Replication"></a>
 
-## Blob Replication Redundancy
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
-
-https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tbody>
-<tr valign="top"><td>
-<p><strong>Replication Strategy</strong></p>
-</td>
-<td style="text-align: center;" width="60">
-<p><strong><a href="#LRS" title="Locally Redundant Storage">LRS</a></strong></p>
-</td>
-<td style="text-align: center;" width="60">
-<p><strong><a href="#ZRS" title="Zone Redundant Storage">ZRS</a></strong></p>
-</td>
-<td style="text-align: center;" width="60">
-<p><strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
-</td>
-<td style="text-align: center;" width="66">
-<p><strong><a href="#RA-GRS" title="Geo-Zone Redundant Storage">RA-GRS</a></strong></p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Number of copies of data maintained</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>3</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>3</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>6</p>
-</td>
-<td style="text-align: center;" width="66">
-<p>6</p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Data is replicated across multiple availability zones (data centers)</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>Y</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>Y</p>
-</td>
-<td style="text-align: center;" width="66">
-<p>Y</p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Data is replicated across multiple regions</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>Y</p>
-</td>
-<td style="text-align: center;" width="66">
-<p>Y</p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Data can be read from a secondary location after regional disaster</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="60">
-<p>&nbsp;</p>
-</td>
-<td style="text-align: center;" width="66">
-<p style="text-align: center;">Y</p>
-</td>
-</tr>
-
-<tr valign="top"><td>
-<p>Storage account types</p>
-</td><td style="text-align: center;" width="60">
-GPV1,
-GPV2,
-Blob
-</td><td style="text-align: center;" width="60">
-<strong>Standard,
-GPV2</strong>
-</td><td style="text-align: center;" width="60">
-GPV1,
-GPV2,
-Blob
-</td><td style="text-align: center;" width="66">
-GPV1,
-GPV2,
-Blob
-</td></tr>
-</tbody>
-</table>
-
-* LRS (Locally redundant storage) copies data synchronously three times within a <strong>single physical location</strong> in the primary region. LRS is the least expensive replication option. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year. But is not recommended for applications requiring high availability because disasters at a zone.
-
-* ZRS (Zone-redundant storage) copies your data synchronously across <strong>three Azure availability zones</strong> in the primary region (12 nines). REMEMBER: (General Purpose v2 Storage Account Type only) 
-
-   For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. 
-
-* RA-GRS (Read-Access Geo-Redundant Storage) aka RA-GZRS (Read-Access Geo-Zone-Redundant Storage) provides geo-redundant storage with the additional benefit of read access to the secondary endpoint (16 nines). It's the <strong>default</strong>. If an outage occurs in the primary endpoint, applications configured for read access to the secondary and designed for high availability can continue to read from the secondary endpoint. 
-
-* GRS (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
-
-* GZRS (geo-zone-redundant storage) copies data asynchronously in <strong>three geographic regions</strong>
-
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
-
-
-<hr />
 
 ## Authorization
 

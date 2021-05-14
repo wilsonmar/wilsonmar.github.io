@@ -73,6 +73,7 @@ Configure web app settings including SSL, API settings, and connection strings:
 * https://docs.microsoft.com/en-us/azure/app-service/configure-common
 * https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-bindings
 
+
 <a name="WebApps"></a>
 
 ### Web Apps hosting
