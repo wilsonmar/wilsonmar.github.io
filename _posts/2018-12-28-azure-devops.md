@@ -1269,6 +1269,10 @@ https://www.youtube.com/watch?v=Bo_84yKsxuc
 
 https://testingindevops.org/
 
+<a target="_blank" href="https://www.coursera.org/projects/executing-selenium-test-automation-with-azure-devops">
+Coursera guided project: Executing Selenium Test Automation With Azure DevOps</a>
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

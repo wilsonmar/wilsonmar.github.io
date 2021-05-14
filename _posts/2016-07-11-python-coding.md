@@ -94,6 +94,32 @@ This code is important because it keeps secrets in your $HOME folder, away from 
 There is the "load_dotenv" package that can do the above, but using native commands mean less exposure to potential attacks.
 
 
+## Call and evaulate error
+
+Caller using monad strategy:
+
+<pre>result = safe_square_root(4)
+if result is not None:
+   # happy path:
+   value = result.pop()  # from stack.
+   print(value)
+else:  # calling function does not need to handle error:
+    # an error occurred, but encapsulated to be forwarded and processed upstream:
+    print("unable to compute square root")
+</pre>
+
+Function:
+
+<pre>def safe_square_root(x)
+    try:
+        # return a list with a single item:
+        return [math.sqrt(x)]  
+    except ValueError:
+        # indicate a binary error occurred:
+        return None
+</pre>
+
+
 ## String
 
 To return just the first 3 characters of a string:

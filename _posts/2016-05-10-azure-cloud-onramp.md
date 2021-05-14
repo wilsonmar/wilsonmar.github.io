@@ -197,7 +197,9 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 ## AAD (Azure Active Directory)
 
-1. https://portal.azure.com
+<a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>:
+
+1. <a target="_blank"" href="https://portal.azure.com">portal.azure.com</a>
 
 1. Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">"AAD" for the Azure Active Directory blade</a>
 
@@ -225,6 +227,12 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    * Sychronization to ensure on-prem and cloud data matches
    * Health monitoring in a central location
    <br /><br />
+
+   PROTIP: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
+   <img width="1920" height="534" alt="az-roles-vs-aad-roles-1920x534" src="https://user-images.githubusercontent.com/300046/118071390-e7ae6680-b364-11eb-8e73-673e3f5d593e.png">
+
+   Global Admins get access to Azure resources only after being granted User Access Admin role.
+
 
    <a name="Tenants"></a>
 
@@ -270,6 +278,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 
    ### Roles
+
+   Actions are also called "Operations" at different Scopes.
 
 1. See "Your role"? "Global Admin"
 
@@ -465,6 +475,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 
    ### Management Group Policies
+
+   In Azure, policies are for evaluating compliance among Resources and their properties, not to control access to resources.
 
    <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
    Policies can be assigned to scopes to limit what can be assigned to mangement levels and change what has been assigned:

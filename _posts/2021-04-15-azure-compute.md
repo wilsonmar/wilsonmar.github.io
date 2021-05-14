@@ -6,7 +6,6 @@ tags: [cloud, azure]
 date: "2021-04-15"
 file: "azure-compute"
 image:
-# azure ms logo wait 1900x500-39kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
   credit: Microsoft Azure
   creditlink: 
@@ -414,6 +413,18 @@ Azure Web Jobs runs Azure Functions as background jobs.
 
 ## Virtual Machines (VMs)
 
+<a target="_blank" href="https://www.coursera.org/learn/azure-create-a-virtual-machine-and-deploy-a-web-server/">Coursera video course: Azure: Create a Virtual Machine and Deploy a Website</a> has these steps:
+
+1. Create a Resource Group
+1. Create a Virtual Network and a subnet
+1. Protect a subnet using a Network Security Group
+1. Deploy Bastion to connect to a Virtual Machine
+1. Create an Ubuntu Server Virtual Machine
+1. Install Nextcloud by connecting via SSH using Bastion
+1. Publish an IP
+1. Create a DNS label
+<br /><br />
+
 Provision virtual machines (VMs):
 * https://docs.microsoft.com/en-us/azure/virtual-machines/
 * https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal
@@ -421,7 +432,7 @@ Provision virtual machines (VMs):
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-developer-implement-iaas-solutions/table-of-contents" title="by  by Anthony Nocentino 17 Dec 2020">VIDEO: Microsoft Azure Developer: Implement IaaS Solutions</a>
 
-Portal GUI 
+### Create VM in Portal GUI 
 
 1. PROTIP: Previously Azure VM names had to be globally unique becuase they were were put in public domain cloudapp.net. But Microsoft has since added magic to get around that.
 
@@ -514,7 +525,8 @@ Scale sets provide high availability (HA) to your applications and allow you to 
 
 ### Create Linux VM using CLI
 
-<pre><strong>AZ_ADMIN_USER="mrtoad2"  # from .secrets.sh file?
+<pre><strong># enviornment variables:
+AZ_ADMIN_USER="mrtoad2"  
 AZ_GROUP="somegroup2"
 AZ_VM_NAME="myvm123"
 &nbsp;

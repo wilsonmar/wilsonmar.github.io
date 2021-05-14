@@ -43,6 +43,8 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * Defect Detection with Image Analysis
    * Custom Entity Extraction with Text Analytics
    * modsy.com 3D view
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />
 
 
@@ -193,6 +195,9 @@ PROTIP: Although most Microsoft's samples and tutorials usually focus on one ser
 
 ![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
 
+IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
+
+
 <hr />
 
 <a name="LearningSequence"></a>
@@ -237,6 +242,7 @@ Bing Search.
 
 
 <hr />
+
 
 <a name="ShutDownRGs"></a>
 
@@ -375,12 +381,19 @@ Among <a target="_blank" href="https://wilsonmar.github.io/azure-certifications"
    Both AI-100 and AI-102 are $165.
    The shift is from infrastructure (KeyVault, AKS, Stream Analytics) to programming C#, Python, and curl commands.
 
-Previous exam 774 is now been retired. It was based on <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic) Web Services</a>,
+Previous exam 774 is now been retired. It was based on <a target="_blank" href="https://www.youtube.com/watch?v=eJOv-TfhhzQ">VIDEO</a>: <a target="_blank" href="https://services.azureml.net/">Azure Machine Learning Studio (classic)</a> web services, 
 which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files.
+<a target="_blank" href="https://www.coursera.org/learn/predictive-modelling-azure-machine-learning-studio/home/welcome">Classes referencing it</a> are now obsolete.
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-090">DP-090</a> goes into implementing a Machine Learning Solution with Databricks
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100: Designing and Implementing a Data Science Solution on Azure</a> makes you a "Microsoft Certified: Azure Data Scientist Associate". It goes into machine learning, using Azure Machine Learning.
+   * Set up an Azure Machine Learning workspace (30-35%)
+   * Run experiments and train models (25-30%)
+   * Optimize and manage models (20-25%)
+   * Deploy and consume models (20-25%) 
+   <br /><br />
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100</a> goes into machine learning, using Azure Machine Learning.
+<a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks
+
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Synapse Analytics.
 
@@ -458,7 +471,9 @@ The AI-102 is intended for <strong>software developers</strong> wanting to build
    * Implement <a href="#Conversational">Conversational AI</a> solutions (15-20%)
    <br /><br />
 
-PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>). Modules in the course:
+PROTIP: Unlike the AI-100 (which uses Python Notebooks), <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">hands-on exercises</a> in Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/ai-102t00">5-day live course AI-102T00: Designing and Implementing a Microsoft Azure AI Solution</a> (with cloud time) consists of C# and Python programs at <a target="_blank" href="https://github.com/MicrosoftLearning/AI-102-AIEngineer">https://github.com/MicrosoftLearning/AI-102-AIEngineer</a> (by <a target="_blank" href="https://www.linkedin.com/in/graemesplace/">Graeme Malcolm</a>). 
+
+Modules in the course, shown at <a target="_blank" href="https://microsoftlearning.github.io/AI-102-AIEngineer/">https://microsoftlearning.github.io/AI-102-AIEngineer/</a>
 
 Module 1: Introduction to AI on Azure
 
@@ -484,7 +499,7 @@ Module 11: Reading Text in Images and Documents
 
 Module 12: Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
 
-The above course and AI-102 focuses on the use of <strong>prepackaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day Course DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a>.
+The above course and AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day Course DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a>.
 
 
 Resources:
@@ -998,7 +1013,12 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-deploy-and-where?tabs=azcli">DOCS</a>:
 
-zzz
+https://www.coursera.org/projects/automl-computer-vision-microsoft-custom-vision
+Guided Project: AutoML for Computer Vision with Microsoft Custom Vision
+by Mario Ferraro
+
+https://www.coursera.org/programs/mckinsey-learning-program-uedvm/browse?currentTab=MY_COURSES&productId=7mGkLZGLEeup-AoS2h03mQ&productType=course&query=azure&showMiniModal=true
+Azure: Create a Virtual Machine and Deploy a Web Server
 
 1. Download data file:
 
@@ -1054,6 +1074,9 @@ Validation type:
 1. Wait for your workspace to be created (it can take a few minutes).
 
    ### Microsoft Azure Machine Learning studio
+
+<a target="_blank" href="https://www.coursera.org/learn/predictive-modelling-azure-machine-learning-studio/home/welcome">
+Coursera Project Network: Predictive Modelling with Azure Machine Learning Studio</a>
 
 1. On the Overview page, launch Azure Machine Learning studio (or open a new browser tab and navigate to
    
@@ -1670,6 +1693,8 @@ Emotions:
    * surprise
    <br /><br />
 
+   https://ig.ft.com/emotion-recognition/
+
 https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
 
 DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
@@ -1698,7 +1723,7 @@ It's service functions:
 
 <a name="FormRecognizer"></a>
 
-## Azure Form Recognizer
+### Azure Form Recognizer
 
 "Form Recognizer" extracts information from images obtained from scanned forms and invoices.
 
@@ -1938,6 +1963,49 @@ is only for C#.
 1. Sign in using the Microsoft account associated with your Azure subscription.
 
 
+## PROTIP: Use NVM to install Node
+
+https://github.com/Microsoft/botbuilder-tools#install-cli-tools
+says to install Node.js version 10.14.1 or higher
+
+https://github.com/microsoft/botframework-cli
+says to install Node.js version 12
+
+Since the current version is now 16, we cannot use the command suggested in the doc:
+
+   <ul><pre>npm i -g @microsoft/botframework-cli</pre></ul>
+
+
+## bf is the bot framework CLI command
+
+   <pre>One-stop-shop CLI to manage your bot’s resources. BF CLI and AZ CLI together cover your end-to-end bot development workflow needs.
+&nbsp;
+VERSION
+  @microsoft/botframework-cli/4.13.3 darwin-x64 node-v16.1.0
+&nbsp;
+USAGE
+  $ bf [COMMAND]
+&nbsp;
+COMMANDS
+  chatdown      Converts chat dialog files in &LT;filename>.chat format into
+                transcript files. Writes corresponding &LT;filename>.transcript
+                for each .chat file.
+  config        Configure various settings within the cli.
+  dialog        Dialog related commands for working with .schema and .dialog
+                files.
+  help          display help for bf
+  lg            Parse, collate, expand and translate lg files.
+  luis          Manages LUIS assets on service and/or locally.
+  orchestrator  Display Orchestrator CLI available commands
+  plugins       Install, uninstall and show installed plugins
+  qnamaker      QnA Maker
+   </pre>
+
+References:
+   * <a target="_blank" href=https://www.microsoft.com/en-us/research/publication/responsible-bots/">Responsible Bots:</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-user-experience?view=azure-bot-service-4.0">Design the user experience</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/composer/introduction">Intro to Composer</a>
+
 <hr />
 
 <a name="KnowledgeMining"></a>
@@ -1973,7 +2041,7 @@ https://blog.scottlowe.org/2019/03/01/advanced-ami-filtering-with-jmespath/
 
 ## Tutorials How-To
 
-### Machine Learing GUI
+### Machine Learning GUI
 
 1. Login the portal.azure.com GUI
 1. <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a> service.
@@ -2183,7 +2251,12 @@ Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine
    4. Test the service (used by the user)
    <br /><br />
 
+https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
 
+## ML Pipelines
+
+https://www.coursera.org/projects/azure-machine-learning-studio-pipeline
+Machine Learning Pipeline Tutorial with Azure ML Studio</a>
 
 ## More
 
