@@ -488,8 +488,6 @@ https://github.com/MicrosoftLearning/MS-030-Office365Administrator
 
 Note a pre-requisite is AZ-104 or AZ-204 to get certification as Expert.
 
-Covers configuration of security services.
-
 https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-400
@@ -628,16 +626,46 @@ https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
 
 ## AZ-204 Developing Solutions for Microsoft Azure
 
+Pass this one exam to become a "Microsoft Certified: Azure Developer Associate".
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DB-900 Microsoft Azure Data Fundamentals</a>
+
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
+is about development in .Net and C#:
 
-https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
+<strong>Develop</strong> Azure compute solutions (25-30%)
+   * <a target="_blank"" href="https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/">Create serverless applications</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/">Deploy resources in Azure</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Deploy a website to Azure with Azure App Service</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/">Connect services together</a>
+   <br /><br />
+
+Develop for Azure storage (15-20%)
+   * <a target="_blank"" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">Store Data in Azure</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/">Secure Your Cloud Data</a>
+   <br /><br />
+
+Implement Azure security (20-25%)
+
+Monitor, troubleshoot, and optimize Azure solutions (15-20%)
+
+Connect to and consume Azure services and third-party services (15-20%)
+<br /><br />
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-204-exam-preparation-developing-solutions-for-microsoft-azure-1208/">
+CloudAcademy's 23h video course</a> provides labs:
+   * <a target="_blank" href="https://cloudacademy.com/lab/azure-api-management-policies-security/?context_resource=lp&context_id=1208">API Management Policies and Security</a>
+
+
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204">Pluralsight's video course</a>
 Includes:
    * https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
 
-https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
-
+Questions:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
+   * https://www.udemy.com/course/exam-microsoft-azure-dev/ by Alan Rodrigues
 
 <a name="AZ-303"></a>
 

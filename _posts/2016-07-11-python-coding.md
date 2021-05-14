@@ -18,11 +18,6 @@ comments: true
 
 Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
-## Setup
-
-The below assumes that you've installed Python and are at a REPL prompt:
-
-
 
 <a name="ReservedKeywords"></a>
 
@@ -55,7 +50,7 @@ PROTIP: Research and find out what each is about:
 *	in
 *	is
 *	lambda
-*	None
+*	<a href="#None">None</a>
 *	nonlocal
 *	not
 *	or
@@ -69,34 +64,23 @@ PROTIP: Research and find out what each is about:
 *	yield
 <br /><br />
 
-The list above can be retrieved by this code:
+The list above can be retrieved (as an array) by this code:
 
-<pre>import keyword
-print(keyword.kwlist)
+<pre>python
+>>> import keyword
+>>> keyword.kwlist
+>>> exit()
 </pre>
 
-
-## Environment Variables
-
-To read a file named ".env" at the $HOME folder, and obtain the value from "MY_EMAIL":
-
-<pre>import os
-env_vars = !cat ~/.env
-for var in env_vars:
-    key, value = var.split('=')
-    os.environ[key] = value
-&nbsp;
-print(os.environ.get('MY_EMAIL')) # Returns 'johndoe@gmail.com'
-</pre>
-
-This code is important because it keeps secrets in your $HOME folder, away from folders that get pushed up to GitHub.
-
-There is the "load_dotenv" package that can do the above, but using native commands mean less exposure to potential attacks.
+Assuming you've first installed it, <tt>python</tt> puts you in a REPL prompt.
 
 
-## Call and evaulate error
 
-Caller using monad strategy:
+<a name="None"></a>
+
+## Not None if good!
+
+Caller using "monad strategy" using Python reserved word "None":
 
 <pre>result = safe_square_root(4)
 if result is not None:
@@ -112,12 +96,28 @@ Function:
 
 <pre>def safe_square_root(x)
     try:
-        # return a list with a single item:
         return [math.sqrt(x)]  
     except ValueError:
-        # indicate a binary error occurred:
-        return None
+        return None   # using reserved word.
 </pre>
+
+
+## Environment Variables
+
+To read a file named ".env" at the $HOME folder, and obtain the value from "MY_EMAIL":
+
+<pre>import os
+env_vars = !cat ~/.env
+for var in env_vars:
+    key, value = var.split('=')
+    os.environ[key] = value
+&nbsp;
+print(os.environ.get('MY_EMAIL'))   # containing "johndoe@gmail.com"
+</pre>
+
+This code is important because it keeps secrets in your $HOME folder, away from folders that get pushed up to GitHub.
+
+There is the "load_dotenv" package that can do the above, but using native commands mean less exposure to potential attacks.
 
 
 ## String
