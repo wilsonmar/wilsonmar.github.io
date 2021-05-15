@@ -1157,6 +1157,17 @@ References on naming conventions:
    * NetworkWatcherRG
    <br /><br />
 
+   ### az feedback
+
+   PROTIP: If your command doesn't come back, press command+R to reset the browser page.
+
+   Cursor up to retrieve previous commands.
+
+   To open an issue, run: 
+
+   <tt>az feedback</tt>
+
+
    ### Home folder commands
 
 1. To see your current folder:

@@ -2,7 +2,9 @@
 layout: post
 title: "API Management by Microsoft Azure"
 excerpt: "SaaS-only, proprietary. Get it for .NET"
-tags: [API, devops, evaluation, Microsoft]
+tags: [API, devops, evaluation, Microsoft, Azure]
+date: "2021-05-14"
+file: "api-management-microsoft"
 image:
 # pic easter island single statue 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15209671/b796b60c-17ef-11e6-8561-07a7b012ebb8.jpg
@@ -51,12 +53,15 @@ portal.azure.com</a> site using Azure Resource Manager (ARM).
    This won’t get the scale, performance, or analytics Azure Event Hubs provides, though.
 
 * <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/api-management/">
-  The pricing page</a> states there is no on-premises deployment option available at this time.
+  The pricing page</a> has these levels:
+
+
+   there is no on-premises deployment option available at this time.
 
 ### Create Publisher portal
 
 0. [Get a Microsoft Azure account](/azure-cloud/)
-0. Create a Resource (Free trial)
+0. Create a Resource Group.
 0. Specify Scale: Developer or Standard.
 
    Standard tier can go up to 4 instances to handle 800 million calls/month.
@@ -64,6 +69,7 @@ portal.azure.com</a> site using Azure Resource Manager (ARM).
 
 0. TODO: Custom SSL cert
 0. TODO: Custom domain (developer.itworks.com)
+
 
 ### Create service
 
@@ -392,6 +398,8 @@ https://social.msdn.microsoft.com/Forums/azure/en-US/97a0b1e9-bdd1-480c-a5c3-f4e
 ### Pricing
 
 http://azure.microsoft.com/pricing/details/api-management/
+
+Consumption    Developer   Basic    Standard    Premium  IsolatedPreview
 
 
 ### Stars
