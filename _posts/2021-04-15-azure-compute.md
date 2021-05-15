@@ -88,7 +88,7 @@ Classic .NET web apps sample URL:
 
    <pre><strong>https://<em>app_name</em>.azurewebsites.net</strong></pre>
 
-   The free plan cannot map to a custom domain.
+   PROTIP: The free plan cannot map to a custom domain of your choice.
 
 Azure Web Apps service provides high availability auto-scaling.
 
@@ -97,12 +97,15 @@ Cold starts are avoided by using <strong>slot swaps</strong> to deploy to produc
 <a target="_blank" href="https://www.youtube.com/watch?v=KdyXSgFxAtI">YOUTUBE:
 How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure App Service</a>
 
+### Create App Service in Bash Shell script
 
-1. On the Azure portal menu or from the Home page, select All resources.
+https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03
 
-   https://portal.azure.com/#create/Microsoft.WebSite
 
-1. In the Azure portal, search for "App Service".
+### Create App Service in Portal GUI
+
+1. In a browser, go to <a target="blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites">"App Services"</a> from the Home menu or in Search.
+
 1. Click blue "Create app service"
 1. Specify Subscription, Resource Group, Name.
 1. The method to publish your app. Also configure the Runtime stack.
@@ -134,17 +137,36 @@ How to auto-scale and optimize performance of .NET Web Apps with Microsoft Azure
    <br /><br />
 
 1. Select Review and Create to navigate to the review page.
-1. Select Create to create the web app.
+1. "Create"
 
-   The F1 tier, select Change size to open the Spec Picker wizard. 
+   The F1 tier, select "Change size to open the Spec Picker wizard. 
 
    On the Dev / Test tab, select F1 from the list, then select Apply.
 
-    Select the App Service for your web app from the list. 
+   Select the App Service for your web app from the list. 
 
-    Be sure to select the App Service, and not the App Service plan.
+   Be sure to select the App Service, and not the App Service plan.
 
-1. The deployment page shows the status of apps.
+1. Wait for "Deployment successful".
+1. In "App Service" (singular), "Configuration",
+1. "+ New connection string" and Name: "StorageConnectionString".
+1. Copy values saved from Storage create earlier.
+1. Deployment slot setting: Not selected.
+1. Type: "MySQL". ???
+1. OK.
+1. Click "Save" in command bar. Continue.
+
+1. "Properties" in left menu.
+1. Copy the value of the URL text box, such as 
+
+   <pre>http://imgapi1113.azurewebsites.net/</pre>
+
+    Note: At this point, the web server at this URL will return a 404 error. You have not deployed any code to the Web App yet. You will deploy code to the Web App later in this lab.
+
+
+
+
+
 1. The App services Overview page displays metrics.
 
 

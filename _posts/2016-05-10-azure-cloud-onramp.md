@@ -201,7 +201,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>:
 
-1. <a target="_blank"" href="https://portal.azure.com">portal.azure.com</a>
+1. <a target="_blank" href="https://portal.azure.com">portal.azure.com</a>
 
 1. Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">"AAD" for the Azure Active Directory blade</a>
 

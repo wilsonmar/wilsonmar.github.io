@@ -401,7 +401,14 @@ which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) mo
 Coursera video course: Developing AI Applications on Azure</a> 
 by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
 Coursera's videos shows the text at each point of its videos.
-NOTE: It still sends people to https://notebooks.azure.com and covers Microsoft's TDSP (Team Data Science Process).
+NOTE: It still sends people to https://notebooks.azure.com and covers <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/team-data-science-process/overview">Microsoft's TDSP (Team Data Science Process)</a> <a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure/lecture/Qd5fj/tdsp-stages">VIDEO</a>:
+   1. Business understanding (Charter, Objectives, Data sources, Data dictionaries)
+   2. Data acquisition and understanding (Clean dataset, pipeline)
+   3. Modeling
+   4. Deployment model for use (testing) Flow: entry script to accept requests and score them, Deployment configs
+   5. Customer Acceptance
+   <br /><br />
+
 
 <a name="AI-900"></a>
 
@@ -2257,6 +2264,8 @@ https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
 
 https://www.coursera.org/projects/azure-machine-learning-studio-pipeline
 Machine Learning Pipeline Tutorial with Azure ML Studio</a>
+
+https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 
 ## More
 
