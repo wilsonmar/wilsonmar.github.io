@@ -776,13 +776,6 @@ Others:
 
 ### Machine Learning (decision service)
 
-Example of ML classification:
-   * https://www.literature-map.com suggests other authors based on an author input. The input author is displayed in the middle of a map.
-   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
-   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
-   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
-   <br /><br />
-
 Configure run to create different models:
    * Classification (predicting <strong>categories or classes</strong>)
    * Regression (predicting <strong>numeric</strong> values)
@@ -790,6 +783,13 @@ Configure run to create different models:
 
    * Clustering
    * Anomaly detection ("weird?")
+   <br /><br />
+
+Example of ML classification:
+   * <a target="_blank" href="https://www.literature-map.com">literature-map.com</a> suggests other authors based on an author input. The input author is displayed in the middle of a map.
+   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
+   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
+   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
    <br /><br />
 
 Classification of Profanity returns JSON with several categories:
@@ -820,8 +820,8 @@ REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 "Precision"</th><td> 100 True Positives "Sensitivity rate" </td><td> 10 False Positives (Type I error) </td></tr>
-   <tr><th> Predicted: no 55 </th><td> 5 False Negatives (Type II error)</td><td> 50 True Negatives  "Specificity rate"</td></tr>
+   <tr><th> Predicted: yes 110 "Precision"</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 False Positives<br />(Type I error) </td></tr>
+   <tr><th> Predicted: no 55 </th><td> 5 False Negatives<br />(Type II error)</td><td> 50 True Negatives<br />"Specificity rate"</td></tr>
    <tr><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
@@ -839,17 +839,18 @@ Outside the box of n (total):
 
 Within the box:
 
-   * <strong>Precision rate</strong> is the percentage of results which were <strong>correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
+   * <strong>Precision rate</strong> is the percentage of items <strong>selected</strong> (True Positive and False Positive) which were <strong>relevant = correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
 Columns represent the known truth: The higher the number, the better:
 
-   * <strong>Sensitivity (aka "Recall") rate</strong> is the percent of yes's correctly identified as <strong>Positive</strong> = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
+   * <strong>Sensitivity (aka "Recall") rate</strong> identifies the percent of yes's <strong>correctly identified as Positive</strong> from among  <strong>relevant items</strong> selected. (True Positives and False Negatives). It is the percent of  = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
 
    * <strong>Specificity rate</strong> is the percent of no's correctly identified as <strong>Negative</strong> = TN / (TN + FP) = 50 / (50 + 10) = 0.83. 
 
-<a target="_blank" href="https://www.wikiwand.com/en/F-score">F1 Score</a> is an overall metric that takes into account both precision and recall): 
-weighted average of the true positive rate (recall) and precision.
+<a target="_blank" href="https://www.wikiwand.com/en/F-score">F1 Score</a> is an overall metric (single number) that takes into account both precision and recall): 
+weighted average of the true positive rate (recall) and precision = 2 ( 1/P + 1/R ).
+The larger the F1, the better, when comparing between models.
 
 Different values in the Confusion Matrix would be created for each level of threshold.
 <a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) aka "Sensitivity" on the Y axis and False Positive Rate (FPR) or (1 - Specificity) on the X axis as the decision threshold changes. 
