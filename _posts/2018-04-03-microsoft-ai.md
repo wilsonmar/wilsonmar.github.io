@@ -819,10 +819,10 @@ Test data is used to determine how well predictions created from a model, presen
 REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr><th> Predicted: yes 110 "Precision"</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 False Positives<br />(Type I error) </td></tr>
-   <tr><th> Predicted: no 55 </th><td> 5 False Negatives<br />(Type II error)</td><td> 50 True Negatives<br />"Specificity rate"</td></tr>
-   <tr><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
+   <tr align="center"><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
+   <tr align="center"><th> Predicted: yes 110<br />"Precision"</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 False Positives<br />(Type I error) </td></tr>
+   <tr align="center"><th> Predicted: no 55 </th><td> 5 False Negatives<br />(Type II error)</td><td> 50 True Negatives<br />"Specificity rate"</td></tr>
+   <tr align="center"><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
 Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">*</a>
