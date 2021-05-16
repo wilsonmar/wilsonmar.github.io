@@ -221,7 +221,7 @@ This document covers:
 1. Run an API connecting to an established endpoint (SaaS) you don't need to setup:
 Bing Search.
 
-1. Create Google Functions
+1. Create Functions
 
 1. <a href="#CreateWorkspace">Create a Workspace resource</a> to run ...
 
@@ -820,9 +820,9 @@ REMEMBER: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr align="center"><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr align="center"><th> Predicted: yes 110<br />"Precision"</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 False Positives<br />(Type I error) </td></tr>
-   <tr align="center"><th> Predicted: no 55 </th><td> 5 False Negatives<br />(Type II error)</td><td> 50 True Negatives<br />"Specificity rate"</td></tr>
-   <tr align="center"><th> - </th><td> Accuracy rate </td><td> Error rate </td></tr>
+   <tr align="center"><th> Predicted: yes 110<br />"Precision"<br />Relevant:</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 False Positives<br />(Type I error) </td></tr>
+   <tr align="center"><th> Predicted: no 55 </th><td> 5 False Negatives<br />(Type II error)</td><td> 50 True Negatives<br />"Specificity = Recall"</td></tr>
+   <tr align="center"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
 Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">*</a>
@@ -839,17 +839,20 @@ Outside the box of n (total):
 
 Within the box:
 
-   * <strong>Precision rate</strong> is the percentage of items <strong>selected</strong> (True Positive and False Positive) which were <strong>relevant = correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease.
+   * <strong>Precision rate</strong> is the ability of a classification model to identify only the relevant data points. It is the percentage of items <strong>selected</strong> (True Positive and False Positive) which were <strong>relevant = correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease or <a target="_blank" href="https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c">picking terrorists</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
 Columns represent the known truth: The higher the number, the better:
 
-   * <strong>Sensitivity (aka "Recall") rate</strong> identifies the percent of yes's <strong>correctly identified as Positive</strong> from among  <strong>relevant items</strong> selected. (True Positives and False Negatives). It is the percent of  = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
+   * <strong>Sensitivity (aka "Recall") rate</strong> or the ability of a model to find all the relevant cases within a dataset. Sensitivity is the percent of items <strong>correctly identified as Positive</strong> from among  <strong>relevant items</strong> selected. (True Positives and False Negatives). It is the percent of  = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
 
    * <strong>Specificity rate</strong> is the percent of no's correctly identified as <strong>Negative</strong> = TN / (TN + FP) = 50 / (50 + 10) = 0.83. 
 
-<a target="_blank" href="https://www.wikiwand.com/en/F-score">F1 Score</a> is an overall metric (single number) that takes into account both precision and recall): 
-weighted average of the true positive rate (recall) and precision = 2 ( 1/P + 1/R ).
+A perfect classifier has precision and recall both equal to 1.
+But Positivity and Recall metrics cannot both be perfect. conflict with one another.<a target="_blank" href="https://www.analyticsvidhya.com/blog/2020/09/precision-recall-machine-learning/">*</a>
+Precision and recall should always be reported together.
+
+<a target="_blank" href="https://www.wikiwand.com/en/F-score">F-1 Score</a> is a single number that takes into account both precision and recall: the weighted average (harmonic mean) of the true positive rate (recall) and precision = 2 ( 1/P + 1/R ).
 The larger the F1, the better, when comparing between models.
 
 Different values in the Confusion Matrix would be created for each level of threshold.

@@ -1093,11 +1093,15 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
    * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodeJs (JavaScript), etc.
    <br /><br />
 
-   PROTIP: A resource group can contain resources from multiple regions.
+   PROTIP: A resource group can contain resources from <strong>multiple regions</strong>.
    
-   PROTIP: When naming Rresource Groups, keep in mind that theiy are used to delete resources. So limit the number of resources under each one so that you're not blocked from deleting the group becuase you still need that one resource. So using Resource Groups for each point in the lifecycle makes sense (dev, qa, stage, green, blue, etc.).
+   PROTIP: When naming Resource Groups, keep in mind that they are used to organize resources so that're easier to <strong>delete</strong>. So limit the number of resources under each one so that you're not blocked from deleting the group becuase you still need that one resource. So using Resource Groups for each point in the lifecycle makes sense (dev, qa, stage, green, blue, etc.).
 
-   PROTIP: Design Resource Groups for work groups to have the permissions they need. For example, core infrastructure such as Networking. The destination of logs and metrics should be viewed and managed using a whole differen account than accounts used to create the data.
+   If no dashes are in the name, double-clicking on that name would select the entire name.
+
+   A Resource Group name can be a single character. It cannot begin with a number.
+
+   PROTIP: In production, design Resource Groups for work groups to have the permissions they need. For example, core infrastructure such as Networking. The destination of logs and metrics should be viewed and managed using a whole differen account than accounts used to create the data.
 
 1. After you get CLI setup, list resource groups created:
 
