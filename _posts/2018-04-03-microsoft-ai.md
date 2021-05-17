@@ -92,12 +92,13 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
 
    <tr valign="top"><td> <em>global</em> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
+      </td><td> -
       </td></tr>
    <tr valign="top"><td> ? </td><td> "Internal.AllInOne"
       </td><td> ?
       </td></tr>
 
-   <tr valign="top"><td colspan="3" align="center"> <a href="#Vision">Vision</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a href="#Vision">Vision</a> 
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
@@ -128,7 +129,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> -
       </td></tr>
 
-   <tr valign="top"><td colspan="3" align="center"> <a href="#Speech">Speech</a> 
+   <tr valign="top"><td colspan="4" align="center"> <a href="#Speech">Speech</a> 
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a>
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
@@ -140,11 +141,11 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
 
-   <tr valign="top"><td colspan="3" align="center"> <a href="#Language">Language</a>
+   <tr valign="top"><td colspan="4" align="center"> <a href="#Language">Language</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS">"LUIS"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
-      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c36">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS.Authoring">"LUIS.Authoring"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS</a> 
@@ -172,7 +173,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">API</a>       
       </td></tr>
    
-   <tr valign="top"><td colspan="3" align="center"> <a href="#Decision">Decision (Making)</a>  
+   <tr valign="top"><td colspan="4" align="center"> <a href="#Decision">Decision (Making)</a>  
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">"AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
@@ -191,7 +192,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank">API</a>       
       </td></tr>
 
-   <tr valign="top"><td colspan="3" align="center"> <a href="#Search">Search</a>
+   <tr valign="top"><td colspan="4" align="center"> <a href="#Search">Search</a>
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://www.microsoft.com/en-us/bing/apis">Features</a> </td><td> "Bing.CustomSearch"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
