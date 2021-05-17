@@ -38,9 +38,8 @@ A subscription is needed if you want to use the CLI.
 
 ### CLI to create Storage account
 
-Use my Bash shell code: <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> az-storacct-init.sh
+Use my Bash shell script file az-storacct-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> 
 
-<pre>https://github.com/
 
 ### Manual Portal UI
 

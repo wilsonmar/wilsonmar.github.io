@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Microsoft AI (and Machine Learning Cognitive Services)"
-excerpt: "How to get AI-900, AI-100, AI-102 certified as we automate manual processes in the Azure PaaS cloud"
+excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI/ML workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
 date: "2021-05-06"
 file: "microsoft-ai"
@@ -40,10 +40,7 @@ TL;DR look for "PROTIP:" in this article highlight the author's hard-won experie
 Case studies of how people are already making use of AI/ML to save time and money:
 
    * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
-   * Defect Detection with Image Analysis
-   * Custom Entity Extraction with Text Analytics
    * modsy.com 3D view
-
    * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />
 
@@ -133,10 +130,14 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a>
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">5 hours/mo.*</a> 
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">1 concurrent, 5 hours/mo.*</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
+      </td></tr>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeechTranslation">Speech Translation</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
@@ -163,7 +164,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator/#features">Features</a> </td><td> <a href="#TextTranslation">TextTranslation"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator/#features">Features</a> </td><td> <a href="#TextTranslation">"TextTranslation"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
       </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
       </td></tr>
@@ -216,11 +217,13 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
 
 <a name="workflows"></a>
 
-## Hybrid workflows
+### Hybrid workflows
 
 PROTIP: Although most Microsoft's samples and tutorials usually focus on one service at a time, actual production work enjoyed by real end-users usually involves a <strong>pipeline</strong> of several services. For example: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/ai/news-feed-ingestion-and-near-real-time-analysis">ingesting (stream processing) a newsfeed</a>:
 
 ![az-ml-newsfeed-546x623](https://user-images.githubusercontent.com/300046/116988980-6254f300-ac8e-11eb-9901-c2c6f3d8a018.png)
+
+That and other flows are in <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/">Microsoft's Architecture Center</a>
 
 IMPORTANT PROTIP: Microsoft allows its free "F0" tier to be applied to only a single Cognitive Service at a time. To remain free, you would need to rebuild a new Cognitive Service with a different "Kind" between steps.
 
@@ -330,11 +333,11 @@ https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artif
 
 <hr />
 
-## Principled AI
+## Principled AI vetting
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/7-understand-responsible-ai">LEARN</a>:
 
-Microsoft has a <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
+Using Microsoft's API algorithms and data (such as celebrity faces, landmarks, etc.) means there has be some vetting by Microsoft's <a target="_blank" href="https://www.microsoft.com/research/group/fate/">FATE (Fairness, Accountability, Transparency, and Ethics)</a> research group:
 <img width="1126" height="610" alt="az-ai-principled-1126x610" src="https://user-images.githubusercontent.com/300046/117167864-e1c4ee00-ad84-11eb-88b1-4f685155a64f.png">
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-artificial-intelligence/5-ai-impact-and-ethics">
@@ -485,7 +488,7 @@ AI-900 Sample Practice Exam Questions</a>
 Practice tests:
 * https://www.whizlabs.com/learn/course/microsoft-azure-ai-900/
 * https://www.examtopics.com/exams/microsoft/ai-900/
-
+* https://www.whizlabs.com/learn/course/designing-and-implementing-an-azure-ai-solution/
 
 <a name="AI-102"></a>
 
@@ -1385,7 +1388,8 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
    * Language Detection (is it English, German, etc.)
    * Sentiment analysis (how positive or negative a document is)
    * Key phrase extraction
-   * Translator Text 
+   * Translator Text
+   * <a href="#TextModeration">Text Moderation</a>
    <br /><br />
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/1-introduction">Techniques</a>
@@ -1398,29 +1402,41 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api?tabs=synchronous">Some Text Analytics API services are synchronous and asynchronous</a>
 
+<a name="Text Moderation"></a>
 
-   #### Sentiment Analysis
+#### Text Moderation
+
+https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/2-overview-of-text-moderation
+
+Response from the Text Moderation API include:
+
+   * What type of potentially unwanted words were found (Profanity)
+   * A list of potentially unwanted words found in the text.
+   * Possible personally identifiable information (PII) found in the text.
+
+
+#### Sentiment Analysis
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment">API Reference</a>
 
    The output is a number from 0 to 1, with 1 being the most positive language and zero being the most negative opinion expressed.
 
 
-   #### Key phrase extraction
+#### Key phrase extraction
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases">API Reference</a>
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/2-get-started-azure">Named Entity Recognition (NER)</a> identifies entities in the text and group them into different entity categories, such as organization name, location, event, etc.
 
-   #### Detect Language
+#### Detect Language
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages">API Reference</a>
 
-   #### Named Entity Recognition
+#### Named Entity Recognition
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral">API Reference</a>
 
-   #### Linked Entities from a well known knowledge base
+#### Linked Entities from a well known knowledge base
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesLinking">API Reference</a>
 
@@ -1437,6 +1453,9 @@ Speech-to-text has <a target="_blank" href="https://docs.microsoft.com/en-us/azu
 * Speech-to-text (STT) REST API v3.0 is used for Batch transcription and Custom Speech.
 * Speech-to-text REST API for short audio is used for online transcription as an alternative to the Speech SDK. Requests using this API can transmit only up to 60 seconds of audio per request.
 
+https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/
+
+<a name="SpeechTranslation"></a>
 
 ### Speech Translation (Speech-to-text aka STT)
    
@@ -1445,6 +1464,10 @@ Speech-to-text has <a target="_blank" href="https://docs.microsoft.com/en-us/azu
    iPhone</a>, Android, or Amazon. It has a Phrasebook of common phrases.
 
    DEMO: <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-translation/">Speech Translation</a> recognizes and synthesizes speech, and translates spoken languages. REMEMBER: The sequence of services involves <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-synthesize-speech/2-get-started-azure">two APIs</a>:
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/translate-speech-speech-service/3-translate-speech-text">
+   <img alt="az-speech-translate-1756x580" width="1756" height="580" src="https://user-images.githubusercontent.com/300046/118432381-af28c880-b695-11eb-8dee-c7caca85f45c.png"></a>
+
 
    Speech-to-Text API -> Speech Correction -> Machine Translation -> Text-to-Speech API
 
@@ -1481,6 +1504,9 @@ Speech-to-text has <a target="_blank" href="https://docs.microsoft.com/en-us/azu
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/language-support#text-to-speech">Text-to-speech</a>
 
+To specify that the speech input to be transcribed to text is in an audio file, use AudioConfig.
+
+Change the voice used in speech synthesis by setting the SpeechSynthesisVoiceName property of the SpeechConfig object to the desired voice name.
 
 
    <a name="TextTranslation"></a>
@@ -1756,34 +1782,82 @@ https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell
 <a target="_blank" href="https://www.youtube.com/watch?v=abhqxG1nSGg">VIDEO</a>:
 <a target="_blank" href="https://www.youtube.com/watch?v=KCSyRO0KotA">API DEMO</a>:
 
-Azure "Face" is used to build face detection and facial recognition solutions.
-Emotions:
-   * neutral
-   * anger
-   * contempt
-   * disgust
-   * fear
-   * happiness
-   * sadness
-   * surprise
+Azure "Face" is used to build face detection and facial recognition solutions in five categories:
+   * Face Verification: Check the likelihood that two faces belong to the same person.
+   * Face Detection: Detect human faces in an image.
+   * Face Identification: Search and identify faces.
+   * Face Similarity: Find similar faces.
+   * Face Grouping: Organize unidentified faces into (face list) groups, based on their visual similarity.
    <br /><br />
 
-   https://ig.ft.com/emotion-recognition/
+   NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
+
+A face location is face coordinates -- a rectangular pixel area in the image where a face has been identified.
+
+The Face API can return up to 27 landmarks for each identified face that you can use for analysis.
+Azure allows a person to can have up to 248 faces.
+There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
+
+Face attributes are predefined properties of a face or a person represented by a face. The Face API can optionally identify and return the following types of attributes for a detected face:
+
+   * Age
+   * Gender
+   * Smile intensity
+   * Facial hair
+   * Head pose (3D)
+   * Emotion
+   <br /><br />
+
+<a target="_blank" href="https://ig.ft.com/emotion-recognition/">
+Emotions detected</a> in JSON response is a floating point number:
+   * Neutral
+   * Anger
+   * Contempt
+   * Disgust
+   * Fear
+   * Hppiness
+   * Sadness
+   * Surprise
+   <br /><br />
+
+PROTIP: "Happiness: 9.99983543," is near certainty at 1.0. 2.80234E-08" indicates 8
 
 https://github.com/Azure-Samples/cognitive-services-FaceAPIEnrollmentSample   
 
 DEMO: LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/web-ai-happy-sad-angry
 
-There is a 6 MB limit on the size of each file (jpeg, png, gif, bmp).
 
-It's service functions:
-   * Face Detection
-   * Find similar faces
-   * Person identification
-   * Face Verification
-   <br /><br />
+#### Create a Face API subscription
 
-   NOTE: On June 11, 2020, Microsoft announced that it will not sell facial recognition technology to police departments in the United States until strong regulation, grounded in human rights, has been enacted. As such, customers may not use facial recognition features or functionality included in Azure Services, such as Face or Video Indexer, if a customer is, or is allowing use of such services by or for, a police department in the United States.
+Subscribe to the Face API:
+1. Sign in to the Azure portal.
+1. Go to <a target="_blank" href="https://portal.azure.com/#create/Microsoft.CognitiveServicesFace">
++ Create a resource > AI + Machine Learning > Face</a>
+1. Enter a unique name for your Face API subscription name in variable MY_FACE_ACCT
+
+   Paste in setme.sh 
+
+   <pre>export MY_FACE_ACCT=faceme
+   </pre>
+
+1. Choose "westus", the Location nearest to you.
+1. Select F0 the free or lowest-cost Pricing tier.
+1. Check "By checking this box, I certify that use of this service or any service that is being created by this Subscription Id, is not by or for a police department in the United States."
+1. Click "Create" to subscribe to the Face API.
+
+1. When provisioned, "Go to resource". 
+1. In "Keys and Endpoint", copy Key1 and paste in setme.sh 
+
+   <pre>export MY_FACE_KEY1=<em>subscription_key</em>
+   </pre>
+
+The endpoint used to make REST calls is "$MY_FACE_ACCT.cognitiveservices.azure.com/"
+
+   https://github.com/wilsonmar/azure-your-way/blob/main/az-face-init.sh
+
+https://docs.microsoft.com/en-us/learn/modules/identify-faces-with-computer-vision/8-test-face-detection?pivots=csharp
+
+References:
 
    https://docs.microsoft.com/en-us/azure/cognitive-services/Face/Overview
    What is the Azure Face service?
@@ -1795,6 +1869,7 @@ It's service functions:
    https://docs.microsoft.com/en-us/azure/cognitive-services/Face/quickstarts/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
 
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/04%20-%20Face%20Analysis.ipynb
+
 
 <a name="FormRecognizer"></a>
 

@@ -1401,6 +1401,8 @@ eastus2
 
    Individual resources created within a Resource Group will be placed in the same region.
 
+   PROTIP: Speaker Recognition is currently only supported in Azure Speech resources created in the <strong>westus</strong> region.
+
 
    ### CLI Naming convensions
 

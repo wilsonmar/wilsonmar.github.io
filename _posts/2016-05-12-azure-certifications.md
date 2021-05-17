@@ -816,6 +816,11 @@ PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/bu
 is 9 hr 51 min</a> has <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">hands-on exercises</a> which references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">https://github.com/MicrosoftLearning/mslearn-dp100</a>
 
 
+BTW Microsoft class DP-090 Implementing a Machine Learning Solution with Microsoft Azure Databricks
+In this one-day course, you’ll learn how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
+Azure Databricks is a cloud-scale platform for data analytics and machine learning. 
+
+
 <a name="DP-200"></a>
 
 ## DP-200 Implementing-an-Azure-Data-Solution
