@@ -1898,6 +1898,37 @@ It's got 33 resources. The sub-modules are:
    * vault-security-group-rules (for AWS only)
 
 
+<a name="TFX"></a>
+
+## TFX for ML
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Mxk4qmO_1B4&list=RDCMUC0rqucBdTuFTjJiefW5t-IQ&start_radio=1">VIDEO</a>:
+<a target="_blank" href="https://www.tensorflow.org/tfx">
+TFX (TensorFlow eXtended)</a> is an open-source end-to-end platform for deploying production ML pipelines. It's created and used at Google and other Alphabet companies as well as Twitter, AirBnB, PayPal.
+
+This reference flow from the <a target="_blank" href="https://cd.foundation/blog/2020/02/11/announcing-the-cd-foundation-mlops-sig/">CD Foundation</a>:
+![mlops-cdfnd-1603x599](https://user-images.githubusercontent.com/300046/118411245-c8f3ec80-b650-11eb-974b-bb22a4abe417.png)
+
+is shown in the <a target="_blank" href="https://www.coursera.org/learn/machine-learning-data-lifecycle-in-production/lecture/gzWZQ/ml-pipelines">DeepLearning.ai course</a>.
+
+Modules (each a different GitHub repo):
+   * TF ML Metadata
+   * TF Data Validation
+   * TF Transform
+   * TF Model Analysis
+   * TF Serving
+   <br /><br />
+
+Static datasets are used in prototyping and ML research.
+Dynamic datasets are used in production.
+
+ML pipeline workflows are almost always one-way DAGs.
+
+TensorFlow Lite deploys to mobile devices.
+
+
+<a target="_blank" href="http://bit.ly/ml-techdebt">Hidden technial debt in ML systems</a>
+
 
 <a name="RockStars"></a>
 

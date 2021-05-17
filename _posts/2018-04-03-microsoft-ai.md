@@ -85,10 +85,10 @@ Microsoft provides some <a href="#FreeTime">free machine time</a>.
 
    ![az-ai-svcs-pricing-309x410](https://user-images.githubusercontent.com/300046/117203280-126c4e00-adac-11eb-84ae-54994f47f3ea.png)
 
-PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service speecified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified:
+PROTIP: The reconciliation below between marketing Feature categories and the <strong>Kind</strong> of Cognitive service speecified in CLI az commands provides quick access to web pages and reveals some contradictions that need to be clarified, by category:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom" align="left"><th> Category </th><th> Kind </th><th> Free </th></tr>
+   <tr valign="bottom" align="left"><th> Demo </th><th> Kind </th><th> Free </th><th> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/">API</a> </th></tr>
 
    <tr valign="top"><td> <em>global</em> </td><td> "CognitiveServices"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/">See below</a> 
@@ -101,79 +101,105 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/#features">Features</a> </td><td> "ComputerVision"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPC, 10K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features">Features</a> </td><td> "CustomVision.Prediction"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">10K predictions/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.3/operations/5eb0bcc7548b571998fdded6">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/#features">Features</a> </td><td> "CustomVision.Training"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-vision-service/">2 TPS, 1 hour/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/face/#features">Features</a> </td><td> <a href="#Face">"Face"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/">20 TPM, 30K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236">API</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/form-recognizer/#features">Features</a> </td><td> FormRecognizer
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/form-recognizer/">500 pages/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> Video Indexer
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> <a href="#VideoIndexer">Video Indexer</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/"><em>depends</em></a> 
+      </td><td> <a target="_blank" href="https://www.nuget.org/packages/Video.Indexer.API/">API</a>       
+      </td></tr>
+   <tr valign="top"><td> - </td><td> <a href="#InkRecognizer"><strike>Ink Recognizer"</strike></a>
+      </td><td> -
+      </td><td> -
       </td></tr>
 
    <tr valign="top"><td colspan="3" align="center"> <a href="#Speech">Speech</a> 
       </td></tr>
-   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> "SpeechServices"
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/#features">Features</a> </td><td> <a href="#SpeechServices">"SpeechServices"</a>
       (<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speech-to-text/#Features">Speech-To-Text"</a>, <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/#Features">Text-to-Speech"</a>)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">5 hours/mo.*</a> 
+      </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text#speech-to-text-rest-api-v30" title="v3">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">SpeakerRecognition?</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/speaker-recognition/#features">Features</a> </td><td> <a href="#SpeakerRecognition">"SpeakerRecognition"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/">20/min, 5K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/563309b6778daf02acc0a508/operations/5645c3271984551c84ec6797">API</a>       
       </td></tr>
 
    <tr valign="top"><td colspan="3" align="center"> <a href="#Language">Language</a>
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS">"LUIS"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS, 10K trans/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/#features">Features</a> </td><td> <a href="#LUIS.Authoring">"LUIS.Authoring"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-understanding-intelligent-services/">5 TPS</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/luis-programmatic-apis-v3-0-preview/operations/5890b47c39e2bb052c5b9c2f">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/#features">Features</a> </td><td> <a href="#QnA_Maker">"QnAMaker"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 50K trans/mo, 3 docs/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/#features">Features</a></td><td> <a href="#QnA_Maker">"QnAMaker.v2"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 5K/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td> "TextAnalytics"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator/#features">Features</a> </td><td> <a href="#TextTranslation">TextTranslation"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
+      </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-reference">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/immersive-reader/#features">Features</a> </td><td> <a href="ImmersiveReader">ImmersiveReader"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/immersive-reader/#features">Features</a> </td><td> <a href="ImmersiveReader">
+   "ImmersiveReader"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/immersive-reader/">3M chars/mo.</a> 
+      </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/">API</a>       
       </td></tr>
    
    <tr valign="top"><td colspan="3" align="center"> <a href="#Decision">Decision (Making)</a>  
       </td></tr>
-   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">AnomalyDetector"</a>
+   <tr align="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector/#features">Features</a> </td><td> <a href="#AnomalyDetector">"AnomalyDetector"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/anomaly-detector-enterprise-edition/operations/createDataFeed">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a>  </td><td> "ContentModerator"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/metrics-advisor/#features">Features</a>  </td><td> "MetricsAdvisor"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/metrics-advisor/">preview</a> 
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/MetricsAdvisor/operations/getActiveSeriesCount">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/#features">Features</a>  </td><td> <a href="#Personalizer">Personalizer"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/personalizer/#features">Features</a>  </td><td> <a href="#Personalizer">"Personalizer"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
+      </td><td> <a target="_blank" href="https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Rank">API</a>       
       </td></tr>
 
    <tr valign="top"><td colspan="3" align="center"> <a href="#Search">Search</a>
       </td></tr>
    <tr align="top"><td> <a target="_blank" href="https://www.microsoft.com/en-us/bing/apis">Features</a> </td><td> "Bing.CustomSearch"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/">50K trans/mo.</a> 
+      </td><td> -      
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://www.microsoft.com/en-us/bing/apis">Features</a> </td><td> "Bing.Search.v7"
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/">3 TPS, 1000/mo</a> 
+      </td><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/">API</a>       
       </td></tr>
 
    </table>
@@ -1171,6 +1197,10 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/">Content Moderator</a> services detect potentially offensive or unwanted content.
 
+https://www.youtube.com/watch?v=gVFiA6ZQNAw
+
+
+
 <a name="MetricsAdvisor"></a>
 
 ### Metrics Advisor
@@ -1396,12 +1426,20 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
 
 <hr />
 
-
+<a name="SpeechServices"></a>
    <a name="Speech"></a>
 
-   ### Speech Translation (Speech-to-text aka STT)
+## Speech Services
+
+Speech-to-text has <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text"">two different REST APIs</a>:
+
+* Speech-to-text (STT) REST API v3.0 is used for Batch transcription and Custom Speech.
+* Speech-to-text REST API for short audio is used for online transcription as an alternative to the Speech SDK. Requests using this API can transmit only up to 60 seconds of audio per request.
+
+
+### Speech Translation (Speech-to-text aka STT)
    
-   Get the monthly subscription mobile app on 
+   Get the <strong>monthly subscription</strong> mobile app on 
    <a target="_blank" href="https://apps.apple.com/app/microsoft-translator/id1018949559">
    iPhone</a>, Android, or Amazon. It has a Phrasebook of common phrases.
 
@@ -1666,7 +1704,32 @@ References:
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
 
 
-#### Video Indexer demo app
+<a name="InkRecognizer"></a>
+
+### Ink Recognizer
+
+<a target="_blank" href="https://www.youtube.com/watch?v=ipcMvLhk3iI">VIDEO</a>:
+
+Ink converts handwriting to plain text, in 63+ core languages.
+
+<a target="_blank" href="https://github.com/azure-deprecation/dashboard/issues/66">
+It was deprecated on 31 January 2021</a>.
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/ink-recognizer/quickstarts/csharp
+Quickstart: Recognize digital ink with the Ink Recognizer REST API and C#
+
+QUESTION: Does it integrate with a tablet?
+
+
+<a name="VideoIndexer"></a>
+
+### Video Indexer 
+
+Video Indexer is under Media Services rather than Cognitive Services.
+
+https://github.com/Azure-Samples/media-services-video-indexer
+
+https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
 
 1. In a browser, go to the Video Indexer URL:
 
@@ -2029,7 +2092,25 @@ Knowledge Mining Solution Accelerator</a>
 
 <a name="Search"></a>
 
-## Search for AI enrichment of docs
+## Search = Bing ?
+
+1. Get on the <a target="_blank" href="https://portal.azure.com/#create/microsoft.bingsearch">Bing Resource portal GUI</a>.
+
+1. Define a Resource Group.
+
+1. Price Tier: Free
+
+   PROTIP: Autosuggest requires the "S2" (Standard) pricing tier.
+   Spell Check requires either S1 or S2.
+
+1. Click "Automation Options" link for a JSON Template.
+1. Click "Create" at the top.
+1. Create
+
+   Notice the service name at the upper left is "Microsoft.BingSearch" and has a Global location.
+   It's Endpoint is: https://api.bing.microsoft.com/
+
+### Search for AI enrichment of docs
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/cognitive-search-concept-intro">
 The Azure Cognitive Search service</a> uses a Cognitive Search resource

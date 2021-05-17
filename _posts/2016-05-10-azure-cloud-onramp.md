@@ -59,6 +59,13 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    https://shell.azure.com</u></strong></a>
    </td><td> CLI
    </td></tr>
+   
+<tr valign="top"><td> Video Indexer </td><td>
+   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
+   https://api-portal.videoindexer.ai</u></strong></a>
+   </td><td> CLI
+   </td></tr>
+
 <tr valign="top"><td> Machine Learning studio </td><td>
    <a target="_blank" href="https://ml.azure.com/"><strong><u>
    https://ml.azure.com</u></strong></a>
@@ -1099,7 +1106,7 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
 
    If no dashes are in the name, double-clicking on that name would select the entire name.
 
-   A Resource Group name can be a single character. It cannot begin with a number.
+   A Resource Group name can be a single character. It can begin with a number.
 
    PROTIP: In production, design Resource Groups for work groups to have the permissions they need. For example, core infrastructure such as Networking. The destination of logs and metrics should be viewed and managed using a whole differen account than accounts used to create the data.
 

@@ -30,12 +30,17 @@ Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#NPM">Azure Network Performance Monitor</a>
    <br /><br />
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/terminology">
+Changes in terminology</a>
+
+<a target="_blank" href="https://www.dynatrace.com/support/help/technology-support/cloud-platforms/microsoft-azure-services/set-up-integration-with-azure-monitor/">Dynatrace</a> (for additional price) provides comprehensive monitoring support for Azure services, by integration with both OneAgent and Azure Monitor.
+
 References:
 
    <a target="_blank" href="https://azure.microsoft.com/en-au/pricing/details/monitor/">
    PRICING for monitoring</a>
 
-   <a target="_blank" href=https://www.youtube.com/watch?v=Zr7LcSr6Ooo">VIDEO</a>: "What to use for monitoring your applications in Azure"</a> by <a target="_blank" href="https://www.azurebarry.com/">Azure Barry</a> (Luijbregts)
+   <a target="_blank" href="https://www.youtube.com/watch?v=Zr7LcSr6Ooo">VIDEO</a>: "What to use for monitoring your applications in Azure"</a> by <a target="_blank" href="https://www.azurebarry.com/">Azure Barry</a> (Luijbregts)
 
 Issues to monitor for:
    * poor response times,
@@ -47,25 +52,13 @@ Issues to monitor for:
    <br /><br />
 
 
-<a name="LogStreaming"></a>
-
-## Live Log Streaming
-
-1. Start the log streaming service to show a duplicate of what is saved to log files for a <strong>single app instance</strong>. So it's only good for initial debugging, to quick feedback on server issues.
-
-   <pre>az webapp log tail --name $app_name --resource-group $resource_group_name
-   </pre>
-
-1. To stop viewing live logs, press Ctrl+C.
-
-
 <a name="Monitor"></a>
 
 ## Azure Monitor
 
-https://docs.microsoft.com/en-us/azure/azure-monitor/overview
+1. The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/overview">Azure Monitor service home screen is at https://docs.microsoft.com/en-us/azure/azure-monitor/overview</a>
 
-1. Click on "Monitor" menu item among FAVORITES by default.
+1. Get to <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Monitoring/AzureMonitoringBrowseBlade/overview">Monitor</a> service from the Home menu, Search, or Favorites.
 
    You can return to this page by clicking "Overview" in the Monitor menu.
 
@@ -140,7 +133,19 @@ Azure Automation hosts the Hybrid Runbook worker role and other services such as
 
 <a name="Logs"></a>
 
-### Logs
+## Logs
+
+<a name="LogStreaming"></a>
+
+## Live Log Streaming
+
+1. Start the log streaming service to show a duplicate of what is saved to log files for a <strong>single app instance</strong>. So it's only good for initial debugging, to quick feedback on server issues.
+
+   <pre>az webapp log tail --name $app_name --resource-group $resource_group_name
+   </pre>
+
+1. To stop viewing live logs, press Ctrl+C.
+
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-infrastructure-with-azure-monitor-logs/4-exercise-create-log-queries">
 HANDS-ON Exercise in Sandbox - Create basic Azure Monitor log queries to extract information from log data</a>
