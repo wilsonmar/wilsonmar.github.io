@@ -28,9 +28,27 @@ PROTIP: My contribution to the world here are tables that organize complex infor
 * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
 
 
+### Pricing
+
+[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
+   
+   A. Region resource costing
+
+   B. Region's support of Availability Zones - white dots on<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
+   
+   C. <a href="#Blobs">Type of Blob (Storage Type)</a><br />
+   
+   D. <a href="#Replication">Replication/Redundancy</a>
+
+
+<hr />
+
 <a name="StorageAccount"></a>
 
 ## Create Storage account
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
+Storage accounts are recepticles capable of storing different categories of data. 
 
 REMEMBER: PROTIP: Storage accounts are under Subscriptions, separate from (not under) any Resource Group.
 
@@ -38,7 +56,12 @@ A subscription is needed if you want to use the CLI.
 
 ### CLI to create Storage account
 
-Use my Bash shell script file az-storacct-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> 
+Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> 
+
+
+
+
+The manual alternative is below.
 
 
 ### Manual Portal UI
@@ -60,6 +83,39 @@ Use my Bash shell script file az-storacct-init.sh within <a target="_blank" href
 1. Copy to Clipboard by Ctrl+V.
 1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
 
+<hr />
+
+<a name="StorageTypes"></a>
+
+## Types of Storage and Data
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Type </th><th> Data </th><th> Service </th></tr>
+<tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
+   </td><td><a href="#Blobs">Blobs</a>,<br />
+   <a href="#Queues">Queues</a>,<br />
+   <a href="#DataLake">Data Lake Store</a>
+   </td></tr>
+
+<tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
+   </td><td> <a href="#Files">FileStorage</a> in 
+      <a href="#Disks">Disks</a>,<br />
+      <a href="#Tables">Tables</a> 
+   </td></tr>
+
+<tr valign="top"><td> Structured: </td><td> SQL databases (containing tables)
+   </td><td> <a href="#Tables">Azure Tables</a>,<br />
+      <a href="#SQLDB">Azure SQL Database</a>,<br /> 
+      <a href="#CosmoDB">CosmoDB</a>
+   </td></tr>
+</table>
+
+How is your data used?
+
+Does your data require transactions (ACID properties)? If yes, use SQL.
 
 
 
@@ -230,41 +286,6 @@ Use my Bash shell script file az-storacct-init.sh within <a target="_blank" href
    1. Click "Upload"
 
 
-## Types of Storage and Data
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
-<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Type </th><th> Data </th><th> Service </th></tr>
-<tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
-   </td><td><a href="#Blobs">Blobs</a>,<br />
-   <a href="#Queues">Queues</a>,<br />
-   <a href="#DataLake">Data Lake Store</a>
-   </td></tr>
-
-<tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
-   </td><td> <a href="#Files">FileStorage</a> in 
-      <a href="#Disks">Disks</a>,<br />
-      <a href="#Tables">Tables</a> 
-   </td></tr>
-
-<tr valign="top"><td> Structured: </td><td> SQL databases (containing tables)
-   </td><td> <a href="#Tables">Azure Tables</a>,<br />
-      <a href="#SQLDB">Azure SQL Database</a>,<br /> 
-      <a href="#CosmoDB">CosmoDB</a>
-   </td></tr>
-</table>
-
-How is your data used?
-
-Does your data require transactions (ACID properties)? If yes, use SQL.
-
-## Storage Accounts
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-Storage accounts are recepticles capable of storing different categories of data. 
-
 ### Storage Domain names
 
 Each storage account provides a unique namespace accessible over HTTPS.
@@ -297,19 +318,7 @@ Two ways to map custom domain name:
 
   * To eliminate downtime: Prepend <strong>asverify</strong> to CNAME record for Azure to recognize, then modify the DNS record.
 
-
-### Pricing
-
-[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
-   
-   A. Region resource costing
-
-   B. Region's support of Availability Zones - white dots on<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
-   
-   C. <a href="#Blobs">Type of Blob (Storage Type)</a><br />
-   
-   D. <a href="#Replication">Replication/Redundancy</a>
-
+<hr />
 
 <a name="Files"></a>
 
