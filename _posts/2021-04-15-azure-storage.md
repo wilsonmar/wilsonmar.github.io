@@ -354,9 +354,28 @@ https://github.com/Azure-Samples/azure-files-samples
    PROTIP: Premium SSD disks are paid a fixed maximum cost for each month, regardless of usage. That's in addition to any Egress charges.
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Type </th><th> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
+   <tr><th> Type" </th><th> Standard HHD </th><th> Standard SSD </th><th> Premium SSD </th><th> Ultra SSD </th></tr>
+   <tr valign="top" align="right"><td> Size 
+      </td><td> 250 </td><td> 250 </td><td> 250 </td><td> 250 
+   </td></tr>
+   <tr valign="top" align="right"><td> Size TiB
+      </td><td> 32  </td><td> 32 </td><td> 32 </td><td> 64 
+   </td></tr>
+   <tr valign="top" align="right"><td>IOPS Limit expected 
+      </td><td> 2,000 </td><td> 6,000 </td><td> 20,000<br />Burst 30,000 </td><td> 160,000
+   </td></tr>
+   <tr valign="top" align="right"><td>Thruput limit MB/s 
+      </td><td>  60 </td><td> ? </td><td> 125 </td><td> -
+   <tr valign="top" align="right"><td>Bandwidth MBps
+      </td><td>  500 </td><td> 750 </td><td> 900<br />Burst 1,000</td><td> 2,000
+   <tr valign="top" align="right"><td>Single Instance SLA
+      </td><td>  95% </td><td> 99.9% </td><td> 99.9%</td><td> 99.9%
+   </td></tr>
+   </table>
 
-   <tr valign="top" align="right"><td> Standard HHD
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Type </th><th> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
+   <tr valign="top" align="right"><td> 1
       </td><td> 250 </td><td>  500 </td><td> 60 </td></tr> 
 
    <tr valign="top" align="right"><td> Standard SSD

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Your Way"
-excerpt: "CLI Bash scripts to setup and do the work"
+excerpt: "CLI Bash scripts and Terraform HCL to automate setup and work while you save money"
 tags: [cloud, azure]
 date: "2021-05-14"
 file: "azure-your-way"
@@ -23,7 +23,7 @@ Scripts are also useful for learning both Azure and CLI Bash shell scripting.
 
 TODO: Setup a CI/CD pipeline to run these scripts whenever a git push into github occurs.
 
-For now, here are manual steps to invoke these scripts:
+## Setup a new Azure Subscription:
 
 1. Be in <a target="_blank" href="https://shell.azure.com/">https://shell.azure.com</a><br />
    or click the CLI icon after entering<br />
@@ -32,7 +32,7 @@ For now, here are manual steps to invoke these scripts:
 1. If you need to, create a Storage account to hold files in a clouddrive.
 
 
-   ## az-setup-cli.sh
+   ### az-setup-cli.sh
 
 1. Copy and paste this one command in the CLI script window:
 

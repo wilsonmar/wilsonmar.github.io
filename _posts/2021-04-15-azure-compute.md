@@ -436,7 +436,7 @@ Azure Web Jobs runs Azure Functions as background jobs.
 
 ## Virtual Machines (VMs)
 
-<a target="_blank" href="https://www.coursera.org/learn/azure-create-a-virtual-machine-and-deploy-a-web-server/">Coursera video course: Azure: Create a Virtual Machine and Deploy a Website</a> has these steps:
+<a target="_blank" href="https://www.coursera.org/learn/azure-create-a-virtual-machine-and-deploy-a-web-server/">VIDEO: Coursera: Azure: Create a Virtual Machine and Deploy a Website</a> has these steps:
 
 1. Create a Resource Group
 1. Create a Virtual Network and a subnet
@@ -457,7 +457,14 @@ Provision virtual machines (VMs):
 
 ### Create VM in Portal GUI 
 
+1. In portal, go to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines">VM or Virtual Machines</a> in Home menu or Recents or Search.
+
 1. PROTIP: Previously Azure VM names had to be globally unique becuase they were were put in public domain cloudapp.net. But Microsoft has since added magic to get around that.
+
+   Naming conventions:
+   * Limit 15 chars on Windows VMs
+   * Limit 64 chars on Linux VMs
+   <br /><br />
 
 1. Region: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
 
