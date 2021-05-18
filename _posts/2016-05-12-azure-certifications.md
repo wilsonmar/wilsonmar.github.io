@@ -636,7 +636,7 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
 is about development in .Net and C#:
 
 <strong>Develop</strong> Azure compute solutions (25-30%)
-   * <a target="_blank"" href="https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/">Create serverless applications</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/">Create serverless applications</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/">Deploy resources in Azure</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/">Deploy a website to Azure with Azure App Service</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/">Connect services together</a>
@@ -644,7 +644,7 @@ is about development in .Net and C#:
 
 
 Develop for Azure storage (15-20%)
-   * <a target="_blank"" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">Store Data in Azure</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">Store Data in Azure</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/">Secure Your Cloud Data</a>
    <br /><br />
 

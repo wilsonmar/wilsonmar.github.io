@@ -17,10 +17,10 @@ comments: true
 {% include _toc.html %}
 
 
-This tutorial aims to have you ending up with a serverless Azure Functions app running in 
+This tutorial aims to have you ending up with "Serverless" Azure Functions running in the 
 Microsoft Azure cloud.
 
-It's assumed that you're already familiar with Azure onramp and
+It's assumed that you're already familiar with my <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">Azure cloud onramp</a> and
 [the Serverless framework](/serverless/)
 
 
