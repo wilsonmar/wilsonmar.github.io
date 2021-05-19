@@ -65,6 +65,11 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    https://api-portal.videoindexer.ai</u></strong></a>
    </td><td> CLI
    </td></tr>
+<tr valign="top"><td> Metrics Advisor </td><td>
+   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
+   metricsadvisor.azurewebsites.net</u></strong></a>
+   </td><td> -
+   </td></tr>
 
 <tr valign="top"><td> Machine Learning studio </td><td>
    <a target="_blank" href="https://ml.azure.com/"><strong><u>

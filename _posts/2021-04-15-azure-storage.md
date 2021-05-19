@@ -351,10 +351,12 @@ https://github.com/Azure-Samples/azure-files-samples
    Performance tiers: Standard = Magnetic disks (HDD).
    
    Premium = SSD (Solid State Disks) faster, for 99.99% SLA outside Availability Set.
-   PROTIP: Premium SSD disks are paid a fixed maximum cost for each month, regardless of usage. That's in addition to any Egress charges.
+   PROTIP: Premium SSD disks are paid a <strong>fixed maximum cost each month</strong>, regardless of usage. That's in addition to any Egress charges.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=3qCTtvLgOPc" title="May 17, 2021">VIDEO</a>:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Type" </th><th> Standard HHD </th><th> Standard SSD </th><th> Premium SSD </th><th> Ultra SSD </th></tr>
+   <tr align="right"><th align="left"> Type </th><th> Standard<br />HHD </th><th> Standard<br />SSD </th><th> Premium<br />SSD </th><th> Ultra<br />SSD </th></tr>
    <tr valign="top" align="right"><td> Size 
       </td><td> 250 </td><td> 250 </td><td> 250 </td><td> 250 
    </td></tr>
@@ -370,19 +372,9 @@ https://github.com/Azure-Samples/azure-files-samples
       </td><td>  500 </td><td> 750 </td><td> 900<br />Burst 1,000</td><td> 2,000
    <tr valign="top" align="right"><td>Single Instance SLA
       </td><td>  95% </td><td> 99.9% </td><td> 99.9%</td><td> 99.9%
+   <tr valign="top" align="left"><td>Usage:
+      </td><td> test & dev, backups </td><td> Big-data entry-level web servers </td><td> prod. databases, container volumes</td><td> SAN, Tier-1 workloads (SAP HANA)
    </td></tr>
-   </table>
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Type </th><th> Size </th><th> IOPS Limit expected </th><th> Thruput limit MB/s </th></tr>
-   <tr valign="top" align="right"><td> 1
-      </td><td> 250 </td><td>  500 </td><td> 60 </td></tr> 
-
-   <tr valign="top" align="right"><td> Standard SSD
-      </td><td> 250 </td><td>  ? </td><td> ? </td></tr>
-
-   <tr valign="top" align="right"><td> Premium SSD 
-      </td><td> 250 </td><td> 1100 </td><td> 125 </td></tr> 
    </table>
 
    * General-purpose v1 can contain blobs (more expensive than v2)

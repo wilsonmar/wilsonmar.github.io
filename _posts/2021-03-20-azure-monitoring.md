@@ -1066,6 +1066,14 @@ Azure Monitor allows you to manage and create alerts, notifications, and actions
 Integrate Azure Monitor with other tools using Event Hubs to export data or APIs for ingestion and export.
 
 
+<a name="Metrics_Advisor"></a>
+
+## Metrics Advisor
+
+<a target="_blank" href="https://www.youtube.com/watch?v=2gsPEJFLigw">VIDEO</a>:
+Metrics Advisor comes up with anomaly detection without you having to setup Machine Learning.
+
+
 ## Load Testing Azure
 
 https://k6.io/blog/k6-as-alternative-for-azure-and-visual-studio-load-tests/
