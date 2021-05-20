@@ -346,7 +346,7 @@ https://github.com/Azure-Samples/azure-files-samples
 
 [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/files/">Pricing</a>]
 
-* General-purpose storage stores files, tables, queues
+General-purpose storage stores files, tables, queues:
 
    Performance tiers: Standard = Magnetic disks (HDD).
    
@@ -356,7 +356,7 @@ https://github.com/Azure-Samples/azure-files-samples
    <a target="_blank" href="https://www.youtube.com/watch?v=3qCTtvLgOPc" title="May 17, 2021">VIDEO</a>:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr align="right"><th align="left"> Type </th><th> Standard<br />HHD </th><th> Standard<br />SSD </th><th> Premium<br />SSD </th><th> Ultra<br />SSD </th></tr>
+   <tr align="left"><th> Type </th><th> Standard<br />HHD </th><th> Standard<br />SSD </th><th> Premium<br />SSD </th><th> Ultra<br />SSD </th></tr>
    <tr valign="top" align="right"><td> Size 
       </td><td> 250 </td><td> 250 </td><td> 250 </td><td> 250 
    </td></tr>
@@ -1203,11 +1203,9 @@ Data Bricks is Spark storage + analytics
 
 ## Cosmos DB (NoSQL)
 
-Cosmos DB (originally Document DB) is a globally distributed and elastically scalable document database.
+Cosmos DB (originally Document DB) is a globally distributed and elastically scalable <strong>document database</strong> supporting MongoDB and graph database Gremlin.
 
 <a target="_blank" href="https://www.wikiwand.com/en/PACELC_theorem">According to Wikipedia</a>, Cosmos DB's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels">consistency levels</a> are based on <a target="_blank" href="https://www.wikiwand.com/en/PACELC_theorem">"P+A and E+L" theorem</a>, similar to AWS DynamoDB and Cassandra:
-
-> "Cosmos DB supports five tunable consistency levels that allow for tradeoffs between C/A during P, and L/C during E. Cosmos DB never violates the specified consistency level, so it’s formally CP."
 
 Before a write operation is acknowledged to the client, data is durably committed by a quorum or replicas within the region that accepts the write operations:
 
@@ -1216,15 +1214,99 @@ Before a write operation is acknowledged to the client, data is durably committe
 <tr valign="top" align="center"><td align="left">
 Write </td><td> 99.99 </td><td> 99.99 </td><td> 99.999 </td></tr>
 <tr valign="top" align="center"><td align="left">
-Read  </td><td> 99.99 </td><td> 99.99 </td><td> 99.999 </td></tr>
+Read </td><td> 99.99 </td><td> 99.99 </td><td> 99.999 </td></tr>
 </table>
 
 A "conflict feed" makes data available not replicated when a write region fails.
 
-1. In Services, "Cosmo DB". Create DB account.
-1. Choose API: Core (SQL), MongoDB, Cassandra, Azure Table, Gremlin(Graph).
-1. The Location here stores only metadata.
+<a target="_blank" href="https://microsoftlearning.github.io/AZ-204-DevelopingSolutionsforMicrosoftAzure/Instructions/Labs/AZ-204_04_lab.html">LAB</a>:
+
+1. Search for "cosmo" for the <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DocumentDb%2FdatabaseAccounts">Azure Cosmos DB</a> blade.
+1. "+ Add" to "Create Azure Cosmos DB account".
+1. API: [document (NoSQL) databases]
+   * Core (SQL) [Formerly DocumentDB]
+   * Azure Cosmos DB for MongoDB API
+   * Cassandra
+   * Azure Table
+   * Gremlin (graph) [Graph database]
+   * [Future: etcd, Apache HBase, ANSI SQL]
+   <br /><br />
+1. Location: 
+   
+   Capacity mode: 
+   * Provisioned throughput [the default, for reserved capacity paid monthly]
+   * Serverless (preview) [consumption based pricing]
+   <br /><br />
+
+   Apply Free Tier Discount: Apply (the default)
+
+1. Next: Global Distribution:
+
+1. Geo-Redundancy: Disable is the default
+1. Multi-Region Writes: Disable is the default
+1. Next: Networking
+1. Connectivity method: All networks is default.
+
+1. Next: Backup Policy: Periodic is default. 
+
+1. Next: Encryption: Data Encryption: Service-managed key is default
+1. Next: Tags
+1. "Review + creat", "Create".
 <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/cli-samples">CLI</a>:
+<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/cosmosdb?view=azure-cli-latest">CLI DOCS</a>
+<a target="_blank" href="https://learning.oreilly.com/videos/microsoft-az-204-certification/10009AZ2042021/10009AZ2042021-AZ2044_50">VIDEO</a>:
+
+   * --max-interval "300" \ is 300 seconds (5 minutes) to sync with all instances
+
+   * --max-staleness-prefix "10000" \ is max. 10,000 updates before forcing sync
+   
+### --default-consistency-level
+
+> "Cosmos DB supports five tunable consistency levels that allow for tradeoffs between C/A during P, and L/C during E. Cosmos DB never violates the specified consistency level, so it’s formally CP."
+
+* Strong (write and read immediately, like SQL)
+* Bounded-staleness 
+* Session [the default = Strong sync for the same session key]
+* Consistent prefix
+* Eventual (like DNS propagation)
+<br /><br />
+
+References:
+
+   * https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview#choose-partitionkey
+   * https://azure.microsoft.com/en-us/blog/azure-cosmos-db-and-multi-tenant-systems/
+
+### Containers
+
+Databases manage the throughput (performance)
+
+Containers are where <strong>Partition keys</strong> to group databases. 
+
+Documents are grouped by Partition Key.
+There is no limit on the number of logical partitions.
+
+PRICING is by Request Units (RUs). 
+The cost to read a 1 KB item is 1 RU. 
+<strong>5 RUs</strong> are spent to write 1 KB.
+
+A minimum of 10 RS/s is required to store each 1 GB of data.
+Each Physical Partition provides 10K request units/second.
+There are Read Capacity Units and Write Capacity Units. 
+
+Logical Partitions have a max. size of 20 GB.
+
+When RU exceeded, Azure will automatically add another physical partition and re-allocate logical partitions.
+
+A Change Feed provides an ordered list of documents modified in a container.
+
+
+### Migration
+
+To migrate SQL data in, create a <strong>.bacpac</strong> file.
+
+
 
 ### CosmoDB Backup Policy
 

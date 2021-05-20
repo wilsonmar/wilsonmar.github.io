@@ -59,6 +59,14 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    https://shell.azure.com</u></strong></a>
    </td><td> CLI
    </td></tr>
+<tr valign="top"><td> Multi-tenant </td><td>
+   <a target="_blank" href="https://login.microsoftonline.com/common/">
+      <strong><u>login.microsoftonline.com/common</u></strong></a>
+   </td></tr>
+<tr valign="top"><td> Single-tenant </td><td>
+   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/">
+      <strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
+   </td></tr>
    
 <tr valign="top"><td> Video Indexer </td><td>
    <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>

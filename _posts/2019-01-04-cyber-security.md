@@ -748,7 +748,7 @@ known issues
 
 ## NIST NVD CVE
 
-<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : Open Vulnerability and Assessment Language for use world-wide.
+<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : (Open Vulnerability and Assessment Language) for use world-wide.
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=fPUypU7ysMw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=6">MINDMAP</a>] 
 PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, etc.) refer to the <a target="_blank" href="https://www.vicarius.io/research-center">NVD online</a> as the basis for scanning. 
@@ -1258,7 +1258,7 @@ A threat modeling program continually reassess the threat environment, including
    <br /><br />
 
 <a target="_blank" href="https://attack.mitre.org/">https://attack.mitre.org</a>
-ATT&CK process: 
+Sinc3 2013, MITRE's ATT&CK process looks at tactics, techniques, and procedures (TTPs) for Enterprise IT:
    1. <strong>Reconnaissance</strong>
    2. Resource Development (new)
    3. Initial Access (Intrusion)
@@ -1273,6 +1273,20 @@ ATT&CK process:
    12. Command and Control (<strong>Denial of service</strong>)
    13. <strong>Exfiltration</strong>
    14. Impact (new)
+   <br /><br />
+
+<a target="_blank" href="https://www.dragos.com/">Dragos</a> <a target="_blank" href="https://hub.dragos.com/hubfs/Whitepaper-Downloads/Mapping-Industrial-Cybersecurity-Threats-to-MITRE-ATTACK-for-ICS.pdf">PDF: ATT&CK for IoC</a> (Industrial Control Systems):
+   1. Initial access
+   1. Execution
+   1. Persistence
+   1. Evasion 
+   1. Discovery
+   1. Lateral Movement
+   1. Collection
+   1. Command and Control
+   1. Inhibit response function [+]
+   1. Impair process control [+]
+   1. Impact process
    <br /><br />
 
 Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. 

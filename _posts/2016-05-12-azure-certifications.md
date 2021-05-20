@@ -628,12 +628,14 @@ https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
 
 Pass this one exam to become a "Microsoft Certified: Azure Developer Associate".
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DB-900 Microsoft Azure Data Fundamentals</a>
-
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-204</a>
-is about development in .Net and C#:
+formally defines the test and provides textual tutorial. The test is about development in .Net C#, Python, Bash Shell, PowerShell.
+
+PROTIP: <a target="_blank" href="https://learning.oreilly.com/videos/microsoft-az-204-certification/">Skylines Academy videos on OReilly</a> I think are the most thorough and best sequenced courses (and I've seen them all).
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DB-900 Microsoft Azure Data Fundamentals</a> should be a pre-requisite.
 
 <strong>Develop</strong> Azure compute solutions (25-30%)
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/">Create serverless applications</a>

@@ -148,6 +148,9 @@ Schedule triggers occur on a specific date/time.
 ## Local Setup
 
 1. Run my <strong>az-local-setup.sh</strong> to install utilities on your laptop.
+
+   https://github.com/wilsonmar/azure-your-way
+
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash">Initialize</a>:
 
    <pre>func init MyFunctionProj --source-control</pre>
@@ -164,6 +167,16 @@ Schedule triggers occur on a specific date/time.
 
 
    ### FunctionApp folder
+
+   A sample from the Microsoft class
+
+   https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure
+
+1. Initialize a dotnet function:
+
+   <pre><strong>func init --worker-runtime dotnet --force</strong></pre>
+
+
 
    A FunctionApp folder contains:
 

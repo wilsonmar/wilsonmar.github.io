@@ -119,6 +119,10 @@ Alibaba Cloud vs.
 
 Major multi-cloud vendors include Oracle, SalesForce's Heroku, SkyTap, etc.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=r6OFCJ_gux0">VIDEO: The Myth of Multi-cloud</a> by Corey Quinn
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-020t00">Microsoft has a live class: Microsoft Azure solutions for AWS developers</a>
+
 Software for private clouds include Red Hat OpenStack and VMWare. 
 
 Software for hybrid private/public clouds include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, Hashicorp Terraform, and others.
