@@ -651,11 +651,13 @@ Diagnose and solve issues such as:
    Notice it runs on a regional level.
 
 
-## Azure Log Analytics
+<hr />
 
 ## Azure CDN (Content Delivery Network)
 
-Azure's Content Delivery Networks (CDN) offers a way to deliver data efficiently on a global scale. CDNs typically cache content on more than one server in order to guarantee that when a user requests data, the data is on a server close enough to them to minimalize the amount of time the user has to wait for that data. Azure installs CDN data on servers in point-of-presence (POP) locations all around the world to efficiently deliver data, regardless of the user's location. Azure often uses something called a cache, which is a set of previously-stored data, to serve to users, so that new information doesn't have to be requested and received every time. This greatly reduces the latency, or wait time, the end-user experiences.
+Azure's Content Delivery Networks (CDN) delivers data efficiently on a global scale by distributing content on more than one server in order to guarantee that when a user requests data, the data is on a server close enough to them to minimalize the amount of time the user has to wait for that data. 
+
+Azure installs CDN data on servers in point-of-presence (POP) locations all around the world to efficiently deliver data, regardless of the user's location. Azure often uses something called a cache, which is a set of previously-stored data, to serve to users, so that new information doesn't have to be requested and received every time. This greatly reduces the latency, or wait time, the end-user experiences.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview">DOCS</a> 
 <a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing/?context_id=524&context_resource=lp
@@ -733,6 +735,10 @@ Azure's Content Delivery Networks (CDN) offers a way to deliver data efficiently
 
 Most likely you will get a Page not found message, since as you'll recall the CDN stores data in servers around the globe, so propagation can take a bit of time (up to 90 minutes depending on the CDN configuration). That being said, if you were to wait long enough and refresh the page you would see the message you saved in example.html. This is how Azure CDN serves content stored in Azure efficiently to end-users around the world. It is also worth noting that you can use a custom domain with your Azure CDN so you can use your company's web domain rather than the default CDN endpoint ending with .azuredege.net.
 
+https://www.akamai.com/us/en/products/performance/
+
+
+<hr />
 
 ## Video Courses
 

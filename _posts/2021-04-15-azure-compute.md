@@ -114,7 +114,7 @@ https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vs
 1. Region (aka Location).
 1. Billing is by a <strong>App Service Plan</strong>:
 
-   SKU and size defines the pricing tier of the plan. 
+   SKU and size defines the pricing tier of the plan and the <strong>scaling</strong>:
 
    <strong>ACU (App Credit Unit?)</strong>
 
@@ -464,6 +464,8 @@ Provision virtual machines (VMs):
    Naming conventions:
    * Limit 15 chars on Windows VMs
    * Limit 64 chars on Linux VMs
+   Role: sql, web, msg<br />
+   Instance: 01, 02, etc.
    <br /><br />
 
 1. Region: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
@@ -1052,9 +1054,30 @@ https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
 
 ## Event Grid
 
-https://docs.microsoft.com/en-us/azure/event-grid/overview
-https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/application-integratio
-n-using-event-grid
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/event-grid/overview">
+Overview</a> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/solution-ideas/articles/application-integration-using-event-grid">DOCS</a>:
+
+To Create a custom Event Grid topic
+
+    In the Azure portal’s navigation pane, select Create a resource.
+
+    On the New blade, find the Search the Marketplace text box.
+
+    In the search box, enter <strong>Event Grid Topic</strong>, and then select Enter.
+
+    On the Everything search results blade, select the Event Grid Topic result.
+
+    On the Event Grid Topic blade, select Create.
+
+    On the Create Topic blade, perform the following actions:
+
+        In the Name text box, enter hrtopic[yourname].
+
+        In the Resource group section, select Create new, enter PubSubEvents, and then select OK.
+
+        From the Location drop-down list, select the (US) East US region.
+
+        From the Event Schema drop-down list, select Event Grid Schema, and then select Create.
 
 
 

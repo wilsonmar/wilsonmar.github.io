@@ -1397,6 +1397,18 @@ https://www.pulumi.com/blog/get-up-and-running-with-azure-synapse-and-pulumi/
 Container retrieved by Kubernetes.
 
 
+<a name="Redis"></a>
+
+## Redis Cache
+
+Redis is an in-memory database. 
+LIMIT: It caches <strong>values up to 100KB</strong>. 
+It supports longer values with low latency.
+
+From a client, connect with a host name, port, access key.
+Reference access from Key Vault.
+
+
 ## References
 
 https://www.c-sharpcorner.com/article/azure-storage-account-using-azure-cli/

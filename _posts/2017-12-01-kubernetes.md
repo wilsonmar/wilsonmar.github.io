@@ -5671,6 +5671,10 @@ A cgroup (control group) is a group of Linux processes with optional resource is
    * In https://kubernetes.io/docs/concepts/secret/#best-practices
    * https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data Enable encryption at rest for cluster data
 
+<a target="_blank" href="https://banzaicloud.com/blog/inject-secrets-into-pods-vault-revisited/">
+Banzai cloud vault</a> uses a mutating admission webhook to inject an executable into containers inside Pods, which then request secrets from Hashicorp Vault through special environment variable definitions. This project was inspired by a number of other projects (e.g. channable/vaultenv, hashicorp/envconsul), but one thing that makes it unique is that it is a daemonless solution.
+
+
 ### Base64 Encoding
 
 What Kubernetes calls its secrets are actually Base64 encoded text.

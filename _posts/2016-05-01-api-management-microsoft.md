@@ -477,7 +477,34 @@ videos
 https://azure.microsoft.com/en-us/documentation/samples/?service=service-fabric
 Sample apps
 
-## Logic Apps
+
+## API CLI
+
+https://docs.microsoft.com/en-us/cli/azure/apim/api?view=azure-cli-latest
+
+<pre>az apim create --name MyApim22 -g apim-rg -l westus2 --publisher-email (youremail)--publisher-name (yourname)
+</pre>
+
+https://feedback.azure.com/forums/248703-api-management/suggestions/36832033-programmatically-import-azure-function-into-apim
+
+
+https://cloudywithachanceofbigdata.com/using-the-azure-cli-to-create-an-api-using-a-function-app-within-api-management/
+
+Associate the API with a product (which is how you can rate limit APIs):
+
+<pre>az apim product api add \
+--api-id $fnName \
+--product-id starter \
+--resource-group $rgName \
+--service-name $apimName
+</pre>
+
+
+## APIM Policies
+
+https://docs.microsoft.com/en-us/azure/api-management/api-management-policies
+
+Need at least one "when" statement.
 
 
 ## Resources
@@ -487,7 +514,6 @@ Sample apps
   is a set of scripts and knowledge for automated deployment of 
   System Center 2012 SP1/R2, including SQL and all prerequisites,
   and all automatable post-setup integration.
-
 
 
 ## More on DevOps #

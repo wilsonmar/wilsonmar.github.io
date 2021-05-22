@@ -644,7 +644,6 @@ PROTIP: <a target="_blank" href="https://learning.oreilly.com/videos/microsoft-a
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/">Connect services together</a>
    <br /><br />
 
-
 Develop for Azure storage (15-20%)
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">Store Data in Azure</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/">Secure Your Cloud Data</a>
@@ -691,26 +690,52 @@ Questions:
 
 ## AZ-303 Azure Architect Technologies
 
-AZ-104 is not a pre-requisite but covers same topics more conceptually.
+Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
 
-Previously AZ-300, $165 for 2-3 hours
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303</a>
+is the official description ($165 for 2-3 hours) and text tutorial.
 
-Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
+NOTE: AZ-303 replaces <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-300-MicrosoftAzureArchitectTechnologies">AZ-300</a>, and 
+AZ-104 is not a pre-requisite but covers same topics more conceptually than this.
 
-https://github.com/MicrosoftLearning/AZ-300-MicrosoftAzureArchitectTechnologies
+Microsoft's 4-day live class covers these modules, with <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/">lab scenarios</a> defined in <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a> 
 
-https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies
+1. Implement Azure Active Directory
+2. Implement and Manage Hybrid Identities
+3. Implement Virtual Networking
+4. Implement VMs for Windows and Linux
+5. Implement <strong>Load Balancing and Network Security</strong> 
 
+   LAB: Implementing Highly Available Azure IaaS Compute Architecture
 
-<a target="_blank" href="
-https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies">
-https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies</a>
+6. Implement Storage Accounts 
 
-<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_1">
-14h videos on OReilly: Skylines Academy Oct 2020</a> by Nick Colyer (<a target="_blank" href="https://www.facebook.com/groups/azurestudygroup/">StudyGroup</a>)
+   LAB: Implementing and Configuring Azure Storage File and Blob Services
+
+7. Implement NoSQL Databases
+9. Automate Deployment and Configuration of Resources
+10. Implement and Manage Azure Governance Solutions LAB: Managing Azure Role-Based Access Control
+
+11. Manage Security for Applications
+12. Manage Workloads in Azure 
+
+    LAB:  Protecting Hyper-V VMs by using Azure Site Recovery
+
+13. Implement Container-Based Applications
+
+14. Implement an Application Infrastructure 
+
+    LAB: Implementing an Azure App Service Web App with a Staging Slot and 
+
+    LAB: Configuring a Message-Based Integration Architecture
+
+15. Implement Cloud Infrastructure Monitoring
+<br /><br />
+
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303">
+14h videos on OReilly: Skylines Academy Oct 2020</a> by Nick Colyer (who have a <a target="_blank" href="https://www.facebook.com/groups/azurestudygroup/">StudyGroup on Facebook</a>)
 
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
 6 hr LIVE on OReilly: Tim Warner</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram</a>.
@@ -735,14 +760,15 @@ How I cleared Microsoft AZ 303 in just three weeks!</a>
 by Here Is Cloud
 
 Practice tests:
+   * <a target="_blank" href="https://www.whizlabs.com/learn/course/microsoft-azure-az-303/">https://www.whizlabs.com/learn/course/microsoft-azure-az-303</a>
    * <a target="_blank" href="https://www.mindhub.com/az-303-microsoft-azure-architect-technologies-microsoft-official-practice-test/p/MU-AZ-303">Mindhub.com</a> THANKS280658
-
-https://www.whizlabs.com/learn/course/microsoft-azure-az-303/
 
 
 <a name="AZ-304"></a>
 
 ## AZ-304 Azure Architect Design
+
+Passing this and the more hands-on AZ-303 makes you a Microsoft Certified Azure Solutions Architect Expert.
 
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-304">
@@ -750,10 +776,10 @@ https://docs.microsoft.com/en-us/learn/certifications/exams/az-304</a>
 120 minutes to answer 40-60 business case scenario questions.
 
 Topics:
-* Cost Optimization (cheapest approach),
-* Migration Planning,
-* Governance,
-* Data Integration,
+* Cost Optimization (cheapest approach)
+* Migration Planning
+* Governance
+* Data Integration
 * Application Architecture
 <br /><br />
 
@@ -762,7 +788,16 @@ Links to Microsoft docs for each item in the syllubus are detailed by<br />
 https://www.azurebarry.com/prepare-for-the-az304-exam/">
 https://www.azurebarry.com/prepare-for-the-az304-exam</a>
 
-https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design
+Labs at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a>
+
+-3. LAB: Migrating Hyper-V VMs to Azure by using Azure Migrate
+
+-4. LAB: Managing Azure AD Authentication and Authorization
+
+-6. LAB: Implementing Azure SQL Database-Based Applications
+
+-13. LAB: Implement Azure Logic Apps Integration with Azure Event Grid
+
 
 <a target="_blank" href="
 https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">

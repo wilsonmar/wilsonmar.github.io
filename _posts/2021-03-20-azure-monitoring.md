@@ -19,13 +19,15 @@ comments: true
 
 Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#Monitor">Azure Monitor</a>
+   
+   * <a href="#Metrics_Explorer">Metrics Explorer</a> receives metrics
    * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
+
    * <a href="#Security_Center">Azure Security Center</a>
    * <a href="#Azure_Defender">Azure Defender</a>
    * <a href="#AppInsights">Azure Application Insights</a>
    * <a href="#Event_Hubs">Azure Event Hubs</a>
    * <a href="#Defender">Microsoft Defender</a>
-   * <a href="#Metrics_Explorer">Metrics Explorer</a>
    * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
    * <a href="#NPM">Azure Network Performance Monitor</a>
    <br /><br />

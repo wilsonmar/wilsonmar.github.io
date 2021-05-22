@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "IoT Apprentice School"
-excerpt: "How to enable people to make money and satisfied customers with IoT"
+title: "IoT Solutions (for you)"
+excerpt: "Ways to automate your life. We can do this with IoT"
 tags: [IoT, Raspberry, Mono, Mac]
 date: "2016-11-24"
-file: "iot-apprentice"
+file: "iot-your-way"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Useful tools people buy
+## Useful tools people really need
 
 Our objective is to make innovations available to the public
 by putting together teams that make things for sale.
@@ -24,15 +24,30 @@ by putting together teams that make things for sale.
 We want to make things that make a difference,
 products that help people and organizations save time and money, safely.
 
-Below are ideas for various products, with an outline for how to put them together.
+The solutions below contain an outline for how we put them together.
 
-The products are sequenced in rough order of production capability (maturity).
+1. <a href="#SDCards">Configured SD cards</a>
+2. <a href="#Enclosures">Custom enclosures</a>
+3. <a href="#Dashboard">Cloud-connected dashboard TVs</a>
+4. <a href="#AlertingButton">Cloud-connected button</a>
+5. <a href="#DataServer">Local redundant data server</a>
+6. <a href="#AlertingSensor">Predictive alerts from sensors</a>
+7. <a href="#Camera">Recordings with cameras</a>
+8. <a href="#MediaProcessor">Media file processor service</a>
+9. <a href="#Autonomous">Autonomous outdoor device</a>
+10. <a href="#ControlSmartPhone">Mobile phone remote control</a>
+11. <a href="#ControlLights">Control Lights</a>
+12. <a href="#HomeAutomation">Custom home automation programming</a>
+13. <a href="#MoveThings">Move things with actuators</a>
+14. <a href="#DroneFlights">Custom drone flights</a>
+15. <a href="#SatelliteFileTransfer">Satellite File Transfers</a>
+
 
 <a name="SDCards"></a>
 
-### PRODUCT 1 - Configured SD cards
+### SOLUTION 1 - Configured SD cards
 
-MAKE FOR SALE: A SD card to run your Raspberry Pi customized with the utilities and
+A SD card to run your Raspberry Pi customized with the utilities and
 applications you need (and without junk you don't).
 Just select what you want on our one-page webite 
 and our automated script builds it for you.
@@ -60,9 +75,9 @@ Two cards in case one goes bad.
 
 <a name="Enclosures"></a>
 
-### PRODUCT 2 - Custom enclosures
+### SOLUTION 2 - Custom enclosures
 
-MAKE FOR SALE: A custom-made enclosure for a Raspberry Pi 
+A custom-made enclosure for a Raspberry Pi 
 with cooling fan, on/off switch, and additional board for
 long-range communications 
 using cell phone signals, Zigbee, or other advanced board.
@@ -84,9 +99,9 @@ This is needed to both dissipate heat and protect the device from dust, moisture
 
 <a name="Dashboard"></a>
 
-### PRODUCT 3 - Cloud-connected dashboard TVs
+### SOLUTION 3 - Cloud-connected dashboard TVs
 
-MAKE FOR SALE: Plug a device on a TV to display (on a schedule)
+Plug a device on a TV to display (on a schedule)
 <strong>dashboards</strong> by monitoring software 
 (Elasticsearch Kibana, Grafana, AppDynamics, New Relic, Dynatrace, Nagios, SAP, etc.)
 
@@ -106,9 +121,9 @@ MAKE FOR SALE: Plug a device on a TV to display (on a schedule)
 
 <a name="AlertingButton"></a>
 
-### PRODUCT 4 - Cloud-connected button
+### SOLUTION 4 - Cloud-connected button
 
-MAKE FOR SALE: A button on bathroom exits that when pressed, 
+A button on bathroom exits that when pressed, 
 sends an SMS or email to whoever <strong>you pre-configure</strong>.
 
 <img alt="iot cloud laptop cut 237x165" width="650" src="https://cloud.githubusercontent.com/assets/300046/20649349/2fa61412-b47b-11e6-996e-e68ee591fb26.png">
@@ -124,9 +139,9 @@ sends an SMS or email to whoever <strong>you pre-configure</strong>.
 
 <a name="DataServer"></a>
 
-### PRODUCT 5 - Local redundant data server
+### SOLUTION 5 - Local redundant data server
 
-MAKE FOR SALE: A server that never sleeps in your home or office,
+A server that never sleeps in your home or office,
 to house a duplicate of what is on your laptop, 
 without fees for cloud access.
 
@@ -146,9 +161,9 @@ without fees for cloud access.
 
 <a name="AlertingSensor"></a>
 
-### PRODUCT 6 - Predictive alerts from sensors
+### SOLUTION 6 - Predictive alerts from sensors
 
-MAKE FOR SALE: A buzzer or flashing light
+A buzzer or flashing light
 to alert you whenever an event of your choosing is detected.
 
 0. Connect a buzzer to the Pi
@@ -162,9 +177,9 @@ to alert you whenever an event of your choosing is detected.
 
 <a name="Camera"></a>
 
-### PRODUCT 7 - Recordings with cameras
+### SOLUTION 7 - Recordings with cameras
 
-MAKE FOR SALE: Take photos periodically and relay them to a server
+Take photos periodically and relay them to a server
 
 0. Identify options for recording images and video with sound
 0. Consider implications for constant-on webcams
@@ -180,9 +195,9 @@ Movidius Neural Computer Stick
 
 <a name="MediaProcessor"></a>
 
-### PRODUCT 8 - Media file processor service
+### SOLUTION 8 - Media file processor service
 
-MAKE FOR SALE: Intelligently process photos and movies locally or in the cloud
+Intelligently process photos and movies locally or in the cloud
 
 0. Process media locally on a Pi
 0. Send media to a public cloud
@@ -195,9 +210,9 @@ MAKE FOR SALE: Intelligently process photos and movies locally or in the cloud
 
 <a name="Autonomous"></a>
 
-### PRODUCT 9 - Autonomous outdoor device
+### SOLUTION 9 - Autonomous outdoor device
 
-MAKE FOR SALE: A device powered by battery and solar panel
+A device powered by battery and solar panel
 to move camera on a rail for 
 <a target="_blank" href="https://learn.adafruit.com/touchscreen-pi-timelapse-controller">
 time-lapse videos</a>
@@ -212,9 +227,9 @@ time-lapse videos</a>
 
 <a name="ControlSmartPhone"></a>
 
-### PRODUCT 10 - Mobile phone remote control
+### SOLUTION 10 - Mobile phone remote control
 
-MAKE FOR SALE: Control your smart phone remotely,
+Control your smart phone remotely,
 such as make it ring so you can find it.
 
 0. Design interfaces
@@ -227,9 +242,9 @@ such as make it ring so you can find it.
 
 <a name="ControlLights"></a>
 
-### PRODUCT 11 - Control Lights 
+### SOLUTION 11 - Control Lights 
 
-MAKE FOR SALE: Control the lights in your home remotely the way you want.
+Control the lights in your home remotely the way you want.
 such as turn lights off or on with different colors.
 We configure it for you to just plug in and it works.
 
@@ -245,9 +260,9 @@ We configure it for you to just plug in and it works.
 
 <a name="HomeAutomation"></a>
 
-### PRODUCT 12 - Custom home automation programs
+### SOLUTION 12 - Custom home automation programs
 
-MAKE FOR SALE: Control your home remotely the way you want.
+Control your home remotely the way you want.
 We configure it for you to just plug in and it works.
 
 0. Configure the Pi as a Media server to serve music, movies, and pictures
@@ -261,9 +276,9 @@ We configure it for you to just plug in and it works.
 
 <a name="MoveThings"></a>
 
-### PRODUCT 13 - Move things with actuators
+### SOLUTION 13 - Move things with actuators
 
-MAKE FOR SALE: Make things that move on a schedule or event of your choosing.
+Make things that move on a schedule or event of your choosing.
 
 0. Compare Pi vs. Arduino and others
 0. Calculate physics formulas for space, weight, and volume
@@ -273,9 +288,9 @@ MAKE FOR SALE: Make things that move on a schedule or event of your choosing.
 
 <a name="DroneFlights"></a>
 
-### PRODUCT 14 - Custom drone flights
+### SOLUTION 14 - Custom drone flights
 
-MAKE FOR SALE: A device that can move on its own,
+A device that can move on its own,
 custom configured to your needs.
 
 0. Evaluate various drones (costs vs. advantages)
@@ -290,9 +305,9 @@ custom configured to your needs.
 
 <a name="SatelliteFileTransfer"></a>
 
-### PRODUCT 15 - Satellite File Transfers
+### SOLUTION 15 - Satellite File Transfers
 
-MAKE FOR SALE: A device that receives and sends files to the two 98W satellites in outer space over the US and Europe.
+A device that receives and sends files to the two 98W satellites in outer space over the US and Europe.
 
 This is a hobbyist fascination for nerdy bragging rights.
 
