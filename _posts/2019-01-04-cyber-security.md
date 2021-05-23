@@ -1257,40 +1257,10 @@ A threat modeling program continually reassess the threat environment, including
    4. Rank the threats
    <br /><br />
 
-<a target="_blank" href="https://attack.mitre.org/">https://attack.mitre.org</a>
-Sinc3 2013, MITRE's ATT&CK process looks at tactics, techniques, and procedures (TTPs) for Enterprise IT:
-   1. <strong>Reconnaissance</strong>
-   2. Resource Development (new)
-   3. Initial Access (Intrusion)
-   4. Execution (<strong>Exploitation</strong>)
-   5. Persistence (new)
-   6. <strong>Privilege Escalation</strong>
-   7. Defense Evasion (Obfuscation Anti-forensics)
-   8. Credential Access
-   9. Discovery (new)
-   10. <strong>Lateral Movement</strong>
-   11. Collection (new)
-   12. Command and Control (<strong>Denial of service</strong>)
-   13. <strong>Exfiltration</strong>
-   14. Impact (new)
-   <br /><br />
 
-<a target="_blank" href="https://www.dragos.com/">Dragos</a> <a target="_blank" href="https://hub.dragos.com/hubfs/Whitepaper-Downloads/Mapping-Industrial-Cybersecurity-Threats-to-MITRE-ATTACK-for-ICS.pdf">PDF: ATT&CK for IoC</a> (Industrial Control Systems):
-   1. Initial access
-   1. Execution
-   1. Persistence
-   1. Evasion 
-   1. Discovery
-   1. Lateral Movement
-   1. Collection
-   1. Command and Control
-   1. Inhibit response function [+]
-   1. Impair process control [+]
-   1. Impact process
-   <br /><br />
+### Microsoft's STRIDE
 
-Microsoft Threat Model Tool - dataflow diagrams that reflect potential threats. 
-It uses STRIDE as a memonic for classification of threats in an application:
+Microsoft Threat Model Tool uses "STRIDE" as a memonic for classification of threats in an application:
    * Spoofing of user identity
    * Tampering
    * Repudiation
@@ -1298,6 +1268,64 @@ It uses STRIDE as a memonic for classification of threats in an application:
    * Denial of service (DoS)
    * Elevation of privilege
    <br /><br />
+
+<a name="Dragos"></a>
+
+### MITRE ATT&CK & Dragos
+
+Since 2013, MITRE's ATT&CK process looks at tactics, techniques, and procedures (TTPs) for Enterprise IT. 
+
+<a target="_blank" href="https://www.dragos.com/">Dragos</a> <a target="_blank" href="https://hub.dragos.com/hubfs/Whitepaper-Downloads/Mapping-Industrial-Cybersecurity-Threats-to-MITRE-ATTACK-for-ICS.pdf">PDF: ATT&CK for IoC</a> (Industrial Control Systems)
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th><a target="_blank" href="https://attack.mitre.org/">MITRE</a>
+   </th><th> <a href="#Dragos">Dragos ICS</a>
+   </th></tr>
+<tr valign="top"><td> 1. <strong>Reconnaissance</strong> 
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> 2. Resource Development (new)
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> 3. Initial Access [Intrusion]
+   </td><td>1. Initial access
+   </td></tr>
+<tr valign="top"><td> 4. <strong>Execution</strong> [Exploitation]
+   </td><td>2. Execution
+   </td></tr>
+<tr valign="top"><td> 5. Persistence [new]
+   </td><td>3. Persistence
+   </td></tr>
+<tr valign="top"><td> 6. <strong>Privilege Escalation</strong>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> 7. Defense Evasion (Obfuscation Anti-forensics)
+   </td><td>4. Evasion 
+   </td></tr>
+<tr valign="top"><td> 8. Credential Access
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> 9. Discovery [new]
+   </td><td>5. Discovery
+   </td></tr>
+<tr valign="top"><td> 10. <strong>Lateral Movement</strong>
+   </td><td>6. Lateral Movement
+   </td></tr>
+<tr valign="top"><td> 11. Collection [new]
+   </td><td>7. Collection
+   </td></tr>
+<tr valign="top"><td> 12. <strong>Command and Control</strong> [Denial of service]
+   </td><td>8. Command and Control
+   </td></tr>
+<tr valign="top"><td> 13. <strong>Exfiltration</strong>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> 14. Impact [new]
+   </td><td>9. Inhibit response function [+]<br />
+      10. Impair process control [+]<br />
+      11. Impact process
+   </td></tr>
+</table>
 
 DREAD   
 

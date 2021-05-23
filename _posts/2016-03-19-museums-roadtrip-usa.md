@@ -78,21 +78,22 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 
 ## Down the Atlantic Eastern Seaboard
 
-This is where America began as colonies of England (until 1776).
+This is where the United States of America began as colonies of England.
 
 <a name="ME"></a>
 
 > <strong> Maine </strong>
 
 <ul>
-<li><a target="_blank" href="https://www.bates.edu/museum.xml">Bates Museum of Art</a>, Lewiston</li>
+<li><a target="_blank" href="https://www.bates.edu/museum/">Bates Museum of Art</a>, Lewiston</li>
 <li><a target="_blank" href="https://www.bowdoin.edu/art-museum/">Bowdoin College Museum of Art</a>, Brunswick</li>
 <li><a target="_blank" href="https://www.colby.edu/museum/">Colby College Museum of Art</a>, Waterville</li>
-<li><a target="_blank" href="https://farnsworthmuseum.org/">Farnsworth Art Museum</a>, Rockland</li>
-<li><a target="_blank" href="https://www.umaine.edu/hudsonmuseum/">Hudson Museum at the University of Maine</a>, Orono</li>
+<li><a target="_blank" href="https://www.farnsworthmuseum.org/">Farnsworth Art Museum</a>, Rockland</li>
+<li><a target="_blank" href="https://umaine.edu/hudsonmuseum/">Hudson Museum at the University of Maine</a>, Orono</li>
 <li><a target="_blank" href="https://www.portlandmuseum.org/">Portland Museum of Art</a></li>
-<li><a target="_blank" href="https://www.umma.umaine.edu/">University of Maine Museum of Art</a>, Orono</li>
-<li>Artemus Ward House, Waterford Maine</li>
+<li><strike>University of Maine Museum of Art</strike>, Orono</li>
+<li><a target="_blank" href="https://www.mainememory.net/artifact/8707">Artemus Ward House</a>, Waterford Maine</li>
+<li type="circle">Maple syrup creamies!</li>
 </ul>
 
 <a name="NH"></a>
@@ -145,36 +146,36 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li>Edith Wharton's The Mount, Lenox</li>
 <li><a target="_blank" href="https://www.museumofbadart.org/">Museum of Bad Art</a>, Dedham</li>
 <li><a target="_blank" href="https://www.bc.edu/bc_org/avp/cas/artmuseum/">McMullen Museum of Art at Boston College</a>, Chestnut Hill</li>
-<li><a target="_blank" href="https://www.wellesley.edu/DavisMuseum/davismenu.html">Davis Museum and Cultural Center at Wellesley College</a>, in Wellesley, MA</li>
-<li><a target="_blank" href="https://www.danforthmuseum.org/">Danforth Museum of Art</a>, Framingham</li>
+<li><a target="_blank" href="https://www.wellesley.edu/DavisMuseum/">Davis Museum and Cultural Center at Wellesley College</a>, in Wellesley, MA</li>
+<li><strike>Danforth Museum of Art</strike>, Framingham</li>
 <li><a target="_blank" href="https://www.worcesterart.org/">Worcester Art Museum</a></li>
-<li><a target="_blank" href="https://www.osv.org/">Old Sturbridge Village</a></li>
-<li><a target="_blank" href="https://www.nrm.org/">Norman Rockwell Museum</a>, Stockbridge</li>
+<li><a target="_blank" href="https://www.osv.org/"><strong>Old Sturbridge Village</strong></a></li>
+<li><a target="_blank" href="https://www.nrm.org/"><strong>Norman Rockwell Museum</strong></a>, Stockbridge</li>
 <li><a target="_blank" href="https://artmuseum.mtholyoke.edu/">Mount Holyoke College Art Museum</a>, South Hadley</li>
 <li><a target="_blank" href="https://www.berkshiremuseum.org/">Berkshire Museum</a>, Pittsfield</li>
 <li type="square">Herman Melville's Arrowhead, Pittsfield</li>
-<li><a target="_blank" href="https://www.quadrangle.org/">The Springfield Museums at the Quadrangle</a></li>
-<li>Dr. Seuss Memorial, Springfield</li>
+<li><a target="_blank" href="https://springfieldmuseums.org/">The Springfield Museums at the Quadrangle</a></li>
+<li><a target="_blank" href="https://springfieldmuseums.org/about/dr-seuss-museum/">Dr. Seuss Memorial</a>, Springfield</li>
 <li type="square">Site of Thoreau's Cabin, Walden Pond, Concord</li>
 <li type="square">Wayside (home of Nathaniel Hawthorne, Louisa May Alcott, and Margaret Sidney), Concord</li>
 <li type="square">Ralph Waldo Emerson Home, Concord</li>
-<li type="square">Louisa May Alcott's Orchard House, Concord</li>
+<li><a target="_blank" href="https://louisamayalcott.org/">Louisa May Alcott's Orchard House</a>, Concord</li>
 </ul>
 
 ### Northward Mass up 95:
 
 <ul>
 <li><a target="_blank" href="https://www.griffinmuseum.org/">Griffin Museum of Photography</a>, Winchester</li>
-<li><a target="_blank" href="https://www.tufts.edu/as/gallery/">Tufts University Gallery</a>, Medford</li>
+<li><a target="_blank" href="https://artgalleries.tufts.edu/">Tufts University Gallery</a>, Medford</li>
 <li><a target="_blank" href="https://www.whistlerhouse.org/">Whistler House Museum Of Art</a>, Lowell</li>
-<li><a target="_blank" href="https://www.addisongallery.org/"><strong>Addison Gallery of American Art</strong></a>, Andover</li>
+<li><a target="_blank" href="https://addison.andover.edu/"><strong>Addison Gallery of American Art</strong></a>, Andover</li>
 <li><a target="_blank" href="https://www.pem.org/">Peabody Essex Museum</a>, Salem</li>
 </ul>
 
 ### SouthEast of Boston on 3 to the tip:
 
 <ul>
-<li><a target="_blank" href="https://www.fullermuseum.org/">Fuller Craft Museum</a>, Brockton</li>
+<li><a target="_blank" href="https://fullercraft.org/">Fuller Craft Museum</a>, Brockton</li>
 <li><a target="_blank" href="https://www.artcomplex.org/">The Art Complex Museum</a>, Duxbury</li>
 <li><a target="_blank" href="https://www.plimoth.org/">Plimoth Plantation, Plymouth</a></li>
 <li><a target="_blank" href="https://www.pilgrimhall.org/">Pilgrim Hall Museum</a>, Plymouth</li>
@@ -380,6 +381,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <br />
 <li type="circle">Ristorante Pesto</li>
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
+<li type="circle">Zahav restaurant of Israeli cuisine, Philadelphia</li>
 </ul>
 
 ### Pittsburgh:
@@ -511,9 +513,10 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <ul>
 <li><a target="_blank" href="https://ashevilleart.org/">Asheville Art Museum</a></li>
 <li><a target="_blank" href="https://www.biltmore.com/our-story/">Biltmore Estate</a>, the largest privately-owned house in America, built by George Vanderbilt, Asheville</li> 
-<li>In Asheville, a McDonald's with a piano inside</li>
+<li type="circle">In Asheville, the fanciest McDonald's in America (with a piano and fireplace)</li>
 
 <li><a target="_blank" href="https://www.ackland.org/">Ackland Art Museum at the University of North Carolina</a>, Chapel Hill</li>
+<li type="circle">Lantern restaurant, Chapel Hill</li>
 <li><a target="_blank" href="https://www.duke.edu/web/duma/">Duke University Museum of Art</a>, Durham</li>
 
 <li><a target="_blank" href="https://www.guilford.edu/original/libraryart/artgallery/Art.html">Guilford College Art Gallery</a>, Greensboro</li>
@@ -544,6 +547,8 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <li><a target="_blank" href="https://www.brookgreen.org/bridge.html">Huntington Sculpture Garden</a>, Pawleys Island</li>
 <li><a target="_blank" href="https://www.spartanburgartmuseum.org/">Spartanburg County Museum of Art</a></li>
 <li><a target="_blank" href="https://www.nps.gov/fosu/">Fort Sumter National Monument</a>, Sullivan's Island</li>
+<li type="circle">FIG restaurant, Charleston</li>
+<li type="circle">Husk restaurant (Southern food), Charleston</li>
 </ul>
 
 <a name="GA"></a>
@@ -565,11 +570,13 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <li><a target="_blank" href="https://museum.oglethorpe.edu/">Oglethorpe University Museum</a>, Atlanta</li>
 <li><a target="_blank" href="https://www.jimmycarterlibrary.gov/">
 Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
+<li type="center">Staplehouse restaurant, Atlanta</li>
 </ul>
 
 <ul>
 <li><a target="_blank" href="https://www.themorris.org/">Morris Museum of Art</a>, Augusta</li>
 <li><a target="_blank" href="https://www.telfair.org/">Telfair Museum of Art</a>, Savannah</li>
+<li type="circle">The Grey, Savannah</li>
 </ul>
 
 <a name="FL"></a>
@@ -584,6 +591,7 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 <li><a target="_blank" href="https://www.tampagov.net/dept_Museum/">Tampa Museum of Art</a></li>
 <li><a target="_blank" href="https://cam.arts.usf.edu/">University of South Florida Contemporary Art Museum</a>, Tampa</li>
+<li type="circle">Bern's Steak House, Tampa</li>
 
 <li><a target="_blank" href="https://floridamuseum.org/">Florida International Museum</a>, St. Petersburg</li>
 <li><a target="_blank" href="https://www.fine-arts.org/">Museum of Fine Arts</a>, St. Petersburg</li>
@@ -659,9 +667,9 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
 
-Viking River Cruises has, an <a target="_blank" href="https://viking.tv/index/story/mississippi-americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul:
-<img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a>
-and a "Hearth of the Delta" cruise from New Orleans to Memphis, with stops in the Vicksburg battlegrounds.
+Viking River Cruises has, an <a target="_blank" href="https://viking.tv/tv/viking-journeys/americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul:<br />
+<img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a><br />
+and a <a target="_blank" href="https://viking.tv/tv/viking-journeys/heart-of-the-delta">Hearth of the Delta" cruise</a> from New Orleans to Memphis, with stops in the Vicksburg battlegrounds.
 
 
 
@@ -703,6 +711,7 @@ and a "Hearth of the Delta" cruise from New Orleans to Memphis, with stops in th
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/au-cheval">Au Cheval burgers</a> <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-6">[#29]</a></li>
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/fat-rice">Fat Rice</a>, Chicago <a target="_blank" href="https://www.thedailymeal.com/eat/101-best-casual-restaurants-america-2018-gallery/slide-74">[#58]</a></li>
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/red-apple-1">Red Apple Buffet</a></li>
+<li type="circle">Alinea</a> (the Best Restaurant in the US)</li>
 </ul>
 
 
@@ -752,6 +761,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.knoxart.org/">Knoxville Museum of Art</a></li>
 <li><a target="_blank" href="https://mcclungmuseum.utk.edu/">McClung Museum at the University of Tennesse</a>, Knoxville</li>
 <li><a target="_blank" href="https://www.dollywood.com/">Dollywood</a> (amusement park), Pigeon Forge</li>
+<li type="circle">The Barn at Blackberry Farm, Walland, Tennessee</li>
 </ul>
 
 ### Nashville:
@@ -772,6 +782,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.memphis.edu/egypt/">University of Memphis Institute of Egyptian Art and Archaeology</a></li>
 <li><a target="_blank" href="https://www.graceland.com/">Elvis Prestly's Graceland</a></li>
 <li>Sun Records</li>
+<li type="circle"><a target="_blank" href="https://www.tripadvisor.com/Restaurant_Review-g55197-d1409484-Reviews-Flight_Restaurant_and_Wine_Bar-Memphis_Tennessee.html">Flight restaurant</a>, Memphis</li>
 </ul>
 
 <a name="AR"></a>
@@ -821,12 +832,16 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 > <strong> Alabama </strong>
 
 <ul>
-<li><a target="_blank" href="https://www.asama.org/">American Sport Art Museum and Archives</a>, Daphne</li>
-<li><a target="_blank" href="https://www.ARTSbma.org/">Birmingham Museum of Art</a></li>
 <li><a target="_blank" href="https://www.hsvmuseum.org/">Huntsville Museum of Art</a></li>
-<li><a target="_blank" href="https://www.mobilemuseumofart.com/">Mobile Museum of Art</a></li>
+
+<li><a target="_blank" href="https://www.ARTSbma.org/">Birmingham Museum of Art</a></li>
+<li type="circle">Highlands Bar & Grill, Birmingham</li>
+
 <li><a target="_blank" href="https://www.fineartsmuseum.com/">Montgomery Museum of Fine Arts</a></li>
+<li type="center">Acre, Auburn</li>
+<li><a target="_blank" href="https://www.asama.org/">American Sport Art Museum and Archives</a>, Daphne</li>
 <li><a target="_blank" href="https://www.wiregrassmuseumoart.org/">Wiregrass Museum of Art</a>, Dothan</li>
+<li><a target="_blank" href="https://www.mobilemuseumofart.com/">Mobile Museum of Art</a></li>
 </ul>
 
 <hr />
@@ -957,6 +972,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 <ul>
 <li><a target="_blank" href="https://www.toledomuseum.org/"> Toledo Museum of Art</a></li>
+<li type="center"><a target="_blank" href="https://www.opentable.com/table-128-bistro-and-bar">Table 128 Bistro</a>, Toledo</li>
 </ul>
 
 ### Cincinnati:
@@ -991,6 +1007,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.ima-art.org/">Indianapolis Museum of Art</a></li>
 <li><a target="_blank" href="https://www.namos.iupui.edu/">National Art Museum of Sport at Indiana University</a>, Indianapolis</li>
 <li><a target="_blank" href="https://www.richmondartmuseum.org/">Richmond Art Museum</a></li>
+<li type="center">Alewife restaurant, Richmond</li>
+
 <li><a target="_blank" href="https://www.indplsartcenter.org/">Indianapolis Art Center</a></li>
 <li> Indianapolis Museum of Art</li>
 </ul>
@@ -1088,6 +1106,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.willamette.edu/museum_of_art/">Hallie Ford Museum of Art at Willamette University</a>, Salem</li>
 <li><a target="_blank" href="https://www.pam.org/">Portland Art Museum</a></li>
 <li><a target="_blank" href="https://www.pica.org/">Portland Institute for Contemporary Art</a></li>
+<li type="circle">Le Pigeon (Le Pigeon burger), Portland</li>
 <li><a target="_blank" href="https://www.sou.edu/sma/">Schneider Museum of Art at Southern Oregon University</a>, Ashland</li>
 <li><a target="_blank" href="https://uoma.uoregon.edu/">University of Oregon Museum of Art</a>, Eugene </li>
 </ul>
@@ -1100,6 +1119,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 
 <ul>
 <li><a target="_blank" href="https://www.crockerartmuseum.org/">Crocker Art Museum</a>, Sacramento</li>
+<li type="center">The Kitchen Restaurant, Sacramento</li>
 <li><a target="_blank" href="https://www.hagginmuseum.org/">Stockton - Haggin Museum</a></li>
 <li><a target="_blank" href="https://www.svma.org/">Sonoma Valley Museum of Art</a>, Sonoma</li>
 <li><a target="_blank" href="https://www.sonoma.edu/ArtGallery/default.html">Sonoma State University Art Gallery</a>, Rohnert Park</li>
@@ -1237,6 +1257,7 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 <li><a target="_blank" href="https://www.sandiego-art.org/">San Diego Art Institute</a></li>
 <li><a target="_blank" href="https://stuartcollection.ucsd.edu/">Stuart Collection of Sculpture at U.C. San Diego</a></li>
 <li><a target="_blank" href="https://www.sdmart.org/">San Diego Museum Of Art</a></li>
+<li type="circle"><a target="_blank" href="https://www.opentable.com/addison-restaurant">Addison (restaurant)</a>, Del Mar, San Diego</li>
 </ul>
 
 
@@ -1373,6 +1394,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="https://www.artsmia.org/">Minneapolis Institute of Arts</strong></a></li>
 <li><a target="_blank" href="https://www.walkerart.org/">Walker Art Center</a>, Minneapolis</li>
 <li><a target="_blank" href="https://www.weisman.umn.edu/">Weisman Art Museum at the University of Minnesota</a>, Minneapolis</li>
+<li type="circle">Spoon and Stable restaurant, Minneapolis</li>
 </ul>
 
 ### St. Paul:
@@ -1445,7 +1467,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 > <strong> Idaho </strong>
 
 <ul>
-<li><a target="_blank" href="https://www.boiseartmuseum.org/">Boise Art Museum</a></li>
+<li><a target="_blank" href="http://www.boiseartmuseum.org/">Boise Art Museum</a></li>
 </ul>
 
 
@@ -1590,6 +1612,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <li><a target="_blank" href="https://www.leanintreemuseum.com/">Leanin' Tree Museum of Western Art</a>, Boulder</li>
 <li><a target="_blank" href="https://www.fine-art.com/museum/moa.html">The Museum of Outdoor Arts</a>, Englewood</li>
 <li><a target="_blank" href="https://www.usbr.gov/lc/hooverdam/">Hoover Dam</a>, Boulder City</li>
+<li type="circle">Frasca Food & Wine, Boulder</li>
 </ul>
 
 ### Denver:

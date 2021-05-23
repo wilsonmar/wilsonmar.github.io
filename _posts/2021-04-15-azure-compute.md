@@ -107,20 +107,34 @@ https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vs
 1. In a browser, go to <a target="blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites">"App Services"</a> from the Home menu or in Search.
 
 1. Click blue "Create app service"
-1. Specify Subscription, Resource Group, Name.
-1. The method to publish your app. Also configure the Runtime stack.
+1. Specify Subscription, Resource Group, 
+
+   Name: PROTIP: Include the VM Slot Tier (see below).
+
+1. The method to publish your app. Also configures the Runtime stack.
 1. Select a Runtime stack (.NET Core 3.1 (LTS)) - the platform on which the app runs.
 1. The operating system: Linux or Windows. Some runtime stacks supports only one.
+
+   <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros">Linux Distros</a> include CentOS, CoreOS, Debian, Oracle Linux, Red Hat Enterprise Linux, SUSE Linux Enterprise, openSUSE.
+
 1. Region (aka Location).
 1. Billing is by a <strong>App Service Plan</strong>:
 
    SKU and size defines the pricing tier of the plan and the <strong>scaling</strong>:
 
-   <strong>ACU (App Credit Unit?)</strong>
+   <strong>ACU (Azure Compute Units)</strong> normalizes compute costs and performance <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/acu">across</a> VM Types.  
+   
+   Within Overview -> VM Types -><br />
+   * <a target="_blank" href="
+   https://docs.microsoft.com/en-us/azure/virtual-machines/windows">
+   https://docs.microsoft.com/en-us/azure/virtual-machines/windows</a>
 
-   Isolated its own allocation of resources
+   * <a target="_blank" href="
+   https://docs.microsoft.com/en-us/azure/virtual-machines/linux">
+   https://docs.microsoft.com/en-us/azure/virtual-machines/linux</a>
 
-   #### Slots (of differen versions)
+
+   #### Slots (of different versions)
 
    PROTIP: Each slot's Tier type has a maximum number of staging slots imposed by Microsoft:
    * Dev/Test: F1 Free, D1 Shared, B1 Basic: 0 (none)
@@ -461,16 +475,22 @@ Provision virtual machines (VMs):
 
 1. PROTIP: Previously Azure VM names had to be globally unique becuase they were were put in public domain cloudapp.net. But Microsoft has since added magic to get around that.
 
-   Naming conventions:
+   VM Name conventions:
    * Limit 15 chars on Windows VMs
    * Limit 64 chars on Linux VMs
    Role: sql, web, msg<br />
    Instance: 01, 02, etc.
    <br /><br />
 
-1. Region: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
+1. Region: PROTIP: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
 
    <a name="AvailabilityZones"></a>
+
+   Select "Availability zones" to redundantly store data in several zones of Microsoft's choosing.
+   Microsoft will handle recognition of disaster and recovery for them.
+
+   QUESTION: Do admins know when a failover has occurred?
+
    <a name="AvailabilitySets"></a>
 
 1. Availability options "Availability zone".
@@ -483,16 +503,45 @@ Provision virtual machines (VMs):
 
    [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/">Pricing</a>]
 
-1. Azure spot instance: No is default. Yes to save money. if your app is designed for it. 
+1. Azure <strong>spot instance</strong>: As No is default, <strong>click Yes</strong> to save money, if your app is designed for it. 
 
 1. If Yes, Eviction type: "Capacity only" for whatever the pay-as-you-go rate is.
    "Price or capacity" to set a Max. price manually.
 
-
-
 1. VM generation: <strong>Gen2</strong> VMs features UEFI-based boot architecture, increased memory and OS disk size limits, Intel Software Guard Extensions (SGX), and virtual persistent memory (vPMEM).
 
    CAUTION: Gen2 does not yet support Azure Disk Encryption!
+
+### VM Types
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series">
+PRICING of each VM type</a>
+
+A for Basic stdArd General Purpose VMs
+
+A for Standard General Purpose AMs.
+
+B for Burstable that stores credits used during testing & dev.
+
+D for General Purpose apps, with DS instances for premium storage.
+
+DC for Data Center enterprise apps using Premium storage.
+
+E for mEmory optimized - high Memory-to-CPU ratio, with ES instances for premium storage.
+
+F for CPU Optimized - high Core-to-Memory ratio, with FS instances for premium storage.
+
+G for Godzilla - Very large instances: ideal for large databases and big data use cases.
+
+H for High performance computing aimed at very high-end computational needs such as modular modeling and other scientific applications.
+
+L for Storage Optimized instances which offer higher disk throughput and IO.
+
+M for Large Memory - allows up to 3.5 TB of RAM per instance.
+
+N for GPU eNabled
+
+r for remote direct memory (RDMA)
 
 
 ### VM HA SLA (Service Level Agreement)
@@ -503,6 +552,12 @@ Provision virtual machines (VMs):
 <tr valign="top" align="center"><td>  2+ </td><td> 1 </td><td> 99.95%+ </td><td> 4:22:58 </td></tr>
 <tr valign="top" align="center"><td>  2+ </td><td> 2+ </td><td> 99.99%+ </td><td> 0:52:35 </td></tr>
 </table>
+
+### Scaling
+
+Vertical Scaling: For scaling up, since you don't initially know what kind of VM should suffice, you can start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. Link: https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up
+
+Horizontal scaling: It's good practice to also scale out your App service plan. You can autoscale and set up autoscaling rules or go the manual route. Link: https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started
 
 
 <a name="ScaleSets"></a>
@@ -637,6 +692,17 @@ To improve security, enable just-in-time VM access.
 1. Image:
 1. Azure Spot instance: Dx vCPUs, etc.
 1. Authentication account: Username, Password
+
+   PROTIP: These names cannot be used:
+   * 123
+   * a, adm, admin, admin1, admin2, administrator, 
+   * actuser, aspnet
+   * backup, console, david, john
+   * i, guest, owner, root, server, sql, support, sys
+   * test, test1, test2, test3,
+   * user, user1, user2, user3, user4, user5
+   <br /><br />
+
 1. Inbound port rules:
 1. Select inbound ports: RDP (3389)
 
