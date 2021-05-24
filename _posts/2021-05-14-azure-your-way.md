@@ -15,17 +15,19 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This repo contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. The scripts are repeatable. 
+Don't leave resources running, running up your credit card bill.
 
-Most scripts in the rep are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. Utility script code enable the scripts to run from Linux and Windows Git Shell. 
+People leave resources running because they don't have the time to repeat the <strong>manual toil to click though the Azure Portal GUI</strong>. 
 
-Scripts are also useful for learning both Azure and CLI Bash shell scripting. 
+Invoking the automation scripts described here saves you money because you can recreate (consistently) resources with just a few commands. 
 
-TODO: Setup a CI/CD pipeline to run these scripts whenever a git push into github occurs.
+Most scripts in the rep are <strong>Bash shell scripts that run natively on MacOS and Linux</strong>. PowerShell scripts are used in cases where they are the only solution. Script code can run on Windowsw Git Bash Shell.
+
+Within script code are references to documentation and tutorials related to the commands used.
 
 ## Setup a new Azure Subscription:
 
-1. Get an Azure account and learn to use the <a target="_blank" href="https://portal.azure.com/">Azure portal</a> and <a target="_blank" href="https://shell.azure.com/">shell</a>.
+1. Get an Azure account and learn to use the <a target="_blank" href="https://portal.azure.com/">Azure portal</a> and <a target="_blank" href="https://shell.azure.com/">shell</a>, which I describe at:
 
    <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a>
 
@@ -35,8 +37,10 @@ TODO: Setup a CI/CD pipeline to run these scripts whenever a git push into githu
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/azure-your-way/master/az-setup-cli.sh)" -v -i</strong></pre>
 
-1. Be in <a target="_blank" href="https://shell.azure.com/">https://shell.azure.com</a><br />
-   or click the CLI icon after entering<br />
+1. Right-click the highlighted and select "Copy".
+
+1. Be in <a target="_blank" href="https://shell.azure.com/">https://shell.azure.com</a>
+   or click the CLI icon after entering
    <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>
 
 1. Click on the bottom of the CLI Terminal window and command+V to paste from the Clipboard:
