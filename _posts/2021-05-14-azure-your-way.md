@@ -25,191 +25,29 @@ TODO: Setup a CI/CD pipeline to run these scripts whenever a git push into githu
 
 ## Setup a new Azure Subscription:
 
+1. Get an Azure account and learn to use the <a target="_blank" href="https://portal.azure.com/">Azure portal</a> and <a target="_blank" href="https://shell.azure.com/">shell</a>.
+
+   <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a>
+
+   ### To setup a new Subscription environment:
+
+1. Triple-click this command below:
+
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/azure-your-way/master/az-setup-cli.sh)" -v -i</strong></pre>
+
 1. Be in <a target="_blank" href="https://shell.azure.com/">https://shell.azure.com</a><br />
    or click the CLI icon after entering<br />
    <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>
 
-1. If you need to, create a Storage account to hold files in a clouddrive.
+1. Click on the bottom of the CLI Terminal window and command+V to paste from the Clipboard:
 
+   The various steps are <a href="#az-setup-cli.sh">described in the section below</a>.
 
-   ### az-setup-cli.sh
 
-1. Copy and paste this one command in the CLI script window:
+   ### Run your commands
 
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/azure-your-way/master/az-setup-cli.sh)" -v -i</strong></pre>
-
-   The script should do all the steps below:
-
-   1. OPTIONAL: Edit the <tt>.bashrc</tt> file to customize the prompt:
-   
-   If you're in the <strong>cloud Shell</strong> (which runs the Linux operating system), add these lines to the bottom of the <strong>.bashrc</strong>:
-   
-   <pre>export PS1="\n  \w\[\033[33m\]\n$ "
-   #</pre>
-
-   The PS1 sets the prompt so it appears in the same spot on the screen every line, under the current folder and file path (rather than to the right of it at various points on the screen).
-
-   "#" at the last line of the file is a hack to make a comment out of the PS1 the system adds on its own.
-
-   2. Navigate into a folder which holds repository to be downloaded:
-
-   Within Cloud Shell, it's<br />
-   <tt><strong>cd cloudshell</strong></tt>
-
-   Alternately, on my laptop, I use<br />
-   <tt>cd gmail_acct</tt>
-
-   3. Remove the previous repo folder:
-
-   PROTIP: A time proxy command is added in front of commands to identify how many time was taken to run the command each time. For example, "0m4.559s" means about 4.6 seconds.
-
-   4. Download this repo to establish a run environment:
-
-   <pre><strong>git clone https://github.com/wilsonmar/azure-your-way.git --depth 1 
-   cd azure-your-way
-   ls
-   </strong></pre>
-
-   <tt>\-\-depth 1</tt> specifies download of only the latest version, to save space used.
-
-   <tt>ls</tt> lists folders and files to confirm the download actually occurred.
-
-   5. Give all the shell file permissions to run:
-
-   <pre><strong>chmod +x *.sh
-   </strong></pre>
-
-   6. Run script to setup Azure Providers:
-
-   <pre><strong>source az-providers-setup.sh
-   </strong></pre>
-
-   The response is a list of providers added.
-   <pre>>>> Microsoft.AlertsManagement already Registered.
->>> Microsoft.BotService already Registered.
->>> Microsoft.ChangeAnalysis already Registered.
->>> Microsoft.CognitiveServices already Registered.
->>> Microsoft.Compute already Registered.
->>> Microsoft.ContainerInstance already Registered.
->>> Microsoft.ContainerRegistry already Registered.
->>> Microsoft.Devices already Registered.
->>> Microsoft.Insights already Registered.
->>> Microsoft.KeyVault already Registered.
->>> Microsoft.Notebooks already Registered.
->>> Microsoft.MachineLearningServices already Registered.
->>> Microsoft.ManagedIdentity already Registered.
->>> Microsoft.Search already Registered.
->>> Microsoft.Storage already Registered.
->>> Microsoft.Web already Registered.
-   </pre>
-
-   The above only needs to be done once, but running it again won't be harmful.
-
-   7. Give setmem.sh permissions to run and run it :
-
-   <pre><strong>chmod +x ../setmem.sh
-   source ../setmem.sh
-   </strong></pre>
-
-   8. Move (copy and rename) "sample-setmem.sh" to file "setmem.sh" 
-
-   <pre><strong>mv setmem-sample.sh ../setmem.sh
-   </strong></pre>
-
-   PROTIP: We move the file where it will never be uploaded to any repository (GitHub, GitLab, etc.). 
-
-
-   ### Manually customize values in setmem.sh
-
-   9. Open the file for edit using program "code" (Visual Studio Code):
-
-   <pre><strong>code ../setmem.sh
-   </strong></pre>
-
-   <tt>..</tt> is used because the file, containing secrets, is in a folder which should never be pushed to GitHub.
-
-1. Use a text editor program to edit the ../setmem.sh file:
-
-   Scripts have been <strong>generalized</strong> by environment variables substituting for hard-coded values in scripts. PROTIP: Using variable instead of hard-coding avoids typos and misconfigurations.
-   
-   Lines below define values for each variable so that multiple runs can use different values, without need to change the script file. 
-
-1. In <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">portal.azure.com Subscription blade</a>, select the Subscription you wnat to use, then click the icon to Copy to Clipboard. 
-
-   ![az-copy-sponsorship-195x65](https://user-images.githubusercontent.com/300046/117761823-45b44000-b1e5-11eb-976c-213d918ca163.png)
-
-   In the file, highlight the ID and paste it:
-
-   <pre>export MY_SUBSCRIPTION_NAME="Azure Pass - Sponsorship"
-   export MY_SUBSCRIPTION_ID="11cb040d-4e32-4524-bc8e-0bee213dddae"  # for gmail 
-   </pre>
-
-1. In <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">portal.azure.com Tenant blade</a>, select the Tenant you wnat to use, then click the icon to Copy to Clipboard. 
-
-   ![az-copy-tenant-129x71](https://user-images.githubusercontent.com/300046/117761778-346b3380-b1e5-11eb-8d9b-4e01211db392.png)
-
-   In the file, highlight the ID and paste it:
-
-   <pre>export TENANT_ID="22223348-f7f0-4cc2-addc-11021d882720"           # for gmail, in Portal
-   </pre>
-
-   TODO: Substitute export statements of secrets with calls to retrieve them from a long-running Azure KeyVault. But no one else would be at this file unless they are properly logged into Azure under your account.
-
-1. Edit the MY_LOC (Location = Region) and other defaults.
-
-1. At the bottom of the file, add a statement which prints out one of the variables, so you know the export statements took:
-
-   In a Bash script:
-
-   <pre><strong>echo "MY_RG=$MY_RG"</strong></pre>
-
-1. Save the file. In Cloud Shell, press command+Q or clicking the "..." to press Save, then Close.
-
-
-   ## Each work session
-
-1. At the beginning of each session invoke the script:
-
-   <pre><strong>source ./setmem.sh
-   </strong></pre>
-
-   NOTE: Using "source" to run the script so that environment variables defined in the script will be visible after the script is done, and be inherited by any programs you launch from it. That's because source runs the script in the current shell. But note that any exit statement would stop the run.
-
-   Alternately,
-   <pre>source <(curl -s -L https://example.com/install.sh)</pre>
-
-   After execution, you can still override variable values before running another script.
-
-   That is how you can run scripts for several regions/locations - by changing just the <tt>MY_LOC</tt> environment variable's value and running the script again.
-   
-1. Now you're ready to run using Python scripts at
-https://github.com/wilsonmar/azure-your-way/blob/main/ai-102-run.sh
-
-   <pre><strong>chmod +x ai-102-run.sh
-   source ./ai-102-run.sh
-   </strong></pre>
-
-The follow are steps and outputs from the run:
-
-1. 
-
-
-## After the run
-
-1. PROTIP: <strong>Delete resource groups</strong> to stop charges from accumulating on Virtual Servers:
-
-   <pre><strong>time az group delete --name "${MY_RG}" --yes   # takes several minutes
-   </strong></pre>
-
-   <tt>--yes</tt> before the az command feeds a "y" to automatically answer the request:<br />
-   Are you sure you want to perform this operation? (y/n): y
-
-
-<hr />
-
-## Individual executions
-
-1. Invoke an individual Bash script with a command like this to create various resources within Azure:
+   Now you can run scripts to create and manage resources. 
+   Most of the scripts reference a tutorial at Microsoft Learn, CloudAcademy, Pluralsight, Coursera, etc.
 
 * Run a Bing Search using API:
 
@@ -313,8 +151,168 @@ Bash scripts here are written with coding conventions defined at <a target="_bla
    * <tt>--resource-group</tt> is a required argument on many commands. It's last so that missing slash line a line above it would cause the command to fail.
 
    * Variable (specification) data controlling Python programs are passed to Python programs by saving them as variables in an <strong>.env file</strong> in the same folder as the Python program.
+
+<hr />
    
+<a name="az-setup-cli.sh"></a>
+
+## az-setup-cli.sh
+
+   The script should do all the steps below:
+
+1. OPTIONAL: Edit the <tt>.bashrc</tt> file to customize the prompt:
    
+   If you're in the <strong>cloud Shell</strong> (which runs the Linux operating system), add these lines to the bottom of the <strong>.bashrc</strong>:
+   
+   <pre>export PS1="\n  \w\[\033[33m\]\n$ "
+   #</pre>
+
+   The PS1 sets the prompt so it appears in the same spot on the screen every line, under the current folder and file path (rather than to the right of it at various points on the screen).
+
+   "#" at the last line of the file is a hack to make a comment out of the PS1 the system adds on its own.
+
+2. Navigate into a folder which holds repository to be downloaded:
+
+   Within Cloud Shell, it's<br />
+   <tt><strong>cd cloudshell</strong></tt>
+
+   Alternately, on my laptop, I use<br />
+   <tt>cd gmail_acct</tt>
+
+3. Remove the previous repo folder:
+
+   PROTIP: A time proxy command is added in front of commands to identify how many time was taken to run the command each time. For example, "0m4.559s" means about 4.6 seconds.
+
+4. Download this repo to establish a run environment:
+
+   <pre><strong>git clone https://github.com/wilsonmar/azure-your-way.git --depth 1 
+   cd azure-your-way
+   ls
+   </strong></pre>
+
+   <tt>\-\-depth 1</tt> specifies download of only the latest version, to save space used.
+
+   <tt>ls</tt> lists folders and files to confirm the download actually occurred.
+
+5. Give all the shell file permissions to run:
+
+   <pre><strong>chmod +x *.sh
+   </strong></pre>
+
+6. Run script to setup Azure Providers:
+
+   <pre><strong>source az-providers-setup.sh
+   </strong></pre>
+
+   The response is a list of providers added.
+   <pre>>>> Microsoft.AlertsManagement already Registered.
+>>> Microsoft.BotService already Registered.
+>>> Microsoft.ChangeAnalysis already Registered.
+>>> Microsoft.CognitiveServices already Registered.
+>>> Microsoft.Compute already Registered.
+>>> Microsoft.ContainerInstance already Registered.
+>>> Microsoft.ContainerRegistry already Registered.
+>>> Microsoft.Devices already Registered.
+>>> Microsoft.Insights already Registered.
+>>> Microsoft.KeyVault already Registered.
+>>> Microsoft.Notebooks already Registered.
+>>> Microsoft.MachineLearningServices already Registered.
+>>> Microsoft.ManagedIdentity already Registered.
+>>> Microsoft.Search already Registered.
+>>> Microsoft.Storage already Registered.
+>>> Microsoft.Web already Registered.
+   </pre>
+
+   The above only needs to be done once, but running it again won't be harmful.
+
+7. Give setmem.sh permissions to run and run it :
+
+   <pre><strong>chmod +x ../setmem.sh
+   source ../setmem.sh
+   </strong></pre>
+
+8. Move (copy and rename) "sample-setmem.sh" to file "setmem.sh" 
+
+   <pre><strong>mv setmem-sample.sh ../setmem.sh
+   </strong></pre>
+
+   PROTIP: We move the file where it will never be uploaded to any repository (GitHub, GitLab, etc.). 
+
+
+   ### Manually customize values in setmem.sh
+
+9. Open the file for edit using program "code" (Visual Studio Code):
+
+   <pre><strong>code ../setmem.sh
+   </strong></pre>
+
+   <tt>..</tt> is used because the file, containing secrets, is in a folder which should never be pushed to GitHub.
+
+1. Use a text editor program to edit the ../setmem.sh file:
+
+   Scripts have been <strong>generalized</strong> by environment variables substituting for hard-coded values in scripts. PROTIP: Using variable instead of hard-coding avoids typos and misconfigurations.
+   
+   Lines below define values for each variable so that multiple runs can use different values, without need to change the script file. 
+
+1. In <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">portal.azure.com Subscription blade</a>, select the Subscription you wnat to use, then click the icon to Copy to Clipboard. 
+
+   ![az-copy-sponsorship-195x65](https://user-images.githubusercontent.com/300046/117761823-45b44000-b1e5-11eb-976c-213d918ca163.png)
+
+   In the file, highlight the ID and paste it:
+
+   <pre>export MY_SUBSCRIPTION_NAME="Azure Pass - Sponsorship"
+   export MY_SUBSCRIPTION_ID="11cb040d-4e32-4524-bc8e-0bee213dddae"  # for gmail 
+   </pre>
+
+1. In <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade">portal.azure.com Tenant blade</a>, select the Tenant you wnat to use, then click the icon to Copy to Clipboard. 
+
+   ![az-copy-tenant-129x71](https://user-images.githubusercontent.com/300046/117761778-346b3380-b1e5-11eb-8d9b-4e01211db392.png)
+
+   In the file, highlight the ID and paste it:
+
+   <pre>export TENANT_ID="22223348-f7f0-4cc2-addc-11021d882720"           # for gmail, in Portal
+   </pre>
+
+   TODO: Substitute export statements of secrets with calls to retrieve them from a long-running Azure KeyVault. But no one else would be at this file unless they are properly logged into Azure under your account.
+
+1. Edit the MY_LOC (Location = Region) and other defaults.
+
+1. At the bottom of the file, add a statement which prints out one of the variables, so you know the export statements took:
+
+   In a Bash script:
+
+   <pre><strong>echo "MY_RG=$MY_RG"</strong></pre>
+
+1. Save the file. In Cloud Shell, press command+Q or clicking the "..." to press Save, then Close.
+
+
+   ## Each work session
+
+1. At the beginning of each session invoke the script:
+
+   <pre><strong>source ./setmem.sh
+   </strong></pre>
+
+   NOTE: Using "source" to run the script so that environment variables defined in the script will be visible after the script is done, and be inherited by any programs you launch from it. That's because source runs the script in the current shell. But note that any exit statement would stop the run.
+
+   Alternately,
+   <pre>source <(curl -s -L https://example.com/install.sh)</pre>
+
+   After execution, you can still override variable values before running another script.
+
+   That is how you can run scripts for several regions/locations - by changing just the <tt>MY_LOC</tt> environment variable's value and running the script again.
+
+1. PROTIP: <strong>Delete resource groups</strong> to stop charges from accumulating on Virtual Servers:
+
+   <pre><strong>time az group delete --name "${MY_RG}" --yes   # takes several minutes
+   </strong></pre>
+
+   <tt>--yes</tt> before the az command feeds a "y" to automatically answer the request:<br />
+   Are you sure you want to perform this operation? (y/n): y
+
+
+<hr />
+
 ## References
 
 Scripts here are adapted from various experts generous with sharing their code:
