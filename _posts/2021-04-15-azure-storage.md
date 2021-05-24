@@ -727,14 +727,7 @@ For PowerShell, CLI, GUI
 
 [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/queues/">Pricing</a>]
 
-
-
-Specify in a Resource Group:
-
-
-
-
-
+The product name "Azure Queue Storage" was change from "Azure Storage Queues".
 
 
 <hr />
@@ -1278,7 +1271,7 @@ References:
    * https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview#choose-partitionkey
    * https://azure.microsoft.com/en-us/blog/azure-cosmos-db-and-multi-tenant-systems/
 
-### Containers
+### DB Containers
 
 Databases manage the throughput (performance)
 
@@ -1352,7 +1345,9 @@ Manage change feed notifications:
 CosmoDB can't use "USE" command which changes the current database.
 
 
+Deborah Chen is Microsoft's Senior Program Manager on Data-CosmosDB
 
+<hr />
 
 ## TDE (Transparent Data Encryption)
 

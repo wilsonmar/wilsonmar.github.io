@@ -554,7 +554,10 @@ https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
 
 <a name="SC-200"></a>
 
-https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200
+Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst"</a>.
+
+This exam measures your ability to accomplish the following technical tasks: mitigate threats using Microsoft 365 Defender; mitigate threats using Azure Defender; and mitigate threats using Azure Sentinel.
+
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
 
@@ -708,11 +711,11 @@ Microsoft's 4-day live class covers these modules, with <a target="_blank" href=
 4. Implement VMs for Windows and Linux
 5. Implement <strong>Load Balancing and Network Security</strong> 
 
-   LAB: Implementing Highly Available Azure IaaS Compute Architecture
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_05_Lab.html">LAB: Implementing Highly Available Azure IaaS Compute Architecture</a>
 
 6. Implement Storage Accounts 
 
-   LAB: Implementing and Configuring Azure Storage File and Blob Services
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_06_Lab.html">LAB: Implementing and Configuring Azure Storage File and Blob Services</a>
 
 7. Implement NoSQL Databases
 9. Automate Deployment and Configuration of Resources
@@ -721,15 +724,17 @@ Microsoft's 4-day live class covers these modules, with <a target="_blank" href=
 11. Manage Security for Applications
 12. Manage Workloads in Azure 
 
-    LAB:  Protecting Hyper-V VMs by using Azure Site Recovery
+    <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_12_Lab.html">LAB:  Protecting Hyper-V VMs by using Azure Site Recovery</a>
 
 13. Implement Container-Based Applications
 
 14. Implement an Application Infrastructure 
 
-    LAB: Implementing an Azure App Service Web App with a Staging Slot and 
+    <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_14_Lab_a.html">
+    LAB: Implementing an Azure App Service Web App with a Staging Slot</a> and 
 
-    LAB: Configuring a Message-Based Integration Architecture
+    <a target="_blank" href="https://microsoftlearning.github.io/AZ-303-Microsoft-Azure-Architect-Technologies/Instructions/Labs/Module_14_Lab_b.html">
+    LAB: Configuring a Message-Based Integration Architecture</a>
 
 15. Implement Cloud Infrastructure Monitoring
 <br /><br />
@@ -788,15 +793,15 @@ Links to Microsoft docs for each item in the syllubus are detailed by<br />
 https://www.azurebarry.com/prepare-for-the-az304-exam/">
 https://www.azurebarry.com/prepare-for-the-az304-exam</a>
 
-Labs at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a>
+Labs at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
 
--3. LAB: Migrating Hyper-V VMs to Azure by using Azure Migrate
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
 
--4. LAB: Managing Azure AD Authentication and Authorization
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a>
 
--6. LAB: Implementing Azure SQL Database-Based Applications
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>
 
--13. LAB: Implement Azure Logic Apps Integration with Azure Event Grid
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_13_Lab_a.html">13. Implement Azure Logic Apps Integration with Azure Event Grid</a> which uses PowerShell to create Resource Groups and Encrypt Passwords.
 
 
 <a target="_blank" href="
@@ -812,7 +817,10 @@ is foundational to:
 10h 42m LinuxAcademy video course</a>
 by Russell Croft at ACloudGuru
 
-https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
+Tim Warner references <a target="_blank" href="https://github.com/timothywarner/az304">https://github.com/timothywarner/az304</a> during his <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-304-microsoft-azure-architect-design-crash-course/">OReilly 6-hour AZ-304 "Crash Course"</a>. It's full of info.
+
+Exam prep:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
 
 <hr />
 
@@ -980,6 +988,14 @@ YOUTUBE: AZ-204 Azure Developer - Exam Cram │ Expert Talk</a> by <a target="_b
 
 * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
 
+
+
+### MCT
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/mct-certification">
+Microsoft Certified Trainers</a> get 75% off exam fees. But there is a $800 annual fee to be MCT, and an inital $1000 join fee.
+
+https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 
 <hr />
 

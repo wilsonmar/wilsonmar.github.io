@@ -28,10 +28,10 @@ You get 10 sandbox sessions per day (FREE) on labs, such as:
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
-1. Search for Net and there are:
+1. G+\ to Search for "Net" and there appears:
 
    * <a href="#add-network-interface-in-vm">Network interfaces</a>
-   * Network Watcher
+   * <a href="#Watcher">Network Watcher</a>
    * Network security groups
    * Network security groups (classic)
    * Virtual networks <strong>(vNets)</strong>
@@ -39,6 +39,7 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
    * Virtual network gateways
    * Virtual networks (classic)
    <br /><br />
+
 
 ## Coursera Guided Project
 
@@ -57,8 +58,6 @@ You are a regular user without the ability to obtain root/administrator privileg
 
 PROTIP: The cloud shell times out after 20 minutes of inactivity.
  
-
-Instructions
 1. Click on the >_ Cloud Shell icon in the menu bar of the Azure Portal Dashboard:
 
 This will open a Cloud Shell console at the bottom of your browser window.
@@ -117,6 +116,48 @@ $myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
 $myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
 $backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
    </pre>
+
+
+
+<a name="Watcher"></a>
+<a name="Network_Watcher"></a>
+
+## Network Watcher
+
+* CLI:
+
+   <pre>az network watcher configure--locations $LOCATION --enabled -o table \
+     --resource-group $MY_RG 
+   </pre>
+
+1. In the Portal, search for "Network Watcher".
+
+   Notice it runs on a regional level.
+
+Network Watcher is a <strong>suite</strong> of tools:
+* Diagram
+
+To generate a visual to view VNet layout Topology. Downloads an SVG graphic image.
+
+To track connection reachability, use <strong>Connection monitor</strong>
+which measures latency and topology changes.
+
+To check connectivity check from Azure VMs to some other endpoints, use <strong>IP flow verify</strong>. It shows 5 tuples: source & destination IP address, ports, protocol.
+
+To check direct TCP connetion with any endpoint more comprehensively than IP flow verify, use <strong>Connection troubleshoot</strong>.
+
+To verify routing paths, use <strong>Next hop</strong>.
+
+To analyze NSG rules, use <strong>Effective security rules</strong>.
+
+For deep logging of VPN Gateway, use <strong>VPN troubleshooting</strong>
+
+To gather ethernet frames for analysis by WireShark or MMA, use <strong>Packet capture</strong>.
+
+Diagnose and solve issues such as:
+   * VNet traffice filtering 
+   * Network routing
+   * VPN/gateway connectivity
 
 
 ## DDoS (Distributed Denial of Service)
@@ -292,23 +333,54 @@ Use less code to define Hub-and-spoke by using <a target="_blank" href="https://
 
 ## Scaling
 
-There are two ways to spread load:
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_165">VIDEO</a>:
+The ways to spread load:
 
-   * Load balancers
-   * App Gateways
+   * <a href="#LBs">Load balancers</a> (Basic and Standard) across VMs
    * ILB (Internal Load Balancers)
+   * <a href="#AppGateway">App Gateway</a> for URL routing with App Firewall
+   * <a href="#TrafficManager">Traffic Manager</a> for global traffic across regions
+   * F5 (third-party)
+   <br /><br />
 
+<a name="LBs"></a>
 
 ### Azure Load Balancers 
 
-A <strong>Azure Load Balancer</strong> directs incoming traffic to multiple resources such as virtual machines. 
-This allows the deployment of highly scalable, high-availability solutions, since they can scale the number of targets behind a load balancer up and down as much as needed and still direct internet traffic to a single load balancer. 
+<strong>Azure Load Balancers</strong> direct Layer 4 incoming traffic based on a 5-tuple hash to multiple resources such as virtual machines. 
+
+1. Portal: Create a resource -> Networking -> (in Azure Marketplace) Load Balancer.
+
+   #### LB Front-end
+
+1. Create LB front-end: Name:
+1. Type: Internal or Public (select or create VNet and subnet)
+1. IP address assignment: Choose Dynamic. Static not 
+1. Subscription
+1. Resource Group
+1. Location
+
+   #### LB Back-end pool
+
+   <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_166" title="2:45 into">VIDEO</a>:
+
+1. Back-end pools -> Add -> Associate to: REMEMBER:
+
+   * Unassociated
+   * Single virtual machine
+   * The Basic (HTTP) Load Balancer is scoped to an <strong>Availability Set</strong> - up to 100 instances.<br />
+   * The Standard (HTTPS) Load Balancer is scoped to <strong>Availability Zones</stong> on the entire virtual network - up to 1,000 instances.
+   <br /><br />
+
+1. Target network IP configurations (for each VM within current availability set)
+
+   #### LB Health probe
 
 
-1. Create LB
 
-   The Basic Load Balancer is scoped to an Availability Set.<br />
-   The Standard Load Balancer is scoped to the entire virtual network.
+   Service monitoring probes.
+
+   Automated reconfiguration.
 
 1. In All services, All resources, select your LB resource to include virtual machines for load-balancing internet traffic. 
 
@@ -351,6 +423,9 @@ This allows the deployment of highly scalable, high-availability solutions, sinc
 
    Each VM is attached to one of two network interfaces which accept and send traffic. 
 
+
+
+<a name="AppGateway"></a>
 
 ### Azure Application Gateways
 
@@ -411,6 +486,9 @@ Application Gateways offer may other very useful features such as SSL terminatio
   Notice that at the bottom of this blade you've got the ability to set path-based rules.
 
 
+
+<a name="VPNGateways"></a>
+
 ## Azure VPN Gateways
 
 https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-vpn-gateways/?context_id=524&context_resource=lp
@@ -444,7 +522,7 @@ alt
 +++ https://cloudacademy.com/course/overview-of-azure-services/azure-overview/
 
 
-## Azure VPN Gateway
+### VNet
 
 Create VNet to an on-prem network securely by creating an <strong>Azure VPN Gateway</strong> which creates a Gateway subnet running 2 or more VMs running services. So it has some latency. It has bandwidth limitations.
 
@@ -486,6 +564,8 @@ Each CIDR can be configured with up to 50 IP address ranges.
 Also MFA Trusted IPs.
 
 
+<a name="Peering"></a>
+
 ## Network Peering
 
 <strong>Global peering</strong> of two VNets connects different regions through <strong>Microsoft's own internal backbone</strong>, not via the public internet. This needs to use Standard tier of load balancer (not Basic LB used by below):
@@ -526,7 +606,8 @@ So use Gateway Transit for that, which allows sharing a VPN or Express Route gat
 
 There is a limit of 100 peering connections.
 
-## Gatways = load balancers
+
+### Gatways = load balancers
 
 Peering of regions connects without creating a gateway, which are charged by hour and bytes egress, and introduces extra latency with limited bandwidth.
 
@@ -597,40 +678,6 @@ The competitor is Palo Alto.
 1. In the Portal, click "" ???
 
 
-<a name="Network_Watcher"></a>
-
-## Network Watcher
-
-<pre>az network watcher configure --resource-group $MY_RG --locations $LOCATION --enabled -o table
-</pre>
-
-1. In the Portal, search for "Network Watcher".
-
-
-Network Watcher is a <strong>suite</strong> of tools:
-* Diagram
-
-To generate a visual to view VNet layout Topology. Downloads an SVG graphic image.
-
-To track connection reachability, use <strong>Connection monitor</strong>
-which measures latency and topology changes.
-
-To check connectivity check from Azure VMs to some other endpoints, use <strong>IP flow verify</strong>. It shows 5 tuples: source & destination IP address, ports, protocol.
-
-To check direct TCP connetion with any endpoint more comprehensively than IP flow verify, use <strong>Connection troubleshoot</strong>.
-
-To verify routing paths, use <strong>Next hop</strong>.
-
-To analyze NSG rules, use <strong>Effective security rules</strong>.
-
-For deep logging of VPN Gateway, use <strong>VPN troubleshooting</strong>
-
-To gather ethernet frames for analysis by WireShark or MMA, use <strong>Packet capture</strong>.
-
-Diagnose and solve issues such as:
-   * VNet traffice filtering 
-   * Network routing
-   * VPN/gateway connectivity
 
 ## Network Performance Monitor
 
@@ -642,13 +689,6 @@ Diagnose and solve issues such as:
 1. Click "Create".
 1. Create Resource group.
 1. Select choices to create a VM instance.
-
-
-## Network Watcher
-
-1. In the Portal, search for "Network Watcher".
-
-   Notice it runs on a regional level.
 
 
 <hr />

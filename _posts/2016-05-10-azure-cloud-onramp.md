@@ -1308,9 +1308,40 @@ References on naming conventions:
    </strong></pre>
 
 
-   <a name="Terraform"></a>
+<hr />
 
-   ### Terraform on Azure
+
+<a name="EncryptedPasswords"></a>
+
+## Encrypted Passwords
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-powershell">DOCS</a>: <a target="_blank" href="https://pascalnaber.wordpress.com/2020/01/04/backdoor-in-azure-devops-to-get-the-password-of-a-service-principal/">BLOG</a>: <a target="_blank" href="https://stackoverflow.com/questions/57589379/migrate-local-bash-script-with-azure-cli-commands-to-azure-powershell-task-in-az">SlackOverflow</a>:
+
+PROTIP: It's better to use Azure Key Vault, but this is better than storing cleartext in GitHub.
+
+1. In a PowerShell CLI terminal, manually <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/convertto-securestring?view=powershell-7.1">encrypt a secret under your account</a>:
+
+   <pre>$password = 'Super@Secret3Passwordx'
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+   </pre>
+
+   CAUTION: Run the above manually. Do not put the above commands in a script stored in GitHub.
+
+1. The value of $securePasswords can now be saved in a file which exports an environment variable. You still should not hard-code encryption keys in code so that it can be cracked over a long period of time by powerful computers.
+
+1. To unencrypt (under the same account) within a sample command:
+
+   <pre>$myapp = New-AzADApplication -DisplayName '...' -HomePage 'http://...' -IdentifierUris 'http://...' <strong>-Password $securePassword</strong>
+   </pre>
+
+   NOTE: You don't have to unencrypt first. Microsoft's commands handle that for you. Cool, eh?
+
+https://www.guardicore.com/cyber-security-platform/
+
+
+<a name="Terraform"></a>
+
+## Terraform on Azure
 
    A Terraform client is pre-installed in Azure Cloud Shell.
 

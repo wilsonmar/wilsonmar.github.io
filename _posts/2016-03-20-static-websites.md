@@ -46,6 +46,8 @@ Static sites are <strong>faster</strong> for several reasons.
 
 <amp-youtube data-videoid="FOfIoCi9uTI" layout="responsive" width="480" height="270"></amp-youtube>
 
+Having static files in an enviornment which serves many other sites provides the site <a target="_blank" href="https://digitalguardian.com/blog/how-mitigate-ddos-attack">resilience to DoS (Denial of Service) attacks</a> which aim to overwhelm a service.
+
 
 ## Fraction of a Second to First Byte 
 
