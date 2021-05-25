@@ -39,16 +39,22 @@ Within script code are references to documentation and tutorials related to the 
 
 1. Right-click the highlighted and select "Copy".
 
-1. Be in <a target="_blank" href="https://shell.azure.com/">https://shell.azure.com</a>
+1. Get in <a target="_blank" href="https://shell.azure.com/">https://shell.azure.com</a>
    or click the CLI icon after entering
    <a target="_blank" href="https://portal.azure.com/">https://portal.azure.com</a>
 
-1. Click on the bottom of the CLI Terminal window and command+V to paste from the Clipboard:
+1. Right-click anywhere on the CLI Terminal window, then press command+V to paste from the Clipboard:
 
-   The various steps are <a href="#az-setup-cli.sh">described in the section below</a>.
+1. Press Enter to run the script. It takes several minutes to run.
+
+   Steps executed by the script "az-setup-cli.sh" are <a href="#az-setup-cli.sh">described in the section below</a>.
+
+1. Navigate to the script folder:
+
+   <pre>cd clouddrive/azure-your-way</pre>
 
 
-   ### Run your commands
+### Run your commands:
 
    Now you can run scripts to create and manage resources. 
    Most of the scripts reference a tutorial at Microsoft Learn, CloudAcademy, Pluralsight, Coursera, etc.
@@ -82,44 +88,37 @@ Within script code are references to documentation and tutorials related to the 
 
 * Use Helm charts
 
-   <pre><strong>MY_RG="helm-$MY_LOC"
-   ./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-helm-cli.sh">az-helm-cli.sh</a>
+   <pre><strong>./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-helm-cli.sh">az-helm-cli.sh</a>
    </strong></pre>
 
 * Create a VM with a public IP address:
 
-   <pre><strong>MY_RG="azuremolchapter2-$MY_LOC"
-   ./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-cli.sh">az-vm-cli.sh</a>
+   <pre><strong>./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-cli.sh">az-vm-cli.sh</a>
    </strong></pre>
 
 * Create an App Service Plan, Azure Web App, Deployment, to show MY_APPNAME.
 
-   <pre><strong>MY_RG="azuremolchapter3-$MY_LOC"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-webapp-cli.sh">az-webapp-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-webapp-cli.sh">az-webapp-cli.sh</a>
    </strong></pre>
 
 * Create a network with two subnets and a network security group that secures inbound traffic. One subnet is for remote access traffic, one is web traffic for VMs that run a web server. Two VMs are then created. One allows SSH access and has the appropriate network security group rules applied. You use this VM as an <strong>SSH jumpbox</strong> to then connect to the the second VM which can be used an web server:
 
-   <pre><strong>MY_RG="azuremolchapter5-$MY_LOC"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-jumpbox-cli.sh">az-vm-jumpbox-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-jumpbox-cli.sh">az-vm-jumpbox-cli.sh</a>
    </strong></pre> 
 
 * Create a VM with a public IP address. Enabled are a storage account, boot diagnostics with the VM diagnostics extension applied:
 
-   <pre><strong>MY_RG="azuremolchapter12-$MY_LOC"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-diag-cli.sh">az-vm-diag-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-diag-cli.sh">az-vm-diag-cli.sh</a>
    </strong></pre>
 
 * Create a VM; Recovery Services vault, a backup policy, then creates a VM and applies the backup policy before starting the initial backup job.
 
-   <pre><strong>MY_RG="azuremolchapter13-$MY_LOC"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-backup-cli.sh">az-vm-backup-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-backup-cli.sh">az-vm-backup-cli.sh</a>
    </strong></pre>
 
 * Create a Docker container from a Dockerfile; Create AKS; Scale up replicas 
 
-   <pre><strong>MY_RG="azuremolchapter19-$MY_LOC"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-aks-cli.sh">az-aks-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-aks-cli.sh">az-aks-cli.sh</a>
    </strong></pre>
    
    The IP shows the "Month of Pizza Lunches in a container" website (load balanced).
@@ -134,13 +133,14 @@ Within script code are references to documentation and tutorials related to the 
 
 * Create Azure Functions:
 
-   <pre><strong>MY_RG="azuremolchapter21-$MY_LOC"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-functions-temp.sh">az-functions-temp.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-functions-temp.sh">az-functions-temp.sh</a>
    </strong></pre>
 
    Several Functions components are not available in the Azure CLI, so manual actions are needed on Azure portal to fill in the gaps.
    See the "Month of Lunches" ebook.
 
+
+<hr />
 
 ## Script coding tricks
 
