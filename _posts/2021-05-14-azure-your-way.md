@@ -47,11 +47,10 @@ Within script code are references to documentation and tutorials related to the 
 
 1. Press Enter to run the script. It takes several minutes to run.
 
-   Steps executed by the script "az-setup-cli.sh" are <a href="#az-setup-cli.sh">described in the section below</a>.
+   Steps executed by the script "az-setup-cli.sh" are <a href="#az-setup-cli.sh">described in the section below</a>. When done, you should see the folder containing scripts and the prompt at the left, where it will stay after each command (instead of at the end of the folder path):
 
-1. Navigate to the script folder:
-
-   <pre>cd clouddrive/azure-your-way</pre>
+   <pre>~/clouddrive/azure-your-way
+   $ _</pre>
 
 
 ### Run your commands:
@@ -126,9 +125,9 @@ Within script code are references to documentation and tutorials related to the 
 * Create IoT for WebApp:
 
    <pre><strong>export MY_PROJECT_FOLDER="iot-project"
-   export MY_IOT_HUB_NAME="hubahuba"
-   export MY_IOT_HUB_GROUP="hubgroupie"
-   ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/iot/az-iot-cli.sh">az-iot-cli.sh</a>
+  export MY_IOT_HUB_NAME="hubahuba"
+  export MY_IOT_HUB_GROUP="hubgroupie"
+  ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/iot/az-iot-cli.sh">az-iot-cli.sh</a>
    </strong></pre>
 
 * Create Azure Functions:
