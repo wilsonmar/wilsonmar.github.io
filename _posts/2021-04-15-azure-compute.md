@@ -521,7 +521,7 @@ A for Basic stdArd General Purpose VMs
 
 A for Standard General Purpose AMs.
 
-B for Burstable that stores credits used during testing & dev.
+B for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable">Burstable</a> that stores credits used during low usage, but burst to 200% - 1000% of base. Used for dev and testing.
 
 D for General Purpose apps, with DS instances for premium storage.
 
@@ -529,19 +529,22 @@ DC for Data Center enterprise apps using Premium storage.
 
 E for mEmory optimized - high Memory-to-CPU ratio, with ES instances for premium storage.
 
-F for CPU Optimized - high Core-to-Memory ratio, with FS instances for premium storage.
+F for "Freakin" CPU Optimized - high Core-to-Memory ratio, with FS instances for premium storage.
 
 G for Godzilla - Very large instances: ideal for large databases and big data use cases.
 
 H for High performance computing aimed at very high-end computational needs such as modular modeling and other scientific applications.
 
-L for Storage Optimized instances which offer higher disk throughput and IO.
+L for "Load" Storage Optimized instances which offer higher disk throughput and IO.
 
 M for Large Memory - allows up to 3.5 TB of RAM per instance.
 
 N for GPU eNabled
 
-r for remote direct memory (RDMA)
+r suffix for remote direct memory (RDMA)
+
+
+![az-vm-side-ids-1272x660.png](https://user-images.githubusercontent.com/300046/119528558-8613d200-bd3e-11eb-850b-fea9555cac81.png)
 
 
 ### VM HA SLA (Service Level Agreement)
@@ -553,11 +556,14 @@ r for remote direct memory (RDMA)
 <tr valign="top" align="center"><td>  2+ </td><td> 2+ </td><td> 99.99%+ </td><td> 0:52:35 </td></tr>
 </table>
 
-### Scaling
 
-Vertical Scaling: For scaling up, since you don't initially know what kind of VM should suffice, you can start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. Link: https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up
+<a name="Scaling"></a>
 
-Horizontal scaling: It's good practice to also scale out your App service plan. You can autoscale and set up autoscaling rules or go the manual route. Link: https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started
+## Scaling
+
+<strong>Vertical Scaling</strong>: For scaling up, since you don't initially know what kind of VM should suffice, you can start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up">Link</a>
+
+<strong>Horizontal scaling</strong>: It's good practice to also scale out your App service plan. You can autoscale and set up autoscaling rules or go the manual route. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started">Link</a>
 
 
 <a name="ScaleSets"></a>

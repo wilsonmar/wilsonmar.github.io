@@ -150,7 +150,7 @@ To verify routing paths, use <strong>Next hop</strong>.
 
 To analyze NSG rules, use <strong>Effective security rules</strong>.
 
-For deep logging of VPN Gateway, use <strong>VPN troubleshooting</strong>
+For deep logging of VPN Gateway, use <strong>VPN troubleshooting</strong>.
 
 To gather ethernet frames for analysis by WireShark or MMA, use <strong>Packet capture</strong>.
 
@@ -158,9 +158,14 @@ Diagnose and solve issues such as:
    * VNet traffice filtering 
    * Network routing
    * VPN/gateway connectivity
+   <br /><br />
+
+https://azure.microsoft.com/en-us/pricing/details/virtual-network/
 
 
-## DDoS (Distributed Denial of Service)
+<a name="DDoS"></a>
+
+## DDoS (Distributed Denial of Service) attacks
 
 1. Among services, search "DDOS" for the "DDoS Protection Plan". 
 1. View Pricing.
@@ -374,6 +379,10 @@ The ways to spread load:
 
 1. Target network IP configurations (for each VM within current availability set)
 
+   To distribute traffic to the VMs, a backend address pool contains the IP addresses of the virtual (NICs) connected to the Load Balancer.
+
+   Type a name for your Backend pool, then select Add.
+
    #### LB Health probe
 
 
@@ -381,14 +390,6 @@ The ways to spread load:
    Service monitoring probes.
 
    Automated reconfiguration.
-
-1. In All services, All resources, select your LB resource to include virtual machines for load-balancing internet traffic. 
-
-   Under Settings, select Backend pools, then select Add.
-
-   To distribute traffic to the VMs, a backend address pool contains the IP addresses of the virtual (NICs) connected to the Load Balancer.
-
-   Type a name for your Backend pool, then select Add.
 
 
 1. Use LB

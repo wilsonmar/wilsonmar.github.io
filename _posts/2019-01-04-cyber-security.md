@@ -20,6 +20,45 @@ comments: true
 
 “Security is always excessive until it's not enough.” – Robbie Sinclair
 
+<hr />
+
+## Security Engineer
+
+Here are "Essential Job Functions" based on various job descriptions:
+
+* Apply established and ad hoc processes and techniques to identify, validate, prioritize, and track security risks.
+* Identify uncontrolled risks and recommend control improvements.
+* Proactively identify security requirement deficiencies.
+* Engage business and technology personnel to elicit security requirements.
+* Architect and design security control systems to address requirements.
+* Operate and monitor established security controls.
+* Identify control deficiencies and make appropriate recommendations.
+* Ensure that controls are operating effectively; resolve operating discrepancies.
+* Review, triage, and prioritize control output.
+* Take appropriate action to resolve security discrepancies.
+* Identify, evaluate, and recommend new security technologies, techniques, and tools.
+* Define, review, and promote information security policies, standards, guidelines, and procedures.
+
+* As <strong>compliance subject matter expert</strong>, enforce and monitor compliance with internal and external regulations, policies, and standards.
+* Establish and promote strategies to ensure that compliance is effectively monitored and enforced.
+* Lead/Co-lead internal process improvement initiatives.  Provide feedback on processes by offering suggestions.
+
+* Mentor and supervise junior staff in project-level tasks.
+* Assist with adherence to technology policies and comply with all security controls.
+
+Education/Experience Requirements:
+
+* Experience must include direct experience in several of the key areas listed: securing networks and systems architecture, design and implementation, secure software assurance, intrusion detection, defense and incident response, security configuration management, access controls design and implementation and security policy and standards development.
+* In-depth knowledge of one or more communications protocols.
+* Experience with more than one Cyber Security tools, including: Configuration Assessment, Log Aggregation, Integrity Verification, Web Application Security Testing, Network Access Control System, Network Intrusion prevention systems, and Endpoint Security Solutions.
+
+* Strong written and verbal technical communication skills.
+* Demonstrated ability to develop effective working relationships that improved the quality of work products.
+* Should be well organized, thorough, and able to handle competing priorities.
+* Ability to maintain focus and develop proficiency in new skills rapidly.
+* Ability to work in a fast paced environment.
+* In-depth knowledge of more than one Information Security principle and discipline.
+<br /><br />
 
 ## Glossary
 
@@ -904,6 +943,15 @@ UK Government G-Cloud is a cloud computing certification for services used by go
 HIPAA (Health Insurance Portability and Accountability Act) is a US federal law that regulates patient Protected Health Information (PHI). A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and the Health Information Technology for Economic and Clinical Health Act (HITECH) Act. HIPAA security rules prevent medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
 
 Service Organization Controls (SOC) 1, 2, and 3 report is a framework by independent third-party <strong>auditors</strong> covering controls for data security, availability, processing integrity, and confidentiality as applicable to in-scope trust principles for each service.
+SOC reports are internal control reports on the services provided by a service organization.
+
+   * SOC 3 is the only SOC report that should be shared with the general public.
+   * SOC 2 Type II, along with ISO 27001
+   <br /><br />
+
+AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. SSAE18 (Statement on Standards for Attestation Agreement #18) 
+
+Others:
 
    * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate.
 
@@ -1211,16 +1259,6 @@ Education/Experience Requirements:
 * In-depth knowledge of more than one Information Security principle and discipline.
 <br /><br />
 
-AICPA Trust Service Principles, including Security, Availability and Confidentiality. 
-
-AICPA (American Institue of Certified Public Accountants) 
-SSAE18 (Statement on Standards for Attestation Agreement #18) 
-SOC (Service Organization Control) Reports are internal control reports on the services provided by a service organization.
-
-SOC 3 is the only SOC report that should be shared with the general public.
-
-SOC 2 Type II, along with ISO 27001
-
 
 <a name="HSM"></a>
 
@@ -1273,7 +1311,7 @@ Microsoft Threat Model Tool uses "STRIDE" as a memonic for classification of thr
 
 ### MITRE ATT&CK & Dragos
 
-Since 2013, MITRE's ATT&CK process looks at tactics, techniques, and procedures (TTPs) for Enterprise IT. 
+Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</a> process looks at tactics, techniques, and procedures (TTPs) for Enterprise IT. PROTIP: Click on the icon to the right of each item for additional info.
 
 <a target="_blank" href="https://www.dragos.com/">Dragos</a> <a target="_blank" href="https://hub.dragos.com/hubfs/Whitepaper-Downloads/Mapping-Industrial-Cybersecurity-Threats-to-MITRE-ATTACK-for-ICS.pdf">PDF: ATT&CK for IoC</a> (Industrial Control Systems)
 
@@ -1314,7 +1352,7 @@ Since 2013, MITRE's ATT&CK process looks at tactics, techniques, and procedures 
 <tr valign="top"><td> 11. Collection [new]
    </td><td>7. Collection
    </td></tr>
-<tr valign="top"><td> 12. <strong>Command and Control</strong> [Denial of service]
+<tr valign="top"><td> 12. <strong>Command and Control</strong><br />[Denial of service]
    </td><td>8. Command and Control
    </td></tr>
 <tr valign="top"><td> 13. <strong>Exfiltration</strong>
@@ -1404,9 +1442,9 @@ Focus of security awareness training:
    * Regular staff: responsibilities regarding security for performing day-to-day tasks in a secure manner. 
    <br /><br />
 
-   * FERMA (??? European Risk Management Standard) provides guidelines for managing risk in an organization.
+<a target="_blank" href="https://www.ferma.eu/">FERMA (Federation of European Risk Management Associatitions)</a> provides guidelines for managing risk in an organization.
 
-   The PASTA methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
+The PASTA methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
 
 The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
 
@@ -1445,7 +1483,7 @@ Security program life cycle:
    * Architectural description (AD) refers to the set of documents that convey the architecture in a formal manner.
    <br /><br />
 
-Software Capability Maturity Model - REMEMBER: I Read Data Maps Online:
+Software Capability Maturity Model (SCCM) - REMEMBER: Memonic: I Read Data Maps Online:
 
    1. <strong>Initial</strong> (chaotic, ad hoc, individual heroics) - the starting point for use of a new or undocumented repeat process.
    2. <strong>Repeatable</strong> - process is at least documented sufficiently such that repeating the same steps may be attempted.

@@ -138,12 +138,15 @@ Within script code are references to documentation and tutorials related to the 
    Several Functions components are not available in the Azure CLI, so manual actions are needed on Azure portal to fill in the gaps.
    See the "Month of Lunches" ebook.
 
+https://github.com/Azure/azure-quickstart-templates
 
 <hr />
 
 ## Script coding tricks
 
 Bash scripts here are written with coding conventions defined at <a target="_blank" href="https://wilsonmar.github.io/bash-codng">https://wilsonmar.github.io/bash-coding</a> which include:
+
+   * <tt>source ./az-all-start.sh </tt> sets up environment variables and utility functions.
 
    * <tt>set -o errexit</tt> makes it so that the script stops on the first error (instead of running on).
 
