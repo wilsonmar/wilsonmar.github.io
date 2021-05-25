@@ -1327,9 +1327,11 @@ $securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
 
    CAUTION: Run the above manually. Do not put the above commands in a script stored in GitHub.
 
+   https://www.pdq.com/blog/secure-password-with-powershell-encrypting-credentials-part-1/
+
 1. The value of $securePasswords can now be saved in a file which exports an environment variable. You still should not hard-code encryption keys in code so that it can be cracked over a long period of time by powerful computers.
 
-1. To unencrypt (under the same account) within a sample command:
+1. To unencrypted secret (under the same account) within a sample command:
 
    <pre>$myapp = New-AzADApplication -DisplayName '...' -HomePage 'http://...' -IdentifierUris 'http://...' <strong>-Password $securePassword</strong>
    </pre>

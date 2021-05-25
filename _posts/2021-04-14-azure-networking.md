@@ -352,6 +352,8 @@ The ways to spread load:
 
 ### Azure Load Balancers 
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview">DOCS</a>:
+
 <strong>Azure Load Balancers</strong> direct Layer 4 incoming traffic based on a 5-tuple hash to multiple resources such as virtual machines. 
 
 1. Portal: Create a resource -> Networking -> (in Azure Marketplace) Load Balancer.
@@ -521,6 +523,61 @@ alt
 6. In the Add connection blade, change Connection type to  Site-to-site (IPsec):
 
 +++ https://cloudacademy.com/course/overview-of-azure-services/azure-overview/
+
+
+<a name="TrafficManager"></a>
+
+## Traffic Manager
+
+Uses DNS to direct requests to the most appropriate endpoint.
+
+Provides endpoint health checks and automatic failover.
+
+Can route based on performance, Weighted (for Canary deploy), Priority, or Geographic.
+
+Either Traffic Manager or Front Door, not both.
+
+
+<a name="FrontDoor"></a>
+
+## Azure Front Door
+
+Azure Front Door routes by Layer 7 URLs with session affinity, URL redirection, URL rewrite.
+
+It protects Bing.
+
+Like CDNs, it uses <a target="_blank" href="https://docs.microsoft.com/en-us/windows-server/networking/dns/deploy/anycast">TCP-based anycast protocol</a> ensures connection to closest endpoint.
+
+Can handle IPv6 and HTTP/2 traffic.
+
+It can handle certificate management and do TLS termination (sending HTTP traffic downstream).
+
+Azure Front Door doesn't routs by geo (DNS).
+
+
+<a name="Firewall"></a>
+
+## Azure Firewall
+
+Firewall Manager used to set Azure Firewall Policies.
+
+Layer 3-7 "Next Generation Firewall" (NGFW), like a packet filter, processes 
+
+Needs its own subnet to talk to the public internet.
+
+treat it like a network appliance - UDR (user-defined routes)
+
+https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview
+
+Being SaaS, has built-in high availability, unrestricted cloud scalability.
+
+Uses FQDN filtering rules. Provides threat intelligence based on known malicious IPs and FQDNs.
+
+NAT, Availability zones
+
+Takes an hour to build.
+
+$10,000 per month?
 
 
 ### VNet

@@ -27,13 +27,13 @@ TL;DR look for "PROTIP:" in this article highlight the author's hard-won experie
 
 ## What can AI do?
 
-1. Microsoft's gallery of user's contributions:
+1. Microsoft's Azure AI gallery of samples and users' contributions:
 
    <a target="_blank" href="
    https://gallery.azure.ai/browse">
    https://gallery.azure.ai/browse</a>
 
-1. Microsoft has DEMOS at: 
+1. Microsoft hands-on DEMOS at: 
 
    <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
 
@@ -160,9 +160,9 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td> "TextAnalytics"
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td><a href="#TextAnalytics">"TextAnalytics"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
-      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c9">API</a>       
+      </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/translator/#features">Features</a> </td><td> <a href="#TextTranslation">"TextTranslation"</a>
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/">2M chars/mo.</a> 
@@ -1246,7 +1246,7 @@ NLP enables the creation of software that can:
 
 Within Microoft, NLP consists of these Azure services (described below):
    * <a href="#LUIS">LUIS</a> (Language Understanding Intelligent Service)
-   * <a href="#Text_Analytics">Text Analytics</a>
+   * <a href="#TextAnalytics">Text Analytics</a>
    * <a href="#Speech">Speech</a>
    * <a href="#TextTranslation">Translator Text</a>
    <br /><br />
@@ -1374,7 +1374,7 @@ References:
    * <a target="_blank" href="https://github.com/chomado/GoogleHomeHack">github.com/chomado/GoogleHomeHack</a> in <a target="_blank" href="https://www.slideshare.net/chomado/developing-google-assistant-app-actions-on-google-with-microsoft-azure-functions-serverless-service-by-microsoft">slides</a> by Madoka Chiyoda 
    
 
-<a name="Text_Analytics"></a>
+<a name="TextAnalytics"></a>
 
 ### Text Analytics
 
@@ -1385,7 +1385,7 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">LAB</a> referencing "07 - Text Analytics.ipynb" ???
 
    <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> services:
-   * Language Detection (is it English, German, etc.)
+   * <a href="#LanguageDetection">Language Detection</a> (is it English, German, etc.)
    * Sentiment analysis (how positive or negative a document is)
    * Key phrase extraction
    * Translator Text
@@ -1428,7 +1428,13 @@ Response from the Text Moderation API include:
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/2-get-started-azure">Named Entity Recognition (NER)</a> identifies entities in the text and group them into different entity categories, such as organization name, location, event, etc.
 
+<a name="LanguageDetection"></a>
+
 #### Detect Language
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-language-text-analytics-api/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78&ns-enrollment-type=Collection&ns-enrollment-id=25m3h7g1355q">CHALLENGE</a>:
+
+Input text is in a formatted JSON document file of up to 5,120 characters. Process up to 1,000 documents per collection (1,000 IDs).
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages">API Reference</a>
 
