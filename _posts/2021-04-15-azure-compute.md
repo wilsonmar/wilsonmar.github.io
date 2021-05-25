@@ -521,7 +521,7 @@ A for Basic stdArd General Purpose VMs
 
 A for Standard General Purpose AMs.
 
-B for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable">Burstable</a> that stores credits used during low usage, but burst to 200% - 1000% of base. Used for dev and testing.
+B for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable">Burstable</a> that stores credits used during low usage, but burst when needed. The number B1 is 100%, B2 to 200%, B10 to 1000% of base. Used for dev and testing.
 
 D for General Purpose apps, with DS instances for premium storage.
 
@@ -561,7 +561,7 @@ r suffix for remote direct memory (RDMA)
 
 ## Scaling
 
-<strong>Vertical Scaling</strong>: For scaling up, since you don't initially know what kind of VM should suffice, you can start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up">Link</a>
+<strong>Vertical Scaling</strong>: For scaling up, since initially one doesn't know what kind of VM will suffice, start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up">Link</a>
 
 <strong>Horizontal scaling</strong>: It's good practice to also scale out your App service plan. You can autoscale and set up autoscaling rules or go the manual route. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started">Link</a>
 
@@ -574,7 +574,7 @@ r suffix for remote direct memory (RDMA)
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png">
 <img alt="az-scale-sets-782x504" width="782" height="504" src="https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png"></a>
 
-Azure VM Scale Sets let your create and manage a <strong>group of load balanced VMs</strong>. 
+Azure VM Scale Sets enables creation and management a <strong>group of load balanced VMs</strong>. 
 The number of VM instances can automatically increase of decreate in response to demand or a defined schedule. 
 Scale sets provide high availability (HA) to your applications and allow you to centrally manage, configure, and update a large number of VMs.
 
@@ -675,9 +675,15 @@ To improve security, enable just-in-time VM access.
 
 1. Specify the Host Group
 
+   Azure Dedicated Hosts allow you to provision and manage a physical server within our data centers that are dedicated to your Azure subscription. A dedicated host gives you assurance that only VMs from your subscription are on the host, flexibility to choose VMs from your subscription that will be provisioned on the host, and the control of platform maintenance at the level of the host.
+
+   * https://docs.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts
+   * https://docs.microsoft.com/en-us/azure/virtual-machines/dedicated-hosts-portal
+   * https://docs.microsoft.com/en-us/cli/azure/vm/host/group?view=azure-cli-latest
+   <br /><br />
+
    Host can only be updated when the virtual machine is deallocated.
 
-   Azure Dedicated Hosts allow you to provision and manage a physical server within our data centers that are dedicated to your Azure subscription. A dedicated host gives you assurance that only VMs from your subscription are on the host, flexibility to choose VMs from your subscription that will be provisioned on the host, and the control of platform maintenance at the level of the host.
 
 
 <a name="VM_GUI"></a>
