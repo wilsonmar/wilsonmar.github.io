@@ -1428,6 +1428,8 @@ Response from the Text Moderation API include:
 
 #### Key phrase extraction
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-key-phrases-text-analytics-api/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>:
+
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases">API Reference</a>
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/2-get-started-azure">Named Entity Recognition (NER)</a> identifies entities in the text and group them into different entity categories, such as organization name, location, event, etc.

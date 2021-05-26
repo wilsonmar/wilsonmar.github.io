@@ -188,25 +188,25 @@ This also means you won't be able to go back and change answers in previous ques
 With CAT (Computer Adaptive Testing), those who ace the test would get done before the 3 hours and 150 questions.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
-Links lead to 2021 video tutorial by Micke Chappel on LinkedIn Learning. 
-Numbers to the right are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
-   1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">[]</a> 
-   Security and Risk Management - 334
-   2. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">[]</a> 
-   Asset Security - 44
-   3. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">[]</a> 
-   Security Architecture and Engineering - 268
-   4. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">[]</a> 
-   Communication and Network Security - 114 on OSI model
-   5. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">[]</a> 
-   Identity and Access Management (IAM) - 82 on biometrics
-   6. <a target="_blank" href="#">[]</a> 
-   Security Assessment and Testing - 41 on NIST SP 800-92
-   7. <a target="_blank" href="#">[]</a> 
-   Security Operations - 245 
-   8. <a target="_blank" href="#">[]</a> 
-   Software Development Security - 164 on SDLC 
+PROTIP: I think Mike Chappel on LinkedIn Learning provides the most detailed, best sequenced learning, updated in 2021. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+
+   1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
+   Security and Risk Management</a> - 334
+   2. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
+   Asset Security</a> - 44
+   3. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
+   Security Architecture and Engineering</a> - 268
+   4. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
+   Communication and Network Security</a> - 114 on OSI model
+   5. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   Identity and Access Management (IAM)</a> - 82 on biometrics
+   6. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   Security Assessment and Testing</a> - 41 on NIST SP 800-92
+   7. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
+   Security Operations</a> - 245 
+   8. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
+   Secure Software Development Lifecycle</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
    <br /><br />
 
 There is a 5 year experience requirement.
