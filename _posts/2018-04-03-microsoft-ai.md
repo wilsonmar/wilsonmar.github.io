@@ -160,7 +160,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td><a href="#TextAnalytics">"TextAnalytics"</a>
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td><a href="#TextAnalytics">"TextAnalytics"</a> (<a href="#LanguageDetection">Detect Language</a>, <a href="#Sentiment">Sentiment</a>,<a href="#NamedEntities">Named Entities</a>, <a href="#KeyPhrases">Key Phrases</a>, <a href="#TextModeration">Text Moderation?</a>)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6">API</a>       
       </td></tr>
@@ -1402,7 +1402,7 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api?tabs=synchronous">Some Text Analytics API services are synchronous and asynchronous</a>
 
-<a name="Text Moderation"></a>
+<a name="TextModeration"></a>
 
 #### Text Moderation
 
@@ -1415,12 +1415,16 @@ Response from the Text Moderation API include:
    * Possible personally identifiable information (PII) found in the text.
 
 
+<a name="Sentiment"></a>
+
 #### Sentiment Analysis
 
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Sentiment">API Reference</a>
 
    The output is a number from 0 to 1, with 1 being the most positive language and zero being the most negative opinion expressed.
 
+
+<a name="KeyPhrases"></a>
 
 #### Key phrase extraction
 
@@ -1433,10 +1437,28 @@ Response from the Text Moderation API include:
 #### Detect Language
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-language-text-analytics-api/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78&ns-enrollment-type=Collection&ns-enrollment-id=25m3h7g1355q">CHALLENGE</a>:
+<a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages">API Reference</a>
 
-Input text is in a formatted JSON document file of up to 5,120 characters. Process up to 1,000 documents per collection (1,000 IDs).
+<a target="_blank" href="https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7">v2.1 API Testing Console</a>
 
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages">API Reference</a>
+Input text is in a formatted JSON document files of up to 5,120 characters.
+Each file can contain up to 1,000 id's, each associated with a text string.
+
+As with GraphQL, the API returns the detected language and a numeric score between 0 and 1. Scores close to 1 indicate 100% certainty that the identified language is true. A total of 120 languages are supported.
+
+   <pre>   "id": "3",
+      "detectedLanguages": [
+        {
+          "name": "Spanish",
+          "iso6391Name": "es",
+          "score": 1
+        }
+   </pre>
+
+Only one language code is returned for each document submitted.
+Mixed language content within the same document returns the language with the largest representation in the content, but with a lower positive rating, reflecting the marginal strength of that assessment.
+
+<a name="NamedEntities"></a>
 
 #### Named Entity Recognition
 

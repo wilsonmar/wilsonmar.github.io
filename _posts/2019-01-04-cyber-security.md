@@ -1149,6 +1149,16 @@ Components of configuration management:
    * configuration auditing
    <br /><br />
 
+<a name="CodeReview"></a>
+Fagan inspections:
+   1. Planning - prework to prepare
+   2. Overview - assign roles, provide overview of software
+   3. Preparation - independent review of code for potential defects
+   4. Meeting - formally identify issues as a team
+   5. Rework - fix. May return to the planning phase.
+   6. Follow-up to confirm defects corrected
+   <br /><br />
+
 ## Defense in Depth
 
 1. Physical security
