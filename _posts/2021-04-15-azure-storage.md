@@ -21,50 +21,30 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
 
 PROTIP: My contribution to the world here are tables that organize complex information to make them easier to remember.
 
-## Introductions 
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
-
-
-### Pricing
-
-[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
-   
-   A. Region resource costing
-
-   B. Region's support of Availability Zones - white dots on<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
-   
-   C. <a href="#Blobs">Type of Blob (Storage Type)</a><br />
-   
-   D. <a href="#Replication">Replication/Redundancy</a>
-
-
-<hr />
 
 <a name="StorageAccount"></a>
 
-## Create Storage account
+## Create Storage account in Portal UI
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-Storage accounts are recepticles capable of storing different categories of data. 
+1. A subscription is needed if you want to use the CLI.
 
-REMEMBER: PROTIP: Storage accounts are under Subscriptions, separate from (not under) any Resource Group.
+   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
+   Storage accounts are recepticles capable of storing different categories of data. 
 
-A subscription is needed if you want to use the CLI.
-
-### CLI to create Storage account
-
-Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> 
+   REMEMBER: PROTIP: Storage accounts are under Subscriptions, separate from (not under) any Resource Group.
 
 
+   ### Storage Pricing
 
+   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
+   
+   A. Region
 
-The manual alternative is below.
-
-
-### Manual Portal UI
+   B. Region's support of Availability Zones - white dots on<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
+   
+   C. <a href="#Blobs">Type of Blob (Storage Type)</a> available in the region
+   
+   D. <a href="#Replication">Replication/Redundancy</a> region pair availability
 
 1. Get to blade <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
 
@@ -83,7 +63,24 @@ The manual alternative is below.
 1. Copy to Clipboard by Ctrl+V.
 1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
 
+
 <hr />
+
+
+### CLI to create Storage account
+
+Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> 
+
+
+<hr />
+
+## Introductions 
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
+
+
 
 <a name="StorageTypes"></a>
 
@@ -126,11 +123,9 @@ Does your data require transactions (ACID properties)? If yes, use SQL.
 ## Redundancy (from Replication)
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
-
-   https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tbody>
    <tr valign="top"><td>
    <p><strong>Replication Strategy</strong></p>
    </td>
@@ -234,8 +229,8 @@ Does your data require transactions (ACID properties)? If yes, use SQL.
    GPV2,
    Blob
    </td></tr>
-   </tbody>
    </table>
+
 
 <a name="LRS"></a>
 
@@ -359,22 +354,25 @@ General-purpose storage stores files, tables, queues:
    <tr align="left"><th> Type </th><th> Standard<br />HHD </th><th> Standard<br />SSD </th><th> Premium<br />SSD </th><th> Ultra<br />SSD </th></tr>
    <tr valign="top" align="right"><td> Size 
       </td><td> 250 </td><td> 250 </td><td> 250 </td><td> 250 
-   </td></tr>
+      </td></tr>
    <tr valign="top" align="right"><td> Size TiB
       </td><td> 32  </td><td> 32 </td><td> 32 </td><td> 64 
-   </td></tr>
+      </td></tr>
    <tr valign="top" align="right"><td>IOPS Limit expected 
       </td><td> 2,000 </td><td> 6,000 </td><td> 20,000<br />Burst 30,000 </td><td> 160,000
-   </td></tr>
+      </td></tr>
    <tr valign="top" align="right"><td>Thruput limit MB/s 
       </td><td>  60 </td><td> ? </td><td> 125 </td><td> -
+      </td></tr>
    <tr valign="top" align="right"><td>Bandwidth MBps
       </td><td>  500 </td><td> 750 </td><td> 900<br />Burst 1,000</td><td> 2,000
+      </td></tr>
    <tr valign="top" align="right"><td>Single Instance SLA
       </td><td>  95% </td><td> 99.9% </td><td> 99.9%</td><td> 99.9%
-   <tr valign="top" align="left"><td>Usage:
+         </td></tr>
+<tr valign="top" align="left"><td>Usage:
       </td><td> test & dev, backups </td><td> Big-data entry-level web servers </td><td> prod. databases, container volumes</td><td> SAN, Tier-1 workloads (SAP HANA)
-   </td></tr>
+      </td></tr>
    </table>
 
    * General-purpose v1 can contain blobs (more expensive than v2)
@@ -555,6 +553,7 @@ Types of blobs in Azure blob storage:
    </td></tr>
 </table>
 
+
 <a name="BlockBlobs"></a>
 
 * <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>]
@@ -615,7 +614,6 @@ mechanism for rehydraring from cold/archive
 
 
 
-
 ## Authorization
 
 Every storage request must be authorized.
@@ -625,7 +623,6 @@ Every storage request must be authorized.
 Auth. Methods by Storage Type:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tbody>
 <tr align="center"><th align="left">Storage Type
    </th><th>Shared Access signatures
    </th><th>AAD
@@ -654,7 +651,6 @@ Auth. Methods by Storage Type:
    </td><td>-
    </td></tr>
 
-</tbody>
 </table>
 
 PROTIP: All support Storage Account Shared (SAS) Keys.
@@ -714,7 +710,6 @@ Connect to a Cosmos DB account.
 https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=template
 
 For PowerShell, CLI, GUI
-
 
 
 
