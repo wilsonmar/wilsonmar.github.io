@@ -19,7 +19,7 @@ comments: true
 
 Here are the notes I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
 
-PROTIP: My contribution to the world here are tables that organize complex information to make them easier to remember.
+My contribution to the world here is a deep yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
 
 
 <a name="StorageAccount"></a>
