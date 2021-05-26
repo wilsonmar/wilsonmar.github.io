@@ -269,6 +269,28 @@ Does your data require transactions (ACID properties)? If yes, use SQL.
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
 
 
+
+### Managed Disk Account Type
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h52m43s">VIDEO</a>
+
+You can attach and detach Azure disks to a different VM. 
+They will maintain their data but the data are only usable when a disk is attached to a VM.
+
+* <strong>Ultra SSDs</strong> provide the best throughput and I/O operations per second (IOPS) performance characteristics but at the highest prices. Use for mission-critical I/O intense applications such as running databases.
+
+* <strong>Premium_LRS</strong> (SSDs) are the next best performing and are well-suited to production workloads.
+
+* <strong>Standard SSDs</strong> are the least expensive SSD option, suitable for production workloads with low I/O performance requirements such as web servers and lightly used applications.
+
+* <strong>Standard HDDs</strong> use older magnetic spinning disk technology and are therefore the least expensive option but also provide the lowest performance. Use them for backups and infrequently accessed applications.
+
+* Standard_LRS = Locally Redundant Storage
+* Standard_GRS = Geographically Redundant Storage
+* Standard_RAGRS = Read Access Geographically Redundant Storage
+
+
+
 <hr />
 1. Enable blob public access: CAUTION: default is enabled!
 
@@ -301,17 +323,20 @@ Each storage account provides a unique namespace accessible over HTTPS.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr align="left"><th> Service </th><th align="right"> URL (singular)</th></tr>
-<tr valign="top"><td> <a href="#Files">Files</a> 
-   </td><td align="right"> <tt>https://<em>my_account</em>.file.core.windows.net</tt>
+<tr valign="top"><td> Container service</a> 
+   </td><td align="right"> <tt>https://<em>my_account</em>.<strong>blob</strong>.core.windows.net</tt>
    </td></tr>
 <tr valign="top"><td> <a href="#Blobs">Blobs</a> 
-   </td><td align="right"> <tt>https://<em>my_account</em>.blob.core.windows.net</tt>
+   </td><td align="right"> <tt>https://<em>my_account</em>.<strong>blob</strong>.core.windows.net</tt>
+   </td></tr>
+<tr valign="top"><td> <a href="#Files">Files</a> 
+   </td><td align="right"> <tt>https://<em>my_account</em>.<strong>file</strong>.core.windows.net</tt>
    </td></tr>
 <tr valign="top"><td> <a href="#Queues">Queues</a> 
-   </td><td align="right"> <tt>https://<em>my_account</em>.queue.core.windows.net</tt>
+   </td><td align="right"> <tt>https://<em>my_account</em>.<strong>queue</strong>.core.windows.net</tt>
    </td></tr>
 <tr valign="top"><td> <a name="Azure_Table_Service">Azure Tables</a> 
-   </td><td align="right"> <tt>https://<em>my_account</em>.table.core.windows.net</tt>
+   </td><td align="right"> <tt>https://<em>my_account</em>.<strong>table</strong>.core.windows.net</tt>
    </td></tr>
 </table>
 
@@ -378,6 +403,7 @@ General-purpose storage stores files, tables, queues:
    * General-purpose v1 can contain blobs (more expensive than v2)
    * General-purpose v2 supports Access tiers: hot, cool, archive with Lifecycle Policies; upgrade from blob storage???
    <br /><br />
+
 
 <a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-storage-products/reviewing-file-storage-in-azure/?context_id=524&context_resource=lp">
 LAB: Reviewing File Storage in Azure:</a>
@@ -735,25 +761,6 @@ The product name "Azure Queue Storage" was change from "Azure Storage Queues".
 
 Azure virtual machines (VMs) use Azure disks as their attached disk storage. Azure disks are built on top of page blobs optimized for random access. When you create Azure disks you can choose to manage the storage account yourself or to use managed disks where Azure manages the storage account for you. 
 
-
-### Managed Disk Account Type
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h52m43s">VIDEO</a>
-
-You can attach and detach Azure disks to a different VM. 
-They will maintain their data but the data are only usable when a disk is attached to a VM.
-
-* <strong>Ultra SSDs</strong> provide the best throughput and I/O operations per second (IOPS) performance characteristics but at the highest prices. Use for mission-critical I/O intense applications such as running databases.
-
-* <strong>Premium_LRS</strong> (SSDs) are the next best performing and are well-suited to production workloads.
-
-* <strong>Standard SSDs</strong> are the least expensive SSD option, suitable for production workloads with low I/O performance requirements such as web servers and lightly used applications.
-
-* <strong>Standard HDDs</strong> use older magnetic spinning disk technology and are therefore the least expensive option but also provide the lowest performance. Use them for backups and infrequently accessed applications.
-
-* Standard_LRS = Locally Redundant Storage
-* Standard_GRS = Geographically Redundant Storage
-* Standard_RAGRS = Read Access Geographically Redundant Storage
 
 
 ### LAB: inspect a VM with two disks attached
