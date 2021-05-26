@@ -213,7 +213,7 @@ There is a 5 year experience requirement.
 
 Written Reference:
 
-   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">$58</a> <a target="_blank" href="https://learning.oreilly.com/library/view/isc2-cissp-certified/9781119475934/">Sybex BOOK</a>: "(ISC)2 CISSP Certified Information Systems Security Professional <strong>Official Study Guide</strong> & Practice Tests Bundle Second" Edition</a> by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
+   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">$58</a> <a target="_blank" href="https://learning.oreilly.com/library/view/isc2-cissp-certified/9781119475934/">Sybex BOOK</a>: "(ISC)2 CISSP Certified Information Systems Security Professional <strong>Official Study Guide</strong> & Practice Tests Bundle Second Edition" by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
 
    * <a target="_blank" href="https://josephdelgadillo.com/cissp-testprep-cheatsheet/">Joseph Delgadillo's cissp-testprep-cheatsheet</a> provides a PowerPoint file.
 
@@ -250,14 +250,11 @@ Video prep courses view:
 
    <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
 
-   <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-1-secure-software-concepts?u=26886050">
-   1. Secure Software Concepts</a> Released Feb 12, 2020 (Confidentiality, Integrity, Availability triad, IAM, design)
+      1. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-1-secure-software-concepts?u=26886050">Secure Software Concepts</a> Released Feb 12, 2020 (Confidentiality, Integrity, Availability triad, IAM, design)
    
-   <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-2-secure-software-requirements?u=26886050">
-   2. Secure Software Requirements</a>
+      2. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-2-secure-software-requirements?u=26886050">Secure Software Requirements</a>
 
-   <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-3-secure-software-design?u=26886050">
-   3. Secure Software Design</a> 1h 48m 
+   3. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-3-secure-software-design?u=26886050">Secure Software Design</a> 1h 48m 
 
    4. Secure Software Implementation/Programming
 
