@@ -185,11 +185,11 @@ PROTIP: With Adaptive Testing, your objective is to get hard questions. So study
 <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
 This also means you won't be able to go back and change answers in previous questions answered.
 
-With CAT (Computer Adaptive Testing), those who ace the test would get done before the 3 hours and 150 questions.
+With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours and 150 questions maximum.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 
-PROTIP: I think Mike Chappel on LinkedIn Learning provides the most detailed, best sequenced learning, updated in 2021. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+PROTIP: I think Mike Chapple on LinkedIn Learning provides the most detailed, best sequenced learning, updated in 2021. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
    Security and Risk Management</a> - 334

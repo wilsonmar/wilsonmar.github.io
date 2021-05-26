@@ -69,6 +69,8 @@ As of this writing, in various marketing and certification training <a target="_
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-user-feedback-with-the-text-analytics-api/3-exercise-call-the-text-analytics-api-using-the-api-testing-console">FREE Sandbox (Concierge Subscription) Exercise: Call the Text Analytics API from the online testing console</a> Feedback sorter Function app Text Analytics thru Queue, sort based on Sentiment.
+
 
 <hr />
 
@@ -160,7 +162,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/qna-maker/">3 TPS, 5K/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td><a href="#TextAnalytics">"TextAnalytics"</a> (<a href="#LanguageDetection">Detect Language</a>, <a href="#Sentiment">Sentiment</a>,<a href="#NamedEntities">Named Entities</a>, <a href="#KeyPhrases">Key Phrases</a>, <a href="#TextModeration">Text Moderation?</a>)
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/#features">Features</a> </td><td><a href="#TextAnalytics">"TextAnalytics"</a> (<a href="#LanguageDetection">Detect Language</a>, <a href="#Sentiment">Sentiment</a>, <a href="#NamedEntities">Named Entities</a>, <a href="#KeyPhrases">Key Phrases</a>)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/">5K trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6">API</a>       
       </td></tr>
@@ -180,7 +182,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/">2,000 trans/mo.</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/anomaly-detector-enterprise-edition/operations/createDataFeed">API</a>       
       </td></tr>
-   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a>  </td><td> "ContentModerator"
+   <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/content-moderator/#features">Features</a> </td><td><a href="#ContentModerator">"ContentModerator"</a> (Evaluate, Find Faces, Match, OCR)
       </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-moderator/">1 TPS</a> 
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66c">API</a>       
       </td></tr>
@@ -605,6 +607,46 @@ Practice tests:
    * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
 
+<a name="ContentModerator"></a>
+
+## Content Moderation
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/2-overview-of-text-moderation">DOCS</a>:
+
+https://docs.microsoft.com/azure/cognitive-services/Content-Moderator/overview?WT.mc_id=Portal-Microsoft_Azure_Support#data-privacy-and-security
+
+https://docs.microsoft.com/en-us/azure/cognitive-services/content-moderator/client-libraries?tabs=visual-studio&pivots=programming-language-csharp
+
+Response from the Text Moderation API include:
+
+   * What type of potentially unwanted words were found (Profanity)
+   * A list of potentially unwanted words found in the text.
+   * Possible personally identifiable information (PII) found in the text.
+   <br /><br />
+
+Content Moderation (Evaluate, Find Faces, Match, OCR)
+
+1. G+/ to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.ContentModerator%2Fapplications">Content Moderator"</a>
+1. "Create Custom Moderator"
+
+   Oops!
+
+   Could not create the marketplace item
+
+   This marketplace item is not available.
+
+   When working:
+
+1. Select Create.
+
+1. Enter a unique name for your resource, select a subscription, and select a location close to you.
+
+1. Select the pricing tier for this resource, and then select F0.
+
+1. Create a new resource group 
+
+1.  Select Create.
+
 <hr />
 
 <a name="RunJupyter"></a>
@@ -817,15 +859,12 @@ Configure run to create different models:
 
 Example of ML classification:
    * <a target="_blank" href="https://www.literature-map.com">literature-map.com</a> suggests other authors based on an author input. The input author is displayed in the middle of a map.
-   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
-   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
-   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
-   <br /><br />
 
-Classification of Profanity returns JSON with several categories:
-   * Category 1: sexually explicit or adult in certain situations.
-   * Category 2: sexually suggestive or mature in certain situations.
-   * Category 3: considered offensive in certain situations.
+   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
+
+   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
+
+   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
    <br /><br />
 
 ![az-ai-ml-1173x538](https://user-images.githubusercontent.com/300046/116586918-2fe67700-a8d7-11eb-87e7-1a4087faaa4f.png)
@@ -1203,7 +1242,7 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
 
 https://www.youtube.com/watch?v=gVFiA6ZQNAw
 
-
+zzz
 
 <a name="MetricsAdvisor"></a>
 
@@ -1269,6 +1308,15 @@ In contrast, Speaker Diarization groups segments of audio by speaker in a batch 
 
 ## LUIS (Language Understanding Intelligent Service)
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/add-basic-conversational-intelligence/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>:
+   * Create a LUIS Service Resource
+   * Add Intents
+   * Add utterances
+   * Work with Entities
+   * Use Prebuilt Domains and Entities
+   * Train and Publish the LUIS Model
+   <br /><br />
+
 https://www.slideshare.net/goelles/sharepoint-saturday-belgium-2019-unite-your-modern-workplace-with-microsofsts-ai-ecosystem
 
 https://github.com/Azure-Samples/cognitive-services-language-understanding
@@ -1301,6 +1349,9 @@ https://github.com/Azure-Samples/cognitive-services-language-understanding
    * Pattern.Any
    * Machine Learned
    <br /><br />
+
+
+<a name="LUIS"></a>
 
 ### LUIS CLI
 
@@ -1389,7 +1440,6 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
    * Sentiment analysis (how positive or negative a document is)
    * Key phrase extraction
    * Translator Text
-   * <a href="#TextModeration">Text Moderation</a>
    <br /><br />
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/1-introduction">Techniques</a>
@@ -1401,18 +1451,6 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytic
    https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api?tabs=synchronous">Some Text Analytics API services are synchronous and asynchronous</a>
-
-<a name="TextModeration"></a>
-
-#### Text Moderation
-
-https://docs.microsoft.com/en-us/learn/modules/classify-and-moderate-text-with-azure-content-moderator/2-overview-of-text-moderation
-
-Response from the Text Moderation API include:
-
-   * What type of potentially unwanted words were found (Profanity)
-   * A list of potentially unwanted words found in the text.
-   * Possible personally identifiable information (PII) found in the text.
 
 
 <a name="Sentiment"></a>
@@ -1429,10 +1467,19 @@ Response from the Text Moderation API include:
 #### Key phrase extraction
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-key-phrases-text-analytics-api/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>:
-
-   <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases">API Reference</a>
+<a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/KeyPhrases">API Reference</a>
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/2-get-started-azure">Named Entity Recognition (NER)</a> identifies entities in the text and group them into different entity categories, such as organization name, location, event, etc.
+
+   <pre>"documents": [
+    {
+      "id": "1",
+      "keyPhrases": [
+        "world",
+        "input text"
+      ]
+    },</pre>
+
 
 <a name="LanguageDetection"></a>
 
@@ -1440,6 +1487,14 @@ Response from the Text Moderation API include:
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/detect-language-text-analytics-api/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78&ns-enrollment-type=Collection&ns-enrollment-id=25m3h7g1355q">CHALLENGE</a>:
 <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages">API Reference</a>
+
+vs. <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66e">Content Moderator - Moderate Detect Language</a> to Auto Correct, PII, listid, classify, language. Classification of Profanity returns JSON with several categories:
+   * Category 1: sexually explicit or adult in certain situations.
+   * Category 2: sexually suggestive or mature in certain situations.
+   * Category 3: considered offensive in certain situations.
+   <br /><br />
+
+
 
 <a target="_blank" href="https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7">v2.1 API Testing Console</a>
 
@@ -1464,7 +1519,42 @@ Mixed language content within the same document returns the language with the la
 
 #### Named Entity Recognition
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/recognize-entities-text-analytics-api/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">CHALLENGE</a>:
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/EntitiesRecognitionGeneral">API Reference</a>
+
+Sample Response:
+   <pre>{
+  "documents": [{
+    "id": "1",
+    "entities": [{
+      "name": "Seattle",
+      "matches": [{
+        "wikipediaScore": 0.15046201222847677,
+        "entityTypeScore": 0.80624294281005859,
+        "text": "Seattle",
+        "offset": 26,
+        "length": 7
+      }],
+      "wikipediaLanguage": "en",
+      "wikipediaId": "Seattle",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Seattle",
+      "bingId": "5fbba6b8-85e1-4d41-9444-d9055436e473",
+      "type": "Location"
+    }, {
+      "name": "last week",
+      "matches": [{
+        "entityTypeScore": 0.8,
+        "text": "last week",
+        "offset": 34,
+        "length": 9
+      }],
+      "type": "DateTime",
+      "subType": "DateRange"
+    }]
+  }],
+  "errors": []
+}</pre>
+
 
 #### Linked Entities from a well known knowledge base
 
