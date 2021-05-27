@@ -54,9 +54,27 @@ Issues to monitor for:
    <br /><br />
 
 
+## Service Health
+
+1. In Portal GUI <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Health/AzureHealthBrowseBlade/serviceIssues">Service Health</a>
+1. Health alerts, "+ Add Service health alert"
+1. "Add Action Groups", Subscription, "+ Create action group"
+
+   Action Types: 
+   * Automation Runbook
+   * Azure Function
+   * ITSM
+   * Logic App
+   * Secure Webhook
+   * Webhook
+   <br /><br />
+
+
 <a name="Monitor"></a>
 
 ## Azure Monitor
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/monitor">PRICING</a>
 
 1. The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/overview">Azure Monitor service home screen is at https://docs.microsoft.com/en-us/azure/azure-monitor/overview</a>
 
@@ -235,7 +253,7 @@ HANDS-ON Exercise in Sandbox - Create basic Azure Monitor log queries to extract
    It combines multiple sources/sets of data in an interactive report (visualization).
    * Logs
    * Metrics
-   * Azure Resource Graph
+   * <a href="#ResourceGraph">Azure Resource Graph</a>
    * Alerts
    * Workload health
    * Azure Resource Health
@@ -449,9 +467,23 @@ https://medium.com/microsoftazure/automation-to-block-malicious-flows-detected-b
    https://docs.microsoft.com/en-us/azure/azure-monitor/reference/tables/NetworkMonitoring</a>
 
 
+<a name="ResourceGraph"></a>
+
+## Azure Resource Graph Explorer
+
+1. Click on "All Resources" powers
+1. Click "Open Query" at the top for a dialog to specify Kusto Query Language (KQL) for resource discovery and inventory.
+
+   "Graph" refers to the relationship between resource entities, not visual graphics.
+
+   
+
+
 <a name="KQL"></a>
 
-## Kusto query language (KQL)
+## Kusto Query Language (KQL)
+
+See my <a target="_blank" href="https://wilsonmar.github.io/kql">Kusto</a>
 
 
 <a name="MetricData"></a>
@@ -1112,3 +1144,10 @@ This is one of a series on Azure:
 User Defined Routes and NVA (Network V A)
 
 contosofashions25127.azurewebsites.net
+
+
+## More about Azure #
+
+This is one of a series about Azure cloud:
+
+{% include azure_links.html %}

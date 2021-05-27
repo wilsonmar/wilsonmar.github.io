@@ -347,8 +347,8 @@ Scripts here are adapted from various experts generous with sharing their code:
    <br /><br />
 
 
-## More
+## More about Azure #
 
-This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
+This is one of a series about Azure cloud:
 
-{% include ai_links.html %}
+{% include azure_links.html %}

@@ -33,6 +33,8 @@ TL;DR look for "PROTIP:" in this article highlight the author's hard-won experie
    https://gallery.azure.ai/browse">
    https://gallery.azure.ai/browse</a>
 
+   These are what are called "narrow" or "weak" AI.
+
 1. Microsoft hands-on DEMOS at: 
 
    <a target="_blank" href="https://aidemos.microsoft.com/">https://aidemos.microsoft.com</a>
@@ -40,6 +42,7 @@ TL;DR look for "PROTIP:" in this article highlight the author's hard-won experie
 Case studies of how people are already making use of AI/ML to save time and money:
 
    * Predictive Maintenance data science <a target="_blank" href="https://info.microsoft.com/CO-AAIoT-WBNR-FY16-07Jul-05-Predictive-Maintenance-Registration.html">webinar</a>
+   * Recommendation Engines (such as what Netflix)
    * modsy.com 3D view
    * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />

@@ -1024,8 +1024,8 @@ Cost control in Azure</a>
 <a target="_blank" href="https://aka.ms/ESIStudyGuides">aka.ms/ESIStudyGuides</a>
 
 
-## More on Cloud #
+## More about Azure #
 
-This is one of a series on cloud computing:
+This is one of a series about Azure cloud:
 
-{% include cloud_links.html %}
+{% include azure_links.html %}

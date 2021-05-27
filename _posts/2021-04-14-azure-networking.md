@@ -31,6 +31,11 @@ This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.
    * Virtual networks (classic)
    <br /><br />
 
+<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
+Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
+<img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
+
+
 ## VNets (Virtual Networks)
 
 VNets (Azure Virtual Networks) are the basic building blocks for logically isolating resources using networks in Azure.
@@ -69,7 +74,7 @@ The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subne
 5 addresses in each subnet are reserved by Azure for overhead functionality.
 
 
-## Scaling
+## Scaling/Spreading traffic
 
 <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_165">VIDEO</a>:
 Ways to spread load:
@@ -116,7 +121,8 @@ Azure Front Door doesn't routs by geo (DNS).
 
 ![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119789303-2e857b80-be90-11eb-891e-315f7b41040f.png)
 
-Traffic Manager Uses DNS to direct requests to the most appropriate endpoint.
+Traffic Manager is not georgraphic tied to regions. 
+It uses DNS to direct requests to the most appropriate endpoint.
 
 https://<em>your_name</em>.trafficmanager.net
 
@@ -214,19 +220,6 @@ It generates a heat map of connections.
 
 
 <hr />
-
-## Labs
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-network-infrastructure/">LEARN</a>: 
-You get 10 sandbox sessions per day (FREE) on labs, such as:
-* HANDS-ON 2-HOUR SANDBOX <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands">Exercise - Prepare Azure and on-premises virtual networks using Azure CLI commands</a> (Site-To-Site VPN)
-
-<img align="right" src="../images/az-net-site2site.svg">
-
-<a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
-Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
-<img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
-
 
 ## Coursera Guided Project
 
@@ -563,7 +556,13 @@ https://cloudacademy.com/lab/understanding-core-azure-networking-products/review
 Introduction
 Azure VPN Gateways are a type of Azure Virtual network Gateway which allows you to create secure connections between your on-premises network and an Azure Virtual Network (VNet). Azure uses leading security practices to protect data traveling between your on-premises network and your Azure network as if it were a single virtual private network (VPN). Among the benefits of this is the ability to use a hybrid infrastructure consisting of cloud and on-premises resources, with more security than you would get by simply handling your traffic over the public internet. In this Lab Step, you will navigate to an existing VPN gateway and learn about its fundamentals.
 
- 
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-network-infrastructure/">LEARN</a>: 
+You get 10 sandbox sessions per day (FREE) on labs, such as:
+* HANDS-ON 2-HOUR SANDBOX <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands">Exercise - Prepare Azure and on-premises virtual networks using Azure CLI commands</a> (Site-To-Site VPN)
+
+<img align="right" src="../images/az-net-site2site.svg">
+
 
 Instructions
 1. On the dashboard of the Azure Portal, click the portal menu > All resources:
@@ -915,8 +914,8 @@ C >>> Invalid Azure Portal logins
 D Azure Storage recommendations
 
 
-## More on DevSecOps #
+## More about Azure #
 
-This is one of a series on DevSecOps:
+This is one of a series about Azure cloud:
 
-{% include devops_links.html %}
+{% include azure_links.html %}
