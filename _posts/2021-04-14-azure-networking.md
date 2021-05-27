@@ -96,7 +96,7 @@ Peering of regions connects without creating a gateway, which are charged by hou
 Azure Front Door routes by Layer 7 URLs with session affinity, URL redirection, URL rewrite.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png">
-<img alt="az-frontdoor-1041x509.png" width="1041" height="409" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
+<img alt="az-frontdoor-1041x509.png" width="1041" height="509" src="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
 
 In the diagram above, Azure Front Door endpoint provides routing to two geo-distributed sets of a microservices Web App (not just VMs) on multiple regions for redundancy (active/passive standby). 
 
