@@ -17,7 +17,8 @@ comments: true
 {% include _toc.html %}
 
 Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
- 
+This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Azure cloud onramp</a> for skill at Portal GUI and CLI.
+
 1. In the Portal GUI, G+\ to Search for "Net" and there appears:
 
    * <a href="#add-network-interface-in-vm">Network interfaces</a>
@@ -37,6 +38,35 @@ VNets (Azure Virtual Networks) are the basic building blocks for logically isola
 VNets enable many different Azure services, such as load balancers, virtual machines and more, to communicate securely with one another.
 
 In combination with other Azure services like network security groups they also provide layers of protection from different segments of the Internet to Azure resources.
+
+
+1. PROTIP: Define conventions for naming variables in PowerShell:
+
+   <pre>$rgName = "TestGroup"
+$myLocation = "eastus"
+$vmName = "FileSystemTestVM"
+$vnetName = "TestGroupVnet"
+$subnetName = "default"
+$nicName = "newnic"
+&nbsp;
+# Deallocate vm:
+Stop-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Get VM config:
+$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Create New VNet:
+$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
+   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
+&nbsp;
+# Get info for backend subnet:
+$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
+$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
+   </pre>
+
+The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subnet.
+
+5 addresses in each subnet are reserved by Azure for overhead functionality.
 
 
 ## Scaling
@@ -92,9 +122,9 @@ https://<em>your_name</em>.trafficmanager.net
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-routing-methods">DOCS</a>:
 Routes based on 7 different methods: 
-   * Performance for users to use the closest endpoint for the lowest network latency
+   * Performance for users to use the closest endpoint for the lowest network latency, based on "Real user measurements" embedded in app code
+   * Weighted (for Canary deploy)
    * Priority
-   * Weighted (for Canary deploy), 
    * Geographic based on DNS origin (for data soverignty)
    * Multivalue (only IPV4/V6)
    * Subnet to specific end-user IP addresses to speific endpoints
@@ -102,13 +132,12 @@ Routes based on 7 different methods:
 
 All Traffic Manager profiles have endpoint health checks and automatic failover.
 
+It generates a heat map of connections.
 
 
 <a name="LBs"></a>
 
 ### Azure Load Balancers 
-
-![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119790405-237f1b00-be91-11eb-9fd5-09355febd1ac.png)
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview">DOCS</a>:
 
@@ -247,34 +276,6 @@ File share: Create new. Enter cloudshell for the name of the file share
 
 <a target="_blank" href="https://cloudacademy.com/lab/azure-playground-2747/">
 Azure Playground at https://cloudacademy.com/lab/azure-playground-2747/</a>
-
-
-## Variable Naming Conventions
-
-1. PROTIP: Define conventions for naming variables in PowerShell:
-
-   <pre>$rgName = "TestGroup"
-$myLocation = "eastus"
-$vmName = "FileSystemTestVM"
-$vnetName = "TestGroupVnet"
-$subnetName = "default"
-$nicName = "newnic"
-&nbsp;
-# Deallocate vm:
-Stop-AzVM -Name $vmName -ResourceGroupName $rgName
-&nbsp;
-# Get VM config:
-$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
-&nbsp;
-# Create New VNet:
-$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
-   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
-&nbsp;
-# Get info for backend subnet:
-$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
-$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
-   </pre>
-
 
 
 <a name="Watcher"></a>

@@ -36,13 +36,18 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
    https://account.windowsazure.com/signup</a>
    </td></tr>
+<tr valign="top"><td> Azure Enterprise Account Portal </td><td>
+   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
+   </td><td> Accounts under departments
+   </td></tr>
 <tr valign="top"><td> Azure Enterprise Portal </td><td>
    <a target="_blank" href="https://ea.azure.com"><strong><u>https://ea.azure.com</u></strong></a>
    </td><td> Define departments
    </td></tr>
-<tr valign="top"><td> Azure Enterprise Account Portal </td><td>
-   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
-   </td><td> Accounts under departments
+<tr valign="top"><td> Cloud Shell </td><td>
+   <a target="_blank" href="https://shell.azure.com/"><strong><u>
+   https://shell.azure.com</u></strong></a>
+   </td><td> CLI
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td>
    <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> <br />
@@ -51,14 +56,16 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
    <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a>
    </td></tr>
+
 <tr valign="top"><td> All Admin Centers </td><td>
    <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>https://admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
    </td></tr>
-<tr valign="top"><td> Cloud Shell </td><td>
-   <a target="_blank" href="https://shell.azure.com/"><strong><u>
-   https://shell.azure.com</u></strong></a>
-   </td><td> CLI
+<tr valign="top"><td> Machine Learning studio </td><td>
+   <a target="_blank" href="https://ml.azure.com/"><strong><u>
+   https://ml.azure.com</u></strong></a>
+   </td><td> See <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my AI tutorial</a>
    </td></tr>
+
 <tr valign="top"><td> Multi-tenant </td><td>
    <a target="_blank" href="https://login.microsoftonline.com/common/">
       <strong><u>login.microsoftonline.com/common</u></strong></a>
@@ -79,11 +86,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td> -
    </td></tr>
 
-<tr valign="top"><td> Machine Learning studio </td><td>
-   <a target="_blank" href="https://ml.azure.com/"><strong><u>
-   https://ml.azure.com</u></strong></a>
-   </td><td> See <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my AI tutorial</a>
-   </td></tr>
 <tr valign="top"><td> Support </td><td>
    <a target="_blank" href="https://support.azure.com/"><strong><u>
    https://support.microsoft.com</u></strong></a>
@@ -94,6 +96,10 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td></tr>
 <tr valign="top"><td> Support tickets </td><td>
    <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>https://serviceshub.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Traffic Manager </td><td>
+   <strong><u>https://<em>acct</em>.trafficmanager.net</u></strong></a>
    </td><td>-
    </td></tr>
 </table>
