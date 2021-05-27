@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure networking"
-excerpt: "vNets, hair nets"
+excerpt: "vNets, Peering, NSG, CDN, Scaling with Load Balancers, Gateways, Firewall, Front Door, Traffic Manager, DDoS"
 tags: [azure, cloud, networking]
 date: "2021-05-14"
 file: "azure-networking"
@@ -18,6 +18,162 @@ comments: true
 
 Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
  
+## VNets (Virtual Networks)
+
+VNets (Azure Virtual Networks) are the basic building blocks for logically isolating resources using networks in Azure.
+
+VNets enable many different Azure services, such as load balancers, virtual machines and more, to communicate securely with one another.
+
+In combination with other Azure services like network security groups they also provide layers of protection from different segments of the Internet to Azure resources.
+
+
+## Scaling
+
+![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119789303-2e857b80-be90-11eb-891e-315f7b41040f.png)
+
+<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_165">VIDEO</a>:
+Ways to spread load:
+
+   * Azure Front Door provides functionality of Traffic Manager, App Gateway, CDN, and DDoS protection.
+   * <a href="#TrafficManager">Traffic Manager</a> is a DNS "referral engine" providing IP addresses for routing global traffic across geographic regions 
+
+Use either Traffic Manager or Front Door, not both.
+
+   * <a href="#AppGateway">App Gateway</a> for URI routing with App Firewall
+   * F5 (third-party virtual appliance) NVA
+   * Azure Load Balancer performs Network Load balancing
+   * <a href="#LBs">Load balancers</a> (Basic and Standard) across VMs
+   * ILB (Internal Load Balancers)
+   <br /><br />
+
+Peering of regions connects without creating a gateway, which are charged by hour and bytes egress, which introduces extra latency with limited bandwidth.
+
+
+<a name="FrontDoor"></a>
+
+## Azure Front Door
+
+Azure Front Door routes by Layer 7 URLs with session affinity, URL redirection, URL rewrite.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png">
+<img alt="az-frontdoor-1041x509.png" width="1041" height="409" href=https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
+
+In the diagram above, Azure Front Door endpoint provides routing to two geo-distributed sets of a microservices Web App (not just VMs) on multiple regions for redundancy (active/passive standby). 
+
+Like CDNs, it uses <a target="_blank" href="https://docs.microsoft.com/en-us/windows-server/networking/dns/deploy/anycast">TCP-based anycast protocol</a> ensures connection to closest endpoint.
+
+Can handle IPv6 and HTTP/2 traffic.
+
+It can handle certificate management and do TLS termination (sending HTTP traffic downstream).
+
+Azure Front Door doesn't routs by geo (DNS).
+
+
+
+<a name="TrafficManager"></a>
+
+## Traffic Manager
+
+Traffic Manager Uses DNS to direct requests to the most appropriate endpoint.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-routing-methods">DOCS</a>:
+Routes based on 7 different methods: 
+   * Priority
+   * Weighted (for Canary deploy), 
+   * Performance for users to use the closest endpoint for the lowest network latency
+   * Geographic based on DNS origin (for data soverignty)
+   * Multivalue (only IPV4/V6)
+   * Subnet to specific end-user IP addresses to speific endpoints
+   <br /><br />
+
+All Traffic Manager profiles have endpoint health checks and automatic failover.
+
+
+
+<a name="LBs"></a>
+
+### Azure Load Balancers 
+
+![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119790405-237f1b00-be91-11eb-9fd5-09355febd1ac.png)
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview">DOCS</a>:
+
+<strong>Azure Load Balancers</strong> direct Layer 4 incoming traffic based on a 5-tuple hash to multiple resources such as virtual machines. 
+
+1. Portal: Create a resource -> Networking -> (in Azure Marketplace) Load Balancer.
+
+   #### LB Front-end
+
+1. Create LB front-end: Name:
+1. Type: Internal or Public (select or create VNet and subnet)
+1. IP address assignment: Choose Dynamic. Static not 
+1. Subscription
+1. Resource Group
+1. Location
+
+   #### LB Back-end pool
+
+   <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_166" title="2:45 into">VIDEO</a>:
+
+1. Back-end pools -> Add -> Associate to: REMEMBER:
+
+   * Unassociated
+   * Single virtual machine
+   * The Basic (HTTP) Load Balancer is scoped to an <strong>Availability Set</strong> - up to 100 instances.<br />
+   * The Standard (HTTPS) Load Balancer is scoped to <strong>Availability Zones</stong> on the entire virtual network - up to 1,000 instances.
+   <br /><br />
+
+1. Target network IP configurations (for each VM within current availability set)
+
+   To distribute traffic to the VMs, a backend address pool contains the IP addresses of the virtual (NICs) connected to the Load Balancer.
+
+   Type a name for your Backend pool, then select Add.
+
+   #### LB Health probe
+
+   Service monitoring probes.
+
+   Automated reconfiguration.
+
+
+1. Use LB
+
+<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-load-balancers/?context_id=524&context_resource=lp">LAB</a>:
+
+1. On the dashboard of the Azure Portal, click the portal menu > All resources:
+2. On the All resources modal, click caLabsLB:
+
+   This will bring you to the Overview blade for the caLabsLB load balancer.
+
+3. On the Overview blade, notice:
+
+   As with any VNet, the load balancer is deployed under a Resource group and Subscription.
+
+   The load balancer has a Public IP address which accepts incoming traffic on before redirecting to the backend pool. 
+
+4. In the menu to the left, click +++ Load Balancing Rules.
+5. On the Rules blade, click LBRule for the information blade for the LBRule load balancing rule:
+
+   Notice: The rule has a Port and a Backend port value. The Port value is the port the load balancer will listen for traffic on. In this case, the port is 80, meaning that the load balancer will listen for HTTP traffic (traffic on port 80). A backend port is a port that can optionally be different from the port, in case you want to accept traffic from one port on the load balancer and direct it to a different port on your targets (such as virtual machines).
+
+   The rule has a Health probe set to tcpProbe (TCP:80). This means that the load balancer will occasionally send test traffic to the targets in its backend pool to ensure the health of the targets. In this case, TCP:80 means that the load balancer will send test TCP data over port 80 to its targets.
+
+   The rule has a Backend pool set to BackendPool1. This is the backend pool that will accept traffic from the load balancer. A backend pool is a target for load balancers to direct their incoming traffic to, and contain at least one target, such as a web server on a virtual machine.
+ 
+6. At the top of the page, click caLabsLB - Load balancing rules to return to the menu:
+7. In the menu, click Backend pools:
+8. Click the arrow to the left of Backendpool1 to expand it:
+
+   The load balancer will alternate traffic between virtual machines in the backend pool. 
+
+   Each VM is attached to one of two network interfaces which accept and send traffic. 
+
+
+
+<hr />
+
+## Labs
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/architect-network-infrastructure/">LEARN</a>: 
 You get 10 sandbox sessions per day (FREE) on labs, such as:
 * HANDS-ON 2-HOUR SANDBOX <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands">Exercise - Prepare Azure and on-premises virtual networks using Azure CLI commands</a> (Site-To-Site VPN)
@@ -187,15 +343,6 @@ https://azure.microsoft.com/en-us/pricing/details/virtual-network/
 1. When a network is created, the DDOS plan can be selected after <strong>"Standard"</strong> plan is paid.
 
 
-## VNets (Virtual Networks)
-
-VNets (Azure Virtual Networks) are the basic building blocks for logically isolating resources using networks in Azure.
-
-VNets enable many different Azure services, such as load balancers, virtual machines and more, to communicate securely with one another.
-
-In combination with other Azure services like network security groups they also provide layers of protection from different segments of the Internet to your Azure resources.
-
-
 ## Zone-redundant gateways
 
 If you select a region that supports availability zones, VPN and ExpressRoute gateways can be deployed in a zone-redundant configuration which brings resiliency, scalability, and higher availability to virtual network gateways. 
@@ -233,6 +380,7 @@ downloads file ServiceTags_Public_20210419.json containing (at time of writing) 
         "addressPrefixes": [
           "13.66.60.119/32",
 </pre>
+
 
 ## Add Network Interface in VM
 
@@ -336,119 +484,31 @@ Use less code to define Hub-and-spoke by using <a target="_blank" href="https://
    Network interfaces allow resources including VMs to communicate with other resources in Azure and on the Internet. Because this VM has a network interface attached and that network interface belongs to the VNet, this VM will be able to communicate with other resources in the VNet.
 
 
-## Scaling
-
-<a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_165">VIDEO</a>:
-The ways to spread load:
-
-   * <a href="#LBs">Load balancers</a> (Basic and Standard) across VMs
-   * ILB (Internal Load Balancers)
-   * <a href="#AppGateway">App Gateway</a> for URL routing with App Firewall
-   * <a href="#TrafficManager">Traffic Manager</a> for global traffic across regions
-   * F5 (third-party)
-   <br /><br />
-
-<a name="LBs"></a>
-
-### Azure Load Balancers 
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/load-balancing-overview">DOCS</a>:
-
-<strong>Azure Load Balancers</strong> direct Layer 4 incoming traffic based on a 5-tuple hash to multiple resources such as virtual machines. 
-
-1. Portal: Create a resource -> Networking -> (in Azure Marketplace) Load Balancer.
-
-   #### LB Front-end
-
-1. Create LB front-end: Name:
-1. Type: Internal or Public (select or create VNet and subnet)
-1. IP address assignment: Choose Dynamic. Static not 
-1. Subscription
-1. Resource Group
-1. Location
-
-   #### LB Back-end pool
-
-   <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_166" title="2:45 into">VIDEO</a>:
-
-1. Back-end pools -> Add -> Associate to: REMEMBER:
-
-   * Unassociated
-   * Single virtual machine
-   * The Basic (HTTP) Load Balancer is scoped to an <strong>Availability Set</strong> - up to 100 instances.<br />
-   * The Standard (HTTPS) Load Balancer is scoped to <strong>Availability Zones</stong> on the entire virtual network - up to 1,000 instances.
-   <br /><br />
-
-1. Target network IP configurations (for each VM within current availability set)
-
-   To distribute traffic to the VMs, a backend address pool contains the IP addresses of the virtual (NICs) connected to the Load Balancer.
-
-   Type a name for your Backend pool, then select Add.
-
-   #### LB Health probe
 
 
-
-   Service monitoring probes.
-
-   Automated reconfiguration.
-
-
-1. Use LB
-
-<a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-load-balancers/?context_id=524&context_resource=lp">LAB</a>:
-
-1. On the dashboard of the Azure Portal, click the portal menu > All resources:
-2. On the All resources modal, click caLabsLB:
-
-   This will bring you to the Overview blade for the caLabsLB load balancer.
-
-3. On the Overview blade, notice:
-
-   As with any VNet, the load balancer is deployed under a Resource group and Subscription.
-
-   The load balancer has a Public IP address which accepts incoming traffic on before redirecting to the backend pool. 
-
-4. In the menu to the left, click +++ Load Balancing Rules.
-5. On the Rules blade, click LBRule for the information blade for the LBRule load balancing rule:
-
-   Notice: The rule has a Port and a Backend port value. The Port value is the port the load balancer will listen for traffic on. In this case, the port is 80, meaning that the load balancer will listen for HTTP traffic (traffic on port 80). A backend port is a port that can optionally be different from the port, in case you want to accept traffic from one port on the load balancer and direct it to a different port on your targets (such as virtual machines).
-
-   The rule has a Health probe set to tcpProbe (TCP:80). This means that the load balancer will occasionally send test traffic to the targets in its backend pool to ensure the health of the targets. In this case, TCP:80 means that the load balancer will send test TCP data over port 80 to its targets.
-
-   The rule has a Backend pool set to BackendPool1. This is the backend pool that will accept traffic from the load balancer. A backend pool is a target for load balancers to direct their incoming traffic to, and contain at least one target, such as a web server on a virtual machine.
- 
-6. At the top of the page, click caLabsLB - Load balancing rules to return to the menu:
-7. In the menu, click Backend pools:
-8. Click the arrow to the left of Backendpool1 to expand it:
-
-   The load balancer will alternate traffic between virtual machines in the backend pool. 
-
-   Each VM is attached to one of two network interfaces which accept and send traffic. 
-
-
+<hr />
 
 <a name="AppGateway"></a>
 
 ### Azure Application Gateways
 
-Compared with Load Balancers, Azure Application Gateways provide more customized support for public and private web apps. While load balancers route traffic purely based on IP address and port information, application gateways can take this a step further and route based on things like URIs. 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/119785483-76a29f00-be8c-11eb-9d53-6aa5a7ff0319.png">
+<img alt="az-app-gateway-904x810.png" src="https://user-images.githubusercontent.com/300046/119785483-76a29f00-be8c-11eb-9d53-6aa5a7ff0319.png"></a>
 
-This means that an application gateway can route traffic sent to "some-ip-address/admin" differently than, say, traffic sent to "the-same-ip-address/general" This allows for much more detailed control of your routing.
+Application gateways can route based on URIs while load balancers route traffic purely based on IP address and port.
+
+Application gateways can route traffic sent based on folder, which allows for more detailed control of routing.
 
 Application Gateways can also accept traffic for more than one site using multiple site hosting -- sending traffic from examplesite1.com to backend pool 1, traffic from examplesite2.com to backend pool2, and so on. 
 
 A single Azure Application gateway can manage up to <strong>100 sites</strong>.
 
-Application Gateways offer may other very useful features such as SSL termination, connection draining and request redirection. While this Lab Step will cover the fundamentals of Azure Application Gateways, it's highly worth it to learn more about application gateways in depth.
+Application Gateways also offers SSL termination, connection draining, and request redirection. 
 
 <a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-networking-products/reviewing-azure-application-gateways/?context_id=524&context_resource=lp">LAB</a>: 
 
-1. On the dashboard of the Azure Portal, click the portal menu > All resources:
-
-2. In the All resources blade, click  calabs-appGateway:
-
-3. On the Overview blade, notice a couple of things:
+1. On the dashboard of the Azure Portal, All resources, select "calabs-appGateway" predefined.
+3. On the Overview blade, notice:
 
    * The application gateway is deployed into the Virtual network/subnet, calabs-vnet/calabsappgatewaysubnet. Recall that this is the same VNet you have seen other resources deployed into, and a new subnet that you haven't seen. Recall from a previous lab step that because the application gateway is deployed into its own subnet, it has a level of isolation from other resources deployed into the same VNet. 
 
@@ -489,6 +549,7 @@ Application Gateways offer may other very useful features such as SSL terminatio
   Notice that at the bottom of this blade you've got the ability to set path-based rules.
 
 
+<hr />
 
 <a name="VPNGateways"></a>
 
@@ -524,40 +585,6 @@ alt
 
 +++ https://cloudacademy.com/course/overview-of-azure-services/azure-overview/
 
-
-<a name="TrafficManager"></a>
-
-## Traffic Manager
-
-Uses DNS to direct requests to the most appropriate endpoint.
-
-Provides endpoint health checks and automatic failover.
-
-Can route based on 7 different methods: performance, Weighted (for Canary deploy), Priority, or Geographic.
-
-Either Traffic Manager or Front Door, not both.
-
-
-<a name="FrontDoor"></a>
-
-## Azure Front Door
-
-Azure Front Door routes by Layer 7 URLs with session affinity, URL redirection, URL rewrite.
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png">
-<img alt="az-frontdoor-1041x509.png" width="1041" height="409" href=https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
-
-In the diagram above, Azure Front Door endpoint provides routing to two geo-distributed sets of a microservices Web App (not just VMs) on multiple regions for redundancy (active/passive standby). 
-
-It protects Bing. Front Door provides functionality of Traffic Manager, App Gateway, and DDoS protection.
-
-Like CDNs, it uses <a target="_blank" href="https://docs.microsoft.com/en-us/windows-server/networking/dns/deploy/anycast">TCP-based anycast protocol</a> ensures connection to closest endpoint.
-
-Can handle IPv6 and HTTP/2 traffic.
-
-It can handle certificate management and do TLS termination (sending HTTP traffic downstream).
-
-Azure Front Door doesn't routs by geo (DNS).
 
 
 <a name="Firewall"></a>
@@ -668,19 +695,6 @@ Peerings are not transitive: A - B, B - C, A cannot talk to C.
 So use Gateway Transit for that, which allows sharing a VPN or Express Route gateway across a peering. This minimizes complexisty and centralizes management.
 
 There is a limit of 100 peering connections.
-
-
-### Gatways = load balancers
-
-Peering of regions connects without creating a gateway, which are charged by hour and bytes egress, and introduces extra latency with limited bandwidth.
-
-App Gateway are used for HTTP Load Balancing.
-
-Network Load balancing = Azure Load Balancer
-
-Global load balancer = Azure Traffic Manager across regions
-
-Global Traffic Routing = Azure Front Door 
 
 
 <a name="NSGs"></a>
