@@ -18,6 +18,18 @@ comments: true
 
 Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
  
+1. In the Portal GUI, G+\ to Search for "Net" and there appears:
+
+   * <a href="#add-network-interface-in-vm">Network interfaces</a>
+   * <a href="#Watcher">Network Watcher</a>
+   * Network security groups
+   * Network security groups (classic)
+   * Virtual networks <strong>(vNets)</strong>
+   * Local network gateways
+   * Virtual network gateways
+   * Virtual networks (classic)
+   <br /><br />
+
 ## VNets (Virtual Networks)
 
 VNets (Azure Virtual Networks) are the basic building blocks for logically isolating resources using networks in Azure.
@@ -28,8 +40,6 @@ In combination with other Azure services like network security groups they also 
 
 
 ## Scaling
-
-![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119789303-2e857b80-be90-11eb-891e-315f7b41040f.png)
 
 <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_165">VIDEO</a>:
 Ways to spread load:
@@ -56,7 +66,7 @@ Peering of regions connects without creating a gateway, which are charged by hou
 Azure Front Door routes by Layer 7 URLs with session affinity, URL redirection, URL rewrite.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png">
-<img alt="az-frontdoor-1041x509.png" width="1041" height="409" href=https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
+<img alt="az-frontdoor-1041x509.png" width="1041" height="409" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
 
 In the diagram above, Azure Front Door endpoint provides routing to two geo-distributed sets of a microservices Web App (not just VMs) on multiple regions for redundancy (active/passive standby). 
 
@@ -74,13 +84,17 @@ Azure Front Door doesn't routs by geo (DNS).
 
 ## Traffic Manager
 
+![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119789303-2e857b80-be90-11eb-891e-315f7b41040f.png)
+
 Traffic Manager Uses DNS to direct requests to the most appropriate endpoint.
+
+https://<em>your_name</em>.trafficmanager.net
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-routing-methods">DOCS</a>:
 Routes based on 7 different methods: 
+   * Performance for users to use the closest endpoint for the lowest network latency
    * Priority
    * Weighted (for Canary deploy), 
-   * Performance for users to use the closest endpoint for the lowest network latency
    * Geographic based on DNS origin (for data soverignty)
    * Multivalue (only IPV4/V6)
    * Subnet to specific end-user IP addresses to speific endpoints
@@ -183,18 +197,6 @@ You get 10 sandbox sessions per day (FREE) on labs, such as:
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
-
-1. G+\ to Search for "Net" and there appears:
-
-   * <a href="#add-network-interface-in-vm">Network interfaces</a>
-   * <a href="#Watcher">Network Watcher</a>
-   * Network security groups
-   * Network security groups (classic)
-   * Virtual networks <strong>(vNets)</strong>
-   * Local network gateways
-   * Virtual network gateways
-   * Virtual networks (classic)
-   <br /><br />
 
 
 ## Coursera Guided Project
