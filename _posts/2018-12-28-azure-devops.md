@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Azure DevOps"
-excerpt: "Microsoft's transitions TFS and VSTS to DevSecOps in the cloud"
+excerpt: "Microsoft's transitions TFS and VSTS to DevSecOps for automated CI/CD pipelines in the cloud"
 tags: [devops, devsecops]
-date: "2018-12-28"
+date: "2021-05-26"
 file: "azure-devops"
 image:
 # azure-devops-products-1900x400-21605.jpg
@@ -319,7 +319,9 @@ to Get started with Azure CLI
 
 1. Open the sample application web page from the Microsoft Azure Marketing team (based on <a target="_blank" href="https://www.azuredevopslabs.com/">https://www.azuredevopslabs.com</a>):
 
-   <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/"><strong>Azure DevOps Demo Generator</strong> at<br/>https://azuredevopsdemogenerator.azurewebsites.net</a> 
+   There are many sample apps, such as "Parts Unlimited".
+
+1. <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/"><strong>Azure DevOps Demo Generator</strong> at<br/>https://azuredevopsdemogenerator.azurewebsites.net</a> 
    
    The website creates within your Azure DevOps organization demo projects with pre-populated sample content (source code, work items, iterations, service endpoints, build and release definitions based on a chosen template from code at <a target="_blank" href="https://github.com/CanarysAutomations/AppCenterDemoGenerator">https://github.com/CanarysAutomations/AppCenterDemoGenerator</a>)
 

@@ -533,7 +533,7 @@ Uses DNS to direct requests to the most appropriate endpoint.
 
 Provides endpoint health checks and automatic failover.
 
-Can route based on performance, Weighted (for Canary deploy), Priority, or Geographic.
+Can route based on 7 different methods: performance, Weighted (for Canary deploy), Priority, or Geographic.
 
 Either Traffic Manager or Front Door, not both.
 
@@ -544,7 +544,12 @@ Either Traffic Manager or Front Door, not both.
 
 Azure Front Door routes by Layer 7 URLs with session affinity, URL redirection, URL rewrite.
 
-It protects Bing.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png">
+<img alt="az-frontdoor-1041x509.png" width="1041" height="409" href=https://user-images.githubusercontent.com/300046/119738835-914e2700-be3e-11eb-9d9f-b35b42276968.png"></a>
+
+In the diagram above, Azure Front Door endpoint provides routing to two geo-distributed sets of a microservices Web App (not just VMs) on multiple regions for redundancy (active/passive standby). 
+
+It protects Bing. Front Door provides functionality of Traffic Manager, App Gateway, and DDoS protection.
 
 Like CDNs, it uses <a target="_blank" href="https://docs.microsoft.com/en-us/windows-server/networking/dns/deploy/anycast">TCP-based anycast protocol</a> ensures connection to closest endpoint.
 

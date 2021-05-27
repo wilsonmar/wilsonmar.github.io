@@ -19,14 +19,19 @@ comments: true
 
 ## Compute options
 
-   * SaaS: Custom "Serverless" <a href="#LogicApps">Azure Logic Apps</a> for orchestration and 
+   * SaaS: Custom "Serverless" <a href="#LogicApps">Azure Logic Apps</a> for "orchestration" of 
    <a href="#Functions">Azure Functions</a> 
 
    * PaaS: Container to run in Docker or K8s (AKS), a <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/app-service/static/">static SPA Web Apps</a> using Vue-based <a target="_blank" href="https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-Nuxtjs--One-Dev-Question?ocid=player">Nuxt.js</a>)
 
-   * IaaS: <a href="#VMs">Virtual Machines</a> (like AWS EC2) using images
+   * IaaS: <a href="#VMs">Virtual Machines</a> (like AWS EC2) using VHD images 
+   & Azure Redis Cache server
 
-   * Azure Redis Cache ???
+
+## Event Architecture
+
+![az-event-arch-1159x422.png](https://user-images.githubusercontent.com/300046/119775009-3f2df580-be80-11eb-8bcb-8a2886268a71.png)
+
 
 ## Payment options
 
@@ -35,7 +40,6 @@ comments: true
    * Spot Pricing - discounts for underused time slots, subject to instant removal
    * Azure Hybrid Benefit (through Enterprise Software Assurance from on-prem. licenses)
    <br /><br />
-
 
 <hr />
 
@@ -292,7 +296,21 @@ Static Web Apps are fast because HTML is already rendered and sitting close to u
 Function apps do just one thing well, so scaling can be precise and dynamic.
 A simplified programming model.
 
-Function apps are <strong>event driven</strong>, triggered by data operations, timers, and webhooks. Sample use cases implemented in PowerShell to cover end-to-end (build, debug, deploy, monitoring) are covered by <a target="_blank" href="https://twitter.com/mattallford?lang=en">@</a>Matt Allford in <a target="_blank" href="https://portal.cloudskills.io/products/azure-functions-for-devops-engineers">Azure Functions for DevOps Engineers</a> Cloudskills videos:
+Function apps are <strong>event driven</strong>, triggered by data operations, timers, and webhooks. 
+
+LIMIT: 5-minute function runtime, 10 minute max.
+
+Advantages of Serverless:
+   * No infrastructure management (OS, VNnet, storage)
+   * Integrated Security (AAD, Facebook)
+   * Dynamic scalability without hassle (based on workload)
+   * Faster time to market
+   * More efficient use of resources
+   <br /><br />
+
+PRICING: FREE are 1 million executions (400,000 GB/s)
+
+Sample use cases implemented in PowerShell to cover end-to-end (build, debug, deploy, monitoring) are covered by <a target="_blank" href="https://twitter.com/mattallford?lang=en">@</a>Matt Allford in <a target="_blank" href="https://portal.cloudskills.io/products/azure-functions-for-devops-engineers">Azure Functions for DevOps Engineers</a> Cloudskills videos:
 
    * When VM is deleted, remove from monitoring system
    * When resource group is created, look up cost center for region and add tag with number.
@@ -305,22 +323,10 @@ Function apps are <strong>event driven</strong>, triggered by data operations, t
    * Send Slack message
    * Send SMS message (via Twilio)
 
-Advantages of Serverless:
-   * No infrastructure management (OS, VNnet, storage)
-   * Integrated Security (AAD, Facebook)
-   * Dynamic scalability without hassle (based on workload)
-   * Faster time to market
-   * More efficient use of resources
-   <br /><br />
-
 I hava a script that sets up a Function (below).
 However, several components are not available in the <a target="_blank" href="https://github.com/fouldsy/azure-mol-samples-2nd-ed/blob/master/21/azure_cli_sample.sh">CLI</a> and need manual actions in Azure portal to fill in the gaps. It's explained in chapter 21 of <a target="_blank" href="https://clouddamcdnprodep.azureedge.net/gdc/2014519/original">EBOOK</a>: <a target="_blank" href="https://aka.ms/monthoflunches​">Learn Azure in a Month of 21 Lunches</a> (2020 Manning) by <a target="_blank" href="https://www.linkedin.com/in/iainfoulds">Iain Foulds</a> (<a target="_blank" href="https://twitter.com/fouldsy">@fouldsy</a>).
 
-LIMIT: 5-minute function runtime, 10 minute max.
-
 Durable functions
-
-PRICING: After 1 million executions (400,000 GB/s)
 
 1. G+/ Function apps are run as "Azure App Services", but Pricing Tier "Dynamic" (pay only for transactions, not servers sittingh around) and App Type "Function App".
 1. Subscription
@@ -339,7 +345,9 @@ PRICING: After 1 million executions (400,000 GB/s)
 
    Runtime Scaling by a <strong>Scale Controller</strong> seeing monitoring to create instances of 1GB memory in 1 CPU.
 
-   Consumption function app scales to max of 200 instances.
+   Consumption function app scales to LIMIT: max of 200 instances.
+   The problem with it is <strong>cold starts</strong>. 
+   If a function is not in memory, users would wait.
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-premium-plan?tabs=portal">Functions Elastic Premium Plan</a> 
    * Pre-warmed instances reserved pay
@@ -355,7 +363,7 @@ PRICING: After 1 million executions (400,000 GB/s)
    * Run for unlimited amount of time
    <br /><br />
    
-   Dedicated plan?
+   Dedicated plan
 
 1. Monitoring: Enable App Insights, Region
 
@@ -684,6 +692,7 @@ To improve security, enable just-in-time VM access.
 
    Host can only be updated when the virtual machine is deallocated.
 
+   There is a limit on vCPUs for dedicated hosts per region.
 
 
 <a name="VM_GUI"></a>

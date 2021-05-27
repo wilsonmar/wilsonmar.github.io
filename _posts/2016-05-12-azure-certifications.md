@@ -139,6 +139,7 @@ If your company has a deal with Microsoft:
 
    CAUTION: The Skillpipe.com provided with registration may not be created to align with the live course's lab.
 
+https://aka.ms/edge4biz
 
    ### Join live class
 

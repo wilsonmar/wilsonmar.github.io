@@ -686,6 +686,8 @@ PROTIP: All support Storage Account Shared (SAS) Keys.
 
 ## SAS (Shared Account Signature)
 
+https://docs.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy
+
    <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h12m38s">VIDEO</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?WT.mc_id=thomasmaurer-blog-thmaure">DOCS</a>:
    Generate a SAS to grant other clients access to storage objects without exposing your own account key. CAUTION: Whoever has the key can use it to retrieve the file without user authentication.

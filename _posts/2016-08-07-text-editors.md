@@ -372,6 +372,9 @@ Extensions for developing on the Salesforce Platform
 * https://dev.to/5t3ph/how-i-set-up-vscode-for-recording-a-screencast-be7
    by Stephanie Eckles at Egghead/now Microsoft
 
+* https://mrsauravsahu.medium.com/custom-vscode-profiles-migrating-settings-and-extensions-14a5f8f4da35
+   VSCode Profiles
+
 
 <hr />
 

@@ -168,12 +168,13 @@ ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="
 
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$249 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/SSCP">SSCP (Systems Security Certified Practitioner)</a>
 
+
 <a name="CISSP"></a>
 
 ### CISSP
 
 <img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src="https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$$749 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
 The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
 Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
@@ -266,6 +267,8 @@ Video prep courses view:
 
    8. Supply Chain and Software Acquisition
 
+Quizzing Tests:
+
    * <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">Official 20-item</a> CSSLP Flashcards on Quizlet vs. <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">89-item</a>
 
    * https://github.com/deanbushmiller/CISSP-Bootcamp
@@ -296,11 +299,11 @@ Video prep courses view:
 
 YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank" href="https://www.linkedin.com/in/jberti/">John Berti</a> of Destination Certifications:
 
-1. Security & Risk Management: https://www.youtube.com/watch?v=geGALIfOxtI​&t=30s
+1. <a target="_blank" href="https://www.youtube.com/watch?v=geGALIfOxtI​&t=30s">Security & Risk Management</a>
 
 2. 
-   * Asset Classification: https://www.youtube.com/watch?v=aN9zkmzYTmQ​&t=30s
-   * Privacy: https://www.youtube.com/watch?v=lrI4QIa8S2I​&t=30s
+   * <a target="_blank" href="https://www.youtube.com/watch?v=aN9zkmzYTmQ​&t=30s">Asset Classification</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lrI4QIa8S2I​&t=30s">Privacy:</a>
    <br /><br />
 
 3.
@@ -361,10 +364,23 @@ Suggestions:
 
 ### CCSP
 
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. Get 70% of 125 questions correct in 3 hours.
+
+   * Cloud Concepts, Architecture and Design
+   * Legal, Risk and Compliance
+   * Cloud Data Security
+   * Cloud Platform & Infrastructure Security
+   * Cloud Application Security
+   * Cloud Security Operations
+   <br /><br />
+
+Prep:
 
    * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review course</a> with practice questions. By Mike Chapple
 
+   * https://charbelnemnom.com/passed-official-ccsp-exam-certified-cloud-security-professional/
+   
+<hr />
 
 ## ISACA.org
 

@@ -291,12 +291,17 @@ Bash scripts here are written with coding conventions defined at <a target="_bla
 
 1. Save the file. In Cloud Shell, press command+Q or clicking the "..." to press Save, then Close.
 
+1. Get the Subscription code in the Portal and edit in setmem.sh default variables MY_SUBSCRIPTION_ID, etc.:
+
+   <pre><strong>code ../setmem.sh
+   </strong></pre>
+
 
    ## Each work session
 
-1. At the beginning of each session invoke the script:
+1. At the beginning of each session invoke the script in the folder just above your custom scripts repo:
 
-   <pre><strong>source ./setmem.sh
+   <pre><strong>source ../setmem.sh
    </strong></pre>
 
    NOTE: Using "source" to run the script so that environment variables defined in the script will be visible after the script is done, and be inherited by any programs you launch from it. That's because source runs the script in the current shell. But note that any exit statement would stop the run.
@@ -341,3 +346,9 @@ Scripts here are adapted from various experts generous with sharing their code:
    * CloudPosse (Terraform for AWS)
    <br /><br />
 
+
+## More
+
+This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
+
+{% include ai_links.html %}
