@@ -1281,3 +1281,9 @@ This is one of a series on DevOps:
 
 {% include devops_links.html %}
 
+
+## More about Azure #
+
+This is one of a series about Azure cloud:
+
+{% include azure_links.html %}
