@@ -30,15 +30,16 @@ comments: true
 
 ## Event Architecture
 
-![az-event-arch-1159x422.png](https://user-images.githubusercontent.com/300046/119775009-3f2df580-be80-11eb-8bcb-8a2886268a71.png)
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services">DOC</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Service </th><th> Purpose </th><th> Type </th><th> When to use </th></tr>
-<tr valign="top"><td> Event Grid </td><td> Reactive programming </td><td> Event distribution (discrete) </td><td> React to sttus changes</td></tr>
+<tr valign="top"><td> Event Grid </td><td> Reactive programming </td><td> Event distribution (discrete) </td><td> React to status changes</td></tr>
 <tr valign="top"><td> Event Hubs </td><td> Big data pipeline  </td><td> Event streaming (series) </td><td> Telemetry and distributed data streaming </td></tr>
 <tr valign="top"><td> Service Bus </td><td> High-value enterprise messaging </td><td> Message </td><td> Order processing and financial <strong>transactions</strong> </td></tr>
 </table>
--- https://docs.microsoft.com/en-us/azure/event-grid/compare-messaging-services
+
+![az-event-arch-1159x422.png](https://user-images.githubusercontent.com/300046/119775009-3f2df580-be80-11eb-8bcb-8a2886268a71.png)
 
 
 ## Payment options
