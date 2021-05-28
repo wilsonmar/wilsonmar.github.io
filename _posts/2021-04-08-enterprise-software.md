@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-To successfully cater to enterprises, software vendors must incorporate features enterprises needed. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
+To successfully cater to enterprises, software vendors must incorporate features enterprises wnat and need. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
 
 > "We're enterprise software because we have enterprise users"
 
