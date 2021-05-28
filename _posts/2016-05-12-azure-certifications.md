@@ -796,14 +796,47 @@ https://www.azurebarry.com/prepare-for-the-az304-exam</a>
 
 Labs at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
 
+Module 1 Design a Compute Solution
+
+Module 2 Design a Network Solution
+
+Module 3 Design for Migration
+
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
+   <br /><br />
+
+Module 4 Design Authentication and Authorization
 
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a>
+   <br /><br />
+
+Module 5 Design Governance
+
+Module 6 Design a Solution for Databases
 
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>
+   <br /><br />
+
+Module 7 Select an Appropriate Storage Account
+
+Module 8 Design Data Integration
+
+Module 9 Design a Solution for Logging and Monitoring
+
+Module 10 Design a Solution for Backup and Recovery
+
+Module 11 Design for High Availability
+
+Module 12 Design for Cost Optimization
+
+Module 13 Design an Application Architecture
 
    * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_13_Lab_a.html">13. Implement Azure Logic Apps Integration with Azure Event Grid</a> which uses PowerShell to create Resource Groups and Encrypt Passwords.
+   <br /><br />
 
+Module 14 Design Security for Applications
+
+Others courses:
 
 <a target="_blank" href="
 https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">

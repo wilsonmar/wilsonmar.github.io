@@ -981,9 +981,25 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
    If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
 
+
+<a name="Cloudrail"></a>
+
+### Cloudrail
+
+<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns.
+
+<a target="_blank" href="https://github.com/iacsecurity/tool-compare">https://github.com/iacsecurity/tool-compare</a> lists specific tests (of vulnerability) and which products can detect each.
+
+Although Terratest requires that you deploy the infra and run tests against the live infra (effectively a DAST framework), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
+
+When run on local envrionments, Cloudrail achieves "shift left".
+
+
+<a name="TFLint"></a>
+
 ### Terraform Enterprise TFLint
 
-   An important distinction between Cloud Formmation and Terraform is that Terraform users track the <strong>state</strong> of each resource. 
+   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
 
    Terraform Enterprise automatically stores the history of all state revisions.
    <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
@@ -1000,6 +1016,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
 
    https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
+
 
 <a name="StateS3"></a>
 

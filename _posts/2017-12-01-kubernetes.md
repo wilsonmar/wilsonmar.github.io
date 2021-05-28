@@ -5975,6 +5975,11 @@ https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
 <a target="_blan" href="https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833">
 Exam</a> by Brad McCoy
 
+https://www.linkedin.com/pulse/effectively-choosing-k8-node-size-capacity-anurag-gupta/
+
+https://kubernetes.io/docs/concepts/scheduling-eviction/pod-overhead/
+
+
 
 ## More on DevOps #
 

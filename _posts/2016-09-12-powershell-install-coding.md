@@ -1510,9 +1510,16 @@ https://www.pluralsight.com/courses/powershell-modules-advanced-functions-buildi
    Select Title.ReleaseDate.OpensIn.Coments
    </strong></pre>
 
+
+## PowerShell Remoting
+
+https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-7.1
+Security Considerations for PowerShell Remoting using WinRM
+
 ## Social
 
 <a target="_blank" href="https://powershell.slack.com/">https://powershell.slack.com</a>
+
 
 
 ## More PS Libraries #

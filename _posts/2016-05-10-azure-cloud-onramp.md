@@ -90,16 +90,16 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://support.azure.com/"><strong><u>
    https://support.microsoft.com</u></strong></a>
    </td></tr>
-<tr valign="top"><td> User </td><td>
-   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>https://myapps.microsoft.com</u></strong></a>
-   </td><td> Self-Service password reset
-   </td></tr>
 <tr valign="top"><td> Support tickets </td><td>
    <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>https://serviceshub.microsoft.com</u></strong></a>
    </td><td>-
    </td></tr>
+<tr valign="top"><td> User </td><td>
+   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>https://myapps.microsoft.com</u></strong></a>
+   </td><td> Self-Service password reset
+   </td></tr>
 <tr valign="top"><td> Traffic Manager </td><td>
-   <strong><u>https://<em>acct</em>.trafficmanager.net</u></strong></a>
+   <strong><u>https://<em>acct</em>.trafficmanager.net</u></strong>
    </td><td>-
    </td></tr>
 </table>

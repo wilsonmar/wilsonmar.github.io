@@ -27,11 +27,12 @@ Within script code are references to documentation and tutorials related to the 
 
 ## Setup a new Azure Subscription:
 
-1. Get an Azure account and learn to use the <a target="_blank" href="https://portal.azure.com/">Azure portal</a> and <a target="_blank" href="https://shell.azure.com/">shell</a>, which I describe at:
+1. Get an Azure account and learn to use the <a target="_blank" href="https://portal.azure.com/">Azure portal</a> and <a target="_blank" href="https://shell.azure.com/">Azure shell</a>, which I describe at:
 
    <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a>
 
-   ### To setup a new Subscription environment:
+
+   ### Setup a new Subscription environment:
 
 1. Triple-click this command below:
 
@@ -51,6 +52,18 @@ Within script code are references to documentation and tutorials related to the 
 
    <pre>~/clouddrive/azure-your-way
    $ _</pre>
+
+1. Use the built-in Visual Studio Code editor to edit file setmem.sh 
+
+   <pre><strong>code ../setmem.sh
+   </strong></pre>
+
+1. Switch to the Portal GUI.
+1. Open the Subscription blade. Click on your current Subscription. 
+1. Click the copy icon next to the Subscription code (so it gets saved to your Clipboard).
+
+1. Switch to the Code editor window. Highlight the existing text in variable MY_SUBSCRIPTION_ID and press Paste (Command+V on Macs or Ctrl+V on Windows).
+1. Click the "..." menu to the right of the Code editor window to save, then exit.
 
 
 ### Run your commands:
@@ -290,11 +303,6 @@ Bash scripts here are written with coding conventions defined at <a target="_bla
    <pre><strong>echo "MY_RG=$MY_RG"</strong></pre>
 
 1. Save the file. In Cloud Shell, press command+Q or clicking the "..." to press Save, then Close.
-
-1. Get the Subscription code in the Portal and edit in setmem.sh default variables MY_SUBSCRIPTION_ID, etc.:
-
-   <pre><strong>code ../setmem.sh
-   </strong></pre>
 
 
    ## Each work session

@@ -986,7 +986,7 @@ Others:
 
 ## Reporting
 
-https://threatmap.checkpoint.com/ThreatPortal/livemap
+<a target="_blank" href="https://threatmap.checkpoint.com/ThreatPortal/livemap">https://threatmap.checkpoint.com/ThreatPortal/livemap</a>
 
 Interpol: https://www.interpol.int/Crime-areas/Cybercrime/Cybercrime
 
