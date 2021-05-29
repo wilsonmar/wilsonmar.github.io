@@ -33,7 +33,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
       </td><td>* <a href="#AZ-140">AZ-140 Virtual Desktop Specialty</a>
    </td></tr>
 
-<tr valign="top"><td> Solution Architect
+<tr valign="top"><td> <a href="#SolutionArchitect">Solution Architect Expert</a>
       </td><td>* <a href="#AZ-303">AZ-303</a> Azure Solutions Architect Expert: Technologies<br />
         * <a href="#AZ-304">AZ-304</a> Azure Solutions Architect Expert: Design<br />
         * AZ-600 Stack Hub Operator Associate<br />
@@ -697,9 +697,25 @@ Questions:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
    * https://www.udemy.com/course/exam-microsoft-azure-dev/ by Alan Rodrigues
 
+
+<hr />
+
+<a name="SolutionArchitect"></a>
+
+## Microsoft Certified Azure Solution Architect Expert
+
+Requires passing both AZ-303 and AZ-304.
+
+![az-303-304-1037x429](https://user-images.githubusercontent.com/300046/120078623-83321d80-c06d-11eb-822c-3aaefef83bb0.png)
+
+K21Academy's school of 12 weekends has 27 hands-on labs, with job prep & on-job support for one year on their @k2microsoftazure Telegram and WhatsApp. All after full-pressure marketing.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=O_u2oPuZ8Mw">Azure Full Course | Learn Microsoft Azure in 3 hours</a>
+   <br /><br />
+
 <a name="AZ-303"></a>
 
-## AZ-303 Azure Architect Technologies
+### AZ-303 Azure Architect Technologies
 
 Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
 
@@ -759,27 +775,20 @@ AZ-303 Part 5 - Preparing for the Microsoft Azure Architect Technologies Exam</a
 <a target="_blank" href="https://www.youtube.com/watch?v=fG1wHpEQ6mw">
 AZ-303 Sample Exam Questions (Microsoft Azure Architect Technologies) [Answers Explained in Detail]</a> by R A V I K I R A N S
 
-<a target="_blank" href="https://www.youtube.com/watch?v=1BhzOxaxhqE" title="Oct 31, 2020">
-#1 How to pass Exam AZ-303 Microsoft Azure Architect Technologies Certificate in 20 hours Part 1/2</a>
-Part 2
-
-K21Academy:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=O_u2oPuZ8Mw">Azure Full Course | Learn Microsoft Azure in 3 hours</a>
-   <br /><br />
-
-<a target="_blank" href="https://www.youtube.com/watch?v=wP9KWa0rOQk">
-How I cleared Microsoft AZ 303 in just three weeks!</a>
-by Here Is Cloud
 
 Practice tests:
    * <a target="_blank" href="https://www.whizlabs.com/learn/course/microsoft-azure-az-303/">https://www.whizlabs.com/learn/course/microsoft-azure-az-303</a>
    * <a target="_blank" href="https://www.mindhub.com/az-303-microsoft-azure-architect-technologies-microsoft-official-practice-test/p/MU-AZ-303">Mindhub.com</a> THANKS280658
 
+Clickbait videos with no unique content:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=wP9KWa0rOQk">How I cleared Microsoft AZ 303 in just three weeks!</a> by Here Is Cloud
+   * <a target="_blank" href="https://www.youtube.com/watch?v=1BhzOxaxhqE" title="Oct 31, 2020">
+   #1 How to pass Exam AZ-303 Microsoft Azure Architect Technologies Certificate in 20 hours Part 1/2</a> Part 2
+
 
 <a name="AZ-304"></a>
 
-## AZ-304 Azure Architect Design
+### AZ-304 Azure Architect Design
 
 Passing this and the more hands-on AZ-303 makes you a Microsoft Certified Azure Solutions Architect Expert.
 
@@ -862,6 +871,8 @@ Tim Warner references <a target="_blank" href="https://github.com/timothywarner/
 
 Exam prep:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
+
+
 
 <hr />
 

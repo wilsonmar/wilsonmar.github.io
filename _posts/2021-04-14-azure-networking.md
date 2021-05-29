@@ -38,12 +38,78 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
 
 ## VNets (Virtual Networks)
 
-VNets (Azure Virtual Networks) are the basic building blocks for logically isolating resources using networks in Azure.
+VNets (Azure Virtual Networks) are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
 
-VNets enable many different Azure services, such as load balancers, virtual machines and more, to communicate securely with one another.
+A portion of the virtual network's address space is allocated to subnets to deploy Azure resources. 
 
-In combination with other Azure services like network security groups they also provide layers of protection from different segments of the Internet to Azure resources.
+Each VNet is created by specifying a custom private IP address space using public and private (RFC 1918) addresses. For example, to deploy a VM in a VNet address space, 10.0.0.0/16, the VM will be assigned a private IP such as 10.0.0.4. (CIDR blocks which do not overlap) 
 
+Secure resources within subnets using Network Security Groups (NSGs).
+
+All resources in a VNet can communicate outbound to the internet, by default.
+
+## Multi-region
+
+Each VNet is scoped to a <strong>single region/location</strong>. However, virtual networks in different regions can connect using either VPN gateways or <strong>Virtual Network Peering</strong> (in same region or globally between different regions). 
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Item </th><th> Virtual network peering </th><th> VPN Gateways </th></tr>
+<tr valign="top"><td> Privacy
+   </td><td> Routed through <strong>Microsoft's private backbone</strong>. No public internet involved
+   </td><td> Public IP involved
+   </td></tr>
+<tr valign="top"><td> Pricing 
+   </td><td> Ingress/Egress
+   </td><td> Hourly + Egress
+   </td></tr>
+<tr valign="top"><td> Bandwidth limitations
+   </td><td> No bandwidth limitations
+   </td><td> Varies based on SKU. See Gateway SKUs by tunnel, connection, and throughput
+   </td></tr>
+<tr valign="top"><td> Limit per virtual network
+   </td><td> Up to 500 virtual network peerings per virtual network
+   </td><td> One VPN gateway per vNet. Max. tunnels per gateway based on the gateway's SKU
+   </td></tr>
+
+<tr valign="top"><td> Encryption
+   </td><td> Software-level encryption is recommended
+   </td><td> Custom IPsec/IKE policy can be applied to new or existing connections.
+   </td></tr>
+<tr valign="top"><td> Advantages
+   </td><td> Data replication, database failover
+   </td><td> Encryption takes time
+   </td></tr>
+<tr valign="top"><td> Disadvantages
+   </td><td> frequent backups of large amount of data
+   </td><td> Lower latency and throughout
+   </td></tr>
+<tr valign="top"><td> Transitive (peer of peers)
+   </td><td> Peering connections are non-transitive. But transitive networking can be achieved using NVAs or gateways in the hub virtual network. See Hub-spoke network topology for an example.
+   </td><td> If virtual networks are connected via VPN gateways and BGP is enabled in the virtual network connections
+   </td></tr>
+<tr valign="top"><td> Initial setup time
+   </td><td> Few minutes
+   </td><td> ~30 minutes
+   </td></tr>
+</table>
+
+To peer virtual networks involving separate subscriptions in different Azure Active Directory tenants, the administrators of each subscription must grant the peer subscription's administrator the <strong>Network Contributor role</strong> on their virtual network.
+
+## On-prem
+
+* <strong>Azure ExpressRoute</strong> operated by Microsoft partners route traffic which does not go over the public internet. Such connections are private and expensive.
+
+* A <strong>Site-to-site VPN (S2S VPN)</strong> sends traffic between on-premises VPN devices and an Azure VPN Gateway deployed in a virtual network. This connection type enables any on-premises resources to access a virtual network through an <strong>encrypted tunnel</strong> through the public internet.
+
+* A <strong>Point-to-site virtual private network (P2S VPN)</strong> sends traffic though an encrypted tunnel over the internet between a virtual network and a <strong>individual computer</strong> (point) in your network. This connection type is convenient during development because it requires little or no changes to the existing network. 
+
+Connections through am on-premises network using an Azure VPN Gateway or ExpressRoute connection can propagate on-premises Border gateway protocol (BGP) routes to virtual networks.
+Custom route tables can be created for each subnet to control where traffic is routed to.
+
+Service endpoints allow service resources to be secured to the virtual network.
+
+
+## Naming conventions
 
 1. PROTIP: Define conventions for naming variables in PowerShell:
 
@@ -79,8 +145,9 @@ The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subne
 <a target="_blank" href="https://learning.oreilly.com/videos/new-microsoft-az-303/10009AZ303/10009AZ303-AZ303_165">VIDEO</a>:
 Ways to spread load:
 
-   * Azure Front Door provides functionality of Traffic Manager, App Gateway, CDN, and DDoS protection.
-   * <a href="#TrafficManager">Traffic Manager</a> is a DNS "referral engine" providing IP addresses for routing global traffic across geographic regions 
+   * <strong>Azure Front Door</strong> provides functionality of Traffic Manager, App Gateway, CDN, and DDoS protection.
+   * <a href="#TrafficManager">Traffic Manager</a> is a DNS "referral engine" routing IP addresses globally across geographic regions 
+   <br /><br />
 
 Use either Traffic Manager or Front Door, not both.
 

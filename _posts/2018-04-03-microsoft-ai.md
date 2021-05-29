@@ -1567,16 +1567,21 @@ Sample Response:
 <hr />
 
 <a name="SpeechServices"></a>
-   <a name="Speech"></a>
+<a name="Speech"></a>
 
 ## Speech Services
 
 Speech-to-text has <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text"">two different REST APIs</a>:
 
-* Speech-to-text (STT) REST API v3.0 is used for Batch transcription and Custom Speech.
-* Speech-to-text REST API for short audio is used for online transcription as an alternative to the Speech SDK. Requests using this API can transmit only up to 60 seconds of audio per request.
+   * Speech-to-text (STT) REST API v3.0 is used for <strong>Batch</strong> transcription and Custom Speech.
+   * Speech-to-text REST API for <strong>short</strong> audio is used for online transcription as an alternative to the Speech SDK. Requests using this API can transmit only up to 60 seconds of audio per request.
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/transcribe-speech-input-text/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">LAB</a>:
 
 https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/
+
+https://docs.microsoft.com/en-us/learn/modules/transcribe-speech-input-text/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78
 
 <a name="SpeechTranslation"></a>
 
@@ -1875,12 +1880,23 @@ QUESTION: Does it integrate with a tablet?
 
 ### Video Indexer 
 
-NOTE: Video Indexer is under Media Services rather than Cognitive Services.
+   ### Media Services & Storage Account
+
+1. In Portal, <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.media%2Fmediaservices">Media Services</a> blade.
+
+1. Specify Resource Group, account name, storage account, System-managed identity.
+
+   <img width="648" alt="az-media-service-svcs.png" src="https://user-images.githubusercontent.com/300046/120081332-60f2cc80-c07a-11eb-9e2e-1a951d72266b.png">
+
+
+   ### Video Indexer
 
 1. In a browser, go to the Video Indexer Portal URL:
 
    <a target="_blank" href="https://www.videoindexer.ai/account/login/">
    https://www.videoindexer.ai</a>
+
+   NOTE: Video Indexer is under Media Services rather than Cognitive Services.
 
 1. Click the provider to login: AAD account, Personal Microsoft account, Google.
 
@@ -1926,8 +1942,6 @@ NOTE: Video Indexer is under Media Services rather than Cognitive Services.
    ### Upload video using Portal GUI
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/previous/media-services-portal-upload-files">DOCS</a>
-
-1. In Portal, <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.media%2Fmediaservices">Media Services</a> blade
 
 
    ### Upload video using program

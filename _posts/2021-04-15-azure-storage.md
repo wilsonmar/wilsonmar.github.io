@@ -714,8 +714,8 @@ https://docs.microsoft.com/en-us/rest/api/storageservices/define-stored-access-p
 
 ## Secure Storage 
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h56m11s">VIDEO</a>
-
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h56m11s">VIDEO</a>:s
+<a target="_blank" href="https://www.youtube.com/watch?v=UzTtastcBsk">VIDEO</a>:
 1. Select storage account.
 1. Menu "Firwalls and virtual networks".
 1. Select "Selected networks" (rather than All Networks, the default). This is for all protocols.
@@ -1088,9 +1088,24 @@ For each storage account two (primary and secondary) keys (aka connection string
    * Export to Azure Blobstorage only
    <br /><br />
 
+## Upload media files to Blog Storage
+
+<a target="_blank" href="https://www.youtube.com/watch?v=enhJfb_6KYU">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=z-trZhXOawg">by FranklyAI</a>
+
+1. Install:
+
+   <pre><strong>pip install pyyaml</strong></pre>
+
+   <pre><strong>pip install azure-storage-blob</strong></pre>
+
+1. Edit az-upload-blob.py
+
+
+
 ## Azure Data Box
 
-Ship boxes
+Fill and ship TB of data into a box (USB drive) from Microsoft.
 
 <hr />
 
@@ -1098,6 +1113,7 @@ Ship boxes
 
 ## Azure Table Service
 
+<a target="_blank" href="https://www.youtube.com/watch?v=HSL1poL1VR0">VIDEO</a>:
 Azure Table service have tables (uniquely) under an account:
 
    <tt>https://<em>my_account</em>.table.core.windows.net</tt>
@@ -1183,6 +1199,7 @@ CLI at https://github.com/fouldsy/azure-mol-samples-2nd-ed/blob/master/15/instal
 
 ### Data Lake Store Big data services
 
+<a target="_blank" href="https://www.youtube.com/watch?v=2uSkjBEwwq0">VIDEO</a>:
 Data Lake Store
    * gen 1 to support big data
    * gen 2 adds hierarchial storage based on keys
