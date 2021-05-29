@@ -565,8 +565,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 ## Automation programmatically
 
 My repo <a target="_blank" href=" 
-https://github.com/wilsonmar/azure-your-way">
-https://github.com/wilsonmar/azure-your-way</a>
+https://github.com/wilsonmar/azure-quickly">
+https://github.com/wilsonmar/azure-quickly</a>
 contains automation scripts to invoke instead of manually operating the Azure Portal, so that you can save money by deleting Resource Groups because you can get resources back with just a few commands. Scripts also enable you to stand up resources in different regions/locations. Most scripts in the repo are Bash shell scripts that run natively on MacOS and thus familiar to most developers. PowerShell scripts are used in cases where they are the only solution. 
 
 There are many ways to automate the creation of resources within Azure:
@@ -1298,14 +1298,14 @@ References on naming conventions:
 
 1. Obtain a copy of my repository containing Bash CLI scripts for use in Azure:
 
-   <pre><strong>git clone https://github.com/wilson-mar/azure-your-way
-   cd azure-your-way
+   <pre><strong>git clone https://github.com/wilson-mar/azure-quickly
+   cd azure-quickly
    </strong></pre>
 
    NOTE: If you work with a private repo, you'll need to create a SSH key, paste the contents of the public key in GitHub GUI, and use a different command, such as:
 
-   <pre><strong>git clone git-123456@wilson-mar/azure-your-way
-   cd azure-your-way
+   <pre><strong>git clone git-123456@wilson-mar/azure-quickly
+   cd azure-quickly
    </strong></pre>
 
 1. To obtain recent changes:

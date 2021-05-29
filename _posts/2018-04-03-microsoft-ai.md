@@ -291,7 +291,7 @@ So that you're not tediously recreating everything everyday, this tutorial focus
 
 Another reason for being able to rebuild is that you if you find that the pricing tier chosen is no longer suitable for your solution, you must create a new Azure Cognitive Search resource and recreate all indexes and objects.
 
-When you use my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/">Automation scripts at https://github.com/wilsonmar/azure-your-way/ to create resources the way you like</a>, using "Infrastructure as Code", so you can throw away any Subscription and begin anew quickly.
+When you use my <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/">Automation scripts at https://github.com/wilsonmar/azure-quickly/ to create resources the way you like</a>, using "Infrastructure as Code", so you can throw away any Subscription and begin anew quickly.
 
 My scripts also makes use of a more secure way to store secrets than inserting them in code that can be checked back into GitHub.
 
@@ -696,7 +696,7 @@ References:
 1. In portal.azure.com:
 1. G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>.
 
-1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Create Machine Learning Workspace: <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/README.md">Follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh"><strong>./az-mlworkspace-cli.sh</strong></a>. 
+1. <img align="right" width="368" alt="az-mlworkspace-736x946" src="https://user-images.githubusercontent.com/300046/116822701-8a810c80-ab3d-11eb-96a9-a80d7df88f5c.png"> Create Machine Learning Workspace: <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/README.md">Follow my instructions</a> to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-manage-workspace-cli">create a ML Workspace</a> and run my <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-mlworkspace-cli.sh"><strong>./az-mlworkspace-cli.sh</strong></a>. 
    
 1. The script creates these resources under the Resource Group:
    * Machine learning
@@ -1618,7 +1618,7 @@ https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/
 
 1. PROTIP: In a CLI window, run my Bash shell script to Create a Cognitive Services resource and get its two keys:
 
-   <pre>cd ~/clouddrive/azure-your-way
+   <pre>cd ~/clouddrive/azure-quickly
    git pull
    ./az-cog-cli.sh
    </pre>
@@ -1896,13 +1896,13 @@ NOTE: Video Indexer is under Media Services rather than Cognitive Services.
 
 1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
  
-   https://wilsonmar.github.io/azure-your-way
+   https://wilsonmar.github.io/azure-quickly
 
 1. Switch back.
 1. In Account settings, click "Copy" to get the Account ID GUID in your Clipboard. 
 1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
 
-   https://wilsonmar.github.io/azure-your-way
+   https://wilsonmar.github.io/azure-quickly
 
 1. Highlight the sample value and paste (Command+V).
 1. Switch back.
@@ -1918,7 +1918,7 @@ NOTE: Video Indexer is under Media Services rather than Cognitive Services.
 1. Click "Show" on the "Primary key" line. Double-click on the subscription key to copy to Clipboard (Command+C).
 1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_API_KEY (in setmem.sh) as described in 
  
-   https://wilsonmar.github.io/azure-your-way
+   https://wilsonmar.github.io/azure-quickly
 
 1. Highlight the sample value and paste (Command+V).
 1. Switch back.
@@ -1939,7 +1939,7 @@ NOTE: Video Indexer is under Media Services rather than Cognitive Services.
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/3-upload-index-videos?pivots=python">
    Program
 
-   <strong>az-video-upload.py</strong> in https://wilsonmar.github.io/azure-your-way
+   <strong>az-video-upload.py</strong> in https://wilsonmar.github.io/azure-quickly
 
 1. Make an additional call to retrieve insights.
 
@@ -2056,7 +2056,7 @@ Subscribe to the Face API:
 
 The endpoint used to make REST calls is "$MY_FACE_ACCT.cognitiveservices.azure.com/"
 
-   https://github.com/wilsonmar/azure-your-way/blob/main/az-face-init.sh
+   https://github.com/wilsonmar/azure-quickly/blob/main/az-face-init.sh
 
 https://docs.microsoft.com/en-us/learn/modules/identify-faces-with-computer-vision/8-test-face-detection?pivots=csharp
 

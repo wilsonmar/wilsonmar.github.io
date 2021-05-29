@@ -397,7 +397,7 @@ Durable functions
 
    Files:
 
-   <a target="_blank" href="https://github.com/wilson-mar/azure-your-way/blob/main/az-functions-temp.sh">https://github.com/wilson-mar/azure-your-way/blob/main/az-functions-temp.sh</a>
+   <a target="_blank" href="https://github.com/wilson-mar/azure-quickly/blob/main/az-functions-temp.sh">https://github.com/wilson-mar/azure-quickly/blob/main/az-functions-temp.sh</a>
    
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-host-json">host.json reference for Azure Functions 2.x and later</a>
 

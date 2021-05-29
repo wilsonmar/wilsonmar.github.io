@@ -69,7 +69,7 @@ My contribution to the world here is a deep yet concise presentation, using tabl
 
 ### CLI to create Storage account
 
-Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-your-way/readme.txt">github.com/wilsonmar/azure-your-way</a> 
+Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
 
 
 <hr />

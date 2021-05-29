@@ -149,7 +149,7 @@ Schedule triggers occur on a specific date/time.
 
 1. Run my <strong>az-local-setup.sh</strong> to install utilities on your laptop.
 
-   https://github.com/wilsonmar/azure-your-way
+   https://github.com/wilsonmar/azure-quickly
 
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash">Initialize</a>:
 
