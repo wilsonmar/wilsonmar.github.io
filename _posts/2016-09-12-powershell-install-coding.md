@@ -90,7 +90,11 @@ says needed as a pre-requisite is
    https://github.com/PowerShell/PowerShell/releases</a>
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <th>Date</th><th> File </th><th> MB Size </th><th> Space</th><th> Cmds</th></tr>
+   <tr><th>Date</th><th> File </th><th> MB Size </th><th> Space</th><th> Cmds</th></tr>
+
+   <tr valign="top"><td> 21 May 2021 </td><td> 7.2.0-preview.6
+   </td><td align="right"> 62.1 MB 
+   </td></tr>
 
    <tr valign="top"><td> Apr, 2018 </td><td> 6.0.2 on brew
    </td><td align="right"> 50.8 MB 
@@ -155,12 +159,34 @@ Password:
 
    Response:
 
-   <pre>installer: Package name is PowerShell - 7.1.2
+   <pre>installer: Package name is PowerShell - 7.1.3
 installer: Installing at base path /
 installer: The install was successful.
 🍺  powershell was successfully installed!
    </pre>
 
+   ### Run PowerShell in Bash
+
+0. An example of command parameters within double-quotes:
+
+   <pre><strong>pwsh -c "write-host Hello world"
+   </strong></pre>
+
+   "Hello World" would be the response.
+
+0. Double-quotes are not needed for a single command, such as this to list folders (child items):
+
+   <pre><strong>pwsh -command get-childitem
+   </strong></pre>
+
+   <pre> Directory: /Users/...
+&nbsp;
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-----           5/12/2021  3:48 PM          11381 .dir
+   </pre>
+
+   <a name="InAndOut"></a>
 
    ### In and Out #
 
@@ -179,7 +205,7 @@ installer: The install was successful.
 
    The response:
 
-   <pre>PowerShell 7.1.2
+   <pre>PowerShell 7.1.3
 Copyright (c) Microsoft Corporation.
 &nbsp;
 https://aka.ms/powershell
@@ -199,6 +225,94 @@ PS /Users/...>
    </pre>
    
 
+   ### System Variables
+
+1. List all system variables:
+
+   <pre><strong>dir env:</strong></pre>
+
+   Alternately:
+
+   <pre>gci env:* | sort-object name</pre>
+
+   "gci" is short for:
+
+   <pre>Get-ChildItem Env:* | Select-Object -Property Name,Value</pre>
+
+   Notice there are "LOGNAME" and "USER" variables.
+
+1. The content of system environment variable $USER can be identified quickest using a command on both Linux and Windows:
+
+   <pre><strong>whoami</strong></pre>
+
+   
+1. To display just the value of the <strong>$HOME</strong> variable which defines path where the "cd" command navigates to:
+
+   <pre><strong>Get-Variable HOME -valueOnly</strong></pre>
+
+   On MacOS and Linux:
+
+   <pre>/Users/<em>$USER</em></pre>
+
+   On Windows:
+
+   <pre>C:\Users\<em>$USER</em></pre>
+
+
+
+   ### Customize prompt
+
+1. The default prompt is defined by this:
+
+   <pre>function prompt { 'PS ' + $(get-location) + '> ' }</pre>
+
+   The default command prompt contains ">" after the current path.
+
+   I don't like this because the prompt appears in different positions, requiring me to spend time finding it. And there isn't much space left for commands before forced wrapping.
+
+   I would rather have the prompt be at the same position, such as this, which gives a lot of space for long commands:
+
+   <tt>/Users/.../<em>current_folder</em><br />
+   PS > _ </tt>
+
+1. To achieve the above prompt, with a blank line between commands:<a target="_blank" href="https://ss64.com/ps/syntax-prompt.html">BLOG</a>:
+
+   <pre>function prompt { "`n     " + $(get-location) + "`n" + '> ' }</pre>
+
+   PROTIP: In PowerShell, escape characters such as new lines are escaped with a back-tick at the upper-left of most keyboards. Also notice double quotation marks are necessary. The back-tick is also used for line continuation, so don't put a space after a back-tick or PowerShell will recognize it as an escape character rather than a line continuation.
+
+   To add how much time the last command took is described at https://www.networkadm.in/customize-pscmdprompt/
+
+1. To make the change permanant, change your user profile definition file at the path defined by the $PROFILE system environment variable:
+
+   <pre><strong>$PROFILE</strong></pre>
+
+   On MacOS and Linux:
+
+   <pre>/Users/<em>USER</em>/.config/powershell/Microsoft.PowerShell_profile.ps1</pre>
+
+   On Windows:
+
+   <pre>C:\Users\<em>USER</em>\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</pre>
+
+   NOTE: That file is one of six PowerShell profile files<a target="_blank" href="https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/">*</a>
+
+1. Check if it's true that you have a profile file:
+
+   <pre>Test-Path $PROFILE</pre>
+
+   If "False", create the file "Microsoft.PowerShell_profile.ps1"
+
+   <pre>New-Item -Path $PROFILE -Type File -force</pre>
+
+1. Edit the file:
+
+   <pre>code Microsoft.PowerShell_profile.ps1</pre>
+
+1. Copy and paste the function prompt from above.
+1. Click the "..." at the right to Save and Close Editor (or press Command+S and Command+Q).
+
+
    ### Exit PowerShell
 
 0. To leave PowerShell, it's the same as in Bash scripts:
@@ -206,19 +320,19 @@ PS /Users/...>
    <tt><strong>exit
    </strong></tt>
 
+0. Enter Powershell again, <a href="#InAndOut">per above</a>.
+
 
    ### Upgrade PowerShell
 
-1. To upgrade:
+1. To upgrade (within Bash or pwsh):
 
    <pre><strong>brew upgrade --cask powershell</strong></pre>
 
-1. <a href="#VerifyPSInstall">Verify PowerShell install</a> again.
 
-1. <a href="#pwsh">Log into PowerShell again (see above)</a>.
+   <a name="VerifyPSInstall"></a>
 
-
-   ### Versions of PowerShell:
+   ### Verify install by seeing version
 
 0. Check the version of PowerShell being used by calling a <strong>pre-defined variable</strong>:
 
@@ -231,9 +345,9 @@ PS /Users/...>
 
    <pre>Name                           Value
 ----                           -----
-PSVersion                      7.1.2
+PSVersion                      7.1.3
 PSEdition                      Core
-GitCommitId                    7.1.2
+GitCommitId                    7.1.3
 OS                             Darwin 19.6.0 Darwin Kernel Version 19.6.0: Tue Jan 12 22:13:05 PST 2021; root:xnu-6153.141.16~1/RELEASE_X86_64
 Platform                       Unix
 PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0…}
@@ -370,8 +484,8 @@ in .NET Core.
 
 PowerShell errors occur if .NET Core is not installed, so:
 
-0. Go to web page 
-   https://www.microsoft.com/net/core#macos
+0. Go to web page <a target="_blank" href="https://www.microsoft.com/net/core#macos">
+   https://www.microsoft.com/net/core#macos</a>
 
 0. The web page asks for OpenSSL to be installed.
 

@@ -925,8 +925,8 @@ Exam DP-201: Designing an Azure Data Solution Crash Course (live online training
    * Design and develop data processing (25-30%)
    * Design and implement data security (10-15%)
    * Monitor and optimize data storage and data processing (10-15%)
-   * https://github.com/timothywarner/dp203 (by <a target="_blank" href="https://www.linkedin.com/in/timothywarner/">Tim Warner</a>, <a target="_blank" href="https://techtrainertim.com/">techtrainertim.com</a>, https://www.pluralsight.com/authors/tim-warner)
-   * https://timw.com/dp200 ?
+
+   * https://timw.com/dp203 = <a target="_blank" href="https://github.com/timothywarner/dp203">https://github.com/timothywarner/dp203</a> (by <a target="_blank" href="https://www.linkedin.com/in/timothywarner/">Tim Warner</a>, <a target="_blank" href="https://techtrainertim.com/">techtrainertim.com</a>)
    <br /><br />
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-200">DP-200</a> retired on June 30, 2021, looks at the Microsoft Azure data platform through the

@@ -149,7 +149,7 @@ https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vs
 
    #### Slots (of different versions)
 
-   PROTIP: Each slot's Tier type has a maximum number of staging slots imposed by Microsoft:
+   LIMIT PROTIP: Each slot's Tier type has a maximum number of staging slots imposed by Microsoft:
    * Dev/Test: F1 Free, D1 Shared, B1 Basic: 0 (none)
    * Standard: - 5 slots
    * Premium: - 20 slots

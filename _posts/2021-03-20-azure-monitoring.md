@@ -21,14 +21,14 @@ Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#Monitor">Azure Monitor</a>
    
    * <a href="#Metrics_Explorer">Metrics Explorer</a> receives metrics
-   * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a>
+   * <a href="#Log_Analytics">Log Analytics</a> <a href="#LA_Workspaces">Workspaces</a> (LAW)
 
    * <a href="#Security_Center">Azure Security Center</a>
    * <a href="#Azure_Defender">Azure Defender</a>
    * <a href="#AppInsights">Azure Application Insights</a>
    * <a href="#Event_Hubs">Azure Event Hubs</a>
    * <a href="#Defender">Microsoft Defender</a>
-   * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a>
+   * <a href="#Azure_Sentinel">Azure Sentinel (SIEM like Splunk)</a> which also uses LAW.
    * <a href="#NPM">Azure Network Performance Monitor</a>
    <br /><br />
 
@@ -125,6 +125,7 @@ Issues to monitor for:
 3. To <strong>Visualize</strong>:
 
    * pin a chart from metrics explorer to an <a href="#Dashboard">Azure Dashboard</a>. Export the results of a query to Grafana to leverage its dashboarding and combined with other data sources. 
+   <a target="_blank" href="https://www.youtube.com/watch?v=XS2b_rxkwMY" title="How to create dashboards with Azure Monitor data">VIDEO</a>
    <br /><br />
 
 4. To <strong>Respond</strong>: 
