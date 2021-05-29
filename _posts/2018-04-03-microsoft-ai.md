@@ -1888,6 +1888,10 @@ NOTE: Video Indexer is under Media Services rather than Cognitive Services.
 
 1. Say Yes to Video Indexer permission to: Access your email addresses & View your profile info and <strong>contact list</strong>, including your name, gender, display picture, contacts, and friends.
 
+   NOTE: You'll get an email with subject "Your subscription to the Video Indexer API".
+
+   On your mobile phone you'll get a "Connected to new app" notice for Microsoft Authenticator.
+
 1. Click "Account settings". <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
 
 1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
