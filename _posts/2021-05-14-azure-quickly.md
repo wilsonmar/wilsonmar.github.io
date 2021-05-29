@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Azure Your Way"
+title: "Azure Quickly"
 excerpt: "CLI Bash scripts and Terraform HCL to automate setup and work while you save money"
 tags: [cloud, azure]
 date: "2021-05-14"
-file: "azure-your-way"
+file: "azure-quickly"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
   credit: Microsoft Azure
@@ -36,7 +36,7 @@ Within script code are references to documentation and tutorials related to the 
 
 1. Triple-click this command below:
 
-   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/azure-your-way/master/az-setup-cli.sh)" -v -i</strong></pre>
+   <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/azure-quickly/master/az-setup-cli.sh)" -v -i</strong></pre>
 
 1. Right-click the highlighted and select "Copy".
 
@@ -50,7 +50,7 @@ Within script code are references to documentation and tutorials related to the 
 
    Steps executed by the script "az-setup-cli.sh" are <a href="#az-setup-cli.sh">described in the section below</a>. When done, you should see the folder containing scripts and the prompt at the left, where it will stay after each command (instead of at the end of the folder path):
 
-   <pre>~/clouddrive/azure-your-way
+   <pre>~/clouddrive/azure-quickly
    $ _</pre>
 
 1. Use the built-in Visual Studio Code editor to edit file setmem.sh 
@@ -73,13 +73,13 @@ Within script code are references to documentation and tutorials related to the 
 
 * Run a Bing Search using API:
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-bing-cli.sh">az-bing-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-bing-cli.sh">az-bing-cli.sh</a>
    </strong></pre>
 
 
 * Create an Azure Key Vault for use by scripts to follow:
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-keyvault-cli.sh">az-keyvault-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-keyvault-cli.sh">az-keyvault-cli.sh</a>
    </strong></pre>
 
    Optionally, put a secret in it; show secret; delete secret; recover secret; create a vm; Managed Service Identity; update permissions; Custom Script Extension; Apply the Custom Script Extension:
@@ -87,7 +87,7 @@ Within script code are references to documentation and tutorials related to the 
 * Create a Machine Learning Workspace to run iPython Notebooks using JupyterLab:
 
    <pre><strong>export MY_MLWORKSPACE_NAME="mela"
-   ./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-mlworkspace-cli.sh">az-mlworkspace-cli.sh</a>
+   ./<a href="https://github.com/wilsonmar/azure-quickly/blob/main/az-mlworkspace-cli.sh">az-mlworkspace-cli.sh</a>
    </strong></pre>
    
 
@@ -95,42 +95,42 @@ Within script code are references to documentation and tutorials related to the 
 
    <pre><strong>export MY_COG_ACCT="cogme"
    export MY_COG_PRICING_TIER="F0"  # or S0
-   ./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-cog-cli.sh">az-cog-cli.sh</a>
+   ./<a href="https://github.com/wilsonmar/azure-quickly/blob/main/az-cog-cli.sh">az-cog-cli.sh</a>
    </strong></pre>
 
 * Use Helm charts
 
-   <pre><strong>./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-helm-cli.sh">az-helm-cli.sh</a>
+   <pre><strong>./<a href="https://github.com/wilsonmar/azure-quickly/blob/main/az-helm-cli.sh">az-helm-cli.sh</a>
    </strong></pre>
 
 * Create a VM with a public IP address:
 
-   <pre><strong>./<a href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-cli.sh">az-vm-cli.sh</a>
+   <pre><strong>./<a href="https://github.com/wilsonmar/azure-quickly/blob/main/az-vm-cli.sh">az-vm-cli.sh</a>
    </strong></pre>
 
 * Create an App Service Plan, Azure Web App, Deployment, to show MY_APPNAME.
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-webapp-cli.sh">az-webapp-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-webapp-cli.sh">az-webapp-cli.sh</a>
    </strong></pre>
 
 * Create a network with two subnets and a network security group that secures inbound traffic. One subnet is for remote access traffic, one is web traffic for VMs that run a web server. Two VMs are then created. One allows SSH access and has the appropriate network security group rules applied. You use this VM as an <strong>SSH jumpbox</strong> to then connect to the the second VM which can be used an web server:
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-jumpbox-cli.sh">az-vm-jumpbox-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-vm-jumpbox-cli.sh">az-vm-jumpbox-cli.sh</a>
    </strong></pre> 
 
 * Create a VM with a public IP address. Enabled are a storage account, boot diagnostics with the VM diagnostics extension applied:
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-diag-cli.sh">az-vm-diag-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-vm-diag-cli.sh">az-vm-diag-cli.sh</a>
    </strong></pre>
 
 * Create a VM; Recovery Services vault, a backup policy, then creates a VM and applies the backup policy before starting the initial backup job.
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-vm-backup-cli.sh">az-vm-backup-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-vm-backup-cli.sh">az-vm-backup-cli.sh</a>
    </strong></pre>
 
 * Create a Docker container from a Dockerfile; Create AKS; Scale up replicas 
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-aks-cli.sh">az-aks-cli.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-aks-cli.sh">az-aks-cli.sh</a>
    </strong></pre>
    
    The IP shows the "Month of Pizza Lunches in a container" website (load balanced).
@@ -140,12 +140,12 @@ Within script code are references to documentation and tutorials related to the 
    <pre><strong>export MY_PROJECT_FOLDER="iot-project"
   export MY_IOT_HUB_NAME="hubahuba"
   export MY_IOT_HUB_GROUP="hubgroupie"
-  ./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/iot/az-iot-cli.sh">az-iot-cli.sh</a>
+  ./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/iot/az-iot-cli.sh">az-iot-cli.sh</a>
    </strong></pre>
 
 * Create Azure Functions:
 
-   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-your-way/blob/main/az-functions-temp.sh">az-functions-temp.sh</a>
+   <pre><strong>./<a target="_blank" href="https://github.com/wilsonmar/azure-quickly/blob/main/az-functions-temp.sh">az-functions-temp.sh</a>
    </strong></pre>
 
    Several Functions components are not available in the Azure CLI, so manual actions are needed on Azure portal to fill in the gaps.
@@ -204,8 +204,8 @@ Bash scripts here are written with coding conventions defined at <a target="_bla
 
 4. Download this repo to establish a run environment:
 
-   <pre><strong>git clone https://github.com/wilsonmar/azure-your-way.git --depth 1 
-   cd azure-your-way
+   <pre><strong>git clone https://github.com/wilsonmar/azure-quickly.git --depth 1 
+   cd azure-quickly
    ls
    </strong></pre>
 
