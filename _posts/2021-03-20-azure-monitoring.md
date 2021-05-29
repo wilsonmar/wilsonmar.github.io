@@ -932,6 +932,8 @@ To reduce the attack surface, protect network ports by opening network traffic t
 
 ## Azure Sentinel (SIEM)
 
+<a target="_blank" href="https://learning.oreilly.com/library/view/learn-azure-sentinel/9781838980924/">BOOK</a>:
+
 DEPRECATION: Custom alert rules were retired from Azure Security Center on June 30, 2019 so they can be in the new Azure Sentinel product.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/sentinel/overview">

@@ -1200,11 +1200,20 @@ Data Bricks is Spark storage + analytics
 
 ## Cosmos DB (NoSQL)
 
-Cosmos DB (originally Document DB) is a globally distributed and elastically scalable <strong>document database</strong> supporting MongoDB and graph database Gremlin.
+Cosmos DB is a globally distributed and elastically scalable <strong>document database</strong> supporting MongoDB and graph database Gremlin. Its previous name was "Document DB".
 
-<a target="_blank" href="https://www.wikiwand.com/en/PACELC_theorem">According to Wikipedia</a>, Cosmos DB's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels">consistency levels</a> are based on <a target="_blank" href="https://www.wikiwand.com/en/PACELC_theorem">"P+A and E+L" theorem</a>, similar to AWS DynamoDB and Cassandra:
+<a target="_blank" href="https://www.wikiwand.com/en/PACELC_theorem">According to Wikipedia</a>, Cosmos DB's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels">consistency levels</a> are based on <a target="_blank" href="https://www.wikiwand.com/en/PACELC_theorem">"P+A and E+L" theorem</a>, similar to AWS DynamoDB and Cassandra.
 
-Before a write operation is acknowledged to the client, data is durably committed by a quorum or replicas within the region that accepts the write operations:
+> "Cosmos DB supports the choice of five tunable <strong>consistency levels</strong> that define tradeoffs between C/A during P, and L/C during E. Cosmos DB never violates the specified consistency level, so it’s formally CP."
+
+* <strong>Strong</strong> (write and read immediately, like SQL). Before a write operation is acknowledged to the client, data is durably committed by a quorum or replicas within the region that accepts the write operations. But that takes time.
+* <strong>"Bounded-staleness"</strong>
+* <strong>"Session"</strong> [the <tt>--default-consistency-level<tt>] = Strong sync for the same session key
+* <strong>"Consistent prefix"</strong> ensures that changes are read in the order that matches the sequence of the corresponding writes. But read operations against a replica can return stale data.
+* <strong>Eventual</strong> (like DNS propagation) ensures the database operates at peak effiency and speed. But read operations against a replica can return stale data.
+<br /><br />
+
+SLAs:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Operation </th><th> Single-region writes </th><th> Multi-region writes </th></tr>
@@ -1228,6 +1237,7 @@ A "conflict feed" makes data available not replicated when a write region fails.
    * Gremlin (graph) [Graph database]
    * [Future: etcd, Apache HBase, ANSI SQL]
    <br /><br />
+
 1. Location: 
    
    Capacity mode: 
@@ -1259,51 +1269,12 @@ A "conflict feed" makes data available not replicated when a write region fails.
 
    * --max-staleness-prefix "10000" \ is max. 10,000 updates before forcing sync
    
-### --default-consistency-level
-
-> "Cosmos DB supports five tunable consistency levels that allow for tradeoffs between C/A during P, and L/C during E. Cosmos DB never violates the specified consistency level, so it’s formally CP."
-
-* Strong (write and read immediately, like SQL)
-* Bounded-staleness 
-* Session [the default = Strong sync for the same session key]
-* Consistent prefix
-* Eventual (like DNS propagation)
-<br /><br />
+ --default-consistency-level
 
 References:
 
    * https://docs.microsoft.com/en-us/azure/cosmos-db/partitioning-overview#choose-partitionkey
    * https://azure.microsoft.com/en-us/blog/azure-cosmos-db-and-multi-tenant-systems/
-
-### DB Containers
-
-Databases manage the throughput (performance)
-
-Containers are where <strong>Partition keys</strong> to group databases. 
-
-Documents are grouped by Partition Key.
-There is no limit on the number of logical partitions.
-
-PRICING is by Request Units (RUs). 
-The cost to read a 1 KB item is 1 RU. 
-<strong>5 RUs</strong> are spent to write 1 KB.
-
-A minimum of 10 RS/s is required to store each 1 GB of data.
-Each Physical Partition provides 10K request units/second.
-There are Read Capacity Units and Write Capacity Units. 
-
-Logical Partitions have a max. size of 20 GB.
-
-When RU exceeded, Azure will automatically add another physical partition and re-allocate logical partitions.
-
-A Change Feed provides an ordered list of documents modified in a container.
-
-
-### Migration
-
-To migrate SQL data in, create a <strong>.bacpac</strong> file.
-
-
 
 ### CosmoDB Backup Policy
 
@@ -1350,6 +1321,37 @@ CosmoDB can't use "USE" command which changes the current database.
 
 
 Deborah Chen is Microsoft's Senior Program Manager on Data-CosmosDB
+
+### DB Containers
+
+Databases manage the throughput (performance)
+
+Containers are where <strong>Partition keys</strong> to group databases. 
+
+Documents are grouped by Partition Key.
+There is no limit on the number of logical partitions.
+
+PRICING is by Request Units (RUs). 
+The cost to read a 1 KB item is 1 RU. 
+<strong>5 RUs</strong> are spent to write 1 KB.
+
+A minimum of 10 RS/s is required to store each 1 GB of data.
+Each Physical Partition provides 10K request units/second.
+There are Read Capacity Units and Write Capacity Units. 
+
+Logical Partitions have a max. size of 20 GB.
+
+When RU exceeded, Azure will automatically add another physical partition and re-allocate logical partitions.
+
+A Change Feed provides an ordered list of documents modified in a container.
+
+
+### Migration
+
+To migrate SQL data in, create a <strong>.bacpac</strong> file.
+
+
+
 
 <hr />
 

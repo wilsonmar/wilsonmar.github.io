@@ -105,10 +105,8 @@ Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us
 
 ## Training vendors
 
-<a target="_blank" href="https://cloudacademy.com/library/azure/quizzes/">
-Microsoft Quizzes by CloudAcademy</a>
+Among https://docs.microsoft.com/en-us/learn/certifications/partners
 
-See https://docs.microsoft.com/en-us/learn/certifications/partners
 
 ### Microsoft Learning
 
@@ -245,10 +243,19 @@ https://aka.ms/edge4biz
 
 ### Cloud Academy
 
+PROTIP: I think <a target="_blank" href="https://cloudacademy.com/">CloudAcademy.com</a>
+provides the most thorough approach to exam prep. They have pre-defined set of 
+<a target="_blank" href="https://cloudacademy.com/library/azure/labs/">hands-on labs</a>, each about 1-2 hours long.
+
+CloudAcademy also has 
+<a target="_blank" href="https://cloudacademy.com/library/azure/quizzes/">
+quizzes</a>.
+
 If you want time on servers (one hour at a time), subscribe to
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-900-exam-preparation-microsoft-azure-fundamentals-524/">CloudAcademy.com</a>
 
-See my step-by-step advice for using CloudAcademy's Azure environment at ...
+See my step-by-step advice for using CloudAcademy's Azure environment.
+
 
 ### FreeCodeCamp.org
 

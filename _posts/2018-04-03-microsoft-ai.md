@@ -123,7 +123,7 @@ PROTIP: The reconciliation below between marketing Feature categories and the <s
       </td><td> <a target="_blank" href="https://westus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-preview/operations/AnalyzeLayoutAsync">API</a>       
       </td></tr>
    <tr valign="top"><td> <a target="_blank" href="https://azure.microsoft.com/en-us/services/media-services/video-indexer/#features">Features</a> </td><td> <a href="#VideoIndexer">Video Indexer</a>
-      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/"><em>depends</em></a> 
+      </td><td> <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">600 minutes in portal, 2400 in API</a> 
       </td><td> <a target="_blank" href="https://www.nuget.org/packages/Video.Indexer.API/">API</a>       
       </td></tr>
    <tr valign="top"><td> - </td><td> <a href="#InkRecognizer"><strike>Ink Recognizer"</strike></a>
@@ -1875,27 +1875,103 @@ QUESTION: Does it integrate with a tablet?
 
 ### Video Indexer 
 
-Video Indexer is under Media Services rather than Cognitive Services.
+NOTE: Video Indexer is under Media Services rather than Cognitive Services.
 
-https://github.com/Azure-Samples/media-services-video-indexer
-
-https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
-
-1. In a browser, go to the Video Indexer URL:
+1. In a browser, go to the Video Indexer Portal URL:
 
    <a target="_blank" href="https://www.videoindexer.ai/account/login/">
    https://www.videoindexer.ai</a>
 
-1. Click the provider to login.
-1. In "Media files", click "Samples", and click on a video file to Play.
-1. See the media's people, topics (keywords).
+1. Click the provider to login: AAD account, Personal Microsoft account, Google.
+
+   PROTIP: Avoid using Google due to the permissions you're asked to give:
+
+1. Say Yes to Video Indexer permission to: Access your email addresses & View your profile info and <strong>contact list</strong>, including your name, gender, display picture, contacts, and friends.
+
+1. Click "Account settings". <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
+
+1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
+ 
+   https://wilsonmar.github.io/azure-your-way
+
+1. Switch back.
+1. In Account settings, click "Copy" to get the Account ID GUID in your Clipboard. 
+1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_ACCOUNT (in setmem.sh) as described in 
+
+   https://wilsonmar.github.io/azure-your-way
+
+1. Highlight the sample value and paste (Command+V).
+1. Switch back.
+
+1. Go to the "Azure Video Analyzer for Media Developer Portal":<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/video-indexer-use-apis#obtain-access-token-using-the-authorization-api">DOCS</a>
+
+   <a target="_blank" href="https://api-portal.videoindexer.ai/">api-portal.videoindexer.ai</a>
+
+1. Click "Sign In". Click "Profile" 
+
+   NOTE: The UI has changed since publication of <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/2-subscribe-to-api">Microsoft's tutorial</a>, which says "Go to the Products tab, then select Authorization."
+
+1. Click "Show" on the "Primary key" line. Double-click on the subscription key to copy to Clipboard (Command+C).
+1. Switch to the file which defines Azure environment variable VIDEO_INDEXER_API_KEY (in setmem.sh) as described in 
+ 
+   https://wilsonmar.github.io/azure-your-way
+
+1. Highlight the sample value and paste (Command+V).
+1. Switch back.
+
+   ### Upload video using Portal GUI
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/previous/media-services-portal-upload-files">DOCS</a>
+
+1. In Portal, <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.media%2Fmediaservices">Media Services</a> blade
+
+
+   ### Upload video using program
+
+   https://api-portal.videoindexer.ai/api-details#api=Operations&operation=Get-Account-Access-Token
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-video-analyzer/video-analyzer-for-media-docs/upload-index-videos#upload-and-index-with-api">DOCS</a>: Select the Azure Video Indexer option for uploading videos: upload from URL (there is also send file as byte array by an API call, which has limits of 2 GB in size and a 30-minute timeout.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/extract-insights-from-videos-with-video-indexer-service/3-upload-index-videos?pivots=python">
+   Program
+
+   <strong>az-video-upload.py</strong> in https://wilsonmar.github.io/azure-your-way
+
+1. Make an additional call to retrieve insights.
+
+1. Reference existing asset ID
+
+   ### Search Media files
+
+1. In "Media files" at https://www.videoindexer.ai/media/library
+
+1. Click "Samples", and click on a video file to Play to see the media's people, topics (keywords).
+
+   NOTE: Search results include exact start times where an insight exists, possibly multiple matches for the same video if multiple segments are matched.
 
 1. Click a tag to see where it was mentioned in the timeline.
 
-1. In "Model customizations"
-1. In "Account settings"
-1. <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cognitive-services/video-indexer/">PRICING</a>: up to 10 hours (600 minutes) of free indexing to website users and up to 40 hours (2,400 minutes) of free indexing to API users. Media reserved units are pre-paid. See <a target="_blank" href="https://docs.microsoft.com/en-us/azure/media-services/video-indexer/faq">FAQ</a>
-   <br /><br />
+   Alternately, use the API to search: ???
+
+
+   ### Model customizations
+
+   Each video consists of scenes grouping shots, which each contain keyframes.
+   
+   * A <strong>scene</strong> represents a single event within the video. It groups <strong>consecutive shots</strong> that are related. It will have a start time, end time, and thumbnail (first keyframe in the scene).
+   
+   * A <strong>shot</strong> represents a <strong>continuous segment</strong> of the video. Transitions within the video are detected which determine how it is split into shots. Shots have a start time, end time, and list of keyframes.
+   
+   * <strong>Keyframes</strong> are frames that represent the shot. Each one is for a <strong>specific point in time</strong>. There can be gaps in time between keyframes but together they are representative of the shot. Each keyframe can be downloaded as a high-resolution image.
+
+1. Click "Model customizations"
+
+1. Set as thumbnail another keyframe.
+
+
+https://github.com/Azure-Samples/media-services-video-indexer
+
+https://dev.to/adbertram/getting-started-with-azure-video-indexer-and-powershell-3i32
 
 
 <a name="Face"></a>
