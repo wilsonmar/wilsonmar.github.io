@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Azure (cloud) certifications"
-excerpt: "Collect them all! Microsoft provides free hands-on tutorials (gamified)"
+title: "Azure (Microsoft's cloud) certifications"
+excerpt: "Collect them all! Microsoft provides free hands-on (gamified) tutorials and free time"
 tags: [cloud]
 date: "2021-02-22"
 file: "azure-certifications"
@@ -881,8 +881,10 @@ Exam prep:
 
 ## DP-900 Azure Data Fundamentals 
 
-https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/
-by Emilio Melo
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">
+Microsoft's DP-900 exam page</a> include free tutorials.
+
+* <a target="_blank" href="https://learning.oreilly.com/live-training/courses/microsoft-azure-data-fundamentals-dp-900-crash-course/0636920051861/">OReilly live crash course</a> by Emilio Melo
 
 * https://learning.oreilly.com/videos/azure-overview-introduction/10009OVERVIEW/10009OVERVIEW-AZINTRO_16
 “Cloud and Azure Overview” section in Azure Overview: Introduction for Beginners (video)
@@ -902,21 +904,21 @@ Create an Azure SQL Data Warehouse in Minutes (video, 1h 22m)
 * https://learning.oreilly.com/videos/information-management-using/9781491989647/
 Information Management Using Azure Data Factory (video, 1h 16m)
 
-* https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/
+Sample exams:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/
+   <br /><br />
+
+BTW for some reason, left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
+
 
 <a name="DP-100"></a>
 
 ## DP-100 Azure Data Scientist Associate
 
-https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">
+Microsoft's DP-100 exam page</a> include free tutorials.
 
-PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">FREE LEARNING PATH: Build AI solutions with Azure Machine Learning
-is 9 hr 51 min</a> has <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">hands-on exercises</a> which references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">https://github.com/MicrosoftLearning/mslearn-dp100</a>
-
-
-BTW Microsoft class DP-090 Implementing a Machine Learning Solution with Microsoft Azure Databricks
-In this one-day course, you’ll learn how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
-Azure Databricks is a cloud-scale platform for data analytics and machine learning. 
+PROTIP: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">FREE LEARNING PATH: Build AI solutions with Azure Machine Learning is 9 hr 51 min</a>. It has <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">hands-on exercises</a> which references <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">https://github.com/MicrosoftLearning/mslearn-dp100</a>
 
 
 <a name="DP-200"></a>
