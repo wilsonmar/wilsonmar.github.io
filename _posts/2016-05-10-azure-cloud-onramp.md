@@ -105,13 +105,15 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 </table>
 
 
-## Browser Profiles
+## PROTIP: Browser Profiles
 
-When you're switching among different Azure accounts, you are returned to the last account used. So you'll need to sign off and back again to use another account. That's a hassle.
+Azure saves the account you're on in the browser "cookie" so that when you return you'll see the last account used. 
 
-Azure knows your account because it stored a "cookie" in your browser.
+However, if you switch among different accounts on the same browser, that's a hassle.
 
-PROTIP: Use browser profiles, one for each email. Click the avatar at the upper-right corner to create a different profile for each Azure account:
+The solution is to use different <strong>browser profiles</strong>, one for each account (email). 
+
+Click the avatar at the upper-right corner to create a different profile for each Azure account:
 
    * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
    * Account using your Visual Studio benefit (using your work email)
@@ -137,6 +139,7 @@ You'll need to do this for each browser (Google Chrome, Microsoft Edge, Firefox,
    <a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
 
    <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
+
 
 ## Hands-on time
 
@@ -199,6 +202,22 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists the services w
    TODO: HANDS-ON: Make use of them without spending any money of your own!
 
 The clock is ticking!
+
+
+## Office 365 Trial
+
+1. Sign up for Office 365 Trial at 
+
+   https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5?activetab=pivot:overviewtab
+
+1. Click the "Free trial" link and go through the verfication steps.
+
+   You get assigned a @onmicrosoft.com domain and individual account.
+
+1. To view time remaining, see 
+   
+   https://admin.microsoft.com/adminportal/home?#/subscriptions
+
 
 <hr />
 

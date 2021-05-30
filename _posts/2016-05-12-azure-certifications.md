@@ -711,13 +711,17 @@ Passing the AZ-303 and the less hands-on AZ-304 Microsoft Azure Architect Design
 
 "Azure Architects translate business requirements into secure and reliable recommendations for infrastructure, governance, high availability, cost optimization, and data integration. Skills include recommending solutions for logging, multi-factor authentication, SSO, hybrid identity, backup and recovery, containers, microservices, monitoring, automation, networking, and application infrastructure."
 
-Atul Kumar's K21Academy has a 12 weekend course with 27 hands-on labs, job prep & on-job support for one year on their @k2microsoftazure Telegram and WhatsApp. All after full-pressure marketing.
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/120121061-a25ca800-c15e-11eb-9e59-76266e724ba6.png">
-<img width="2080" height="566" alt="az-mlstudio-home-2080x566" src="https://user-images.githubusercontent.com/300046/120121061-a25ca800-c15e-11eb-9e59-76266e724ba6.png"></a>
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/">
+docs.microsoft.com/en-us/azure/architecture/patterns</a>
+
+Training vendors:
+
+Atul Kumar's K21Academy has a 12 weekend AZ-303/304 course with 27 hands-on labs, job prep & on-job support for one year on their @k2microsoftazure Telegram and WhatsApp. All after full-pressure marketing.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120122781-38490080-c168-11eb-9a0d-f9062d48916c.png">
+<img alt="az-k21-303-304-1536x627.png" width="1536" height="627" src="https://user-images.githubusercontent.com/300046/120122781-38490080-c168-11eb-9a0d-f9062d48916c.png"></a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=O_u2oPuZ8Mw">Azure Full Course | Learn Microsoft Azure in 3 hours</a>
    <br /><br />
-
 
 <a name="AZ-303"></a>
 
