@@ -19,10 +19,10 @@ comments: true
 
 ## Compute options
 
-   * SaaS (Software as a Service): O365, custom "Serverless" <a href="#LogicApps">Azure Logic Apps</a> for "orchestration" of 
-   <a href="#Functions">Azure Functions</a> 
+   * SaaS (Software as a Service): O365
 
-   * PaaS (Platform as a Service) provides managed hosting environment: Azure App Service. Container to run in Docker or K8s (AKS), a <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/app-service/static/">static SPA Web Apps</a> using Vue-based <a target="_blank" href="https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-Nuxtjs--One-Dev-Question?ocid=player">Nuxt.js</a>)
+   * PaaS (Platform as a Service) provides managed hosting environment: custom "Serverless" <a href="#LogicApps">Azure Logic Apps</a> for "orchestration" of 
+   <a href="#Functions">Azure Functions</a>; Azure App Service; Container to run in Docker or K8s (AKS), a <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/app-service/static/">static SPA Web Apps</a> using Vue-based <a target="_blank" href="https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-Nuxtjs--One-Dev-Question?ocid=player">Nuxt.js</a>)
 
    * IaaS (Infrastructure as a Service): <a href="#VMs">Virtual Machines</a> (like AWS EC2) using VHD images and/or Azure Redis Cache server
 
@@ -32,13 +32,13 @@ Decision chart (from Microsoft Skillpipe):
 "HPC" = (High Performance Computing) workloads run on Batch (not interactive).
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> VMs
-   </th><th> Batch
-   </th><th> App Svc.
-   </th><th> Azure Functions 
-   </th><th> Container
-   </th><th> Svc. Fabric
-   </th><th> AKS
+<tr valign="bottom"><th> <a href="#VMs">VMs</a>
+   </th><th> <a href="#AzureBatch">Azure Batch</a>
+   </th><th> <a href="#AppServices">App Svc.</a>
+   </th><th> <a href="#Functions">Azure Functions</a>
+   </th><th> <a href="#ContainerInstances" title="Azure Container Instances">ACI</a>
+   </th><th> <a href="#ServiceFabric">Svc. Fabric</a>
+   </th><th> <a href="#AKS" title="Azure Kubernetes Service (orchestrator)">AKS</a>
    </th></tr>
 <tr align="center"><th colspan="7"> Load Balancer: </th></tr>
 <tr valign="top"><td> ALB
@@ -68,6 +68,10 @@ Decision chart (from Microsoft Skillpipe):
    </td><td> 100 nodes per cluster
    </td></tr>
 </table>
+
+Logic apps?
+
+Web jobs?
 
 
 ## Event Architecture
@@ -281,6 +285,17 @@ https://docs.microsoft.com/en-us/azure/developer/javascript/tutorial/tutorial-vs
    The number of web apps deployed to your App Service plans has no effect on your bill.
 
 
+<a name="ServiceFabric"></a>
+
+### Service Fabric
+
+Service Fabric is a distributed systems platform for packaging, deploying, and managing microservices. 
+
+Microservices can be deployed to Service Fabric as containers, as binary executables, or as Reliable Services. 
+
+Using the Reliable Services programming model, services can directly use Service Fabric programming APIs to query the system, report health, receive notifications about configuration and code changes, and discover other services.
+
+
 <a name="LogicApps"></a>
 
 ### Azure Logic Apps
@@ -343,6 +358,8 @@ Static Web Apps are fast because HTML is already rendered and sitting close to u
 <a name="Functions"></a>
 
 ## Azure Functions
+
+Azure Functions is a hosting service that handles putting code onto a VM and executing it.
 
 Function apps do just one thing well, so scaling can be precise and dynamic.
 A simplified programming model.
@@ -488,19 +505,6 @@ Azure Durable Functions:
 
 Implement custom handlers:
 * https://docs.microsoft.com/en-us/azure/azure-functions/functions-custom-handlers
-
-
-
-
-<hr />
-
-<a name="WebJobs"></a>
-
-## Web Jobs
-
-Azure Web Jobs runs Azure Functions as background jobs.
-
-
 
 
 <hr />
@@ -957,9 +961,13 @@ ENTRYPOINT ["dotnet","webapp.dll"]
    * Standard
 
 
+<a name="ContainerInstances"></a>
+
 ## ACI (Azure Container Instances)
 
 <a target="_blank" href="https://www.skillpipe.com/?lang=en-GB#/reader/urn:uuid:e36b495e-ef2a-5560-893e-f22ebe2ac3e6@2021-03-19T02:45:22Z/content">LEARN</a>:
+
+Azure Container Instances (ACIs) provide a fast and simple way to run <strong>individual</strong> (isolated) containers in a VM running (Windows or Linux) images, without having to manage machines and without having to adopt a higher-level service. ACI is useful for build jobs of single simple applications, task automation.
 
 1. Create a <strong>single (machine)</strong>, akin to one K8s pod based on a predefined image in the Azure Registry Service (ARS):
 
@@ -969,14 +977,26 @@ az container create --name mycontainer --resource_group learn-deploy-aci-rg \
   --dns-name-label $DNS_NAME_LABEL
    </pre>
 
+   Containers startup faster than virtual machines (VMs) -- in seconds.
+
+   ACI instances are billed by the second, so you can fine-tune your spending based on actual need.
+
+   PROTIP: Azure Container Instances supports scheduling of <strong>multi-container groups</strong> sharing a host machine, local network, storage, and lifecycle. So a main application container can be combined with other supporting role containers, such as monitoring and logging sidecars.
+
 1. In a browser, the public URL is, assuming $RANDOM is resolved to 1234 and location eastus:
 
-   <pre>https://aci-demo-$RANDOM.eastus.azureci.com</pre>
+   <tt>https://aci-demo-$RANDOM.eastus.azureci.com</tt>
 
    The "ci" is for container instance.
 
+   Container instances can specify a custom DNS name label so your application is reachable at 
 
-## Container Registry
+   <tt>https://<em>customlabel</em>.<em>azureregion</em>.azurecontainer.io</tt>
+
+PROTIP: Use the AKS virtual node to provision pods inside ACI that start in seconds. This enables AKS to run with just enough capacity for your average workload. As you run out of capacity in your AKS cluster, scale out additional pods in ACI without any additional servers to manage.
+
+
+## Azure Container Registry (ACR)
 
 1. Create a registry using the Azure CLI:
 
@@ -990,14 +1010,30 @@ az acr create --name $MY_REGISTRY --sku standard --admin-enabled true \
    <pre>az acr build --file Dockerfile --image myimage . 
    </pre>
 
+   Note the dot at the end to specify all files in the folder.
+
+1. Register container in Azure Container Registry
+
+   Container images are pulled from the Azure Container Registry
+
+   "AKS virtual node", a Virtual Kubelet implementation, provisions pods inside ACI from AKS when traffic comes in spikes.
+
+   AKS and ACI containers write to shared data store.
+
+
+<a name="AKS"></a>
 
 ## AKS (Azure Kubernetes Service)
 
-https://azure.microsoft.com/en-us/services/kubernetes-service/
-
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/116806912-4d8d2980-aaed-11eb-810c-844f6354feb8.png"><img alt="az-k8s-flow-2236x1258" width="2236" height="1258" src="https://user-images.githubusercontent.com/300046/116806912-4d8d2980-aaed-11eb-810c-844f6354feb8.png"></a>
 
-See https://wilsonmar.github.io/kubernetes
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/">
+Azure Kubernetes</a> 
+
+See my <a target="_blank" href="https://wilsonmar.github.io/kubernetes">wilsonmar.github.io/kubernetes</a>
+
+
+
 
 1. Make use of a sample multi-user app (simply to click either Dog or Cat):<a target="_blank" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app">*</a>
 
@@ -1180,12 +1216,23 @@ To deploy a VHD image: <a target="_blank" href="https://www.youtube.com/watch?v=
 1. Home -> All Services: search -> Templates
 
 
+<a name="Batch"></a>
 
-## Batch commands
+## Azure Batch processing
 
 Azure provides a way to perform the same process on many at once. See:
 
 https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
+
+
+<hr />
+
+<a name="WebJobs"></a>
+
+## Web Jobs
+
+Azure Web Jobs runs Azure Functions as background jobs.
+
 
 
 <a name="Event_Grid"></a>
