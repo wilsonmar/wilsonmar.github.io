@@ -151,6 +151,8 @@ You'll need to do this for each browser (Google Chrome, Microsoft Edge, Firefox,
 
 1. Microsoft has https://azure.microsoft.com/en-us/free/students/
 
+1. Microsoft maintains <a target="_blank" href="https://azuredevopslabs.com/labs/devopsserver/handsonlabs/">azuredevopslabs.com/labs/devopsserver/handsonlabs</a> with code at <a target="_blank" href="https://github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs/">github.com/Microsoft/azuredevopslabs/tree/master/labs/devopsserver/handsonlabs</a>, which provides a quick and easy way to evaluate and test (currently only DevOps and Visual Studio) through virtual environments that do not require any complex setup or installation. You can use virtual labs online immediately for free :)
+
 1. CloudAcademy.com licenses include Lab time in some of their monthly subscriptions.
 
    * <a href="#CloudAcademyLab">VM lab</a>

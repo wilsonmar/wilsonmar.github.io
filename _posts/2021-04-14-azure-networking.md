@@ -95,7 +95,8 @@ Each VNet is scoped to a <strong>single region/location</strong>. However, virtu
 
 To peer virtual networks involving separate subscriptions in different Azure Active Directory tenants, the administrators of each subscription must grant the peer subscription's administrator the <strong>Network Contributor role</strong> on their virtual network.
 
-## On-prem
+
+## On-prem networking
 
 * <strong>Azure ExpressRoute</strong> operated by Microsoft partners route traffic which does not go over the public internet. Such connections are private and expensive.
 
@@ -149,7 +150,7 @@ Ways to spread load:
    * <a href="#TrafficManager">Traffic Manager</a> is a DNS "referral engine" routing IP addresses globally across geographic regions 
    <br /><br />
 
-Use either Traffic Manager or Front Door, not both.
+REMEMBER: Use either Traffic Manager or Front Door, not both.
 
    * <a href="#AppGateway">App Gateway</a> for URI routing with App Firewall
    * F5 (third-party virtual appliance) NVA
@@ -160,6 +161,14 @@ Use either Traffic Manager or Front Door, not both.
 
 Peering of regions connects without creating a gateway, which are charged by hour and bytes egress, which introduces extra latency with limited bandwidth.
 
+
+<a name="DNS"></a>
+
+## DNS
+
+https://docs.microsoft.com/en-us/cli/azure/network/dns?view=azure-cli-latest
+
+Test-AzDnsAvailability
 
 <a name="FrontDoor"></a>
 

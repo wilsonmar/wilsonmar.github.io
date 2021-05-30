@@ -21,10 +21,29 @@ Here are the notes I took while studying for <a target="_blank" href="https://wi
 
 My contribution to the world here is a deep yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
 
+### Storage Pricing
+
+   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
+   
+   A. Region
+
+   B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
+   
+   C. <a href="#Blobs">Type of Blob (Storage Type) [see below]</a> available in the region
+   
+   D. <a href="#Replication">Replication/Redundancy</a> region pair availability
+
+
+### CLI to create Storage account
+
+Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
+
 
 <a name="StorageAccount"></a>
 
 ## Create Storage account in Portal UI
+
+Let's dive right in:
 
 1. A subscription is needed if you want to use the CLI.
 
@@ -34,22 +53,21 @@ My contribution to the world here is a deep yet concise presentation, using tabl
    REMEMBER: PROTIP: Storage accounts are under Subscriptions, separate from (not under) any Resource Group.
 
 
-   ### Storage Pricing
-
-   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
-   
-   A. Region
-
-   B. Region's support of Availability Zones - white dots on<a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
-   
-   C. <a href="#Blobs">Type of Blob (Storage Type)</a> available in the region
-   
-   D. <a href="#Replication">Replication/Redundancy</a> region pair availability
-
 1. Get to blade <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
 
-1. Click "+ Add". Specify Resource Group, Name, Location, 
-1. Performance: Standard (default) 
+1. Click "+ Create" (a new Storage account). 
+1. Create new Resource Group [this is still for training/development]
+1. For Name, use up to 24 chracters or numbers
+1. Location, 
+1. Performance: Click "Standard" [the default unless you want <strong>Performance</strong> for
+
+   * Block blogs
+   * File shares
+   * Page blogs
+   <br /><br />
+
+   See description about <a href="#StorageTypes">Types of Storage and Data (below)</a>
+
 1. See <a href="#Redunancy">Redundancy</a>
 
 1. After creation,
@@ -65,21 +83,6 @@ My contribution to the world here is a deep yet concise presentation, using tabl
 
 
 <hr />
-
-
-### CLI to create Storage account
-
-Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
-
-
-<hr />
-
-## Introductions 
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
-
 
 
 <a name="StorageTypes"></a>
@@ -113,6 +116,16 @@ Use my Bash shell script file az-storage-init.sh within <a target="_blank" href=
 How is your data used?
 
 Does your data require transactions (ACID properties)? If yes, use SQL.
+
+
+<hr />
+
+## Introductions 
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
+
 
 
 
@@ -970,7 +983,28 @@ VM Restore <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modul
 
 <hr />
 
-## AZCopy and Microsoft Storage Explorer
+<a name="MethodsToStore"></a>
+
+## Methods to Store Blobs
+
+Several methods are available to upload data to blob storage:
+
+* AzCopy is an easy-to-use command-line tool for Windows and Linux that copies data to and from Blob storage, across containers, or across storage accounts.
+
+* The Azure Storage Data Movement library is a .NET library for moving data between Azure Storage services. The AzCopy utility is built with the Data Movement library.
+
+* <strong>Azure Data Factory</strong> supports copying data to and from Blob storage by using the account key, shared access signature, service principal, or managed identities for Azure resources authentications.
+
+* <strong>Blobfuse</strong> is a virtual file system driver for Azure Blob storage. You can use blobfuse to access your existing block blob data in your Storage account through the Linux file system.
+
+* <a href="#DataBox">Azure Data Box Disk</a> is a service for transferring on-premises data to Blob storage when large datasets or network constraints make uploading data over the wire unrealistic. You can use Azure Data Box Disk to request solid-state disks (SSDs) from Microsoft. You can then copy your data to those disks and ship them back to Microsoft to be uploaded into Blob storage.
+
+* <strong>The Azure Import/Export service</strong> provides a way to export large amounts of data from your storage account to hard drives that you provide and that Microsoft then ships back to you with your data.
+
+
+<a name="AZCopy"></a>
+
+### AZCopy and Microsoft Storage Explorer
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/what-is-azure-cli?WT.mc_id=thomasmaurer-blog-thmaure">DOCS</a>:
 <a target="_blank" href="https://www.thomasmaurer.ch/2019/07/how-to-install-azure-cli-on-windows-one-liner/">STEPS</a>:
@@ -1102,10 +1136,34 @@ For each storage account two (primary and secondary) keys (aka connection string
 1. Edit az-upload-blob.py
 
 
+<a name="DataBox"></a>
 
-## Azure Data Box
+## Microsoft Data Box Disk
 
-Fill and ship TB of data into a box (USB drive) from Microsoft.
+When large datasets or network constraints make uploading <strong>blob data</strong> over the wire unrealistic:
+
+1. In the Azure portal, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/databox/data-box-disk-overview">Microsoft Data Box Disk</a> order 40 TB (usable ~ 35 TB) in up to five 8-TB solid-state disks (SSDs) shipped to your shipping address, for your data. Designate the destination Azure Storage account targeted. 
+
+2. If disks are available, Azure encrypts, prepares, and ships the disks with a shipment tracking ID.
+   Disks are mailed in a UPS Express Box.
+
+3. When empty disks are delivered, unpacked, and connected, unlock the disks.
+
+4. Use a client to drag and drop the data on the disks, using standard NAS protocols (SMB/CIFs and NFS) with AES encryption. Data transfer rates are up to <strong>430 MBps</strong>, depending on file size.  Non-Azure service providers can load a Data Box:
+
+   * <a target="_blank" href="http://documentation.commvault.com/commvault/v11/article?p=97276.htm">Commvault</a> migrates large volumes of data to Microsoft Azure using the Azure Data Box.
+
+   * Veeam can backup and replicate large amounts of data from a Hyper-V machine to a Data Box.
+
+5. Prepare and ship the disks back to Azure datacenter Within 10 days to avoid the $15 fee on top of the $250 service fee and $95 round-trip shipping fee. There is also a per-disk cost of $10 per day on top of a $50 order processing fee and $30 shipping fee (for the bubble wrap). That's in the U.S.    <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/calculator/?service=databox">Pricing</a> varies by region.
+
+6. Microsoft uploades the disk into Blob storage within their private network. 
+
+7. The disks are securely erased as per the National Institute of Standards and Technology (NIST) guidelines.
+
+   The <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DataBoxEdge%2FdataBoxEdgeDevices/kind/azuredataboxgateway">"Azure Data Box Gateway"</a> is a virtual appliance for moving data in and out of Azure, a subscription of $125.00/month.
+
+https://docs.microsoft.com/en-us/azure/databox/data-box-disk-quickstart-portal?tabs=azure-portal   
 
 <hr />
 

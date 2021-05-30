@@ -19,13 +19,55 @@ comments: true
 
 ## Compute options
 
-   * SaaS: Custom "Serverless" <a href="#LogicApps">Azure Logic Apps</a> for "orchestration" of 
+   * SaaS (Software as a Service): O365, custom "Serverless" <a href="#LogicApps">Azure Logic Apps</a> for "orchestration" of 
    <a href="#Functions">Azure Functions</a> 
 
-   * PaaS: Container to run in Docker or K8s (AKS), a <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/app-service/static/">static SPA Web Apps</a> using Vue-based <a target="_blank" href="https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-Nuxtjs--One-Dev-Question?ocid=player">Nuxt.js</a>)
+   * PaaS (Platform as a Service) provides managed hosting environment: Azure App Service. Container to run in Docker or K8s (AKS), a <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/app-service/static/">static SPA Web Apps</a> using Vue-based <a target="_blank" href="https://channel9.msdn.com/Blogs/One-Dev-Minute/What-is-Nuxtjs--One-Dev-Question?ocid=player">Nuxt.js</a>)
 
-   * IaaS: <a href="#VMs">Virtual Machines</a> (like AWS EC2) using VHD images 
-   & Azure Redis Cache server
+   * IaaS (Infrastructure as a Service): <a href="#VMs">Virtual Machines</a> (like AWS EC2) using VHD images and/or Azure Redis Cache server
+
+Decision chart (from Microsoft Skillpipe):
+![az-compute-decision-988x614](https://user-images.githubusercontent.com/300046/120094178-2752ad80-c0dc-11eb-887a-22a5b4367ca6.png)
+
+"HPC" = (High Performance Computing) workloads run on Batch (not interactive).
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th> VMs
+   </th><th> Batch
+   </th><th> App Svc.
+   </th><th> Azure Functions 
+   </th><th> Container
+   </th><th> Svc. Fabric
+   </th><th> AKS
+   </th></tr>
+<tr align="center"><th colspan="7"> Load Balancer: </th></tr>
+<tr valign="top"><td> ALB
+   </td><td> ALB
+   </td><td> Integrated
+   </td><td> Integrated
+   </td><td> No built-in
+   </td><td> ALB
+   </td><td> ALB/AG
+   </td></tr>
+<tr align="center"><th colspan="7"> Auto-scaling: </th></tr>
+<tr valign="top"><td> Scale sets
+   </td><td> None
+   </td><td> Built-in
+   </td><td> Built-in
+   </td><td> None
+   </td><td> Scale sets
+   </td><td> Pod & cluster
+   </td></tr>
+<tr align="center"><th colspan="7"> Default scale limits: </th></tr>
+<tr valign="top"><td> 600 custom, 1000 platform image nodes per scale set
+   </td><td> 20 core limit
+   </td><td> 30 instances, 100 with App Svc. env.
+   </td><td> 200 instances per function
+   </td><td> 20 container groups per sub.
+   </td><td> 100 nodes per scale set
+   </td><td> 100 nodes per cluster
+   </td></tr>
+</table>
 
 
 ## Event Architecture

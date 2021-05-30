@@ -260,7 +260,7 @@ PS /Users/...>
 
 
 
-   ### Customize prompt
+   ### Customize command prompt
 
 1. The default prompt is defined by this:
 
@@ -272,16 +272,24 @@ PS /Users/...>
 
    I would rather have the prompt be at the same position, such as this, which gives a lot of space for long commands:
 
-   <tt>/Users/.../<em>current_folder</em><br />
-   PS > _ </tt>
+   <tt>> _ </tt>
 
-1. To achieve the above prompt, with a blank line between commands:<a target="_blank" href="https://ss64.com/ps/syntax-prompt.html">BLOG</a>:
+   I don't need "PS". Above the prompt, I show time of day, [Git branch], and current folder:
 
-   <pre>function prompt { "`n     " + $(get-location) + "`n" + '> ' }</pre>
+   <tt>03:54:32 PM [master] _posts<br />
+> _ </tt>
 
-   PROTIP: In PowerShell, escape characters such as new lines are escaped with a back-tick at the upper-left of most keyboards. Also notice double quotation marks are necessary. The back-tick is also used for line continuation, so don't put a space after a back-tick or PowerShell will recognize it as an escape character rather than a line continuation.
+1. To achieve the above prompt, 
 
-   To add how much time the last command took is described at https://www.networkadm.in/customize-pscmdprompt/
+   <pre>function prompt {"`n  "+$(Get-Date -UFormat "%r")+' ['+$(git rev-parse --abbrev-ref HEAD)+'] '+$((get-item $pwd ).Name)+"`n"+'> ' }</pre>
+
+   PROTIP: In PowerShell, a new line is specified by the "back-tick" escape character (at the upper-left of most keyboards). Also notice double quotation marks are necessary. The back-tick is also used for line continuation, so don't put a space after a back-tick or PowerShell will recognize it as an escape character rather than a line continuation.
+
+   An alternative to obtaining the current folder is:
+
+   <pre>$($executionContext.SessionState.Path.CurrentLocation | Split-Path -Leaf)</pre>
+
+   NOTE: <a target="_blank" href="https://stackoverflow.com/questions/1287718/how-can-i-display-my-current-git-branch-name-in-my-powershell-prompt">Others</a> display different colors.
 
 1. To make the change permanant, change your user profile definition file at the path defined by the $PROFILE system environment variable:
 
@@ -305,9 +313,9 @@ PS /Users/...>
 
    <pre>New-Item -Path $PROFILE -Type File -force</pre>
 
-1. Edit the file:
+1. Edit the file "Microsoft.PowerShell_profile.ps1":
 
-   <pre>code Microsoft.PowerShell_profile.ps1</pre>
+   <pre>code $PROFILE</pre>
 
 1. Copy and paste the function prompt from above.
 1. Click the "..." at the right to Save and Close Editor (or press Command+S and Command+Q).
@@ -315,7 +323,7 @@ PS /Users/...>
 
    ### Exit PowerShell
 
-0. To leave PowerShell, it's the same as in Bash scripts:
+0. To leave PowerShell for changes to take effect, it's the same as in Bash scripts:
 
    <tt><strong>exit
    </strong></tt>

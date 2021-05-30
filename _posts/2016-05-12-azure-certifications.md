@@ -40,6 +40,13 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
         * AZ-120 Azure for SAP Workloads Specialty
    </td></tr>
 
+<tr valign="top"><td> AI Engineer
+   </td><td>* <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
+     * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
+   </td></tr>
+
 <tr valign="top"><td> Data Engineer<br /> Data Scientist
    </td><td>* <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
@@ -58,12 +65,6 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 <tr valign="top"><td> Developer
    </td><td>* <a href="#AZ-204">AZ-204 Azure Developer Associate</a><br />
        * <a target="_blank" href="https://wilsonmar.github.io/azure-iot#AZ-220" title="My hands-on tutorial on Azure IoT">AZ-220 Azure IoT Developer Specialty</a> 
-   </td></tr>
-
-<tr valign="top"><td> AI Engineer
-   </td><td>* <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a>
    </td></tr>
 
 <tr valign="top"><td> Security Engineer

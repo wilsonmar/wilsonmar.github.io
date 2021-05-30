@@ -79,7 +79,7 @@ As of this writing, in various marketing and certification training <a target="_
 
 <a name="FreeTime"></a>
 
-## What Kind Free Pricing
+## Kinds of Free Cognitive Services
 
 Microsoft provides some <a href="#FreeTime">free machine time</a>.
 
@@ -1826,14 +1826,22 @@ READ
 
 ### Custom Vision
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Azure Custom Vision</a> trains custom image using classification and object detection models referencing custom (your own) images.
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/">Azure Custom Vision</a> trains custom models referencing custom (your own) images. Custom vision has two <strong>project types</strong>:
 
-Custom vision has two <strong>project types</strong>:
    * <strong>Image classification</strong> is a machine-learning based form of computer vision in which a model is trained to categorize images based on their (class or) primary subject matter they contain. 
-   * <strong>Object detection</strong> goes further than classification to classify individual objects within the image, and to return the coordinates of a bounding box that indicates the object's location.
+
+   * <strong>Object detection</strong> goes further than classification to identify the "class" of  individual objects within the image, and to return the <strong>coordinates</strong> of a bounding box that indicates the object's location.
    <br /><br />
 
-LAB: https://github.com/microsoft/hackwithazure/tree/master/workshops/ml-endangered-animal-detector
+<a target="_blank" href="https://github.com/microsoft/hackwithazure/tree/master/workshops/ml-endangered-animal-detector">LAB</a>:
+Steps:
+   1. Create state-of-the-art computer vision models.
+   2. Upload and tag training images.
+   3. Train classifiers for active learning.
+   4. Perform image prediction to identify probable matches to a trained model.
+   5. Perform object detection to locate elements within an image and return a bounding box.
+   <br /><br />
+
 
 1. Open
 
