@@ -703,22 +703,25 @@ Questions:
 
 <a name="SolutionArchitect"></a>
 
-## Microsoft Certified Azure Solution Architect Expert
+## Azure Solution Architect Expert
 
-Requires passing both AZ-303 and AZ-304.
+Passing the AZ-303 and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a "Microsoft Certified Azure Solutions Architect Expert".
 
 ![az-303-304-1037x429](https://user-images.githubusercontent.com/300046/120078623-83321d80-c06d-11eb-822c-3aaefef83bb0.png)
 
-K21Academy's school of 12 weekends has 27 hands-on labs, with job prep & on-job support for one year on their @k2microsoftazure Telegram and WhatsApp. All after full-pressure marketing.
+"Azure Architects translate business requirements into secure and reliable recommendations for infrastructure, governance, high availability, cost optimization, and data integration. Skills include recommending solutions for logging, multi-factor authentication, SSO, hybrid identity, backup and recovery, containers, microservices, monitoring, automation, networking, and application infrastructure."
+
+Atul Kumar's K21Academy has a 12 weekend course with 27 hands-on labs, job prep & on-job support for one year on their @k2microsoftazure Telegram and WhatsApp. All after full-pressure marketing.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120121061-a25ca800-c15e-11eb-9e59-76266e724ba6.png">
+<img width="2080" height="566" alt="az-mlstudio-home-2080x566" src="https://user-images.githubusercontent.com/300046/120121061-a25ca800-c15e-11eb-9e59-76266e724ba6.png"></a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=NEbG6bEaUDo">Microsoft Azure Solution Architect Certification [AZ-303|304]: Everything You Need To Know</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=O_u2oPuZ8Mw">Azure Full Course | Learn Microsoft Azure in 3 hours</a>
    <br /><br />
 
+
 <a name="AZ-303"></a>
 
 ### AZ-303 Azure Architect Technologies
-
-Passing this and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a Microsoft Certified Azure Solutions Architect Expert.
 
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-303">
@@ -791,25 +794,29 @@ Clickbait videos with no unique content:
 
 ### AZ-304 Azure Architect Design
 
-Passing this and the more hands-on AZ-303 makes you a Microsoft Certified Azure Solutions Architect Expert.
+Passing this and the more hands-on AZ-303 makes you a "Microsoft Certified Azure Solutions Architect Expert".
 
 <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-304">
-https://docs.microsoft.com/en-us/learn/certifications/exams/az-304</a> 
-120 minutes to answer 40-60 business case scenario questions.
-
-Topics:
-* Cost Optimization (cheapest approach)
-* Migration Planning
-* Governance
-* Data Integration
-* Application Architecture
-<br /><br />
+Microsft's AZ-304 exam page</a> includes textual tutorials and hands-on labs.
+The exam is 120 minutes to answer 40-60 business case scenario (case-studies) questions.
+   * Design monitoring (10-15%)
+   * Design identity and security (25-30%)
+   * Design data storage (15-20%)
+   * Design business continuity (10-15%)
+   * Design infrastructure (25-30%)
+   <br /><br />
 
 Links to Microsoft docs for each item in the syllubus are detailed by<br />
 <a target="_blank" href="
 https://www.azurebarry.com/prepare-for-the-az304-exam/">
 https://www.azurebarry.com/prepare-for-the-az304-exam</a>
+   * Cost Optimization (cheapest approach)
+   * Migration Planning
+   * Governance
+   * Data Integration
+   * Application Architecture
+   <br /><br />
 
 Labs at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
 
@@ -908,7 +915,7 @@ Sample exams:
    * https://www.whizlabs.com/learn/course/microsoft-azure-dp-900/
    <br /><br />
 
-BTW for some reason, left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
+BTW Left out of the ESI list is Azure Databricks, a cloud-scale platform for data analytics and machine learning. Microsoft's live class DP-090 "Implementing a Machine Learning Solution with Microsoft Azure Databricks" shows how to use Azure Databricks to explore, prepare, and model data; and integrate Databricks machine learning processes with Azure Machine Learning.
 
 
 <a name="DP-100"></a>

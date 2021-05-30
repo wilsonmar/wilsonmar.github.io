@@ -18,14 +18,14 @@ comments: true
 
 This article presents my notes toward a guided tour to introduce use of Microsoft's Artificial Intelligence offerings running on the Azure cloud, which Microsoft calls "Cognitive services".
 
-My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
-
 TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
-
+My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
 <a name="Competitors"></a>
 
 ## What can AI do?
+
+Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities.
 
 1. Microsoft's Azure AI gallery of samples and users' contributions:
 
@@ -251,7 +251,7 @@ This document assumes that you have done the following:
 
 This document covers:
 
-1. <a href="#ShutDownRGs">Automatically shut down Resource Groups of a Subscription</a> by <a href="#LogicApp">creating a Logic App</a>.
+1. <a href="#ShutDownRGs">Automatically shut down Resource Groups of a Subscription</a> by <strong>creating a Logic App</strong>.
 
 1. Run an API connecting to an established endpoint (SaaS) you don't need to setup:
 Bing Search.
@@ -590,25 +590,8 @@ Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai
 
 Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
 
-<a name="ImmersiveReader"></a>
 
-### Immersive Reader
-
-   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
-
-<a name="AnomalyDetector"></a>
-### Anomaly Detector
-
-   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-anomaly-detector-client-sdk-samples/
-
-https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/
-
-
-Practice tests:
-   * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
-
+<hr />
 
 <a name="ContentModerator"></a>
 
@@ -820,19 +803,6 @@ Others:
 * autoprice.py
 
 
-<a name="CLI"></a>
-
-## CLI
-
-
-<hr />
-
-
-<a name="LogicApp"></a>
-
-## Logic Apps
-
-
 <hr />
 
 <a name="Decision"></a>
@@ -846,6 +816,7 @@ Others:
    * Time Series Anomaly Detection
    <br /><br />
 
+<hr />
 
 <a name="MachineLearning"></a>
 
@@ -878,13 +849,13 @@ Models are created from training data containing feature values.
 
 The process is called <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#feature-engineering">featurization"</a> or feature engineering.
 
-## Metrics
+### Metrics
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-regression-model-azure-machine-learning-designer/evaluate-model">
 To compare the performance among multiple models</a>, in your pipeline, add an <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/evaluate-model">Evaluate Model</a> module and connect the Scored dataset output of the Score Model or Result dataset output of the Assign Data to Clusters to the left input port of Evaluate Model.
 
 
-### Metrics of classification model performance
+#### Metrics of classification model performance
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">DOC</a>:
 Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
@@ -936,7 +907,7 @@ Different values in the Confusion Matrix would be created for each level of thre
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
 <strong>AUC (Area Under the Curve)</strong> measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
 
-### Metrics of regression model performance
+#### Metrics of regression model performance
 
 <a target="_blank" href="https://towardsdatascience.com/what-are-the-best-metrics-to-evaluate-your-regression-model-418ca481755b">Which one is best?</a>
 
@@ -957,7 +928,7 @@ To compare models where labels are in different units:
 * <strong>Relative Squared Error (RSE)</strong>: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. 
 
 
-### Metrics for clustering model performance
+#### Metrics for clustering model performance
 
 * <strong>Average Distance to Other Center</strong> is how close, on average, each point in the cluster is to the centroids of all other clusters.
 
@@ -974,19 +945,9 @@ To compare models where labels are in different units:
 * <strong>Combined Evaluation</strong> score (at the bottom of the each section of results) lists the averaged scores for the clusters created in that particular model.
 
 
-<br /><br />
-
 <hr />
 
-
-Different <a href="#ValidationTypes">validation types</a> can be used.
-
-https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classification/
-
-<a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
-![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
-
-### Install Visual Studio Code extensions
+## Install Visual Studio Code extensions
 
 1. Open Visual Studio Code on your laptop.
 1. Press Shift+Command+X for Extensions search.
@@ -1001,6 +962,34 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 
 
 <hr />
+
+<a name="MachineLearning"></a>
+
+## Machine Learning
+
+
+### ML Designer Pipelines
+
+Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
+   1. Create inference clusters
+   2. Create and test inference pipeline
+   3. Deploy inference pipeline
+   4. Test the service (used by the user)
+   <br /><br />
+
+<a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
+![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
+
+
+<a target="_blank" href="https://www.coursera.org/projects/azure-machine-learning-studio-pipeline">
+Coursera: Machine Learning Pipeline Tutorial with Azure ML Studio</a>
+
+https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+
+https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
+
+https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classification/
+
 
 <a name="CreateMLCompute"></a>
 
@@ -1042,7 +1031,7 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 
 ### Create ML Workspace resource
 
-   The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-machine-learning-studio/">cloudacademy.com/lab/introduction-azure-machine-learning-studio</a> does the above for you, along with the compute cluster. If you're not following that, create a compute resource.
+The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-machine-learning-studio/">cloudacademy.com/lab/introduction-azure-machine-learning-studio</a> does the above for you, along with the compute cluster. If you're not following that, create a compute resource.
 
 1. Go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
 1. Select your Directory and Subscription.
@@ -1325,6 +1314,22 @@ MS LEARN HANDS-ON LAB: <a target="_blank" href="
 https://docs.microsoft.com/en-us/learn/paths/create-no-code-predictive-models-azure-machine-learning/">Create no-code predictive models with Azure Machine Learning</a>
 
 Supervised: Regression & Classification
+
+
+<hr />
+
+<a name="AnomalyDetector"></a>
+
+## Anomaly Detector
+
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-anomaly-detector">Anomaly Detector</a>
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-anomaly-detector-client-sdk-samples/
+
+https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/
+
+Practice tests:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
 
 <a name="AnomalyDetection"></a>
@@ -1820,9 +1825,18 @@ References:
    * Microsoft Azure Cognitive Services: Translator Text API" video course</a> by William Myers
 
 
+
+<a name="ImmersiveReader"></a>
+
+### Immersive Reader
+
+   * Raza Salehi's <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-cognitive-services-immersive-reader">Immersive Reader</a>
+
+
 #### Other sample code
 
 https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/documenttranslation-samples/
+
 
 <hr />
 
@@ -2738,24 +2752,6 @@ https://github.com/orgs/BotBuilderCommunity/dashboard
 
 https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
 
-
-## ML Designer
-
-Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
-   1. Create inference clusters
-   2. Create and test inference pipeline
-   3. Deploy inference pipeline
-   4. Test the service (used by the user)
-   <br /><br />
-
-https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
-
-## ML Pipelines
-
-https://www.coursera.org/projects/azure-machine-learning-studio-pipeline
-Machine Learning Pipeline Tutorial with Azure ML Studio</a>
-
-https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 
 ## More
 

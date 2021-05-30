@@ -244,6 +244,9 @@ Does your data require transactions (ACID properties)? If yes, use SQL.
    </td></tr>
    </table>
 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png">
+<img width="942" height="592" alt="az-storage-942x592.png" src="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png"></a>
+
 
 <a name="LRS"></a>
 
