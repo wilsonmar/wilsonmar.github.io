@@ -96,9 +96,21 @@ Each VNet is scoped to a <strong>single region/location</strong>. However, virtu
 To peer virtual networks involving separate subscriptions in different Azure Active Directory tenants, the administrators of each subscription must grant the peer subscription's administrator the <strong>Network Contributor role</strong> on their virtual network.
 
 
-## On-prem networking
+## Azure Express Route on-prem networking
 
-* <strong>Azure ExpressRoute</strong> operated by Microsoft partners route traffic which does not go over the public internet. Such connections are private and expensive.
+<strong>Azure ExpressRoute</strong> routes traffic through dedicated private connections between the on-premises network and Azure rather than going over the public internet. This achieves greater resilience, faster speeds, higher security, and lower latency. But it's considered expensive.
+
+ExpressRoute can exist alongside any of your current site-to-site, point-to-site, or VPN-to-VPN connections.
+
+ExpressRoute must have a private connection provided by a connectivity partner in one of three ExpressRoute connectivity types:
+
+   * The "CloudExchange co-location" method connects to Azure by using the Ethernet exchange provided by a co-location facility.
+
+   * The "Any-to-any (IPVPN) Connection" method integrates a WAN with Azure by using an IP Virtual Private Network provider. This connection type links branch offices with datacenters. When it's enabled, the connection to Azure is similar to any other branch office that's connected via the WAN.
+
+   * The "Point-to-point Ethernet Connection" method connects on-premises datacenters and offices to Azure through a point-to-point Ethernet link.
+
+
 
 * A <strong>Site-to-site VPN (S2S VPN)</strong> sends traffic between on-premises VPN devices and an Azure VPN Gateway deployed in a virtual network. This connection type enables any on-premises resources to access a virtual network through an <strong>encrypted tunnel</strong> through the public internet.
 
@@ -108,6 +120,33 @@ Connections through am on-premises network using an Azure VPN Gateway or Express
 Custom route tables can be created for each subnet to control where traffic is routed to.
 
 Service endpoints allow service resources to be secured to the virtual network.
+
+ExpressRoute bandwidth speeds come in fixed tiers shared across any peering in the circuit:
+50 Mbps, 
+100 Mbps, 
+200 Mbps,
+500 Mbps,
+1 Gbps,
+10 Gbps,
+100 Gbps
+
+ExpressRoute doesn't support the Hot Standby Router Protocol (HSRP). You'll need to enable a Border Gateway Protocol (BGP) configuration.
+
+ExpressRoute uses network Layer 3 connectivity and security standards.
+Operating on a Layer 3 circuit requires a network security appliance to manage threats.
+To improve network security, ExpressRoute requires network security appliances between the provider's edge routers and your on-premises network.
+
+Monitoring the connectivity between your on-premises network and Azure must use the <strong>Azure Connectivity Toolkit</strong>.
+
+This <a target="_blank" href="https://github.com/mspnp/reference-architectures/tree/master/dmz/secure-vnet-hybrid">reference architecture</a> of a secure hybrid network which extends an on-premises network to Azure:
+
+![az-onprem-net-989x397](https://user-images.githubusercontent.com/300046/120097113-fbd7bf00-c0eb-11eb-8bcc-0d096d5e8465.png)
+
+The architecture implements a perimeter network between the on-premises network and an Azure virtual network. All inbound and outbound traffic pass through Azure Firewall.
+
+That infrastructure requires granular control over traffic entering an Azure virtual network from an on-premises datacenter.
+
+Applications that audit outgoing traffic is usually a regulatory requirement of many commercial systems and can help to prevent public disclosure of private information. DLP (Data Loss Prevention)
 
 
 ## Naming conventions
@@ -153,7 +192,7 @@ Ways to spread load:
 REMEMBER: Use either Traffic Manager or Front Door, not both.
 
    * <a href="#AppGateway">App Gateway</a> for URI routing with App Firewall
-   * F5 (third-party virtual appliance) NVA
+   * F5 (third-party virtual appliance) NVA (Network Virtual Appliance) hardware
    * Azure Load Balancer performs Network Load balancing
    * <a href="#LBs">Load balancers</a> (Basic and Standard) across VMs
    * ILB (Internal Load Balancers)
@@ -166,9 +205,40 @@ Peering of regions connects without creating a gateway, which are charged by hou
 
 ## DNS
 
+Resources in virtual networks can resolve domain names to internal IP addresses in one of three methods:
+
+   * Azure DNS private zones - the preferred solution due to its flexibility in managing DNS zones and records
+
+   * Azure-provided name resolution provides HA with no configuration, but provides only basic authoritative DNS capabilities. Appropriate DNS suffix are automatically applied to virtual machines. All other options you must either use Fully Qualified Domain Names (FQDN) or manually apply appropriate DNS suffix to virtual machines.
+
+   * Custom-managed (your own) DNS servers (which might forward queries to the Azure-provided DNS servers)
+
+   QUESTION: https://www.skillpipe.com/#/reader/urn:uuid:c320b85e-9d97-556a-8f4e-b22a78aebc6d@2021-05-14T08:45:09Z/contentdns
+
+In virtual networks deployed using the Azure Resource Manager (ARM) deployment model, the DNS suffix is consistent across all virtual machines within a virtual network, so the FQDN is not needed. DNS names can be assigned to both VMs and network interfaces.
+
+VMs and instances in a cloud service share the same DNS suffix, so the host name alone is sufficient. But in virtual networks deployed using the classic deployment model, different cloud services have different DNS suffixes. In this situation, you need the FQDN to resolve names between different cloud services.
+
+
 https://docs.microsoft.com/en-us/cli/azure/network/dns?view=azure-cli-latest
 
 Test-AzDnsAvailability
+
+
+### Custom DNS Servers
+
+Forwarding queries allows VMs to see both on-premises resources (via the DC) and Azure-provided host names (via the forwarder). Access to the recursive resolvers in Azure is provided via the virtual IP <strong>168.63.129.16</strong>.
+
+DNS forwarding enables DNS resolution between virtual networks and allows on-premises machines to resolve Azure-provided host names. In order to resolve a VM's host name, the DNS server VM must reside in the same virtual network, and be configured to forward host name queries to Azure.
+
+Because the DNS suffix is different in each virtual network, <strong>conditional forwarding rules</strong> send DNS queries to the correct virtual network for resolution. The following image shows two virtual networks and an on-premises network doing DNS resolution between virtual networks, by using this method.
+
+A role instance can perform name resolution of VMs within the same virtual network. It does so by using the FQDN, which consists of the VM's host name and internal.cloudapp.net DNS suffix. However, in this case, name resolution is only successful if the role instance has the VM name defined in the <strong>Role Schema (.cscfg file)</strong>. &LT;Role name="<em>role-name</em>>" vmName="<em>vm-name</em>">. 
+
+Role instances that need to perform name resolution of VMs in another virtual network (FQDN by using the internal.cloudapp.net suffix) have to do so by custom DNS servers forwarding between the two virtual networks.
+
+
+<hr />
 
 <a name="FrontDoor"></a>
 

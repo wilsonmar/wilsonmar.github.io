@@ -60,7 +60,7 @@ Decision chart (from Microsoft Skillpipe):
    </td></tr>
 <tr align="center"><th colspan="7"> Default scale limits: </th></tr>
 <tr valign="top"><td> 600 custom, 1000 platform image nodes per scale set
-   </td><td> 20 core limit
+   </td><td> 20 core limit (parallel)
    </td><td> 30 instances, 100 with App Svc. env.
    </td><td> 200 instances per function
    </td><td> 20 container groups per sub.
@@ -1220,7 +1220,7 @@ To deploy a VHD image: <a target="_blank" href="https://www.youtube.com/watch?v=
 
 ## Azure Batch processing
 
-Azure provides a way to perform the same process on many at once. See:
+Azure Batch Service uses a pool of compute resources (VMS) to carry out batch processes in <strong>parallel</strong>.
 
 https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
 
