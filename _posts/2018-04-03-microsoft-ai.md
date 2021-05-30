@@ -3,7 +3,7 @@ layout: post
 title: "Microsoft AI (and Machine Learning Cognitive Services)"
 excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI/ML workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
-date: "2021-05-06"
+date: "2021-05-31"
 file: "microsoft-ai"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -1095,6 +1095,8 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 1. PROTIP: Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline.
    Alternately, cursor up/down the left menu and press Enter to select.
 
+   <a name="PipelineDiagram"></a>
+
    Instructions by the CloudAcademy lab aims to end up with this typical pipeline:
 
    ![az-ml-pipeline-map-809x692](https://user-images.githubusercontent.com/300046/120111258-77f2f680-c12e-11eb-91ac-2486dfa33d0f.png)
@@ -1153,10 +1155,15 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 
    Feature scoring method: Select "ChiSquared" (instead of default "PearsonCorrelation").
 
+1. Search for the remaining steps, drag it on the canvas, connect them as shown in the <a href="#PipelineDiagram">pipeline diagram above</a>.
 
-   ### Train one set and test the other.
+   ### Train one set and test the other
 
+1. Click "Submit" at the upper-right. There should be an error.
 
+1. Set the Train Model Label column to "sentiment_label". Click Submit again.
+
+1. In the "Set up pipeline run" dialog, 
 
 <hr />
 
