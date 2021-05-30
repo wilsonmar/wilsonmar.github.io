@@ -114,7 +114,7 @@ ExpressRoute must have a private connection provided by a connectivity partner i
 
    * The "Point-to-point Ethernet Connection" method connects on-premises datacenters and offices to Azure through a point-to-point Ethernet link.
 
-
+QUESTION:
 
 * A <strong>Site-to-site VPN (S2S VPN)</strong> sends traffic between on-premises VPN devices and an Azure VPN Gateway deployed in a virtual network. This connection type enables any on-premises resources to access a virtual network through an <strong>encrypted tunnel</strong> through the public internet.
 
@@ -147,8 +147,6 @@ This <a target="_blank" href="https://github.com/mspnp/reference-architectures/t
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/120097113-fbd7bf00-c0eb-11eb-8bcc-0d096d5e8465.png">
 <img alt="az-onprem-net-989x397.png" width="989" height="397" src="https://user-images.githubusercontent.com/300046/120097113-fbd7bf00-c0eb-11eb-8bcc-0d096d5e8465.png"></a>
 
-Applications that audit outgoing traffic is usually a regulatory requirement of many commercial systems and can help to prevent public disclosure of private information. DLP (Data Loss Prevention)
-
 The gateway (in its own subnet) provides connectivity between routers in the on-premises network and the virtual network.
 
 In the gateway subnet, traffic sent to the web-tier subnet (10.0.1.0/24) is routed through the Azure Firewall instance. All inbound and outbound traffic pass through Azure Firewall, a managed firewall as a service. The Firewall instance is placed in its own subnet.
@@ -160,6 +158,8 @@ In the web tier subnet, since there is no route for address space of the VNet it
 Network security groups (NSGs) are used restrict network traffic within the virtual network. For example, in the deployment provided with this reference architecture, the web tier subnet allows TCP traffic from the on-premises network and from within the virtual network; the business tier allows traffic from the web tier; and the data tier allows traffic from the business tier.
 
 Azure Bastion allows management access into VMs through SSH or remote desktop protocol (RDP) without exposing the VMs directly to the internet.
+
+Additionally, auditing of outgoing traffic is usually a regulatory requirement for many commercial systems and can help to prevent public disclosure of private information. DLP (Data Loss Prevention)
 
 
 ## Naming conventions

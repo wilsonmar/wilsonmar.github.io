@@ -1000,39 +1000,11 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 1. To invoke extensions, VS Code will apply the extension based on the file type opened (such as .py for Python, etc.)
 
 
-<a name="CreateWorkspace"></a>
+<hr />
 
-### Create Workspace resource
+<a name="CreateMLCompute"></a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">LAB</a> in Azure Machine Learning studio (https://ml.azure.com) Deploy predictive service workspace "predict-rentals" Compute type: ACI
-
-Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
-
-   NOTE: You don't need to go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
-
-1. On the Overview page, launch Azure Machine Learning studio (or open a new browser tab and navigate to
-   
-   <a target="_blank" href="
-   https://ml.azure.com/">
-   https://ml.azure.com</a>
-
-1. Select your Directory and Subscription.
-1. Click "Create a new workspace". A new tab appears in portal.azure.com.
-1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "wow") which does not have ascenders so that numbers to be appended to it more visible.
-1. Workspace Name: PROTIP: just 3 letters are necessary.
-1. "Review + create".
-
-   CAUTION: The network is public by default. Choosing private would entail more configuration.
-
-1. "Create".
-
-   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another workspace.
-
-1. When created, click "Launch Studio" blue button.
-
-   This is the same as clicking browser tab "Microsoft Azure Machine Learning" (https://ml.azure.com) and refresh the page until your workspace appears.
-
-   ![az-menu-630x197](https://user-images.githubusercontent.com/300046/117180681-abda3680-ad91-11eb-9850-29748446973e.png)
+### Create ML Compute resource
 
 1. "Compute" menu (under heading Manage).
 1. "+ New" blue button.
@@ -1053,7 +1025,9 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
    CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another compute instance.
 
 
-   ### Download prepared data file
+<a name="CreateMLData"></a>
+
+### Create data file
 
 1. Select the Datasets page (under Assets)
 1. " + Create", "From web files". Web URL: https://aka.ms/bike-rentals
@@ -1062,6 +1036,94 @@ Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-l
 
 1. Dataset type: Tabular
 1. Next
+
+
+<a name="CreateWorkspace"></a>
+
+### Create ML Workspace resource
+
+   The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-machine-learning-studio/">cloudacademy.com/lab/introduction-azure-machine-learning-studio</a> does the above for you, along with the compute cluster. If you're not following that, create a compute resource.
+
+1. Go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
+1. Select your Directory and Subscription.
+1. Click "Create a new workspace". A new tab appears in portal.azure.com.
+1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "wow") which does not have ascenders so that numbers to be appended to it more visible.
+1. Workspace Name: PROTIP: just 3 letters are necessary.
+1. "Review + create".
+
+   CAUTION: The network is public by default. Choosing private would entail more configuration.
+
+1. "Create".
+
+   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another workspace.
+
+1. When created, click "Launch Studio" blue button.
+   That is the same as the next step: 
+
+
+### Create ML Workspace resource
+
+1. Click this URL or copy the URL and paste in the browser URL field to:
+   
+   <a target="_blank" href="
+   https://ml.azure.com/">
+   https://ml.azure.com</a>
+
+1. Select the Subscription and <strong>Machine Learning workspace</strong>, or create a new one (as above). The Azure Machine Learning studio home page should appear:
+
+1. Click "+" on the left menu to reveal a list.
+
+1. To reveal (or hide) left menu icon labels, click the "hamburger" icon at the upper left.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/120108644-5b9d8c80-c123-11eb-8d63-accb72611ae2.png">
+   <img width="1035" alt="az-mlstudio-home-2070x1148" src="https://user-images.githubusercontent.com/300046/120108644-5b9d8c80-c123-11eb-8d63-accb72611ae2.png"></a>
+
+   NOTE: The "Start now" items are also listed in the left menu.
+
+   Within the "Assets" category:
+
+   Datasets allow you to manage your data used in Machine Learning experiments. You can also version datasets as well to explore different formats or data content.
+
+   Experiments keeps track of your Machine Learning projects and experiment runs.
+
+   Pipelines manage Machine Learning pipelines to boost efficiency when building Machine Learning models.
+
+   Models manage the models you build and share them.
+
+   Endpoints deploy Machine Learning models as REST endpoints on AKS or ACI infrastructure.
+
+1. PROTIP: Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline.
+   Alternately, cursor up/down the left menu and press Enter to select.
+
+   ???
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">LAB</a> in Azure Machine Learning studio (https://ml.azure.com) Deploy predictive service workspace "predict-rentals" Compute type: ACI
+
+   Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
+
+1. On the right-hand side under Settings, click "Select compute target". Select the compute resource created earlier, then Save.
+
+1. On the left-hand side, expand Data Input and Output 
+
+   <img width="240" alt="az-ml-assets-menu-480x1042" src="https://user-images.githubusercontent.com/300046/120109638-88ec3980-c127-11eb-8806-62465ccbf16d.png">
+
+   Mouse actions are needed.
+
+1. Drag-and-drop the Import Data step onto the top of the (blank) designer canvas.
+1. On the canvas, double-click on "Import data" for its menu on the right.
+1. Open the "Data source" dropdown to select "URL via HTTP".
+1. Copy and paste the URL to <a href="#CreateMLData">created data (above)</a>, such as this:
+
+   https://raw.githubusercontent.com/cloudacademy/azure-lab-artifacts/master/intro-to-azure-ml/tweets.csv
+
+1. Preview schema to ensure data fields are defined correctly. Save.
+
+
+   ### Add pipeline steps to filter and process imported data
+
+
+
+<hr />
 
    ### Run an Automated Machine Learning Experiment
 
