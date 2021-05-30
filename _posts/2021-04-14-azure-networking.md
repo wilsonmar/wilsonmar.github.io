@@ -48,6 +48,10 @@ Secure resources within subnets using Network Security Groups (NSGs).
 
 All resources in a VNet can communicate outbound to the internet, by default.
 
+Azure Virtual Network manages User defined routes (UDR’s). 
+
+
+
 ## Multi-region
 
 Each VNet is scoped to a <strong>single region/location</strong>. However, virtual networks in different regions can connect using either VPN gateways or <strong>Virtual Network Peering</strong> (in same region or globally between different regions). 
@@ -138,15 +142,24 @@ To improve network security, ExpressRoute requires network security appliances b
 
 Monitoring the connectivity between your on-premises network and Azure must use the <strong>Azure Connectivity Toolkit</strong>.
 
-This <a target="_blank" href="https://github.com/mspnp/reference-architectures/tree/master/dmz/secure-vnet-hybrid">reference architecture</a> of a secure hybrid network which extends an on-premises network to Azure:
+This <a target="_blank" href="https://github.com/mspnp/reference-architectures/tree/master/dmz/secure-vnet-hybrid">reference architecture</a> of a secure hybrid perimeter network which extends an on-premises network into Azure, in order to have granular control over traffic entering an Azure virtual network from an on-premises datacenter.
 
-![az-onprem-net-989x397](https://user-images.githubusercontent.com/300046/120097113-fbd7bf00-c0eb-11eb-8bcc-0d096d5e8465.png)
-
-The architecture implements a perimeter network between the on-premises network and an Azure virtual network. All inbound and outbound traffic pass through Azure Firewall.
-
-That infrastructure requires granular control over traffic entering an Azure virtual network from an on-premises datacenter.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120097113-fbd7bf00-c0eb-11eb-8bcc-0d096d5e8465.png">
+<img alt="az-onprem-net-989x397.png" width="989" height="397" src="https://user-images.githubusercontent.com/300046/120097113-fbd7bf00-c0eb-11eb-8bcc-0d096d5e8465.png"></a>
 
 Applications that audit outgoing traffic is usually a regulatory requirement of many commercial systems and can help to prevent public disclosure of private information. DLP (Data Loss Prevention)
+
+The gateway (in its own subnet) provides connectivity between routers in the on-premises network and the virtual network.
+
+In the gateway subnet, traffic sent to the web-tier subnet (10.0.1.0/24) is routed through the Azure Firewall instance. All inbound and outbound traffic pass through Azure Firewall, a managed firewall as a service. The Firewall instance is placed in its own subnet.
+
+Virtual network routes define the flow of IP traffic within the Azure virtual network. In the diagram shown above, there are two user-defined route tables.
+
+In the web tier subnet, since there is no route for address space of the VNet itself to point to Azure firewall, web tier instances are able to communicate directly to each other, not via Azure Firewall.
+
+Network security groups (NSGs) are used restrict network traffic within the virtual network. For example, in the deployment provided with this reference architecture, the web tier subnet allows TCP traffic from the on-premises network and from within the virtual network; the business tier allows traffic from the web tier; and the data tier allows traffic from the business tier.
+
+Azure Bastion allows management access into VMs through SSH or remote desktop protocol (RDP) without exposing the VMs directly to the internet.
 
 
 ## Naming conventions
@@ -257,7 +270,7 @@ Can handle IPv6 and HTTP/2 traffic.
 
 It can handle certificate management and do TLS termination (sending HTTP traffic downstream).
 
-Azure Front Door doesn't routs by geo (DNS).
+Azure Front Door doesn't route by geo (DNS).
 
 
 
