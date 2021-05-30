@@ -1095,11 +1095,12 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 1. PROTIP: Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline.
    Alternately, cursor up/down the left menu and press Enter to select.
 
-   ???
+   Instructions by the CloudAcademy lab aims to end up with this typical pipeline:
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">LAB</a> in Azure Machine Learning studio (https://ml.azure.com) Deploy predictive service workspace "predict-rentals" Compute type: ACI
+   ![az-ml-pipeline-map-809x692](https://user-images.githubusercontent.com/300046/120111258-77f2f680-c12e-11eb-91ac-2486dfa33d0f.png)
 
-   Following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
+   Another lab is: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">MSLEARN "predict-rentals" LAB</a>
+   following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
 
 1. On the right-hand side under Settings, click "Select compute target". Select the compute resource created earlier, then Save.
 
@@ -1110,8 +1111,7 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
    Mouse actions are needed.
 
 1. Drag-and-drop the Import Data step onto the top of the (blank) designer canvas.
-1. On the canvas, double-click on "Import data" for its menu on the right.
-1. Open the "Data source" dropdown to select "URL via HTTP".
+1. In menu that appears on the right, open the "Data source" dropdown to select "URL via HTTP".
 1. Copy and paste the URL to <a href="#CreateMLData">created data (above)</a>, such as this:
 
    https://raw.githubusercontent.com/cloudacademy/azure-lab-artifacts/master/intro-to-azure-ml/tweets.csv
@@ -1121,11 +1121,46 @@ https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classifi
 
    ### Add pipeline steps to filter and process imported data
 
+1. Rather than memorizing or hunting where assets are in the assets menu hierarchy, search by asset name:
+
+   ![az-ml-feature-search-637x302](https://user-images.githubusercontent.com/300046/120110683-b2a75f80-c12b-11eb-834b-1af724ca1851.png)
+
+   NOTE: The date shown is the version of the asset.
+
+1. Drag-and-drop (under "Import Data") the asset onto the designer canvas, which makes it a <strong>step</strong> in the pipeline.
+1. Reveal its menu on the right to click "Edit column" and enter the column name "tweet text". Save.
+1. To connect two steps, click the circle under the top step (turning it green), then drag it to the circle above the second step (turning that green). An arrow should appear.
+
+   That action converts text data into a vector of features which makes the data more manageable and performant. 
+
+   ### Add pipeline steps to split the data into two sets 
+
+   The training set will be used to train the model.<br />
+   The test set will be used to help score the model later.
+
+1. Search for asset "split" to drag-and-drop "Split Data" onto the designer canvas.
+1. Click on it to input "0.8" in the "Fraction of rows in the first ouput dataset" field (replacing the default "0.5"), then Tab away.
+1. Connect the Feature Hashing step with the Split Data step to trigger the data to be split into a test and training data set. 
+
+
+1. Search for asset "filter based" and drag-and-drop "Filter Based Feature Selection" onto the designer canvas.
+
+   This out the data by irrelevant attributes or redundant columns. Each feature column is measured and scored then ranked, which improves accuracy when building a predictive model.
+
+1. In Target Column: Edit Column, then Name: set to "sentiment_label". Save.
+
+   Number of desired features: 2000 (instead of default 1).
+
+   Feature scoring method: Select "ChiSquared" (instead of default "PearsonCorrelation").
+
+
+   ### Train one set and test the other.
+
 
 
 <hr />
 
-   ### Run an Automated Machine Learning Experiment
+   ### Train Run an Automated Machine Learning Experiment
 
 1. Select "Automated ML" (under Author).
 1. "+ New Automated ML run".
