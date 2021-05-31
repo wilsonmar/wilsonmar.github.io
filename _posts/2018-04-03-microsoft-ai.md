@@ -894,9 +894,6 @@ https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 
 https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
 
-   Another lab is: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">MSLEARN "predict-rentals" LAB</a>
-   following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
-
 
 <a name="CreateMLData"></a>
 
@@ -904,6 +901,10 @@ https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
 
 The data used in the tutorial below is from <a target="_blank" href="https://www.coursera.org/projects/azure-machine-learning-studio-pipeline">Coursera: Machine Learning Pipeline Tutorial with Azure ML Studio</a>. The tutorial provides a file on its GitHub, so skip this data preparation step (which normally is a large part of the total effort).
 
+Another lab is: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">MSLEARN "predict-rentals" LAB</a>
+following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml For that, download data file from https://aka.ms/bike-rentals
+
+Generally:
 
 1. Select the Datasets page (under Assets)
 1. " + Create", "From web files". Web URL: https://aka.ms/bike-rentals
@@ -912,6 +913,8 @@ The data used in the tutorial below is from <a target="_blank" href="https://www
 
 1. Dataset type: Tabular
 1. Next
+
+
 
 
 <a name="CreateWorkspace"></a>
@@ -1129,7 +1132,7 @@ The data used in the tutorial below is from <a target="_blank" href="https://www
 
    <a target="_blank" href="https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classification/">BLOG</a>:
 
-1. Review the
+1. Review:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png">
    <img alt="az-ml-eval-roc-841x503.png" width="841" height="503" src="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png"></a>
@@ -1238,21 +1241,39 @@ To compare models where labels are in different units:
 
    ### Deploy model
 
-1. Click "Create inference pipeline" to select "Real-time inference pipeline".
-1. In the "Set up real-time endpoint" dialog, specify Name:
-1. Computer type: "Azure Container Instance".
-1. Click "Deploy".
+   Azure Machine Learning Designer allows models to be deployed as REST endpoint to be consumed by others or an application. This is great for developers that have minimal experience in Machine Learning and want to incorporate predictive models into their application. 
 
-   If you get this message:
+   The pipeline first has to be converted into an inference-pipeline and then deployed as an endpoint on either AKS (Azure Kubernetes Service) or an Azure Container Instance. 
+
+1. Click "Create inference pipeline" to select "<strong>Real-time inference pipeline</strong>". 
+
+   This adds "Web Service Input" and "Web Service Output" steps in the canvas.
+
+   ![az-ml-deploy-797x435](https://user-images.githubusercontent.com/300046/120212775-a258b880-c1ef-11eb-9e31-6336d0d7bb84.png)
+
+1. Click "Submit". Select existing experiment name. 
+1. Click "Submit" on the dialog.
+
+1. Click "Deploy" at the upper-right.
+
+1. In the "Setup real time endpoint" dialog, with "Deploy new real-time endpoint" selected, type "<strong>tweet-analysis</strong>" into the Name field.
+
+   PROTIP: If you share a workspace with a team or other teams, make the name unique among all who you work with.
+
+1. Compute type drop-down: select "Azure Container Instance".
+1. Click "Deploy" in the dialog.
+
+1. Wait while "Deploy: Waiting real-time endpoint creation".
+
+1. When "Deploy: Succeeded" appears, click "view real-time endpoint" to open another browser tab to show the web app.
+
+1. Click the Consume tab to review the consumption info.
+
+
+
+NOTE: Error messages can be cryptic, such as this:
 
    Deploy: Failed on Preparing to deploy. Details: Call MT PrepareCreateRealTimeEndpointRequest api failed. PipelineRunId is not a Guid-string. 
-
-
-1. Click "Publish".
-
-
-<hr />
-
 
 
 <hr />
@@ -1300,10 +1321,6 @@ by Mario Ferraro
 
 https://www.coursera.org/programs/mckinsey-learning-program-uedvm/browse?currentTab=MY_COURSES&productId=7mGkLZGLEeup-AoS2h03mQ&productType=course&query=azure&showMiniModal=true
 Azure: Create a Virtual Machine and Deploy a Web Server
-
-1. Download data file:
-
-   https://aka.ms/bike-rentals
 
 
 
