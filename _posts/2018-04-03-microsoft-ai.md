@@ -851,6 +851,7 @@ Configure run to create different models:
    <br /><br />
 
 Example of ML classification:
+
    * <a target="_blank" href="https://www.literature-map.com">literature-map.com</a> suggests other authors based on an author input. The input author is displayed in the middle of a map.
 
    * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
@@ -868,10 +869,270 @@ Models are created from training data containing feature values.
 
 The process is called <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#feature-engineering">featurization"</a> or feature engineering.
 
-### Metrics
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-regression-model-azure-machine-learning-designer/evaluate-model">
-To compare the performance among multiple models</a>, in your pipeline, add an <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/evaluate-model">Evaluate Model</a> module and connect the Scored dataset output of the Score Model or Result dataset output of the Assign Data to Clusters to the left input port of Evaluate Model.
+<hr />
+
+<a name="MachineLearning"></a>
+
+## Machine Learning
+
+
+### ML Designer Pipelines
+
+Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
+   1. Create inference clusters
+   2. Create and test inference pipeline
+   3. Deploy inference pipeline
+   4. Test the service (used by the user)
+   <br /><br />
+
+Alternately, <a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
+![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
+
+
+https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
+
+https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
+
+   Another lab is: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">MSLEARN "predict-rentals" LAB</a>
+   following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
+
+
+<a name="CreateMLData"></a>
+
+### Create data file
+
+The data used in the tutorial below is from <a target="_blank" href="https://www.coursera.org/projects/azure-machine-learning-studio-pipeline">Coursera: Machine Learning Pipeline Tutorial with Azure ML Studio</a>. The tutorial provides a file on its GitHub, so skip this data preparation step (which normally is a large part of the total effort).
+
+
+1. Select the Datasets page (under Assets)
+1. " + Create", "From web files". Web URL: https://aka.ms/bike-rentals
+
+   Alternately, you can upload a file from your local machine.
+
+1. Dataset type: Tabular
+1. Next
+
+
+<a name="CreateWorkspace"></a>
+
+### Create ML Workspace resource
+
+1. Go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
+   
+   If you're following <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-machine-learning-studio/">cloudacademy.com/lab/introduction-azure-machine-learning-studio</a>, select the workspace created and skip to the next section.
+
+   But if you're not following that, follow steps below:
+
+1. Select your Directory and Subscription.
+1. Click the blue "Create machine learning workspace". A new tab appears in portal.azure.com.
+1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "devml") which does not have ascenders for making numbers to be appended to it more visible.
+1. Workspace Name: PROTIP: just 3 letters are necessary.
+1. Container Registry: To enesure uniqueness, append $RANDOM to your text (to make devml3232).
+1. Container Registry SKU: Basic
+
+   <img width="436" alt="az-ml-workspace-details-872x750" src="https://user-images.githubusercontent.com/300046/120132531-bc5eb080-c187-11eb-91b2-9dbee3b3c104.png">
+
+1. "Review + create".
+
+   CAUTION: The network is public by default. Choosing private would entail more configuration.
+
+1. "Create".
+
+   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another workspace.
+
+1. When created, click "Go to resource" blue button.
+
+
+   ### Launch ML Studio
+
+1. Click "Launch Studio" blue button, which opens a new browser tab.
+
+   Alternately, click this URL or copy the URL and paste in the browser URL field to:
+   
+   <a target="_blank" href="
+   https://ml.azure.com/">
+   https://ml.azure.com</a>
+
+   Notice the blue band instead at the top.
+
+1. At "Welcome to the studio" pop-up, click the "X" dialog button to dismiss it.
+
+   #### Studio navigation tutorial
+
+1. Click "+" on the left menu to reveal a list.
+
+1. To reveal (or hide) left menu icon labels, click the "hamburger" icon at the upper left.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/120108644-5b9d8c80-c123-11eb-8d63-accb72611ae2.png">
+   <img width="1035" alt="az-mlstudio-home-2070x1148" src="https://user-images.githubusercontent.com/300046/120108644-5b9d8c80-c123-11eb-8d63-accb72611ae2.png"></a>
+
+   NOTE: The "Start now" items are also listed in the left menu.
+
+   Within the "Assets" category:
+
+   Datasets is where to manage data used in Machine Learning experiments. There, version datasets as well to explore different formats or data content.
+
+   Experiments tracks Machine Learning projects and experiment runs.
+
+   Pipelines manage Machine Learning pipelines to boost efficiency when building Machine Learning models.
+
+   Models manage the models built and shared.
+
+   Endpoints deploy Machine Learning models as REST endpoints on AKS or ACI infrastructure.
+
+
+   ### New ML Pipeline
+
+1. PROTIP: Click "Pipelines". Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline. Alternately, cursor up/down the left menu and press Enter to select.
+
+   <a name="CreateMLCompute"></a>
+
+   ### Compute target
+
+1. On the right-hand side under Settings, click "Select compute target". Select the compute resource created earlier, then Save.
+
+   If one is already available, click on it and skip to the <a href="#MLDataInput">next section</a>.
+
+   Alternately, 
+
+1. "Compute" menu (under heading Manage).
+1. "+ New" blue button.
+1. Virtual Machine type: CPU.
+1. Virtual machine size: Select from all options.
+   
+   * The cheapest is <strong>"Standard_F2s_v2"</strong> with "2 cores, 4GB RAM, 16GB storage" for Compute optimized at "$0.11/hr"
+   
+1. Compute name: wow
+   * Minimum number of nodes: 0 (the default)
+   * Maximum number of nodes: 2 (from 1 the default)
+   * Idle seconds before scale down: 120 (from default 1800)
+   <br /><br />
+
+1. Compute name: PROTIP: 3-characters are the smallerst allowed, such as "ace", "jim", "opq", "rsu", "vwx", "yza", etc.
+
+1. Enable SSH access: leave unchecked
+
+1. Next and wait (5 minutes) for State to go from "Creating" to "Running".
+
+   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another compute instance.
+
+
+   <a name="MLDataInput"></a>
+
+   ### ML Data Input
+
+1. PROTIP: Instead of using your mouse to expand the assets menu hierarchy, which requires memorizing what is under each asset category:
+
+   <img width="240" alt="az-ml-assets-menu-480x1042" src="https://user-images.githubusercontent.com/300046/120109638-88ec3980-c127-11eb-8806-62465ccbf16d.png">
+
+   <a name="PipelineDiagram"></a>
+
+   get the titles of assets to drag-and-drop from this sample pipeline diagram:
+
+   ![az-ml-pipeline-map-809x692](https://user-images.githubusercontent.com/300046/120111258-77f2f680-c12e-11eb-91ac-2486dfa33d0f.png)
+
+1. Click in the field containing "Search by name, tags and description" and type:
+
+   <strong>Import Data</strong>
+
+   As you type, assets matching your search phrase appear. Stop typing when you see what you want.
+
+   ![az-ml-feature-search-637x302](https://user-images.githubusercontent.com/300046/120110683-b2a75f80-c12b-11eb-834b-1af724ca1851.png)
+
+   NOTE: The date shown is the version of the asset.
+
+1. Drag-and-drop the asset "Import Data" onto the <strong>top</strong> of the (blank) designer canvas.
+
+1. In the menu that appears on the right, open the "Data source" dropdown to select "URL via HTTP".
+1. Copy and paste the URL to <a href="#CreateMLData">created data (above)</a>, such as this:
+
+   https://raw.githubusercontent.com/cloudacademy/azure-lab-artifacts/master/intro-to-azure-ml/tweets.csv
+
+1. Wait until "Validating" is done. The larger the file, the longer this will take.
+
+
+   <a name="Submit"></a>
+
+   ### Submit and Run Experiment
+
+1. Preview schema to ensure data fields are defined correctly. Save.
+
+1. In order for Column labels to populate, click "Submit" at the uppper-right to run the model.
+
+1. In the "Set up pipeline run" dialog, select "Create new" and type experiment name:
+
+   PROTIP: Have a naming convention for models. Begin the Name with "dev" to denote its status. Name models with a suffix of a couple of zeros in front of number 1 in case there are several.
+
+1. Click Submit on the dialog. Look to the upper-right for the "Running" status to "Finished", which can be several minutes.
+
+1. Look for the "Running" status to "Finished", which can be several minutes. 
+
+
+   ### Add pipeline steps to filter and process imported data
+
+1. Search for asset "<strong>feature hashing</strong>" and drag it under "Import Data" as a new step in the canvas:
+
+   ![az-ml-feature-search-637x302](https://user-images.githubusercontent.com/300046/120110683-b2a75f80-c12b-11eb-834b-1af724ca1851.png)
+
+1. Connect two steps: click the circle under the top step (turning it green), then drag it to the circle above the second step (turning that green). An arrow should appear.
+
+   That action converts text data into a vector of features which makes the data more manageable and performant. 
+
+1. In the context menu at the right, click "Edit column name" and select "<strong>tweet_text</strong>". Save.
+
+
+   ### Split data
+
+1. Search for asset "<strong>split data</strong>" to drag-and-drop onto the designer canvas.
+
+1. Click on it to input "<strong>0.8</strong>" in the "Fraction of rows in the first ouput dataset" field (replacing the default "0.5"), then Tab away.
+
+   80% - the "training set" is used to train the model.<br />
+   20% - the "test set" is used to help score the model later.
+
+1. Connect the Feature Hashing step with the Split Data step.
+
+1. Search for asset "<strong>Filter Based Feature Selection</strong>" and drag it onto the canvas under "Split Data", then join them.
+
+   This teases out the data by irrelevant attributes or redundant columns. Each feature column is measured and scored then ranked, which improves accuracy when building a predictive model.
+
+1. Search for asset "<strong>Train Model</strong>" and drag it onto the canvas.
+
+1. In Target Column: click the Edit Column link to reveal the list of columns by clicking "Edit column name" to select "<strong>sentiment_label</strong>". Save.
+
+1. Number of desired features: 2000 (instead of default 1).
+
+1. Feature scoring method: Select "ChiSquared" (instead of default "PearsonCorrelation").
+
+1. Search for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/score-model">Score Model</a>
+
+1. Search for <strong>Evaluate Model</strong>, drag-and-drop.
+1. PROTIP: Link from Score Model to the <strong>left</strong> port of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/evaluate-model#expected-inputs">Evaluate Model</a>. Otherwise there will be an error.
+
+   https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/designer-error-codes
+
+
+   ### Training run
+
+1. Verify that you've achieved the <a href="#PipelineDiagram">pipeline diagram (above)</a>.
+
+1. Click "Submit" at the upper-right to run the whole pipeline to create a model.
+
+   It take several minutes to complete all the steps. The more data, the longer it takes.
+
+   ### Evaluate ML models
+
+1. Right-click on the Evaluate Model step to expand "Visualize" before clicking "Evaluation results":
+
+   ![az-ml-eval-open-483x255](https://user-images.githubusercontent.com/300046/120210646-3f662200-c1ed-11eb-980f-300e5a2c60e3.png)
+
+   <a target="_blank" href="https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classification/">BLOG</a>:
+
+1. Review the
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png">
+   <img alt="az-ml-eval-roc-841x503.png" width="841" height="503" src="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png"></a>
 
 
 #### Metrics of classification model performance
@@ -964,232 +1225,34 @@ To compare models where labels are in different units:
 * <strong>Combined Evaluation</strong> score (at the bottom of the each section of results) lists the averaged scores for the clusters created in that particular model.
 
 
-<hr />
+### Comparing multiple models
 
-## Install Visual Studio Code extensions
-
-1. Open Visual Studio Code on your laptop.
-1. Press Shift+Command+X for Extensions search.
-1. Search for "Azure Machine Learning"
-1. Click "Install".
-
-   Several extensions are installed (Azure account, AML - Remote).
-
-1. Search for "Thunder client" for a REST API GUI like Postman.
-
-1. To invoke extensions, VS Code will apply the extension based on the file type opened (such as .py for Python, etc.)
-
+   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-regression-model-azure-machine-learning-designer/evaluate-model">
+   To compare the performance among multiple models</a>, in your pipeline, add an <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/evaluate-model">Evaluate Model</a> module and connect the Scored dataset output of the Score Model or Result dataset output of the Assign Data to Clusters to the left input port of Evaluate Model.
 
 <hr />
 
-<a name="MachineLearning"></a>
+<a name="DeployModel"></a>
 
-## Machine Learning
+## Create a Real-Time Inference Pipeline and Deploy an Endpoint
 
+   ### Deploy model
 
-### ML Designer Pipelines
+1. Click "Create inference pipeline" to select "Real-time inference pipeline".
+1. In the "Set up real-time endpoint" dialog, specify Name:
+1. Computer type: "Azure Container Instance".
+1. Click "Deploy".
 
-Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/tutorial-designer-automobile-price-deploy">deploy a machine learning model with the Designer</a>:
-   1. Create inference clusters
-   2. Create and test inference pipeline
-   3. Deploy inference pipeline
-   4. Test the service (used by the user)
-   <br /><br />
+   If you get this message:
 
-<a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
-![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
+   Deploy: Failed on Preparing to deploy. Details: Call MT PrepareCreateRealTimeEndpointRequest api failed. PipelineRunId is not a Guid-string. 
 
 
-<a target="_blank" href="https://www.coursera.org/projects/azure-machine-learning-studio-pipeline">
-Coursera: Machine Learning Pipeline Tutorial with Azure ML Studio</a>
+1. Click "Publish".
 
-https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 
-https://www.kaggle.com/fabiendaniel/predicting-flight-delays-tutorial
+<hr />
 
-https://adatis.co.uk/evaluating-models-in-azure-machine-learning-part-1-classification/
-
-
-<a name="CreateMLCompute"></a>
-
-### Create ML Compute resource
-
-1. "Compute" menu (under heading Manage).
-1. "+ New" blue button.
-1. Virtual Machine type: CPU.
-1. Virtual machine size: Select from all options.
-   * The cheapest is <strong>"Standard_F2s_v2"</strong> with "2 cores, 4GB RAM, 16GB storage" for Compute optimized at "$0.11/hr"
-1. Compute name: wow
-   * Minimum number of nodes: 0 (the default)
-   * Maximum number of nodes: 2 (from 1 the default)
-   * Idle seconds before scale down: 120 (from default 1800)
-   <br /><br />
-
-1. Compute name: PROTIP: 3-characters are the smallerst allowed, such as "ace", "jim", "opq", "rsu", "vwx", "yza", etc.
-1. Enable SSH access: leave unchecked
-
-1. Next and wait (5 minutes) for State to go from "Creating" to "Running".
-
-   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another compute instance.
-
-
-<a name="CreateMLData"></a>
-
-### Create data file
-
-1. Select the Datasets page (under Assets)
-1. " + Create", "From web files". Web URL: https://aka.ms/bike-rentals
-
-   Alternately, you can upload a file from your local machine.
-
-1. Dataset type: Tabular
-1. Next
-
-
-<a name="CreateWorkspace"></a>
-
-### Create ML Workspace resource
-
-The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-machine-learning-studio/">cloudacademy.com/lab/introduction-azure-machine-learning-studio</a> does the above for you, along with the compute cluster. If you're not following that, create a compute resource.
-
-1. Go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
-1. Select your Directory and Subscription.
-1. Click the blue "Create machine learning workspace". A new tab appears in portal.azure.com.
-1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "devml") which does not have ascenders for making numbers to be appended to it more visible.
-1. Workspace Name: PROTIP: just 3 letters are necessary.
-1. Container Registry: To enesure uniqueness, append $RANDOM to your text (to make devml3232).
-1. Container Registry SKU: Basic
-
-   <img width="436" alt="az-ml-workspace-details-872x750" src="https://user-images.githubusercontent.com/300046/120132531-bc5eb080-c187-11eb-91b2-9dbee3b3c104.png">
-
-1. "Review + create".
-
-   CAUTION: The network is public by default. Choosing private would entail more configuration.
-
-1. "Create".
-
-   CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another workspace.
-
-1. When created, click "Go to resource" blue button.
-1. Click "Launch Studio" blue button, which is the same as the next step: 
-
-
-### Create ML Workspace resource
-
-1. Click this URL or copy the URL and paste in the browser URL field to:
-   
-   <a target="_blank" href="
-   https://ml.azure.com/">
-   https://ml.azure.com</a>
-
-   Notice the blue band instead at the top.
-
-1. At "Welcome to the studio", click the "X" dialog button to dismiss it.
-1. Select the Subscription and <strong>Machine Learning workspace</strong>, or create a new one (as above). The Azure Machine Learning studio home page should appear:
-
-1. Click "+" on the left menu to reveal a list.
-
-1. To reveal (or hide) left menu icon labels, click the "hamburger" icon at the upper left.
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/120108644-5b9d8c80-c123-11eb-8d63-accb72611ae2.png">
-   <img width="1035" alt="az-mlstudio-home-2070x1148" src="https://user-images.githubusercontent.com/300046/120108644-5b9d8c80-c123-11eb-8d63-accb72611ae2.png"></a>
-
-   NOTE: The "Start now" items are also listed in the left menu.
-
-   Within the "Assets" category:
-
-   Datasets is where to manage data used in Machine Learning experiments. There, version datasets as well to explore different formats or data content.
-
-   Experiments tracks Machine Learning projects and experiment runs.
-
-   Pipelines manage Machine Learning pipelines to boost efficiency when building Machine Learning models.
-
-   Models manage the models built and shared.
-
-   Endpoints deploy Machine Learning models as REST endpoints on AKS or ACI infrastructure.
-
-1. PROTIP: Click "Pipelines". Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline. Alternately, cursor up/down the left menu and press Enter to select.
-
-   <a name="PipelineDiagram"></a>
-
-   Instructions by the CloudAcademy lab aims to end up with this typical pipeline:
-
-   ![az-ml-pipeline-map-809x692](https://user-images.githubusercontent.com/300046/120111258-77f2f680-c12e-11eb-91ac-2486dfa33d0f.png)
-
-   Another lab is: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/deploy-model">MSLEARN "predict-rentals" LAB</a>
-   following https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/use-auto-ml
-
-1. On the right-hand side under Settings, click "Select compute target". Select the compute resource created earlier, then Save.
-
-1. In the assets menu, expand Data Input and Output 
-
-   <img width="240" alt="az-ml-assets-menu-480x1042" src="https://user-images.githubusercontent.com/300046/120109638-88ec3980-c127-11eb-8806-62465ccbf16d.png">
-
-   Mouse actions are needed.
-
-1. Drag-and-drop the Import Data step onto the top of the (blank) designer canvas.
-1. In menu that appears on the right, open the "Data source" dropdown to select "URL via HTTP".
-1. Copy and paste the URL to <a href="#CreateMLData">created data (above)</a>, such as this:
-
-   https://raw.githubusercontent.com/cloudacademy/azure-lab-artifacts/master/intro-to-azure-ml/tweets.csv
-
-1. After "Validating" is done, Preview schema to ensure data fields are defined correctly. Save.
-
-
-   ### Add pipeline steps to filter and process imported data
-
-1. Rather than memorizing or hunting where assets are in the assets menu hierarchy, search by asset name:
-
-   ![az-ml-feature-search-637x302](https://user-images.githubusercontent.com/300046/120110683-b2a75f80-c12b-11eb-834b-1af724ca1851.png)
-
-   NOTE: The date shown is the version of the asset.
-
-1. Drag-and-drop (under "Import Data") the asset onto the designer canvas, which makes it a <strong>step</strong> in the pipeline.
-1. Reveal the list of columns by clicking "Edit column name" and select "<strong>tweet_text</strong>". Save.
-1. To connect two steps, click the circle under the top step (turning it green), then drag it to the circle above the second step (turning that green). An arrow should appear.
-
-   That action converts text data into a vector of features which makes the data more manageable and performant. 
-
-   ### Add pipeline steps to split the data into two sets 
-
-   The training set will be used to train the model.<br />
-   The test set will be used to help score the model later.
-
-1. Search for asset "split" to drag-and-drop "Split Data" onto the designer canvas.
-1. Click on it to input "0.8" in the "Fraction of rows in the first ouput dataset" field (replacing the default "0.5"), then Tab away.
-1. Connect the Feature Hashing step with the Split Data step to trigger the data to be split into a test and training data set. 
-
-1. Search for asset "filter based" and drag-and-drop "Filter Based Feature Selection" onto the designer canvas.
-
-   This out the data by irrelevant attributes or redundant columns. Each feature column is measured and scored then ranked, which improves accuracy when building a predictive model.
-
-1. In Target Column: click the Edit Column link to reveal the list of columns by clicking "Edit column name" to select "<strong>sentiment_label</strong>". Save.
-
-   Number of desired features: 2000 (instead of default 1).
-
-   Feature scoring method: Select "ChiSquared" (instead of default "PearsonCorrelation").
-
-1. Search for the remaining steps <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/score-model">Score Model</a>, Evaluate Model.
-
-   Drag it on the canvas, connect them as shown in the <a href="#PipelineDiagram">pipeline diagram above</a>.
-
-   ### Train one set and test the other
-
-1. Click "Submit" at the upper-right. There should be an error.
-
-1. Set the Train Model Label column to "<strong>sentiment_label</strong>". 
-
-1. PROTIP: Link from Score Model to the left port of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/evaluate-model#expected-inputs">Evaluate Model</a>. Otherwise there will be an error.
-
-   https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/designer-error-codes
-
-
-   ### Run an Automated Machine Learning Experiment
-
-1. Click Submit at the upper-right.
-
-1. In the "Set up pipeline run" dialog, select "Create new" and type experiment name:
-1. Click Submit on the dialog. Look to the upper-right for the "Running" status to change, which can be several minutes.
 
 
 <hr />
@@ -1242,7 +1305,27 @@ Azure: Create a Virtual Machine and Deploy a Web Server
 
    https://aka.ms/bike-rentals
 
-#### Etc.
+
+
+
+<hr />
+
+## Install Visual Studio Code extensions
+
+1. Open Visual Studio Code on your laptop.
+1. Press Shift+Command+X for Extensions search.
+1. Search for "Azure Machine Learning"
+1. Click "Install".
+
+   Several extensions are installed (Azure account, AML - Remote).
+
+1. Search for "Thunder client" for a REST API GUI like Postman.
+
+1. To invoke extensions, VS Code will apply the extension based on the file type opened (such as .py for Python, etc.)
+
+<hr />
+
+## Etc.
 
    Pytorch
    <a target="_blank" href="
@@ -1391,7 +1474,7 @@ https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/3-und
 
 https://www.youtube.com/watch?v=gVFiA6ZQNAw
 
-zzz
+
 
 <a name="MetricsAdvisor"></a>
 
