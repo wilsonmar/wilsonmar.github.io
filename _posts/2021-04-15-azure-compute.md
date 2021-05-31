@@ -26,7 +26,7 @@ comments: true
 
    * IaaS (Infrastructure as a Service): <a href="#VMs">Virtual Machines</a> (like AWS EC2) using VHD images and/or Azure Redis Cache server
 
-Decision chart (from Microsoft Skillpipe):
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-decision-tree"">Decision chart from Microsoft</a>:
 ![az-compute-decision-988x614](https://user-images.githubusercontent.com/300046/120094178-2752ad80-c0dc-11eb-887a-22a5b4367ca6.png)
 
 "HPC" = (High Performance Computing) workloads run on Batch (not interactive).
@@ -57,6 +57,15 @@ Decision chart (from Microsoft Skillpipe):
    </td><td> None
    </td><td> Scale sets
    </td><td> Pod & cluster
+   </td></tr>
+<tr align="center"><th colspan="7"> Minimum # of nodes: </th></tr>
+<tr valign="top"><td> 1
+   </td><td> 1
+   </td><td> 1
+   </td><td> 1
+   </td><td> Serverless
+   </td><td> 5
+   </td><td> 3
    </td></tr>
 <tr align="center"><th colspan="7"> Default scale limits: </th></tr>
 <tr valign="top"><td> 600 custom, 1000 platform image nodes per scale set

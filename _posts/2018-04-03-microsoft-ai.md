@@ -1144,7 +1144,9 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
    Feature scoring method: Select "ChiSquared" (instead of default "PearsonCorrelation").
 
-1. Search for the remaining steps, drag it on the canvas, connect them as shown in the <a href="#PipelineDiagram">pipeline diagram above</a>.
+1. Search for the remaining steps <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/score-model">Score Model</a>
+
+   Drag it on the canvas, connect them as shown in the <a href="#PipelineDiagram">pipeline diagram above</a>.
 
    ### Train one set and test the other
 
@@ -1153,6 +1155,9 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 1. Set the Train Model Label column to "sentiment_label". Click Submit again.
 
 1. In the "Set up pipeline run" dialog, 
+
+   https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/designer-error-codes
+
 
 <hr />
 
@@ -1177,9 +1182,15 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 1. Look at the "Best model summary"
 
 
+References to classic version:
+   * https://medium.com/data-science-reporter/a-simple-hands-on-tutorial-of-azure-machine-learning-studio-b6f05595dd73
 
 
 <a name="AutoML"></a>
+
+## AutoML
+
+azureml sdk package: https://azure.github.io/azureml-sdk-for-r/reference/index.html
 
 1. "Endpoints" (under heading Assets).
 

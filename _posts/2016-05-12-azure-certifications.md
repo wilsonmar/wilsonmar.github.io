@@ -707,6 +707,7 @@ Questions:
 
 Passing the AZ-303 and the less hands-on AZ-304 Microsoft Azure Architect Design (blueprints) makes you a "Microsoft Certified Azure Solutions Architect Expert".
 
+The difference between AZ-303 and 304, conceptually:
 ![az-303-304-1037x429](https://user-images.githubusercontent.com/300046/120078623-83321d80-c06d-11eb-822c-3aaefef83bb0.png)
 
 "Azure Architects translate business requirements into secure and reliable recommendations for infrastructure, governance, high availability, cost optimization, and data integration. Skills include recommending solutions for logging, multi-factor authentication, SSO, hybrid identity, backup and recovery, containers, microservices, monitoring, automation, networking, and application infrastructure."
