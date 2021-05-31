@@ -25,7 +25,7 @@ My contribution to the world (you) is a less overwhelming <a href="#LearningSequ
 
 ## What can AI do?
 
-Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities.
+Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
 
 1. Microsoft's Azure AI gallery of samples and users' contributions:
 
@@ -272,17 +272,6 @@ Bing Search.
 1. Train a Machine Learning model using <a name="RunJupyter">iPython notebook</a>
 1. IoT - "Hey Google, ask Azure to shut down all my compute instances".
 
-1. A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
-<a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
-
-Cognitive Services SDK Samples for:
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-node-sdk-samples/cognitive-services-node-sdk-samples/">(Node)</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/">Python</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-java-sdk-samples/cognitive-services-java-sdk-samples/">Java</a>
-
-Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/">Azure Machine Learning examples</a> is a CLI at
-https://github.com/Azure/azureml-examples/tree/main/cli
-
 
 
 <hr />
@@ -384,31 +373,6 @@ Microsoft's ethical principles</a> guiding the development and use of artificial
 
 Resources:
    * <a target="_blank" href="https://www.microsoft.com/ai/responsible-ai-resources">https://www.microsoft.com/ai/responsible-ai-resources</a>
-
-<hr />
-
-<a name="SampleCode"></a>
-
-## Sample Code
-
-Samples (unlike examples) are a more complete, best-practices solution for each of the snippets. They're better for integrating into production code. 
-
-<a target="_blank" href="https://github.com/Azure-Samples/">github.com/Azure-Samples</a>
-from Microsoft offers samples code to use Cognitive Services REST API by each language:
-
-   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples">.NET C#</a>
-   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-java-sdk-samples">Java</a>
-   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-node-sdk-samples">NodeJs</a>
-   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-python-sdk-samples">Python</a>
-   * <a target="_blank" href="https://github.com/Azure-Samples/azure-sdk-for-go-samples/tree/master/cognitiveservices">Go</a>
-   <br /><br />
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/">
-docs.microsoft.com/en-us/samples/azure</a> 
-provides sample Python Code at
-https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/
-
-https://docs.microsoft.com/en-us/samples/azure-samples/azure-sdk-for-go-samples/azure-sdk-for-go-samples/
 
 
 <hr />
@@ -558,6 +522,7 @@ Resources:
    * <a target="_blank" href="https://ravikirans.com/ai-102-azure-exam-study-guide/">
 Ravi's links</a> still refer to AI-100
 
+
 <a name="AI-100"></a>
 
 ### AI-100 Azure AI Engineer Associate
@@ -606,6 +571,55 @@ Practice tests:
 
 <hr />
 
+<a name="SampleCode"></a>
+
+### Sample Code
+
+AI-102 is heavy on coding questions. 
+
+Samples (unlike examples) are a more complete, best-practices solution for each of the snippets. They're better for integrating into production code. 
+
+<a target="_blank" href="https://github.com/Azure-Samples/">github.com/Azure-Samples</a>
+from Microsoft offers samples code to use Cognitive Services REST API by each language:
+
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples">.NET C#</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-java-sdk-samples">Java</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-node-sdk-samples">NodeJs</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/cognitive-services-python-sdk-samples">Python</a>
+   * <a target="_blank" href="https://github.com/Azure-Samples/azure-sdk-for-go-samples/tree/master/cognitiveservices">Go</a>
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/">
+docs.microsoft.com/en-us/samples/azure</a> 
+provides sample Python Code at
+https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/
+
+https://docs.microsoft.com/en-us/samples/azure-samples/azure-sdk-for-go-samples/azure-sdk-for-go-samples/
+
+A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
+<a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
+
+Cognitive Services SDK Samples for:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-node-sdk-samples/cognitive-services-node-sdk-samples/">(Node)</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/">Python</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-java-sdk-samples/cognitive-services-java-sdk-samples/">Java</a>
+
+Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
+
+   * keyvault-soft-delete-purge.ps1
+   * keyvault-storage-account.ps1
+   * python-keyvault.py
+   * ssh-to-aks.md - SSH into AKS cluster nodes
+   * xiot-edge-windows.ps1
+   * autoprice.py
+   <br /><br />
+
+Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/">Azure Machine Learning examples</a> is a CLI at
+https://github.com/Azure/azureml-examples/tree/main/cli
+
+
+<hr />
+
 <a name="ContentModerator"></a>
 
 ## Content Moderation
@@ -645,6 +659,7 @@ Content Moderation (Evaluate, Find Faces, Match, OCR)
 1. Create a new resource group 
 
 1.  Select Create.
+
 
 <hr />
 
@@ -734,6 +749,7 @@ NOTE:
    * Dark themes
    <br /><br />
 
+<hr />
 
 ### Create Cognitive Services
 
@@ -804,18 +820,6 @@ TODO: Instead of putting plain text of cog_key in code, reference Azure Vault. H
 Azure has a <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/cognitiveservices/account?view=azure-cli-latest">cognitiveservices CLI subcommand</a>.
 
 https://docs.audd.io/?ref=public-apis
-
-Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
-
-* iot-edge-windows.ps1
-* keyvault-soft-delete-purge.ps1
-* keyvault-storage-account.ps1
-* python-keyvault.py
-* ssh-to-aks.md - SSH into AKS cluster nodes
-<br /><br />
-
-Others:
-* autoprice.py
 
 
 <hr />
@@ -1050,9 +1054,14 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
 1. Go to G+\ <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a>
 1. Select your Directory and Subscription.
-1. Click "Create a new workspace". A new tab appears in portal.azure.com.
-1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "wow") which does not have ascenders so that numbers to be appended to it more visible.
+1. Click the blue "Create machine learning workspace". A new tab appears in portal.azure.com.
+1. Resource Group: PROTIP: just 3 letters are necessary, so use letters (such as "devml") which does not have ascenders for making numbers to be appended to it more visible.
 1. Workspace Name: PROTIP: just 3 letters are necessary.
+1. Container Registry: To enesure uniqueness, append $RANDOM to your text (to make devml3232).
+1. Container Registry SKU: Basic
+
+   <img width="436" alt="az-ml-workspace-details-872x750" src="https://user-images.githubusercontent.com/300046/120132531-bc5eb080-c187-11eb-91b2-9dbee3b3c104.png">
+
 1. "Review + create".
 
    CAUTION: The network is public by default. Choosing private would entail more configuration.
@@ -1061,8 +1070,8 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
    CAUTION: Charges now begin to accumulate. Delete your Resource Group ASAP. It's cheaper if you recreate it if you need another workspace.
 
-1. When created, click "Launch Studio" blue button.
-   That is the same as the next step: 
+1. When created, click "Go to resource" blue button.
+1. Click "Launch Studio" blue button, which is the same as the next step: 
 
 
 ### Create ML Workspace resource
@@ -1073,6 +1082,9 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
    https://ml.azure.com/">
    https://ml.azure.com</a>
 
+   Notice the blue band instead at the top.
+
+1. At "Welcome to the studio", click the "X" dialog button to dismiss it.
 1. Select the Subscription and <strong>Machine Learning workspace</strong>, or create a new one (as above). The Azure Machine Learning studio home page should appear:
 
 1. Click "+" on the left menu to reveal a list.
@@ -1086,18 +1098,17 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
    Within the "Assets" category:
 
-   Datasets allow you to manage your data used in Machine Learning experiments. You can also version datasets as well to explore different formats or data content.
+   Datasets is where to manage data used in Machine Learning experiments. There, version datasets as well to explore different formats or data content.
 
-   Experiments keeps track of your Machine Learning projects and experiment runs.
+   Experiments tracks Machine Learning projects and experiment runs.
 
    Pipelines manage Machine Learning pipelines to boost efficiency when building Machine Learning models.
 
-   Models manage the models you build and share them.
+   Models manage the models built and shared.
 
    Endpoints deploy Machine Learning models as REST endpoints on AKS or ACI infrastructure.
 
-1. PROTIP: Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline.
-   Alternately, cursor up/down the left menu and press Enter to select.
+1. PROTIP: Click "Pipelines". Clicking "+ New", then "Pipelines" is like clicking "Designer" and "+ New" Pipeline. Alternately, cursor up/down the left menu and press Enter to select.
 
    <a name="PipelineDiagram"></a>
 
@@ -1110,7 +1121,7 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
 1. On the right-hand side under Settings, click "Select compute target". Select the compute resource created earlier, then Save.
 
-1. On the left-hand side, expand Data Input and Output 
+1. In the assets menu, expand Data Input and Output 
 
    <img width="240" alt="az-ml-assets-menu-480x1042" src="https://user-images.githubusercontent.com/300046/120109638-88ec3980-c127-11eb-8806-62465ccbf16d.png">
 
@@ -1122,7 +1133,7 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
    https://raw.githubusercontent.com/cloudacademy/azure-lab-artifacts/master/intro-to-azure-ml/tweets.csv
 
-1. Preview schema to ensure data fields are defined correctly. Save.
+1. After "Validating" is done, Preview schema to ensure data fields are defined correctly. Save.
 
 
    ### Add pipeline steps to filter and process imported data
@@ -1134,7 +1145,7 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
    NOTE: The date shown is the version of the asset.
 
 1. Drag-and-drop (under "Import Data") the asset onto the designer canvas, which makes it a <strong>step</strong> in the pipeline.
-1. Reveal its menu on the right to click "Edit column" and enter the column name "tweet text". Save.
+1. Reveal the list of columns by clicking "Edit column name" and select "<strong>tweet_text</strong>". Save.
 1. To connect two steps, click the circle under the top step (turning it green), then drag it to the circle above the second step (turning that green). An arrow should appear.
 
    That action converts text data into a vector of features which makes the data more manageable and performant. 
@@ -1148,12 +1159,11 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 1. Click on it to input "0.8" in the "Fraction of rows in the first ouput dataset" field (replacing the default "0.5"), then Tab away.
 1. Connect the Feature Hashing step with the Split Data step to trigger the data to be split into a test and training data set. 
 
-
 1. Search for asset "filter based" and drag-and-drop "Filter Based Feature Selection" onto the designer canvas.
 
    This out the data by irrelevant attributes or redundant columns. Each feature column is measured and scored then ranked, which improves accuracy when building a predictive model.
 
-1. In Target Column: Edit Column, then Name: set to "sentiment_label". Save.
+1. In Target Column: click the Edit Column link to reveal the list of columns by clicking "Edit column name" to select "<strong>sentiment_label</strong>". Save.
 
    Number of desired features: 2000 (instead of default 1).
 
@@ -1167,16 +1177,26 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
 1. Click "Submit" at the upper-right. There should be an error.
 
-1. Set the Train Model Label column to "sentiment_label". Click Submit again.
+1. Set the Train Model Label column to "<strong>sentiment_label</strong>". 
 
-1. In the "Set up pipeline run" dialog, 
+1. PROTIP: Link from Score Model to the left port of <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/evaluate-model#expected-inputs">Evaluate Model</a>. Otherwise there will be an error.
 
    https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/designer-error-codes
 
 
+   ### Run an Automated Machine Learning Experiment
+
+1. Click Submit at the upper-right.
+
+1. In the "Set up pipeline run" dialog, select "Create new" and type experiment name:
+1. Click Submit on the dialog. Look to the upper-right for the "Running" status to change, which can be several minutes.
+
+
 <hr />
 
-   ### Train Run an Automated Machine Learning Experiment
+<a name="AutoML"></a>
+
+## AutoML
 
 1. Select "Automated ML" (under Author).
 1. "+ New Automated ML run".
@@ -1200,10 +1220,6 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 References to classic version:
    * https://medium.com/data-science-reporter/a-simple-hands-on-tutorial-of-azure-machine-learning-studio-b6f05595dd73
 
-
-<a name="AutoML"></a>
-
-## AutoML
 
 azureml sdk package: https://azure.github.io/azureml-sdk-for-r/reference/index.html
 
@@ -1292,9 +1308,7 @@ Coursera Project Network: Predictive Modelling with Azure Machine Learning Studi
    
    https://docs.microsoft.com/en-us/learn/modules/use-automated-machine-learning/create-compute
 
-   ### Automate compute clusters
-
-1. PROTIP: So you don't pay for idle compute, programmatically start and stop clusters.
+1. TODO: PROTIP: So you don't pay for idle compute, programmatically start and stop clusters.
 
    <a name="CreateComputeInstance"></a>
 
@@ -2012,6 +2026,14 @@ Steps:
 
    <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb">https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/03%20-%20Object%20Detection.ipynb</a>
 
+https://docs.microsoft.com/en-us/learn/modules/evaluate-requirements-for-custom-computer-vision-api/3-investigate-service-authorization
+Custom Vision APIs use two subscription keys, each control access to an API:
+   * A training key to access API members which train the model.
+   * A prediction key to access API members which classify images against a trained model.
+   <br /><br />
+
+https://docs.microsoft.com/en-us/learn/modules/evaluate-requirements-for-custom-computer-vision-api/4-examine-the-custom-vision-prediction-api
+
 References:
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-ga/operations/56f91f2e778daf14a499f21f">CV API</a>
 
@@ -2597,7 +2619,7 @@ https://blog.scottlowe.org/2019/03/01/advanced-ami-filtering-with-jmespath/
 
 1. Setup role-based managed service to manage apps.
 
-etc.
+   etc.
 
 1. Create Datastore: blob, file, SQL
 1. Create Dataset from datastore (filing cabinet):
