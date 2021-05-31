@@ -26,8 +26,9 @@ comments: true
 
    * IaaS (Infrastructure as a Service): <a href="#VMs">Virtual Machines</a> (like AWS EC2) using VHD images and/or Azure Redis Cache server
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-decision-tree"">Decision chart from Microsoft</a>:
-![az-compute-decision-988x614](https://user-images.githubusercontent.com/300046/120094178-2752ad80-c0dc-11eb-887a-22a5b4367ca6.png)
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/compute-decision-tree">Decision chart from Microsoft</a>:
+![az-compute-decision-696x546](https://user-images.githubusercontent.com/300046/120126250-ee1c4b00-c178-11eb-8a61-b8ca132f6863.png)
+(<a target="_blank" title="az-compute-decision-988x614.png" href="https://user-images.githubusercontent.com/300046/120094178-2752ad80-c0dc-11eb-887a-22a5b4367ca6.png">Previous version</a>)
 
 "HPC" = (High Performance Computing) workloads run on Batch (not interactive).
 
@@ -1233,6 +1234,7 @@ Azure Batch Service uses a pool of compute resources (VMS) to carry out batch pr
 
 https://docs.microsoft.com/en-us/cli/azure/batch?view=azure-cli-latest
 
+https://docs.microsoft.com/en-us/azure/batch/tutorial-parallel-dotnet
 
 <hr />
 

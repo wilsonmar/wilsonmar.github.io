@@ -275,6 +275,15 @@ Bing Search.
 1. A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
 <a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
 
+Cognitive Services SDK Samples for:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-node-sdk-samples/cognitive-services-node-sdk-samples/">(Node)</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-python-sdk-samples/cognitive-services-python-sdk-samples/">Python</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-java-sdk-samples/cognitive-services-java-sdk-samples/">Java</a>
+
+Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/">Azure Machine Learning examples</a> is a CLI at
+https://github.com/Azure/azureml-examples/tree/main/cli
+
+
 
 <hr />
 
@@ -588,7 +597,11 @@ Guy Hummel's <a target="_blank" href="https://cloudacademy.com/learning-paths/ai
 
 <a target="_blank" href="https://mckinsey.udemy.com/course/ai-100-designing-and-implementing-an-azure-ai-solution/">McK</a> <a target="_blank" href="https://www.udemy.com/course/ai-100-designing-and-implementing-an-azure-ai-solution/">Udemy</a> by Anand Rao Nednur
 
-Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a> :
+Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-ai-engineer-ai-100">a series for Microsoft Azure AI Engineer (AI-100)</a>
+
+Practice tests:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
+
 
 
 <hr />
@@ -723,6 +736,8 @@ NOTE:
 
 
 ### Create Cognitive Services
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-20-cli-preview-examples/">Azure Machine Learning 2.0 CLI (preview) examples</a>
 
 https://github.com/Azure-Samples/Cognitive-Services-Vision-Solution-Templates
 
@@ -1144,7 +1159,7 @@ The <a target="_blank" href="https://cloudacademy.com/lab/introduction-azure-mac
 
    Feature scoring method: Select "ChiSquared" (instead of default "PearsonCorrelation").
 
-1. Search for the remaining steps <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/score-model">Score Model</a>
+1. Search for the remaining steps <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/score-model">Score Model</a>, Evaluate Model.
 
    Drag it on the canvas, connect them as shown in the <a href="#PipelineDiagram">pipeline diagram above</a>.
 
@@ -1337,10 +1352,7 @@ Supervised: Regression & Classification
 
 https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-anomaly-detector-client-sdk-samples/
 
-https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/
-
-Practice tests:
-   * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
+Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/anomalydetector/anomalydetector/">Anomaly Detector API Samples</a>
 
 
 <a name="AnomalyDetection"></a>
@@ -1554,6 +1566,8 @@ References:
 
 DEMO: https://aidemos.microsoft.com/text-analytics
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/ai-text-analytics-javascript/">Azure Text Analytics client library samples for JavaScript</a>
+
 https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytics-samples/
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">LAB</a> referencing "07 - Text Analytics.ipynb" ???
@@ -1691,11 +1705,15 @@ Sample Response:
 
 ## Speech Services
 
-Speech-to-text has <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text"">two different REST APIs</a>:
+Speech-to-text (STT) has <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text"">two different REST APIs</a>:
 
-   * Speech-to-text (STT) REST API v3.0 is used for <strong>Batch</strong> transcription and Custom Speech.
+   * Speech-to-text REST API v3.0 is used for <strong>Batch</strong> transcription and Custom Speech.
+
    * Speech-to-text REST API for <strong>short</strong> audio is used for online transcription as an alternative to the Speech SDK. Requests using this API can transmit only up to 60 seconds of audio per request.
    <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-services-speech-sdk/sample-repository-for-the-microsoft-cognitive-services-speech-sdk/">
+Microsoft Cognitive Services Speech SDK Samples</a>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/transcribe-speech-input-text/?WT.mc_id=cloudskillschallenge_efc530c5-7105-4c12-8eb3-bc20ae3bee78">LAB</a>:
 
@@ -1718,6 +1736,8 @@ https://docs.microsoft.com/en-us/learn/modules/transcribe-speech-input-text/?WT.
 
 
    Speech-to-Text API -> Speech Correction -> Machine Translation -> Text-to-Speech API
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/cognitive-speech-tts/azure-cognitive-tts-samples/">Azure Cognitive TTS Samples</a>
 
    "Speech Recognition" and Text Analysis are not involved in this use case.
 
