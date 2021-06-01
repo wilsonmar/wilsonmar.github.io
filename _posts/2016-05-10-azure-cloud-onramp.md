@@ -78,12 +78,12 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <tr valign="top"><td> Video Indexer </td><td>
    <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
    https://api-portal.videoindexer.ai</u></strong></a>
-   </td><td> CLI
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
    </td></tr>
 <tr valign="top"><td> Metrics Advisor </td><td>
    <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
    metricsadvisor.azurewebsites.net</u></strong></a>
-   </td><td> -
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
    </td></tr>
 
 <tr valign="top"><td> Support </td><td>
@@ -94,12 +94,17 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>https://serviceshub.microsoft.com</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> User </td><td>
+<tr valign="top"><td> User Self-Service password reset</td><td>
    <a target="_blank" href="https://myapps.microsoft.com"><strong><u>https://myapps.microsoft.com</u></strong></a>
-   </td><td> Self-Service password reset
+   </td><td>-
    </td></tr>
 <tr valign="top"><td> Traffic Manager </td><td>
    <strong><u>https://<em>acct</em>.trafficmanager.net</u></strong>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
+   </td></tr>
+<tr valign="top"><td> Azure Data Factory </td><td>
+   <a target="_blank" href="https://adf.azure.com/"><strong><u>
+   https://adf.azure.com</u></strong>
    </td><td>-
    </td></tr>
 </table>
@@ -1469,6 +1474,23 @@ East US 2                 eastus2              (US) East US 2
 eastus
 eastus2
    </pre>
+
+1. <a target="_blank" href="https://github.com/blrchen/azure-data-lab/blob/main/Regions.json">github.com/blrchen/azure-data-lab/blob/main/Regions.json</a> contains metadata about each region shown on <a target="_blank" href="https://www.azurespeed.com/Information/AzureAvailabilityZones">AzureSpeed.com</a>. For example:
+
+   <pre>    "availabilityZoneCount": 3,
+    "availabilityZoneStatus": "3 zones",
+    "displayName": "West US 2",
+    "geography": "US",
+    "latitude": "47.233",
+    "longitude": "-119.852",
+    "pairedRegion": "West Central US",
+    "physicalLocation": "Washington",
+    "regionalDisplayName": "(US) West US 2",
+    "regionName": "westus2",
+    "storageAccountName": "azsptwestus2",
+    "regionAccess": true
+   </pre>
+
 
 1. PROTIP: Select the Region (aka Location) closest to intended users, for pricing, and have features available. 
 

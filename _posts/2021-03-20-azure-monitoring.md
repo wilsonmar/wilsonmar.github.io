@@ -1130,6 +1130,8 @@ https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-platfo
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/design-monitoring-strategy-on-azure/?">
 LEARN: Design a holistic monitoring strategy on Azure</a>
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-java/metricsadvisor-java-samples/">Azure Metrics Advisor client library samples for Java</a>
+
 
 ## Social
 

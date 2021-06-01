@@ -72,9 +72,6 @@ As of this writing, in various marketing and certification training <a target="_
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-user-feedback-with-the-text-analytics-api/3-exercise-call-the-text-analytics-api-using-the-api-testing-console">FREE Sandbox (Concierge Subscription) Exercise: Call the Text Analytics API from the online testing console</a> Feedback sorter Function app Text Analytics thru Queue, sort based on Sentiment.
-
-
 <hr />
 
 <a name="FreeTime"></a>
@@ -889,6 +886,8 @@ Steps to <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine
 Alternately, <a target="_blank" href="https://www.bluegranite.com/blog/train-and-deploy-machine-learning-models-using-the-azureml-service">Process</a> (using a Python scipt):
 ![azureml-1118x398](https://user-images.githubusercontent.com/300046/116598715-6676be80-a8e4-11eb-878a-70f8dface9d9.png)
 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/classify-user-feedback-with-the-text-analytics-api/3-exercise-call-the-text-analytics-api-using-the-api-testing-console">FREE Sandbox (Concierge Subscription) Exercise: Call the Text Analytics API from the online testing console</a> Feedback sorter Function app Text Analytics thru Queue, sort based on Sentiment.
+
 
 https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html
 
@@ -1137,12 +1136,16 @@ Generally:
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png">
    <img alt="az-ml-eval-roc-841x503.png" width="841" height="503" src="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png"></a>
 
+Azure does not present all the statistics, which we cover here.
 
-#### Metrics of classification model performance
+#### Confusion Matrix
+
+The multi-colored box at the lower-right is called a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">"Confusion Matrix"</a>, a metric of classification model performance.
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">DOC</a>:
-Test data is used to determine how well predictions created from a model, presented in a 2x2 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">Confusion Matrix</a> which compares the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
-REMEMBER: Draw this on the white board from memory:
+Test data was split so some of the data is used to determine how well predictions created from a model. The matrix is presented in a 2x2 box with the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
+
+REMEMBER for the test: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr align="center"><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
@@ -1151,17 +1154,17 @@ REMEMBER: Draw this on the white board from memory:
    <tr align="center"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
-Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">*</a>
-
-   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. When it predicts yes, how often is it <strong>True</strong> (correct)?". (100 + 50) / 165 
-
-   * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
-
 Outside the box of n (total):
 
    * <strong>Accuracy</strong> Overall, how often is the classifier correct? (TP + FN) / n = ( 100 + 5 ) / 165.
 
    * <strong>Prevalence</strong>: (aka "Error Rate") How often does the yes condition actually occur in our sample?  actual yes/total = 105/165 = 0.64
+
+Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">*</a>
+
+   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. When it predicts yes, how often is it <strong>True</strong> (correct)?". (100 + 50) / 165 
+
+   * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
 
 Within the box:
 
@@ -1238,8 +1241,6 @@ To compare models where labels are in different units:
 <a name="DeployModel"></a>
 
 ## Create a Real-Time Inference Pipeline and Deploy an Endpoint
-
-   ### Deploy model
 
    Azure Machine Learning Designer allows models to be deployed as REST endpoint to be consumed by others or an application. This is great for developers that have minimal experience in Machine Learning and want to incorporate predictive models into their application. 
 
@@ -1674,35 +1675,281 @@ References:
    * <a target="_blank" href="https://github.com/chomado/GoogleHomeHack">github.com/chomado/GoogleHomeHack</a> in <a target="_blank" href="https://www.slideshare.net/chomado/developing-google-assistant-app-actions-on-google-with-microsoft-azure-functions-serverless-service-by-microsoft">slides</a> by Madoka Chiyoda 
    
 
+<hr />
+
 <a name="TextAnalytics"></a>
 
-### Text Analytics
-
-DEMO: https://aidemos.microsoft.com/text-analytics
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/ai-text-analytics-javascript/">Azure Text Analytics client library samples for JavaScript</a>
-
-https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytics-samples/
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">LAB</a> referencing "07 - Text Analytics.ipynb" ???
-
-   <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> services:
-   * <a href="#LanguageDetection">Language Detection</a> (is it English, German, etc.)
-   * Sentiment analysis (how positive or negative a document is)
-   * Key phrase extraction
-   * Translator Text
-   <br /><br />
+### Text Analytics API Programming
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/1-introduction">Techniques</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/">DOCS</a>:
 
+NOTE: The previous version references interactive Python Notebooks such as <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">MS LEARN HANDS-ON LAB</a> referencing <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb">"07 - Text Analytics.ipynb"</a>.
+
+
+1. Look at the DEMO GUI at:
+
+   <a target="_blank" href="https://aidemos.microsoft.com/text-analytics">aidemos.microsoft.com/text-analytics</a>
+
+1. Click "Next Step" through the various processing on a sentence:
+
+   * Sentiment analysis (how positive or negative a document is)
+   * Key phrase extraction
+
+   * Entity Linking to show link in Wikipedia.
+   * Bing Entity Search
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/cognitive-services/text-to-speech/">Text to Speech</a> services:
+   * <a href="#LanguageDetection">Language Detection</a> (is it English, German, etc.)
+   * Translator Text
+   <br /><br />
+
+API:
+
    <a target="_blank" href="https://eastus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-0/operations/Languages/console">Text Analytics API Reference</a>
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/analyze-text-with-text-analytics-service/3-exercise">MS LEARN HANDS-ON LAB</a> references
-   https://github.com/MicrosoftLearning/mslearn-ai900/blob/main/07%20-%20Text%20Analytics.ipynb
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api?tabs=synchronous">Some Text Analytics API services are synchronous and asynchronous</a>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-call-api?tabs=synchronous">Some Text Analytics API services are synchronous and asynchronous</a>
+   <a target="_blank" href="https://cloudacademy.com/lab/using-text-analytics-azure-cognitive-services-api/">Cloud Academy lab "Using Text Analytics in the Azure Cognitive Services API"</a>
 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytics-samples/">docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/textanalytics-samples</a>
+
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/ai-text-analytics-javascript/">Azure Text Analytics client library samples for JavaScript</a>
+has step-by-step instructions:
+1. Logging into the Microsoft Azure Portal
+
+   <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.CognitiveServices%2Faccounts"">Cognitive Services</a>
+
+1. Select the service already defined for you.
+
+   ### Retrieving Azure Cognitive Services API Credentials
+
+1. At the left menu click "Keys and Endpoint". The Endpoint URL contains:
+
+   https://southcentralus.api.cognitive.microsoft.com/
+
+   The Endpoint is the location you'll be able to make requests to in order to interact with the Cognitive Services API. The Key1 value is the key that will allow you to authenticate with the API. Without the Key1 value, you will receive unauthenticated errors.
+
+1. In the Azure Portal, type Function App into the search bar and click Function App:
+
+alt
+
+ 
+
+2. Click the only option:
+
+alt
+
+You'll be brought to the Function App blade. While a complete summary of function apps is outside the scope of this lab, you should know the function apps allow you to create custom functions using a variety of programming languages, and to trigger them using any number of events.
+
+In the case of this lab step, you'll set up a function app to interact with the Cognitive Services API using Node.js. You'll then configure the function to be triggered by visiting its URL in a browser tab.
+
+ 
+
+3. On the left side of the blade, click on Functions and then + Add.
+
+  
+
+4. Click the HTTP Trigger option:
+
+alt
+
+Important: If you don't see the HTTP trigger option, click More Templates and then Finish and view templates to see the correct option.
+
+ 
+
+5. Name the function language-detection and click Create:
+
+ alt
+
+   
+
+6. Click Code + Test in the left sidebar then look at the upper part of the console and switch to the function.json file:
+
+
+7. Replace the contents of the file with the following snippet and click Save:
+
+   <pre>{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ],
+  "disabled": false
+}</pre>
+
+The function.json file manages the behavior of your function app.
+ 
+
+8. Switch to the index.js file:
+
+9. Replace the contents of the file with the following code:
+
+<pre>'use strict';
+&nbsp;
+let https = require('https');
+const subscription_key = "INSERT_YOUR_KEY_HERE";
+const endpoint = "INSERT_YOUR_ENDPOINT_HERE";
+const path = '/text/analytics/v2.1/languages';
+&nbsp;
+module.exports = async function (context, req) {
+  let documents = {
+    'documents': [
+      {'id': '1', 'text': 'This is a document written in English.'},
+      {'id': '2', 'text': 'Je suis une phrase écrite en français.'},
+      {'id': '3', 'text': 'Este es un documento escrito en español.'},
+    ]
+  };
+&nbsp;
+  let body = JSON.stringify(documents);
+&nbsp;
+  let request_params = {
+    method: 'POST',
+    hostname: (new URL(endpoint)).hostname,
+    path: path,
+    headers: {
+      'Ocp-Apim-Subscription-Key': subscription_key,
+    }
+  };
+&nbsp;
+  let response = await makeRequest(request_params, body);
+&nbsp;
+  context.res = {
+    body: response
+  }
+&nbsp;
+};</pre>
+
+<pre>function makeRequest(options, data) {
+  return new Promise((resolve, reject) => {
+    const req = https.request(options, (res) => {
+      res.setEncoding('utf8');
+      let responseBody = '';
+
+      res.on('data', (chunk) => {
+        responseBody += chunk;
+      });
+
+      res.on('end', () => {
+        resolve(JSON.parse(responseBody));
+      });
+    });
+
+    req.on('error', (err) => {
+      reject(err);
+    });
+
+    req.write(data)
+    req.end();
+  });
+}</pre>
+ 
+
+10. Replace the contents of subscription_key and endpoint with the key and endpoint you retrieved in an earlier step, so that the variables look similar to this:
+
+Copy code
+1
+2
+const subscription_key = "4779caba69344c3d97bca9863d726af6";
+const endpoint = "https://southcentralus.api.cognitive.microsoft.com/";
+ 
+
+11. Click Save.
+
+ 
+
+12. While a deep understanding of code is outside the scope of this lab, you should take note of a couple of things:
+
+The endpoint and subscription key that you set will allow the function app to communicate with your Cognitive Services API. The endpoint tells the app where to find the API, and the subscription key allows the app to authenticate.
+The path variable declares the exact path the app should request on the Cognitive Services API. This path system allows the API to offer many different services in one endpoint:
+Copy code
+1
+const path = '/text/analytics/v2.1/languages';
+ 
+The documents variable declares a list of documents that will be passed to the language detection API. The API will return the languages that these documents are most likely written in Currently there are three documents, and the goal will be to get the language used in each one:
+
+<pre>let documents = {
+    'documents': [
+      {'id': '1', 'text': 'This is a document written in English.'},
+      {'id': '2', 'text': 'Je suis une phrase écrite en français.'},
+      {'id': '3', 'text': 'Este es un documento escrito en español.'},
+    ]
+  };</pre>
+
+The rest of the code simply manages the formatting of the data, requesting the language detection service from the API, and returning the result.
+Next, you'll visit the function app's URL to see it work.
+
+ 
+
+13. Look at the upper command bar and click Test/Run.
+
+ 
+
+14. Select GET as Http Method before clicking Run:
+
+alt
+
+ 
+
+15. View the output in the Output tab:
+
+alt
+
+Notice that what's returned is a JSON object with a "documents" object containing three results, one for each language you submitted to it. Each result has a "name" value with the predicted language and a "score" value with the likelihood that the decision is accurate. A score of 1 means that the Cognitive Services API was completely confident in its language detection. Here's what the formatted JSON object looks like, for reference:
+
+<pre>
+{
+  "documents": [
+    {
+      "id": "1",
+      "detectedLanguages": [
+        {
+          "name": "English",
+          "iso6391Name": "en",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "detectedLanguages": [
+        {
+          "name": "French",
+          "iso6391Name": "fr",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "detectedLanguages": [
+        {
+          "name": "Spanish",
+          "iso6391Name": "es",
+          "score": 1
+        }
+      ]
+    }
+  ],
+  "errors": []
+}</pre>
+ 
+
+3. Using the Azure Text Analytics API for Language Detection
+4. Using the Azure Text Analytics API for Sentiment Analysis
 
 <a name="Sentiment"></a>
 
@@ -2159,7 +2406,7 @@ QUESTION: Does it integrate with a tablet?
 
 ### Video Indexer 
 
-   ### Media Services & Storage Account
+Media Services & Storage Account:
 
 1. In Portal, <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/microsoft.media%2Fmediaservices">Media Services</a> blade.
 

@@ -332,8 +332,7 @@ If the score is >.5 (neutral), Actions can:
 
    Custom connectors can be written in ___.
 
-
-aka.ms/global-azure/30D2L
+   aka.ms/global-azure/30D2L
 
 <hr />
 
@@ -1008,6 +1007,13 @@ PROTIP: Use the AKS virtual node to provision pods inside ACI that start in seco
 
 ## Azure Container Registry (ACR)
 
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/container-registry-javascript/
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/container-registry-typescript/
+
+
+
+
 1. Create a registry using the Azure CLI:
 
    <pre>MY_REGISTRY="myregistry"
@@ -1224,6 +1230,8 @@ To deploy a VHD image: <a target="_blank" href="https://www.youtube.com/watch?v=
 ## Find your own Templates
 
 1. Home -> All Services: search -> Templates
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure-samples/hello-spring-function-azure/hello-spring-function-azure/">Example "Hello, world" Spring Boot application that runs on Azure Functions</a>
 
 
 <a name="Batch"></a>

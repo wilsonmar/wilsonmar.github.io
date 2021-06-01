@@ -949,7 +949,9 @@ SOC reports are internal control reports on the services provided by a service o
    * SOC 2 Type II, along with ISO 27001
    <br /><br />
 
-AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. SSAE18 (Statement on Standards for Attestation Agreement #18) 
+AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. SSAE18 (Statement on Standards for Attestation Agreement #18). GAPP principles:
+   1. Policies, procedures, governance structures in place to protect privacy. Clearly define roles of data owner, steward, custodian.
+   1. 
 
 Others:
 

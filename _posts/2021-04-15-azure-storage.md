@@ -1488,6 +1488,14 @@ From a client, connect with a host name, port, access key.
 Reference access from Key Vault.
 
 
+<a name="Tables"></a>
+
+## Azure Tables
+
+https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-tables-client-sdk-samples/
+Azure Tables samples for .NET Azure.Data.Tables client library
+
+
 ## References
 
 https://www.c-sharpcorner.com/article/azure-storage-account-using-azure-cli/
