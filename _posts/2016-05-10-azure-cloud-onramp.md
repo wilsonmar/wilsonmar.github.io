@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Cloud Onramp"
-excerpt: "Get to know Subscriptions, Support plans, ARM portal Keyboard Shortcuts, Tags, Policies, CLI scripts"
+excerpt: "Get to know Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
 tags: [cloud, azure]
 date: "2021-05-10"
 file: "azure-cloud-onramp"
@@ -19,6 +19,21 @@ comments: true
 This is a deep-dive tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. This is the hands-on step-by-step tutorial I would give to an administrator getting up and running on Azure cloud.
 
 ## Quick Reference Links
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
+
+<tr valign="top"><td> Marketing </td><td>
+   <a target="_blank" href="https://azure.com/"><strong>https://azure.com</strong></a> <em>redirects to</em><br />
+   <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
+   </td></tr>
+
+<tr valign="top"><td> Azure Data Factory </td><td>
+   <a target="_blank" href="https://adf.azure.com/"><strong><u>
+   https://adf.azure.com</u></strong>
+   </td><td>-
+   </td></tr>
+</table>
 
 
 ## PROTIP: Browser Profiles
