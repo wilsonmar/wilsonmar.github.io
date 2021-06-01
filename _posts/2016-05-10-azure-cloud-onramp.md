@@ -22,59 +22,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
-<tr valign="top"><td> Marketing </td><td>
-   <a target="_blank" href="https://azure.com/"><strong>https://azure.com</strong></a> <em>redirects to</em><br />
-   <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
-   </td></tr>
-<tr valign="top"><td> Personal & corporate learning</td><td>
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>https://techprofile.microsoft.com/en-us</strong></a><br />
-   <br />
-   <a target="_blank" href="https://esi.microsoft.com/"><strong>https://esi.microsoft.com</strong></a>
-   </td><td>integrates your learnings & cert. taken.
-   </td></tr>
-<tr valign="top"><td> Sign-up: </td><td>
-   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
-   https://account.windowsazure.com/signup</a>
-   </td></tr>
-<tr valign="top"><td> Azure Enterprise Account Portal </td><td>
-   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
-   </td><td> Accounts under departments
-   </td></tr>
-<tr valign="top"><td> Azure Enterprise Portal </td><td>
-   <a target="_blank" href="https://ea.azure.com"><strong><u>https://ea.azure.com</u></strong></a>
-   </td><td> Define departments
-   </td></tr>
-<tr valign="top"><td> Cloud Shell </td><td>
-   <a target="_blank" href="https://shell.azure.com/"><strong><u>
-   https://shell.azure.com</u></strong></a>
-   </td><td> CLI
-   </td></tr>
-<tr valign="top"><td> Subscription dashboard: </td><td>
-   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> <br />
-   <a target="_blank" href="https://portal.azure.us/">https://portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
-   </td></tr>
-<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
-   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a>
-   </td></tr>
 
-<tr valign="top"><td> All Admin Centers </td><td>
-   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>https://admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
-   </td></tr>
-<tr valign="top"><td> Machine Learning studio </td><td>
-   <a target="_blank" href="https://ml.azure.com/"><strong><u>
-   https://ml.azure.com</u></strong></a>
-   </td><td> See <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">my AI tutorial</a>
-   </td></tr>
-
-<tr valign="top"><td> Multi-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com/common/">
-      <strong><u>login.microsoftonline.com/common</u></strong></a>
-   </td></tr>
-<tr valign="top"><td> Single-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/">
-      <strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
-   </td></tr>
-   
 <tr valign="top"><td> Video Indexer </td><td>
    <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
    https://api-portal.videoindexer.ai</u></strong></a>
@@ -89,6 +37,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <tr valign="top"><td> Support </td><td>
    <a target="_blank" href="https://support.azure.com/"><strong><u>
    https://support.microsoft.com</u></strong></a>
+   </td><td>-
    </td></tr>
 <tr valign="top"><td> Support tickets </td><td>
    <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>https://serviceshub.microsoft.com</u></strong></a>
@@ -2439,6 +2388,16 @@ http://www.frankysnotes.com/2019/05/how-to-make-your-deployment-successful.html
 
 https://azurefabric.com/azure-monitor-for-paas-services-where-is-the-ai-and-how-do-i-arm-it/
 blog https://azidentity.azurewebsites.net/archive
+
+
+### URL Shortener
+
+https://channel9.msdn.com/Shows/Azure-Friday/AzUrlShortener-An-open-source-budget-friendly-URL-shortener
+by Frank Boucher who created a one-click deploy your own.
+
+https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
+
+https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
 
 
 ## More on DevOps #
