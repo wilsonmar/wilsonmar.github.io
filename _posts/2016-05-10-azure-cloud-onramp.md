@@ -23,34 +23,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
 
-<tr valign="top"><td> Video Indexer </td><td>
-   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
-   https://api-portal.videoindexer.ai</u></strong></a>
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
-   </td></tr>
-<tr valign="top"><td> Metrics Advisor </td><td>
-   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
-   metricsadvisor.azurewebsites.net</u></strong></a>
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
-   </td></tr>
-
-<tr valign="top"><td> Support </td><td>
-   <a target="_blank" href="https://support.azure.com/"><strong><u>
-   https://support.microsoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Support tickets </td><td>
-   <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>https://serviceshub.microsoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> User Self-Service password reset</td><td>
-   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>https://myapps.microsoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Traffic Manager </td><td>
-   <strong><u>https://<em>acct</em>.trafficmanager.net</u></strong>
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
-   </td></tr>
 <tr valign="top"><td> Azure Data Factory </td><td>
    <a target="_blank" href="https://adf.azure.com/"><strong><u>
    https://adf.azure.com</u></strong>
