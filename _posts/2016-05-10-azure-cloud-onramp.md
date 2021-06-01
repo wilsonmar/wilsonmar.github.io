@@ -20,16 +20,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 
 ## Quick Reference Links
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
-
-<tr valign="top"><td> Azure Data Factory </td><td>
-   <a target="_blank" href="https://adf.azure.com/"><strong><u>
-   https://adf.azure.com</u></strong>
-   </td><td>-
-   </td></tr>
-</table>
-
 
 ## PROTIP: Browser Profiles
 
