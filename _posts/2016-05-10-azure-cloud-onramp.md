@@ -21,8 +21,8 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 ## Quick Reference Links
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Usage </th><th align="right"> URL (bookmark these) </th><th> Notes </th></tr>
-<tr valign="top"><td> Marketing </td><td align="right">
+<tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
+<tr valign="top"><td> Marketing </td><td>
    <a target="_blank" href="https://azure.com/"><strong>azure.com</strong></a> <em>redirects to</em><br />
    <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td><td>-
@@ -60,9 +60,9 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> All Admin Centers </td><td align="right">
+<tr valign="top"><td> All Admin Centers </td><td>
    <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>
-   admin.microsoft.com<br />/AdminPortal/Home#/alladmincenters</u></strong></a>
+   admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Machine Learning studio </td><td align="right">
@@ -70,12 +70,12 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    ml.azure.com</u></strong></a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
-<tr valign="top"><td> Multi-tenant </td><td align="right">
+<tr valign="top"><td> Multi-tenant </td><td>
    <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
    login.microsoftonline.com/common</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Single-tenant </td><td align="right">
+<tr valign="top"><td> Single-tenant </td><td>
    <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
    </td><td>-
    </td></tr>   
