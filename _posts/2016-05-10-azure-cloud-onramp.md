@@ -61,7 +61,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td>-
    </td></tr>
 <tr valign="top"><td> All Admin Centers </td><td>
-   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>
+   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><u><strong>
    admin.microsoft.com</strong>/AdminPortal/Home#/alladmincenters</u></a>
    </td><td>-
    </td></tr>
