@@ -83,8 +83,13 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    api-portal.videoindexer.ai</u></strong></a>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
    </td></tr>
+<tr valign="top"><td> Metrics Advisor </td><td align="right">
+   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
+   metricsadvisor.azurewebsites.net</u></strong></a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
+   </td></tr>
 </table>
-5
+4
 
 ## PROTIP: Browser Profiles
 
