@@ -18,7 +18,7 @@ comments: true
 
 This is a deep-dive tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. This is the hands-on step-by-step tutorial I would give to an administrator getting up and running on Azure cloud.
 
-## Quick Reference Links
+## URLs for Microsoft and Azure
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
@@ -51,6 +51,24 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://shell.azure.com/"><strong><u>
    shell.azure.com</u></strong></a>
    </td><td> CLI
+   </td></tr>
+<tr valign="top"><td> Azure Enterprise Portal </td><td align="right">
+   <a target="_blank" href="https://ea.azure.com"><strong><u>ea.azure.com</u></strong></a>
+   </td><td> Define departments
+   </td></tr>
+<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
+   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> All Admin Centers </td><td>
+   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>
+   admin.microsoft.com</strong>/AdminPortal/Home#/alladmincenters</u></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Machine Learning studio </td><td align="right">
+   <a target="_blank" href="https://ml.azure.com/"><strong><u>
+   ml.azure.com</u></strong></a>
+   </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
 </table>
 
