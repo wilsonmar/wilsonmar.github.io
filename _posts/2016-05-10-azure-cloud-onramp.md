@@ -27,19 +27,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Support </td><td align="right">
-   <a target="_blank" href="https://support.azure.com/"><strong><u>
-   support.microsoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Support tickets </td><td align="right">
-   <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>serviceshub.microsoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> User Self-Service password reset</td><td align="right">
-   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>myapps.microsoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>
 <tr valign="top"><td> Personal & corporate learning</td><td align="right">
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br />
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
@@ -101,6 +88,19 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
    metricsadvisor.azurewebsites.net</u></strong></a>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
+   </td></tr>
+<tr valign="top"><td> Support </td><td align="right">
+   <a target="_blank" href="https://support.azure.com/"><strong><u>
+   support.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Support tickets </td><td align="right">
+   <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>serviceshub.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> User Self-Service password reset</td><td align="right">
+   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>myapps.microsoft.com</u></strong></a>
+   </td><td>-
    </td></tr>
 <tr valign="top"><td> Traffic Manager </td><td align="right">
    <strong><u><em>acct</em>.trafficmanager.net</u></strong>
