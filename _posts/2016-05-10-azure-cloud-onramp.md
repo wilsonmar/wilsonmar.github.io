@@ -56,6 +56,15 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://ea.azure.com"><strong><u>ea.azure.com</u></strong></a>
    </td><td> Define departments
    </td></tr>
+<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
+   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> All Admin Centers </td><td>
+   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>
+   admin.microsoft.com</strong>/AdminPortal/Home#/alladmincenters</u></a>
+   </td><td>-
+   </td></tr>
 </table>
 
 
