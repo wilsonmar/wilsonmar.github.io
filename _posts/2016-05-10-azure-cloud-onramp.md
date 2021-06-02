@@ -101,11 +101,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    ml.azure.com</u></strong></a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
-<tr valign="top"><td> Multi-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
-   login.microsoftonline.com/common</u></strong></a>
-   </td><td>-
-   </td></tr>
 </table>
 
 
