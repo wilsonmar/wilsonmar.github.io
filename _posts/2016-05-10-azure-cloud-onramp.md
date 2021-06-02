@@ -32,6 +32,11 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
    </td><td>integrates your learnings & cert. taken.
    </td></tr>
+<tr valign="top"><td> Sign-up: </td><td>
+   <a target="_blank" href="https://account.windowsazure.com/signup/"><strong><u>
+   account.windowsazure.com/signup</u></strong></a>
+   </td><td>-
+   </td></tr>
 <tr valign="top"><td> Support </td><td align="right">
    <a target="_blank" href="https://support.azure.com/"><strong><u>
    support.microsoft.com</u></strong></a>
@@ -68,25 +73,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> All Admin Centers </td><td>
-   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><u><strong>
-   admin.microsoft.com</strong>/AdminPortal/Home#/alladmincenters</u></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Machine Learning studio </td><td align="right">
-   <a target="_blank" href="https://ml.azure.com/"><strong><u>
-   ml.azure.com</u></strong></a>
-   </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
-   </td></tr>
-<tr valign="top"><td> Multi-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
-   login.microsoftonline.com/common</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Single-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>   
 </table>
 
 
