@@ -21,60 +21,61 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 ## Quick Reference Links
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
-<tr valign="top"><td> Marketing </td><td>
+<tr><th> Usage </th><th align="right"> URL (bookmark these) </th><th> Notes </th></tr>
+<tr valign="top"><td> Marketing </td><td align="right">
    <a target="_blank" href="https://azure.com/"><strong>azure.com</strong></a> <em>redirects to</em><br />
    <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Personal & corporate learning</td><td>
+<tr valign="top"><td> Personal & corporate learning</td><td align="right">
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br />
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
    </td><td>integrates your learnings & cert. taken.
    </td></tr>
-<tr valign="top"><td> Sign-up: </td><td>
+<tr valign="top"><td> Sign-up: </td><td align="right">
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
    account.windowsazure.com/signup</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Azure Enterprise Account Portal </td><td>
+<tr valign="top"><td> Azure Enterprise Account Portal </td><td align="right">
    <a target="_blank" href="https://account.azure.com"><strong><u>account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
    </td><td> Accounts under departments
    </td></tr>
-<tr valign="top"><td> Subscription dashboard: </td><td>
+<tr valign="top"><td> Subscription dashboard: </td><td align="right">
    <a target="_blank" href="https://portal.azure.com/"><strong><u>portal.azure.com</u></strong></a> <br />
    <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Cloud Shell </td><td>
+<tr valign="top"><td> Cloud Shell </td><td align="right">
    <a target="_blank" href="https://shell.azure.com/"><strong><u>
    shell.azure.com</u></strong></a>
    </td><td> CLI
    </td></tr>
-<tr valign="top"><td> Azure Enterprise Portal </td><td>
+<tr valign="top"><td> Azure Enterprise Portal </td><td align="right">
    <a target="_blank" href="https://ea.azure.com"><strong><u>ea.azure.com</u></strong></a>
    </td><td> Define departments
    </td></tr>
-<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
+<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
    <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> All Admin Centers </td><td>
-   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>admin.microsoft.com/AdminPortal/Home#/alladmincenters</u></strong></a>
+<tr valign="top"><td> All Admin Centers </td><td align="right">
+   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>
+   admin.microsoft.com<br />/AdminPortal/Home#/alladmincenters</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Machine Learning studio </td><td>
+<tr valign="top"><td> Machine Learning studio </td><td align="right">
    <a target="_blank" href="https://ml.azure.com/"><strong><u>
    https://ml.azure.com</u></strong></a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
 
-<tr valign="top"><td> Multi-tenant </td><td>
+<tr valign="top"><td> Multi-tenant </td><td align="right">
    <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
    login.microsoftonline.com/common</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Single-tenant </td><td>
+<tr valign="top"><td> Single-tenant </td><td align="right">
    <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
    </td><td>-
    </td></tr>   
