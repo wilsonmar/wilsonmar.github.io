@@ -42,8 +42,9 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td> Accounts under departments
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td align="right">
-   <a target="_blank" href="https://portal.azure.com/"><strong><u>portal.azure.com</u></strong></a> <br />
-   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
+   <a target="_blank" href="https://portal.azure.com/"><strong><u>portal.azure.com</u></strong></a><br />
+   for the <a href="#USGov">US Government portal</a>:
+   <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> 
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Cloud Shell </td><td align="right">
@@ -66,10 +67,9 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td></tr>
 <tr valign="top"><td> Machine Learning studio </td><td align="right">
    <a target="_blank" href="https://ml.azure.com/"><strong><u>
-   https://ml.azure.com</u></strong></a>
+   ml.azure.com</u></strong></a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
-
 <tr valign="top"><td> Multi-tenant </td><td align="right">
    <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
    login.microsoftonline.com/common</u></strong></a>
@@ -79,6 +79,33 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
    </td><td>-
    </td></tr>   
+<tr valign="top"><td> Video Indexer </td><td align="right">
+   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
+   https://api-portal.videoindexer.ai</u></strong></a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
+   </td></tr>
+<tr valign="top"><td> Metrics Advisor </td><td align="right">
+   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
+   metricsadvisor.azurewebsites.net</u></strong></a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
+   </td></tr>
+<tr valign="top"><td> Support </td><td align="right">
+   <a target="_blank" href="https://support.azure.com/"><strong><u>
+   support.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Support tickets </td><td align="right">
+   <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>serviceshub.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> User Self-Service password reset</td><td align="right">
+   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>myapps.microsoft.com</u></strong></a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Traffic Manager </td><td align="right">
+   <strong><u><em>acct</em>.trafficmanager.net</u></strong>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
+   </td></tr>
 </table>
 
 
