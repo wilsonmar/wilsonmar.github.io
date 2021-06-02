@@ -35,6 +35,27 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/"> 
    account.windowsazure.com/signup</a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Azure Enterprise Account Portal </td><td>
+   <a target="_blank" href="https://account.azure.com"><strong><u>https://account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
+   </td><td> Accounts under departments
+   </td></tr>
+<tr valign="top"><td> Azure Enterprise Portal </td><td>
+   <a target="_blank" href="https://ea.azure.com"><strong><u>https://ea.azure.com</u></strong></a>
+   </td><td> Define departments
+   </td></tr>
+<tr valign="top"><td> Cloud Shell </td><td>
+   <a target="_blank" href="https://shell.azure.com/"><strong><u>
+   https://shell.azure.com</u></strong></a>
+   </td><td> CLI
+   </td></tr>
+<tr valign="top"><td> Subscription dashboard: </td><td>
+   <a target="_blank" href="https://portal.azure.com/"><strong><u>https://portal.azure.com</u></strong></a> <br />
+   <a target="_blank" href="https://portal.azure.us/">https://portal.azure.us</a> for the <a href="#USGov">US Government portal</a>
+   </td></tr>
+<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td>
+   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>https://aad.portal.azure.com</u></strong></a>
    </td></tr>
 </table>
 
