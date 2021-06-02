@@ -45,9 +45,9 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://myapps.microsoft.com"><strong><u>myapps.microsoft.com</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Sign-up: </td><td align="right">
-   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
-   account.windowsazure.com/signup</a>
+<tr valign="top"><td> Sign-up: </td><td>
+   <a target="_blank" href="https://account.windowsazure.com/signup/"><strong><u>
+   account.windowsazure.com/signup</u></strong></a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Account Portal </td><td align="right">
