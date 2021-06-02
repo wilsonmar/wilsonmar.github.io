@@ -106,10 +106,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    login.microsoftonline.com/common</u></strong></a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Single-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>   
 </table>
 
 
