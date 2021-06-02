@@ -26,6 +26,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <tr valign="top"><td> Marketing </td><td>
    <a target="_blank" href="https://azure.com/"><strong>https://azure.com</strong></a> <em>redirects to</em><br />
    <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
+   </td><td>-
    </td></tr>
 
 <tr valign="top"><td> Azure Data Factory </td><td>
