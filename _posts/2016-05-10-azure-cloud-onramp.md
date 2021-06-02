@@ -23,8 +23,12 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
 <tr valign="top"><td> Marketing </td><td>
-   <a target="_blank" href="https://azure.com/"><strong>https://azure.com</strong></a> <em>redirects to</em><br />
-   <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
+   <a target="_blank" href="https://azure.com/"><strong>azure.com</strong></a> <em>redirects to</em><br />
+   <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Azure Data Factory </td><td>
+   <a target="_blank" href="https://adf.azure.com/"><strong><u>https://adf.azure.com</u></strong>
    </td><td>-
    </td></tr>
 </table>
