@@ -88,12 +88,8 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    metricsadvisor.azurewebsites.net</u></strong></a>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
    </td></tr>
-<tr valign="top"><td> Azure Data Factory </td><td align="right">
-   <a target="_blank" href="https://adf.azure.com/"><strong><u>adf.azure.com</u></strong>
-   </td><td>-
-   </td></tr>
 </table>
-3
+4
 
 ## PROTIP: Browser Profiles
 
