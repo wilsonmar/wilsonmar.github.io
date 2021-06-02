@@ -87,6 +87,24 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
    </td><td>-
    </td></tr>   
+<tr valign="top"><td> Video Indexer </td><td align="right">
+   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
+   https://api-portal.videoindexer.ai</u></strong></a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
+   </td></tr>
+<tr valign="top"><td> Metrics Advisor </td><td align="right">
+   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
+   metricsadvisor.azurewebsites.net</u></strong></a>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
+   </td></tr>
+<tr valign="top"><td> Azure Data Factory </td><td align="right">
+   <a target="_blank" href="https://adf.azure.com/"><strong><u>adf.azure.com</u></strong>
+   </td><td>-
+   </td></tr>
+<tr valign="top"><td> Traffic Manager </td><td align="right">
+   <strong><u><em>acct</em>.trafficmanager.net</u></strong>
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
+   </td></tr>
 </table>
 
 
