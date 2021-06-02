@@ -52,38 +52,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    shell.azure.com</u></strong></a>
    </td><td> CLI
    </td></tr>
-<tr valign="top"><td> Azure Enterprise Portal </td><td align="right">
-   <a target="_blank" href="https://ea.azure.com"><strong><u>ea.azure.com</u></strong></a>
-   </td><td> Define departments
-   </td></tr>
-<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
-   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> All Admin Centers </td><td>
-   <a target="_blank" href="https://admin.microsoft.com/AdminPortal/Home#/alladmincenters"><strong><u>
-   admin.microsoft.com</strong>/AdminPortal/Home#/alladmincenters</u></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Machine Learning studio </td><td align="right">
-   <a target="_blank" href="https://ml.azure.com/"><strong><u>
-   ml.azure.com</u></strong></a>
-   </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
-   </td></tr>
-<tr valign="top"><td> Multi-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
-   login.microsoftonline.com/common</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Single-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
-   </td><td>-
-   </td></tr>   
-<tr valign="top"><td> Video Indexer </td><td align="right">
-   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
-   https://api-portal.videoindexer.ai</u></strong></a>
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
-   </td></tr>
 </table>
 
 
@@ -2422,6 +2390,7 @@ blog https://azidentity.azurewebsites.net/archive
 
 https://channel9.msdn.com/Shows/Azure-Friday/AzUrlShortener-An-open-source-budget-friendly-URL-shortener
 by Frank Boucher who created a one-click deploy your own.
+http://www.frankysnotes.com/2020/04/how-i-build-budget-friendly-url.html
 
 https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
 
