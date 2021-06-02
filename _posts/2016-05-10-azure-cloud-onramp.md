@@ -70,28 +70,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    shell.azure.com</u></strong></a>
    </td><td> CLI
    </td></tr>
-<tr valign="top"><td> Azure Enterprise Portal </td><td align="right">
-   <a target="_blank" href="https://ea.azure.com"><strong><u>ea.azure.com</u></strong></a>
-   </td><td> Define departments
-   </td></tr>
-<tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
-   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
-   </td><td>-
-   </td></tr>
-<tr valign="top"><td> Video Indexer </td><td align="right">
-   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
-   https://api-portal.videoindexer.ai</u></strong></a>
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
-   </td></tr>
-<tr valign="top"><td> Metrics Advisor </td><td align="right">
-   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
-   metricsadvisor.azurewebsites.net</u></strong></a>
-   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
-   </td></tr>
-<tr valign="top"><td> Azure Data Factory </td><td align="right">
-   <a target="_blank" href="https://adf.azure.com/"><strong><u>adf.azure.com</u></strong>
-   </td><td>-
-   </td></tr>
 </table>
 
 
