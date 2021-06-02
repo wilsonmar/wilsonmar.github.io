@@ -27,11 +27,6 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://azure.microsoft.com/en-us/">https://azure.microsoft.com/en-us</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Azure Data Factory </td><td>
-   <a target="_blank" href="https://adf.azure.com/"><strong><u>
-   https://adf.azure.com</u></strong>
-   </td><td>-
-   </td></tr>
 </table>
 
 
