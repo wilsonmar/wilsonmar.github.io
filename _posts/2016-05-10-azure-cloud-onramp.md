@@ -61,7 +61,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td align="right">
    <a target="_blank" href="https://portal.azure.com/"><strong><u>portal.azure.com</u></strong></a><br />
-   for the <a href="#USGov">US Government portal</a>:
+   for <a href="#USGov">US Government</a>:
    <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> 
    </td><td>-
    </td></tr>
