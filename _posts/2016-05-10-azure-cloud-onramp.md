@@ -28,9 +28,13 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Personal & corporate learning</td><td>
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com/en-us</strong></a><br />
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br />
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
    </td><td>integrates your learnings & cert. taken.
+   </td></tr>
+<tr valign="top"><td> Sign-up: </td><td>
+   <a target="_blank" href="https://account.windowsazure.com/signup/"> 
+   account.windowsazure.com/signup</a>
    </td></tr>
 </table>
 

@@ -451,6 +451,7 @@ CloudSkills:
 * <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-azure-administrator-az-104">Pluralsight</a>
 by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/education/offeringdashboard/index/04347ac4e89b19f5ef7559ef6f975386">Kaplan sample exam</a>.
 
+* XaaS has <a target="_blank" href="https://www.udemy.com/course/microsoft-azure-administrator-practice-tests/">6 tests at Udemy</a>, each with 52 questions (312 total). Does it sync with <a target="_blank" href="https://www.udemy.com/course/microsoft-azure-administrator-training-bootcamp/">Bootcamp</a> also from XaaS?
 
 <hr />
 
