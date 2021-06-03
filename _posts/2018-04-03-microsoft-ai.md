@@ -21,9 +21,52 @@ This article presents my notes toward a guided tour to introduce use of Microsof
 TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
 My contribution to the world (you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
+<a name="CognitiveServices"></a>
+
+## AI = Bing = Cortana = Cognitive Services?
+
+Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
+
+As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into these (which is the basis this article is arranged. Click on the bolded word to jump to it below):
+
+* <a href="#Vision"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
+
+* <a href="#Speech"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
+
+* <a href="#Language"><strong>Language</strong></a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
+
+* <a href="#Decision"><strong>Decision</strong></a> (Making) - supervised and unsupervised machine learning
+
+* <a href="#Search"><strong>Search</strong></a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+
+   Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
+
+
+
 <a name="Competitors"></a>
 
-## What can AI do?
+## Competitive futures
+
+Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
+
+BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
+
+   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
+
+   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
+
+   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
+
+   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
+
+https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
+
+
+### What can AI do?
 
 Microsoft "democratizes" AI and Machine Learning by providing a front-end that hides some of the complexities, enabling them to be run <strong>possibly without programming</strong>.
 
@@ -47,30 +90,6 @@ Case studies of how people are already making use of AI/ML to save time and mone
    * <a target="_blank" href="https://azure.microsoft.com/en-ca/case-studies/?OCID=AID2100017_SEM_ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&ef_id=ca6fee2dd05b1ad86ab9b1a0055c7ccd:G:s&msclkid=ca6fee2dd05b1ad86ab9b1a0055c7ccd&dclid=CKCq5IKfwewCFUWwnwodCKwLYg&term=bot">Customer and Partner Success Stories for "bot"</a>
    <br /><br />
 
-
-<a name="CognitiveServices"></a>
-
-## AI = Bing = Cortana = Cognitive Services?
-
-Microsoft has published different lists for what services constitute its "Cognitive Services" brand name to achieve AI-enhanced solutions which mimic human intelligence.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=KxwjnuhNVIY&list=RDCMUCFtEEv80fQVKkD4h1PF-Xqw&index=33">"Cortana"</a> was the brand-name for Microsoft's AI. Cortana is the name of the fictional artificially intelligent character in the Halo video game series. Cortana was going to be Microsoft's answer to Alexa, Siri, Hey Google, and other AI-powered personal assistants which respond to voice commands controlling skills that turn lights on and off, etc. However, since 2019, Cortana is considered a "skill" (app) that Amazon's Alexa and Google Assistant can call, working across multiple platforms.
-
-As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into:
-
-* <a href="#Vision">Vision</a> (Visual Perception) - interpret the world visually through cameras, videos, images
-
-* <a href="#Speech">Speech</a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
-
-* <a href="#Language">Language</a> - aka Natural language Processing (NLP) to <a href="#TranslateText">translate text (Text Analysis)</a>, etc.
-
-* <a href="#Decision">Decision</a> (Making) - supervised and unsupervised machine learning
-
-<a href="#Search">Search</a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
-
-   Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
 
 <hr />
 
@@ -312,27 +331,6 @@ References:
 
 <hr />
 
-<a name="Competitors"></a>
-
-## Competitive futures
-
-Microsoft competes for talent with Google, Amazon, IBM, China's Tencent.
-
-BTW, by contrast, Bernard Marr identified <a target="_blank" href="https://www.bernardmarr.com/default.asp?contentID=2191">four types of AI</a> evolving: 
-
-   * "reactive" machines (such as Spam filters and the Netflix recommendation engine) are not able to learn or conceive of the past or future, so it responds to identical situations in the exact same way every time.
-
-   * "limited memory" AI absorbs learning data and improve over time based on its experience, using historical data to make predictions. It's similar to the way the human brain’s neurons connect. Deep-learning algorithms used today is the AI that is widely used and being perfected today.
-
-   * "theory of mind" is when AI acquires decision-making capabilities equal to humans, and have the capability to recognize and remember emotions, and adjust behavior based on those emotions.
-
-   * "self-aware", also called artificial superintelligence (ASI), is "sentient" understanding of of its own needs and desires.
-
-https://www.forbes.com/sites/bernardmarr/2018/02/14/the-key-definitions-of-artificial-intelligence-ai-that-explain-its-importance/#22db12bb4f5d
-
-
-<hr />
-
 ## Principled AI vetting
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/get-started-ai-fundamentals/7-understand-responsible-ai">LEARN</a>:
@@ -565,14 +563,13 @@ Practice tests:
    * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
 
-
 <hr />
 
-<a name="SampleCode"></a>
+<a name="SampleMLCode"></a>
 
-### Sample Code
+### Sample ML Code
 
-AI-102 is heavy on coding questions. 
+PROTIP: AI-102 is heavy on questions about coding.
 
 Samples (unlike examples) are a more complete, best-practices solution for each of the snippets. They're better for integrating into production code. 
 
@@ -613,6 +610,117 @@ Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">ht
 
 Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/">Azure Machine Learning examples</a> is a CLI at
 https://github.com/Azure/azureml-examples/tree/main/cli
+
+
+<hr />
+
+<a name="Decision"></a>
+<a name="AzureMachineLearning"></a>
+<a name="MachineLearning"></a>
+
+## Decision service = Azure Machine Learning
+
+By definition, "Machine Learning" involves creating programs without programmers coding logic in languages such as Python.
+
+The work of Machine Learning (abbreviated to "ML") is to recognize patterns in historical data to "train" a <strong>model</strong> which can be referenced by web applications and other user interfaces to make <strong>predictions</strong> from new, similar data. 
+
+In Azure, several "resources" need to be setup:
+
+   * <a href="#CreateMLWorkspace">A Machine Learning workspace</a>
+   * A Storage account to hold the model
+   * A Key Vault to hold secrets
+   * An Application Insights account to hold logs and metrics
+   <br /><br />
+
+The above can be setup by running a single command, but after you are setup to run it.
+
+1. First, get skill at using Azure Portal and CLI Bash by following my deep but concise tutorial at 
+
+   <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">https://wilsonmar.github.io/azure-cloud-onramp</a>
+
+   It covers creation of free Azure Subscription and Azure Storage accounts to hold files in a clouddrive folder.
+
+2. Setup your CLI Bash enviornment by following my instructions at:
+
+   <a target="_blank" href="https://github.com/wilsonmar/azure-quickly#readme">https://github.com/wilsonmar/azure-quickly#readme</a>
+
+3. Invoke a run to train a sample model by running:
+
+   <pre><strong>./az-ml2-init.sh</strong></pre>
+
+   This script I wrote to automate manual setup procedures from <a target="_blank" href="https://github.com/Azure/azureml-examples">https://github.com/Azure/azureml-examples</a>, described at  .
+
+   The script invoke <tt>bash setup.sh</tt> to create Resource Group "azureml-examples-rg" in "East US" containing:
+   * <a href="#CreateMLWorkspace">main (Machine Learning)</a>
+   * maininsights... (Application Insights)
+   * mainkeyvault... (Key vault)
+   * mainstorage...  (Storage account)
+   <br /><br />
+
+   My script also runs a GitHub Actions yml file using the "ml" subcommand from the <a target="_blank" href="
+https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-20-cli-preview-examples/">Microsoft ML 2.0 CLI Preview</a> <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure-ai/announcing-the-new-cli-and-arm-rest-apis-for-azure-machine/ba-p/2393447">announced May, 2021</a>:
+
+   <pre><strong>time az ml job create -f jobs/hello-world.yml --web --stream</strong></pre>
+
+   The <a target="_blank" href="https://github.com/Azure/azureml-examples/blob/main/cli/jobs/hello-world.yml">code at hello-world.yml</a>, which has python print out "hello world" from within a Docker image downloaded from Docker Hub (docker.io):
+
+   <pre>command: python -c "print('hello world')"
+environment:
+  docker:
+    image: docker.io/python
+compute:
+  target: local
+   </pre>
+
+   Information about it is at:
+   https://github.com/Azure/azureml-examples/tree/main/python-sdk/tutorials/an-introduction
+
+1. Run other yml files listed in <a target="_blank" href="https://github.com/Azure/azureml-examples/tree/main/cli">https://github.com/Azure/azureml-examples/tree/main/cli</a>, which scripts passed or failed in GitHub Actions.
+
+   CAUTION: Don't run jobs marked "failing" (in red).
+
+1. When done, stop billing by running:
+
+   <pre><strong>bash cleanup.sh</strong></pre>
+
+Additionally, there are more <a href="SampleMLCode">sample ML code to create models</a>, 
+
+Below are instructions to do the work manually in the Azure Portal:
+
+
+<a name="CreateMLWorkspace"></a>
+
+### Create Machine Learning Workspace
+
+1. In <a target="_blank" href="https://portal.azure.com/">portal.azure.com</a>, press G+\ and in the Search box type enough of <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearningServices%2Fworkspaces">Machine Learning</a> for a selection with that name to appear in the dropdown that appears so you can select it by pressing Enter.
+
+   <img width="1042" height="286" alt="az-ml-search-mac-1042x286" src="https://user-images.githubusercontent.com/300046/120628656-2c886300-c422-11eb-8eeb-889cf378bcc0.png">
+
+   * <a href="#Classification"><strong>classification</strong></a> predicts <strong>categories or classes</strong> using <strong>unsupervised</strong> machine learning techniques to fit features into model and predict classification of the label. Labels are what we want to predict, such as a future value predicted or an action. The label is usually "Y" among mathimaticians.
+
+   * <strong>regression</strong> predicts <strong>numeric</strong> values using <strong>supervised</strong> machine learning techniques on historical data.
+
+   * Time Series forecasting is uesed for <a href="#AnomalyDetection">Anomaly Detection</a> using regression with a time-series element, enabling you to predict numeric values at a future point in time.
+
+   * <strong>Clustering</strong> identifies the nearest neighbor in multiple dimensions, such as the nearest color to an RGB color value.
+   <br /><br />
+
+
+<a name="Classification"></a>
+
+### ML classification examples
+
+   * <a target="_blank" href="https://www.literature-map.com">literature-map.com</a> suggests other authors based on an author input. The input author is displayed in the middle of a map.
+
+   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
+
+   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
+
+   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
+   <br /><br />
+
+![az-ai-ml-1173x538](https://user-images.githubusercontent.com/300046/116586918-2fe67700-a8d7-11eb-87e7-1a4087faaa4f.png)
+
 
 
 <hr />
@@ -820,58 +928,6 @@ https://docs.audd.io/?ref=public-apis
 
 
 <hr />
-
-<a name="Decision"></a>
-
-## Decision
-
-   * <strong>classification</strong> (unsupervised machine learning) fits features into model and predict classification of the label. Labels are what we want to predict, such as a future value predicted or an action. The label is usually "Y" among mathimaticians.
-
-   * <strong>regression (supervised</strong> machine learning) uses historical data to train the model to predict <strong>numerical</strong> values.
-
-   * Time Series Anomaly Detection
-   <br /><br />
-
-<hr />
-
-<a name="MachineLearning"></a>
-
-### Machine Learning (decision service)
-
-Configure run to create different models:
-   * Classification (predicting <strong>categories or classes</strong>)
-   * Regression (predicting <strong>numeric</strong> values)
-   * Time series forecasting (regression with a time-series element, enabling you to predict numeric values at a future point in time)
-
-   * Clustering
-   * Anomaly detection ("weird?")
-   <br /><br />
-
-Example of ML classification:
-
-   * <a target="_blank" href="https://www.literature-map.com">literature-map.com</a> suggests other authors based on an author input. The input author is displayed in the middle of a map.
-
-   * Product identification - performing visual searches for specific products in online searches or even, in-store using a mobile device.
-
-   * Disaster investigation - evaluating key infrastructure for major disaster preparation efforts. For example, aerial surveillance images may show bridges and classify them as such. Anything classified as a bridge could then be marked for emergency preparation and investigation.
-
-   * Medical diagnosis - evaluating images from X-ray or MRI devices could quickly classify specific issues found as cancerous tumors, or many other medical conditions related to medical imaging diagnosis.
-   <br /><br />
-
-![az-ai-ml-1173x538](https://user-images.githubusercontent.com/300046/116586918-2fe67700-a8d7-11eb-87e7-1a4087faaa4f.png)
-
-A <strong>model</strong> is the "brains" (logic) to make predictions about labels being forecasted.
-
-Models are created from training data containing feature values.
-
-The process is called <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/concept-automated-ml#feature-engineering">featurization"</a> or feature engineering.
-
-
-<hr />
-
-<a name="MachineLearning"></a>
-
-## Machine Learning
 
 
 ### ML Designer Pipelines
@@ -3151,36 +3207,6 @@ https://github.com/orgs/BotBuilderCommunity/dashboard
 
 
 https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
-
-
-<hr />
-
-## Machine Learning 2.0 CLI Preview
-
-1. Run all manual steps described at <a target="_blank" href="
-https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-20-cli-preview-examples/">Microsoft's ML 2.0 CLI Preview</a>, which makes use of <a target="_blank" href="https://github.com/Azure/azureml-examples">https://github.com/Azure/azureml-examples</a>.
-
-   <pre><strong>./az-ml2-init.sh</strong></pre>
-
-   In the repo's cli folder, my script runs "bash setup.sh" to create Resource Group "azureml-examples-rg" in "East US" containing:
-   * main (Machine Learning)
-   * maininsights... (Application Insights)
-   * mainkeyvault... (Key vault)
-   * mainstorage...  (Storage account)
-   <br /><br />
-
-1. Run yml files, starting with:
-
-   <pre><strong>time az ml job create -f jobs/hello-world.yml --web --stream</strong></pre>
-
-1. Run other yml files listed in <a target="_blank" href="https://github.com/Azure/azureml-examples/tree/main/cli">https://github.com/Azure/azureml-examples/tree/main/cli</a>, which scripts passed or failed in GitHub Actions.
-
-   CAUTION: Don't run jobs marked "failing" (in red).
-
-1. When done, stop billing by running:
-
-   <pre><strong>bash cleanup.sh</strong></pre>
-
 
 
 ## More

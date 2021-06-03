@@ -27,10 +27,13 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Personal & corporate learning</td><td align="right">
+<tr valign="top"><td> Personal learning</td><td align="right">
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br />
+   </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certifications</a>
+   </td></tr>
+<tr valign="top"><td> Corporate learning</td><td align="right">
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
-   </td><td>integrates your learnings & cert. taken.
+   </td><td>Free classes & cert. vouchers
    </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/"><strong><u>
