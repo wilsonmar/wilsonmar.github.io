@@ -93,7 +93,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Traffic Manager </td><td align="right">
-   <strong><u><em>acct</em>.trafficmanager.net</u></strong></a>
+   <strong><em>{acct}</em>.trafficmanager.net</strong>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
    </td></tr>
 <tr valign="top"><td> Machine Learning studio </td><td align="right">
@@ -111,7 +111,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td>-
    </td></tr>
 </table>
-0
+
 
 ## PROTIP: Browser Profiles
 

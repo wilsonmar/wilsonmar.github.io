@@ -3153,6 +3153,36 @@ https://github.com/orgs/BotBuilderCommunity/dashboard
 https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
 
 
+<hr />
+
+## Machine Learning 2.0 CLI Preview
+
+1. Run all manual steps described at <a target="_blank" href="
+https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-20-cli-preview-examples/">Microsoft's ML 2.0 CLI Preview</a>, which makes use of <a target="_blank" href="https://github.com/Azure/azureml-examples">https://github.com/Azure/azureml-examples</a>.
+
+   <pre><strong>./az-ml2-init.sh</strong></pre>
+
+   In the repo's cli folder, my script runs "bash setup.sh" to create Resource Group "azureml-examples-rg" in "East US" containing:
+   * main (Machine Learning)
+   * maininsights... (Application Insights)
+   * mainkeyvault... (Key vault)
+   * mainstorage...  (Storage account)
+   <br /><br />
+
+1. Run yml files, starting with:
+
+   <pre><strong>time az ml job create -f jobs/hello-world.yml --web --stream</strong></pre>
+
+1. Run other yml files listed in <a target="_blank" href="https://github.com/Azure/azureml-examples/tree/main/cli">https://github.com/Azure/azureml-examples/tree/main/cli</a>, which scripts passed or failed in GitHub Actions.
+
+   CAUTION: Don't run jobs marked "failing" (in red).
+
+1. When done, stop billing by running:
+
+   <pre><strong>bash cleanup.sh</strong></pre>
+
+
+
 ## More
 
 This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:
