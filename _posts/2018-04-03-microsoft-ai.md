@@ -660,20 +660,24 @@ The above can be setup by running a single command, but after you are setup to r
    My script also runs a GitHub Actions yml file using the "ml" subcommand from the <a target="_blank" href="
 https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-20-cli-preview-examples/">Microsoft ML 2.0 CLI Preview</a> <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure-ai/announcing-the-new-cli-and-arm-rest-apis-for-azure-machine/ba-p/2393447">announced May, 2021</a>:
 
-   <pre><strong>time az ml job create -f jobs/hello-world.yml --web --stream</strong></pre>
+   <pre><strong>time az ml job create -f jobs/hello-world-env-var.yml --web --stream</strong></pre>
 
    The <a target="_blank" href="https://github.com/Azure/azureml-examples/blob/main/cli/jobs/hello-world.yml">code at hello-world.yml</a>, which has python print out "hello world" from within a Docker image downloaded from Docker Hub (docker.io):
 
-   <pre>command: python -c "print('hello world')"
+   <pre>command: echo $ENV_VAR
 environment:
   docker:
     image: docker.io/python
+environment_variables:
+  ENV_VAR: "hello world"
 compute:
-  target: local
+    target: local
    </pre>
 
    Information about it is at:
    https://github.com/Azure/azureml-examples/tree/main/python-sdk/tutorials/an-introduction
+
+1. Run again, but use hello-world-env-var.yml
 
 1. Run other yml files listed in <a target="_blank" href="https://github.com/Azure/azureml-examples/tree/main/cli">https://github.com/Azure/azureml-examples/tree/main/cli</a>, which scripts passed or failed in GitHub Actions.
 

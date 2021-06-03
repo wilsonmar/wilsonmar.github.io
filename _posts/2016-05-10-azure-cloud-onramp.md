@@ -113,6 +113,11 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    login.microsoftonline.com/common</u></strong></a>
    </td><td>-
    </td></tr>
+<tr valign="top"><td> Tech Community </td><td>
+   <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure/ct-p/Azure"><strong><u>
+   techcommunity.microsoft.com/t5/azure/ct-p/Azure</u></strong></a>
+   </td><td>-
+   </td></tr>
 </table>
 
 
