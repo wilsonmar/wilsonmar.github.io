@@ -367,6 +367,8 @@ https://github.com/MicrosoftLearning/AZ-103-MicrosoftAzureAdministrator
 
 ## AZ-104 Azure Administrator Associate
 
+Be designated a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/">Microsoft Certified: Azure Administrator Associate</a> by passing one test.
+
 Implement, monitor, and maintain Azure solutions including
 compute, storage, network, and security resources
 

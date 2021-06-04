@@ -1377,13 +1377,14 @@ Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</
    </td></tr>
 </table>
 
-DREAD   
+
+<a name="Attacks"></a>
+
+## Attacks
 
 Cryptoanalytic attacks try to deduce the key via brute-force (dictionary most likely)
 
 Cryptographic attacks: man-in-the-middle, replay, timing, radiation,
-
-<a name="Attacks"></a>
 
 Attacks: attempts to violate an organization’s security or privacy: REMEMBER: 
    * A <strong>smurf</strong> attack uses a type of ping packet called an ICMP ECHO REQUEST. 
@@ -1443,6 +1444,20 @@ Events: System-level, application-level, or user-level? REMEMBER
    * Multipartite spreads in different ways
    * Polymorphic can change to avoid detection.
    <br /><br />
+
+## Risk ratings
+
+DREAD is a mnemonic for categories used to rate security threats for a given issue:
+   * Damage
+   * Reproducibility
+   * Exploitability
+   * Affected users
+   * Discoverability
+   <br /><br />
+
+Each category is given a rating from 1 to 10. The sum of all ratings is used to prioritize among different issues.
+
+CVSS
 
 
 ## Models & Lifecycles

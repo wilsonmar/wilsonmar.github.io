@@ -16,9 +16,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There are several (overlapping) certification exams (from competing agencies) for security professionals.
 
-The vast landscape of security certifications illustrated by this map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"><img align="right" alt="resume-certificate-158x112.png" src="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"></a>
+There are several expensive overlapping certification exams, from competing agencies, for security professionals.
+
+This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
 <img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"></a>
 <em>Click for full screen image.</em>
 
@@ -376,9 +378,16 @@ Suggestions:
 
 <a target="_blank" href="https://www.isc2.org/-/media/ISC2/Certifications/Exam-Outlines/CCSP-Exam-Outline.ashx">This PDF</a> has the details.
 
-Prep:
+<a target="_blank" href="https://ccsp.alukos.com/">ccsp.alukos.com</a> is a GitBook-formatted listing with glossary of terms, laws by country, standards by each body, frameworks.
 
-   * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review course</a> with practice questions. By Mike Chapple
+
+Prep courses:
+
+   * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review</a> with practice questions. By Mike Chapple. I recommend this becuase it has quizzes and shows use of apps such as WebGoat.
+
+   * <a target="_blank" href="https://app.pluralsight.com/paths/skills/ccspr-certified-cloud-security-professional">Pluralsight CCSP</a> by Lyron H. Andrews CISSP/CCSP/SSCP/CISM/CCSK
+
+Bragging:
 
    * https://charbelnemnom.com/passed-official-ccsp-exam-certified-cloud-security-professional/
    
@@ -683,7 +692,7 @@ EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
 See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-security">https://wilsonmar.github.io/aws-security</a>
 
-## Microsoft AZ-500
+## Microsoft SC-900 & AZ-500
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUH">PDF</a>: Updated Jan 21, 2021 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">
@@ -699,7 +708,7 @@ It costs $165 to Pearson Vue, less if you're a certified trainer or in the <a ta
 
 Prequisite is certification as either:
 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-administrator/">Microsoft Certified: Azure Administrator Associate</a> exam AZ-104. <a target="_blank" href="https://cloudacademy.com/lab-challenge/microsoft-azure-administrator-az-104-challenge">Challenge</a>
+   * <a target="_blank" href="https://cloudacademy.com/lab-challenge/microsoft-azure-administrator-az-104-challenge">Challenge</a>
 
    or 
 
@@ -775,6 +784,10 @@ Manage <strong>security operations</strong> in Azure</a> 8 Modules - 6 hr
 https://microsoft.github.io/AzureTipsAndTricks/
 
 https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Wry2get_RRc">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool">DOCS</a>: <a target="_blank" href="https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling">
+Microsoft Threat Modeling Tool</a>
 
 
 <a name="MSWAF"></a>

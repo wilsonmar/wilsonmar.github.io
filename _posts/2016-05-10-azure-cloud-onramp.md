@@ -27,8 +27,9 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://azure.microsoft.com/en-us/">azure.microsoft.com/en-us</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Personal learning</td><td align="right">
-   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br />
+<tr valign="top"><td> MS Learning</td><td align="right">
+   <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br /><br />
+   <a target="_blank" href="https://www.microsoft.com/en-us/learning/dashboard.aspx"><strong>microsoft.com/en-us/learning/dashboard.aspx</strong></a>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certifications</a>
    </td></tr>
 <tr valign="top"><td> Enterprise learning</td><td align="right">
