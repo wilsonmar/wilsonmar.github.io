@@ -364,15 +364,17 @@ Suggestions:
 
 ### CCSP
 
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. Get 70% of 125 questions correct in 3 hours.
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. Get 70% of 125 questions correct in 3 hours. Whew. The domains, 17% each, 
 
    * Cloud Concepts, Architecture and Design
-   * Legal, Risk and Compliance
    * Cloud Data Security
    * Cloud Platform & Infrastructure Security
    * Cloud Application Security
    * Cloud Security Operations
+   * Legal, Risk and Compliance
    <br /><br />
+
+<a target="_blank" href="https://www.isc2.org/-/media/ISC2/Certifications/Exam-Outlines/CCSP-Exam-Outline.ashx">This PDF</a> has the details.
 
 Prep:
 

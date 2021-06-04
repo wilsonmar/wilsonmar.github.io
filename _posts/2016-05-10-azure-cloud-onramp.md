@@ -31,9 +31,9 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://techprofile.microsoft.com/en-us/"><strong>techprofile.microsoft.com</strong></a><br />
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certifications</a>
    </td></tr>
-<tr valign="top"><td> Corporate learning</td><td align="right">
+<tr valign="top"><td> Enterprise learning</td><td align="right">
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
-   </td><td>Free classes & cert. vouchers
+   </td><td>Live classes & cert. vouchers
    </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/"><strong><u>
@@ -117,6 +117,11 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure/ct-p/Azure"><strong><u>
    techcommunity.microsoft.com/t5/azure/ct-p/Azure</u></strong></a>
    </td><td>-
+   </td></tr>
+<tr valign="top"><td> AzureML Metrics </td><td>
+   <a target="_blank" href="https://eastus.api.azureml.ms/discovery"><strong><u>
+   {eastus}.api.azureml.ms/discovery</u></strong></a>
+   </td><td>App Insights
    </td></tr>
 </table>
 
