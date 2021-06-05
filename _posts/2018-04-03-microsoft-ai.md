@@ -388,13 +388,6 @@ Previous exam 774 is now been retired. It was based on <a target="_blank" href="
 which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) model files.
 <a target="_blank" href="https://www.coursera.org/learn/predictive-modelling-azure-machine-learning-studio/home/welcome">Classes referencing it</a> are now obsolete.
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100: Designing and Implementing a Data Science Solution on Azure</a> makes you a "Microsoft Certified: Azure Data Scientist Associate". It goes into machine learning, using Azure Machine Learning.
-   * Set up an Azure Machine Learning workspace (30-35%)
-   * Run experiments and train models (25-30%)
-   * Optimize and manage models (20-25%)
-   * Deploy and consume models (20-25%) 
-   <br /><br />
-
 <a target="_blank" href="https://microsoftlearning.github.io/dp-090-databricks-ml/">LAB</a> references <a target="_blank" href="https://github.com/MicrosoftLearning/dp-090-databricks-ml">DP-090</a> goes into implementing a Machine Learning Solution with Databricks
 
 
@@ -509,8 +502,7 @@ Module 11: Reading Text in Images and Documents
 
 Module 12: Creating a <a href="#KnowledgeMining">Knowledge Mining</a> Solution
 
-The above course and AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day Course DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a>.
-
+The above course and AI-102 focuses on the use of <strong>pre-packaged</strong> services for AI development, not on the development of custom models using Azure Machine Learning, which is covered by <a href="#DP-100">DP-100 (below)</a>.
 
 Resources:
    * <a target="_blank" href="https://cloudacademy.com/quiz/38235/">Preview 45 min. Exam: Designing and Implementing an Azure AI Solution (AI-102)</a>
@@ -562,6 +554,49 @@ Raza Salehi created on Pluralsight.com <a target="_blank" href="https://app.plur
 Practice tests:
    * https://www.whizlabs.com/learn/course/microsoft-azure-ai-100/
 
+
+<a name="DP-100"></a>
+
+### DP-100
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">$165 DP-100: Designing and Implementing a Data Science Solution on Azure</a> makes you a "Microsoft Certified: Azure Data Scientist Associate". It goes into machine learning, using Azure Machine Learning.
+   * Set up an Azure Machine Learning workspace (30-35%)
+   * Run experiments and train models (25-30%)
+   * Optimize and manage models (20-25%)
+   * Deploy and consume models (20-25%) 
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day $1795 USD live online course by Microsoft DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a> (for Data Scientists).
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">MS LEARN PATH: Build and operate machine learning solutions with Azure Machine Learning</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-machine-learn-models/">MS LEARN LAB: Create machine learning models</a>
+
+<a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents *.ipynb (Python Notebook) files (no C# here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a>:
+
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (Get started with Notebooks)</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb">Use Automated Machine Learning (AutoML prediction)</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/03%20-%20Get%20Designer%20Prediction.ipynb">Use Azure Machine Learning Designer (to get Designer predictions)</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/04%20-%20Run%20Experiments.ipynb">Run experiments</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">Train models</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">Work with data</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb"">Work with compute</a> [VMs]
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">Create a pipeline</a>
+
+   1. Create a real-time inference service</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">Create a batch inference service</a> [jobs]
+   1. <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">Tune hyperparameters</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">Use automated machine learning from the SDK</a>
+   
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">Explore differential privacy</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">Interpret models</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">Detect and mitigate unfairness</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">Monitor a model</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">Monitor data drift</a> using the pip azureml-datadrift package.
+   <br /><br />
+
+Video:
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-exam-dp-100-designing-and-implementing-a-data-science-solution-on-azure">on Pluralsight</a> by Jared Rhodes.
 
 <hr />
 

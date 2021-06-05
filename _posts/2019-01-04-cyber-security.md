@@ -188,7 +188,7 @@ ISO Code of practice for information security controls defines 114 controls grou
    * ISO/IEC 27005 addresses risk management
    * ISO/IEC 27007 addresses auditing
    * ISO/IEC 27012 addresses controls (counter-measures)
-   * ISO/IEC 27033 addresses zzz network security</a>
+   * ISO/IEC 27033 addresses network security
    * ISO/IEC 27034 addresses application security
    * ISO/IEC 27037 addresses digital evidence guidelines
 
@@ -974,7 +974,8 @@ SOC reports are internal control reports on the services provided by a service o
    * SOC 2 Type II, along with ISO 27001
    <br /><br />
 
-AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. <strong>SSAE18</strong> (Statement on Standards for Attestation Agreement #18). <a target="_blank" href="https://www.wikiwand.com/en/Generally_Accepted_Privacy_Principles">GAPP (Generally Accepted Privacy Principles)</a> component of SOC2:
+AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. <a target="_blank" href="https://www.aicpa.org/research/standards/auditattest/ssae.html">PDF</a>: SSAE #18</a> (Statement on Standards for Attestation Agreement #18). 
+<strong>GAPP (Generally Accepted Privacy Principles)</strong> component of SOC2:
    1. Management. The entity defines, documents, communicates, and assigns accountability for its privacy policies and procedures.
    1. Notice. The entity provides notice about its privacy policies and procedures and identifies the purposes for which personal information is collected, used, retained, and disclosed.
    1. Choice and consent. The entity describes the choices available to the individual and obtains implicit or explicit consent with respect to the collection, use, and disclosure of personal information.

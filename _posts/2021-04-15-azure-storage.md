@@ -117,6 +117,7 @@ How is your data used?
 
 Does your data require transactions (ACID properties)? If yes, use SQL.
 
+Database Activity Monitoring (DAM)
 
 <hr />
 
