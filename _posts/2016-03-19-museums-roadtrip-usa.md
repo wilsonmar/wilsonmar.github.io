@@ -16,11 +16,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy using AR (Augmented Reality) on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses.
+This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses.
 
 It's a large country, so sites here are listed by each state of the union, along natural geography:
 
-Journeys on water as she flows:
+Journeys on water as she flows toward the Equator:
 
    * <a href="#DownEastCoast"> Down the Atlantic Eastern Seaboard</a>
    * <a href="#DownMississippi"> Down the Mississippi River</a> (on a riverboat?)
@@ -42,8 +42,8 @@ BTW, finding where each site is located was a great geography lesson for me.
 <a target="_blank" title="Route around the US on Google map" href="https://wilsonmar.github.io/US_Landmarks_Roadtrip_v01.html">
 <img alt="map us_landmarks_roadtrip_v01_683x396" width="683" height="396" src="https://cloud.githubusercontent.com/assets/300046/14229554/5531ac58-f8f3-11e5-8ce4-c01a5289358e.png"></a>
 
-The about route was optimized for least driving time using Google Maps API driven by <a target="_blank" href="
-https://github.com/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb"> Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="https://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>.
+The above route was optimized for least driving time using Google Maps API driven by <a target="_blank" href="
+https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb">Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>.
 
 If you want <a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">
 a route to visit national parks</a>:
@@ -53,8 +53,7 @@ a route to visit national parks</a>:
 The planned route of the <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
 
-The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists.
-Woolworth lunch counter in downtown Greensboro, NC is a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
+The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists. The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
 
 > Do you have a roadtrip map? Send it to me and I'll post it here.
 

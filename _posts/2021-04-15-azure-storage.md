@@ -103,13 +103,13 @@ Let's dive right in:
 <tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
    </td><td> <a href="#Files">FileStorage</a> in 
       <a href="#Disks">Disks</a>,<br />
-      <a href="#Tables">Tables</a> 
+      <a href="#Tables">Tables</a>,<br /> 
+      <a href="#CosmoDB">CosmoDB</a>
    </td></tr>
 
-<tr valign="top"><td> Structured: </td><td> SQL databases (containing tables)
+<tr valign="top"><td> Structured: </td><td> traditional SQL databases (containing tables organized, categorized, normalized)
    </td><td> <a href="#Tables">Azure Tables</a>,<br />
-      <a href="#SQLDB">Azure SQL Database</a>,<br /> 
-      <a href="#CosmoDB">CosmoDB</a>
+      <a href="#SQLDB">Azure SQL Database</a>
    </td></tr>
 </table>
 

@@ -911,17 +911,42 @@ The Top Five Security Metrics</a>
 
 ## International 
 
-International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC) 27018 code of practice covers the processing of personal information by cloud service providers.
+International Organization for Standardization (ISO) and the International Electrotechnical Commission <a target="_blank" href="https://www.iso27001security.com/html/27018.html"><strong>(IEC) 27018:2019</strong></a> Code of practice for protection of Personally Identifiable Information (PII) in public clouds acting as PII processors  covers the processing of personal information by cloud service providers. 27018 interprets rather than duplicates <a target="_blank" href="https://www.iso27001security.com/html/27002.html">``ISO/IEC 27002:2013</a>. For example, advising cloud service providers to advise their customers if they use sub-contractors.
 
-MTCS (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers  Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).
+<strong>MTCS</strong> (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers 
+   * Infrastructure as a Service (IaaS), 
+   * Platform as a Service (PaaS), and 
+   * Software as a Service (SaaS).
+   <br /><br />
+
+PLA (Privacy Level Agreement)
+
+GDPR (General Data Protection Regulation) states that the data gathered for private individuals should be used only for the purpose for which it is collected. The European Union (EU) Principles on Privacy state that data gathered for private individuals should be used only for the purpose for which it is collected.
 
 EU Cookie Law <a target="_blank" href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm</a>
 
 <a target="_blank" href="https://www.oecd.org/">OECD.org</a> Privacy Principles for Canada, Mexico, EU GDPR
 
-General Data Protection Regulation (GDPR) states that the data gathered for private individuals should be used only for the purpose for which it is collected.
+Canada's 
 
-The European Union Principles on Privacy state that the data gathered for private individuals should be used only for the purpose for which it is collected. 
+eDiscovery EDRM (electronic Discovery Reference Model):
+   * Preserving
+   * Collection
+   * Processing
+   * Review
+   * Analysis production
+   <br /><br />
+
+Rules of evidence:
+   * Be authentic.
+   * Be accurate.
+   * Be complete.
+   * Be convincing.
+   * Be admissible.
+
+ISO/IEC 27050
+
+CSA (Cloud Security Alliance) guidelines
 
 
 ## US Laws
@@ -949,9 +974,19 @@ SOC reports are internal control reports on the services provided by a service o
    * SOC 2 Type II, along with ISO 27001
    <br /><br />
 
-AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. SSAE18 (Statement on Standards for Attestation Agreement #18). GAPP principles:
-   1. Policies, procedures, governance structures in place to protect privacy. Clearly define roles of data owner, steward, custodian.
-   1. 
+AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. <strong>SSAE18</strong> (Statement on Standards for Attestation Agreement #18). <a target="_blank" href="https://www.wikiwand.com/en/Generally_Accepted_Privacy_Principles">GAPP (Generally Accepted Privacy Principles)</a> component of SOC2:
+   1. Management. The entity defines, documents, communicates, and assigns accountability for its privacy policies and procedures.
+   1. Notice. The entity provides notice about its privacy policies and procedures and identifies the purposes for which personal information is collected, used, retained, and disclosed.
+   1. Choice and consent. The entity describes the choices available to the individual and obtains implicit or explicit consent with respect to the collection, use, and disclosure of personal information.
+   1. Collection. The entity collects personal information only for the purposes identified in the notice.
+   1. Use, retention, and disposal. The entity limits the use of personal information to the purposes identified in the notice and for which the individual has provided implicit or explicit consent. The entity retains personal information for only as long as necessary to fulfill the stated purposes or as required by law or regulations and thereafter appropriately disposes of such information.
+   1. Access. The entity provides individuals with access to their personal information for review and update.
+   1. Disclosure to third parties. The entity discloses personal information to third parties only for the purposes identified in the notice and with the implicit or explicit consent of the individual.
+   1. Security for privacy. The entity protects personal information against unauthorized access (both physical and logical).
+   1. Quality. The entity maintains accurate, complete, and relevant personal information for the purposes identified in the notice.
+    <br /><br />
+
+   Policies, procedures, governance structures in place to protect privacy. Clearly define roles of data owner, steward, custodian.
 
 Others:
 
@@ -1187,13 +1222,6 @@ Once a risk is detected and verified, it is assigned a risk assessment value.
 COSCO (Committee of Sponsoring Organizations) broadly defines ERM (Enterprise Risk Management) as “the culture, capabilities and practices integrated with strategy-setting and its execution, that organizations rely on to manage risk in creating, preserving and realizing value.” The ERM framework is presented in the form of a three-dimensional matrix. The matrix includes eight components of enterprise risk management and four categories of objectives across the top: strategic, operations, reporting, and compliance. 
 
 The organization, its divisions, and business units are depicted as the third dimension of the matrix for applying the framework.
-
-Rules of evidence:
-   * Be authentic.
-   * Be accurate.
-   * Be complete.
-   * Be convincing.
-   * Be admissible.
 
 ## RFCs
 

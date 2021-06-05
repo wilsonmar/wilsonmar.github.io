@@ -386,6 +386,8 @@ Prep courses:
 
    * <a target="_blank" href="https://app.pluralsight.com/paths/skills/ccspr-certified-cloud-security-professional">Pluralsight CCSP</a> by Lyron H. Andrews CISSP/CCSP/SSCP/CISM/CCSK
 
+   * YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=dCPRZoKntX0&list=PL0hT6hgexlYy_gE_y09ORyupgfVOHM_TN">CCSP Exam Cram series</a> by Prabh Nair
+
 Bragging:
 
    * https://charbelnemnom.com/passed-official-ccsp-exam-certified-cloud-security-professional/

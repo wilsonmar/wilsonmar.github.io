@@ -168,6 +168,11 @@ You'll need to do this for each browser (Google Chrome, Microsoft Edge, Firefox,
    <a target="_blank" href="https://www.pulumi.com/docs/intro/cloud-providers/azure/setup/">Pulumi</a> enables programmatic access (by a Python program) to Azure.
 
 
+## CSBs and CMP
+
+Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2903436/make-sense-of-cloud-service-brokers.html">talk about this</a>, but a Cloud Management Platform (CMP) from a CSB (Cloud Service Broker such as AppDirect, Ensim, Gravitant, Jamcracker, Parallels, Ostrato, ServiceNow, BMC, etc.) is necessary for enterprises to provide provisioning governance, self-service, usage chargeback, and policy enforcement (multi-cloud). 
+
+
 ## Hands-on time
 
 1. Some "Exercises" in Microsoft Learn provide FREE "MICROSOFT LEARN SANDBOX" temporary "Concierge" subscription access one or two hours at a time. Search within:
