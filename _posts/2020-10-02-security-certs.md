@@ -18,7 +18,7 @@ comments: true
 
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"><img align="right" alt="resume-certificate-158x112.png" src="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"></a>
-There are several expensive overlapping certification exams, from competing agencies, for security professionals.
+For security professionals, there are several expensive overlapping certification exams, from competing agencies.
 
 This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
 <img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"></a>
@@ -176,19 +176,18 @@ ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="
 ### CISSP
 
 <img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src="https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
-<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$$749 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">CISSP (Certified Information Systems Security Professional) is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
 The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
 Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
 
-Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adaptive, asking 100-150 questions (25 don't count), depending on whether answers are correct. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
+Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adaptive, asking 100-150 questions, depending on whether answers are correct. 
+With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours and 150 questions maximum.
 
-PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you're going to get all hard questions.
+PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you're going to get all hard questions. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
 
 <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
 This also means you won't be able to go back and change answers in previous questions answered.
-
-With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours and 150 questions maximum.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 

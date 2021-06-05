@@ -124,6 +124,11 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    {eastus}.api.azureml.ms/discovery</u></strong></a>
    </td><td>App Insights
    </td></tr>
+<tr valign="top"><td> User feedback</td><td>
+   <a target="_blank" href="https://feedback.azure.com/forums/34192--general-feedback"><strong><u>
+   feedback.azure.com/forums/34192--general-feedback</u></strong></a>
+   </td><td>Product suggestions
+   </td></tr>
 </table>
 
 
