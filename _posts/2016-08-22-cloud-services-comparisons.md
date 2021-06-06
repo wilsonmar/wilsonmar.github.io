@@ -150,7 +150,6 @@ Granularity of billing | per hour | per minute |
 Entrepreneurial Discount | - | BizSpark |
 \# Data centers | 24 | 100 |
 \# zones | 33 | 100 |
-Most memory | </a> | G: |
 Largest # vCPUs cores | <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html" title="u-6tb1.112xlarge, u-9tb1.112xlarge, u-12tb1.112xlarge">448</a> | 32 |
 Largest RAM GB | <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2016/05/now-available-x1-instances-the-largest-amazon-ec2-memory-optimized-instance-with-2-tb-of-memory/" title="x1.32xlarge">1,952 GB</a> | 448 GB |
 
