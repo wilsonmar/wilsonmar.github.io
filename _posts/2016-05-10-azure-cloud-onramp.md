@@ -358,7 +358,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
 
 
-   ### Roles
+   ### Role Assignments
 
    Actions are also called "Operations" at different Scopes.
 
@@ -372,6 +372,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 1. Cancel out by searching for AAD again.
 
    Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+
+   READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
 
    <a name="GlobalAdmin"></a>

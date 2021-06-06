@@ -136,6 +136,10 @@ Additional information will be added over time.
 http://cloudcomparison.rightscale.com</a> presents all the details well. <a target="_blank" href="http://docs.rightscale.com/ca/cloud_comp/">DOCS</a> 
 So here I'm adding additional commentary here.
 
+
+<a name="Limits"></a>
+<a name="Additionally"></a>
+
 ## Additionally...
 
 Factor | AWS  | Azure |
@@ -152,6 +156,10 @@ Largest RAM GB | <a target="_blank" href="https://aws.amazon.com/about-aws/whats
 
 PROTIP: Moving up to double the RAM or cores usually does not yield a doubling of capacity
 due to overhead and limits in shared components such as networking.
+
+ARM processors run faster and cooler than Intel x86 processors.
+<a target="_blank" href="https://aws.amazon.com/ec2/graviton/">AWS Graviton</a> Nitro EC2 instances. Until June 30th 2021, all new and existing AWS customers can try the t4g.micro instances free for up to 750 hours per month.
+
 
 ### Pricing #
 
@@ -221,7 +229,7 @@ Alternately, the <a target="_blank" href="https://github.com/traviscross/mtr">op
 To compare network speeds using GUI tools:
 
 
-### Google networking
+### GCP networking
 
 Google has laid its own fiber-optic wires around the world:
 
@@ -238,7 +246,7 @@ PROTIP: If you only operate out of just one region in the world, use a <strong>C
    To stop collection, press the dot with the arrow.
 
 
-### Amazon networking
+### Amazon AWS networking
 
 Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds to <strong>specific IP addresses</strong> within each availability zone within each region, but a green icon when it can be currently reached at any speed.
 
