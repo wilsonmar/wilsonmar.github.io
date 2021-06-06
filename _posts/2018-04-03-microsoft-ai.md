@@ -568,11 +568,11 @@ Practice tests:
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day $1795 USD live online course by Microsoft DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a> (for Data Scientists).
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">MS LEARN PATH: Build and operate machine learning solutions with Azure Machine Learning</a>
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">10 hr. MS LEARN PATH: Build and operate machine learning solutions with Azure Machine Learning</a>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-machine-learn-models/">MS LEARN LAB: Create machine learning models</a>
 
-<a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents *.ipynb (Python Notebook) files (no C# here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a>:
+<a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents *.ipynb (Python Notebook) files (no C#, R, Julia here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a>:
 
    1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (Get started with Notebooks)</a>
    1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb">Use Automated Machine Learning (AutoML prediction)</a>
@@ -583,7 +583,7 @@ Practice tests:
    1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb"">Work with compute</a> [VMs]
    1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">Create a pipeline</a>
 
-   1. Create a real-time inference service</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb">Create a real-time inference service</a>
    1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">Create a batch inference service</a> [jobs]
    1. <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">Tune hyperparameters</a>
    1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">Use automated machine learning from the SDK</a>
@@ -596,7 +596,7 @@ Practice tests:
    <br /><br />
 
 Video:
-   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-exam-dp-100-designing-and-implementing-a-data-science-solution-on-azure">on Pluralsight</a> by Jared Rhodes.
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-exam-dp-100-designing-and-implementing-a-data-science-solution-on-azure">on Pluralsight</a> by <a target="_blank" href="https://www.JaredRhodes.com/">Jared Rhodes</a>, setup a DSVM (Data Science Virtual Machine). It course covers PyCharm to import the iris sample dataset commonly used in the industry.
 
 <hr />
 
@@ -742,6 +742,19 @@ Below are instructions to do the work manually in the Azure Portal:
    * Time Series forecasting is uesed for <a href="#AnomalyDetection">Anomaly Detection</a> using regression with a time-series element, enabling you to predict numeric values at a future point in time.
 
    * <strong>Clustering</strong> identifies the nearest neighbor in multiple dimensions, such as the nearest color to an RGB color value.
+   <br /><br />
+
+### Data Ingestion
+
+Alternatives to get data into ML:
+
+   * AdlCoy
+   * Azure CLI
+   * AzCopy
+   * Azure Cosmos DB Data Migration Tool
+   * bcp
+   * blobfuse
+   * Microsoft Data Management Gateway
    <br /><br />
 
 

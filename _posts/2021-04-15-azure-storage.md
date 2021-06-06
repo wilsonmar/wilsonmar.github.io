@@ -275,7 +275,7 @@ Database Activity Monitoring (DAM)
 
 * <strong>"Standard_GRS"</strong> (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
 
-   "Intermediate option with failover capabilities in a secondary region. Recommended for backup scenarios"
+   "Intermediate option with failover capabilities in a secondary region. Recommended for <a href="#Backups">backup scenarios</a>"
 
 <a name="GZRS"></a>
 
@@ -300,7 +300,7 @@ They will maintain their data but the data are only usable when a disk is attach
 
 * <strong>Standard SSDs</strong> are the least expensive SSD option, suitable for production workloads with low I/O performance requirements such as web servers and lightly used applications.
 
-* <strong>Standard HDDs</strong> use older magnetic spinning disk technology and are therefore the least expensive option but also provide the lowest performance. Use them for backups and infrequently accessed applications.
+* <strong>Standard HDDs</strong> use older magnetic spinning disk technology and are therefore the least expensive option but also provide the lowest performance. Use them for <a href="#Backups">backups</a> and infrequently accessed applications.
 
 * Standard_LRS = Locally Redundant Storage
 * Standard_GRS = Geographically Redundant Storage
@@ -413,7 +413,7 @@ General-purpose storage stores files, tables, queues:
       </td><td>  95% </td><td> 99.9% </td><td> 99.9%</td><td> 99.9%
          </td></tr>
 <tr valign="top" align="left"><td>Usage:
-      </td><td> test & dev, backups </td><td> Big-data entry-level web servers </td><td> prod. databases, container volumes</td><td> SAN, Tier-1 workloads (SAP HANA)
+      </td><td> test & dev, <a href="#Backups">backups</a> </td><td> Big-data entry-level web servers </td><td> prod. databases, container volumes</td><td> SAN, Tier-1 workloads (SAP HANA)
       </td></tr>
    </table>
 
@@ -627,7 +627,7 @@ Types of blobs in Azure blob storage:
 
 "at least" means early deletion charge applies.
 
-NOTE: Compare against Backup tiers:
+NOTE: Compare against <a href="#Backups">backup</a> tiers:
 
 
 ### Blob Lifecycle Management
@@ -849,6 +849,8 @@ With Azure Files services, can use Azure File Sync agent which uses a Windows se
 
 <hr />
 
+<a name="Backups"></a>
+
 ## Backup and Recovery
 
 Saving data in another location is fundamental to recovery from failure.
@@ -926,6 +928,22 @@ The backup policy supports two access tiers - snapshot tier and the vault tier:
 4. In the background, the snapshot is compared to a snapshot of a previous recovery point and <strong>only incremental blocks are moved</strong> via HTTPs into the Recovery Services vault. (Efficient use of bandwidth!)
 
 PowerShell:
+
+1. Connect & Sign In:
+
+   <pre>Connect-AzAccount</pre>
+
+1. List services:
+
+   <pre>Get-Command *azrecoveryservices*
+   </pre>
+
+1. Register:
+
+   <pre>Register-AzResourceProvider -ProviderNamespace *Microsoft
+   </pre>
+
+1. List services:
 
    <pre>New-AzResourceGroup -Name $myRescName -Location $myLocation
    </pre>
