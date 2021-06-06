@@ -146,9 +146,9 @@ Granularity of billing | per hour | per minute |
 Entrepreneurial Discount | - | BizSpark |
 \# Data centers | 24 | 100 |
 \# zones | 33 | 100 |
-Largest server | <a target="_blank" href="https://goo.gl/64UcCb">x1.32xlarge</a> | G: |
-Largest # cores | 128 | 32 |
-Largest RAM GB | 1,952 GB | 448 GB |
+Most memory | </a> | G: |
+Largest # vCPUs cores | <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html" title="u-6tb1.112xlarge, u-9tb1.112xlarge, u-12tb1.112xlarge">448</a> | 32 |
+Largest RAM GB | <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2016/05/now-available-x1-instances-the-largest-amazon-ec2-memory-optimized-instance-with-2-tb-of-memory/" title="x1.32xlarge">1,952 GB</a> | 448 GB |
 
 PROTIP: Moving up to double the RAM or cores usually does not yield a doubling of capacity
 due to overhead and limits in shared components such as networking.
