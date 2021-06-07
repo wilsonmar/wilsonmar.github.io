@@ -2402,6 +2402,10 @@ Cybersecurity Exam</a> in 3 courses from the Hasso Plattner Institut (HPI) free 
 
 An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
 
+https://thorteaches.com/the-memory-palace-prashant-mohan/
+https://thorteaches.com/wp-content/uploads/2021/06/The-Memory-Palace-CISSP-by-Prashant-Mohan-4th-edition.pdf
+One large PDF of what to remember while taking the CISSP exam.
+
 
 ## More on Security #
 

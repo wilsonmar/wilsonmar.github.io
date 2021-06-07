@@ -105,6 +105,12 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    ml.azure.com</u></strong></a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
+<tr valign="top"><td> Lang. Understanding</td><td align="right">
+   North America: <a target="_blank" href="https://www.luis.ai/"><strong><u>www.luis.ai</u></strong></a><br />
+   Europe: <a target="_blank" href="https://eu.luis.ai/"><strong><u>eu.luis.ai</u></strong></a><br />
+   Australia: <a target="_blank" href="https://au.luis.ai/"><strong><u>au.luis.ai</u></strong></a>
+   </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
+   </td></tr>
 <tr valign="top"><td> Single-tenant </td><td>
    <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
    </td><td>-
@@ -372,6 +378,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 1. Cancel out by searching for AAD again.
 
    Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+
 
    READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
@@ -907,7 +914,6 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
 ## Portal.azure.com GUI
 
-   ### Initial Entry Azure Advisor pop-up
 
 1. Initial entry pop-up: Azure Advisor
 
@@ -996,26 +1002,47 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 
    ### Help + Support
 
-0. Scroll down to click Help + Support (the person icon in blue). Notice the URL change:
+0. There are 3 places you can reach "Help + Support":
 
-   https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview
-
-   Alternately, support requests can ALSO be reached by<br />
-   clicking the question mark icon at the upper-right corner.
+   Click the question mark icon at the upper-right corner.
 
    ![azure help upper right 220x267](https://cloud.githubusercontent.com/assets/300046/25567655/c2642352-2dc0-11e7-9e6d-ef60c659a152.png)
 
-   Notice Support options are also listed behind the smily face icon.
+   Support options are also listed behind the smiley face icon.
 
-   Moreover, there is also a "Help + Support" box on the Dashboard.
+   There is also a "Help + Support" box on the Dashboard.
 
-   That's now 3 places you can find it.
+   Alternately, scroll down to click <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview">Help + Support</a> (the person icon in blue).
 
 0. Microsoft calls their business-level oriented collection of implementation guidance <a target="_blank" href="https://www.youtube.com/watch?v=9VJYVITjckw">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/microsoft-cloud-adoption-framework-for-azure/">MS_LEARN</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/">Microsoft Cloud Adoption Framework for Azure"</a>.
 
    Additional sites:
 
    https://microsoft.github.io/AzureTipsAndTricks/blog/tip1.html
+
+   ### Categories to get support
+
+   In order to route your support to a specific team, here is a comprehensive list:
+
+   * Azure Active Directory
+   * Microsoft Azure Stack
+   * Azure Stack Edge
+   * Blockchain [discontinued]
+   * <strong>Compute</strong>
+   * Databases
+   * Developer Tools
+   * Enterprise Integration [Arc]
+   * Intelligence & Analytics [AI & Machine Learning]
+   * Internet of Things
+   * Microsoft Graph
+   * Mixed Reality [Hololens, Mesh]
+   * Monitoring & Management
+   * <strong>Networking</strong>
+   * Security
+   * <strong>Storage</strong>
+   * Web & Mobile [Edge browser]
+   <br /><br />
+
 
    ### Lock Box for Support
 
@@ -1445,6 +1472,11 @@ https://www.guardicore.com/cyber-security-platform/
 
    More query techniques are decribed <a target="_blank" href="https://techcommunity.microsoft.com/t5/itops-talk-blog/how-to-query-azure-resources-using-the-azure-cli/ba-p/360147">here</a>.
 
+   NOTE: <a target="_blank" href="https://www.azurecitadel.com/cli/jmespath/">Azure Citadel has a deep tutorial on --query parameters</a>
+
+
+
+
 <hr />
 
 <a name="Create_Resource_Group"></a>
@@ -1480,36 +1512,39 @@ https://www.guardicore.com/cyber-security-platform/
    
    <a name="Location"></a>
 
-   ### Region = Location
+   ### Region = Location jmespath queries
 
-1. OPTIONAL: View briefings on CLI Bash or Storage (if you haven't already), then list regions:
+   View an <a target="_blank" href="https://build5nines.com/map-azure-regions/"><strong>interactive map</strong> of Azure data centers around the world</a>.
 
-   <pre><strong>az account list-locations -o table
+1. If you already know how to use CLI Bash and <a target="_blank" href="https://jmespath.org/specification.html#built-in-functions">jmespath queries</a>, get a count of Azure's regions:
+
+   <pre><strong>az account list-locations --query "[].name" -o tsv | wc -l
    </strong></pre>
 
-   <pre>DisplayName               Name                 RegionalDisplayName
-------------------------  -------------------  -------------------------------------
-East US                   eastus               (US) East US
-East US 2                 eastus2              (US) East US 2
-   </pre>
+   68 is the response at time of writing.
 
-1. Alternately, for just the name alone:
+   In 2021, Microsoft is building 100 data centers a year.
 
-   <pre><strong>az account list-locations --query "[].{Location:name, metadata:latitude}" -o table
+1. PROTIP: Beware that some regions are "(stage)", such as this table of regions with "westus" in its name, so this command and its results are not reliable:
+
+   <pre><strong>az account list-locations --query "[?contains(name, 'westus')]" -o table
    </strong></pre>
 
-   <pre>Location
--------------------
-eastus
-eastus2
+   <pre>Name          DisplayName        RegionalDisplayName
+------------  -----------------  ----------------------
+westus2       West US 2          (US) West US 2
+westus3       West US 3          (US) West US 3
+westus        West US            (US) West US
+westusstage   West US (Stage)    (US) West US (Stage)
+westus2stage  West US 2 (Stage)  (US) West US 2 (Stage)
    </pre>
 
-1. <a target="_blank" href="https://github.com/blrchen/azure-data-lab/blob/main/Regions.json">github.com/blrchen/azure-data-lab/blob/main/Regions.json</a> contains metadata about each region shown on <a target="_blank" href="https://www.azurespeed.com/Information/AzureAvailabilityZones">AzureSpeed.com</a>. For example:
+1. PROTIP: To list regions, use <a target="_blank" href="https://github.com/blrchen/azure-data-lab/blob/main/Regions.json">github.com/blrchen/azure-data-lab/blob/main/Regions.json</a> which contains metadata about each region shown on <a target="_blank" href="https://www.azurespeed.com/Information/AzureAvailabilityZones">AzureSpeed.com</a>. For example:
 
-   <pre>    "availabilityZoneCount": 3,
-    "availabilityZoneStatus": "3 zones",
+   <pre>    <strong>"availabilityZoneCount": 3,
+    "availabilityZoneStatus": "3 zones",</strong>
     "displayName": "West US 2",
-    "geography": "US",
+    <strong>"geography": "US",</strong>
     "latitude": "47.233",
     "longitude": "-119.852",
     "pairedRegion": "West Central US",
@@ -1520,14 +1555,43 @@ eastus2
     "regionAccess": true
    </pre>
 
+1. blrchen's response goes beyond what Azure returns in its list all properties (metadata) for the "westus2" region:
 
-1. PROTIP: Select the Region (aka Location) closest to intended users, for pricing, and have features available. 
+   <pre><strong>az account list-locations --query "[?name == 'westus2']" -o json
+   </strong></pre>
+
+  <pre>[
+  {
+    "displayName": "West US 2",
+    "id": "/subscriptions/32f0f1ee-690d-4b02-9e58-baa3715aabf7/locations/westus2",
+    "metadata": {
+      "geographyGroup": "US",
+      "latitude": "47.233",
+      "longitude": "-119.852",
+      "pairedRegion": [
+        {
+          "id": "/subscriptions/32f0f1ee-690d-4b02-9e58-baa3715aabf7/locations/westcentralus",
+          "name": "westcentralus",
+          "subscriptionId": null
+        }
+      ],
+      "physicalLocation": "Washington",
+      "regionCategory": "Recommended",
+      "regionType": "Physical"
+    },
+    "name": "westus2",
+    "regionalDisplayName": "(US) West US 2",
+    "subscriptionId": null
+  }
+]</pre>
+
+1. TODO: Select the Region (aka Location) closest to intended users, for pricing, and have features available. 
 
    PROTIP: There are differences in prices among regions. "WestUS" is generally the least expensive among US regions.
 
-   Individual resources created within a Resource Group will be placed in the same region.
-
    PROTIP: Speaker Recognition is currently only supported in Azure Speech resources created in the <strong>westus</strong> region.
+
+   Individual resources created within a Resource Group are placed in the same region.
 
 
    ### CLI Naming convensions
@@ -1547,7 +1611,9 @@ az group create --name "${MY_RG}" \
 
    ### Tags
 
-   Each tag is a name=value pair such as <tt>Department=Finance</tt>, <tt>Project=Advance1</tt>, <tt>Customer=Acme</tt>, etc. 
+   PROTIP: Even while during individual development, take a few seconds to add tags in resource creation scripts to enable not just security, accounting, and logging processes, which may provide troubleshooting tools for developers from the beginning.
+
+   Each tag is a "name=value" pair such as <tt>Env=Dev</tt>, <tt>Sensitivity=White</tt>, <tt>Dept=Finance</tt>, <tt>Project=Advance1</tt>, <tt>Customer=Acme</tt>, etc. 
 
 1. To create a tag:
 
@@ -1594,7 +1660,7 @@ az group create --name "${MY_RG}" \
 1. Select each production resource group.
 1. Click "Locks" menu.
 1. Type a name according to naming conventions.
-1. Select a Lock Type: "Delete"
+1. Select a Lock Type: "Delete".
 
 
    ## More Policies 

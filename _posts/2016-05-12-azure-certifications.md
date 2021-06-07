@@ -426,8 +426,9 @@ Niraj Kumar, founder of <a target="_blank" href="https://azureezy.com/az-104-azu
    * <a target="_blank" href="https://www.youtube.com/watch?v=AzPvDNUldoI&list=PLBUNlq0o5irQ8xx7OpnF6dUH5Zfx_imUI&index=8&t=10m43s" title="Sep 15, 2020">1hr 47m Azure Monitoring</a>
    <br /><br />
 
-On Linux Academy.com:
+On ACloudGuru.com/LinuxAcademy.com:
 
+   https://app.pluralsight.com/paths/certificate/microsoft-azure-administrator-az-104 by Tim Warner and <a target="_blank" href="https://www.linkedin.com/in/michael-teske-45240561/">Michael Teske</a>
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/573">LinuxAcademy</a>
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/763">Intro to Azure Files</a>
 
