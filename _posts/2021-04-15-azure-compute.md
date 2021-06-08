@@ -522,69 +522,40 @@ Implement custom handlers:
 
 ## Virtual Machines (VMs)
 
-<a target="_blank" href="https://www.coursera.org/learn/azure-create-a-virtual-machine-and-deploy-a-web-server/">VIDEO: Coursera: Azure: Create a Virtual Machine and Deploy a Website</a> has these steps:
+The Virtual Machine blade has these menu items:
 
-1. Create a Resource Group
-1. Create a Virtual Network and a subnet
-1. Protect a subnet using a Network Security Group
-1. Deploy Bastion to connect to a Virtual Machine
-1. Create an Ubuntu Server Virtual Machine
-1. Install Nextcloud by connecting via SSH using Bastion
-1. Publish an IP
-1. Create a DNS label
-<br /><br />
+   * Overview
+   * Activity Log
+   * Access control (IAM)
+   * Tags
+   * Diagnose and solve problems
 
-Provision virtual machines (VMs):
-* https://docs.microsoft.com/en-us/azure/virtual-machines/
-* https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal
-* https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-powershell
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">Networking</a>
+   * Connect
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">Disks</a>
+   * Size
 
-<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-developer-implement-iaas-solutions/table-of-contents" title="by  by Anthony Nocentino 17 Dec 2020">VIDEO: Microsoft Azure Developer: Implement IaaS Solutions</a>
+   * Security
+   * Advisor recommendations
+   * Extensions
+   * Properties
 
-### Create VM in Portal GUI 
+   * Disaster recovery
+   * Configuration management
 
-1. In portal, go to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines">VM or Virtual Machines</a> in Home menu or Recents or Search.
-
-1. PROTIP: Previously Azure VM names had to be globally unique becuase they were were put in public domain cloudapp.net. But Microsoft has since added magic to get around that.
-
-   VM Name conventions:
-   * Limit 15 chars on Windows VMs
-   * Limit 64 chars on Linux VMs
-   Role: sql, web, msg<br />
-   Instance: 01, 02, etc.
+   * Resource health
+   * Boot diagnostics
+   * Performance diagnostics
+   * Reset password
+   * <a href="#Redeploy">Redeploy</a>
+   * New support request
    <br /><br />
 
-1. Region: PROTIP: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
+First, some enumerations:
 
-   <a name="AvailabilityZones"></a>
+<a name="VM_Server_Types"></a>
 
-   Select "Availability zones" to redundantly store data in several zones of Microsoft's choosing.
-   Microsoft will handle recognition of disaster and recovery for them.
-
-   QUESTION: Do admins know when a failover has occurred?
-
-   <a name="AvailabilitySets"></a>
-
-1. Availability options "Availability zone".
-
-   "Availability set" for a region which does not have Availability Zones (such as Australia). Define a new one by specifying number of: REMEMBER:
-
-   * <strong>fault domains</strong> = server racks, and 
-   * <strong>Update domains</strong> = individual servers on each rack.
-   <br /><br />
-
-   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/">Pricing</a>]
-
-1. Azure <strong>spot instance</strong>: As No is default, <strong>click Yes</strong> to save money, if your app is designed for it. 
-
-1. If Yes, Eviction type: "Capacity only" for whatever the pay-as-you-go rate is.
-   "Price or capacity" to set a Max. price manually.
-
-1. VM generation: <strong>Gen2</strong> VMs features UEFI-based boot architecture, increased memory and OS disk size limits, Intel Software Guard Extensions (SGX), and virtual persistent memory (vPMEM).
-
-   CAUTION: Gen2 does not yet support Azure Disk Encryption!
-
-### VM Types
+### VM Server Types
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series">
 PRICING of each VM type</a>
@@ -629,9 +600,170 @@ r suffix for remote direct memory (RDMA)
 </table>
 
 
+
+<a name="VM_GUI"></a>
+
+### Use Azure Portal GUI
+
+zzz
+
+### Create VM in Portal GUI 
+
+1. In portal, go to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines">VM or Virtual Machines</a> in Home menu or Recents or Search.
+1. Click "+ Add". Select "Virtual Machine", not "Start with a preset configuration".
+1. All Services -> Virtual Machines
+
+   Commands: Basics | Disks | Networking | Management | Advanced | Tags | Review + create
+
+1. Project details: Subscription:
+1. Resource Group
+1. PROTIP: Virtual machine name: Previously, Azure VM names had to be globally unique becuase they were were put in public domain <strong>cloudapp.net</strong>, but Microsoft has since added magic to get around that.
+
+   VM Name conventions:
+   * Limit 15 chars on Windows VMs
+   * Limit 64 chars on Linux VMs
+   Role: sql, web, msg<br />
+   Instance: 01, 02, etc.
+   <br /><br />
+
+1. Region: PROTIP: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
+
+   <a name="AvailabilityZones"></a>
+
+   Select "Availability zones" to redundantly store data in several zones of Microsoft's choosing.
+   Microsoft will handle recognition of disaster and recovery for them.
+
+   QUESTION: Do admins know when a failover has occurred?
+
+   <a name="AvailabilitySets"></a>
+
+1. Availability options "Availability zone".
+
+   "Availability set" for a region which does not have Availability Zones (such as Australia). Define a new one by specifying number of: REMEMBER:
+
+   * <strong>fault domains</strong> = server racks, and 
+   * <strong>Update domains</strong> = individual servers on each rack.
+   <br /><br />
+
+   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/">Pricing</a>]
+
+1. Azure <strong>spot instance</strong>: As "No" is the default, <strong>click Yes</strong> to save money, if your app is designed for it. 
+
+1. Authentication type: SSH or Password
+
+   If SSH public key is chosen: The username and SSH public key source appear.
+
+   If Password is chosen: a Password and Confirm Password fields appear.
+
+1. Username: 
+
+   PROTIP: These Admin user names cannot be used:
+   * 123
+   * a, adm, admin, admin1, admin2, administrator, 
+   * actuser, aspnet
+   * backup, console, david, john
+   * i, guest, owner, root, server, sql, support, sys
+   * test, test1, test2, test3,
+   * user, user1, user2, user3, user4, user5
+   <br /><br />
+
+1. Inbound port rules:
+1. Select inbound ports: RDP (3389)
+
+1. RDP into VM. 
+   Windows landing screen:
+
+   ![az-compute-vm-win-landing](https://user-images.githubusercontent.com/300046/121094734-4fad6c80-c7ac-11eb-8857-efcee91a396a.png)
+
+
+1. If Yes, Eviction type: "Capacity only" for whatever the pay-as-you-go rate is.
+   "Price or capacity" to set a Max. price manually.
+
+1. VM generation: <strong>Gen2</strong> VMs features UEFI-based boot architecture, increased memory and OS disk size limits, Intel Software Guard Extensions (SGX), and virtual persistent memory (vPMEM).
+
+   CAUTION: Gen2 does not yet support Azure Disk Encryption!
+
+
+
+<a target="_blank" href="https://www.coursera.org/learn/azure-create-a-virtual-machine-and-deploy-a-web-server/">VIDEO: Coursera: Azure: Create a Virtual Machine and Deploy a Website</a> has these steps:
+
+1. Create a Resource Group
+1. Create a Virtual Network and a subnet
+1. Protect a subnet using a Network Security Group
+1. Deploy Bastion to connect to a Virtual Machine
+1. Create an Ubuntu Server Virtual Machine
+1. Install Nextcloud by connecting via SSH using Bastion
+1. Publish an IP
+1. Create a DNS label
+<br /><br />
+
+Provision virtual machines (VMs):
+* https://docs.microsoft.com/en-us/azure/virtual-machines/
+* https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal
+* https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-powershell
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-developer-implement-iaas-solutions/table-of-contents" title="by  by Anthony Nocentino 17 Dec 2020">VIDEO: Microsoft Azure Developer: Implement IaaS Solutions</a>
+
+
+
+### Create Windows VM in Bash
+
+   <pre>az vm create --resource-Group ps-course-rg --name windows-1 \
+--image win2016datacenter --admin-username azureuser
+   </pre>
+
+<a name="New_Linux_CLI"></a>
+
+### Create Linux VM in Bash
+
+<pre><strong># enviornment variables:
+AZ_ADMIN_USER="mrtoad2"  
+AZ_GROUP="somegroup2"
+AZ_VM_NAME="myvm123"
+&nbsp;
+RESPONSE=$( az vm create -n "$AZ_VM_NAME" -g "$AZ_GROUP" \
+   --image UbuntuLTS --generate-ssh-keys \
+   --admin-user "$AZ_ADMIN_USER" )
+&nbsp;
+ # Obtain $publicIpAddress from RESPONSE:
+publicIpAddress=$(jq -r '.publicIpAddress' <<< "$RESPONSE")
+echo "publicIpAddress=$publicIpAddress"
+&nbsp;
+ssh "$AZ_ADMIN_USER:$publicIpAddress"
+   # do whatever...
+exit
+   </strong></pre>
+
+
+<a name="VM_PS"></a>
+
+### Create VM using PowerShell ps1 file
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=901540c5-bf67-408d-8d8f-d68005676c83">VIDEO</a>:
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies/blob/master/Instructions/Labs/Module_10_Lab.md">LAB</a>:
+
+   <pre>$location="westus2"
+New-AzSubscriptionDeployment -Name az30310subaDeployment `
+   -Location $location -rgName 'az30310a-labRG' `
+   -rgLocation $location  `
+   -TemplateFile $HOME/azuredeploy30310suba.json
+   </pre>
+
+<pre>New-AzVm -ResourceGroupName ‘ps-course-rg’ `
+   -Name ‘windows-1’ `
+   -Location ‘NorthCentralUS’ `
+   -VirtualNetworkName ‘main-vnet’ `
+   -SubnetName ‘backend’ `
+   -SecurityGroupName ‘myNetworkSecurityGroup’ `
+   -PublicIpAddressName ‘myPublicIpAddress’ `
+   -OpenPorts 80,3389
+</pre>
+
+
+
 <a name="Scaling"></a>
 
-## Scaling
+### VM Scaling
 
 <strong>Vertical Scaling</strong>: For scaling up, since initially one doesn't know what kind of VM will suffice, start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up">Link</a>
 
@@ -646,11 +778,14 @@ r suffix for remote direct memory (RDMA)
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png">
 <img alt="az-scale-sets-782x504" width="782" height="504" src="https://user-images.githubusercontent.com/300046/116013813-4f3b8680-a5ef-11eb-96a7-d72eb24c5567.png"></a>
 
-Azure VM Scale Sets enables creation and management a <strong>group of load balanced VMs</strong>. 
-The number of VM instances can automatically increase of decreate in response to demand or a defined schedule. 
-Scale sets provide high availability (HA) to your applications and allow you to centrally manage, configure, and update a large number of VMs.
+Azure VM Scale Sets enable creation and management of a <strong>grouping of load balanced VMs</strong> to provide High Availability (HA) to applications. Scale Sets can be centrally managed, configured, and updated.
+The number of VM instances can automatically increase or decrease in response to demand or a defined schedule. 
 
-1. G+/ "Create a virtual machine scale set https://portal.azure.com/#create/microsoft.vmss
+VM scale sets with standard Load Balancers and standard PIP cannot be moved.
+
+VMs integrated with Key Vault for disk encryption cannot be moved.
+
+1. G+/ <a target="_blank" href="https://portal.azure.com/#create/microsoft.vmss"">Create a virtual machine scale set" at https://portal.azure.com/#create/microsoft.vmss</a>
 
    There is a lot to configure: Basics, Disks, Networking, Scaling, Management, Health, Advanced, Tags, Review+Create
 
@@ -684,52 +819,7 @@ Scale sets provide high availability (HA) to your applications and allow you to 
    <br /><br />
    
 
-<hr />
-
-<a name="New_Linux_CLI"></a>
-
-### Create Linux VM using CLI
-
-<pre><strong># enviornment variables:
-AZ_ADMIN_USER="mrtoad2"  
-AZ_GROUP="somegroup2"
-AZ_VM_NAME="myvm123"
-&nbsp;
-RESPONSE=$( az vm create -n "$AZ_VM_NAME" -g "$AZ_GROUP" \
-   --image UbuntuLTS --generate-ssh-keys \
-   --admin-user "$AZ_ADMIN_USER" )
-&nbsp;
- # Obtain $publicIpAddress from RESPONSE:
-publicIpAddress=$(jq -r '.publicIpAddress' <<< "$RESPONSE")
-echo "publicIpAddress=$publicIpAddress"
-&nbsp;
-ssh "$AZ_ADMIN_USER:$publicIpAddress"
-   # do whatever...
-exit
-   </strong></pre>
-
-
-<pre><strong>echo ">>> Stop Linux VM using CLI:"
-az vm stop -n "$AZ_VM_NAME" -g "$AZ_GROUP" 
-</strong></pre>
-
-
-<pre><strong>echo "Start Linux VM using CLI:"
-az vm start -n "$AZ_VM_NAME" -g "$AZ_GROUP" 
-</strong></pre>
-
-<pre><strong>echo ">>> Get info"
-az vm show -n "$AZ_VM_NAME" -g "$AZ_GROUP" \
-   --query hardwareProfile.vmSize
-</strong></pre>
-
-
-<pre><strong>echo "Delete resource group:"
-az group delete -g "$AZ_GROUP" --no-wait -y
-</strong></pre>
-
-
-### Just-in-time VM access
+### Just-in-time VM Console access
 
 To improve security, enable just-in-time VM access.
 
@@ -758,41 +848,32 @@ To improve security, enable just-in-time VM access.
 
    There is a limit on vCPUs for dedicated hosts per region.
 
+<a name="ConnectVM"></a>
 
-<a name="VM_GUI"></a>
+### Connect
 
-### Use Azure Portal GUI
+1. Connect 
+1. Use Bastion
 
-1. All Services -> Virtual Machines
 
-   Commands: Basics | Disks | Networking | Management | Advanced | Tags | Review + create
 
-   ### VM Basics
+<a name="Redeploy"></a>
 
-1. Project details: Subscription:
-1. Resource Group
-1. Virtual machine name:
-1. Region:
-1. Availability options:
-1. Image:
-1. Azure Spot instance: Dx vCPUs, etc.
-1. Authentication account: Username, Password
+### Redeploy
 
-   PROTIP: These names cannot be used:
-   * 123
-   * a, adm, admin, admin1, admin2, administrator, 
-   * actuser, aspnet
-   * backup, console, david, john
-   * i, guest, owner, root, server, sql, support, sys
-   * test, test1, test2, test3,
-   * user, user1, user2, user3, user4, user5
-   <br /><br />
+<strong>redeploy</strong> shuts down the VM, moves it to a new node, and powers up again.
 
-1. Inbound port rules:
-1. Select inbound ports: RDP (3389)
+Data on temporary drive will be lost, but it's a choice if you cannot connect via RDP or SSH or have difficulty trobleshooting app access on Azure VM.
 
-1. RDP into VM.
+Azure CLI:
 
+<pre>az vm redeploy --resource-Group ps-course-rg --name linux-1</pre>
+
+PowerShell commands:
+
+<pre>Set-AzVM -Redeploy -ResourceGroupName ‘ps-course-rg’ -Name “linux-1“</pre>
+
+<a href="#ConnectVM">Connect as above</a>
 
 
 <a name="VM_template"></a>
@@ -904,16 +985,40 @@ More options at:
 https://docs.microsoft.com/en-us/cli/azure/vm#az_vm_create
 
 
-<a name="VM_PS"></a>
 
-### Create VM using PowerShell ps1 file
+### VM naintainance using CLI
 
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=901540c5-bf67-408d-8d8f-d68005676c83">VIDEO</a>:
-<a target="_blank" href="https://github.com/MicrosoftLearning/AZ-303-Microsoft-Azure-Architect-Technologies/blob/master/Instructions/Labs/Module_10_Lab.md">LAB</a>:
+https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-manage-vm
 
-   <pre>$location="westus"
-New-AzSubscriptionDeployment -Name az30310subaDeployment -Location $location -rgName 'az30310a-labRG' -rgLocation $location -TemplateFile $HOME/azuredeploy30310suba.json
-   </pre>
+<pre><strong>echo ">>> Stop Linux VM using CLI:"
+az vm stop -n "$AZ_VM_NAME" -g "$AZ_GROUP" 
+</strong></pre>
+
+
+<pre><strong>echo "Start Linux VM using CLI:"
+az vm start -n "$AZ_VM_NAME" -g "$AZ_GROUP" 
+</strong></pre>
+
+<pre><strong>echo ">>> Get info"
+az vm show -n "$AZ_VM_NAME" -g "$AZ_GROUP" \
+   --query hardwareProfile.vmSize
+</strong></pre>
+
+<pre><strong>echo "Delete resource group:"
+az group delete -g "$AZ_GROUP" --no-wait -y
+</strong></pre>
+
+
+### Moving VM using PowerShell
+
+<pre>Move-AzResource -DestinationResourceGroupName ‘ps-course-rg’ `
+-ResourceId <em>myResourceId,myResourceId,myResourceId</em>
+&nbsp;
+Move-AzResource -DestinationSubscriptionId “8bc4fbf0-blah-blah-blah-226b44e5db84" `
+-DestinationResourceGroupName ‘ps-course-rg’ `
+-ResourceId <em>myResourceId,myResourceId,myResourceId</em>
+</pre>
+
 
 <hr />
 

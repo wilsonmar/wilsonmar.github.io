@@ -134,7 +134,7 @@ Database Activity Monitoring (DAM)
 
 <a name="Replication"></a>
 
-## Redundancy (from Replication)
+## Redundancy (from Azure-managed replication)
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>:
@@ -243,6 +243,16 @@ Database Activity Monitoring (DAM)
    GPV2,
    Blob
    </td></tr>
+
+   <tr valign="top"><td>
+   <p>Failure coverage:</p>
+   </td><td style="text-align: center;" width="60">
+   server rack
+   </td><td style="text-align: center;" width="60">
+   avail. zone
+   </td><td style="text-align: center;" width="60" colspan="2">
+   region
+   </td></tr>
    </table>
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png">
@@ -336,11 +346,11 @@ They will maintain their data but the data are only usable when a disk is attach
 
 ### Storage Domain names
 
-Each storage account provides a unique namespace accessible over HTTPS.
+Each storage type provides a unique namespace accessible over HTTPS:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr align="left"><th> Service </th><th align="right"> URL (singular)</th></tr>
-<tr valign="top"><td> Container service</a> 
+<tr align="left"><th> Service </th><th align="right"> Storage Endpoint</th></tr>
+<tr valign="top"><td> Container service:
    </td><td align="right"> <tt>https://<em>my_account</em>.<strong>blob</strong>.core.windows.net</tt>
    </td></tr>
 <tr valign="top"><td> <a href="#Blobs">Blobs</a> 
@@ -357,11 +367,11 @@ Each storage account provides a unique namespace accessible over HTTPS.
    </td></tr>
 </table>
 
-https://<em>Storage_Acct</em><strong>/blob.core.windows.net/</strong><em>Container_name</em>/<em>filex.png</em>
+The full URI:
 
-PROTIP: Add a unique suffix to version each file so HTML pages know to retrieve the new file name.
+<tt>https://<em>my_account</em><strong>/blob.core.windows.net/</strong><em>Container_name</em>/<em>file_object_1234a.png</em></tt>
 
-https://<em>Storage_Acct</em><strong>/file.core.windows.net/</strong><em>Fileshare_name</em>/<em>dir</em>/<em>filex.txt</em>
+PROTIP: Add a unique suffix (hash) to version each file so HTML pages know to retrieve the new file name.
 
 Two ways to map custom domain name:
 
@@ -806,7 +816,7 @@ $vm = Add-AzVMDataDisk -VM $vm -Name $dataDiskName -CreateOption Attach -ManageD
 
    Each VM has one OS disk which contains the operating system and is used to boot the VM. The OS disk is a Standard SSD in this case. In addition to the OS disk, VMs can have zero or more Data disks attached. This VM has one data disk that is a 4 GiB Standard HDD. 
 
-   PROTIP: All disks are encrypted at rest by default. If someone were to steal a physical disk from an Azure data center the physical disk would be encrypted and unusable. This is true for all data in Azure storage accounts. 
+   PROTIP: All disks are encrypted at rest by default. So if someone were to steal a physical disk from an Azure data center the physical disk would be unusable. This is true for all data in Azure storage accounts. 
 
    RECOMMENDED: [_] For production workloads, also encrypt Azure disks at the operating system level. This is referred to as <strong>Azure Disk Encryption (ADE)</strong> which protects against Azure disks being copied and attached to another Azure VM.
 
@@ -1109,6 +1119,23 @@ For each storage account two (primary and secondary) keys (aka connection string
    <pre><strong>az storage account keys renew
    </strong></pre>
 
+
+<a ## Create a Key Vault
+
+Azure Disk Encryption-PowerShell:
+
+<pre>New-AzKeyVault -Name 'demokv' -ResourceGroupName 'ps-course-rg’ `
+   -Location 'northcentralus' -EnabledForDiskEncryption
+   $KeyVault = Get-AzKeyVault -VaultName 'demokv' -ResourceGroupName 'ps-course-rg’
+&nbsp;
+   Set-AzVMDiskEncryptionExtension -ResourceGroupName 'ps-course-rg' -VMName 'linux-1’ `
+   -DiskEncryptionKeyVaultUrl $KeyVault.VaultUri `
+   -DiskEncryptionKeyVaultId $KeyVault.ResourceId
+</pre>
+
+In the Key Vault, Access Policies, check "Azure Disk Encryption for volume encryption".
+
+The "Permission model" would be "Vault access policy" or "Azure role-based access control (preview)".
 
 ## Azure Storage Export/Import
 

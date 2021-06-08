@@ -357,7 +357,7 @@ It generates a heat map of connections.
 
    As with any VNet, the load balancer is deployed under a Resource group and Subscription.
 
-   The load balancer has a Public IP address which accepts incoming traffic on before redirecting to the backend pool. 
+   The load balancer has a <a href="#PublicIP">Public IP address</a> which accepts incoming traffic on before redirecting to the backend pool. 
 
 4. In the menu to the left, click +++ Load Balancing Rules.
 5. On the Rules blade, click LBRule for the information blade for the LBRule load balancing rule:
@@ -746,6 +746,13 @@ alt
 
 +++ https://cloudacademy.com/course/overview-of-azure-services/azure-overview/
 
+<a name="PublicIP"></a>
+
+## Public IP
+
+To create a public IP:
+
+   <pre>az network public-ip create -g ps-course-rg -n MyIp</pre>
 
 
 <a name="Firewall"></a>
