@@ -19,9 +19,9 @@ comments: true
 
 Here are the notes I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
 
-My contribution to the world here is a deep yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
+My contribution to the world here is a <strong>deep</strong> yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
 
-### Storage Pricing
+## Storage Pricing
 
    [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
    
@@ -29,65 +29,17 @@ My contribution to the world here is a deep yet concise presentation, using tabl
 
    B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
    
-   C. <a href="#Blobs">Type of Blob (Storage Type) [see below]</a> available in the region
+   C. <a href="#StorageTypes">Type of Storage) [see below]</a>
    
-   D. <a href="#Replication">Replication/Redundancy</a> region pair availability
-
-
-### CLI to create Storage account
-
-Use my Bash shell script file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
-
-
-<a name="StorageAccount"></a>
-
-## Create Storage account in Portal UI
-
-Let's dive right in:
-
-1. A subscription is needed if you want to use the CLI.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-   Storage accounts are recepticles capable of storing different categories of data. 
-
-   REMEMBER: PROTIP: Storage accounts are under Subscriptions, separate from (not under) any Resource Group.
-
-
-1. Get to blade <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
-
-1. Click "+ Create" (a new Storage account). 
-1. Create new Resource Group [this is still for training/development]
-1. For Name, use up to 24 chracters or numbers
-1. Location, 
-1. Performance: Click "Standard" [the default unless you want <strong>Performance</strong> for
-
-   * Block blogs
-   * File shares
-   * Page blogs
-   <br /><br />
-
-   See description about <a href="#StorageTypes">Types of Storage and Data (below)</a>
-
-1. See <a href="#Redunancy">Redundancy</a>
-
-1. After creation,
-1. In the Access Keys blade of your newly created storage account, click "Show keys"
-
-1. Triple-Click in the key1 Key field to highlight the contents.
-1. Copy to Clipboard by Ctrl+C.
-1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
-
-1. Triple-Click in the key1 Connection string field to highlight the contents.
-1. Copy to Clipboard by Ctrl+V.
-1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
-
+   D. <a href="#Replication">Replication/Redundancy</a> region pair high availability
 
 <hr />
-
 
 <a name="StorageTypes"></a>
 
 ## Types of Storage and Data
+
+If available in your choice of region:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
 <a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
@@ -112,22 +64,6 @@ Let's dive right in:
       <a href="#SQLDB">Azure SQL Database</a>
    </td></tr>
 </table>
-
-How is your data used?
-
-Does your data require transactions (ACID properties)? If yes, use SQL.
-
-Database Activity Monitoring (DAM)
-
-<hr />
-
-## Introductions 
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
-
-
 
 
 <hr />
@@ -296,7 +232,6 @@ Database Activity Monitoring (DAM)
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
 
 
-
 ### Managed Disk Account Type
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h52m43s">VIDEO</a>
@@ -312,9 +247,92 @@ They will maintain their data but the data are only usable when a disk is attach
 
 * <strong>Standard HDDs</strong> use older magnetic spinning disk technology and are therefore the least expensive option but also provide the lowest performance. Use them for <a href="#Backups">backups</a> and infrequently accessed applications.
 
-* Standard_LRS = Locally Redundant Storage
-* Standard_GRS = Geographically Redundant Storage
-* Standard_RAGRS = Read Access Geographically Redundant Storage
+   * Standard_LRS = Locally Redundant Storage
+   * Standard_GRS = Geographically Redundant Storage
+   * Standard_RAGRS = Read Access Geographically Redundant Storage
+   <br /><br />
+
+
+<hr />
+
+## Create Storage account
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
+   Storage accounts are recepticles capable of storing different categories of data. 
+
+Here I show how to create a Storage Account several ways:
+
+   1. Using the Portal GUI
+   
+   2. <a href="#StorageAccountCLI">Use my Bash shell CLI scripts</a> file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
+
+<hr />
+
+<a name="StorageAccountPortal"></a>
+
+### Create Storage account in Portal UI
+
+1. Get to blade one of several ways:
+
+   * Since "Storage accounts" is a popular resource, select it on the Home menu at the left. If you don't see the menu, click on the icon at the upper-left corner on every screen.
+
+   * Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
+
+   * Click "+ Create a resource". Search for "Storage account". Click on the Marketplace item. Create.
+
+1. Click "+ Add" for "Create a Storage account".
+1. Select the Subscription for billing.
+1. Select or Create new Resource Group.
+1. For Storage account name, use up to 24 chracters or numbers.
+1. Region = Location.
+1. Performance: Click "Standard" [the default unless you want <strong>Performance</strong> for
+
+   * Block blogs
+   * File shares
+   * Page blogs
+   <br /><br />
+
+   See description about <a href="#StorageTypes">Types of Storage and Data (below)</a>
+
+1. For <a href="#Redundancy">Redundancy</a>, during development "Locally-redundant storage (LRS)".
+
+1. Under "Redundancy", if GRS or ZGRS is chosen, "Make read access to data available in the event of regional unavailability." appears.
+
+   This option is called "RA-GRS", with "RA" = Read Access.
+
+1. After creation,
+1. In the Access Keys blade of your newly created storage account, click "Show keys"
+
+1. Triple-Click in the key1 Key field to highlight the contents.
+1. Copy to Clipboard by Ctrl+C.
+1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
+
+1. Triple-Click in the key1 Connection string field to highlight the contents.
+1. Copy to Clipboard by Ctrl+V.
+1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
+
+
+<hr />
+
+
+<a name="StorageAccountCLI"></a>
+
+How is your data used?
+
+Does your data require transactions (ACID properties)? If yes, use SQL.
+
+Database Activity Monitoring (DAM)
+
+<hr />
+
+## Introductions 
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/">DOCS: "Store data in Azure"</a>
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/">LEARN: "Choose a data storage approach in Azure"</a>
+
+
+
 
 
 
@@ -570,6 +588,13 @@ Acceleration Data Transfers, also called Dynamic Site Acceleration (DSA), accele
 
 <hr />
 
+<a name="Blobs"></a>
+
+## Blob service storage types
+
+Blobs <strong>Binary Large OBject</strong> data store <strong>unstructured</strong> data (images, videos, documents, zip files, backup files, etc.).
+
+
 <a name="StorageAccountKinds"></a>
 
 ## Storage Account Kinds
@@ -586,7 +611,7 @@ When creating a storage account, the combination of Performance and Account kind
    </td><td align="right"> Yes
    </td><td align="right"> Yes
    </td></tr>
-<tr valign="top"><td> <a href="#AppendBlobs">Blob Storage</a>
+<tr valign="top"><td> <a href="#BlockBlobs">Blob Storage</a>
    </td><td align="right"> Yes
    </td><td align="right"> -
    </td></tr>
@@ -594,20 +619,13 @@ When creating a storage account, the combination of Performance and Account kind
    </td><td align="right"> -
    </td><td align="right"> Yes
    </td></tr>
-<tr valign="top"><td> <a href="#PageBlobs">File Storage</a>
+<tr valign="top"><td> <a href="#FileStorage">File Storage</a>
    </td><td align="right"> -
    </td><td align="right"> Yes
    </td></tr>
 </table>
 
 
-<a name="Blobs"></a>
-
-## Blob service storage types
-
-Blob data stands for <strong>Binary Large OBject</strong> data. 
-
-Blobs store <strong>unstructured</strong> data (images, videos, documents, zip files, etc.).
 
 Types of blobs in Azure blob storage:
 
@@ -637,9 +655,11 @@ Types of blobs in Azure blob storage:
 
 <a name="BlockBlobs"></a>
 
-* <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>]
+* <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>] 
 
    Thus, block blobs are optimized for <strong>streaming</strong> and storing cloud objects.
+
+Each block can be edited.
 
    REMEMBER: Block blob storage has its own Storage Account Type for LRS replication only and Premium performance tier only.
 
