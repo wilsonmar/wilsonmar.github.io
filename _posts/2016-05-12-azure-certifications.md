@@ -957,36 +957,45 @@ Exam DP-201: Designing an Azure Data Solution Crash Course (live online training
 
 ## DP-203 Azure Data Engineer Associate
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203</a> beta released February 23, 2021:
+To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-data-engineer/">Microsoft Certified: Azure Data Engineer Associate"</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203</a> (beta released February 23, 2021):
    * Design and implement data storage (40-45%)
    * Design and develop data processing (25-30%)
    * Design and implement data security (10-15%)
    * Monitor and optimize data storage and data processing (10-15%)
-
-   * https://timw.com/dp203 = <a target="_blank" href="https://github.com/timothywarner/dp203">https://github.com/timothywarner/dp203</a> (by <a target="_blank" href="https://www.linkedin.com/in/timothywarner/">Tim Warner</a>, <a target="_blank" href="https://techtrainertim.com/">techtrainertim.com</a>)
    <br /><br />
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-200">DP-200</a> retired on June 30, 2021, looks at the Microsoft Azure data platform through the
- lens of the implementer:
+Free text-based tutorials from Microsoft:
+   * Azure for the Data Engineer
+   * Store data in Azure
+   * Data integration at scale with Azure Data Factory or Azure Synapse Pipeline
+   * Realize Integrated Analytical Solutions with Azure <strong>Synapse Analytics</strong>
+   * Work with Data Warehouses using Azure Synapse Analytics
+   * Perform data engineering with Azure Synapse <strong>Apache Spark Pools</strong>
+   * Work with Hybrid Transactional and Analytical Processing Solutions using Azure Synapse Analytics
+   * Data engineering with Azure <strong>Databricks</strong>
+   * Large-Scale Data Processing with Azure <strong>Data Lake Storage Gen2</strong>
+   * Implement a Data Streaming Solution with Azure <strong>Streaming Analytics</strong>
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-200">DP-200</a> retired on June 30, 2021, looked at the Microsoft Azure data platform through the lens of the implementer:
    * Work with relational data in Azure
    * Work with NoSQL data in Azure Cosmos DB
    * Large-Scale Data Processing with Azure Data Lake Storage Gen2
    * https://github.com/timothywarner/dp200
    <br /><br />
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-201">DP-201</a> retired on June 30, 2021, examines Azure data through the lens of the architect:
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-201">DP-201</a> retired on June 30, 2021, examined Azure data through the lens of the architect:
    * Design Azure data storage solutions (40-45%)
    * Design data processing solutions (25-30%)
    * Design for data security and compliance (25-30%) 
    * https://github.com/timothywarner/dp201
-   <br /><br />
-
-DP-203 Learning Path:
+DP-203 Learning Path had covered:
    * Data integration at scale with Azure Data Factory or Azure Synapse Pipeline
    * Realize Integrated Analytical Solutions with Azure Synapse Analytics
    <br /><br />
 
-https://ravikirans.com/dp-203-azure-exam-study-guide/
+Ravi Kirans:
+   * https://ravikirans.com/dp-203-azure-exam-study-guide/
 
 James Serra, Microsoft NYC
    * <a target="_blank" href="https://www.youtube.com/watch?v=oylzwwmTkaM">"Data Lakehouse"</a>
@@ -1004,8 +1013,12 @@ John McIntyre
    * https://www.youtube.com/watch?v=tMYOi5E14eU 2020
    * https://www.youtube.com/watch?v=dvP0JwchjfI 2019 "SQL Data Warehouse"
 
+Tim Warner:
+   * https://timw.com/dp203 = <a target="_blank" href="https://github.com/timothywarner/dp203">https://github.com/timothywarner/dp203</a> (by <a target="_blank" href="https://www.linkedin.com/in/timothywarner/">Tim Warner</a>, <a target="_blank" href="https://techtrainertim.com/">techtrainertim.com</a>)
+   <br /><br />
 
-* https://www.whizlabs.com/learn/course/microsoft-azure-dp-203/
+Sample Exams:
+   * https://www.whizlabs.com/learn/course/microsoft-azure-dp-203/
 
 <hr />
 

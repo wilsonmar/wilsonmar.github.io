@@ -17,13 +17,14 @@ comments: true
 {% include _toc.html %}
 
 
-Here are the notes I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
+There are a lot of <a href="#Overviews">overview/summary/high-level tutorials and videos on Azure storage</a>. 
+But these notes I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a> aim for a <strong>deep</strong> yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
 
-My contribution to the world here is a <strong>deep</strong> yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
+<a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/storage/">azure.microsoft.com/en-us/product-categories/storage</a>
 
 ## Storage Pricing
 
-   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Storage Pricing</a> varies by several dimensions:
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a> varies by several dimensions:
    
    A. Region
 
@@ -32,6 +33,12 @@ My contribution to the world here is a <strong>deep</strong> yet concise present
    C. <a href="#StorageTypes">Type of Storage) [see below]</a>
    
    D. <a href="#Replication">Replication/Redundancy</a> region pair high availability
+
+   E. Whether reservations were pre-allocated (1 to 3 years ahead)
+
+   F. Hot/cold/Archive 
+
+   G. Amount of storage used each month (first 50 TB, next 450 TB, over 500 TB).
 
 <hr />
 
@@ -234,9 +241,8 @@ If available in your choice of region:
 
 ### Managed Disk Account Type
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h52m43s">VIDEO</a>
-
-You can attach and detach Azure disks to a different VM. 
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=4h52m43s">VIDEO</a>:
+Azure disks can be attached and detached to a different VM. 
 They will maintain their data but the data are only usable when a disk is attached to a VM.
 
 * <strong>Ultra SSDs</strong> provide the best throughput and I/O operations per second (IOPS) performance characteristics but at the highest prices. Use for mission-critical I/O intense applications such as running databases.
@@ -245,7 +251,7 @@ They will maintain their data but the data are only usable when a disk is attach
 
 * <strong>Standard SSDs</strong> are the least expensive SSD option, suitable for production workloads with low I/O performance requirements such as web servers and lightly used applications.
 
-* <strong>Standard HDDs</strong> use older magnetic spinning disk technology and are therefore the least expensive option but also provide the lowest performance. Use them for <a href="#Backups">backups</a> and infrequently accessed applications.
+* <strong>Standard HDDs</strong> use older magnetic spinning disk technology, so they also provide the lowest performance. It is the least expensive option. Use them for <a href="#Backups">backups</a> and infrequently accessed applications.
 
    * Standard_LRS = Locally Redundant Storage
    * Standard_GRS = Geographically Redundant Storage
@@ -1590,7 +1596,11 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-net/azure-tables-cl
 Azure Tables samples for .NET Azure.Data.Tables client library
 
 
+<a name="Overviews"></a>
+
 ## References
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gCotvBx-UrQ">VIDEO: Azure Storage Account Types, Performance and Cost</a> by John Savill.
 
 https://www.c-sharpcorner.com/article/azure-storage-account-using-azure-cli/
 

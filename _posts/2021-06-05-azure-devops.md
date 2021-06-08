@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure DevOps"
-excerpt: "Microsoft's transitions TFS and VSTS to DevSecOps for automated CI/CD pipelines in the cloud"
+excerpt: "Microsoft's DevSecOps for automated CI/CD pipelines in the cloud"
 tags: [devops, devsecops]
 date: "2021-05-26"
 file: "azure-devops"
@@ -16,97 +16,51 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/azure-devops/">This page</a> contains succinct "deep dive" notes about learning and using Microsoft's Azure DevOps services, without the generalized sales hype. This page is more than just links to tutorials. I have worked hard to provide you logical sequence of hands-on steps culled from among the dizzying volume of web pages and videos about this topic, many repeating others have said already.
+There are a lot of summary/high-level tutorials and videos. But <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">this article</a> skips the generalized sales hype and presents a <strong>"deep dive" with automation</strong> with logical and succinct hands-on steps so you get perficient quickly.
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8">
-   YOUTUBE: Microsoft's DevOps Vision</a>
+transitions TFS and VSTS to 
 
-## Why?
+## Good Turmoil
 
-<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780">
-Azure DevOps - Why It's A Big Deal For Microsoft And The Community</a> Sep 16, 2018
+<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">Azure DevOps was a big deal for Microsoft Sep 16, 2018</a>.
 
-Forrester has Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA) in its <a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">2018 Continuous Delivery And Release Automation" market assesement:
+<a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8" title="Microsoft's DevOps Vision">VIDEO</a>:
+Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>), Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: Global DevOps Bootcamp 2018 Keynote</a> how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">Forrester's 2018 Continuous Delivery And Release Automation" market assesement</a> ranked Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA):
 <img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg"></a>
 
 NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
 
-Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>), Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: Global DevOps Bootcamp 2018 Keynote</a> how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
+> The acquisition of GitHub in 2020 has caused confusion about how to prepare for Microsoft's future direction.
 
-@demovisa keynote #GDBC
+<hr />
 
 <a name="CertsOnDevOps"></a>
 
-## Certifications 
-
-Those who create certification exams have taken the time to think through what skills are needed with tools.
+## AZ-400 certification
 
 <img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a> is earned by passing the ($160) <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">exam AZ-400 "Implementing Azure DevOps Solutions"</a>.
-It measures these skills:
+<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a> has been replaced by <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>, earned by passing the ($165) <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a>. 
 
-1. Design a DevOps strategy (20-25%)
-1. Implement DevOps development processes (20-25%)
-1. Implement continuous integration (10-15%)
-1. Implement continuous delivery (10-15%)
-1. Implement dependency management (5-10%)
-1. Implement application infrastructure (15-20%)
-1. Implement continuous feedback (10-15%)
+PROTIP: This article focuses on automating the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions">Github for Microsoft's class</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>
+and <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
+
+* Develop an <a href="#Instrumentation_Strategy">instrumentation strategy</a> (5-10%)
+* Develop a Site Reliability Engineering (SRE) strategy (5-10%)
+* Develop a security and compliance plan (10-15%)
+* Manage source control (10-15%)
+* Facilitate communication and collaboration (10-15%)
+* Define and implement continuous integration (20-25%)
+* Define and implement a continuous delivery and release management strategy (10-15%) 
 <br /><br />
 
-QUESTION: How is AZ-400 different from exam: <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Implementing Microsoft Azure DevOps Solutions 70-538</a> "coming soon"?
 
-Other exams ($99 each):
-* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-900.aspx">AZ-900: Microsoft Certified Azure Fundamentals</a> (see <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/330?redirect_uri=https://app.linuxacademy.com/search?query=az-900">LinuxAcademy video course</a> released May 2019, include the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a>
+<a target="_blank" href="https://aex.dev.azure.com/">Azure Dev Essentials</a>
 
-Retiring May 2019:
-* AZ-100: Azure Infrastructure and Deployment Exam (<a target="_blank" title="by Chad Crowell" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
-* AZ-103 Microsoft Azure Administrator
+<a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a>
 
-* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-203.aspx">AZ-203: Developing Solutions for Microsoft Azure</a> (see <a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-certified-azure-developer-exam-203-prep">LinuxAcademy video course</a> released January 2019)
-
-* AZ-300: Architecting Solutions for Microsoft Azure  (<a target="_blank" href="https://linuxacademy.com/azure/training/course/name/microsoft-azure-infrastructure-and-deployment-exam-az-100">videos</a>)
-* <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-az-301.aspx">AZ-301: Microsoft Azure Architect Design</a> 120 minute $165
-
-Upcoming:
-* $165 <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-ai-100.aspx">AI-100 Microsoft Certified Azure AI Engineer Associate</a> (LinuxAcademy is working on a video course)
-
-See https://linuxacademy.com/blog/azure/azure-certifications-and-roadmap/
-
-<a name="CoursesOnDevOps"></a>
-
-## 9 Course Program
-
-<a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">
-Microsoft Professional Program for DevOps</a> consists of 9 video courses (of 8-16 hours each) 
-January—March, April—June, July—September, and October —December
-The courses are conducted as <a target="_blank" href="https://www.edx.org/microsoft-professional-program-devops">Microsoft Professional Program (MPP) in DevOps on Edx.org</a>, which provides a <a target="_blank" href="https://academy.microsoft.com/en-us/dashboard/">dashboard</a> of course progress.
-
-1. <a href="#[1]">Introduction to DevOps Practices</a>
-2. <a href="#[2]">Infrastructure as Code</a>
-3. <a href="#[3]">Continuous Integration and Continuous Deployment</a>
-4. <a href="#[4]">Configuration Management for Containerized Delivery</a>
-5. <a href="#[5]">DevOps Testing</a>
-6. <a href="#[6]">DevOps for Databases</a>
-7. <a href="#[7]">Application Monitoring and Feedback Loops</a>
-8. <a href="#[8]">DevOps for Mobile Apps
-9. <a href="#[9]">Architecting Distributed Cloud Applications
-10. <a href="#[10]">Microsoft Professional Capstone : DevOps
-
-NOTE: This is billed as a 9 course program because students choose either 8 or 9.
-
-## 7 DevOps Practices
-
-Another perspective is that the courses are segmented loosly around <a target="_blank" href="https://www.youtube.com/watch?v=QrwTD5eCkd4">VIDEO</a>: 7 DevOps practices <a target="_blank" href="http://devops.com/2015/12/03/11626/">defined by Sam Guckenheimer in 2015</a>:
-
-   1. Configuration management <a href="#[4]">[Course 4]</a>
-   1. Release management
-   1. Continuous integration <a href="#[3]">[Course 3]</a>
-   1. Continuous deployment <a href="#[3]">[Course 3]</a>
-   1. Infrastructure as Code <a href="#[2]">[Course 2]</a>
-   1. Test automation <a href="#[5]">[Course 5]</a>
-   1. Application performance monitoring <a href="#[7]">[Course 7]</a>
-   <br /><br />
+Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone.
 
 
 <a name="CourseProducts"></a>
@@ -1273,6 +1227,13 @@ https://testingindevops.org/
 
 <a target="_blank" href="https://www.coursera.org/projects/executing-selenium-test-automation-with-azure-devops">
 Coursera guided project: Executing Selenium Test Automation With Azure DevOps</a>
+
+
+<a name="Instrumentation_Strategy"></a>
+
+## Instrumentation Strategy
+
+TBD
 
 
 ## More on DevOps #
