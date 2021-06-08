@@ -941,9 +941,9 @@ Azure Sentinal</a> competes with Splunk and others to provide a SIEM (Security I
 
 Sentinal is called a SOAR (Security Orchestration Automated Response) solution because ???
 
-??? Azure Sentinel stores data from data sources into a Log Analytics workspace.
+Azure Sentinel stores data from data sources into a Log Analytics workspace.
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/">Charges for Azure Sentinel are based on a fixed Capacity Reservation</a> (in Log Analytics), from $123 per day for increments of 100GB, with overage at $2.46 per GB-ingested. <a target="_blank" href="https://blog.johnjoyner.net/using-azure-sentinel-how-much-does-it-cost/">WestUS costs 30% more than EastUS</a>.
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/azure-sentinel/">Charges for Azure Sentinel are based on a fixed Capacity Reservation "commitment tiers"</a> (in Log Analytics), from $123 per day for increments of 100GB, with overage beyond $2.46 per GB-ingested. <a target="_blank" href="https://blog.johnjoyner.net/using-azure-sentinel-how-much-does-it-cost/">WestUS costs 30% more than EastUS</a>.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/azure-sentinal">PRICING</a> <a target="_blank" href="https://blog.johnjoyner.net/using-azure-sentinel-how-much-does-it-cost/">*</a>
 

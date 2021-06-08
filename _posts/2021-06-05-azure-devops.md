@@ -32,7 +32,9 @@ Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>)
 
 NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
 
-> The acquisition of GitHub in 2020 has caused confusion about how to prepare for Microsoft's future direction.
+> The acquisition of GitHub in 2020 has caused confusion about how to prepare for Microsoft's future direction with Azure DevOps.
+
+Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace) security testing tools rather than in-house tools.
 
 <hr />
 
@@ -41,32 +43,97 @@ NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its An
 ## AZ-400 certification
 
 <img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
-<a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">Exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a> has been replaced by <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>, earned by passing the ($165) <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a>. 
+You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
 
 PROTIP: This article focuses on automating the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions">Github for Microsoft's class</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>
 and <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
 
 * Develop an <a href="#Instrumentation_Strategy">instrumentation strategy</a> (5-10%)
-* Develop a Site Reliability Engineering (SRE) strategy (5-10%)
-* Develop a security and compliance plan (10-15%)
-* Manage source control (10-15%)
-* Facilitate communication and collaboration (10-15%)
-* Define and implement continuous integration (20-25%)
-* Define and implement a continuous delivery and release management strategy (10-15%) 
+* Develop a <a href="#SRE_Strategy">Site Reliability Engineering (SRE) strategy</a> (5-10%)
+* Develop a <a href="#Security_Plan">security and compliance plan</a> (10-15%)
+* Manage <a href="#Source_Controls">source control</a> (10-15%)
+* Facilitate <a href="#Collaboration">communication and collaboration</a> (10-15%)
+* Define and implement <a href="#CI">continuous integration</a> (20-25%)
+* Define and implement a <a href="#CD">continuous delivery and release management strategy</a> (10-15%) 
 <br /><br />
 
+References:
+   * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a>
 
-<a target="_blank" href="https://aex.dev.azure.com/">Azure Dev Essentials</a>
+Practice exams:
 
-<a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a>
+Threshold:<br />
+A minimum score of 70 percent on the overall exam.<br />
+A minimum score of 35 percent on each exam domain.
 
-Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone.
+   * <a target="_blank" href="https://practice-exam.acloud.guru/edfd1636-66ce-46e2-9c9d-345fc0b8dd82?_ga=2.74915988.768635297.1623168905-1658143929.1623079786">By ACloudGuru</a>
+
+   * <a target="_blank" href="https://cloudacademy.com/quiz/37044/?context_resource=lp&context_id=1368">By CloudAcademy</a>
+
+   * Whizlabs???
+
+Other video tutorials on AZ-400:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=fL9NZBtk96c&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&index=21">VIDEO</a>: John Saville has video courses on <a target="_blank" href="https://app.pluralsight.com/paths/certificate/designing-and-implementing-microsoft-devops-solutions-az-400">Pluralsight</a> with his <a target="_blank" href="https://www.youtube.com/watch?v=rZcyDHIYpO0&list=PLlVtbbG169nGccbp8VSpAozu3w9xSQJoY">"Master Class" on YouTube</a> with code in <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass/">his GitHub</a>, which he's updating to include DevOps.
+
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/az-400-exam-prep-microsoft-azure-devops-solutions-1-1368/">CloudAcademy.com learning path</a>
+
+
+## DevOps Esssentials & Exam discount
+
+1. Go to
+
+   <a target="_blank" href="https://aex.dev.azure.com/">Azure Dev Essentials</a>
+
+1. Use your personal email in your profile.
+1. Select "Default Directory".
+
+1. Click <a target="_blank" href="https://go.microsoft.com/fwlink/?LinkID=328777">Use your benefits</a>.
+1. Click "Register" for 50 percent off the cost of a Microsoft Certification exam by completing your challenge within 30 days.
+1. Click "Register now".
+1. Click "Get started" under "DevOps Engineer".
+1. Click "Begin now".
+1. Work through Microsoft's <a target="_blank" href="https://click.email.microsoftemail.com/?qs=0ff3c5fe1fddf5fd0234d4120d4d100a558943727dccc07d2355b20ae2d4b40a5ac3f5af0e7d558cb73da76bbda7d7708b9b237bbf478bf8">27 free tutorial challenge</a>:
+
+   * Capture Web Application Logs with App Service Diagnostics Logging - 55 min
+   * Control and organize Azure resources with Azure Resource Manager - 46 min
+   * Introduction to App Center - 49 min
+   * Deploy Spring microservices to Azure - 38 min
+   * Microsoft Azure Well-Architected Framework - Performance efficiency - 48 min
+   * Microsoft Azure Well-Architected Framework - Operational excellence - 54 min
+   * Analyze your Azure infrastructure by using Azure Monitor logs - 36 min
+   * Capture and view page load times in your Azure web app with Application Insights - 45 min
+   * Instrument server-side web application code with Application Insights - 34 min
+   * Monitor cloud resources - 40 min
+   * React to state changes in your Azure services by using Event Grid - 33 min
+   * Design a holistic monitoring strategy on Azure - 57 min
+
+   * Introduction to GitHub - 1 hr 12 min
+   * Migrate your repository by using GitHub best practices - 43 min
+   * Upload your project by using GitHub best practices - 43 min
+   * Manage repository changes by using pull requests on GitHub - 49 min
+   * Settle competing commits by using merge conflict resolution on GitHub - 52 min
+   * Search and organize repository history by using GitHub - 38 min
+   * Manage an InnerSource program by using GitHub - 50 min
+   * Communicate effectively on GitHub by using Markdown - 1 hr 2 min
+   * Maintain a secure repository by using GitHub best practices - 1 hr 9 min
+   * Automate DevOps processes by using GitHub Apps - 1 hr 8 min
+   * Automate GitHub by using GitHub Script - 25 min
+   * Manage software delivery by using a release based workflow on GitHub - 1 hr 44 min
+   * Build continuous integration (CI) workflows by using GitHub Actions - 1 hr 7 min
+   * Build and deploy applications to Azure by using GitHub Actions - 59 min
+
+   * Implement a code workflow in your build pipeline by using Git and GitHub - 1 hr 27 min
+   <br /><br />
 
 
 <a name="CourseProducts"></a>
 
 ## Products and Services
 
+Microsoft exited the software testing market in 2019.
+
+NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone.
 The course catalog says it covers 6 technologies:
 
    1. VSTS (Visual Studio Team System)
@@ -131,6 +198,107 @@ PROTIP: Azure DevOps also makes use of other Azure services and client executabl
 
 Summary: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
 DevOps tools overview for Azure DevOps</a>
+
+<hr />
+
+
+<a name="Instrumentation_Strategy"></a>
+
+## Instrumentation Strategy
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d5f830b3-32e8-4097-bc37-3b75e906a42d">VIDEO</a>: 
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-implementing-logging
+Logging
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-implementing-telemetry
+Design and implement Telemetry metrics (Application insights) alert rules, user behavior insights
+
+
+<a name="SRE_Strategy"></a>
+
+## SRE Strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-developing-actionable-alerting-strategy
+Develop an actionable alerting strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-failure-prediction-strategy
+Design a Failure Prediction strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-implementing-health-checks
+Implement Health checks
+
+
+<a name="Security_Plan"></a>
+
+## Security Plan
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-authentication-authorization-strategy
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-sensitive-information-strategy
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-developing-security-compliance
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-governance-enforcement-mechanisms
+
+
+<a name="Source_Controls"></a>
+
+## Source Controls
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-developing-modern-source-control-strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-integrating-source-control-tools
+
+
+<a name="Collaboration"></a>
+
+## Facilitating Communication and Collaboration
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-communicating-collaborating-stakeholders
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-generating-devops-process-documentation
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-automating-communication
+
+
+<a name="CI"></a>
+
+## Define and Implement Continuous Integration
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-build-automation
+
+https://app.pluralsight.com/library/courses/microsoft-dev-ops-solutions-designing-package-management-strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-designing-application-infrastructure-management-strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-implementing-maintaining-standardizing-build-strategies
+
+
+<a name="CD"></a>
+
+## Define and implement a continuous delivery and release management strategy
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-developing-deployment-scripts-templates
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-implementing-orchestration-automation-solutions
+
+
+https://app.pluralsight.com/library/courses/microsoft-devops-solutions-planning-deployment-environment-strategies
+
+
+
+
+
+
+
+<hr />
 
 ### Local client utilities
 
@@ -1227,13 +1395,6 @@ https://testingindevops.org/
 
 <a target="_blank" href="https://www.coursera.org/projects/executing-selenium-test-automation-with-azure-devops">
 Coursera guided project: Executing Selenium Test Automation With Azure DevOps</a>
-
-
-<a name="Instrumentation_Strategy"></a>
-
-## Instrumentation Strategy
-
-TBD
 
 
 ## More on DevOps #

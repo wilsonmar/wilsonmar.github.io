@@ -646,7 +646,7 @@ Types of blobs in Azure blob storage:
    </td><td align="right"> 4.7 TB 
    </td><td align="right"> 50,000
    </td></tr>
-<tr valign="top"><td> <a href="#PageBlobs">Page Blobs</a>
+<tr valign="top"><td> <a href="#PageBlobs">Premium Page Blobs</a>
    </td><td align="right"> 512 byte in 4 MB
    </td><td align="right"> 8 TB 
    </td><td align="right"> <em>N/A</em>
@@ -671,12 +671,20 @@ Each block can be edited.
 
 <a name="PageBlobs"></a>
 
-* <strong>Page blobs</strong> are 512-byte pages optimized for <strong>random read/write</strong> operations. Page blobs are collections of individual pages of up to <strong>4MB</strong> each. The name "page" comes from operating systems organizing memory into pages of relatively small sizes that can be easily managed -- used for storing virtual machine disks in Azure. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/">Pricing</a>]
+The word "Premium" is in front of "Page Blobs" because it's only available when Premium Storage is selected?
+
+<strong>Premium Page blobs</strong> are 512-byte pages optimized for <strong>random read/write</strong> operations. Page blobs are collections of individual pages of up to <strong>4MB</strong> each. The name "page" comes from operating systems organizing memory into pages of relatively small sizes that can be easily managed -- used for storing virtual machine disks in Azure. 
+
+The <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/">Pricing page</a> lists page blob types: P10, P20, P30, P40, P50, P60.
+
+Premium Page Blobs are high-performance solid-state drive (SSD)-based storage, designed to support I/O-intensive workloads with significantly high throughput and low latency. Premium Page Blobs provide provisioned disk performance up to 7,500 IOPS and 250MBps per blob.
 
 
 <a name="AppendBlobs"></a>
 
-* <strong>Append blobs</strong> are optimized for appending new <strong>blocks</strong> at the end of the blob -- useful for storing log data (and audit files) where new lines are added at the end and the data never needs to be modified after it is written.
+<strong>Append blobs</strong> are optimized for appending new <strong>blocks</strong> at the end of the blob -- useful for storing log data (and audit files) where new lines are added at the end and the data never needs to be modified after it is written.
+
+[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/append-blobs/">Pricing</a>]
 
 
 <a name="BlobAccessTiers"></a>
@@ -720,6 +728,7 @@ __ Days after last modification:
 mechanism for rehydraring from cold/archive
 
 
+<hr />
 
 ## Authorization
 
