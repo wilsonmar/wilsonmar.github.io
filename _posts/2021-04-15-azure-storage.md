@@ -95,6 +95,9 @@ If available in your choice of region:
    <td style="text-align: center;" width="60">
    <p>x<strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
    </td>
+   <td style="text-align: center;" width="60">
+   <p>x<strong><a href="#GRS" title="Geo-Redundant Storage">ZGRS</a></strong></p>
+   </td>
    <td style="text-align: center;" width="66">
    <p><strong><a href="#RA-GRS" title="Geo-Zone Redundant Storage">RA-GRS</a></strong></p>
    </td>
@@ -108,6 +111,9 @@ If available in your choice of region:
    </td>
    <td style="text-align: center;" width="60">
    <p>3</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>6</p>
    </td>
    <td style="text-align: center;" width="60">
    <p>6</p>
@@ -132,6 +138,9 @@ If available in your choice of region:
    <td style="text-align: center;" width="66">
    <p>Y</p>
    </td>
+   <td style="text-align: center;" width="66">
+   <p>Y</p>
+   </td>
    </tr>
 
    <tr valign="top"><td>
@@ -144,6 +153,9 @@ If available in your choice of region:
    <p>&nbsp;</p>
    </td>
    <td style="text-align: center;" width="60">
+   <p>Y</p>
+   </td>
+   <td style="text-align: center;" width="66">
    <p>Y</p>
    </td>
    <td style="text-align: center;" width="66">
@@ -162,6 +174,9 @@ If available in your choice of region:
    </td>
    <td style="text-align: center;" width="60">
    <p>&nbsp;</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p style="text-align: center;">Y</p>
    </td>
    <td style="text-align: center;" width="66">
    <p style="text-align: center;">Y</p>
@@ -185,6 +200,10 @@ If available in your choice of region:
    GPV1,
    GPV2,
    Blob
+   </td><td style="text-align: center;" width="66">
+   GPV1,
+   GPV2,
+   Blob
    </td></tr>
 
    <tr valign="top"><td>
@@ -193,7 +212,7 @@ If available in your choice of region:
    server rack
    </td><td style="text-align: center;" width="60">
    avail. zone
-   </td><td style="text-align: center;" width="60" colspan="2">
+   </td><td style="text-align: center;" width="60" colspan="3">
    region
    </td></tr>
    </table>
