@@ -65,12 +65,14 @@ The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segreg
 A map of stations offering Ethanol-free premium gasoline is at <a target="_blank" href="https://www.pure-gas.org/extensions/map.html">pure-gas.org/extensions/map.html</a>. My wife used it to figure out where I should stop along a route from Florida to Montana. It was difficult because we had to figure out where I was on the website's map. She also had to calculate how much further I could go with remaining gas. We managed to stay married after that.
 
 
-## Railroads #
+## Railroads Westward #
 
 <a target="_blank" href="https://www.amtrak.com/empire-builder-train">
 Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 46 hours.
 
 <a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train"><img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
+
+<a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the moutains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
 
 
 <a name="DownEastCoast"></a>

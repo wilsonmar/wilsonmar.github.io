@@ -570,12 +570,40 @@ Acceleration Data Transfers, also called Dynamic Site Acceleration (DSA), accele
 
 <hr />
 
+<a name="StorageAccountKinds"></a>
+
+## Storage Account Kinds
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UzTtastcBsk" title="Aug 5, 2019 by Adam Marczak">VIDEO</a>:
+When creating a storage account, the combination of Performance and Account kind:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr  align="right"><th align="left"> Blob Type 
+   </th><th> Standard
+   </th><th> Premium
+   </th></tr> 
+<tr valign="top"><td> <a href="#AppendBlobs">Storage general purpose V2</a>
+   </td><td align="right"> Yes
+   </td><td align="right"> Yes
+   </td></tr>
+<tr valign="top"><td> <a href="#AppendBlobs">Blob Storage</a>
+   </td><td align="right"> Yes
+   </td><td align="right"> -
+   </td></tr>
+<tr valign="top"><td> <a href="#BlockBlobs">Block Blob Storage</a>
+   </td><td align="right"> -
+   </td><td align="right"> Yes
+   </td></tr>
+<tr valign="top"><td> <a href="#PageBlobs">File Storage</a>
+   </td><td align="right"> -
+   </td><td align="right"> Yes
+   </td></tr>
+</table>
+
+
 <a name="Blobs"></a>
 
 ## Blob service storage types
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h1m51s">VIDEO</a>
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h47m34s">GUI</a>
 
 Blob data stands for <strong>Binary Large OBject</strong> data. 
 
@@ -611,7 +639,7 @@ Types of blobs in Azure blob storage:
 
 * <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>]
 
-   Thus, block blobs are optimized for streaming and storing cloud objects.
+   Thus, block blobs are optimized for <strong>streaming</strong> and storing cloud objects.
 
    REMEMBER: Block blob storage has its own Storage Account Type for LRS replication only and Premium performance tier only.
 
