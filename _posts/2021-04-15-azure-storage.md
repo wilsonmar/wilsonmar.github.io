@@ -1667,6 +1667,8 @@ READ: Azure Quickstart Templates: Cloud Storage Easier</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=-3k0hhngt7o&list=RDCMUC0m-80FnNY2Qb7obvTL_2fA&index=20">How to automatically manage Azure Blobs lifecycles | Azure Tips and Tricks</a>
 
+https://towardsdatascience.com/datastore-choices-sql-vs-nosql-database-ebec24d56106
+
 
 ## More about Azure #
 
