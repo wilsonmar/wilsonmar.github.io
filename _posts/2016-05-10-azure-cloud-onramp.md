@@ -97,7 +97,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    <a target="_blank" href="https://adf.azure.com/">adf.azure.com</a>
    </td><td>-
    </td></tr>
-<tr valign="top"><td> Traffic Manager </td><td align="right">
+<tr valign="top"><td> Traffic Manager </td><td>
    <strong><em>{acct}</em>.trafficmanager.net</strong>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
    </td></tr>
@@ -131,12 +131,12 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    {eastus}.api.azureml.ms/discovery</a>
    </td><td>App Insights
    </td></tr>
-<tr valign="top"><td> User feedback</td><td>
+<tr valign="top"><td align="right"> User feedback</td><td>
    <a target="_blank" href="https://feedback.azure.com/forums/34192--general-feedback">
-   feedback.azure.com/forums/34192--general-feedback</a>
+   feedback.azure.com<br />/forums/34192--general-feedback</a>
    </td><td>Product suggestions
    </td></tr>
-<tr valign="top"><td> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td>
+<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td>
    <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
    </td><td>-
    </td></tr>
