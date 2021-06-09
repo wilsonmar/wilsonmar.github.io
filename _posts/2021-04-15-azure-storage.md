@@ -17,8 +17,8 @@ comments: true
 {% include _toc.html %}
 
 
-There are a lot of <a href="#Overviews">overview/summary/high-level tutorials and videos on Azure storage</a>. 
-But these notes I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a> aim for a <strong>deep</strong> yet concise presentation, using tables that organize complex information to make them easier to visualize and remember.
+Unlike a lot of <a href="#Overviews">overview/summary/high-level tutorials and videos on Azure storage</a>, 
+this article is a <strong>deep</strong> yet concise presentation, using tables that organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/storage/">azure.microsoft.com/en-us/product-categories/storage</a>
 
@@ -26,7 +26,7 @@ But these notes I took while studying for <a target="_blank" href="https://wilso
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a> varies by several dimensions:
    
-   A. Region
+   A. Region (which have different costs)
 
    B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
    
@@ -47,9 +47,6 @@ But these notes I took while studying for <a target="_blank" href="https://wilso
 ## Types of Storage and Data
 
 If available in your choice of region:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
-<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Type </th><th> Data </th><th> Service </th></tr>
@@ -72,6 +69,11 @@ If available in your choice of region:
    </td></tr>
 </table>
 
+NOTE: Microsoft charges a Premium for storage
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
+
 
 <hr />
 
@@ -93,10 +95,10 @@ If available in your choice of region:
    <p><strong><a href="#ZRS" title="Zone Redundant Storage">ZRS</a></strong></p>
    </td>
    <td style="text-align: center;" width="60">
-   <p>x<strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
+   <p><strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
    </td>
    <td style="text-align: center;" width="60">
-   <p>x<strong><a href="#GRS" title="Geo-Redundant Storage">ZGRS</a></strong></p>
+   <p><strong><a href="#GRS" title="Geo-Redundant Storage">ZGRS</a></strong></p>
    </td>
    <td style="text-align: center;" width="66">
    <p><strong><a href="#RA-GRS" title="Geo-Zone Redundant Storage">RA-GRS</a></strong></p>
@@ -164,7 +166,7 @@ If available in your choice of region:
    </tr>
 
    <tr valign="top"><td>
-   <p>Data can be read from a secondary location after regional disaster</p>
+   <p>Data can be read in the secondary region</p>
    </td>
    <td style="text-align: center;" width="60">
    <p>&nbsp;</p>
@@ -176,7 +178,7 @@ If available in your choice of region:
    <p>&nbsp;</p>
    </td>
    <td style="text-align: center;" width="66">
-   <p style="text-align: center;">Y</p>
+   <p>&nbsp;</p>
    </td>
    <td style="text-align: center;" width="66">
    <p style="text-align: center;">Y</p>
@@ -277,6 +279,71 @@ They will maintain their data but the data are only usable when a disk is attach
    * Standard_RAGRS = Read Access Geographically Redundant Storage
    <br /><br />
 
+<hr />
+
+<a name="Authorization"></a>
+
+## Authorization
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/storage-introduction">DOCS</a>:
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-auth?toc=/azure/storage/blobs/toc.json">Auth. Methods by Storage Type</a>:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr align="center"><th align="left">Storage Type
+   </th><th><a href="#SAS">Shared Access signatures</a>
+   </th><th>AAD
+   </th><th>AD (preview)
+   </th><th>Anon. public read
+   </th></tr>
+
+<tr valign="top" align="center"><td align="left"><a href="#Blobs">Azure Blobs</a>
+   </td><td> Supported
+   </td><td> Supported
+   </td><td>-
+   </td><td> Supported
+   </td></tr>
+
+<tr valign="top" align="center"><td align="left">SMB <a href="#Files">Azure Files</a>
+   </td><td> -
+   </td><td> Supported with <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview">AAD Domain Svcs</a>
+   </td><td> Supported, creds sync'd to AAD
+   </td><td>-
+   </td></tr>
+
+<tr valign="top" align="center"><td align="left">REST <a href="#Files">Files</a>
+   </td><td> Supported
+   </td><td>- 
+   </td><td>NOT!
+   </td><td>-
+   </td></tr>
+
+<tr valign="top" align="center"><td align="left"><a href="#Queues">Azure Queues</a>
+   </td><td> Supported
+   </td><td> Supported
+   </td><td> Supported
+   </td><td>-
+   </td></tr>
+
+<tr valign="top" align="center"><td align="left"><a href="#Files">Azure Tables</a>
+   </td><td> Supported
+   </td><td> Supported
+   </td><td>-
+   </td><td>-
+   </td></tr>
+
+</table>
+
+REMEMBER:
+
+   * Only Azure Blobs can have anonymous public read access.
+
+   * All Storage Types support Shared Key (storage account key).
+
+   * <a href="#SAS">SAS</a> does not support SMB Azure files authorization.
+
+   * AAD does not support authorization of REST accessed Azure Files (use OAuth0 by API Management).
+
+   * AAD does not support authorization of Azure Tables.
 
 <hr />
 
@@ -748,47 +815,6 @@ mechanism for rehydraring from cold/archive
 
 
 <hr />
-
-## Authorization
-
-Every storage request must be authorized.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/storage-introduction">DOCS</a>:
-
-Auth. Methods by Storage Type:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr align="center"><th align="left">Storage Type
-   </th><th>Shared Access signatures
-   </th><th>AAD
-   </th><th>AD (preview)
-   </th><th>Anon. public read
-   </th></tr>
-
-<tr valign="top" align="center"><td align="left"><a href="#Blobs">Blobs</a>
-   </td><td> Supported
-   </td><td> Supported
-   </td><td>-
-   </td><td> Supported
-   </td></tr>
-
-<tr valign="top" align="center"><td align="left">SMB <a href="#Files">Files</a>
-   </td><td> -
-   </td><td> Supported with AAD Domain Svcs
-   </td><td> Supported, creds sync'd to AAD
-   </td><td>-
-   </td></tr>
-
-<tr valign="top" align="center"><td align="left">REST <a href="#Files">Files</a>
-   </td><td> Supported
-   </td><td>- 
-   </td><td>-
-   </td><td>-
-   </td></tr>
-
-</table>
-
-PROTIP: All support Storage Account Shared (SAS) Keys.
 
 
 <a name="SAS"></a>

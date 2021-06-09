@@ -280,10 +280,11 @@ Azure Front Door doesn't route by geo (DNS).
 
 ![az-loadbal-1149x801](https://user-images.githubusercontent.com/300046/119789303-2e857b80-be90-11eb-891e-315f7b41040f.png)
 
-Traffic Manager is not georgraphic tied to regions. 
+Traffic Manager is not geographically tied to Azure regions.
+
 It uses DNS to direct requests to the most appropriate endpoint.
 
-https://<em>your_name</em>.trafficmanager.net
+<tt>https://<em>your_name</em>.trafficmanager.net</tt>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-routing-methods">DOCS</a>:
 Routes based on 7 different methods: 

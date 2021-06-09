@@ -552,6 +552,11 @@ by Steve Winton, Senior Partner Engineer, GitHub
 https://github.com/actionsdesk</a>
 
 
+https://dev.to/github/export-github-issues-commit-history-and-more-github-artifact-exporter-2ok6
+Export GitHub Issues, Commit History and More | GitHub Artifact Exporter 
+by Davide 'CoderDave' Benvegnù
+
+
 ## More #
 
 This is one of a series on Git and GitHub:

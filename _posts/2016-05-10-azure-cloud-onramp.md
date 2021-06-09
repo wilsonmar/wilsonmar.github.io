@@ -20,6 +20,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
 
 ## URLs for Microsoft and Azure
 
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
 <tr valign="top"><td> Marketing </td><td>
@@ -37,21 +38,21 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td>Live classes & cert. vouchers
    </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
-   <a target="_blank" href="https://account.windowsazure.com/signup/"><strong><u>
-   account.windowsazure.com/signup</u></strong></a>
+   <a target="_blank" href="https://account.windowsazure.com/signup/">
+   account.windowsazure.com/signup</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Support </td><td align="right">
-   <a target="_blank" href="https://support.azure.com/"><strong><u>
-   support.microsoft.com</u></strong></a>
+   <a target="_blank" href="https://support.azure.com/">
+   support.microsoft.com</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Support tickets </td><td align="right">
-   <a target="_blank" href="https://serviceshub.microsoft.com"><strong><u>serviceshub.microsoft.com</u></strong></a>
+   <a target="_blank" href="https://serviceshub.microsoft.com">serviceshub.microsoft.com</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> User Self-Service password reset</td><td align="right">
-   <a target="_blank" href="https://myapps.microsoft.com"><strong><u>myapps.microsoft.com</u></strong></a>
+   <a target="_blank" href="https://myapps.microsoft.com">myapps.microsoft.com</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> All Admin Centers </td><td>
@@ -60,40 +61,40 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Account Portal </td><td align="right">
-   <a target="_blank" href="https://account.azure.com"><strong><u>account.azure.com</u></strong></a><br /><em>(can be slow, no federation?)</em>
+   <a target="_blank" href="https://account.azure.com">account.azure.com</a><br /><em>(can be slow, no federation?)</em>
    </td><td> Accounts under departments
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td align="right">
-   <a target="_blank" href="https://portal.azure.com/"><strong><u>portal.azure.com</u></strong></a><br />
+   <a target="_blank" href="https://portal.azure.com/">portal.azure.com</a><br />
    for <a href="#USGov">US Government</a>:
    <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> 
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Cloud Shell </td><td align="right">
-   <a target="_blank" href="https://shell.azure.com/"><strong><u>
-   shell.azure.com</u></strong></a>
+   <a target="_blank" href="https://shell.azure.com/">
+   shell.azure.com</a>
    </td><td> CLI
    </td></tr>
 <tr valign="top"><td> Azure Enterprise Portal </td><td align="right">
-   <a target="_blank" href="https://ea.azure.com"><strong><u>ea.azure.com</u></strong></a>
+   <a target="_blank" href="https://ea.azure.com">ea.azure.com</a>
    </td><td> Define departments
    </td></tr>
 <tr valign="top"><td> <a href="#AAD">Azure AD</a> </td><td align="right">
-   <a target="_blank" href="https://aad.portal.azure.com/"><strong><u>aad.portal.azure.com</u></strong></a>
+   <a target="_blank" href="https://aad.portal.azure.com/">aad.portal.azure.com</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Video Indexer </td><td align="right">
-   <a target="_blank" href="https://api-portal.videoindexer.ai/"><strong><u>
-   api-portal.videoindexer.ai</u></strong></a>
+   <a target="_blank" href="https://api-portal.videoindexer.ai/">
+   api-portal.videoindexer.ai</a>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/microsoft-ai/#video-indexer">BLOG</a>
    </td></tr>
 <tr valign="top"><td> Metrics Advisor </td><td align="right">
-   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/"><strong><u>
-   metricsadvisor.azurewebsites.net</u></strong></a>
+   <a target="_blank" href="https://metricsadvisor.azurewebsites.net/">
+   metricsadvisor.azurewebsites.net</a>
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-monitoring/">Monitoring</a>
    </td></tr>
 <tr valign="top"><td> Azure Data Factory </td><td align="right">
-   <a target="_blank" href="https://adf.azure.com/"><strong><u>adf.azure.com</u></strong></a>
+   <a target="_blank" href="https://adf.azure.com/">adf.azure.com</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Traffic Manager </td><td align="right">
@@ -101,39 +102,43 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    </td><td><a target="_blank" href="https://wilsonmar.github.io/azure-networking/">more</a>
    </td></tr>
 <tr valign="top"><td> Machine Learning studio </td><td align="right">
-   <a target="_blank" href="https://ml.azure.com/"><strong><u>
-   ml.azure.com</u></strong></a>
+   <a target="_blank" href="https://ml.azure.com/">
+   ml.azure.com</a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
 <tr valign="top"><td> Lang. Understanding</td><td align="right">
-   North America: <a target="_blank" href="https://www.luis.ai/"><strong><u>www.luis.ai</u></strong></a><br />
-   Europe: <a target="_blank" href="https://eu.luis.ai/"><strong><u>eu.luis.ai</u></strong></a><br />
-   Australia: <a target="_blank" href="https://au.luis.ai/"><strong><u>au.luis.ai</u></strong></a>
+   North America: <a target="_blank" href="https://www.luis.ai/">www.luis.ai</a><br />
+   Europe: <a target="_blank" href="https://eu.luis.ai/">eu.luis.ai</a><br />
+   Australia: <a target="_blank" href="https://au.luis.ai/">au.luis.ai</a>
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai">AI tutorial</a>
    </td></tr>
 <tr valign="top"><td> Single-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/"><strong><u>login.microsoftonline.com/{contoso}.onmicrosoft.com</u></strong></a>
+   <a target="_blank" href="https://login.microsoftonline.com//contoso.onmicrosoft.com/">login.microsoftonline.com/{contoso}.onmicrosoft.com</a>
    </td><td>-
    </td></tr>   
 <tr valign="top"><td> Multi-tenant </td><td>
-   <a target="_blank" href="https://login.microsoftonline.com/common/"><strong><u>
-   login.microsoftonline.com/common</u></strong></a>
+   <a target="_blank" href="https://login.microsoftonline.com/common/">
+   login.microsoftonline.com/common</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> Tech Community </td><td>
-   <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure/ct-p/Azure"><strong><u>
-   techcommunity.microsoft.com/t5/azure/ct-p/Azure</u></strong></a>
+   <a target="_blank" href="https://techcommunity.microsoft.com/t5/azure/ct-p/Azure">
+   techcommunity.microsoft.com/t5/azure/ct-p/Azure</a>
    </td><td>-
    </td></tr>
 <tr valign="top"><td> AzureML Metrics </td><td>
-   <a target="_blank" href="https://eastus.api.azureml.ms/discovery"><strong><u>
-   {eastus}.api.azureml.ms/discovery</u></strong></a>
+   <a target="_blank" href="https://eastus.api.azureml.ms/discovery">
+   {eastus}.api.azureml.ms/discovery</a>
    </td><td>App Insights
    </td></tr>
 <tr valign="top"><td> User feedback</td><td>
-   <a target="_blank" href="https://feedback.azure.com/forums/34192--general-feedback"><strong><u>
-   feedback.azure.com/forums/34192--general-feedback</u></strong></a>
+   <a target="_blank" href="https://feedback.azure.com/forums/34192--general-feedback">
+   feedback.azure.com/forums/34192--general-feedback</a>
    </td><td>Product suggestions
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td>
+   <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
+   </td><td>-
    </td></tr>
 </table>
 
@@ -915,7 +920,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
 ## Portal.azure.com GUI
 
 
-1. Initial entry pop-up: Azure Advisor
+1. On initial (first time) new Subscription entry pop-up: Azure Advisor
 
    ### Azure Advisor
 

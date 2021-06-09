@@ -18,8 +18,6 @@ comments: true
 
 There are a lot of summary/high-level tutorials and videos. But <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">this article</a> skips the generalized sales hype and presents a <strong>"deep dive" with automation</strong> with logical and succinct hands-on steps so you get perficient quickly.
 
-transitions TFS and VSTS to 
-
 ## Good Turmoil
 
 <a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">Azure DevOps was a big deal for Microsoft Sep 16, 2018</a>.
@@ -27,8 +25,8 @@ transitions TFS and VSTS to
 <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8" title="Microsoft's DevOps Vision">VIDEO</a>:
 Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>), Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: Global DevOps Bootcamp 2018 Keynote</a> how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/resources/continuous-delivery-and-release-automation/">Forrester's 2018 Continuous Delivery And Release Automation" market assesement</a> ranked Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA):
-<img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg"></a>
+Forrester's 2018 Continuous Delivery And Release Automation" market assesement ranked Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA):
+<img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg">
 
 NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
 
@@ -78,6 +76,7 @@ Other video tutorials on AZ-400:
 
    * <a target="_blank" href="https://cloudacademy.com/learning-paths/az-400-exam-prep-microsoft-azure-devops-solutions-1-1368/">CloudAcademy.com learning path</a>
 
+   *  Paul Hacker created on 7/11/2019 for <a target="_blank" href="https://www.linkedin.com/learning/paths/prepare-for-the-designing-and-implementing-microsoft-devops-solutions-exam-az-400">LinkedIn Learning</a>
 
 ## DevOps Esssentials & Exam discount
 
@@ -148,8 +147,9 @@ PROTIP: Azure DevOps also makes use of other Azure services and client executabl
 
 * Azure <strong>IAM</strong> access manager
 
-* <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">https://app.vssps.visualstudio.com/</a>
-   Visual Studio is <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
+* <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
+   replaces <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">Visual Studio at https://app.vssps.visualstudio.com/</a>
+
 
    <a name="ARM"></a>
 
