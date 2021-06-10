@@ -37,6 +37,10 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    <a target="_blank" href="https://esi.microsoft.com/"><strong>esi.microsoft.com</strong></a>
    </td><td>Live classes & cert. vouchers
    </td></tr>
+<tr valign="top"><td> Tech Talks</td><td align="right">
+   <a target="_blank" href="https://mtt.eventbuilder.com/MTTUSCANADA">mtt.eventbuilder.com/MTTUSCANADA</a>
+   </td><td>-
+   </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/">
    account.windowsazure.com/signup</a>

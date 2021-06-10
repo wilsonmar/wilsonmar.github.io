@@ -18,15 +18,15 @@ comments: true
 
 This page is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
 
-Some say "Bash" is derived from "Bourne again Shell". Other say the Japanese word <em>ibasho</em> which means "a place where you can feel like yourself."<a target="_blank" href="https://www.wired.com/story/group-house-covid-risk-points/">*</a>
+You need to know this because Apple is switching defaults from Bash ("Bourne again Shell" as in Linux flavors) to Zsh (Z shell), which requires some configuration. Some aspects of Bash scripts ("Bashisms") will fail when run in Zsh.
 
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
-NOTE: This page is still actively under construction.
-
-A prime example of a production shell script is
+An example of a production shell script is
 <a target="_blank" href="https://github.com/toniblyx/prowler">
 Prowler: AWS CIS Benchmark Tool at https://github.com/toniblyx/prowler</a> for AWS Security Best Practices Assessment, Auditing, Hardening and Forensics Readiness.
+
+NOTE: This page is still actively under construction.
 
 
 
