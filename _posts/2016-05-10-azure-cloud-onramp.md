@@ -3,7 +3,7 @@ layout: post
 title: "Azure Cloud Onramp"
 excerpt: "Get to know Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
 tags: [cloud, azure]
-date: "2021-05-10"
+date: "2021-06-10"
 file: "azure-cloud-onramp"
 image:
 # az-logo-2021-1900x500.png
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a deep-dive tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. This is the hands-on step-by-step tutorial I would give to an administrator getting up and running on Azure cloud.
+This is a deep-dive hands-on tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. Search for what to "REMEMBER" to pass Microsoft's AZ-900 and AZ-104 exams.
 
 ## URLs for Microsoft and Azure
 
@@ -136,7 +136,7 @@ This is a deep-dive tutorial with commentary along the way, covering basic termi
    feedback.azure.com<br />/forums/34192--general-feedback</a>
    </td><td>Product suggestions
    </td></tr>
-<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td>
+<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td align="right">
    <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
    </td><td>-
    </td></tr>
