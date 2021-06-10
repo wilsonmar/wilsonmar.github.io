@@ -18,7 +18,7 @@ comments: true
 
 This page is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
 
-"Bash" is derived from the Japanese word <em>ibasho</em> which means "a place where you can feel like yourself."<a target="_blank" href="https://www.wired.com/story/group-house-covid-risk-points/">*</a>
+Some say "Bash" is derived from "Bourne again Shell". Other say the Japanese word <em>ibasho</em> which means "a place where you can feel like yourself."<a target="_blank" href="https://www.wired.com/story/group-house-covid-risk-points/">*</a>
 
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
