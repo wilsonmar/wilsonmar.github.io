@@ -39,7 +39,7 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    </td></tr>
 <tr valign="top"><td> Tech Talks</td><td align="right">
    <a target="_blank" href="https://mtt.eventbuilder.com/MTTUSCANADA">mtt.eventbuilder.com/MTTUSCANADA</a>
-   </td><td>-
+   </td><td>by MS Support
    </td></tr>
 <tr valign="top"><td> Sign-up: </td><td>
    <a target="_blank" href="https://account.windowsazure.com/signup/">
