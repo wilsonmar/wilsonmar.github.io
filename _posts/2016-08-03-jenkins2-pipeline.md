@@ -16,15 +16,12 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article shows you how to install and configure 
-Jenkins version 2 for Continuous Delivery (CD) as well as Continuouse Integration (CI)
+This article describes using Jenkins version 2 for Continuouse Integration (CI)
 using <a href="#Groovy">Groovy DSL scripts</a>
 
 This takes a deeper dive than <a target="_blank" href="https://github.com/jenkinsci/pipeline-plugin/blob/master/TUTORIAL.md">
 The Pipeline tutorial</a>,
 expanded for production use in an enterprise setting.
-
-{% include _intro.html %}
 
 
 ## Jenkins2 highlights #
@@ -52,11 +49,12 @@ Summary of Jenkins2 features: [36:00]
 * Resumability: Restart from saved checkpoints (Cloudbees feature)
 <br /><br />
 
+See <a target="_blank" href="https://anoni.sh/jenkins-pipeline">https://anoni.sh/jenkins-pipeline</a> and <a target="_blank" href="https://anoni.sh/pipeline-syntax">anoni.sh/pipeline-syntax</a>
+
 
 ## Install Jenkins Pipeline plugin #
 
-The assumption here is that 
-you have followed 
+The assumption here is that you have followed 
    [my Jenkins Setup tutorial](/jenkins-setup/) 
    to install the latest version of Jenkins,
    which went Version 2 April 26, 2016 after over 10 years at v1.
