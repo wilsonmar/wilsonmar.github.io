@@ -633,9 +633,9 @@ compiling and linking.
 Having additional scripts in your path can confuse software installed via
 Homebrew if the config script overrides a system or Homebrew provided
 script of the same name. We found the following "config" scripts:
-    /Users/mac/miniconda2/bin/python-config
-    /Users/mac/miniconda2/bin/python2-config
-    /Users/mac/miniconda2/bin/python2.7-config
+    /Users/mac/miniconda3/bin/python-config
+    /Users/mac/miniconda3/bin/python2-config
+    /Users/mac/miniconda3/bin/python2.7-config
 {% endhighlight %}
 
    QUESTION: Is there a way to suppress these messages?
@@ -858,11 +858,11 @@ to install packages from the web.
 Searching for pip
 Best match: pip 8.1.2
 Adding pip 8.1.2 to easy-install.pth file
-Installing pip script to /Users/mac/miniconda2/bin
-Installing pip3.5 script to /Users/mac/miniconda2/bin
-Installing pip3 script to /Users/mac/miniconda2/bin
+Installing pip script to /Users/mac/miniconda3/bin
+Installing pip3.5 script to /Users/mac/miniconda3/bin
+Installing pip3 script to /Users/mac/miniconda3/bin
 &nbsp;
-Using /Users/mac/miniconda2/lib/python2.7/site-packages
+Using /Users/mac/miniconda3/lib/python2.7/site-packages
 Processing dependencies for pip
 Finished processing dependencies for pip
    </pre>
@@ -917,9 +917,9 @@ Installing setuptools, pip, wheel...
   Complete output from command /Users/mac/gits/wils...pable/one/bin/python - setuptools pip wheel:
   Traceback (most recent call last):
   File "&LT;stdin>", line 4, in &LT;module>
-  File "/Users/mac/miniconda2/lib/python2.7/tempfile.py", line 32, in &LT;module>
+  File "/Users/mac/miniconda3/lib/python2.7/tempfile.py", line 32, in &LT;module>
     import io as _io
-  File "/Users/mac/miniconda2/lib/python2.7/io.py", line 51, in &LT;module>
+  File "/Users/mac/miniconda3/lib/python2.7/io.py", line 51, in &LT;module>
     import _io
 ImportError: dlopen(/Users/mac/gits/wilsonmar/shippable/one/lib/python2.7/lib-dynload/_io.so, 2): Symbol not found: __PyCodecInfo_GetIncrementalDecoder
   Referenced from: /Users/mac/gits/wilsonmar/shippable/one/lib/python2.7/lib-dynload/_io.so
@@ -928,15 +928,15 @@ ImportError: dlopen(/Users/mac/gits/wilsonmar/shippable/one/lib/python2.7/lib-dy
 ----------------------------------------
 ...Installing setuptools, pip, wheel...done.
 Traceback (most recent call last):
-  File "/Users/mac/miniconda2/bin/virtualenv", line 11, in &LT;module>
+  File "/Users/mac/miniconda3/bin/virtualenv", line 11, in &LT;module>
     sys.exit(main())
-  File "/Users/mac/miniconda2/lib/python2.7/site-packages/virtualenv.py", line 711, in main
+  File "/Users/mac/miniconda3/lib/python2.7/site-packages/virtualenv.py", line 711, in main
     symlink=options.symlink)
-  File "/Users/mac/miniconda2/lib/python2.7/site-packages/virtualenv.py", line 944, in create_environment
+  File "/Users/mac/miniconda3/lib/python2.7/site-packages/virtualenv.py", line 944, in create_environment
     download=download,
-  File "/Users/mac/miniconda2/lib/python2.7/site-packages/virtualenv.py", line 900, in install_wheel
+  File "/Users/mac/miniconda3/lib/python2.7/site-packages/virtualenv.py", line 900, in install_wheel
     call_subprocess(cmd, show_stdout=False, extra_env=env, stdin=SCRIPT)
-  File "/Users/mac/miniconda2/lib/python2.7/site-packages/virtualenv.py", line 795, in call_subprocess
+  File "/Users/mac/miniconda3/lib/python2.7/site-packages/virtualenv.py", line 795, in call_subprocess
     % (cmd_desc, proc.returncode))
 OSError: Command /Users/mac/gits/wils...pable/one/bin/python - setuptools pip wheel failed with error code 1
    </pre>
@@ -1195,7 +1195,7 @@ User data for Vagrant is filed in the directory from which vagrant was used and 
 This advice from 2010</a>.
 
 
-   ### Path to executables #
+### Path to executables #
 
 0. To see what MacOS
 
@@ -1204,10 +1204,10 @@ This advice from 2010</a>.
 
    If you have MiniConda installed:
 
-   <pre>/Users/mac/miniconda2/bin/python
+   <pre>/Users/mac/miniconda3/bin/python
    </pre>
  
-   If you have Anaconda installed:
+   If you have Anaconda installed and your user is "mac":
 
    <pre>/Users/mac/anaconda/bin/python
    </pre>
@@ -1220,7 +1220,7 @@ This advice from 2010</a>.
 
 0. For a list of what Python executes:
 
-   <tt><strong>ls ~/miniconda2/bin
+   <tt><strong>ls ~/miniconda3/bin
    </strong></tt>
 
    The response begins with this:
@@ -1245,7 +1245,7 @@ aws         pip2        python2.7-config
 
    Alternately, if Conda was installed:
 
-   <tt>python is hashed (/Users/mac/miniconda2/bin/python)</tt>
+   <tt>python is hashed (/Users/mac/miniconda3/bin/python)</tt>
 
 0. Open a Terminal shell window and issue command:
 
@@ -1309,7 +1309,7 @@ Kyle Purdon</a> offers.
 
    | Version    | File                               | Size    |
    | :--------- | :--------------------------------- | ------: |
-   | Python 2.7 | Miniconda2-latest-MacOSX-x86_64.sh | 20.3 MB |
+   | Python 2.7 | miniconda3-latest-MacOSX-x86_64.sh | 20.3 MB |
    | Python 3.5 | Miniconda3-latest-MacOSX-x86_64.sh | 23.4 MB |
 
    NOTE: Python3 is not backward compatible with Version 2.
@@ -1320,7 +1320,7 @@ Kyle Purdon</a> offers.
    navigate to your Downloads folder and run the Python 2.7 script:
 
    <tt><strong>cd ~/Downloads<br />
-   bash Miniconda2-latest-MacOSX-x86_64.sh -b
+   bash miniconda3-latest-MacOSX-x86_64.sh -b
    </strong></tt>
 
    PROTIP: The "-b" option specifies unattended with defaults.
@@ -1328,7 +1328,7 @@ Kyle Purdon</a> offers.
    The response:
 
    <pre>
-Welcome to Miniconda2 4.0.5 (by Continuum Analytics, Inc.)
+Welcome to miniconda3 4.0.5 (by Continuum Analytics, Inc.)
 &nbsp;
 In order to continue the installation process, please review the license
 agreement.
@@ -1471,7 +1471,7 @@ to PATH in your /Users/mac/.bash_profile ? [yes|no]
    <pre>Fetching package metadata: ....
 .Solving package specifications: ..........
 &nbsp;
-Package plan for installation in environment /Users/mac/miniconda2:
+Package plan for installation in environment /Users/mac/miniconda3:
 &nbsp;
 The following packages will be downloaded:
 &nbsp;
@@ -1538,8 +1538,8 @@ The path to Python should be the first in PATH:
 
 0. Open a text editor to ~/.bash_profile and add:
 
-   <tt><strong>export PATH="~/miniconda2/bin:$PATH"<br />
-   export PYTHON_PATH=~/miniconda2/bin/python
+   <tt><strong>export PATH="~/miniconda3/bin:$PATH"<br />
+   export PYTHON_PATH=~/miniconda3/bin/python
    </strong></tt>
 
    When you're done:

@@ -1278,6 +1278,7 @@ References on naming conventions:
    * NetworkWatcherRG
    <br /><br />
 
+
    ### az feedback
 
    PROTIP: If your command doesn't come back, press command+R to reset the browser page.
@@ -1287,6 +1288,20 @@ References on naming conventions:
    To open an issue, run: 
 
    <tt>az feedback</tt>
+
+
+   ### az interactive
+
+1. <a target="_blank" href="https://youtube.com/watch?v=YlbFQtUFOY8">VIDEO</a>: 
+   There is a nifty code completion facility for az commands: 
+
+   <pre><strong>az interactive</strong></pre>
+
+   ![az-onramp-interactive-1000x537](https://user-images.githubusercontent.com/300046/121625006-d920a100-ca2f-11eb-8d7a-acf54906dc0c.png)
+
+1. Press Enter to bypass the "Error loading command module" messages.
+
+1. <tt>az >></tt> is a reminder that within interactive you don't have to type the "az" command, just the sub-command and other parameters.
 
 
    ### Home folder commands
@@ -2528,6 +2543,10 @@ PROTIP: The minimum prior notification will Microsoft give before ending support
    "Public preview" means the feature is available for all Azure customers for beta testing.
 
    GA (General Availability) means
+
+<a target="_blank" href="https://www.youtube.com/watch?v=FsDNmjLIxlI">VIDEO</a>:
+<a target="_blank" href="https://azurecharts.com/status">https://azurecharts.com/status</a>
+provides clickable "heatmap" status, timeline, a quiz, etc.
 
 
 ## References

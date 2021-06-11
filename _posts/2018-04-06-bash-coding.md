@@ -18,7 +18,7 @@ comments: true
 
 This page is a deep dive into the <strong>technical ideosycracies</strong> of shell script files.
 
-You need to know this because Apple is switching defaults from Bash ("Bourne again Shell" as in Linux flavors) to Zsh (Z shell), which requires some configuration. Some aspects of Bash scripts ("Bashisms") will fail when run in Zsh.
+You need to know this because Apple is switching defaults from Bash ("Bourne again Shell" as in Linux flavors) to Zsh (Z shell), which requires some configuration effort (described below). Some aspects of Bash scripts ("Bashisms") will fail when run in Zsh.
 
 This tutorial picks up from <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/README.md">this README</a> which provides someone new to Macs specific steps to configure and run scripts to install apps on Macs. So first finish reading that about "shbangs" and grep for Bash shell versions.
 
