@@ -147,8 +147,12 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    </td><td>-
    </td></tr>
 <tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td align="right">
-   <a target="_blank" href="https://appcenter.ms/">appcenter.ms</a>
+   <a target="_blank" href="https://appcenter.ms/">appcenter<strong>.ms</strong></a>
    </td><td>mobile, etc.
+   </td></tr>
+<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-compute">Azure Compute</a></td><td align="right">
+   <em>{app_service}</em><strong>azurewebsites.net</strong>
+   </td><td>App service
    </td></tr>
 </table>
 
