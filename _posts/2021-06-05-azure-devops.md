@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Azure DevOps"
-excerpt: "Microsoft's DevSecOps for automated CI/CD pipelines in the cloud"
+excerpt: "Pass Microsoft's AZ-400 on DevSecOps for automated CI/CD pipelines in the Azure cloud and be a SRE"
 tags: [devops, devsecops]
-date: "2021-05-26"
+date: "2021-06-16"
 file: "azure-devops"
 image:
 # azure-devops-products-1900x400-21605.jpg

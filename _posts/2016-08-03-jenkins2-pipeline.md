@@ -51,35 +51,43 @@ Summary of Jenkins2 features: [36:00]
 
 See <a target="_blank" href="https://anoni.sh/jenkins-pipeline">https://anoni.sh/jenkins-pipeline</a> and <a target="_blank" href="https://anoni.sh/pipeline-syntax">anoni.sh/pipeline-syntax</a>
 
+Chris Blackden's <a target="_blank" href="
+https://app.pluralsight.com/library/courses/building-modern-ci-cd-pipeline-jenkins/table-of-contents">1.43 hr Building a Modern CI/CD Pipeline with Jenkins</a> makes use of his <a target="_blank" href="https://github.com/devbyaccident/azure-voting-app-redis">Redis-based Dockerized sample app</a> with yaml to run within AKS.
 
-## Install Jenkins Pipeline plugin #
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=f40e709c-ef20-41e4-bd02-b8203021e380">VIDEO</a>: In your GitHub account settings, create a new personal access token (PAT) for a connection to use https://api.github.com with just these permissions:
 
-The assumption here is that you have followed 
+   * admin: repo_hook
+   * repo
+   * repo: status
+   <br /><br />
+
+   ### Install Jenkins Pipeline plugin #
+
+1. The assumption here is that you have followed 
    [my Jenkins Setup tutorial](/jenkins-setup/) 
    to install the latest version of Jenkins,
    which went Version 2 April 26, 2016 after over 10 years at v1.
 
-Additionally, you have followed
+1. Additionally, you have followed
    [my Jenkins plugins tutorial](/jenkins-plugins/) 
    to install the latest version of Jenkins2
    and the <strong>Pipeline</strong> plugin<br />
 
-   Install the "Pipeline" plug-in (in Manage Jenkins, Manage Plugins, Available) at<br />
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=edc23301-cfc0-4712-956a-bcb2cb27d0fc">VIDEO</a>: Install the "Pipeline" plug-in (in Manage Jenkins, Manage Plugins, Available) at<br />
    <a target="_blank" href="https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin">
    https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin</a>
 
    PROTIP: Under the covers, Git clients use
    https://developer.github.com/v3/repos/hooks/
 
-<hr />
 
-<a name="Pipeline"></a> 
+   <a name="Pipeline"></a> 
 
-## Create Pipeline item type #
+   ## Create Pipeline item type #
 
-0. At the Jenkins Dashboard (root URL for Jenkins), click <strong>New Item</strong>.
+1. At the Jenkins Dashboard (root URL for Jenkins), click <strong>New Item</strong>.
 
-0. Type the job name (such as "todos1.java.v01").
+1. Type the job name (such as "todos1.java.v01").
 
    PROTIP: Define a standard naming convention for Jenkins job names.
    Have the name with more than just the component name.
@@ -93,14 +101,14 @@ Additionally, you have followed
    PROTIP: As the last part of a name, specify a version number, staring with "v01".
    This would allow simultaneous running of jobs which need to have different configurations.
 
-0. Select <strong>Pipeline</strong> (instead of Freestyle). Click OK.
+1. Select <strong>Pipeline</strong> (instead of Freestyle). Click OK.
 
    <amp-img alt="jenkins2 item menu 20160811-650x618-i12.jpg" width="650" height="618" src="https://cloud.githubusercontent.com/assets/14143059/17595155/1ef08a70-5fa9-11e6-9721-24401896ab00.jpg"></amp-img>
 
 
-### "Build Triggers" #
+   ### "Build Triggers" #
 
-<img align="right" alt="jenkins2 build triggers 20160811-289x521-i12" src="https://cloud.githubusercontent.com/assets/14143059/17595360/022c2f7e-5faa-11e6-952f-c66a45820d47.jpg">
+   <img align="right" alt="jenkins2 build triggers 20160811-289x521-i12" src="https://cloud.githubusercontent.com/assets/14143059/17595360/022c2f7e-5faa-11e6-952f-c66a45820d47.jpg">
 
    The "Build Triggers" section provide a variety of options.
    Some check boxes are mutually exclusive, such as "Build periodically".

@@ -144,6 +144,10 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
    </td><td>-
    </td></tr>
+<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-devops">Azure DevOps</a></td><td align="right">
+   <a target="_blank" href="https://appcenter.ms/">appcenter.ms</a>
+   </td><td>mobile, etc.
+   </td></tr>
 </table>
 
 
