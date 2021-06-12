@@ -1150,6 +1150,16 @@ User Defined Routes and NVA (Network V A)
 
 contosofashions25127.azurewebsites.net
 
+## Competitors
+
+Alternatives to monitoring:
+
+* Dynatrace
+* New Relic
+* Naggios
+* Zabbix
+<br /><br />
+
 
 ## More about Azure #
 
