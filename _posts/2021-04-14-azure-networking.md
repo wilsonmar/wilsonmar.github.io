@@ -35,6 +35,72 @@ This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
+## Virtual Networks resources
+
+1. In the top Search field, type enough of <strong>Virtual network</strong> and press return to select the service. Its menu:
+
+   * Address space
+   * Connected devices
+   * <a href="#Subnets">Subnets</a>
+   * <a href="#DDoS">DDoS protection</a>
+   * <a href="#Firewall">Firewall</a>
+   * Security
+   * <a href="#DNS">DNS servers</a>
+   * <a href="#Peerings">Peerings</a>
+   * <a href="#Endpoints">Service Endpoints</a>
+   * <a href="#PrivateEndpoints">Private endpoints</a>
+   * <a href="#Properties">Properties</a>
+   <br /><br />
+
+<a name="Subnets"></a>
+
+## Subnets
+
+Subnets group
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Subnet Name </th><th> Address range </th><th> IPv4 available addr. </th></tr>
+<tr valign="top"><td> front   </td><td> 10.0.1.0/24 </td><td> 249 </td></tr>
+<tr valign="top"><td> back    </td><td> 10.0.2.0/24 </td><td> 249 </td></tr>
+<tr valign="top"><td> bastion </td><td> 10.0.3.0/24 </td><td> 250 </td></tr>
+</table>
+
+
+## Networking with VMs
+
+Define Networking when creating a Virtual Machine:
+
+1. Define a VM, then specify it's networking:
+
+   PROTIP: Define conventions for naming variables in PowerShell:
+
+   <pre>$rgName = "TestGroup"
+$myLocation = "eastus"
+$vmName = "FileSystemTestVM"
+$vnetName = "TestGroupVnet"
+$subnetName = "default"
+$nicName = "newnic"
+&nbsp;
+# Deallocate vm:
+Stop-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Get VM config:
+$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Create New VNet:
+$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
+   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
+&nbsp;
+# Get info for backend subnet:
+$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
+$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
+   </pre>
+
+The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subnet.
+
+5 addresses in each subnet are reserved by Azure for overhead functionality.
+
+
 
 ## VNets (Virtual Networks)
 
@@ -160,37 +226,6 @@ Network security groups (NSGs) are used restrict network traffic within the virt
 Azure Bastion allows management access into VMs through SSH or remote desktop protocol (RDP) without exposing the VMs directly to the internet.
 
 Additionally, auditing of outgoing traffic is usually a regulatory requirement for many commercial systems and can help to prevent public disclosure of private information. DLP (Data Loss Prevention)
-
-
-## Naming conventions
-
-1. PROTIP: Define conventions for naming variables in PowerShell:
-
-   <pre>$rgName = "TestGroup"
-$myLocation = "eastus"
-$vmName = "FileSystemTestVM"
-$vnetName = "TestGroupVnet"
-$subnetName = "default"
-$nicName = "newnic"
-&nbsp;
-# Deallocate vm:
-Stop-AzVM -Name $vmName -ResourceGroupName $rgName
-&nbsp;
-# Get VM config:
-$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
-&nbsp;
-# Create New VNet:
-$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
-   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
-&nbsp;
-# Get info for backend subnet:
-$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
-$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
-   </pre>
-
-The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subnet.
-
-5 addresses in each subnet are reserved by Azure for overhead functionality.
 
 
 ## Scaling/Spreading traffic
@@ -721,7 +756,8 @@ Azure VPN Gateways are a type of Azure Virtual network Gateway which allows you 
 You get 10 sandbox sessions per day (FREE) on labs, such as:
 * HANDS-ON 2-HOUR SANDBOX <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway/3-exercise-prepare-azure-and-on-premises-vnets-using-azure-cli-commands">Exercise - Prepare Azure and on-premises virtual networks using Azure CLI commands</a> (Site-To-Site VPN)
 
-<img align="right" src="../images/az-net-site2site.svg">
+<a target="_blank" href="../images/az-net-site2site.svg">
+<img align="right" src="../images/az-net-site2site.svg"></a>
 
 
 Instructions

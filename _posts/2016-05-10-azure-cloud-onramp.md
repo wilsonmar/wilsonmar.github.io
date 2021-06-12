@@ -150,9 +150,10 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    <a target="_blank" href="https://appcenter.ms/">appcenter<strong>.ms</strong></a>
    </td><td>mobile, etc.
    </td></tr>
-<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-compute">Azure Compute</a></td><td align="right">
-   <em>{app_service}</em><strong>azurewebsites.net</strong>
-   </td><td>App service
+<tr valign="top"><td align="right"> <a target="_blank" href="https://wilsonmar.github.io/azure-compute">Azure Service</a></td><td align="left">
+   <em>{app_service}</em><strong>-staging</strong>.azurewebsites.net<br />
+   <em>{app_service}</em>.azurewebsites.net
+   </td><td>staging & prod. slot
    </td></tr>
 </table>
 

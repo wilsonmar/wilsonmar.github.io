@@ -536,17 +536,25 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 
 1. Notice that "My work items" and "My pull requests" are at the Organization level.
 
-   ### Azure DevOps Project
+   ### Create Azure DevOps Project
 
-1. Type a project name, such as "PU".
-1. Leave Visibility as the default "Private".
-1. Click "Advanced".
-1. Leave Version control default of "Git".
-1. Leave Work item process default of "Agile".
-1. Click "Create project". The format of the URL is:
+1. Type a project name, such as "PU". Naming convention: The format of the URL is:
 
    <pre>https://dev.azure.com/<em>YourOrganization</em>/<em>project</em>
    </pre>
+   
+1. Leave Visibility as the default "Private" (not "Public").
+1. Click "Advanced" to reveal more choices.
+1. Leave Version control default of "Git".
+1. Leave Work item process default of "Agile" for Azure Board terminology:
+
+   * Agile
+   * Basic
+   * CMMI
+   * Scrum
+   <br /><br />
+
+1. Click "Create project". 
 
 1. PROTIP: Bookmark the URL on the page for use in the future, such as:<br />
    https://dev.azure.com/wilsonmar0014/PU
