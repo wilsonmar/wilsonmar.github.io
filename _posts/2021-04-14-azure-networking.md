@@ -59,12 +59,27 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
 Subnets group
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Subnet Name </th><th> Address range </th><th> IPv4 available addr. </th></tr>
+<tr><th> Subnet Name </th><th> Address CIDR </th><th> IPv4 available addr. </th></tr>
 <tr valign="top"><td> front   </td><td> 10.0.1.0/24 </td><td> 249 </td></tr>
 <tr valign="top"><td> back    </td><td> 10.0.2.0/24 </td><td> 249 </td></tr>
 <tr valign="top"><td> bastion </td><td> 10.0.3.0/24 </td><td> 250 </td></tr>
 </table>
 
+CIDR = Classless Inter-Domain Routing.
+
+
+## IP Address Ranges
+
+To logically subdivide addresses, the "host identifier" portion of an IP address.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Host CIDR Range </th><th> Bits </th><th> Addresses </th></tr>
+<tr valign="top"><td> /16 </td><td> ? </td><td> 65,000 </td></tr>
+<tr valign="top"><td> /24 </td><td> ? </td><td> 256 </td></tr>
+<tr valign="top"><td> /32 </td><td> ? </td><td> 250 </td></tr>
+</table>
+
+The first 3 addresses Azure takes for its own.
 
 ## Networking with VMs
 

@@ -1103,8 +1103,8 @@ If you have an O'Reilly subscription: <a target="_blank" href="https://learning.
    5. Using looping structures (70 minutes) with common looping structures, such as if, case, for and while.
 
 
-## More on DevOps #
+## More on DevSecOps #
 
-This is one of a series on DevOps:
+This is one of a series on DevSecOps:
 
 {% include devops_links.html %}
