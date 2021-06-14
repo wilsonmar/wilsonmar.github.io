@@ -16,12 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+STATUS: This is actively being edited currently.
+
 Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
 This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Azure cloud onramp</a> for skill at Portal GUI and CLI.
 
 1. In the Portal GUI, G+\ to Search for "Net" and there appears:
 
-   * <a href="#add-network-interface-in-vm">Network interfaces</a>
+   * <a href="#NetworkInterfaces">Network interfaces</a>
    * <a href="#Watcher">Network Watcher</a>
    * Network security groups
    * Network security groups (classic)
@@ -34,6 +36,7 @@ This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
+
 
 ## Virtual Networks resources
 
@@ -51,6 +54,55 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
    * <a href="#PrivateEndpoints">Private endpoints</a>
    * <a href="#Properties">Properties</a>
    <br /><br />
+
+<a name="NetworkInterfaces"></a>
+
+## Network interfaces
+
+Within a particular Virtual Machine:
+
+1. Network Interface
+
+   * Overview
+   * Activity log
+   * Access control (IAM)
+   * Tags
+
+   * IP configurations
+   * DNS servers
+   * Network security group
+   * Properties
+   * Locks
+   * Export template
+
+
+<a name="IPConfigurations"></a>
+
+## Static Public IP Configuration
+
+1. Setup a Network Security Group (NSG) to protect the VM's network interface.
+
+   before making it public.
+
+1. Click "IP configurations" within Network Interface within a particular VM.
+
+1. Click on "ipconfig1", the default Name of the Primary Private IP (PIP) address created automatically.
+
+1. Enable "Public IP address" for the "Choose public IP address" dialog. "+ Create New". Change the Name according to your Naming Conventions.
+
+   "Assignment" (Dynamic or Static) apply only to Basic.
+
+1. Click "Standard" (which costs extra) when working with Availability Zones.
+
+   PROTIP: Unlike AWS, Azure doesn't give you a choice of Public IP address.
+
+   Assignment: Dynamic is the default.
+
+1. Select Assignment: Static and specify an IP address (such as 10.0.1.10)
+1. Save!
+
+   CAUTION: A reboot of the VM is necessary when the IP changes.
+
 
 <a name="Subnets"></a>
 
@@ -76,7 +128,7 @@ To logically subdivide addresses, the "host identifier" portion of an IP address
 <tr><th> Host CIDR Range </th><th> Bits </th><th> Addresses </th></tr>
 <tr valign="top"><td> /16 </td><td> ? </td><td> 65,000 </td></tr>
 <tr valign="top"><td> /24 </td><td> ? </td><td> 256 </td></tr>
-<tr valign="top"><td> /32 </td><td> ? </td><td> 250 </td></tr>
+<tr valign="top"><td> /32 </td><td> ? </td><td> ? </td></tr>
 </table>
 
 The first 3 addresses Azure takes for its own.
@@ -130,6 +182,9 @@ Secure resources within subnets using Network Security Groups (NSGs).
 All resources in a VNet can communicate outbound to the internet, by default.
 
 Azure Virtual Network manages User defined routes (UDR’s). 
+
+
+
 
 
 

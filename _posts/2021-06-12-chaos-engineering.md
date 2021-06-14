@@ -61,14 +61,17 @@ If your leadership attitude is to do the minimal and just recover when needed, t
 
 Here's the workflow:
 
-1. The Gremlin company defines "Game Day" with roles.
+1. Measure the "before" (baseline) metrics:
 
-   * General who defines the schedule, decide on abort conditions.
-   * Commander who implements and executes experiments.
-   * Scribe who records experiments and results.
-   * Observer who correlates results.
+   * MTTD (Mean Time to Detect) - How long did it take for someone to realize there is a problem? The starting point is an event that may not be specifically logged, but inferred from other observations.
 
-1. PROTIP: Measure the "before" (baseline) MTTD & MTTR (Mean Time to Detect and Repair) - How long did it take for the interruption to be detected and then repaired? How quickly and frequently engineers deploy.
+   * MTTM (Mean Time to reMediate) - How long did it take for the interruption to be corrected so production can continue? 
+
+   * MTTR (Mean Time to Repair/Recover) - How long did it take for the interruption to be repaired? 
+
+   * MTTI (Total Time of Impact) to operations.
+
+   * MTBF (Time Between Failures) - How quickly and frequently engineers deploy?
 
 1. Use the email link to setup an Account forever-free individual account. $750/month
 
@@ -80,12 +83,32 @@ Here's the workflow:
 
 1. https://app.gremlin.com/login
 
-1. Review previous RCA (Root Cause Analysis) aka Known Failure Modes to define attack scenarios.
+
+   Jira or "Fire Hydrant" provides an application to maintain a postmortem to display a Postmortum Dashboard to display timelines and metrics.
+
+
+   ### Roles for "Game Day"
+
+1. PROTIP: Hold a "Game Day" to replicate SEV and confirm fix is reliable:
+
+   * General (IMOC = Incident Manager On Call) who defines the schedule, decide on abort conditions.
+
+   * TLOC (Tech Lead On Call) stays focused on technical problem solving.
+
+   * Commander who implements and executes experiments.
+
+   * Scribe who records experiments and results.
+
+   * Observer who correlates results.
 
 
    <a name="FailureModes"></a>
 
    ### Failure Modes
+
+1. Review previous RCA (Root Cause Analysis) aka Known Failure Modes to define attack scenarios.
+
+   NOTE: Gremlin's unique value proposition is that it can turn incident reproduction results into automated scenarios Gremlin can run.
 
 1. Target one of your services to impose failure modes:
 
@@ -102,6 +125,8 @@ Here's the workflow:
    * Inbound HTTP Traffic
    * Outbound HTTP Traffic
    <br /><br />
+
+   NOTE: If you are running on Azure and have failover to another availability center or region (GZRS), Microsoft takes care of the failover process so you shouldn't even notice it occurred.
 
 1. Identify a Linux or Windows server where Gremlin can be installed:
 
@@ -156,7 +181,7 @@ Here's the workflow:
 
    Example result: as Gremlin increases load, typically it sees levels such as:
 
-   1. At 50 ms, the system has enough memory to absorb higher loads without degradation.
+   1. At 50 ms, the system has enough memory to absorb higher loads without degradation. However, the 
    
    2. At 100 ms, requests begins to be queued, so response times reflect time in queue.
    
@@ -185,6 +210,11 @@ Gremlin Certified Chaos Engineering Practitioner  Exam (GCCEP)
 
 You get two attempts to answer 80% of 20 questions on https://gremlin.coassemble.com/
  
+
+## References
+
+Sydney Dekker "Drift into Failure"
+
 
 
 ## More on DevSecOps #
