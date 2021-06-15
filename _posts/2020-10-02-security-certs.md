@@ -276,7 +276,7 @@ Quizzing Tests:
 
    * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017 and is too high general for me.
 
-   * On Udemy <a target="_blank" href="https://mckinsey.udemy.com/course/cissp-certification-practice-exam-1/learn/quiz/4377650#overview">McK</a> <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson courses</a> and <a target="_blank" href="https://www.udemy.com/course/cissp-certification-practice-exam-1/">3 sets of 125 questions in 3 hours</a>. Has a Facebook Groups to join: <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
+   * <a target="_blank" href="https://thorteaches.com/udemy/">On Udemy</a>, <a target="_blank" href="https://mckinsey.udemy.com/course/cissp-certification-practice-exam-1/learn/quiz/4377650#overview">McK</a> <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson courses</a> and <a target="_blank" href="https://www.udemy.com/course/cissp-certification-practice-exam-1/">3 sets of 125 questions in 3 hours</a>. Has a Facebook Groups to join: <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=Mpn3Sd9f4lc&list=PLOYQCApvKhV2-j38RvgfHHdsB_VSDPfpP&index=2">8 YouTube videos from The Cloud Tech Guy Joe</a> Jan, 2020 talks about the subject rather than taking a deep dive.
 

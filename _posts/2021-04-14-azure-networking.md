@@ -38,6 +38,26 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
 
+## VNets (Virtual Networks)
+
+VNets (Azure Virtual Networks) define the communications and security boundaries that enable Azure resources to communicate with each other securely. VNets are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
+
+![az-networking-single-vm-831x523](https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png)
+
+
+All resources in a VNet can communicate outbound to the internet, by default.
+
+A portion of the virtual network's address space is allocated to subnets to deploy Azure resources. 
+
+Each VNet is created by specifying a custom private IP address space using public and private (RFC 1918) addresses. For example, to deploy a VM in a VNet address space, 10.0.0.0/16, the VM will be assigned a private IP such as 10.0.0.4. (CIDR blocks which do not overlap) 
+
+Secure resources within subnets using Network Security Groups (NSGs).
+
+Azure VNets manage User defined routes (UDR’s). 
+
+50-100 VNets are allowed per Azure Subscription.
+
+
 ## Virtual Networks resources
 
 1. In the top Search field, type enough of <strong>Virtual network</strong> and press return to select the service. Its menu:
@@ -74,15 +94,19 @@ Within a particular Virtual Machine:
    * Properties
    * Locks
    * Export template
+   <br /><br />
+
 
 
 <a name="IPConfigurations"></a>
 
 ## Static Public IP Configuration
 
-1. Setup a Network Security Group (NSG) to protect the VM's network interface.
+1. Before making it public, setup a Network Security Group (NSG) to protect the VM's network interface. Enable Windows Defender? You always get 3 inbound security rules by default:
 
-   before making it public.
+   ![az-networking-default-inbound-nsg-997x217](https://user-images.githubusercontent.com/300046/121830846-3ceed800-cc83-11eb-8b7e-5334f9207772.png)
+
+   REMEMBER: Lower Priority numbers are the most urgent (more priority).
 
 1. Click "IP configurations" within Network Interface within a particular VM.
 
@@ -168,58 +192,45 @@ The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subne
 5 addresses in each subnet are reserved by Azure for overhead functionality.
 
 
+## Multi-region Global VNet Peering
 
-## VNets (Virtual Networks)
+Each VNet is scoped to a <strong>single region/location</strong>. 
 
-VNets (Azure Virtual Networks) are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3a9510f6-e9f9-4576-a9e6-3e4bc2522f34" title="by Tim Warner">VIDEO</a>:
+* Connecting VNets in the same region is called <strong>Virtual Network Peering</strong>.
+* Connecting VNets between separate regions is called <strong>global VNet Peering</strong>.
+<br /><br />
 
-A portion of the virtual network's address space is allocated to subnets to deploy Azure resources. 
-
-Each VNet is created by specifying a custom private IP address space using public and private (RFC 1918) addresses. For example, to deploy a VM in a VNet address space, 10.0.0.0/16, the VM will be assigned a private IP such as 10.0.0.4. (CIDR blocks which do not overlap) 
-
-Secure resources within subnets using Network Security Groups (NSGs).
-
-All resources in a VNet can communicate outbound to the internet, by default.
-
-Azure Virtual Network manages User defined routes (UDR’s). 
-
-
-
-
-
-
-## Multi-region
-
-Each VNet is scoped to a <strong>single region/location</strong>. However, virtual networks in different regions can connect using either VPN gateways or <strong>Virtual Network Peering</strong> (in same region or globally between different regions). 
+VNets in different regions can connect using either VPN gateways or Global Peering:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Item </th><th> Virtual network peering </th><th> VPN Gateways </th></tr>
-<tr valign="top"><td> Privacy
+<tr><th> Item </th><th> VNet Peering </th><th> VPN Gateways </th></tr>
+<tr valign="top"><td> Privacy:
    </td><td> Routed through <strong>Microsoft's private backbone</strong>. No public internet involved
    </td><td> Public IP involved
    </td></tr>
-<tr valign="top"><td> Pricing 
+<tr valign="top"><td> Pricing:
    </td><td> Ingress/Egress
    </td><td> Hourly + Egress
    </td></tr>
-<tr valign="top"><td> Bandwidth limitations
+<tr valign="top"><td> Bandwidth limitations:
    </td><td> No bandwidth limitations
    </td><td> Varies based on SKU. See Gateway SKUs by tunnel, connection, and throughput
    </td></tr>
-<tr valign="top"><td> Limit per virtual network
+<tr valign="top"><td> Limit per virtual network:
    </td><td> Up to 500 virtual network peerings per virtual network
    </td><td> One VPN gateway per vNet. Max. tunnels per gateway based on the gateway's SKU
    </td></tr>
 
-<tr valign="top"><td> Encryption
+<tr valign="top"><td> Encryption:
    </td><td> Software-level encryption is recommended
    </td><td> Custom IPsec/IKE policy can be applied to new or existing connections.
    </td></tr>
-<tr valign="top"><td> Advantages
+<tr valign="top"><td> Advantages:
    </td><td> Data replication, database failover
    </td><td> Encryption takes time
    </td></tr>
-<tr valign="top"><td> Disadvantages
+<tr valign="top"><td> Disadvantages:
    </td><td> frequent backups of large amount of data
    </td><td> Lower latency and throughout
    </td></tr>
@@ -227,14 +238,18 @@ Each VNet is scoped to a <strong>single region/location</strong>. However, virtu
    </td><td> Peering connections are non-transitive. But transitive networking can be achieved using NVAs or gateways in the hub virtual network. See Hub-spoke network topology for an example.
    </td><td> If virtual networks are connected via VPN gateways and BGP is enabled in the virtual network connections
    </td></tr>
-<tr valign="top"><td> Initial setup time
+<tr valign="top"><td> Initial setup time:
    </td><td> Few minutes
    </td><td> ~30 minutes
    </td></tr>
 </table>
 
-To peer virtual networks involving separate subscriptions in different Azure Active Directory tenants, the administrators of each subscription must grant the peer subscription's administrator the <strong>Network Contributor role</strong> on their virtual network.
+To peer virtual networks involving separate subscriptions in different Azure Active Directory tenants, the administrators of each subscription (both) must grant the peer subscription's administrator the <strong>Network Contributor role</strong> on their virtual network.
 
+See timw.info/arch
+
+
+<a name="ExpressRoute"></a>
 
 ## Azure Express Route on-prem networking
 
