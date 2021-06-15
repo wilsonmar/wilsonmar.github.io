@@ -42,8 +42,7 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
 
 VNets (Azure Virtual Networks) define the communications and security boundaries that enable Azure resources to communicate with each other securely. VNets are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
 
-< a target="_blank" href="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png">
-<img alt="az-networking-single-vm-831x523.png" width="831" height="523" src="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"><img alt="az-networking-single-vm-831x523.png" width="831" height="523" src="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"></a>
 
 All resources in a VNet can communicate outbound to the internet, by default.
 
@@ -56,6 +55,44 @@ Secure resources within subnets using Network Security Groups (NSGs).
 Azure VNets manage User defined routes (UDR’s). 
 
 50-100 VNets are allowed per Azure Subscription.
+
+Network Virtual Appliances (NVA) in the Azure Marketplace are specialized VMs that provide firewall, load balancing services. Service chaining across regions are less expensive than standing up 
+
+
+
+## Networking with VMs
+
+Define Networking when creating a Virtual Machine:
+
+1. Define a VM, then specify it's networking:
+
+   PROTIP: Define conventions for naming variables in PowerShell:
+
+   <pre>$rgName = "TestGroup"
+$myLocation = "eastus"
+$vmName = "FileSystemTestVM"
+$vnetName = "TestGroupVnet"
+$subnetName = "default"
+$nicName = "newnic"
+&nbsp;
+# Deallocate vm:
+Stop-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Get VM config:
+$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
+&nbsp;
+# Create New VNet:
+$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
+   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
+&nbsp;
+# Get info for backend subnet:
+$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
+$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
+   </pre>
+
+The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subnet.
+
+5 addresses in each subnet are reserved by Azure for overhead functionality.
 
 
 ## Virtual Networks resources
@@ -157,41 +194,6 @@ To logically subdivide addresses, the "host identifier" portion of an IP address
 
 The first 3 addresses Azure takes for its own.
 
-## Networking with VMs
-
-Define Networking when creating a Virtual Machine:
-
-1. Define a VM, then specify it's networking:
-
-   PROTIP: Define conventions for naming variables in PowerShell:
-
-   <pre>$rgName = "TestGroup"
-$myLocation = "eastus"
-$vmName = "FileSystemTestVM"
-$vnetName = "TestGroupVnet"
-$subnetName = "default"
-$nicName = "newnic"
-&nbsp;
-# Deallocate vm:
-Stop-AzVM -Name $vmName -ResourceGroupName $rgName
-&nbsp;
-# Get VM config:
-$vm = Get-AzVM -Name $vmName -ResourceGroupName $rgName
-&nbsp;
-# Create New VNet:
-$myVnet = New-AzVirtualNetwork -AddressPrefix "10.20.0.0/16" `
-   -Name $vmName -ResourceGroupName $rgName -Location $myLocation
-&nbsp;
-# Get info for backend subnet:
-$myVnet = Get-AzVirtualNetwork -Name $vmName -ResourceGroupName $rgName
-$backEnd = $myVnet.Subnets|?{A$_.Name -eq $subnetName}
-   </pre>
-
-The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subnet.
-
-5 addresses in each subnet are reserved by Azure for overhead functionality.
-
-
 ## Multi-region Global VNet Peering
 
 Each VNet is scoped to a <strong>single region/location</strong>. 
@@ -253,9 +255,10 @@ See timw.info/arch
 
 ## Azure Express Route on-prem networking
 
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=81b6ab57-edd1-4bd4-a32b-9d847466e13f">VIDEO</a>:
 <strong>Azure ExpressRoute</strong> routes traffic through dedicated private connections between the on-premises network and Azure rather than going over the public internet. This achieves greater resilience, faster speeds, higher security, and lower latency. But it's considered expensive.
 
-ExpressRoute can exist alongside any of your current site-to-site, point-to-site, or VPN-to-VPN connections.
+ExpressRoute can exist alongside current site-to-site, point-to-site, or VPN-to-VPN connections.
 
 ExpressRoute must have a private connection provided by a connectivity partner in one of three ExpressRoute connectivity types:
 
