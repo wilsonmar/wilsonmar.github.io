@@ -42,8 +42,8 @@ Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target
 
 VNets (Azure Virtual Networks) define the communications and security boundaries that enable Azure resources to communicate with each other securely. VNets are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
 
-![az-networking-single-vm-831x523](https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png)
-
+< a target="_blank" href="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png">
+<img alt="az-networking-single-vm-831x523.png" width="831" height="523" src="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"></a>
 
 All resources in a VNet can communicate outbound to the internet, by default.
 
