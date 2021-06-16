@@ -419,15 +419,38 @@ Storage Accounts can be created several ways:
 
    <img width="668" alt="az-storage-data-tracking" src="https://user-images.githubusercontent.com/300046/122148044-2ed1c080-ce17-11eb-8469-9fc14a5d7110.png">
 
-   ### File Storage
+1. Click "Create".
 
-1. After "Creation", in the Overview section, if <strong>File Shares</strong> was selected,
-click on the blue "File shares".
+   <a name="FileShares"></a>
+
+   ### File Shares
+
+   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7a286fb2-ccb9-485e-b8cc-004c91e5c2a7">VIDEO</a>:
+
+1. Click the blue "Go to resource". In the Overview section, if <strong>File Shares</strong> was selected, click on the blue "File shares".
 
    Notice the "Soft delete" days.
 
+1. Cick "File shares" menu on left menu.
+
 1. Click "+ File share".
 
+   ### File Storage
+
+   <img width="298" alt="az-storage-file-share-def" src="https://user-images.githubusercontent.com/300046/122151814-6fccd380-ce1d-11eb-9179-a1414c764487.png">
+
+   Notice billing is by what is provisioned, not what is actually used.
+
+   The default is 1024 GiB (1 TiB). But can be set to 100 GiB minimum.
+
+   Click Maximum for 100x more (102,400 GiB).
+
+1. Click "Create".
+1. Click the name of the "SMB File Share" (v3.0).
+1. Click "+ Add directory". Type name.
+1. Click "Upload" (from your local machine) if you have files ready.
+
+   ??? Connect using code
 
    ### Access Keys
 
@@ -444,12 +467,11 @@ click on the blue "File shares".
 
 <hr />
 
-<a name="Blobs"></a>
+<a name="StorageSizes"></a>
 
-## Blob service storage types
+### Storage sizes
 
 Blobs <strong>Binary Large OBject</strong> data store <strong>unstructured</strong> data (images, videos, documents, zip files, backup files, etc.).
-
 
    <a target="_blank" href="https://www.youtube.com/watch?v=UzTtastcBsk" title="Aug 5, 2019 by Adam Marczak">VIDEO</a>:
    Types of blobs in Azure blob storage:
@@ -542,8 +564,6 @@ Cool is stored for at least 30 days.
 mechanism for rehydraring from cold/archive
 
 NOTE: Compare against <a href="#Backups">backup tiers</a>.
-
-
 
 
 <hr />
