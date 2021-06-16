@@ -499,7 +499,7 @@ https://github.com/MicrosoftLearning/MS-030-Office365Administrator
 
 ## AZ-400 DevOps Engineer Expert
 
-Note a pre-requisite is AZ-104 or AZ-204 to get certification as Expert.
+A pre-requisite is AZ-104 OR AZ-204 to get this Expert certification.
 
 https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
 
@@ -687,6 +687,9 @@ Microsoft's hands-on 4-day live class makes use of files from <a target="_blank"
    1. <a target="_blank" href="https://wilsonmar.github.io/azure-monitoring">Instrument solutions to support monitoring and logging</a>
    1. Integrate caching and content delivery within solutions
    <br /><br />
+
+<a target="_blank" href="https://acloud.guru/overview/az-204-developing-solutions-for-microsoft-azure?utm_source=marketo">ACloudGuru.com's FREE 8.6 hour video course</a> by Daniel Stinchcomb includes quizzes and a practice exam.
+   
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/az-204-exam-preparation-developing-solutions-for-microsoft-azure-1208/">
 CloudAcademy's 23h video course</a> provides labs:

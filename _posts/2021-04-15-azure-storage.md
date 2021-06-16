@@ -25,7 +25,13 @@ this article is a <strong>deep</strong> yet concise presentation, using HTML tab
 ## Create Storage account
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-Each storage account consists of <strong>containers<strong> capable of storing data of a particular category (blobs, files, queues, Azure Tables).
+Each storage account consists of <strong>containers<strong> capable of storing data of a particular kind
+
+   * Blobs
+   * File shares - Serverless SMB and NFS file shares
+   * Tables - Tabular data storage
+   * Queues - Effectively scale apps according to traffic
+   <br /><br />
 
 Storage Accounts can be created several ways:
 
@@ -56,11 +62,19 @@ Storage Accounts can be created several ways:
 
 1. For Storage account name: LIMIT: type up to 24 chracters or numbers.
 
-   UNIQUE Naming convention: enviornment, region, such as:
+   UNIQUE Naming convention: enviornment, region, no underlines or dashes!
+
+   A storage account name such as (for example):
 
    <tt>devuswest2yap01</tt>
 
-   NOTE: No underlines, dashes!
+   PROTIP: Add the region code for reference when defining replication rules to copy storage items automatically.
+
+   would be in a URL such as:
+
+   https://devuswest2yap01.blob.core.windows.net/blobdata1
+
+   "blobdata1" is the <strong>container</strong> name within the Storage Account.
 
 1. Region = Location.
 
@@ -502,8 +516,9 @@ Premium Page Blobs are high-performance solid-state drive (SSD)-based storage, d
 
 ### Blob Lifecycle Management
 
-This is for transient temporary files, NOT for images on websites.
+This is for transient temporary files, NOT for images on websites of "evergreen" content.
 
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7c20c43b-4dd4-4bee-ae0b-65a98e1a2d6c">VIDEO</a>:
 Rules to containers or subset of blobs (using prefixes as filters).
 
 Examples: 30 days after blog is created, take a snapshot.
@@ -821,15 +836,8 @@ Two ways to map custom domain name:
    [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/files/">Pricing</a>]: 
    When Performance Tier: "Premium" is selected, FileStorage is allocated a default 100 TiB (rather than the 5 TiB for General Purpose). FileStorage does not support Hot/Cool Access Tiers. FileStorage replication is LRS and ZRS with a small subset of regions.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=3h5m4s">VIDEO</a>:
-Azure file Shares enable sharing of files across Windows, macOS, and Linux machines because it uses the industry-standard Server Message Block (SMB) file transfer protocol
-or REST API.
-
-https://github.com/Azure-Samples/azure-files-samples
-
-General-purpose storage stores files, tables, queues:
-
-   Performance tiers: Standard = Magnetic disks (HDD).
+   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=3h5m4s">VIDEO</a>:
+   Azure file Shares enable sharing of files across Windows, macOS, and Linux machines because it uses the industry-standard Server Message Block (SMB) file transfer protocol or REST API. See https://github.com/Azure-Samples/azure-files-samples
    
    Premium = SSD (Solid State Disks) faster, for 99.99% SLA outside Availability Set.
    PROTIP: Premium SSD disks are paid a <strong>fixed maximum cost each month</strong>, regardless of usage. That's in addition to any Egress charges.
@@ -869,50 +877,10 @@ General-purpose storage stores files, tables, queues:
 <a target="_blank" href="https://cloudacademy.com/lab/understanding-core-azure-storage-products/reviewing-file-storage-in-azure/?context_id=524&context_resource=lp">
 LAB: Reviewing File Storage in Azure:</a>
 
-1. In the Azure Portal navigation trail, click the storage account name to return to the storage account blade:
-
-   "calstor:
-
-2. In the left navigation menu click "File shares" under the File service heading:
-
-   The table includes a file share named lab-share created for you by the Cloud Academy Lab environment. Shares have a quota to limit the amount of storage and, as a consequence, the maximum cost of storage for the share. Shares can store up to 5 tebibytes (TiB) or 100 TiB depending on the region. For standard storage accounts, you only pay for the storage you use and not the quota you set. However, for premium storage accounts you pay for the quota since the storage is provisioned completely to provide you guaranteed performance levels. 
-
-3. Click on lab-share to view the share contents.
-
-   Note: From within the Portal you can perform basic operations such as adding folders and uploading files. However, you would usually interact with the share by adding it to your computer's file system. 
-
-4. Click Connect to view instructions for how to mount the share in different operating systems:
-
-   There are instructions available for Windows, macOS, and Linux in the blade:
-
-   Once you connect to the file share you can use it the same way you would use your local hard drive and multiple users can share it at the same time. You don't need to connect to the share for this Lab.
-
-
-1. On the dashboard of the Azure Portal, click the upper-left accordion icon alt to open the portal menu and click  All resources:
-
-This view presents all the resources in the Lab's resource group.
-
-??? Screen Shot 2021-03-04 at 7.07.08 PM.png
-
-
-These are resources that are created by the Cloud Academy Lab environment for you to use throughout this Lab.
-
- 
-2. In the resources table, <strong>click on the Storage account</strong> beginning with "calstor:
-
-???
-
 Note: There is a second storage account that stores diagnostic data for the Lab's virtual machine that you should not use for this Lab Step.
 
-+++ Essentials:
 
-* Containers - Scalable, cost-effective storage for unstructured data
-* File shares - Serverless SMB and NFS file shares
-* Tables - Tabular data storage
-* Queues - Effectively scale apps according to traffic
- 
-
-3. On the Overview blade, notice the Properties specific to storage accounts:
+ 3. On the Overview blade, notice the Properties specific to storage accounts:
 
 * Status indicates that the Primary storage location is Available. In the event of an outage in Azure, you may see a different value here. This storage account has no secondary storage location, but you can create storage accounts with primary and secondary storage locations. The Replication property of a storage account determines this.
 
@@ -921,34 +889,8 @@ Note: There is a second storage account that stores diagnostic data for the Lab'
 * Access tier optimizes the storage and cost based on how frequently data is accessed. The Hot tier is for frequently accessed data and carries the highest cost for storage but the lowest cost for accessing the data. The cool and archive tiers reduce are suited for less frequently accessed data with archive offering the lowest cost for storage but the highest cost for accessing data. The archive tier actually stores the data offline and the data needs to be "rehydrated" to the hot or cool storage before it can be read. Cool and archive tiers also include a penalty if you delete the blob within 30 days and 180 days, respectively, of when they are first moved into these tiers.
 
 * <a href="#Replication">Replication</a> sets the durability and availability of the storage. 
+   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=50882052-fea1-435c-82d7-a07354925c32">VIDEO</a>:
 
-* Account kind describes if the storage account is general-purpose or specialized. General-purpose accounts allow storage of blobs, tables, files, and queues whereas specialized kinds only allow one type such as only blob storage. There are different pricing models for each account kind so a specialized kind may reduce your costs. StorageV2 is the recommended default.
- 
-
-4. In the menu to the left, click Containers under the Blob service heading:
-
-REMEMBER: Blobs are stored inside of containers.
- 
-
-5. Click + Container in the command bar and set the following values before clicking Create:
-
-Name: lab-container
-Public access level: Container (This allows anonymous access to the container and the blobs within it. It is also possible to allow no anonymous access or only anonymous access to blobs.)
-alt
-
-Within a few seconds the container appears in the table:
-
-6. Click on lab-container to view its overview.
-
-There are no blobs in the container at this point. You will save a sample image and upload it to the container as a blob.
-
-7. RIght-click the small sample image below and save the image to your computer:
-
-Take note of where the image is saved so you can browse to it later. 
-
-
-8. In the Azure Portal, click Upload:
- 
 
 9. In the Upload blob blade that appears, expand the Advanced section to view more options:
 
@@ -973,6 +915,7 @@ Take note of where the image is saved so you can browse to it later.
     Amongst the options, you can Download the blob, and Change tier to change the blob's access tier, 
 
 
+<hr />
 
 <a name="CDN"></a>
 
@@ -1399,7 +1342,7 @@ Azure Storage Explorer for data across subscriptions. It is a free GUI tool to m
 
 1. Run AZCopy CLI on Windows, for example:
 
-   <pre>azcopy copy 'D:\data' 'https://mystore1.blog.core.windows.net/blobdata' --recursive
+   <pre>azcopy copy 'D:\data' 'https://mystore1.blob.core.windows.net/blobdata' --recursive
    </pre>
 
    <tt>--recursive</tt> reaches inside sub-folders for more files.

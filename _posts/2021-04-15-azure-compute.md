@@ -83,6 +83,21 @@ Logic apps?
 
 Web jobs?
 
+Options for High Availability (HA) can seem confusing:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> HA Concept </th><th> Description </th><th> - </th><th> SLA </th></tr>
+<tr valign="top"><td> Availability Zones 
+   </td><td> distribute VMs across 3 zones within the same <strong>region</strong>
+   </td><td> - </td><td> 99.99% </td></tr>
+<tr valign="top"><td> Availability Sets 
+   </td><td> groups VMs in a single Availability Zone
+   </td><td> - </td><td> 99.95% </td></tr>
+<tr valign="top"><td> VM <a href="#ScaleSets">Scale Sets</a>
+   </td><td> rule-based scaling load-balanced VM instances up/down within a single Zone across Fault Domains and Update Domains
+   </td><td> - </td><td> 99.95% </td></tr>
+</table>
+
 
 ## Event Architecture
 
@@ -986,7 +1001,7 @@ https://docs.microsoft.com/en-us/cli/azure/vm#az_vm_create
 
 
 
-### VM naintainance using CLI
+### VM maintainance using CLI
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-manage-vm
 
@@ -1240,10 +1255,12 @@ Set-AzVM -Redeploy -Name $vmName -ResourceGroupName $rscGroup
    Response: OperationId
 
 
+<a name="ScaleSets"></a>
+
 ## Availability ScaleSets
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=3h49m48s">VIDEO</a>
-
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ab0dc747-39f8-4361-8a0f-53f9292840ef">VIDEO</a>:
 HA = Resiliency (not Durability)
 
 What are Availability Zones in Azure?
