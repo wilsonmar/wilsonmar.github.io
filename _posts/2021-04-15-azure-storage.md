@@ -22,67 +22,105 @@ this article is a <strong>deep</strong> yet concise presentation, using tables t
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/storage/">azure.microsoft.com/en-us/product-categories/storage</a>
 
-## Storage Pricing
+## Create Storage account
 
-<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a> varies by several dimensions:
+<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
+Each storage account is a recepticle capable of storing data of a particular category.
+
+Storage Accounts can be created several ways:
+
+   1. <a target="_blank" href="https://wilsonmar.github.io/azure-onramp">In the CLI on first use, to establish a clouddrive</a>.
+
+   2. <a href="#StorageAccountPortal">Using the Portal GUI (described below)</a>
    
-   A. Region (which have different costs)
-
-   B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
-   
-   C. <a href="#StorageTypes">Type of Storage) [see below]</a>
-   
-   D. <a href="#Replication">Replication/Redundancy</a> region pair high availability
-
-   E. Whether reservations were pre-allocated (1 to 3 years ahead)
-
-   F. Hot/cold/Archive 
-
-   G. Amount of storage used each month (first 50 TB, next 450 TB, over 500 TB).
+   3. <a href="#StorageAccountCLI">Use my Bash shell CLI scripts</a> file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
 
 <hr />
 
-<a name="StorageTypes"></a>
+<a name="StorageAccountPortal"></a>
 
-## Types of Storage and Data
+### Create Storage account using Portal UI
 
-If available in your choice of region:
+1. Get to blade one of several ways:
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Type </th><th> Data </th><th> Service </th></tr>
-<tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
-   </td><td><a href="#Blobs">Blobs</a>,<br />
-   <a href="#Queues">Queues</a>,<br />
-   <a href="#DataLake">Data Lake Store</a>
-   </td></tr>
+   * Since "Storage accounts" is a popular resource, select it on the Home menu at the left. If you don't see the menu, click on the icon at the upper-left corner on every screen.
 
-<tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
-   </td><td> <a href="#Files">FileStorage</a> in 
-      <a href="#Disks">Disks</a>,<br />
-      <a href="#Tables">Tables</a>,<br /> 
-      <a href="#CosmoDB">CosmoDB</a>
-   </td></tr>
+   * Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
 
-<tr valign="top"><td> Structured: </td><td> traditional SQL databases (containing tables organized, categorized, normalized)
-   </td><td> <a href="#Tables">Azure Tables</a>,<br />
-      <a href="#SQLDB">Azure SQL Database</a>
-   </td></tr>
-</table>
+   * Click "+ Create a resource". Search for "Storage account". Click on the Marketplace item. Create.
 
-NOTE: Microsoft charges a Premium for storage
+1. Click "+ Create" for "Create a Storage account".
+1. Select the Subscription for billing.
+1. Resource Group: <strong>Create new</strong> 
+1. Resource Group Name:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
-<a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
+1. For Storage account name: LIMIT: type up to 24 chracters or numbers.
+
+   UNIQUE Naming convention: enviornment, region, such as:
+
+   <tt>devuswest2yap01</tt>
+
+   NOTE: No underlines, dashes!
+
+1. Region = Location.
+
+   ### Standard or Premium Performance
+
+1. Performance: The choice between the default <strong>"Standard"</strong> or <a href="#Premium"><strong>Premium</strong></a> affects what can be selected in other fields:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
 
 
-<hr />
+   If <strong>Standard</strong> is selected, <a href="#Redundancy">Redundancy</a> has these choices:
 
-<a name="Replication"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png"><img width="942" height="592" alt="az-storage-942x592.png" src="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png"></a>
 
-## Redundancy (from Azure-managed replication)
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
+
+   <a name="LRS"></a>
+
+   * <strong>"Standard_LRS"</strong> (Locally redundant storage) copies data synchronously three times within a <strong>single physical location</strong> in the primary region. LRS is the least expensive <a href="#Replication">replication option</a>. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year. But is not recommended for applications requiring high availability because disasters at a zone. PROTIP: Use this for dev testing when storage can be recreated easily and speed is not important.
+
+   <ul>"Lowest-cost option with basic protection against server rack and drive faiures. Recommended for non-critical scenarios."</ul>
+
+   * Premium_LRS
+
+   * Premium_ZRS
+
+   <a name="ZRS"></a>
+
+   * <strong>"Standard_ZRS"</strong> ZRS (Zone-redundant storage) copies your data synchronously across <strong>three Azure availability zones</strong> in the primary region (12 nines). REMEMBER: (General Purpose v2 Storage Account Type only). For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. 
+
+   <ul>"Intermediate option with protection against datacenter-level failures."</ul>
+
+   <a name="RA-GRS"></a>
+
+   * <strong>"Standard_RAGRS"</strong> RA-GRS (Read-Access Geo-Redundant Storage) aka RA-GZRS (Read-Access Geo-Zone-Redundant Storage) provides geo-redundant storage with the additional benefit of read access to the secondary endpoint (16 nines). It's the <strong>default</strong>. If an outage occurs in the primary endpoint, applications configured for read access to the secondary and designed for high availability can continue to read from the secondary endpoint. 
+
+   <ul><em>Not selected in storage account setup dialog</em></ul>
+
+   <a name="GRS"></a>
+
+   * <strong>"Standard_GRS"</strong> (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
+
+   <ul>"Intermediate option with failover capabilities in a secondary region. Recommended for <a href="#Backups">backup scenarios</a>"</ul>
+
+   <a name="GZRS"></a>
+
+   * <strong>"Standard_GZRS</strong> (geo-zone-redundant storage) copies data asynchronously in <strong>three geographic regions</strong>
+
+   <ul>"Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data scenarios."</ul>
+
+
+   <a name="Replication"></a>
+
+   ### Azure-managed replication
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h28m19s">VIDEO</a>
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy">DOCS</a>:
+
+   <img width="744" alt="az-storage-blob-hot-cold" src="https://user-images.githubusercontent.com/300046/122145119-dd730280-ce11-11eb-874c-efa8dada296a.png">
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="top"><td>
@@ -219,45 +257,346 @@ NOTE: Microsoft charges a Premium for storage
    </td></tr>
    </table>
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png">
-<img width="942" height="592" alt="az-storage-942x592.png" src="https://user-images.githubusercontent.com/300046/120120732-85bf7080-c15c-11eb-9f57-0f840300cbc0.png"></a>
+
+1. If <strong>Standard</strong> was selected with "Redundancy" of "GRS" or "ZGRS", "Make read access to data available in the event of regional unavailability." appears.
+
+   This option is called "RA-GRS", with "RA" = Read Access.
 
 
-<a name="LRS"></a>
+   <a name="Premium"></a>
 
-* <strong>"Standard_LRS"</strong> (Locally redundant storage) copies data synchronously three times within a <strong>single physical location</strong> in the primary region. LRS is the least expensive replication option. LRS provides at least 99.999999999% (11 nines) durability of objects over a given year. But is not recommended for applications requiring high availability because disasters at a zone. PROTIP: Use this for dev testing when storage can be recreated easily and speed is not important.
+1. If <strong>Premium</strong> is selected, the choice of "Premium account types" affects
 
-   "Lowest-cost option with basic protection against server rack and drive faiures. Recommended for non-critical scenarios."
+   <img width="438" alt="az-storage-prem-acct-type-876x312" src="https://user-images.githubusercontent.com/300046/122142413-a4845f00-ce0c-11eb-8272-6e6dc35bc2b6.png">
 
-* Premium_LRS
+   * <a href="#BlockBlobs">Block blobs ("Best for high transaction rates or low storage latency")</a>
 
-* Premium_ZRS
+   * <a href="#FileShares">File shares ("Best for enterprise or high-performance applications that need to scale")</a>
 
-<a name="ZRS"></a>
+   * <a href="#PageBlobs">Page blogs ("Best for random read and write operations")</a>
 
-* <strong>"Standard_ZRS"</strong> ZRS (Zone-redundant storage) copies your data synchronously across <strong>three Azure availability zones</strong> in the primary region (12 nines). REMEMBER: (General Purpose v2 Storage Account Type only). For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. 
 
-   "Intermediate option with protection against datacenter-level failures."
+   <a name="StorageAccountKinds"></a>
 
-<a name="RA-GRS"></a>
+   ### Storage Account Kinds
 
-* <strong>"Standard_RAGRS"</strong> RA-GRS (Read-Access Geo-Redundant Storage) aka RA-GZRS (Read-Access Geo-Zone-Redundant Storage) provides geo-redundant storage with the additional benefit of read access to the secondary endpoint (16 nines). It's the <strong>default</strong>. If an outage occurs in the primary endpoint, applications configured for read access to the secondary and designed for high availability can continue to read from the secondary endpoint. 
+1. The choice of "Premium account types" affects the <strong>Redundancy</strong> which can be chosen:
 
-   <em>Not selected in storage account setup dialog</em>
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="top"><td>
+   <p><strong>Account type</strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p><strong><a href="#LRS" title="Locally Redundant Storage">LRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p><strong><a href="#ZRS" title="Zone Redundant Storage">ZRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p><strong><a href="#GRS" title="Geo-Redundant Storage">GRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p><strong><a href="#GRS" title="Geo-Redundant Storage">ZGRS</a></strong></p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p><strong><a href="#RA-GRS" title="Geo-Zone Redundant Storage">RA-GRS</a></strong></p>
+   </td>
+   </tr>
 
-<a name="GRS"></a>
+   <tr valign="top"><td>
+   <p>Standard</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>Yes</p>
+   </td>
+   </tr>
 
-* <strong>"Standard_GRS"</strong> (Geo-redundant storage) copies data asynchronously in <strong>two geographic regions</strong> that are at least hundreds of miles apart (16 nines). Data to second region is asychronous. If the primary region suffers an outage, the secondary region serves as a redundant source for data, Microsoft controlled, with RPO of less than 15 minutes.
+   <tr valign="top"><td>
+   <p>Premium Block blobs</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>-</p>
+   </td>
+   </tr>
 
-   "Intermediate option with failover capabilities in a secondary region. Recommended for <a href="#Backups">backup scenarios</a>"
+   <tr valign="top"><td>
+   <p>Premium File shares</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>-</p>
+   </td>
+   </tr>
 
-<a name="GZRS"></a>
+   <tr valign="top"><td>
+   <p>Premium Page blogs</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>Yes</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="60">
+   <p>-</p>
+   </td>
+   <td style="text-align: center;" width="66">
+   <p>-</p>
+   </td>
+   </tr>
 
-* <strong>"Standard_GZRS</strong> (geo-zone-redundant storage) copies data asynchronously in <strong>three geographic regions</strong>
+   </table>
 
-   "Optimal data protection solution that includes the offerings of both GRS and ZRS. Recommended for critical data scenarios."
+1. Next: Advanced: Security
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance?toc=/azure/storage/blobs/toc.json">Microsoft recommends RA-GZRS for maximum availability and durability for your applications of 99.9% or 99.0% when using cool.</a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/122144775-532a9e80-ce11-11eb-867c-eb6ae9474396.png"><img width="735" alt="az-storage-security-1470x594" src="https://user-images.githubusercontent.com/300046/122144775-532a9e80-ce11-11eb-867c-eb6ae9474396.png">
+
+   TODO:
+
+
+   <a name="BlobAccessTiers"></a>
+
+   ### Blob Access Tiers
+
+1. Next: Advanced tab: Blob Storage <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h59m48s">VIDEO</a>
+
+   * Hot: Frequently accessed data and day-to-day usage scenarios
+   * Cool: Infrequently accessed data and backup scenarios
+   <br /><br />
+
+   NOTE: See <a href="#BlogLifecycle">Blob Lifecycle Management (below)</a>
+
+1. Next: Networking tab:
+
+   <img width="725" alt="az-storage-net-connectivity" src="https://user-images.githubusercontent.com/300046/122147615-7ad03580-ce16-11eb-9d82-ef49ae3d26d4.png">
+
+   <img width="713" alt="az-storage-network-routing" src="https://user-images.githubusercontent.com/300046/122147654-8b80ab80-ce16-11eb-90ad-308bd67ea089.png">
+
+1. Next: Data Protection tab: Recovery:
+
+   <img width="759" alt="az-storage-recovery" src="https://user-images.githubusercontent.com/300046/122147908-fc27c800-ce16-11eb-82be-b31bd2786bd6.png">
+
+
+1. Next: Data Protection: Tracking:
+
+   <img width="668" alt="az-storage-data-tracking" src="https://user-images.githubusercontent.com/300046/122148044-2ed1c080-ce17-11eb-8469-9fc14a5d7110.png">
+
+   ### File Storage
+
+1. After "Creation", in the Overview section, if <strong>File Shares</strong> was selected,
+click on the blue "File shares".
+
+   Notice the "Soft delete" days.
+
+1. Click "+ File share".
+
+
+   ### Access Keys
+
+1. In the Access Keys blade of your newly created storage account, click "Show keys"
+
+1. Triple-Click in the key1 Key field to highlight the contents.
+1. Copy to Clipboard by Ctrl+C.
+1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
+
+1. Triple-Click in the key1 Connection string field to highlight the contents.
+1. Copy to Clipboard by Ctrl+V.
+1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
+
+
+<hr />
+
+<a name="Blobs"></a>
+
+## Blob service storage types
+
+Blobs <strong>Binary Large OBject</strong> data store <strong>unstructured</strong> data (images, videos, documents, zip files, backup files, etc.).
+
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=UzTtastcBsk" title="Aug 5, 2019 by Adam Marczak">VIDEO</a>:
+   Types of blobs in Azure blob storage:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr  align="right"><th align="left"> Blob Type 
+   </th><th> Each Block
+   </th><th> Max. size
+   </th><th> Max. # Blocks
+   </th></tr> 
+   <tr valign="top"><td> <a href="#BlockBlobs">Block Blobs</a>
+   </td><td align="right"> <= 1000 MB
+   </td><td align="right"> 4.7 TB 
+   </td><td align="right"> 50,000
+   </td></tr>
+   <tr valign="top"><td> <a href="#PageBlobs">Premium Page Blobs</a>
+   </td><td align="right"> 512 byte in 4 MB
+   </td><td align="right"> 8 TB 
+   </td><td align="right"> <em>N/A</em>
+   </td></tr>
+   <tr valign="top"><td> <a href="#AppendBlobs">Append Blobs</a>
+   </td><td align="right"> 4 MB
+   </td><td align="right"> 195 TB 
+   </td><td align="right"> <em>N/A</em>
+   </td></tr>
+   </table>
+
+   QUESTION: Where do we select use of Append Blobs?
+
+
+<a name="BlockBlobs"></a>
+
+* <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>] 
+
+   Thus, block blobs are optimized for <strong>streaming</strong> and storing cloud objects.
+
+Each block can be edited.
+
+   REMEMBER: Block blob storage has its own Storage Account Type for LRS replication only and Premium performance tier only.
+
+<a name="PageBlobs"></a>
+
+The word "Premium" is in front of "Page Blobs" because it's only available when Premium Storage is selected?
+
+<strong>Premium Page blobs</strong> are 512-byte pages optimized for <strong>random read/write</strong> operations. Page blobs are collections of individual pages of up to <strong>4MB</strong> each. The name "page" comes from operating systems organizing memory into pages of relatively small sizes that can be easily managed -- used for storing virtual machine disks in Azure. 
+
+The <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/">Pricing page</a> lists page blob types: P10, P20, P30, P40, P50, P60.
+
+Premium Page Blobs are high-performance solid-state drive (SSD)-based storage, designed to support I/O-intensive workloads with significantly high throughput and low latency. Premium Page Blobs provide provisioned disk performance up to 7,500 IOPS and 250MBps per blob.
+
+
+<a name="AppendBlobs"></a>
+
+<strong>Append blobs</strong> are optimized for appending new <strong>blocks</strong> at the end of the blob -- useful for storing log data (and audit files) where new lines are added at the end and the data never needs to be modified after it is written.
+
+[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/append-blobs/">Pricing</a>]
+
+
+<a name="BlogLifecycle"></a>
+
+### Blob Lifecycle Management
+
+This is for transient temporary files, NOT for images on websites.
+
+Rules to containers or subset of blobs (using prefixes as filters).
+
+Examples: 30 days after blog is created, take a snapshot.
+
+__ Days after last modification:
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th align="center"> 30 days
+   </th><th> 180 days
+   </th><th> 365 days
+   </th></tr>
+
+<tr valign="top" align="center"><td> To cool storage 
+   </td><td> To archive storage
+   </td><td> Delete blob
+   </td></tr>
+
+</table>
+
+Cool is stored for at least 30 days.
+
+"Archive" - Rarely accessed, stored for at least 180 days. Requires "rehydration" to be accessible.
+
+   "at least" means early deletion charge applies.
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-rehydration?tabs=azure-portal">DOCS</a>:
+mechanism for rehydraring from cold/archive
+
+NOTE: Compare against <a href="#Backups">backup tiers</a>.
+
+
+
+
+<hr />
+
+## Storage Pricing
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/">Pricing for Storage</a> varies by several dimensions:
+   
+   A. Region (which have different costs)
+
+   B. Region's support of Availability Zones - white dots on <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/regions/">this world map of regions</a>
+   
+   C. <a href="#StorageTypes">Type of Storage) [see below]</a>
+   
+   D. <a href="#Replication">Replication/Redundancy</a> region pair high availability
+
+   E. Whether reservations were pre-allocated (1 to 3 years ahead)
+
+   F. Hot/cold/Archive 
+
+   G. Amount of storage used each month (first 50 TB, next 450 TB, over 500 TB).
+
+<hr />
+
+<a name="StorageTypes"></a>
+
+## Types of Storage and Data
+
+If available in your choice of region:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Type </th><th> Data </th><th> Service </th></tr>
+<tr valign="top"><td> Unstructured: </td><td> Media files (photos, videos, audio files), Office files (Word documents, PowerPoint slides, Excel Spreadsheets), Text files, Log files, Product catalog data
+   </td><td><a href="#Blobs">Blobs</a>,<br />
+   <a href="#Queues">Queues</a>,<br />
+   <a href="#DataLake">Data Lake Store</a>
+   </td></tr>
+
+<tr valign="top"><td> Semi-structured: </td><td> XML, JSON, YAML, NoSQL files
+   </td><td> <a href="#FileStorage">FileStorage</a> in 
+      <a href="#Disks">Disks</a>,<br />
+      <a href="#Tables">Tables</a>,<br /> 
+      <a href="#CosmoDB">CosmoDB</a>
+   </td></tr>
+
+<tr valign="top"><td> Structured: </td><td> traditional SQL databases (containing tables organized, categorized, normalized)
+   </td><td> <a href="#Tables">Azure Tables</a>,<br />
+      <a href="#SQLDB">Azure SQL Database</a>
+   </td></tr>
+</table>
+
+
+<hr />
 
 
 ### Managed Disk Account Type
@@ -310,7 +649,7 @@ They will maintain their data but the data are only usable when a disk is attach
    </td><td>-
    </td></tr>
 
-<tr valign="top" align="center"><td align="left">REST <a href="#Files">Files</a>
+<tr valign="top" align="center"><td align="left">REST <a href="#FileStorage">FileStorage</a>
    </td><td> Supported
    </td><td>- 
    </td><td>NOT!
@@ -324,7 +663,7 @@ They will maintain their data but the data are only usable when a disk is attach
    </td><td>-
    </td></tr>
 
-<tr valign="top" align="center"><td align="left"><a href="#Files">Azure Tables</a>
+<tr valign="top" align="center"><td align="left"><a href="#AzureTables">Azure Tables</a>
    </td><td> Supported
    </td><td> Supported
    </td><td>-
@@ -346,62 +685,6 @@ REMEMBER:
    * AAD does not support authorization of Azure Tables.
 
 <hr />
-
-## Create Storage account
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-   Storage accounts are recepticles capable of storing different categories of data. 
-
-Here I show how to create a Storage Account several ways:
-
-   1. Using the Portal GUI
-   
-   2. <a href="#StorageAccountCLI">Use my Bash shell CLI scripts</a> file az-storage-init.sh within <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/readme.txt">github.com/wilsonmar/azure-quickly</a> 
-
-<hr />
-
-<a name="StorageAccountPortal"></a>
-
-### Create Storage account in Portal UI
-
-1. Get to blade one of several ways:
-
-   * Since "Storage accounts" is a popular resource, select it on the Home menu at the left. If you don't see the menu, click on the icon at the upper-left corner on every screen.
-
-   * Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts">Storage accounts</a> in the main menu or Search at the top of the Portal.
-
-   * Click "+ Create a resource". Search for "Storage account". Click on the Marketplace item. Create.
-
-1. Click "+ Add" for "Create a Storage account".
-1. Select the Subscription for billing.
-1. Select or Create new Resource Group.
-1. For Storage account name, use up to 24 chracters or numbers.
-1. Region = Location.
-1. Performance: Click "Standard" [the default unless you want <strong>Performance</strong> for
-
-   * Block blogs
-   * File shares
-   * Page blogs
-   <br /><br />
-
-   See description about <a href="#StorageTypes">Types of Storage and Data (below)</a>
-
-1. For <a href="#Redundancy">Redundancy</a>, during development "Locally-redundant storage (LRS)".
-
-1. Under "Redundancy", if GRS or ZGRS is chosen, "Make read access to data available in the event of regional unavailability." appears.
-
-   This option is called "RA-GRS", with "RA" = Read Access.
-
-1. After creation,
-1. In the Access Keys blade of your newly created storage account, click "Show keys"
-
-1. Triple-Click in the key1 Key field to highlight the contents.
-1. Copy to Clipboard by Ctrl+C.
-1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
-
-1. Triple-Click in the key1 Connection string field to highlight the contents.
-1. Copy to Clipboard by Ctrl+V.
-1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
 
 
 <hr />
@@ -466,7 +749,7 @@ Each storage type provides a unique namespace accessible over HTTPS:
 <tr valign="top"><td> <a href="#Blobs">Blobs</a> 
    </td><td align="right"> <tt>https://<em>my_account</em>.<strong>blob</strong>.core.windows.net</tt>
    </td></tr>
-<tr valign="top"><td> <a href="#Files">Files</a> 
+<tr valign="top"><td> <a href="#FileStorage">FileStorage</a> 
    </td><td align="right"> <tt>https://<em>my_account</em>.<strong>file</strong>.core.windows.net</tt>
    </td></tr>
 <tr valign="top"><td> <a href="#Queues">Queues</a> 
@@ -491,17 +774,18 @@ Two ways to map custom domain name:
 
 <hr />
 
-<a name="Files"></a>
+<a name="FileStorage"></a>
 
-## Azure Files (File Shares)
+## Azure FileStorage (File Shares)
+
+   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/files/">Pricing</a>]: 
+   When Performance Tier: "Premium" is selected, FileStorage is allocated a default 100 TiB (rather than the 5 TiB for General Purpose). FileStorage does not support Hot/Cool Access Tiers. FileStorage replication is LRS and ZRS with a small subset of regions.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=3h5m4s">VIDEO</a>:
 Azure file Shares enable sharing of files across Windows, macOS, and Linux machines because it uses the industry-standard Server Message Block (SMB) file transfer protocol
 or REST API.
 
 https://github.com/Azure-Samples/azure-files-samples
-
-[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/files/">Pricing</a>]
 
 General-purpose storage stores files, tables, queues:
 
@@ -677,141 +961,6 @@ https://<em>Container_name</em><strong>/azureedge.net/imgs/<em>filex.png</em>
 
 Acceleration Data Transfers, also called Dynamic Site Acceleration (DSA), accelerates web content that is not cacheable.
 
-
-<hr />
-
-<a name="Blobs"></a>
-
-## Blob service storage types
-
-Blobs <strong>Binary Large OBject</strong> data store <strong>unstructured</strong> data (images, videos, documents, zip files, backup files, etc.).
-
-
-<a name="StorageAccountKinds"></a>
-
-## Storage Account Kinds
-
-<a target="_blank" href="https://www.youtube.com/watch?v=UzTtastcBsk" title="Aug 5, 2019 by Adam Marczak">VIDEO</a>:
-When creating a storage account, the combination of Performance and Account kind:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr  align="right"><th align="left"> Blob Type 
-   </th><th> Standard
-   </th><th> Premium
-   </th></tr> 
-<tr valign="top"><td> <a href="#AppendBlobs">Storage general purpose V2</a>
-   </td><td align="right"> Yes
-   </td><td align="right"> Yes
-   </td></tr>
-<tr valign="top"><td> <a href="#BlockBlobs">Blob Storage</a>
-   </td><td align="right"> Yes
-   </td><td align="right"> -
-   </td></tr>
-<tr valign="top"><td> <a href="#BlockBlobs">Block Blob Storage</a>
-   </td><td align="right"> -
-   </td><td align="right"> Yes
-   </td></tr>
-<tr valign="top"><td> <a href="#FileStorage">File Storage</a>
-   </td><td align="right"> -
-   </td><td align="right"> Yes
-   </td></tr>
-</table>
-
-
-
-Types of blobs in Azure blob storage:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr  align="right"><th align="left"> Blob Type 
-   </th><th> Each Block
-   </th><th> Max. size
-   </th><th> Max. # Blocks
-   </th></tr> 
-<tr valign="top"><td> <a href="#BlockBlobs">Block Blobs</a>
-   </td><td align="right"> <= 1000 MB
-   </td><td align="right"> 4.7 TB 
-   </td><td align="right"> 50,000
-   </td></tr>
-<tr valign="top"><td> <a href="#PageBlobs">Premium Page Blobs</a>
-   </td><td align="right"> 512 byte in 4 MB
-   </td><td align="right"> 8 TB 
-   </td><td align="right"> <em>N/A</em>
-   </td></tr>
-<tr valign="top"><td> <a href="#AppendBlobs">Append Blobs</a>
-   </td><td align="right"> 4 MB
-   </td><td align="right"> 195 TB 
-   </td><td align="right"> <em>N/A</em>
-   </td></tr>
-</table>
-
-
-<a name="BlockBlobs"></a>
-
-* <strong>Block blobs</strong> are divided into blocks of up to 100 MB each x 50,000 so up to 4.75 TB (terabytes) can be stored per block blob. [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/blobs/">Pricing</a>] 
-
-   Thus, block blobs are optimized for <strong>streaming</strong> and storing cloud objects.
-
-Each block can be edited.
-
-   REMEMBER: Block blob storage has its own Storage Account Type for LRS replication only and Premium performance tier only.
-
-<a name="PageBlobs"></a>
-
-The word "Premium" is in front of "Page Blobs" because it's only available when Premium Storage is selected?
-
-<strong>Premium Page blobs</strong> are 512-byte pages optimized for <strong>random read/write</strong> operations. Page blobs are collections of individual pages of up to <strong>4MB</strong> each. The name "page" comes from operating systems organizing memory into pages of relatively small sizes that can be easily managed -- used for storing virtual machine disks in Azure. 
-
-The <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/">Pricing page</a> lists page blob types: P10, P20, P30, P40, P50, P60.
-
-Premium Page Blobs are high-performance solid-state drive (SSD)-based storage, designed to support I/O-intensive workloads with significantly high throughput and low latency. Premium Page Blobs provide provisioned disk performance up to 7,500 IOPS and 250MBps per blob.
-
-
-<a name="AppendBlobs"></a>
-
-<strong>Append blobs</strong> are optimized for appending new <strong>blocks</strong> at the end of the blob -- useful for storing log data (and audit files) where new lines are added at the end and the data never needs to be modified after it is written.
-
-[<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/storage/append-blobs/">Pricing</a>]
-
-
-<a name="BlobAccessTiers"></a>
-
-### Blob Access Tiers
-
-<a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=2h59m48s">VIDEO</a>
-
-* Hot - frequently accessed
-* Cool - less frequently accessed, stored for at least 30 days
-* Archive - Rarely accessed, stored for at least 180 days. Requires "rehydration" to be accessible.
-
-"at least" means early deletion charge applies.
-
-NOTE: Compare against <a href="#Backups">backup</a> tiers:
-
-
-### Blob Lifecycle Management
-
-This is for transient temporary files, NOT for images on websites.
-
-Rules to containers or subset of blobs (using prefixes as filters).
-
-Examples: 30 days after blog is created, take a snapshot.
-
-__ Days after last modification:
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th align="center"> 30 days
-   </th><th> 180 days
-   </th><th> 365 days
-   </th></tr>
-
-<tr valign="top" align="center"><td> To cool storage 
-   </td><td> To archive storage
-   </td><td> Delete blob
-   </td></tr>
-
-</table>
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-rehydration?tabs=azure-portal">DOCS</a>:
-mechanism for rehydraring from cold/archive
 
 
 <hr />

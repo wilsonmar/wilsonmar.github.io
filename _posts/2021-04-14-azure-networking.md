@@ -27,37 +27,130 @@ This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.
    * <a href="#Watcher">Network Watcher</a>
    * Network security groups
    * Network security groups (classic)
-   * Virtual networks <strong>(vNets)</strong>
+   * <a href="#VirtualNetworks">Virtual networks <strong>(vNets)</strong></a>
    * Local network gateways
    * Virtual network gateways
    * Virtual networks (classic)
    <br /><br />
+
+PROTIP: Plan out your network typology ahead of time to define names of resources in a diagram such as this:
 
 <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-303-microsoft-azure-architect-technologies-crash-course/0636920452881/0636920053523/">
 Tim Warner's 6 hr Live AZ-303 cert class on OReilly</a> teaches to his <a target="_blank" href="https://github.com/timothywarner/az303">GitHub repo</a> which includes a <a target="_blank" title="warner-azure-frankenstein-V2-793x629" href="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png">full diagram<br />
 <img alt="warner-azure-frankenstein-V2-793x629" width="793" height="629" src="https://user-images.githubusercontent.com/300046/114078765-904d4000-9866-11eb-80a0-dc017198cf3d.png"></a>
 
 
+### Hub-and-spoke
+
+Use less code to define Hub-and-spoke by using <a target="_blank" href="https://github.com/lukeorellana/terraform-on-azure/blob/main/06-advanced-hcl/06-for-each-with-for/main.tf">for_each Terraform code</a> explained in <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> of the <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io.
+
+
+
+
+
+<a name="VirtualNetworks"></a>
+
 ## VNets (Virtual Networks)
 
-VNets (Azure Virtual Networks) define the communications and security boundaries that enable Azure resources to communicate with each other securely. VNets are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
+Create a VNet with a name for specification when a VM is created later.
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"><img alt="az-networking-single-vm-831x523.png" width="831" height="523" src="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"></a>
+1. Get to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks">Virtual Networks</a> by pressing G+\ to cursor to the Search bar, then type enough to select the service when it appears in the drop-down.
 
-All resources in a VNet can communicate outbound to the internet, by default.
+   "Create a virtual network to securely connect your Azure resources to each other."
 
-A portion of the virtual network's address space is allocated to subnets to deploy Azure resources. 
+1. Click "+ Create".
 
-Each VNet is created by specifying a custom private IP address space using public and private (RFC 1918) addresses. For example, to deploy a VM in a VNet address space, 10.0.0.0/16, the VM will be assigned a private IP such as 10.0.0.4. (CIDR blocks which do not overlap) 
+   Azure Virtual Network (abbreviated <strong>"VNets"</strong>) is the fundamental building block for your private network in Azure. VNet enables many types of Azure resources, such as Azure Virtual Machines (VM), to securely communicate with each other, the internet, and on-premises networks. VNet is similar to a traditional network that you'd operate in your own data center, but brings with it additional benefits of Azure's infrastructure such as scale, availability, and isolation.
+
+   VNets define the communications and security boundaries that enable Azure resources to communicate with each other securely. VNets are the basic building blocks for securely isolating resources such as load balancers, virtual machines, etc.
+
+1. Subscription:
+
+   LIMIT: 50-100 VNets are allowed per Azure Subscription.
+
+1. Resource Group:
+
+1. VNet Name: Naming Convention: PROTIP: Include the enviornment and <strong>region</strong> in the VNet name because a VNet controls network access within a single region/location. Include a zero-padded number in case several are needed. Example:
+
+   <tt>prod-eastus-vnet01</tt>
+
+1. Region:
+
+1. Security tab:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"><img alt="az-networking-single-vm-831x523.png" width="831" height="523" src="https://user-images.githubusercontent.com/300046/121972355-1a6ac680-cd38-11eb-9e80-55302b112887.png"></a>
+
+   All resources in a VNet can communicate outbound to the internet, by default.
+
+1. BastionHost: leave as Disable by default.
+
+   Network Virtual Appliances (NVA) in the Azure Marketplace are specialized VMs that provide firewall, load balancing services. Service chaining across regions are less expensive than standing up 
+
+1. <a href="#DDoS">DDoS Protection (see below)</a> Standard: <strong>Enable</strong>
+
+1. Firewall: <strong>Enable</strong>
+
+1. IP Addresses tab:
+
+   Each VNet is created by specifying a custom private IP address space using public and private (RFC 1918) addresses. For example, to deploy a VM in a VNet address space, 10.0.0.0/16, the VM will be assigned a private IP such as 10.0.0.4. (CIDR blocks which do not overlap).
+
+   A portion of the virtual network's address space is allocated to subnets to deploy Azure resources. 
+
+   ### IP Address Ranges
+
+   To logically subdivide addresses, the "host identifier" portion of an IP address.
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Host CIDR Range </th><th> Bits </th><th> Addresses </th></tr>
+   <tr valign="top"><td> /16 </td><td> ? </td><td> 65,536 </td></tr>
+   <tr valign="top"><td> /24 </td><td> ? </td><td> 256 </td></tr>
+   <tr valign="top"><td> /32 </td><td> ? </td><td> ? </td></tr>
+   </table>
+
+The first 3 addresses Azure takes for its own.
+
+
+
 
 Secure resources within subnets using Network Security Groups (NSGs).
 
 Azure VNets manage User defined routes (UDR’s). 
 
-50-100 VNets are allowed per Azure Subscription.
+   NOTE: Connect your virtual network to your on-premises network using an Azure VPN Gateway or <a href="#ExpressRoute">ExpressRoute (see below)</a>.
 
-Network Virtual Appliances (NVA) in the Azure Marketplace are specialized VMs that provide firewall, load balancing services. Service chaining across regions are less expensive than standing up 
 
+## Connection Verification: ICMP Ping
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7843d3db-0955-424e-bc28-75e554168e32" title="Tim Warner">VIDEO</a>:
+PROTIP: Azure blocks ICMP between VNets and the internet.
+
+1. To enable ICMP pings on each VM, use this PowerShell command:
+
+   <pre>Set-ExecutionPolicy -ExecutionPolicy Bypass -Force
+New-NetFirewallRule -DisplayName 'Allow ICMPv4-In' -Protocol 'ICMPv4'
+   </pre>
+
+1. To check whether another VM can reach another VM:
+
+   <pre>Enter-PSSession -ComputerName 10.20.20.4
+ping -4 10.20.20.1
+   </pre>
+
+   ### TCPing.exe
+
+   Because the ICMP protocol is usually blocked on servers to prevent network reconissance by malicous actors, probe servers using the TCP protocol by running "tcoping" from SysInternals.
+
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=0a254f0c-5467-400a-9b06-1eb0e37902df">VIDEO</a>:
+      
+   <pre>tcping.exe -p 3389 -n 8 10.20.20.1
+   </pre>
+
+1. Another PowerShell command:
+
+   <pre>get-help -Name Test-NetConnection -Examples
+   Test-NetConnection -ComputerName 10.20.20.1 -InformationLevel Detailed -TraceRoute 
+   Test-NetConnection -ComputerName 10.20.20.1 -InformationLevel Detailed -CommonTCPPort RDP
+   </pre>
 
 
 ## Networking with VMs
@@ -112,6 +205,23 @@ The larger the AddressPrefix suffix /16 in "10.20.0.0/16" that smaller the subne
    * <a href="#Properties">Properties</a>
    <br /><br />
 
+<hr />
+
+<a name="Perfmon"></a>
+
+## Network Performance Monitor
+
+1. In the Portal, click "+" at the upper-left corner for the Marketplace.
+1. In Search, Type enough of "Network Performance Monitor" to select it.
+
+   Notice it's from Solarwinds.
+
+1. Click "Create".
+1. Create Resource group.
+1. Select choices to create a VM instance.
+
+
+
 <a name="NetworkInterfaces"></a>
 
 ## Network interfaces
@@ -134,10 +244,20 @@ Within a particular Virtual Machine:
    <br /><br />
 
 
+Typically, because VMs are setup as a cluster behind a Load Balancer, most VMs do not accept traffic directly from the public internet.
+
+## JIT
+
+Many organizations prefer that a new instance be created with changed settings rather than mucking about in running servers.
+
+Rather than defining a Network Security Group to expose a static IP address for RDP/SSH for administrative access, use JIT that opens ports for a limited time only when needed.
+
+
 
 <a name="IPConfigurations"></a>
 
 ## Static Public IP Configuration
+
 
 1. Before making it public, setup a Network Security Group (NSG) to protect the VM's network interface. Enable Windows Defender? You always get 3 inbound security rules by default:
 
@@ -165,6 +285,7 @@ Within a particular Virtual Machine:
    CAUTION: A reboot of the VM is necessary when the IP changes.
 
 
+
 <a name="Subnets"></a>
 
 ## Subnets
@@ -181,32 +302,19 @@ Subnets group
 CIDR = Classless Inter-Domain Routing.
 
 
-## IP Address Ranges
+<a name="Peerings"></a>
 
-To logically subdivide addresses, the "host identifier" portion of an IP address.
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Host CIDR Range </th><th> Bits </th><th> Addresses </th></tr>
-<tr valign="top"><td> /16 </td><td> ? </td><td> 65,000 </td></tr>
-<tr valign="top"><td> /24 </td><td> ? </td><td> 256 </td></tr>
-<tr valign="top"><td> /32 </td><td> ? </td><td> ? </td></tr>
-</table>
-
-The first 3 addresses Azure takes for its own.
-
-## Multi-region Global VNet Peering
-
-Each VNet is scoped to a <strong>single region/location</strong>. 
+## VNet Peerings
 
 <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3a9510f6-e9f9-4576-a9e6-3e4bc2522f34" title="by Tim Warner">VIDEO</a>:
 * Connecting VNets in the same region is called <strong>Virtual Network Peering</strong>.
-* Connecting VNets between separate regions is called <strong>global VNet Peering</strong>.
+* Connecting VNets between separate regions (and Subscriptions) is called <strong>Global VNet Peering</strong>.
 <br /><br />
 
 VNets in different regions can connect using either VPN gateways or Global Peering:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Item </th><th> VNet Peering </th><th> VPN Gateways </th></tr>
+<tr><th> Item </th><th> Global VNet Peering </th><th> VPN Gateways </th></tr>
 <tr valign="top"><td> Privacy:
    </td><td> Routed through <strong>Microsoft's private backbone</strong>. No public internet involved
    </td><td> Public IP involved
@@ -248,7 +356,18 @@ VNets in different regions can connect using either VPN gateways or Global Peeri
 
 To peer virtual networks involving separate subscriptions in different Azure Active Directory tenants, the administrators of each subscription (both) must grant the peer subscription's administrator the <strong>Network Contributor role</strong> on their virtual network.
 
-See timw.info/arch
+1. In a Virtual Network,
+1. Click "Peerings" on the left menu.
+1. In Peer details: virtual network deployment model: leave as default
+   "Resource manager" (rather than "Classic").
+
+1. In Configuration: Allow virtual network access: click "Enabled"
+
+1. For "Allow forwarded traffic" leave blank
+
+1. For "Allow gateway transit" leave blank
+
+1. For "Use remote gateways" leave blank
 
 
 <a name="ExpressRoute"></a>
@@ -360,6 +479,15 @@ https://docs.microsoft.com/en-us/cli/azure/network/dns?view=azure-cli-latest
 
 Test-AzDnsAvailability
 
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=78c18d3d-4d8a-48d0-9f60-dd6696140601">VIDEO</a>:
+
+1. To set
+
+   <pre>...
+Get-AzureRmDnsRecordSet -ZoneName -ResourceGroupName $rgName
+Set-AzureRmDnsZone -Name $zoneName -ResourceGroupName $rgName -RegistrationVirtualNetworkId @($vnet1.Id)
+Set-AzureRmDnsZone -Name $zoneName -ResourceGroupName $rgName -ResolutionVirtualNetworkId @($vnet2.Id)
+   </pre>
 
 ### Custom DNS Servers
 
@@ -559,6 +687,8 @@ Azure Playground at https://cloudacademy.com/lab/azure-playground-2747/</a>
 
 ## Network Watcher
 
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=0a254f0c-5467-400a-9b06-1eb0e37902df">VIDEO</a>:
+
 * CLI:
 
    <pre>az network watcher configure--locations $LOCATION --enabled -o table \
@@ -621,6 +751,8 @@ https://azure.microsoft.com/en-us/pricing/details/virtual-network/
 
 1. When a network is created, the DDOS plan can be selected after <strong>"Standard"</strong> plan is paid.
 
+
+<a name="ZoneGateways"></a>
 
 ## Zone-redundant gateways
 
@@ -700,12 +832,6 @@ Powershell to add (create) network interface
    $nicId = (Get-AzNetworkInterface -ResourceGroupName $rgName -Name $nicName).Id
    Add AzVMNetworkInterface -VM $vm -Id -Primary | Update-AzVm -ResourceGroupName $rgName 
 </pre>
-
-
-### Hub-and-spoke
-
-Use less code to define Hub-and-spoke by using <a target="_blank" href="https://github.com/lukeorellana/terraform-on-azure/blob/main/06-advanced-hcl/06-for-each-with-for/main.tf">for_each Terraform code</a> explained in <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> of the <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io.
-
 
 ### Hands-on
 
@@ -1049,19 +1175,9 @@ The competitor is Palo Alto.
 
 
 
-## Network Performance Monitor
-
-1. In the Portal, click "+" at the upper-left corner for the Marketplace.
-1. In Search, Type enough of "Network Performance Monitor" to select it.
-
-   Notice it's from Solarwinds.
-
-1. Click "Create".
-1. Create Resource group.
-1. Select choices to create a VM instance.
-
-
 <hr />
+
+<a name="CDN"></a>
 
 ## Azure CDN (Content Delivery Network)
 

@@ -18,6 +18,8 @@ comments: true
 
 The speed to detect and respond to anomalies is a key part of the "Operational Efficiency" pillar of Well-Architected cloud frameworks by Amazon and Microsoft.
 
+"Chaos" A state of total confusion with no order.
+
 The definition <a target="_blank" href="https://www.wikiwand.com/en/Chaos_engineering">on Wikipedia</a>:
 
    <ul>Chaos engineering is the discipline of experimenting on a software system in production in order to build confidence in the system's capability to withstand turbulent and unexpected conditions.
@@ -28,11 +30,23 @@ Gremlin's definition:
    <ul>Chaos Engineering" consists of thoughtful controlled experiments designed to reveal the weaknesses of systems, which results in reduction of downtime and quicker response to anomalies.
    </ul>
 
+https://github.com/dastergon/awesome-chaos-engineering
+
+## CNCF Litmos
+
+https://litmusdocs-beta.netlify.app/docs/introduction/
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VHlO4KDy7z8" title="Interview with the Chaos Native team Mar 2, 2021">VIDEO: Introduction to Litmus Chaos | Rawkode Live</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=TE9EktwaVjI" title="Apr 21, 2021 Konveyor community">VIDEO</a> Karthik S. is the maintainer of Litmus Chaos.
+
+
 ## Manual approach
 
-Sure, you can introduce "perturbation" by manually shutting down a server to see what happens.
+Sure, one can inject "perturbation" by manually shutting down a server to see what happens.
 
-But there are so many more failure modes.
+But there are so many more failure modes in many servers.
 
 
 ## Automated approach
