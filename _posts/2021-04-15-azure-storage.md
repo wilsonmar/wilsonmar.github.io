@@ -18,14 +18,14 @@ comments: true
 
 
 Unlike a lot of <a href="#Overviews">overview/summary/high-level tutorials and videos on Azure storage</a>, 
-this article is a <strong>deep</strong> yet concise presentation, using tables that organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
+this article is a <strong>deep</strong> yet concise presentation, using HTML tables to organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/storage/">azure.microsoft.com/en-us/product-categories/storage</a>
 
 ## Create Storage account
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zPvT6UBfB5E&t=1h55m22s">VIDEO</a>
-Each storage account is a recepticle capable of storing data of a particular category.
+Each storage account consists of <strong>containers<strong> capable of storing data of a particular category (blobs, files, queues, Azure Tables).
 
 Storage Accounts can be created several ways:
 
@@ -67,10 +67,6 @@ Storage Accounts can be created several ways:
    ### Standard or Premium Performance
 
 1. Performance: The choice between the default <strong>"Standard"</strong> or <a href="#Premium"><strong>Premium</strong></a> affects what can be selected in other fields:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
-   <a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
-
 
    If <strong>Standard</strong> is selected, <a href="#Redundancy">Redundancy</a> has these choices:
 
@@ -421,38 +417,12 @@ Storage Accounts can be created several ways:
 
 1. Click "Create".
 
-   <a name="FileShares"></a>
 
-   ### File Shares
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"><img width="1612" height="728" alt="az-storage-types-1612x728" src="https://user-images.githubusercontent.com/300046/116793948-079d7a80-aa87-11eb-9e28-04ac6e61057d.png"></a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=7z6VduCVYH4&list=PLlI3peB1V-rrzvs2SEgZkg-9DIvS7Dmcw&time=8m34s" title="K21Academy May 8, 2020">*</a>
 
-   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7a286fb2-ccb9-485e-b8cc-004c91e5c2a7">VIDEO</a>:
 
-1. Click the blue "Go to resource". In the Overview section, if <strong>File Shares</strong> was selected, click on the blue "File shares".
-
-   Notice the "Soft delete" days.
-
-1. Cick "File shares" menu on left menu.
-
-1. Click "+ File share".
-
-   ### File Storage
-
-   <img width="298" alt="az-storage-file-share-def" src="https://user-images.githubusercontent.com/300046/122151814-6fccd380-ce1d-11eb-9179-a1414c764487.png">
-
-   Notice billing is by what is provisioned, not what is actually used.
-
-   The default is 1024 GiB (1 TiB). But can be set to 100 GiB minimum.
-
-   Click Maximum for 100x more (102,400 GiB).
-
-1. Click "Create".
-1. Click the name of the "SMB File Share" (v3.0).
-1. Click "+ Add directory". Type name.
-1. Click "Upload" (from your local machine) if you have files ready.
-
-   ??? Connect using code
-
-   ### Access Keys
+   ### Blob REST Access Keys
 
 1. In the Access Keys blade of your newly created storage account, click "Show keys"
 
@@ -465,11 +435,9 @@ Storage Accounts can be created several ways:
 1. Switch to a document. Click on where to paste. Ctrl+V to Paste.
 
 
-<hr />
-
 <a name="StorageSizes"></a>
 
-### Storage sizes
+### Blob Storage sizes
 
 Blobs <strong>Binary Large OBject</strong> data store <strong>unstructured</strong> data (images, videos, documents, zip files, backup files, etc.).
 
@@ -564,6 +532,58 @@ Cool is stored for at least 30 days.
 mechanism for rehydraring from cold/archive
 
 NOTE: Compare against <a href="#Backups">backup tiers</a>.
+
+
+
+<hr />
+
+
+<a name="FileShares"></a>
+
+## File Shares
+
+   <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=7a286fb2-ccb9-485e-b8cc-004c91e5c2a7">VIDEO</a>:
+
+1. Click the blue "Go to resource". In the Overview section, if <strong>File Shares</strong> was selected, click on the blue "File shares".
+
+   Notice the "Soft delete" days.
+
+1. Cick "File shares" menu on left menu.
+
+1. Click "+ File share".
+
+   ### File Storage
+
+   <img width="298" alt="az-storage-file-share-def" src="https://user-images.githubusercontent.com/300046/122151814-6fccd380-ce1d-11eb-9179-a1414c764487.png">
+
+   Notice you pay ahead for what is provisioned, not what was actually used.
+   This is the opposite of what is generally advertised about cloud charges.
+
+   The default is 1024 GiB (1 TiB). But can be set to 100 GiB minimum.
+
+   LIMIT: Click Maximum for 100x more (102,400 GiB).
+
+1. Click "Create".
+1. Click the name of the "SMB File Share" (v3.0).
+1. Click "+ Add directory". Type name.
+1. Click "Upload" (from your local machine) if you have files ready.
+
+1. Create Z drive file share and connect using code
+
+
+### Azxure File Sync
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=1392263d-7fff-40c0-9aa5-de8512f1a158">VIDEO</a>:
+
+1. Get File Sync Service from Marketplace.
+1. Select Subscription, Resource Group, Location.
+1. Go to Resource.
+1. "+ Sync group"
+1. Select storage account.
+
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=41a89c34-3cf5-4f02-bfce-188ee39df52a">VIDEO</a>: Install agent on VM server.
+
+<hr />
 
 
 <hr />
@@ -952,8 +972,6 @@ Take note of where the image is saved so you can browse to it later.
 
     Amongst the options, you can Download the blob, and Change tier to change the blob's access tier, 
 
-
-File Sync?
 
 
 <a name="CDN"></a>
