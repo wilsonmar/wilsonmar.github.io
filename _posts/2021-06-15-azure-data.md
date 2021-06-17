@@ -38,7 +38,7 @@ The Skillpipe associated with the one-day Microsoft live course DP-900T00 roughl
    * Getting Started with Azure Data Workloads by Henry Been (<a target="_blank" href="https://henrybeen.nl/">henrybeen.nl</a>)<br /><img width="299" alt="az-compute-vm-sqldb-598x614" src="https://user-images.githubusercontent.com/300046/122325915-ab809f80-cee8-11eb-8424-1d8c9fc305cb.png">
 
 At CloudAcademy: https://cloudacademy.com/learning-paths/dp-900-exam-preparation-microsoft-azure-data-fundamentals-2256/
-
+has Knowledge checks.
 
 
 ## Sample Exams
@@ -69,7 +69,11 @@ At CloudAcademy: https://cloudacademy.com/learning-paths/dp-900-exam-preparation
 1. Compute + storage
 
 
-## ACID Properties
+## Jobs
+
+Azure Blue
+
+## ACID Properties in SQL
 
 Atomicity
 
@@ -79,8 +83,15 @@ I
 
 D
 
+## Data Flow
+
+
 
 ## Azure Data Factory FUSE
+
+ADF automates data movement and transformation (ETL).
+
+ADF can spin up and down HDInsights clusters.
 
 Process in Factory Resources:
 
@@ -99,13 +110,56 @@ See Pluralsight: "Building your First Power BI Report"
 
 ## SQL
 
+With Azure SQL Database, The SQL Managed Instance handles up to 8TB databases
+Microsoft takes care of updates to the operating system and MS SQL software.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Tier </th><th> Max. Size </th><th> Latency </th><th> Avail. SLA </th></tr>
+<tr valign="top"><td> General Purpose </td><td> 4TB (8TB for Managed Instance)
+   </td><td> 5-10 ms </td><td> 99.99% </td></tr>
+<tr valign="top"><td> Hyperscale </td><td> 100TB
+   </td><td> instant backups </td><td> scales </td></tr>
+<tr valign="top"><td> Business Critical </td><td> 4TB
+   </td><td> 1-2 ms (SSD) </td><td> 99.995% in 4-node ZRS cluster</td></tr>
+</table>
+
+Hyperscale scales up and down quickly.
+
+Azure Database for MySQL, PostgreSQL
 Microsoft also supports MySQL, MariaDB, and PostgreSQL.
 
-## NoSQL Synapse
+Data Migration Assistant can recognize when
+SQL Server Stretch Database migrates on-prem. cold table rows to Azure (to avoid buying more on-prem. storage). On-prem. backups can then bypass cold table rows (and run quicker).
+
+Elastic Pool doesn't work in Hyperscale.
+
+<a target="_blank" href="https://docs.microsoft.com/azure/sql-database/sql-database-purchase-models/">DOCS</a>: Instead of DTU, which has a bundled measure for pricing compute, storage, and IO resources,
+the <strong>vCore-based pricing model</strong> has independent charges for compute, storage, and I/O.
+
+With the Serverless Compute Tier, if there is no activity, it pauses the database and halts compute charges.
+
+SQL Database achieves HA with "Always ON Availability Groups" tech from SQL Server,
+which makes Failover automatic (but takes 30 seconds).
+
+Up to 4 replicas can become the primary, as long as secondaries have the same user authentication config. and firewall rules as the primary.
+
+Backups by transaction log occur every 5-10 minutes.
+Backups are saved for 7 days by default (Basic plan), up to 35 days under Standard/Premium.
+Long-term Retention can be up to 10 years.
+Lowest RPO is one hour of data loss for RTO of up to 12 hours for geo-replication.
+
+
+## NoSQL Azure Synapse
 
 Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
 
+Integrates with Apache Spark.
+(Spark jobs can also be run in Azure Databricks and Azure HDInsight)
+
+
+
 ## Non-Relational CosmosDB
+
 
 
 ## More about Azure #
