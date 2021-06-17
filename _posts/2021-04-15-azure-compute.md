@@ -51,12 +51,12 @@ comments: true
    </td><td> ALB/AG
    </td></tr>
 <tr align="center"><th colspan="7"> Auto-scaling: </th></tr>
-<tr valign="top"><td> Scale sets
+<tr valign="top"><td> <a href="#ScaleSets">Scale Sets</a>
    </td><td> None
    </td><td> Built-in
    </td><td> Built-in
    </td><td> None
-   </td><td> Scale sets
+   </td><td> <a href="#ScaleSets">Scale Sets</a>
    </td><td> Pod & cluster
    </td></tr>
 <tr align="center"><th colspan="7"> Minimum # of nodes: </th></tr>
@@ -82,21 +82,6 @@ comments: true
 Logic apps?
 
 Web jobs?
-
-Options for High Availability (HA) can seem confusing:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> HA Concept </th><th> Description </th><th> - </th><th> SLA </th></tr>
-<tr valign="top"><td> Availability Zones 
-   </td><td> distribute VMs across 3 zones within the same <strong>region</strong>
-   </td><td> - </td><td> 99.99% </td></tr>
-<tr valign="top"><td> Availability Sets 
-   </td><td> groups VMs in a single Availability Zone
-   </td><td> - </td><td> 99.95% </td></tr>
-<tr valign="top"><td> VM <a href="#ScaleSets">Scale Sets</a>
-   </td><td> rule-based scaling load-balanced VM instances up/down within a single Zone across Fault Domains and Update Domains
-   </td><td> - </td><td> 99.95% </td></tr>
-</table>
 
 
 ## Event Architecture
@@ -533,144 +518,131 @@ Implement custom handlers:
 
 <hr />
 
+
 <a name="VMs"></a>
-
-## Virtual Machines (VMs)
-
-The Virtual Machine blade has these menu items:
-
-   * Overview
-   * Activity Log
-   * Access control (IAM)
-   * Tags
-   * Diagnose and solve problems
-
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">Networking</a>
-   * Connect
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">Disks</a>
-   * Size
-
-   * Security
-   * Advisor recommendations
-   * Extensions
-   * Properties
-
-   * Disaster recovery
-   * Configuration management
-
-   * Resource health
-   * Boot diagnostics
-   * Performance diagnostics
-   * Reset password
-   * <a href="#Redeploy">Redeploy</a>
-   * New support request
-   <br /><br />
-
-First, some enumerations:
-
-<a name="VM_Server_Types"></a>
-
-### VM Server Types
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series">
-PRICING of each VM type</a>
-
-A for Basic stdArd General Purpose VMs
-
-A for Standard General Purpose AMs.
-
-B for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable">Burstable</a> that stores credits used during low usage, but burst when needed. The number B1 is 100%, B2 to 200%, B10 to 1000% of base. Used for dev and testing.
-
-D for General Purpose apps, with DS instances for premium storage.
-
-DC for Data Center enterprise apps using Premium storage.
-
-E for mEmory optimized - high Memory-to-CPU ratio, with ES instances for premium storage.
-
-F for "Freakin" CPU Optimized - high Core-to-Memory ratio, with FS instances for premium storage.
-
-G for Godzilla - Very large instances: ideal for large databases and big data use cases.
-
-H for High performance computing aimed at very high-end computational needs such as modular modeling and other scientific applications.
-
-L for "Load" Storage Optimized instances which offer higher disk throughput and IO.
-
-M for Large Memory - allows up to 3.5 TB of RAM per instance.
-
-N for GPU eNabled
-
-r suffix for remote direct memory (RDMA)
-
-
-![az-vm-side-ids-1272x660.png](https://user-images.githubusercontent.com/300046/119528558-8613d200-bd3e-11eb-850b-fea9555cac81.png)
-
-
-### VM HA SLA (Service Level Agreement)
-
-<table>
-<tr valign="bottom"><th> Instances </th><th> <a href="#AvailabilityZones">Avail. Zones</a> </th><th> SLA </th><th> Hrs/Yr </th></tr>
-<tr valign="top" align="center"><td>  1 (SSD) </td><td> 1 </td><td> 99.90%+ </td><td> 8:45:56 </td></tr>
-<tr valign="top" align="center"><td>  2+ </td><td> 1 </td><td> 99.95%+ </td><td> 4:22:58 </td></tr>
-<tr valign="top" align="center"><td>  2+ </td><td> 2+ </td><td> 99.99%+ </td><td> 0:52:35 </td></tr>
-</table>
-
-
-
 <a name="VM_GUI"></a>
 
-### Use Azure Portal GUI
+## Create Virtual Machines in Portal GUI 
 
-zzz
-
-### Create VM in Portal GUI 
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/">DOCS</a>:
 
 1. In portal, go to <a target="_blank" href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines">VM or Virtual Machines</a> in Home menu or Recents or Search.
-1. Click "+ Add". Select "Virtual Machine", not "Start with a preset configuration".
-1. All Services -> Virtual Machines
 
-   Commands: Basics | Disks | Networking | Management | Advanced | Tags | Review + create
+1. Click "+ Create". Select "Virtual Machine", not "Start with a preset configuration".
+1. All Services -> Virtual Machines. Commands: 
+
+   <tt>Basics | Disks | Networking | Management | Advanced | Tags | Review + create</tt>
 
 1. Project details: Subscription:
-1. Resource Group
-1. PROTIP: Virtual machine name: Previously, Azure VM names had to be globally unique becuase they were were put in public domain <strong>cloudapp.net</strong>, but Microsoft has since added magic to get around that.
+1. Resource Group.
+
+1. Virtual machine name: Previously, Azure VM names had to be globally unique becuase they were were put in public domain <strong>cloudapp.net</strong>, but Microsoft has since added magic to get around that.
 
    VM Name conventions:
    * Limit 15 chars on Windows VMs
    * Limit 64 chars on Linux VMs
-   Role: sql, web, msg<br />
-   Instance: 01, 02, etc.
+   * Role: sql, web, msg<br />
+   * Instance: 01, 02, etc.
    <br /><br />
 
-1. Region: PROTIP: "(US) East US 2" is where new features first appear. So for production, that's not a good choice.
+1. Region: PROTIP: "(US) East US 2" is where new features first appear. So for production, that's not a good choice. "(US) West" is generally the lowest cost region globally.
+
+   <a name="AvailabilityOptions"></a>
+
+   ### Availability Options
+
+1. Availability options: 
+
+   PROTIP: For development, leave default as "No infrastructure redundancy required".
+   But for production, select an "Availability zone" for <strong>High Availability (HA)</strong>
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Availability Option </th><th> Description </th><th> Disaster </th><th> SLA </th></tr>
+   <tr valign="top"><td> <a href="#AvailabilityZones">Availability Zone</a>
+   </td><td> distribute VMs across 1 to 3 zones within the same <strong>region</strong> <a target="_blank" href="https://docs.microsoft.com/en-us/availability-zones/az-region">which support it</a>
+   </td><td> 1 or 2 data center zones </td><td> 99.99% </td></tr>
+
+   <tr valign="top"><td> <a href="#AvailabilitySets">Availability Set</a>
+   </td><td> Deploys separate VMs running constantly across several Fault Domains within a single Availability Zone
+   </td><td> individual rack </td><td> 99.95% </td></tr>
+
+   <tr valign="top"><td> VM <a href="#ScaleSets">Scale Set</a>
+   </td><td> rule-based scaling load-balanced VM instances up/down within a single Zone of fault and update domains 
+   </td><td> individual VM </td><td> 99.95% </td></tr>
+   </table>
+
+   "Scale Set" can be selected on regions which have only one Zone.
 
    <a name="AvailabilityZones"></a>
 
-   Select "Availability zones" to redundantly store data in several zones of Microsoft's choosing.
-   Microsoft will handle recognition of disaster and recovery for them.
+   Select "<strong>Availability zone</strong>" to redundantly store data in several zones of Microsoft's choosing. Microsoft will handle recognition of disaster and recovery for them.
 
-   QUESTION: Do admins know when a failover has occurred?
+   So this is the simplest approach. But consider the <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/">Pricing</a>.
+
+   QUESTION: How do admins know when a failover has occurred?
+
+1. If "Availability Zone" was selected, specify the number of zones. 
+
+   LIMIT: Most regions have a maximum of 3 zones (fault domains)
 
    <a name="AvailabilitySets"></a>
 
-1. Availability options "Availability zone".
+1. Select "Availability set" for a region which does not have Availability Zones (such as Australia, AFAIK). 
 
-   "Availability set" for a region which does not have Availability Zones (such as Australia). Define a new one by specifying number of: REMEMBER:
+1. If you selected "Availability Set", you may define a new Name such as: <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=9552db09-14c8-4831-939a-6565d6379a31">VIDEO</a>: REMEMBER:
 
-   * <strong>fault domains</strong> = server racks, and 
-   * <strong>Update domains</strong> = individual servers on each rack.
+   <tt>3racks_20slots</tt>
+
+   * <strong>Fault domains</strong> (FD) = separate racks
+   * <strong>Update domains</strong> (UD) = individual slots on each rack
    <br /><br />
 
-   [<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/">Pricing</a>]
+   ![az-computer-vm-avail-set-463x345](https://user-images.githubusercontent.com/300046/122305411-123f9200-cec4-11eb-9b10-a2af86a7c42b.png)
 
-1. Azure <strong>spot instance</strong>: As "No" is the default, <strong>click Yes</strong> to save money, if your app is designed for it. 
+1. Azure <strong>spot instance</strong>: As "No" is the default, <strong>click Yes</strong> to save money, if your app is designed for it (saves intermediate results which another server instance can retrieve and continue).  
 
-1. Authentication type: SSH or Password
+1. Size:
+
+   <a name="VM_Server_Types"></a>
+
+   ### VM Size & Server Types
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series">PRICING of each VM type</a>:
+
+   A for Basic std<u>A</u>rd General Purpose VMs
+
+   B for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series-burstable">Burstable</a> that stores credits used during low usage, but burst when needed. The number B1 is 100%, B2 to 200%, B10 to 1000% of base. Used for dev and testing.
+
+   D for General Purpose apps, with DS instances for premium storage.
+
+   DC for Data Center enterprise apps using Premium storage.
+
+   E for mEmory optimized - high Memory-to-CPU ratio, with ES instances for premium storage.
+
+   F for "Freakin" CPU Optimized - high Core-to-Memory ratio, with FS instances for premium storage.
+
+   G for Godzilla - Very large instances: ideal for large databases and big data use cases.
+
+   H for High performance computing aimed at very high-end computational needs such as modular modeling and other scientific applications.
+
+   L for "Load" Storage Optimized instances which offer higher disk throughput and IO.
+
+   M for Large Memory - allows up to 3.5 TB of RAM per instance.
+
+   N for GPU eNabled
+
+   r suffix for remote direct memory (RDMA)
+
+   ![az-vm-side-ids-1272x660.png](https://user-images.githubusercontent.com/300046/119528558-8613d200-bd3e-11eb-850b-fea9555cac81.png)
+
+
+1. Administrator account: Authentication type: SSH or Password
 
    If SSH public key is chosen: The username and SSH public key source appear.
 
-   If Password is chosen: a Password and Confirm Password fields appear.
+   If Password is chosen: Password and Confirm Password fields appear.
 
-1. Username: 
+1. Administrator account: Username: 
 
    PROTIP: These Admin user names cannot be used:
    * 123
@@ -682,23 +654,35 @@ zzz
    * user, user1, user2, user3, user4, user5
    <br /><br />
 
-1. Inbound port rules:
-1. Select inbound ports: RDP (3389)
+1. Administrator account: Key pair name:   
+
+1. Inbound port rules: Select "None"
+
+   We'll be using JIT, so don't select inbound ports: RDP (3389) for Windows / SSH (22) for Linux. 
 
 1. RDP into VM. 
    Windows landing screen:
 
    ![az-compute-vm-win-landing](https://user-images.githubusercontent.com/300046/121094734-4fad6c80-c7ac-11eb-8857-efcee91a396a.png)
 
-
 1. If Yes, Eviction type: "Capacity only" for whatever the pay-as-you-go rate is.
    "Price or capacity" to set a Max. price manually.
 
 1. VM generation: <strong>Gen2</strong> VMs features UEFI-based boot architecture, increased memory and OS disk size limits, Intel Software Guard Extensions (SGX), and virtual persistent memory (vPMEM).
 
-   CAUTION: Gen2 does not yet support Azure Disk Encryption!
+   CAUTION: As of this writing, Gen2 does not support Azure Disk Encryption!
 
 
+
+1. Next: Disk:
+1. Next: Networking
+1. Next: Management
+1. Next: Advanced
+1. Next: Tags
+1. Next: Review + Create
+
+
+### Deploy a website in a VM
 
 <a target="_blank" href="https://www.coursera.org/learn/azure-create-a-virtual-machine-and-deploy-a-web-server/">VIDEO: Coursera: Azure: Create a Virtual Machine and Deploy a Website</a> has these steps:
 
@@ -713,7 +697,6 @@ zzz
 <br /><br />
 
 Provision virtual machines (VMs):
-* https://docs.microsoft.com/en-us/azure/virtual-machines/
 * https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal
 * https://docs.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/create-sql-vm-powershell
 
@@ -775,14 +758,62 @@ New-AzSubscriptionDeployment -Name az30310subaDeployment `
 </pre>
 
 
+<hr />
+
+## Virtual Machine menu
+
+The Virtual Machine blade has these menu items:
+
+   * Overview
+   * Activity Log
+   * Access control (IAM)
+   * Tags
+   * Diagnose and solve problems
+
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-networking/">Networking</a>
+   * Connect
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-storage/">Disks</a>
+   * Size
+
+   * Security
+   * Advisor recommendations
+   * Extensions
+   * Properties
+
+   * Disaster recovery
+   * Configuration management
+
+   * Resource health
+   * Boot diagnostics
+   * Performance diagnostics
+   * Reset password
+   * <a href="#Redeploy">Redeploy</a>
+   * New support request
+   <br /><br />
+
+
+<hr />
 
 <a name="Scaling"></a>
 
-### VM Scaling
+## VM Scaling
 
-<strong>Vertical Scaling</strong>: For scaling up, since initially one doesn't know what kind of VM will suffice, start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up">Link</a>
+<a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-deploying-multiple-virtual-machines/table-of-contents">VIDEO</a>
 
-<strong>Horizontal scaling</strong>: It's good practice to also scale out your App service plan. You can autoscale and set up autoscaling rules or go the manual route. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started">Link</a>
+
+<strong>Vertical Scaling up</strong>: Since initially one doesn't know what kind of VM will suffice, start with a basic or intermediate one (not a very powerful one). General purpose Type VMs (50-210 ACUs) suffice in most cases. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/app-service/manage-scale-up">Link</a>.
+
+<strong>Horizontal scaling out</strong>: If your application was designed to do it, scaling out to an <strong>App service plan</strong>. You can autoscale and set up autoscaling rules or go the manual route. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-get-started">Link</a>
+
+
+### VM HA SLA (Service Level Agreement)
+
+<table>
+<tr valign="bottom"><th> Instances </th><th> <a href="#AvailabilityZones">Avail. Zones</a> </th><th> SLA </th><th> Hrs/Yr </th></tr>
+<tr valign="top" align="center"><td>  1 (SSD) </td><td> 1 </td><td> 99.90%+ </td><td> 8:45:56 </td></tr>
+<tr valign="top" align="center"><td>  2+ </td><td> 1 </td><td> 99.95%+ </td><td> 4:22:58 </td></tr>
+<tr valign="top" align="center"><td>  2+ </td><td> 2+ </td><td> 99.99%+ </td><td> 0:52:35 </td></tr>
+</table>
 
 
 <a name="ScaleSets"></a>
@@ -833,6 +864,7 @@ VMs integrated with Key Vault for disk encryption cannot be moved.
    * Decrease count to
    <br /><br />
    
+<a name="JIT"></a>
 
 ### Just-in-time VM Console access
 
@@ -891,6 +923,18 @@ PowerShell commands:
 <a href="#ConnectVM">Connect as above</a>
 
 
+#### Moving VM using PowerShell
+
+<pre>Move-AzResource -DestinationResourceGroupName ‘ps-course-rg’ `
+-ResourceId <em>myResourceId,myResourceId,myResourceId</em>
+&nbsp;
+Move-AzResource -DestinationSubscriptionId “8bc4fbf0-blah-blah-blah-226b44e5db84" `
+-DestinationResourceGroupName ‘ps-course-rg’ `
+-ResourceId <em>myResourceId,myResourceId,myResourceId</em>
+</pre>
+
+
+
 <a name="VM_template"></a>
 
 ### Create VM using IaC ARM JSON Templates
@@ -928,6 +972,7 @@ PowerShell commands:
    Resources are what are deployed.
 
    dependsOn items are resolved first.
+
 
 <a name="VM_CLI"></a>
 
@@ -1022,17 +1067,6 @@ az vm show -n "$AZ_VM_NAME" -g "$AZ_GROUP" \
 <pre><strong>echo "Delete resource group:"
 az group delete -g "$AZ_GROUP" --no-wait -y
 </strong></pre>
-
-
-### Moving VM using PowerShell
-
-<pre>Move-AzResource -DestinationResourceGroupName ‘ps-course-rg’ `
--ResourceId <em>myResourceId,myResourceId,myResourceId</em>
-&nbsp;
-Move-AzResource -DestinationSubscriptionId “8bc4fbf0-blah-blah-blah-226b44e5db84" `
--DestinationResourceGroupName ‘ps-course-rg’ `
--ResourceId <em>myResourceId,myResourceId,myResourceId</em>
-</pre>
 
 
 <hr />
@@ -1132,8 +1166,6 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/container-regist
 https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-js/container-registry-typescript/
 
 
-
-
 1. Create a registry using the Azure CLI:
 
    <pre>MY_REGISTRY="myregistry"
@@ -1167,8 +1199,6 @@ az acr create --name $MY_REGISTRY --sku standard --admin-enabled true \
 Azure Kubernetes</a> 
 
 See my <a target="_blank" href="https://wilsonmar.github.io/kubernetes">wilsonmar.github.io/kubernetes</a>
-
-
 
 
 1. Make use of a sample multi-user app (simply to click either Dog or Cat):<a target="_blank" href="https://docs.microsoft.com/en-us/azure/aks/tutorial-kubernetes-prepare-app">*</a>
