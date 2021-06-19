@@ -86,8 +86,11 @@ Separte from the above are <a target="_blank" href="https://wilsonmar.github.io/
 
    Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
 
+## Microsoft DOCS
 
-https://docs.microsoft.com/en-us/azure/machine-learning/service/
+Microsoft's Azure Machine Learning documentation is at:
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/service/">
+docs.microsoft.com/en-us/azure/machine-learning/service</a>
 
 <hr />
 
