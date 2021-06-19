@@ -16,55 +16,40 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article is a step-by-step tutorial on how to setup and use GPG signatures for Git to sign commits and tags, for non-repudiation.
+The contribution of this article is a logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
 <img align="right" width="413" height="262" alt="git-signing-ale-413x262" src="https://user-images.githubusercontent.com/300046/116947094-1d52a180-ac39-11eb-99c0-a76e793f0b8e.png">
 > "If you ... want to verify that commits are actually from a trusted source, Git has a few ways to sign and verify work using GPG." -<a target="_blank" href="https://git-scm.com/docs/git-show-ref">git-scm.com/show-ref command</a>
-
-The contribution of this article is the logical ordering of <strong>deep-dive</strong> concepts presented in a succint way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
-
-## TL;DR Generic workflow
-
-The workflow aside from the <a href="#Variations">tooling variations (described below)</a>:
-
-   1. <a href="#Installers">Install apps and programs locally</a>
-   2. <a href="#Configurations">Configure emails</a> and <a href="#RequireSigned">set up GitHub to require signing</a>
-   3. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
-   4. <a href="#CopyPasteGitHub">Add public GPG key to GitHub</a>
-   5. <a href="#SignCommits">Sign Git commits and merges</a>
-   6. <a href="#SignGitTags">Sign Git Tags</a>
-   7. Import key to GPG on another host
-   <br /><br />
-
-BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a>.
 
 
 <a name="Variations"></a>
 
 ## Decisions: Variations
 
-There are several variations (decisions) regarding the workflow to use:
+This workflow can seem complicated because there are several options: <a href="#Variations">tooling variations (described below)</a>:
 
    * Operating system of local machine (macOS, Windows, Linux flavors)
    * Install a GUI app and/or Command-line program to sign keys
    * Download <a href="#Installers">installer</a> from publisher web page or run package manager (Homebrew, Chocolately)
 
    * The secret-keeping service (macOS Keychain, GPG, Yubikey, <a href="#Keybase">Keybase.io</a>, <a href="#SelfService">employer-specified</a>, etc.)
-   * Whether to sign every commit or just git tags per release
+   * Sign every commit or just git tag each release?
    <br /><br />
 
+The workflow:
 
-<a name="SelfService"></a>
+   1. <a href="#Variations">Make decisions about install variations</a>
+   2. <a href="#Installers">Install apps and programs locally</a>
+   3. <a href="#Configurations">Configure emails</a> and <a href="#RequireSigned">set up GitHub to require signing</a>
+   4. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
+   5. <a href="#CopyPasteGitHub">Add public GPG key to GitHub</a>
+   6. <a href="#SignCommits">Sign Git commits and merges</a>
+   7. <a href="#SignGitTags">Sign Git Tags</a>
+   8. Import key to GPG on another host
+   <br /><br />
 
-### Desired "Self-Serve" Workflow
+BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a> and <a href="#FacebookSigning">getting Facebook to encrypt notification emails it sends you</a>.https://www.cnet.com/how-to/how-to-make-facebook-send-you-encrypted-notification-emails/
 
-Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
-
-Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" portal what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) or <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a> policies.
-
-The app generates the certificate pairs, stores them in Vault, installs them on GitHub, and saves the keys on the worker's laptop. This provides a more trusted chain than each employee generating their own key pair.
-
-Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add and commit with a tag</a>, then <a href="#Push">push</a>.
 
 <hr />
 
@@ -74,8 +59,10 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 The alternatives:
 
-   * <a href="#install_gpg-suite">Install on macOS GUI GPG-Suite </a> app which stores keys in the protected macOS KeyChain.
+   * <a href="#install_gpg-suite">Install on macOS GUI GPG-Suite </a> app which stores keys in the protected macOS KeyChain. This is the simplest approach.
+
    * <a href="#gnupg2_mac_install">Install on macOS CLI GPGN2</a>
+   * <a target="_blank" href="https://www.goanywhere.com/openpgp-studio">Install Open GPG Studio from GoAnywhere (free)</a>
 
    * <a href="#InstallWindowsCLI">Install on Windows CLI program</a>
    * <a href="#install-win">Install on Windows a GUI app</a>
@@ -83,10 +70,22 @@ The alternatives:
    * <a href="#GitKraken">Install GitKraken app and sign</a>
    <br /><br />
 
+<a name="SelfService"></a>
+
 Enterprises would use a centrally administered system to install for all users, such as:
-   * JAMF for macOS machines
-   * Microsoft InTune for Windows laptops.
+   * <a target="_blank" href="http://kb.mit.edu/confluence/display/istcontrib/Jamf+Pro+-+FileVault+2+Encryption">JAMF for macOS machines</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/mem/intune/protect/certificates-pfx-configure">Microsoft InTune for Windows laptops</a>
    <br /><br />
+
+Desired "Self-Serve" Workflow:
+
+Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
+
+Before someone starts a job/project, a trusted administrator (the boss) specifies on a "self-service" portal what should be installed on each worker's laptop, such as the <a href="#Installers">client utilities</a> which should be installed for his/her specific job based on RBAC (Role-Based Access Control) or <a target="_blank" href="https://en.wikipedia.org/wiki/Attribute-based_access_control">Attribute-based Access Control (ABAC)</a> policies.
+
+The app generates the certificate pairs, stores them in Vault, installs them on GitHub, and saves the keys on the worker's laptop. This provides a more trusted chain than each employee generating their own key pair.
+
+Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add and commit with a tag</a>, then <a href="#Push">push</a>.
 
 
 <a name="install_gpg-suite"></a>
@@ -103,8 +102,38 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
 
 1. Type your password when prompted.
 
-   NOTE: Installation is to folder/file "/Applications/GPG Keychain.app".
-   To remove the app later, simply delete that file.
+   <pre>==> Caveats
+Cask gpg-suite installs files under /usr/local. The presence of such
+files can cause warnings when running `brew doctor`, which is considered
+to be a bug in Homebrew Cask.
+&nbsp;
+==> Downloading https://releases.gpgtools.org/GPG_Suite-2021.1_105.dmg
+######################################################################## 100.0%
+==> Installing Cask gpg-suite
+==> Running installer for gpg-suite; your password may be necessary.
+Package installers may write to any location; options such as `--appdir` are ignored.
+installer: Package name is GPG Suite
+installer: Upgrading at base path /
+installer: The upgrade was successful.
+🍺  gpg-suite was successfully installed!
+   </pre>
+
+1. Verify folder created during installation (include the quotes because the folder contains a space character):
+
+   <pre><strong>ls -al "/Applications/GPG Keychain.app/Contents/"</strong></pre>
+
+   <pre>total 16
+drwxr-xr-x   8 root  admin   256 May 14 18:37 .
+drwxr-xr-x   3 root  admin    96 May 14 18:37 ..
+drwxr-xr-x   3 root  admin    96 May 14 18:37 Frameworks
+-rw-r--r--   1 root  admin  3354 May 14 18:37 Info.plist
+drwxr-xr-x   3 root  admin    96 May 14 18:37 MacOS
+-rw-r--r--   1 root  admin     8 May 14 18:37 PkgInfo
+drwxr-xr-x  43 root  admin  1376 May 14 18:37 Resources
+drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
+   </pre>
+
+   To remove the app later, simply delete folder "GPG Keychain.app", which would make certs disappear too. That's why we will later save the certs to a location off your laptop.
 
 1. Pinch 4 fingers together on the Touchpad and scroll around for apps.
 
@@ -115,15 +144,20 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
 
    #### Gen GPG using macOS GPG-Suite
 
-1. Ignore the two keys already there.
+1. Click "Show secret keys only" to ignore the Pub (Public) keys there by default.
+1. If there are green boxes marking your email from a previous session, you need to revoke it before creating a new key for that email.
 
-1. To generate a GPG key pair click "+ New", then Advanced, select Key Type "RSA {Sign Only)".
+1. To generate a GPG key pair click "+ New" for the pop-up dialog.
+1. Click "Advanced options" to select Key Type "RSA (sign only)".
 
-   <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
+   <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png"></a>
 
+1. Type your name and email.
 1. Define a new password in your password vault, then copy and paste that new password in the two fields.
-1. "Create Key".
-1. "No, Thanks!" when asked to upload your public key. You can do that later.
+1. Make a note of the expiration date (by default four years from current date).
+1. Click "Create Key".
+1. If you select "No, Thanks!" to upload your public key and do that later from the "Key" menu item.
 
 
    <a name="gnupg2_mac_install"></a>
@@ -136,11 +170,36 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
    
    Alternately, manually install <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew/">brew (Homebrew)</a>
    
-1. Install a Git client:
+1. Upgrade or Install a Git client:
+
+   <pre><strong>brew upgrade git</strong></pre>
+
+   If git was not previously installed, install it:
 
    <pre><strong>brew install git</strong></pre>
 
-   This installs a bunch, including the latest Python (3.9.4).
+   Notice the response is for a specific version of MacOS (Mojave in this case):
+
+   <pre>==> Upgrading 1 outdated package:
+git 2.25.0_1 -> 2.32.0
+==> Upgrading git 2.25.0_1 -> 2.32.0
+==> Downloading https://ghcr.io/v2/homebrew/core/git/manifests/2.32.0
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/git/blobs/sha256:3c613c84fbc741
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Pouring git--2.32.0.mojave.bottle.tar.gz
+==> Caveats
+The Tcl/Tk GUIs (e.g. gitk, git-gui) are now in the `git-gui` formula.
+&nbsp;
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+&nbsp;
+Emacs Lisp files have been installed to:
+  /usr/local/share/emacs/site-lisp/git
+==> Summary
+🍺  /usr/local/Cellar/git/2.32.0: 1,517 files, 41.5MB
+   </pre>
 
 1. For information about the brew gpg2 install:
 
@@ -148,34 +207,35 @@ Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y"
 
    The response at time of writing:
 
-   <pre>gnupg: stable 2.2.21 (bottled)
+   <pre>ggnupg: stable 2.3.1 (bottled)
 GNU Pretty Good Privacy (PGP) package
 https://gnupg.org/
-/usr/local/Cellar/gnupg/2.2.21 (134 files, 11.2MB) *
-  Poured from bottle on 2020-07-09 at 18:44:27
+/usr/local/Cellar/gnupg/2.3.1_1 (149 files, 12.4MB)
+  Poured from bottle on 2021-06-18 at 18:20:55
 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/gnupg.rb
-License: GPL-3.0
+License: GPL-3.0-or-later
 ==> Dependencies
 Build: pkg-config ✔
-Required: adns ✔, gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgpg-error ✔, libksba ✔, libusb ✔, npth ✔, pinentry ✔
+Required: gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgpg-error ✔, libksba ✔, libusb ✔, npth ✔, pinentry ✔, sqlite ✔
 ==> Analytics
-install: 55,008 (30 days), 120,808 (90 days), 506,457 (365 days)
-install-on-request: 47,841 (30 days), 104,969 (90 days), 428,775 (365 days)
+install: 80,503 (30 days), 225,125 (90 days), 862,924 (365 days)
+install-on-request: 74,096 (30 days), 208,203 (90 days), 786,528 (365 days)
 build-error: 0 (30 days)
    </pre>
 
-1. Verify CLI:
+1. Verify CLI noted <a target="_blank" href="https://www.wikiwand.com/en/GNU_Privacy_Guard">
+in Wikipediat/Wikiwand.com/en/GNU_Privacy_Guard</a> which states the source at <a target="_blank" href="https://dev.gnupg.org/source/gnupg/">d2qa  dev.gnupg.org/source/gnupg</a>
 
    <pre><strong>gpg --version</strong></pre>
 
-   <pre>gpg (GnuPG/MacGPG2) 2.2.24
+   <pre>gpg (GnuPG/MacGPG2) 2.2.27
 libgcrypt 1.8.7
-Copyright (C) 2020 Free Software Foundation, Inc.
-License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 &nbsp;
-Home: /Users/wilson_mar/.gnupg
+Home: /Users/wilsonmar/.gnupg
 Supported algorithms:
 Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
 Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
@@ -184,7 +244,7 @@ Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
 Compression: Uncompressed, ZIP, ZLIB, BZIP2
    </pre>
 
-1. Ensure that commands for "gpg" are routed to gpg2:
+1. Edit your <tt>~/.bash_profile</tt> or <tt>~/.bashrc</tt> file to ensure that commands for "gpg" are routed to gpg2:
 
    <pre>alias gpg="gpg2"
    echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
@@ -193,7 +253,6 @@ Compression: Uncompressed, ZIP, ZLIB, BZIP2
    PROTIP: The response shows that the installation is specific to each version of macOS:<br />
    <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
 
-   
 
    ### MacOS GPG Config
 
@@ -294,7 +353,7 @@ TODO:
 
 <a name="Config"></a>
 
-## Configurations
+## Configure
 
 At your local command line terminal:
 
@@ -302,6 +361,13 @@ At your local command line terminal:
 
    <pre><strong>git config --list | grep user
    </strong></pre>
+
+   <pre>user.name=wilsonmar
+user.email=wilsonmar+github@gmail.com
+user.id=WilsonMar@gmail.com
+user.username=hotwilson
+user.signingkey=E62CF51CE3E5A4E8
+   </pre>
 
 1. If you haven't already, While in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email. For example:
 
@@ -346,15 +412,15 @@ See https://help.github.com/en/github/administering-a-repository/about-required-
 
 ## Generate and store keys
 
-There are several places you can store GPG keys securely:
+There are several places you can store GPG keys:
 
    * On your local drive (which will be lost if your laptop dies or get lost)
-   * <a href="#hashicorp-vault">Hashicorp Vault</a>
    * <a href="#Keybase">Keybase cloud (below)</a>
+   * On a Yubikey physical device
 
-TODO:
+   * <a href="#hashicorp-vault">Hashicorp Vault</a>
    * Azure KeyVault?
-   * AWS ?
+   * AWS Key Service (AKS)
    * Google Cloud?
    <br /><br />
 
@@ -368,15 +434,19 @@ In a Terminal:
 
 1. Install Hashicorp Vault program on your Mac:
 
+   <pre><strong>brew upgrade vault</strong></pre>
+
+   If it's not already installed:
+
    <pre><strong>brew install vault</strong></pre>
 
 1. Confirm viability by displaying the program's version, such as:
 
    <pre><strong>vault --version</strong></pre>
 
-   <pre>Vault v1.6.0 ('7ce0bd9691998e0443bc77e98b1e2a4ab1e965d4+CHANGES')</pre>
+   <pre>Vault v1.7.3 ('5d517c864c8f10385bf65627891bc7ef55f5e827+CHANGES')</pre>
 
-1. If you don't have a Hashicorp Vault server, follow my instructions to run it locally at:
+1. If you don't have a Hashicorp Vault server, follow my instructions to run it (for development/experimentation) locally at:
 
    <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">
    https://wilsonmar.github.io/hashicorp-vault</a>
@@ -423,7 +493,6 @@ vault login  # referencing $VAULT_ADDR
    </pre>
 
 Proceed to <a href="#SignCommits">Sign Git commits and merges (below)</a>
-
 
 References:
    * https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
@@ -564,8 +633,7 @@ List keys to verify that you have indeed generated them.
    install the <a target="_blank" href="https://gpgtools.org/">GPG Suite</a> (UI app)
    or <a href="#Keybase">Keybase.io</a>.
 
-
-   The Suite can be installed as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a> "brew install --cask gpg-suite" (brew install --cask gpgtools no longer exists).
+   The Suite can be installed as a <a target="_blank" href="https://formulae.brew.sh/cask/gpg-suite">Homebrew formula</a> <tt>brew install \-\-cask gpg-suite</tt> (<tt>brew install cask gpgtools</tt> no longer exists).
    The GUI app is installed at "/Applications/GPG Keychain.app".
    The first time it runs, this pop-up appears:
 
@@ -573,8 +641,13 @@ List keys to verify that you have indeed generated them.
 
    Read about it at <a target="_blank" href="https://gpgtools.org/">GPGTools.org</a> and <a target="_blank" href="   https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65">here</a>.
 
-   The Suite requires to be installed "brew install pinentry-mac", activated by then entry in file 
-   <tt>~/.gnupg/gpg-agent.conf</tt> 
+   ### pinentry for GPG on MacOS
+
+1. On MacOS, install a graphical pinentry application:
+
+   <pre><strong>brew install pinentry-mac</strong></pre>
+
+1. Edit file <tt>~/.gnupg/gpg-agent.conf</tt> (if the file doesn’t exist, create it) to contain this entry:
 
    <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
 
@@ -912,12 +985,11 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    <pre><strong>echo $GPG_TTY
    </strong></pre>
 
+   Your number could be different:
+
    <pre>/dev/ttys001
    </pre>
-   or 
-   <pre>/dev/ttys002
-   </pre>
-
+   
 1. Activate the setting by restarting your Terminal session. If using Bash:
 
    <pre><strong>source ~/.bash_profile
@@ -1199,6 +1271,30 @@ Standard signing and clear signing both create ciphertext from the cleartext inp
    <pre><strong>gpg -o outputfile ciphertextfile</strong></pre>
 
 
+<a name="FacebookSigning"></a>
+
+## Getting Facebook to encrypt notification emails
+
+<a target="_blank" href="https://www.cnet.com/how-to/how-to-make-facebook-send-you-encrypted-notification-emails/">In 2015</a>,
+Facebook introduced an option to it to encrypt notification emails -- account recovery emails, in particular. It's done by you (the user) adding your <strong>OpenPGP public key</strong> to your Facebook profile.
+
+1. Generate your public and private keys.
+1. Copy and paste the text block of your PGP public key, starting with: -----BEGIN PGP PUBLIC KEY BLOCK----- and including -----END PGP PUBLIC KEY BLOCK----- at the end. (On a Mac, I exported my public key as a plain-text ASC file from the GPG Keychain application that I was then able to open in TextEdit to copy the text block mentioned above.)
+
+1. In Facebook, login and navigate to your About page, "Contact and Basic Info" section:
+
+   <a target="_blank" href="
+   https://www.facebook.com/me/about?section=contact-info">
+   https://www.facebook.com/me/about?section=contact-info</a>
+
+1. Click "Add a public key".
+1. Paste.
+1. Check box "Use this public key to encrypt notification emails that Facebook sends you".
+1. Click "Save Changes".
+1. In your email program, decrypt the email from Facebook and click the link.
+<br /><br /> 
+
+
 <hr />
 
 ## Resources
@@ -1258,6 +1354,9 @@ https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e</a>
 
 <a target="_blank" href="https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits">
 A Git Horror Story: repository integrity with signed commits</a>
+
+https://www.thegeekyway.com/hands-on-guide-on-gpg-keys/
+by GeekyShacklebolt
 
 
 ## More on DevOps #
