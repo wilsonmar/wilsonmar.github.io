@@ -17,6 +17,8 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> Azure cloud.
 
+## DP-900 exam prep
+
 Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DP-900 exam</a>: Describe ...
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-core-data-concepts/">LEARN</a>: Core data concepts (15-20%) 
@@ -45,8 +47,6 @@ The Skillpipe associated with the <a target="_blank" href="https://docs.microsof
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">04-Upload-download-and-query-data-in-a-non-relational-data-store.md</a>
 
 
-## Video DP-900 exam prep
-
 <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-dp-900-azure-data-fundamentals">At Pluralsight
 
    * Getting Started with Azure Data Workloads by Henry Been (<a target="_blank" href="https://henrybeen.nl/">henrybeen.nl</a>)<br /><img width="299" alt="az-compute-vm-sqldb-598x614" src="https://user-images.githubusercontent.com/300046/122325915-ab809f80-cee8-11eb-8424-1d8c9fc305cb.png">
@@ -55,12 +55,25 @@ At CloudAcademy: https://cloudacademy.com/learning-paths/dp-900-exam-preparation
 has Knowledge checks.
 
 
-## Sample Exams
+### Sample Exams
 
 * <a target="_blank" href="https://www.whizlabs.com/microsoft-azure-certification-dp-900/">https://www.whizlabs.com/microsoft-azure-certification-dp-900/</a>
 
 
-## Marketing
+<hr />
+
+## DP-100 exam prep
+
+Earn the "Microsoft Certified: Azure Data Scientist Associate" certification by passing the one $165 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100: Designing and Implementing a Data Science Solution on Azure</a>: 
+
+   * Manage Azure resources for machine learning (25–30%)
+   * Run experiments and train models (20–25%)
+   * Deploy and operationalize machine learning solutions (35–40%)
+   * Implement responsible machine learning (5–10%) 
+
+<hr />
+
+## Microsoft Data Products Marketing
 
 https://azure.microsoft.com/en-us/resources/videos/dev-stories-troy-hunt-video/
 

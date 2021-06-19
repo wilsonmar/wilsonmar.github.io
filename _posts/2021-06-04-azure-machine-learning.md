@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Machine Learning"
-excerpt: "Notes for before and after getting AI-900 & DP-100 certified, as we automate workflows in the Azure PaaS cloud"
+excerpt: "Notes for before and after getting AI-900, AI-102, and DP-100 certified, as we automate ML workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
 date: "2021-06-04"
 file: "azure-machine-learning"
@@ -21,103 +21,22 @@ This article presents my notes toward a guided tour to introduce use of Microsof
 TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
 My contribution to the world (to you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 
+
+<a name="SampleMLCode"></a>
+
+## My Sample ML Code
+
+PROTIP: AI-102 is heavy on questions about coding.
+
+So samples (unlike examples) are a more complete, best-practices solution for each of the snippets. They're better for integrating into production code. 
+
 Unlike other classes, this describes the <strong>automation</strong> I've created instead of you clicking through web pages (portal.azure.com).
 
 To start with, refer to my https://github.com/wilsonmar/azure-quickly.
 
+Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/">Azure Machine Learning examples</a> is a CLI at
+https://github.com/Azure/azureml-examples/tree/main/cli
 
-
-<a name="ServiceProviders"></a>
-
-## AI related Service Providers
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">Microsoft has</a> three service "Providers":
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Asset type </th><th> Resource provider namespace/Entity </th><th> Abbreviation </th></tr>
-<tr valign="top"><td> <a target="_blank" href="#Cognitive_Services">Azure Cognitive Services</a> </td><td> <a href="#Cognitive_Services"> Microsoft.CognitiveServices/accounts</a> </td><td> cog- </td></tr>
-<tr valign="top"><td> Azure Machine Learning workspace </td><td>   Microsoft.MachineLearningServices/workspaces </td><td> mlw- </td></tr>
-<tr valign="top"><td> Azure Cognitive Search </td><td> Microsoft.Search/searchServices </td><td> srch- </td></tr>
-</table>
-
-* <a href="#Search"><strong>Search</strong></a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
-
-   Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
-
-<a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
-
-https://docs.microsoft.com/en-us/azure/machine-learning/service/
-
-<hr />
-
-<a name="DP-100"></a>
-
-### DP-100
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">$165 for 210 minutes to answer 4-60 questions: DP-100: Designing and Implementing a Data Science Solution on Azure</a> makes you a "Microsoft Certified: Azure Data Scientist Associate". It goes into machine learning, using Azure Machine Learning.
-   * Set up an Azure Machine Learning workspace (30-35%)
-   * Run experiments and train models (25-30%)
-   * Optimize and manage models (20-25%)
-   * Deploy and consume models (20-25%) 
-   <br /><br />
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day $1795 USD live online course by Microsoft DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a> (for Data Scientists).
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">10 hr. MS LEARN PATH: Build and operate machine learning solutions with Azure Machine Learning</a>
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-machine-learn-models/">MS LEARN LAB: Create machine learning models</a>
-
-<a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents *.ipynb (Python Notebook) files (no C#, R, Julia here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a>:
-
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (Get started with Notebooks)</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb">Use Automated Machine Learning (AutoML prediction)</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/03%20-%20Get%20Designer%20Prediction.ipynb">Use Azure Machine Learning Designer (to get Designer predictions)</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/04%20-%20Run%20Experiments.ipynb">Run experiments</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">Train models</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">Work with data</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb"">Work with compute</a> [VMs]
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">Create a pipeline</a>
-
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb">Create a real-time inference service</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">Create a batch inference service</a> [jobs]
-   1. <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">Tune hyperparameters</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">Use automated machine learning from the SDK</a>
-   
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">Explore differential privacy</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">Interpret models</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">Detect and mitigate unfairness</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">Monitor a model</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">Monitor data drift</a> using the pip azureml-datadrift package.
-   <br /><br />
-
-Video:
-   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-exam-dp-100-designing-and-implementing-a-data-science-solution-on-azure">on Pluralsight</a> by <a target="_blank" href="https://www.JaredRhodes.com/">Jared Rhodes</a>, setup a DSVM (Data Science Virtual Machine). It course covers PyCharm to import the iris sample dataset commonly used in the industry.
-
-https://app.pluralsight.com/paths/certificate/microsoft-exam-dp-100-designing-and-implementing-a-data-science-solution-on-azure
-
-https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/
-
-https://app.pluralsight.com/library/courses/microsoft-azure-building-first-data-science-project/recommended-courses
-Building Your First Data Science Project in Microsoft Azure
-by Jared Rhodes
- 
-   * Using Continuous Integration and Continuous Deployment
-
-At ACloudGuru.com by Brian Roehm:
-
-   * <a target="_blank" href="https://learn.acloud.guru/course/1358cb09-664f-45e6-ab33-0be10b6793c1/dashboard">DP-100 Part 1 - Preparation</a> and <a target="_blank" href="https://learn.acloud.guru/course/1358cb09-664f-45e6-ab33-0be10b6793c1/learn/ff534579-40f0-4c44-8e0f-f64f81a60dc6/c1358988-3d85-42ad-acd2-3d1bcaff0a0b/watch">Using the DP-100 Essentials Guide</a> as part of Prep
-
-   * <a target="_blank" href="https://acloud.guru/overview/a87e8bd0-4293-408a-be01-9ff3e6ae0ec7?_ga=2.188555496.1540150877.1623079786-1658143929.1623079786">DP-100 Part 2 - Modeling</a> and <a target="_blank" href="https://learn.acloud.guru/course/a87e8bd0-4293-408a-be01-9ff3e6ae0ec7/learn/6cbd9678-a5e8-4b4b-b04f-2203f59ac183/2072772d-763e-46fd-bb69-e13e056d21cc/watch">Using the DP-100 Essentials Guide</a> as part of Modeling
-
-<hr />
-
-<a name="SampleMLCode"></a>
-
-### Sample ML Code
-
-PROTIP: AI-102 is heavy on questions about coding.
-
-Samples (unlike examples) are a more complete, best-practices solution for each of the snippets. They're better for integrating into production code. 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/">
 docs.microsoft.com/en-us/samples/azure</a> 
@@ -128,6 +47,7 @@ https://docs.microsoft.com/en-us/samples/azure-samples/azure-sdk-for-go-samples/
 
 A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
 <a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
+But where is it used in the course?
 
 Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
 
@@ -139,9 +59,107 @@ Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">ht
    * autoprice.py
    <br /><br />
 
-Among <a target="_blank" href="https://docs.microsoft.com/en-us/samples/azure/azureml-examples/azure-machine-learning-examples/">Azure Machine Learning examples</a> is a CLI at
-https://github.com/Azure/azureml-examples/tree/main/cli
 
+
+<a name="ServiceProviders"></a>
+
+## ML among AI Service Providers
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations">Microsoft has</a> three service "Providers":
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Asset type </th><th> Resource provider namespace/Entity </th><th> Prefix </th></tr>
+<tr valign="top"><td> <a target="_blank" href="#Cognitive_Services">Azure Cognitive Services</a> </td><td> <a href="#Cognitive_Services"> Microsoft.CognitiveServices/accounts</a> </td><td> cog- </td></tr>
+<tr valign="top"><td> Azure Machine Learning workspace </td><td>   Microsoft.MachineLearningServices/workspaces </td><td> mlw- </td></tr>
+<tr valign="top"><td> <a href="#CogSearch">Azure Cognitive Search</a> </td><td> Microsoft.Search/searchServices </td><td> srch- </td></tr>
+</table>
+
+Separte from the above are <a target="_blank" href="https://wilsonmar.github.io/azure-iot/">Azure IoT (Edge)</a> and <a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a>
+
+<hr />
+
+<a name="CogSearch"></a>
+
+## Azure Cognitive Search
+
+<a href="#Search"><strong>Search</strong></a> (the "Bing" brand) has recently been separated out from the "Cognitive Services" to its own at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/search/">https://docs.microsoft.com/en-us/azure/search</a>, although it's used in "Conversational AI" using an "agent" (Azure Bot Service) to participate in (natural) conversations. BTW: <a target="_blank" href="https://www.theverge.com/2019/7/25/20727129/microsoft-cortana-features-strategy-report">in 2019</a> Cortana decoupled from Windows 10 search.
+
+   Since October 31st, 2020, <a target="_blank" href="https://blogs.bing.com/search-quality-insights/october-2020/Bing-Search-APIS-are-Transitioning">Bing Search APIs</a> transitioned from Azure Cognitive Services Platform to <a target="_blank" href="https://aka.ms/bingapigetstarteddoc">Azure Marketplace</a>. The Bing Search v7 API subscription covers several Bing Search services (Bing Image Search, Bing News Search, Bing Video Search, Bing Visual Search, and Bing Web Search),
+
+
+https://docs.microsoft.com/en-us/azure/machine-learning/service/
+
+<hr />
+
+<a name="DP-100"></a>
+
+### DP-100
+
+Earn the "Microsoft Certified: Azure Data Scientist Associate" certification by passing the one $165 exam answering 40-60 questions in 210 minutes: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100: Designing and Implementing a Data Science Solution on Azure</a>. It has a strong focus on machine learning and Databricks.
+
+   * Manage Azure resources for machine learning (25–30%), which is a higher level than "Setting up an Azure Machine Learning workspace", which require data and compute.
+   * Run experiments and train models (20–25%) using the ML Designer, SDK, and AutoML.
+   * Deploy and operationalize machine learning solutions (35–40%) previously "Optimizing and managing models" suing Hyperdrive and model explainers.
+   * Implement responsible machine learning (5–10%) 
+   <br /><br />
+
+The free text-only "learning paths" tutorials associated:
+
+   * Create machine learning models
+   * Create no-code predictive models with Azure Machine Learning
+   * Build and operate machine learning solutions with Azure Machine Learning
+   * Perform data science with Azure <strong>Databricks</strong>
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day $1795 USD live online course by Microsoft DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a> (for Data Scientists).
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">10 hr. MS LEARN PATH: Build and operate machine learning solutions with Azure Machine Learning</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-machine-learn-models/">MS LEARN LAB: Create machine learning models</a>
+
+<a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents *.ipynb (Python Notebook) files (no C#, R, Julia here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a> by Microsoft's Graeme Malcolm. It contains iPython Notebook code rather than instructions for setting up the ML Workspace.
+
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (Get started with Notebooks)</a> 
+
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb">Use Automated Machine Learning (AutoML prediction)</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/03%20-%20Get%20Designer%20Prediction.ipynb">Use Azure Machine Learning Designer (to get Designer predictions)</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/04%20-%20Run%20Experiments.ipynb">Run experiments</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">Train models</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">Work with data</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb">Work with compute</a> [VMs]
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">Create a pipeline</a>
+
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb">Create a real-time inference service</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">Create a batch inference service</a> [jobs]
+   1. <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">Tune hyperparameters</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">Use automated machine learning from the SDK</a>
+   
+   Responsible AI/ML:
+
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">Explore differential privacy</a> using the SmartNoise toolkit from OpenDP
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">Interpret models</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">Detect and mitigate unfairness</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">Monitor a model</a>
+   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">Monitor data drift</a> using the pip azureml-datadrift package.
+   <br /><br />
+
+### DP-100 Video courses:
+
+The <a target="_blank" href="https://cloudacademy.com/learning-paths/dp-100-exam-prep-designing-and-implementing-a-data-science-solution-on-azure-1902/">CloudAcademy.com course on DP-100</a> by <a target="_blank" href="https://linkedin.com/in/guy-hummel/">Guy Hummel</a>, who created <a target="_blank" href="https://github.com/cloudacademy/azureml-intro">github.com/cloudacademy/azureml-intro</a> last update Sep 2020, which is before changes to the exam May, 2021.
+
+On Pluralsight, <a target="_blank" href="https://www.JaredRhodes.com/">Jared Rhodes</a> created:
+
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-exam-dp-100-designing-and-implementing-a-data-science-solution-on-azure">this course</a> which sets up a DSVM (Data Science Virtual Machine). It covers setup of PyCharm to import the iris sample dataset commonly used in the industry.
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/microsoft-azure-building-first-data-science-project/recommended-courses">Building Your First Data Science Project in Microsoft Azure</a>
+ 
+   * Using Continuous Integration and Continuous Deployment
+
+At ACloudGuru.com by Brian Roehm:
+
+   * <a target="_blank" href="https://learn.acloud.guru/course/1358cb09-664f-45e6-ab33-0be10b6793c1/dashboard">DP-100 Part 1 - Preparation</a> and <a target="_blank" href="https://learn.acloud.guru/course/1358cb09-664f-45e6-ab33-0be10b6793c1/learn/ff534579-40f0-4c44-8e0f-f64f81a60dc6/c1358988-3d85-42ad-acd2-3d1bcaff0a0b/watch">Using the DP-100 Essentials Guide</a> as part of Prep
+
+   * <a target="_blank" href="https://acloud.guru/overview/a87e8bd0-4293-408a-be01-9ff3e6ae0ec7?_ga=2.188555496.1540150877.1623079786-1658143929.1623079786">DP-100 Part 2 - Modeling</a> and <a target="_blank" href="https://learn.acloud.guru/course/a87e8bd0-4293-408a-be01-9ff3e6ae0ec7/learn/6cbd9678-a5e8-4b4b-b04f-2203f59ac183/2072772d-763e-46fd-bb69-e13e056d21cc/watch">Using the DP-100 Essentials Guide</a> as part of Modeling
 
 <hr />
 
@@ -161,6 +179,8 @@ In Azure, several "resources" need to be setup:
    * A Storage account to hold the model
    * A Key Vault to hold secrets
    * An Application Insights account to hold logs and metrics
+   * A source of data (database)
+   * Cleaning of data
    <br /><br />
 
 The above can be setup by running a single command, but after you are setup to run it.
@@ -177,7 +197,7 @@ The above can be setup by running a single command, but after you are setup to r
 
 3. Invoke a run to train a sample model by running:
 
-   <pre><strong>./az-ml2-init.sh</strong></pre>
+   <pre><strong>./az-mlcli2.sh</strong></pre>
 
    This script I wrote to automate manual setup procedures from <a target="_blank" href="https://github.com/Azure/azureml-examples">https://github.com/Azure/azureml-examples</a>, described at  .
 
@@ -231,14 +251,17 @@ Below are instructions to do the work manually in the Azure Portal:
 
    <img width="1042" height="286" alt="az-ml-search-mac-1042x286" src="https://user-images.githubusercontent.com/300046/120628656-2c886300-c422-11eb-8eeb-889cf378bcc0.png">
 
+   "Machine learning is a subset of data science that deals with predictive modeling. In other words, using data to create models that can predict unknown values. It works by identifying relationships between data values that describe characteristics of something (its features) and the value we want to predict (the label), and encapsulating these relationships in a model through a training process."
+
    * <a href="#Classification"><strong>classification</strong></a> predicts <strong>categories or classes</strong> using <strong>unsupervised</strong> machine learning techniques to fit features into model and predict classification of the label. Labels are what we want to predict, such as a future value predicted or an action. The label is usually "Y" among mathimaticians.
 
    * <strong>regression</strong> predicts <strong>numeric</strong> values using <strong>supervised</strong> machine learning techniques on historical data.
 
-   * Time Series forecasting is uesed for <a href="#AnomalyDetection">Anomaly Detection</a> using regression with a time-series element, enabling you to predict numeric values at a future point in time.
+   * Time Series forecasting is used for <a href="#AnomalyDetection">Anomaly Detection</a> using regression with a time-series element, enabling you to predict numeric values at a future point in time.
 
    * <strong>Clustering</strong> identifies the nearest neighbor in multiple dimensions, such as the nearest color to an RGB color value.
    <br /><br />
+
 
 ### Data Ingestion
 
