@@ -17,7 +17,7 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> Azure cloud.
 
-Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900</a>: Describe ...
+Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DP-900 exam</a>: Describe ...
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-core-data-concepts/">LEARN</a>: Core data concepts (15-20%) 
 
@@ -28,7 +28,21 @@ Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/">LEARN</a>: an analytics workload on Azure (25-30%) 
    <br /><br />
 
-The Skillpipe associated with the one-day Microsoft live course DP-900T00 roughly covers the above topics.
+The Skillpipe associated with the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-900t00">one-day Microsoft live course DP-900T00</a> roughly covers the above topics using
+<a target="_blank" href="https://github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals">github.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/tree/master/Instructions</a> which redirects to a free "Microsoft Learn Sandbox" Directory in Azure:
+
+<a target="_blank" href=""https://docs.microsoft.com/en-us/learn/modules/explore-provision-deploy-relational-database-offerings-azure/7-exercise-provision-relational-azure-data-services">01-Provision-Azure-relational-database-services.md (4 hours)</a> Databases (Community Edition):
+
+   * Azure SQL Database
+   * Azure Database for PostgreSQL
+   * Azure Database for MySQL
+   <br /><br />
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">02-Use-SQL-to-query-Azure-SQL-Database.md</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/explore-provision-deploy-non-relational-data-services-azure/7-exercise-provision-non-relational-azure">03-Provision-non-relational-Azure-data-services.md</a>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/query-relational-data/6-exercise-perform-query">04-Upload-download-and-query-data-in-a-non-relational-data-store.md</a>
 
 
 ## Video DP-900 exam prep
@@ -45,6 +59,40 @@ has Knowledge checks.
 
 * <a target="_blank" href="https://www.whizlabs.com/microsoft-azure-certification-dp-900/">https://www.whizlabs.com/microsoft-azure-certification-dp-900/</a>
 
+
+## Marketing
+
+https://azure.microsoft.com/en-us/resources/videos/dev-stories-troy-hunt-video/
+
+https://economicgraph.linkedin.com/
+
+
+## Types of data
+
+OLTP = Data is stored one transaction at a time.
+
+OLAP = data periodically loaded, aggregataed, stored in a cube.
+
+   * Summary
+   * Trend
+
+A Data Lake holds raw data after ingestion.
+
+A Data Warehouse holds 
+
+Polybase is file-based.
+
+SSIS is also heterogenous
+
+## ADF
+
+Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
+
+Linked service to Data Lake Store, Azure Databricks.
+
+
+
+
 <a name="CreateSQLDB"></a>
 <!-- ref in azure-computer -->
 
@@ -60,6 +108,7 @@ has Knowledge checks.
 1. Server: 
 1. Want to use SQL elastic pool?  Leave default: "No".
 
+   Elastic pools have multiple Azure SQL Database instances share the same resources (memory, storage, processing).
    Elastic pools provide a simple and cost effective solution for managing the performance of multiple databases within a fixed budget. An <strong>elastic pool provides compute (eDTUs)</strong> and storage resources that are shared between all the databases it contains. 
 
    Databases within a pool only use the resources they need, when they need them, within configurable limits. The price of a pool is based only on the amount of resources <strong>configured</strong> and is independent of the number of databases it contains.
@@ -69,25 +118,67 @@ has Knowledge checks.
 1. Compute + storage
 
 
-## Jobs
+## Data Flows
 
-Azure Blue
+For answers needed today and tomorrow ...
 
-## ACID Properties in SQL
+1. 
 
-Atomicity
+Batch jobs - 
 
-C
+   * ETL = Extract, Transform, Load into SQL star databases with "schema on write"
 
-I
+   * ELT = Extract, Load, Transform = data saved as-is with "schema on read" NoSQL document databases for greater scale
 
-D
+   * Hybrid - data ingested on-prem, transformed in the cloud
+   <br /><br />
 
-## Data Flow
+Stream Processing (real-time)
+
+
+## Data Lifecycle
+
+Pipelines:
+
+1. Initial collection of data
+2. Preparation of collected data
+3. Ingestion of data into storage
+4. Processing or transformation of data into a usable form
+5. Analysis of transformed data
+
+
+## ACID Properties in Transactional data
+
+Atomicity - each transaction is treated as a ingle unit, which is successful completely or failed completely. Back-off intermediate changes.
+
+Consistency - transactions can only take the data in the database from one valid state to another.
+
+Isolation - concurrent execution of transactions leave the database in the same state.
+
+Durability - once a transaction has been committed, it remains committed.
 
 
 
-## Azure Data Factory FUSE
+## Azure Data Factory on Portal GUI
+
+1. In the portal, click "+ Create a resource", then in "Search services and Marketplace" type enough of "Data Factory" to select it from the drop-down list.
+
+   <img width="367" alt="az-data-fac-menu-734x410" src="https://user-images.githubusercontent.com/300046/122431224-807e6600-cf51-11eb-91b9-71a37ec18109.png">
+
+1. Click "Create" after confirming that it's from "Microsoft".
+
+   Integrate data silos with Azure Data Factory, a service built for all data integration needs and skill levels. Easily construct ETL and ELT processes code-free within the intuitive visual environment, or write your own code. Visually integrate data sources using more than 90+ natively built and maintenance-free connectors at no added cost. Focus on your data - the serverless integration service does the rest.
+
+   * No code or maintenance required to build hybrid ETL and ELT pipelines within the Data Factory visual environment
+   * Cost-efficient and fully managed serverless cloud data integration tool that scales on demand
+   * Azure security measures to connect to on-premises, cloud-based, and software-as-a-service apps with peace of mind
+   * SSIS integration runtime to easily rehost on-premises SSIS packages in the cloud using familiar SSIS tools
+   <br /><br />
+
+1. Resource group:
+1. Database name: up to 128 characters, unique on same server.
+1. Server: 
+
 
 ADF automates data movement and transformation (ETL).
 
@@ -151,6 +242,9 @@ Lowest RPO is one hour of data loss for RTO of up to 12 hours for geo-replicatio
 
 ## NoSQL Azure Synapse
 
+<a target="_blank" href="https://www.microsoft.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
+How to configure Data Factory to ingest data for Azure Synapse Analytics.
+
 Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
 
 Integrates with Apache Spark.
@@ -161,6 +255,11 @@ Integrates with Apache Spark.
 ## Non-Relational CosmosDB
 
 
+
+## Social
+
+<a target="_blank" href="https://www.microsoft.com/en-us/sql-server/community?activetab=pivot_1:primaryr4">
+Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 ## More about Azure #
 
