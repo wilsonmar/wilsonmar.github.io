@@ -375,6 +375,7 @@ Microsoft's ethical principles</a> guiding the development and use of artificial
 
 Resources:
    * <a target="_blank" href="https://www.microsoft.com/ai/responsible-ai-resources">https://www.microsoft.com/ai/responsible-ai-resources</a>
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLl8yjZLsL_WobPtlCCIRgoU91Geokx7qK">VIDEO</a>: Ethics an Artificial Intelligence at the DotNet Day Zurich May 28th, 2019, by Laurent Bugnion.
 
 
 <hr />

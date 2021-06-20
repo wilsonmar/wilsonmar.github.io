@@ -133,9 +133,9 @@ For answers needed today and tomorrow ...
 
 Batch jobs - REMEMBER:
 
-   * ETL = Extract, Transform, Load into SQL star databases with "schema on write"
+   * ETL = Extract, Transform, Load into SQL star databases with usage "schema on write" for faster read
 
-   * ELT = Extract, Load, Transform = data saved as-is with "schema on read" NoSQL document databases for greater scale
+   * ELT = Extract, Load, Transform = data saved as-is into NoSQL (document) databases with usage "schema on read" for greater scale and exploration
 
    * Hybrid - data ingested on-prem, transformed in the cloud
    <br /><br />
@@ -147,9 +147,9 @@ Stream Processing (real-time)
 
 Pipelines:
 
-1. Initial collection of data
+1. Collection of data
 2. Preparation of collected data
-3. Ingestion of data into storage
+3. <a href="#Ingestion">Ingestion</a> of data into storage
 4. Processing or transformation of data into a usable form
 5. Analysis of transformed data
 

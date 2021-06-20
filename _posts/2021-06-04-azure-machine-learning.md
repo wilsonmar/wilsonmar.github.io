@@ -241,8 +241,48 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    NOTE: You don't need to cd into the repo because it's called from the directory list.
 1. Toggle from "Focus Mode" to "Standard Mode" to see the directory list.
 1. Expand "ml-basics".
-1. Double click "01 - Data Exploration ..." for it to open in a Jupyter Notebook at the right pane.
+1. Double click <strong>01 - Data Exploration.ipynb</strong> for it to open in a Jupyter Notebook at the right pane.
+
 1. Click the ">>" double blue icon to run the script.
+
+   Watch each data frame and graphic get generated. The final frame's output expected is:
+
+   <tt>Studying for 14 hours per week may result in a grade of 70</tt>
+
+   CONGRATULATIONS! At this point your DevOps job is done.
+
+
+   ### Study the code
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/explore-analyze-data-with-python/3-knowledge-check">QUIZ</a>: 
+
+   * What does <strong>NumPy.shape (2,20)</strong> tell you about the elements in the array?<br />
+   A tuple whose elements give the lengths of the corresponding array dimensions.
+   The array is two dimensional, with each dimension having 20 elements.
+
+
+1. To better study the Python coding, clone the repo to your local machine so you can do searches easier.
+
+1. Make a change and run again to see the impact.
+
+   PROTIP: The "Ensemble Algorithm" is the current state of the art yielding the best ROC.
+
+   * https://madewithml.com/
+
+   ### Flights Challenge
+
+1. Near the bottom of the file is this Challenge:
+
+   "If this notebook has inspired you to try exploring data for yourself, why not take on the challenge of a real-world dataset containing flight records from the US Department of Transportation? You'll find the challenge in the /challenges/01 - Flights Challenge.ipynb notebook!
+
+   That notebook is under within "Files", above "Users" are folders
+
+   ### Clean up
+
+   To reclaim memory usage:
+
+1. Click the "X" to dismiss the tab representing the Notebook you're done with.
+
 
    There are other *.ipynb (Python Notebook) files described in <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents (no C#, R, Julia here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a> by Microsoft's Graeme Malcolm. It contains iPython Notebook code rather than instructions for setting up the ML Workspace.
 
