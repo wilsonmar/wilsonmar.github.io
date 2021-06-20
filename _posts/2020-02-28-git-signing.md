@@ -88,6 +88,29 @@ The app generates the certificate pairs, stores them in Vault, installs them on 
 Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add and commit with a tag</a>, then <a href="#Push">push</a>.
 
 
+<a name="GitHubEmail"></a>
+
+### Email address in GitHub
+
+   We want to configure GitHub to use your primary email in the form such as:
+   
+   <tt><strong>john_doe+github@gmail.com</strong></tt>
+
+   The extra "+github" confuses simple attempts.
+
+1. Be at a browser profile you want to use. (I click on my avatar on Chrome to setup a profile for each email address I use - one for personal Gmail, another for work)
+
+1. In your browser, open a new tab to view your GitHub Profile Email page:
+
+   <a target="_blank" href="https://github.com/settings/emails">https://github.com/settings/emails</a>
+
+1. If your primary email does not have "+github", type your address with the extra "+github" in the <tt>Add email address</tt> field, then click "Add".
+
+1. For "Primary email address", select your "+github" email.
+
+   <strong>IMPORTANT PROTIP: The email specified to GPG should match that reply email in GitHub.</strong>
+
+
 <a name="install_gpg-suite"></a>
 
 ### Install on macOS GUI app GPG-Suite 
@@ -153,7 +176,8 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
    <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png"></a>
 
-1. Type your name and email.
+1. Type your name in title case.
+1. Type your email with the extra "+github" such as "wilsonmar+github@gmail.com".
 1. Define a new password in your password vault, then copy and paste that new password in the two fields.
 1. Make a note of the expiration date (by default four years from current date).
 1. Click "Create Key".
@@ -372,7 +396,7 @@ At your local command line terminal:
 
    <pre>user.name=wilsonmar
 user.email=wilsonmar+github@gmail.com
-user.id=WilsonMar@gmail.com
+user.id=WilsonMar+github@gmail.com
 user.username=hotwilson
 user.signingkey=E62CF51CE3E5A4E8
    </pre>
@@ -384,21 +408,6 @@ user.signingkey=E62CF51CE3E5A4E8
    </strong></pre>
 
    IMPORTANT PROTIP: Any name and email can be specified in Git, which means anyone can impersonate someone else to get a malicious commit PR accepted. This is a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
-
-
-   <a name="GitHubEmail"></a>
-
-   ### Email address in GitHub
-
-1. Be at a browser profile you want to use. (I click on my avatar on Chrome to setup a profile for each email address I use - one for personal Gmail, another for work)
-
-1. In your browser, open a new tab to view your GitHub Profile Email page:
-
-   <a target="_blank" href="https://github.com/settings/emails">https://github.com/settings/emails</a>
-
-1. Identify your "no-reply" public email address, such as "john_doe+github@gmail.com".
-
-   <strong>IMPORTANT PROTIP: The email specified to GPG should match that reply email in GitHub.</strong>
 
 
 <a name="RequireSigned"></a>
@@ -554,7 +563,7 @@ gpg: Note: Use the command "gpgconf --kill all" to restart them.
 
    Example response:   
 
-   <pre>gpg: key 938BBBDEB75FEA21: public key "Wilson Mar <wilsonmar@gmail.com>" imported
+   <pre>gpg: key 938BBBDEB75FEA21: public key "Wilson Mar <wilsonmar+github@gmail.com>" imported
 gpg: Total number processed: 1
 gpg:               imported: 1
    </pre>
@@ -651,9 +660,19 @@ List keys to verify that you have indeed generated them.
 
    <pre><strong>brew install pinentry-mac</strong></pre>
 
-1. Edit file <tt>~/.gnupg/gpg-agent.conf</tt> (if the file doesn’t exist, create it) to contain this entry:
+1. Verify where the program was install:
+
+   <pre><strong>which pinentry-mac</strong></pre>
+
+   Response:
+
+   <pre>/usr/local/bin/pinentry-mac</pre>
+
+   Alternately:
 
    <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
+
+1. Edit file <tt>~/.gnupg/gpg-agent.conf</tt> (if the file doesn’t exist, create it) to add the path.
 
 1. If you are not using a Yubikey, proceed to <a href="#GenerateKey">Generate GPG key pairs</a>.
 
@@ -889,7 +908,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 1. Type "O" (capital or lowercase O) to save the entry.
 
 
-   <a name="CopyPasteGitHub"</a>
+   <a name="CopyPasteGitHub"></a>
 
    ## Copy and Paste in GitHub
 
