@@ -304,7 +304,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 ## AAD (Azure Active Directory)
 
-<a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>:
+<a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
 1. <a target="_blank" href="https://portal.azure.com">portal.azure.com</a>
 

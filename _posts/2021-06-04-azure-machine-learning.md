@@ -241,7 +241,42 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    NOTE: You don't need to cd into the repo because it's called from the directory list.
 1. Toggle from "Focus Mode" to "Standard Mode" to see the directory list.
 1. Expand "ml-basics".
-1. Double click <strong>01 - Data Exploration.ipynb</strong> for it to open in a Jupyter Notebook at the right pane.
+1. Double click one of the .ipynb files to open in a Jupyter Notebook at the right pane.
+
+   From mslearn-dp100:
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (01 - Get started with Notebooks)</a>. Success is a output from a print statement from each frame performing a basic operation of Python in the Juypter Notebook (import, workspace loaded, compute resource loaded).
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb">Use Automated Machine Learning (02 - Get AutoML prediction)</a> to make a Diabetes Prediction. Before running, replace <tt>ENDPOINT</tt> and <tt>PRIMARY_KEY</tt> of the auto-predict-diabetes Automated ML service you setup.
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/03%20-%20Get%20Designer%20Prediction.ipynb">Use Azure Machine Learning Designer (03 - Get Designer predictions)</a> from the predict-diabetes service.
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/04%20-%20Run%20Experiments.ipynb">04 - Run experiments</a> analyzing 1000 rows in mslearn-diabetes to yield pregnancy categories. Runs MLFlow with intermediate logged metrics.
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">05 - Train models</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">06 - Work with data</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb">07- Work with compute</a> [VMs]
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">08 - Create a pipeline</a>
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb">09 - Create a real-time inference service</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">10 - Create a batch inference service</a> [jobs]
+   * <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">11 - Tune hyperparameters</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">12 - Use automated machine learning from the SDK</a>
+   
+   Responsible AI/ML:
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">13 - Explore differential privacy</a> using the SmartNoise toolkit from OpenDP.
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">14 - Interpret models</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">15 - Detect and mitigate unfairness</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">16 - Monitor a model</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">17 - Monitor data drift</a> using the pip azureml-datadrift package.
+   <br /><br />
+
+   From mslearn-dp100:
+
+   * <strong>01 - Data Exploration.ipynb</strong>
+
+
 
 1. Click the ">>" double blue icon to run the script.
 
@@ -254,14 +289,15 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 
    ### Study the code
 
+   The AI-102 and DP-100 both focus on coding.
+
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/explore-analyze-data-with-python/3-knowledge-check">QUIZ</a>: 
 
    * What does <strong>NumPy.shape (2,20)</strong> tell you about the elements in the array?<br />
    A tuple whose elements give the lengths of the corresponding array dimensions.
    The array is two dimensional, with each dimension having 20 elements.
 
-
-1. To better study the Python coding, clone the repo to your local machine so you can do searches easier.
+1. To better study the Python coding, clone the repo to your local machine so you can use your editor's Find features.
 
 1. Make a change and run again to see the impact.
 
@@ -275,7 +311,10 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 
    "If this notebook has inspired you to try exploring data for yourself, why not take on the challenge of a real-world dataset containing flight records from the US Department of Transportation? You'll find the challenge in the /challenges/01 - Flights Challenge.ipynb notebook!
 
-   That notebook is under within "Files", above "Users" are folders
+   That notebook is under within "Files", above "Users" are folders:
+
+   ![az-ml-notebook-files](https://user-images.githubusercontent.com/300046/122685585-867e7c00-d1c9-11eb-8dbb-674065c5df53.png)
+
 
    ### Clean up
 
@@ -286,29 +325,6 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 
    There are other *.ipynb (Python Notebook) files described in <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">this webite</a> primarily by Graeme Malcolm presents (no C#, R, Julia here) which call the Azure Machine Learning Python SDK in the <a target="_blank" href="https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core?view=azure-ml-py">azureml-core package in PyPi</a> [<a target="_blank" href="https://www.wheelodex.org/projects/azureml-core/rdepends/">used by</a>]. However, links below are to <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">github.com/MicrosoftLearning/mslearn-dp100</a> by Microsoft's Graeme Malcolm. It contains iPython Notebook code rather than instructions for setting up the ML Workspace.
 
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (Get started with Notebooks)</a> 
-
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/02%20-%20Get%20AutoML%20Prediction.ipynb">Use Automated Machine Learning (AutoML prediction)</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/03%20-%20Get%20Designer%20Prediction.ipynb">Use Azure Machine Learning Designer (to get Designer predictions)</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/04%20-%20Run%20Experiments.ipynb">Run experiments</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">Train models</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">Work with data</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb">Work with compute</a> [VMs]
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">Create a pipeline</a>
-
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb">Create a real-time inference service</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">Create a batch inference service</a> [jobs]
-   1. <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">Tune hyperparameters</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">Use automated machine learning from the SDK</a>
-   
-   Responsible AI/ML:
-
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">Explore differential privacy</a> using the SmartNoise toolkit from OpenDP
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">Interpret models</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">Detect and mitigate unfairness</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">Monitor a model</a>
-   1. <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">Monitor data drift</a> using the pip azureml-datadrift package.
-   <br /><br />
 
 
 
