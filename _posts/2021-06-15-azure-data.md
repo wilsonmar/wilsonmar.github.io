@@ -64,13 +64,6 @@ has Knowledge checks.
 
 ## DP-100 exam prep
 
-Earn the "Microsoft Certified: Azure Data Scientist Associate" certification by passing the one $165 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100: Designing and Implementing a Data Science Solution on Azure</a>: 
-
-   * Manage Azure resources for machine learning (25–30%)
-   * Run experiments and train models (20–25%)
-   * Deploy and operationalize machine learning solutions (35–40%)
-   * Implement responsible machine learning (5–10%) 
-
 <hr />
 
 ## Microsoft Data Products Marketing
@@ -104,6 +97,7 @@ Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors 
 Linked service to Data Lake Store, Azure Databricks.
 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=YO7-XruyZvs" title="The difference between SQL Server and SQL Azure">VIDEO</a>:
 
 
 <a name="CreateSQLDB"></a>
@@ -137,7 +131,7 @@ For answers needed today and tomorrow ...
 
 1. 
 
-Batch jobs - 
+Batch jobs - REMEMBER:
 
    * ETL = Extract, Transform, Load into SQL star databases with "schema on write"
 

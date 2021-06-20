@@ -589,15 +589,19 @@ Implement custom handlers:
 
 1. Select "Availability set" for a region which does not have Availability Zones (such as Australia, AFAIK). 
 
-1. If you selected "Availability Set", you may define a new Name such as: <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=9552db09-14c8-4831-939a-6565d6379a31">VIDEO</a>: REMEMBER:
+   
+1. <a target="_blank" href="https://www.youtube.com/watch?v=ilXx0cmmGz0">VIDEO</a>: If you selected "Availability Set", you may define a new Name such as: <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=9552db09-14c8-4831-939a-6565d6379a31">VIDEO</a>: REMEMBER:
 
-   <tt>3racks_20slots</tt>
+   <tt>3fault_20update</tt> or <tt>3racks_20shelves</tt>
 
    * <strong>Fault domains</strong> (FD) = separate racks
-   * <strong>Update domains</strong> (UD) = individual slots on each rack
+   * <strong>Update domains</strong> (UD) = individual shelves on each rack
    <br /><br />
 
    ![az-computer-vm-avail-set-463x345](https://user-images.githubusercontent.com/300046/122305411-123f9200-cec4-11eb-9b10-a2af86a7c42b.png)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=7o5NeWjNoFQ">VIDEO</a>: 
+   This is so each server can be taken offline for OS patching without impacting availability.
 
 1. Azure <strong>spot instance</strong>: As "No" is the default, <strong>click Yes</strong> to save money, if your app is designed for it (saves intermediate results which another server instance can retrieve and continue).  
 
