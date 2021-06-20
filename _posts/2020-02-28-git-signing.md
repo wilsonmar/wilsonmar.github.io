@@ -290,7 +290,8 @@ Compression: Uncompressed, ZIP, ZLIB, BZIP2
 
 1. Update or Create ~/.gnupg/gpg.conf
 
-   <pre><strong>code "$HOME/.gnupg/gpg.conf"
+   <pre><strong>code $HOME/.gnupg/gpg.conf
+   </strong></pre>
 
    Visual Studio Code should open with lines such as:
    <pre>auto-key-retrieve
@@ -307,7 +308,6 @@ no-emit-version
 1. Update permissions on your `~/.gnupg` Directory:
 
    <pre><strong>chmod 700 ~/.gnupg</strong></pre>
-
 
 1. Proceed to <a href="#Config">Configuration</a>
 
