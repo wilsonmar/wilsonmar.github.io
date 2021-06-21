@@ -106,9 +106,17 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 1. If your primary email does not have "+github", type your address with the extra "+github" in the <tt>Add email address</tt> field, then click "Add".
 
-1. For "Primary email address", select your "+github" email.
+1. If you are using Gmail or another email system that processes "+github" emails, for "Primary email address", select that as your primary email.
 
    <strong>IMPORTANT PROTIP: The email specified to GPG should match that reply email in GitHub.</strong>
+
+   Alternatively, highlight your "no reply" email address under the "Primary email address" heading. Example:
+
+   <tt>12345678+johndoe@users.noreply.github.com</tt>
+
+   Press command+C to copy it to your Clipboard.
+
+   In your notes, press command+V to save that for use <a href="#SignCommits">to Sign Commits (below)</a>.
 
 
 <a name="install_gpg-suite"></a>
@@ -158,11 +166,15 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 
    To remove the app later, simply delete folder "GPG Keychain.app", which would make certs disappear too. That's why we will later save the certs to a location off your laptop.
 
-1. Pinch 4 fingers together on the Touchpad and scroll around for apps.
+1. Open the app from Terminal:
 
-1. Type enough of "GPG Keychain" for the icon to appear for you to click:
+   <pre><strong>open "/Applications/GPG Keychain.app"</strong></pre>
+
+   Alternately, pinch 4 fingers together on the Touchpad and type enough of "GPG Keychain" for the icon to appear for you to click:
 
    <img width="126" alt="git-signing-gpg-suite" src="https://user-images.githubusercontent.com/300046/95812445-a83a7180-0cd2-11eb-8c70-bfa7b1a5032b.png">
+
+1. Click here to <a href="VerifyGPG">skip to Verify GPG (below)</a>.
 
 
    #### Gen GPG using macOS GPG-Suite
@@ -182,6 +194,7 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 1. Make a note of the expiration date (by default four years from current date).
 1. Click "Create Key".
 1. If you select "No, Thanks!" to upload your public key and do that later from the "Key" menu item.
+1. Press Command+Q to quit the GPG Keychain program.
 
 
    <a name="gnupg2_mac_install"></a>
@@ -247,11 +260,25 @@ install-on-request: 74,096 (30 days), 208,203 (90 days), 786,528 (365 days)
 build-error: 0 (30 days)
    </pre>
 
+1. Edit your <tt>~/.bash_profile</tt> or <tt>~/.bashrc</tt> file to ensure that commands for "gpg" are routed to gpg2:
+
+   <pre>alias gpg="gpg2"
+   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
+   </pre>
+
+   PROTIP: The response shows that the installation is specific to each version of macOS:<br />
+   <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
+
 1. Compare response from:
 
    <pre><strong>brew info gpg</strong></pre>
 
    Yeah, the same.
+
+
+   <a name="VerifyGPG"></a>
+
+   #### Verify GPG install version
 
 1. Verify CLI noted <a target="_blank" href="https://www.wikiwand.com/en/GNU_Privacy_Guard">
 in Wikipediat/Wikiwand.com/en/GNU_Privacy_Guard</a> which states the source at <a target="_blank" href="https://dev.gnupg.org/source/gnupg/">d2qa  dev.gnupg.org/source/gnupg</a>
@@ -274,14 +301,16 @@ Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
 Compression: Uncompressed, ZIP, ZLIB, BZIP2
    </pre>
 
-1. Edit your <tt>~/.bash_profile</tt> or <tt>~/.bashrc</tt> file to ensure that commands for "gpg" are routed to gpg2:
+1. Obtain keys:
 
-   <pre>alias gpg="gpg2"
-   echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
+   <pre><strong>gpg -k</strong></pre>
+
+   Response:
+
+   <pre>pub   rsa4096 2021-06-20 [SC] [expires: 2025-06-20]
+      123456789E91004D4C5D88CAE21961814AC0EF1B
+uid           [ultimate] John Doe <johndoe+github@gmail.com>
    </pre>
-
-   PROTIP: The response shows that the installation is specific to each version of macOS:<br />
-   <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
 
 
    ### MacOS GPG Config
@@ -305,11 +334,18 @@ no-emit-version
    use-agent
    </pre>
 
+1. Add the default-key from the steps above:
+
+   <pre>default-key 123456789E91004D4C5D88CAE21961814AC0EF1B
+   </pre>
+
+1. Save the file. Switch back to the CLI Terminal.
+
 1. Update permissions on your `~/.gnupg` Directory:
 
    <pre><strong>chmod 700 ~/.gnupg</strong></pre>
 
-1. Proceed to <a href="#Config">Configuration</a>
+1. Proceed to <a href="#Config">Configuration (below)</a>
 
 
 <hr />
@@ -656,6 +692,10 @@ List keys to verify that you have indeed generated them.
 
    ### pinentry for GPG on MacOS
 
+1. Edit file (if the file doesn’t exist, create it) to add the path.
+
+   <pre><strong>code ~/.gnupg/gpg-agent.conf</strong></pre>
+
 1. On MacOS, install a graphical pinentry application:
 
    <pre><strong>brew install pinentry-mac</strong></pre>
@@ -668,11 +708,12 @@ List keys to verify that you have indeed generated them.
 
    <pre>/usr/local/bin/pinentry-mac</pre>
 
-   Alternately:
+1. Edit file <tt>~/.gnupg/gpg-agent.conf</tt> to contain:
 
-   <pre>pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac</pre>
-
-1. Edit file <tt>~/.gnupg/gpg-agent.conf</tt> (if the file doesn’t exist, create it) to add the path.
+   <pre>default-cache-ttl 600
+max-cache-ttl 7200
+pinetry-program /usr/local/bin/pinetry-mac
+   </pre>
 
 1. If you are not using a Yubikey, proceed to <a href="#GenerateKey">Generate GPG key pairs</a>.
 
@@ -838,9 +879,15 @@ sub   rsa2048 2020-03-01 [E] [expires: 2022-03-01]
 
    "rsa2048" is the encryption algorithm used.
 
-1. <a href="#ListKeys">List keys</a> to obtain a KeyID.
 
-   <pre>RESPONSE=$( gpg --list-secret-keys --keyid-format LONG )</pre>
+
+   <a name="ListKeys"></a>
+
+   ### List GPG Keys
+
+1. List keys to obtain a KeyID:
+
+   <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
    Parse the RESPONSE:
 
@@ -856,6 +903,8 @@ uid                 [ultimate] John Doe <john_doe+github@gmail.com>
 ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
+   NOTE: Only the "[ultimate]" key is used. Ignore the ones marke "[ revoked]".
+
 1. Manually highlight and copy the GPG key ID, which is after "rsa2048/" in the sec section, <tt>62C414BA89BFBE52</tt> in the sample above.
 
    Alternately, use these Bash script lines to parse the key automatically:
@@ -866,11 +915,13 @@ GPGKeyID=$( echo ${RESPONSE##*/} | cut -d " " -f 1 )
 echo $GPGKeyID
    </pre>
 
-1. To set your GPG signing key in Git, substitute the GPG key ID you'd like to use with the value of $GPGKeyID:
+1. To set your GPG signing key in Git, construct a command by substituting the GPG key ID you'd like to use with the value of $GPGKeyID:
 
    <pre><strong>git config --global user.signingkey 62C414BA89BFBE52  #</strong></pre>
 
    No response is expected from the command.
+
+1. Skip to <a href="#CopyPasteGitHub">section "Copy Paste GitHub" (below)</a>.
 
 
    <a name="EditGPG"></a>
@@ -920,6 +971,10 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 1. Click "New GPG key" for a form to accept the contents of the public GPG key,
    then press command+Tab to switch back to the Terminal.
 
+1. Navigate to your <tt>.ssh</tt> folder:
+
+   <pre><strong>cd & cd .ssh</strong></pre>   
+
 1. Print the public GPG key, in <strong>ASCII armor</strong> format so that they can be sent in a standard messaging format such as email. (Otherwise, the output is in binary format). 
 
    <pre><strong>gpg --armor --export 62C414BA89BFBE52 >$HOME/mygitsigning.pub</strong></pre>
@@ -942,6 +997,10 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
    
+1. Check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
+
+   <img width="612" alt="github-vigilent-mode-1224322" src="https://user-images.githubusercontent.com/300046/122704309-ac7b3f00-d210-11eb-8e06-3a8e11bb837c.png">
+
 
 
    <a name="SigningKey"></a>
@@ -1032,8 +1091,14 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
 ## Sign Git Commits & merges
 
-1. Edit some file
-1. Add
+1. git clone a repo, then edit some file.
+
+1. Configure for the repo (and each additional repo) the private "no reply" email from <a href="#GitHubEmail">above</a> so your email is not exposed publicly:
+
+   <pre><strong>git config user.email "12345678+johndoe@users.noreply.github.com"
+   </strong></pre>
+
+1. Add the files changed:
 
    <pre><strong>git add .</strong></pre>
 
@@ -1065,7 +1130,9 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 1. After push, switch to an internet browser to see a verified badge next to your commits on GitHub online.
 
    <img width="413" height="262" alt="git-signing-ale-413x262" src="https://user-images.githubusercontent.com/300046/116947094-1d52a180-ac39-11eb-99c0-a76e793f0b8e.png">
+1. Verify that green checkmark next to your name on GitHub.
 
+<!--
    <pre># Specify -S to sign a commit and tag:
 git commit -m "test signed commit" -S
 git tag -m "test signed tag" -s test
@@ -1075,9 +1142,7 @@ git verify-commit HEAD
 git log -1 --show-signature
 git verify-tag test
    </pre>
-
-1. Verify that green checkmark next to your name on GitHub.
-
+-->
 
 <hr />
 
