@@ -173,8 +173,8 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 1. To generate a GPG key pair click "+ New" for the pop-up dialog.
 1. Click "Advanced options" to select Key Type "RSA (sign only)".
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png">
-   <img width="779" alt="git-signing-mac-keychain" src="https://user-images.githubusercontent.com/300046/95813251-b1c4d900-0cd4-11eb-86d0-6896fd78cdf1.png"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/122693753-78941f80-d1f8-11eb-8c43-23dc4198b426.png">
+   <img width="770" alt="git-signing-mac-keychain-1540x804.png" src="https://user-images.githubusercontent.com/300046/122693753-78941f80-d1f8-11eb-8c43-23dc4198b426.png"></a>
 
 1. Type your name in title case.
 1. Type your email with the extra "+github" such as "wilsonmar+github@gmail.com".
