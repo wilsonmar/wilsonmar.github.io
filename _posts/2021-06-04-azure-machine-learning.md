@@ -227,13 +227,16 @@ compute:
 
    ### ml-basics Python Jupyter Notebooks
 
+https://docs.microsoft.com/en-us/users/msftofficialcurriculum-4292/collections/kox0ig8qrgez2q
+ILT Pilot – DP-100: Designing and Implementing a Data Science Solution on Azure
+
 1. <a target="_blank" href="https://www.lexxconsulting.com/post/machine-learning-with-python-microsoft-azure-machine-learning">TUTORIAL</a>: Get the script:
 
    <pre><strong>
 git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">https://github.com/microsoftdocs/ml-basics.git</a> --depth 1
    </strong></pre>
 
-1. Get the Python scripts referenced during the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day $1795 USD live online course by Microsoft DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a> (for Data Scientists).
+1. Get the Python scripts referenced during the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01">3-day $1795 USD live online course by Microsoft DP-100T01-A: Designing and Implementing a Data Science Solution on Azure</a> (for Data Scientists). 
 
    <pre><strong>git clone <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100">https://github.com/MicrosoftLearning/mslearn-dp100.git</a> --depth 1
    </strong></pre>
@@ -1132,6 +1135,9 @@ Steps for data transformation:
    * Data split 
    * Run model
    <br /><br />
+
+https://docs.python.org/3/library/pickle.html
+pickle (.pkl) file format for Python object serializatin
 
 
 ## More

@@ -1064,6 +1064,11 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
    <tt>GPG_TTY</tt> variable is to avoid errors.
 
+   If using Zsh:
+
+   <pre><strong>echo 'export GPG_TTY=$(tty)' >> ~/.profile
+   </strong></pre>
+
 1. Confirm:
 
    <pre><strong>echo $GPG_TTY
@@ -1144,6 +1149,23 @@ git verify-tag test
    </pre>
 -->
 
+## View Signed Git Log
+
+1. See signing info with your latest commit in the git log:
+
+   <pre><strong>git log --show-signature -1</strong></pre>
+
+   The response would include, for example:
+
+   <pre>commit 71ad7059817e609b52b29469e1214a56799b33ef (HEAD -> master)
+gpg: Signature made Mon Mar  2 11:07:39 2020 EST
+gpg:                using RSA key 0BB29E3C5216420CC50ACF8D62C414BA89BFBE51
+gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
+Author: John Doe <johndoe+github@gmail.com>
+Date:   Sun Jun 20 22:54:17 2021 -0600
+   </pre>
+
+
 <hr />
 
 <a name="SignGitTags"></a>
@@ -1180,18 +1202,6 @@ git verify-tag test
 1. For a list of all version 1 tags:
 
    <pre><strong>git tag -l "v1.*"</strong></pre>
-
-1. See signing info with your latest commit in the git log:
-
-   <pre><strong>git log --show-signature -1</strong></pre>
-
-   The response would include, for example:
-
-   <pre>commit 71ad7059817e609b52b29469e1214a56799b33ef (HEAD -> master)
-gpg: Signature made Mon Mar  2 11:07:39 2020 EST
-gpg:                using RSA key 0BB29E3C5216420CC50ACF8D62C414BA89BFBE51
-gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
-   </pre>
 
 
    ### Silencing
@@ -1449,6 +1459,8 @@ A Git Horror Story: repository integrity with signed commits</a>
 
 https://www.thegeekyway.com/hands-on-guide-on-gpg-keys/
 by GeekyShacklebolt
+
+http://varrette.gforge.uni.lu/blog/2017/03/14/tutorial-gpg-gnu-privacy-guard/
 
 
 ## More on DevOps #

@@ -258,10 +258,28 @@ Integrates with Apache Spark.
 (Spark jobs can also be run in Azure Databricks and Azure HDInsight)
 
 
-
 ## Non-Relational CosmosDB
 
 
+
+## HDInsight "big data"
+
+Batch-only (runs cannot be stopped).
+
+But can scale up and down.
+
+* Kafka - stream processing message broker
+* Hadoop - Distributed file system
+* Spark - data cluster computing
+* Apache Storm - real-time analytics Stream computation
+
+
+## Azure Data Platform
+
+Include:
+* Azure Data Factory (ADF)
+* Stream Analytics
+* Data Lake
 
 ## Social
 

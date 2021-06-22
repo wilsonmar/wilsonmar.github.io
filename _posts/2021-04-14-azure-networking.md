@@ -145,6 +145,11 @@ ping -4 10.20.20.1
    <pre>tcping.exe -p 3389 -n 8 10.20.20.1
    </pre>
 
+1. Test access of domain name:
+      
+   <pre>tcping.exe -p 80 -w 9  whatever.com
+   </pre>
+
 1. Another PowerShell command:
 
    <pre>get-help -Name Test-NetConnection -Examples
