@@ -262,6 +262,22 @@ Integrates with Apache Spark.
 
 
 
+
+PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. References:
+   * https://www.upsolver.com/blog/apache-parquet-why-use
+
+
+<a name="Databricks"></a>
+
+## Databricks
+
+There is a class and certification specific to Databricks:
+https://docs.microsoft.com/en-us/learn/certifications/courses/dp-090t00
+
+Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-090">DP-090 exam</a>: 
+
+
+
 ## HDInsight "big data"
 
 Batch-only (runs cannot be stopped).

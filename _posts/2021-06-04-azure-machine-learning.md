@@ -95,6 +95,9 @@ docs.microsoft.com/en-us/azure/machine-learning/service</a>
 <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">
 github.com/microsoftdocs/ml-basics</a>
 
+<a target="_blank" href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0q8mkm01mVAnfSNnngYvY1UNzBQODU4MUowVkVGWVRaOVJXRk4yMVhOTi4u">
+Readiness Quiz for DP-100</a> (AZ-900 and AI-900)
+
 <hr />
 
 <a name="Decision"></a>
@@ -246,7 +249,9 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 1. Expand "ml-basics".
 1. Double click one of the .ipynb files to open in a Jupyter Notebook at the right pane.
 
-   From mslearn-dp100:
+   From mslearn-dp100, described at
+   <a target="_blank" href="https://microsoftlearning.github.io/mslearn-dp100/">
+   microsoftlearning.github.io/mslearn-dp100</a>:
 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/01%20-%20Get%20Started%20with%20Notebooks.ipynb">Create an Azure Machine Learning workspace (01 - Get started with Notebooks)</a>. Success is a output from a print statement from each frame performing a basic operation of Python in the Juypter Notebook (import, workspace loaded, compute resource loaded).
 
@@ -257,7 +262,7 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/04%20-%20Run%20Experiments.ipynb">04 - Run experiments</a> analyzing 1000 rows in mslearn-diabetes to yield pregnancy categories. Runs MLFlow with intermediate logged metrics.
 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">05 - Train models</a>
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">06 - Work with data</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">06 - Work with data</a>. See <a target="_blank" href="https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/work-with-data/datasets-tutorial">"work-with-data"</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb">07- Work with compute</a> [VMs]
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">08 - Create a pipeline</a>
 
@@ -278,8 +283,11 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    From mslearn-dp100:
 
    * <strong>01 - Data Exploration.ipynb</strong>
+   <br /><br />
 
+   Additionally:
 
+   <a target="_blank" href="https://github.com/Azure/MachineLearningNotebooks/">github.com/Azure/MachineLearningNotebooks</a> has Notebooks.
 
 1. Click the ">>" double blue icon to run the script.
 
