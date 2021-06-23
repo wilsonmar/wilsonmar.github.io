@@ -722,20 +722,31 @@ pinetry-program /usr/local/bin/pinetry-mac
 
    ## Optional Yubikey smart chip
 
-   This is for those who work on multiple machines but want to use a single physical signing key they plug into each machine.
+   Instead of storing private keys on your laptop's hard drive (where a hacker can access from any program running on the computer), <a target="_blank" href="https://medium.com/@ahawkins/securing-my-digital-life-gpg-yubikey-ssh-on-macos-5f115cb01266">security-concious people</a> store their private keys in a separate physical <a target="_blank" href="https://en.wikipedia.org/wiki/OpenPGP_card">smartcard (OpenGPG card)</a> such as a <a target="_blank" href="https://www.yubico.com/quiz/">Yubikey device (one of several)</a>.
+
+   Day-to-day, it is good for those who work on multiple machines but want to use a single physical signing key they plug into each machine.
+
+   Note the Yubikey was designed to not be able to export private keys (by hackers or you).
 
    If your laptop's USB has been locked down, skip this and move on to <a href="#GenerateKey">generate a key</a>.
 
    <a target="_blank" href="https://www.yubico.com/product/yubikey-5-nfc/"><img align="right" alt="git-siging-yubikey-100x100.jpg" width="100" src="https://user-images.githubusercontent.com/300046/75632026-faa4a300-5bc5-11ea-8471-60b6ef9981f6.jpg"></a>
-   Instead of storing private keys on a laptop's hard drive (where they can be hacked by any program running on the computer), <a target="_blank" href="https://medium.com/@ahawkins/securing-my-digital-life-gpg-yubikey-ssh-on-macos-5f115cb01266">security-concious people</a> store their private keys in a separate physical <a target="_blank" href="https://en.wikipedia.org/wiki/OpenPGP_card">smartcard (OpenGPG card)</a> such as a <a target="_blank" href="https://www.yubico.com/quiz/">Yubikey device (one of several)</a>.
+      PROTIP: If you lose your physical dongle, you'll need to re-generate all keys.
 
-   PROTIP: If you lose your physical dongle, you'll need to re-generate all keys.
-
-   Keys written to a card can only be used in combination with a PIN code, so that even if a YubiKey is stolen, a thief would not be able to authenticate directly.
+   Also, keys written to a card can only be used in combination with a <strong>PIN code</strong>, so that even if a YubiKey is stolen, a thief would not be able to authenticate directly.
 
    Each YubiKey is its own unique cardno.
 
-1. Install software to manage Yubikey (<a target="_blank" href="https://github.com/Yubico/yubikey-manager">ykman</a>):
+1. In <a target="_blank" href="https://www.yubico.com/setup/">Yubikey Setup Docs</a>, identify your Yubikey (I personally have a 5Ci FIPS for use on MacOS USB-C and iPhone USB/Apple Lightning® Interface: OTP):
+
+   https://www.yubico.com/works-with-yubikey/catalog/#protocol=all&usecase=all&key=yubikey-5ci
+
+   Note that these are internet-based SaaS apps rather than local apps (such as 
+   <a target="_blank" href="https://support.1password.com/security-key/">1Password"</a>.
+
+1. Click on "GitHub" for <a target="_blank" href="https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication#configuring-two-factor-authentication-using-fido-u2f">these instructions</a> to enable a 2FA app (if you haven't already),  
+
+1. In a Terminal, install software to manage Yubikey (<a target="_blank" href="https://github.com/Yubico/yubikey-manager">ykman</a>):
 
    <pre>brew install ykman
    brew install yubikey-personalization
@@ -754,36 +765,218 @@ no-tty
 
 1. Insert your YubiKey and run:
 
-   <pre><strong>gpgp --card-status</strong></pre>
-   
-   If you see these messages:
-   <pre>gpg: selecting openpgp failed: Operation not supported by device
-gpg: OpenPGP card not available: Operation not supported by device   
-gpg/card>
-   </pre>
+   <pre><strong>gpg --card-status</strong></pre>
 
-   <a target="_blank" href="https://github.com/jeffmaher/yubikey-macos-setup">BLOG</a>: continue ...
+   The response expected is like this:
 
-   <pre>admin
-   generate
-   </pre>
-
-   The response is like this:
-
-   <pre>Reader ...........: Yubico Yubikey NEO OTP U2F CCID
-Application ID ...: <em>ID</em>
+   <pre>Reader ...........: Yubico Yubikey 4 OTP U2F CCID
+Application ID ...: D27312341241342342342342343
 Version ..........: 2.0
+Application type .: OpenPGP
+Version ..........: 3.4
 Manufacturer .....: Yubico
-Serial number ....: <em>serial</em>
+Serial number ....: 12345678
 Name of cardholder: [not set]
 Language prefs ...: [not set]
-Sex ..............: unspecified
+Salutation .......: 
 URL of public key : [not set]
 Login data .......: [not set]
 Signature PIN ....: not forced
+Key attributes ...: rsa2048 rsa2048 rsa2048
+Max. PIN lengths .: 127 127 127
+PIN retry counter : 3 0 3
+Signature counter : 0
+KDF setting ......: off
+Signature key ....: [none]
+Encryption key....: [none]
+Authentication key: [none]
+General key info..: [none]
+   </pre>
+   
+   ### Configure Yubikey
+
+1. Initiate the configuration program:
+
+   <pre><strong>gpg --card-edit</strong></pre>
+
+   The prompt appears:
+
+   <pre>gpg/card>
    </pre>
 
+1. Initiate the configuration program:
+
+   <pre>gpg/card> <strong>admin</strong></pre>
+
+   "Admin commands allowed" means you can continue.
+
+1. Generate:
+
+   <pre>gpg/card> <strong>generate</strong></pre>
+
+1. Type Y to:
+
+   "Make off-card backup of encryption key? (Y/n) Y
+
+   <a name="Yubikey_default_PINs"></a>
+
+   Response:
+
+   <pre>PROTIP: Please note that the factory settings of the PINs are
+   PIN = '123456'     Admin PIN = '12345678'
+You should change them using the command --change-pin
+   </pre>
+
+1. Change the PIN:
+
+1. Generate for reals:
+
+   <pre>gpg/card> <strong>generate</strong></pre>
+
+1. Type n to:
+
+   "Make off-card backup of encryption key? (Y/n) n
+
+   <a target="_blank" href="https://github.com/jeffmaher/yubikey-macos-setup">BLOG</a>: 
+   if you see these messages:
+   <pre>gpg: selecting openpgp failed: Operation not supported by device
+gpg: OpenPGP card not available: Operation not supported by device   
+   </pre>
+
+1. In the pop-up, type PIN "123456", which is the default pin.
+
+   Response:
+
+   <pre>Please specify how long the key should be valid.
+         0 = key does not expire
+      &LT;n>  = key expires in n days
+      &LT;n>w = key expires in n weeks
+      &LT;n>m = key expires in n months
+      &LT;n>y = key expires in n years
+   <pre>
+
+1. Type "1y" (for 1 year).
+
+   Response is the time/date of expiration, such as:
+
+   <pre>Key expires at Wed Jun 22 10:40:38 2022 MDT</pre>
+
+1. Type "y" to "Is this correct? (y/N)"
+
+   Response:
+
+   <pre>GnuPG needs to construct a user ID to identify your key.
+&nbsp;
+Real name: 
+   </pre>
+
+1. Type your real name, such as "John Doe".
+1. Type your Email address: johndoe+github@gmail.com
+1. Type Comment:
+
+1. Type "O" (for OK):
+
+   <pre>Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O</pre>
+
+1. In the pop-up "Please enter the Admin PIN", which is by default "12345678", as <a href="#Yubikey_default_PINs">above</a>.
+
+1. In the pop-up "Please unlick the card", type "123456", the default.
+
+   The response should be a message such as:
+
+   <pre>gpg: key A1D1DC27394AD9D0 marked as ultimately trusted
+gpg: revocation certificate stored as '/Users/johndoe/.gnupg/openpgp-revocs.d/056B29F5E7827C95C3A83B3BC1D1DC27394AD9D0.rev'
+public and secret key created and signed.
+   </pre>
+
+1. Change the PIN and Admin PIN:
+
+   <pre>gpg/card> <strong>passwd</strong></pre>
+   
+   Response:
+   <pre>gpg: OpenPGP card no. A1234567890103040006162528900000 detected
+&nbsp;
+1 - change PIN
+2 - unblock PIN
+3 - change Admin PIN
+4 - set the Reset Code
+Q - quit
+&nbsp;
+Your selection? _
+   </pre>
+
+1. Type 1 to "change PIN".
+1. In the pop-up "Please enter the PIN", type the CURRENT 6-character PIN and press OK.
+1. In the pop-up "New PIN", retype your PIN and press OK.
+
+   Expected response:
+
+   <pre>PIN changed.
+&nbsp;
+1 - change PIN
+2 - unblock PIN
+3 - change Admin PIN
+4 - set the Reset Code
+Q - quit
+&nbsp;
+Your selection? _
+   </pre>
+
+1. Type 3 to "change Admin PIN".
+1. In the pop-up "Please enter the Admin PIN", type the CURRENT 8-character PIN and press OK.
+1. In the pop-up "New Admin PIN", retype your PIN and press OK.
+
+   Expected response:
+
+   <pre>PIN changed.
+&nbsp;
+1 - change PIN
+2 - unblock PIN
+3 - change Admin PIN
+4 - set the Reset Code
+Q - quit
+&nbsp;
+Your selection? _
+   </pre>
+
+1. Type Q to quit out of passwd mode.
+
+1. List the configuration:
+
+   <pre>gpg/card> <strong>list</strong></pre>
+
+   <pre>General key info..: 
+pub  rsa2048/A1D1DC27394AD9D0 2021-06-22 John Doe <johndoe+github@gmail.com>
+sec>  rsa2048/A1D1DC27394AD9D0  created: 2021-06-22  expires: 2022-06-22
+                                card-no: 0006 16252890
+ssb>  rsa2048/123D8F06797B4CD8  created: 2021-06-22  expires: 2022-06-22
+                                card-no: 0006 16252890
+ssb>  rsa2048/12329BE82896FF01  created: 2021-06-22  expires: 2022-06-22
+                                card-no: 0006 16252890
+   </pre>
+
+   Two "ssb" (sub keys) are generated by the <a target="_blank" href="https://docs.yubico.com/hardware/yubikey/yk-fips/tech-manual/">YubiKey 5 FIPS Series</a> keys (one for each level of FIPS certification (<a target="_blank" href="https://docs.yubico.com/hardware/yubikey/yk-fips/tech-manual/fips5-levels.html#fips5-levels-label">FIPS 140-2 Level 1 and FIPS 140-2 Level 2</a>). Both certificates apply to the same keys.
+
+1. Tell Git the signing key to use, using the key from the previous command (above):
+
+   <pre><strong>git config --global user.signingkey=A1D1DC27394AD9D0</strong></pre>
+
+1. Verify the <tt>signingkey</tt> within the <tt>[user]</tt> section:
+
+   <pre><strong>cat .git/config</strong></pre>
+
+1. Type "quit" to quit out of the program.
+
+   Sub-keys are listed:
+
+   <pre>sub   rsa2048 2021-06-22 [A] [expires: 2022-06-22]
+sub   rsa2048 2021-06-22 [E] [expires: 2022-06-22]
+   </pre>
+
+1. If you lose your Yubikey, use your Master Key to certify a new signing key, then paste a new public key into GitHub.
+
    References on Yubikey on macOS Git:
+   * https://support.yubico.com/hc/en-us/articles/360013790219-Getting-Started-with-the-YubiKey-on-macOS
    * https://github.com/drduh/YubiKey-Guide
    * https://www.isi.edu/~calvin/yubikeyssh.htm
    * https://hugotunius.se/2018/07/13/yubikey-ssh-authentication.html - 13 Jul 2018
@@ -920,6 +1113,8 @@ echo $GPGKeyID
    <pre><strong>git config --global user.signingkey 62C414BA89BFBE52  #</strong></pre>
 
    No response is expected from the command.
+
+   The command updated the config file within the repo's .git folder.
 
 1. Skip to <a href="#CopyPasteGitHub">section "Copy Paste GitHub" (below)</a>.
 
@@ -1137,6 +1332,8 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
    <img width="413" height="262" alt="git-signing-ale-413x262" src="https://user-images.githubusercontent.com/300046/116947094-1d52a180-ac39-11eb-99c0-a76e793f0b8e.png">
 1. Verify that green checkmark next to your name on GitHub.
 
+   ???
+
 <!--
    <pre># Specify -S to sign a commit and tag:
 git commit -m "test signed commit" -S
@@ -1164,6 +1361,10 @@ gpg: Good signature from "John Doe <john_doe+github@gmail.com>" [ultimate]
 Author: John Doe <johndoe+github@gmail.com>
 Date:   Sun Jun 20 22:54:17 2021 -0600
    </pre>
+
+1. To verify signatures during a git merge (and abort if signatures are not verifiable):
+
+   <pre><strong>git merge --verifya-signatures <em>other_branch</em></strong></pre>
 
 
 <hr />

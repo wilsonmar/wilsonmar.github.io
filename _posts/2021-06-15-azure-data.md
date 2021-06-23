@@ -302,6 +302,8 @@ Include:
 <a target="_blank" href="https://www.microsoft.com/en-us/sql-server/community?activetab=pivot_1:primaryr4">
 Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
+https://www.twitch.tv/425show
+
 ## More about Azure #
 
 This is one of a series about Azure cloud:

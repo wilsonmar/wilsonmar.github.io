@@ -379,6 +379,9 @@ To peer virtual networks involving separate subscriptions in different Azure Act
 
 ## Azure Express Route on-prem networking
 
+<a target="_blank" href="https://raw.githubusercontent.com/timothywarner/azure-arch-crash-course/master/images/hub-spoke.png">
+<img alt="ExpressRoute Hub-spoke" src="https://raw.githubusercontent.com/timothywarner/azure-arch-crash-course/master/images/hub-spoke.png"></a><a target="_blank" href="https://github.com/timothywarner/azure-arch-crash-course/blob/master/images/hub-spoke.png">*</a>
+
 <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=81b6ab57-edd1-4bd4-a32b-9d847466e13f">VIDEO</a>:
 <strong>Azure ExpressRoute</strong> routes traffic through dedicated private connections between the on-premises network and Azure rather than going over the public internet. This achieves greater resilience, faster speeds, higher security, and lower latency. But it's considered expensive.
 

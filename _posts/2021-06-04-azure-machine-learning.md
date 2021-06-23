@@ -265,11 +265,13 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">06 - Work with data</a>. See <a target="_blank" href="https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/work-with-data/datasets-tutorial">"work-with-data"</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb">07- Work with compute</a> [VMs]
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">08 - Create a pipeline</a>
+   <br /><br />
 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/09%20-%20Create%20a%20Real-time%20Inferencing%20Service.ipynb">09 - Create a real-time inference service</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/10%20-%20Create%20a%20Batch%20Inferencing%20Service.ipynb">10 - Create a batch inference service</a> [jobs]
    * <a tune="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/11%20-%20Tune%20Hyperparameters.ipynb">11 - Tune hyperparameters</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/12%20-%20Use%20Automated%20Machine%20Learning.ipynb">12 - Use automated machine learning from the SDK</a>
+   <br /><br />
    
    Responsible AI/ML:
 
@@ -280,10 +282,11 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">17 - Monitor data drift</a> using the pip azureml-datadrift package.
    <br /><br />
 
-   From mslearn-dp100:
+   From ml-basics:
 
    * <strong>01 - Data Exploration.ipynb</strong>
    <br /><br />
+
 
    Additionally:
 
@@ -833,6 +836,9 @@ Different values in the Confusion Matrix would be created for each level of thre
 
 <a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
 <strong>AUC (Area Under the Curve)</strong> measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
+References:
+   * https://towardsdatascience.com/the-roc-curve-unveiled-81296e1577b
+
 
 #### Metrics of regression model performance
 
@@ -1146,6 +1152,23 @@ Steps for data transformation:
 
 https://docs.python.org/3/library/pickle.html
 pickle (.pkl) file format for Python object serializatin
+
+More Complexity makes for better Intelligibility
+   * Linear regression
+   * Decision Trees
+   * K-nearest nighbors
+   * Random Forests
+   * Support Vector Machines
+   * Deep Neural Networks
+   <br /><br />
+
+Global features vs. local feature importance
+
+https://www.twitch.tv/enceladosaurus
+
+https://shap.readthedocs.io/en/latest/index.html
+
+https://docs.microsoft.com/en-us/azure/machine-learning/how-to-machine-learning-interpretability-aml
 
 
 ## More
