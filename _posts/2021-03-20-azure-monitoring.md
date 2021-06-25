@@ -521,7 +521,7 @@ it collects log, performance, and error data.
 
 An Application Insights resource is created by default when a Function app is created.
 
-
+https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
 
 App Insights have additional costs: https://portal.loganalytics.io/demo
 

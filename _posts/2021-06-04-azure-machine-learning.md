@@ -277,7 +277,10 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">13 - Explore differential privacy</a> using the SmartNoise toolkit from OpenDP.
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">14 - Interpret models</a>
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">15 - Detect and mitigate unfairness</a>
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">15 - Detect and mitigate unfairness</a> https://www.microsoft.com/en-us/research/uploads/prod/2020/05/Fairlearn_WhitePaper-2020-09-22.pdf
+
+   https://customers.microsoft.com/en-us/story/809460-ey-partner-professional-services-azure-machine-learning-fairlearn
+    
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">16 - Monitor a model</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">17 - Monitor data drift</a> using the pip azureml-datadrift package.
    <br /><br />
@@ -355,6 +358,10 @@ Earn the "Microsoft Certified: Azure Data Scientist Associate" certification by 
    * Deploy and operationalize machine learning solutions (35–40%) previously "Optimizing and managing models" suing Hyperdrive and model explainers.
    * Implement responsible machine learning (5–10%) 
    <br /><br />
+
+Microsoft's Study Guide for DP-100 has specific links for each topic: 
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MHoo">
+query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MHoo</a>
 
 The free text-only "learning paths" tutorials associated:
 
@@ -848,11 +855,13 @@ References:
 
 * Adjusted R Square penalises for additional independent variables added to the model and adjusts the metric to prevent overfitting.
 
+
 MSE, RMSE or MAE are used to compare performance between different regression models:
 
 * <strong>Mean Absolute Error (MAE)</strong> is an absolute measure of the goodness for the fit. It gives you an absolute number on how much your predicted results deviate from the actual number.  The average difference between predicted vs. true values. This value is based on the same units as the label, such as dollars. The lower this value is, the better the model is predicting.
 
 * <strong>Root Mean Squared Error (RMSE)</strong> is used by Kaggle to assess submissions for its competition. The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). A larger difference When compared to the MAE (above) indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
+
 
 To compare models where labels are in different units:
 
@@ -1166,7 +1175,13 @@ Global features vs. local feature importance
 
 https://www.twitch.tv/enceladosaurus
 
+https://www.twitch.tv/thelivecoders
+An outgoing and enthusiastic group of friendly channels that write code, teach about technology, and promote the technical community. https://github.com/livecoders/home Wiki https://github.com/livecoders/Home/wiki
+
+
 https://shap.readthedocs.io/en/latest/index.html
+
+https://databricks.com/session_na20/the-importance-of-model-fairness-and-interpretability-in-ai-systems
 
 https://docs.microsoft.com/en-us/azure/machine-learning/how-to-machine-learning-interpretability-aml
 

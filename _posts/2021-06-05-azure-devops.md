@@ -18,6 +18,9 @@ comments: true
 
 There are a lot of summary/high-level tutorials and videos. But <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">this article</a> skips the generalized sales hype and presents a <strong>"deep dive" with automation</strong> with logical and succinct hands-on steps so you get perficient quickly.
 
+If you already have an account, begin with <a href="#QuickStart">my QuickStart tour with commentary (below)</a>.
+
+
 ## Good Turmoil
 
 <a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">Azure DevOps was a big deal for Microsoft Sep 16, 2018</a>.
@@ -43,8 +46,7 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
 <img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
 You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
 
-PROTIP: This article focuses on automating the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions">Github for Microsoft's class</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>
-and <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
 
 * Develop an <a href="#Instrumentation_Strategy">instrumentation strategy</a> (5-10%)
 * Develop a <a href="#SRE_Strategy">Site Reliability Engineering (SRE) strategy</a> (5-10%)
@@ -56,7 +58,9 @@ and <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certificatio
 <br /><br />
 
 References:
-   * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Book of Basics" interactive diagrams</a>
+   * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Azure Book of Basics" interactive</a> <a target="_blank" href="https://lucid.app/lucidchart/8495a6bd-89d2-4a59-9b41-4b7a9e0e1922/view?page=0">interactive Lucid diagram</a>.
+
+PROTIP: Anyone can use Microsoft's AZ-4100 class <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>
 
 Practice exams:
 
@@ -130,7 +134,7 @@ Other video tutorials on AZ-400:
 
 ## Products and Services
 
-Microsoft exited the software testing market in 2019.
+Microsoft exited the software testing market in 2019 by retiring their products.
 
 NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone.
 The course catalog says it covers 6 technologies:
@@ -467,6 +471,8 @@ to Get started with Azure CLI
    QUESTION: Others (Tailwind Traders, ContosoAir) setup for Azure DevOps?
 
 
+<hr />
+
 <a name="QuickStart"></a>
 
 ## Azure account and project
@@ -481,8 +487,9 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 
    See: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">Quick Start: Create an Azure DevOps organization</a>
 
+   <a name="VisualStudio.com"></a>
 
-## VisualStudio.com
+   ### VisualStudio.com
 
 1. <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
 
@@ -500,19 +507,81 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
 
    <img alt="azure-devops-acct-menu-242x382-7242.jpg" width="242" src="https://user-images.githubusercontent.com/300046/56077392-edf24300-5d98-11e9-8dc7-f8d613510abe.jpg">
 
-   ### Organization
+   ### Create Organization
 
-1. Click "Create new organization".
+1. Click the blue "Create new organization" under title "Get started with Azure DevOps".
 
    PROTIP: Several organizations can be created under an account.
 
-1. Click "Continue" in the "Get started with Azure DevOps" dialog.
+1. Click "Continue" in the "Get started with Azure DevOps" with Terms and Conditions checked.
 1. Name your Azure DevOps organization, such as "dev.azure.com/wilsonmar0014".
-1. Select your region (from "West Europe, East Asia, Central US, Brazil South, Canada Central, Australia East, UK South, South India") and click "Continue".
+1. "We'll host your projects in" provides a limited number of locations/regions:
+
+   * West Europe
+   * East Asia
+   * <strong>Central US</strong> (the only one in the US)
+   * Brazil South
+   * Canada Central
+   * Australia East
+   * UK South
+   * South India
+   <br /><br />
+
+   PROTIP: Create your other resources in the region selected to avoid cross-region network charges.
+
+1. Enter the CAPTCHA and click "Continue".
 
 1. PROTIP: To get to the list of organizations, click "Azure DevOps" at the upper-right corner.
 
    <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
+
+   ### Create Azure DevOps Project
+
+1. Type a project name, such as "PU". Naming convention: The format of the URL is:
+
+   <pre>https://dev.azure.com/<em>YourOrganization</em>/<em>project</em>
+   </pre>
+   
+   NOTE: You can use the slash character.
+
+1. Leave Visibility as the default "Private" until it's ready for Public viewing.
+1. Click "Advanced" to reveal more choices.
+1. Leave Version control default of "Git".
+1. Leave Work item process default of "Agile" for Azure Board terminology:
+
+   * Agile
+   * Basic (the default)
+   * CMMI
+   * Scrum
+   <br /><br />
+
+1. PROTIP: Bookmark the URL on the page for use in the future, such as:<br />
+   https://dev.azure.com/wilsonmar0014/PU
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg">To view this sample project populated, click it for a full-screen:<br /><img alt="azure-devops-dashboard-abel-1920x552-76907.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"></a>
+
+   
+   ### Project GUI manu
+
+   Notice the hierarchy at the top breadcrumb:
+
+   <tt>wilsonmar0964 / whatever1 / Overview / Summary</tt>
+
+   Expanded as the default are Overview menu items for the selected project 
+   (Summary, Dashboards, Wiki).
+
+1. Clicking on a project menu category (such a "Repos") contracts the previously selected menu items.
+
+1. PROTIP: Memorize the icon associated with each category:
+
+   
+
+   Remember that the cog icon is associated with "Project settings".
+
+1. Click "<<" at the lower-left corner to reveal the "Project settings" menu.
+
+
+   ### Project Settings
 
 1. Click on "Organization Settings" at the lower-left corner for the Organization's menu.
 
@@ -525,8 +594,7 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
    Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
 
-
-1. Learn how to structure a project, manage users, and more to support your software development teams.
+1. Learn how to structure a project, manage users, and more to support your software development teams:
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/project-admin-tutorial?view=vsts">Quick Start: Get started as a project admin or organization owner in Azure DevOps</a>
 
@@ -535,32 +603,6 @@ Below are steps based on <a target="_blank" href="https://docs.microsoft.com/en-
    ### Work Items
 
 1. Notice that "My work items" and "My pull requests" are at the Organization level.
-
-   ### Create Azure DevOps Project
-
-1. Type a project name, such as "PU". Naming convention: The format of the URL is:
-
-   <pre>https://dev.azure.com/<em>YourOrganization</em>/<em>project</em>
-   </pre>
-   
-1. Leave Visibility as the default "Private" (not "Public").
-1. Click "Advanced" to reveal more choices.
-1. Leave Version control default of "Git".
-1. Leave Work item process default of "Agile" for Azure Board terminology:
-
-   * Agile
-   * Basic
-   * CMMI
-   * Scrum
-   <br /><br />
-
-1. Click "Create project". 
-
-1. PROTIP: Bookmark the URL on the page for use in the future, such as:<br />
-   https://dev.azure.com/wilsonmar0014/PU
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg">To view this sample project populated, click it for a full-screen:<br /><img alt="azure-devops-dashboard-abel-1920x552-76907.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56325322-0e225900-612f-11e9-8e80-8bc7349abebc.jpg"></a>
-
 
 1. [_] TASK: Add text in "About this project".
 
