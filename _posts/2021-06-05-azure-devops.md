@@ -193,7 +193,7 @@ https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-de
 1. Enter the CAPTCHA and click "Continue".
 
    You'll get an email about the new organization.
-   
+
 
    ### Create Project
 
@@ -591,18 +591,17 @@ PROTIP: Notice that all of them have Visual Studio thick client (at the lower-le
    <br /><br />
 
 
-
 <hr />
 
+<a name="CertsOnDevOps"></a>
 
-<a name="CourseProducts"></a>
+## AZ-400 certification
 
-## Products and Services
-
-Microsoft exited the software testing market in 2019 by retiring their products.
+<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
+You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
 
 NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone.
-The course catalog says it covers 6 technologies:
+The course catalog said it covers 6 technologies:
 
    1. VSTS (Visual Studio Team System)
    2. "Visual Studio" 2017/2019
@@ -612,72 +611,12 @@ The course catalog says it covers 6 technologies:
    6. Operations Management Suite (OMS)
    <br /><br />
 
-PROTIP: Azure DevOps also makes use of other Azure services and client executables:
-
-* Azure <strong>IAM</strong> access manager
-
-* <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
-   replaces <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">Visual Studio at https://app.vssps.visualstudio.com/</a>
+Threshold for passing:<br />
+A minimum score of 70 percent on the overall exam.<br />
+A minimum score of 35 percent on each exam domain.
 
 
-   <a name="ARM"></a>
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
-   NOTE: <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
-
-* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
-
-   <a name="AKS"></a>
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
-   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
-
-   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
-   Introduction to Azure Container Service (AKS)
-
-   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
-   Deploy an Azure Container Service (AKS) cluster
-
-   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
-   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
-
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
-
-   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
-
-   <a name="DevOpsAnalytics"></a>
-
-* <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
-
-
-   <a name="AppInsights"></a>
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
-
-* Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
-
-Summary: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
-DevOps tools overview for Azure DevOps</a>
-
-<hr />
-
-<hr />
-
-<a name="CertsOnDevOps"></a>
-
-## AZ-400 certification
-
-<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
-You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
+### Microsoft's AZ-400 tutorials
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
 
@@ -693,7 +632,7 @@ You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/2
 
 <a name="Instrumentation_Strategy"></a>
 
-## Instrumentation Strategy
+## Instrumentation (Logging) Strategy
 
 <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d5f830b3-32e8-4097-bc37-3b75e906a42d">VIDEO</a>: 
 
@@ -781,7 +720,71 @@ https://app.pluralsight.com/library/courses/microsoft-devops-solutions-implement
 
 https://app.pluralsight.com/library/courses/microsoft-devops-solutions-planning-deployment-environment-strategies
 
+<hr />
 
+<a name="CourseProducts"></a>
+
+## Products and Services
+
+Azure DevOps makes use of the following products (services and client executables):
+
+NOTE: Microsoft exited the software testing market in 2019 by retiring their products.
+
+* Azure <strong>IAM</strong> access manager
+
+* <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
+   replaces <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">Visual Studio at https://app.vssps.visualstudio.com/</a>
+
+
+   <a name="ARM"></a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
+   NOTE: <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
+
+* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
+
+   <a name="AKS"></a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
+   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
+
+   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
+   Introduction to Azure Container Service (AKS)
+
+   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+   Deploy an Azure Container Service (AKS) cluster
+
+   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
+   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
+
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
+
+   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
+
+   <a name="DevOpsAnalytics"></a>
+
+* <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
+
+
+   <a name="AppInsights"></a>
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
+
+* Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
+
+Summary: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
+DevOps tools overview for Azure DevOps</a>
+
+<hr />
 <hr />
 
 ## Azure DevOps Product components
@@ -816,6 +819,15 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/relea
 Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
 
 NOTE: Azure DevOps works with more languages than just C# (Java, etc.).
+
+## Case Studies
+
+https://practice-exam.acloud.guru/c091c3b3-e60f-4ccb-b6cf-9b77dcc747dc
+Case study 1
+
+https://practice-exam.acloud.guru/9e712afd-c572-4bc1-a0c4-9a6cadabfb1e
+Case study 2
+
 
 <hr />
 
@@ -1465,11 +1477,7 @@ References:
 
 PROTIP: Anyone can use Microsoft's AZ-4100 class <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>
 
-Practice exams:
-
-Threshold:<br />
-A minimum score of 70 percent on the overall exam.<br />
-A minimum score of 35 percent on each exam domain.
+## AZ-400 Practice exams
 
    * <a target="_blank" href="https://practice-exam.acloud.guru/edfd1636-66ce-46e2-9c9d-345fc0b8dd82?_ga=2.74915988.768635297.1623168905-1658143929.1623079786">By ACloudGuru</a>
 

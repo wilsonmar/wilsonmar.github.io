@@ -263,6 +263,7 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb">05 - Train models</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/06%20-%20Work%20with%20Data.ipynb">06 - Work with data</a>. See <a target="_blank" href="https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/work-with-data/datasets-tutorial">"work-with-data"</a>
+   
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/07%20-%20Work%20with%20Compute.ipynb">07- Work with compute</a> [VMs]
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/08%20-%20Create%20a%20Pipeline.ipynb">08 - Create a pipeline</a>
    <br /><br />
@@ -277,9 +278,8 @@ git clone <a target="_blank" href="https://github.com/microsoftdocs/ml-basics">h
 
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/13%20-%20Explore%20Differential%20Privacy.ipynb">13 - Explore differential privacy</a> using the SmartNoise toolkit from OpenDP.
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/14%20-%20Interpret%20Models.ipynb">14 - Interpret models</a>
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">15 - Detect and mitigate unfairness</a> https://www.microsoft.com/en-us/research/uploads/prod/2020/05/Fairlearn_WhitePaper-2020-09-22.pdf
-
-   https://customers.microsoft.com/en-us/story/809460-ey-partner-professional-services-azure-machine-learning-fairlearn
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/15%20-%20Detect%20Unfairness.ipynb">15 - Detect and mitigate unfairness</a> <a target="_blank" href="https://www.microsoft.com/en-us/research/uploads/prod/2020/05/Fairlearn_WhitePaper-2020-09-22.pdf">PDF</a>
+   <a target="_blank" href="https://customers.microsoft.com/en-us/story/809460-ey-partner-professional-services-azure-machine-learning-fairlearn">*</a>
     
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/16%20-%20Monitor%20a%20Model.ipynb">16 - Monitor a model</a>
    * <a target="_blank" href="https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/17%20-%20Monitor%20Data%20Drift.ipynb">17 - Monitor data drift</a> using the pip azureml-datadrift package.
