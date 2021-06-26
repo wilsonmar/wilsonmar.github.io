@@ -165,7 +165,7 @@ https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-de
 
    <img width="273" alt="az-devops-acct-menu-2021-06-24" src="https://user-images.githubusercontent.com/300046/123353905-c8882480-d51f-11eb-93c3-a4bd213da7cb.png">
 
-   TODO: Change profile.
+   TODO: Change profile items.
 
 
    ### Create Organization
@@ -192,6 +192,8 @@ https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-de
 
 1. Enter the CAPTCHA and click "Continue".
 
+   You'll get an email about the new organization.
+   
 
    ### Create Project
 
