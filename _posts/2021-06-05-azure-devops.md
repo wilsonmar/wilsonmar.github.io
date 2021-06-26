@@ -74,17 +74,9 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
 
 <a name="QuickStart"></a>
 
-## aex.dev.azure.com
+## Get an account
 
-1. Go to
-
-   <a target="_blank" href="https://aex.dev.azure.com/">Azure Dev Essentials at 
-   https://aex.dev.azure.com/me?mkt=en-US</a>
-
-1. Use your personal email in your profile or your corporate email.
-1. Select "Default Directory" or :
-
-   ### Use your benefits
+### Use your benefits
 
 1. Click <a target="_blank" href="https://go.microsoft.com/fwlink/?LinkID=328777">Use your benefits</a>.
 1. Click "Register" for 50 percent off the cost of a Microsoft Certification exam by completing your challenge within 30 days.
@@ -104,7 +96,7 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
    * Instrument server-side web application code with Application Insights - 34 min
    * Monitor cloud resources - 40 min
    * React to state changes in your Azure services by using Event Grid - 33 min
-   * Design a holistic monitoring strategy on Azure - 57 min
+   * Design a holistic monitoring oy on Azure - 57 min
 
    * Introduction to GitHub - 1 hr 12 min
    * Migrate your repository by using GitHub best practices - 43 min
@@ -124,8 +116,7 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
    * Implement a code workflow in your build pipeline by using Git and GitHub - 1 hr 27 min
    <br /><br />
 
-
-## Azure account and project
+### Azure account and project
 
 Alternately, these steps are based on <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/?view=azure-devops">Start using Azure DevOps</a> but with my additional commentary:
 
@@ -139,9 +130,9 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    <a name="VisualStudio.com"></a>
 
-   ### VisualStudio.com
+### VisualStudio.com now dev.azure.com
 
-1. <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
+https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-devops-launch#administration
 
    Back in Sept 2018 there was a name upgrade from Visual Studio Online (VSO) which included capabilities in Visual Studio Team Services (VSTS), which began as a performance testing server and on-premise Team Foundation Server (TFS), now called "Visual Studio Server" on-premises.
 
@@ -149,7 +140,23 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    <a target="_blank" href="https://visualstudio.microsoft.com/app-center/">"Visual Studio App Center"</a> is for mobile iPhone/Android app development and integration (using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a>) so not in scope for this topic here. (<a target="_blank" href="https://twitter.com/vsappcenter?lang=en">@vsappcenter</a>)
 
-1. Sign in using the same account you use for Azure billing.
+   <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
+
+<hr />
+
+## aex.dev.azure.com
+
+1. In a browser, use a profile for each one of your emails (corporate employee, gmail, hotmail, outlook, etc.)
+
+1. Go to the "Azure Dev Essentials" site hosting Azure DevOps at:
+
+   <a target="_blank" href="https://aex.dev.azure.com/">
+   https://aex.dev.azure.com/me?mkt=en-US</a>
+
+   If you are reusing a browser profile, you would be logged in automatically.
+   Otherwise, sign in using the same account you use for Azure billing.
+
+1. Select "Default Directory" if you don't have alternative tenants.
 
 
    ### Account Profile GUI
