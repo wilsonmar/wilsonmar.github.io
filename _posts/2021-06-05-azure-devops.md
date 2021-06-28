@@ -98,22 +98,22 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
    * React to state changes in your Azure services by using Event Grid - 33 min
    * Design a holistic monitoring oy on Azure - 57 min
 
-   * Introduction to GitHub - 1 hr 12 min
-   * Migrate your repository by using GitHub best practices - 43 min
-   * Upload your project by using GitHub best practices - 43 min
-   * Manage repository changes by using pull requests on GitHub - 49 min
-   * Settle competing commits by using merge conflict resolution on GitHub - 52 min
-   * Search and organize repository history by using GitHub - 38 min
-   * Manage an InnerSource program by using GitHub - 50 min
-   * Communicate effectively on GitHub by using Markdown - 1 hr 2 min
-   * Maintain a secure repository by using GitHub best practices - 1 hr 9 min
-   * Automate DevOps processes by using GitHub Apps - 1 hr 8 min
-   * Automate GitHub by using GitHub Script - 25 min
-   * Manage software delivery by using a release based workflow on GitHub - 1 hr 44 min
-   * Build continuous integration (CI) workflows by using GitHub Actions - 1 hr 7 min
-   * Build and deploy applications to Azure by using GitHub Actions - 59 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/introduction-to-github/">Introduction to GitHub</a> - 1 hr 12 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/migrate-repository-github/">Migrate your repository by using GitHub best practices</a> - 43 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/upload-project-github/">Upload your project by using GitHub best practices</a> - 43 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/upload-project-github/">Manage repository changes by using pull requests on GitHub</a> - 49 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/resolve-merge-conflicts-github/">Settle competing commits by using merge conflict resolution on GitHub</a> - 52 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/search-organize-repository-history-github/">Search and organize repository history by using GitHub</a> - 38 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/manage-innersource-program-github/">Manage an InnerSource program by using GitHub</a> - 50 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/communicate-using-markdown/">Communicate effectively on GitHub by using Markdown</a> - 1 hr 2 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/maintain-secure-repository-github/">Maintain a secure repository by using GitHub best practices</a> - 1 hr 9 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/automate-devops-github-apps/">Automate DevOps processes by using GitHub Apps</a> - 1 hr 8 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/automate-github-using-github-script/">Automate GitHub by using GitHub Script</a> - 25 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/release-based-workflow-github/">Manage software delivery by using a release based workflow on GitHub</a> - 1 hr 44 min
 
-   * Implement a code workflow in your build pipeline by using Git and GitHub - 1 hr 27 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/github-actions-ci/">Build continuous integration (CI) workflows by using GitHub Actions</a> - 1 hr 7 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/github-actions-cd/">Build and deploy applications to Azure by using GitHub Actions</a> - 59 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/">Implement a code workflow in your build pipeline by using Git and GitHu</a> - 1 hr 27 min
    <br /><br />
 
 ### Azure account and project
@@ -1465,7 +1465,7 @@ https://www.youtube.com/watch?v=Bo_84yKsxuc
 <a target="_blank" href="https://openedx.microsoft.com/courses/course-v1:Microsoft+INF240x+2019_T2/about">Configuring and Operating Microsoft Azure Stack (INF240x)</a> 25-30 hour enrollment closed on 6/25/19.
 
 
-## Testing
+## AZ-400 Certification
 
 https://testingindevops.org/
 
@@ -1475,9 +1475,130 @@ Coursera guided project: Executing Selenium Test Automation With Azure DevOps</a
 References:
    * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Azure Book of Basics" interactive</a> <a target="_blank" href="https://lucid.app/lucidchart/8495a6bd-89d2-4a59-9b41-4b7a9e0e1922/view?page=0">interactive Lucid diagram</a>.
 
-PROTIP: Anyone can use Microsoft's AZ-4100 class <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>
+PROTIP: I attended <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone to walk throug their <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. The Modules:
 
-## AZ-400 Practice exams
+Module 1. Planning for DevOps
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
+   AZ400_M00_Validate_lab_environment.md</a> for 
+
+Module 2. Getting Started with Source Control [Azure Repos]
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md">
+   AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md</a>
+
+Module 3. Managing Technical Debt
+   
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md">
+   AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md</a>
+
+Module 4. Working with Git for Enterprise DevOps
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md">
+   AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md">
+   AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md</a>
+
+Module 5. Configuring Azure Pipelines
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md">
+   AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md</a>
+
+Module 6. Implementing Continuous Integration using Azure Pipelines
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md">
+   AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
+   AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md</a>
+
+Module 7. Managing Application Configuration and Secrets
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
+   AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md</a>
+
+Module 8. Implementing Continuous Integration with GitHub Actions
+
+* Lab : GitHub Actions Continuous Integration
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md">
+   AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md</a>
+
+Module 9. Designing and Implementing a Dependency Management Strategy
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M09_Package_Management_with_Azure_Artifacts.md">
+   AZ400_M09_Package_Management_with_Azure_Artifacts.md</a>
+
+Module 10. Designing a Release Strategy
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Controlling_Deployments_using_Release_Gates.md">
+   AZ400_M10_Controlling_Deployments_using_Release_Gates.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Creating_a_Release_Dashboard.md">
+   AZ400_M10_Creating_a_Release_Dashboard.md</a>
+
+Module 11. Implementing Continuous Deployment using Azure Pipelines
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md">
+   AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Setting_Up_and_Running_Functional_Tests.md">
+   AZ400_M11_Setting_Up_and_Running_Functional_Tests.md</a>
+
+Module 12. Implementing an Appropriate Deployment Pattern
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md">
+   AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md</a>
+
+Module 13. Managing Infrastructure and Configuration using Azure Tools
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md">
+   AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md</a>
+
+Module 14. Third Party Infrastructure as Code Tools Available with Azure
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Ansible_with_Azure.md">
+   AZ400_M14_Ansible_with_Azure.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
+   AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
+   AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md</a>
+
+Module 15. Managing Containers using Docker
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md">
+   AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md</a>
+
+Module 16. Creating and Managing Kubernetes Service Infrastructure
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md">
+   AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md</a>
+
+Module 17. Implementing Feedback for Development Teams
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md">
+   AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md</a>
+
+Module 18. Implementing System Feedback Mechanisms
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md">
+   AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md</a>
+
+Module 19. Implementing Security in DevOps Projects
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md">
+   AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md</a>
+
+Module 20. Validating Code Bases for Compliance
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md">
+   AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md</a>
+
+
+### AZ-400 Practice exams
 
    * <a target="_blank" href="https://practice-exam.acloud.guru/edfd1636-66ce-46e2-9c9d-345fc0b8dd82?_ga=2.74915988.768635297.1623168905-1658143929.1623079786">By ACloudGuru</a>
 

@@ -1840,6 +1840,27 @@ blog</a> from 2013 by @KBasarab and at:
 
 ### References
 
+Microsoft Learning on Azure created a series of textual tutorials in 2020:
+
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/introduction-to-github/">Introduction to GitHub</a> - 1 hr 12 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/migrate-repository-github/">Migrate your repository by using GitHub best practices</a> - 43 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/upload-project-github/">Upload your project by using GitHub best practices</a> - 43 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/upload-project-github/">Manage repository changes by using pull requests on GitHub</a> - 49 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/resolve-merge-conflicts-github/">Settle competing commits by using merge conflict resolution on GitHub</a> - 52 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/search-organize-repository-history-github/">Search and organize repository history by using GitHub</a> - 38 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/manage-innersource-program-github/">Manage an InnerSource program by using GitHub</a> - 50 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/communicate-using-markdown/">Communicate effectively on GitHub by using Markdown</a> - 1 hr 2 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/maintain-secure-repository-github/">Maintain a secure repository by using GitHub best practices</a> - 1 hr 9 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/automate-devops-github-apps/">Automate DevOps processes by using GitHub Apps</a> - 1 hr 8 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/automate-github-using-github-script/">Automate GitHub by using GitHub Script</a> - 25 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/release-based-workflow-github/">Manage software delivery by using a release based workflow on GitHub</a> - 1 hr 44 min
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/github-actions-ci/">Build continuous integration (CI) workflows by using GitHub Actions</a> - 1 hr 7 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/github-actions-cd/">Build and deploy applications to Azure by using GitHub Actions</a> - 59 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/">Implement a code workflow in your build pipeline by using Git and GitHub</a> - 1 hr 27 min
+   <br /><br />
+
 * https://danielmiessler.com/study/git/
   Daniel Miessler's Git Tutorial from 2014
   is a masterful explanation.

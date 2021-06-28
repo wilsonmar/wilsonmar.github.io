@@ -1349,6 +1349,7 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="https://www.wplwloo.lib.ia.us/waterloo/arts/">Waterloo Museum of Art</a></li>
 <li> Des Moines: Living History Farms (at Urbandale)</li>
 <li><a target="_blank" href="https://hoover.archives.gov/">Herbert Hoover Presidential Library and Museum</a>, West Branch</li>
+<li><a target="_blank" href="http://www.iowa80truckingmuseum.com/">Walcott Trucking Museum</a>is next to Iowa 80, the largest truck stop in the world (<a target="_blank" href="https://www.youtube.com/watch?v=sCcl-dU9a2Y">VIDEO</a>)</li>
 </ul>
 
 

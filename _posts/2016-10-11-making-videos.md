@@ -315,11 +315,12 @@ PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) re
 ## Video to Gif
 
 Small videos can be converted to lower-resolution gif or higher-resolution png animation file format using:<br />
-<a target="_blank" href="https://ezgif.com/video-to-gif">https://ezgif.com/video-to-gif</a>
+* <a target="_blank" href="https://github.com/sindresorhus/Gifski">https://github.com/sindresorhus/Gifski</a>
+* <a target="_blank" href="https://ezgif.com/video-to-gif">https://ezgif.com/video-to-gif</a>
 
 ## Archive Share Camtasia
 
-When Camtasia makes a recording, it stores them in folder Movies > Camtasia 2018 > Temporary recordings.
+When Camtasia makes a recording, it stores them in folder "Temporary recordings" within Movies > Camtasia 2018.
 
 Camtasia then automatically inserts the video into whatever camproj file is displayed.
 However, it leaves the file in the Temporary recordings folder.

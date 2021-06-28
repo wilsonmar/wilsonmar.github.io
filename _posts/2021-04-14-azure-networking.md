@@ -18,7 +18,21 @@ comments: true
 
 STATUS: This is actively being edited currently.
 
-Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>.
+Here are the notes on Networking I took while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure exams</a>, specifically the one 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-700">exam AZ-700 "Designing and Implementing Microsoft Azure Networking Solutions (beta)</a> for $165 to become a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-network-engineer-associate/">Azure Network Engineer</a>, available in July 2021. SKills:
+
+   * Design, Implement, and Manage Hybrid Networking (10% to 15%)
+   * Design and Implement Core Networking Infrastructure (20% to 25%)
+   * Design and Implement Routing (25% to 30%)
+   * Secure and Monitor Networks (15% to 20%)
+   * Design and Implement Private Access to Azure Services (10% to 15%)
+   <br /><br />
+
+https://www.thomasmaurer.ch/2021/06/az-700-study-guide-microsoft-azure-networking-solutions
+
+
+## Hands-on start here
+
 This page assumes you've absorbed my <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp/">Azure cloud onramp</a> for skill at Portal GUI and CLI.
 
 1. In the Portal GUI, G+\ to Search for "Net" and there appears:
