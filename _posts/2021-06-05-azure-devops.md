@@ -23,7 +23,7 @@ If you already have an account, begin with <a href="#QuickStart">my QuickStart t
 
 ## Good Turmoil?
 
-<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">Azure DevOps was a big deal for Microsoft Sep 16, 2018</a>.
+<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">"Azure DevOps" is a big deal for Microsoft, announced Sep 16, 2018</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8" title="Microsoft's DevOps Vision">VIDEO</a>:
 Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>), Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: Global DevOps Bootcamp 2018 Keynote</a> how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
@@ -81,7 +81,7 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/github-actions-ci/">Build continuous integration (CI) workflows by using GitHub Actions</a> - 1 hr 7 min
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/github-actions-cd/">Build and deploy applications to Azure by using GitHub Actions</a> - 59 min
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/">Implement a code workflow in your build pipeline by using Git and GitHu</a> - 1 hr 27 min
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/implement-code-workflow/">Implement a code workflow in your build pipeline by using Git and GitHub</a> - 1 hr 27 min
    <br /><br />
 
 ### Azure account and project
@@ -102,17 +102,17 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-devops-launch#administration">Here's some history</a>:
 
-   Back in Sept 2018 there was a name upgrade from Visual Studio Online (VSO) which included capabilities in Visual Studio Team Services (VSTS), which began as a performance testing server and on-premise Team Foundation Server (TFS), now called "Visual Studio Server" on-premises.
+   Back in Sept 2018 there was a name upgrade from Visual Studio Online (VSO) 
+   <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
+   which included capabilities in Visual Studio Team Services (VSTS), which began as a performance testing server and on-premise Team Foundation Server (TFS), now called "Visual Studio Server" on-premises.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"><img alt="visualstudio com-1185x178-20653.jpg" width="1185" src="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"></a>
 
    <a target="_blank" href="https://visualstudio.microsoft.com/app-center/">"Visual Studio App Center"</a> is for mobile iPhone/Android app development and integration (using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a>) so not in scope for this topic here. (<a target="_blank" href="https://twitter.com/vsappcenter?lang=en">@vsappcenter</a>)
 
-   <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
-
 <hr />
 
-## aex.dev.azure.com = dev.azure.com
+## dev.azure.com was aex.dev.azure.com
 
 1. In a browser, use a profile for each one of your emails (corporate employee, gmail, hotmail, outlook, etc.)
 
@@ -218,11 +218,18 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    NOTE: This is based on from code at <a target="_blank" href="https://github.com/CanarysAutomationsInternal/AppCenterDemoGenerator">https://github.com/CanarysAutomationsInternal/AppCenterDemoGenerator</a>
 
-1. Selected template: click "Select Template" and click "TailwindTraders".
+1. For "Selected template": click "Select Template" then <strong>"TailwindTraders"</strong> because steps below require it.
 
    NOTE: Don't choose the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azure-devops">others</a>:
 
-   * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a>, created from <a target="_blank" href="https://github.com/Microsoft/TailwindTraders">github.com/Microsoft/TailwindTraders</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as "a fictitious retail company showcasing the future of intelligent application experiences. These reference apps are all are powered by the Azure cloud, built with best-in-class tools, and made smarter through data and AI." <a target="_blank" href="https://channel9.msdn.com/Shows/Azure-Friday/An-Overview-of-the-Tailwind-Traders-Reference-Apps-for-Azure" title="David Sanchez's 10-minute overview for Scott Hanselman on 3 May 2019">VIDEO</a>: "we keep it fresh". <a target="_blank" href="https://github.com/Microsoft/TailwindTraders/">github.com/Microsoft/TailwindTraders</a> lists <a target="_blank" href="https://github.com/Microsoft/TailwindTraders#demo-scripts">step-by-step demo scripts</a>, such as for <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub#integrating-azure-devops-microsoft-teams-and-github">Integrating Azure DevOps, Microsoft Teams and GitHub</a>. The template creates a SQL database back-end at <a target="_blank" href="https://github.com/microsoft/TailwindTraders-Backend">github.com/microsoft/TailwindTraders-Backend</a>
+   * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a>, created from <a target="_blank" href="https://github.com/Microsoft/TailwindTraders">github.com/Microsoft/TailwindTraders</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as "a fictitious retail company showcasing the future of intelligent application experiences. These reference apps are all are powered by the Azure cloud, built with best-in-class tools, and made smarter through data and AI."<br /><br />
+   <a target="_blank" href="https://channel9.msdn.com/Shows/Azure-Friday/An-Overview-of-the-Tailwind-Traders-Reference-Apps-for-Azure" title="David Sanchez's 10-minute overview for Scott Hanselman on 3 May 2019">VIDEO</a>: "we keep it fresh":
+   <br />
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"><img alt="az-devops-tailwind-1280x720" src="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"></a>
+   <br /><br />
+   STAR: <a target="_blank" href="https://github.com/Microsoft/TailwindTraders/">github.com/Microsoft/TailwindTraders</a> lists <a target="_blank" href="https://github.com/Microsoft/TailwindTraders#demo-scripts">step-by-step demo scripts</a>, such as for <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub#integrating-azure-devops-microsoft-teams-and-github">Integrating Azure DevOps, Microsoft Teams and GitHub</a>.
+   <br /><br />
+   NOTE: The template creates a SQL database back-end at <a target="_blank" href="https://github.com/microsoft/TailwindTraders-Backend">github.com/microsoft/TailwindTraders-Backend</a>
 
    * "PartsUnlimited" ("PU") at <a target="_blank" href="https://github.com/Microsoft/PartsUnlimited">github.com/Microsoft/PartsUnlimited</a> and PartsUnlimitedYAML</a> defines an ASP.NET app with customized CI/CD pipelines.  <a href="#PartsUnlimited">See below</a>
 
@@ -231,7 +238,7 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
    <br /><br />
    <a target="_blank" title="shown at Connect() 2017" href="https://www.youtube.com/watch?v=urcmaFVQnF4">VIDEO: IoT demo</a> shows the app powered by Azure <a target="_blank" href="https://aka.ms/azure-digital-twins">Digital Twins</a> to control lights and temperature of the hotel rooms, Dynamics 365, mobile Hololens for wayfinding. <a target="_blank" title="December 13th, 2017"  href="https://devblogs.microsoft.com/visualstudio/connect-2017-smarthotel360-demo-apps-and-architecture/">Demo Apps and Architecture</a>. See the <a target="_blank" href="https://aka.ms/smarthotel360-FacilityManagement">Facilities Management website running live here</a> (admin/admin).
    <br /><br />
-   Azure superfan Gregor Suttie <a target="_blank" href="https://gregorsuttie.com/2018/10/31/how-to-get-started-with-azure-devops/">How to get started with Azure DevOps</a> describes the steps using SmartHotel360.
+   STAR: Azure superfan Gregor Suttie <a target="_blank" href="https://gregorsuttie.com/2018/10/31/how-to-get-started-with-azure-devops/">How to get started with Azure DevOps</a> describes the steps using SmartHotel360.
 
    * "MyHealthClinic" defines an ASP.NET Core app that deploys to Azure App Service.
 
@@ -244,22 +251,23 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    BTW <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?view=azure-devops">you can build your own template</a>.
 
-1. Right-click on <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs"><strong>ARM Outputs</strong> for a new browser tab to ARM Outputs extension page</a> <strong>for Visual Studio</strong> (licensed product not available on MacOS</strong>. Click the green "Get it free".
+1. Right-click on <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs"><strong>ARM Outputs</strong> for a new browser tab to ARM Outputs extension page</a> <strong>for Visual Studio</strong> (licensed product not available on MacOS). Click the green "Get it free".
+
 1. Return to the Azure DevOps Demo browser page.
 
 1. Check the box about "third party" and click the blue "Create Project"
 
-  * Project gend created
-  * Required extensions are installed
-  * 1 team(s) created
-  * Board-Column, Swimlanes, Styles updated
-  * Created Wiki
-  * Build definition created
-  <br /><br />
+   * Project gend created
+   * Required extensions are installed
+   * 1 team(s) created
+   * Board-Column, Swimlanes, Styles updated
+   * Created Wiki
+   * Build definition created
+   <br /><br />
 
 1. When "Congratulations" appears, click the blue "Navigate to project".
 
-   Another tab is created with:
+   Notice another tab is created with counts of <a href="#WorkItems">work items</a> created and completed in Azure Boards:
 
    <img width="318" alt="az-devops-template-stats" src="https://user-images.githubusercontent.com/300046/123724356-6eea6780-d849-11eb-866b-555d90f56590.png">
 
