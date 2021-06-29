@@ -18,10 +18,26 @@ comments: true
 
 There are a lot of summary/high-level tutorials and videos. But <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">this article</a> skips the generalized sales hype and presents a <strong>"deep dive" with automation</strong> with logical and succinct hands-on steps so you get perficient quickly.
 
-If you already have an account, begin with <a href="#QuickStart">my QuickStart tour with commentary (below)</a>.
+<a href="#YourSettings">
+
+## Your settings (Naming Conventions)
+
+PROTIP: What makes my tutorial here unique are <a href="#CLI">(CLI and PowerShell) automation scripts</a> I created to do (quickly and repeatedly) what manual clicking through GUI portal. Running the scripts locally on your laptop requires some <a href="#Install">installation</a>.
+
+But whether you use GUI or CLI, before diving in, define custom values to be used by Azure, by replacing defaults below with your own:
+
+   <pre><strong>export AZDEVOPS_ORG_NAME="contoso"
+export AZDEVOPS_PROJ_NAME="ContosoWebApp"
+   </strong></pre>
+
+Documentation below references the settings above.
+
+If you don't need the history nor to <a href="#CreateAccount">create an Azure account</a>, begin with <a href="#QuickStart">my QuickStart tour with commentary (below)</a>.
 
 
-## Good Turmoil?
+<hr />
+
+## Rebranding History
 
 <a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">"Azure DevOps" is a big deal for Microsoft, announced Sep 16, 2018</a>.
 
@@ -40,9 +56,11 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
 
 <hr />
 
-<a name="QuickStart"></a>
+<a name="CreateAccount"></a>
 
-## Get an account
+## Create Azure account
+
+There are options:
 
 ### Use your benefits
 
@@ -94,11 +112,14 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
 
-   See: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">Quick Start: Create an Azure DevOps organization</a>
 
    <a name="VisualStudio.com"></a>
 
-### VisualStudio.com now dev.azure.com
+<hr />
+
+<a name="GUI"></a>
+
+## dev.azure.com was VisualStudio.com
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-devops-launch#administration">Here's some history</a>:
 
@@ -112,17 +133,213 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
 <hr />
 
-## dev.azure.com was aex.dev.azure.com
+<a name="CLI"></a>
+
+## CLI/PowerShell Automation
+
+
+<a name="Install"></a>
+
+### Local client install for DevOps
+
+Get prepared by installing CLI command programs for use in your Terminal sessions:
+
+1. To obtain the <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x">.NET Core command-line interface (CLI) tool</a> on a Mac, <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script">download</a> file <tt>dotnet-install.sh</tt> stored in <a target="_blank" href="https://github.com/dotnet/cli/">https://github.com/dotnet/cli</a>, then run it.
+
+   <pre><strong>chmod +x dotnet-install.sh
+   ./dotnet-install.sh</strong></pre>
+
+   PROTIP: This is a very well-written bash script.
+   
+   The response:
+
+   <pre>dotnet-install: Downloading link: https://dotnetcli.azureedge.net/dotnet/Sdk/2.1.701/dotnet-sdk-2.1.701-osx-x64.tar.gz
+dotnet-install: Extracting zip from https://dotnetcli.azureedge.net/dotnet/Sdk/2.1.701/dotnet-sdk-2.1.701-osx-x64.tar.gz
+dotnet-install: Adding to current process PATH: `/Users/wilsonmar/.dotnet`. Note: This change will be visible only when sourcing script.
+dotnet-install: Installation finished successfully.
+   </pre>
+
+1. Verify:
+
+   <pre><strong>dotnet --version</strong></pre>
+
+   3.1.201
+
+1. For more verbose:
+
+   <pre><strong>dotnet --info</strong></pre>
+
+1. Node and NPM:
+
+   node 
+
+   npm install bower -g
+   v9.11.1
+   npm install grunt-cli -g
+
+1. Verify your machine can get to the bottle resources from Homebrew:
+
+   <pre>curl -O https://formulae.brew.sh
+   curl -O https://homebrew.bintray.com</pre>
+
+1. To enable <strong>az</strong> CLI commands:
+
+   <pre><strong>brew install azure-cli</strong></pre>
+
+   Alternately, if you already have it installed and want to <strong>upgrade</strong> to the latest version:
+
+   <pre>brew upgrade azure-cli</pre>
+
+1. Analytics:
+
+   <pre><strong>brew info azure-cli</strong></pre>
+
+   <pre>azure-cli: stable 2.15.1 (bottled), HEAD
+Microsoft Azure CLI 2.0
+https://docs.microsoft.com/cli/azure/overview
+/usr/local/Cellar/azure-cli/2.15.1 (16,636 files, 221.9MB) *
+  Poured from bottle on 2020-12-04 at 15:31:19
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/azure-cli.rb
+License: MIT
+==> Dependencies
+Required: openssl@1.1 ✔, python@3.8 ✔
+==> Options
+--HEAD
+  Install HEAD version
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Analytics
+install: 38,000 (30 days), 103,343 (90 days), 318,336 (365 days)
+install-on-request: 37,613 (30 days), 102,290 (90 days), 313,119 (365 days)
+build-error: 0 (30 days)</pre>
+
+1. Analyze and act on caveats in response such as:
+
+   <pre>==> python
+Python has been installed as
+  /usr/local/bin/python3
+&nbsp;
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
+  /usr/local/opt/python/libexec/bin
+&nbsp;
+If you need Homebrew's Python 2.7 run
+  brew install python@2
+&nbsp;
+You can install Python packages with
+  pip3 install <package>
+They will install into the site-package directory
+  /usr/local/lib/python3.7/site-packages
+&nbsp;
+See: https://docs.brew.sh/Homebrew-and-Python
+==> azure-cli
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+   </pre>
+
+1. Confirm: (<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">based on docs for macOS, Ubuntu, Windows 10, Azure Cloud Shell</a>):
+
+   <pre><strong>az --version</strong></pre>
+
+   PROTIP: The CLI doesn't assume a Python virtual environment, so it relies on finding the installed Python version.
+
+   <pre>azure-cli                         2.24.2 *
+&nbsp;
+core                              2.24.2 *
+telemetry                          1.0.6
+&nbsp;
+Python location '/usr/local/Cellar/azure-cli/2.24.2/libexec/bin/python'
+Extensions directory '/Users/wilsonmar/.azure/cliextensions'
+&nbsp;
+Python (Darwin) 3.8.10 (default, May  4 2021, 03:04:19)
+[Clang 11.0.0 (clang-1100.0.33.17)]
+&nbsp;
+Legal docs and information: aka.ms/AzureCliLegal
+&nbsp;
+You have 2 updates available. Consider updating your CLI installation with 'az upgrade'
+&nbsp;
+Please let us know how we are doing: https://aka.ms/azureclihats
+and let us know if you're interested in trying out our newest features: https://aka.ms/CLIUXstudy
+   </pre>
+
+   Previously:
+
+   <pre>Extensions:
+azure-cli-iot-ext                  0.8.7
+   </pre>
+
+1. Upgrade az if requested.
+
+   <pre>This command is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
+Your current Azure CLI version is 2.24.2. Latest version available is 2.25.0.
+Please check the release notes first: https://docs.microsoft.com/cli/azure/release-notes-azure-cli
+Do you want to continue? (Y/n): y
+   </pre>
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">
+https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a> to Get started with Azure CLI
+
+   ### Azure DevOps CLI extension
+
+   Based on: https://docs.microsoft.com/en-us/azure/devops/cli/?view=azure-devops
+
+1. Add:
+
+   <pre><strong>az extension add --name azure-devops</strong></pre>
+
+1. To confirm the installation:
+
+   az extension list 
+
+   or 
+
+   az extension show --name azure-devops
+
+1. Configure default configuration for your organization and project using <a href="#YourSettings">your settings discussed in this document (above)</a>
+
+   <pre><strong>az devops configure --defaults organization="https://dev.azure.com/$AZDEVOPS_ORG_NAME" \
+   project="$AZDEVOPS_PROJ_NAME"
+   </strong></pre>
+
+1. If you're connecting to an on-prem Azure DevOps Server, specify the URL for your server instance. For example:
+
+   az devops configure --defaults organization=https://ServerName/CollectionName project=ProjectName
+
+
+   ### Git branches
+   
+1. To make sure you have the correct branch selected:
+
+   David Tesar (<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
+   
+   * Branch <strong>aspnet45</strong> contains code for ASP.NET 4.5 used on older "bare metal" machines. Don't use this.
+
+   * Branch <strong>master</strong> contains code for ASP.NET Core used within Containers. Use this.
+     
+
+
+
+
+
+<hr />
+
+<a name="QuickStart"></a>
+
+## GUI QuickStart: dev.azure.com was aex.dev.azure.com
 
 1. In a browser, use a profile for each one of your emails (corporate employee, gmail, hotmail, outlook, etc.)
 
-1. Go to the "Azure Dev Essentials" site hosting Azure DevOps at:
+   PROTIP: I use different browser programs so I can quickly press <strong>command+Tab</strong> (on a Mac) to switch between documentation (on Brave browser), apps (on Chrome), and Azure DevOps (on Microsoft Edge):
+
+1. PROTIP: Click on your <strong>browser's avatar picture</strong> to select the browser profile housing the browser cookies and history associated with the <strong>email address</strong> you are using (one email for corporate/client work, one for your personal gmail, one for hotmail/outlook, etc.).
+
+1. In the Microsoft Edge browser, go to the "Azure Dev Essentials" site hosting Azure DevOps at:
 
    <a target="_blank" href="https://aex.dev.azure.com/">
    https://aex.dev.azure.com/me?mkt=en-US</a>
 
-   If you are reusing a browser profile, you would be logged in automatically.
-   Otherwise, sign in using the same account you use for Azure billing.
+1. If you're using a browser profile, you would be logged in automatically based on prior session's history. Otherwise, sign in using the same account you use for Azure billing.
 
 1. Select "Default Directory" if you don't have alternative tenants.
 
@@ -137,6 +354,8 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
 
    ### Create Organization
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=vsts">DOC: Quick Start: Create an Azure DevOps organization</a>
 
 1. Click the blue "Create new organization" under title "Get started with Azure DevOps".
 
@@ -222,7 +441,7 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    NOTE: Don't choose the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azure-devops">others</a>:
 
-   * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a>, created from <a target="_blank" href="https://github.com/Microsoft/TailwindTraders">github.com/Microsoft/TailwindTraders</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as "a fictitious retail company showcasing the future of intelligent application experiences. These reference apps are all are powered by the Azure cloud, built with best-in-class tools, and made smarter through data and AI."<br /><br />
+   * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a>, created from <a target="_blank" href="https://github.com/Microsoft/TailwindTraders">github.com/Microsoft/TailwindTraders</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as a fictitious retail company created using an ensemble of reference apps using all-Microsoft tech running in Azure. It showcases "intelligent application experiences made smarter through data and AI".<br /><br />
    <a target="_blank" href="https://channel9.msdn.com/Shows/Azure-Friday/An-Overview-of-the-Tailwind-Traders-Reference-Apps-for-Azure" title="David Sanchez's 10-minute overview for Scott Hanselman on 3 May 2019">VIDEO</a>: "we keep it fresh":
    <br />
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"><img alt="az-devops-tailwind-1280x720" src="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"></a>
@@ -394,151 +613,8 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
    Remember that the cog icon is associated with "Project settings".
 
 
-<hr />
 
-### Local client utilities
 
-Get prepared by installing CLI command programs for use in your Terminal sessions:
-
-1. To obtain the <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x">.NET Core command-line interface (CLI) tool</a> on a Mac, <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script">download</a> file <tt>dotnet-install.sh</tt> stored in <a target="_blank" href="https://github.com/dotnet/cli/">https://github.com/dotnet/cli</a>, then run it.
-
-   <pre><strong>chmod +x dotnet-install.sh
-   ./dotnet-install.sh</strong></pre>
-
-   PROTIP: This is a very well-written bash script.
-   
-   The response:
-
-   <pre>dotnet-install: Downloading link: https://dotnetcli.azureedge.net/dotnet/Sdk/2.1.701/dotnet-sdk-2.1.701-osx-x64.tar.gz
-dotnet-install: Extracting zip from https://dotnetcli.azureedge.net/dotnet/Sdk/2.1.701/dotnet-sdk-2.1.701-osx-x64.tar.gz
-dotnet-install: Adding to current process PATH: `/Users/wilsonmar/.dotnet`. Note: This change will be visible only when sourcing script.
-dotnet-install: Installation finished successfully.
-   </pre>
-
-1. Verify:
-
-   <pre><strong>dotnet --version</strong></pre>
-
-   3.1.201
-
-1. For more verbose:
-
-   <pre><strong>dotnet --info</strong></pre>
-
-1. Node and NPM:
-
-   node 
-
-   npm install bower -g
-   v9.11.1
-   npm install grunt-cli -g
-
-1. Verify your machine can get to the bottle resources from Homebrew:
-
-   <pre>curl -O https://formulae.brew.sh
-   curl -O https://homebrew.bintray.com</pre>
-
-1. To enable <strong>az</strong> CLI commands:
-
-   <pre><strong>brew install azure-cli</strong></pre>
-
-   Alternately, if you already have it installed and want to <strong>upgrade</strong> to the latest version:
-
-   <pre>brew upgrade azure-cli</pre>
-
-1. Analytics:
-
-   <pre><strong>brew info azure-cli</strong></pre>
-
-   <pre>azure-cli: stable 2.15.1 (bottled), HEAD
-Microsoft Azure CLI 2.0
-https://docs.microsoft.com/cli/azure/overview
-/usr/local/Cellar/azure-cli/2.15.1 (16,636 files, 221.9MB) *
-  Poured from bottle on 2020-12-04 at 15:31:19
-From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/azure-cli.rb
-License: MIT
-==> Dependencies
-Required: openssl@1.1 ✔, python@3.8 ✔
-==> Options
---HEAD
-  Install HEAD version
-==> Caveats
-Bash completion has been installed to:
-  /usr/local/etc/bash_completion.d
-==> Analytics
-install: 38,000 (30 days), 103,343 (90 days), 318,336 (365 days)
-install-on-request: 37,613 (30 days), 102,290 (90 days), 313,119 (365 days)
-build-error: 0 (30 days)</pre>
-
-1. Analyze and act on caveats in response such as:
-
-   <pre>==> python
-Python has been installed as
-  /usr/local/bin/python3
-&nbsp;
-Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
-`python3`, `python3-config`, `pip3` etc., respectively, have been installed into
-  /usr/local/opt/python/libexec/bin
-&nbsp;
-If you need Homebrew's Python 2.7 run
-  brew install python@2
-&nbsp;
-You can install Python packages with
-  pip3 install <package>
-They will install into the site-package directory
-  /usr/local/lib/python3.7/site-packages
-&nbsp;
-See: https://docs.brew.sh/Homebrew-and-Python
-==> azure-cli
-Bash completion has been installed to:
-  /usr/local/etc/bash_completion.d
-   </pre>
-
-1. Confirm:
-
-   <pre><strong>az --version</strong></pre>
-
-   PROTIP: The CLI doesn't use a Python virtual environment, so it relies on finding the installed Python version.
-
-   <pre>azure-cli                         2.15.1
-&nbsp;
-core                              2.15.1
-telemetry                          1.0.6
-&nbsp;
-Extensions:
-azure-cli-iot-ext                  0.8.7
-&nbsp;
-Python location '/usr/local/Cellar/azure-cli/2.15.1/libexec/bin/python'
-Extensions directory '/Users/wilson_mar/.azure/cliextensions'
-&nbsp;
-Python (Darwin) 3.8.6 (default, Nov 20 2020, 18:29:40)
-[Clang 12.0.0 (clang-1200.0.32.27)]
-&nbsp;
-Legal docs and information: aka.ms/AzureCliLegal
-&nbsp;
-&nbsp;
-Your CLI is up-to-date.
-&nbsp;
-Please let us know how we are doing: https://aka.ms/azureclihats
-and let us know if you're interested in trying out our newest features: https://aka.ms/CLIUXstudy
-   </pre>
-
-(<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest">based on docs for macOS, Ubuntu, Windows 10, Azure Cloud Shell</a>)
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">
-https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a>
-to Get started with Azure CLI
-
-   ### Git branches
-   
-1. To make sure you have the correct branch selected:
-
-   David Tesar (<a target="_blank" href="https://twitter.com/dtzar">@dtzar</a>, host of <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Dimension/">DevOps-Dimension on channel9.msdn</a>) wrote the two branches which visually display the same front-end website content with a SQL Azure back-end (all PaaS):<br /> 
-   
-   * Branch <strong>aspnet45</strong> contains code for ASP.NET 4.5 used on older "bare metal" machines. Don't use this.
-
-   * Branch <strong>master</strong> contains code for ASP.NET Core used within Containers. Use this.
-     
 
 <hr />
 
@@ -1424,75 +1500,6 @@ Case Studies:
 See <a target="_blank" href="http://stories.visualstudio.com/devops/">http://stories.visualstudio.com/devops</a>
 
 
-## Azure's Social Media
-
-Issues with MicrosoftDocs are reported as issues within<br />
-<a target="_blank" href="https://github.com/MicrosoftDocs/feedback/issues">https://github.com/MicrosoftDocs/feedback/issues</a>.
-
-Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
-
-<a target="_blank" href="https://twitter.com/AzureDevOps">@AzureDevOps</a>
-
-<a target="_blank" href="https://aka.ms/DevOpsBlog/">aka.ms/DevOpsBlog</a>
-
-Apple podcasts:
-
-   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/visual-studio-toolbox-hd-channel-9/id524227383">Visual Studio Toolbox</a>
-
-DevOps Interviews
-
-The DevOps Lab
-
-LinkedIn?
-
-
-## Azure's Partners
-
-In addition to Marketplace developers:
-
-https://projectum.com/technologies/microsoft-azure-devops/
-
-https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
-
-https://www.preemptive.com/blog/article/1055-automating-and-scaling-app-protection-with-azure-devops/90-dotfuscator
-
-https://www.mobilize.net/blog/vbuc-azure-devops
-
-## Independents
-
-YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=H-R2bCXfz8I">Intro to Azure DevOps - Source Control, CI/CD, Automation, and more</a>  Dec 17, 2018
-by IAmTimCorey
-
-
-## References
-
-<a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ParthoPDas.TestDrivenDevelopmentStudio&wt.mc_id=DXLEX_EDX_DEVOPS200.5X">Test Driven Development in Visual Studio</a> - An environment for practicing Kent Beck style TDD [F.I.R.S.T. Unit Tests, fast builds, No Mocks, Hexagonal architecture]  Open source alternative to nCrunch
-
-The Salt platform at <a target="_blank" href="https://github.com/saltstack/salt">https://github.com/saltstack/salt</a>
-comes with different components such as Salt Masters, Salt Minions, Top Files, and Salt Cloud.
-Its axis:
-    Remote execution
-    Configuration automation
-    Cloud control
-    Event-driven orchestration
-See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infrastructure-azure-using-saltstack/
-
-https://devops.com/devops-help-hinder-compliance/
-
-https://www.youtube.com/watch?v=Bo_84yKsxuc
-
-<a target="_blank" href="https://openedx.microsoft.com/courses/course-v1:Microsoft+INF240x+2019_T2/about">Configuring and Operating Microsoft Azure Stack (INF240x)</a> 25-30 hour enrollment closed on 6/25/19.
-
-
-https://testingindevops.org/
-
-<a target="_blank" href="https://www.coursera.org/projects/executing-selenium-test-automation-with-azure-devops">
-Coursera guided project: Executing Selenium Test Automation With Azure DevOps</a>
-
-References:
-   * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Azure Book of Basics" interactive</a> <a target="_blank" href="https://lucid.app/lucidchart/8495a6bd-89d2-4a59-9b41-4b7a9e0e1922/view?page=0">interactive Lucid diagram</a>.
-
-
 <hr />
 
 ## Previous Course (Abandonded)
@@ -1694,6 +1701,81 @@ DEVOPS200.10x
    * Create release Definition > Publish PU App to Deployed Azure App Service Infrastructure
    * Create release Definition > Clone Dev Environment to Staging and Production
    * Verify release Definition Deployment
+
+
+<hr />
+
+<a name="Social"></a>
+
+## Social Media around Azure DevOps 
+
+Issues with MicrosoftDocs are reported as issues within<br />
+<a target="_blank" href="https://github.com/MicrosoftDocs/feedback/issues">https://github.com/MicrosoftDocs/feedback/issues</a>.
+
+Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
+
+<a target="_blank" href="https://twitter.com/AzureDevOps">Twitter: @AzureDevOps</a>
+
+<a target="_blank" href="https://aka.ms/DevOpsBlog/">aka.ms/DevOpsBlog</a>
+
+Podcasts:
+
+   * <a target="_blank" href="https://podcasts.apple.com/us/podcast/visual-studio-toolbox-hd-channel-9/id524227383">Visual Studio Toolbox</a>
+
+DevOps Interviews
+
+The DevOps Lab
+
+LinkedIn?
+
+
+## Azure's Partners
+
+In addition to Marketplace developers:
+
+https://projectum.com/technologies/microsoft-azure-devops/
+
+https://www.telerik.com/blogs/microsoft-azure-devops-what-you-need-to-know
+
+https://www.preemptive.com/blog/article/1055-automating-and-scaling-app-protection-with-azure-devops/90-dotfuscator
+
+https://www.mobilize.net/blog/vbuc-azure-devops
+
+## Independents
+
+YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=H-R2bCXfz8I">Intro to Azure DevOps - Source Control, CI/CD, Automation, and more</a>  Dec 17, 2018
+by IAmTimCorey
+
+https://medium.com/devops-cloud-it-career/microsoft-azure-devops-start-here-10c46efa4a76
+
+
+## References
+
+<a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ParthoPDas.TestDrivenDevelopmentStudio&wt.mc_id=DXLEX_EDX_DEVOPS200.5X">Test Driven Development in Visual Studio</a> - An environment for practicing Kent Beck style TDD [F.I.R.S.T. Unit Tests, fast builds, No Mocks, Hexagonal architecture]  Open source alternative to nCrunch
+
+The Salt platform at <a target="_blank" href="https://github.com/saltstack/salt">https://github.com/saltstack/salt</a>
+comes with different components such as Salt Masters, Salt Minions, Top Files, and Salt Cloud.
+Its axis:
+    Remote execution
+    Configuration automation
+    Cloud control
+    Event-driven orchestration
+See https://www.microsoft.com/developerblog/2017/05/09/provision-configure-infrastructure-azure-using-saltstack/
+
+https://devops.com/devops-help-hinder-compliance/
+
+https://www.youtube.com/watch?v=Bo_84yKsxuc
+
+<a target="_blank" href="https://openedx.microsoft.com/courses/course-v1:Microsoft+INF240x+2019_T2/about">Configuring and Operating Microsoft Azure Stack (INF240x)</a> 25-30 hour enrollment closed on 6/25/19.
+
+
+https://testingindevops.org/
+
+<a target="_blank" href="https://www.coursera.org/projects/executing-selenium-test-automation-with-azure-devops">
+Coursera guided project: Executing Selenium Test Automation With Azure DevOps</a>
+
+References:
+   * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Azure Book of Basics" interactive</a> <a target="_blank" href="https://lucid.app/lucidchart/8495a6bd-89d2-4a59-9b41-4b7a9e0e1922/view?page=0">interactive Lucid diagram</a>.
 
 
 ## More on DevOps #
