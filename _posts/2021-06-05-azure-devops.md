@@ -141,6 +141,8 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
 If you prefer using ARM YAML, see: https://docs.microsoft.com/en-us/azure/devops/cli/azure-devops-cli-in-yaml?view=azure-devops
 
+https://pleasereleaseme.net/deploy-a-dockerized-application-to-azure-kubernetes-service-using-azure-yaml-pipelines-4-running-a-dockerized-application-locally/
+
 
 <a name="Install"></a>
 
