@@ -141,7 +141,6 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
 If you prefer using ARM YAML, see: https://docs.microsoft.com/en-us/azure/devops/cli/azure-devops-cli-in-yaml?view=azure-devops
 
-https://pleasereleaseme.net/deploy-a-dockerized-application-to-azure-kubernetes-service-using-azure-yaml-pipelines-4-running-a-dockerized-application-locally/
 
 
 <a name="Install"></a>
@@ -387,6 +386,8 @@ Commands:
 
 
    ### More CLI commands
+
+   https://stackoverflow.com/questions/64502148/how-to-securely-login-in-az-cli-from-a-devops-pipeline
 
    STAR: <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Lab/Working-with-Azure-DevOps-using-the-Azure-DevOps-CLI" title="by George Verghese @gvvarkey">VIDEO</a>:
    references scaffoling script examples at https://github.com/Azure/azure-devops-cli-extension/tree/master/examples/Scaffolding
@@ -1287,7 +1288,7 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
 <img align="right" width="96" src="../images/azure-devops-pipelines-96.svg">
 
-Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a> \|
+Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/pipelines/">Product</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/pipelines/index?view=azure-devops">User Guide</a>
 
 Azure DevOps Repos and Pipelines are <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/devops/azure-devops-services/">free starting prices</a> for up to 5 people running 10 parallel jobs in 1 hosted job up to 1,800 minutes per month.
 I
@@ -1297,12 +1298,24 @@ I
 
 <a target="_blank" href="https://github.com/rfennell/AzurePipelines">https://github.com/rfennell/AzurePipelines</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=yr6PJxfACNc">Azure Pipelines</a> with Mickey Gousset giving an overview showing PartsUnlimited.
-"Piplines work with many languages".
+<a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U&t=3m">VIDEO:</a> <a target="_blank" href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">azure-pipelines.yml files</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=jRgLSMlp28U&t=3m">VIDEO:</a> Being introduced are  <a target="_blank" href="https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core">azure-pipelines.yml files</a>
+CLI can be called from within an Azure Pipeline:<a target="_blank" href="https://stackoverflow.com/questions/64502148/how-to-securely-login-in-az-cli-from-a-devops-pipeline">*</a>
 
-<a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Azure-Pipelines">Mickey Gousset</a>
+   <pre>- task: AzureCLI@2
+  displayName: Publish Function
+  inputs:
+    azureSubscription: <em>Name of the Azure Resource Manager service connection</em>
+    scriptType: ps
+    scriptLocation: inlineScript
+    inlineScript: |
+      func azure publish <em>function-name</em>
+   </pre>
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=yr6PJxfACNc">Azure Pipelines</a> overview showing PartsUnlimited "Piplines work with many languages" by <a target="_blank" href="https://channel9.msdn.com/Shows/Visual-Studio-Toolbox/Azure-Pipelines">Mickey Gousset</a>
+
+   * https://pleasereleaseme.net/deploy-a-dockerized-application-to-azure-kubernetes-service-using-azure-yaml-pipelines-4-running-a-dockerized-application-locally/
 
 
 <a name="AzureDevTestLabs"></a>
