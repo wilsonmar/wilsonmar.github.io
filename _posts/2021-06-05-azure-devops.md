@@ -195,11 +195,13 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    ### Project Generator
 
-   Optionally:
+   Optionally: <a target="_blank" href="https://azuredevopslabs.com/labs/azuredevops/prereq/">DOCS</a>:
 
 1. To create a new pre-defined project with <strong>pre-populated sample content</strong> (which  include source code, work items, iterations, service endpoints, build and release definitions) based on a template you choose, open a new browser tab to:
 
    <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">https://azuredevopsdemogenerator.azurewebsites.net</a>
+
+   NOTE: The site was built using <a target="_blank" href="https://github.com/microsoft/AzureDevOpsDemoGenerator">github.com/microsoft/AzureDevOpsDemoGenerator</a>
 
 1. Click the blue "Sign In" for the same email you used in the steps above.
 1. Click "Accept" after memorizing the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azure-devops">default permission granted</a> ;)
