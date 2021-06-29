@@ -34,6 +34,8 @@ Documentation below references the settings above.
 
 If you don't need the history nor to <a href="#CreateAccount">create an Azure account</a>, begin with <a href="#QuickStart">my QuickStart tour with commentary (below)</a>.
 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/123786211-a9c6bc80-d896-11eb-9f00-de224687bc32.png">
+<img width="536" alt="az-devops-services-1072x688" src="https://user-images.githubusercontent.com/300046/123786211-a9c6bc80-d896-11eb-9f00-de224687bc32.png"></a>
 
 <hr />
 
@@ -136,6 +138,8 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 <a name="CLI"></a>
 
 ## CLI/PowerShell Automation
+
+If you prefer using ARM YAML, see: https://docs.microsoft.com/en-us/azure/devops/cli/azure-devops-cli-in-yaml?view=azure-devops
 
 
 <a name="Install"></a>
@@ -277,24 +281,52 @@ Please check the release notes first: https://docs.microsoft.com/cli/azure/relea
 Do you want to continue? (Y/n): y
    </pre>
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">
-https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a> to Get started with Azure CLI
+   <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a> to Get started with Azure CLI
 
    ### Azure DevOps CLI extension
 
    Based on: https://docs.microsoft.com/en-us/azure/devops/cli/?view=azure-devops
 
-1. Add:
+1. Optionally: Add CLI extension:
 
    <pre><strong>az extension add --name azure-devops</strong></pre>
 
-1. To confirm the installation:
+   NOTE: The extension was built from https://github.com/Azure/azure-devops-cli-extension
 
-   az extension list 
+   PROTIP: Instead of the above command, run this next command and it prompts you to install if it's not installed. A neat feature!
 
-   or 
+1. Widen your Terminal to list <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/devops?view=azure-cli-latest">az devops commands</a> detailed at <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/cli/quick-reference?view=azure-devops">docs.microsoft.com/en-us/azure/devops/cli/quick-reference?view=azure-devops</a>
 
-   az extension show --name azure-devops
+   <pre><strong>az devops -h</strong>
+   
+   <pre>az devops : Manage Azure DevOps organization level operations.
+        Related Groups
+        az pipelines: Manage Azure Pipelines
+        az boards: Manage Azure Boards
+        az repos: Manage Azure Repos
+        az artifacts: Manage Azure Artifacts.
+&nbsp;
+Subgroups:
+    admin            : Manage administration operations.
+    extension        : Manage extensions.
+    project          : Manage team projects.
+    security         : Manage security related operations.
+    service-endpoint : Manage service endpoints/service connections.
+    team             : Manage teams.
+    user             : Manage users.
+    wiki             : Manage wikis.
+&nbsp;
+Commands:
+    configure        : Configure the Azure DevOps CLI or view your configuration.
+    feedback         : Displays information on how to provide feedback to the Azure DevOps CLI team.
+    invoke           : This command will invoke request for any DevOps area and resource. Please use
+                       only json output as the response of this command is not fixed. Helpful docs -
+                       https://docs.microsoft.com/rest/api/azure/devops/.
+    login            : Set the credential (PAT) to use for a particular organization.
+    logout           : Clear the credential for all or a particular organization.
+   </pre>
+
+   NOTE: <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vsts.cli&ssr=false#review-details">Reviews of this command</a> 
 
 1. Configure default configuration for your organization and project using <a href="#YourSettings">your settings discussed in this document (above)</a>
 
@@ -302,10 +334,69 @@ https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure
    project="$AZDEVOPS_PROJ_NAME"
    </strong></pre>
 
-1. If you're connecting to an on-prem Azure DevOps Server, specify the URL for your server instance. For example:
+   NOTE: If you're connecting to an on-prem Azure DevOps Server, the URL would instead be:
 
-   az devops configure --defaults organization=https://ServerName/CollectionName project=ProjectName
+   <pre>organization=https://ServerName/CollectionName</pre>
 
+1. To confirm the installation:
+
+   <pre><strong>az extension show --name azure-devops</strong></pre>
+
+   <pre>{
+  "extensionType": "whl",
+  "metadata": {
+    "author": "Microsoft",
+    "author_email": "VSTS_Social@microsoft.com",
+    "azext.minCliCoreVersion": "2.2.0",
+    "classifiers": [
+      "Development Status :: 4 - Beta",
+      "Intended Audience :: Developers",
+      "Intended Audience :: System Administrators",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3.4",
+      "Programming Language :: Python :: 3.5",
+      "Programming Language :: Python :: 3.6",
+      "License :: OSI Approved :: MIT License"
+    ],
+    "description": "Microsoft DevOps CLI Extension for Windows, Mac and Linux\n=========================================================\n\n1.0.0\n---------------------\n\n* Initial preview release.\n\n",
+    "filename": "/Users/wilsonmar/.azure/cliextensions/azure-devops/azure_devops-0.18.0.dist-info",
+    "home_page": "https://github.com/Microsoft/azure-devops-cli-extension",
+    "license": "MIT",
+    "metadata_version": "2.0",
+    "name": "azure-devops",
+    "platforms": [
+      "UNKNOWN"
+    ],
+    "requires_dist": [
+      "distro (==1.3.0)",
+      "python-dateutil (==2.7.3)",
+      "msrest (<0.7.0,>=0.6.0)"
+    ],
+    "summary": "Tools for managing Azure DevOps.",
+    "version": "0.18.0"
+  },
+  "name": "azure-devops",
+  "path": "/Users/wilsonmar/.azure/cliextensions/azure-devops",
+  "version": "0.18.0"
+}</pre>
+
+   QUESTION: "Programming Language :: Python :: 3.6" is the latest supported?
+
+
+   ### More CLI commands
+
+   STAR: <a target="_blank" href="https://channel9.msdn.com/Shows/DevOps-Lab/Working-with-Azure-DevOps-using-the-Azure-DevOps-CLI" title="by George Verghese @gvvarkey">VIDEO</a>:
+   references scaffoling script examples at https://github.com/Azure/azure-devops-cli-extension/tree/master/examples/Scaffolding
+
+   STAR: Also see https://www.dotnetcurry.com/devops/1528/azure-devops-cli
+
+
+   ### Show Build in browser
+   
+1. To show details of a specific build (id 1) in the default browser:
+
+   <pre><strong>az pipelines build show --id 1 --open</strong></pre>
 
    ### Git branches
    
@@ -316,10 +407,6 @@ https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure
    * Branch <strong>aspnet45</strong> contains code for ASP.NET 4.5 used on older "bare metal" machines. Don't use this.
 
    * Branch <strong>master</strong> contains code for ASP.NET Core used within Containers. Use this.
-     
-
-
-
 
 
 <hr />
@@ -414,8 +501,6 @@ https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure
 
    ### Project Generator
 
-   Optionally: <a target="_blank" href="https://azuredevopslabs.com/labs/azuredevops/prereq/">DOCS</a>:
-
 1. To create a new pre-defined project with <strong>pre-populated sample content</strong> (which  include source code, work items, iterations, service endpoints, build and release definitions) based on a template you choose, open a new browser tab to:
 
    <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">https://azuredevopsdemogenerator.azurewebsites.net</a>
@@ -470,7 +555,7 @@ https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure
 
    BTW <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?view=azure-devops">you can build your own template</a>.
 
-1. Right-click on <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs"><strong>ARM Outputs</strong> for a new browser tab to ARM Outputs extension page</a> <strong>for Visual Studio</strong> (licensed product not available on MacOS). Click the green "Get it free".
+1. Right-click on <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs"><strong>ARM Outputs</strong> for a new browser tab to ARM Outputs extension page</a> <strong>for Visual Studio</strong> (licensed product not available on MacOS). Click the green "Get it free".    Optionally: <a target="_blank" href="https://azuredevopslabs.com/labs/azuredevops/prereq/">DOCS</a> for use with Visual Studio.
 
 1. Return to the Azure DevOps Demo browser page.
 
