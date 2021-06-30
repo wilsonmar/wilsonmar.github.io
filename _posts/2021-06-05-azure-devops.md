@@ -28,7 +28,12 @@ But whether you use GUI or CLI, before diving in, define custom values to be use
 
    <pre><strong>export AZDEVOPS_ORG_NAME="contoso"
 export AZDEVOPS_PROJ_NAME="ContosoWebApp"
+export AZDEVOPS_REST_VER="6.0"
+export AZDEVOPS_GITHUB_PAT="12928342342982342347abcdf2324234"
+export AZDEVOPS_USER_EMAIL="johndoe@gmail.com"
    </strong></pre>
+
+The combination of {organization} / {project} is called a "route".
 
 Documentation below references the settings above.
 
@@ -140,6 +145,8 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 ## CLI/PowerShell Automation
 
 If you prefer using ARM YAML, see: https://docs.microsoft.com/en-us/azure/devops/cli/azure-devops-cli-in-yaml?view=azure-devops
+
+PROTIP: YAML runs fail if it's not perfectly formatted (with no extra spaces, etc.).
 
 
 
@@ -284,6 +291,8 @@ Do you want to continue? (Y/n): y
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a> to Get started with Azure CLI
 
+
+
    ### Azure DevOps CLI extension
 
    Based on: https://docs.microsoft.com/en-us/azure/devops/cli/?view=azure-devops
@@ -384,6 +393,25 @@ Commands:
 
    QUESTION: "Programming Language :: Python :: 3.6" is the latest supported?
 
+1. Set the memory variable <tt>"msrest (<0.7.0,>=0.6.0)"</tt>:
+
+   <pre><strong>export AZDEVOPS_REST_VER="6.0"</strong></pre>
+
+
+   ### devops login
+
+1. In GitHub obtain a PAT (Personal Access Token) for the service account used to run pipelines and save it in a private place:
+
+   <pre><strong>export AZDEVOPS_GITHUB_PAT="12928342342982342347abcdf2324234"</strong></pre>
+
+1. Sign in using the Azure CLI az login command or an Azure DevOps Personal Access Token (PAT)
+
+   <pre><strong>az devops login --organization "http://dev.azure.com/$AZDEVOPS_ORG_NAME"</strong></pre>
+
+1. When prompted. paste the PAT. See https://docs.microsoft.com/en-us/azure/devops/cli/log-in-via-pat?view=azure-devops&tabs=windows
+
+   See https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page#create-a-pat
+
 
    ### More CLI commands
 
@@ -393,6 +421,53 @@ Commands:
    references scaffoling script examples at https://github.com/Azure/azure-devops-cli-extension/tree/master/examples/Scaffolding
 
    STAR: Also see https://www.dotnetcurry.com/devops/1528/azure-devops-cli
+
+   https://www.keithjenneke.com/getting-started-with-the-azure-devops-cli/
+
+
+   ### Invoke REST API from CLI
+
+   When the Azure DevOps CLI doesn't cover a resource or action, can use the "catch-all" command to call the Azure DevOps REST API:
+
+   <pre><strong>GET https://vsrm.dev.azure.com/{organization}/{project}/_apis/release/releases?api-version=6.0
+   </strong></pre>
+
+
+   <pre><strong>az devops invoke --area release --resource releases \
+      --route --api-version "6.0-preview" -o json
+   </strong></pre>
+
+1. To get a list of REST API releases:<a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/devops/release/releases/list?view=azure-devops-rest-6.0">DOCS</a>:
+
+   <pre><strong>curl GET "https://vsrm.dev.azure.com/$AZDEVOPS_ORG_NAME/$AZDEVOPS_PROJ_NAME/_apis/release/releases?api-version=$AZDEVOPS_REST_VER"</strong></pre> 
+
+   https://vsrm.dev.azure/route/route/_apis/area/resource/api version
+
+
+   ### Add users to project team
+
+   Assuming members we want to add already exists within the Organization and the Project Group:
+
+1. We have a Security Group.
+
+1. Get Group Descriptor:
+
+   <pre><strong>$groupDescriptor = az devops security group list \
+      --query "graphGroups[?contains(principalName,'Example1 Team')].[descriptor]" -o tsv
+   </strong></pre>
+
+1. Get Member Descriptor:
+
+   <pre><strong>$memberDescriptor = az devops user show \
+      --user "$AZDEVOPS_USER_EMAIL" \
+      --query user.descriptor -o tsv
+   </strong></pre>
+
+1. Add members to the group:
+
+   <pre><strong>az devops security group membership add \
+      --group-id $groupDescriptor --member-id $memberDescriptor
+   </strong></pre>
 
 
    ### Show Build in browser
@@ -487,6 +562,20 @@ Commands:
 
    In the <a target="_blank" href="https://itworks-tfs.visualstudio.com/_settings/organizationOverview">Overview page</a> is where the default Region is specified for all projects.
 
+1. To switch organizations or configure an organization, click the "Azure DevOps" icon at the upper-left corner:
+
+   Notice that work requests and pull requests are under an organization rather its projects.
+
+   <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
+
+1. Click on the organization name.
+
+1. Configure profile, Security, Usage, Notification settings, Theme, etc.
+
+   Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
+
+
 1. Privacy URL. ???
 1. Time zone: leave as default "UTC", which doesn't have Daylight Savings Time (Summer Time).
 
@@ -500,11 +589,28 @@ Commands:
 
    <tt>This agent is not running because you have reached the maximum number of requests…</tt>
 
+
+   <a name="CreateProject"></a>
+
+   ### Create project using CLI
+
+1. Create project using the basic process template:
+
+   <pre><strong>az devops project create --name "$AZDEVOPS_PROJ_NAME" \
+      --process basic \
+      --description "Az Devops CLI Example1" 
+   </strong></pre>
+
+   Defaults:
+   -s or --source-control (git) <br />
+   --visibility (private) 
+
+
    <a name="Generator"></a>
 
    ### Project Generator
 
-1. To create a new pre-defined project with <strong>pre-populated sample content</strong> (which  include source code, work items, iterations, service endpoints, build and release definitions) based on a template you choose, open a new browser tab to:
+1. To create a new pre-defined project with <strong>pre-populated sample content</strong> (which include source code, work items, iterations, service endpoints, build and release definitions) based on a template you choose, open a new browser tab to:
 
    <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">https://azuredevopsdemogenerator.azurewebsites.net</a>
 
@@ -521,7 +627,7 @@ Commands:
 1. Select Organization: the one created above.
 1. Leave unchecked "I want to fork this repository".
 
-   ### Templates
+   ### Create project using a Template
 
    NOTE: This is based on from code at <a target="_blank" href="https://github.com/CanarysAutomationsInternal/AppCenterDemoGenerator">https://github.com/CanarysAutomationsInternal/AppCenterDemoGenerator</a>
 
@@ -578,26 +684,10 @@ Commands:
 
    <img width="318" alt="az-devops-template-stats" src="https://user-images.githubusercontent.com/300046/123724356-6eea6780-d849-11eb-866b-555d90f56590.png">
 
+
    ### Run a test build
 
 1. To run a test build.
-
-
-   ### Organizations GUI
-
-1. To switch organizations or configure an organization, click the "Azure DevOps" icon at the upper-left corner:
-
-   Notice that work requests and pull requests are under an organization rather its projects.
-
-   <img alt="azure-devops-org-menu-241x770-16780.jpg" width="241" src="https://user-images.githubusercontent.com/300046/56077361-81774400-5d98-11e9-95b5-bfc434b237ce.jpg">
-
-1. Click on the organization name.
-
-1. Configure profile, Security, Usage, Notification settings, Theme, etc.
-
-   Find what permissions you or a team member have, including project-level, collection-level, and object-level…docs.microsoft.com in 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/organizations/security/view-permissions?view=azure-devops">Quick Start: View permissions for yourself or others - Azure DevOps & TFS</a>
-
 
 
 <a name="PartsUnlimited"></a>
@@ -684,7 +774,11 @@ Commands:
 
    ### Import repo from GitHub
 
-1. Be in your project.
+1. Check whether a Git Repo exists:
+
+   <pre><strong>az repos list --query "[].name" -o tsv</strong></pre>
+
+1. In the GUI, be in your project.
 
 1. Click on <a href="#AzureRepos">Repos</a>. <a target="_blank" title="azure-devops-repos-dialog-1028x592.png" href="https://user-images.githubusercontent.com/300046/60948888-34304300-a2b1-11e9-872b-605eaafdcd7d.png">Several options are shown</a>.
 1. Click "Import".

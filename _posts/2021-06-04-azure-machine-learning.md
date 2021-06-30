@@ -157,7 +157,7 @@ The above can be setup by running a single command, but after you are setup to r
 
    ### Create Machine Learning Workspace using CLI
 
-2. Setup your CLI Bash enviornment by following my instructions at:
+2. Setup your CLI Bash environment by following my instructions at:
 
    <a target="_blank" href="https://github.com/wilsonmar/azure-quickly#readme">https://github.com/wilsonmar/azure-quickly#readme</a>
 
@@ -376,6 +376,12 @@ https://docs.microsoft.com/en-us/learn/modules/explore-analyze-data-with-python/
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/build-ai-solutions-with-azure-ml-service/">10 hr. MS LEARN PATH: Build and operate machine learning solutions with Azure Machine Learning</a>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/create-machine-learn-models/">MS LEARN LAB: Create machine learning models</a>
+
+Udacity offered those who complete their <a target="_blank" href="https://www.udacity.com/course/introduction-to-machine-learning-using-microsoft-azure--ud00333">free "Intro to Machine Learning using Microsoft Azure"</a> before July 30, 2021, 50% off on their paid <a target="_blank" href="https://www.udacity.com/course/machine-learning-engineer-for-microsoft-azure-nanodegree--nd00333?coupon=MSFT50&campaign_participation=skip"> "Machine Learning Engineer for Microsoft Azure Nanodegree Program"</a>, which include access to real-world projects from industry experts, career services and guidance. Technical mentor support throughout the program review your hands-on projects:
+   * Optimizing an ML Pipeline In Azure - leveraging AutoML, hyperparameter tuning, etc. using scikit-learn, Hyperdrive, and AutoML.
+   * Operationalizing Machine Learning (into a production environment) using Application Insights, identifying problems in logs, and harnessing the power of Azure’s Pipelines. 
+   * Capstone Project: using both the hyperdrive and automl API from azureml to build a model using external data of your choice. After training, compare their performance, deploy the best model as a webservice and test the model endpoint.
+   <br /><br />
 
 
 ### DP-100 Video courses:
