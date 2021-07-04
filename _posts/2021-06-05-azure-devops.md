@@ -1972,6 +1972,10 @@ References:
    * <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/azurebookofbasics1.html">"Azure Book of Basics" interactive</a> <a target="_blank" href="https://lucid.app/lucidchart/8495a6bd-89d2-4a59-9b41-4b7a9e0e1922/view?page=0">interactive Lucid diagram</a>.
 
 
+https://www.youtube.com/watch?v=VNHmX8_McqI
+Watch Me Code - Debugging a Broken DevOps Pipeline
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:

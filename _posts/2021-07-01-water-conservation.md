@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Water Conservation"
-excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
-tags: [travel, roadtrip, museums, monuments, ML]
+excerpt: "Ways to minimize use of water"
+tags: []
 date: "2021-07-01"
 file: "water-conservation"
 image:
@@ -19,15 +19,16 @@ comments: true
 
 I'm writing this on July 1, 2021 after seeing how Lake Mead (the largest man-made lake in the US) is reduced to 37% of capacity. And there are 120 F temparatures in Washington and Canada.
 
-The well and spring next to my house in Montana is producing less water than before.
+At my spread in Montana, the well and spring is producing less water than before.
 
-So this article is about how we've learned to live with less water:
+So this article is about how we're experimenting with ways to live with less water:
 
    * <a href="#Dish_washing">Minimal water dish washing</a> (Paper plates)
    * <a href="#DryShampoo">Waterless shampoo</a>
    * <a href="#Recirculating_ _shower">Recirculating shower</a>
+   * Filtering water from the spring
    * Large Cisterns
-   * Pee
+   * Pee around trees
    <br /><br />
 
 <hr />
@@ -36,7 +37,8 @@ So this article is about how we've learned to live with less water:
 
 ## Minimal water dish washing
 
-Paper plates and bowels can be thrown away after use, but they create a disposal problem (no landfills for you).
+Paper plates and bowels can be thrown away after use, but that creates a disposal problem (no landfills for you).
+Dry conditions make burning of trash potentially catasphoric.
 
 US FDA's guidelines include not using a towel to dry dishes (it's more sanitary to let them air dry).
 
@@ -76,9 +78,9 @@ The Boy Scout Handbook (page 308)</a> shows how to use 3 bins (like <a target="_
 
    * Drain board
 
-<a target="_blank" href="http://blog.etundra.com/wp-content/Media/2014/06/three-sink-basin-dishwashing.pdf">Infographic</a>:
+   <a target="_blank" href="http://blog.etundra.com/wp-content/Media/2014/06/three-sink-basin-dishwashing.pdf">Infographic</a>:
 
-### Prepare
+   ### Prepare
 
 1. Minimizing dishwashing time starts with menu planning. Meals that use one pot and few food-prep utensils will leave less mess afterward.
 
@@ -146,7 +148,7 @@ The Boy Scout Handbook (page 308)</a> shows how to use 3 bins (like <a target="_
 
    ### After 
  
-1. Seal the bag holding scraps and store it like food. It can attract pets, ants, rodents, bears, etc.
+1. Seal the bag holding scraps and store overnight like it's food. It can attract pets, ants, rodents, bears, etc.
 
 1. DO NOT dispose of SANITIZE water in a septic tank.
 
