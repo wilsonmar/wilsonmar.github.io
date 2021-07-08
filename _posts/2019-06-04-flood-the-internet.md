@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Measure impact of controls in Dave Hoeffner's the-internet website"
-excerpt: "Use Flood.io Element TypeScript to measure GUI performance accessing website stood up in AWS cloud using Docker, as measured by NewRelic"
+excerpt: "Use a web app (the-internet) used to challenge Selenium coding to compare scripts for performance testing (JMeter and Flood Element)"
 tags: [flood, perftest, selenium, testing]
 date: "2021-07-08"
 file: "flood-the-internet"
@@ -15,6 +15,12 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+Many are familiar with this website: "the-internet" running on herokuapp.com<br />
+  <ul>
+  <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
+  </ul>
+The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on an <strong>internet browser</strong> (such as Google Chrome). Dave created the site as the basis for his tutorials at <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
 
 <a name="ManualActions"></a>
@@ -83,26 +89,6 @@ NOTE: Some scripts are under development.
 
 <hr />
 
-<a name="ScriptsInGitHub"></a>
-
-### Project folders from GitHub
-
-These steps are done manually on your local machine.
-
-1. Create or navigate to a project <strong>folder</strong> for this effort.
-1. Clone automation scripts:
-
-   <pre><strong>git clone <a target="_blank" href="https://github.com/flood-io/element/tree/master/examples/internet-herokuapp">https://github.com/flood-io/element/tree/master/examples/internet-herokuapp</a></strong></pre>
-
-1. Review Flood Element <a target="_blank" href="https://www.typescriptlang.org/docs/home.html">TypeScript</a> coding.
-
-1. Review the installation scripts:
-
-   See: <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element">https://github.com/flood-io/load-testing-playground/tree/master/element</a>
-
-
-
-
 <a name="IntroVideo"></a>
 
 ## Video introduction
@@ -110,12 +96,6 @@ These steps are done manually on your local machine.
 <amp-youtube data-videoid="ps--j4ePPbA" layout="responsive" width="480" height="270"></amp-youtube><br />
 
 <em>Below is the narration (transcript) of the video above.</em>
-
-Many are familiar with this website: "the-internet" running on herokuapp.com<br />
-  <ul>
-  <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a>
-  </ul>
-The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on an <strong>internet browser</strong> (such as Google Chrome). Dave created the site as the basis for his tutorials at <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
 Selenium makes use of older <strong>"Web Driver"</strong> APIs that control browsers from code written in a variety of programming languages.
 
@@ -167,6 +147,9 @@ When we also add the <strong>cost</strong> of each run, we would be able to iden
 <!-- We don't create an <strong>instrumented Docker image</strong> that has the agent already installed because the license differs for each installation. 
 -->
 
+
+<hr />
+
 <a name="Architecture"></a>
 
 ## Recap: Architectural components
@@ -190,6 +173,27 @@ Additionally, the GUI of two cloud services:
    
    2. <a target="_blank" href="https://blog.newrelic.com/product-news/steal-this-dashboard/">A New Relic dashboard</a> which provides visualization (line graphs) of metrics collected during runs over time and under various configurations.
 
+
+
+<a name="ScriptsInGitHub"></a>
+
+### Project folders from GitHub
+
+These steps are done manually on your local machine.
+
+1. Create or navigate to a project <strong>folder</strong> for this effort.
+1. Clone automation scripts:
+
+   <pre><strong>git clone <a target="_blank" href="https://github.com/flood-io/element/tree/master/examples/internet-herokuapp">https://github.com/flood-io/element/tree/master/examples/internet-herokuapp</a></strong></pre>
+
+1. Review Flood Element <a target="_blank" href="https://www.typescriptlang.org/docs/home.html">TypeScript</a> coding.
+
+1. Review the installation scripts:
+
+   See: <a target="_blank" href="https://github.com/flood-io/load-testing-playground/tree/master/element">https://github.com/flood-io/load-testing-playground/tree/master/element</a>
+
+
+<hr />
 
 <a name="HowTo"></a>
 
