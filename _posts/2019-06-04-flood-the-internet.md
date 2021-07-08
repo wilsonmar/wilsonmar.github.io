@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Measure impact of controls in Dave Hoeffner's the-internet website"
-excerpt: "Use a web app (the-internet) used to challenge Selenium coding to compare scripts for performance testing (JMeter and Flood Element)"
+excerpt: "Use a web app (the-internet) used to challenge Selenium coders to compare scripts for performance testing (JMeter and Flood Element)"
 tags: [flood, perftest, selenium, testing]
 date: "2021-07-08"
 file: "flood-the-internet"
@@ -29,7 +29,7 @@ The website was created by Dave Hoeffner to present <a href="#Controls">43 contr
 
 Click on <a target="_blank" href="https://the-internet.herokuapp.com/"><img width="21" src="https://user-images.githubusercontent.com/300046/60136601-daccfd80-9761-11e9-8641-3bd7489f0afd.png"></a> to see the sample app's UI on-line at <a target="_blank" href="https://the-internet.herokuapp.com/">https://the-internet.herokuapp.com/</a><br />
 
-Click on <img width="21" alt="JMeter" src="https://user-images.githubusercontent.com/300046/124912784-965cd500-dfab-11eb-9dd1-d23966aeed48.png"> to view <a target="_blank" href="https://github.com/wilsonmar/jmeter-scripts/tree/main/the-internet/">JMeter scripts for the control</a>.
+Click on <img width="21" alt="JMeter" src="https://user-images.githubusercontent.com/300046/124912784-965cd500-dfab-11eb-9dd1-d23966aeed48.png"> to view <a target="_blank" href="https://github.com/wilsonmar/jmeter-scripts/tree/main/the-internet/">JMeter XML scripts for the control</a>.
 
 Click on <a target="_blank" href="https://github.com/flood-io/element/tree/master/examples/internet-herokuapp"><img width="21" alt="flood.io Element script" alt="flood.io Element script" src="https://user-images.githubusercontent.com/300046/60134290-6e033480-975c-11e9-9fdb-71589c2c3a18.png"> to view the Flood Element TypeScript at<br />https://github.com/flood-io/element/tree/master/examples/internet-herokuapp</a><br />
 
