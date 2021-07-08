@@ -33,9 +33,13 @@ comments: true
 
 1. Choose your country/region and click "Get started".
 
+   <img width="630" alt="powerapp-welcome" src="https://user-images.githubusercontent.com/300046/124976966-2a02c580-dfed-11eb-9dba-d62a66134ab5.png">
+
 1. The Enviornment is at the upper-right.
 
 1. On the left menu, click <strong>Flows</strong> for Power Automate.
+
+   <img width="204" alt="powerapp-menu-408x938" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
 
    Notice there are 
 
@@ -47,6 +51,8 @@ comments: true
    There are also <strong>PowerAppsMaker</strong> templates.
 
 1. Click "New flow" at the top:
+
+   <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
 
 
 
