@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Power Automate"
-excerpt: "Power Apps and Power Automate is Microsoft's low-code RPA (Robotic Process Automation) product"
+excerpt: "Power Automate is Microsoft's low-code RPA (Robotic Process Automation) product"
 tags: [Clouds, IoT, Azure]
 date: "2021-07-12"
 file: "power-automate"
@@ -17,19 +17,121 @@ comments: true
 {% include _toc.html %}
 
 
-"Power Automate Flows" is one of Microsoft's "Power Platform" offerings to join the low-code RPA (Robotic Processing Automation):
+"Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
+Power Automate replaced SharePoint 2010 Flows on November 2020.
+
+## Getting Started Hands-on
+
+1. If you have an Office 365 account, sign on to:
+
+   <a target="_blank" href="https://www.office.com">office.com</a>
+
+1. Select "Power Automate" from among Excel, PowerPoint, etc.
+
+   VIDEO: <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
+
+
+
+   "Power Automate" is one of Microsoft's "Power Platform" offerings for citizen developers to use the low-code development platform:
 
    * Microsoft Dataverse DaaS (Database as a Service) common data services
    * Data Connectors to exchange data with established and custom APIs
    * AI Builder (Machine Learning) for form processing
 
-   * Power Automate Desktop RPA (UI Flows)
+   * Power Automate Desktop RPA (UI Flows designer)
    * Power Apps low-code custom mobile/web app development environment
    * Power BI for analytics and visualization (see separate page)
    * Power Virtual Agent Chatbots
    <br /><br />
 
-On <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
+
+1. Look at the marketing tagline "Automate at scale" at:
+
+   <a target="_blank" href="https://flow.microsoft.com/en-us/">https://flow.microsoft.com/en-us</a>
+
+   
+
+   QUESTION: Use for functional testing and performance testing?
+
+## Licensing
+
+   PowerApps require a license 
+
+   ### Get trial tenant account
+
+1. Click "Start Free" at
+
+   <a target="_blank" href="https://powerapps.microsoft.com/en-us/">https://powerapps.microsoft.com/en-us</a>
+
+1. PROTIP: Only work or school account are allowed (no personal accounts) even for trial accounts.
+
+1. Type your work email, Next, 
+
+
+   ### Production site
+
+1. PROTIP: Only work or school account are allowed (no personal accounts) to access:
+
+   <a target="_blank" href="https://make.powerapps.com/">https://make.powerapps.com</a>
+
+   ### New Environment 
+
+   If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
+
+   <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
+
+1. Choose your country/region and click "Get started".
+
+   <img width="630" alt="powerapp-welcome" src="https://user-images.githubusercontent.com/300046/124976966-2a02c580-dfed-11eb-9dba-d62a66134ab5.png">
+
+1. The Enviornment is at the upper-right.
+
+   <a target="_blank" href="https://github.com/microsoftlearning/PL-900-Microsoft-Power-Platform-Fundamentals/blob/master/Instructions/Labs/LAB%5BPL-900%5D_M00Lab00_Setup.md">This lab describes how to create a new practice enviornment</a>.
+
+   NOTE: Power Automate is the designer GUI for Flows.
+
+1. On the left menu, click <strong>Flows</strong> 
+
+   <img width="204" alt="powerapp-menu-408x938" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
+
+   ### Flows
+
+1. Click "New flow" at the top for a full list:
+
+   <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
+
+   The most popular types of flows are listed in the center pane:
+
+   ### Cloud Flow Types
+
+   "Cloud flows"
+   * "instant" manually triggered by human action
+   * automated event driven flows
+   * scheduled to run at a particular day/time
+
+   * Desktop flows (also called "RPA flows" for Windows 10 users)
+   * Business Process flows (aka Guided multi-step flows controlling Microsoft's Dynamics 365 process)
+   <br /><br />
+
+   There are also <strong>PowerAppsMaker</strong> templates.
+
+   
+
+
+   ### Portal
+
+   something.powerappsportals.com
+
+   Portal provisioning takes 30 to 45 minutes. 
+
+
+### RPA or RDA?
+
+Power Automate is Microsoft's offering in the RPA (Robotic Processing Automation) market.
+But RDA.
+
+
+
 
 Charles Lamanna's demo at Ignite Nov 19, 2019
 https://www.youtube.com/watch?v=o8s1_qlzzd4
@@ -39,6 +141,8 @@ https://docs.microsoft.com/en-us/learn/modules/introduction-power-platform/?ranM
 Microsoft Dataverse is a scalable data service and app platform which lets users securely store and manage data from multiple sources and integrate that data in business applications using a common data model to ensure ease and consistency to users. Microsoft Dataverse is the common currency that enables the components of Microsoft Power Platform to work together. It’s the foundation that enables the consolidation, display, and manipulation of data.
 
 <strong>Connectors</strong> enable you to connect apps, data, and devices in the cloud. Among the more than 275 connectors are Salesforce, Office 365, Twitter, Dropbox, Google services, SharePoint, Outlook, and YouTube. Premium connectors require additional licensing SQL Server, Survey Monkey, and Mail Chimp. 
+
+    <tt>All   Built-in   Standard   Premium   Custom   My clipboard</tt>
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/use-custom-connectors-in-powerapps-canvas-app/">DOCS</a>:
 Custom connectors can be built to call a publicly available API, or a custom API hosted in a cloud provider.
@@ -141,78 +245,6 @@ Module 11: (Optional) Enhanced error handling in Power Automate Desktop (new)
 
 Module 12: (Optional) Monitor Desktop flow runs and manage gateway queues (new)
 
-
-## Getting Started Hands-on
-
-1. Look at the marketing page at:
-
-   <a target="_blank" href="https://flow.microsoft.com/en-us/">https://flow.microsoft.com/en-us</a>
-
-   "Automate at scale".
-
-   Part of Microsoft's "Power Platform" offering.
-
-   QUESTION: Use for functional testing and performance testing?
-
-   ### Licensing
-
-   PowerApps require a license 
-
-   ### Get trial tenant account
-
-1. Click "Start Free" at
-
-   <a target="_blank" href="https://powerapps.microsoft.com/en-us/">https://powerapps.microsoft.com/en-us</a>
-
-1. PROTIP: Only work or school account are allowed (no personal accounts) even for trial accounts.
-
-1. Type your work email, Next, 
-
-
-   ### Production site
-
-1. PROTIP: Only work or school account are allowed (no personal accounts) to access:
-
-   <a target="_blank" href="https://make.powerapps.com/">https://make.powerapps.com</a>
-
-   ### New Environment 
-
-   If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
-
-   <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
-
-1. Choose your country/region and click "Get started".
-
-   <img width="630" alt="powerapp-welcome" src="https://user-images.githubusercontent.com/300046/124976966-2a02c580-dfed-11eb-9dba-d62a66134ab5.png">
-
-1. The Enviornment is at the upper-right.
-
-   <a target="_blank" href="https://github.com/microsoftlearning/PL-900-Microsoft-Power-Platform-Fundamentals/blob/master/Instructions/Labs/LAB%5BPL-900%5D_M00Lab00_Setup.md">This lab describes how to create a new practice enviornment</a>.
-
-1. On the left menu, click <strong>Flows</strong> for Power Automate.
-
-   <img width="204" alt="powerapp-menu-408x938" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
-
-   ### Flows
-
-   The most popular types of flows are listed:
-
-   * Cloud flows
-   * Desktop flows
-   * Business process flows
-   <br /><br />
-
-   There are also <strong>PowerAppsMaker</strong> templates.
-
-1. Click "New flow" at the top for a full list:
-
-   <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
-
-   ### Portal
-
-   something.powerappsportals.com
-
-   Portal provisioning takes 30 to 45 minutes. 
 
 
 
@@ -435,6 +467,18 @@ Python in Power BI 2018
 ## Dashboard
 
 https://docs.microsoft.com/en-us/learn/modules/build-simple-dashboard/?ranMID=24542&ranEAID=je6NUbpObpQ&ranSiteID=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&epi=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=(ir__90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00)(7593)(1243925)(je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A)()&irclickid=_90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00&ns-enrollment-type=LearningPath&ns-enrollment-id=learn-bizapps.wwl.power-plat-fundamentals
+
+
+## Videos Referenced
+
+https://www.youtube.com/watch?v=8O68-cc-QNo&list=RDCMUCvBYTqRx-n_8KzFO0MJlUVw&start_radio=1&rv=8O68-cc-QNo
+Top 25 Power Automate flow tips and tricks for 2021 - hidden gems and new
+by Reza Dorrani
+
+https://www.youtube.com/watch?v=SUsik0FGzI0&list=RDCMUCJtUOos_MwJa_Ewii-R3cJA&start_radio=1&rv=SUsik0FGzI0 Feb 16, 2021
+Learn to Use Power Automate with Examples | Create Bulk PDF Files | Planner to Outlook
+Leila Gharani
+
 
 
 
