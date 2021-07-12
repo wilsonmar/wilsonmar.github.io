@@ -20,17 +20,24 @@ comments: true
 "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
 Power Automate replaced SharePoint 2010 Flows on November 2020.
 
-## Getting Started Hands-on
+## Getting Started on 365
 
-1. If you have an Office 365 account, sign on to:
+1. If you have an <strong>Office 365</strong> account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
+
+1. The menu:
+
+   ![o365-menu-203x500](https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png)
+
+   ### 
 
 1. Select "Power Automate" from among Excel, PowerPoint, etc.
 
    VIDEO: <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
 
 
+   ### Power Components
 
    "Power Automate" is one of Microsoft's "Power Platform" offerings for citizen developers to use the low-code development platform:
 
@@ -44,12 +51,17 @@ Power Automate replaced SharePoint 2010 Flows on November 2020.
    * Power Virtual Agent Chatbots
    <br /><br />
 
+1. Register for Microsoft's Power Automate user group:
+
+   <a target="_blank" href="https://powerusers.microsoft.com/t5/Microsoft-Power-Automate/ct-p/MPACommunity">https://powerusers.microsoft.com/t5/Microsoft-Power-Automate/ct-p/MPACommunity</a>
+   
+   There are discussion threads for each Power component.
+
 
 1. Look at the marketing tagline "Automate at scale" at:
 
    <a target="_blank" href="https://flow.microsoft.com/en-us/">https://flow.microsoft.com/en-us</a>
 
-   
 
    QUESTION: Use for functional testing and performance testing?
 
