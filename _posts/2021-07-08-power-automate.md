@@ -22,13 +22,24 @@ Power Automate replaced SharePoint 2010 Flows on November 2020.
 
 ## Getting Started on 365
 
+### New Environment 
+
+1. If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
+
+   <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
+
+
 1. If you have an <strong>Office 365</strong> account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
-1. The menu:
+1. Let's compare the menus:
 
-   ![o365-menu-203x500](https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png)
+   <table>
+   <tr><th> Office </th><th> Power </th></tr>
+   <tr valign="top"><td><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png">
+   </td><td><img alt="PowerApp" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
+   </td></tr></table>
 
    ### 
 
@@ -85,12 +96,6 @@ Power Automate replaced SharePoint 2010 Flows on November 2020.
 1. PROTIP: Only work or school account are allowed (no personal accounts) to access:
 
    <a target="_blank" href="https://make.powerapps.com/">https://make.powerapps.com</a>
-
-   ### New Environment 
-
-   If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
-
-   <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
 
 1. Choose your country/region and click "Get started".
 
