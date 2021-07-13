@@ -217,7 +217,7 @@ https://towardsdatascience.com/how-i-passed-the-tensorflow-developer-certificati
 by Daniel Bourke
 
 
-## Test Enviornment
+## Test environment
 
 You can take the test at home
 The TensorFlow certificate exam runs in the TF Exam plugin inside PyCharm, 

@@ -741,7 +741,7 @@ An bash script was created to automatically <strong>type for you</strong> the va
 
    <a name="EnvVars"></a>
 
-   ### Enviornment variables & values
+   ### environment variables & values
 
 5. File <tt><strong>git-basics.env</strong></tt> is downloaded to your $HOME account folder (by a curl command):
 

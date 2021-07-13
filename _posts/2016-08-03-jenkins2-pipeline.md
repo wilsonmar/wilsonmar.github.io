@@ -1218,14 +1218,14 @@ to stay in sync with an evolving team codebase.
 This requires individual changes to be scoped for 
 completion in a short amount of time (hours at most).
 
-Continuous Delivery (CD) delivers code for running in an UAT or Staging enviornment 
+Continuous Delivery (CD) delivers code for running in an UAT or Staging environment 
 (of full production scale)
 used by end-users (QA or customers) to process business transactions in inspection mode.
 It's called continuous for frequency to find more issues early, 
 before each particular version has left the memory of developers.
 
 Continuous Deployment moves code to Production.
-This is done by merging to the Mainline/Master branch which gets copied to the Production enviornment.
+This is done by merging to the Mainline/Master branch which gets copied to the Production environment.
 It's called continuous to make this happen as soon as code is ready.
 
 BTW, <a target="_blank" href="https://blog.assembla.com/AssemblaBlog/tabid/12618/bid/92411/Continuous-Delivery-vs-Continuous-Deployment-vs-Continuous-Integration-Wait-huh.aspx">

@@ -67,7 +67,7 @@ This article provides examples of how each group can benefit from the other.
 
    Coding efforts begin in a single environment, perhaps while other environments are being setup.
 
-   Since one objective of DevOps is to release to production if automated tests pass, that single initial enviornment easily becomes "Production". So to save time, "Hackers" work only on the production instance.
+   Since one objective of DevOps is to release to production if automated tests pass, that single initial environment easily becomes "Production". So to save time, "Hackers" work only on the production instance.
 
    However, Sustainers see the need to begin work in various non-production environments for thorough testing before promotion to Production. 
    In order to restrict the damage that can be done if a particular password or certificate is compromised, each secret is limited in scope. So, ideally, different credentials are in production than in test systems. 

@@ -518,7 +518,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
    <pre><strong>deactivate
    </strong></pre>
 
-   Alternately, to get out of an Anaconda enviornment:
+   Alternately, to get out of an Anaconda environment:
 
    <pre><strong>source deactivate
    </strong></pre>

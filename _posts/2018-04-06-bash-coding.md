@@ -271,7 +271,7 @@ Go to another blog for advice on this terrible program.
 
 ## Editors
 
-Other apps look to the enviornment variable EDITOR for the commnand to use for displaying text.
+Other apps look to the environment variable EDITOR for the commnand to use for displaying text.
 
    <pre>
 export EDITOR='subl -w'

@@ -108,7 +108,7 @@ This means that landing, registration, login, shop, buy, etc. run as stand-alone
 
 - [ ] Provide small integration environments with service virtualization (using CA-LISA, Perforce, etc.).
 
-- [ ] Provision temporary test enviornments using Docker, etc.
+- [ ] Provision temporary test environments using Docker, etc.
 
 - [ ] Use scripts to automate provisioning so elements of each builds remain consistent.
 

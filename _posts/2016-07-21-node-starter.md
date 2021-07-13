@@ -333,7 +333,7 @@ pushover_key = "H75EAC19M3249!X2"
 google_maps_api_key="W69uHsUJZBPhsFNExykbQceK"
    </pre>
 
-   Each line defines a differen enviornment variable.
+   Each line defines a differen environment variable.
 
 0. For execution in Linux, create a script `hsstart.cmd` 
    to start the server after it loads the secrets file:

@@ -18,7 +18,7 @@ comments: true
 
 This tutorial aims to succintly present
 <strong>step-by-step</strong> instructions 
-to setup Jenkins on Mac OSX and CentOS, both locally and in various cloud enviornments.
+to setup Jenkins on Mac OSX and CentOS, both locally and in various cloud environments.
 
 {% include _intro.html %}
 

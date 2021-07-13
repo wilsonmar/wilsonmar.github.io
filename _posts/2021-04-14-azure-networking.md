@@ -84,7 +84,7 @@ Create a VNet with a name for specification when a VM is created later.
 
 1. Resource Group:
 
-1. VNet Name: Naming Convention: PROTIP: Include the enviornment and <strong>region</strong> in the VNet name because a VNet controls network access within a single region/location. Include a zero-padded number in case several are needed. Example:
+1. VNet Name: Naming Convention: PROTIP: Include the environment and <strong>region</strong> in the VNet name because a VNet controls network access within a single region/location. Include a zero-padded number in case several are needed. Example:
 
    <tt>prod-eastus-vnet01</tt>
 

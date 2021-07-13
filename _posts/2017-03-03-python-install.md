@@ -2044,7 +2044,7 @@ https://www.continuum.io/downloads
 
 0. Get back in again.
 
-0. Create an enviornment file by piping the output from an export:
+0. Create an environment file by piping the output from an export:
 
    conda env export > some_env.yaml
 

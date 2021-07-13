@@ -1631,7 +1631,7 @@ westus2stage  West US 2 (Stage)  (US) West US 2 (Stage)
 
    ### CLI Naming convensions
 
-   PROTIP: Since so many az commands refer to an Azure Resource Group, my scripts specify Resource Group or Location as the last item, using these naming conventions for enviornment variables:
+   PROTIP: Since so many az commands refer to an Azure Resource Group, my scripts specify Resource Group or Location as the last item, using these naming conventions for environment variables:
 
    <pre><strong>MY_LOC="eastus"
 MY_RG="azuremolchapter2"

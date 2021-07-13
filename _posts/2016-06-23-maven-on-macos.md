@@ -145,12 +145,12 @@ OS name: "mac os x", version: "10.11.6", arch: "x86_64", family: "mac"
    export PATH=$PATH:$M2_HOME/bin
    </strong></pre>
 
-   On Windows, define enviornment variable `M2_HOME` with a path such as:
+   On Windows, define environment variable `M2_HOME` with a path such as:
 
    <pre><strong>C:\apache-maven-3.3.3
    </strong></pre>   
 
-   Within enviornment variable `PATH`, add:
+   Within environment variable `PATH`, add:
 
    <pre><strong>%M2_HOME%\bin;
    </strong></pre>   

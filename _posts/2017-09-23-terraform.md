@@ -640,7 +640,7 @@ export AWS_REGION=<em>(your region in AWS)</em>
    GCP_REGION=""
    </pre>
 
-PROTIP: Specifying passwords in enviornment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
+PROTIP: Specifying passwords in environment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
 
 
 <a name="Terraform_Azure"></a>
@@ -1134,7 +1134,7 @@ variable "service_networks" {
 }
    </pre>   
 
-   In a cluster enviornment:
+   In a cluster environment:
 
    <pre>   
 variable "server_port" {
@@ -1685,7 +1685,7 @@ output "azure_rm_dns_cname" {
       -var="environment_name=development"
    </strong></tt>
 
-   Alternative specification of enviornment variable:
+   Alternative specification of environment variable:
 
    <pre><strong>TF_VAR_first_name="John" terraform apply
    </strong></pre>

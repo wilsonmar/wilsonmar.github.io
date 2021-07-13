@@ -336,7 +336,7 @@ HANDS-ON Exercise in Sandbox - Create basic Azure Monitor log queries to extract
       </td></tr>
    </table>
 
-1. In the repo README file, click "Log Analytics Demo Enviornment" to open a new Portal tab:
+1. In the repo README file, click "Log Analytics Demo environment" to open a new Portal tab:
 
    <a target="_blank" href="
    https://portal.loganalytics.io/demo">

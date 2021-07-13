@@ -718,7 +718,7 @@ Provision virtual machines (VMs):
 
 ### Create Linux VM in Bash
 
-<pre><strong># enviornment variables:
+<pre><strong># environment variables:
 AZ_ADMIN_USER="mrtoad2"  
 AZ_GROUP="somegroup2"
 AZ_VM_NAME="myvm123"

@@ -214,7 +214,7 @@ comments: true
 
 1. The Environment is at the upper-right.
 
-   <a target="_blank" href="https://github.com/microsoftlearning/PL-900-Microsoft-Power-Platform-Fundamentals/blob/master/Instructions/Labs/LAB%5BPL-900%5D_M00Lab00_Setup.md">This lab describes how to create a new practice enviornment</a>.
+   <a target="_blank" href="https://github.com/microsoftlearning/PL-900-Microsoft-Power-Platform-Fundamentals/blob/master/Instructions/Labs/LAB%5BPL-900%5D_M00Lab00_Setup.md">This lab describes how to create a new practice environment</a>.
 
 
 

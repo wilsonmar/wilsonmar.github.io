@@ -66,7 +66,7 @@ Licensed IDEs:
 
 On-line (SaaS) browser-based subscriptions avoids need for setup and makes collaboration easier:
 
-   * <a href="#Cloud9">Cloud9 from Amazon</a> runs in an EC2 instance to provide a debugger and terminal to various dev enviornments for AWS Lambda serverless, CodeStar, CodeBuild, CodePipeline, etc.
+   * <a href="#Cloud9">Cloud9 from Amazon</a> runs in an EC2 instance to provide a debugger and terminal to various dev environments for AWS Lambda serverless, CodeStar, CodeBuild, CodePipeline, etc.
 
    * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is a Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
 
@@ -387,7 +387,7 @@ Extensions for developing on the Salesforce Platform
 <a target="_blank" href="https://aws.amazon.com/cloud9/">Cloud9 from Amazon</a> (under the Developer Tools category) works completely in the browser running in EC2  (for money) under the hood.
 It was <a target="_blank" href="https://www.youtube.com/watch?v=FvclLeg2vEQ">announced at AWS re:Invent in November 2017</a>. 
 
-It includes a debugger and terminal to various dev enviornments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. 
+It includes a debugger and terminal to various dev environments for AWS <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/lightsail-instances.html">Lightsail</a>, Lambda serverless, <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/codestar-projects.html">CodeStar</a>, CodeBuild, CodePipeline, etc. 
 
 <a target="_blank" href="https://docs.aws.amazon.com/cloud9/latest/user-guide/get-started.html?icmpid=docs_ac9_console">AWS Get started docs</a>
    provides a procedure for each usage pattern.

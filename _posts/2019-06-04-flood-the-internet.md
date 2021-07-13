@@ -654,7 +654,7 @@ A full list of APM tools:
 
 ## Security scans
 
-In today's ransomware enviornment, we all need to be extra vigilant to ensure security. 
+In today's ransomware environment, we all need to be extra vigilant to ensure security. 
 
 1. Install <a target="_blank" href="https://inspec.io/">https://inspec.io</a> 
 (created by Chef) 

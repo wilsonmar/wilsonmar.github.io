@@ -174,7 +174,7 @@ InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 
    The "brew" above is a shell script file.
 
-   PROTIP: The "/usr/local" is the default specified by the $HOMEBREW_PREFIX enviornment variable.
+   PROTIP: The "/usr/local" is the default specified by the $HOMEBREW_PREFIX environment variable.
 
 
 0. Identify where the Homebrew program stores packages:

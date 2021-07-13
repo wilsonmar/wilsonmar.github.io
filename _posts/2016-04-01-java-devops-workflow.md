@@ -151,7 +151,7 @@ By "known good" we mean more than what is needed to compile:
 
    The file extension ".class" is not specified in this command. 
 
-   PROTIP: The .gitignore file specifies that no .class files be sent back up to GitHub because each enviornment compiles its own.
+   PROTIP: The .gitignore file specifies that no .class files be sent back up to GitHub because each environment compiles its own.
 
    The response should be a single line on the terminal:
 

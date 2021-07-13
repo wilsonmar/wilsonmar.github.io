@@ -528,7 +528,7 @@ applications:
 
    NOTE: You can specify how much memory to allocate.
 
-   PROTIP: An cf development enviornment is not needed just to push.
+   PROTIP: An cf development environment is not needed just to push.
 
 0. Push to CFs <strong>Cloud Controller</strong> based on what is defined in the manifest.yml file:
    

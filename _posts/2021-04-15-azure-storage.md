@@ -62,7 +62,7 @@ Storage Accounts can be created several ways:
 
 1. For Storage account name: LIMIT: type up to 24 chracters or numbers.
 
-   UNIQUE Naming convention: enviornment, region, no underlines or dashes!
+   UNIQUE Naming convention: environment, region, no underlines or dashes!
 
    A storage account name such as (for example):
 

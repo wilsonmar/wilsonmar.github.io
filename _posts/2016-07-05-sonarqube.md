@@ -127,7 +127,7 @@ Customizable **Tags** provide a way to categorize and filter rules.
 
 <a id="InstallSonarQubeEnv"></a>
 
-## Install Enviornment to Run SonarQube #
+## Install environment to Run SonarQube #
 
 Since SonarQube runs as a server, it's best to have it run
 within a VM.
@@ -137,7 +137,7 @@ Upgrade to v7 involves a change to PostgreSQL or MariaDB from MySQL.
 
 <a id="InstallSonarQubeEnv"></a>
 
-## Install Enviornment to Run SonarQube #
+## Install environment to Run SonarQube #
 
 0. Install SonarQube using Homebrew:
 

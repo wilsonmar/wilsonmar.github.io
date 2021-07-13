@@ -322,7 +322,7 @@ On Windows machines, the Chocolatey package manager is installed if not found.
 
    <a name="EnvVars"></a>
 
-   ### Enviornment variables & values
+   ### environment variables & values
 
 5. File <tt><strong>git-basics.env</strong></tt> is downloaded to your $HOME account folder (by a curl command):
 

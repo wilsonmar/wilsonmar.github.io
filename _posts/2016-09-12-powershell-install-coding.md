@@ -906,7 +906,7 @@ Alias           Export-AdlStoreChildItemProperties                 1.3.0      Az
    <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.1">READ</a>
    <a target="_blank" href="https://adamtheautomator.com/powershell-environment-variables/">READ</a>: 
 
-1. List all enviornment variables, remember the colon at the end:
+1. List all environment variables, remember the colon at the end:
 
    <pre><strong>Get-ChildItem Env:
    </strong></pre>

@@ -1461,7 +1461,7 @@ v2beta2.autoscaling                    Local     True        24s
 
 ## Configuration
 
-Service cluster IPs and ports are found through Docker --link compatible enviornment variables specifying ports opened by the service proxy.
+Service cluster IPs and ports are found through Docker --link compatible environment variables specifying ports opened by the service proxy.
 
 
 1. REMEMBER: Unlike k describe xxx, k cluster-info is a single verb:

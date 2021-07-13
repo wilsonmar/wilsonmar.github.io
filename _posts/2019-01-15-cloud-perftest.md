@@ -404,13 +404,13 @@ Doing load testing helps us be more precise than just guessing at a CPU percenta
 
 We calculate headroom based on the <strong>nominal actual</strong> level of load -- the momentary <strong>peaks</strong> reached during each day, the level where long <strong>soak tests</strong> are run to ensure the <strong>endurance</strong> of the system over time -- to ensure that the level is sustainable without memory leaks and excessive use of disk space.
 
-This nominal rate is also what we use in the "flat" portion of <strong>Smoke tests</strong> after a ramp-up. Such runs >>> also called "Canary tests" <<< sustain the nominal load for a short period of time, such as 10 minutes, to prove the <strong>viability</strong> of an enviornment built after configuration changes.
+This nominal rate is also what we use in the "flat" portion of <strong>Smoke tests</strong> after a ramp-up. Such runs >>> also called "Canary tests" <<< sustain the nominal load for a short period of time, such as 10 minutes, to prove the <strong>viability</strong> of an environment built after configuration changes.
 
 We do <strong>Spike Tests</strong> to verify <strong>resiliency</strong> -- the ability of the system to absorb sudden temporary spikes in load while maintaining adequate response time. The system should then return to previous levels of memory usage when back at the nominal rate of operation.
 
 If we operate a cluster of servers, we need to make sure we have the <strong>elasticity</strong> we hoped for. 
 
-In an elastic cloud enviornment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> tests to make sure that instances are indeed reduced when load recedes below threshold levels.
+In an elastic cloud environment, we need to ensure that our configurations can indeed <strong>instantiate</strong> additional capacity on a timely basis. Tests of elasticity should also include <strong>un-instantation</strong> tests to make sure that instances are indeed reduced when load recedes below threshold levels.
 
 #### Recap
 
@@ -432,7 +432,7 @@ Having additional instances for testing performance and fail-over is a <strong>g
 
 Having automation and alerting allows us to be quicker at implementing stop-gap measures such as rebooting servers to reclaim memory. Rebooting is not the ideal situation, but it buys us time to focus on root issues.
 
-A comprehensive set of tests in each enviornment is what makes automatic and fast deployments doable.
+A comprehensive set of tests in each environment is what makes automatic and fast deployments doable.
 
 But people in Operations who protect the production environment are usually skeptical.
 
@@ -847,7 +847,7 @@ Bation hosts and inbound ports and SSH keys can be replaced by the <a target="_b
 
 Cloud-based DNS (Domain Name Service) servers (within Amazon's Route 53 service) resolves IP addresses from host names.
 It can also allocate a percentage of traffic to different sets of servers for Blue/Green Deployment or A/B testing.
-Blue/Green Deployment is used to transition users to a new set of an app enviornment for a new version.
+Blue/Green Deployment is used to transition users to a new set of an app environment for a new version.
 A/B testing allocates varying percentage of users to variations of an app to compare user reaction/satisfaction.
 
 Instead of directly interacting with Route 53, the switchover can be specified in OpsWorks and Elastic Beanstalk consoles or via Cloud Formation templates 

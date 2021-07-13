@@ -50,7 +50,7 @@ The <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/detai
 1. For a new password, I paste the password again, but add an additional character. 
 1. Again to confirm.
 
-1. When an enviornment is opened, highlight and copy this command:
+1. When an environment is opened, highlight and copy this command:
 
    <pre><strong>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/Prometheus/prometheus-setup.sh)"</strong></pre>
 

@@ -458,7 +458,7 @@ by Edureka 12 April 2017
 * <a target="_blank" href="https://www.youtube.com/watch?v=47xNBNd-LLI">
 Build a Hello World REST service in less than 6 minutes
 
-   Actuator libraries provides enviornment and self-health status monitoring 
+   Actuator libraries provides environment and self-health status monitoring 
    * localhost:8080/env
    * localhost:8080/health should return "ok"
    * localhost:8080/metrics returns how many times the service has been called

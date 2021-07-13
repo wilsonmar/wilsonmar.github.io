@@ -795,7 +795,7 @@ Instead use Repetition tolders and/or ReusableTestStepBlocks.
 To see what value is being viueled, temporarily put ".innertext=WRONG".
 
 
-Always define clean-up scenarios to clean up the test enviornment so that test steps after a step failure don't create a cascade of several failed steps, which make troubleshooting more difficult.
+Always define clean-up scenarios to clean up the test environment so that test steps after a step failure don't create a cascade of several failed steps, which make troubleshooting more difficult.
 
 Define recovery scenario for known responses such as setting a new password when the previous password expires (a common situation).
 

@@ -1584,7 +1584,7 @@ https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
 ### Alternative: Environment variables
 
 https://www.youtube.com/watch?v=IolxqkL7cD8
-Hiding passwords in enviornment variables on Windows
+Hiding passwords in environment variables on Windows
 
 <pre>import os
 &nbsp;
