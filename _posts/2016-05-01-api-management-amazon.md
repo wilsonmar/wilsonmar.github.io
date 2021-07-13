@@ -54,7 +54,7 @@ Each "resource" is a single microservice within a system, with a URL such as "ht
 Each "method" is the combination of a resource path and an HTTP verb such as GET, POST, DELETE, etc. in the HTTP header.
 
 Several "stages" (such as "dev", "prod", etc.) can be defined to hold resources and methods, 
-which are usually different for different enviornments.
+which are usually different for different environments.
 
 
 ### Define an API #

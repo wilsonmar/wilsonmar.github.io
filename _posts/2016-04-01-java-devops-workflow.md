@@ -72,7 +72,7 @@ We begin with a manual walkthrough, which we then automate.
 
    PROTIP: We would like example code scanned by static code analyzers so they're good examples of coding technique.
 
-   PROTIP: Run the simplest of Java code in order to verify the enviornment and various libraries, such as after a new version in one of them.
+   PROTIP: Run the simplest of Java code in order to verify the environment and various libraries, such as after a new version in one of them.
    This is so if "known-good" code don't work, then the issue is NOT the <strong>custom application code</strong> which the programmer has control.
 
     By process of elimination, the problem lies in the setup items above.
