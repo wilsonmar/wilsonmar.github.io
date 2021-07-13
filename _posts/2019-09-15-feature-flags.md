@@ -16,17 +16,24 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This article describes use of "feature flags" to finely control the "blast radius" of change impact in order to
+deliver features faster while minimizing risk.
+
+Traditionally, new or updated features made available via a software deployment become visible to ALL users at the same time. 
+And to fix a poorly-implemented feature requires an immediately roll back to the prior version, or to create a fix as quickly as possible and roll forward by deploying a new version. That is risky and stressful.
+
 "Upgrade infrastructure safely. Change configurations on the fly. Dynamically control everything in real-time."
 
 Easier said than done.
 
-This article describes use of "feature flags" to control the "blast radius" of change impact.
+Feature flags enable "testing in production".
+
 
 <a name="Why"></a>
 
 ## Run-time feature flags
 
-https://dzone.com/articles/feature-flags-are-the-answer-to-retailers-holiday
+BLOG: https://dzone.com/articles/feature-flags-are-the-answer-to-retailers-holiday
 
 Martin Fowler calls <a target="_blank" href="https://martinfowler.com/articles/feature-toggles.html">Feature Toggles</a> a <a target="_blank" href="https://martinfowler.com/bliki/FeatureToggle.html">design pattern</a>:
 
@@ -37,7 +44,7 @@ So feature flags are now a central facet of programming templates.
 So, different implementations exist for each language.
 
 
-Many systems already have provisioned for that:
+Many systems already provide services for managing feature flags and reporting/analysis:
 
    * <a href="#argparse">argparse and utilities in Python</a>
    * <a href="#LaunchDarkly">LaunchDarkly</a> SaaS
@@ -115,6 +122,10 @@ and makes use of http://werkzeug.pocoo.org/ WGI, from the same folks.
 <a name="#Metrikus">Metrikus</a>
 
 ## Harness at Metrikus
+
+Harness has Feature Flags as part of its CI/CD SaaS offering.
+
+https://app.harness.io/#/account/v-sK1fz9R7inji-gj8kSkA/onboarding-landing?walkme=none
 
 https://www.harness.com calls it "progressive delivery"
 https://harness.io/blog/product-updates/introducing-harness-feature-flags/
