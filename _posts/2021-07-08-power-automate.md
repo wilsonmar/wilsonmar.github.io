@@ -17,54 +17,125 @@ comments: true
 {% include _toc.html %}
 
 
-"Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
-Power Automate replaced SharePoint 2010 Flows on November 2020.
-
-## Getting Started on 365
+## Get Started on 365
 
    Alternately, if you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
 
    <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
 
-1. If you have an <strong>Office 365</strong> account, sign on to:
+1. If you have an <strong>Office 365</strong> user account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
 1. Click the menu icon (9 dots), then "All apps" and "Power Automate".
 
-   The menu is shown with that of the Power website menu:
+
+   ### Power Automate
 
    <table>
-   <tr><th> Office </th><th> Power </th></tr>
+   <tr><th> us.flow </th><th> us.flow </th></tr>
    <tr valign="top"><td><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png">
-   </td><td><img alt="PowerApp" width="203" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
+   </td><td><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
    </td></tr></table>
 
-1. PROTIP: Let's compare the menus:
+   Expansion of items:
+
+   Action Items:
+   * Approvals
+   * Business process flows
+
+   Data:
+   * Tables
+   * Connections
+   * Custom connectors
+   * Gateways
+
+   Monitor:
+   * Cloud flow activity
+   * Desktop flow runs
+   * Desktop flow queues
+   * Machines
+
+   AI Builder:
+   * Build
+   * Models
+   * Document automation (preview)
+
+   Process advisor:
+   * Create
+   * Processes
+   <br /><br />
+
+
+   <a name="Flows"></a>
+
+   ### "My Flows" = My Worlflow Process
+
+   "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
+   
+   Power Automate replaced SharePoint 2010 Flows on November 2020.
+
+   Each "Flow" is a distinct workflow (automated).
+
+   Power Automate is the designer GUI for Flows.
+
+1. On the left menu, click <strong>+ Create</strong> from blank:
+
+   <a target="_blank" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png">
+   <img width="1143" alt="az-powerauto-flows" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png"></a>
+
+1. Click "New flow" at the top for a full list:
+
+   <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
+
+   ### Flow Types
+
+   "Cloud flows"
+   * "instant" manually triggered by human action
+   * automated event driven flows
+   * scheduled to run at a particular day/time
+
+   * Desktop flows (also called "RPA flows" for Windows 10 users)
+   * Business Process flows (aka Guided multi-step flows controlling Microsoft's Dynamics 365 process)
+   <br /><br />
+
+   There are also <strong>PowerAppsMaker</strong> templates.
+
+   
+
+
+
+
+   ### Power Platform Components
 
 1. Open another browser tab
 
-
-   ### 
-
-1. Select "Power Automate" from among Excel, PowerPoint, etc.
-
-   VIDEO: <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
-
-
-   ### Power Components
-
    "Power Automate" is one of Microsoft's "Power Platform" offerings for citizen developers to use the low-code development platform:
 
-   * Microsoft Dataverse DaaS (Database as a Service) common data services
-   * Data Connectors to exchange data with established and custom APIs
-   * AI Builder (Machine Learning) for form processing
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Feature </th><th> Component Name </th></tr>
+   <tr valign="top"><td> database store </td><td> Microsoft Dataverse </td><td> DaaS (Database as a Service) common data services
+      </td></tr>
+   <tr valign="top"><td> external interfaces </td><td> Connectors </td><td> to exchange data with established and custom APIs
+      </td></tr>
+   <tr valign="top"><td> AI/ML form processing </td><td> AI Builder </td><td> - 
+      </td></tr>
+   <tr valign="top"><td> automation </td><td> Power Automate Desktop </td><td> RPA (UI Flows designer)
+      </td></tr>
+   <tr valign="top"><td> app dev </td><td> Power Apps </td><td> low-code custom mobile/web app development environment
+      </td></tr>
+   <tr valign="top"><td> analytics and visualization </td><td> Power BI </td><td> -
+      </td></tr>
+   <tr valign="top"><td> chatbots </td><td> Power Virtual Agent and visualization -
+      </td></tr>
+   </table>
 
-   * Power Automate Desktop RPA (UI Flows designer)
-   * Power Apps low-code custom mobile/web app development environment
-   * Power BI for analytics and visualization (see separate page)
-   * Power Virtual Agent Chatbots
-   <br /><br />
+
+
+
+   ### Social
+
+   VIDEO: <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
 
 1. Register for Microsoft's Power Automate user group:
 
@@ -72,17 +143,36 @@ Power Automate replaced SharePoint 2010 Flows on November 2020.
    
    There are discussion threads for each Power component.
 
-
-1. Look at the marketing tagline "Automate at scale" at:
-
-   <a target="_blank" href="https://flow.microsoft.com/en-us/">https://flow.microsoft.com/en-us</a>
-
-
    QUESTION: Use for functional testing and performance testing?
 
-## Licensing
 
-   PowerApps require a license 
+
+
+1. Look at the marketing page about "Robotic Process Automation":
+
+   <a target="_blank" href="https://flow.microsoft.com/en-us/robotic-process-automation/">flow.microsoft.com/en-us/robotic-process-automation</a>
+
+1. Click the infographic link to see that's there is also DPA (Digital Process Automation).
+
+   DPA focuses on automating processes to improve workflows. 
+   RPA and DPA serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives.
+   Unlike RPA, DPA is not intended to fully replace tasks completed by humans.
+
+
+   ## Licensing
+
+   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
+
+   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing/">https://flow.microsoft.com/en-us/pricing</a>
+
+   There are two types of licenses:
+
+   * Attended RPA
+   * Unattended RPA
+   <br /><br />
+
+   PowerApps require a license.
+
 
    ### Get trial tenant account
 
@@ -105,38 +195,10 @@ Power Automate replaced SharePoint 2010 Flows on November 2020.
 
    <img width="630" alt="powerapp-welcome" src="https://user-images.githubusercontent.com/300046/124976966-2a02c580-dfed-11eb-9dba-d62a66134ab5.png">
 
-1. The Enviornment is at the upper-right.
+1. The Environment is at the upper-right.
 
    <a target="_blank" href="https://github.com/microsoftlearning/PL-900-Microsoft-Power-Platform-Fundamentals/blob/master/Instructions/Labs/LAB%5BPL-900%5D_M00Lab00_Setup.md">This lab describes how to create a new practice enviornment</a>.
 
-   NOTE: Power Automate is the designer GUI for Flows.
-
-1. On the left menu, click <strong>Flows</strong> 
-
-   <img width="204" alt="powerapp-menu-408x938" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
-
-   ### Flows
-
-1. Click "New flow" at the top for a full list:
-
-   <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
-
-   The most popular types of flows are listed in the center pane:
-
-   ### Cloud Flow Types
-
-   "Cloud flows"
-   * "instant" manually triggered by human action
-   * automated event driven flows
-   * scheduled to run at a particular day/time
-
-   * Desktop flows (also called "RPA flows" for Windows 10 users)
-   * Business Process flows (aka Guided multi-step flows controlling Microsoft's Dynamics 365 process)
-   <br /><br />
-
-   There are also <strong>PowerAppsMaker</strong> templates.
-
-   
 
 
    ### Portal
