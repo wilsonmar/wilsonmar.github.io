@@ -181,7 +181,7 @@ GitHub has two API's, both considered industry-standards others would do well to
 
    Follow http://www.systemcentercentral.com/day-19-creating-online-powershellget-repository/
 
-   <amp-img alt="ps package mangement 650x357-62kb.png" width="650" height="357" src="https://cloud.githubusercontent.com/assets/14143059/20024512/c423ffea-a2ac-11e6-839e-b649c3b49302.png"></amp-img>
+   <amp-img alt="ps package management 650x357-62kb.png" width="650" height="357" src="https://cloud.githubusercontent.com/assets/14143059/20024512/c423ffea-a2ac-11e6-839e-b649c3b49302.png"></amp-img>
    <a target="_blank" href="https://www.simple-talk.com/sysadmin/powershell/managing-packages-using-windows-powershell/">
    From: PowerShell Package Management Archictecture 2016</a> 
 

@@ -399,7 +399,7 @@ Boards, burn-down charts.
 
    <a name="Logging"></a>
 
-### Logging and log mangement
+### Logging and log management
 
    * Logstash / ElastiSearch (open source)
    * AppDynamics

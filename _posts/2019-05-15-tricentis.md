@@ -786,7 +786,7 @@ Aug 15, 2016 by Ominik Weissböck
 ## Notes
 
 Avoid of using static waits of a specific amount of time.
-Instead, use "wait on" event such as some text appearing (20 seconds by default set by TCP "SychronizationTimeoutDuringWaitOn").
+Instead, use "wait on" event such as some text appearing (20 seconds by default set by TCP "SynchronizationTimeoutDuringWaitOn").
 They could be additive.
 
 Avoid copy and pasting parts of flows.

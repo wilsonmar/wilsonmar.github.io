@@ -268,7 +268,7 @@ The clock is ticking!
 
    https://www.microsoft.com/en-us/microsoft-365/enterprise/office-365-e5?activetab=pivot:overviewtab
 
-1. Click the "Free trial" link and go through the verfication steps.
+1. Click the "Free trial" link and go through the verification steps.
 
    You get assigned a @onmicrosoft.com domain and individual account.
 
@@ -331,7 +331,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    * Password hash sych with AAD
    * Pass-through authentication which allows users to use the same password on-prem. and in the cloud.
    * Federation integration with AD FS for certificate renewal
-   * Sychronization to ensure on-prem and cloud data matches
+   * Synchronization to ensure on-prem and cloud data matches
    * Health monitoring in a central location
    <br /><br />
 
@@ -589,7 +589,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    In Azure, policies are for evaluating compliance among Resources and their properties, not to control access to resources.
 
    <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
-   Policies can be assigned to scopes to limit what can be assigned to mangement levels and change what has been assigned:
+   Policies can be assigned to scopes to limit what can be assigned to management levels and change what has been assigned:
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. In preview are Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
 

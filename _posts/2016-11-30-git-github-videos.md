@@ -869,7 +869,7 @@ There are several free videos among BuildAModule.com's library of 1800+ videos o
 
 Text spoken in its videos are highlighted in a panel on the right (like Lynda/LinkedIn). 
 
-The site specializes in enabling you to use Drupal for web content mangement, at $29 a month.
+The site specializes in enabling you to use Drupal for web content management, at $29 a month.
 
 ### Skillshare.com
 
@@ -1637,7 +1637,7 @@ CAUTION: The speaker constantly blows into the microphone, which is giving me an
 0. 5 <a target="_blank" href="https://www.youtube.com/watch?v=GQ9vT8zW8lc">
    How to commit changes</a> [23:48] 23 Jan 2017
 0. 6 <a target="_blank" href="https://www.youtube.com/watch?v=tkzPqGe6zYI">
-   Sychronization</a> [15:14] 26 Jan 2017
+   Synchronization</a> [15:14] 26 Jan 2017
 0. 7 <a target="_blank" href="https://www.youtube.com/watch?v=A3V8W6CZuc8">
    Review code with pull requests</a> [23:14] 26 Jan 2017
 0. 8 <a target="_blank" href="https://www.youtube.com/watch?v=fbHs-yWoILs">

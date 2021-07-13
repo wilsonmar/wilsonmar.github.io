@@ -20,13 +20,9 @@ comments: true
 
 Easier said than done.
 
+This article describes use of "feature flags" to control the "blast radius" of change impact.
 
-## argparse command argument parser
-
-argparse is a built-in module of Python to enable user-friendly command-line interfaces.
-
-See https://docs.python.org/3/library/argparse.html
-
+<a name="Why"></a>
 
 ## Run-time feature flags
 
@@ -40,9 +36,25 @@ So feature flags are now a central facet of programming templates.
 
 So, different implementations exist for each language.
 
+
+Many systems already have provisioned for that:
+
+   * <a href="#argparse">argparse and utilities in Python</a>
+   * <a href="#LaunchDarkly">LaunchDarkly</a> SaaS
+   * <a href="#Flagon">Flagon</a>
+   * <a href="Metrikus">Metrikus</a>
+
+
 <hr />
 
+<a name="argparse"></a>
+
 ## Python
+
+argparse is a built-in module of Python to enable user-friendly command-line interfaces.
+
+See https://docs.python.org/3/library/argparse.html
+
 
 The list of utilities at <a target="_blank" href="http://featureflags.io/python-feature-flags/">"The Hub for Feature Flag Driven Development"</a> is rather disappointing.
 
@@ -54,7 +66,9 @@ The list of utilities at <a target="_blank" href="http://featureflags.io/python-
 for "Toggling and ramping features via a lightweight Redis backend." has not been updated since Aug 21, 2015.
 
 
-### LaunchDarkly
+<a name="LaunchDarkly"></a>
+
+## LaunchDarkly
 
 If you can a spare $90/month, <a target="_blank" href="https://launchdarkly.com/">https://launchdarkly.com</a> provides a GUI from a server that turn tags on and off.
 
@@ -75,7 +89,9 @@ For an additional $390/month, you get support for A/B experimentation.
 BLAH: Wish they would offer a free edition.
 
 
-### Flagon
+<a name="Flagon"></a>
+
+## Flagon
 
 <a target="_blank" href="https://github.com/ashcrow/flagon">https://github.com/ashcrow/flagon</a>
 was last updated May 20, 2017 by <a target="_blank" href="https://stevemilner.org/">Stephen Milner</a> (@ashcrow), now <a target="_blank" href="https://www.linkedin.com/in/stevemilner/">CoreOS boss at Red Hat</a>.
@@ -94,6 +110,20 @@ and makes use of http://werkzeug.pocoo.org/ WGI, from the same folks.
 1. The code making use of the flag:
 
    https://github.com/ashcrow/flagon/blob/master/example/example.py
+
+
+<a name="#Metrikus">Metrikus</a>
+
+## Harness at Metrikus
+
+https://www.harness.com calls it "progressive delivery"
+https://harness.io/blog/product-updates/introducing-harness-feature-flags/
+
+https://searchitoperations.techtarget.com/news/252502582/Harness-baits-CI-CD-set-with-feature-flags-cloud-auto-stop
+
+
+https://webinars.devops.com/confidence-and-experimentation-with-feature-flags-at-metrikus
+https://www.metrikus.io/
 
 
 ## More about Python

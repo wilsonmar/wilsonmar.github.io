@@ -367,7 +367,7 @@ There are two ways to select another language (such as "es" for Spanish, "ko" fo
 
    A. English was selected in browser's Preferences, but another the app displays another language.
    
-   B. Another language was selected in browser's Perferences, and the app displays that language.
+   B. Another language was selected in browser's preferences, and the app displays that language.
 
 To simulate selecting another language in the browser's Preferences in Firefox:
 

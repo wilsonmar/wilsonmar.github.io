@@ -202,7 +202,7 @@ This video walks through use of the Lex Console to create a voice conversational
    Amazon provides a City slot that has the world's major cities. 
 
    Lex remembers the user's context (what occurred before
-   and user's perferences).
+   and user's preferences).
 
 
 ### Voices
