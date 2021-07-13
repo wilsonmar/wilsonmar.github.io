@@ -37,7 +37,7 @@ which cause bottlenecks.
 
    Do the same in test environments to make sure automatic triggers work.
 
-## 3\. Measure enviornment variability.
+## 3\. Measure environment variability.
 
    Are there spikes when the server is serving only landing pages?
    
