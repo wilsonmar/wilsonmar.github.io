@@ -56,12 +56,12 @@ comments: true
    * Desktop flow queues
    * Machines
 
-   AI Builder:
+   <a href="#AIBuilder">AI Builder</a>:
    * Build
    * Models
    * Document automation (preview)
 
-   Process advisor:
+   <a href="#ProcessAdvisor">Process advisor</a>:
    * Create
    * Processes
    <br /><br />
@@ -84,9 +84,18 @@ comments: true
    <a target="_blank" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png">
    <img width="1143" alt="az-powerauto-flows" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png"></a>
 
-1. Click "New flow" at the top for a full list:
+   That's similar to "New flow" at another menu:
 
    <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
+
+
+   <a name="ProcessAdvisor"></a>
+
+   ### Process Advisor
+
+   Process Advisor requires a "Premium" license.
+
+   <a name="FlowTypes"></a>
 
    ### Flow Types
 
@@ -99,11 +108,38 @@ comments: true
    * Business Process flows (aka Guided multi-step flows controlling Microsoft's Dynamics 365 process)
    <br /><br />
 
-   There are also <strong>PowerAppsMaker</strong> templates.
+   Microsoft charges $500/month for five flows used by an unlimited number of users.
 
-   
+   Flows can be created using <strong>PowerAppsMaker</strong> templates.
 
 
+   <a name="AIBuilder"></a>
+
+   ### AI Builder
+
+   Each Flow is processed by a <strong>bot</strong> (as in robot) created using "AI Builder".
+
+   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing/#add-on-plans">Microsoft charges</a> <strong>$150 per bot per month</strong>, which include 5,000 AI Builder service credits.
+   Additional credits are $500 per month.
+
+
+   <a name="Licensing"></a>
+
+   ## Licensing
+
+   PROTIP: Know the cost implications of different Flow types at<br />
+   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing">https://flow.microsoft.com/en-us/pricing</a>
+
+   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
+
+   There are two types of Flows (RPA):
+
+   * Attended RPA (actually DPA)
+   * Unattended RPA
+   <br /><br />
+
+   RPA and DPA serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives.
+   Unlike RPA, DPA is not intended to fully replace tasks completed by humans.
 
 
    ### Power Platform Components
@@ -152,26 +188,6 @@ comments: true
 
    <a target="_blank" href="https://flow.microsoft.com/en-us/robotic-process-automation/">flow.microsoft.com/en-us/robotic-process-automation</a>
 
-1. Click the infographic link to see that's there is also DPA (Digital Process Automation).
-
-   DPA focuses on automating processes to improve workflows. 
-   RPA and DPA serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives.
-   Unlike RPA, DPA is not intended to fully replace tasks completed by humans.
-
-
-   ## Licensing
-
-   "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
-
-   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing/">https://flow.microsoft.com/en-us/pricing</a>
-
-   There are two types of licenses:
-
-   * Attended RPA
-   * Unattended RPA
-   <br /><br />
-
-   PowerApps require a license.
 
 
    ### Get trial tenant account
