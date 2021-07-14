@@ -579,7 +579,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    * Resource
 
    Permissions at one level are inherited to child scopes, so<br />
-   Permissions are addative: the sum of roles at various levels is what a user can do.
+   Permissions are additive: the sum of roles at various levels is what a user can do.
 
    A user inherits permissions from the <strong>management group</strong> to which the user has been assigned.
 
@@ -637,7 +637,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 5. Azure Resource Manager narrows the role assignments that apply to this user or their group and determines what roles the user ahs for this resource.
 6. Azure Resource Manager determines if the action in the API call is included in the roles the user has for this resource.
 7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, Azure Resource Manager checks if ta deny assignment applies.
-8. If a deny assignmet applies, access is blocked. Otherwise access is granted.
+8. If a deny assignment applies, access is blocked. Otherwise access is granted.
 
 
 <hr />

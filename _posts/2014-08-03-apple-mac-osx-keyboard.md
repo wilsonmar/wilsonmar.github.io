@@ -908,7 +908,7 @@ Hide the reading pane or show it below = Shift+ COMMAND + Backslash (\)
 
 ## Tmux
 
-Tmux is a contraction of "Terminal Multiplexer".
+Tmux is a contraction of "Terminal Multiplexer". The "multi" refers to multiple sub-windows like multiple tabs on a browser window.
 
 ## Comprehensive
 
@@ -916,9 +916,13 @@ Tmux is a contraction of "Terminal Multiplexer".
 show the keys he defined using Magnet (https://magnet.crowdcafe.com/) and KeyboardMaestro (https://www.keyboardmaestro.com/main/).
 Tyler Hall's code is at https://github.com/tylerhall/
 
+## References
+
+https://www.wired.com/story/do-everything-faster-keyboard-shortcuts-tricks-tips/
+
+
 ## More on OSX #
 
 This is one of a series on Mac OSX:
 
 {% include mac_links.html %}
-

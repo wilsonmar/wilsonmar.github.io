@@ -121,11 +121,12 @@ and makes use of http://werkzeug.pocoo.org/ WGI, from the same folks.
 
 <a name="#Metrikus">Metrikus</a>
 
-## Harness at Metrikus
+## Harness
 
-Harness has Feature Flags as part of its CI/CD SaaS offering.
+Harness has Feature Flags as part of its CI/CD and Cost Management SaaS offering.
 
-https://app.harness.io/#/account/v-sK1fz9R7inji-gj8kSkA/onboarding-landing?walkme=none
+<a target="_blank" href="https://app.harness.io/#/account/v-sK1fz9R7inji-gj8kSkA/onboarding-landing?walkme=none">
+Walkme demo of Harness CD</a> runs a sample deployment in a Kubernetes Cluster within Google Cloud Platform (GKE), available for 1 hour.
 
 https://www.harness.com calls it "progressive delivery"
 https://harness.io/blog/product-updates/introducing-harness-feature-flags/
