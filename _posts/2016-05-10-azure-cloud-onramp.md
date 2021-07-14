@@ -262,6 +262,8 @@ https://azure.microsoft.com/en-us/free/free-account-faq</a> lists the services w
 The clock is ticking!
 
 
+<a name="O365Trial"></a>
+
 ## Office 365 Trial
 
 1. Sign up for Office 365 Trial at 
@@ -274,7 +276,8 @@ The clock is ticking!
 
 1. To view time remaining, see 
    
-   https://admin.microsoft.com/adminportal/home?#/subscriptions
+   <a target="_blank" href="https://admin.microsoft.com/adminportal/home?#/subscriptions">
+   https://admin.microsoft.com/adminportal/home?#/subscriptions</a>
 
 
 <hr />

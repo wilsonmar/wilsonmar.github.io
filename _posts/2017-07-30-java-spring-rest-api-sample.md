@@ -23,34 +23,39 @@ This article describes the code while you take a <strong>hands-on</strong> appro
    where I introduce concepts <strong>after</strong> asking you to take an action,
    so that you have a <strong>visual</strong> image to go with my commentary.
 
-> If any of this doesn't work for you or doesn't make sense to you,
-please reach out to me.
+> If any of this doesn't work for you or doesn't make sense to you, please reach out to me.
 
-0. Click on the URL to a REST API written in Spring:
-
-   <a target="_blank" href="https://gturnquist-quoters.cfapps.io/api/random">
-   <strong>https://gturnquist-quoters.cfapps.io/api/random</strong></a>
-
-   The API is described at<br />
+   The API response is described at<br />
    <a target="_blank" href="https://spring.io/guides/gs/consuming-rest/">
    https://spring.io/guides/gs/consuming-rest</a>
+
+1. Click on the URL to a REST API written in Spring:
+
+   <a target="_blank" href="https://quoters.apps.pcfone.io/api/random">
+   <strong>https://quoters.apps.pcfone.io/api/random</strong></a>
+
+   (previously at https://gturnquist-quoters.cfapps.io/api/random)
 
 
    <a name="SampleResponse"></a>
 
-   The web service returns a JSON document containing a reponse type ("success" or "failure"),
-an id, and a text string (random quotes about Spring Boot).
+   The response:
+
+   The web service returns a JSON document containing a reponse type ("success" or "failure"), an id, and a text string (random quotes about Spring Boot).
 
    <pre>
 {"type":"success","value":{"id":10,"quote":"Really loving Spring Boot, makes stand alone Spring apps easy."}}
    </pre>
 
+   Alternately:
+
+   <pre>"Spring Boot solves this problem. It gets rid of XML and wires up common components for me, so I don't have to spend hours scratching my head just to figure out how it's all pieced together."</pre>
+
    The response is a raw (unformatted) string if you're using a Google Chrome browser.
 
    If you are using a FireFox browser, you would see a formatted display such as:
 
-   <pre>
-{
+   <pre>{
    type: "success",
    value: {
       id: 10,

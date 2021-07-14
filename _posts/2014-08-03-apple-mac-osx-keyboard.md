@@ -918,7 +918,7 @@ Tyler Hall's code is at https://github.com/tylerhall/
 
 ## References
 
-https://www.wired.com/story/do-everything-faster-keyboard-shortcuts-tricks-tips/
+STAR: https://www.wired.com/story/do-everything-faster-keyboard-shortcuts-tricks-tips/
 
 
 ## More on OSX #

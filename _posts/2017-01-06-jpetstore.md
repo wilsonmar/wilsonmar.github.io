@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JPetstore (version 6)"
+title: "JPetstore"
 excerpt: "Sample Java Spring app for your abuse and amusement"
 tags: [Clouds, IoT]
 date: "2017-01-16"
@@ -24,9 +24,12 @@ v4 on Sourceforge</a>.
 
 Several performance testing tool vendors use JPetstore6 as a sample app under test in demos and documentation:
 
-   * Octoperf (whose employee created the Docker image)
+   * Octoperf (whose employee created the <a target="_blank" href="https://hub.docker.com/r/kereval/jpetstore/">JPetStore Docker image</a>)
    * <a target="_blank" href="https://wilsonmar.github.io/selenium-neoload">Neoload</a> (<a target="_blank" href="http://www.neotys.com/documents/doc/neoload/latest/en/html/#1609.htm">docs</a>)
    * <a target="_blank" href="https://smartbear.com/solutions/performance-testing/">SmartBear</a>
+   * <a target="_blank" href="https://www.oiloftrop.de/code-research/a-distributed-jpetstore/">Distributed</a>
+   * <a target="_blank" href="https://helpdesk.arcturustech.com/hc/en-us/community/posts/225668906-Recording-a-JMeter-Traversal-Script-for-the-JPetStore-application-using-JMeter-proxy">JMeter Traversal Script</a>
+   <br /><br />
    
 This article describes the various ways to get hands-on with it:
 
@@ -34,6 +37,10 @@ This article describes the various ways to get hands-on with it:
    * <a href="#LocalInstall">Install as part of others on your Mac</a>
    * <a href="#myBatis">install from source in GitHub (from MyBatis) on your Mac</a>
    * Install within an AWS EC2 instance (coming soon)
+   * <a target="_blank" href="https://topic.alibabacloud.com/a/installation-jpetstore-detailed-steps_8_8_20195558.html">Alibaba cloud</a>
+   <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=beQAb5wGoGg">VIDEO: How to install JPetStore locally for Performance Testing</a>
 
 <hr />
 
