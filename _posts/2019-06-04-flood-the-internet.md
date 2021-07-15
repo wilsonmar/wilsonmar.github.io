@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Measure impact of controls in Dave Hoeffner's the-internet website"
-excerpt: "Use a web app (the-internet) used to challenge Selenium coders to compare scripts for performance testing (JMeter and Flood Element)"
+title: "How to code test scripts to control JavaScript in Dave Hoeffner's the-internet challenge website"
+excerpt: "Use a web app (the-internet) used to challenge Selenium coders to compare scripts for performance testing (JMeter, Flood Element, etc.)"
 tags: [flood, perftest, selenium, testing]
 date: "2021-07-08"
 file: "flood-the-internet"

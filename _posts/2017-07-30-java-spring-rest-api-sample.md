@@ -147,7 +147,7 @@ It uses Qwiklabs for GCP App & K8s Engine hands-on running a simple <a target="_
 
 * GCP Cloud SQL database 
 
-   springboot-guestbook-cloudsql.sh
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/gcp/springboot-guestbook-cloudsql.sh)"</pre>
 
 * Trace 
 
