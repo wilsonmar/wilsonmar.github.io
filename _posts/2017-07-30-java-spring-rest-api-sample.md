@@ -17,12 +17,13 @@ comments: true
 {% include _toc.html %}
 
 This article introduces how Spring programs works by examining sample programs.
+<a target="_blank" href="https://spring.io/projects">Spring projects</a>
 
-## Spring Professional Certification
+## Core Spring Professional Certification
 
-VMware, which now owns Spring framework, has a <a target="_blank" href="https://www.vmware.com/education-services/certification/vcp-spring-exam.html">"VMware Spring Professional 2021" certification exam</a> for $250 USD to answer 60% of 50 Questions in 90 Minutes about core aspects of Spring and Spring Boot:
+VMware, which purchased Pivotal who owns Spring framework, has a <a target="_blank" href="https://www.vmware.com/education-services/certification/vcp-spring-exam.html">"VMware Spring Professional 2021" certification exam (EDU-1202)</a> for $250 USD to answer 60% of 50 Questions in 90 Minutes about core aspects of Spring and Spring Boot. (Previously it was $3,200 USD) Sub-Topics are from the <a target="_blank" href="https://mylearn.vmware.com/mgrReg/courses.cfm?ui=www_edu&a=one&id_subject=94106">$32,000 USD VMware Spring Professional (EDU-1202) 4-day class</a>, which is no longer mandatory:
 
-* Configuration
+* Configuration: Boot (14%)
    - Introduction to Spring Boot Features
    - Value Proposition of Spring Boot
    - Creating a simple Boot application using Spring Initializer website
@@ -38,7 +39,7 @@ VMware, which now owns Spring framework, has a <a target="_blank" href="https://
    - Using bean profiles
    - Spring Expression Language (SpEL)
 
-* Component-scanning
+* Component-scanning: Container (28%)
    - Autowiring using @Autowired
    - Java configuration versus annotations, mixing.
    - Lifecycle annotations: @PostConstruct and @PreDestroy
@@ -52,7 +53,7 @@ VMware, which now owns Spring framework, has a <a target="_blank" href="https://
    - Spring Bean Proxies
    - @Bean method return types
 
-* AOP (Aspect Oriented Programming), 
+* AOP (Aspect Oriented Programming) (14%)
    - What problems does AOP solve?
    - Defining pointcut expressions
    - Implementing various types of advice
@@ -61,7 +62,7 @@ VMware, which now owns Spring framework, has a <a target="_blank" href="https://
    - Reactive Programming support in Spring
    - Using Spring’s reactive WebClient
 
-* Data access and JDBC with Spring
+* Data access (4%) and JDBC (4%)
    - How Spring integrates with existing data access technologies
    - DataAccessException hierarchy
    - Spring‘s JdbcTemplate
@@ -72,20 +73,20 @@ VMware, which now owns Spring framework, has a <a target="_blank" href="https://
    - Configuring Spring JPA using Spring Boot
    - Spring Data JPA dynamic repositories
 
-* Database Transactions
+* Database Transactions (10%)
    - Transactions overview
    - Transaction management with Spring
    - Transaction propagation and rollback rules
    - Transactions and integration testing
 
-* REST
+* REST (6%) MVC (10%)
    - An introduction to the REST architectural style
    - Controlling HTTP response codes with @ResponseStatus
    - Implementing REST with Spring MVC, @RequestMapping, @RequestBody and @ResponseBody
    - Spring MVC’s HttpMessageConverters and automatic content negotiation
-   - GraphQL?
+   - <a target="_blank" href="https://spring.io/projects/spring-graphql">Spring GraphQL</a>
 
-* Spring Security, 
+* Spring Security (6%)
    - What problems does Spring Security solve?
    - Configuring authentication
    - Implementing authorization by intercepting URLs
@@ -110,7 +111,7 @@ VMware, which now owns Spring framework, has a <a target="_blank" href="https://
    - Creating custom Health Indicators
    - External monitoring systems
 
-* Spring Boot Testing
+* Spring Boot Testing (4%)
    - Spring and Test-Driven Development
    - Spring 5 integration testing with JUnit 5
    - Application context caching and the @DirtiesContext annotation
@@ -118,9 +119,62 @@ VMware, which now owns Spring framework, has a <a target="_blank" href="https://
    - Easy test data setup with @Sql
 <br /><br />
 
-VMware Spring Professional (EDU-1202)
+### Cert prep for Core Spring 
 
-https://mylearn.vmware.com/mgrReg/courses.cfm?ui=www_edu&a=one&id_subject=94106
+BLOG: https://medium.com/javarevisited/top-5-spring-professional-certification-exam-resources-for-java-developers-3ef9fa42fe13
+
+On Udemy:
+   * <a target="_blank" href="https://www.udemy.com/course/spring-certified-tutorial/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-4sSV1pWPauauRpa8hIlvKQ&LSNPUBID=JVFxdTr9V80">
+   4.5 hour class by Francesco Lo Franco</a>
+   <br /><br />
+
+<a target="_blank" href="https://www.coursera.org/learn/google-cloud-java-spring">
+On Coursera: Building Scalable Java Microservices with Spring Boot and Spring Cloud</a>
+by Google Cloud's Sowmya Kannan and Jisha Abubaker. 
+It uses Qwiklabs for GCP App & K8s Engine hands-on running a simple <a target="_blank" href="https://www.coursera.org/learn/google-cloud-java-spring/lecture/qElxn/the-demo-application-architecture">Demo Java Microservices Guestbook application</a> 
+
+* Open another Cloud Shell to create the back end service (<a target="_blank" href="https://github.com/saturnism/spring-cloud-gcp-guestbook.git">defined in GitHub</a>) running on the same Debian host <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/16723634?parent=lti_session">in GCP Cloud Shell within Qwiklabs</a>:
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/gcp/springboot-guestbook-backend.sh)"</pre>
+
+* Open another Cloud Shell to create the front-end service:
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/gcp/springboot-guestbook-frontend.sh)"</pre>
+
+* Open another Cloud Shell to test the back-end service REST API:
+
+   <pre>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/gcp/springboot-guestbook-testapi.sh)"</pre>
+
+* GCP Cloud SQL database 
+
+   springboot-guestbook-cloudsql.sh
+
+* Trace 
+
+   springboot-guestbook-trace.sh
+
+* PubSub async through RabbitMQ, monitored by Google Stack Driver and ZipKin tracing. It only does Create and Update.
+
+
+<a target="_blank" href="https://app.pluralsight.com/paths/skill/spring-framework-core-spring">
+On Pluralsight: Spring Framework: Core Spring</a> created in 2020:
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/spring-big-picture/table-of-contents">Spring: The Big Picture</a> 2018 by Dustin Schultz (dustin.shultz.io)
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/spring-framework-spring-fundamentals/table-of-contents">Spring Framework: Spring Fundamentals</a> by Bryan Hansen
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/creating-first-spring-boot-application/table-of-contents">Spring Framework: Creating Your First Spring Boot Application</a> by <a target="_blank" href="https://linkedin.com/in/bunkerdan">Dan Bunker</a>
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/spring-boot-fundamentals">Spring Boot Fundamentals</a> by Kesha Williams
+   * S<a target="_blank" href="https://app.pluralsight.com/library/courses/spring-framework-spring-boot-actuator">Spring Framework: Spring Boot Actuator</a> by Dustin Schultz
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/spring-framework-spel">Spring Framework: Spring Expression Language (SpEL)</a> by Buddhini Samarakkody
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/aspect-oriented-programming-spring-aop">Spring Framework: Aspect Oriented Programming with Spring AOP</a> by Catalin Tudose
+   <br /><br />
+
+David Mayer's https://www.certification-questions.com/practice-exam/spring/professional?affiliateCode=fcff36fd-557a-4713-abf6-973e9924770f&utm_source=Javin&utm_medium=affiliate&utm_campaign=affiliate
+
+
+### Other Spring certs
+
+Retired:
+* Spring Web Application Developer
+* Spring Integration Specialist using Enterprise Spring
 
 
 ## Java Spring Client program

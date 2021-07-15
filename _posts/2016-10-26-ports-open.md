@@ -57,6 +57,18 @@ Common TCP Ports in layer 4: REMEMBER
    * 548 = AFP (Apple Filing Protocol) https://www.wikiwand.com/en/Apple_Filing_Protocol elim. for AppleTalk
    <br /><br />
 
+<a name="Spring"></a>
+
+Spring Boot:
+   * 8080, 8081 = Limits Microservice
+   * 8888 = Spring Cloud Config server
+   * 8000,8001,8002,... = Currency Exhange Microservice
+   * 8100,8101,8102,... = Currency Conversion Microservice
+   * 8761 = Netflix Eureka Naming Server
+   * 8765 = API Gateway
+   * 9411 = Zipkin Distributed Tracing Server
+   <br /><br />
+
 IP header protocol field REMEMBER 
    * 1 = ICMP (Internet Control Message Protocol)
    * 2 = IGMP (Internet Group Management Protocol) to estab. multicaset group transmitted to at once
