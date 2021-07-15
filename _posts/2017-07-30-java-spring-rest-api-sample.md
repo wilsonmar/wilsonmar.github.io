@@ -16,8 +16,116 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article introduces how Spring programs works by examining a simple 
-Java Spring client program that calls a REST API (without authentication, GUI, or database).
+This article introduces how Spring programs works by examining sample programs.
+
+## Spring Professional Certification
+
+VMware, which now owns Spring framework, has a <a target="_blank" href="https://www.vmware.com/education-services/certification/vcp-spring-exam.html">"VMware Spring Professional 2021" certification exam</a> for $250 USD to answer 60% of 50 Questions in 90 Minutes about core aspects of Spring and Spring Boot:
+
+* Configuration
+   - Introduction to Spring Boot Features
+   - Value Proposition of Spring Boot
+   - Creating a simple Boot application using Spring Initializer website
+
+   - Java configuration and the Spring application context
+   - @Configuration and @Bean annotations
+   - @Import: working with multiple configuration files
+   - Defining bean scopes
+   - Launching a Spring Application and obtaining Beans
+
+   - External properties & Property sources
+   - Environment abstraction
+   - Using bean profiles
+   - Spring Expression Language (SpEL)
+
+* Component-scanning
+   - Autowiring using @Autowired
+   - Java configuration versus annotations, mixing.
+   - Lifecycle annotations: @PostConstruct and @PreDestroy
+   - Stereotypes and meta-annotations
+
+   - Using Spring FactoryBeans
+
+   - The Spring Bean Lifecycle
+   - The BeanFactoryPostProcessor interception point
+   - The BeanPostProcessor interception point
+   - Spring Bean Proxies
+   - @Bean method return types
+
+* AOP (Aspect Oriented Programming), 
+   - What problems does AOP solve?
+   - Defining pointcut expressions
+   - Implementing various types of advice
+
+   - Overview of Reactive Programming concepts
+   - Reactive Programming support in Spring
+   - Using Spring’s reactive WebClient
+
+* Data access and JDBC with Spring
+   - How Spring integrates with existing data access technologies
+   - DataAccessException hierarchy
+   - Spring‘s JdbcTemplate
+
+   - Quick introduction to ORM with JPA
+   - Benefits of using Spring with JPA
+   - JPA configuration in Spring
+   - Configuring Spring JPA using Spring Boot
+   - Spring Data JPA dynamic repositories
+
+* Database Transactions
+   - Transactions overview
+   - Transaction management with Spring
+   - Transaction propagation and rollback rules
+   - Transactions and integration testing
+
+* REST
+   - An introduction to the REST architectural style
+   - Controlling HTTP response codes with @ResponseStatus
+   - Implementing REST with Spring MVC, @RequestMapping, @RequestBody and @ResponseBody
+   - Spring MVC’s HttpMessageConverters and automatic content negotiation
+   - GraphQL?
+
+* Spring Security, 
+   - What problems does Spring Security solve?
+   - Configuring authentication
+   - Implementing authorization by intercepting URLs
+   - Authorization at the Java method level
+   - Understanding the Spring Security filter chain
+   - Spring security testing
+
+   - OAuth 2 Overview
+   - Implementing OAuth 2 using Spring Security OAuth
+
+* Auto-configuration, Spring Boot Dependencies, and Runtime
+   - Dependency management using Spring Boot starters
+   - How auto-configuration works
+   - Configuration properties
+   - Overriding auto-configuration  
+   - Using CommandLineRunner
+
+* Actuators, Metrics, and Health Indicators
+   - Exposing Spring Boot Actuator endpoints
+   - Custom Metrics
+   - Health Indicators
+   - Creating custom Health Indicators
+   - External monitoring systems
+
+* Spring Boot Testing
+   - Spring and Test-Driven Development
+   - Spring 5 integration testing with JUnit 5
+   - Application context caching and the @DirtiesContext annotation
+   - Profile selection with @ActiveProfiles
+   - Easy test data setup with @Sql
+<br /><br />
+
+VMware Spring Professional (EDU-1202)
+
+https://mylearn.vmware.com/mgrReg/courses.cfm?ui=www_edu&a=one&id_subject=94106
+
+
+## Java Spring Client program
+
+This Java Spring client program that calls a REST API (without authentication, GUI, or database).
 
 This article describes the code while you take a <strong>hands-on</strong> approach 
    where I introduce concepts <strong>after</strong> asking you to take an action,
