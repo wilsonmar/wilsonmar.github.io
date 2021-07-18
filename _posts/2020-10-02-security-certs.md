@@ -182,16 +182,16 @@ The first version of the Common Body of Knowledge (CBK) was finalized in 1992 an
 Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
 
 Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adaptive, asking 100-150 questions, depending on whether answers are correct. 
-With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours and 150 questions maximum.
-
-PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you're going to get all hard questions. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
-
+PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you'll get all hard questions. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
+With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours.
 <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
 This also means you won't be able to go back and change answers in previous questions answered.
 
+There is a 5 year experience requirement.
+
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 
-PROTIP: I think Mike Chapple on LinkedIn Learning provides the most detailed, best sequenced learning, updated in 2021. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+PROTIP: I think Mike Chapple on LinkedIn Learning videos (33 hours) provides the most detailed, best sequenced learning, updated in 2021. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
    Security and Risk Management</a> - 334
@@ -211,7 +211,7 @@ PROTIP: I think Mike Chapple on LinkedIn Learning provides the most detailed, be
    Secure Software Development Lifecycle</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
    <br /><br />
 
-There is a 5 year experience requirement.
+https://www.isc2.org/Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management
 
 Written Reference:
 
@@ -887,6 +887,8 @@ SAP Certified Technology Professional - System Security Architect</a> is the mos
    <br /><br />
 
 * <a target="_blank" href="https://help.sap.com/viewer/product-finder?q=">SAP documentation</a>
+
+* <a target="_blank" href="https://quizlet.com/605649976/sap-acronyms-flash-cards/">My SAP Acronyms flashcards on Quizlet.com</a>
 
 * SAP provides a 14 day free trial of their $25/month Learning Hub (using an "S-account") at https://learninghub.sap.com/. 800-872-1727 
 
