@@ -852,7 +852,7 @@ Google Professional Cloud Security Engineer</a>, for $200 for 50 questions in 12
 ## SAP
 
 SAP has two levels of certifications for Security pros. 
-Both costs $$242 to answer 65% of 80 questions over 3 hours. 
+Both costs $242 USD to answer 65% of 80 multiple-choice questions in 3 hours. 
 
 * <a target="_blank" href="https://training.sap.com/certification/c_secauth_20-sap-certified-technology-associate---sap-system-security-and-authorizations-g/"><strong>C_SECAUTH_20</strong>
 SAP Certified Technology Associate - SAP System Security and Authorizations</a> Domains:
@@ -882,7 +882,7 @@ SAP Certified Technology Professional - System Security Architect</a> is the mos
    * <a target="_blank" href="https://www.credly.com/org/sap/badge/sap-certified-technology-professional-sap-system-security-architect">After passing, post your cert on Credly</a>
    <br /><br />
 
-* C_GRCAC_10 SAP GRC AC Certification Exam
+* C_GRCAC_10 SAP GRC AC certification exam
 
 * <a target="_blank" href="https://help.sap.com/viewer/product-finder?q=">SAP documentation</a>
 
