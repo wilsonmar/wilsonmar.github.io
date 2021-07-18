@@ -191,7 +191,7 @@ There is a 5 year experience requirement.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 
-PROTIP: I think Mike Chapple on LinkedIn Learning videos (33 hours) provides the most detailed, best sequenced learning, updated in 2021. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw">YouTube</a>) provide the most detailed, best sequenced learning, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated in May 2021</a>. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
    Security and Risk Management</a> - 334
