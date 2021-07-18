@@ -882,15 +882,17 @@ SAP Certified Technology Professional - System Security Architect</a> is the mos
    * <a target="_blank" href="https://www.credly.com/org/sap/badge/sap-certified-technology-professional-sap-system-security-architect">After passing, post your cert on Credly</a>
    <br /><br />
 
-* C_GRCAC_10 SAP GRC AC certification exam
+* <a target="_blank" href="https://training.sap.com/course/cer006-sap-global-certification-online-exam-six-attempts-certification-online-010-us-en/?">$606 USD CER006</a> <a target="_blank" href="https://training.sap.com/certification/c_grcac_12-sap-certified-application-associate---sap-access-control-120-g/">C_GRCAC_12 SAP GRC (Governance, Risk, and Compliance) AC certification exam</a>
+   * https://training.sap.com/trainingpath/Applications-Governance,+Risk+and+Compliance+(GRC)-SAP+BusinessObjects
+   <br /><br />
 
 * <a target="_blank" href="https://help.sap.com/viewer/product-finder?q=">SAP documentation</a>
 
+* SAP provides a 14 day free trial of their $25/month Learning Hub (using an "S-account") at https://learninghub.sap.com/. 800-872-1727 
 
-SAP provides a 14 day free trial of their $25/month Learning Hub (using an "S-account") at https://learninghub.sap.com/. 800-872-1727 
-
-https://www.udemy.com/course/sap-security-and-authorizations/
-https://www.udemy.com/course/sap-hana-installation-operation-and-administration/
+Elsewhere:
+   * https://www.udemy.com/course/sap-security-and-authorizations/
+   * https://www.udemy.com/course/sap-hana-installation-operation-and-administration/
 
 
 ## Secure Coding
