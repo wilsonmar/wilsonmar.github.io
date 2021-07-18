@@ -3,7 +3,7 @@ layout: post
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
 tags: [security,certs]
-date: "2021-01-06"
+date: "2021-07-17"
 file: "security-certs"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
@@ -239,6 +239,8 @@ Written Reference:
 
 
 Video prep courses view:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">YouTube playlist on CISSP FREE</a> by "Skillset" provides a good overview, but it's from 2016.
 
@@ -844,6 +846,52 @@ Google Professional Cloud Security Engineer</a>, for $200 for 50 questions in 12
    * Manage operations within a cloud solution environment
    * Ensure compliance
    <br /><br />
+
+<a name="SAP"></a>
+
+## SAP
+
+SAP has two levels of certifications for Security pros. 
+Both costs $$242 to answer 65% of 80 questions over 3 hours. 
+
+* <a target="_blank" href="https://training.sap.com/certification/c_secauth_20-sap-certified-technology-associate---sap-system-security-and-authorizations-g/"><strong>C_SECAUTH_20</strong>
+SAP Certified Technology Associate - SAP System Security and Authorizations</a> Domains:
+
+   * Authorization and Role Maintenance - >12%
+   * SAP Fiori Authorizations and S/4HANA - >12%
+   * Access Governance and Compliance in SAP - 8%-12%
+   * Infrastructure Security and Authentication - 8%-12%
+   * User Administration8% - 12%
+   * Security Monitoring and Security Assessment8% - 12%
+   * Data Privacy Governance and Cybersecurity8% - 12%
+   * Security Audit - 8%-12%
+   <br /><br />
+
+* <a target="_blank" href="https://training.sap.com/certification/p_tsec10_75-sap-certified-technology-professional---system-security-architect-g/"><strong>P_TSEC10_75</strong>
+SAP Certified Technology Professional - System Security Architect</a> is the most popular among all SAP exams.
+
+   * SAP System Security Fundamentals - >12%
+   * Authorization Concept for SAP Business Suite - >12%
+   * Authorization Concept for SAP S/4HANA - >12%
+   * Secure SAP System Management - >12%
+   * SAP Netweaver Application Server Security - >12%
+   * Authorization, Security and Scenarios in SAP HANA8% - 12%
+   * Security in SAP Gateway and SAP Fiori System Landscape - &LT;8%
+
+   * https://myerp-training.com/sap-security-certification/
+   * <a target="_blank" href="https://www.credly.com/org/sap/badge/sap-certified-technology-professional-sap-system-security-architect">After passing, post your cert on Credly</a>
+   <br /><br />
+
+* C_GRCAC_10 SAP GRC AC Certification Exam
+
+* <a target="_blank" href="https://help.sap.com/viewer/product-finder?q=">SAP documentation</a>
+
+
+SAP provides a 14 day free trial of their $25/month Learning Hub (using an "S-account") at https://learninghub.sap.com/. 800-872-1727 
+
+https://www.udemy.com/course/sap-security-and-authorizations/
+https://www.udemy.com/course/sap-hana-installation-operation-and-administration/
+
 
 ## Secure Coding
 

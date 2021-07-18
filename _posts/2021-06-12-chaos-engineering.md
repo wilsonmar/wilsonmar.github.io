@@ -345,6 +345,9 @@ https://neelanjanmanna.medium.com/a-beginners-practical-guide-to-containerisatio
 https://neelanjanmanna.medium.com/a-beginners-practical-guide-to-containerisation-and-chaos-engineering-with-litmuschaos-2-0-5f4f3cf2a55d
 
 
+https://theqalead.com/podcast/gremlin-in-the-machine-how-to-achieve-chaos-engineering-netflix-amazon/
+
+
 ## More on DevSecOps #
 
 This is one of a series on DevSecOps:
