@@ -176,7 +176,7 @@ ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="
 ### CISSP
 
 <img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src="https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
-Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> (pronouced "sis pee") is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
 The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
 Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
@@ -187,11 +187,11 @@ With CAT (Computer Adaptive Testing), the more one aces every question, the quic
 <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
 This also means you won't be able to go back and change answers in previous questions answered.
 
-There is a 5 year experience requirement.
+There is a 5 year experience requirement, attested by other professionals.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 
-PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw">YouTube</a>) provide the most detailed, best sequenced learning, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated in May 2021</a>. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw/videos">on YouTube</a>) provide the most detailed, best sequenced learning, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated for the May 2021 BOK</a>. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
    Security and Risk Management</a> - 334
@@ -211,9 +211,21 @@ PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="
    Secure Software Development Lifecycle</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
    <br /><br />
 
-https://www.isc2.org/Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management
+Official Flash cards of definitions:
 
-Written Reference:
+    1. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management"> The Information Security Environment</a> - 18
+    2. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Asset-Security">Information Asset Security</a> - 
+    3. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Architecture-and-Engineering">Identity and Access Management (IAM)</a>
+    4. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Communication-and-Network-Security">Security Architecture and Engineering</a>
+    5. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Identity-and-Access-Management">Communication and Network Security</a>
+    6. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Assessment-and-Testing">Software Development Security</a>
+    7. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Operations">Security Assessment and Testing</a>
+    8. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development">Security Operations</a>
+
+    * <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development-Security">Putting it All Together</a> - 34
+   <br /><br >
+
+Written References:
 
    * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">$58</a> <a target="_blank" href="https://learning.oreilly.com/library/view/isc2-cissp-certified/9781119475934/">Sybex BOOK</a>: "(ISC)2 CISSP Certified Information Systems Security Professional <strong>Official Study Guide</strong> & Practice Tests Bundle Second Edition" by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
 
