@@ -213,8 +213,8 @@ PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="
 
 Official Flash cards of definitions:
 
-   1. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management"> The Information Security Environment</a> - 18
-   2. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Asset-Security">Information Asset Security</a> - 
+   1. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management"> The Information Security Environment</a> - 18 items
+   2. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Asset-Security">Information Asset Security</a> - 17 items
    3. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Architecture-and-Engineering">Identity and Access Management (IAM)</a>
    4. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Communication-and-Network-Security">Security Architecture and Engineering</a>
    5. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Identity-and-Access-Management">Communication and Network Security</a>
@@ -863,6 +863,8 @@ Google Professional Cloud Security Engineer</a>, for $200 for 50 questions in 12
 
 ## SAP
 
+First, <a target="_blank" href="https://quizlet.com/605649976/sap-acronyms-flash-cards/">memorize SAP Acronyms using my flashcards on Quizlet.com</a>
+
 SAP has two levels of certifications for Security pros. 
 Both costs $242 USD to answer 65% of 80 multiple-choice questions in 3 hours. 
 
@@ -899,8 +901,6 @@ SAP Certified Technology Professional - System Security Architect</a> is the mos
    <br /><br />
 
 * <a target="_blank" href="https://help.sap.com/viewer/product-finder?q=">SAP documentation</a>
-
-* <a target="_blank" href="https://quizlet.com/605649976/sap-acronyms-flash-cards/">My SAP Acronyms flashcards on Quizlet.com</a>
 
 * SAP provides a 14 day free trial of their $25/month Learning Hub (using an "S-account") at https://learninghub.sap.com/. 800-872-1727 
 

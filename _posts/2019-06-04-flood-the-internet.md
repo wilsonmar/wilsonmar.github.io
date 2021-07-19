@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How to code test scripts to control JavaScript in Dave Hoeffner's the-internet challenge website"
-excerpt: "Use a web app (the-internet) used to challenge Selenium coders to compare scripts for performance testing (JMeter, Flood Element, etc.)"
+title: "Flood the Internet (control JavaScript)"
+excerpt: "Use Dave Hoeffner's web app (the-internet) which challenge Selenium coders to compare scripts for performance/capacity testing (JMeter, Flood Element, etc.)"
 tags: [flood, perftest, selenium, testing]
 date: "2021-07-08"
 file: "flood-the-internet"
