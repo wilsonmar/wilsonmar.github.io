@@ -215,14 +215,14 @@ Official Flash cards of definitions:
 
    1. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management"> The Information Security Environment</a> - 18 items
    2. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Asset-Security">Information Asset Security</a> - 17 items
-   3. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Architecture-and-Engineering">Identity and Access Management (IAM)</a>
-   4. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Communication-and-Network-Security">Security Architecture and Engineering</a>
-   5. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Identity-and-Access-Management">Communication and Network Security</a>
-   6. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Assessment-and-Testing">Software Development Security</a>
-   7. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Operations">Security Assessment and Testing</a>
-   8. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development">Security Operations</a>
+   3. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Architecture-and-Engineering">Identity and Access Management (IAM)</a> - 24 items
+   4. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Communication-and-Network-Security">Security Architecture and Engineering</a> - 48 items
+   5. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Identity-and-Access-Management">Communication and Network Security</a> - 88 items
+   6. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Assessment-and-Testing">Software Development Security</a> - 101 items
+   7. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Operations">Security Assessment and Testing</a> - 18 items
+   8. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development">Security Operations</a> - 62 items
 
-   * <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development-Security">Putting it All Together</a> - 34
+   * <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development-Security">Putting it All Together</a> - 34 items
    <br /><br >
 
 Written References:
