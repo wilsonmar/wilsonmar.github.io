@@ -23,12 +23,12 @@ At my spread in Montana, the well and spring is producing less water than before
 
 So this article is about how we're experimenting with ways to live with less water:
 
-   * <a href="#Dish_washing">Minimal water dish washing</a> (Paper plates)
+   * <a href="#Dish_washing">Minimal water dish washing</a>
    * <a href="#DryShampoo">Waterless shampoo</a>
-   * <a href="#Recirculating_ _shower">Recirculating shower</a>
-   * Filtering water from the spring
+   * <a href="#Filtering">Filtering water from rivers & springs</a>
+   * <a href="#Recirculating_shower">Recirculating shower</a>
    * Large Cisterns
-   * Pee around trees
+   * Toilet water
    <br /><br />
 
 <hr />
@@ -166,7 +166,10 @@ To get rid of the grease (and stink) in our hair, try a powder to use instead of
 https://www.walmart.com/search/?query=dry%20shampoo
 
 
-<a name="Recirculating_ _shower"></a>
+<a name="#Filtering">Filtering water from rivers & springs</a>
+
+
+<a name="Recirculating_shower"></a>
 
 ## Recirculating shower
 

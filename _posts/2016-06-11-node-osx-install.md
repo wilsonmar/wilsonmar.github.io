@@ -235,8 +235,14 @@ PROTIP: Before you speak to someone about this, provide them your operating syst
 
    At time of writing, the response for the most recent version:
 
-   <pre>
-   v8.3.0
+   <pre>v8.3.0
+   </pre>
+
+   If you get an error such as this, verify your installation:
+
+   <pre>internal/modules/cjs/loader.js:550
+    throw err;
+    ^
    </pre>
 
 0. Obtain npm version:
@@ -246,8 +252,7 @@ PROTIP: Before you speak to someone about this, provide them your operating syst
 
    At time of writing, the response (for the Node version obtained above):
 
-   <pre>
-   5.3.0
+   <pre>6.10.1
    </pre>
 
 0. Verify:
@@ -257,14 +262,12 @@ PROTIP: Before you speak to someone about this, provide them your operating syst
 
    The response if installed by NVM or by downloaded installer:
 
-   <pre>
-   /usr/local/bin
+   <pre>/usr/local/bin
    </pre>
 
    The response if installed using brew:
 
-   <pre>
-   /Users/mac/.npm-packages/lib/node_modules:/usr/local/bin
+   <pre>/Users/mac/.npm-packages/lib/node_modules:/usr/local/bin
    </pre>
 
    Regardless of how you installed node,
@@ -284,8 +287,7 @@ PROTIP: Before you speak to someone about this, provide them your operating syst
 
    The response is a list with version numbers:
 
-   <pre>
-/Users/mac/.npm-packages/lib
+   <pre>/Users/mac/.npm-packages/lib
 ├── aws@0.0.3-2
 ├── aws-cli@0.0.1
 ├── bower@1.7.9
@@ -349,17 +351,17 @@ PROTIP: Before you speak to someone about this, provide them your operating syst
    <tt><strong>.help
    </strong></tt>
 
-   PROTIP: Node interactive commands begin with a dot.
+   <strong>PROTIP: Node interactive commands begin with a dot.</strong>
 
    The response:
 
-   <pre>
-.break Sometimes you get stuck, this gets you out
-.clear Alias for .break
-.exit  Exit the repl
-.help  Show repl options
-.load  Load JS from a file into the REPL session
-.save  Save all evaluated commands in this REPL session to a file
+   <pre>.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the repl
+.help     Print this help message
+.load     Load JS from a file into the REPL session
+.save     Save all evaluated commands in this REPL session to a file
    </pre>
 
 0. To get out gracefully:
@@ -416,7 +418,7 @@ lts/argon -> v4.6.0 (-> N/A)
    The installer of Node also installs NPM (Node Package Manager)
    which manages installation of Node packages.
 
-0. List what versions of NPM are available for install from the internet:
+0. List EVERY versions of NPM available for install from the internet:
 
    <tt><strong>nvm ls-remote
    </strong></tt>
@@ -482,15 +484,10 @@ using a command such as this (after installation and cd to your node app folder)
 
 Installation steps:
 
-0. PROTIP: Use an iternet browser to read the README.md at 
-   <a target="_blank" href="https://github.com/creationix/nvm/blob/master/README.markdown">
-   https://github.com/creationix/nvm</a> 
+0. Use Homebrew
 
-0. Note the version of installer:
-
-   <pre>
-   v0.31.6/install.sh
-   </pre>
+   <tt><strong>brew install nvm</strong></tt>
+   
 
 0. If you've installed <a href="#ChooseAWay">another way</a> before,
    make sure that if you have an <strong>~/.npmrc</strong> file, 
