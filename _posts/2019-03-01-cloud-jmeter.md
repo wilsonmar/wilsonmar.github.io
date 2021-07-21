@@ -25,25 +25,25 @@ The components necessary for performance/capacity emulating scripting and test r
 
    b. <strong>App hosting environment</strong>. Dave Hoeffer has graciously created an instance on Heroku for single-user runs during scripting. But for load/capacity tests, we need to create a stand-alone app instance within a cloud.
 
-   c. <strong>Emulator</strong> (such as JMeter) to run scripts that emulate 1 or a lot of client instances. Blazemeter cloud provides that. A Docker image of the free/open-source Jenkins can be used locally or in a public cloud.
+   c. <strong>Emulator</strong> (such as JMeter) to control 1 or a lot of emulated client instances running emulation scripts at the same time.
    
-   d. <strong>Emulator hosting environment</strong>, which needs to be separate from the app enviornment under load. 
+   d. <strong>Emulator hosting environment</strong>, which needs to be separate from the app enviornment under load. A Docker image from DockHub can be used locally or in a public cloud. SaaS services (Blazemeter, etc.) can provide this as well.
 
-   e. <strong>CI/CD workflow engine</strong> (such as Jenkins, Harness.io, CircleCI, GitHub Actions, etc.) which builds the app under test and test for security, functionality, capacity capability, etc. 
+   e. <strong>CI/CD workflow engine</strong> builds the app under test and test for security, functionality, capacity capability, etc. A Docker image of the free/open-source Jenkins can be used locally or in a public cloud. SaaS services (Harness.io, CircleCI, GitHub Actions, etc.) can provide this as well.
 
    f. <strong>Monitoring</strong> (Metrics, Diagnostics, Logging) of the environment running the app: show metrics to identify trends, Diagnostics to pin-point bottlenecks, and logs to identify root causes.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
-<tr valign="top" align="center"><td> <a href="#ScenarioA">A</a> Blazemeter - single trans.
-   </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="3"> Blazemeter </td></tr>
-<tr valign="top" align="center"><td> <a href="#ScenarioB">B</a> Blazemeter - single trans.
-   </td><td> Docker </td><td> cloud? </td><td> (JMeter) </td><td rowspan="3"> Blazemeter </td></tr>
-<tr valign="top" align="center"><td> <a href="#ScenarioC">C</a> Local - single trans.
+<tr align="left"><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a> Blazemeter - single trans.
+   </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="2"> Blazemeter </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a> Blazemeter - single trans.
+   </td><td> Docker </td><td> cloud? </td><td> (JMeter)   </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a> Local - single trans.
    </td><td> the-internet </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td> <a href="#ScenarioD">D</a> with cloud CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a> with cloud CI/CD
    </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Cloudbees </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td> <a href="#ScenarioE">E</a> with cloud CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a> with cloud CI/CD
    </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Jenkins </td><td> ??? </td></tr>
 </table>
 
