@@ -25,9 +25,9 @@ The components necessary for performance/capacity emulating scripting and test r
 
    b. <strong>App hosting environment</strong>. Dave Hoeffer has graciously created an instance on Heroku for single-user runs during scripting. But for load/capacity tests, we need to create a stand-alone app instance within a cloud. "the-internet" has a Docker image to run multiple users.
 
-   c. <strong>Emulator</strong> (such as JMeter) to control 1 or a lot of emulated client instances running emulation scripts at the same time.
+   c. <a href="#EmulatorPrograms"><strong>Emulator program</strong></a> (such as JMeter) to control 1 or a lot of emulated client instances running emulation scripts at the same time.
    
-   d. The <strong>Emulator hosting environment</strong> needs to be separate from the app environment under load. SaaS services (Blazemeter, StormRunner, Flood.io, etc.) can provide this environment. With more work, A Docker image from DockHub can be pulled locally or in a public cloud instance created using <a target="_blank" href="https://wilsonmar.github.io/aws-cdk">AWS CDK</a>, <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>, etc. 
+   d. The <strong>Emulator hosting environment</strong> needs to be separate from the app environment under load. SaaS services (<a href="#Blazemeter">Blazemeter</a>, StormRunner, Flood.io, etc.) can provide this environment. With more work, A Docker image from DockHub can be pulled locally or in a public cloud instance created using <a target="_blank" href="https://wilsonmar.github.io/aws-cdk">AWS CDK</a>, <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>, etc. 
 
    e. <strong>CI/CD workflow engine</strong> builds the app under test and test for security, functionality, capacity capability, etc. A Docker image of the free/open-source Jenkins can be used locally or in a public cloud. SaaS services (Harness.io, CircleCI, GitHub Actions, etc.) can provide this as well.
 
@@ -35,10 +35,10 @@ The components necessary for performance/capacity emulating scripting and test r
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="top" align="left"><th> <a href="#Scenarios">Scenario</a> </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator pgm. </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a>. Blazemeter - single trans.
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a>. <a href="#Blazemeter">Blazemeter</a> - single trans.
    </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><u>the-internet</u></a>)
-   </td><td> Dave's Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
+   </td><td> Dave's Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> <a href="#Blazemeter">Blazemeter</a> </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. <a href="#Blazemeter">Blazemeter</a> - multi-trans.
    </td><td> (the-internet in Docker) </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS ECS</u></a> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
    </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
@@ -51,9 +51,9 @@ The components necessary for performance/capacity emulating scripting and test r
 
 ## Scenarios
 
-A. If your app under test can be reached from the public internet (such as "the-internet" running on Dave's own Heroku instance), you don't need to install an emulator (such as JMeter) on your laptop if you use Blazemeter SaaS, which provides a quick and easy way to begin. But please don't run more than one user at a time.
+A. If your app under test can be reached from the public internet (such as "the-internet" running on Dave's own Heroku instance), you don't need to install an emulator (such as JMeter) on your laptop if you use <a href="#Blazemeter">Blazemeter</a> SaaS, which provides a quick and easy way to begin. But please don't run more than one user at a time.
 
-   Blazemeter runs JMeter scripts you upload from your laptop.
+   <a href="#Blazemeter">Blazemeter</a> runs JMeter scripts you upload from your laptop.
 
 B. To run multiple users at a time, pull both "the-internet" app and emulator (JMeter) images from DockerHub and run them in <strong>your own cloud instance</strong> (within AWS ECS, Azure, GCP, Blue Ocean, etc.). AWS ECS is usually enough (without <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>) becuase the number of emulator (JMeter) instances is usually fixed before a test run (and adjusted after).
 
@@ -94,7 +94,7 @@ When Configurations settings are under version control, changes can (14) trigger
 
 Because network traffic between on-premises servers and load generators in the cloud is subject to significant variability, it would be ideal to have a (18) load generator near each machine under test. But it can be problematic going through the corporate firewall. 
 
-It might be easier to make use of a (19) web-based SaaS service such as Blazemeter or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
+It might be easier to make use of a (19) web-based SaaS service such as <a href="#Blazemeter">Blazemeter</a> or Flood.io. With them, we just upload a script and they handle the rest, such as configuring enough machines.
 
 <hr />
 
@@ -138,8 +138,6 @@ Below are more details about each deliverable:
 7. Install AWS CLI and dependencies Python, jq, cf-lint, etc.
 
 8. Code AWS Cloud Formation (CF) to create within the AWS cloud a EC2/Docker instance, JMeter, JMeter
-
-   https://www.blazemeter.com/blog/top-6-docker-images-for-jmeter-users-and-performance-testers
 
    One of the advantages of Docker that, once encapsulated within a Docker container, that container can be run unmodified on various operating systems (Windows, MacOS, Linux, etc.).
 
@@ -345,30 +343,26 @@ I gave a lightning talk on this work.  The slide deck I used for it is at http:/
 
    https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how
 
-Passing JMeter arguments with the “docker run” command (e.g. which jmx script must be executed, script parameters, etc)
+   Passing JMeter arguments with the “docker run” command (e.g. which jmx script must be executed, script parameters, etc)
 
-Then, fetching the result file (e.g. jtl and log file) using a shared folder on the test machine called Docker volume, that can be used to save result files after the container execution ends.
+   Then, fetching the result file (e.g. jtl and log file) using a shared folder on the test machine called Docker volume, that can be used to save result files after the container execution ends.
 
-If the container modifies the file system, it does not persist after the container finishes. So to obtain JMeter results it’s necessary to set up an exchange folder with the ‘volume’ command.
+   If the container modifies the file system, it does not persist after the container finishes. So to obtain JMeter results it’s necessary to set up an exchange folder with the ‘volume’ command.
 
- On the left you can see our test machine that hosts the JMeter containers and the Docker volume. The volume is used to provide a JMX script file to be executed, and to retrieve from the container the JTL result file and the LOG file on execution.
-
+   On the left you can see our test machine that hosts the JMeter containers and the Docker volume. The volume is used to provide a JMX script file to be executed, and to retrieve from the container the JTL result file and the LOG file on execution.
 
 
 ## Application under test
 
-
 In this example, the container starts and as a first action it executes a JMeter application with arguments passed with the “docker run” command. When JMeter completes its execution, the container stops itself, leaving the JMeter result files in the Docker volume.
 
-
-zzz With the script build.sh the Docker image can be build from the Dockerfile but this is not really necessary as you may use your own docker build commandline.
+With the script build.sh the Docker image can be build from the Dockerfile but this is not really necessary as you may use your own docker build commandline.
 Build Options
 
 Build argumments (see build.sh) with default values if not passed to build:
 
-<pre>   
-    JMETER_VERSION - JMeter version, default 3.3
-    IMAGE_TIMEZONE - timezone of Docker image, default "Europe/Amsterdam"
+<pre>JMETER_VERSION - JMeter version, default 3.3
+IMAGE_TIMEZONE - timezone of Docker image, default "Europe/Amsterdam"
 NB IMAGE_TIMEZONE setting is not working yet.
 Running
 </pre>
@@ -392,6 +386,7 @@ A generic entrypoint.sh is copied into the Docker image and will be the script t
 
 sudo docker run --name ${NAME} -i -v ${WORK_DIR}:${WORK_DIR} -w ${WORK_DIR} ${IMAGE} $@
 
+<hr />
 
 <a name="AuditScanner"></a>
 
@@ -556,7 +551,9 @@ docker run \
    http://smarigowda.github.io/ngd3jmeter/
 
 
-## Resources
+<a name="Docker"></a>
+
+## Docker
 
 Dockerfiles from:
 
@@ -568,16 +565,29 @@ Dockerfiles from:
    * https://github.com/hauptmedia/docker-jmeter and 
    * https://github.com/hhcordero/docker-jmeter-server 
 
-Articles:
-
-   * https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how
-   * https://www.blazemeter.com/blog/jmeter-distributed-testing-with-docker
-
 <a target="_blank" href="https://www.youtube.com/watch?v=UVS4CQvO4_M">
 UI, Load, and Performance Testing Your Websites on AWS</a> [42:25] WEB306 at AWS re:Invent 2014 | Nov 18, 2014
 
+From Srivaths Sankaran:
 
-## Rock Stars
+   * JMeter Cloud Using Docker
+   Apr 9, 2015 [7:47]
+   references
+   https://srivaths.blogspot.co.uk/2014/08/distributed-jmeter-testing-using-docker.html
+
+   * git clone https://github.com/smarigowda/jmeter-driver.git
+
+https://app.pluralsight.com/player?course=securing-docker-platform
+Securing the Docker Platform
+
+https://www.youtube.com/watch?v=R_-YivV_mKo
+jmeter-docker poc 
+ Jul 10, 2018
+by Purshottam Tyagi
+at https://github.com/tyagipurshottam/jemter [sic]
+
+
+## Performance Engineering
 
 <a target="_blank" href="https://www.guru99.com/performance-testing.html">https://www.guru99.com/performance-testing.html</a>
 
@@ -600,15 +610,6 @@ Santosh Arakere Marigowda
    JMeter 3.2 + InfluxDB + Grafana + Slack Using Docker Containers [12:53] May 8, 2017
 
 
-from Srivaths Sankaran  
-
-   * JMeter Cloud Using Docker
-   Apr 9, 2015 [7:47]
-   references
-   https://srivaths.blogspot.co.uk/2014/08/distributed-jmeter-testing-using-docker.html
-
-   * git clone https://github.com/smarigowda/jmeter-driver.git
-
 <a target="_blank" href="https://www.youtube.com/watch?v=Ok8Cqc0wipk">
 JMeter | Remote Testing | Master Slave | Distributed Testing</a>
 Jul 15, 2018 [17:54]
@@ -616,27 +617,53 @@ by Raghav Pal  who has a whole <a target="_blank" href="https://www.youtube.com/
 
 Pluralsight does not have a JMeter course as of March 1, 2019.
 
-https://app.pluralsight.com/player?course=securing-docker-platform
-Securing the Docker Platform
+https://www.programmersought.com/article/18926104968/
 
-https://www.youtube.com/watch?v=R_-YivV_mKo
-jmeter-docker poc 
- Jul 10, 2018
-by Purshottam Tyagi
-at https://github.com/tyagipurshottam/jemter [sic]
+<hr />
 
 
-https://www.youtube.com/watch?v=E02iab7vZyg
-How to use JMeter in Jenkins
+<hr />
+
+<a name="EmulatorPrograms"></a>
+
+## Emulator programs
 
 https://www.redline13.com/blog/open-architecture-with-aws/
-RedLin313 runs on AWS
+RedLin313 SaaS runs on AWS
 
-https://leanpub.com/master-jmeter-from-load-test-to-devops
-$25+ Master Apache JMeter From load testing to DevOps. 2020-04-28
+https://loadninja.com/
+LoadNinja is a licensed cloud-based load testing tool empowers teams to record & instantly playback comprehensive load tests, without complex dynamic correlation & run these load tests in real browsers at scale.
+
+
+<a name="JMeter"></a>
+
+### JMeter
+
+<a target="_blank" href="https://leanpub.com/master-jmeter-from-load-test-to-devops">
+$25+ Master Apache JMeter From load testing to DevOps</a> 2020-04-28
 by Antonio Gomes Rodrigues, Philippe Mouawad, and Milamber, with preface by Alexander Podelko
 
-https://www.programmersought.com/article/18926104968/
+NOTE: This is based on the structure of folders at
+* https://github.com/jmeterbyexample/jmeter-test-scripts
+* https://github.com/nighteblis/JmeterBook is a JMeter tutorial in Chinese and English at https://translate.google.com/translate?hl=&sl=auto&tl=en&u=https%3A%2F%2Fwww.hissummer.com%2F
+* https://github.com/Sunbird-Ed/sunbird-perf-tests
+* https://github.com/cf-identity/jmeter pulls in Apache JMeter so that new versions will not break runs by my scripts here.
+   It also contains png files of metrics generated during the last run.
+* https://github.com/ambertests/JMeterExamples has a PropExample.jmx - Script which takes properties from the command-line
+
+Others:
+* https://github.com/apolloclark/jmeter
+* https://github.com/mozilla/jmeter-scripts
+
+
+
+<a name="Blazemeter"></a>
+
+## Blazemeter
+
+   * https://www.blazemeter.com/blog/make-use-of-docker-with-jmeter-learn-how
+   * https://www.blazemeter.com/blog/jmeter-distributed-testing-with-docker
+
 
 <hr />
 
@@ -665,6 +692,9 @@ NaveenKumar Namachivayam of QAInsights - STAR: <a target="_blank" href="https://
 ## Jenkins
 
 https://www.youtube.com/watch?v=E02iab7vZyg
+How to use JMeter in Jenkins
+
+https://www.youtube.com/watch?v=E02iab7vZyg
 How To Use JMeter In Jenkins? Jenkins Report Generation | Performance Testing Tutorial | Edureka
 
 https://performanceengineeringsite.wordpress.com/2017/11/01/automating-jmeter-run-using-jenkins-ci-cd/
@@ -681,22 +711,8 @@ https://www.vinsguru.com/best-practices-jmeter-performance-testing-in-continuous
 Best Practices – JMeter – Adding Performance Testing in CI / CD Pipeline
 2 Comments / Articles, AWS / Cloud, Best Practices, CI / CD / DevOps, Distributed Load Test, Framework, Jenkins, JMeter / By vIns / January 30, 2017
 
-## References to JMeter
 
-https://leanpub.com/shopping_cart?stage=review&returnTo=/master-jmeter-from-load-test-to-devops
-$25 Master Apache JMeter From load testing to DevOps
 
-NOTE: This is based on the structure of folders at
-* https://github.com/jmeterbyexample/jmeter-test-scripts
-* https://github.com/nighteblis/JmeterBook is a JMeter tutorial in Chinese and English at https://translate.google.com/translate?hl=&sl=auto&tl=en&u=https%3A%2F%2Fwww.hissummer.com%2F
-* https://github.com/Sunbird-Ed/sunbird-perf-tests
-* https://github.com/cf-identity/jmeter pulls in Apache JMeter so that new versions will not break runs by my scripts here.
-   It also contains png files of metrics generated during the last run.
-* https://github.com/ambertests/JMeterExamples has a PropExample.jmx - Script which takes properties from the command-line
-
-Others:
-* https://github.com/apolloclark/jmeter
-* https://github.com/mozilla/jmeter-scripts
 
 <hr />
 
