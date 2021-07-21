@@ -27,14 +27,14 @@ The components necessary for performance/capacity emulating scripting and test r
 
    c. <strong>Emulator</strong> (such as JMeter) to control 1 or a lot of emulated client instances running emulation scripts at the same time.
    
-   d. <strong>Emulator hosting environment</strong>, which needs to be separate from the app enviornment under load. A Docker image from DockHub can be used locally or in a public cloud. SaaS services (Blazemeter, etc.) can provide this as well.
+   d. The <strong>Emulator hosting environment</strong> needs to be separate from the app environment under load. SaaS services (Blazemeter, StormRunner, Flood.io, etc.) can provide this environment. With more work, A Docker image from DockHub can be pulled locally or in a public cloud instance created using <a target="_blank" href="https://wilsonmar.github.io/aws-cdk">AWS CDK</a>, <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>, etc. 
 
    e. <strong>CI/CD workflow engine</strong> builds the app under test and test for security, functionality, capacity capability, etc. A Docker image of the free/open-source Jenkins can be used locally or in a public cloud. SaaS services (Harness.io, CircleCI, GitHub Actions, etc.) can provide this as well.
 
    f. <strong>Monitoring</strong> (Metrics, Diagnostics, Logging) of the environment running the app: show metrics to identify trends, Diagnostics to pin-point bottlenecks, and logs to identify root causes.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr align="left"><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator pgm. </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
+<tr valign="top" align="left"><th> <a href="#Scenarios">Scenario</a> </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator pgm. </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a>. Blazemeter - single trans.
    </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><u>the-internet</u></a>)
    </td><td> Dave's Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
@@ -44,8 +44,10 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. AWS with CI/CD
    </td><td rowspan="2"> custom (Apigee) </td><td> Custom (AWS ECS/K8s) </td><td> JMeter </td><td> <a href="#YourAWS"><u>Your AWS ECS</u></a> 
-   </td><td> Cloudbees, CircleCI, etc. </td><td> ??? </td></tr>
+   </td><td> Cloudbees, CircleCI, etc. </td><td> AWS Monitoring </td></tr>
 </table>
+
+<a name="Scenarios"></a>
 
 ## Scenarios
 
@@ -53,11 +55,11 @@ A. If your app under test can be reached from the public internet (such as "the-
 
    Blazemeter runs JMeter scripts you upload from your laptop.
 
-B. To run multiple users at a time, pull both "the-internet" app and emulator (JMeter) images from DockerHub and run them in <strong>your own cloud instance</strong> (within AWS ECS, Azure, GCP, etc.). AWS ECS is usually enough (without Kubernetes) becuase the number of emulator (JMeter) instances is usually a fixed number during a test run.
+B. To run multiple users at a time, pull both "the-internet" app and emulator (JMeter) images from DockerHub and run them in <strong>your own cloud instance</strong> (within AWS ECS, Azure, GCP, Blue Ocean, etc.). AWS ECS is usually enough (without <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>) becuase the number of emulator (JMeter) instances is usually fixed before a test run (and adjusted after).
 
-C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as Jenkins) or much monitoring, thus the "N/A".
+C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as <a href="#JenkinsJMeter">Jenkins</a>) or much monitoring, thus the "N/A".
 
-D. The most common scenario is standing up two cloud instances: an AWS ECS/K8S instance to run the app under test (such as Apigee) and another to run JMeter for performance/capacity testing. The flowchart below describes the intricacies that goes with such a setup:
+D. There are <a href="#OtherScenarios">other scenarios</a>, but the most common scenario is standing up two cloud instances: an AWS ECS/K8S instance to run the app under test (such as Apigee) and another to run JMeter for performance/capacity testing. The flowchart below describes the intricacies that goes with such a setup:
 
 
 <a name="YourAWS"></a>
@@ -71,7 +73,7 @@ D. The most common scenario is standing up two cloud instances: an AWS ECS/K8S i
 
 To keep it simple, let's say our system under test on-prem. consists of (1) a server responding to API requests behind a governance proxy such as <strong>Apigee</strong>. The API front-end needs to be setup first because it authenticates requests based on pre-assigned <strong>tokens</strong> provided to those who call the service. 
 
-A (2) <strong>Monitoring agent</strong> on each server, such as Dynatrace or SignalFx, collects various metrics for display on a <strong>Dashboard</strong>. 
+A (2) <strong>Monitoring agent</strong> on each server (such as Dynatrace, Telegraf, SignalFx, etc.) collects various metrics for display on the vendor's <strong>Dashboard</strong>. 
 
 Now we can begin to construct (3) <strong>JMeter</strong> scripts that impose artificial loads.
 From a laptop, we can only impose a limited load. But that is OK because we use laptops just to craft scripts.
@@ -575,9 +577,7 @@ Articles:
 UI, Load, and Performance Testing Your Websites on AWS</a> [42:25] WEB306 at AWS re:Invent 2014 | Nov 18, 2014
 
 
-## Rock Stars (who have published)
-
-NaveenKumar Namachivayam of QAInsights - STAR: <a target="_blank" href="https://github.com/awslabs/distributed-load-testing-on-aws">github.com/awslabs/distributed-load-testing-on-aws</a> used by <a target="_blank" href="https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/">BLOG</a>, <a target="_blank" href="https://docs.aws.amazon.com/solutions/latest/distributed-load-testing-on-aws/welcome.html">Implementation Guide</a> and <a target="_blank" href="https://www.youtube.com/watch?v=OtXn4PBCuZs" title="24m">VIDEO: Distributed Load Testing on AWS - Run JMeter Tests part 1</a>, <a target="_blank" href="https://www.youtube.com/watch?v=AMwSWhdLFQc" title="24m Sep 30, 2020">part 2</a>
+## Rock Stars
 
 <a target="_blank" href="https://www.guru99.com/performance-testing.html">https://www.guru99.com/performance-testing.html</a>
 
@@ -633,12 +633,72 @@ https://www.redline13.com/blog/open-architecture-with-aws/
 RedLin313 runs on AWS
 
 https://leanpub.com/master-jmeter-from-load-test-to-devops
-$25+ Master Apache JMeter From load testing to DevOps. COMPLETED ON 2020-04-28
+$25+ Master Apache JMeter From load testing to DevOps. 2020-04-28
 by Antonio Gomes Rodrigues, Philippe Mouawad, and Milamber, with preface by Alexander Podelko
 
 https://www.programmersought.com/article/18926104968/
 
+<hr />
 
+<a name="OtherScenarios"></a>
+
+## Other scenarios
+
+https://aws.amazon.com/blogs/devops/setting-up-a-ci-cd-pipeline-by-integrating-jenkins-with-aws-codebuild-and-aws-codedeploy/
+Setting up a CI/CD pipeline by integrating Jenkins with AWS CodeBuild and AWS CodeDeploy
+by Noha Ghazal 29 OCT 2019 
+
+<hr />
+
+<a name="AWS"></a>
+
+## AWS
+
+https://www.programmersought.com/article/18926104968/
+How to use AWS EC2+Docker+JMeter to build a distributed load testing infrastructure
+
+NaveenKumar Namachivayam of QAInsights - STAR: <a target="_blank" href="https://github.com/awslabs/distributed-load-testing-on-aws">github.com/awslabs/distributed-load-testing-on-aws</a> used by <a target="_blank" href="https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/">BLOG</a>, <a target="_blank" href="https://docs.aws.amazon.com/solutions/latest/distributed-load-testing-on-aws/welcome.html">Implementation Guide</a> and <a target="_blank" href="https://www.youtube.com/watch?v=OtXn4PBCuZs" title="24m">VIDEO: Distributed Load Testing on AWS - Run JMeter Tests part 1</a>, <a target="_blank" href="https://www.youtube.com/watch?v=AMwSWhdLFQc" title="24m Sep 30, 2020">part 2</a>
+
+
+<a name="JenkinsJMeter"></a>
+
+## Jenkins
+
+https://www.youtube.com/watch?v=E02iab7vZyg
+How To Use JMeter In Jenkins? Jenkins Report Generation | Performance Testing Tutorial | Edureka
+
+https://performanceengineeringsite.wordpress.com/2017/11/01/automating-jmeter-run-using-jenkins-ci-cd/
+Automating Jmeter run using Jenkins CI/CD: Load, APM, Log management tools ,Docker & Kubernetes
+
+https://www.jenkins.io/doc/book/using/using-jmeter-with-jenkins/
+Using JMeter with Jenkins (performance plugin, )
+
+https://www.cloudbees.com/blog/how-integrate-jmeter-jenkins
+How to integrate JMeter into Jenkins by Dmitri Tikhansi from BlazeMeter.
+
+
+https://www.vinsguru.com/best-practices-jmeter-performance-testing-in-continuous-delivery-pipeline/
+Best Practices – JMeter – Adding Performance Testing in CI / CD Pipeline
+2 Comments / Articles, AWS / Cloud, Best Practices, CI / CD / DevOps, Distributed Load Test, Framework, Jenkins, JMeter / By vIns / January 30, 2017
+
+## References to JMeter
+
+https://leanpub.com/shopping_cart?stage=review&returnTo=/master-jmeter-from-load-test-to-devops
+$25 Master Apache JMeter From load testing to DevOps
+
+NOTE: This is based on the structure of folders at
+* https://github.com/jmeterbyexample/jmeter-test-scripts
+* https://github.com/nighteblis/JmeterBook is a JMeter tutorial in Chinese and English at https://translate.google.com/translate?hl=&sl=auto&tl=en&u=https%3A%2F%2Fwww.hissummer.com%2F
+* https://github.com/Sunbird-Ed/sunbird-perf-tests
+* https://github.com/cf-identity/jmeter pulls in Apache JMeter so that new versions will not break runs by my scripts here.
+   It also contains png files of metrics generated during the last run.
+* https://github.com/ambertests/JMeterExamples has a PropExample.jmx - Script which takes properties from the command-line
+
+Others:
+* https://github.com/apolloclark/jmeter
+* https://github.com/mozilla/jmeter-scripts
+
+<hr />
 
 ## More on DevSecOps #
 
