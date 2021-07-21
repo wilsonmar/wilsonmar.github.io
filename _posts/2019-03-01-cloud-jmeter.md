@@ -34,19 +34,22 @@ The components necessary for performance/capacity emulating scripting and test r
    f. <strong>Monitoring</strong> (Metrics, Diagnostics, Logging) of the environment running the app: show metrics to identify trends, Diagnostics to pin-point bottlenecks, and logs to identify root causes.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr align="left"><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
+<tr align="left"><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator pgm. </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a>. Blazemeter - single trans.
-   </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
+   </td><td> <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet</a>
+   </td><td> Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
-   </td><td> Docker </td><td> <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
+   </td><td> the-internet Docker </td><td> <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - single trans.
-   </td><td> the-internet </td><td> Heroku </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
+   </td><td> <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet</a>
+   </td><td> Heroku </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - multi-trans.
-   </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. with cloud CI/CD
-   </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Cloudbees </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. with cloud CI/CD
-   </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Jenkins </td><td> ??? </td></tr>
+   </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Jenkins? </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. SaaS CI/CD
+   </td><td rowspan="2"> custom </td><td rowspan="2"> Docker </td><td rowspan="2"> JMeter </td><td rowspan="2"> cloud 
+   </td><td> Cloudbees </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. custom cloud CI/CD
+   </td><td> CircleCI, etc. </td><td> ??? </td></tr>
 </table>
 
 
