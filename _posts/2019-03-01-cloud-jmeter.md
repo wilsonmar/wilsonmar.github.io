@@ -42,7 +42,7 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> (the-internet in Docker) </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS ECS</u></a> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
    </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. SaaS CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. AWS with CI/CD
    </td><td rowspan="2"> custom (Apigee) </td><td> Custom (ECS/K8s) </td><td> JMeter </td><td> <a href="#YourAWS"><u>Your AWS ECS</u></a> 
    </td><td> Cloudbees, CircleCI, etc. </td><td> ??? </td></tr>
 </table>
@@ -57,17 +57,13 @@ B. To run multiple users at a time on "the-internet", please fire up <strong>you
 
 C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as Jenkins) or much monitoring, thus the "N/A".
 
-D. The most common scenario is 
+D. The most common scenario is standing up two cloud instances: one for the app under test (such as Apigee) and another to run JMeter for performance/capacity testing. The flowchart below describes the intricacies that goes with such a setup:
 
 
 <a name="YourAWS"></a>
+<a name="ScenarioD"></a>
 
-## Your AWS instance
-
-
-<a name="ScenarioB"></a>
-
-## Scenario C 
+## AWS with CI/CD (Scenario D)
 
 <!-- v20 -->
 <amp-youtube data-videoid="ZCQdv57VDE8" layout="responsive" width="480" height="270"></amp-youtube>
