@@ -22,7 +22,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">my web
 
 Prep-work:
 
-1. Manually obtain an account and setup AWS login from Terminal
+1. Manually obtain an AWS account and setup AWS login from Terminal. See <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding/">my instructions</a>.
 1. Manually or in IaC create AWS KMS (Key Mangement Service) instance (or use an existing one if it exists)
 1. Manually Add & encrypt key (if one is not specified)
 

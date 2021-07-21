@@ -3,7 +3,7 @@ layout: post
 title: "AWS Onboarding"
 excerpt: "for System Administration and billing"
 tags: [AWS, EC2, cloud, on-boarding]
-date: "2020-06-26"
+date: "2021-07-21"
 file: "aws-onboarding"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -20,6 +20,353 @@ comments: true
 This</a> is a hands-on tutorial to get new enterprise administrators setup to effecctively access and use the AWS cloud. Here you do some action and explanations and PROTIP advice is provided. PROTIPs included how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by the pros.
 
 This highlights what is in <a target="_blank" href="https://aws.amazon.com/getting-started/">Amazon's Getting Started tutorials</a>.
+
+
+<a name="CLI"></a>
+
+## AWS CLI Automation #
+
+In enterprises today, servers are built by
+scripts and configuration files
+generated from templates.
+This is so the build process can be debugged
+and changed slightly through the lifecycle from test to prod.
+
+Instead of clicking and typing, server administrators work with
+template files in JSON format for Cloud Formation or Terraform to process.
+
+The next step up is to use Atlas
+which generates  
+JSON files based on information typed into their web Consoles.
+
+The <a href="#CLI">command line interface</a>
+is used by programs rather than the manual Console.
+
+
+<a name="CLI-Install"></a>
+
+### AWS CLI install #
+
+PROTIP: There are several ways to install AWS CLI using Python.
+
+1. The simplest and most reliable for me is to use HomeBrew on Macs, from any folder:
+
+   <tt><strong>brew upgrade awscli
+   </strong></tt>
+
+   If awscli was not already installed:
+
+   <tt><strong>brew install awscli
+   </strong></tt>
+
+   <pre>🍺  /usr/local/Cellar/awscli/2.2.21: 12,806 files, 100.3MB
+Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
+   </pre>
+
+   NOTE: awscli installs the latest dependencies Ansible, ykman, etc.
+
+   Alternately, one can use <tt>pip install awscli --upgrade --user --ignore-installed six</tt>
+   installed from <a target="_blank" href="https://pypi.org/project/awscli/">https://pypi.org/project/awscli</a>. But when I did, aws cannot be found.
+
+   Another alternative to install (on CentOS 7) is:
+
+   <pre>curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
+      -o "awscli-bundle.zip"
+   unzip awscli-bundle.zip 
+   sudo ./awscli-bundle/install \
+      -i /usr/local/aws -b /usr/local/bin/aws
+   </pre>
+
+2. Verify what version of awscli you have installed:
+
+   <pre><strong>aws --version
+   </strong></pre>
+
+   Something went wrong if your response is:
+
+   <pre>-bash: aws: command not found</pre>
+
+   The expected sample response (May 28, 2018):
+
+   <pre>aws-cli/2.2.21 Python/3.9.6 Darwin/18.7.0 source/x86_64 prompt/off
+   </pre>
+
+   PROTIP: Awscli now uses <strong>Python 3</strong>, not 2.7.
+   Also previously:
+
+   <pre>aws-cli/1.15.20 Python/3.6.5 Darwin/17.5.0 botocore/1.10.20
+   </pre>
+
+   ### AWS Boto for Python
+
+   PROTIP: "AWS SDK for Python" enables your Python (.py) programs to invoke AWS CLI commands.
+
+   <a target="_blank" href="https://github.com/boto/botocore">
+   The Python package botocore on GitHub</a>
+   provides a low-level foundation for AWS CLI software.
+
+3. To install Boto3:
+
+   <tt><strong>pip install boto3 --upgrade --ignore-installed six
+   </strong></tt>
+
+   Code for boto3 is obtained from <a target="_blank" href="https://github.com/boto/boto3">https://github.com/boto/boto3</a>. Read about it at <a target="_blank" href="https://aws.amazon.com/sdk-for-python/">https://aws.amazon.com/sdk-for-python</a>. 
+
+   NOTE: The package is installed into folder:<br />
+   <tt>/usr/local/lib/python2.7/site-packages/boto3/*</tt>
+
+
+   <a name="Autocompletion"></a>
+
+   ### Bash Shell completions
+
+3. On Linux, to enable bash completion for aws commands:
+
+   <tt><strong>
+   echo 'complete -C aws_completer aws' >> ~/.bashrc
+   </strong></tt>
+
+4. Test out autocompletion by typing the first two characters and pressing Tab for a list of all aws cli commands that begin with those characters:
+
+
+   ### AWS Shell completion
+
+   PROTIP: For automatic complex autocompletion of AWS CLI commands, there is a 3rd-party utility that provides a shell GUI that suggest as you type:
+
+5. To install the <a target="_blank" href="https://medium.com/@cuttenweiler/aws-shell-i-think-im-in-love-d39878c3e7b7">awesome</a> AWS Shell:
+
+   <tt><strong>pip install aws-shell
+   </strong></tt>
+
+   Read about it at <a target="_blank" href="https://github.com/awslabs/aws-shell">https://github.com/awslabs/aws-shell</a>
+
+   NOTE: The package is installed in folders:<br />
+   /usr/local/bin/aws-shell
+
+6. To enable AWS Shell:
+
+   <tt><strong>
+   aws-shell
+   </strong></tt>
+
+   You show now be in the sub-shell with prompt:
+
+   <pre>aws></pre>
+
+   <img alt="aws-onboarding-aws-shell-config-207x58-5051.jpg" width="207" src="https://user-images.githubusercontent.com/300046/40611542-eccae42a-6233-11e8-956c-ac85fe8baae3.jpg">
+
+7. Exit aws-shell back to bash:
+
+   <tt><strong>
+   .exit
+   </strong></tt>
+
+   Alternately, <tt>.quit</tt> works too.
+
+
+   <a name="jp"></a>
+   
+   ### jp command
+
+   The jp command enables JSON to be manipulated within Bash scripts.
+   For example, jp enables a simple syntax to extract the 1st value from bar within foo:
+
+   <pre><strong>echo '{"foo": {"bar": ["a", "b", "c"]}}' | jp foo.bar[1]</strong></pre>
+
+   The response should be: <tt>"b"</tt>
+
+1. Install it on Macs, in any folder:
+
+   <pre><strong>brew tap jmespath/jmespath
+   brew install jp
+   </strong></pre>
+   
+2. Verify it works by running the command above.
+
+3. See other usage and examples at <a target="_blank" href="https://github.com/jmespath/jp#usage">https://github.com/jmespath/jp#usage</a>
+
+   jp is required by Aliases, below.
+
+
+   <a name="Aliases"></a>
+   
+   ### Aliases
+
+   Create folder <tt>~/.aws/cli/alias</tt>:
+
+   <pre><strong>mkdir -p ~/.aws/cli
+   pushd ~/.aws/cli
+   # From git clone https://github.com/awslabs/awscli-aliases --depth=1 alias
+   curl -O https://raw.githubusercontent.com/awslabs/awscli-aliases/master/alias
+   popd
+   </strong></pre>
+   
+   Further explained in video https://www.youtube.com/watch?v=Xc1dHtWa9-Q&t=26m35s 
+
+
+
+   <a name="ConfigCmd"></a>
+
+   ### IAM user configuration
+
+   Regardless of how you get the command:
+
+7. Run the command to create files in folder ~/aws referenced by all other aws cli commands:
+
+   <tt><strong>
+   aws configure --profile root-admin-work  
+   </strong></tt>
+
+   PROTIP: The example "root-admin-work" would be replaced with the user's account name being created. Different accounts may be needed for different permissions in prod vs. dev use. Having separate access keys for different applications also generates distinct entries in AWS CloudTrail log files, which makes it easier to determine which application performed specific actions.
+
+   Without the profile specification, "aws configure" by itself defines default credentials.
+
+   The command prompts you for:
+
+   <pre>AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+   AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+   Default region name [None]: us-west-2
+   Default output format [None]: json
+   </pre>
+
+   <a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">PROTIP</a>: If you do not explicitly specify an endpoint, US West (Oregon) `us-west-2` is the default Region.
+
+   The default output format is `json`.
+
+   PROTIP: The aws configure command creates key/value pairs "aws_access_key_id" and "aws_secret_access_key" in file <tt>credentials</tt> for use by all AWS SDKs.
+   Key/value pairs "region" and "output" are saved in file <tt>config</tt> used by the CLI.
+
+   TODO: http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment
+
+8. The region in ~/.aws/config can be set also by:
+
+   <pre><strong>
+   aws configure set profile.prod.region us-west-2
+   </strong></pre>   
+
+   Path ~/.aws/config is in variable $AWS_CONFIG_FILE
+
+
+   Path ~/.aws/credentials is in variable $AWS_SHARED_CREDENTIALS_FILE
+
+   aws configure set region \
+      $(curl -s http://162.254.169.254/latest/dynamic/instance-identity/document \
+      | jp -u 'region')
+
+   ### Roles for Tasks
+
+   TODO: Temporary security credentials <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Roles for Tasks</a>
+   stored in ~/.aws/config file:
+
+   <pre>
+[profile iam-role]
+role_arn = arn:aws:iam::<em>ACCOUNT_ID</em>:role/<em>IAM_ROLE</em>
+source_profile = iam-user
+output = json
+region = eu-west-1
+   </pre>
+
+   PROTIP: The ~/.aws/config file also houses settings that speed up S3 sync.
+
+   <pre>
+[profile default]
+...
+s3 =
+  max_concurrent_requests = 100
+  max_queue_size = 10000
+  use_accelerate_endpoint = true
+   </pre>
+
+
+   ### Configure profiles
+
+   PROTIP: You'll likely need to use several AWS accounts, so specify a profile for
+   each account.
+
+
+   ### Services list
+
+   Now that you have permissions after configuration:
+
+4. For a list of Amazon services with command access:
+
+   <tt><strong>
+   aws commands help
+   </strong></tt>
+
+   PROTIP: Drag the left/right edge of the Terminal to widen the screen.
+
+   See http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html
+
+
+<a name="AWSConsole"></a>
+
+## AWS Services Management Console
+
+1. If you are at the AWS marketing page, click "My Account" for this menu:
+
+   <a target="_blank" href="https://aws.amazon.com/">
+   <img alt="aws-onboarding-landing-250x252-18241" width="250" src="https://user-images.githubusercontent.com/300046/40591769-685c5502-61d4-11e8-8fbe-bcbf70d5e515.jpg"></a>
+   
+2. Get the <strong>AWS Management Console</strong>:
+
+   <a target="_blank" href="
+   https://console.aws.amazon.com/console/home">
+   https://console.aws.amazon.com/console/home</a>
+   
+   ### All Amazon services
+
+3. Click to view all <strong>Services</strong> at the upper-left black menu band.
+
+4. Read the User Guide for each service at:
+
+   <a target="_blank" href="https://aws.amazon.com/documentation/">
+   https://aws.amazon.com/documentation</a>
+
+   ### Quick Access icons
+
+   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
+
+1. Click the push-pin icon.
+1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
+
+   PROTIP: The services most often used are IAM, VPC, EC2, S3
+
+1. If you have good memory of what icons mean, change the Settings to "Icons only".
+
+   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
+   
+
+   ### Claim S3 Bucket names
+
+   The AWS Account Administrator has a fudiciary responsibility to secure 
+   Intellectual Property assets.
+
+   S3 Bucket names are universally unique among all AWS customers.
+   So just as there are domain name squatters who register and sit on .com host names
+   for sale at high prices to those who actually use the names,
+   the administrator of root accounts for an organization should
+   register your organization's brand names before others get them first.
+
+   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
+
+4. Click S3 from among services.
+5. Click the blue "Create bucket" button.
+6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
+7. Select your home Region.
+
+   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
+
+8. Click "Next".
+9. Click "Next".
+10. Click "Next" to manage users.
+11. Click "Create Bucket".
+
+
+
+
+<hr />
+
 
 ## 3rd-party cloud alternatives
 
@@ -379,335 +726,7 @@ echo $CHECK_ID
 TODO: To avoid embedding an access key with the app (even in encrypted storage), use Amazon Cognito to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
 
 
-<a name="CLI"></a>
-
-## AWS CLI Automation #
-
-In enterprises today, servers are built by
-scripts and configuration files
-generated from templates.
-This is so the build process can be debugged
-and changed slightly through the lifecycle from test to prod.
-
-Instead of clicking and typing, server administrators work with
-template files in JSON format for Cloud Formation or Terraform to process.
-
-The next step up is to use Atlas
-which generates  
-JSON files based on information typed into their web Consoles.
-
-The <a href="#CLI">command line interface</a>
-is used by programs rather than the manual Console.
-
-
-<a name="CLI"></a>
-
-### AWS CLI install #
-
-PROTIP: There are several ways to install AWS CLI using Python.
-
-1. The simplest and most reliable for me is to use HomeBrew on Macs:
-
-   <tt><strong>
-   brew install awscli
-   </strong></tt>
-
-   Alternately, one can use <tt>pip install awscli --upgrade --user --ignore-installed six</tt>
-   installed from <a target="_blank" href="https://pypi.org/project/awscli/">https://pypi.org/project/awscli</a>. But when I did, aws cannot be found.
-
-   Another alternative to install (on CentOS 7) is:
-
-   <pre>
-   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
-      -o "awscli-bundle.zip"
-   unzip awscli-bundle.zip 
-   sudo ./awscli-bundle/install \
-      -i /usr/local/aws -b /usr/local/bin/aws
-   </pre>
-
-2. Verify what version of awscli you have installed:
-
-   <pre><strong>aws --version
-   </strong></pre>
-
-   Something went wrong if your response is:
-
-   <pre>-bash: aws: command not found</pre>
-
-   The expected sample response (May 28, 2018):
-
-   <pre>
-   aws-cli/1.15.20 Python/3.6.5 Darwin/17.5.0 botocore/1.10.20
-   </pre>
-
-   PROTIP: Awscli now uses <strong>Python 3</strong>, not 2.7.
-
-   ### AWS Boto for Python
-
-   PROTIP: "AWS SDK for Python" enables your Python (.py) programs to invoke AWS CLI commands.
-
-   <a target="_blank" href="https://github.com/boto/botocore">
-   The Python package botocore on GitHub</a>
-   provides a low-level foundation for AWS CLI software.
-
-3. To install Boto3:
-
-   <tt><strong>
-   pip install boto3 --upgrade --ignore-installed six
-   </strong></tt>
-
-   Code for boto3 is obtained from <a target="_blank" href="https://github.com/boto/boto3">https://github.com/boto/boto3</a>. Read about it at <a target="_blank" href="https://aws.amazon.com/sdk-for-python/">https://aws.amazon.com/sdk-for-python</a>. 
-
-   NOTE: The package is installed into folder:<br />
-   <tt>/usr/local/lib/python2.7/site-packages/boto3/*</tt>
-
-
-   <a name="Autocompletion"></a>
-
-   ### Bash Shell completions
-
-3. To enable bash completion for aws commands at the Linux shell:
-
-   <tt><strong>
-   echo 'complete -C aws_completer aws' >> ~/.bashrc
-   </strong></tt>
-
-4. Test out autocompletion by typing the first two characters and pressing Tab for a list of all aws cli commands that begin with those characters:
-
-
-   ### AWS Shell completion
-
-   PROTIP: For automatic complex autocompletion of AWS CLI commands, there is a 3rd-party utility that provides a shell GUI that suggest as you type:
-
-5. To install the <a target="_blank" href="https://medium.com/@cuttenweiler/aws-shell-i-think-im-in-love-d39878c3e7b7">awesome</a> AWS Shell:
-
-   <tt><strong>
-   pip install aws-shell
-   </strong></tt>
-
-   Read about it at <a target="_blank" href="https://github.com/awslabs/aws-shell">https://github.com/awslabs/aws-shell</a>
-
-   NOTE: The package is installed in folders:<br />
-   /usr/local/bin/aws-shell
-
-6. To enable AWS Shell:
-
-   <tt><strong>
-   aws-shell
-   </strong></tt>
-
-   You show now be in the sub-shell with prompt:
-
-   <pre>aws></pre>
-
-   <img alt="aws-onboarding-aws-shell-config-207x58-5051.jpg" width="207" src="https://user-images.githubusercontent.com/300046/40611542-eccae42a-6233-11e8-956c-ac85fe8baae3.jpg">
-
-7. Exit aws-shell back to bash:
-
-   <tt><strong>
-   .exit
-   </strong></tt>
-
-   Alternately, <tt>.quit</tt> works too.
-
-
-   <a name="jp"></a>
-   
-   ### jp command
-
-   The jp command enables JSON to be manipulated within Bash scripts.
-   For example, jp enables a simple syntax to extract the 1st value from bar within foo:
-
-   <pre><strong>echo '{"foo": {"bar": ["a", "b", "c"]}}' | jp foo.bar[1]</strong></pre>
-
-   The response should be: <tt>"b"</tt>
-
-1. Install it on Macs, in any folder:
-
-   <pre><strong>brew tap jmespath/jmespath
-   brew install jp
-   </strong></pre>
-   
-2. Verify it works by running the command above.
-
-3. See other usage and examples at <a target="_blank" href="https://github.com/jmespath/jp#usage">https://github.com/jmespath/jp#usage</a>
-
-   jp is required by Aliases, below.
-
-
-   <a name="Aliases"></a>
-   
-   ### Aliases
-
-   Create folder <tt>~/.aws/cli/alias</tt>:
-
-   <pre><strong>mkdir -p ~/.aws/cli
-   pushd ~/.aws/cli
-   # From git clone https://github.com/awslabs/awscli-aliases --depth=1 alias
-   curl -O https://raw.githubusercontent.com/awslabs/awscli-aliases/master/alias
-   popd
-   </strong></pre>
-   
-   Further explained in video https://www.youtube.com/watch?v=Xc1dHtWa9-Q&t=26m35s 
-
-
-
-   <a name="ConfigCmd"></a>
-
-   ### IAM user configuration
-
-   Regardless of how you get the command:
-
-7. Run the command to create files in folder ~/aws referenced by all other aws cli commands:
-
-   <tt><strong>
-   aws configure --profile root-admin-work  
-   </strong></tt>
-
-   PROTIP: The example "root-admin-work" would be replaced with the user's account name being created. Different accounts may be needed for different permissions in prod vs. dev use. Having separate access keys for different applications also generates distinct entries in AWS CloudTrail log files, which makes it easier to determine which application performed specific actions.
-
-   Without the profile specification, "aws configure" by itself defines default credentials.
-
-   The command prompts you for:
-
-   <pre>AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-   AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-   Default region name [None]: us-west-2
-   Default output format [None]: json
-   </pre>
-
-   <a target="_blank" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">PROTIP</a>: If you do not explicitly specify an endpoint, US West (Oregon) `us-west-2` is the default Region.
-
-   The default output format is `json`.
-
-   PROTIP: The aws configure command creates key/value pairs "aws_access_key_id" and "aws_secret_access_key" in file <tt>credentials</tt> for use by all AWS SDKs.
-   Key/value pairs "region" and "output" are saved in file <tt>config</tt> used by the CLI.
-
-   TODO: http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-environment
-
-8. The region in ~/.aws/config can be set also by:
-
-   <pre><strong>
-   aws configure set profile.prod.region us-west-2
-   </strong></pre>   
-
-   Path ~/.aws/config is in variable $AWS_CONFIG_FILE
-
-
-   Path ~/.aws/credentials is in variable $AWS_SHARED_CREDENTIALS_FILE
-
-   aws configure set region \
-      $(curl -s http://162.254.169.254/latest/dynamic/instance-identity/document \
-      | jp -u 'region')
-
-   ### Roles for Tasks
-
-   TODO: Temporary security credentials <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Roles for Tasks</a>
-   stored in ~/.aws/config file:
-
-   <pre>
-[profile iam-role]
-role_arn = arn:aws:iam::<em>ACCOUNT_ID</em>:role/<em>IAM_ROLE</em>
-source_profile = iam-user
-output = json
-region = eu-west-1
-   </pre>
-
-   PROTIP: The ~/.aws/config file also houses settings that speed up S3 sync.
-
-   <pre>
-[profile default]
-...
-s3 =
-  max_concurrent_requests = 100
-  max_queue_size = 10000
-  use_accelerate_endpoint = true
-   </pre>
-
-
-   ### Configure profiles
-
-   PROTIP: You'll likely need to use several AWS accounts, so specify a profile for
-   each account.
-
-
-   ### Services list
-
-   Now that you have permissions after configuration:
-
-4. For a list of Amazon services with command access:
-
-   <tt><strong>
-   aws commands help
-   </strong></tt>
-
-   PROTIP: Drag the left/right edge of the Terminal to widen the screen.
-
-   See http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html
-
-
-<a name="AWSConsole"></a>
-
-## AWS Services Management Console
-
-1. If you are at the AWS marketing page, click "My Account" for this menu:
-
-   <a target="_blank" href="https://aws.amazon.com/">
-   <img alt="aws-onboarding-landing-250x252-18241" width="250" src="https://user-images.githubusercontent.com/300046/40591769-685c5502-61d4-11e8-8fbe-bcbf70d5e515.jpg"></a>
-   
-2. Get the <strong>AWS Management Console</strong>:
-
-   <a target="_blank" href="
-   https://console.aws.amazon.com/console/home">
-   https://console.aws.amazon.com/console/home</a>
-   
-   ### All Amazon services
-
-3. Click to view all <strong>Services</strong> at the upper-left black menu band.
-
-4. Read the User Guide for each service at:
-
-   <a target="_blank" href="https://aws.amazon.com/documentation/">
-   https://aws.amazon.com/documentation</a>
-
-   ### Quick Access icons
-
-   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
-
-1. Click the push-pin icon.
-1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
-
-   PROTIP: The services most often used are IAM, VPC, EC2, S3
-
-1. If you have good memory of what icons mean, change the Settings to "Icons only".
-
-   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
-   
-
-   ### Claim S3 Bucket names
-
-   The AWS Account Administrator has a fudiciary responsibility to secure 
-   Intellectual Property assets.
-
-   S3 Bucket names are universally unique among all AWS customers.
-   So just as there are domain name squatters who register and sit on .com host names
-   for sale at high prices to those who actually use the names,
-   the administrator of root accounts for an organization should
-   register your organization's brand names before others get them first.
-
-   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
-
-4. Click S3 from among services.
-5. Click the blue "Create bucket" button.
-6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
-7. Select your home Region.
-
-   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
-
-8. Click "Next".
-9. Click "Next".
-10. Click "Next" to manage users.
-11. Click "Create Bucket".
+<hr />
 
 
 ## Security services
