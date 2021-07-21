@@ -36,10 +36,10 @@ The components necessary for performance/capacity emulating scripting and test r
 <table border="1" cellpadding="4" cellspacing="0">
 <tr align="left"><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator pgm. </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a>. Blazemeter - single trans.
-   </td><td> <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet</a>
+   </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><u>the-internet</u></a>)
    </td><td> Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
-   </td><td> the-internet Docker </td><td> <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
+   </td><td> (the-internet in Docker) </td><td> <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - single trans.
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet</a>
    </td><td> Heroku </td><td> JMeter </td><td> local Docker </td><td> N/A </td><td> ??? </td></tr>
@@ -51,6 +51,15 @@ The components necessary for performance/capacity emulating scripting and test r
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioF">F</a>. custom cloud CI/CD
    </td><td> CircleCI, etc. </td><td> ??? </td></tr>
 </table>
+
+## Scenarios
+
+A. If your app under test can be reached from the public internet (such as "the-internet"), you don't need to install JMeter on your laptop if you use Blazemeter SaaS, which provides a quick and easy way to begin. But please don't run more than one user.
+
+B. To run multiple users at a time, you'll need to fire up a cloud instance (in AWS, Azure, GCP, etc.) to run an image you pull  from DockerHub (or other registry such as Quay, Artifactory, etc.)
+
+C. 
+
 
 <a name="ScenarioB"></a>
 
