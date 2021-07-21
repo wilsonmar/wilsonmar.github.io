@@ -43,10 +43,8 @@ The components necessary for performance/capacity emulating scripting and test r
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
    </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. SaaS CI/CD
-   </td><td rowspan="2"> custom (Apigee) </td><td rowspan="2"> Docker in ECS/K8s </td><td rowspan="2"> JMeter </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS</u></a> 
-   </td><td> Cloudbees </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. custom cloud CI/CD
-   </td><td> CircleCI, etc. </td><td> ??? </td></tr>
+   </td><td rowspan="2"> custom (Apigee) </td><td> Custom (ECS/K8s) </td><td> JMeter </td><td> <a href="#YourAWS"><u>Your AWS ECS</u></a> 
+   </td><td> Cloudbees, CircleCI, etc. </td><td> ??? </td></tr>
 </table>
 
 ## Scenarios
@@ -59,7 +57,7 @@ B. To run multiple users at a time on "the-internet", please fire up <strong>you
 
 C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as Jenkins) or much monitoring, thus the "N/A".
 
-D. 
+D. The most common scenario is 
 
 
 <a name="YourAWS"></a>
