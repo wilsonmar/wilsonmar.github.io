@@ -40,11 +40,11 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> Dave's Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
    </td><td> (the-internet in Docker) </td><td> Your <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - single trans.
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
    </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet Docker</a>)
-   </td><td> Apache web </td><td> JMeter </td><td> local Docker </td><td> N/A </td><td> ??? </td></tr>
+   </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A </td><td> ??? </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. Local - multi-trans.
-   </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Jenkins? </td><td> ??? </td></tr>
+   </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter Docker </td><td> local Docker </td><td> Jenkins? </td><td> ??? </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. SaaS CI/CD
    </td><td rowspan="2"> custom </td><td rowspan="2"> Docker </td><td rowspan="2"> JMeter </td><td rowspan="2"> cloud 
    </td><td> Cloudbees </td><td> ??? </td></tr>
@@ -60,7 +60,7 @@ A. If your app under test can be reached from the public internet (such as "the-
 
 B. To run multiple users at a time, please fire up your own cloud instance (in AWS, Azure, GCP, etc.) to run an emulator image you pull from DockerHub.
 
-C. If you want to create emulator scripts offline on your laptop (with enough memory), run several Docker images.
+C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images.
 
 
 <a name="ScenarioB"></a>
