@@ -16,19 +16,26 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are my (incomplete) notes while I'm preparing for the AWS Certified Security - Specialty (SCS-C01) exam:
-
 See <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">my webpage on cyber-security</a>
 
 ## Secure Bash Script
 
-1. Install Bash, AWS CLI
-1. Obtain an account and setup AWS login from Terminal
-1. Create AWS KMS (Key Mangement Service) instance or use an existing one
-1. Add key
-1. Define IAM credentials
-1. Retrieve key within shell
-1. Format JSON response
+Prep-work:
+
+1. Manually obtain an account and setup AWS login from Terminal
+1. Manually or in IaC create AWS KMS (Key Mangement Service) instance (or use an existing one if it exists)
+1. Manually Add & encrypt key (if one is not specified)
+
+I am working on a Bash/Z shell script so you can copy and paste a single command and paste on your Terminal to do all the following:
+
+1. Install AWS CLI after pre-requisites (NodeJs)
+1. Request that you (manually) obtain an account and setup AWS login from Terminal
+1. Define IAM credentials (if one isn't specified)
+1. Auto-rotate keys service every month?
+
+1. Retrieve key within shell and format JSON response
+
+This would be using https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
 
 
 ## AWS Security Certification
