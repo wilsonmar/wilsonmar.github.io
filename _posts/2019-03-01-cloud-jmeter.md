@@ -17,6 +17,37 @@ comments: true
 
 The diagram here describes progress toward distributing runs of JMeter within EC2 and/or Docker, and scaling those instances to increase load on app servers. Each step is a deliverable within the sequence of MVP (Minimim Viable Product) stages.
 
+## Setup Scenarios
+
+The components necessary for performance/capacity emulating scripting and test runs are:
+
+   a. The <strong>application under test</strong>. I've used "the-internet" because it is intended as a set of JavaScript challenges for scripting user emulation scripts. There are other sample apps.
+
+   b. <strong>App hosting environment</strong>. Dave Hoeffer has graciously created an instance on Heroku for single-user runs during scripting. But for load/capacity tests, we need to create a stand-alone app instance within a cloud.
+
+   c. <strong>Emulator</strong> (such as JMeter) to run scripts that emulate 1 or a lot of client instances. Blazemeter cloud provides that. A Docker image of the free/open-source Jenkins can be used locally or in a public cloud.
+   
+   d. <strong>Emulator hosting environment</strong>, which needs to be separate from the app enviornment under load. 
+
+   e. <strong>CI/CD workflow engine</strong> (such as Jenkins, Harness.io, CircleCI, GitHub Actions, etc.) which builds the app under test and test for security, functionality, capacity capability, etc. 
+
+   f. <strong>Monitoring</strong> (Metrics, Diagnostics, Logging) in the same environment running the app to identify trends, pin-point bottlenecks, and identify root causes.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Scenario <th><th> a. App Under Test <th><th> b. App host env <th><th> c. Emulator <th><th> d. Emulator hosting <th><th>e. CI/CD <th><th> f. Monitoring </th></tr>
+<tr valign="top" align="center"><td> <a href="#ScenarioA">A</a> Blazemeter - single trans.
+   </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="3"> Blazemeter </td></tr>
+<tr valign="top" align="center"><td> <a href="#ScenarioB">B</a> Blazemeter - single trans.
+   </td><td> Docker </td><td> cloud? </td><td> (JMeter) </td><td rowspan="3"> Blazemeter </td></tr>
+<tr valign="top" align="center"><td> <a href="#ScenarioC">C</a> Local - single trans.
+   </td><td> the-internet </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td> <a href="#ScenarioD">D</a> with cloud CI/CD
+   </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Cloudbees </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td> <a href="#ScenarioE">E</a> with cloud CI/CD
+   </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Jenkins </td><td> ??? </td></tr>
+</table>
+
+
 ## Flowchart
 
 <!-- v20 -->
@@ -54,17 +85,20 @@ It might be easier to make use of a (19) web-based SaaS service such as Blazemet
 
 Below are more details about each deliverable:
 
-1. Setup the application under test, with API <strong>tokens</strong> and/or GUI User ID/Password.
+1. Setup the application under test (on-prem), with API <strong>tokens</strong> and/or GUI User ID/Password.
 
    For the purpose of this exercise, we run a simple "hello world" program in the background. A real production configuration would have a load-balanced API Gateway service in front of machines responding to API requests.
 
    PROTIP: We'll need several types of tokens. We generally use tokens with a lot of credits for stress or soak testing. We also need one with no credits to test rejection mechanisms. And an automated way is needed to reset tokens after each test.
 
-2. Install monitoring (Dynatrace, SignalFx, Splunk, etc.) with a <a href="#Visualization">dashboard for analytics visualization.</a>
+2. Install monitoring (Dynatrace, SignalFx, Splunk, etc.) with a <a href="#Visualization">dashboard showing analytics visualization</a> from data collected.
 
-   The InfluxDB time-series database and Grafana analytics visualization tools are popular.
+   (The InfluxDB time-series database and Grafana analytics visualization tools are popular.)
+   InfluxDB has no external dependencies and provides a SQL-like language with built in time-centric functions. 
 
-   Each InfluxDB dataset contains several key-value pairs, consisting of the fieldset and a timestamp. InfluxDB has no external dependencies and provides a SQL-like language with built in time-centric functions. This component can be adopted for collecting JMeter statistics.
+   Each time-series dataset contains several key-value pairs, consisting of the fieldset and a timestamp. 
+
+   The monitoring software can be adopted for collecting JMeter statistics.
 
 3. On a laptop, install and run a single instance of JMeter.
 
@@ -475,8 +509,7 @@ docker run --rm \
 
 1. Edit this sample run script to replace the default server name, secret, and AWS credentials for CloudWatch support:
 
-   <prer>
-# Create a persistent volume for data in /var/lib/grafana (database and plugins):
+   <pre># Create a persistent volume for data in /var/lib/grafana (database and plugins):
 docker volume create grafana-storage
 &nbsp;
 docker run \
@@ -526,6 +559,10 @@ UI, Load, and Performance Testing Your Websites on AWS</a> [42:25] WEB306 at AWS
 
 ## Rock Stars (who have published)
 
+NaveenKumar Namachivayam of QAInsights - STAR: <a target="_blank" href="https://github.com/awslabs/distributed-load-testing-on-aws">github.com/awslabs/distributed-load-testing-on-aws</a> used by <a target="_blank" href="https://aws.amazon.com/solutions/implementations/distributed-load-testing-on-aws/">BLOG</a>, <a target="_blank" href="https://docs.aws.amazon.com/solutions/latest/distributed-load-testing-on-aws/welcome.html">Implementation Guide</a> and <a target="_blank" href="https://www.youtube.com/watch?v=OtXn4PBCuZs" title="24m">VIDEO: Distributed Load Testing on AWS - Run JMeter Tests part 1</a>, <a target="_blank" href="https://www.youtube.com/watch?v=AMwSWhdLFQc" title="24m Sep 30, 2020">part 2</a>
+
+<a target="_blank" href="https://www.guru99.com/performance-testing.html">https://www.guru99.com/performance-testing.html</a>
+
 Santosh Arakere Marigowda
 
    * Created an image to pull in while inside a Docker container:
@@ -570,7 +607,22 @@ jmeter-docker poc
 by Purshottam Tyagi
 at https://github.com/tyagipurshottam/jemter [sic]
 
-## More on DevOps #
+
+https://www.youtube.com/watch?v=E02iab7vZyg
+How to use JMeter in Jenkins
+
+https://www.redline13.com/blog/open-architecture-with-aws/
+RedLin313 runs on AWS
+
+https://leanpub.com/master-jmeter-from-load-test-to-devops
+$25+ Master Apache JMeter From load testing to DevOps. COMPLETED ON 2020-04-28
+by Antonio Gomes Rodrigues, Philippe Mouawad, and Milamber, with preface by Alexander Podelko
+
+https://www.programmersought.com/article/18926104968/
+
+
+
+## More on DevSecOps #
 
 This is one of a series on DevOps:
 
