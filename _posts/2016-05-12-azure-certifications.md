@@ -51,7 +51,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td><td>* <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
    * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
-   * DP-300 Azure Database Administrator Associate<br />
+   * <a href="#DP-300">DP-300 Azure Database Administrator Associate</a><br />
    * PL-200 Power Platform Functional Consultant<br />
    * PL-400 Power Platform Developer<br />
    * PL-100 Power Platform App-maker<br />
@@ -1064,6 +1064,35 @@ Sample Exams:
 
 <hr />
 
+<a name="DP-300"></a>
+
+## DP-300 Azure Data Engineer Associate
+
+PROTIP: I attended <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-300t00">Microsoft's 4-day live DP-300T00 class</a> by <a target="_blank" href="https://www.linkedin.com/in/psule/">???</a> and <a target="_blank" href="https://www.linkedin.com/in/gnango-michel-landry-agah-001564b/">???</a>, but I highly recommend everyone to walk through their (free) lab instructions in English at 
+STAR: <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure">github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure</a> (and <a target="_blank" href="https://github.com/MicrosoftLearning/?q=DP-300&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/Graeme-Malcolm/">Graeme Malcolm</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a>.
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">DP-300_01_lab - Lab 1 - Using the Azure Portal and SQL Server Management Studio</a>
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 – Deploying PaaS databases</a>
+
+To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-database-administrator-associate/">Microsoft Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-300">DP-300</a>:
+
+   * Plan and implement data platform resources
+
+   * Implement a secure environment (<a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_03_lab.md">Lab 3</a>)
+
+   * Monitor and optimize operational resources (<a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_04_lab.md">Lab 4</a>)
+
+   * Optimize query performance (<a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_05_lab.md">Lab 5</a>)
+
+   * Perform automation of tasks (<a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_06_lab.md">Lab 6</a>)
+
+   * Plan and implement a High Availability and Disaster Recovery (HADR) environment (<a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_07_lab.md">Lab 7</a>)
+
+   * Perform administration by using T-SQL
+   <br /><br />
+
+<hr />
 
 <a name="AZ-303"></a>
 

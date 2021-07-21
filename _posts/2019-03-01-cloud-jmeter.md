@@ -634,6 +634,8 @@ RedLin313 SaaS runs on AWS
 https://loadninja.com/
 LoadNinja is a licensed cloud-based load testing tool empowers teams to record & instantly playback comprehensive load tests, without complex dynamic correlation & run these load tests in real browsers at scale.
 
+NOTE: <a target="_blank" href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2015/test/use-ui-automation-to-test-your-code?view=vs-2015&redirectedfrom=MSDN">Microsoft exited software testing in 2019</a> by removing CodeUI and Visual Studio for Performance Testing.
+
 
 <a name="JMeter"></a>
 
