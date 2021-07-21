@@ -31,10 +31,10 @@ The components necessary for performance/capacity emulating scripting and test r
 
    e. <strong>CI/CD workflow engine</strong> (such as Jenkins, Harness.io, CircleCI, GitHub Actions, etc.) which builds the app under test and test for security, functionality, capacity capability, etc. 
 
-   f. <strong>Monitoring</strong> (Metrics, Diagnostics, Logging) in the same environment running the app to identify trends, pin-point bottlenecks, and identify root causes.
+   f. <strong>Monitoring</strong> (Metrics, Diagnostics, Logging) of the environment running the app: show metrics to identify trends, Diagnostics to pin-point bottlenecks, and logs to identify root causes.
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Scenario <th><th> a. App Under Test <th><th> b. App host env <th><th> c. Emulator <th><th> d. Emulator hosting <th><th>e. CI/CD <th><th> f. Monitoring </th></tr>
+<tr><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
 <tr valign="top" align="center"><td> <a href="#ScenarioA">A</a> Blazemeter - single trans.
    </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="3"> Blazemeter </td></tr>
 <tr valign="top" align="center"><td> <a href="#ScenarioB">B</a> Blazemeter - single trans.
