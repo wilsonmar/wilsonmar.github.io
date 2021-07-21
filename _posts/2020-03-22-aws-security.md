@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "AWS Security"
-excerpt: "How to learn using the AWS Certified Security - Specialty (SCS-C01) exam"
+excerpt: "Securing secrets in Bash shell scripts while learning to ace the AWS Certified Security - Specialty (SCS-C01) exam"
 tags: [Security, DevOps]
-date: "2020-03-22"
+date: "2021-07-22"
 file: "aws-security"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -20,19 +20,30 @@ Here are my (incomplete) notes while I'm preparing for the AWS Certified Securit
 
 See <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">my webpage on cyber-security</a>
 
+## Secure Bash Script
+
+1. Install Bash, AWS CLI
+1. Obtain an account and setup AWS login from Terminal
+1. Create AWS KMS (Key Mangement Service) instance or use an existing one
+1. Add key
+1. Define IAM credentials
+1. Retrieve key within shell
+1. Format JSON response
+
+
+## AWS Security Certification
+
 The <strong>AWS Certified Security - Specialty</a> certification home page is at
 
    <ul><a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">https://aws.amazon.com/certification/certified-security-specialty</a>
    </ul>
 
-   The exam costs $300 USD (50% off if you clear another certification).
+   The exam costs $300 USD (50% off if you've clear another certification).
 
    Practice exam: 40 USD.
 
-   PROTIP: The exam is difficult becuase you need to correctly answer 75% of 65 multiple-choice questions in 3 hours without breaks (170 minutes). Many of the questions are long paragraphs and have multiple answers.
+   PROTIP: The exam is difficult becuase you need to correctly answer at least 75% of 65 multiple-choice questions in 3 hours without breaks (170 minutes). Many of the questions are long paragraphs and have multiple answers.
 
-
-## Domain outline
 
 The below domain info is adapted from <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">AWS's exam guide PDF</a>
 <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide_v1.6_FINAL.pdf">v1.6</a>
