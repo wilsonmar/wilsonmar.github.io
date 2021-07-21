@@ -52,8 +52,9 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> CircleCI, etc. </td><td> ??? </td></tr>
 </table>
 
+<a name="ScenarioB"></a>
 
-## Flowchart
+## Scenario C 
 
 <!-- v20 -->
 <amp-youtube data-videoid="ZCQdv57VDE8" layout="responsive" width="480" height="270"></amp-youtube>
@@ -89,6 +90,9 @@ It might be easier to make use of a (19) web-based SaaS service such as Blazemet
 ## Steps
 
 Below are more details about each deliverable:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/126423077-0cb8f417-a889-4bb1-9a6b-1d5bee810b6d.png">
+<img alt="cloud-jmeter-flow-1256x741.png" src="https://user-images.githubusercontent.com/300046/126423077-0cb8f417-a889-4bb1-9a6b-1d5bee810b6d.png"></a>
 
 1. Setup the application under test (on-prem), with API <strong>tokens</strong> and/or GUI User ID/Password.
 
