@@ -21,9 +21,9 @@ The diagram here describes progress toward distributing runs of JMeter within EC
 
 The components necessary for performance/capacity emulating scripting and test runs are:
 
-   a. The <strong>application under test</strong>. I've used "the-internet" because it is intended as a set of JavaScript challenges for scripting user emulation scripts. There are other sample apps.
+   a. The <strong>application under test</strong>. I've used <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">Dave Hoeffer's the-internet</a> because it is intended as a set of JavaScript challenges for scripting user emulation scripts. There are other sample apps.
 
-   b. <strong>App hosting environment</strong>. Dave Hoeffer has graciously created an instance on Heroku for single-user runs during scripting. But for load/capacity tests, we need to create a stand-alone app instance within a cloud.
+   b. <strong>App hosting environment</strong>. Dave Hoeffer has graciously created an instance on Heroku for single-user runs during scripting. But for load/capacity tests, we need to create a stand-alone app instance within a cloud. "the-internet" has a Docker image to run multiple users.
 
    c. <strong>Emulator</strong> (such as JMeter) to control 1 or a lot of emulated client instances running emulation scripts at the same time.
    
@@ -42,13 +42,13 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> the-internet Docker </td><td> <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - single trans.
    </td><td> <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet</a>
-   </td><td> Heroku </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - multi-trans.
+   </td><td> Heroku </td><td> JMeter </td><td> local Docker </td><td> N/A </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. Local - multi-trans.
    </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Jenkins? </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. SaaS CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. SaaS CI/CD
    </td><td rowspan="2"> custom </td><td rowspan="2"> Docker </td><td rowspan="2"> JMeter </td><td rowspan="2"> cloud 
    </td><td> Cloudbees </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. custom cloud CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioF">F</a>. custom cloud CI/CD
    </td><td> CircleCI, etc. </td><td> ??? </td></tr>
 </table>
 
