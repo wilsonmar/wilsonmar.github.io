@@ -43,7 +43,7 @@ The components necessary for performance/capacity emulating scripting and test r
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
    </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. AWS with CI/CD
-   </td><td rowspan="2"> custom (Apigee) </td><td> Custom (ECS/K8s) </td><td> JMeter </td><td> <a href="#YourAWS"><u>Your AWS ECS</u></a> 
+   </td><td rowspan="2"> custom (Apigee) </td><td> Custom (AWS ECS/K8s) </td><td> JMeter </td><td> <a href="#YourAWS"><u>Your AWS ECS</u></a> 
    </td><td> Cloudbees, CircleCI, etc. </td><td> ??? </td></tr>
 </table>
 
@@ -53,11 +53,11 @@ A. If your app under test can be reached from the public internet (such as "the-
 
    Blazemeter runs JMeter scripts you upload from your laptop.
 
-B. To run multiple users at a time on "the-internet", please fire up <strong>your own cloud instance</strong> (in AWS ECS, Azure, GCP, etc.) to run an emulator (JMeter) image pulled from DockerHub. AWS ECS is usually enough (without Kubernetes) becuase the number of emulator (JMeter) instances is usually a fixed number during a test run.
+B. To run multiple users at a time, pull both "the-internet" app and emulator (JMeter) images from DockerHub and run them in <strong>your own cloud instance</strong> (within AWS ECS, Azure, GCP, etc.). AWS ECS is usually enough (without Kubernetes) becuase the number of emulator (JMeter) instances is usually a fixed number during a test run.
 
 C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as Jenkins) or much monitoring, thus the "N/A".
 
-D. The most common scenario is standing up two cloud instances: one for the app under test (such as Apigee) and another to run JMeter for performance/capacity testing. The flowchart below describes the intricacies that goes with such a setup:
+D. The most common scenario is standing up two cloud instances: an AWS ECS/K8S instance to run the app under test (such as Apigee) and another to run JMeter for performance/capacity testing. The flowchart below describes the intricacies that goes with such a setup:
 
 
 <a name="YourAWS"></a>
