@@ -39,12 +39,11 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><u>the-internet</u></a>)
    </td><td> Dave's Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
-   </td><td> (the-internet in Docker) </td><td> <a href="#YourAWS"><u>Your AWS</u></a> </td><td> (JMeter)   </td></tr>
+   </td><td> (the-internet in Docker) </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS ECS</u></a> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
-   </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet Docker</a>)
    </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. SaaS CI/CD
-   </td><td rowspan="2"> custom (Apigee) </td><td rowspan="2"> Docker </td><td rowspan="2"> JMeter </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS</u></a> 
+   </td><td rowspan="2"> custom (Apigee) </td><td rowspan="2"> Docker in ECS/K8s </td><td rowspan="2"> JMeter </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS</u></a> 
    </td><td> Cloudbees </td><td> ??? </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. custom cloud CI/CD
    </td><td> CircleCI, etc. </td><td> ??? </td></tr>
@@ -56,7 +55,7 @@ A. If your app under test can be reached from the public internet (such as "the-
 
    Blazemeter runs JMeter scripts you upload from your laptop.
 
-B. To run multiple users at a time on "the-internet", please fire up your own cloud instance (in AWS, Azure, GCP, etc.) to run an emulator (JMeter) image you pull from DockerHub.
+B. To run multiple users at a time on "the-internet", please fire up <strong>your own cloud instance</strong> (in AWS ECS, Azure, GCP, etc.) to run an emulator (JMeter) image pulled from DockerHub. AWS ECS is usually enough (without Kubernetes) becuase the number of emulator (JMeter) instances is usually a fixed number during a test run.
 
 C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as Jenkins) or much monitoring, thus the "N/A".
 
