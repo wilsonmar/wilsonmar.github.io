@@ -39,28 +39,33 @@ The components necessary for performance/capacity emulating scripting and test r
    </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/"><u>the-internet</u></a>)
    </td><td> Dave's Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
-   </td><td> (the-internet in Docker) </td><td> Your <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
+   </td><td> (the-internet in Docker) </td><td> <a href="#YourAWS"><u>Your AWS</u></a> </td><td> (JMeter)   </td></tr>
 <tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local (offline)
    </td><td> (<a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">the-internet Docker</a>)
-   </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. Local - multi-trans.
-   </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter Docker </td><td> local Docker </td><td> Jenkins? </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. SaaS CI/CD
-   </td><td rowspan="2"> custom </td><td rowspan="2"> Docker </td><td rowspan="2"> JMeter </td><td rowspan="2"> cloud 
+   </td><td> Apache web Docker </td><td> JMeter </td><td> local Docker </td><td> N/A (Jenkins) </td><td> N/A </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. SaaS CI/CD
+   </td><td rowspan="2"> custom (Apigee) </td><td rowspan="2"> Docker </td><td rowspan="2"> JMeter </td><td rowspan="2"> <a href="#YourAWS"><u>Your AWS</u></a> 
    </td><td> Cloudbees </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioF">F</a>. custom cloud CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. custom cloud CI/CD
    </td><td> CircleCI, etc. </td><td> ??? </td></tr>
 </table>
 
 ## Scenarios
 
-A. If your app under test can be reached from the public internet (such as "the-internet"), you don't need to install an emulator (such as JMeter) on your laptop if you use Blazemeter SaaS, which provides a quick and easy way to begin. But please don't run more than one user at a time.
+A. If your app under test can be reached from the public internet (such as "the-internet" running on Dave's own Heroku instance), you don't need to install an emulator (such as JMeter) on your laptop if you use Blazemeter SaaS, which provides a quick and easy way to begin. But please don't run more than one user at a time.
 
    Blazemeter runs JMeter scripts you upload from your laptop.
 
-B. To run multiple users at a time, please fire up your own cloud instance (in AWS, Azure, GCP, etc.) to run an emulator image you pull from DockerHub.
+B. To run multiple users at a time on "the-internet", please fire up your own cloud instance (in AWS, Azure, GCP, etc.) to run an emulator (JMeter) image you pull from DockerHub.
 
-C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images.
+C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as Jenkins) or much monitoring, thus the "N/A".
+
+D. 
+
+
+<a name="YourAWS"></a>
+
+## Your AWS instance
 
 
 <a name="ScenarioB"></a>
