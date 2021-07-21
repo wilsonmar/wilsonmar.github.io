@@ -35,15 +35,17 @@ The components necessary for performance/capacity emulating scripting and test r
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr align="left"><th> Scenario </th><th> a. App Under Test </th><th> b. App host env </th><th> c. Emulator </th><th> d. Emulator hosting </th><th>e. CI/CD </th><th> f. Monitoring </th></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a> Blazemeter - single trans.
-   </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="2"> Blazemeter </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a> Blazemeter - single trans.
-   </td><td> Docker </td><td> cloud? </td><td> (JMeter)   </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a> Local - single trans.
-   </td><td> the-internet </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a> with cloud CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioA">A</a>. Blazemeter - single trans.
+   </td><td> the-internet </td><td> Heroku </td><td> (JMeter) </td><td rowspan="2" colspan="3"> Blazemeter </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioB">B</a>. Blazemeter - multi-trans.
+   </td><td> Docker </td><td> <strong>AWS or Azure</strong> </td><td> (JMeter)   </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - single trans.
+   </td><td> the-internet </td><td> Heroku </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioC">C</a>. Local - multi-trans.
+   </td><td> the-internet Docker </td><td> local Docker </td><td> JMeter </td><td> local Docker </td><td> Shell script </td><td> ??? </td></tr>
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioD">D</a>. with cloud CI/CD
    </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Cloudbees </td><td> ??? </td></tr>
-<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a> with cloud CI/CD
+<tr valign="top" align="center"><td align="left"> <a href="#ScenarioE">E</a>. with cloud CI/CD
    </td><td> custom </td><td> Docker </td><td> JMeter </td><td> cloud </td><td> Jenkins </td><td> ??? </td></tr>
 </table>
 
