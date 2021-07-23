@@ -3,7 +3,7 @@ layout: post
 title: "Git Signing"
 excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
 tags: [git, security]
-date: "2020-10-18"
+date: "2021-07-22"
 file: "git-signing"
 image:
 # git-signing-1900x500.jpg
@@ -1092,7 +1092,7 @@ gpg: next trustdb check due at 2022-03-01
 ------------------------------------
 sec   rsa2048/62C414BA89BFBE52 2020-03-01 [SC] [expires: 2022-03-01]
       0BB29E3C5216420CC50ACF8D62C414BA89BFBE52
-uid                 [ultimate] John Doe <john_doe+github@gmail.com>
+uid                 [ultimate] John Doe &LT;john_doe+github@gmail.com>
 ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
@@ -1527,11 +1527,28 @@ The steps below describes work with a <strong>detached signature</strong> where 
 <a target="_blank" href="https://davidboland.site/blog/signing-you-work-as-a-developer">BLOG</a>:
 Users may want this level of verification for security reasons. Especially if the package handles sensitive information.
 
+1. Navigate to the folder where the file to be encrypted is located. For example:
+
+   <pre><strong>cd ~/.aws</strong></pre>
+
 1. Get the signature, such as "62C414BA89BFBE52".
 
-1. To create a signed file:
+   <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
-   <pre><strong>gpg --detach-sign --sign-with 62C414BA89BFBE52 -o package.sig package.exe
+1. Copy the signing key marked "[ultimate]" and not "[revoked]", such as "62C414BA89BFBE52" in this sample response:
+
+   <pre>sec   rsa2048/<strong>62C414BA89BFBE52</strong> 2020-03-01 [SC] [expires: 2022-03-01]
+      0BB29E3C5216420CC50ACF8D62C414BA89BFBE52
+uid                 [ultimate] John Doe &LT;john_doe+github@gmail.com>
+   </pre>
+
+1. Construct a variable by typing and pasting:
+
+   <pre><strong>SIGNING="62C414BA89BFBE52"</strong></pre>
+
+1. Create a signed file by triple-clicking this command and copy to Clipboard the command to encrypt file "credentials" and output file "credentials.gpg":
+
+   <pre><strong>gpg --detach-sign --sign-with "$SIGNING" -o credentials.gpg  credentials
    </strong></pre>
 
    <tt>\-\-detach-sign</tt> requests a detached signature to be generated.
@@ -1540,9 +1557,20 @@ Users may want this level of verification for security reasons. Especially if th
 
    <tt>-o</tt> specifies the output file. Traditionally we use either a <tt>.sig</tt> or a <tt>.gpg</tt> extension.
 
-1. For a user to verify integrity of the file:
+1. If you configured a Yubikey, a pop-up is presented:
 
-   <pre><strong>gpg --verify package.sig package.exe
+   <img width="538" alt="git-signing-insert-card-1076x320" src="https://user-images.githubusercontent.com/300046/126728494-4d172bea-0b40-49a0-9f4e-4064efbda639.png">
+
+   Insert your Yubikey and enter its PIN code.
+
+1. Verify that files were generated:
+
+   <pre><strong>ls credentials.gpg
+   </strong></pre>
+
+1. Verify integrity of the file:
+
+   <pre><strong>gpg --verify credentials.gpg
    </strong></pre>
 
 

@@ -37,6 +37,9 @@ I am working on a Bash/Z shell script so you can copy and paste a single command
 
 This would be using https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
 
+An alternative is AKEYLESS, which enables authentication with several clouds (AWS IAM, Azure AD, SAML, LDAP, API key).
+
+
 
 ## AWS Security Certification
 

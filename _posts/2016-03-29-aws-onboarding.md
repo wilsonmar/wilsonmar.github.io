@@ -133,20 +133,25 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
 
    PROTIP: For automatic complex autocompletion of AWS CLI commands, there is a 3rd-party utility that provides a shell GUI that suggest as you type:
 
+   Read about it at <a target="_blank" href="https://github.com/awslabs/aws-shell">https://github.com/awslabs/aws-shell</a>
+
 5. To install the <a target="_blank" href="https://medium.com/@cuttenweiler/aws-shell-i-think-im-in-love-d39878c3e7b7">awesome</a> AWS Shell:
 
    <tt><strong>pip install aws-shell
    </strong></tt>
 
-   Read about it at <a target="_blank" href="https://github.com/awslabs/aws-shell">https://github.com/awslabs/aws-shell</a>
+   The package is installed in folders: <tt>/usr/local/bin/aws-shell</tt>
 
-   NOTE: The package is installed in folders:<br />
-   /usr/local/bin/aws-shell
+   If you see these error messages:
+
+   <pre>ERROR: requests 2.22.0 has requirement urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1, but you'll have urllib3 1.26.6 which is incompatible.
+ERROR: jupyter-console 6.0.0 has requirement prompt_toolkit<2.1.0,>=2.0.0, but you'll have prompt-toolkit 1.0.18 which is incompatible.
+ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll have prompt-toolkit 1.0.18 which is incompatible.
+   </pre>
 
 6. To enable AWS Shell:
 
-   <tt><strong>
-   aws-shell
+   <tt><strong>aws-shell
    </strong></tt>
 
    You show now be in the sub-shell with prompt:
@@ -162,6 +167,7 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
    </strong></tt>
 
    Alternately, <tt>.quit</tt> works too.
+
 
 
    <a name="jp"></a>
@@ -181,7 +187,11 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
    brew install jp
    </strong></pre>
    
-2. Verify it works by running the command above.
+   <pre>🍺  /usr/local/Cellar/jp/1.1.12: 3 files, 3MB</pre>
+
+2. Verify it works by running the echo command above.
+
+   2021/07/21 09:11:38 line.go:44: no valid y values given
 
 3. See other usage and examples at <a target="_blank" href="https://github.com/jmespath/jp#usage">https://github.com/jmespath/jp#usage</a>
 
