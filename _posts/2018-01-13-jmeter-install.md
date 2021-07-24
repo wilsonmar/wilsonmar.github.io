@@ -53,7 +53,100 @@ This tutorial introduces JMeter by explaining each setp of an automated script f
    Note version 4 became available on Feb. 10, 2018 to support Java 9.
 
 
-## Installation options
+<a name="JavaManually"></a>
+
+## Java install 
+
+See https://wilsonmar.github.io/java-on-apple-mac-osx/
+
+   PROTIP: JMeter is written in Java, so it can be run on Windows, Mac, and Linux.
+
+   If you were to manually click at
+   http://www.oracle.com/technetwork/java/javase/downloads/index.html
+   installation would be to:
+
+   <pre>/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+   </pre>
+
+   But instead use the automated approach:
+
+1. First see what version is considered the latest 64-bit Java Development Kit (JDK) by brew:
+
+   <pre><strong>brew cask info java
+   </strong></pre>
+
+   BLAH: We don't want to install version 9 just yet because when JMeter is installed, it throws up this error:
+
+   <pre>Error: Java version is too low to run JMeter. Needs at least Java >= 1.8.0.
+   </pre>
+
+1. If you have it already installed, <a target="_blank" href="https://planwithvoyant.zendesk.com/hc/en-us/articles/209725003-Install-or-revert-to-a-prior-version-of-Java-Mac-OS-X">uninstall it</a>.
+
+1. PROTIP: Install not the latest 64-bit Java Development Kit (JDK), but the last stable v1.8 version:
+
+   <pre><strong>
+   brew tap caskroom/versions
+   brew install --cask java8
+   </strong></pre>
+
+   The response:
+
+   <pre>==> Caveats
+This Cask makes minor modifications to the JRE to prevent issues with
+packaged applications, as discussed here:
+&nbsp;
+  https://bugs.eclipse.org/bugs/show_bug.cgi?id=411361
+&nbsp;
+If your Java application still asks for JRE installation, you might need
+to reboot or logout/login.
+&nbsp;
+Installing this Cask means you have AGREED to the Oracle Binary Code
+License Agreement for Java SE at
+&nbsp;
+  https://www.oracle.com/technetwork/java/javase/terms/license/index.html
+&nbsp;
+==> Satisfying dependencies
+==> Downloading http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd30
+######################################################################## 100.0%
+==> Verifying checksum for Cask java8
+==> Installing Cask java8
+==> Running installer for java8; your password may be necessary.
+==> Package installers may write to any location; options such as --appdir are i
+Password:
+==> installer: Package name is JDK 8 Update 152
+==> installer: Installing at base path /
+==> installer: The install was successful.
+🍺  java8 was successfully installed!
+   </pre>
+
+
+2. Provide your administrator password when prompted.
+
+   ### Verify Java version
+
+   PROTIP: Many prefer to use Java 8 because it is the last version which is open source licensed.
+
+3. Confirm Java works by returning the version of the Java compiler installed. In version 9:
+
+   <pre><strong>javac --version
+   </strong></pre>
+
+   Alternately, in version 8, use a single dash:
+
+   <pre><strong>javac -version
+   </strong></pre>
+
+   You should see (at time of writing):
+
+   <pre>java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
+   </pre>
+
+
+<hr />
+
+## JMeter Installation options
 
    There are several ways to obtain a running instance of JMeter,
    listed from easiest to most difficult:
@@ -307,24 +400,6 @@ NOTICE         bin            extras         licenses
 9. To stop the GUI, press command+Q or cursor to the top of the screen to click JMeter, then Quit.
 
 
-   ### Verify Java version
-
-9. Verify the version of Java being used:
-
-   <pre><strong>java -version</strong></pre>
-
-   You should see (at time of writing):
-
-   <pre>java version "1.8.0_162"
-Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
-Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
-   </pre>
-
-   Many prefer to use Java 8 because it is the last version which is open source licensed.
-
-   See https://wilsonmar.github.io/java-on-apple-mac-osx/
-
-
 <a name="DockerHub"></a>
 
 ## Images from DockerHub.com
@@ -405,93 +480,6 @@ If you're on a Mac, all the manual steps described below are automatically perfo
    In this tutorial and script, we load test a RabbitMQ message broker to accept and forward messages, like a physical post office: where you put the mail that you want posting in a post box, you can be sure that the Postman will eventually deliver the mail to your recipient. In this analogy, RabbitMQ is a post box, a post office, and a postman.
 
    https://www.rabbitmq.com/download.html
-
-
-<a name="Manually"></a>
-
-## Manual step-by-step install
-
-### Java
-
-   PROTIP: JMeter is written in Java, so it can be run on Windows, Mac, and Linux.
-
-   If you were to manually click at
-   http://www.oracle.com/technetwork/java/javase/downloads/index.html
-   installation would be to:
-
-   <pre>
-/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home
-   </pre>
-
-   But instead use the automated approach:
-
-1. First see what version is considered the latest 64-bit Java Development Kit (JDK) by brew:
-
-   <pre><strong>
-   brew cask info java
-   </strong></pre>
-
-   BLAH: We don't want to install version 9 just yet because when JMeter is installed, it throws up this error:
-
-   <pre>
-   Error: Java version is too low to run JMeter. Needs at least Java >= 1.8.0.
-   </pre>
-
-1. If you have it already installed, <a target="_blank" href="https://planwithvoyant.zendesk.com/hc/en-us/articles/209725003-Install-or-revert-to-a-prior-version-of-Java-Mac-OS-X">uninstall it</a>.
-
-1. PROTIP: Install not the latest 64-bit Java Development Kit (JDK), but the last stable v1.8 version:
-
-   <pre><strong>
-   brew tap caskroom/versions
-   brew install --cask java8
-   </strong></pre>
-
-   The response:
-
-   <pre>
-==> Caveats
-This Cask makes minor modifications to the JRE to prevent issues with
-packaged applications, as discussed here:
-&nbsp;
-  https://bugs.eclipse.org/bugs/show_bug.cgi?id=411361
-&nbsp;
-If your Java application still asks for JRE installation, you might need
-to reboot or logout/login.
-&nbsp;
-Installing this Cask means you have AGREED to the Oracle Binary Code
-License Agreement for Java SE at
-&nbsp;
-  https://www.oracle.com/technetwork/java/javase/terms/license/index.html
-&nbsp;
-==> Satisfying dependencies
-==> Downloading http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd30
-######################################################################## 100.0%
-==> Verifying checksum for Cask java8
-==> Installing Cask java8
-==> Running installer for java8; your password may be necessary.
-==> Package installers may write to any location; options such as --appdir are i
-Password:
-==> installer: Package name is JDK 8 Update 152
-==> installer: Installing at base path /
-==> installer: The install was successful.
-🍺  java8 was successfully installed!
-   </pre>
-
-
-2. Provide your administrator password when prompted.
-
-3. Confirm it works by returning the version of the Java compiler installed. In version 9:
-
-   <pre><strong>
-   javac --version
-   </strong></pre>
-
-   Alternately, in version 8, use a single dash:
-
-   <pre><strong>
-   javac -version
-   </strong></pre>
-
 
 
    ### Run bash script
