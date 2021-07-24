@@ -5,9 +5,9 @@ excerpt: "Know the options, including my shell script that does it all, each ste
 tags: [perftest, JMeter]
 date: "2021-07-23"
 file: "jmeter-install"
-image:
-# feature: pic white hand key ownership 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622160/3b59e1b2-0585-11e6-9157-cc003fc0f90b.jpg
+image: 
+# feature: jmeter-artem-beliaikin-FWShcTBnqjo-unsplash-1900x500
+  feature: https://user-images.githubusercontent.com/300046/126880654-2c5f2475-f5e3-4761-ada6-98ec48c03121.png
   credit: Artem Beliaikin on Unsplash.com
   creditlink: https://unsplash.com/photos/FWShcTBnqjo
 comments: true
