@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java Install on macOS"
-excerpt: "Because programmers can't get enough caffeine"
+excerpt: "Because programmers can't get enough caffeine ;)"
 tags: [apple, mac, setup]
 date: "2016-08-10"
 file: "java-on-apple-mac-osx"
@@ -154,13 +154,21 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
     <pre><strong>brew install --cask adoptopenjdk</strong></pre>
 
-   * <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products. Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
-
-    <pre><strong>brew cask search zulu</strong></pre>
-
    * <a target="_blank" href="https://www.ibm.com/us-en/marketplace/support-for-runtimes">IBM</a> OpenJDK with Eclipse OpenJ9 
 
    * <a target="_blank" href="https://access.redhat.com/articles/1299013">Red Hat</a>
+
+   <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products. Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
+
+   <pre><strong>brew search zulu</strong></pre>
+
+   The response:
+
+   <pre>==> Formulae
+zurl
+==> Casks
+zulu       zulu11     zulu13     zulu15     zulu7      zulu8      zulufx
+   </pre>
 
 
    <a name="OracleJavaC"></a>
@@ -271,28 +279,24 @@ For full documentation, see: https://github.com/hikage/jenv#readme
 
 0. Get info:
 
-   <pre><strong>
-   jenv info java
+   <pre><strong>jenv info java
    </strong></pre>
 
    Sample response:
 
-   <pre>
-   Jenv will exec : /usr/bin/java
+   <pre>Jenv will exec : /usr/bin/java
 Exported variables :
   JAVA_HOME=/Users/wilsonmar/.jenv/versions/system
    </pre>
 
 0. List installers available for use by jenv:
 
-   <pre><strong>
-   ls -al /Library/Java/JavaVirtualMachines/
+   <pre><strong>ls -al /Library/Java/JavaVirtualMachines/
    </strong></pre>
 
    The response:
 
-   <pre>
-total 0
+   <pre>total 0
 drwxr-xr-x  5 root  wheel  160 Mar 30  2018 .
 drwxr-xr-x  5 root  wheel  160 Mar 30  2018 ..
 drwxr-xr-x  2 root  wheel   64 Mar 30  2018 jdk-10.jdk
@@ -306,54 +310,46 @@ drwxr-xr-x  3 root  wheel   96 Mar 30  2018 jdk1.8.0_162.jdk
 
 0. The point of jenv is to add additional versions, such as back version JDK 7.
 
-   <pre><strong>
-   jenv add /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
+   <pre><strong>jenv add /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
    </strong></pre>
 
    The response:
 
-   <pre>
-   oracle64-1.7.0.65 added
+   <pre>oracle64-1.7.0.65 added
    </pre>
 
 0. Add JDK 8:
 
-   <pre><strong>
-   jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+   <pre><strong>jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
    </strong></pre>
 
    http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u162-macosx-x64.dmg
 
    The response:
 
-   <pre>
-   oracle64-1.8.0.45 added
+   <pre>oracle64-1.8.0.45 added
    </pre>
 
    The above provide a handle for jenv provide other apps to use.
 
 0. List the Java versions jenv knows about:
 
-   <tt><strong>
-   jenv versions
+   <tt><strong>jenv versions
    </strong></tt>
 
    The response if none if brew cask was not installed:
 
-   <pre>
-   * system (set by /usr/local/var/jenv/version)
+   <pre>* system (set by /usr/local/var/jenv/version)
    </pre>
 
 0. To configure global version for all apps to use:
 
-   <pre><strong>
-   jenv global oracle64-1.8.0.45
+   <pre><strong>jenv global oracle64-1.8.0.45
    </strong></pre>
 
    Example response:
 
-   <pre>
-   system
+   <pre>system
    oracle64-1.7.0.65
    * oracle64-1.8.0.45 (set by /Users/wilsonmar/.jenv/version)
    </pre>
@@ -385,8 +381,7 @@ For macOS, this page recommends using Make to compile from source</a>.
 
 0. Download source using Mercurial to a new folder "openjdk9":
 
-   <tt><strong>
-   hg clone http://hg.openjdk.java.net/jdk9/jdk9 openjdk9
+   <tt><strong>hg clone http://hg.openjdk.java.net/jdk9/jdk9 openjdk9
    cd ./openjdk9
    </strong></tt>
 
@@ -396,8 +391,7 @@ For macOS, this page recommends using Make to compile from source</a>.
 
 0. Install <a target="_blank" href="https://www.xquartz.org/"> XQuartz</a> for X Window System that runs on Macs:
 
-   <tt><strong>
-   brew install Caskroom/cask/xquartz<br />
+   <tt><strong>brew install Caskroom/cask/xquartz<br />
    brew cask list
    </strong></tt>
 
@@ -417,8 +411,7 @@ For macOS, this page recommends using Make to compile from source</a>.
 
 0. Install ccache (compiler cache):
 
-   <tt><strong>
-   brew install ccache
+   <tt><strong>brew install ccache
    </strong></tt>
 
 0. Make a symlink /usr/bin/gcc -> /usr/local/Cellar/apple-gcc42/4.2.1-5666.3/bin/gcc-4.2 (same for g++)
@@ -431,9 +424,11 @@ For macOS, this page recommends using Make to compile from source</a>.
 https://mihail.stoynov.com/2015/01/29/building-openjdk-9-on-a-osx-or-any-linux/
    shows JDK 9 install using ccache, mercurial (hg), jtreg "testing harness", and Webrev to diff code
 
+
 ## Update Java
 
-https://java.com/en/download/help/mac_java_update.xml
+<a target="_blank" href="https://java.com/en/download/help/mac_java_update.xml">https://java.com/en/download/help/mac_java_update.xml</a>
+
 
 NOTE: Others include cheatsheet, google-chrome, google-drive, google-hangouts, dropbox, etc.
 listed in Sourabh Bajaj's venerable
@@ -442,6 +437,7 @@ Mac OSX Setup Guide</a>, developed and distributed as a
 <a target="_blank" href="http://gitbook.com/">GitBook</a>.
 
 
+<a name="Maven"></a>
 
 ### Maven (mvn)
 
@@ -457,22 +453,24 @@ Mac OSX Setup Guide</a>, developed and distributed as a
 
    If it's installed, the sample response:
 
-   <pre>Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
-Maven home: /usr/local/Cellar/maven/3.6.3/libexec
-Java version: 1.8.0_232, vendor: AdoptOpenJDK, runtime: /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: UTF-8
+   <pre>Apache Maven 3.8.1 (05c21c65bdfed0f71a2f2ada8b84da59348c4c5d)
+Maven home: /usr/local/Cellar/maven/3.8.1/libexec
+Java version: 1.8.0_162, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: utf-8
 OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
    </pre>
 
-   PROTIP: Many have switched to using Gradle instead of Maven or Ant.
+   PROTIP: Many have switched to using <strong>Gradle</strong> instead of Maven or Ant.
 
 
 
+<a name="Kotlin"></a>
 
 ## Kotlin
 
 Kotlin is a language that makes use of the JVM.
 Invented by JetBrains (IntelliJ).
+
 
 ## Social
 

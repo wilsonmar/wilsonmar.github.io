@@ -1542,13 +1542,22 @@ Users may want this level of verification for security reasons. Especially if th
 uid                 [ultimate] John Doe &LT;john_doe+github@gmail.com>
    </pre>
 
-1. Construct a variable by typing and pasting:
+1. Plug in your Yubikey if the command response above has a line like this:
 
-   <pre><strong>SIGNING="62C414BA89BFBE52"</strong></pre>
+   <pre>    Card serial no. = 0006 16252890</pre>
 
-1. Create a signed file by triple-clicking this command and copy to Clipboard the command to encrypt file "credentials" and output file "credentials.gpg":
+1. Construct a variable by typing definitions of values to be used in commands:
 
-   <pre><strong>gpg --detach-sign --sign-with "$SIGNING" -o credentials.gpg  credentials
+   <pre><strong>SIGNING="62C414BA89BFBE52"
+ENCRYPTED_FILE="credentials.gpg"
+SOURCE_FILE="credentials"</strong></pre>
+
+   PROTIP: Defining variables allows copy and paste of the complex command below, easier than constructing it piecemeal.
+   This also eliminates typos when the same values are specified in several commands.
+
+1. Construct a command to create a signed file by triple-clicking this command to copy to Clipboard the command to encrypt file "credentials" and output file "credentials.gpg":
+
+   <pre><strong>gpg --detach-sign --sign-with "$SIGNING" -o "${ENCRYPTED_FILE}"  "${SOURCE_FILE}"
    </strong></pre>
 
    <tt>\-\-detach-sign</tt> requests a detached signature to be generated.
@@ -1565,13 +1574,19 @@ uid                 [ultimate] John Doe &LT;john_doe+github@gmail.com>
 
 1. Verify that files were generated:
 
-   <pre><strong>ls credentials.gpg
+   <pre><strong>ls -al "$ENCRYPTED_FILE"
    </strong></pre>
 
+<!--
 1. Verify integrity of the file:
 
    <pre><strong>gpg --verify credentials.gpg
    </strong></pre>
+
+# This returns "gpg: no signed data
+gpg: can't hash datafile: No data"
+
+-->
 
 
 ### Standard signing

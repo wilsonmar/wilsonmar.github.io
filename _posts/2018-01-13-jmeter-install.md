@@ -3,7 +3,7 @@ layout: post
 title: "JMeter install on a Mac to load test a RabbitMQ service"
 excerpt: "Know the options, including my shell script that does it all, each step explained"
 tags: [perftest, JMeter]
-date: "2018-01-13"
+date: "2021-07-23"
 file: "jmeter-install"
 image:
 # feature: pic white hand key ownership 1900x500.jpg
@@ -18,22 +18,7 @@ comments: true
 
 This tutorial introduces JMeter by explaining each setp of an automated script for imposing artificial load on a server created to run RabbitMQ.
 
-## Background
-
-1. In an internet browser (Google Chrome, Mozilla Firefox, Apple Safari, etc.), open
-
-   <a target="_blank" href="
-   https://github.com/apache/jmeter">
-   https://github.com/apache/jmeter</a>
-
-   BTW: Historically, JMeter first became available December 2003 as the "Jakarta" project until it became the full-fledged product. Its previous URL is automatically routed from
-   http://jakarta.apache.org/jmeter
-
-   For now, just look at the webpage header:
-   JMeter is open-sourced by the Apache Foundation project. 
-   This means JMeter is offered free.
-
-   ### Java based
+## Java based
 
    The "J" in JMeter refers to the Java Virtual Machine (JVM).
    JMeter is written in Java.
@@ -42,48 +27,62 @@ This tutorial introduces JMeter by explaining each setp of an automated script f
    "Meter" refers to being akin to parking meters that measure time. 
    It is said that "Time is money" because when a user waits for the system to respond, he or she is not productive getting work done. And the longer that a transaction takes to respond, the more servers are needed to server everyone.
 
-   Each JMeter program running can emulate hundreds of human users typing and clicking through a web application because JMeter mimics just the network traffic exchanged between clients and servers. We make JMeter do that in order to measure how the application server will likely behave under load when running in production. The amount of load imposed by JMeter is often described in terms of the number of <em>real</em> users JMeter emulates. Each fake user may be setup to submit transactions quicker than real users.
+   Each JMeter program running can <strong>emulate hundreds of human users</strong> typing and clicking through a web application because <strong>JMeter mimics just the network traffic</strong> exchanged between clients and servers. 
 
-   From the Apache web page:
+   JMeter is more than response time. Using JMeter enables us to measure how the application server will likely behave under load when running in production. The amount of load imposed by JMeter is often described in terms of the number of "users" JMeter emulates. Each fake user may be setup to submit transactions quicker than real users.
 
-   BLAH: "JMeter is not a browser, it works at protocol level. As far as web-services and remote services are concerned, JMeter looks like a browser (or rather, multiple browsers); however JMeter does not perform all the actions supported by browsers. In particular, JMeter does not execute the Javascript found in HTML pages. Nor does it render the HTML pages as a browser does (it's possible to view the response as HTML etc., but the timings are not included in any samples, and only one sample in one thread is ever displayed at a time)."
+   "JMeter is not a browser, it works at protocol level. As far as web-services and remote services are concerned, JMeter looks like a browser (or rather, multiple browsers); however JMeter does not perform all the actions supported by browsers. In particular, JMeter does not execute the Javascript found in HTML pages. Nor does it render the HTML pages as a browser does (it's possible to view the response as HTML etc., but the timings are not included in any samples, and only one sample in one thread is ever displayed at a time)."
+
+   The above is from the Apache web page.
+
+   JMeter is offered free because it's open-sourced as an Apache Foundation project. 
+
+1. In an internet browser (Google Chrome, Mozilla Firefox, Apple Safari, etc.), open
+
+   <a target="_blank" href="
+   https://github.com/apache/jmeter">
+   https://github.com/apache/jmeter</a>
+
+   BTW: Historically, JMeter first became available December 2003 as the "Jakarta" project until it became the full-fledged product. Its previous URL is automatically routed from http://jakarta.apache.org/jmeter
 
 2. Wikipedia lists the version history:
 
-   <a target="_blank" href="https://en.wikipedia.org/wiki/Apache_JMeter/">
-   https://en.wikipedia.org/wiki/Apache_JMeter</a>
+   <a target="_blank" href="https://www.wikiwand.com/en/Apache_JMeter">
+   https://www.wikiwand.com/en/Apache_JMeter</a>
 
    Note version 4 became available on Feb. 10, 2018 to support Java 9.
 
 
 ## Installation options
 
-There are several ways to obtain a running instance of JMeter,
-listed from easiest to most difficult:
+   There are several ways to obtain a running instance of JMeter,
+   listed from easiest to most difficult:
 
-A) You don't need a local machine if you run JMeter within a cloud service such as at
+   A) You don't need a local machine if you run JMeter within a cloud service such as at
    <a href="#Blazemeter">Blazemeter.com</a> or 
    <a target="_blank" href="https://www.flood.io/">Flood.io</a>
 
    But customers at some companies do not trust public clouds. So...
 
-B) <a href="#BinaryInstall">Manually download installer to install locally</a>.
+   B) <a href="#BinaryInstall">Manually download installer to install locally</a>.
+
+   C) <a href="#BinaryInstall">Manually download installer to install locally</a>.
 
    This is the approach shown by many <a href="#Tutorials">tutorials (see below)</a>
 
-C) <a href="#DockerHub">Pull an image from Docker Hub</a> 
+   D) <a href="#DockerHub">Pull an image from Docker Hub</a> 
    within a Google Compute or AWS cloud instance.
 
-D) <a href="#Dockerfile">Use the Dockerfile to build your own Docker image</a> containing JMeter.
+   E) <a href="#Dockerfile">Use the Dockerfile to build your own Docker image</a> containing JMeter.
 
-E) <a href="#AutoScript">Run a Bash script to install JMeter natively on you Mac</a>.
+   F) <a href="#AutoScript">Run a Bash script to install JMeter natively on you Mac</a>.
 
-F) <a href="#Manually">Manually type in Terminal commands executed in the automated script</a>.
+   G) <a href="#Manually">Manually type in Terminal commands executed in the automated script</a>.
 
-CAUTION: If you are in a large enterprise, confer with your security team before 
-installing. They often have a repository such as Artifactory or Nexus where
-installers are available after being vetted and perhaps patched
-for security vulnerabilities.
+   CAUTION: If you are in a large enterprise, confer with your security team before 
+   installing. They often have a repository such as Artifactory or Nexus where
+   installers are available after being vetted and perhaps patched
+   for security vulnerabilities.
 
 
 
@@ -105,37 +104,225 @@ Blogs about this:
 * https://www.blazemeter.com/blog/5-ways-launch-jmeter-test-without-using-jmeter-gui
 * https://www.artofsoftwaredevelopment.com/performance/performance-testing-in-the-cloud-with-jmeter-aws
 
+<hr />
 
+<a name="JMeterInstall"></a>
 
-<a name="BinaryInstall"></a>
+## JMeter install
 
-## Manually download installer
-
-1. Even if you're not intending to download, go here to see the dates of each version available for download:
+1. Go to this URL to see the current version available for download:
 
    <a target="_blank" href="http://jmeter.apache.org/download_jmeter.cgi">
    http://jmeter.apache.org/download_jmeter.cgi</a>
 
+   PROTIP: Rather than manually downloading (which takes several more steps), install using Homebrew:
+
+   <a name="BrewInstall"></a>
+
+   ### Manually install locally using HomeBrew
+
+1. On a Mac, with a Terminal at any folder:
+
+1. See if someone has created a Homebrew formula referencing the binaries so you can install using this command:
+
+   <pre><strong>brew info jmeter</strong>
+
+   You should see something like:
+
+   <pre>jmeter: stable 5.4.1 (bottled)
+Load testing and performance measurement application
+https://jmeter.apache.org/
+/usr/local/Cellar/jmeter/5.4.1 (2,645 files, 124.4MB) *
+  Poured from bottle on 2021-06-10 at 12:28:08
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/jmeter.rb
+License: Apache-2.0
+==> Dependencies
+Required: openjdk ✔
+==> Analytics
+install: 5,558 (30 days), 16,856 (90 days), 75,270 (365 days)
+install-on-request: 5,552 (30 days), 16,842 (90 days), 74,846 (365 days)
+build-error: 0 (30 days)
+   </pre>
+
+1. To install "silently":
+
+   <pre><strong>brew install jmeter --with-plugins
+   </strong></pre>
+
+   Response at time of writing:
+
+   <pre>==> Pouring jmeter--5.4.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/jmeter/5.4.1: 2,643 files, 124.4MB
+   </pre>
+
+   NOTE: Previously, 
+   <pre>🍺  /usr/local/Cellar/jmeter/3.3: 2,855 files, 101.7MB
+   </pre>
+
+5. The script saves the file path other scripts will be using to invoke JMeter just installed:
+
+   <pre><strong>echo $JMETER_HOME
+   </strong></pre>
+
    At time of writing:
 
-   apache-jmeter-3.3.zip
+   <pre>/usr/local/Cellar/jmeter/5.0/libexec</pre>
 
-2. In Finder, double-click the file to unzip to folder:
+   ### Tree JMeter folders and files
 
-   apache-jmeter-3.3
+1. To list what folders are in a folder, install the tree utility:
 
-3. Move the folder to a folder with a path containing no spaces, such as:
+   <pre><strong>brew install tree
+   </strong></pre>
+
+1. See the version folder located (at time of writing):
+
+   <pre><strong>ls /usr/local/Cellar/jmeter
+   </strong></pre>
+
+1. Construct a tree command to view folders under the version, at the second level (https://www.computerhope.com/unix/tree.htm):
+
+   <pre><strong>tree /usr/local/Cellar/jmeter/5.4.1 -L 2
+   </strong></pre>
+
+   Sample output:
+
+   <pre>/usr/local/Cellar/jmeter/5.4.1
+|-- INSTALL_RECEIPT.json
+|-- LICENSE
+|-- NOTICE
+|-- README.md
+|-- bin
+|   `-- jmeter
+`-- libexec
+    |-- bin
+    |-- docs
+    |-- extras
+    |-- lib
+    |-- licenses
+    `-- printable_docs
+   </pre>
+
+   The folders:
+
+   * <strong>bin</strong> contains executables, jar, and properties files
+   * docs
+   * extras contains miscellaneous files including samples using the Apache Ant tool
+   * <strong>lib</strong> contains library utlity jar files
+   * lib/ext contains JMeter components and add-ons
+   * licenses contains legal text 
+   * printable_docs contains the usermanual in html and a demos folder containing jmx files
+   <br /><br />
+
+   Alternately, if you are to be using JMeter on your machine, add the export in your Mac's 
+   <tt>~/.bash_profile</tt> file.
+
+1. Update the profile (and type your password again):
+
+   <pre><strong>source ~/.bash_profile</strong></pre>
+
+1. Now skip to the <a href="#VerifyJMeter">Verify JMeter section below</a>.
+
+
+<a name="BinaryInstall"></a>
+
+### Manually install locally
+
+Alternately, to install manually:
+
+1. Go to this URL to see the current version available for download:
+
+   <a target="_blank" href="http://jmeter.apache.org/download_jmeter.cgi">
+   http://jmeter.apache.org/download_jmeter.cgi</a>
+
+1. Click a link to download a tgz file within the Binaries section, such as:
+
+   apache-jmeter-5.4.1.tgz
+
+   The URL, such as https://mirrors.gigenet.com/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz
+   uses the mirror server selected by default in the same webpage above.
+
+   The "sha512" link provides the hash signature created so that you can determine whether download obtain all the bits by running the same hashing program. If you obtain the same hash value, no bits were changed during download.
+
+1. Click OK to save:
+
+   ![jmeter-install-save-file](https://user-images.githubusercontent.com/300046/126862876-b0a33c6d-cf51-41ad-bff5-67b3c0243e32.png)
+
+   The file typically downloads to your "Downloads" folder.
+
+1. Click the browser's downloads icon and unzip the downloaded file by double-clicking it:
+
+   ![jmeter-install-tgz](https://user-images.githubusercontent.com/300046/126862135-939cdf15-9d71-4375-94cc-b62a7e7a695d.png)
+
+1. Switch to a Terminal
+
+1. Verify the SHA. See http://www.apache.org/info/verification.html
+   
+1. In your user home folder, construct a command to untar the downloaded file, then rename the versioned folder name to <strong>~/jmeter</strong>
+   
+
+   <pre><strong>cd
+   tar xvfz ~/Downloads/apache-jmeter-5.4.1.tgz
+   mv apache-jmeter-5.4.1  ~/jmeter
+   cd ~/jmeter
+   ls
+   </strong></pre>
+
+   You should see:
+
+   <pre>LICENSE        README.md      docs           lib            printable_docs
+NOTICE         bin            extras         licenses
+   </pre>
 
    PROTIP: Putting the folder in your home folder would avoid issues with permissions.
 
-   <pre>
-   cd ~/Downloads
-   mv apache-jmeter-3.3  ~/jmeter
-   cd jmeter
-   </pre> 
+1. Construct a command to remove the file to save disk space:
 
-   export PATH="$HOME/jmeter:$PATH"
+   <pre><strong>rm -rf ~/Downloads/apache-jmeter-5.4.1.tgz
+   </strong></pre>
 
+1. Add the jmeter folder in your system path:
+
+   Add this line at the bottom of the file:
+
+   <pre>echo 'export PATH="$HOME/jmeter/bin:$PATH" ' >>~/.bash_profile</pre>
+
+
+   <a name="VerifyJMeter"></a>
+
+   ### Verify JMeter
+
+1. Edit ~/.bash_profile to place the line in the middle.
+
+
+1. Verify the install:
+
+   <pre><strong>jmeter</strong></pre>
+
+   You should see a JMeter GUI pop up:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/126863398-7c9e57b9-c104-475a-b83b-6e176bf7d8f2.png">
+   <img width="1151" alt="jmeter-gui-upon-install" src="https://user-images.githubusercontent.com/300046/126863398-7c9e57b9-c104-475a-b83b-6e176bf7d8f2.png"></a>
+
+9. To stop the GUI, press command+Q or cursor to the top of the screen to click JMeter, then Quit.
+
+
+   ### Verify Java version
+
+9. Verify the version of Java being used:
+
+   <pre><strong>java -version</strong></pre>
+
+   You should see (at time of writing):
+
+   <pre>java version "1.8.0_162"
+Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
+   </pre>
+
+   Many prefer to use Java 8 because it is the last version which is open source licensed.
+
+   See https://wilsonmar.github.io/java-on-apple-mac-osx/
 
 
 <a name="DockerHub"></a>
@@ -306,70 +493,6 @@ Password:
    </strong></pre>
 
 
-   <a name="JMeterInstall"></a>
-
-   ### JMeter install
-
-4. On a Mac, with a Terminal at any folder, install:
-
-   <pre><strong>
-   brew install jmeter --with-plugins
-   </strong></pre>
-
-   Notice in the response that there is a different version of the installer for each version of the operating system. At time of this writing:
-
-   <pre>
-==> Downloading https://homebrew.bintray.com/bottles/jmeter-3.3.el_capitan.bottle.tar.gz
-######################################################################## 100.0%
-==> Pouring jmeter-3.3.el_capitan.bottle.tar.gz
-🍺  /usr/local/Cellar/jmeter/3.3: 2,855 files, 101.7MB
-   </pre>
-
-   PROTIP: Behind the scenes, downloads are from: <br />
-   https://www.apache.org/dyn/closer.cgi?path=jmeter/binaries/apache-jmeter-3.3.tgz
-
-
-5. The script saves the file path other scripts will be using to invoke JMeter just installed:
-
-   <pre><strong>
-   export JMETER_HOME="/usr/local/Cellar/jmeter/3.3"
-   echo $JMETER_HOME
-   ls $JMETER_HOME
-   </strong></pre>
-
-   The response (at time of writing):
-
-   <pre>
-/usr/local/Cellar/jmeter/3.3
-INSTALL_RECEIPT.json NOTICE         bin
-LICENSE        README.md      libexec
-   </pre>
-
-   Alternately, if you are to be using JMeter on your machine, add the export in your Mac's 
-   <tt>~/.bash_profile</tt> file.
-
-6. Let's summarize what folders are in a folder, install the tree utility:
-
-   <pre><strong>
-   brew install tree
-   </strong></pre>
-
-7. Show the first level tree:
-
-   <pre><strong>
-   tree -L 1
-   </strong></pre>
-
-   The folders:
-
-   * <strong>bin</strong> contains executables, jar, and properties files
-   * docs
-   * extras contains miscellaneous files including samples using the Apache Ant tool
-   * <strong>lib</strong> contains library utlity jar files
-   * lib/ext contains JMeter components and add-ons
-   * licenses contains legal text 
-   * printable_docs contains the usermanual in html and a demos folder containing jmx files
-   <br /><br />
 
    ### Run bash script
 
