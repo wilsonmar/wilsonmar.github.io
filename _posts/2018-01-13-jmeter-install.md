@@ -411,8 +411,7 @@ many JMeter images on DockerHub</a>.
 
 The most popular:
 
-   <pre>
-   docker pull <a target="_blank" href="https://hub.docker.com/r/cirit/jmeter/">cirit/jmeter</a>
+   <pre>docker pull <a target="_blank" href="https://hub.docker.com/r/cirit/jmeter/">cirit/jmeter</a>
    </pre>
 
    BLAH: As of this writing, it runs the <strong>older Jmeter 2.13</strong> + Debian OS + Java Server JRE 8 on<br />
@@ -420,14 +419,12 @@ The most popular:
 
 Another image containing a JMeter server include:
 
-   <pre>
-   docker pull <a target="_blank" href="https://hub.docker.com/r/justb4/jmeter/">justb4/jmeter</a>
+   <pre>docker pull <a target="_blank" href="https://hub.docker.com/r/justb4/jmeter/">justb4/jmeter</a>
    </pre>
 
 The image used in the <a target="_blank" href="https://www.flood.io">flood.io</a> SaaS  service is:
 
-   <pre>
-   docker pull <a target="_blank" href="https://hub.docker.com/r/floodio/jmeter/">floodio/jmeter</a>
+   <pre>docker pull <a target="_blank" href="https://hub.docker.com/r/floodio/jmeter/">floodio/jmeter</a>
    </pre>
 
 Videos about this topic:
@@ -455,6 +452,41 @@ see https://gist.github.com/hhcordero/abd1dcaf6654cfe51d0b
 The script below can be invoked to setup either a Docker image or your local laptop.
 
 <hr />
+
+## JMeter projects folder
+
+1. If you haven't already, create a "projects" folder.
+
+1. Create within your projects folder, create a folder for each JMeter application project.
+
+   git init
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Folder </th><th> Description </th></tr>
+   <tr valign="top"><td> ./run_jmeter.sh </td><td> bash shell script file to run jmeter 
+      </td></tr>
+   <tr valign="top"><td> ./lib </td><td> supporting libraries that would usually go in {jmeter_home}/lib
+      </td></tr>
+   <tr valign="top"><td> ./lib/ext </td><td> external plugins that would usually go in {jmeter}/lib/ext
+      </td></tr>
+   <tr valign="top"><td> ./properties </td><td> jmeter property files (if used)
+      </td></tr>
+   <tr valign="top"><td> ./scripts </td><td> where you store your jmeter scripts
+      </td></tr>
+   <tr valign="top"><td> ./scripts/lib </td><td>  custom helper scripts
+      </td></tr>
+   <tr valign="top"><td> ./scripts/data </td><td> payloads you might need
+      </td></tr>
+   <tr valign="top"><td> ./scenarios </td><td> scenarios you create
+      </td></tr>
+   <tr valign="top"><td> ./logs</td><td> test logs created during runs
+      </td></tr>
+   <tr valign="top"><td> ./jmeter </td><td> symbolic link to the jmeter installation you want to use
+      </td></tr>
+   <tr valign="top"><td> ./java </td><td>  symbolic link to the java installation you want to use
+      </td></tr>
+   </table>
+
 
 ## Sample JMeter Bash script
 
