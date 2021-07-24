@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JMeter install on a Mac to load test a RabbitMQ service"
+title: "JMeter install on a Mac to emulate HTTP requests to test load/capacity"
 excerpt: "Know the options, including my shell script that does it all, each step explained"
 tags: [perftest, JMeter]
 date: "2021-07-23"
@@ -8,58 +8,27 @@ file: "jmeter-install"
 image:
 # feature: pic white hand key ownership 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622160/3b59e1b2-0585-11e6-9157-cc003fc0f90b.jpg
-  credit:
-  creditlink:
+  credit: Artem Beliaikin on Unsplash.com
+  creditlink: https://unsplash.com/photos/FWShcTBnqjo
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial introduces JMeter by explaining each setp of an automated script for imposing artificial load on a server created to run RabbitMQ.
+This tutorial introduces how to install and run JMeter by explaining each setp of an automated script for imposing artificial load on a server created to run RabbitMQ.
+
+<a name="JavaInstall"></a>
 
 ## Java based
 
    The "J" in JMeter refers to the Java Virtual Machine (JVM).
    JMeter is written in Java.
-   This makes JMeter <strong>multi-platform</strong> on Windows, MacOS, Linux.
+   That makes JMeter <strong>multi-platform</strong> on Windows, MacOS, Linux.
 
-   "Meter" refers to being akin to parking meters that measure time. 
-   It is said that "Time is money" because when a user waits for the system to respond, he or she is not productive getting work done. And the longer that a transaction takes to respond, the more servers are needed to server everyone.
+1. Install Java according to my steps at:
 
-   Each JMeter program running can <strong>emulate hundreds of human users</strong> typing and clicking through a web application because <strong>JMeter mimics just the network traffic</strong> exchanged between clients and servers. 
-
-   JMeter is more than response time. Using JMeter enables us to measure how the application server will likely behave under load when running in production. The amount of load imposed by JMeter is often described in terms of the number of "users" JMeter emulates. Each fake user may be setup to submit transactions quicker than real users.
-
-   "JMeter is not a browser, it works at protocol level. As far as web-services and remote services are concerned, JMeter looks like a browser (or rather, multiple browsers); however JMeter does not perform all the actions supported by browsers. In particular, JMeter does not execute the Javascript found in HTML pages. Nor does it render the HTML pages as a browser does (it's possible to view the response as HTML etc., but the timings are not included in any samples, and only one sample in one thread is ever displayed at a time)."
-
-   The above is from the Apache web page.
-
-   JMeter is offered free because it's open-sourced as an Apache Foundation project. 
-
-1. In an internet browser (Google Chrome, Mozilla Firefox, Apple Safari, etc.), open
-
-   <a target="_blank" href="
-   https://github.com/apache/jmeter">
-   https://github.com/apache/jmeter</a>
-
-   BTW: Historically, JMeter first became available December 2003 as the "Jakarta" project until it became the full-fledged product. Its previous URL is automatically routed from http://jakarta.apache.org/jmeter
-
-2. Wikipedia lists the version history:
-
-   <a target="_blank" href="https://www.wikiwand.com/en/Apache_JMeter">
-   https://www.wikiwand.com/en/Apache_JMeter</a>
-
-   Note version 4 became available on Feb. 10, 2018 to support Java 9.
-
-
-<a name="JavaManually"></a>
-
-## Java install 
-
-See https://wilsonmar.github.io/java-on-apple-mac-osx/
-
-   PROTIP: JMeter is written in Java, so it can be run on Windows, Mac, and Linux.
+   <a target="_blank" href="https://wilsonmar.github.io/java-on-apple-mac-osx/">https://wilsonmar.github.io/java-on-apple-mac-osx/</a>
 
    If you were to manually click at
    http://www.oracle.com/technetwork/java/javase/downloads/index.html
@@ -142,6 +111,38 @@ Password:
 Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    </pre>
+
+
+
+
+
+   "Meter" refers to being akin to parking meters that measure time. 
+   It is said that "Time is money" because when a user waits for the system to respond, he or she is not productive getting work done. And the longer that a transaction takes to respond, the more servers are needed to server everyone.
+
+   Each JMeter program running can <strong>emulate hundreds of human users</strong> typing and clicking through a web application because <strong>JMeter mimics just the network traffic</strong> exchanged between clients and servers. 
+
+   JMeter is more than response time. Using JMeter enables us to measure how the application server will likely behave under load when running in production. The amount of load imposed by JMeter is often described in terms of the number of "users" JMeter emulates. 
+
+   JMeter can submit requests more frequently than real users because JMeter is not a browser -- it works at the <strong>protocol level</strong>. The HTTP requests that JMeter sends to web services listeners look like they came from ordinary browsers.
+   But JMeter does not normally render JavaScript DOM to create HTML nor execute the Javascript in HTML pages.
+
+1. In an internet browser (Google Chrome, Mozilla Firefox, Apple Safari, etc.), open
+
+   <a target="_blank" href="
+   https://github.com/apache/jmeter">
+   https://github.com/apache/jmeter</a>
+
+   JMeter is offered free because it's open-sourced as an Apache Foundation project. 
+
+   BTW: Historically, JMeter first became available December 2003 as the "Jakarta" project until it became the full-fledged product. Its previous URL is automatically routed from http://jakarta.apache.org/jmeter
+
+2. Wikipedia lists the version history:
+
+   <a target="_blank" href="https://www.wikiwand.com/en/Apache_JMeter">
+   https://www.wikiwand.com/en/Apache_JMeter</a>
+
+   Note version 4 became available on Feb. 10, 2018 to support Java 9.
+
 
 
 <hr />
@@ -488,20 +489,28 @@ The script below can be invoked to setup either a Docker image or your local lap
    </table>
 
 
+<a name="Scripting"></a>
+
+## JMeter script recording
+
+See https://www.youtube.com/watch?v=m4bxF756ZGw
+
+
 ## Sample JMeter Bash script
 
-From https://performance-engineering-solutions.com/2018/05/14/jmeter-basic-installation/
 
 <pre>#!/usr/bin/env bash
+# From https://performance-engineering-solutions.com/2018/05/14/jmeter-basic-installation/
 &nbsp;
 ## Get the directory where this script is located
 directory="$( cd "$( dirname $0)" && pwd )"
-## Build the ${plugin} variable
+&nbsp;
+## Build the ${plugin} variable:
 for files in `find ${directory}/lib/ext -maxdepth 1 -type f`; do
 plugins="${plugins};${files}"
 done
 &nbsp;
-## Build the libraries variable
+## Build libraries variable:
 for files in `find ${directory}/lib -maxdepth 1 -type f`; do
 libraries="${libraries}:${files}"
 done
@@ -509,564 +518,35 @@ done
 plugins=`echo ${plugins} | sed -e 's/^;//'`
 libraries=`echo ${libraries} | sed -e 's/^://'`
 &nbsp;
-## Build the jmeter options for plugins and libraries
+## Build jmeter options for plugins and libraries:
 search_paths=`echo "-Jsearch_paths=${plugins}"`
 class_path=`echo "-Juser.classpath=${libraries}"`
 &nbsp;
-## Set your JAVA location by adding it to the $PATH variable
+## Set JAVA location by adding it to the $PATH variable:
 JAVA_HOME="${directory}/java"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 ## JVM_ARGS & JMETER_OPTS etc can be placed here. Just make sure that you
 ## add them to the command at the end
 &nbsp;
 ## Start jmeter
-## The "$@" will pass any arguments from the command line to the jmeter.sh script
+## The "$@" passes any arguments from the command line to the jmeter.sh script:
 ${directory}/jmeter/bin/jmeter.sh ${search_paths} ${class_path} \
 -j ${directory}/logs/jmeter.log ${any_other_variables} "$@"
 </pre>
-
-<a name="AutoScript"></a>
-
-## Run BASH script
-
-
-
-
-   PROTIP: This script is the starting point for invoking JMeter using continuous integration such as TeamCity or Jenkins.
-
-If you're on a Mac, all the manual steps described below are automatically performed in the script.
-
-1. In a Terminal, navigate to the folder under which a new folder is created. The script creates this under your user home page:
-
-   <pre><strong>mkdir temp
-   cd ~/temp
-   </strong></pre>   
-
-2. Type or copy and paste this command on your Terminal:
-
-   <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/JMeter-Rabbit-AMQP/master/jmeter-rabbitmq-setup.sh)"
-   </strong></pre>
-
-   Before installing each item, the script first tests if the item has already been installed.
-
-   In this tutorial and script, we load test a RabbitMQ message broker to accept and forward messages, like a physical post office: where you put the mail that you want posting in a post box, you can be sure that the Postman will eventually deliver the mail to your recipient. In this analogy, RabbitMQ is a post box, a post office, and a postman.
-
-   https://www.rabbitmq.com/download.html
-
-
-   ### Run bash script
-
-1. To obtain a JMeter project to test a RabbitMQ service:
-
-   <pre><strong>
-   git clone https://github.com/wilsonmar/JMeter-Rabbit-AMQP --depth=1
-   cd JMeter-Rabbit-AMQP
-   </strong></pre>
-
-   PROTIP: The depth parameter ensures that only the most recent version of files are downloaded instead of all the history.
-
-   NOTE: The repo was cloned from https://github.com/jlavallee/JMeter-Rabbit-AMQP 
-   because of a deprecation error in <a href="#Build">build.xml</a> updated to Java 1.8 from 1.5:
-
-   <pre>
-  &LT;property name="target.java.version" value="1.5"/>
-  &LT;property name="src.java.version" value="1.5"/>
-   </pre>
-
-   Its author <a target="_blank" href="https://www.linkedin.com/in/vcampos1/">Vitor Campos</a> from Brazil (vitor@ciandt.com) no longer has an active account on GitHub.
-
-   I also added the Bash script described above.
-
-
-1. Let's see what was built, using the tree utility (which we installed above):
-
-   <pre><strong>
-   tree
-   </strong></pre>
-
-   The tree output:
-
-   <pre>
-├── LICENSE
-├── README.md
-├── build.xml
-├── examples
-│   └── RPC_Load_Test.jmx
-├── ivy.xml
-└── src
-    └── main
-        └── com
-            └── zeroclue
-                └── jmeter
-                    └── protocol
-                        └── amqp
-                            ├── AMQPConsumer.java
-                            ├── AMQPPublisher.java
-                            ├── AMQPSampler.java
-                            └── gui
-                                ├── AMQPConsumerGui.java
-                                ├── AMQPPublisherGui.java
-                                └── AMQPSamplerGui.java
-   </pre>
-
-   The convention for Java program is to have programming source files within the <tt>src</tt> folder.
-   The folder <tt>src/main/com/zeroclue/jmeter/protocol/amqp/</tt> contains Java code to recognize and respond to the AMQP (Advanced Message Queuing Protocol) used by <strong>RabbitMQ</strong> services.
-
-   * AMQPConsumer.java
-   * AMQPPublisher.java
-   * AMQPSampler.java
-   <br /><br />
-
-   The companion to that set of programs are within the folder "gui".
-
-   <tt>import</tt> statements in the code are dependencies that need to be downloaded as well before the Java code is compiled into classes that Java Virtual Machine runs.
-   That is done by a build automation.
-
-
-   ### Build
-
-1. When a project's files include a <strong>build.xml</strong> file for ant or maven program to specify download of libraries needed by source code in the src folder.
-
-1. Install the ant program and run it:
-
-   <pre><strong>
-   brew install ant
-   </strong></pre>   
-
-   At time of this writing:
-
-   <pre>
-==> Downloading https://homebrew.bintray.com/bottles/ant-1.10.1.el_capitan.bottle.tar.gz
-######################################################################## 100.0%
-==> Pouring ant-1.10.1.el_capitan.bottle.tar.gz
-🍺  /usr/local/Cellar/ant/1.10.1: 1,628 files, 36.8MB
-   </pre>
-
-   PROTIP: https://github.com/jfifield/ant-jmeter provides examples of how to use ant to run JMeter.
-
-   * http://ant.apache.org/
-   * http://www.programmerplanet.org/projects/jmeter-ant-task/
-   * http://ant.apache.org/manual/install.html
-   * http://www.programmerplanet.org/projects/jmeter-ant-task/
-   <br /><br />
-
-1. Edit to view the <strong>build.xml</strong> file.
-
-1. Run the ant program which knows to read the <strong>build.xml</strong> file:
-
-   <pre><strong>
-   ant
-   </strong></pre>   
-
-   At time of writing, when running on Java 8, the many console messages end with:
-
-   <pre>
-   ---------------------------------------------------------------------
-   |                  |            modules            ||   artifacts   |
-   |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
-   ---------------------------------------------------------------------
-   |       build      |  119  |  108  |  108  |   33  ||   86  |   86  |
-   |      runtime     |  119  |  108  |  108  |   33  ||   86  |   86  |
-   ---------------------------------------------------------------------
-&nbsp;
-compile:
-     [echo] Compiling
-    [mkdir] Created dir: /Users/wilsonm/gits/JMeter-Rabbit-AMQP/target/classes
-    [javac] Compiling 6 source files to /Users/wilsonm/gits/JMeter-Rabbit-AMQP/target/classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
-    [javac] warning: [options] source value 1.5 is obsolete and will be removed in a future release
-    [javac] warning: [options] target value 1.5 is obsolete and will be removed in a future release
-    [javac] warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-    [javac] 4 warnings
-&nbsp;
-package:
-    [mkdir] Created dir: /Users/wilsonm/gits/JMeter-Rabbit-AMQP/target/dist
-      [jar] Building jar: /Users/wilsonm/gits/JMeter-Rabbit-AMQP/target/dist/JMeterAMQP.jar
-&nbsp;
-BUILD SUCCESSFUL
-Total time: 2 minutes 17 seconds
-   </pre>
-
-   BTW, if ant is run again, the search and "dwnlded" would be zero because they are already downloaded.
-
-   CAUTION: When running on Java 9, this error message appears before the compile fails:
-
-   <pre>
-compile:
-     [echo] Compiling
-    [javac] Compiling 6 source files to /Users/wilsonm/gits/wilsonmar/JMeter-Rabbit-AMQP/target/classes
-    [javac] warning: [options] bootstrap class path not set in conjunction with -source 1.5
-    [javac] error: Source option 1.5 is no longer supported. Use 1.6 or later.
-    [javac] error: Target option 1.5 is no longer supported. Use 1.6 or later.
-   </pre>
-
-1. Let's see what was added by the build, using the tree utility installed earlier:
-
-   <pre><strong>
-   tree
-   </strong></pre>
-
-   The tree:
-
-   <pre>
-├── ivy
-│   └── ivy.jar
-└── target
-    ├── classes
-    │   └── com
-    │       └── zeroclue
-    │           └── jmeter
-    │               └── protocol
-    │                   └── amqp
-    │                       ├── AMQPConsumer.class
-    │                       ├── AMQPPublisher.class
-    │                       ├── AMQPSampler.class
-    │                       └── gui
-    │                           ├── AMQPConsumerGui.class
-    │                           ├── AMQPPublisherGui.class
-    │                           └── AMQPSamplerGui.class
-    └── dist
-        └── JMeterAMQP.jar
-   </pre>
-
-   Ant installs Apache Ivy, which is <a target="_blank" href="https://ant.apache.org/ivy/m2comparison.html
-">used instead of Maven for resolving dependencies</a>. This avoids the alternative installation using:
-
-   <pre>curl -L -O http://search.maven.org/remotecontent?filepath=org/apache/ivy/ivy/2.3.0/ivy-2.3.0.jar
-   </pre>
-
-   ivy.jar is run by Ant to resolve dependencies specified in file <tt>ivy.xml</tt>.   
-
-   Also, the build created a <strong>target</strong> folder containing java executable class files. These are packaged into the <tt>JMeterAMQP.jar</tt> within the dist folder. That jar is what the JVM runs.
-
-
-   ### Copy JMeterAMQP.jar into JMeter
-
-1. Copy the <strong>JMeterAMQP.jar</strong> just compiled into where JMeter stores its built-in extension executables:
-
-   <pre><strong>
-   \* From the root folder within JMeter-Rabbit-AMQP-master ::
-   cp target/dist/JMeterAMQP.jar  $JMETER_HOME/libexec/lib/ext
-   ls $JMETER_HOME/libexec/lib/ext -al
-   </strong></pre>
-
-   PROTIP: JMeter comes with extensions to work with protocols FTP, JDBC, JMS, LDAP, TCP, mail, MongoDB, etc.
-
-
-   ### amqp-client jar
-
-1. Use Ivy to download file <tt>amqp-client-3.6.1.jar</tt> from the Maven Repo (dated Mar 01, 2016)
-   from http://mvnrepository.com/artifact/com.rabbitmq/amqp-client/3.6.1  ???
-   into the $JMETER_HOME/lib folder created during <a href="#JMeterInstall">JMeter install</a>.
-
-   PROTIP: Books about RabbitMQ are listed at the bottom of the Maven web page.
-
-   On a Mac:
-
-   <pre><strong>
-   java -jar ivy.jar -dependency com.rabbitmq amqp-client 3.6.1 \
-      -retrieve "$JMETER_HOME/lab/[artifact](-[classifier]).[ext]"
-   </strong></pre>
-
-   Alternately, on Windows:
-
-   <pre><strong>
-   java -jar ivy.jar -dependency com.rabbitmq amqp-client 3.6.1 -retrieve "%JAVA_HOME%/lib/lib/[artifact](-[classifier]).[ext]"
-   </strong></pre>
-
-   See: https://www.mkyong.com/ant/ant-how-to-create-a-jar-file-with-external-libraries/
-
-
-   <a name="InstallRabbitMQ"></a>
-
-   ### Install RabbitMQ server under test
-
-   Based on http://www.rabbitmq.com/install-homebrew.html
-   and video https://www.youtube.com/watch?v=8mFsh1cwlsA  Feb 18, 2015 (on Yosemite) by YouTube DevOps celebrity Derek Bailey of http://watchmecode.net/
-
-1. Install RabbitMQ 
-
-   <pre><strong>
-   brew install rabbitmq
-   </strong></pre>
-
-   The response (at time of writing):
-
-   <pre>
-Updating Homebrew...
-==> Auto-updated Homebrew!
-Updated 1 tap (caskroom/cask).
-No changes to formulae.
-&nbsp;
-==> Downloading https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.2/rabbit
-Already downloaded: /Users/wilsonm/Library/Caches/Homebrew/rabbitmq-3.7.2.tar.xz
-==> /usr/bin/unzip -qq -j /usr/local/Cellar/rabbitmq/3.7.2/plugins/rabbitmq_mana
-==> Caveats
-Management Plugin enabled by default at http://localhost:15672
-&nbsp;
-Bash completion has been installed to:
-  /usr/local/etc/bash_completion.d
-&nbsp;
-To have launchd start rabbitmq now and restart at login:
-  brew services start rabbitmq
-Or, if you don't want/need a background service you can just run:
-  rabbitmq-server
-==> Summary
-🍺  /usr/local/Cellar/rabbitmq/3.7.2: 232 files, 12.6MB, built in 2 seconds
-   </pre>
-
-1. Put the executable within the PATH so it can be executed from any folder:
-   https://rabbitmq.com/install-homebrew.htm
- 
-   <pre><strong>
-   export PATH=$PATH:/usr/local/sbin
-   </strong></pre>
-
-   Do this permanently to your .bash_profile or .profile file.
-
-   ### Startup service under test
-
-   PROTIP: Start up the server in the background so the script can continue doing other things.
-
-1. Use the nohup to bypass the HUP (hung up) signal that would otherwise cause a shutdown:
-
-   <pre><strong>
-   nohup rabbitmq-server &>/dev/null &
-   </strong></pre>
-
-   The response is the process number assigned, such as:
-
-   <tt>[1] 26316</tt>
-
-   PROTIP: The <tt>&&LT;/dev/null</tt> prevents nohup from automatically creating a <tt>nohup.out</tt> file which would contain output from the  <tt>rabbitmq-server</tt> command, such as:
-
-   <pre>
-  ##  ##
-  ##  ##      RabbitMQ 3.7.2. Copyright (C) 2007-2017 Pivotal Software, Inc.
-  ##########  Licensed under the MPL.  See http://www.rabbitmq.com/
-  ######  ##
-  ##########  Logs: /usr/local/var/log/rabbitmq/rabbit@localhost.log
-                    /usr/local/var/log/rabbitmq/rabbit@localhost_upgrade.log
-&nbsp;
-              Starting broker...
-   completed with 6 plugins.
-   </pre>
-
-   <a target="_blank" href="https://www.maketecheasier.com/systemd-what-you-need-to-know-linux/">
-   PROTIP</a>: The "&" ampersand at the end of the command
-
-
-   ### Stop background service
-
-1. List the background jobs running:
-
-   <pre><strong>
-   jobs
-   </strong></pre>
-
-   The response:
-
-   <pre>
-[1]+  Exit 1                  nohup rabbitmq-server >&/dev/null
-   </pre>
-
-   WARNING: Be sure to remember to stop this service when it's not needed.
-
-1. To remove all jobs in the background:
-
-   <pre><strong>
-   disown
-   </strong></pre>
-
-   
-   NOTE: Alternatively, start up the server every reboot using brew:
-
-   <pre><strong>
-   brew services start rabbitmq
-   </strong></pre>
-
-   The response:
-
-   <pre>
-==> Tapping homebrew/services
-Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-services'...
-remote: Counting objects: 14, done.
-remote: Compressing objects: 100% (10/10), done.
-Unpacking objects: 100% (14/14), done.
-remote: Total 14 (delta 0), reused 9 (delta 0), pack-reused 0
-Checking connectivity... done.
-Tapped 0 formulae (42 files, 55.2KB)
-==> Successfully started `rabbitmq` (label: homebrew.mxcl.rabbitmq)
-   </pre>   
-
-   Such would create processes listed by the ps command and killed by the pkill or pskill command.
-
-
-   <a name="RunJMeter"></a>
-
-   ### Run JMeter
-
-1. <a target="_blank" href="https://lincolnloop.com/blog/load-testing-jmeter-part-2-headless-testing-and-je/">
-   PROTIP</a>: Run the automated install script runs a "headless" JMeter instance since humans are not involved during script execution. Plus, the memory taken to display a GUI is saved for testing work.
-
-   When running headless, parameters are used. 
-
-2. Get a list of parameters recognized by jmeter:   
-
-   <pre><strong>
-   jmeter -?
-   </strong></pre>
-
-   The response has the version at the right edge (3.1 at time of writing):
-
-   <pre>
-Writing log file to: /Users/mac/jmeter.log
-    _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
-   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
-  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
- / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
-/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 3.1 r1770033  
-&nbsp;
-Copyright (c) 1999-2016 The Apache Software Foundation
-&nbsp;
-   --?
-      print command line options and exit
-   -h, --help
-      print usage information and exit
-   -v, --version
-      print the version information and exit
-   -p, --propfile &LT;argument>
-      the jmeter property file to use
-   -q, --addprop &LT;argument>
-      additional JMeter property file(s)
-   -t, --testfile &LT;argument>
-      the jmeter test(.jmx) file to run
-   -l, --logfile &LT;argument>
-      the file to log samples to
-   -j, --jmeterlogfile &LT;argument>
-      jmeter run log file (jmeter.log)
-   -n, --nongui
-      run JMeter in nongui mode
-   -s, --server
-      run the JMeter server
-   -H, --proxyHost &LT;argument>
-      Set a proxy server for JMeter to use
-   -P, --proxyPort &LT;argument>
-      Set proxy server port for JMeter to use
-   -N, --nonProxyHosts &LT;argument>
-      Set nonproxy host list (e.g. *.apache.org|localhost)
-   -u, --username &LT;argument>
-      Set username for proxy server that JMeter is to use
-   -a, --password &LT;argument>
-      Set password for proxy server that JMeter is to use
-   -J, --jmeterproperty &LT;argument>=<value>
-      Define additional JMeter properties
-   -G, --globalproperty &LT;argument>=&LT;value>
-      Define Global properties (sent to servers)
-      e.g. -Gport=123
-       or -Gglobal.properties
-   -D, --systemproperty &LT;argument>=&LT;value>
-      Define additional system properties
-   -S, --systemPropertyFile &LT;argument>
-      additional system property file(s)
-   -L, --loglevel &LT;argument>=&LT;value>
-      [category=]level e.g. jorphan=INFO or jmeter.util=DEBUG
-   -r, --runremote
-      Start remote servers (as defined in remote_hosts)
-   -R, --remotestart &LT;argument>
-      Start these remote servers (overrides remote_hosts)
-   -d, --homedir &LT;argument>
-      the jmeter home directory to use
-   -X, --remoteexit
-      Exit the remote servers at end of test (non-GUI)
-   -g, --reportonly &LT;argument>
-      generate report dashboard only, from a test results file
-   -e, --reportatendofloadtests
-      generate report dashboard after load test
-   -o, --reportoutputfolder &LT;argument>
-      output folder for report dashboard
-   </pre>   
-
-
-
-
-
-   To prepare Test plan in JMeter
-
-1. Right-click Test Plan and go to Add->Thread(Users)->Thread Group. Give a name to Thread Group
-
-   A "Test Plan" is a container for "elements" which specifies the parameters for test runs.
-
-   Each "Thread Group" simulates what LoadRunner calls an individual virtual user. 
-
-   Each "thread" is a unit of work that can be simultaneous or sequentially executed. (JMeter itself is multi-threaded).
-
-
-
-1. Within the folder. run the jmeter GUI without any parameters:
-
-   <pre><strong>
-   jmeter
-   </strong></pre>
-
-   This is returned while the Workbench GUI appears:
-
-   <pre>
-================================================================================
-Don't use GUI mode for load testing, only for Test creation and Test debugging !
-For load testing, use NON GUI Mode:
-   jmeter -n -t [jmx file] -l [results file] -e -o [Path to output folder]
-& adapt Java Heap to your test requirements:
-   Modify HEAP="-Xms512m -Xmx512m" in the JMeter batch file
-================================================================================
-   </pre>
-
-   PROTIP: JMeter should be invoked with more than the default amount of memory by adding paramenters to the HEAP environment variable.
-
-
-
-   <a name="WatchRun"></a>
-
-   ### Watch run
-
-1. Manually, switch to an internet browser to see the GUI:
-
-   <pre><strong>
-   open http://localhost:15672
-   curl --user guest:guest http://localhost:15672 -v
-   </strong></pre>
-
-   The default username and password are "guest" and "guest".
-
-   PROTIP: The run.xml file in this repo has been edited to reference the above URL.
-
-
-## Social
-
-Sign up for Blazemeter's Slack channel on JMeter
-https://info.blazemeter.com/slack-jmeter-lp-0
-
-We have many channels and you’re always welcome to create your own. Here are 5 we recommend:
-
-* &#_questions_answers - A place to ask and answer JMeter questions
-* &#blog_posts - Share your JMeter blog posts here
-* &#plugins - Get and share info about JMeter’s plugins to customize your testing scripts
-* &#community_projects - A place to meet, plan and work together on JMeter load testing projects
-* &#meetups - Learn and share when there are JMeter meetups in your area.
 
 
 <a name="Tutorials"></a>
 
 ## Videos on YouTube
 
-### Will Button
-
-<a target="_blank" href="https://egghead.io/lessons/node-js-perform-load-tests-on-an-api-server-using-apache-jmeter">Perform Load Tests on an API Server using Apache JMeter</a> in [8:25] tests a <a target="_blank" href="https://github.com/rekibnikufesin/nodejs-api-swagger/tree/master">Sample Todo API on Node.js built with Swagger in GitHub repo</a>.
-
 ### Raghav Pal
 
 Raghav Pal (since Jan 2, 2016) has an excellent JMeter Beginner Tutorial in his
-Automation Step by Step channel (supported by ads):
+Automation Step by Step.com channel (supported by ads) in one 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=SoW2pBak1_Q">3.3 hour video</a>
+
+His previous:
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=M-iAXz8vs48&list=PLhW3qG5bs-L-zox1h3eIL7CZh5zJmci4c">
    How to install Jmeter</a> [6:54] Jun 30, 2016
@@ -1119,7 +599,25 @@ Automation Step by Step channel (supported by ads):
 25. <a target="_blank" href="https://www.youtube.com/watch?v=zn1DSUZ6t64&list=PLhW3qG5bs-L-zox1h3eIL7CZh5zJmci4c&index=25">
    How to record login test</a> [8:14] Sep 11, 2017 
 
+### Will Button
+
+<a target="_blank" href="https://egghead.io/lessons/node-js-perform-load-tests-on-an-api-server-using-apache-jmeter">
+Perform Load Tests on an API Server using Apache JMeter</a> in [8:25] tests a <a target="_blank" href="https://github.com/rekibnikufesin/nodejs-api-swagger/tree/master">VIDEO: Sample Todo API on Node.js built with Swagger in GitHub repo</a>.
+
 ### Guru99
 
 https://www.guru99.com/jmeter-tutorials.html
+
+
+<hr />
+
+## Social
+
+Sign up for <a target="_blank" href="https://info.blazemeter.com/slack-jmeter-lp-0">Blazemeter's Slack channel JMeter</a>
+
+   * &#_questions_answers - A place to ask and answer JMeter questions
+   * &#blog_posts - Share your JMeter blog posts here
+   * &#plugins - Get and share info about JMeter’s plugins to customize your testing scripts
+   * &#community_projects - A place to meet, plan and work together on JMeter load testing projects
+   * &#meetups - Learn and share when there are JMeter meetups in your area.
 

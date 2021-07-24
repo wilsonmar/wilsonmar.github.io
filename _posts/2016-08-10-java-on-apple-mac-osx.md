@@ -18,12 +18,15 @@ comments: true
 
 <a id="JDKSetupz"></a>
 
+Like a long tour with commentary by an experienced guide, this is a deep dive into the various editions to equip you to debug JVM installation issues. "PROTIP" mark little-know or important facts not seen in many other tutorials.
+
 There are several ways to install Java.
-This is a deep dive into the various editions to equip you to debug JVM installation issues.
 
 <a name="WhichJava"></a>
 
 ## Which Java You Got?
+
+You'll come back to this after installation.
 
 1. Open a Terminal session.
 
@@ -39,14 +42,76 @@ This is a deep dive into the various editions to equip you to debug JVM installa
 
    <pre>/usr/bin/java</pre>
 
-   PROTIP: File "java" in the above path is a binary file.
+   PROTIP: "java" in the above path is a binary file.
 
-6. To see what Java VM you have already installed:
+1. List which versions are installed on your machine by looking at where MacOS installs programs:
 
-   <pre><strong>/usr/bin/java -version
+   <pre>ls -al /Library/Java/JavaVirtualMachines/
+   </pre>
+
+   NOTE: This directory is at the root for the whole machine, not a particular user's home folder.
+
+   The response on my machine, after all versions of Java are installed (at time of writing): 
+   
+   <pre>total 0
+drwxr-xr-x   6 root  wheel  192 Jul 24 11:13 .
+drwxr-xr-x   5 root  wheel  160 Nov 18  2018 ..
+drwxr-xr-x   3 root  wheel   96 Mar 30  2018 jdk1.8.0_162.jdk
+drwxr-xr-x   3 root  wheel   96 Feb  9  2019 jdk1.8.0_202.jdk
+drwxr-xr-x   3 root  wheel   96 Jul 24 11:13 zulu-16.jdk
+drwxr-xr-x  18 root  wheel  576 Nov 18  2018 zulu8.30.0.1-jdk8.0.172-macosx_x64
+   </pre>
+
+   WARNING: Older versions may not contain the latest security patches.
+
+1. PROTIP: The Java program looks for the <tt><strong>$JAVA_HOME</strong></tt> environment variable to obtain files:
+
+   <tt><strong>echo $JAVA_HOME
+   </strong></tt>
+
+   Sample response:
+
+   <pre>/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+   </pre>
+
+   PROTIP: This command is my preferred way to see what a machine has because
+   if you invoke java or javac, if it's not installed, MacOS prompts you to install the JDK. Clever. But don't do it if you want <a href="#DifferentJavas">other version of Java</a>.
+
+   Java is used by Groovy, Grails, Spring Boot, and many others.
+
+
+1. Additional details are provided by this command:
+
+   <pre><strong>/usr/libexec/java_home -V
    </strong></pre>
 
-   PROTIP: <tt>\-version</tt> is a non-standard parameter. Most other programs use either the <tt>\-v</tt> flag or two-dash <tt>\-\-version</tt> with the longer-form parameter name.
+   That's a capital <tt>-V</tt>.
+
+   The response on my machine:
+
+   <pre>Matching Java Virtual Machines (1):
+    1.8.0_232, x86_64:  "AdoptOpenJDK 8"  /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+&nbsp;
+/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+   </pre>
+
+   Alternately:
+
+   <pre>Matching Java Virtual Machines (4):
+1.8.0_45, x86_64: "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+1.7.0_65, x86_64: "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
+1.6.0_65-b14-466.1, x86_64:   "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+1.6.0_65-b14-466.1, i386:  "Java SE 6" /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+&nbsp;
+/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+   </pre>
+
+1. PROTIP: It's kinda ironic, but to see what Java VM you have already installed, it helps if you know what version you have.
+
+   Java 8 and before uses a non-standard parameter. Most other programs use either the <tt>\-v</tt> flag or two-dash <tt>\-\-version</tt> with the longer-form parameter name. However, with Java:
+
+   <pre><strong>java -version
+   </strong></pre>
 
    A sample response:
 
@@ -55,44 +120,12 @@ Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
 Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    </pre>
 
+   Alternately, Java 9 and after uses the standard "--version" (with two dashes) like most other Java programs:
 
-3. List which versions are installed on your machine:
+   <pre><strong>java --version
+   </strong></pre>
 
-   <pre>ls /Library/Java/JavaVirtualMachines/
-   </pre>
-
-   PROTIP: On Macs, all known JVM's are located at: <br />
-   <tt><strong>/Library/Java/JavaVirtualMachines/</strong></tt>
-
-   NOTE: This directory is at the root for the whole machine, not a particular user's home folder.
-
-   The response on my machine: 
-   
-   <pre>adoptopenjdk-8.jdk
-   jdk1.8.0_162.jdk
-   jdk1.8.0_202.jdk
-   zulu8.30.0.1-jdk8.0.172-macosx_x64
-   </pre>
-
-
-2. PROTIP: The Java program looks for the <tt><strong>$JAVA_HOME</strong></tt> environment variable to obtain files:
-
-   <tt><strong>
-   echo $JAVA_HOME
-   </strong></tt>
-
-   Sample response:
-
-   <pre>
-   /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
-   </pre>
-
-   PROTIP: This command is my preferred way to see what a machine has because
-   if you invoke java or javac, if it's not installed, MacOS prompts you to install the JDK. Clever. But don't do it if you want <a href="#DifferentJavas">other version of Java</a>.
-
-   Java is used by Groovy, Grails, Spring Boot, and others.
-
-0. PROTIP: Developers use the JDK rather than the JRE (Runtime Environment) in order to get the <strong>javac</strong> compiler. See what version of the <strong>Java Compiler</strong> is installed:
+1. PROTIP: Java developers use the JDK rather than the JRE (Runtime Environment) in order to get the <strong>javac</strong> compiler. See what version of the <strong>Java Compiler</strong> is installed:
 
    <pre><strong>javac -version
    </strong></pre>
@@ -103,49 +136,43 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
    </pre>
 
 
-4. Additional details are provided with this command:
+   ### I'll stay with version 8 then
 
-   <pre><strong>/usr/libexec/java_home -V
-   </strong></pre>
+   Like many other open source advocates, we continue to use version 8 even though more recent versions have been created by Oracle.
 
-   That's a capital <tt>-V</tt>.
+   This is because Oracle changed their licensing after version 8 in 2017.
 
-   The response on my machine:
+   PROTIP: <strong>Hold off downloading</strong> the java .dmg installer file
+   as described at <a target="_blank" href="https://java.com/en/download/help/mac_install.xml">
+   https://java.com/en/download/help/mac_install.xml</a>
 
-   <pre>Matching Java Virtual Machines (1):
-    1.8.0_232, x86_64:	"AdoptOpenJDK 8"	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-&nbsp;
-/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-   </pre>
+   WARNING: Oracle installs an annoying Ask Toolbar, without asking.
 
-   Alternately:
+   Oracle's versions are described at <a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>
 
-   <pre>Matching Java Virtual Machines (4):
-1.8.0_45, x86_64:	"Java SE 8"	/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
-1.7.0_65, x86_64:	"Java SE 7"	/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
-1.6.0_65-b14-466.1, x86_64:	"Java SE 6"	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-1.6.0_65-b14-466.1, i386:	"Java SE 6"	/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-&nbsp;
-/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
-   </pre>
+   Oracles docs on installing the JDK:<br />
+   <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html">
+   https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html</a>
+
+   NOTE: Downloads of the JDK (Java Development Kit) contains the JRE (Java Runtime Engine).
+
+
 
    <a name="AppleJavaC"></a>
 
-   ### Apple Java
+   ### Apple Java obsoleted
 
    PROTIP: The version that comes installed on Apple Macs is <strong>obsolete</strong> and thus does not have the latest security patches. But do NOT delete the default version.
    
-   But if you did uninstall it, to re-install <strong>Java 6</strong> for OS X 2014-001,
-   it can be obtained from
-   <a target="_blank" href="https://support.apple.com/kb/DL1572?locale=en_US">
-   https://support.apple.com/kb/DL1572?locale=en_US</a>
+   But if you did uninstall it, re-install <strong>Java 6</strong> for OS X 2014-001 obtained from <a target="_blank" href="https://support.apple.com/kb/DL1572?locale=en_US">https://support.apple.com/kb/DL1572?locale=en_US</a>
 
 
    <a name="DifferentJavas"></a>
 
-   ## Different Javas
+   ### Different Javas available
    
-   <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_Java_virtual_machines">https://en.wikipedia.org/wiki/List_of_Java_virtual_machines</a> lists all the known Java compilers.
+   <a target="_blank" href="https://www.wikiwand.com/en/List_of_Java_virtual_machines">https://www.wikiwand.com/en/List_of_Java_virtual_machines</a> lists all known Java compilers.
+
    Several organizations work on OpenSDK specs from <a target="_blank" href="https://adoptopenjdk.net/">AdoptOpenJDK</a> and certified for Java SE TCK compliance on x64 reference architecture systems
 
    * When <a target="_blank" href="https://www.oracle.com/technetwork/java/eol-135779.html">Oracle</a> acquired Sun, the <strong>jdk</strong> (Java Development Kit) was one of the products obtained. Versions are downloaded directly from Oracle from <a target="_blank" href="http://jdk.java.net/">http://jdk.java.net</a>.
@@ -158,6 +185,11 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    * <a target="_blank" href="https://access.redhat.com/articles/1299013">Red Hat</a>
 
+
+   <a name="ZuluInstall"></a>
+
+   ### Zulu
+   
    <a target="_blank" href="https://www.azul.com/downloads/zulu">Azul Zulu</a> <a target="_blank" href="https://www.azul.com/downloads/zulu/zulu-mac/">downloads for macOS</a>, from a company that also sells Java optimization products. Its zulu8.30.0.1-jdk8.0.172-macosx_x64 from zip April 18, 2018 is 179.2 MB expanded
 
    <pre><strong>brew search zulu</strong></pre>
@@ -170,71 +202,104 @@ zurl
 zulu       zulu11     zulu13     zulu15     zulu7      zulu8      zulufx
    </pre>
 
+1. To install the latest:
 
-   <a name="OracleJavaC"></a>
+   <pre><strong>brew install zulu</strong></pre>
 
-   ### Latest Version of Oracle Java #
+   The response:
 
-0. PROTIP: <strong>Hold off downloading</strong> the java .dmg installer file
-   as described at
-   <a target="_blank" href="https://java.com/en/download/help/mac_install.xml">
-   https://java.com/en/download/help/mac_install.xml</a>
-
-   WARNING: Oracle installs an annoying Ask Toolbar, without asking.
-
-   Oracles docs on installing the JDK:<br />
-   <a target="_blank" href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html">
-   https://docs.oracle.com/javase/8/docs/technotes/guides/install/mac_jdk.html</a>
-
-0. Use an internet browser to<br />
-   <a target="_blank" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">
-   http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>
-
-0. Click the "Download" button for the JDK (not the JRE).
-
-   NOTE: Downloads of the JDK contains the JRE.
+   <pre>==> Downloading https://cdn.azul.com/zulu/bin/zulu16.30.15-ca-jdk16.0.1-macosx_x
+######################################################################## 100.0%
+==> Installing Cask zulu
+==> Running installer for zulu; your password may be necessary.
+Package installers may write to any location; options such as `--appdir` are ignored.
+installer: Package name is Zulu 16.30+15
+installer: Installing at base path /
+installer: The install was successful.
+   </pre>
 
 
 <a name="JenvInstall"></a>
 
 ## Install Jenv to manage multiple Versions of Java #
 
-   PROTIP: If you're a developer, 
+   PROTIP: Much like NPM for NodeJs developers and [rbenv for Ruby](/ruby-on-apple-mac-osx/), if you're a developer, 
    you'll likely need to manage different versions of Java needed by different apps.
-   Much like NPM for Node
-   and [rbenv for Ruby](/ruby-on-apple-mac-osx/).
-
+   
    <a target="_blank" href="http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html?q=java">
    http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html?q=java</a>
    <br />
    describes the steps.
 
-0. Install Jenv by specifying the location URL: https://raw.githubusercontent.com/entrypass/jenv/homebrew/homebrew/jenv.rb
+1. Consider the Jenv utility:
 
-   <tt><strong>
-   brew install jenv
+   <tt><strong>brew info jenv
+   </strong></tt>
+
+   The response at time of writing:
+
+   <pre>jenv: stable 0.5.4 (bottled), HEAD
+Manage your Java environment
+https://www.jenv.be/
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/jenv.rb
+License: MIT
+==> Options
+--HEAD
+   Install HEAD version
+==> Caveats
+To activate jenv, add the following to your /Users/wilsonmar/.bash_profile:
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+==> Analytics
+install: 9,034 (30 days), 28,364 (90 days), 124,693 (365 days)
+install-on-request: 9,030 (30 days), 28,348 (90 days), 124,090 (365 days)
+build-error: 0 (30 days)
+   </pre>
+
+1. Install Jenv by specifying the location URL: https://raw.githubusercontent.com/entrypass/jenv/homebrew/homebrew/jenv.rb
+
+   <tt><strong>brew install jenv
    </strong></tt>
 
    The response:
 
-   <pre>
-==> Downloading https://github.com/gcuisinier/jenv/archive/0.4.4.tar.gz
-==> Downloading from https://codeload.github.com/gcuisinier/jenv/tar.gz/0.4.4
-######################################################################## 100.0%
-🍺  /usr/local/Cellar/jenv/0.4.4: 78 files, 65.5KB, built in 8 seconds
+   <pre>...
+==> Caveats
+To activate jenv, add the following to your /Users/wilsonmar/.bash_profile:
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+==> Summary
+🍺  /usr/local/Cellar/jenv/0.5.4: 84 files, 73KB
    </pre>
 
-0. To see if jenv can run, list its version and commands:
+   Previously:
 
-   <tt><strong>
-   jenv
+   <pre>🍺  /usr/local/Cellar/jenv/0.4.4: 78 files, 65.5KB, built in 8 seconds
+   </pre>
+
+1. Instead of editing <tt>~/.bash_profile</tt> as described above, paste this which handles errors better:
+
+   <pre>export JENV_ROOT="$(which jenv)" # /usr/local/var/jenv
+if command -v jyenv 1>/dev/null 2>&1; then
+  eval "$(jenv init -)"
+fi
+   </pre>
+
+1. Restart:
+
+   <tt><strong>source ~/.bash_profile
    </strong></tt>
 
-   The response is like this (at time of writing Oct 15, 2018):
+1. To see if jenv can run, list its version and commands:
 
-   <pre>
-jenv 0.4.4
-Usage: jenv <command> [<args>]
+   <tt><strong>jenv
+   </strong></tt>
+
+   The response is like this (at time of writing July 24, 2021):
+
+   <pre>jenv 0.5.4
+Usage: jenv &LT;command> [&LT;args>]
 &nbsp;
 Some useful jenv commands are:
    commands    List all available jenv commands
@@ -246,34 +311,29 @@ Some useful jenv commands are:
    versions    List all Java versions available to jenv
    which       Display the full path to an executable
    whence      List all Java versions that contain the given executable
+   add         Add JDK into jenv. A alias name will be generated by parsing "java -version"
 &nbsp;
 See `jenv help <command>' for information on a specific command.
 For full documentation, see: https://github.com/hikage/jenv#readme
    </pre>
 
-0. See where it was installed:
+0. See where the symlink leads:
 
-   <tt><strong>
-   which jenv
+   <tt><strong>ls -al $(which jenv)
    </strong></tt>
 
-   My response:
+   My response (at time of writing):
 
-   <pre>/usr/local/bin/jenv</pre>
+   <pre>lrwxr-xr-x  1 wilsonmar  admin  29 Jul 24 10:10 /usr/local/bin/jenv -> ../Cellar/jenv/0.5.4/bin/jenv</pre>
 
    NOTE: The file jenv is a binary executable.
 
 0. Use Homebrew's directories rather than ~/.jenv add to the bottom of your bash_profile file:
 
-   <tt><strong>
-   export JENV_ROOT=/usr/local/var/jenv
+   <tt><strong>export JENV_ROOT="$(which jenv)"
+   echo "$JENV_ROOT"
    </strong></tt>
 
-0. To enable shims and autocompletion add to the botton of your bash_profile file:
-  
-   <pre><strong>
-   if which jenv > /dev/null; then eval "$(jenv init -)"; fi
-   </strong></pre>
 
    ### Jenv for several Java versions
 
@@ -286,7 +346,7 @@ For full documentation, see: https://github.com/hikage/jenv#readme
 
    <pre>Jenv will exec : /usr/bin/java
 Exported variables :
-  JAVA_HOME=/Users/wilsonmar/.jenv/versions/system
+  JAVA_HOME=/usr/local/bin/jenv/versions/system
    </pre>
 
 0. List installers available for use by jenv:
@@ -297,40 +357,42 @@ Exported variables :
    The response:
 
    <pre>total 0
-drwxr-xr-x  5 root  wheel  160 Mar 30  2018 .
-drwxr-xr-x  5 root  wheel  160 Mar 30  2018 ..
-drwxr-xr-x  2 root  wheel   64 Mar 30  2018 jdk-10.jdk
-drwxr-xr-x  2 root  wheel   64 Mar 30  2018 jdk1.8.0_144.jdk
-drwxr-xr-x  3 root  wheel   96 Mar 30  2018 jdk1.8.0_162.jdk
+drwxr-xr-x   6 root  wheel  192 Jul 24 11:13 .
+drwxr-xr-x   5 root  wheel  160 Nov 18  2018 ..
+drwxr-xr-x   3 root  wheel   96 Mar 30  2018 jdk1.8.0_162.jdk
+drwxr-xr-x   3 root  wheel   96 Feb  9  2019 jdk1.8.0_202.jdk
+drwxr-xr-x   3 root  wheel   96 Jul 24 11:13 zulu-16.jdk
+drwxr-xr-x  18 root  wheel  576 Nov 18  2018 zulu8.30.0.1-jdk8.0.172-macosx_x64
    </pre>
 
-   If you don't see any, you need to first download a JVM installer containing folders bin, lib, jre, include, bundle, db, man.
+   The folders above provide version handles (such as "zulu-16.jdk") for jenv to reference.
 
-   The path to a particular version is constructed by adding "/Contents/Home" to the end of the path.
+   For each version, along with lib and man (manual) folders, Jenv looks into a <strong>bin</strong> folder containing executables to use.
 
-0. The point of jenv is to add additional versions, such as back version JDK 7.
+0. Construct the a path to those folder for a version by adding folder <strong>/Contents/Home</strong> to the known path:
 
-   <pre><strong>jenv add /Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk/Contents/Home
+   <pre><strong>FOLDER="/Library/Java/JavaVirtualMachines/zulu-16.jdk/Contents/Home"
+   ls "$FOLDER"
    </strong></pre>
 
    The response:
 
-   <pre>oracle64-1.7.0.65 added
+   <pre>DISCLAIMER   bin          demo         jmods        lib          readme.txt
+Welcome.html conf         include      legal        man          release
    </pre>
 
-0. Add JDK 8:
 
-   <pre><strong>jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home
+   ### Add Java versions
+
+0. Construct a command to the path by adding"/Contents/Home" to the path you already know, such as this:
+
+   <pre><strong>jenv add "$FOLDER"
    </strong></pre>
 
-   http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u162-macosx-x64.dmg
+   A sample response:
 
-   The response:
-
-   <pre>oracle64-1.8.0.45 added
+   <pre>zulu-16.jdk added
    </pre>
-
-   The above provide a handle for jenv provide other apps to use.
 
 0. List the Java versions jenv knows about:
 
@@ -384,8 +446,6 @@ For macOS, this page recommends using Make to compile from source</a>.
    <tt><strong>hg clone http://hg.openjdk.java.net/jdk9/jdk9 openjdk9
    cd ./openjdk9
    </strong></tt>
-
-   Note JDK 9 is under active development.
 
    http://hg.openjdk.java.net/jdk8/jdk8 work stopped at 2014-03-04.
 
