@@ -319,7 +319,7 @@ build-error: 0 (30 days)
 
 <a name="BinaryInstall"></a>
 
-### Manually install locally
+### Manually JMeter install locally
 
 Alternately, to install manually:
 
@@ -436,6 +436,8 @@ Videos about this topic:
    * https://docs.docker.com/docker-cloud/builds/automated-build/
 
 
+<hr />
+
 <a name="Dockerfile"></a>
 
 ## Build by Dockerfile
@@ -452,11 +454,51 @@ see https://gist.github.com/hhcordero/abd1dcaf6654cfe51d0b
 
 The script below can be invoked to setup either a Docker image or your local laptop.
 
+<hr />
 
+## Sample JMeter Bash script
+
+From https://performance-engineering-solutions.com/2018/05/14/jmeter-basic-installation/
+
+<pre>#!/usr/bin/env bash
+&nbsp;
+## Get the directory where this script is located
+directory="$( cd "$( dirname $0)" && pwd )"
+## Build the ${plugin} variable
+for files in `find ${directory}/lib/ext -maxdepth 1 -type f`; do
+plugins="${plugins};${files}"
+done
+&nbsp;
+## Build the libraries variable
+for files in `find ${directory}/lib -maxdepth 1 -type f`; do
+libraries="${libraries}:${files}"
+done
+## Remove the first ; or :
+plugins=`echo ${plugins} | sed -e 's/^;//'`
+libraries=`echo ${libraries} | sed -e 's/^://'`
+&nbsp;
+## Build the jmeter options for plugins and libraries
+search_paths=`echo "-Jsearch_paths=${plugins}"`
+class_path=`echo "-Juser.classpath=${libraries}"`
+&nbsp;
+## Set your JAVA location by adding it to the $PATH variable
+JAVA_HOME="${directory}/java"
+export PATH="${JAVA_HOME}/bin:${PATH}"
+## JVM_ARGS & JMETER_OPTS etc can be placed here. Just make sure that you
+## add them to the command at the end
+&nbsp;
+## Start jmeter
+## The "$@" will pass any arguments from the command line to the jmeter.sh script
+${directory}/jmeter/bin/jmeter.sh ${search_paths} ${class_path} \
+-j ${directory}/logs/jmeter.log ${any_other_variables} "$@"
+</pre>
 
 <a name="AutoScript"></a>
 
 ## Run BASH script
+
+
+
 
    PROTIP: This script is the starting point for invoking JMeter using continuous integration such as TeamCity or Jenkins.
 
@@ -464,15 +506,13 @@ If you're on a Mac, all the manual steps described below are automatically perfo
 
 1. In a Terminal, navigate to the folder under which a new folder is created. The script creates this under your user home page:
 
-   <pre><strong>
-   mkdir temp
+   <pre><strong>mkdir temp
    cd ~/temp
    </strong></pre>   
 
 2. Type or copy and paste this command on your Terminal:
 
-   <pre><strong>
-   sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/JMeter-Rabbit-AMQP/master/jmeter-rabbitmq-setup.sh)"
+   <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/JMeter-Rabbit-AMQP/master/jmeter-rabbitmq-setup.sh)"
    </strong></pre>
 
    Before installing each item, the script first tests if the item has already been installed.
