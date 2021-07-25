@@ -21,6 +21,157 @@ This</a> is a hands-on tutorial to get new enterprise administrators setup to ef
 
 This highlights what is in <a target="_blank" href="https://aws.amazon.com/getting-started/">Amazon's Getting Started tutorials</a>.
 
+<a name="AWS_Account"></a>
+
+## Get AWS account
+
+In enterprises, identify the Administrator who dispenses user accounts.
+
+If you're the Global Administrator, see my htts://wilsonmar.github.io/aws-iam
+
+The remainder of this is for users and super users.
+
+There are two ways to interact with AWS:
+
+   * <a href="#AWSConsole">GUI (Graphical User Interface), aka "AWS Console"</a>, where you need to go first to obtain credentials needed to use the CLI.
+
+   * <a href="#CLI">CLI (Command Line Interface)</a> using the MacOS Terminal program.
+
+PROTIP: This document describes <a href="#SecureCredential">steps and scripts to store your AWS credentials securely (below)</a>, not in clear text as described by AWS.
+
+
+
+### Root account sign-up
+
+1. Use an internet browser to get on the <strong>AWS marketing page</strong> at 
+
+   <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
+
+2. Get your credit card numbers ready.
+
+   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+
+   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
+
+3. Click the yellow "Sign-Up" button if you don't already have an account.
+
+4. PROTIP: If you are creating a production account for an organization, create an email address which you <strong>use only for managing AWS</strong> and not for regular email use and certainly not for doing shopping on Amazon. 
+   
+   The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+
+   Secure that email address with <strong>multi-factor authentication</strong> with Google or whoever hosts your email server. Also have a way for one person (or maximum two) you trust to be able to access the account in case you are not able to.
+
+5. Supply a strong password.
+
+   PROTIP: Use 1Password so that you can easily generate up to <strong>64 character</strong> password, but remember only one password to access the 1Password database of secrets. 1Password encrypts its database so that you can make backups (to a USB drive or secure cloud). I favor 1Password because it provides a way to sync changes with your smartphone without going through the internet.
+
+   Because you only have to remember one master password, you can are free to change various passwords as often as you want with no fear of forgetting them.
+
+6. An example of a value for "AWS account name" is "master-billing".
+
+7. Click "Continue".
+
+   If you have 1Password installed, you would be prompted to create a new account.
+
+8. Provide phone number, address, and credit card.
+
+   Students may want to create several accounts to take advantage of the free tier multiple times. However, uniquely different phone numbers, addresses, and credit cards are not needed for each identity.
+
+9. PROTIP: Where you keep information about your credit card, note the email address and account name using that credit card.
+
+1. Confirm the phone number by answering Amazon's phone call.   
+
+1. For now, click "Free" to select a plan. A <a href="#ComparePlans">comparison on plans is discussed below</a>.
+
+1. Click "Free" to be prompted to sign-in with your new credentials.
+
+   <a name="AccountId"></a>
+
+1. Click your account name at the top black menu for this menu:
+
+   <a target="_blank" href="https://console.aws.amazon.com/billing/home?#/account"><img alt="aws-onboarding-myaccount-184x222-9824.jpg" width="184" src="https://user-images.githubusercontent.com/300046/40592391-ecd60128-61db-11e8-941f-784a35c9d9ff.jpg"></a>
+
+1. Copy the <strong>Account Id</strong> and paste it in the notes associated with where you saed your account email and password (within 1Password).
+
+   PROTIP: This 12 digit number is given out for others to use to sign in using 
+   <a href="#SubAccounts">sub-accounts</a>.
+
+1. Scroll down to click "Edit" next to "Alternate Contacts" and put the other person who knows how to get into the account in for the Billing.
+
+1. Scroll down to click Edit to the right of "Configure Security Challenge Questions".
+1. Write down your security challenge questions and answers where you wrote your Account Id.
+
+   PROTIP: Treat the answers as another set of passwords because others my discover the real answers via social engineering. Answer with some nonsense that has no basis in reality.
+
+
+<hr />
+
+<a name="AWSConsole"></a>
+
+## AWS Services Management Console
+
+1. If you are at the AWS marketing page, click "My Account" for this menu:
+
+   <a target="_blank" href="https://aws.amazon.com/">
+   <img alt="aws-onboarding-landing-250x252-18241" width="250" src="https://user-images.githubusercontent.com/300046/40591769-685c5502-61d4-11e8-8fbe-bcbf70d5e515.jpg"></a>
+   
+2. Get the <strong>AWS Management Console</strong>:
+
+   <a target="_blank" href="
+   https://console.aws.amazon.com/console/home">
+   https://console.aws.amazon.com/console/home</a>
+   
+   ### All Amazon services
+
+3. Click to view all <strong>Services</strong> at the upper-left black menu band.
+
+4. Read the User Guide for each service at:
+
+   <a target="_blank" href="https://aws.amazon.com/documentation/">
+   https://aws.amazon.com/documentation</a>
+
+   ### Quick Access icons
+
+   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
+
+1. Click the push-pin icon.
+1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
+
+   PROTIP: The services most often used are IAM, VPC, EC2, S3
+
+1. If you have good memory of what icons mean, change the Settings to "Icons only".
+
+   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
+   
+
+   ### Claim S3 Bucket names
+
+   The AWS Account Administrator has a fudiciary responsibility to secure 
+   Intellectual Property assets.
+
+   S3 Bucket names are universally unique among all AWS customers.
+   So just as there are domain name squatters who register and sit on .com host names
+   for sale at high prices to those who actually use the names,
+   the administrator of root accounts for an organization should
+   register your organization's brand names before others get them first.
+
+   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
+
+4. Click S3 from among services.
+5. Click the blue "Create bucket" button.
+6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
+7. Select your home Region.
+
+   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
+
+8. Click "Next".
+9. Click "Next".
+10. Click "Next" to manage users.
+11. Click "Create Bucket".
+
+
+
+<hr />
 
 <a name="CLI"></a>
 
@@ -122,8 +273,7 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
 
 3. On Linux, to enable bash completion for aws commands:
 
-   <tt><strong>
-   echo 'complete -C aws_completer aws' >> ~/.bashrc
+   <tt><strong>echo 'complete -C aws_completer aws' >> ~/.bashrc
    </strong></tt>
 
 4. Test out autocompletion by typing the first two characters and pressing Tab for a list of all aws cli commands that begin with those characters:
@@ -169,17 +319,11 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
    Alternately, <tt>.quit</tt> works too.
 
 
-
    <a name="jp"></a>
    
    ### jp command
 
    The jp command enables JSON to be manipulated within Bash scripts.
-   For example, jp enables a simple syntax to extract the 1st value from bar within foo:
-
-   <pre><strong>echo '{"foo": {"bar": ["a", "b", "c"]}}' | jp foo.bar[1]</strong></pre>
-
-   The response should be: <tt>"b"</tt>
 
 1. Install it on Macs, in any folder:
 
@@ -189,9 +333,15 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
    
    <pre>🍺  /usr/local/Cellar/jp/1.1.12: 3 files, 3MB</pre>
 
-2. Verify it works by running the echo command above.
+2. Verify it works by running a sample command:
 
-   2021/07/21 09:11:38 line.go:44: no valid y values given
+   For example, jp enables a simple syntax to extract the 1st value from bar within foo:
+
+   <pre><strong>echo '{"foo": {"bar": ["a", "b", "c"]}}' | jp foo.bar[1]</strong></pre>
+
+   The response should be: <tt>"b"</tt>
+
+   WHOOPS: 2021/07/21 09:11:38 line.go:44: no valid y values given
 
 3. See other usage and examples at <a target="_blank" href="https://github.com/jmespath/jp#usage">https://github.com/jmespath/jp#usage</a>
 
@@ -215,16 +365,20 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
 
 
 
-   <a name="ConfigCmd"></a>
+   <a name="ConfigLogin"></a>
 
-   ### IAM user configuration
+   ### Configure for Login
 
    Regardless of how you get the command:
 
+   ### Configure profiles
+
+   PROTIP: You'll likely need to use several AWS accounts, so specify a profile for
+   each account.
+
 7. Run the command to create files in folder ~/aws referenced by all other aws cli commands:
 
-   <tt><strong>
-   aws configure --profile root-admin-work  
+   <tt><strong>aws configure --profile root-admin-work  
    </strong></tt>
 
    PROTIP: The example "root-admin-work" would be replaced with the user's account name being created. Different accounts may be needed for different permissions in prod vs. dev use. Having separate access keys for different applications also generates distinct entries in AWS CloudTrail log files, which makes it easier to determine which application performed specific actions.
@@ -288,1018 +442,279 @@ s3 =
    </pre>
 
 
-   ### Configure profiles
-
-   PROTIP: You'll likely need to use several AWS accounts, so specify a profile for
-   each account.
-
-
    ### Services list
 
    Now that you have permissions after configuration:
 
 4. For a list of Amazon services with command access:
 
-   <tt><strong>
-   aws commands help
+   <tt><strong>aws commands help
    </strong></tt>
 
    PROTIP: Drag the left/right edge of the Terminal to widen the screen.
 
-   See http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html
+   <pre>usage: aws [options] &LT;command> &LT;subcommand> [&LT;subcommand> ...] [parameters]
+To see help text, you can run:
+&nbsp;
+  aws help
+  aws &LT;command> help
+  aws &LT;command> &LT;subcommand> help
+&nbsp;
+aws: error: argument command: Invalid choice, valid choices are:
+&nbsp;
+accessanalyzer                           | acm
+acm-pca                                  | alexaforbusiness
+amp                                      | amplify
+amplifybackend                           | apigateway
+apigatewaymanagementapi                  | apigatewayv2
+appconfig                                | appflow
+appintegrations                          | application-autoscaling
+application-insights                     | applicationcostprofiler
+appmesh                                  | apprunner
+appstream                                | appsync
+athena                                   | auditmanager
+autoscaling                              | autoscaling-plans
+backup                                   | batch
+braket                                   | budgets
+ce                                       | chime
+cloud9                                   | clouddirectory
+cloudformation                           | cloudfront
+cloudhsm                                 | cloudhsmv2
+cloudsearch                              | cloudsearchdomain
+cloudtrail                               | cloudwatch
+codeartifact                             | codebuild
+codecommit                               | codeguru-reviewer
+codeguruprofiler                         | codepipeline
+codestar                                 | codestar-connections
+codestar-notifications                   | cognito-identity
+cognito-idp                              | cognito-sync
+comprehend                               | comprehendmedical
+compute-optimizer                        | connect
+connect-contact-lens                     | connectparticipant
+cur                                      | customer-profiles
+databrew                                 | dataexchange
+datapipeline                             | datasync
+dax                                      | detective
+devicefarm                               | devops-guru
+directconnect                            | discovery
+dlm                                      | dms
+docdb                                    | ds
+dynamodb                                 | dynamodbstreams
+ebs                                      | ec2
+ec2-instance-connect                     | ecr
+ecr-public                               | ecs
+efs                                      | eks
+elastic-inference                        | elasticache
+elasticbeanstalk                         | elastictranscoder
+elb                                      | elbv2
+emr                                      | emr-containers
+es                                       | events
+finspace                                 | finspace-data
+firehose                                 | fis
+fms                                      | forecast
+forecastquery                            | frauddetector
+fsx                                      | gamelift
+glacier                                  | globalaccelerator
+glue                                     | greengrass
+greengrassv2                             | groundstation
+guardduty                                | health
+healthlake                               | honeycode
+iam                                      | identitystore
+imagebuilder                             | importexport
+inspector                                | iot
+iot-data                                 | iot-jobs-data
+iot1click-devices                        | iot1click-projects
+iotanalytics                             | iotdeviceadvisor
+iotevents                                | iotevents-data
+iotfleethub                              | iotsecuretunneling
+iotsitewise                              | iotthingsgraph
+iotwireless                              | ivs
+kafka                                    | kendra
+kinesis                                  | kinesis-video-archived-media
+kinesis-video-media                      | kinesis-video-signaling
+kinesisanalytics                         | kinesisanalyticsv2
+kinesisvideo                             | kms
+lakeformation                            | lambda
+lex-models                               | lex-runtime
+lexv2-models                             | lexv2-runtime
+license-manager                          | lightsail
+location                                 | logs
+lookoutequipment                         | lookoutmetrics
+lookoutvision                            | machinelearning
+macie                                    | macie2
+managedblockchain                        | marketplace-catalog
+marketplace-entitlement                  | marketplacecommerceanalytics
+mediaconnect                             | mediaconvert
+medialive                                | mediapackage
+mediapackage-vod                         | mediastore
+mediastore-data                          | mediatailor
+meteringmarketplace                      | mgh
+mgn                                      | migrationhub-config
+mobile                                   | mq
+mturk                                    | mwaa
+neptune                                  | network-firewall
+networkmanager                           | nimble
+opsworks                                 | opsworkscm
+organizations                            | outposts
+personalize                              | personalize-events
+personalize-runtime                      | pi
+pinpoint                                 | pinpoint-email
+pinpoint-sms-voice                       | polly
+pricing                                  | proton
+qldb                                     | qldb-session
+quicksight                               | ram
+rds                                      | rds-data
+redshift                                 | redshift-data
+rekognition                              | resource-groups
+resourcegroupstaggingapi                 | robomaker
+route53                                  | route53domains
+route53resolver                          | s3control
+s3outposts                               | sagemaker
+sagemaker-a2i-runtime                    | sagemaker-edge
+sagemaker-featurestore-runtime           | sagemaker-runtime
+savingsplans                             | schemas
+sdb                                      | secretsmanager
+securityhub                              | serverlessrepo
+service-quotas                           | servicecatalog
+servicecatalog-appregistry               | servicediscovery
+ses                                      | sesv2
+shield                                   | signer
+sms                                      | snowball
+sns                                      | sqs
+ssm                                      | ssm-contacts
+ssm-incidents                            | sso
+sso-admin                                | sso-oidc
+stepfunctions                            | storagegateway
+sts                                      | support
+swf                                      | synthetics
+textract                                 | timestream-query
+timestream-write                         | transcribe
+transfer                                 | translate
+waf                                      | waf-regional
+wafv2                                    | wellarchitected
+workdocs                                 | worklink
+workmail                                 | workmailmessageflow
+workspaces                               | xray
+s3api                                    | s3
+ddb                                      | configure
+deploy                                   | configservice
+opsworks-cm                              | history
+cli-dev                                  | help
+whoami                                   | create-assume-role
+running-instances                        | ebs-volumes
+amazon-linux-amis                        | list-sgs
+sg-rules                                 | tostring
+tostring-with-jq                         | authorize-my-ip
+get-group-id                             | authorize-my-ip-by-name
+public-ports                             | region
+find-access-key                          | docker-ecr-login
+myip                                     | allow-my-ip
+revoke-my-ip                             | allow-my-ip-all
+revoke-my-ip-all
+   </pre>
 
-
-<a name="AWSConsole"></a>
-
-## AWS Services Management Console
-
-1. If you are at the AWS marketing page, click "My Account" for this menu:
-
-   <a target="_blank" href="https://aws.amazon.com/">
-   <img alt="aws-onboarding-landing-250x252-18241" width="250" src="https://user-images.githubusercontent.com/300046/40591769-685c5502-61d4-11e8-8fbe-bcbf70d5e515.jpg"></a>
-   
-2. Get the <strong>AWS Management Console</strong>:
-
-   <a target="_blank" href="
-   https://console.aws.amazon.com/console/home">
-   https://console.aws.amazon.com/console/home</a>
-   
-   ### All Amazon services
-
-3. Click to view all <strong>Services</strong> at the upper-left black menu band.
-
-4. Read the User Guide for each service at:
-
-   <a target="_blank" href="https://aws.amazon.com/documentation/">
-   https://aws.amazon.com/documentation</a>
-
-   ### Quick Access icons
-
-   Save time by quickly get to the most frequently used services by having their icons at the top (black) menu bar.
-
-1. Click the push-pin icon.
-1. One by one, drag the icon on the list and drop it on the top black menu to the left of the orange push pin. If you don't see the black menu, pause just under the browser URL for the browser to automatically scroll.
-
-   PROTIP: The services most often used are IAM, VPC, EC2, S3
-
-1. If you have good memory of what icons mean, change the Settings to "Icons only".
-
-   <img alt="aws-onboarding-icons-only-277x112-9365.jpg" src="https://user-images.githubusercontent.com/300046/40741420-c21d19b0-6408-11e8-9c8d-84c5afd9a8bd.jpg">
-   
-
-   ### Claim S3 Bucket names
-
-   The AWS Account Administrator has a fudiciary responsibility to secure 
-   Intellectual Property assets.
-
-   S3 Bucket names are universally unique among all AWS customers.
-   So just as there are domain name squatters who register and sit on .com host names
-   for sale at high prices to those who actually use the names,
-   the administrator of root accounts for an organization should
-   register your organization's brand names before others get them first.
-
-   To create a bucket for each host name registered on GoDaddy, Google Domains, etc.
-
-4. Click S3 from among services.
-5. Click the blue "Create bucket" button.
-6. Type in the host name (such as "wilsonmar.com") in the Bucket name field.
-7. Select your home Region.
-
-   PROTIP: Claiming a Bucket name in one region locks it up for all Regions.
-
-8. Click "Next".
-9. Click "Next".
-10. Click "Next" to manage users.
-11. Click "Create Bucket".
-
-
+   See <a target="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html">http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-using.html</a>
 
 
 <hr />
 
+<a name="SecureCredential"></a>
 
-## 3rd-party cloud alternatives
+## Encrypt AWS Credentials
 
-Before we begin, know that the cloud services marketplace has competitors not just among the major cloud providers (Amazon, Microsoft, Google), but also among 3rd-party vendors offering <strong>niche</strong> solutions:
+Use my shell script to log into AWS by decrypting credentials stored securely (instead of in plain text). 
 
-   <a target="_blank" href="https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1">
-   NOTE</a>: Comparison-shop alternatives to services AWS offers:
+One reason to encrypt credentials is because it's wise to have a backup copy of the secret file, in an encrypted format, somewhere else. This enables you to retrieve secrets in case you lose your laptop.
 
-   ![aws-iam-alts-643x443](https://user-images.githubusercontent.com/300046/38169520-4c6b04b0-3529-11e8-8d00-baf2b1919d8d.png)
+This article covers use of AWS (Amazon Web Services) on MacOS. In the future I'll be updating this article to cover use of Windows and other secret-handling utilities (Microsoft Azure, Google Cloud Platform, Hashicorp Vault, Akeyless, etc.).
 
-## TCO Calculator
+After obtaining an AWS Access Key ID, AWS Secret Access Key for your account (described above),
+use the credentials on your local machine (laptop), install the AWS CLI locally. Although there is a "awscli" Homebrew formula, but it has been deprecated. So follow this doc to manually install a pkg file for awscli2:
 
-   The Total Cost of Ownership calculator is basically a sales tool to calculate savings moving to AWS from on-premises servers:
+## Installing, updating, and uninstalling the AWS CLI version 2 on macOS
 
-   * <a target="_blank" href="https://www.awstcocalculator.com/">awstcocalculator.com</a>
+AWS CLI versions 1 and 2 use the same aws command name. If you have both versions installed, your computer uses the…docs.aws.amazon.com
 
-   Toggle Basic/Advanced for more fields.
+The installer automatically creates a symlink in a folder in your PATH which links to the main program in the installation folder you chose:
 
-   The instance type is automatically selected based on the memory selected.
+   <pre><strong>ls -al $(which aws)</strong></pre>
 
+   If you see a response such as this:
 
-## Root account sign-up
+   <pre>-rwxr-xr-x  1 wilsonmar  staff  830 Jul 21 09:07 /usr/local/anaconda3/bin/aws</pre>
 
-1. Use an internet browser to get on the <strong>AWS marketing page</strong> at 
+1. Verify install:
 
-   <a target="_blank" href="https://aws.amazon.com/">https://aws.amazon.com</a> 
+   <pre><strong>aws --version</strong></pre>
 
-2. Get your credit card numbers ready.
+   A sample response (at time of writing):
 
-   <a target="_blank" href="https://www.linkedin.com/pulse/how-use-aws-free-tips-teaching-college-wong-chun-yin-cyrus-%E9%BB%83%E4%BF%8A%E5%BD%A5-/">PROTIP</a>: You need a credit card to open an account. But to limit exposure, some people provide to AWS numbers from a <a target="_blank" href="https://usa.visa.com/pay-with-visa/cards/prepaid-cards.html">pre-paid reloadable Visa</a> gift <a target="_blank" href="https://aws.amazon.com/premiumsupport/knowledge-center/accepted-payment-methods/">(debit) card</a> <a target="_blank" href="https://usa.visa.com/pay-with-visa/find-card/get-prepaid-card">pre-paid online</a> (which has an expiration date and some have a monthly service fee). The <a target="_blank" href="https://www.drawpayvisa.com/">Drawpay card</a> provides a 1% refund on purchases and a mobile app to view balances. Others provide fee-Free cash withdrawal at over 25,000 MoneyPass ATMs.
+   <pre>aws-cli/1.20.3 Python/3.7.3 Darwin/18.7.0 botocore/1.21.3</pre>
 
-   <a target="_blank" href="https://app.pluralsight.com/player?course=docker-production-using-amazon-web-services&author=justin-menga&name=docker-production-using-amazon-web-services-m4&clip=5&mode=live">*</a>
+   QUESTION: Why does the pkg say "1.20.3"?
 
-3. Click the yellow "Sign-Up" button if you don't already have an account.
+1. Amazon documentation says to run:
 
-4. PROTIP: If you are creating a production account for an organization, create an email address which you <strong>use only for managing AWS</strong> and not for regular email use and certainly not for doing shopping on Amazon. 
+   <tt>aws configure</tt>
+
+   That command prompts acceptance or override of default AWS ACCESS KEY ID, AWS SECRET ACCESS KEY, and region saved as a plain-text file at 
+
+   <pre>~/.aws/credentials</pre>
+
+   Sample contents:
+
+   <pre>[default]
+aws_access_key_id = ABCDEFGHIJKLMNOPQRST
+aws_secret_access_key = 123456786iJsvzQbkIlDiFtBh6DrPzIw8r7hVb35
+[py-ec2–1]
+aws_access_key_id = ABCDEFGHIJKLMNOPQRST
+aws_secret_access_key = 123456782Nwk156aPF0SxZ8KGY+RrhEbq3AIHUSS
+   </pre>
+
+   BTW Progress toward AWS providing a more secure approach is at https://github.com/aws/aws-sdk/issues/41
+
+   Meanwhile, to avoid having credentials in clear text, store them in encrypted form:
+
+1. Install GPG locally using my instructions at 
+
+   <a target="_blank" href="https://wilsonmar.github.io/git-signing">https://wilsonmar.github.io/git-signing</a>
+
+1. Generate encrypted file "credentials.gpg" from file "credentials". See:
+
+   https://wilsonmar.github.io/git-signing/#bonus-encrypting-whole-files-using-gpg
+
+1. To be able to retrieve secrets in case you lose your laptop, for backup make a copy of the secret file in encrypted format, somewhere else.
+
+1. Make a backup of GPG keys somewhere else (in a key vault) so you can decrypt. One way is to store your private key in a Yubikey USB chip you plug into your laptop.
+
+1. Using the GPG private key, encrypt the aws/credentials file to a new credentials.gpg file also in the same ~/.aws folder.
+
+1. Delete the file at ~/.aws/credentials
+
+1. Download my shell script:
+
+   <pre>curl "https://raw.githubusercontent.com/wilsonmar/DevSecOps/main/bash/awslogin.sh" -o "awslogin.sh"</pre>
+
+   NOTE: It works similar to https://github.com/99designs/aws-vault, but with no external dependencies (other than GPG). However, aws-vault supports several vaulting backends.
+
+1. Run the script to login based on the encrypted credential.gpg file:
+
+   <pre>source ~/awslogin.sh</pre>
+
+   Alternately, run the script to use the "susan" profile defined:
+
+   <pre>source ~/awslogin.sh -p susan</pre>
+
+   The script unencrypts the gpg file, invokes aws login, then removes the unencrypted file.
    
-   The account which controls billing is called the <strong>root account</strong>, which as unlimited access to AWS resources and unlimited ability to rack up charges. By resources I mean: users, groups, roles, IAM Access Policies, API keys, etc. globally for all regions.
+   BONUS: To parse variables from within an AWS credentials file, consider:
+   GitHub - whereisaaron/get-aws-profile-bash: Fetch AWS keys and secrets from ~/.aws/credentials…
 
-   Secure that email address with <strong>multi-factor authentication</strong> with Google or whoever hosts your email server. Also have a way for one person (or maximum two) you trust to be able to access the account in case you are not able to.
+   This is a pure bash script that can parse and extract AWS credentials (key id and secret) from a ~/.aws/credentials…github.com
 
-5. Supply a strong password.
+   If you use it, remember to clear out variables after usage, so they don't linger in memory.
 
-   PROTIP: Use 1Password so that you can easily generate up to <strong>64 character</strong> password, but remember only one password to access the 1Password database of secrets. 1Password encrypts its database so that you can make backups (to a USB drive or secure cloud). I favor 1Password because it provides a way to sync changes with your smartphone without going through the internet.
 
-   Because you only have to remember one master password, you can are free to change various passwords as often as you want with no fear of forgetting them.
-
-6. An example of a value for "AWS account name" is "master-billing".
-
-7. Click "Continue".
-
-   If you have 1Password installed, you would be prompted to create a new account.
-
-8. Provide phone number, address, and credit card.
-
-   Students may want to create several accounts to take advantage of the free tier multiple times. However, uniquely different phone numbers, addresses, and credit cards are not needed for each identity.
-
-9. PROTIP: Where you keep information about your credit card, note the email address and account name using that credit card.
-
-1. Confirm the phone number by answering Amazon's phone call.   
-
-1. For now, click "Free" to select a plan. A <a href="#ComparePlans">comparison on plans is discussed below</a>.
-
-1. Click "Free" to be prompted to sign-in with your new credentials.
-
-   <a name="AccountId"></a>
-
-1. Click your account name at the top black menu for this menu:
-
-   <a target="_blank" href="https://console.aws.amazon.com/billing/home?#/account"><img alt="aws-onboarding-myaccount-184x222-9824.jpg" width="184" src="https://user-images.githubusercontent.com/300046/40592391-ecd60128-61db-11e8-941f-784a35c9d9ff.jpg"></a>
-
-1. Copy the <strong>Account Id</strong> and paste it in the notes associated with where you saed your account email and password (within 1Password).
-
-   PROTIP: This 12 digit number is given out for others to use to sign in using 
-   <a href="#SubAccounts">sub-accounts</a>.
-
-1. Scroll down to click "Edit" next to "Alternate Contacts" and put the other person who knows how to get into the account in for the Billing.
-
-1. Scroll down to click Edit to the right of "Configure Security Challenge Questions".
-1. Write down your security challenge questions and answers where you wrote your Account Id.
-
-   PROTIP: Treat the answers as another set of passwords because others my discover the real answers via social engineering. Answer with some nonsense that has no basis in reality.
-
-
-<a name="Billing"></a>
-
-## Billing tasks
-
-"With great power comes great responsibility".
-
-Account administators who hold root accounts linked to credit cards should do the following:
-
-### Beware the Hourly Directory service 
-
-![aws-dir-svs-bill-648x143-8607](https://user-images.githubusercontent.com/300046/57593673-cb6b5b00-74f9-11e9-88b2-c9b9410463b9.jpg)
-
-PROTIP: <a target="_blank" href="Ahttps://us-west-2.console.aws.amazon.com/directoryservicev2/home">AWS Directory Services</a> is activated as a pre-requisite for instances, but is not deactivated automatically when those instances are removed, and continue to accrue charges <strong>every hour</strong> until manually stopped.
-
-PROTIP: To avoid this money-sucing situation, use a script to instantiate and include deactivation of AWS Directory Services as part of that automated script. That or use a corporate shared Directory.
-
-
-### [_] Activate Tags Preferences
-
-1. Go to <a target="_blank" href="https://console.aws.amazon.com/billing/home#/preferences/tags">https://console.aws.amazon.com/billing/home#/preferences/tags</a>
-   or select your user name at the top black menu and select "My Billing Dashboard".
-   The Billing dashboard appears. An example:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/40761761-3da80788-645a-11e8-96ce-69303e9f6afd.jpg"><img alt="aws-onboarding-billing-dashboard-640x325.jpg" width="640" src="https://user-images.githubusercontent.com/300046/40761735-21119d6e-645a-11e8-9085-f1bbcc731645.jpg"></a>
-
-2. Select Preferences from the left menu.
-3. Check all the boxes and provide your email address.
-4. Click "Save Preferences".
-
-   ### Activate Cost Explorer
-
-   <a target="_blank" href="https://console.aws.amazon.com/billing/home#/">https://console.aws.amazon.com/billing/home#</a>
-
-   Activate <a target="_blank" href="https://console.aws.amazon.com/billing/home?#/costexplorer">AWS Cost Explorer</a> and 24 hours later, you can graph, visualize, and analyze spend. Filter by specifying date ranges, services, tags, or a combination. <a target="_blank" href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-what-is.html">Learn more</a>
-
-   ![aws-cost-explorer-activated-624x241](https://user-images.githubusercontent.com/300046/57591986-7deaf000-74f1-11e9-86a2-0904a1555c23.jpg)
-   
-   
-
-
-   Billing Tags 
-
-   ### [_] Estimate bills
-
-1. PROTIP: Before you dive in, calculate your potential bills by providing usage estimates to the <a target="_blank" href="http://calculator.s3.amazonaws.com/index.html">AWS Calculator</a>.
-
-   It has a different sheet for each service. Parameters for EC2 include the number of EC2 instances, hosts, EBS volumes, IPs, data transfer, app and network load balancing. 
-
-   PROTIP: Remember that there is an additional surcharge for support as a percentage of the whole bill. Rates vary depending on the level of support chosen.
-
-2. Budget:
-
-   <a target="_blank" href="
-   https://console.aws.amazon.com/billing/home?#/budgets/create?type=COST">
-   https://console.aws.amazon.com/billing/home?#/budgets/create?type=COST</a>
-
-   <a target="_blank" href="
-   https://aws.amazon.com/premiumsupport/compare-plans/">
-   https://aws.amazon.com/premiumsupport/compare-plans</a>
-
-   Over time, the cost per EC2 instance has trended downward<a target="_blank" href="http://www.kpcb.com/internet-trends" title="slide 184/294 from Mary Meeker's May 30, 2018">*</a>
-   <img alt="aws-onboarding-cost-ec2-447x288.jpg" width="447" src="https://user-images.githubusercontent.com/300046/40881008-32aee9c0-6679-11e8-8c45-cee5a06d31f2.jpg">
-
-
-   ### [_] Set Billing alerts
-
-3. <a target="_blank" href="https://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/">NOTE</a>: Setup <a target="_blank" href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/monitor-charges.html">billing alerts and notifications</a>
-
-   IAM Policies for this include:
-
-   * Billing
-   * AWSPriceListServiceFullAccess
-   <br /><br />
-
-   ### [_] Define organizations
-
-1. Click your account name at the black top menu:
-
-   ![aws-onboarding-accounts-167x128-5783](https://user-images.githubusercontent.com/300046/40740682-aec0cd78-6406-11e8-829a-394b7d67fc31.jpg)
-
-1. Click "My organizations".
-
-1. Review the <a target="_blank" href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html?icmpid=docs_orgs_console">User Guide</a>
-
-   PROTIP: Up to 20 linked AWS accounts can be grouped together for consolidated billing under
-   "AWS Organizations" to take advantage of volume discounts above.
-
-   IAM Policies for this does not include:
-
-   * AWSOrganizationsServiceTrustPolicy (A policy to allow AWS Organizations to share trust with other approved AWS Services for the purpose of simplifying customer configuration)
-   <br /><br />
-
-
-<a name="DNS-Billing"></a>
-
-### DNS Billing
-
-
-
-
-
-<a name="ForumAccount"></a>
-
-## [_] Create Forum Account
-
-1. PROTIP: To ensure anonymity interacting on public forums, the Administrator should create in a public email system (such as gmail.com, hotmail.com, etc.) an email address for use on forums. Don't use a real name in the email address, but a positive adjective with a number to ensure it's unique, such as "concerned123".
-
-   AWS says "Your email will be kept private" but I don't trust that they can't be hacked.
-
-2. Go to the AWS forums at URL:
-
-   <a target="_blank" href="https://forums.aws.amazon.com/forum.jspa?forumID=150">https://forums.aws.amazon.com/forum.jspa?forumID=150</a>
-
-3. Register the new email address along with an AWS Nickname without a proper name, such as, again, "concerned123".
-
-3. Use that email in StackOverflow.com and other public forums.
-
-
-   <a name="ComparePlans"></a>
-
-## [_] Compare Pricing of Plans
-
-1. Click <a target="_blank" href="https://console.aws.amazon.com/support/plans/home?#/">Amazon's Support Plan page here</a>.
-
-   The Basic account does not enable you to communicate with Amazon people who can answer technical questions.
-
-   The $29/month Developer Plan enables you to open an unlimited number of support cases
-   only via email, with a 12-hour response time if "system impaired". Otherwise, the SLA
-   is 24 hours.
-
-   The $100/month Business Plan enables you to have 24/7 chat, phone, as well as email access with AWS Support people on an unlimited number of support cases, with a 1-hour response time for "production down" issues, or 4-hour response for "production impaired" issues.
-
-   Amazon also has an Enterprise Plan for $15,000/month to get 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
-
-   These dollar amounts are minimums, not fixed prices.
-
-1. Scroll down to mouse over the "$29" on the Pricing line at the bottom of the table.
-
-   ![aws-onboarding-pricing-179x101-7688](https://user-images.githubusercontent.com/300046/40592743-edf804f8-61df-11e8-82e4-d48308fe1c92.jpg)
-
-   PROTIP: Pricing for Developer support is the Greater of $29 or 3% of monthly AWS usage,
-   so you will pay more than $29 if you spend more than $966.67.
-
-1. Scroll back up to click the "Pricing example" link on the right.
-1. Notice that if your spend is $2,000, Amazon bills you $60 for support, not $29.
-
-   <img alt="aws-onboarding-price-example-533x307-27004.jpg" width="533" src="https://user-images.githubusercontent.com/300046/40593326-2004f3f2-61e5-11e8-956f-c74bc35a161b.jpg"></a>
-
-1. Click the "Business" and "Enterprise" buttons in the pop-up to see sample volume pricing tiers.
-
-   ### Cases in Support Center
-
-1. To view support cases filed and their status, see:   
-
-   <a target="_blank" href="https://console.aws.amazon.com/support/home">
-   https://console.aws.amazon.com/support/home</a>
-
-   Policies for this are:
-
-   * AWSSupportAccess (Allows users to access the AWS Support Center)
-   * SupportUser (This policy grants permissions to troubleshoot and resolve issues in an AWS account. This policy also enables the user to contact AWS support to create and manage cases)
-   <br /><br />
-
-1. Scroll down to view videos on specific technical issues by Amazon people.
-
-   On the lower-right corner, there are links to
-   AWS Documentation, Getting Started Guides, Knowledge Center, Whitepapers, and AWS Forums.
-
-
-   ### Inspector service
-
-   The Inspector Service (described <a target="_blank" href="https://aws.amazon.com/inspector/">here</a> automates <strong>security</strong> assessments to help improve the security and compliance of applications deployed on AWS.
-
-   The first 250 agent-assessments is free during your first 90 days. 
-   Then it's $0.30 per agent per assessment (agent-assessment) per month. 
-   And you can have many agents on each machine.
-
-   What security vulnerabilities an organization has is rather confidential information.
-   So be stingy about granting policies related to Inspector:
-
-   Policies for auditors who evaluate security would be:
-
-   * AmazonInspectorReadOnlyAccess (to auditors who evaluate security)
-   * SecurityAudit 
-
-   Policies for those who carry out security assessments:
-
-   * AmazonInspectorFullAccess
-   * AmazonInspectorServiceRolePolicy grants Amazon Inspector access to AWS Services needed to perform security assessments.
-
-   Related policies include:
-
-   * AWSAccountActivityAccess
-   * AWSAccountUsageReportAccess
-   * AWSConfigRole
-   * AWSResourceGroupsReadOnlyAccess
-   * AWSServiceCatalogAdminFullAccess
-   * AWSServiceCatalogEndUserFullAccess
-   <br /><br />
-
-   * PowerUserAccess
-   * SecretsManagerReadWrite
-   <br /><br />
-
-
-   <a name="Well-Architected"></a>
-
-   ### Well-Architected Framework
-
-   Enterprise subscribers can have AWS Solution Architects (from <a target="_blank" href="https://aws.amazon.com/professional-services/">Amazon Professional Services</a>)
-   conduct a "Well-Architected Review" of advice covered in the Well-Architected Framework described in <a target="_blank" href="https://www.aws.training/learningobject/curriculum?id=12049">this free video training</a> and books (in <a target="_blank" href="https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf">pdf</a> and Kindle).
-
-   Topics covered in the Well-Architected Framework:
-
-   * Cost Optimization
-   * Performance
-   * Security
-   * Fault Tolerance
-   * Service Limits
-   <br /><br />
-
-   There is a separate document/video for each of the above topics.
-   
-   <a name="TrustedAdvisor"></a>
-
-   ### Trusted Advisor
-
-   "Trusted Advisor" is not a person, but a report.
-
-   The <a target="_blank" href="https://console.aws.amazon.com/trustedadvisor/home?#/dashboard">Trusted Advisor Dashboard</a> reports the result from scans of your account's setup based on the Well-Architected Framework.
-
-   The policy needed for this:
-
-   * AWSTrustedAdvisorServiceRolePolicy
-   <br /><br />
-
-   The AWS CLI command:
-
-   <pre>aws support describe-trusted-advisor-check-result \
-      --check-id eW7HH0l7J9 \
-      --query 'result.sort_by(flaggedResources[?status!="ok"],&metadata
-   </pre>
-
-   To get the check-id:
-
-   <pre># region must be us-east-1 as it only when support command works
-CHECK_ID=$(aws --region us-east-1 support describe-trusted-advisor-checks --language en --query 'checks[?name==`Service Limits`].{id:id}[0].id' --output text)
-echo $CHECK_ID
-   </pre>
-
-   If you don't have a premium subscription, this error message appears: 
-
-   An error occurred (SubscriptionRequiredException) when calling the DescribeTrustedAdvisorCheckResult operation: AWS Premium Support Subscription is required to use this service.
-
-<a name="MobileApps"></a>
-
-## Mobile apps for smart phones
-
-1. On your Android, Get the <strong>AWS Console</strong> installed:
-
-   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">On Google Android mobile phones</a>
-
-2. On your iOS, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. It's from "AMZN Mobile LLC" which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
-
-   PROTIP: These app got low review scores because the app only lets people read-only,
-   but not change anything. And the 2FA is clunky.
-
-3. In the Store app, search for "<strong>Google Authenticator</strong>" and install it
-   for multi-factor authentication to strength security of your Amazon cloud account.
-
-   PROTIP: Many keep the Authenticator running on their smart phone.
-
-TODO: To avoid embedding an access key with the app (even in encrypted storage), use Amazon Cognito to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
-
-
-<hr />
-
-
-## Security services
-
-1. Scroll to the category "<strong>Security, Identify, and Compliance</strong>" list of ever-growing services:
-
-   ![aws-iam-svcs-cat-207x318-16992](https://user-images.githubusercontent.com/300046/38159747-1bb95b90-346c-11e8-940a-a0f3de709dfa.jpg)
-
-   * WAF (Web Application Firewall) provides application-level attacks such as SQL injection and cross-site scripting.
-   * <strong>Shield</strong> protects against DDoS (Denial of Service) attacks
-
-   * Click "Artifact" (at the bottom of the list) to read documents associated with security certifications.
-   * Cognito provides an API to federate authentication with various social identity providers (Facebook, Twitter, etc.)
-   * GuardDuty
-   * Inspector
-   * Amazon Macie
-   * AWS Single Sign-On
-   * Certificate Manager manages security certificates
-   * Cloud HSM provides 
-   * Directory Service
-   <br /><br />
-
-   What's not listed is the <a target="_blank" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html?icmpid=docs_iam_console">AWS Best Practices</a> is:
-
-   * Cloud Trail audits usage
-
-
-   <a name="Lockdown"></a>
-
-   ## Lockdown Root Account #
-
-6. From the AWS Console, select <a target="_blank" href="https://console.aws.amazon.com/iam/home">IAM</a> (for Identity Access Management) for the list <strong>Security Status</strong>
-
-   ![aws-iam-status-334x256-24837](https://user-images.githubusercontent.com/300046/38159769-9adbb7b0-346c-11e8-8cb9-044eba2a18f0.jpg)
-
-   To get back to this screen, click "Dashboard" on the IAM menu on the left.
-
-   The FAQ to this is at <a target="_blank" href="https://aws.amazon.com/iam/faqs/">https://aws.amazon.com/iam/faqs</a>
-
-10. Click on "Delete your root access key".
-
-11. Check "Don't show me this message again" and Continue to Security Credentials.
-
-
-    ### MFA (Multi-Factor Authentication)
-
-    Have AWS text or call your smartphone (a virtual device) to make sure that it's really you logging in.
- 
-15. Click <strong>Activate MFA on your root account</strong>.
-15. Click <strong>Mange MFA</strong>.
-16. Select "A virtual MFA device".
-17. Click "Next Steps" for the note about installing Google Authentiator.
-18. On your iPhone or Android, if you have not already installed <strong>Google Authenticator</strong> app, do it.
-18. In the the Google Authenticator app, click the "+" icon at the top of the screen.
-19. Click "Scan barcode".
-19. Align the QR code (with the square of dots) within the green box.
-21. Wait for the Google Authenticator app to display two codes. Under the codes we want now 
-    begins with "root-account-mfa-device@" followed by the 12-digit <a href="#AccountId">Account Id</a>.
-22. Type the first code for the account into the AWS Console website "Authentication code 1".
-
-    PROTIP: Do not type the space between numbers so that you enter only 6 digits.
-
-23. Press Tab and type the second code in "Authentication code 2".
-
-    PROTIP: A new code is created every minute.
-
-23. Scroll down to click "Activate virtual MFA" at the bottom of the screen.
-
-    ### MFA in profile
-
-    To specify use of MFA in an assumed role provider profile, see this example of credentials file:
-
-    <pre>
-    [profile prod-access]
-    role_arn=arn:aws:iam::123456789012:role/ReinventProdAccess
-    source_profile=development
-
-    [profile prod-full-s3-access]
-    role_arn=arn:aws:iam::123456789012:role/FullS3Access
-    source_profile=development
-    mfa_serial=arn:aws:iam::18490616333:mfa/james
-    </pre>
-
-24. Test
-
-    <pre><strong>aws s3 ls --profile prod-full-s3-access</strong></pre>
-
-    The response is a prompt waiting for manual input:
-
-    <pre>Enter MFA code: _</pre>
-
-
-    See video https://www.youtube.com/watch?v=xVyx23bvamI
-
-    ### Create Admin sub-account
-
-1. In the <a target="_blank" href="https://console.aws.amazon.com/iam/home#/home">IAM page</a>
-   click "Create individual IAM users". What it says is important:
-
-   "Create IAM users and give them only the permissions they need. Do not use your AWS root account for day-to-day interaction with AWS, because the root account provides unrestricted access to your AWS resources."
-
-2. Click "Manage users".
-3. Click "Add User".
-4. PROTIP: For the user name field, define a pattern of up to <strong>64 characters</strong>
-   with <strong>dashes</strong> (instead of spaces and underlines) to separate words.
-
-   For the Administrator to do work (of assigning): 
-
-   <tt><strong>root-admin-work</strong></tt>
-
-5. Click "Programmatic access".
-6. If you would like to use AWS Management Console access, leave the default for
-   Autogenerated password because you'll create a new password at next sign-in.
-7. Click "Next: Permissions".
-
-   We'll <a href="#Groups">add groups later, below</a>.
-
-8. Click "Attach existing policies directly" because the Admin account it is limited.
-
-9. Rather than granting "<strong>AdministratorAccess</strong>" which gives all access, 
-   give policy to what :
-
-   * SystemAdministrator
-   * IAMFullAccess covers the others:
-
-      * IAMReadOnlyAccess
-      * IAMSelfManageServiceSpecificCriteria
-      * IAMUserChangePassword
-      * IAMUserSSHKeys
-   
-10. Click "Next: Review".
-11. Click "Create user".
-
-    ### Inform user of credentials
-
-12. To see what is sent if you click "Send email", right-click on the link and "Copy Link", then paste in a text editor to see:
-
-    <pre>subject=Welcome to Amazon Web Services
-    body=Hello,  You have been given access to the AWS Management Console for the Amazon Web Services account ID ending in 8630. You can get started by using the sign-in information provided below.%0A%0ASign-in URL: https://103265058630.signin.aws.amazon.com/console%0AUser name: root-admin-work   
-    Your initial sign-in password will be provided separately from this email. When you sign in for the first time, you must change your password. 
-    Sincerely, Your AWS Account Administrator</pre>
-
-13. PROTIP: Along with the Access Key Id and Secret access key, the default Region and format are also required to perform "aws configure", so add that information in the email.
-
-    PROTIP: Add what AWS Groups and associated Policies the user has been given.
-
-    PROTIP: Also include in the email, for those who
-    use AWS CLI, how to install it and 3rd-party tools.
-    
-    For those who use the AWS Console GUI, explain the mobile apps to install.
-    Provide them the URL with the region included, such as:
-
-    <a target="_blank" href="https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2">https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2</a>
-
-    NOTE: Baking different zones into Console URLs makes for more direct connections and removes issues from using a single URL/DNS.
-
-14. Click "Download .csv" to download a "credentials.csv" file to your Downloads folder.
-    It contains columns are a couple columns different than the "Add User" GUI:
-
-    <tt>User name, Password, Access key ID, Secret access key, Console login link</tt>
-
-    The "Console login link" is the "Sign-in URL" in the email.
-
-
-    ### Apply an IAM password policy 
-
-12. Click "Manage Password Policy" so AWS will ensure that "strong" passwords are used (and not easy to guess ones).
-    AWS defaults are terrible:
-
-   <img alt="aws-iam-weak-386x336-39852" width="386" src="https://user-images.githubusercontent.com/300046/38160240-8cbdb006-3477-11e8-914c-faea51864405.jpg"></a>
-
-   PROTIP: Over time, as hackers have access to more powerful computers that can guess passwords quicker, larger passwords are necessary to make them more difficult to crack.
-
-13. PROTIP: The largest Minimum password length AWS allows is 128 characters. But 1Password can generate up to only 64 characters. Practically, 22 characters is a reasonable minimum. Require at least one number and one non-alphanumeric character.
-
-    ![aws-iam-1password-291x259-19343](https://user-images.githubusercontent.com/300046/38160291-93acae16-3478-11e8-80ac-7d5ae3bbd5c4.jpg)
-
-    PROTIP: Each site may have different rules about what special characters are allowed.
-    So generate a smaller string, then manually add special characters. Copy the final string before pasting into the form.
-
-14. Click "Apply password policy".
-
-    ### Deactivate regions not used
-
-    On the same "Account settings" page:
-
-14. Scroll down to "Security Token Service Regions" and deactivate regions your organization are not using.
-
-    PROTIP: Select a Region where most of your target users are located.
-    New services are usually restricted to one region, such as N. Virginia or N. California where AWS does development work.
-
-
-    <a name="SignInAdmin"></a>
-
-    ### Admin Sign In
-
-1. Sign out and sign in again to the AWS Console using the newly created admin sub-account.
-
-2. To verify the identity being used in AWS CLI:
-
-   <pre><strong>aws sts get-caller-identity</strong></pre>
-
-   A sample response:
-
-   <pre>
-    "Account": "103265058630", 
-    "UserId": "AIDAJHXCZNAH2MEXAMPLE",
-    "Arn": "arn:aws:iam::103265058630:user/root-admin-work"
-   </pre>
-
-   Alternately, use an <a href="#Aliases">alias defined</a>:
-
-   <pre>aws whoami</pre>
-
-
-   <a name="Groups"></a>
-
-   ### Define groups to assign permissions 
-
-   PROTIP: For a user to do something usually require several AWS resources.
-   So several permissions need to be granted to a user.
-   To simplify assignments, we define Groups of permissions which we then can assign to each user.
-
-   In other words, An IAM group is a management convenience to manage the same set of permissions for a set of IAM users.
-
-   The AWS CLI command to create a group named "MyIamGroup" is:
-
-   <pre>
-aws iam create-group --group-name MyIamGroup
-   </pre>
-
-   The response is:
-
-   <pre>
-{
-    "Group": {
-        "GroupName": "MyIamGroup",
-        "CreateDate": "2012-12-20T03:03:52.834Z",
-        "GroupId": "AKIAI44QH8DHBEXAMPLE",
-        "Arn": "arn:aws:iam::123456789012:group/MyIamGroup",
-        "Path": "/"
-    }
-}
-   </pre>
-
-   The AWS CLI command to create a S3 security group:
-
-   <pre>
-aws ec2 create-security-group --group-name my-sg --description "My security group"
-   </pre>
-
-   A sample response:
-
-   <pre>{
-   "GroupId": "sg-903004f8"
-   }</pre>
-
-27. Click Manage Groups then Create New Group.
-  
-    PROTIP: Groups are usually associated with a particular job: admin, sales, HR, front-end developer, back-end developer, etc. 
-    
-    A user can belong to multiple groups.
-    More complex organizations manage differences in permissions for company, division, project, location, job level, etc. So 128 characters may not be enough if large words are used. Thus, abbreviate and use acronyms.
-
-    PROTIP: Put abbreviations and acronyms in a wiki publicly available to avoid duplicate usage.
-
-28. "aws_iot_buttons" is the group name I use as an example.
-
-   PROTIP: Use dashes. Space characters are not allowed.
-   On March 1, 2018 AWS removed the ability to use underscores in S3 bucket names.
-
-   The list shown are "AWS Managed".
-
-29. Click on Policy Type to select Job function.
-
-30. PROTIP: Instead of scrolling down the massive list in <strong>Attache Policy</strong> (Alexa, Amazon, AWS, etc.),
-    type in the Filter field the first few letters (such as "IoT") and the list gets smaller. Notice the filter you type is applicable to not just characters beginning with what you typed, but also characters inside names as well.
-
-31. Click to select.
-32. Click "Create Group".
-
-    Note different policies have different levels of access, with admin having more capabilities than "read only" ones.
-
-33. Names shown on the screen is called a "Policy Summary".
-34. Click "JSON" to see the file that AWS reads to assign policies. Here you seen what <strong>Actions</strong> the policy allows.
-
-35. Click "Access Advisor" to see users who have been assigned to use the policy.
-
-    https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html
-
-
-
-
-
-    ### Access keys (access key ID and secret access key) 
-
-    See that "AWS recommends that you rotate your access keys every 90 days"?
-    Some find it easier to remember by doing it on the first day of each month.
-    Why? There are thousands of big computers around the world literally staying up at night trying different combinations.
-   
-24. PROTIP: Make an appointment on your Calendar with a recurring schedule.
-
-    PROTIP: Rotation applies to access key of IAM child accounts, not the root account.
-
-    You don't want programmatic access to your root account, so you don't need no stinkin' keys.
-
-25. Click Delete to the key. Write down the date Created.
-26. Don't create a new Access Key.
-
-
-
-    ### Create IAM Users
-
-36. Click Users on the left menu.
-36. Click Add User.
-36. Specify User Name. For example: user1@myco.com
-
-    PROTIP: Use underscores to separate words in IAM User Names rather than spaces.
-
-36. Check "Programmatic Access".
-36. Uncheck "User must create a new password at next sign-in".
-36. Click "Next: Permissions".
-36. Click "Attach existing policies directly" for the first user.
-
-    PROTIP: The policy attached depends on what the user will be allowed to do.
-
-37. Send to each user the AccountId, UserName using a different mode of communication than the  password.
-37. User signs in using the credentials Account Id, the UserName, and password
-37. Click "Send email"
-
-    PROTIP: Send credentials to your <strong>alternate email</strong> rather than to a cloud drive (Amazon, Google, Box, etc.); an email account that you setup with a fake birthdate and other personal information; one you never give out to anyone.
-
-Send out an email to Notify users
-https://103265058630.signin.aws.amazon.com/console
-
-Send out passwords on a different channel (not just another email).
-
-<hr />
-
-   <a name="IAM-CLI"></a>
-
-   ### IAM CLI #
-
-   AWS Identity and Access Management (IAM) controls access to
-   users, groups, roles, and policies.
-
-6. List users:
-
-   <pre><strong>
-   aws iam list-users --query Users[*].UserName
-   </strong></pre>
-
-8. List groups which the user belongs to :
-
-   <tt><strong>
-   aws iam list-groups-for-user \-\-username ???
-   </strong></tt>
-
-9. Create a new user named "MyUser":
-
-   <pre>
-   aws iam create-user --user-name MyUser
- </pre>
-
-   The response is:
-
-   <pre>
-{
-    "User": {
-        "UserName": "MyUser",
-        "Path": "/",
-        "CreateDate": "2012-12-20T03:13:02.581Z",
-        "UserId": "AKIAIOSFODNN7EXAMPLE",
-        "Arn": "arn:aws:iam::123456789012:user/MyUser"
-    }
-}</pre>
-
-1. Add the user to the group:
-
-   <pre>aws iam add-user-to-group --user-name MyUser --group-name MyIamGroup</pre>
-
-1. To verify that the MyIamGroup group contains the MyUser, use the get-group command:
-
-    <pre>aws iam get-group --group-name MyIamGroup</pre>
-
-    The response:
-
-    <pre>
-    {
-        "Group": {
-            "GroupName": "MyIamGroup",
-            "CreateDate": "2012-12-20T03:03:52Z",
-            "GroupId": "AKIAI44QH8DHBEXAMPLE",
-            "Arn": "arn:aws:iam::123456789012:group/MyIamGroup",
-            "Path": "/"
-        },
-        "Users": [
-            {
-                "UserName": "MyUser",
-                "Path": "/",
-                "CreateDate": "2012-12-20T03:13:02Z",
-                "UserId": "AKIAIOSFODNN7EXAMPLE",
-                "Arn": "arn:aws:iam::123456789012:user/MyUser"
-            }
-        ],
-        "IsTruncated": "false"
-    }</pre>
-
-
-
-## Linux AMIs #
-
-Types of operating system AMI:
-
-   * Amazon Linux 2014.09.2 (CentOS)
-   * Red Hat Enterprise Linux 6.6 (RHEL)
-   * SUSE Linux Enterprise Server 12
-   * Ubuntu Server 14.04
-
-<hr />
-
-## Advanced User Data #
-
-https://gist.github.com/mikepfeiffer/
-
-   <pre>
-   </pre>
-
-* https://aws.amazon.com/powershell  
-   AWS Powershell for Windows</a>
-
-   aws Get-AWSCredentials -ListProfiles
-
-
-
-## Diagrams #
-
-<a target="_blank" href="https://www.processon.com/">
-ProcessOn.com</a>
-provides a free on-line tool to draw diagrams such as
-<a target="_blank" href="https://www.processon.com/view/56e785b1e4b05387d0391d33">
-this</a>
-
-At <a target="_blank" href="https://aws.amazon.com/architecture/icons/">
-architecture/icons</a> Amazon provides a sample .PPTX (PowerPoint 2010+) file
-(AWS_Simple_Icons_PPT_v16.2.22.zip). Lines used to illustrate the hierarchy:
-<amp-img width="238" height="183" alt="aws simple icons-238x183-63"
-layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263922/ed4eb538-3833-11e6-8a22-b72cb8f12c32.jpg"></amp-img>
-PROTIP: Use different colors for lines and text to reduce visual confusion.
-
-
-You can also download a zip containing .png and .svg files of icons
-(AWS_Simple_Icons_EPS-SVG_v16.2.22.zip).
-
-
-## Social #
-
-* <a target="_blank" href="https://www.reddit.com/r/aws/">
-  Reddit on AWS</a>
-
-* https://console.aws.amazon.com/ec2/home
-
-
-<a target="_blank" href="https://www.twitch.tv/aws/videos/all">https://www.twitch.tv/aws/videos/all</a> videos include:
-
-   * <a target="_blank" href="https://www.twitch.tv/videos/206753304">IoT at re:Invent 2017 video</a> with Sarah Cooper (General Manager IoT), Kip Larson (Principal Product Manager for IoT Analytics)
-
-* Sign-up to receive the <a target="_blank" href="https://www.amazon.com/AWS-Architecture-Monthly-FREE-Subscription/dp/B077F2P7DH/ref=pd_sim_405_1?_encoding=UTF8&psc=1&refRID=8JWKBP6Z7PVJZG34T3AW">AWS Architecture Monthly (FREE Subscription)</a> on your Kindle account.
-
-
-## Tutorial Rock Stars and their presentations #
-
-Jeff Barr (<a target="_blank" href="https://www.twitter.com/@jeffbarr/">@jeffbarr</a>),
-AWS Chief Evangelist
-makes announcements of all new stuff at the company's
-   <a target="_blank" href="https://aws.amazon.com/blogs/aws/">
-  AWS Blog</a> and
-  <a target="_blank" href="https://twitter.com/search?q=%23aws&src=typd">
-  #AWS Twitter hash-tag</a>
-
-Yan Kurniawan
-
-   * <a target="_blank" href="https://leanpub.com/ansible-for-aws">
-   Ansible for AWS book</a> 280 pages for minimum $30 published on 2016-01-15 by Yan Kurniawan living in Sydney, Australia
-  #ansible4aws.
-
-* <a target="_blank" href="https://github.com/yankurniawan/ansible-for-aws">
-    https://github.com/yankurniawan/ansible-for-aws</a>
-
-J O'connner:
-
-   * http://joconner.com/
-
-Ryan Scott Brown @ryan_sb
-
-   * https://serverlesscode.com/post/new-ssl-tls-cert-manager-acm/
-
-Matt Wood, @mza, Product Strategy @ Amazon Web Services
-
-
-
-## AWS Certifications #
-
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">
-  $150, 80-minute AWS Certified SysOps Administrator - Associate</a>
-
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/">
-  $150, 80-minute AWS Certified Solutions Architect - Associate</a>
-
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-developer-associate/">
-  $150, 80-minute AWS Certified Developer - Associate</a>
-
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-professional/">
-  $300, 170 minutes AWS Certified Solutions Architect - Professional</a>
-
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
-  $300, 170 minutes AWS Certified DevOps Engineer - Professional</a>
-
-<a target="_blank" href="https://www.amazon.com/Certified-Cloud-Practitioner-Practice-Questions-ebook/dp/B07BK1VJMX/">
-   Practice exam dumps for AWS Certified Cloud Practitioner 2018</a>
-   $5.99 or Kindle Unlimited.
-
-
-## AWS Training Resources #
-
-* <a target="_blank" href="https://quizlet.com/_2dk9qd/">
-   Memorize AWS Acronyms as flash cards and games on Quizlet</a>
-
-* <a target="_blank" href="https://www.cloudacademy.com/">
-   CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
-
-* <a target="_blank" href="http://www.lynda.com/AWS-tutorials/Amazon-Web-Services-Essential-Training/">
-   Lynda.com AWS tutorials</a>
-
-* http://www.pluralsight.com/courses/aws-certified-sysops-admin-associate
-
-* https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-1
-
-* https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-2
-
-* https://www.aws.training/home?courseid=8&language=en-US&src=web_en_course-developing&view=table
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=y7-fAT3z8Lo">
-AWS re:Invent 2016: Become an AWS IAM Policy Ninja in 60 Minutes or Less (SAC303)</a>
-   by Jeff W
-
-* <a target="_blank" href="https://peteris.rocks/blog/script-to-launch-amazon-ec2-spot-instances/" title="October 10, 2016">
-Script to launch Amazon EC2 Spot instances</a> with a simple Python script
-
-   - create a new key pair if one doesn't exist
-   - create a security group if one doesn't exist
-   - request a new spot instance
-   - wait for the spot request to be fulfilled
-   - wait for the instance to boot
-   - connect to it via SSH and run a script of your choice
-
-
-## Hashicorp Terraform Enterprise
-
-<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: Hashicorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
-
-Rules in Hashicorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
-Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
 
 ## More on Amazon #
 

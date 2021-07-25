@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JMeter install (on a Mac)"
-excerpt: "to emulate HTTP requests to test load/capacity"
+excerpt: "to emulate HTTP requests testing load/capacity"
 tags: [perftest, JMeter]
 date: "2021-07-23"
 file: "jmeter-install"
@@ -213,13 +213,15 @@ build-error: 0 (30 days)
 
    The folders:
 
-   * <strong>bin</strong> contains executables, jar, and properties files
-   * docs
-   * extras contains miscellaneous files including samples using the Apache Ant tool
+   <strong>bin</strong> contains the jmeter executable.
+   Within <strong>libexec</strong>:
+   * <strong>bin</strong> contains all other executatives, jars, and properties files.
+   * <strong>docs</strong>
    * <strong>lib</strong> contains library utlity jar files
-   * lib/ext contains JMeter components and add-ons
-   * licenses contains legal text 
-   * printable_docs contains the usermanual in html and a demos folder containing jmx files
+   * <strong>lib/ext</strong> contains JMeter components and add-ons
+   * <strong>extras</strong> contains miscellaneous files including samples using the Apache Ant tool
+   * <strong>licenses</strong> contains legal text 
+   * <strong>printable_docs</strong> contains the usermanual in html and a demos folder containing jmx files
    <br /><br />
 
    Alternately, if you are to be using JMeter on your machine, add the export in your Mac's 
@@ -243,40 +245,65 @@ Alternately, to install manually:
    <a target="_blank" href="http://jmeter.apache.org/download_jmeter.cgi">
    http://jmeter.apache.org/download_jmeter.cgi</a>
 
-1. Click a link to download a tgz file within the Binaries section, such as:
+1. Define a variable identifying the tgz file to download within the Binaries section, such as:
 
-   apache-jmeter-5.4.1.tgz
+   <pre><strong>JMETER_VERSION_SPEC="apache-jmeter-5.4.1"</strong></pre>
 
-   The URL, such as https://mirrors.gigenet.com/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz
-   uses the mirror server selected by default in the same webpage above.
+   Its URL, such as https://mirrors.gigenet.com/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz
+   uses the mirror server selected (by default) in the same webpage above.
 
    The "sha512" link provides the hash signature created so that you can determine whether download obtain all the bits by running the same hashing program. If you obtain the same hash value, no bits were changed during download.
 
-1. Click OK to save:
+1. Click OK for default Save File:
 
    ![jmeter-install-save-file](https://user-images.githubusercontent.com/300046/126862876-b0a33c6d-cf51-41ad-bff5-67b3c0243e32.png)
 
    The file typically downloads to your "Downloads" folder.
 
-1. Click the browser's downloads icon and unzip the downloaded file by double-clicking it:
+   Instead of clicking the browser's downloads icon and unzip the downloaded file by double-clicking it:
 
    ![jmeter-install-tgz](https://user-images.githubusercontent.com/300046/126862135-939cdf15-9d71-4375-94cc-b62a7e7a695d.png)
 
-1. Switch to a Terminal
+1. Switch to a Terminal.
 
-1. Verify the SHA. See http://www.apache.org/info/verification.html
+1. Construct ~/Downloads/apache-jmeter-5.4.1.tgz":
+
+   <pre><strong>DOWNLOADED_TGZ_FILEPATH="$HOME/Downloads/$JMETER_VERSION_SPEC.tgz"
+   ls -al "$DOWNLOADED_TGZ_FILEPATH"
+   </strong></pre>
+
+   A sample response is:
+
+   <pre>-rw-r--r--@ 1 wilsonmar  staff  70704620 Jul 24 02:40 /Users/wilsonmar/Downloads/apache-jmeter-5.4.1.tgz</pre>
+
+1. Write the SHA256 hash to a file. Verify the integrity of the downloaded file by looking for "OK" in the second part of check response:
+
+   <pre><strong>sha256sum "${DOWNLOADED_TGZ_FILEPATH}" > checksum
+   cat checksum
+   if [ sha256sum --check checksum | awk '{print $2}' != "OK" ]; then
+      echo "sha256 compare failed for ${DOWNLOADED_TGZ_FILEPATH}"
+      exit 9
+   fi
+   </strong></pre>
+
+   The response:
    
+   <pre>4edae99881d1cdb5048987accbd02b3f3cdadea4a108d16d07fb1525ef612cf3  /Users/wilsonmar/Downloads/apache-jmeter-5.4.1.tgz
+   /Users/wilsonmar/Downloads/apache-jmeter-5.4.1.tgz: OK
+   </pre>
+
+   Alternately, verify the PGP signature of the author according to <a target="_blank" href="http://www.apache.org/info/verification.html">http://www.apache.org/info/verification.html</a>.
+
 1. In your user home folder, construct a command to untar the downloaded file, then rename the versioned folder name to <strong>~/jmeter</strong>
    
 
-   <pre><strong>cd
-   tar xvfz ~/Downloads/apache-jmeter-5.4.1.tgz
-   mv apache-jmeter-5.4.1  ~/jmeter
+   <pre><strong>tar xvfz "${DOWNLOADED_TGZ_FILEPATH}"
+   mv "${JMETER_VERSION_SPEC}.tgz"  ~/jmeter
    cd ~/jmeter
    ls
    </strong></pre>
 
-   You should see:
+   You should see a list of folders and files:
 
    <pre>LICENSE        README.md      docs           lib            printable_docs
 NOTICE         bin            extras         licenses
@@ -286,24 +313,20 @@ NOTICE         bin            extras         licenses
 
 1. Construct a command to remove the file to save disk space:
 
-   <pre><strong>rm -rf ~/Downloads/apache-jmeter-5.4.1.tgz
+   <pre><strong>rm -rf "${DOWNLOADED_TGZ_FILEPATH}"
+   rm checksum
    </strong></pre>
 
-1. Add the jmeter folder in your system path:
+1. Manually add the jmeter folder in your system path within file <tt>~/.bash_profile</tt> among other Java specs:
 
-   Add this line at the bottom of the file:
-
-   <pre>echo 'export PATH="$HOME/jmeter/bin:$PATH" ' >>~/.bash_profile</pre>
+   <pre>export PATH="$HOME/jmeter:$PATH"</pre>
 
 
    <a name="VerifyJMeter"></a>
 
    ### Verify JMeter
 
-1. Edit ~/.bash_profile to place the line in the middle.
-
-
-1. Verify the install:
+1. Verify the install in a Terminal:
 
    <pre><strong>jmeter</strong></pre>
 
@@ -319,36 +342,32 @@ NOTICE         bin            extras         licenses
 
 ## Images from DockerHub.com
 
-A Docker image is ready to run, after having Docker build it based on a Dockerfile.
+Videos about this topic:
 
-There are <a target="_blank" href="https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=jmeter&starCount=0">
-many JMeter images on DockerHub</a>. 
+   * https://www.youtube.com/watch?v=sl2mfyjnkXk
+   * https://docs.docker.com/docker-cloud/builds/automated-build/
+   <br /><br />
+   
+A Docker image would contain JMeter and be ready to run, after having Docker build it based on a Dockerfile.
 
-The most popular:
+There are <a target="_blank" href="https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=jmeter&starCount=0">many JMeter images on public DockerHub</a> at <a target="_blank" href="https://cloud.docker.com/">https://cloud.docker.com</a>.
+
+WARNING: Don't use the most popular because, as of this writing, it runs the <strong>older Jmeter 2.13</strong> + Debian OS + Java Server JRE 8 at:
 
    <pre>docker pull <a target="_blank" href="https://hub.docker.com/r/cirit/jmeter/">cirit/jmeter</a>
    </pre>
-
-   BLAH: As of this writing, it runs the <strong>older Jmeter 2.13</strong> + Debian OS + Java Server JRE 8 on<br />
-   https://cloud.docker.com/
 
 Another image containing a JMeter server include:
 
    <pre>docker pull <a target="_blank" href="https://hub.docker.com/r/justb4/jmeter/">justb4/jmeter</a>
    </pre>
 
-The image used in the <a target="_blank" href="https://www.flood.io">flood.io</a> SaaS  service is:
+The Docker image used in the <a target="_blank" href="https://www.flood.io">flood.io</a> SaaS service is:
 
    <pre>docker pull <a target="_blank" href="https://hub.docker.com/r/floodio/jmeter/">floodio/jmeter</a>
    </pre>
 
-Videos about this topic:
-
-   * https://www.youtube.com/watch?v=sl2mfyjnkXk
-   * https://docs.docker.com/docker-cloud/builds/automated-build/
-
-
-<hr />
+If none of the above is appropriate for you, build your own in the next section.
 
 <a name="Dockerfile"></a>
 
@@ -366,9 +385,7 @@ see https://gist.github.com/hhcordero/abd1dcaf6654cfe51d0b
 
 The script below can be invoked to setup either a Docker image or your local laptop.
 
-<hr />
-
-## JMeter projects folder
+### JMeter projects folder
 
 1. If you haven't already, create a "projects" folder.
 
@@ -386,11 +403,11 @@ The script below can be invoked to setup either a Docker image or your local lap
       </td></tr>
    <tr valign="top"><td> ./properties </td><td> jmeter property files (if used)
       </td></tr>
-   <tr valign="top"><td> ./scripts </td><td> where you store your jmeter scripts
-      </td></tr>
-   <tr valign="top"><td> ./scripts/lib </td><td>  custom helper scripts
+   <tr valign="top"><td> ./scripts </td><td> here's where you store your jmeter scripts (.jmx files)
       </td></tr>
    <tr valign="top"><td> ./scripts/data </td><td> payloads you might need
+      </td></tr>
+   <tr valign="top"><td> ./scripts/lib </td><td>  custom helper scripts
       </td></tr>
    <tr valign="top"><td> ./scenarios </td><td> scenarios you create
       </td></tr>
@@ -402,6 +419,7 @@ The script below can be invoked to setup either a Docker image or your local lap
       </td></tr>
    </table>
 
+<hr />
 
 <a name="Scripting"></a>
 
