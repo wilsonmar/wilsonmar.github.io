@@ -991,7 +991,7 @@ AICPA (American Institue of Certified Public Accountants) Trust Service Principl
 
 Others:
 
-   * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate.
+   * The Federal Privacy Act of 1974 ensures that only authorized persons should have access to personal information and that personal records should be up to date and accurate. The act affects any computer that contains records used by a federal agency. 
 
    * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
 
