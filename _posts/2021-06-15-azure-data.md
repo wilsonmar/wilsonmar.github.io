@@ -17,6 +17,107 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> Azure cloud.
 
+## Microsoft Data Products Marketing
+
+https://azure.microsoft.com/en-us/resources/videos/dev-stories-troy-hunt-video/
+
+https://economicgraph.linkedin.com/
+
+
+
+<a name="SQL"></a>
+
+## SQL offerings
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-intro/3-deployment-options">LEARN</a>:
+<a target="_blank" href="https://aka.ms/azuresql4beginners">VIDEO: Azure SQL for beginners</a>
+
+Traditionally, <strong>SQL Server 2019</strong> software run within an Azure VM (IaaS) instance.
+This is still the approach for large (64TB) SQL databases.
+This provides you access to the underlying OS, but that also means you need to keep that OS updated.
+
+"Microsoft SQL Services" (for the cloud) was announced with Windows Azure <a target="_blank" href="https://www.youtube.com/watch?v=otuf3goxLsg">in 2008</a>.
+
+In 2010, "Azure SQL" was announced as a "cloud database offering that Microsoft provides as part of the Azure cloud computing platform. Unlike other editions of SQL Server, you do not need to provision hardware for, install or patch Azure SQL; Microsoft maintains the platform for you. You also do not need to architect a database installation for scalability, high availability, or disaster recovery as these features are provided automatically by the service."
+
+PaaS SQL is versionless.
+
+In 2014 announced elastic database pools, vCore choices, business-critical deployments, hyperscale, and serverless architectures.
+
+### Service Tiers 
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tiers-general-purpose-business-critical">Tiers</a> for performance and availability using vCore pricing model:
+
+Resource types:
+   * Single Azure SQL Database
+   * SQL Database / SQL Managed Instance
+   * SQL Database / SQL Managed Instance pools
+   <br /><br />
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Service Tier </th><th> Max. Size </th><th> Latency </th><th> Avail. SLA </th></tr>
+<tr valign="top"><td> General Purpose </td><td> 4TB (8TB for Managed Instance)
+   </td><td> 5-10 ms </td><td> 99.99% </td></tr>
+<tr valign="top"><td> Business Critical </td><td> 4TB
+   </td><td> 1-2 ms (SSD) </td><td> 99.995% in 4-node ZRS cluster</td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tier-hyperscale">Hyperscale</a> </td><td> 100TB+
+   </td><td> instant backups </td><td> scales </td></tr>
+</table>
+
+With Azure SQL Database, the SQL Managed Instance handles up to 8TB databases.
+
+
+Hyperscale scales up and down quickly.
+
+"Azure Database for MySQL, PostgreSQL" also supports MariaDB.
+
+Data Migration Assistant can recognize when
+SQL Server Stretch Database migrates on-prem. 
+cold table rows to Azure (to avoid buying more on-prem. storage). 
+On-prem. backups can then bypass cold table rows (and run quicker).
+
+Elastic Pool doesn't work in Hyperscale.
+
+### Pricing
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-intro/4-purchasing-models-service-tiers">LEARN</a>: 
+
+https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers-dtu
+
+The DTU (Database Transaction Unit) model isn't available in Azure SQL Managed Instance.
+
+<a target="_blank" href="https://docs.microsoft.com/azure/sql-database/sql-database-purchase-models/">DOCS</a>: 
+Instead of DTU, which has a bundled measure for pricing compute, storage, and IO resources,
+the <strong>vCore-based pricing model</strong> has independent charges for compute, storage, and I/O.
+
+The vCore model also allows use of Azure Hybrid Benefit for SQL Server and/or reserved capacity (pay in advance) to save money. Neither of these options is available in the DTU model.
+
+With the Serverless Compute Tier, if there is no activity, it pauses the database and halts compute charges.
+
+SQL Database achieves HA with "Always ON Availability Groups" tech from SQL Server,
+which makes Failover automatic (but takes 30 seconds).
+
+Up to 4 replicas can become the primary, as long as secondaries have the same user authentication config. and firewall rules as the primary.
+
+Backups by transaction log occur every 5-10 minutes.
+Backups are saved for 7 days by default (Basic plan), up to 35 days under Standard/Premium.
+Long-term Retention can be up to 10 years.
+Lowest RPO is one hour of data loss for RTO of up to 12 hours for geo-replication.
+
+References:
+   * https://www.oreilly.com/library/view/pro-sql-server/9781484241288/ introduces SQL Server on Linux. In the process, it walks through topics that are fundamental to SQL Server.
+   * https://github.com/microsoft/sqlworkshops-sql2019workshop to learn about the latest innovations available in SQL Server 2019. You'll be able to directly apply much of that knowledge in this module and learning path.
+
+
+
+## Azure Data Platform
+
+* <a href="#ADF">Azure Data Factory (ADF)</a>
+* Stream Analytics
+* A Data Lake holds raw data after ingestion.
+* A Data Lake House (Databricks) makes use of Spark data warehouse
+
+
 ## DP-900 exam prep
 
 Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DP-900 exam</a>: Describe ...
@@ -50,28 +151,26 @@ The Skillpipe associated with the <a target="_blank" href="https://docs.microsof
 <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-dp-900-azure-data-fundamentals">At Pluralsight
 
    * Getting Started with Azure Data Workloads by Henry Been (<a target="_blank" href="https://henrybeen.nl/">henrybeen.nl</a>)<br /><img width="299" alt="az-compute-vm-sqldb-598x614" src="https://user-images.githubusercontent.com/300046/122325915-ab809f80-cee8-11eb-8424-1d8c9fc305cb.png">
+   <br /><br />
 
 At CloudAcademy: https://cloudacademy.com/learning-paths/dp-900-exam-preparation-microsoft-azure-data-fundamentals-2256/
 has Knowledge checks.
 
+Sample DP-900 Exams:
 
-### Sample Exams
+   * <a target="_blank" href="https://www.whizlabs.com/microsoft-azure-certification-dp-900/">https://www.whizlabs.com/microsoft-azure-certification-dp-900/</a>
 
-* <a target="_blank" href="https://www.whizlabs.com/microsoft-azure-certification-dp-900/">https://www.whizlabs.com/microsoft-azure-certification-dp-900/</a>
+
+<hr />
+
+DP-100 
 
 
 <hr />
 
-## DP-100 exam prep
+DP-300 Relational (SQL)
 
 <hr />
-
-## Microsoft Data Products Marketing
-
-https://azure.microsoft.com/en-us/resources/videos/dev-stories-troy-hunt-video/
-
-https://economicgraph.linkedin.com/
-
 
 ## Types of data
 
@@ -81,16 +180,18 @@ OLAP = data periodically loaded, aggregataed, stored in a cube.
 
    * Summary
    * Trend
+   <br /><br />
 
-A Data Lake holds raw data after ingestion.
+A Data Warehouse 
 
-A Data Warehouse holds 
+Databricks is third-party offering based on Spark
 
 Polybase is file-based.
 
 SSIS is also heterogenous
 
-## ADF
+
+## ADF for ETL
 
 Azure Data Factory (ADF) is Heterogenous - it has over 100 different connectors to various other systems.
 
@@ -129,8 +230,6 @@ Linked service to Data Lake Store, Azure Databricks.
 
 For answers needed today and tomorrow ...
 
-1. 
-
 Batch jobs - REMEMBER:
 
    * ETL = Extract, Transform, Load into SQL star databases with usage "schema on write" for faster read
@@ -165,6 +264,9 @@ Isolation - concurrent execution of transactions leave the database in the same 
 Durability - once a transaction has been committed, it remains committed.
 
 
+<hr />
+
+<a name="ADF"></a>
 
 ## Azure Data Factory on Portal GUI
 
@@ -200,51 +302,26 @@ Process in Factory Resources:
 
 See Pluralsight: "Building your First Data Pipeline in Azure Data Factory" by Emillio Melo
 
+
+<a name="PowerBI"></a>
+
 ## PowerBI
 
-1. PowerBI
+See my <a target="_blank" href="https://wilsonmar.github.io/powerbi">PowerBI notes</a>
 
 See Pluralsight: "Building your First Power BI Report"
 
-## SQL
 
-With Azure SQL Database, The SQL Managed Instance handles up to 8TB databases
-Microsoft takes care of updates to the operating system and MS SQL software.
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Tier </th><th> Max. Size </th><th> Latency </th><th> Avail. SLA </th></tr>
-<tr valign="top"><td> General Purpose </td><td> 4TB (8TB for Managed Instance)
-   </td><td> 5-10 ms </td><td> 99.99% </td></tr>
-<tr valign="top"><td> Hyperscale </td><td> 100TB
-   </td><td> instant backups </td><td> scales </td></tr>
-<tr valign="top"><td> Business Critical </td><td> 4TB
-   </td><td> 1-2 ms (SSD) </td><td> 99.995% in 4-node ZRS cluster</td></tr>
-</table>
+## SQL Server Management Studio (SSMS)
 
-Hyperscale scales up and down quickly.
+SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
 
-Azure Database for MySQL, PostgreSQL
-Microsoft also supports MySQL, MariaDB, and PostgreSQL.
+## Azure Data Studio
 
-Data Migration Assistant can recognize when
-SQL Server Stretch Database migrates on-prem. cold table rows to Azure (to avoid buying more on-prem. storage). On-prem. backups can then bypass cold table rows (and run quicker).
+Azure Data Studio is an open-source, cross-platform tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
 
-Elastic Pool doesn't work in Hyperscale.
-
-<a target="_blank" href="https://docs.microsoft.com/azure/sql-database/sql-database-purchase-models/">DOCS</a>: Instead of DTU, which has a bundled measure for pricing compute, storage, and IO resources,
-the <strong>vCore-based pricing model</strong> has independent charges for compute, storage, and I/O.
-
-With the Serverless Compute Tier, if there is no activity, it pauses the database and halts compute charges.
-
-SQL Database achieves HA with "Always ON Availability Groups" tech from SQL Server,
-which makes Failover automatic (but takes 30 seconds).
-
-Up to 4 replicas can become the primary, as long as secondaries have the same user authentication config. and firewall rules as the primary.
-
-Backups by transaction log occur every 5-10 minutes.
-Backups are saved for 7 days by default (Basic plan), up to 35 days under Standard/Premium.
-Long-term Retention can be up to 10 years.
-Lowest RPO is one hour of data loss for RTO of up to 12 hours for geo-replication.
+![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
 
 
 ## NoSQL Azure Synapse
@@ -258,10 +335,9 @@ Integrates with Apache Spark.
 (Spark jobs can also be run in Azure Databricks and Azure HDInsight)
 
 
+<a name="CosmoDB"></a>
+
 ## Non-Relational CosmosDB
-
-
-
 
 PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. References:
    * https://www.upsolver.com/blog/apache-parquet-why-use
@@ -269,7 +345,7 @@ PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet fi
 
 <a name="Databricks"></a>
 
-## Databricks
+## Databricks DP-090
 
 There is a class and certification specific to Databricks:
 https://docs.microsoft.com/en-us/learn/certifications/courses/dp-090t00
@@ -277,6 +353,7 @@ https://docs.microsoft.com/en-us/learn/certifications/courses/dp-090t00
 Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-090">DP-090 exam</a>: 
 
 
+<a name="HDInsight"></a>
 
 ## HDInsight "big data"
 
@@ -290,19 +367,13 @@ But can scale up and down.
 * Apache Storm - real-time analytics Stream computation
 
 
-## Azure Data Platform
-
-Include:
-* Azure Data Factory (ADF)
-* Stream Analytics
-* Data Lake
-
 ## Social
 
 <a target="_blank" href="https://www.microsoft.com/en-us/sql-server/community?activetab=pivot_1:primaryr4">
 Azure Data Community</a> lists blogs, websites, videos, podcasts, and meetups.
 
 https://www.twitch.tv/425show
+
 
 ## More about Azure #
 
