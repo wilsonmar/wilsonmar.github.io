@@ -51,7 +51,8 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td><td>* <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
    * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
-   * <a href="#DP-300">DP-300 Azure Database Administrator Associate</a><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data">DP-300 Azure Database Administrator Associate</a>><br />
+   <br />
    * PL-200 Power Platform Functional Consultant<br />
    * PL-400 Power Platform Developer<br />
    * PL-100 Power Platform App-maker<br />
@@ -1051,6 +1052,10 @@ The Azure Synapse platform (EDW and Data Lakes).
    * Synapse Analytics Studio
    * https://www.sqlshack.com/understanding-azure-synapse-analytics-formerly-sql-dw/
 
+Ravi Salahi
+   * https://learning.oreilly.com/attend/exam-dp-203-microsoft-azure-data-engineer-associate-crash-course/0636920054124/0636920057411/
+   * https://github.com/zaalion/oreilly-dp-203
+
 John McIntyre
    * https://www.youtube.com/watch?v=tMYOi5E14eU 2020
    * https://www.youtube.com/watch?v=dvP0JwchjfI 2019 "SQL Data Warehouse"
@@ -1064,33 +1069,6 @@ Sample Exams:
 
 <hr />
 
-<a name="DP-300"></a>
-
-## DP-300 Azure Data Engineer Associate
-
-To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-database-administrator-associate/">Microsoft Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. The textual LEARN tutorial on that page has a structure similar to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-300t00">Microsoft's 4-day DP-300T00 class</a> taught live by <a target="_blank" href="https://www.linkedin.com/in/psule/">???</a> and <a target="_blank" href="https://www.linkedin.com/in/gnango-michel-landry-agah-001564b/">???</a>. I highly recommend you to walk through their (free) lab instructions in English at
-STAR: <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure">github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure</a> (and <a target="_blank" href="https://github.com/MicrosoftLearning/?q=DP-300&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/Graeme-Malcolm/">Graeme Malcolm</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a>.
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/">LEARN: Azure SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/azure-data">my Azure data notes</a>. 
-
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">DP-300_01_lab - Lab 1 - Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using SSMS (SQL Server Management Studio).
-
-   * <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 – Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using Azure Data Studio from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
-
-   * Plan and implement data platform resources (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/plan-implement-data-platform-resources/">LEARN</a>)
-
-   * Implement a secure environment for a database service (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-secure-environment-database-service/"><LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_03_lab.md">Lab 3</a>)
-
-   * Monitor and optimize operational resources (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/monitor-optimize-operational-resources-sql-server/"><LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_04_lab.md">Lab 4</a>) - scope out  deliverables for a digital transformation project within AdventureWorks. Examining the Azure portal as well as other tools,  determine how to utilize native tools to identify and resolve performance related issues. Identify fragmentation within the database as well as learn steps to resolve the issue appropriately.
-
-   * Optimize query performance (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/optimize-query-performance-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_05_lab.md">Lab 5</a>) - evaluate a database design for problems with normalization, data type selection and index design. Run queries with suboptimal performance, examine the query plans, and attempt to make improvements within the AdventureWorks2017 database.
-
-   * Perform automation of tasks (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/automate-tasks-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_06_lab.md">Lab 6</a>) - take the information gained in the lessons to configure and subsequently implement automate processes within AdventureWorks.
-
-   * Plan and implement a High Availability and Disaster Recovery (HADR) environment (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/plan-implement-high-availability-disaster-recovery-environment/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_07_lab.md">Lab 7</a>) - execute two main tasks: make Azure SQL Database geo-redundant, and backup to and restore from a URL which uses Azure.
-
-   * Perform administration by using T-SQL
-   <br /><br />
 
 <hr />
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Data (within Microsoft's cloud)"
-excerpt: "VMs, Scale Sets, App Services, Websites, Function Apps, Logic Apps, Docker Containers, AKS"
+excerpt: "Know SQL to pass DP-900, DP-100, DP-300"
 tags: [cloud, azure]
 date: "2021-06-15"
 file: "azure-data"
@@ -24,99 +24,16 @@ https://azure.microsoft.com/en-us/resources/videos/dev-stories-troy-hunt-video/
 https://economicgraph.linkedin.com/
 
 
+This one set of notes were used to study for Microsoft's three data-related <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>:
 
-<a name="SQL"></a>
-
-## SQL offerings
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-intro/3-deployment-options">LEARN</a>:
-<a target="_blank" href="https://aka.ms/azuresql4beginners">VIDEO: Azure SQL for beginners</a>
-
-Traditionally, <strong>SQL Server 2019</strong> software run within an Azure VM (IaaS) instance.
-This is still the approach for large (64TB) SQL databases.
-This provides you access to the underlying OS, but that also means you need to keep that OS updated.
-
-"Microsoft SQL Services" (for the cloud) was announced with Windows Azure <a target="_blank" href="https://www.youtube.com/watch?v=otuf3goxLsg">in 2008</a>.
-
-In 2010, "Azure SQL" was announced as a "cloud database offering that Microsoft provides as part of the Azure cloud computing platform. Unlike other editions of SQL Server, you do not need to provision hardware for, install or patch Azure SQL; Microsoft maintains the platform for you. You also do not need to architect a database installation for scalability, high availability, or disaster recovery as these features are provided automatically by the service."
-
-PaaS SQL is versionless.
-
-In 2014 announced elastic database pools, vCore choices, business-critical deployments, hyperscale, and serverless architectures.
-
-### Service Tiers 
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tiers-general-purpose-business-critical">Tiers</a> for performance and availability using vCore pricing model:
-
-Resource types:
-   * Single Azure SQL Database
-   * SQL Database / SQL Managed Instance
-   * SQL Database / SQL Managed Instance pools
+   * <a href="#DP-900">DP-900</a>
+   * <a href="#DP-100">DP-100</a>
+   * <a href="#DP-300">DP-300: Administering Relational Databases on Microsoft Azure</a>
    <br /><br />
 
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Service Tier </th><th> Max. Size </th><th> Latency </th><th> Avail. SLA </th></tr>
-<tr valign="top"><td> General Purpose </td><td> 4TB (8TB for Managed Instance)
-   </td><td> 5-10 ms </td><td> 99.99% </td></tr>
-<tr valign="top"><td> Business Critical </td><td> 4TB
-   </td><td> 1-2 ms (SSD) </td><td> 99.995% in 4-node ZRS cluster</td></tr>
-<tr valign="top"><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tier-hyperscale">Hyperscale</a> </td><td> 100TB+
-   </td><td> instant backups </td><td> scales </td></tr>
-</table>
+<hr />
 
-With Azure SQL Database, the SQL Managed Instance handles up to 8TB databases.
-
-
-Hyperscale scales up and down quickly.
-
-"Azure Database for MySQL, PostgreSQL" also supports MariaDB.
-
-Data Migration Assistant can recognize when
-SQL Server Stretch Database migrates on-prem. 
-cold table rows to Azure (to avoid buying more on-prem. storage). 
-On-prem. backups can then bypass cold table rows (and run quicker).
-
-Elastic Pool doesn't work in Hyperscale.
-
-### Pricing
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-intro/4-purchasing-models-service-tiers">LEARN</a>: 
-
-https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers-dtu
-
-The DTU (Database Transaction Unit) model isn't available in Azure SQL Managed Instance.
-
-<a target="_blank" href="https://docs.microsoft.com/azure/sql-database/sql-database-purchase-models/">DOCS</a>: 
-Instead of DTU, which has a bundled measure for pricing compute, storage, and IO resources,
-the <strong>vCore-based pricing model</strong> has independent charges for compute, storage, and I/O.
-
-The vCore model also allows use of Azure Hybrid Benefit for SQL Server and/or reserved capacity (pay in advance) to save money. Neither of these options is available in the DTU model.
-
-With the Serverless Compute Tier, if there is no activity, it pauses the database and halts compute charges.
-
-SQL Database achieves HA with "Always ON Availability Groups" tech from SQL Server,
-which makes Failover automatic (but takes 30 seconds).
-
-Up to 4 replicas can become the primary, as long as secondaries have the same user authentication config. and firewall rules as the primary.
-
-Backups by transaction log occur every 5-10 minutes.
-Backups are saved for 7 days by default (Basic plan), up to 35 days under Standard/Premium.
-Long-term Retention can be up to 10 years.
-Lowest RPO is one hour of data loss for RTO of up to 12 hours for geo-replication.
-
-References:
-   * https://www.oreilly.com/library/view/pro-sql-server/9781484241288/ introduces SQL Server on Linux. In the process, it walks through topics that are fundamental to SQL Server.
-   * https://github.com/microsoft/sqlworkshops-sql2019workshop to learn about the latest innovations available in SQL Server 2019. You'll be able to directly apply much of that knowledge in this module and learning path.
-
-
-
-## Azure Data Platform
-
-* <a href="#ADF">Azure Data Factory (ADF)</a>
-* Stream Analytics
-* A Data Lake holds raw data after ingestion.
-* A Data Lake House (Databricks) makes use of Spark data warehouse
-
+<a name="DP-900"></a>
 
 ## DP-900 exam prep
 
@@ -168,7 +85,179 @@ DP-100
 
 <hr />
 
-DP-300 Relational (SQL)
+<a name="DP-300"></a>
+
+## DP-300 Azure Data Engineer Associate
+
+To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-database-administrator-associate/">Microsoft Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. The textual LEARN tutorial on that page has a structure similar to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-300t00">Microsoft's 4-day DP-300T00 class</a> taught live by <a target="_blank" href="https://www.linkedin.com/in/psule/">???</a> and <a target="_blank" href="https://www.linkedin.com/in/gnango-michel-landry-agah-001564b/">???</a>. I highly recommend you to walk through their (free) lab instructions in English at
+STAR: <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure">github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure</a> (and <a target="_blank" href="https://github.com/MicrosoftLearning/?q=DP-300&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/Graeme-Malcolm/">Graeme Malcolm</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a>.
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/">LEARN: Azure SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/azure-data">my Azure data notes</a>. 
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_01_lab.md">Lab 1</a> Using the Azure Portal and SQL Server Management Studio</a> - explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Connect to the virtual machine through RDP (Remote Desktop Protocol) and restore a database using SSMS (SQL Server Management Studio).
+
+   * <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_02_lab.md">DP-300_02_lab - Lab 2 – Deploying PaaS databases</a> - configure and subsequently implement security in the Azure Portal and within the AdventureWorks database. configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using <a href="#AzureDataStudio">Azure Data Studio</a> from the lab VM. Finally, an Azure Database for PostgreSQL will be created.
+
+   * Plan and implement data platform resources (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/plan-implement-data-platform-resources/">LEARN</a>)
+
+   * Implement a <strong>secure</strong> environment for a database service (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-secure-data/?ns-enrollment-type=LearningPath&ns-enrollment-id=learn.azure-sql-fundamentals">INTRO</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-secure-environment-database-service/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_03_lab.md">Lab 3</a>)
+
+   * Monitor and optimize operational resources (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/monitor-optimize-operational-resources-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_04_lab.md">Lab 4</a>) - scope out  deliverables for a digital transformation project within AdventureWorks. Examining the Azure portal as well as other tools,  determine how to utilize native tools to identify and resolve performance related issues. Identify fragmentation within the database as well as learn steps to resolve the issue appropriately.
+
+   * Optimize query performance (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/optimize-query-performance-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_05_lab.md">Lab 5</a>) - evaluate a database design for problems with normalization, data type selection and index design. Run queries with suboptimal performance, examine the query plans, and attempt to make improvements within the AdventureWorks2017 database.
+
+   * Perform automation of tasks (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/automate-tasks-sql-server/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_06_lab.md">Lab 6</a>) - take the information gained in the lessons to configure and subsequently implement automate processes within AdventureWorks.
+
+   * Plan and implement a High Availability and Disaster Recovery (HADR) environment (<a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/plan-implement-high-availability-disaster-recovery-environment/">LEARN</a>, <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure/blob/master/Instructions/Labs/DP-300_07_lab.md">Lab 7</a>) - execute two main tasks: make Azure SQL Database geo-redundant, and backup to and restore from a URL which uses Azure.
+
+   * Perform administration by using T-SQL
+   <br /><br />
+
+
+
+<a name="SQL_Server"></a>
+
+## SQL Server (IaaS in VM)
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-intro/3-deployment-options">LEARN</a>:
+
+Traditionally, <strong>SQL Server 2019</strong> software run within a single Azure VM (IaaS) instance.
+This is still the approach for large (64TB) SQL databases.
+
+<strong>SQL agent jobs</strong> back up directly to a URL linked to Azure blob storage. Azure provides the option to use geo-redundant storage (GRS) or read-access geo-redundant storage (RA-GRS) to ensure that backup files are stored safely across the geographic landscape.
+
+Additionally, as part of the Azure SQL VM service provider, you can have your backups automatically managed by the platform.
+
+SQL Server provides access to the underlying OS, but that also means you need to keep that OS updated.
+Additionally, the <strong>SQL Server IaaS Agent Extension</strong> reduces your administrative overhead:
+   * SQL Server automated backup
+   * SQL Server automated patching
+   * Azure Key Vault integration
+   <br /><br />
+
+When used in conjunction with Azure managed storage, a single Azure Virtual Machine provides <strong>three nines (99.9%)</strong> of high availability. That a downtime of no more than 8.77 hours each year.
+
+In addition to Availability Groups for Virtual Machines for disaster recovery,
+SQL Server has two major options for high availability: 
+   * Always On availability groups and 
+   * Failover Cluster Instances. 
+   <br /><br />
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/126989207-fb0b583e-65a0-4878-bc83-a2a5bbb56581.png">
+<img width="1348" alt="az-dba-sql-server-scr" src="https://user-images.githubusercontent.com/300046/126989207-fb0b583e-65a0-4878-bc83-a2a5bbb56581.png"></a>
+
+References:
+   * https://github.com/microsoft/sqlworkshops-sql2019workshop to learn about the latest innovations available in SQL Server 2019
+
+
+### Always On availability groups (AG)
+
+Always On availability groups are implemented between two to <strong>nine</strong> SQL Server instances running on Azure virtual machines or across Azure or an on-premises data center.
+
+Database transactions are committed to the <strong>primary replica</strong>, and then the transactions are sent to all <strong>secondary replicas</strong>. 
+
+Transactions are sent in either synchronously or asynchronously  availability mode, based on physical distance between servers.
+   * If the workload requires the lowest possible latency or the secondary replicas are geographically spread apart, asynchronous availability mode is recommended. 
+   * If the replicas are within the same Azure region and the applications can withstand some level of latency, synchronous commit mode should be considered. Synchronous mode ensures that each transaction is committed to one or more secondaries before allowing the application to continue. 
+   <br /><br />
+
+Always On availability groups provide both high availability and disaster recovery, because a single availability group can support both synchronous and asynchronous availability modes. The unit of failover for an availability group is a group of databases, and not the entire instance.
+
+### SQL Server Failover Cluster instances
+
+If you need to protect the entire instance, you could use a SQL Server Failover Cluster Instance (FCI), which provides high availability for an entire instance, in a single region. A FCI doesn't provide disaster recovery without being combined with another feature like availability groups or log shipping. FCIs also require shared storage that can be provided on Azure by using shared file storage or using Storage Spaces Direct on Windows Server.
+
+For Azure workloads, availability groups are the preferred solution for newer deployments, because the shared storage require of FCIs increases the complexity of deployments. However, for migrations from on-premises solutions, an FCI may be required for application support.
+
+
+
+<a name="Azure_SQL"></a>
+
+## Azure SQL (PaaS)
+
+<a target="_blank" href="https://aka.ms/azuresql4beginners">VIDEO: Azure SQL for beginners</a>
+
+"Microsoft SQL Services" (for the cloud) was announced with Windows Azure <a target="_blank" href="https://www.youtube.com/watch?v=otuf3goxLsg">in 2008</a>.
+
+In 2010, the <strong>"Azure SQL"</strong> PaaS was announced as a "cloud database offering that Microsoft provides as part of the Azure cloud computing platform. Unlike other editions of SQL Server, you do not need to provision hardware for, install or patch Azure SQL; Microsoft maintains the platform for you. You also do not need to architect a database installation for scalability, high availability, or disaster recovery as these features are provided automatically by the service."
+
+PaaS SQL is versionless.
+
+In 2014 announced elastic database pools, vCore choices, business-critical deployments, hyperscale, and serverless architectures.
+
+### Service Tiers 
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tiers-general-purpose-business-critical">Tiers</a> for performance and availability using vCore pricing model:
+
+Resource types:
+   * Single Azure SQL Database
+   * SQL Database / SQL Managed Instance
+   * SQL Database / SQL Managed Instance pools
+   <br /><br />
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Service Tier </th><th> Max. Size </th><th> Latency </th><th> Avail. SLA </th></tr>
+<tr valign="top"><td> General Purpose </td><td> 4TB (8TB for Managed Instance)
+   </td><td> 5-10 ms </td><td> 99.99% </td></tr>
+<tr valign="top"><td> Business Critical </td><td> 4TB
+   </td><td> 1-2 ms (SSD) </td><td> 99.995% in 4-node ZRS cluster</td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-sql/database/service-tier-hyperscale">Hyperscale</a> </td><td> 100TB+
+   </td><td> instant backups </td><td> scales </td></tr>
+</table>
+
+With Azure SQL Database, the SQL Managed Instance handles up to 8TB databases.
+
+
+Hyperscale scales up and down quickly.
+
+"Azure Database for MySQL, PostgreSQL" also supports MariaDB.
+
+Data Migration Assistant can recognize when
+SQL Server Stretch Database migrates on-prem. 
+cold table rows to Azure (to avoid buying more on-prem. storage). 
+On-prem. backups can then bypass cold table rows (and run quicker).
+
+Elastic Pool doesn't work in Hyperscale.
+
+### Azure SQL Pricing
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/azure-sql-intro/4-purchasing-models-service-tiers">LEARN</a>: 
+
+https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers-dtu
+
+The DTU (Database Transaction Unit) model isn't available in Azure SQL Managed Instance.
+
+<a target="_blank" href="https://docs.microsoft.com/azure/sql-database/sql-database-purchase-models/">DOCS</a>: 
+Instead of DTU, which has a bundled measure for pricing compute, storage, and IO resources,
+the <strong>vCore-based pricing model</strong> has independent charges for compute, storage, and I/O.
+
+The vCore model also allows use of Azure Hybrid Benefit for SQL Server and/or reserved capacity (pay in advance) to save money. Neither of these options is available in the DTU model.
+
+With the Serverless Compute Tier, if there is no activity, it pauses the database and halts compute charges.
+
+SQL Database achieves HA with "Always ON Availability Groups" tech from SQL Server,
+which makes Failover automatic (but takes 30 seconds).
+
+Up to 4 replicas can become the primary, as long as secondaries have the same user authentication config. and firewall rules as the primary.
+
+Backups by transaction log occur every 5-10 minutes.
+Backups are saved for 7 days by default (Basic plan), up to 35 days under Standard/Premium.
+Long-term Retention can be up to 10 years.
+Lowest RPO is one hour of data loss for RTO of up to 12 hours for geo-replication.
+
+References:
+   * https://www.oreilly.com/library/view/pro-sql-server/9781484241288/ introduces SQL Server on Linux. In the process, it walks through topics that are fundamental to SQL Server.
+
+
+
+## Azure Data Platform
+
+* <a href="#ADF">Azure Data Factory (ADF)</a>
+* Stream Analytics
+* A Data Lake holds raw data after ingestion. Gen2 big data analytics with Hadoop compatible access built on Azure Blob storage with a superset of POSIX permissions
+* A Data Lake House (Databricks) makes use of Spark data warehouse
+
+
 
 <hr />
 
@@ -184,12 +273,24 @@ OLAP = data periodically loaded, aggregataed, stored in a cube.
 
 A Data Warehouse 
 
-Databricks is third-party offering based on Spark
-
-Polybase is file-based.
+Polybase is file-based, retrieve data from Excel, etc.
 
 SSIS is also heterogenous
 
+File format types:
+
+* Avro (row-based)
+* Parquet (columnal-based)
+* ORC (Optimized Row Columnar) stores Hive data efficiently
+
+* Binary (pdf)
+* Delimited text (CSV)
+* Excel (XML)
+* JSON
+* XML
+
+
+<a name="ADF"></a>
 
 ## ADF for ETL
 
@@ -317,14 +418,22 @@ See Pluralsight: "Building your First Power BI Report"
 
 SSMS is integrated to visualize and work with Azure SQL, including SQL Server in virtual machines, SQL managed instances, and SQL databases. When necessary, SSMS shows only options that work for a specific Azure service.
 
+https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
+Installer
+
+
+<a name="AzureDataStudio"></a>
+
 ## Azure Data Studio
 
-Azure Data Studio is an open-source, cross-platform tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
+Azure Data Studio is an open-source, cross-platform client GUI tool for querying and working with various Azure data sources, including SQL Server and Azure SQL. Its "notebooks" allows mixing runnable code cells and formatted text in one place.
 
 ![az-data-studio](https://user-images.githubusercontent.com/300046/126932768-c2279fb2-826d-4ca7-bacd-10a1be11b7f9.png)
 
+https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio
 
-## NoSQL Azure Synapse
+
+## Azure Synapse NoSQL
 
 <a target="_blank" href="https://www.microsoft.com/videoplayer/embed/RE4Asf7">VIDEO</a>:
 How to configure Data Factory to ingest data for Azure Synapse Analytics.
@@ -334,6 +443,8 @@ Azure Synapse Analytics was rebranded from "Azure SQL Data Warehouse".
 Integrates with Apache Spark.
 (Spark jobs can also be run in Azure Databricks and Azure HDInsight)
 
+Synapse has a "Massively Parallel" engine of partitioned instances (sharding)
+
 
 <a name="CosmoDB"></a>
 
@@ -341,6 +452,8 @@ Integrates with Apache Spark.
 
 PROTIP: <a target="_blan" href="https://parquet.apache.org/">Apache's Parquet file format</a> generally performs better than CSV because it provides efficient data compression and encoding schemes with enhanced performance to handle complex data in bulk.  It is called a <strong>"columnar"</strong> storage format similar to other columnar-storage file formats available in Hadoop (RCFile and ORC). So it is compatible with most data processing frameworks in the Hadoop environment. Apache Parquet is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. References:
    * https://www.upsolver.com/blog/apache-parquet-why-use
+
+   * https://docs.microsoft.com/en-us/azure/architecture/browse/#databases
 
 
 <a name="Databricks"></a>
