@@ -92,13 +92,13 @@ Definitions: REMEMBER:
    * Level of risk before treatment is the inherent risk
    <br /><br />
 
-Quantitative risk analysis: REMEMBER: 
+Quantitative risk analysis: REMEMBER:<br />
 Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
 <a target="_blank" href="https://www.youtube.com/watch?v=mpSdrr7QzZE">VIDEO</a> 
 
 Annualized Rate of Occurrence (ARO) X Single Loss Expectancy (SLE) = Annual Loss Expectancy (ALE).
 
-Cost/benefit of implementing a particular safeguard, where ALE is the annual loss expectancy: 
+Cost/benefit of implementing a particular safeguard, where ALE is the annual loss expectancy:<br />
 (ALE before safeguard) – (ALE after safeguard) – (annual cost of safeguard)
 
 Residual risk = total risk – countermeasures.
@@ -184,9 +184,10 @@ HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-refe
 <a target="_blank" href="https://iso27001security.com/">https://iso27001security.com</a><br />
 ISO Code of practice for information security controls defines 114 controls grouped into 14 categories. REMEMBER:
 
-   * ISO/IEC 27002 Controls (Counter-measures) of ISMS (Information Security Management System)
+   * ISO/IEC 27002 Controls (Counter-measures) of ISMS (Information Security Management System) lists:
+
    * ISO/IEC 27005 addresses risk management
-   * ISO/IEC 27007 addresses auditing
+   * ISO/IEC 27007 addresses <strong>auditing</strong> [as in James Bond]
    * ISO/IEC 27012 addresses controls (counter-measures)
    * ISO/IEC 27033 addresses network security
    * ISO/IEC 27034 addresses application security
@@ -787,7 +788,7 @@ known issues
 
 ## NIST NVD CVE
 
-<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center) maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : (Open Vulnerability and Assessment Language) for use world-wide.
+<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center)</a> maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : (Open Vulnerability and Assessment Language) for use world-wide.
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=fPUypU7ysMw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=6">MINDMAP</a>] 
 PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, etc.) refer to the <a target="_blank" href="https://www.vicarius.io/research-center">NVD online</a> as the basis for scanning. 
@@ -799,7 +800,7 @@ PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, e
 
 <a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final">READ: SP 800-53 Rev 5 "Security and Privacy Controls for Information Systems and Organizations"</a><br />
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg">
-<img alt="cybersecurity-NIST-Functions-382x390-19166.jpg" width="382" height="390" src="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg""></a>
+<img alt="cybersecurity-NIST-Functions-382x390-19166.jpg" width="382" height="390" src="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg"></a>
 
 NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 500 (Information Technology).
 
@@ -807,7 +808,7 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 <a target="_blank" href="https://www.youtube.com/channel/UCkUuvNigxkKnk3SffjdbmQg">VIDEOS</a> from info.fedramp.gov
 
-In the US federal government, the FISMA (Federal Information Security Management Act) of 2002 law is implemented according to NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
+Every federal agency is covered by the FISMA (Federal Information Security Management Act) of 2002 law. It's implemented according to NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
 
 <a target="_blank" href="https://storefront.disa.mil/kinetic/disa/service-catalog#/forms/cloud-service-support">DISA's Cloud Service Support</a>
 
@@ -995,7 +996,7 @@ Others:
 
    * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
 
-   * 1986 Computer Fraud and Abuse Act (CFAA) affects any entities that may engage in hacking of “protected computers” as defined in the Act. It was the first law written to require a formal computer security plan. It also requires appropriate training of system users or owners where the systems house sensitive information. 
+   * 1986 Computer Fraud and Abuse Act (CFAA) affects any entities that may engage in hacking of <strong>"protected computers"</strong> as defined in the Act. It was the first law written to require a formal computer security plan. It also requires appropriate training of system users or owners where the systems house sensitive information. 
 
    * 1986 Electronic Communications Privacy Act (ECPA) extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer.
 
@@ -1335,6 +1336,8 @@ A threat modeling program continually reassess the threat environment, including
    3. Determine countermeasures and mitigations
    4. Rank the threats
    <br /><br />
+
+Costs include annual maintenance.
 
 
 ### Microsoft's STRIDE
@@ -1694,6 +1697,8 @@ Types of control function:
    * Recovery - Recovers system from an attack, like backups.
    <br /><br />
 
+   * A DBMS is a technical control.
+   * Operational controls: backup control, software testing, anti-virus, 
    * Data backups are recovery <strong>logical controls</strong>. 
    * Recovery administrative controls do NOT include data backups. 
    * Server images are both corrective and technical controls.
@@ -2275,7 +2280,10 @@ Fibre Channel over Ethernet (FCoE) encapsulates Fibre Channel frames over Ethern
 
 CSMA/CD (Carrier-sense multiple access with collision detection) Ethernet
 
-Network address translation (NAT) is a service that can be supplied by a router or by a server. 
+Network Address Translation (NAT) was originally designed for IPv4 address conservation, for private IP networks to use unregistered IP addresses to connect to the Internet. 
+The NAT service can operate on a router or by a server to connect two networks together, and translates the private (not globally unique) addresses in the internal network into legal addresses, before packets are forwarded to another network.
+For additional security, NAT in remote-access environments can be configured to advertise only one address for the entire network to the outside world.
+(??? Static Address, Dedicated Address, Port Address)
 
 DNP3 is a multilayer protocol that is used between components in process automation systems in electric and water companies.
 
