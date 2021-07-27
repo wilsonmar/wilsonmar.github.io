@@ -788,7 +788,7 @@ known issues
 
 ## NIST NVD CVE
 
-<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov</a> (Computer Security Resource Center)</a> maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : (Open Vulnerability and Assessment Language) for use world-wide.
+<a target="_blank" href="http://csrc.nist.gov/">http://csrc.nist.gov (Computer Security Resource Center)</a> maintains the <a target="_blank" href="https://nvd.nist.gov/800-53">NIST 800-53 "National Vulnerability Database"</a> by MITRE's CVE (Computer Vulnerabilities and Exposures) system using OSCAL (Open Security Controls Assessment Language), currently available in JSON, XML, and YAML. OVAL : (Open Vulnerability and Assessment Language) for use world-wide.
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=fPUypU7ysMw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=6">MINDMAP</a>] 
 PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, etc.) refer to the <a target="_blank" href="https://www.vicarius.io/research-center">NVD online</a> as the basis for scanning. 
@@ -975,7 +975,7 @@ SOC reports are internal control reports on the services provided by a service o
    * SOC 2 Type II, along with ISO 27001
    <br /><br />
 
-AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. <a target="_blank" href="https://www.aicpa.org/research/standards/auditattest/ssae.html">PDF</a>: SSAE #18</a> (Statement on Standards for Attestation Agreement #18). 
+AICPA (American Institue of Certified Public Accountants) Trust Service Principles, including Security, Availability and Confidentiality. <a target="_blank" href="https://www.aicpa.org/research/standards/auditattest/ssae.html">PDF: SSAE #18</a> (Statement on Standards for Attestation Agreement #18). 
 <strong>GAPP (Generally Accepted Privacy Principles)</strong> component of SOC2:
    1. Management. The entity defines, documents, communicates, and assigns accountability for its privacy policies and procedures.
    1. Notice. The entity provides notice about its privacy policies and procedures and identifies the purposes for which personal information is collected, used, retained, and disclosed.
@@ -2020,8 +2020,9 @@ Key clustering occurs when different encryption keys generate the same ciphertex
 Cryptanalysis is the science of decrypting ciphertext without prior knowledge of the key or cryptosystem used. 
 A keyspace is all the possible key values when using a particular algorithm or other security measure. 
 
-A TPM (Trusted Platform Module) protects the contents of an encrypted hard drive by storing the decryption key in the host computer. If the hard drive is removed, the data cannot be decrypted. 
-Secure Electronic Transaction (SET) was a credit card transaction technology. 
+A TPM (Trusted Platform Module) protects the contents of an encrypted hard drive by storing the decryption key in the host computer. If the hard drive is removed, the data cannot be decrypted.
+
+Secure Electronic Transaction (SET) was used to verify credit card transactions in 1966.
 
 SAML (Security Assertion Markup Language) is an XML-based open standard data format for exchanging authentication and authorization data between parties, in particular, between an identity provider and a service provider.
 
@@ -2280,12 +2281,12 @@ Fibre Channel over Ethernet (FCoE) encapsulates Fibre Channel frames over Ethern
 
 CSMA/CD (Carrier-sense multiple access with collision detection) Ethernet
 
-Network Address Translation (NAT) was originally designed for IPv4 address conservation, for private IP networks to use unregistered IP addresses to connect to the Internet. 
+<a target="_blank" href="https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html">Network Address Translation (NAT)</a> was originally designed for IPv4 address conservation, for private IP networks to use unregistered IP addresses to connect to the Internet. 
 The NAT service can operate on a router or by a server to connect two networks together, and translates the private (not globally unique) addresses in the internal network into legal addresses, before packets are forwarded to another network.
 For additional security, NAT in remote-access environments can be configured to advertise only one address for the entire network to the outside world.
 (??? Static Address, Dedicated Address, Port Address)
 
-DNP3 is a multilayer protocol that is used between components in process automation systems in electric and water companies.
+DNP3 is a multilayer protocol used between components in process automation systems in electric and water companies.
 
 IPv4 uses 32 bits.<br />
 IPv6 uses 128 bits, has built-in IPSec. Sends Solicited Node (ICMP) Multicast Address unicast to a single node to resolve MAC addr.
