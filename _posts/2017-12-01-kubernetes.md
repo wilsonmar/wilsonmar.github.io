@@ -3931,7 +3931,7 @@ To taint nodes, <a target="_blank" href="https://kodekloud.com/courses/kubernete
 
 1. Tolerate (ignore taints) in <strong>PodSpec yaml</strong> spec: to allow (but do not require) certain pods to schedule onto nodes with matching taints.
 
-   NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with containers[*].image, initContainers[*].image, and <a href="#Jobs">Job activeDeadlineSeconds</a>.
+   NOTE: Tolerations are one of a few PodSpec items which can be edited while active, along with <tt>containers&91;*].image</tt>, <tt>initContainers&91;*].image</tt>, and <a href="#Jobs"><tt>Job activeDeadlineSeconds</tt></a>.
 
   <pre>spec:
   ...
@@ -4288,7 +4288,7 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 
    <pre>
 cat &LT; /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
+&91;kubernetes]
 name=Kubernetes
 baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
 enabled=1
@@ -4317,7 +4317,7 @@ EOF
 
    <pre>cat &LT;&LT;EOF >/etc/docker/daemon.json
    {
-     "exec-opts": ["native.cgroupdriver=systemd"]
+     "exec-opts": &91;"native.cgroupdriver=systemd"]
    }
    EOF</pre>
 
@@ -4557,7 +4557,7 @@ daemonset "kube-flannel.ds" created
 
 1. To deploy a service:
 
-   <pre>kubectl expose deployment *deployment-name* [options]</pre>
+   <pre>kubectl expose deployment *deployment-name* &91;options]</pre>
 
 
 <hr />
@@ -5051,7 +5051,7 @@ Sample labels and values:
 
 1. Get the IP of the pods with label app=nginx, using JSONPath:
 
-   <pre>kubectl get pods -l app=nginx -o jsonpath='{range .items[*]}{.status.podIP}{"\n"}{end}'</pre>
+   <pre>kubectl get pods -l app=nginx -o jsonpath='{range .items&91;*]}{.status.podIP}{"\n"}{end}'</pre>
 
    instead of
 
@@ -5066,7 +5066,7 @@ Sample labels and values:
 
 1. List containers running within a pod:
 
-   <pre><strong>kubectl get pods [pod-name-here] -n [namespace] -o jsonpath='{.spec.containers[*].name}*</strong></pre>
+   <pre><strong>kubectl get pods &91;pod-name-here] -n &91;namespace] -o jsonpath='{.spec.containers&91;*].name}*</strong></pre>
 
    
 1. Custom columns
@@ -5899,9 +5899,9 @@ metadata:
   namespace: production
   name: pod-reader
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["create", "get", "list", "watch"]
+- apiGroups: &91;""]
+  resources: &91;"pods"]
+  verbs: &91;"create", "get", "list", "watch"]
    </pre>
 
 GKE provides several <strong>Predefined roles</strong> to provide granular access to Kubernetes engine resource.
@@ -5979,6 +5979,7 @@ https://www.linkedin.com/pulse/effectively-choosing-k8-node-size-capacity-anurag
 
 https://kubernetes.io/docs/concepts/scheduling-eviction/pod-overhead/
 
+https://medium.com/windmill-engineering/why-does-developing-on-kubernetes-suck-4f4ae6812c8d
 
 
 ## More on DevOps #

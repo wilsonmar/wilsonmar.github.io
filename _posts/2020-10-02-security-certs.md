@@ -235,7 +235,7 @@ Written References:
 
 <a target="_blank" href="https://www.linkedin.com/pulse/where-do-i-find-cissp-practice-questions-nick-webb/">Practice Questions</a>:
 
-   * PROTIP: The toughest questions among samples is <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver. 
+   * PROTIP: The toughest questions among samples is <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver from 2017. 
 
    * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
    
