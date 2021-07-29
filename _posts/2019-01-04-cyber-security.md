@@ -212,7 +212,13 @@ Four categories of processes:
 
 ## Center for Internet Security (CIS)
 
-The Center for Internet Security (CIS) is a community of users, vendors and subject matter experts working together through consensus collaboration to deliver a framework that provides a starting point for organizations interested in implementing ...
+"The Center for Internet Security (CIS) is a community of users, vendors and subject matter experts working together through consensus collaboration to deliver a framework that provides a starting point for organizations interested in implementing ...
+
+1. CIS creates hardened versions of images running on various clouds:
+
+   <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>
+
+   <a target="_blank" href="https://www.cisecurity.org/blog/cis-hardened-images-now-in-microsoft-azure-marketplace/">https://www.cisecurity.org/blog/cis-hardened-images-now-in-microsoft-azure-marketplace/</a>
 
 1. Download the CIS Controls poster (CIS-Controls-V7-Poster.pdf) from:
 
