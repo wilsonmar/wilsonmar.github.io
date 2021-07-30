@@ -1072,7 +1072,15 @@ CUI (Controlled Unclassified) previously marked:
    * Dozens of other "sensitive" labels used by different U.S. agencies
    * Sensitive Security Information (SSI)
 
-Commercial classification: 
+<a target="_blank" href="https://www.spirion.com/data-classification/">Commercial classification</a>:
+   1. Public — Information that is freely available and accessible to the public without any restrictions or adverse consequences, such as marketing material, contact information, customer service contracts, and price lists.
+
+   2. Internal — Data with low security requirements, but not meant for public disclosure, such as client communications, sales playbooks, and organizational charts. Unauthorized disclosure of such information can lead to short-term embarrassment and loss of competitive advantage.
+
+   3. Confidential — Sensitive data that if compromised could negatively impact operations, including harming the company, its customers, partners, or employees. Examples include vendor contracts, employee reviews and salaries, and customer information.
+
+   4. Restricted — Highly sensitive corporate data that if compromised could put the organization at financial, legal, regulatory, and reputational risk. Examples include customers’ PII, PHI, and credit card information.
+
 Data classification program:
    1. Define the classification levels. 
    2. Specify the data classification criteria.
