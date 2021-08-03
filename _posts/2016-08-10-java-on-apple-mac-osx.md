@@ -142,6 +142,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    This is because Oracle changed their licensing after version 8 in 2017.
 
+   PROTIP: Many prefer to use Java 8 because it is the last version which is free open-source licensed.
+
    PROTIP: <strong>Hold off downloading</strong> the java .dmg installer file
    as described at <a target="_blank" href="https://java.com/en/download/help/mac_install.xml">
    https://java.com/en/download/help/mac_install.xml</a>
@@ -156,6 +158,42 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
    NOTE: Downloads of the JDK (Java Development Kit) contains the JRE (Java Runtime Engine).
 
+
+1. PROTIP: Install not the latest 64-bit Java Development Kit (JDK), but the last stable v1.8 version:
+
+   <pre><strong>brew tap caskroom/versions
+   brew install --cask java8
+   </strong></pre>
+
+   The response:
+
+   <pre>==> Caveats
+This Cask makes minor modifications to the JRE to prevent issues with
+packaged applications, as discussed here:
+&nbsp;
+  https://bugs.eclipse.org/bugs/show_bug.cgi?id=411361
+&nbsp;
+If your Java application still asks for JRE installation, you might need
+to reboot or logout/login.
+&nbsp;
+Installing this Cask means you have AGREED to the Oracle Binary Code
+License Agreement for Java SE at
+&nbsp;
+  https://www.oracle.com/technetwork/java/javase/terms/license/index.html
+&nbsp;
+==> Satisfying dependencies
+==> Downloading http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd30
+######################################################################## 100.0%
+==> Verifying checksum for Cask java8
+==> Installing Cask java8
+==> Running installer for java8; your password may be necessary.
+==> Package installers may write to any location; options such as --appdir are i
+Password:
+==> installer: Package name is JDK 8 Update 152
+==> installer: Installing at base path /
+==> installer: The install was successful.
+🍺  java8 was successfully installed!
+   </pre>
 
 
    <a name="AppleJavaC"></a>

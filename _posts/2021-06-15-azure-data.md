@@ -26,7 +26,7 @@ https://economicgraph.linkedin.com/
 
 This one set of notes were used to study for Microsoft's three data-related <a href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>:
 
-   * <a href="#DP-900">DP-900</a>
+   * <a href="#DP-900">DP-900: Microsoft Certified: Azure Data Fundamentals</a>
    * <a href="#DP-100">DP-100</a>
    * <a href="#DP-300">DP-300: Administering Relational Databases on Microsoft Azure</a>
    <br /><br />
@@ -37,7 +37,7 @@ This one set of notes were used to study for Microsoft's three data-related <a h
 
 ## DP-900 exam prep
 
-Earn the "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DP-900 exam</a>: Describe ...
+Earn the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-900">DP-900 "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam</a>. Describe ...
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-core-data-concepts/">LEARN</a>: Core data concepts (15-20%) 
 
@@ -80,7 +80,12 @@ Sample DP-900 Exams:
 
 <hr />
 
-DP-100 
+<a name="DP-100"></a>
+
+## DP-100
+
+Earn the <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-100">DP-100 "Microsoft Certified: Azure Data Fundamentals" certification by passing the one $99 exam</a>. Describe ...
+
 
 
 <hr />
@@ -89,7 +94,7 @@ DP-100
 
 ## DP-300 Azure Data Engineer Associate
 
-To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-database-administrator-associate/">Microsoft Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. The textual LEARN tutorial on that page has a structure similar to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-300t00">Microsoft's 4-day DP-300T00 class</a> taught live by <a target="_blank" href="https://www.linkedin.com/in/psule/">???</a> and <a target="_blank" href="https://www.linkedin.com/in/gnango-michel-landry-agah-001564b/">???</a>. I highly recommend you to walk through their (free) lab instructions in English at
+To be a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-database-administrator-associate/">Microsoft Certified: Azure Database Administrator Associate</a>, pass the single <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-300">DP-300</a>. The textual LEARN tutorial on that page has a structure similar to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/dp-300t00">Microsoft's 4-day DP-300T00 class</a> taught live by <a target="_blank" href="https://www.linkedin.com/in/PaolaEscoba/">Paola Escoba</a>. I highly recommend you to walk through their (free) lab instructions in English at
 STAR: <a target="_blank" href="https://github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure">github.com/MicrosoftLearning/DP-300T00-Administering-Relational-Databases-on-Azure</a> (and <a target="_blank" href="https://github.com/MicrosoftLearning/?q=DP-300&type=&language=&sort=">other languages</a>) by <a target="_blank" href="https://www.linkedin.com/in/Graeme-Malcolm/">Graeme Malcolm</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/dp300labs/">aka.ms/dp300labs</a>.
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/">LEARN: Azure SQL fundamentals</a> <a target="_blank" href="https://wilsonmar.github.io/azure-data">my Azure data notes</a>. 

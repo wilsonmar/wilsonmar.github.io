@@ -237,6 +237,8 @@ Written References:
 
    * PROTIP: The toughest questions among samples is <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver from 2017. 
 
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/preparation-for-the-cissp-certification-640/">CloudAcademy.com "CISSP Prep."</a> [subscription] has a timed (40 minute) Knowledge Check of about 20 questions for each domain, available on mobile phones.
+
    * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
    
    * <a target="_blank" href="https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos">On Youtube</a>
@@ -252,13 +254,11 @@ Written References:
 
 Video prep courses view:
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics. From 2020.
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">OReilly LiveSessions CISSP</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) I think is indeed the most thorough (deep dive) of all video courses I've viewed. 26 hours. A quize of terms at the end of each video. From 2018.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">YouTube playlist on CISSP FREE</a> by "Skillset" provides a good overview, but it's from 2016.
-
-   * <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">OReilly LiveSessions CISSP</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) I think is indeed the most thorough (deep dive) of all video courses I've viewed. 26 hours. A quize of terms at the end of each video. It's from 2018 though.
-
-   * <a target="_blank" href="https://cloudacademy.com/learning-paths/preparation-for-the-cissp-certification-640/">CloudAcademy.com "CISSP Prep."</a> [subscription] has a timed (40 minute) Knowledge Check of about 20 questions for each domain, available on mobile phones.
 
    * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test provides questions. The <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> software enables display of individual domains from all 4 tests at once, showing only questions you missed before. Explanations are given as to why each response is correct or not.
 
