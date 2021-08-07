@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Evangelism dependencies
-modified: 2016-07-13
+modified: 2020-07-13
 excerpt: "Sequence of deliverables"
 date: "2016-07-13"
 file: "evangelism-dependencies"

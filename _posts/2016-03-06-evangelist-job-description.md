@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Evangelist Job Description"
-excerpt: "Example of yaml markup variables for Jekyll to generate HTML"
+excerpt: "Example of yaml markup variables for Jekyll to generate HTML - a job description"
 modified:
 tags: []
 date: "2016-03-06"
@@ -27,6 +27,10 @@ tools: Git, Maven, Gradle, Groovy, Chef, Kubernetes, etc.
 {% include _toc.html %}
 
 This is an example of a job description for a {{ page.role }}. 
+
+
+
+## Using variables
 
 This is also an example of how variables can be used in the markup text residing in GitHub,
 so that key words can be changed in one place and be applied to all instances in the document.
@@ -56,7 +60,7 @@ The result:
 
 ## The role
 
-{{ page.role }} is looking for a {{ page.role }} to join us to attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.tools }}.
+{{ page.company }} is looking for a {{ page.role }} to attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.tools }}.
 
 You know the concerns, interests, demographics, and cultures of {{ page.targets }},
 and you have creative ideas around how we can connect deeply and effectively with them.

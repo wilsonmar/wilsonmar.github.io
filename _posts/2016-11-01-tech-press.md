@@ -3,7 +3,7 @@ layout: post
 title: "Technical (and Business) press mentions"
 excerpt: "Blogs and publications covering technology"
 tags: [Evangelist]
-date: "2016-11-01"
+date: "2020-11-01"
 file: "tech-press"
 image:
 # feature: pic white robots woman 1900x500.jpg
@@ -147,7 +147,7 @@ PhD Consultant - https://phdconsultant.wordpress.com
 > Know others? Please let me know!
 
 
-## More on Technial Evanglism #
+## More on Technical Evanglism #
 
 This post is one of a (planned) series:
 
