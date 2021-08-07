@@ -76,7 +76,7 @@ demo: best practices
 ---
    </pre>
 
-CAUTION: Misspellings of keys would result in a compilation error that would block all other page processing.
+CAUTION: Misspellings of keys would result in a compilation error that blocks all other page processing.
 
 The result:
 
