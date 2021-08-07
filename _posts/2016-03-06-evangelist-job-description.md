@@ -4,7 +4,7 @@ title: "Evangelist Job Description"
 excerpt: "Example of yaml markup variables for Jekyll to generate HTML - a job description"
 modified:
 tags: []
-date: "2016-03-06"
+date: "2021-03-06"
 file: "evangelist-job-description"
 image:
 # feature: pic black white must be willing to relocate to sf 1900x500.jpg
@@ -15,12 +15,22 @@ comments: true
 company: XYZ
 product: Gizmo
 role: Developer Advocate
-passion: marketing and evangelism 
-job_type: developer
+job_type: SRE
+team: marketing
+travel_pct: 20%
+passion: technology evangelism
+bring: content and perspective 
+certifications: AWS, Pragmatic Marketing
+skill: presenter
+expertise: product and customer
 targets: developers
-languages: Go, NodeJs, Python, and Ruby
-platforms: Amazon (AWS), Azure, and Google
-tools: Git, Maven, Gradle, Groovy, Chef, Kubernetes, etc.
+languages: Go, NodeJs, Python, C, Ruby, and Rust
+clouds: Amazon (AWS), Azure, and Google
+platforms: Kubernetes
+job_tools: GitHub, Maven, Gradle, Groovy, 
+colab_tools: Slack, Jira
+document: use cases (solution briefs)
+demo: best practices
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -38,68 +48,75 @@ so that key words can be changed in one place and be applied to all instances in
 The author of this page added variables in the header at the top of the authoring file which is not presented to readers. Within the body of the article's text is inserted <tt>{{ page.targets }}</tt>. When Jekyll reads this markup to generates HTML, it substitutes the variable with the data value from the header.
 
 <tt>
-&#123;&#123; page.company }} is looking for a &#123;&#123; page.role }} to join us in attracting the interest of &#123;&#123; page.targets }} using &#123;&#123; page.languages }} to use our &#123;&#123; page.product }} along with &#123;&#123; page.tools }}.
+&#123;&#123; page.company }} is looking for a &#123;&#123; page.role }} to join us in attracting the interest of &#123;&#123; page.targets }} using &#123;&#123; page.languages }} to use our &#123;&#123; page.product }} along with &#123;&#123; page.job_tools }}.
 </tt>
 
 Values are obtained at the top of the page containing:
 
-<pre>
-company: XYZ
+<pre>company: XYZ
 product: Gizmo
 role: Developer Advocate
-job_type: developer
+job_type: SRE
+team: marketing
+travel_pct: 20%
+passion: technology evangelism
+bring: content and perspective 
+certifications: AWS, Pragmatic Marketing
+skill: presenter
+expertise: product and customer
 targets: developers
-passion: marketing and evangelism 
-languages: Go, NodeJs, Python, and Ruby
-tools: Git, Maven, Gradle, Groovy, Chef, Kubernetes, etc.
-platforms: Amazon (AWS), Azure, and Google
+languages: Go, NodeJs, Python, C, Ruby, and Rust
+clouds: Amazon (AWS), Azure, and Google
+platforms: Kubernetes
+job_tools: GitHub, Maven, Gradle, Groovy, 
+colab_tools: Slack, Jira
+document: use cases (solution briefs)
+demo: best practices
 ---
    </pre>
+
+CAUTION: Misspellings of keys would result in a compilation error that would block all other page processing.
 
 The result:
 
 ## The generated job description
 
-{{ page.company }} is looking for a {{ page.role }} so we better attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.tools }}.
+{{ page.company }} is looking for a {{ page.role }} so we better attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.job_tools }}.
+
+The successful candidate is an engaging communicator, passionate, and loves interacting with clients and prospects. 
 
 You know the concerns, interests, demographics, and cultures of {{ page.targets }},
 and you have creative ideas around how we can connect deeply and effectively with {{ page.targets }}.
 
-As a key member of our small, rapidly growing marketing team, 
-you will <strong>be the face and voice</strong> of {{ page.company }} to {{ page.targets }}. 
+As a key member of our small, rapidly growing {{ page.team }} team, you will be the face and voice of {{ page.company }} to {{ page.targets }}. 
 
-You will be the go to person for telling our story to the market - 
-on stage at events, during industry-wide webcasts, and in conference rooms at the largest companies. 
+You will be the go to person for telling our story to the market - on stage at events, during industry-wide webcasts, and in conference rooms at the largest companies. 
 
-As both a product and customer expert, you will also be the sales force's key marketing contact to help develop effective account specific go-to-market strategies. 
+This role would involve up to {{ page.travel_pct }} travel.
 
-The successful candidate is an engaging communicator, passionate about technology, 
-and loves interacting with clients and prospects. 
+As both a {{ page.expertise }} expert, you will also be the sales force's key marketing contact to help develop effective account specific go-to-market strategies. 
 
-We’re seeking not only a great presenter but an excellent listener, who is curious about the needs and concerns of our prospects and customers.
+We’re seeking not only a great {{ page.skill }} but an excellent listener, who is curious about the needs and concerns of our prospects and customers.
 
-You'll be exposed to the major cloud platforms, as we currently run on 
-{{ page.platforms }}, and have integrated with all of the major Platform-as-a-Service providers (Heroku et al.).
-
-* Up to 70% travel is required of this role.
+You'll be using {{ page.clouds }} where we run {{ page.platforms }}.
 
 
-## Responsibilities
+## Responsibilities: Day in the life
 
 Your key responsibilities toward building a following of passionate <strong>{{ page.targets }}</strong> 
 include the following during a day in the life:
 
-* Identify strategies and opportunities to bring content and perspective to both <strong>{{ page.targets }}</strong> and executives who manage them.
+* Identify strategies and opportunities to bring {{ page.bring }} to both <strong>{{ page.targets }}</strong> and executives who manage them.
 
-* Plan content and campaigns (with <strong>partners</strong>) that leverage time and expense to achieve the most returns.
+* Plan content and campaigns (with <strong>partners</strong>) that leverage time and expense to achieve the best returns.
 
-* Identify <strong>trends data</strong> in order to position {{ page.company }} as a thought leader, both online and offline.
+* Analyze <strong>trends data</strong> in order to position {{ page.company }} as a thought leader.
  
-* Seek out and write up <strong>use cases</strong> (solution briefs) to demonstrate best practices.
-
 * Analyze <strong>new features and capabilities</strong> to present them as useful and compelling.
 
-* <strong>Publish blog posts and tutorials</strong> and <strong>speak at meetups and conferences</strong> to highlight best practices and offer a fresh perspective.
+* Seek out and write up <strong>{{ page.document }}</strong> to demonstrate {{ page.demo }}.
+
+* <strong>Publish blog posts and tutorials</strong> and <strong>speak at meetups and conferences</strong> to highlight best practices and offer fresh perspectives.
 
 * Champion users’ needs internally by providing invaluable feedback to the sales, product, and engineering teams.
 
@@ -107,22 +124,24 @@ include the following during a day in the life:
 
 * Use and create <strong>open source projects</strong> so {{ page.targets }} can adopt the company's offerings quicker and more confidently.
 
+
 ## The ideal candidate 
 
 * Has done a similar job before in this industry, with sharable examples of previous speaking opportunities, conference speaker feedback, and/or recorded webcast delivery. 
 
 * Has built a visible online presence via social media, blogs, forums, GitHub repos and/or community involvement.
 
-* Experience as a current or former {{ page.job_type }} with one or more apps published in an app marketplace 
-   (Google Play, Apple Store, Windows Store, Office Store, iTunes, etc.)
+* Experience as a current or former {{ page.job_type }} with one or more apps published in an app marketplace (Google Play, Apple Store, Windows Store, Office Store, iTunes, etc.)
 
 * Ability to <strong>code demos</strong> in {{ page.languages }}.
 
-* Familiarity using tools ({{ page.tools }}).
+* Expertise using {{ page.job_tools }}.
+
+* Familiarity using {{ page.colab_tools }}.
 
 * Can confidently <strong>moderate discussions</strong> among technical and non-technical groups.
 
-* Possess one or more {{ page.job_type }} certifications.
+* Passed {{ page.certifications }} certifications.
 
 * A keen interest in trying their hand at the business side, with potential aspirations for marketing, business development, sales, or product leadership roles in the future.
 
