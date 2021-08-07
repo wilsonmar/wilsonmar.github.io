@@ -109,9 +109,9 @@ include the following during a day in the life:
 
 * Identify strategies and opportunities to bring {{ page.bring }} to both <strong>{{ page.targets }}</strong> and executives who manage them.
 
-* Plan content and campaigns (with <strong>partners</strong>) that leverage time and expense to achieve the best returns.
+* Plan content and campaigns (with <strong>partners</strong>) that leverage time and expense to achieve the highest returns.
 
-* Analyze <strong>trends data</strong> in order to position {{ page.company }} as a thought leader.
+* Analyze <strong>trend data</strong> in order to position {{ page.company }} as a thought leader.
  
 * Analyze <strong>new features and capabilities</strong> to present them as useful and compelling.
 
