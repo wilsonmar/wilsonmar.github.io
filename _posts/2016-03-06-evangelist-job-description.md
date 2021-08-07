@@ -13,7 +13,7 @@ image:
   creditlink: 
 comments: true
 company: XYZ
-product: MongoDB
+product: Gizmo
 role: Developer Advocate
 passion: marketing and evangelism 
 job_type: developer
@@ -58,12 +58,12 @@ platforms: Amazon (AWS), Azure, and Google
 
 The result:
 
-## The role
+## The generated job description
 
-{{ page.company }} is looking for a {{ page.role }} to attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.tools }}.
+{{ page.company }} is looking for a {{ page.role }} so we better attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.tools }}.
 
 You know the concerns, interests, demographics, and cultures of {{ page.targets }},
-and you have creative ideas around how we can connect deeply and effectively with them.
+and you have creative ideas around how we can connect deeply and effectively with {{ page.targets }}.
 
 As a key member of our small, rapidly growing marketing team, 
 you will <strong>be the face and voice</strong> of {{ page.company }} to {{ page.targets }}. 
