@@ -24,10 +24,11 @@ certifications: AWS, Pragmatic Marketing
 skill: presenter
 expertise: product and customer
 targets: developers
+competencies: application servers, scripting, and network infrastructure
 languages: Go, NodeJs, Python, C, Ruby, and Rust
 clouds: Amazon (AWS), Azure, and Google
 platforms: Kubernetes
-job_tools: GitHub, Maven, Gradle, Groovy, 
+job_tools: GitHub, Maven, Gradle, Groovy
 colab_tools: Slack, Jira
 document: use cases (solution briefs)
 demo: best practices
@@ -42,8 +43,7 @@ This is an example of a job description for a {{ page.role }}.
 
 ## Using variables
 
-This is also an example of how variables can be used in the markup text residing in GitHub,
-so that key words can be changed in one place and be applied to all instances in the document.
+This page is also an example of how page variables can be used in the markup text so that key words can be changed in one place and be applied to all instances in the document.
 
 The author of this page added variables in the header at the top of the authoring file which is not presented to readers. Within the body of the article's text is inserted <tt>{{ page.targets }}</tt>. When Jekyll reads this markup to generates HTML, it substitutes the variable with the data value from the header.
 
@@ -65,6 +65,7 @@ certifications: AWS, Pragmatic Marketing
 skill: presenter
 expertise: product and customer
 targets: developers
+competencies: application servers, scripting, and network infrastructure
 languages: Go, NodeJs, Python, C, Ruby, and Rust
 clouds: Amazon (AWS), Azure, and Google
 platforms: Kubernetes
@@ -83,10 +84,10 @@ The result:
 
 {{ page.company }} is looking for a {{ page.role }} so we better attract the interest of {{ page.targets }} using {{ page.languages }} to use {{ page.product }} along with {{ page.job_tools }}.
 
-The successful candidate is an engaging communicator, passionate, and loves interacting with clients and prospects. 
+The successful candidate is an engaging communicator, passionate, and loves interacting with our partners, clients, and prospects. 
 
 You know the concerns, interests, demographics, and cultures of {{ page.targets }},
-and you have creative ideas around how we can connect deeply and effectively with {{ page.targets }}.
+and you have creative ideas around how we can connect deeply and effectively with them.
 
 As a key member of our small, rapidly growing {{ page.team }} team, you will be the face and voice of {{ page.company }} to {{ page.targets }}. 
 
@@ -143,20 +144,20 @@ include the following during a day in the life:
 
 * Passed {{ page.certifications }} certifications.
 
-* A keen interest in trying their hand at the business side, with potential aspirations for marketing, business development, sales, or product leadership roles in the future.
+* Has potential aspirations for marketing, business development, sales, or product leadership roles in the future.
 
 
 ## Bonus points
 
 You get bonus points if:
 
+ * You are in love with the {{ page.product }} product.
+
  * You are a tinkerer! Show us any personal projects you’ve worked on, GitHub projects you’ve forked, etc.
  
  * You are naturally inclined to provide unbelievable customer service and enjoy teaching and helping others.
 
- * You are in love with {{ page.product }}.
-
- * Measurable competency with application servers, scripting, and network infrastructure
+ * Measurable competency with {{ page.competencies }}.
 
  * Experience in a startup and growth-stage environments
 
