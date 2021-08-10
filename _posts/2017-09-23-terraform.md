@@ -57,26 +57,29 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
    </th><th>Agent</th><th>Master</th></tr>
 </thead><tbody>
 <tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large</td><td>Config Mgmt
-   </td><td>Mutable</td><td>Declarative
+   </td><td>Mutable</td><td><a href="#Declarative">Declarative</a>
    </td><td>Yes</td><td>Yes</td></tr>
 <tr valign="top"><td>Chef</td><td>2009 High</td><td>Large</td><td>Config Mgmt
-   </td><td>Mutable</td><td>Procedural
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td>Yes</td><td>Yes</td></tr>
 <tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large</td><td>Config Mgmt
-   </td><td>Mutable</td><td >Declarative
+   </td><td>Mutable</td><td ><a href="#Declarative">Declarative</a>
    </td><td>Yes</td><td>Yes</td></tr>
 <tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing</td><td>Config Mgmt
-   </td><td>Mutable</td><td>Procedural
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td bgcolor="yellow">No</td><td bgcolor="yellow">No</td></tr>
 <tr valign="top"><td>CF</td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow">Declarative
+   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow">Declarative
+   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>Terraform</td><td>2014 Low</td><td>Huge</td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow">Declarative
+   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi</a>></td><td>2017 Low</td><td>New</td><td>Provisioning
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
+   </td><td>Yes</td><td>Yes</td></tr>
 </tbody></table>
 
 <a name="x1"></a>*1 - CF (CloudFormation) is used only within the AWS cloud while others operate on all clouds.
@@ -86,8 +89,20 @@ Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>.
 
 Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
 
+<a name="Procedural"></a>
+<a name="Declarative"></a>
+
+"Procedural" means "programmatic" as in a Python or JavaScript program applies logic.
+This means procedures need to be written to check whether a desired resource is available before provisioning,
+then logic is needed to check whether the provisioning command was effective.
+
+"Declarative" means a (yaml format) file defines what is desired, and the system makes it so.
+Terraform automatically takes care of performing in the correct sequence.
+
 
 <a name="Immutable"></a>
+
+Immutable:
 
 WARNING: Terraform does not support rollbacks.
 "Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
