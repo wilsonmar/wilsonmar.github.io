@@ -22,9 +22,11 @@ The control plane aggregates telemetry data for display on dashboards such as th
 
 The implementations:
 
-   * <a href="#Istio">Istio</a>, backed by Google, IBM, and Lyft (which contributed its <a href="#Envoy">Envoy proxy</a> which works within Kubernetes as a sidecar proxy instance)
+   * <a target="_blank" href="https://www.nginx.com/">NGINX proxy</a>
 
-   * NGINX proxy
+   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> is built on top of Envoy.
+
+   * <a href="#Istio">Istio</a>, backed by Google, IBM, and Lyft (which contributed its <a href="#Envoy">Envoy proxy</a> that works within Kubernetes as a sidecar proxy instance)
    <br /><br />
 
 ![svcmesh-v01-810x576](https://user-images.githubusercontent.com/300046/47365924-d499f500-d699-11e8-81b3-e057833badd0.png)
