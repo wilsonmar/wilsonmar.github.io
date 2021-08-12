@@ -22,7 +22,7 @@ The control plane aggregates telemetry data for display on dashboards such as th
 
 The implementations:
 
-   * <a target="_blank" href="https://www.nginx.com/">NGINX proxy</a>
+   * <a href="#NGINX">NGINX proxy</a>
 
    * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> is built on top of Envoy.
 
@@ -39,9 +39,9 @@ The control plane is a traffic controller that handles tracing, monitoring, logg
 
 The control plane includes an application programming interface, a command‑line interface, and a graphical user interface for managing the app.
 
-Cloud Foundry Spring Cloud?
-
 Within a Service Mesh, apps create service instances from service definitions (templates) for service instances. Thus, the term service refers to both instance definitions and the instances themselves.
+
+Cloud Foundry Spring Cloud?
 
 
 <a name="Istio"></a>
@@ -63,58 +63,66 @@ Istio makes it easy to create a network of deployed services with load balancing
 "Without any changes in service code" applies only if the app has not implemented its own mechanism duplicative of Istio, like retry logic (which can bring a system down without attenuation mechanisms). 
 
 
+<a name="gRPC"></a>
 
 ### gRPC
 
-https://grpc.io/blog/principles
+gRPC is a high-performance, open-source universal RPC framework built on top of HTTP/2 to enable <strong>streaming</strong> between client and server.
 
-gRPC is a high-performance, open-source universal RPC framework built on top of HTTP/2 to allow for streaming between client and server.
 It originated as project "stubby" within Google and is now a F/OSS project with open specs.
 
-* A new HTTP/2 stream for each RPC call
-* Clients open one long-lived connection to a grpc server.
-<br /><br />
+<a target="_blank" href="https://grpc.io/blog/principles">https://grpc.io/blog/principles</a>:
+
+   * Clients open one long-lived connection to a grpc server
+   * A new HTTP/2 stream for each RPC call
+   <br /><br />
 
 gRPC avoids mistakes of SOAP  WSDL:
 
    * Protobuf vs. XML
+   <br /><br />
 
-https://www.youtube.com/watch?v=RoXT_Rkg8LA
-by Twilio
+References:
 
-https://github.com/salesforce/reactive-grpc
-
-Lyft Envoy uses gRPC bridge to unlock Python gevent clients.
-
-https://www.youtube.com/watch?v=hNFM2pDGwKI
-Introduction to gRPC: A general RPC framework that puts mobile and HTTP/2 first (M.Atamel, R.Tsang)
+   * https://www.youtube.com/watch?v=RoXT_Rkg8LA by Twilio
+   * https://github.com/salesforce/reactive-grpc Lyft Envoy uses gRPC bridge to unlock Python gevent clients.
+   * https://www.youtube.com/watch?v=hNFM2pDGwKI Introduction to gRPC: A general RPC framework that puts mobile and HTTP/2 first (M.Atamel, R.Tsang)
 
 
-### Envoy from Lyft
+<a name="Envoy"></a>
 
-https://www.envoyproxy.io/
-
-https://lyft.github.io/envoy
-
-<a target="_blank" href="https://www.youtube.com/watch?v=RVZX4CwKhGE">VIDEO: 
-Lyft's Envoy: From Monolith to Service Mesh</a> Feb 14, 2017
-by Matt Klein, Lyft 
-explains from a developer's viewpoint why SoA and its issues.
-
-Envoy is written in C++11.
-H2 on both sides, supports gRPC.
-Does shadowing (fork traffic to a test cluster for live perf testing)
-It's container-aware of Docker
-
-Lyft uses LightStep for tracing, WaveFront for stats (via statsd)
-
-L7 reverse proxy at edge (replacement for NGINX).
+### Envoy (from Lyft)
 
 Envoy provides robust APIs for dynamically managing its configuration.
 
-https://twitter.com/EnvoyProxy
+Envoy is container-aware of Docker.
+
+H2 on both sides, supports gRPC.
+
+Does shadowing (fork traffic to a test cluster for live perf testing)
+
+Envoy is written in C++11.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RVZX4CwKhGE">VIDEO: 
+Lyft's Envoy: From Monolith to Service Mesh</a> Feb 14, 2017
+by Matt Klein (Lyft) explains from a developer's viewpoint why SoA and its issues.
+
+L7 reverse proxy at edge (replacement for NGINX).
+
+Lyft uses LightStep for tracing, WaveFront for stats (via statsd).
+
+
+References:
+   * https://www.envoyproxy.io/
+   * https://lyft.github.io/envoy
+   * <a target="_blank" href="https://twitter.com/EnvoyProxy">Twitter: @EnvoyProxy</a>
+
+
+<a name="NGINX"></a>
 
 ### NGINX
+
+<a target="_blank" href="https://www.nginx.com/">NGINX proxy</a>
 
 NGINX built the equivalent of Istio Envoy.
 
@@ -128,15 +136,19 @@ https://www.nginx.com/blog/introducing-the-nginx-microservices-reference-archite
 
 ### Linkerd
 
-<a href="#Linkerd">Linkerd</a> (<a target="_blank" href="https://linkerd.io/">https://linkerd.io</a>) is a <a target="_blank" href="https://www.cncf.io/projects/">Cloud Native Foundation (CNF) incubating project</a> that also includes graduates Kubernetes and Prometheus, plus Helm, OpenTracing, gRPC, etc..  Linkerd provides Grafana dashboards and CLI debugging tools for Kubernetes service with no cluster-wide installation. It was built in the Rust programming language. Its customers include Salesforce, Walmart, PayPal, Expedia, Comcast.
+<a href="#Linkerd">Linkerd</a> (<a target="_blank" href="https://linkerd.io/">https://linkerd.io</a>) is a <a target="_blank" href="https://www.cncf.io/projects/">Cloud Native Foundation (CNF) incubating project</a> that also includes graduates Kubernetes and Prometheus, plus Helm, OpenTracing, gRPC, etc..  
 
+It was built in the Rust programming language. 
 
-https://linkerd.io/2/getting-started/
-for installation, etc.
-
-Provides Grafana dashboards:
-
+Linkerd provides Grafana dashboards and CLI debugging tools for Kubernetes service with no cluster-wide installation:
 <img width="785" alt="svcmesh-linkerd-dataplane-grafana-1570x462" src="https://user-images.githubusercontent.com/300046/47396344-93303680-d6e7-11e8-828e-9ef45b288adf.png">
+
+Its customers include Salesforce, Walmart, PayPal, Expedia, Comcast.
+
+References:
+   * https://linkerd.io/2/getting-started/ for installation, etc.
+
+
 
 <hr >
 
