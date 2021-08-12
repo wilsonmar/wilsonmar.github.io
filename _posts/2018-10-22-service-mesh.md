@@ -18,28 +18,100 @@ comments: true
 {% include _toc.html %}
 
 "Service mesh" architecture is about microservices applications working within a "control plane" a standard way to hand-off service-to-service access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services. 
-The control plane aggregates telemetry data for display on dashboards such as the hero image above.
 
-The implementations:
+Decentralized microservices apps Dockerized for running in containers make all network communication through its sidecar proxy (like handing a box to UPS to deliver). 
 
-   * <a href="#NGINX">NGINX proxy</a>
+<a target="_blank" href="https://blog.envoyproxy.io/introduction-to-modern-network-load-balancing-and-proxying-a57f6ff80236" title="Dec 27, 2017 by Matt Klein, Engineer @lyft (https://mattklein123.dev/)">BLOG</a>:
+![loadbal-sidecar-700x324](https://user-images.githubusercontent.com/300046/128973671-9bb88104-f369-4da8-872d-12113e6b625c.png)
 
-   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> is built on top of Envoy.
+Each sidecar proxy can communicate with <strong>backends</strong> in different zones (generically named A, B, and C in the diagram). Policies sent to each sidecar can specify zones and a different amount of traffic be sent to each zone. Each zone can be in different clouds (thus multi-cloud).
 
-   * <a href="#Istio">Istio</a>, backed by Google, IBM, and Lyft (which contributed its <a href="#Envoy">Envoy proxy</a> that works within Kubernetes as a sidecar proxy instance)
+This approach also enables security-related policies to be applied (such as limiting outflows from some countries) and detection of zonal failure and automatic rerouting around traffic anomalies (including DDoS attacks). 
+
+Each sidecar proxy and backend service report periodic state to the global load balancer (GLB) so it can make decisions that take into account latency, cost, load, current failures, etc. This enables centralized visualizations engineers use to understand and operate the entire distributed system in context.
+
+This means app developers no longer need to bother coding for a long list of operational cross-cutting concerns:
+
+   * collection and reporting of telemetry (health checks, logs, metrics, traces)
+
+   * TLS termination (SSH key handling)
+   * Handle protocols HTTP/2, WebSocket, gRPC, Redis, as well as TCP traffic
+
+   * rate limiting (DoS mitigation)
+   * timeout and back-out handling when response is not received
+   * Circuit breakers
+
+   * Fault injection (for chaos engineering to improve reliability)
+   * Enforce policy decisions
+
+   * load balancing
+   * Staged rollouts with percentage-based traffic splits
    <br /><br />
 
-![svcmesh-v01-810x576](https://user-images.githubusercontent.com/300046/47365924-d499f500-d699-11e8-81b3-e057833badd0.png)
+Embedding the above functionality in each app program may provide the best performance and scalability, but requires polyglot coding to implement the library in many languages. It can also be cumbersome to coordinate upgrades of new versions of each library across all services.
+
+Several sidecar programs have been created:
+
+   * "Envoy" was developed by Lyft (cars) and donated to the CNCF. 
+   * <a target="_blank" href="https://linkerd.io/">Linkerd</a>
+   * <a target="_blank" href="https://www.haproxy.com/">HAProxy</a>, 
+   * <a target="_blank" href="https://traefik.io/">Traefik</a>
+   <br /><br />
+
+Logically, communication of packets/requests travel through a "Data Plane".
+
+
+<a name="ControlPlane"></a>
+
+## Control Plane
+
+There is also a <strong>"Control Plane"</strong> which, rather than exchanging packets/requests, traffic in <strong>policies and configuration settings</strong> to enable services such as:
+
+   * deploy control (blue/green and/or traffic shifting), 
+   * authentication and authorization settings, 
+   * route table specification (e.g., when service A requests /foo what happens), and 
+   * load balancer settings (e.g., timeouts, retries, circuit breakers, etc.).
+   <br /><br />
+
+The control plane aggregates telemetry data for display on dashboards such as the hero image above.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/47365924-d499f500-d699-11e8-81b3-e057833badd0.png">
+<img alt="svcmesh-v01-810x576.png" width="810" height="576" src="https://user-images.githubusercontent.com/300046/47365924-d499f500-d699-11e8-81b3-e057833badd0.png"></a>
 
 Individual apps interact with a proxy (Kubernetes sidecar) running on each service instance. The sidecars communicate with a <strong>Control Tower</strong>.
 This out-of-process architecture puts hard stuff in one place and allows app developers to focus on business logic.
 And a separate library in each language for operational concerns is not needed.
 
-The control plane is a traffic controller that handles tracing, monitoring, logging, alerting, A/B testing, rolling deploys, canary deploys, rate limiting, and retry / circuit-breaker activities that include creation of new instances based on application-wide policies during authentication, and authorization;
+The "Control Plane" is a traffic controller that handles tracing, monitoring, logging, alerting, A/B testing, rolling deploys, canary deploys, rate limiting, and retry / circuit-breaker activities that include creation of new instances based on application-wide policies during authentication, and authorization;
 
 The control plane includes an application programming interface, a command‑line interface, and a graphical user interface for managing the app.
 
 Within a Service Mesh, apps create service instances from service definitions (templates) for service instances. Thus, the term service refers to both instance definitions and the instances themselves.
+
+Several products provide a "control plane UI" (web portal/CLI) to set global system configuration settings and policies as well as 
+
+   * Dynamic service discovery
+   * certificate management (acts as a Certificate Authority (CA) and generates certificates to allow secure mTLS communication in the data plane).
+   * automatic self-healing and zone failover (to maximize uptime)
+   <br /><br />
+
+## Control Plane vendors
+
+Several control plane vendors compete on features, configurability, extensibility, and usability:
+
+   * <a href="#Istio">IstioD</a>, backed by Google, IBM, and Lyft (which contributed its <a href="#Envoy">Envoy proxy</a> that works within Kubernetes as a sidecar proxy instance)
+
+   * <a target="_blank" href="https://verizon.github.io/nelson/">open-sourced Nelson</a> uses Envoy as its proxy and builds a robust service mesh control plane around the HashiCorp stack (i.e. Nomad, etc.). 
+
+   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> (part of the Konnect Connectivity Platform) makes use of Envoy
+
+   * <a target="_blank" href="https://github.com/airbnb/synapse">SmartStack</a> creates a control plane using HAProxy or NGINX.
+
+   * <a href="#NGINX">NGINX proxy</a>
+
+   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> is built on top of Envoy.
+
+
 
 Cloud Foundry Spring Cloud?
 
@@ -65,7 +137,7 @@ Istio makes it easy to create a network of deployed services with load balancing
 
 <a name="gRPC"></a>
 
-### gRPC
+## gRPC
 
 gRPC is a high-performance, open-source universal RPC framework built on top of HTTP/2 to enable <strong>streaming</strong> between client and server.
 
@@ -91,7 +163,7 @@ References:
 
 <a name="Envoy"></a>
 
-### Envoy (from Lyft)
+## Envoy (from Lyft)
 
 Envoy provides robust APIs for dynamically managing its configuration.
 
@@ -120,7 +192,7 @@ References:
 
 <a name="NGINX"></a>
 
-### NGINX
+## NGINX
 
 <a target="_blank" href="https://www.nginx.com/">NGINX proxy</a>
 
@@ -134,7 +206,7 @@ https://www.nginx.com/blog/introducing-the-nginx-microservices-reference-archite
 
 <a name="Linkerd"></a>
 
-### Linkerd
+## Linkerd
 
 <a href="#Linkerd">Linkerd</a> (<a target="_blank" href="https://linkerd.io/">https://linkerd.io</a>) is a <a target="_blank" href="https://www.cncf.io/projects/">Cloud Native Foundation (CNF) incubating project</a> that also includes graduates Kubernetes and Prometheus, plus Helm, OpenTracing, gRPC, etc..  
 
