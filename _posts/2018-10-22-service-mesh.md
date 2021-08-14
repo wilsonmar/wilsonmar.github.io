@@ -95,7 +95,7 @@ Several products provide a "control plane UI" (web portal/CLI) to set global sys
    * automatic self-healing and zone failover (to maximize uptime)
    <br /><br />
 
-## Control Plane vendors
+### Control Plane vendors
 
 Several control plane vendors compete on features, configurability, extensibility, and usability:
 
@@ -103,7 +103,7 @@ Several control plane vendors compete on features, configurability, extensibilit
 
    * <a target="_blank" href="https://verizon.github.io/nelson/">open-sourced Nelson</a> uses Envoy as its proxy and builds a robust service mesh control plane around the HashiCorp stack (i.e. Nomad, etc.). 
 
-   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> (part of the Konnect Connectivity Platform) makes use of Envoy
+   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a>, the licensed side of open-sourced <a target="_blank" href="https://kuma.io/">kuma.io</a> donated to CNCF. It makes use of Envoy.
 
    * <a target="_blank" href="https://github.com/airbnb/synapse">SmartStack</a> creates a control plane using HAProxy or NGINX.
 
