@@ -103,14 +103,11 @@ Several control plane vendors compete on features, configurability, extensibilit
 
    * <a target="_blank" href="https://verizon.github.io/nelson/">open-sourced Nelson</a> uses Envoy as its proxy and builds a robust service mesh control plane around the HashiCorp stack (i.e. Nomad, etc.). 
 
-   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a>, the licensed side of open-sourced <a target="_blank" href="https://kuma.io/">kuma.io</a> donated to CNCF. It makes use of Envoy.
+   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a>, the licensed side of open-sourced <a target="_blank" href="https://kuma.io/">kuma.io</a> donated to CNCF. It's built on top of Envoy.
 
    * <a target="_blank" href="https://github.com/airbnb/synapse">SmartStack</a> creates a control plane using HAProxy or NGINX.
 
    * <a href="#NGINX">NGINX proxy</a>
-
-   * <a target="_blank" href="https://konghq.com/kong-mesh/">Kong Mesh</a> is built on top of Envoy.
-
 
 
 Cloud Foundry Spring Cloud?
