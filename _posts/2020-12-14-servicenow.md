@@ -17,96 +17,62 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This is a deep yet concise hands-on technical introduction to ServiceNow.
 
-What is ServiceNow? <a target="_blank" href="https://www.youtube.com/watch?v=MeFb6J_Xnp0" title="Apr 13, 2020 by Michael Lombardo">VIDEO:</a> <a target="_blank" href="https://www.youtube.com/watch?v=GgjfBw5DNdI" title="Apr 15, 2021">Now with Troy</a>.
+<a name="URLs"></a>
 
+## ServiceNow URLs and login
+
+Note the company's name "ServiceNow" does not contain a space. Thus it's website:<br />
 <a target="_blank" href="
 https://www.servicenow.com/">
-https://www.servicenow.com</a>
+https://www.servicenow.com</a> 
 
-ServiceNow offers a "single pane of glass" for ITSM -- a single source of record in the cloud (SaaS).
+<a target="_blank" href="
+https://docs.servicenow.com/">
+https://docs.servicenow.com</a>
+provides documentation.
 
-ServiceNow's "digital workflows that transform the world of work" refers to a suite based on the 26 domains of <strong>ITIL standards</strong> first codified in the UK, but now adopted in most languages across the world. Professionals take exams to ensure they know that many ITIL terms and concepts:
-   * IT Asset Management
-   * IT Business Management
-   * IT Change Management
-   * HR Service Delivery
-   * Customer Service Management
-   * GRC (Governance, Risk, and Compliance)
-   * ITSM (IT Service Management)
-   * etc.
-   <br /><br />
+However, "service-now.com" DNS name is used in the <a target="_blank" href="https://www.youtube.com/watch?v=StF3bXCbtJ8">login URL</a>:
 
-ITIL presents the view on how to do ITSM.
+![snow-login-jakarka](https://user-images.githubusercontent.com/300046/129474591-74ec0d91-1d34-455f-b800-ec8dac441aed.png)
 
-<a target="_blank" href="https://www.gartner.com/doc/reprints?id=1-24BTOL7R&ct=201007&st=sb">
-Gartner ranked ServiceNow the leading ITSM vendor for the past 6 years:
-<img src="snow-itsm-gartner-2021" src="https://user-images.githubusercontent.com/300046/129464481-e25a1b5d-7d9c-4d56-9a4e-0f46559d2520.png"></a>
+The wooden spaceship" building at the top of this page is in Solana Beach (near San Diego), California. It is where ServiceNow was coded before moving to Silicon Valley (Santa Clara University Town Center area) in 2013. 
 
-Over 6,900 customers, 80% of the Fortune 500
-   * Zoom uses ServiceNow to support customer service
-   * ITSM market share more than four times that of its closest competitor
-   * premier partners include all top consulting services firms
-   <br /><br />
+The "dev45692" in the example above is your "Instance Name" assigned by ServiceNow.
 
-At the heart of ITSM (Information Technology Service Management) is tracking of incidents (problems) and tickets. A ticket is request logged on a work tracking system detailing an issue that needs to be addressed or task that must be performed.
-An incident is something that's broken.
-A problem relates to prevention of incidents.
+<a name="Builds"></a>
 
-ITIL describes use of a CMDB (Configuration Management DataBase).
-Data stored in a CMDB include lists of assets (referred to as <strong>configuration items</strong>) and the relationships among them. The CMDB aids the organization in performing service management processes such as incident management, change management and problem management, and is also an essential resource for decision-makers needing information to improve cost, quality and the performance of IT Services offered by the organization.
+## Builds
 
-ServiceNow provides Self-service by groups or <a target="_blank" href="https://www.youtube.com/watch?v=5KkoFnKMYUI" title="from GlideFast">VIDEO</a>: AI Virtual Agents.
+To identify the ServiceNow release installed:
+1. Log in to ServiceNow application
+1. Add "stats.do" to the end of your instance domain name. For example:
 
+   https://www.dev45692/service-now.com<strong>/stats.do</strong>
 
-<a name="Platform"></a>
+   You may need to remove "nav_to.do" to substitute.
 
-## ServiceNow Platform
+Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of ServiceNow</a> are built and released each year for <a target="_blank" href="https://www.basicoservicenowlearning.in/2019/12/servicenow-versions.html">upgrade</a>, each named, in alphabetical order, by a city name:
 
-features:
-   * <a href="#LowCode">No code/low code development</a>
-   * Intelligent business apps
-   * No proprietary coding languages required
-   * Mobile-first approach
-   * IT governance and control
-   <br /><br />
-
-Components:
-   * App Enngine
-   * IntegrationHub
-   <br /><br />
-
-   The Service Graph Connector Program integrates Avantra, which to load third-party data into the system.
-
-JavaScript is the language used for scripting, with Script Includes, UI Macros.
-
-Platform LATEST INNOVATIONS
-
-   * Machine learning
-   * Intelligent chatbot
-   * Performance analytics
-   * AI-powered search
-   * Process optimization
-   * UI builder
-   <br /><br />
-
-### Versions
-
-https://docs.servicenow.com/
-
-Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of ServiceNow</a> are released each year for <a target="_blank" href="https://www.basicoservicenowlearning.in/2019/12/servicenow-versions.html">upgrade</a>, each named, in alphabetical order, by a city name:
    * Aspen Dec 2011
    * Berlin July 2012
+
    * Calgary Feb 2013
    * Dublin 2013
+
    * Eureka May 2014
    * Fuji March 2015
+
    * Geneva Dec 2015
    * Helsinki May 2016
+
    * Istanbul Jan 2017
    * Jakarta July 2017
+
    * Kingston (Jamaica) Q1 2018
    * London Q3 2018
+
    * Madrid Q1 2019
    * New York Q3 2019
 
@@ -120,27 +86,117 @@ Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of 
    * Tokyo Q4 2022
    <br /><br />
 
-To check the ServiceNow release installed:
-1. Log in to ServiceNow application
-1. Type in URL: yourdomain/stats.do and press enter.
+## JavaScript
 
-   Your domain is basically your ServiceNow domain address. 
+Unlike Salesforece, ServiceNow does not require use of proprietary programming languages (such as ABAP). 
 
-1. Remove nav_to.do section and instead of that section write stats.do.
+On both client and server, <strong>JavaScript</strong> is the language used, with Script Includes, UI Macros. 
 
 
-Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to Hooters restaurants (1111 W 120th Ave, Westminster CO or 1211 13th Avenue Dr Se, Hickory NC).
-
-NOTE: References to "GlideRecord” (abbreviated “gr”) is because ServiceNow was prevously known as "Glidesoft". Rumor has it that while he was coding, founder Fred Luddy heard a pilot announce his plane would be “gliding" in to their destination.
+Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to <a target="_blank" href="https://www.hooters.com/">Hooters restaurants</a> (1111 W 120th Ave, Westminster CO, 1211 13th Avenue Dr Se, Hickory NC, etc.).
 
 
-## GUI
+## Service Management (ITSM)
+
+"Service Management" appears as a tagline next to the logo on each web page.
+
+<a target="_blank" href="https://www.gartner.com/doc/reprints?id=1-24BTOL7R&ct=201007&st=sb">
+Gartner ranked ServiceNow the leading ITSM vendor for the past 6 years:
+<img src="snow-itsm-gartner-2021" src="https://user-images.githubusercontent.com/300046/129464481-e25a1b5d-7d9c-4d56-9a4e-0f46559d2520.png"></a>
+
+ServiceNow's ITSM market share is more than four times that of its closest competitor.
+ServiceNow has over 6,900 customers, 80% of the Fortune 500.
+Zoom uses ServiceNow to support customer service.
+
+Unlike Salesforce, much of the vocabulary and workflow ServiceNow automates is based on industry
+<strong>ITIL standards</strong> first codified (with certification exams) in the UK, but now adopted in most languages across the world. Professionals take exams to ensure they know that many ITIL terms and concepts.
+Among the 26 domains of knowledge in ITIL v3 are:
+   * IT Asset Management
+   * IT Business Management
+   * IT Change Management
+   * HR Service Delivery
+   * Customer Service Management
+   * GRC (Governance, Risk, and Compliance)
+   * ITSM (IT Service Management)
+   * etc.
+   <br /><br />
+
+ITIL presents the view on how to do ITSM.
+
+At the heart of ITSM (Information Technology Service Management) is tracking of incidents (problems) and tickets. A ticket is request logged on a work tracking system detailing an issue that needs to be addressed or task that must be performed.
+An incident is something that's broken -- an unplanned interruption to an IT service (some reduction in the quality of an IT service).
+
+A problem relates to prevention of incidents.
+
+ITIL describes use of a CMDB (Configuration Management DataBase).
+Data stored in a CMDB include lists of assets (referred to as <strong>configuration items</strong>) and the relationships among them. The CMDB aids the organization in performing service management processes such as incident management, change management and problem management, and is also an essential resource for decision-makers needing information to improve cost, quality and the performance of IT Services offered by the organization.
+
+
+## Self-service
+
+ServiceNow provides <strong>self-service</strong> to each group.
+
+![snow-self-service-menu-jakarta-177x595](https://user-images.githubusercontent.com/300046/129475706-14951324-0171-423d-9efc-cded4d24f1c5.png)
+
+To access various apps, <strong>type in the search field</strong> near the upper-left of the screen:
+
+Search "perform" for Performance Analysis (PA). Explanations:
+<a target="_blank" href="https://www.youtube.com/watch?v=-CNyvVN3eZk">VIDEO</a>,
+<a target="_blank" href="https://www.youtube.com/watch?v=VsLe8vHgGF4">VIDEO</a>
+
+Search "reports"
+
+
+<a name="Platform"></a>
+
+## Platform
+
+ServiceNow offers a "single pane of glass" for ITSM -- a single source of record in the cloud (SaaS).
+
+ServiceNow's "digital workflows that transform the world of work" refers to a suite based on 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=5KkoFnKMYUI" title="from GlideFast">VIDEO</a>: AI Virtual Agents.
+
+Features:
+   * <a href="#LowCode">No code/low code development</a>
+   * Intelligent business apps
+   * No proprietary coding languages required
+   * Mobile-first approach
+   * IT governance and control
+   <br /><br />
+
+App Enngine
+
+<a target="_blank" href="https://www.youtube.com/watch?v=BLBssdOU7Vs">VIDEO</a>:
+To automate processes such as approvals, tasks, and notifications, the Flow Designer is used for designing Flows, Subflows, Actions, Action Steps, Spokes.
+
+Each reusable "spoke" is an integration within IntegrationHub (IH).
+Connection aliases provides a way to determine connection and credential details at run-time.
+
+The Service Graph Connector Program integrates Avantra, which to load third-party data into the system.
+
+Platform LATEST INNOVATIONS
+
+   * Machine learning
+   * Intelligent chatbot
+   * Performance analytics
+   * AI-powered search
+   * Process optimization
+   * UI builder
+   <br /><br />
+
+
+
+## Studio
 
 <img align="right" alt="snow-right-click-menu-2021.png" src="https://user-images.githubusercontent.com/300046/129461777-fef2b3bc-b979-441a-9138-096afc5e7e6b.png">
 Right-click anywhere on the gray bar at the top for this menu:
 
 ServiceNow provides a single consistent set of UI features and workflows adopted by many modules:
 system properties, applications, Studio, tabs, tables, relationships, views, fields, transform maps, elements, variables, reports, roles, rows, sorting, filters, busines rules, notifications, etc.
+
+Another historical vestige are references to "GlideRecord” (abbreviated “gr”) because ServiceNow was prevously known as "Glidesoft". Rumor has it that while founder Fred Luddy was coding on a plane, he heard a pilot announce his plane would be “gliding" to their destination.
+
 
 Studio keyboard shortcuts:
    * command + shift + O = Go to
@@ -182,7 +238,13 @@ multi-tenancy?
 
 <a name="Certifications"></a>
 
-## Mainline Certifications
+## Certifications
+
+Premier partners include all top consulting services firms.
+
+ServiceNow partners cover training and exam costs because their partner tier is tied to the number of employees who hold accreditation.
+
+### Mainline Certifications
 
 To take an exam, in https://nowlearning.service-now.com/lxp select Content Type "Certification".
 
@@ -191,10 +253,11 @@ With all exams, answer 60 questions in 90 minutes using <a target="_blank" href=
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/certified-implementation-specialist.html">CIS (Certified Implementation Specialist)</a>
 
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/certified-application-developer.html">CAD (Certified Application Developer)</a>
+   * 
 
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/certified-application.html">CAS (ServiceNow Certified Application Specialist)</a>
 
-<a target="_blank" href="https://www.servicenow.com/services/training-and-certification/certified-system.html">CSA (ServiceNow Certified System Administrator)</a> <a target="_blank" href="https://www.servicenow.com/content/dam/servicenow/other-documents/training/servicenow-sys-admin-exam-specs.pdf">PDF</a> Learning Domain
+<a target="_blank" href="https://www.servicenow.com/services/training-and-certification/certified-system.html">CSA (ServiceNow Certified System Administrator)</a> <a target="_blank" href="https://www.servicenow.com/content/dam/servicenow/other-documents/training/servicenow-sys-admin-exam-specs.pdf">PDF</a> is the entry-level certification. Candidates can complete either a $2,095 three‑day ServiceNow Fundamentals training course or the on‑demand ServiceNow Fundamentals training course. 
 
 1. User Interface & Navigation (20%)
    * ServiceNow Overview
@@ -228,13 +291,13 @@ With all exams, answer 60 questions in 90 minutes using <a target="_blank" href=
    * Development
    <br /><br />
 
-Candidates can complete either a three‑day ServiceNow Fundamentals training course or the on‑demand ServiceNow Fundamentals training course offered in Now Learning.
-
 https://www.servicenow.com/success/now-value/nowcreate.html
 ServiceNow Now Create methodology
 
 
-## Micro Certifications
+<a name="MicroCerts"></a>
+
+### Micro Certifications
 
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/micro-certifications.html">Micro-certification Assessment Simulators</a> include:
    * Predictive Intelligence
@@ -268,7 +331,7 @@ https://app.pluralsight.com/library/courses/managing-it-services-with-itil-execu
 
 https://www.udemy.com/topic/servicenow-certified-system-administrator/
 11hr ServiceNow Certified System Administrator Courses</a>
-by Mark Miller and Singa Code
+by <a target="_blank" href="https://www.markMmiller.com/">Mark M. Miller</a> and Singa Code
 
 https://www.udemy.com/course/the-complete-servicenow-system-administrator-course/
 The Complete ServiceNow System Administrator Course
@@ -287,11 +350,17 @@ Acolades:
    * #1 on FORTUNE® Future 50 2020
    <br /><br />
 
-"NOW" is its stock-market tading symbol. The stock rose 37% in 2020, outperforming Microsoft and others.
+"NOW" is NYSE (New York Stock Exchange) trading symbol, a constituent of the Russell 1000 index.
+The stock rose 37% in 2020, outperforming Microsoft and others.
 
-Its "Safe Workplace suite" includes apps for employee health screening and workplace safety management. The dashboard, providing visualizations for data collected from the apps, will be overlaid with a map comprised of aggregated public data on infection rates.
+ServiceNow had a <a target="_blank" href="https://netpromoterscore.guru/servicenow-com">
+NPS (Net Promoter Score) of 52 in 2021</a> (in a range from -100 from 100) which is among the highest within the <a target="_blank" href="https://customer.guru/net-promoter-score/top-brands">Top 100 brands</a>
+(the same benchmark as for Harley Davidson, Intel, and Tiffany).
 
-The "wooden spaceship" above in Solana Beach (near San Diego), California is one of the buildings where ServiceNow was developed before moving to Silicon Valley (Santa Clara University Town Center area) in 2013.
+<a target="_blank" href="https://customer.guru/net-promoter-score/salesforce-com-inc">
+Salesforce NPS was -10 in 2021</a>.
+
+ServiceNow's <a target="_blank" href="https://docs.servicenow.com/bundle/rome-employee-service-management/page/product/human-resources/concept/safe-workplace.html">Safe Workplace suite"</a> includes apps for employee health screening and workplace safety management. The dashboard, providing visualizations for data collected from the apps, will be overlaid with a map comprised of aggregated public data on infection rates.
 
 CEO since November 2019, <a target="_blank" href="https://www.instagram.com/billrmcdermott/">Bill McDermott</a>, previous was CEO at SAP since 2002. 
 In 2014 he published his memoir "Winners Dream: A Journey from Corner Store to Corner Office".
@@ -340,4 +409,6 @@ https://www.linkedin.com/in/jasonwojahn/
 
 https://www.staveapps.com/
 Supply Chain & Security Solutions built on ServiceNow
+
+What is ServiceNow? <a target="_blank" href="https://www.youtube.com/watch?v=MeFb6J_Xnp0" title="Apr 13, 2020 by Michael Lombardo">VIDEO:</a> <a target="_blank" href="https://www.youtube.com/watch?v=GgjfBw5DNdI" title="Apr 15, 2021">Now with Troy</a>.
 
