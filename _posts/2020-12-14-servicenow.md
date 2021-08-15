@@ -90,19 +90,53 @@ Platform LATEST INNOVATIONS
    * UI builder
    <br /><br />
 
-Two new versions of ServiceNow are released each year, each named by city names, starting with Aspen 2012):
-   * New York
-   * London
-   * Quebec
+### Versions
+
+https://docs.servicenow.com/
+
+Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of ServiceNow</a> are released each year for <a target="_blank" href="https://www.basicoservicenowlearning.in/2019/12/servicenow-versions.html">upgrade</a>, each named, in alphabetical order, by a city name:
+   * Aspen Dec 2011
+   * Berlin July 2012
+   * Calgary Feb 2013
+   * Dublin 2013
+   * Eureka May 2014
+   * Fuji March 2015
+   * Geneva Dec 2015
+   * Helsinki May 2016
+   * Istanbul Jan 2017
+   * Jakarta July 2017
+   * Kingston (Jamaica) Q1 2018
+   * London Q3 2018
+   * Madrid Q1 2019
+   * New York Q3 2019
+
+   * Orlando Q1 2020
+   * Paris Q3 2020
+
+   * Quebec Q1 2021
+   * Rome Q3 2021
+   
+   * San Diego Q2 2022
+   * Tokyo Q4 2022
+   <br /><br />
+
+To check the ServiceNow release installed:
+1. Log in to ServiceNow application
+1. Type in URL: yourdomain/stats.do and press enter.
+
+   Your domain is basically your ServiceNow domain address. 
+
+1. Remove nav_to.do section and instead of that section write stats.do.
+
 
 Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to Hooters restaurants (1111 W 120th Ave, Westminster CO or 1211 13th Avenue Dr Se, Hickory NC).
 
-NOTE: References to "GlideRecord” (abbreviated “gr”) is because ServiceNow was prevously known as "Glidesoft". Rumor has it that founder Fred Luddy heard a pilot announce the plane would be “gliding" in to their destination while he was coding.
+NOTE: References to "GlideRecord” (abbreviated “gr”) is because ServiceNow was prevously known as "Glidesoft". Rumor has it that while he was coding, founder Fred Luddy heard a pilot announce his plane would be “gliding" in to their destination.
 
 
 ## GUI
 
-<img align="right" width="250" alt="snow-right-click-menu-2021.png" src="https://user-images.githubusercontent.com/300046/129461777-fef2b3bc-b979-441a-9138-096afc5e7e6b.png">
+<img align="right" alt="snow-right-click-menu-2021.png" src="https://user-images.githubusercontent.com/300046/129461777-fef2b3bc-b979-441a-9138-096afc5e7e6b.png">
 Right-click anywhere on the gray bar at the top for this menu:
 
 ServiceNow provides a single consistent set of UI features and workflows adopted by many modules:
@@ -136,13 +170,14 @@ https://www.servicenow.com/lpebk/now-platform-reference-guide.html
 1. Services Forrester Low-Code platforms
 https://reprints2.forrester.com/#/assets/2/228/RES161668/report
 
-
 https://techilaservices.com/blog/salesforce-vs-servicenow/
+
+
+## Architecture
 
 multi-tenancy? 
 
 
-## Architecture
 
 
 <a name="Certifications"></a>
@@ -212,7 +247,8 @@ Micro-certification Assessment Simulators include (PDFs):
    * Business Continuity Management
    * CMDB Health
    * Configure the CDMB
-   * DevOps
+   * DevOps - pipeline change requests are created for the application in DevOps > Pipeline
+Change Request as a result of the code commit changes deployed to the appropriate application environments (i.e. UAT, Production).
    * <a target="_blank" href="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/other-document/snmc-pa.pdf">Performance Analytics</a> <a target="_blank" href="https://nowlearning.service-now.com/lxp?id=overview&sys_id=e22631dddbdef300760a71043996191f&type=path">Assessment</a>
    * Virtual Agents
    <br /><br />
@@ -235,6 +271,11 @@ https://www.udemy.com/course/the-complete-servicenow-system-administrator-course
 The Complete ServiceNow System Administrator Course
 
 
+https://www.basicoservicenowlearning.in/
+
+https://www.youtube.com/basicoservicenowlearning
+
+
 ## Leadership
 
 Acolades:
@@ -247,7 +288,7 @@ Acolades:
 
 Its "Safe Workplace suite" includes apps for employee health screening and workplace safety management. The dashboard, providing visualizations for data collected from the apps, will be overlaid with a map comprised of aggregated public data on infection rates.
 
-The "wooden spaceship" above in Solana Beach (near San Diego), California is one of the buildings where ServiceNow was developed before moving to the University Town Center area in 2013.
+The "wooden spaceship" above in Solana Beach (near San Diego), California is one of the buildings where ServiceNow was developed before moving to Silicon Valley (Santa Clara University Town Center area) in 2013.
 
 CEO since November 2019, <a target="_blank" href="https://www.instagram.com/billrmcdermott/">Bill McDermott</a>, previous was CEO at SAP since 2002. 
 In 2014 he published his memoir "Winners Dream: A Journey from Corner Store to Corner Office".
