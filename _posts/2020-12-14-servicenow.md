@@ -115,7 +115,7 @@ Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of 
 
    * Quebec Q1 2021
    * Rome Q3 2021
-   
+
    * San Diego Q2 2022
    * Tokyo Q4 2022
    <br /><br />
@@ -182,7 +182,7 @@ multi-tenancy?
 
 <a name="Certifications"></a>
 
-## Certifications
+## Mainline Certifications
 
 To take an exam, in https://nowlearning.service-now.com/lxp select Content Type "Certification".
 
@@ -197,41 +197,44 @@ With all exams, answer 60 questions in 90 minutes using <a target="_blank" href=
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/certified-system.html">CSA (ServiceNow Certified System Administrator)</a> <a target="_blank" href="https://www.servicenow.com/content/dam/servicenow/other-documents/training/servicenow-sys-admin-exam-specs.pdf">PDF</a> Learning Domain
 
 1. User Interface & Navigation (20%)
-   • ServiceNow Overview
-   • Lists and Filters
-   • Forms and Templates
-   • Branding
+   * ServiceNow Overview
+   * Lists and Filters
+   * Forms and Templates
+   * Branding
    <br /><br />
 
 2. Collaboration (20%)
-   • Task Management
-   • Notifications
-   • Reporting
+   * Task Management
+   * Notifications
+   * Reporting
    <br /><br />
 
 3. Database Administration (30%)
-   • Data Schema
-   • Application/Access Control
-   • CMDB
-   • Import Sets
+   * Data Schema
+   * Application/Access Control
+   * CMDB
+   * Import Sets
    <br /><br />
 
 4. Self-Service & Process Automation (20%)
-   • Knowledge Management
-   • Service Catalog
-   • Flow Designer
+   * Knowledge Management
+   * Service Catalog
+   * Flow Designer
    <br /><br />
 
 5. Introduction to Development (10%)
-   • Scripting
-   • Migration and Integration
-   • Development
+   * Scripting
+   * Migration and Integration
+   * Development
    <br /><br />
 
 Candidates can complete either a three‑day ServiceNow Fundamentals training course or the on‑demand ServiceNow Fundamentals training course offered in Now Learning.
 
 https://www.servicenow.com/success/now-value/nowcreate.html
 ServiceNow Now Create methodology
+
+
+## Micro Certifications
 
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/micro-certifications.html">Micro-certification Assessment Simulators</a> include:
    * Predictive Intelligence
