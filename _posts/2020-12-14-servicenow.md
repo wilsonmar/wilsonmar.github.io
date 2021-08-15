@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ServiceNow"
-excerpt: "ITSM automated in the cloud for Incident Management"
+excerpt: "ITSM automated in the cloud for Incident Management and other ITSM functionality"
 modified:
 tags: [servicenow,itil]
 date: "2020-12-04"
@@ -56,7 +56,7 @@ A problem relates to prevention of incidents.
 ITIL describes use of a CMDB (Configuration Management DataBase).
 Data stored in a CMDB include lists of assets (referred to as <strong>configuration items</strong>) and the relationships among them. The CMDB aids the organization in performing service management processes such as incident management, change management and problem management, and is also an essential resource for decision-makers needing information to improve cost, quality and the performance of IT Services offered by the organization.
 
-ServiceNow provides Self-service by groups or <a target="_blank" href="https://www.youtube.com/watch?v=5KkoFnKMYUI">VIDEO</a>: AI Virtual Agents.
+ServiceNow provides Self-service by groups or <a target="_blank" href="https://www.youtube.com/watch?v=5KkoFnKMYUI" title="from GlideFast">VIDEO</a>: AI Virtual Agents.
 
 
 <a name="Platform"></a>
