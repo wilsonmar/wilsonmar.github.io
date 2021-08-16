@@ -21,37 +21,74 @@ This is a deep yet concise hands-on technical introduction to ServiceNow.
 
 <a name="URLs"></a>
 
-## ServiceNow URLs and login
+## ServiceNow URLs and logins
 
-Note the company's name "ServiceNow" does not contain a space. Thus it's website:<br />
-<a target="_blank" href="
-https://www.servicenow.com/">
-https://www.servicenow.com</a> 
+1. Note the company's name "ServiceNow" does not contain a space. Thus it's website:<br />
 
-<a target="_blank" href="
-https://docs.servicenow.com/">
-https://docs.servicenow.com</a>
-provides documentation.
+   <a target="_blank" href="
+   https://www.servicenow.com/"><strong>
+   https://www.servicenow.com</strong></a> 
 
-However, "service-now.com" DNS name is used in the <a target="_blank" href="https://www.youtube.com/watch?v=StF3bXCbtJ8">login URL</a>:
+1. Documentation
 
-![snow-login-jakarka](https://user-images.githubusercontent.com/300046/129474591-74ec0d91-1d34-455f-b800-ec8dac441aed.png)
+   <a target="_blank" href="
+   https://docs.servicenow.com/">
+   https://docs.servicenow.com</a>
 
-The wooden spaceship" building at the top of this page is in Solana Beach (near San Diego), California. It is where ServiceNow was coded before moving to Silicon Valley (Santa Clara University Town Center area) in 2013. 
+1. Sign up for a developer account (FREE):
 
-The "dev45692" in the example above is your "Instance Name" assigned by ServiceNow.
+   <a target="_blank" href="
+   https://developer.servicenow.com/">
+   https://developer.servicenow.com</a>
+
+1. Click "Request an instance" (FREE).
+
+   Note that "service-now.com" DNS name is used in the <a target="_blank" href="https://www.youtube.com/watch?v=StF3bXCbtJ8">login URL</a>:
+
+   ![snow-login-jakarka](https://user-images.githubusercontent.com/300046/129474591-74ec0d91-1d34-455f-b800-ec8dac441aed.png)
+
+   The wooden spaceship" building at the top of this page is in Solana Beach (near San Diego), California. It is where ServiceNow was coded before moving to Silicon Valley (Santa Clara University Town Center area) in 2013. 
+
+   The "dev45692" in the URL above is your "Instance Name" assigned by ServiceNow.
+
+1. Save the credentials (URL, username, and password) in a text file.
+
+   CAUTION: The instance URL contains the username and password, so should not be saved as a browser bookmark because that makes it public.
+
+   "If your instance is inactive for 10 days, it will be reclaimed and released for other developers to use."
+
+   PROTIP: Your company pays for capacity used, so pays even when your instance is inactive.
+
+1. Select a <a target="_blank" href="https://developer.servicenow.com/dev.do#!/learn/learning-plans/quebec">Learning Plan</a> for the skill set you desire.
+
+   Like Salesforce, ServiceNow provides free training resources.
+
 
 <a name="Builds"></a>
 
-## Builds
+## Builds & servlet metadata
 
-To identify the ServiceNow release installed:
+To identify the ServiceNow release installed and other metadata:
 1. Log in to ServiceNow application
-1. Add "stats.do" to the end of your instance domain name. For example:
+1. In the browser URL, replace "nav_to.do" and everyting after it with <strong>stats.do</strong>. For example:
 
    https://www.dev45692/service-now.com<strong>/stats.do</strong>
 
-   You may need to remove "nav_to.do" to substitute.
+   The metadata includes:
+
+   <tt>Build name: Quebec
+Build date: 03-01-2021_1225
+   </tt>
+
+   Each instance runs in a <strong>servlet</strong>. Scroll down further to see that your servlet is running CentOS Red Hat 4.8.5-44:
+
+   <tt>OS Configuration
+Linux version 3.10.0-1160.25.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Apr 28 21:49:45 UTC 2021
+Load average: 16.35 16.03 16.23 6/8770 98926
+Processor model: AMD EPYC 7551P 32-Core Processor
+Processors: 64
+Processor bogomips: 3992.47
+   </tt>
 
 Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of ServiceNow</a> are built and released each year for <a target="_blank" href="https://www.basicoservicenowlearning.in/2019/12/servicenow-versions.html">upgrade</a>, each named, in alphabetical order, by a city name:
 
@@ -86,19 +123,14 @@ Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of 
    * Tokyo Q4 2022
    <br /><br />
 
-## JavaScript
+<a target="_blank" href="https://developer.servicenow.com/dev.do#!/guides/quebec/developer-program/ea-guide/personal-developer-instances-pdis">Request a Personal Developer Instance (PDI) running an Early Availability release</a> for yourself.
+oh$avemefromDelta2
 
-Unlike Salesforece, ServiceNow does not require use of proprietary programming languages (such as ABAP). 
-
-On both client and server, <strong>JavaScript</strong> is the language used, with Script Includes, UI Macros. 
-
-
-Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to <a target="_blank" href="https://www.hooters.com/">Hooters restaurants</a> (1111 W 120th Ave, Westminster CO, 1211 13th Avenue Dr Se, Hickory NC, etc.).
-
+<a name="ITSM"></a>
 
 ## Service Management (ITSM)
 
-"Service Management" appears as a tagline next to the logo on each web page.
+"Service Management" appears at the top banner as a tagline next to the logo.
 
 <a target="_blank" href="https://www.gartner.com/doc/reprints?id=1-24BTOL7R&ct=201007&st=sb">
 Gartner ranked ServiceNow the leading ITSM vendor for the past 6 years:
@@ -107,6 +139,8 @@ Gartner ranked ServiceNow the leading ITSM vendor for the past 6 years:
 ServiceNow's ITSM market share is more than four times that of its closest competitor.
 ServiceNow has over 6,900 customers, 80% of the Fortune 500.
 Zoom uses ServiceNow to support customer service.
+
+STAR: <a target="_blank" href="https://developer.servicenow.com/dev.do#!/guides/quebec/now-platform/glossary/developer-glossary">ServiceNow's Developer Glossary</a>
 
 Unlike Salesforce, much of the vocabulary and workflow ServiceNow automates is based on industry
 <strong>ITIL standards</strong> first codified (with certification exams) in the UK, but now adopted in most languages across the world. Professionals take exams to ensure they know that many ITIL terms and concepts.
@@ -124,27 +158,67 @@ Among the 26 domains of knowledge in ITIL v3 are:
 ITIL presents the view on how to do ITSM.
 
 At the heart of ITSM (Information Technology Service Management) is tracking of incidents (problems) and tickets. A ticket is request logged on a work tracking system detailing an issue that needs to be addressed or task that must be performed.
-An incident is something that's broken -- an unplanned interruption to an IT service (some reduction in the quality of an IT service).
 
 A problem relates to prevention of incidents.
 
 ITIL describes use of a CMDB (Configuration Management DataBase).
 Data stored in a CMDB include lists of assets (referred to as <strong>configuration items</strong>) and the relationships among them. The CMDB aids the organization in performing service management processes such as incident management, change management and problem management, and is also an essential resource for decision-makers needing information to improve cost, quality and the performance of IT Services offered by the organization.
 
+## Menu
 
-## Self-service
+1. Click the icon at the lower-left corner to minimize and reveal Navigator text.
 
-ServiceNow provides <strong>self-service</strong> to each group.
+1. Alternately, click the filter icon at the top to type in the <strong>Filter navigation</strong> field near the upper-left of the screen.
 
-![snow-self-service-menu-jakarta-177x595](https://user-images.githubusercontent.com/300046/129475706-14951324-0171-423d-9efc-cded4d24f1c5.png)
+   ### Self-service 
 
-To access various apps, <strong>type in the search field</strong> near the upper-left of the screen:
+1. The <strong>Self-service</strong> application is at the top of the menu.
 
-Search "perform" for Performance Analysis (PA). Explanations:
-<a target="_blank" href="https://www.youtube.com/watch?v=-CNyvVN3eZk">VIDEO</a>,
-<a target="_blank" href="https://www.youtube.com/watch?v=VsLe8vHgGF4">VIDEO</a>
+   ![snow-self-service-menu-jakarta-177x595](https://user-images.githubusercontent.com/300046/129475706-14951324-0171-423d-9efc-cded4d24f1c5.png)
 
-Search "reports"
+   Each indented item is a "module".
+
+   An arrow icon is to the left of each category.
+
+   Enjoy the content frame.
+
+1. To scroll down the Application Navigator menu at the left, cursor anywhere on the list and on the Mac Trackpad move two fingers up.
+
+
+   ### Service Catalog
+
+1. Menu item "Service Catalog" is an ITIL term about hardware equipment and software.
+
+   "Request Items" track Service Catalog items requested.
+
+   An <strong>incident</strong> is something that's broken -- an unplanned interruption to an IT service (some reduction in the quality of an IT service).
+
+   "NLQ" is Natural Language Query.
+
+   "NLU" is Natural Language Understanding.
+
+   A MID (Management, Instrumentation, and Discovery) server is (<a target="_blank" href="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/success/quick-answer/mid-server-basics.pdf">PDF</a>) runs a Java application <strong>on your local network</strong>.
+
+   MID Servers facilitate communication and data movement between a single ServiceNow®instance and external applications, data sources, and services. <a target="_blank" href="https://www.youtube.com/watch?v=rJb0YDSCATo&list=RDCMUCCBQU8mlFrElxQNR2mo-gLg&start_radio=1&rv=rJb0YDSCATo">VIDEO</a>
+
+   Menu item "Connect Chat" creates another browser tab.
+
+   Search "perform" for Performance Analysis (PA). Explanations:
+   <a target="_blank" href="https://www.youtube.com/watch?v=-CNyvVN3eZk">VIDEO</a>,
+   <a target="_blank" href="https://www.youtube.com/watch?v=VsLe8vHgGF4">VIDEO</a>
+
+   Search "reports"
+
+
+## JavaScript
+
+Unlike Salesforece, ServiceNow does not require use of proprietary programming languages (such as ABAP). 
+
+On both client and server, <strong>JavaScript</strong> is the language used, with Script Includes, UI Macros. 
+
+
+Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to <a target="_blank" href="https://www.hooters.com/">Hooters restaurants</a> (1111 W 120th Ave, Westminster CO, 1211 13th Avenue Dr Se, Hickory NC, etc.).
+
 
 
 <a name="Platform"></a>
@@ -350,14 +424,11 @@ Acolades:
    * #1 on FORTUNE® Future 50 2020
    <br /><br />
 
-"NOW" is NYSE (New York Stock Exchange) trading symbol, a constituent of the Russell 1000 index.
-The stock rose 37% in 2020, outperforming Microsoft and others.
+"NOW" is ServiceNow's NYSE (New York Stock Exchange) trading symbol, a constituent of the Russell 1000 index. The stock rose 37% in 2020, outperforming Microsoft and others.
 
-ServiceNow had a <a target="_blank" href="https://netpromoterscore.guru/servicenow-com">
-NPS (Net Promoter Score) of 52 in 2021</a> (in a range from -100 from 100) which is among the highest within the <a target="_blank" href="https://customer.guru/net-promoter-score/top-brands">Top 100 brands</a>
-(the same benchmark as for Harley Davidson, Intel, and Tiffany).
+ServiceNow had a <a target="_blank" href="https://www.youtube.com/watch?v=qWKipJefrN8&t=8s">NPS (Net Promoter Score)</a> of <a target="_blank" href="https://netpromoterscore.guru/servicenow-com">52 in 2021</a> (in a range from -100 from 100) which is among the highest within the <a target="_blank" href="https://customer.guru/net-promoter-score/top-brands">Top 100 brands</a> (on par with Harley Davidson, Intel, and Tiffany, but under the top NPS of 79 by Costco).
 
-<a target="_blank" href="https://customer.guru/net-promoter-score/salesforce-com-inc">
+By contrast, <a target="_blank" href="https://customer.guru/net-promoter-score/salesforce-com-inc">
 Salesforce NPS was -10 in 2021</a>.
 
 ServiceNow's <a target="_blank" href="https://docs.servicenow.com/bundle/rome-employee-service-management/page/product/human-resources/concept/safe-workplace.html">Safe Workplace suite"</a> includes apps for employee health screening and workplace safety management. The dashboard, providing visualizations for data collected from the apps, will be overlaid with a map comprised of aggregated public data on infection rates.
@@ -380,6 +451,9 @@ According to Gartner: Customers with large numbers of occasional users struggle 
 
 https://community.servicenow.com/community
 store
+
+https://www.youtube.com/watch?v=rJb0YDSCATo&list=RDCMUCCBQU8mlFrElxQNR2mo-gLg&start_radio=1&rv=rJb0YDSCATo
+ServiceNow - Now Community YouTube channel
 
 1. Join the ServiceNow Product Lab Insider Program to influence ServiceNow products, roadmap strategy and workflows as part of our research community.
 
