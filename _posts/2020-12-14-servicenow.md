@@ -76,19 +76,19 @@ To identify the ServiceNow release installed and other metadata:
 
    The metadata includes:
 
-   <tt>Build name: Quebec
+   <pre>Build name: Quebec
 Build date: 03-01-2021_1225
-   </tt>
+   </pre>
 
    Each instance runs in a <strong>servlet</strong>. Scroll down further to see that your servlet is running CentOS Red Hat 4.8.5-44:
 
-   <tt>OS Configuration
+   <pre>OS Configuration
 Linux version 3.10.0-1160.25.1.el7.x86_64 (mockbuild@kbuilder.bsys.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC) ) #1 SMP Wed Apr 28 21:49:45 UTC 2021
 Load average: 16.35 16.03 16.23 6/8770 98926
 Processor model: AMD EPYC 7551P 32-Core Processor
 Processors: 64
 Processor bogomips: 3992.47
-   </tt>
+   </pre>
 
 Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of ServiceNow</a> are built and released each year for <a target="_blank" href="https://www.basicoservicenowlearning.in/2019/12/servicenow-versions.html">upgrade</a>, each named, in alphabetical order, by a city name:
 
@@ -383,7 +383,8 @@ ServiceNow Now Create methodology
 
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/micro-certifications.html">Micro-certification Assessment Simulators</a> include:
    * Predictive Intelligence
-   * <a target="_blank" href="https://docs.servicenow.com/bundle/paris-it-business-management/page/product/agile-development/concept/agile-development.html">Agile (Scrum) Development</a> and Test Management
+   * <a target="_blank" href="https://docs.servicenow.com/bundle/paris-it-business-management/page/product/agile-development/concept/agile-development.html">Agile (Scrum) Development 2.0</a> <a target="_blank" href="https://nowlearning.service-now.com/lxp?id=overview&sys_id=50b18874db0728507aa13df3399619e8&type=course">LEARN</a>
+   * Test Management
    * <a target="_blank" href="https://nowlearning.service-now.com/lxp?id=overview&sys_id=e22631dddbdef300760a71043996191f&type=path">Automated Test Framework (ATF)</a>
    * CSM with Service Management for Implementers
    * Flow Designer
