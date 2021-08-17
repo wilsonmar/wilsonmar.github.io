@@ -126,6 +126,13 @@ Two or three new <a target="_blank" href="https://sndocs.jace.pro/">versions of 
 <a target="_blank" href="https://developer.servicenow.com/dev.do#!/guides/quebec/developer-program/ea-guide/personal-developer-instances-pdis">Request a Personal Developer Instance (PDI) running an Early Availability release</a> for yourself.
 oh$avemefromDelta2
 
+## Pricing
+
+<a target="_blank" href="https://upperedge.com/servicenow/lifting-the-veil-on-servicenow-pricing/">CAUTION</a>: ServiceNow adjusts its pricing models or licensing metrics for products when new family releases roll out, so avoid surprises.
+
+Each user type has a different price based on the rights in functionality, with requesters having the least amount of rights and fulfillers having the most.
+
+
 <a name="ITSM"></a>
 
 ## Service Management (ITSM)
@@ -146,10 +153,11 @@ Unlike Salesforce, much of the vocabulary and workflow ServiceNow automates is b
 <strong>ITIL standards</strong> first codified (with certification exams) in the UK, but now adopted in most languages across the world. Professionals take exams to ensure they know that many ITIL terms and concepts.
 Among the 26 domains of knowledge in ITIL v3 are:
    * IT Asset Management
-   * IT Business Management
+   * IT Business Management (ITBM)
    * IT Change Management
+   * IT Operations Management
    * HR Service Delivery
-   * Customer Service Management
+   * Customer Service Management (CSM)
    * GRC (Governance, Risk, and Compliance)
    * ITSM (IT Service Management)
    * etc.
@@ -216,9 +224,9 @@ Unlike Salesforece, ServiceNow does not require use of proprietary programming l
 
 On both client and server, <strong>JavaScript</strong> is the language used, with Script Includes, UI Macros. 
 
+AngularJs (not Angular 2) is the frontend framework ServiceNow currently uses.
 
-Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to <a target="_blank" href="https://www.hooters.com/">Hooters restaurants</a> (1111 W 120th Ave, Westminster CO, 1211 13th Avenue Dr Se, Hickory NC, etc.).
-
+PROTIP: Demo and development instances are delivered with pre-loaded sample data which includes employees, incidents, assets, and locations. Sample locations include real addresses to <a target="_blank" href="https://www.hooters.com/">Hooters restaurants</a> (1111 W 120th Ave, Westminster CO, 1211 13th Avenue Dr Se, Hickory NC, etc.).
 
 
 <a name="Platform"></a>
@@ -375,7 +383,7 @@ ServiceNow Now Create methodology
 
 <a target="_blank" href="https://www.servicenow.com/services/training-and-certification/micro-certifications.html">Micro-certification Assessment Simulators</a> include:
    * Predictive Intelligence
-   * Agile Development and Test Management
+   * <a target="_blank" href="https://docs.servicenow.com/bundle/paris-it-business-management/page/product/agile-development/concept/agile-development.html">Agile (Scrum) Development</a> and Test Management
    * <a target="_blank" href="https://nowlearning.service-now.com/lxp?id=overview&sys_id=e22631dddbdef300760a71043996191f&type=path">Automated Test Framework (ATF)</a>
    * CSM with Service Management for Implementers
    * Flow Designer
@@ -392,28 +400,6 @@ Change Request as a result of the code commit changes deployed to the appropriat
    * <a target="_blank" href="https://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/other-document/snmc-pa.pdf">Performance Analytics</a> <a target="_blank" href="https://nowlearning.service-now.com/lxp?id=overview&sys_id=e22631dddbdef300760a71043996191f&type=path">Assessment</a>
    * Virtual Agents
    <br /><br />
-
-
-## Training
-
-<a target="_blank" href="https://www.pluralsight.com/courses/leveraging-lists-filters-servicenow">
-Leveraging Lists and Filters in ServiceNow</a>
-Mar 16, 2021 by <a target="_blank" href="https://linkedin.com/in/dannyjessee">Danny Jessee</a>
-
-https://app.pluralsight.com/library/courses/managing-it-services-with-itil-executive-briefing/table-of-contents
-
-
-https://www.udemy.com/topic/servicenow-certified-system-administrator/
-11hr ServiceNow Certified System Administrator Courses</a>
-by <a target="_blank" href="https://www.markMmiller.com/">Mark M. Miller</a> and Singa Code
-
-https://www.udemy.com/course/the-complete-servicenow-system-administrator-course/
-The Complete ServiceNow System Administrator Course
-
-
-https://www.basicoservicenowlearning.in/
-
-https://www.youtube.com/basicoservicenowlearning
 
 
 ## Leadership
@@ -447,6 +433,34 @@ Acquisitions: May 2021 Lightstep. Aug 2021 Mapwize.
 
 According to Gartner: Customers with large numbers of occasional users struggle to justify its role-based named user licensing model and Gartner has observed low adoption of its all-user licensing model alternative.
 
+
+## Training
+
+<a target="_blank" href="https://www.pluralsight.com/courses/leveraging-lists-filters-servicenow">
+Leveraging Lists and Filters in ServiceNow</a>
+Mar 16, 2021 by <a target="_blank" href="https://linkedin.com/in/dannyjessee">Danny Jessee</a>
+
+https://app.pluralsight.com/library/courses/managing-it-services-with-itil-executive-briefing/table-of-contents
+
+
+https://www.udemy.com/topic/servicenow-certified-system-administrator/
+11hr ServiceNow Certified System Administrator Courses</a>
+by <a target="_blank" href="https://www.markMmiller.com/">Mark M. Miller</a> and Singa Code
+
+https://www.udemy.com/course/the-complete-servicenow-system-administrator-course/
+The Complete ServiceNow System Administrator Course
+
+https://www.basicoservicenowlearning.in/
+
+https://www.youtube.com/basicoservicenowlearning
+
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLzTvAeLiW8AeO2Ep-qgufgOdLJ5UoA4hf">
+Gaurav Tripathi's Developer training VIDEO: SASSWITHSERVICENOW playlist</a>
+
+https://www.servicenow.com/events/on-demand-webinars.html
+OnDemand videos require registration
+
+
 ## Social
 
 https://community.servicenow.com/community
@@ -474,9 +488,6 @@ get$ervicenow2andgetituQuickly
    https://knowledge.servicenow.com/creatorcon.html
    CreatorCon helps you build workflow apps fast on The Now Platform App Engine. Find on-demand sessions for seasoned pros, or those just getting started.
 
-https://www.servicenow.com/events/on-demand-webinars.html
-OnDemand videos require registration
-
 https://www.linkedin.com/company/servicenow/
 
 https://www.linkedin.com/in/jasonwojahn/
@@ -485,4 +496,7 @@ https://www.staveapps.com/
 Supply Chain & Security Solutions built on ServiceNow
 
 What is ServiceNow? <a target="_blank" href="https://www.youtube.com/watch?v=MeFb6J_Xnp0" title="Apr 13, 2020 by Michael Lombardo">VIDEO:</a> <a target="_blank" href="https://www.youtube.com/watch?v=GgjfBw5DNdI" title="Apr 15, 2021">Now with Troy</a>.
+
+https://www.reddit.com/r/servicenow/
+
 
