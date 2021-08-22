@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Security"
-excerpt: "Securing secrets in Bash shell scripts while learning to ace the AWS Certified Security - Specialty (SCS-C01) exam"
+excerpt: "Securing secrets in Bash shell scripts while learning to pass the AWS Certified Security - Specialty (SCS-C01) exam"
 tags: [Security, DevOps]
 date: "2021-07-22"
 file: "aws-security"
