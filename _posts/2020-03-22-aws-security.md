@@ -35,10 +35,7 @@ I am working on a Bash/Z shell script so you can copy and paste a single command
 
 This would be using https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
 
-An alternative is AKEYLESS, which enables authentication with several clouds (AWS IAM, Azure AD, SAML, LDAP, API key).
-
-   * https://akeyless.readme.io/docs/cli
-   * 
+An alternative is AKEYLESS, which enables authentication with several clouds (AWS IAM, Azure AD, SAML, LDAP, API key). See https://akeyless.readme.io/docs/cli
 
 
 
@@ -433,6 +430,35 @@ MEMONIC?
 * Platform
 * Security
 * Operations
+<br /><br />
+
+
+### AWS policies
+
+<a target="_blank" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">AWS uses several types</a> of "policies"
+to determine whether to allow or deny access requests made by a principal (such as a user).
+
+AWS policies can be defined <strong>in-line</strong> or "managed" by AWS policy "objects" defined in JSON documents attached to IAM identities or AWS resources (entities). 
+
+Each AWS policy defines "permissions policies" and "permissions boundaries":
+
+<strong>Permissions policies</strong> are <strong>attached to a resource</strong> in AWS (identified by an ARN). Within a single account, AWS evaluates all permissions policies together. Permissions policies are the most common policies. You can use the following policy types as permissions policies:
+
+   * When a managed or inline policy is attached to an IAM user, user group, or role, the policy defines the permissions for that entity. They are called "Identity-based policies".
+
+   * Resource-based policies attach a JSON policy document to an AWS resource (if that service supports resource-based policies).
+
+   * Each Access Control List (ACL) is also attached to resources (a list of principals with permission to access resource which supports ACLs).
+
+<strong>Permissions boundaries</strong> (an advanced AWS feature) controls the <strong>maximum permissions</strong> that each entity can have. When more than one permissions boundaries applies to a request, AWS evaluates each permissions boundary separately. You can apply a permissions boundary in the following situations:
+
+   * AWS Service Control Policies (SCPs) are applied to designated member accounts within an AWS Organizations organization or organizational unit (OU).
+
+   * IAM users or roles – You can use a managed policy for a user or role's permissions boundary. 
+   See <a target="_blank" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries">Permissions Boundaries for IAM Entities</a> in the IAM User Guide.
+
+   * Access control lists (ACLs) control what specific principals can access a <strong>resource</strong>. ACLs are similar to resource-based policies, although they are the only policy type that does not use the JSON policy document structure.
+
 
 
 ## Hands-on
