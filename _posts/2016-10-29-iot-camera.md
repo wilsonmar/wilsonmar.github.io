@@ -17,6 +17,10 @@ comments: true
 {% include _toc.html %}
 
 
+<strong>fiducials</strong> are optical patterns that vision systems find easy to spot when placed in the environment. The markers are used for ground truth testing.
+
+Instead, visual-inertial SLAM (simultaneous localization and mapping), perform a dense volumetric mapping.
+
 ## USB cameras
 
 USB cameras have the advantage of a <strong>longer chord</strong>
