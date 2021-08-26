@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AI Ecosystems APIs"
+title: "AI Ecosystems"
 excerpt: "Brand names for how corporate overlords are making humans into robots"
 tags: [machine learning, AI]
 date: "2020-05-22"
@@ -37,11 +37,14 @@ Each of the above are cloud vendors may cash in by charging for storing and proc
 
 In 2016, AI researchers from six major tech companies, including Apple, Amazon, and Google, formed the Partnership on AI (PAI). In 2018, Baidu (the first from China) joined the now 70 member organizations that include Tufts University and Wikimedia.
 
+
 ## Alternative clouds
 
 H2O.ai
 
-floydhub.com
+<a target="_blank" href="https://www.plainsight.ai/">plainsight.ai</a> focuses on computer vision, using Google CoLab.
+
+floydhub.com (alas, went bankrupt)
 
 
 
@@ -82,7 +85,6 @@ They have these data conversion utilities for conventional lookups of data:
 
    * https://algorithmia.com/algorithms/opencv/ChangeImageFormat (from jpg to png)
 
-## The offerings
 
 
 
@@ -101,10 +103,30 @@ Microsoft's Translator Speech</a>
 
 <a name="CV"></a>
 
-## Computer Vision #
+## Computer Vision OpenCV #
 
-Open-source OpenCV (Computer Vision) was an early entrant and is still used today by many because
-it is written in C and runs quite efficiently. 
+Open-source OpenCV (Computer Vision) was an early entrant and its C code is efficient and has been refined over time. It's still used today by many because it is free open-sourced as well.
+
+<a target="_blank" href="https://www.coursera.org/programs/mckinsey-learning-program-uedvm/">
+Coursera (DeepLearning.ai) has a 3 COURSE SPECIALIZATION: Generative Adversarial Networks (GANs)</a>: 
+1) Build basic GANs, 2) Build Better GANs, 3) Apply GANs.
+
+Generative Adversarial Networks (GANs) are powerful Machine Learning (ML) models capable of generating realistic image, video, and voice outputs. 
+
+   * http://www.michaelhasey.com/gan-exterior
+   * https://www.medium.com/syncedreview/gan-2-(3439d33ebaf
+   <br /><br />
+
+"Adversarial" because GAN techniques are rooted in game theory. Its use cases include: 
+   * improving cybersecurity by fighting against adversarial attacks and 
+   * anonymizing data to preserve privacy to generating state-of-the-art images, 
+   * colorizing black and white images, 
+   * increasing image resolution, 
+   * creating avatars, 
+   * turning 2D images to 3D
+   * etc.
+   <br /><br />
+
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/">
 Microsoft's Computer Vision</a>
@@ -118,14 +140,14 @@ Microsoft's "Face"</a>
 
    * https://algorithmia.com/algorithms/z/ColorPalettefromImage
 
-   * <a target="_blank" href="https://cloud.google.com/vision/">Google Cloud Vision API</a>
-
    * https://algorithmia.com/algorithms/opencv/FaceDetection
   then https://algorithmia.com/algorithms/opencv/CensorFace
 
    * https://algorithmia.com/algorithms/ocr/RecognizeCharacters OCR
 
    Some of these make use of <strong>OpenCV</strong> (CV = Computer Vision).
+
+<a target="_blank" href="https://cloud.google.com/vision/">Google Cloud Vision API</a>
 
 
 <a name="VoiceRecognition"></a>

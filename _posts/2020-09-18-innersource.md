@@ -144,6 +144,8 @@ G) (Days) Responsiveness (how quickly does someone respond to an issue opened by
 
 QUESTION: What are the mechanisms to calculate the above metrics?
 
+<a target="_blank" href="https://cauldron.io/">cauldron.io</a>?
+
 
 ## Maturity Model
 

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Terraform (vs. AWS Cloud Formation)"
-excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning on AWS, Azure, and other clouds"
+title: "Terraform"
+excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning on AWS, Azure, GCP, and other clouds"
 tags: [DevOps, ecosystem]
 date: "2021-04-14"
 file: "terraform"
@@ -18,23 +18,22 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using declarative statements that are <a href="#Idempotent">idempotent</a>.
 
-Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
-
 Terraform is better characterized as a <strong>multi-service</strong> tool. Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
+
+Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
 
 Terraform can also provision <strong>on-premises</strong> servers running VMWare and OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
 <strong>One tool</strong> to manage GitHub/GitLab, Datadog, etc.
 
-Can’t really do that with CFN alone. Even though
-Cloud Formation has <strong>nested stack</strong> only for AWS.
+Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
 
-In its <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Cloud Operating Model whitepaper</a>,
+<a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
 
 
 ## Automation
 
-Terraform's marketing page says it make infrastructure provisioning: Repeatable. Versioned. Documented. Automated. Testable. Shareable.
+<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io - Hashicorp's marketing home page</a> says it make infrastructure provisioning: Repeatable. Versioned. Documented. Automated. Testable. Shareable.
 
 Automating infrastructure deployment consists of these features:
 
@@ -152,13 +151,6 @@ Terraform is not really an application level deployment tool and you wind up rol
 
 Moreover, security-concious organization make it difficult to use third party products due to time-consuming infosec clearances needed.
 
-### Crossplane
-
-<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
-
-<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
-
-
 <a name="Licensing"></a>
 
 ## Licensing open source for GUI
@@ -173,11 +165,18 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    add version control integration, MFA security, HA, and other enterprise features.
 
 
+<a name="Crossplane"></a>
+
+### Crossplane
+
+<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
+
+<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
+
+
 ## Websites to know
 
 * <a target="_blank" href="https://www.terraform.io/docs/enterprise-legacy/glossary/index.html"> Glossary of Terraform terms</a>
-
-* <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> - Hashicorp's marketing home page.
 
 * <a target="_blank" href="https://www.terraform.io/intro/getting-started/install.html">
    Official Getting Started docs at Hashicorp</a>
@@ -210,7 +209,7 @@ https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
 
    PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
-1. When installed, get the version number of Terraform:
+1. After installation, get the version number of Terraform:
 
    <pre><strong>terraform --version</strong></pre>
 
@@ -230,16 +229,24 @@ https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
    <pre><strong> brew search terraform</strong></pre>
 
    <pre>==> Formulae
-iam-policy-json-to-terraform   terraform-provider-libvirt     terraform_landscape
-terraform                      terraform-provisioner-ansible  terraformer
-terraform-docs                 terraform@0.11                 terraforming
-terraform-inventory            terraform@0.12
-terraform-ls                   terraform@0.13
+iam-policy-json-to-terraform             terraform@0.11
+terraform                                terraform@0.12
+terraform-docs                           terraform@0.13
+terraform-inventory                      terraform_landscape
+terraform-ls                             terraformer
+terraform-provider-libvirt               terraforming
+&nbsp;
+If you meant "terraform" specifically:
+It was migrated from homebrew/cask to homebrew/core.
    </pre>
 
-   brew info terraform returns:
+1. Is there a brew for Terraform?
+   
+   <pre><strong>brew info terraform</strong></pre>
 
-   <pre>terraform: stable 0.15.0 (bottled), HEAD
+   Yes, but:
+
+   <pre>terraform: stable 1.0.5 (bottled), HEAD
 Tool to build, change, and version infrastructure
 https://www.terraform.io/
 Conflicts with:
@@ -251,14 +258,14 @@ License: MPL-2.0
 Build: go ✘
 ==> Options
 --HEAD
-        Install HEAD version
+   Install HEAD version
 ==> Analytics
-install: 40,501 (30 days), 117,387 (90 days), 446,956 (365 days)
-install-on-request: 38,230 (30 days), 111,122 (90 days), 428,157 (365 days)
+install: 41,443 (30 days), 125,757 (90 days), 480,344 (365 days)
+install-on-request: 38,839 (30 days), 118,142 (90 days), 455,572 (365 days)
 build-error: 0 (30 days)
    </pre>
 
-1. PROTIP: Although you can <tt>brew install terraform</tt>, don't. So that you can easily switch among several versions installed of Terraform, install and use the Terraform <strong>version manager</strong>:
+1. PROTIP: Although you can <tt>brew install terraform</tt>, don't. So that you can easily <strong>switch among several versions</strong> installed of Terraform, install and use the Terraform <strong>version manager</strong>:
 
    <tt><strong>brew install tfenv
    </strong></tt>
@@ -282,29 +289,73 @@ Already downloaded: /Users/wilson_mar/Library/Caches/Homebrew/downloads/d5f37759
 
    The response:
 
-   <pre>Installing Terraform v0.15.0
-Downloading release tarball from https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_darwin_amd64.zip
+   <pre>Installing Terraform v1.0.5
+Downloading release tarball from https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_darwin_amd64.zip
+######################################################################### 100.0%
+Downloading SHA hash file from https://releases.hashicorp.com/terraform/1.0.5/terraform_1.0.5_SHA256SUMS
+==> Downloading https://ghcr.io/v2/homebrew/core/pcre/manifests/8.45
 ######################################################################## 100.0%
-Downloading SHA hash file from https://releases.hashicorp.com/terraform/0.15.0/terraform_0.15.0_SHA256SUMS
+==> Downloading https://ghcr.io/v2/homebrew/core/pcre/blobs/sha256:a42b79956773d
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/grep/manifests/3.7
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/grep/blobs/sha256:180f055eeacb1
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Installing dependencies for grep: pcre
+==> Installing grep dependency: pcre
+==> Pouring pcre--8.45.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/pcre/8.45: 204 files, 5.5MB
+==> Installing grep
+==> Pouring grep--3.7.mojave.bottle.tar.gz
+==> Caveats
+All commands have been installed with the prefix "g".
+If you need to use these commands with their normal names, you
+can add a "gnubin" directory to your PATH from your bashrc like:
+  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+==> Summary
+🍺  /usr/local/Cellar/grep/3.7: 21 files, 941.7KB
+==> Upgrading 1 dependent:
+zsh 5.7.1 -> 5.8_1
+==> Upgrading zsh
+  5.7.1 -> 5.8_1
+&nbsp;
+==> Downloading https://ghcr.io/v2/homebrew/core/zsh/manifests/5.8_1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/zsh/blobs/sha256:a40a54e4b686eb
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Pouring zsh--5.8_1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/zsh/5.8_1: 1,531 files, 13.5MB
+Removing: /usr/local/Cellar/zsh/5.7.1... (1,515 files, 13.3MB)
+==> Checking for dependents of upgraded formulae...
+==> No broken dependents found!
+==> Caveats
+==> grep
+All commands have been installed with the prefix "g".
+If you need to use these commands with their normal names, you
+can add a "gnubin" directory to your PATH from your bashrc like:
+  PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 Unable to verify OpenPGP signature unless logged into keybase and following hashicorp
-Archive:  tfenv_download.bqNr6u/terraform_0.15.0_darwin_amd64.zip
-  inflating: /usr/local/Cellar/tfenv/2.2.0/versions/0.15.0/terraform  
-Installation of terraform v0.15.0 successful. To make this your default version, run 'tfenv use 0.15.0'
+Archive:  tfenv_download.qXFIgg/terraform_1.0.5_darwin_amd64.zip
+  inflating: /usr/local/Cellar/tfenv/2.2.2/versions/1.0.5/terraform
+Installation of terraform v1.0.5 successful. To make this your default version, run 'tfenv use 1.0.5'
    </pre>
 
    PROTIP: The above commands create folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
 
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
-   Hashicorp's version 12 announcement</a>.
+   Hashicorp's blog</a> about version announcements.
 
 3. Make the latest the default:
 
-   <pre><strong>tfenv use 0.15.0</strong></pre>
+   <pre><strong>tfenv use 1.0.5</strong></pre>
 
-   <pre>Switching default version to v0.15.0
+   <pre>Switching default version to v1.0.5
 Switching completed</pre>
 
-1. Proceed to <a href="#Config">Configuration</a>.
+1. Proceed to <a href="#Config">Configuration</a> below.
 
 
 <a name="Windows_Install"></a>
@@ -320,8 +371,7 @@ Switching completed</pre>
 
    The response at time of writing:
 
-   <pre>
-Chocolatey v0.10.8
+   <pre>Chocolatey v0.10.8
 Installing the following packages:
 terraform
 By installing you accept licenses for the packages.
@@ -351,7 +401,7 @@ Chocolatey installed 1/1 packages.
  See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
     </pre>   
 
-1. Proceed to <a href="#Config">Configuration</a>.
+1. Proceed to <a href="#Config">Configuration</a> below.
 
 
 <a name="Linux_Install"></a>
@@ -382,8 +432,7 @@ To manually install on Ubuntu:
 
 1. On a Console (after substituing the current version):
 
-   <pre>
-sudo curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
+   <pre>sudo curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
 sudo apt-get install unzip
 sudo mkdir /bin/terraform 
 sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
@@ -453,7 +502,7 @@ Main commands:
   plan          Show changes required by the current configuration
   apply         Create or update infrastructure
   destroy       Destroy previously-created infrastructure
-
+&nbsp;
 All other commands:
   console       Try Terraform expressions at an interactive command prompt
   fmt           Reformat your configuration in the standard style
@@ -493,6 +542,8 @@ Global options (use these before the subcommand, if any):
 
    <pre><strong>terraform plan --help</strong></pre>
 
+
+
    <a name="Console"></a>
 
    ### Terraform Console
@@ -517,10 +568,12 @@ Global options (use these before the subcommand, if any):
 
    The program also expects an additional top level in all <tt>.tfvars</tt> files:
 
+   You should now be at your operating system console.
+
 
 ### Community modules
 
-Modules are where the "smarts" are to manage each DevOps component:
+Terraform Modules are how to add "smartness" to manage each DevOps component:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
 <img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
@@ -558,8 +611,7 @@ Nov 18, 2016 by Giuseppe B
 
    A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
 
-   <pre><strong>
-   terragrunt get
+   <pre><strong>terragrunt get
    terragrunt plan
    terragrunt apply
    terragrunt output
@@ -568,7 +620,7 @@ Nov 18, 2016 by Giuseppe B
 
    These wrapper commands provide a quick way to fill in gaps in Terraform - providing extra tools for working with multiple Terraform modules, <a href="#State">managing remote state</a>, and keeping DRY (Don't Repeat Yourself), so that you only have to define it once, no matter how many environments you have.
 
-   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments,etc.
+   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, etc.
 
    WARNING: There are some concerns about Terragrunt's use of invalid data structures. See
    <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
@@ -612,6 +664,62 @@ Already downloaded: /Users/wilson_mar/Library/Caches/Homebrew/downloads/041f7578
 ######################################################################## 100.0%
 ==> Pouring terragrunt-0.23.10.catalina.bottle.tar.gz
 🍺  /usr/local/Cellar/terragrunt/0.23.10: 5 files, 30.4MB
+   </pre>
+
+1. For the Terragrunt menu on macOS:
+
+   <pre><strong>terragrunt
+   </strong></pre>
+
+   Expand the Terminal/console window edge for full screen to see all lines without wrapping:
+
+   <pre>DESCRIPTION:
+   terragrunt - Terragrunt is a thin wrapper for Terraform that provides extra tools for working with multiple
+   Terraform modules, remote state, and locking. For documentation, see https://github.com/gruntwork-io/terragrunt/.
+&nbsp;
+USAGE:
+   terragrunt &LT;COMMAND> [GLOBAL OPTIONS]
+&nbsp;
+COMMANDS:
+   run-all               Run a terraform command against a 'stack' by running the specified command in each subfolder. E.g., to run 'terragrunt apply' in each subfolder, use 'terragrunt run-all apply'.
+   terragrunt-info       Emits limited terragrunt state on stdout and exits
+   validate-inputs       Checks if the terragrunt configured inputs align with the terraform defined variables.
+   graph-dependencies    Prints the terragrunt dependency graph to stdout
+   hclfmt                Recursively find hcl files and rewrite them into a canonical format.
+   aws-provider-patch    Overwrite settings on nested AWS providers to work around a Terraform bug (issue #13018)
+   *                     Terragrunt forwards all other commands directly to Terraform
+&nbsp;
+GLOBAL OPTIONS:
+   terragrunt-config                            Path to the Terragrunt config file. Default is terragrunt.hcl.
+   terragrunt-tfpath                            Path to the Terraform binary. Default is terraform (on PATH).
+   terragrunt-no-auto-init                      Don't automatically run 'terraform init' during other terragrunt commands. You must run 'terragrunt init' manually.
+   terragrunt-no-auto-retry                     Don't automatically re-run command in case of transient errors.
+   terragrunt-non-interactive                   Assume "yes" for all prompts.
+   terragrunt-working-dir                       The path to the Terraform templates. Default is current directory.
+   terragrunt-download-dir                      The path where to download Terraform code. Default is .terragrunt-cache in the working directory.
+   terragrunt-source                            Download Terraform configurations from the specified source into a temporary folder, and run Terraform in that temporary folder.
+   terragrunt-source-update                     Delete the contents of the temporary folder to clear out any old, cached source code before downloading new source code into it.
+   terragrunt-iam-role                          Assume the specified IAM role before executing Terraform. Can also be set via the TERRAGRUNT_IAM_ROLE environment variable.
+   terragrunt-iam-assume-role-duration          Session duration for IAM Assume Role session. Can also be set via the TERRAGRUNT_IAM_ASSUME_ROLE_DURATION environment variable.
+   terragrunt-ignore-dependency-errors          *-all commands continue processing components even if a dependency fails.
+   terragrunt-ignore-dependency-order           *-all commands will be run disregarding the dependencies
+   terragrunt-ignore-external-dependencies      *-all commands will not attempt to include external dependencies
+   terragrunt-include-external-dependencies     *-all commands will include external dependencies
+   terragrunt-parallelism <N>                   *-all commands parallelism set to at most N modules
+   terragrunt-exclude-dir                       Unix-style glob of directories to exclude when running *-all commands
+   terragrunt-include-dir                       Unix-style glob of directories to include when running *-all commands
+   terragrunt-check                             Enable check mode in the hclfmt command.
+   terragrunt-hclfmt-file                       The path to a single hcl file that the hclfmt command should run on.
+   terragrunt-override-attr                     A key=value attribute to override in a provider block as part of the aws-provider-patch command. May be specified multiple times.
+   terragrunt-debug                             Write terragrunt-debug.tfvars to working folder to help root-cause issues.
+   terragrunt-log-level                         Sets the logging level for Terragrunt. Supported levels: panic, fatal, error, warn (default), info, debug, trace.
+   terragrunt-strict-validate                   Sets strict mode for the validate-inputs command. By default, strict mode is off. When this flag is passed, strict mode is turned on. When strict mode is turned off, the validate-inputs command will only return an error if required inputs are missing from all input sources (env vars, var files, etc). When strict mode is turned on, an error will be returned if required inputs are missing OR if unused variables are passed to Terragrunt.
+&nbsp;
+VERSION:
+   v0.31.7
+&nbsp;
+AUTHOR(S):
+   Gruntwork &LT;www.gruntwork.io>
    </pre>
 
 1. To define:

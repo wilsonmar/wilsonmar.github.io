@@ -170,10 +170,14 @@ For TextMate, you can install the Avian Missing Bundle and add TM_STRIP_WHITESPA
 
 ## Visual Studio Code #
 
-Microsoft's Visual Studio Code is slower to startup than Sublime Text.
-It's core engine is built using GitHub's Electron for multi-plantform (Mac, Windows, etc.) as open-source Monacle Editor at https://microsoft.github.io/monaco-editor. 
+Microsoft's Visual Studio Code (VSCode)'s core engine is built using GitHub's Electron for multi-plantform (Mac, Windows, etc.) as open-source Monacle Editor at https://microsoft.github.io/monaco-editor. 
 
-But VSCode's windowing is much more configurable, which has enabled many add-ons that has made it the most feature-rich and thus most preferred editor today. 
+VSCode is slower to startup than Sublime Text.
+
+But VSCode's windowing is much more configurable, which has enabled many add-ons.
+This has made VSCode the most feature-rich and thus most preferred editor today. 
+
+### Install
 
 1. Open a Mac Terminal
 1. Install the GUI program using Homebrew:
@@ -298,6 +302,8 @@ comes with VSCode.
 
 "Live Server" to Launch a development local Server with live reload feature for static & dynamic pages. It automatically refreshes browser when changes are detected in files. 
 
+* https://marketplace.visualstudio.com/items?itemName=antfu.icons-carbon
+provides a cooler set of Product/logo icons for VSCode to display next to each file.
 
 
 ### Tutorials on VSCode
