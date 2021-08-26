@@ -766,6 +766,7 @@ export AWS_REGION=<em>(your region in AWS)</em>
 PROTIP: Specifying passwords in environment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
 
 
+
 <a name="Terraform_Azure"></a>
 
 ## Terraform on Azure
