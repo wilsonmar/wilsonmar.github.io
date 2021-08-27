@@ -98,7 +98,7 @@ Case studies of how people are already making use of AI/ML to save time and mone
 
 As of this writing, in various marketing and certification training <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services">DOCS</a>, Azure Cognitive Services is categorized into these (which is the basis this article is arranged. Click on the bolded word to jump to it below):
 
-   * <a href="#Vision"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
+   * <a href="#VisionServices"><strong>Vision</strong></a> (Visual Perception) - interpret the world visually through cameras, videos, images
 
    * <a href="#Speech"><strong>Speech</strong></a> - Text-to-Speech and Speech-to-Text to interpret written or spoken language, and respond in kind.
 
@@ -1495,7 +1495,7 @@ Sample Response:
 
 ## Speech Services
 
-Speech-to-text (STT) has <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text"">two different REST APIs</a>:
+Speech-to-text (STT) has <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text">two different REST APIs</a>:
 
    * Speech-to-text REST API v3.0 is used for <strong>Batch</strong> transcription and Custom Speech.
 
@@ -1661,7 +1661,7 @@ https://docs.microsoft.com/en-us/samples/azure/azure-sdk-for-python/documenttran
 
 <hr />
 
-<a name="ComputerVision"></a>
+<a name="VisionServices"></a>
 
 ## Vision services
 
