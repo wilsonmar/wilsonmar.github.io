@@ -1368,9 +1368,9 @@ Microsoft Threat Model Tool uses "STRIDE" as a memonic for classification of thr
 
 <a name="Dragos"></a>
 
-### MITRE ATT&CK & Dragos
+### Threat Hunting - MITRE ATT&CK & Dragos
 
-Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</a> process looks at tactics, techniques, and procedures (TTPs) for Enterprise IT. PROTIP: Click on the icon to the right of each item for additional info.
+Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</a> process looks at Tactics, Techniques, and Procedures (TTPs) for Enterprise IT. PROTIP: Click on the icon to the right of each item for additional info.
 
 <a target="_blank" href="https://www.dragos.com/">Dragos</a> <a target="_blank" href="https://hub.dragos.com/hubfs/Whitepaper-Downloads/Mapping-Industrial-Cybersecurity-Threats-to-MITRE-ATTACK-for-ICS.pdf">PDF: ATT&CK for IoC</a> (Industrial Control Systems)
 
@@ -2308,9 +2308,9 @@ IPv6 uses 128 bits, has built-in IPSec. Sends Solicited Node (ICMP) Multicast Ad
 concatenated with 104-bit addr. SLAAC (StateLess Address Auto Configuration) to auto configure based on network prefix.
 
 Private addresses: REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=se14Kog6raE&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37&index=72">VIDEO QUZ</a>
-   * Class A 10.0.0.0–10.255.255.255
-   * Class B 172.16.0.0–172.31.255.255
-   * Class C 192.168.0.0–192.168.255.255 in range of addresses is from 192.0.0.0 to 223.255.255.255.
+   * Class A 10.x.x.x (to 10.255.255.255)
+   * Class B 172.16.x.x (to 172.31.255.255)
+   * Class C 192.168.x.x (to 192.168.255.255) in range of addresses is from 192.0.0.0 to 223.255.255.255.
    <br /><br />
 
 802.11ac includes multi-user multiple-input, multiple-output (MU MIMO).
@@ -2429,6 +2429,41 @@ An AUP (acceptable use policy) details appropriate use of information systems, h
 https://thorteaches.com/the-memory-palace-prashant-mohan/
 https://thorteaches.com/wp-content/uploads/2021/06/The-Memory-Palace-CISSP-by-Prashant-Mohan-4th-edition.pdf
 One large PDF of what to remember while taking the CISSP exam.
+
+### 
+
+Open-source intelligence feeds:
+   * Malware Information Sharing Project (MISP)
+   * AT&T Security (Alien Vault Open Threat Exchange)
+   * Spamhaus
+   * SANS ISC Suspicious Domains, VirusTotal, an
+   * NCAS by US0CERT
+   <br /><br />
+
+Closed-source or proprietary intelligence sources:
+   * IBM X-Force Exchange
+   * Recorded Future
+   * FireEye
+   <br /><br />
+
+
+## Incident Response (DFIR)
+
+tcpdump options:
+   * -e includes the ethernet header during packet capture
+   * -n flag shows the IP addresses in numeric form
+   * -nn shows IP addresses and ports in numeric format
+   * -X captures the packet's payload in hex and ASCII formats
+   <br /><br />
+
+Forest Monsen and Kevin Glisson in Netflix's Security Intelligence and Response Team (SIRT):
+   * <a target="_blank" href="https://github.com/Netflix-Skunkworks/diffy">open-sourced</a> their <a target="_blank" href="https://netflixtechblog.com/netflix-sirt-releases-diffy-a-differencing-engine-for-digital-forensics-in-the-cloud-37b71abd2698">"Diffy" Differencing Engine for Digital Forensics in the Cloud</a> tool, which include "osquery" to collect and retain a functional baseline against comparison with all running instances. See https://diffy.readthedocs.io/
+
+   * <a target="_blank" href="https://github.com/Netflix/dispatch">open-sourced</a> their <a target="_blank" href="https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072">"Dispatch" crisis management orchestration</a> tool, which leverages existing familiarity with existing tools used throughout an organization (Slack, GSuite, Jira, etc.). Dispatch focuses on managing metadata (incident context) about responses and resources, assembling participants, sending out notifications, tracking tasks, assisting with post-incident reviews, etc. The system builds on past incidents to speed up the resolution of future incidents. It's made using Python, VueJs, Postgres. Available as a <a target="_blank" href="https://github.com/Netflix/dispatch-docker">Docker image</a>. See https://hawkins.gitbook.io/dispatch/
+
+
+UEBA (User and Entity Behavior Analytics), such as Splunk and Microsoft Advanced Threat Analysis provides automated id. of suspicious activity by user accounts and computer hosts, using AI/ML techniques.
+
 
 
 ## More on Security #

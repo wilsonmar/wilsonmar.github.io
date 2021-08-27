@@ -617,6 +617,9 @@ Bluesnarfing is the unauthorized access of a device by an attacker who is trying
 
 Hyperconvergence takes convergence a step further by utilizing software to perform integration without requiring hardware changes.
 
+
+<a name="CySA+"></a>
+
 ### CompTIA CySA+
 
 CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes
@@ -654,7 +657,10 @@ CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online $35
    2. Given a scenario, apply security concepts in support of organizational risk mitigation
    3. Explain the importance of frameworks, policies, procedures and controls.
    
-## Cisco
+https://www.udemy.com/course/comptiacsaplus/learn/lecture/21082126#overview
+
+
+## Cisco CCIE
 
 <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html">CCIE - Cisco</a>
 
