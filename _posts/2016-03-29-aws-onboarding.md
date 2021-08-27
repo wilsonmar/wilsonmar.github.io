@@ -38,9 +38,9 @@ There are several ways to interact with AWS:
 
 ## API Keys
 
-    API Keys are assigned to developers using the AWS CLI (Command Line Interface) for programmatic (by a program) rather than manual clicking and typing on a keyboard. 
+   API Keys are assigned to developers using the AWS CLI (Command Line Interface) for programmatic (by a program) rather than manual clicking and typing on a keyboard. 
 
-    API keys make use of pairs of public (access) key and private (secret) key which stand in for real users typing in passwords.
+   API keys make use of pairs of public (access) key and private (secret) key which stand in for real users typing in passwords.
 
 ## SSH Keys
 
@@ -525,9 +525,9 @@ The remainder of this is for users and super users.
 
    ### Programmatic Access
 
-Instead of doing what other clouds do, of an <tt>aws login</tt> command which prompt for a user name and password, aws commands reference a specifically-named file at <tt>$HOME/.aws/credentials</tt> created by command <tt>aws configure</tt>.
+   Instead of doing what other clouds do (an <tt>aws login</tt> command which prompt for a user name and password), aws commands reference a specifically-named file at <tt>$HOME/.aws/credentials</tt> created by command <tt>aws configure</tt>.
 
-The <tt>aws configure</tt> command creates that file after prompting for access key identifiers (AKIDs) to an AWS account. Press Enter to accept the value previously defined:
+   The <tt>aws configure</tt> command creates that file after prompting for access key identifiers (AKIDs) to an AWS account. Press Enter to accept the value previously defined:
 
    * AWS Access Key ID [****************L5ZQ]:
    * AWS Secret Access Key [****************+1MD]:
@@ -572,7 +572,7 @@ Setup S3 buckets in the US East (N. Virginia) Region (us-east-1). It runs every 
 Another automation sets up an Amazon DynamoDB table to house the email addresses of accounts rotated.
 These emails are used by a SNS Topic to send alerts when rotation occurs.
 
-Alternately, a Slack message can be sent (not shown in the diagram).
+Alternately, you can refactor to send a Slack message instead of email (not shown in the diagram).
 
 
 https://aws.amazon.com/blogs/security/guidelines-for-protecting-your-aws-account-while-using-programmatic-access/
@@ -1280,8 +1280,7 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
 
 7. Exit aws-shell back to bash:
 
-   <tt><strong>
-   .exit
+   <tt><strong>.exit
    </strong></tt>
 
    Alternately, <tt>.quit</tt> works too.
@@ -1372,26 +1371,24 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
 
 8. The region in ~/.aws/config can be set also by:
 
-   <pre><strong>
-   aws configure set profile.prod.region us-west-2
+   <pre><strong>aws configure set profile.prod.region us-west-1
    </strong></pre>   
 
    Path ~/.aws/config is in variable $AWS_CONFIG_FILE
 
-
    Path ~/.aws/credentials is in variable $AWS_SHARED_CREDENTIALS_FILE
 
-   aws configure set region \
+   <pre>aws configure set region \
       $(curl -s http://162.254.169.254/latest/dynamic/instance-identity/document \
       | jp -u 'region')
+   </pre>
 
    ### Roles for Tasks
 
    TODO: Temporary security credentials <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Roles for Tasks</a>
    stored in ~/.aws/config file:
 
-   <pre>
-[profile iam-role]
+   <pre>[profile iam-role]
 role_arn = arn:aws:iam::<em>ACCOUNT_ID</em>:role/<em>IAM_ROLE</em>
 source_profile = iam-user
 output = json
@@ -1400,8 +1397,7 @@ region = eu-west-1
 
    PROTIP: The ~/.aws/config file also houses settings that speed up S3 sync.
 
-   <pre>
-[profile default]
+   <pre>[profile default]
 ...
 s3 =
   max_concurrent_requests = 100
