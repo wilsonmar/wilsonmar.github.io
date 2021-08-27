@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Azure Cloud Onramp"
-excerpt: "Get to know Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
+excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
 tags: [cloud, azure]
 date: "2021-06-10"
 file: "azure-cloud-onramp"
