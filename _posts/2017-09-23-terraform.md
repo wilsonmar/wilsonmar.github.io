@@ -55,8 +55,6 @@ Use of <strong>version-controlled</strong> configuration files in an elastic clo
 References:
    * <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
 
-   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app running under  Kubernetes, with a replica in another region.
-
 
 
 ### Infrastructure as Code (IaC) 
