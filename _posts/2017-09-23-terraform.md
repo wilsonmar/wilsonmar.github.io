@@ -56,10 +56,6 @@ That is "future proofing" infastructure work.
 
 Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
 
-References:
-   * <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
-
-
 
 ### Infrastructure as Code (IaC) 
 
@@ -90,7 +86,7 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
    </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td>Terraform</td><td>2014 Low</td><td>Huge</td><td>Provisioning
+<tr valign="top"><td><strong>Terraform</strong></td><td>2014 Low</td><td>Huge</td><td>Provisioning
    </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td><a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi</a>></td><td>2017 Low</td><td>New</td><td>Provisioning
@@ -1505,9 +1501,11 @@ resource "aws_instance" "web" {
    Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
 
 
-   <a name="Providers"></a>
+<hr />
 
-   ### Terraform Providers
+<a name="Providers"></a>
+
+## Terraform Providers
 
    Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
 
@@ -1517,7 +1515,7 @@ resource "aws_instance" "web" {
    
    <a name="Providers"></a>
 
-   ### Terraform Providers
+   ### Terraform Built-in Providers
 
    "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
 
@@ -1540,9 +1538,6 @@ resource "aws_instance" "web" {
    https://github.com/hashicorp/terraform/tree/master/builtin/providers">
    https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
 
-   <a name="TFCloudProvider"></a>
-
-   ### Terraform Cloud Provider
 
    <a target="_blank" href="https://www.youtube.com/watch?v=zOS3v9We1cg">
    VIDEO INTRO</a>:
@@ -1550,7 +1545,8 @@ resource "aws_instance" "web" {
    in temporary test workspaces to see the impact of incremental changes.
 
    
-### Terraform Providers
+Custom Terraform Providers are written in the <a target="_blank" href="https://wilsonmar.github.com/golang">Go language</a>.
+
 
 The steps below are based on
    <a target="_blank" href="
@@ -2090,6 +2086,28 @@ TODO:
 <a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
 
 
+### Densify FinOps
+
+<a target="_blank" href="https://www.densify.com/">densify.com</a> dynamically self-optimizes configurations based on predictive analytics. This "FinOps" works by updating tags in AWS of recommendations for server type based on cost and performance analysis in real-time:
+
+<pre>vm_size = "${module.densify.instance_type}"</pre>
+
+ <a target="_blank" href="https://www.youtube.com/watch?v=pTxYwbC6GkY">VIDEO</a>:
+![densify-real-time-807x261](https://user-images.githubusercontent.com/300046/131215844-d6e049b5-443c-4c45-96c6-33562ad0968e.png)
+
+It's defined in terraform.tf:
+
+<pre>module "densify" {
+  source = "densify-dev/optimization-as-code/null"
+  version = "1.0.0"
+  &nbsp;
+  densify_recommendations = "${var.densify_recommendations}"
+  densify_fallback        = "${var.densify_fallback}"
+  &nbsp;
+  densify_unique_id       = "${var.name}"
+}</pre>
+
+
 <a name="modules"></a>
    
 ## Modules
@@ -2297,29 +2315,27 @@ Oct 13, 2017 by Radek Simko (@RadekSimko), Terraform Expert HashiCorp
 
 ## References
 
-<a target="_blank" href="
-https://www.youtube.com/watch?v=UleogrJkZn0">
+<a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=UleogrJkZn0">VIDEO: 
 Learn Terraform in 10 Minutes Tutorial</a>
 by Reval Govender
 
-<a target="_blank" href="
-https://www.youtube.com/channel/UCgWfCzNeAPmPq_1lRQ64JtQ/videos">
+<a target="_blank" href="https://www.youtube.com/channel/UCgWfCzNeAPmPq_1lRQ64JtQ/videos">VIDEO:
 SignalWarrant's videos on PowerShell</a>
 by David Keith Hall
 includes:
 
-   * <a target="_blank" href="http://www.signalwarrant.com/automate-creating-lab-virtual-machines-in-azure-with-powershell/">
-  Automate Creating Lab Virtual Machines in Azure with PowerShell</a>
-  July 12, 2017
-  shows how to take input from a CSV file.
+   * <a target="_blank" href="http://www.signalwarrant.com/automate-creating-lab-virtual-machines-in-azure-with-powershell/" title="July 12, 2017">Automate Creating Lab Virtual Machines in Azure with PowerShell</a> shows how to take input from a CSV file.
+   <br /><br />
 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3vcWO&index=1">
 Terraform Basics mini-course on YouTube in 5-parts</a> from "tutorialLinux".
 
 http://chevalpartners.com/devops-infrastructure-as-code-on-azure-platform-with-hashicorp-terraform-part-1/
-quotes https://www.hashicorp.com/blog/azure-resource-manager-support-for-packer-and-terraform from 2016 about support for
-Azure Resource Manager
+quotes https://www.hashicorp.com/blog/azure-resource-manager-support-for-packer-and-terraform from 2016 about support for Azure Resource Manager.
 
 
 <a target="_blank" href="https://www.linkedin.com/in/sajithvenkit/">Sajith Venkit</a> explains Terraform file exampled in his <a target="_blank" href="https://www.codementor.io/alibabacloud/building-docker-enterprise-2-1-cluster-using-terraform-thh42zbd6?utm_swu=8964">"Building Docker Enterprise 2.1 Cluster Using Terraform" blog</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-alicloud">repo for AliCloud</a> and <a target="_blank" href="https://github.com/sajiv3m/docker-terraform-azure">Azure</a>.
@@ -2329,10 +2345,9 @@ Azure Resource Manager
 <a target="_blank" href="
 https://www.youtube.com/watch?v=qFjGqPw1NUY">
 How to create a GitOps workflow with Terraform and Jenkins</a>
-Alex Podobnik
+by Alex Podobnik
 
-<a target="_blank" href="
-https://www.youtube.com/watch?v=bKe4BkDfdvI">
+<a target="_blank" href="https://www.youtube.com/watch?v=bKe4BkDfdvI">VIDEO: 
 Manage SSH with HashiCorp Vault</a>
 
 <a target="_blank" href="https://github.com/dod-iac">github.com/dod-iac (DOD Infrastructure as Code)</a> is 36 examples of how the Pentagon uses Terraform within AWS IAM, S3, EBS, KMS, Kinesis api gateway, Lambda, MFA, GuardDuty, Route53, etc.
