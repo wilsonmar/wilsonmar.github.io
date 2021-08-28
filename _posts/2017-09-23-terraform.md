@@ -636,7 +636,7 @@ Nov 18, 2016 by Giuseppe B
 
    A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
 
-   <pre><strong>terragrunt get
+   <pre><strong>   terragrunt get
    terragrunt plan
    terragrunt apply
    terragrunt output
