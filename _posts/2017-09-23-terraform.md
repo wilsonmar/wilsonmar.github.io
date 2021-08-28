@@ -26,8 +26,8 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ## Terraform Logical Flow
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/131213992-7d09ddf6-7192-4900-aa88-0c07b0080903.png">
-<img alt="terraform-logical-flow-1504x610" width="1504" height="610" src="https://user-images.githubusercontent.com/300046/131213992-7d09ddf6-7192-4900-aa88-0c07b0080903.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131214646-42bac240-67c8-46de-9f5b-41946b913854.png">
+<img alt="terraform-logical-flow-1259x619" width="1259" height="619" src="https://user-images.githubusercontent.com/300046/131214646-42bac240-67c8-46de-9f5b-41946b913854.png"></a>
 
 
 ## Multi-cloud/service
@@ -43,14 +43,10 @@ Terraform provides an alternative to each cloud vendor's IaC solution:
 
 Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
-Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
-
-Terraform can import CFN yaml format into its HCL language.
-
 
 <a name="Repeatable"></a>
 
-### Repeatable
+### Repeatable from versioning
 
 Terraform provides a <strong>single consistent set of commands and workflow</strong> on all clouds.
 That is "future proofing" infastructure work.
@@ -193,6 +189,10 @@ Troposphere and Sceptre makes CFN easier to write with basic loops and logic tha
 But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
 
 CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
+
+Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
+
+Terraform can import CFN yaml format into its HCL language.
 
 AWS Cloud Formation and Terraform can both be used at the same time.
 Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
