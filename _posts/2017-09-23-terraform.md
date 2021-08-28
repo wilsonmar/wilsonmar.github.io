@@ -52,12 +52,10 @@ That is "future proofing" infastructure work.
 
 Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
 
-
-Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
-
 References:
    * <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
-   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a>.
+
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample app.
 
 
 
@@ -98,7 +96,11 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
    </td><td>Yes</td><td>Yes</td></tr>
 </tbody></table>
 
+<a name="OpenSourcing"></a>
+
 <a name="x1"></a>*1 - CF/CFN (CloudFormation) is used only within the AWS cloud while others operate on several clouds. CFN is the only <strong>closed-sourced</strong> solution on this list.
+Code for Terraform is open-sourced at <a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
+
 
 Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. Kubernetes orchestrates (brings up and down) Docker containers.
 
@@ -129,7 +131,7 @@ Immutable and idempotent means "when I make a mistake in a complicated setup, I 
 
 ### Parallel execution
 
-A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed. Terraform does that by creating a <strong>Resource Graph</strong> such as <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">this</a>:
+A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed. Terraform does that by creating a <strong>Resource Graph</strong> such as <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">this</a> (click image for full screen):
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"></a>
 
@@ -147,9 +149,9 @@ Terraform control, iterations, and (perhaps most of all) management of resources
 <tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
 <tr><td> <a href="#Providers">Multi-Cloud providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
 <tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
-<tr><td> Open Source contributions? </td><td> No </td><td> Yes (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
+<tr><td> Open Source contributions? </td><td> <a href="#OpenSourcing">No</a> </td><td> <a href="#OpenSourcing">Yes</a> (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
 <tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
-<tr><td> <a href="#GUI">GUI*</a> </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
+<tr><td> GUI </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
 <tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
 <tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
@@ -183,9 +185,6 @@ Moreover, security-concious organization make it difficult to use third party pr
 <a name="Licensing"></a>
 
 ## Licensing open source for GUI
-
-Code for Terraform is open-sourced at<br />
-<a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
 
 Although Terraform is "open source", the Terraform GUI requires a license.
 
@@ -591,7 +590,13 @@ Global options (use these before the subcommand, if any):
    You should now be at your operating system console.
 
 
-### Community modules
+<hr />
+
+<a name="Modules"></a>
+
+## Community modules
+
+Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
 
 Terraform Modules are how to add "smartness" to manage each DevOps component:
 
