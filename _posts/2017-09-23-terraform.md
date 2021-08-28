@@ -38,6 +38,8 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 
 Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
 
+Terraform can import CFN yaml format into its HCL language.
+
 
 <a name="Repeatable"></a>
 
@@ -55,7 +57,7 @@ Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform c
 
 References:
    * <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
-   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on https://github.com/cloudacademy/managing-infrastructure-with-terraform.
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a>.
 
 
 
@@ -82,7 +84,7 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing</td><td>Config Mgmt
    </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td bgcolor="yellow">No</td><td bgcolor="yellow">No</td></tr>
-<tr valign="top"><td><a title="Cloud Formation (AWS)">CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
+<tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
    </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
@@ -96,8 +98,7 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
    </td><td>Yes</td><td>Yes</td></tr>
 </tbody></table>
 
-<a name="x1"></a>*1 - CF (CloudFormation) is used only within the AWS cloud while others operate on all clouds.
-CF is the only <strong>closed-sourced</strong> solution on this list.
+<a name="x1"></a>*1 - CF/CFN (CloudFormation) is used only within the AWS cloud while others operate on several clouds. CFN is the only <strong>closed-sourced</strong> solution on this list.
 
 Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. Kubernetes orchestrates (brings up and down) Docker containers.
 
@@ -120,15 +121,24 @@ IaC code is idempotent (repeated runs results in what is described, and does not
 
 ### Immutable?
 
-PROTIP: WARNING: Terraform does not support rollbacks.
+PROTIP: WARNING: Terraform does not support rollbacks of changes made.
 
 "Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
 
 Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
 
-Terraform also provides <strong>parallel execution</strong> control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
+### Parallel execution
 
-A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Under the covers, Terraform plan generates an executable, and uses it to apply, which guarantees that what appeared in plan is the same as with <a href="#TerraformApply">apply</a>.
+A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed. Terraform does that by creating a <strong>Resource Graph</strong> such as <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">this</a>:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"></a>
+
+
+Under the covers, Terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
+
+When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
+
+Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
 
 ### IaC: Terraform vs. AWS Cloud Formation
@@ -159,7 +169,7 @@ Some have found Cloud Formation's references and interpolation to be difficult.
 Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
 But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
 
-CFN limits the size of objects uploaded to S3.
+CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
 
 AWS Cloud Formation and Terraform can both be used at the same time.
 Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
@@ -168,6 +178,7 @@ Terraform is often used to handle security groups, IAM resources, VPCs, Subnets,
 Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
 
 Moreover, security-concious organization make it difficult to use third party products due to time-consuming infosec clearances needed.
+
 
 <a name="Licensing"></a>
 
@@ -181,15 +192,6 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
    Paid Pro and Premium licenses of Terraform</a>
    add version control integration, MFA security, HA, and other enterprise features.
-
-
-<a name="Crossplane"></a>
-
-### Crossplane
-
-<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
-
-<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
 
 
 ## Websites to know
@@ -782,6 +784,29 @@ export AWS_REGION=<em>(your region in AWS)</em>
    </pre>
 
 PROTIP: Specifying passwords in environment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
+
+
+
+<a name="CFN"></a>
+
+## AWS Cloud Formation
+
+<a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">
+Puppet, Chef, Ansible, Salt</a>
+AWS API libraries Boto, Fog
+
+AWS CloudFormation Sample Templates at
+<a target="_blank" href="
+https://github.com/awslabs/aws-cloudformation-templates">
+https://github.com/awslabs/aws-cloudformation-templates</a>
+
+
+<a target="_blank" href="
+https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">
+AWS CloudFormation Master Class</a>
+by Stéphane Maarek from Packt May 2018
+
+Some CloudFormation templates are compatible with OpenStack Heat templates.
 
 
 
@@ -2000,6 +2025,14 @@ TODO:
 
 <hr />
 
+<a name="Crossplane"></a>
+
+### Crossplane
+
+<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
+
+<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
+
 
 <a name="modules"></a>
    
@@ -2201,28 +2234,6 @@ Oct 13, 2017 by Radek Simko (@RadekSimko), Terraform Expert HashiCorp
 * <a target="_blank" href="https://www.youtube.com/watch?v=Ynfo8qLb_Q8">
 [JFrog Webinar] Infrastructure as Code with Terraform</a>
 25:22
-
-
-<a name="CFN"></a>
-
-## AWS Cloud Formation
-
-<a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">
-Puppet, Chef, Ansible, Salt</a>
-AWS API libraries Boto, Fog
-
-AWS CloudFormation Sample Templates at
-<a target="_blank" href="
-https://github.com/awslabs/aws-cloudformation-templates">
-https://github.com/awslabs/aws-cloudformation-templates</a>
-
-
-<a target="_blank" href="
-https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">
-AWS CloudFormation Master Class</a>
-by Stéphane Maarek from Packt May 2018
-
-Some CloudFormation templates are compatible with OpenStack Heat templates.
 
 
 ## References
