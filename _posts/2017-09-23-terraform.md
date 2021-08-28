@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terraform"
-excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning on AWS, Azure, GCP, and other clouds"
+excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) repeatedly provisioning AWS, Azure, GCP, and other clouds"
 tags: [DevOps, ecosystem]
 date: "2021-08-24"
 file: "terraform"
@@ -16,11 +16,18 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using declarative statements that are <a href="#Idempotent">idempotent</a>.
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
 
 <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
 "Terraform make infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable."
+
+<a name="LogicalFlow"></a>
+
+## Terraform Logical Flow
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131213992-7d09ddf6-7192-4900-aa88-0c07b0080903.png">
+<img alt="terraform-logical-flow-1504x610" width="1504" height="610" src="https://user-images.githubusercontent.com/300046/131213992-7d09ddf6-7192-4900-aa88-0c07b0080903.png"></a>
 
 
 ## Multi-cloud/service
@@ -191,6 +198,7 @@ AWS Cloud Formation and Terraform can both be used at the same time.
 Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
 
 <a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
+
 Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
 
 Moreover, security-concious organization make it difficult to use third party products due to time-consuming infosec clearances needed.
@@ -205,6 +213,7 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
    Paid Pro and Premium licenses of Terraform</a>
    add version control integration, MFA security, HA, and other enterprise features.
+
 
 
 ## Websites to know
@@ -883,6 +892,9 @@ cd terraform-on-azure
    <pre><strong>echo "terraform.tfstate" >>.gitignore
    </strong></pre>
 
+
+   ### VSCode
+
 1. Use VSCode (installed by default) to view blocks in Terraform HCL file:
 
    <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
@@ -895,6 +907,7 @@ code main.tf
 
    NOTE: Multiple providers can be specified in the same HCL file.
 
+
 1. Search for "Resource Group" in Terraform's Azure Provider docs:
 
    <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
@@ -902,7 +915,9 @@ code main.tf
 
    for "azurerm_resource_group".
 
-1. <strong>Download and install binaries providers needs</strong>:
+   <a name="tfinit"></a>
+
+1. <strong>Download and install binaries providers need</strong>:
 
    <pre><strong>terraform init</strong></pre>
 
@@ -930,6 +945,10 @@ If you ever set or change modules or backend configuration for Terraform,
 rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
    </pre>
+
+   <a name="tfplan"></a>
+
+   ### Terraform Plan
 
 1. What if Terrform
 
