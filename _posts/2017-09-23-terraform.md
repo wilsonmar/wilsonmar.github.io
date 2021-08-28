@@ -55,7 +55,7 @@ Use of <strong>version-controlled</strong> configuration files in an elastic clo
 References:
    * <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
 
-   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample app.
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app running under  Kubernetes, with a replica in another region.
 
 
 
@@ -1059,9 +1059,10 @@ Docs:
    The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
    <pre>provider "aws" {
-     access_key = "${var.aws_access_key}"
-     secret_key = "${var.aws_secret_key}"
-     region = "${var.aws_region}"
+   version = ">= 1.2, < 1.2"
+   region = "${var.aws_region}"
+   access_key = "${var.aws_access_key}"
+   ecret_key = "${var.aws_secret_key}"
    }
    resource "aws_instance" "example" {
       ami = "ami-2757f631"
@@ -1069,6 +1070,8 @@ Docs:
    }</pre>
 
    "provider" and "resource" are each a <strong>configuration block</strong>.
+
+### Interpolation variables
 
    * Each block defined between curly braces is called a <strong>"stanza"</strong>.
 
