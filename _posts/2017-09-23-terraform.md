@@ -16,18 +16,19 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
-
 <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
 "Terraform make infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable."
 
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
+
 <a name="LogicalFlow"></a>
 
-## Terraform Logical Flow
+## Terraform Enterprise Local Logical Flow
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/131214646-42bac240-67c8-46de-9f5b-41946b913854.png">
-<img alt="terraform-logical-flow-1259x619" width="1259" height="619" src="https://user-images.githubusercontent.com/300046/131214646-42bac240-67c8-46de-9f5b-41946b913854.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131214940-a2a38609-16e2-4c97-b64d-18f431e195b4.png">
+<img alt="terraform-logical-flow-1251x613" width="1251" height="613" src="https://user-images.githubusercontent.com/300046/131214940-a2a38609-16e2-4c97-b64d-18f431e195b4.png"></a>
+<a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a>
 
 
 ## Multi-cloud/service
