@@ -575,11 +575,13 @@ These emails are used by a SNS Topic to send alerts when rotation occurs.
 Alternately, you can refactor to send a Slack message instead of email (not shown in the diagram).
 
 
-https://aws.amazon.com/blogs/security/guidelines-for-protecting-your-aws-account-while-using-programmatic-access/
 
-aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name \
+<a target="_blank" href="https://aws.amazon.com/blogs/security/guidelines-for-protecting-your-aws-account-while-using-programmatic-access/">DOCS</a>
+
+<pre>aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name \
    --role-session-name "RoleSession1" \
    --profile IAM-user-name > assume-role-output.txt
+</pre>
 
 ----------------
 
@@ -637,52 +639,6 @@ Additionally, add conditions to the policy that further restrict access, such as
     ]
 }
 </pre>
-
-
-
-<a name="ForumAccount"></a>
-
-## [_] Create Forum Account
-
-1. PROTIP: To ensure anonymity interacting on public forums, the Administrator should create in a public email system (such as gmail.com, hotmail.com, etc.) an email address for use on forums. Don't use a real name in the email address, but a positive adjective with a number to ensure it's unique, such as "concerned123".
-
-   AWS says "Your email will be kept private" but I don't trust that they can't be hacked.
-
-2. Go to the AWS forums at URL:
-
-   <a target="_blank" href="https://forums.aws.amazon.com/forum.jspa?forumID=150">https://forums.aws.amazon.com/forum.jspa?forumID=150</a>
-
-3. Register the new email address along with an AWS Nickname without a proper name, such as, again, "concerned123".
-
-3. Use that email in StackOverflow.com and other public forums.
-
-
-<a name="References"></a>
-
-## References #
-
-After signing up for <a target="_blank" href="https://www.aws.training/">https://www.aws.training</a>, <a target="_blank" href="https://www.aws.training/learningobject/video?id=16484">
-Authentication and Authorization with AWS Identity and Access Management</a>
-15 minutes
-
-SWF (Simple Workflow Functions) sequences manual work.
-
-AppStream streams desktop apps (like Citrix).
-
-Elastic Transcoder of videos into various sizes and formats (ogg, mp4, etc.)
-
-<a target="_blank" href="https://www.lucidchart.com/documents/view/bd4fb4e7-336e-4c8b-972d-048616da9f96/3">
-Orion Papers</a> on Lucidchart
-
-https://scriptcrunch.com/aws-certification-iam-essentials-cheat-sheet/
-
-
-https://www.youtube.com/watch?v=e2A8K47Fj6s&index=4&list=PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M
-How to Configure the AWS CLI | Amazon Web Services | AWS</a> Nov 26, 2017
-by deeplizard
-
-https://docs.aws.amazon.com/cli/latest/index.html
-AWS CLI Command Reference
 
 
 
@@ -804,6 +760,18 @@ You can also download a zip containing .png and .svg files of icons
 (AWS_Simple_Icons_EPS-SVG_v16.2.22.zip).
 
 
+<hr />
+
+## Hashicorp Terraform Enterprise
+
+<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: Hashicorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
+
+Rules in Hashicorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
+Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
+
+
+<hr />
+
 ## Social #
 
 * <a target="_blank" href="https://www.reddit.com/r/aws/">
@@ -817,6 +785,27 @@ You can also download a zip containing .png and .svg files of icons
    * <a target="_blank" href="https://www.twitch.tv/videos/206753304">IoT at re:Invent 2017 video</a> with Sarah Cooper (General Manager IoT), Kip Larson (Principal Product Manager for IoT Analytics)
 
 * Sign-up to receive the <a target="_blank" href="https://www.amazon.com/AWS-Architecture-Monthly-FREE-Subscription/dp/B077F2P7DH/ref=pd_sim_405_1?_encoding=UTF8&psc=1&refRID=8JWKBP6Z7PVJZG34T3AW">AWS Architecture Monthly (FREE Subscription)</a> on your Kindle account.
+
+
+
+
+<a name="ForumAccount"></a>
+
+## [_] Create Forum Account
+
+1. PROTIP: To ensure anonymity interacting on public forums, the Administrator should create in a public email system (such as gmail.com, hotmail.com, etc.) an email address for use on forums. Don't use a real name in the email address, but a positive adjective with a number to ensure it's unique, such as "concerned123".
+
+   AWS says "Your email will be kept private" but I don't trust that they can't be hacked.
+
+2. Go to the AWS forums at URL:
+
+   <a target="_blank" href="https://forums.aws.amazon.com/forum.jspa?forumID=150">https://forums.aws.amazon.com/forum.jspa?forumID=150</a>
+
+3. Register the new email address along with an AWS Nickname without a proper name, such as, again, "concerned123".
+
+3. Use that email in StackOverflow.com and other public forums.
+
+
 
 
 ## Tutorial Rock Stars and their presentations #
@@ -867,9 +856,13 @@ Matt Wood, @mza, Product Strategy @ Amazon Web Services
 * <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
   $300, 170 minutes AWS Certified DevOps Engineer - Professional</a>
 
-<a target="_blank" href="https://www.amazon.com/Certified-Cloud-Practitioner-Practice-Questions-ebook/dp/B07BK1VJMX/">
-   Practice exam dumps for AWS Certified Cloud Practitioner 2018</a>
+Practice exams:
+
+* http://www.techexams.net/forums/cloud/131715-passed-cv0-001-a.html
+
+* <a target="_blank" href="https://www.amazon.com/Certified-Cloud-Practitioner-Practice-Questions-ebook/dp/B07BK1VJMX/">Practice exam dumps for AWS Certified Cloud Practitioner 2018</a>
    $5.99 or Kindle Unlimited.
+
 
 
 ## AWS Training Resources #
@@ -906,17 +899,33 @@ Script to launch Amazon EC2 Spot instances</a> with a simple Python script
    - connect to it via SSH and run a script of your choice
 
 
-## Hashicorp Terraform Enterprise
 
-<a target="_blank" href="https://webinars.securityboulevard.com/controlling-cloud-costs-with-hashicorp-terraform">VIDEO</a>: Hashicorp has a "Sentinal" product component which enforces various fine-grained rules (policy sets) to what can be done by each role. It also estimates monthly cost from cloud usage.
+<a name="References"></a>
 
-Rules in Hashicorp's <a target="_blank" href="https://www.hashicorp.com/resources/secure-your-cloud-with-terraform-foundational-policy-library/">
-Foundational Policy library</a> is at <a target="_blank" href="https://github.com/hashicorp/terraform-foundational-policies-library">https://github.com/hashicorp/terraform-foundational-policies-library</a>. Such "Policies as Code" are crafted based on <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a> [<a target="_blank" href="https://www.cisecurity.org/wp-content/uploads/2018/03/CIS-Controls-Measures-and-Metrics-V7.pdf">pdf</a>] (including Compute, Databases, Kubernetes, Storage, Networks) covering Azure and GCP as well as AWS.
+## References #
+
+After signing up for <a target="_blank" href="https://www.aws.training/">https://www.aws.training</a>, <a target="_blank" href="https://www.aws.training/learningobject/video?id=16484">
+Authentication and Authorization with AWS Identity and Access Management</a>
+15 minutes
+
+SWF (Simple Workflow Functions) sequences manual work.
+
+AppStream streams desktop apps (like Citrix).
+
+Elastic Transcoder of videos into various sizes and formats (ogg, mp4, etc.)
+
+<a target="_blank" href="https://www.lucidchart.com/documents/view/bd4fb4e7-336e-4c8b-972d-048616da9f96/3">
+Orion Papers</a> on Lucidchart
+
+https://scriptcrunch.com/aws-certification-iam-essentials-cheat-sheet/
 
 
-## Social Media
+https://www.youtube.com/watch?v=e2A8K47Fj6s&index=4&list=PLZbbT5o_s2xoWPNdBbqi9eWnMJ5cDrr1M
+How to Configure the AWS CLI | Amazon Web Services | AWS</a> Nov 26, 2017
+by deeplizard
 
-http://www.techexams.net/forums/cloud/131715-passed-cv0-001-a.html
+https://docs.aws.amazon.com/cli/latest/index.html
+AWS CLI Command Reference
 
 
 ## More on Amazon #

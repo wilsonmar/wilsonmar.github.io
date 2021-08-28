@@ -21,7 +21,7 @@ comments: true
 In the 201X's there is an "arms race" in offering 
 Artificial intelligence and Machine Learning (ML) services in their clouds:
 
-   * [Microsoft Cortana in Azure cloud](/microsoft-ai)
+   * [Microsoft Cognitive Services (Cortana) in Azure cloud](/microsoft-ai)
    * Google's TensorFlow
    * IBM Watson
    * Amazon Alexa and Lex Chatbot
@@ -65,6 +65,10 @@ See the <a target="_blank" href="https://docs.google.com/spreadsheets/d/1xej5Nca
 Microsoft Academic Graph (MAG)</a>
 knowledge base mined from the Bing web index. It models scholarly activities: field of study, author, institution, paper, venue, and event.
 
+<hr />
+
+<a name="Algorithmia"></a>
+
 ## Algorithmia
 
 <a target="_blank" href="https://algorithmia.com/algorithms">
@@ -87,6 +91,28 @@ They have these data conversion utilities for conventional lookups of data:
 
 
 
+<hr/>
+
+<a name="UseCases"></a>
+
+## Benefits from AI/ML in Business #
+
+<a target="_blank" href="https://www2.deloitte.com/us/en/insights/focus/cognitive-technologies/state-of-ai-and-intelligent-automation-in-business-survey.html">Deloitte's "State of AI in the Enterprise, 3rd Edition" study</a>
+
+* <strong>Cost reduction</strong>: Applying AI and intelligent automation solutions to automate tasks that are relatively low value and often repetitive, reducing costs through improved efficiency and quality.
+
+* <strong>Speed to execution</strong>: Reducing the time required to achieve operational and business results by minimizing latency.
+
+* <strong>Reduced complexity</strong>: Improving understanding and decision making through analytics that are more proactive, predictive, and able to see patterns in increasingly complex sources.
+
+* <strong>Transformed engagement</strong>: Changing the way people interact with technology, enabling businesses to engage with people on human terms rather than forcing humans to interact on machine terms.
+
+* <strong>Fueled innovation</strong>: Redefining where to play and how to win by using AI to enable innovative new products, markets and business models.
+
+* <strong>Fortified trust</strong>: Securing a business from risks such as fraud and cyber; Improving quality and consistency while enabling greater transparency to enhance brand trust.
+
+
+<hr/>
 
 <a name="Translation"></a>
 

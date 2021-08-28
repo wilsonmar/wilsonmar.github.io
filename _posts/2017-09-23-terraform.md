@@ -3,7 +3,7 @@ layout: post
 title: "Terraform"
 excerpt: "Immutable declarative multi-service Infrastructure as Code (IaC) provisioning on AWS, Azure, GCP, and other clouds"
 tags: [DevOps, ecosystem]
-date: "2021-04-14"
+date: "2021-08-24"
 file: "terraform"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -18,35 +18,50 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version clusters of <a href="#Immutable">immutable</a> servers (through load balancers) running in clouds using declarative statements that are <a href="#Idempotent">idempotent</a>.
 
-Terraform is better characterized as a <strong>multi-service</strong> tool. Terraform is <strong>not a "multi-cloud tool" to ease migration</strong> among clouds to avoid vendor lock-in. One would need to rewrite all templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that.
+<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
-Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
+"Terraform make infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable."
 
-Terraform can also provision <strong>on-premises</strong> servers running VMWare and OpenStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
-<strong>One tool</strong> to manage GitHub/GitLab, Datadog, etc.
+## Multi-cloud/service
+
+Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
+
+Terraform provides an alternative to each cloud vendor's IaC solution:
+   * AWS - Cloud Formation & CDK
+   * Microsoft Azure Resource Manager Templates
+   * Google Cloud Platform Deployment Manager
+   * OpenStack Heat (on-premises)
+   <br /><br />
+
+Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
 Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
 
-<a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
+
+<a name="Repeatable"></a>
+
+### Repeatable
+
+Terraform provides a <strong>single consistent set of commands and workflow</strong> on all clouds.
+That is "future proofing" infastructure work.
+
+<a name="Versioned"></a>
+
+Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
 
 
-## Automation
+Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
 
-<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io - Hashicorp's marketing home page</a> says it make infrastructure provisioning: Repeatable. Versioned. Documented. Automated. Testable. Shareable.
+References:
+   * <a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>.
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on https://github.com/cloudacademy/managing-infrastructure-with-terraform.
 
-Automating infrastructure deployment consists of these features:
 
-   * Provisioning resource components (Load Balancer, EC2, vSphere)
-   * Planning updates
-   * Using source control
-   * Reusing templates
-   <br /><br />
+
+### Infrastructure as Code (IaC) 
 
 The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources, which is quicker and more consistent than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
-
-
-## Infrastructure as Code (IaC) Competition
 
 The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
 
@@ -67,7 +82,7 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 <tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing</td><td>Config Mgmt
    </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td bgcolor="yellow">No</td><td bgcolor="yellow">No</td></tr>
-<tr valign="top"><td>CF</td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
+<tr valign="top"><td><a title="Cloud Formation (AWS)">CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
    </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
 <tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
@@ -98,13 +113,16 @@ then logic is needed to check whether the provisioning command was effective.
 "Declarative" means a (yaml format) file defines what is desired, and the system makes it so.
 Terraform automatically takes care of performing in the correct sequence.
 
+IaC code is idempotent (repeated runs results in what is described, and does not create additional items with every run)
+
 
 <a name="Immutable"></a>
 
-Immutable:
+### Immutable?
 
-WARNING: Terraform does not support rollbacks.
-"Immutable" means once instantiated, it doesn't change. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
+PROTIP: WARNING: Terraform does not support rollbacks.
+
+"Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
 
 Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
 
