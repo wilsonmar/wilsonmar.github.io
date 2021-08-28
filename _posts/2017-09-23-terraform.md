@@ -36,7 +36,7 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
 
 Terraform provides an alternative to each cloud vendor's IaC solution:
-   * AWS - Cloud Formation & CDK
+   * zzz AWS - Cloud Formation</a> & CDK
    * Microsoft Azure Resource Manager Templates
    * Google Cloud Platform Deployment Manager
    * OpenStack Heat (on-premises)
@@ -57,6 +57,59 @@ That is "future proofing" infastructure work.
 Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
 
 
+<a name="CFN"></a>
+
+### Terraform vs. AWS Cloud Formation
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
+<tr><td> <a href="#Providers">Multi-Cloud providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
+<tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
+<tr><td> Open Source contributions? </td><td> <a href="#OpenSourcing">No</a> </td><td> <a href="#OpenSourcing">Yes</a> (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
+<tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
+<tr><td> GUI </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
+<tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
+<tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
+<tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
+<tr><td> Manage already created resources </td><td> No </td><td> Yes (hard) </td></tr>
+<tr><td> Failure handling </td><td> Optional rollback </td><td> Fix &amp; retry </td></tr>
+<tr><td> Logical comparisons </td><td> No </td><td> Limited </td></tr>
+<tr><td> <a href="#Modules">Extensible Modules</a> </td><td> No </td><td> <a href="#Modules">Yes</a> </td></tr>
+</table>
+
+To get AWS certified, you’re going to need to know Cloud Formation. 
+
+Terraform can import CFN yaml format into its HCL language.
+
+Those who create AMI's also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
+
+Some have found Cloud Formation's references and interpolation to be difficult. 
+
+Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
+But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
+
+CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
+
+Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
+
+AWS Cloud Formation and Terraform can both be used at the same time.
+Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
+
+<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
+Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
+
+
+References:
+   * <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">Puppet, Chef, Ansible, Salt</a> AWS API libraries Boto, Fog
+   * AWS CloudFormation Sample Templates at <a target="_blank" href="
+   https://github.com/awslabs/aws-cloudformation-templates">
+   https://github.com/awslabs/aws-cloudformation-templates</a>
+   * <a target="_blank" href="https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">AWS CloudFormation Master Class</a> by Stéphane Maarek from Packt May 2018
+   * Some CloudFormation templates are compatible with OpenStack Heat templates.
+   <br /><br />
+
+
 ### Infrastructure as Code (IaC) 
 
 The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources, which is quicker and more consistent than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
@@ -68,16 +121,20 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
    </th><th>Infra.</th><th>Lang.
    </th><th>Agent</th><th>Master</th></tr>
 </thead><tbody>
-<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large</td><td>Config Mgmt
+<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
    </td><td>Mutable</td><td><a href="#Declarative">Declarative</a>
    </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large</td><td>Config Mgmt
+<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
    </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large</td><td>Config Mgmt
+<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
    </td><td>Mutable</td><td ><a href="#Declarative">Declarative</a>
    </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing</td><td>Config Mgmt
+<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
    </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td bgcolor="yellow">No</td><td bgcolor="yellow">No</td></tr>
 <tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
@@ -100,9 +157,16 @@ The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and
 Code for Terraform is open-sourced at <a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
 
 
-Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. Kubernetes orchestrates (brings up and down) Docker containers.
+Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. 
 
-Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure and then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+Kubernetes orchestrates (brings up and down) Docker containers.
+
+
+<a name="ConfigMgmt"></a>
+
+### Configuration Management
+
+Terraform and Ansible can work in unison and complement each other. Terraform can bootstrap the underlying cloud infrastructure, then Ansible provisions the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
 
 <a name="Procedural"></a>
 <a name="Declarative"></a>
@@ -131,7 +195,11 @@ Immutable and idempotent means "when I make a mistake in a complicated setup, I 
 
 ### Parallel execution
 
-A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed. Terraform does that by creating a <strong>Resource Graph</strong> such as <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">this</a> (click image for full screen):
+A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed. 
+
+### Dependency Graph
+
+A diagram of dependencies is defined in a <strong>Resource Graph</strong> (click image for full screen):
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"></a>
 
@@ -145,62 +213,6 @@ Terraform control, iterations, and (perhaps most of all) management of resources
 
 
 
-<a name="CFN"></a>
-
-### IaC: Terraform vs. AWS Cloud Formation
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="bottom"><th> Feature </th><th> CloudFormation </th><th> Terraform </th></tr>
-<tr><td> <a href="#Providers">Multi-Cloud providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
-<tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
-<tr><td> Open Source contributions? </td><td> <a href="#OpenSourcing">No</a> </td><td> <a href="#OpenSourcing">Yes</a> (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
-<tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
-<tr><td> GUI </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
-<tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
-<tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
-<tr><td> Iterations </td><td> No </td><td> Yes </td></tr>
-<tr><td> Manage already created resources </td><td> No </td><td> Yes (hard) </td></tr>
-<tr><td> Failure handling </td><td> Optional rollback </td><td> Fix &amp; retry </td></tr>
-<tr><td> Logical comparisons </td><td> No </td><td> Limited </td></tr>
-<tr><td> <a href="#Modules">Extensible Modules</a> </td><td> No </td><td> <a href="#Modules">Yes</a> </td></tr>
-</table>
-
-
-First of all, to get AWS certified, you’re going to need to know Cloud Formation. For a company, it comes down to vendor support preferred, which is needed considering that the product has been available only a few years. References:
-   * <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">Puppet, Chef, Ansible, Salt</a> AWS API libraries Boto, Fog
-
-   * AWS CloudFormation Sample Templates at <a target="_blank" href="
-   https://github.com/awslabs/aws-cloudformation-templates">
-   https://github.com/awslabs/aws-cloudformation-templates</a>
-
-   * <a target="_blank" href="https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">AWS CloudFormation Master Class</a> by Stéphane Maarek from Packt May 2018
-
-   * Some CloudFormation templates are compatible with OpenStack Heat templates.
-
-Those who create AMI's  also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
-
-Some have found Cloud Formation's references and interpolation to be difficult. 
-
-Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
-But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
-
-CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
-
-Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
-
-Terraform can import CFN yaml format into its HCL language.
-
-AWS Cloud Formation and Terraform can both be used at the same time.
-Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong>.
-
-<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
-
-Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
-
-Moreover, security-concious organization make it difficult to use third party products due to time-consuming infosec clearances needed.
-
-
 <a name="Licensing"></a>
 
 ## Licensing open source for GUI
@@ -212,6 +224,7 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    add version control integration, MFA security, HA, and other enterprise features.
 
 
+<hr />
 
 ## Websites to know
 
@@ -827,6 +840,8 @@ PROTIP: Specifying passwords in environment variables is more secure than typing
 
 ### Terraform on Azure
 
+https://www.oasys.net/posts/updating-azurerm-template-from-terraform/
+
 1. In a browser, go to straight to the Azure Cloud Shell:
 
    <pre><strong>https://shell.azure.com</strong></pre>
@@ -865,6 +880,7 @@ is 0.15.0. You can update by downloading from https://www.terraform.io/downloads
    See what is the <a target="_blank" href="https://releases.hashicorp.com/terraform/">latest version</a> and <a target="_blank" href="https://github.com/terraform-providers/terraform-provider-azure/releases">details for each release</a>.
 
 1. Got storage?
+
 1. Navigate to your default folder:
 
    <pre><strong>cd clouddrive</strong></pre>
@@ -904,7 +920,6 @@ code main.tf
 
    NOTE: Multiple providers can be specified in the same HCL file.
 
-
 1. Search for "Resource Group" in Terraform's Azure Provider docs:
 
    <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
@@ -920,7 +935,7 @@ code main.tf
 
    Response:
 
-   <pre>Initializing the backend...
+   <pre>Initializing <a href="#Backends">backends</a>...
 &nbsp;
 Initializing provider plugins...
 - Finding hashicorp/azurerm versions matching "2.40.0"...
@@ -1940,16 +1955,17 @@ output "azure_rm_dns_cname" {
    </pre>   
 
 
-   <a name="State"></a>
+<a name="State"></a>
 
-   ### State management
+## State management
 
    Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
    users needs to manage state (using Terraform features).
 
-   `terraform apply` generates <strong>.tfstate</strong> files (containing JSON) to persist the state of runs by mapping resource IDs to their data. 
+   `terraform apply` generates <strong>.tfstate</strong> files (containing JSON) to persist the state of runs by mapping resource IDs to their data. In addition to the terraform program version, the file contains a <strong>serial</strong> number to increment every time the file itself changes.
 
-   PROTIP: CAUTION: tfstate files can contain secrets, so delete them before git add.
+
+   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
 
 1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
 
@@ -1980,6 +1996,27 @@ vpc
 
    <pre><strong>terraform remote pull</strong></pre>
 
+
+   <a name="Backends"></a>
+
+   ## Backends
+
+   Terraform manages state through several backends:
+
+   * local (the default)
+   * etcd (distributed key value store used by Kubernetes)
+
+   * gcs
+   * azurerm
+   * artifactory
+   * manta
+   * s3
+   * swift
+
+   * consul (Hashicorp product)
+   * atlas (Hashicorp product)
+   * terraform enterprise
+   <br /><br />
 
    ### Apps to install
 
