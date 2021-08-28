@@ -144,6 +144,9 @@ When Terraform analyzes a configuration specification, it recognizes where <stro
 Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
 
 
+
+<a name="CFN"></a>
+
 ### IaC: Terraform vs. AWS Cloud Formation
 
 <table border="1" cellpadding="4" cellspacing="0">
@@ -163,7 +166,16 @@ Terraform control, iterations, and (perhaps most of all) management of resources
 </table>
 
 
-First of all, if you ever want to get AWS certified, you’re going to need to know Cloud Formation. For a company, it comes down to vendor support preferred, which is needed considering that the product has been available only a few years.
+First of all, to get AWS certified, you’re going to need to know Cloud Formation. For a company, it comes down to vendor support preferred, which is needed considering that the product has been available only a few years. References:
+   * <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">Puppet, Chef, Ansible, Salt</a> AWS API libraries Boto, Fog
+
+   * AWS CloudFormation Sample Templates at <a target="_blank" href="
+   https://github.com/awslabs/aws-cloudformation-templates">
+   https://github.com/awslabs/aws-cloudformation-templates</a>
+
+   * <a target="_blank" href="https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">AWS CloudFormation Master Class</a> by Stéphane Maarek from Packt May 2018
+
+   * Some CloudFormation templates are compatible with OpenStack Heat templates.
 
 Those who create AMI's  also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
@@ -203,7 +215,6 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    Official Getting Started docs at Hashicorp</a>
    focus on individual elements (i.e. resources, input variables, output variables, etc).
 
-<a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
 
 ## Social
 
@@ -796,33 +807,19 @@ export AWS_REGION=<em>(your region in AWS)</em>
 PROTIP: Specifying passwords in environment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
 
 
+<hr />
 
-<a name="CFN"></a>
+<a name="ScriptInit"></a>
 
-## AWS Cloud Formation (CFN)
+## Sample Terraform scripts
 
-<a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">
-Puppet, Chef, Ansible, Salt</a>
-AWS API libraries Boto, Fog
-
-AWS CloudFormation Sample Templates at
-<a target="_blank" href="
-https://github.com/awslabs/aws-cloudformation-templates">
-https://github.com/awslabs/aws-cloudformation-templates</a>
-
-
-<a target="_blank" href="
-https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">
-AWS CloudFormation Master Class</a>
-by Stéphane Maarek from Packt May 2018
-
-Some CloudFormation templates are compatible with OpenStack Heat templates.
+<a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
 
 
 
 <a name="Terraform_Azure"></a>
 
-## Terraform on Azure
+### Terraform on Azure
 
 1. In a browser, go to straight to the Azure Cloud Shell:
 
@@ -1035,9 +1032,7 @@ Docs:
    * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
    * https://opensource.com/article/20/7/terraform-kubernetes
 
-<a name="ScriptInit"></a>
 
-## Sample Terraform scripts
 
 <a name="HCL"></a>
 
