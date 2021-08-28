@@ -109,14 +109,16 @@ Terraform and Ansible can work in unison and complement each other. Terraform ca
 <a name="Procedural"></a>
 <a name="Declarative"></a>
 
-"Procedural" means "programmatic" as in a Python or JavaScript program applies logic.
+<strong>"Procedural"</strong> means "programmatic" as in a Python or JavaScript program applies logic.
 This means procedures need to be written to check whether a desired resource is available before provisioning,
 then logic is needed to check whether the provisioning command was effective.
 
-"Declarative" means a (yaml format) file defines what is desired, and the system makes it so.
+<strong>"Declarative"</strong> means a (yaml format) file defines what is desired, and the system makes it so. tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
+   
+IaC code is <strong>idempotent</strong> (repeated runs results in what is described, and does not create additional items with every run).
+
 Terraform automatically takes care of performing in the correct sequence.
 
-IaC code is idempotent (repeated runs results in what is described, and does not create additional items with every run)
 
 
 <a name="Immutable"></a>
@@ -168,6 +170,7 @@ Those who create AMI's  also provide <a target="_blank" href="https://docs.aws.a
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
 
 Some have found Cloud Formation's references and interpolation to be difficult. 
+
 Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
 But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
 
@@ -222,9 +225,36 @@ https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
 * No IRC (Internet Relay Chat)?
 
 
+<hr />
+
 <a name="Install"></a>
 
-## Install Terraform #
+
+## Install to use Docker
+
+1. To install Docker CE on Linux:
+
+   <pre>sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+&nbsp;
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+&nbsp;
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+&nbsp;
+sudo apt-get update
+sudo apt-get install docker-ce
+   </pre>
+
+
+
+## Install Terraform locally #
 
    PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
@@ -258,6 +288,8 @@ terraform-provider-libvirt               terraforming
 If you meant "terraform" specifically:
 It was migrated from homebrew/cask to homebrew/core.
    </pre>
+
+   This is used to install a back version.
 
 1. Is there a brew for Terraform?
    
@@ -377,6 +409,130 @@ Switching completed</pre>
 1. Proceed to <a href="#Config">Configuration</a> below.
 
 
+
+
+### Terragrunt from Gruntwork
+
+   A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
+
+   <pre><strong>   terragrunt get
+   terragrunt plan
+   terragrunt apply
+   terragrunt output
+   terragrunt destroy
+   </strong></pre>
+
+   These wrapper commands provide a quick way to fill in gaps in Terraform - providing extra tools for working with multiple Terraform modules, <a href="#State">managing remote state</a>, and keeping DRY (Don't Repeat Yourself), so that you only have to define it once, no matter how many environments you have.
+
+   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, etc.
+
+   WARNING: There are some concerns about Terragrunt's use of invalid data structures. See
+   <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
+
+   QUESTION: Terraform Enterprise cover features of Terragrunt?
+
+Install on MacOS:
+
+1. To install Terragrunt on macOS:
+
+   <pre><strong>brew unlink tfenv
+   brew install terragrunt
+   brew unlink terraform
+   brew link --overwrite tfenv
+   </strong></pre>
+
+   The unlink is to avoid error response:
+
+   <pre>Error: Cannot install terraform because conflicting formulae are installed.
+  tfenv: because tfenv symlinks terraform binaries
+&nbsp;
+Please `brew unlink tfenv` before continuing.
+&nbsp;
+Unlinking removes a formula's symlinks from /usr/local. You can
+link the formula again after the install finishes. You can --force this
+install, but the build may fail or cause obscure side effects in the
+resulting software.
+   </pre>
+
+   Otherwise:
+
+   <pre>==> Installing dependencies for terragrunt: terraform
+==> Installing terragrunt dependency: terraform
+==> Downloading https://homebrew.bintray.com/bottles/terraform-0.12.24.catalina.
+Already downloaded: /Users/wilson_mar/Library/Caches/Homebrew/downloads/041f7578654b5ef316b5a9a3a3af138b602684838e0754ae227b9494210f4017--terraform-0.12.24.catalina.bottle.tar.gz
+==> Pouring terraform-0.12.24.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/terraform/0.12.24: 6 files, 51.2MB
+==> Installing terragrunt
+==> Downloading https://homebrew.bintray.com/bottles/terragrunt-0.23.10.catalina
+==> Downloading from https://akamai.bintray.com/d6/d6924802f5cdfd17feae2b561ab9d
+######################################################################## 100.0%
+==> Pouring terragrunt-0.23.10.catalina.bottle.tar.gz
+🍺  /usr/local/Cellar/terragrunt/0.23.10: 5 files, 30.4MB
+   </pre>
+
+1. For the Terragrunt menu on macOS:
+
+   <pre><strong>terragrunt
+   </strong></pre>
+
+   Expand the Terminal/console window edge for full screen to see all lines without wrapping:
+
+   <pre>DESCRIPTION:
+   terragrunt - Terragrunt is a thin wrapper for Terraform that provides extra tools for working with multiple
+   Terraform modules, remote state, and locking. For documentation, see https://github.com/gruntwork-io/terragrunt/.
+&nbsp;
+USAGE:
+   terragrunt &LT;COMMAND> [GLOBAL OPTIONS]
+&nbsp;
+COMMANDS:
+   run-all               Run a terraform command against a 'stack' by running the specified command in each subfolder. E.g., to run 'terragrunt apply' in each subfolder, use 'terragrunt run-all apply'.
+   terragrunt-info       Emits limited terragrunt state on stdout and exits
+   validate-inputs       Checks if the terragrunt configured inputs align with the terraform defined variables.
+   graph-dependencies    Prints the terragrunt dependency graph to stdout
+   hclfmt                Recursively find hcl files and rewrite them into a canonical format.
+   aws-provider-patch    Overwrite settings on nested AWS providers to work around a Terraform bug (issue #13018)
+   *                     Terragrunt forwards all other commands directly to Terraform
+&nbsp;
+GLOBAL OPTIONS:
+   terragrunt-config                            Path to the Terragrunt config file. Default is terragrunt.hcl.
+   terragrunt-tfpath                            Path to the Terraform binary. Default is terraform (on PATH).
+   terragrunt-no-auto-init                      Don't automatically run 'terraform init' during other terragrunt commands. You must run 'terragrunt init' manually.
+   terragrunt-no-auto-retry                     Don't automatically re-run command in case of transient errors.
+   terragrunt-non-interactive                   Assume "yes" for all prompts.
+   terragrunt-working-dir                       The path to the Terraform templates. Default is current directory.
+   terragrunt-download-dir                      The path where to download Terraform code. Default is .terragrunt-cache in the working directory.
+   terragrunt-source                            Download Terraform configurations from the specified source into a temporary folder, and run Terraform in that temporary folder.
+   terragrunt-source-update                     Delete the contents of the temporary folder to clear out any old, cached source code before downloading new source code into it.
+   terragrunt-iam-role                          Assume the specified IAM role before executing Terraform. Can also be set via the TERRAGRUNT_IAM_ROLE environment variable.
+   terragrunt-iam-assume-role-duration          Session duration for IAM Assume Role session. Can also be set via the TERRAGRUNT_IAM_ASSUME_ROLE_DURATION environment variable.
+   terragrunt-ignore-dependency-errors          *-all commands continue processing components even if a dependency fails.
+   terragrunt-ignore-dependency-order           *-all commands will be run disregarding the dependencies
+   terragrunt-ignore-external-dependencies      *-all commands will not attempt to include external dependencies
+   terragrunt-include-external-dependencies     *-all commands will include external dependencies
+   terragrunt-parallelism &nbsp;N>                   *-all commands parallelism set to at most N modules
+   terragrunt-exclude-dir                       Unix-style glob of directories to exclude when running *-all commands
+   terragrunt-include-dir                       Unix-style glob of directories to include when running *-all commands
+   terragrunt-check                             Enable check mode in the hclfmt command.
+   terragrunt-hclfmt-file                       The path to a single hcl file that the hclfmt command should run on.
+   terragrunt-override-attr                     A key=value attribute to override in a provider block as part of the aws-provider-patch command. May be specified multiple times.
+   terragrunt-debug                             Write terragrunt-debug.tfvars to working folder to help root-cause issues.
+   terragrunt-log-level                         Sets the logging level for Terragrunt. Supported levels: panic, fatal, error, warn (default), info, debug, trace.
+   terragrunt-strict-validate                   Sets strict mode for the validate-inputs command. By default, strict mode is off. When this flag is passed, strict mode is turned on. When strict mode is turned off, the validate-inputs command will only return an error if required inputs are missing from all input sources (env vars, var files, etc). When strict mode is turned on, an error will be returned if required inputs are missing OR if unused variables are passed to Terragrunt.
+&nbsp;
+VERSION:
+   v0.31.7
+&nbsp;
+AUTHOR(S):
+   Gruntwork &LT;www.gruntwork.io>
+   </pre>
+
+1. To define:
+
+   <pre>terragrunt = {
+     # (put your Terragrunt configuration here)
+   }</pre>
+
+
 <a name="Windows_Install"></a>
 
 ### Install on Windows
@@ -457,33 +613,6 @@ sudo mkdir /bin/terraform
 sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
    </pre>
 
-2. Proceed to <a href="#Config">Configuration</a>.
-
-
-### Install Docker
-
-1. To install Docker CE on Linux:
-
-   <pre>sudo apt-get update
-sudo apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-&nbsp;
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-&nbsp;
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-&nbsp;
-sudo apt-get update
-sudo apt-get install docker-ce
-   </pre>
-
-2. Proceed to <a href="#Config">Configuration</a>.
-   (next below)
 
 
 <hr />
@@ -632,129 +761,6 @@ Nov 18, 2016 by Giuseppe B
 
 
 
-### Terragrunt from Gruntwork
-
-   A popular replacement of some standard terraform commands are <strong>terragrunt</strong> commands open-sourced at <a target="_blank" href="https://github.com/gruntwork-io/terragrunt">https://github.com/gruntwork-io/terragrunt</a> by <a href="#Gruntwork">Gruntwork</a>:
-
-   <pre><strong>   terragrunt get
-   terragrunt plan
-   terragrunt apply
-   terragrunt output
-   terragrunt destroy
-   </strong></pre>
-
-   These wrapper commands provide a quick way to fill in gaps in Terraform - providing extra tools for working with multiple Terraform modules, <a href="#State">managing remote state</a>, and keeping DRY (Don't Repeat Yourself), so that you only have to define it once, no matter how many environments you have.
-
-   Unlike Terraform, Terragrunt can configure remote state, locking, extra arguments, etc.
-
-   WARNING: There are some concerns about Terragrunt's use of invalid data structures. See
-   <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/issues/466">https://github.com/gruntwork-io/terragrunt/issues/466</a>
-
-   QUESTION: Terraform Enterprise cover features of Terragrunt?
-
-Install on MacOS:
-
-1. To install Terragrunt on macOS:
-
-   <pre><strong>brew unlink tfenv
-   brew install terragrunt
-   brew unlink terraform
-   brew link --overwrite tfenv
-   </strong></pre>
-
-   The unlink is to avoid error response:
-
-   <pre>Error: Cannot install terraform because conflicting formulae are installed.
-  tfenv: because tfenv symlinks terraform binaries
-&nbsp;
-Please `brew unlink tfenv` before continuing.
-&nbsp;
-Unlinking removes a formula's symlinks from /usr/local. You can
-link the formula again after the install finishes. You can --force this
-install, but the build may fail or cause obscure side effects in the
-resulting software.
-   </pre>
-
-   Otherwise:
-
-   <pre>==> Installing dependencies for terragrunt: terraform
-==> Installing terragrunt dependency: terraform
-==> Downloading https://homebrew.bintray.com/bottles/terraform-0.12.24.catalina.
-Already downloaded: /Users/wilson_mar/Library/Caches/Homebrew/downloads/041f7578654b5ef316b5a9a3a3af138b602684838e0754ae227b9494210f4017--terraform-0.12.24.catalina.bottle.tar.gz
-==> Pouring terraform-0.12.24.catalina.bottle.tar.gz
-🍺  /usr/local/Cellar/terraform/0.12.24: 6 files, 51.2MB
-==> Installing terragrunt
-==> Downloading https://homebrew.bintray.com/bottles/terragrunt-0.23.10.catalina
-==> Downloading from https://akamai.bintray.com/d6/d6924802f5cdfd17feae2b561ab9d
-######################################################################## 100.0%
-==> Pouring terragrunt-0.23.10.catalina.bottle.tar.gz
-🍺  /usr/local/Cellar/terragrunt/0.23.10: 5 files, 30.4MB
-   </pre>
-
-1. For the Terragrunt menu on macOS:
-
-   <pre><strong>terragrunt
-   </strong></pre>
-
-   Expand the Terminal/console window edge for full screen to see all lines without wrapping:
-
-   <pre>DESCRIPTION:
-   terragrunt - Terragrunt is a thin wrapper for Terraform that provides extra tools for working with multiple
-   Terraform modules, remote state, and locking. For documentation, see https://github.com/gruntwork-io/terragrunt/.
-&nbsp;
-USAGE:
-   terragrunt &LT;COMMAND> [GLOBAL OPTIONS]
-&nbsp;
-COMMANDS:
-   run-all               Run a terraform command against a 'stack' by running the specified command in each subfolder. E.g., to run 'terragrunt apply' in each subfolder, use 'terragrunt run-all apply'.
-   terragrunt-info       Emits limited terragrunt state on stdout and exits
-   validate-inputs       Checks if the terragrunt configured inputs align with the terraform defined variables.
-   graph-dependencies    Prints the terragrunt dependency graph to stdout
-   hclfmt                Recursively find hcl files and rewrite them into a canonical format.
-   aws-provider-patch    Overwrite settings on nested AWS providers to work around a Terraform bug (issue #13018)
-   *                     Terragrunt forwards all other commands directly to Terraform
-&nbsp;
-GLOBAL OPTIONS:
-   terragrunt-config                            Path to the Terragrunt config file. Default is terragrunt.hcl.
-   terragrunt-tfpath                            Path to the Terraform binary. Default is terraform (on PATH).
-   terragrunt-no-auto-init                      Don't automatically run 'terraform init' during other terragrunt commands. You must run 'terragrunt init' manually.
-   terragrunt-no-auto-retry                     Don't automatically re-run command in case of transient errors.
-   terragrunt-non-interactive                   Assume "yes" for all prompts.
-   terragrunt-working-dir                       The path to the Terraform templates. Default is current directory.
-   terragrunt-download-dir                      The path where to download Terraform code. Default is .terragrunt-cache in the working directory.
-   terragrunt-source                            Download Terraform configurations from the specified source into a temporary folder, and run Terraform in that temporary folder.
-   terragrunt-source-update                     Delete the contents of the temporary folder to clear out any old, cached source code before downloading new source code into it.
-   terragrunt-iam-role                          Assume the specified IAM role before executing Terraform. Can also be set via the TERRAGRUNT_IAM_ROLE environment variable.
-   terragrunt-iam-assume-role-duration          Session duration for IAM Assume Role session. Can also be set via the TERRAGRUNT_IAM_ASSUME_ROLE_DURATION environment variable.
-   terragrunt-ignore-dependency-errors          *-all commands continue processing components even if a dependency fails.
-   terragrunt-ignore-dependency-order           *-all commands will be run disregarding the dependencies
-   terragrunt-ignore-external-dependencies      *-all commands will not attempt to include external dependencies
-   terragrunt-include-external-dependencies     *-all commands will include external dependencies
-   terragrunt-parallelism <N>                   *-all commands parallelism set to at most N modules
-   terragrunt-exclude-dir                       Unix-style glob of directories to exclude when running *-all commands
-   terragrunt-include-dir                       Unix-style glob of directories to include when running *-all commands
-   terragrunt-check                             Enable check mode in the hclfmt command.
-   terragrunt-hclfmt-file                       The path to a single hcl file that the hclfmt command should run on.
-   terragrunt-override-attr                     A key=value attribute to override in a provider block as part of the aws-provider-patch command. May be specified multiple times.
-   terragrunt-debug                             Write terragrunt-debug.tfvars to working folder to help root-cause issues.
-   terragrunt-log-level                         Sets the logging level for Terragrunt. Supported levels: panic, fatal, error, warn (default), info, debug, trace.
-   terragrunt-strict-validate                   Sets strict mode for the validate-inputs command. By default, strict mode is off. When this flag is passed, strict mode is turned on. When strict mode is turned off, the validate-inputs command will only return an error if required inputs are missing from all input sources (env vars, var files, etc). When strict mode is turned on, an error will be returned if required inputs are missing OR if unused variables are passed to Terragrunt.
-&nbsp;
-VERSION:
-   v0.31.7
-&nbsp;
-AUTHOR(S):
-   Gruntwork &LT;www.gruntwork.io>
-   </pre>
-
-1. To define:
-
-   <pre>terragrunt = {
-     # (put your Terragrunt configuration here)
-   }</pre>
-
-
-
 <a name="ProviderCreds"></a>
 
 ### Provider credentials
@@ -772,7 +778,7 @@ export AWS_REGION=<em>(your region in AWS)</em>
 
    For Azure:
 
-   <pre>AZ_PRINCIPAL=""
+   <pre>   AZ_PRINCIPAL=""
    AZ_USER=""
    AZ_PASSWORD=""
    AZ_USERNAME=""
@@ -782,7 +788,7 @@ export AWS_REGION=<em>(your region in AWS)</em>
 
    For Google Cloud:
 
-   <pre>GCP_PROJECT=""
+   <pre>   GCP_PROJECT=""
    GCP_USER=""
    GCP_KEY=""
    GCP_REGION=""
@@ -794,7 +800,7 @@ PROTIP: Specifying passwords in environment variables is more secure than typing
 
 <a name="CFN"></a>
 
-## AWS Cloud Formation
+## AWS Cloud Formation (CFN)
 
 <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">
 Puppet, Chef, Ansible, Salt</a>
@@ -876,7 +882,7 @@ cd terraform-on-azure
    * 06-advanced-hcl
    <br /><br />
 
-1. Make sure there is a .gitignore containing the tfstate file specification:
+1. To add the tfstate file specification in .gitignore file:
 
    <pre><strong>echo "terraform.tfstate" >>.gitignore
    </strong></pre>
@@ -1034,6 +1040,89 @@ Docs:
 
 ## Sample Terraform scripts
 
+<a name="HCL"></a>
+
+## HCL (Hashicorp Configuration Language) 
+
+   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
+   https://www.terraform.io/docs/configuration/syntax.html">
+   https://www.terraform.io/docs/configuration/syntax.html</a>.
+   
+   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
+
+   REMEMBER: The name suffix of files containing JSON "*.tf.json".
+
+   More importantly, unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). Multi-line comments are wrapped between `/*` and `*/`.
+
+   `\` back-slashes specify continuation of long lines (as in Bash).
+
+   The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
+
+   <pre>provider "aws" {
+     access_key = "${var.aws_access_key}"
+     secret_key = "${var.aws_secret_key}"
+     region = "${var.aws_region}"
+   }
+   resource "aws_instance" "example" {
+      ami = "ami-2757f631"
+      instance_type = "t2.micro"
+   }</pre>
+
+   "provider" and "resource" are each a <strong>configuration block</strong>.
+
+   * Each block defined between curly braces is called a <strong>"stanza"</strong>.
+
+   * Variable substitution (interpolation) has a format similar to shell scripts:
+
+   <tt>image = "${var.aws_region}"</tt>
+
+   PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
+
+   <tt>var.</tt> above references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
+
+   <pre>   variable "aws_access_key" {
+      description = "AWS access key"
+   }
+   variable "aws_secret_key" {
+      description = "AWS secret key"
+   }
+   variable "aws_region" {
+      description = "AWS region"
+   }
+   </pre>
+
+   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
+
+   The value for "name" must be unique or an error is thrown.
+
+   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
+
+   Interpolations can contain logic and mathematical operations, such as abs(), replace(string, search, replace).
+
+   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
+
+   <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
+   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
+   It's not backward compatible, with no direct migration path.
+
+   Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
+
+### fmt HCL Coding Conventions
+
+The <strong>fmt</strong> command reformats HCL files according to rules.
+
+* A space before and after "=" assignment is not required, but makes for easier reading.
+
+
+### Environment variables
+
+* Values for variables can be specified at run-time using variables names starting with "TF_VAR_", such as:
+
+   <pre>TF_VAR_env=staging</pre>
+
+   But unlike other systems, enviornment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
+
+
 ### Cloudposse
 
    <a target="_blank" href="
@@ -1084,62 +1173,6 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    <a name="Terragrunt"></a>
 
 
-   <a name="HCL"></a>
-
-### HCL (Hashicorp Configuration Language) 
-
-   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
-   https://www.terraform.io/docs/configuration/syntax.html">
-   https://www.terraform.io/docs/configuration/syntax.html</a>.
-   
-   The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
-
-   <pre>provider "aws" {
-     access_key = "${var.aws_access_key}"
-     secret_key = "${var.aws_secret_key}"
-     region = "${var.aws_region}"
-   }
-   resource "aws_instance" "example" {
-      ami = "ami-2757f631"
-      instance_type = "t2.micro"
-   }</pre>
-
-   Each block defined between curly braces is called a <strong>"stanza"</strong>.
-
-   "${var...}" references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
-
-   <pre>variable "aws_access_key" {
-      description = "AWS access key"
-   }
-   variable "aws_secret_key" {
-      description = "AWS secret key"
-   }
-   variable "aws_region" {
-      description = "AWS region"
-   }
-   </pre>
-
-   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
-
-   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
-
-   More importantly, unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). Multi-line comments are wrapped between `/*` and `*/`.
-
-   `\` back-slashes specify continuation of long lines (as in Bash).
-
-   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
-
-   More importantly, tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. 
-   
-   Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
-
-   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
-
-   <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
-   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
-   It's not backward compatible, with no direct migration path.
-
-   Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
 
 ### AWS EC2 Credentials
 
@@ -1152,6 +1185,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    </pre>
 
    If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
+
 
 
 <a name="Cloudrail"></a>
@@ -2056,15 +2090,14 @@ The module's source can be on a local disk:
 }
    </pre>
 
-  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">
-   https://github.com/objectpartners/tf-modules</a>
+  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
 
    <pre>module "rancher" {
   source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
 }
    </pre>
 
-   * Notice "https://" are not part of the source string.
+   * Notice "https://" are not part of the source string. It's assumed.
    * Double slashes in the URL above separate the repo from the subdirectory.
    * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
    <br /><br />
@@ -2073,15 +2106,17 @@ The module's source can be on a local disk:
 <a target="_blank" href="
 https://registry.terraform.io/">
 https://registry.terraform.io</a>
-provides a marketplace of modules. The <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">
-module to create Hashicorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. <a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">
-Video of demo</a> by Yevgeniy Brikman:
+is hosted by Terraform to provide a marketplace of modules. 
 
+<a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">
+https://registry.terraform.io/modules/hashicorp/vault</a>
+module installs Hashicorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">Video of demo</a> by Yevgeniy Brikman:
 <a target="_blank" title="terraform-mod-vaults-1168x207-37317.jpg" href="https://user-images.githubusercontent.com/300046/39780285-1426518c-52c9-11e8-9544-8cac52ff2297.jpg">
 <img alt="terraform-mod-vaults-640x114-16475.jpg" width="640" src="https://user-images.githubusercontent.com/300046/39780240-da22a9b8-52c8-11e8-995e-e8c4a7ce325e.jpg"></a>
 
-The above is created by making use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">
-https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
+The above is created by making use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
 
    <pre><strong>terraform init hashicorp/vault/aws
    terraform apply</strong></pre>
@@ -2093,7 +2128,9 @@ It's got 33 resources. The sub-modules are:
    * vault-lb-fr (for Google only)
    * vault-elb (for AWS only)
    * vault-security-group-rules (for AWS only)
+   <br /><br />
 
+<hr />
 
 <a name="RockStars"></a>
 
