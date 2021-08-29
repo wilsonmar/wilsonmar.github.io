@@ -28,9 +28,6 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ![terraform-logical-flow-12555x620](https://user-images.githubusercontent.com/300046/131242716-77598890-fa77-45f1-814b-6e24c9a621ed.png)
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/131242716-77598890-fa77-45f1-814b-6e24c9a621ed.png">
-<img alt="terraform-logical-flow-12555x620" width="1255" height="620" src="https://user-images.githubusercontent.com/131242716-77598890-fa77-45f1-814b-6e24c9a621ed.png"></a>
-<a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a>
 
 <a name="Repeatable"></a>
 
