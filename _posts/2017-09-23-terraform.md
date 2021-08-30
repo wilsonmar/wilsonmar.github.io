@@ -134,6 +134,10 @@ The objective is to accellerate work AND <strong>save money</strong> by automati
 The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
+   </th><th>Infra.</th><th>Lang.
+   </th><th>Agent</th><th>Master</th></tr>
+</thead><tbody>
 <tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
    </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
