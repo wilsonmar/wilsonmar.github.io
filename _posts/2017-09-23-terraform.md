@@ -22,11 +22,13 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
 
+
+
 <a name="LogicalFlow"></a>
 
 ## Terraform Enterprise Local Logical Flow
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/131280947-0dc3c883-a0d9-4b29-b922-6d153e1fbc00.png"><img alt="terraform-logical-flow-1250x621" width="1250" height="621" src="https://user-images.githubusercontent.com/300046/131280947-0dc3c883-a0d9-4b29-b922-6d153e1fbc00.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131348569-3b3226ee-0000-454a-95e7-2df3c91d59b8.png"><img alt="terraform-logical-flow-1256x621" width="1256" height="621" src="https://user-images.githubusercontent.com/300046/131348569-3b3226ee-0000-454a-95e7-2df3c91d59b8.png"></a>
 
 See <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">https://terraform.io/guides/core-workflow.html</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a>
 
