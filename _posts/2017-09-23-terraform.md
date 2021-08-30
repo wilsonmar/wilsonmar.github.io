@@ -80,10 +80,12 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
 
+<a name="Terraforming"></a>
+
 ### Going from CFN yaml to HCL?
 
-<a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
-exports existing AWS resources to Terraform style tf, tfstate.
+Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
+exports existing AWS resources to Terraform style tf, tfstate. It also comes as a Docker container.
 
 There is also https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html to deploy your existing CFT instead of trying to convert it.
 
@@ -216,11 +218,16 @@ A key differentiator of Terraform is its <strong>plan</strong> command, which pr
 
 ### Dependency Graph
 
-A <strong>Resource Graph</strong> of dependencies can be created by the <tt>terraform graph</tt> command (then formatted using <a target="_blank" href="https://github.com/28mm/blast-radius">Blast Radius</a> <a target="_blank" href="https://28mm.github.io/blast-radius-docs/">[examples]</a> or "webgraphwiz" tool). Click image for full screen:
-
+A <strong>Resource Graph</strong> of dependencies can be created by the <tt>terraform graph</tt> command (click image for full screen:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"></a>
 
 The above is from <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app with a <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform/blob/master/src/5-gcp-demo/two-tier/cloudsql.tf">MYSQL_5_7 database</a>, both running under Kubernetes (GKE), with a replica in another region.
+
+A more colorful format using <a target="_blank" href="https://github.com/28mm/blast-radius">Blast Radius</a> <a target="_blank" href="https://28mm.github.io/blast-radius-docs/">[examples]</a>:
+
+<img width="939" alt="terraform-resource-colorful-1878x1470" src="https://user-images.githubusercontent.com/300046/131344896-407d377a-046d-45b4-8159-a7168e2cabbc.png">
+
+There is also a "webgraphwiz" tool.
 
 Under the covers, Terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
 
