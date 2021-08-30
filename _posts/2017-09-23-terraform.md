@@ -26,7 +26,9 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ## Terraform Enterprise Local Logical Flow
 
-![terraform-logical-flow-12555x620](https://user-images.githubusercontent.com/300046/131242716-77598890-fa77-45f1-814b-6e24c9a621ed.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131280947-0dc3c883-a0d9-4b29-b922-6d153e1fbc00.png"><img alt="terraform-logical-flow-1250x621" width="1250" height="621" src="https://user-images.githubusercontent.com/300046/131280947-0dc3c883-a0d9-4b29-b922-6d153e1fbc00.png"></a>
+
+See <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">https://terraform.io/guides/core-workflow.html</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a>
 
 
 <a name="Repeatable"></a>
@@ -77,7 +79,16 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
-Terraform can import CFN yaml format into its HCL language.
+
+### Going from CFN yaml to HCL?
+
+<a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
+exports existing AWS resources to Terraform style tf, tfstate.
+
+There is also https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html to deploy your existing CFT instead of trying to convert it.
+
+It may be possible for simple cases but perhaps very complex (almost impossible) to convert CFT <strong>intrinsic functions</strong>: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
+
 
 
 <a name="OpenSourcing"></a>
@@ -757,7 +768,49 @@ Global options (use these before the subcommand, if any):
 
 <a name="Modules"></a>
 
-## Community modules
+## Reusable Modules
+
+Putting Terraform code in modules enable their reuse by several, which speed development and reduces testing.
+
+But some documentation and training is necessary.
+
+<a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest">
+For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
+
+1. Allocate IPs outside the VPC module declaration.
+
+   <pre>resource "aws_eip" "nat" {
+  count = 3
+  vpc = true
+}
+   </pre>
+
+1. Set: https://github.com/terraform-aws-modules/terraform-aws-vpc/tree/master/examples
+
+   <pre>module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+&nbsp;
+  name = "my-vpc"
+  cidr = "10.0.0.0/16"
+&nbsp;
+  azs             = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+&nbsp;
+  enable_nat_gateway = true
+  enable_vpn_gateway = true
+&nbsp;
+  tags = {
+    Terraform = "true"
+    Environment = "dev"
+  }
+}
+   </pre>
+
+   * "azs" designates Availability Zones.
+
+
+### Community modules
 
 Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
 

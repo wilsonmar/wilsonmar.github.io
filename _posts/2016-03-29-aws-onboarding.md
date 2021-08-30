@@ -1688,6 +1688,12 @@ aws_secret_access_key = 123456782Nwk156aPF0SxZ8KGY+RrhEbq3AIHUSS
    If you use it, remember to clear out variables after usage, so they don't linger in memory.
 
 
+## References
+
+TODO: Put each AWS CLI command in a script at
+https://medium.com/circuitpeople/aws-cli-with-jq-and-bash-9d54e2eabaf1
+by Lee Harding
+
 
 ## More on Amazon #
 
