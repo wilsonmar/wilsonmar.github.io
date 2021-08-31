@@ -86,12 +86,24 @@ To get AWS certified, you’re going to need to know Cloud Formation.
 
 ### Going from CFN yaml to HCL?
 
-Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
+The options:
+
+1. Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
 exports existing AWS resources to Terraform style tf, tfstate. It also comes as a Docker container.
 
-There is also https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html to deploy your existing CFT instead of trying to convert it.
+2. Install on your MacOS laptop this utlity from Google to create HCL from exiting running cloud resources. This enables you to transition from what was created in the AWS GUI or CFN to HCL you can modify:
 
-It may be possible for simple cases but perhaps very complex (almost impossible) to convert CFT <strong>intrinsic functions</strong>: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
+   <pre><strong>brew info terraformer
+   brew install terraformer
+   </strong></pre>
+
+3. Deploy your existing CFT instead of trying to convert it:
+
+   https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html
+
+4. It may be possible for simple cases but perhaps very complex (almost impossible) to convert CFT <strong>intrinsic functions</strong>: 
+
+   https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
 
 
 
@@ -1904,7 +1916,7 @@ EOH
 
    <a name="Ansible"></a>
 
-   ### Ansible
+### Ansible
 
    To invoke the command to run Ansible playbook.yml:
 
@@ -1931,7 +1943,7 @@ EOH
    NOTE: Ansible Tower cannot be used with Terraform.
 
 
-   ### CIDR Subnet function
+### CIDR Subnet function
 
    <pre>
 variable network_info {
@@ -1983,7 +1995,7 @@ private_key_path = "C:\\MyKeys1.pem"
 
    <a name="Output"></a>
 
-   ### Output
+### Output
 
    `outputs.tf` file example:
 
@@ -2002,14 +2014,15 @@ output "azure_rm_dns_cname" {
 1. PROTIP: If the AMI is no longer available, you will get an error message.
 
 
-   <a name="TerraformPlan"></a>
+<hr />
 
-   ### Terraform Plan
+<a name="TerraformPlan"></a>
+
+## Terraform Plan
 
 1. Have Terrform evaluate based on vars in a different (parent) folder:
 
-   <pre><strong>
-   terraform plan \
+   <pre><strong>terraform plan \
       -var-file='..\terraform.tfvars' \
       -var-file='.\Development\development.tfvars' \
       -state='.\Development\dev.state' \
