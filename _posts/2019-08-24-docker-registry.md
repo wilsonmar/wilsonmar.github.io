@@ -3,7 +3,7 @@ layout: post
 title: "Docker Registry"
 excerpt: "Where Docker images are stored for Kubernetes to run"
 tags: [Docker]
-date: "2019-08-24"
+date: "2021-08-24"
 file: "docker-registry"
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -342,6 +342,9 @@ https://jfrog.com/screencast/artifactory-5-one-minute-setup-docker-registry-as-c
 <hr />
 
 ## References
+
+An alternative to DockerHub is <a target="_blank" href="https://github.com/features/packages#pricing">GitHub Packages operated by GitHub</a>
+
 
 
 ## More on DevOps #

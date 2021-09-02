@@ -27,12 +27,15 @@ Use it to scan for security vulnerabilities in your web applications while you a
 
 B. WebInspect from MicroFocus (formerly HP).
 
-C. Burp Suite (Pro)
+C. <a target="_blank" href="">Burp Suite from Portswagger</a> ($399/year Pro) with <a target="_blank" href="https://github.com/snoopysecurity/awesome-burp-extensions">extensions</a>, <a target="_blank" href="https://deltarisk.com/blog/how-to-use-burp-suite-professional-for-web-application-security-part-one/">running on Kali Linux with FoxyProxy on Firefox, JPython, JRuby</a>
+
 D. Dirtbuster
 
 E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VIDEO</a>: ForAllSecure 
 
-## SAST
+
+## vs. SAST
+
 By contrast SAST (Static App Security Testing) tools focus on scanning <strong>application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include Veracode, Perforce, http://www.castsoftware.com/ and Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
 
 Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
@@ -63,7 +66,7 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
    Security Misconfiguration</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">Description</a>)
 
    7. <a target="_blank" href="https://www.youtube.com/watch?v=IuzU4y-UjLw&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=92">VIDEO:
-   Cross-Site Scripting (XSS)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)">Description</a>)
+   Cross-Site Scripting (XSS)</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)">Description</a>) <a target="_blank" href="https://www.securecoding.com/blog/xss-attacks/">blog</a>
 
    8. <a target="_blank" href="https://www.youtube.com/watch?v=nkTBwbnfesQ&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC&index=94">VIDEO:
    Insecure Deserialization</a> (<a target="_blank" href="https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization">Description</a>)
@@ -76,6 +79,7 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
    <br /><br />
 
 Also: Cross-Site Request Forgery (CSRF)
+
 
 ## API Security 
 
