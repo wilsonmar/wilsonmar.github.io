@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "AWS Networking with Virtual Private Cloud (VPC)"
-excerpt: "How to reach servers"
+title: "AWS Networking"
+excerpt: " with Virtual Private Cloud (VPC)How to reach servers"
 tags: [AWS, EC2, cloud, VPC]
-date: "2016-06-15"
-file: "aws-vpc"
+date: "2021-09-02"
+file: "aws-networking"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -18,10 +18,10 @@ comments: true
 
 This tutorial covers how to access servers and other resources within AWS.
 
-TODO: Make this diagram into a video:
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11e6-8471-46d2602d3f39.jpg"></amp-img>
-<br />
+
+TODO: Make above diagram into a video. Add WAF.
 
 
 ## Create VPCs #
