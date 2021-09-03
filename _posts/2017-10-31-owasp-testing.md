@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Test for OWASP using ZAP on the Broken Web App"
+title: "DAST for OWASP using ZAP on the Broken Web App and other tools"
 excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
 tags: [API, devsecops]
-date: "2020-05-21"
+date: "2021-08-21"
 file: "owasp-testing"
 image:
 # devsecops-diagram-784x232.png
@@ -16,10 +16,20 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+There are different types of Pentration Testing:
 
-## Penetration (Pen) Testing Tools
+   * SAST (Static Application Security Testing)
+   * DAST (Dynamic Application Security Testing)
+   <br /><br />
 
-Among Dynamic App Security Testing (DAST) run while the app under test is running  <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
+
+## DAST (Dynamic Application Security Testing)
+
+DAST watches application behavior while user actions are performed by automated scripts in a test environment, where various combinations of input actions are tried. This aims to expose security weaknesses.
+
+The main targets of a DAST system involve what offer a front door to attackers: HTTP and HTML -- protocols that drive the World Wide Web. 
+
+<a target="_blank" href="https://www.comparitech.com/net-admin/dast-tools/">Among DAST tools</a>: <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
 
 A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
 is offered free, and is actively maintained by hundreds of international volunteers. 
