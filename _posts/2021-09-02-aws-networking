@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Networking"
-excerpt: " with Virtual Private Cloud (VPC)How to reach servers"
+excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, etc."
 tags: [AWS, EC2, cloud, VPC]
 date: "2021-09-02"
 file: "aws-networking"
