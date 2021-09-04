@@ -23,14 +23,60 @@ comments: true
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
 
 
+<a name="AtlantisWorkflow"></a>
 
-<a name="LogicalFlow"></a>
+## Atlantis-based workflow with Terraform Enterprise
 
-## Terraform Enterprise Local Logical Flow
+This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html"traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
+ensure code reviews, as described in <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/131348569-3b3226ee-0000-454a-95e7-2df3c91d59b8.png"><img alt="terraform-logical-flow-1256x621" width="1256" height="621" src="https://user-images.githubusercontent.com/300046/131348569-3b3226ee-0000-454a-95e7-2df3c91d59b8.png"></a>
+![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
 
-See <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">https://terraform.io/guides/core-workflow.html</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a>
+Atlantis was created in 2017 by Luke Kysow. Before he joined Hashicorp, he saw Hootsuite use his
+<a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>
+a self-hosted golang application that listens for Terraform pull request events via webhooks.
+
+Developers and Operations people type <tt>atlantis plan</tt> and <tt>atlantis apply</tt> in the GitHub GUI
+which triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
+
+Here are the steps:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
+
+1. Obtain a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token under your GitHut account</a> with just repo scope (to run webhooks).
+
+   CAUTION: This is a static secret which should be updated occassionally.
+
+   On your MacOS, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally.
+
+   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
+
+2. Copy in base Terraform configuration files. 
+
+   Within files are references to generic modules used by other projects.
+
+3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
+
+4. In main.tf
+
+   <pre>resource "null_resource" "demo" {}</pre>
+
+5. Open a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
+
+   This ensures that other team members are aware of changes pending.
+
+6. Instead of manually invoking <tt>terraform plan</tt>, we type <tt>atlantis plan</tt> in GitHub GUI which triggers the Atlantis server to run  and adds comments on the pull request
+   in addition to creating an execution plan with dependencies.
+
+7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
+
+8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
+
+9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources.
+
+    Note that apply creates tfstate files.
+
+10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
 
 
 <a name="Repeatable"></a>
@@ -2102,6 +2148,9 @@ output "azure_rm_dns_cname" {
 <a name="State"></a>
 
 ## State management
+
+<a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
+Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
 
    Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
    users needs to manage state (using Terraform features).
