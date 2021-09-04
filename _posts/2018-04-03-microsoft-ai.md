@@ -2554,6 +2554,12 @@ https://github.com/orgs/BotBuilderCommunity/dashboard
 https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/?WT.mc_id=hackwithazure-hackathon-cxa
 
 
+Thoughtworks publishes their <a target="_blank" href="https://www.thoughtworks.com/radar">"Technology Radar"</a> recommending what IT technologies their consultantcy clients should Adopt, Trial, Assess, or Hold. <a target="_blank" href="
+https://assets.thoughtworks.com/assets/technology-radar-vol-24-en.pdf">PDF: Volume 24 of their publication</a> advised a "hold" for Azure Machine Learning.
+
+> "We’ve observed before that the cloud providers push more and more services onto the market. We’ve also documented our concerns that sometimes the services are made available when they’re not quite ready for prime time. Unfortunately, in our experience, Azure Machine Learning falls into the latter category. One of several recent entrants in the field of bounded low-code platforms, Azure ML promises more convenience for data scientists. Ultimately, however, it doesn’t live up to its promise; in fact, it still feels easier for our data scientists to work in Python. Despite significant efforts, we struggled to make it scale and lack of adequate documentation proved to be another issue which is why we moved it to the Hold ring."
+
+
 ## More
 
 This is one of a series on AI, Machine Learning, Deep Learning, Robotics, and Analytics:

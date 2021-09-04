@@ -1947,23 +1947,28 @@ Hashing digital signatures: MD5 (128), NSA's SHA-1 (160), SHA-256, 384, 512 <a t
    * whirlpool 512 hash
  
 Symmetric algorithms (same key for encrypt/decrypt, so one time): 
-   * DES, 3DES, AES (Rijndael), RC5/RC6, Blowfish, Twofish, Skipjack, SAFER, CAST-128, Serpent, El Gamal (slowest)
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> uses a 64-bit block size. 56 bits.
+   * 3DES, 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES (Rijndael)</a>, 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/RC5">RC5</a>/RC6, 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Blowfish_%28cipher%29">Blowfish</a>
+   * Twofish, Skipjack, SAFER, CAST-128, 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Serpent_%28cipher%29">Serpent</a>
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/ElGamal_encryption">El Gamal</a> (slowest)
 
 Asymmetic (2 keys) REMEMBER:
-   * RSA is defacto commercial asymmetic algorithm
-   * RSA, ECC (efficient) support digital signatures and encryption. 
-   * ECC (Elliptic Curve Cryptosystem) is US govt. std asymmetric
-   * DSA, Diffie-Hellman key exchange, Knapsack are asymmetric
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a> is defacto commercial asymmetic algorithm
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Elliptic_curve_cryptography">ECC (Elliptic Curve Cryptosystem)</a> is US govt. std asymmetric (efficient) support digital signatures and encryption. 
+   * DSA, 
+   * Diffie-Hellman key exchange, 
+   * Knapsack 
 
-   * DES uses a 64-bit block size. 56 bits.
    * IDEA provides a key size up to 128 bits.
-   * RC6 provides the <strong>largest key size</strong> up to 2,048 bits. From NSA.
-   
-   * RC6 supports a 32-, 64-, or 128-bit block size. Written by Ron Rivest
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/RC6">RC6</a> provides the <strong>largest key size</strong> up to 2,048 bits. From NSA. RC6 supports a 32-, 64-, or 128-bit block size. Written by Ron Rivest
    * 3DES provides a key size up to 168 bits. 3 costly rounds. Not widely used.
    * <a target="_blank" href="https://www.youtube.com/watch?v=O4xNJsjtN6E">AES</a> supports a 128-, 192-, or 256-bit (16 byte) block size, weaved through data blocks. Subset of Rijndael, winner of NIST contest for faster in 1998.
-   * Twofish provides a key size 128-, 192-, 256 bits. Written by Bruce Sheiner
-   * Blowfish
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Twofish">Twofish</a> provides a key size 128-, 192-, 256 bits. Written by Bruce Sheiner
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm">TEA (Tiny Encryption Algorithm)</a>
    <br /><br />
 
    REMEMBER: rounds of computations:
