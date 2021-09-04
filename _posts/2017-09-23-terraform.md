@@ -55,7 +55,7 @@ Here are the steps:
 
 2. Copy in base Terraform configuration files. 
 
-   Within files are references to generic modules used by other projects.
+   Within files are references to reusable <strong>modules</strong> used by other projects.
 
 3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
 
@@ -106,6 +106,37 @@ Terraform provides an alternative to each cloud vendor's IaC solution:
 
 Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
+
+
+### Infrastructure as Code (IaC) 
+
+The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources quicker and more consistently than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
+
+The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
+   </th><th>Infra.</th><th>Lang.
+   </th><th>Agent</th><th>Master</th></tr>
+</thead><tbody>
+<tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
+   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
+   </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
+   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
+   </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td><strong>Terraform</strong></td><td>2014 Low</td><td>Huge</td><td>Provisioning
+   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
+   </td><td>No</td><td>No</td></tr>
+<tr valign="top"><td><a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi</a>></td><td>2017 Low</td><td>New</td><td>Provisioning
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+</tbody></table>
+
+
+Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. 
+
+Kubernetes orchestrates (brings up and down) Docker containers.
 
 <a name="CFN"></a>
 
@@ -188,36 +219,6 @@ References about CFN:
    * Some CloudFormation templates are compatible with OpenStack Heat templates.
    <br /><br />
 
-
-### Infrastructure as Code (IaC) 
-
-The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources quicker and more consistently than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
-
-The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
-   </th><th>Infra.</th><th>Lang.
-   </th><th>Agent</th><th>Master</th></tr>
-</thead><tbody>
-<tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
-   </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
-   </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td><strong>Terraform</strong></td><td>2014 Low</td><td>Huge</td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
-   </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi</a>></td><td>2017 Low</td><td>New</td><td>Provisioning
-   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-</tbody></table>
-
-
-Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. 
-
-Kubernetes orchestrates (brings up and down) Docker containers.
 
 
 <a name="ConfigMgmt"></a>
