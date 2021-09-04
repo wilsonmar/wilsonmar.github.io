@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terraform"
-excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) repeatedly provisioning AWS, Azure, GCP, and other clouds"
+excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning AWS, Azure, GCP, and other clouds using Atlantis team versioning GitOps"
 tags: [DevOps, ecosystem]
 date: "2021-08-24"
 file: "terraform"
@@ -27,14 +27,16 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ## Atlantis-based workflow with Terraform Enterprise
 
-This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html"traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
-ensure code reviews, as described in <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
-
-![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
+This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
+ensure code reviews.
 
 Atlantis was created in 2017 by Luke Kysow. Before he joined Hashicorp, he saw Hootsuite use his
 <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>
 a self-hosted golang application that listens for Terraform pull request events via webhooks.
+
+As described at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
+
+![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
 
 Developers and Operations people type <tt>atlantis plan</tt> and <tt>atlantis apply</tt> in the GitHub GUI
 which triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
