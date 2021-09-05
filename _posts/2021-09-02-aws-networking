@@ -24,18 +24,20 @@ src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11
 
 TODO: Make above diagram into a video. Add WAF.
 
+<hr />
 
 ## Create VPCs #
 
 ### Terraform
+
+See my https://wilsonmar.github.io/terraform
 
 https://www.terraform.io/docs/providers/aws/r/vpc.html
 
 https://wpengine.linuxacademy.com/amazon-web-services-2/learn-how-to-master-aws-vpc-inside-and-out/
 Basic usage with tags:
 
-<pre>
-resource "aws_vpc" "main" {
+<pre>resource "aws_vpc" "main" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "dedicated"
 &nbsp;

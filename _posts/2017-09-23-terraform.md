@@ -23,33 +23,36 @@ comments: true
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
 
 
-<a name="AtlantisWorkflow"></a>
+<a name="Atlantis"></a>
 
-## Atlantis-based workflow with Terraform Enterprise
+## Atlantis on Terraform
 
 This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
 ensure code reviews.
 
-Atlantis was created in 2017 by Luke Kysow. Before he joined Hashicorp, he saw Hootsuite use his
-<a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>
-a self-hosted golang application that listens for Terraform pull request events via webhooks.
+Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
+It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
 
-As described at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
+Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
 
 ![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
 
-Developers and Operations people type <tt>atlantis plan</tt> and <tt>atlantis apply</tt> in the GitHub GUI
-which triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
+Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
 
-Here are the steps:
+https://www.youtube.com/watch?v=bUWmJFzBh0A
+
+
+<a name="AtlantisWorkflow"></a>
+
+## Atlantis-based workflow with Terraform Enterprise
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
 
-1. Obtain a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token under your GitHut account</a> with just repo scope (to run webhooks).
+1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
 
    CAUTION: This is a static secret which should be updated occassionally.
 
-   On your MacOS, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally.
+   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
 
    Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
 
@@ -57,24 +60,36 @@ Here are the steps:
 
    Within files are references to reusable <strong>modules</strong> used by other projects.
 
+   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
+
 3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
 
-4. In main.tf
+4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
 
    <pre>resource "null_resource" "demo" {}</pre>
 
-5. Open a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
+5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
 
-   This ensures that other team members are aware of changes pending.
+   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
 
-6. Instead of manually invoking <tt>terraform plan</tt>, we type <tt>atlantis plan</tt> in GitHub GUI which triggers the Atlantis server to run  and adds comments on the pull request
+6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
+
+  and adds comments on the pull request
    in addition to creating an execution plan with dependencies.
+
+   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
+
+   https://www.runatlantis.io/docs/autoplanning.html#example
 
 7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
 
 8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
 
-9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources.
+9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
+
+    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
+
+    https://www.runatlantis.io/docs/security.html#mitigations
 
     Note that apply creates tfstate files.
 
@@ -112,7 +127,7 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 
 The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources quicker and more consistently than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
 
-The difference between Chef, Puppet, Ansible, SaltStack, AWS CloudFormation, and Terraform, based on <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">analysis</a>:
+<a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">BLOG: Analysis</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
