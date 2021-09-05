@@ -226,6 +226,7 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16169
 
    * https://cloudacademy.com/amazon-web-services/amazon-vpc-networking-course/build-and-configure-a-nat-instance.html
 
+Do you really know the above? Take <a target="_blank" href="https://learning.oreilly.com/certifications/9780136757078/">Pearson's IP Subnetting exam on OReilly.com</a> [subscription required]
 
 
 <a name="CF-VPC"></a>

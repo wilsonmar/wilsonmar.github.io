@@ -1076,8 +1076,8 @@ Data classification program:
    1. Define the classification levels. 
    2. Specify the data classification criteria.
 
-   3. Identify the data owners who determine the classification level of the information he owns and protects the data for which he is responsible.
-   4. Identify the data custodian who implements the information classification and controls determined by the data owner.
+   3. Identify the <strong>data owners</strong> who determine the classification level of the information he owns and protects the data for which he is responsible.
+   4. Identify the <strong>data custodian</strong> who implements (records) the information classification and controls determined by the data owner.
 
    5. Indicate the controls required for each classification level. The System owner ensures that the appropriate controls are in place.
    6. Document any known exceptions to the controls. 
@@ -1095,9 +1095,11 @@ Data classification program:
 
    2. Internal — Data with low security requirements, but not meant for public disclosure, such as client communications, sales playbooks, and organizational charts. Unauthorized disclosure of such information can lead to short-term embarrassment and loss of competitive advantage.
 
-   3. Confidential — Sensitive data that, if compromised, could negatively impact operations, including harming the company, its customers, partners, or employees. Examples include vendor contracts, employee reviews and salaries, and customer information.
+   3. Confidential — Sensitive data that, if compromised, could negatively impact operations, including harming the company, its customers, partners, or employees. Examples include trade secrets, vendor contracts, employee reviews and salaries, and customer information.
 
    4. Restricted — Highly sensitive corporate data that if compromised could put the organization at financial, legal, regulatory, and reputational risk. Examples include customers’ PII, PHI, employee ID number, and credit card information.
+
+   * Private = Medical information
 
 
 <a name="NIST"></a>
@@ -1112,6 +1114,9 @@ NIST Information Technology Laboratory</a> emails out <a target="_blank" href="h
 The National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. 
 
 Through a validated assessment performed by the <a href="#HITRUST">Health Information Trust Alliance (HITRUST)</a>, a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the <a href="#NIST">NIST</a> <a href="#CSF">CSF</a>.
+
+NIACAP (National Information Assurance Certification and Accreditation Process) evaluates an application or system that is <strong>distributed</strong> to a number of different locations. System accreditation evaluates an application or support system. Site accreditation evaluates the application or system at a specific self-contained location. 
+
 
 <a name="CSF"></a>
 
@@ -1779,7 +1784,7 @@ Dedicated security mode employs a single classification level.
 
 "system integrity" implies that a system will work as intended.
 
-Aspects of identity management whereby users are identified, authenticated, and authorized: 
+REMEMBER: Aspects of identity management whereby users are identified, authenticated, and authorized: 
 entities, attributes, credentials, and entitlements.
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=WqHmDL7YAvw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=4">MINDMAP</a>] <a target="_blank" href="https://www.youtube.com/watch?v=_IfGEY4fo18">Trusted Computer System Evaluation Criteria (TCSEC)</a> functionality at least once. Enhanced by EU in ITSEC to assurance every time:
@@ -1794,9 +1799,8 @@ entities, attributes, credentials, and entitlements.
 
 Covert channel analysis is introduced at B2 and above.
 
-ISO 15408 2005 = Common Criteria on TOE (Target of Evaulation) for Security Target report satisfies independently verified 
-by NIAP (National Information Assurance Partnership) to
-"compliant" instead of previous EAL (Evaluation Assurance Levels) 1 - 7 highest:
+ISO 15408 2005 = Common Criteria on TOE (Target of Evaulation) for Security Target report satisfies independently verified by NIAP (National Information Assurance Partnership) to
+"compliant" instead of previous EAL (Evaluation Assurance Levels) 1 - 7 highest: REMEMBER:
    1. A user wants the system to operate but ignore security threats.
    2. Developers use good design practices but security is not a high priority.
    4. Security configuration is based on good commercial development. This level is the common benchmark for commercial systems, including operating systems and products.
@@ -1956,6 +1960,8 @@ Symmetric algorithms (same key for encrypt/decrypt, so one time):
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Serpent_%28cipher%29">Serpent</a>
    * <a target="_blank" href="https://en.wikipedia.org/wiki/ElGamal_encryption">El Gamal</a> (slowest)
 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm">TEA (Tiny Encryption Algorithm)</a> ?
+
 Asymmetic (2 keys) REMEMBER:
    * <a target="_blank" href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a> is defacto commercial asymmetic algorithm
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Elliptic_curve_cryptography">ECC (Elliptic Curve Cryptosystem)</a> is US govt. std asymmetric (efficient) support digital signatures and encryption. 
@@ -1964,11 +1970,10 @@ Asymmetic (2 keys) REMEMBER:
    * Knapsack 
 
    * IDEA provides a key size up to 128 bits.
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/RC6">RC6</a> provides the <strong>largest key size</strong> up to 2,048 bits. From NSA. RC6 supports a 32-, 64-, or 128-bit block size. Written by Ron Rivest
    * 3DES provides a key size up to 168 bits. 3 costly rounds. Not widely used.
    * <a target="_blank" href="https://www.youtube.com/watch?v=O4xNJsjtN6E">AES</a> supports a 128-, 192-, or 256-bit (16 byte) block size, weaved through data blocks. Subset of Rijndael, winner of NIST contest for faster in 1998.
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Twofish">Twofish</a> provides a key size 128-, 192-, 256 bits. Written by Bruce Sheiner
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm">TEA (Tiny Encryption Algorithm)</a>
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Twofish">Twofish</a> (written by Bruce Sheiner) provides a key size 128-, 192-, 256 bits.
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/RC6">RC6</a> (written by Ron Rivest) provides the <strong>largest key size</strong> up to 2,048 bits. From NSA. RC6 supports a 32-, 64-, or 128-bit block size. 
    <br /><br />
 
    REMEMBER: rounds of computations:
@@ -1983,7 +1988,8 @@ Asymmetic (2 keys) REMEMBER:
    <br /><br />
 
 Stream ciphers are generally cheaper to implement than block ciphers.
-   * RC4 is a symmetric stream cipher and does not have a block size.
+   * RC4 is a symmetric stream cipher, so does not have a block size.
+   <br /><br />
 
 Block symmetric cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
 Modes used by block ciphers: 
@@ -2098,7 +2104,7 @@ RAM
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=7ESQwNJ9HXU&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=11&t=16s">MINDMAP</a>]
 
-Strategies: Deter, Delay, Detect, Assess, Respond
+Strategies: Deter, Delay, Detect, Assess, Respond. Acronym?
 
 CPTED (Crime prevention through environmental design): 
    * natural access control
@@ -2147,7 +2153,8 @@ Fire extinguisher classes:
    * Class K - cooking oil or fat.
    <br /><br />
 
-A preaction extinguisher operates like a dry pipe system except that the sprinkler head holds a thermal-fusible link that must melt before the water is released. This is currently the recommended system for a computer room.
+A dry pipe system (filled with pressurized air.
+<strong>Preaction</strong> extinguisher pipe sprinkler heads holds a thermal-fusible link that melts before the water is released. This is currently the recommended system for a computer room.
 
 Locks:
    * A warded lock has a spring-loaded bolt with a notch in it. The lock has wards or metal projections inside the lock with which the key will match and enable opening the lock. 

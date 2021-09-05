@@ -759,6 +759,8 @@ https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3v
    suggests 4 months of preparation 
    using 4 account setup and used attached as well as detached accounts with AWS Organizations.
 
+Do you really know this stuff? Take the practice test <a target="_blank" href="https://learning.oreilly.com/certifications/9780136808800/">For the AWS Certified Security – Specialty SCS-C01</a>
+
 
 
 ## Social Twitter Feeds:

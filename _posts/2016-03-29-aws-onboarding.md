@@ -856,7 +856,43 @@ Matt Wood, @mza, Product Strategy @ Amazon Web Services
 * <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
   $300, 170 minutes AWS Certified DevOps Engineer - Professional</a>
 
-Practice exams:
+## Practice exams
+
+<a target="_blank" href="https://cloudacademy.com/quiz/33549/?context_resource=lp&context_id=180">CloudAcademy has a 90-minute practice exam</a>. Each retake shows 65 questions from a large pool. 
+
+ Because a minimum score of 35 percent is needed on each exam domain, Pearson Practice tests at OReilly has a "study mode" which allow you to provide answers after every question from across 4 complete exams. You can also filter by <a target="_blank" href="https://learning.oreilly.com/certifications/9780135954843/">AWS Certified Cloud Practioner (CLF-C01)</a> domains (number of questions in bank):
+
+    * 01 - The AWS Cloud Defined (26)
+    * 02 - Advantages of the AWS Cloud (10)
+    * 03 - Core AWS Services
+    * 04 - Cloud Architecture Design Principles
+    * 05 - The AWS Shared Responsibility Model
+    * 06 - Cloud Security and Compliance
+    * 07 - AWS Access Management Capabilities
+    * 08 - Resources for Security Support
+    * 09 - Methods of Deploying and Operating in AWS
+    * 10 - The AWS Global Infrastructure
+    * 11 - Resources for Technology Support
+    * 12 - Using the Free Tier to Build a Web Server
+    * 13 - AWS Pricing Models
+    * 14 - Account Structures for Billing and Pricing
+    * 15 - Resources for Billing Support
+   <br /><br />
+
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780136758501/">For the AWS Certified SysOps Administrator Associate (SOA-C01) test</a>
+
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780136791997/">For the AWS Certified Solutions Architect Associate SAA-C02</a>
+
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780136808800/">For the AWS Certified Security – Specialty SCS-C01</a>
+
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780135954904/">For the AWS Certified Machine Learning-Specialty (ML-S)</a>
+
+<a target="_blank" href="https://learning.oreilly.com/certifications/9780136758921/">For the WS Certified Big Data - Specialty (CCENT)</a>
+
+
+
+
+## Other Practice Tests
 
 * http://www.techexams.net/forums/cloud/131715-passed-cv0-001-a.html
 
