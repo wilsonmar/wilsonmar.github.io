@@ -2106,7 +2106,7 @@ RAM
 
 Strategies: Deter, Delay, Detect, Assess, Respond. Acronym?
 
-CPTED (Crime prevention through environmental design): 
+CPTED (Crime Prevention Through Environmental Design): 
    * natural access control
    * natural territorials reinforcement
    * natural surveillance

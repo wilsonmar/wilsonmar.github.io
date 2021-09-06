@@ -41,22 +41,34 @@ An alternative is AKEYLESS, which enables authentication with several clouds (AW
 
 ## AWS Security Certification SCS-C01
 
-<a target="_blank" href="https://www.aws.training/Details/eLearning?id=34786&ep=sec&sec=spec_security">
-2h free video Exam Readiness: AWS Certified Security - Specialty</a> by Blaine Sundrud
-explains:
-
 The <strong>AWS Certified Security - Specialty</strong> certification SCS-C01 home page is at
 
    <ul><a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">https://aws.amazon.com/certification/certified-security-specialty</a>
    </ul>
 
-   The exam costs $300 USD (50% off if you've clear another certification).
+   The exam costs $300 USD (50% off if you've cleared another certification).
 
    Practice exam: 40 USD.
 
-https://www.aws.training/SignIn?returnUrl=%2FCertification
+<a target="_blank" href="https://www.aws.training/SignIn?returnUrl=%2FCertification">
+   PROTIP</a>: The exam is difficult becuase you need to correctly answer <strong>at least 75%</strong> of 65 multiple-choice questions in <strong>over 3 hours without breaks</strong> (170 minutes). Many of the questions are long paragraphs and have multiple answers.
 
-   PROTIP: The exam is difficult becuase you need to correctly answer <strong>at least 75%</strong> of 65 multiple-choice questions in <strong>over 3 hours without breaks</strong> (170 minutes). Many of the questions are long paragraphs and have multiple answers.
+Domain Topics for AWS Security   
+
+   1. 12% (Network and) Incident Response (Forensics)
+   2. 20% Logging and Monitoring
+   3. 26% Infrastructure Security
+   4. 20% <a target="_blank" href="https://wilsonmar.github.io/aws-iam/">Identity and Access Management (IAM)</a>>
+   5. 22% Data Protection 
+   <br /><br />
+
+
+<a target="_blank" href="https://www.aws.training/Details/eLearning?id=34786&ep=sec&sec=spec_security">
+Exam Readiness 2h free video</a> by Blaine Sundrud
+
+<a target="_blank" href="https://cloudacademy.com/quiz/35159/?context_resource=lp&context_id=201">
+Cert Prep: AWS Security Specialty Certification</a>
+
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/demystifying-aws-security-specialty-exam/table-of-contents">VIDEO: 1h COURSE: Demystifying the AWS Certified Security Specialty Exam</a> by Michael Brown covers the options for Key Management (FIPS 140-2 HSM):
    * AWS KMS (Key Management Service) - shared service managed by AWS
@@ -67,17 +79,9 @@ https://www.aws.training/SignIn?returnUrl=%2FCertification
    * The AWS Encryption SDK
    * Amazon DynamoDB encryption client
    * AWS Secrets Manager
+   <br /><br />
 
-
-### Domain Topics
-
-1. (Network and) Incident Response (Forensics) 12%
-2. Logging and Monitoring 20%
-3. Infrastructure Security 26%
-4. Identity and Access Management (IAM) 20%
-5. Data Protection 22% 
-
-Beloware links to learning content on specific topics specified in <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">Amazon's exam guide PDF</a>:
+Links to learning content on specific topics specified in <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">Amazon's exam guide PDF</a>:
 
 1. (Network and) Incident Response (Forensics) 12%
    1. Given an <a href="#AbuseNotice">AWS abuse notice</a>, evaluate the suspected compromised instance or exposed access keys.
