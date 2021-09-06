@@ -17,6 +17,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+## Git Basics video
+
 <amp-youtube data-videoid="uSh-yN2E0rU" layout="responsive" width="480" height="270"></amp-youtube>
 <br />
 
@@ -52,6 +54,16 @@ In this tutorial, we also learn how to recover from mistakes right after we try 
 NOTE: Since the above video was created, GitHub has gone to free private repositories, but no longer free website hosting. Their $4 a month for "Pro" subscriptions does provide GitHub Pages hosting.
 
 To recap the video, a <strong>"blob"</strong> is the set of characters in the last revision identified by a "hash" calculated from the text changed plus some metadata such as the data of the change, the person making the change, etc. The 7 characters shown is the first 7 characters of the full hash string.
+
+
+<a name="Clients"></a>
+
+## Git Clients
+
+There are several technologies you can use to work with Git version control:
+
+* <a target="_blank" href="https://gitless.com/">Gitless</a> is a Git-compatible version control system, that is easy to learn and use.
+
 
 
 <a name="Flowchart"></a>
