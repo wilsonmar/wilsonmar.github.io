@@ -247,9 +247,12 @@ The remainder of this is for users and super users.
 
    The $100/month Business Plan enables you to have 24/7 chat, phone, as well as email access with AWS Support people on an unlimited number of support cases, with a 1-hour response time for "production down" issues, or 4-hour response for "production impaired" issues.
 
-   Amazon also has an Enterprise Plan for $15,000/month to get 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
+   Amazon's <strong>Enterprise Plan</strong> for $15,000/month gets you 15 minute response on "business critical system down" issues. This plan also comes with an assigned TAM (Technical Account Manager).
 
    These dollar amounts are minimums, not fixed prices.
+
+   https://aws.amazon.com/premiumsupport/programs/iem/
+   mentions "AWS Infrastructure Event Management (IEM) offers architecture and scaling guidance and operational support during the preparation and execution of planned events, such as shopping holidays, product launches, and migrations."
 
 1. Scroll down to mouse over the "$29" on the Pricing line at the bottom of the table.
 
