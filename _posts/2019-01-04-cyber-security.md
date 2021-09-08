@@ -968,7 +968,7 @@ QUESTION: How does CIS relate to ITIL?
 
 Criminal Justice Information Services (CJIS) Security Policy compliance for any US state or local agency that wants to access the FBI’s CJIS database.
 
-As of May 25, 2018, European privacy law GDPR (General Data Protection Regulation) imposes new rules on companies, government agencies, non-profits, and other organizations that offer goods and services to people in the European Union (EU), or that collect and analyze data tied to EU residents. But the GDPR applies no matter where you are located.
+As of May 25, 2018, European privacy law GDPR (General Data Protection Regulation) imposes new rules on companies, government agencies, non-profits, and other organizations that offer goods and services to people in the European Union (EU), or that collect and analyze data tied to EU residents. But the GDPR applies no matter where they are located.
 
 UK Government G-Cloud is a cloud computing certification for services used by government entities in the United Kingdom.
 

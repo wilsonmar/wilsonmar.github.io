@@ -41,7 +41,16 @@ OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href
    17. End Survey, Alert, and Log Review
    <br /><br />
 
-<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> defines phases of a pen test engagement:
+OSSTMM five channels or operational areas:
+
+   * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
+   * Physical Security: The OSSTMM tests physical security defined as any tangible element of security that takes physical effort to operate
+   * Wireless Communications: Electronic communications, signals, and emanations are all considered wireless communications that are part of the operational security testing
+   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines are tested in the OSSTMM
+   * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
+   <br /><br />
+
+<a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
 
    1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Pre-engagement Interactions</a>
    2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Intelligence Gathering</a>
@@ -52,7 +61,7 @@ OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href
    7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
    <br /><br />
 
-The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> may seem obsolete because it's from 2014.
+The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" because it's from 2014.
 
 
 ## OWASP items
