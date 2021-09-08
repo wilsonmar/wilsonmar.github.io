@@ -17,12 +17,13 @@ comments: true
 {% include _toc.html %}
 
 
-I'm writing this on July 1, 2021 after seeing how Lake Mead (the largest man-made lake in the US) is reduced to 37% of capacity. And there are 120 F temparatures in Washington and Canada.
+As of September 1, 2021, Lake Mead in California (the largest man-made lake in the US) is reduced to 37% of capacity. And there are 120 F temparatures in Washington and Canada.
 
 At my spread in Montana, the well and spring is producing less water than before.
 
 So this article is about how we're experimenting with ways to live with less water:
-
+AWS Infrastructure Event Management (IEM) 
+   * <a href="#RecirShower">Recirculating Shower</a>
    * <a href="#Dish_washing">Minimal water dish washing</a>
    * <a href="#DryShampoo">Waterless shampoo</a>
    * <a href="#Filtering">Filtering water from rivers & springs</a>
@@ -30,6 +31,21 @@ So this article is about how we're experimenting with ways to live with less wat
    * Large Cisterns
    * Toilet water
    <br /><br />
+
+<hr />
+
+<a name="RecirShower"></a>
+
+## Recirculating Shower
+
+Pioneering recreational vehicle enthuiasts have built equipment which recirculate, clean, and reheat water so "long hot" showers can be enjoyed with just 3 gallons of water.
+
+Advanced RV (advanced-rv.com) has an app to monitor their system:
+
+![vanbuild-arv-box-flush-1440x900](https://user-images.githubusercontent.com/300046/132492061-1e4ce582-716c-4172-9922-ce9f64362f0b.png)
+
+![vanbuild-arv-box-recirc-956x711](https://user-images.githubusercontent.com/300046/132493550-6af29138-f85a-44c9-819b-95b7217f7414.png)
+
 
 <hr />
 
