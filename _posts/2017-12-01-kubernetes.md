@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kubernetes (K8s)"
-excerpt: "for orchestration of containers, especially in clouds, including OpenShift"
+excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
 date: "2021-05-14"
@@ -24,10 +24,6 @@ The contribution of this is a logical presentation making this complex material 
 
 The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
 -- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
-
-WARNING: I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized. Emphasis on practical commands means less emphasis on architecture trivia.
-
-NOTE: This article is now a "starter set" actively undergoing additions.
 
 ## Open-Source History
 
@@ -82,7 +78,7 @@ Being open-source has enabled Kubernetes to flourish on multiple clouds<a target
 * MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
 * OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
 * PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
-* RKE = Rancher 
+* <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
 * Canonical
 
 * Rackspace's Kubernetes as a Service
@@ -113,7 +109,7 @@ Additionally, each cloud vendor has their own CLI command program (such as AWS <
 
 ## Get Hands-on in Play Environments
 
-With a subscription, get hands-on experience running a real Kubernetes instance (as an Administrator) on a cloud environment, for a limited amount of time each session. 
+You can, for a limited amount of time each session, get hands-on experience running a real Kubernetes instance (as an Administrator) on a cloud environment after buying a training subscription:
    * Playground sandbox instances enable you to work with many functions provided by a cloud vendor
    * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions using pre-loaded data
    <br /><br />
@@ -121,14 +117,16 @@ With a subscription, get hands-on experience running a real Kubernetes instance 
 PROTIP: Training vendors provide you a choice to use a browser without installing anything. 
 But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. 
 
-I have step-by-step instructions to get CLI installed and configured:
+Using a If you have have step-by-step instructions to get CLI installed and configured:
 
    * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding
+
    * For Azure CLI, see https://wilsonmar.github.io/azure-onboarding
+   
    * For GCP CLI, see https://wilsonmar.github.io/gcp
    <br /><br />
 
-Here are the options for hands-on learning:
+Here are the options for hands-on learning subscriptions:
 
 * A <a href="#KodeKloud">KodeKloud</a> includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
 
