@@ -2904,6 +2904,7 @@ Routes are deployed by an OpenShift Enterprise administrator as <strong>routers<
 
 The IP assigned each pod is on the <strong>Service Network</strong>
 
+
 <a name="ClusterNetworking"></a>
 
 ## HA Proxy cluster
@@ -2914,10 +2915,6 @@ The IP assigned each pod is on the <strong>Service Network</strong>
 
    <tt>EndpointSlice</tt> groups network endpoints together with Kubernetes resources.
 
-
-<a name="Cluster"></a>
-
-## Cluster networking
 
    A private ClusterIP is accessible by nodes only within the same cluster.
 
@@ -4408,6 +4405,13 @@ net.bridge.bridge-nf-call-iptables = 1
 EOF
    </pre>
 
+<a name="IPVS"></a>
+
+Since K8s v1.11 Kube-proxy uses IPVS Mode instead of IPTABLES.
+It is more scalable because it uses a Linux kernel IP Virtual Server 
+with a native Layer 4 load balancer that supports more load balancing algorithms.
+
+
 <a name="Ubuntu"></a>
 
 ### Ubuntu
@@ -5468,6 +5472,10 @@ spec:
    <pre>kubectl exec -c <em>container id</em> -it <em>pod name</em> -- <em>command</em> </pre>
 
    <tt>-c</tt> if there are several containers in a pod.
+
+1. Within the instance, install networking utilities:
+
+   <pre>apt-get install iputils-ping curl dnsutils iproute2 -y</pre>
 
 1. See that the group is "2000" as specified:
 
