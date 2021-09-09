@@ -63,19 +63,17 @@ Releases of Kubernetes are listed where Kubernetes open-sourced its source code 
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
-### Cloud Kubernetes Services
+<a name="Clouds"></a>
+
+## Cloud Kubernetes Services
 
 Being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
-PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specifications to avoid mis-typing obscure keywords in <strong>kubectl</strong> (pronounced "cube cuddle"), the CLI (Command Line Interface) program controlling Kubernetes. However, the complexity of configurations means that you have to learn how to visually navigate the GUI menus and forms.
-
-Each cloud vendor has their own command for configuring the cloud's Kubernetes "control plane".
-
 * ACK = Alibaba Cloud Kubernetes
-* <a href="#AKS">AKS = Azure Kuberntes Service</a>
-* <a href="#ECS">ECS = Elastic Container Service (in AWS)</a>
-* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using eksctl
-* <a href="#GKS">GKS = Google Kubernetes Service</a>
+* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <tt> az container</tt> commands
+* <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
+* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
+* <a href="#GKE">GKE = Google Kubernetes Engine</a>
 * IKS = IBM cloud
 
 * DOKS = Digital Ocean
@@ -91,6 +89,19 @@ Each cloud vendor has their own command for configuring the cloud's Kubernetes "
 
 And others.
 
+## CLI kubectl client controlling K8s control plane
+
+<a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
+
+<strong>Native Kubernetes</strong> comes with a command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle") used to manage the Kubernetes "Control Plane". 
+
+Additionally, each cloud vendor has their own CLI command program to configure and manage their "control plane", such as AWS "eksctl".
+
+As with other CLI client programs, kubectl is installed on your laptop or runs within a "Bastion host" in the cloud, as illustrated in this diagram from <a href="#CloudAcademy">CloudAcademy</a>:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+
+
 <hr />
 
 
@@ -103,15 +114,17 @@ With a subscription, get hands-on experience running a real Kubernetes instance 
    * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions using pre-loaded data
    <br /><br />
 
-PROTIP: You are given a choice to use a browser without installing anything. 
-But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. I have step-by-step instructions to get CLI installed and configured:
+PROTIP: Training vendors provide you a choice to use a browser without installing anything. 
+But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. 
+
+I have step-by-step instructions to get CLI installed and configured:
 
    * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding
    * For Azure CLI, see https://wilsonmar.github.io/azure-onboarding
    * For GCP CLI, see https://wilsonmar.github.io/gcp
    <br /><br />
 
-Here are the options for hands-on:
+Here are the options for hands-on learning:
 
 * A <a href="#KodeKloud">KodeKloud</a> includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
 
@@ -122,11 +135,9 @@ Here are the options for hands-on:
 
 <a name="CloudAcademy"></a>
 
-* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a> <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a> <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong>
 
-
-   Their <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
+   CloudAcademy's <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
 
    PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
 
@@ -138,6 +149,8 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
    <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
 
 * Coursera.com makes use of Google cloud 
+
+* Qwiklabs
 
 * <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
@@ -294,6 +307,9 @@ Kubernetes replicates Pods (the same set of containers in each) across several w
 Each set of pods are within a <strong>node</strong>.
 Kubernetes assigns each node with a different <strong>external IP address</strong>.
 
+<a name="GKE"></a>
+
+### GKE (Google Kubernetes Engine)
 
 ![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
 <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
@@ -313,8 +329,6 @@ In the illustration below, each pod (each a different color) encapsulates one or
 <hr />
 
 ## Glossary - how buzzwords fit together
-
-This diagram is shown at the ending of a small (upcoming) movie logically illustrating how the various glossary terms relate with each other:
 
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
 
@@ -2853,11 +2867,14 @@ OpenShift Enterprise, which uses <strong>routes</strong> that define the rules t
 Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
 
 
+
+<hr />
+
 <a name="NetworkPolicies"></a>
 
 ## netpol = NetworkPolicies
 
-
+The IP assigned each pod is on the <strong>Service Network</strong>
 
 <a name="ClusterNetworking"></a>
 
