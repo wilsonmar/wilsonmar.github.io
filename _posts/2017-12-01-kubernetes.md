@@ -67,12 +67,14 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 
 Being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
-PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specifications to avoid mis-typing obscure keywords in <strong>kubectl</strong>, the CLI (Command Line Interface) program controlling Kubernetes. However, the complexity of configurations means that you have to learn how to visually navigate the GUI menus and forms.
+PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specifications to avoid mis-typing obscure keywords in <strong>kubectl</strong> (pronounced "cube cuddle"), the CLI (Command Line Interface) program controlling Kubernetes. However, the complexity of configurations means that you have to learn how to visually navigate the GUI menus and forms.
+
+Each cloud vendor has their own command for configuring the cloud's Kubernetes "control plane".
 
 * ACK = Alibaba Cloud Kubernetes
 * <a href="#AKS">AKS = Azure Kuberntes Service</a>
-* <a href="#ECS">ECS = Elastic (AWS) Container Service</a>
-* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a>
+* <a href="#ECS">ECS = Elastic Container Service (in AWS)</a>
+* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using eksctl
 * <a href="#GKS">GKS = Google Kubernetes Service</a>
 * IKS = IBM cloud
 
@@ -87,6 +89,7 @@ PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specif
 
 * Rackspace's Kubernetes as a Service
 
+And others.
 
 <hr />
 
@@ -100,7 +103,7 @@ With a subscription, get hands-on experience running a real Kubernetes instance 
    <br /><br />
 
 * <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
-has both Labs and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground</a> on AWS, GCP, and Azure.
+has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB&technologies%5B0%5D=Kubernetes">guided Labs</a> and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground sandboxes</a> on AWS, GCP, and Azure.
 
 * <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
 
@@ -113,7 +116,7 @@ has both Labs and <a target="_blank" href="https://learn.acloud.guru/cloud-playg
 * Coursera.com makes use of Google cloud, requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
 
 
-## Shell scripts
+## Shell scripts in SSH
 
 PROTIP: Because all your work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
 

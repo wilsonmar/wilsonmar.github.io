@@ -66,6 +66,8 @@ and adds additional PROTIPs and NOTEs.
 
    <a name="CIDR"></a>
 
+   ### CIDR Ranges
+
    An example CIDR block looks like this:
 
    <pre><strong>
