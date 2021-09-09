@@ -4,7 +4,7 @@ title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
-date: "2021-05-14"
+date: "2021-09-09"
 file: "kubernetes"
 image:
 # kubernetes-head-1900x500-472493.jpg
@@ -114,21 +114,9 @@ You can, for a limited amount of time each session, get hands-on experience runn
    * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions using pre-loaded data
    <br /><br />
 
-PROTIP: Training vendors provide you a choice to use a browser without installing anything. 
-But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. 
-
-Using a If you have have step-by-step instructions to get CLI installed and configured:
-
-   * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding
-
-   * For Azure CLI, see https://wilsonmar.github.io/azure-onboarding
-   
-   * For GCP CLI, see https://wilsonmar.github.io/gcp
-   <br /><br />
-
 Here are the options for hands-on learning subscriptions:
 
-* A <a href="#KodeKloud">KodeKloud</a> includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
+* A <a href="#KodeKloud">KodeKloud</a> subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
 
    KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
 
@@ -182,9 +170,24 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
 
 ## Shell scripts in SSH
 
-requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
+PROTIP: Training vendors provide you a choice to use a browser without installing anything. 
+But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. 
 
-PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
+Use of a browser would require copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
+
+However, using a CLI would require some installation and configuration work.
+
+I have have step-by-step instructions to get CLI installed and configured:
+
+   * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding/
+
+   * For Azure CLI, see https://wilsonmar.github.io/azure-cloud-onramp/
+
+   * For GCP CLI, see https://wilsonmar.github.io/gcp/
+   <br /><br />
+
+
+PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole:
 
    <ul>https://github.com/wilsonmar/aws-quickly
    </ul>
