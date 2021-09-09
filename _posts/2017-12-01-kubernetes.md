@@ -94,31 +94,62 @@ And others.
 <hr />
 
 
+<a name="HandsOnLabs"></a>
+
 ## Get Hands-on in Play Environments
 
-With a subscription, get hands-on experience running a real Kubernetes instance in a cloud environment, for a limited amount of time each session, using a browser without installing anything. 
-
+With a subscription, get hands-on experience running a real Kubernetes instance (as an Administrator) on a cloud environment, for a limited amount of time each session. 
    * Playground sandbox instances enable you to work with many functions provided by a cloud vendor
-   * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions on pre-loaded data
+   * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions using pre-loaded data
    <br /><br />
+
+PROTIP: You are given a choice to use a browser without installing anything. 
+But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. I have step-by-step instructions to get CLI installed and configured:
+
+   * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding
+   * For Azure CLI, see https://wilsonmar.github.io/azure-onboarding
+   * For GCP CLI, see https://wilsonmar.github.io/gcp
+   <br /><br />
+
+Here are the options for hands-on:
+
+* A <a href="#KodeKloud">KodeKloud</a> includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
+
+   KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
+
+   PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
+
+
+<a name="CloudAcademy"></a>
+
+* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a> <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+
+
+   Their <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
+
+   PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
+
+<a name="acloudguru"></a>
 
 * <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
 has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB&technologies%5B0%5D=Kubernetes">guided Labs</a> and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground sandboxes</a> on AWS, GCP, and Azure.
+   
+   <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
 
-* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
-
-* KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
+* Coursera.com makes use of Google cloud 
 
 * <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
-
-* KodeKloud instances come up the quickest.
-
-* Coursera.com makes use of Google cloud, requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
 
 
 ## Shell scripts in SSH
 
-PROTIP: Because all your work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
+requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
+
+PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
+
+   <ul>https://github.com/wilsonmar/aws-quickly
+   </ul>
 
 The script downloads what it needs from the public GitHub and runs it automatically.
 
@@ -305,7 +336,7 @@ Instead of multiple choice questions, K8s exam consists of <strong>task-based pr
 
 MOVE: There is support for other languages other than English.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w">VIDEO: "Hands-on Tips ot Pass the CKAD Exam"</a> from CloudAcademy.
+<a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w">VIDEO: "Hands-on Tips to Pass the CKAD Exam"</a> from CloudAcademy.
 
 
 <a name="CKAD_ExamDomains"></a>
@@ -732,13 +763,15 @@ Different instructors explain concepts in different logical sequences.
 So looking at different video classes provides that.
 
 
+<a name="KodeKloud"></a>
+
 ### KodeKloud also from Udemy.com
 
 PROTIP: This I think is the most thoroughly and logically presented tutorials for CKAD and CKA.
 
 I have several tabs open taking it:
 
-1. The courses is availble for USD $228/year (less FESTIVERJ20) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
+1. The courses is availble for USD $228/year (less discount FESTIVERJ20) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
 
 1. The courses can also be purchased at Udemy.com:
 
@@ -849,15 +882,6 @@ https://github.com/bmuschko/cka-crash-course
 
 BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
 
-
-### CloudAcademy
-
-<a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">CloudAcademy's 11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
-
-Its <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong> to build this:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
-
-PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
 
 #### Prep standalone SSH client on macOS
 
@@ -1031,14 +1055,6 @@ The CKAD Troubleshooting class is highly recommended.
 <a target="_blank" href="https://mckinsey.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11582328?start=150#overview">"Docker and Kubernetes: The Complete Guide"</a>
 by Stephen Grider. Diagrams for the 21h video uses draw.io accessing 
 https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
-
-
-
-### ACloudguru.com
-
-<a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
-
-(ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes)
 
 
 ### Others on CKAD:
@@ -3238,10 +3254,31 @@ gcloud container images delete gcr.io/demo-project-123/demo:1.0
 gcloud container images delete gcr.io/demo-project-123/demo:2.0
    </strong></pre>
 
+<hr />
+
+<a name="AWSCLI"></a>
+
+## AWS CLI
+
+1. Identify version
+
+   <pre>aws --version</pre>
+
+   CAUTION: If you don't see "aws-cli/2.x.x", please upgrade to version 2.
+
+1. Identify:
+
+   <pre>which aws</pre>
+
+1. To upgrade the AWS CLI version:
+
+   <pre>sudo ./aws/install --bin-dir /usr/bin --install-dir /usr/bin/aws-cli --update
+   </pre>
+
 <a name="ECS"></a>
 <a name="EKS"></a>
 
-### Amazon AWS ECS & EKS & KOPS
+### Amazon AWS ECS & EKS
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"><img alt="k8s-aws-kubernauts" src="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"></a>
 
@@ -3297,7 +3334,11 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
    A concern with Fargate is its time to load.
 
-* Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the master (Control Plane), unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">"How Qubit built its production ready Kubernetes (k8s) environments"</a>
+   <a name="KOPS"></a>
+
+   ### KOPS
+
+   Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the master (Control Plane), unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">"How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
 1. Manage EKS nodepgroups:
 
