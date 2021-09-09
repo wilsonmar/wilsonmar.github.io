@@ -12,6 +12,7 @@ image:
   credit: Jeremy Thomas
   creditlink: https://www.flickr.com/photos/132218932@N03/page2
 comments: true
+k8s_version: 1.19
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -27,6 +28,76 @@ The aim here is to provide insightful commentary around carefully sequenced hand
 WARNING: I'm restructuring this so that revelations about architecture components and flows are based on yaml and what commands reveal rather than as trivia to be memorized. Emphasis on practical commands means less emphasis on architecture trivia.
 
 NOTE: This article is now a "starter set" actively undergoing additions.
+
+## Open-Source History
+
+The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. Thus why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
+
+Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
+
+   <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
+   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
+
+The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
+
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
+Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
+
+<a name="K8sVersion"></a>
+
+Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
+
+   <ul><a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a></ul>
+
+   * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
+   * v1.6 was led by a CoreOS developer
+   * v1.7 was led by a Googler
+   * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.22 was the current version at Sep 2021.
+   <br /><br />
+
+<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
+<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
+<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
+revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
+
+<a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
+
+
+<hr />
+
+
+## Get Hands-on in Play Environments
+
+Use playground instances to get hands-on running kubectl commands in a Kubernetes cluster (60 minutes at a time) :
+
+* KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
+
+* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> provided free by Docker.
+
+Labs are guided experiences on a real cloud enviornment, for a limited amount of time.
+Labs are included in the price of subscriptions at:
+
+* KodeKloud instances come up the quickest.
+
+* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
+has both Labs and playground where you get an 
+
+* Coursera.com makes use of Google cloud, requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
+
+* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
+
+
+## Shell scripts
+
+PROTIP: Because all your work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
+
+The script downloads what it needs from the public GitHub and runs it automatically.
+
+I learned so much writing the scripts.
+
+
 
 ## Keyword Index Alphabetically
 
@@ -97,6 +168,8 @@ Discovery,
 
 <hr />
 
+
+
 ## Why Kubernetes?
 
 <a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO:
@@ -137,46 +210,6 @@ Kubernetes is called "container orchestration" software because it automates the
 
 
 
-## Open-Source History
-
-Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs:
-https://github.com/kubernetes/community/blob/master/sig-list.md
-
-Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
-
-   <ul><a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a></ul>
-
-<a name="K8sVersion"></a>
-
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
-Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
-
-   * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
-   * v1.6 was led by a CoreOS developer
-   * v1.7 was led by a Googler
-   * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
-   * v1.22 was the current version at Sep 2021.
-   <br /><br />
-
-Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
-
-   <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
-   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
-
-The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
-
-The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. Thus why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
-
-<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
-<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
-See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
-
-<a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
-
-
-<hr />
 
 
 ## Architectural Components Overview
@@ -441,16 +474,6 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 1. <a target="_blank" href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552">Practice enough</a> 
 
 
-   ### Use play environments
-
-8. Use playground instances to use kubectl commands in a Kubernetes cluster (60 minutes at a time) :
-
-   KodeKloud instances come up the quickest.
-
-   Coursera makes use of Google cloud, requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
-
-   KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
-
    ### Build speed
 
 1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
@@ -489,7 +512,7 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
    * <a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">https://github.com/kubernauts/practical-kubernetes-problems</a> provides yaml files
 
-   * <a target="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">kubernetes API</a>
+   * <a target="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">kubernetes API (v1.19)</a>
 
 
 ### Day before exam
@@ -1019,28 +1042,6 @@ Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (usin
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
 <hr />
-
-<a name="Labs"></a>
-
-## Hands-on Labs
-
-Labs are guided experiences on a real cloud enviornment, for a limited amount of time.
-
-<a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a>
-
-<a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
-has both Labs and playground where you get an 
-
-<a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
-
-## Shell scripts
-
-PROTIP: Because all your work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
-
-
-The script downloads what it needs from the public GitHub and runs it automatically.
-
-I learned so much writing the scripts.
 
 
 <a name="Install"></a>
@@ -2909,6 +2910,9 @@ https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
    <pre>k create cronjob my-job --image=busybox --schedule="*/1 * * * *" --logger hello</pre>
 
 ## K8s API
+
+Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs:
+https://github.com/kubernetes/community/blob/master/sig-list.md
 
    <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
 
