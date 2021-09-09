@@ -31,7 +31,7 @@ NOTE: This article is now a "starter set" actively undergoing additions.
 
 ## Open-Source History
 
-The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. Thus why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
+The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. That's why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
@@ -42,6 +42,7 @@ The website, and the Kubernetes code is maintained by the Linux Foundation, whic
 
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
+See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 
 <a name="K8sVersion"></a>
 
@@ -52,7 +53,7 @@ Releases of Kubernetes are listed where Kubernetes open-sourced its source code 
    * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
-   * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
    * v1.22 was the current version at Sep 2021.
    <br /><br />
 
@@ -62,7 +63,29 @@ Releases of Kubernetes are listed where Kubernetes open-sourced its source code 
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
-<a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
+### Cloud Kubernetes Services
+
+Being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
+
+PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specifications to avoid mis-typing obscure keywords in <strong>kubectl</strong>, the CLI (Command Line Interface) program controlling Kubernetes. However, the complexity of configurations means that you have to learn how to visually navigate the GUI menus and forms.
+
+* ACK = Alibaba Cloud Kubernetes
+* <a href="#AKS">AKS = Azure Kuberntes Service</a>
+* <a href="#ECS">ECS = Elastic (AWS) Container Service</a>
+* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a>
+* <a href="#GKS">GKS = Google Kubernetes Service</a>
+* IKS = IBM cloud
+
+* DOKS = Digital Ocean
+* OKS = Oracle
+* PKE = Bonzai
+* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
+* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
+* RKE = Rancher 
+* Canonical
+
+* Rackspace's Kubernetes as a Service
 
 
 <hr />
@@ -70,23 +93,24 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 
 ## Get Hands-on in Play Environments
 
-Use playground instances to get hands-on running kubectl commands in a Kubernetes cluster (60 minutes at a time) :
+With a subscription, get hands-on experience running a real Kubernetes instance in a cloud environment, for a limited amount of time each session, using a browser without installing anything. 
+
+   * Playground sandbox instances enable you to work with many functions provided by a cloud vendor
+   * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions on pre-loaded data
+   <br /><br />
+
+* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
+has both Labs and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground</a> on AWS, GCP, and Azure.
+
+* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
 
 * KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
 
-* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> provided free by Docker.
-
-Labs are guided experiences on a real cloud enviornment, for a limited amount of time.
-Labs are included in the price of subscriptions at:
+* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
 * KodeKloud instances come up the quickest.
 
-* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
-has both Labs and playground where you get an 
-
 * Coursera.com makes use of Google cloud, requiring copy and pasting of accounts and passwords, bringing up CLI, creating environment variables, etc. every time.
-
-* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
 
 
 ## Shell scripts
@@ -2759,29 +2783,6 @@ https://github.com/ojhughes/k8s-for-the-busy-java-developer by Ollie Hughes (@ol
 
 <hr />
 
-### Cloud Kubernetes Services
-
-Each offering has its own acronym (where KS = Kubernetes Service):
-
-* ACK = Alibaba Cloud Kubernetes
-
-* ECS = Elastic (AWS) Container Service 
-* EKS = Elastic Kubernetes Service (in AWS)
-* GKS = Google Kubernetes Service
-* IKS = IBM cloud
-
-* DOKS = Digital Ocean
-* OKS = Oracle
-* PKE = Bonzai
-* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
-* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
-* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
-* RKE = Rancher 
-* Canonical
-
-* Rackspace's Kubernetes as a Service
-
-
 <a name="Helm"></a>
 
 ## Helm charts
@@ -3055,17 +3056,13 @@ Install from <a target="_blank" href="https://github.com/wercker/stern/releases"
 
 ## Multi-cloud
 
-Being open-source has enabled Kubernetes to flourish on several clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
-
-PROTIP: Cloud SaaS provide a <strong>GUI</strong> that presents clickable specifications to avoid mis-typing obscure keywords.
-
-However, the complexity of configurations means that you have to learn how to visually navigate the GUI menus and forms.
-
 Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP has
 <tt>--horizontal-pod-autoscaler-downscal-stabilization</tt> to provide a wait period (5 minutes) before another scale-down action<a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke/lecture/obhDh/services-and-scaling">*</a> 
 
 
-### GKS
+<a name="GKS"></a>
+
+## GKS
 
 Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
 
@@ -3238,6 +3235,8 @@ gcloud container images delete gcr.io/demo-project-123/demo:1.0
 gcloud container images delete gcr.io/demo-project-123/demo:2.0
    </strong></pre>
 
+<a name="ECS"></a>
+<a name="EKS"></a>
 
 ### Amazon AWS ECS & EKS & KOPS
 
