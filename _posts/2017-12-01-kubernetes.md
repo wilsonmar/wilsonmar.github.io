@@ -93,9 +93,17 @@ And others.
 
 <a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
 
-<strong>Native Kubernetes</strong> comes with a command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle") used to manage the Kubernetes "Control Plane". 
+<strong>Native Kubernetes</strong> comes with a command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle") used to manage the Kubernetes "Control Plane".
 
-Additionally, each cloud vendor has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their <a href="#ControlPlane">"Control Plane"</a>.
+
+Additionally, each cloud vendor has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their <a href="#ControlPlane">"Control Plane"</a>:
+
+   * Load balancing for Compute Engine instances
+   * Node pools to designate subsets of nodes within a cluster for additional flexibility
+   * Automatic scaling of your cluster's node instance count
+   * Automatic upgrades for your cluster's node software
+   * Node auto-repair to maintain node health and availability
+   * Logging and Monitoring with Cloud Monitoring for visibility into your cluster
 
 
 <hr />
@@ -144,18 +152,30 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
    
    <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
 
-* <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. Its labs are used in Coursera courses, which explains provides lab solutions videos such as:
 
+<a name="Qwiklabs"></a>
+
+* <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. 
+
+   Try the FREE <a target="_blank" href="https://google.qwiklabs.com/focuses/8586?parent=catalog">30-minute Kubernetes Engine: Qwik Start</a> which is one of the "quests" in Google's 
+   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">Kubernetes in the Google Cloud Qwiklab quest</a>. Tasks:
+
+   * Task 1: Set a default compute zone
+   * Task 2: Create a GKE cluster
+   * Task 3: Get authentication credentials for the cluster
+   * Task 4: Deploy an application to the cluster
+   * Task 5: Deleting the cluster
+   <br /><br />
+
+   <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
+
+   <a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours.
+ 
+   Qwiklabs are used in Coursera courses, which explains provides lab solutions videos such as:
    * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud Console and Cloud Shell</a>
    * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
    * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
    <br /><br />
-
-   <a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours of the
-   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
-   Kubernetes in the Google Cloud Qwiklab quest</a>
-
-   <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
 
    <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. 
 
@@ -250,10 +270,6 @@ Discovery,
 
 ## Why Kubernetes?
 
-<a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO:
-How Kubernetes Works</a> explained by <a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">
-Brendan Burns</a> (K8s co-founder)
-
 Technologies aside, with Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases. Freedom is why it contributes to corporate agility and faster time to market.
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
@@ -287,10 +303,11 @@ Kubernetes is called "container orchestration" software because it automates the
 * Debugging applications
 
 
-
-
-
 ## Architectural Components Overview
+
+<a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO:
+How Kubernetes Works</a> explained by <a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">
+Brendan Burns</a> (K8s co-founder)
 
 "Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
@@ -796,7 +813,7 @@ PROTIP: This I think is the most thoroughly and logically presented tutorials fo
 
 I have several tabs open taking it:
 
-1. The courses is availble for USD $228/year (less discount FESTIVERJ20) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
+1. The courses is available for USD $228/year (less occassional discounts) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
 
 1. The courses can also be purchased at Udemy.com:
 
