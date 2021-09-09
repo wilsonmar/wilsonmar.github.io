@@ -95,11 +95,7 @@ And others.
 
 <strong>Native Kubernetes</strong> comes with a command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle") used to manage the Kubernetes "Control Plane". 
 
-Additionally, each cloud vendor has their own CLI command program to configure and manage their "control plane", such as AWS "eksctl".
-
-As with other CLI client programs, kubectl is installed on your laptop or runs within a "Bastion host" in the cloud, as illustrated in this diagram from <a href="#CloudAcademy">CloudAcademy</a>:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+Additionally, each cloud vendor has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their <a href="#ControlPlane">"Control Plane"</a>.
 
 
 <hr />
@@ -148,9 +144,20 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
    
    <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
 
-* Coursera.com makes use of Google cloud 
+* <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. Its labs are used in Coursera courses, which explains provides lab solutions videos such as:
 
-* Qwiklabs
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud Console and Cloud Shell</a>
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
+   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
+   <br /><br />
+
+   <a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours of the
+   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
+   Kubernetes in the Google Cloud Qwiklab quest</a>
+
+   <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
+
+   <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. 
 
 * <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
@@ -307,10 +314,6 @@ Kubernetes replicates Pods (the same set of containers in each) across several w
 Each set of pods are within a <strong>node</strong>.
 Kubernetes assigns each node with a different <strong>external IP address</strong>.
 
-<a name="GKE"></a>
-
-### GKE (Google Kubernetes Engine)
-
 ![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
 <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
 
@@ -328,7 +331,15 @@ In the illustration below, each pod (each a different color) encapsulates one or
 
 <hr />
 
-## Glossary - how buzzwords fit together
+<a name="ControlPlane"></a>
+
+## Internals: Control Plane
+
+As with other CLI client programs, kubectl is installed on your laptop or runs within a "Bastion host" in the cloud, as illustrated in this diagram from <a href="#CloudAcademy">CloudAcademy</a>:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+
+
 
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
 
@@ -3092,19 +3103,9 @@ Install from <a target="_blank" href="https://github.com/wercker/stern/releases"
 
 ## Multi-cloud
 
-Kubernetes in the cloud also enables <strong>multi-region</strong> setups. GCP has
-<tt>--horizontal-pod-autoscaler-downscal-stabilization</tt> to provide a wait period (5 minutes) before another scale-down action<a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke/lecture/obhDh/services-and-scaling">*</a> 
+Kubernetes in the cloud also enables <strong>multi-region</strong> setups. 
 
-
-<a name="GKS"></a>
-
-## GKS
-
-Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
-
-<a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats"><img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png"></a>
-
-Google's approach enables detection of broad, new classes of infection such as forclosing reverse shells (phoning home).
+GCP has <tt>--horizontal-pod-autoscaler-downscal-stabilization</tt> to provide a wait period (5 minutes) before another scale-down action<a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke/lecture/obhDh/services-and-scaling">*</a> 
 
 ### IBM CloudLabs
 
@@ -3114,7 +3115,9 @@ https://www.youtube.com/watch?v=aSrqRSk43lY&list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu
 
 https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
 
-### Google Cloud GKE GCE Qwiklabs
+<a name="GKE"></a>
+
+### GKE (Google Kubernetes Engine)
 
 <a target="_blank" href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine (GKE)</a> is Google's container management SaaS offering. 
 
@@ -3128,17 +3131,6 @@ GKE provides networking within VPC, monitoring, logging, and CI/CD (Google Build
 
    ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
-<a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. Its labs are used in Coursera courses, which explains provides lab solutions videos such as 
-   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud Console and Cloud Shell</a>
-   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
-   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
-   <br /><br />
-
-<a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours of the
-   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">
-   Kubernetes in the Google Cloud Qwiklab quest</a>
-
-<a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
 
 <a target="_blank" href="https://bit.ly/33Cd4Uw/">First K8s app</a>
 
@@ -3214,10 +3206,6 @@ images:
 1. Back in the Navigation menu UI, click Container Registry > Images and then click quickstart-image to see two versions of quickstart-image listed (a and b).
 
 
-<a name="GKE"></a>
-
-#### Google Kubernetes Engine (GKE) 
-
 ![kubernetes-pods-599x298-35069](https://user-images.githubusercontent.com/300046/31013696-81d30fc0-a4d4-11e7-9852-36be55b74499.jpg)
 
 https://google-run.qwiklab.com/focuses/639?parent=catalog
@@ -3270,6 +3258,17 @@ gcloud container cluster delete demo-cluster
 gcloud container images delete gcr.io/demo-project-123/demo:1.0
 gcloud container images delete gcr.io/demo-project-123/demo:2.0
    </strong></pre>
+
+<a name="GKS"></a>
+
+## GKS (Google Kubernetes Service)
+
+Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
+
+<a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats"><img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png"></a>
+
+Google's approach enables detection of broad, new classes of infection such as forclosing reverse shells (phoning home).
+
 
 <hr />
 
@@ -3935,10 +3934,6 @@ Kubelet executes health checks to identify pod/node status.
 
    Service accounts can also store image pull secrets.
 
-
-<a name="ControlPlane"></a>
-
-### Control Plane
 
 Each <strong>kubelet</strong> manages the <strong>"Control Pane"</strong> which allocates IP addresses and runs nodes under its control. 
 
