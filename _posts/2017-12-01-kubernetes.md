@@ -30,7 +30,7 @@ NOTE: This article is now a "starter set" actively undergoing additions.
 
 ## Keyword Index Alphabetically
 
-So you can go quickly/directly to terms:
+So you can go quickly/directly to topics, listed alphabetically:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -139,9 +139,14 @@ Kubernetes is called "container orchestration" software because it automates the
 
 ## Open-Source History
 
+Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs:
+https://github.com/kubernetes/community/blob/master/sig-list.md
+
 Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
 
    <ul><a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a></ul>
+
+<a name="K8sVersion"></a>
 
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
@@ -150,7 +155,7 @@ Kubernetes was used inside Google for over a decade before being open-sourced in
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 is led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
-   * v1.19 is the current version.
+   * v1.22 was the current version at Sep 2021.
    <br /><br />
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
@@ -179,7 +184,6 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 "Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
 
 Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
-
 
 This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI)</a>, which ensures that every image can be run on every runtime. 
 
@@ -226,13 +230,14 @@ This diagram is shown at the ending of a small (upcoming) movie logically illust
 Clients interact with the master node (K8s Control Plane) via the kube-apiserver.
 
 <strong>etcd</strong> is the database within each cluster.
+PROTIP: etcd is the one <strong>stateful</strong> component, so many run it separate cluster with its own HA redundancy.
 
 In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
 "Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br />
 <img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 
-   <hr />
+<hr />
 
 ## Professional certifications in Kubernetes
 
@@ -302,7 +307,7 @@ https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kub
 
 ### CKS Exam Domains
 
-<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">Coming November, 2020</a> (before the KubeCon North America conference): <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS exam</a> is $300 for 2 hours.
+<a target="_blank" href="https://training.linuxfoundation.org/announcements/new-kubernetes-security-specialist-certification-to-help-professionals-demonstrate-expertise-in-securing-container-based-applications/">Starting November, 2020</a> at the KubeCon North America pre-conference: <a target="_blank" href="https://training.linuxfoundation.org/certification/certified-kubernetes-security-specialist/">CKS exam</a> is $300 for 2 hours.
 
 It's for those who hold a CKA certification.
 
@@ -358,7 +363,7 @@ is normally $997, with a 60 day money-back guarantee.
 
 ## Exam Preparations
 
-CAUTION: Whatever resource you use, ensure it is to the version of Kubernetes (e.g., v1.19 as of 1 Sep 2020).
+PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVersion">version of Kubernetes being tested</a> (e.g., v1.19 as of 1 Sep 2020).
 
 ### Sign up for exam
 
@@ -773,7 +778,6 @@ Logging in Kubernetes with EFK Stack | The Complete Guide</a>
 covers how to set up K8s clusters from scratch and configure logging with ElasticSearch, Fluentd and Kibana 
 
 
-
 ### EdX
 
 edX.org publishes some courses from Linux Academy.
@@ -982,7 +986,7 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 
 ### ACloudguru.com
 
-<a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/learn/d068441f-75b4-4fe8-a7a6-df9153f24a35">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
+<a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams based on v1.13.
 
 (ACloud.guru's Vicky Tanya Seno at Santa Monica College is preparing a course on Kubernetes)
 
@@ -1016,6 +1020,29 @@ Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (usin
 
 <hr />
 
+<a name="Labs"></a>
+
+## Hands-on Labs
+
+Labs are guided experiences on a real cloud enviornment, for a limited amount of time.
+
+<a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a>
+
+<a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
+has both Labs and playground where you get an 
+
+<a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a>
+
+## Shell scripts
+
+PROTIP: Because all your work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole. 
+
+
+The script downloads what it needs from the public GitHub and runs it automatically.
+
+I learned so much writing the scripts.
+
+
 <a name="Install"></a>
 
 ## Installation
@@ -1030,8 +1057,8 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
    CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
    <br /><br />
 
-   NOTE: Kubernetes can use alternative container runtimes 
-   to run on top of cri-o, such as RedHat's podman, LXC.
+   NOTE: Kubernetes can use alternative container runtimes than Docker
+   to run on top of cri-o, such as RedHat's podman, or LXC.
 
 But let's start by installing minikube on your laptop.
 
@@ -1458,7 +1485,6 @@ v2beta2.autoscaling                    Local     True        24s
 
 <hr />
 
-
 ## Configuration
 
 Service cluster IPs and ports are found through Docker --link compatible environment variables specifying ports opened by the service proxy.
@@ -1812,7 +1838,6 @@ kubectl get namespaces</strong></pre>
 
 1. Escape by pressing <strong>ctrl+C</strong>.
 
-<hr />
 
    ### Declarative yaml
 
@@ -1877,6 +1902,7 @@ Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces<
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png">
 <img alt="k8s-dockerfile-sleep" width="989" height="385" src="https://user-images.githubusercontent.com/300046/99159670-dc230100-269b-11eb-90a4-b9f6953aba16.png"></a>
 
+NOTE: Type double-quote characters (" to the right of the Return key on keyboards) instead of the slanty quotes shown in the graphic above.
 
 <a name="Imperative"></a>
 
@@ -2739,8 +2765,8 @@ Each offering has its own acronym (where KS = Kubernetes Service):
 * ACK = Alibaba Cloud Kubernetes
 
 * ECS = Elastic (AWS) Container Service 
-* EKS = Elastic
-* GKS = Google
+* EKS = Elastic Kubernetes Service (in AWS)
+* GKS = Google Kubernetes Service
 * IKS = IBM cloud
 
 * DOKS = Digital Ocean
@@ -3472,8 +3498,9 @@ Use the Google Console to specify the size of hardward in each <strong>node pool
    * Kubernetes Control Plane security: https://cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security
    <br /><br />
 
-All master components (API server, etcd database, Controller Manager) is collectively called the Kubernetes Control Plane.
-are managed by Google/AWS.
+The Kubernetes "Control Plane" consists of master components: API server, etcd database, Controller Manager.
+
+Each Cloud Kubernetes offering provides (hides) its Control Plane.
 
 Secure communications between the master and nodes within a cluster automatically relies on the shared root of trust provided by certificates issued by a CA. Each cluster has its own root Certificate Authority (CA). An internal Google service manages root keys for the CA, so you can't manually rotate the etcd certificates and GKE.
 
