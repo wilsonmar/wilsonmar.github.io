@@ -31,7 +31,7 @@ The word "kubernetes" is the ancient Greek word for people who pilot cargo ships
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
-   <ul><a target="_blank" href="https://kubernetes.io/">https://kubernetes.io</a><br />
+   <ul><a target="_blank" href="https://kubernetes.io/"><u>https://kubernetes.io</u></a><br />
    (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
 
 The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
@@ -167,10 +167,9 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
 
 * <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
+<a name="CLISetup"></a>
 
-## Shell scripts in SSH
-
-CAUTION: The trouble with lab enviornments is that you are given a <strong>limited amount of time</strong> each session -- as little as 30 minutes.
+## CLI Setup
 
 PROTIP: Training vendors provide you a choice to use a browser without installing anything. 
 But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. 
@@ -189,6 +188,12 @@ Use my step-by-step instructions to get CLI installed and configured on your lap
    <br /><br />
 
 
+<a name="ShellScripts"></a>
+
+## Shell scripts in SSH
+
+CAUTION: The trouble with lab enviornments is that you are given a <strong>limited amount of time</strong> each session -- as little as 30 minutes.
+
 PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole.
 
    * On Azure: https://github.com/wilsonmar/aws-quickly describes use of:
@@ -201,14 +206,7 @@ PROTIP: Because all work is lost at the end of each session, I have found it use
    <ul><pre>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/main/gcp/gks-cluster.sh)"</pre>
    </ul>
 
-
-   <ul>
-   </ul>
-
 The script downloads what it needs from the public GitHub and runs it automatically.
-
-The programmatic approach of shell scripts means that 
-
 
 
 ## Keyword Index Alphabetically
