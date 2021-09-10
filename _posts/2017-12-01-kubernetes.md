@@ -36,15 +36,9 @@ Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), wit
 
 The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
 
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
-Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
-See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
-
 <a name="K8sVersion"></a>
 
-Releases of Kubernetes are listed where Kubernetes open-sourced its source code within GitHub.com:
-
-   <ul><a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">https://github.com/kubernetes/kubernetes/releases</a></ul>
+Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/kubernetes</a> where Kubernetes source code  is open-sourced, its <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">releases</a>:
 
    * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
@@ -53,11 +47,18 @@ Releases of Kubernetes are listed where Kubernetes open-sourced its source code 
    * v1.22 was the current version at Sep 2021.
    <br /><br />
 
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
+Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
+See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
+
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
+
+* <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons">Other Kubernetes icon image filess</a>
+
 
 <a name="Clouds"></a>
 
@@ -66,7 +67,7 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 Being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
 * ACK = Alibaba Cloud Kubernetes
-* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <tt> az container</tt> commands
+* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"> az aks</a> commands
 * <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
 * <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
 * <a href="#GKE">GKE = Google Kubernetes Engine</a>
@@ -177,7 +178,7 @@ Use of a browser would require copy and pasting of accounts and passwords, bring
 
 However, using a CLI would require some installation and configuration work.
 
-I have have step-by-step instructions to get CLI installed and configured:
+Use my step-by-step instructions to get CLI installed and configured on your laptop:
 
    * For AWS CLI, see https://wilsonmar.github.io/aws-onboarding/
 
@@ -187,14 +188,25 @@ I have have step-by-step instructions to get CLI installed and configured:
    <br /><br />
 
 
-PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole:
+PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole.
 
-   <ul>https://github.com/wilsonmar/aws-quickly
+   * On Azure: https://github.com/wilsonmar/aws-quickly describes use of:
+
+   <ul><pre>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/main/gcp/gks-cluster.sh)"</pre>
+   </ul>
+
+   * On GCP:
+
+   <ul><pre>bash -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/main/gcp/gks-cluster.sh)"</pre>
+   </ul>
+
+
+   <ul>
    </ul>
 
 The script downloads what it needs from the public GitHub and runs it automatically.
 
-I learned so much writing the scripts.
+The programmatic approach of shell scripts means that 
 
 
 
@@ -2312,7 +2324,7 @@ The <strong>Sidecar</strong> pattern
 * <a href="#Deployments">Deployments</a>
 * <a href="#ReplicaSets">ReplicaSets</a>, which replaces <a href="#ReplicationControllers">Replication Controllers</a>
 * <a href="#StatefulSets">StatefulSets</a>
-* <a href="#DaemonSets">DaemonSets</a>
+* <a href="#DaemonSets">DaemonSets</a> for a single pod on every node
 * <a href="#Jobs">Jobs</a>
 <br /><br />
 
@@ -4673,6 +4685,8 @@ daemonset "kube-flannel.ds" created
 <a name="CSI"></a>
 
 ## Container Storage Interface (CSI)
+
+https://github.com/container-storage-interface/spec
 
 
 <a name="ConfigMaps"></a>
