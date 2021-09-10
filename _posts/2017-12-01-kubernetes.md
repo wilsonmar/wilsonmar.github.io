@@ -108,16 +108,15 @@ Additionally, each cloud vendor has their own CLI command program (such as AWS <
 
 <a name="HandsOnLabs"></a>
 
-## Get Hands-on in Play Environments
+##  Hands-on Demos/labs
 
-You can, for a limited amount of time each session, get hands-on experience running a real Kubernetes instance (as an Administrator) on a cloud environment after buying a training subscription:
-   * Playground sandbox instances enable you to work with many functions provided by a cloud vendor
-   * Labs ("demos") are <strong>guided</strong> experiences with step-by-step instructions using pre-loaded data
-   <br /><br />
+I think the quickest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. 
 
-Here are the options for hands-on learning subscriptions:
+In addition to other training providers, several vendors offer monthly/annual subscriptions with labs/demos:
 
-* A <a href="#KodeKloud">KodeKloud</a> subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
+* STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified.
+
+   A KodeKloud subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
 
    KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
 
@@ -171,6 +170,8 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
 
 ## Shell scripts in SSH
 
+CAUTION: The trouble with lab enviornments is that you are given a <strong>limited amount of time</strong> each session -- as little as 30 minutes.
+
 PROTIP: Training vendors provide you a choice to use a browser without installing anything. 
 But a more performant (satisfying) approach is to install credentials and work from your laptop's Terminal program. 
 
@@ -212,7 +213,7 @@ The programmatic approach of shell scripts means that
 
 ## Keyword Index Alphabetically
 
-So you can go quickly/directly to topics, listed alphabetically:
+Below is a list of Kubernetes technical terms, arranged alphabetically so you can go quickly/directly to each topic:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -277,13 +278,16 @@ Discovery,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
 
+<strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
+Memorizing and using them will save you much time.
+
 <hr />
 
 
 
 ## Why Kubernetes?
 
-Technologies aside, with Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases. Freedom is why it contributes to corporate agility and faster time to market.
+Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases. Freedom is why it contributes to corporate agility and faster time to market.
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
