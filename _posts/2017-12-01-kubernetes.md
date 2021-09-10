@@ -57,7 +57,7 @@ See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
-* <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons">Other Kubernetes icon image filess</a>
+<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons">The Kubernetes community repo</a> provides icon image filess (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
 
 
 <a name="Clouds"></a>
@@ -208,6 +208,11 @@ PROTIP: Because all work is lost at the end of each session, I have found it use
 
 The script downloads what it needs from the public GitHub and runs it automatically.
 
+The programmatic approach of scripts mean that code is needed to check conditions before each command (to see if the command needs to run). Code is also needed to obtain values in variables passed to the next step.
+
+<hr />
+
+<a name="Keywords"></a>
 
 ## Keyword Index Alphabetically
 
@@ -225,7 +230,7 @@ Auto-scaling,
 <a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
 <a href="#Contexts">Contexts</a>,
 <a href="#Controllers">Controllers</a>,
-<a href="#CRD">CRD</a>, 
+<a href="#CRD">CRD (Custom Resource Definition)</a>,
 <a href="#CronJobs">CronJobs</a>,
 <a href="#Declarative">Declarative</a>,
 Discovery,
@@ -258,7 +263,7 @@ Discovery,
 <a href="#Probes">Probes</a>, 
 <a href="#PersistentVolumes">Persistent Volumes</a>,
 <a href="#PortForwarding">Port Forwarding</a>,
-<a href="#PVC">PVC</a>,
+<a href="#PVC">PVC (Persistent Volume Claim)</a>,
 <a href="#Replication">Replication</a>,
 <a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
 <a href="#Rollbacks">Rollbacks</a>,
@@ -272,7 +277,7 @@ Discovery,
 <a href="#StorageClasses">Storage Classes</a>,
 <a href="#Taints">Taints</a>,
 <a href="#Tolerations">Tolerations</a>,
-<a href="#Vim">Vim</a>,
+<a href="#Vim">Vim (tool)</a>,
 <a href="#Volumes">Volumes</a>,
 <a href="#Workloads">Workloads API</a>
 
@@ -2124,6 +2129,7 @@ spec:
    Admins define abstractions for <a href="#Deployments">deployment</a> of images (Docker containers) which define templates (blueprints) for creating pods.
 
    <a name="CRD"></a>
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/crd-128.png?raw=true">
    CRD (Custom Resource Definition) defines a custom/another/new resource kind.
    It uses <tt>apiVersion: apiextensions.k8s.io</tt>.
    (like built-in code for StatefulSets).
@@ -2475,6 +2481,8 @@ Practice test with quiz about deployments: https://kodekloud.com/courses/kuberne
 
 ## svc = Services
 
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/svc-128.png?raw=true">
+
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h13m44s">VIDEO: Nina</a>
 
 Services provide an <strong>un-changing IP address</strong> to pods in the back-end.
@@ -2506,6 +2514,8 @@ Example yaml of services:
 <a name="ServiceAccounts"></a>
 
 ## sa = ServiceAccounts
+
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sa-128.png?raw=true">
 
 1. Administrator: Create a new service account named "backend-team":
 
@@ -2638,9 +2648,7 @@ data:
 
 ### Kind: Job
 
-   * <a target="_blank" href="https://kubernetesbyexample.com//jobs/">kubernetesbyexample.com: Jobs</a>
-   <br /><br />
-
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/job-128.png?raw=true">
 Batch jobs are supervisor processes that run once and immediately completed.
 The Job controller within the Control Plane creates one or more Pods required to run a task. 
 
@@ -2650,6 +2658,8 @@ The Job controller within the Control Plane creates one or more Pods required to
 
    When the task is completed, the Job terminates.
 
+<a target="_blank" href="https://kubernetesbyexample.com//jobs/">kubernetesbyexample.com: Jobs</a>
+
 3 types of jobs:
 
    * completions=1 & parallelism=1 for non-parallel: one pod is started
@@ -2657,7 +2667,7 @@ The Job controller within the Control Plane creates one or more Pods required to
    * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
    <br /><br />
 
-If a node fails while a Job is executing on that node, Kubernetes will restart the Job on a node that is still running.
+If a node fails while a Job is executing on that node, Kubernetes restarts the Job on a node that is still running.
 
 To fail jobs that don't finish within a set number seconds:
 
@@ -2720,6 +2730,8 @@ somejob   5/5           27s        9m41s
 <a name="CronJobs"></a>
 
 ### Kind: Cronjob
+
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/cronjob-128.png?raw=true">
 
 2. When a job is complete, view results in logs:
 
@@ -2996,7 +3008,7 @@ https://github.com/kubernetes/community/blob/master/sig-list.md
    * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
    * Service APIs: Endpoints, Ingress, Service
    * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, HPA (HorizontalPodAutoscaler), PodDistributionBudget, ...
+   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
    * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
 
@@ -3274,6 +3286,10 @@ In <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-arch
 
    <pre><strong>kubectl scale deployment demo-app --replicas=3
    </strong></pre>
+
+   <a name="HPA"></a>
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
+   HPA (HorizontalPodAutoscaler)
 
 1. Loop responses:
 
@@ -4482,6 +4498,8 @@ This section further explains the <a href="#Architecture">architecture diagram a
    
    ### Deploy Kubernetes master node
 
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/deploy-128.png?raw=true">
+
 1. Use this command to deploy the <strong>master node</strong> which controls the other nodes. 
    So it's <a href="#MasterDeploy">deployed first</a> which invokes the <a href="#API_Server">API Server</a>
 
@@ -4726,6 +4744,8 @@ Within a pod manifest, <tt>valueFrom</tt> key and the configMapKeyRef value to r
 
 <a name="Volumes"></a>
 
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/vol-128.png?raw=true">
+
 <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=2h38m07s">VIDEO: from "Nana's TechWorld"</a>
    * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">kubernetesbyexample.com: Volumes</a>
 
@@ -4913,6 +4933,7 @@ parameters:
 <a name="PVC"></a>
 
 ### Persistant Volume Claim (PVC)
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/pvc-128.png?raw=true">
 
    A Persistent Volume Claim (PVC) is a request for that storage by a user.
 
@@ -4947,6 +4968,8 @@ More:
 <a name="StatefulSets"></a>
 
 ## Deploy StatefulSet components
+
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sts-128.png?raw=true">
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>
    * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com: Stateful Sets</a>
@@ -5794,6 +5817,7 @@ A cgroup (control group) is a group of Linux processes with optional resource is
 
 <a name="Secrets"></a>
 ## Secrets
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/secret-128.png?raw=true">
 
    * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">kubernetesbyexample.com: Secrets</a>
    * In https://kubernetes.io/docs/concepts/secret/#best-practices
