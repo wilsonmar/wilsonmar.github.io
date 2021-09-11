@@ -2922,14 +2922,15 @@ OpenShift Enterprise, which uses <strong>routes</strong> that define the rules t
 Routes are deployed by an OpenShift Enterprise administrator as <strong>routers</strong> to nodes in an OpenShift Enterprise cluster. To clarify, the default Router in Openshift is an actual HAProxy container providing reverse proxy capabilities.
 
 
-
 <hr />
 
 <a name="NetworkPolicies"></a>
 
 ## netpol = NetworkPolicies
 
-The IP assigned each pod is on the <strong>Service Network</strong>
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/netpol-128.png?raw=true">
+
+The IP assigned each pod is on the <strong>Service Network</strong>.
 
 
 <a name="ClusterNetworking"></a>
@@ -3738,6 +3739,8 @@ Such direct configuration of security contexts in each individual pod can be a l
 <a name="PodSecurityPolicies"></a>
 
 #### Pod Security policies (PSP)
+
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/psp-128.png?raw=true">
 
 A request can be passed through multiple controllers.
 If the request fails at any point, the entire request is rejected immediately, with the end user receiving an error.
