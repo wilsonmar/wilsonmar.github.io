@@ -24,7 +24,14 @@ With Kubernetes, a <strong>stand-alone dev team</strong> can take complete contr
 
 That is why it's so important to properly train developers to use Kubernetes "professionally".
 
-The contribution of this is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
+There is a lot to Kubernetes, but shell files or GUI can be created to hide details for common operations.
+
+I have a script that can, with one command, stands up a Kubernetes cluster in AWS (after you establish credentials).
+
+
+## This articles
+
+The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
 
 
 
@@ -78,17 +85,21 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * <a href="#GKE">GKE = Google Kubernetes Engine</a>
 
 * IKS = IBM cloud
-* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
+* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution - OpenShift Dedicated, OpenShift Online
+* KUBE2GO
+
 * PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
 * <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
 * Rackspace's Kubernetes as a Service
 
-* DOKS = Digital Ocean
+* <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">DOKS = Digital Ocean</a>
 * OKS = Oracle
 
 * PKE = Bonzai
 * MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
 * Canonical
+
+* https://github.com/kubernetes-sigs/kubespray
 
 * <em>And others</em>
 
@@ -234,6 +245,8 @@ https://github.com/kubernetes/community/blob/master/sig-list.md</a>
 
    * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
+
+REMEMBER: Unlike other systems, in Kubernetes there are no "users".
 
 
 <hr />
@@ -3597,17 +3610,6 @@ https://github.com/mspnp/aks-secure-baseline
 
 <hr />
 
-## Other clouds
-
-* On Digital Ocean, see <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">
-   https://blog.digitalocean.com/introducing-digitalocean-kubernetes</a>
-
-* KUBE2GO, OpenShift Dedicated, OpenShift Online, 
-
-* https://github.com/kubernetes-sigs/kubespray
-
-<hr />
-
 ## Other Orchestration systems managing Docker containers
 
    * OpenShift dedicated
@@ -3847,14 +3849,14 @@ Each pod security policy consists of an <strong>object</strong> and an admission
 The pod security policy object (a set of restrictions, requirements, and defaults) are defined in the same way as
 a security context inside a pod, and can be used to control the same security features.
 
-The pod security policy admission controller acts on the creation and modification of pods.
+The pod security policy <a href="#Admission">admission controller</a> acts on the creation and modification of pods.
 
 During the creation or update of a pod, the Container Runtime enforces pod security policies based on the requested security context which defines whether the pod should be admitted. 
 
 For pod to be admitted to the cluster, it must fulfill all of security conditions defined in the pod security policy.
 These rules are only applied when a pod is being created or updated.
 
-The pod security policy admission controller validates or modifies requests to create or update pods against security policies.
+The pod security policy <a href="#Admission">admission controller</a> validates or modifies requests to create or update pods against security policies.
 A non-mutating admission controller just validates requests.
 A mutating and mission controller can modify and validate requests.
 
