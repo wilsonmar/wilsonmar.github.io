@@ -111,6 +111,16 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 * <em>And others</em>
 
+## Alternative Docker Runtimes
+
+In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+
+<a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
+
+Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat and its competing <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology used with OpenShift.
+
+Runc is supported by CRI-O, Docker, ContainerD. Runc is the low-level tool which does the "heavy lifting" of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
+
 
 <hr />
 
@@ -127,6 +137,8 @@ Each <strong>app Container</strong> within the same pod share the <strong>same I
 
 Every <strong>app Container</strong> has its own <strong>unique port number</strong> within the unique IP assigned to each Pod.
 
+> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
+
 Kubernetes expects that each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
    * Docker Hub cloud
    * Docker Enterprise (on-prem)
@@ -134,6 +146,13 @@ Kubernetes expects that each app that has been "dockerized" within a <strong>Con
    * Nexus
    * <a target="_blank" href="https://quay.io/">Quay.io</a> (operated by Red Hat)
    <br /><br />
+
+> Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
+
+![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
+<a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
+
+In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
 
 
 <a name="ControlPlane"></a>
@@ -178,6 +197,9 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
    Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
 
    <a href="#Volumes">Volumes of persistent data storage</a>
+
+
+Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
 
 Within AWS, Auto Scaling Groups are used to scale nodes.
 
@@ -1262,6 +1284,11 @@ Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (usin
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
 <hr />
+
+<a name="Kubernetes"></a>
+
+Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI) specification</a> ensures that every image can be run within every K8s runtime.
+
 
 
 <a name="Install"></a>
