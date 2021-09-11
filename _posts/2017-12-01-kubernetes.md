@@ -22,9 +22,9 @@ k8s_version: 1.19
 
 With Kubernetes in <a href="#Clouds">clouds</a>, each <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
 
-That is why it's so important to properly train developers to use Kubernetes "professionally".
+That is why it's so important to properly train developers to "professionally" use Kubernetes.
 
-However, the power and flexibility of Kubernetes means there is a lot to learn about Kubernetes.
+But that is easier said than done. The power and flexibility of Kubernetes means there is a lot to learn about Kubernetes.
 
 So, alas, some managers fall back to "protecting" Kubernetes in production by allowing only a small number of Operations specialists (separated from developers) to handle Kubernetes. When specialists are the only ones capable of doing some part of the work, they often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
 
@@ -40,7 +40,7 @@ The contribution of this article is a carefully sequenced presentation of comple
 
 ## Open-Source History
 
-The word "kubernetes" is the ancient Greek word for people who pilot cargo ships –- "helmsman" in English. That's why Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>, and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
+The word "kubernetes" is the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> (based on "to steer") for people who pilot cargo ships –- "helmsman" or "pilot" in English.<a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">*</a> That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>, and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
@@ -67,7 +67,7 @@ See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+revealed that the predecessor to Kubernetes was the "Project 7" which built <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
 <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
@@ -82,7 +82,7 @@ Kubernetes can run within private on-premises data centers on "bare metal" machi
 But being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
 * ACK = Alibaba Cloud Kubernetes
-* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"> az aks</a> commands
+* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"><tt>az aks</tt></a> commands
 * <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
 * <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
 * <a href="#GKE">GKE = Google Kubernetes Engine</a>
@@ -141,7 +141,7 @@ There are several options to run kubectl:
    
    kubctl processes manifests (in yaml format) by translating them to API calls to the Kubernetes API program, a part of the "k8s master". 
    
-   * <a href="#GetAPIServices">Get API Services List</a>
+   * <a href="#GetAPIServices">Get a list of all K8s API Services</a>
    <br /><br />
 
    Kubernetes "orchestrates" (runs) apps "dockerized" in container images in pods within nodes.
@@ -150,6 +150,7 @@ There are several options to run kubectl:
 
    <a href="#Volumes">Volumes of persistent data storage</a>
 
+zzz
 
    Within AWS, Auto Scaling Groups are used to scale nodes.
 
@@ -172,6 +173,7 @@ Below is a list of Kubernetes technical terms, so you can go quickly/directly to
 <a href="#ClusterRoles">ClusterRoles</a>,
 <a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
 <a href="#Contexts">Contexts</a>,
+<a href="#ControlPlane">Control Plane</a>,
 <a href="#Controllers">Controllers</a>,
 <a href="#CRD">CRD (Custom Resource Definition)</a>,
 <a href="#CronJobs">CronJobs</a>,
@@ -3567,8 +3569,8 @@ Deploy a model as web service on Azure Container Instances by combining ACI with
    * kubectl get service "$APPNAME" --watch
    * kubectl scale replicas=3 "deployment/$APPNAME"
    * kubectl get pods
-   * Scale by CPU: az aks scale --name $appname --node-count 3 \ 
-   --resource-group $container_rg 
+   * Scale by CPU: <tt>az aks scale --name $appname --node-count 3 \ 
+   --resource-group $container_rg</tt>
    <br /><br />
 
 1. Add <strong>metrics</strong> to Container service:
