@@ -111,29 +111,26 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 ## k8s master = Control Plane Orchestrator
 
-Each cloud vendor also has its own <strong>K8s Master node</strong>, also called a "Control Plane", illustrated by <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">this diagram</a>:
+Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</strong> controlled by a <strong>Master Node</strong>.
 
 ![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
 
-At the bottom of the diagram, from the center out: 
-Kubernetes runs each app that has been "dockerized" in a <strong>container</strong> image file stored for retrieval from a <strong>Docker image registry</strong>.
+From the core at the bottom of <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, Kubernetes runs each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>Docker image registry</strong> (such as Docker Hub or JFrog Artifactory).
 
-Within each worker node, several app containers can run within each of several <strong>pods</strong>.
-Within each pod, all Containers share the same lifecycle -- get created and removed together.
+Several app Containers can run within each of several <strong>Pods</strong>.
+Within each Pod, all Containers share the same lifecycle -- get created and removed together.
 
-Kubernetes orchestrates several <strong>worker nodes</strong> and a single <strong>Master Node</strong>.
+Several Pods are usually run within each <strong>Worker Node</strong>: the app Container plus sidecars such as <a target="_blank" href="https://wilsonmar.github.io/servicemesh">Service Mesh</a>.
 
-The <strong>Master Node</strong> (aka "Control Plane") runs several key processes (aka service components):
-
-   * The ("kube-scheduler") watches newly created pods that have no node assigned, and selects a node for them to run on. Factors taken into account for scheduling decisions include, individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference and deadlines.
-
-   * The "Kube-Controller-manager" runs a closed loop that watches the shared state of the cluster (persisted in etcd) through the kube-apiserver and makes changes attempting to move the current state towards the desired state, by reacting to the stored declarative models. Controllers are responsible for instantiating the actual resource represented by any Kubernetes resource. These actual resources are what your app needs to allow it to run successfully. Examples of controllers that ship with Kubernetes today are the ReplicaSets, replication controller, endpoints controller, namespace controller, DaemonSets, Job and serviceaccounts controller. 
+The Kubernetes <strong>Master Node</strong> has several services processes which together orchestrates (manages) several <strong>Worker Nodes</strong>. The Master Node (aka "Control Plane") runs several key processes (aka service components):
 
    * <strong>etcd</strong> is the database (key-value data store) within each cluster. PROTIP: etcd is the one <strong>stateful</strong> component, so many run it in a cluster separate for its own HA redundancy.
 
-   * The <strong>API server</strong> receives all administrative commands as REST API calls. Command-line programs communicating with Kubernetes do so by converting commands into REST API calls to the API server (named "kube-apiserver").
+   * The <strong>Kube-Controller-Manager</strong> watches the state (status) of each cluster (as persisted in etcd) and  attempts to move current the state towards the desired state (as defined in Yaml files). <a href="#Controllers">Various Controllers</a> actually instantiate the actual resource represented by Kubernetes resource definitions. 
 
-Master components make global decisions about the cluster (for example, scheduling), and detecting and responding to cluster events (starting up a new pod when a replication controller’s ‘replicas’ field is unsatisfied.)
+   * The <strong>kube-scheduler</strong> assigns Pods to Nodes. 
+
+   * The <strong>API server</strong> receives all administrative commands as REST API calls. Command-line programs communicating with Kubernetes do so by converting commands into REST API calls to the API server (named "kube-apiserver").
 
 
 <a name="Internals"></a>
@@ -2453,6 +2450,7 @@ The <strong>Sidecar</strong> pattern
 <hr />
 
 <a name="Controllers"></a>
+
 ## Controller objects
 
 * <a href="#Deployments">Deployments</a>
@@ -2460,6 +2458,9 @@ The <strong>Sidecar</strong> pattern
 * <a href="#StatefulSets">StatefulSets</a>
 * <a href="#DaemonSets">DaemonSets</a> for a single pod on every node
 * <a href="#Jobs">Jobs</a>
+* Serviceaccounts controller
+* Endpoints controllers
+* Replication controller
 <br /><br />
 
 Because Deployments provide a helpful "front end" to ReplicaSets, training focuses on Deployments.
@@ -6269,9 +6270,13 @@ https://www.tikalk.com/posts/2020/05/14/2020-05-14-Kubexperience-for-developers/
 
 
 
+Factors taken into account for scheduling decisions include, individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference and deadlines.
+
+
 
 ## More on DevOps #
 
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
+
