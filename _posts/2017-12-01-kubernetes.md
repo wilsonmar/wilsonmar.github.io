@@ -35,14 +35,18 @@ When specialists are the only ones capable of doing some part of the work, they 
 
 ## This article (automation)
 
-Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
+Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, use   <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform IaC and Sentinel PaC</a> to stand up a Kubernetes cluster within AWS (after installing clients and establishing credentials), then identify the optimal Kunbernetes specifications by running tests of how quickly it takes Kubernetes to scale horizonatally and vertically. 
+
+But that's just the beginning.
 
 The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
 
 
 ## Open-Source History
 
-The word "kubernetes" is the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> (based on "to steer") for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>, and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
+The word "kubernetes" is the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> (based on "to steer") for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>. Docker Captains work together on <a target="_blank" href="https://github.com/docker-captains/about">github.com/docker-captains/</a>
+
+Associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
@@ -439,10 +443,6 @@ The programmatic approach of scripts mean that code is needed to check condition
 <hr />
 
 ## Docker and Alternative Runtimes
-
-<a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
-
-<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 <a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
 
@@ -2484,6 +2484,11 @@ The <strong>Sidecar</strong> pattern
 <a name="Controllers"></a>
 
 ## Controller objects
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">VIDEO: "Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
+
+<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+
 
 * <a href="#Deployments">Deployments</a>
 * <a href="#ReplicaSets">ReplicaSets</a>, which replaces <a href="#ReplicationControllers">Replication Controllers</a>
