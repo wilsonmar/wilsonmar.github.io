@@ -33,7 +33,7 @@ So, alas, some managers fall back to "protecting" Kubernetes in production by al
 
 ## This article
 
-Because of the above issues, I preparing by creating a script that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
+Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
 
 The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
 
@@ -64,10 +64,15 @@ Kubernetes was created inside Google (using the [Golang](/Golang/) programming l
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
 See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 
-<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was the "Project 7" which built <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+revealed that the predecessor to Kubernetes was the "Project 7" which built <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series.
+In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all civilizations it encounters into its "collective".  
+
+![k8s-borg-490x431](https://user-images.githubusercontent.com/300046/132962385-096c4357-e939-40b0-a5b0-62476c8c9fa5.png)
+
+<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
+The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
 <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
@@ -118,9 +123,13 @@ Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</s
 From the core at the bottom of <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, Kubernetes runs each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>Docker image registry</strong> (such as Docker Hub or JFrog Artifactory).
 
 Several app Containers can run within each of several <strong>Pods</strong>.
-Within each Pod, all Containers share the same lifecycle -- get created and removed together.
 
-Several Pods are usually run within each <strong>Worker Node</strong>: the app Container plus sidecars such as <a target="_blank" href="https://wilsonmar.github.io/servicemesh">Service Mesh</a>.
+Within each Pod, all Containers share the same lifecycle -- get created and removed together.
+In other words, each Pod is duplicated with the same Containers specified in a Deployment.
+
+A Pod can consists of app Containers plus sidecars such as <a target="_blank" href="https://wilsonmar.github.io/servicemesh">Service Mesh</a>.
+
+As many <strong>Replicas</strong> of one or more Pods are run within each <strong>Worker Node</strong>.
 
 The Kubernetes <strong>Master Node</strong> has several services processes which together orchestrates (manages) several <strong>Worker Nodes</strong>. The Master Node (aka "Control Plane") runs several key processes (aka service components):
 
@@ -135,7 +144,7 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
 
 <a name="Internals"></a>
 
-## Core Internals 
+## Core K8s Internals 
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
@@ -146,7 +155,12 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
 
    <a href="#Volumes">Volumes of persistent data storage</a>
 
-   Kubernetes puts pods within <strong>nodes</strong>.
+Within AWS, Auto Scaling Groups are used to scale nodes.
+
+
+<a name="Internals"></a>
+
+## Cloud K8s GUI & CLI
 
 <a href="#Clouds">Each cloud SaaS vendor listed above</a> provides its own <strong>GUI</strong> on internet browser (such as Google Chrome) for Kubernetes Administrators to access.
 
@@ -158,15 +172,9 @@ Each cloud vendor also has its own CLI command program (such as AWS <tt>eksctl</
    <br /><br />
 
 
-
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
 
-
-References:
-
-   * In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
-
-Within AWS, Auto Scaling Groups are used to scale nodes.
+In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 
 
@@ -379,6 +387,8 @@ Use my step-by-step instructions to get CLI installed and configured on your lap
 CAUTION: The trouble with lab enviornments is that you are given a <strong>limited amount of time</strong> each session -- as little as 30 minutes.
 
 PROTIP: Because all work is lost at the end of each session, I have found it useful to create shell scripts I can paste in a Shell Conole.
+
+   * On AWS: sample.sh
 
    * On Azure: https://github.com/wilsonmar/aws-quickly describes use of:
 
