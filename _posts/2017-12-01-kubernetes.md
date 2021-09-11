@@ -18,22 +18,24 @@ k8s_version: 1.19
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why Kubernetes?
+## Why Kubernetes? Speed vs. Sacurity
 
-With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operations management approvals. Freedom is why Kubernetes contributes to corporate agility and faster time to market.
+With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to corporate agility and faster time to market.
 
 That is why it's so important to properly train developers to use Kubernetes "professionally".
 
-There is a lot to Kubernetes, but shell files or GUI can be created to hide details for common operations.
+However, there is a lot to Kubernetes.
 
-I have a script that can, with one command, stands up a Kubernetes cluster in AWS (after you establish credentials).
-But that's just the first step.
+So, alas, some managers fall back to "protecting" Kubernetes in production by allowing only a small number of Operations specialists (separated from developers) to handle Kubernetes. When specialists are the only ones capable of doing a part of the work, they often become a <strong>bottleneck</strong> to fast progress. Specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
+
+"Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
+
+Because of the above issues, I created a script that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
 
 
-## This articles
+## This article
 
 The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
-
 
 
 ## Open-Source History
@@ -1147,7 +1149,7 @@ Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.
 
    * Book: "Kubernetes Deep Dive"
 
-   * <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> video course <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">"Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
+   * Video course <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">"Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://learn.acloud.guru/course/kubernetes-deep-dive/learn/code/demo/watch">VIDEO</a>: <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
 
 
 ### Coursera
