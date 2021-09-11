@@ -20,27 +20,27 @@ k8s_version: 1.19
 
 ## Why Kubernetes? Speed vs. Sacurity
 
-With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to corporate agility and faster time to market.
+With Kubernetes in <a href="#Clouds">clouds</a>, each <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
 
 That is why it's so important to properly train developers to use Kubernetes "professionally".
 
-However, there is a lot to Kubernetes.
+However, the power and flexibility of Kubernetes means there is a lot to learn about Kubernetes.
 
-So, alas, some managers fall back to "protecting" Kubernetes in production by allowing only a small number of Operations specialists (separated from developers) to handle Kubernetes. When specialists are the only ones capable of doing a part of the work, they often become a <strong>bottleneck</strong> to fast progress. Specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
+So, alas, some managers fall back to "protecting" Kubernetes in production by allowing only a small number of Operations specialists (separated from developers) to handle Kubernetes. When specialists are the only ones capable of doing some part of the work, they often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
 
 "Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
 
-Because of the above issues, I created a script that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
-
 
 ## This article
+
+Because of the above issues, I preparing by creating a script that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
 
 The contribution of this article is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
 
 
 ## Open-Source History
 
-The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. That's why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
+The word "kubernetes" is the ancient Greek word for people who pilot cargo ships –- "helmsman" in English. That's why Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>, and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
