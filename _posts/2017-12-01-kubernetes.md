@@ -40,7 +40,7 @@ The contribution of this article is a carefully sequenced presentation of comple
 
 ## Open-Source History
 
-The word "kubernetes" is the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> (based on "to steer") for people who pilot cargo ships –- "helmsman" or "pilot" in English.<a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">*</a> That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>, and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
+The word "kubernetes" is the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> (based on "to steer") for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>, and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
 
 Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
 
@@ -67,12 +67,12 @@ See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
 revealed that the predecessor to Kubernetes was the "Project 7" which built <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series.
-In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all civilizations it encounters into its "collective".  
+In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all civilizations it encounters into its "collective".<a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">*</a>
 
 ![k8s-borg-490x431](https://user-images.githubusercontent.com/300046/132962385-096c4357-e939-40b0-a5b0-62476c8c9fa5.png)
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+The logo for Kubernetes inside the 6 sided hexagons representing each Google service has <strong>7 sides</strong>. This is because a beloved character in the TV series played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
 <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
@@ -112,6 +112,30 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * <em>And others</em>
 
 
+<hr />
+
+<a name="Cluster"></a>
+
+### Cluster of Nodes
+
+Kubernetes manages several <strong>apps</strong> within several different types of <strong>Pods</strong>.
+
+![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
+<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
+
+Each <strong>app Container</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+
+Every <strong>app Container</strong> has its own <strong>unique port number</strong> within the unique IP assigned to each Pod.
+
+Kubernetes expects that each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
+   * Docker Hub cloud
+   * Docker Enterprise (on-prem)
+   * JFrog Artifactory
+   * Nexus
+   * <a target="_blank" href="https://quay.io/">Quay.io</a> (operated by Red Hat)
+   <br /><br />
+
+
 <a name="ControlPlane"></a>
 
 ## k8s master = Control Plane Orchestrator
@@ -120,7 +144,7 @@ Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</s
 
 ![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
 
-From the core at the bottom of <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, Kubernetes runs each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>Docker image registry</strong> (such as Docker Hub or JFrog Artifactory).
+From the core at the bottom of <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, 
 
 Several app Containers can run within each of several <strong>Pods</strong>.
 
@@ -170,12 +194,6 @@ Each cloud vendor also has its own CLI command program (such as AWS <tt>eksctl</
    
    * <a href="#GetAPIServices">Get a list of all K8s API Services</a>
    <br /><br />
-
-
-<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
-
-In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
-
 
 
 <a name="HandsOnLabs"></a>
@@ -280,7 +298,7 @@ Memorizing and using them while manually typing commands will save you much time
 
 ### K8s API Special Interest Groups
 
-The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
+The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around <strong>related groups</strong> of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
 https://github.com/kubernetes/community/blob/master/sig-list.md</a>
 
    <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
@@ -406,6 +424,15 @@ The programmatic approach of scripts mean that code is needed to check condition
 
 <hr />
 
+<a name="Inside"></a>
+
+## Inside each Node
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO: How Kubernetes Works</a> explained by <a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/"> Brendan Burns</a> (K8s co-founder)
+   <br /><br />
+
+zzz
+
 ## Aggregation Layer
 
 The <strong>aggregation layer</strong> lets you install additional Kubernetes-style APIs in your cluster.
@@ -435,6 +462,11 @@ Kubernetes is called "container orchestration" software because it automates the
 
 ## What Kubernetes contributes
 
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+
+
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
@@ -454,47 +486,6 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 * Debugging applications
 
 
-## Architectural Components Overview
-
-<a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO:
-How Kubernetes Works</a> explained by <a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/">
-Brendan Burns</a> (K8s co-founder)
-
-"Containerized" <a href="#micro-services">microservice apps</a> are <strong>dockerized</strong> into images pulled from <strong>DockerHub</strong> or private security-vetted images in Docker Enterprise, <a target="_blank" href="https://quay.io/">Quay.io</a>, or an organization's own binary repository setup using Nexus or Artifactory. 
-
-Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
-
-This tutorial focuses on use of <strong>Docker</strong> containers as Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI)</a>, which ensures that every image can be run on every runtime. 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
-
-Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat and its competing <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology used with OpenShift.
-
-Runc is supported by CRI-O, Docker, ContainerD. Runc is the low-level tool which does the "heavy lifting" of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
-
-
-> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
-
-Kubernetes replicates Pods (the same set of containers in each) across several worker <strong>Nodes</strong> (VM or physical machines).
-
-> Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
-
-Each set of pods are within a <strong>node</strong>.
-Kubernetes assigns each node with a different <strong>external IP address</strong>.
-
-![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
-<a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
-
-<strong>Containers</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
-
-Every <strong>container</strong> has its own unique <strong>port number</strong> within the pod's shared IP.
-
-In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
-
-In the illustration below, each pod (each a different color) encapsulates one or more (Docker) container hosts (operating processes, each shown as a circle):
-
-![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
-<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
 
 <hr />
