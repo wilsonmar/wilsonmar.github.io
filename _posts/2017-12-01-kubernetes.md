@@ -131,6 +131,9 @@ There are several options to run kubectl:
 
    Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
 
+   <a href="#Volumes">Volumes of persistent data storage</a>
+
+
    Within AWS, Auto Scaling Groups are used to scale nodes.
 
 <hr />
@@ -3474,11 +3477,11 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
    A concern with Fargate is its time to load.
 
-   <a name="KOPS"></a>
+<a name="KOPS"></a>
 
-   ### KOPS
+### KOPS
 
-   Kops for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the master (Control Plane), unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">"How Qubit built its production ready Kubernetes (k8s) environments"</a>
+   KOPS for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the master (Control Plane), unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">"How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
 1. Manage EKS nodepgroups:
 
@@ -4263,7 +4266,7 @@ spec:
 
 ## Extract pod yaml from running podspec
 
-   <pre><strong>kubectl get pod &LT;pod name> -o yaml > my-new-pod.yaml </strong></pod>
+   <pre><strong>kubectl get pod &LT;pod name> -o yaml > my-new-pod.yaml </strong></pre>
 
    <a target="_blank" href="https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039454">https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039454</a>
 
@@ -4830,12 +4833,12 @@ Within a pod manifest, <tt>valueFrom</tt> key and the configMapKeyRef value to r
 
 <a name="Volumes"></a>
 
+### Volumes of persistent data storage
+
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/vol-128.png?raw=true">
 
-<a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=2h38m07s">VIDEO: from "Nana's TechWorld"</a>
+   <a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA&t=2h38m07s">VIDEO: from "Nana's TechWorld"</a>
    * <a target="_blank" href="https://kubernetesbyexample.com//volumes/">kubernetesbyexample.com: Volumes</a>
-
-### Volumes of data storage
 
 ![k8s-sc-pvc-pv-453x248](https://user-images.githubusercontent.com/300046/102702327-c6ff3c00-421e-11eb-8388-a7936121a2e7.png)
 <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=808b5550-4ef6-48af-87f7-7143ba693937">(credit)</a>
@@ -4908,7 +4911,7 @@ Admins create a Persistent Volume (PV) to provision blocks of storage (of specif
       name: es-config-map
    </pre>
 
-   #### For a NFS (Network File System):
+#### For a NFS (Network File System):
 
    <pre>apiVersion: v1
 kind: PersistentVolume
