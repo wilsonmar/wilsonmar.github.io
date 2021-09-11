@@ -76,20 +76,21 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
 * <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
 * <a href="#GKE">GKE = Google Kubernetes Engine</a>
-* IKS = IBM cloud
 
-* DOKS = Digital Ocean
-* OKS = Oracle
-* PKE = Bonzai
-* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* IKS = IBM cloud
 * OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
 * PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
 * <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
-* Canonical
-
 * Rackspace's Kubernetes as a Service
 
-And others.
+* DOKS = Digital Ocean
+* OKS = Oracle
+
+* PKE = Bonzai
+* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* Canonical
+
+* <em>And others</em>
 
 REMEMBER: <a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
 
@@ -118,7 +119,7 @@ There are several options to run kubectl:
 
    <a name="CoreConcepts"></a>
 
-   ### Core concepts
+### Core concepts
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
@@ -127,14 +128,12 @@ There are several options to run kubectl:
    kubctl processes manifests (in yaml format) by translating them to API calls to the Kubernetes API program, a part of the "k8s master".
 
    Kubernetes "orchestrates" (runs) apps "dockerized" in container images in pods within nodes.
-   
+
+   Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
+
    Within AWS, Auto Scaling Groups are used to scale nodes.
 
-
-   <a name="ControlPlane"></a>
-
-   ### K8s control plane
-
+<hr />
 
 <a name="Keywords"></a>
 
@@ -212,7 +211,7 @@ Memorizing and using them while manually typing commands will save you much time
 
 <a name="K8s_API"></a>
 
-## K8s API Special Interest Groups
+### K8s API Special Interest Groups
 
 The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
 https://github.com/kubernetes/community/blob/master/sig-list.md</a>
@@ -5902,7 +5901,9 @@ A cgroup (control group) is a group of Linux processes with optional resource is
 
 
 <a name="Secrets"></a>
+
 ## Secrets
+
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/secret-128.png?raw=true">
 
    * <a target="_blank" href="https://kubernetesbyexample.com//secrets/">kubernetesbyexample.com: Secrets</a>
