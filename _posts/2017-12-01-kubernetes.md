@@ -20,9 +20,9 @@ k8s_version: 1.19
 
 ## Why Kubernetes?
 
-With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operational approvals. Freedom is why it contributes to corporate agility and faster time to market.
+With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operations management approvals. Freedom is why Kubernetes contributes to corporate agility and faster time to market.
 
-That is why it's so important to properly train developers to use Kubernetes "profesionally".
+That is why it's so important to properly train developers to use Kubernetes "professionally".
 
 The contribution of this is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
 
@@ -125,7 +125,10 @@ There are several options to run kubectl:
 
    The above diagram illustrates core technical concepts about Kubernetes.
    
-   kubctl processes manifests (in yaml format) by translating them to API calls to the Kubernetes API program, a part of the "k8s master".
+   kubctl processes manifests (in yaml format) by translating them to API calls to the Kubernetes API program, a part of the "k8s master". 
+   
+   * <a href="#GetAPIServices">Get API Services List</a>
+   <br /><br />
 
    Kubernetes "orchestrates" (runs) apps "dockerized" in container images in pods within nodes.
 
@@ -1492,10 +1495,13 @@ chmod -R u+wrx $HOME/.minikube
    <pre><strong>minikube start --vm-driver=hyperv
    </strong></pre>
 
-
 1. To enable services after starting minikube:
 
    <pre><strong>minikube addons enable metrics-server</strong></pre>
+
+   <a name="GetAPIServices"></a>
+
+   ### Get API Services List
 
 1. To see whether the metrics-server is running, or another provider of the resource metrics API (metrics.k8s.io), run the following command:
 
@@ -3053,6 +3059,13 @@ Service yaml files specify what ports are used in deployments.
 
 ### Auto-scaling
 
+The Horizontal Pod Autoscaler add more pods by updating the replicas count in the Deployment 
+   * In v1, based on <tt>targetCPUUtilizationPercentage: 50</tt>
+   * In v2, based on targetCPU and Memory, and custom metrics
+   <br /><br />
+
+The Cluster Autoscaler adds more nodes to the cluster.
+
 In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API measurement of demand.
 
    To create a cluster with autoscaling:
@@ -4254,7 +4267,6 @@ spec:
    </pre>
 
 
-
    <pre>volumeMode: Block</pre>
 
    <tt>persistentVolumeReclaimPolicy</tt> (Recycling) policies are:
@@ -4481,7 +4493,7 @@ https://kubernetes.io/docs/setup/pick-right-solution</a>
 
 
 
-   ### On GCP
+### On GCP
 
 1. On GCP:
 
@@ -4748,14 +4760,19 @@ daemonset "kube-flannel.ds" created
 
    REST API CRUD operations are used 
    
-   <a name="Admission"></a>
+
+<hr />
+
+<a name="Admission"></a>
+
+## Admission Controller
 
    The K8s Admission Controller enables less coding in yaml files by adding what is necssary.
 
    <pre><strong>kubectl details? </strong></pre>
 
 
-1. Put in that folder (in each node):
+In the example folder (for each node):
 
    * basic_auth.csv user and password
    * ca.crt - the certificate authority certificate from pki folder
