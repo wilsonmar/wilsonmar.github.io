@@ -106,9 +106,18 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 * <em>And others</em>
 
-REMEMBER: <a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
 
-Each cloud vendor also has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their proprietary features.
+<a name="Internals"></a>
+
+## Internals 
+
+<a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
+
+Each cloud vendor also has its own CLI command program (such as AWS <tt>eksctl</tt>) to provide their proprietary features.
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+Each cloud vendor has its own proprietary 
 
 
 <a name="HandsOnLabs"></a>
@@ -129,15 +138,16 @@ There are several options to run kubectl:
 
    * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
 
-   * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes like this:
+   * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes.
 
-   <a name="CoreConcepts"></a>
+
+<a name="CoreConcepts"></a>
 
 ### Core concepts
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
 
-   The above diagram illustrates core technical concepts about Kubernetes.
+   The above diagram (from CloudAcademy) illustrates core technical concepts about Kubernetes.
    
    kubctl processes manifests (in yaml format) by translating them to API calls to the Kubernetes API program, a part of the "k8s master". 
    
@@ -150,7 +160,24 @@ There are several options to run kubectl:
 
    <a href="#Volumes">Volumes of persistent data storage</a>
 
-zzz
+
+<a name="ControlPlane"></a>
+
+## k8s master = Control Plane
+
+Each cloud vendor also has its own <strong>K8s Master</strong>, also called a "Control Plane", illustrated by <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">this diagram</a>:
+
+![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
+
+Clients interact with the master node (K8s Control Plane) via the kube-apiserver.
+
+<strong>etcd</strong> is the database within each cluster.
+PROTIP: etcd is the one <strong>stateful</strong> component, so many run it separate cluster with its own HA redundancy.
+
+   * In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+
+
+
 
    Within AWS, Auto Scaling Groups are used to scale nodes.
 
@@ -448,25 +475,6 @@ In the illustration below, each pod (each a different color) encapsulates one or
 
 ![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
-
-
-<hr />
-
-<a name="ControlPlane"></a>
-
-## Internals: Control Plane
-
-
-<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
-
-Clients interact with the master node (K8s Control Plane) via the kube-apiserver.
-
-<strong>etcd</strong> is the database within each cluster.
-PROTIP: etcd is the one <strong>stateful</strong> component, so many run it separate cluster with its own HA redundancy.
-
-In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">
-"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br />
-<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 
 <hr />
