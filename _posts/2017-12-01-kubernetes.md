@@ -25,6 +25,107 @@ The contribution of this is a logical presentation making this complex material 
 The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
 -- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
 
+<a name="Keywords"></a>
+
+## Keyword Index Alphabetically
+
+Below is a list of Kubernetes technical terms, so you can go quickly/directly to each:
+
+<a href="#Admission">Admission Control</a>,
+<a href="#Annotations">Annotations</a>,
+<a href="#APIs">APIs</a>,
+<a href="#API_Server">API Server</a>,
+<a href="#apply">apply</a>,
+<a href="#AutoScaling">Auto-scaling</a>,
+<a href="#CKAD_ExamDomains">CKAD</a>, 
+<a href="#Clusters">Clusters</a>,
+<a href="#ClusterRoles">ClusterRoles</a>,
+<a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
+<a href="#Contexts">Contexts</a>,
+<a href="#Controllers">Controllers</a>,
+<a href="#CRD">CRD (Custom Resource Definition)</a>,
+<a href="#CronJobs">CronJobs</a>,
+<a href="#Declarative">Declarative</a>,
+Discovery,
+<a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
+<a href="#Deployments">deployment/</a>,
+<a href="#Endpoints"><strong>ep</strong>=endpoints</a>,
+<a href="#Envars">Environment Variables</a>,
+<a href="#Expose">Expose</a>,
+<a href="#Hashes">hashes</a>,
+<a href="#HealthChecks">health checks</a>,
+<a href="#Imperative">Imperative</a>,
+<a href="#InitContainers">Init Containers</a>,
+<a href="#Ingress">Ingress</a>,
+<a href="#JSONPath">JSONPath</a>,
+<a href="#Kubelet">Kubelet</a>,
+<a href="#kube-proxy">kube-proxy</a>,
+<a href="#Labels">Labels</a>, 
+<a href="#LoadBalancer">LoadBalancer</a>, 
+<a href="#Logging">Logging</a>,
+<a href="#Metadata">Metadata</a>,
+<a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
+<a href="#NetworkPolicies"><strong>netpol</strong>=NetworkPolicies</a>, 
+<a href="#Nodes"><strong>no</strong>=Nodes</a>,
+<a href="#NodePort">NodePort</a>,
+<a href="#OpenShift">OpenShift</a>,
+<a href="#Pods"><strong>po</strong>=Pods</a>, 
+<a href="#Podspecs">Podspecs</a>,
+<a href="#ReadinessProbes">Readiness Probes</a>, 
+<a href="#LivenessProbes">Liveness Probes</a>, 
+<a href="#Probes">Probes</a>, 
+<a href="#PersistentVolumes">Persistent Volumes</a>,
+<a href="#PortForwarding">Port Forwarding</a>,
+<a href="#PVC">PVC (Persistent Volume Claim)</a>,
+<a href="#Replication">Replication</a>,
+<a href="#Replicas">Replicas</a>,
+<a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
+<a href="#Rollbacks">Rollbacks</a>,
+<a href="#RollingUpdates">Rolling Updates</a>,
+<a href="#Secrets">Secrets</a>,
+<a href="#Selectors">Selectors</a>, 
+<a href="#Services"><strong>svc</strong>=Services</a>,
+<a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
+<a href="#ServicesDiscovery">Service Discovery</a>,
+<a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
+<a href="#StorageClasses">Storage Classes</a>,
+<a href="#Taints">Taints</a>,
+<a href="#Tolerations">Tolerations</a>,
+<a href="#Vim">Vim (tool)</a>,
+<a href="#Volumes">Volumes</a>,
+<a href="#Workloads">Workloads API</a>
+
+<strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
+Memorizing and using them while manually typing commands will save you much time.
+
+
+<a name="K8s_API"></a>
+
+## K8s API Special Interest Groups
+
+The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
+https://github.com/kubernetes/community/blob/master/sig-list.md</a>
+
+   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
+
+   * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+
+   * Service APIs: Endpoints, <a href="#Ingress">Ingress</a>, Service
+
+   * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+
+   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+
+   * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   <br /><br />
+
+<hr />
+
+## Why Kubernetes?
+
+With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operational approvals. Freedom is why it contributes to corporate agility and faster time to market.
+
+
 ## Open-Source History
 
 The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. That's why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
@@ -57,14 +158,16 @@ See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
-<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image filess (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
+<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
 
 
 <a name="Clouds"></a>
 
-## Cloud Kubernetes Services
+## Public Cloud Kubernetes Services
 
-Being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
+Kubernetes can run within private on-premises data centers on "bare metal" machines.
+
+But being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
 
 * ACK = Alibaba Cloud Kubernetes
 * <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"> az aks</a> commands
@@ -86,21 +189,19 @@ Being open-source has enabled Kubernetes to flourish on multiple clouds<a target
 
 And others.
 
+<a name="Kubectl"></a>
+
 ## CLI kubectl client controlling K8s control plane
 
 <a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
 
 <strong>Native Kubernetes</strong> comes with a command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle") used to manage the Kubernetes "Control Plane".
 
-
 Additionally, each cloud vendor has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their <a href="#ControlPlane">"Control Plane"</a>:
 
-   * Load balancing for Compute Engine instances
-   * Node pools to designate subsets of nodes within a cluster for additional flexibility
-   * Automatic scaling of your cluster's node instance count
-   * Automatic upgrades for your cluster's node software
-   * Node auto-repair to maintain node health and availability
-   * Logging and Monitoring with Cloud Monitoring for visibility into your cluster
+<a name="ControlPlane"></a>
+
+## Control Plane
 
 
 <hr />
@@ -212,122 +313,38 @@ The programmatic approach of scripts mean that code is needed to check condition
 
 <hr />
 
-<a name="Keywords"></a>
-
-## Keyword Index Alphabetically
-
-Below is a list of Kubernetes technical terms, so you can go quickly/directly to each:
-
-<a href="#Admission">Admission Control</a>,
-<a href="#Annotations">Annotations</a>,
-<a href="#APIs">APIs</a>,
-<a href="#API_Server">API Server</a>,
-<a href="#apply">apply</a>,
-Auto-scaling,
-<a href="#CKAD_ExamDomains">CKAD</a>, 
-<a href="#Clusters">Clusters</a>,
-<a href="#ClusterRoles">ClusterRoles</a>,
-<a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
-<a href="#Contexts">Contexts</a>,
-<a href="#Controllers">Controllers</a>,
-<a href="#CRD">CRD (Custom Resource Definition)</a>,
-<a href="#CronJobs">CronJobs</a>,
-<a href="#Declarative">Declarative</a>,
-Discovery,
-<a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
-<a href="#Deployments">deployment/</a>,
-<a href="#Endpoints"><strong>ep</strong>=endpoints</a>,
-<a href="#Envars">Environment Variables</a>,
-<a href="#Expose">Expose</a>,
-<a href="#Hashes">hashes</a>,
-<a href="#HealthChecks">health checks</a>,
-<a href="#Imperative">Imperative</a>,
-<a href="#InitContainers">Init Containers</a>,
-<a href="#Ingress">Ingress</a>,
-<a href="#JSONPath">JSONPath</a>,
-<a href="#Kubelet">Kubelet</a>,
-<a href="#kube-proxy">kube-proxy</a>,
-<a href="#Labels">Labels</a>, 
-<a href="#LoadBalancer">LoadBalancer</a>, 
-<a href="#Logging">Logging</a>,
-<a href="#Metadata">Metadata</a>,
-<a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
-<a href="#NetworkPolicies"><strong>netpol</strong>=NetworkPolicies</a>, 
-<a href="#Nodes"><strong>no</strong>=Nodes</a>,
-<a href="#NodePort">NodePort</a>,
-<a href="#OpenShift">OpenShift</a>,
-<a href="#Pods"><strong>po</strong>=Pods</a>, 
-<a href="#Podspecs">Podspecs</a>,
-<a href="#ReadinessProbes">Readiness Probes</a>, 
-<a href="#LivenessProbes">Liveness Probes</a>, 
-<a href="#Probes">Probes</a>, 
-<a href="#PersistentVolumes">Persistent Volumes</a>,
-<a href="#PortForwarding">Port Forwarding</a>,
-<a href="#PVC">PVC (Persistent Volume Claim)</a>,
-<a href="#Replication">Replication</a>,
-<a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
-<a href="#Rollbacks">Rollbacks</a>,
-<a href="#RollingUpdates">Rolling Updates</a>,
-<a href="#Secrets">Secrets</a>,
-<a href="#Selectors">Selectors</a>, 
-<a href="#Services"><strong>svc</strong>=Services</a>,
-<a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
-<a href="#ServicesDiscovery">Service Discovery</a>,
-<a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
-<a href="#StorageClasses">Storage Classes</a>,
-<a href="#Taints">Taints</a>,
-<a href="#Tolerations">Tolerations</a>,
-<a href="#Vim">Vim (tool)</a>,
-<a href="#Volumes">Volumes</a>,
-<a href="#Workloads">Workloads API</a>
-
-<strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
-Memorizing and using them while manually typing commands will save you much time.
-
-
-<a name="K8s_API"></a>
-
-## K8s API
-
-The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
-https://github.com/kubernetes/community/blob/master/sig-list.md</a>
-
-   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
-
-   * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-   * Service APIs: Endpoints, Ingress, Service
-   * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
-   * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
-   <br /><br />
-
+## Aggregation Layer
 
 The <strong>aggregation layer</strong> lets you install additional Kubernetes-style APIs in your cluster.
+
+
+   * Load balancing for Compute Engine instances
+   * Node pools to designate subsets of nodes within a cluster for additional flexibility
+   * Automatic scaling of your cluster's node instance count
+   * Automatic upgrades for your cluster's node software
+   * Node auto-repair to maintain node health and availability
+   * Logging and Monitoring with Cloud Monitoring for visibility into your cluster
+
+Kubernetes is called "container orchestration" software because it automates the deployment, scaling, and management of <strong>containerized</strong> applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
+
+   * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
+   * Load balancing
+   * Mixed operating systems (Ubuntu, Alpine, etc.)
+   * Using images in Docker avoids the "it works on my machine" troubleshooting of setup or dependencies
+   * Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
+   <br /><br />
 
 
 <hr />
 
 
-
-## Why Kubernetes?
-
-Kubernetes, <strong>dev teams</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and wait time to coordinate releases. Freedom is why it contributes to corporate agility and faster time to market.
-
-Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
-
-Kubernetes is called "container orchestration" software because it automates the deployment, scaling, and management of containerized applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
-
-* Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
-* Load balancing
-* Mixed operating systems (Ubuntu, Alpine, etc.)
-* Using images in Docker avoids the "it works on my machine" troubleshooting of setup or dependencies
-* Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
-<br /><br />
-
-<a name="Topics"></a>
+<a name="Contributions"></a>
 
 ## What Kubernetes contributes
+
+Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
 
 * <a href="#IAC">Infrastructure as code</a> (IAC)
 * Manage containers
@@ -1527,6 +1544,7 @@ v2beta2.autoscaling                    Local     True        24s
    <pre><strong>sudo apt-get update && sudo apt-get install -y apt-transport-https
    </strong></pre>
 
+
    <a name="kubectl"></a>
 
    ## kubectl CLI client install
@@ -1608,11 +1626,13 @@ v2beta2.autoscaling                    Local     True        24s
 💀  Removed all traces of the "minikube" cluster.
    </pre>
 
-   Since Kubectl 1.8, scale is the preferred way to control graceful delete.
+   <a name="Replicas"></a>
+   
+   Since Kubectl 1.8, scale is the preferred way to control graceful delete:
 
    <pre><strong>kubectl scale --replicas=3 deployment nginx-deployment</strong></pre>
 
-   Since Kubectl 1.8, rollout and rollback support stateful sets.
+   Since Kubectl 1.8, rollout and rollback support stateful sets:
 
    <pre><strong>kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1 --record
    kubectl rollout status deployment.v1.apps/nginx-deployment
@@ -2975,6 +2995,7 @@ Routes are deployed by an OpenShift Enterprise administrator as <strong>routers<
 The IP assigned each pod is on the <strong>Service Network</strong>.
 
 
+
 <a name="ClusterNetworking"></a>
 
 ## HA Proxy cluster
@@ -3331,10 +3352,6 @@ In <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-arch
 
    <pre><strong>kubectl scale deployment demo-app --replicas=3
    </strong></pre>
-
-   <a name="HPA"></a>
-   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
-   HPA (HorizontalPodAutoscaler)
 
 1. Loop responses:
 
@@ -3782,7 +3799,7 @@ Such direct configuration of security contexts in each individual pod can be a l
 
 <a name="PodSecurityPolicies"></a>
 
-#### Pod Security policies (PSP)
+#### psp = Pod Security policies
 
 <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/psp-128.png?raw=true">
 
@@ -4263,12 +4280,17 @@ spec:
    
 ### Node Controllers and Ingress
 
+
    The <strong>Node controller</strong> assigns a CIDR block to newly registered nodes,
    then continually monitors node health. When necessary, it taints unhealthy nodes and
    gracefully evicts unhealthy pods. The default timeout is 40 seconds.
 
    Load balancing among nodes (hosts within a cloud) are handled by third-party port forwarding
    via Ingress controllers. See <a target="_blank" href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingress definitions</a>.
+
+<a name="Ingress"></a>
+
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/ing-128.png?raw=true">
 
    An <strong>"Ingress"</strong> is a collection of rules that allow inbound connections to reach the cluster services.
 
@@ -5700,10 +5722,8 @@ shows the steps of how to create Compute Engine yourself:
 <a target="_blank" href="https://github.com/kubeflow/kubeflow">https://github.com/kubeflow/kubeflow</a> makes deployment of Kubernetes for Machine Learning (TensorFlow)
 <a target="_blank" href="http://www.kai-waehner.de/blog/2018/05/09/deep-learning-at-extreme-scale-%E2%80%A8with-apache-kafka-open-source-ecosystem/">using Kafka</a>
 
-## AWS K8s Cluster Auto-scaler
 
-<a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md">https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md</a> 
-provides deep-dive notes and code.
+
 
 ## References
 
@@ -5842,7 +5862,7 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 
    * Kubernetes deployments, services and ingress
    * Deploying MongoDB using Helm
-   * Azure Monitor for Containers, Horizontal Pod Autoscaler and the Cluster Autoscaler
+   * Azure Monitor for Containers, Horizontal Pod Autoscaler to add more pods by updating the replicas count in the Deployment (based on targetCPUUtilizationPercentage: 50) and the Cluster Autoscaler to add more nodes to the cluster
    * Building CI/CD pipelines using Azure DevOps and Azure Container Registry
    * Scaling using Virtual Nodes, setting up SSL/TLS for your deployments, using Azure Key Vault for secrets
    <br /><br />
@@ -6111,6 +6131,14 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 
 <strong>GKE custom roles</strong> provides even more granular control to a specific user account managing software running inside a certain GKE cluster, but not have any access to view GCP resources, and nothing else.
 
+## Quotas
+
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/quota-128.png?raw=true">
+
+
+<hr />
+
+<a name="Autoscaler"></a>
 
 ## Autoscaler
 
@@ -6118,6 +6146,22 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 * https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md
 * https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
 * resize the amount of CPU/RAM for a specific Pod or Container. https://github.com/kubernetes/kubernetes/issues/2072
+
+## AWS K8s Cluster Autoscaler
+
+<a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md">https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md</a> 
+provides deep-dive notes and code.
+
+   <a name="HPA"></a>
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
+
+## HPA (HorizontalPodAutoscaler)
+
+increases the instance count.
+
+
+VPA (Vertical Pod Autoscaler)
+
 
 
 ## References
