@@ -18,16 +18,127 @@ k8s_version: 1.19
 {% include l18n.html %}
 {% include _toc.html %}
 
-I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in production.
+## Why Kubernetes?
 
-The contribution of this is a logical presentation making this complex material easier to understand quickly yet more deeply.
+With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operational approvals. Freedom is why it contributes to corporate agility and faster time to market.
 
-The aim here is to provide insightful commentary around carefully sequenced hands-on activities automated in a shell script
--- an immersive step-by-step "deep dive" tutorial aimed to make you productive.
+That is why it's so important to properly train developers to use Kubernetes "profesionally".
+
+The contribution of this is a carefully sequenced presentation of complex material so it's both easier to understand quickly yet more deeply. "PROTIP" flags insightful commentary while hands-on activities automated in a shell script -- an immersive step-by-step "deep dive" tutorial to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in <a href="#Production">production use</a>.
+
+
+
+## Open-Source History
+
+The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. That's why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
+
+Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
+
+   <ul><a target="_blank" href="https://kubernetes.io/"><u>https://kubernetes.io</u></a><br />
+   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
+
+The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
+
+<a name="K8sVersion"></a>
+
+Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/kubernetes</a> where Kubernetes source code  is open-sourced, its <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">releases</a>:
+
+   * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
+   * v1.6 was led by a CoreOS developer
+   * v1.7 was led by a Googler
+   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.22 was the current version at Sep 2021.
+   <br /><br />
+
+Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
+Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
+See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
+
+<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
+<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
+<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
+revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
+
+<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
+
+
+<a name="Clouds"></a>
+
+## Public Cloud Kubernetes Services
+
+Kubernetes can run within private on-premises data centers on "bare metal" machines.
+
+But being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
+
+* ACK = Alibaba Cloud Kubernetes
+* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"> az aks</a> commands
+* <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
+* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
+* <a href="#GKE">GKE = Google Kubernetes Engine</a>
+* IKS = IBM cloud
+
+* DOKS = Digital Ocean
+* OKS = Oracle
+* PKE = Bonzai
+* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
+* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
+* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
+* <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
+* Canonical
+
+* Rackspace's Kubernetes as a Service
+
+And others.
+
+REMEMBER: <a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
+
+Each cloud vendor also has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their proprietary features.
+
+
+<a name="HandsOnLabs"></a>
+
+##  Hands-on Demos/labs
+
+I think the quickest yet deepest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. Hands-on practice is how you develop the "muscle memory" need to operate Kubernetes confidently.
+
+<a name="Kubectl"></a>
+
+PROTIP: To pass Kubernetes exams, you need to master the many "incantations" to control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle").
+
+There are several options to run kubectl:
+
+   * Use the Cloud Shell/Console provided by the cloud vendor.
+   
+   * If you have a laptop with enough memory and CPU, you can install Kubernetes <strong>minikube</strong> on your laptop to run kubectl.
+
+   * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
+
+   * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes like this:
+
+   <a name="CoreConcepts"></a>
+
+   ### Core concepts
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+
+   The above diagram illustrates core technical concepts about Kubernetes.
+   
+   kubctl processes manifests (in yaml format) by translating them to API calls to the Kubernetes API program, a part of the "k8s master".
+
+   Kubernetes "orchestrates" (runs) apps "dockerized" in container images in pods within nodes.
+   
+   Within AWS, Auto Scaling Groups are used to scale nodes.
+
+
+   <a name="ControlPlane"></a>
+
+   ### K8s control plane
+
 
 <a name="Keywords"></a>
 
-## Keyword Index Alphabetically
+### kubectl CLI command keywords
 
 Below is a list of Kubernetes technical terms, so you can go quickly/directly to each:
 
@@ -108,110 +219,22 @@ https://github.com/kubernetes/community/blob/master/sig-list.md</a>
 
    <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
 
-   * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
 
-   * Service APIs: Endpoints, <a href="#Ingress">Ingress</a>, Service
+   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
 
-   * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
 
-   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
 
-   * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
    <br /><br />
-
-<hr />
-
-## Why Kubernetes?
-
-With Kubernetes, a <strong>stand-alone dev team</strong> can take complete control of production operations in cloud environments -- deploy both application code and all the environment settings, at their own cadence, without ceremonies and waiting for operational approvals. Freedom is why it contributes to corporate agility and faster time to market.
-
-
-## Open-Source History
-
-The word "kubernetes" is the ancient Greek word for people who pilot cargo ships – "helmsman" in English. That's why Kubernetes experts are called "captains", and why associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a>, the package manager for Kubernetes.
-
-Kubernetes is often abbreviated as <strong>k8s</strong> (pronounced "kate"), with 8 replacing the number of characters between k and s. Thus, <a target="_blank" href="https://k8s.io/">https://k8s.io</a> redirects you to the <strong>home page for Kubernetes software</strong>:
-
-   <ul><a target="_blank" href="https://kubernetes.io/"><u>https://kubernetes.io</u></a><br />
-   (<a target="_blank" href="https://twitter.com/kubernetesio/">Twitter: @kubernetesio</a>)</ul>
-
-The website, and the Kubernetes code is maintained by the Linux Foundation, which also owns the registered trademark for the logo of a sailing ship's wheel.
-
-<a name="K8sVersion"></a>
-
-Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/kubernetes</a> where Kubernetes source code  is open-sourced, its <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">releases</a>:
-
-   * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
-   * v1.6 was led by a CoreOS developer
-   * v1.7 was led by a Googler
-   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
-   * v1.22 was the current version at Sep 2021.
-   <br /><br />
-
-Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
-Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
-See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
-
-<img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-<a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
-<a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
-revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
-See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
-
-<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
-
-
-<a name="Clouds"></a>
-
-## Public Cloud Kubernetes Services
-
-Kubernetes can run within private on-premises data centers on "bare metal" machines.
-
-But being open-source has enabled Kubernetes to flourish on multiple clouds<a target="_blank" href="https://codefresh.io/kubernetes-guides/kubernetes-cloud-aws-vs-gcp-vs-azure/">*</a>
-
-* ACK = Alibaba Cloud Kubernetes
-* <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"> az aks</a> commands
-* <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
-* <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
-* <a href="#GKE">GKE = Google Kubernetes Engine</a>
-* IKS = IBM cloud
-
-* DOKS = Digital Ocean
-* OKS = Oracle
-* PKE = Bonzai
-* MKE = D2iQ (Day two iQ) rebranded from Mesos DC/OS meta clusters
-* OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution
-* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
-* <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
-* Canonical
-
-* Rackspace's Kubernetes as a Service
-
-And others.
-
-<a name="Kubectl"></a>
-
-## CLI kubectl client controlling K8s control plane
-
-<a href="#Clouds">Each cloud SaaS vendor listed above</a> provides their own <strong>GUI</strong> for Kubernetes Administrators to access using an internet browser such as Google Chrome.
-
-<strong>Native Kubernetes</strong> comes with a command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle") used to manage the Kubernetes "Control Plane".
-
-Additionally, each cloud vendor has their own CLI command program (such as AWS <tt>eksctl</tt>) to configure and manage their <a href="#ControlPlane">"Control Plane"</a>:
-
-<a name="ControlPlane"></a>
-
-## Control Plane
 
 
 <hr />
 
 
-<a name="HandsOnLabs"></a>
-
-##  Hands-on Demos/labs
-
-I think the quickest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. 
+### Lab Training Vendors
 
 In addition to other training providers, several vendors offer monthly/annual subscriptions with labs/demos:
 
@@ -409,11 +432,6 @@ In the illustration below, each pod (each a different color) encapsulates one or
 <a name="ControlPlane"></a>
 
 ## Internals: Control Plane
-
-As with other CLI client programs, kubectl is installed on your laptop or runs within a "Bastion host" in the cloud, as illustrated in this diagram from <a href="#CloudAcademy">CloudAcademy</a>:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
-
 
 
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
@@ -6075,6 +6093,9 @@ Alex Soto (lordofthejars.com)
 
 https://itnext.io/bootstrapping-kubernetes-clusters-on-aws-with-terraform-b7c0371aaea0
 using kubeadm on AWS
+
+
+<a name="Production"></a>
 
 ## Production
 
