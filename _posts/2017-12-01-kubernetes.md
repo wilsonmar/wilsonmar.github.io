@@ -216,7 +216,7 @@ The programmatic approach of scripts mean that code is needed to check condition
 
 ## Keyword Index Alphabetically
 
-Below is a list of Kubernetes technical terms, arranged alphabetically so you can go quickly/directly to each topic:
+Below is a list of Kubernetes technical terms, so you can go quickly/directly to each:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -282,7 +282,28 @@ Discovery,
 <a href="#Workloads">Workloads API</a>
 
 <strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
-Memorizing and using them will save you much time.
+Memorizing and using them while manually typing commands will save you much time.
+
+
+<a name="K8s_API"></a>
+
+## K8s API
+
+The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
+https://github.com/kubernetes/community/blob/master/sig-list.md</a>
+
+   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
+
+   * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+   * Service APIs: Endpoints, Ingress, Service
+   * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+   * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   <br /><br />
+
+
+The <strong>aggregation layer</strong> lets you install additional Kubernetes-style APIs in your cluster.
+
 
 <hr />
 
@@ -755,6 +776,7 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
    * <a target="_blank" href="https://www.meetup.com/topics/kubernauts/">https://www.meetup.com/topics/kubernauts</a>
    * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
 
+<hr />
 
 ## Latest videos about K8s
 
@@ -1074,7 +1096,23 @@ Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.
    * <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> video course <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">"Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
 
 
-### LinkedIn
+### Coursera
+
+<a target="_blank" href="https://www.coursera.org/specializations/architecting-google-kubernetes-engine">Coursera's "Architecting with Google Kubernetes Engine Specialization"</a> is focused on building efficient computing infrastructures using Kubernetes and Google Kubernetes Engine (GKE). The specialization introduces participants to deploying and managing containerized applications on GKE and the other services provided by Google Cloud Platform. Through a combination of presentations, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as pods, containers, deployments, and services; as well as networks and application services. The specialization also covers deploying practical solutions including security and access management, resource management, and resource monitoring. 
+
+1. <a target="_blank" href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
+
+   This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
+
+2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a> reviews the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
+
+3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna. Covers: GKE Cluster; Deployments;Jobs and Cronjobs; Cluster Scaling; Pod placement; Pod Autoscaling and Node Pools; Pod networking; Services, Ingress; Load balancing; Network security; Volumes, Stateful Sets; ConfigMaps; Secrets; Persistent Data; 
+
+4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
+
+
+
+### LinkedIn Learning (formerly Lynda)
 
 <a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/kubernetes-for-developers?u=26886050">"Kubernetes Essential Training: Application Development"</a> 
 by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cli 1.18.2 on a Mac:
@@ -1591,12 +1629,14 @@ v2beta2.autoscaling                    Local     True        24s
 
 <hr />
 
-## Configuration
+<a name="ClusterConfig"></a>
+
+## Cluster Configuration
 
 Service cluster IPs and ports are found through Docker --link compatible environment variables specifying ports opened by the service proxy.
 
 
-1. REMEMBER: Unlike k describe xxx, k cluster-info is a single verb:
+1. REMEMBER: Unlike <tt>k describe</tt>, <tt>k cluster-info</tt> is a single verb:
 
    <pre><strong>kubectl cluster-info</strong></pre>
 
@@ -2968,12 +3008,29 @@ Service yaml files specify what ports are used in deployments.
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/96952588-6c5e9380-14ac-11eb-8658-40fdee2aee93.png">
 <img width="707" alt="k8s-svc-deploy-asso" src="https://user-images.githubusercontent.com/300046/96952588-6c5e9380-14ac-11eb-8658-40fdee2aee93.png"></a>
 
+### Auto-scaling
+
 In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API measurement of demand.
+
+   To create a cluster with autoscaling:
+
+   <pre><strong>gcloud container clusters create <em>cluster-name</em> --num-nodes 30 \
+   --enable-autoscaling --min-nodes 15 --max-nodes 50 --zone <em>comput-zone</em> </strong></pre>
+
+   To scale nodes in a cluster node pool:
+
+   <pre><strong>gcloud container clusters resize <em>projectdemo</em> --node-pool <em>default-pool</em> --size 6</strong></pre>
+
+   To disable auto-scaling:
+
+   <pre><strong>... --no-enable-autoscaling ...</strong></pre>
+
+
 
 <a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="
 k8s-linuxacademy-arch-912x415-32433.jpg" src="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"></a>
-is described in the <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
+is described in <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/155">
 Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>). 
 
 * <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
@@ -2998,22 +3055,6 @@ kube-ps1.sh creates a shell pod envbin.
 https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 
    <pre>k create cronjob my-job --image=busybox --schedule="*/1 * * * *" --logger hello</pre>
-
-## K8s API
-
-Kubernetes is maintained by SIGs (Special Interest Groups) formed around groups of APIs:
-https://github.com/kubernetes/community/blob/master/sig-list.md
-
-   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
-
-   * Workloads APIs: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-   * Service APIs: Endpoints, Ingress, Service
-   * Config and storage APIs: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-   * Metadata APIs: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
-   * Cluster APIs: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
-   <br /><br />
-
-The aggregation layer lets you install additional Kubernetes-style APIs in your cluster.
 
 
 <a name="Deployments"></a>
@@ -6067,35 +6108,6 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 <strong>GKE custom roles</strong> provides even more granular control to a specific user account managing software running inside a certain GKE cluster, but not have any access to view GCP resources, and nothing else.
 
 
-## Video Courses
-
-<a target="_blank" href="https://www.coursera.org/specializations/architecting-google-kubernetes-engine">Coursera's "Architecting with Google Kubernetes Engine Specialization"</a> is focused on building efficient computing infrastructures using Kubernetes and Google Kubernetes Engine (GKE). The specialization introduces participants to deploying and managing containerized applications on GKE and the other services provided by Google Cloud Platform. Through a combination of presentations, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as pods, containers, deployments, and services; as well as networks and application services. The specialization also covers deploying practical solutions including security and access management, resource management, and resource monitoring. 
-
-1. <a target="_blank" href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
-
-   This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
-
-2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a> reviews the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
-
-3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna. Covers: GKE Cluster; Deployments;Jobs and Cronjobs; Cluster Scaling; Pod placement; Pod Autoscaling and Node Pools; Pod networking; Services, Ingress; Load balancing; Network security; Volumes, Stateful Sets; ConfigMaps; Secrets; Persistent Data; 
-
-   To create a cluster with autoscaling:
-
-   <pre><strong>gcloud container clusters create <em>cluster-name</em> --num-nodes 30 \
-   --enable-autoscaling --min-nodes 15 --max-nodes 50 --zone <em>comput-zone</em> </strong></pre>
-
-   To scale nodes in a cluster node pool:
-
-   <pre><strong>gcloud container clusters resize <em>projectdemo</em> --node-pool <em>default-pool</em> --size 6</strong></pre>
-
-   To disable auto-scaling:
-
-   <pre><strong>... --no-enable-autoscaling ...</strong></pre>
-
-
-4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
-
-
 ## Autoscaler
 
 * https://github.com/kubernetes/kubernetes/blob/release-1.0/docs/proposals/autoscaling.md now obsolete
@@ -6135,6 +6147,10 @@ https://www.linkedin.com/pulse/effectively-choosing-k8-node-size-capacity-anurag
 https://kubernetes.io/docs/concepts/scheduling-eviction/pod-overhead/
 
 https://medium.com/windmill-engineering/why-does-developing-on-kubernetes-suck-4f4ae6812c8d
+
+https://www.tikalk.com/posts/2020/05/14/2020-05-14-Kubexperience-for-developers/
+
+
 
 
 ## More on DevOps #
