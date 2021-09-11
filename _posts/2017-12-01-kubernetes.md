@@ -18,7 +18,7 @@ k8s_version: 1.19
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why Kubernetes? Speed vs. Sacurity
+## Why Kubernetes? Speed vs. Security
 
 With Kubernetes in <a href="#Clouds">clouds</a>, each <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
 
@@ -26,12 +26,14 @@ That is why it's so important to properly train developers to "professionally" u
 
 But that is easier said than done. The power and flexibility of Kubernetes means there is a lot to learn about Kubernetes.
 
-So, alas, some managers fall back to "protecting" Kubernetes in production by allowing only a small number of Operations specialists (separated from developers) to handle Kubernetes. When specialists are the only ones capable of doing some part of the work, they often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
+So, alas, some managers fall back to "protecting" Kubernetes in production by enabling only a small number of Operations specialists (separated from developers) to handle Kubernetes. 
+
+When specialists are the only ones capable of doing some part of the work, they often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
 
 "Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
 
 
-## This article
+## This article (automation)
 
 Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, stand up a Kubernetes cluster in AWS (after you establish credentials). But that's just the first step.
 
@@ -72,7 +74,7 @@ In the series, the "Borg" society <a target="_blank" href="https://www.merriam-w
 ![k8s-borg-490x431](https://user-images.githubusercontent.com/300046/132962385-096c4357-e939-40b0-a5b0-62476c8c9fa5.png)
 
 <img align="right" alt="kubernetes-logo-125x134-15499.png" src="https://user-images.githubusercontent.com/300046/33524448-ca1d7e30-d7da-11e7-9358-45845910198c.png">
-The logo for Kubernetes inside the 6 sided hexagons representing each Google service has <strong>7 sides</strong>. This is because a beloved character in the TV series played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
+The logo for Kubernetes inside the 6 sided hexagons representing each Google service has <strong>7 sides</strong>. This is because a beloved character in the U.S. TV series (played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
 <a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
@@ -186,6 +188,10 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
 
 
 Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+
+![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
+<a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
+
 
 Within AWS, Auto Scaling Groups are used to scale nodes.
 
@@ -311,9 +317,9 @@ https://github.com/kubernetes/community/blob/master/sig-list.md</a>
 
    <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
 
-   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-
    * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
+
+   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
 
    * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
 
@@ -432,9 +438,11 @@ The programmatic approach of scripts mean that code is needed to check condition
 
 <hr />
 
-## Alternative Docker Runtimes
+## Docker and Alternative Runtimes
 
-In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+<a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:
+
+<img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
 
 <a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
 
@@ -450,8 +458,9 @@ Runc is supported by CRI-O, Docker, ContainerD. Runc is the low-level tool which
    * <a target="_blank" href="https://www.youtube.com/watch?v=q1PcAawa4Bg&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT">VIDEO: How Kubernetes Works</a> explained by <a target="_blank" href="https://www.linkedin.com/in/brendan-burns-487aa590/"> Brendan Burns</a> (K8s co-founder)
    <br /><br />
 
-![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
-<a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
 
 
 
@@ -483,11 +492,6 @@ Kubernetes is called "container orchestration" software because it automates the
 <a name="Contributions"></a>
 
 ## What Kubernetes contributes
-
-
-<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
-
-
 
 Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
 
