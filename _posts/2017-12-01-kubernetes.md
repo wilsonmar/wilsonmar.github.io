@@ -109,27 +109,31 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 <a name="ControlPlane"></a>
 
-## k8s master = Control Plane
+## k8s master = Control Plane Orchestrator
 
-Each cloud vendor also has its own <strong>K8s Master</strong>, also called a "Control Plane", illustrated by <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">this diagram</a>:
+Each cloud vendor also has its own <strong>K8s Master node</strong>, also called a "Control Plane", illustrated by <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">this diagram</a>:
 
 ![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
 
-Clients interact with the master node (K8s Control Plane) via the kube-apiserver.
+At the bottom of the diagram, from the center out: 
+Kubernetes runs each app that has been "dockerized" in a <strong>container</strong> image file stored for retrieval from a <strong>Docker image registry</strong>.
 
-<strong>etcd</strong> is the database within each cluster.
-PROTIP: etcd is the one <strong>stateful</strong> component, so many run it separate cluster with its own HA redundancy.
+Within each worker node, several app containers can run within each of several <strong>pods</strong>.
+Within each pod, all Containers share the same lifecycle -- get created and removed together.
 
-   * In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+Kubernetes orchestrates several <strong>worker nodes</strong> and a single <strong>Master Node</strong>.
 
+The <strong>Master Node</strong> (aka "Control Plane") runs several key processes (aka service components):
 
+   * The ("kube-scheduler") watches newly created pods that have no node assigned, and selects a node for them to run on. Factors taken into account for scheduling decisions include, individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference and deadlines.
 
-<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+   * The "Kube-Controller-manager" runs a closed loop that watches the shared state of the cluster (persisted in etcd) through the kube-apiserver and makes changes attempting to move the current state towards the desired state, by reacting to the stored declarative models. Controllers are responsible for instantiating the actual resource represented by any Kubernetes resource. These actual resources are what your app needs to allow it to run successfully. Examples of controllers that ship with Kubernetes today are the ReplicaSets, replication controller, endpoints controller, namespace controller, DaemonSets, Job and serviceaccounts controller. 
 
+   * <strong>etcd</strong> is the database (key-value data store) within each cluster. PROTIP: etcd is the one <strong>stateful</strong> component, so many run it in a cluster separate for its own HA redundancy.
 
+   * The <strong>API server</strong> receives all administrative commands as REST API calls. Command-line programs communicating with Kubernetes do so by converting commands into REST API calls to the API server (named "kube-apiserver").
 
-   Within AWS, Auto Scaling Groups are used to scale nodes.
-
+Master components make global decisions about the cluster (for example, scheduling), and detecting and responding to cluster events (starting up a new pod when a replication controller’s ‘replicas’ field is unsatisfied.)
 
 
 <a name="Internals"></a>
@@ -141,8 +145,6 @@ PROTIP: etcd is the one <strong>stateful</strong> component, so many run it sepa
    The above diagram (from CloudAcademy) illustrates core technical concepts about Kubernetes.
    In the center at the right:
    
-   Kubernetes "orchestrates" (runs) each app that has been "dockerized" in a container image within <strong>pods</strong>.
-
    Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
 
    <a href="#Volumes">Volumes of persistent data storage</a>
@@ -157,6 +159,17 @@ Each cloud vendor also has its own CLI command program (such as AWS <tt>eksctl</
    
    * <a href="#GetAPIServices">Get a list of all K8s API Services</a>
    <br /><br />
+
+
+
+<img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
+
+
+References:
+
+   * In <a target="_blank" href="https://app.pluralsight.com/course-player?courseId=bf09c049-8db9-4d14-81c7-77f1e942524c">"Kubernetes Un-Scaried"</a> by Phil Taprogge (of Snyk) offers this diagram:<br /><img width="435" alt="k8s-phil-diagram" src="https://user-images.githubusercontent.com/300046/97088709-09761500-15f0-11eb-8eb2-4f99edab5db0.png">
+
+Within AWS, Auto Scaling Groups are used to scale nodes.
 
 
 
@@ -2245,6 +2258,7 @@ spec:
    CRD (Custom Resource Definition) defines a custom/another/new resource kind.
    It uses <tt>apiVersion: apiextensions.k8s.io</tt>.
    (like built-in code for StatefulSets).
+
    Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
    For examaple: <tt>kubectl tree etcdcluster example</tt>
 
@@ -2398,6 +2412,8 @@ Events:
 
 ## Multi-Container Pods
 
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/pod-128.png?raw=true">
+
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
    * <a target="_blank" href="https://www.youtube.com/watch?v=3RTvoI-A7UQ">VIDEO: Kubernetes and Container Orchestration 101 - Computer Stuff They Didn't Teach You #11</a> by Microsoft legend Scott Hanselman.
    <br /><br />
@@ -2406,8 +2422,6 @@ The <strong>kube-scheduler</strong> assigns pods to nodes at runtime.
 Before scheduling, it checks resources, QoS, policies, user specs.
 
 This needs application executables to be designed and built as microservices (independent, small, reuseable code) instead of a monalith.
-
-Containers within each pod share the same lifecycle.
 
 Several containers: the webapp, log-agent, Istio, etc.
 
@@ -3715,8 +3729,6 @@ Use the Google Console to specify the size of hardward in each <strong>node pool
 
    * Kubernetes Control Plane security: https://cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security
    <br /><br />
-
-The Kubernetes "Control Plane" consists of master components: API server, etcd database, Controller Manager.
 
 Each Cloud Kubernetes offering provides (hides) its Control Plane.
 
