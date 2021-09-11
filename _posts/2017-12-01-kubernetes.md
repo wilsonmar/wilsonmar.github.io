@@ -18,7 +18,7 @@ k8s_version: 1.19
 {% include l18n.html %}
 {% include _toc.html %}
 
-I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me to both prepare for Kubernetes exams and to work as an SRE.
+I created <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">this</a> to help me to both <a  href="#exam-preparations">prepare for</a> <a href="#professional-certifications-in-kubernetes">Kubernetes exams</a> and to work as an SRE in production.
 
 The contribution of this is a logical presentation making this complex material easier to understand quickly yet more deeply.
 
@@ -57,7 +57,7 @@ See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
 revealed that the predecessor to Kubernetes was called <a target="_blank" href="https://ai.google/research/pubs/pub43438">"The Borg"</a> becuase initial developers were fans of the "Star Trek Next Generation" TV series. In the series, the "Borg" society <a target="_blank" href="https://www.merriam-webster.com/dictionary/subsume">subsumes</a> all  civilizations it encounters into its "collective". The logo for Kubernetes inside the 6 sided hexagons representing each Google service has 7 sides. This is because a beloved character in the TV series, played by the curvacious Jeri Ryan, is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
-<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons">The Kubernetes community repo</a> provides icon image filess (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
+<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image filess (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
 
 
 <a name="Clouds"></a>
@@ -2383,6 +2383,8 @@ Because Deployments provide a helpful "front end" to ReplicaSets, training focus
 
 ## Deploy Replicas for Replication, Rolling Updates
 
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/rs-128.png?raw=true">
+
 A ReplicaSet controller ensures that a population of Pods, all identical to one another, are running at the same time. 
 
 Deployments manage their own ReplicaSets to achieve the declarative goals you prescribe, so you will most commonly work with Deployment objects.
@@ -3034,8 +3036,9 @@ is described in <a target="_blank" href="https://linuxacademy.com/cp/modules/vie
 Linux Academy's CKA course</a> of 5:34:43 hours of videos by Chad Miller (<a target="_blank" href="https://twitter.com/OpenChad/">@OpenChad</a>). 
 
 * <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-fundamentals/">Kubernetes Fundamentals</a> $299 video course offered on EdX.com from LinuxFoundation.
+![k8s-arch-xteam-793x573]()
 
-<a target="_blank" href="../img/k8s/k8s-arch-x-team.webp"><img alt="Kubernetes Architecture" width="793" height="573" src="../img/k8s/k8s-arch-x-team.webp"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/132930586-4634a11c-7aa1-4667-ab24-b019144a2265.png"><img alt="k8s-arch-xteam-793x573" width="793" height="573" src="https://user-images.githubusercontent.com/300046/132930586-4634a11c-7aa1-4667-ab24-b019144a2265.png"></a>
 Source: <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">X-Team</a>
 
 
@@ -4955,6 +4958,8 @@ Alternately:
 
 ## Storage Classes
 
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sc-128.png?raw=true">
+
 A storage class (sc) is a type of <strong>template</strong> used to <strong>dynamically</strong> provision data storage.
 
 Create persistent volumes dynamically:
@@ -4969,7 +4974,6 @@ parameters:
   iopsPerGB: "10"
   fsType: ext4
    </pre>
-
 
    REMEMBER: <tt>name: storage-class-name</tt> must match <a href="#PVC">PVC config</a> <tt>storageClassName: storage-class-name</tt>
 
