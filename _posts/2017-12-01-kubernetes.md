@@ -27,6 +27,7 @@ That is why it's so important to properly train developers to use Kubernetes "pr
 There is a lot to Kubernetes, but shell files or GUI can be created to hide details for common operations.
 
 I have a script that can, with one command, stands up a Kubernetes cluster in AWS (after you establish credentials).
+But that's just the first step.
 
 
 ## This articles
