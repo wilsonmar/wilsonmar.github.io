@@ -225,6 +225,18 @@ Official Flash cards of definitions:
    * <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development-Security">Putting it All Together</a> - 34 items
    <br /><br >
 
+Quizzes on CloudAcademy.com by exam domain:
+
+   1. <a target="_blank" href="https://cloudacademy.com/quiz/35709/">Security and Risk Assessment</a>
+   2. <a target="_blank" href="https://cloudacademy.com/quiz/35788/">Asset Security</a>
+   3. <a target="_blank" href="https://cloudacademy.com/quiz/35824/">Security Architecture and Engineering</a>
+   4. <a target="_blank" href="https://cloudacademy.com/quiz/35869/">Communication and Network Security</a>
+   5. <a target="_blank" href="https://cloudacademy.com/quiz/36014/">Identity and Access Management</a>
+   6. <a target="_blank" href="https://cloudacademy.com/quiz/36540/">Security Testing and Assessment</a>
+   7. <a target="_blank" href="https://cloudacademy.com/quiz/36541/">Security Operations</a>
+   8. <a target="_blank" href="https://cloudacademy.com/quiz/36542/">Security Development Security</a>
+   <br /><br />
+
 Written References:
 
    * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">$58</a> <a target="_blank" href="https://learning.oreilly.com/library/view/isc2-cissp-certified/9781119475934/">Sybex BOOK</a>: "(ISC)2 CISSP Certified Information Systems Security Professional <strong>Official Study Guide</strong> & Practice Tests Bundle Second Edition" by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
@@ -266,9 +278,9 @@ Video prep courses view:
 
    <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
 
-      1. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-1-secure-software-concepts?u=26886050">Secure Software Concepts</a> Released Feb 12, 2020 (Confidentiality, Integrity, Availability triad, IAM, design)
+   1. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-1-secure-software-concepts?u=26886050">Secure Software Concepts</a> Released Feb 12, 2020 (Confidentiality, Integrity, Availability triad, IAM, design)
    
-      2. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-2-secure-software-requirements?u=26886050">Secure Software Requirements</a>
+   2. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-2-secure-software-requirements?u=26886050">Secure Software Requirements</a>
 
    3. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-3-secure-software-design?u=26886050">Secure Software Design</a> 1h 48m 
 
