@@ -137,7 +137,7 @@ Every <strong>app Container</strong> has its own <strong>unique port number</str
 Kubernetes expects that each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
    * Docker Hub cloud
    * Docker Enterprise (on-prem)
-   * JFrog Artifactory
+   * <a target="_blank" href="https://wilsonmar.github.io/jfrog/">JFrog Artifactory</a>
    * Nexus
    * <a target="_blank" href="https://quay.io/">Quay.io</a> (operated by Red Hat)
    <br /><br />
@@ -760,7 +760,7 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
    * <a target="_blank" href="https://github.com/kubernauts/practical-kubernetes-problems">https://github.com/kubernauts/practical-kubernetes-problems</a> provides yaml files
 
-   * <a target="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">kubernetes API (v1.19)</a>
+   * <a target="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v{{ page.k8s_version }}/">kubernetes API (v{{ page.k8s_version }})</a>
 
 
 ### Day before exam
@@ -2152,6 +2152,8 @@ PROTIP: Install <a target="_blank" href="https://github.com/ahmetb/kubectx">http
 <a name="OpenShift"></a>
 
 ### OpenShift project wall namespaces
+
+https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-vertical-autoscaler.html
 
 Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces</strong>, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding <strong>security annotations</strong> which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
 
