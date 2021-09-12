@@ -20,7 +20,7 @@ k8s_version: 1.19
 
 ## Why Kubernetes? Speed vs. Security
 
-With Kubernetes in <a href="#Clouds">clouds</a>, each <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
+With Kubernetes in a <a href="#Clouds">cloud</a>, given enough training, an  <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
 
 That is why it's so important to properly train developers to "professionally" use Kubernetes.
 
@@ -35,7 +35,7 @@ When specialists are the only ones capable of doing some part of the work, they 
 
 ## This article (automation)
 
-Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, use   <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform IaC and Sentinel PaC</a> to stand up a Kubernetes cluster within AWS (after installing clients and establishing credentials), then identify the optimal Kunbernetes specifications by running tests of how quickly it takes Kubernetes to scale horizonatally and vertically. 
+Because of the above issues, I am creating <a href="#shell-scripts-in-ssh">scripts</a> that can, with one command, invoke a CI/CD workflow (on GitHub.com) that uses  <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform IaC and Sentinel PaC</a> to stand up a Kubernetes cluster within AWS (after installing clients and establishing credentials), then identify the optimal Kunbernetes specifications by running tests of how quickly it takes Kubernetes to scale horizonatally and vertically. 
 
 But that's just the beginning.
 
@@ -96,7 +96,7 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * <a href="#AKS">AKS = Azure Kuberntes Service</a> using <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/aks?view=azure-cli-latest"><tt>az aks</tt></a> commands
 * <a href="#ECS">ECS = Elastic Container Service (in AWS)</a> 
 * <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
-* <a href="#GKE">GKE = Google Kubernetes Engine</a>
+* <a href="#GKE">GKE = Google Kubernetes Engine</a> <tt>gcloud container</tt>
 
 * IKS = IBM cloud
 * OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution - OpenShift Dedicated, OpenShift Online
@@ -165,6 +165,9 @@ In other words, each Pod is duplicated with the same Containers specified in a D
 A Pod can consists of app Containers plus sidecars such as <a target="_blank" href="https://wilsonmar.github.io/servicemesh">Service Mesh</a>.
 
 As many <strong>Replicas</strong> of one or more Pods are run within each <strong>Worker Node</strong>.
+
+<a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
+<a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
 
 The Kubernetes <strong>Master Node</strong> has several services processes which together orchestrates (manages) several <strong>Worker Nodes</strong>. The Master Node (aka "Control Plane") runs several key processes (aka service components):
 
@@ -267,6 +270,7 @@ Discovery,
 <a href="#Expose">Expose</a>,
 <a href="#Hashes">hashes</a>,
 <a href="#HealthChecks">health checks</a>,
+<a href="#HPA"><strong>hpa</strong>=HorizontalPodAutoscaler</a>,
 <a href="#Imperative">Imperative</a>,
 <a href="#InitContainers">Init Containers</a>,
 <a href="#Ingress">Ingress</a>,
@@ -720,7 +724,7 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
    ### Build speed
 
-1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh</a> (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
+1. See 3 preview exam questions (with answer explained) after signing up at <a target="_blank" href="https://killer.sh/">https://killer.sh (Killer Shell's) CKA/CKAD Simulator</a> provides close replica of the CKAD exam browser terminal with 20 CKAD and 25 CKA questions, at 29.99€ for two sessions (before 10% discount). Each session includes 36 hours of access to a cluster environment. They recommend you start the first session when you’re at the beginning of your CKA or CKAD journey. 
 
 1. Practice <a target="_blank" href="https://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc">Keyboard shortcuts for Bash</a>
 
@@ -1313,6 +1317,7 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
    to run on top of cri-o, such as RedHat's podman, or LXC.
 
 But let's start by installing minikube on your laptop.
+
 
 
 <a name="Kustomize"></a>
@@ -2012,7 +2017,7 @@ K8s namespaces are used to separate resources (network, files, users, processes,
 <strong>virtual clusters</strong> inside a K8s cluster.
 
    * Nginx-Ingress controller
-   * Database (<a href=#shared-db">shared mysql-service</a> or mongodb-service)
+   * Database (<a href="#shared-db">shared mysql-service</a> or mongodb-service)
    * Logging: Elastic stack
    * Monitoring
    <br /><br />
@@ -2284,13 +2289,35 @@ spec:
    Admins define abstractions for <a href="#Deployments">deployment</a> of images (Docker containers) which define templates (blueprints) for creating pods.
 
    <a name="CRD"></a>
+
+   ### CRD (Custom Resource Definition)
+   
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/crd-128.png?raw=true">
-   CRD (Custom Resource Definition) defines a custom/another/new resource kind.
-   It uses <tt>apiVersion: apiextensions.k8s.io</tt>.
-   (like built-in code for StatefulSets).
+   
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/kubernetes-crd-faas?in=terraform/kubernetes">
+   CRDs define a custom/another/new resource kind</a>.
+   
+   It uses <tt>apiVersion: apiextensions.k8s.io</tt> (like built-in code for StatefulSets).
 
    Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
    For examaple: <tt>kubectl tree etcdcluster example</tt>
+
+   #### Terraform Provider Alpha
+
+   For a dynamic way to manage any Kubernetes API resource using HashiCorp Terraform.
+   The <tt>kubernetes_manifest</tt> resource using terraform-plugin-go 
+   to provide an HCL analog for Kubernetes YAML manifests
+   to create any resource, including CRDs and custom resources.
+   
+   Once the plan has been generated, we use server side apply to apply the manifest. 
+
+   It graduated (<a target="_blank" href="https://github.com/hashicorp/terraform-provider-kubernetes-alpha>from alpha</a>)
+   into the official Kubernetes provider as a beta in July 2021.
+
+   <a target="_blank" href="https://www.hashicorp.com/blog/beta-support-for-crds-in-the-terraform-provider-for-kubernetes">
+   BLOG: Beta Support for CRDs in the Terraform Provider for Kubernetes</a>
+
+
 
    ### metadata:
 
@@ -2650,7 +2677,8 @@ Practice test with quiz about deployments: https://kodekloud.com/courses/kuberne
 
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/svc-128.png?raw=true">
 
-<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h13m44s">VIDEO: Nina</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h13m44s">VIDEO by Nina</a>
+<br /><br />
 
 Services provide an <strong>un-changing IP address</strong> to pods in the back-end.
 
@@ -6217,9 +6245,9 @@ There are three kinds of roles in cCloud IAM: primitive, predefined, and custom.
 (app engine, compute engine, and cloud storage).
 They existed before Cloud IAM, but can still be used with Cloud IAM. 
 The three primitive roles: <strong>viewer role</strong> permits read-only actions, such as viewing existing resources or data across the whole project. <strong>editor role</strong> adds modifying of existing resources.
-<strong>owner role</strong> adds the right to manage roles and permissions and set up billing for a project.<a target="_blank" href-"https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">*</a>
+<strong>owner role</strong> adds the right to manage roles and permissions and set up billing for a project.<a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">*</a>
 
-kubectl apply -f pod-reader-role.yaml
+   <pre>kubectl apply -f pod-reader-role.yaml</pre>
 
    <pre>kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
