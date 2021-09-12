@@ -81,7 +81,7 @@ In the series, the "Borg" society <a target="_blank" href="https://www.merriam-w
 The logo for Kubernetes inside the 6 sided hexagons representing each Google service has <strong>7 sides</strong>. This is because a beloved character in the U.S. TV series (played by <a target="_blank" href="https://www.imdb.com/name/nm0005394/?ref_=nv_sr_srsg_0">Jeri Ryan</a>) is a converted Borg called <a target="_blank" href="https://en.wikipedia.org/wiki/Seven_of_Nine">"7 of 9"</a>. 
 See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kubernetes">Timeline of Kubernetes</a>
 
-<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (resources) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
+<a target="_blank" href="https://github.com/kubernetes/community/tree/master/icons/png/resources/labeled">The Kubernetes community repo</a> provides icon image files (<a target="_blank" href="https://qiita.com/yosshi_/items/2db0a0e66a16711bfe5f">resources</a>) labeled and unlabeled, in png and svg formats in 128 and 256 pixels.
 
 
 <a name="Clouds"></a>
@@ -1319,10 +1319,11 @@ But let's start by installing minikube on your laptop.
 
 ### Kustomize templating utility
 
-<a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> provides a <tt>kustomize</tt> command to create customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
+The <tt>kustomize</tt> provider from <a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> provides a way to create customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=5gsHYdiD6v8">VIDEO by The DevOps Guy</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=ASK6p2r-Yrk">VIDEO Kustomize Getting Started</a>
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
    <br /><br />
 
 Some feel Kustomize doesn't provide enough flexibility and that it results in too many different files for one application.
@@ -1333,7 +1334,7 @@ Alternatives are yq and Jsonnet.
 
 ### Jsonnet
 
-Jsonnet (pronounced "jay sonnet") at <a target="_blank" href="https://jsonnet.org/">jsonnet.org</a> (from a 20% project within Google) is a DSL templating language which can generate .json, .conf, .sh, and .ini files. Its Creative Commons-licensed C++ code  is at <a target="_blank" href="https://github.com/google/jsonnet">github.com/google/jsonnet</a>. 
+Jsonnet (pronounced "jay sonnet") at <a target="_blank" href="https://jsonnet.org/">jsonnet.org</a> (from a 20% project within Google) is a DSL templating language which can generate .json, .conf, .sh, and .ini files. Its Creative Commons-licensed C++ code is at <a target="_blank" href="https://github.com/google/jsonnet">github.com/google/jsonnet</a>. 
 
 A faster <a target="_blank" href="https://github.com/google/go-jsonnet">go-jasonnet</a> is written in <a target="_blank" href="https://wilsonmar.github.io/golang">Go language</a> and built using Bazel. There's also <a target="_blank" href="https://www.newtonsoft.com/json">Json.NET</a>.
 
