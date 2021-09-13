@@ -147,41 +147,32 @@ App Containers within the same Pod share the <strong>same IP address</strong>, h
 
 Those who choose to use the <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> place an "Envoy proxy" in each Pod to facilitate communictions and retry logic from app containers with business logic.
 
-Within each Pod, all Containers share the same lifecycle -- get created and removed together.
-In other words, each Pod is duplicated with the same Containers specified in a Deployment.
-
-
 <a name="Cluster"></a>
 
-### Pod Replicas within Nodes
+### Pod Replicas within Worker Nodes
 
-![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/132930586-4634a11c-7aa1-4667-ab24-b019144a2265.png"><img alt="k8s-arch-xteam-793x573" width="793" height="573" src="https://user-images.githubusercontent.com/300046/132930586-4634a11c-7aa1-4667-ab24-b019144a2265.png"></a>
 
-As illustrated in <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, 
+As illustrated on the right side of <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">the diagram above</a>:
 
+"Worker Nodes", the equivalent of physical servers, are created to house various numbers of Pods.
 
+Within each Pod, all Containers share the same lifecycle -- get created and removed together.
 
+In other words, each Pod is "replicated" with the same set of Containers specified in a Deployment specification.
 
-<a name="ControlPlane"></a>
-
-## k8s master = Control Plane Orchestrator
-
-Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</strong> controlled by a <strong>Master Node</strong>.
-
-Several app Containers can run within each of several <strong>Pods</strong>.
-
-A Pod can consists of app Containers plus sidecars such as <a target="_blank" href="https://wilsonmar.github.io/servicemesh">Service Mesh</a>.
-
-As many <strong>Replicas</strong> of one or more Pods are run within each <strong>Worker Node</strong>.
-
-
+Again, "Replicas" of Pods are created within "Worker Nodes".
 
 > PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
 
 LIMITS: Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
 
 
+<a name="ControlPlane"></a>
 
+## Control Plane Orchestration within a Master Node
+
+Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</strong> controlled by a <strong>Master Node</strong>.
 
 <a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
 <a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
