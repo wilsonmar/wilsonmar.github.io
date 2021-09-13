@@ -66,6 +66,11 @@ Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/k
    * v1.22 was the current version at Sep 2021.
    <br /><br />
 
+1. Get the latest Semantic version of a stable release of Kubernetes (such as "v1.22.1"):
+
+   <pre>curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt</pre>
+
+
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
 See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
