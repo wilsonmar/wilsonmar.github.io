@@ -123,7 +123,7 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 ### App containers within Pods
 
-Kubernetes manages apps (application executables) that have been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
+Kubernetes runs apps (application executables) that have been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
    * Docker Hub cloud
    * Docker Enterprise (on-prem)
    * <a target="_blank" href="https://wilsonmar.github.io/jfrog/">JFrog Artifactory</a>
@@ -131,14 +131,14 @@ Kubernetes manages apps (application executables) that have been "dockerized" wi
    * <a target="_blank" href="https://quay.io/">Quay.io</a> (operated by Red Hat)
    <br /><br />
 
-App containers are arranged inside <strong>Pods</strong> 
+Kubernetes runs apps containers within <strong>Pods</strong>.
 
 <img alt="k8s-nodes-ports-1048x714" width="1048" height="714" src="https://user-images.githubusercontent.com/300046/133039621-09f5c865-0d83-4352-b58c-c5f4dac81918.png">
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
-Every <strong>app Container</strong> has its own <strong>unique port number</strong> within the unique IP assigned to each Pod.
+Every <strong>app Container</strong> has its own <strong>unique port number</strong> to a unique internal IP assigned to each Pod.
 
-App Containers within the same Pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+App Containers within the same Pod share the <strong>same internal IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
 
 
 <a name="Sidecars"></a>
@@ -146,6 +146,9 @@ App Containers within the same Pod share the <strong>same IP address</strong>, h
 ### Sidecards within Pods 
 
 Those who choose to use the <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> place an "Envoy proxy" in each Pod to facilitate communictions and retry logic from app containers with business logic.
+
+Within each Pod, all Containers share the same lifecycle -- get created and removed together.
+
 
 <a name="Cluster"></a>
 
@@ -155,17 +158,15 @@ Those who choose to use the <a target="_blank" href="https://wilsonmar.github.io
 
 As illustrated on the right side of <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">the diagram above</a>:
 
-"Worker Nodes", the equivalent of physical servers, are created to house various numbers of Pods.
+"Worker Nodes", the equivalent of physical host servers, are created to house various numbers of Pods.
 
-Within each Pod, all Containers share the same lifecycle -- get created and removed together.
+LIMITS: Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
 
-In other words, each Pod is "replicated" with the same set of Containers specified in a Deployment specification.
+Each Pod is "replicated" with the same set of Containers specified in a Deployment specification.
 
 Again, "Replicas" of Pods are created within "Worker Nodes".
 
 > PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
-
-LIMITS: Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
 
 
 <a name="ControlPlane"></a>
@@ -2280,7 +2281,7 @@ spec:
    </td></tr>
    </table>
 
-   ### kind: abbreviations
+### kind: abbreviations
 
    PROTIP: Use <strong>abbreviations</strong> (in lower case) of basic Kubernetes components to save time typing:
 
@@ -2541,6 +2542,7 @@ Because Deployments provide a helpful "front end" to ReplicaSets, training focus
 
 <a name="Replication"></a>
 <a name="ReplicaSets"></a>
+<a name="Deployments"></a>
 
 ## Deploy Replicas for Replication, Rolling Updates
 
@@ -3235,7 +3237,6 @@ https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 ### Deployments
 
    * <a target="_blank" href="https://kubernetesbyexample.com//deployments/">kubernetesbyexample.com: Deployments</a>
-
 
 A Deployment is an API object that manages a replicated application, typically by running Pods with no local state.
 
