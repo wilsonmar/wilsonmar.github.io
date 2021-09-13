@@ -276,6 +276,7 @@ Video prep courses view:
 
    * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CSSLP">CSSLP (Certified Secure Software Lifecycle Professional)</a> is the secure <strong>software development</strong> certification. The 15 Sep 2020 edition is NOT covered in the <a target="_blank" href="https://learning.oreilly.com/library/view/csslp-certification-all-in-one/9781260441697/">All-in-One book</a> by Wm. Arthur Conklin, Daniel Paul Shoemaker. 
 
+
    <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
 
    1. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-1-secure-software-concepts?u=26886050">Secure Software Concepts</a> Released Feb 12, 2020 (Confidentiality, Integrity, Availability triad, IAM, design)

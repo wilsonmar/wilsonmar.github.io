@@ -119,22 +119,11 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 <hr />
 
-<a name="Cluster"></a>
+<a name="PodIPs"></a>
 
-### Cluster of Nodes
+### App containers within Pods
 
-Kubernetes manages several <strong>apps</strong> within several different types of <strong>Pods</strong>.
-
-![k8s-container-sets-479x364.jpg](https://user-images.githubusercontent.com/300046/33526550-6c98a980-d800-11e7-9862-ff202492e08b.jpg)
-<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
-
-Each <strong>app Container</strong> within the same pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
-
-Every <strong>app Container</strong> has its own <strong>unique port number</strong> within the unique IP assigned to each Pod.
-
-> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
-
-Kubernetes expects that each app that has been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
+Kubernetes manages apps (application executables) that have been "dockerized" within a <strong>Container</strong> "image" folder stored for retrieval from a <strong>container image registry</strong> such as:
    * Docker Hub cloud
    * Docker Enterprise (on-prem)
    * <a target="_blank" href="https://wilsonmar.github.io/jfrog/">JFrog Artifactory</a>
@@ -142,9 +131,35 @@ Kubernetes expects that each app that has been "dockerized" within a <strong>Con
    * <a target="_blank" href="https://quay.io/">Quay.io</a> (operated by Red Hat)
    <br /><br />
 
-LIMITS: Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
+App containers are arranged inside <strong>Pods</strong> 
 
-In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> has an "Envoy proxy" to facilitate the communictions and retry logic from the business logic containers in its pod.
+<img alt="k8s-nodes-ports-1048x714" width="1048" height="714" src="https://user-images.githubusercontent.com/300046/133039621-09f5c865-0d83-4352-b58c-c5f4dac81918.png">
+<!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
+
+Every <strong>app Container</strong> has its own <strong>unique port number</strong> within the unique IP assigned to each Pod.
+
+App Containers within the same Pod share the <strong>same IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
+
+
+<a name="Sidecars"></a>
+
+### Sidecards within Pods 
+
+Those who choose to use the <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> place an "Envoy proxy" in each Pod to facilitate communictions and retry logic from app containers with business logic.
+
+Within each Pod, all Containers share the same lifecycle -- get created and removed together.
+In other words, each Pod is duplicated with the same Containers specified in a Deployment.
+
+
+<a name="Cluster"></a>
+
+### Pod Replicas within Nodes
+
+![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
+
+As illustrated in <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, 
+
+
 
 
 <a name="ControlPlane"></a>
@@ -153,18 +168,20 @@ In each pod, <a target="_blank" href="https://wilsonmar.github.io/service-mesh">
 
 Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</strong> controlled by a <strong>Master Node</strong>.
 
-![k8s-arch-master](https://user-images.githubusercontent.com/300046/132959208-44f362cd-5ac2-4160-af6f-950a14f13b95.png)
-
-From the core at the bottom of <a target="_blank" href="https://www.linkedin.com/pulse/kubernetes-honorable-captain-bridge-gaurav-jain/">the diagram above</a>, 
-
 Several app Containers can run within each of several <strong>Pods</strong>.
-
-Within each Pod, all Containers share the same lifecycle -- get created and removed together.
-In other words, each Pod is duplicated with the same Containers specified in a Deployment.
 
 A Pod can consists of app Containers plus sidecars such as <a target="_blank" href="https://wilsonmar.github.io/servicemesh">Service Mesh</a>.
 
 As many <strong>Replicas</strong> of one or more Pods are run within each <strong>Worker Node</strong>.
+
+
+
+> PROTIP: "The median number of containers running on a single host is about 10." -- Sysdig, April 17, 2017. But there can be up to 100 pods per node (at v1.17)
+
+LIMITS: Production setups have at least 3 nodes per cluster. K8s supports up to 5,000 node clusters of up to 150,000 pods (at v1.17).
+
+
+
 
 <a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
 <a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
@@ -192,7 +209,6 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
    Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
 
    <a href="#Volumes">Volumes of persistent data storage</a>
-
 
 Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
 
