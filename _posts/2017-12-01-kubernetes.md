@@ -66,7 +66,7 @@ Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/k
    * v1.22 was the current version at Sep 2021.
    <br /><br />
 
-1. Get the latest Semantic version of a stable release of Kubernetes (such as "v1.22.1"):
+1. PROTIP: Get the latest Semantic version of a stable release of Kubernetes (such as "v1.22.1") as variable <tt>K8_VERSION</tt> :
 
    <pre>curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt</pre>
 
@@ -244,7 +244,7 @@ There are several options to run kubectl:
 
    * Use the Cloud Shell/Console provided by the cloud vendor.
    
-   * If you have a laptop with enough memory and CPU, you can install Kubernetes <strong>minikube</strong> on your laptop to run kubectl.
+   * If you have a laptop with enough memory and CPU, you can install Kubernetes <strong>minikube</strong>  or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
 
    * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
 

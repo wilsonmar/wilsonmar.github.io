@@ -6,10 +6,10 @@ tags: [devops, devsecops]
 date: "2021-06-12"
 file: "chaos-engineering"
 image:
-# azure-devops-products-1900x400-21605.jpg
-  feature: https://user-images.githubusercontent.com/300046/56040192-132c7600-5cf3-11e9-93cb-99490c5ae7b8.jpg
-  credit: Microsoft
-  creditlink: 
+# chaos-engineering-hero-1900x500
+  feature: https://user-images.githubusercontent.com/300046/133199858-1c9e5eb5-cf3a-43c5-a3b7-93ecdeb894b8.png
+  credit: Zhu Xiaosi
+  creditlink: http://www.uml.org.cn/zjjs/202004141.asp
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -347,9 +347,13 @@ https://neelanjanmanna.medium.com/a-beginners-practical-guide-to-containerisatio
 
 https://theqalead.com/podcast/gremlin-in-the-machine-how-to-achieve-chaos-engineering-netflix-amazon/
 
+https://medium.com/the-cloud-architect/what-is-aws-fault-injection-simulator-and-why-you-should-care-3fbe457ca227
+
 
 ## More on DevSecOps #
 
 This is one of a series on DevSecOps:
 
 {% include devops_links.html %}
+
+
