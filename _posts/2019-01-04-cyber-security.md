@@ -1935,10 +1935,7 @@ Ciphers:
    * "Lucifer" was created by IBM and used a <a target="_blank" href="https://www.youtube.com/watch?v=FGhj3CGxl8I">Feistel cipher</a> a framework to build ciphers. based on DES. Used by TwoFish. Its innovation is decryption.
    <br /><br />
 
-   Kerckhoff’s Principle - the only safe is the key
-
-* A symmetric algorithm uses a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
-* Symmetric algorithms include both stream-based and block ciphers. 
+   Kerckhoff’s Principle - the only safe part is the key.
 
 * discrete logarithms ??  https://crypto.stanford.edu/pbc/notes/crypto/factoring.html
 
@@ -1946,53 +1943,58 @@ REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
 
 http://thedigitalstandard.blogspot.com/2009/11/why-fuzzy-hashing-is-really-cool.html
 
-Hashing digital signatures: MD5 (128), NSA's SHA-1 (160), SHA-256, 384, 512 <a target="_blank" href="https://www.youtube.com/watch?v=stf9UlkYYn0&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37&index=76">VIDEO QUIZ</a>
-   * RIPEMD-160 (originally based on MD4, now obsoleted)
-   * whirlpool 512 hash
- 
-Symmetric algorithms (same key for encrypt/decrypt, so one time): 
+<strong>Hashing</strong> digital signatures: 
+   * MD5 (128-bit)
+   * RIPEMD-160 (originally based on MD4, obsoleted)
+   * SHA-1 by NSA (160 bit), SHA-256, 384, 512 <a target="_blank" href="https://www.youtube.com/watch?v=stf9UlkYYn0&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37&index=76">VIDEO QUIZ</a>
+   * Whirlpool 512 hash
+   <br /><br />
+
+<strong>Symmetric</strong> algorithms (same key for encrypt/decrypt, so one time),
+uses a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> uses a 64-bit block size. 56 bits.
    * 3DES, 
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES (Rijndael)</a>, 
    * <a target="_blank" href="https://en.wikipedia.org/wiki/RC5">RC5</a>/RC6, 
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Blowfish_%28cipher%29">Blowfish</a>
-   * Twofish, Skipjack, SAFER, CAST-128, 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Skipjack_(cipher)">Skipjack cipher</a> by NSA Clipper chip in phones. Uses 80-bit key on 64-key blocks.
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Blowfish_%28cipher%29">Blowfish</a> 32 - 448 bits on 64-bit block size. Uses hex digits of Pi.
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Twofish">Twofish</a> (written by Bruce Sheiner) have key size 128-, 192-, 256 bits and block size of 128 bits.
+   * SAFER, CAST-128, 
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Serpent_%28cipher%29">Serpent</a>
    * <a target="_blank" href="https://en.wikipedia.org/wiki/ElGamal_encryption">El Gamal</a> (slowest)
 
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm">TEA (Tiny Encryption Algorithm)</a> ?
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm">TEA (Tiny Encryption Algorithm)</a> has 128 bit keys. Presented in Cambridge 1994.
+   <br /><br />
 
-Asymmetic (2 keys) REMEMBER:
+<strong>Asymmetic</strong> (2 keys) include both stream-based and block ciphers:
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange">Diffie-Hellman key exchange</a> published 1976. First public/private key.
    * <a target="_blank" href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a> is defacto commercial asymmetic algorithm
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Elliptic_curve_cryptography">ECC (Elliptic Curve Cryptosystem)</a> is US govt. std asymmetric (efficient) support digital signatures and encryption. 
    * DSA, 
-   * Diffie-Hellman key exchange, 
    * Knapsack 
 
    * IDEA provides a key size up to 128 bits.
    * 3DES provides a key size up to 168 bits. 3 costly rounds. Not widely used.
    * <a target="_blank" href="https://www.youtube.com/watch?v=O4xNJsjtN6E">AES</a> supports a 128-, 192-, or 256-bit (16 byte) block size, weaved through data blocks. Subset of Rijndael, winner of NIST contest for faster in 1998.
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Twofish">Twofish</a> (written by Bruce Sheiner) provides a key size 128-, 192-, 256 bits.
    * <a target="_blank" href="https://en.wikipedia.org/wiki/RC6">RC6</a> (written by Ron Rivest) provides the <strong>largest key size</strong> up to 2,048 bits. From NSA. RC6 supports a 32-, 64-, or 128-bit block size. 
    <br /><br />
 
-   REMEMBER: rounds of computations:
+Rounds of computations: REMEMBER: 
    * HAVAL performs 3, 4, or 5 
    * MD5 performs 4 
    * IDEA performs 8
    * AES (Rijndael) performs 14 
-   * TwoFish performs 16
+   * Twofish performs 16
    * Tiger performs 24
    * Skipjack performs 32
    * SHA-256 performs 64
    <br /><br />
 
-Stream ciphers are generally cheaper to implement than block ciphers.
+<strong>Stream</strong> ciphers are generally cheaper to implement than block ciphers.
    * RC4 is a symmetric stream cipher, so does not have a block size.
    <br /><br />
 
-Block symmetric cipher modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
-Modes used by block ciphers: 
+<strong>Block symmetric cipher</strong> modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
    * Block ciphers are generally less susceptible to security issues.
    * Block ciphers are generally used more in software implementations.
 
@@ -2003,13 +2005,13 @@ Modes used by block ciphers:
    * GCM (Galois field/Counter Mode) parallel 128 bits https://www.wikiwand.com/en/Galois/Counter_Mode
    <br /><br />
 
-NSA Clipper chip uses Skipjack
-
-<a target="_blank" href="https://www.youtube.com/watch?v=VPvZbMXfv_0">VIDEO</a>: Hybrid cryptography combines the convenience of a public-key cryptosystem with the efficiency of a symmetric-key cryptosystem. Public-key cryptosystems are convenient in that they do not require the sender and receiver to share a common secret in order to communicate securely:
+<a target="_blank" href="https://www.youtube.com/watch?v=VPvZbMXfv_0">VIDEO</a>: Hybrid cryptography combines the convenience of a public-key cryptosystem with the efficiency of a symmetric-key cryptosystem. 
+Public-key cryptosystems are convenient in that they do not require the sender and receiver to share a common secret in order to communicate securely:
    1. The symmetric algorithm provides keys used for encryption. 
-   2. The symmetric keys are passed to the asymmetric algorithm, which encrypts the symmetric keys and automatically distributes them. 
+   2. The symmetric keys are passed to the asymmetric algorithm, which encrypts the symmetric keys 
+   and automatically distributes them. 
    3. The message is encrypted with the symmetric key. 
-   4. Both the message and the key are sent to the receiver. 
+   4. Both the message and the public key are sent to the receiver. 
    5. The receiver decrypts the symmetric key and uses the symmetric key to decrypt the message.
    <br /><br />
 
