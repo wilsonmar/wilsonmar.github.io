@@ -3,7 +3,7 @@ layout: post
 title: "Azure Machine Learning"
 excerpt: "Notes for before and after getting AI-900, AI-102, and DP-100 certified, as we automate ML workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
-date: "2021-06-04"
+date: "2021-09-04"
 file: "azure-machine-learning"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -795,86 +795,13 @@ Generally:
 
 Azure does not present all the statistics, which we cover here.
 
-#### Confusion Matrix
+#### Metrics of classification model performance
 
-The multi-colored box at the lower-right is called a <a target="_blank" href="https://docs.microsoft.com/en-us/azure/machine-learning/how-to-understand-automated-ml#confusion-matrix">"Confusion Matrix"</a>, a metric of classification model performance.
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/create-classification-model-azure-machine-learning-designer/evaluate-model">DOC</a>:
-Test data was split so some of the data is used to determine how well predictions created from a model. The matrix is presented in a 2x2 box with the Predicted label to Actual (True) Label (yes or no) to identify true/false positives/negatives. 
-
-REMEMBER for the test: Draw this on the white board from memory:
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr align="center"><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr align="center"><th> Predicted: yes 110<br />"Precision"<br />Relevant:</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 False Positives<br />(Type I error) </td></tr>
-   <tr align="center"><th> Predicted: no 55 </th><td> 5 False Negatives<br />(Type II error)</td><td> 50 True Negatives<br />"Specificity = Recall"</td></tr>
-   <tr align="center"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
-   </table>
-
-Outside the box of n (total):
-
-   * <strong>Accuracy</strong> Overall, how often is the classifier correct? (TP + FN) / n = ( 100 + 5 ) / 165.
-
-   * <strong>Prevalence</strong>: (aka "Error Rate") How often does the yes condition actually occur in our sample?  actual yes/total = 105/165 = 0.64
-
-Based on n (total) diagonal:<a target="_blank" href="https://www.dataschool.io/simple-guide-to-confusion-matrix-terminology/">*</a>
-
-   * <strong>Average Precision (AP)</strong> is the ratio of correct predictions (True Positives + True Negatives) to the total number of predictions. When it predicts yes, how often is it <strong>True</strong> (correct)?". (100 + 50) / 165 
-
-   * <strong>Misclassification Rate</strong> : Overall, how often is it <strong>False</strong> (wrong)? (10+5) / 165 = 0.09
-
-Within the box:
-
-   * <strong>Precision rate</strong> is the ability of a classification model to identify only the relevant data points. It is the percentage of items <strong>selected</strong> (True Positive and False Positive) which were <strong>relevant = correctly predicted</strong> yes: 100 / 110 = 0.91. This is used in studying rare diseases when many more people would not have the disease than with the disease or <a target="_blank" href="https://towardsdatascience.com/beyond-accuracy-precision-and-recall-3da06bea9f6c">picking terrorists</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=FnJ3L-63Cf8&t=20s">VIDEO</a>: 
-Columns represent the known truth: The higher the number, the better:
-
-   * <strong>Sensitivity (aka "Recall") rate</strong> or the ability of a model to find all the relevant cases within a dataset. Sensitivity is the percent of items <strong>correctly identified as Positive</strong> from among  <strong>relevant items</strong> selected. (True Positives and False Negatives). It is the percent of  = TP / (TP + FN) = 100 / (100 + 5) = 0.83. 
-
-   * <strong>Specificity rate</strong> is the percent of no's correctly identified as <strong>Negative</strong> = TN / (TN + FP) = 50 / (50 + 10) = 0.83. 
-
-A perfect classifier has precision and recall both equal to 1.
-But Positivity and Recall metrics cannot both be perfect. conflict with one another.<a target="_blank" href="https://www.analyticsvidhya.com/blog/2020/09/precision-recall-machine-learning/">*</a>
-Precision and recall should always be reported together.
-
-<a target="_blank" href="https://www.wikiwand.com/en/F-score">F-1 Score</a> is a single number that takes into account both precision and recall: the weighted average (harmonic mean) of the true positive rate (recall) and precision = 2 ( 1/P + 1/R ).
-The larger the F1, the better, when comparing between models.
-
-Different values in the Confusion Matrix would be created for each level of threshold.
-<a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&start_radio=1">VIDEO</a>: The <a target="_blank" href="https://www.dataschool.io/roc-curves-and-auc-explained/">Receiver Operating Characteristic (ROC) curve</a> plots the relationship between True Positive Rate (TPR) aka "Sensitivity" on the Y axis and False Positive Rate (FPR) or (1 - Specificity) on the X axis as the decision threshold changes. 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=4jRBRDbJemM">VIDEO</a>:
-![stats-roc-1057x650](https://user-images.githubusercontent.com/300046/117527397-012c6880-af89-11eb-86e0-c97409bb246a.png)
-
-<a target="_blank" href="https://www.youtube.com/watch?v=OAl6eAyP-yo">VIDEO</a>: 
-<strong>AUC (Area Under the Curve)</strong> measures the area underneath the ROC curve. It is used to compare methods of categorization (such as between Logistic Regression vs Random Forest). A model with AUC of 0.5 performs no better than random chance. The larger the AUC to 1.0 the better the model is at separating classes. Thus, the ideal AUC is 1.0. 
-References:
-   * https://towardsdatascience.com/the-roc-curve-unveiled-81296e1577b
-
+See <a target="_blank" href="https://wilsonmar.github.io/classification#Evaluation">My notes on evaulating Classification results</a>.
 
 #### Metrics of regression model performance
 
-<a target="_blank" href="https://towardsdatascience.com/what-are-the-best-metrics-to-evaluate-your-regression-model-418ca481755b">Which one is best?</a>
-
-* <strong>Coefficient of Determination (R2)</strong>: (aka "R-Squared) is a relative measure of how well the model fits dependent variables. It summarizes the variance between predicted and true being explained by the model. The closer to 1 this value is, the better the model is performing. It does not take into consideration of overfitting problem if it performs poorly with training data. Thus:
-
-* Adjusted R Square penalises for additional independent variables added to the model and adjusts the metric to prevent overfitting.
-
-
-MSE, RMSE or MAE are used to compare performance between different regression models:
-
-* <strong>Mean Absolute Error (MAE)</strong> is an absolute measure of the goodness for the fit. It gives you an absolute number on how much your predicted results deviate from the actual number.  The average difference between predicted vs. true values. This value is based on the same units as the label, such as dollars. The lower this value is, the better the model is predicting.
-
-* <strong>Root Mean Squared Error (RMSE)</strong> is used by Kaggle to assess submissions for its competition. The square root of the mean squared difference between predicted and true values. The result is a metric based on the same unit as the label (dollars). A larger difference When compared to the MAE (above) indicates greater variance in the individual errors (for example, with some errors being very small, while others are large).
-
-
-To compare models where labels are in different units:
-
-* <strong>Relative Absolute Error (RAE)</strong>: A relative metric between 0 and 1 based on the absolute differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. 
-
-* <strong>Relative Squared Error (RSE)</strong>: A relative metric between 0 and 1 based on the square of the differences between predicted and true values. The closer to 0 this metric is, the better the model is performing. 
-
+See <a target="_blank" href="https://wilsonmar.github.io/regression#Evaluation">My notes on evaulating Regression results</a>.
 
 #### Metrics for clustering model performance
 
