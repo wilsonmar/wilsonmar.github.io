@@ -49,13 +49,13 @@ REMEMBER for the test: Draw this on the white board from memory:
    <table border="1" cellpadding="4" cellspacing="0">
    <tr align="center" style="background-color:#E0E0E0;"><th> n=165 </th><th> Actual: YES 105 </th><th> Actual: NO 60 </th></tr>
    <tr align="center" valign="top"><th style="background-color:#E0E0E0;"> Predicted: YES 110<br />"Precision"<br />Relevant:</th><td> 100 <strong>True Positives</strong><br />"Sensitivity rate" </td><td> 10 <strong>False Positives</strong><br />(Type I error)<br />"False alarms"</td></tr>
-   <tr align="center" valign="top"><th style="background-color:#E0E0E0;"> Predicted: NO 55 </th><td> 5 <strong>False Negatives</strong><br />(Type II error)<br />"got away"</td><td> 50 <strong>True Negatives</strong><br />"Specificity = Recall"</td></tr>
-   <tr align="center" valign="top"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
+   <tr align="center" valign="top"><th style="background-color:#E0E0E0;"> Predicted: NO 55 </th><td> 5 <strong>False Negatives</strong><br />(Type II error)<br />"wrong!"</td><td> 50 <strong>True Negatives</strong><br />"Specificity = Recall"</td></tr>
+   <tr align="center" valign="top" style="background-color:#E0E0E0;"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
-Outside the box of n (total):
+Outside the box of n (total): <a target="_blank" href="https://www.youtube.com/watch?v=j-EB6RqqjGI">VIDEO</a>:
 
-   * <strong>Accuracy</strong> Overall, how often is the classifier correct? (TP + FN) / n = ( 100 + 5 ) / 165.
+   * <strong>Accuracy</strong> Overall, how often is the classifier correct? (TP + FN) / n = ( 100 + 5 ) / 165. This can be misleading because it include both true positives and true negatives.
 
    * <strong>Prevalence</strong>: (aka "Error Rate") How often does the yes condition actually occur in our sample?  actual yes/total = 105/165 = 0.64
 
