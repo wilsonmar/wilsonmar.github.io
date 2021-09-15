@@ -47,10 +47,10 @@ Test data was split so some of the data is used to determine how well prediction
 REMEMBER for the test: Draw this on the white board from memory:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr align="center"><th> n=165 </th><th> Actual: yes 105 </th><th> Actual: no 60 </th></tr>
-   <tr align="center"><th> Predicted: yes 110<br />"Precision"<br />Relevant:</th><td> 100 True Positives<br />"Sensitivity rate" </td><td> 10 <strong>False Positives</strong><br />(Type I error)<br />"False alarms"</td></tr>
-   <tr align="center"><th> Predicted: no 55 </th><td> 5 <strong>False Negatives</strong><br />(Type II error)<br />"got away"</td><td> 50 True Negatives<br />"Specificity = Recall"</td></tr>
-   <tr align="center"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
+   <tr align="center"><th> n=165 </th><th> Actual: YES 105 </th><th> Actual: NO 60 </th></tr>
+   <tr align="center" valign="top"><th> Predicted: YES 110<br />"Precision"<br />Relevant:</th><td> 100 <strong>True Positives</strong><br />"Sensitivity rate" </td><td> 10 <strong>False Positives</strong><br />(Type I error)<br />"False alarms"</td></tr>
+   <tr align="center" valign="top"><th> Predicted: NO 55 </th><td> 5 <strong>False Negatives</strong><br />(Type II error)<br />"got away"</td><td> 50 <strong>True Negatives</strong><br />"Specificity = Recall"</td></tr>
+   <tr align="center" valign="top"><th> All: </th><td> Accuracy rate </td><td> Error rate </td></tr>
    </table>
 
 Outside the box of n (total):
@@ -87,6 +87,7 @@ Different values in the Confusion Matrix would be created for each level of thre
 
 ### F1 Score
 
+<a target="_blank" href="https://www.youtube.com/watch?v=Z9NZY3ej9yY">VIDEO</a>:
 <a target="_blank" href="https://www.wikiwand.com/en/F-score">F-1 Score</a> is a single number that takes into account both precision and recall: the weighted average (harmonic mean) of the true positive rate (recall) and precision = 2 ( 1/P + 1/R ).
 When comparing between models, <strong>the larger the F1, the better</strong>.
 
