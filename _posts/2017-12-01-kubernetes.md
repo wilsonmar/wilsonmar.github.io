@@ -12,7 +12,7 @@ image:
   credit: Jeremy Thomas
   creditlink: https://www.flickr.com/photos/132218932@N03/page2
 comments: true
-k8s_version: 1.19
+k8s_version: 1.22
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -44,7 +44,7 @@ The contribution of this article is a carefully sequenced presentation of comple
 
 ## Open-Source History
 
-The word "kubernetes" is the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> (based on "to steer") for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>. Docker Captains work together on <a target="_blank" href="https://github.com/docker-captains/about">github.com/docker-captains/</a>
+The English word "kubernetes" is from the <a target="_blank" href="https://en.wiktionary.org/wiki/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82">ancient Greek word</a> based on "to steer" for people who pilot cargo ships –- "helmsman" or "pilot" in English. That's why Docker/Kubernetes experts are called <a target="_blank" href="https://www.docker.com/community/captains">"captains"</a>. Docker Captains work together on <a target="_blank" href="https://github.com/docker-captains/about">github.com/docker-captains/</a>
 
 Associated products have nautical themes, such as <a target="_blank" href="https://wilsonmar.github.io/helm/">Helm</a> (the package manager for Kubernetes).
 
@@ -59,11 +59,11 @@ The website, and the Kubernetes code is maintained by the Linux Foundation, whic
 
 Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/kubernetes</a> where Kubernetes source code  is open-sourced, its <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">releases</a>:
 
-   * v1.0 (first commit within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
+   * v1.0 (first commit by Joe Beda within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
-   * v1.22 was the current version at Sep 2021.
+   * {{ page.k8s_version }} was the version at Sep 2021.
    <br /><br />
 
 1. PROTIP: Get the latest Semantic version of a stable release of Kubernetes (such as "v1.22.1") as variable <tt>K8_VERSION</tt> :
@@ -244,7 +244,7 @@ There are several options to run kubectl:
 
    * Use the Cloud Shell/Console provided by the cloud vendor.
    
-   * If you have a laptop with enough memory and CPU, you can install Kubernetes <strong>minikube</strong>  or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
+   * If you have a laptop with enough memory and CPU, you can install <a href="#Minikube">minikube</a>  or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
 
    * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
 
@@ -351,6 +351,8 @@ https://github.com/kubernetes/community/blob/master/sig-list.md</a>
 
 REMEMBER: Unlike other systems, in Kubernetes there are no "users".
 
+Sebastien Goasguen (@sebgoa), author of Kubernetes Cookbook and Docker Cookbook
+https://github.com/sebgoa/oreilly-kubernetes
 
 <hr />
 
@@ -898,196 +900,8 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
 <hr />
 
-## Latest videos about K8s
 
-For the most up-to-date information by practioners:
-
-<a target="_blank" href="https://www.youtube.com/watch?v=QJ4fODH6DXI">
-Kubernetes Concepts Explained in 9 minutes!</a> Oct 31, 2019 by <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> 
-
-Kubcon conferences are held 3 times a year in Asia, Europe, and US from https://events.linuxfoundation.org.
-
-   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC">YouTube Videos from Kubcon + CloudNativeCon Europe 2020</a>
-
-Others:
-
-   * <a target="_blank" href="https://mauilion.dev/about/">weekly video chat</a> on Heptio's YouTube channel of Duffie Cooley (<a target="_blank" href="https://twitter.com/mauilion">@mauilion</a>).
-
-O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/courses/oreilly-infrastructure-ops-superstream-series/0636920410027/?utm_medium=email&utm_source=platform+b2b&utm_campaign=superstream&utm_content=20201022+reminder4+io+ev3"> Infrastructure & Ops Superstream Series: Session 3 Oct. 21, 2020: Kubernetes</a> 
-
-Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
-   using the slim K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup installer at <a target="_blank" href="https://github.com/alexellis/k3sup">https://github.com/alexellis/k3sup</a>.
-
-arkade - portable Kubernetes marketplace
-
-<a target="_blank" href="https://learning.oreilly.com/library/view/kubernetes-patterns/9781492050278/">
-BOOK: Kubernetes Patterns</a>
-by Bilgin Ibryam, Roland Huß
-
-
-Jonathan Johnson
-
-   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-sonarqube/9781492078975/">
-   Kubernetes Pipelines: SonarQube</a>
-
-   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-registries/9781492078951/">
-   Kubernetes Pipelines: Registries</a>
-
-   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-tekton/9781492083900/">
-   Kubernetes Pipelines: Tekton Pipelines</a>
-
-   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-python/9781492090182/">
-   Kubernetes Pipelines: Python Pipeline to Kubernetes (using Tekton Pipelines to package Python in an efficient container)</a>
-   Kaniko container
-
-
-@EllenKorbes: "Successful Kubernetes Development Workflows"
-
-<a target="_blank" href="https://www.linkedin.com/in/javajon/">Jonathan Johnson</a>'s live online training "Kubernetes in Three Weeks" courses through O'Reilly:
-
-   * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/kubernetes-in-three-weeks-part-ii/0636920411109/">Part I</a> - Meshing and Observability
-
-   * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/kubernetes-in-three-weeks-part-ii/0636920411109/">Part II</a> - Operators and Serverless
-
-   * Part III - CI/CD Pipelines on Kubernetes
-
-Programming Kubernetes (book)
-
-Kubernetes Best Practices (book)
-
-Kubernetes Up and Running, second edition (book)
-
-
-## Video courses
-
-Research into learning point to "spaced repetition" as the way to get what want to remember in our long-term memory.
-
-Different instructors explain concepts in different logical sequences.
-
-So looking at different video classes provides that.
-
-
-<a name="KodeKloud"></a>
-
-### KodeKloud also from Udemy.com
-
-PROTIP: This I think is the most thoroughly and logically presented tutorials for CKAD and CKA.
-
-I have several tabs open taking it:
-
-1. The courses is available for USD $228/year (less occassional discounts) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
-
-1. The courses can also be purchased at Udemy.com:
-
-   * <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Kubernetes Certified Application Developer (CKAD) with Tests</a>, with 9 hours of videos, and<br />
-   <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/">Kubernetes Certified Application Developer (CKA) with Tests</a>, with 18 hours of videos.
-   <br /><br />
-
-1. Either way purchased, the course includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. 
-
-   PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
-
-1. A "Quiz Portal" invoked from within the labs UI provides challenge questions and answers.
-
-   Some hints reference answer files in folder "/var/answers", viewed by a command in the Terminal, such as:
-
-   <pre>cat /var/answers/answer-ubuntu-sleeper-2.yaml</pre>
-
-1. Within the quiz, some links to solutions to labs on YouTube are broken. So stay on the Udemy UI for Solution videos.
-
-   <a target="_blank" href="https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ">KodeKloud's YouTube channel</a> still provides a series for absolute beginners on <a target="_blank" href="http://bit.ly/GitForBeginnersKodeKloud">Git</a>, Ansible, Puppet, Shell, Docker, Kubernetes. https://www.youtube.com/watch?v=QJ4fODH6DXI
-
-1. Teacher and founder <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> (living in Singapore) also created a free work simulator for people to gain "real" work experience at <a target="_blank" href="https://kodekloud.com/p/kodekloud-engineer">https://kodekloud.com/p/kodekloud-engineer</a>.
-
-1. For CKA, he also authored <a target="_blank" href="https://github.com/mmumshad/kubernetes-the-hard-way">https://github.com/mmumshad/kubernetes-the-hard-way</a> (on Virtualbox and Vagrant using Docker instead of containerd) which takes a manual approach to bootstrap a Kubernetes cluster from scratch, for learning to understand each task performed by the automation. The tutorial adapts the original using GCP developed by Kelsey Hightower.
-
-1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
-
-1. KodeKloud's Mock Tests, which Ansar (Amoury) Memon's <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">"The FrontOpsGuys" on YouTube</a> answers for 
-   <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">Test 1</a> and 
-   <a target="_blank" href="https://www.youtube.com/watch?v=BiY3b7F96wc">Test 2</a>
-
-                         
-For CKA, https://github.com/kodekloudhub/certified-kubernetes-administrator-course
-
-
-<a name="LFS258"></a>
-
-### Linux Foundation LFS258
-
-On would think the definitive courses would be from the same organization that created the exam.
-
-The <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a> $199 upgrade offered with the <a target="_blank" href="https://www.cncf.io/certification/ckad/">CKAD exam sign-up</a> covers this series of <strong>topics</strong>:
-
-   1. Course Introduction
-   2. Kubernetes Architecture
-   3. Build
-   4. Design
-   5. Deployment Configuration
-   6. Security
-   7. Exposing Applications
-   8. Troubleshooting
-   <br /><br />
-
-LFD459 is the 3-day on-site equivalent course code.
-
-PROTIP: LF class materials (<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/">
-https://training.linuxfoundation.org/cm/prep</a>) are distributed in .bz2 format which can be opened on macOS by the <a target="_blank" href="https://apps.apple.com/us/app/the-unarchiver/id425424353?mt=12&ign-mpt=uo%3D4">
-Unarchiver</a>
-
-I took <a target="_blank" href="https://training.linuxfoundation.org/cm/prep/?course=LFS258">
-https://training.linuxfoundation.org/cm/prep/?course=LFS258</a> but found it to be like "drinking water from a fire hose" in that the 600 page coureware is comprehensive. But exercises during the class are not repeatable after the class.
-
-The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack, Helm, Istio. However, LFD259 covers Istio anyway.
-
-Ready-for.sh establishes the environment:
-
-   <pre>wget http://bit.ly/LFready -O ready-for.sh
-   chmod 755 ready-for.sh
-   ./ready-for.sh --help
-   # Not for macOS
-   </pre>
-
-<a target="_blank" href="https://github.com/cncf/curriculum">https://github.com/cncf/curriculum</a> - v1.19
-contains one-page curriculum pdf's.
-
-
-### Nana's TechWorld on YouTube
-
-<a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA">
-YouTube channel "Nana's TechWorld"</a> by <a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">entrepreneur Nana Janashia</a> (from Austria) features animated illustrations.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=I5c8Pfg2tys">VIDEO intro of</a>
-Unique Udemy course <a target="_blank" href="https://www.udemy.com/course/logging-in-kubernetes-with-efk-stack/?couponCode=UDEMY_NANA_NOV2020">
-Logging in Kubernetes with EFK Stack | The Complete Guide</a>
-covers how to set up K8s clusters from scratch and configure logging with ElasticSearch, Fluentd and Kibana 
-
-
-### EdX
-
-edX.org publishes some courses from Linux Academy.
-
-<a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
-
-
-### O'Reilly
-
-<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-certified/9781492061021/">
-Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 53m] uses
-<a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
-and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course "In-depth and hands-on practice for acing the exam"</a> by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
-
-https://github.com/bmuschko/cka-crash-course
-
-<a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
-7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->
-
-BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
-
-
-#### Prep standalone SSH client on macOS
+## Prep standalone SSH client on macOS
 
 1. Open an SSH client Terminal by pressing command+spacebar for the Spotlight, then type "Terminal" and select "Terminal.app".
 1. Enter your user password if prompted.
@@ -1179,134 +993,8 @@ kubectl delete po <em>mypod</em> --grace-period=0 --force
    <pre><strong>k get pods -o wide</strong></pre>
 
 
-### Pluralsight
 
-PROTIP: Pluralsight videos can be viewed as a <strong>Tivo app</strong> on my TV. That's a big plus. No others offer that.
-
-<a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). Courses in chron order:
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-core-concepts">Kubernetes for Developers: Core Concepts</a> 4h 34m Sept 15, 2019 with files at <a target="_blank" href="https://github.com/DanWahlin/DockerAndKubernetesCourseCode">https://github.com/DanWahlin/DockerAndKubernetesCourseCode</a> shows setup and troubleshooting of a whole NGINX app with Redis and MongoDB. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ffb6bf03-179b-405c-8a4c-99a5d1567b6c">VIDEO</a>: His sample code references environment variables set on the Terminal before invoking K8s:
-
-   <pre>export APP_ENV=development
-   export DOCKER_ACCT=codewithdan
-   </pre>
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-deploying-code">Kubernetes for Developers: Deploying Your Code</a> 3h 4m Feb 26, 2020
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-moving-cloud">Kubernetes for Developers: Moving to the Cloud</a> by Craig Golightly (@seethatgo, seethatgo.com) 1h 3m Dec 19, 2019 deploys the same simple sample Python app (kubernetes-developers-moving-cloud.zip) to <a href="#k8s_clouds">AKS, EKS, and GKE clouds</a>.
- 
-   CAUTION: <a target="_blank" href="https://aws.amazon.com/blogs/developer/aws-cli-v2-is-now-generally-available/">
-   aws v2 CLI</a> became generally available in Feb 2020 shortly after this course was published.
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-docker-compose-to-kubernetes">Kubernetes for Developers: Moving from Docker Compose to Kubernetes</a> 2h 20m May 28, 2020
-
-Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.com/">nigelpoulton.com</a>), Docker Captain:
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files">
-   Getting Started with Kubernetes</a> 22 May 2017
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
-
-   * Book: "Docker for Sysadmins"
-
-   * Book: "Docker Deep Dive"
-
-   * Book: "Kubernetes Deep Dive"
-
-   * Video course <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">"Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://learn.acloud.guru/course/kubernetes-deep-dive/learn/code/demo/watch">VIDEO</a>: <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
-
-
-### Coursera
-
-<a target="_blank" href="https://www.coursera.org/specializations/architecting-google-kubernetes-engine">Coursera's "Architecting with Google Kubernetes Engine Specialization"</a> is focused on building efficient computing infrastructures using Kubernetes and Google Kubernetes Engine (GKE). The specialization introduces participants to deploying and managing containerized applications on GKE and the other services provided by Google Cloud Platform. Through a combination of presentations, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as pods, containers, deployments, and services; as well as networks and application services. The specialization also covers deploying practical solutions including security and access management, resource management, and resource monitoring. 
-
-1. <a target="_blank" href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
-
-   This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
-
-2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a> reviews the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
-
-3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna. Covers: GKE Cluster; Deployments;Jobs and Cronjobs; Cluster Scaling; Pod placement; Pod Autoscaling and Node Pools; Pod networking; Services, Ingress; Load balancing; Network security; Volumes, Stateful Sets; ConfigMaps; Secrets; Persistent Data; 
-
-4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
-
-
-
-### LinkedIn Learning (formerly Lynda)
-
-<a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/kubernetes-for-developers?u=26886050">"Kubernetes Essential Training: Application Development"</a> 
-by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cli 1.18.2 on a Mac:
-
-   * Running a local cluster
-   * Running containers
-   * Viewing logs
-   * Remotely executing commands
-   * Orchestrating real-world workloads
-   * Batch processing with jobs and cron jobs
-   * Managing resource usage
-   * Keeping containers secure
-   * Advanced deployment patterns
-   * Analyzing traffic
-   * Extending Kubernetes
-   * DRY deployment and debugging tools
-   <br /><br />
-
-   <ul>The class has quizzes and covers 3rd-party tools such as <a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/tools-for-dry-deployments-helm?u=26886050">Helm</a>, Kustomize, kubectl sniff (WireShark), Skaffold, telepresence.
-   </ul>
-
-<a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>) references files in 
-<a target="_blank" href="https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md">https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md</a>.
-
-
-<a target="_blank" href="https://www.linkedin.com/learning/devops-foundations-transforming-the-enterprise/transforming-your-organization">"DevOps Foundations: Transforming the Enterprise
-Transforming your organization"</a> by Mirco Hering, Global DevOps Practice Lead at Accenture
-
-### LinuxAcademy
-
-The CKAD Troubleshooting class is highly recommended.
-
-
-### Udemy
-
-<a target="_blank" href="https://mckinsey.udemy.com/course/learn-kubernetes">"Learn Kubernetes"</a> provides a tutorial on yaml.
-
-<a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video. It includes 30-minute lightning rounds to practice the stress of taking the exam. Surviging this gives you confidence.
-
-<a target="_blank" href="https://mckinsey.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11582328?start=150#overview">"Docker and Kubernetes: The Complete Guide"</a>
-by Stephen Grider. Diagrams for the 21h video uses draw.io accessing 
-https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
-
-
-### Others on CKAD:
-
-* <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=uzxSZqSqiLk&list=PLleCw-vqe90DzAwG6Z_f9GARu-y6HbHXf">Alta3 Research's Playlist</a> includes <a target="_blank" href="https://www.youtube.com/watch?v=5cgpFWVD8ds">VIDEO [11:02] : How to CRUSH the CKAD Exam!</a> Jul 27, 2020 shows sample quetions and suggestions to each of 19 objectives.
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=dIBX8TQJxW8">VIDEO: CKAD Certification Exam Tips</a> by Cloud and Beyond shows commands that threw him off:
-
-   <pre>kubectl set image deployment/nginx nginx=nginx:191</pre>
-
-   To <a target="_blank" href="https://kubernetes.io/tasks/tools/install-kubectl/">set autocomplete with alias to Kubernetes</a>:
-
-   <pre>alias k=kubectl
-   complete -F __start_kubectl k</pre>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=qA4dNATs5nE">VIDEO: How to pass the Certified Kubernetes Application Developer (CKAD) exam</a> by Santiago Alejandro Agüero 
-* <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=rnemKrveZks">Tips from Tips on preparing for CKAD</a> by Muralidaran Shanmugham
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=1911">
-Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (using k8s v1.17.0) by TechWorld with Nana
-
-
-### Others on CKA:
-
-* <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
-* <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
-
-<hr />
-
-<a name="Kubernetes"></a>
+<a name="CRI"></a>
 
 Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI) specification</a> ensures that every image can be run within every K8s runtime.
 
@@ -1318,9 +1006,12 @@ Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/containe
 
 https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/installation.html
 
+
+<a name="minikube"></a>
+
 ### Minikube Alternatives
 
-Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
+Before diving in, know that instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 
    * KinD (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
    CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
@@ -1332,42 +1023,9 @@ Instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 But let's start by installing minikube on your laptop.
 
 
-
-<a name="Kustomize"></a>
-
-### Kustomize templating utility
-
-The <tt>kustomize</tt> provider from <a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> provides a way to create customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
-References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=5gsHYdiD6v8">VIDEO by The DevOps Guy</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=ASK6p2r-Yrk">VIDEO Kustomize Getting Started</a>
-   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
-   <br /><br />
-
-Some feel Kustomize doesn't provide enough flexibility and that it results in too many different files for one application.
-
-Alternatives are yq and Jsonnet.
-
-<a name="Jsonnet"></a>
-
-### Jsonnet
-
-Jsonnet (pronounced "jay sonnet") at <a target="_blank" href="https://jsonnet.org/">jsonnet.org</a> (from a 20% project within Google) is a DSL templating language which can generate .json, .conf, .sh, and .ini files. Its Creative Commons-licensed C++ code is at <a target="_blank" href="https://github.com/google/jsonnet">github.com/google/jsonnet</a>. 
-
-A faster <a target="_blank" href="https://github.com/google/go-jsonnet">go-jasonnet</a> is written in <a target="_blank" href="https://wilsonmar.github.io/golang">Go language</a> and built using Bazel. There's also <a target="_blank" href="https://www.newtonsoft.com/json">Json.NET</a>.
-
-<a target="_blank" href="https://blog.dev.proton.ai/infrastructure/2021/01/11/scaling-kubernetes-with-jsonnet-and-argocd.html">Sample code in this article</a> shows how Jsonnet templating's ability to extends JSON to "use variables, conditionals, functions, etc. to generate JSON, and feels more like writing JavaScript in some cases than writing a template."
-
-<img alt="cyber-jsonnet.venn.svg" src="../images/cyber-jsonnet.venn.svg">
-
-"This ticked all our boxes: giving us the repeatability of a templating environment with the power of something closer to a programming language."
-
-"We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
-
-
 <a name="Minikube"></a>
 
-### Minikube install
+### Minikube install 
 
 <a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-minikube/">REF</a>:
 
@@ -1378,7 +1036,7 @@ CAUTION: At time of writing, <a target="_blank" href="https://github.com/kuberne
 MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
 (<a href="#Ingress">Ingress</a> and ingress-dns addons are not supported on Linux)
 
-PROTIP: Minikube makes your mac's fan fly!
+PROTIP: Minikube makes your Mac's fan fly!
 Before starting minikube, in command+Spacebar type "Activity Monitor.app" and click to open it. 
 Click the "% CPU" tab label to sort on it. Note the number for process "com.docker.hyperkit".
 If the mac's fan spins constantly: in Docker's Properties Resources, adjust Memory higher.
@@ -1388,25 +1046,6 @@ Each node in a cluster uses at least 300 MiB of memory.
 More about drivers:
 * https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html
 * https://minikube.sigs.k8s.io/docs/drivers/
-
-### Minikube on Windows
-
-1. Start Docker before installing/starting minikube:
-
-   <pre><strong>systemctl enable --now docker</strong></pre>
-
-1. Verify your Docker container type:
-
-   <pre>docker info --format '{{.OSType}}'</pre>
-
-   On macOS, the response is "Linux".
-
-   On Windows, (pardoxically) make sure Docker Desktop’s container type setting is Linux and not windows. see docker docs on switching container type. 
-   
-   See https://minikube.sigs.k8s.io/docs/drivers/hyperv/
-
-
-### Minikube on MacOS using Docker Desktop
 
 ### Docker Desktop install on macOS
 
@@ -1430,8 +1069,24 @@ More about drivers:
 
    Make sure Docker Desktop is running:
 
+### Minikube on Windows
 
-   ### Install Minikube
+1. Start Docker before installing/starting minikube:
+
+   <pre><strong>systemctl enable --now docker</strong></pre>
+
+1. Verify your Docker container type:
+
+   <pre>docker info --format '{{.OSType}}'</pre>
+
+   On macOS, the response is "Linux".
+
+   On Windows, (pardoxically) make sure Docker Desktop’s container type setting is Linux and not windows. see docker docs on switching container type. 
+   
+   See https://minikube.sigs.k8s.io/docs/drivers/hyperv/
+
+
+### Minikube on MacOS using Docker Desktop
 
 1. I do not recommend using curl to obtain a specific back version of Minikube:
 
@@ -1439,21 +1094,19 @@ More about drivers:
 && sudo dpkg -i minikube_1.7.2-0_amd64.deb
    </strike></pre>
 
-1. Install on a Mac Minikube:
-
-   <pre><strong>brew install minikube
-   </strong></pre>
-
-1. A lot prints out, to get the <strong>caveats</strong> about what was installed:
+1. Install on a Mac Minikube is the recommended appraoch
 
    <pre><strong>brew info minikube
    </strong></pre>
 
-   <pre>minikube: stable 1.15.1 (bottled), HEAD
+   A lot prints out, to get the <strong>caveats</strong> about what was installed:
+
+   <pre>Warning: Treating minikube as a formula.
+minikube: stable 1.23.0 (bottled), HEAD
 Run a Kubernetes cluster locally
 https://minikube.sigs.k8s.io/
-/usr/local/Cellar/minikube/1.15.1 (8 files, 62.4MB) *
-  Poured from bottle on 2020-11-22 at 11:46:27
+/usr/local/Cellar/minikube/1.23.0 (9 files, 68.1MB)
+  Poured from bottle on 2021-09-16 at 08:52:22
 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/minikube.rb
 License: Apache-2.0
 ==> Dependencies
@@ -1461,14 +1114,20 @@ Build: go ✘, go-bindata ✘
 Required: kubernetes-cli ✔
 ==> Options
 --HEAD
-        Install HEAD version
+	Install HEAD version
 ==> Caveats
 Bash completion has been installed to:
   /usr/local/etc/bash_completion.d
-&nbsp;
-zsh completions have been installed to:
-  /usr/local/share/zsh/site-functions
 ==> Analytics
+install: 28,783 (30 days), 77,316 (90 days), 383,609 (365 days)
+install-on-request: 28,682 (30 days), 77,049 (90 days), 367,126 (365 days)
+build-error: 0 (30 days)
+   </pre>
+
+   Previously:
+
+   <pre>/usr/local/Cellar/minikube/1.15.1 (8 files, 62.4MB) *   
+  Poured from bottle on 2020-11-22 at 11:46:27
 install: 44,822 (30 days), 110,033 (90 days), 415,969 (365 days)
 install-on-request: 37,280 (30 days), 92,684 (90 days), 342,920 (365 days)
 build-error: 0 (30 days)
@@ -1478,15 +1137,39 @@ build-error: 0 (30 days)
 
    <pre><strike>minikube config set driver hyperkit</strike></pre>
 
+1. <a target="_blank" href="https://matthewpalmer.net/kubernetes-app-developer/articles/guide-install-kubernetes-mac.html">Install</a>
 
-1. Make sure you're running the version just installed:
+   <pre><strong>brew install minikube
+   </strong></pre>
 
-   <pre><strong>minikube version</strong></pre>
-
-   The result:
-
-   <pre>minikube version: v1.15.1
-commit: 23f40a012abb52eff365ff99a709501a61ac5876
+   <pre>Warning: Treating minikube as a formula.
+==> Downloading https://ghcr.io/v2/homebrew/core/kubernetes-cli/manifests/1.22.1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/kubernetes-cli/blobs/sha256:1c7
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/minikube/manifests/1.23.0
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/minikube/blobs/sha256:aabf29b10
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Installing dependencies for minikube: kubernetes-cli
+==> Installing minikube dependency: kubernetes-cli
+==> Pouring kubernetes-cli--1.22.1.mojave.bottle.tar.gz
+🍺  /usr/local/Cellar/kubernetes-cli/1.22.1: 226 files, 57.5MB
+==> Installing minikube
+==> Pouring minikube--1.23.0.mojave.bottle.tar.gz
+==> minikube cask is installed, skipping link.
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/minikube/1.23.0: 9 files, 68.1MB
+Removing: /usr/local/Cellar/minikube/1.20.0_1... (9 files, 63.5MB)
+==> Caveats
+==> minikube
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
    </pre>
 
 1. Installation should have created folder: 
@@ -1495,9 +1178,12 @@ commit: 23f40a012abb52eff365ff99a709501a61ac5876
 
    The result:
 
-   <pre>addons              ca.pem              certs               key.pem             profiles
-ca.crt              cache               config              logs                proxy-client-ca.crt
-ca.key              cert.pem            files               machines            proxy-client-ca.key
+   <pre>addons              cache               files               proxy-client-ca.crt
+apiserver.crt       cert.pem            key.pem             proxy-client-ca.key
+apiserver.key       certs               last_update_check   proxy-client.crt
+ca.crt              client.crt          logs                proxy-client.key
+ca.key              client.key          machines
+ca.pem              config              profiles
    </pre>
 
 1. PROTIP: Assign permissions to avoid run error:
@@ -1507,6 +1193,19 @@ chmod -R u+wrx $HOME/.minikube
    </strong></pre>
 
    No response is expected on success.
+
+1. Make sure you're running the version just installed:
+
+   <pre><strong>minikube version</strong></pre>
+
+   If you see:
+   <pre>-bash: minikube: command not found</pre>
+
+   The expected result:
+
+   <pre>minikube version: v1.15.1
+commit: 23f40a012abb52eff365ff99a709501a61ac5876
+   </pre>
 
 
    <a name="StartMinikube"></a>
@@ -2175,6 +1874,39 @@ Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces<
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
 
 
+<a name="Kustomize"></a>
+
+### Kustomize templating utility
+
+The <tt>kustomize</tt> provider from <a target="_blank" href="https://www.kustomize.io/">Kustomize.io</a> provides a way to create customized raw, template-free YAML (overlay) files for multiple purposes (dev, prod). It leaves the base (original) YAML file untouched and usable as is. For example, dev would have <tt>replicas: 1</tt> while pro would have <tt>replicas: 5</tt>.
+References:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=5gsHYdiD6v8">VIDEO by The DevOps Guy</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ASK6p2r-Yrk">VIDEO Kustomize Getting Started</a>
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
+   <br /><br />
+
+Some feel Kustomize doesn't provide enough flexibility and that it results in too many different files for one application.
+
+Alternatives are yq and Jsonnet.
+
+<a name="Jsonnet"></a>
+
+### Jsonnet
+
+Jsonnet (pronounced "jay sonnet") at <a target="_blank" href="https://jsonnet.org/">jsonnet.org</a> (from a 20% project within Google) is a DSL templating language which can generate .json, .conf, .sh, and .ini files. Its Creative Commons-licensed C++ code is at <a target="_blank" href="https://github.com/google/jsonnet">github.com/google/jsonnet</a>. 
+
+A faster <a target="_blank" href="https://github.com/google/go-jsonnet">go-jasonnet</a> is written in <a target="_blank" href="https://wilsonmar.github.io/golang">Go language</a> and built using Bazel. There's also <a target="_blank" href="https://www.newtonsoft.com/json">Json.NET</a>.
+
+<a target="_blank" href="https://blog.dev.proton.ai/infrastructure/2021/01/11/scaling-kubernetes-with-jsonnet-and-argocd.html">Sample code in this article</a> shows how Jsonnet templating's ability to extends JSON to "use variables, conditionals, functions, etc. to generate JSON, and feels more like writing JavaScript in some cases than writing a template."
+
+<img alt="cyber-jsonnet.venn.svg" src="../images/cyber-jsonnet.venn.svg">
+
+"This ticked all our boxes: giving us the repeatability of a templating environment with the power of something closer to a programming language."
+
+"We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
+
+
 <hr />
 
 
@@ -2198,16 +1930,18 @@ NOTE: Type double-quote characters (" to the right of the Return key on keyboard
 
    <a name="Pods"></a>
 
-   ### Pod yaml
+   ### Naked Pod command & yaml
 
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/pod-128.png?raw=true">
+  
    * <a target="_blank" href="https://kubernetesbyexample.com//pods/">kubernetesbyexample.com: Pods</a>
+   <br /><br />
 
-
-1. For Kubernetes to establish a "naked" pod using the un-deprecated run command (use deployment instead):
+1. For Kubernetes to establish a "naked" pod using the nearly-deprecated run command (use deployment instead):
 
    <pre><strong>kubectl run my-nginx --port 80 --image=nginx:1.19.2</strong></pre>
 
-   Alternately:
+   The recommended alternate is this pod definition defined within as a <tt>template</tt> within a <a href="#Deployments">deployment</a> (as additional indentation):
 
    <pre>apiVersion: v1
 kind: Pod
@@ -2221,9 +1955,7 @@ spec:
     ports:
     - containerPort: 80
    </pre>
-
-   NOTE: The pod definition above is defined (with an additional indentation) as a <tt>template</tt> within <a href="#Deployments">deployments</a>.
-
+   
    <a target="_blank" href="https://www.youtube.com/watch?v=TPXwVmvzlV4&time=4m53s">PROTIP:</a> Specification of a label in the k run command creates a pod rather than a deployment. So no need to set flag "--restart=Never".
 
 1. The opposite is "delete pod x".
@@ -2305,7 +2037,7 @@ spec:
 
    <a name="CRD"></a>
 
-   ### CRD (Custom Resource Definition)
+### CRD (Custom Resource Definition)
    
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/crd-128.png?raw=true">
    
@@ -2317,7 +2049,7 @@ spec:
    Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
    For examaple: <tt>kubectl tree etcdcluster example</tt>
 
-   #### Terraform Provider Alpha
+#### Terraform Provider Alpha
 
    For a dynamic way to manage any Kubernetes API resource using HashiCorp Terraform.
    The <tt>kubernetes_manifest</tt> resource using terraform-plugin-go 
@@ -2326,7 +2058,7 @@ spec:
    
    Once the plan has been generated, we use server side apply to apply the manifest. 
 
-   It graduated (<a target="_blank" href="https://github.com/hashicorp/terraform-provider-kubernetes-alpha>from alpha</a>)
+   It graduated (<a target="_blank" href="https://github.com/hashicorp/terraform-provider-kubernetes-alpha">from alpha</a>)
    into the official Kubernetes provider as a beta in July 2021.
 
    <a target="_blank" href="https://www.hashicorp.com/blog/beta-support-for-crds-in-the-terraform-provider-for-kubernetes">
@@ -2334,12 +2066,12 @@ spec:
 
 
 
-   ### metadata:
+### metadata:
 
    metadata contains a dictionary indented name: and label:
 
 
-   ### spec:
+### spec:
 
    In <tt>spec:</tt> is a dictionary item <tt>containers:</tt> specifying a list/array represented by a dash in front of each item:
 
@@ -6354,6 +6086,322 @@ https://www.tikalk.com/posts/2020/05/14/2020-05-14-Kubexperience-for-developers/
 Factors taken into account for scheduling decisions include, individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference and deadlines.
 
 
+<a name="Videos"></a>
+
+## Latest videos about K8s
+
+For the most up-to-date information by practioners:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=QJ4fODH6DXI">
+Kubernetes Concepts Explained in 9 minutes!</a> Oct 31, 2019 by <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> 
+
+Kubcon conferences are held 3 times a year in Asia, Europe, and US from https://events.linuxfoundation.org.
+
+   * <a target="_blank" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2O1wlsM-Ma-RYhfT5LKq0XC">YouTube Videos from Kubcon + CloudNativeCon Europe 2020</a>
+
+Others:
+
+   * <a target="_blank" href="https://mauilion.dev/about/">weekly video chat</a> on Heptio's YouTube channel of Duffie Cooley (<a target="_blank" href="https://twitter.com/mauilion">@mauilion</a>).
+
+O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/courses/oreilly-infrastructure-ops-superstream-series/0636920410027/?utm_medium=email&utm_source=platform+b2b&utm_campaign=superstream&utm_content=20201022+reminder4+io+ev3"> Infrastructure & Ops Superstream Series: Session 3 Oct. 21, 2020: Kubernetes</a> 
+
+Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
+   using the slim K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup installer at <a target="_blank" href="https://github.com/alexellis/k3sup">https://github.com/alexellis/k3sup</a>.
+
+arkade - portable Kubernetes marketplace
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/kubernetes-patterns/9781492050278/">
+BOOK: Kubernetes Patterns</a>
+by Bilgin Ibryam, Roland Huß
+
+
+Jonathan Johnson
+
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-sonarqube/9781492078975/">
+   Kubernetes Pipelines: SonarQube</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-registries/9781492078951/">
+   Kubernetes Pipelines: Registries</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-tekton/9781492083900/">
+   Kubernetes Pipelines: Tekton Pipelines</a>
+
+   * <a target="_blank" href="https://learning.oreilly.com/scenarios/kubernetes-pipelines-python/9781492090182/">
+   Kubernetes Pipelines: Python Pipeline to Kubernetes (using Tekton Pipelines to package Python in an efficient container)</a>
+   Kaniko container
+
+
+@EllenKorbes: "Successful Kubernetes Development Workflows"
+
+<a target="_blank" href="https://www.linkedin.com/in/javajon/">Jonathan Johnson</a>'s live online training "Kubernetes in Three Weeks" courses through O'Reilly:
+
+   * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/kubernetes-in-three-weeks-part-ii/0636920411109/">Part I</a> - Meshing and Observability
+
+   * <a target="_blank" href="https://learning.oreilly.com/live-training/courses/kubernetes-in-three-weeks-part-ii/0636920411109/">Part II</a> - Operators and Serverless
+
+   * Part III - CI/CD Pipelines on Kubernetes
+
+Programming Kubernetes (book)
+
+Kubernetes Best Practices (book)
+
+Kubernetes Up and Running, second edition (book)
+
+
+## Video courses
+
+Research into learning point to "spaced repetition" as the way to get what want to remember in our long-term memory.
+
+Different instructors explain concepts in different logical sequences.
+
+So looking at different video classes provides that.
+
+
+<a name="KodeKloud"></a>
+
+### KodeKloud also from Udemy.com
+
+PROTIP: This I think is the most thoroughly and logically presented tutorials for CKAD and CKA.
+
+I have several tabs open taking it:
+
+1. The courses is available for USD $228/year (less occassional discounts) at <a target="_blank" href="https://kodeKloud.com/">KodeKloud.com</a> where <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">Videos are presented on KodeKloud.com</a> (using the Teachable.com platform).
+
+1. The courses can also be purchased at Udemy.com:
+
+   * <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-application-developer/">Kubernetes Certified Application Developer (CKAD) with Tests</a>, with 9 hours of videos, and<br />
+   <a target="_blank" href="https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/">Kubernetes Certified Application Developer (CKA) with Tests</a>, with 18 hours of videos.
+   <br /><br />
+
+1. Either way purchased, the course includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. 
+
+   PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
+
+1. A "Quiz Portal" invoked from within the labs UI provides challenge questions and answers.
+
+   Some hints reference answer files in folder "/var/answers", viewed by a command in the Terminal, such as:
+
+   <pre>cat /var/answers/answer-ubuntu-sleeper-2.yaml</pre>
+
+1. Within the quiz, some links to solutions to labs on YouTube are broken. So stay on the Udemy UI for Solution videos.
+
+   <a target="_blank" href="https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ">KodeKloud's YouTube channel</a> still provides a series for absolute beginners on <a target="_blank" href="http://bit.ly/GitForBeginnersKodeKloud">Git</a>, Ansible, Puppet, Shell, Docker, Kubernetes. https://www.youtube.com/watch?v=QJ4fODH6DXI
+
+1. Teacher and founder <a target="_blank" href="https://www.linkedin.com/in/mmumshad/">Mumshad Mannambeth</a> (living in Singapore) also created a free work simulator for people to gain "real" work experience at <a target="_blank" href="https://kodekloud.com/p/kodekloud-engineer">https://kodekloud.com/p/kodekloud-engineer</a>.
+
+1. For CKA, he also authored <a target="_blank" href="https://github.com/mmumshad/kubernetes-the-hard-way">https://github.com/mmumshad/kubernetes-the-hard-way</a> (on Virtualbox and Vagrant using Docker instead of containerd) which takes a manual approach to bootstrap a Kubernetes cluster from scratch, for learning to understand each task performed by the automation. The tutorial adapts the original using GCP developed by Kelsey Hightower.
+
+1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
+
+1. KodeKloud's Mock Tests, which Ansar (Amoury) Memon's <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">"The FrontOpsGuys" on YouTube</a> answers for 
+   <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">Test 1</a> and 
+   <a target="_blank" href="https://www.youtube.com/watch?v=BiY3b7F96wc">Test 2</a>
+
+                         
+For CKA, https://github.com/kodekloudhub/certified-kubernetes-administrator-course
+
+
+<a name="LFS258"></a>
+
+### Linux Foundation LFS258
+
+On would think the definitive courses would be from the same organization that created the exam.
+
+The <a target="_blank" href="https://training.linuxfoundation.org/training/kubernetes-for-developers/">35-hour video/on-site course LFD259</a> $199 upgrade offered with the <a target="_blank" href="https://www.cncf.io/certification/ckad/">CKAD exam sign-up</a> covers this series of <strong>topics</strong>:
+
+   1. Course Introduction
+   2. Kubernetes Architecture
+   3. Build
+   4. Design
+   5. Deployment Configuration
+   6. Security
+   7. Exposing Applications
+   8. Troubleshooting
+   <br /><br />
+
+LFD459 is the 3-day on-site equivalent course code.
+
+PROTIP: LF class materials (<a target="_blank" href="https://training.linuxfoundation.org/cm/prep/">
+https://training.linuxfoundation.org/cm/prep</a>) are distributed in .bz2 format which can be opened on macOS by the <a target="_blank" href="https://apps.apple.com/us/app/the-unarchiver/id425424353?mt=12&ign-mpt=uo%3D4">
+Unarchiver</a>
+
+I took <a target="_blank" href="https://training.linuxfoundation.org/cm/prep/?course=LFS258">
+https://training.linuxfoundation.org/cm/prep/?course=LFS258</a> but found it to be like "drinking water from a fire hose" in that the 600 page coureware is comprehensive. But exercises during the class are not repeatable after the class.
+
+The Linux Foundation exam focuses only on "pure" Kubernetes commands and excludes <a href="#Addons">add-ons</a> such as OpenStack, Helm, Istio. However, LFD259 covers Istio anyway.
+
+Ready-for.sh establishes the environment:
+
+   <pre>wget http://bit.ly/LFready -O ready-for.sh
+   chmod 755 ready-for.sh
+   ./ready-for.sh --help
+   # Not for macOS
+   </pre>
+
+<a target="_blank" href="https://github.com/cncf/curriculum">https://github.com/cncf/curriculum</a> - v1.19
+contains one-page curriculum pdf's.
+
+
+### Nana's TechWorld on YouTube
+
+<a target="_blank" href="https://www.youtube.com/channel/UCdngmbVKX1Tgre699-XLlUA">
+YouTube channel "Nana's TechWorld"</a> by <a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">entrepreneur Nana Janashia</a> (from Austria) features animated illustrations.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=3c-iBn73dDE&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1">Docker Tutorial for Beginners [Full Course in 3 Hours]</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=I5c8Pfg2tys">VIDEO intro of</a>
+Unique Udemy course <a target="_blank" href="https://www.udemy.com/course/logging-in-kubernetes-with-efk-stack/?couponCode=UDEMY_NANA_NOV2020">
+Logging in Kubernetes with EFK Stack | The Complete Guide</a>
+covers how to set up K8s clusters from scratch and configure logging with ElasticSearch, Fluentd and Kibana 
+
+
+### EdX
+
+edX.org publishes some courses from Linux Academy.
+
+<a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
+
+
+### O'Reilly
+
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-certified/9781492061021/">
+Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 53m] uses
+<a target="_blank" href="https://github.com/bmuschko/ckad-study-guide">https://github.com/bmuschko/ckad-study-guide</a>
+and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course "In-depth and hands-on practice for acing the exam"</a> by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
+
+https://github.com/bmuschko/cka-crash-course
+
+<a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
+7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->
+
+BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
+
+### Pluralsight
+
+PROTIP: Pluralsight videos can be viewed as a <strong>Tivo app</strong> on my TV. That's a big plus. No others offer that.
+
+<a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-kubernetes-application-developer-ckad">Pluralsight has a 14-hour series of videos on CKAD</a> by Dan Wahlin (@danwahlin, codewithdan.com). Courses in chron order:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-core-concepts">Kubernetes for Developers: Core Concepts</a> 4h 34m Sept 15, 2019 with files at <a target="_blank" href="https://github.com/DanWahlin/DockerAndKubernetesCourseCode">https://github.com/DanWahlin/DockerAndKubernetesCourseCode</a> shows setup and troubleshooting of a whole NGINX app with Redis and MongoDB. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ffb6bf03-179b-405c-8a4c-99a5d1567b6c">VIDEO</a>: His sample code references environment variables set on the Terminal before invoking K8s:
+
+   <pre>export APP_ENV=development
+   export DOCKER_ACCT=codewithdan
+   </pre>
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-deploying-code">Kubernetes for Developers: Deploying Your Code</a> 3h 4m Feb 26, 2020
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-moving-cloud">Kubernetes for Developers: Moving to the Cloud</a> by Craig Golightly (@seethatgo, seethatgo.com) 1h 3m Dec 19, 2019 deploys the same simple sample Python app (kubernetes-developers-moving-cloud.zip) to <a href="#k8s_clouds">AKS, EKS, and GKE clouds</a>.
+ 
+   CAUTION: <a target="_blank" href="https://aws.amazon.com/blogs/developer/aws-cli-v2-is-now-generally-available/">
+   aws v2 CLI</a> became generally available in Feb 2020 shortly after this course was published.
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-docker-compose-to-kubernetes">Kubernetes for Developers: Moving from Docker Compose to Kubernetes</a> 2h 20m May 28, 2020
+
+Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.com/">nigelpoulton.com</a>), Docker Captain:
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files">
+   Getting Started with Kubernetes</a> 22 May 2017
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-developers-integrating-volumes-using-multi-container-pods">2h 26m VIDEO course: "Kubernetes for Developers: Integrating Volumes and Using Multi-container Pods"</a> by Nigel Poulton Apr 23, 2020
+
+   * Book: "Docker for Sysadmins"
+
+   * Book: "Docker Deep Dive"
+
+   * Book: "Kubernetes Deep Dive"
+
+   * Video course <a target="_blank" href="https://acloud.guru/course/kubernetes-deep-dive/dashboard">"Kubernetes Deep Dive"</a> (released Oct 2018) references a WordPress sample app at <a target="_blank" href="https://learn.acloud.guru/course/kubernetes-deep-dive/learn/code/demo/watch">VIDEO</a>: <a target="_blank" href="https://github.com/nigelpoulton/k8s-sample-apps">https://github.com/nigelpoulton/k8s-sample-apps</a>
+
+
+### Coursera
+
+<a target="_blank" href="https://www.coursera.org/specializations/architecting-google-kubernetes-engine">Coursera's "Architecting with Google Kubernetes Engine Specialization"</a> is focused on building efficient computing infrastructures using Kubernetes and Google Kubernetes Engine (GKE). The specialization introduces participants to deploying and managing containerized applications on GKE and the other services provided by Google Cloud Platform. Through a combination of presentations, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as pods, containers, deployments, and services; as well as networks and application services. The specialization also covers deploying practical solutions including security and access management, resource management, and resource monitoring. 
+
+1. <a target="_blank" href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
+
+   This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
+
+2. <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Foundations</a> reviews the layout and principles of Google Cloud Platform, followed by an introduction to creating and managing software containers and an introduction to the architecture of Kubernetes.
+
+3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna. Covers: GKE Cluster; Deployments;Jobs and Cronjobs; Cluster Scaling; Pod placement; Pod Autoscaling and Node Pools; Pod networking; Services, Ingress; Load balancing; Network security; Volumes, Stateful Sets; ConfigMaps; Secrets; Persistent Data; 
+
+4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
+
+
+
+### LinkedIn Learning (formerly Lynda)
+
+<a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/kubernetes-for-developers?u=26886050">"Kubernetes Essential Training: Application Development"</a> 
+by Matt Turner (from England) is hands-on using minikube 1.9.2 and kubernetes-cli 1.18.2 on a Mac:
+
+   * Running a local cluster
+   * Running containers
+   * Viewing logs
+   * Remotely executing commands
+   * Orchestrating real-world workloads
+   * Batch processing with jobs and cron jobs
+   * Managing resource usage
+   * Keeping containers secure
+   * Advanced deployment patterns
+   * Analyzing traffic
+   * Extending Kubernetes
+   * DRY deployment and debugging tools
+   <br /><br />
+
+   <ul>The class has quizzes and covers 3rd-party tools such as <a target="_blank" href="https://www.linkedin.com/learning/kubernetes-essential-training-application-development/tools-for-dry-deployments-helm?u=26886050">Helm</a>, Kustomize, kubectl sniff (WireShark), Skaffold, telepresence.
+   </ul>
+
+<a target="_blank" href="https://www.linkedin.com/learning/learning-kubernetes/welcome?u=26886050">Learning Kubernetes</a> (on a Mac) by Karthik Gaekwad (<a target="_blank" href="https://www.linkedin.com/in/kgaekwad/">when he was at Oracle</a>) references files in 
+<a target="_blank" href="https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md">https://github.com/karthequian/Kubernetes/blob/master/CourseHandout.md</a>.
+
+
+<a target="_blank" href="https://www.linkedin.com/learning/devops-foundations-transforming-the-enterprise/transforming-your-organization">"DevOps Foundations: Transforming the Enterprise
+Transforming your organization"</a> by Mirco Hering, Global DevOps Practice Lead at Accenture
+
+### LinuxAcademy
+
+The CKAD Troubleshooting class is highly recommended.
+
+
+### Udemy
+
+<a target="_blank" href="https://mckinsey.udemy.com/course/learn-kubernetes">"Learn Kubernetes"</a> provides a tutorial on yaml.
+
+<a target="_blank" href="https://mckinsey.udemy.com/course/certified-kubernetes-application-developer/">Udemy.com has a CKAD course with Tests</a> updated 09/2020 with 9.5 hours of video. It includes 30-minute lightning rounds to practice the stress of taking the exam. Surviging this gives you confidence.
+
+<a target="_blank" href="https://mckinsey.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11582328?start=150#overview">"Docker and Kubernetes: The Complete Guide"</a>
+by Stephen Grider. Diagrams for the 21h video uses draw.io accessing 
+https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
+
+
+### Others on CKAD:
+
+* <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=uzxSZqSqiLk&list=PLleCw-vqe90DzAwG6Z_f9GARu-y6HbHXf">Alta3 Research's Playlist</a> includes <a target="_blank" href="https://www.youtube.com/watch?v=5cgpFWVD8ds">VIDEO [11:02] : How to CRUSH the CKAD Exam!</a> Jul 27, 2020 shows sample quetions and suggestions to each of 19 objectives.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=dIBX8TQJxW8">VIDEO: CKAD Certification Exam Tips</a> by Cloud and Beyond shows commands that threw him off:
+
+   <pre>kubectl set image deployment/nginx nginx=nginx:191</pre>
+
+   To <a target="_blank" href="https://kubernetes.io/tasks/tools/install-kubectl/">set autocomplete with alias to Kubernetes</a>:
+
+   <pre>alias k=kubectl
+   complete -F __start_kubectl k</pre>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=qA4dNATs5nE">VIDEO: How to pass the Certified Kubernetes Application Developer (CKAD) exam</a> by Santiago Alejandro Agüero 
+* <a target="_blank" href="https://medium.com/@krystiannowaczyk/how-i-passed-the-cka-certified-kubernetes-administrator-exam-f94b11566528">"How I passed the CKA Exam"</a> by Krystian Nowaczyk (who maintains <a target="_blank" href="https://github.com/ramitsurana/awesome-kubernetes">github.com/ramitsurana/awesome-kubernetes</a>) provides a list of resources he used.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=rnemKrveZks">Tips from Tips on preparing for CKAD</a> by Muralidaran Shanmugham
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=1911">
+Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (using k8s v1.17.0) by TechWorld with Nana
+
+
+### Others on CKA:
+
+* <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
+* <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
+
+<hr />
 
 ## More on DevOps #
 

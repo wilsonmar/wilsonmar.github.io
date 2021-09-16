@@ -986,7 +986,7 @@ PROTIP: Specifying passwords in environment variables is more secure than typing
 
 ### Terraform on AWS
 
-<a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="June 1, 2020">VIDEO: Implementing Terraform with AWS</a> by Ned Bellavance</a>
+<a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="June 1, 2020">VIDEO: Implementing Terraform with AWS</a> by Ned Bellavance</a> at <a target="_blank" href="https://github.com/ned1313/Implementing-Terraform-on-AWS">https://github.com/ned1313/Implementing-Terraform-on-AWS</a>
 
 
 <a name="Terraform_Azure"></a>
@@ -2403,6 +2403,20 @@ It's got 33 resources. The sub-modules are:
 
 Here are people who have taken time to create tutorials for us about Terraform:
 
+<strong>Ned Bellavance</strong> (<a target="_blank" href="https://twitter.com/ned1313">@ned1313</a> MS MVP at <a target="_blank" href="https://www.nerdinthecloud.com/">nerdinthecloud.com</a>) has several video classes on Pluralsight [subscription]:
+
+   * <a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6/table-of-contents">video course "Implementing Terraform with AWS"</a>
+
+   * <a target="_blank" href="https://www.pluralsight.com/courses/terraform-getting-started">
+   Terraform - Getting Started (Beginner level)</a> Sep 14 2017 [3h 11m]
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/deep-dive-terraform/table-of-contents">
+   Deep Dive - Terraform</a> 6 Feb 2018 [3h 39m] shows how to export secret keys for back-end processes,
+   use custom data sources, and incorporation into enterprise CI/CD frameworks.
+
+   * Resource graphs of dependencies.
+
+
 Derek Morgan in May 2018 released video courses on LinuxAcademy.com:
 
    * <a target="_blank" href="https://linuxacademy.com/linux/training/course/name/managing-applications-and-infrastructure-with-terraform"> Managing Applications and Infrastructure with Terraform [4:35:35]</a>
@@ -2462,17 +2476,6 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
 
    * <a target="_blank" href="https://github.com/jason-azze/tf-web-exercise">
    https://github.com/jason-azze/tf-web-exercise</a>
-
-<strong>Ned Bellavance</strong> (<a target="_blank" href="https://twitter.com/ned1313">@ned1313</a> MS MVP at <a target="_blank" href="https://www.nerdinthecloud.com/">nerdinthecloud.com</a>) has several video classes on Pluralsight:
-
-   * <a target="_blank" href="https://www.pluralsight.com/courses/terraform-getting-started">
-   Terraform - Getting Started (Beginner level)</a> Sep 14 2017 [3h 11m]
-
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/deep-dive-terraform/table-of-contents">
-   Deep Dive - Terraform</a> 6 Feb 2018 [3h 39m] shows how to export secret keys for back-end processes,
-   use custom data sources, and incorporation into enterprise CI/CD frameworks.
-
-   * Resource graphs of dependencies.
 
 Nick Colyer (Skylines Academy)
 
