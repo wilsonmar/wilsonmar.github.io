@@ -141,7 +141,7 @@ Kubernetes runs apps containers within <strong>Pods</strong>.
 <img alt="k8s-nodes-ports-1048x714" width="1048" height="714" src="https://user-images.githubusercontent.com/300046/133039621-09f5c865-0d83-4352-b58c-c5f4dac81918.png">
 <!-- From https://app.pluralsight.com/library/courses/getting-started-kubernetes/exercise-files -->
 
-Every <strong>app Container</strong> has its own <strong>unique port number</strong> to a unique internal IP assigned to each Pod.
+Every <strong>app Container</strong> has its own <strong>unique port number</strong> to a unique <strong>internal</strong> IP assigned to each Pod.
 
 App Containers within the same Pod share the <strong>same internal IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
 
@@ -238,7 +238,9 @@ I think the quickest yet deepest way to learn Kubernetes is to follow step-by-st
 
 <a name="Kubectl"></a>
 
-PROTIP: To pass Kubernetes exams, you need to master the many "incantations" to control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle").
+PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle" or "cube see-tee-el").
+
+<a target="_blank" href="https://kubernetes.io/docs/user-guide/prereqs/">https://kubernetes.io/docs/user-guide/prereqs</a>
 
 There are several options to run kubectl:
 
@@ -1013,14 +1015,22 @@ https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/instal
 
 Before diving in, know that instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
 
-   * KinD (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+Kind (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+
+   <pre>GO111MODULE="on" go get sigs.k8s.io/kind@v.0.4.0
+   kid create cluster
+   </pre>
+
    CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
-   <br /><br />
 
    NOTE: Kubernetes can use alternative container runtimes than Docker
    to run on top of cri-o, such as RedHat's podman, or LXC.
 
-But let's start by installing minikube on your laptop.
+k3d
+
+   <pre>go install github.com/rancher/k3d
+k3d create
+   </pre>
 
 
 <a name="Minikube"></a>
@@ -1028,6 +1038,8 @@ But let's start by installing minikube on your laptop.
 ### Minikube install 
 
 <a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-minikube/">REF</a>:
+But let's start by installing minikube on your laptop.
+https://github.com/kubernetes/minikube
 
 Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
 and includes a node and a Master when it spins up in a local environment (such as your laptop).
@@ -1124,7 +1136,7 @@ install-on-request: 28,682 (30 days), 77,049 (90 days), 367,126 (365 days)
 build-error: 0 (30 days)
    </pre>
 
-   Previously:
+   Compare growth in size from previous versions:
 
    <pre>/usr/local/Cellar/minikube/1.15.1 (8 files, 62.4MB) *   
   Poured from bottle on 2020-11-22 at 11:46:27
@@ -1133,7 +1145,7 @@ install-on-request: 37,280 (30 days), 92,684 (90 days), 342,920 (365 days)
 build-error: 0 (30 days)
    </pre>
 
-   There is no need to do what older docs say: Make hyperkit the default driver<a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/hyperkit/">*</a>:
+   There is no longer a need to do what older docs say: Make hyperkit the default driver<a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/hyperkit/">*</a>:
 
    <pre><strike>minikube config set driver hyperkit</strike></pre>
 
@@ -1285,6 +1297,7 @@ commit: 23f40a012abb52eff365ff99a709501a61ac5876
 
    <pre><strong>minikube addons enable metrics-server</strong></pre>
 
+
    <a name="GetAPIServices"></a>
 
    ### Get API Services List
@@ -1377,20 +1390,31 @@ v2beta2.autoscaling                    Local     True        24s
 
    It's required by eksctl and minikube.
 
-0. Verify the version installed: 
+1. Verify:
+ 
+   <pre><strong>kubectl version
+   </strong></pre>
+
+   If you see this: ???
+
+   <pre>Client Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.3", GitCommit:"ca643a4d1f7bfe34773c74f79527be4afd95bf39", GitTreeState:"clean", BuildDate:"2021-07-15T21:04:39Z", GoVersion:"go1.16.6", Compiler:"gc", Platform:"darwin/amd64"}
+   </pre>
+
+1. Verify the version installed: 
 
    <pre><strong>kubectl version --client
    </strong></pre>
 
    At time of writing:
 
-   <pre>Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.8", GitCommit:"9f2892aab98fe339f3bd70e3c470144299398ace", GitTreeState:"clean", BuildDate:"2020-08-13T16:12:48Z", GoVersion:"go1.13.15", Compiler:"gc", Platform:"darwin/amd64"}
+   <pre>Client Version: version.Info{Major:"1", Minor:"21", GitVersion:"v1.21.3", GitCommit:"ca643a4d1f7bfe34773c74f79527be4afd95bf39", GitTreeState:"clean", BuildDate:"2021-07-15T21:04:39Z", GoVersion:"go1.16.6", Compiler:"gc", Platform:"darwin/amd64"}
    </pre>
 
    NOTICE that Golang programming is a component.
 
-   If you get this error message:
-   <pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?
+   Without <tt>--client</tt> you get this error message:
+
+   <pre>The connection to the server 127.0.0.1:55000 was refused - did you specify the right host or port?
    </pre>
 
 
@@ -1482,6 +1506,17 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 1. To further debug and diagnose:
 
    <pre><strong>kubectl cluster-info dump</strong></pre>
+
+
+<a name="Namespaces"></a>
+
+## Namespaces
+
+Every request is namespaced:
+
+   <tt>GET https://localhost:8001/api/v1/namespaces/default/pods</tt>
+
+Each namespace has its own set of quotas, network policies, RBAC.
 
 
 <a name="Config"></a>
@@ -1765,6 +1800,13 @@ You don't need to create or think about the default namespace.
 
    <strong>k api-resources --namespaced=true</strong>
 
+   The response is a long unsorted list with SHORTNAMES and KIND.
+
+   Many of the objects shown are for SysAdmins (storageclasses, etc.)
+
+1. API versions:
+
+   <strong>k api-versions</strong>
 
 
 1. List where KubeDNS is running:
@@ -4729,6 +4771,8 @@ spec:
 <a name="PersistentVolume"></a>
 
 ### Persistent Volume (PV)
+
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/pv-128.png?raw=true">
 
    * <a target="_blank" href="https://kubernetesbyexample.com//pv/">kubernetesbyexample.com: Persistent Volumes</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=ZxC6FwEc9WQ">Persistent Volumes on Kubernetes for beginners</a> by That DevOps Guy
