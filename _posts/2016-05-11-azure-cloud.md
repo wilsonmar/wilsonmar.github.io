@@ -164,7 +164,8 @@ After <a target="_blank" href="https://wilsonmar.github.io/azure-cloud-onramp">g
 
 Cloud scale analytics:
 
-![azure-dataw-648x239-10988](https://user-images.githubusercontent.com/300046/56159297-8cd99380-5f81-11e9-8182-0c5199db763f.jpg)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56159297-8cd99380-5f81-11e9-8182-0c5199db763f.jpg">
+<img alt="azure-dataw-648x239-10988" width="649" height="239" src="https://user-images.githubusercontent.com/300046/56159297-8cd99380-5f81-11e9-8182-0c5199db763f.jpg"></a>
 
 
 ## Azure account and dashboard
@@ -176,9 +177,9 @@ Cloud scale analytics:
 * Sign in
 * Create a resource group
 
-   <a name="ARM-signup"></a>
+<a name="ARM-signup"></a>
 
-   ### ARM Create instance #
+### ARM Create instance #
 
 0. At the Azure portal:
 
