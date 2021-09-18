@@ -993,6 +993,8 @@ PROTIP: Specifying passwords in environment variables is more secure than typing
 
 ### Terraform on Azure
 
+https://medium.com/modern-stack/azure-management-using-hashicorp-terraform-e15744f7e612
+
 https://www.oasys.net/posts/updating-azurerm-template-from-terraform/
 
 <a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="Oct 31, 2019

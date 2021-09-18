@@ -178,10 +178,7 @@ Again, "Replicas" of Pods are created within "Worker Nodes".
 
 ## Control Plane Orchestration within a Master Node
 
-Each cloud vendor has its own technology to run a set of <strong>Worker Nodes</strong> controlled by a <strong>Master Node</strong>.
-
-<a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
-<a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
+Each cloud vendor has its own "control plane" GUI (<strong>Master Node</strong>) to run and manage <strong>Worker Nodes</strong>.
 
 The Kubernetes <strong>Master Node</strong> has several services processes which together orchestrates (manages) several <strong>Worker Nodes</strong>. The Master Node (aka "Control Plane") runs several key processes (aka service components):
 
@@ -207,13 +204,22 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
 
    <a href="#Volumes">Volumes of persistent data storage</a>
 
-Kubernetes automates resilience by abstacting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
+Kubernetes automates resilience by abstracting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
 
 ![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
 <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
 
 
-Within AWS, Auto Scaling Groups are used to scale nodes.
+
+Within AWS, Auto Scaling Groups (ASGs) are used to scale nodes.
+
+* https://spot.io/resources/kubernetes-autoscaling-3-methods-and-how-to-make-them-great/
+* https://spot.io/resources/kubernetes-autoscaling/kubernetes-replicaset-kubernetes-scalability-explained/
+<br /><br />
+
+<a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
+<a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
+
 
 
 <a name="Internals"></a>
@@ -259,7 +265,7 @@ There are several options to run kubectl:
 
 ### kubectl CLI command keywords
 
-Below is a list of Kubernetes technical terms, so you can go quickly/directly to each:
+Below are Kubernetes technical terms listed alphabetically in one page, so you can go quickly/directly click to each:
 
 <a href="#Admission">Admission Control</a>,
 <a href="#Annotations">Annotations</a>,
@@ -998,8 +1004,12 @@ kubectl delete po <em>mypod</em> --grace-period=0 --force
 
 <a name="CRI"></a>
 
+## Container Runtime Interface
+
 Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI) specification</a> ensures that every image can be run within every K8s runtime.
 
+
+<hr />
 
 
 <a name="Install"></a>
@@ -1156,15 +1166,11 @@ build-error: 0 (30 days)
 
    <pre>Warning: Treating minikube as a formula.
 ==> Downloading https://ghcr.io/v2/homebrew/core/kubernetes-cli/manifests/1.22.1
-######################################################################## 100.0%
 ==> Downloading https://ghcr.io/v2/homebrew/core/kubernetes-cli/blobs/sha256:1c7
 ==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
-######################################################################## 100.0%
 ==> Downloading https://ghcr.io/v2/homebrew/core/minikube/manifests/1.23.0
-######################################################################## 100.0%
 ==> Downloading https://ghcr.io/v2/homebrew/core/minikube/blobs/sha256:aabf29b10
 ==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
-######################################################################## 100.0%
 ==> Installing dependencies for minikube: kubernetes-cli
 ==> Installing minikube dependency: kubernetes-cli
 ==> Pouring kubernetes-cli--1.22.1.mojave.bottle.tar.gz
@@ -1462,8 +1468,11 @@ v2beta2.autoscaling                    Local     True        24s
 💀  Removed all traces of the "minikube" cluster.
    </pre>
 
-   <a name="Replicas"></a>
    
+   <a name="Replicas"></a>
+
+   ### Scale Replicas
+
    Since Kubectl 1.8, scale is the preferred way to control graceful delete:
 
    <pre><strong>kubectl scale --replicas=3 deployment nginx-deployment</strong></pre>
@@ -1519,6 +1528,7 @@ Every request is namespaced:
 Each namespace has its own set of quotas, network policies, RBAC.
 
 
+
 <a name="Config"></a>
 <a name="Contexts"></a>
 
@@ -1541,7 +1551,6 @@ Each namespace has its own set of quotas, network policies, RBAC.
    </strong></pre>
 
    Deleted the old config from ~/.kube and then restarted docker (for macos) and it rebuilt the config folder. 
-
 
 2. What is in the Kubernetes configuration file showing configuration settings and current context:
 
@@ -1615,6 +1624,8 @@ complete -F __start_kubectl k
 
    <pre>export do="--dry-run=client -o yaml"</pre>
 
+
+   
    ### Bash Autocompletion
 
 1. Save a few seconds by setting up autocompletion. On bash:
@@ -1660,11 +1671,9 @@ Its <a target="_blank" href="https://github.com/kubernetes/kubernetes">code page
    <pre>k completion --help</pre>
 
 
-
 ## Declarative Kubernetes Commands 
 
-K8s recognizes both imperative and declarative yaml files.
-
+K8s recognizes both imperative commands on kubectl and declarative yaml files.
 
 ### Declarative vs. Declarative
 
@@ -1672,9 +1681,17 @@ K8s recognizes both imperative and declarative yaml files.
 
 * Imperative commands act directly on live objects.
 
-* Imperative commands provide no track record history.
+* Imperative commands provide no track record history (other than Terminal history)
 
 * Declarative commands act on yaml files which define objects.
+
+* Declarative commands can be generated from imperative
+
+   <pre>k create deployment ghost --image=ghost --dry-run=client -o yaml >deploy.yaml
+   </pre>
+
+   NOTE: <tt>image=ghost</tt> obtains the image from Docker Hub.
+
 
 TASK: Create a pod with the ubuntu image to run a container to sleep for 5000 seconds. (Modify file ubuntu-sleeper-2.yaml)
 
@@ -1828,9 +1845,86 @@ kubectl get namespaces</strong></pre>
    <br /><br />
 
 
-   <a name="Dashboard"></a>
+### imperative kubectl run command
 
-   ### Add-on Dashboard
+1. Make an imperative command:
+
+   <pre><strong>kubectl run --image=nginx web
+   </strong></pre>
+
+   <pre>pod/web created
+   </pre>
+
+1. 
+
+   <pre><strong>kubectl get pods
+   </strong></pre>
+
+   <pre>NAME   READY   STATUS    RESTARTS   AGE
+web    1/1     Running   0          2m59s
+   </pre>
+
+1. Details:
+
+   <pre><strong>kubectl describe pod web
+   </strong></pre>
+
+   <pre>Name:         web
+Namespace:    default
+Priority:     0
+Node:         minikube/172.17.0.3
+Start Time:   Sun, 04 Oct 2020 07:02:16 -0600
+Labels:       run=web
+Annotations:  &LP;none>
+Status:       Running
+IP:           172.18.0.3
+IPs:
+  IP:  172.18.0.3
+Containers:
+  web:
+    Container ID:   docker://ecd03de690f64202c6bdf35d4b4192e5af32854d9c77093f31136570507cc600
+    Image:          nginx
+    Image ID:       docker-pullable://nginx@sha256:c628b67d21744fce822d22fdcc0389f6bd763daac23a6b77147d0712ea7102d0
+    Port:           &LP;none>
+    Host Port:      &LP;none>
+    State:          Running
+      Started:      Sun, 04 Oct 2020 07:02:49 -0600
+    Ready:          True
+    Restart Count:  0
+    Environment:    &LP;none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-72hc5 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  default-token-72hc5:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-72hc5
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  &LP;none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age    From               Message
+  ----    ------     ----   ----               -------
+  Normal  Scheduled  4m40s  default-scheduler  Successfully assigned default/web to minikube
+  Normal  Pulling    4m39s  kubelet, minikube  Pulling image "nginx"
+  Normal  Pulled     4m7s   kubelet, minikube  Successfully pulled image "nginx" in 31.950535327s
+  Normal  Created    4m7s   kubelet, minikube  Created container web
+  Normal  Started    4m7s   kubelet, minikube  Started container web
+   </pre>
+
+
+
+
+<a name="Dashboard"></a>
+
+### Add-on Dashboard
 
    The Kubernetes dashboard add-on to Kubernetes was originally intended to provide a convenient web-based way for administrators to manage a cluster. In the past, it was backed by a highly privileged kubernetes service account by default.
    
@@ -1948,6 +2042,7 @@ A faster <a target="_blank" href="https://github.com/google/go-jsonnet">go-jason
 
 "We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
 
+zzz
 
 <hr />
 
@@ -2053,7 +2148,7 @@ spec:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="top"><td>apiVersion:</td><td>v1
-     </td><td>apps/v1
+     </td><td colspan="2">apps/v1
    </td></tr>
    <tr valign="top"><td>kind:</td><td>Pod<br />Servicce
      </td><td><a href="#ReplicaSets">ReplicaSet</a></td><td><a href="#Deployment">Deployment</a>
@@ -2067,7 +2162,7 @@ spec:
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="top"><td>k get </td><td> <a href="#Pods">po</a> </td><td> <a href="#Nodes">no</a> </td><td> <a href="#Services">svc</a> </td><td> <a href="#ReplicaSets">rs</a> </td><td> <a href="#Deployment">deployment</a>
      </td></tr>
-   <tr valign="top"><td><em>abbreviation:</em></td><td></td><td> <a href="#Pods">pods</a> </td><td> <a href="#Nodes">nodes</a> </td><td> <a href="#Services">services</a> </td><td> <a href="#ReplicaSets">replicaset</a> </td><td> <a href="#Deployment">deployment</a>
+   <tr valign="top"><td><em>abbreviation:</em></td><td> <a href="#Pods">pods</a> </td><td> <a href="#Nodes">nodes</a> </td><td> <a href="#Services">services</a> </td><td> <a href="#ReplicaSets">replicaset</a> </td><td> <a href="#Deployment">deployment</a>
      </td></tr>
    </table>
 
@@ -2086,7 +2181,7 @@ spec:
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/kubernetes-crd-faas?in=terraform/kubernetes">
    CRDs define a custom/another/new resource kind</a>.
    
-   It uses <tt>apiVersion: apiextensions.k8s.io</tt> (like built-in code for StatefulSets).
+   It uses <tt>apiVersion: apiextensions.k8s.io</tt> (like built-in code for <a href="#StatefulSets">StatefulSets</a>).
 
    Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
    For examaple: <tt>kubectl tree etcdcluster example</tt>
@@ -2160,96 +2255,6 @@ metadata:
    kubectl create says "create this thing" whereas kubectl apply says "do whatever is necessary (create, update, etc) to make it look like this".
 
    The resulting file includes additional annotations.
-
-
-<a name="ArgoCD"></a>
-
-### ArgoCD 
-
-Argo CD is a declarative, GitOps Continuous Delivery tool for Kubernetes.
-
-"GitOps" means ArgoCD monitors GitHub and applies changes of declarative yaml to K8s Controllers automatically:
-
-   * <a target="_blank" href="https://argoproj.github.io/argo-cd/operator-manual/architecture/">Architecture diagram</a>
-   * <a target="_blank" href="https://argoproj.github.io/argo-cd/">argoproj.github.io/argo-cd</a> home page
-   * <a target="_blank" href="https://www.youtube.com/watch?v=2WSJF7d8dUg&list=RDCMUCFe9-V_rN9nLqVNiI8Yof3w&index=2">Introduction to ArgoCD : Kubernetes DevOps CI/CD</a>
-   * Open sourced at <a target="_blank" href="https://github.com/argoproj/argo-cd/">github.com/argoproj/argo-cd</a>
-   <br /><br />
-
-### kubectl run
-
-1. Make an imperative command:
-
-   <pre><strong>kubectl run --image=nginx web
-   </strong></pre>
-
-   <pre>pod/web created
-   </pre>
-
-1. 
-
-   <pre><strong>kubectl get pods
-   </strong></pre>
-
-   <pre>NAME   READY   STATUS    RESTARTS   AGE
-web    1/1     Running   0          2m59s
-   </pre>
-
-1. Details:
-
-   <pre><strong>kubectl describe pod web
-   </strong></pre>
-
-   <pre>Name:         web
-Namespace:    default
-Priority:     0
-Node:         minikube/172.17.0.3
-Start Time:   Sun, 04 Oct 2020 07:02:16 -0600
-Labels:       run=web
-Annotations:  &LP;none>
-Status:       Running
-IP:           172.18.0.3
-IPs:
-  IP:  172.18.0.3
-Containers:
-  web:
-    Container ID:   docker://ecd03de690f64202c6bdf35d4b4192e5af32854d9c77093f31136570507cc600
-    Image:          nginx
-    Image ID:       docker-pullable://nginx@sha256:c628b67d21744fce822d22fdcc0389f6bd763daac23a6b77147d0712ea7102d0
-    Port:           &LP;none>
-    Host Port:      &LP;none>
-    State:          Running
-      Started:      Sun, 04 Oct 2020 07:02:49 -0600
-    Ready:          True
-    Restart Count:  0
-    Environment:    &LP;none>
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-72hc5 (ro)
-Conditions:
-  Type              Status
-  Initialized       True 
-  Ready             True 
-  ContainersReady   True 
-  PodScheduled      True 
-Volumes:
-  default-token-72hc5:
-    Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-72hc5
-    Optional:    false
-QoS Class:       BestEffort
-Node-Selectors:  &LP;none>
-Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
-                 node.kubernetes.io/unreachable:NoExecute for 300s
-Events:
-  Type    Reason     Age    From               Message
-  ----    ------     ----   ----               -------
-  Normal  Scheduled  4m40s  default-scheduler  Successfully assigned default/web to minikube
-  Normal  Pulling    4m39s  kubelet, minikube  Pulling image "nginx"
-  Normal  Pulled     4m7s   kubelet, minikube  Successfully pulled image "nginx" in 31.950535327s
-  Normal  Created    4m7s   kubelet, minikube  Created container web
-  Normal  Started    4m7s   kubelet, minikube  Started container web
-   </pre>
-
 
 <hr />
 
@@ -2327,22 +2332,18 @@ Because Deployments provide a helpful "front end" to ReplicaSets, training focus
 
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/rs-128.png?raw=true">
 
-A ReplicaSet controller ensures that a population of Pods, all identical to one another, are running at the same time. 
+Deployments let you create, update, roll back, and scale Pods, using <strong>ReplicaSets</strong>.
 
 Deployments manage their own ReplicaSets to achieve the declarative goals you prescribe, so you will most commonly work with Deployment objects.
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png">
-   <img width="784" alt="k8s-deployment-rs-1568x584" width="1568" height="584" src="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png"></a>
-
-   (The ReplicaSet process replaces the older ReplicationController.)
+A ReplicaSet controller ensures that a population of Pods, all identical to one another, are running at the same time. 
+So it enables Load Balancing across several machines for more capacity, redunancy, and rolling updates without downtime.
 
    ReplicaSets enable deployment of several pods, and check their status as a single unit (replicas).
-
-   This enables Load Balancing across several machines for more capacity, redunancy, and rolling updates without downtime.
-
    ReplicaSets monitor the number of pods and create pods to match the number of replicas for the label type requested in the yaml.
 
 The sample ReplicaSet.yml file:
+   PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
 
    <pre>apiVersion: v1
 kind: ReplicaSet
@@ -2370,9 +2371,7 @@ selector:
     type: front-end
    </pre>
 
-   A selector is required within ReplicaSet yaml.
-
-   PROTIP: The spec: template: is copied from a pod definition yaml, then indented.
+   REMEMBER: A selector is required within ReplicaSet yaml.
 
    PROTIP: <a target="_blank" href="https://wilsonmar.github.io/text-editors#ViIndent">Indent paste using vi</a>
 
@@ -2387,16 +2386,6 @@ selector:
    --save-config
    </pre>
 
-   Deployments let you create, update, roll back, and scale Pods, using ReplicaSets as needed. 
-   For example, when you perform a rolling upgrade of a Deployment, the Deployment object creates a second ReplicaSet, and then increases the number of Pods in the new ReplicaSet as it decreases the number of Pods in its original ReplicaSet.
-
-   Replication Controllers perform a similar role to the combination of ReplicaSets and Deployments, but their use is no longer recommended. 
-
-   If you need to deploy applications that maintain local state, StatefulSet is a better option. A StatefulSet is similar to a Deployment in that the Pods use the same container spec. The Pods created through Deployment are not given persistent identities, however; by contrast, Pods created using StatefulSet have unique persistent identities with stable network identity and persistent disk storage. 
-
-   If you need to run certain Pods on all the nodes within the cluster or on a selection of nodes, use DaemonSet. DaemonSet ensures that a specific Pod is always running on all or some subset of the nodes. If new nodes are added, DaemonSet will automatically set up Pods in those nodes with the required specification. The word "daemon" is a computer science term meaning a non-interactive process that provides useful services to other processes. A Kubernetes cluster might use a DaemonSet to ensure that a logging agent like fluentd is running on all nodes in the cluster.
-
-
 1. PROTIP: Remember the ".apps" when listing replicasets:
 
    <pre><strong>k get replicasets.apps</strong></pre>
@@ -2404,7 +2393,6 @@ selector:
 1. Identify the image:
 
    <pre><strong>k describe replicasets.apps replicaset-1  | grep -i image:</strong></pre>
-
 
    ### Modify replicas to scale
 
@@ -2421,8 +2409,15 @@ selector:
 Practice test with quiz about pod commands: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039431
 
 
+### Rolling Updates
 
-## Deployments
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png">
+   <img width="784" alt="k8s-deployment-rs-1568x584" width="1568" height="584" src="https://user-images.githubusercontent.com/300046/99866180-3de7dd00-2b6c-11eb-9b4f-563ea790bb9e.png"></a>
+
+   For example, when you perform a rolling upgrade of a Deployment, the Deployment object creates a second ReplicaSet, and then increases the number of Pods in the new ReplicaSet as it decreases the number of Pods in its original ReplicaSet.
+
+   (The ReplicaSet process replaces the older ReplicationController.
+   Replication Controllers perform a similar role to the combination of ReplicaSets and Deployments, but their use is no longer recommended.)
 
 To upgrade gradually in a production environment without downtime, do a <strong>rolling update</strong>.
 
@@ -2446,19 +2441,73 @@ k get deployments.app
 Practice test with quiz about deployments: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039434
 
 
+<a name="StatefulSets"></a>
+   
+### Stateful Sets
+   
+   If you need to deploy applications that maintain <strong>local state</strong>, StatefulSet is a better option. A StatefulSet is similar to a Deployment in that the Pods use the same container spec. The Pods created through Deployment are not given persistent identities, however; by contrast, Pods created using StatefulSet have unique <strong>persistent</strong> identities with stable network identity and persistent disk storage.
+
+
+<hr />
+
+<a name="StatefulSets"></a>
+
+## Deploy StatefulSet components
+
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sts-128.png?raw=true">
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>
+   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com: Stateful Sets</a>
+
+Stateless apps don't keep a record of state (such as shopping cart items).
+Each request is completely new, without regard for what activity occured before.
+So they can be defined using deployment components:
+Standard Pods are identical and interchangeable, with the same service name, created in random order with random <a href="#Hashes">hashes</a>. Data passes through NodeJs.
+
+Each Stateful app (such as mysql-app) that stores data (updates a database such as MongoDB) about the state of each transaction
+are defined using Kubernetes StatefulSets (STS) components:
+   * Previous State Data (in data replicas) is queried and updated depending on the data state
+   * STS Pods are NOT identical. Each pods has a <strong>sticky identity</strong>, .{governing service domain}
+   * STS Pods have individual service names, not interchangeable
+   * STS Pods are created in sequence, after success of each Pod, based on a persistent individual identify
+   <br /><br />
+
+Add pods can read. But only Master pods can write.
+
+To ensure each Pod maintains the latest state in local storage, 
+<strong>continuous data sync</strong> occurs from master to slaves.
+
+
 
 <a name="DaemonSets"></a>
 
-## DaemonSets
+## DaemonSets (ds)
 
-   DaemonSets ensure that all nodes run a copy of a specified pod.
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/ds-128.png?raw=true">
 
-   As nodes are added or removed from the cluster, a DaemonSet adds or removes the required pods.
+To run the same Pod on all nodes within the cluster or on a selection of nodes, use <strong>DaemonSet</strong>. When new nodes are added, DaemonSet will automatically set up Pods in those nodes with the required specification. 
 
-1. Deleting a DaemonSet removes the pods it manages.
+The word "daemon" is a computer science term meaning a non-interactive process that provides useful services to other processes. 
+
+For example, a Kubernetes cluster might use a DaemonSet to ensure that a logging agent like fluentd is running on all nodes in the cluster.
+
+   Usually for system services or other pods that need to physically reside on every node in the cluster, such as for network services. 
+   
+   They can also be deployed only to certain nodes using labels and node selectors.
+
+REMEMBER:
+
+1. When draining a node out of service temporarily for maintenance, remember to specify ignore daemonsets:
+
+   <pre>kubectl drain node3.mylabserver.com --ignore-daemonsets</pre>
+
+1. To return to service, uncordon:
+
+   <pre>kubectl uncordon node3.mylabserver.com</pre>
 
 
 
+<hr />
 
 <a name="Services"></a>
 <a name="NodePoints"></a>
@@ -2819,10 +2868,11 @@ metadata:
  
    <pre>kubectl tree deployment ???</pre>
 
+<hr />
 
 <a name="Addons"></a>
 
-### Add-ons to Kubernetes
+## Add-ons to Kubernetes
 
 > Kubernetes is a platform used for building platforms such as <a href="#OpenShift">OpenShift</a>, Helm, EKS, CrossPlane.
 
@@ -2858,7 +2908,7 @@ https://github.com/ojhughes/k8s-for-the-busy-java-developer by Ollie Hughes (@ol
 
 <a name="Helm"></a>
 
-## Helm charts
+### Helm charts
 
 <a target="_blank" href="https://www.youtube.com/watch?v=0vpM8E28aXQ&time=9m45s">VIDEO</a>: Helm (<a target="_blank" href="https://helm.sh/">helm.sh</a>) is the default package manager for Kubernets (like pip and NuGet). It was started by a company called Deis in October 2015 out of a hackathon.
 
@@ -2888,6 +2938,23 @@ Videos:
 Helm Explained by "Nana's TechWorld"</a> (<a target="_blank" href="https://www.linkedin.com/in/nana-janashia/">Nana Janashia</a>)
    * <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
+
+
+
+<a name="ArgoCD"></a>
+
+### ArgoCD 
+
+Argo CD is a declarative, GitOps Continuous Delivery tool for Kubernetes.
+
+"GitOps" means ArgoCD monitors GitHub and applies changes of declarative yaml to K8s Controllers automatically:
+
+   * <a target="_blank" href="https://argoproj.github.io/argo-cd/operator-manual/architecture/">Architecture diagram</a>
+   * <a target="_blank" href="https://argoproj.github.io/argo-cd/">argoproj.github.io/argo-cd</a> home page
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2WSJF7d8dUg&list=RDCMUCFe9-V_rN9nLqVNiI8Yof3w&index=2">Introduction to ArgoCD : Kubernetes DevOps CI/CD</a>
+   * Open sourced at <a target="_blank" href="https://github.com/argoproj/argo-cd/">github.com/argoproj/argo-cd</a>
+   <br /><br />
+
 
 
 <a name="OpenShift"></a>
@@ -2954,6 +3021,7 @@ Service yaml files specify what ports are used in deployments.
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/96952588-6c5e9380-14ac-11eb-8658-40fdee2aee93.png">
 <img width="707" alt="k8s-svc-deploy-asso" src="https://user-images.githubusercontent.com/300046/96952588-6c5e9380-14ac-11eb-8658-40fdee2aee93.png"></a>
 
+
 ### Auto-scaling
 
 The Horizontal Pod Autoscaler add more pods by updating the replicas count in the Deployment 
@@ -2977,6 +3045,30 @@ In 2019 Kubernetes added <strong>auto-scaling</strong> based on metrics API meas
    To disable auto-scaling:
 
    <pre><strong>... --no-enable-autoscaling ...</strong></pre>
+
+<a name="Autoscaler"></a>
+
+## Autoscaler
+
+* https://github.com/kubernetes/kubernetes/blob/release-1.0/docs/proposals/autoscaling.md now obsolete
+* https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md
+* https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
+* resize the amount of CPU/RAM for a specific Pod or Container. https://github.com/kubernetes/kubernetes/issues/2072
+
+## AWS K8s Cluster Autoscaler
+
+<a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md">https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md</a> 
+provides deep-dive notes and code.
+
+   <a name="HPA"></a>
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
+
+## HPA (HorizontalPodAutoscaler)
+
+increases the instance count.
+
+
+VPA (Vertical Pod Autoscaler)
 
 
 
@@ -3029,7 +3121,6 @@ A Deployment is an API object that manages a replicated application, typically b
 
    <pre><strong>kubectl create deployment nginx-lab8 --image=nginx --replicas=3 --dry-run=client -o yaml > lab8.yaml
    </strong></pre>
-
 
 1. To delete a deployment:
 
@@ -4925,6 +5016,7 @@ parameters:
 <a name="PVC"></a>
 
 ### Persistant Volume Claim (PVC)
+
 <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/pvc-128.png?raw=true">
 
    A Persistent Volume Claim (PVC) is a request for that storage by a user.
@@ -4956,53 +5048,6 @@ More:
 * https://github.com/burrsutter/9stepsawesome/blob/master/9_databases.adoc
 
 <hr />
-
-<a name="StatefulSets"></a>
-
-## Deploy StatefulSet components
-
-   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sts-128.png?raw=true">
-
-<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com: Stateful Sets</a>
-
-Stateless apps don't keep a record of state (such as shopping cart items).
-Each request is completely new, without regard for what activity occured before.
-So they can be defined using deployment components:
-Standard Pods are identical and interchangeable, with the same service name, created in random order with random <a href="#Hashes">hashes</a>. Data passes through NodeJs.
-
-Each Stateful app (such as mysql-app) that stores data (updates a database such as MongoDB) about the state of each transaction
-are defined using Kubernetes StatefulSets (STS) components:
-   * Previous State Data (in data replicas) is queried and updated depending on the data state
-   * STS Pods are NOT identical. Each pods has a <strong>sticky identity</strong>, .{governing service domain}
-   * STS Pods have individual service names, not interchangeable
-   * STS Pods are created in sequence, after success of each Pod, based on a persistent individual identify
-   <br /><br />
-
-Add pods can read. But only Master pods can write.
-
-To ensure each Pod maintains the latest state in local storage, 
-<strong>continuous data sync</strong> occurs from master to slaves.
-
-
-
-
-<a name="DaemonSets"></a>
-
-## DaemonSets
-
-   daemonsets (ds) 
-
-   Usually for system services or other pods that need to physically reside on every node in the cluster, such as for network services. They can also be deployed only to certain nodes using labels and node selectors.
-
-1. To drain a node out of service temporarily for maintenance:
-
-   <pre>kubectl drain node3.mylabserver.com --ignore-daemonsets</pre>
-
-1. To return to service:
-
-   <pre>kubectl uncordon node3.mylabserver.com</pre>
-
 
 <a name="micro-services"></a>
 
@@ -5230,6 +5275,8 @@ Sample labels and values:
 
    <pre>k delete pods -l application-level=1.0</pre>
 
+NOTE: After a pod is deleted, Kubernetes automatically creates another one to ensure the number of replicas are fulfilled.
+
 
 <a name="rc"></a>
 
@@ -5262,30 +5309,25 @@ spec:
 
 0. Apply replication:
 
-   <pre><strong>
-   kubectl apply -f rc.yml
+   <pre><strong>kubectl apply -f rc.yml
    </strong></pre>
 
    The response expected:
 
-   <pre>
-   replicationcontroller "hello" configured
+   <pre>replicationcontroller "hello" configured
    </pre>
 
 0. List, in wide format, the number of replicated nodes:
 
-   <pre><strong>
-   kubectl get rc -o wide
+   <pre><strong>kubectl get rc -o wide
    </strong></pre>
 
-   <pre>
-   DESIRED, CURRENT, READY
+   <pre>DESIRED, CURRENT, READY
    </pre>
 
 0. Get more detail:
 
-   <pre><strong>
-   kubectl describe rc
+   <pre><strong>kubectl describe rc
    </strong></pre>
 
 
@@ -5295,8 +5337,7 @@ spec:
 
 The `svc.yml` defines the services:
 
-   <pre>
-apiVersion: v1
+   <pre>apiVersion: v1
 kind: Service
 metadata:
   name: hello-svc
@@ -5311,9 +5352,11 @@ spec:
     app: hello-world
    </pre>
 
+   The .spec.template field specifies how to create new pods in this ReplicaSet—containers using the nginx image on Docker Hub. 
+   New containers are named the value in metadata.nam".
+
+   The .spec.selector field defines how to find pods to manage as part of this ReplicaSet—in this case using MatchLabels
    PROTIP: The selector should match the pods.xml.
-
-
 
 0. To create services:
 
@@ -5399,13 +5442,17 @@ spec:
 
    <a name="RollingUpdate"></a>
 
-   Notice the "RollingUpdateStrategy: 25% max unavilable, 25% max surge".
+   ### Rolling Update Strategy
 
    In the yaml, RollingUpdate is part of strategy:
 
    <pre>strategy:
-    Rolling Update: 
+  RollingUpdate: 
+    maxSurge: 25% 
+    maxUnavilable: 25%
+  type: RollingUpdate
    </pre>
+
 
 1. Begin rollout of a new desired version from the command line:
 
@@ -6064,30 +6111,6 @@ GKE provides several <strong>Predefined roles</strong> to provide granular acces
 
 
 <hr />
-
-<a name="Autoscaler"></a>
-
-## Autoscaler
-
-* https://github.com/kubernetes/kubernetes/blob/release-1.0/docs/proposals/autoscaling.md now obsolete
-* https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md
-* https://www.tutorialspoint.com/kubernetes/kubernetes_replica_sets.htm
-* resize the amount of CPU/RAM for a specific Pod or Container. https://github.com/kubernetes/kubernetes/issues/2072
-
-## AWS K8s Cluster Autoscaler
-
-<a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md">https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md</a> 
-provides deep-dive notes and code.
-
-   <a name="HPA"></a>
-   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/hpa-128.png?raw=true">
-
-## HPA (HorizontalPodAutoscaler)
-
-increases the instance count.
-
-
-VPA (Vertical Pod Autoscaler)
 
 
 
