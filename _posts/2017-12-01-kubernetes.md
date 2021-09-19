@@ -18,7 +18,29 @@ k8s_version: 1.22
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why Kubernetes? Speed vs. Security
+This article I wrote both while I prepared for the CKAD and while on the job.
+
+## TL;DR Professional certifications in Kubernetes
+
+<a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w" title="Tips to Pass the CKAD Exam from CloudAcademy">VIDEO:</a>:
+If you're here for advice on how to pass the CKAD, here is my advice:
+
+1. You're given access only to Kubernetes official documentation, so get used to navigating that set of pages. Foresake all other docs and utilities (Service Mesh, etc.) until after you pass.
+
+   NOTE: There is support for other languages other than English.
+
+1. Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters</strong> . So first minute into the exam, configure your Terminal with keyboard shortcuts (such as k instead of kubectl), and use command abbreviations.
+
+1. Learn to be proficient at the text editor that come with Ubuntu Linux, which is vi.
+
+1. Study using <a target="_blank" href="https://kodekloud.com/courses/labs-certified-kubernetes-application-developer/">KodeKloud</a>'s gamified hands-on troubleshooting pedagogy that moves you logically through 49 topics. Quizzes follow each topic. You can access it via Udemy.com.
+
+1. Each exam includes one free fail retake.
+
+
+## Why Kubernetes? Team Speed vs. Central Control
+
+As <a target="_blank" href="https://wilsonmar.github.io/docker/">my article on Docker</a> describes, Docker images are much faster and smaller than VMwere images.
 
 With Kubernetes in a <a href="#Clouds">cloud</a>, given enough training, an  <strong>individual developer can take complete control of production operations</strong>  -- deploy both application code with all environment settings, without ceremonies and waiting for operations management approvals. This freedom is why Kubernetes contributes to <strong>corporate agility and faster time to market</strong>.
 
@@ -30,7 +52,7 @@ So, alas, some managers fall back to "protecting" Kubernetes in production by en
 
 When specialists are the only ones capable of doing some part of the work, they often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
 
-"Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
+"Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
 
 
 ## This article (automation)
@@ -103,7 +125,7 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * <a href="#EKS">EKS = Elastic Kubernetes Service (in AWS)</a> using <tt>eksctl</tt> commands
 * <a href="#GKE">GKE = Google Kubernetes Engine</a> <tt>gcloud container</tt>
 
-* IKS = IBM cloud
+* <a target="_blank" href="https://www.ibm.com/cloud/kubernetes-service">IBM cloud Kubernetes Service</a>
 * OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution - OpenShift Dedicated, OpenShift Online
 * KUBE2GO
 
@@ -369,7 +391,7 @@ https://github.com/sebgoa/oreilly-kubernetes
 
 In addition to other training providers, several vendors offer monthly/annual subscriptions with labs/demos:
 
-* STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified.
+* STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified troubleshooting.
 
    A KodeKloud subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
 
@@ -542,14 +564,6 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 
 
 <hr />
-
-## Professional certifications in Kubernetes
-
-Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters.</strong> Each exam includes one free fail retake.
-
-MOVE: There is support for other languages other than English.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w">VIDEO: "Hands-on Tips to Pass the CKAD Exam"</a> from CloudAcademy.
 
 
 <a name="CKAD_ExamDomains"></a>

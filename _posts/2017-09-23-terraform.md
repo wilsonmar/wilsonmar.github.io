@@ -1682,11 +1682,14 @@ resource "aws_instance" "web" {
 
    Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
 
-   <a target="_blak" href="
+   <a target="_blank" href="
    https://github.com/terraform-providers">
    https://github.com/terraform-providers</a>
    
-   <a name="Providers"></a>
+   <a target="_blank" href="
+   https://www.terraform.io/docs/language/providers/index.html">
+   https://www.terraform.io/docs/language/providers/index.html</a>
+
 
    ### Terraform Built-in Providers
 

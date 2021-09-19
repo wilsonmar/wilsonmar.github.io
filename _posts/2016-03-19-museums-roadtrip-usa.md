@@ -75,6 +75,12 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 <a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the moutains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
 
 
+## U.S. National Parks #
+
+<a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">This map</a> shows the 69 <a target="_blank" href="https://www.nps.gov/index.htm">National Parks managed by the U.S. National Parks agency</a>:
+
+<img alt="us-nps-ma-.jpeg" https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg"></a>
+
 <a name="DownEastCoast"></a>
 
 ## Down the Atlantic Eastern Seaboard
