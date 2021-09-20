@@ -77,7 +77,8 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 
 ## U.S. National Parks #
 
-<a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">This map</a> shows the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">National Parks managed by the U.S. National Park Service:
+<a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">This map</a> shows the most significant among <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service:
+
 <img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
 
 
