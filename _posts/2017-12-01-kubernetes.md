@@ -25,7 +25,7 @@ This article I wrote both while I prepared for the CKAD and while on the job.
 <a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w" title="Tips to Pass the CKAD Exam from CloudAcademy">VIDEO:</a>:
 If you're here for advice on how to pass the CKAD, here is my advice:
 
-1. You're given access only to Kubernetes official documentation, so get used to navigating that set of pages. Foresake all other docs and utilities (Service Mesh, etc.) until after you pass.
+1. You're given access only to Kubernetes official documentation, so get used to navigating that set of pages. Foresake all other docs and utilities (Helm, Service Mesh, etc.) until after you pass (and get a job using Kubernetes).
 
    NOTE: There is support for other languages other than English.
 

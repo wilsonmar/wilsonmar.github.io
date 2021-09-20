@@ -45,12 +45,21 @@ BTW, finding where each site is located was a great geography lesson for me.
 The above route was optimized for least driving time using Google Maps API driven by <a target="_blank" href="
 https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb">Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>.
 
-If you want <a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">
-a route to visit national parks</a>:
+## National Parks
+
+If you want <a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">a route</a> to visit the most significant among <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service:
+
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg">
 <img alt="us-tour-natl-park-route" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg"></a>
 
-The planned route of the <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
+based on <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">This map</a>:
+
+<img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
+
+
+## Freedom Ride
+
+The planned route of the courageous <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
 
 The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists. The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
@@ -73,13 +82,6 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 <a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train"><img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
 
 <a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the moutains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
-
-
-## U.S. National Parks #
-
-<a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">This map</a> shows the most significant among <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service:
-
-<img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
 
 
 <a name="DownEastCoast"></a>
