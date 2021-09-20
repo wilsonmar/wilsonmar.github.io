@@ -56,6 +56,8 @@ based on <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-2
 
 <img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
 
+<a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">BTW</a>: I've been told that due to recovery from COVID, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
+
 
 ## Freedom Ride
 

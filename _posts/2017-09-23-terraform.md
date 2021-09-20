@@ -2092,11 +2092,14 @@ output "azure_rm_dns_cname" {
 1. Have Terrform evaluate based on vars in a different (parent) folder:
 
    <pre><strong>terraform plan \
+      -var 'site_name=demo.example.com' \
       -var-file='..\terraform.tfvars' \
       -var-file='.\Development\development.tfvars' \
       -state='.\Development\dev.state' \
       -out base-`date-+'%s'`.plan
    </strong></pre>
+
+   The `-var` parameter specifies a value for var.site_name variable.
 
    The two dots in the command specifies to look above the current folder.
 

@@ -25,15 +25,13 @@ This article I wrote both while I prepared for the CKAD and while on the job.
 <a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w" title="Tips to Pass the CKAD Exam from CloudAcademy">VIDEO:</a>:
 If you're here for advice on how to pass the CKAD, here is my advice:
 
-1. You're given access only to Kubernetes official documentation, so get used to navigating that set of pages. Foresake all other docs and utilities (Helm, Service Mesh, etc.) until after you pass (and get a job using Kubernetes).
+1. PROTIP: Instead of trying to memorize everything, during the test you're given access only to <a target="_blank" href="https://kubernetes.io/docs/home/">Kubernetes official documentation</a>, get used to navigating those set of pages to look stuff up. NOTE: There is support for other languages other than English. Foresake all other docs and utilities until after you pass (and get a real job using Kubernetes where you would consider Service Mesh, <a href="#Kustomize">Kustomize</a>, <a href="#Jsonnet">Jsonnet</a>, etc.).
 
-   NOTE: There is support for other languages other than English.
+1. PROTIP: Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters</strong> . So first minute into the exam, configure your Terminal with keyboard shortcuts (such as k instead of kubectl), and use command abbreviations.
 
-1. Instead of multiple choice questions, K8s exam consists of <strong>task-based practical responses while SSH'd into live clusters</strong> . So first minute into the exam, configure your Terminal with keyboard shortcuts (such as k instead of kubectl), and use command abbreviations.
+1. PROTIP: Learn to be proficient at the text editor that come with Ubuntu Linux, which is vi.
 
-1. Learn to be proficient at the text editor that come with Ubuntu Linux, which is vi.
-
-1. Study using <a target="_blank" href="https://kodekloud.com/courses/labs-certified-kubernetes-application-developer/">KodeKloud</a>'s gamified hands-on troubleshooting pedagogy that moves you logically through 49 topics. Quizzes follow each topic. You can access it via Udemy.com.
+1. PROTIP: Study using <a target="_blank" href="https://kodekloud.com/courses/labs-certified-kubernetes-application-developer/">KodeKloud</a>'s gamified hands-on troubleshooting pedagogy that moves you logically through 49 topics. Quizzes follow each topic. You can access it via Udemy.com. 
 
 1. Each exam includes one free fail retake.
 
@@ -2056,10 +2054,7 @@ A faster <a target="_blank" href="https://github.com/google/go-jsonnet">go-jason
 
 "We combine Jsonnet with <a href="#ArgoCD">ArgoCD</a> to scale our deployments across thousands of microservices."
 
-zzz
-
 <hr />
-
 
 ### Dockerfile to Pod yaml correspondance
 
@@ -2490,7 +2485,6 @@ Add pods can read. But only Master pods can write.
 
 To ensure each Pod maintains the latest state in local storage, 
 <strong>continuous data sync</strong> occurs from master to slaves.
-
 
 
 <a name="DaemonSets"></a>
@@ -2953,6 +2947,17 @@ Helm Explained by "Nana's TechWorld"</a> (<a target="_blank" href="https://www.l
    * <a target="_blank" href="https://www.ibm.com/blogs/bluemix/2018/06/deploy-scalable-web-application-kubernetes-using-helm/">
 IBM: Deploy a scalable web application to Kubernetes using Helm</a>
 
+
+<a name="Kapp"></a>
+
+## Kapp
+
+Kapp (open sourced at <a target="_blank" href="https://carvel.dev/kapp/">https://carvel.dev/kapp</a>)
+replaces the kubectl command:
+
+<pre>kapp deploy -a deploy1 -f d.yaml -f </pre>
+
+It is used by Google for its Marketplace to leverage labels.
 
 
 <a name="ArgoCD"></a>
