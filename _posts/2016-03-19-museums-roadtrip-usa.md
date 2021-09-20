@@ -59,21 +59,26 @@ based on <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-2
 <a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">BTW</a>: I've been told that due to recovery from COVID, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
 
 
-## Freedom Ride
-
-The planned route of the courageous <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
-
-The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists. The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
-
-> Do you have a roadtrip map? Send it to me and I'll post it here.
-
 ## Gas and Charging #
 
-[<a target="_blank" href="https://en.wikipedia.org/wiki/Tesla_Supercharger">This map of Tesla supercharger in 2019</a> has more dots now: <a target="_blank" href="https://www.tesla.com/supercharger">locations:<br />
+The number of <a target="_blank" href="https://www.tesla.com/supercharger">Tesla Supercharger locations</a> jumped to <a target="_blank" href="https://en.wikipedia.org/wiki/Tesla_Supercharger">2,966 in Q2 2021 from 1,587 at Q1 2019</a>:
+
 <img alt="map tesla charging stations 650x334-c59" width="650" height="334" src="https://cloud.githubusercontent.com/assets/300046/17037278/538ea0f8-4f4d-11e6-907a-6a0b65a807e5.jpg"></a>
 
 A map of stations offering Ethanol-free premium gasoline is at <a target="_blank" href="https://www.pure-gas.org/extensions/map.html">pure-gas.org/extensions/map.html</a>. My wife used it to figure out where I should stop along a route from Florida to Montana. It was difficult because we had to figure out where I was on the website's map. She also had to calculate how much further I could go with remaining gas. We managed to stay married after that.
+
+
+## Freedom Ride
+
+The planned route of the courageous <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
+
+The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists. 
+
+The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
+
+> Do you have a roadtrip map? Send it to me and I'll post it here.
 
 
 ## Railroads Westward #
