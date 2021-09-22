@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "DAST for OWASP using ZAP on the Broken Web App and other tools"
+title: "DAST for OWASP using SonarQube, ZAP on the Broken Web App, and other tools"
 excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
 tags: [API, devsecops]
 date: "2021-08-21"
 file: "owasp-testing"
 image:
-# devsecops-diagram-784x232.png
-  feature: https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png
-  credit: 
-  creditlink: 
+# owasp-2021-1900x500.png
+  feature: https://user-images.githubusercontent.com/300046/134340802-9a5f0729-f3a2-4ed1-817b-4e29973730a1.png
+  credit: OWASP.org
+  creditlink: https://owasp.org/Top10/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -123,6 +123,8 @@ The main targets of a DAST system involve what offer a front door to attackers: 
 A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
 is offered free, and is actively maintained by hundreds of international volunteers. 
 Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
+
+   <img alt="web proxy" src="https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png">
 
 B. WebInspect from MicroFocus (formerly HP).
 
