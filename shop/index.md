@@ -202,13 +202,31 @@ Other qualities and alternatives I've considered during my survey of various one
 
 ## Glasses
 
-Glasses are one of the essentials. So I keep an extra set in the suitcase.
+Glasses are one of my essentials. So I keep an extra set in my backpack, in the car, in my suitcase.
 
-[_] <strong>Sunglasses</strong> (in a hard case). For me, polarized lenses is a must-have. Maui Jim's gave free repairs if I pay to ship mine to Hawaii. But after losing too many, I've gone to Ray Bans, which are a great value. $30 from Costco.
+Considerations:
+   * width appropriate for face?
+   * bridge riding on nose?
+   * "ballistic" lenses that won't shatter?
+   * Sides covered for dust protection or open for airflow?
+   * reflective?
+   * hard case?
+   <br /><br />
 
-[_] <strong>Reading glasses</strong> (in a hard case) which have a yellow tint to block blue light helps me sleep better. $12 from Amazon. Newer ones have a less noticeable tint.
+[_] <strong>Polarized sunglasses</strong> are a must-have. Maui Jim's gave free repairs if I pay to ship mine to Hawaii. But after losing too many, I've gone to cheaper ones. Costco has good ones from name brands for $30. 
 
-[_] Reading glasses that turn dark for use in the sun. $15 from Walmart.
+Ray Bans, which are a great value. $30 from Costco.
+
+[_] <strong>Blue-light blocking reading glasses</strong> (in a hard case) for those older 40. I like the ones with a yellow tint which block blue light to help me sleep better. Newer ones, such as the <a target="_blank" href="https://www.amazon.com/gp/product/B097XYVRNT/">$15 Joox</a>, at 40% tint, is a less noticeable yellow tint. Hinges of the <a target="_blank" href="https://www.amazon.com/gp/product/B07DFXFP8P/">$17.50 Gudzws</a> are rather fragile.
+
+[_] <strong>Polarized (dark tint) reading glasses</strong> that turn dark for use in the sun.
+
+
+<a name="FaceMasks"></a>
+
+## Face Masks
+
+https://www.wired.com/gallery/best-face-masks/
 
 
 <a name="Adapters"></a>
