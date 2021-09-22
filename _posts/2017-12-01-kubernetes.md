@@ -3827,7 +3827,11 @@ Such direct configuration of security contexts in each individual pod can be a l
 
 #### psp = Pod Security policies
 
-<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/psp-128.png?raw=true">
+   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/psp-128.png?raw=true">
+   
+<a target="_blank" href="https://www.infoq.com/news/2021/09/kubernetes-hardening-guidance/">NSA's Kubernetes Hardening Guidance</a> include use of Admission Control Webhook:
+
+![k8s-nsa-image-scanning-admission-controller-613x566](https://user-images.githubusercontent.com/300046/134338991-52cf7e08-609f-4966-8d7b-70c7256e58d4.png)
 
 A request can be passed through multiple controllers.
 If the request fails at any point, the entire request is rejected immediately, with the end user receiving an error.
@@ -3835,7 +3839,7 @@ If the request fails at any point, the entire request is rejected immediately, w
 Pod security policies apply to multiple pods without having to specify and manage those details in each pod definition.
 Defining pod security policies creates reusable security contexts. It's easier to define and manage security configurations separately, and then apply them to the pods that need them.
 
-Each pod security policy consists of an <strong>object</strong> and an admission controller. 
+Each pod security policy consists of an <strong>object</strong> and an <a href="#Admission">admission controller</a>.
 
 The pod security policy object (a set of restrictions, requirements, and defaults) are defined in the same way as
 a security context inside a pod, and can be used to control the same security features.
