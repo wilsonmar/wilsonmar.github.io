@@ -1,23 +1,23 @@
 ---
 layout: post
 title: "Feature flags"
-excerpt: "Evaluate the options for Python for real-time feature configuration"
+excerpt: "Evaluate the options for Python for real-time feature configuration and impact control"
 tags: [python, coding]
 date: "2017-03-05"
 file: "feature-flags"
 image:
-# pic white python logo 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
-  credit: 
-  creditlink: 
+# feature-flags-1900x500.png
+  feature: https://user-images.githubusercontent.com/300046/134320061-da7eeef4-d7e2-41d4-a2c7-42f91bf65d59.png
+  credit: Justin Baker, 2016
+  creditlink: https://taplytics.com/blog/feature-flags-use-cases-benefits/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article describes use of "feature flags" to finely control the "blast radius" of change impact in order to
-deliver features faster while minimizing risk.
+This article describes use of "feature flags" to finely control the "blast radius" of changes, 
+done in order to deliver changes faster while minimizing risk.
 
 Traditionally, new or updated features made available via a software deployment become visible to ALL users at the same time. 
 And to fix a poorly-implemented feature requires an immediately roll back to the prior version, or to create a fix as quickly as possible and roll forward by deploying a new version. That is risky and stressful.

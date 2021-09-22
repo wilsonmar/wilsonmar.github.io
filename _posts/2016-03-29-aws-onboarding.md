@@ -827,7 +827,7 @@ Yan Kurniawan
    Ansible for AWS book</a> 280 pages for minimum $30 published on 2016-01-15 by Yan Kurniawan living in Sydney, Australia
   #ansible4aws.
 
-* <a target="_blank" href="https://github.com/yankurniawan/ansible-for-aws">
+   * <a target="_blank" href="https://github.com/yankurniawan/ansible-for-aws">
     https://github.com/yankurniawan/ansible-for-aws</a>
 
 J O'connner:
@@ -1195,6 +1195,8 @@ STS returns:
 
 ## AWS CLI Automation #
 
+The Command line interface (CLI) is used by programs rather than the manual AWS Console GUI.
+
 In enterprises today, servers are built by scripts and configuration files generated from templates (usually multi-platform Hashicorp Terraform more than AWS CloudFormation templates).
 
 This is so the build process can be debugged 
@@ -1205,15 +1207,12 @@ template files in JSON format for Cloud Formation or Terraform to process.
 
 Atlas generates JSON files based on information typed into their web Consoles.
 
-The <a href="#CLI">command line interface</a>
-is used by programs rather than the manual Console.
-
 
 <a name="CLI-Install"></a>
 
 ### AWS CLI install #
 
-PROTIP: There are several ways to install AWS CLI using Python.
+Several ways are presented to install AWS CLI using Python. Homebrew is my favorite becuase you can upgrade easily:
 
 1. The simplest and most reliable for me is to use HomeBrew on Macs, from any folder:
 
@@ -1257,7 +1256,8 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
    <pre>aws-cli/2.2.21 Python/3.9.6 Darwin/18.7.0 source/x86_64 prompt/off
    </pre>
 
-   PROTIP: Awscli now uses <strong>Python 3</strong>, not 2.7.
+   NOTE: Awscli now uses <strong>Python 3</strong>, not 2.7.
+   
    Also previously:
 
    <pre>aws-cli/1.15.20 Python/3.6.5 Darwin/17.5.0 botocore/1.10.20
@@ -1272,9 +1272,18 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
    The Python package botocore on GitHub</a>
    provides a low-level foundation for AWS CLI software.
 
+   <a target="_blank" href="https://wilsonmar.github.io/ansible/">Ansible</a> internally uses Boto to connect to Amazon EC2 instances and hence you need Boto library in order to run Ansible on your laptop/desktop. TOOL: <a target="_blank" href="https://crunchify.com/using-ansible-how-to-copy-files-or-script-from-localhost-to-remote-host/">Use Ansible to copy files from local to remote host</a>.
+
+3. Make sure you're not within Conda:
+
+   <tt><strong>conda deactivate
+   </strong></tt>
+
+   If it's already deactivated, you should not get any message.
+
 3. To install Boto3:
 
-   <tt><strong>pip install boto3 --upgrade --ignore-installed six
+   <tt><strong>pip install --upgrade boto3 --user --ignore-installed six
    </strong></tt>
 
    Code for boto3 is obtained from <a target="_blank" href="https://github.com/boto/boto3">https://github.com/boto/boto3</a>. Read about it at <a target="_blank" href="https://aws.amazon.com/sdk-for-python/">https://aws.amazon.com/sdk-for-python</a>. 
@@ -1282,6 +1291,17 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
    NOTE: The package is installed into folder:<br />
    <tt>/usr/local/lib/python2.7/site-packages/boto3/*</tt>
 
+3. Install Boto as well:
+
+   <pre><strong>pip install boto --user</strong></pre>
+
+   It's in /usr/local/anaconda3/lib/python3.7/site-packages (2.49.0)
+
+   The <a target="_blank" href="https://github.com/boto/boto">boto package</a> is the hand-coded Python library that has been around since 2006. It is very popular and is fully supported currently by AWS. But because it is hand-coded and there are so many services available (with more appearing all the time) it is difficult to maintain.
+
+   <a target="_blank" href="https://github.com/boto/boto3">boto3</a>, generally available since 06/22/2015, is a new version of the boto library based on <a target="_blank" href="https://github.com/boto/botocore">botocore</a>. All of the low-level interfaces to AWS are driven from JSON service descriptions that are generated automatically from the canonical descriptions of the services. So, the interfaces are always correct and always up to date. There is a resource layer on top of the client-layer that provides a nicer, more Pythonic interface.
+
+The boto3 library is being actively developed by AWS and is the one I would recommend people use if they are starting new development.
 
    <a name="Autocompletion"></a>
 
@@ -1289,7 +1309,8 @@ Removing: /usr/local/Cellar/awscli/2.2.14... (12,776 files, 101.8MB)
 
 3. On Linux, to enable bash completion for aws commands:
 
-   <tt><strong>echo 'complete -C aws_completer aws' >> ~/.bashrc
+   <tt><strong>echo "\n" >> ~/.bashrc
+echo 'complete -C aws_completer aws' >> ~/.bashrc
    </strong></tt>
 
 4. Test out autocompletion by typing the first two characters and pressing Tab for a list of all aws cli commands that begin with those characters:
@@ -1319,6 +1340,10 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
 
    <tt><strong>aws-shell
    </strong></tt>
+
+   <pre>First run, creating autocomplete index...
+Creating doc index in the background. It will be a few minutes before all documentation is available.
+   </pre>
 
    You show now be in the sub-shell with prompt:
 
@@ -1433,8 +1458,7 @@ ERROR: ipython 7.6.1 has requirement prompt-toolkit<2.1.0,>=2.0.0, but you'll ha
 
    ### Roles for Tasks
 
-   TODO: Temporary security credentials <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Roles for Tasks</a>
-   stored in ~/.aws/config file:
+   TODO: Temporary security credentials <a target="_blank" href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">Roles for Tasks</a> are stored in the <tt><strong>~/.aws/config</strong></tt> file:
 
    <pre>[profile iam-role]
 role_arn = arn:aws:iam::<em>ACCOUNT_ID</em>:role/<em>IAM_ROLE</em>
@@ -1442,6 +1466,8 @@ source_profile = iam-user
 output = json
 region = eu-west-1
    </pre>
+
+   Importantly, the <strong>default region</strong> is specified in ~/.aws/config.
 
    PROTIP: The ~/.aws/config file also houses settings that speed up S3 sync.
 
@@ -1457,6 +1483,8 @@ s3 =
    ### Services list
 
    Now that you have permissions after configuration:
+
+   curl -fsSL https://raw.githubusercontent.com/wilsonmar/DevSecOps/master/aws/aws-info.sh
 
 4. For a list of Amazon services with command access:
 
@@ -1645,7 +1673,9 @@ use the credentials on your local machine (laptop), install the AWS CLI locally.
 
 ## Installing, updating, and uninstalling the AWS CLI version 2 on macOS
 
-AWS CLI versions 1 and 2 use the same aws command name. If you have both versions installed, your computer uses the…docs.aws.amazon.com
+AWS CLI versions 1 and 2 use the same aws command name. 
+
+If you have both versions installed, your computer uses the…docs.aws.amazon.com
 
 The installer automatically creates a symlink in a folder in your PATH which links to the main program in the installation folder you chose:
 
