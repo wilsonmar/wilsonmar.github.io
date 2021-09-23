@@ -20,6 +20,110 @@ k8s_version: 1.22
 
 This article I wrote both while I prepared for the CKAD and while on the job.
 
+
+<a name="Keywords"></a>
+
+### kubectl CLI command keywords
+
+Below are Kubernetes technical terms listed alphabetically in one page, so you can go quickly/directly click to each:
+
+<a href="#Admission">Admission Control</a>,
+<a href="#Annotations">Annotations</a>,
+<a href="#APIs">APIs</a>,
+<a href="#API_Server">API Server</a>,
+<a href="#apply">apply</a>,
+<a href="#AutoScaling">Auto-scaling</a>,
+<a href="#CKAD_ExamDomains">CKAD</a>, 
+<a href="#Clusters">Clusters</a>,
+<a href="#ClusterRoles">ClusterRoles</a>,
+<a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
+<a href="#Contexts">Contexts</a>,
+<a href="#ControlPlane">Control Plane</a>,
+<a href="#Controllers">Controllers</a>,
+<a href="#CRD">CRD (Custom Resource Definition)</a>,
+<a href="#CronJobs">CronJobs</a>,
+<a href="#Declarative">Declarative</a>,
+Discovery,
+<a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
+<a href="#Deployments">deployment/</a>,
+<a href="#Endpoints"><strong>ep</strong>=endpoints</a>,
+<a href="#Envars">Environment Variables</a>,
+<a href="#Expose">Expose</a>,
+<a href="#Hashes">hashes</a>,
+<a href="#HealthChecks">health checks</a>,
+<a href="#HPA"><strong>hpa</strong>=HorizontalPodAutoscaler</a>,
+<a href="#Imperative">Imperative</a>,
+<a href="#InitContainers">Init Containers</a>,
+<a href="#Ingress">Ingress</a>,
+<a href="#JSONPath">JSONPath</a>,
+<a href="#Kubelet">Kubelet</a>,
+<a href="#kube-proxy">kube-proxy</a>,
+<a href="#Labels">Labels</a>, 
+<a href="#LoadBalancer">LoadBalancer</a>, 
+<a href="#Logging">Logging</a>,
+<a href="#Metadata">Metadata</a>,
+<a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
+<a href="#NetworkPolicies"><strong>netpol</strong>=NetworkPolicies</a>, 
+<a href="#Nodes"><strong>no</strong>=Nodes</a>,
+<a href="#NodePort">NodePort</a>,
+<a href="#OpenShift">OpenShift</a>,
+<a href="#Pods"><strong>po</strong>=Pods</a>, 
+<a href="#Podspecs">Podspecs</a>,
+<a href="#ReadinessProbes">Readiness Probes</a>, 
+<a href="#LivenessProbes">Liveness Probes</a>, 
+<a href="#Probes">Probes</a>, 
+<a href="#PersistentVolumes">Persistent Volumes</a>,
+<a href="#PortForwarding">Port Forwarding</a>,
+<a href="#PVC">PVC (Persistent Volume Claim)</a>,
+<a href="#Replication">Replication</a>,
+<a href="#Replicas">Replicas</a>,
+<a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
+<a href="#Rollbacks">Rollbacks</a>,
+<a href="#RollingUpdates">Rolling Updates</a>,
+<a href="#Secrets">Secrets</a>,
+<a href="#Selectors">Selectors</a>, 
+<a href="#Services"><strong>svc</strong>=Services</a>,
+<a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
+<a href="#ServicesDiscovery">Service Discovery</a>,
+<a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
+<a href="#StorageClasses">Storage Classes</a>,
+<a href="#Taints">Taints</a>,
+<a href="#Tolerations">Tolerations</a>,
+<a href="#Vim">Vim (tool)</a>,
+<a href="#Volumes">Volumes</a>,
+<a href="#Workloads">Workloads API</a>
+
+<strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
+Memorizing and using them while manually typing commands will save you much time.
+
+
+<a name="K8s_API"></a>
+
+### K8s API Special Interest Groups
+
+The various features of Kubernetes are maintained by SIGs (Special Interest Groups) formed around <strong>related groups</strong> of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
+https://github.com/kubernetes/community/blob/master/sig-list.md</a>
+
+   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
+
+   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
+
+   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
+
+   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
+
+   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
+
+   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
+   <br /><br />
+
+REMEMBER: Unlike other systems, in Kubernetes there are no "users".
+
+Sebastien Goasguen (@sebgoa), author of Kubernetes Cookbook and Docker Cookbook
+https://github.com/sebgoa/oreilly-kubernetes
+
+<hr />
+
 ## TL;DR Professional certifications in Kubernetes
 
 <a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w" title="Tips to Pass the CKAD Exam from CloudAcademy">VIDEO:</a>:
@@ -278,109 +382,6 @@ There are several options to run kubectl:
 
    * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes.
 
-
-<hr />
-
-<a name="Keywords"></a>
-
-### kubectl CLI command keywords
-
-Below are Kubernetes technical terms listed alphabetically in one page, so you can go quickly/directly click to each:
-
-<a href="#Admission">Admission Control</a>,
-<a href="#Annotations">Annotations</a>,
-<a href="#APIs">APIs</a>,
-<a href="#API_Server">API Server</a>,
-<a href="#apply">apply</a>,
-<a href="#AutoScaling">Auto-scaling</a>,
-<a href="#CKAD_ExamDomains">CKAD</a>, 
-<a href="#Clusters">Clusters</a>,
-<a href="#ClusterRoles">ClusterRoles</a>,
-<a href="#ConfigMaps"><strong>cm</strong>=configmaps</a>,
-<a href="#Contexts">Contexts</a>,
-<a href="#ControlPlane">Control Plane</a>,
-<a href="#Controllers">Controllers</a>,
-<a href="#CRD">CRD (Custom Resource Definition)</a>,
-<a href="#CronJobs">CronJobs</a>,
-<a href="#Declarative">Declarative</a>,
-Discovery,
-<a href="#DaemonSets"><strong>ds</strong>=DaemonSets</a>,
-<a href="#Deployments">deployment/</a>,
-<a href="#Endpoints"><strong>ep</strong>=endpoints</a>,
-<a href="#Envars">Environment Variables</a>,
-<a href="#Expose">Expose</a>,
-<a href="#Hashes">hashes</a>,
-<a href="#HealthChecks">health checks</a>,
-<a href="#HPA"><strong>hpa</strong>=HorizontalPodAutoscaler</a>,
-<a href="#Imperative">Imperative</a>,
-<a href="#InitContainers">Init Containers</a>,
-<a href="#Ingress">Ingress</a>,
-<a href="#JSONPath">JSONPath</a>,
-<a href="#Kubelet">Kubelet</a>,
-<a href="#kube-proxy">kube-proxy</a>,
-<a href="#Labels">Labels</a>, 
-<a href="#LoadBalancer">LoadBalancer</a>, 
-<a href="#Logging">Logging</a>,
-<a href="#Metadata">Metadata</a>,
-<a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
-<a href="#NetworkPolicies"><strong>netpol</strong>=NetworkPolicies</a>, 
-<a href="#Nodes"><strong>no</strong>=Nodes</a>,
-<a href="#NodePort">NodePort</a>,
-<a href="#OpenShift">OpenShift</a>,
-<a href="#Pods"><strong>po</strong>=Pods</a>, 
-<a href="#Podspecs">Podspecs</a>,
-<a href="#ReadinessProbes">Readiness Probes</a>, 
-<a href="#LivenessProbes">Liveness Probes</a>, 
-<a href="#Probes">Probes</a>, 
-<a href="#PersistentVolumes">Persistent Volumes</a>,
-<a href="#PortForwarding">Port Forwarding</a>,
-<a href="#PVC">PVC (Persistent Volume Claim)</a>,
-<a href="#Replication">Replication</a>,
-<a href="#Replicas">Replicas</a>,
-<a href="#ReplicaSets"><strong>rs</strong>=ReplicaSets</a>,
-<a href="#Rollbacks">Rollbacks</a>,
-<a href="#RollingUpdates">Rolling Updates</a>,
-<a href="#Secrets">Secrets</a>,
-<a href="#Selectors">Selectors</a>, 
-<a href="#Services"><strong>svc</strong>=Services</a>,
-<a href="#ServiceAccounts"><strong>sa</strong>=ServiceAccounts</a>,
-<a href="#ServicesDiscovery">Service Discovery</a>,
-<a href="#StatefulSets"><strong>sts</strong>=StatefulSets</a>,
-<a href="#StorageClasses">Storage Classes</a>,
-<a href="#Taints">Taints</a>,
-<a href="#Tolerations">Tolerations</a>,
-<a href="#Vim">Vim (tool)</a>,
-<a href="#Volumes">Volumes</a>,
-<a href="#Workloads">Workloads API</a>
-
-<strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
-Memorizing and using them while manually typing commands will save you much time.
-
-
-<a name="K8s_API"></a>
-
-### K8s API Special Interest Groups
-
-The various features of Kubernetes is maintained by SIGs (Special Interest Groups) formed around <strong>related groups</strong> of APIs listesd at <a target="_blank" href="https://github.com/kubernetes/community/blob/master/sig-list.md">
-https://github.com/kubernetes/community/blob/master/sig-list.md</a>
-
-   <a targete="_blank" href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/">https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/</a> (which is one big page):
-
-   * <strong>Service APIs</strong>: Endpoints, <a href="#Ingress">Ingress</a>, Service
-
-   * <strong>Workloads APIs</strong>: Container, Job, CronJob, Deployment, StatefulSet, ReplicaSet, Pod, ReplicationController
-
-   * <strong>Config and storage APIs</strong>: ConfigMap, CSIDriver, Secret, StorageClass, Volume
-
-   * <strong>Metadata APIs</strong>: Controller, <a href="#CRD">CRD</a>, Event, LimitRange, <a href="#HPA">HPA (HorizontalPodAutoscaler)</a>, PodDistributionBudget, ...
-
-   * <strong>Cluster APIs</strong>: APIService, Binding, CSR, <a href="#ClusterRoles">ClusterRole</a>, Node, Namespace, Lease, PersistantVolume -> HostPathVolume. 
-   <br /><br />
-
-REMEMBER: Unlike other systems, in Kubernetes there are no "users".
-
-Sebastien Goasguen (@sebgoa), author of Kubernetes Cookbook and Docker Cookbook
-https://github.com/sebgoa/oreilly-kubernetes
 
 <hr />
 
@@ -992,7 +993,12 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 4.3-app_tier.yaml           metrics-server
    </pre>
 
-   PROTIP: Kubernetes is <strong>immutable</strong>, so rather than changing a runnin pod, delete it and recreate it.
+   PROTIP: Kubernetes is <strong>immutable</strong>, so rather than changing a running pod, delete it and recreate it.
+
+1. To create a pod using the nginx image:
+
+   <pre><strong>kubectl run nginx --image=nginx --restart=Never
+   </strong></pre>
 
 1. Create and delete pod (all named "mypod"):
 
