@@ -269,6 +269,22 @@ Every <strong>app Container</strong> has its own <strong>unique port number</str
 
 App Containers within the same Pod share the <strong>same internal IP address</strong>, hostname, Linux namespaces, cgroups, storage Volumes, and other resources.
 
+1. List all Container images in all namespaces:
+
+   <pre>kubectl get pods --all-namespaces -o jsonpath="{.items[*].spec.containers[*].image}" |\
+tr -s '[[:space:]]' '\n' |\
+sort |\
+uniq -c
+   </pre>
+
+Fetch all Pods in all namespaces using kubectl get pods --all-namespaces
+Format the output to include only the list of Container image names using -o jsonpath={.items[*].spec.containers[*].image}. This will recursively parse out the image field from the returned json.
+See the jsonpath reference for further information on how to use jsonpath.
+Format the output using standard tools: tr, sort, uniq
+Use tr to replace spaces with newlines
+Use sort to sort the results
+Use uniq to aggregate image counts
+
 
 <a name="Sidecars"></a>
 
@@ -999,6 +1015,17 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
    <pre><strong>kubectl run nginx --image=nginx --restart=Never
    </strong></pre>
+
+1. To list pods and the nodes they were placed in:
+
+   <pre><strong>kubectl get pods -o wide
+   </strong></pre>
+
+   <pre>NAME            READY   STATUS    RESTARTS   AGE   IP           NODE           NOMINATED NODE   READINESS GATES
+nginx           1/1     Running   0          18m   10.42.0.9    controlplane   &LT;none>           &LT;none>
+   </pre>
+
+
 
 1. Create and delete pod (all named "mypod"):
 
