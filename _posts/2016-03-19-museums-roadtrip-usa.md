@@ -55,6 +55,7 @@ If you want <a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">a ro
 based on <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">This map</a>:
 
 <img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
+The above is missing White Sands National Park (New Mexico), Indiana Dunes, and Gateway Arch (St. Louis).
 
 <a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">BTW</a>: I've been told that due to recovery from COVID, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
 
@@ -81,7 +82,7 @@ The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blan
 > Do you have a roadtrip map? Send it to me and I'll post it here.
 
 
-## Railroads Westward #
+## Northern Rail #
 
 <a target="_blank" href="https://www.amtrak.com/empire-builder-train">
 Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 46 hours.
