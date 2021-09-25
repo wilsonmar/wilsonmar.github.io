@@ -3323,6 +3323,8 @@ https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
    <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
    or CloudAcademy.com
 
+   <a name="GKE-submenu"></a>
+
 1. On the GCP left menu, in the COMPUTE category, click "Kubernetes Engine" for this submenu:
 
    ![gke-menu-147x295](https://user-images.githubusercontent.com/300046/134752689-3a8de92b-1e8e-4b82-8750-c1e35256f7c3.png)
@@ -3360,11 +3362,77 @@ https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
 
 1. Change the size to 4 nodes. ???
 
-1. Click CREATE to create the cluster.
+1. Click CREATE to create the cluster. It takes a few minutes for the cluster to finish provisioning.
 
-   It takes a few minutes for the cluster to finish provisioning.
+   Notice the left menu is the <a href="#GKE-submenu">GKE Sub-menu</a>.
 
-1. Click "Run in Cloud Shell".
+1. When the Status reaches a green checkmark, click "Run in Cloud Shell" for CLI.
+
+1. Click the blue "Continue".
+
+1. Following the tutorial, get the "Online Boutique" sample application from GitHub to run on your cluster 
+
+   <pre><strong>git clone \
+    https://github.com/GoogleCloudPlatform/microservices-demo.git
+   </strong></pre>
+
+1. Open the Cloud Shell Editor (workspace) to the directory just created from github:
+
+   <pre><strong>cloudshell workspace microservices-demo
+   </strong></pre>
+
+   Let's take a few minutes to explore the sample application.
+
+   Notice the source of each microservice resides in the src directory. For example, the frontend lives in the src/frontend directory.
+
+   Once a release gets created, each microservice is compiled and processed into a Docker image according to rules set in a Dockerfile (such as src/frontend/Dockerfile).
+
+   Finally, the sample application contains a set of Kubernetes resources in the form of YAML files (such as release/kubernetes-manifests.yaml) to define the various Services and Deployments.
+
+1. To connect to the cluster, click the Editor left menu icon which has the name "CLOUD CODE - KUBERNETES".
+
+1. Click "Add a clustser to the KubeConfig" blue box.
+
+1. Select "Google Kubernetes Engine".
+
+1. Select the name of your node ("cloud-1" by default).
+
+1. Click "Open Terminal" at the top.
+1. Deploy an app workload to your new GKE cluster.
+
+   <pre><strong>cd microservices-demo/
+kubectl apply -f ./release/kubernetes-manifests.yaml
+    </strong></pre>
+
+   The command deploys Kubernetes Deployments and Services corresponding to the different microservices in the sample application.
+
+1. On the Kubernetes Explorer, expand your cluster details by double-clicking on its name.
+
+1. Expand the "Namespaces > Pods" section, where you can track your deployment progress. As the pods are deployed, they'll display a green "Running" state:
+
+   Once all pods are in a running state, the application has been fully deployed.
+
+   ### Open the live application in your browser:
+
+   To allow the application to be accessible externally, you have deployed a Service of type LoadBalancer called "frontend-external" which gets bound to an external IP address.
+
+1. In the Kubernetes Explorer, navigate to "Namespaces > Services > frontend-external".
+
+1. Copy the IP address under "External IPs".
+
+1. Open a new web browser tab and visit your application by connecting to the IP address.
+
+   The application should now be running and accessible publicly!
+
+   ### Delete a cluster:
+
+1. Click the "DELETE" icon at the top.
+
+1. Open the Navigation menu, then click Kubernetes Engine.
+
+1. Click the name of your cluster.
+
+1. Click Delete, then click Delete.
 
 
    <a name="GKS"></a>
