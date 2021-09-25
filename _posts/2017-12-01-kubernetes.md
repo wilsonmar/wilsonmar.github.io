@@ -3294,19 +3294,84 @@ https://www.youtube.com/watch?v=aSrqRSk43lY&list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu
 
 https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
 
+
+<hr />
+
+<a name="GCP"></a>
+
 <a name="GKE"></a>
 
-### GKE (Google Kubernetes Engine)
+### GKE (Google Kubernetes Engine) in GCP
 
-<a target="_blank" href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine (GKE)</a> is Google's container management SaaS offering. 
+<a target="_blank" href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine (GKE)</a> is Google's container management SaaS offering. GKE runs within the <a target="_blank" href="https://wilsonmar.github.io/gcp/">Google Compute Platform (GCP)</a> on top of Google Compute Engine (GCE) providing machines.
 
-GKE runs within the <a target="_blank" href="https://wilsonmar.github.io/gcp/">Google Compute Platform (GCP)</a> on top of Google Compute Engine (GCE) providing machines.
+1. The marketing home page for all GCP is at:
 
-GKE provides networking within VPC, monitoring, logging, and CI/CD (Google Build).
+   <a target="_blank" href="https://cloud.google.com/">https://cloud.google.com/</a>
 
+1. Click on the Products drop-down and select "Google Kubernetes Engine":
+
+   <a target="_blank" href="https://cloud.google.com/kubernetes-engine">https://cloud.google.com/kubernetes-engine</a>
+
+1. CLick "Docs" for Documentation (video).
+
+1. If you don't have an GCP account, get one, then get on the Google Cloud using a GCP account (for money):
+
+   <a target="_blank" href="https://console.cloud.google.com/start">https://console.cloud.google.com/start</a>
+
+   Alternately, subscribe to a learning environment (sandbox) such as Qwiklabs, 
+   <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
+   or CloudAcademy.com
+
+1. On the GCP left menu, in the COMPUTE category, click "Kubernetes Engine" for this submenu:
+
+   ![gke-menu-147x295](https://user-images.githubusercontent.com/300046/134752689-3a8de92b-1e8e-4b82-8750-c1e35256f7c3.png)
+
+   The menu grows over time. Previously:
    ![k8s-gcp-738x314-14535](https://user-images.githubusercontent.com/300046/42350579-5b4fd060-806e-11e8-8bc4-f88cf32f8bc7.jpg)
 
-   A search for "Kubernetes" within the GCP Console yields:
+   GKE provides networking within VPC, monitoring, logging, and CI/CD (Google Build).
+
+1. Click on "Google Kubernetes Engine" you'll see:
+
+   ![gke-api-landing-599x211](https://user-images.githubusercontent.com/300046/134751078-4e68d2ec-bff7-4a37-9770-5b8eaa74bff9.png)
+
+1. Click "Enable". It takes a few minutes.
+
+   ![gks-clusters-landing-475x171](https://user-images.githubusercontent.com/300046/134751227-2f2b716d-b581-48fd-89df-3f18c0e4b590.png)
+
+1. Click "CREATE CLUSTER". DEFINITION: A cluster consists of at least one cluster control plane machine and multiple worker machines called nodes.
+
+   ![gks-create-cluster-560x304](https://user-images.githubusercontent.com/300046/134751302-4f0c6c53-1562-40c1-a5e8-a0034fec82e9.png)
+
+1. If you are not familiar with Autopilot, click "COMPARE" and "<a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview?_ga=2.180381860.-2046351030.1631457473">Learn more</a>", then return here after reading.
+
+1. Click "CONFIGURE" associated with "GKE Autopilot". Click "TRY THE DEMO" for a 13-step tutorial on creating Autopilot.
+
+1. Click "CREATE NOW".
+
+1. Click the "CONFIGURE" associated with "GKE Standard".
+
+1. Rather than the default "cluster-1", customize a name for this cluster if you want.
+
+1. Rather than the default "us-central1-c", choose a zone for this cluster if you want.
+
+1. Click on the default-pool node pool.
+
+1. Change the size to 4 nodes. ???
+
+1. Click CREATE to create the cluster.
+
+   It takes a few minutes for the cluster to finish provisioning.
+
+1. Click "Run in Cloud Shell".
+
+
+   <a name="GKS"></a>
+
+   ## GKS (Google Kubernetes Service)
+
+1. A search for "Kubernetes" within the GCP Console yields:
 
    ![k8s-gcp-search-656x866-37655](https://user-images.githubusercontent.com/300046/42350888-a8aca044-806f-11e8-8848-813657b7660d.jpg)
 
@@ -3438,15 +3503,18 @@ gcloud container images delete gcr.io/demo-project-123/demo:1.0
 gcloud container images delete gcr.io/demo-project-123/demo:2.0
    </strong></pre>
 
-<a name="GKS"></a>
+   ## Google Kubernetes Threat Detection
 
-## GKS (Google Kubernetes Service)
+   Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
 
-Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
+   <a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats"><img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png"></a>
 
-<a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats"><img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png"></a>
+   Google's approach enables detection of broad, new classes of infection such as forclosing reverse shells (phoning home).
 
-Google's approach enables detection of broad, new classes of infection such as forclosing reverse shells (phoning home).
+
+
+
+
 
 
 <hr />
