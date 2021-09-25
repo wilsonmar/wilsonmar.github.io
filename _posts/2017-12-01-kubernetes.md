@@ -153,6 +153,32 @@ The contribution of this article is a carefully sequenced presentation of comple
 
 
 
+<a name="Contributions"></a>
+
+## What Kubernetes contributes
+
+Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
+
+* <a href="#IAC">Infrastructure as code</a> (IAC)
+* Manage containers
+* Naming and discovery
+* Mounting storage systems
+* Balancing loads
+* Rolling updates
+* Distributing secrets/config
+* Checking application health
+* Monitoring resources
+* Accessing and ingesting logs
+* Replicating application instances
+* Horizontal autoscaling
+* Debugging applications
+
+
+<hr />
+
+
 ## TL;DR Professional certifications in Kubernetes
 
 <a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w" title="Tips to Pass the CKAD Exam from CloudAcademy">VIDEO:</a>:
@@ -169,109 +195,7 @@ If you're here for advice on how to pass the CKAD, here is my advice:
 1. Each exam includes one free fail retake.
 
 
-<a name="HandsOnLabs"></a>
-
-##  Hands-on Demos/labs
-
-I think the quickest yet deepest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. Hands-on practice is how you develop the "muscle memory" need to operate Kubernetes confidently.
-
-<a name="Kubectl"></a>
-
-PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle" or "cube see-tee-el").
-
-<a target="_blank" href="https://kubernetes.io/docs/user-guide/prereqs/">https://kubernetes.io/docs/user-guide/prereqs</a>
-
-There are several options to run kubectl:
-
-   * Use the Cloud Shell/Console provided by the cloud vendor (AWS, Azure, GCP, etc.), which may involve costly bills.
-   
-   * If you have a <strong>laptop</strong> with enough memory and CPU, you can install <a href="#Minikube">Minikube</a>  or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
-
-   * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
-
-   * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes.
-
-   * <strong>K8s on Raspberry Pi</strong> don't consume disk space on your laptop because they are separate computers that are cheap ($70 USD), silent, and private. But Pi's are limited to 8 GB of RAM and based on newer ARM architecture rather than Intel x86 architecture used by PC's and MacOS.
-
-<a name="RaspPi"></a>
-
-On Sep 2021, Dan Tofan released on Pluralsight "How to build a Kubernetes Cluster on 3+ Raspberry Pi".
-
-Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx">built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
-<a target="_blank" href="https://www.hanselminutes.com/612/serverless-and-openfaas-with-alex-ellis">
-Hansel talked with</a> <a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
-keeps his <a target="_blank" href="https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975#file-prep-sh">
-instructions with shell file</a> updated for <a target="_blank" href="https://blog.alexellis.io/serverless-kubernetes-on-raspberry-pi/">running on the Pis</a> to install <a target="_blank" href="https://openfaas.com/">OpenFaaS</a>.
-
-CNCF Ambassador Chris Short developed the
-<a target="_blank" href="https://rak8s.io/"> rak8s (pronounced rackets) library</a> to 
-<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible on Raspberry Pi</a>.
-
-Others:
-   * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
-   * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
-   <br /><br />
-
-
 <hr />
-
-
-### Lab Training Vendors
-
-In addition to other training providers, several vendors offer monthly/annual subscriptions with labs/demos:
-
-* STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified troubleshooting.
-
-   A KodeKloud subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for one hour at a time. The instances come up quickly. 
-
-   KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
-
-   PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
-
-
-<a name="CloudAcademy"></a>
-
-* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a> <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong>
-
-   CloudAcademy's <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
-
-   PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
-
-<a name="acloudguru"></a>
-
-* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
-has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB&technologies%5B0%5D=Kubernetes">guided Labs</a> and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground sandboxes</a> on AWS, GCP, and Azure.
-   
-   <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
-
-
-<a name="Qwiklabs"></a>
-
-* <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. 
-
-   Try the FREE <a target="_blank" href="https://google.qwiklabs.com/focuses/8586?parent=catalog">30-minute Kubernetes Engine: Qwik Start</a> which is one of the "quests" in Google's 
-   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">Kubernetes in the Google Cloud Qwiklab quest</a>. Tasks:
-
-   * Task 1: Set a default compute zone
-   * Task 2: Create a GKE cluster
-   * Task 3: Get authentication credentials for the cluster
-   * Task 4: Deploy an application to the cluster
-   * Task 5: Deleting the cluster
-   <br /><br />
-
-   <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
-
-   <a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours.
- 
-   Qwiklabs are used in Coursera courses, which explains provides lab solutions videos such as:
-   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud Console and Cloud Shell</a>
-   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
-   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
-   <br /><br />
-
-   <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. 
-
-* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
 
 
@@ -354,6 +278,177 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * https://github.com/kubernetes-sigs/kubespray
 
 * <em>And others</em>
+
+
+
+
+<a name="Playgrounds"></a>
+
+## Cloud Playgrounds
+
+You can learn to use Kubernetes even on a Chromebook laptop if you use a cloud-based learning environment (sandbox).
+A subscription is needed on some.
+
+   * <a href="#KataKoda">KataKoda</a> [FREE]
+   * <a href="#Qwiklabs">Qwiklabs</a>
+   * <a href="#ACloudGuru">ACloudGuru</a> [Subscription]
+   * <a href="#CloudAcademy">CloudAcademy</a> [Subscription]
+   <br /><br />
+
+### KataKode
+
+1. <a target="_blank" href="https://www.katacoda.com/courses/kubernetes/playground">KataKoda</a>
+
+1. PROTIP: I prefer KataKoda because it provides <strong>Two terminal sessions</strong> when other options I have mess with jumping back and forth.
+
+1. When you see the terminal prompt, type <tt><strong>uname -a</strong></tt> for:
+
+   <pre>Linux controlplane 4.15.0-122-generic #124-Ubuntu SMP Thu Oct 15 13:03:05 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</pre>
+
+   Notice "controlplane".
+   
+   Notice that KataKoda runs Linux Ubuntu, so use the installer appropriate for it.
+
+1. Get status:
+
+   <pre><strong>kubectl cluster-info</strong></pre>
+
+   <pre>Kubernetes master is running at https://172.17.0.17:6443
+KubeDNS is running at https://172.17.0.17:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+   </pre>
+
+   Notice "master". That's what runs the control plane.
+
+   "KubeDNS"
+
+1. Launch a two-node Kubernetes cluster with a single command:
+
+   <pre><strong>launch.sh</strong></pre>
+
+   <pre>Waiting for Kubernetes to start...
+Kubernetes started
+   </pre>
+
+Next, consider <a target="_blank" href="https://www.katacoda.com/contino/courses/kubernetes">[FREE] guided K8s Katas by Contino</a>.
+It uses K8s Namespace "kube-system".
+It also has a "kube-public" namespace where nothing runs, but contains a ConfigMap which contains the bootstrapping and certificate configuration for the Kubernetes cluster.
+
+Now <a href="#KublectlCommands">proceed to use other Kublectl commands</a>.
+
+
+### Qwiklabs
+
+Occassionally, Google offers free time.
+
+### ACloudGuru
+
+1. <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
+
+
+
+   <a name="CloudAcademy"></a>
+
+   ### CloudAcademy.com
+
+* <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a> <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong>
+
+   CloudAcademy's <a target="_blank" href="https://cloudacademy.com/learning-paths/certified-kubernetes-application-developer-ckad-exam-preparation-451/">11-hour "Learning Path" course</a> was updated August 27th, 2019 by Logan Rakai. 
+
+   PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
+
+
+   <a name="KodeKloud"></a>
+
+* STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified troubleshooting where it provides a situation you have to figure out the commands, just like in the certification tests.
+
+   A KodeKloud subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for <strong>one hour at a time</strong>, then you have to start over. The instances come up quickly, though. 
+
+   KataKoda, <a target="_blank" href="https://learn.openshift.com/playgrounds/">Red Hat's OpenShift Playground</a> using its "oc" CLI program. The KataKoda playground environment is pre-loaded with Source-to-Image (S2I) builders for Java (Wildfly), Javascript (Node.JS), Perl, PHP, Python and Ruby. Templates are also available for MariaDB, MongoDB, MySQL, PostgreSQL and Redis.
+
+   PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
+
+   <a name="acloudguru"></a>
+
+* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
+has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB&technologies%5B0%5D=Kubernetes">guided Labs</a> and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground sandboxes</a> on AWS, GCP, and Azure.
+   
+   <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
+
+
+   <a name="Qwiklabs"></a>
+
+* <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. 
+
+   Try the FREE <a target="_blank" href="https://google.qwiklabs.com/focuses/8586?parent=catalog">30-minute Kubernetes Engine: Qwik Start</a> which is one of the "quests" in Google's 
+   <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">Kubernetes in the Google Cloud Qwiklab quest</a>. Tasks:
+
+   * Task 1: Set a default compute zone
+   * Task 2: Create a GKE cluster
+   * Task 3: Get authentication credentials for the cluster
+   * Task 4: Deploy an application to the cluster
+   * Task 5: Deleting the cluster
+   <br /><br />
+
+   <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13143652?parent=lti_session">Deploying Google Kubernetes Engine Clusters from Cloud Shell</a>
+
+   <a target="_blank" href="https://run.qwiklabs.com/quests/142?catalog_rank=%7B%22rank%22%3A4%2C%22num_filters%22%3A0%2C%22has_search%22%3Atrue%7D&search_id=7405314">Qwiklabs QUEST: Secure Workloads in Google Kubernetes Engine</a> consists of 8 labs covering 8 hours.
+ 
+   Qwiklabs are used in Coursera courses, which explains provides lab solutions videos such as:
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/1pxSX/lab-solution">Accessing the Cloud Console and Cloud Shell</a>
+   * <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/BxVeI/lab-solution"> Deploying GKE</a>
+   * <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13134687?parent=lti_session">Implementing Role-Based Access Control with Google Kubernetes Engine</a>
+   <br /><br />
+
+   <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. 
+
+* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
+
+
+
+
+<a name="HandsOnLabs"></a>
+
+##  Hands-on Demos/labs
+
+I think the quickest yet deepest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. Hands-on practice is how you develop the "muscle memory" need to operate Kubernetes confidently.
+
+PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle" or "cube see-tee-el").
+
+<a target="_blank" href="https://kubernetes.io/docs/user-guide/prereqs/">https://kubernetes.io/docs/user-guide/prereqs</a>
+
+There are several options to run kubectl:
+
+   * Use the Cloud Shell/Console provided by the cloud vendor (AWS, Azure, GCP, etc.), which may involve costly bills.
+   
+   * If you have a <strong>laptop</strong> with enough memory and CPU, you can install <a href="#Minikube">Minikube</a>  or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
+
+   * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
+
+   * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes.
+
+   * <strong>K8s on Raspberry Pi</strong> don't consume disk space on your laptop because they are separate computers that are cheap ($70 USD), silent, and private. But Pi's are limited to 8 GB of RAM and based on newer ARM architecture rather than Intel x86 architecture used by PC's and MacOS.
+
+<a name="RaspPi"></a>
+
+On Sep 2021, Dan Tofan released on Pluralsight "How to build a Kubernetes Cluster on 3+ Raspberry Pi".
+
+Scott Hanselman <a target="_blank" href="https://www.hanselman.com/blog/HowToBuildAKubernetesClusterWithARMRaspberryPiThenRunNETCoreOnOpenFaas.aspx">built Kubernetes on 6 Raspberry Pi nodes</a>, each with a 32GB SD card to a 1GB RAM ARM chip (like on smartphones).
+<a target="_blank" href="https://www.hanselminutes.com/612/serverless-and-openfaas-with-alex-ellis">
+Hansel talked with</a> <a target="_blank" href="https://www.alexellis.io/">Alex Ellis</a> (<a target="_blank" href="https://twitter.com/alexellisuk/">@alexellisuk</a>)
+keeps his <a target="_blank" href="https://gist.github.com/alexellis/fdbc90de7691a1b9edb545c17da2d975#file-prep-sh">
+instructions with shell file</a> updated for <a target="_blank" href="https://blog.alexellis.io/serverless-kubernetes-on-raspberry-pi/">running on the Pis</a> to install <a target="_blank" href="https://openfaas.com/">OpenFaaS</a>.
+
+CNCF Ambassador Chris Short developed the
+<a target="_blank" href="https://rak8s.io/"> rak8s (pronounced rackets) library</a> to 
+<a target="_blank" href="https://chrisshort.net/my-raspberry-pi-kubernetes-cluster/">make use of Ansible on Raspberry Pi</a>.
+
+Others:
+   * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
+   * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
+   <br /><br />
+
+
+
 
 <hr />
 
@@ -581,32 +676,6 @@ Kubernetes is called "container orchestration" software because it automates the
    * Using images in Docker avoids the "it works on my machine" troubleshooting of setup or dependencies
    * Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
    <br /><br />
-
-
-<hr />
-
-
-<a name="Contributions"></a>
-
-## What Kubernetes contributes
-
-Kubernetes applies principles of the <a target="_blank" href="https://www.reactivemanifesto.org/">Reactive Manifesto</a> of 2014:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"><img width="546" alt="reactive-manifesto" src="https://user-images.githubusercontent.com/300046/95671902-3559bb00-0b59-11eb-8a40-a8761bb0f037.png"></a>
-
-* <a href="#IAC">Infrastructure as code</a> (IAC)
-* Manage containers
-* Naming and discovery
-* Mounting storage systems
-* Balancing loads
-* Rolling updates
-* Distributing secrets/config
-* Checking application health
-* Monitoring resources
-* Accessing and ingesting logs
-* Replicating application instances
-* Horizontal autoscaling
-* Debugging applications
 
 
 <hr />
@@ -967,72 +1036,6 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
    * <a target="_blank" href="https://www.KubeCon.io">KubeCon.io</a> Conferences (<a target="_blank" href="https://www.twitter.com/KubeConio/">#KubeConio</a>)
 
 <hr />
-
-<a name="Playgrounds"></a>
-
-## Cloud Playgrounds
-
-You can learn to use Kubernetes even on a Chromebook laptop if you use a cloud-based learning environment (sandbox).
-A subscription is needed on some.
-
-   * <a href="#KataKoda">KataKoda</a> [FREE]
-   * <a href="#Qwiklabs">Qwiklabs</a>
-   * <a href="#ACloudGuru">ACloudGuru</a> [Subscription]
-   * <a href="#CloudAcademy">CloudAcademy</a> [Subscription]
-   <br /><br />
-
-### KataKode
-
-1. <a target="_blank" href="https://www.katacoda.com/courses/kubernetes/playground">KataKoda</a>
-
-1. PROTIP: I prefer KataKoda because it provides <strong>Two terminal sessions</strong> when other options I have mess with jumping back and forth.
-
-1. When you see the terminal prompt, type <tt><strong>uname -a</strong></tt> for:
-
-   <pre>Linux controlplane 4.15.0-122-generic #124-Ubuntu SMP Thu Oct 15 13:03:05 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</pre>
-
-   Notice "controlplane".
-   
-   Notice that KataKoda runs Linux Ubuntu, so use the installer appropriate for it.
-
-1. Get status:
-
-   <pre><strong>kubectl cluster-info</strong></pre>
-
-   <pre>Kubernetes master is running at https://172.17.0.17:6443
-KubeDNS is running at https://172.17.0.17:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-   </pre>
-
-   Notice "master". That's what runs the control plane.
-
-   "KubeDNS"
-
-1. Launch a two-node Kubernetes cluster with a single command:
-
-   <pre><strong>launch.sh</strong></pre>
-
-   <pre>Waiting for Kubernetes to start...
-Kubernetes started
-   </pre>
-
-Next, consider <a target="_blank" href="https://www.katacoda.com/contino/courses/kubernetes">[FREE] guided K8s Katas by Contino</a>.
-It uses K8s Namespace "kube-system".
-It also has a "kube-public" namespace where nothing runs, but contains a ConfigMap which contains the bootstrapping and certificate configuration for the Kubernetes cluster.
-
-Now <a href="#KublectlCommands">proceed to use other Kublectl commands</a>.
-
-
-### Qwiklabs
-
-Occassionally, Google offers free time.
-
-### ACloudGuru
-
-<a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
-
-### CloudAcademy.com
-
-
 
 <hr />
 
