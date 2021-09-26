@@ -756,7 +756,10 @@ It's for those who hold a CKA certification.
 
 DockerDocker (specifically, Docker Engine) provides operating-system-level virtualization in containers.
 
-* <a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security</a> by Anthony Nocentino (@nocentio, centinosystems.com) is the one to take.
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/kubernetes-installation-configuration-fundamentals/table-of-contents">
+Kubernetes Installation and Configuration Fundamentals"</a> by Anthony Nocentino (@nocentio, centinosystems.com).
+
+* <a target="_blank" href="https://www.pluralsight.com/courses/configuring-managing-kubernetes-security">Pluralsight "Configuring and Managing Kubernetes Security"</a> by Anthony Nocentino (@nocentio, centinosystems.com) is the one to take.
 
 * https://github.com/NodyHub/docker-k8s-resources/tree/master/k8s-pods
 sample Security yaml
