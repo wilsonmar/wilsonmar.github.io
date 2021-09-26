@@ -57,7 +57,16 @@ based on <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-2
 <img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
 The above is missing White Sands National Park (New Mexico), Indiana Dunes, and Gateway Arch (St. Louis).
 
-<a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">BTW</a>: I've been told that due to recovery from COVID, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
+
+The "Mighty 5" parks below Salt Lake City in Utah <a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?msa=0&mid=16KbY2hCvDQEAAPsK6bwyEDjPZyc&ll=37.542383125235986%2C-110.57365010534873&z=8">Las Vegas from the South and Denver from the North <img width="841" alt="us-might5-route-1682x1014" src="https://user-images.githubusercontent.com/300046/134821783-60f33b47-ccea-4ab0-a12f-69505411c763.png"></a>:
+   1. Zion 
+   2. Bryce Canyon
+   3. Capital Reef
+   4. Arches
+   5. Canyonlands
+   <br /><br />
+
+<a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">CAUTION</a>: as COVID lockdowns relax, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
 
 
 ## Gas and Charging #

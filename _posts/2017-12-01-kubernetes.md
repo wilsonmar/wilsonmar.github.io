@@ -268,7 +268,7 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
 * Rackspace's Kubernetes as a Service
 
-* <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">DOKS = Digital Ocean</a>
+* <a target="_blank" href="https://blog.digitalocean.com/introducing-digitalocean-kubernetes/">DOKS = Digital Ocean</a> (<a target="_blank" href="https://mohsensy.github.io/sysadmin/2021/04/09/install-istio-with-terraform.html">Istio</a>)
 * OKS = Oracle
 
 * PKE = Bonzai
@@ -281,10 +281,11 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 
 
 
-
 <a name="Playgrounds"></a>
 
 ## Cloud Playgrounds
+
+PROTIP: To follow along many tutorials, <strong>Admin permissions</strong> are needed for the account being used. So it's best you use a "play" account rather than a work account.
 
 You can learn to use Kubernetes even on a Chromebook laptop if you use a cloud-based learning environment (sandbox).
 A subscription is needed on some.
@@ -446,8 +447,6 @@ Others:
    * https://blog.hypriot.com/getting-started-with-docker-on-your-arm-device/
    * https://blog.sicara.com/build-own-cloud-kubernetes-raspberry-pi-9e5a98741b49
    <br /><br />
-
-
 
 
 <hr />
@@ -711,6 +710,7 @@ Here is the full text of the <a target="_blank" href="https://github.com/cncf/cu
 <img alt="k8s-ckad-logo-328x311.jpg" width="328" height="311" src="https://user-images.githubusercontent.com/300046/95666890-b09c7c00-0b1b-11eb-820c-ca44d8c9c0e5.jpg">
 
 
+<a name="CKA"></a>
 
 ### CKA Exam Domains
 
@@ -737,6 +737,8 @@ Here is the full text of the <a target="_blank" href="https://github.com/cncf/cu
 
 https://trainings.kubernauts.sh/ describes a certification offered independently by 
 https://kubernauts.de/en/home/ (<a target="_blank" href="https://twitter.com/kubernauts/">@kubernauts</a> in Germany) which also provides free <a href="#Namespaces">namespaces</a> (using <a href="#Rancher">Rancher</a>) at <a target="_blank" href="https://kubernauts.sh/">https://kubernauts.sh</a>
+
+<a name="CKS"></a>
 
 ### CKS Exam Domains
 
@@ -782,14 +784,6 @@ If you want faster video playback, you have to set it for every video. Annoying.
 
 * <a target="_blank" href="https://www.whizlabs.com/learn/course/kubernetes/">* Learn Kubernetes with AWS And Docker</a>
 [04:01:16
-
-
-
-#### K21Academy
-
-https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
-is normally $997, with a 60 day money-back guarantee.
-
 
 
 <hr />
@@ -6732,6 +6726,14 @@ https://github.com/StephenGrider/DockerCasts/tree/master/diagrams
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=1911">
 Kubernetes Tutorial for Beginners [Full Course in 4 Hours]</a> Nov 6, 2020 (using k8s v1.17.0) by TechWorld with Nana
+
+
+<a name="K21"></a>
+
+#### K21Academy
+
+https://k21academy.com/docker-kubernetes/certified-kubernetes-security-specialist-cks-step-by-step-activity-guide-hands-on-lab/
+is normally $997, with a 60 day money-back guarantee.
 
 
 ### Others on CKA:
