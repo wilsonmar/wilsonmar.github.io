@@ -220,6 +220,7 @@ Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/k
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.22 is when containerD replaces Docker as the default container runtime
    * {{ page.k8s_version }} was the version at Sep 2021.
    <br /><br />
 
@@ -413,7 +414,7 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
 
 I think the quickest yet deepest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. Hands-on practice is how you develop the "muscle memory" need to operate Kubernetes confidently.
 
-PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle" or "cube see-tee-el").
+PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that control the <strong>Native Kubernetes</strong> command line interface (CLI): <strong>kubectl</strong> (pronounced "cube cuddle" or "cube see-tee-el" or "cube control").
 
 <a target="_blank" href="https://kubernetes.io/docs/user-guide/prereqs/">https://kubernetes.io/docs/user-guide/prereqs</a>
 
@@ -4250,7 +4251,6 @@ by taking Pat out of the administrator group.
 <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13131337?parent=lti_session">Qwiklab: Implementing Role-Based Access Control with Google Kubernetes Engine</a>:
 
 
-
 <hr />
 
 <a name="MasterNode"></a>
@@ -4263,7 +4263,7 @@ The master node runs the kube-apiserver and componenets etcd, controller, schedu
 
 The master node itself is crated by the <strong>kubeadm init</strong> command which establishes folders 
 and invokes the Kubernetes <a href="#API_Server">API server</a>. That command is installed along with the 
-<strong>kubectl</strong> package (pronounced "cube cuddle"). 
+<strong>kubectl</strong> client. 
 There is a command with the same name used to obtain the <strong>version</strong>.
 
 
