@@ -88,16 +88,6 @@ The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blan
 > Do you have a roadtrip map? Send it to me and I'll post it here.
 
 
-## Northern Rail #
-
-<a target="_blank" href="https://www.amtrak.com/empire-builder-train">
-Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 46 hours.
-
-<a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train"><img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
-
-<a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the moutains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
-
-
 <a name="DownEastCoast"></a>
 
 ## Down the Atlantic Eastern Seaboard
@@ -685,15 +675,16 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 <a name="DownMississippi"></a>
 
-## Along the Mississippi River
+## Down the Mississippi River
 
 <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">(2,300 miles),
 the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
 
 Viking River Cruises has, an <a target="_blank" href="https://viking.tv/tv/viking-journeys/americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul:<br />
-<img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a><br />
-and a <a target="_blank" href="https://viking.tv/tv/viking-journeys/heart-of-the-delta">Hearth of the Delta" cruise</a> from New Orleans to Memphis, with stops in the Vicksburg battlegrounds.
+<img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a>
+
+Viking also has a <a target="_blank" href="https://viking.tv/tv/viking-journeys/heart-of-the-delta">Hearth of the Delta" cruise</a> from New Orleans to Memphis, with stops in the Vicksburg battlegrounds.
 
 
 
@@ -1304,13 +1295,24 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 
 ## Westward through Northern states
 
-To go from New York City to Seattle, it would take at least 42 hours to cross 11 states, traveling 2,852-miles on Interstates 80 and 90.
+To go from New York City to Seattle, it would take takes 2,852-miles on Interstates 80 and 90, crossing 11 states.
 
-Historically, there are names for wagon trains traveling through the Northern United States:
+### Northern Rail #
+
+<a target="_blank" href="https://www.amtrak.com/empire-builder-train">
+Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 46 hours.
+
+<a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train"><img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
+
+<a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the moutains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
+
+
 
 <a name="LewisAndClark"></a>
 
 ### Lewis and Clark Trail Westward Ho
+
+Historically, there are names for wagon trains traveling through the Northern United States:
 
 The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a>
 today is a set of hiking trails that commemorates the Lewis and Clark Expedition of 1804 to 1806.
