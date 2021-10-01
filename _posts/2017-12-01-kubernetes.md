@@ -420,9 +420,9 @@ PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that 
 
 There are several options to run kubectl:
 
-   * Use the Cloud Shell/Console provided by the cloud vendor (AWS, Azure, GCP, etc.), which may involve costly bills.
+   * In a Terminal on your laptop use the Cloud Shell/Console CLI programs provided by the cloud vendor (AWS, Azure, GCP, etc.), which may involve costly bills.
    
-   * If you have a <strong>laptop</strong> with enough memory and CPU, you can install <a href="#Minikube">Minikube</a>  or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
+   * If you have a <strong>laptop</strong> with enough memory and CPU, install <a href="#Minikube">Minikube</a>, <a href="#EKSAnywhere">AWS ECS & EKS Anywhere</a>, or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
 
    * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
 
@@ -600,6 +600,28 @@ Use my step-by-step instructions to get CLI installed and configured on your lap
 
    * For GCP CLI, see https://wilsonmar.github.io/gcp/
    <br /><br />
+
+
+<a name="EKSAnywhere"></a>
+
+## AWS ECS & EKS Anywhere
+
+https://aws.amazon.com/ko/blogs/aws/getting-started-with-amazon-ecs-anywhere-now-generally-available/
+
+https://aws.amazon.com/eks/eks-anywhere
+(open-sourced with an Apache-2.0 license at <a target="_blank" href="https://github.com/aws/eks-anywhere/">https://github.com/aws/eks-anywhere</a>, tested using Prow)
+manages Kubernetes clusters using VMware vSphere
+<a target="_blank" href="https://aws.amazon.com/eks/eks-distro/">on premises using AWS EKS Distro</a>
+
+<a target="_blank" href="https://aws.amazon.com/blogs/aws/amazon-eks-anywhere-now-generally-available-to-create-and-manage-kubernetes-clusters-on-premises/">GA</a>
+
+https://anywhere.eks.amazonaws.com/
+
+https://anywhere.eks.amazonaws.com/docs/getting-started/install/
+
+<pre>brew install aws/tap/eks-anywhere
+eksctl anywhere version
+</pre>
 
 
 <hr />

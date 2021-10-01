@@ -295,15 +295,40 @@ Its <a target="_blank" href="https://www.hanselman.com/blog/VisualStudioCodeRemo
 0. Select the full command that appears in the drop-down.
 
 
-### Extensions
+### Other Extensions
 
 Emmet to add smart auto-completion suggestions to html editing.
 comes with VSCode.
 
 "Live Server" to Launch a development local Server with live reload feature for static & dynamic pages. It automatically refreshes browser when changes are detected in files. 
 
+<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
+15 Essential Plugins for Visual Studio Code</a> June 27, 2017
+
 * https://marketplace.visualstudio.com/items?itemName=antfu.icons-carbon
 provides a cooler set of Product/logo icons for VSCode to display next to each file.
+
+* https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
+
+* https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+Integrates ESLint JavaScript into VS Code.
+
+* https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd
+PMD static analysis for Salesforce Apex
+
+* https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
+Extensions for developing on the Salesforce Platform
+
+* https://gitlab.com/terja/sfdx-git
+
+* https://medium.com/productivedev/toward-a-mouse-free-developer-experience-in-vscode-97e621d5136e
+   covers Install Vim extension for VSCode.
+
+* https://dev.to/5t3ph/how-i-set-up-vscode-for-recording-a-screencast-be7
+   by Stephanie Eckles at Egghead/now Microsoft
+
+* https://mrsauravsahu.medium.com/custom-vscode-profiles-migrating-settings-and-extensions-14a5f8f4da35
+   VSCode Profiles
 
 
 ### Tutorials on VSCode
@@ -355,31 +380,6 @@ Make Visual Studio Code Your Editor video course at Scotch.io</a> by  Chris Sevi
    20. VS Code 1.10 Features 5:28
    21. Custom Status and Activity Bar 7:26
    <br /><br />
-
-<a target="_blank" href="https://tutorialzine.com/2017/06/15-essential-plugins-for-visual-studio-code">
-15 Essential Plugins for Visual Studio Code</a> June 27, 2017
-
-* https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
-
-* https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-Integrates ESLint JavaScript into VS Code.
-
-* https://marketplace.visualstudio.com/items?itemName=chuckjonas.apex-pmd
-PMD static analysis for Salesforce Apex
-
-* https://marketplace.visualstudio.com/items?itemName=salesforce.salesforcedx-vscode
-Extensions for developing on the Salesforce Platform
-
-* https://gitlab.com/terja/sfdx-git
-
-* https://medium.com/productivedev/toward-a-mouse-free-developer-experience-in-vscode-97e621d5136e
-   covers Install Vim extension for VSCode.
-
-* https://dev.to/5t3ph/how-i-set-up-vscode-for-recording-a-screencast-be7
-   by Stephanie Eckles at Egghead/now Microsoft
-
-* https://mrsauravsahu.medium.com/custom-vscode-profiles-migrating-settings-and-extensions-14a5f8f4da35
-   VSCode Profiles
 
 
 <hr />
