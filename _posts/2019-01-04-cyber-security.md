@@ -16,9 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/cyber-security/">This page</a> contains my notes on resources for Cyber Security, which is a vast field. But I put all the info on this single page to make for easy searching.
+Here are my notes on resources for Cyber Security, which is a vast field. But nevertheless all the info is on this single page to make for easy searching.
 
-“Security is always excessive until it's not enough.” – Robbie Sinclair
+> “Security is always excessive until it's not enough.” – Robbie Sinclair
 
 <hr />
 
@@ -49,8 +49,8 @@ Here are "Essential Job Functions" based on various job descriptions:
 Education/Experience Requirements:
 
 * Experience must include direct experience in several of the key areas listed: securing networks and systems architecture, design and implementation, secure software assurance, intrusion detection, defense and incident response, security configuration management, access controls design and implementation and security policy and standards development.
-* In-depth knowledge of one or more communications protocols.
-* Experience with more than one Cyber Security tools, including: Configuration Assessment, Log Aggregation, Integrity Verification, Web Application Security Testing, Network Access Control System, Network Intrusion prevention systems, and Endpoint Security Solutions.
+* In-depth knowledge of communications protocols (HTTP/HTTPS, SSL/TLS, OAuth, JWT, SAML).
+* Experience with Cyber Security tools, including: Configuration Assessment, Log Aggregation, Integrity Verification, Web Application Security Testing, Network Access Control System, Network Intrusion prevention systems, and Endpoint Security Solutions.
 
 * Strong written and verbal technical communication skills.
 * Demonstrated ability to develop effective working relationships that improved the quality of work products.
@@ -92,19 +92,21 @@ Definitions: REMEMBER:
    * Level of risk before treatment is the inherent risk
    <br /><br />
 
-Quantitative risk analysis: REMEMBER:<br />
+## Quantitative risk analysis: 
+
+REMEMBER:<a target="_blank" href="https://www.youtube.com/watch?v=mpSdrr7QzZE">VIDEO</a>:
+
 Asset Value (AV) x Exposure Factor (EF) = Single Loss Expectancy (SLE).
-<a target="_blank" href="https://www.youtube.com/watch?v=mpSdrr7QzZE">VIDEO</a> 
 
 Annualized Rate of Occurrence (ARO) X Single Loss Expectancy (SLE) = Annual Loss Expectancy (ALE).
 
-Cost/benefit of implementing a particular safeguard, where ALE is the annual loss expectancy:<br />
+Cost/benefit of implementing a particular safeguard, where<br />
+ALE is the annual loss expectancy = 
 (ALE before safeguard) – (ALE after safeguard) – (annual cost of safeguard)
 
-Residual risk = total risk – countermeasures.
+<strong>Residual risk</strong> = total risk – countermeasures.
 
-<a name="CIA">CIA</a>
-Tenents: CIA triad +IAAA
+<a name="CIA">CIA</a> triad tenents: +IAAA
    * Confidentiality vs. Disclosure (IPSec encryption in transit, social engineering)
    * Integrity vs. Alteration (shared among authorized persons or organizations)
    * Availability vs. Destruction (RAID-5, DDoS)
@@ -112,9 +114,9 @@ Tenents: CIA triad +IAAA
 
    * Accountability (auditing)
 
-Privacy Threshold Assesssment is used to identify PI and determine how to treat the data
+Privacy Threshold Assesssment is used to identify PI and determine how to treat the data.
 
-OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation) developed at Carnegie Mellon SEI
+OCTAVE (Operationally Critical Threat, Asset, and Vulnerability Evaluation) developed at Carnegie Mellon SEI.
 
 Cloud Security Posture Management (CSPM) monitors continuously identifies and remediaties cloud infrastructure risks in each cloud service using application programming interfaces (APIs) configuration data against compliance benchmarks. For example, they can ensure logs are being gathered from host operating systems and the network (NetFlow), and that API event logging is turned on. 
 
