@@ -2146,10 +2146,11 @@ Successfully installed py4j-0.10.8.1
    https://launchpad.net/sikuli/sikulix/2.0.1/+download/sikulixapi-2.0.1.jar
 
 
+## Resources
 
 macos-install-all/tests/firefox_pycon_search.py
 
-
+https://blog.xoxzo.com/en/2020/05/09/making-sense-python-environment/
 
 ## More on Python
 
