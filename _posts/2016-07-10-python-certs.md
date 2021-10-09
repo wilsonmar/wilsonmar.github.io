@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Python Certs"
-excerpt: "Certification topics"
+excerpt: "The topics for learning the Python language thoroughly, for professional status"
 tags: [python, coding]
-date: "2016-07-10"
+date: "2021-10-09"
 file: "python-certs"
 image:
-# python-badge-adafruit-205x206.png
-  feature: https://user-images.githubusercontent.com/300046/71582129-f07eff00-2ac5-11ea-8f88-e4821d85d0dc.png
-  credit: adafruit
-  creditlink: https://www.adafruit.com/product/750
+#python-cert-31-02-1900x500
+  feature: https://user-images.githubusercontent.com/300046/136653262-49c4cd56-f860-43a7-9663-c3ff144b7071.png
+  credit: Python Institute
+  creditlink: https://pythoninstitute.org/pcap-certified-associate-in-python-programming-updated-to-pcap-31-02/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -18,19 +18,22 @@ comments: true
 
 ## Certifications in Python 
 
-<a target="_blank" href="https://www.PythonInstitute.org">PythonInstitute.org</a> has several certification exams taken online at https://ums.edube.org/store or at a Pearson VUE center. 
-
+<a target="_blank" href="https://www.PythonInstitute.org">PythonInstitute.org</a> has several certification exams taken online at <a target="_blank" href="https://ums.edube.org/store/">ums.edube.org/store</a> or in-person at a Pearson VUE center. 
 
 Each requires 70% correct of 40 questions over 40 minutes on-line.
 
 ### Entry-level cert
 
-<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification" (PCAP-31-01)</a> covers these exam blocks for $59.
+<a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification"</a> covers these exam blocks for $59. Version <strong>PCAP-31-02</strong> is the version after PCAP-31-01 is retired.
 
-1: Basic Concepts (17%)
+The official <a target="_blank href="https://pythoninstitute.org/download/566/">practice test is at https://pythoninstitute.org/download/566</a>
 
-   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch), 
-   * Python keywords, instructions, 
+The exam "blocks":
+
+1: Basic Concepts (17% - 5 exam items)
+
+   * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch)
+   * Python keywords, instructions
    * indenting
    * REPL (<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413">Read Evaluate Print Loop interactive</a>), control-D to exit()
    * comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
@@ -38,12 +41,13 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * the print() function
    * the input() function
    * numeral systems (<a target="_blank" href="https://en.wikipedia.org/wiki/Bit_numbering">W</a>: binary, octal, decimal, hexadecimal) <a target="_blank" href="https://en.wikipedia.org/wiki/Numeral_system">W</a>, <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/2/module/413">*</a>
-   * numeric operators: ** * / % // + –  <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1/module/413">// is floor division. Py3: Division always returns a float. Num (mod) % 2 is 0 for odd, 1 for even</a>
+   * numeric operators: ** * / % // + –  
+   <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5264/lesson/1/module/413">// is floor division. Py3: Division always returns a float. Num (mod) % 2 is 0 for odd, 1 for even</a>
    * string operators: * +
    * assignments and shortcut operators
    <br /><br />
 
-2: Data Types, Evaluations, and Basic I/O Operations (20%)
+2: Data Types, Evaluations, and Basic I/O Operations (20% - 6 exam items)
 
    * operators: unary and binary, priorities and binding
    * bitwise operators<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3db7f679-98dd-4cd4-9404-bd800eb22184">:</a> ~ & ^ | << >> (<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=b2e861ef-170d-4f7b-bc53-344781bf0fa0">Mandelbrot</a>)
@@ -59,7 +63,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * simple strings: constructing, assigning, indexing, slicing comparing, immutability
    <br /><br />
 
-3: Flow Control – loops and conditional blocks (20%)
+3: Flow Control – loops and conditional blocks (20% - 6 exam items)
 
    * conditional statements: if, if-else, if-elif, if-elif-else
    * multiple conditional statements
@@ -71,7 +75,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * controlling loop execution: break, continue
    <br /><br />
 
-4: Data Collections – Lists, Tuples, and Dictionaries (23%)
+4: Data Collections – Lists, Tuples, and Dictionaries (23% - 7 exam items)
 
    * simple lists: constructing vectors, indexing and slicing, the len() function
    * lists in detail: indexing, slicing, basic methods (append(), insert(), index()) and functions (len(), sorted(), etc.), del instruction, iterating lists with the for loop, initializing, in and not in operators, list comprehension, copying and cloning
@@ -83,7 +87,7 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
    * immutability, escaping using the \ character, quotes and apostrophes inside strings, multiline strings, copying vs. cloning, advanced slicing, string vs. string, string vs. non-string, basic string methods (upper(), lowe
    <br /><br />
 
-5: Functions (20%)
+5: Functions (20% - 6 exam items)
 
    * defining and invoking your own functions and generators
    * return and yield keywords, returning results,
