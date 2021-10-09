@@ -50,7 +50,7 @@ The exam "blocks":
 2: Data Types, Evaluations, and Basic I/O Operations (20% - 6 exam items)
 
    * operators: unary and binary, priorities, and binding
-   * bitwise operators <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3db7f679-98dd-4cd4-9404-bd800eb22184">VIDEO:</a> ~ & ^ \| &LT;&LT; >> (<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=b2e861ef-170d-4f7b-bc53-344781bf0fa0">Mandelbrot</a>)
+   * bitwise operators <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3db7f679-98dd-4cd4-9404-bd800eb22184">VIDEO:</a> ~ & ^ \| \<\< \>\> (<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=b2e861ef-170d-4f7b-bc53-344781bf0fa0">Mandelbrot</a>)
    * Boolean operators: not and or
    * Boolean expressions <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5263/lesson/4/module/413">(True/False)</a>
    * relational operators ( == != > >= < <= ), building complex Boolean expressions
