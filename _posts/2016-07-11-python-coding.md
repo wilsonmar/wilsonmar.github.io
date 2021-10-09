@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Python Coding"
-excerpt: "Tricks and tips from various learning resources"
+excerpt: "PROTIPs and tricks from various learning resources"
 tags: [python, coding]
-date: "2021-03-04"
+date: "2021-10-09"
 file: "python-coding"
 image:
 # pic white python logo 1900x500.jpg
@@ -64,7 +64,7 @@ PROTIP: Research and find out what each is about:
 *	yield
 <br /><br />
 
-The list above can be retrieved (as an array) by this code:
+The list above can be retrieved (as an array) by this code after typing <tt>python</tt> for the REPL (Read Evaluate Print Loop) interactive prompt:
 
 <pre>python
 >>> import keyword
@@ -72,8 +72,7 @@ The list above can be retrieved (as an array) by this code:
 >>> exit()
 </pre>
 
-Assuming you've first installed it, <tt>python</tt> puts you in a REPL prompt.
-
+Press control+D to exit anytime.
 
 
 <a name="None"></a>

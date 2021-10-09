@@ -26,14 +26,14 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
 
 <a target="_blank" href="https://pythoninstitute.org/certification/pcep-certification-entry-level/pcep-exam-syllabus/">"Certified Entry-Level Python Programmer Certification"</a> covers these exam blocks for $59. Version <strong>PCAP-31-02</strong> is the version after PCAP-31-01 is retired.
 
-The official <a target="_blank href="https://pythoninstitute.org/download/566/">practice test is at https://pythoninstitute.org/download/566</a>
+The official <a target="_blank" href="https://pythoninstitute.org/download/566/">practice test is at pythoninstitute.org/download/566</a>
 
 The exam "blocks":
 
 1: Basic Concepts (17% - 5 exam items)
 
    * fundamental concepts: interpreting and the interpreter, compilation and the compiler, language elements, lexis, syntax analysis (parsing), semantics (applying language rules such as type mismatch)
-   * Python keywords, instructions
+   * <a target="_blank" href="https://wilsonmar.github.io/python-coding/#reserved-keywords">Python keywords</a>, instructions
    * indenting
    * REPL (<a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5262/lesson/4/module/413">Read Evaluate Print Loop interactive</a>), control-D to exit()
    * comments. PROTIP: Text between triple-doublespace are actually string objects in the byte code
@@ -49,8 +49,8 @@ The exam "blocks":
 
 2: Data Types, Evaluations, and Basic I/O Operations (20% - 6 exam items)
 
-   * operators: unary and binary, priorities and binding
-   * bitwise operators<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3db7f679-98dd-4cd4-9404-bd800eb22184">:</a> ~ & ^ | << >> (<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=b2e861ef-170d-4f7b-bc53-344781bf0fa0">Mandelbrot</a>)
+   * operators: unary and binary, priorities, and binding
+   * bitwise operators <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=3db7f679-98dd-4cd4-9404-bd800eb22184">VIDEO:</a> ~ & ^ \| &LT;&LT; >> (<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=b2e861ef-170d-4f7b-bc53-344781bf0fa0">Mandelbrot</a>)
    * Boolean operators: not and or
    * Boolean expressions <a target="_blank" href="https://linuxacademy.com/cp/courses/lesson/course/5263/lesson/4/module/413">(True/False)</a>
    * relational operators ( == != > >= < <= ), building complex Boolean expressions
@@ -91,7 +91,7 @@ The exam "blocks":
 
    * defining and invoking your own functions and generators
    * return and yield keywords, returning results,
-   * the None keyword,
+   * <a target="_blank" href="https://wilsonmar.github.io/python-coding/#use-not-none-reserved-word">the None keyword</a> (instead of return 0)
    * recursion
    * parameters vs. arguments,
    * positional keyword and mixed argument passing,
