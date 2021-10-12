@@ -6766,6 +6766,8 @@ is normally $997, with a 60 day money-back guarantee.
 * <a target="_blank" href="https://medium.com/@writetomiglani/how-to-ace-the-certified-kubernetes-administrator-exam-in-7-days-e4603ac40746">"How to ace the CKA exam in 7 days</a> is click-bait?
 * <a target="_blank" href="https://www.linkedin.com/learning/certified-kubernetes-application-developer-ckad-cert-prep-exam-tips?u=26886050">Certified Kubernetes Application Developer (CKAD) Cert Prep: Exam Tips</a> by Benjamin Muschko
 
+https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
+
 <hr />
 
 ## More on DevOps #
