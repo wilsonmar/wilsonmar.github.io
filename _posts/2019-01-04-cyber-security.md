@@ -3,7 +3,7 @@ layout: post
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
-date: "2021-05-06"
+date: "2021-10-13"
 file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
@@ -1466,7 +1466,8 @@ Attacks to data and databases <a target="_blank" href="https://www.youtube.com/w
    * A data contamination attack. Proper implementation of security levels is a countermeasure for data contamination. 
    <br /><br />
 
-A breach is an attack that has been successful in reaching its goal. 
+A <strong>breach</strong> is an attack that has been successful in reaching its goal. 
+
    * Means is how a criminal committed a crime.
    * Motive is why a crime is committed. 
    * Opportunity is when and where a crime occurred.
@@ -1489,7 +1490,8 @@ Events: System-level, application-level, or user-level? REMEMBER
    * An armored virus includes protective code that prevents examination of critical elements, such as scans by antivirus software.
 
    * <strong>Spyware</strong> uses tracking cookies to collect and report on a user’s activities to the spyware programmer. 
-   * A <strong>Trojan horse</strong> is malware disguised as a useful utility but embeds malicious code in itself. A symptom of a Trojan horse is that unknown software is using covert channels to perform malicious activities, such as deleting system files and planting a backdoor into a system.
+   * A <strong>Trojan</strong> is malware disguised as a useful utility but embeds malicious code in itself. A symptom of a Trojan horse is that unknown software is using covert channels to perform malicious activities, such as deleting system files and planting a backdoor into a system. The term is based on the "Trojan horse" story where soldiers hid in a large wooden horse which the opposition pulled inside their gates. 
+   * A <strong>RAT</strong> is a Remote Access Trojan
    * A <strong>Macro</strong> is written into like VB in Excel.
    * <strong>Adware</strong> is a software application that displays advertisements (which generates revenue) while the application is executing.
    * <strong>Logic bombs</strong> are triggered by events like a specific date.
@@ -1504,7 +1506,7 @@ Events: System-level, application-level, or user-level? REMEMBER
 DREAD is a mnemonic for categories used to rate security threats for a given issue:
    * Damage
    * Reproducibility
-   * Exploitability
+   * Exploitability, such as allowing RCE (Remote Control Execution)
    * Affected users
    * Discoverability
    <br /><br />
