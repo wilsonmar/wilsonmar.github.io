@@ -2102,16 +2102,6 @@ makes use of AWS Boto3 with Python2 to create S3 buckets, upload files, and dele
 <a target="_blank" href="https://linuxacademy.com/amazon-web-services/training/lesson/name/python-s3-code-examples">
 code examples</a> as part of Linux Academy's Red Hat Certified Specialist in Virtualization (EX318) Preparation video Course
 
-## More on OSX
-
-This is one of a series on Mac OSX:
-
-{% include mac_links.html %}
-
-
-
-
-
 
 ## Sikuli Python
 
