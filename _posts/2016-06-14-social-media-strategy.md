@@ -203,7 +203,13 @@ The ultimate aim of messaging is to be associated with <a target="_blank" href="
 
 PROTIP: Write the word after each emoji.
 
-<a target="_blank" href="https://www.wikiwand.com/en/Robert_Plutchik">Robert Plutchik</a>'s diagram provides English words to describes different <strong>strengths of emotions</strong> eight of them: #Anger, #Fear, #Sadness, #Disgust, #Surprise, #Anticipation, #Trust, #Joy.
+<a target="_blank" href="https://www.wikiwand.com/en/Robert_Plutchik">Robert Plutchik</a>'s diagram (originally published in American Scientist in 2001)  provides English words to describes different <strong>strengths of emotions</strong> - 4 sets of polar opposites:
+
+   * #Joy is the opposite of #Sadness. Physiology: Connect vs withdraw
+   * #Fear is the opposite of #Anger. Physiology: Get small and hide vs get big and loud
+   * #Anticipation is the opposite of #Surprise. Physiology: Examine closely vs jump back
+   * #Disgust is the opposite of #Trust. Physiology: Reject vs embrace
+   <br /><br />
 
    ![social-media-Plutchik-wheel-svg-800x811.png](https://user-images.githubusercontent.com/300046/137630563-0365aa7f-4b13-4e61-a752-9d5cc5c84936.png)
 
