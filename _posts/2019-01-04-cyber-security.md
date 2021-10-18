@@ -873,7 +873,7 @@ SP 800-34
 
 SP 800-40 Guide to Enterpise Patch Management Technologies
 
-800-34 RMF (Risk Management Framework)
+800-34 RMF (Risk Management Framework) - to obtain cATO (continuous Authority To Operate):
    1. Categorize
    2. Select security controls
    3. Implement controls

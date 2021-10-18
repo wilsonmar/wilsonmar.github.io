@@ -6177,6 +6177,14 @@ A cgroup (control group) is a group of Linux processes with optional resource is
 <a target="_blank" href="https://banzaicloud.com/blog/inject-secrets-into-pods-vault-revisited/">
 Banzai cloud vault</a> uses a mutating admission webhook to inject an executable into containers inside Pods, which then request secrets from Hashicorp Vault through special environment variable definitions. This project was inspired by a number of other projects (e.g. channable/vaultenv, hashicorp/envconsul), but one thing that makes it unique is that it is a daemonless solution.
 
+PROTIP: <a target="_blank" href="https://medium.com/@siri.c/inject-aws-secrets-to-containers-be55c859fbf6">BLOG</a>:
+Don't follow the Kubernetes default of storing credentials in Secret resource in plain text, for acess by everyone who has access to Kubernetes clusters.
+You don't have to modify source code to inject a secret from AWS Secret Manager into env. if you use Piggy (https://piggysec.com) for Elastic Kubernetes Service (EKS) in a Helm chart (as annotation).  See https://github.com/KongZ/piggy/tree/main/demo
+   1. Piggy <strong>mutates</strong> pods during pod creation
+   2. Piggy authenticates pods using a pod service account token with Kubernetes API. After pod has been authenticated, Piggy exchanges the <a target="_blank" href="https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html">ephemeral token</a> with <a target="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/index.html">AWS STS (Security Token Service)</a> to read values from AWS Secret Manager. This ephemeral token is time limited. Piggy does not keep tokens in the application. 
+   3. Secrets from AWS Secret Manager are injected into the container process.
+
+See https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html
 
 ### Base64 Encoding
 
