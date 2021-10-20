@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What is the big deal about Enterprise software?"
-excerpt: "Multi-dimensional vendors capture the prize"
+excerpt: "How to meet enterprise needs with multi-dimensional offerings with no limits of scale and geography"
 tags: [security, cloud, analytics]
 date: "2021-04-08"
 file: "enterprise-software"
@@ -21,9 +21,9 @@ To successfully cater to enterprises, software vendors must incorporate features
 
 > "We're enterprise software because we have enterprise users"
 
-The rebuff was: "I think your software will actually be an enterprise offering when those 30 specific feature we identified are implemented."
+The stinging rebuff was: "I think your software will actually be an enterprise offering when those 30 specific feature we identified are implemented."
 
-Here are the <strong>concerns</strong> addressed by those requests:
+Here are the <strong>concerns</strong> enterprises have that need to be addressed by vendors:
 
 ## 1. Automation for large numbers of people and data
 
@@ -39,10 +39,12 @@ Here are the <strong>concerns</strong> addressed by those requests:
 >   Due to the large number of options, every field on enterprise forms are likely need a search box. It's not enough for vendors to simply provide a "Next" button for users to hunt for a value within a long list. 
 
    To keep support costs down, <strong>self-service</strong> apps are a big deal.
+
+   Can your enterprise app cut through the buracracy and <strong>waiting for approvals</strong>?
    
    Extensive testing is crucial to keep rework from being unsustainable.
 
-> Specific, <strong>actionable alerts</strong> are important for troubleshooting.
+> <strong>Specific, actionable alerts</strong> are important for troubleshooting.
    
    The more managers in an organization, the more complexity and variations will be requested.
    That means an explosion of divergent components, databases, and technologies which drive them.
@@ -159,9 +161,9 @@ Here are the <strong>concerns</strong> addressed by those requests:
 
    When one region fails, the amount of time that it takes before end-users can continue work on a replacement system is so important that enterprises have a SLA metric for it: MTD (Maximum Tolerable Downtime). Additionally, the RTO (Recovery Time Objective) measures the amount of time before a restore is initiated and data is restored. 
 
-   The maximum amount of data that is allowed to be lost is measured by the RPO (Recovery Point Objective). An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups.
+   The maximum amount of data that is allowed to be lost is measured by the RPO (Recovery Point Objective). An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups. <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845">This diagram</a> illustrates the complexity ignored by diagrams on the same topic:
 
-   <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
 
    Microsoft wrote CosmosDB to send database changes to several regions so data is not lost if one region goes down. Users of the global service can choose to wait for confirmation on every transaction or continue without confirmation by assuming "eventual consistency".
 

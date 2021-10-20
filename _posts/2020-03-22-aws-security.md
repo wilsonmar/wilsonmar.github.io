@@ -559,13 +559,14 @@ Account management service to consolidate accounts.
 
 ### Amazon Macie 
 
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff1e3525-246f-4536-b78e-fe0bbc0c2d9e">VIDEO</a>
+Makes use of Machine Learning technology developed within Amazon.
+
 identify and classify PII (Personally Identifiable Information)
 in events and sessions involving critical assets (in S3)m ,
 by content type, using regex.
 
 Issue risk alerts by location.
-
-<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ff1e3525-246f-4536-b78e-fe0bbc0c2d9e">VIDEO</a>
 
 
 ### AWS Config
@@ -645,10 +646,6 @@ KMS options:
    * API commands (Encrypt, Decrypt, Recrypt)
    * CMK – AWS created vs Imported
    * How to enforce annual rotation of keys
-
-## AWS Macie search
-
-Makes use of Machine Learning technology developed within Amazon.
 
 
 ## difference between Cloudtrail vs Cloudwatch

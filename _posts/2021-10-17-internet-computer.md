@@ -35,6 +35,10 @@ DFINITY progressed from Copper 2019 to Bronze 2020 to Tungsten to Sodium to
 "Mercury Genesis" launched May 10, 2021. That's when ICP token began trading on Coinbase with 469,213,710 tokens for $105 million.
 Initial rounds went to Andressen Horowitz
 
+## Social
+
+https://www.reddit.com/r/dfinity/
+
 
 ## Hands-on
 
@@ -194,6 +198,11 @@ No passwords.
 
 CAUTION: If indeed DFINITY is to take over the internet, then each person would only have a single identity, which means possible total exclusion.
 In that scenario, the current situation of competing tech giants is actually more diverse.
+
+### Database
+
+https://medium.com/geekculture/internet-computer-web-app-decentralized-database-architecture-8647d1a437b8
+
 
 ### Chat
 
