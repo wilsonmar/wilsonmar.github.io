@@ -159,13 +159,23 @@ Here are the <strong>concerns</strong> enterprises have that need to be addresse
 
    With cloud, enterprise licensing typically involves providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. 
 
-   When one region fails, the amount of time that it takes before end-users can continue work on a replacement system is so important that enterprises have a SLA metric for it: MTD (Maximum Tolerable Downtime). Additionally, the RTO (Recovery Time Objective) measures the amount of time before a restore is initiated and data is restored. 
+   <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845" title="From Davidson Consulting">This timeline</a> illustrates the complexity ignored by other diagrams on the same topic, especially the interplay between customer-facing business teams and ICT (Information and Communication Technology) organizations:
 
-   The maximum amount of data that is allowed to be lost is measured by the RPO (Recovery Point Objective). An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups. <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845">This diagram</a> illustrates the complexity ignored by diagrams on the same topic:
+   <a target="_blank" title="dr-plan-davidson-consulting-1029x618.png" href="https://user-images.githubusercontent.com/300046/138092441-4c61139d-e8bd-4772-9a9b-537a489565ac.png"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
+   The success of a BCP (Business Continuity Plan) is realizing for each incident the MTPoD (Minimum Tolerable Period of Disruption), aka MTD (Maximum Tolerable Downtime), to reach the minimal level of business process resumption. That ideally are defined before a disaster.
 
-   Microsoft wrote CosmosDB to send database changes to several regions so data is not lost if one region goes down. Users of the global service can choose to wait for confirmation on every transaction or continue without confirmation by assuming "eventual consistency".
+   Notice in that green line a possible disconnect between the two organization's measurements?
+   A technical definition of what is measurable "Start of recovery" and "Incident ended" can be very different due to manual processes. What is the DRP (Diaster Recovery Plan) to business personnel?
+   How do they participate and coordinate during F&F (Fail and Fix) events?
+
+   > Do a dry run to actually restore from the last (most recent) backup copy to measure whether the RTA (Recovery Time Actual) meets the wishful <strong>RTO</strong> (Recovery Time Objective) for how much data is lost.
+
+   In a dry run of systems going down suddenly, how much data was actually lost compared to the <strong>RPO</strong> (Recovery Point Objective)? An organization which takes incremental backups once a day would have an RPO of at least 24 hours since any data processed after the last backup would be lost. The RPO needs to include time to run and verify restores from backups.
+   
+   ---
+
+   SnowflakeDB and Microsoft's CosmosDB send database changes continously to several regions so data is not lost if one region goes down. Users of the global service can choose to wait for confirmation on every transaction or continue without confirmation by assuming "eventual consistency".
 
 ## Summary
 
