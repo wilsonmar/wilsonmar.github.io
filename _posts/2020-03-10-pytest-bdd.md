@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "pytest-bdd"
-excerpt: "Achieve behavior-driven development (BDD) by automating Gherkin test specs using Pytest"
+excerpt: "Behavior-driven Development (BDD) by automating Gherkin test specs using Pytest for test coverage analysis, data-driven tests, and localization verification"
 tags: [API, devsecops]
-date: "2020-03-10"
+date: "2021-10-23"
 file: "pytest-bdd"
 image:
 # cape-blue.jpg
@@ -29,20 +29,20 @@ After following this hands-on tutorial manually, you would be able to add to you
 
    <a target="_blank" href="https://www.youtube.com/watch?v=ReB6YzMlQ3U" title="Jul 10, 2019 [2:05:00]">Behavior Driven Python with pytest-bdd</a>
 
+   Matt Harrison held live classes on OReilly.com in 2021.
+
+
    ## Automation of install and run
 
    My value-add here is writing a <a href="#BashScript">Bash script</a> (below) that automatically installs what is needed and runs the test on a public website under test:
 
    <a target="_blank" href="https://github.com/wilsonmar/tau-pytest-bdd">https://github.com/wilsonmar/tau-pytest-bdd
 
-   This is a fork of Andrew's repo in order to avoid future possible breaking changes in Andrew's upstream repo. I occassionally sync with it and reconcile changes in my forked version.
+   That is a modified version of a fork of <a target="_blank" href="https://github.com/AndyLPK247/tau-pytest-bdd">Andrew's repo at https://github.com/AndyLPK247/tau-pytest-bdd</a>, to avoid future possible breaking changes in or disappearance of Andrew's upstream repo). (I occassionally sync with it and reconcile changes in my forked version.)
 
-   <a target="_blank" href="https://github.com/AndyLPK247/tau-pytest-bdd">https://github.com/AndyLPK247/tau-pytest-bdd
+   For automation I built a Bash script based on coding techniques described at:
+   <a target="_blank" href="https://wilsonmar.github.io/bash-scripts">https://wilsonmar.github.io/bash-scripts</a>
 
-
-<a name="BashScript"></a>
-
-## Bash Script 
 
 1. Highlight and copy this command: TODO: 
 
@@ -55,12 +55,12 @@ After following this hands-on tutorial manually, you would be able to add to you
 1. Open a Terminal.
 1. Navigate to a folder and paste the command to execute it.
 
-   Note the script uses Bash coding techniques described at:
-   https://wilsonmar.github.io/bash-scripts
 
+If you performed the above, <a href="#RunTest">click here to run what was installed</a>.
 
-The text below describes what the script above does, 
-if you do it manually instead, 
+### Manual install
+
+Alternately, the text below describes what the install script above does so you can do it manually instead:
 
 1. Clone the repo from Andrew:
 
@@ -108,6 +108,8 @@ bash-5.0$  . /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-YNf2NFbA/
 (tau-pytest-bdd) bash-5.0$ 
    </pre>
 
+   <a name="RunTest"></a>
+
    ## Run individual test
 
 1. The script runs a specific test while at the repo's root folder:
@@ -138,15 +140,14 @@ Virtualenv location: /Users/wilson_mar/.local/share/virtualenvs/tau-pytest-bdd-Y
 1. A new window pops up and disappears.
 1. The response on the Terminal (with ... elipses replacing long strings):
 
-   <pre>
-======...====== test session starts ======...======
+   <pre>======...====== test session starts ======...======
 platform darwin -- Python 3.7.6, pytest-4.4.1, py-1.8.0, pluggy-0.9.0
 rootdir: /Users/wilson_mar/gits/wilsonmar/tau-pytest-bdd/tests/step_defs
 plugins: bdd-3.1.0
 collected 2 items                                 
 &nbsp;
 test_web_steps.py .                             ...[100%]
-
+&nbsp;
 ======...====== 2 passed in 23.64 seconds ======...
 (tau-pytest-bdd) bash-5.0$ pipenv run python -m pytest test_web_steps.py
 ======...======  test session starts ===========...====== 
@@ -173,6 +174,8 @@ test_web_steps.py .                             ...[100%]
    * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ixqeebhUa-w" title="Feb 26, 2018 [1:29:20]">Productive pytest with PyCharm</a>
    by Brian Okken (@brianokken/Github:okken)
 
+   * TODO: VSCode?
+   
 
    ## Alternative runs
 
