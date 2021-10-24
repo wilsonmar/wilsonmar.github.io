@@ -15,10 +15,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">In 2020*</a>, enterprise spending on shared cloud infrastructure exceeded that of on-prem. data center hardware:
 
-## Cloud Service Models
+![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
 
-* Applications   - SaaS (React/Vue, Design System)
+
+## Cloud "as a Service" (*aaS) models
+
+* Applications   - SaaS (React/Vue apps designed based on a "Design System")
 * App Data       - SaaS (Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
 
 * App Runtime    - PaaS (Web Apps)
@@ -71,13 +75,15 @@ The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/clou
 
 * <strong>Rehost (migration)</strong> ("lift-and-shift") to rehost with little code changes, to minimize application downtime.
 
-* <strong>Refactor (modernization)</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
+Modernizaton: 
 
-* <strong>Rearchitect (modernization)</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
+* <strong>Refactor</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
 
-* <strong>Rebuild (modernization)</strong> - reconstruct existing app on a new PaaS platform.
+* <strong>Rearchitect</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
 
-* <strong>Replace (modernization)</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
+* <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
+
+* <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
 
 
 ## Individuals must pick a single cloud?
@@ -88,20 +94,20 @@ So many individual technologists need to select the cloud vendor which provides 
 
 * If you code in C# on .NET and want to continue leveraging that experience, Azure is the natural choice. (But other clouds are trying to support Windows.)
 
-* Azure now provides free learning instances
+* Azure provides free learning instances. AWS is the only cloud that requires a credit card, and provides only email support (with varying response times, and often with no response at all).
 
-* If you're looking for the fastest and easiest path to get a job in cloud, go for AWS because of its current <a href="#marketshare">market share</a> and [pace of innovation](https://aws.amazon.com/products/). AWS has the most sophisticated authentication and database services.
+* If you're looking for the fastest and easiest path to <strong>get a job</strong> in cloud, go for AWS because of its current <a href="#marketshare">market share</a> and [pace of innovation](https://aws.amazon.com/products/). AWS has the most sophisticated authentication and database services.
 
-* Due to competitive reasons, Target, Best Buy, eBay, and Sony Music use Google. WalMart uses Azure. Since Amazon is moving into agriculture (building urban farms to provide Whole Foods and Amazong Go stores) plus health care, established competitors in those industries would not want to use AWS.
+* Due to competitive reasons, companies in retail, music, etc. use other clouds: Target, Best Buy, eBay, Sony Music, etc. use Google. WalMart uses Azure. Since Amazon is moving into agriculture (building urban farms to provide Whole Foods and Amazong Go stores) plus health care, established competitors in those industries would not want to use AWS.
 
-* If you're running really large loads on each server, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
+* If you're moving a lot of data on networks, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
 
 * Google's SSD drives are expensive, though needed for speed.
 
 * IBM has bare-metal machines, if that's your thing. But since 2017 AWS provides them as well.
 
 * Increasingly, companies doing business in a particular country are required to keep data within a cloud data center within that country (such as Google in Belgium).
-<br /><br />
+
 
 ## Cloud vendor comparisons
 
@@ -664,6 +670,8 @@ https://cloudonaut.io/my-mental-model-of-aws/
 https://statistica.com has statistics on AWS:
 ![aws-2020-revenue](https://user-images.githubusercontent.com/300046/116902224-1eafaa00-abf8-11eb-8151-ae12a309f5ac.png)
 
+<a target="_blank" href="https://a16z.com/2021/05/27/cost-of-cloud-paradox-market-cap-cloud-lifecycle-scale-growth-repatriation-optimization/">
+BLOG: "The Cost of Cloud, a Trillion Dollar Paradox"</a> by venture capital firm Andressen Horowitz
 
 ## More on DevOps #
 

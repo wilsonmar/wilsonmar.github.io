@@ -21,15 +21,11 @@ After following this hands-on tutorial manually, you would be able to add to you
 > Automated testing of BDD based on Gherkin using Python-based pytest-bdd installed using a Bash script. Integrated libraries for test coverage analysis, data-driven tests, and localization verification.
 
 
-## Video tutorials
+1. Learn about the basic concepts about Pytest.
 
-1. First, learn about the basic concepts about Pytest.
+   Andrew Knight (@automationpanda, <a target="_blank" href="https://www.AutomationPanda.com">AutomationPanda.com</a>) gradually presents, in a logic sequence and with quizzes <a target="_blank" href="https://testautomationu.applitools.com/behavior-driven-python-with-pytest-bdd/">9 videos at Applitools' Test Automation University (TAU)</a>. <a target="_blank" href="https://www.youtube.com/watch?v=ReB6YzMlQ3U" title="Jul 10, 2019 [2:05:00]">YOUTUBE: 2 min. intro</a>
 
-   Andrew Knight (@automationpanda, <a target="_blank" href="https://www.AutomationPanda.com">AutomationPanda.com</a>) gradually presents, in a logic sequence and with quizzes <a target="_blank" href="https://testautomationu.applitools.com/behavior-driven-python-with-pytest-bdd/">9 videos at Applitools' Test Automation University (TAU)</a>.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=ReB6YzMlQ3U" title="Jul 10, 2019 [2:05:00]">Behavior Driven Python with pytest-bdd</a>
-
-   Matt Harrison held live classes on OReilly.com in 2021.
+   Also, <a target="_blank" href="https://www.linkedin.com/in/panela/">Matt Harrison</a> held live classes on OReilly.com in 2021.
 
 
    ## Automation of install and run
@@ -174,8 +170,10 @@ test_web_steps.py .                             ...[100%]
    * VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=ixqeebhUa-w" title="Feb 26, 2018 [1:29:20]">Productive pytest with PyCharm</a>
    by Brian Okken (@brianokken/Github:okken)
 
-   * TODO: VSCode?
-   
+   * <a target="_blank" href="https://www.youtube.com/watch?v=UMgxJvozR5A" title="Sep 22, 2020">VIDEO: Kris Jordan 1 hour "An Introductory Tutorial to Unit Testing your Python Functions with Pytest and Visual Studio Code"</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=DhUpxWjOhME" title="Sep 11, 2021">VIDEO: "Automated Testing in Python with pytest, tox, and GitHub Actions"</a>
+
 
    ## Alternative runs
 
@@ -351,22 +349,23 @@ Book: "Python Testing with pytest" by Brian Okken
 
 ## Alternatives
 
-pytest-bdd test scenarios are written in Gherkin “.feature” files using plain language. Thus, it is a BDD test framework that is similar to Behave, Cucumber, and SpecFlow. For Python there is also radish, which extends Cucumber with constants and scenario loops.
+pytest-bdd test scenarios are written in Gherkin ".feature" files using plain language. 
+Thus, it is a BDD test framework that is similar to Behave, Cucumber, and SpecFlow. 
+For Python there is also <strong>radish</strong>, which extends Cucumber with constants and scenario loops.
 
-There is also lettuce, which is not used much anymore.
+"The Cucumber Book" by Matt Wynne and Asiak Hellesoy.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=gK_btU9Kv_g">
+<a target="_blank" href="https://www.youtube.com/watch?v=gK_btU9Kv_g" title="Mar 16, 2019">
 Implement BDD with TDD: Using Python, Behave, and Mocking</a>
-Mar 16, 2019
 
 Book "BDD in Action" by John Ferguson Smart.
 
-"The Cucumber Book" by Matt Wynne and Asiak Hellesoy.
+Not used much anymore is "lettuce".
 
 
 ## Localization (L10N)
 
-There are two ways to select another language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.):
+There are two ways to select another human language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.):
 
    A. English was selected in browser's Preferences, but another the app displays another language.
    
