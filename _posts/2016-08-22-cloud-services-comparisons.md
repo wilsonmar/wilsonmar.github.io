@@ -19,7 +19,7 @@ comments: true
 
 ![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
 
-Analysis of corporate S-1 filings identified significant spend by SaaS companies:
+Analysis of corporate S-1 filings identified significant spend as percentage of Total Revenue:
 
 ![cloud-svcs-spend-1312x560](https://user-images.githubusercontent.com/300046/138592222-e294f7e7-7271-4da8-83d6-fead30969d83.png)
 
@@ -80,7 +80,7 @@ Despite all the good reasons, individuals used to the old way may still "drag th
 
 There are different ways to make use of cloud infrastructure:
 
-* SaaS - Applications reached using a browser (Google Gmail, Salesforce, Microsoft Office 365, Box, Slack, etc.) 
+* SaaS - Applications reached using a browser (Google Gmail, Salesforce, Microsoft Office 365, Box, Slack, <a target="_blank" href="https://getnerdio.com/academy/10-popular-software-service-examples/">etc.</a>) 
 * SaaS - App Data reached using API calls (Monitoring: Splunk, Datadog, etc.; Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
 
 * PaaS - App Runtime (Web Apps built in NodeJs/Rust using a React/Vue UI library)
@@ -96,7 +96,8 @@ There are different ways to make use of cloud infrastructure:
 
 ## Individuals must pick a single cloud?
 
-Organizations are going multi-cloud.
+Organizations are going multi-cloud by using software from Hashicorp, Snowflake for database, etc.
+
 But an individual has a limited amount of time to keep up with changes.
 So many individual technologists need to select the cloud vendor which provides the best career prospects. Here's my logic:
 
