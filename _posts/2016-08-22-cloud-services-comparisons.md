@@ -3,7 +3,7 @@ layout: post
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
 tags: [Cloud, comparison]
-date: "2021-02-26"
+date: "2021-10-23"
 file: "cloud-services-comparisons"
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -15,25 +15,28 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">In 2020*</a>, enterprise spending on shared cloud infrastructure exceeded that of on-prem. data center hardware:
+<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">In 2020*</a>, accelerating growth in spending on shared cloud infrastructure was such that it exceeded spending on on-prem. data center hardware:
 
 ![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
 
 
 ## Cloud "as a Service" (*aaS) models
 
-* Applications   - SaaS (React/Vue apps designed based on a "Design System")
-* App Data       - SaaS (Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
+There are different ways to make use of cloud infrastructure:
 
-* App Runtime    - PaaS (Web Apps)
-* Middleware     - PaaS (<a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>)
-* O/S            - PaaS (<a target="_blank" href="https://cloudacademy.com/course/getting-started-azure-app-service/app-service-overview/">Azure App Service</a>)
+* SaaS - Applications (React/Vue apps designed based on a "Design System")
+* SaaS- App Data      (Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
 
-* Virtualization - IaaS (VM, Containers)
-* Servers        - IaaS
-* Storage        - IaaS
-* Networking     - IaaS
+* PaaS - App Runtime (Web Apps)
+* PaaS - Middleware (<a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>)
+* PaaS - O/S (<a target="_blank" href="https://cloudacademy.com/course/getting-started-azure-app-service/app-service-overview/">Azure App Service</a>)
+
+* IaaS - Virtualization (VM, Containers)
+* IaaS - Servers
+* IaaS - Storage
+* IaaS - Networking
 <br /><br />
+
 
 ## Why? Advantages of Cloud
 
