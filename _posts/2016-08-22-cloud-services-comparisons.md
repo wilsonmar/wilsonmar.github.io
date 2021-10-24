@@ -19,23 +19,10 @@ comments: true
 
 ![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
 
+Analysis of corporate S-1 filings identified significant spend by SaaS companies:
 
-## Cloud "as a Service" (*aaS) models
+![cloud-svcs-spend-1312x560](https://user-images.githubusercontent.com/300046/138592222-e294f7e7-7271-4da8-83d6-fead30969d83.png)
 
-There are different ways to make use of cloud infrastructure:
-
-* SaaS - Applications (React/Vue apps designed based on a "Design System")
-* SaaS- App Data      (Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
-
-* PaaS - App Runtime (Web Apps)
-* PaaS - Middleware (<a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>)
-* PaaS - O/S (<a target="_blank" href="https://cloudacademy.com/course/getting-started-azure-app-service/app-service-overview/">Azure App Service</a>)
-
-* IaaS - Virtualization (VM, Containers)
-* IaaS - Servers
-* IaaS - Storage
-* IaaS - Networking
-<br /><br />
 
 
 ## Why? Advantages of Cloud
@@ -70,8 +57,6 @@ Amazon's "Well Architected" notes the constraints removed by being in the cloud:
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone">Microsoft calls "Landing Zones"</a> the output of a multisubscription Azure environment that accounts for scale, security, governance, networking, and identity. Azure Landing Zones enable application migrationa and greenfield development at enterprise-scale in Azure. These zones consider all platform resources required to support the customer's application portfolio and don't differentiate between infrastructure as a service or platform as a service.
 
 
-Despite all the good reasons, organization may still "drag their heels" until ...
-
 ## Triggers to go cloud
 
 The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">need to</a>:
@@ -87,6 +72,26 @@ Modernizaton:
 * <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
 
 * <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
+
+Despite all the good reasons, individuals used to the old way may still "drag their heels".
+
+
+## Cloud "as a Service" (*aaS) models
+
+There are different ways to make use of cloud infrastructure:
+
+* SaaS - Applications reached using a browser (Google Gmail, Salesforce, Microsoft Office 365, Box, Slack, etc.) 
+* SaaS - App Data reached using API calls (Monitoring: Splunk, Datadog, etc.; Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
+
+* PaaS - App Runtime (Web Apps built in NodeJs/Rust using a React/Vue UI library)
+* PaaS - Middleware (AWS Elastic Compute Service (ECS), <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>)
+* PaaS - O/S (<a target="_blank" href="https://cloudacademy.com/course/getting-started-azure-app-service/app-service-overview/">Azure App Service</a>)
+
+* IaaS - Virtualization (VM, Containers)
+* IaaS - Servers
+* IaaS - Storage
+* IaaS - Networking
+<br /><br />
 
 
 ## Individuals must pick a single cloud?
@@ -144,6 +149,7 @@ Additional information will be added over time.
 <img alt="cloud-compare-364x172" src="https://user-images.githubusercontent.com/300046/31053622-f49c9f86-a65e-11e7-9fa8-c6f367b1beb2.png">
 http://cloudcomparison.rightscale.com</a> presents all the details well. <a target="_blank" href="http://docs.rightscale.com/ca/cloud_comp/">DOCS</a> 
 So here I'm adding additional commentary here.
+
 
 
 <a name="Limits"></a>
@@ -246,7 +252,7 @@ Google has laid its own fiber-optic wires around the world:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"><img alt="google-cables-1533x861.png" width="1533" src="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"></a>
 
-As of this writing, latency between Google's EU and Asia locations is very high because Google Compute Engine does not have a direct link between them.
+Still, as of this writing, latency between Google's EU and Asia locations is very high (slow) because Google Compute Engine does not have a direct link between them.
 
 PROTIP: If you only operate out of just one region in the world, use a <strong>Central US</strong> region, which reaches West to Asia and East to Europe. 
 
@@ -258,6 +264,8 @@ PROTIP: If you only operate out of just one region in the world, use a <strong>C
 
 
 ### Amazon AWS networking
+
+Amazon makes users specify the region to use. However, since Amazon usually makes new services first avilable on its <strong>us-east-1</strong> (Virginia) region, that data center is most prone to overloading and thus down-time.
 
 Amazon's own <a target="_blank" href="http://ec2-reachability.amazonaws.com/">EC2 Reachability Test</a> does not provide ping speeds to <strong>specific IP addresses</strong> within each availability zone within each region, but a green icon when it can be currently reached at any speed.
 
