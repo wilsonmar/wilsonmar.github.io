@@ -80,10 +80,10 @@ Despite all the good reasons, individuals used to the old way may still "drag th
 
 There are different ways to make use of cloud infrastructure:
 
-* SaaS - Applications reached using a browser (Google Gmail, Salesforce, Microsoft Office 365, Box, Slack, <a target="_blank" href="https://getnerdio.com/academy/10-popular-software-service-examples/">etc.</a>) 
+* SaaS - Applications reached using a browser (Google Gmail, WebEx/Zoom, Salesforce, Microsoft Office 365, Box, Slack, <a target="_blank" href="https://getnerdio.com/academy/10-popular-software-service-examples/">etc.</a>) 
 * SaaS - App Data reached using API calls (Monitoring: Splunk, Datadog, etc.; Storage: Blob, Table, File, Message; DB: Postgres SQL, Cosmos planetary DB)
 
-* PaaS - App Runtime (Web Apps built in NodeJs/Rust using a React/Vue UI library)
+* PaaS - App Runtime (SAP Heroku, Web Apps built in NodeJs/Rust using a React/Vue UI library)
 * PaaS - Middleware (AWS Elastic Compute Service (ECS), <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>)
 * PaaS - O/S (<a target="_blank" href="https://cloudacademy.com/course/getting-started-azure-app-service/app-service-overview/">Azure App Service</a>)
 
