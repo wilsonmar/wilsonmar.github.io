@@ -333,6 +333,9 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
 The video course at LinuxAcademy</a> by Keith Thompson references 
 includes a practice exam.
 
+https://www.udemy.com/topic/certified-associate-in-python-programming-pcap/
+Udemy.com's mock PCAP tests 
+
 
 ## More about Python
 

@@ -1527,22 +1527,16 @@ Focus of security awareness training:
 
 <a target="_blank" href="https://www.ferma.eu/">FERMA (Federation of European Risk Management Associatitions)</a> provides guidelines for managing risk in an organization.
 
-The PASTA methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
+The "PASTA" methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
+
+<a target="_blank" href="https://www.isaca.org/resources/isaca-journal/issues/2017/volume-4/enterprise-security-architecturea-top-down-approach">
+SABSA, COBIT and TOGAF together make up the Enterprise Security Architecture</a>:
 
 The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
 
-Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual). 
-
-The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,   based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
+Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual). The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,   based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png"><img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png"></a>
-
-The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
-
-The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). 
-
-The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. 
-Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
 
 COBIT: Auditors' <a target="_blank" href="https://lnkd.in/geuZZpi/">Control Objectives for Information and Related Technology (COBIT)</a> is a set of control objectives used as a framework for IT governance.
 
@@ -1553,6 +1547,13 @@ COBIT: Auditors' <a target="_blank" href="https://lnkd.in/geuZZpi/">Control Obje
    5. Tailored to enterprise needs
    6. End-to-end governance system
    <br /><br />
+
+The Zachman Framework is a two-dimensional model that intersects communication interrogatives (What, Why, Where, and so on) with various viewpoints (Planner, Owner, Designer, and so on). 
+
+The ISO/IEC 27000 Series establishes information security standards published jointly by the International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC). 
+
+The Trike methodology is an implementation model created and then analyzed to produce a threat model. Risk values are assigned to the identified threats. 
+Mitigating controls are assigned to the vulnerabilities that lead to the identified threats.
 
 Security program life cycle:
    1. Plan and Organize

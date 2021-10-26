@@ -245,6 +245,11 @@ implement the solution using sparse distributed matrices in PySpark.
 
 https://www.wikiwand.com/en/Deep_learning
 
+## Sentiment Analysis
+
+<a target="_blank" href="https://medium.com/pcmag-access/haters-gonna-hate-the-most-despised-tech-brands-827d47b4bd9a">
+Analysis of the most hated brand in each country</a>
+made use of the <a target="_blank" href="http://sentistrength.wlv.ac.uk/">SentiStrength language-sentiment-analysis tool</a>
 
 ## Social communities
 
