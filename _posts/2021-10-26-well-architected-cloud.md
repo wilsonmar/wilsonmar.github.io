@@ -31,21 +31,32 @@ I created a Radar Chart as an <a target="_blank" href="https://github.com/wilson
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"><img width="796" alt="aws-well-architected-radar-1592x668.png" src="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"></a>
 
 The gap between "Now" and "Next" consists of a backlog of activities to reach higher maturity.
+   * Build and deploy faster
+   * Lower or mitigate risks
+   * Make informed decisions
+   * Learn best practices
+   <br /><br />
 
 ### Pillars of the framework:
 
 <em>Click to go straight to each pillar, listed in default priority:</em>
 
 1. <a href="#Sec">SEC = Security</a> = The ability to protect information, systems, and assets (applications and data) from threats
+
 2. <a href="#Reliability">REL = Reliability</a> = The ability to recover from failures and continue to function
+
 3. <a href="#Ops">OPS = Operational Excellence</a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
+
 4. <a href="#Perf">PERF = Performance Efficiency</a> = The ability to adapt to changes in load
+
 5. <a href="#Cost">COST = Cost Optimization</a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
-<br /><br />
+
+One memonic to make the 5 easier to remember is "CROPS".
+
 
 ### Tool with Review questions
 
-<a target="_blank" href="https://console.aws.amazon.com/wellarchitected">The (free) AWS WA Tool</a> provides a set of questions (context) and best practices.
+<a target="_blank" href="https://console.aws.amazon.com/wellarchitected">The (free) AWS WA Tool</a> (introduced 2018) provides a set of questions (context) and best practices.
 
 Each workload is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
 
@@ -54,9 +65,10 @@ APIs now available for the AWS Well-Architected Tool
 
 ## Well-Architected Labs
 
-https://github.com/awslabs/aws-well-architected-labs
+My notes for each pillar are annotated with deep links to hands-on instructions at<br />
+<a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a> 
 
-https://wellarchitectedlabs.com/
+<a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> 
 
 
 ## Training
@@ -68,6 +80,15 @@ The AWS Skillbuilder video course</a> is rather verbose, but provides knowledge 
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
 Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
+
+AWS published these General Design Principles:
+
+   * Stop guessing your capacity needs
+   * Test systems at production scale
+   * Automate to make architectural experimentation easier (everything in AWS is an API)
+   * Allow for evolutionary architectures
+   * Drive architectures using data
+   * Improve through "game days" (dry-run simulation, choas engineering, etc.)
 
 
 <hr />
@@ -136,11 +157,13 @@ Design principles for security in the cloud:
 
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 The ability to recover from failures and meet demand:
+The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
 
-   * Foundations
+
+   * Foundations – IAM, Amazon VPC, AWS Trusted Advisor, AWS Shield
+   * Change Management – AWS CloudTrail, AWS Config, Auto Scaling, Amazon CloudWatch
+   * Failure Management – AWS CloudFormation, Amazon S3, AWS KMS, Amazon Glacier
    * Workload architecture
-   * Change management
-   * Failure management
    <br /><br />
 
 <hr />
@@ -193,12 +216,21 @@ The ability to recover from failures and meet demand:
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework module 2
 Processes and procedures to:
    * Organize
-   * Prepare
-   * Operate
-   * Evolve
+   * Prepare - AWS Config
+   * Operate - Amazon CloudWatch
+   * Evolve - Amazon Elasticsearch service
    <br /><br />
 
 Best practices: Monitoring and diagnostics
+
+Design Principles for Operational Excellence:
+   * Perform operations as code
+   * Annotate documentation (among code)
+   * Make frequent, small, reversible change
+   * Refine operations procedures frequently
+   * Anticipate failure
+   * Learn from all operational failures
+   <br /><br />
 
 <hr />
 
@@ -244,10 +276,10 @@ Best practices: Monitoring and diagnostics
 
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
-   * Selection
-   * Review
-   * Monitoring
-   * Trade-offs
+   * Selection – Auto Scaling for Compute, Amazon EBS and S3 for Storage, Amazon RDS and DynamoDB for Database, Route53, VPC, and AWS Direct Connect for Network
+   * Review – AWS Blog and What’s New section of the website
+   * Monitoring –  Amazon CloudWatch
+   * Tradeoffs – Amazon Elasticache, Amazon CloudFront, AWS Snowball, Amazon RDS read replicas.
    <br /><br />
 
 Best practices:
@@ -289,12 +321,12 @@ Best practices:
 ## Cost Optimization
 
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
-* Practice Cloud Financial Management
-* Expenditure and usage awareness
-* Cost-effective resources
-* Manage demand and supply resources
-* Optimize over time
-<br /><br />
+
+   * Cost-Effective Resources – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
+   * Matching supply and demand – Auto Scaling
+   * Expenditure Awareness –  AWS Cost Explorer, AWS Budgets
+   * Optimizing Over Time – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor
+   <br /><br />
 
 https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
 Microsft's cost optimization checklist
@@ -335,6 +367,14 @@ Microsft's cost optimization checklist
 10. How do you evaluate new services?
 
 Apptio CloudAbility
+
+<hr />
+
+## References
+
+https://tutorialsdojo.com/aws-well-architected-framework-five-pillars/
+
+
 
 <hr />
 
