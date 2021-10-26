@@ -26,7 +26,7 @@ The "Well Architected" Framework is used by both Amazon and Microsoft to provide
 
 ## Radar Chart of Progress
 
-I created a Radar Chart as an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/aws-well-architected-radar.xlsx?raw=true">Excel file</a> to visualize opinions around progress toward each pillar:
+I (manually) created a Radar Chart as an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/aws-well-architected-radar.xlsx?raw=true">Excel file</a> to visualize opinions around progress toward each pillar:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"><img width="796" alt="aws-well-architected-radar-1592x668.png" src="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"></a>
 
@@ -115,7 +115,7 @@ Design principles for security in the cloud:
 * Automate security best practices
 * Protect data in transit and at rest
 * Keep people away from data
-* Prepare for security events
+* Prepare for security events ("Game Day")
 <br /><br />
 
 <hr />
@@ -159,12 +159,22 @@ https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-archit
 The ability to recover from failures and meet demand:
 The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
 
-
    * Foundations – IAM, Amazon VPC, AWS Trusted Advisor, AWS Shield
    * Change Management – AWS CloudTrail, AWS Config, Auto Scaling, Amazon CloudWatch
    * Failure Management – AWS CloudFormation, Amazon S3, AWS KMS, Amazon Glacier
    * Workload architecture
    <br /><br />
+
+Design principles for reliability:
+
+   * Test recovery procedures
+   * Automatically recover from failure
+   * Scale horizontally to increate aggregate system availability
+   * Stop guessing capacity (scale horizontally and veritically)
+   * Manage change in automation 
+   <br /><br />
+
+
 
 <hr />
 
@@ -224,6 +234,7 @@ Processes and procedures to:
 Best practices: Monitoring and diagnostics
 
 Design Principles for Operational Excellence:
+
    * Perform operations as code
    * Annotate documentation (among code)
    * Make frequent, small, reversible change
@@ -284,12 +295,21 @@ https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-archit
 
 Best practices:
 
-* Autoscaling
-* Background jobs
-* Caching
-* CDN
-* Data partitioning
-<br /><br />
+   * Autoscaling
+   * Background jobs
+   * Caching
+   * CDN
+   * Data partitioning
+   <br /><br />
+
+Design principles for Performance Efficiency:
+
+   * Democratize advanced technologies
+   * Go global in minutes
+   * Use serverless architectures
+   * Experiment more often
+   * Mechanical sympathy
+   <br /><br />
 
 <hr />
 
@@ -333,6 +353,15 @@ Microsft's cost optimization checklist
 
    * Develop a cost model
    * Create budgets and alerts
+   <br /><br />
+
+Design principles of Cost Optimization:
+
+   * Adopt a consumption model
+   * Measure overall efficiency
+   * Stop spending money on data center operations
+   * Analyze and attirbute expenditures
+   * Use managed services to reduce cost of ownership
    <br /><br />
 
 <hr />
