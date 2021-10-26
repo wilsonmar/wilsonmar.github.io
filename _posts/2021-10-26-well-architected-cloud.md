@@ -97,6 +97,8 @@ Design principles for security in the cloud:
 * Prepare for security events
 <br /><br />
 
+<hr />
+
 1. How do you securely operate your workload?
 
 
@@ -139,6 +141,10 @@ The ability to recover from failures and meet demand:
    * Workload architecture
    * Change management
    * Failure management
+   <br /><br />
+
+<hr />
+
 
 1. How do you manage service quotas and constraints?
 
@@ -186,21 +192,25 @@ The ability to recover from failures and meet demand:
 
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework module 2
 Processes and procedures to:
-* Organize
-* Prepare
-* Operate
-* Evolve
-<br /><br />
+   * Organize
+   * Prepare
+   * Operate
+   * Evolve
+   <br /><br />
 
 Best practices: Monitoring and diagnostics
 
-1. How do you determine what your priorities are?
+<hr />
+
+1. How do you determine what your <strong>operational priorities</strong> are?
 
 
 2. How do you structure your organization to support your business outcomes?
 
+   The "Operating Model"
 
-3. How does your organizational culture support your business outcomes?
+
+3. How does your <strong>organizational culture</strong> support your business outcomes?
 
 
 4. How do you design your workload so that you can understand its state?
@@ -247,6 +257,9 @@ Best practices:
 * Caching
 * CDN
 * Data partitioning
+<br /><br />
+
+<hr />
 
 1. How do you select the best performing architecture?
 
@@ -289,6 +302,8 @@ Microsft's cost optimization checklist
    * Develop a cost model
    * Create budgets and alerts
    <br /><br />
+
+<hr />
 
 1. How do you implement cloud financial management?
 
