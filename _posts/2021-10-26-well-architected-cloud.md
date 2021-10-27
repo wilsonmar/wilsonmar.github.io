@@ -22,6 +22,7 @@ The "Well Architected" Framework really is an <strong>industry standard</strong>
    * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
    * https://wa.aws.amazon.com/index.en.html
 
+
    * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
    <br /><br />
 
