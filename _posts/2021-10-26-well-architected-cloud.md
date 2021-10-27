@@ -125,7 +125,7 @@ AWS published these General Design Principles:
 
 ## Security
 
-<img align="right" width="152" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
+<img align="right" width="99" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
    <br /><br />
@@ -188,7 +188,7 @@ Design principles for security in the cloud:
 
 ## Reliability
 
-<img align="right" width="152" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
+<img align="right" width="99" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
    <br /><br />
 
@@ -259,7 +259,7 @@ Design principles for reliability:
 
 ## Operational Excellence
 
-<img align="right" width="152" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
+<img align="right" width="99" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    <br /><br />
 
@@ -324,7 +324,7 @@ Design Principles for Operational Excellence:
 
 ## Performance Efficiency
 
-<img align="right" width="152" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
+<img align="right" width="99" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
    <br /><br />
 
@@ -383,7 +383,7 @@ Design principles for Performance Efficiency:
 
 ## Cost Optimization
 
-<img align="right" width="152" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
+<img align="right" width="99" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
    * https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html
    * https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
