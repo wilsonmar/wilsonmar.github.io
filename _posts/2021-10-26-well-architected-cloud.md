@@ -37,9 +37,12 @@ The gap between "Now" and "Next" consists of a backlog of activities to reach hi
    * Learn best practices
    <br /><br />
 
+
+<a name="Pillars"></a>
+
 ### Pillars of the framework:
 
-<em>Click to go straight to each pillar, listed in default priority:</em>
+<em>Click to go straight to each pillar, listed below in default priority:</em>
 
 1. <a href="#Sec">SEC = Security</a> = The ability to protect information, systems, and assets (applications and data) from threats
 
@@ -54,14 +57,28 @@ The gap between "Now" and "Next" consists of a backlog of activities to reach hi
 One memonic to make the 5 easier to remember is "CROPS".
 
 
-### Tool with Review questions
+### AWS WA Assessment Tool with Review questions
 
-<a target="_blank" href="https://console.aws.amazon.com/wellarchitected">The (free) AWS WA Tool</a> (introduced 2018) provides a set of questions (context) and best practices.
+1. Get credentials.
 
-Each workload is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+1. In a browser, go to the (free) AWS WA Tool</a> (introduced 2018) provides a set of questions (context) and best practices:
 
-https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/
-APIs now available for the AWS Well-Architected Tool
+   <a target="_blank" href="https://console.aws.amazon.com/wellarchitected">https://console.aws.amazon.com/wellarchitected</a>
+
+2. Click orange "Define workload".
+
+   Each "workload" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+
+1. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</a> such as:
+
+   <tt>wilson's sample workload</tt>
+
+1. Click "Well-Architected Framework" to get to the content of questions and answers.
+
+1. PROTIP: Work on one pillar at a time, in the <a href="#Pillars">priority identified</a>.
+
+1. https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/
+   APIs now available for the AWS Well-Architected Tool
 
 ## Well-Architected Labs
 
