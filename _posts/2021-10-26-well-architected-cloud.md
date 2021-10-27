@@ -22,11 +22,11 @@ The "Well Architected" Framework really is an <strong>industry standard</strong>
    * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
    * https://wa.aws.amazon.com/index.en.html
 
-
    * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
    <br /><br />
 
 Thus, the Framework provides a <strong>consistent and comprehensive</strong> set of questions and <strong>best practices</strong> to build and evaluate cloud shared public usage.
+
 
 ## Radar Chart of Progress
 
@@ -125,7 +125,7 @@ AWS published these General Design Principles:
 
 ## Security
 
-<img align="right" width="101" height=134" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
+<img align="right" width="152" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
    <br /><br />
@@ -188,7 +188,7 @@ Design principles for security in the cloud:
 
 ## Reliability
 
-<img align="right" width="152" height=170" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
+<img align="right" width="152" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
    <br /><br />
 
@@ -259,7 +259,7 @@ Design principles for reliability:
 
 ## Operational Excellence
 
-<img align="right" width="141" height=117" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
+<img align="right" width="152" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    <br /><br />
 
@@ -385,7 +385,13 @@ Design principles for Performance Efficiency:
 
 <img align="right" width="152" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
    * https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html
-   * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
+   * https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html
+   * https://aws.amazon.com/blogs/aws-cloud-financial-management/
+   * AWS Well-Architected Cost Optimization Labs at https://wellarchitectedlabs.com/cost/
+    * AWS Billing and Cost Management
+    * AWS Tagging Strategies
+    * Getting Started with Amazon EC2 Spot Instances
+    * <a target="_blank" href="https://docs.aws.amazon.com/index.html?ref=wellarchitected">AWS Documentation</a>
    <br /><br />
 
    * Cost-Effective Resources – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
@@ -412,8 +418,9 @@ Design principles of Cost Optimization:
 
 <hr />
 
-1. How do you implement cloud financial management?
+   https://wa.aws.amazon.com/wat.question.COST_1.en.html
 
+1. How do you implement cloud financial management?
 
 2. How do you govern usage?
 
