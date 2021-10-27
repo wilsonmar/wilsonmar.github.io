@@ -15,14 +15,17 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The "Well Architected" Framework is used by both Amazon and Microsoft to provide a consistent and comprehensive set of best practices to build and evaluate architectures in the cloud. Each cloud vendor provides a structured checklist in web pages, Kindle doc, and interactive tool:
-
-   * https://docs.microsoft.com/en-us/azure/architecture/framework/
+The "Well Architected" Framework really is an <strong>industry standard</strong> because it is referenced by Amazon, Microsoft, and Google:
 
    * https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html
    * https://aws.amazon.com/architecture/well-architected/
    * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
+   * https://wa.aws.amazon.com/index.en.html
+
+   * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
    <br /><br />
+
+Thus, the Framework provides a <strong>consistent and comprehensive</strong> set of questions and <strong>best practices</strong> to build and evaluate cloud shared public usage.
 
 ## Radar Chart of Progress
 
@@ -42,42 +45,49 @@ The gap between "Now" and "Next" consists of a backlog of activities to reach hi
 
 ### Pillars of the framework:
 
-<em>Click to go straight to each pillar, listed below in default priority:</em>
+Pillars are listed below in default priority.
 
-1. <a href="#Sec">SEC = Security</a> = The ability to protect information, systems, and assets (applications and data) from threats
+<em>Click a link for each pillar to go straight to each pillar's questions:</em>
 
-2. <a href="#Reliability">REL = Reliability</a> = The ability to recover from failures and continue to function
+   1. <a href="#Sec">SEC = Security</a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
 
-3. <a href="#Ops">OPS = Operational Excellence</a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
+   2. <a href="#Reliability">REL = Reliability</a> = The ability to recover from failures and continue to function
 
-4. <a href="#Perf">PERF = Performance Efficiency</a> = The ability to adapt to changes in load
+   3. <a href="#Ops">OPS = Operational Excellence</a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
 
-5. <a href="#Cost">COST = Cost Optimization</a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
+   4. <a href="#Perf">PERF = Performance Efficiency</a> = The ability to adapt to changes in load
+
+   5. <a href="#Cost">COST = Cost Optimization</a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
 
 One memonic to make the 5 easier to remember is "CROPS".
 
+Google combines "Performance and cost optimization" into a four-pillar framework.
 
-### AWS WA Assessment Tool with Review questions
 
-1. Get credentials.
+### AWS WA Assessment Tool
 
-1. In a browser, go to the (free) AWS WA Tool</a> (introduced 2018) provides a set of questions (context) and best practices:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
+   <br /><br />
+
+1. Get AWS credentials.
+
+2. In a browser, go to the (free) AWS WA Tool</a> (introduced 2018) provides a set of questions (context) and best practices:
 
    <a target="_blank" href="https://console.aws.amazon.com/wellarchitected">https://console.aws.amazon.com/wellarchitected</a>
 
-2. Click orange "Define workload".
+3. Click orange "Define workload".
 
    Each "workload" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
 
-1. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</a> such as:
+3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</a> such as:
 
    <tt>wilson's sample workload</tt>
 
-1. Click "Well-Architected Framework" to get to the content of questions and answers.
+4. Click "Well-Architected Framework" to get to the content of questions and answers.
 
-1. PROTIP: Work on one pillar at a time, in the <a href="#Pillars">priority identified</a>.
+5. PROTIP: Work on one pillar at a time, in the <a href="#Pillars">priority identified</a>.
 
-1. https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/
+6. https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/
    APIs now available for the AWS Well-Architected Tool
 
 ## Well-Architected Labs
@@ -113,6 +123,11 @@ AWS published these General Design Principles:
 <a name="Sec"></a>
 
 ## Security
+
+<img align="right" width="101" height=134" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
+   * https://wa.aws.amazon.com/wat.pillar.security.en.html
+   * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
+   <br /><br />
 
 The broad security areas:
 
@@ -172,7 +187,10 @@ Design principles for security in the cloud:
 
 ## Reliability
 
-https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
+<img align="right" width="152" height=170" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
+   * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
+   <br /><br />
+
 The ability to recover from failures and meet demand:
 The ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions such as misconfigurations or transient network issues.
 
@@ -240,7 +258,10 @@ Design principles for reliability:
 
 ## Operational Excellence
 
-https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework module 2
+<img align="right" width="141" height=117" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
+   * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
+   <br /><br />
+
 Processes and procedures to:
    * Organize
    * Prepare - AWS Config
@@ -302,6 +323,10 @@ Design Principles for Operational Excellence:
 
 ## Performance Efficiency
 
+<img align="right" width="152" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
+   * https://wa.aws.amazon.com/wat.pillar.performance.en.html
+   <br /><br />
+
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
    * Selection – Auto Scaling for Compute, Amazon EBS and S3 for Storage, Amazon RDS and DynamoDB for Database, Route53, VPC, and AWS Direct Connect for Network
@@ -357,7 +382,10 @@ Design principles for Performance Efficiency:
 
 ## Cost Optimization
 
-https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
+<img align="right" width="152" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
+   * https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html
+   * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
+   <br /><br />
 
    * Cost-Effective Resources – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
    * Matching supply and demand – Auto Scaling
