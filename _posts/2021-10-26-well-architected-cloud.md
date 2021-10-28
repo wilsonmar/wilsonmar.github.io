@@ -125,8 +125,33 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 My notes for each pillar are annotated with deep links to hands-on instructions at<br />
 <a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a> 
 
-<a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> 
+<a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> (hands-on)
 
+
+## Other tools
+
+1. Click your name at the top bar to select "My Billing Dashboard".
+
+   "Cost Management" consists of:
+   * Cost Explorer to launch Cost Explorer for "AWS Cost Management"
+   * Budgets
+   * Budgets Reports
+   * Saving Plans
+   * Cost & Usage Reports
+   * Cost Categories
+   * Cost allocation tags
+   <br /><br />
+
+   "Billing" consists of:
+   * Billing
+   * Orders and invoices
+   * Credits
+   * Purchase orders
+   <br /><br />
+
+1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
+  
+   For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
 
 ## Training
 
@@ -488,17 +513,56 @@ Questions lead to these goals/focus areas (and the services used to get there):
 
 AWS Design Principles for cost optimization:
 
-   * Implement cloud financial management: To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. Your organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to your Security or Operations capability, you need to build capability through knowledge building, programs, resources, and processes to help you become a cost efficient organization.
+* <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Implement cloud financial management</a>: To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. Your organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to your Security or Operations capability, you need to build capability through knowledge building, programs, resources, and processes to help you become a cost efficient organization.
 
-   * Adopt a consumption model: Pay only for the computing resources you consume, and increase or decrease usage depending on business requirements. For example, development and test environments are typically only used for eight hours a day during the work week. You can stop these resources when they’re not in use for a potential cost savings of 75% (40 hours versus 168 hours).
+   * Functional Ownership
+   * Finance and Technology Partnership
+   * Cloud Budgets and Forecasts
+   * Cost-Aware Processes
+   * Cost-Aware Culture
+   * Quantify Business Value Delivered Through Cost Optimization
+   <br /><br />
 
-   * Measure overall efficiency: Measure the business output of the workload and the costs associated with delivery. Use this data to understand the gains you make from increasing output, increasing functionality, and reducing cost.
+Others:
 
-   * Stop spending money on undifferentiated "heavy lifting" of data center operations like racking, stacking, and powering servers. AWS also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
+   * Adopt a consumption model</a>: Pay only for the computing resources you consume, and increase or decrease usage depending on business requirements. For example, development and test environments are typically only used for eight hours a day during the work week. You can stop these resources when they’re not in use for a potential cost savings of 75% (40 hours versus 168 hours).
 
-   * Analyze and attribute expenditure: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
+   * <a target="_blank" href="">Measure overall efficiency</a>: Measure the business output of the workload and the costs associated with delivery. Use this data to understand the gains you make from increasing output, increasing functionality, and reducing cost.
+
+   * <a target="_blank" href="">Stop spending money on undifferentiated "heavy lifting"</a> of data center operations like racking, stacking, and powering servers. AWS also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
+
+   * <a target="_blank" href="">Analyze and attribute expenditure</a>: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
 
    * Use managed services to reduce cost of ownership
+
+Tasks:
+
+* <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/expenditure-and-usage-awareness.html">Expenditure and usage awareness</a>
+
+   * Governance
+   * Monitor Cost and Usage
+   * Decommission Resources
+   <br /><br />
+
+* <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/expenditure-and-usage-awareness.html">Cost Effective Resources</a>
+
+   * Evaluate Cost When Selecting Services
+   * Select the Correct Resource Type, Size, and Number
+   * Select the Best Pricing Model
+   * Plan for Data Transfer
+   <br /><br />
+
+* <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/manage-demand-and-supply-resources.html">Manage Demand and Supply Resources</a>
+
+   * Manage Demand – Throttling: API Gateway
+   * Manage Demand – Buffer based: Amazon SQS (Kafka), Kinesis stream
+   <br /><br />
+
+   * Demand-based supply: ELB
+   * Time-based supply: APIs and SDKs
+   * Dynamic Supply: AWS Auto Scaling
+   <br /><br />
+
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/aws-cost-management-and-optimization-3567/">7 hr video course "AWS FinOps: Cost Management & Optimization"</a> by Oliver Gehrmann identified these strategies for cost optimization:
 
