@@ -470,12 +470,13 @@ Design principles for Performance Efficiency:
 ## Cost Optimization
 
 <img align="right" width="99" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
-   * https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html
+   * <a target="_blank" href="https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html">Summary</a>
+   * Cost Optimization Pillar <strong>whitepaper</strong> (June 2020) <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html">HTML</a>,<a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/wellarchitected-cost-optimization-pillar.pdf#evaluate-cost-when-selecting-services">PDF</a>, <a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">AWS Well-Architected Labs for Cost Optimization</a> by Nathan Besh
+
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
    * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
    Microsft's cost optimization checklist
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html">Cost Optimization Pillar <strong>whitepaper</strong> (June 2020)</a>,<a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/wellarchitected-cost-optimization-pillar.pdf#evaluate-cost-when-selecting-services">PDF</a>, <a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
-   * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">AWS Well-Architected Labs for Cost Optimization</a> by Nathan Besh
    <br /><br />
 
 <hr />
