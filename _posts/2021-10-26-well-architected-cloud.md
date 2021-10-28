@@ -97,24 +97,32 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 
 3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</strong> such as:
 
-   <tt>wilson's sample workload</tt>
+   <tt>wilson's all xxx workload</tt>
+
+   The "xxx" stands for the list of AWS account numbers specified for this assessment.
 
 4. Click "Well-Architected Framework" to get to the content of questions and answers.
 
 5. PROTIP: Work on one pillar at a time, in the <a href="#Pillars">priority identified</a>.
+
 
    ### Lens
 
 6. If applicable, select a <strong>lens</strong> (listed alphabetically):
 
    * <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">Analytics: 95 pages on Kindle (mobile) app</a>
+
    * <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">Financial Services Industry: 71 pages on Kindle (mobile) app</a>
+
    * <a target="_blank" href="https://www.amazon.com/High-Performance-Computing-Lens-Well-Architected-Whitepaper-ebook/dp/B082TRK76F/" title="December 15, 2019">High-Performance Computing: 55 pages on Kindle (mobile) app</a>
+
    * <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">IoT: 77 pages on Kindle (mobile) app</a>
+
    * <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">Machine Learning: 265 pages on Kindle (mobile) app</a>
+
    * <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">SaaS: 87 pages on Kindle (mobile) app</a>
-   * <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">Serverless: 91 pages on Kindle (mobile) app</a>
-   <br /><br />
+
+   * <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">Serverless: 91 pages on Kindle (mobile) app</a>  
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
    APIs now available for the AWS Well-Architected Tool</a>
@@ -128,12 +136,19 @@ My notes for each pillar are annotated with deep links to hands-on instructions 
 <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> (hands-on)
 
 
-## Other tools
+## AWS tools
 
-1. Click your name at the top bar to select "My Billing Dashboard".
+<a target="_blank" href="https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html">Docs</a>: 
+<a target="_blank" href="https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/">
+AWS Cost & Usage Report (AWS CUR)</a> contains the most comprehensive set of cost and usage data available.
+
+AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3) bucket.
+
+1. REMEMBER: Click your name at the top bar for the menu to select "My Billing Dashboard":
 
    "Cost Management" consists of:
-   * Cost Explorer to launch Cost Explorer for "AWS Cost Management"
+   
+   * Cost Explorer
    * Budgets
    * Budgets Reports
    * Saving Plans
@@ -149,9 +164,11 @@ My notes for each pillar are annotated with deep links to hands-on instructions 
    * Purchase orders
    <br /><br />
 
+   In "AWS Cost Management":
+
 1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
   
-   For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
+1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
 
 ## Training
 
@@ -457,44 +474,146 @@ Design principles for Performance Efficiency:
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
    * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
    Microsft's cost optimization checklist
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html">Cost Optimization Pillar <strong>whitepaper</strong> (June 2020)</a>,<br /><a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html">Cost Optimization Pillar <strong>whitepaper</strong> (June 2020)</a>,<a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/wellarchitected-cost-optimization-pillar.pdf#evaluate-cost-when-selecting-services">PDF</a>, <a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">AWS Well-Architected Labs for Cost Optimization</a> by Nathan Besh
    <br /><br />
 
 <hr />
+
+   * Apptio CloudAbility
 
 1. How do you implement cloud financial management?
 
    <a target="_blank" href="https://wa.aws.amazon.com/wat.question.COST_1.en.html">
    Best practices and Improvement Plan items</a>:
 
+   * <strong>Establish a cost optimization function</strong> - Create a team that is responsible for establishing and maintaining cost awareness across your organization. The team requires people from finance, technology, and business roles across the organization.
+
+   * <strong>Establish a partnership between finance and technology</strong> - Involve finance and technology teams in cost and usage discussions at all stages of your cloud journey. Teams regularly meet and discuss topics such as organizational goals and targets, current state of cost and usage, and financial and accounting practices.
+
+   * <strong>Establish cloud budgets and forecasts</strong> - Adjust existing organizational budgeting and forecasting processes to be compatible with the highly variable nature of cloud costs and usage. Processes must be dynamic using trend based or business driver-based algorithms, or a combination.
+
+   * <strong>Implement cost awareness</strong> into new or existing processes that impact usage, and leverage existing processes for cost awareness. Implement cost awareness into employee training.
+
+   * <strong>Report and notify on cost optimization</strong> - Configure AWS Budgets to provide notifications on cost and usage against targets. Have regular meetings to analyze this workload’s cost efficiency and to promote cost aware culture.
+
+   * <strong>Monitor cost proactively</strong> - Implement tooling and dashboards to monitor cost proactively for the workload. Do not just look at costs and categories when you receive notifications. This helps to identify positive trends and promote them throughout your organization.
+
+   * <strong>Keep up to date with new service releases</strong> - Consult regularly with experts or APN Partners to consider which services and features provide lower cost. Review AWS blogs and other information sources.
+
 2. How do you govern usage?
 
+   * <strong>Develop policies based on your organization requirements</strong> - Develop policies that define how resources are managed by your organization. Policies should cover cost aspects of resources and workloads, including creation, modification and decommission over the resource lifetime.
+
+   * <strong>Implement both cost and usage goals for your workload</strong> - Goals provide direction to your organization on cost and usage, and targets provide measurable outcomes for your workloads.
+
+   * <strong>Implement an account structure</strong> that maps to your organization. This assists in allocating and managing costs throughout your organization.
+
+   * <strong>Implement groups and roles</strong> that align to your policies and control who can create, modify, or decommission instances and resources in each group. For example, implement development, test, and production groups. This applies to AWS services and third-party solutions.
+
+   * <strong>Implement cost controls</strong> based on organization policies and defined groups and roles. These ensure that costs are only incurred as defined by organization requirements: for example, control access to regions or resource types with IAM policies.
+
+   * <strong>Track project lifecycle</strong> - measure, and audit the lifecycle of projects, teams, and environments to avoid using and paying for unnecessary resources.
 
 3. How do you monitor usage and cost?
 
+   * <strong>Configure detailed information sources</strong> - Configure the AWS Cost and Usage Report, and Cost Explorer hourly granularity, to provide detailed cost and usage information. Configure your workload to have log entries for every delivered business outcome.
+
+   * <strong>Identify cost attribution categories</strong> that could be used to allocate cost within your organization.
+
+   * <strong>Establish organization metrics</strong> required for each workload. Example metrics of a workload are customer reports produced or web pages served to customers.
+
+   * <strong>Configure billing and cost management tools</strong> - Configure AWS Cost Explorer and AWS Budgets inline with your organization policies.
+
+   * <strong>Add organization information to cost and usage</strong> - Define a tagging schema based on organization, and workload attributes, and cost allocation categories. 
+
+   * <strong>Implement tagging across all resources.</strong> - Use Cost Categories to group costs and usage according to organization attributes.
+
+   * <strong>Allocate costs based on workload metrics</strong> - Allocate the workload’s costs by metrics or business outcomes to measure workload cost efficiency. Implement a process to analyze the AWS Cost and Usage Report with Amazon Athena, which can provide insight and charge back capability.
+
+</strong> - 
 
 4. How do you decommission resources?
 
+   * Plan ahead. Announce.
+   * Use terraformer to collect Terraform files for all AWS services
+   * Archive to AWS Glacier. Test retrieval.
 
-5. How do you evaluatewhen you select services?
+   * <strong>Track resources over their life time</strong> - Define and implement a method to track resources and their associations with systems over their life time. You can use tagging to identify the workload or function of the resource.
 
+   * <strong>Implement a decommissioning process</strong> - Implement a process to identify and decommission orphaned resources.
 
-6. How do you meettargets when you select resource type, size and number?
+   * <strong>Decommission resources</strong> triggered by events such as periodic audits, or changes in usage. Decommissioning is typically performed periodically, and is manual or automated.
 
+   * <strong>Decommission resources automatically</strong> - Design workloads to gracefully handle resource termination as you identify and decommission non-critical resources, resources that are not required, or resources with low utilization.
+
+5. How do you evaluate when you select services?
+
+   * <strong>Identify organization requirements for cost</strong> - Work with team members to define the balance between cost optimization and other pillars, such as performance and reliability, for this workload.
+
+   * <strong>Analyze all components of this workload</strong> - Ensure every workload component is analyzed, regardless of current size or current costs. Review effort should reflect potential benefit, such as current and projected costs.
+
+   * <strong>Perform a thorough analysis of each component</strong> - the overall cost of each component. Look at total cost of ownership by factoring in cost of operations and management, especially when using managed services. Review effort should reflect potential benefit: for example, time spent analyzing is proportional to component cost.
+
+   * <strong>Select software with cost effective licensing</strong> - Open source software will eliminate software licensing costs, which can contribute significant costs to workloads. Where licensed software is required, avoid licenses bound to arbitrary attributes such as CPUs, look for licenses that are bound to output or outcomes. The cost of these licenses scales more closely to the benefit they provide.
+
+   * <strong>Select components of this workload to optimize cost in line with organization priorities</strong> - Factor in cost when selecting all components. This includes using application level and managed services, such as Amazon RDS, Amazon DynamoDB, Amazon SNS, and Amazon SES to reduce overall organization cost. Use serverless and containers for compute, such as AWS Lambda, Amazon S3 for static websites, and Amazon ECS. 
+   
+   * <strong>Minimize license costs</strong> by using open source software, or software that does not have license fees: for example, Amazon Linux for compute workloads or migrate databases to Amazon Aurora.
+
+   * <strong>Perform cost analysis for different usage over time</strong> - Workloads can change over time. Some services or features are more cost effective at different usage levels. By performing the analysis on each component over time and at projected usage, you ensure the workload remains cost effective over its lifetime..
+
+6. How do you meet targets when you select resource type, size and number?
+
+   Ensure that you choose the appropriate resource size and number of resources for the task at hand. You minimize waste by selecting the most cost effective type, size, and number.
+
+   * <strong>Perform cost modeling</strong> - Identify organization requirements and perform cost modeling of the workload and each of its components. Perform benchmark activities for the workload under different predicted loads and compare the costs. The modeling effort should reflect potential benefit: for example, time spent is proportional to component cost.
+
+   * <strong>Select resource type, size, and number based on data</strong> about the workload and resource characteristics: for example, compute, memory, throughput, or write intensive. This selection is typically made using a previous version of the workload (such as an on-premises version), using documentation, or using other sources of information about the workload.
+
+   * <strong>Select resource type, size, and number automatically based on metrics</strong> - Use metrics from the currently running workload to select the right size and type to optimize for cost. Appropriately provision throughput, sizing, and storage for services such as Amazon EC2, Amazon DynamoDB, Amazon EBS (PIOPS), Amazon RDS, Amazon EMR, and networking. This can be done with a feedback loop such as automatic scaling or by custom code in the workload.
 
 7. How do you use pricing models to reduce cost?
 
+   * <strong>Perform pricing model analysis
+Analyze each component of the workload. Determine if the component and resources will be running for extended periods (for commitment discounts), or dynamic and short running (for spot or on-demand). Perform an analysis on the workload using the Recommendations feature in AWS Cost Explorer.
+
+   * <strong>Implement regions based on cost</strong> - Resource pricing can be different in each region. Factoring in region cost ensures you pay the lowest overall price for this workload
+
+   * <strong>Select third party agreements with cost efficient terms</strong> to ensure the cost of these services scales with the benefits they provide. Select agreements and pricing that scale when they provide additional benefits to your organization.
+
+   * <strong>Implement pricing models for all components of this workload</strong> - Permanently running resources should utilize reserved capacity such as Savings Plans or reserved Instances. Short term capacity is configured to use Spot Instances, or Spot Fleet. On demand is only used for short-term workloads that cannot be interrupted and do not run long enough for reserved capacity, between 25% to 75% of the period, depending on the resource type.
+
+   * <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account level for commitment discounts.
 
 8. How do you plan for data transfer charges?
 
+   * <strong>Perform data transfer modeling</strong> - Gather organization requirements and perform data transfer modeling of the workload and each of its components. This identifies the lowest cost point for its current data transfer requirements.
+
+   * <strong>Select components to optimize data transfer cost</strong> - All components are selected, and architecture is designed to reduce data transfer costs. This includes using components such as WAN optimization and Multi-AZ configurations
+
+   * <strong>Implement services to reduce data transfer costs</strong> - For example, use a CDN such as Amazon CloudFront to deliver content to end users, caching layers using Amazon ElastiCache, or using AWS Direct Connect instead of VPN for connectivity to AWS.
 
 9. How do you manage demand, and supply resources?
 
+   For a workload that has balanced spend and performance, ensure that everything you pay for is used and avoid significantly underutilizing instances. A skewed utilization metric in either direction has an adverse impact on your organization, in either operational costs (degraded perform
+
+   * <strong>Perform an analysis on the workload demand</strong> over time. Ensure the analysis covers seasonal trends and accurately represents operating conditions over the full workload lifetime. Analysis effort should reflect potential benefit: for example, time spent is proportional to the workload cost.
+
+   * <strong>Implement a buffer or throttle to manage demand</strong> - Buffering and throttling modify the demand on your workload, smoothing out any peaks. Implement throttling when your clients perform retries. Implement buffering to store the request and defer processing until a later time. Ensure your throttles and buffers are designed so clients receive a response in the required time.
+
+   * <strong>Supply resources dynamically</strong> - Resources are provisioned in a planned manner. This can be demand-based, such as through automatic scaling, or time-based, where demand is predictable and resources are provided based on time. These methods result in the least amount of over or under provisioning.
+   
+   * Decommission resources, entire services, and systems no longer required.
 
 10. How do you evaluate new services?
 
-    Apptio CloudAbility
+   As AWS releases new services and features, it’s a best practice to review your existing architectural decisions to ensure they continue to be the most cost effective.
+
+   * <strong>Develop a workload review process</strong> that defines the criteria and process for workload review. The review effort should reflect potential benefit: for example, core workloads or workloads with a value of over 10% of the bill are reviewed quarterly, while workloads below 10% are reviewed annually.
+
+   * <strong>Review and analyze this workload regularly</strong> - Existing workloads are regularly reviewed as per defined processes.
+
 
 <hr />
 
@@ -578,7 +697,7 @@ Tasks:
 
 https://tutorialsdojo.com/aws-well-architected-framework-five-pillars/
 
-
+STAR: https://aws.amazon.com/blogs/aws-cloud-financial-management/cost-reporting-based-on-aws-organizations-account-id-tags/
 
 <hr />
 

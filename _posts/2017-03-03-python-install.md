@@ -1915,7 +1915,30 @@ This table</a> lists the difference in commands between Conda and pip, a summary
 
 ## PyCharm IDE
 
-https://discussions.udacity.com/t/referencing-pygame-from-pycharm-with-anaconda/223711/13
+$195/year PyCharm is purpose-built by Jetbrains.com for Python coding:
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=75FfuARSils">VIDEO</a>: Read:
+
+   https://www.jetbrains.com/pycharm-edu/download/#section=mac
+
+1. Install using Homebrew:
+ 
+   <pre><strong>brew install pycharm
+   </strong></pre>
+
+1. Add <a target="_blank" href="https://plugins.jetbrains.com/plugin/7808-terraform-and-hcl">Terraform and HCL plugin</a> (<a target="_blank" href="https://www.cyberithub.com/step-by-step-guide-to-setup-terraform-in-pycharm-on-windows-10/"> Windows</a>)
+
+   To run Terraform from IDE and autocompletion, rename refactoring, etc.
+
+1. Configure in Settings -> Tools -> Terraform
+
+   Explicitly add Terraform run configurations 
+
+   https://discussions.udacity.com/t/referencing-pygame-from-pycharm-with-anaconda/223711/13
+
+1. Run Terraform from IDE File context menu -> Run...
+
+   Alternately, click green 'run' next to resources
 
 
 <a name="Turi"></a>
