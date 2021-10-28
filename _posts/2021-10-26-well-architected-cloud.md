@@ -23,6 +23,7 @@ The "Well Architected" Framework really is an <strong>industry standard</strong>
    * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
    * https://wa.aws.amazon.com/index.en.html
    * June 2020 "Well Architeced Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
+   * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
    * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
    <br /><br />
@@ -72,6 +73,7 @@ Google combines "Performance and cost optimization" into a four-pillar framework
 
 ### AWS WA Assessment Tool
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
    <br /><br />
 
@@ -86,6 +88,12 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 3. Click orange "Define workload".
 
    Each "workload" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+
+   A "technology portfolio" is the collection of workloads that are required for the business to operate.
+
+   The "architecture" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
+
+   A "component" is the code, configuration, and AWS Resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
 
 3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</strong> such as:
 
@@ -130,14 +138,21 @@ The AWS Skillbuilder video course</a> is rather verbose, but provides knowledge 
 <a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
 Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
 
+### General Design Principles
+
 AWS published these General Design Principles:
 
-   * Stop guessing your capacity needs
-   * Test systems at production scale
-   * Automate to make architectural experimentation easier (everything in AWS is an API)
-   * Allow for evolutionary architectures
-   * Drive architectures using data
-   * Improve through "game days" (dry-run simulation, choas engineering, etc.)
+   * Stop guessing your capacity needs - f you make a poor capacity decision when deploying a workload, you might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. You can use as much or as little capacity as you need, and scale up and down automatically.
+
+   * Test systems at production scale - In the cloud, you can create a production-scale test environment on demand, complete your testing, and then decommission the resources. Because you only pay for the test environment when it's running, you can simulate your live environment for a fraction of the cost of testing on premises.
+
+   * Automate to make architectural experimentation easier (everything in AWS is an API) - Automation allows you to create and replicate your workloads at low cost and avoid the expense of manual effort. You can track changes to your automation, audit the impact, and revert to previous parameters when necessary.
+
+   * Allow for evolutionary architectures -  In a traditional environment, architectural decisions are often implemented as static, onetime events, with a few major versions of a system during its lifetime. As a business and its context continue to evolve, these initial decisions might hinder the system's ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice.
+
+   * Drive architectures using data - In the cloud, you can collect data on how your architectural choices affect the behavior of your workload. This lets you make factbased decisions on how to improve your workload. Your cloud infrastructure is code, so you can use that data to inform your architecture choices and improvements over time.
+
+   * Improve through "game days" (dry-run simulation, choas engineering, etc.) - Test how your architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
 
 
 <hr />
@@ -150,6 +165,7 @@ AWS published these General Design Principles:
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
    * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/security/">AWS Well-Architected Labs for Security</a>
    <br /><br />
 
 The broad security areas:
@@ -213,7 +229,7 @@ Design principles for security in the cloud:
 <img align="right" width="99" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
    * <a target="_blank" href="https://www.amazon.com/Reliability-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08L8CT213/" title="Oct 14, 2020">110 pages on Kindle (mobile) app</a>
-   * <a target="_blank" href="https://wellarchitectedlabs.com/security/">Lab for Security</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/reliability/">AWS Well-Architected Labs for Reliability</a>
    <br /><br />
 
 The ability to recover from failures and meet demand:
@@ -286,7 +302,7 @@ Design principles for reliability:
 <img align="right" width="99" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
-   * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">Lab for Operational Excellence</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">AWS Well-Architected Labs for Operational Excellence</a>
    <br /><br />
 
 Processes and procedures to:
@@ -353,10 +369,10 @@ Design Principles for Operational Excellence:
 <img align="right" width="99" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
    * <a target="_blank" href="https://www.amazon.com/Performance-Efficiency-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFPXRBM/">51 pages on Kindle (mobile) app</a>
-   * <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/">Lab for Performance Efficiency</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/">AWS Well-Architected Labs for Performance Efficiency</a>
    <br /><br />
 
-https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
+Principles:
 
    * Selection – Auto Scaling for Compute, Amazon EBS and S3 for Storage, Amazon RDS and DynamoDB for Database, Route53, VPC, and AWS Direct Connect for Network
    * Review – AWS Blog and What’s New section of the website
@@ -413,20 +429,19 @@ Design principles for Performance Efficiency:
 
 <img align="right" width="99" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
    * https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html
-   * Cost Optimization Pillar whitepaper (June 2020)<br />https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
-   * AWS Well-Architected Cost Optimization Labs at https://wellarchitectedlabs.com/cost/
    * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
    Microsft's cost optimization checklist
-   * <a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
-   * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">Lab for Cost Optimization</a> by Nathan Besh
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html">Cost Optimization Pillar <strong>whitepaper</strong> (June 2020)</a>,<br /><a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">AWS Well-Architected Labs for Cost Optimization</a> by Nathan Besh
    <br /><br />
 
 <hr />
 
-https://wa.aws.amazon.com/wat.question.COST_1.en.html
-
 1. How do you implement cloud financial management?
+
+   <a target="_blank" href="https://wa.aws.amazon.com/wat.question.COST_1.en.html">
+   Best practices and Improvement Plan items</a>:
 
 2. How do you govern usage?
 
@@ -460,7 +475,7 @@ https://wa.aws.amazon.com/wat.question.COST_1.en.html
 
 Questions lead to these goals/focus areas (and the services used to get there):
 
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Practice Cloue Financial Management</a> -
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Practice Cloud Financial Management</a> -
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/expenditure-and-usage-awareness.html">Expenditure and usage awareness</a> –  AWS Cost Explorer, AWS Budgets
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost-effective-resources.html">Cost-Effective resources</a> – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/manage-demand-and-supply-resources.html">Matchi supply and demand</a> – Auto Scaling
@@ -479,7 +494,7 @@ AWS Design Principles for cost optimization:
 
    * Measure overall efficiency: Measure the business output of the workload and the costs associated with delivery. Use this data to understand the gains you make from increasing output, increasing functionality, and reducing cost.
 
-   * Stop spending money on undifferentiated heavy lifting: AWS does the heavy lifting of data center operations like racking, stacking, and powering servers. It also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
+   * Stop spending money on undifferentiated "heavy lifting" of data center operations like racking, stacking, and powering servers. AWS also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
 
    * Analyze and attribute expenditure: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
 
