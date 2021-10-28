@@ -87,7 +87,7 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 
    Each "workload" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
 
-3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</a> such as:
+3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</strong> such as:
 
    <tt>wilson's sample workload</tt>
 
@@ -95,7 +95,9 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 
 5. PROTIP: Work on one pillar at a time, in the <a href="#Pillars">priority identified</a>.
 
-6. If your architecture is one of the below, select a <strong>lens</strong>:
+   ### Lens
+
+6. If applicable, select a <strong>lens</strong> (listed alphabetically):
 
    * <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">Analytics: 95 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">Financial Services Industry: 71 pages on Kindle (mobile) app</a>
@@ -108,7 +110,6 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
    APIs now available for the AWS Well-Architected Tool</a>
-
 
 
 ## Well-Architected Labs
@@ -212,6 +213,7 @@ Design principles for security in the cloud:
 <img align="right" width="99" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
    * <a target="_blank" href="https://www.amazon.com/Reliability-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08L8CT213/" title="Oct 14, 2020">110 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/security/">Lab for Security</a>
    <br /><br />
 
 The ability to recover from failures and meet demand:
@@ -284,6 +286,7 @@ Design principles for reliability:
 <img align="right" width="99" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">Lab for Operational Excellence</a>
    <br /><br />
 
 Processes and procedures to:
@@ -350,6 +353,7 @@ Design Principles for Operational Excellence:
 <img align="right" width="99" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
    * <a target="_blank" href="https://www.amazon.com/Performance-Efficiency-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFPXRBM/">51 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/">Lab for Performance Efficiency</a>
    <br /><br />
 
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
@@ -415,7 +419,7 @@ Design principles for Performance Efficiency:
    * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
    Microsft's cost optimization checklist
    * <a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
-
+   * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">Lab for Cost Optimization</a> by Nathan Besh
    <br /><br />
 
 <hr />
