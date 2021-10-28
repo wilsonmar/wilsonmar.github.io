@@ -22,6 +22,7 @@ The "Well Architected" Framework really is an <strong>industry standard</strong>
    * https://aws.amazon.com/architecture/well-architected/
    * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
    * https://wa.aws.amazon.com/index.en.html
+   * June 2020 "Well Architeced Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
 
    * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
    <br /><br />
@@ -29,13 +30,16 @@ The "Well Architected" Framework really is an <strong>industry standard</strong>
 Thus, the Framework provides a <strong>consistent and comprehensive</strong> set of questions and <strong>best practices</strong> to build and evaluate cloud shared public usage.
 
 
-## Radar Chart of Progress
+## Your Radar Chart of Progress
 
-I (manually) created a Radar Chart as an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/aws-well-architected-radar.xlsx?raw=true">Excel file</a> to visualize opinions around progress toward each pillar:
+To visualize opinions around progress toward each pillar over time, I (manually) created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/aws-well-architected-radar.xlsx?raw=true">Excel file</a>:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"><img width="796" alt="aws-well-architected-radar-1592x668.png" src="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"></a>
 
-The gap between "Now" and "Next" consists of a backlog of activities to reach higher maturity.
+The achievement at each point in time (milestones) is based on whether implementation of <strong>design principles</strong> defined for each pillar.
+
+The gap between "Now" and "Next" consists of a backlog of activities to reach higher maturity:
+
    * Build and deploy faster
    * Lower or mitigate risks
    * Make informed decisions
@@ -51,15 +55,15 @@ Pillars are listed below in default priority.
 
 <em>Click a link for each pillar to go straight to each pillar's questions:</em>
 
-   1. <a href="#Sec">SEC = Security</a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
+   1. <a href="#Sec">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
 
-   2. <a href="#Reliability">REL = Reliability</a> = The ability to recover from failures and continue to function
+   2. <a href="#Reliability">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function
 
-   3. <a href="#Ops">OPS = Operational Excellence</a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
+   3. <a href="#Ops">OPS = <strong>Operational Excellence</strong></a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
 
-   4. <a href="#Perf">PERF = Performance Efficiency</a> = The ability to adapt to changes in load
+   4. <a href="#Perf">PERF = <strong>Performance Efficiency</strong></a> = The ability to adapt to changes in load
 
-   5. <a href="#Cost">COST = Cost Optimization</a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
+   5. <a href="#Cost">COST = <strong>Cost Optimization</strong></a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
 
 One memonic to make the 5 easier to remember is "CROPS".
 
@@ -70,6 +74,8 @@ Google combines "Performance and cost optimization" into a four-pillar framework
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
    <br /><br />
+
+NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calculator at https://calculator.aws/#</a> is used to estimate costs for specific architectures. Different server types have different costs. The same services in different regions have different prices. Transfer of data between different regions incur charges.
 
 1. Get AWS credentials.
 
@@ -89,8 +95,21 @@ Google combines "Performance and cost optimization" into a four-pillar framework
 
 5. PROTIP: Work on one pillar at a time, in the <a href="#Pillars">priority identified</a>.
 
-6. https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/
-   APIs now available for the AWS Well-Architected Tool
+6. If your architecture is one of the below, select a <strong>lens</strong>:
+
+   * <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">Analytics: 95 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">Financial Services Industry: 71 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://www.amazon.com/High-Performance-Computing-Lens-Well-Architected-Whitepaper-ebook/dp/B082TRK76F/" title="December 15, 2019">High-Performance Computing: 55 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">IoT: 77 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">Machine Learning: 265 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">SaaS: 87 pages on Kindle (mobile) app</a>
+   * <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">Serverless: 91 pages on Kindle (mobile) app</a>
+   <br /><br />
+
+<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
+   APIs now available for the AWS Well-Architected Tool</a>
+
+
 
 ## Well-Architected Labs
 
@@ -129,6 +148,7 @@ AWS published these General Design Principles:
 <img align="right" width="99" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
+   * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
    <br /><br />
 
 The broad security areas:
@@ -145,7 +165,7 @@ Design principles for security in the cloud:
 
 * Implement a strong identity foundation
 * Enable traceability
-* Apply security at all layers
+* Apply security at all layers (levels)
 * Automate security best practices
 * Protect data in transit and at rest
 * Keep people away from data
@@ -191,6 +211,7 @@ Design principles for security in the cloud:
 
 <img align="right" width="99" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
+   * <a target="_blank" href="https://www.amazon.com/Reliability-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08L8CT213/" title="Oct 14, 2020">110 pages on Kindle (mobile) app</a>
    <br /><br />
 
 The ability to recover from failures and meet demand:
@@ -262,6 +283,7 @@ Design principles for reliability:
 
 <img align="right" width="99" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
+   * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
    <br /><br />
 
 Processes and procedures to:
@@ -327,6 +349,7 @@ Design Principles for Operational Excellence:
 
 <img align="right" width="99" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
+   * <a target="_blank" href="https://www.amazon.com/Performance-Efficiency-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFPXRBM/">51 pages on Kindle (mobile) app</a>
    <br /><br />
 
 https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
@@ -391,6 +414,8 @@ Design principles for Performance Efficiency:
    * AWS Well-Architected Cost Optimization Labs at https://wellarchitectedlabs.com/cost/
    * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
    Microsft's cost optimization checklist
+   * <a target="_blank" href="https://www.amazon.com/Cost-Optimization-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFZBVJK/" title="July 5, 2020">44 pages on Kindle (mobile) app</a>
+
    <br /><br />
 
 <hr />
@@ -455,6 +480,14 @@ AWS Design Principles for cost optimization:
    * Analyze and attribute expenditure: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
 
    * Use managed services to reduce cost of ownership
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/aws-cost-management-and-optimization-3567/">7 hr video course "AWS FinOps: Cost Management & Optimization"</a> by Oliver Gehrmann identified these strategies for cost optimization:
+
+   * Right-sizing your instances
+   * Increase elasticitiy
+   * Pick the right pricing model
+   * Match usage to Storage costs
+
 
 <hr />
 
