@@ -170,6 +170,10 @@ AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3
   
 1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
 
+### Apptio CloudAbility
+
+<hr />
+
 ## Training
 
 AWS provides in-depth training on the Well-Architected Framework to partners to help companies implement best practices, measure the state of your workloads, and make improvements where assistance is required.
@@ -481,7 +485,16 @@ Design principles for Performance Efficiency:
 
 <hr />
 
-   * Apptio CloudAbility
+Cost Optimization Abstract:
+
+   * Practice Cloud Financial Management
+   * Expenditure and Usage Awareness
+   * Cost Effective Resources
+   * Manage Demand and Supply Resources
+   * Optimize Over Time
+   <br /><br />
+
+Questions:
 
 1. How do you implement cloud financial management?
 
@@ -532,7 +545,7 @@ Design principles for Performance Efficiency:
 
    * <strong>Allocate costs based on workload metrics</strong> - Allocate the workload’s costs by metrics or business outcomes to measure workload cost efficiency. Implement a process to analyze the AWS Cost and Usage Report with Amazon Athena, which can provide insight and charge back capability.
 
-4. How do you decommission resources?
+4. How do you <strong>decommission</strong> resources?
 
    * Plan ahead. Announce.
    * Use terraformer to collect Terraform files for all AWS services
@@ -562,7 +575,7 @@ Design principles for Performance Efficiency:
 
    * <strong>Perform cost analysis for different usage over time</strong> - Workloads can change over time. Some services or features are more cost effective at different usage levels. By performing the analysis on each component over time and at projected usage, you ensure the workload remains cost effective over its lifetime..
 
-6. How do you meet targets when you select resource type, size and number?
+6. How do you meet targets when you select resource type, size, and number?
 
    Ensure that you choose the appropriate resource size and number of resources for the task at hand. You minimize waste by selecting the most cost effective type, size, and number.
 
@@ -585,7 +598,7 @@ Analyze each component of the workload. Determine if the component and resources
 
    * <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account level for commitment discounts.
 
-8. How do you plan for data transfer charges?
+8. How do you plan for <strong>data transfer</strong> charges?
 
    * <strong>Perform data transfer modeling</strong> - Gather organization requirements and perform data transfer modeling of the workload and each of its components. This identifies the lowest cost point for its current data transfer requirements.
 
@@ -691,6 +704,7 @@ Tasks:
 
 
 <hr />
+
 
 ## References
 
