@@ -389,48 +389,13 @@ Design principles for Performance Efficiency:
    * Cost Optimization Pillar whitepaper (June 2020)<br />https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
    * AWS Well-Architected Cost Optimization Labs at https://wellarchitectedlabs.com/cost/
+   * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
+   Microsft's cost optimization checklist
    <br /><br />
-
-Questions lead to these goals/focus areas (and the services used to get there):
-
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Practice Cloue Financial Management</a> -
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/expenditure-and-usage-awareness.html">Expenditure and usage awareness</a> –  AWS Cost Explorer, AWS Budgets
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost-effective-resources.html">Cost-Effective resources</a> – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/manage-demand-and-supply-resources.html">Matchi supply and demand</a> – Auto Scaling
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/optimize-over-time.html">Optimize Over Time</a> – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor
-   <br /><br />
-
-https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
-Microsft's cost optimization checklist
-
-   * Develop a cost model
-   * Create budgets and alerts
-   <br /><br />
-
-Design principles of Cost Optimization:
-
-   * Adopt a consumption model
-   * Measure overall efficiency
-   * Stop spending money on data center operations
-   * Analyze and attirbute expenditures
-   * Use managed services to reduce cost of ownership
-   <br /><br />
-
-AWS Design Principles for cost optimization:
-
-   * Implement cloud financial management: To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. Your organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to your Security or Operations capability, you need to build capability through knowledge building, programs, resources, and processes to help you become a cost efficient organization.
-
-   * Adopt a consumption model: Pay only for the computing resources you consume, and increase or decrease usage depending on business requirements. For example, development and test environments are typically only used for eight hours a day during the work week. You can stop these resources when they’re not in use for a potential cost savings of 75% (40 hours versus 168 hours).
-
-   * Measure overall efficiency: Measure the business output of the workload and the costs associated with delivery. Use this data to understand the gains you make from increasing output, increasing functionality, and reducing cost.
-
-   * Stop spending money on undifferentiated heavy lifting: AWS does the heavy lifting of data center operations like racking, stacking, and powering servers. It also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
-
-   * Analyze and attribute expenditure: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
 
 <hr />
 
-   https://wa.aws.amazon.com/wat.question.COST_1.en.html
+https://wa.aws.amazon.com/wat.question.COST_1.en.html
 
 1. How do you implement cloud financial management?
 
@@ -460,7 +425,36 @@ AWS Design Principles for cost optimization:
 
 10. How do you evaluate new services?
 
-Apptio CloudAbility
+    Apptio CloudAbility
+
+<hr />
+
+Questions lead to these goals/focus areas (and the services used to get there):
+
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Practice Cloue Financial Management</a> -
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/expenditure-and-usage-awareness.html">Expenditure and usage awareness</a> –  AWS Cost Explorer, AWS Budgets
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost-effective-resources.html">Cost-Effective resources</a> – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/manage-demand-and-supply-resources.html">Matchi supply and demand</a> – Auto Scaling
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/optimize-over-time.html">Optimize Over Time</a> – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor
+   <br /><br />
+
+   * Develop a cost model
+   * Create budgets and alerts
+   <br /><br />
+
+AWS Design Principles for cost optimization:
+
+   * Implement cloud financial management: To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. Your organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to your Security or Operations capability, you need to build capability through knowledge building, programs, resources, and processes to help you become a cost efficient organization.
+
+   * Adopt a consumption model: Pay only for the computing resources you consume, and increase or decrease usage depending on business requirements. For example, development and test environments are typically only used for eight hours a day during the work week. You can stop these resources when they’re not in use for a potential cost savings of 75% (40 hours versus 168 hours).
+
+   * Measure overall efficiency: Measure the business output of the workload and the costs associated with delivery. Use this data to understand the gains you make from increasing output, increasing functionality, and reducing cost.
+
+   * Stop spending money on undifferentiated heavy lifting: AWS does the heavy lifting of data center operations like racking, stacking, and powering servers. It also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
+
+   * Analyze and attribute expenditure: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
+
+   * Use managed services to reduce cost of ownership
 
 <hr />
 
