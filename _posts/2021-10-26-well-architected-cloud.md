@@ -531,8 +531,6 @@ Design principles for Performance Efficiency:
 
    * <strong>Allocate costs based on workload metrics</strong> - Allocate the workload’s costs by metrics or business outcomes to measure workload cost efficiency. Implement a process to analyze the AWS Cost and Usage Report with Amazon Athena, which can provide insight and charge back capability.
 
-</strong> - 
-
 4. How do you decommission resources?
 
    * Plan ahead. Announce.
