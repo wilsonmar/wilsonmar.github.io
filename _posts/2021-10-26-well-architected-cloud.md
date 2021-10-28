@@ -587,8 +587,7 @@ Questions:
 
 7. How do you use pricing models to reduce cost?
 
-   * <strong>Perform pricing model analysis
-Analyze each component of the workload. Determine if the component and resources will be running for extended periods (for commitment discounts), or dynamic and short running (for spot or on-demand). Perform an analysis on the workload using the Recommendations feature in AWS Cost Explorer.
+   * <strong>Perform pricing model analysis</strong> - Analyze each component of the workload. Determine if the component and resources will be running for extended periods (for commitment discounts), or dynamic and short running (for spot or on-demand). Perform an analysis on the workload using the Recommendations feature in AWS Cost Explorer.
 
    * <strong>Implement regions based on cost</strong> - Resource pricing can be different in each region. Factoring in region cost ensures you pay the lowest overall price for this workload
 
@@ -618,7 +617,7 @@ Analyze each component of the workload. Determine if the component and resources
    
    * Decommission resources, entire services, and systems no longer required.
 
-10. How do you evaluate new services?
+9. How do you evaluate new services?
 
    As AWS releases new services and features, it’s a best practice to review your existing architectural decisions to ensure they continue to be the most cost effective.
 
