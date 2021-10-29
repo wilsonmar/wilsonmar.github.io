@@ -77,6 +77,7 @@ The benefits sought from the framework are:
 
 ### AWS WA Assessment Tool
 
+<img align="right" width="99" alt="well-architected-aws-tool-154x254.png" src="https://user-images.githubusercontent.com/300046/139374726-0a7d74c5-86f8-4f67-a79b-b4f1038ab1c0.png">
    * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
    <br /><br />
