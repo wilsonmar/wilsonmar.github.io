@@ -22,7 +22,7 @@ PROTIP: To visualize progress toward using public cloud effectively, I created t
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
 <img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
 
-The percentage for each pillar is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: level target</strong> (the outer red line).
+The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: level target</strong> (the outer red line).
 
 The gaps (delta) between "Now" and "Next" are addresed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
 
@@ -44,7 +44,6 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
 
 
 ## Common definitions:
-
 
    Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
 
@@ -90,10 +89,27 @@ The benefits sought from the framework are:
 
 ### Microsoft Azure Advisor
 
-Microsoft has its <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-get-started">Advisor</a> under its Azure Monitoring and Management menu pane, which presents a handy dashboard:
+Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-overview">Advisor</a> under its Azure Monitoring and Management menu pane presents a handy dashboard to display <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/azure-advisor-score">scores</a> calculated daily:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/139440387-2a34a7a7-121e-479f-8760-c64654866c17.png">
 <img width="967" alt="ws-azure-advisor-dashboard-1934x1282" src="https://user-images.githubusercontent.com/300046/139440387-2a34a7a7-121e-479f-8760-c64654866c17.png"></a>
+
+Scores are based on Advisor's Recommendations:
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations">Security recommendations</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-high-availability-recommendations">Reliability (HA)</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/139447121-e8ba4797-80c8-4f0a-861d-c023dcb44fb6.png"><img src="wa=azure-advisor-score-rel-2555x1295" src="https://user-images.githubusercontent.com/300046/139447121-e8ba4797-80c8-4f0a-861d-c023dcb44fb6.png"></a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-performance-recommendations">Performance recommendations</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-operational-excellence-recommendations">Operational Excellence recommendations</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations">Cost recommendations</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/139447378-dd5bd1f8-48a3-4a9d-8f25-647930d56def.png"><img src="wa=azure-advisor-score-cost-2553x1298" src="https://user-images.githubusercontent.com/300046/139447378-dd5bd1f8-48a3-4a9d-8f25-647930d56def.png"></a>
+   <br /><br />
+
+
+
+Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-get-started">automatically identifies</a> low-utilization virtual machines when: 
+   * Average CPU utilization is 5% or less (configurable to 5%, 10%, 15%, or 20%)
+   * network utilization is less than 2% 
+   * current workload can be accommodated by a smaller virtual machine size.
+   <br /><br />
 
 
 ### AWS WA Assessment Tool
