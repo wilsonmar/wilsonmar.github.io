@@ -121,14 +121,14 @@ The benefits sought from the framework are:
 
    * IoT: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">77 pages on Kindle (mobile) app</a>
 
-   * Machine Learning: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">HTML</a> \| <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/wellarchitected-machine-learning-lens.pdf#machine-learning-lens">PDF</a> | <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">265 pages on Kindle (mobile) app</a>
+   * Machine Learning: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">HTML</a> \| <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/wellarchitected-machine-learning-lens.pdf#machine-learning-lens">PDF</a> \| <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">265 pages on Kindle (mobile) app</a>
 
    * SaaS: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">87 pages on Kindle (mobile) app</a>
 
    * Serverless Applications: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">91 pages on Kindle (mobile) app</a>  
 
 
-   ### Layers within each Lens
+   ### Lens Layers 
 
    The Analytics Lens consists of these layers:
 
@@ -140,7 +140,20 @@ The benefits sought from the framework are:
    * User Access and Interface Layer
    <br /><br />
 
-   Scenarios:
+   The IoT Lens consists of these layers:
+
+   * Design and Manufacturing Layer
+   * Edge Layer
+   * Provisioning Layer
+   * Communication Layer
+   * Ingestion Layer
+   * Analytics Layer
+   * Application Layer
+   <br /><br />
+
+   ### Lens Scenarios
+
+   Analytics Scenarios:
 
    * Data Lake
    * Batch Data Processing
