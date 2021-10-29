@@ -111,7 +111,7 @@ The benefits sought from the framework are:
 
    ### Lens
 
-6. If applicable, select a <strong>lens</strong> (listed alphabetically):
+6. If applicable, select a <strong>lens</strong> listed alphabetically here:
 
    * Analytics: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">95 pages on Kindle (mobile) app</a>
 
@@ -178,7 +178,7 @@ My notes for each pillar are annotated with deep links to hands-on instructions 
 <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> (hands-on)
 
 
-## AWS tools
+## AWS Cost, Usage, Billing
 
 <a target="_blank" href="https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html">Docs</a>: 
 <a target="_blank" href="https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/">
