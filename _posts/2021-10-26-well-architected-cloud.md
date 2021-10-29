@@ -52,7 +52,7 @@ The five pillars are listed below in default priority defined by a specific team
 
 <em>Click a link for each pillar to go straight to each pillar's questions:</em>
 
-   1. <a href="#Sec">SEC = <strong>Security</strong></a> (+privacy and compliance) = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
+   1. <a href="#Sec">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
 
    2. <a href="#Reliability">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function
 
@@ -216,6 +216,8 @@ AWS published these General Design Principles:
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
    * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/security/">AWS Well-Architected Labs for Security</a>
+
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/security">Google: Security, privacy, and compliance</a>
    <br /><br />
 
 The broad security areas:
@@ -384,6 +386,8 @@ Automate identification and classification</strong> of data to reduce the risk o
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
    * <a target="_blank" href="https://www.amazon.com/Reliability-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08L8CT213/" title="Oct 14, 2020">110 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/reliability/">AWS Well-Architected Labs for Reliability</a>
+
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/reliability">Google: Reliability</a>
    <br /><br />
 
 The ability to recover from failures and meet demand:
@@ -573,6 +577,8 @@ Use game days to regularly exercise your failure procedures as close to producti
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">AWS Well-Architected Labs for Operational Excellence</a>
+
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/operational-excellence">Google: Operational excellence</a>
    <br /><br />
 
 Processes and procedures to:
@@ -795,6 +801,7 @@ Design Principles for Operational Excellence:
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
    * <a target="_blank" href="https://www.amazon.com/Performance-Efficiency-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFPXRBM/">51 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/">AWS Well-Architected Labs for Performance Efficiency</a>
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/performance-optimization">Google: Performance optimization</a>
    <br /><br />
 
 Principles:
@@ -940,6 +947,8 @@ Use the cloud location options available to reduce network latency or improve th
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
    * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
    Microsft's cost optimization checklist
+
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization">Google: Cost optimizatin</a>
    <br /><br />
 
 <hr />
