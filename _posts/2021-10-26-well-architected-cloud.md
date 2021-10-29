@@ -15,7 +15,20 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The "Well Architected" Framework really is an <strong>industry standard</strong> because it is referenced by Amazon, Microsoft, and Google:
+## Your Radar Chart of Progress
+
+PROTIP: To visualize progress toward using public cloud effectively, I created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/well-architected-radar.xlsx?raw=true">Excel file I built</a>:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
+<img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
+
+The percentage for each pillar is based on <strong>achievements</strong> (the blue line) and <strong>target level</strong> (the red line).
+
+The gaps (delta) between "Now" and "Next" are addresed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability.
+
+The percentages are based on a <strong>consistent and comprehensive</strong> set of <strong>design principles</strong> and <strong>best practices</strong> to build and evaluate cloud shared public usage defined in the "Well-Architected" (WA) Framework.
+
+The Well Architected Framework is really an <strong>industry standard</strong> because it is referenced by Amazon, Microsoft, and Google:
 
    * https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html
    * <a target="_blank" href="https://docs.aws.amazon.com/index.html?ref=wellarchitected">https://docs.aws.amazon.com/index.html?ref=wellarchitected</a>
@@ -26,25 +39,8 @@ The "Well Architected" Framework really is an <strong>industry standard</strong>
    * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
    * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
-   <br /><br />
 
-Thus, the Framework provides a <strong>consistent and comprehensive</strong> set of questions and <strong>best practices</strong> to build and evaluate cloud shared public usage.
-
-
-## Your Radar Chart of Progress
-
-To visualize opinions around progress toward each pillar over time, I (manually) created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/aws-well-architected-radar.xlsx?raw=true">Excel file</a>:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"><img width="796" alt="aws-well-architected-radar-1592x668.png" src="https://user-images.githubusercontent.com/300046/138869245-94036799-74c2-421e-95a6-053b9ffa19ce.png"></a>
-
-The achievement at each point in time (milestones) is based on whether implementation of <strong>design principles</strong> defined for each pillar.
-
-The gap between "Now" and "Next" consists of a backlog of activities to reach higher maturity:
-
-   * Build and deploy faster
-   * Lower or mitigate risks
-   * Make informed decisions
-   * Learn best practices
+   * https://cloud.google.com/architecture/framework
    <br /><br />
 
 
@@ -52,11 +48,11 @@ The gap between "Now" and "Next" consists of a backlog of activities to reach hi
 
 ### Pillars of the framework:
 
-Pillars are listed below in default priority.
+The five pillars are listed below in default priority defined by a specific team (your team would like have different priorities):
 
 <em>Click a link for each pillar to go straight to each pillar's questions:</em>
 
-   1. <a href="#Sec">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
+   1. <a href="#Sec">SEC = <strong>Security</strong></a> (+privacy and compliance) = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
 
    2. <a href="#Reliability">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function
 
@@ -68,7 +64,15 @@ Pillars are listed below in default priority.
 
 One memonic to make the 5 easier to remember is "CROPS".
 
-Google combines "Performance and cost optimization" into a four-pillar framework.
+Google adds a "System Design" category.
+
+The benefits sought from the framework are:
+
+   * Build and deploy faster
+   * Lower or mitigate risks
+   * Make informed decisions
+   * Learn best practices
+   <br /><br />
 
 
 ### AWS WA Assessment Tool
@@ -76,8 +80,6 @@ Google combines "Performance and cost optimization" into a four-pillar framework
    * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
    <br /><br />
-
-NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calculator at https://calculator.aws/#</a> is used to estimate costs for specific architectures. Different server types have different costs. The same services in different regions have different prices. Transfer of data between different regions incur charges.
 
 1. Get AWS credentials.
 
@@ -87,13 +89,13 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 
 3. Click orange "Define workload".
 
-   Each "workload" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
 
-   A "technology portfolio" is the collection of workloads that are required for the business to operate.
+   A "<strong>technology portfolio</strong>" is the collection of workloads that are required for the business to operate.
 
-   The "architecture" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
+   The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
 
-   A "component" is the code, configuration, and AWS Resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
+   A "<strong>component</strong>" is the code, configuration, and  resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
 
 3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</strong> such as:
 
@@ -110,19 +112,19 @@ NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calcul
 
 6. If applicable, select a <strong>lens</strong> (listed alphabetically):
 
-   * <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">Analytics: 95 pages on Kindle (mobile) app</a>
+   * Analytics: <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">95 pages on Kindle (mobile) app</a>
 
-   * <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">Financial Services Industry: 71 pages on Kindle (mobile) app</a>
+   * Financial Services Industry: <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">71 pages on Kindle (mobile) app</a>
 
-   * <a target="_blank" href="https://www.amazon.com/High-Performance-Computing-Lens-Well-Architected-Whitepaper-ebook/dp/B082TRK76F/" title="December 15, 2019">High-Performance Computing: 55 pages on Kindle (mobile) app</a>
+   * High-Performance Computing: <a target="_blank" href="https://www.amazon.com/High-Performance-Computing-Lens-Well-Architected-Whitepaper-ebook/dp/B082TRK76F/" title="December 15, 2019">55 pages on Kindle (mobile) app</a>
 
-   * <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">IoT: 77 pages on Kindle (mobile) app</a>
+   * IoT: <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">77 pages on Kindle (mobile) app</a>
 
-   * <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">Machine Learning: 265 pages on Kindle (mobile) app</a>
+   * Machine Learning: <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">265 pages on Kindle (mobile) app</a>
 
-   * <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">SaaS: 87 pages on Kindle (mobile) app</a>
+   * SaaS: <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">87 pages on Kindle (mobile) app</a>
 
-   * <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">Serverless: 91 pages on Kindle (mobile) app</a>  
+   * Serverless: <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">91 pages on Kindle (mobile) app</a>  
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
    APIs now available for the AWS Well-Architected Tool</a>
@@ -141,6 +143,8 @@ My notes for each pillar are annotated with deep links to hands-on instructions 
 <a target="_blank" href="https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html">Docs</a>: 
 <a target="_blank" href="https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/">
 AWS Cost & Usage Report (AWS CUR)</a> contains the most comprehensive set of cost and usage data available.
+
+NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calculator at https://calculator.aws/#</a> is used to estimate costs for specific architectures. Different server types have different costs. The same services in different regions have different prices. Transfer of data between different regions incur charges.
 
 AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3) bucket.
 
