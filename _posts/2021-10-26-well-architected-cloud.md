@@ -15,7 +15,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Your Radar Chart of Progress
+## Your Radar Chart of Progress:
 
 PROTIP: To visualize progress toward using public cloud effectively, I created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/well-architected-radar.xlsx?raw=true">Excel file I built</a>:
 
@@ -38,11 +38,21 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
    * June 2020 "Well Architeced Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
    * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/ ">https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/ ">Microsoft's WA Framework at https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)</a>
 
-   * <a target="_blank" href="https://cloud.google.com/architecture/framework">https://cloud.google.com/architecture/framework</a>
-   <br /><br />
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework">Google's WA Framework at https://cloud.google.com/architecture/framework</a>
 
+
+## Common definitions:
+
+
+   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+
+   A "<strong>technology portfolio</strong>" is the collection of workloads that are required for the business to operate.
+
+   The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
+
+   A "<strong>component</strong>" is the code, configuration, and  resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
 
 <a name="Pillars"></a>
 
@@ -76,7 +86,18 @@ The benefits sought from the framework are:
    <br /><br />
 
 
-## AWS WA Assessment Tool
+## WA Assessment Tools
+
+### Microsoft Azure Advisor
+
+Microsoft has its <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-get-started">Advisor</a> under its Azure Monitoring and Management menu pane, which presents a handy dashboard:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/139440387-2a34a7a7-121e-479f-8760-c64654866c17.png">
+<img width="967" alt="ws-azure-advisor-dashboard-1934x1282" src="https://user-images.githubusercontent.com/300046/139440387-2a34a7a7-121e-479f-8760-c64654866c17.png"></a>
+
+
+### AWS WA Assessment Tool
+
 <img align="right" width="99" alt="well-architected-aws-tool-154x254.png" src="https://user-images.githubusercontent.com/300046/139374726-0a7d74c5-86f8-4f67-a79b-b4f1038ab1c0.png">
    * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
@@ -89,14 +110,6 @@ The benefits sought from the framework are:
    <a target="_blank" href="https://console.aws.amazon.com/wellarchitected">https://console.aws.amazon.com/wellarchitected</a>
 
 3. Click orange "Define workload".
-
-   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
-
-   A "<strong>technology portfolio</strong>" is the collection of workloads that are required for the business to operate.
-
-   The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
-
-   A "<strong>component</strong>" is the code, configuration, and  resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
 
 3. Specify a name for the workload under assessment. If you're using a shared account, enter <strong>your name</strong> such as:
 
@@ -111,7 +124,7 @@ The benefits sought from the framework are:
 
    ### Lens
 
-6. If applicable, select a <strong>lens</strong> listed alphabetically here:
+6. If applicable, select a <strong>lens</strong> (listed alphabetically here). Each lens defines additional terms, processes, etc.:
 
    * Analytics: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">95 pages on Kindle (mobile) app</a>
 
@@ -1008,7 +1021,7 @@ Design principles for Performance Efficiency:
 
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
    
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/">Microsoft Cost Optimization Documentation</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/">Microsoft Cost Optimization Documentation</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist">Checklist</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist">Microsft's cost optimization checklist</a>
 
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization">Google: Cost optimizatin</a>
@@ -1016,7 +1029,13 @@ Design principles for Performance Efficiency:
 
 <hr />
 
-Cost Optimization Abstract:
+Google's Cost Optimization has two processes:
+
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization/finops">Adopt and implement FinOps</a>
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization/monitor">Monitor and control cost</a>
+   <br /><br />
+
+AWS Cost Optimization Abstract:
 
    * Practice Cloud Financial Management
    * Expenditure and Usage Awareness
