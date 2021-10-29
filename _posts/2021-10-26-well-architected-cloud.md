@@ -75,7 +75,7 @@ The benefits sought from the framework are:
    <br /><br />
 
 
-### AWS WA Assessment Tool
+## AWS WA Assessment Tool
 
 <img align="right" width="99" alt="well-architected-aws-tool-154x254.png" src="https://user-images.githubusercontent.com/300046/139374726-0a7d74c5-86f8-4f67-a79b-b4f1038ab1c0.png">
    * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
@@ -128,9 +128,9 @@ The benefits sought from the framework are:
    * Serverless Applications: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">91 pages on Kindle (mobile) app</a>  
 
 
-   ### Lens Layers 
+   ### AWS WA Lens Layers 
 
-   The Analytics Lens consists of these layers:
+   The AWS Analytics Lens consists of these layers:
 
    * Data Ingestion Layer
    * Data Access and Security Layer
@@ -140,7 +140,7 @@ The benefits sought from the framework are:
    * User Access and Interface Layer
    <br /><br />
 
-   The IoT Lens consists of these layers:
+   The AWS IoT Lens consists of these layers:
 
    * Design and Manufacturing Layer
    * Edge Layer
@@ -151,7 +151,7 @@ The benefits sought from the framework are:
    * Application Layer
    <br /><br />
 
-   ### Lens Scenarios
+   ### AWS WA Lens Scenarios
 
    Analytics Scenarios:
 
@@ -163,6 +163,21 @@ The benefits sought from the framework are:
    * Multi-tenant Analytics
    <br /><br />
 
+   ### Phases in AWS WA Machine Learning Lens
+   
+   The Machine Learning Lens defines these phases:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png">
+   <img alt="well-architected-ml-lifecycle-phases-977x124" src="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png"></a>
+
+   * Business goal identification lifecycle phase
+   * ML problem framing lifecycle phase
+   * Lifecycle architecture diagram
+   * Data processing lifecycle phase
+   * Model development lifecycle phase
+   * Deployment lifecycle phase
+   * Monitoring lifecycle phase
+   <br /><br />
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
    APIs now available for the AWS Well-Architected Tool</a>
@@ -170,7 +185,7 @@ The benefits sought from the framework are:
 https://mikerodionov.com/tag/aws-whitepapers/
 
 
-## Well-Architected Labs
+## AWS Well-Architected Labs
 
 My notes for each pillar are annotated with deep links to hands-on instructions at<br />
 <a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a> 
