@@ -22,7 +22,7 @@ PROTIP: To visualize progress toward using public cloud effectively, I created t
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
 <img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
 
-The percentage for each pillar is based on <strong>achievements</strong> (the blue line) and <strong>target level</strong> (the red line).
+The percentage for each pillar is based on what has been <strong>achieved now</strong> (the blue line) and the <strong>next level target</strong> (the red line).
 
 The gaps (delta) between "Now" and "Next" are addresed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability.
 
@@ -165,7 +165,7 @@ The benefits sought from the framework are:
 
    ### Phases in AWS WA Machine Learning Lens
    
-   The Machine Learning Lens defines these phases:
+   The Machine Learning Lens defines these lifecycle phases:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png">
    <img alt="well-architected-ml-lifecycle-phases-977x124" src="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png"></a>
@@ -574,7 +574,7 @@ Design principles for reliability:
 
    * <strong>Perform periodic recovery of the data to verify backup integrity and processes</strong> - Validate that your backup process implementation meets your recovery time objectives (RTO) and recovery point objectives (RPO) by performing a recovery test.
 
-10. How do you use fault isolation to protect your workload?
+9. How do you use fault isolation to protect your workload?
 
    * <strong>Deploy the workload to multiple locations</strong> - Distribute workload data and resources across multiple Availability Zones or, where necessary, across AWS Regions. These locations can be as diverse as required.
 
@@ -582,7 +582,7 @@ Design principles for reliability:
 
    * <strong>Use bulkhead architectures</strong> - Like the bulkheads on a ship, this pattern ensures that a failure is contained to a small subset of requests/users so the number of impaired requests is limited, and most can continue without error. Bulkheads for data are usually called partitions or shards, while bulkheads for services are known as cells.
 
-11. How do you design your workload to withstand component failures?
+9. How do you design your workload to withstand component failures?
 
    * <strong>Monitor all components of the workload to detect failures</strong> - Continuously monitor the health of your workload so that you and your automated systems are aware of degradation or complete failure as soon as they occur. Monitor for key performance indicators (KPIs) based on business value.
 
@@ -594,7 +594,7 @@ Design principles for reliability:
 
    * <strong>Send notifications when events impact availability</strong> - Notifications are sent upon the detection of significant events, even if the issue caused by the event was automatically resolved.
 
-12. How do you test reliability?
+9. How do you test reliability?
 
    * <strong>Use playbooks to investigate failures</strong> - Enable consistent and prompt responses to failure scenarios that are not well understood, by documenting the investigation process in playbooks. Playbooks are the predefined steps performed to identify the factors contributing to a failure scenario. The results from any process step are used to determine the next steps to take until the issue is identified or escalated.
 
@@ -604,13 +604,11 @@ Design principles for reliability:
 
    * <strong>Test scaling and performance requirements</strong> - This includes load testing to validate that the workload meets scaling and performance requirements.
 
-   * <strong>Test resiliency using chaos engineering
-Run tests that inject failures regularly into pre-production and production environments. Hypothesize how your workload will react to the failure, then compare your hypothesis to the testing results and iterate if they do not match. Ensure that production testing does not impact users.
+   * <strong>Test resiliency using chaos engineering</strong> - Run tests that inject failures regularly into pre-production and production environments. Hypothesize how your workload will react to the failure, then compare your hypothesis to the testing results and iterate if they do not match. Ensure that production testing does not impact users.
 
-   * <strong>Conduct game days regularly
-Use game days to regularly exercise your failure procedures as close to production as possible (including in production environments) with the people who will be involved in actual failure scenarios. Game days enforce measures to ensure that production testing does not impact users.
+   * <strong>Conduct game days regularly</strong> - Use game days to regularly exercise your failure procedures as close to production as possible (including in production environments) with the people who will be involved in actual failure scenarios. Game days enforce measures to ensure that production testing does not impact users.
 
-13. How do you plan for disaster recovery (DR)?
+9. How do you plan for disaster recovery (DR)?
 
    * <strong>Define recovery objectives for downtime and data loss</strong> - The workload has a recovery time objective (RTO) and recovery point objective (RPO).
 
@@ -810,7 +808,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of your operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
 
-10. How do you manage workload and operations events?
+9. How do you manage workload and operations events?
 
    * <strong>Use processes for event, incident, and problem management</strong> - Have processes to address observed events, events that require intervention (incidents), and events that require intervention and either recur or cannot currently be resolved (problems). Use these processes to mitigate the impact of these events on the business and your customers by ensuring timely and appropriate responses.
 
@@ -826,7 +824,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Automate responses to events</strong> - Automate responses to events to reduce errors caused by manual processes, and to ensure prompt and consistent responses.
 
-11. How do you evolve operations?
+9. How do you evolve operations?
 
    * <strong>Have a process for continuous improvement</strong> - Regularly evaluate and prioritize opportunities for improvement to focus efforts where they can provide the greatest benefits.
 
@@ -949,8 +947,7 @@ Design principles for Performance Efficiency:
 
    * <strong>Choose network protocols to improve performance</strong> - Make decisions about protocols for communication between systems and networks based on the impact to the workload’s performance.
 
-   * <strong>Choose your workload’s location based on network requirements</strong> - 
-Use the cloud location options available to reduce network latency or improve throughput. Utilize AWS Regions, Availability Zones, placement groups, and edge locations such as Outposts, Local Regions, and Wavelength, to reduce network latency or improve throughput.
+   * <strong>Choose your workload’s location based on network requirements</strong> - Use the cloud location options available to reduce network latency or improve throughput. Utilize AWS Regions, Availability Zones, placement groups, and edge locations such as Outposts, Local Regions, and Wavelength, to reduce network latency or improve throughput.
 
    * <strong>Optimize network configuration based on metrics</strong> - Use collected and analyzed data to make informed decisions about optimizing your network configuration. Measure the impact of those changes and use the impact measurements to make future decisions.
 
