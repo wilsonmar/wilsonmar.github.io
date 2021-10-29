@@ -22,11 +22,11 @@ PROTIP: To visualize progress toward using public cloud effectively, I created t
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
 <img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
 
-The percentage for each pillar is based on what has been <strong>achieved now</strong> (the blue line) and the <strong>next level target</strong> (the red line).
+The percentage for each pillar is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: level target</strong> (the outer red line).
 
-The gaps (delta) between "Now" and "Next" are addresed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability.
+The gaps (delta) between "Now" and "Next" are addresed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
 
-The percentages are based on a <strong>consistent and comprehensive</strong> set of <strong>design principles</strong> and <strong>best practices</strong> to build and evaluate cloud shared public usage defined in the "Well-Architected" (WA) Framework.
+Percentages in the Radar Chart are based on a <strong>consistent and comprehensive</strong> set of <strong>design principles</strong> and <strong>best practices</strong> defined in the "Well-Architected" (WA) Framework.
 
 The Well Architected Framework is really an <strong>industry standard</strong> because it is referenced by Amazon, Microsoft, and Google:
 
@@ -38,9 +38,9 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
    * June 2020 "Well Architeced Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
    * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
-   * https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/ ">https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)</a>
 
-   * https://cloud.google.com/architecture/framework
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework">https://cloud.google.com/architecture/framework</a>
    <br /><br />
 
 
@@ -68,6 +68,7 @@ Google adds a "System Design" category.
 
 The benefits sought from the framework are:
 
+   * Improve the quality of workloads
    * Build and deploy faster
    * Lower or mitigated risks
    * Make informed decisions
@@ -76,7 +77,6 @@ The benefits sought from the framework are:
 
 
 ## AWS WA Assessment Tool
-
 <img align="right" width="99" alt="well-architected-aws-tool-154x254.png" src="https://user-images.githubusercontent.com/300046/139374726-0a7d74c5-86f8-4f67-a79b-b4f1038ab1c0.png">
    * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
@@ -272,6 +272,8 @@ AWS published these General Design Principles:
    * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/security/">AWS Well-Architected Labs for Security</a>
 
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/security/">Microsoft Security Documentation</a>
+
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/security">Google: Security, privacy, and compliance</a>
    <br /><br />
 
@@ -415,7 +417,7 @@ Automate identification and classification</strong> of data to reduce the risk o
 
    * <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
 
-10. How do you anticipate, respond to, and recover from incidents?
+9. How do you anticipate, respond to, and recover from incidents?
 
    * <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help your organization respond to an incident.
 
@@ -441,6 +443,9 @@ Automate identification and classification</strong> of data to reduce the risk o
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
    * <a target="_blank" href="https://www.amazon.com/Reliability-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08L8CT213/" title="Oct 14, 2020">110 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/reliability/">AWS Well-Architected Labs for Reliability</a>
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/">Microsoft Reliability Documentation</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/?ranMID=24542&ranEAID=je6NUbpObpQ&ranSiteID=je6NUbpObpQ-WP.DKxOITfunOuGg.6AkAA&epi=je6NUbpObpQ-WP.DKxOITfunOuGg.6AkAA&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=%28ir__9vgo0shoqkkf6hhygvquhus6yn2xo0iterylleoj00%29%287593%29%281243925%29%28je6NUbpObpQ-WP.DKxOITfunOuGg.6AkAA%29%28%29&irclickid=_9vgo0shoqkkf6hhygvquhus6yn2xo0iterylleoj00#reliability">
 
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/reliability">Google: Reliability</a>
    <br /><br />
@@ -630,6 +635,8 @@ Design principles for reliability:
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">AWS Well-Architected Labs for Operational Excellence</a>
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/devops/">Microsoft Operational excellence Documentation</a>
 
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/operational-excellence">Google: Operational excellence</a>
    <br /><br />
@@ -854,6 +861,9 @@ Design Principles for Operational Excellence:
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
    * <a target="_blank" href="https://www.amazon.com/Performance-Efficiency-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CFPXRBM/">51 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/">AWS Well-Architected Labs for Performance Efficiency</a>
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/">Microsoft Performance Efficiency Documentation</a>
+
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/performance-optimization">Google: Performance optimization</a>
    <br /><br />
 
@@ -997,8 +1007,9 @@ Design principles for Performance Efficiency:
    * <a target="_blank" href="https://wellarchitectedlabs.com/cost/">AWS Well-Architected Labs for Cost Optimization</a> by Nathan Besh
 
    * https://aws.amazon.com/blogs/aws-cloud-financial-management/
-   * https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist
-   Microsft's cost optimization checklist
+   
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/">Microsoft Cost Optimization Documentation</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist">Microsft's cost optimization checklist</a>
 
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization">Google: Cost optimizatin</a>
    <br /><br />
