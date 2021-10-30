@@ -15,6 +15,20 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This aims to be a suscint yet deep dive.
+
+## Why?
+
+<a target="_blank" href="https://www.youtube.com/watch?v=rbIQ2eRJY0g" title="Aug 11, 2021">Why? Potentia benefits</a> sound rather generic:
+
+   * Improve the quality of workloads
+   * Build and deploy faster
+   * Lower or mitigated risks
+   * Make informed decisions
+   * Learn best practices
+   <br /><br />
+
+
 ## Your Radar Chart of Progress:
 
 PROTIP: To visualize progress toward using public cloud effectively, I created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/well-architected-radar.xlsx?raw=true">Excel file I built</a>:
@@ -74,15 +88,6 @@ The five pillars are listed below in default priority defined by a specific team
 One memonic to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" category.
-
-The benefits sought from the framework are:
-
-   * Improve the quality of workloads
-   * Build and deploy faster
-   * Lower or mitigated risks
-   * Make informed decisions
-   * Learn best practices
-   <br /><br />
 
 
 ## WA Assessment Tools
@@ -148,7 +153,25 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 
 6. If applicable, select a <strong>lens</strong> (listed alphabetically here). Each lens defines additional terms, processes, etc.:
 
-   * Analytics: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">95 pages on Kindle (mobile) app</a>
+   * Analytics: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">95 pages on Kindle (mobile) app</a>. The AWS Analytics Lens consists of these layers:
+
+     * Data Ingestion Layer
+     * Data Access and Security Layer
+     * Catalog and Search Layer
+     * Central Storage Layer
+     * Processing and Analytics Layer
+     * User Access and Interface Layer
+     <br /><br />
+
+     Analytics Scenarios:
+
+     * Data Lake
+     * Batch Data Processing
+     * Streaming Ingest and Stream Processing
+     * Lambda Architecture
+     * Data Science
+     * Multi-tenant Analytics
+     <br /><br />
 
    * Financial Services Industry: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">71 pages on Kindle (mobile) app</a>
 
@@ -157,49 +180,22 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
      * Tightly Coupled Scenarios
      <br /><br />
 
-   * IoT: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">77 pages on Kindle (mobile) app</a>
+   * IoT: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">77 pages on Kindle (mobile) app</a>.    The AWS IoT Lens consists of these layers:
+
+     * Design and Manufacturing Layer
+     * Edge Layer
+     * Provisioning Layer
+     * Communication Layer
+     * Ingestion Layer
+     * Analytics Layer
+     * Application Layer
+     <br /><br />
 
    * Machine Learning: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">HTML</a> \| <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/wellarchitected-machine-learning-lens.pdf#machine-learning-lens">PDF</a> \| <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">265 pages on Kindle (mobile) app</a>
 
    * SaaS: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">87 pages on Kindle (mobile) app</a>
 
    * Serverless Applications: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">91 pages on Kindle (mobile) app</a>  
-
-
-   ### AWS WA Lens Layers 
-
-   The AWS Analytics Lens consists of these layers:
-
-   * Data Ingestion Layer
-   * Data Access and Security Layer
-   * Catalog and Search Layer
-   * Central Storage Layer
-   * Processing and Analytics Layer
-   * User Access and Interface Layer
-   <br /><br />
-
-   The AWS IoT Lens consists of these layers:
-
-   * Design and Manufacturing Layer
-   * Edge Layer
-   * Provisioning Layer
-   * Communication Layer
-   * Ingestion Layer
-   * Analytics Layer
-   * Application Layer
-   <br /><br />
-
-   ### AWS WA Lens Scenarios
-
-   Analytics Scenarios:
-
-   * Data Lake
-   * Batch Data Processing
-   * Streaming Ingest and Stream Processing
-   * Lambda Architecture
-   * Data Science
-   * Multi-tenant Analytics
-   <br /><br />
 
    ### Phases in AWS WA Machine Learning Lens
    
@@ -309,6 +305,7 @@ AWS published these General Design Principles:
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
    * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/security/">AWS Well-Architected Labs for Security</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=i-ErdXn9DFA">VIDEO: AWS Tech talk</a>
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/security/">Microsoft Security Documentation</a>
 
@@ -662,6 +659,11 @@ Design principles for reliability:
    * <strong>Manage configuration drift at the DR site or region</strong> - Ensure that the infrastructure, data, and configuration are as needed at the DR site or region. For example, check that AMIs and service quotas are up to date.
 
    * <strong>Automate recovery</strong> - Use AWS or third-party tools to automate system recovery and route traffic to the DR site or region.
+
+Best Practices:
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/transient-faults">Transient fault handling</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/retry-service-specific">Retry guidance for specific services</a>
 
 <hr />
 
@@ -1286,6 +1288,8 @@ Tasks:
 https://tutorialsdojo.com/aws-well-architected-framework-five-pillars/
 
 STAR: https://aws.amazon.com/blogs/aws-cloud-financial-management/cost-reporting-based-on-aws-organizations-account-id-tags/
+
+
 
 <hr />
 
