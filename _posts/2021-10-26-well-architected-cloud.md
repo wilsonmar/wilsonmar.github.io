@@ -87,6 +87,8 @@ The benefits sought from the framework are:
 
 ## WA Assessment Tools
 
+Both Azure and AWS have one.
+
 ### Microsoft Azure Advisor
 
 Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-overview">Advisor</a> under its Azure Monitoring and Management menu pane presents a handy dashboard to display <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/azure-advisor-score">scores</a> calculated daily:
@@ -97,11 +99,15 @@ Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advi
 Scores are based on Advisor's Recommendations:
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations">Security recommendations</a>
+
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-high-availability-recommendations">Reliability (HA)</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/139447121-e8ba4797-80c8-4f0a-861d-c023dcb44fb6.png"><img src="wa=azure-advisor-score-rel-2555x1295" src="https://user-images.githubusercontent.com/300046/139447121-e8ba4797-80c8-4f0a-861d-c023dcb44fb6.png"></a>
+
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-performance-recommendations">Performance recommendations</a>
+
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-operational-excellence-recommendations">Operational Excellence recommendations</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations">Cost recommendations</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/139447378-dd5bd1f8-48a3-4a9d-8f25-647930d56def.png"><img src="wa=azure-advisor-score-cost-2553x1298" src="https://user-images.githubusercontent.com/300046/139447378-dd5bd1f8-48a3-4a9d-8f25-647930d56def.png"></a>
-   <br /><br />
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations">Cost recommendations</a> includes "Potential yearly savings" specific to each impacted resource:<br /><a taget="_blank" href="https://user-images.githubusercontent.com/300046/139529616-c8a45f35-23db-45a4-b1ee-3027bb9fa139.png">
+   <img alt="wa-azure-cost-1802x260" src="https://user-images.githubusercontent.com/300046/139529616-c8a45f35-23db-45a4-b1ee-3027bb9fa139.png"></a>
 
 
 
@@ -146,7 +152,10 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 
    * Financial Services Industry: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/financial-services-industry-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Financial-Services-Industry-Lens-Well-Architected-ebook/dp/B088WBNVQL/" title="May 18, 2020">71 pages on Kindle (mobile) app</a>
 
-   * High-Performance Computing (HPC): <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/high-performance-computing-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/High-Performance-Computing-Lens-Well-Architected-Whitepaper-ebook/dp/B082TRK76F/" title="December 15, 2019">55 pages on Kindle (mobile) app</a>
+   * High-Performance Computing (HPC): <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/high-performance-computing-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/High-Performance-Computing-Lens-Well-Architected-Whitepaper-ebook/dp/B082TRK76F/" title="December 15, 2019">55 pages on Kindle (mobile) app</a>. 
+     * Loosely Coupled Scenarios
+     * Tightly Coupled Scenarios
+     <br /><br />
 
    * IoT: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/IoT-Lens-Well-Architected-Framework-Whitepaper-ebook/dp/B082XSCMRX/" title="December 19, 2019">77 pages on Kindle (mobile) app</a>
 
