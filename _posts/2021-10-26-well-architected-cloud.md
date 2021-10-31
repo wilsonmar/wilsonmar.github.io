@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Well Architected Cloud"
-excerpt: "What is your maturity toward adopting best practices using a comprehensive industry-standard framework from Amazon and Microsoft?"
+excerpt: "What is your team's maturity at adopting best practices? Here is the comprehensive industry-standard framework from Amazon, Microsoft, and Google"
 tags: [Cloud, comparison]
 date: "2021-10-26"
 file: "well-architected-cloud"
@@ -15,11 +15,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This aims to be a suscint yet deep dive.
+This aims to be a suscint yet deep dive about the "mind sets" needed by IT teams in the cloud.
+
+Like ITIL, SAFe, FedRamp, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and best practices, but specifically for successfully working in the public cloud.
 
 ## Why?
 
-<a target="_blank" href="https://www.youtube.com/watch?v=rbIQ2eRJY0g" title="Aug 11, 2021">Why? Potentia benefits</a> sound rather generic:
+<a target="_blank" href="https://www.youtube.com/watch?v=rbIQ2eRJY0g" title="Aug 11, 2021">Why? Potential benefits</a> sound like what is claimed for every product:
 
    * Improve the quality of workloads
    * Build and deploy faster
@@ -28,6 +30,7 @@ This aims to be a suscint yet deep dive.
    * Learn best practices
    <br /><br />
 
+But WA is different in that it's the rare occassion when it's what major cloud vendors all agree on.
 
 ## Your Radar Chart of Progress:
 
@@ -57,23 +60,11 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
    * <a target="_blank" href="https://cloud.google.com/architecture/framework">Google's WA Framework at https://cloud.google.com/architecture/framework</a>
 
 
-## Common definitions:
-
-   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
-
-   A "<strong>technology portfolio</strong>" is the collection of workloads that are required for the business to operate.
-
-   The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
-
-   A "<strong>component</strong>" is the code, configuration, and  resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
-
 <a name="Pillars"></a>
 
 ### Pillars of the framework:
 
-The five pillars are listed below in default priority defined by a specific team (your team would like have different priorities):
-
-<em>Click a link for each pillar to go straight to each pillar's questions:</em>
+The five pillars are listed below in <strong>default priority</strong>.
 
    1. <a href="#Sec">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
 
@@ -81,13 +72,32 @@ The five pillars are listed below in default priority defined by a specific team
 
    3. <a href="#Ops">OPS = <strong>Operational Excellence</strong></a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
 
-   4. <a href="#Perf">PERF = <strong>Performance Efficiency</strong></a> = The ability to adapt to changes in load
+   4. <a href="#Perf">PERF = <strong>Performance Efficiency</strong></a> = The ability to adapt to changes in load (scale)
 
    5. <a href="#Cost">COST = <strong>Cost Optimization</strong></a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
+
+<em>Click each pillar name to go contents about that pillar. (Note that "you" and "your" have been removed from text by AWS):</em>
 
 One memonic to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" category.
+
+ACTIVITY 1 - Have each member of your team prioritize, then compare as a team.
+
+
+## Common definitions:
+
+   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+
+   A "<strong>technology portfolio</strong>" is the collection of workloads that are required for the business to operate.
+
+   A "<strong>component</strong>" is the code, configuration, and  resources that together deliver against a requirement. A component is often the unit of technical ownership, and is decoupled from other components.
+
+   The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
+
+   The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships.
+
+   <em>TODO: There are others ...</em>
 
 
 ## WA Assessment Tools
@@ -126,6 +136,7 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 ### AWS WA Assessment Tool
 
 <img align="right" width="99" alt="well-architected-aws-tool-154x254.png" src="https://user-images.githubusercontent.com/300046/139374726-0a7d74c5-86f8-4f67-a79b-b4f1038ab1c0.png">
+<a target="_blank" href="https://www.youtube.com/watch?v=i-ErdXn9DFA&3m21s">VIDEO</a>:
    * <a target="_blank" href="https://www.youtube.com/watch?v=MfxF-FYEFjY">VIDEO: Build Better Workloads</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
    <br /><br />
@@ -281,17 +292,17 @@ Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
 
 AWS published these General Design Principles:
 
-   * <strong>Stop guessing your capacity needs</strong> - if you make a poor capacity decision when deploying a workload, you might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. You can use as much or as little capacity as you need, and scale up and down automatically.
+   * <strong>Stop guessing capacity needs</strong> - if you make a poor capacity decision when deploying a workload, the team might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. Use as much or as little capacity as needed, and scale up and down automatically.
 
-   * <strong>Test systems at production scale</strong> - In the cloud, you can create a production-scale test environment on demand, complete your testing, and then decommission the resources. Because you only pay for the test environment when it's running, you can simulate your live environment for a fraction of the cost of testing on premises.
+   * <strong>Test systems at production scale</strong> - In the cloud, a production-scale test environment can be created on demand, complete testing, and then decommission the resources. Because payment is only for the test environment when it's running, you can simulate live environments for a fraction of the cost of testing on premises.
 
-   * <strong>Automate to make architectural experimentation easier</strong> (everything in AWS is an API) - Automation allows you to create and replicate your workloads at low cost and avoid the expense of manual effort. You can track changes to your automation, audit the impact, and revert to previous parameters when necessary.
+   * <strong>Automate to make architectural experimentation easier</strong> (everything in AWS is an API) - Automation allows you to create and replicate workloads at low cost and avoid the expense of manual effort. You can track changes to the automation, audit the impact, and revert to previous parameters when necessary.
 
    * <strong>Allow for evolutionary architectures</strong> -  In a traditional environment, architectural decisions are often implemented as static, onetime events, with a few major versions of a system during its lifetime. As a business and its context continue to evolve, these initial decisions might hinder the system's ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice.
 
-   * <strong>Drive architectures using data</strong> - In the cloud, you can collect data on how your architectural choices affect the behavior of your workload. This lets you make factbased decisions on how to improve your workload. Your cloud infrastructure is code, so you can use that data to inform your architecture choices and improvements over time.
+   * <strong>Drive architectures using data</strong> - In the cloud, you can collect data on how architectural choices affect the behavior of  workloads. This enable factb-ased decisions on how to improve  workloads. Cloud infrastructure is code, so that data can be used to inform architecture choices and improvements over time.
 
-   * <strong>Improve through "game days"</strong> (dry-run simulation, choas engineering, etc.) - Test how your architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
+   * <strong>Improve through "game days"</strong> (dry-run simulation, choas engineering, etc.) - Test how architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
 
 
 <hr />
@@ -322,36 +333,40 @@ The broad security areas:
 * Security resources
 <br /><br />
 
-Design principles for security in the cloud:
+Key Design principles for security in the cloud:
 
 * Implement a strong identity foundation
 * Enable traceability
 * Apply security at all layers (levels)
+
 * Automate security best practices
 * Protect data in transit and at rest
 * Keep people away from data
-* Prepare for security events ("Game Day")
+* Prepare for security events (incident response)
+
+* Identify and validate control objectives
+* Automate testing and validation of security controls in pipelines
 <br /><br />
 
 <hr />
 
-1. How do you securely operate your workload?
+1. How do you securely operate each workload?
 
-   * <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring your company’s reporting structure. Start with security and infrastructure in mind to enable your organization to set common guardrails as your workloads grow.
+   * <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common guardrails as workloads grow.
 
-   * <strong>Secure AWS account Secure access to your accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
+   * <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
 
-   * <strong>Identify and validate control objectives</strong> - Based on your compliance requirements and risks identified from your threat model, derive and validate the control objectives and controls that you need to apply to your workload. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
+   * <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
 
    * <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
 
-   * <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of your workload.
+   * <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
 
-   * <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of your build, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
+   * <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
 
-   * <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize your threats and adapt your security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   * <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize threats and adapt security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
 
-   * <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of your workload.
+   * <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
 
 2. How do you manage identities for people and machines?
 
@@ -366,87 +381,87 @@ Use temporary credentials
 
    * <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
 
-   * <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by your identity provider, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This allows you to manage access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
+   * <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
 
 3. How do you manage permissions for people and machines?
 
-   * <strong>Define access requirements</strong> - Each component or resource of your workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
+   * <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
 
    * <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
 
-   * <strong>Establish emergency access process</strong> - A process that allows emergency access to your workload in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right level of access when they require it. For example, establish a process for administrators to verify and approve their request.
+   * <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right level of access when they require it. For example, establish a process for administrators to verify and approve their request.
 
    * <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
 
-   * <strong>Define permission guardrails for your organization</strong> - Establish common controls that restrict access to all identities in your organization. For example, you can restrict access to specific AWS Regions, or prevent your operators from deleting common resources, such as an IAM role used for your central security team.
+   * <strong>Define permission guardrails for the organization</strong> - Establish common controls that restrict access to all identities in the organization. For example, you can restrict access to specific AWS Regions, or prevent operators from deleting common resources, such as an IAM role used for the central security team.
 
-   * <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and your centralized federation provider. For example, remove a user’s access when they leave the organization or change roles.
+   * <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and  centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
 
    * <strong>Analyze public and cross account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
 
-   * <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within your AWS Organization. Monitor shared resources and review shared resource access.
+   * <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
 
 4. How do you detect and investigate security events?
 
-   * <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within your organization.
+   * <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
 
    * <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
 
    * <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
 
-   * <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by your team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
+   * <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
 
-5. How do you protect your network resources?
+5. How do you protect network resources?
 
    * <strong>Create network layers</strong> - Group components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
 
-   * <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in your private VPC with VPC-based controls.
+   * <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
 
    * <strong>Automate network protection</strong> - Automate protection mechanisms to provide a self-defending network based on threat intelligence and anomaly detection. For example, intrusion detection and prevention tools that can pro-actively adapt to current threats and reduce their impact.
 
-   * <strong>Implement inspection and protection</strong> - Inspect and filter your traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to your runtime environment.
+   * <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
 
 
-6. How do you protect your compute resources?
+6. How do you protect compute resources?
 
-   * <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in your code, dependencies, and in your infrastructure to help protect against new threats.
+   * <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
 
-   * <strong>Reduce attack surface</strong> - Reduce your attack surface by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
+   * <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
 
-   * <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce your security maintenance tasks as part of the shared responsibility model.
+   * <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
 
-   * <strong>Automate compute protection</strong> - Automate your protective compute mechanisms including vulnerability management, reduction in attack surface, and management of resources.
+   * <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
 
    * <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
 
    * <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
 
-7. How do you classify your data?
+7. How do you classify data?
 
-   * <strong>Identify the data within your workload</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensititve, and more.
+   * <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensititve, and more.
 
    * <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls.
 Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
 
-   * <strong>Define data lifecycle management</strong> - Your defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
+   * <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
 
-8. How do you protect your data at rest?
+8. How do you protect data at rest?
 
    * <strong>Implement secure key management</strong> - Encryption keys must be stored securely, with strict access control, for example, by using a key management service such as AWS KMS. Consider using different keys, and access control to the keys, combined with the AWS IAM and resource policies, to align with data classification levels and segregation requirements.
 
-   * <strong>Enforce encryption at rest</strong> - Enforce your encryption requirements based on the latest standards and recommendations to help protect your data at rest.
+   * <strong>Enforce encryption at rest</strong> - Enforce encryption requirements based on the latest standards and recommendations to help protect data at rest.
 
    * <strong>Automate data at rest protection</strong> - Use automated tools to validate and enforce data at rest protection continuously, for example, verify that there are only encrypted storage resources.
 
-   * <strong>Enforce access control</strong> - Enforce access control with least privileges and mechanisms, including backups, isolation, and versioning, to help protect your data at rest. Prevent operators from granting public access to your data.
+   * <strong>Enforce access control</strong> - Enforce access control with least privileges and mechanisms, including backups, isolation, and versioning, to help protect data at rest. Prevent operators from granting public access to data.
 
    * <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
 
-9. How do you protect your data in transit?
+9. How do you protect data in transit?
 
    * <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
 
-   * <strong>Enforce encryption in transit</strong> - Enforce your defined encryption requirements based on appropriate standards and recommendations to help you meet your organizational, legal, and compliance requirements.
+   * <strong>Enforce encryption in transit</strong> - Enforce defined encryption requirements based on appropriate standards and recommendations to help you meet organizational, legal, and compliance requirements.
 
    * <strong>Automate detection of unintended data access</strong> - Use tools such as GuardDuty to automatically detect attempts to move data outside of defined boundaries based on data classification level, for example, to detect a trojan that is copying data to an unknown or untrusted network using the DNS protocol.
 
@@ -454,9 +469,9 @@ Automate identification and classification</strong> of data to reduce the risk o
 
 9. How do you anticipate, respond to, and recover from incidents?
 
-   * <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help your organization respond to an incident.
+   * <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
 
-   * <strong>Develop incident management plans</strong> - Create plans to help you respond to, communicate during, and recover from an incident. For example, you can start an incident response plan with the most likely scenarios for your workload and organization. Include how you would communicate and escalate both internally and externally.
+   * <strong>Develop incident management plans</strong> - Create plans to help you respond to, communicate during, and recover from an incident. For example, you can start an incident response plan with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
 
    * <strong>Prepare forensic capabilities</strong> - Identify and prepare forensic investigation capabilities that are suitable, including external specialists, tools, and automation.
 
@@ -466,7 +481,7 @@ Automate identification and classification</strong> of data to reduce the risk o
 
    * <strong>Pre-deploy tools</strong> - Ensure that security personnel have the right tools pre-deployed into AWS to reduce the time for investigation through to recovery.
 
-   * <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into your incident management plans, and continuously improve.
+   * <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
 
 <hr />
 
@@ -508,21 +523,21 @@ Design principles for reliability:
 
 1. How do you manage service quotas and constraints?
 
-   * <strong>Aware of service quotas and constraints</strong> - You are aware of your default quotas and quota increase requests for your workload architecture. You additionally know which resource constraints, such as disk or network, are potentially impactful.
+   * <strong>Aware of service quotas and constraints</strong> - You are aware of default quotas and quota increase requests for workload architecture. You additionally know which resource constraints, such as disk or network, are potentially impactful.
 
-   * <strong>Manage service quotas across accounts and regions</strong> - If you are using multiple AWS accounts or AWS Regions, ensure that you request the appropriate quotas in all environments in which your production workloads run.
+   * <strong>Manage service quotas across accounts and regions</strong> - If you are using multiple AWS accounts or AWS Regions, ensure that you request the appropriate quotas in all environments in which  production workloads run.
 
    * <strong>Accommodate fixed service quotas and constraints through architecture</strong> - Be aware of unchangeable service quotas and physical resources, and architect to prevent these from impacting reliability.
 
-   * <strong>Monitor and manage quotas</strong> - Evaluate your potential usage and increase your quotas appropriately allowing for planned growth in usage.
+   * <strong>Monitor and manage quotas</strong> - Evaluate potential usage and increase quotas appropriately allowing for planned growth in usage.
 
    * <strong>Automate quota management</strong> - Implement tools to alert you when thresholds are being approached. By using AWS Service Quotas APIs, you can automate quota increase requests.
 
-   * <strong>Ensure that a sufficient gap exists between the current quotas and the maximum usage to accommodate failover</strong> - When a resource fails, it may still be counted against quotas until its successfully terminated. Ensure that your quotas cover the overlap of all failed resources with replacements before the failed resources are terminated. You should consider an Availability Zone failure when calculating this gap.
+   * <strong>Ensure that a sufficient gap exists between the current quotas and the maximum usage to accommodate failover</strong> - When a resource fails, it may still be counted against quotas until its successfully terminated. Ensure that quotas cover the overlap of all failed resources with replacements before the failed resources are terminated. You should consider an Availability Zone failure when calculating this gap.
 
-2. How do you plan your network topology?
+2. How do you plan network topology?
 
-   * <strong>Use highly available network connectivity for your workload public endpoints</strong> - These endpoints and the routing to them must be highly available. To achieve this, use highly available DNS, content delivery networks (CDNs), API Gateway, load balancing, or reverse proxies.
+   * <strong>Use highly available network connectivity for workload public endpoints</strong> - These endpoints and the routing to them must be highly available. To achieve this, use highly available DNS, content delivery networks (CDNs), API Gateway, load balancing, or reverse proxies.
 
    * <strong>Provision redundant connectivity between private networks in the cloud and on-premises environments</strong> - Use multiple AWS Direct Connect (DX) connections or VPN tunnels between separately deployed private networks. Use multiple DX locations for high availability. If using multiple AWS Regions, ensure redundancy in at least two of them. You might want to evaluate AWS Marketplace appliances that terminate VPNs. If you use AWS Marketplace appliances, deploy redundant instances for high availability in different Availability Zones.
 
@@ -530,11 +545,11 @@ Design principles for reliability:
 
    * <strong>Prefer hub-and-spoke topologies over many-to-many mesh</strong> - If more than two network address spaces (for example, VPCs and on-premises networks) are connected via VPC peering, AWS Direct Connect, or VPN, then use a hub-and-spoke model, like that provided by AWS Transit Gateway.
 
-   * <strong>Enforce non-overlapping private IP address ranges in all private address spaces where they are connected</strong> - The IP address ranges of each of your VPCs must not overlap when peered or connected via VPN. You must similarly avoid IP address conflicts between a VPC and on-premises environments or with other cloud providers that you use. You must also have a way to allocate private IP address ranges when needed.
+   * <strong>Enforce non-overlapping private IP address ranges in all private address spaces where they are connected</strong> - The IP address ranges of each of VPCs must not overlap when peered or connected via VPN. You must similarly avoid IP address conflicts between a VPC and on-premises environments or with other cloud providers that you use. You must also have a way to allocate private IP address ranges when needed.
 
-3. How do you design your workload service architecture?
+3. How do you design workload service architecture?
 
-   * <strong>Choose how to segment your workload</strong> - Monolithic architecture should be avoided. Instead, you should choose between SOA and microservices. When making each choice, balance the benefits against the complexities—what is right for a new product racing to first launch is different than what a workload built to scale from the start needs. The benefits of using smaller segments include greater agility, organizational flexibility, and scalability. Complexities include possible increased latency, more complex debugging, and increased operational burden
+   * <strong>Choose how to segment workloads</strong> - Monolithic architecture should be avoided. Instead, you should choose between SOA and microservices. When making each choice, balance the benefits against the complexities—what is right for a new product racing to first launch is different than what a workload built to scale from the start needs. The benefits of using smaller segments include greater agility, organizational flexibility, and scalability. Complexities include possible increased latency, more complex debugging, and increased operational burden
 
    * <strong>Build services focused on specific business domains and functionality</strong> - SOA builds services with well-delineated functions defined by business needs. Microservices use domain models and bounded context to limit this further so that each service does just one thing. Focusing on specific functionality enables you to differentiate the reliability requirements of different services, and target investments more specifically. A concise business problem and having a small team associated with each service also enables easier organizational scaling.
 
@@ -564,7 +579,7 @@ Design principles for reliability:
 
    * <strong>Make services stateless where possible</strong> - Services should either not require state, or should offload state such that between different client requests, there is no dependence on locally stored data on disk or in memory. This enables servers to be replaced at will without causing an availability impact. Amazon ElastiCache or Amazon DynamoDB are good destinations for offloaded state.
 
-   * <strong>Implement emergency levers</strong> - These are rapid processes that may mitigate availability impact on your workload. They can be operated in the absence of a root cause. An ideal emergency lever reduces the cognitive burden on the resolvers to zero by providing fully deterministic activation and deactivation criteria. Example levers include blocking all robot traffic or serving a static response. Levers are often manual, but they can also be automated.
+   * <strong>Implement emergency levers</strong> - These are rapid processes that may mitigate availability impact on workloads. They can be operated in the absence of a root cause. An ideal emergency lever reduces the cognitive burden on the resolvers to zero by providing fully deterministic activation and deactivation criteria. Example levers include blocking all robot traffic or serving a static response. Levers are often manual, but they can also be automated.
 
 6. How do you monitor workload resources?
 
@@ -580,25 +595,25 @@ Design principles for reliability:
 
    * <strong>Conduct reviews regularly</strong> - Frequently review how workload monitoring is implemented and update it based on significant events and changes
 
-   * <strong>Monitor end-to-end tracing of requests through your system</strong> - Use AWS X-Ray or third-party tools so that developers can more easily analyze and debug distributed systems to understand how their applications and its underlying services are performing
+   * <strong>Monitor end-to-end tracing of requests through the system</strong> - Use AWS X-Ray or third-party tools so that developers can more easily analyze and debug distributed systems to understand how their applications and its underlying services are performing
 
-7. How do you design your workload to adapt to changes in demand?
+7. How do you design workloads to adapt to changes in demand?
 
-   * <strong>Use automation when obtaining or scaling resources</strong> - When replacing impaired resources or scaling your workload, automate the process by using managed AWS services, such as Amazon S3 and AWS Auto Scaling. You can also use third-party tools and AWS SDKs to automate scaling.
+   * <strong>Use automation when obtaining or scaling resources</strong> - When replacing impaired resources or scaling workloads, automate the process by using managed AWS services, such as Amazon S3 and AWS Auto Scaling. You can also use third-party tools and AWS SDKs to automate scaling.
 
    * <strong>Obtain resources upon detection of impairment to a workload</strong> - Scale resources reactively when necessary if availability is impacted, to restore workload availability.
 
    * <strong>Obtain resources upon detection that more resources are needed for a workload</strong> - Scale resources proactively to meet demand and avoid availability impact.
 
-   * <strong>Load test your workload</strong> - Adopt a load testing methodology to measure if scaling activity meets workload requirements.
+   * <strong>Load test workloads</strong> - Adopt a load testing methodology to measure if scaling activity meets workload requirements.
 
 8. How do you implement change?
 
    * <strong>Use runbooks for standard activities such as deployment</strong> - Runbooks are the predefined steps used to achieve specific outcomes. Use runbooks to perform standard activities, whether done manually or automatically. Examples include deploying a workload, patching it, or making DNS modifications.
 
-   * <strong>Integrate functional testing as part of your deployment</strong> - Functional tests are run as part of automated deployment. If success criteria are not met, the pipeline is halted or rolled back.
+   * <strong>Integrate functional testing as part of deployments</strong> - Functional tests are run as part of automated deployment. If success criteria are not met, the pipeline is halted or rolled back.
 
-   * <strong>Integrate resiliency testing as part of your deployment</strong> - Resiliency tests (as part of chaos engineering) are run as part of the automated deployment pipeline in a pre-prod environment.
+   * <strong>Integrate resiliency testing as part of deployments</strong> - Resiliency tests (as part of chaos engineering) are run as part of the automated deployment pipeline in a pre-prod environment.
 
    * <strong>Deploy using immutable infrastructure</strong> - This is a model that mandates that no updates, security patches, or configuration changes happen in-place on production workloads. When a change is needed, the architecture is built onto new infrastructure and deployed into production.
 
@@ -612,25 +627,25 @@ Design principles for reliability:
 
    * <strong>Perform data backup automatically</strong> - Configure backups to be taken automatically based on a periodic schedule, or by changes in the dataset. RDS instances, EBS volumes, DynamoDB tables, and S3 objects can all be configured for automatic backup. AWS Marketplace solutions or third-party solutions can also be used.
 
-   * <strong>Perform periodic recovery of the data to verify backup integrity and processes</strong> - Validate that your backup process implementation meets your recovery time objectives (RTO) and recovery point objectives (RPO) by performing a recovery test.
+   * <strong>Perform periodic recovery of the data to verify backup integrity and processes</strong> - Validate that backup process implementation meets recovery time objectives (RTO) and recovery point objectives (RPO) by performing a recovery test.
 
-9. How do you use fault isolation to protect your workload?
+9. How do you use fault isolation to protect workloads?
 
    * <strong>Deploy the workload to multiple locations</strong> - Distribute workload data and resources across multiple Availability Zones or, where necessary, across AWS Regions. These locations can be as diverse as required.
 
-   * <strong>Automate recovery for components constrained to a single location</strong> - If components of the workload can only run in a single Availability Zone or on-premises data center, you must implement the capability to do a complete rebuild of the workload within your defined recovery objectives.
+   * <strong>Automate recovery for components constrained to a single location</strong> - If components of the workload can only run in a single Availability Zone or on-premises data center, you must implement the capability to do a complete rebuild of the workload within defined recovery objectives.
 
    * <strong>Use bulkhead architectures</strong> - Like the bulkheads on a ship, this pattern ensures that a failure is contained to a small subset of requests/users so the number of impaired requests is limited, and most can continue without error. Bulkheads for data are usually called partitions or shards, while bulkheads for services are known as cells.
 
-9. How do you design your workload to withstand component failures?
+9. How do you design workloads to withstand component failures?
 
-   * <strong>Monitor all components of the workload to detect failures</strong> - Continuously monitor the health of your workload so that you and your automated systems are aware of degradation or complete failure as soon as they occur. Monitor for key performance indicators (KPIs) based on business value.
+   * <strong>Monitor all components of the workload to detect failures</strong> - Continuously monitor the health of workloads so that people and automated systems are aware of degradation or complete failure as soon as they occur. Monitor for key performance indicators (KPIs) based on business value.
 
    * <strong>Fail over to healthy resources</strong> - Ensure that if a resource failure occurs, that healthy resources can continue to serve requests. For location failures (such as Availability Zone or AWS Region) ensure you have systems in place to fail over to healthy resources in unimpaired locations.
 
    * <strong>Automate healing on all layers</strong> - Upon detection of a failure, use automated capabilities to perform actions to remediate.
 
-   * <strong>Use static stability to prevent bimodal behavior</strong> - Bimodal behavior is when your workload exhibits different behavior under normal and failure modes, for example, relying on launching new instances if an Availability Zone fails. You should instead build workloads that are statically stable and operate in only one mode. In this case, provision enough instances in each Availability Zone to handle the workload load if one AZ were removed and then use Elastic Load Balancing or Amazon Route 53 health checks to shift load away from the impaired instances.
+   * <strong>Use static stability to prevent bimodal behavior</strong> - Bimodal behavior is when a workload exhibits different behavior under normal and failure modes, for example, relying on launching new instances if an Availability Zone fails. You should instead build workloads that are statically stable and operate in only one mode. In this case, provision enough instances in each Availability Zone to handle the workload load if one AZ were removed and then use Elastic Load Balancing or Amazon Route 53 health checks to shift load away from the impaired instances.
 
    * <strong>Send notifications when events impact availability</strong> - Notifications are sent upon the detection of significant events, even if the issue caused by the event was automatically resolved.
 
@@ -644,9 +659,9 @@ Design principles for reliability:
 
    * <strong>Test scaling and performance requirements</strong> - This includes load testing to validate that the workload meets scaling and performance requirements.
 
-   * <strong>Test resiliency using chaos engineering</strong> - Run tests that inject failures regularly into pre-production and production environments. Hypothesize how your workload will react to the failure, then compare your hypothesis to the testing results and iterate if they do not match. Ensure that production testing does not impact users.
+   * <strong>Test resiliency using chaos engineering</strong> - Run tests that inject failures regularly into pre-production and production environments. Hypothesize how each workload will react to the failure, then compare hypothesis to the testing results and iterate if they do not match. Ensure that production testing does not impact users.
 
-   * <strong>Conduct game days regularly</strong> - Use game days to regularly exercise your failure procedures as close to production as possible (including in production environments) with the people who will be involved in actual failure scenarios. Game days enforce measures to ensure that production testing does not impact users.
+   * <strong>Conduct game days regularly</strong> - Use game days to regularly exercise failure procedures as close to production as possible (including in production environments) with the people who will be involved in actual failure scenarios. Game days enforce measures to ensure that production testing does not impact users.
 
 9. How do you plan for disaster recovery (DR)?
 
@@ -688,13 +703,22 @@ Processes and procedures to:
    * Evolve - Amazon Elasticsearch service
    <br /><br />
 
-Best practices: Monitoring and diagnostics
+Transcend challenges in traditional workplaces:
+   * Manual changes
+   * Batch changes
+   * Rarely run Game Days
+   * No time to learn from mistakes
+   * Stale documentation
+   <br /><br />
+
+Best practices: 
+   * Monitoring and diagnostics
 
 Design Principles for Operational Excellence:
 
-   * Perform operations as code
+   * Manual changes -> Perform operations as code
    * Annotate documentation (among code)
-   * Make frequent, small, reversible change
+   * Batch changes -> Make frequent, small, reversible change
    * Refine operations procedures frequently
    * Anticipate failure
    * Learn from all operational failures
@@ -702,23 +726,23 @@ Design Principles for Operational Excellence:
 
 <hr />
 
-1. How do you determine what your <strong>operational priorities</strong> are?
+1. How do you determine what <strong>operational priorities</strong> are?
 
-   * <strong>Evaluate external customer needs</strong> - Involve key stakeholders, including business, development, and operations teams, to determine where to focus efforts on external customer needs. This will ensure that you have a thorough understanding of the operations support that is required to achieve your desired business outcomes.
+   * <strong>Evaluate external customer needs</strong> - Involve key stakeholders, including business, development, and operations teams, to determine where to focus efforts on external customer needs. This will ensure that you have a thorough understanding of the operations support that is required to achieve desired business outcomes.
 
    * <strong>Evaluate internal customer needs</strong> - Involve key stakeholders, including business, development, and operations teams, when determining where to focus efforts on internal customer needs. This will ensure that you have a thorough understanding of the operations support that is required to achieve business outcomes.
 
-   * <strong>Evaluate governance requirements</strong> - Ensure that you are aware of guidelines or obligations defined by your organization that may mandate or emphasize specific focus. Evaluate internal factors, such as organization policy, standards, and requirements. Validate that you have mechanisms to identify changes to governance. If no governance requirements are identified, ensure that you have applied due diligence to this determination.
+   * <strong>Evaluate governance requirements</strong> - Ensure awareness of guidelines or obligations defined by organization that may mandate or emphasize specific focus. Evaluate internal factors, such as organization policy, standards, and requirements. Validate that you have mechanisms to identify changes to governance. If no governance requirements are identified, ensure that you have applied due diligence to this determination.
 
    * <strong>Evaluate compliance requirements</strong> - Evaluate external factors, such as regulatory compliance requirements and industry standards, to ensure that you are aware of guidelines or obligations that may mandate or emphasize specific focus. If no compliance requirements are identified, ensure that you apply due diligence to this determination.
 
    * <strong>Evaluate threat landscape</strong> - Evaluate threats to the business (for example, competition, business risk and liabilities, operational risks, and information security threats) and maintain current information in a risk registry. Include the impact of risks when determining where to focus efforts.
 
-   * <strong>Evaluate tradeoffs</strong> - Evaluate the impact of tradeoffs between competing interests or alternative approaches, to help make informed decisions when determining where to focus efforts or choosing a course of action. For example, accelerating speed to market for new features may be emphasized over cost optimization, or you may choose a relational database for non-relational data to simplify the effort to migrate a system, rather than migrating to a database optimized for your data type and updating your application.
+   * <strong>Evaluate tradeoffs</strong> - Evaluate the impact of tradeoffs between competing interests or alternative approaches, to help make informed decisions when determining where to focus efforts or choosing a course of action. For example, accelerating speed to market for new features may be emphasized over cost optimization, or you may choose a relational database for non-relational data to simplify the effort to migrate a system, rather than migrating to a database optimized by data type and updating application.
 
    * <strong>Manage benefits and risks</strong> - Manage benefits and risks to make informed decisions when determining where to focus efforts. For example, it may be beneficial to deploy a workload with unresolved issues so that significant new features can be made available to customers. It may be possible to mitigate associated risks, or it may become unacceptable to allow a risk to remain, in which case you will take action to address the risk.
 
-2. How do you structure your organization to support your business outcomes?
+2. How do you structure the organization to support business outcomes?
 
    The "Operating Model"
 
@@ -728,7 +752,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Operations activities have identified owners responsible for their performance</strong> - Understand who has responsibility to perform specific activities on defined workloads and why that responsibility exists. Understanding who has responsibility to perform activities informs who will conduct the activity, validate the result, and provide feedback to the owner of the activity.
 
-   * <strong>Team members know what they are responsible for</strong> - Understanding the responsibilities of your role and how you contribute to business outcomes informs the prioritization of your tasks and why your role is important. This enables team members to recognize needs and respond appropriately.
+   * <strong>Team members know what they are responsible for</strong> - Understanding the responsibilities of each role and how they contribute to business outcomes informs the prioritization of tasks and why each role is important. This enables team members to recognize needs and respond appropriately.
 
    * <strong>Mechanisms exist to identify responsibility and ownership</strong> - Where no individual or team is identified, there are defined escalation paths to someone with the authority to assign ownership or plan for that need to be addressed.
 
@@ -736,7 +760,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Responsibilities between teams are predefined or negotiated</strong> - There are defined or negotiated agreements between teams describing how they work with and support each other (for example, response times, service level objectives, or service level agreements). Understanding the impact of the teams’ work on business outcomes, and the outcomes of other teams and organizations, informs the prioritization of their tasks and enables them to respond appropriately.
 
-3. How does your <strong>organizational culture</strong> support your business outcomes?
+3. How does <strong>organizational culture</strong> support business outcomes?
 
    * <strong>Executive Sponsorship</strong> - Senior leadership clearly sets expectations for the organization and evaluates success. Senior leadership is the sponsor, advocate, and driver for the adoption of best practices and evolution of the organization
 
@@ -748,23 +772,23 @@ Design Principles for Operational Excellence:
 
    * <strong>Experimentation is encouraged</strong> - Experimentation accelerates learning and keeps team members interested and engaged. An undesired result is a successful experiment that has identified a path that will not lead to success. Team members are not punished for successful experiments with undesired results. Experimentation is required for innovation to happen and turn ideas into outcomes.
 
-   * <strong>Team members are enabled and encouraged to maintain and grow their skill sets</strong> - Teams must grow their skill sets to adopt new technologies, and to support changes in demand and responsibilities in support of your workloads. Growth of skills in new technologies is frequently a source of team member satisfaction and supports innovation. Support your team members’ pursuit and maintenance of industry certifications that validate and acknowledge their growing skills. Cross train to promote knowledge transfer and reduce the risk of significant impact when you lose skilled and experienced team members with institutional knowledge. Provide dedicated structured time for learning.
+   * <strong>Team members are enabled and encouraged to maintain and grow their skill sets</strong> - Teams must grow their skill sets to adopt new technologies, and to support changes in demand and responsibilities in support of workloads. Growth of skills in new technologies is frequently a source of team member satisfaction and supports innovation. Support team members’ pursuit and maintenance of industry certifications that validate and acknowledge their growing skills. Cross train to promote knowledge transfer and reduce the risk of significant impact when you lose skilled and experienced team members with institutional knowledge. Provide dedicated structured time for learning.
 
-   * <strong>Resource teams appropriately</strong> - Maintain team member capacity, and provide tools and resources, to support your workload needs. Overtasking team members increases the risk of incidents resulting from human error. Investments in tools and resources (for example, providing automation for frequently executed activities) can scale the effectiveness of your team, enabling them to support additional activities.
+   * <strong>Resource teams appropriately</strong> - Maintain team member capacity, and provide tools and resources, to support  workload needs. Overtasking team members increases the risk of incidents resulting from human error. Investments in tools and resources (for example, providing automation for frequently executed activities) can scale the effectiveness of the team, enabling them to support additional activities.
 
-   * <strong>Diverse opinions are encouraged and sought within and across teams</strong> - Leverage cross-organizational diversity to seek multiple unique perspectives. Use this perspective to increase innovation, challenge your assumptions, and reduce the risk of confirmation bias. Grow inclusion, diversity, and accessibility within your teams to gain beneficial perspectives.
+   * <strong>Diverse opinions are encouraged and sought within and across teams</strong> - Leverage cross-organizational diversity to seek multiple unique perspectives. Use this perspective to increase innovation, challenge assumptions, and reduce the risk of confirmation bias. Grow inclusion, diversity, and accessibility within teams to gain beneficial perspectives.
 
-4. How do you design your workload so that you can understand its state?
+4. How do you design workloads to understand its state?
 
-   * <strong>Implement application telemetry</strong> - Instrument your application code to emit information about its internal state, status, and achievement of business outcomes. For example, queue depth, error messages, and response times. Use this information to determine when a response is required.
+   * <strong>Implement application telemetry</strong> - Instrument  application code to emit information about its internal state, status, and achievement of business outcomes. For example, queue depth, error messages, and response times. Use this information to determine when a response is required.
 
-   * <strong>Implement and configure workload telemetry</strong> - Design and configure your workload to emit information about its internal state and current status. For example, API call volume, HTTP status codes, and scaling events. Use this information to help determine when a response is required.
+   * <strong>Implement and configure workload telemetry</strong> - Design and configure workloads to emit information about its internal state and current status. For example, API call volume, HTTP status codes, and scaling events. Use this information to help determine when a response is required.
 
-   * <strong>Implement user activity telemetry</strong> - Instrument your application code to emit information about user activity, for example, click streams, or started, abandoned, and completed transactions. Use this information to help understand how the application is used, patterns of usage, and to determine when a response is required.
+   * <strong>Implement user activity telemetry</strong> - Instrument  application code to emit information about user activity, for example, click streams, or started, abandoned, and completed transactions. Use this information to help understand how the application is used, patterns of usage, and to determine when a response is required.
 
-   * <strong>Implement dependency telemetry</strong> - Design and configure your workload to emit information about the status (for example, reachability or response time) of resources it depends on. Examples of external dependencies can include, external databases, DNS, and network connectivity. Use this information to determine when a response is required.
+   * <strong>Implement dependency telemetry</strong> - Design and configure workloads to emit information about the status (for example, reachability or response time) of resources it depends on. Examples of external dependencies can include, external databases, DNS, and network connectivity. Use this information to determine when a response is required.
 
-   * <strong>Implement transaction traceability</strong> - Implement your application code and configure your workload components to emit information about the flow of transactions across the workload. Use this information to determine when a response is required and to assist you in identifying the factors contributing to an issue.
+   * <strong>Implement transaction traceability</strong> - Implement  application code and configure workload components to emit information about the flow of transactions across the workload. Use this information to determine when a response is required and to assist you in identifying the factors contributing to an issue.
 
 5. How do you reduce defects, ease remediation, and improve flow into production?
 
@@ -782,7 +806,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Implement practices to improve code quality</strong> - Implement practices to improve code quality and minimize defects. For example, test-driven development, code reviews, and standards adoption.
 
-   * <strong>Use multiple environments</strong> - Use multiple environments to experiment, develop, and test your workload. Use increasing levels of controls as environments approach production to gain confidence your workload will operate as intended when deployed.
+   * <strong>Use multiple environments</strong> - Use multiple environments to experiment, develop, and test workloads. Use increasing levels of controls as environments approach production to gain confidence each workload will operate as intended when deployed.
 
    * <strong>Make frequent, small, reversible changes</strong> - Frequent, small, and reversible changes reduce the scope and impact of a change. This eases troubleshooting, enables faster remediation, and provides the option to roll back a change.
 
@@ -810,7 +834,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Ensure personnel capability</strong> - Have a mechanism to validate that you have the appropriate number of trained personnel to provide support for operational needs. Train personnel and adjust personnel capacity as necessary to maintain effective support.
 
-   * <strong>Ensure consistent review of operational readiness</strong> - Ensure you have a consistent review of your readiness to operate a workload. Reviews must include, at a minimum, the operational readiness of the teams and the workload, and security requirements. Implement review activities in code and trigger automated review in response to events where appropriate, to ensure consistency, speed of execution, and reduce errors caused by manual processes.
+   * <strong>Ensure consistent review of operational readiness</strong> - Ensure you have a consistent review of readiness to operate a workload. Reviews must include, at a minimum, the operational readiness of the teams and the workload, and security requirements. Implement review activities in code and trigger automated review in response to events where appropriate, to ensure consistency, speed of execution, and reduce errors caused by manual processes.
 
    * <strong>Use runbooks to perform procedures</strong> - Runbooks are documented procedures to achieve specific outcomes. Enable consistent and prompt responses to well-understood events by documenting procedures in runbooks. Implement runbooks as code and trigger the execution of runbooks in response to events where appropriate, to ensure consistency, speed responses, and reduce errors caused by manual processes.
 
@@ -818,7 +842,7 @@ Design Principles for Operational Excellence:
 
    * <strong>Make informed decisions to deploy systems and changes</strong> - Evaluate the capabilities of the team to support the workload and the workload's compliance with governance. Evaluate these against the benefits of deployment when determining whether to transition a system or change into production. Understand the benefits and risks to make informed decisions.
 
-8. How do you understand the health of your workload?
+8. How do you understand the health of each workload?
 
    * <strong>Identify key performance indicators (KPIs)</strong> based on desired business outcomes (for example, order rate, customer retention rate, and profit versus operating expense) and customer outcomes (for example, customer satisfaction). Evaluate KPIs to determine workload success.
 
@@ -834,14 +858,14 @@ Design Principles for Operational Excellence:
 
    * <strong>Alert when workload anomalies are detected</strong> - Raise an alert when workload anomalies are detected so that you can respond appropriately if necessary.
 
-   * <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of your workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   * <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of  workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
 
-9. How do you understand the health of your operations?
+9. How do you understand the health of operations?
 
    * <strong>Identify key performance indicators
  (KPIs) based on desired business (for example, new features delivered) and customer outcomes (for example, customer support cases). Evaluate KPIs to determine operations success.
 
-   * <strong>Define operations metrics</strong> to measure the achievement of KPIs (for example, successful deployments, and failed deployments). Define operations metrics to measure the health of operations activities (for example, mean time to detect an incident (MTTD), and mean time to recovery (MTTR) from an incident). Evaluate metrics to determine if operations are achieving desired outcomes, and to understand the health of your operations activities.
+   * <strong>Define operations metrics</strong> to measure the achievement of KPIs (for example, successful deployments, and failed deployments). Define operations metrics to measure the health of operations activities (for example, mean time to detect an incident (MTTD), and mean time to recovery (MTTR) from an incident). Evaluate metrics to determine if operations are achieving desired outcomes, and to understand the health of operations activities.
 
    * <strong>Collect and analyze operations metrics</strong> - Perform regular, proactive reviews of metrics to identify trends and determine where appropriate responses are needed.
 
@@ -853,19 +877,19 @@ Design Principles for Operational Excellence:
 
    * <strong>Alert when operations anomalies are detected</strong> so that you can respond appropriately if necessary.
 
-   * <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of your operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   * <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
 
 9. How do you manage workload and operations events?
 
-   * <strong>Use processes for event, incident, and problem management</strong> - Have processes to address observed events, events that require intervention (incidents), and events that require intervention and either recur or cannot currently be resolved (problems). Use these processes to mitigate the impact of these events on the business and your customers by ensuring timely and appropriate responses.
+   * <strong>Use processes for event, incident, and problem management</strong> - Have processes to address observed events, events that require intervention (incidents), and events that require intervention and either recur or cannot currently be resolved (problems). Use these processes to mitigate the impact of these events on the business and customers by ensuring timely and appropriate responses.
 
    * <strong>Have a process per alert</strong> - Have a well-defined response (runbook or playbook), with a specifically identified owner, for any event for which you raise an alert. This ensures effective and prompt responses to operations events and prevents actionable events from being obscured by less valuable notifications.
 
    * <strong>Prioritize operational events based on business impact</strong> - Ensure that when multiple events require intervention, those that are most significant to the business are addressed first. For example, impacts can include loss of life or injury, financial loss, or damage to reputation or trust.
 
-   * <strong>Define escalation paths</strong> - Define escalation paths in your runbooks and playbooks, including what triggers escalation, and procedures for escalation. Specifically identify owners for each action to ensure effective and prompt responses to operations events.
+   * <strong>Define escalation paths</strong> - Define escalation paths in runbooks and playbooks, including what triggers escalation, and procedures for escalation. Specifically identify owners for each action to ensure effective and prompt responses to operations events.
 
-   * <strong>Enable push notifications</strong> - Communicate directly with your users (for example, with email or SMS) when the services they use are impacted, and again when the services return to normal operating conditions, to enable users to take appropriate action.
+   * <strong>Enable push notifications</strong> - Communicate directly with users (for example, with email or SMS) when the services they use are impacted, and again when the services return to normal operating conditions, to enable users to take appropriate action.
 
    * <strong>Communicate status through dashboards</strong> - Provide dashboards tailored to their target audiences (for example, internal technical teams, leadership, and customers) to communicate the current operating status of the business and provide metrics of interest.
 
@@ -877,19 +901,19 @@ Design Principles for Operational Excellence:
 
    * <strong>Perform post-incident analysis</strong> - Review customer-impacting events, and identify the contributing factors and preventative actions. Use this information to develop mitigations to limit or prevent recurrence. Develop procedures for prompt and effective responses. Communicate contributing factors and corrective actions as appropriate, tailored to target audiences.
 
-   * <strong>Implement feedback loops</strong> - Include feedback loops in your procedures and workloads to help you identify issues and areas that need improvement.
+   * <strong>Implement feedback loops</strong> - Include feedback loops in procedures and workloads to help you identify issues and areas that need improvement.
 
-   * <strong>Perform Knowledge Management</strong> - Mechanisms exist for your team members to discover the information that they are looking for in a timely manner, access it, and identify that it’s current and complete. Mechanisms are present to identify needed content, content in need of refresh, and content that should be archived so that it’s no longer referenced.
+   * <strong>Perform Knowledge Management</strong> - Mechanisms exist for team members to discover the information that they are looking for in a timely manner, access it, and identify that it’s current and complete. Mechanisms are present to identify needed content, content in need of refresh, and content that should be archived so that it’s no longer referenced.
 
    * <strong>Define drivers for improvement</strong> - Identify drivers for improvement to help you evaluate and prioritize opportunities.
 
-   * <strong>Validate insights</strong> - Review your analysis results and responses with cross-functional teams and business owners. Use these reviews to establish common understanding, identify additional impacts, and determine courses of action. Adjust responses as appropriate.
+   * <strong>Validate insights</strong> - Review analysis results and responses with cross-functional teams and business owners. Use these reviews to establish common understanding, identify additional impacts, and determine courses of action. Adjust responses as appropriate.
 
    * <strong>Perform operations metrics reviews</strong> - Regularly perform retrospective analysis of operations metrics with cross-team participants from different areas of the business. Use these reviews to identify opportunities for improvement, potential courses of action, and to share lessons learned.
 
    * <strong>Document and share lessons learned</strong> from the execution of operations activities so that you can use them internally and across teams.
 
-   * <strong>Allocate time to make improvements</strong> - Dedicate time and resources within your processes to make continuous incremental improvements possible.
+   * <strong>Allocate time to make improvements</strong> - Dedicate time and resources within processes to make continuous incremental improvements possible.
 
 <hr />
 
@@ -937,55 +961,55 @@ Design principles for Performance Efficiency:
 
 1. How do you select the best performing architecture?
 
-   * <strong>Understand the available services and resources</strong> - Learn about and understand the wide range of services and resources available in the cloud. Identify the relevant services and configuration options for your workload, and understand how to achieve optimal performance.
+   * <strong>Understand the available services and resources</strong> - Learn about and understand the wide range of services and resources available in the cloud. Identify the relevant services and configuration options for each workload, and understand how to achieve optimal performance.
 
-   * <strong>Define a process for architectural choices</strong> - Use internal experience and knowledge of the cloud, or external resources such as published use cases, relevant documentation, or whitepapers to define a process to choose resources and services. You should define a process that encourages experimentation and benchmarking with the services that could be used in your workload.
+   * <strong>Define a process for architectural choices</strong> - Use internal experience and knowledge of the cloud, or external resources such as published use cases, relevant documentation, or whitepapers to define a process to choose resources and services. You should define a process that encourages experimentation and benchmarking with the services that could be used by workloads.
 
    * <strong>Factor cost requirements into decisions</strong> - Workloads often have cost requirements for operation. Use internal cost controls to select resource types and sizes based on predicted resource need.
 
-   * <strong>Use policies or reference architectures</strong> - Maximize performance and efficiency by evaluating internal policies and existing reference architectures and using your analysis to select services and configurations for your workload.
+   * <strong>Use policies or reference architectures</strong> - Maximize performance and efficiency by evaluating internal policies and existing reference architectures and using analysis to select services and configurations for each workload.
 
-   * <strong>Use guidance from your cloud provider or an appropriate partner</strong> - Use cloud company resources, such as solutions architects, professional services, or an appropriate partner to guide your decisions. These resources can help review and improve your architecture for optimal performance.
+   * <strong>Use guidance from cloud providers or partners</strong> - Use cloud company resources, such as solutions architects, professional services, or an appropriate partner to guide decisions. These resources can help review and improve the architecture for optimal performance.
 
    * <strong>Benchmark existing workloads</strong> - Benchmark the performance of an existing workload to understand how it performs on the cloud. Use the data collected from benchmarks to drive architectural decisions.
 
-   * <strong>Load test your workload</strong> - Deploy your latest workload architecture on the cloud using different resource types and sizes. Monitor the deployment to capture performance metrics that identify bottlenecks or excess capacity. Use this performance information to design or improve your architecture and resource selection.
+   * <strong>Load test workloads</strong> - Deploy the latest workload architecture on the cloud using different resource types and sizes. Monitor the deployment to capture performance metrics that identify bottlenecks or excess capacity. Use this performance information to design or improve architecture and resource selection.
 
-2. How do you select your compute solution?
+2. How do you select the compute solution?
 
-   * <strong>Evaluate the available compute options</strong> - Understand the performance characteristics of the compute-related options available to you. Know how instances, containers, and functions work, and what advantages, or disadvantages, they bring to your workload.
+   * <strong>Evaluate the available compute options</strong> - Understand the performance characteristics of the compute-related options available to you. Know how instances, containers, and functions work, and what advantages, or disadvantages, they bring to  workloads.
 
-   * <strong>Understand the available compute configuration options</strong> - Understand how various options complement your workload, and which configuration options are best for your system. Examples of these options include instance family, sizes, features (GPU, I/O), function sizes, container instances, and single versus multi-tenancy.
+   * <strong>Understand the available compute configuration options</strong> - Understand how various options complement workloads, and which configuration options are best for the system. Examples of these options include instance family, sizes, features (GPU, I/O), function sizes, container instances, and single versus multi-tenancy.
 
-   * <strong>Collect compute-related metrics</strong> - One of the best ways to understand how your compute systems are performing is to record and track the <strong>true utilization of various resources</strong>. This data can be used to make more accurate determinations about resource requirements.
+   * <strong>Collect compute-related metrics</strong> - One of the best ways to understand how compute systems are performing is to record and track the <strong>true utilization of various resources</strong>. This data can be used to make more accurate determinations about resource requirements.
 
-   * <strong>Determine the required configuration by right-sizing</strong> - Analyze the various <strong>performance characteristics</strong> of your workload and how these characteristics relate to memory, network, and CPU usage. Use this data to choose resources that best match your workload's profile. For example, a memory-intensive workload, such as a database, could be served best by the r-family of instances. However, a bursting workload can benefit more from an elastic container system.
+   * <strong>Determine the required configuration by right-sizing</strong> - Analyze the various <strong>performance characteristics</strong> of each workload and how these characteristics relate to memory, network, and CPU usage. Use this data to choose resources that best match each workload's profile. For example, a memory-intensive workload, such as a database, could be served best by the r-family of instances. However, a bursting workload can benefit more from an elastic container system.
 
-   * <strong>Use the available elasticity of resources</strong> - The cloud provides the flexibility to expand or reduce your resources dynamically through a variety of mechanisms to meet changes in demand. Combined with compute-related metrics, a workload can automatically respond to changes and utilize the optimal set of resources to achieve its goal.
+   * <strong>Use the available elasticity of resources</strong> - The cloud provides the flexibility to expand or reduce resources dynamically through a variety of mechanisms to meet changes in demand. Combined with compute-related metrics, a workload can automatically respond to changes and utilize the optimal set of resources to achieve its goal.
 
-   * <strong>Re-evaluate compute needs based on metrics</strong> - Use system-level metrics to identify the behavior and requirements of your workload over time. Evaluate your workload's needs by comparing the available resources with these requirements and make changes to your compute environment to best match your workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
+   * <strong>Re-evaluate compute needs based on metrics</strong> - Use system-level metrics to identify the behavior and requirements of  workloads over time. Evaluate workload needs by comparing the available resources with these requirements and make changes to  compute environment to best match each workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
 
-3. How do you select your storage solution?
+3. How do you select storage solutions?
 
-   * <strong>Understand storage characteristics and requirements</strong> - Understand the different characteristics (for example, shareable, file size, cache size, access patterns, latency, throughput, and persistence of data) that are required to select the services that best fit your workload, such as object storage, block storage, file storage, or instance storage.
+   * <strong>Understand storage characteristics and requirements</strong> - Understand the different characteristics (for example, shareable, file size, cache size, access patterns, latency, throughput, and persistence of data) that are required to select the services that best fit the workload, such as object storage, block storage, file storage, or instance storage.
 
-   * <strong>Evaluate available configuration options</strong> - Evaluate the various characteristics and configuration options and how they relate to storage. Understand where and how to use provisioned IOPS, SSDs, magnetic storage, object storage, archival storage, or ephemeral storage to optimize storage space and performance for your workload.
+   * <strong>Evaluate available configuration options</strong> - Evaluate the various characteristics and configuration options and how they relate to storage. Understand where and how to use provisioned IOPS, SSDs, magnetic storage, object storage, archival storage, or ephemeral storage to optimize storage space and performance for eadh workload.
 
-   * <strong>Make decisions based on access patterns and metrics</strong> - Choose storage systems based on your workload's access patterns and configure them by determining how the workload accesses data. Increase storage efficiency by choosing object storage over block storage. Configure the storage options you choose to match your data access patterns.
+   * <strong>Make decisions based on access patterns and metrics</strong> - Choose storage systems based on each workload's access patterns and configure them by determining how the workload accesses data. Increase storage efficiency by choosing object storage over block storage. Configure the storage options you choose to match  data access patterns.
 
-4. How do you select your database solution?
+4. How do you select database solutions?
 
-   * <strong>Understand data characteristics</strong> - Understand the different characteristics of data in your workload. Determine if the workload requires transactions, how it interacts with data, and what its performance demands are. Use this data to select the best performing database approach for your workload (for example, relational databases, NoSQL Key-value, document, wide column, graph, time series, or in-memory storage).
+   * <strong>Understand data characteristics</strong> - Understand the different characteristics of data in each workload. Determine if the workload requires transactions, how it interacts with data, and what its performance demands are. Use this data to select the best performing database approach for each workload (for example, relational databases, NoSQL Key-value, document, wide column, graph, time series, or in-memory storage).
 
-   * <strong>Evaluate the available options</strong> - Evaluate the services and storage options that are available as part of the selection process for your workload's storage mechanisms. Understand how, and when, to use a given service or system for data storage. Learn about available configuration options that can optimize database performance or efficiency, such as provisioned IOPs, memory and compute resources, and caching.
+   * <strong>Evaluate the available options</strong> - Evaluate the services and storage options that are available as part of the selection process for each workload's storage mechanisms. Understand how, and when, to use a given service or system for data storage. Learn about available configuration options that can optimize database performance or efficiency, such as provisioned IOPs, memory and compute resources, and caching.
 
-   * <strong>Collect and record database performance metrics</strong> - Use tools, libraries, and systems that record performance measurements related to database performance. For example, measure transactions per second, slow queries, or system latency introduced when accessing the database. Use this data to understand the performance of your database systems.
+   * <strong>Collect and record database performance metrics</strong> - Use tools, libraries, and systems that record performance measurements related to database performance. For example, measure transactions per second, slow queries, or system latency introduced when accessing the database. Use this data to understand the performance of database systems.
 
    * <strong>Choose data storage based on access patterns</strong> - Use the access patterns of the workload to decide which services and technologies to use. For example, utilize a relational database for workloads that require transactions, or a key-value store that provides higher throughput but is eventually consistent where applicable.
 
    * <strong>Optimize data storage based on access patterns and metrics</strong> - Use performance characteristics and access patterns that optimize how data is stored or queried to achieve the best possible performance. Measure how optimizations such as indexing, key distribution, data warehouse design, or caching strategies impact system performance or overall efficiency.
 
-5. How do you configure your networking solution?
+5. How do you configure networking solutions?
 
    * <strong>Understand how networking impacts performance</strong> - Analyze and understand how network-related decisions impact workload performance. For example, network latency often impacts the user experience, and using the wrong protocols can starve network capacity through excessive overhead.
 
@@ -993,23 +1017,23 @@ Design principles for Performance Efficiency:
 
    * <strong>Choose appropriately sized dedicated connectivity or VPN for hybrid workloads</strong> - When there is a requirement for on-premise communication, ensure that you have adequate bandwidth for workload performance. Based on bandwidth requirements, a single dedicated connection or a single VPN might not be enough, and you must enable traffic load balancing across multiple connections.
 
-   * <strong>Leverage load-balancing and encryption offloading</strong> - Distribute traffic across multiple resources or services to allow your workload to take advantage of the elasticity that the cloud provides. You can also use load balancing for offloading encryption termination to improve performance and to manage and route traffic effectively.
+   * <strong>Leverage load-balancing and encryption offloading</strong> - Distribute traffic across multiple resources or services to allow each workload to take advantage of the elasticity that the cloud provides. You can also use load balancing for offloading encryption termination to improve performance and to manage and route traffic effectively.
 
    * <strong>Choose network protocols to improve performance</strong> - Make decisions about protocols for communication between systems and networks based on the impact to the workload’s performance.
 
-   * <strong>Choose your workload’s location based on network requirements</strong> - Use the cloud location options available to reduce network latency or improve throughput. Utilize AWS Regions, Availability Zones, placement groups, and edge locations such as Outposts, Local Regions, and Wavelength, to reduce network latency or improve throughput.
+   * <strong>Choose each workload’s location based on network requirements</strong> - Use the cloud location options available to reduce network latency or improve throughput. Utilize AWS Regions, Availability Zones, placement groups, and edge locations such as Outposts, Local Regions, and Wavelength, to reduce network latency or improve throughput.
 
-   * <strong>Optimize network configuration based on metrics</strong> - Use collected and analyzed data to make informed decisions about optimizing your network configuration. Measure the impact of those changes and use the impact measurements to make future decisions.
+   * <strong>Optimize network configuration based on metrics</strong> - Use collected and analyzed data to make informed decisions about optimizing network configuration. Measure the impact of those changes and use the impact measurements to make future decisions.
 
-6. How do you evolve your workload to take advantage of new releases?
+6. How do you evolve each workload to take advantage of new releases?
 
    * <strong>Stay up-to-date on new resources and services</strong> - Evaluate ways to improve performance as new services, design patterns, and product offerings become available. Determine which of these could improve performance or increase the efficiency of the workload through ad-hoc evaluation, internal discussion, or external analysis.
 
-   * <strong>Define a process to improve workload performance</strong> - Evaluate new services, design patterns, resource types, and configurations as they become available. For example, run existing performance tests on new instance offerings to determine their potential to improve your workload.
+   * <strong>Define a process to improve workload performance</strong> - Evaluate new services, design patterns, resource types, and configurations as they become available. For example, run existing performance tests on new instance offerings to determine their potential to improve the workload.
 
    * <strong>Evolve workload performance over time</strong> - As an organization, use the information gathered through the evaluation process to actively drive adoption of new services or resources when they become available.
 
-7. How do you monitor your resources to ensure they are performing?
+7. How do you monitor resources to ensure they are performing?
 
    * <strong>Record performance-related metrics</strong> - Use a monitoring and observability service to record performance-related metrics. For example, record database transactions, slow queries, I/O latency, HTTP request throughput, service latency, or other key data.
 
@@ -1025,13 +1049,13 @@ Design principles for Performance Efficiency:
 
 8. How do you use tradeoffs to improve performance?
 
-   * <strong>Understand the areas where performance is most critical</strong> - Understand and identify areas where increasing the performance of your workload will have a positive impact on efficiency or customer experience. For example, a website that has a large amount of customer interaction can benefit from using edge services to move content delivery closer to customers.
+   * <strong>Understand the areas where performance is most critical</strong> - Understand and identify areas where increasing the performance of the workload will have a positive impact on efficiency or customer experience. For example, a website that has a large amount of customer interaction can benefit from using edge services to move content delivery closer to customers.
 
    * <strong>Learn about design patterns and services</strong> - Research and understand the various design patterns and services that help improve workload performance. As part of the analysis, identify what you could trade to achieve higher performance. For example, using a cache service can help to reduce the load placed on database systems; however, it requires some engineering to implement safe caching or possible introduction of eventual consistency in some areas.
 
    * <strong>Identify how tradeoffs impact customers and efficiency</strong> - When evaluating performance-related improvements, determine which choices will impact customers and workload efficiency. For example, if using a key-value data store increases system performance, it is important to evaluate how the eventually consistent nature of it will impact customers.
 
-   * <strong>Measure the impact of performance improvements</strong> - As changes are made to improve performance, evaluate the collected metrics and data. Use this information to determine impact that the performance improvement had on the workload, the workload’s components, and your customers. This measurement helps you understand the improvements that result from the tradeoff, and helps you determine if any negative side-effects were introduced.
+   * <strong>Measure the impact of performance improvements</strong> - As changes are made to improve performance, evaluate the collected metrics and data. Use this information to determine impact that the performance improvement had on the workload, the workload’s components, and customers. This measurement helps you understand the improvements that result from the tradeoff, and helps you determine if any negative side-effects were introduced.
 
    * <strong>Use various performance-related strategies</strong> - Where applicable, utilize multiple strategies to improve performance. For example, using strategies like caching data to prevent excessive network or database calls, using read-replicas for database engines to improve read rates, sharding or compressing data where possible to reduce data volumes, and buffering and streaming of results as they are available to avoid blocking.
 
@@ -1078,9 +1102,9 @@ Questions:
    <a target="_blank" href="https://wa.aws.amazon.com/wat.question.COST_1.en.html">
    Best practices and Improvement Plan items</a>:
 
-   * <strong>Establish a cost optimization function</strong> - Create a team that is responsible for establishing and maintaining cost awareness across your organization. The team requires people from finance, technology, and business roles across the organization.
+   * <strong>Establish a cost optimization function</strong> - Create a team that is responsible for establishing and maintaining cost awareness across the organization. The team requires people from finance, technology, and business roles across the organization.
 
-   * <strong>Establish a partnership between finance and technology</strong> - Involve finance and technology teams in cost and usage discussions at all stages of your cloud journey. Teams regularly meet and discuss topics such as organizational goals and targets, current state of cost and usage, and financial and accounting practices.
+   * <strong>Establish a partnership between finance and technology</strong> - Involve finance and technology teams in cost and usage discussions at all stages of the cloud journey. Teams regularly meet and discuss topics such as organizational goals and targets, current state of cost and usage, and financial and accounting practices.
 
    * <strong>Establish cloud budgets and forecasts</strong> - Adjust existing organizational budgeting and forecasting processes to be compatible with the highly variable nature of cloud costs and usage. Processes must be dynamic using trend based or business driver-based algorithms, or a combination.
 
@@ -1088,19 +1112,19 @@ Questions:
 
    * <strong>Report and notify on cost optimization</strong> - Configure AWS Budgets to provide notifications on cost and usage against targets. Have regular meetings to analyze this workload’s cost efficiency and to promote cost aware culture.
 
-   * <strong>Monitor cost proactively</strong> - Implement tooling and dashboards to monitor cost proactively for the workload. Do not just look at costs and categories when you receive notifications. This helps to identify positive trends and promote them throughout your organization.
+   * <strong>Monitor cost proactively</strong> - Implement tooling and dashboards to monitor cost proactively for the workload. Do not just look at costs and categories when you receive notifications. This helps to identify positive trends and promote them throughout the organization.
 
    * <strong>Keep up to date with new service releases</strong> - Consult regularly with experts or APN Partners to consider which services and features provide lower cost. Review AWS blogs and other information sources.
 
 2. How do you govern usage?
 
-   * <strong>Develop policies based on your organization requirements</strong> - Develop policies that define how resources are managed by your organization. Policies should cover cost aspects of resources and workloads, including creation, modification and decommission over the resource lifetime.
+   * <strong>Develop policies based on organization requirements</strong> - Develop policies that define how resources are managed by the organization. Policies should cover cost aspects of resources and workloads, including creation, modification and decommission over the resource lifetime.
 
-   * <strong>Implement both cost and usage goals for your workload</strong> - Goals provide direction to your organization on cost and usage, and targets provide measurable outcomes for your workloads.
+   * <strong>Implement both cost and usage goals for each workload</strong> - Goals provide direction to the organization on cost and usage, and targets provide measurable outcomes for each workload.
 
-   * <strong>Implement an account structure</strong> that maps to your organization. This assists in allocating and managing costs throughout your organization.
+   * <strong>Implement an account structure</strong> that maps to the organization. This assists in allocating and managing costs throughout the organization.
 
-   * <strong>Implement groups and roles</strong> that align to your policies and control who can create, modify, or decommission instances and resources in each group. For example, implement development, test, and production groups. This applies to AWS services and third-party solutions.
+   * <strong>Implement groups and roles</strong> that align to policies and control who can create, modify, or decommission instances and resources in each group. For example, implement development, test, and production groups. This applies to AWS services and third-party solutions.
 
    * <strong>Implement cost controls</strong> based on organization policies and defined groups and roles. These ensure that costs are only incurred as defined by organization requirements: for example, control access to regions or resource types with IAM policies.
 
@@ -1108,13 +1132,13 @@ Questions:
 
 3. How do you monitor usage and cost?
 
-   * <strong>Configure detailed information sources</strong> - Configure the AWS Cost and Usage Report, and Cost Explorer hourly granularity, to provide detailed cost and usage information. Configure your workload to have log entries for every delivered business outcome.
+   * <strong>Configure detailed information sources</strong> - Configure the AWS Cost and Usage Report, and Cost Explorer hourly granularity, to provide detailed cost and usage information. Configure workloads to have log entries for every delivered business outcome.
 
-   * <strong>Identify cost attribution categories</strong> that could be used to allocate cost within your organization.
+   * <strong>Identify cost attribution categories</strong> that could be used to allocate cost within the organization.
 
    * <strong>Establish organization metrics</strong> required for each workload. Example metrics of a workload are customer reports produced or web pages served to customers.
 
-   * <strong>Configure billing and cost management tools</strong> - Configure AWS Cost Explorer and AWS Budgets inline with your organization policies.
+   * <strong>Configure billing and cost management tools</strong> - Configure AWS Cost Explorer and AWS Budgets inline with organization policies.
 
    * <strong>Add organization information to cost and usage</strong> - Define a tagging schema based on organization, and workload attributes, and cost allocation categories. 
 
@@ -1169,7 +1193,7 @@ Questions:
 
    * <strong>Implement regions based on cost</strong> - Resource pricing can be different in each region. Factoring in region cost ensures you pay the lowest overall price for this workload
 
-   * <strong>Select third party agreements with cost efficient terms</strong> to ensure the cost of these services scales with the benefits they provide. Select agreements and pricing that scale when they provide additional benefits to your organization.
+   * <strong>Select third party agreements with cost efficient terms</strong> to ensure the cost of these services scales with the benefits they provide. Select agreements and pricing that scale when they provide additional benefits to the organization.
 
    * <strong>Implement pricing models for all components of this workload</strong> - Permanently running resources should utilize reserved capacity such as Savings Plans or reserved Instances. Short term capacity is configured to use Spot Instances, or Spot Fleet. On demand is only used for short-term workloads that cannot be interrupted and do not run long enough for reserved capacity, between 25% to 75% of the period, depending on the resource type.
 
@@ -1185,11 +1209,11 @@ Questions:
 
 9. How do you manage demand, and supply resources?
 
-   For a workload that has balanced spend and performance, ensure that everything you pay for is used and avoid significantly underutilizing instances. A skewed utilization metric in either direction has an adverse impact on your organization, in either operational costs (degraded perform
+   For a workload that has balanced spend and performance, ensure that everything you pay for is used and avoid significantly underutilizing instances. A skewed utilization metric in either direction has an adverse impact on the organization, in either operational costs (degraded perform
 
    * <strong>Perform an analysis on the workload demand</strong> over time. Ensure the analysis covers seasonal trends and accurately represents operating conditions over the full workload lifetime. Analysis effort should reflect potential benefit: for example, time spent is proportional to the workload cost.
 
-   * <strong>Implement a buffer or throttle to manage demand</strong> - Buffering and throttling modify the demand on your workload, smoothing out any peaks. Implement throttling when your clients perform retries. Implement buffering to store the request and defer processing until a later time. Ensure your throttles and buffers are designed so clients receive a response in the required time.
+   * <strong>Implement a buffer or throttle to manage demand</strong> - Buffering and throttling modify the demand on each workload, smoothing out any peaks. Implement throttling when clients perform retries. Implement buffering to store the request and defer processing until a later time. Ensure throttles and buffers are designed so clients receive a response in the required time.
 
    * <strong>Supply resources dynamically</strong> - Resources are provisioned in a planned manner. This can be demand-based, such as through automatic scaling, or time-based, where demand is predictable and resources are provided based on time. These methods result in the least amount of over or under provisioning.
    
@@ -1197,7 +1221,7 @@ Questions:
 
 9. How do you evaluate new services?
 
-   As AWS releases new services and features, it’s a best practice to review your existing architectural decisions to ensure they continue to be the most cost effective.
+   As AWS releases new services and features, it’s a best practice to review existing architectural decisions to ensure they continue to be the most cost effective.
 
    * <strong>Develop a workload review process</strong> that defines the criteria and process for workload review. The review effort should reflect potential benefit: for example, core workloads or workloads with a value of over 10% of the bill are reviewed quarterly, while workloads below 10% are reviewed annually.
 
@@ -1221,7 +1245,7 @@ Questions lead to these goals/focus areas (and the services used to get there):
 
 AWS Design Principles for cost optimization:
 
-* <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Implement cloud financial management</a>: To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. Your organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to your Security or Operations capability, you need to build capability through knowledge building, programs, resources, and processes to help you become a cost efficient organization.
+* <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Implement cloud financial management</a>: To achieve financial success and accelerate business value realization in the cloud, you must invest in Cloud Financial Management. The organization must dedicate the necessary time and resources for building capability in this new domain of technology and usage management. Similar to Security or Operations capability, build capability through knowledge building, programs, resources, and processes to help you become a cost efficient organization.
 
    * Functional Ownership
    * Finance and Technology Partnership
@@ -1237,7 +1261,7 @@ Others:
 
    * <a target="_blank" href="">Measure overall efficiency</a>: Measure the business output of the workload and the costs associated with delivery. Use this data to understand the gains you make from increasing output, increasing functionality, and reducing cost.
 
-   * <a target="_blank" href="">Stop spending money on undifferentiated "heavy lifting"</a> of data center operations like racking, stacking, and powering servers. AWS also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on your customers and business projects rather than on IT infrastructure.
+   * <a target="_blank" href="">Stop spending money on undifferentiated "heavy lifting"</a> of data center operations like racking, stacking, and powering servers. AWS also removes the operational burden of managing operating systems and applications with managed services. This allows you to focus on customers and business projects rather than on IT infrastructure.
 
    * <a target="_blank" href="">Analyze and attribute expenditure</a>: The cloud makes it easier to accurately identify the cost and usage of workloads, which then allows transparent attribution of IT costs to revenue streams and individual workload owners. This helps measure return on investment (ROI) and gives workload owners an opportunity to optimize their resources and reduce costs.
 
@@ -1274,7 +1298,7 @@ Tasks:
 
 <a target="_blank" href="https://cloudacademy.com/learning-paths/aws-cost-management-and-optimization-3567/">7 hr video course "AWS FinOps: Cost Management & Optimization"</a> by Oliver Gehrmann identified these strategies for cost optimization:
 
-   * Right-sizing your instances
+   * Right-sizing instances
    * Increase elasticitiy
    * Pick the right pricing model
    * Match usage to Storage costs
