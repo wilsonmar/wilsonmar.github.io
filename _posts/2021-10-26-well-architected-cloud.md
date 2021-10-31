@@ -17,7 +17,7 @@ comments: true
 
 This aims to be a suscint yet deep dive about the "mind sets" needed by IT teams in the cloud.
 
-Like ITIL, SAFe, FedRamp, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and best practices, but specifically for successfully working in the public cloud.
+Like ITIL, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and "best practices", but specifically for successfully working in the public cloud.
 
 ## Why?
 
@@ -26,7 +26,7 @@ Like ITIL, SAFe, FedRamp, etc., the "Well-Architected" (WA) Framework provides <
    * Improve the quality of workloads
    * Build and deploy faster
    * Lower or mitigated risks
-   * Make informed decisions
+   * Make more informed decisions
    * Learn best practices
    <br /><br />
 
@@ -78,7 +78,7 @@ The five pillars are listed below in <strong>default priority</strong>.
 
 <em>Click each pillar name to go contents about that pillar. (Note that "you" and "your" have been removed from text by AWS):</em>
 
-One memonic to make the 5 easier to remember is "CROPS".
+PROTIP: One memonic to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" category.
 
@@ -102,16 +102,16 @@ ACTIVITY 1 - Have each member of your team prioritize, then compare as a team.
 
 ## WA Assessment Tools
 
-Both Azure and AWS have one.
+Both Microsoft Azure and Amazon AWS have a WA assessement tool.
+
+But Microsoft's tool comes up with recommendations automatically based on what has been configured in its Azure cloud.
 
 ### Microsoft Azure Advisor
 
-Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-overview">Advisor</a> under its Azure Monitoring and Management menu pane presents a handy dashboard to display <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/azure-advisor-score">scores</a> calculated daily:
+Microsoft's <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-overview">Advisor tool</a> under its "Azure Monitoring and Management" menu pane presents a dashboard to display <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/azure-advisor-score">scores</a> calculated daily:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/139440387-2a34a7a7-121e-479f-8760-c64654866c17.png">
 <img width="967" alt="ws-azure-advisor-dashboard-1934x1282" src="https://user-images.githubusercontent.com/300046/139440387-2a34a7a7-121e-479f-8760-c64654866c17.png"></a>
-
-Scores are based on Advisor's Recommendations:
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations">Security recommendations</a>
 
@@ -124,13 +124,16 @@ Scores are based on Advisor's Recommendations:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-cost-recommendations">Cost recommendations</a> includes "Potential yearly savings" specific to each impacted resource:<br /><a taget="_blank" href="https://user-images.githubusercontent.com/300046/139529616-c8a45f35-23db-45a4-b1ee-3027bb9fa139.png">
    <img alt="wa-azure-cost-1802x260" src="https://user-images.githubusercontent.com/300046/139529616-c8a45f35-23db-45a4-b1ee-3027bb9fa139.png"></a>
 
-
-
 Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/advisor/advisor-get-started">automatically identifies</a> low-utilization virtual machines when: 
    * Average CPU utilization is 5% or less (configurable to 5%, 10%, 15%, or 20%)
    * network utilization is less than 2% 
    * current workload can be accommodated by a smaller virtual machine size.
    <br /><br />
+
+
+### AWS partner dashbird.io
+
+Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (for $79/mo. after 14 day trial) continuously runs multiple best practice checks against serverless workloads, to provide actionable advice on how to improve the applications in alignment with Well-Architected best practices.
 
 
 ### AWS WA Assessment Tool
@@ -141,7 +144,7 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
    * <a target="_blank" href="https://www.youtube.com/watch?v=yb9CH3UbMbw" title="Oct 14, 2019">VIDEO: Are You Well-Architected?</a> by AWS.
    <br /><br />
 
-1. Get AWS credentials.
+1. Get credentials to sign into AWS GUI console and <a target="_blank" href="htts://wilsonmar.github.io/aws-cli/">AWS CLI</a>.
 
 2. In a browser, go to the (free) AWS WA Tool (introduced 2018) provides a set of questions (context) and best practices:
 
@@ -162,7 +165,7 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 
    ### Lens
 
-6. If applicable, select a <strong>lens</strong> (listed alphabetically here). Each lens defines additional terms, processes, etc.:
+6. If applicable, select a <strong>lens</strong> (listed alphabetically here) to reveal additional terms, processes, etc.:
 
    * Analytics: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/analytics-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Analytics-Lens-AWS-Well-Architected-Framework-ebook/dp/B088YVNGP7/" title="May 19, 2020">95 pages on Kindle (mobile) app</a>. The AWS Analytics Lens consists of these layers:
 
@@ -210,18 +213,19 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 
    ### Phases in AWS WA Machine Learning Lens
    
-   The Machine Learning Lens defines these lifecycle phases:
+   The Machine Learning Lens breaks down process phases in this Lifecycle architecture diagram:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png">
    <img alt="well-architected-ml-lifecycle-phases-977x124" src="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png"></a>
 
-   * Business goal identification lifecycle phase
-   * ML problem framing lifecycle phase
-   * Lifecycle architecture diagram
-   * Data processing lifecycle phase
-   * Model development lifecycle phase
-   * Deployment lifecycle phase
-   * Monitoring lifecycle phase
+   Lifecycle phases:
+
+   1. Business goal identification
+   2. ML problem framing
+   3. Data processing (Prepare and Process Data Features)
+   4. Model development (Train, Tune, Evaluate)
+   5. Deployment
+   6. Monitoring
    <br /><br />
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
@@ -230,63 +234,38 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 https://mikerodionov.com/tag/aws-whitepapers/
 
 
-## AWS Well-Architected Labs
-
-My notes for each pillar are annotated with deep links to hands-on instructions at<br />
-<a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a> 
-
-<a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> (hands-on)
-
-
-## AWS Cost, Usage, Billing
-
-<a target="_blank" href="https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html">Docs</a>: 
-<a target="_blank" href="https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/">
-AWS Cost & Usage Report (AWS CUR)</a> contains the most comprehensive set of cost and usage data available.
-
-NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calculator at https://calculator.aws/#</a> is used to estimate costs for specific architectures. Different server types have different costs. The same services in different regions have different prices. Transfer of data between different regions incur charges.
-
-AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3) bucket.
-
-1. REMEMBER: Click your name at the top bar for the menu to select "My Billing Dashboard":
-
-   "Cost Management" consists of:
-   
-   * Cost Explorer
-   * Budgets
-   * Budgets Reports
-   * Saving Plans
-   * Cost & Usage Reports
-   * Cost Categories
-   * Cost allocation tags
-   <br /><br />
-
-   "Billing" consists of:
-   * Billing
-   * Orders and invoices
-   * Credits
-   * Purchase orders
-   <br /><br />
-
-   In "AWS Cost Management":
-
-1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
-  
-1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
-
-### Apptio CloudAbility
-
 <hr />
 
-## Training
+## Training on WA
 
-AWS provides in-depth training on the Well-Architected Framework to partners to help companies implement best practices, measure the state of your workloads, and make improvements where assistance is required.
+<a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
+Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
+
+
+### AWS Well-Architected Labs
+
+My notes for each pillar are annotated with deep links to hands-on instructions at<br />
+<a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a><br />
+which makes use of versioned code at<br />
+<a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a>
+
+AWS at <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> provide in-depth training on the Well-Architected Framework to partners to help companies implement best practices, measure the state of your workloads, and make improvements where assistance is required.
 
 <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/2045/AWS%2520Well-Architected">
 The AWS Skillbuilder video course</a> is rather verbose, but provides knowledge checks (quizzes).
 
-<a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
-Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
+ACTIVITY: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> using <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a> (Amazon Cloud Formation template). 
+
+It is a "JAM" stack app where JavaScript in each user's browser sends and receives data from a public backend API built using Lambda and API Gateway.
+
+   * <a target="_blank" href="https://aws.amazon.com/cloud9/">Amazon Cloud9 IDE</a> in the cloud
+   
+   * Amazon Cognito provides user management and authentication functions to secure the backend API
+   * AWS Amplify hosts the static website with CI/CD build-in 
+   * Amazon API Gateway provides a persistence layer where data can be stored by the API’s Lambda function
+   * AWS Lambda to process requests
+   * Amazon DynamoDB provides a persistence layer where data can be stored by the API’s Lambda function.
+   <br /><br />
 
 ### General Design Principles
 
@@ -309,7 +288,7 @@ AWS published these General Design Principles:
 
 <a name="Sec"></a>
 
-## Security
+## Security pillar
 
 <img align="right" width="99" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
@@ -487,7 +466,7 @@ Automate identification and classification</strong> of data to reduce the risk o
 
 <a name="Reliability"></a>
 
-## Reliability
+## Reliability pillar
 
 <img align="right" width="99" alt="well-architected-RELI-152x170.png" src="https://user-images.githubusercontent.com/300046/139144457-0397ca9f-4964-42d7-aac0-33b98ac2e811.png">
    * https://wa.aws.amazon.com/wat.pillar.reliability.en.html
@@ -684,7 +663,7 @@ Best Practices:
 
 <a name="Ops"></a>
 
-## Operational Excellence
+## Operational Excellence pillar
 
 <img align="right" width="99" alt="well-architected-OPS-gold-141x117.png" src="https://user-images.githubusercontent.com/300046/139143665-5b1440ae-ece2-4d67-9b33-f898bdc02156.png">
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
@@ -919,7 +898,7 @@ Design Principles for Operational Excellence:
 
 <a name="Perf"></a>
 
-## Performance Efficiency
+## Performance Efficiency pillar
 
 <img align="right" width="99" alt="PERF-gold-202x136.png" src="https://user-images.githubusercontent.com/300046/139144826-4862f00e-a754-4446-9e73-8f37248d03b6.png">
    * https://wa.aws.amazon.com/wat.pillar.performance.en.html
@@ -1063,7 +1042,7 @@ Design principles for Performance Efficiency:
 
 <a name="Cost"></a>
 
-## Cost Optimization
+## Cost Optimization pillar
 
 <img align="right" width="99" alt="well-architected-COST-gold-111x123" src="https://user-images.githubusercontent.com/300046/139145830-e653de04-a8db-4455-a16a-519fd18a46c3.png">
    * <a target="_blank" href="https://wa.aws.amazon.com/wat.pillar.costOptimization.en.html">Summary</a>
@@ -1303,9 +1282,45 @@ Tasks:
    * Pick the right pricing model
    * Match usage to Storage costs
 
+## AWS Cost, Usage, Billing
+
+<a target="_blank" href="https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html">Docs</a>: 
+<a target="_blank" href="https://aws.amazon.com/aws-cost-management/aws-cost-and-usage-reporting/">
+AWS Cost & Usage Report (AWS CUR)</a> contains the most comprehensive set of cost and usage data available.
+
+NOTE: The <a target="_blank" href="https://calculator.aws/#/">AWS Pricing Calculator at https://calculator.aws/#</a> is used to estimate costs for specific architectures. Different server types have different costs. The same services in different regions have different prices. Transfer of data between different regions incur charges.
+
+AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3) bucket.
+
+1. REMEMBER: Click your name at the top bar for the menu to select "My Billing Dashboard":
+
+   "Cost Management" consists of:
+   
+   * Cost Explorer
+   * Budgets
+   * Budgets Reports
+   * Saving Plans
+   * Cost & Usage Reports
+   * Cost Categories
+   * Cost allocation tags
+   <br /><br />
+
+   "Billing" consists of:
+   * Billing
+   * Orders and invoices
+   * Credits
+   * Purchase orders
+   <br /><br />
+
+   In "AWS Cost Management":
+
+1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
+  
+1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
+
+### Apptio CloudAbility
 
 <hr />
-
 
 ## References
 
