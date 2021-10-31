@@ -97,7 +97,11 @@ ACTIVITY 1 - Have each member of your team prioritize, then compare as a team.
 
    The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships.
 
-   <em>TODO: There are others ...</em>
+   <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.runbook.en.html">Runbooks</a> are predefined procedures containing the minimum information necessary to successfully perform the procedure.
+
+   <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.playbook.en.html">Playbooks</a> document the investigation process - the predefined steps to gathering applicable information, identifying potential sources of failure, isolating faults, or determining the root cause of issues.
+
+   <a target="_blank" href="https://wa.aws.amazon.com/wat.concepts.wa-concepts.en.html">Other AWS concepts</a>
 
 
 ## WA Assessment Tools
@@ -673,9 +677,9 @@ Best Practices:
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">AWS Well-Architected Labs for Operational Excellence</a>
-      * Inventory and Patch Management
-      * Dependency Monitoring
-      * Automating operations with Playbooks and Runbooks
+      * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">Inventory and Patch Management
+      * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/100_labs/100_dependency_monitoring/">Dependency Monitoring</a>
+      * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/">Automating operations with Playbooks and Runbooks</a>
       <br /><br />
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/devops/">Microsoft Operational excellence Documentation</a>
