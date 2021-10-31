@@ -254,9 +254,9 @@ AWS at <a target="_blank" href="https://aws.amazon.com/partners/programs/well-ar
 <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/2045/AWS%2520Well-Architected">
 The AWS Skillbuilder video course</a> is rather verbose, but provides knowledge checks (quizzes).
 
-ACTIVITY: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> using <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a> (Amazon Cloud Formation template). 
+ACTIVITY: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> from an Amazon Cloud Formation template. 
 
-It is a "JAM" stack app where JavaScript in each user's browser sends and receives data from a public backend API built using Lambda and API Gateway.
+It is a "JAM" stack app where JavaScript in each user's browser interacts with a public API Gateway to a backend API built using Lambda.
 
    * <a target="_blank" href="https://aws.amazon.com/cloud9/">Amazon Cloud9 IDE</a> in the cloud
    
@@ -266,6 +266,10 @@ It is a "JAM" stack app where JavaScript in each user's browser sends and receiv
    * AWS Lambda to process requests
    * Amazon DynamoDB provides a persistence layer where data can be stored by the API’s Lambda function.
    <br /><br />
+
+STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below:
+Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
+
 
 ### General Design Principles
 
@@ -669,6 +673,10 @@ Best Practices:
    * https://wa.aws.amazon.com/wat.pillar.operationalExcellence.en.html
    * <a target="_blank" href="https://www.amazon.com/Operational-Excellence-Pillar-Well-Architected-Whitepaper-ebook/dp/B08CF4T3GW/" title="July 5, 2020">54 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/">AWS Well-Architected Labs for Operational Excellence</a>
+      * Inventory and Patch Management
+      * Dependency Monitoring
+      * Automating operations with Playbooks and Runbooks
+      <br /><br />
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/devops/">Microsoft Operational excellence Documentation</a>
 
