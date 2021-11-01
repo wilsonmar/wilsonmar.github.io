@@ -3,7 +3,7 @@ layout: post
 title: "AWS DevOps (CodeCommit, CodeBuild, CodePipeline, CodeDeploy)"
 excerpt: "Get certified in Developer Operations on AWS"
 tags: [AWS, EC2, cloud, on-boarding]
-date: "2016-07-03"
+date: "2021-10-13"
 file: "aws-devops"
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://wilsonmar.github.io/aws-devops/">This tutorial</a> contains my notes on getting certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
+<a target="_blank" href="https://wilsonmar.github.io/aws-devops/">This tutorial</a> contains my notes about getting certified as a <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">
 AWS Certified DevOps Engineer - Professional</a> -- able to setup and manage continuous integration and deployment in the AWS cloud -- after paying $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
 Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost), and only 3 times in a 12 month period.
 
@@ -25,6 +25,16 @@ The previous pre-requisite is passing either one:
 * https://aws.amazon.com/certification/certified-developer-associate/
 
 ## References
+
+   * <a target="_blank" href="https://github.com/awslabs/aws-devops-essential">
+   AWS DevOps Essentials</a>
+   <br /><br />
+
+<a target="_blank" href="https://amzn.to/306ZtBu">
+Building a CI/CD Pipeline</a>
+
+<a target="_blank" href="https://docs.aws.amazon.com/artifact/">
+AWS Artifact</a> competes with DockerHub, JFrog Artifactory, etc. to hold Docker containers and other artifacts built for loadeding into Kubernetes and other run-time systems.
 
 From <a target="_blank" href="https://www.youtube.com/user/AmazonWebServices/playlists">AWS YouTube playlist</a>:
 
@@ -48,15 +58,6 @@ https://aws.amazon.com/documentation/
 
    * https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
 
-User Guides from Amazon:
-
-   * <a target="_blank" href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide
-   * <a target="_blank" href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>
-   * <a target="_blank" href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>
-   * <a target="_blank" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">AWS CodeDeploy User Guide</a>
-   * <a target="_blank" href="https://github.com/awslabs/aws-devops-essential">
-   AWS DevOps Essentials</a>
-
 * <a target="_blank" href="https://acloud.guru/learn/aws-certified-devops-engineer-professional">AWS Certified DevOps Engineer - Professional 6-hour video</a> by Nick Triantafillou covers:
 
    * Core Concepts
@@ -70,7 +71,7 @@ https://wilsonmar.github.io/build-load-balanced-servers-in-AWS-EC2/
 
 <a target="_blank" href="https://aws.amazon.com/getting-started/projects/set-up-ci-cd-pipeline/">Projects on AWS: Set Up a CI/CD Pipeline on AWS</a>
 
-https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials.html
+From https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials.html
 
 A pipeline helps you automate steps in your software delivery process, such as initiating automatic builds and then deploying to Amazon EC2 instances. You will use AWS CodePipeline, a service that builds, tests, and deploys your code every time there is a code change, based on the release process models you define. Use CodePipeline to orchestrate each step in your release process. As part of your setup, you will plug other AWS services into CodePipeline to complete your software delivery pipeline. This guide will show you how to create a very simple pipeline that pulls code from a source repository and automatically deploys it to an Amazon EC2 instance.
 
@@ -89,8 +90,10 @@ Amazon</a> defines "DevOps is the combination of cultural philosophies, practice
 
 ## CodeCommit setup
 
-<img align="right" width="252" alt="aws-codecommit-left-menu-252x481-8146.jpg" src=
-https://user-images.githubusercontent.com/300046/55664582-83b42e00-57ed-11e9-8534-a7ee42523b2b.jpg"></a>
+<img align="right" width="252" alt="aws-codecommit-left-menu-252x481-8146.jpg" src="https://user-images.githubusercontent.com/300046/55664582-83b42e00-57ed-11e9-8534-a7ee42523b2b.jpg">
+   * <a target="_blank" href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>
+   * <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/660e6820-fec6-48de-a415-5f242ba5b5e7?redirect_uri=https:%2F%2Fapp.linuxacademy.com%2Fsearch">Create and Clone an AWS CodeCommit Repository</a> video hands-on course.
+   <br /><br />
 
 AWS CodeCommit competes with GitHub, GitLab, BitBucket, and other cloud-based text code repositories.
 
@@ -98,12 +101,17 @@ Repositories in AWS CodeCommit have a URL that contains a region, such as:
 
    <tt>https://git-codecommit.us-east-1.amazonaws.com/v1/repos/MyRepo</tt>
 
-Learning Resources:
 
-* <a target="_blank" href="https://beta.linuxacademy.com/#/hands-on-labs/details/660e6820-fec6-48de-a415-5f242ba5b5e7?redirect_uri=https:%2F%2Fapp.linuxacademy.com%2Fsearch">Create and Clone an AWS CodeCommit Repository</a> video hands-on course.
+## CodeBuild Setup
+
+   * <a target="_blank" href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>
+   <br /><br />
 
 
-### CodeDeploy Setup instances #
+## CodeDeploy Setup instances #
+
+   * <a target="_blank" href="https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html">AWS CodeDeploy User Guide</a>
+   <br /><br />
 
 0. In IAM Service, create Role "codedeploy".
 0. Create CDInstanceRole
@@ -125,6 +133,7 @@ Learning Resources:
 0. Tag instances with name "Dev" for Development.
 0. Add a Security Group Role for HTTP. No SSH.
 
+
 ### AWS CodeDeploy Setup #
 
 0. <a target="_blank" href="https://us-west-2.console.aws.amazon.com/codedeploy/home?region=us-west-2#/first-run/welcome">Got to AWS CodeDeploy service, Get Started Now</a>.
@@ -137,7 +146,11 @@ Learning Resources:
 
    The AWS Console provides code to deploy from a S3 bucket.
 
-### AWS CodePipeline #
+
+## AWS CodePipeline #
+
+   * <a target="_blank" href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide
+   <br /><br />
 
 0. <a target="_blank" href="https://us-west-2.console.aws.amazon.com/codepipeline/home?region=us-west-2#/create/Name">
   Go to AWS CodePipeline service, Get Started</a>.

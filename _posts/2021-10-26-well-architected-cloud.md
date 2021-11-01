@@ -17,7 +17,7 @@ comments: true
 
 This aims to be a suscint yet deep dive about the "mind sets" needed by IT teams in the cloud.
 
-Like ITIL, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and "best practices", but specifically for successfully working in the public cloud.
+Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and "best practices", but specifically for successfully working in the public cloud.
 
 ## Why?
 
@@ -232,11 +232,10 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
    6. Monitoring
    <br /><br />
 
-<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG:
-   APIs now available for the AWS Well-Architected Tool</a>
+<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG: APIs now available for the AWS Well-Architected Tool</a>
 
-https://mikerodionov.com/tag/aws-whitepapers/
-
+<a target="_blank" href="https://mikerodionov.com/tag/aws-whitepapers/">
+Mike's blog lists AWS whitepapers recommended per specific AWS exam.
 
 <hr />
 
@@ -250,7 +249,7 @@ Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
 
 My notes for each pillar are annotated with deep links to hands-on instructions at<br />
 <a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a><br />
-which makes use of versioned code at<br />
+which was built (using Hugo) from<br />
 <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a>
 
 AWS at <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> provide in-depth training on the Well-Architected Framework to partners to help companies implement best practices, measure the state of your workloads, and make improvements where assistance is required.
@@ -400,7 +399,7 @@ Use temporary credentials
 
 5. How do you protect network resources?
 
-   * <strong>Create network layers</strong> - Group components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
+   * <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
 
    * <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
 
@@ -469,6 +468,9 @@ Automate identification and classification</strong> of data to reduce the risk o
    * <strong>Pre-deploy tools</strong> - Ensure that security personnel have the right tools pre-deployed into AWS to reduce the time for investigation through to recovery.
 
    * <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
+
+<a target="_blank" href="https://amzn.to/3j8TTXS" title="07 MAY 2020">Security Hub Foundational Security Best Practices</a> automates the <a target="_blank" href="https://aws.amazon.com/blogs/security/top-10-security-items-to-improve-in-your-aws-account/">Top 10 security items to improve in your AWS account</a>
+
 
 <hr />
 
@@ -1329,6 +1331,20 @@ AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3
 1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
   
 1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
+
+
+https://www.youtube.com/watch?v=NfONXHkTefA
+How do I use the AWS Cost and Usage Report?
+
+https://www.youtube.com/watch?v=gl0zpKLbRe0
+AWS re:Invent 2020: Billing management and cost control
+by Keith Jarrett (Head of AWS Cost Management, Product Marketing and Business Intelligence)
+
+https://www.youtube.com/watch?v=XHwFJDw9Mec
+AWS Cost Optimization: Tools and Methods to Reduce Your Spend With Us
+AWS Events
+
+
 
 ### Apptio CloudAbility
 
