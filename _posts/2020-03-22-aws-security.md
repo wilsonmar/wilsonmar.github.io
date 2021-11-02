@@ -748,6 +748,11 @@ https://github.com/gene1wood/aws_assume_roles
 https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3vcWO&index=1
 
 
+## Summary
+
+<a target="_blank" href="https://aws.amazon.com/artifact/">AWS Artifact</a> 
+is a no-cost self-service portal to AWS’ compliance reports.
+
 
 ## Blog articles
 

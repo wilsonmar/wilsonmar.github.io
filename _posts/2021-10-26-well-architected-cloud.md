@@ -82,7 +82,7 @@ PROTIP: One memonic to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" category.
 
-ACTIVITY 1 - Have each member of your team prioritize, then compare as a team.
+ACTIVITY 1 - Have each member of your team prioritize the pillars. Then compare and discuss priorities, as a team. Why? The Dunning-Kruger effect.
 
 
 ## Common definitions:
