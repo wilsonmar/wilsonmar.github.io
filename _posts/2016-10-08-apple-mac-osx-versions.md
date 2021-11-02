@@ -26,15 +26,15 @@ comments: true
 </th><th> Features introduced
 </th></tr>
 <tr valign="top"><td> 10.17<br />MacOS
-</td><td align="right"> Monterey
+</td><td align="right"><a target="_blank" href="https://www.apple.com/macos/monterey/">Monterey</a>
 </td><td align="right"> Fall 2021
 </td><td align="right"> ?
 </td><td align="right"> 3 ?
 </td><td align="right"> ?
-</td><td align="left"> ?
+</td><td align="left"> Share screen on FaceTime, SharePlay TV shows, Spatial audio, Focus notifications, Quick Note, work across devices
 </td></tr>
 <tr valign="top"><td> 10.16<br />MacOS
-</td><td align="right"> Big Sur
+</td><td align="right"><a target="_blank" href="https://www.apple.com/macos/bigsur/">Big Sur</a>
 </td><td align="right"> Fall 2020
 </td><td align="right"> ?
 </td><td align="right"> 3 ?
@@ -141,31 +141,32 @@ http://en.wikipedia.org/wiki/OS_X#Versions</a>
 
 ## Version Terminal Commands #
 
-0. In a Terminal window on any folder, type:
+There are several ways to get the version of MacOS:
+
+0. In a Terminal window on any folder:
 
    <pre><strong>sw_vers
    </strong></pre>
 
    Sample response:
 
-   <pre>ProductName: mac OS X
-   ProductVersion: 10.12.5
-   BuildVersion: 16B2555
+   <pre>ProductName:	Mac OS X
+ProductVersion:	10.14.6
+BuildVersion:	18G9323
    </pre>
 
    PROTIP: Provide this about your computer whenever you talk about your situation to StackOverflow or other technical support form.
 
-   The x.x.x pattern is called <a target="_blank" rel="amphtml" href="http://ssemver.org/">
-   Semantic Versioning</a>.
+   The x.x.x pattern in ProductName is called <a target="_blank" rel="amphtml" href="http://ssemver.org/">Semantic Versioning</a>.
 
    The "10" (in 10.12.5) is associated with "Darwin", an open-source Unix operating system released by Apple Inc. in 2000. It is composed of code developed by Apple as well as code derived from NeXTSTEP, BSD, Mach, and other free software projects. --<a target="_blank" href="https://www.wikiwand.com/en/Darwin_(operating_system)">Wikipedia</a>.
 
-0. A partial response can be requested by:
+0. For just the productVersion:
 
    <pre><strong>sw_vers -productVersion
    </strong></pre>
 
-   This is a different command than used in Linux (`lsb_release`).
+   This is a different command than used in Linux `lsb_release` command.
 
 0. Invoke the <a target="_blank" href="http://man7.org/linux/man-pages/man2/uname.2.html">
    Unix name" utility command also used in Linux</a>:   
@@ -202,6 +203,10 @@ http://en.wikipedia.org/wiki/OS_X#Versions</a>
 
    Sample response:
 
+   <pre>/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk</pre>
+   
+   Alternately:
+   
    <pre>/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk</pre>
 
 
@@ -234,13 +239,17 @@ Apple maintains several items for macOS use in:
 
 ## Create a bootable installer for macOS
 
-Download installers from <a target="_blank" href="https://developer.apple.com/download/">https://developer.apple.com/download</a>. Beta installers should be placed in a bootable USB drive.
+1. Identify:
 
-To manually download the complete installer:
+   <a target="_blank" href="https://developer.apple.com/download/">https://developer.apple.com/download</a>
+   
+   Beta installers should be placed in a bootable USB drive.
 
-1. Go to the installer page at:<br />
-<a target="_blank" href="https://itunes.apple.com/us/app/macos-sierra/id1127487414?mt=12">
-https://itunes.apple.com/us/app/macos-sierra/id1127487414?mt=12</a>
+   To manually download the complete installer:
+
+1. Go to the installer page for your current MacOS version at, for example:
+
+   <a target="_blank" href="https://itunes.apple.com/us/app/macos-sierra/id1127487414?mt=12">https://itunes.apple.com/us/app/macos-sierra/id1127487414?mt=12</a>
 
 0. Click "Download in iTunes" to open up iTunes app.
 0. Click "Get". 

@@ -23,14 +23,20 @@ Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provi
 
 <a target="_blank" href="https://www.youtube.com/watch?v=rbIQ2eRJY0g" title="Aug 11, 2021">Why? Potential benefits</a> sound like what is claimed for every product:
 
-   * Improve the quality of workloads
    * Build and deploy faster
-   * Lower or mitigated risks
+   * Lower or mitigate risks
    * Make more informed decisions
    * Learn best practices
+   * Improve the quality of workloads
    <br /><br />
 
 But WA is different in that it's the rare occassion when it's what major cloud vendors all agree on.
+
+WA is not for an audit like SOC2 or FedRamp.
+
+It's pragmatic, proven advice, NOT by theories from "Architecture Astronauts".
+
+It is for not a one-time check, but throughout the lifecycle.
 
 ## Your Radar Chart of Progress:
 
@@ -82,12 +88,18 @@ PROTIP: One memonic to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" category.
 
-ACTIVITY 1 - Have each member of your team prioritize the pillars. Then compare and discuss priorities, as a team. Why? The Dunning-Kruger effect.
+ACTIVITY 1 - Have each member of your team prioritize the pillars. Then discuss priorities, as a team. (Why? The Dunning-Kruger effect). Example discussion:
+
+   * "Operational Excellence" has to go first becuase that's about getting up and running with basic services.
+
+   * "Security" has to go first because we don't want to have the risk of anything exposed and thus ruin our brand.
+
+   * Let's not slow ourselves down with Cost considerations when getting started.
 
 
 ## Common definitions:
 
-   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value".
+   Each "<strong>workload</strong>" is "a collection of interrelated applications, infrastructure, policy, governance, and operations running on AWS that provides business or operational value". A workload can span several AWS accounts.
 
    A "<strong>technology portfolio</strong>" is the collection of workloads that are required for the business to operate.
 
@@ -95,7 +107,9 @@ ACTIVITY 1 - Have each member of your team prioritize the pillars. Then compare 
 
    The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
 
-   The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships.
+   The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships. 
+
+   The "<strong>AWS Organization</strong>" refers to the top-level Organization setting, with special permissions to an administrator of it.
 
    <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.runbook.en.html">Runbooks</a> are predefined procedures containing the minimum information necessary to successfully perform the procedure.
 
@@ -209,20 +223,16 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
      * Application Layer
      <br /><br />
 
-   * Machine Learning: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">HTML</a> \| <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/wellarchitected-machine-learning-lens.pdf#machine-learning-lens">PDF</a> \| <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">265 pages on Kindle (mobile) app</a>
-
    * SaaS: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/saas-lens.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/SaaS-Lens-AWS-Well-Architected-Framework-ebook/dp/B08QZZ6DLM/" title="December 17, 2020">87 pages on Kindle (mobile) app</a>
 
    * Serverless Applications: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/iot-lens/welcome.html">HTML</a> \| <a target="_blank" href="https://www.amazon.com/Serverless-Applications-Lens-Well-Architected-Whitepaper-ebook/dp/B082TXMZ5T/" title="December 15, 2019">91 pages on Kindle (mobile) app</a>  
 
-   ### Phases in AWS WA Machine Learning Lens
-   
-   The Machine Learning Lens breaks down process phases in this Lifecycle architecture diagram:
+   * Machine Learning: <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/machine-learning-lens.html">HTML</a> \| <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/wellarchitected-machine-learning-lens.pdf#machine-learning-lens">PDF</a> \| <a target="_blank" href="https://www.amazon.com/Machine-Learning-Lens-Well-Architected-Whitepaper-ebook/dp/B09JDTVPJX/" title="October 12, 2021">265 pages on Kindle (mobile) app</a>
+    
+    The Machine Learning Lens breaks down process <strong>lifecycle phases</strong> in this Lifecycle architecture diagram:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png">
    <img alt="well-architected-ml-lifecycle-phases-977x124" src="https://user-images.githubusercontent.com/300046/139376680-423048be-2df0-4fb4-980c-9958b40da0ea.png"></a>
-
-   Lifecycle phases:
 
    1. Business goal identification
    2. ML problem framing
@@ -234,8 +244,11 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG: APIs now available for the AWS Well-Architected Tool</a>
 
-<a target="_blank" href="https://mikerodionov.com/tag/aws-whitepapers/">
-Mike's blog lists AWS whitepapers recommended per specific AWS exam.
+### AWS Milestones
+
+The AWS WA Tool has a way to save several milestones to show an annotated line chart about progress over time.
+
+But note that it's for work across all pillars together, not for individual pillars.
 
 <hr />
 
@@ -1355,6 +1368,9 @@ AWS Events
 https://tutorialsdojo.com/aws-well-architected-framework-five-pillars/
 
 STAR: https://aws.amazon.com/blogs/aws-cloud-financial-management/cost-reporting-based-on-aws-organizations-account-id-tags/
+
+<a target="_blank" href="https://mikerodionov.com/tag/aws-whitepapers/">
+Mike's blog lists AWS whitepapers recommended per specific AWS exam.
 
 
 
