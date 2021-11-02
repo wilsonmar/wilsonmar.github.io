@@ -844,6 +844,8 @@ Matt Wood, @mza, Product Strategy @ Amazon Web Services
 
 ## AWS Certifications #
 
+* Practitioner
+
 * <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">
   $150, 80-minute AWS Certified SysOps Administrator - Associate</a>
 
@@ -865,34 +867,30 @@ Matt Wood, @mza, Product Strategy @ Amazon Web Services
 
  Because a minimum score of 35 percent is needed on each exam domain, Pearson Practice tests at OReilly has a "study mode" which allow you to provide answers after every question from across 4 complete exams. You can also filter by <a target="_blank" href="https://learning.oreilly.com/certifications/9780135954843/">AWS Certified Cloud Practioner (CLF-C01)</a> domains (number of questions in bank):
 
-    * 01 - The AWS Cloud Defined (26)
-    * 02 - Advantages of the AWS Cloud (10)
-    * 03 - Core AWS Services
-    * 04 - Cloud Architecture Design Principles
-    * 05 - The AWS Shared Responsibility Model
-    * 06 - Cloud Security and Compliance
-    * 07 - AWS Access Management Capabilities
-    * 08 - Resources for Security Support
-    * 09 - Methods of Deploying and Operating in AWS
-    * 10 - The AWS Global Infrastructure
-    * 11 - Resources for Technology Support
-    * 12 - Using the Free Tier to Build a Web Server
-    * 13 - AWS Pricing Models
-    * 14 - Account Structures for Billing and Pricing
-    * 15 - Resources for Billing Support
+   * 01 - The AWS Cloud Defined (26)
+   * 02 - Advantages of the AWS Cloud (10)    * 03 - Core AWS Services
+   * 04 - Cloud Architecture Design Principles
+   * 05 - The AWS Shared Responsibility Model
+   * 06 - Cloud Security and Compliance
+   * 07 - AWS Access Management Capabilities
+   * 08 - Resources for Security Support
+   * 09 - Methods of Deploying and Operating in AWS
+   * 10 - The AWS Global Infrastructure
+   * 11 - Resources for Technology Support
+   * 12 - Using the Free Tier to Build a Web Server
+   * 13 - AWS Pricing Models
+   * 14 - Account Structures for Billing and Pricing
+   * 15 - Resources for Billing Support
    <br /><br />
 
-<a target="_blank" href="https://learning.oreilly.com/certifications/9780136758501/">For the AWS Certified SysOps Administrator Associate (SOA-C01) test</a>
+If you have an OReilly.com subscription (to Pearson):
 
-<a target="_blank" href="https://learning.oreilly.com/certifications/9780136791997/">For the AWS Certified Solutions Architect Associate SAA-C02</a>
-
-<a target="_blank" href="https://learning.oreilly.com/certifications/9780136808800/">For the AWS Certified Security – Specialty SCS-C01</a>
-
-<a target="_blank" href="https://learning.oreilly.com/certifications/9780135954904/">For the AWS Certified Machine Learning-Specialty (ML-S)</a>
-
-<a target="_blank" href="https://learning.oreilly.com/certifications/9780136758921/">For the WS Certified Big Data - Specialty (CCENT)</a>
-
-
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780136758501/">For the AWS Certified SysOps Administrator Associate (SOA-C01) test</a>
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780136791997/">For the AWS Certified Solutions Architect Associate SAA-C02</a>
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780136808800/">For the AWS Certified Security – Specialty SCS-C01</a>
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135954904/">For the AWS Certified Machine Learning-Specialty (ML-S)</a>
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780136758921/">For the WS Certified Big Data - Specialty (CCENT)</a>
+   <br /><br />
 
 
 ## Other Practice Tests
@@ -906,19 +904,16 @@ Matt Wood, @mza, Product Strategy @ Amazon Web Services
 
 ## AWS Training Resources #
 
-* <a target="_blank" href="https://quizlet.com/_2dk9qd/">
-   Memorize AWS Acronyms as flash cards and games on Quizlet</a>
+* <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">Memorize AWS Acronyms as flash card games using my Quizlet</a>
 
-* <a target="_blank" href="https://www.cloudacademy.com/">
+* <a target="_blank" href="https://cloudacademy.com/search/?q=aws">
    CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
 
-* <a target="_blank" href="http://www.lynda.com/AWS-tutorials/Amazon-Web-Services-Essential-Training/">
-   Lynda.com AWS tutorials</a>
+* <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=aws">LinkedIn Learning (Lynda.com) AWS tutorials</a>
 
 * http://www.pluralsight.com/courses/aws-certified-sysops-admin-associate
 
 * https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-1
-
 * https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-2
 
 * https://www.aws.training/home?courseid=8&language=en-US&src=web_en_course-developing&view=table
@@ -930,13 +925,13 @@ AWS re:Invent 2016: Become an AWS IAM Policy Ninja in 60 Minutes or Less (SAC303
 * <a target="_blank" href="https://peteris.rocks/blog/script-to-launch-amazon-ec2-spot-instances/" title="October 10, 2016">
 Script to launch Amazon EC2 Spot instances</a> with a simple Python script
 
-   - create a new key pair if one doesn't exist
-   - create a security group if one doesn't exist
-   - request a new spot instance
-   - wait for the spot request to be fulfilled
-   - wait for the instance to boot
-   - connect to it via SSH and run a script of your choice
-
+   1. create a new key pair if one doesn't exist
+   2. create a security group if one doesn't exist
+   3. request a new spot instance
+   4. wait for the spot request to be fulfilled
+   5. wait for the instance to boot
+   6. connect to it via SSH and run a script of your choice
+   <br /><br />
 
 
 <a name="References"></a>
