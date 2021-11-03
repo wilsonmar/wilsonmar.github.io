@@ -32,11 +32,14 @@ Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provi
 
 But WA is different in that it's the rare occassion when it's what major cloud vendors all agree on.
 
-WA is not for an audit like SOC2 or FedRamp.
-
-It's pragmatic, proven advice, NOT by theories from "Architecture Astronauts".
+WA is pragmatic, proven advice, NOT by theories from "Architecture Astronauts".
 
 It is for not a one-time check, but throughout the lifecycle.
+
+WA is <strong>not audited for</strong> like SOC2 or FedRamp.
+
+Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/?ch=tile&tile=getstarted">the "AWS Certified Solutions Architect – Associate" exam</a> (<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate-Exam_Guide_EN_1.8.pdf">PDF</a>)
+
 
 ## Your Radar Chart of Progress:
 
@@ -96,6 +99,7 @@ ACTIVITY 1 - Have each member of your team prioritize the pillars. Then discuss 
 
    * Let's not slow ourselves down with Cost considerations when getting started.
 
+   * PROTIP: It's really not appropriate to rank these pillars. They need to be done all at once. So we need to look in each and prioritize the impact of tasks within each pillar.
 
 ## Common definitions:
 
