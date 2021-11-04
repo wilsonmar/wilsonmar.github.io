@@ -16,23 +16,72 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-AWS exams:
+<a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">AWS exams</a>:
 
-* Practitioner
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-cloud-practitioner/">$100 to answer 65 questions in 90-minute AWS Certified Cloud Practitioner</a>
 
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/">$150, 80-minute AWS Certified Solutions Architect - Associate (SOA-C02)</a> 
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/">$150, 80-minute AWS Certified Solutions Architect - Associate (SOA-C02)</a> 
 
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">$150, 80-minute AWS Certified SysOps Administrator - Associate (SOA-C02)</a> <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf">PDF</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">$150, 80-minute AWS Certified SysOps Administrator - Associate (SOA-C02)</a> 
 
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-developer-associate/">$150, 80-minute AWS Certified Developer - Associate</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-developer-associate/">$150, 80-minute AWS Certified Developer - Associate</a>
 
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-professional/">$300, 170-minutes AWS Certified Solutions Architect - Professional</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-professional/">$300, 170-minutes AWS Certified Solutions Architect - Professional</a>
 
-* <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">$300, 170-minute AWS Certified DevOps Engineer - Professional</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">$300, 170-minute AWS Certified DevOps Engineer - Professional</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">AWS Certified Advanced Networking - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">AWS Certified Data Analytics - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">AWS Certified Data Analytics - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300 to answer 65 questions in 180-minute AWS Certified Database - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute AWS Certified Machine Learning - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute AWS Certified Security - Specialty</a>
+
 
 > Design <strong>and deploy</strong> dynamically scalable, highly available, fault-tolerant, and reliable applications on AWS.
 
 The "and deploy" applies to Professional. Associate has just "design".
+
+
+## AWS Training Resources #
+
+* <a target="_blank" href="https://learn.cantrill.io/">https://learn.cantrill.io</a> (by Adrian Cantrill in Melbourne, Australia) is the premier resource for comprehensive AWS training for each exam. All exams for just $200.
+
+* <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">Memorize AWS Acronyms as flash card games using my Quizlet</a>
+
+<a target="_blank" href="https://cloudacademy.com/search/?q=aws">CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
+
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/aws-sysops-administrator-associate-soa-c02-certification-preparation-for-aws-2876/">Learning Path for Associate</a>
+   <br /><br />
+
+* <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=aws">LinkedIn Learning (Lynda.com) AWS tutorials</a>
+
+* http://www.pluralsight.com/courses/aws-certified-sysops-admin-associate
+
+* https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-1
+* https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-2
+
+* https://www.aws.training/home?courseid=8&language=en-US&src=web_en_course-developing&view=table
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=y7-fAT3z8Lo">
+AWS re:Invent 2016: Become an AWS IAM Policy Ninja in 60 Minutes or Less (SAC303)</a>
+   by Jeff W
+
+* <a target="_blank" href="https://peteris.rocks/blog/script-to-launch-amazon-ec2-spot-instances/" title="October 10, 2016">
+Script to launch Amazon EC2 Spot instances</a> with a simple Python script
+
+   1. create a new key pair if one doesn't exist
+   2. create a security group if one doesn't exist
+   3. request a new spot instance
+   4. wait for the spot request to be fulfilled
+   5. wait for the instance to boot
+   6. connect to it via SSH and run a script of your choice
+   <br /><br />
 
 ## Practice exams
 
@@ -86,41 +135,6 @@ PROTIP: If you have an OReilly.com subscription (to Pearson) you can also filter
    $5.99 or Kindle Unlimited.
 
 
-
-## AWS Training Resources #
-
-* https://learn.cantrill.io/
-
-* <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">Memorize AWS Acronyms as flash card games using my Quizlet</a>
-
-<a target="_blank" href="https://cloudacademy.com/search/?q=aws">CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
-
-   * <a target="_blank" href="https://cloudacademy.com/learning-paths/aws-sysops-administrator-associate-soa-c02-certification-preparation-for-aws-2876/">Learning Path for Associate</a>
-   <br /><br />
-
-* <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=aws">LinkedIn Learning (Lynda.com) AWS tutorials</a>
-
-* http://www.pluralsight.com/courses/aws-certified-sysops-admin-associate
-
-* https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-1
-* https://scotch.io/tutorials/deploying-a-mean-app-to-amazon-ec2-part-2
-
-* https://www.aws.training/home?courseid=8&language=en-US&src=web_en_course-developing&view=table
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=y7-fAT3z8Lo">
-AWS re:Invent 2016: Become an AWS IAM Policy Ninja in 60 Minutes or Less (SAC303)</a>
-   by Jeff W
-
-* <a target="_blank" href="https://peteris.rocks/blog/script-to-launch-amazon-ec2-spot-instances/" title="October 10, 2016">
-Script to launch Amazon EC2 Spot instances</a> with a simple Python script
-
-   1. create a new key pair if one doesn't exist
-   2. create a security group if one doesn't exist
-   3. request a new spot instance
-   4. wait for the spot request to be fulfilled
-   5. wait for the instance to boot
-   6. connect to it via SSH and run a script of your choice
-   <br /><br />
 
 <hr />
 
