@@ -1738,7 +1738,7 @@ Risk Resolution  Description
    * <strong>Accept</strong> - (without a resolution). Based on threat severity.
    <br /><br />
 
-DRP (Disaster Recovery Plan) defines "how" is implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
+DRP (Disaster Recovery Plan) defines "how" - implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
 DRP lifecycle phases:
    1. BIA (Business impact analysis) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
    2. Define strategies

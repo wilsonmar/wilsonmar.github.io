@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">AWS exams</a>:
+<a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">Official info on AWS exams</a>: PDFs lists the services tested:
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-cloud-practitioner/">$100 to answer 65 questions in 90-minute<br />AWS Certified Cloud Practitioner</a>
 
@@ -47,12 +47,23 @@ comments: true
 
 The "and deploy" applies to Professional. Associate has just "design".
 
+## Social
+
+<a target="_blank" href="https://www.reddit.com/r/AWSCertifications/">https://www.reddit.com/r/AWSCertifications</a>
+
+stackoverflow
 
 ## AWS Training Resources #
 
-* <a target="_blank" href="https://learn.cantrill.io/">https://learn.cantrill.io</a> (by Adrian Cantrill in Melbourne, Australia) is the premier resource for comprehensive AWS training for each exam. All exams for just $200.
+* <a target="_blank" href="https://explore.skillbuilder.aws/pages/16/learner-dashboard">AWS Free SkillBuilder</a>
+
+* Gradually revealed diagram videos and quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">https://learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All (except specialty) exams for just $200.
 
 * <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">Memorize AWS Acronyms as flash card games using my Quizlet</a>
+
+* ACloudGuru.com
+
+* LinkedInLearning.com
 
 <a target="_blank" href="https://cloudacademy.com/search/?q=aws">CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
 
@@ -157,7 +168,56 @@ PROTIP: If you have an OReilly.com subscription (to Pearson) you can also filter
 <tr valign="top"><td> 12.5% </td><td> Cost Control </td></tr>
 <tr valign="top"><td> 29% </td><td> Continuous Improvement for Existing Solutions </td></tr>
 
-https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Exam-Guide.pdf
+<hr />
+
+## My notes
+
+   * aws-iam (Organizations, Users, Permissions security)
+   * aws-Networking (Regions, AZs, VPCs, ENIs)
+   * aws-Architecture (Disaster Recovery / Business Continuity, ASG, Snapshots, Log shipping)
+   * aws-Compute (AMI, Server Types, CPUs)
+   * aws-Storage (EBS volumes, EFS)
+   <br /><br />
+
+https://www.gliffy.com/blog/aws-architecture-diagram-examples
+
+https://online.visual-paradigm.com/drive/#diagramlist:proj=0&new=AWSDiagram
+
+https://warren2lynch.medium.com/aws-architecture-diagram-with-2019-new-icons-over-50-examples-d401a76c6d5c
+
+https://www.diagrams.net/blog/aws-diagrams
+
+https://www.conceptdraw.com/How-To-Guide/aws-icons-2
+
+## AWS Services
+
+Among the 200+, C = From Cantrill.io
+
+Aurora (one replica in each AZ, cluster storage replicated multi-master in several regions) but writes only to primary region.
+
+Config records changes on resources in one or more regions & audits compliance to standards for alerts to SNS
+
+DynamoDB - global (multi-master read/write)
+
+EventBridge notifies SNS & Invokes Lambda
+
+Fargate (mode of EC2 with ENI's in a VPC like auto-scaling groups)
+
+<a target="_blank" href="https://aws.amazon.com/fsx/">
+FSx</a> (Launch, run, and scale feature-rich and highly-performant file systems) - 
+
+GuardDuty - continuous AI/ML threat intelligence to identify unexpected and unauthorized activities in data sources (DNS Logs, VPC Flow, CloudTrail mgmt events, CloudTrails S3 Data Events) to EventBridge
+
+AWS Glue - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23693055">C</a>
+
+AWS Kinesis Video Streams - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23925485">C</a>
+
+AWS Lex & Connect - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23925480">C</a>
+
+RDS (Cross Region Read Replica Async replication in several regions)
+
+Rekognition - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23693085">C</a>
+
 
 <a name="References"></a>
 
