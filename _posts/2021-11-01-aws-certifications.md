@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "AWS Certs (certifications)"
-excerpt: "Tips and tricks to get certified: tutorials, videos, practice exams."
+title: "AWS Certifications"
+excerpt: "Tips and tricks to get certified: links to tutorials, videos, practice exams."
 tags: [AWS, EC2, cloud, on-boarding]
 date: "2021-11-01"
-file: "aws-certs"
+file: "aws-certifications"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -29,6 +29,10 @@ AWS exams:
 * <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-professional/">$300, 170-minutes AWS Certified Solutions Architect - Professional</a>
 
 * <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">$300, 170-minute AWS Certified DevOps Engineer - Professional</a>
+
+> Design <strong>and deploy</strong> dynamically scalable, highly available, fault-tolerant, and reliable applications on AWS.
+
+The "and deploy" applies to Professional. Associate has just "design".
 
 ## Practice exams
 
@@ -85,6 +89,8 @@ PROTIP: If you have an OReilly.com subscription (to Pearson) you can also filter
 
 ## AWS Training Resources #
 
+* https://learn.cantrill.io/
+
 * <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">Memorize AWS Acronyms as flash card games using my Quizlet</a>
 
 <a target="_blank" href="https://cloudacademy.com/search/?q=aws">CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
@@ -116,6 +122,28 @@ Script to launch Amazon EC2 Spot instances</a> with a simple Python script
    6. connect to it via SSH and run a script of your choice
    <br /><br />
 
+<hr />
+
+## AWS Practioner
+
+<hr />
+
+## AWS Associate
+
+<a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/?ch=tile&tile=getstarted">the "AWS Certified Solutions Architect – Associate" exam</a> (<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate-Exam_Guide_EN_1.8.pdf">PDF</a>)
+
+<hr />
+
+## AWS Professional
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top"><td> 12.5% </td><td> Design for Organizational Complexity </td></tr>
+<tr valign="top"><td> 31% </td><td> Design for New Solutions </td></tr>
+<tr valign="top"><td> 15% </td><td> Migration Planning </td></tr>
+<tr valign="top"><td> 12.5% </td><td> Cost Control </td></tr>
+<tr valign="top"><td> 29% </td><td> Continuous Improvement for Existing Solutions </td></tr>
+
+https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Exam-Guide.pdf
 
 <a name="References"></a>
 

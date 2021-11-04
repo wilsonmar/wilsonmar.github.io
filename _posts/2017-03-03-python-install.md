@@ -129,7 +129,7 @@ Alternatively, use a package manager. CAUTION: <a target="_blank" href="http://s
 
 ## Obsolete Python comes with MacOS #
 
-Ever since the <a target="_blank" href="https://wilsonmar.github.io/python-install.md">Mavericks version of Mac OSX</a>,
+Ever since the Mavericks version of Mac OSX,
 Python 2 comes installed on MacOS machines.
 
 (Use the index at the right if you want to jump ahead)
@@ -783,7 +783,7 @@ You must give at least one requirement to install (see "pip help install")
    ### pip iPython Jupyter #
 
 0. <a target="_blank" href="https://ipython.org">
-   iPython</a> is the kernel of [Jupyter](jupyter).
+   iPython</a> is the kernel of Jupyter.
 
    <tt><strong>pip install ipython
    </strong></tt>

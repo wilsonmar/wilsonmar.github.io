@@ -28,8 +28,7 @@ There are several categories:
 
 ## GUI Manual config
 
-<a target="_blank" href="https://www.youtube.com/watch?v=bjgZ93oEZF0">
-VIDEO: Set Up OS X For Web Development in 10 Minutes [10:56]</a> used these steps to customize a new Mac based on his <a target="_blank" href="https://github.com/robbyrussell/oh-my-zsh">notes on GitHub</a>:
+These steps customizes a new Mac based on <a target="_blank" href="https://github.com/robbyrussell/oh-my-zsh">notes on GitHub</a>:
 
    * Remove from Dock at the bottom of the screen
    * [0:21] In System Preferences, General, Dark Menu
@@ -414,8 +413,6 @@ The <strong>requirements.txt</strong> file specifies files to download from the 
 
       It references <a target="_blank" href="http://secrets.blacktree.com/?showapp=com.apple.finder">
       http://secrets.blacktree.com/?showapp=com.apple.finder</a>
-
-   * <a target="_blank" rel="amphtml" href="https://github.com/geerlingguy/homebrew">geerlingguy.homebrew</a>
 
 Use a text editor to edit the <strong>main.yml</strong> file at the root.
 Change <strong>user:</strong> value from "jgeeling" to your Mac account name.

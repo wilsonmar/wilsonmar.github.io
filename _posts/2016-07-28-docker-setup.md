@@ -16,13 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The object of this tutorial is to succintly present 
-<strong>step-by-step</strong> instructions to setup of Docker on 
-<a href="#Mac">Mac OSX</a>, 
-CentOS Linux, and 
-<a href="#Docker4Windows">Windows</a>.
-
-<!-- This is a companion to <a target="_blank" href="https://wilsonmar.github.io/docker-build/">Docker image build</a>. -->
+The object of this tutorial is a succint yet deep <strong>step-by-step</strong> instructions to setup of Docker on <a href="#Mac">MacOS</a>, CentOS Linux, and <a href="#Docker4Windows">Windows</a>.
 
 
 ## VMs on MacOS vs. Docker #

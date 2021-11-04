@@ -34,7 +34,7 @@ comments: true
 </td><td align="left"> Share screen on FaceTime, SharePlay TV shows, Spatial audio, Focus notifications, Quick Note, work across devices
 </td></tr>
 <tr valign="top"><td> 10.16<br />MacOS
-</td><td align="right"><a target="_blank" href="https://www.apple.com/macos/bigsur/">Big Sur</a>
+</td><td align="right"><a target="_blank" href="https://support.apple.com/en-us/HT211896">Big Sur</a>
 </td><td align="right"> Fall 2020
 </td><td align="right"> ?
 </td><td align="right"> 3 ?

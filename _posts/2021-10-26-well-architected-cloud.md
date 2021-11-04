@@ -38,7 +38,7 @@ It is for not a one-time check, but throughout the lifecycle.
 
 WA is <strong>not audited for</strong> like SOC2 or FedRamp.
 
-Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/?ch=tile&tile=getstarted">the "AWS Certified Solutions Architect – Associate" exam</a> (<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate-Exam_Guide_EN_1.8.pdf">PDF</a>)
+Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://wilsonmar.github.io/aws-certs">AWS certification exams</a>
 
 
 ## Your Radar Chart of Progress:

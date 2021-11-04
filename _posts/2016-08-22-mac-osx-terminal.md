@@ -1065,8 +1065,7 @@ which works on Debian, RHEL 6.6, and Ubuntu
 is not recognized on Gentoo nor CentOS 6,
 which has no folder /etc/lsb-release.
 
-See <a target="_blank" href="https://Distriwatch.com">Distriwatch.com</a>,
-which describes releases of different Linux distributions.
+See <a target="_blank" href="https://www.Distrowatch.com/">Distrowatch.com</a>, which details each release of various Linux distributions (RedHat, etc.).
 
 
 
