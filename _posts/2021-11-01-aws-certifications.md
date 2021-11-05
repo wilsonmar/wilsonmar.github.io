@@ -18,7 +18,7 @@ comments: true
 
 This page covers preparation for certification exams by several dimensions:
 
-   * by exam
+   * by <a href="#AWSexams">AWS exam</a>
    * by <a href="#TypeofSvc">type of AWS service</a>
    <br /><br />
 
@@ -49,6 +49,10 @@ This page covers preparation for certification exams by several dimensions:
    * Amazon CloudSearch
    * Amazon Connect
 
+
+<hr />
+
+<a name="AWSexams"></a>
 
 ## AWS Exams
 
