@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python Coding"
-excerpt: "PROTIPs and tricks from various learning resources"
+excerpt: "The rules shown in samples using Keywords, arguments, Exception Handling, OS commands, Strings, Lists, Sets, Tuples, Files, Timers"
 tags: [python, coding]
 date: "2021-10-09"
 file: "python-coding"
@@ -29,7 +29,7 @@ PROTIP: Research and find out what each is about:
 
 *	and 
 *	as
-*	assert
+*	<a href="#assert">assert</a>
 *	async
 *	await
 *	break
@@ -75,6 +75,24 @@ The list above can be retrieved (as an array) by this code after typing <tt>pyth
 Press control+D to exit anytime.
 
 
+<a name="assert"></a>
+
+## Use assert only during testing
+
+By default, python executes with “_debug_” = “true”. 
+
+<a target="_blank" href="https://itnext.io/common-python-security-problems-ffedbae7b11c">Example:</a> comma acts as if/then:
+
+<pre>def get_clients(user):
+    assert is_superuser(user),  # user is not a member of superuser group
+    return db.lookup('clients')
+</pre>
+
+But in production when the program is run in optimized mode, the assert statement is ignored. The validation statements is skipped. So the user ends up with access to a resource or not lead to improper authentication controls.
+
+To remediate, use a if-else logic to implement true and false conditions.
+
+
 <a name="None"></a>
 
 ## Use Not None Reserved Word
@@ -103,6 +121,19 @@ Function:
 </pre>
 
 
+## Math Operators
+
+<tt>11%5</tt> use the (percent sign), the modulo operator to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
+
+<tt>11//5</tt> uses "floor division" to return just the integer of 2, discarding the remainder. It returns the integral part of the quotient.
+
+To avoid divide by zero errors by returning 0:
+
+<pre>def weird_division(n, d):
+    return n / d if d else 0
+</pre>
+
+
 ## Environment Variables
 
 To read a file named ".env" at the $HOME folder, and obtain the value from "MY_EMAIL":
@@ -120,17 +151,76 @@ This code is important because it keeps secrets in your $HOME folder, away from 
 
 There is the "load_dotenv" package that can do the above, but using native commands mean less exposure to potential attacks.
 
+Remember that attackers can use directory traversal sequences (../) to fetch the sensitive files from the server.
 
-## String operations
+Sanitize the user input using “shlex”
 
-To return just the first 3 characters of a string:
 
-<pre>letters = "abcdef"
-first_part = letters[:3]</pre>
+## Handle Strings safely
 
-The above code provides flexibility for alternatives such as Cyrillic (Russian) character set. 
+Python has four different ways to format strings.
 
-Alternatively, this function defines a dictionary to covert an Excel column number to a number:<a target="_blank" href="https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python">*</a>
+Formatting of user-supplied <a target="_blank" href="https://snyk.io/blog/python-security-best-practices-cheat-sheet/">strings can be exploited</a>. So use a way that's less flexible with types and doesn’t evaluate Python statements the way f-strings do:
+
+   <pre>from string import Template
+...
+greeting_template = Template(“Hello World, my name is $name.”)
+greeting = greeting_template.substitute(name=”Hayley”)
+   </pre>
+
+For flexibility for alternative languages such as Cyrillic (Russian) character set, to return just the first 3 characters of a string:
+
+   <pre>letters = "abcdef"
+first_part = letters[:3]
+   </pre>
+
+<pre># function to convert to superscript
+def conv_superscript(x):
+    normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
+    super_s = "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾"
+    res = x.maketrans(''.join(normal), ''.join(super_s))
+    return x.translate(res)
+&nbsp;
+# print(conv_superscript('Convert all this2'))
+</pre>
+
+
+## Switch language in browser
+
+Ensure that your program works correctly when another human language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.) is configured by the user:
+
+   A. English was selected in browser's Preferences, but the app displays another language.
+   
+   B. Another language was selected in browser's preferences, and the app displays that language.
+
+To simulate selecting another language in the browser's Preferences in Firefox:
+
+<pre>FirefoxOptions options = new FirefoxOptions();
+options.addPreference("intl.accept_languages", language);
+driver = new FirefoxDriver(options);
+</pre>
+
+Alternately, in Chrome:
+
+<pre>HashMap&LT;String, Object> chromePrefs = new HashMap&LT;String, Object>();
+chromePrefs.put("intl.accept_languages", language);
+ChromeOptions options = new ChromeOptions();
+options.setExperimentalOption("prefs", chromePrefs);
+driver = new ChromeDriver(options);
+</pre>
+
+
+## Excel handling using Dictionary object
+
+Alternately, the <a target="_blank" href="https://xlsxwriter.readthedocs.io/working_with_cell_notation.html#cell-utility">Python library to work with Excel spreadsheets</a> translates between Excel cell addresses (such as "A1") and zero-based Python array tuple:
+
+<pre>str = xl_rowcol_to_cell(0, 0, row_abs=True, col_abs=True)  # $A$1
+(row, col) = xl_cell_to_rowcol('A1')    # (0, 0)
+column = xl_col_to_name(1, True)   # $B
+</pre>
+
+However, if you want to avoid adding a dependency,
+this function defines a dictionary to convert an Excel column number to a number:<a target="_blank" href="https://stackoverflow.com/questions/4528982/convert-alphabet-letters-to-number-in-python">*</a>
 
 <pre>def letter_to_number(letters):
     letters = letters.lower()
@@ -155,8 +245,7 @@ Alternatively, this function defines a dictionary to covert an Excel column numb
     return number
 </pre>
 
-
-But instead of defining a dictionary, you can use a property of the ASCII character set, in that the Latin alphabet begins from its 65th position for "A" and its 97th character for "a", obtained using the ordinal function:
+Instead of defining a dictionary, you can use a property of the ASCII character set, in that the Latin alphabet begins from its 65th position for "A" and its 97th character for "a", obtained using the ordinal function:
 
 <pre>ord('a')  # returns 97
 ord('A')  # returns 65</pre>
@@ -167,17 +256,21 @@ This returns 'a' :
 
 
 
-There is a Python library to work with Excel spreadsheets:
-https://xlsxwriter.readthedocs.io/working_with_cell_notation.html#cell-utility
-which translates between Excel cell addresses (such as "A1") and zero-based Python array tuple:
+## File open() modes
 
-<pre>str = xl_rowcol_to_cell(0, 0, row_abs=True, col_abs=True)  # $A$1
-(row, col) = xl_cell_to_rowcol('A1')    # (0, 0)
-column = xl_col_to_name(1, True)   # $B
+The Python runtime does not enforce type annotations introduced with Python version 3.5. But type checkers, IDEs, linters, SASTs, and other tools can benefit from the developer being more explicit. 
+
+Use this type checker to discover when the parameter is outside the allowed set and warn you:
+
+<pre>MODE = Literal['r', 'rb', 'w', 'wb']
+def open_helper(file: str, mode: MODE) -> str:
+    ...
+open_helper('/some/path', 'r')  # Passes type check
+open_helper('/other/path', 'typo')  # Error in type checker
 </pre>
 
+BTW Literal[…] was introduced with version 3.8 and is not enforced by the runtime (you can pass whatever string you want in our example). 
 
-## File open() modes
 
 PROTIP: Be explicit about using text (vs. binary) mode.
 
@@ -318,7 +411,7 @@ from sys import platform
 if platform == "linux" or platform == "linux2":
     # linux
 elif platform == "darwin":
-    # OS X
+    # MacOS
 elif platform == "win32":
     # Windows
 elif platform == "cygwin":
@@ -331,16 +424,15 @@ to do more in-depth research.
 
 ## Command generator
 
-<a target="_blank" href="https://github.com/docopt/docopt">
-docopt from https://github.com/docopt/docopt</a>
-is described at <a target="_blank" href="http://docopt.org/">http://docopt.org</a>
-creates custom CLI commands by
-parsing a command help text into cli code that implements it.
+Create custom CLI commands by parsing a command help text into cli code that implements it.
 
 Brilliant.
 
+See <a target="_blank" href="https://github.com/docopt/docopt">
+docopt from https://github.com/docopt/docopt</a> described at <a target="_blank" href="http://docopt.org/">http://docopt.org</a>
 
-## Click 
+
+## Handling Arguments
 
 <a target="_blank" href="https://dbader.org/blog/python-commandline-tools-with-click">
 Dan Bader recommends</a> the use of 
@@ -360,93 +452,6 @@ def main():
 if __name__ == "__main__":
     main()
    </pre>
-
-
-## List comprehension
-
-<pre>squares = [x * x for x in range(10)]
-</pre>
-
-<pre>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</pre>
-
-<a target="_blank" href="https://github.com/austin-taylor/code-vault/blob/master/python_expert_notebook.ipynb">
-The Playbook</a> of code shown on 
-<a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro">
-What Does It Take To Be An Expert At Python?</a> [1:52:02] presented by 
-by James Powell at the PyData conference on Aug 2, 2017.
-
-Abhishake Gupta's pyTest at <a target="_blank" href="https://github.com/letspython3x/code_examples">
-https://github.com/letspython3x/code_examples</a>
-
-<a target="_blank" href="https://www.codementor.io/alibabacloud/">https://www.codementor.io/alibabacloud/ how-to-create-and-deploy-a-pre-trained-word2vec-deep-learning-rest-api-oekpbfqpj</a>
-
-<a target="_blank" href="https://www.learnpython.org/en/Classes_and_Objects">https://www.learnpython.org/en/Classes_and_Objects</a>
-
-
-## Math Operators
-
-<tt>11%5</tt> use the (percent sign), the modulo operator to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
-
-<tt>11//5</tt> uses "floor division" to return just the integer of 2, discarding the remainder. It returns the integral part of the quotient.
-
-To avoid divide by zero errors by returning 0:
-
-<pre>def weird_division(n, d):
-    return n / d if d else 0
-</pre>
-
-## Testing
-
-Being a dynamic language, errors in Python code can appear only when run rather than when compiled.
-
-PROTIP: Create a test .py file to go with each py file.
-
-There are several libraries to support testing.
-
-1. unittest
-
-   Described at <a target="_blank" href="https://www.youtube.com/watch?v=6tNS--WetLI">
-   Python Tutorial: Unit Testing Your Code with the unittest Module</a>
-   Aug 16, 2017 by Corey Schafer
-
-2. pyTest
-
-   <pre>pip3 install pytest</pre>
-
-   <pre>import file_ab_session as fas
-def test_add_function_given_two_arguments():
-    RESULT = fas.add(2,3)
-    EXPECTED_RESULT = 5
-    assert RESULT == EXPECTED_RESULT
-   </pre>
-
-Applicable to both:
-
-   * Name all test classes with a name beginning with "test".
-
-   * Tests are not run from top to bottom, so each test needs to be stand-alone.
-
-   * To do stuff before the tests:
-
-   <pre>@classmethod
-   def setupClass(cls)
-       print('in setupClass')
-&nbsp;
-   @classmethod
-   def tearDownClass(cls)
-       print('in tearDownClass')
-   </pre>
-
-
-## Tools for Debugging Python code
-
-* <a target="_blank" href="http://www.pythontutor.com/">Python Tutor</a> - an excellent way to actually visualize how the interpreter actually reads and executes your code
-
-* <a target="_blank" href="https://www.diffchecker.com/">DiffChecker</a> - compares two sets of text and shows you which lines are different
-
-* <a target="_blank" href="https://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/">Debugging in Python</a> - steps you can take to try to debug your program
-
-* Mocking of API end-points when the actual service is not available.
 
 
 
@@ -473,14 +478,15 @@ On Azure:
    * https://azure.microsoft.com/en-us/support/community/
    <br /><br />
 
+
+
 <a name="Sets"></a>
 
-## Sets
+## Sets: Day of week Set handling
 
-### Day of week Set handling
+set([3,2,3,1,5]) # auto-renumbers with duplicates removed
 
-<pre>
-day_of_week_en = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
+<pre>day_of_week_en = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
 day_of_week_en.append("Luv")
 days_in_week=len(day_of_week_en)
 print(f"{days_in_week} days a week" )
@@ -493,9 +499,7 @@ for index in range(8):
 </pre>
 
 
-set([3,2,3,1,5]) # auto-renumbers with duplicates removed
-
-## Tuple
+## Tuples
 
 <pre>person = ('john', 'doe', 40)
 person
@@ -512,6 +516,144 @@ PROTIP: When adding a single value, include a comma at the end to avoid it being
 <pre>person = 'john',
 type(person)
 </pre>
+
+<hr />
+
+## List comprehension
+
+<pre><strong>squares = [x * x for x in range(10)]
+</strong></pre>
+
+would output:
+<pre>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</pre>
+
+
+## Classes and Objects
+
+<a target="_blank" href="https://www.learnpython.org/en/Classes_and_Objects">https://www.learnpython.org/en/Classes_and_Objects</a>
+
+
+<a target="_blank" href="https://github.com/austin-taylor/code-vault/blob/master/python_expert_notebook.ipynb">
+The Playbook of code</a> shown on 
+<a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro" title="Jul 5, 2017 [1:52:02]">2 hr VIDEO: What Does It Take To Be An Expert At Python?</a> by James Powell (@dontusethiscode) at the PyData conference.
+
+Abhishake Gupta's pyTest at <a target="_blank" href="https://github.com/letspython3x/code_examples">
+https://github.com/letspython3x/code_examples</a>
+
+
+### Metaclasses
+
+metaclasses: 18:50
+metaclasses(explained): 40:40
+
+### Decorators
+
+decorator: 45:20
+
+### Generator
+
+generator: 1:04:30
+
+### Context Manager
+
+context manager: 1:22:37
+
+<hr />
+
+<a target="_blank" href="https://www.codementor.io/alibabacloud/">https://www.codementor.io/alibabacloud/ how-to-create-and-deploy-a-pre-trained-word2vec-deep-learning-rest-api-oekpbfqpj</a>
+
+<hr />
+
+## Secure coding
+
+https://snyk.io/blog/python-security-best-practices-cheat-sheet/
+
+1. Always sanitize external data
+
+1. Scan your code
+
+1. Be careful when downloading packages
+
+1. Review your dependency licenses
+
+1. Do not use the system standard version of Python
+
+1. Use Python’s capability for virtual environments
+
+1. Set DEBUG = False in production
+
+1. Be careful with string formatting
+
+1. (De)serialize very cautiously
+
+1. Use Python type annotations
+
+
+## Insecure code in Pygoat
+
+<a target="_blank" href="https://owasp.org/www-project-pygoat/">
+PyGoat</a> is written using Python with Django web framework.
+Its code intentionally contains both traditional web application vulnerabilities (i.e. XSS, SQLi) and <a target="_blank" href="https://wilsonmar.github.io/owasp-testing">OWASP vulnerabilities</a>
+The top 10 OWASP vulnerabilities in 2020 are:
+
+   • A1:2017-Injection
+   • A2:2017-Broken Authentication
+   • A3:2017-Sensitive Data Exposure
+   • A4:2017-XML External Entities (XXE)
+   • A5:2017-Broken Access Control
+   • A6:2017-Security Misconfiguration
+   • A7:2017-Cross-Site Scripting (XSS)
+   • A8:2017-Insecure Deserialization
+   • A9:2017-Using Components with Known Vulnerabilities
+   • A10:2017-Insufficient Logging & Monitoring
+   <br /><br />
+
+Instructions at https://github.com/adeyosemanputra/pygoat
+
+1. Obtain the Docker image:
+
+   <pre>docker pull pygoat/pygoat
+docker run --rm -p 8000:8000 pygoat/pygoat
+   </pre>
+
+   <pre>Watching for file changes with StatReloader
+Performing system checks...
+&nbsp;
+System check identified no issues (0 silenced).
+November 05, 2021 - 14:57:11
+Django version 3.0.14, using settings 'pygoat.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+   </pre>
+
+1. In the browser localhost:
+
+   <pre>http://127.0.0.1:8000
+   </pre>
+
+
+To learn how to code securely, PyGoat has an area where you can see the source code to determine where the mistake was made that caused the vulnerability and allows you to make changes to secure it.
+
+
+
+https://owasp.org/www-pdf-archive/OWASP-AppSecEU08-Petukhov.pdf
+
+https://rules.sonarsource.com/python/tag/owasp/RSPEC-4529
+   3400+ static analysis rules across 27 programming languages
+
+
+## Logging for Monitoring
+
+It is estimated that it can take up to 200 days, and often longer, between attack and detection. In the meantime, attackers can tamper with servers, corrupt databases, and steal confidential information. 
+
+"Insufficient Logging and Monitoring" is among the top 10 OWASP.
+Ineffective integration of the security systems allow attackers to pivot to other systems and maintain persistent threats.
+
+Insufficient logging and monitoring attacks can be prevented by
+Implementing logging and audit software along with
+Establishing an effective monitoring system
+
+https://infosecwriteups.com/most-common-python-vulnerabilities-and-how-to-avoid-them-5bbd22e2c360
 
 
 ## More about Python

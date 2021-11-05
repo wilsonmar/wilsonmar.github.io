@@ -28,23 +28,26 @@ This page covers preparation for certification exams by several dimensions:
 
 ## Type of AWS Service
 
-   * <a target="_blank" href="https://wilsonmar.github.io/aws-security/">Security, Identity, and Compliance</a> (Organizations, Users, Permissions security)
-   * Management, Monitoring, and Governance (X-Ray)
+   * <a target="_blank" href="https://wilsonmar.github.io/aws-security/">Security, Identity, and Compliance</a> (Organizations, Users, Permissions security, AWS Config, Inspector, Security Hub)
+   * Management, Monitoring, and Governance (CloudWatch, X-Ray)
    * Application Integration (Config, SQS, SNS, EventBridge)
    * AWS Cost Management: 
-   * Networking and Content Delivery: aws-Networking (Regions, AZs, VPCs, ENIs)
+   * Networking and Content Delivery: aws-Networking (Regions, AZs, VPCs, ENIs, Gateway, NAT, ELB)
    * aws-Architecture (Disaster Recovery / Business Continuity, ASG, Snapshots, Log shipping)
    * Compute (AMI, Server Types, CPUs, AWS Batch)
-   * Storage (EBS volumes, EFS)
-   * Databases
+   * Storage (EBS volumes, EFS, Snow)
+   * Databases (RDS, Athena, Elastic)
    * Analytics: Amazon Elasticsearch Service (Amazon ES) 
+   * Migrations
+
+Covered only in specialty exams:
 
    * Machine Learning (Polly, Rekognition, Amazon ML, Greengrass, Deep Learning AMIs (DLAMI) )
    * DevOps (Cloud9, CodeBuild, CodeCommit, CodeDeploy, CodeStar)
    * Mobile Hub, SDK
    * IoT 
-   <br /><br />
 
+Not covered:
    * Amazon Chime, SES (Simple Email Service)
    * Amazon CloudSearch
    * Amazon Connect

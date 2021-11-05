@@ -20,6 +20,62 @@ After following this hands-on tutorial manually, you would be able to add to you
 
 > Automated testing of BDD based on Gherkin using Python-based pytest-bdd installed using a Bash script. Integrated libraries for test coverage analysis, data-driven tests, and localization verification.
 
+## Testing Python
+
+Being a dynamic language, errors in Python code can appear only when run rather than when compiled.
+
+PROTIP: Create a test .py file to go with each py file.
+
+There are several libraries to support testing.
+
+1. unittest
+
+   Described at <a target="_blank" href="https://www.youtube.com/watch?v=6tNS--WetLI">
+   Python Tutorial: Unit Testing Your Code with the unittest Module</a>
+   Aug 16, 2017 by Corey Schafer
+
+2. pyTest
+
+   <pre>pip3 install pytest</pre>
+
+   <pre>import file_ab_session as fas
+def test_add_function_given_two_arguments():
+    RESULT = fas.add(2,3)
+    EXPECTED_RESULT = 5
+    assert RESULT == EXPECTED_RESULT
+   </pre>
+
+Applicable to both:
+
+   * Name all test classes with a name beginning with "test".
+
+   * Tests are not run from top to bottom, so each test needs to be stand-alone.
+
+   * To do stuff before the tests:
+
+   <pre>@classmethod
+   def setupClass(cls)
+       print('in setupClass')
+&nbsp;
+   @classmethod
+   def tearDownClass(cls)
+       print('in tearDownClass')
+   </pre>
+
+
+## Tools for Debugging Python code
+
+* <a target="_blank" href="http://www.pythontutor.com/">Python Tutor</a> - an excellent way to actually visualize how the interpreter actually reads and executes your code
+
+* <a target="_blank" href="https://www.diffchecker.com/">DiffChecker</a> - compares two sets of text and shows you which lines are different
+
+* <a target="_blank" href="https://pythonconquerstheuniverse.wordpress.com/2009/09/10/debugging-in-python/">Debugging in Python</a> - steps you can take to try to debug your program
+
+* Mocking of API end-points when the actual service is not available.
+
+<hr />
+
+## Pytest
 
 1. Learn about the basic concepts about Pytest.
 
@@ -363,30 +419,9 @@ Book "BDD in Action" by John Ferguson Smart.
 Not used much anymore is "lettuce".
 
 
-## Localization (L10N)
+## References
 
-There are two ways to select another human language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.):
-
-   A. English was selected in browser's Preferences, but another the app displays another language.
-   
-   B. Another language was selected in browser's preferences, and the app displays that language.
-
-To simulate selecting another language in the browser's Preferences in Firefox:
-
-<pre>FirefoxOptions options = new FirefoxOptions();
-options.addPreference("intl.accept_languages", language);
-driver = new FirefoxDriver(options);
-</pre>
-
-... and in Chrome:
-
-<pre>HashMap&LT;String, Object> chromePrefs = new HashMap&LT;String, Object>();
-chromePrefs.put("intl.accept_languages", language);
-ChromeOptions options = new ChromeOptions();
-options.setExperimentalOption("prefs", chromePrefs);
-driver = new ChromeDriver(options);
-</pre>
-
+https://itnext.io/common-python-security-problems-ffedbae7b11c
 
 ## More about Python
 
