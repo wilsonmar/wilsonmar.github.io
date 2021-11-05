@@ -179,6 +179,8 @@ PROTIP: If you have an OReilly.com subscription (to Pearson) you can also filter
    * aws-Storage (EBS volumes, EFS)
    <br /><br />
 
+## References
+
 https://www.gliffy.com/blog/aws-architecture-diagram-examples
 
 https://online.visual-paradigm.com/drive/#diagramlist:proj=0&new=AWSDiagram
@@ -189,45 +191,6 @@ https://www.diagrams.net/blog/aws-diagrams
 
 https://www.conceptdraw.com/How-To-Guide/aws-icons-2
 
-## AWS Services
-
-Among the 200+, C = From Cantrill.io
-
-Aurora (one replica in each AZ, cluster storage replicated multi-master in several regions) but writes only to primary region.
-
-Config records changes on resources in one or more regions & audits compliance to standards for alerts to SNS
-
-DynamoDB - global (multi-master read/write)
-
-EventBridge notifies SNS & Invokes Lambda
-
-Fargate (mode of EC2 with ENI's in a VPC like auto-scaling groups)
-
-<a target="_blank" href="https://aws.amazon.com/fsx/">
-FSx</a> (Launch, run, and scale feature-rich and highly-performant file systems) - 
-
-GuardDuty - continuous AI/ML threat intelligence to identify unexpected and unauthorized activities in data sources (DNS Logs, VPC Flow, CloudTrail mgmt events, CloudTrails S3 Data Events) to EventBridge
-
-AWS Glue - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23693055">C</a>
-
-AWS Kinesis Video Streams - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23925485">C</a>
-
-AWS Lex & Connect - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23925480">C</a>
-
-RDS (Cross Region Read Replica Async replication in several regions)
-
-Rekognition - <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-solutions-architect-professional/lectures/23693085">C</a>
-
-
-<a name="References"></a>
-
-## References #
-
-After signing up for <a target="_blank" href="https://www.aws.training/">https://www.aws.training</a>, <a target="_blank" href="https://www.aws.training/learningobject/video?id=16484">
-Authentication and Authorization with AWS Identity and Access Management</a>
-15 minutes
-
-## References
 
 
 ## More on Amazon #
