@@ -16,6 +16,42 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This page covers preparation for certification exams by several dimensions:
+
+   * by exam
+   * by <a href="#TypeofSvc">type of AWS service</a>
+   <br /><br />
+
+<hr />
+
+<a name="TypeofSvc"></a>
+
+## Type of AWS Service
+
+   * <a target="_blank" href="https://wilsonmar.github.io/aws-security/">Security, Identity, and Compliance</a> (Organizations, Users, Permissions security)
+   * Management, Monitoring, and Governance (X-Ray)
+   * Application Integration (Config, SQS, SNS, EventBridge)
+   * AWS Cost Management: 
+   * Networking and Content Delivery: aws-Networking (Regions, AZs, VPCs, ENIs)
+   * aws-Architecture (Disaster Recovery / Business Continuity, ASG, Snapshots, Log shipping)
+   * Compute (AMI, Server Types, CPUs, AWS Batch)
+   * Storage (EBS volumes, EFS)
+   * Databases
+   * Analytics: Amazon Elasticsearch Service (Amazon ES) 
+
+   * Machine Learning (Polly, Rekognition, Amazon ML, Greengrass, Deep Learning AMIs (DLAMI) )
+   * DevOps (Cloud9, CodeBuild, CodeCommit, CodeDeploy, CodeStar)
+   * Mobile Hub, SDK
+   * IoT 
+   <br /><br />
+
+   * Amazon Chime, SES (Simple Email Service)
+   * Amazon CloudSearch
+   * Amazon Connect
+
+
+## AWS Exams
+
 <a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">Official info on AWS exams</a>: PDFs lists the services tested:
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-cloud-practitioner/">$100 to answer 65 questions in 90-minute<br />AWS Certified Cloud Practitioner</a>
@@ -53,17 +89,22 @@ The "and deploy" applies to Professional. Associate has just "design".
 
 stackoverflow
 
-## AWS Training Resources #
+## FREE AWS Training Resources #
 
 * <a target="_blank" href="https://explore.skillbuilder.aws/pages/16/learner-dashboard">AWS Free SkillBuilder</a>
 
-* Gradually revealed diagram videos and quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">https://learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All (except specialty) exams for just $200.
+* <a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/1_deploy_base_application_environment/">AWS WellArchitectedLabs.com</a>
 
 * <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">Memorize AWS Acronyms as flash card games using my Quizlet</a>
 
+
+## For-fee Training resources
+
+* Gradually revealed diagram videos and quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">https://learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All (except specialty) exams for just $200. Great for visual and auditory learners.
+
 * ACloudGuru.com
 
-* LinkedInLearning.com
+* <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=aws">LinkedIn.com Learning on AWS</a>
 
 <a target="_blank" href="https://cloudacademy.com/search/?q=aws">CloudAcademy.com</a> provides hands-on lab instances with their tutorials.
 
@@ -167,17 +208,10 @@ PROTIP: If you have an OReilly.com subscription (to Pearson) you can also filter
 <tr valign="top"><td> 15% </td><td> Migration Planning </td></tr>
 <tr valign="top"><td> 12.5% </td><td> Cost Control </td></tr>
 <tr valign="top"><td> 29% </td><td> Continuous Improvement for Existing Solutions </td></tr>
+</table>
 
 <hr />
 
-## My notes
-
-   * aws-iam (Organizations, Users, Permissions security)
-   * aws-Networking (Regions, AZs, VPCs, ENIs)
-   * aws-Architecture (Disaster Recovery / Business Continuity, ASG, Snapshots, Log shipping)
-   * aws-Compute (AMI, Server Types, CPUs)
-   * aws-Storage (EBS volumes, EFS)
-   <br /><br />
 
 ## References
 
