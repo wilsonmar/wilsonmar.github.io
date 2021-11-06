@@ -647,11 +647,52 @@ https://rules.sonarsource.com/python/tag/owasp/RSPEC-4529
 It is estimated that it can take up to 200 days, and often longer, between attack and detection. In the meantime, attackers can tamper with servers, corrupt databases, and steal confidential information. 
 
 "Insufficient Logging and Monitoring" is among the top 10 OWASP.
-Ineffective integration of the security systems allow attackers to pivot to other systems and maintain persistent threats.
 
-Insufficient logging and monitoring attacks can be prevented by
-Implementing logging and audit software along with
-Establishing an effective monitoring system
+The vulnerability includes ineffective integration of the security systems which give attackers a way to pivot to other parts of the system to maintain persistent threats.
+
+Prevent that by emitting a log entry for each activity such as:
+add, change/update, delete.
+
+Use the <a target="_blank" href="https://realpython.com/python-logging/">Python logging module</a>:
+
+<pre>import logging
+</pre>
+
+To emit each log entry, use the loggin method so that logs can be filtered by level. In order of severity:
+
+   <pre>logging.debug('DEBUG - used during troubleshooting at the highest detail level')
+logging.info('INFO - used during initial runs by a developer new to the program')
+logging.warning('WARNING - used during QA runs')
+logging.error('ERROR - used during production runs')
+logging.critical('CRITICAL - the minimal level')
+   </pre>
+
+The default:
+
+   <pre>logging.basicConfig(level=logging.DEBUG)
+   </pre>
+
+At run-time, specific the highest level to display during that run:
+
+   * DEBUG
+   * INFO
+   * WARNING
+   * ERROR
+   * CRITICAL
+   <br /><br />
+
+Also, provide a run-time option for outputing to a file:
+
+   <pre>logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+   </pre>
+
+CAUTION: Be careful to not disclose sensitive information in logs.
+Encrypt plaintext.
+
+The logging module also allows you to capture the full stack traces in an application.
+
+https://realpython.com/python-logging-source-code/
+
 
 https://infosecwriteups.com/most-common-python-vulnerabilities-and-how-to-avoid-them-5bbd22e2c360
 
