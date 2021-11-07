@@ -32,7 +32,7 @@ This page covers preparation for certification exams by several dimensions:
    * Management, Monitoring, and Governance (CloudWatch, X-Ray)
    * Application Integration (Config, SQS, SNS, EventBridge)
    * AWS Cost Management: 
-   * Networking and Content Delivery: aws-Networking (Regions, AZs, VPCs, ENIs, Gateway, NAT, ELB)
+   * <a target="_blank" href="https://wilsonmar.github.io/aws-networking/">Networking and Content Delivery</a> (Regions, AZs, VPNs, DNS, Route 53, IPs, CIDR, DMZ, VPCs, Peering, Gateway, NAT, SGs, NACL, ENIs, ELB, WAF, CDN, ASG)
    * aws-Architecture (Disaster Recovery / Business Continuity, ASG, Snapshots, Log shipping)
    * Compute (AMI, Server Types, CPUs, AWS Batch)
    * Storage (EBS volumes, EFS, Snow)
@@ -61,29 +61,33 @@ Not covered:
 
 <a target="_blank" href="https://aws.amazon.com/certification/exams/?nc2=sb_ce_exm">Official info on AWS exams</a>: PDFs lists the services tested:
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-cloud-practitioner/">$100 to answer 65 questions in 90-minute<br />AWS Certified Cloud Practitioner</a>
+### Associate level exams:
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/">$150, 80-minute<br />AWS Certified Solutions Architect - Associate (SOA-C02)</a> 
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-cloud-practitioner/AWS-Certified-Cloud-Practitioner_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-cloud-practitioner/">$100 to answer 65 questions in 90-minute<br />AWS Certified Cloud Practitioner</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">$150, 80-minute<br />AWS Certified SysOps Administrator - Associate (SOA-C02)</a> 
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-associate/">$150, 80-minute<br />AWS Certified Solutions Architect - Associate (SOA-C02)</a> 
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sysops-associate/AWS-Certified-SysOps-Administrator-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-sysops-admin-associate/">$150, 80-minute<br />AWS Certified SysOps Administrator - Associate</a> 
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-developer-associate/">$150, 80-minute <br />AWS Certified Developer - Associate</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-professional/">$300, 170-minutes <br />AWS Certified Solutions Architect - Professional</a>
+### Professional level exams:
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">$300, 170-minute <br />AWS Certified DevOps Engineer - Professional</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-sa-pro/AWS-Certified-Solutions-Architect-Professional_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-solutions-architect-professional/">$300, 170-minutes <br />AWS Certified Solutions Architect - Professional</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300, 170-minute <br />AWS Certified Advanced Networking - Specialty</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-devops-engineer-professional/">$300, 170-minute <br />AWS Certified DevOps Engineer - Professional</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
+### Specialty exams:
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300, 170-minute <br />AWS Certified Advanced Networking - Specialty</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300 to answer 65 questions in 180-minute<br />AWS Certified Database - Specialty</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute <br />AWS Certified Machine Learning - Specialty</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-database-specialty/AWS-Certified-Database-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300 to answer 65 questions in 180-minute<br />AWS Certified Database - Specialty</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a> <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute <br />AWS Certified Security - Specialty</a>
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute <br />AWS Certified Machine Learning - Specialty</a>
+
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute <br />AWS Certified Security - Specialty</a>
 
 
 > Design <strong>and deploy</strong> dynamically scalable, highly available, fault-tolerant, and reliable applications on AWS.
@@ -107,9 +111,22 @@ stackoverflow
 
 ## For-fee Training resources
 
-* Gradually revealed diagram videos and quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">https://learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All (except specialty) exams for just $200. Great for visual and auditory learners.
+* Gradually revealed diagram videos (great for visual and auditory learners), <a target="_blank" href="https://learn.cantrill.io/courses/895720/lectures/16566559">"animals4life.org" sample app</a> in <a target="_blank" href="https://github.com/acantril/learn-cantrill-io-labs/">a GitHub</a> (migrating from on-prem to AWS), plus quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All 5 exams (except specialty) for just $200.<br /><br />I've added shell & Python scripts.
 
-* ACloudGuru.com
+   * <a target="_blank" href="https://github.com/acantril/aws-sa-associate-saac02">AWS Certified Solutions Architect (SAAC02)</a>
+   * <a target="_blank" href="https://github.com/acantril/aws-sa-pro">AWS Certified Solutions Architect - Pro</a>
+
+   * <a target="_blank" href="https://github.com/acantril/aws-sysops-associate">AWS Certified Sysops Administrator - associate</a>
+   
+   * <a target="_blank" href="https://github.com/acantril/aws-dev-associate">Dev asso</a>
+   * <a target="_blank" href="https://github.com/acantril/aws-devops-pro">DevOps Engineer - Pro</a>
+
+   * <a target="_blank" href="https://github.com/acantril/aws-advancednetworking-specialty">Advanced Networking</a>
+
+   * <a target="_blank" href="https://github.com/acantril/aws-cfn-snippets/tree/master/compute/ec2_simple_portable">CFN Snippets for Linux & Windows</a>
+   <br /><br />
+
+* ACloudGuru.com (began in Sydney Australia)
 
 * <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=aws">LinkedIn.com Learning on AWS</a>
 

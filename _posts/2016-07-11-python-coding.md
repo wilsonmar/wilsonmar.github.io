@@ -517,8 +517,6 @@ PROTIP: When adding a single value, include a comma at the end to avoid it being
 type(person)
 </pre>
 
-<hr />
-
 ## List comprehension
 
 <pre><strong>squares = [x * x for x in range(10)]
@@ -528,27 +526,32 @@ would output:
 <pre>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</pre>
 
 
+<hr />
+
+
 ## Classes and Objects
 
-<a target="_blank" href="https://www.learnpython.org/en/Classes_and_Objects">https://www.learnpython.org/en/Classes_and_Objects</a>
-
-
-<a target="_blank" href="https://github.com/austin-taylor/code-vault/blob/master/python_expert_notebook.ipynb">
-The Playbook of code</a> shown on 
-<a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro" title="Jul 5, 2017 [1:52:02]">2 hr VIDEO: What Does It Take To Be An Expert At Python?</a> by James Powell (@dontusethiscode) at the PyData conference.
-
-Abhishake Gupta's pyTest at <a target="_blank" href="https://github.com/letspython3x/code_examples">
-https://github.com/letspython3x/code_examples</a>
+   * <a target="_blank" href="https://www.learnpython.org/en/Classes_and_Objects">https://www.learnpython.org/en/Classes_and_Objects</a>
+   * <a target="_blank" href="https://github.com/austin-taylor/code-vault/blob/master/python_expert_notebook.ipynb">The Playbook of code</a> shown on <a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro" title="Jul 5, 2017 [1:52:02]">2 hr VIDEO: What Does It Take To Be An Expert At Python?</a> by James Powell (@dontusethiscode) at the PyData conference.
 
 
 ### Metaclasses
 
 metaclasses: 18:50
+
 metaclasses(explained): 40:40
 
 ### Decorators
 
-decorator: 45:20
+   * <a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro&t=45m20s" title="Jul 5, 2017 [1:52:02]">VIDEO</a>
+   <br /><br />
+
+The string starting with "@" before a function definition 
+
+Since Python is a live dynamically compiled
+
+There are limitations.
+
 
 ### Generator
 
@@ -642,7 +645,12 @@ https://rules.sonarsource.com/python/tag/owasp/RSPEC-4529
    3400+ static analysis rules across 27 programming languages
 
 
+<a name="Logging"></a>
+
 ## Logging for Monitoring
+
+   * <a target="_blank" href="https://www.loggly.com/ultimate-guide/python-logging-basics/">
+   <br /><br />
 
 It is estimated that it can take up to 200 days, and often longer, between attack and detection. In the meantime, attackers can tamper with servers, corrupt databases, and steal confidential information. 
 
@@ -667,19 +675,33 @@ logging.error('ERROR - used during production runs')
 logging.critical('CRITICAL - the minimal level')
    </pre>
 
-The default:
+At run-time, specify the highest level to display during that run:
 
-   <pre>logging.basicConfig(level=logging.DEBUG)
-   </pre>
-
-At run-time, specific the highest level to display during that run:
-
-   * DEBUG
-   * INFO
-   * WARNING
-   * ERROR
-   * CRITICAL
+   * CRITICAL = 50
+   * FATAL = CRITICAL
+   * ERROR = 40
+   * WARNING = 30
+   * WARN = WARNING
+   * INFO = 20
+   * DEBUG = 10
+   * NOTSET = 0
    <br /><br />
+
+CRITICAL, FATAL, and ERROR are always shown.
+
+WARN (WARNING) is the default verbosity level.
+Set the default:
+<ul>
+   <pre>logging.basicConfig(level=logging.WARNING)
+   </pre>
+</ul>
+
+<tt>-q</tt> (for -quiet) suppresses INFO headings.
+
+<tt>-v</tt> (for -verbose) to display DEBUB messages.
+
+<tt>-vv</tt> to display TRACE messages.
+
 
 Also, provide a run-time option for outputing to a file:
 

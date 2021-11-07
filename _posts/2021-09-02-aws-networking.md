@@ -21,14 +21,27 @@ This tutorial covers how to access servers and other resources within AWS.
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11e6-8471-46d2602d3f39.jpg"></amp-img>
 
-TODO: Make above diagram into a video. Add WAF.
+TODO: Add WAF. Make above diagram into a video. 
+
+Consider the types of architectures:
+– Subnets vs. VPCs and VPC peering
 
 
-## Create VPCs #
+## VPC Peering #
 
-https://www.terraform.io/docs/providers/aws/r/vpc.html
+VPC peering enables organizations to couple distinct VPCs together, allowing assets in one network to talk 
+to assets in another. 
+
+VPC peering is not transitive —- it must be specifically allowed for each VPC peered together. 
+
+
+## Transit Gateway
+
+A transit gateway can simplify multi-VPC architectures significantly.
 
 ### Terraform
+
+https://www.terraform.io/docs/providers/aws/r/vpc.html
 
 https://wpengine.linuxacademy.com/amazon-web-services-2/learn-how-to-master-aws-vpc-inside-and-out/
 Basic usage with tags:
@@ -231,11 +244,11 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16169
 Do you really know the above? Take <a target="_blank" href="https://learning.oreilly.com/certifications/9780136757078/">Pearson's IP Subnetting exam on OReilly.com</a> [subscription required]
 
 
-<a name="CF-VPC"></a>
+   <a name="CF-VPC"></a>
 
-## Automatically create VPC using CloudFormation #
+   ### Automatically create VPC using CloudFormation #
 
-VPCs are really software-defined networks (SDN).
+   VPCs are really software-defined networks (SDN).
 
 
    {% highlight text %}
@@ -313,7 +326,7 @@ servers is TCP 53 / UDP 53.
 
 Its competitors include Dyn.com, GoDaddy, etc.
 
-
+<a target="_blank" href="https://github.com/acantril/learn-cantrill-io-labs/tree/master/aws-hybrid-dns">DIAGRAM: Advanced Demo - Hybrid DNS between AWS and Simulated On-Premises</a>
 
 
 <a name="RoutingRules"></a>
