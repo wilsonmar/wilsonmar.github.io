@@ -594,6 +594,14 @@ https://snyk.io/blog/python-security-best-practices-cheat-sheet/
 
 ## Insecure code in Pygoat
 
+https://awesomeopensource.com/project/guardrailsio/awesome-python-security
+
+https://github.com/mpirnat/lets-be-bad-guys
+from 2017
+
+https://github.com/fportantier/vulpy
+from 2020 in Brazil
+
 <a target="_blank" href="https://owasp.org/www-project-pygoat/">
 PyGoat</a> is written using Python with Django web framework.
 Its code intentionally contains both traditional web application vulnerabilities (i.e. XSS, SQLi) and <a target="_blank" href="https://wilsonmar.github.io/owasp-testing">OWASP vulnerabilities</a>

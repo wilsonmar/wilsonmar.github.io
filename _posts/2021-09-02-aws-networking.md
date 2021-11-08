@@ -348,30 +348,30 @@ AWS VPC Routing Rules are what makes subnets public or private.
 
 <a name="NAT"></a>
 
-## NAT #
+## AWS NAT #
 
 0. Launch an EC2 instance of a Community AMI built for NATting. Search for "NAT".
-
-   DEFINITION: A NAT server allows outbound traffic to the external internet.
-   By default, a NAT server allows inbound traffic only through connections
-   already established by an internet host (typically port 80).
 
    NAT provides IP address assignment and DNS Proxy name resolution
    services to internal network clients.
 
-To access traffic from a special port from an external host:
+   A NAT server allows outbound traffic to the <strong>external internet</strong>.
+   By default, a NAT server allows inbound traffic only through connections
+   already established by an internet host (typically port 80/443).
 
-* If the public interface of the NAT server is configured with a single IP address,
+   To access traffic from a special port from an external host:
+
+   * If the public interface of the NAT server is configured with a single IP address,
    add a Special Port (for Windows, in the Routing and Remote Assess MMC console).
 
-* If the public interface of the NAT server is configured with multiple IP addresses,
+   * If the public interface of the NAT server is configured with multiple IP addresses,
    make address reservations to map specific external addresses
    to specific internal addresses.
 
    Selection of 006 DNS Servers option at the scope level overrides the selection at the server level.
 
-For security, define some servers can only make outbound calls to
-the internet (through the <a href="#NAT">NAT server</a>).
+   For security, define some servers to only make outbound calls to
+   the internet (through the <a href="#NAT">NAT server</a>).
 
 0. PROTIP: A NAT instance provide whatever capacity a single AMI provides,
    so it should be configured with CloudWatch alarms and traffic metrics.
@@ -380,13 +380,18 @@ the internet (through the <a href="#NAT">NAT server</a>).
    <a target="_blank" href="https://aws.amazon.com/articles/2781451301784570/">
    to manage Subnet failover to another NAT in this Amazon article</a>.
 
+<a name="NATGateway"></a>
+
+### NAT Gateway #
+
+   A <strong>NAT Gateway</strong> is used for private subnets to reach the public internet.
+
+   An <strong>AWS NAT Gateway</strong> SaaS supports <strong>bursts of up to 10Gbps</strong>. NAT Gateways are managed by AWS, so they don't have traffic metrics nor CloudWatch alarms, plus there is a <strong>per-hour</strong> charge for AWS to operate the NAT Gateway.
+
+
    A NAT instance can be configured for port forwarding, bastion hosts.
 
-None of the above is necessary with
-<strong>AWS NAT Gateways</strong> which support bursts of up to 10Gbps.
-They are managed by AWS, so it does not provide traffic metrics
-nor CloudWatch alarms.
-
+<a name="Bastion"></a>
 
 ### Bastion host #
 

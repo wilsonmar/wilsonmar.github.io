@@ -134,7 +134,10 @@ stackoverflow
    * <a target="_blank" href="https://cloudacademy.com/learning-paths/aws-sysops-administrator-associate-soa-c02-certification-preparation-for-aws-2876/">Learning Path for Associate</a>
    <br /><br />
 
-* <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=aws">LinkedIn Learning (Lynda.com) AWS tutorials</a>
+* <a target="_blank" href="https://www.oreilly.com/">ORilly.com</a>:
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/aws-certified-database/9780137362776/">AWS Certified Database - Specialty Complete Video Course</a> by Chad Smith
+   <br /><br />
 
 * http://www.pluralsight.com/courses/aws-certified-sysops-admin-associate
 
