@@ -111,7 +111,7 @@ stackoverflow
 
 ## For-fee Training resources
 
-* Gradually revealed diagram videos (great for visual and auditory learners), <a target="_blank" href="https://learn.cantrill.io/courses/895720/lectures/16566559">"animals4life.org" sample app</a> in <a target="_blank" href="https://github.com/acantril/learn-cantrill-io-labs/">a GitHub</a> (migrating from on-prem to AWS), plus quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All 5 exams (except specialty) for just $200.<br /><br />I've added shell & Python scripts.
+* Gradually revealed diagram videos (great for visual and auditory learners), <a target="_blank" href="https://learn.cantrill.io/courses/895720/lectures/16566559">"animals4life.org" sample app</a> in <a target="_blank" href="https://github.com/acantril/learn-cantrill-io-labs/">a GitHub</a> (migrating from on-prem to AWS), plus quizzes with instant feedback make <a target="_blank" href="https://learn.cantrill.io/">learn.cantrill.io</a> by Adrian Cantrill in Melbourne, Australia (<a target="_blank" href="https://twitter.com/adriancantrill">@adriancantrill</a>) the premier resource for comprehensive AWS training. All 5 exams (except specialty) for just $200.<br /><br />Each course covers the basics (as "refresher"):
 
    * <a target="_blank" href="https://github.com/acantril/aws-sa-associate-saac02">AWS Certified Solutions Architect (SAAC02)</a>
    * <a target="_blank" href="https://github.com/acantril/aws-sa-pro">AWS Certified Solutions Architect - Pro</a>
@@ -120,7 +120,6 @@ stackoverflow
    
    * <a target="_blank" href="https://github.com/acantril/aws-dev-associate">Dev asso</a>
    * <a target="_blank" href="https://github.com/acantril/aws-devops-pro">DevOps Engineer - Pro</a>
-
    * <a target="_blank" href="https://github.com/acantril/aws-advancednetworking-specialty">Advanced Networking</a>
 
    * <a target="_blank" href="https://github.com/acantril/aws-cfn-snippets/tree/master/compute/ec2_simple_portable">CFN Snippets for Linux & Windows</a>

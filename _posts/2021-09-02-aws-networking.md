@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Networking"
-excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, etc."
+excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, BGP, etc."
 tags: [AWS, EC2, cloud, VPC]
 date: "2021-09-02"
 file: "aws-networking"
@@ -26,14 +26,16 @@ TODO: Add WAF. Make above diagram into a video.
 Consider the types of architectures:
 – Subnets vs. VPCs and VPC peering
 
+## VPCs
 
-## VPC Peering #
+   * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
+   <br /><br />
 
-VPC peering enables organizations to couple distinct VPCs together, allowing assets in one network to talk 
-to assets in another. 
+Virtual Private Cloud ()
 
-VPC peering is not transitive —- it must be specifically allowed for each VPC peered together. 
+VPC Public Networking
 
+## IP DHCP
 
 ## Transit Gateway
 
@@ -335,6 +337,13 @@ Its competitors include Dyn.com, GoDaddy, etc.
 
 AWS VPC Routing Rules are what makes subnets public or private.
 
+## ELB vs. ALB
+
+   * <a target="_blank" href="https://wilsonmar.github.io/loadbal/">WilsonMar on Load Balancers</a>
+   * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31664425" title="by Cantrill">VIDEO</a>:
+   <br /><br />
+
+
 
 
 <a name="NAT"></a>
@@ -413,17 +422,27 @@ Customer Gateway.
 
    It's attached to a VPN.
 
+<a name="Peering"></a>
 
 ## VPC Peering #
 
-Peering connections were introduced
-to route traffic between two VPCs (AZs) in the same region using <strong>private</strong> (rather than public) IP addresses.
+VPC peering enables organizations to link two distinct VPCs together, allowing assets in one network to talk to assets in another. 
+
+Peering connections were introduced to route traffic <strong>between two VPCs (AZs)</strong> in the same region using <strong>private</strong> (rather than public) IP addresses.
 This makes it like they are communicating as if they are within the same network.
+
+Nodes in the same region can reference each other logically using the same peer SG (Security Group), which improves performance.
+
+VPC peering is <strong>not transitive</strong> —- it must be specifically allowed for each VPC peered together.
+
+Nevertheless, IP addresses must not overlap among VPCs.
+
 Peering is neither a gateway nor a VPN connection,
 so doesn't invoke separate physical hardware and the "single point of failure" nor bandwidth bottlenecks.
-One useful use case is for more secure interconnection among Active Directory, Exchange, and other common business services.
 
-   * more secure communication among business units/tams
+One useful use case is for more secure interconnection among Active Directory, Exchange, and other common business services:
+
+   * more secure communication among business units/teams
    * stronger integration of CRM, HRMS, file sharing
    * tighter integrated access of core <strong>suppliers</strong> systems
    * provide monitoring and management of <strong>customer</strong> AWS resources
@@ -452,6 +471,8 @@ Block all the inbound and outbound ports. Only allow application request ports.
 These are stateless traffic filters that apply to all traffic inbound or outbound from a Subnet within VPC. AWS recommended Outbound rules
 
 See http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html
+
+## Direct Connect (DX)
 
 
 

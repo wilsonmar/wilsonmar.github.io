@@ -18,9 +18,15 @@ comments: true
 
 ## How many AWS Services are there?
 
-Among the 200+, C = From Cantrill.io
+Among the 200+, the <a target="_blank" href="https://pages.awscloud.com/rs/112-TZM-766/images/How-to-Design-a-Least-Privilege-Architecture-in-AWS-Slides.pdf">key services</a>:
+
+<img width="1591" alt="aws-svcs-map-3182x1350" src="https://user-images.githubusercontent.com/300046/140666002-a4f52934-bb78-4b25-bc8b-b7e2a0d7d0f4.png">
+<img width="1591" alt="aws-svcs-map-3182x1350" src="https://user-images.githubusercontent.com/300046/140666002-a4f52934-bb78-4b25-bc8b-b7e2a0d7d0f4.png"></a>
+
 
 ## List AWS Service names
+
+<em>C = From Cantrill.io</em>
 
 Aurora (one replica in each AZ, cluster storage replicated multi-master in several regions) but writes only to primary region.
 
