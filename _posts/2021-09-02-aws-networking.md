@@ -475,7 +475,20 @@ Block all the inbound and outbound ports. Only allow application request ports.
 
 These are stateless traffic filters that apply to all traffic inbound or outbound from a Subnet within VPC. AWS recommended Outbound rules
 
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Security Group </th><th> NACLs </th></tr>
+<tr valign="top"><td> Applicable to instances </td><td> Operate on VPC subnets </td></tr>
+<tr valign="top"><td> Only supports Allow rules (layered on a default Deny)</td><td> Support both allow and deny rules</td></tr>
+<tr valign="top"><td> Are stateful </td><td> Are NOT stateful </td></tr>
+<tr valign="top"><td> Are considered in their entirety before traffic is allowed</td><td> Are processed in numerical order </td></tr>
+<tr valign="top"><td> Must be associated with an instance to apply </td><td> Apply automatically to all instances in a subnet</td></tr>
+</table>
+
 See http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html
+
+
+
+
 
 ## Direct Connect (DX)
 

@@ -1722,6 +1722,7 @@ Types of control function:
    * Recovery - Recovers system from an attack, like backups.
    <br /><br />
 
+   Examples:
    * A DBMS is a technical control.
    * Operational controls: backup control, software testing, anti-virus, 
    * Data backups are recovery <strong>logical controls</strong>. 
@@ -1731,27 +1732,35 @@ Types of control function:
    * Job rotation and background checks are <strong>detective administrative controls</strong>.
    <br /><br />
 
-Risk Resolution  Description
+Risk Resolution:
    * <strong>Avoid</strong> - The part of the system containing the issue will be cut.
    * <strong>Reduce</strong> - Issue will be addressed with bug fixes or redesign to reduce or eliminate threat impact and severity.
    * <strong>Transfer</strong> - Issue will be handled by another system or team.
    * <strong>Accept</strong> - (without a resolution). Based on threat severity.
    <br /><br />
 
+<strong>Resilience</strong> is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
+
 DRP (Disaster Recovery Plan) defines "how" - implemented when the emergency occurs and includes the steps to restore functions and systems. Includes identification of specific hardware.
 DRP lifecycle phases:
-   1. BIA (Business impact analysis) is a functional analysis that lists the critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
+   1. BIA (Business Impact Analysis) is a functional analysis of critical and necessary business functions, their resource dependencies, and their level of criticality to the overall organization. Risks. Minimum Operating Requirements (MOR)
    2. Define strategies
    3. Define Plans and Procedures
    4. Train users
    5. Exercise the plan
    6. Review and update the plan
 
-   * OEP (Occupant Emergency Plan)
+   * OEP (Occupant Emergency Plan) - a facility-based plan focused on safety and evacuation
    * The BCP (business continuity plan) defines "what" -- considers all aspects that are affected by a disaster, including functions, systems, personnel, and facilities, and lists and prioritizes the services that are needed. 
    * A contingency plan provides instruction on what personnel should do until the functions and systems are restored to full  functionality. 
    * A CCP (Crisis Communication Plan)
    <br /><br />
+
+Strategies:
+   * Backup & restore - cheapest  and slowest
+   * Pilot Light      - cheap     but faster
+   * Warm Standby     - costly    but quicker to recover
+   * Active/Active    - expensive but quickest recovery time
 
 DRP activation:
    1. Mitigation
@@ -1759,8 +1768,6 @@ DRP activation:
    3. Response (activation, execution)
    4. Recovery toward normalcy
    <br /><br />
-
-<strong>Resilience</strong> is the ability of a system, device, or data center to recover quickly and continue operating after an equipment failure, power outage, or other disruption. It involves the use of redundant components or facilities.
 
 Metrics defined by BIA (Business Impact Assessment): REMEMBER: MTD <= RTO + WRT
    <a target="_blank" href="https://www.youtube.com/watch?v=oAjNL3I_3-E&t=4m"><img alt="cyber-sec-bia-terms-581x239" width="581" src="https://user-images.githubusercontent.com/300046/104836718-0ac08200-586d-11eb-8ea9-c67720e58e4f.png"></a>
