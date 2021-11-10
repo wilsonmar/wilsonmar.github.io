@@ -156,6 +156,8 @@ People at Lending Tree found these AWS-manged Config rules helpful in <strong>de
 
 Notice AWS's managed rules are mostly about security, and less about cost optimization, Reliability, and Performance.
 
+STAR: <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/">
+Trend Micro's product "Conformity" provides 750+ rules as part of their "CloudOne" Security Platform</a>:
 
 Cost Optimization:
 
@@ -192,7 +194,7 @@ Reliability:
    * Check for running AWS EC2 instances older than 180 days available within your AWS account.
    * Check for any AMIs older than 180 days available within your AWS account.
 
-Operational:
+Operational Excellence:
 
    * Ensure AWS EC2 security group rules have descriptive text for organization and documentation.
    * Ensure that detailed monitoring is enabled for the AWS EC2 instances that you need to monitor closely.
@@ -211,19 +213,23 @@ AWS Config also supports <strong>custom rules</strong> that allow you to define 
 
 ### AWS Config Conformance packs 
 
-Since AWS Config is a SaaS service, it centralizes the collection of compliance data across a whole organization.
+Since AWS Config is a SaaS service, it can centralize the collection of compliance data across a whole organization.
 
 A collection of AWS Config rules and remediation actions can be packaged into a single entity (known as a "Conformance Pack") for organization-wide deployment. Thus, Conformance Packs are integrated with AWS Organizations. This is particularly useful to quickly establish a common baseline for resource configuration policies and best practices across multiple accounts in your organization in a scalable and efficient way.
 
+The sample Conformance Pack yaml file at <a target="_blank" href="https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-Prerequisites.yaml">https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-Prerequisites.yaml</a> is a quick start cloudformation template for AWS Config Conformance packs. It creates resources to start using Conformance Packs in one AWS Account. 
+
+
+The sample conformace pack yaml file at <a target="_blank" href="https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-IAMBestPractices.yaml">https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-IAMBestPractices.yaml</a>
+
+   * Parameters:
+   * Under Resources are defined Properties referencing Parameters
+   <br /><br />
+
 <a target="_blank" href="https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs">Sample config rules in Conformace Packs in GitHub</a>
 
-<a target="_blank" href="https://aws.amazon.com/blogs/mt/using-opa-to-create-aws-config-rules/">
-BLOG</a>: AWS Config custom rules are written in the Rego language processed by the general-purpose Open Policy Agent (OPA).
 
-STAR: <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/">
-Trend Micro's product "Conformity" provides 750+ rules as part of their "CloudOne" Security Platform</a>:
-
-## SQS
+## Simple Notification Service
 
 <a target="_blank" href="https://www.youtube.com/watch?v=RoKAEzdcr7k">VIDEO: AWS SQS vs SNS vs EventBridge - When to Use What?</a>
 
@@ -253,8 +259,10 @@ AWS Config with RDK (Rule Development Kit)</a> within AWS Organizatons Control T
 https://github.com/awslabs/aws-config-rdk
 
 
+## Setup OPA
 
-## OPA
+<a target="_blank" href="https://aws.amazon.com/blogs/mt/using-opa-to-create-aws-config-rules/">
+BLOG</a>: AWS Config custom rules are written in the Rego language processed by the general-purpose Open Policy Agent (OPA).
 
 https://github.com/open-policy-agent/opa
 
@@ -274,10 +282,11 @@ Gatekeeper is the subproject that integrates OPA with Kubernetes admission contr
 
 OPA has 50+ built-in functions (strings, numbers, regexps, network CIDRs, JWTs, arrays, objects, sets, etc.).
 
-Sample code:
-   * https://blog.styra.com/blog/origin-of-open-policy-agent-rego
+https://blog.styra.com/blog/origin-of-open-policy-agent-rego
 
-   * https://github.com/aws-samples/aws-management-and-governance-samples.git contains cfn_templates (CloudFormation templates) to deploy Lambda function and AWS Config rules; lambda_sources source file for the Lambda function and the OPA binary that is a deployed as a layer for the Lambda function. Packaged sources are under the packaged_lambda_assets directory. opa_policies contains Rego policies that correspond to rules deployed by CloudFormation templates.
+<a target="_blank" href="https://github.com/aws-samples/aws-management-and-governance-samples.git">https://github.com/aws-samples/aws-management-and-governance-samples.git</a> (from AWS) is a collection of code samples for the Management and Governance services which includes: CloudWatch, CloudFormation, Cloudtrail, Config, Systems Manager, and more.
+
+contains cfn_templates (CloudFormation templates) to deploy Lambda function and AWS Config rules; lambda_sources source file for the Lambda function and the OPA binary that is a deployed as a layer for the Lambda function. Packaged sources are under the packaged_lambda_assets directory. opa_policies contains Rego policies that correspond to rules deployed by CloudFormation templates.
 
 
 
@@ -312,7 +321,7 @@ https://aws.amazon.com/blogs/mt/setting-up-custom-aws-config-rule-that-checks-th
 Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation, which <a target="_blank" href="https://www.youtube.com/watch?v=Dm4id0FVhtc">applies patches in AWS</a>. 
 
 
-### Terraform
+### Delete SG using Terraform
 
 <a target="_blank" href="https://medium.com/4th-coffee/deleting-unused-security-groups-in-aws-automatically-an-introduction-to-aws-config-6313f65e424d">This blog</a> makes use of <a target="_blank" href="https://raw.githubusercontent.com/IronCore864/tf-aws-config/main/main.tf">this main.tf Terraform file</a>.
 
@@ -324,7 +333,7 @@ Automatic remediation can be done by <a target="_blank" href="https://aws.amazon
 
 4. Resource "aws_iam_policy_attachment" assumes the role.
 
-5. Resource "aws_config_remediation_configuration" defines the remediation action, which triggers an AWS-managed automation document to delete the unused security group.
+5. Resource "aws_config_remediation_configuration" defines the remediation action, which triggers the AWS-managed SSM automation document to delete the unused security group.
 
 CAUTION: The above must be run manually in the console until Hashicorp implements <a target="_blank" href="https://github.com/hashicorp/terraform-provider-aws/issues/15491">this issue</a>.
 
