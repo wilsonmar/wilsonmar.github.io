@@ -38,7 +38,7 @@ AWS Security Hub use only AWS managed rules and focus only on Security issues.
 
 AWS Config has both AWS-managed and <strong>custom rules</strong> focusing on Cost Optimization as well as Security.
 
-PROTIP: The more <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">aspects of cloud usage</a> covered, the more likely people will buy into the work here.
+PROTIP: The more <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">aspects of cloud usage</a> covered to benefit, the more likely people will buy into the work here.
 
 AWS Config provides a detailed view of the configuration of AWS resources in your AWS account. This includes how the resources are related to one another and how they were configured in the past to show how configurations and relationships change over time. 
 
