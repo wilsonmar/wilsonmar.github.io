@@ -6776,6 +6776,12 @@ is normally $997, with a 60 day money-back guarantee.
 
 https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
 
+## References
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Bcji3AlT7v8&t=2511s">
+Demo of Fairwinds Insights dashboard</a>
+Trivy, Goldilocks to suggest CPU settings for "right sizing".
+
 <hr />
 
 ## More on DevOps #

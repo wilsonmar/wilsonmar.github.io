@@ -1376,7 +1376,10 @@ STAR: https://aws.amazon.com/blogs/aws-cloud-financial-management/cost-reporting
 <a target="_blank" href="https://mikerodionov.com/tag/aws-whitepapers/">
 Mike's blog lists AWS whitepapers recommended per specific AWS exam.
 
+https://www.trendmicro.com/en_us/what-is/cloud-security/cloud-architecture.html
+highlights considerations for Components, sub-components, etc.
 
+https://www.trendmicro.com/en_us/what-is/cloud-security.html
 
 <hr />
 

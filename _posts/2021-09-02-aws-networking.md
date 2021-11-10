@@ -492,7 +492,13 @@ See http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.htm
 
 ## Direct Connect (DX)
 
+To Direct Connect to a customer's Router
+in each DX Location, there is a port on a DX Router which is charged <strong>per hour</strong> of use.
+There are 1GB, 10GB, and 100GB wide pipes. The price is the same globally except for a few regions.
 
+Outgoing data transfer charges apply, too, but cheaper than going through the public internet.
+
+If the DX Location is in a different region, a <strong>DX Gateway</strong> is needed.
 
 ## Resources #
 
