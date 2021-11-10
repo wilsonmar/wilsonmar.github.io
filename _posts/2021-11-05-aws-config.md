@@ -62,43 +62,44 @@ DockerBench
 
 ## AWS Config setup
 
-To enable AWS Config, <a target="_blank" href="https://github.com/getcft/aws-config-cf-template">
-this CloudFormation template</a> creates components: KMS encryption key, an encrypted S3 bucket, etc. </a>
-
-## How AWS Config works: Guided Tour
-
+   * <a target="_blank" href="https://www.youtube.com/watch?v=qHdFoYSrUvk" title="by Stephane Maarek Feb 27, 2020">VIDEO DEMO of setup</a> 
    * BLOG: <a target="_blank" href="https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html">1</a>
    <a target="_blank" href="https://jayendrapatil.com/aws-config/">2</a>
    <br /><br />
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/140753439-877d6ac4-df86-4e79-b36c-3576bda7c9d4.png"><img alt="aws-config-rego-696x514" width="696" height="514" src="https://user-images.githubusercontent.com/300046/140753439-877d6ac4-df86-4e79-b36c-3576bda7c9d4.png"></a>
 
-AWS Config can be operated using the AWS Management Console GUI or AWS CLI. See 
+AWS Config can be configured and managed using the AWS Management Console GUI or AWS CLI. See 
 <a targe="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html">https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configure/index.html</a>.
+
+To enable AWS Config, <a target="_blank" href="https://github.com/getcft/aws-config-cf-template">
+this CloudFormation template</a> creates components: KMS encryption key, an encrypted S3 bucket, etc. </a>
 
 1. In the AWS Management Console GUI, sign-on to an AWS account.
 
-1. search for "Config" service.
+1. Search for "Config" service.
 
    AWS Config is enabled for each by default. ???
+
+1. Customize the resource types AWS Config tracks.
+
+   And AWS Config may not cover all AWS services.
+
+   The updated configurations of the security group (the resource) and of each instance (the related resources) are recorded as configuration items and delivered in a configuration stream to an Amazon Simple Storage Service (Amazon <strong>S3) bucket</strong>.
+
+1. Define the S3 bucket.
 
 1. Enable recording
 
    When you start the AWS Config <strong>recorder</strong>, it <strong>detect</strong> each change in AWS resource configurations and maintains a historical record of them. Behind the scenes, it invokes the Describe or List API calls for each resource in each account.
 
-   For example, removing an egress rule from a VPC security group causes AWS Config to invoke a Describe API call on the security group. AWS Config then invokes a Describe API call on all of the instances associated with the security group. The updated configurations of the security group (the resource) and of each instance (the related resources) are recorded as configuration items and delivered in a configuration stream to an Amazon Simple Storage Service (Amazon <strong>S3) bucket</strong>.
-
-1. Define the S3 bucket.
-
+   For example, removing an egress rule from a VPC security group causes AWS Config to invoke a Describe API call on the security group. AWS Config then invokes a Describe API call on all of the instances associated with the security group. 
+   
    AWS Config also examines resource configurations <strong>periodically</strong> to generate configuration items for the configurations that have changed.
 
    When several configuration changes are made to the same resource too quickly, AWS Config will only record the latest configuration of that resource; this represents the cumulative impact of that entire set of changes.
 
 1. Set retention period.
-
-   And AWS Config may not cover all AWS services.
-
-   You can customize the resource types AWS Config tracks.
 
    Changes triggers a <strong>Lambda function</strong> to <strong>evaluate</strong> AWS resource configurations based on rules defining the evaluation logic for the rule and desired settings. 
 
@@ -106,7 +107,10 @@ AWS Config can be operated using the AWS Management Console GUI or AWS CLI. See
 
    When the compliance status of a resource changes, AWS Config sends a notification to your <strong>Amazon SNS topic</strong>. 
 
-1. Define SNS topic.
+1. Set SNS topic for notifications.
+
+1. Set Config role: "Grant AWS Config read-only access to your AWS resources so that it can record configuration information, and grant it permission to send the information to Amazon S3 and Amazon SNS": Create AWS Config service-linked role.
+
 
 
 ## AWS Config Timeline GUI
@@ -136,28 +140,6 @@ People at Lending Tree found these AWS-manged Config rules helpful in <strong>de
 
 Notice AWS's managed rules are mostly about security, and less about cost optimization, Reliability, and Performance.
 
-## Custom Rules for AWS Config
-
-But there are possibilities to <strong>save money</strong>, improve performance, etc.
-
-AWS Config also supports <strong>custom rules</strong> that allow you to define your own logic by using AWS Lambda and one of the programming languages supported by AWS Lambda.
-
-1. Cost Optimization: Identify when two EC2 nodes within the same AZ communicate with each other via a public port, because network charges would accrue, unlike when EC2 nodes communicate via private lines.
-
-
-### AWS Config Conformance packs 
-
-Since AWS Config is a SaaS service, it centralizes the collection of compliance data across a whole organization.
-
-"Conformance Packs" generalize rules for organization-wide deployment.
-
-<a target="_blank" href="https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs">Sample config rules in Conformace Packs</a>
-
-<a target="_blank" href="https://aws.amazon.com/blogs/mt/using-opa-to-create-aws-config-rules/">
-BLOG</a>: AWS Config custom rules are written in the Rego language processed by the general-purpose Open Policy Agent (OPA).
-
-STAR: <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/">
-Trend Micro's product "Conformity" provides 750+ rules as part of their "CloudOne" Security Platform</a>:
 
 Cost Optimization:
 
@@ -200,6 +182,30 @@ Operational:
    * Ensure that detailed monitoring is enabled for the AWS EC2 instances that you need to monitor closely.
    * Ensure that no AWS EC2 Reserved Instance purchases are pending or failed.
 
+
+
+## Custom Rules for AWS Config
+
+But there are possibilities to <strong>save money</strong>, improve performance, etc.
+
+AWS Config also supports <strong>custom rules</strong> that allow you to define your own logic by using AWS Lambda and one of the programming languages supported by AWS Lambda.
+
+1. Cost Optimization: Identify when two EC2 nodes within the same AZ communicate with each other via a public port, because network charges would accrue, unlike when EC2 nodes communicate via private lines.
+
+
+### AWS Config Conformance packs 
+
+Since AWS Config is a SaaS service, it centralizes the collection of compliance data across a whole organization.
+
+"Conformance Packs" generalize rules for organization-wide deployment.
+
+<a target="_blank" href="https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs">Sample config rules in Conformace Packs</a>
+
+<a target="_blank" href="https://aws.amazon.com/blogs/mt/using-opa-to-create-aws-config-rules/">
+BLOG</a>: AWS Config custom rules are written in the Rego language processed by the general-purpose Open Policy Agent (OPA).
+
+STAR: <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/">
+Trend Micro's product "Conformity" provides 750+ rules as part of their "CloudOne" Security Platform</a>:
 
 <a name="RDK"></a>
 
@@ -289,9 +295,6 @@ this AWS CLI command</a>:
 
 
 ## References
-
-<a target="_blank" href="https://www.youtube.com/watch?v=qHdFoYSrUvk" title="Feb 27, 2020">
-AWS Config Tutorial</a>
 
 <a target="_blank" href="https://aws.amazon.com/blogs/security/how-to-use-aws-config-to-monitor-for-and-respond-to-amazon-s3-buckets-allowing-public-access/">
 how-to-use-aws-config-to-monitor-for-and-respond-to-amazon-s3-buckets-allowing-public-access</a>
