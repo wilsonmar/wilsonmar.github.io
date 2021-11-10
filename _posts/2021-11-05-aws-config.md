@@ -60,7 +60,7 @@ While AWS Config focuses on changes in the <strong>configuration</strong> of res
    <a target="_blank" href="https://www.youtube.com/watch?v=o2YaIsps5LY">VIDEO: Deep Dive on Amazon GuardDuty</a><br />
    </ul>
 
-<a target="_blank" href="https://aws.amazon.com/detective/">Amazon Detective</a> (new in 2020) <a target="_blank" href="https://www.youtube.com/watch?v=fmm4PXhg8BY">VIDEO: helps to manually triage potential security issues</a> identified by AWS GuardDuty. Use it to visualize security data in Virtual Private Cloud (VPC) Flow Logs, AWS CloudTrail (much like how SOC uses competitor Splunk).
+<a target="_blank" href="https://aws.amazon.com/detective/">Amazon Detective</a> (new in 2020) <a target="_blank" href="https://www.youtube.com/watch?v=fmm4PXhg8BY">VIDEO: helps to manually triage potential security issues</a> identified by AWS GuardDuty and AWS Security Hub. Use it for "Threat Hunting" -- for the "Security Graph" to visualize Virtual Private Cloud (VPC) Flow Logs, AWS CloudTrail (much like how SOC uses competitor Splunk).
 
 
 DockerBench 
@@ -98,6 +98,13 @@ DockerBench
    DEFINITION: All CI's for a given resource is called a "<strong>configuration history</strong>" in S3.
 
 1. Define the S3 bucket.
+
+   1. In the Amazon S3 management console, choose Create bucket.
+   2. Enter a name for the bucket and select an AWS Region.
+   3. In Block public access settings for this bucket, make sure Block all public access is selected to protect the data from being exposed to the internet.
+   4. In Default encryption, choose Enable to encrypt the data on the bucket. You can leave the default option of Amazon S3 key (SSE-S3) It is a best practice to encrypt data on S3 buckets.
+   5. Choose Create bucket.
+   <br /><br />
 
 1. Enable recording
 
@@ -267,8 +274,11 @@ Gatekeeper is the subproject that integrates OPA with Kubernetes admission contr
 
 OPA has 50+ built-in functions (strings, numbers, regexps, network CIDRs, JWTs, arrays, objects, sets, etc.).
 
+Sample code:
+   * https://blog.styra.com/blog/origin-of-open-policy-agent-rego
 
-See https://blog.styra.com/blog/origin-of-open-policy-agent-rego
+   * https://github.com/aws-samples/aws-management-and-governance-samples.git contains cfn_templates (CloudFormation templates) to deploy Lambda function and AWS Config rules; lambda_sources source file for the Lambda function and the OPA binary that is a deployed as a layer for the Lambda function. Packaged sources are under the packaged_lambda_assets directory. opa_policies contains Rego policies that correspond to rules deployed by CloudFormation templates.
+
 
 
 <a name="RegoLang"></a>
@@ -295,14 +305,45 @@ STAR: Take the <a target="_blank" href="https://academy.styra.com/courses/opa-re
 https://aws.amazon.com/blogs/mt/setting-up-custom-aws-config-rule-that-checks-the-os-cis-compliance/
 
 
+<a name="Remediation"></a>
+
+## Remediations
+
+Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation, which <a target="_blank" href="https://www.youtube.com/watch?v=Dm4id0FVhtc">applies patches in AWS</a>. 
+
+
+### Terraform
+
+<a target="_blank" href="https://medium.com/4th-coffee/deleting-unused-security-groups-in-aws-automatically-an-introduction-to-aws-config-6313f65e424d">This blog</a> makes use of <a target="_blank" href="https://raw.githubusercontent.com/IronCore864/tf-aws-config/main/main.tf">this main.tf Terraform file</a>.
+
+1. Resource "aws_config_config_rule" checks if all security groups are attached.
+
+2. Resource "aws_iam_role" is used by the remediation action. To remediate the non-compliant security groups, the role needs to execute an SSM Automation document, and it needs to be able to describe and delete a security group. Here the least privilege principle is used.
+
+3. Resource "aws_iam_policy" defines Allow permissions for ssm (Service Manager) roles.
+
+4. Resource "aws_iam_policy_attachment" assumes the role.
+
+5. Resource "aws_config_remediation_configuration" defines the remediation action, which triggers an AWS-managed automation document to delete the unused security group.
+
+CAUTION: The above must be run manually in the console until Hashicorp implements <a target="_blank" href="https://github.com/hashicorp/terraform-provider-aws/issues/15491">this issue</a>.
+
+
 <a name="AutoRemediation"></a>
 
-## Automatic Remediation
+### Automatic Remediations
 
-Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation, which <a target="_blank" href="https://www.youtube.com/watch?v=Dm4id0FVhtc">applies patches in AWS</a>. See <a target="_blank" href="https://medium.com/4th-coffee/deleting-unused-security-groups-in-aws-automatically-an-introduction-to-aws-config-6313f65e424d">this blog</a> which references <a target="_blank" href="https://raw.githubusercontent.com/IronCore864/tf-aws-config/main/main.tf">this main.tf Terraform file</a>.
-But that's blocked because Hashicorp has not implemented <a target="_blank" href="https://github.com/hashicorp/terraform-provider-aws/issues/15491">this issue</a>.
+<a target="_blank" href="https://awesomeopensource.com/project/servian/aws-auto-remediate">BLOG: https://awesomeopensource.com/project/servian/aws-auto-remediate</a>
 
-Alternately, see <a target="_blank" href="https://awesomeopensource.com/project/servian/aws-auto-remediate">https://awesomeopensource.com/project/servian/aws-auto-remediate</a>
+### Call Lambda directly
+
+Alternately, custom AWS Lambda functions can be used:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/141043364-76aa7559-9041-4680-b5e6-afbe038e2aad.png">
+<img width="888" alt="aws-config-auto-remediate-1776x1036" src="https://user-images.githubusercontent.com/300046/141043364-76aa7559-9041-4680-b5e6-afbe038e2aad.png"></a>
+
+
+### Call Lambda via EventBridge
 
 A more in-depth explanation is this diagram from <a target="_blank" href="https://learnd.cantrill.io">Andrew Cantrill's excellent video certification prep. courses</a>:
 
@@ -311,14 +352,11 @@ A more in-depth explanation is this diagram from <a target="_blank" href="https:
 
 The above diagram illustrates how Config rules can call on the <a target="_blank" href="https://aws.amazon.com/eventbridge/">AWS EventBridge</a> SaaS streaming serverless <strong>event bus</strong>.
 
-Alternately, custom AWS Lambda functions can be used:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/141043364-76aa7559-9041-4680-b5e6-afbe038e2aad.png">
-<img width="888" alt="aws-config-auto-remediate-1776x1036" src="https://user-images.githubusercontent.com/300046/141043364-76aa7559-9041-4680-b5e6-afbe038e2aad.png"></a>
 
 
 ## Snapshot
 
+A configuration snapshot is a collection of the configuration items for the supported resources in each AWS account.
 
 
 ## Troubleshooting
@@ -379,6 +417,10 @@ Oct 19, 2015
 Achieving Continuous Compliance using AWS Config</a>
 Oct 18, 2017
 
-https://www.youtube.com/watch?v=bzYtyGFR7MY">
+<a target="_blank" href="https://www.youtube.com/watch?v=bzYtyGFR7MY">
 What is AWS Config?</a>
 Mar 26, 2021 by CloudEnthusiasts
+
+I added this to my deep-dive hands-on tutorial of AWS Config for compliance-as-code at
+https://wilsonmar.github.io/aws-config
+
