@@ -327,4 +327,12 @@ Remediate Non-Compliance Using AWS Config Rules, AWS CloudWatch Events, & AWS La
 <a target="_blank" href="https://www.youtube.com/watch?v=BoHJVGzq-58" title="May 2, 2017">
 AWS Config - Rules, Resources & Timelines with DEMO | IMPORTANT Security Service</a>
 
-https://www.youtube.com/watch?v=sGUQFEZWkho
+<a target="_blank" href="https://www.youtube.com/watch?v=sGUQFEZWkho">
+AWS re:Invent 2015 | (SEC314-R) New! AWS Config Rules: Improve Governance Over Configuration Changes</a>
+Oct 19, 2015
+
+https://aliceandbob.company/2020/07/16/aws-config-what-why-and-how/
+
+https://www.youtube.com/watch?v=ZKoCQsk_1aQ
+Auditing resource compliance and performing automatic remediation with AWS Config
+Oct 22, 2019 by Majestic.cloud
