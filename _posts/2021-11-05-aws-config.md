@@ -275,7 +275,9 @@ https://aws.amazon.com/blogs/mt/setting-up-custom-aws-config-rule-that-checks-th
 
 ## Automatic Remediation
 
-Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation.
+Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation. See https://medium.com/4th-coffee/deleting-unused-security-groups-in-aws-automatically-an-introduction-to-aws-config-6313f65e424d
+which references https://raw.githubusercontent.com/IronCore864/tf-aws-config/main/main.tf
+But Hashicorp has not implemented https://github.com/hashicorp/terraform-provider-aws/issues/15491
 
 Alternately, see <a target="_blank" href="https://awesomeopensource.com/project/servian/aws-auto-remediate">https://awesomeopensource.com/project/servian/aws-auto-remediate</a>
 
@@ -290,6 +292,8 @@ Alternately, custom AWS Lambda functions can be used:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/141043364-76aa7559-9041-4680-b5e6-afbe038e2aad.png">
 <img width="888" alt="aws-config-auto-remediate-1776x1036" src="https://user-images.githubusercontent.com/300046/141043364-76aa7559-9041-4680-b5e6-afbe038e2aad.png"></a>
+
+
 
 
 ## Troubleshooting
