@@ -74,25 +74,6 @@ The list above can be retrieved (as an array) by this code after typing <tt>pyth
 
 Press control+D to exit anytime.
 
-
-<a name="assert"></a>
-
-## Use assert only during testing
-
-By default, python executes with “_debug_” = “true”. 
-
-<a target="_blank" href="https://itnext.io/common-python-security-problems-ffedbae7b11c">Example:</a> comma acts as if/then:
-
-<pre>def get_clients(user):
-    assert is_superuser(user),  # user is not a member of superuser group
-    return db.lookup('clients')
-</pre>
-
-But in production when the program is run in optimized mode, the assert statement is ignored. The validation statements is skipped. So the user ends up with access to a resource or not lead to improper authentication controls.
-
-To remediate, use a if-else logic to implement true and false conditions.
-
-
 <a name="None"></a>
 
 ## Use Not None Reserved Word
@@ -121,13 +102,31 @@ Function:
 </pre>
 
 
-## Math Operators
+## Modulo and Fload division Operators
 
-<tt>11%5</tt> use the (percent sign), the modulo operator to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
+<tt>11 // 5</tt> uses "floor division" to return just the integer of 2, discarding the remainder. It returns the integral part of the quotient.
 
-<tt>11//5</tt> uses "floor division" to return just the integer of 2, discarding the remainder. It returns the integral part of the quotient.
+<tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
+Modulus is used in circular buffers and hashing algorithms.
 
-To avoid divide by zero errors by returning 0:
+<pre>def solution(A, K):
+    # A is the array.
+    # K is the increment to move.
+    result = [None] * len(A)   # initialize result array for # items in array
+&nbsp;
+    for i in range(len(A)):
+        # Use % modulo operator to calculate new index position:
+        result[(i + K) % len(A)] = A[i]   
+        print(f'i={i} A[i]={A[i]} K={K} result={result} ')
+    return result
+&nbsp;
+print(solution([7, 2, 8, 3, 5], 2))
+</pre>
+
+
+## Avoid divide by zero crashes
+
+Use this every time you divide to ensure that a zero denominator results in falling into "else 0":
 
 <pre>def weird_division(n, d):
     return n / d if d else 0
@@ -725,6 +724,25 @@ https://realpython.com/python-logging-source-code/
 
 
 https://infosecwriteups.com/most-common-python-vulnerabilities-and-how-to-avoid-them-5bbd22e2c360
+
+
+
+<a name="assert"></a>
+
+## Use assert only during testing
+
+By default, python executes with “_debug_” = “true”. 
+
+<a target="_blank" href="https://itnext.io/common-python-security-problems-ffedbae7b11c">Example:</a> comma acts as if/then:
+
+<pre>def get_clients(user):
+    assert is_superuser(user),  # user is not a member of superuser group
+    return db.lookup('clients')
+</pre>
+
+But in production when the program is run in optimized mode, the assert statement is ignored. The validation statements is skipped. So the user ends up with access to a resource or not lead to improper authentication controls.
+
+To remediate, use a if-else logic to implement true and false conditions.
 
 
 ## More about Python

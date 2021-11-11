@@ -433,3 +433,6 @@ Mar 26, 2021 by CloudEnthusiasts
 I added this to my deep-dive hands-on tutorial of AWS Config for compliance-as-code at
 https://wilsonmar.github.io/aws-config
 
+https://www.youtube.com/watch?v=oBuLtfGHETY
+Manage and Track Application and Infrastructure Configuration Changes using AWS Config
+May 18, 2021
