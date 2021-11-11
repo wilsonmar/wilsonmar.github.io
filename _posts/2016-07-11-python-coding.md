@@ -560,6 +560,14 @@ generator: 1:04:30
 
 context manager: 1:22:37
 
+<a name="Localization"></a>
+
+## Localization (L18N)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=z45ZFCLqx70">VIDEO:
+Internationalization and localization in Web Applications</a> by James Cutajar
+
+
 <hr />
 
 <a target="_blank" href="https://www.codementor.io/alibabacloud/">https://www.codementor.io/alibabacloud/ how-to-create-and-deploy-a-pre-trained-word2vec-deep-learning-rest-api-oekpbfqpj</a>

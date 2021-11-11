@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Config (Compliance-as-Code)"
-excerpt: "Audit AWS resource configrations and automatically remediate issues found using OPA Rego "
+excerpt: "Audit AWS resource configrations using using OPA Rego, alert using SNS through EventBridge, then automatically remediate via SSM"
 tags: [DevOps,Security]
 date: "2021-11-05"
 file: "aws-config"
@@ -18,7 +18,8 @@ comments: true
 
 Several mechanisms automatically assess, audit, evaluate, and even remediate the configuration of AWS resource configurations (manually in GUI or by Terraform/CloudFormation Infrastructure as Code):
 
-   * TFSec (by Aqua Security) on laptop/server
+   * <a target="_blank" href="https://tfsec.dev/">TFSec.dev (by Aqua Security)</a> on laptop/server (for shifting security left)
+
    * <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform open source (with Atlantis Policy-as-Code)</a> on laptop/server
 
    * <a target="_blank" href="https://wilsonmar.github.io/tfe">Terraform Enterprise Cloud SaaS</a> with Sentinel Policy-as-code (from Hashicorp)
