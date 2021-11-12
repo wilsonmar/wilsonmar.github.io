@@ -104,11 +104,13 @@ Function:
 
 ## Modulo and Fload division Operators
 
-<tt>11 // 5</tt> uses "floor division" to return just the integer (integral part) of 2, discarding the remainder. This can be useful to efficient solve <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">a common coding challenge</a>:
+<tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> a <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">coding interview challenge</a>:
 
    <pre>def solution(a, b, k):
     return 0 if b == 0 else int(b // k - (a - 1) // k)
    </pre>
+
+That code is in response to "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K". But instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
 
 <tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
 Modulus is used in circular buffers and hashing algorithms.
