@@ -104,7 +104,11 @@ Function:
 
 ## Modulo and Fload division Operators
 
-<tt>11 // 5</tt> uses "floor division" to return just the integer of 2, discarding the remainder. It returns the integral part of the quotient.
+<tt>11 // 5</tt> uses "floor division" to return just the integer (integral part) of 2, discarding the remainder. This can be useful to efficient solve <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">a common coding challenge</a>:
+
+   <pre>def solution(a, b, k):
+    return 0 if b == 0 else int(b // k - (a - 1) // k)
+   </pre>
 
 <tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
 Modulus is used in circular buffers and hashing algorithms.
@@ -115,7 +119,7 @@ Modulus is used in circular buffers and hashing algorithms.
     result = [None] * len(A)   # initialize result array for # items in array
 &nbsp;
     for i in range(len(A)):
-        # Use % modulo operator to calculate new index position:
+        # Use % modulo operator to calculate new index position 0 - 9:
         result[(i + K) % len(A)] = A[i]   
         print(f'i={i} A[i]={A[i]} K={K} result={result} ')
     return result
@@ -123,6 +127,59 @@ Modulus is used in circular buffers and hashing algorithms.
 print(solution([7, 2, 8, 3, 5], 2))
 </pre>
 
+Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/CodilityInPython/blob/master/solutions/euclideanalgorithm/chocolates_by_numbers.py">this</a>
+
+### Time Complexity
+
+Use of Modulus would result in "O(n)" (linear) <strong>Time Complexity</strong> (growth in time to run as the dataset grows). Depth-first trees would have steeper (logarithmic) Time Complexity:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
+<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
+
+
+### Reduce Space Complexity with Dynamic programming
+
+Calculation of <a target="_blank" href="https://www.youtube.com/watch?v=Nki9hhW-tAI&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=4">Fibonacci numbers</a> are popular to reduce run times, use more memory space. Rather than repeating computations as in the definition of how to calculate a Fibonacci number, store them in memory for reference. For example, calculate the 5th number:
+
+   <ul><pre>fib(5) = fib(4) + fib(3)</pre></ul>
+
+Dynamic programming is a catch phrase for solutions based on solving 
+successively similar but smaller problems, using algorithmic tasks in which 
+the solution of a bigger problem is relatively easy to find, 
+if we have solutions for its sub-problems.
+
+Memoization  (sounds  like  memorization)  is  the  technique of  writing  a  function  that  remembers  the  results  of  previous computations. 
+
+Longest Increasing Subsequence (LIS)
+
+https://www.byte-by-byte.com/dpbook-resources/
+
+That's a technique of "Dynamic Programming", 
+
+An example of Space Complexity from O(n · k) to O(k), is solving the Coin Changing problem, <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">Codility's PDF</a> shows an example for <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">returning change for the smallest number of bills/coins</a>.
+
+<pre>def dynamic_coin_changing(C, k):
+    # k is the amount you want back in bills/change
+    # C is an array of the denominations of the currency
+    # (assuming there is an unlimited amount of each bill/coin available)
+    print(f'>>> k={k} C="{C}')
+    n = len(C)
+    dp = [0] + [MAX_INT] * k
+    for i in xrange(1, n + 1):
+       for j in xrange(C[i - 1], k + 1):
+           dp[j] = min(dp[j - C[i - 1]] + 1, dp[j])
+    return dp
+&nbsp;
+dynamic_coin_changing(34,[100,50,20,10,5,1])
+</pre>
+
+See https://www.wikiwand.com/en/Dynamic_programming
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO: Sam at Byte by Byte</a>, author of <a target="_blank" href="https://www.byte-by-byte.com/dpbook/">DP ebook</a> with the memonic "FAST" method.
+
+
+
+<hr />
 
 ## Avoid divide by zero crashes
 
@@ -183,8 +240,14 @@ def conv_superscript(x):
 # print(conv_superscript('Convert all this2'))
 </pre>
 
+<a name="Localization"></a>
 
-## Switch language in browser
+## Localization (L18N)
+
+<a target="_blank" href="https://www.youtube.com/watch?v=z45ZFCLqx70">VIDEO:
+Internationalization and localization in Web Applications</a> by James Cutajar
+
+### Switch language in browsers
 
 Ensure that your program works correctly when another human language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.) is configured by the user:
 
@@ -531,7 +594,15 @@ would output:
 ## Classes and Objects
 
    * <a target="_blank" href="https://www.learnpython.org/en/Classes_and_Objects">https://www.learnpython.org/en/Classes_and_Objects</a>
+   * https://app.pluralsight.com/library/courses/core-python-classes-object-orientation
    * <a target="_blank" href="https://github.com/austin-taylor/code-vault/blob/master/python_expert_notebook.ipynb">The Playbook of code</a> shown on <a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro" title="Jul 5, 2017 [1:52:02]">2 hr VIDEO: What Does It Take To Be An Expert At Python?</a> by James Powell (@dontusethiscode) at the PyData conference.
+   <br /><br />
+
+Encapsulation is a software design practice of bundling the data and the methods that operate on that data.
+
+Methods encode behavior (programmed logic) of an object and are represented by functions.
+
+Attributes encode the state of an object and are represented by variables.
 
 
 ### Metaclasses
@@ -542,30 +613,33 @@ metaclasses(explained): 40:40
 
 ### Decorators
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=PJQ5XopgNog&list=RDCMUC6HfeAa0vWeSWS6IcNAjZ2A&start_radio=1&rv=PJQ5XopgNog&t=31">VIDEO: Python Decorators 1: The Basics</a> (in Jupyter notebook)
    * <a target="_blank" href="https://www.youtube.com/watch?v=7lmCu8wz8ro&t=45m20s" title="Jul 5, 2017 [1:52:02]">VIDEO</a>
+   * https://www.youtube.com/watch?v=yNzxXZfkLUA
+   * https://app.pluralsight.com/course-player?clipId=a5072421-b21f-4043-8164-e148e401492b
    <br /><br />
 
 The string starting with "@" before a function definition 
 
-Since Python is a live dynamically compiled
+Decorators allow changes in behavior without changing the code.
 
-There are limitations.
+Decorators take advantage of Python being live dynamically compiled.
+
+There are limitations, though.
 
 
-### Generator
+### Generators
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Ut0-_eMVakU&list=RDCMUC6HfeAa0vWeSWS6IcNAjZ2A&index=4">VIDEO</a>
+   * https://www.youtube.com/watch?v=bD05uGo_sVI
+   * https://www.youtube.com/watch?v=vBH6GRJ1REM Python dataclasses will save you HOURS, also featuring attrs
+   <br /><br />
 
 generator: 1:04:30
 
 ### Context Manager
 
 context manager: 1:22:37
-
-<a name="Localization"></a>
-
-## Localization (L18N)
-
-<a target="_blank" href="https://www.youtube.com/watch?v=z45ZFCLqx70">VIDEO:
-Internationalization and localization in Web Applications</a> by James Cutajar
 
 
 <hr />
@@ -752,6 +826,17 @@ But in production when the program is run in optimized mode, the assert statemen
 
 To remediate, use a if-else logic to implement true and false conditions.
 
+https://app.pluralsight.com/library/courses/using-unit-testing-python/table-of-contents
+
+
+## Concurrency Programming
+
+https://app.pluralsight.com/library/courses/python-concurrency-getting-started
+
+
+## Bit-wise operators
+
+https://app.pluralsight.com/course-player?clipId=5802d30b-69a9-4679-8594-53854739368a
 
 ## More about Python
 

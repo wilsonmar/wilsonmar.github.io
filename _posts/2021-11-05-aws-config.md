@@ -18,7 +18,7 @@ comments: true
 
 Several mechanisms automatically assess, audit, evaluate, and even remediate the configuration of AWS resource configurations (manually in GUI or by Terraform/CloudFormation Infrastructure as Code):
 
-   * <a target="_blank" href="https://tfsec.dev/">TFSec.dev (by Aqua Security)</a> on laptop/server (for shifting security left)
+   * <a href="#TFSec">TFSec.dev (by Aqua Security)</a> on laptop/server (for shifting security left)
 
    * <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform open source (with Atlantis Policy-as-Code)</a> on laptop/server
 
@@ -65,6 +65,104 @@ While AWS Config focuses on changes in the <strong>configuration</strong> of res
 
 
 DockerBench 
+
+<a name="TFSec"></a>
+
+## TFSec for AWS
+
+70 rules at <a target="_blank" href="https://tfsec.dev/docs/aws/home/">https://tfsec.dev/docs/aws/home</a>
+
+* A KMS key is not configured to auto-rotate. - aws-lambda-enable-tracing
+* AWS ES Domain should have logging enabled - aws-elastic-search-encrypt-replication-group
+* aws_instance should activate session tokens for Instance Metadata Service. - aws-ec2-no-secrets-in-user-data
+
+* aws-api-gateway-enable-access-logging - API Gateway stages for V1 and V2 should have access logging enabled
+* aws-api-gateway-enable-cache-encryption - API Gateway must have cache enabled
+* aws-api-gateway-enable-tracing - API Gateway must have X-Ray tracing enabled
+* aws-api-gateway-no-public-access - No public access to API Gateway methods
+* aws-api-gateway-use-secure-tls-policy - API Gateway domain name uses outdated SSL/TLS protocols.
+
+* aws-athena-enable-at-rest-encryption - Athena databases and workgroup configurations are created unencrypted at rest by default, they should be encrypted
+* aws-athena-no-encryption-override - Athena workgroups should enforce configuration to prevent client disabling encryption
+
+* aws-autoscaling-enable-at-rest-encryption - Launch configuration with unencrypted block device.
+* aws-autoscaling-no-public-ip - A resource has a public IP address.
+
+* aws-cloudfront-enable-logging - Cloudfront distribution should have Access Logging configured
+* aws-cloudfront-enable-waf - CloudFront distribution does not have a WAF in front.
+* aws-cloudfront-enforce-https - CloudFront distribution allows unencrypted (HTTP) communications.
+* aws-cloudfront-use-secure-tls-policy - CloudFront distribution uses outdated SSL/TLS protocols.
+
+* aws-cloudtrail-enable-all-regions - Cloudtrail should be enabled in all regions regardless of where your AWS resources are generally homed
+* aws-cloudtrail-enable-at-rest-encryption - Cloudtrail should be encrypted at rest to secure access to sensitive trail data
+* aws-cloudtrail-enable-log-validation - Cloudtrail log validation should be enabled to prevent tampering of log data
+
+* aws-cloudwatch-log-group-customer-key - CloudWatch log groups should be encrypted using CMK
+* CloudWatch log groups should be encrypted using CMK - aws-codebuild-enable-encryption
+
+* aws-ecs-enable-container-insight - ECS clusters should have container insights enabled
+* aws-ecs-enable-in-transit-encryption - ECS Task Definitions with EFS volumes should use in-transit encryption
+* aws-ecs-no-plaintext-secrets - Task definition defines sensitive environment variable(s).
+
+* aws-launch-no-sensitive-info - Ensure all data stored in the Launch configuration EBS is securely encrypted
+* CodeBuild Project artifacts encryption should not be disabled - aws-config-aggregate-all-regions
+* Config configuration aggregator should be using all regions for source - aws-documentdb-enable-log-export
+* DAX Cluster should always encrypt data at rest - aws-dynamodb-enable-recovery
+
+* DocumentDB encryption should use Customer Managed Keys - aws-dynamodb-enable-at-rest-encryption
+* DocumentDB logs export should be enabled - aws-documentdb-enable-storage-encryption
+* DocumentDB storage must be encrypted - aws-documentdb-encryption-customer-key
+
+* Domain logging should be enabled for Elastic Search domains - aws-elastic-search-enable-in-transit-encryption
+* DynamoDB tables should use at rest encryption with a Customer Managed Key - aws-ebs-enable-volume-encryption
+
+* EBS volume encryption should use Customer Managed Keys - aws-ec2-enforce-http-token-imds
+* EBS volumes must be encrypted - aws-ebs-encryption-customer-key
+
+* ECR images tags shouldn’t be mutable. - aws-ecr-no-public-access
+* ECR repository has image scans disabled. - aws-ecr-enforce-immutable-repository
+* ECR repository policy must block public access - aws-ecr-repository-customer-key
+* ECR Repository should use customer managed keys to allow more control - aws-ecs-enable-container-insight
+
+* EFS Encryption has not been enabled - aws-eks-enable-control-plane-logging
+
+* EKS cluster should not have open CIDR range for public access - aws-elastic-search-enable-domain-logging
+* EKS Clusters should have cluster control plane logging turned on - aws-eks-encrypt-secrets
+* EKS Clusters should have the public access disabled - aws-eks-no-public-cluster-access-to-cidr
+* EKS should have the encryption of secrets enabled - aws-eks-no-public-cluster-access
+
+* Elasticache Replication Group uses unencrypted traffic. - aws-elb-drop-invalid-headers
+
+* Elasticsearch doesn’t enforce HTTPS traffic. - aws-elastic-search-use-secure-tls-policy
+* Elasticsearch domain endpoint is using outdated TLS policy. - aws-elastic-service-enable-domain-encryption
+* Elasticsearch domain isn’t encrypted at rest. - aws-elasticache-add-description-for-security-group
+* Elasticsearch domain uses plaintext traffic for node to node communication. - aws-elastic-search-enable-logging
+
+* Ensure that lambda function permission has a source arn specified - aws-launch-no-sensitive-info
+
+* IAM customer managed policies should not allow decryption actions on all KMS keys - aws-iam-no-password-reuse
+* IAM Password policy should have expiry less than or equal to 90 days. - aws-iam-set-minimum-password-length
+* IAM Password policy should have minimum password length of 14 or more characters. - aws-kinesis-enable-in-transit-encryption
+* IAM Password policy should have requirement for at least one lowercase character. - aws-iam-require-numbers-in-passwords
+* IAM Password policy should have requirement for at least one number in the password. - aws-iam-require-symbols-in-passwords
+* IAM Password policy should have requirement for at least one symbol in the password. - aws-iam-require-uppercase-in-passwords
+* IAM Password policy should have requirement for at least one uppercase character. - aws-iam-set-max-password-age
+* IAM Password policy should prevent password reuse. - aws-iam-no-policy-wildcards
+* IAM policy should avoid use of wildcards and instead apply the principle of least privilege - aws-iam-require-lowercase-in-passwords
+
+* Kinesis stream is unencrypted. - aws-kms-auto-rotate-keys
+* Lambda functions should have X-Ray tracing enabled - aws-lambda-restrict-source-arn
+* Load balancer is exposed to the internet. - aws-elbv2-http-not-used
+* Load balancers should drop invalid headers - aws-elbv2-alb-not-public
+* Missing description for security group/security group rule. - aws-elasticache-enable-backup-retention
+* Point in time recovery should be enabled to protect DynamoDB table - aws-dynamodb-table-customer-key
+* Redis cluster should have backup retention turned on - aws-elasticache-enable-in-transit-encryption
+* Task definition defines sensitive environment variable(s). - aws-efs-enable-at-rest-encryption
+* Unencrypted Elasticache Replication Group. - aws-elastic-search-enforce-https
+* Use of plain HTTP - aws-iam-block-kms-policy-wildcard
+* User data for EC2 instances must not contain sensitive AWS keys - aws-ecr-enable-image-scans
+<br /><br />
+
 
 ## AWS Config setup
 
