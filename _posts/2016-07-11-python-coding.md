@@ -102,15 +102,18 @@ Function:
 </pre>
 
 
-## Modulo and Fload division Operators
+## Floor division Operators
 
-<tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> a <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">coding interview challenge</a>:
+<tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> the <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">"Prefix Sums CountDiv" coding interview challenge</a>: "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K":
 
    <pre>def solution(a, b, k):
     return 0 if b == 0 else int(b // k - (a - 1) // k)
    </pre>
 
-That code is in response to "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K". But instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
+Instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
+
+
+## Modulo operator
 
 <tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
 Modulus is used in circular buffers and hashing algorithms.
@@ -131,6 +134,7 @@ print(solution([7, 2, 8, 3, 5], 2))
 
 Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/CodilityInPython/blob/master/solutions/euclideanalgorithm/chocolates_by_numbers.py">this</a>
 
+
 ### Time Complexity
 
 Use of Modulus would result in "O(n)" (linear) <strong>Time Complexity</strong> (growth in time to run as the dataset grows). Depth-first trees would have steeper (logarithmic) Time Complexity:
@@ -138,6 +142,7 @@ Use of Modulus would result in "O(n)" (linear) <strong>Time Complexity</strong> 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
 <img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
 
+In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
 
 ### Reduce Space Complexity with Dynamic programming
 
@@ -309,6 +314,8 @@ this function defines a dictionary to convert an Excel column number to a number
     return number
 </pre>
 
+REMEMBER: Square brackets are used to reference by value.
+
 Instead of defining a dictionary, you can use a property of the ASCII character set, in that the Latin alphabet begins from its 65th position for "A" and its 97th character for "a", obtained using the ordinal function:
 
 <pre>ord('a')  # returns 97
@@ -317,6 +324,31 @@ ord('A')  # returns 65</pre>
 This returns 'a' :
 
 <pre>chr(97)</pre>
+
+### More dictionaries:
+
+<pre># Eastern European countries: SyntaxError: invalid character in identifier
+ee_countries={"Ukraine": "43.7M", "Russia": "143.8M", "Poland": "38.1M", "Romania": "19.5M", "Bulgaria": "6.9M", "Hungary": "9.6M", "Moldova": "4.1M"}
+float(ee_countries["Moldova"].rstrip("M"))  # 4.1
+ee_countries.get("Moldova")   # 4.1M
+len(ee_countries.items())     # 7 are immutable in dictionary
+min(ee_countries.items())     # ('Bulgaria', '6.9M') the smallest country
+max(ee_countries.values())  # largest country = 9.6M ?
+max(ee_countries.keys())    # largest key length = Ukraine
+sorted(ee_countries.keys(),reverse=True) # ['Ukraine', 'Russia', 'Romania', 'Poland', 'Lithuania', 'Latvia', 'Hungary', 'Bulgaria']
+&nbsp;
+del ee_countries["Estonia"]
+ee_countries.pop["Bulgaria"]
+ee_countries["Latvia"] = "1.9M"
+ee_countries.update[['Lithuania', '2.8M'],['Belarus' , '9.4M']]
+ee_countries.popitem()     # remove item last added
+len(ee_countries.items())  # 8 are immutable in dictionary
+ee_countries["Bulgaria"]="7M"
+&nbsp;
+ee2=ee_countries.copy()
+ee_countries.clear()  # remove all
+print(ee_countries)   # {} means empty 
+</pre>
 
 
 
@@ -562,24 +594,55 @@ for index in range(8):
     x += 1
 </pre>
 
-
-## Tuples
-
-<pre>person = ('john', 'doe', 40)
-person
-type(person)
-</pre>
-
-Tuples are fixed-sized collections of related items (akin to a "struct" in Java or "record")
-used to pass multiple values of various types to or from a function.
+## Lists
 
 Use a list instead for a collection of similar objects.
 
+
+## Tuples
+
+Values are passed to a function with a single variable.
+So to multiple values of various types to or from a function, we use a
+<strong>tuple</strong> - a fixed-sized collection of related items (akin to a "struct" in Java or "record"). 
+
 PROTIP: When adding a single value, include a comma at the end to avoid it being classified as a string:
 
-<pre>person = 'john',
-type(person)
-</pre>
+
+1. REMEMBER: When storing a single value in a Tuple, the comma at the end makes it not be classified as a string:
+
+   <pre>mytuple=(50,) 
+type(mytuple)
+   </pre>
+   
+   <pre>&LT;class 'tuple'></pre>
+
+1. Store several items in a single variable:
+
+   <pre>person = ('john', 'doe', 40)
+(a, b, c) = person
+person
+a
+person[0::2]  # every 2 from 2nd item  =  ('john', 40)
+person.index(40)  # index of item containing 40 = 2
+   </pre>
+
+## Range
+
+   <pre>myrange=range(3)
+type(myrange)
+myrange  # range(0, 3)
+print(myrange)  # range(0, 3)
+list(myrange)   # [0, 1, 2] from zero
+myrange=range(1,5)
+list(myrange)   # [1, 2, 3, 4] # excluding 5!
+myrange=range(3,15,2)
+list(myrange)         # [3, 5, 7, 9, 11, 13]  # skip every 2
+list(myrange)[2]      # 7
+print( range(5,15,4)[::-1] )  # range(13, 1, -4)
+   </pre>
+
+   &LT;class 'range'>
+
 
 ## List comprehension
 
