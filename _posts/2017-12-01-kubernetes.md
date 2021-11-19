@@ -1065,14 +1065,33 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
 https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/installation.html
 
+<a target="_blank" href="https://technologyconversations.com/2021/10/11/should-we-replace-docker-desktop-with-rancher-desktop/#more-5308">BLOG</a>:
+Before diving in, know that instead of minikube, there's also Rancher Desktop, K3s, Microk8s on Linux, Minishift.
+
+https://rancherdesktop.io
+you could select a specific version of K8s. And it works with Mac M1 chips while minikube does not.
+
+<pre>$ brew search rancher
+==> Formulae
+rancher-cli                rancher-compose            ranger
+==> Casks
+font-ranchers                            rancher
+</pre>
+
+nerdctl
+
+kim (Kubernetes Image Manager) uses K8s instead of Docker
+
 
 <a name="minikube"></a>
 
 ### Minikube Alternatives
 
-Before diving in, know that instead of minikube, there's also K3s, Microk8s on Linux, Minishift.
-
+<a target="_blank" href="https://youtu.be/C0v5gJSWuSo">VIDEO</a>:
 Kind (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+
+1. Identify the version:
+2. Define cluster
 
    <pre>GO111MODULE="on" go get sigs.k8s.io/kind@v.0.4.0
    kid create cluster
@@ -6472,6 +6491,8 @@ O'Reilly's <a target="_blank" href="https://learning.oreilly.com/live-training/c
 
 Interactive KataKoda lab on OReilly.com: <a target="_blank" href="https://learning.oreilly.com/scenarios/deploying-python-apis/9781492090465/">Deploying Python APIs on Kubernetes: Deploying a Development Kubernetes Cluster</a> 
    using the slim K3s Kubernetes distribution from Rancher, a Certified Lightweight Kubernetes Distribution built for IoT and Edge remote ecomputing. It stores data using sqlite3 instead of etcd. It bootstrap script K3sup installer at <a target="_blank" href="https://github.com/alexellis/k3sup">https://github.com/alexellis/k3sup</a>.
+
+k3s.io with traefix.io/traefix based on https://github.com/lima-vm/lima
 
 arkade - portable Kubernetes marketplace
 

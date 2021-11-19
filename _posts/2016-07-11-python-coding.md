@@ -76,7 +76,7 @@ Press control+D to exit anytime.
 
 <a name="None"></a>
 
-## Use Not None Reserved Word
+### Use Not None Reserved Word
 
 Returning 0 on error can be confused with the number 0 as a valid response.
 
@@ -102,7 +102,9 @@ Function:
 </pre>
 
 
-## Floor division Operators
+## Operators
+
+### Floor division Operators
 
 <tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> the <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">"Prefix Sums CountDiv" coding interview challenge</a>: "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K":
 
@@ -113,7 +115,7 @@ Function:
 Instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
 
 
-## Modulo operator
+### Modulo operator
 
 <tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
 Modulus is used in circular buffers and hashing algorithms.
@@ -146,7 +148,7 @@ In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.
 
 ### Reduce Space Complexity with Dynamic programming
 
-Calculation of <a target="_blank" href="https://www.youtube.com/watch?v=Nki9hhW-tAI&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=4">Fibonacci numbers</a> are popular to reduce run times, use more memory space. Rather than repeating computations as in the definition of how to calculate a Fibonacci number, store them in memory for reference. For example, calculate the 5th number:
+Techniques for calculation of <strong>nested loops</strong> is often used to shown how to reduce run times by using techniques that use more memory space.  Rather than "brute-force" repeatitive computations as in the definition of how to calculate <a target="_blank" href="https://www.youtube.com/watch?v=Nki9hhW-tAI&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=4">Fibonacci numbers</a>, which by definition is based on numbers preceding it.
 
    <ul><pre>fib(5) = fib(4) + fib(3)</pre></ul>
 
@@ -184,18 +186,92 @@ See https://www.wikiwand.com/en/Dynamic_programming
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO: Sam at Byte by Byte</a>, author of <a target="_blank" href="https://www.byte-by-byte.com/dpbook/">DP ebook</a> with the memonic "FAST" method.
 
+<hr />
 
+## Built-in Methods/Functions
+
+https://docs.python.org/3/library/functions.html
+
+   * abs()
+   * any()
+   * all()
+   * ascii()
+   * bin()
+   * bool()
+   * bytearray()
+   * callable()
+   * bytes()
+   * chr()
+   * compile()
+   * classmethod()
+   * complex()
+   * delattr()
+   * dict()
+   * dir()
+   * divmod()
+   * enumerate()
+   * staticmethod()
+   * filter()
+   * eval()
+   * float()
+   * format()
+   * frozenset()
+   * getattr()
+   * globals()
+   * exec()
+   * hasattr()
+   * help()
+   * hex()
+   * hash()
+   * input()
+   * id()
+   * <a target="_blank" href="https://www.programiz.com/python-programming/methods/built-in/isinstance">isinstance()</a> - checks if the object (first argument) is an instance or subclass of classinfo class (second argument). True/False
+   * int()
+   * issubclass()
+   * iter()
+   * list() Function
+   * locals()
+   * len()
+   * max()
+   * min()
+   * map()
+   * next()
+   * memoryview()
+   * object()
+   * oct()
+   * ord()
+   * open()
+   * pow()
+   * print()
+   * property()
+   * range()
+   * repr()
+   * reversed()
+   * round()
+   * set()
+   * setattr()
+   * slice() 
+   * sorted()
+   * str()
+   * sum()
+   * tuple() Function
+   * type()
+   * vars()
+   * zip() - combine two interable arrays
+   * _import_()
+   * super()
 
 <hr />
 
-## Avoid divide by zero crashes
+### Avoid divide by zero errors
 
-Use this every time you divide to ensure that a zero denominator results in falling into "else 0":
+Use this in every division to ensure that a zero denominator results in falling into "else 0" rather than a "ZeroDivisionError" at run-time:
 
 <pre>def weird_division(n, d):
     return n / d if d else 0
 </pre>
 
+<hr />
 
 ## Environment Variables
 
@@ -247,12 +323,79 @@ def conv_superscript(x):
 # print(conv_superscript('Convert all this2'))
 </pre>
 
+
+<hr />
+
+## Functions
+
+
+
+
 <a name="Localization"></a>
 
-## Localization (L18N)
+## Internationalization & Localization (I18N & L18N)
 
-<a target="_blank" href="https://www.youtube.com/watch?v=z45ZFCLqx70">VIDEO:
-Internationalization and localization in Web Applications</a> by James Cutajar
+   * <a target="_blank" href="https://lokalise.com/blog/beginners-guide-to-python-i18n/">BLOG</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=z45ZFCLqx70">VIDEO: Internationalization and localization in Web Applications</a> by James Cutajar
+   <br /><br />
+
+Internationalization, aka i18n for the 18 characters between i and n, is the process of adapting coding to support various linguistic and cultural settings:
+
+   * date and time zone calculations
+   * numbers and currency
+   * Pluralization
+   <br /><br />
+
+1. Install
+
+   <pre>pip install gettext</pre>
+
+1. Create a folder for each locale in the <tt>./locale</tt> folder.
+
+1. Use Lokalise utility to manage translations through a GUI. It also has a CLI tool to automate the process of managing translations.  https://lokalise.com/blog/lokalise-apiv2-in-practice/
+
+   <pre>locales/
+├── el
+│   └── LC_MESSAGES
+│       └── base.po
+└── en
+    └── LC_MESSAGES
+        └── base.po
+   </pre>
+
+1. Add the library
+
+   <pre>import gettext
+# Set the local directory
+localedir = './locale'
+# Set up your magic function
+translate = gettext.translation('appname', localedir, fallback=True)
+_ = translate.gettext
+# Translate message
+print(_("Hello World"))
+   </pre>
+
+   See https://phrase.com/blog/posts/translate-python-gnu-gettext/
+
+1. Store a master list of locales supported in a Portable Object Template (POT) file, also known as a translator:
+
+   <pre>#: src/main.py:12
+msgid "Hello World"
+msgstr "Translation in different language"
+   </pre>
+
+ 
+   <pre>>>> unicode_string = u"Fuu00dfbu00e4lle"
+>>> unicode_string
+Fußbälle
+>>> type(unicode_string)
+<type 'unicode'>
+>>> utf8_string = unicode_string.encode("utf-8")
+>>> utf8_string
+'Fuxc3x9fbxc3xa4lle'
+>>> type(utf8_string)
+<type 'str'>
+
 
 ### Switch language in browsers
 
@@ -279,7 +422,7 @@ driver = new ChromeDriver(options);
 </pre>
 
 
-## Excel handling using Dictionary object
+### Excel handling using Dictionary object
 
 Alternately, the <a target="_blank" href="https://xlsxwriter.readthedocs.io/working_with_cell_notation.html#cell-utility">Python library to work with Excel spreadsheets</a> translates between Excel cell addresses (such as "A1") and zero-based Python array tuple:
 

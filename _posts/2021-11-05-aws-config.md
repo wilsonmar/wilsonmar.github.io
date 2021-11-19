@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Config (Compliance-as-Code)"
-excerpt: "Audit AWS resource configrations using using OPA Rego, alert using SNS through EventBridge, then automatically remediate via SSM"
+excerpt: "Dynamically audit AWS resource configrations using using OPA Rego, Lambda alerts using SNS through EventBridge, then automatically remediate (via SSM)"
 tags: [DevOps,Security]
 date: "2021-11-05"
 file: "aws-config"
@@ -18,7 +18,7 @@ comments: true
 
 Several mechanisms automatically assess, audit, evaluate, and even remediate the configuration of AWS resource configurations (manually in GUI or by Terraform/CloudFormation Infrastructure as Code):
 
-   * <a href="#TFSec">TFSec.dev (by Aqua Security)</a> on laptop/server (for shifting security left)
+   * <a href="#TFSec">TFSec.dev (by Aqua Security)</a> for shifting security left onto  developer laptops.
 
    * <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform open source (with Atlantis Policy-as-Code)</a> on laptop/server
 
@@ -26,6 +26,22 @@ Several mechanisms automatically assess, audit, evaluate, and even remediate the
 
    * <a target="_blank" href="https://aws.amazon.com/securityhub">AWS Security Hub SaaS</a> uses only pre-defined AWS-managed static rules
    * <a target="_blank" href="https://aws.amazon.com/config">AWS Config</a> SaaS using Lambda to invoke an OPA engine processing <strong>custom</strong> static rules written in <a href="#RegoLang">Rego</a>
+   <br /><br />
+
+There are also
+
+   * IAM Policies
+   * Cloud Formation Stack Policies
+   * Application Autoscaling Policies
+   * Backup Vault Access Policies
+   * CloudFront Cache Policies
+   * CloudFront Origin Request Policies
+   * CloudWatch Resource Policies
+   * CloudWatch Retention Policies
+   * ECR Lifecycle Policies, Registry Policies, Repository Policies
+   * EMR Managed Scaling Policies
+   * KMS Key Policies
+   * 
    <br /><br />
 
 Links above go to the product's marketing landing page.
@@ -316,8 +332,11 @@ Since AWS Config is a SaaS service, it can centralize the collection of complian
 
 A collection of AWS Config rules and remediation actions can be packaged into a single entity (known as a "Conformance Pack") for organization-wide deployment. Thus, Conformance Packs are integrated with AWS Organizations. This is particularly useful to quickly establish a common baseline for resource configuration policies and best practices across multiple accounts in your organization in a scalable and efficient way.
 
+"A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed as a single entity in an account and a Region or across an organization in AWS Organizations."
+
 The sample Conformance Pack yaml file at <a target="_blank" href="https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-Prerequisites.yaml">https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-Prerequisites.yaml</a> is a quick start cloudformation template for AWS Config Conformance packs. It creates resources to start using Conformance Packs in one AWS Account. 
 
+https://docs.aws.amazon.com/config/latest/developerguide/conformance-packs.html
 
 The sample conformace pack yaml file at <a target="_blank" href="https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-IAMBestPractices.yaml">https://github.com/aws-samples/aws-management-and-governance-samples/blob/master/AWSConfig/ConformancePacks/CP-IAMBestPractices.yaml</a>
 
@@ -325,6 +344,7 @@ The sample conformace pack yaml file at <a target="_blank" href="https://github.
    * Under Resources are defined Properties referencing Parameters
    <br /><br />
 
+<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/10/aws-config-adds-15-new-sample-conformance-pack-templates-and-introduces-simplified-setup-experience-for-conformance-packs/">BLOG</a>: 
 <a target="_blank" href="https://github.com/awslabs/aws-config-rules/tree/master/aws-config-conformance-packs">Sample config rules in Conformace Packs in GitHub</a>
 
 
@@ -393,7 +413,7 @@ contains cfn_templates (CloudFormation templates) to deploy Lambda function and 
 
 ## Rego language
 
-Rego is <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">described</a>as a the native query language Rego for OPA processing <strong>nested documents</strong>.
+Rego is <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">described</a> the native query language Rego for OPA processing <strong>nested documents</strong>.
 
 Rego is <strong>declarative</strong> queries are assertions on data stored in OPA. So policy authors can focus on what queries should return rather than how queries should be executed. These queries are simpler and more concise than the equivalent in an imperative language.
 
@@ -415,9 +435,23 @@ https://aws.amazon.com/blogs/mt/setting-up-custom-aws-config-rule-that-checks-th
 
 <a name="Remediation"></a>
 
-## Remediations
+## Automatic Remediations
 
-Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation, which <a target="_blank" href="https://www.youtube.com/watch?v=Dm4id0FVhtc">applies patches in AWS</a>. 
+Where appropriate, automated remediation of policy non-conformance <strong>reduces toil</strong> in manual effort. One example is removing AWS Security Groups that AWS automatically creates with EC2 and RDS, but still persists after those resources are deleted and no longer associated with any resource.
+
+PROTIP: Start with automating just SGs, so that you'll be prepared to do other automated remediations for responding quickly to vulnerabilities.
+
+Automatic remediation can be done by <a target="_blank" href="https://aws.amazon.com/systems-manager/">>AWS System Manager</a> automation (designed to  <a target="_blank" href="https://www.youtube.com/watch?v=Dm4id0FVhtc">apply patches in AWS resources</a>). 
+
+<a target="_blank" href="https://aws.amazon.com/solutions/implementations/aws-security-hub-automated-response-and-remediation/?did=sl_card&trk=sl_card">
+AWS Security Hub Automated Response and Remediation</a>: 
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/142207571-91faf24c-885e-4756-8e29-615aa349bf7e.png">
+<img width="521" alt="aws-security-hub-automated-response-architecture 11b409c38904e473e603f41e828405eafb30e68d" src="https://user-images.githubusercontent.com/300046/142207571-91faf24c-885e-4756-8e29-615aa349bf7e.png"></a>
+
+QUESTION: Can a similar process handle findings based on custom rules in AWS Config?
+
+So, instead <a target="_blank" href="https://blogs.tensult.com/2019/12/23/automated-deletion-of-unused-aws-security-groups/">use CloudFormation</a> 
 
 
 ### Delete SG using Terraform
@@ -436,6 +470,7 @@ Automatic remediation can be done by <a target="_blank" href="https://aws.amazon
 
 CAUTION: The above must be run manually in the console until Hashicorp implements <a target="_blank" href="https://github.com/hashicorp/terraform-provider-aws/issues/15491">this issue</a>.
 
+https://stackoverflow.com/questions/66868470/lambda-security-group-deletion-hanging-and-cant-be-deleted-in-aws-console
 
 <a name="AutoRemediation"></a>
 
