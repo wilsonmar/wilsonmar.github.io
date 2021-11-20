@@ -26,31 +26,49 @@ Being a dynamic language, errors in Python code can appear only when run rather 
 
 PROTIP: Create a test .py file to go with each py file.
 
-There are several libraries to support testing.
+There are several libraries to support testing:
 
-1. unittest
+1. <strong>unittest</strong> is built into Python interprete, so you can run:
 
-   Described at <a target="_blank" href="https://www.youtube.com/watch?v=6tNS--WetLI">
+   <pre>python -m unittest test_unittest.py -f -b --locals</pre>
+
+   <tt>-f</tt> stops run on the first error/failure.
+
+   <tt>-b</tt> buffers output for display on on unsuccessful runs.
+
+   <tt>--locals</tt> shows local variables in tracebacks.
+
+   Run all tests:
+
+   <pre>python -m 
+   </pre>
+
+   * <a target="_blank" href="https://docs.python.org/3/library/unittest.html">https://docs.python.org/3/library/unittest.html</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=1Lfv5tUGsn8&list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-&index=32">VIDEO</a> by <a target="_blank" href="https://www.youtube.com/watch?v=bY6m6_IIN94&list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-" title="from 2014">Socratica (Ulka Simone Mohanty)</a> developers watch even though they know Python because her deadpan delivery of admonishments is so entertaining. "I can almost feel her stilleto heels digging into my chest as she makes a point."
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=6tNS--WetLI">VIDEO: 
    Python Tutorial: Unit Testing Your Code with the unittest Module</a>
    Aug 16, 2017 by Corey Schafer
 
-2. pyTest
+
+2. <strong>pytest</strong> needs to be installed:
 
    <pre>pip3 install pytest</pre>
 
-   <pre>import file_ab_session as fas
-def test_add_function_given_two_arguments():
-    RESULT = fas.add(2,3)
-    EXPECTED_RESULT = 5
-    assert RESULT == EXPECTED_RESULT
-   </pre>
+   <a href="#pytest-bdd">Pytest-bdd</a> is a plug-in to Pytest.
+
 
 Applicable to both:
 
-   * Name all test classes with a name beginning with "test".
+   * Name test .py files beginning with "test".
+   
+   * Name all test classes in code with a name beginning with "test".
 
    * Tests are not run from top to bottom, so each test needs to be stand-alone.
 
+   * Define asserts to determine if pass or fail.
+   
    * To do stuff before the tests:
 
    <pre>@classmethod
@@ -62,10 +80,11 @@ Applicable to both:
        print('in tearDownClass')
    </pre>
 
+<hr />
 
 ## Tools for Debugging Python code
 
-* <a target="_blank" href="http://www.pythontutor.com/">Python Tutor</a> - an excellent way to actually visualize how the interpreter actually reads and executes your code
+* <a target="_blank" href="http://www.pythontutor.com/">Python Tutor</a> - visualize how the Python interpreter reads and executes your code
 
 * <a target="_blank" href="https://www.diffchecker.com/">DiffChecker</a> - compares two sets of text and shows you which lines are different
 
@@ -75,13 +94,15 @@ Applicable to both:
 
 <hr />
 
+<a name="Pytest"></a>
+
 ## Pytest
 
-1. Learn about the basic concepts about Pytest.
+Tutorials to learn about basic concepts of Pytest:
 
    Andrew Knight (@automationpanda, <a target="_blank" href="https://www.AutomationPanda.com">AutomationPanda.com</a>) gradually presents, in a logic sequence and with quizzes <a target="_blank" href="https://testautomationu.applitools.com/behavior-driven-python-with-pytest-bdd/">9 videos at Applitools' Test Automation University (TAU)</a>. <a target="_blank" href="https://www.youtube.com/watch?v=ReB6YzMlQ3U" title="Jul 10, 2019 [2:05:00]">YOUTUBE: 2 min. intro</a>
 
-   Also, <a target="_blank" href="https://www.linkedin.com/in/panela/">Matt Harrison</a> held live classes on OReilly.com in 2021.
+   <a target="_blank" href="https://www.linkedin.com/in/panela/">Matt Harrison</a> held live classes on OReilly.com in 2021.
 
 
    ## Automation of install and run
@@ -96,9 +117,21 @@ Applicable to both:
    <a target="_blank" href="https://wilsonmar.github.io/bash-scripts">https://wilsonmar.github.io/bash-scripts</a>
 
 
+1. Install pytest
+
+   <pre>pip3 install pytest</pre>
+
 1. Highlight and copy this command: TODO: 
 
    <pre>... bash https://github.com/wilsonmar/tau-pytest-bdd.sh</pre>
+
+   <pre>import file_ab_session as fas
+def test_add_function_given_two_arguments():
+    RESULT = fas.add(2,3)
+    EXPECTED_RESULT = 5
+    assert RESULT == EXPECTED_RESULT
+   </pre>
+
 
    Note the parameters at the end of the command above:
 
@@ -315,6 +348,9 @@ https://github.com/AndyLPK247/behavior-driven-python
 GitHub Repo – Python BDD Test Framework Examples
 
 
+<hr />
+
+<a name="pytest-bdd"></a>
 
 ## pytest-bdd
 
@@ -331,7 +367,7 @@ Packt Book: "Pytest quick start guide" by Bruno Olivera
 Book: "Python Testing with pytest" by Brian Okken
 
 
-   ### Hooks in conftest.py
+### Hooks in conftest.py
 
    To share common steps, fixtures, and BDD hooks between test modules.
 
@@ -341,7 +377,10 @@ Book: "Python Testing with pytest" by Brian Okken
 
    See https://docs.pytest.org/en/2.7.3/plugins.html
 
-   ### Gherkin feature files
+
+<a name="Gherkin"></a>
+
+### Gherkin feature files
 
 1. Name each of the various features to be tested as a "feature" file.
 

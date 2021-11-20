@@ -18,7 +18,7 @@ comments: true
 
 ## Certifications in Python 
 
-<a target="_blank" href="https://www.PythonInstitute.org">PythonInstitute.org</a> has several certification exams taken online at <a target="_blank" href="https://ums.edube.org/store/">ums.edube.org/store</a> or in-person at a Pearson VUE center. 
+<a target="_blank" href="https://www.PythonInstitute.org">PythonInstitute.org</a> has several certification exams taken online at <a target="_blank" href="https://ums.edube.org/store/">ums.edube.org/store</a> or in-person at a Pearson VUE center.
 
 Each requires 70% correct of 40 questions over 40 minutes on-line.
 
@@ -28,7 +28,9 @@ Each requires 70% correct of 40 questions over 40 minutes on-line.
 
 The official <a target="_blank" href="https://pythoninstitute.org/download/566/">practice test is at pythoninstitute.org/download/566</a>
 
-The exam "blocks":
+The exam "blocks" for Fundamentals:
+
+<a name="BasicConcepts"></a>
 
 1: Basic Concepts (17% - 5 exam items)
 

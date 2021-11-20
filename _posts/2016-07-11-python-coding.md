@@ -18,6 +18,13 @@ comments: true
 
 Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
+## Setup VSCode IDE for Python
+
+<a target="_blank" href="https://app.pluralsight.com/guides/visual-studio-code-for-python-development">
+BLOG: Setup VSCode for Python Development</a>
+
+https://code.visualstudio.com/docs/editor/extension-marketplace
+
 
 <a name="ReservedKeywords"></a>
 
@@ -34,14 +41,14 @@ PROTIP: Research and find out what each is about:
 *	await
 *	break
 *	class
-*	continue
-*	def
-*	del
-*	elif
+*	continue - loop again
+*	def - define function
+*	del - delete list item
+*	elif - else if
 *	else
 *	except
-*	False
-*	finally
+*	False - boolean
+*	finally - of a try 
 *	for
 *	from
 *	global
@@ -49,19 +56,19 @@ PROTIP: Research and find out what each is about:
 *	import
 *	in
 *	is
-*	lambda
+*	lambda - if/then/else in one line
 *	<a href="#None">None</a>
 *	nonlocal
 *	not
 *	or
-*	pass
+*	pass - instruction to do nothing (instead of return or yield with value)
 *	raise
 *	return
-*	True
-*	try
+*	True - Boolean
+*	try - https://www.youtube.com/watch?v=NIWwJbo-9_8
 *	while
 *	with
-*	yield
+*	yield - resumes after returning a value back to the caller to produce a series of values over time.
 <br /><br />
 
 The list above can be retrieved (as an array) by this code after typing <tt>python</tt> for the REPL (Read Evaluate Print Loop) interactive prompt:
@@ -94,13 +101,19 @@ else:  # notice we're not checking for None.
 
 Function:
 
-<pre>def safe_square_root(x)
+<pre>def safe_square_root(x):
     try:
         return [math.sqrt(x)]   # in a stack.
     except ValueError:
         return None   # using reserved word.
 </pre>
 
+The <strong>parameter</strong> (x) is what is declared going into the function.
+
+The value passed through when calling the function is called an <strong>argument</strong>.
+
+
+<a name="Operators"></a>
 
 ## Operators
 
@@ -250,7 +263,7 @@ https://docs.python.org/3/library/functions.html
    * round()
    * set()
    * setattr()
-   * slice() 
+   * slice() - extract substring
    * sorted()
    * str()
    * sum()
@@ -261,13 +274,20 @@ https://docs.python.org/3/library/functions.html
    * _import_()
    * super()
 
+## class functions
+
+using .maketrans() and .translate()
+
 <hr />
+
+## if/then/else
 
 ### Avoid divide by zero errors
 
 Use this in every division to ensure that a zero denominator results in falling into "else 0" rather than a "ZeroDivisionError" at run-time:
 
 <pre>def weird_division(n, d):
+    # n=numerator, d=denominator.
     return n / d if d else 0
 </pre>
 
@@ -295,11 +315,16 @@ Remember that attackers can use directory traversal sequences (../) to fetch the
 Sanitize the user input using “shlex”
 
 
-## Handle Strings safely
+<hr />
+
+## String Handling
+
+
+### Handle Strings safely
 
 Python has four different ways to format strings.
 
-Formatting of user-supplied <a target="_blank" href="https://snyk.io/blog/python-security-best-practices-cheat-sheet/">strings can be exploited</a>. So use a way that's less flexible with types and doesn’t evaluate Python statements the way f-strings do:
+Using f-strings to format (potentially malicious) <a target="_blank" href="https://snyk.io/blog/python-security-best-practices-cheat-sheet/">user-supplied strings can be exploited</a>:
 
    <pre>from string import Template
 ...
@@ -307,20 +332,38 @@ greeting_template = Template(“Hello World, my name is $name.”)
 greeting = greeting_template.substitute(name=”Hayley”)
    </pre>
 
-For flexibility for alternative languages such as Cyrillic (Russian) character set, to return just the first 3 characters of a string:
+So use a way that's less flexible with types and doesn’t evaluate Python statements.
+
+### Slicing
+
+For flexibility with alternative languages such as Cyrillic (Russian) character set, 
+return just the first 3 characters of a string:
 
    <pre>letters = "abcdef"
 first_part = letters[:3]
    </pre>
 
-<pre># function to convert to superscript
+## Unicode Superscript & Subscript characters
+
+<pre># Specify Unicode characters:
+# superscript
+print("x\u00b2 + y\u00b2 = 2")  # x² + y² = 2
+&nbsp;
+# subscript
+print(u'H\u2082SO\u2084')  # H₂SO₄
+</pre>
+
+### Superscript
+
+<pre># super-sub-script.py converts to superscript:
 def conv_superscript(x):
     normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-=()"
-    super_s = "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾQᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾"
+    super_s = "ᴬᴮᶜᴰᴱᶠᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾᴾᴿˢᵀᵁⱽᵂˣʸᶻᵃᵇᶜᵈᵉᶠᵍʰᶦʲᵏˡᵐⁿᵒᵖ۹ʳˢᵗᵘᵛʷˣʸᶻ⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾"
     res = x.maketrans(''.join(normal), ''.join(super_s))
     return x.translate(res)
 &nbsp;
-# print(conv_superscript('Convert all this2'))
+print(conv_superscript('Convert all this2'))
+# Or you can simply copy the text
 </pre>
 
 
@@ -504,14 +547,17 @@ Use this type checker to discover when the parameter is outside the allowed set 
 <pre>MODE = Literal['r', 'rb', 'w', 'wb']
 def open_helper(file: str, mode: MODE) -> str:
     ...
-open_helper('/some/path', 'r')  # Passes type check
-open_helper('/other/path', 'typo')  # Error in type checker
+    open_helper('/some/path', 'r')  # Passes type check
+    open_helper('/other/path', 'typo')  # Error in type checker
 </pre>
 
 BTW Literal[…] was introduced with version 3.8 and is not enforced by the runtime (you can pass whatever string you want in our example). 
 
-
 PROTIP: Be explicit about using text (vs. binary) mode.
+
+<pre>with open("D:\\myfile.txt", "w") as myfile:
+    myfile.write("Hello")
+</pre>
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th>Character</th><th>Meaning</th></tr>
@@ -521,16 +567,22 @@ PROTIP: Be explicit about using text (vs. binary) mode.
 <tr valign="top"><td>+</td><td>open for updating (read and write)</td></tr>
 <tr valign="top"><td>w</td><td>write-only after truncating the file</td></tr>
 <tr valign="top"><td>a</td><td>append</td></tr>
+<tr valign="top"><td>a+</td><td>opens a file for both appending and reading at the same time</td></tr>
 <tr valign="top"><td>x</td><td>open for exclusive creation, failing if file already exists</td></tr>
 <tr valign="top"><td>U</td><td>universal newlines mode (used to upgrade older code)</td></tr>
 </table>
 
-<strong>write()</strong> returns the count of codepoints (characters in the string), not the number of bytes. 
-So don't use it's count.
+<strong>myfile.write()</strong> returns the count of <strong>codepoints</strong> (characters in the string), not the number of bytes.
 
-<strong>read()</strong> returns line endings (\n) in string lines.
+<strong>myfile.read()</strong> returns line endings (\n) in string lines.
 
-<strong>readlines()</strong> shows the whole file.
+<strong>myfile.readlines()</strong> returns a list where each element of the list is a line in the file.
+
+<strong>myfile.truncate(12)</strong> keeps the first 12 characters in the file and deletes the remainder of the file.
+
+<strong>myfile.close()</strong> to save changes.
+
+<strong>myfile.tell()</strong>  tells the current position of the cursor.
 
 
 <a name="CopyFile"></a>
@@ -812,6 +864,11 @@ Methods encode behavior (programmed logic) of an object and are represented by f
 
 Attributes encode the state of an object and are represented by variables.
 
+MEMONIC: Scopes: LEGB
+   * <strong>L</strong>ocal - Inside the current function
+   * <strong>E</strong>nclosing - Inside enclosing functions
+   * <strong>G</strong>lobal - At the top level of the module
+   * <strong>B</strong>uilt-in - In the special builtins module
 
 ### Metaclasses
 
@@ -1021,18 +1078,22 @@ https://infosecwriteups.com/most-common-python-vulnerabilities-and-how-to-avoid-
 
 ## Use assert only during testing
 
-By default, python executes with “_debug_” = “true”. 
+   * <a target="_blank" href="https://app.pluralsight.com/guides/asserts-assert-downside-defensive-programming-in-python">"Asserts and Assert Downsides to Defensive Programming in Python"</a>
+   <br /><br />
 
-<a target="_blank" href="https://itnext.io/common-python-security-problems-ffedbae7b11c">Example:</a> comma acts as if/then:
+PROTIP: By default, python executes with “_debug_” = “true” so asserts are processed by the Python interpreter.
+But in production when the program is run in optimized mode, “_debug_” = “true” so assert statements are ignored. 
+
+So avoid coding <a target="_blank" href="https://itnext.io/common-python-security-problems-ffedbae7b11c">the sample code below</a> which uses a comma that acts as an if/then:
 
 <pre>def get_clients(user):
     assert is_superuser(user),  # user is not a member of superuser group
     return db.lookup('clients')
 </pre>
 
-But in production when the program is run in optimized mode, the assert statement is ignored. The validation statements is skipped. So the user ends up with access to a resource or not lead to improper authentication controls.
+In the above code, the user ends up with access to a resource with improper authentication controls.
 
-To remediate, use a if-else logic to implement true and false conditions.
+Instead (to remediate), use a if-else logic to implement true and false conditions.
 
 https://app.pluralsight.com/library/courses/using-unit-testing-python/table-of-contents
 
