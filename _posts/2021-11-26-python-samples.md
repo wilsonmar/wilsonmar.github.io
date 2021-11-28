@@ -23,7 +23,7 @@ The commentary below references code in my GitHub repository at:
 
 which contain these files:
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py"><strong>api-sample.py</strong></a> - the star of this show - <a href="#"TheCoding">the coding</a>
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py"><strong>api-sample.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.sh"><strong>api-sample.sh</strong></a> - a shell script which sets up the environment and runs the Python program. It's described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a> which describes <strong>installation</strong> and configuration advice
 
@@ -72,15 +72,7 @@ In a terminal:
    <ul><pre><strong>python api-sample.py
    </strong></pre></ul>
 
-There are hard-coded defaults for each feature flag.
-So that no feature flag needs to be specified, by default ALL features are enabled.
-However:
-
-   * <tt>show_verbose</tt> is enabled by default.
-   * <tt>show_trace</tt> is NOT enabled so you're not overwhelmed.
-   <br /><br />
-
-Sample output:
+No parameters need to be specified because the program has hard-coded defaults for each feature flag, with ALL features enabled. The default sample output:
 
 <pre>*** env_path LOCALE 'en_EN' overrides OS LOCALE ('en_US', 'UTF-8')
 &nbsp;
@@ -128,18 +120,44 @@ Images/
 *** api-sample.py done in 0.77 seconds. 
 </pre>
 
+## Verbosity flags
+
+The above sample reflects these default verbosity variables, which can be changed in the code:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Output </th><th> variable </th><th> enable </th><th> disable </th></tr>
+<tr valign="top"><td> what needs attention 
+   </td><td> <tt>show_warning</tt> </td><td> -sw default 
+   </td><td> -swx </td></tr>
+<tr valign="top"><td> headings at start of each section executed
+   </td><td> <tt>show_heading</tt> </td><td> -sh default
+   </td><td> -shx </td></tr>
+<tr valign="top"><td> informational output (such as Lotto numbers)
+   </td><td> <tt>show_info</tt> </td><td> -si default
+   </td><td> -six </td></tr>
+<tr valign="top"><td> intermediate calculations
+   </td><td> <tt>show_verbose</tt> </td><td> -sv default
+   </td><td> -svx </td></tr>
+<tr valign="top"><td> debugging 
+   </td><td> <tt>show_trace</tt> </td><td> -stv 
+   </td><td> -stx default </td></tr>
+</table>
+
 The output above are issued in order of execution, explained below.
+
+TODO: A "dev" and "prod" mode which establishes whole sets of switches.
+
 
 <a name="Sections"></a>
 
 ## Sections of code (and their feature flags)
 
    1. Import libraries
-   2. Define starting time and default variables
-   3. Parse arguments that control program operation
+   2. <a href="#StartingTime">Define starting time and default variables</a>
+   3. <a href="#ParseArguments">Parse arguments that control program operation</a>
    4. Define utilities for printing (in color), logging
-   5. Define Localization (to translate text to the specified locale)
-   6. Define utilities for managing data storage folders and files
+   5. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
+   6. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
 
    7. Display run conditions: datetime, OS, Python version, etc.
    8. Obtain run control data from .env file in the user's $HOME folder
@@ -159,7 +177,7 @@ The output above are issued in order of execution, explained below.
    12. Obtain Zip Code to retrieve Weather info = show_zipinfo
    13. Retrieve Weather info using API          = show_weather
 
-   14. Retrieve secrets from Azure Key Vault  = use_azure
+   14. <a href="AzureKeyVault">Retrieve secrets from Azure Key Vault  = use_azure</a>
    15. Retrieve secrets from AWS KMS         = use_aws
    16. Retrieve secrets from GCP             = use_gcp
    17. Retrieve secrets from Hashicorp Vault = use_vault
@@ -208,6 +226,8 @@ SECURITY CONSIDERATION: Generally, minimize the number of external dependencies 
 
 <hr />
 
+<a name="StartingTime"></a>
+
 ## 2. Define starting time and default variables
 
 This would be the first command:
@@ -230,6 +250,8 @@ see https://arrow.readthedocs.io/en/latest/
 
 <hr />
 
+<a name="ParseArguments"></a>
+
 ## 3. Parse arguments that control program operation
 
 Since api-sample.py was written to be used as the starting point for building other programs, it has a large <strong>scope</strong> of features coded. 
@@ -242,7 +264,8 @@ Included in the code are conversions of dates, floats, and formatting floats.
 
 https://learnpython.com/blog/9-best-python-online-resources-start-learning/
 
-## Feature Flags
+
+<a name="Localization"></a>
 
 ## Localization
 
@@ -252,7 +275,17 @@ NOTE: For localized presentation, use these specialized functions:
     # str (formats a floating point number using the same format as the
     # built-in function str(float) but takes the decimal point into account).
 
-## Azure Key Vault
+
+<a name="DefineUtils"></a>
+
+## Define Utilities
+
+?
+
+
+<a name="AzureKeyVault"></a>
+
+## Retrieve secrets from Azure Key Vault  = use_azure
 
 * https://www.youtube.com/watch?v=BErur8WwAsg - Getting Started with Microsoft Azure in Python by Jie Jenn
 * https://www.youtube.com/watch?v=k2VYcYS3EIA
@@ -272,6 +305,8 @@ To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS,
    * Symmetric CMK: 256-bit symmetric key that never leaves AWS KMS unencrypted.
 
    * Asymmetric CMK: AWS KMS generates a <strong>key pair</strong> where private key never leaves AWS KMS unencrypted.
+
+
 
 References:
     * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
@@ -379,7 +414,7 @@ Resilient? To ensure exceptions are handled properly:
 
 <hr />
 
-## Proof by linking hash to a blockchain
+### Proof by linking hash to a blockchain
 
 https://tierion.com/chainpoint/
 Chainpoint doesn't yet have a Python library, so TODO: write one based on their CLI
@@ -390,6 +425,10 @@ https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 # https://github.com/chainpoint/chainpoint-start
 # https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 
+
+### Readability Score
+
+https://github.com/brbcoding/Readability
 
 
 <hr />
