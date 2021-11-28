@@ -79,7 +79,6 @@ While AWS Config focuses on changes in the <strong>configuration</strong> of res
 
 <a target="_blank" href="https://aws.amazon.com/detective/">Amazon Detective</a> (new in 2020) <a target="_blank" href="https://www.youtube.com/watch?v=fmm4PXhg8BY">VIDEO: helps to manually triage potential security issues</a> identified by AWS GuardDuty and AWS Security Hub. Use it for "Threat Hunting" -- for the "Security Graph" to visualize Virtual Private Cloud (VPC) Flow Logs, AWS CloudTrail (much like how SOC uses competitor Splunk).
 
-
 DockerBench 
 
 <a name="TFSec"></a>
@@ -195,8 +194,12 @@ DockerBench
 
    <a targe="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configservice/index.html">AWS configservice CLI commands:<br />https://awscli.amazonaws.com/v2/documentation/api/latest/reference/configservice/index.html</a>.
 
-   For example, removing an egress rule from a VPC security group causes AWS Config to invoke a Describe API call on the security group. AWS Config then invokes a Describe API call on all of the instances associated with the security group. 
+   For example, removing an egress rule from a VPC security group causes AWS Config to invoke a Describe API call on the security group. AWS Config then invokes a Describe API call on all of the instances associated with the security group.
    
+   To automated removal of Security Groups:
+   * https://www.youtube.com/watch?v=eNXk9VA00_s video on
+   * https://github.com/miztiik/serverless-janitor-for-security-groups
+   <br /><br />
 
 1. In the AWS Management Console GUI, sign-on to an AWS account.
 
@@ -315,6 +318,13 @@ Operational Excellence:
    * Ensure that detailed monitoring is enabled for the AWS EC2 instances that you need to monitor closely.
    * Ensure that no AWS EC2 Reserved Instance purchases are pending or failed.
 
+
+## Remove unattached Security Groups automatically
+
+<a target="_blank" href="https://www.youtube.com/watch?v=eNXk9VA00_s">VIDEO</a>:
+To automatically remove Security Groups not attached to AWS resources (EC2, etc.) using Lambda and CloudFormation 
+https://github.com/miztiik/dev-sec-ops">
+<a target="_blank" href="https://www.udemy.com/course/aws-cloud-security-proactive-way/?referralCode=71DC542AD4481309A44">AWS Advanced Security: SecOps Automation for the cloud</a>
 
 
 ## Custom Rules for AWS Config

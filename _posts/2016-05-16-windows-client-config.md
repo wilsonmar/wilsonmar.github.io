@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Windows 10 client config (Server 2012+)"
+title: "Windows client config (Server 2012+)"
 excerpt: "How I setup my Windows UI look and feel"
 tags: [windows, mac, setup]
-date: "2016-05-16"
-file: "windows-10-client-config"
+date: "2021-11-27"
+file: "windows-client-config"
 image:
 # face blue windows cortana-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15312673/76026ae2-1bc3-11e6-9cf0-ca09a839ba7f.jpg
@@ -25,7 +25,22 @@ Older 32-bit programs install to "C:\Program Files (x86)".
 
 Apps on a 32-bit computer cannot use all 4 GB (RAM) memory installed because of memory used by video cards, network cards, sound cards, and other devices.
 
-## No machine? Use AWS Workspaces
+## No machine? 
+
+There are now several ways to do complicated work on a cheap Chromebook laptop.
+
+Even if you have a top-of-the-line laptop, use SaaS (Software-as-a-Service) offerings to minimize backup from local drives and other disk space maintenance toil.
+
+### Google 
+
+You can run Python without <a target="_blank" href="https://wilsonmar.github.io/python-install/">installing Python and all that goes with it)</a> by using Google's Colab at<br />
+<a target="_blank" href="https://colab.research.google.com/?utm_source=scs-index">https://colab.research.google.com/</a><br />
+where you can run even the largest of Python programs as Jupyter notebooks.
+
+See my <a target="_blank" href="https://wilsonmar.github.io/jupyter/">wilsonmar.github.io/jupyter</a>
+
+
+### Use AWS Workspaces
 
 Quickly spin up server instances in the cloud using <strong>Amazon's Workspaces</strong>.
 

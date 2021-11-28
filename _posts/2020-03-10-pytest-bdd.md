@@ -28,7 +28,7 @@ PROTIP: Create a test .py file to go with each py file.
 
 There are several libraries to support testing:
 
-1. <strong>unittest</strong> is built into Python interprete, so you can run:
+1. <strong>unittest</strong> is built into Python interpreter:<br /><a target="_blank" href="https://docs.python.org/3/library/unittest.html">https://docs.python.org/3/library/unittest.html</a>
 
    <pre>python -m unittest test_unittest.py -f -b --locals</pre>
 
@@ -43,7 +43,9 @@ There are several libraries to support testing:
    <pre>python -m 
    </pre>
 
-   * <a target="_blank" href="https://docs.python.org/3/library/unittest.html">https://docs.python.org/3/library/unittest.html</a>
+   
+
+   https://www.youtube.com/watch?v=HKTyOUx9Wf4
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=1Lfv5tUGsn8&list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-&index=32">VIDEO</a> by <a target="_blank" href="https://www.youtube.com/watch?v=bY6m6_IIN94&list=PLi01XoE8jYohWFPpC17Z-wWhPOSuh8Er-" title="from 2014">Socratica (Ulka Simone Mohanty)</a> developers watch even though they know Python because her deadpan delivery of admonishments is so entertaining. "I can almost feel her stilleto heels digging into my chest as she makes a point."
 

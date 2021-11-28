@@ -16,14 +16,49 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are various coding tips I've seen while going through [Python programming classes](/python-tutorials/) after [installing Python](/python-install/) and [Jupyter](/jupyter/).
 
-## Setup VSCode IDE for Python
+## Therapy
+
+> I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
+
+Maybe it's fear of not doing well on coding interviews. 
+That's weird because as an SRE I don't have a job where I'm programming Python every day. 
+Yet employers make people go through coding challenges anyway like it was a fraternity hazing ritual.
+
+So to get over my Python phobia, like any other aversion therapy, 
+I needed to de-sensitize myself and do the very thing I fear. My notes on the various activities:
+
+   * Analyze the intricacies of <strong>installing Python</strong> and associated utilities at:<br /><a target="_blank" href="https://wilsonmar.github.io/jupyter">wilsonmar.github.io/jupyter</a>
+
+   * Analyze the intricacies of <strong>installing Jupyter</strong> which runs Python at:<br /><a target="_blank" href="https://wilsonmar.github.io/jupyter">wilsonmar.github.io/jupyter</a>
+
+   * Identify Python <strong>coding tutorials</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-tutorials">wilsonmar.github.io/python-tutorials</a>
+
+   * Describe Python <strong>coding tricks and techniques</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-coding">wilsonmar.github.io/python-coding</a>
+
+   * Analyze the topics covered in <strong>certification tests</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-certs">wilsonmar.github.io/python-certs</a>
+
+   * Put to work what I've learned about programming Python in this blog article:<br /><a target="_blank" href="https://wilsonmar.github.io/python-samples">wilsonmar.github.io/python-samples</a>
+
+
+## References
+
+https://learnpython.com/blog/9-best-python-online-resources-start-learning/
+
+
+## Setup an IDE 
+
+The most popular IDEs for Python are:
+   * VSCode from Microsoft (free)
+   * PyCharm ($125/year)
+   * Cloud9 free on-line on AWS (which automatically generates new credentials every 5 minutes or on browser Reset<a target="_blank" href="https://www.coursera.org/learn/building-modern-python-applications-on-aws/lecture/UdnyB/using-temporary-credentials-in-aws-cloud9">*</a>)
+   <br /><br />
 
 <a target="_blank" href="https://app.pluralsight.com/guides/visual-studio-code-for-python-development">
 BLOG: Setup VSCode for Python Development</a>
-
 https://code.visualstudio.com/docs/editor/extension-marketplace
+
+<hr />
 
 
 <a name="ReservedKeywords"></a>
@@ -39,11 +74,11 @@ PROTIP: Research and find out what each is about:
 *	<a href="#assert">assert</a>
 *	async
 *	await
-*	break
+*	break - force escape from for/while loop
 *	class
-*	continue - loop again
+*	continue - force loop again next iteration
 *	def - define function
-*	del - delete list item
+*	<tt>del list1[2]</tt> # delete 3rd list item
 *	elif - else if
 *	else
 *	except
@@ -127,6 +162,8 @@ The value passed through when calling the function is called an <strong>argument
 
 Instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
 
+
+<a name="Modulo"></a>
 
 ### Modulo operator
 
@@ -244,7 +281,7 @@ https://docs.python.org/3/library/functions.html
    * iter()
    * list() Function
    * locals()
-   * len()
+   * <tt>len([1, 2, 3])</tt> is 3.
    * max()
    * min()
    * map()
@@ -277,6 +314,8 @@ https://docs.python.org/3/library/functions.html
 ## class functions
 
 using .maketrans() and .translate()
+
+  * a.find('a') returns the index where 'a' is found.
 
 <hr />
 
@@ -314,11 +353,88 @@ Remember that attackers can use directory traversal sequences (../) to fetch the
 
 Sanitize the user input using “shlex”
 
+<hr />
+
+## Blob vs. File vs. Text
+
+A "BLOB" (Binary Large OBject) is a data type that stores binary data such as mp4 videos, mp3 audio, pictures, pdf. So usually large -- up to 2 TB (2,147,483,647 characters).
+
+https://github.com/googleapis/google-cloud-python/issues/1216
+
+https://towardsdatascience.com/image-processing-blob-detection-204dc6428dd
+
+## Azure storage
+
+https://github.com/yokawasa/azure-functions-python-samples
+
+https://chriskingdon.com/2020/11/24/the-definitive-guide-to-azure-functions-in-python-part-1/
+
+https://chriskingdon.com/2020/11/30/the-definitive-guide-to-azure-functions-in-python-part-2-unit-testing/
+
+https://github.com/Azure/azure-storage-python/blob/master/tests/blob/test_blob_storage_account.py
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python
+
+### Azure Blobs
+
+NOTE: Update of azure-storage-blob deprecates blockblobservice.
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=enhJfb_6KYU">VIDEO</a>:
+https://pypi.org/project/azure-storage-blob/
+
+https://www.educative.io/edpresso/how-to-download-files-from-azure-blob-storage-using-python
+
+https://github.com/Azure/azure-sdk-for-python/issues/12744
+exists() new feature
+<pre>
+import asyncio
+
+async def check():
+    from azure.storage.blob.aio import BlobClient
+    blob = BlobClient.from_connection_string(conn_str="my_connection_string", container_name="mycontainer", blob_name="myblob")
+    async with blob:
+        exists = await blob.exists()
+        print(exists)
+</pre>
+
+### Azure Streams
+
+https://blog.siliconvalve.com/2020/10/29/reading-and-writing-binary-files-with-python-with-azure-functions-input-and-output-bindings/
+Reading and writing binary files with Python with Azure Functions input and output bindings
+
+
+## GCP
+
+https://gcloud.readthedocs.io/en/latest/storage-blobs.html
+
+https://cloud.google.com/appengine/docs/standard/python/blobstore
+
+
+## OpenCV
+
+https://learnopencv.com/blob-detection-using-opencv-python-c/
+
+
+## Scikit-Image
+
+https://towardsdatascience.com/image-processing-with-python-blob-detection-using-scikit-image-5df9a8380ade
+
+
+## GIS
+
+https://gsp.humboldt.edu/olm/Courses/GSP_318/11_B_91_Blob.html
+
 
 <hr />
 
 ## String Handling
 
+## Regular Expressions
+
+   * https://www.tutorialspoint.com/python/python_reg_expressions.htm
+   * https://www.udemy.com/course/python-quiz/learn/quiz/4649042#overview within quiz
+   <br/><br />
 
 ### Handle Strings safely
 
@@ -440,6 +556,20 @@ Fußbälle
 <type 'str'>
 
 
+
+# ALTERNATIVE: TODO: http://babel.pocoo.org/en/latest/numbers.html
+#from babel import numbers
+# numbers.format_decimal(.2345, locale='en_US')
+# Internationalization: http://babel.pocoo.org/en/latest/dates.html
+# Requires: pip install Babel
+# from babel import Locale
+# NOTE: Babel generally recommends storing time in naive datetime, and treat them as UTC.
+# from babel.dates import format_date, format_datetime, format_time
+# d = date(2007, 4, 1)
+# format_date(d, locale='en')     # u'Apr 1, 2007'
+# format_date(d, locale='de_DE')  # u'01.04.2007'
+
+
 ### Switch language in browsers
 
 Ensure that your program works correctly when another human language (such as "es" for Spanish, "ko" for Korean, "de" for German, etc.) is configured by the user:
@@ -536,6 +666,7 @@ ee_countries.clear()  # remove all
 print(ee_countries)   # {} means empty 
 </pre>
 
+https://www.codesansar.com/python-programming-examples/sorting-dictionary-value.htm
 
 
 ## File open() modes
@@ -574,7 +705,7 @@ PROTIP: Be explicit about using text (vs. binary) mode.
 
 <strong>myfile.write()</strong> returns the count of <strong>codepoints</strong> (characters in the string), not the number of bytes.
 
-<strong>myfile.read()</strong> returns line endings (\n) in string lines.
+<strong>myfile.read(3)</strong> returns 3 line endings (\n) in string lines.
 
 <strong>myfile.readlines()</strong> returns a list where each element of the list is a line in the file.
 
@@ -722,16 +853,43 @@ Brilliant.
 See <a target="_blank" href="https://github.com/docopt/docopt">
 docopt from https://github.com/docopt/docopt</a> described at <a target="_blank" href="http://docopt.org/">http://docopt.org</a>
 
+## CLI code enhancement
+
+Python's built-in mechinism for coding Command-line menus, etc. is difficult to understand.
+So some have offered alternatives:
+
+* <a target="_blank" href="http://builtoncement.com/">cement</a> - CLI Application Framework for Python.
+* <a target="_blank" href="http://click.pocoo.org/dev/">click</a> - A package for creating beautiful command line interfaces in a composable way.
+* <a target="_blank" href="https://docs.openstack.org/developer/cliff/">cliff</a> - A framework for creating command-line programs with multi-level commands.
+* <a target="_blank" href="http://docopt.org/">docopt</a> - Pythonic command line arguments parser.
+* <a target="_blank" href="https://github.com/google/python-fire">python-fire</a> - A library for creating command line interfaces from absolutely any Python object.
+* <a target="_blank" href="https://github.com/jonathanslenders/python-prompt-toolkit">python-prompt-toolkit</a> - A library for building powerful interactive command lines.
+
 
 ## Handling Arguments
 
-<a target="_blank" href="https://dbader.org/blog/python-commandline-tools-with-click">
+For parsing parameters supplied by invoking a Python program, 
+the command-line arguments and options/flags:
+
+   <ul>python myprogram.py -v -LOG=info
+   </ul>
+
+The <strong>argparse</strong> package comes with Python 3.2+ (and the optparse package that comes with Python 2), it's difficult to understand and limited in functionality.
+
+https://www.geeksforgeeks.org/argparse-vs-docopt-vs-click-comparing-python-command-line-parsing-libraries/
+
+Alternatives: to Argparse are Docopt, Click, Client, <a target="_blank" href="https://pypi.org/project/argh/">argh</a>, and many more.
+
+Instead, <a target="_blank" href="https://dbader.org/blog/python-commandline-tools-with-click">
 Dan Bader recommends</a> the use of 
 <a target="_blank" href="http://click.pocoo.org/6/why/">click.pocoo.org/6/why</a>
-click custom package (from Armin Ronacher) instead of the
-argparse package that comes with Python 3.2+ (and the optparse package that comes with Python 2).
+click custom package (from Armin Ronacher).
 
-Click provides decorators such as the "@click.command()" below:
+Click is a Command Line Interface Creation Kit for arbitrary nesting of commands, automatic help page generation. It supports lazy loading of subcommands at runtime. It comes with common helpers (getting terminal dimensions, ANSI colors, fetching direct keyboard input, screen clearing, finding config paths, launching apps and editors, etc.)
+
+Click provides <strong>decorators</strong> which makes reading of code very easy. 
+
+The "@click.command()" :
 
    <pre>\# cli.py
 import click
@@ -750,14 +908,16 @@ if __name__ == "__main__":
 
 ## Python in the Cloud 
 
-On AWS: 
+### On AWS: 
 
+   Tutorials:
    * <a target="_blank" href="https://www.botmetric.com/blog/aws-cloud-automation-python-boto3-scripts/">Intro to Boto3</a>
    * https://linuxacademy.com/howtoguides/posts/show/topic/14209-automating-aws-with-python-and-boto3 has a whole video course
    * <a target="_blank" href="https://realpython.com/python-boto3-aws-s3/">Python, Boto3, and AWS S3: Demystified</a> by Ralu Bolovan
    <br /><br />
 
-On Azure:
+
+### On Azure:
 
    * <a target="_blank" href="https://github.com/Azure/azure-sdk-for-python/">https://github.com/Azure/azure-sdk-for-python/pulls</a> has a large set of libraries so you can install each individually. To install them all:
 
