@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-## Therapy
+## This is Therapy
 
 > I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
 
@@ -202,39 +202,22 @@ Techniques for calculation of <strong>nested loops</strong> is often used to sho
 
    <ul><pre>fib(5) = fib(4) + fib(3)</pre></ul>
 
+Memoization  (sounds  like  memorization)  is  the  technique of  writing  a  function  that  remembers  the  results  of  previous computations. 
+
+Longest Increasing Subsequence (LIS)
+
+That's a technique of "Dynamic Programming" (See https://www.wikiwand.com/en/Dynamic_programming)
+
 Dynamic programming is a catch phrase for solutions based on solving 
 successively similar but smaller problems, using algorithmic tasks in which 
 the solution of a bigger problem is relatively easy to find, 
 if we have solutions for its sub-problems.
 
-Memoization  (sounds  like  memorization)  is  the  technique of  writing  a  function  that  remembers  the  results  of  previous computations. 
 
-Longest Increasing Subsequence (LIS)
+<a name="MakingChange"></a>
 
-https://www.byte-by-byte.com/dpbook-resources/
+### Making change
 
-That's a technique of "Dynamic Programming", 
-
-An example of Space Complexity from O(n · k) to O(k), is solving the Coin Changing problem, <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">Codility's PDF</a> shows an example for <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">returning change for the smallest number of bills/coins</a>.
-
-<pre>def dynamic_coin_changing(C, k):
-    # k is the amount you want back in bills/change
-    # C is an array of the denominations of the currency
-    # (assuming there is an unlimited amount of each bill/coin available)
-    print(f'>>> k={k} C="{C}')
-    n = len(C)
-    dp = [0] + [MAX_INT] * k
-    for i in xrange(1, n + 1):
-       for j in xrange(C[i - 1], k + 1):
-           dp[j] = min(dp[j - C[i - 1]] + 1, dp[j])
-    return dp
-&nbsp;
-dynamic_coin_changing(34,[100,50,20,10,5,1])
-</pre>
-
-See https://www.wikiwand.com/en/Dynamic_programming
-
-<a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO: Sam at Byte by Byte</a>, author of <a target="_blank" href="https://www.byte-by-byte.com/dpbook/">DP ebook</a> with the memonic "FAST" method.
 
 <hr />
 

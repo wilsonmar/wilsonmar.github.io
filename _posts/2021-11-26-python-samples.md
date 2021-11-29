@@ -163,23 +163,26 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
    8. Obtain run control data from .env file in the user's $HOME folder
    to obtain the desired LOCALE, cloud region, zip code, and other variable specs.
 
-   9. Various calculations for hashing, encryption, etc.
+   9. Generate various calculations for hashing, encryption, etc.
 
-      * Generate Lotto America Numbers           = gen_lotto
-      * Generate Hash from a file                = gen_hash
-      * Generate Hash from a file                = gen_1_in_100
-      * Generate a random salt                   = gen_salt
-      * Generate JWT (Json Web Token)            = use_jwt
-      * Convert Roman numerals to decimal        = process_romans
+      1. Generate Hash from a file & text         = gen_hash
+      2. Generate a random salt                   = gen_salt
+      3. Generate a random percent of 100         = gen_1_in_100
+      4. Generate Fibonacci with memoization      = gen_fibonacci
+      5. Generate JWT (Json Web Token)            = gen_jwt
+      6. Generate Lotto America Numbers           = gen_lotto
+      7. Generate Magic 8-ball numbers            = gen_magic_8ball
+      8. Convert between Roman numerals & decimal = process_romans
 
    10. Retrieve client IP address               = show_ipaddr
-   11. Lookup geolocation info from IP Address  = show_ipaddr
-   12. Obtain Zip Code to retrieve Weather info = show_zipinfo
+   11. Lookup geolocation info from IP Address  = lookup_ipaddr
+
+   12. <a href="#ZipCode">Obtain Zip Code to retrieve Weather info = show_zipinfo</a>
    13. Retrieve Weather info using API          = show_weather
 
    14. <a href="AzureKeyVault">Retrieve secrets from Azure Key Vault  = use_azure</a>
    15. Retrieve secrets from AWS KMS         = use_aws
-   16. Retrieve secrets from GCP             = use_gcp
+   16. <a href="#GCP">Retrieve secrets from GCP             = use_gcp</a>
    17. Retrieve secrets from Hashicorp Vault = use_vault
 
    18. Create/Reuse container folder for img app to use
@@ -267,7 +270,7 @@ https://learnpython.com/blog/9-best-python-online-resources-start-learning/
 
 <a name="Localization"></a>
 
-## Localization
+## 5. Localization
 
 NOTE: For localized presentation, use these specialized functions:
     # atof (convert a string to a floating point number),
@@ -278,15 +281,66 @@ NOTE: For localized presentation, use these specialized functions:
 
 <a name="DefineUtils"></a>
 
-## Define Utilities
+## 6. Define utilities for managing data storage folders and files
+## 7. Display run conditions: datetime, OS, Python version, etc.
 
-?
+##   8. Obtain run control data from .env file in the user's $HOME folder
+  
+To obtain the desired cloud region, zip code, and other variable specs.
+
+##   9. Generate various calculations for hashing, encryption, etc.
+
+### Salt
+
+https://tonyarcieri.com/4-fatal-flaws-in-deterministic-password-managers
+
+
+<a name="make_change"></a>
+
+### 9.9 Make change using Dynamic Programming     = make_change
+
+This "Coin Changing problem" was a <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">PDF: Codility challenge</a> to <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">VIDEO: returning change for the smallest number of bills/coins</a>, to use Space Complexity from O(n · k) to O(k).
+
+Here is one solution:
+
+<pre>def make_change_dynamic(C, k):
+    # k is the amount you want back in bills/change
+    # C is an array of the denominations of the currency
+    # (assuming there is an unlimited amount of each bill/coin available)
+    print(f'*** k={k} C="{C}')
+    n = len(C)
+    dp = [0] + [MAX_INT] * k
+    for i in xrange(1, n + 1):
+       for j in xrange(C[i - 1], k + 1):
+           dp[j] = min(dp[j - C[i - 1]] + 1, dp[j])
+    return dp
+&nbsp;
+make_change_dynamic(34,[100,50,20,10,5,1])
+</pre>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://www.byte-by-byte.com/dpbook/">DP (Dynamic Programming) ebook</a>.
+
+
 
 
 <a name="AzureKeyVault"></a>
 
 ## Retrieve secrets from Azure Key Vault  = use_azure
 
+https://docs.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python
+
+Azure Active Directory identity library
+
+from azure.identity import DefaultAzureCredential  
+   * https://pypi.org/project/azure-identity/
+   <br /><br />
+
+from azure.keyvault.secrets import SecretClient
+   * see https://pypi.python.org/pypi/azure-keyvault-secrets
+   <br /><br />
+
+
+References:
 * https://www.youtube.com/watch?v=BErur8WwAsg - Getting Started with Microsoft Azure in Python by Jie Jenn
 * https://www.youtube.com/watch?v=k2VYcYS3EIA
 * https://www.youtube.com/watch?v=gC4wmZf7dAI - Enable Zero Trust with Azure AD PIM (Privileged Identity Management) and Azure Lighthouse for MSPs (Managed Service Providers) | Azure Friday
@@ -359,10 +413,79 @@ References:
    * https://www.youtube.com/watch?v=KxQVlrFy3Gc - using GitLab
 
 
+<a name="ZipCode"></a>
 
-## Modular classes
+## Zip Code
+
+    # NOTE: Several place names can be associated with a Zip Code.
+    # TODO: Loop through a list of zip codes.
+    # TODO: Repeat every x minutes for updates
+    # TODO: Save results (in CSV or document DB) for time series analysis
+
+    # Alternately:
+    # city_name="New York"
+    # city_name = input("Enter city name : ")
 
 
+<a name="GCP"></a>
+
+## GCP
+
+1. See my https://wilsonmar.github.com/gcp about getting an account, creating a project, and getting into https://console.cloud.google.com and Cloud Shell.
+
+1. Edit the python-samples.env file with:
+
+   <pre>PROJECT_ID="1234etc"</pre>
+
+1. Enable billing for project
+
+1. Use the Cloud Shell to enable the Secret Manager API:
+
+   <pre><strong>gcloud services enable secretmanager.googleapis.com
+   </strong></pre>
+
+   You should see output like this:
+
+   <pre>Operation "operations/acf.cc11852d-40af-47ad-9d59-477a12847c9e" finished successfully.</pre>
+
+1. On your laptop, install the Secret Manager Client Library:
+
+   <pre><strong>pip3 install --user google-cloud-secret-manager==2.5.0
+   </strong></pre>
+
+1. Enter the Jupyter enviornment:
+
+   <pre><strong>ipython</strong></pre>
+
+To use serverless <a target="_blank" href="https://codelabs.developers.google.com/codelabs/secret-manager-python#7">Google Cloud Functions</a>, specify in the requirements.txt of your Python project folder:
+
+   <pre>google-cloud-secret-manager==2.5.0</pre>
+
+In Secret Manager, a secret is a wrapper around a collection of secret versions.
+
+The secret stores metadata such as labels and replication, but it does not contain the actual secret.
+
+A secret version contains the actual contents of a secret.
+
+A secret version can be enabled, disabled, or destroyed.w
+
+To change the contents of a secret, create a new version.
+
+References:
+   * https://wilsonmar.github.io/gcp/
+
+   * Python on Google Cloud: https://cloud.google.com/python/
+
+   * Secret Manager: https://cloud.google.com/secret-manager/
+   * https://googleapis.dev/python/secretmanager/latest/index.html
+   * https://googleapis.dev/python/secretmanager/1.0.0/gapic/v1/api.html
+   
+   * https://cloud.google.com/secret-manager/docs/reference/libraries#client-libraries-install-python
+
+   * Cloud Client Libraries for Python: https://googlecloudplatform.github.io/google-cloud-python/
+
+
+<hr />
 
 ## More APIs
 
@@ -426,9 +549,14 @@ https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 # https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 
 
-### Readability Score
+### Text Readability Score
 
 https://github.com/brbcoding/Readability
+
+### Dynamic Programming
+
+https://www.byte-by-byte.com/dpbook/
+
 
 
 <hr />
