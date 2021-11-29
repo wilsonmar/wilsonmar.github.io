@@ -318,7 +318,7 @@ Here is one solution:
 make_change_dynamic(34,[100,50,20,10,5,1])
 </pre>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://www.byte-by-byte.com/dpbook/">DP (Dynamic Programming) ebook</a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://github.com/samgh/DynamicProgrammingEbook/tree/master/python">DP (Dynamic Programming) ebook for Python</a>.
 
 
 
@@ -552,6 +552,14 @@ https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 ### Text Readability Score
 
 https://github.com/brbcoding/Readability
+
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Automated_readability_index">Automated Readability Index</a>
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/SMOG">SMOG Index</a>
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Gunning_fog_index">Gunning Fog</a>
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Coleman%E2%80%93Liau_index">Coleman Liau</a>
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">Flesch Kincaid</a>
+   <br /><br />
+
 
 ### Dynamic Programming
 
