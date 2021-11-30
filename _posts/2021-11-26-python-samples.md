@@ -338,6 +338,7 @@ The plainly ("brute force") approach is to iteratively pick the largest denomina
 with each turn.
 
 
+
 Dynamic Programming involves breaking down a problem into solutions to <strong>sub-problems</strong>.
 There is a "top-down" and "bottom-up" approach to solving the problem.
 

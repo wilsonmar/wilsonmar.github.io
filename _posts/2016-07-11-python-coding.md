@@ -267,15 +267,35 @@ http://pypi.python.org/pypi/profilehooks
 
 
 
+<a name="TimeComplexity"></a>
 
 ### Time Complexity
 
-Use of Modulus would result in "O(n)" (linear) <strong>Time Complexity</strong> (growth in time to run as the dataset grows). Depth-first trees would have steeper (logarithmic) Time Complexity:
+Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
+
+Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
+
+Depth-first trees would have steeper (logarithmic) Time Complexity:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
 <img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
 
 In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
+
+
+<a name="Sorting"></a>
+
+### Sorting
+
+To swap values:
+
+<pre>var1 = 1 
+var2 = 2 
+var1,var2 = var2,var1
+>>> print (var1,var2)
+>>> 2 1
+</pre>
+
 
 ### Reduce Space Complexity with Dynamic programming
 
