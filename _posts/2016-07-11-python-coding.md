@@ -187,6 +187,83 @@ print(solution([7, 2, 8, 3, 5], 2))
 Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/CodilityInPython/blob/master/solutions/euclideanalgorithm/chocolates_by_numbers.py">this</a>
 
 
+<a name="DurationCalcs"></a>
+
+## Duration calculations
+
+There are several ways to capture how long a particular function or the whole program took to run.
+
+   * https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
+   * https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module/47637891#47637891
+   <br /><br />
+
+To time the difference between two Fibonacci calculations, I used:
+
+<tt><strong>timeit.timer()</strong></tt> which provides a nice output format of <tt>0:00:01.946339</tt>.
+See https://docs.python.org/3/library/timeit.html and 
+https://www.guru99.com/timeit-python-examples.html
+
+<pre># from timeit import default_timer as timer
+# from datetime import timedelta
+start = timer()
+# do some stuff ...
+end = timer()
+print(timedelta(seconds=end-start))
+</pre>
+
+
+<tt><strong>time.perf_counter()</strong></tt> (abbreviation of performance counter) is used to measure the elapsed time of short duration because it returns 82 nano-second resolution on Fedora 4.12. It is based on <strong>Wall-Clock Time</strong> which includes time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of consecutive calls is valid.
+See https://docs.python.org/3/library/time.html#time.perf_counter
+
+New in Python 3.7 is PEP 564 -- 
+https://www.python.org/dev/peps/pep-0564/
+
+
+<tt><strong>datetime.datetime.now()</strong></tt> provides <strong>microsecond</strong> precision:
+
+<pre>
+# import datetime
+start = datetime.datetime.now()
+# do some stuff ...
+end = datetime.datetime.now()
+elapsed = end - start
+print(elapsed)
+# or
+print(elapsed.seconds,":",elapsed.microseconds) 
+</pre>
+
+<a target="_blank" href="https://www.python.org/dev/peps/pep-0418">PEP-418</a> in Python 3.3 added three timers:
+
+<tt><strong>time.process_time()</strong></tt> offers 1 nano-second resolution on Linux 4.12. It does not include time during sleep.
+
+<pre>
+# import time
+t = time.process_time()
+# do some stuff ...
+elapsed_time = time.process_time() - t
+</pre>
+
+<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days and you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward.
+See https://docs.python.org/3/library/time.html#time.monotonic
+
+
+<tt><strong>time.time()</strong></tt> is not advised because its resolution is <strong>whole seconds</strong>. And its counting is disrupted if the system time gets changed during (such as for daylight savings) the measurement period between start and stop. time.time() resolution will only become larger (worse) as years pass since every day adds 86,400,000,000,000 nanoseconds to the system clock, which increases the precision loss. It is called "non-monotonic" because falling back on daylight savings would cause it to report time going backwards:
+
+<pre>start_time = time.time()
+# your code
+e = time.time() - start_time
+time.strftime("%H:%M:%S", time.gmtime(e))  # for hours:minutes:seconds
+print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
+</pre>
+
+<tt><strong>time.clock</strong></tt> is no longer availble since Python 3.8.
+
+
+http://pypi.python.org/pypi/profilehooks
+
+
+
+
 ### Time Complexity
 
 Use of Modulus would result in "O(n)" (linear) <strong>Time Complexity</strong> (growth in time to run as the dataset grows). Depth-first trees would have steeper (logarithmic) Time Complexity:
