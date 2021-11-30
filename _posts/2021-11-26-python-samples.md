@@ -305,6 +305,8 @@ The call to the function is:
 
 <pre>make_change_dynamic(34,[100,50,20,10,5,1])</pre>
 
+The function's signature:
+
 <pre>def make_change_dynamic(k, C):
     # k is the amount you want back in bills/change
     # C is an array of the denominations of the currency, such as [100,50,20,10,5,1]
@@ -320,6 +322,17 @@ This is called the "greedy" method.
 The assumption is an infinite number of each kind of bill/coin.
 
 We want to return an array of each denomination given back as change.
+
+<pre>*** make_change_dynamic: C="[100, 50, 20, 10, 5, 1]" n=6 
+*** turn=0 k=34 to start 
+*** turn=1 k=14 after denom=20 change 
+*** turn=2 k=4 after denom=10 change 
+*** turn=3 k=3 after denom=1 change 
+*** turn=4 k=2 after denom=1 change 
+*** turn=5 k=1 after denom=1 change 
+*** turn=6 k=0 after denom=1 change 
+*** After 6 turns, k=0 remaining ...
+</pre>
 
 The plainly ("brute force") approach is to iteratively pick the largest denomination from array C (such as 100),
 with each turn.
