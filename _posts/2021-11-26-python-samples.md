@@ -299,29 +299,76 @@ https://tonyarcieri.com/4-fatal-flaws-in-deterministic-password-managers
 
 ### 9.9 Make change using Dynamic Programming     = make_change
 
-This "Coin Changing problem" was a <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">PDF: Codility challenge</a> to <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">VIDEO: returning change for the smallest number of bills/coins</a>, to use Space Complexity from O(n · k) to O(k).
+This "Coin Changing problem" was a <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">PDF: Codility challenge</a> to  returning change for the smallest number of bills/coins</a>, 
 
-Here is one solution:
+The call to the function is:
 
-<pre>def make_change_dynamic(C, k):
+<pre>make_change_dynamic(34,[100,50,20,10,5,1])</pre>
+
+<pre>def make_change_dynamic(k, C):
     # k is the amount you want back in bills/change
-    # C is an array of the denominations of the currency
+    # C is an array of the denominations of the currency, such as [100,50,20,10,5,1]
     # (assuming there is an unlimited amount of each bill/coin available)
-    print(f'*** k={k} C="{C}')
-    n = len(C)
-    dp = [0] + [MAX_INT] * k
-    for i in xrange(1, n + 1):
+    n = len(C)  # the number of items in array C
+    print(f'*** make_change_dynamic: k={k} C="{C}" n={n} ')
+</pre>
+
+In the C array, the largest denomination appears first because we want to give out the largest bills first.
+For example, if k is 200, we would give back two $100 bills, not a stack of $1 bills.
+This is called the "greedy" method.
+
+The assumption is an infinite number of each kind of bill/coin.
+
+We want to return an array of each denomination given back as change.
+
+The plainly ("brute force") approach is to iteratively pick the largest denomination from array C (such as 100),
+with each turn.
+
+
+Dynamic Programming involves breaking down a problem into solutions to <strong>sub-problems</strong>.
+There is a "top-down" and "bottom-up" approach to solving the problem.
+
+add that to output list "dp" for what is given out, and subtract it from "k". 
+
+The global value going into the function is MAX_INT which defines an arbitrary maximum number of bills/coins
+for use the empty state starting point.
+
+<pre>
+    dp = [0] + [MAX_INT] * k   # array of bills given out
+    for i in xrange(1, n + 1):   # 
        for j in xrange(C[i - 1], k + 1):
            dp[j] = min(dp[j - C[i - 1]] + 1, dp[j])
     return dp
-&nbsp;
-make_change_dynamic(34,[100,50,20,10,5,1])
 </pre>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://github.com/samgh/DynamicProgrammingEbook/tree/master/python">DP (Dynamic Programming) ebook for Python</a>.
+to use Space Complexity from O(n · k) to O(k).
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam Gavis-Hughson at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://github.com/samgh/DynamicProgrammingEbook/tree/master/python">DP (Dynamic Programming) ebook for Python</a>.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=m2Elp9ubY3w">VIDEO by Derrick Sherrill</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jgiZlGzXMBw&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&start_radio=1&rv=jgiZlGzXMBw">VIDEO by "Back to Back SWE</a> https://b2bswe.co/change-making-problem
+   * <a target="_blank" href="https://www.youtube.com/watch?v=1R0_7HqNaW0">VIDEO by Kevin Naughton Jr.</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=H9bfqozjoqs&list=RDCMUC_mYaQAE6-71rjSN6CeCA-g&start_radio=1&rv=H9bfqozjoqs">VIDEO by NeetCode: 1</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=DJ4a7cmjZY0&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&start_radio=1&rv=DJ4a7cmjZY0">VIDEO by NeetCode: 2</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=bGC2fNALbNU">VIDEO by CS Dojo</a> from Facebook
+   * <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">VIDEO: by Paul</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jaNZ83Q3QGc">VIDEO by Stephen O'Neil</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=HWW-jA6YjHk">VIDEO by interiewing.io</a>
 
 
+## "Knapsack"
 
+https://youtu.be/Mjy4hd2xgrs
+
+<a target="_blank" href="https://www.youtube.com/watch?v=YRBON9sIZ2Y&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=7">VIDEO</a>:
+
+https://www.youtube.com/watch?v=xOlhR_2QCXY
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xCbYmUPvc2Q&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&index=2">VIDEO: Back to Back SWE</a>
+
+
+<hr />
 
 <a name="AzureKeyVault"></a>
 

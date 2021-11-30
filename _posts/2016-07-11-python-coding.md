@@ -60,6 +60,10 @@ https://code.visualstudio.com/docs/editor/extension-marketplace
 
 <hr />
 
+## Scan for vulnerable code
+
+https://github.com/PyCQA/bandit
+
 
 <a name="ReservedKeywords"></a>
 
@@ -197,7 +201,7 @@ There are several ways to capture how long a particular function or the whole pr
    * https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module/47637891#47637891
    <br /><br />
 
-To time the difference between two Fibonacci calculations, I used:
+To time the difference between two Fibonacci calculation strategies, I used:
 
 <tt><strong>timeit.timer()</strong></tt> which provides a nice output format of <tt>0:00:01.946339</tt>.
 See https://docs.python.org/3/library/timeit.html and 
