@@ -1247,10 +1247,12 @@ https://rules.sonarsource.com/python/tag/owasp/RSPEC-4529
 
 ## Logging for Monitoring
 
+   * https://github.com/python/cpython/tree/3.6/Lib/logging
    * <a target="_blank" href="https://www.loggly.com/ultimate-guide/python-logging-basics/">
    <br /><br />
 
-It is estimated that it can take up to 200 days, and often longer, between attack and detection. In the meantime, attackers can tamper with servers, corrupt databases, and steal confidential information. 
+It is estimated that it can take up to 200 days, and often longer, between attack and detection by the attacked. 
+In the meantime, attackers can tamper with servers, corrupt databases, and steal confidential information. 
 
 "Insufficient Logging and Monitoring" is among the top 10 OWASP.
 

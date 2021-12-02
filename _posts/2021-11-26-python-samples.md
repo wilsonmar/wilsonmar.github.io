@@ -29,6 +29,25 @@ which contain these files:
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.env"><strong>api-sample.env</strong></a> which stores environment variables used by the Python program.
 
+This is implementation of a suggestion I had in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>.
+
+Many examples on GitHub begin with:
+
+<pre>import unittest</pre>
+
+and contain something like:
+
+<pre>class TestMakingChange(unittest.TestCase):
+
+    def setUp(self):
+        self.american_coins = [25, 10, 5, 1]
+        self.random_coins = [10, 6, 1]
+
+        self.testcases = [(self.american_coins, 1, 1), (self.american_coins, 6, 2), (self.american_coins, 47, 5), (
+            self.random_coins, 1, 1), (self.random_coins, 8, 3), (self.random_coins, 11, 2), (self.random_coins, 12, 2)]
+</pre>
+ 
+
 <hr /> 
 
 ## Install
@@ -168,7 +187,7 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
       1. Generate Hash from a file & text         = gen_hash
       2. Generate a random salt                   = gen_salt
       3. Generate a random percent of 100         = gen_1_in_100
-      4. Generate Fibonacci with memoization      = gen_fibonacci
+      4. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
       5. Generate JWT (Json Web Token)            = gen_jwt
       6. Generate Lotto America Numbers           = gen_lotto
       7. Generate Magic 8-ball numbers            = gen_magic_8ball
@@ -177,12 +196,12 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
    10. Retrieve client IP address               = show_ipaddr
    11. Lookup geolocation info from IP Address  = lookup_ipaddr
 
-   12. <a href="#ZipCode">Obtain Zip Code to retrieve Weather info = show_zipinfo</a>
+   12. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
    13. Retrieve Weather info using API          = show_weather
 
    14. <a href="AzureKeyVault">Retrieve secrets from Azure Key Vault  = use_azure</a>
    15. Retrieve secrets from AWS KMS         = use_aws
-   16. <a href="#GCP">Retrieve secrets from GCP             = use_gcp</a>
+   16. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
    17. Retrieve secrets from Hashicorp Vault = use_vault
 
    18. Create/Reuse container folder for img app to use
@@ -290,9 +309,107 @@ To obtain the desired cloud region, zip code, and other variable specs.
 
 ##   9. Generate various calculations for hashing, encryption, etc.
 
-### Salt
+https://www.python.org/dev/peps/pep-0506/
 
-https://tonyarcieri.com/4-fatal-flaws-in-deterministic-password-managers
+https://github.com/python/cpython/blob/3.6/Lib/random.py
+
+### Base64 Salt
+
+1. To create a random string of n bytes that is Base64 encoded for use in URLs:
+
+    secrets.token_urlsafe([nbytes=None])
+   <pre>n=16
+   token_urlsafe(16)  
+       # 'Drmhze6EPcv0fN_81Bj-nA'
+   </pre>
+
+   On average each n byte results in approximately 1.3 characters. If nbytes is None or not supplied, a reasonable default is used.
+
+
+
+Python 3.6 introduced a secrets module, which "provides access to the most secure source of randomness that your operating system provides." 
+
+https://docs.python.org/3.6/library/secrets.html
+
+
+secrets.token_bytes([nbytes=None])
+
+    Return a random byte string containing nbytes number of bytes. If nbytes is None or not supplied, a reasonable default is used.
+
+    >>> token_bytes(16)  
+    b'\xebr\x17D*t\xae\xd4\xe3S\xb6\xe2\xebP1\x8b'
+
+secrets.token_hex([nbytes=None])
+
+    Return a random text string, in hexadecimal. The string has nbytes random bytes, each byte converted to two hex digits. If nbytes is None or not supplied, a reasonable default is used.
+
+    >>> token_hex(16)  
+    'f9bf78b9a18ce6d46a0cd2b0b86df9da'
+
+
+
+
+
+In order to generate some cryptographically secure numbers, you can call secrets.randbelow().
+
+<pre>
+secrets.randbelow()
+n=10
+rand_num = secrets.randbelow(n)  # returns a number between 0 and n.
+print(f'*** {rand_num} ')
+&nbsp;
+# from random import SystemRandom
+cryptogen = SystemRandom()
+[cryptogen.randrange(3) for i in range(20)] # random ints in range(3)
+    # [2, 2, 2, 2, 1, 2, 1, 2, 1, 0, 0, 1, 1, 0, 0, 2, 0, 0, 0, 0]
+[cryptogen.random() for i in range(3)]  # random floats in [0., 1.)
+   # [0.2710009745425236, 0.016722063038868695, 0.8207742461236148]
+</pre>
+
+The above replaces use of standard pseudo-random generators os.urandom() which are not suitable for security/cryptographic purposes.
+
+<pre>salt_size = 32
+password_salt = os.urandom(salt_size).hex()  # returns a byte string
+   # m\xd4\x94\x00x7\xbe\x04\xa2R'    
+map(ord, os.urandom(10))
+   # [65, 120, 218, 135, 66, 134, 141, 140, 178, 25]
+</pre>
+
+References:
+   * https://tonyarcieri.com/4-fatal-flaws-in-deterministic-password-managers
+
+
+<a name="gen_fibonacci"></a>
+
+###  9.4. Generate a fibonacci number recursion    = gen_fibonacci
+
+<pre>def fibonacci_recursive(n):
+        """Calculate using brute-force across all - for O(n) time complexity
+        This is also called a "naive" implementation.
+        """
+        # if (n == 0) return 0;
+        # if (n == 1) return 1;
+        if n in {0, 1, 2}:   # the first 3 result values (0, 1, 2) are the same as the request value.
+            return n
+        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)   # recursive because function calls itself.
+</pre>
+
+The "Dynamic programming" approach is to start out with a cache of pre-calculated solutions from previous runs, such as:
+
+<pre>    fibonacci_memoized_cache = {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8, 6: 13, 7: 21, 8: 34, 9: 55, 10: 89, 11: 144, 12: 233, 13: 377, 14: 610}
+</pre>
+
+In production systems, this would be stored in a Redis/Kafka cache and retrieved.
+
+<pre>def fibonacci_memoized(n):
+      """Calculate using saved lookup - for O(1) time complexity"""
+      if n in fibonacci_memoized_cache:  # Base case
+            return fibonacci_memoized_cache[n]
+      # else:  # add entry in fibonacci_memoized_cache and save to Redis/Kafka.
+
+      fibonacci_memoized_cache[n] = fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
+      return fibonacci_memoized_cache[n]
+</pre>
 
 
 <a name="make_change"></a>
@@ -315,13 +432,12 @@ The function's signature:
     print(f'*** make_change_dynamic: k={k} C="{C}" n={n} ')
 </pre>
 
-In the C array, the largest denomination appears first because we want to give out the largest bills first.
-For example, if k is 200, we would give back two $100 bills, not a stack of $1 bills.
+In the array of denominations, the largest denomination appears first because we want to give out the largest bills first. For example, if k is 200, we would give back two $100 bills, not a stack of $1 bills.
 This is called the "greedy" method.
 
-The assumption is an infinite number of each kind of bill/coin.
-
-We want to return an array of each denomination given back as change.
+The plainly ("brute force") approach is to iteratively pick the largest denomination from array C (such as 100),
+with each turn.
+It returns an array of each denomination given back as change = <tt>[20, 10, 1, 1, 1, 1]</tt>
 
 <pre>*** make_change_dynamic: C="[100, 50, 20, 10, 5, 1]" n=6 
 *** turn=0 k=34 to start 
@@ -332,15 +448,24 @@ We want to return an array of each denomination given back as change.
 *** turn=5 k=1 after denom=1 change 
 *** turn=6 k=0 after denom=1 change 
 *** After 6 turns, k=0 remaining ...
+*** make_change: change_back=[20, 10, 1, 1, 1, 1] 
 </pre>
 
-The plainly ("brute force") approach is to iteratively pick the largest denomination from array C (such as 100),
-with each turn.
+The assumption is an infinite number of each denomination (kind of bill/coin).
 
 
+### Make Change Dynamically
+
+To optimize, we can reduce the number of "turns" and the extent of repetitive lookup of denominations.
+The brute-force solution does not consider those aspects.
 
 Dynamic Programming involves breaking down a problem into solutions to <strong>sub-problems</strong>.
 There is a "top-down" and "bottom-up" approach to solving the problem.
+
+PROTIP: Many of the "Dynamic Programming" solutions (such as <a href="#gen_fibonacci">Fibonacci</a>) involves caching and then referencing a <strong>pre-calculated array</strong> (using memoization) instead of prepeatedly performing calculations interrively. 
+In other words, dynamic programming generally uses more memory space to take less time.
+
+A <strong>"bottom-up" (iterative)</strong> solution is often faster than a "top-down" (recursive) approach, but not always.
 
 add that to output list "dp" for what is given out, and subtract it from "k". 
 
@@ -358,6 +483,7 @@ for use the empty state starting point.
 to use Space Complexity from O(n · k) to O(k).
 
 References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jaNZ83Q3QGc">VIDEO by Stephen O'Neil</a> of <a target="_blank" href="https://www.codebelts.com/">codebelts.com</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam Gavis-Hughson at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://github.com/samgh/DynamicProgrammingEbook/tree/master/python">DP (Dynamic Programming) ebook for Python</a>.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=m2Elp9ubY3w">VIDEO by Derrick Sherrill</a>
@@ -367,11 +493,11 @@ References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=DJ4a7cmjZY0&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&start_radio=1&rv=DJ4a7cmjZY0">VIDEO by NeetCode: 2</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=bGC2fNALbNU">VIDEO by CS Dojo</a> from Facebook
    * <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">VIDEO: by Paul</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=jaNZ83Q3QGc">VIDEO by Stephen O'Neil</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=HWW-jA6YjHk">VIDEO by interiewing.io</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=sn0DWI-JdNA">VIDEO by Hackerrank</a>
 
 
-## "Knapsack"
+## "Knapsack" Dynamic Programming
 
 https://youtu.be/Mjy4hd2xgrs
 
@@ -382,11 +508,25 @@ https://www.youtube.com/watch?v=xOlhR_2QCXY
 <a target="_blank" href="https://www.youtube.com/watch?v=xCbYmUPvc2Q&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&index=2">VIDEO: Back to Back SWE</a>
 
 
+<a name="process_romans"></a>
+
+### 9.8. Convert between Roman numerals & decimal = process_romans
+
+Sample output:
+
+<pre>*** process_romans: roman_to_int: MMXXI => 2021 
+*** process_romans: int_to_roman: 2021 ==> MMXXI 
+</pre>
+
+
+
+
+
 <hr />
 
 <a name="AzureKeyVault"></a>
 
-## Retrieve secrets from Azure Key Vault  = use_azure
+##  14. Retrieve secrets from Azure Key Vault  = use_azure
 
 https://docs.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python
 
@@ -406,14 +546,19 @@ References:
 * https://www.youtube.com/watch?v=k2VYcYS3EIA
 * https://www.youtube.com/watch?v=gC4wmZf7dAI - Enable Zero Trust with Azure AD PIM (Privileged Identity Management) and Azure Lighthouse for MSPs (Managed Service Providers) | Azure Friday
 
-Azure SDK:
+Azure SDK for Python:
+   * Alternative: <a target="_blank" href="https://wilsonmar.github.io/pulumi">see my blog about Pulumi</a>
+   * https://docs.microsoft.com/en-us/azure/developer/python/azure-sdk-install?tabs=pip
    * https://www.youtube.com/watch?v=4xoJLCFP4_4 - Introducing the Azure SDK for Python
    * https://www.youtube.com/watch?v=WER5X_zm6Aw - An introduction to the unified Azure SDK | Azure Friday
    * https://www.youtube.com/watch?v=5oIcT0HCrvI - Microsoft Azure Overview: The Azure Python SDK by Sigma Coding
    * https://www.youtube.com/watch?v=_qQq6oHskUQ - Machine Learning and Python with Microsoft Azure - http://aka.ms/azuredevstreams by https://twitch.tv/enceladosaurus
 
 
-## AWS
+<a name="use_aws"></a>
+
+##  15. Retrieve secrets from AWS KMS         = use_aws
+
 
 To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS, AWS uses <strong>two types of CMK (Customer Master Key)</strong> to encrypt up to 4KB of data:
 
@@ -425,6 +570,11 @@ To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS,
 
 References:
     * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
+
+
+<a name="use_gcp"></a>
+
+##  16. Retrieve secrets from GCP             = use_gcp
 
 
 <a name="HashicorpVault"></a>
@@ -474,9 +624,12 @@ References:
    * https://www.youtube.com/watch?v=KxQVlrFy3Gc - using GitLab
 
 
-<a name="ZipCode"></a>
+<a name="lookup_zipinfo"></a>
 
-## Zip Code
+## 12. Obtain Zip Code to retrieve Weather info    = lookup_zipinfo
+
+PROTIP: Users don't have to provide information which can be looked up based in an API given a Zip Code:
+<tt>'country': 'United States', 'country abbreviation': 'US', ... 'state': 'Montana', 'state abbreviation': 'MT'</tt>
 
     # NOTE: Several place names can be associated with a Zip Code.
     # TODO: Loop through a list of zip codes.
@@ -488,9 +641,24 @@ References:
     # city_name = input("Enter city name : ")
 
 
-<a name="GCP"></a>
+<a name="show_weather"></a>
 
-## GCP
+#   13. Retrieve Weather info using API             = show_weather
+
+<hr />
+
+<a name="use_azure"></a>
+
+##  14. Retrieve secrets from Azure Key Vault  = use_azure
+
+<a name="use_aws"></a>
+
+##  15. Retrieve secrets from AWS KMS         = use_aws
+
+
+<a name="use_gcp"></a>
+
+##  16. Retrieve secrets from GCP             = use_gcp
 
 1. See my https://wilsonmar.github.com/gcp about getting an account, creating a project, and getting into https://console.cloud.google.com and Cloud Shell.
 
@@ -544,6 +712,10 @@ References:
    * https://cloud.google.com/secret-manager/docs/reference/libraries#client-libraries-install-python
 
    * Cloud Client Libraries for Python: https://googlecloudplatform.github.io/google-cloud-python/
+
+<a name="use_vault"></a>
+
+##  17. Retrieve secrets from Hashicorp Vault = use_vault
 
 
 <hr />
