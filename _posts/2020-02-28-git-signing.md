@@ -656,7 +656,7 @@ List keys to verify that you have indeed generated them.
 
    <pre><strong>gpg --list-secret-keys --keyid-format LONG</strong></pre>
 
-   <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is becuase both are required to sign commits and tags.
+   <tt>\-\-keyid-format LONG</tt> requests showing only those keys where both public and private key pair exists. This is because both are required to sign commits and tags.
    If nothing is returned, there are no keys usable for signing.
    
    PROTIP: This above command can be used often, so added as Bash shell alias (keyboard shortcut) in <a target="_blank" href="https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh">https://github.com/wilsonmar/git-utilities/blob/master/aliases.sh</a> so that you can instead just type:

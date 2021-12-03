@@ -521,7 +521,7 @@ content. The Git Real 2 course covers this.
 
    `--msg-filter` rewrites commit message text.
 
-0. Remove (prune) commits which are now empty becuase the offending file they reference
+0. Remove (prune) commits which are now empty because the offending file they reference
    have been removed:
 
    `git filter-branch -f --prune-empty`

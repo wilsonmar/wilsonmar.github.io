@@ -2151,7 +2151,7 @@ default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1
    <tt><strong>eval "$(docker-machine env default)"
    </strong></tt>
 
-   No response is displayed becuase the "eval" command above runs the output of the command:
+   No response is displayed because the "eval" command above runs the output of the command:
 
    <pre><strong>docker-machine env default
    </strong></pre>

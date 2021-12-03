@@ -396,20 +396,67 @@ References:
 
 The "Dynamic programming" approach is to start out with a cache of pre-calculated solutions from previous runs, such as:
 
-<pre>    fibonacci_memoized_cache = {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8, 6: 13, 7: 21, 8: 34, 9: 55, 10: 89, 11: 144, 12: 233, 13: 377, 14: 610}
+<pre>fibonacci_memoized_cache = {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8, 6: 13, 7: 21, 8: 34, 9: 55, 10: 89, 11: 144, 12: 233, 13: 377, 14: 610}
 </pre>
 
-In production systems, this would be stored in a Redis/Kafka cache and retrieved.
+The increase in return values <strong>grow exponentially</strong>.
 
 <pre>def fibonacci_memoized(n):
       """Calculate using saved lookup - for O(1) time complexity"""
       if n in fibonacci_memoized_cache:  # Base case
             return fibonacci_memoized_cache[n]
-      # else:  # add entry in fibonacci_memoized_cache and save to Redis/Kafka.
+      # else:  # add entry in fibonacci_memoized_cache and TODO: save to Redis/Kafka.
+         # TODO: If Redis is not found, issue API calls to create it.
 
       fibonacci_memoized_cache[n] = fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
       return fibonacci_memoized_cache[n]
 </pre>
+
+Based on bottom_up_fib(n) in https://github.com/samgh/DynamicProgrammingEbook/blob/master/python/Fibonacci.py
+
+<pre>"""
+        Compute the nth Fibonacci number iteratively
+        """
+        ...
+        cache = [0]*(n+1)
+        cache[1] = 1
+        for i in range(2, n+1):
+            cache[i] = cache[i-1] + cache[i-2]
+        return cache[n]
+</pre>
+
+
+<a name="AzureCacheforRedis"></a>
+
+### Azure Cache for Redis
+
+In production systems that does this kind of workload, consider the use of a Redis/Kafka in-memory cache.
+
+"Caching typically works well with data that is immutable or that changes infrequently. Examples include reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct."
+-- See https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching
+
+Redis would allow duplicates of a program to run in several locations, and update a central momoized_cache.
+The example here uses Azure Cache for Redis</a>, a highly-scalable SaaS service fully-managed by Azure based on the open-source Redis in-memory key-value database.
+
+It helps to write to a more permanent location (in a JSON database) because 
+in order to scale down a Cache, a new instance needs to be setup.
+When cached data expires, it's removed from the cache, and the application must retrieve the data from the original data store (it can put the newly fetched information back into cache).
+
+Redis is designed to run inside a trusted environment that can be accessed only by trusted clients.
+
+The Premium plan is needed for access inside a private virtual network.
+
+https://azure.microsoft.com/en-us/services/cache/ is the marketing home page
+
+<a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cache/">Pricing</a> begins at <strong>$0.022/hour</strong> ($0.528/day or $15.84/month) for the "C0" Basic service to a maximum of 256 client connections referencing up to 250 MB in the US.
+
+* https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-python-get-started
+* https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/
+* https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview
+
+
+
+<hr />
 
 
 <a name="make_change"></a>
@@ -536,7 +583,7 @@ from azure.identity import DefaultAzureCredential
    * https://pypi.org/project/azure-identity/
    <br /><br />
 
-from azure.keyvault.secrets import SecretClient
+from azure.keyvault.secrets import SecretClient:
    * see https://pypi.python.org/pypi/azure-keyvault-secrets
    <br /><br />
 

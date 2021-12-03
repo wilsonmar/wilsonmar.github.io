@@ -261,7 +261,7 @@ In the BuzzKill folder:
 
 The manifest.json file Google reads as the "entry point".
 
-The BuzzKill extension, becuase it has permissions to work only on Facebook, is a <strong>page_action
+The BuzzKill extension, because it has permissions to work only on Facebook, is a <strong>page_action
 
 In the manifest.json file, specify the URL Google should check every few hours to see if there is an update:
 

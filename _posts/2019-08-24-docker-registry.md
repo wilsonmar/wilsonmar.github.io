@@ -227,7 +227,7 @@ Digests are always a fixed number of digits.
 In the case of 256, 46 characters of hex pairs.
 The first two characters are used to create a <strong>folder</strong> under where that file is stored, so that there are not too many files in a single folder.
 
-The first 7 digests of each digest are used as a short <strong>tag</strong> becuase 7 is usually unique enough to differentiate among the various hashes.
+The first 7 digests of each digest are used as a short <strong>tag</strong> because 7 is usually unique enough to differentiate among the various hashes.
 
 The blobs for each tag is referenced by <strong>link</strong> files containing addresses to individual <strong>data</strong> files storing the content. 
 Each <strong>revision</strong> of an image pushed in the registry has a different SHA and therefore a different tab name.

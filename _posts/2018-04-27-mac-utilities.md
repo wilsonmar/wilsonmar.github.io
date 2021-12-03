@@ -555,7 +555,7 @@ brew install wdiff --with-gettext
    ### findutils
    
    Missing from the list above is <tt>brew install findutils --with-default-names</tt>
-   becuase that causes 'brew doctor' to issue warning: "Putting non-prefixed findutils in your path can cause python builds to fail."
+   because that causes 'brew doctor' to issue warning: "Putting non-prefixed findutils in your path can cause python builds to fail."
 
    ### GPG
 

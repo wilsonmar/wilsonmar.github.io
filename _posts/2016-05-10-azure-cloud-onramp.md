@@ -69,7 +69,7 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
    </td><td> Accounts under departments
    </td></tr>
 <tr valign="top"><td> Subscription dashboard: </td><td align="right">
-   <a target="_blank" href="https://portal.azure.com/">portal.azure.com</a><br />
+   <a target="_blank" href="https://portal.azure.com/"><strong>portal.azure.com</strong></a><br />
    for <a href="#USGov">US Government</a>:
    <a target="_blank" href="https://portal.azure.us/">portal.azure.us</a> 
    </td><td>-
@@ -998,7 +998,7 @@ ARM handles Authentication for access to back-end Web App, Data Store, Virtual M
    Getting 403 ActiveDirectoryMenuBlade accessing AAD on Portal
 
 0. Right-click on the "Help + Support" box on the Dashboard and select "unpin"
-   becuase you now know you can reach it (in two places).
+   because you now know you can reach it (in two places).
 
 
 
@@ -1226,7 +1226,7 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
 
    PROTIP: A resource group can contain resources from <strong>multiple regions</strong>.
    
-   PROTIP: When naming Resource Groups, keep in mind that they are used to organize resources so that're easier to <strong>delete</strong>. So limit the number of resources under each one so that you're not blocked from deleting the group becuase you still need that one resource. So using Resource Groups for each point in the lifecycle makes sense (dev, qa, stage, green, blue, etc.).
+   PROTIP: When naming Resource Groups, keep in mind that they are used to organize resources so that're easier to <strong>delete</strong>. So limit the number of resources under each one so that you're not blocked from deleting the group because you still need that one resource. So using Resource Groups for each point in the lifecycle makes sense (dev, qa, stage, green, blue, etc.).
 
    If no dashes are in the name, double-clicking on that name would select the entire name.
 

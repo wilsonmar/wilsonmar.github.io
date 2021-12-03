@@ -962,7 +962,7 @@ and used it to create an account on <a target="_blank" href="https://www.github.
 
    <pre>git@github.com:wilsonmar/some-repo</pre>
 
-   We should use two-factor becuase it is good security practice. The "two" means we use an alternate form of identification, in a number from an authentictor app (such as Google Authenticator) on that smart phone you're always looking at.
+   We should use two-factor because it is good security practice. The "two" means we use an alternate form of identification, in a number from an authentictor app (such as Google Authenticator) on that smart phone you're always looking at.
 
    ### PROTIP: --depth=1
 

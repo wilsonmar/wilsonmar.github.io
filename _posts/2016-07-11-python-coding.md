@@ -1353,6 +1353,10 @@ https://app.pluralsight.com/library/courses/python-concurrency-getting-started
 
 https://app.pluralsight.com/course-player?clipId=5802d30b-69a9-4679-8594-53854739368a
 
+https://techstudyslack.com/
+a Slack for people studying tech
+
+
 ## More about Python
 
 This is one of a series about Python:

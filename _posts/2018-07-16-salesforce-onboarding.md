@@ -109,7 +109,7 @@ See https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packag
    "Challenges" gives you a set of requirements that you have to figure out how to meet on your own.
    A project lays out step-by-step instructions for you to follow, then validates that you did everything correctly.
 
-   PROTIP: Before you begin answering quiz questions, to avoid needing to having your answers wiped away becuase you timed out, make sure you're logged by pressing the browser <strong>Refresh</strong> icon or pressing command+R on the Mac or Ctrl+R on Windows PCs.
+   PROTIP: Before you begin answering quiz questions, to avoid needing to having your answers wiped away because you timed out, make sure you're logged by pressing the browser <strong>Refresh</strong> icon or pressing command+R on the Mac or Ctrl+R on Windows PCs.
 
    <a target="_blank" href="https://wilsonmar.github.io/salesforce-projects">superbadges</a> challenge you to implement a feature or solution in an org (a Trailhead Playground) without step-by-step instructions.
 

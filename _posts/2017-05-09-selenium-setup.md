@@ -587,7 +587,7 @@ PROTIP: Download files for all operating systems so the scripts begin as cross-s
    W3C WebDriver</a> browser automation API.
    So Selenium automatically launches the driver without further configuration.
  
-   However, it needs to be enabled becuase it's off by default.
+   However, it needs to be enabled because it's off by default.
 
 0. Open the Safari browser.
 0. Press command+, (comma) or in the menu bar, select Safari | Preferences | Advanced tab (wheel icon).
@@ -709,7 +709,7 @@ Usage: safaridriver [options]
 
    <a target="_blank" href="http://sites.google.com/a/chromium.org/chromedriver/downloads">http://sites.google.com/a/chromium.org/chromedriver/downloads</a>
    
-0. Identify your version by clicking the three-dot icon at the upper-right, select Help, About Chrome. This would automatically update the browser to the latest version. Take a break becuase this takes several minutes.
+0. Identify your version by clicking the three-dot icon at the upper-right, select Help, About Chrome. This would automatically update the browser to the latest version. Take a break because this takes several minutes.
 0. Click "Relaunch" and wait until you see "Google Chrome is up to date".
 0. Notice "Version 79.0.3945.79" or whatever it is what you do this.
 

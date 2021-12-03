@@ -1789,7 +1789,7 @@ Lite takes less than 1-megabyte space of disk. VSCode takes more than 200 megaby
 
 Lite takes 20 megabytes of memory while VSCode takes 1.2 GB to do the same job.
 
-Lite is faster than VSCode becuase it’s not a hybrid application. Lite uses C and SDL graphics library to render GUI elements of the application. So there is no bulky JavaScript and HTML code to draw fake native-like GUI elements inside a web browser instance. 
+Lite is faster than VSCode because it’s not a hybrid application. Lite uses C and SDL graphics library to render GUI elements of the application. So there is no bulky JavaScript and HTML code to draw fake native-like GUI elements inside a web browser instance. 
 
 
 ## References

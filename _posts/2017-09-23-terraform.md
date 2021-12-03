@@ -1382,7 +1382,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
 <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> is an OSS static scanner of Terraform, AWS Cloud Formation, and Azure ARM templates.
 
-<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" becuase (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
+<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
 
 When run on local envrionments, security scanning achieves "shift left". 
 

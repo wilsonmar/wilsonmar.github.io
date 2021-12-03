@@ -413,7 +413,7 @@ Prep courses:
 
    * YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=dCPRZoKntX0&list=PL0hT6hgexlYy_gE_y09ORyupgfVOHM_TN">CCSP Exam Cram series</a> by Prabh Nair
 
-   * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review</a> with practice questions. By Mike Chapple. I recommend this becuase it has quizzes and shows use of apps such as WebGoat.
+   * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review</a> with practice questions. By Mike Chapple. I recommend this because it has quizzes and shows use of apps such as WebGoat.
 
    * <a target="_blank" href="https://app.pluralsight.com/paths/skills/ccspr-certified-cloud-security-professional">Pluralsight CCSP</a> by Lyron H. Andrews CISSP/CCSP/SSCP/CISM/CCSK
 

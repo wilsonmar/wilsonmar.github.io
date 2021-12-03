@@ -197,7 +197,7 @@ Seveal utilities have been created for that.
 <a target="_blank" href="https://github.com/cruise-automation/daytona">
 https://github.com/cruise-automation/daytona</a> is written in Golang 
 to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP.
-Daytona is performant becuase it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
 
 
 <hr />

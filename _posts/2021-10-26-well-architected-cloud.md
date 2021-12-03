@@ -93,7 +93,7 @@ Google adds a "System Design" category.
 
 ACTIVITY 1 - Have each member of your team prioritize the pillars. Then discuss priorities, as a team. (Why? The Dunning-Kruger effect). Example discussion:
 
-   * "Operational Excellence" has to go first becuase that's about getting up and running with basic services.
+   * "Operational Excellence" has to go first because that's about getting up and running with basic services.
 
    * "Security" has to go first because we don't want to have the risk of anything exposed and thus ruin our brand.
 

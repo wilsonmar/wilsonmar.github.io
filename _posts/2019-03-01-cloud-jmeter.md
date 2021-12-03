@@ -55,7 +55,7 @@ A. If your app under test can be reached from the public internet (such as "the-
 
    <a href="#Blazemeter">Blazemeter</a> runs JMeter scripts you upload from your laptop.
 
-B. To run multiple users at a time, pull both "the-internet" app and emulator (JMeter) images from DockerHub and run them in <strong>your own cloud instance</strong> (within AWS ECS, Azure, GCP, Blue Ocean, etc.). AWS ECS is usually enough (without <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>) becuase the number of emulator (JMeter) instances is usually fixed before a test run (and adjusted after).
+B. To run multiple users at a time, pull both "the-internet" app and emulator (JMeter) images from DockerHub and run them in <strong>your own cloud instance</strong> (within AWS ECS, Azure, GCP, Blue Ocean, etc.). AWS ECS is usually enough (without <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a>) because the number of emulator (JMeter) instances is usually fixed before a test run (and adjusted after).
 
 C. If you want to create emulator scripts <strong>offline on your laptop</strong> (one with enough memory), run several Docker images. You may not have enough power to run a conventional CI/CD (such as <a href="#JenkinsJMeter">Jenkins</a>) or much monitoring, thus the "N/A".
 

@@ -225,7 +225,7 @@ I made this alpabetical list of links:
 0. Dependencies of Task Predecessors and Successors 
 0. Flows (CA Flowdock)
 
-   > There are so many concepts in the framework becuase it incorporates concepts from many others
+   > There are so many concepts in the framework because it incorporates concepts from many others
    (Deming, Ishikawa, Agile, Scrum, XP, Lean, Kanban, Systems Thinking, etc.).
 
    ### Projects in CA

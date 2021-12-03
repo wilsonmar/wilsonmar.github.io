@@ -283,7 +283,7 @@ Successfully installed bundler-1.9.4
    <pre><strong>sudo gem update
    </strong></pre>
 
-   The response takes several minutes becuase it touches every gem:
+   The response takes several minutes because it touches every gem:
 
    <pre>   Updating installed gems
    Updating CFPropertyList

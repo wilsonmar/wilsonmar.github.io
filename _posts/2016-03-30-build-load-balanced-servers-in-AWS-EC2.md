@@ -776,7 +776,7 @@ inbound access.
 {% endhighlight %}
 
 Cidr (Classless Inter-Domain Routing) is also called "supernetting"
-becuase it allows more flexible allocation of Internet Protocol (IP) addresses. Whatever.
+because it allows more flexible allocation of Internet Protocol (IP) addresses. Whatever.
 
 
 

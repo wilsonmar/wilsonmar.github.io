@@ -536,7 +536,7 @@ Implement custom handlers:
 1. Project details: Subscription:
 1. Resource Group.
 
-1. Virtual machine name: Previously, Azure VM names had to be globally unique becuase they were were put in public domain <strong>cloudapp.net</strong>, but Microsoft has since added magic to get around that.
+1. Virtual machine name: Previously, Azure VM names had to be globally unique because they were were put in public domain <strong>cloudapp.net</strong>, but Microsoft has since added magic to get around that.
 
    VM Name conventions:
    * Limit 15 chars on Windows VMs
