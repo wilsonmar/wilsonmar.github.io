@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-## This is Therapy
+## This is Therapy for me
 
 > I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
 
@@ -101,7 +101,7 @@ PROTIP: Research and find out what each is about:
 *	not
 *	or
 *	pass - instruction to do nothing (instead of return or yield with value)
-*	raise
+*	<tt>raise NotImplementedError()</tt> throws an exception purposely
 *	return
 *	True - Boolean
 *	try - https://www.youtube.com/watch?v=NIWwJbo-9_8
