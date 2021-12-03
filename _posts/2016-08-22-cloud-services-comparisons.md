@@ -671,6 +671,12 @@ D Your IT resource costs will generally change from capital expenditures to oper
 
 ## Resources #
 
+STAR: <a target="_blank" href="https://www.youtube.com/watch?v=8Ojw4-EWIBU">Comparing the Network Performance of AWS, Azure, GCP, IBM Cloud and Alibaba Cloud</a> Feb 21, 2020 by Angelique Medina of Thousand Eyes found that:
+   * Azure and GCP route traffic through therir internal backbone network while AWS and AliCloud use the public internet more.
+   IBM has a hybrid approach.
+   * Azure is generally the fastest. GCP was slowest, worldwide, especially in Europe because they had no direct path from Europe to India in their own backbone but routed around the world.
+   <br /><br />
+
 <a target="_blank" href="http://resources.sdtimes.com/whitepaper-ibm-q4-2015-bluemix-ebook">
 IBM Bluemix</a>
 

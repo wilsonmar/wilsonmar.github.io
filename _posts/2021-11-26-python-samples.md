@@ -183,33 +183,35 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
    to obtain the desired LOCALE, cloud region, zip code, and other variable specs.
 
    9. Generate various calculations for hashing, encryption, etc.
+      1. <a href="#gen_hash">Generate Hash from a file & text         = gen_hash</a>
+      2. <a href="#gen_salt">Generate a random salt                   = gen_salt</a>
+      3. <a href="#gen_1_in_100">Generate a random percent of 100         = gen_1_in_100</a>
+      4. <a href="#process_romans">Convert between Roman numerals & decimal = process_romans</a> (case structure)
+      5. <a href="#gen_jwt">Generate JWT (Json Web Token)            = gen_jwt</a>
+      6. <a href="#gen_lotto">Generate Lotto America Numbers           = gen_lotto</a>
+      7. <a href="#gen_magic_8ball">Generate Magic 8-ball numbers            = gen_magic_8ball</a>
+      8. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
+      9. <a href="#make_change">Make change using Dynamic Programming     = make_change</a>
+      10. <a href="#fill_knapsack">Fill knapsack     = fill_knapsack</a>
 
-      1. Generate Hash from a file & text         = gen_hash
-      2. Generate a random salt                   = gen_salt
-      3. Generate a random percent of 100         = gen_1_in_100
-      4. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
-      5. Generate JWT (Json Web Token)            = gen_jwt
-      6. Generate Lotto America Numbers           = gen_lotto
-      7. Generate Magic 8-ball numbers            = gen_magic_8ball
-      8. Convert between Roman numerals & decimal = process_romans
-
-   10. Retrieve client IP address               = show_ipaddr
-   11. Lookup geolocation info from IP Address  = lookup_ipaddr
+   10. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
+   11. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
 
    12. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
-   13. Retrieve Weather info using API          = show_weather
+   13. <a href="#show_weather">Retrieve Weather info using API          = show_weather</a>
 
-   14. <a href="AzureKeyVault">Retrieve secrets from Azure Key Vault  = use_azure</a>
-   15. Retrieve secrets from AWS KMS         = use_aws
+   14. <a href="use_azure">Retrieve secrets from Azure Key Vault  = use_azure</a>
+   15. <a href="use_aws">Retrieve secrets from AWS KMS         = use_aws</a>
    16. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
-   17. Retrieve secrets from Hashicorp Vault = use_vault
+   17. <a href="#use_vault">Retrieve secrets from Hashicorp Vault = use_vault</a>
 
    18. Create/Reuse container folder for img app to use
-   19. Download img application files           = download_imgs
-   20. Manipulate image (OpenCV OCR extract)    = process_img
-   21. Send message to Slack                    = send_slack_msgs  (TODO:)
-   22. Remove (clean-up) folder/files created   = cleanup_img_files
-   23. Display run time stats at end of program = display_run_stats
+   19. <a href="#download_imgs">Download img application files           = download_imgs</a>
+   20. <a href="#process_img">Manipulate image (OpenCV OCR extract)    = process_img</a>
+   21. <a href="#send_slack_msgs">Send message to Slack                    = send_slack_msgs</a>  (TODO:)
+   22. <a href="#send_email">Send email                    = send_email</a>  (TODO:)
+   23. <a href="#cleanup_img_files">Remove (clean-up) folder/files created   = cleanup_img_files</a>
+   24. <a href="#display_run_stats">Display run time stats at end of program = display_run_stats</a>
 
 <hr />
 
@@ -383,6 +385,15 @@ References:
 
 ###  9.4. Generate a fibonacci number recursion    = gen_fibonacci
 
+The Fibonacci sequence is a sequence of numbers which is the sum of the two preceding numbers.
+Leonardo Fibonacci (1175 A.D. - 1250 A.D) found that the quotient of the adjacent number has a proportion, roughly 1.6180, or its inverse 0.6180, also called the "golden ratio".
+
+There are actually practical uses for Fibonacci sequences in financial technical analysis. Specifically, retracements:
+   * https://www.investopedia.com/articles/technical/04/033104.asp
+   * https://www.investopedia.com/terms/f/fibonaccilines.asp
+   * https://www.investopedia.com/terms/f/fibonaccitimezones.asp
+
+
 <pre>def fibonacci_recursive(n):
         """Calculate using brute-force across all - for O(n) time complexity
         This is also called a "naive" implementation.
@@ -449,6 +460,10 @@ The Premium plan is needed for access inside a private virtual network.
 https://azure.microsoft.com/en-us/services/cache/ is the marketing home page
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cache/">Pricing</a> begins at <strong>$0.022/hour</strong> ($0.528/day or $15.84/month) for the "C0" Basic service to a maximum of 256 client connections referencing up to 250 MB in the US.
+
+The DNS name ends with <tt>...westus2.redisenterprise.cache.azure.net</tt>
+
+
 
 * https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-python-get-started
 * https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/
@@ -544,15 +559,33 @@ References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=sn0DWI-JdNA">VIDEO by Hackerrank</a>
 
 
-## "Knapsack" Dynamic Programming
+<a name="fill_knapsack"></a>
 
-https://youtu.be/Mjy4hd2xgrs
+### 9.10 Fill knapsack     = fill_knapsack
 
-<a target="_blank" href="https://www.youtube.com/watch?v=YRBON9sIZ2Y&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=7">VIDEO</a>:
+The "Knapsack" optimization challenge has many uses in the real world. 
+(Except for Mary Poppins), every knapsack can carry a limited amount of weight.
+Given a value and weight for each item, how do we maximize the amount of value carried in the knapsack?
 
-https://www.youtube.com/watch?v=xOlhR_2QCXY
+<pre>items = {(w:2, v:6), (w:2, v:10), (w:3, v:12)}  # w=weight, v=value
+max weight = 5
+knapsack(items, max weight) = 22  # maximum
+</pre>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=xCbYmUPvc2Q&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&index=2">VIDEO: Back to Back SWE</a>
+Right away, limit our combinations that are less than the maximum weight.
+
+The brute-force approach is to examine every possible combination of items in the knapsack.
+Ignore items too heavy to fill remaining space in the bag.
+
+This Knapsack problem is the quintessential example of a dynamic programming problem.
+Other dynamic programming problems are variations of it.
+
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=YRBON9sIZ2Y&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=7">VIDEO</a>: ?
+   * https://youtu.be/Mjy4hd2xgrs
+   * https://www.youtube.com/watch?v=xOlhR_2QCXY
+   * <a target="_blank" href="https://www.youtube.com/watch?v=xCbYmUPvc2Q&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&index=2">VIDEO: by Back to Back SWE</a>
 
 
 <a name="process_romans"></a>
@@ -567,9 +600,41 @@ Sample output:
 
 
 
+zzz
+# Alternative: Pure Python GeoIP API = https://github.com/appliedsec/pygeoip
+
+
+<a name="lookup_zipinfo"></a>
+
+## 12. Obtain Zip Code to retrieve Weather info    = lookup_zipinfo
+
+PROTIP: Users don't have to provide information which can be looked up based in an API given a Zip Code:
+<tt>'country': 'United States', 'country abbreviation': 'US', ... 'state': 'Montana', 'state abbreviation': 'MT'</tt>
+
+    # NOTE: Several place names can be associated with a Zip Code.
+    # TODO: Loop through a list of zip codes.
+    # TODO: Repeat every x minutes for updates
+    # TODO: Save results (in CSV or document DB) for time series analysis
+
+    # Alternately:
+    # city_name="New York"
+    # city_name = input("Enter city name : ")
+
+
+<a name="show_weather"></a>
+
+#   13. Retrieve Weather info using API             = show_weather
+
+<hr />
+
 
 
 <hr />
+
+<a name="use_azure"></a>
+
+##  14. Retrieve secrets from Azure Key Vault  = use_azure
+
 
 <a name="AzureKeyVault"></a>
 
@@ -600,6 +665,11 @@ Azure SDK for Python:
    * https://www.youtube.com/watch?v=WER5X_zm6Aw - An introduction to the unified Azure SDK | Azure Friday
    * https://www.youtube.com/watch?v=5oIcT0HCrvI - Microsoft Azure Overview: The Azure Python SDK by Sigma Coding
    * https://www.youtube.com/watch?v=_qQq6oHskUQ - Machine Learning and Python with Microsoft Azure - http://aka.ms/azuredevstreams by https://twitch.tv/enceladosaurus
+
+<a name="use_aws"></a>
+
+##  15. Retrieve secrets from AWS KMS         = use_aws
+
 
 
 <a name="use_aws"></a>
@@ -670,37 +740,6 @@ References:
    * https://stackoverflow.com/questions/62606388/get-secrets-from-enterprise-vault-using-python
    * https://www.youtube.com/watch?v=KxQVlrFy3Gc - using GitLab
 
-
-<a name="lookup_zipinfo"></a>
-
-## 12. Obtain Zip Code to retrieve Weather info    = lookup_zipinfo
-
-PROTIP: Users don't have to provide information which can be looked up based in an API given a Zip Code:
-<tt>'country': 'United States', 'country abbreviation': 'US', ... 'state': 'Montana', 'state abbreviation': 'MT'</tt>
-
-    # NOTE: Several place names can be associated with a Zip Code.
-    # TODO: Loop through a list of zip codes.
-    # TODO: Repeat every x minutes for updates
-    # TODO: Save results (in CSV or document DB) for time series analysis
-
-    # Alternately:
-    # city_name="New York"
-    # city_name = input("Enter city name : ")
-
-
-<a name="show_weather"></a>
-
-#   13. Retrieve Weather info using API             = show_weather
-
-<hr />
-
-<a name="use_azure"></a>
-
-##  14. Retrieve secrets from Azure Key Vault  = use_azure
-
-<a name="use_aws"></a>
-
-##  15. Retrieve secrets from AWS KMS         = use_aws
 
 
 <a name="use_gcp"></a>
