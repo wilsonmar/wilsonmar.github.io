@@ -37,7 +37,7 @@ This page contains commentary which references code in that repos, which contain
 
 <hr />
 
-## Coding
+## To of Coding File 
 
 Many examples on GitHub begin with:
 
@@ -143,10 +143,20 @@ Images/
 Images/
     google.ico
 &nbsp;
-*** Ended Saturday 27 Nov 2021 08:34:26 PM   (epoch=1638070466.103145) 
+*** Ended Saturday 27 Nov 2022 08:34:26 PM   (epoch=1638070466.103145) 
 *** api-sample.py done in 0.77 seconds. 
 </pre>
 
+## Program controls
+
+What the program outputs to the Terminal can be precisely specified.
+
+The program precedence of override:
+   1. Prompts of the user from inside the running program (such as for Zip Code) overrides
+   2. <a href="#ParseArguments">parameter specifications</a> at run-time, which overrides
+   3. what is specified in <a href="#run_env">persistent environment (.env) file</a>, which overrides
+   4. what is hard-coded in program code.
+   <br /><br />
 
 
 <a name="Sections"></a>
@@ -158,9 +168,12 @@ Images/
    2. <a href="#StartingTime">Capture starting time and set default global values</a>
    3. <a href="#ParseArguments">Parse arguments that control program operation</a>
    4. Define utilities for printing (in <a href="#PrintColors">color</a>), <a href="#Logging">logging</a>
-   5. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
-   6. <a href="#run_env">Obtain run control data from .env file in the user's $HOME folder</a>
-   7. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
+   5. <a href="#run_env">Obtain run control data from .env file in the user's $HOME folder</a>
+   6. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
+   7. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
+      1. <a href="#ManageFolders">Create, navigate to, and remove local working folders</a>
+      2. <a href="#SQLLite">Local machine in-memory SQL database  = SQLLite</a>
+
    8. Display run conditions: datetime, OS, Python version, etc.
       1. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
       2. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
@@ -182,19 +195,21 @@ Images/
       3. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
       4. <a href="#use_vault">Retrieve secrets from Hashicorp Vault = use_vault</a>
 
-   11. Applications processing user input:
+   11. Applications processing user input with persistance:
       1. <a href="#categorize_bmi">Calculte BMI using units of measure based on country = categorize_bmi</a>
       2. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
       3. <a href="#make_change">Make change using Dynamic Programming     = make_change</a>
       4. <a href="#fill_knapsack">Fill knapsack     = fill_knapsack</a>
 
-   18. Create/Reuse container folder for img app to use
+   12. Make use of cloud services:
+      1. Create/Reuse container folder for img app to use
    19. <a href="#download_imgs">Download img application files           = download_imgs</a>
    20. <a href="#process_img">Manipulate image (OpenCV OCR extract)    = process_img</a>
    21. <a href="#send_slack_msgs">Send message to Slack                    = send_slack_msgs</a>  (TODO:)
    22. <a href="#send_email">Send email                    = send_email</a>  (TODO:)
-   23. <a href="#cleanup_img_files">Remove (clean-up) folder/files created   = cleanup_img_files</a>
-   24. <a href="#display_run_stats">Display run time stats at end of program = display_run_stats</a>
+   
+   98. <a href="#cleanup_img_files">Remove (clean-up) folder/files created   = cleanup_img_files</a>
+   99. <a href="#display_run_stats">Display run time stats at end of program = display_run_stats</a>
 
 <hr />
 
@@ -366,6 +381,8 @@ So rather than coding colors in every print statement, such as this:
 Code in this section is used to obtain values that control a run, such as 
 <strong>override</strong> of the LOCALE, cloud region, zip code, and other variable specs.
 
+This is needed for testing.
+
 The code reads a file in an ".env" file in the user's $HOME folder because that folder is <strong>away from GitHub</strong>.
 That file's name by hard-coded default is:
 
@@ -374,17 +391,18 @@ That file's name by hard-coded default is:
 <strong>The following example of the .env file contents</strong> is not put in the code because that would trigger findings in utilities that look for secrets in code.
 
 <pre>LOCALE="en_US"  # "en_EN", "ar_EG", "ja_JP", "zh_CN", "zh_TW", "hi" (Hindi), "sv_SE" #swedish
+#MY_ENCODING="UTF-8"
 &nbsp;
-MY_COUNTRY="US"      # For use in whether to use metric
-MY_ENCODING="UTF-8"
-MY_US_STATE="MT"
-MY_ZIP_CODE="59041"  # use to lookup country, US state, long/lat, etc.
-MY_LONGITUDE = ""
-MY_LATITUDE = ""
-MY_TIMEZONE = ""
-MY_CURRENCY = ""
-MY_LANGUGES = ""
-MY_IP_ADDRESS=""     # override of lookup done by program
+#MY_ZIP_CODE="59041"  # use to lookup country, US state, long/lat, etc.
+#MY_COUNTRY="US"      # For use in whether to use metric
+#MY_US_STATE="MT"
+#MY_LONGITUDE = ""
+#MY_LATITUDE = ""
+#MY_TIMEZONE = ""
+#MY_CURRENCY = ""
+#MY_LANGUGES = ""
+&nbsp;
+#MY_IP_ADDRESS=""     # override of lookup done by program
 IPFIND_API_KEY="12345678-abcd-4460-a7d7-b5f6983a33c7"
 OPENWEATHERMAP_API_KEY="12345678901234567890123456789012"
 &nbsp;
@@ -442,9 +460,27 @@ my_encoding = "utf-8"  # default: or "cp860" or "latin" or "ascii"
 
 ##  7. Display run conditions: datetime, OS, Python version, etc.
 
+
 <a name="DefineUtils"></a>
 
-##  8. Define utilities for managing data storage folders and files
+##  7. Define utilities for managing data storage folders and files
+
+<a name="ManageFolders"></a>
+
+### 7.1. Create, navigate to, and remove local working folders
+
+<a name="SQLLite"></a>
+
+### 7.2. Local machine in-memory SQL database  = SQLLite</a>
+
+PROTIP: A SQL databases locally created from within a Python program is as transitory (temporary) as the program instance itself.
+
+CAUTION: Encryption of data in transit and at rest is still needed on such "scratch" databases.
+
+For more persistant storage which lives to serve many different instances of a program, use a proper database established in a cloud enviornment.
+
+Instead of SQL, consider use of a Redis/Kafka key/value server/service
+
 
 ##  9. Generate various calculations for hashing, encryption, etc.
 
@@ -796,9 +832,12 @@ A few nations use BOTH Fahrenheit and Celsius:
    <br /><br />
 
 All other nations in the world exclusively use the Celsius scale when measuring temperature.
-The Celsius is named for the astronomer Anders Celsius, who developed a scale in 1742.
+The Celsius is named for the Swedish astronomer Anders Celsius, who developed a scale in 1742.
+The 100-degree range of the Celsius scale -- from freezing at 0 degrees to boiling at 100 (at sea level)-- made the Celsius scale a natural fit to be a part of the metric system.
 
-The Fahrenheit scale was initially proposed in 1724 by the Dutch-German-Polish physicist physicist Daniel Gabriel Fahrenheit.
+The equivalent of a Celsius temperature of 21.1 is 70 on the Fahrenheit scale.
+
+BTW The Fahrenheit scale was initially proposed in 1724 by the Dutch-German-Polish physicist physicist Daniel Gabriel Fahrenheit.
 The scale is defined by two fixed points: 32 °F (the freezing point of water) and 212 °F (the boiling point of water). 
 
 
@@ -1042,11 +1081,24 @@ Resilient? To ensure exceptions are handled properly:
 
 ### Proof by linking hash to a blockchain
 
-https://tierion.com/chainpoint/
-Chainpoint doesn't yet have a Python library, so TODO: write one based on their CLI
-to access their Gateway:
+Blockchains are an unalterable chain of events with time stamps.
 
-https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
+"Chainpoint is an open standard for creating a timestamp proof of any data, file, or series of events."
+One use case is to store predictions.
+Another use case is are agreements such as Leases since the content is hashed and thus unalterable.
+
+<a target="_blank" href="https://tierion.com/docs/hashapi">
+The Chainpoint Hash API Gateway from Tierion.com</a> enables regular applications to record hashes of data in the blockchain. 
+The data itself is kept private.
+Use of the Hash API is free up to 3 records per second or 1,000 records per hour.
+
+No 3rd-party library is needed, as we use import requests and import hashlib.
+
+<a target="_blank" href="https://app.pluralsight.com/guides/using-the-tierion-hash-api-with-python">BLOG</a>:
+
+JSON Web Token (JWT) is used for authentication to https://hashapi.tierion.com/v1/auth/token
+The response from https://app.pluralsight.com/guides/using-the-tierion-hash-api-with-python
+is good for one hour.
 
 # https://github.com/chainpoint/chainpoint-start
 # https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
