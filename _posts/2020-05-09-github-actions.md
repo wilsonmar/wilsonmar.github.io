@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GitHub Actions (for free CI/CD)"
-excerpt: "Declare and invoke build and test from within GitHub, for free."
+excerpt: "Run pipelines from within GitHub, for free (instead of Jenkins, CircleCI, etc.)"
 tags: [GitHub]
 date: "2020-05-09"
 file: "github-actions"
@@ -21,43 +21,6 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration <a target="_blank" href="https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions">for NodeJs</a> and a wide range of programming languages.
 
 When developers can merge and deploy code many times in a single day, they can achieve Agile DevOps.
-
-
-## Actions in Jobs triggering Workflows
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><img alt="github-actions-diagram-550x368.jpg" width="550" height="368" src="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><br /><em>Click image to pop-up full-size display.</em></a>
-
-1. Create a <strong>.github</strong> folder within your repository.
-
-   This follows the same convention as <tt>.circleci</tt>.
-
-1. Create a <strong>workflows</strong> folder within your repository.
-
-   Each workflow is defined by a yaml-formatted file.
-
-   PROTIP: To start, rather than creating your own a yaml-formatted file to define each Workflow configuration.
-
-1. To view the status of workflows, press the <strong>Actions</strong> tab at the top menu.
-
-   PROTIP: To get to the top of the screen to see GitHub's Tabs, on macOS, press command + up_arrow.
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
-
-1. Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
-
-   PROTIP: You can create and share templates for use by others in your own organization. See <a target="_blank" href="https://help.github.com/en/actions/hosting-your-own-runners">https://help.github.com/en/actions/hosting-your-own-runners</a>
- 
-   DEFINITION: In GitHub, a workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
-
-   Actions are individual steps within a job.
-
-
-
-1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
-
-1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
-
-
 
 ## Documentation
 
@@ -81,7 +44,68 @@ https://help.github.com/en/actions/language-and-framework-guides</a>
 <a target="_blank" href="https://help.github.com/en/actions/migrating-to-github-actions">
 https://help.github.com/en/actions/migrating-to-github-actions</a>
 
-1. Workflows are run by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
+
+## Actions in Jobs triggering Workflows
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><img alt="github-actions-diagram-550x368.jpg" width="550" height="368" src="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><br /><em>Click image to pop-up full-size display.</em></a>
+
+DEFINITION: In GitHub Actions, a workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
+
+DEFINITION: Workflows are run (invoked) by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
+
+Actions are individual steps within a job.
+
+
+## Run locally
+
+Actually, you can run GitHub Actions locally on your laptop using <a target="_blank" href="https://github.com/nektos/act/">github.com/nektos/act</a>.
+
+https://github.com/cplee/github-actions-demo
+
+
+## Hello World
+
+1. Create a new Git repo.
+
+
+1. Create a <strong>.github</strong> folder within your repository.
+
+   This follows the same convention as <tt>.circleci</tt>.
+
+1. Create a <strong>workflows</strong> folder within your repository.
+
+   Each workflow is defined by a yaml-formatted file.
+
+   PROTIP: To start, rather than creating your own a yaml-formatted file to define each Workflow configuration.
+
+   An example (using NodeJs) from https://github.com/cplee/github-actions-demo/blob/master/.github/workflows/main.yml
+
+   <pre>name: CI
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - run: npm install
+    - run: npm test
+   </pre>
+
+1. To view the status of workflows, press the <strong>Actions</strong> tab at the top menu.
+
+   PROTIP: To get to the top of the screen to see GitHub's Tabs, on macOS, press command + up_arrow.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
+
+1. Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
+
+   PROTIP: You can create and share templates for use by others in your own organization. See <a target="_blank" href="https://help.github.com/en/actions/hosting-your-own-runners">https://help.github.com/en/actions/hosting-your-own-runners</a>
+ 
+
+1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
+
+1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
 
 
 
@@ -102,6 +126,7 @@ https://github.community/t5/GitHub-Actions/bd-p/actions</a>
    A workflow is a unit of automation from start to finish, including the definition of what triggers the automation, what environment or other aspects should be taken account during the automation, and what should happen as a result of the trigger.
 
 1. See https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
 
    <a name="OnAction"></a>
 
@@ -545,9 +570,6 @@ https://coletiv.com/blog/how-to-setup-continuous-integration-and-deployment-work
 VIDEO: Unlocking the Cloud Operating Model with GitHub Actions</a>
 by Steve Winton, Senior Partner Engineer, GitHub
 
-
-## Those using Actions
-
 <a target="_blank" href="https://github.com/actionsdesk">
 https://github.com/actionsdesk</a>
 
@@ -555,6 +577,15 @@ https://github.com/actionsdesk</a>
 https://dev.to/github/export-github-issues-commit-history-and-more-github-artifact-exporter-2ok6
 Export GitHub Issues, Commit History and More | GitHub Artifact Exporter 
 by Davide 'CoderDave' Benvegnù
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=R8_veQiYBjI">VIDEO</a> "GitHub Actions Tutorial - Basic Concepts and CI/CD Pipeline with Docker" by TechWorld with Nana
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=0tMkRSdp-Go">VIDEO</a>: Visual Studio Toolbox at Microsoft: 
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=X3F3El_yvFg">VIDEO</a>: Automatic Deployment With Github Actions
+Traversy Media
+
+
 
 
 ## More #

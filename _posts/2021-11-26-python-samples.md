@@ -16,12 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The commentary below references code in my GitHub repository at:
+This is implementation of a suggestion I had in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>.
+
+> Most sample code lacks security, editing, internationalization, etc. So with some friends I created coding that has various features all working together in one program file, from this GitHub repository:
 
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>
 
-which contain these files:
+This page contains commentary which references code in that repos, which contain these files:
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py"><strong>api-sample.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
@@ -29,7 +31,13 @@ which contain these files:
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.env"><strong>api-sample.env</strong></a> which stores environment variables used by the Python program.
 
-This is implementation of a suggestion I had in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>.
+   * .gitignore
+
+   * <a target="_blank" href="https://wilsonmar.github.com/github-actions">workflow files for use within GitHub Actions</a>
+
+<hr />
+
+## Coding
 
 Many examples on GitHub begin with:
 
@@ -139,48 +147,25 @@ Images/
 *** api-sample.py done in 0.77 seconds. 
 </pre>
 
-## Verbosity flags
-
-The above sample reflects these default verbosity variables, which can be changed in the code:
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Output </th><th> variable </th><th> enable </th><th> disable </th></tr>
-<tr valign="top"><td> what needs attention 
-   </td><td> <tt>show_warning</tt> </td><td> -sw default 
-   </td><td> -swx </td></tr>
-<tr valign="top"><td> headings at start of each section executed
-   </td><td> <tt>show_heading</tt> </td><td> -sh default
-   </td><td> -shx </td></tr>
-<tr valign="top"><td> informational output (such as Lotto numbers)
-   </td><td> <tt>show_info</tt> </td><td> -si default
-   </td><td> -six </td></tr>
-<tr valign="top"><td> intermediate calculations
-   </td><td> <tt>show_verbose</tt> </td><td> -sv default
-   </td><td> -svx </td></tr>
-<tr valign="top"><td> debugging 
-   </td><td> <tt>show_trace</tt> </td><td> -stv 
-   </td><td> -stx default </td></tr>
-</table>
-
-The output above are issued in order of execution, explained below.
-
-TODO: A "dev" and "prod" mode which establishes whole sets of switches.
 
 
 <a name="Sections"></a>
 
 ## Sections of code (and their feature flags)
 
+   0. Define program attributes.
    1. Import libraries
-   2. <a href="#StartingTime">Define starting time and default variables</a>
+   2. <a href="#StartingTime">Capture starting time and set default global values</a>
    3. <a href="#ParseArguments">Parse arguments that control program operation</a>
-   4. Define utilities for printing (in color), logging
-   5. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
-   6. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
-
-   7. Display run conditions: datetime, OS, Python version, etc.
-   8. Obtain run control data from .env file in the user's $HOME folder
-   to obtain the desired LOCALE, cloud region, zip code, and other variable specs.
+   4. Define utilities for printing (in <a href="#PrintColors">color</a>), <a href="#Logging">logging</a>
+   5. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
+   6. <a href="#run_env">Obtain run control data from .env file in the user's $HOME folder</a>
+   7. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
+   8. Display run conditions: datetime, OS, Python version, etc.
+      1. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
+      2. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
+      3. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
+      4. <a href="#show_weather">Retrieve Weather info from zip code or lat/long  = show_weather</a>
 
    9. Generate various calculations for hashing, encryption, etc.
       1. <a href="#gen_hash">Generate Hash from a file & text         = gen_hash</a>
@@ -190,20 +175,18 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
       5. <a href="#gen_jwt">Generate JWT (Json Web Token)            = gen_jwt</a>
       6. <a href="#gen_lotto">Generate Lotto America Numbers           = gen_lotto</a>
       7. <a href="#gen_magic_8ball">Generate Magic 8-ball numbers            = gen_magic_8ball</a>
-      8. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
-      9. <a href="#make_change">Make change using Dynamic Programming     = make_change</a>
-      10. <a href="#fill_knapsack">Fill knapsack     = fill_knapsack</a>
 
-   10. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
-   11. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
+   10. Get in the cloud:
+      1. <a href="use_azure">Retrieve secrets from Azure Key Vault  = use_azure</a>
+      2. <a href="use_aws">Retrieve secrets from AWS KMS         = use_aws</a>
+      3. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
+      4. <a href="#use_vault">Retrieve secrets from Hashicorp Vault = use_vault</a>
 
-   12. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
-   13. <a href="#show_weather">Retrieve Weather info using API          = show_weather</a>
-
-   14. <a href="use_azure">Retrieve secrets from Azure Key Vault  = use_azure</a>
-   15. <a href="use_aws">Retrieve secrets from AWS KMS         = use_aws</a>
-   16. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
-   17. <a href="#use_vault">Retrieve secrets from Hashicorp Vault = use_vault</a>
+   11. Applications processing user input:
+      1. <a href="#categorize_bmi">Calculte BMI using units of measure based on country = categorize_bmi</a>
+      2. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
+      3. <a href="#make_change">Make change using Dynamic Programming     = make_change</a>
+      4. <a href="#fill_knapsack">Fill knapsack     = fill_knapsack</a>
 
    18. Create/Reuse container folder for img app to use
    19. <a href="#download_imgs">Download img application files           = download_imgs</a>
@@ -231,17 +214,16 @@ CODING CONVENTION: Block comments about the program as a whole and each function
 
 ## "Dunder" variables
 
-<pre>
+<pre>__repository__ = "https://github.com/wilsonmar/python-samples"
 __author__ = "Wilson Mar"
 __copyright__ = "See the file LICENSE for copyright and license info"
 __license__ = "See the file LICENSE for copyright and license info"
-__version__ = "0.0.28"  # change on every push - Semver.org format per PEP440
-__email__ = "wilsonmar+git@gmail.com"
+__version__ = "0.0.58"  # change on every push - Semver.org format per PEP440
 __linkedin__ = "https://linkedin.com/in/WilsonMar"
-__repository__ = "https://github.com/wilsonmar/python-samples"
 </pre>
 
-## Import of Libraries
+
+##  1. Import of Libraries
 
 CODING CONVENTION: imports are listesd in alphabetical order to make them easier to find. Most IDEs would detect when you don't have an imported coded.
 
@@ -252,7 +234,7 @@ SECURITY CONSIDERATION: Generally, minimize the number of external dependencies 
 
 <a name="StartingTime"></a>
 
-## 2. Define starting time and default variables
+## 2. Define starting time and default global values
 
 This would be the first command:
 
@@ -288,10 +270,164 @@ Included in the code are conversions of dates, floats, and formatting floats.
 
 https://learnpython.com/blog/9-best-python-online-resources-start-learning/
 
+### Show or not
+
+Additionally, our custom print statements make use of global variables:
+
+   <ul><pre>show_warning = True    # -wx  Don't display warning
+show_info = True       # -qq  Display app's informational status and results for end-users
+show_heading = True    # -q  Don't display step headings before attempting actions
+show_verbose = True    # -v  Display technical program run conditions
+show_trace = True      # -vv Display responses from API calls for debugging code
+   </pre></ul>
+
+<a name="VerbosityFlags"></a>
+
+### Verbosity flags
+
+The above sample reflects these default verbosity variables, which can be changed in the code:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Output </th><th> variable </th><th> enable </th><th> disable </th></tr>
+<tr valign="top"><td> what needs attention 
+   </td><td> <tt>show_warning</tt> </td><td> -sw default 
+   </td><td> -swx </td></tr>
+<tr valign="top"><td> headings at start of each section executed
+   </td><td> <tt>show_heading</tt> </td><td> -sh default
+   </td><td> -shx </td></tr>
+<tr valign="top"><td> informational output (such as Lotto numbers)
+   </td><td> <tt>show_info</tt> </td><td> -si default
+   </td><td> -six </td></tr>
+<tr valign="top"><td> intermediate calculations
+   </td><td> <tt>show_verbose</tt> </td><td> -sv default
+   </td><td> -svx </td></tr>
+<tr valign="top"><td> debugging 
+   </td><td> <tt>show_trace</tt> </td><td> -stv 
+   </td><td> -stx default </td></tr>
+</table>
+
+The output above are issued in order of execution, explained below.
+
+TODO: A "dev" and "prod" mode which establishes whole sets of switches.
+
+
+## 4. Define utilities for printing (in color), logging, etc.
+
+<a name="PrintColors"></a>
+
+### Printing in Color
+
+Different colors in print output on CLI Terminal make it clear what type of information is being convayed:
+
+   * Red for failure conditions
+   * Yellow for warnings
+   * Green or White for normal information (in BOLD type)
+   <br /><br />
+
+There are <a target="_blank" href="https://www.geeksforgeeks.org/print-colors-python-terminal/">external libraries (such as colorama)</a> to enable coding to incorporate colors:
+
+   <ul><tt>print(colored('Hello, World!', 'green', 'on_red'))</tt></ul>
+
+However, PROTIP: We prefer not to type names of colors (such as "GREEN") in app code because in the future we may want to change the color scheme within changing every print() line of code. Different font codes are needed
+in dark backgrounds than in white backgrounds.
+
+Ideally, we would specify text to print using a custom function that automatically incorporates the appropriate colors in the output:
+
+   <ul><pre>print_info("Buy {widgets_to_buy} widgets")
+print_warning("Free disk space on {disk_id} low: {disk_pct_free}%")
+print_fail("Code {some_code} not recognized in program.")
+   </pre></ul>
+
+    # FIXME: Pull in text_in containing {}.
+
+Internally the <tt>print_info()</tt> function would use statements that is the equivalent of:
+
+   <ul>print("*** %s %s=%s" % (my_os_platform, localize_blob("version"), platform.mac_ver()[0]),end=" ")
+   print("%s process ID=%s" % ( my_os_name, os.getpid() ))
+   </ul>
+
+PROTIP: The <tt>,end=" "</tt> at the end of the first statement removes the line break (new line) normally issued by Python print() statements.
+
+PROTIP: Defining statics in a class requires each to be referenced with the class name, which
+provides context about what that static is used for.
+
+So rather than coding colors in every print statement, such as this:
+
+   <ul><tt>from colorama import Fore, Back, Style</tt></ul>
+
+   <ul><tt>from termcolor import colored</tt></ul>
+
+
+
+<a name="run_env"></a>
+
+##  5. Obtain run control data from .env file in the user's $HOME folder
+
+Code in this section is used to obtain values that control a run, such as 
+<strong>override</strong> of the LOCALE, cloud region, zip code, and other variable specs.
+
+The code reads a file in an ".env" file in the user's $HOME folder because that folder is <strong>away from GitHub</strong>.
+That file's name by hard-coded default is:
+
+   <ul><pre>env_file = 'python-samples.env'</pre></ul>
+
+<strong>The following example of the .env file contents</strong> is not put in the code because that would trigger findings in utilities that look for secrets in code.
+
+<pre>LOCALE="en_US"  # "en_EN", "ar_EG", "ja_JP", "zh_CN", "zh_TW", "hi" (Hindi), "sv_SE" #swedish
+&nbsp;
+MY_COUNTRY="US"      # For use in whether to use metric
+MY_ENCODING="UTF-8"
+MY_US_STATE="MT"
+MY_ZIP_CODE="59041"  # use to lookup country, US state, long/lat, etc.
+MY_LONGITUDE = ""
+MY_LATITUDE = ""
+MY_TIMEZONE = ""
+MY_CURRENCY = ""
+MY_LANGUGES = ""
+MY_IP_ADDRESS=""     # override of lookup done by program
+IPFIND_API_KEY="12345678-abcd-4460-a7d7-b5f6983a33c7"
+OPENWEATHERMAP_API_KEY="12345678901234567890123456789012"
+&nbsp;
+AZURE_SUBSCRIPTION_ID="12345678901234567890123456789012"   # access to info behind this requires user credentials
+AZURE_REGION="eastus"
+KEY_VAULT_NAME="howdy-from-azure-eastus"
+&nbsp;
+AWS_REGION="us-east-1"
+AWS_CMK_DESCRIPTION="My Customer Master Key"   # this is not a secret, but still does not belong here.
+KEY_ALIAS = 'alias/hands-on-cloud-kms-alias'   # 
+&nbsp;
+GCP_PROJECT_ID="123456etc?"
+GCP_REGION="east1?"
+&nbsp;
+VAULT_TOKEN=3340a910-0d87-bb50-0385-a7a3e387f2a8   # secret
+VAULT_URL=http://localhost:8200
+&nbsp;
+IMG_PROJECT_ROOT="$HOME"  # or "~" on macOS="/Users/wilsonmar/" or Windows: "D:\\"
+IMG_PROJECT_FOLDER="Projects"
+</pre>
+
+TODO: The program downloads file "python-samples.env" from GitHub to the user's $HOME folder for reference:
+
+Such run variables can be overridden by specifications in the program's invocation parameters or real-time UI specification.
+  
+Some use this mechanism to retrieve API keys to services that do not ask for personal information and credit cards (such as weather apps).
+But storing any secret in a clear-text (unencrypted) file containing is not recommended.
+
+CAUTION: Leaving secrets anywhere on a laptop is dangerous. One click on a malicious website and it can be stolen.
+It's safer to use a cloud vault such as Amazon KMS, Azure, Hashicorp Vault after signing in.
+   * https://blog.gruntwork.io/a-comprehensive-guide-to-managing-secrets-in-your-terraform-code-1d586955ace1#bebe
+   * https://vault-cli.readthedocs.io/en/latest/discussions.html#why-not-vault-hvac-or-hvac-cli
+   <br /><br />
+
+Putting secrets in an .env file is better than putting secrets in ~/.bash_profile on macOS.
+See https://python-secrets.readthedocs.io/en/latest/readme.html
+
+
+<hr />
 
 <a name="Localization"></a>
 
-## 5. Localization
+##  6. Localization
 
 NOTE: For localized presentation, use these specialized functions:
     # atof (convert a string to a floating point number),
@@ -299,17 +435,18 @@ NOTE: For localized presentation, use these specialized functions:
     # str (formats a floating point number using the same format as the
     # built-in function str(float) but takes the decimal point into account).
 
+Use Language Code Identifier (LCID) https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c?redirectedfrom=MSDN
+
+my_encoding = "utf-8"  # default: or "cp860" or "latin" or "ascii"
+
+
+##  7. Display run conditions: datetime, OS, Python version, etc.
 
 <a name="DefineUtils"></a>
 
-## 6. Define utilities for managing data storage folders and files
-## 7. Display run conditions: datetime, OS, Python version, etc.
+##  8. Define utilities for managing data storage folders and files
 
-##   8. Obtain run control data from .env file in the user's $HOME folder
-  
-To obtain the desired cloud region, zip code, and other variable specs.
-
-##   9. Generate various calculations for hashing, encryption, etc.
+##  9. Generate various calculations for hashing, encryption, etc.
 
 https://www.python.org/dev/peps/pep-0506/
 
@@ -620,10 +757,50 @@ PROTIP: Users don't have to provide information which can be looked up based in 
     # city_name="New York"
     # city_name = input("Enter city name : ")
 
+There is a function for code to obtain zip code.
+It uses a potentially problematic <a target="_blank" href="https://betterprogramming.pub/how-to-indefinitely-request-user-input-until-valid-in-python-388a7c85aa6e">infinite while loop to request user input</a>.
+We also use the built-in <tt>input()</tt> function because we want to minimize use of 3rd-party libraries such as PyInputPlus.
+See https://medium.com/code-85/the-best-way-to-request-user-input-in-python-e072a808dc82
+The PyInputPlus module has a module for each data type -- inputStr(), inputNum(), inputMenu() -- to apply appropriate edits to input entered.
+
 
 <a name="show_weather"></a>
 
-#   13. Retrieve Weather info using API             = show_weather
+#   13. Retrieve Weather info from zip code or lat/long  = show_weather
+
+Weather reports report on the Kelvin scale, which is converted to Celcius and Fahrenheit scales by the program.
+
+<a target="_blank" href="https://worldpopulationreview.com/country-rankings/countries-that-use-fahrenheit">NOTE</a>: 
+The Fahrenheit metric is shown in parentheses because there are very few nations in the world that use the Fahrenheit unit of temperature. 
+
+Countries and territories that use the Fahrenheit scale are:
+
+   * United States
+   * Bahamas
+   * Cayman Islands
+   * Liberia
+   * Palau
+   * The Federated States of Micronesia
+   * Marshall Islands
+   <br /><br />
+
+A few nations use BOTH Fahrenheit and Celsius:
+
+   * Antigua and Barbuda
+   * Saint Kitts and Nevis
+   * British Virgin Islands
+   * Montserrat
+   * Belize
+   * Bermuda
+   * Turks and Caicos
+   <br /><br />
+
+All other nations in the world exclusively use the Celsius scale when measuring temperature.
+The Celsius is named for the astronomer Anders Celsius, who developed a scale in 1742.
+
+The Fahrenheit scale was initially proposed in 1724 by the Dutch-German-Polish physicist physicist Daniel Gabriel Fahrenheit.
+The scale is defined by two fixed points: 32 °F (the freezing point of water) and 212 °F (the boiling point of water). 
+
 
 <hr />
 
@@ -666,16 +843,11 @@ Azure SDK for Python:
    * https://www.youtube.com/watch?v=5oIcT0HCrvI - Microsoft Azure Overview: The Azure Python SDK by Sigma Coding
    * https://www.youtube.com/watch?v=_qQq6oHskUQ - Machine Learning and Python with Microsoft Azure - http://aka.ms/azuredevstreams by https://twitch.tv/enceladosaurus
 
-<a name="use_aws"></a>
-
-##  15. Retrieve secrets from AWS KMS         = use_aws
-
 
 
 <a name="use_aws"></a>
 
 ##  15. Retrieve secrets from AWS KMS         = use_aws
-
 
 To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS, AWS uses <strong>two types of CMK (Customer Master Key)</strong> to encrypt up to 4KB of data:
 
@@ -683,7 +855,11 @@ To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS,
 
    * Asymmetric CMK: AWS KMS generates a <strong>key pair</strong> where private key never leaves AWS KMS unencrypted.
 
+<a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-18/">
+Rotating IAM Keys using Boto3</a>
 
+<a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-23/">
+stop/start EC2 instances on a scheduled basis to save cost using AWS Lambda and CloudWatch</a>
 
 References:
     * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
@@ -802,6 +978,14 @@ References:
 <a name="use_vault"></a>
 
 ##  17. Retrieve secrets from Hashicorp Vault = use_vault
+
+
+<hr />
+
+<a name="categorize_bmi"></a>
+
+### 6.1 Calculte BMI using units of measure based on country = categorize_bmi 
+
 
 
 <hr />

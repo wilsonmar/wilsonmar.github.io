@@ -50,13 +50,22 @@ https://learnpython.com/blog/9-best-python-online-resources-start-learning/
 
 The most popular IDEs for Python are:
    * VSCode from Microsoft (free)
-   * PyCharm ($125/year)
+   * <a href="https://www.jetbrains.com/pycharm/buy/#personal">PyCharm</a> (FREE or PRO $89/$71/$53 year)
    * Cloud9 free on-line on AWS (which automatically generates new credentials every 5 minutes or on browser Reset<a target="_blank" href="https://www.coursera.org/learn/building-modern-python-applications-on-aws/lecture/UdnyB/using-temporary-credentials-in-aws-cloud9">*</a>)
    <br /><br />
 
 <a target="_blank" href="https://app.pluralsight.com/guides/visual-studio-code-for-python-development">
 BLOG: Setup VSCode for Python Development</a>
 https://code.visualstudio.com/docs/editor/extension-marketplace
+
+On IDE such as VSCode you can see key/value pairs without typing <tt>print</tt> statements in code, like an Xray machine:
+1. click next to a line number at the left to set a <strong>Breakpoint</strong>.
+1. Click "RUN AND DEBUG" to see variables: Locals and Globals.
+1. To expand and contract, click ">" and "V" in front of items.
+1. "special variables" are dunder (double underline) variables.
+1. Under each "function variables" and special variables of their own. For a list, it's append, clear, copy, etc.
+1. Under <tt>Globals</tt> are its special variable (such as __file__ for the file path of the program) and class variables, plus an entry for each class defined in the code (such as unittest).
+1. 
 
 <hr />
 
@@ -287,13 +296,26 @@ In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.
 
 ### Sorting
 
-To swap values:
+To swap values, here's a straight-forward function:
 
-<pre>var1 = 1 
-var2 = 2 
-var1,var2 = var2,var1
->>> print (var1,var2)
+<pre>def swap1(var1,var2):
+    var1,var2 = var2,var1
+    return var1, var2
+</pre>
+
+<pre>>>> swap1(10,20)
 >>> 2 1
+</pre>
+
+<pre>def swap2(x,y):
+    x = x ^ y
+    y = x ^ y
+    x = x ^ y
+    return x, y
+</pre>
+
+<pre>>>> swap2(10,20)
+(20,10)
 </pre>
 
 
@@ -1114,6 +1136,7 @@ MEMONIC: Scopes: LEGB
    * <strong>G</strong>lobal - At the top level of the module
    * <strong>B</strong>uilt-in - In the special builtins module
 
+
 ### Metaclasses
 
 metaclasses: 18:50
@@ -1136,6 +1159,25 @@ Decorators take advantage of Python being live dynamically compiled.
 
 There are limitations, though.
 
+By default, functions within a class need to supply "self" as the first parameter.
+
+   <ul><pre>class MyClass:
+   attribute = "class attribute"
+   ...
+   def afunction(self,text_in):
+       cls.attribute = text_in
+   </pre></ul>
+
+<a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d7eb69f7-37d3-4893-8773-79e73642064b">VIDEO</a>: 
+However, decorator <tt><strong>@classmethod</strong></tt> enable "cls" to be accepted as the first argument:
+
+   <ul><pre>def afunction(self,text_in):
+       cls.attribute = text_in
+   </pre></ul>
+
+   The @classmethod is used for access to the class object to call other class methods or the constuctor.
+
+There is also <tt><strong>@staticmethod</strong></tt> when access is not needed to class or instance objects.
 
 ### Generators
 
@@ -1206,7 +1248,7 @@ The top 10 OWASP vulnerabilities in 2020 are:
    • A7:2017-Cross-Site Scripting (XSS)
    • A8:2017-Insecure Deserialization
    • A9:2017-Using Components with Known Vulnerabilities
-   • A10:2017-Insufficient Logging & Monitoring
+   • A10:2017-Insufficient <a href="#Logging">Logging</a> & Monitoring
    <br /><br />
 
 Instructions at https://github.com/adeyosemanputra/pygoat
@@ -1248,6 +1290,9 @@ https://rules.sonarsource.com/python/tag/owasp/RSPEC-4529
 ## Logging for Monitoring
 
    * https://github.com/python/cpython/tree/3.6/Lib/logging
+   * https://realpython.com/python-logging-source-code/
+   * https://infosecwriteups.com/most-common-python-vulnerabilities-and-how-to-avoid-them-5bbd22e2c360
+   * https://docs.python.org/3/howto/logging.html#configuring-logging
    * <a target="_blank" href="https://www.loggly.com/ultimate-guide/python-logging-basics/">
    <br /><br />
 
@@ -1256,10 +1301,10 @@ In the meantime, attackers can tamper with servers, corrupt databases, and steal
 
 "Insufficient Logging and Monitoring" is among the top 10 OWASP.
 
-The vulnerability includes ineffective integration of the security systems which give attackers a way to pivot to other parts of the system to maintain persistent threats.
+The vulnerability includes ineffective integration of security systems,
+which give attackers a way to pivot to other parts of the system to maintain persistent threats.
 
-Prevent that by emitting a log entry for each activity such as:
-add, change/update, delete.
+Prevent that by emitting a log entry for each activity such as: add, change/update, delete.
 
 Use the <a target="_blank" href="https://realpython.com/python-logging/">Python logging module</a>:
 
@@ -1268,14 +1313,17 @@ Use the <a target="_blank" href="https://realpython.com/python-logging/">Python 
 
 To emit each log entry, use the loggin method so that logs can be filtered by level. In order of severity:
 
-   <pre>logging.debug('DEBUG - used during troubleshooting at the highest detail level')
-logging.info('INFO - used during initial runs by a developer new to the program')
-logging.warning('WARNING - used during QA runs')
-logging.error('ERROR - used during production runs')
-logging.critical('CRITICAL - the minimal level')
+   <pre>logging.critical("CRITICAL - Can't ... Aborting!") # A serious error. The program itself may be unable to continue running. Displayed even in production runs.
+logging.error("ERROR - Program cannot do it!") # A serious problem: the software is not been able to perform some function. Displayed even in production runs.
+logging.warning("WARNING - unexpected!")  # The software is still working as expected. But may be a problem in the near future (e.g. ‘disk space low’). 
+logging.info("INFO - version xxx")  # Provides confirmation that things are working as expected.
+logging.debug('DEBUG - detailed information such as each iteration in a loop used during troubleshooting at the lowest level of detail.')
    </pre>
 
 At run-time, specify the highest level to display during that run:
+
+   <pre>python3 pylogging.py <strong>--log=INFO</strong>
+   </pre>
 
    * CRITICAL = 50
    * FATAL = CRITICAL
@@ -1293,15 +1341,11 @@ WARN (WARNING) is the default verbosity level.
 Set the default:
 <ul>
    <pre>logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(format='%(asctime)s %(levelname)s - %(message)s', datefmt='%H:%M:%S')
+#logging.basicConfig(level=logging.DEBUG,filename='example.log')
+</pre>
    </pre>
 </ul>
-
-<tt>-q</tt> (for -quiet) suppresses INFO headings.
-
-<tt>-v</tt> (for -verbose) to display DEBUB messages.
-
-<tt>-vv</tt> to display TRACE messages.
-
 
 Also, provide a run-time option for outputing to a file:
 
@@ -1313,10 +1357,12 @@ Encrypt plaintext.
 
 The logging module also allows you to capture the full stack traces in an application.
 
-https://realpython.com/python-logging-source-code/
 
+<tt>-q</tt> (for -quiet) suppresses INFO headings.
 
-https://infosecwriteups.com/most-common-python-vulnerabilities-and-how-to-avoid-them-5bbd22e2c360
+<tt>-v</tt> (for -verbose) to display DEBUB messages.
+
+<tt>-vv</tt> to display TRACE messages.
 
 
 
