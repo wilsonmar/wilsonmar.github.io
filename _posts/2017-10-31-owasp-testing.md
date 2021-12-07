@@ -469,10 +469,14 @@ You can also:
 
 ## Resources
 
-Daniel Miessler's <a target="_blank" href="https://danielmiessler.com/projects/webappsec_testing_resources/">https://danielmiessler.com/projects/webappsec_testing_resources</a>
+STAR: Daniel Miessler's <a target="_blank" href="https://danielmiessler.com/projects/webappsec_testing_resources/">https://danielmiessler.com/projects/webappsec_testing_resources</a>
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/owasp-zap-web-app-pentesting-getting-started/table-of-contents">Getting Started with OWASP Zed Attack Proxy (ZAP) for Web Application Penetration Testing</a>	
 1h 40m video course 16 Feb 2017 by Mike Woolard
+
+STAR: https://python-security.readthedocs.io/security.html
+
+https://www.securecoding.com/blog/python-security-practices-you-should-maintain/
 
 
 ## More on DevOps #

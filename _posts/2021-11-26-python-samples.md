@@ -35,6 +35,12 @@ This page contains commentary which references code in that repos, which contain
 
    * <a target="_blank" href="https://wilsonmar.github.com/github-actions">workflow files for use within GitHub Actions</a>
 
+
+Other Python project templates:
+
+   * https://github.com/MartinHeinz/python-project-blueprint
+   * https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
+
 <hr />
 
 ## To of Coding File 
@@ -154,8 +160,11 @@ What the program outputs to the Terminal can be precisely specified.
 The program precedence of override:
    1. Prompts of the user from inside the running program (such as for Zip Code) overrides
    2. <a href="#ParseArguments">parameter specifications</a> at run-time, which overrides
-   3. what is specified in <a href="#run_env">persistent environment (.env) file</a>, which overrides
-   4. what is hard-coded in program code.
+   3. key text retrieved from OS Keyring, which overrides
+   4. what is retrieved from Azure, AWS, GCP, Hashicorp Vault, which overrides
+   5. what is specified in <a href="#run_env">persistent environment (.env) file</a>, which overrides
+   6. what is (can safely be) hard-coded in program code, which overides
+   7. what is obtained from the operating system.
    <br /><br />
 
 
@@ -488,7 +497,20 @@ https://www.python.org/dev/peps/pep-0506/
 
 https://github.com/python/cpython/blob/3.6/Lib/random.py
 
+https://martinheinz.dev/blog/59
+The xkcdpass library generates strong passphrase made of words
+from a word/dictionary file on your system such as /usr/dict/words
+
+
+<a name="gen_salt"></a>
+
 ### Base64 Salt
+
+A "salt" provides a random string that is appended to a password before  hashing for safer storage in a database. It makes the password more random and therefore harder to guess (using rainbow tables).
+
+Since modern computer hardware grows ever more powerful, attempt billions of hashes per second, <strong>purposely slow hash</strong> functions now need to be used for password hashing, to make it more inefficient for attackers to brute-force a password. Thus a timer on salt hash calculations.
+
+There is the passlib library.
 
 1. To create a random string of n bytes that is Base64 encoded for use in URLs:
 
@@ -773,7 +795,6 @@ Sample output:
 
 
 
-zzz
 # Alternative: Pure Python GeoIP API = https://github.com/appliedsec/pygeoip
 
 
@@ -843,13 +864,24 @@ The scale is defined by two fixed points: 32 °F (the freezing point of water) a
 
 <hr />
 
+<a name="use_keyring"></a>
+
+##  14. Retrieve secrets from local OS Keyring  = use_keyring
+
+Based on https://martinheinz.dev/blog/59
+
+A Python application can use the operating system's Keyring utility that stores secure credentials in an encrypted file within your $HOME directory. 
+
+The Keyvault file (by default) uses your user account login password for encryption, so it gets automatically unlocked when you login and you therefore don't have worry about extra password.
+
+In the code, we start by checking location of keyring config file, which is the place where you can make some configuration adjustments if needed.
+
+We then check the active keyring and proceed with adding a password into it. Each entry has 3 attributes - service, username and password, where service acts as a namespace, which in this case would be a name of an application. To create and retrieve an entry, we can just use set_password and get_password respectively. In addition to that, also get_credential can be used - it returns a credential object which has an attribute for username and password.
 
 
-<hr />
+<a name="use_github_actions"></a>
 
-<a name="use_azure"></a>
-
-##  14. Retrieve secrets from Azure Key Vault  = use_azure
+##  14. Retrieve secrets from GitHub Action   = use_github_actions
 
 
 <a name="AzureKeyVault"></a>
@@ -1120,6 +1152,45 @@ https://github.com/brbcoding/Readability
 
 https://www.byte-by-byte.com/dpbook/
 
+
+## References
+
+Decrypting and encrypting in Python doesn't work because strings and Integers are <strong>interned</strong> and persistent.
+
+Use mutable bytearray() data structures elements that can be dynamically replaced.
+
+To be safe, if you have to dynamically resize a data structure, create a new one, copy data, and then write over the old one.
+Source: http://www.ibm.com/developerworks/library/s-data.html
+
+<pre>def paranoid_add_character_to_list(ch, l):
+  """Copy l, adding a new character, ch.  Erase l.  Return the result."""
+  new_list = []
+  for i in range(len(l)):
+    new_list.append(0)
+  new_list.append(ch)
+  for i in range(len(l)):
+    new_list[i] = l[i]
+    l[i] = 0
+  return new_list
+</pre>
+
+For immutable data, <a target="_blank" href="https://stackoverflow.com/questions/982682/mark-data-as-sensitive-in-python/983525#983525">mark data as sensitive</a> using the memset C function within a C module.
+<a target="_blank" href="https://stackoverflow.com/questions/728164/securely-erasing-password-in-memory-python">This</a> is highly dependent on internal interpreter details such as: id having the same value as the object pointer, the offset of string data from the object pointer, etc. Incredibly brittle; do not recommend. On Linux:
+
+<pre>import sys 
+import ctypes
+&nbsp;
+def nuke(var_to_nuke):
+    strlen = len(var_to_nuke)
+    offset = sys.getsizeof(var_to_nuke) - strlen - 1
+    ctypes.memset(id(var_to_nuke) + offset, 0, strlen)
+    del var_to_nuke               # derefrencing the pointer.
+</pre>
+
+<a target="_blank" href="https://www.securecoding.com/blog/python-security-practices-you-should-maintain/">
+This provides an example of secure string handling</a>
+
+http://web.archive.org/web/20100929111257/http://www.codexon.com/posts/clearing-passwords-in-memory-with-python
 
 
 <hr />
