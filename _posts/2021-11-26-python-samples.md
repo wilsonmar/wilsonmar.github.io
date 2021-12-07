@@ -43,7 +43,9 @@ Other Python project templates:
 
 <hr />
 
-## To of Coding File 
+## Top of Coding File 
+
+<pre>#!/usr/bin/env python</pre>
 
 Many examples on GitHub begin with:
 
@@ -153,7 +155,7 @@ Images/
 *** api-sample.py done in 0.77 seconds. 
 </pre>
 
-## Program controls
+## CLI Output control
 
 What the program outputs to the Terminal can be precisely specified.
 
@@ -900,6 +902,30 @@ from azure.keyvault.secrets import SecretClient:
    * see https://pypi.python.org/pypi/azure-keyvault-secrets
    <br /><br />
 
+1. If you already have a key vault, make sure it allows template deployments:
+   
+   az keyvault update  --name ExampleVault --enabled-for-template-deployment true
+
+1. Create a new key vault and add a secret:
+
+   <pre>az group create --name ExampleGroup --location centralus
+   az keyvault create \
+   --name ExampleVault \
+   --resource-group ExampleGroup \
+   --location centralus \
+   --enabled-for-template-deployment true
+   az keyvault secret set --vault-name ExampleVault --name "ExamplePassword" --value "hVFkk965BuUv"
+   </pre>
+
+1. As the owner of the key vault, you automatically have access to create secrets. If you need to let another user create secrets:
+
+   <pre>az keyvault set-policy \
+  --upn <user-principal-name> \
+  --name ExampleVault \
+  --secret-permissions set delete get list
+   </pre>
+
+
 
 References:
 * https://www.youtube.com/watch?v=BErur8WwAsg - Getting Started with Microsoft Azure in Python by Jie Jenn
@@ -913,6 +939,9 @@ Azure SDK for Python:
    * https://www.youtube.com/watch?v=WER5X_zm6Aw - An introduction to the unified Azure SDK | Azure Friday
    * https://www.youtube.com/watch?v=5oIcT0HCrvI - Microsoft Azure Overview: The Azure Python SDK by Sigma Coding
    * https://www.youtube.com/watch?v=_qQq6oHskUQ - Machine Learning and Python with Microsoft Azure - http://aka.ms/azuredevstreams by https://twitch.tv/enceladosaurus
+
+References:
+   * https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter?tabs=azure-cli
 
 
 
@@ -933,7 +962,9 @@ Rotating IAM Keys using Boto3</a>
 stop/start EC2 instances on a scheduled basis to save cost using AWS Lambda and CloudWatch</a>
 
 References:
-    * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
+   * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
+   * https://towardsdatascience.com/python-and-aws-ssm-parameter-store-7f0e211bb91e
+   AWS Systems Manager’s Parameter Store
 
 
 <a name="use_gcp"></a>
