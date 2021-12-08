@@ -3,7 +3,7 @@ layout: post
 title: "Python Samples"
 excerpt: "Commentary on a practical example of how to use Python in a production setting."
 tags: [python, coding]
-date: "2021-11-26"
+date: "2021-12-07"
 file: "python-samples"
 image:
 # pic white python logo 1900x500.jpg
@@ -100,75 +100,16 @@ C. Alternately, to work with the whole repo on your laptop,
 
 <a name="Execution"></a>
 
-Inside the program are <strong>feature flags<strong> referenced to determine whether each feature programmed is executed during a particular run.
+## Program Execution Feature Flags
 
 In a terminal:
 
    <ul><pre><strong>python api-sample.py
    </strong></pre></ul>
 
-No parameters need to be specified because the program has hard-coded defaults for each feature flag, with ALL features enabled. The default sample output:
+No parameters need to be specified because the program has hard-coded defaults for each feature flag, with ALL features enabled. 
 
-<pre>*** env_path LOCALE 'en_EN' overrides OS LOCALE ('en_US', 'UTF-8')
-&nbsp;
-*** api-sample.py v0.0.33 Created: Saturday 27 Nov 2021 01:23:18 PM   
-*** at /Users/wilsonmar/gmail_acct/python-samples/api-sample.py 
-*** on /Users/wilsonmar/miniconda3/envs/py3k/lib/python3.8/site-packages 
-*** Started Saturday 27 Nov 2021 08:33:41 PM   (epoch=1638070421.006971) 
-*** macOS version=10.16 ['Big Sur', 2020] process ID=10298
-*** Disk space free: 42.0 / 122.1 GB 
-*** Python version="3.8.12 | packaged by conda-forge | (default, Sep 29 2021, 19:44:33) 
-[Clang 11.1.0 ]
-&nbsp; 
-*** env_path=/Users/wilsonmar/python-samples.env
-&nbsp;
-*** Lotto America: 5 lucky numbers between 1 and 52 and 1 Star number between 1 and 10:
-*** 20 6 24 4 38 6 
-&nbsp; 
-*** uuid.uuid4()=3d9a8c08-c354-4712-8e7d-d8dae320a1be 
-*** x.time=509684474424495112 
-*** Path: "/Users/wilsonmar/Projects" 
-*** Directory "Images" created Thursday 25 Nov 2021 09:23:20 PM MST -0700
-&nbsp;
-*** Longitude: -97.822 Latitude: 37.751 in US America/Chicago USD (VPN).
-*** Using hard-coded default zip code "59041".
-*** Longitude: -108.9922 Latitude: 45.4941 in US Joliet 59041 
-*** Minimum temperature: 44.42°F (6.90°C), Sunrise: 2021-11-23 07:26:23 AM 
-*** Currently: 49.57°F (9.76°C), 26% humidity, overcast clouds, visibility: 10000 feet
-*** Maximum temperature: 56.61°F (13.67°C),  Sunset: 2021-11-23 04:38:57 PM 
-*** Wind Speed: 1.97 (Gusts: 4.14) mph from direction: WNW (259/360) 
-*** Atmospheric pressure: 1000 hPa (hectopascals) 
- &nbsp;
-*** Script executing at path: '/Users/wilsonmar/Projects' 
-*** Downloading to directory: '/Users/wilsonmar/Projects/Images' 
-*** Directory "Images" created Thursday 25 Nov 2021 09:23:21 PM MST -0700
-Images/
-    google.ico
-*** Downloading to file path: '/Users/wilsonmar/Projects/Images/google.ico' 
-*** No downloading as file can be accessed.
-*** Download of 5,430-byte google.ico 
-*** After this run: /Users/wilsonmar/Projects/Images 
-Images/
-    google.ico
-&nbsp;
-*** Ended Saturday 27 Nov 2022 08:34:26 PM   (epoch=1638070466.103145) 
-*** api-sample.py done in 0.77 seconds. 
-</pre>
-
-## CLI Output control
-
-What the program outputs to the Terminal can be precisely specified.
-
-The program precedence of override:
-   1. Prompts of the user from inside the running program (such as for Zip Code) overrides
-   2. <a href="#ParseArguments">parameter specifications</a> at run-time, which overrides
-   3. key text retrieved from OS Keyring, which overrides
-   4. what is retrieved from Azure, AWS, GCP, Hashicorp Vault, which overrides
-   5. what is specified in <a href="#run_env">persistent environment (.env) file</a>, which overrides
-   6. what is (can safely be) hard-coded in program code, which overides
-   7. what is obtained from the operating system.
-   <br /><br />
-
+Inside the program are <strong>feature flags<strong> which the program references to determine whether each feature is executed during a particular run.
 
 <a name="Sections"></a>
 
@@ -221,6 +162,74 @@ The program precedence of override:
    
    98. <a href="#cleanup_img_files">Remove (clean-up) folder/files created   = cleanup_img_files</a>
    99. <a href="#display_run_stats">Display run time stats at end of program = display_run_stats</a>
+
+
+### Input Data specification
+
+The program precedence of override:
+   1. Prompts of the user from inside the running program (such as for Zip Code) overrides
+   2. <a href="#ParseArguments">parameter specifications</a> at run-time, which overrides
+   3. key text retrieved from OS Keyring, which overrides
+   4. what is retrieved from Azure, AWS, GCP, Hashicorp Vault, which overrides
+   5. what is specified in <a href="#run_env">persistent environment (.env) file</a>, which overrides
+   6. what is (can safely be) hard-coded in program code, which overides
+   7. what is obtained from the operating system.
+   <br /><br />
+
+
+### Output specification
+
+What the program outputs to the Terminal can be precisely specified.
+
+The default sample output:
+
+<pre>*** env_path LOCALE 'en_EN' overrides OS LOCALE ('en_US', 'UTF-8')
+&nbsp;
+*** api-sample.py v0.0.33 Created: Saturday 27 Nov 2021 01:23:18 PM   
+*** at /Users/wilsonmar/gmail_acct/python-samples/api-sample.py 
+*** on /Users/wilsonmar/miniconda3/envs/py3k/lib/python3.8/site-packages 
+*** Started Saturday 27 Nov 2021 08:33:41 PM   (epoch=1638070421.006971) 
+*** macOS version=10.16 ['Big Sur', 2020] process ID=10298
+*** Disk space free: 42.0 / 122.1 GB 
+*** Python version="3.8.12 | packaged by conda-forge | (default, Sep 29 2021, 19:44:33) 
+[Clang 11.1.0 ]
+&nbsp; 
+*** env_path=/Users/wilsonmar/python-samples.env
+&nbsp;
+*** Lotto America: 5 lucky numbers between 1 and 52 and 1 Star number between 1 and 10:
+*** 20 6 24 4 38 6 
+&nbsp; 
+*** uuid.uuid4()=3d9a8c08-c354-4712-8e7d-d8dae320a1be 
+*** x.time=509684474424495112 
+*** Path: "/Users/wilsonmar/Projects" 
+*** Directory "Images" created Thursday 25 Nov 2021 09:23:20 PM MST -0700
+&nbsp;
+*** Longitude: -97.822 Latitude: 37.751 in US America/Chicago USD (VPN).
+*** Using hard-coded default zip code "59041".
+*** Longitude: -108.9922 Latitude: 45.4941 in US Joliet 59041 
+*** Minimum temperature: 44.42°F (6.90°C), Sunrise: 2021-11-23 07:26:23 AM 
+*** Currently: 49.57°F (9.76°C), 26% humidity, overcast clouds, visibility: 10000 feet
+*** Maximum temperature: 56.61°F (13.67°C),  Sunset: 2021-11-23 04:38:57 PM 
+*** Wind Speed: 1.97 (Gusts: 4.14) mph from direction: WNW (259/360) 
+*** Atmospheric pressure: 1000 hPa (hectopascals) 
+ &nbsp;
+*** Script executing at path: '/Users/wilsonmar/Projects' 
+*** Downloading to directory: '/Users/wilsonmar/Projects/Images' 
+*** Directory "Images" created Thursday 25 Nov 2021 09:23:21 PM MST -0700
+Images/
+    google.ico
+*** Downloading to file path: '/Users/wilsonmar/Projects/Images/google.ico' 
+*** No downloading as file can be accessed.
+*** Download of 5,430-byte google.ico 
+*** After this run: /Users/wilsonmar/Projects/Images 
+Images/
+    google.ico
+&nbsp;
+*** Ended Saturday 27 Nov 2022 08:34:26 PM   (epoch=1638070466.103145) 
+*** api-sample.py done in 0.77 seconds. 
+</pre>
+
+
 
 <hr />
 
@@ -1173,9 +1182,6 @@ References:
 
    * TODO: Send SMS text via Twillo
    * https://hunter.io/api to find emails (25 free/month)
-   * TODO: Send email (anonymously?) https://mailsac.com/docs/api
-   * TODO: Email validator - https://rapidapi.com/blog/most-popular-api/#email-validator
-   * https://mailchimp.com/developer/
 
    * TODO: Domain validator - https://developers.google.com/safe-browsing/v4
    * TODO: WayBackMachine archiving https://archive.org/wayback/available?url=google.com
@@ -1241,7 +1247,56 @@ is good for one hour.
 # https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 
 
-## Email
+## Email validation
+
+   * TODO: Send email (anonymously?) https://mailsac.com/docs/api
+   
+TODO: There are <a target="_blank" href="https://rapidapi.com/collection/email-validation-verification-api">several <strong>email validator</strong> API services available</a>. They all check for fake DNS as well as use regex functions to check email addresses for the right length and accepted characters. For example it will mark as valid an email like ‘john@gmail.com’ but it will recognize as a fake not existing domain.
+
+* https://www.zerobounce.net/email-validation-pricing is free up to 100 emails per month.
+
+* https://mailboxlayer.com/product offers 100 API Requests/month
+
+* Hunter.io offers a free monthly plan of 50 email verifications and domain searches. 
+
+* Twilio’s SendGrid service has no free level.
+
+* https://trumail.io/ has no free level:
+
+   <pre>{
+    "address": "wilsonmar@somewhere.com",
+    "username": "wilsonmar",
+    "domain": "gmail.com",
+    "md5Hash": "17e996e1bbf467e0b15196ffdc185317",
+    "suggestion": "",
+    "validFormat": true,
+    "deliverable": true,
+    "fullInbox": false,
+    "hostExists": true,
+    "catchAll": false,
+    "gravatar": false,
+    "role": false,
+    "disposable": false,
+    "free": true
+}
+   </pre>
+
+* https://documentation.mailgun.com/en/latest/api-email-validation.html#email-validation
+returns HTTP 429 error if too many requests. An example of a response:
+
+   <pre>{
+    "address": "nonexistentemail@realdomain.com",
+    "is_disposable_address": false,
+    "is_role_address": false,
+    "reason": [mailbox_does_not_exist],
+    "result": "undeliverable",
+    "risk": "high"
+}
+   </pre>
+
+   * https://rapidapi.com/auth/sign-up?referral=/pozzad/api/email-validator-1
+
+   * https://mailchimp.com/developer/
 
 temp-email.io
 
