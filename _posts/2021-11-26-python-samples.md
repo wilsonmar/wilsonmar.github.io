@@ -506,8 +506,7 @@ Instead of SQL, consider use of a Redis/Kafka key/value server/service
 
 Hashing is a one-way operation. Hashing works by mapping a value (like a password) to a new, scrambled value. Ideally, there should not be a way of mapping the hashed value / password back to the original value / password.
 
-By contrast, encryption and decryption are 2-way operations.
-Any value encrypted can be decrypted.
+For that reason, hashing (with a strong salt) is considered more secure than encryption and decryption are 2-way operations. Someone with an encrypted value can possibly decrypt its clear-text value (eventually).
 
 https://www.python.org/dev/peps/pep-0506/
 
@@ -517,7 +516,7 @@ discusses passlib, which is an external package requiring
    <ul><pre>pip install -U passlib</pre></ul>
 
    <ul><pre>from passlib.context import CryptContext
-   </ul>
+   </pre></ul>
 
 Select one of several CryptContext objects obtained by an additional package:
    * argon2 (with argon2_cffi package)
@@ -552,7 +551,6 @@ https://github.com/python/cpython/blob/3.6/Lib/random.py
 https://martinheinz.dev/blog/59
 The xkcdpass library generates strong passphrase made of words
 from a word/dictionary file on your system such as /usr/dict/words
-
 
 
 <a name="gen_salt"></a>
@@ -624,6 +622,34 @@ map(ord, os.urandom(10))
 
 References:
    * https://tonyarcieri.com/4-fatal-flaws-in-deterministic-password-managers
+
+
+<a name="Encryption"></a>
+
+### Encryption and decryption
+
+See https://www.geeksforgeeks.org/encrypt-and-decrypt-files-using-python/
+
+1. Import required module:
+
+   <pre>import cryptography
+   from cryptography.fernet import Fernet
+   </pre>
+
+1. Enable generation of a key to encrpyt our password:
+   
+   <pre>key = Fernet.generate_key()</pre>
+
+1. Perform encryption (Hashing is recommended because it is generally more secure): 
+
+   <pre>enc = f.encrypt(b"test_password")</pre>
+
+   Note that the password needs to be passed in bytes.
+
+1. Decrpyt the encrypted password using the decrypt method.
+
+   <pre>f.decrypt(enc)</pre>
+
 
 
 <a name="gen_fibonacci"></a>
@@ -1255,7 +1281,10 @@ TODO: There are <a target="_blank" href="https://rapidapi.com/collection/email-v
 
 * https://www.zerobounce.net/email-validation-pricing is free up to 100 emails per month.
 
-* https://mailboxlayer.com/product offers 100 API Requests/month
+* https://mailboxlayer.com/product offers 30 API Requests/minute free:
+
+   <pre>https://apilayer.net/api/check?access_key = YOUR_ACCESS_KEY & email = support@apilayer.com
+   </pre>
 
 * Hunter.io offers a free monthly plan of 50 email verifications and domain searches. 
 
