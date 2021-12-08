@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python Samples"
-excerpt: "Commentary on a practical example of how to use Python in a production setting."
+excerpt: "Commentary on a practical example of how to code Python securely in a production setting."
 tags: [python, coding]
 date: "2021-12-07"
 file: "python-samples"
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is implementation of a suggestion I had in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>.
+This is implementation of a suggestion I had in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>:
 
 > Most sample code lacks security, editing, internationalization, etc. So with some friends I created coding that has various features all working together in one program file, from this GitHub repository:
 
@@ -41,28 +41,6 @@ Other Python project templates:
    * https://github.com/MartinHeinz/python-project-blueprint
    * https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
 
-<hr />
-
-## Top of Coding File 
-
-<pre>#!/usr/bin/env python</pre>
-
-Many examples on GitHub begin with:
-
-<pre>import unittest</pre>
-
-and contain something like:
-
-<pre>class TestMakingChange(unittest.TestCase):
-
-    def setUp(self):
-        self.american_coins = [25, 10, 5, 1]
-        self.random_coins = [10, 6, 1]
-
-        self.testcases = [(self.american_coins, 1, 1), (self.american_coins, 6, 2), (self.american_coins, 47, 5), (
-            self.random_coins, 1, 1), (self.random_coins, 8, 3), (self.random_coins, 11, 2), (self.random_coins, 12, 2)]
-</pre>
- 
 
 <hr /> 
 
@@ -97,6 +75,19 @@ C. Alternately, to work with the whole repo on your laptop,
    PyCharm, 
 
 1. Within your editor, in the left menu, click on <strong>api-sample.py</strong> to open it for edit.
+
+
+
+
+## Bandit
+
+   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
+   * https://bandit.readthedocs.io/en/latest/plugins/index.html
+   <br /><br />
+
+
+
+<hr />
 
 <a name="Execution"></a>
 
@@ -236,12 +227,30 @@ Images/
 
 <a name="TheCoding"></a>
 
-## The coding in api-sample.py
+<a name="PythonFiles"></a>
+
+## Top of coding file in api-sample.py
 
 1. QUESTION: Why is the top line needed?
 
    <pre>#!/usr/bin/env python</pre>
 
+1. Many examples on GitHub begin with:
+
+   <pre>import unittest</pre>
+
+   and contain something like:
+
+   <pre>class TestMakingChange(unittest.TestCase):
+&nbsp;
+    def setUp(self):
+        self.american_coins = [25, 10, 5, 1]
+        self.random_coins = [10, 6, 1]
+&nbsp;
+        self.testcases = [(self.american_coins, 1, 1), (self.american_coins, 6, 2), (self.american_coins, 47, 5), (
+            self.random_coins, 1, 1), (self.random_coins, 8, 3), (self.random_coins, 11, 2), (self.random_coins, 12, 2)]
+   </pre>
+ 
 
 ## Block comments
 
@@ -348,6 +357,17 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
 
 ## 4. Define utilities for printing (in color), logging, etc.
 
+### Virtualenv
+
+
+
+<pre>created virtual environment CPython3.9.8.final.0-64 in 5940ms
+  creator CPython3Posix(dest=/Users/wilson_mar/gmail_acct/python-samples/venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/wilson_mar/Library/Application Support/virtualenv)
+    added seed packages: pip==21.3.1, setuptools==58.5.3, wheel==0.37.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+</pre>
+
 <a name="PrintColors"></a>
 
 ### Printing in Color
@@ -392,6 +412,13 @@ So rather than coding colors in every print statement, such as this:
 
    <ul><tt>from termcolor import colored</tt></ul>
 
+
+<a name="Logging"></a>
+
+## Logging
+
+PROTIP: Per <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc5848">RFC 5848</a>,
+append log entries with the identity of intermediary handlers along the log custody chain.
 
 
 <a name="run_env"></a>
@@ -548,7 +575,7 @@ Creating a CryptoContext requires specifying the number of “rounds” -- the n
 
 https://github.com/python/cpython/blob/3.6/Lib/random.py
 
-https://martinheinz.dev/blog/59
+<a target="_blank" href="https://martinheinz.dev/blog/59">https://martinheinz.dev/blog/59</a> - 
 The xkcdpass library generates strong passphrase made of words
 from a word/dictionary file on your system such as /usr/dict/words
 
@@ -1281,7 +1308,7 @@ TODO: There are <a target="_blank" href="https://rapidapi.com/collection/email-v
 
 * https://www.zerobounce.net/email-validation-pricing is free up to 100 emails per month.
 
-* https://mailboxlayer.com/product offers 30 API Requests/minute free:
+* https://mailboxlayer.com/product offers 30 API Requests/minute free. CAUTION: the API ACCESS KEY is part of the URL, which is unsafe:
 
    <pre>https://apilayer.net/api/check?access_key = YOUR_ACCESS_KEY & email = support@apilayer.com
    </pre>
