@@ -495,13 +495,55 @@ Instead of SQL, consider use of a Redis/Kafka key/value server/service
 
 ##  9. Generate various calculations for hashing, encryption, etc.
 
+Hashing is a one-way operation. Hashing works by mapping a value (like a password) to a new, scrambled value. Ideally, there should not be a way of mapping the hashed value / password back to the original value / password.
+
+By contrast, encryption and decryption are 2-way operations.
+Any value encrypted can be decrypted.
+
 https://www.python.org/dev/peps/pep-0506/
+
+http://theautomatic.net/2020/04/28/how-to-hide-a-password-in-a-python-script/
+discusses passlib, which is an external package requiring
+
+   <ul><pre>pip install -U passlib</pre></ul>
+
+   <ul><pre>from passlib.context import CryptContext
+   </ul>
+
+Select one of several CryptContext objects obtained by an additional package:
+   * argon2 (with argon2_cffi package)
+   * bcrypt
+   * pbkdf2_sha256
+   * pbkdf2_sha512
+   * sha256_crypt
+   * sha512_crypt
+   <br /><br />
+
+The scheme used is specified in code such as:
+
+   <ul><pre>password_in = "test_password"
+...   
+# Create CryptContext object:
+context = CryptContext(
+        schemes=["pbkdf2_sha256"],
+        default="pbkdf2_sha256",
+        pbkdf2_sha256__default_rounds=50000
+) 
+# hash password:
+hashed_password = context.hash(password_in)
+...
+# Verify hashed password:
+context.verify(password_in, hashed_password)
+   </pre></ul>
+
+Creating a CryptoContext requires specifying the number of “rounds” -- the number of times that a function (algorithm) runs to map a password to its hashed version. Each scheme involves several collections operations. The more rounds the more scrambling and thus more secure from brute force. More rounds also take longer to complete. Also, bcrypt and argon2 are slower to produce hashed values, and therefore, usually considered more secure.
 
 https://github.com/python/cpython/blob/3.6/Lib/random.py
 
 https://martinheinz.dev/blog/59
 The xkcdpass library generates strong passphrase made of words
 from a word/dictionary file on your system such as /usr/dict/words
+
 
 
 <a name="gen_salt"></a>
@@ -525,7 +567,6 @@ There is the passlib library.
    On average each n byte results in approximately 1.3 characters. If nbytes is None or not supplied, a reasonable default is used.
 
 
-
 Python 3.6 introduced a secrets module, which "provides access to the most secure source of randomness that your operating system provides." 
 
 https://docs.python.org/3.6/library/secrets.html
@@ -544,8 +585,6 @@ secrets.token_hex([nbytes=None])
 
     >>> token_hex(16)  
     'f9bf78b9a18ce6d46a0cd2b0b86df9da'
-
-
 
 
 
@@ -602,12 +641,12 @@ There are actually practical uses for Fibonacci sequences in financial technical
         return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)   # recursive because function calls itself.
 </pre>
 
-The "Dynamic programming" approach is to start out with a cache of pre-calculated solutions from previous runs, such as:
+The "Dynamic programming" approach is to start out with a cache of pre-calculated solutions from previous runs, such as the 15th number being 610:
 
 <pre>fibonacci_memoized_cache = {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8, 6: 13, 7: 21, 8: 34, 9: 55, 10: 89, 11: 144, 12: 233, 13: 377, 14: 610}
 </pre>
 
-The increase in return values <strong>grow exponentially</strong>.
+The increase in Fibonucci return values <strong>grow exponentially</strong>.
 
 <pre>def fibonacci_memoized(n):
       """Calculate using saved lookup - for O(1) time complexity"""
@@ -636,9 +675,16 @@ Based on bottom_up_fib(n) in https://github.com/samgh/DynamicProgrammingEbook/bl
 
 <a name="AzureCacheforRedis"></a>
 
-### Azure Cache for Redis
+### External caching in Azure Cache for Redis
 
 In production systems that does this kind of workload, consider the use of a Redis/Kafka in-memory cache.
+
+In the memoized example, the program first checks if the value is already in the local cache.
+If not, it gets the whole cache set from Redis Cache.
+
+If it's not in the Redis Cache, calculate the new Fibonacii value and update the local cache
+and also adds an entry to the Redis Cache.
+Add the cache set to long-term storage (SQL)?
 
 "Caching typically works well with data that is immutable or that changes infrequently. Examples include reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct."
 -- See https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching
@@ -660,12 +706,10 @@ https://azure.microsoft.com/en-us/services/cache/ is the marketing home page
 
 The DNS name ends with <tt>...westus2.redisenterprise.cache.azure.net</tt>
 
-
-
-* https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-python-get-started
-* https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/
-* https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview
-
+References:
+   * https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-python-get-started
+   * https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/
+   * https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview
 
 
 <hr />
@@ -810,7 +854,7 @@ PROTIP: Users don't have to provide information which can be looked up based in 
     # NOTE: Several place names can be associated with a Zip Code.
     # TODO: Loop through a list of zip codes.
     # TODO: Repeat every x minutes for updates
-    # TODO: Save results (in CSV or document DB) for time series analysis
+    # TODO: Save results (in CSV or SQLite DB) for time series analysis
 
     # Alternately:
     # city_name="New York"
@@ -894,6 +938,8 @@ https://docs.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=
 
 Azure Active Directory identity library
 
+https://github.com/rjmax/ArmExamples/tree/master/keyvaultexamples from 2015.
+
 from azure.identity import DefaultAzureCredential  
    * https://pypi.org/project/azure-identity/
    <br /><br />
@@ -925,6 +971,32 @@ from azure.keyvault.secrets import SecretClient:
   --secret-permissions set delete get list
    </pre>
 
+1. The user who deploys the template must have the Microsoft.KeyVault/vaults/deploy/action permission for the scope of the resource group and key vault, Replace "00000000-0000-0000-0000-000000000000" with the subscription ID:
+
+   <pre>{
+  "Name": "Key Vault resource manager template deployment operator",
+  "IsCustom": true,
+  "Description": "Lets you deploy a resource manager template with the access to the secrets in the Key Vault.",
+  "Actions": [
+    "Microsoft.KeyVault/vaults/deploy/action"
+  ],
+  "NotActions": [],
+  "DataActions": [],
+  "NotDataActions": [],
+  "AssignableScopes": [
+    "/subscriptions/00000000-0000-0000-0000-000000000000"
+  ]
+}
+   </pre>
+
+1. Assign the custom role above to the user on the resource group level:
+
+   <pre>az role definition create --role-definition "<path-to-role-file>"
+az role assignment create \
+  --role "Key Vault resource manager template deployment operator" \
+  --assignee <user-principal-name> \
+  --resource-group ExampleGroup
+   </pre>
 
 
 References:
@@ -965,7 +1037,9 @@ References:
    * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
    * https://towardsdatascience.com/python-and-aws-ssm-parameter-store-7f0e211bb91e
    AWS Systems Manager’s Parameter Store
-
+   * https://aws.amazon.com/blogs/security/how-to-securely-provide-database-credentials-to-lambda-functions-by-using-aws-secrets-manager/
+   * https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
+   
 
 <a name="use_gcp"></a>
 
@@ -1167,7 +1241,12 @@ is good for one hour.
 # https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 
 
-### Text Readability Score
+## Email
+
+temp-email.io
+
+
+### TODO: Text Readability Score
 
 https://github.com/brbcoding/Readability
 
