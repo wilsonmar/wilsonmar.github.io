@@ -198,88 +198,126 @@ Microsoft doesn't use "DevSecOps" because it includes 3rd-party (from Marketplac
 
 ## AZ-400 Certification Class Labs
 
-PROTIP: I think the most useful learning experience is <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone get hands-on on the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/az400labs/">aka.ms/az400labs</a>
+PROTIP: I think the most useful learning experience is <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone get hands-on on the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/unaihuete/">Unai Huete Beloki</a> and <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. 
+
+My notes on the <a target="_blank" ref="https://aka.ms/az400labs/">class Modules and labs at aka.ms/az400labs</a>
 
 Module 1. Planning for DevOps
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
-   AZ400_M00_Validate_lab_environment.md</a> 
+Lab : Agile Planning and Portfolio Management with Azure Boards</a> 
 
-   PROTIP: Instead of https://aex.devops.azure.com, use https://devops.azure.com.
+   PROTIP: Instead of https://aex.devops.azure.com, use <a target="_blank" href="https://devops.azure.com">https://devops.azure.com</a>.
+
+   * Transformation Planning
+   * Project Selection
+   * Team Structures
+   * Migrating to Azure DevOps
+
 
 Module 2. Getting Started with Source Control [Azure Repos]
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md">
-   AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md</a>
+Lab : Version Controlling with Git in Azure Repos</a>
+
+   * What is Source Control
+   * Benefits of Source Control
+   * Types of Source Control Systems
+   * Introduction to Azure Repos
+   * Introduction to GitHub
+   * Migrating from Team Foundation Version Control (TFVC) to Git in Azure Repos
+
 
 Module 3. Managing Technical Debt
    
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md">
-   AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md</a>
+Lab : Sharing Team Knowledge using Azure Project Wikis</a>
+
+   * Identifying Technical Debt
+   * Knowledge Sharing within Teams
+   * Modernizing Development Environments with Codespaces
+
 
 Module 4. Working with Git for Enterprise DevOps
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md">
-   AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md</a>
+<strike>AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md</strike></a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md">
-   AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md</a>
+Lab : Version Controlling with Git in Azure Repos</a>
+
+   * How to Structure Your Git Repo
+   * Git Branching Workflows
+   * Collaborating with Pull Requests in Azure Repos
+   * Why Care About Git Hooks
+   * Fostering Inner Source
+   * Managing Git Repositories
+
 
 Module 5. Configuring Azure Pipelines
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md">
-   AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md</a>
+Lab : Configuring Agent Pools and Understanding Pipeline Styles</a>
+
 
 Module 6. Implementing Continuous Integration using Azure Pipelines
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md">
-   AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md</a>
+Lab : Enabling Continuous Integration with Azure Pipelines</a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
-   AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md</a>
+Lab : Integrating External Source Control with Azure Pipelines</a>
+
 
 Module 7. Managing Application Configuration and Secrets
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
    AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md</a>
 
+
 Module 8. Implementing Continuous Integration with GitHub Actions
 
 * Lab : GitHub Actions Continuous Integration
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md">
-   AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md</a>
+Lab : GitHub Actions Continuous Integration</a>
+
 
 Module 9. Designing and Implementing a Dependency Management Strategy
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M09_Package_Management_with_Azure_Artifacts.md">
-   AZ400_M09_Package_Management_with_Azure_Artifacts.md</a>
+Lab : Package Management with Azure Artifacts</a>
+
 
 Module 10. Designing a Release Strategy
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Controlling_Deployments_using_Release_Gates.md">
-   AZ400_M10_Controlling_Deployments_using_Release_Gates.md</a>
+Lab : Controlling Deployments using Release Gates</a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Creating_a_Release_Dashboard.md">
-   AZ400_M10_Creating_a_Release_Dashboard.md</a>
+Lab : Creating a Release Dashboard</a>
+
 
 Module 11. Implementing Continuous Deployment using Azure Pipelines
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md">
-   AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md</a>
+Lab : Configuring Pipelines as Code with YAML</a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Setting_Up_and_Running_Functional_Tests.md">
-   AZ400_M11_Setting_Up_and_Running_Functional_Tests.md</a>
+Lab : Setting up and Running Functional Tests</a>
+
 
 Module 12. Implementing an Appropriate Deployment Pattern
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md">
-   AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md</a>
+Lab : Feature Flag Management with LaunchDarkly and Azure DevOps</a>
+
 
 Module 13. Managing Infrastructure and Configuration using Azure Tools
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md">
-   AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md</a>
+Lab : Azure Deployments using Resource Manager Templates</a>
+
 
 Module 14. Third Party Infrastructure as Code Tools Available with Azure
 
@@ -292,36 +330,72 @@ Module 14. Third Party Infrastructure as Code Tools Available with Azure
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
    AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md</a>
 
+
 Module 15. Managing Containers using Docker
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md">
    AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md</a>
 
+   * Lab : Modernizing Existing ASP.NET Apps with Azure
+
+
 Module 16. Creating and Managing Kubernetes Service Infrastructure
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md">
-   AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md</a>
+   Lab : Deploying a Multi-Container Application to Azure Kubernetes Service</a>
+
+   * Azure Kubernetes Service
+   * Kubernetes Tooling
+   * Integrating AKS with Pipelines
+
 
 Module 17. Implementing Feedback for Development Teams
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md">
-   AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md</a>
+   Lab : Monitoring Application Performance with Application Insights</a>
+
+   * Implement Tools to Track System Usage, Feature Usage, and Flow
+   * Implement Routing for Mobile Application Crash Report Data
+   * Develop Monitoring and Status Dashboards
+   * Integrate and Configure Ticketing Systems
+
 
 Module 18. Implementing System Feedback Mechanisms
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md">
    AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md</a>
 
+   * Lab : Integration between Azure DevOps and Teams
+   
+   * Site Reliability Engineering
+   * Design Practices to Measure End-User Satisfaction
+   * Design Processes to Capture and Analyze User Feedback
+   * Design Processes to Automate Application Analytics
+   * Managing Alerts
+   * Blameless Retrospectives and a Just Culture
+
+
 Module 19. Implementing Security in DevOps Projects
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md">
    AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md</a>
+
+   * Lab : Implement Security and Compliance in an Azure DevOps Pipeline
+
+   * Security in the Pipeline
+   * Azure Security Center
+
 
 Module 20. Validating Code Bases for Compliance
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md">
    AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md</a>
 
+   * Lab : Managing Technical Debt with SonarQube and Azure DevOps
+
+   * Open-Source Software
+   * Managing Security and Compliance Policies
+   * Integrating License and Vulnerability Scans
 
 
 <hr />
