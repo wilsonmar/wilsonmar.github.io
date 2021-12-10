@@ -16,14 +16,16 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is implementation of a suggestion I had in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>:
+This is implementation of suggestions in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>:
 
-> Most sample code lacks security, editing, internationalization, etc. So with some friends I created coding that has various features all working together in one program file, from this GitHub repository:
+> It's no longer impressive to have open-source libraries under your name. Concern about malicious libraries and their unsecure transitive dependencies has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
+
+Most sample code lacks security, editing, internationalization, etc. So, along with some friends, we created this repo containing coding that has various features all (safely) working together in one program file:
 
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>
 
-This page contains commentary which references code in that repos, which contain these files:
+This page contains "deep-dive" commentary which references code in that repos, which contain these files:
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py"><strong>api-sample.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
@@ -31,14 +33,15 @@ This page contains commentary which references code in that repos, which contain
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.env"><strong>api-sample.env</strong></a> which stores environment variables used by the Python program.
 
-   * .gitignore
+   * <strong>.gitignore</strong> contains 
 
    * <a target="_blank" href="https://wilsonmar.github.com/github-actions">workflow files for use within GitHub Actions</a>
 
 
 Other Python project templates:
 
-   * https://github.com/MartinHeinz/python-project-blueprint
+   * https://github.com/MartinHeinz/python-project-blueprint by Martin Heinz in Russia
+
    * https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
 
 
@@ -77,9 +80,12 @@ C. Alternately, to work with the whole repo on your laptop,
 1. Within your editor, in the left menu, click on <strong>api-sample.py</strong> to open it for edit.
 
 
+### Conda environment
+
+<pre>conda info --envs</pre>
 
 
-## Bandit
+### Bandit
 
    * https://soshace.com/how-to-secure-python-web-app-using-bandit/
    * https://bandit.readthedocs.io/en/latest/plugins/index.html
@@ -221,7 +227,6 @@ Images/
 </pre>
 
 
-
 <hr />
 
 
@@ -280,6 +285,9 @@ SECURITY CONSIDERATION: Generally, minimize the number of external dependencies 
 
 ## 2. Define starting time and default global values
 
+   * https://pythonguides.com/python-epoch-to-datetime/ provides examples of how to convert from one date format to any other.
+   <br /><br />
+
 This would be the first command:
 
    <ul><tt>start_epoch_time = time.time()</tt></ul>
@@ -313,6 +321,7 @@ Since api-sample.py was written to be used as the starting point for building ot
 Included in the code are conversions of dates, floats, and formatting floats.
 
 https://learnpython.com/blog/9-best-python-online-resources-start-learning/
+
 
 ### Show or not
 
@@ -368,6 +377,7 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
 </pre>
 
+
 <a name="PrintColors"></a>
 
 ### Printing in Color
@@ -411,6 +421,7 @@ So rather than coding colors in every print statement, such as this:
    <ul><tt>from colorama import Fore, Back, Style</tt></ul>
 
    <ul><tt>from termcolor import colored</tt></ul>
+
 
 
 <a name="Logging"></a>
@@ -531,11 +542,15 @@ Instead of SQL, consider use of a Redis/Kafka key/value server/service
 
 ##  9. Generate various calculations for hashing, encryption, etc.
 
-Hashing is a one-way operation. Hashing works by mapping a value (like a password) to a new, scrambled value. Ideally, there should not be a way of mapping the hashed value / password back to the original value / password.
+Hashing is a one-way operation. Hashing works by mapping a value (such as a password) with a salt to a new, scrambled value. Ideally, there should not be a way of mapping the hashed value / password back to the original value / password.
 
-For that reason, hashing (with a strong salt) is considered more secure than encryption and decryption are 2-way operations. Someone with an encrypted value can possibly decrypt its clear-text value (eventually).
+By contrast, an encrypted value can possibly be (eventually) decrypted to its clear-text value.
+
+So when storing passwords in databases, hashing (with a strong salt) is considered more secure than encryption and decryption (2-way operations). When a user provides a password for authentication, a hash of it is created the same way, then compared with the hash stored in the database.
 
 https://www.python.org/dev/peps/pep-0506/
+
+### Passlib
 
 http://theautomatic.net/2020/04/28/how-to-hide-a-password-in-a-python-script/
 discusses passlib, which is an external package requiring
@@ -1373,15 +1388,24 @@ https://github.com/brbcoding/Readability
 
 https://www.byte-by-byte.com/dpbook/
 
+## Stand-alone execution
+
+PROTIP: Test the program running as an stand-alone executable after bundling everything into a single .exe using the py2exe.
+
+BTW Delphi has always been the best product for producing stand-alone .EXEs for Windows.
+Lazarus IDE using FreePascal
+
+## User input PyQt
+
+
 
 ## References
 
-Decrypting and encrypting in Python doesn't work because strings and Integers are <strong>interned</strong> and persistent.
+Decrypting and encrypting strings in Python doesn't work because strings and Integers are <strong>interned</strong> and thus persistent.
 
-Use mutable bytearray() data structures elements that can be dynamically replaced.
+PROTIP: Use mutable bytearray() data structures elements that can be dynamically replaced.
 
-To be safe, if you have to dynamically resize a data structure, create a new one, copy data, and then write over the old one.
-Source: http://www.ibm.com/developerworks/library/s-data.html
+To be safe, to dynamically resize a data structure, create a new one, copy data, and then write over the old one. Source: http://www.ibm.com/developerworks/library/s-data.html
 
 <pre>def paranoid_add_character_to_list(ch, l):
   """Copy l, adding a new character, ch.  Erase l.  Return the result."""

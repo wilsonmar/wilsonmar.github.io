@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Azure DevOps"
-excerpt: "Pass Microsoft's AZ-400 on DevSecOps for automated CI/CD pipelines in the Azure cloud and be a SRE"
+excerpt: "Pass Microsoft's comprehensive AZ-400 on DevOps for automated CI/CD pipelines in the Azure cloud as well as GitHub Actions"
 tags: [devops, devsecops]
-date: "2021-06-16"
+date: "2021-12-09"
 file: "azure-devops"
 image:
 # azure-devops-products-1900x400-21605.jpg
@@ -33,32 +33,295 @@ export AZDEVOPS_GITHUB_PAT="12928342342982342347abcdf2324234"
 export AZDEVOPS_USER_EMAIL="johndoe@gmail.com"
    </strong></pre>
 
-The combination of {organization} / {project} is called a "route".
+DEFINITION: The combination of {organization} / {project} is called a "<strong>route</strong>".
 
 Documentation below references the settings above.
+
+<a name="ProductComponents"></a>
+
+## Azure DevOps Product components
 
 If you don't need the history nor to <a href="#CreateAccount">create an Azure account</a>, begin with <a href="#QuickStart">my QuickStart tour with commentary (below)</a>.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/123786211-a9c6bc80-d896-11eb-9f00-de224687bc32.png">
 <img width="536" alt="az-devops-services-1072x688" src="https://user-images.githubusercontent.com/300046/123786211-a9c6bc80-d896-11eb-9f00-de224687bc32.png"></a>
 
+Each widget on the Dashboard can be <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/devops/dashboard/?view=azure-devops-rest-5.0">added or deleted</a> using an API.
+
+<a target="_blank" href="https://status.dev.azure.com/_history">https://status.dev.azure.com/_history lists events</a> and <a target="_blank" href="https://status.dev.azure.com/">status</a> in each geographical area (region) by product:
+
+   1). <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
+
+   2). <a href="#AzureRepos"><strong>Azure Repos</strong></a> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
+
+   3). <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
+
+   4). <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage manual and exploratory testing
+
+   5). <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
+
+<img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> adds to the above this product offering:
+
+   6). <a href="#AzureDevTestLabs"><strong>Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
+
+QUESTION: Do "Other services" include extensions installed from <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">https://marketplace.visualstudio.com/items</a>, such as <a href="#Search">Code Search</a>, <a href="#DevOpsAnalytics">Analytics</a>, etc.
+
+Each product above has its own pricing.
+
+The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Features Timeline (product roadmap)</a> has additional "Areas":
+
+   * Administration
+   * Notifications
+
+Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
+
+NOTE: Azure DevOps works with more languages than just C# (Java, etc.).
+
 <hr />
+
+<a name="CourseProducts"></a>
+
+## Related Products and Services
+
+Azure DevOps makes use of the following products (services and client executables):
+
+NOTE: Microsoft exited the software testing market in 2019 by retiring their products.
+
+* Azure <strong>IAM</strong> access manager
+
+* <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
+   replaces <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">Visual Studio at https://app.vssps.visualstudio.com/</a>
+
+
+   <a name="ARM"></a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
+   NOTE: <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
+
+* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
+
+   <a name="AKS"></a>
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
+   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
+
+   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
+   Introduction to Azure Container Service (AKS)
+
+   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
+   Deploy an Azure Container Service (AKS) cluster
+
+   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
+   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
+
+
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
+
+   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
+
+   <a name="DevOpsAnalytics"></a>
+
+* <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
+
+
+   <a name="AppInsights"></a>
+
+* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
+
+* Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
+
+Summary: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
+DevOps tools overview for Azure DevOps</a>
+
+<hr />
+
+<a name="Rebranding"></a>
 
 ## Rebranding History
 
-<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">"Azure DevOps" is a big deal for Microsoft, announced Sep 16, 2018</a>.
+<a target="_blank" href="https://www.forbes.com/sites/janakirammsv/2018/09/16/azure-devops-why-its-a-big-deal-for-microsoft-and-the-community/#353e0a8c6780" title="Why It's A Big Deal For Microsoft And The Community">"Azure DevOps" was a big deal for Microsoft when it was first announced Sep 16, 2018</a>.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=3WWpx4W-oK8" title="Microsoft's DevOps Vision">VIDEO</a>:
 Buck Hodges (<a target="_blank" href="https://twitter.com/tfsbuck">@tfsbuck</a>), Director of Engineering for Microsoft VSTS, <a target="_blank" href="https://www.youtube.com/watch?v=aIiLhK0NIlY">Jun 27, 2018 VIDEO: Global DevOps Bootcamp 2018 Keynote</a> how Microsoft evolved from on-premise TFS into VSTS as a service shipping in 3 week sprints, from the same code repository. Add  SPS (Shared Platform Service) for account, identity, profile, licensing.
 
-Forrester's 2018 Continuous Delivery And Release Automation" market assesement ranked Microsoft among leaders (behind Electric Cloud, IBM, Xebia, and CA):
+
+<hr />
+
+<a name="GUI"></a>
+<a name="VisualStudio.com"></a>
+
+### dev.azure.com was VisualStudio.com
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-devops-launch#administration">Here's some history</a>:
+
+   Back in Sept 2018 there was a name upgrade from Visual Studio Online (VSO) 
+   <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
+   which included capabilities in Visual Studio Team Services (VSTS), which began as a performance testing server and on-premise Team Foundation Server (TFS), now called "Visual Studio Server" on-premises.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"><img alt="visualstudio com-1185x178-20653.jpg" width="1185" src="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"></a>
+
+   <a target="_blank" href="https://visualstudio.microsoft.com/app-center/">"Visual Studio App Center"</a> is for mobile iPhone/Android app development and integration (using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a>) so not in scope for this topic here. (<a target="_blank" href="https://twitter.com/vsappcenter?lang=en">@vsappcenter</a>)
+
+<hr />
+
+<a name="Competition"></a>
+
+## Competition
+
+Forrester's Continuous Delivery And Release Automation" market assesement ranked Microsoft among leaders
+<a target="_blank" href="https://reprints.forrester.com/#/assets/2/1392/RES157265/reports">in 2020</a>:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/145601881-ad216631-8e13-4a12-84b6-ca4d89391d88.gif"><img alt="azure-forrester-cicd-2020" src="https://user-images.githubusercontent.com/300046/145601881-ad216631-8e13-4a12-84b6-ca4d89391d88.gif"></a>
+
+Although Microsoft has gained "Market Presence" from rankings in 2018:
 <img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg">
 
+Microsoft's "current offerings" continue to lag behind IBM and Cloudbees/Jenkins (which has shot up to the top ranking) after acquiring Electric Cloud. 
 NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
+Broadcom bought CA. <a target="_blank" href="https://devops.com/digital-ai-the-companies-formerly-known-as-xebia-labs-collabnet-plus/">Digital.ai bought</a> Xebia.
 
 > The acquisition of GitHub in 2020 has caused confusion about how to prepare for Microsoft's future direction with Azure DevOps.
 
-Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace) security testing tools rather than in-house tools.
+Microsoft doesn't use "DevSecOps" because it includes 3rd-party (from Marketplace) security testing tools rather than in-house tools.
+
+<hr />
+
+<a name="ClassLabs"></a>
+
+## AZ-400 Certification Class Labs
+
+PROTIP: I think the most useful learning experience is <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone get hands-on on the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/az400labs/">aka.ms/az400labs</a>
+
+Module 1. Planning for DevOps
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
+   AZ400_M00_Validate_lab_environment.md</a> 
+
+   PROTIP: Instead of https://aex.devops.azure.com, use https://devops.azure.com.
+
+Module 2. Getting Started with Source Control [Azure Repos]
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md">
+   AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md</a>
+
+Module 3. Managing Technical Debt
+   
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md">
+   AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md</a>
+
+Module 4. Working with Git for Enterprise DevOps
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md">
+   AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md">
+   AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md</a>
+
+Module 5. Configuring Azure Pipelines
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md">
+   AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md</a>
+
+Module 6. Implementing Continuous Integration using Azure Pipelines
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md">
+   AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
+   AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md</a>
+
+Module 7. Managing Application Configuration and Secrets
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
+   AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md</a>
+
+Module 8. Implementing Continuous Integration with GitHub Actions
+
+* Lab : GitHub Actions Continuous Integration
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md">
+   AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md</a>
+
+Module 9. Designing and Implementing a Dependency Management Strategy
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M09_Package_Management_with_Azure_Artifacts.md">
+   AZ400_M09_Package_Management_with_Azure_Artifacts.md</a>
+
+Module 10. Designing a Release Strategy
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Controlling_Deployments_using_Release_Gates.md">
+   AZ400_M10_Controlling_Deployments_using_Release_Gates.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Creating_a_Release_Dashboard.md">
+   AZ400_M10_Creating_a_Release_Dashboard.md</a>
+
+Module 11. Implementing Continuous Deployment using Azure Pipelines
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md">
+   AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Setting_Up_and_Running_Functional_Tests.md">
+   AZ400_M11_Setting_Up_and_Running_Functional_Tests.md</a>
+
+Module 12. Implementing an Appropriate Deployment Pattern
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md">
+   AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md</a>
+
+Module 13. Managing Infrastructure and Configuration using Azure Tools
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md">
+   AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md</a>
+
+Module 14. Third Party Infrastructure as Code Tools Available with Azure
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Ansible_with_Azure.md">
+   AZ400_M14_Ansible_with_Azure.md</a>. See <a href="#Ansible">(below)</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
+   AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md</a>
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
+   AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md</a>
+
+Module 15. Managing Containers using Docker
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md">
+   AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md</a>
+
+Module 16. Creating and Managing Kubernetes Service Infrastructure
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md">
+   AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md</a>
+
+Module 17. Implementing Feedback for Development Teams
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md">
+   AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md</a>
+
+Module 18. Implementing System Feedback Mechanisms
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md">
+   AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md</a>
+
+Module 19. Implementing Security in DevOps Projects
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md">
+   AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md</a>
+
+Module 20. Validating Code Bases for Compliance
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md">
+   AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md</a>
+
 
 
 <hr />
@@ -67,7 +330,7 @@ Microsoft didn't use "DevSecOps" because it includes 3rd-party (from Marketplace
 
 ## Create Azure account
 
-There are options:
+There are the options:
 
 ### Use your benefits
 
@@ -119,25 +382,6 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 
    Create your organization with a personal Microsoft account or a work or school accountdocs.microsoft.com
 
-
-   <a name="VisualStudio.com"></a>
-
-<hr />
-
-<a name="GUI"></a>
-
-## dev.azure.com was VisualStudio.com
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/2018/sep-10-azure-devops-launch#administration">Here's some history</a>:
-
-   Back in Sept 2018 there was a name upgrade from Visual Studio Online (VSO) 
-   <a target="_blank" href="http://www.visualstudio.com/">http://www.visualstudio.com</a>
-   which included capabilities in Visual Studio Team Services (VSTS), which began as a performance testing server and on-premise Team Foundation Server (TFS), now called "Visual Studio Server" on-premises.
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"><img alt="visualstudio com-1185x178-20653.jpg" width="1185" src="https://user-images.githubusercontent.com/300046/60979290-aa539a80-a2ef-11e9-8b96-d3ababade726.jpg"></a>
-
-   <a target="_blank" href="https://visualstudio.microsoft.com/app-center/">"Visual Studio App Center"</a> is for mobile iPhone/Android app development and integration (using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a>) so not in scope for this topic here. (<a target="_blank" href="https://twitter.com/vsappcenter?lang=en">@vsappcenter</a>)
-
 <hr />
 
 <a name="CLI"></a>
@@ -147,7 +391,6 @@ Alternately, these steps are based on <a target="_blank" href="https://docs.micr
 If you prefer using ARM YAML, see: https://docs.microsoft.com/en-us/azure/devops/cli/azure-devops-cli-in-yaml?view=azure-devops
 
 PROTIP: YAML runs fail if it's not perfectly formatted (with no extra spaces, etc.).
-
 
 
 <a name="Install"></a>
@@ -290,7 +533,6 @@ Do you want to continue? (Y/n): y
    </pre>
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest">docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest</a> to Get started with Azure CLI
-
 
 
    ### Azure DevOps CLI extension
@@ -930,10 +1172,9 @@ PROTIP: Notice that all of them have Visual Studio thick client (at the lower-le
 <img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
 You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
 
-NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone.
-The course catalog said it covers 6 technologies:
+NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone. It had covered these technologies:
 
-   1. VSTS (Visual Studio Team System)
+   1. VSTS (Visual Studio Team System) - gone
    2. "Visual Studio" 2017/2019
    3. <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat, pronounced like "rocket").
    4. <a href="#AppInsights">Application Insights</a>
@@ -941,7 +1182,7 @@ The course catalog said it covers 6 technologies:
    6. Operations Management Suite (OMS)
    <br /><br />
 
-Threshold for passing:<br />
+Thresholds for passing the AZ-400 exam:<br />
 A minimum score of 70 percent on the overall exam.<br />
 A minimum score of 35 percent on each exam domain.
 
@@ -1049,234 +1290,6 @@ https://app.pluralsight.com/library/courses/microsoft-devops-solutions-implement
 
 
 https://app.pluralsight.com/library/courses/microsoft-devops-solutions-planning-deployment-environment-strategies
-
-<hr />
-
-<a name="CourseProducts"></a>
-
-## Products and Services
-
-Azure DevOps makes use of the following products (services and client executables):
-
-NOTE: Microsoft exited the software testing market in 2019 by retiring their products.
-
-* Azure <strong>IAM</strong> access manager
-
-* <a target="_blank" href="https://aex.dev.azure.com/me?mkt=en-US">AEX.dev.azure.com</a>
-   replaces <a target="_blank" href="https://app.vssps.visualstudio.com/_signedin">Visual Studio at https://app.vssps.visualstudio.com/</a>
-
-
-   <a name="ARM"></a>
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/resource-group-overview/"><strong>Azure Resource Manager (ARM)</strong></a> carries out specifications entered in the Azure Dashboard. It deploys, updates, or deletes cloud resources in a single, coordinated operation. Resources can include virtual machines, storage accounts, virtual networks, services, or any component that you are managing.
-   NOTE: <a target="_blank" href="https://www.youtube.com/watch?v=s7bQu4Y1oHU">VIDEO</a>: ARM vs. Classic Azure Service Management
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-whatis"><strong>Azure Key Vault</strong></a> provides an HSM (<a target="_blank" href="https://www.vaultproject.io/docs/vs/kms.html">vs. Hashicorp Vault</a>, which enforces automatic revocation of leases with key usage audit and key rolling). KMS is focused on securely storing encryption keys and supporting cryptographic operations (encrypt and decrypt) using those keys. It supports access controls and auditing as well.
-
-* <a target="_blank" href="https://wilsonmar.github.io/azure-cloud/#azure-service-fabric">Azure Service Fabric</a>
-
-   <a name="AKS"></a>
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/services/kubernetes-service/"><strong>Azure Container Service (AKS)</strong></a> - uses Docker to make dynamic scaling easy on Kubernetes, Docker Swarm, or Mesos DC/OS.
-   AKS handles auto upgrades, patching, and self-healing of Kubernetes clusters.
-
-   https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes
-   Introduction to Azure Container Service (AKS)
-
-   https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough
-   Deploy an Azure Container Service (AKS) cluster
-
-   https://azure.microsoft.com/en-us/resources/videos/episode-198-azure-container-service-with-ross-gardler/
-   Cloud Cover Episode 198: Azure Container Service with Ross Gardler
-
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/services/container-registry/"><strong>Azure Container Registry (ACR)</strong></a> stores images for different types of container deployments (Swarm, DC/OS and Kubernetes, etc.) as well as Azure services such as App Service, Batch, and Service Fabric. 
-
-   Unlike Docker Hub, ACR provides more control over who can see and use images, which ACR can sign cryptographically (to detect corruption) and encrypt at rest. The Premium SKU of Container Registry includes 500 GiB of storage that is geo-replicated.
-
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching">ACR Tasks</a> dynamically discovers base image dependencies when it <a target="_blank" href="https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-base-image-update#create-a-task">builds a container image</a>, so when changes are detected, automatically rebuilds application images.
-
-   <a name="DevOpsAnalytics"></a>
-
-* <strong>Log Analytics</strong> (<a target="_blank" href="https://devblogs.microsoft.com/devops/analytics-for-azure-devops-services-is-now-generally-available/">generally available</a>)
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"><img alt="azure-log-analytics-711x306-35708.jpg" width="711" src="https://user-images.githubusercontent.com/300046/56087622-20994b80-5e2c-11e9-928d-d4d3b90a92bb.jpg"></a>
-
-
-   <a name="AppInsights"></a>
-
-* <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"><img align="right" alt="azure-app-insights-icon-51x50.png" width="51" src="https://user-images.githubusercontent.com/300046/56264992-82b0b580-60a5-11e9-9757-8b59981aacb1.png"><strong>Application Insights</strong></a> - the APM service works with <strong>Azure Service Profiler</strong> for ASP.NET code. Its API and SDKs (in .NET, Java, node.js) and <a target="_blank" href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet">TelemetryClient</a> obtain metrics about requests, pages views, dependency calls, trace (log) messages, exceptions, and more. (Add <a target="_blank" href="https://stackify.com/application-insights-things-to-know/">Retrace to collect first chance exceptions</a>)
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=WJKefPAdPpg">Monitor Web Apps using Azure Application Insights</a> Nov 18, 2016
-
-* Other <a target="_blank" href="https://azure.microsoft.com/en-us/products/devops-tool-integrations/">Azure DevOps tool integrations</a>
-
-Summary: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/user-guide/devops-alm-overview?toc=/azure/devops/user-guide/toc.json&view=azure-devops">
-DevOps tools overview for Azure DevOps</a>
-
-
-### Azure DevOps Product components
-
-Each widget on the Dashboard can be <a target="_blank" href="https://docs.microsoft.com/en-us/rest/api/azure/devops/dashboard/?view=azure-devops-rest-5.0">added or deleted</a> using an API.
-
-<a target="_blank" href="https://status.dev.azure.com/_history">https://status.dev.azure.com/_history lists events</a> and <a target="_blank" href="https://status.dev.azure.com/">status</a> in each geographical area (region) by product:
-
-   1). <a href="#AzureBoards"><strong>Azure Boards</strong></a> (like Jira) to plan, track, and discuss Work Items across teams using Kanban boards (to deliver value to users faster)
-
-   2). <a href="#AzureRepos"><strong>Azure Repos</strong></a> (like GitHub and AWS Code Commit, etc.) to use Git for source version, collaborate using pull requests, and file management
-
-   3). <a href="#AzurePipelines"><strong>Azure Pipelines</strong></a> (like Jenkins, AWS CodeDeploy, etc.) for CI/CD automation 
-
-   4). <a href="#AzureDevTestPlans"><strong>Azure Test Plans</strong></a> to manage manual and exploratory testing
-
-   5). <a href="#AzureArtifacts"><strong>Azure Artifacts</strong></a> (like Artifactory, Nexxus, etc.) for binary package consumption package management 
-
-<img align="right" alt="azure-devopssuite-52x52.png" width="52" src="https://user-images.githubusercontent.com/300046/56076532-9b605900-5d8f-11e9-89a2-9b9b02e1bf1d.png"><a target="_blank" href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps Services (https://azure.com/devops)</a> adds to the above this product offering:
-
-   6). <a href="#AzureDevTestLabs"><strong>Azure DevTest Labs</strong></a> (like Sauce Labs) provides self-service creation of pre-provisioned sandbox environments from private custom images in VHD.
-
-QUESTION: Do "Other services" include extensions installed from <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">https://marketplace.visualstudio.com/items</a>, such as <a href="#Search">Code Search</a>, <a href="#DevOpsAnalytics">Analytics</a>, etc.
-
-Each product above has its own pricing.
-
-The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Features Timeline (product roadmap)</a> has additional "Areas":
-
-   * Administration
-   * Notifications
-
-Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
-
-NOTE: Azure DevOps works with more languages than just C# (Java, etc.).
-
-
-
-
-## AZ-400 Certification Class Labs
-
-PROTIP: I attended <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone to walk through their <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. The class Modules and labs <a target="_blank" ref="https://aka.ms/az400labs/">aka.ms/az400labs</a>
-
-Module 1. Planning for DevOps
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
-   AZ400_M00_Validate_lab_environment.md</a> 
-
-   PROTIP: Instead of https://aex.devops.azure.com, use https://devops.azure.com.
-
-Module 2. Getting Started with Source Control [Azure Repos]
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md">
-   AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md</a>
-
-Module 3. Managing Technical Debt
-   
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md">
-   AZ400_M03_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md</a>
-
-Module 4. Working with Git for Enterprise DevOps
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md">
-   AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md">
-   AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md</a>
-
-Module 5. Configuring Azure Pipelines
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md">
-   AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md</a>
-
-Module 6. Implementing Continuous Integration using Azure Pipelines
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md">
-   AZ400_M06_Enabling_Continuous_Integration_with_Azure_Pipelines.md</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
-   AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md</a>
-
-Module 7. Managing Application Configuration and Secrets
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
-   AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md</a>
-
-Module 8. Implementing Continuous Integration with GitHub Actions
-
-* Lab : GitHub Actions Continuous Integration
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md">
-   AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md</a>
-
-Module 9. Designing and Implementing a Dependency Management Strategy
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M09_Package_Management_with_Azure_Artifacts.md">
-   AZ400_M09_Package_Management_with_Azure_Artifacts.md</a>
-
-Module 10. Designing a Release Strategy
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Controlling_Deployments_using_Release_Gates.md">
-   AZ400_M10_Controlling_Deployments_using_Release_Gates.md</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M10_Creating_a_Release_Dashboard.md">
-   AZ400_M10_Creating_a_Release_Dashboard.md</a>
-
-Module 11. Implementing Continuous Deployment using Azure Pipelines
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md">
-   AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Setting_Up_and_Running_Functional_Tests.md">
-   AZ400_M11_Setting_Up_and_Running_Functional_Tests.md</a>
-
-Module 12. Implementing an Appropriate Deployment Pattern
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md">
-   AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md</a>
-
-Module 13. Managing Infrastructure and Configuration using Azure Tools
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md">
-   AZ400_M13_Azure_Deployments_Using_Resource_Manager_Templates.md</a>
-
-Module 14. Third Party Infrastructure as Code Tools Available with Azure
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Ansible_with_Azure.md">
-   AZ400_M14_Ansible_with_Azure.md</a>. See <a href="#Ansible">(below)</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
-   AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
-   AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md</a>
-
-Module 15. Managing Containers using Docker
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md">
-   AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md</a>
-
-Module 16. Creating and Managing Kubernetes Service Infrastructure
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md">
-   AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md</a>
-
-Module 17. Implementing Feedback for Development Teams
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md">
-   AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md</a>
-
-Module 18. Implementing System Feedback Mechanisms
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md">
-   AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md</a>
-
-Module 19. Implementing Security in DevOps Projects
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md">
-   AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md</a>
-
-Module 20. Validating Code Bases for Compliance
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md">
-   AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md</a>
-
 
 
 <hr />
