@@ -190,17 +190,58 @@ Broadcom bought CA. <a target="_blank" href="https://devops.com/digital-ai-the-c
 
 > The acquisition of GitHub in 2020 has caused confusion about how to prepare for Microsoft's future direction with Azure DevOps.
 
-Microsoft doesn't use "DevSecOps" because it includes 3rd-party (from Marketplace) security testing tools rather than in-house tools.
+Microsoft doesn't use the term "DevSecOps" for their product because it includes 3rd-party (from Marketplace) security testing tools rather than in-house tools.
 
 <hr />
 
+
+<hr />
+
+<a name="CertsOnDevOps"></a>
+
+## AZ-400 certification
+
+<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
+You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
+
+NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone. It had covered these technologies:
+
+   1. VSTS (Visual Studio Team System) - gone
+   2. "Visual Studio" 2017/2019
+   3. <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat, pronounced like "rocket").
+   4. <a href="#AppInsights">Application Insights</a>
+   5. Selenium (for functional testing)
+   6. Operations Management Suite (OMS)
+   <br /><br />
+
+Thresholds for passing the AZ-400 exam:<br />
+A minimum score of 70 percent on the overall exam.<br />
+A minimum score of 35 percent on each exam domain.
+
+
+### Microsoft's AZ-400 tutorials
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
+
+* Develop an <a href="#Instrumentation_Strategy">instrumentation strategy</a> (5-10%)
+* Develop a <a href="#SRE_Strategy">Site Reliability Engineering (SRE) strategy</a> (5-10%)
+* Develop a <a href="#Security_Plan">security and compliance plan</a> (10-15%)
+* Manage <a href="#Source_Controls">source control</a> (10-15%)
+* Facilitate <a href="#Collaboration">communication and collaboration</a> (10-15%)
+* Define and implement <a href="#CI">continuous integration</a> (20-25%)
+* Define and implement a <a href="#CD">continuous delivery and release management strategy</a> (10-15%) 
+<br /><br />
+
+
 <a name="ClassLabs"></a>
 
-## AZ-400 Certification Class Labs
+### AZ-400 Certification Class Labs
 
 PROTIP: I think the most useful learning experience is <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone get hands-on on the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/unaihuete/">Unai Huete Beloki</a> and <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. 
 
 My notes on the <a target="_blank" ref="https://aka.ms/az400labs/">class Modules and labs at aka.ms/az400labs</a>
+
+Module 0. Lab 00: Validate lab environment
 
 Module 1. Planning for DevOps
 
@@ -1235,44 +1276,6 @@ PROTIP: Notice that all of them have Visual Studio thick client (at the lower-le
    * Basic administration pages to add or edit product information
    * Includes Azure RM JSON templates and PowerShell automation scripts to easily build and provision your environment
    <br /><br />
-
-
-<hr />
-
-<a name="CertsOnDevOps"></a>
-
-## AZ-400 certification
-
-<img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="230" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg">
-You need to have passed EITHER exam AZ-104 "Administrator Associate" OR AZ-203/204 "Developer Associate" before paying $165 to pass <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">exam AZ-400 "Implementing Azure DevOps Solutions"</a> to make you a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">"Microsoft Certified: Azure DevOps Engineer Expert"</a>.
-
-NOTE: Exam AZ-400 replaces <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-70-538.aspx">exam "Implementing Microsoft Azure DevOps Solutions" 70-538</a>. Although there are still <a target="_blank" href="https://www.edx.org/school/microsoft">free online courses from Microsoft at at EDx.org</a>, the <a target="_blank" href="https://academy.microsoft.com/en-us/professional-program/tracks/devops/">9 video courses (of 8-16 hours each) Microsoft Professional Program for DevOps</a> is now gone. It had covered these technologies:
-
-   1. VSTS (Visual Studio Team System) - gone
-   2. "Visual Studio" 2017/2019
-   3. <strong>Azure Container Service (ACS)</strong> is like Docker and rkct (from Red Hat, pronounced like "rocket").
-   4. <a href="#AppInsights">Application Insights</a>
-   5. Selenium (for functional testing)
-   6. Operations Management Suite (OMS)
-   <br /><br />
-
-Thresholds for passing the AZ-400 exam:<br />
-A minimum score of 70 percent on the overall exam.<br />
-A minimum score of 35 percent on each exam domain.
-
-
-### Microsoft's AZ-400 tutorials
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-400">Microsoft's free textual tutorials and labs</a> uses the same structure as the exam:
-
-* Develop an <a href="#Instrumentation_Strategy">instrumentation strategy</a> (5-10%)
-* Develop a <a href="#SRE_Strategy">Site Reliability Engineering (SRE) strategy</a> (5-10%)
-* Develop a <a href="#Security_Plan">security and compliance plan</a> (10-15%)
-* Manage <a href="#Source_Controls">source control</a> (10-15%)
-* Facilitate <a href="#Collaboration">communication and collaboration</a> (10-15%)
-* Define and implement <a href="#CI">continuous integration</a> (20-25%)
-* Define and implement a <a href="#CD">continuous delivery and release management strategy</a> (10-15%) 
-<br /><br />
 
 
 <a name="Instrumentation_Strategy"></a>
