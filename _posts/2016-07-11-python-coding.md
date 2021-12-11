@@ -204,46 +204,39 @@ Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/Cod
 
 ## Duration calculations
 
+There are several ways to present date and time. The ISO 8601 format is: 2022-02-22T07:53:19.051615-05:00
+
 There are several ways to capture how long a particular function or the whole program took to run.
 
-   * https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
-   * https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module/47637891#47637891
-   <br /><br />
+To time the difference between calculation strategies, new in Python 3.7 is <a target="_blank" href="https://www.python.org/dev/peps/pep-0564/">PEP 564</a>
 
-To time the difference between two Fibonacci calculation strategies, I used:
+<tt><strong>time.perf_counter()</strong></tt> (abbreviation of performance counter) measures the elapsed time of short duration because it returns 82 nano-second resolution on Fedora 4.12. It is based on <strong>Wall-Clock Time</strong> which includes time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of consecutive calls is valid.
+See https://docs.python.org/3/library/time.html#time.perf_counter
 
-<tt><strong>timeit.timer()</strong></tt> which provides a nice output format of <tt>0:00:01.946339</tt>.
-See https://docs.python.org/3/library/timeit.html and 
-https://www.guru99.com/timeit-python-examples.html
+<tt><strong>time.clock</strong></tt> is no longer available since Python 3.8.
 
-<pre># from timeit import default_timer as timer
+<tt><strong>time.time()</strong></tt> has a resolution of <strong>whole seconds</strong>. And in a measurement period  between start and stop times, if the system time is disrupted (such as for daylight savings) its counting is disrupted. time.time() resolution will only become larger (worse) as years pass since every day adds 86,400,000,000,000 nanoseconds to the system clock, which increases the precision loss. It is called "non-monotonic" because falling back on daylight savings would cause it to report time going backwards:
+
+<ul><pre>start_time = time.time()
+# your code
+e = time.time() - start_time
+time.strftime("%H:%M:%S", time.gmtime(e))  # for hours:minutes:seconds
+print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
+</pre>
+</ul>
+
+
+<tt><strong>timeit.timer()</strong></tt> provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
+See https://docs.python.org/3/library/timeit.html and https://www.guru99.com/timeit-python-examples.html
+
+<ul><pre># from timeit import default_timer as timer
 # from datetime import timedelta
 start = timer()
 # do some stuff ...
 end = timer()
 print(timedelta(seconds=end-start))
-</pre>
+</pre></ul>
 
-
-<tt><strong>time.perf_counter()</strong></tt> (abbreviation of performance counter) is used to measure the elapsed time of short duration because it returns 82 nano-second resolution on Fedora 4.12. It is based on <strong>Wall-Clock Time</strong> which includes time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of consecutive calls is valid.
-See https://docs.python.org/3/library/time.html#time.perf_counter
-
-New in Python 3.7 is PEP 564 -- 
-https://www.python.org/dev/peps/pep-0564/
-
-
-<tt><strong>datetime.datetime.now()</strong></tt> provides <strong>microsecond</strong> precision:
-
-<pre>
-# import datetime
-start = datetime.datetime.now()
-# do some stuff ...
-end = datetime.datetime.now()
-elapsed = end - start
-print(elapsed)
-# or
-print(elapsed.seconds,":",elapsed.microseconds) 
-</pre>
 
 <a target="_blank" href="https://www.python.org/dev/peps/pep-0418">PEP-418</a> in Python 3.3 added three timers:
 
@@ -256,21 +249,47 @@ t = time.process_time()
 elapsed_time = time.process_time() - t
 </pre>
 
-<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days and you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward.
+<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days, when you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward.
 See https://docs.python.org/3/library/time.html#time.monotonic
 
 
-<tt><strong>time.time()</strong></tt> is not advised because its resolution is <strong>whole seconds</strong>. And its counting is disrupted if the system time gets changed during (such as for daylight savings) the measurement period between start and stop. time.time() resolution will only become larger (worse) as years pass since every day adds 86,400,000,000,000 nanoseconds to the system clock, which increases the precision loss. It is called "non-monotonic" because falling back on daylight savings would cause it to report time going backwards:
+<tt><strong>datetime.datetime.now()</strong></tt> provides <strong>microsecond</strong> precision:
 
-<pre>start_time = time.time()
-# your code
-e = time.time() - start_time
-time.strftime("%H:%M:%S", time.gmtime(e))  # for hours:minutes:seconds
-print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
-</pre>
+<ul><pre>
+# import datetime
+start = datetime.datetime.now()
+# do some stuff ...
+end = datetime.datetime.now()
+elapsed = end - start
+print(elapsed)
+# or
+print(elapsed.seconds,":",elapsed.microseconds) 
+</pre></ul>
 
-<tt><strong>time.clock</strong></tt> is no longer availble since Python 3.8.
+References:
+   * https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
+   * https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module/47637891#47637891
+   * See https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+   * See https://www.codingeek.com/tutorials/python/datetime-strftime/
+   * use the .st_birthtime attribute of the result of a call to os.stat().
+   <br /><br />
 
+### Timezone handling
+
+NOTE: On macOS, timezone data are in a binary file at <tt>/etc/localtime</tt>.
+
+Once a datetime has a tzinfo, the astimezone() strategy supplants new tzinfo.
+
+### Timing Attacks
+
+A malicious use of precise microseconds timing code is used by <a target="_blank" href="https://codahale.com/a-lesson-in-timing-attacks/">Timing Attacks</a> based on the time it takes for an application to authenticate a password to determine the algorithm used to process the password. In the case of <a target="_blank" href="http://rdist.root.org/2009/05/28/timing-attack-in-google-keyczar-library/">Keyczar vulnerability found by Nate Lawson</a>, a simple break-on-inequality algorithm was used to compare a candidate HMAC digest with the calculated digest. A value which shares no bytes in common with the secret digest returns immediately; a value which shares the first 15 bytes will return 15 compares later. 
+
+Similarly, <a target="_blank" href="https://belitsoft.com/assets/python-security.pdf">PDF: entropy</a>
+
+
+PROTIP: Use the <a target="_blank" href="https://docs.python.org/3/library/secrets.html#secrets.compare_digest">secrets.compare_digest module</a> (introduced in Python 3.5) to check passwords and other private values. It uses a <strong>constant amount of time</strong> to process every request.
+
+Functions hmac.compare_digest() and secrets.compare_digest() are designed to mitigate against timing attacks.
 
 http://pypi.python.org/pypi/profilehooks
 
@@ -615,6 +634,8 @@ Internationalization, aka i18n for the 18 characters between i and n, is the pro
 
    <pre>pip install gettext</pre>
 
+   NOTE: pip is a recursive acronym that stands for either "Pip Installs Packages" or "Pip Installs Python".
+
 1. Create a folder for each locale in the <tt>./locale</tt> folder.
 
 1. Use Lokalise utility to manage translations through a GUI. It also has a CLI tool to automate the process of managing translations.  https://lokalise.com/blog/lokalise-apiv2-in-practice/
@@ -934,7 +955,7 @@ There are platform-specific modules<a target="_blank" href="https://app.pluralsi
 To determine what operating system to wait for a keypress,
 use <a target="_blank" href="https://docs.python.org/3/library/platform.html#platform.system">sys.platform</a>, which has finer granularity than sys.name because it uses uname<a target="_blank" href="https://docs.python.org/library/sys.html#sys.platform">:</a>
 
-   <pre># https://docs.python.org/library/sys.html#sys.platform
+   <ul><pre># https://docs.python.org/library/sys.html#sys.platform
 from sys import platform
 if platform == "linux" or platform == "linux2":
     # linux
@@ -944,10 +965,30 @@ elif platform == "win32":
     # Windows
 elif platform == "cygwin":
     # Windows running cygwin Linux emulator
-   </pre>
+   </pre></ul>
 
 http://code.google.com/p/psutil/
 to do more in-depth research.
+
+
+PROTIP: This is an example of Python code issuing a Linux operating system command:
+
+<pre>if run("which python3").find("venv") == -1:
+    # something when not executed from venv
+</pre>
+
+<a target="_blank" href="https://belitsoft.com/assets/python-security.pdf">SECURITY PROTIP</a>: Avoid using the built-in Python function "eval" to execute a string. There are no controls to that operation, allowing malicious code to be executed without limits in the context of the user that loaded the interpreter (really dangerous):
+
+   <ul><pre>import sys
+import os
+try:
+    eval("__import__('os').system('clear')", {})
+    #eval("__import__('os').system(cls')", {})
+    print "Module OS loaded by eval"
+except Exception as e:
+    print repr(e)
+   </pre></ul>
+
 
 
 ## Command generator
@@ -1235,7 +1276,7 @@ https://github.com/fportantier/vulpy
 from 2020 in Brazil
 
 <a target="_blank" href="https://owasp.org/www-project-pygoat/">
-PyGoat</a> is written using Python with Django web framework.
+OWASP's PyGoat</a> is written using Python with Django web framework.
 Its code intentionally contains both traditional web application vulnerabilities (i.e. XSS, SQLi) and <a target="_blank" href="https://wilsonmar.github.io/owasp-testing">OWASP vulnerabilities</a>
 The top 10 OWASP vulnerabilities in 2020 are:
 
@@ -1402,6 +1443,10 @@ https://app.pluralsight.com/course-player?clipId=5802d30b-69a9-4679-8594-5385473
 https://techstudyslack.com/
 a Slack for people studying tech
 
+## Stegnography
+
+https://packetstormsecurity.com/files/165102/Stegano-0.10.1.html
+Stegano implements two methods of hiding: using the red portion of a pixel to hide ASCII messages, and using the Least Significant Bit (LSB) technique. It is possible to use a more advanced LSB method based on integers sets. The sets (Sieve of Eratosthenes, Fermat, Carmichael numbers, etc.) are used to select the pixels used to hide the information.
 
 ## More about Python
 

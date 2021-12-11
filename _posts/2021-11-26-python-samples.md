@@ -29,7 +29,7 @@ This page contains "deep-dive" commentary which references code in that repos, w
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py"><strong>api-sample.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.sh"><strong>api-sample.sh</strong></a> - a shell script which sets up the environment and runs the Python program. It's described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a> which describes <strong>installation</strong> and configuration advice
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.sh"><strong>python-samples.sh</strong></a> - a shell script which sets up the environment with Conda and installs Python packages needed. Common Python installation and configuration issues and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.env"><strong>api-sample.env</strong></a> which stores environment variables used by the Python program.
 
@@ -91,7 +91,16 @@ C. Alternately, to work with the whole repo on your laptop,
    * https://bandit.readthedocs.io/en/latest/plugins/index.html
    <br /><br />
 
+Bandit transforms code into an abstract syntax tree (AST) to analyze vulnerabilities
+https://snyk.io/learn/security-vulnerability-exploits-threats/
 
+## Running in debug mode
+
+Running with <tt>debug=True</tt> exposes the Werkzeug debugger which can execute arbitrary code.
+
+Bandit flags this with "201:flask_debug_true".
+
+On production servers, set <tt>__debug__ == False</tt> which disables assert statements.
 
 <hr />
 
@@ -240,11 +249,62 @@ Images/
 
    <pre>#!/usr/bin/env python</pre>
 
-1. Many examples on GitHub begin with:
 
-   <pre>import unittest</pre>
+<a name="Imports"></a>
 
-   and contain something like:
+## Imports
+
+1. Internal or external Python modules need to be specified for their classes, functions, and methods to be referenced.
+
+   <pre>import unittest
+from safe_module import package, function, class
+   </pre>
+
+   Utilities:
+
+   * <a target="_blank" href="https://pyup.io/">https://pyup.io</a> tracks thousands of Python packages for vulnerabilities and makes pull requests to your codebase automatically when there are updates.
+   * <a target="_blank" href="https://github.com/PyCQA/bandit">Bandit</a> is static linter which alerts developers to common security issues in code. 
+   * <a target="_blank" href="https://www.inspec.io/docs/reference/resources/pip/">Chef InSpec</a> audits installed packages and their versions.
+   * <a target="_blank" href="https://github.com/facebook/pyre-check/">Pysa</a> is static analyzer, open sourced by Facebook (Meta).
+   * <a target="_blank" href="https://my.sqreen.com/signup">sqreen.com</a> (until its purchase by Datadog) checks each application for packages with malicious code and checks for legitimate packages with known problems or outdated versions. 
+   <br /><br />
+
+   Known security issues have been found in <a target="_blank" href="https://github.com/ebranca/owasp-pysec/wiki/Possible-data-corruption-using-pickle">Pickle</a> & <a target="_blank" href="https://github.com/ebranca/owasp-pysec/wiki/Possible-data-corruption-using-cPickle">cPickle</a> for its serialization from representation on disk or over the network interface, because constructors and methods contain executable code. For example, website cookies have a <tt>__reduce__</tt> method that can be modified to contain malicious code. A better approach would be to use <tt>json.loads()</tt> or <tt>yaml_safe_load()</tt>.
+   
+   To verify payload integrity using cryptographic signatures, use <a target="_blank" href="https://github.com/Legrandin/pycryptodome">pycryptodome</a>. <a target="_blank" href="https://blog.sqreen.com/stop-using-pycrypto-use-pycryptodome/">Don't use</a> <a target="_blank" href="https://pypi.python.org/pypi/pycrypto">PyCrypto</a> because the project hasn’t been since Jun 20, 2014 and no security update has been released to fix vulnerability <a target="_blank" href="https://security-tracker.debian.org/tracker/CVE-2013-7459">CVE-2013-7459</a>.
+   <br /><br />
+
+   There have been a number of Trojan horse cases from malicious code in Python packages, specifically PyPi. Moreover, some were not detected for a year. 
+   
+   <a target="_blank" href="http://www.pythonsecurity.org/">pythonsecurity.org</a>, an OWASP project aimed at creating a security-hardened version of Python, explains <a target="_blank" href="https://github.com/ebranca/owasp-pysec/wiki/Security-Concerns-in-modules-and-functions">security concerns in modules and functions (from 2014)</a>. Other lists:
+       * https://packetstormsecurity.com/files/tags/python/
+       * https://codehandbook.org/secure-coding-in-python/
+       * https://www.whitesourcesoftware.com/vulnerability-database/
+       <br /><br />
+   
+   OWSAP had <a target="_blank" href="https://github.com/ebranca/owasp-pysec">(until 2015)</a> a <a target="_blank" href="http://www.pythonsecurity.org/libs">curated list of Python libraries for security applications</a>.
+
+   There are two types of import paths in Python: absolute and relative.
+
+   Absolute imports specifies the path of the resource to be imported using its full path from the project’s root folder.
+   
+   <ul><pre>from package1 import module1
+from package1.module2 import function1
+   </pre></ul>
+
+   Relative import specifies the resource to be imported relative to the current location of the project the folder of the import statement. There are two types of relative imports: implicit and explicit. 
+
+   <pre>from .some_module import some_class
+from ..some_package import some_function
+   </pre>
+   
+   Implicit relative imports have been removed in Python 3 because if the module specified is found in the system path, it will be imported with vulnerabilities. If the malicious module is found before the real module it will be imported and could be used to exploit applications that has it in their dependency tree.
+   If a malicious module specified is found in the system path, it will be imported into your program.
+
+<a target="_blank" href="https://www.linkedin.com/learning/secure-coding-in-python/developing-securely?autoAdvance=true&autoSkip=false&autoplay=true&resume=true">LinkedIn.com video course by Ronnie Sheer</a>
+
+
+   Sample for import contain something like:
 
    <pre>class TestMakingChange(unittest.TestCase):
 &nbsp;
@@ -368,7 +428,9 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
 
 ### Virtualenv
 
+A virtual environment enables a specific set of Python dependencies to be installed, so no weird, difficult-to-debug  dependency issues arise.
 
+When installing venv:
 
 <pre>created virtual environment CPython3.9.8.final.0-64 in 5940ms
   creator CPython3Posix(dest=/Users/wilson_mar/gmail_acct/python-samples/venv, clear=False, no_vcs_ignore=False, global=False)
@@ -376,6 +438,44 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
     added seed packages: pip==21.3.1, setuptools==58.5.3, wheel==0.37.0
   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
 </pre>
+
+"venv" is the preferred name of an environment.
+But variable <tt>my_venv_folder</tt> is used in case you want customization.
+
+1. Detect whether the folder (defined by variable <tt>my_venv_folder</tt>) has been created:
+
+   PROTIP: Python code running a Linux operating system command.
+
+   <pre>if run("which python3").find(my_venv_folder) == -1:  # not found:
+   # Such as /Users/wilsonmar/miniconda3/envs/py3k/bin/python3
+   # So create the folder inside the program's folder:
+   python3 -m venv ${my_venv_folder}
+   </pre>
+
+1. Activation is necessary. To activate on a Mac:
+
+   <pre>source "{my_venv_folder}"/bin/activate</pre>
+
+   On Windows:
+
+   <pre>venv\Scripts\activate.bat</pre>
+
+1. To check if a virtual environment is active, In CLI, <tt>(venv)</tt> appears. The path of the venv folder should appear:
+
+   <pre>echo ${VIRTUAL_ENV}</pre>
+
+   Within Python:
+    check whether the VIRTUAL_ENV environment variable is set to the path of the virtual environment:
+
+
+   * Outside a virtual environment, sys.prefix points to the system python installation and sys.real_prefix is not defined.
+
+   * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
+
+   
+
+
+
 
 
 <a name="PrintColors"></a>
@@ -439,10 +539,11 @@ append log entries with the identity of intermediary handlers along the log cust
 Code in this section is used to obtain values that control a run, such as 
 <strong>override</strong> of the LOCALE, cloud region, zip code, and other variable specs.
 
+Be aware of <a target="_blank" href="https://github.com/ebranca/owasp-pysec/wiki/Python-locale-unhandled-conditions">unhandled conditions in Python locale</a>.
+
 This is needed for testing.
 
-The code reads a file in an ".env" file in the user's $HOME folder because that folder is <strong>away from GitHub</strong>.
-That file's name by hard-coded default is:
+The code reads a file in an ".env" file in the user's $HOME folder because that folder is <strong>away from GitHub</strong>. That file's name by hard-coded default is:
 
    <ul><pre>env_file = 'python-samples.env'</pre></ul>
 
@@ -754,7 +855,9 @@ Based on bottom_up_fib(n) in https://github.com/samgh/DynamicProgrammingEbook/bl
 
 ### External caching in Azure Cache for Redis
 
-In production systems that does this kind of workload, consider the use of a Redis/Kafka in-memory cache.
+In production systems that does this kind of workload, consider the use of a Redis/Kafka in-memory cache
+so that several instances can be running to calculate numbers.
+In such a case, we want each instance to contribute to the pool of numbers.
 
 In the memoized example, the program first checks if the value is already in the local cache.
 If not, it gets the whole cache set from Redis Cache.
@@ -781,7 +884,22 @@ https://azure.microsoft.com/en-us/services/cache/ is the marketing home page
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/cache/">Pricing</a> begins at <strong>$0.022/hour</strong> ($0.528/day or $15.84/month) for the "C0" Basic service to a maximum of 256 client connections referencing up to 250 MB in the US.
 
-The DNS name ends with <tt>...westus2.redisenterprise.cache.azure.net</tt>
+For enterprise plans, the DNS name ends with <tt>...westus2.redisenterprise.cache.azure.net</tt>
+
+To view values in Azure, there is no GUI.
+So install the <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-azurecache.vscode-azurecache">Azure Cache for Visual Studio Code</a> (in Preview as of Dec. 2021).
+
+1. Click on the link above. 
+1. Within VSCode, click "Install" and other steps described.
+1. Press Shift+Control+A or, on the left menu, click the icon with three dots if you don't see the Azure icon.
+1. In the CACHES section, click "Sign in to Azure". This is equivalent to "az login".
+1. Close the browser tab opened automatically.
+1. Select an Azure Subscription.
+1. Click on the ">" next to the cache to expand it.
+1. Click the filter icon to the right of a "DB" line. 
+1. Type in "*" (asterisk) for all key values and press Enter. In the Fibonucci memoization example, 15, 16, 17, etc. would appear under the "DB".
+1. Click on each key for another tab to appear. 
+
 
 References:
    * https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-python-get-started
@@ -1102,13 +1220,8 @@ To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS,
 
    * Symmetric CMK: 256-bit symmetric key that never leaves AWS KMS unencrypted.
 
-   * Asymmetric CMK: AWS KMS generates a <strong>key pair</strong> where private key never leaves AWS KMS unencrypted.
+   * Asymmetric CMK: AWS KMS generates a <strong>key pair</strong> where the private key never leaves AWS KMS unencrypted.
 
-<a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-18/">
-Rotating IAM Keys using Boto3</a>
-
-<a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-23/">
-stop/start EC2 instances on a scheduled basis to save cost using AWS Lambda and CloudWatch</a>
 
 References:
    * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
@@ -1116,7 +1229,10 @@ References:
    AWS Systems Manager’s Parameter Store
    * https://aws.amazon.com/blogs/security/how-to-securely-provide-database-credentials-to-lambda-functions-by-using-aws-secrets-manager/
    * https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
-   
+   * https://towardsdatascience.com/python-and-aws-ssm-parameter-store-7f0e211bb91e
+   * <a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-18/">Rotating IAM Keys using Boto3</a>
+   * <a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-23/">stop/start EC2 instances on a scheduled basis to save cost using AWS Lambda and CloudWatch</a>
+
 
 <a name="use_gcp"></a>
 
@@ -1232,6 +1348,7 @@ References:
 
 ##  17. Retrieve secrets from Hashicorp Vault = use_vault
 
+https://www.amazon.com/Running-HashiCorp-Vault-Production-McTeer-ebook/dp/B08JJLGMZ3/
 
 <hr />
 

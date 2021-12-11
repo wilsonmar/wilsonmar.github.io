@@ -2065,7 +2065,6 @@ References:
 https://www.youtube.com/watch?v=VNHmX8_McqI
 Watch Me Code - Debugging a Broken DevOps Pipeline
 
-Running with debug=True exposes the Werkzeug debugger which can execute arbitrary code.
 
 
 ## More on DevOps #
