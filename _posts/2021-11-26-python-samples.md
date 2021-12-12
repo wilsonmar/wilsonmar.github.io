@@ -8,7 +8,7 @@ file: "python-samples"
 image:
 # python-samples-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
-  credit: An Athlete Wrestling with a Python (1877) by Frederic, Lord Leighton (1830‑1896) at the Tate
+  credit: "An Athlete Wrestling with a Python" (1877) by Frederic, Lord Leighton (1830‑1896) at the Tate, London
   creditlink: https://www.flickr.com/photos/11561957@N06/8610947261
 comments: true
 ---
