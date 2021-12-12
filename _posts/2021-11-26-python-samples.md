@@ -1517,7 +1517,7 @@ PROTIP: Here is an example of defaults specified for a function so not every par
     # Commentary of this is at https://wilsonmar.github.io/python-samples#view_gravatar
     hash = hashlib.md5(email.encode('utf-8')).hexdigest()
     url = "https://secure.gravatar.com/avatar/"
-    # TODO: Validate size, rating
+    ... # Validate size, rating
     url_string = url + hash +"&size="+ str(size) +"&d="+ default +"&r="+ rating
     return url_string
 </pre></ul>
