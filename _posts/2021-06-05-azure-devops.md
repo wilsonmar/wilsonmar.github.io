@@ -185,7 +185,7 @@ Although Microsoft has gained "Market Presence" from rankings in 2018:
 <img alt="azure-devops-gartner-2018-485x527-13777.jpg" width="485" src="https://user-images.githubusercontent.com/300046/56278410-69b6fd00-60c3-11e9-847b-4c7f4a8a73d6.jpg">
 
 Microsoft's "current offerings" continue to lag behind IBM and Cloudbees/Jenkins (which has shot up to the top ranking) after acquiring Electric Cloud. 
-NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its Ansible portfolio.
+NOTE: IBM's product is called "Urban Code". IBM also acquired Red Hat and its <a href="#Ansible">Ansible</a> portfolio.
 Broadcom bought CA. <a target="_blank" href="https://devops.com/digital-ai-the-companies-formerly-known-as-xebia-labs-collabnet-plus/">Digital.ai bought</a> Xebia.
 
 > The acquisition of GitHub in 2020 has caused confusion about how to prepare for Microsoft's future direction with Azure DevOps.
@@ -244,6 +244,10 @@ Module 0. Lab 00: Validate lab environment
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">Lab: Validate Lab Enviornment</a>
 
+   * STAR: <a target="_blank" href="https://github.com/wilsonmar/azure-cloud-onramp/">github.com/wilsonmar/azure-cloud-onramp</a>
+   * STAR: <a target="_blank" href="https://github.com/wilsonmar/azure-quickly/">github.com/wilsonmar/azure-quickly</a>
+   * Visual Studio Code
+
 
 Module 1. Planning for DevOps
 
@@ -263,10 +267,12 @@ Module 2. Getting Started with Source Control [Azure Repos]
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M02_Version_Controlling_with_Git_in_Azure_Repos.md">
 Lab : Version Controlling with Git in Azure Repos</a>
 
-   * What is Source Control
-   * Benefits of Source Control
-   * Types of Source Control Systems
-   * Introduction to Azure Repos
+   * Git is the default version control provider for new projects. 
+   * Clone an existing repository
+   * Save work with commits
+   * Review history of changes
+   * Work with branches by using Visual Studio Code
+
    * Introduction to GitHub
    * Migrating from Team Foundation Version Control (TFVC) to Git in Azure Repos
 
@@ -312,12 +318,10 @@ Lab : Integrating External Source Control with Azure Pipelines</a>
 Module 7. Managing Application Configuration and Secrets
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md">
-   AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md</a>
+   <strong>Lab 07: Integrating Azure Key Vault with Azure DevOps</strong></a>
 
 
 Module 8. Implementing Continuous Integration with GitHub Actions
-
-* Lab : GitHub Actions Continuous Integration
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md">
 Lab : GitHub Actions Continuous Integration</a>
@@ -362,10 +366,14 @@ Lab : Azure Deployments using Resource Manager Templates</a>
 Module 14. Third Party Infrastructure as Code Tools Available with Azure
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Ansible_with_Azure.md">
-   AZ400_M14_Ansible_with_Azure.md</a>. See <a href="#Ansible">(below)</a>
+   Lab 14a: Ansible with Azure</a>. See <a href="#Ansible">(below)</a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
-   AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md</a>
+   Lab 14b: Automating infrastructure deployments in the Cloud with Terraform and Azure Pipelines</a>
+
+   * <a target="_blank" href="https://wilsonmar.github.io/terraform/">wilsonmar.github.io/terraform</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/?view=azure-devops">Azure DevOps Services Demo Generator</a> provisions projects with pre-populated sample content based on a template of your choice. Each includes source code, work items, iterations, service connections, and build and release pipelines. Sign in at at <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">https://azuredevopsdemogenerator.azurewebsites.net/</a>. Click Sign-In.
+   <br /><br />
 
 
 Module 15. Managing Containers using Docker
@@ -389,7 +397,7 @@ Module 16. Creating and Managing Kubernetes Service Infrastructure
 Module 17. Implementing Feedback for Development Teams
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md">
-   Lab : Monitoring Application Performance with Application Insights</a>
+   Lab 17: Monitoring Application Performance with Application Insights</a>
 
    * Implement Tools to Track System Usage, Feature Usage, and Flow
    * Implement Routing for Mobile Application Crash Report Data
@@ -400,9 +408,7 @@ Module 17. Implementing Feedback for Development Teams
 Module 18. Implementing System Feedback Mechanisms
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md">
-   AZ400_M18_Integration_between_Azure_DevOps_and_Teams.md</a>
-
-   * Lab : Integration between Azure DevOps and Teams
+   Lab 18: Integration between Azure DevOps and Teams</a>
    
    * Site Reliability Engineering
    * Design Practices to Measure End-User Satisfaction
@@ -415,9 +421,10 @@ Module 18. Implementing System Feedback Mechanisms
 Module 19. Implementing Security in DevOps Projects
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md">
-   AZ400_M19_Implement_Security_and_Compliance_in_an_Azure_DevOps_pipeline.md</a>
+   <strong>Lab 19: Implement Security and Compliance in an Azure DevOps pipeline</strong></a>
 
-   * Lab : Implement Security and Compliance in an Azure DevOps Pipeline
+   * <strong>Bolt</strong> is a lightweight open source security and management solution developed specifically for integration with Azure DevOps and Azure DevOps Server. It works per project and does not offer real-time alert capabilities, which requires Full platform, generally recommended for larger development teams that want to automate their open source management throughout the entire software development lifecycle (from the repositories to post-deployment stages) and across all projects and products.
+   * https://www.whitesourcesoftware.com/ integrates into build processes, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated deﬁnitive database of open source repositories. 
 
    * Security in the Pipeline
    * Azure Security Center
@@ -426,10 +433,9 @@ Module 19. Implementing Security in DevOps Projects
 Module 20. Validating Code Bases for Compliance
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md">
-   AZ400_M20_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md</a>
+   <strong>Lab 20: Managing technical debt with SonarCloud and Azure DevOps</strong></a>
 
-   * Lab : Managing Technical Debt with SonarQube and Azure DevOps
-
+   * https://sonarcloud.io/
    * Open-Source Software
    * Managing Security and Compliance Policies
    * Integrating License and Vulnerability Scans
@@ -1047,7 +1053,7 @@ Commands:
    
 ### Parts Unlimited demo apps
 
-   * <a target="_blank" href="http://microsoft.github.io/PartsUnlimited/">http://microsoft.github.io/PartsUnlimited</a> (http://aka.ms/pumrplabs)  describes the app.
+   * <a target="_blank" href="http://microsoft.github.io/PartsUnlimited/">http://microsoft.github.io/PartsUnlimited</a> (http://aka.ms/pumrplabs) describes the app.
    * Front end service runs Apache Tomcat and talks to order service
    * Order and Integration service runs Java and calls MongoDB
    * Integration service integrates with Parts Unlimited Website
