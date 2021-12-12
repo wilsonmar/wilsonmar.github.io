@@ -1102,6 +1102,10 @@ The equivalent of a Celsius temperature of 21.1 is 70 on the Fahrenheit scale.
 BTW The Fahrenheit scale was initially proposed in 1724 by the Dutch-German-Polish physicist physicist Daniel Gabriel Fahrenheit.
 The scale is defined by two fixed points: 32 °F (the freezing point of water) and 212 °F (the boiling point of water). 
 
+There are other API's for weather and other services:
+   * https://www.timeanddate.com/services/api/ has moon phases as well as astronomical positions like altitude, distance, and azimuth for every location on Earth.
+   * https://api.tidesandcurrents.noaa.gov/api/prod/
+   * https://tidesandcurrents.noaa.gov/moon_phases.shtml?year=2021&data_type=monDec
 
 <hr />
 
