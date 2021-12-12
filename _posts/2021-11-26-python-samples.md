@@ -1212,6 +1212,7 @@ Azure SDK for Python:
    * https://www.youtube.com/watch?v=_qQq6oHskUQ - Machine Learning and Python with Microsoft Azure - http://aka.ms/azuredevstreams by https://twitch.tv/enceladosaurus
 
 References:
+   * https://docs.microsoft.com/en-us/python/api/overview/azure/keyvault-keys-readme?view=azure-python
    * https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter?tabs=azure-cli
 
 
