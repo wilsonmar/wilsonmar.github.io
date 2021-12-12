@@ -3,13 +3,13 @@ layout: post
 title: "Python Coding"
 excerpt: "The rules shown in samples using Keywords, arguments, Exception Handling, OS commands, Strings, Lists, Sets, Tuples, Files, Timers"
 tags: [python, coding]
-date: "2021-10-09"
+date: "2021-12-11"
 file: "python-coding"
 image:
-# pic white python logo 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
-  credit: 
-  creditlink: 
+# python-samples-1900x500.jpg
+  feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
+  credit: "An Athlete Wrestling with a Python" (1877) by Sir Frederic Leighton (1830-1896) at the Tate, London
+  creditlink: https://www.wikiwand.com/en/An_Athlete_Wrestling_with_a_Python
 comments: true
 ---
 <i>{{ page.excerpt }}</i>

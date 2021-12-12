@@ -3,7 +3,7 @@ layout: post
 title: "Python Samples"
 excerpt: "Commentary on a practical example of how to code Python securely in a production setting."
 tags: [python, coding]
-date: "2021-12-07"
+date: "2021-12-12"
 file: "python-samples"
 image:
 # python-samples-1900x500.jpg

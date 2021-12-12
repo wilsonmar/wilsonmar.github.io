@@ -239,7 +239,9 @@ A minimum score of 35 percent on each exam domain.
 
 PROTIP: I think the most useful learning experience is <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/courses/az-400t00">Microsoft's 5-day live AZ-4100T00 class</a> by Robert Tichelman & Vishal Nigam, but I highly recommend everyone get hands-on on the <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs">lab instructions in Github</a> by <a target="_blank" href="https://www.linkedin.com/in/unaihuete/">Unai Huete Beloki</a> and <a target="_blank" href="https://www.linkedin.com/in/michael-kenntenich/">Michael Kenntenich</a>. 
 
-My notes on the <a target="_blank" ref="https://aka.ms/az400labs/">class Modules and labs at aka.ms/az400labs</a>
+Microsoft's <a target="_blank" ref="https://aka.ms/az400labs/">class Modules and labs at aka.ms/az400labs</a> generally shows use of the GUI Console rather than CLI commands, which I have prepared in
+<a target="_blank" href="https://github.com/wilsonmar/azure-quickly">https://github.com/wilsonmar/azure-quickly</a>, based on 
+https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest
 
 Module 0. Lab 00: Validate lab environment
 
