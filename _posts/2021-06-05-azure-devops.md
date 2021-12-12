@@ -194,9 +194,6 @@ Microsoft doesn't use the term "DevSecOps" for their product because it includes
 
 <hr />
 
-
-<hr />
-
 <a name="CertsOnDevOps"></a>
 
 ## AZ-400 certification
@@ -245,7 +242,7 @@ https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest
 
 Module 0. Lab 00: Validate lab environment
 
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">Lab: Validate Lab Enviornment</a>
 
 
 Module 1. Planning for DevOps

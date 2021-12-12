@@ -1448,6 +1448,14 @@ a Slack for people studying tech
 https://packetstormsecurity.com/files/165102/Stegano-0.10.1.html
 Stegano implements two methods of hiding: using the red portion of a pixel to hide ASCII messages, and using the Least Significant Bit (LSB) technique. It is possible to use a more advanced LSB method based on integers sets. The sets (Sieve of Eratosthenes, Fermat, Carmichael numbers, etc.) are used to select the pixels used to hide the information.
 
+## Parallel Computing
+
+Multithreading, Multiprocessing, Concurrency & Parallel programming in Python for high performance.
+
+Use multiple threads, processes, mutexes, barriers, waitgroups, queues, pipes, condition variables, deadlocks, and more.
+
+https://www.udemy.com/course/parallel-computing-in-python/
+
 ## More about Python
 
 This is one of a series about Python:
