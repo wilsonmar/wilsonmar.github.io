@@ -6,10 +6,10 @@ tags: [python, coding]
 date: "2021-12-07"
 file: "python-samples"
 image:
-# pic white python logo 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
-  credit: 
-  creditlink: 
+# python-samples-1900x500.jpg
+  feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
+  credit: An Athlete Wrestling with a Python (1877) by Frederic, Lord Leighton (1830‑1896) at the Tate
+  creditlink: https://www.flickr.com/photos/11561957@N06/8610947261
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
