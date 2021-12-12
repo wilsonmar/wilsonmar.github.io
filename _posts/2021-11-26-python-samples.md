@@ -1496,27 +1496,29 @@ returns HTTP 429 error if too many requests. An example of a response:
 temp-email.io
 
 
-<a name="get_gravatar"></a>
+<a name="view_gravatar"></a>
 
 ## Gravatar from MD5 Hash of email
 
-Early pioneers created, for use with WordPress, a website where people can associate (register) a picture with their email address at <a target="_blank" href="http://gravatar.com">http://gravatar.com</a>. Gravatar is related to the word "avatar".
+Early pioneers created, for use with WordPress, a website where people can associate (register) their email address with a picture ("avatar" image) at <a target="_blank" href="http://gravatar.com">http://gravatar.com</a>. It's now used by many websites.
 
-In this program, the feature flag <tt>get_gravatar</tt> controls whether a Gravatar lookup is attempted when it has an email address. The API call is made after calculating an <strong>MD5 hash</strong> (such as "5f2f71a59bd9e62b0cc5fe4cd7216968") from the email address, using hexdigest within the hashlib module:
+In this program, the feature flag <tt>view_gravatar</tt> controls whether a Gravatar lookup is attempted for an email address. The API call is made after calculating from the email address an <strong>MD5 hash</strong> (such as "5f2f71a59bd9e62b0cc5fe4cd7216968"), using hexdigest within the hashlib module.
 
-   <ul><pre>some_email="johnsmith@example.com"
+In this program, the feature is tested using an email obtained from the env file:
+
+   <ul><pre>some_email=os.environ.get('MY_EMAIL')  # "johnsmith@example.com"
 print_verbose( some_email)
-lookup_gravatar( some_email )
+get_gravatar_url( some_email )
    </pre></ul>
 
 PROTIP: Here is an example of defaults specified for a function so not every parameters needs to be specified with an argument value.
 
-<ul><pre>def lookup_gravatar(email, size=100, default='identicon', rating='g'):
-    # Commentary of this is at https://wilsonmar.github.io/python-samples#get_gravtar
-    hash = hashlib.md5(self.email.encode('utf-8')).hexdigest()
-    url = "https://secure.gravatar.com/avatar/" 
-    url_string = url + hash +"&size="+ size +"&d="+ default +"&r="+ rating
-    print_info(url)
+<ul><pre>def get_gravatar_url(email, size, default, rating):
+    # Commentary of this is at https://wilsonmar.github.io/python-samples#view_gravatar
+    hash = hashlib.md5(email.encode('utf-8')).hexdigest()
+    url = "https://secure.gravatar.com/avatar/"
+    # TODO: Validate size, rating
+    url_string = url + hash +"&size="+ str(size) +"&d="+ default +"&r="+ rating
     return url_string
 </pre></ul>
 
@@ -1533,6 +1535,15 @@ The "print_info()" function of this program outputs a URL you can copy to paste 
    * <strong>size</strong> is the number of pixels, up to 2048px.
    * <strong>rating</strong> uses a code like the ones on movies - it specifies the most "explicit" level based on the self-rating supplied whoever uploaded the image into Gravatar.com. "G" ("g") is the default.
    <br /><br />
+
+This program opens the default browser program with the URL returned:
+
+<ul><pre>import webbrowser
+print_verbose("Opening web browser to view gravatar image of "+ some_email)
+webbrowser.open(some_email_gravatar, new=2)
+</pre></ul>
+
+Test with another email by changing in the code the value of <tt>some_email</tt>.
 
 
 ### TODO: Text Readability Score
