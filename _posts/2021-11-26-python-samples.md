@@ -1436,23 +1436,26 @@ is good for one hour.
 # https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
 
 
-## Email validation
+<a name="verifyemail"></a>
 
-   * TODO: Send email (anonymously?) https://mailsac.com/docs/api
-   
-TODO: There are <a target="_blank" href="https://rapidapi.com/collection/email-validation-verification-api">several <strong>email validator</strong> API services available</a>. They all check for fake DNS as well as use regex functions to check email addresses for the right length and accepted characters. For example it will mark as valid an email like ‘john@gmail.com’ but it will recognize as a fake not existing domain.
+## Verify Email
 
-* https://www.zerobounce.net/email-validation-pricing is free up to 100 emails per month.
+In this program is code to validate email addresses. 
+
+PROTIP: Email validation is by API calls, so can be invoked immediately by JavaScript when someone types in an email on a form.
+
+There are <a target="_blank" href="https://rapidapi.com/collection/email-validation-verification-api">several <strong>email validator</strong> API services available</a>. They all check for fake <strong>DNS domains</strong> as well as use regex functions to check whether email addresses have accepted characters, the right length, etc.
 
 * https://mailboxlayer.com/product offers 30 API Requests/minute free. CAUTION: the API ACCESS KEY is part of the URL, which is unsafe:
 
    <pre>https://apilayer.net/api/check?access_key = YOUR_ACCESS_KEY & email = support@apilayer.com
    </pre>
 
-* Hunter.io offers a free monthly plan of 50 email verifications and domain searches. 
+* https://www.zerobounce.net/email-validation-pricing is free up to 100 emails per month.
+
+* Hunter.io offers a free monthly plan of 50 email verifications with domain searches. 
 
 * Twilio’s SendGrid service has no free level.
-
 * https://trumail.io/ has no free level:
 
    <pre>{
@@ -1491,6 +1494,45 @@ returns HTTP 429 error if too many requests. An example of a response:
    * https://mailchimp.com/developer/
 
 temp-email.io
+
+
+<a name="get_gravtar"></a>
+
+## Gravatar from MD5 Hash of email
+
+Early pioneers created, for use with WordPress, a website where people can associate (register) a picture with their email address at <a target="_blank" href="http://gravatar.com">http://gravatar.com</a>. Gravatar is related to the word "avatar".
+
+In this program, the feature flag <tt>get_gravatar</tt> controls whether a Gravatar lookup is attempted when it has an email address. The API call is made after calculating an <strong>MD5 hash</strong> (such as "5f2f71a59bd9e62b0cc5fe4cd7216968") from the email address, using hexdigest within the hashlib module:
+
+   <ul><pre>some_email="johnsmith@example.com"
+lookup_gravatar( some_email )
+   </pre></ul>
+
+PROTIP: Here is an example of defaults specified for a function so not every parameters needs to be specified with an argument value.
+
+<ul><pre>def lookup_gravatar(email, size=100, default='identicon', rating='g'):
+    # Commentary of this is at https://wilsonmar.github.io/python-samples#get_gravtar
+    hash = hashlib.md5(self.email.encode('utf-8')).hexdigest()
+    url = "https://secure.gravatar.com/avatar/" 
+    url_string = url + hash +"&size="+ size +"&d="+ default +"&r="+ rating
+    print_info(url)
+    return url_string
+</pre></ul>
+
+Gravatar.com responds to both unencrypted HTTP and HTTPS, but a different URL is used for each.
+
+The "print_info()" function of this program outputs a URL you can copy to paste on your browser’s Address bar to get the avatar image for the email address johnsmith@example.com:
+
+   <ul>https://secure.gravatar.com/avatar/5f2f71a59bd9e62b0cc5fe4cd7216968 
+   </ul>
+
+<img align="right" width="100" src="https://secure.gravatar.com/avatar/5f2f71a59bd9e62b0cc5fe4cd7216968">
+"default" refers to the default generated image Gravatar.com returns if absent an avatar registered to  the email address specified. <a target="_blank" href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/">"identicon"</a> is a randomly generated assortment of shapes that is specific to a commenter’s email (or IP address). Identicons allow visual representations of commenters without requiring any external sites or user interactions. "With 40 possible shapes (about 70 with inversions) in 3 possible positions, around 8000 distinguishable colors and four different rotations for each part, there should be several billion possible shape combinations which, even with the increasing chance of overlap with each additional user, should be quite enough for almost any blog."
+
+<a target="_blank" href="https://en.gravatar.com/site/implement/images/">https://en.gravatar.com/site/implement/images/</a> explains the other parameters:
+   * <strong>size</strong> is the number of pixels, up to 2048px.
+   * <strong>rating</strong> uses a code like the ones on movies - it specifies the most "explicit" level based on the self-rating supplied whoever uploaded the image into Gravatar.com. "G" ("g") is the default.
+   <br /><br />
 
 
 ### TODO: Text Readability Score

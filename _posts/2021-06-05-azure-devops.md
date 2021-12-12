@@ -243,9 +243,12 @@ My notes on the <a target="_blank" ref="https://aka.ms/az400labs/">class Modules
 
 Module 0. Lab 00: Validate lab environment
 
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
+
+
 Module 1. Planning for DevOps
 
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M00_Validate_lab_environment.md">
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md">
 Lab : Agile Planning and Portfolio Management with Azure Boards</a> 
 
    PROTIP: Instead of https://aex.devops.azure.com, use <a target="_blank" href="https://devops.azure.com">https://devops.azure.com</a>.
@@ -281,9 +284,6 @@ Lab : Sharing Team Knowledge using Azure Project Wikis</a>
 
 Module 4. Working with Git for Enterprise DevOps
 
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md">
-<strike>AZ400_M01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md</strike></a>
-
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md">
 Lab : Version Controlling with Git in Azure Repos</a>
 
@@ -312,7 +312,7 @@ Lab : Integrating External Source Control with Azure Pipelines</a>
 
 Module 7. Managing Application Configuration and Secrets
 
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M06_Integrating_External_Source_Control_with_Azure_Pipelines.md">
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md">
    AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md</a>
 
 
@@ -367,9 +367,6 @@ Module 14. Third Party Infrastructure as Code Tools Available with Azure
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
    AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md</a>
-
-* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
-   AZ400_M15_Deploying_Docker_containers_to_Azure_App_Service_web_apps.md</a>
 
 
 Module 15. Managing Containers using Docker
