@@ -1493,7 +1493,7 @@ https://www.guardicore.com/cyber-security-platform/
    Azure Kubernetes Service with Azure DevOps and Terraform 
 
 
-   ### Bash shell script coding
+### Bash shell script coding
 
    <pre>az vm list -g QueryDemo \
 --query "sort_by([].{Name:name, Size:storageProfile.osDisk.diskSizeGb}, &Size)" --output table

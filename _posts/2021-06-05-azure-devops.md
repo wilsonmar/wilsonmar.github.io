@@ -379,9 +379,7 @@ Module 14. Third Party Infrastructure as Code Tools Available with Azure
 Module 15. Managing Containers using Docker
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md">
-   AZ400_M15_Modernizing_your_Existing_ASP.NET_Apps_with_Azure.md</a>
-
-   * Lab : Modernizing Existing ASP.NET Apps with Azure
+   Lab : Modernizing Existing ASP.NET Apps with Azure</a>
 
 
 Module 16. Creating and Managing Kubernetes Service Infrastructure
@@ -994,16 +992,16 @@ Commands:
 
    NOTE: Don't choose the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azure-devops">others</a>:
 
-   * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a>, created from <a target="_blank" href="https://github.com/Microsoft/TailwindTraders">github.com/Microsoft/TailwindTraders</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as a fictitious retail company created using an ensemble of reference apps using all-Microsoft tech running in Azure. It showcases "intelligent application experiences made smarter through data and AI".<br /><br />
+   * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as a fictitious retail company created using an ensemble of reference apps using all-Microsoft tech running in Azure. It showcases "intelligent application experiences made smarter through data and AI".<br /><br />
    <a target="_blank" href="https://channel9.msdn.com/Shows/Azure-Friday/An-Overview-of-the-Tailwind-Traders-Reference-Apps-for-Azure" title="David Sanchez's 10-minute overview for Scott Hanselman on 3 May 2019">VIDEO</a>: "we keep it fresh":
    <br />
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"><img alt="az-devops-tailwind-1280x720" src="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"></a>
    <br /><br />
    STAR: <a target="_blank" href="https://github.com/Microsoft/TailwindTraders/">github.com/Microsoft/TailwindTraders</a> lists <a target="_blank" href="https://github.com/Microsoft/TailwindTraders#demo-scripts">step-by-step demo scripts</a>, such as for <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub#integrating-azure-devops-microsoft-teams-and-github">Integrating Azure DevOps, Microsoft Teams and GitHub</a>.
    <br /><br />
-   NOTE: The template creates a SQL database back-end at <a target="_blank" href="https://github.com/microsoft/TailwindTraders-Backend">github.com/microsoft/TailwindTraders-Backend</a>
+   NOTE: The template creates a SQL database back-end at<br /><a target="_blank" href="https://github.com/microsoft/TailwindTraders-Backend">github.com/microsoft/TailwindTraders-Backend</a>
 
-   * "PartsUnlimited" ("PU") at <a target="_blank" href="https://github.com/Microsoft/PartsUnlimited">github.com/Microsoft/PartsUnlimited</a> and PartsUnlimitedYAML</a> defines an ASP.NET app with customized CI/CD pipelines.  <a href="#PartsUnlimited">See below</a>
+   * "PartsUnlimited" ("PU") at <a target="_blank" href="https://github.com/Microsoft/PartsUnlimited">github.com/Microsoft/PartsUnlimited</a> and <a target="_blank" href="https://github.com/Microsoft/PartsUnlimitedYAML">PartsUnlimitedYAML</a> defines an ASP.NET app with customized CI/CD pipelines.  <a href="#PartsUnlimited">See below</a>
 
    * <a target="_blank" href="https://github.com/microsoft/SmartHotel360">SmartHotel360</a> and <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">SmartHotel360-IoT</a> open sourced on GitHub are now "retired, archived, and no longer supported". It contained a complete ASP.NET 2 web mobile and desktop business apps for a hotel. The mobile app was built using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a> web-mobile app for a hotel, all deployed using Docker containers within AKS (Azure Kubernetes Service):
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
@@ -1427,6 +1425,8 @@ Websites: <a target="_blank" href="https://azure.microsoft.com/en-us/services/de
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"><img alt="azure-devops-repos-home-1920x568-61555.jpg" width="1920" src="https://user-images.githubusercontent.com/300046/56324189-7111f100-612b-11e9-8ff3-81210b06a358.jpg"></a>
 
+
+<a name="GitHubActions"></a>
 
 ### GitHub Actions
 
