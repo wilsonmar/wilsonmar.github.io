@@ -1496,7 +1496,7 @@ returns HTTP 429 error if too many requests. An example of a response:
 temp-email.io
 
 
-<a name="get_gravtar"></a>
+<a name="get_gravatar"></a>
 
 ## Gravatar from MD5 Hash of email
 
@@ -1505,6 +1505,7 @@ Early pioneers created, for use with WordPress, a website where people can assoc
 In this program, the feature flag <tt>get_gravatar</tt> controls whether a Gravatar lookup is attempted when it has an email address. The API call is made after calculating an <strong>MD5 hash</strong> (such as "5f2f71a59bd9e62b0cc5fe4cd7216968") from the email address, using hexdigest within the hashlib module:
 
    <ul><pre>some_email="johnsmith@example.com"
+print_verbose( some_email)
 lookup_gravatar( some_email )
    </pre></ul>
 
@@ -1526,8 +1527,7 @@ The "print_info()" function of this program outputs a URL you can copy to paste 
    <ul>https://secure.gravatar.com/avatar/5f2f71a59bd9e62b0cc5fe4cd7216968 
    </ul>
 
-<img align="right" width="100" src="https://secure.gravatar.com/avatar/5f2f71a59bd9e62b0cc5fe4cd7216968">
-"default" refers to the default generated image Gravatar.com returns if absent an avatar registered to  the email address specified. <a target="_blank" href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/">"identicon"</a> is a randomly generated assortment of shapes that is specific to a commenter’s email (or IP address). Identicons allow visual representations of commenters without requiring any external sites or user interactions. "With 40 possible shapes (about 70 with inversions) in 3 possible positions, around 8000 distinguishable colors and four different rotations for each part, there should be several billion possible shape combinations which, even with the increasing chance of overlap with each additional user, should be quite enough for almost any blog."
+<img align="right" width="100" src="https://secure.gravatar.com/avatar/da34d4c0d7f41209cfee6eaf559905a4&size=100&d=identicon&r=g">"default" refers to the default generated image Gravatar.com returns if absent an avatar registered to  the email address specified. <a target="_blank" href="http://scott.sherrillmix.com/blog/blogger/wp_identicon/">"identicon"</a> is a randomly generated assortment of shapes that is specific to a commenter’s email (or IP address). Identicons allow visual representations of commenters without requiring any external sites or user interactions. "With 40 possible shapes (about 70 with inversions) in 3 possible positions, around 8000 distinguishable colors and four different rotations for each part, there should be several billion possible shape combinations which, even with the increasing chance of overlap with each additional user, should be quite enough for almost any blog."
 
 <a target="_blank" href="https://en.gravatar.com/site/implement/images/">https://en.gravatar.com/site/implement/images/</a> explains the other parameters:
    * <strong>size</strong> is the number of pixels, up to 2048px.
