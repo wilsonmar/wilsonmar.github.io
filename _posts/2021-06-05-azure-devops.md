@@ -66,12 +66,15 @@ Each widget on the Dashboard can be <a target="_blank" href="https://docs.micros
 
 QUESTION: Do "Other services" include extensions installed from <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms.feed">https://marketplace.visualstudio.com/items</a>, such as <a href="#Search">Code Search</a>, <a href="#DevOpsAnalytics">Analytics</a>, etc.
 
+### Pricing
+
 Each product above has its own pricing.
 
-The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Features Timeline (product roadmap)</a> has additional "Areas":
+The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/release-notes/">Aure DevOps Release Notes</a> presents Features Timeline (product roadmap) for additional "Areas":
 
    * Administration
    * Notifications
+   <br /><br />
 
 Sign into <a target="_blank" href="https://aka.ms/AzureDevOpsForum/">aka.ms/AzureDevOpsForum</a> = Developer Community Problems and Features (Active | Newest | Votes)
 
@@ -290,7 +293,7 @@ Lab : Sharing Team Knowledge using Azure Project Wikis</a>
 Module 4. Working with Git for Enterprise DevOps
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M04_Version_Controlling_with_Git_in_Azure_Repos.md">
-Lab : Version Controlling with Git in Azure Repos</a>
+Lab : Version Controlling with <strong>Git</strong> in Azure Repos</a>
 
    * How to Structure Your Git Repo
    * Git Branching Workflows
@@ -303,7 +306,7 @@ Lab : Version Controlling with Git in Azure Repos</a>
 Module 5. Configuring Azure Pipelines
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M05_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md">
-Lab : Configuring Agent Pools and Understanding Pipeline Styles</a>
+Lab : Configuring <strong>Agent Pools</strong> and Understanding Pipeline Styles</a>
 
 
 Module 6. Implementing Continuous Integration using Azure Pipelines
@@ -318,13 +321,13 @@ Lab : Integrating External Source Control with Azure Pipelines</a>
 Module 7. Managing Application Configuration and Secrets
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md">
-   <strong>Lab 07: Integrating Azure Key Vault with Azure DevOps</strong></a>
+   Lab 07: Integrating <strong>Azure Key Vault</strong> with Azure DevOps</a>
 
 
 Module 8. Implementing Continuous Integration with GitHub Actions
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M08_Implementing_GitHub_Actions_by_using_DevOps_Starter.md">
-Lab : GitHub Actions Continuous Integration</a>
+Lab : <strong>GitHub Actions</strong> Continuous Integration</a>
 
 
 Module 9. Designing and Implementing a Dependency Management Strategy
@@ -345,16 +348,16 @@ Lab : Creating a Release Dashboard</a>
 Module 11. Implementing Continuous Deployment using Azure Pipelines
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Configuring_Pipelines_as_Code_with_YAML.md">
-Lab : Configuring Pipelines as Code with YAML</a>
+Lab : Configuring <strong>Pipelines as Code</strong> with YAML</a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M11_Setting_Up_and_Running_Functional_Tests.md">
-Lab : Setting up and Running Functional Tests</a>
+Lab : Setting up and Running <strong>Functional Tests</strong></a>
 
 
 Module 12. Implementing an Appropriate Deployment Pattern
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M12_Feature_Flag_Management_with_LaunchDarkly_and_Azure_DevOps.md">
-Lab : Feature Flag Management with LaunchDarkly and Azure DevOps</a>
+Lab : <strong>Feature Flag Management with LaunchDarkly</strong> and Azure DevOps</a>
 
 
 Module 13. Managing Infrastructure and Configuration using Azure Tools
@@ -366,10 +369,10 @@ Lab : Azure Deployments using Resource Manager Templates</a>
 Module 14. Third Party Infrastructure as Code Tools Available with Azure
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Ansible_with_Azure.md">
-   Lab 14a: Ansible with Azure</a>. See <a href="#Ansible">(below)</a>
+   Lab 14a: <strong>Ansible</strong> with Azure</a>. See <a href="#Ansible">(below)</a>
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
-   Lab 14b: Automating infrastructure deployments in the Cloud with Terraform and Azure Pipelines</a>
+   Lab 14b: Automating infrastructure deployments in the Cloud with <strong>Terraform</strong> and Azure Pipelines</a>
 
    * <a target="_blank" href="https://wilsonmar.github.io/terraform/">wilsonmar.github.io/terraform</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/?view=azure-devops">Azure DevOps Services Demo Generator</a> provisions projects with pre-populated sample content based on a template of your choice. Each includes source code, work items, iterations, service connections, and build and release pipelines. Sign in at at <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">https://azuredevopsdemogenerator.azurewebsites.net/</a>. Click Sign-In.
@@ -385,7 +388,7 @@ Module 15. Managing Containers using Docker
 Module 16. Creating and Managing Kubernetes Service Infrastructure
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M16_Deploying_multi-container_application_to_Azure_Kubernetes_Services.md">
-   Lab : Deploying a Multi-Container Application to Azure Kubernetes Service</a>
+   Lab : Deploying a Multi-Container Application to Azure <strong>Kubernetes</strong> Service</a>
 
    * Azure Kubernetes Service
    * Kubernetes Tooling
@@ -395,7 +398,7 @@ Module 16. Creating and Managing Kubernetes Service Infrastructure
 Module 17. Implementing Feedback for Development Teams
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M17_Monitoring_Application_Performance_with_Application_Insights.md">
-   Lab 17: Monitoring Application Performance with Application Insights</a>
+   Lab 17: Monitoring Application Performance with <strong>Application Insights</strong></a>
 
    * Implement Tools to Track System Usage, Feature Usage, and Flow
    * Implement Routing for Mobile Application Crash Report Data
@@ -422,7 +425,7 @@ Module 19. Implementing Security in DevOps Projects
    <strong>Lab 19: Implement Security and Compliance in an Azure DevOps pipeline</strong></a>
 
    * <strong>Bolt</strong> is a lightweight open source security and management solution developed specifically for integration with Azure DevOps and Azure DevOps Server. It works per project and does not offer real-time alert capabilities, which requires Full platform, generally recommended for larger development teams that want to automate their open source management throughout the entire software development lifecycle (from the repositories to post-deployment stages) and across all projects and products.
-   * https://www.whitesourcesoftware.com/ integrates into build processes, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated deﬁnitive database of open source repositories. 
+   https://www.whitesourcesoftware.com/ integrates into build processes, irrespective of your programming languages, build tools, or development environments. It works automatically, continuously, and silently in the background, checking the security, licensing, and quality of your open source components against WhiteSource constantly-updated deﬁnitive database of open source repositories. 
 
    * Security in the Pipeline
    * Azure Security Center
@@ -1003,7 +1006,7 @@ Commands:
 
    * "PartsUnlimited" ("PU") at <a target="_blank" href="https://github.com/Microsoft/PartsUnlimited">github.com/Microsoft/PartsUnlimited</a> and <a target="_blank" href="https://github.com/Microsoft/PartsUnlimitedYAML">PartsUnlimitedYAML</a> defines an ASP.NET app with customized CI/CD pipelines.  <a href="#PartsUnlimited">See below</a>
 
-   * <a target="_blank" href="https://github.com/microsoft/SmartHotel360">SmartHotel360</a> and <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">SmartHotel360-IoT</a> open sourced on GitHub are now "retired, archived, and no longer supported". It contained a complete ASP.NET 2 web mobile and desktop business apps for a hotel. The mobile app was built using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a> web-mobile app for a hotel, all deployed using Docker containers within AKS (Azure Kubernetes Service):
+   * <a target="_blank" href="https://github.com/microsoft/SmartHotel360">SmartHotel360</a> and <a target="_blank" href="https://github.com/Microsoft/SmartHotel360-IoT">SmartHotel360-IoT</a> open sourced on GitHub are now "retired, archived, and <strong>no longer supported</strong>". It contained a complete ASP.NET 2 web mobile and desktop business apps for a hotel. The mobile app was built using <a target="_blank" href="https://wilsonmar.github.io/xamarin">Xamarin</a> web-mobile app for a hotel, all deployed using Docker containers within AKS (Azure Kubernetes Service):
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"><img alt="azure-devops-smarthotel-home-1896x853.jpg" width="1896" src="https://user-images.githubusercontent.com/300046/56323530-68b8b680-6129-11e9-9baf-81a79a04557e.jpg"></a>
    <br /><br />
    <a target="_blank" title="shown at Connect() 2017" href="https://www.youtube.com/watch?v=urcmaFVQnF4">VIDEO: IoT demo</a> shows the app powered by Azure <a target="_blank" href="https://aka.ms/azure-digital-twins">Digital Twins</a> to control lights and temperature of the hotel rooms, Dynamics 365, mobile Hololens for wayfinding. <a target="_blank" title="December 13th, 2017"  href="https://devblogs.microsoft.com/visualstudio/connect-2017-smarthotel360-demo-apps-and-architecture/">Demo Apps and Architecture</a>. See the <a target="_blank" href="https://aka.ms/smarthotel360-FacilityManagement">Facilities Management website running live here</a> (admin/admin).
