@@ -2251,8 +2251,6 @@ https://azure.microsoft.com/en-us/pricing/calculator/
    chmod 600 $SSH_USER.pem
    </pre>
 
-
-
    This is recommended instead of the alternative of asking Azure to <tt>--create-cert</tt> in command:
 
 
@@ -2287,22 +2285,24 @@ Create a Service Principal</a> using <a target="_blank" href="https://docs.micro
    
    The first of three fields (fileWithCertAndPrivateKey) requested in the query is parsed using this command:
    
-   <pre>echo return | tr -d "[ ] \" \"" | awk -F, '{ print $1 }'
-   </pre>
+   <pre><strong>echo return | tr -d "[ ] \" \"" | awk -F, '{ print $1 }'
+   </strong></pre>
 
    To obtain the first part of the response, "/user/wisdom/tmpf14zjme.pem", which is used in subsequent commands.
 
-   <tt>AZ_PEM_LOC="echo return | tr -d "[ ] \" \"" | awk -F, '{ print $2 }'"</tt>
+   <tt><strong>AZ_PEM_LOC="echo return | tr -d "[ ] \" \"" | awk -F, '{ print $2 }'"
+   </strong></tt>
 
    The second item in the query in the command above yields the APP_ID:
 
-   AZ_APP_ID="echo $return | tr -d "[ ] \" \"" | awk -F, '{ print $2 }'"
+   <tt><strong>AZ_APP_ID="echo $return | tr -d "[ ] \" \"" | awk -F, '{ print $2 }'"
+   </strong></tt>
    
    The third item is the Tenant ID. Both of these are GUIDs.
    
    The command has additional options:
 
-   <prea>az ad sp create-for-rbac -n "lnx" \
+   <pre>az ad sp create-for-rbac -n "lnx" \
    --role contributor \
    --scopes /subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss
    </pre>

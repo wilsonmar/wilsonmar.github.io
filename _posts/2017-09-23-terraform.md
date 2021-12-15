@@ -545,7 +545,7 @@ Switching completed</pre>
 1. Proceed to <a href="#Config">Configuration</a> below.
 
 
-
+<a name="Terragrunt"></a>
 
 ### Terragrunt from Gruntwork
 
@@ -669,9 +669,34 @@ AUTHOR(S):
    }</pre>
 
 
+### The problem with Terragrunt
+
+A terragrunt.hcl is needed in each folder where we want Terragrunt to generates a Terraform project in that folder. So people end up with a bunch of folders that represent all your modules, environments, regions permutations. Thus, duplicated terragrunt.hcl configurations and the need to plan Terragrunt project structure carefully upfront.
+
+
+<a name="Terraspace"></a>
+
+## Terraspace
+
+<a target="_blank" href="https://learn.boltops.com/courses/terraspace-fundamentals/lessons/terraspace-getting-started-with-aws">VIDEO</a>: <a target="_blank" href="https://terraspace.cloud/">https://terraspace.cloud/">Terraspace.cloud</a> dynamically generates Terraform projects in a centralized manner (which eliminates duplication). 
+So the whole stack can be brought up by a single command: <a target="_blank" href="https://www.youtube.com/watch?v=GjlWeYAGWIE">VIDEO</a>:
+
+   <ul><pre>terraspace up STACK</pre></ul>
+
+<a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
+Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>.
+
+Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
+
+References:
+   * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
+   <br /><br />
+
+<hr />
+
 <a name="Windows_Install"></a>
 
-### Install on Windows
+## Install on Windows
 
 1. In a Run command window as Administrator.
 2. Install Chocolatey cmd:
@@ -2600,6 +2625,8 @@ https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scala
 
 <a target="_blank" href="https://www.youtube.com/watch?v=YcJ9IeukJL8">2 hr. VIDEO: Terraform for DevOps Beginners</a> + <a target="_blank" href="https://beta.kodekloud.com/courses/lab-terraform-for-beginners/">Labs</a> by Vijin Palazhi.
 
+https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
+HashiCorp Certified: Terraform Associate Practice Exam 2021
 
 ## More on DevOps #
 

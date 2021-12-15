@@ -1,4 +1,4 @@
----
+n---
 layout: post
 title: "Azure DevOps"
 excerpt: "Pass Microsoft's comprehensive AZ-400 on DevOps for automated CI/CD pipelines in the Azure cloud as well as GitHub Actions"
@@ -322,6 +322,7 @@ Module 7. Managing Application Configuration and Secrets
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M07_Integrating_Azure_Key_Vault_with_Azure_DevOps.md">
    Lab 07: Integrating <strong>Azure Key Vault</strong> with Azure DevOps</a>
+   uses the <a target="_blank" href="https://azuredevopsdemogenerator.azurewebsites.net/">Azure DevOps Demo Generator</a>
 
 
 Module 8. Implementing Continuous Integration with GitHub Actions
@@ -370,6 +371,9 @@ Module 14. Third Party Infrastructure as Code Tools Available with Azure
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Ansible_with_Azure.md">
    Lab 14a: <strong>Ansible</strong> with Azure</a>. See <a href="#Ansible">(below)</a>
+
+   * <a target="_blank" href="https://www.azuredevopslabs.com/labs/vstsextend/ansible/">Automating Infrastructure Deployments in the Cloud with Ansible and Azure Pipelines at https://www.azuredevopslabs.com/labs/vstsextend/ansible</a>
+
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/blob/master/Instructions/Labs/AZ400_M14_Automating_infrastructure_deployments_in_the_Cloud_with_Terraform.md">
    Lab 14b: Automating infrastructure deployments in the Cloud with <strong>Terraform</strong> and Azure Pipelines</a>
@@ -977,6 +981,20 @@ Commands:
    NOTE: The site was built using <a target="_blank" href="https://github.com/microsoft/AzureDevOpsDemoGenerator">github.com/microsoft/AzureDevOpsDemoGenerator</a>
 
 1. Click the blue "Sign In" for the same email you used in the steps above.
+
+   #### Troubleshooting
+   
+   <img width="405" alt="az-lab-gen-org-err-810x340" src="https://user-images.githubusercontent.com/300046/145991083-0097e05d-d564-4a3c-bfa3-32e0fcd0b8d6.png">
+
+   Close your browser windows and then open a new browser and navigate to<br />
+   <a target="_blank" href="https://aka.ms/vssignout">https://aka.ms/vssignout</a>
+   
+   Close this browser, open a new browser and navigate to <a target="_blank" href="https://aex.dev.azure.com/me">https://aex.dev.azure.com/me</a>, and sign-in using the desired tenant to reach "Get started with Azure DevOps".
+
+   Create a new Organization at a Location of your choice.
+   
+   Return to step 1 above to try the generator again.
+
 1. Click "Accept" after memorizing the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azure-devops">default permission granted</a> ;)
 1. For New Project Name: include in the project name the template name to be selected below:
 
@@ -991,14 +1009,19 @@ Commands:
 
    NOTE: This is based on from code at <a target="_blank" href="https://github.com/CanarysAutomationsInternal/AppCenterDemoGenerator">https://github.com/CanarysAutomationsInternal/AppCenterDemoGenerator</a>
 
+   https://azuredevopsdemogenerator.azurewebsites.net/environment/createproject
+
 1. For "Selected template": click "Select Template" then <strong>"TailwindTraders"</strong> because steps below require it.
 
    NOTE: Don't choose the <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/use-demo-generator-v2?view=azure-devops">others</a>:
-
+   
    * <a target="_blank" href="https://www.tailwindtraders.com/">TailwindTraders.com</a> is <a target="_blank" href="https://microsoft.github.io/TailwindTraders/">described</a> as a fictitious retail company created using an ensemble of reference apps using all-Microsoft tech running in Azure. It showcases "intelligent application experiences made smarter through data and AI".<br /><br />
    <a target="_blank" href="https://channel9.msdn.com/Shows/Azure-Friday/An-Overview-of-the-Tailwind-Traders-Reference-Apps-for-Azure" title="David Sanchez's 10-minute overview for Scott Hanselman on 3 May 2019">VIDEO</a>: "we keep it fresh":
    <br />
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"><img alt="az-devops-tailwind-1280x720" src="https://user-images.githubusercontent.com/300046/123768853-f0f88180-d885-11eb-8645-f7dd125f308c.png"></a>
+   <br /><br />
+   * https://github.com/microsoft/tailwindtraders-website
+   * https://github.com/microsoft/tailwindTraders-Backend
    <br /><br />
    STAR: <a target="_blank" href="https://github.com/Microsoft/TailwindTraders/">github.com/Microsoft/TailwindTraders</a> lists <a target="_blank" href="https://github.com/Microsoft/TailwindTraders#demo-scripts">step-by-step demo scripts</a>, such as for <a target="_blank" href="https://github.com/microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Integrating%20Azure%20DevOps%2C%20Microsoft%20Teams%20and%20GitHub#integrating-azure-devops-microsoft-teams-and-github">Integrating Azure DevOps, Microsoft Teams and GitHub</a>.
    <br /><br />
@@ -1013,18 +1036,26 @@ Commands:
    <br /><br />
    STAR: Azure superfan Gregor Suttie <a target="_blank" href="https://gregorsuttie.com/2018/10/31/how-to-get-started-with-azure-devops/">How to get started with Azure DevOps</a> describes the steps using SmartHotel360.
 
-   * "MyHealthClinic" defines an ASP.NET Core app that deploys to Azure App Service.
+   * "MyHealthClinic" provisions a scrum based team project with code, work items for a sample ASP.NET Core web application-My Health Clinic. The template also includes pipeline definition to build and deploy the web app to Azure App Service.
 
-   * "MyShuttle" defines a <strong>Java</strong> app and Azure App service deployment.
+   * "MyShuttle" defines a <strong>Java</strong> This template contains work items and source code for MyShuttle, a sample Java application backed by a MySQL database. This template also contains pipeline definitions to build the maven project and deploy the app to Tomcat server on Azure app service.
+   <a target="_blank" href="https://www.azuredevopslabs.com/labs/vstsextend/tomcat/">Lab URL: Deploying a Java application on Tomcat</a>
    
-   * "ContosoAir" setup for Azure DevOps?
+   * <a target="_blank" href="https://github.com/Microsoft/ContosoAir">ContosoAir</a> is a sample airline booking application with a Node.js based frontend with a CosmosDB database. This template provisions an Agile based project with user stories, features, epics and a CI&CD pipeline that builds and deploys code from GitHub.
+
 
    * QUESTION: How to get "Mercury Health Group" sample app?
    <br /><br />
 
    BTW <a target="_blank" href="https://docs.microsoft.com/en-us/azure/devops/demo-gen/build-your-own-template?view=azure-devops">you can build your own template</a>.
 
-1. Right-click on <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs"><strong>ARM Outputs</strong> for a new browser tab to ARM Outputs extension page</a> <strong>for Visual Studio</strong> (licensed product not available on MacOS). Click the green "Get it free".    Optionally: <a target="_blank" href="https://azuredevopslabs.com/labs/azuredevops/prereq/">DOCS</a> for use with Visual Studio.
+1. Right-click on <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=keesschollaart.arm-outputs"><strong>ARM Outputs</strong> for a new browser tab to ARM Outputs extension page</a> <strong>for Visual Studio</strong> (licensed product not available on MacOS). 
+
+   "This extension reads the output values of an ARM deployment and sets them as Azure Pipelines variable"
+
+1. Click the green "Get it free".    Optionally: <a target="_blank" href="https://azuredevopslabs.com/labs/azuredevops/prereq/">DOCS</a> for use with Visual Studio.
+1. Click Install for your Organization.
+1. Click "Proceed to organization", such as "https://dev.azure.com/e4830gs/"
 
 1. Return to the Azure DevOps Demo browser page.
 
@@ -1624,6 +1655,11 @@ Below is an sample playbook that creates an Azure VM and configures SSH credenti
         sku: '16.04-LTS'
         version: latest
 </pre>
+
+https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure
+
+
+<hr />
 
 <a name="Terraform"></a>
 

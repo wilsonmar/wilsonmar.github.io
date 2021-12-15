@@ -6803,6 +6803,13 @@ https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
 Demo of Fairwinds Insights dashboard</a>
 Trivy, Goldilocks to suggest CPU settings for "right sizing".
 
+<a target="_blank" href="https://www.youtube.com/watch?v=xLmKQjdO2pg">
+VIDEO: AWS EKS vs Azure AKS vs Google GKE</a> by Tung Nguyen, CEO of BoltOps
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Zztufl4mFQ4">
+VIDEO: GKE Autopilot - Fully Managed Kubernetes Service From Google</a> Dec 13, 2021
+
+
 <hr />
 
 ## More on DevOps #
