@@ -671,7 +671,14 @@ AUTHOR(S):
 
 ### The problem with Terragrunt
 
-A terragrunt.hcl is needed in each folder where we want Terragrunt to generates a Terraform project in that folder. So people end up with a bunch of folders that represent all your modules, environments, regions permutations. Thus, duplicated terragrunt.hcl configurations and the need to plan Terragrunt project structure carefully upfront.
+A terragrunt.hcl is needed in each folder where we want Terragrunt to generates a Terraform project in that folder. So people end up with a bunch of folders that represent all your modules, environments, regions permutations - one folder for each permutation of env+server+region+account.<a target="_blank" href="https://www.reddit.com/r/Terraform/comments/naugwe/anyone_using_or_recommends_terraspace_or/">*</a>
+
+The problem with that is <strong>duplicated</strong> terragrunt.hcl configurations, which create the need to plan Terragrunt project structure carefully upfront. However, recent TF versions have:
+   * partial backend configurations (so you can pass backend as CLI flags)
+
+   * ability to set data directory  tf_data_dir
+
+   * Change to a directory with `-chdir` parameter.
 
 
 <a name="Terraspace"></a>
@@ -684,7 +691,7 @@ So the whole stack can be brought up by a single command: <a target="_blank" hre
    <ul><pre>terraspace up STACK</pre></ul>
 
 <a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
-Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>.
+Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
 
 Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
 

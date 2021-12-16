@@ -285,7 +285,8 @@ Once a datetime has a tzinfo, the astimezone() strategy supplants new tzinfo.
 A malicious use of precise microseconds timing code is used by <a target="_blank" href="https://codahale.com/a-lesson-in-timing-attacks/">Timing Attacks</a> based on the time it takes for an application to authenticate a password to determine the algorithm used to process the password. In the case of <a target="_blank" href="http://rdist.root.org/2009/05/28/timing-attack-in-google-keyczar-library/">Keyczar vulnerability found by Nate Lawson</a>, a simple break-on-inequality algorithm was used to compare a candidate HMAC digest with the calculated digest. A value which shares no bytes in common with the secret digest returns immediately; a value which shares the first 15 bytes will return 15 compares later. 
 
 Similarly, <a target="_blank" href="https://belitsoft.com/assets/python-security.pdf">PDF: entropy</a>
-
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/146260721-42584e8b-25d4-4853-a073-295dbbd9ac24.png">
+<img alt="python-sample-entropy-times-957x402" src="https://user-images.githubusercontent.com/300046/146260721-42584e8b-25d4-4853-a073-295dbbd9ac24.png"></a>
 
 PROTIP: Use the <a target="_blank" href="https://docs.python.org/3/library/secrets.html#secrets.compare_digest">secrets.compare_digest module</a> (introduced in Python 3.5) to check passwords and other private values. It uses a <strong>constant amount of time</strong> to process every request.
 

@@ -68,6 +68,8 @@ Facebook
 Many provide their Design System as a plugin for the <strong>Sketch</strong> graphic program on macOS.
 
 Salesforce provides a <a target="_blank" href="https://www.lightningdesignsystem.com/tools/validator/">SLDS Validator for VS Code at https://www.lightningdesignsystem.com/tools/validator/</a> which scans your markup, validates it against a database of guidelines/tips/gotchas/etc. extracted from the SLDS documentation, and offers suggestions on how to improve your code.
+    * Salesforce articles https://www.lightningdesignsystem.com/resources/articles/
+    <br /><br />
 
 Figma
 
@@ -102,7 +104,8 @@ USDS defines the "measure" token to standardize line heights:
 
 The Red Dot Design Award (at <a target="_blank" href="https://www.red-dot.org/">red-dot.org</a>) is a German international design prize awarded by Red Dot GmbH & Co. It is one of the most prestigious design awards worldwide and honors innovation, concepts and visions. 
 
-* Salesforce articles https://www.lightningdesignsystem.com/resources/articles/
+*  fully
+
 
 
 ## More on front-end styling #

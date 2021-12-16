@@ -1241,7 +1241,43 @@ References:
 
 <a name="use_gcp"></a>
 
-##  16. Retrieve secrets from GCP             = use_gcp
+##  16. Retrieve secrets from GCP Secret Manager            = use_gcp
+
+* https://cloud.google.com/docs/authentication
+* https://cloud.google.com/docs/authentication#strategies
+* https://cloud.google.com/docs/authentication/getting-started
+
+GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application.
+
+https://cloud.google.com/docs/authentication/production - using service accounts
+
+https://cloud.google.com/code/docs/vscode/secret-manager
+
+https://stackoverflow.com/questions/35159967/setting-google-application-credentials-for-bigquery-python-cli
+
+Attaching service accounts to resources for Google Cloud services is more convenient and secure than manually passing credentials. Google Cloud Client Library Application Default Credentials (ADC) automatically finds service account credentials
+
+   <pre>json-credentials-path=os.environ["GOOGLE_APPLICATION_CREDENTIALS"]</pre>
+
+To create credentials to a service account setup according to 
+
+1. Create a service account according to 
+   https://cloud.google.com/docs/authentication/production
+
+   <pre>export GCP_PROJECT_ID="weather-454da"
+export GCP_SVC_ACCT_NAME="memyselfandi"
+gcloud iam service-accounts create "${GCP_SVC_ACCT_NAME}" --project "${GCP_PROJECT_ID}"
+gcloud projects add-iam-policy-binding "${GCP_PROJECT_ID}" \
+    --member="serviceAccount:${GCP_SVC_ACCT_NAME}@${GCP_PROJECT_ID}.iam.gserviceaccount.com" \
+    --role="roles/owner"
+    # Response is list of several member serviceAccount:
+gcloud iam service-accounts keys create "${GCP_SVC_ACCT_NAME}.json" --iam-account="${GCP_SVC_ACCT_NAME}@${GCP_PROJECT_ID}.iam.gserviceaccount.com"
+    # created key [3dd743379e48adb5c020de0a4ef04f0b5930fbd5] of type [json] as [wilson-svc-2112140232.json] for [wilson-svc-2112140232@weather-454da.iam.gserviceaccount.com]
+   </pre>
+
+1. For on-going reference:
+
+   <pre>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"</pre>
 
 
 <a name="HashicorpVault"></a>
