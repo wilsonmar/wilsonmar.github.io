@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Power Automate"
-excerpt: "Microsoft's low-code RPA (Robotic Process Automation) product to create and run flows to various connectors, with AI/ML augmentation"
+excerpt: "Microsoft's low-code RPA (Robotic Process Automation) product to create low-code flows accessing various connectors, with AI/ML augmentation"
 tags: [Clouds, IoT, Azure]
 date: "2021-12-12"
 file: "power-automate"
@@ -16,16 +16,17 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article provides a hands-on tour with commentary about Microsoft's Power Automate -- a "low-code" platform used for "robotic process automation" (RPA) of business processes. 
+This article provides a hands-on tour with commentary about Microsoft's Power Automate "low-code" platform.
+
+Power Automate is Microsoft's offering in the market of RPA (Robotic Processing Automation) of business processes. BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
+   Power Automate replaced SharePoint 2010 Flows on November 2020.
 
 Microsoft's Power Automate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
 
 > "Streamline repetitive tasks and paperless processes"
 
-BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
-   Power Automate replaced SharePoint 2010 Flows on November 2020.
 
-### Power Platform Components
+### MS Power Platform Components
 
 "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using the low-code development platform:
 
@@ -47,6 +48,16 @@ BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 20
       </td></tr>
    </table>
 
+   Menus are similar:
+
+   <table>
+   <tr><th> Power Automate </th><th> Power App </th></tr>
+   <tr valign="top"><td><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png">
+   </td><td><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
+   </td></tr></table>
+
+<strong>"Power App" is the designer GUI for Flows.</strong>
+
 ## Get Started
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/getting-started">Quickstart</a>:
@@ -59,7 +70,7 @@ BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 20
 <a target="_blank" href="https://us.flow.microsoft.com/en-us/">https://us.flow.microsoft.com/en-us</a>
 if the server detects that you're from the US.
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"><img align="right" width="400" alt="power-automate-menu-21-12-16-400x1098" src="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"></a>
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"><img align="right" width="200" alt="power-automate-menu-21-12-16-400x1098" src="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"></a>
 
    Notice at the upper-left "Office 365".
 
@@ -74,7 +85,7 @@ if the server detects that you're from the US.
    Click the menu icon (9 dots), then "All apps" and "Power Automate".
 
 
-   ## Menu items
+## Menu items
 
    REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
 
@@ -97,6 +108,18 @@ if the server detects that you're from the US.
    * "process mining" 
    <br /><br />
 
+
+1. Click <strong>+ Create</strong> 
+
+   <a target="_blank" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png">
+   <img width="1143" alt="az-powerauto-flows" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png"></a>
+
+   That's similar to "New flow" at another menu:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png"><img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png"></a>
+
+
+
 1. <a target="_blank" href="https://us.flow.microsoft.com/en-us/connectors/">Connectors</a> to APIs from Microsoft and others which you create flow code to access. "PREMIUM" means additional charges are incurred.
    
    * Google Calendar, Tasks
@@ -108,11 +131,12 @@ if the server detects that you're from the US.
    * Coinbase
    * AccuWeather
    * UnixTimeStamp
+   * etc.
    <br /><br />
 
 1. Under Data, Connect to more than 500 data sources or any publicly available API.
 
-1. Under "AI Builder", select "Build". Notice the hostname changes to:
+1. Under <a href="#AIBuilder">"AI Builder"</a>, select "Build". Notice the hostname changes to:
 
    https://us.flow.microsoft.com/manage/environments/e77746a0-41e1-4543-9ec2-bc8732e6ad8b/aibuilder/build
 
@@ -122,14 +146,6 @@ if the server detects that you're from the US.
 
 
    ### Power Automate
-
-   <strong>"Power Automate" is the designer GUI for Flows.</strong>
-
-   <table>
-   <tr><th> us.flow </th><th> us.flow </th></tr>
-   <tr valign="top"><td><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png">
-   </td><td><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
-   </td></tr></table>
 
    Expansion of items:
 
@@ -164,20 +180,6 @@ if the server detects that you're from the US.
    <br /><br />
 
 
-   <a name="Flows"></a>
-
-   ### "My Flows" = My Worlflow Process
-
-1. On the left menu, click <strong>+ Create</strong> from blank:
-
-   <a target="_blank" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png">
-   <img width="1143" alt="az-powerauto-flows" src="https://user-images.githubusercontent.com/300046/125397004-932a6600-e36a-11eb-8e4d-a051f3053540.png"></a>
-
-   That's similar to "New flow" at another menu:
-
-   <img width="239" alt="powerapp-newflow-478x674" src="https://user-images.githubusercontent.com/300046/124976956-27a06b80-dfed-11eb-99fd-c5e7bd415b64.png">
-
-
    <a name="ProcessAdvisor"></a>
 
    ### Process Advisor
@@ -200,7 +202,12 @@ if the server detects that you're from the US.
 
    Microsoft charges $500/month for five flows used by an unlimited number of users.
 
-   Flows can be created using <strong>PowerAppsMaker</strong> templates.
+   NOTE: Flows can be created using <strong>PowerAppsMaker</strong> templates.
+
+   
+   ## Install Desktop
+
+   <img width="200" alt="power-automate-menu-21-12-16-400x1098" src="https://user-images.githubusercontent.com/300046/146581065-4b893450-8dae-4e23-952d-d16ddf0bd212.png">
 
 
    <a name="AIBuilder"></a>
@@ -289,12 +296,6 @@ if the server detects that you're from the US.
 
 
 ### RPA or RDA?
-
-Power Automate is Microsoft's offering in the RPA (Robotic Processing Automation) market.
-But RDA.
-
-
-
 
 Charles Lamanna's demo at Ignite Nov 19, 2019
 https://www.youtube.com/watch?v=o8s1_qlzzd4
