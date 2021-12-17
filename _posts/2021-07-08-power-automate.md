@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Power Automate"
-excerpt: "Power Automate is Microsoft's low-code RPA (Robotic Process Automation) product"
+excerpt: "Microsoft's low-code RPA (Robotic Process Automation) product to create and run flows to various connectors, with AI/ML augmentation"
 tags: [Clouds, IoT, Azure]
-date: "2021-07-12"
+date: "2021-12-12"
 file: "power-automate"
 image:
 # ms-iot-hero-1900x500
@@ -16,21 +16,114 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+This article provides a hands-on tour with commentary about Microsoft's Power Automate -- a "low-code" platform used for "robotic process automation" (RPA) of business processes. 
 
-## Get Started on 365
+Microsoft's Power Automate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
 
-   Alternately, if you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
+> "Streamline repetitive tasks and paperless processes"
+
+BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
+   Power Automate replaced SharePoint 2010 Flows on November 2020.
+
+### Power Platform Components
+
+"Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using the low-code development platform:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Feature </th><th> Component Name </th></tr>
+   <tr valign="top"><td> database store </td><td> Microsoft Dataverse </td><td> DaaS (Database as a Service) common data services
+      </td></tr>
+   <tr valign="top"><td> external interfaces </td><td> Connectors </td><td> to exchange data with established and custom APIs
+      </td></tr>
+   <tr valign="top"><td> AI/ML form processing </td><td> AI Builder </td><td> - 
+      </td></tr>
+   <tr valign="top"><td> automation </td><td> Power Automate Desktop </td><td> RPA (UI Flows designer)
+      </td></tr>
+   <tr valign="top"><td> app dev </td><td> Power Apps </td><td> low-code custom mobile/web app development environment
+      </td></tr>
+   <tr valign="top"><td> analytics and visualization </td><td> Power BI </td><td> -
+      </td></tr>
+   <tr valign="top"><td> chatbots </td><td> Power Virtual Agent and visualization -
+      </td></tr>
+   </table>
+
+## Get Started
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/getting-started">Quickstart</a>:
+
+* If you're new to Microsoft and Azure, <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in">Sign-up</a> and sign-in to:
+
+   <a target="_blank" href="https://flow.microsoft.com/"><strong>https://flow.microsoft.com</strong></a>
+
+   BTW <a target="_blank" href="https://powerautomate.com/">powerautomate.com</a> now redirects to<br />
+<a target="_blank" href="https://us.flow.microsoft.com/en-us/">https://us.flow.microsoft.com/en-us</a>
+if the server detects that you're from the US.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"><img align="right" width="400" alt="power-automate-menu-21-12-16-400x1098" src="https://user-images.githubusercontent.com/300046/146571400-f73e1621-278d-45d2-80f9-902e84d8149c.png"></a>
+
+   Notice at the upper-left "Office 365".
+
+* If you're a 365 Administrator, sign in using your Microsoft 365 credentials (@inmicrosoft.com) at:
 
    <a target="_blank" href="https://admin.powerplatform.microsoft.com/">https://admin.powerplatform.microsoft.com</a>
 
-1. If you have an <strong>Office 365</strong> user account, sign on to:
+* If you have an <strong>Office 365</strong> user account, sign on to:
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
-1. Click the menu icon (9 dots), then "All apps" and "Power Automate".
+   Click the menu icon (9 dots), then "All apps" and "Power Automate".
+
+
+   ## Menu items
+
+   REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
+
+1. Under "Monitor" is where you'll see alerts, runs, and notifications for
+
+   "Cloud Flow activity" for flows which run on the cloud
+
+   "Desktop flow runs" for flows which run on <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/desktop-flows/manage-machines">"Machines"</a>.
+
+1. Action Items sub-menus are "Approvals" and "Business Process Flows"
+
+   <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/flow-types">flow types</a> 
+
+1. Templates provide pre-written code. <a target="_blank" href="https://powerautomate.microsoft.com/en-us/templates/">Sample Templates</a> include:
+
+   * Create an issue in Azure DevOps when an email is received.
+   * Automate tasks on your local computer like computing data in Excel.
+   * Send automatic reminders for past due tasks
+   * Move business data between systems on a schedule
+   * "process mining" 
+   <br /><br />
+
+1. <a target="_blank" href="https://us.flow.microsoft.com/en-us/connectors/">Connectors</a> to APIs from Microsoft and others which you create flow code to access. "PREMIUM" means additional charges are incurred.
+   
+   * Google Calendar, Tasks
+   * GitHub
+   * Slack
+   * Salesforce
+   * Box
+   * ArgGIS
+   * Coinbase
+   * AccuWeather
+   * UnixTimeStamp
+   <br /><br />
+
+1. Under Data, Connect to more than 500 data sources or any publicly available API.
+
+1. Under "AI Builder", select "Build". Notice the hostname changes to:
+
+   https://us.flow.microsoft.com/manage/environments/e77746a0-41e1-4543-9ec2-bc8732e6ad8b/aibuilder/build
+
+   and "Models" and "Document automation".
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web">Learn</a> takes you to a <strong>separate tab</strong> containing documentation.
 
 
    ### Power Automate
+
+   <strong>"Power Automate" is the designer GUI for Flows.</strong>
 
    <table>
    <tr><th> us.flow </th><th> us.flow </th></tr>
@@ -43,23 +136,27 @@ comments: true
    Action Items:
    * Approvals
    * Business process flows
+   <br /><br />
 
    Data:
    * Tables
    * Connections
    * Custom connectors
    * Gateways
+   <br /><br />
 
    Monitor:
    * Cloud flow activity
    * Desktop flow runs
    * Desktop flow queues
    * Machines
+   <br /><br />
 
    <a href="#AIBuilder">AI Builder</a>:
    * Build
    * Models
    * Document automation (preview)
+   <br /><br />
 
    <a href="#ProcessAdvisor">Process advisor</a>:
    * Create
@@ -70,14 +167,6 @@ comments: true
    <a name="Flows"></a>
 
    ### "My Flows" = My Worlflow Process
-
-   "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
-   
-   Power Automate replaced SharePoint 2010 Flows on November 2020.
-
-   Each "Flow" is a distinct workflow (automated).
-
-   Power Automate is the designer GUI for Flows.
 
 1. On the left menu, click <strong>+ Create</strong> from blank:
 
@@ -141,32 +230,6 @@ comments: true
 
    RPA and DPA serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives.
    Unlike RPA, DPA is not intended to fully replace tasks completed by humans.
-
-
-   ### Power Platform Components
-
-1. Open another browser tab
-
-   "Power Automate" is one of Microsoft's "Power Platform" offerings for citizen developers to use the low-code development platform:
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Feature </th><th> Component Name </th></tr>
-   <tr valign="top"><td> database store </td><td> Microsoft Dataverse </td><td> DaaS (Database as a Service) common data services
-      </td></tr>
-   <tr valign="top"><td> external interfaces </td><td> Connectors </td><td> to exchange data with established and custom APIs
-      </td></tr>
-   <tr valign="top"><td> AI/ML form processing </td><td> AI Builder </td><td> - 
-      </td></tr>
-   <tr valign="top"><td> automation </td><td> Power Automate Desktop </td><td> RPA (UI Flows designer)
-      </td></tr>
-   <tr valign="top"><td> app dev </td><td> Power Apps </td><td> low-code custom mobile/web app development environment
-      </td></tr>
-   <tr valign="top"><td> analytics and visualization </td><td> Power BI </td><td> -
-      </td></tr>
-   <tr valign="top"><td> chatbots </td><td> Power Virtual Agent and visualization -
-      </td></tr>
-   </table>
-
 
 
 
@@ -476,10 +539,6 @@ https://docs.microsoft.com/en-us/learn/modules/how-build-model-driven-app/?ranMI
 
 ## Power Automate
 
-1. 
-
-   PowerAutomate.com
-
 <a target="_blank" href="https://www.youtube.com/watch?v=CdXBL7CfwVE" title="Sep 28, 2020">
 VIDEO: Cartoon illustration of what Power Automate Flow can do with API connectors: 
    1. Recognize a new Twitter follower
@@ -496,16 +555,15 @@ Microsoft Power Automate overview</a>
 Power Automate Desktop - Invoice Processing</a>
 Microsoft Power Platform
 
-https://www.youtube.com/watch?v=4ZnI0_atYUo
-Power Automate Approval Workflow Basics
+<a target="_blank" href="https://www.youtube.com/watch?v=4ZnI0_atYUo">
+Power Automate Approval Workflow Basics</a>
 Reza Dorrani
 
-
 by Jon Levesque
-   * https://www.youtube.com/watch?v=GMk7xe3-9zc
-   Microsoft Power Automate Introduction 
-   * https://www.youtube.com/watch?v=5000Kw7aIRc
-   Microsoft Power Automate Tutorial - Flow + Forms + Teams = Awesome
+   * <a target="_blank" href="https://www.youtube.com/watch?v=GMk7xe3-9zc">
+   Microsoft Power Automate Introduction </a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=5000Kw7aIRc">
+   Microsoft Power Automate Tutorial - Flow + Forms + Teams = Awesome</a>
    <br /><br />
 
 https://www.youtube.com/watch?v=8O68-cc-QNo
@@ -517,21 +575,23 @@ https://docs.microsoft.com/en-us/learn/modules/introduction-power-automate/?ranM
 on <a target="_blank" href="https://www.youtube.com/channel/UCgc3NEslE8oISOEawhcpMCA">Microsoft Power Platform YouTube channel</a>
 
 
-### Use cases
+<hr />
 
-https://www.youtube.com/watch?v=IQ_KpBC8fwo
-How to use Microsoft Power Automate Desktop - Full tutorial
-Feb 9, 2021 by Kevin Stratvert
+<a name="WindowsDesktop"></a>
 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=aU6I5ZQSQgg&list=RDCMUCgc3NEslE8oISOEawhcpMCA&start_radio=1&rv=aU6I5ZQSQgg&t=571">VIDEO: Power Automate Desktop - Invoice Processing</a>
-
-### How to use
+## Windows Desktop
 
 1. Install Power Automate Desktop
 1. Define steps 
 1. Record
 1. Replace text with variables
+<br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=IQ_KpBC8fwo">
+VIDEO: How to use Microsoft Power Automate Desktop - Full tutorial</a>
+Feb 9, 2021 by Kevin Stratvert
+
+<a target="_blank" href="https://www.youtube.com/watch?v=aU6I5ZQSQgg&list=RDCMUCgc3NEslE8oISOEawhcpMCA&start_radio=1&rv=aU6I5ZQSQgg&t=571">VIDEO: Power Automate Desktop - Invoice Processing</a>
 
 
 ### Workflow Automate Auzure itself
@@ -569,17 +629,24 @@ Python in Power BI 2018
 https://docs.microsoft.com/en-us/learn/modules/build-simple-dashboard/?ranMID=24542&ranEAID=je6NUbpObpQ&ranSiteID=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&epi=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=(ir__90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00)(7593)(1243925)(je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A)()&irclickid=_90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00&ns-enrollment-type=LearningPath&ns-enrollment-id=learn-bizapps.wwl.power-plat-fundamentals
 
 
+
+<a name="Social"></a>
+
+## Social
+
+<a target="_blank" href="https://powerusers.microsoft.com/t5/Microsoft-Power-Automate/ct-p/MPACommunity">
+Microsoft's Power Automate Community</a>
+
+
 ## Videos Referenced
 
-https://www.youtube.com/watch?v=8O68-cc-QNo&list=RDCMUCvBYTqRx-n_8KzFO0MJlUVw&start_radio=1&rv=8O68-cc-QNo
-Top 25 Power Automate flow tips and tricks for 2021 - hidden gems and new
+<a target="_blank" href="https://www.youtube.com/watch?v=8O68-cc-QNo&list=RDCMUCvBYTqRx-n_8KzFO0MJlUVw&start_radio=1&rv=8O68-cc-QNo">
+Top 25 Power Automate flow tips and tricks for 2021 - hidden gems and new</a>
 by Reza Dorrani
 
-https://www.youtube.com/watch?v=SUsik0FGzI0&list=RDCMUCJtUOos_MwJa_Ewii-R3cJA&start_radio=1&rv=SUsik0FGzI0 Feb 16, 2021
-Learn to Use Power Automate with Examples | Create Bulk PDF Files | Planner to Outlook
+<a target="_blank" href="https://www.youtube.com/watch?v=SUsik0FGzI0&list=RDCMUCJtUOos_MwJa_Ewii-R3cJA&start_radio=1&rv=SUsik0FGzI0" title="Feb 16, 2021">
+Learn to Use Power Automate with Examples | Create Bulk PDF Files | Planner to Outlook</a>
 Leila Gharani
-
-
 
 
 ## More about Azure #
