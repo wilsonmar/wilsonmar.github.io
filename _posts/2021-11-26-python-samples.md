@@ -304,6 +304,21 @@ from ..some_package import some_function
 <a target="_blank" href="https://www.linkedin.com/learning/secure-coding-in-python/developing-securely?autoAdvance=true&autoSkip=false&autoplay=true&resume=true">LinkedIn.com video course by Ronnie Sheer</a>
 
 
+There are several modules which handle date, time, timezones, etc.:
+
+   * date – Manipulate just date ( Month, day, year)
+   * time – Time independent of the day (Hour, minute, second, microsecond)
+   * datetime – Combination of time and date (Month, day, year, hour, second, microsecond)
+   * timedelta— A duration of time used for manipulating dates
+   * tzinfo— An abstract class for dealing with time zones
+
+   * Use the time Module to Convert Epoch to Datetime in Python
+   * Use the datetime Module to Convert Epoch to Datetime in Python
+
+datetime.datetime is a subclass of datetime.date.
+
+
+
    Sample for import contain something like:
 
    <pre>class TestMakingChange(unittest.TestCase):
@@ -321,7 +336,10 @@ from ..some_package import some_function
 
 CODING CONVENTION: Block comments about the program as a whole and each function defined.
 
+
 ## "Dunder" variables
+
+At the top of the program file I added metadata about the file:
 
 <pre>__repository__ = "https://github.com/wilsonmar/python-samples"
 __author__ = "Wilson Mar"
@@ -330,6 +348,16 @@ __license__ = "See the file LICENSE for copyright and license info"
 __version__ = "0.0.58"  # change on every push - Semver.org format per PEP440
 __linkedin__ = "https://linkedin.com/in/WilsonMar"
 </pre>
+
+Variables defined with double underlines are commonly called "dunder" variables.
+
+
+<pre><strong>import datetime
+print(dir(datetime))</strong></pre>
+
+yields attributes:
+
+<pre>['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_divide_and_round', 'date', 'datetime', 'datetime_CAPI', 'time', 'timedelta', 'timezone', 'tzinfo']</pre>
 
 
 ##  1. Import of Libraries
