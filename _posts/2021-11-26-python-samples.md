@@ -8,7 +8,7 @@ file: "python-samples"
 image:
 # python-samples-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
-  credit: "An Athlete Wrestling with a Python" (1877) by Sir Frederic Leighton (1830-1896) at the Tate, London
+  credit: An Athlete Wrestling with a Python (1877) by Sir Frederic Leighton (1830-1896) at the Tate, London
   creditlink: https://www.wikiwand.com/en/An_Athlete_Wrestling_with_a_Python
 comments: true
 ---
@@ -1215,6 +1215,17 @@ References:
    * https://docs.microsoft.com/en-us/python/api/overview/azure/keyvault-keys-readme?view=azure-python
    * https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/key-vault-parameter?tabs=azure-cli
 
+
+## 14.2 Use Azure Redis Cache for Memoization
+
+"Dynamic Programming" is the strategy of reducing the "Time Complexity" of code by increasing "Storage Complexity". Practically, rather than repeating a computation, lookup the results of the computation stored on disk or memory.
+
+The example here is comparing the time needed to calculate Fibonacci numbers recursively versus lookup in an Azure Redis Cache instance.
+
+
+## 14.5 Microsoft Graph API
+
+https://devblogs.microsoft.com/microsoft365dev/new-python-quick-start-and-samples-for-microsoft-graph/
 
 
 <a name="use_aws"></a>

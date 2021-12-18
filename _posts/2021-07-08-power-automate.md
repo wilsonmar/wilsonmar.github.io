@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Power Automate"
-excerpt: "Microsoft's low-code RPA (Robotic Process Automation) product to create low-code flows accessing various connectors, with AI/ML augmentation"
+excerpt: "Microsoft's low-code RPA (Robotic Process Automation) and DPA (Digital Process Automation) product to create low-code flows accessing various connectors, augmented by AI/ML"
 tags: [Clouds, IoT, Azure]
 date: "2021-12-12"
 file: "power-automate"
@@ -18,8 +18,7 @@ comments: true
 
 This article provides a hands-on tour with commentary about Microsoft's Power Automate "low-code" platform.
 
-Power Automate is Microsoft's offering in the market of RPA (Robotic Processing Automation) of business processes. BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016.
-   Power Automate replaced SharePoint 2010 Flows on November 2020.
+Power Automate is Microsoft's offering in the market of RPA (Robotic Processing Automation) of business processes. BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016 and also replaces SharePoint 2010 Flows introduced November 2020.
 
 Microsoft's Power Automate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
 
@@ -82,12 +81,24 @@ if the server detects that you're from the US.
 
    <a target="_blank" href="https://www.office.com">office.com</a>
 
-   Click the menu icon (9 dots), then "All apps" and "Power Automate".
+   Click the menu icon (9 dots), then "All apps", then "Power Automate".
+
+   <img width="349" alt="power-automate-office-211216-698x206" src="https://user-images.githubusercontent.com/300046/146636030-8f78be82-f7e3-439e-aa77-5bd49f32edca.png">
+
 
 
 ## Menu items
 
    REMEMBER: <strong>Each "Flow" is a distinct (automated) workflow, akin to a program module.</strong>
+
+   There are two types of Flows which serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives:
+
+   * <strong>Attended RPA</strong> is actually <strong>DPA (Digital Process Automation)</strong>, which is not intended to fully replace tasks completed by humans.
+   * <strong>Unattended RPA</strong>
+   <br /><br />
+
+   
+
 
 1. Under "Monitor" is where you'll see alerts, runs, and notifications for
 
@@ -141,6 +152,8 @@ if the server detects that you're from the US.
    https://us.flow.microsoft.com/manage/environments/e77746a0-41e1-4543-9ec2-bc8732e6ad8b/aibuilder/build
 
    and "Models" and "Document automation".
+
+   AI Build is NOT "pay as you go", but up-front. <a target="_blank" href="https://flow.microsoft.com/en-us/pricing/#add-on-plans">Microsoft charges</a> <strong>$150 per bot per month</strong>, which include 5,000 AI Builder service "credits".  Additional credits are $500 per month each.
 
 1. <a target="_blank" href="https://docs.microsoft.com/en-us/power-automate/?utm_source=flow-sidebar&utm_medium=web">Learn</a> takes you to a <strong>separate tab</strong> containing documentation.
 
@@ -216,9 +229,6 @@ if the server detects that you're from the US.
 
    Each Flow is processed by a <strong>bot</strong> (as in robot) created using "AI Builder".
 
-   <a target="_blank" href="https://flow.microsoft.com/en-us/pricing/#add-on-plans">Microsoft charges</a> <strong>$150 per bot per month</strong>, which include 5,000 AI Builder service credits.
-   Additional credits are $500 per month.
-
 
    <a name="Licensing"></a>
 
@@ -228,15 +238,6 @@ if the server detects that you're from the US.
    <a target="_blank" href="https://flow.microsoft.com/en-us/pricing">https://flow.microsoft.com/en-us/pricing</a>
 
    "Power Automate Desktop is available to Windows 10 users at no additional cost" means that you can install it, but using it and creating "Flows" for others to run requires licensing.
-
-   There are two types of Flows (RPA):
-
-   * Attended RPA (actually DPA)
-   * Unattended RPA
-   <br /><br />
-
-   RPA and DPA serve different but complementary purposes in an organization’s overall business process management (BPM) strategies and initiatives.
-   Unlike RPA, DPA is not intended to fully replace tasks completed by humans.
 
 
 
