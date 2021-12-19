@@ -82,7 +82,56 @@ C. Alternately, to work with the whole repo on your laptop,
 
 ### Conda environment
 
+
+### Virtualenv
+
+A virtual environment enables a specific set of Python dependencies to be installed, so no weird, difficult-to-debug  dependency issues arise.
+
+When installing venv:
+
+<pre>created virtual environment CPython3.9.8.final.0-64 in 5940ms
+  creator CPython3Posix(dest=/Users/wilson_mar/gmail_acct/python-samples/venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/wilson_mar/Library/Application Support/virtualenv)
+    added seed packages: pip==21.3.1, setuptools==58.5.3, wheel==0.37.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+</pre>
+
+"venv" is the preferred name of an environment.
+But variable <tt>my_venv_folder</tt> is used in case you want customization.
+
+1. Detect whether the folder (defined by variable <tt>my_venv_folder</tt>) has been created:
+
+   PROTIP: Python code running a Linux operating system command.
+
+   <pre>if run("which python3").find(my_venv_folder) == -1:  # not found:
+   # Such as /Users/wilsonmar/miniconda3/envs/py3k/bin/python3
+   # So create the folder inside the program's folder:
+   python3 -m venv ${my_venv_folder}
+   </pre>
+
+1. Activation is necessary. To activate on a Mac:
+
+   <pre>source "{my_venv_folder}"/bin/activate</pre>
+
+   On Windows:
+
+   <pre>venv\Scripts\activate.bat</pre>
+
+1. To check if a virtual environment is active, In CLI, <tt>(venv)</tt> appears. The path of the venv folder should appear:
+
+   <pre>echo ${VIRTUAL_ENV}</pre>
+
+   Within Python:
+    check whether the VIRTUAL_ENV environment variable is set to the path of the virtual environment:
+
+
+   * Outside a virtual environment, sys.prefix points to the system python installation and sys.real_prefix is not defined.
+
+   * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
+
+   
 <pre>conda info --envs</pre>
+
 
 
 ### Bandit
@@ -304,6 +353,8 @@ from ..some_package import some_function
 <a target="_blank" href="https://www.linkedin.com/learning/secure-coding-in-python/developing-securely?autoAdvance=true&autoSkip=false&autoplay=true&resume=true">LinkedIn.com video course by Ronnie Sheer</a>
 
 
+## Date and Time Handling
+
 There are several modules which handle date, time, timezones, etc.:
 
    * date – Manipulate just date ( Month, day, year)
@@ -317,6 +368,61 @@ There are several modules which handle date, time, timezones, etc.:
 
 datetime.datetime is a subclass of datetime.date.
 
+
+### LOCALE
+
+PROTIP: LOCALE has different values on Windows vs. Linux and other systems:
+
+<pre>if sys.platform == 'win32':
+    locale.setlocale(locale.LC_ALL, 'rus_rus')
+else:
+    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+print(datetime.date.today().strftime("%B %Y"))
+</pre>
+
+PROTIP: To format various locales cleanly without changing your OS locale, use the Babel package:
+
+   <pre>from datetime import date, datetime, time
+from babel.dates import format_date, format_datetime, format_time
+d = date(2007, 4, 1)
+format_date(d, locale='en')     # u'Apr 1, 2007'
+format_date(d, locale='de_DE')  # u'01.04.2007'
+   </pre>
+
+
+TODO: With Unicode:
+
+<pre>locale.setlocale(locale.LC_ALL, lang)
+format_ = datetime.datetime.today().strftime('%a, %x %X')
+format_u = format_.decode(locale.getlocale()[1])
+</pre>
+
+   * Bulgarian пет, 14.11.2014 г. 11:21:10 ч.
+   * Czech pá, 14.11.2014 11:21:10
+   * Danish fr, 14-11-2014 11:21:10
+   * German Fr, 14.11.2014 11:21:10
+   * Greek Παρ, 14/11/2014 11:21:10 πμ
+   * English Fri, 11/14/2014 11:21:10 AM
+   * Spanish vie, 14/11/2014 11:21:10
+   * Estonian R, 14.11.2014 11:21:10
+   * Finnish pe, 14.11.2014 11:21:10
+   * French ven., 14/11/2014 11:21:10
+   * Croatian pet, 14.11.2014. 11:21:10
+   * Hungarian P, 2014.11.14. 11:21:10
+   * Italian ven, 14/11/2014 11:21:10
+   * Lithuanian Pn, 2014.11.14 11:21:10
+   * Latvian pk, 2014.11.14. 11:21:10
+   * Dutch vr, 14-11-2014 11:21:10
+   * Norwegian fr, 14.11.2014 11:21:10
+   * Polish Pt, 2014-11-14 11:21:10
+   * Portuguese sex, 14/11/2014 11:21:10
+   * Romanian V, 14.11.2014 11:21:10
+   * Russian Пт, 14.11.2014 11:21:10
+   * Slovak pi, 14. 11. 2014 11:21:10
+   * Slovenian pet, 14.11.2014 11:21:10
+   * Swedish fr, 2014-11-14 11:21:10
+   * Turkish Cum, 14.11.2014 11:21:10
+   * Chinese 周五, 2014/11/14 11:21:10
 
 
    Sample for import contain something like:
@@ -362,9 +468,26 @@ yields attributes:
 
 ##  1. Import of Libraries
 
-CODING CONVENTION: imports are listesd in alphabetical order to make them easier to find. Most IDEs would detect when you don't have an imported coded.
+CODING CONVENTION: In our program imports are listesd in alphabetical order to make them easier to find. Most IDEs would detect when you don't have an imported coded.
 
 SECURITY CONSIDERATION: Generally, minimize the number of external dependencies to a small number of trusted ones from Microsoft, Amazon, etc.
+
+
+### Quit/Exit Program
+
+Whenever a program runs in Python, the <strong>site module</strong> is automatically loaded into memory. 
+So it does not need to be imported before issuing its <tt>quit()</tt> and <tt>exit()</tt> functions which raise a SystemExit exception to exit the program.
+
+Because quit() works with the interactive interpreter, they should not be used in production code.
+
+Also not recommended is using <tt>os._exit()</tt> method of the <strong>os module</strong> which exits a process <strong>without calling any cleanup handlers or flushing stdio buffers</strong>, which is not a very graceful.
+
+PROTIP: The recommended way to exit production code is to use <tt><strong>sys.exit()</strong></tt> which also raises a SystemExit exception when executed:
+
+<pre><strong>import sys
+print("exiting the program")
+print(sys.exit())
+</strong></pre>
 
 
 <hr />
@@ -394,6 +517,52 @@ see https://arrow.readthedocs.io/en/latest/
    <ul><tt>import arrow
    start_epoch_time = time_start=arrow.now()</tt></ul>
 
+
+### Sleep
+
+To pause/suspend the calling thread’s execution for a specified number of seconds:
+
+<pre>import time
+time.sleep(1.5)       # seconds
+time.sleep(400/1000)  # milliseconds
+</pre>
+
+
+### Pause execution
+
+CAUTION: To pause program execution until the user does not press any key, but this method only works on Windows, so wrap the command:
+
+<pre>import os
+os.system("pause")
+</pre>
+
+
+To pause program execution for user input, in Python 3:
+
+<pre>name = input("Please enter your name: ")
+print("Name:", name)
+</pre>
+
+Back in Python 2: 
+
+<pre>name = raw_input("Please enter your name: ")
+print("Name:", name)
+</pre>
+
+
+### Threading Timer
+
+Alternately, set a Timer to wait for a specific time before calling a thread that calls a function:
+
+<pre>from threading import Timer
+def nextfunction():
+    print("Next function is called!")
+...
+t = Timer(0.5, nextfunction)
+t.start()
+</pre>
+
+
 <hr />
 
 <a name="ParseArguments"></a>
@@ -421,6 +590,7 @@ show_heading = True    # -q  Don't display step headings before attempting actio
 show_verbose = True    # -v  Display technical program run conditions
 show_trace = True      # -vv Display responses from API calls for debugging code
    </pre></ul>
+
 
 <a name="VerbosityFlags"></a>
 
@@ -453,54 +623,6 @@ TODO: A "dev" and "prod" mode which establishes whole sets of switches.
 
 
 ## 4. Define utilities for printing (in color), logging, etc.
-
-### Virtualenv
-
-A virtual environment enables a specific set of Python dependencies to be installed, so no weird, difficult-to-debug  dependency issues arise.
-
-When installing venv:
-
-<pre>created virtual environment CPython3.9.8.final.0-64 in 5940ms
-  creator CPython3Posix(dest=/Users/wilson_mar/gmail_acct/python-samples/venv, clear=False, no_vcs_ignore=False, global=False)
-  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/wilson_mar/Library/Application Support/virtualenv)
-    added seed packages: pip==21.3.1, setuptools==58.5.3, wheel==0.37.0
-  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
-</pre>
-
-"venv" is the preferred name of an environment.
-But variable <tt>my_venv_folder</tt> is used in case you want customization.
-
-1. Detect whether the folder (defined by variable <tt>my_venv_folder</tt>) has been created:
-
-   PROTIP: Python code running a Linux operating system command.
-
-   <pre>if run("which python3").find(my_venv_folder) == -1:  # not found:
-   # Such as /Users/wilsonmar/miniconda3/envs/py3k/bin/python3
-   # So create the folder inside the program's folder:
-   python3 -m venv ${my_venv_folder}
-   </pre>
-
-1. Activation is necessary. To activate on a Mac:
-
-   <pre>source "{my_venv_folder}"/bin/activate</pre>
-
-   On Windows:
-
-   <pre>venv\Scripts\activate.bat</pre>
-
-1. To check if a virtual environment is active, In CLI, <tt>(venv)</tt> appears. The path of the venv folder should appear:
-
-   <pre>echo ${VIRTUAL_ENV}</pre>
-
-   Within Python:
-    check whether the VIRTUAL_ENV environment variable is set to the path of the virtual environment:
-
-
-   * Outside a virtual environment, sys.prefix points to the system python installation and sys.real_prefix is not defined.
-
-   * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
-
-   
 
 
 
@@ -646,6 +768,16 @@ my_encoding = "utf-8"  # default: or "cp860" or "latin" or "ascii"
 
 
 ##  7. Display run conditions: datetime, OS, Python version, etc.
+
+
+
+<a name="get_ipaddr"></a>
+
+### Get = get_ipaddr
+
+There are several ways to get the IP address addressed by the program.
+
+
 
 
 <a name="DefineUtils"></a>
@@ -1285,6 +1417,7 @@ References:
 * https://cloud.google.com/docs/authentication
 * https://cloud.google.com/docs/authentication#strategies
 * https://cloud.google.com/docs/authentication/getting-started
+* <a target="_blank" href="https://www.youtube.com/watch?v=gb0bytUGDnQ&list=PL3JVwFmb_BnQlc47zGPQFzrKeyXiolAoS&index=2">"How to create a Google Cloud Service Account and download client json file"</a>by Jie Jenn Jul 25, 2021
 
 GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application.
 
@@ -1298,10 +1431,7 @@ Attaching service accounts to resources for Google Cloud services is more conven
 
    <pre>json-credentials-path=os.environ["GOOGLE_APPLICATION_CREDENTIALS"]</pre>
 
-To create credentials to a service account setup according to 
-
-1. Create a service account according to 
-   https://cloud.google.com/docs/authentication/production
+1. To create credentials to a service account setup according to https://cloud.google.com/docs/authentication/production
 
    <pre>export GCP_PROJECT_ID="weather-454da"
 export GCP_SVC_ACCT_NAME="memyselfandi"
@@ -1317,6 +1447,94 @@ gcloud iam service-accounts keys create "${GCP_SVC_ACCT_NAME}.json" --iam-accoun
 1. For on-going reference:
 
    <pre>export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"</pre>
+
+   CAUTION: PROTIP: Service Account Keys are like passwords. Whoever posseses one will be able to use it to login the account.
+
+1. Rotate keys. Generate old keys, refer to them, delete old keys.
+
+1. Assign Roles for Secret Manager: https://console.cloud.google.com/iam-admin/serviceaccounts?project=weather-454da&supportedpurview=project
+
+   * Secret Manager Admin
+   * Secret Manager Secret Accessor
+   * Secret Manager Secret Version Adder
+   * Secret Manager Secret Version Manager
+   * Secret Manager Viewer 
+   <br /><br />
+
+
+### Keyless GCP Workload Identity Federation
+
+<a target="_blank" href="https://cloud.google.com/iam/docs/workload-identity-federation">Workload Identity Federation</a> (g.co/workloadidentityfederation) provides <strong>keyless</strong> authentication for service accounts used by applications services (programs rather than people) outside the GCP cloud. It replaces long-lived service account access keys with short-lived (temporary) access tokens which impersonate a service account. Vidoes:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SDhMwyyd9_0&list=RDCMUCJS9pqu9BzkAMNTmzNMNhvg&start_radio=1&rv=SDhMwyyd9_0&t=3">"Service Account keys and impersonation"</a> Mar 19, 2021 by Google Cloud Tech
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=RD5ix9qVG3E">"Security Risks of Service Accounts in Google Cloud: How to Mitigate Them"</a> by Out of DevOps
+   * <a target="_blank" href="https://www.youtube.com/watch?v=AvRHU-P5Cdg">"GitHub Workflow and Workload Identity Federation"</a> Oct 9, 2021 by Out of DevOps
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Eh0mJwFo9Ak">"GCP - Workload Identity Federation - Access GCS Bucket From AWS Lambda Function"</a> Apr 30, 2021 by Cloud Monkey
+   * <a target="_blank" href="https://www.youtube.com/watch?v=s4NYEJDFc0M">"Keyless Entry: Securely Access GCP Services From Kubernetes" (at Cloud Next Aug. '19)</a> by Google Cloud Tech 
+   <br /><br />
+
+1. After installing gcloud, in a CLI Terminal, login
+
+   <pre>gcloud login</pre>
+
+   The above command causes the default browser to open for you to designate an account and provide its password.
+
+1. Define values:
+
+   <pre># Identity pool groups for least privilege and enviornment: dev, stage, prod :
+gcloud_identity_pool_id="weather-identity-pool-211216"
+gcloud_identity_pool_desc="???"
+gcloud_identity_pool_display_name="???"
+gcloud_provider_id="external-provider-1"  # such as aws, azure, AD, Okta, K8s
+gcloud_issuer-uri="???"  # 
+gcloud_project_number="123412342341234"
+gcloud_svc_acct_email="???@"
+gcloud_identity_subject="???"
+   </pre>
+
+1. Create a Workload Identity Pool:
+
+   <pre>gcloud iam workload-identity-pools create "${gcloud_identity_pool_id}" \
+   --location="global" \
+   --description="${gcloud_identity_pool_desc}" \
+   --display-name="${gcloud_identity_pool_display_name}"
+   </pre>
+
+   NOTE: Several can be created.
+
+2. Create a one-way trust:
+
+   <pre>gcloud iam workload-identity-pools providers create-oidc "${gcloud_provider_id}" \
+   --workload-identity-pool="${gcloud_identity_pool_id}" \
+   --location="global" \
+   --issuer-uri="${gcloud_issuer-uri}" \
+   --attribute-mapping="google.subject=assertion.sub"
+   </pre>
+
+3. Create an IAM policy for impersonation:
+
+   <pre>gcloud iam service-accounts add-iam-policy-binding "${gcloud_svc_acct_email}" \
+   --role roles/iam.workloadIdentityUser \
+   --member "principal://iam.googleapis.com/projects/${project_number}/locations \
+   "/global/workloadIdentityPools/${gcloud_identity_pool_id}/subject/${gcloud_identity_subject}"
+   </pre>
+
+
+## Google Text-to-Speech
+
+The engine is powered by DeepMind.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=lKra6E_tp5U&list=PL3JVwFmb_BnQlc47zGPQFzrKeyXiolAoS">"Google Cloud Text-to-Speech AI API in Python - Getting Started (Part 1)"</a> by Jie Jenn
+
+* https://www.youtube.com/watch?v=7tDGxUxKUAo">
+
+https://www.youtube.com/watch?v=lKra6E_tp5U&t=0s
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kfqpFKdDVMU">"Text to Speech Converter - FREE & No Limits"</a> by Kevin Stratvert
+
+<hr />
 
 
 <a name="HashicorpVault"></a>
@@ -1645,8 +1863,52 @@ PROTIP: Test the program running as an stand-alone executable after bundling eve
 BTW Delphi has always been the best product for producing stand-alone .EXEs for Windows.
 Lazarus IDE using FreePascal
 
-## User input PyQt
 
+## Difference between two images
+
+https://www.youtube.com/watch?v=fUfvBnREBFc&list=RDCMUCvVZ19DRSLIC2-RUOeWx8ug&index=30
+
+
+<a name="gTTS"></a>
+
+## 96. Text to Speech file and play mp3
+
+Google's Text-To-Speech API 
+   * https://cloud.google.com/text-to-speech?hl=en
+   * https://cloud.google.com/text-to-speech/docs/quickstart-protocol
+   * https://www.youtube.com/watch?v=-AzGZ_CHzJk">Python Voice Assistant Tutorial #1 - Playing Sound with gTTS (Google Text to Speech)</a> by Tech With Tim Aug 31, 2019
+   * https://www.youtube.com/watch?v=tIFEe0W0BEA by Let's Learn About
+   * https://www.youtube.com/watch?v=X9rxXFjoWzg with pyttsx3 by Rishabh Narayan
+   * https://www.youtube.com/watch?v=_bScjMgipkk with pyttsx3 by Parwiz Forogh
+   <br /><br />
+
+1. Select a GCP project
+1. Create a service account
+1. Enable Text-to-Speech 
+
+Enable project billing for Text-to-Speech.
+
+Create and/or assign one or more service accounts to Text-to-Speech.
+
+Download a service account credential key.
+
+Set your authentication environment variable.
+
+Alternately, perform audio manipulation and storing audio in a byte-sized object.
+
+https://cloud.google.com/text-to-speech/docs/libraries
+
+   * pip install --upgrade google-cloud-texttospeech
+   * pip install --upgrade gtts
+
+The gTTS function creates an object which reads the text and convert it to an audio object and mp3 audio-format file.
+
+We can use many parameters with this function. We can reduce the speed of the output using the slow argument. 
+The lang parameter specifies multiple languages.
+
+Play mp3 file using the https://github.com/TaylorSMarks/playsound
+
+Mp3 files can also be played by calling the VLC player using the VLC Python module https://wiki.videolan.org/Python_bindings  
 
 
 ## References
@@ -1686,6 +1948,13 @@ def nuke(var_to_nuke):
 This provides an example of secure string handling</a>
 
 http://web.archive.org/web/20100929111257/http://www.codexon.com/posts/clearing-passwords-in-memory-with-python
+
+https://app.pluralsight.com/library/courses/python-secure-coding-playbook/table-of-contents
+by Gavin Johnson-Lynn (@gav_jl, gavinjl.me)
+
+API Security Top 10
+Mobile Top 10
+Internet of Things Top 10
 
 
 <hr />
