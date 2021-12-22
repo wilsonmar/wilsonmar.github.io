@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Power Automate"
-excerpt: "Microsoft's low-code RPA (Robotic Process Automation) and DPA (Digital Process Automation) product to create low-code flows accessing various connectors, augmented by AI/ML"
+excerpt: "Microsoft's RPA (Robotic Process Automation) and DPA (Digital Process Automation) product to create and run low-code flows accessing various connectors, augmented by AI/ML"
 tags: [Clouds, IoT, Azure]
 date: "2021-12-12"
 file: "power-automate"
@@ -16,16 +16,23 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This article provides a hands-on tour with commentary about Microsoft's Power Automate "low-code" platform.
+This article provides a hands-on tour with commentary. 
 
-Power Automate is Microsoft's offering in the market of RPA (Robotic Processing Automation) of business processes. BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016 and also replaces SharePoint 2010 Flows introduced November 2020.
-
-Microsoft's Power Automate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
+Microsoft's PowerAutomate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
 
 > "Streamline repetitive tasks and paperless processes"
 
+Competitors to Microsoft are:
+   * Automation Anywhere
+   * UiPath
+   * Tricentis
+   * etc.
+   <br /><br />
+
 
 ### MS Power Platform Components
+
+BTW "Power Automate" is the 2019 rebranding of "Microsoft Flow" introduced in 2016 and also replaces SharePoint 2010 Flows introduced November 2020.
 
 "Power Automate" is one of Microsoft's "Power Platform" offerings for "citizen developers" using the low-code development platform:
 
@@ -50,7 +57,7 @@ Microsoft's Power Automate marketing homepage at <a target="_blank" href="https:
    Menus are similar:
 
    <table>
-   <tr><th> Power Automate </th><th> Power App </th></tr>
+   <tr align="left"><th> For users: </th><th> Fo developers: </th></tr>
    <tr valign="top"><td><img alt="o365-menu-203x500.png" width="203" src="https://user-images.githubusercontent.com/300046/125302215-f96ea480-e2e8-11eb-8020-0ed15e56752e.png">
    </td><td><img alt="powerapp-menu-408x938" width="204" src="https://user-images.githubusercontent.com/300046/124976962-296a2f00-dfed-11eb-8d8c-d737d53cfecc.png">
    </td></tr></table>
@@ -301,7 +308,7 @@ if the server detects that you're from the US.
 Charles Lamanna's demo at Ignite Nov 19, 2019
 https://www.youtube.com/watch?v=o8s1_qlzzd4
 
-https://docs.microsoft.com/en-us/learn/modules/introduction-power-platform/?ranMID=24542&ranEAID=je6NUbpObpQ&ranSiteID=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&epi=je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A&irgwc=1&OCID=AID2200057_aff_7593_1243925&tduid=(ir__90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00)(7593)(1243925)(je6NUbpObpQ-omnFLFQ1IfYU4qFyOjDc9A)()&irclickid=_90rmzhneiskfqkx0y92ssxlp0v2xubjcvz0m2puv00&ns-enrollment-type=LearningPath&ns-enrollment-id=learn-bizapps.wwl.power-plat-fundamentals
+https://docs.microsoft.com/en-us/learn/modules/introduction-power-platform
 
 Microsoft Dataverse is a scalable data service and app platform which lets users securely store and manage data from multiple sources and integrate that data in business applications using a common data model to ensure ease and consistency to users. Microsoft Dataverse is the common currency that enables the components of Microsoft Power Platform to work together. It’s the foundation that enables the consolidation, display, and manipulation of data.
 

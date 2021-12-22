@@ -175,11 +175,11 @@ Inside the program are <strong>feature flags<strong> which the program reference
    2. <a href="#StartingTime">Capture starting time and set default global values</a>
    3. <a href="#ParseArguments">Parse arguments that control program operation</a>
    4. Define utilities for printing (in <a href="#PrintColors">color</a>), <a href="#Logging">logging</a>
+   5. <a href="#SQLLite">Local machine in-memory SQL database  = SQLLite</a>
    5. <a href="#run_env">Obtain run control data from .env file in the user's $HOME folder</a>
    6. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
    7. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
       1. <a href="#ManageFolders">Create, navigate to, and remove local working folders</a>
-      2. <a href="#SQLLite">Local machine in-memory SQL database  = SQLLite</a>
 
    8. Display run conditions: datetime, OS, Python version, etc.
       1. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
@@ -361,7 +361,10 @@ There are several modules which handle date, time, timezones, etc.:
    * time – Time independent of the day (Hour, minute, second, microsecond)
    * datetime – Combination of time and date (Month, day, year, hour, second, microsecond)
    * timedelta— A duration of time used for manipulating dates
-   * tzinfo— An abstract class for dealing with time zones
+   * tzinfo— An abstract class for dealing with at https://www.iana.org/time-zones">time zones</a>
+   - see https://www.wikiwand.com/en/List_of_tz_database_time_zones
+<a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6557">2012 Best Current Practice for Maintaining the Time Zone (TZ) Database</a> is by a group of volunteers.
+Geographical boundaries in the form of coordinate sets are not part of the tz database, but <a target="_blank" href="https://github.com/evansiroky/timezone-boundary-builder/">boundaries are published in the form of vector polygon shapefiles</a>. Using these vector polygons, one can determine, for each place on the globe, the tz database zone in which it is located. 
 
    * Use the time Module to Convert Epoch to Datetime in Python
    * Use the datetime Module to Convert Epoch to Datetime in Python
@@ -369,18 +372,57 @@ There are several modules which handle date, time, timezones, etc.:
 datetime.datetime is a subclass of datetime.date.
 
 
+<hr />
+
+## Location-based data processing
+
+Each country is assigned a specific block of IP addresses for use within that country.
+Services such as Netflix block services based on IP address.
+So some users send traffic through VPN gateways in various countries to mask their origin.
+
+Each country not only have its own language, it also has a different way to display date and time.
+
+Various programs maintain a table of 110 countries:
+   * https://gist.github.com/mlconnor/1887156 .csv needs Palestine and Bangladesh
+   * https://gist.github.com/mlconnor/1878290 is a Java program to use the csv file.
+   <br /><br />
+
+The issue with a table by country is that there are several country identifier codes:
+   * ISO 3166 Country Code ("USA") used by Windows
+   * ISO639-2 Country Code ("US")  used by Linux
+   <br /><br />
+
+Information associated with each country:
+   * ISO 3166 Language Codes ("eng" or "spa" for Spanish)
+   * ISO639-2 Lang
+   * Currency code
+   * Telephone prefix
+   <br /><br />
+
+The preferred Date/Time format is based on LOCALE (language within country).
+
+TODO: To determine data format, this program does a lookup of IP Address to obtain the country code. It then retrieves a country_info.csv file to do a lookup based on the MY_COUNTRY two-letter code.
+
+
+<a name="Locale"></a>
+
 ### LOCALE
 
 PROTIP: LOCALE has different values on Windows vs. Linux and other systems:
 
 <pre>if sys.platform == 'win32':
-    locale.setlocale(locale.LC_ALL, 'rus_rus')
+    locale.setlocale(locale.LC_ALL, 'rus_rus')  # ISO3166
 else:
-    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')
+    locale.setlocale(locale.LC_ALL, 'ru_RU.UTF-8')  # ISO639-2 country and language
 print(datetime.date.today().strftime("%B %Y"))
 </pre>
 
-PROTIP: To format various locales cleanly without changing your OS locale, use the Babel package:
+PROTIP: To format various locales cleanly without changing your OS locale, use an external package:
+   * Babel package http://babel.pocoo.org/en/latest/dates.html
+   * Arrow package https://arrow.readthedocs.io/en/latest/
+   <br /><br />
+
+Babel:
 
    <pre>from datetime import date, datetime, time
 from babel.dates import format_date, format_datetime, format_time
@@ -389,6 +431,7 @@ format_date(d, locale='en')     # u'Apr 1, 2007'
 format_date(d, locale='de_DE')  # u'01.04.2007'
    </pre>
 
+https://unicode-org.github.io/icu/userguide/format_parse/datetime/
 
 TODO: With Unicode:
 
@@ -682,6 +725,37 @@ PROTIP: Per <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc58
 append log entries with the identity of intermediary handlers along the log custody chain.
 
 
+<a name="SQLLite"></a>
+
+### 7.2. Local machine in-memory SQL database  = SQLLite</a>
+
+Each country can be referenced using different identifiers.
+So it would be useful to make use of a SQL database with an index to each type of identifier.
+
+
+PROTIP: A SQL database locally created from within a Python program is as transitory (temporary) as the program instance itself. SQLite (C-language) runs inside the same process as the application.
+
+WARNING: SQLite connection objects are not thread-safe, so no sharing connections between threads. 
+
+The Python sqlite3 module adheres to the Python Database API Specification v2.0 (PEP 249).
+
+https://pynative.com/python-sqlite/
+
+CAUTION: If data stored is sensitive, encryption of data in transit and at rest is still needed on "scratch" databases. For more persistant storage which lives to serve many different instances of a program, use a proper database established in a cloud enviornment.
+
+<a target="_blank" href="https://www.zetetic.net/sqlcipher">SQLCipher</a> (from <a target="_blank" href="https://www.zetetic.net/sqlcipher/design/">Zetetic</a>) is an BSD-licensed <a target="_blank" href="https://github.com/sqlcipher/sqlcipher">open-source library</a> that applies to SQLite databases  transparent 256-bit AES encryption (in CBC mode). It is used by many enterprises, including NASA, SalesForce, Xerox, and more. It makes use of OpenSSL. Users of the peewee ORM would use the sqlcipher <a target="_blank" href="http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#sqlcipher-ext">playhouse module</a>. <a target="_blank" href="https://github.com/coleifer/sqlcipher3">Python driver</a>
+
+References:
+   * https://charlesleifer.com/blog/encrypted-sqlite-databases-with-python-and-sqlcipher/
+   <br /><br />
+
+
+If the database is created as part of program initiation, it would minimize the time users wait for the database to be created when needed. However, this consumes more memory.
+
+If a connection to the database remains open, it would minimize the time users wait for a connection to be established when needed. However, this may leave the database vulnerable.
+
+
+
 <a name="run_env"></a>
 
 ##  5. Obtain run control data from .env file in the user's $HOME folder
@@ -699,11 +773,13 @@ The code reads a file in an ".env" file in the user's $HOME folder because that 
 
 <strong>The following example of the .env file contents</strong> is not put in the code because that would trigger findings in utilities that look for secrets in code.
 
-<pre>LOCALE="en_US"  # "en_EN", "ar_EG", "ja_JP", "zh_CN", "zh_TW", "hi" (Hindi), "sv_SE" #swedish
+<pre>#MY_IP_ADDRESS=""     # override of lookup done by program
+IPFIND_API_KEY="12345678-abcd-4460-a7d7-b5f6983a33c7"
+#MY_COUNTRY="US"      # For use in whether to use metric
+LOCALE="en_US"  # "en_EN", "ar_EG", "ja_JP", "zh_CN", "zh_TW", "hi" (Hindi), "sv_SE" #swedish
 #MY_ENCODING="UTF-8"
 &nbsp;
 #MY_ZIP_CODE="59041"  # use to lookup country, US state, long/lat, etc.
-#MY_COUNTRY="US"      # For use in whether to use metric
 #MY_US_STATE="MT"
 #MY_LONGITUDE = ""
 #MY_LATITUDE = ""
@@ -711,8 +787,6 @@ The code reads a file in an ".env" file in the user's $HOME folder because that 
 #MY_CURRENCY = ""
 #MY_LANGUGES = ""
 &nbsp;
-#MY_IP_ADDRESS=""     # override of lookup done by program
-IPFIND_API_KEY="12345678-abcd-4460-a7d7-b5f6983a33c7"
 OPENWEATHERMAP_API_KEY="12345678901234567890123456789012"
 &nbsp;
 AZURE_SUBSCRIPTION_ID="12345678901234567890123456789012"   # access to info behind this requires user credentials
@@ -788,17 +862,12 @@ There are several ways to get the IP address addressed by the program.
 
 ### 7.1. Create, navigate to, and remove local working folders
 
-<a name="SQLLite"></a>
+## Front-end
 
-### 7.2. Local machine in-memory SQL database  = SQLLite</a>
+To obtain user input:
 
-PROTIP: A SQL databases locally created from within a Python program is as transitory (temporary) as the program instance itself.
+   * PythonCard
 
-CAUTION: Encryption of data in transit and at rest is still needed on such "scratch" databases.
-
-For more persistant storage which lives to serve many different instances of a program, use a proper database established in a cloud enviornment.
-
-Instead of SQL, consider use of a Redis/Kafka key/value server/service
 
 
 ##  9. Generate various calculations for hashing, encryption, etc.
@@ -810,6 +879,17 @@ By contrast, an encrypted value can possibly be (eventually) decrypted to its cl
 So when storing passwords in databases, hashing (with a strong salt) is considered more secure than encryption and decryption (2-way operations). When a user provides a password for authentication, a hash of it is created the same way, then compared with the hash stored in the database.
 
 https://www.python.org/dev/peps/pep-0506/
+
+Validate each password
+   * Minimum 10 characters
+   * No all-number values
+   * Not Common values
+   <br /><br />
+
+Credential stuffing using credentials stolen from other websites.
+
+Rate-limiting HTTP 403 error
+
 
 ### Passlib
 
@@ -960,23 +1040,22 @@ See https://www.geeksforgeeks.org/encrypt-and-decrypt-files-using-python/
 ###  9.4. Generate a fibonacci number recursion    = gen_fibonacci
 
 The Fibonacci sequence is a sequence of numbers which is the sum of the two preceding numbers.
-Leonardo Fibonacci (1175 A.D. - 1250 A.D) found that the quotient of the adjacent number has a proportion, roughly 1.6180, or its inverse 0.6180, also called the "golden ratio".
+BACKGROUND: Leonardo Fibonacci (1175 A.D. - 1250 A.D) found that the quotient of the adjacent number has a proportion, roughly 1.6180, or its inverse 0.6180, also called the "golden ratio".
 
 There are actually practical uses for Fibonacci sequences in financial technical analysis. Specifically, retracements:
    * https://www.investopedia.com/articles/technical/04/033104.asp
    * https://www.investopedia.com/terms/f/fibonaccilines.asp
    * https://www.investopedia.com/terms/f/fibonaccitimezones.asp
-
+   <br /><br />
 
 <pre>def fibonacci_recursive(n):
         """Calculate using brute-force across all - for O(n) time complexity
         This is also called a "naive" implementation.
         """
-        # if (n == 0) return 0;
-        # if (n == 1) return 1;
         if n in {0, 1, 2}:   # the first 3 result values (0, 1, 2) are the same as the request value.
             return n
-        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)   # recursive because function calls itself.
+        # recursive = function calls itself:
+        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)   
 </pre>
 
 The "Dynamic programming" approach is to start out with a cache of pre-calculated solutions from previous runs, such as the 15th number being 610:
@@ -990,25 +1069,13 @@ The increase in Fibonucci return values <strong>grow exponentially</strong>.
       """Calculate using saved lookup - for O(1) time complexity"""
       if n in fibonacci_memoized_cache:  # Base case
             return fibonacci_memoized_cache[n]
-      # else:  # add entry in fibonacci_memoized_cache and TODO: save to Redis/Kafka.
+      # else:  # add entry in fibonacci_memoized_cache and save to Redis/Kafka (see below)
          # TODO: If Redis is not found, issue API calls to create it.
-
       fibonacci_memoized_cache[n] = fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
       return fibonacci_memoized_cache[n]
 </pre>
 
 Based on bottom_up_fib(n) in https://github.com/samgh/DynamicProgrammingEbook/blob/master/python/Fibonacci.py
-
-<pre>"""
-        Compute the nth Fibonacci number iteratively
-        """
-        ...
-        cache = [0]*(n+1)
-        cache[1] = 1
-        for i in range(2, n+1):
-            cache[i] = cache[i-1] + cache[i-2]
-        return cache[n]
-</pre>
 
 
 <a name="AzureCacheforRedis"></a>
@@ -1024,7 +1091,7 @@ If not, it gets the whole cache set from Redis Cache.
 
 If it's not in the Redis Cache, calculate the new Fibonacii value and update the local cache
 and also adds an entry to the Redis Cache.
-Add the cache set to long-term storage (SQL)?
+TODO: Add the cache set to long-term storage (SQL)?
 
 "Caching typically works well with data that is immutable or that changes infrequently. Examples include reference information such as product and pricing information in an e-commerce application, or shared static resources that are costly to construct."
 -- See https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching
