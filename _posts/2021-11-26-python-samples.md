@@ -763,7 +763,7 @@ If the database is created as part of program initiation, it would minimize the 
 
 If a connection to the database remains open, it would minimize the time users wait for a connection to be established when needed. However, this may leave the database vulnerable.
 
-
+https://www.youtube.com/watch?v=byHcYRpMgI4&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=byHcYRpMgI4
 
 <a name="run_env"></a>
 
