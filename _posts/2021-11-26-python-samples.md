@@ -727,11 +727,10 @@ append log entries with the identity of intermediary handlers along the log cust
 
 <a name="SQLLite"></a>
 
-### 7.2. Local machine in-memory SQL database  = SQLLite</a>
+### 7.2. Local in-memory SQLLite database  = use_sqlite</a>
 
-Each country can be referenced using different identifiers.
+Each country can be referenced using identifiers of either two or three characters ("US" or "USA").
 So it would be useful to make use of a SQL database with an index to each type of identifier.
-
 
 PROTIP: A SQL database locally created from within a Python program is as transitory (temporary) as the program instance itself. SQLite (C-language) runs inside the same process as the application.
 
@@ -741,11 +740,21 @@ The Python sqlite3 module adheres to the Python Database API Specification v2.0 
 
 https://pynative.com/python-sqlite/
 
+<a target="_blank" href="https://www.zetetic.net/sqlcipher">SQLCipher</a> is an <a target="_blank" href="https://github.com/sqlcipher/sqlcipher">open-source library</a> that applies to SQLite databases transparent 256-bit AES encryption (in CBC mode) for mobile devices (Swift, Java, Xamarin). In addition to a free Community BSD-license, <a target="_blank" href="https://www.zetetic.net/sqlcipher/design/">Zetetic</a> offers paid Commercial and Enterprise licenses which is "3-4X faster". It makes use of OpenSSL. Users of the peewee ORM would use the sqlcipher <a target="_blank" href="http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#sqlcipher-ext">playhouse module</a>. <a target="_blank" href="https://github.com/coleifer/sqlcipher3">Python driver</a>
+
 CAUTION: If data stored is sensitive, encryption of data in transit and at rest is still needed on "scratch" databases. For more persistant storage which lives to serve many different instances of a program, use a proper database established in a cloud enviornment.
 
-<a target="_blank" href="https://www.zetetic.net/sqlcipher">SQLCipher</a> (from <a target="_blank" href="https://www.zetetic.net/sqlcipher/design/">Zetetic</a>) is an BSD-licensed <a target="_blank" href="https://github.com/sqlcipher/sqlcipher">open-source library</a> that applies to SQLite databases  transparent 256-bit AES encryption (in CBC mode). It is used by many enterprises, including NASA, SalesForce, Xerox, and more. It makes use of OpenSSL. Users of the peewee ORM would use the sqlcipher <a target="_blank" href="http://docs.peewee-orm.com/en/latest/peewee/playhouse.html#sqlcipher-ext">playhouse module</a>. <a target="_blank" href="https://github.com/coleifer/sqlcipher3">Python driver</a>
+<a target="_blank" href="https://stackoverflow.com/questions/12932607/how-to-check-if-a-sqlite3-database-exists-in-python">The code</a> has a way to figure out why a sqlite3 db script might not be working. Like the comments say, it uses 3 phases, checks if a path exist, checks if the path is a file, checks if that file's header is a sqlite3 header. 
+
+
 
 References:
+   * https://www.youtube.com/watch?v=byHcYRpMgI4 from FreeCodeCamp.org/Codemy.com is the most through
+   * https://www.youtube.com/watch?v=pd-0G0MigUA 
+   * https://www.youtube.com/watch?v=KHc2iiLEDoQ by Telusko
+   * https://www.youtube.com/watch?v=E7aY1XJX1og intro by Bryan Cafferky
+   * https://python-course.eu/applications-python/sql-python.php
+   * https://codereview.stackexchange.com/questions/182700/python-class-to-manage-a-table-in-sqlite
    * https://charlesleifer.com/blog/encrypted-sqlite-databases-with-python-and-sqlcipher/
    <br /><br />
 
@@ -777,7 +786,7 @@ The code reads a file in an ".env" file in the user's $HOME folder because that 
 IPFIND_API_KEY="12345678-abcd-4460-a7d7-b5f6983a33c7"
 #MY_COUNTRY="US"      # For use in whether to use metric
 LOCALE="en_US"  # "en_EN", "ar_EG", "ja_JP", "zh_CN", "zh_TW", "hi" (Hindi), "sv_SE" #swedish
-#MY_ENCODING="UTF-8"
+#MY_ENCODING="UTF-8"  # "ISO-8859-1"
 &nbsp;
 #MY_ZIP_CODE="59041"  # use to lookup country, US state, long/lat, etc.
 #MY_US_STATE="MT"
@@ -830,7 +839,7 @@ See https://python-secrets.readthedocs.io/en/latest/readme.html
 
 ##  6. Localization
 
-NOTE: For localized presentation, use these specialized functions:
+NOTE: For localized presentation, use these specialized functions which understands LOCALE localization :
     # atof (convert a string to a floating point number),
     # atoi (convert a string to integer),
     # str (formats a floating point number using the same format as the
@@ -839,6 +848,7 @@ NOTE: For localized presentation, use these specialized functions:
 Use Language Code Identifier (LCID) https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c?redirectedfrom=MSDN
 
 my_encoding = "utf-8"  # default: or "cp860" or "latin" or "ascii"
+"ISO-8859-1" used in SQLite.
 
 
 ##  7. Display run conditions: datetime, OS, Python version, etc.
@@ -1040,13 +1050,22 @@ See https://www.geeksforgeeks.org/encrypt-and-decrypt-files-using-python/
 ###  9.4. Generate a fibonacci number recursion    = gen_fibonacci
 
 The Fibonacci sequence is a sequence of numbers which is the sum of the two preceding numbers.
-BACKGROUND: Leonardo Fibonacci (1175 A.D. - 1250 A.D) found that the quotient of the adjacent number has a proportion, roughly 1.6180, or its inverse 0.6180, also called the "golden ratio".
+
+<pre>fibonacci_memoized_cache = {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8, 6: 13, 7: 21, 8: 34, 9: 55, 10: 89, 11: 144, 12: 233, 13: 377, 14: 610}
+</pre>
+
+This was identified by Leonardo Fibonacci (1175 A.D. - 1250 A.D).
+BTW Fibonacci found that the quotient of the adjacent number has a proportion, roughly 1.6180, or its inverse 0.6180, also called the "golden ratio".
+
+An example is how quickly rabbits reproduce, starting with one pair of rabbits (male and female). It takes one month until they can mate. At the end of the second month the female gives birth to a new pair of rabbits, etc.
 
 There are actually practical uses for Fibonacci sequences in financial technical analysis. Specifically, retracements:
    * https://www.investopedia.com/articles/technical/04/033104.asp
    * https://www.investopedia.com/terms/f/fibonaccilines.asp
    * https://www.investopedia.com/terms/f/fibonaccitimezones.asp
    <br /><br />
+
+https://python-course.eu/applications-python/fibonacci-to-music-score.php
 
 <pre>def fibonacci_recursive(n):
         """Calculate using brute-force across all - for O(n) time complexity
@@ -1060,8 +1079,6 @@ There are actually practical uses for Fibonacci sequences in financial technical
 
 The "Dynamic programming" approach is to start out with a cache of pre-calculated solutions from previous runs, such as the 15th number being 610:
 
-<pre>fibonacci_memoized_cache = {0: 0, 1: 1, 2: 2, 3: 3, 4: 5, 5: 8, 6: 13, 7: 21, 8: 34, 9: 55, 10: 89, 11: 144, 12: 233, 13: 377, 14: 610}
-</pre>
 
 The increase in Fibonucci return values <strong>grow exponentially</strong>.
 
@@ -2023,6 +2040,12 @@ API Security Top 10
 Mobile Top 10
 Internet of Things Top 10
 
+### Levenshtein/Edit Distance
+
+The "Levenshtein Distance", also known as "Edit Distance", is a metric of the "distance" between two strings -- the number of edit operations (substitutions and deletions) needed to transform one string into another one. Its mathematical definition is recursive (inefficient).
+
+To compute the Levenshtein distance efficiently, use an algorithmic example of a bottom-up Dynamic Programming. A <strong>matrix</strong> containing the Levenshtein distances between all prefixes of the first string and all prefixes of the second one. We can dynamically compute the values in this matrix. The last value computed will be the distance between the two full strings. 
+https://python-course.eu/applications-python/levenshtein-distance.php
 
 <hr />
 

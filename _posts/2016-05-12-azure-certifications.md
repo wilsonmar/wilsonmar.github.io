@@ -820,10 +820,10 @@ The exam is 120 minutes to answer 40-60 business case scenario (case-studies) qu
    * Design infrastructure (25-30%)
    <br /><br />
 
-Links to Microsoft docs for each item in the syllubus are detailed by<br />
-<a target="_blank" href="
+Links to Microsoft docs for each item in the syllubus are <a target="_blank" href="
 https://www.azurebarry.com/prepare-for-the-az304-exam/">
-https://www.azurebarry.com/prepare-for-the-az304-exam</a>
+detailed by azurebarry.com</a>, who created a <a target="_blank" href="https://app.pluralsight.com/paths/certificate/microsoft-azure-architect-design-az-304">video class on Pluralsight</a>
+
    * Cost Optimization (cheapest approach)
    * Migration Planning
    * Governance
@@ -831,7 +831,7 @@ https://www.azurebarry.com/prepare-for-the-az304-exam</a>
    * Application Architecture
    <br /><br />
 
-Labs at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
+Labs created by Microsoft for its live classes at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
 
 Module 1 Design a Compute Solution
 
@@ -844,14 +844,15 @@ Module 3 Design for Migration
 
 Module 4 Design Authentication and Authorization
 
-   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a> using PowerShell through a Bastion blade, using Azure AD Premium P2 licensing to integrate an AD DS forest with an Azure AD tenant with Azure AD Connect, all to set conditional access.
    <br /><br />
 
 Module 5 Design Governance
 
 Module 6 Design a Solution for Databases
 
-   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>
+   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>:
+   Create Azure SQL Database. Connect to it. Query it using a .NET Core console app behind a firewall.
    <br /><br />
 
 Module 7 Select an Appropriate Storage Account
