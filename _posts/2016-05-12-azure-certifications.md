@@ -580,7 +580,41 @@ https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
 
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
 
-https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator
+https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator has 31 labs at time of writing:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_00_SetUpLabResources.md"> Lab 00: Lab Environment Setup </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_01_ManageUserRoles.md"> Lab 01: Manage user roles </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_02_WorkingWithTenantProperties.md"> Lab 02: Working with tenant properties </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_03_AssignLicensesToUsersByGroupMembershipAAD.md"> Lab 03: Assigning licenses using group membership </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_04_RestoreRemoveRecentlyDeletedUserUsingAAD.md"> Lab 04: Restore a deleted user </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_05_AddingGroupsToAAD.md"> Lab 05: Adding groups to Azure AD </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_06_ChangeGroupLicenseAssignments.md"> Lab 06: Change group license assignments </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_07_ChangeUserLicenseAssignments.md"> Lab 07: Change user account license assignments </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_08_ConfigureExternalCollaborationSettings.md"> Lab 08: Configure external collaboration settings </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_09_AddGuestUsersToTheDirectory.md"> Lab 09: Add guest users to the directory </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_10_InviteGuestUsersInBulk.md"> Lab 10: Invite guest users in bulk </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_11_WorkingWithDynamicGroups.md">  Lab 11: Working with dynamic groups </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_12_EnableAzureADMultiFactorAuthentication.md"> Lab 12 - Enable Azure AD multi-factor authentication </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_13_ConfigureAndDeploySelfServicePasswordReset.md"> Lab 13 - Configure and deploy self-service password reset </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_14_WorkingWithSecurityDefaults.md"> Lab 14 - Working with security defaults </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_15_ImplementAndTestAConditionalAccessPolicy.md"> Lab 15 - Implement and test a conditional access policy </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_16_ConfigureAuthenticationSessionControls.md"> Lab 16 - Configure authentication session controls </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_17_ManageAzureADSmartLockoutValues.md"> Lab 17 - Manage Azure AD smart lockout values </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_18_EnableSignRiskPolicy.md"> Lab 18 - Enable sign in and user risk policies </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_19_ConfigureAAD_MultiFactorAuthRegPolicy.md"> Lab 19 - Configure an Azure AD multi-factor authentication registration policy </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_20_ImplementAccessManagementForApps.md"> Lab 20 - Implement access management for apps </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_21_CreateANewCustomRoleToGrantAccessToManageAppRegistrations.md"> Lab 21 - Implement access management for apps </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_22_RegisterAnApplication.md"> Lab 22 - Register an application </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_23_GrantTenantWideAdminConsentToAnApplication.md"> Lab 23: Grant tenant-wide admin consent to an application </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_24_AddAppRolesToYourAppAndReceiveThemInTheToken.md"> Lab 24: Add app roles to your app and receive them in the token </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_25_CreateAndManageACatalogOfResourcesInAADEntitlementManagement.md"> Lab 25: Create and manage a catalog of resources in Azure AD entitlement management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_26_AddTermsOfUseAcceptanceReporting.md"> Lab 26: Add terms of use and acceptance reporting </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_27_ManageTheLifecycleOfExternalUsersInAADIdentityGovernanceSettings.md"> Lab 27: Manage the lifecycle of external users in Azure AD Identity Governance settings </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_28_ConfigurePrivilegedIdentityManagementForAADRoles.md"> Lab 28: Configure Privileged Identity Management for Azure AD roles </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_29_AssignAADRolesInPrivilegedIdentityManagement.md"> Lab 29: Assign Azure AD roles in Privileged Identity Management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_30_AssignAzureResourceRolesInPrivilegedIdentityManagement.md"> Lab 30: Assign Azure resource roles in Privileged Identity Management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_31_ConnectDataFromAADToAzureSentinel.md"> Lab 31: Connect data from Azure Active Directory (Azure AD) to Azure Sentinel </a>
+
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-300/
 

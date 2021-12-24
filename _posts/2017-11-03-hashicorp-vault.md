@@ -3,7 +3,7 @@ layout: post
 title: "Hashicorp Vault (with Consul and Nomad)"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
 tags: [vault, hashicorp, security]
-date: "2017-11-03"
+date: "2021-12-23"
 file: "hashicorp-vault"
 image:
 # pic secret finger over mouth 1900x500
@@ -16,37 +16,21 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here is a hands-on tutorial about how to install and use Hashicorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely access secret keys and Hashicorp <strong>Consul</strong> to store key/value pairs. Installation is from scratch on a cloud environment using Docker and docker-compose.
-
-Vault provides "Encryption as a Service" to an enterprise in order to centralize secrets across the organization. Making secret handling easy (automated) enables replacement of long-lived secrets with dynamically generated asymetric X.509 certificates that have a controlled lease period.
+Here is a hands-on tutorial about how to install and use Hashicorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
-PROTIP: Where we want to end up is having the system handle secrets.
-For example, on my desktop I have 1Password, which can I either click "fill" or copy and paste a password without knowing what it is. Great to have when I'm sharing my screen.
-
 At the end of this tutorial, you should be able to:
 
 * <a href="#InstallServer">Install Vault and Consul on a server using Docker</a>
-* <a href="#InstallEKS">Install Vault within AWS EKS cluster</a>
+* <a href="#InstallEKS">Install Vault within a AWS EKS cluster</a>
 * <a href="#Config">Initialize and Configure Vault</a>
 * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
-* <a href="#AppProgramming">Store and access secrets in Vault within a program</a>
+* <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
 * Hashicorp Nomad passes secrets as files. It polls for changed values.
 	Tasks get tokens so they can retrieve values.
 <br /><br />
-
-
-## Install Server binaries
-
-Precompiled Vault binaries are available at <a target="_blank" href="https://releases.hashicorp.com/vault/">https://releases.hashicorp.com/vault</a>
-
-PROTIP: Enterprise and free versions have different binaries.
-Paid Enterprise editions include Read Replicas and Replication for DR, plus MFA, Sentinel, and HSM Auto-Unseal with FIPS 140-2 & Seal Wrap.
-A system service file is needed for prod instances.
-
-PROTIP: Vault has a single program file for server and client.
 
 
 ## Skill Certification
@@ -57,12 +41,14 @@ In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
    * Describe authentication methods
    * Choose an authentication method based on use case
    * Differentiate human vs. system auth methods
+   <br /><br />
 
 2	Create Vault policies
    * Illustrate the value of Vault policy
    * Describe Vault policy syntax: path
    * Describe Vault policy syntax: capabilities
    * Craft a Vault policy based on requirements
+   <br /><br />
 
 3	Assess Vault tokens
    * Describe Vault token
@@ -72,17 +58,20 @@ In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
    * Explain time-to-live
    * Explain orphaned tokens
    * Create tokens based on need
+   <br /><br />
 
 4	Manage Vault leases
    * Explain the purpose of a lease ID
    * Renew leases
    * Revoke leases
+   <br /><br />
 
 5	Compare and configure Vault secrets engines
    * Choose a secret method based on use case
    * Contrast dynamic secrets vs. static secrets and their use cases
    * Define transit engine
    * Define secrets engines
+   <br /><br />
 
 6	Utilize Vault CLI
    * Authenticate to Vault
@@ -91,6 +80,7 @@ In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
    * Access Vault secrets
    * Enable Secret engines
    * Configure environment variables
+   <br /><br />
 
 7	Utilize Vault UI
    * Authenticate to Vault
@@ -98,10 +88,12 @@ In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
    * Configure Vault policies
    * Access Vault secrets
    * Enable Secret engines
+   <br /><br />
 
 8	Be aware of the Vault API
    * Authenticate to Vault via Curl
    * Access Vault secrets via Curl
+   <br /><br />
 
 9	Explain Vault architecture
    * Describe the encryption of data stored by Vault
@@ -115,27 +107,115 @@ In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
    * Describe seal/unseal
    * Explain response wrapping
    * Explain the value of short-lived, dynamically generated secrets
+   <br /><br />
 
 10	Explain encryption as a service
     * Configure transit secret engine
    * Encrypt and decrypt secrets
    * Rotate the encryption key
+   <br /><br />
 
+
+<hr />
+
+
+## Requirements for secret keeping
+
+Coverage of what features a secrets service should have:
+
+* Server installed in <strong>sealed mode</strong> (provides no access)
+
+* RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
+
+   <pre>--authorization-mode=RBAC</pre>
+
+* Limit access to designated containers
+
+* Encrypted transmission with Mutual authentication (MTLS)
+
+* Audit logging
+
+* Change value of an existing secret (key rotation) without rebooting.
+   This is the strong point with Vault.
+
+* Revocation
+
+## Alternatives to secret management
+
+* <a target="_blank" href="https://12factor.net/config">The "twelve-factor app"</a> recommends storing config in <strong>environment variables</strong>. The usual mechanism has been in a clear-text file loaded into <strong>operating system variables</strong>, such as:
+
+   <pre>docker run -e VARNAME=mysecret ...</pre>
+
+   PROTIP: However, this is NOT cool anymore because the value of variables (secrets) can end up in logs. All processes have access to secrets (no RBAC). 
+   And this mechanism makes <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#credential-rotation-lifecycle">periodic key rotation</a> manually cumbersome.
+
+* <a target="_blank" href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> was NOT designed for unlicensed (free) standalone containers<a target="_blank" href="https://medium.com/lucjuggery/from-env-variables-to-docker-secrets-bc8802cacdfd">*</a>, but for Enterprise licensed (paid) Docker Swarm services in commands such as:
+
+   <pre>docker service create --secret db_pass --name secret-test alpine bash</pre>
+
+   <tt>db_pass</tt> is a file (with .txt extension) encrypted by a command such as:
+
+   <pre>echo "mysecret" | docker secret create db_pass -
+   docker secret ls</pre>
+
+   Secrets are stored in Docker's logging infra within its <a target="_blank" href="https://medium.com/lucjuggery/raft-logs-on-swarm-mode-1351eff1e690">"Raft"</a> distributed leader consensus mechanism shared with Swarm managers. So encryption needs to be locked in Swarm. 
+
+   Secrets can be added to a running service, but key rotation requires container restart.
+
+   When the service is created (or updated), the secret is mounted onto the container in the <tt>/run/secrets</tt> directory which custom program can retrieve<a target="_blank" href="https://howchoo.com/g/zwzkzduwmjy/getting-started-with-docker-secrets">*</a>
+
+   <pre>def get_secret(secret_name):
+    try:
+        with open('/run/secrets/{0}'.format(secret_name), 'r') as secret_file:
+            return secret_file.read()
+    except IOError:
+        return None
+&nbsp;
+database_password = get_secret('db_pass')
+   </pre>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=j3QJRdiTr1I&t=19m25s">Kubernetes secrets</a> are stored in its etcd process.
+
+   <pre>--experimental-encryption-provider-config</pre>
+
+   <a target="_blank" href="https://github.com/Boostport/kubernetes-vault">https://github.com/Boostport/kubernetes-vault</a>
+
+* Cloud-base KMS (Key Management Service) such as from Amazon
+
+* The Aqua utility provides secrets management to orchestrators so that:
+
+   <pre>docker run -it --rm -e SECRET={dev-vault.secret/password} \
+   --name ubuntu ubuntu /bin/bash</pre>
+
+   <pre>docker inspect ubuntu -f "{{json .Config.Env}}"</pre>
+   returns:
+
+   <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
+
+
+<a name="Secrets"></a>
 
 ## What are secrets?
 
 A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
 
-Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
+This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
 
+
+## Hashicorp's Value Proposition
+
+The value that Hashicorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period.
 Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
 
-Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+Toward that, Hashicorp provides both an open-source code as well an (expensive) <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
 
 Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a> with a marketing home page at
-<a target="_blank" href="https://vaultproject.io/">
-https://vaultproject.io</a>.
-It can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
+<a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
+
+Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
 VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
@@ -145,11 +225,9 @@ empheral (temporary) passwords and cryptographic offload to a central service:
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
 
-It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
-This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
-
-
 ## Competitors
+
+Hashicorp Vault can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
 
 Alternatives to Hashicorp Vault include
 Vormetrix,
@@ -162,11 +240,13 @@ Vormetrix,
 https://www.vaultproject.io/docs/internals/architecture">
 https://www.vaultproject.io/docs/internals/architecture</a>
 
-![vault-layers](https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png">
+<img alt="vault-layers" href="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png"></a>
 
-Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier that is sealed and unsealed.
+Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
 
-When the Vault server is started, it must be provided with a storage backend so that data is available across restarts. The HTTP API similarly must be started by the Vault server on start so that clients can interact with it.
+When the Vault server is started, it must be provided with a <strong>storage backend</strong> so that data is available across restarts. 
+Similarly, the HTTP API service must be started by the Vault server on start so that clients can interact with it.
 
 <a target="_blank" href="
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss">
@@ -176,28 +256,26 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html#1">
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
 
+A <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service token</a> for a specific Hashicorp Vault cluster must accomodate each API request to access secrets on that cluster. Trust of that token is first establish by an authentication method:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
+
+
+
 <hr />
 
 <a name="WithinCode"></a>
 
 ## Within App Programming Code
 
-The "12 Factor App" advocates for app programming code to obtain secret data from environment variables rather than hard-coding them in code stored within GitHub. 
+The "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> rather than hard-coding them in code stored within GitHub. 
+So, populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
+Seveal utilities have been created for that:
 
-Populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
-Seveal utilities have been created for that.
-
-* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kuberets (but not clouds AWS, GCP, etc.).
-
+* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kubenetes (but not clouds AWS, GCP, etc.).
 
 <a name="Daytona"></a>
-
-### Daytona client from Cruise
-
-<a target="_blank" href="https://github.com/cruise-automation/daytona">
-https://github.com/cruise-automation/daytona</a> is written in Golang 
-to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP.
-Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+* The Daytona Golang CLI client from Cruise at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
 
 
 <hr />
@@ -206,6 +284,8 @@ Daytona is performant because it pre-fetches secrets upon launch and store them 
 
 When given 30-day access to <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-basics">
 the Vault Basics course</a>, its lessons are for running in <a target="_blank" href="https://www.vaultproject.io/docs/concepts/dev-server/">dev mode</a>:
+
+NOTE: Labs timeout every 2 hours.
 
 * The Vault CLI - Run the Vault Command Line Interface (CLI).
 * Your First Secret - Run a Vault dev server and write your first secret.
@@ -277,16 +357,17 @@ the Vault Basics course</a>, its lessons are for running in <a target="_blank" h
 
    <pre>export VAULT_TOKEN="$root_token"</pre>
 
-You next need to unseal your Vault server, providing the unseal key that the "init" command returned:
-vault operator unseal
-This will return the status of the server which should show that "Initialized" is "true" and that "Sealed` is "false".
+   You next need to unseal your Vault server, providing the unseal key that the "init" command returned:
+   vault operator unseal
 
-To check the status of your Vault server at any time, you can run the "vault status" command. If it shows that "Sealed" is "true", re-run the "vault operator unseal" command.
+   This will return the status of the server which should show that "Initialized" is "true" and that "Sealed` is "false".
 
-Finally, log into the Vault UI with your root token. If you have problems, double-check that you ran all of the above commands.
+   To check the status of your Vault server at any time, you can run the "vault status" command. If it shows that "Sealed" is "true", re-run the "vault operator unseal" command.
+
+   Finally, log into the Vault UI with your root token. If you have problems, double-check that you ran all of the above commands.
 
 
-* Use the KV V2 Secrets Engine - Enable and use an instance of the <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
+* Enable and use an instance of Hashicorp's <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
 
    <pre><strong>vault secrets enable -version=2 kv</strong></pre>
 
@@ -294,7 +375,6 @@ Finally, log into the Vault UI with your root token. If you have problems, doubl
    <pre>vault secrets enable kv-v2</pre>
 
 * Use the Userpass Auth Method - Enable and use the userpass authentication method.
-
 
 
 * Use Vault Policies - Use Vault policies to grant different users access to different secrets. "Least privilege"
@@ -306,14 +386,17 @@ Finally, log into the Vault UI with your root token. If you have problems, doubl
    </pre>
 
 
+## Install Consul server
 
-NOTE: Labs timeout every 2 hours.
+Using Hashicorp's Consul as a backend to Vault provides durable storage of encrypted data at rest necessary for
+fault tolerance, availability, and scalability.
 
+Hashicorp's Nomad ???
 
 
 <a name="envconsul"></a>
 
-## Using Envconsul with GitHub 
+### Using Envconsul with GitHub 
 
 <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp, at https://github.com/hashicorp/envconsul</a> populates values in environment variables referenced within programming code (12-factor applications which get their configuration via the environment).
 
@@ -344,11 +427,7 @@ Credentials authorizing retrieval requests are defined ...
 ## Using Vaultenv with GitHub 
 
 <a target="_blank" href="https://github.com/channable/vaultenv">
-https://github.com/channable/vaultenv</a> populates values in OS environment variables referenced within programming code by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv is not running anymore.
-
-If secrets in Vault change, Vaultenv does not automatically restart services.
-By comparison, <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp</a> (also describe here), 
-daemonizes and spawns child processes to manage the lifecycle of the process it provides secrets.
+https://github.com/channable/vaultenv</a> populates values in OS environment variables referenced within programming code by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv does not run anymore.
 
 Vaultenv retrieves secrets using REST API calls of KV (Key Value) pairs based on "behavior configuration files" specified in the following files traveling with the programming code:
 
@@ -357,104 +436,30 @@ Vaultenv retrieves secrets using REST API calls of KV (Key Value) pairs based on
    * $HOME/.config/vaultenv/vaultenv.conf
    <br /><br />
 
+CAUTION: When secrets in Vault change, Vaultenv does not automatically restart services.
+By comparison, <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp</a> (also describe here), 
+daemonizes and spawns child processes to manage the lifecycle of the process it provides secrets.
+
 Within its configuration file, secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault, such as this requesting the api-key field of the secret at secret/production/third-party.
 
    <ul><pre>production/third-party#api-key</pre></ul>
 
-The utility is written in the Haskell language under a 3-clause BSD license 
-and <a target="_blank" href="https://github.com/channable/vaultenv/releases">releases</a> run on Linux (has not been tested on any other platform, such as macOS).
+The utility is written in the Haskell language under a 3-clause BSD license and <a target="_blank" href="https://github.com/channable/vaultenv/releases">releases</a> run on Linux (has not been tested on any other platform, such as macOS).
 
 
-## Alternatives to secret management
-
-* <strong>Environment variables</strong> in a clear-text file loaded into <strong>operating system variables</strong>, such as:
-
-   <pre>docker run -e VARNAME=mysecret ...</pre>
-
-   <a target="_blank" href="https://12factor.net/config">"The twelve-factor app stores config in environment variables"</a>. 
-
-   However, this is NOT cool anymore because the value of variables (secrets) can end up in logs. All processes have access to secrets (no RBAC). 
-  
-   And this mechanism makes <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#credential-rotation-lifecycle">periodic key rotation</a> manually cumbersome.
-
-* <a target="_blank" href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> was NOT designed for unlicensed (free) standalone containers<a target="_blank" href="https://medium.com/lucjuggery/from-env-variables-to-docker-secrets-bc8802cacdfd">*</a>, but for Enterprise licensed (paid) Docker Swarm services in commands such as:
-
-   <pre>docker service create --secret db_pass --name secret-test alpine bash</pre>
-
-   <tt>db_pass</tt> is a file (with .txt extension) encrypted by a command such as:
-
-   <pre>echo "mysecret" | docker secret create db_pass -
-   docker secret ls</pre>
-
-   Secrets are stored in Docker's logging infra within its <a target="_blank" href="https://medium.com/lucjuggery/raft-logs-on-swarm-mode-1351eff1e690">"Raft"</a> distributed leader consensus mechanism shared with Swarm managers. So encryption needs to be locked in Swarm. 
-
-   Secrets can be added to a running service, but key rotation requires container restart.
-
-   When the service is created (or updated), the secret is mounted onto the container in the <tt>/run/secrets</tt> directory which custom program can retrieve<a target="_blank" href="https://howchoo.com/g/zwzkzduwmjy/getting-started-with-docker-secrets">*</a>
-
-   <pre>
-def get_secret(secret_name):
-    try:
-        with open('/run/secrets/{0}'.format(secret_name), 'r') as secret_file:
-            return secret_file.read()
-    except IOError:
-        return None
-&nbsp;
-database_password = get_secret('db_pass')
-   </pre>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=j3QJRdiTr1I&t=19m25s">Kubernetes secrets</a> are stored in its etcd process.
-
-   <pre>--experimental-encryption-provider-config</pre>
-
-   <a target="_blank" href="https://github.com/Boostport/kubernetes-vault">https://github.com/Boostport/kubernetes-vault</a>
-
-* Cloud-base KMS (Key Management Service) such as from Amazon
-
-* The Aqua utility provides secrets management to orchestrators so that:
-
-   <pre>docker run -it --rm -e SECRET={dev-vault.secret/password} \
-   --name ubuntu ubuntu /bin/bash</pre>
-
-   <pre>docker inspect ubuntu -f "{{json .Config.Env}}"</pre>
-   returns:
-
-   <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
-
-
-## Requirements for secret keeping
-
-Coverage of what features a secrets service should have:
-
-* Installed in sealed mode
-
-* RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
-
-   <pre>--authorization-mode=RBAC</pre>
-
-* Limit access to designated containers
-* Encrypted transmission with Mutual authentication (MTLS)
-* Audit logging
-
-* Change value of an existing secret (key rotation) without rebooting.
-   This is the strong point with Vault.
-
-* Revocation
-
-## Learning Resources
-
-<a target="_blank" href="https://learn.hashicorp.com/vault">https://learn.hashicorp.com/vault</a>
-
-
-<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
-
-https://www.vaultproject.io/docs/internals/security/
-Security Model
 
 
 <a name="InstallServer"></a>
 
-## Install Vault server
+## Install Server binaries
+
+Precompiled Vault binaries are available at <a target="_blank" href="https://releases.hashicorp.com/vault/">https://releases.hashicorp.com/vault</a>
+
+PROTIP: Enterprise and free versions have different binaries.
+Paid Enterprise editions include Read Replicas and Replication for DR, plus MFA, Sentinel, and HSM Auto-Unseal with FIPS 140-2 & Seal Wrap.
+A system service file is needed for prod instances.
+
+PROTIP: Vault has a single program file for server and client.
 
 There are several ways to obtain a running instance of Hashicorp Vault,
 listed from easiest to most difficult:
@@ -473,7 +478,7 @@ A. <a href="#CloudService">Vault cloud service</a>
    * Azure Vault (https://jpvelasco.com/test-driving-the-azure-key-vault-client-samples/)
    <br /><br />
 
-B. <a href="Homebrew">Use Homebrew to install Vault natively on you Mac</a>.
+B. <a href="Homebrew">Use Homebrew to install Vault locally on MacOS</a>.
 
 C. <a href="#DockerHub">Pull an image from Docker Hub</a> 
 
@@ -487,7 +492,7 @@ E. <a href="#Dockerfile">Use a Dockerfile to build your own Docker image.</a>
 
 <a name="CloudService"></a>
 
-### Cloud service
+### A. Vault Cloud service
 
 Vault is an open source tool that can be deployed to any environment.
 It is well suited for cloud environments where HSMs are either not available or are cost prohibitive.
@@ -503,20 +508,27 @@ It is well suited for cloud environments where HSMs are either not available or 
    gcloud beta compute --project "${THIS_PROJECT_NAME}" instances create "${THIS_INSTANCE_NAME}" --zone "us-central1-f" --machine-type "n1-standard-1" --subnet "default" --maintenance-policy "MIGRATE" --service-account "{$GCP_ACCT}@developer.gserviceaccount.com" --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring.write","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --min-cpu-platform "Automatic" --tags "http","https","web","http-server","https-server" --image "ubuntu-1604-xenial-v20171026a" --image-project "ubuntu-os-cloud" --boot-disk-size "10" --boot-disk-type "pd-standard" --boot-disk-device-name "${THIS_INSTANCE_NAME}"
    </pre>
 
-   <a name="Homebrew"></a>
+
+<a name="Homebrew"></a>
+
+### B. Homebrew on MacOS
 
    If you're going to be using Vault a lot on your Mac, install using Homebrew:
 
-1. There are several packages with the name "vault":
+1. In a Terminal...
+1. See that there are several packages with the name "vault":
 
    <pre><strong>brew search vault</strong></pre>
 
    Note there are several:
 
    <pre>==> Formulae
-infosec/core/govaultenv ✔   ssh-vault  vault ✔ vault-cli  vaulted
+argocd-vault-plugin           hashicorp/tap/vault ✔         vault ✔                       vaulted
+aws-vault                     ssh-vault                     vault-cli                     vultr
+&nbsp;
 ==> Casks
-aws-vault                                                            btcpayserver-vault                                                   gmvault
+aws-vault                                btcpayserver-vault                       gmvault
+&nbsp;
 If you meant "vault" specifically:
 It was migrated from homebrew/cask to homebrew/core.
    </pre>
@@ -525,36 +537,59 @@ It was migrated from homebrew/cask to homebrew/core.
 
    <pre><strong>brew info vault</strong></pre>
 
-   You should see:
+   At time of this writing:
 
-   <pre>vault: stable 1.3.2 (bottled), HEAD
+   <pre>vault: stable 1.9.2 (bottled), HEAD
 Secures, stores, and tightly controls access to secrets
 https://vaultproject.io/
-/usr/local/Cellar/vault/1.3.0 (6 files, 124.2MB) *
-  Built from source on 2019-11-18 at 05:05:44
-From: https://github.com/Homebrew/homebrew-core/blob/master/Formula/vault.rb
+Not installed
+From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/vault.rb
+License: MPL-2.0
 ==> Dependencies
-Build: go@1.12 ✘, gox ✔
+Build: go ✘, gox ✘, node@14 ✘, yarn ✘
 ==> Options
 --HEAD
 	Install HEAD version
+==> Caveats
+To restart vault after an upgrade:
+  brew services restart vault
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/vault/bin/vault server -dev
 ==> Analytics
-install: 7,836 (30 days), 24,016 (90 days), 90,804 (365 days)
-install-on-request: 7,461 (30 days), 22,993 (90 days), 86,629 (365 days)
-build-error: 0 (30 days)
+install: 9,528 (30 days), 29,343 (90 days), 116,531 (365 days)
+install-on-request: 9,273 (30 days), 28,580 (90 days), 113,456 (365 days)
+build-error: 6 (30 days)
    </pre>
 
-2. Install pre-requisite Go language:xxx
+   Notice from above that "Go" is a pre-requisite. So...
+
+2. <a target="_blank" href="https://wilsonmar.github.io/golang">Install pre-requisite Go language</a>:
+
+2. Install Vault client on MacOS using Homebrew:
 
    <pre><strong>brew install vault</strong></pre>
 
-2. Install:
+   <pre>==> Downloading https://ghcr.io/v2/homebrew/core/vault/manifests/1.9.2
+Already downloaded: /Users/wilsonmar/Library/Caches/Homebrew/downloads/3229ec7e0432efa438f631b1597b1b8835f06511f7bce63aacd2cd4099b88186--vault-1.9.2.bottle_manifest.json
+==> Downloading https://ghcr.io/v2/homebrew/core/vault/blobs/sha256:5fa336a299ea46a7075710391aa229d18f7e20c6a75750999acce
+Already downloaded: /Users/wilsonmar/Library/Caches/Homebrew/downloads/50a32a1145afdad720b2cfa03881c1d3fda65cd58a97d5f65c2bde0956902dd3--vault--1.9.2.monterey.bottle.tar.gz
+==> Pouring vault--1.9.2.monterey.bottle.tar.gz
+==> Caveats
+To restart vault after an upgrade:
+  brew services restart vault
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/vault/bin/vault server -dev
+==> Summary
+🍺  /usr/local/Cellar/vault/1.9.2: 8 files, 178.7MB
+==> Running `brew cleanup vault`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+   </pre>
 
-   <pre><strong>brew install vault</strong></pre>
+   Compare historically:
 
-   <pre>=> Downloading https://homebrew.bintray.com/bottles/vault-1.3.2.mojave.bottle.tar.gz
-==> Pouring vault-1.3.2.mojave.bottle.tar.gz
-🍺  /usr/local/Cellar/vault/1.3.2: 6 files, 124.2MB
+   <pre>🍺  /usr/local/Cellar/vault/1.3.2: 6 files, 124.2MB
+  Built from source on 2019-11-18 at 05:05:44
    </pre>
 
 1. The great thing with Homebrew is you can upgrade and uninstall easily.
@@ -567,12 +602,22 @@ build-error: 0 (30 days)
    <pre><strong>vault --version
    </strong></pre>
 
-   `Vault v1.3.2` was the response at time of writing.
+   At time of writing, the response:
+   
+   <pre>Vault v1.9.2 ('f4c6d873e2767c0d6853b5d9ffc77b0d297bfbdf+CHANGES')</pre>
 
-1. Define the version for use in commands within ~/.bash_profile:
+1. Persist the version of Vault for use in commands by editing <strong>~/.bash_profile</strong> to add these lines:
 
-   <pre><strong>export VAULT_VERSION="1.3.2"
+   <pre><strong>export VAULT_VERSION="1.9.2"
+   complete -C /usr/local/bin/vault vault
    </strong></pre>
+
+1. Install auto completions: https://www.vaultproject.io/docs/commands/#autocompletion
+
+   <pre><strong>vault -autocomplete-install
+   </strong></pre>
+
+   No message is returned.
 
 1. See menu of commands by running the command without parameters:
 
@@ -598,6 +643,7 @@ Other commands:
     debug          Runs the debug command
     kv             Interact with Vault's Key-Value storage
     lease          Interact with leases
+    monitor        Stream log messages from a Vault server
     namespace      Interact with namespaces
     operator       Perform operator-specific tasks
     path-help      Retrieve API help for paths
@@ -609,18 +655,11 @@ Other commands:
     token          Interact with tokens
    </pre>
 
+   NOTE: <tt>monitor</tt> was added recently.
+
    Vault commands are described <a target="_blank" href="https://www.vaultproject.io/docs/commands/">here online</a>.
 
-1. Install auto completions: https://www.vaultproject.io/docs/commands/#autocompletion
-
-   <pre><strong>vault -autocomplete-install
-   </strong></pre>
-
-   No message is returned, but it adds to the bottom of your ~/.bash_profile file:
-
-   <pre>complete -C /usr/local/bin/vault vault</pre>
-
-1. Restart your terminal
+1. Restart your terminal (and provide password):
 
    <pre><strong>exec $SHELL
    </strong></pre>
@@ -631,7 +670,7 @@ Other commands:
    </strong></pre>
 
 
-   ## Vault kv store commands
+   ### Vault kv store commands
 
    PROTIP: https://www.vaultproject.io/docs/commands/index.html
 
@@ -668,6 +707,8 @@ Other commands:
    <pre><strong>vault secrets enable aws
    </strong></pre>
 
+   The expected response:
+
    <pre>Success! Enabled the aws secrets engine at: aws/</pre>
 
    See https://www.vaultproject.io/docs/secrets/kv/kv-v2/
@@ -681,14 +722,42 @@ Other commands:
    </strong></pre>
 
 
-
 <hr />
+
+
+<a name="Configure"></a>
+
+## Configure Vault
+
+   <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-hashicorp-vault-on-azure/"><u>VIDEO: HashiCorp Vault on Azure</u></a> [13:24] by Yoko Hyakuna.
+
+   <a target="_blank" href="https://github.com/Voronenko/hashi_vault_utils">https://github.com/Voronenko/hashi_vault_utils</a>
+   provides command scripts and commentary.
+
+   A sample <tt>config-file.hcl</tt> file:
+
+   <pre>ui = true
+   disable_mlock = true
+&nbsp;
+   # use the file backend
+   storage "file {
+      path = "data"
+   }
+   listener "tcp" {
+      address = "0.0.0.0:8200"
+      tls_disable = 1
+   }
+   </pre>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=LY9aSJ_2ni4">
+   VIDEO: How does Vault encrypt data?</a>
 
 
 <a name="consul"></a>
 
 ## Consul
 
+<a target="_blank" href="https://medium.com/criteo-labs/configure-consul-for-performance-at-scale-f6a089706377">BLOG</a>:
 To use Consul as the storage backend, download and install it on each node in the cluster, along with these different stanzas:
 
 <pre>storage "consul" {
@@ -712,8 +781,6 @@ log_level = "info"
 </pre>
 
 
-https://medium.com/criteo-labs/configure-consul-for-performance-at-scale-f6a089706377
-
 <a name="Dockerfile"></a>
 
 ### Build Docker image using Dockerfile
@@ -727,6 +794,8 @@ https://computingforgeeks.com/install-and-configure-vault-server-linux/
    <pre><strong>apt-get update && apt-get install -y \
   git
    </strong></pre>
+
+   https://www.linuxuprising.com/2021/01/apt-key-is-deprecated-how-to-add.html
 
 0. Use Git to obtain the Dockerfile <a target="_blank" href="https://cloud.spring.io/spring-cloud-vault/reference/html/">based on</a> the <a target="_blank" href="https://github.com/spring-cloud/spring-cloud-vault">Spring Cloud Vault sample app</a>
 
@@ -769,46 +838,57 @@ RUN git clone https://github.com/hashicorp/vault???.git --depth=1
    which is replaced with a real app in the real world.
 
 
-
 <a name="DockerHub"></a>
 
-### Use Docker image
+### C. Use Docker image
+
+From https://www.vaultproject.io/docs/concepts/pgp-gpg-keybase
+Since Vault 0.3, Vault can be initialized using PGP keys. In this mode, Vault will generate the unseal keys and then immediately encrypt them using the given users' public PGP keys. Only the owner of the corresponding private key is then able to decrypt the value, revealing the plain-text unseal key.
+
+First, create, acquire, or import the appropriate key(s) onto the local machine from which you are initializing Vault.
+
+On a macOS:
+
+1. Add Docker's public GPG key for the Trusty version:
+
+   <pre><strong>sudo apt-get install -y xserver-xorg-lts-trusty libgl1-mesa-glx-lts-trusty
+   </strong></pre>
+
 
 On a Linux server instance's Terminal CLI:
 
-1. Add Docker's public GPG key :
+1. Add Docker's public GPG key for the Trusty version:
 
-   <pre><strong>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   <pre>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    </strong></pre>
 
    OK is the expected response.
 
-0. View the Linux version code referenced in a later command:
+1. View the Linux version code referenced in a later command:
 
    <pre><strong>lsb_release -cs
    </strong></pre>
 
    This returns stretch for Debinan and xenial for Ubuntu.
 
-0. Install Docker for Ubuntu (not Debian):
+1. Install Docker for Ubuntu (not Debian):
 
    <pre><strong>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
    </strong></pre>
 
-0. Update repository:
+1. Update repository:
 
    <pre><strong>sudo apt-get update
    </strong></pre>
 
-0. List policies:
+1. List policies:
 
    <pre><strong>apt-cache policy docker-ce
    </strong></pre>
 
    The response:
 
-   <pre>
-docker-ce:
+   <pre>docker-ce:
   Installed: (none)
   Candidate: 17.09.0~ce-0~ubuntu
   Version table:
@@ -828,15 +908,14 @@ docker-ce:
         500 https://download.docker.com/linux/ubuntu xenial/stable amd64 Packages
    </pre>
 
-0. Install Docker Community Edition:
+1. Install Docker Community Edition:
 
    <pre><strong>sudo apt-get install -y docker-ce
    </strong></pre>
 
    Sample response:
 
-   <pre>
-Reading package lists... Done
+   <pre>Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 The following additional packages will be installed:
@@ -880,15 +959,14 @@ Processing triggers for ureadahead (0.100.0-19) ...
    </pre>   
 
 
-0. List Docker container status:
+1. List Docker container status:
 
    <pre><strong>sudo systemctl status docker
    </strong></pre>
 
    The response:
 
-   <pre>
-● docker.service - Docker Application Container Engine
+   <pre>● docker.service - Docker Application Container Engine
    Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
    Active: active (running) since Sat 2017-11-04 22:00:35 UTC; 1min 28s ago
      Docs: https://docs.docker.com
@@ -909,20 +987,26 @@ Nov 04 22:00:35 vault-1 dockerd[13524]: time="2017-11-04T22:00:35.054191848Z" le
 log files:
    </pre>
 
-0. Verify Docker version in case you need to troubleshoot:
+1. Verify Docker version in case you need to troubleshoot:
 
    <pre><strong>docker --version
    </strong></pre>
 
-   The response:
+   The response at time of writing:
 
-   <pre>Docker version 17.09.0-ce, build afdb6d4
+   <pre>Docker version 20.10.11, build dea9396
    </pre>
 
-0. Download the Docker image maintained by Hashicorp:
+1. Start the Docker daemon
+
+1. Download the Docker image maintained by Hashicorp:
 
    <pre><strong>docker pull <a target="_blank" href="https://hub.docker.com/_/vault/">vault</a>
    </pre>
+
+   NOTE: If you see "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?"
+   start the Docker daemon, then try again.
+
 
    ### Alternate Docker images
 
@@ -977,8 +1061,11 @@ log files:
    <br /><br />
 
 0. Verify the SHA256 hash.
+
 0. On a Mac, drag and drop the vault app file to your root Applications folder.
+
 0. <a target="_blank" href="https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux">Set the PATH</a> to Vault.
+
 0. Double-click on the vault app.
 
    If you get an error that the binary could not be found, then your PATH environment variable was not setup properly. 
@@ -997,18 +1084,26 @@ To uninstall, move that folder to trash.
 NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5.6/lib/train/transports/clients/azure/vault.rb</tt>
 
 
+
 <a name="VerifyInstall"></a>
 
 ## Verify install
 
    No matter how it was installed:
 
-0. Open a new Terminal window to Verify:
+1. Check Vault seal status:
+
+   <pre>https://127.0.0.1:8200/v1/sys/seal-status</pre>
+
+1. Open a new Terminal window to Verify:
 
    <pre><strong>vault status
    </strong></pre>
 
-   The response:
+   If the Vault service is not running, you'll see:
+   <pre>Error checking seal status: Get "https://127.0.0.1:8200/v1/sys/seal-status": dial tcp 127.0.0.1:8200: connect: connection refused</pre>
+
+   The expected response:
 
    <pre>Key               Value
    ---                    -----
@@ -1022,6 +1117,8 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
    </pre>
 
 
+   <a name="Journaling"></a>
+
    ### Journaling
 
    Show that secrets are not displayed when using Azure Keyvault:
@@ -1029,14 +1126,7 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
    <pre><strong>sudo journalctl -u </strong></pre>
 
 
-   ### Restart Vault
-
-   <pre><strong>sudo systemctl restart vault
-   </strong></pre>
-
-
-
-   ### Start Server
+   ### Start Dev Server
 
 0. Start the Dev Server per <a target="_blank" href="https://www.vaultproject.io/intro/getting-started/dev-server.html">https://www.vaultproject.io/intro/getting-started/dev-server.html</a>
 
@@ -1050,14 +1140,38 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
    <pre><strong>vault server -config=config-file.hcl
    </strong></pre>
 
-1. Open the web page URL:
+   Sample response:
+
+   <pre>WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+and starts unsealed with a single unseal key. The root token is already
+authenticated to the CLI, so you can immediately begin using Vault.
+&nbsp;
+You may need to set the following environment variable:
+&nbsp;
+    $ export VAULT_ADDR='http://127.0.0.1:8200'
+&nbsp;
+The unseal key and root token are displayed below in case you want to
+seal/unseal the Vault or re-authenticate.
+&nbsp;
+Unseal Key: qvAfCZEkFHS1dYYba8adz5wXHSQe1I9LjoHUbxCrEo4=
+Root Token: s.dqqznrQAJNiLrU9mX3eT8q2p
+&nbsp;
+Development mode should NOT be used in production installations!
+   </pre>
+
+1. In a browser, open the web page URL:
 
    <pre>http://127.0.0.1:8200/vault/init</pre>
    
+   If the server has not been unsealed (see below), the expected response is JSON:
+   <tt>errors: []</tt>
 
-1. Re-start:
+   ### Restart Vault on Linux
 
-   <pre>sudo systemectl restart vault</pre>
+1. Restart Vault (provide password):
+
+   <pre><strong>sudo systemctl restart vault
+   </strong></pre>
 
 
 <a name="Unsealing"></a>
@@ -1090,8 +1204,7 @@ Alternately, sealing can be done by auto-unseal by using a cloud key from Azure 
 
    The response confirms:
 
-   <pre>
-Sealed: false
+   <pre>Sealed: false
 Key Shares: 1
 Key Threshold: 1
 Unseal Progress: 0
@@ -1102,24 +1215,30 @@ Unseal Progress: 0
    Higher Key Threshold values would require more key holders to perform unseal with their parts of the key. This provides an additional level of security for accessing data.
 
 
-## Re-Sealing
+## Re-Sealing Vault server
 
 In case of an emergency, such as:
 
    * If a secret stored in Vault is leaked - a new secret should be generated and replaced in Vault, with a key rotation following.
-   * If vault user credentials are leaked - the user credentials should be revoked and a key rotation should be performed.
-   * If vault unseal keys are leaked - a rekey should be performed.
-   <br /><br />
 
-Vault should be sealed immediately to prevent any actions or requests to be performed against the Vault server:
+   * If vault user credentials are leaked - the user credentials should be revoked and a key rotation should be performed.
+
+   * If vault unseal keys are leaked - a rekey should be performed.
+
+To prevent any actions or requests to be performed against the Vault server, it should be sealed immediately.
+
+To seal the Vault server:
 
    <pre><strong>vault seal
    </strong></pre>
 
 This buys time to investigate the cause of the issue and to find an appropriate solution.
 
+<hr />
 
-## Principals
+<a name="VaultPrincipals"></a>
+
+## Vault Principals
 
 ### Generate principal
 
@@ -1148,7 +1267,7 @@ To revoke a lease on Azure:
 
 ## Vault on AWS
 
-There are several options for hosting Vault.
+There are several options for hosting Vault within the Amazon cloud.
 
 <a target="_blank" href="https://aws.amazon.com/quickstart/architecture/vault/">
 https://aws.amazon.com/quickstart/architecture/vault</a>
@@ -1177,34 +1296,6 @@ There is a <a target="_blank" href="https://github.com/hashicorp/consul-helm">
 Consul provider helm chart</a>
 
 
-<a name="Configure"></a>
-
-## Configure Vault
-
-   <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-hashicorp-vault-on-azure/"><u>VIDEO: HashiCorp Vault on Azure</u></a> [13:24] 
-   by Yoko Hyakuna.
-
-   <a target="_blank" href="https://github.com/Voronenko/hashi_vault_utils">https://github.com/Voronenko/hashi_vault_utils</a>
-   provides command scripts and commentary.
-
-   A sample <tt>config-file.hcl</tt> file:
-
-   <pre>ui = true
-   disable_mlock = true
-&nbsp;
-   # use the file backend
-   storage "file {
-      path = "data"
-   }
-   listener "tcp" {
-      address = "0.0.0.0:8200"
-      tls_disable = 1
-   }
-   </pre>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=LY9aSJ_2ni4">
-   VIDEO: How does Vault encrypt data?</a>
-
 
 ### Authorization
 
@@ -1216,7 +1307,7 @@ Consul provider helm chart</a>
    <pre>./vault_ auth 98df443c-65ee-d843-7f4b-9af8c426128a
    </pre>
 
-   The response:
+   The expected successful response:
 
    <pre>Successfully authenticated! The policies that are associated
 with this token are listed below:
@@ -1231,21 +1322,10 @@ root
    Policies in Vault are formatted with HCL, a human-readable configuration format.
    It is also JSON-compatible. An example policy is shown below:
 
-   <pre>
-path "secret/project/name" {
+   <pre>path "secret/project/name" {
   policy = "read"
 }
    </pre>
-
-
-## Install Consul server
-
-Using Hashicorp's Consul as a backend to Vault provides the
-durable storage of encrypted data at rest necessary for
-fault tolerance, availability, and scalability.
-
-Hashicorp's Nomad ???
-
 
 
 <hr />
@@ -1629,6 +1709,18 @@ https://github.com/theskumar/python-dotenv#command-line-interface">
 https://github.com/theskumar/python-dotenv#command-line-interface</a>
 
 That .env file name is specified in the .gitignore so it is ignored when pushing to github.
+
+<a name="Resourced"></a>
+
+## Learning Resources
+
+<a target="_blank" href="https://learn.hashicorp.com/vault">https://learn.hashicorp.com/vault</a>
+
+<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
+
+https://www.vaultproject.io/docs/internals/security/
+Security Model
+
 
 
 <hr />

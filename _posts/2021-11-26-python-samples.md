@@ -1625,9 +1625,58 @@ https://www.youtube.com/watch?v=lKra6E_tp5U&t=0s
 
 ## SECTION 17. Retrieve secrets from Hashicorp Vault
 
+See my <a targt="_blank" href="https://wilsonmar.github.io/">wilsonmar.github.io/hashicorp-vault</a>.
+
+
+### Local Test instance
+
+1. <a target="_blank" href="https://www.vaultproject.io/docs/install">Install Vault</a>
+
+1. <a target="_blank" href="https://learn.hashicorp.com/vault/getting-started/install">Install GPG</a>
+
+On Ubuntu:
+
+1. Add the HashiCorp GPG key for response "OK". 
+
+   <pre>curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
+   </pre>
+
+1. Add the official HashiCorp Linux repository:
+
+   <pre>apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+   </pre>
+
+   Get:6 https://apt.releases.hashicorp.com focal/main amd64 Packages [50.1 kB]
+
+   Fetched 59.6 kB in 1s (81.2 kB/s)
+
+1. Update the package cache and install Vault.
+
+   <pre>apt update && apt install vault
+   </pre>
+
+   NOTE:The package scripts prepare the vault binary to execute with memory locking capabilities with the setcap utility by adding the +ep cap_ipc_lock capabilities as described in in the Vault Configuration documentation.
+
+1. Configure Vault with an integrated storage backend in the next challenge, and it is not recommended to use memory locking with that storage backend.
+
+1. Remove the memory locking capabilities from the vault binary.
+
+   <pre>setcap -r /usr/bin/vault</pre>
+
+1. Verify the installation by obtaining the vault version locally:
+
+   <pre>vault version
+   vault -h
+   </pre>
+
+1. https://www.vaultproject.io/docs/agent
+
+   <pre>setcap -r /usr/bin/vault</pre>
+
+
 1. Get the URL of the Hashicorp Vault instance you'll be using.
 
-   To run a Vault instance on your laptop for testing, see
+   To use Docker Compose to run a contaiinerized Vault instance on your laptop for testing, see
    https://modularsystems.io/blog/securing-secrets-python-vault/
 
    <pre><strong>git clone https://github.com/ryanhartje/containers.git
@@ -1635,24 +1684,81 @@ https://www.youtube.com/watch?v=lKra6E_tp5U&t=0s
    docker-compose up -d
    </strong></pre>
 
-1. Add to python-samples.env
+   Alternately, 
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/getting-started-deploy">Hands-on lab to deploy Vault into a real environment</a>
+
+1. Add to python-samples.env, for example:
 
    <pre>VAULT_TOKEN=3340a910-0d87-bb50-0385-a7a3e387f2a8 
    VAULT_URL=http://localhost:8200
    </pre>
 
-   <a target="_blank" href="https://medium.com/hashicorp-engineering/coding-for-secrets-reliability-with-hashicorp-vault-2090dd8667e">PROTIP</a>: This service token is specific to the Vault cluster where the entity identified itself.
-   It also has a TTL.
+   <a target="_blank" href="https://medium.com/hashicorp-engineering/coding-for-secrets-reliability-with-hashicorp-vault-2090dd8667e">PROTIP</a>: Tokens have an associated TTL (Time to Live).
 
-1. Use AppRole to login to Vault by passing a role ID & secret ID to the application. That creates token which could be renewed by the application as long as it is running. 
+   ### Setup Instances
 
-   You need to protect those two values (e.g. in correctly permissioned files) as anyone who can get hold of them would be able to login to Vault themselves. So <strong>wrap the token</strong>.
+1. Create a <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KVv2 secrets path</a> (called “secrets”):
 
-   You can minimise the risk by also setting allowed CIDR ranges as well as deleting the files once read by your app.
+   <pre>vault secrets enable kv-v2
+   </pre>
+
+1. Create a secret on the “myapp” path.
+
+   ### App coding for single instance
+
+   https://github.com/dmcteer/vault-ha/blob/master/vault-noha.py
+   does not cache secrets in memory to reduce frequent requests to retrieve them nor
+   manage TTLs inside of the application so that a secret is only requested at the time that it is expected to change.
+
+1. Create a new AppRole auth method (called “myapp”).
+
+1. Create and apply a policy to allow the “myapp” role to read the secret from the “myapp” path.
+
+1. Generate a role ID and a secret ID for the “myapp” role.
+
+   These two values need to be protected (e.g. in correctly permissioned files) because anyone who can get hold of them would be able to login to Vault themselves. So <strong>wrap the token</strong> and delete files immediately after being read by your app.
+
+1. Use AppRole to login to Vault by passing a role ID & secret ID to the application. Make the role ID and the secret ID available to the application through environment variables on the system where the application is running. This can be executed securely in production environments through the use of a trusted configuration management tool for standalone hosts, or init/sidecar processes in Kubernetes.
+
+1. Renew the token (by the running application) while it is running.
+
+1. Write an automated script to make calls repeateded.
+
+1. Adjust <strong>retry timers</strong> for secret retrieval when there are no available Vault clusters. This helps to prevent applications from overwhelming the Vault service.
+
+1. Rotate secrets using Consul https://github.com/hashicorp/consul-template
+
+1. Setup a monitoring tool such as Splunk to ingest audit logs and build notifications about who isn’t following the method outlined above, allowing you to proactively reach out to users and help them build this resiliency into their applications.
+
+1. Conduct chaos engineering by downing the Vault server.
+
+   ### High Availability
+
+1. To improve reliability (reduce downtime) through High Availability (HA), setup an additional <a target="_blank" href="https://learn.hashicorp.com/vault/operations/ops-replication">performance (active/active) replica cluster</a> in a separate geographic az or region to constantly replicate data from the primary so that identical secret data exists in both places. The anticipated RTO would be a few minutes of downtime during recovery.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/147295031-6f797a96-544d-4580-ad37-0990b42902e2.png"><img alt="hashicorp-vault-replica-1149x846" src="https://user-images.githubusercontent.com/300046/147295031-6f797a96-544d-4580-ad37-0990b42902e2.png"></a>
+
+1. Either the load balancer or the application would need to:
+
+   1. recognize when a cluster is no longer available and 
+   2. begin routing requests to a healthy cluster.
+   <br /><br />
+    
+1. Set allowed CIDR ranges.
+
+1. Use the additional 19 lines of code 
+
+   https://github.com/dmcteer/vault-ha/blob/master/vault-ha.py
+
+1. Conduct "chaos engineering":
+
+   * Down the primary and measure the RTO time it takes for the secondary to take over
+   * Down the secondary and measure the time it takes to bring up a replacement instance
 
 
 References:
-   
+   * https://medium.com/hashicorp-engineering/coding-for-secrets-reliability-with-hashicorp-vault-2090dd8667e
    * https://www.youtube.com/watch?v=SLB_c_ayRMo - Terraform Course - Automate your AWS cloud infrastructure on freeCodeCamp.org
 
    * https://www.youtube.com/watch?v=-leJQ20Nu0c - Hashicorp Vault without Hassle - Eric Feliksik by TheSmartbit (2017)
