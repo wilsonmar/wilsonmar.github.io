@@ -673,6 +673,7 @@ Other commands:
    ### Vault kv store commands
 
    PROTIP: https://www.vaultproject.io/docs/commands/index.html
+   <a target="_blank" href="https://www.youtube.com/watch?v=vd9f-gGqMV0">VIDEO</a>: HashiCorp Vault Http API - Create and get secrets with curl</a> (aweful drawings)
 
 1. Add a key:
 
@@ -701,6 +702,8 @@ Other commands:
 
 
    ## Vault secret engine commands
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=d26iioDB2gM">VIDEO</a>:
 
 1. Enable the AWS secrets engine:
 
@@ -1721,7 +1724,9 @@ That .env file name is specified in the .gitignore so it is ignored when pushing
 https://www.vaultproject.io/docs/internals/security/
 Security Model
 
-
+https://www.youtube.com/watch?v=5-RMu9M_Anc
+How to Integrate HashiCorp Vault With Jenkins
+CloudBeesTV
 
 <hr />
 
