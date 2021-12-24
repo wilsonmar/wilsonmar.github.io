@@ -528,6 +528,8 @@ https://techcommunity.microsoft.com/t5/security-compliance-identity/security-com
 
 https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
 
+See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
+
 
 <a name="SC-900"></a>
 
@@ -553,9 +555,26 @@ Videos:
 
 <a name="AZ-500"></a>
 
-## AZ-500 Security certification
+### AZ-500 Security certification
 
-See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
+https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies has these hands-on labs:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md"> Lab 01: Role-Based Access Control </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md"> Lab 02: Azure Policy </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md"> Lab 03: Resource Manager Locks </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md"> Lab 04: MFA, Conditional Access and AAD Identity Protection </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_05_PIM.md"> Lab 05: Azure AD Privileged Identity Management </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md"> Lab 06: Implement Directory Synchronization </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_07_NSGs.md"> Lab 07: Network Security Groups and Application Security Groups </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md"> Lab 08: Azure Firewall </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/LabsLAB_09_ConfiguringandSecuringACRandAKS.MD"> Lab 09: Configuring and Securing ACR and AKS </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_10_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.md"> Lab 10: Key Vault (Implementing Secure Data by setting up Always Encrypted) </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD"> Lab 11: Securing Azure SQL Database </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD"> Lab 12: Service Endpoints and Securing Storage </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_13_Azure Monitor.md"> Lab 13: Azure Monitor </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Security Center.md"> Lab 14: Microsoft Defender for Cloud </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Azure Sentinel.md"> Lab 15: Microsoft Sentinel </a>
+<br /><br />
 
 https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
 
@@ -563,24 +582,49 @@ https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-
 
 https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
 
-https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
-
 
 <a name="SC-200"></a>
 
+### SC-200
+
 Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst"</a>.
 
-This exam measures your ability to accomplish the following technical tasks: mitigate threats using Microsoft 365 Defender; mitigate threats using Azure Defender; and mitigate threats using Azure Sentinel.
+This exam measures your ability to mitigate threats using Microsoft 365 Defender; mitigate threats using Azure Defender; and mitigate threats using Azure Sentinel.
 
+https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst has these hands-on labs:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_Explore_M365_Defender.md"> Module 1 - Lab 1 - Exercise 1 - Explore Microsoft 365 Defender </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_Deploy_Defender_Endpoint.md"> Module 2 - Lab 1 - Exercise 1 - Deploy Microsoft Defender for Endpoint </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Mitigate_Attacks.md"> Module 2 - Lab 1 - Exercise 2 - Mitigate Attacks with Microsoft Defender for Endpoint </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_Enable_Defender.md"> Module 3 - Lab 1 - Exercise 1 - Enable Microsoft Defender for Cloud </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_Azure_Defender.md"> Module 3 - Lab 1 - Exercise 2 - Mitigate threats using Microsoft Defender for Cloud </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md"> https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_04_Lab1_Ex1_KQL.md </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_05_Lab1_Ex1_Deploy_Sentinel.md"> Module 5 - Lab 1 - Exercise 1 - Configure your Microsoft Sentinel environment </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex1_Connect_Services.md"> Module 6 - Lab 1 - Exercise 1 - Connect data to Microsoft Sentinel using data connectors </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex2_Connect_Windows.md"> Module 6 - Lab 1 - Exercise 2 - Connect Windows devices to Microsoft Sentinel using data connectors </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex3_Connect_Linux.md"> Module 6 - Lab 1 - Exercise 3 - Connect Linux hosts to Microsoft Sentinel using data connectors </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_06_Lab1_Ex4_Connect_Threat_Intel.md"> Module 6 - Lab 1 - Exercise 4 - Connect Threat intelligence to Microsoft Sentinel using data connectors </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex1_Security_Rule.md"> Module 7 - Lab 1 - Exercise 1 - Activate a Microsoft Security rule </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex2_Playbook.md"> Module 7 - Lab 1 - Exercise 2 - Create a Playbook </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex3_Scheduled_Query.md"> Module 7 - Lab 1 - Exercise 3 - Create a Scheduled Query </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex4_Attacks.md"> Module 7 - Lab 1 - Exercise 4 - Understand Detection Modeling </a> (Attacks)
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex5_Perform_Attacks.md"> Module 7 - Lab 1 - Exercise 5 - Conduct attacks </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex6_Detections.md"> Module 7 - Lab 1 - Exercise 6 - Create Detections </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex7_Investigate.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_07_Lab1_Ex8_Workbooks.md"> Module 7 - Lab 1 - Exercise 8 - Create workbooks </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex1_Hunting.md"> Module 8 - Lab 1 - Exercise 1 - Perform Threat Hunting in Microsoft Sentinel </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/blob/master/Instructions/Labs/LAB_AK_08_Lab1_Ex2_Notebooks.md"> Module 8 - Lab 1 - Exercise 2 - Threat Hunting using Notebooks with Microsoft Sentinel </a>
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
 
 
 <a name="SC-300"></a>
 
+### SC-300
+
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-300
 
-https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator has 31 labs at time of writing:
+FREE: https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator has 31 labs at time of writing:
 
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_00_SetUpLabResources.md"> Lab 00: Lab Environment Setup </a>
 * <a target="_blank" href="https://github.com/MicrosoftLearning/SC-300-Identity-and-Access-Administrator/blob/master/Instructions/Labs/Lab_01_ManageUserRoles.md"> Lab 01: Manage user roles </a>
@@ -621,7 +665,27 @@ https://www.whizlabs.com/learn/course/microsoft-azure-sc-300/
 
 <a name="SC-400"></a>
 
+### SC-400 Microsoft Information Protection Administrator
+
 https://docs.microsoft.com/en-us/learn/certifications/exams/sc-400
+"Implement information protection; implement data loss prevention; and implement information governance."
+
+https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator has 13 labs at time of writing:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex1_compliance_roles.md"> Lab 1 - Exercise 1 - Manage Compliance Roles </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex2_message_encryption.md"> Lab 1 - Exercise 2 - Manage Office 365 Message Encryption </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex3_Sensitive_Information_Types.md"> Lab 1 - Exercise 3 - Manage Sensitive Information Types </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex4_Trainable_Classifiers.md"> Lab 1 - Exercise 4 - Manage Trainable Classifiers </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_01_Lab1_Ex5_Sensitivity_Labels.md"> Lab 1 - Exercise 5 - Manage Sensitivity Labels </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex1_DLP_policies.md"> Lab 2 - Exercise 1 - Manage DLP Policies </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex2_Endpoint DLP.md"> Lab 2 - Exercise 2 - Manage Endpoint DLP </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_02_Lab1_Ex3_DLP_reports.md"> Lab 2 - Exercise 3 - Manage DLP reports </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex1_retention_policies.md"> Lab 3 - Exercise 1 - Configure Retention Policies </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex2_retention_labels.md"> Lab 3 - Exercise 2 - Implement Retention Labels </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex3_service_based_retention.md"> Lab 3 - Exercise 3 - Configure Service-based Retention </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex4_eDiscovery_recovery.md"> Lab 3 - Exercise 4 - Use eDiscovery for Recovery </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection-Administrator/blob/master/Instructions/Labs/LAB_AK_03_Lab1_Ex5_records_management.md"> Lab 3 - Exercise 5 - Configure Records Management </a>
+
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 
@@ -629,7 +693,7 @@ https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 
 <a name="AZ-140"></a>
 
-## AZ-140 Azure Desktop Speciality (New)
+## AZ-140 Azure Desktop Speciality
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-140">
 https://docs.microsoft.com/en-us/learn/certifications/exams/az-140</a> exam is new as of March 29, 2021.
@@ -736,6 +800,23 @@ CloudAcademy's 23h video course</a> provides labs:
 Includes:
    * https://app.pluralsight.com/paths/certificate/developing-solutions-for-microsoft-azure-az-204
 
+https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure has these hands-on labs:
+
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_01.md"> Lab 01: Build a web application on Azure platform as a service offering </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_02.md"> 
+Lab 02: Implement task processing logic by using Azure Functions </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_03.md"> Lab 03: Retrieve Azure Storage resources and metadata by using the Azure Storage SDK for .NET </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_04.md"> Lab 04: Construct a polyglot data solution </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_05.md"> Lab 05: Deploy compute workloads by using images and containers </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_06.md"> Lab 06: Authenticate by using OpenID Connect, MSAL, and .NET SDKs </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_07.md"> Lab 07: Access resource secrets more securely across services </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_08.md"> Lab 08: Create a multi-tier solution by using Azure services </a> - <a target="_blank" href="https://raw.githubusercontent.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/master/Instructions/Labs/Lab08-Diagram.png">Diagram</a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_09.md"> Lab 09: Publish and subscribe to Event Grid events </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_10.md"> Lab 10: Asynchronously process messages by using Azure Service Bus Queues </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_11.md"> Lab 11: Monitor services that are deployed to Azure </a>
+* <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-204-DevelopingSolutionsforMicrosoftAzure/blob/master/Instructions/Labs/AZ-204_lab_12.md"> Lab 12: Enhance a web application by using the Azure Content Delivery Network </a>
+<br /></br />
+
 Questions:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-204/
    * https://www.udemy.com/course/exam-microsoft-azure-dev/ by Alan Rodrigues
@@ -836,6 +917,20 @@ Clickbait videos with no unique content:
    * <a target="_blank" href="https://www.youtube.com/watch?v=1BhzOxaxhqE" title="Oct 31, 2020">
    #1 How to pass Exam AZ-303 Microsoft Azure Architect Technologies Certificate in 20 hours Part 1/2</a> Part 2
 
+Anthony James at LinuxAcademy:
+
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/579">Design Concepts</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/525"> Part 1</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/526"> Part 2</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/527"> Part 3</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/528"> Part 4</a>
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">Part 5</a>
+   <br /><br />
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-303/
+
+
+<hr />
 
 <a name="AZ-304"></a>
 
@@ -908,26 +1003,22 @@ Module 13 Design an Application Architecture
 
 Module 14 Design Security for Applications
 
-Others courses:
+Others courses on AZ-304:
 
-<a target="_blank" href="
-https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">
-Pluralsight</a>
+* <a target="_blank" href="https://www.pluralsight.com/paths/microsoft-azure-architect-design-az-304">Pluralsight</a>
 
-<a target="_blank" href="
-https://linuxacademy.com/cp/modules/view/id/579">
-Azure Architect Design Concepts</a>
-is foundational to:
+* <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/579">Azure Architect Design Concepts</a> is foundational to:
 
-<a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/776">
-10h 42m LinuxAcademy video course</a>
-by Russell Croft at ACloudGuru
+  * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/776">10h 42m LinuxAcademy video course</a> by Russell Croft at ACloudGuru
 
-Tim Warner references <a target="_blank" href="https://github.com/timothywarner/az304">https://github.com/timothywarner/az304</a> during his <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-304-microsoft-azure-architect-design-crash-course/">OReilly 6-hour AZ-304 "Crash Course"</a>. It's full of info.
+  * Tim Warner references <a target="_blank" href="https://github.com/timothywarner/az304">https://github.com/timothywarner/az304</a> during his <a target="_blank" href="https://learning.oreilly.com/attend/exam-az-304-microsoft-azure-architect-design-crash-course/">OReilly 6-hour AZ-304 "Crash Course"</a>. It's full of info.
+
+* https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
+
+* https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
 
 Exam prep:
    * https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
-
 
 
 <hr />
@@ -984,11 +1075,11 @@ https://github.com/MicrosoftLearning/DP-200-Implementing-an-Azure-Data-Solution
 
 https://github.com/MicrosoftLearning/mslearn-dp100
 
-* https://learning.oreilly.com/search/?query=Exam%20DP-200%3A%20Implementing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
-Exam DP-200: Implementing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
+Live online training course with Reza Salehi on O'Reilly:
+ 
+   * <a target="_blank" href="https://learning.oreilly.com/search/?query=Exam%20DP-200%3A%20Implementing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance">Exam DP-200: Implementing an Azure Data Solution Crash Course</a>
 
-* https://learning.oreilly.com/search/?query=Exam%20DP-201%3A%20Designing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance
-Exam DP-201: Designing an Azure Data Solution Crash Course (live online training course with Reza Salehi)
+   * <a target="_blank" href="https://learning.oreilly.com/search/?query=Exam%20DP-201%3A%20Designing%20an%20Azure%20Data%20Solution%20Crash%20Course&formats=live%20online%20training&publishers=O%27Reilly%20Media%2C%20Inc.&sort=relevance">Exam DP-201: Designing an Azure Data Solution Crash Course</a>
 
 
 
@@ -1102,33 +1193,7 @@ Tim Warner:
 Sample Exams:
    * https://www.whizlabs.com/learn/course/microsoft-azure-dp-203/
 
-<hr />
 
-
-<hr />
-
-<a name="AZ-303"></a>
-
-## AZ-303
-
-Anthony James at LinuxAcademy:
-
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/579">Design Concepts</a>
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/525"> Part 1</a>
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/526"> Part 2</a>
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/527"> Part 3</a>
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/528"> Part 4</a>
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/826">Part 5</a>
-   <br /><br />
-
-* https://www.whizlabs.com/learn/course/microsoft-azure-az-303/
-
-
-## AZ-304 Architecture Design
-
-https://linuxacademy.com/cp/modules/view/id/776?redirect_uri=https://app.linuxacademy.com/search?type=Course&categories=Azure
-
-* https://www.whizlabs.com/learn/course/microsoft-azure-az-304/
 
 
 <hr />
