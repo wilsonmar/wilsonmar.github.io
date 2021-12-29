@@ -241,7 +241,7 @@ https://www.vaultproject.io/docs/internals/architecture">
 https://www.vaultproject.io/docs/internals/architecture</a>
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png">
-<img alt="vault-layers" href="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png"></a>
+<img alt="vault-layers" src="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png"></a>
 
 Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
 
@@ -277,6 +277,32 @@ Seveal utilities have been created for that:
 <a name="Daytona"></a>
 * The Daytona Golang CLI client from Cruise at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
 
+<a name="envconsul"></a>
+
+### Using Envconsul with GitHub 
+
+* <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul, at https://github.com/hashicorp/envconsul</a> (from Hashcorp) populates values in environment variables referenced within programming code (12-factor applications which get their configuration via the environment).
+
+Envconsul is launched as a subprocess (daemon) which retrieves secrets using REST API calls of KV (Key Value) pairs in Vault/Consul based on "configuration files" specified in the <a target="_blank" href="https://github.com/hashicorp/hcl">HashiCorp Configuration Language</a>. 
+
+It works on many major operating systems with no runtime requirements. On MacOS:
+
+   <pre>brew install envconsul
+   envconsul -v</pre>
+
+   <pre>v0.9.2 ()</pre>
+
+ For the full list of command-line options:
+
+   <pre>envconsul -h</pre>
+
+Envconsul is also available via a Docker container for scheduled environments.
+
+Secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault based on a configuration file. A sample of its contents is this, which requests the api-key field of the secret at <em>secret/production/third-party</em>:
+
+   <ul><pre>production/third-party#api-key</pre></ul>
+
+Credentials authorizing retrieval requests are defined ...
 
 <hr />
 
@@ -394,32 +420,6 @@ fault tolerance, availability, and scalability.
 Hashicorp's Nomad ???
 
 
-<a name="envconsul"></a>
-
-### Using Envconsul with GitHub 
-
-<a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp, at https://github.com/hashicorp/envconsul</a> populates values in environment variables referenced within programming code (12-factor applications which get their configuration via the environment).
-
-Envconsul is launched as a subprocess (daemon) which retrieves secrets using REST API calls of KV (Key Value) pairs in Vault/Consul based on "configuration files" specified in the <a target="_blank" href="https://github.com/hashicorp/hcl">HashiCorp Configuration Language</a>. 
-
-It works on many major operating systems with no runtime requirements. On MacOS:
-
-   <pre>brew install envconsul
-   envconsul -v</pre>
-
-   <pre>v0.9.2 ()</pre>
-
- For the full list of command-line options:
-
-   <pre>envconsul -h</pre>
-
-Envconsul is also available via a Docker container for scheduled environments.
-
-Secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault based on a configuration file. A sample of its contents is this, which requests the api-key field of the secret at secret/production/third-party:
-
-   <ul><pre>production/third-party#api-key</pre></ul>
-
-Credentials authorizing retrieval requests are defined ...
 
 
 <a name="Vaultenv"></a>
@@ -1574,9 +1574,9 @@ https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
 
    The expected response include "Success! Enabled the database secrets engine at: lob_a/workshop/database/
 
-Vault's Database secrets engine dynamically generates credentials (username and password) for many databases.
+   Vault's Database secrets engine dynamically generates credentials (username and password) for many databases.
 
-In this challenge, you will configure the database secrets engine you enabled in the previous challenge on the path lob_a/workshop/database to work with the local instance of the MySQL database. We use a specific path rather than the default "database" to illustrate that multiple instances of the database secrets engine could be configured for different lines of business that might each have multiple databases.
+   Configure the database secrets engine you enabled (above) on the path lob_a/workshop/database to work with the local instance of the MySQL database. Use a specific path rather than the default "database" to illustrate that multiple instances of the database secrets engine could be configured for different lines of business that might each have multiple databases.
 
 1. Configure the Database Secrets Engine on the Vault server.
 

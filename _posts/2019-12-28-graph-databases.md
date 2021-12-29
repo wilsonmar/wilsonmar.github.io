@@ -3,7 +3,7 @@ layout: post
 title: "Graph databases"
 excerpt: "It's more relational than relational databases"
 tags: [Database, Mac]
-date: "2019-12-28"
+date: "2021-12-28"
 file: "graph-databases"
 image:
 # feature: pic white robots woman 1900x500.jpg
@@ -16,25 +16,29 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The contribution of this article is a maticulously sequenced presentation that curates a concise yet deep tidbits from the many resources about this topic.
+The contribution of this article is a maticulously sequenced presentation that curates concise yet deep insights from the many resources about this topic.
 
-## Graph databases: the newest thing
+## Graph databases: the latest thing
 
 Graph type databases is the latest in the evolution of data storage mechanisms to handle complexity.
 
-![neo4j-evolution-828x394-72052.jpg](https://user-images.githubusercontent.com/300046/34469117-20b4bd9c-eed5-11e7-9967-f652cc2d67ca.jpg)
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/34469117-20b4bd9c-eed5-11e7-9967-f652cc2d67ca.jpg">
+<img alt="neo4j-evolution-828x394-72052.jpg" src="https://user-images.githubusercontent.com/300046/34469117-20b4bd9c-eed5-11e7-9967-f652cc2d67ca.jpg"></a>
 
 PROTIP: People using graph databases call themselves "Graphistas".
 
-Graph databases provides an alternative to use of SQL tables, rows, columns, or NOSQL documents to store data. SQL makes it difficult to answer questions that were not already expected ahead of time. But instead of static predefined schemas which require shutdown to change, graph databases can be configured dynamically while running.
-
 Graphs can provide insights not easily found using other technologies.
+
+Graph databases provides an alternative way to to store data. Instead of static predefined schemas which require shutdown to change, graph databases can be configured dynamically while running.
 
 Graphs are important to visualizing AI/Machine Learning algorithms:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/69905392-ce884480-1380-11ea-9d0b-c145a2a6e51b.png"><img width="823" alt="neo4j-ai-graphs-823x589" src="https://user-images.githubusercontent.com/300046/69905392-ce884480-1380-11ea-9d0b-c145a2a6e51b.png"></a>
 
+Directed acyclic (one-way) graphs (DAGs) are used in Git, scheduling algorithms, and form the heart of many neuro network (Tensor) models in many other modern applications. Its representation of dependencies (precedence relationships) enable its use in the Airflow task processing app.
 
 ## Simpler complex connections, naturally
+
+It's difficult for SQL to answer questions that were not already expected ahead of time. 
 
 SQL databases from Oracle, MySQL, etc. need to join physical tables together using foreign keys and link tables.<a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=23m50s">*</a><br />
 <img alt="neo4j-link-table-488x264.jpg" src="https://user-images.githubusercontent.com/300046/69884353-05d5f300-12a6-11ea-91ed-1e2dcc0e8b28.jpg">
@@ -43,7 +47,7 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
    
    ## Graph Faster
 
-   Moreover, it is also time consuming for traditional relational databases to process complex indexed queries, even if it's all in cache. However, Neo4j can process complex data structures efficiently because it uses pointers instead of table lookups (for "index free adjacency"). A  <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=1h1m31s">comparison VIDEO</a>:<br />
+   It is time consuming for traditional relational databases to process complex indexed queries (even if it's all in cache). However, graph databases can process complex data structures efficiently because it uses pointers instead of table lookups (for "index free adjacency"). A  <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=1h1m31s">comparison VIDEO</a>:<br />
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th>&nbsp;</th><th># persons</th><th>query time</th></tr>
    <tr valign="top" align="right"><td>Relational database</td><td>1,000</td><td>200 ms</td></tr>
@@ -53,7 +57,7 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
    ## More relational than relational databases
 
-   Whereas SQL data is stored in separate tables joined together using complex queries, Neo4j is "white-board friendly". Neo4J data is stored the same way as illustrated by its data model. Graph database diagrams look like ER (Entity-Relation) diagrams for SQL databases. The example below uses data from <a target="_blank" href="https://grouplens.org/datasets/movielens/">Movielens database</a> containing 62,000 movies with 25 million ratings and one million tag applications applied by 162,000 users:
+   Whereas SQL data is stored in separate tables joined together using complex queries, Graph databases are "white-board friendly" because it stores data the same way as illustrated by its data model. Graph database diagrams look like ER (Entity-Relation) diagrams for SQL databases. The example below uses data from <a target="_blank" href="https://grouplens.org/datasets/movielens/">Movielens database</a> containing 62,000 movies with 25 million ratings and one million tag applications applied by 162,000 users:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/34470717-c7b80a1a-ef05-11e7-9f9d-2fa35ee496e2.png">
    <img width="838" alt="neo4j-movie-graph-1676x702-144758" src="https://user-images.githubusercontent.com/300046/34470717-c7b80a1a-ef05-11e7-9f9d-2fa35ee496e2.png"></a>
@@ -63,10 +67,31 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
    Instead of elaborate joins, labeled <strong>relationships</strong> between red <strong>nodes</strong> defining movie titles and green nodes defining actor names. Red and green differentiate <strong>entity types</strong>. Titles and actor names <strong>labels</strong> to nodes.  "ACTED_IN" and "DIRECTED" are <strong>attributes</strong> of relationships.
 
-   Some (academics) call nodes "vertices" or objects and relationships "edges".
+   > Nodes objects are also called "<strong>vertices</strong>" and 
+   relationships are also called "<strong>edges</strong>".
 
+   In Neural Network Computation Graphs:
+   > vertices are <strong>neurons</strong> (simple building blocks) and
+   edges are <strong>tensors</strong> (data items).
+
+   Each vertex has an ID (identifier).
+   
+   Each edge has a <strong>weight</strong>. In a graph of edges representing segments of a road being built, the Shortest Path (Djisktra's) algorithm reveals the least-cost set of road segments. 
+
+   Adjacency Lists makes sense for large, sparsely connected graphs.
+   
+   Adjacency Sets makes sense for small, densely connected graphs.
+
+   To order all nodes that satisfies all precedence relationships, a <strong>topological sort</strong>, implemented using a simple iterative algorithm.
+
+   Spanning Tree Algorithms find a path through all nodes.
+   The minimum spanning tree is one that has the lowest sum of weights. 
+   Prim's (greedy) algorithm works only for connected (weighted undirected) graphs.
+   Krushal's algorithm works even for disconnected graphs.
 
 ### Traversing graphs indirectly
+
+   The advantage of graph databases appears when working with complex <strong>indirect relationships</strong>. 
 
    Relationships and nodes can be associated with name/value pair <strong>properties</strong> used to narrow searches.
 
@@ -74,14 +99,12 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
    Third-party add-ons can add a GUID to each entity.
 
-   The advantage of Neo4j appears when working with complex <strong>indirect relationships</strong>. 
-
-
 ## Which graph database and language?
 
 <a target="_blank" href="https://db-engines.com/en/ranking_trend/graph+dbms">This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Cosmos catching up quickly. Notice that Cosmos and others are called "Multi-model" (providing a Document store, Key-value store, wide-column store as well as graph database).
 
-<a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin</a> traversal machine is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. Gremlin was developed (beginning in 2009) by Apache TinkerPop of the Apache Software Foundation. Thus, it is Apache-2 licensed.
+The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin language</a> traversal machine (GTM) is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. Gremlin was developed (beginning in 2009) by Apache TinkerPop of the Apache Software Foundation. Thus, it is Apache-2 licensed.
+
 
 ### Cloud SaaS Graph database services
 
@@ -127,9 +150,12 @@ The <strong>Gremlin</strong> language is implemented by a wide variety of vendor
 
 > "It's harder to get started with Gremlin than Neo4j's Cypher. Gremlin has a SQL-like syntax (SELECT, WHERE, etc.). But Gremlin helps you understand graphs better than Cypher. And it's available on free open-source software and most portable and available among vendors." -- <a target="_blank" href="https://linkedin.com/in/JohnPtacek">John Ptacek</a> [24:25] into <a target="_blank" title="6 Sep 2019 [53m]" href="https://app.pluralsight.com/library/courses/that-conference-2019-session-60/table-of-contents">"THAT Conference '19: Introduction to Graph Databases"</a>
 
-## Neo4j Cypher language
+## Resources
 
-See my <a target="_blank" href="https://wilsonmar.github.io/neo4j">Neo4j tutorial</a>
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/graph-algorithms-python/exercise-files">"Working with Graph Algorithms in Python"</a> video tutorial on Pluralsigh by Janani Ravi explains sample Python 3.5.1 code (not using Neo4J or Gremlin).
+
+* See my <a target="_blank" href="https://wilsonmar.github.io/neo4j">Neo4j Cypher language tutorial</a>
+
 
 ## More about Python
 
