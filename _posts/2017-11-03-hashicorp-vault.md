@@ -23,8 +23,10 @@ This course assumes participants bring a Mac or Windows laptop and have prior ex
 
 At the end of this tutorial, you should be able to:
 
-* <a href="#InstallServer">Install Vault and Consul on a server using Docker</a>
-* <a href="#InstallEKS">Install Vault within a AWS EKS cluster</a>
+* <a href="#LaptopInstall">On your laptop install Vault</a>
+* <a href="#InstallServer">On a server install Vault and Consul (using Docker)</a>
+* <a href="#InstallEKS">Install Vault within an AWS EKS cluster</a>
+
 * <a href="#Config">Initialize and Configure Vault</a>
 * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
 * <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
@@ -32,6 +34,15 @@ At the end of this tutorial, you should be able to:
 	Tasks get tokens so they can retrieve values.
 <br /><br />
 
+## Secrets handling best practices
+
+<a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>:
+
+1. Don't let authentication secrets live forever. Use single-use token with short TTL (Time To Live)
+1. Distribute authentication secrets securely.
+1. Limit exposure if auth secrets disclosed. Use Least Privilege.
+1. Have a "break-glass" procedure if auth secrets are stolen.
+1. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
 
 ## Skill Certification
 
