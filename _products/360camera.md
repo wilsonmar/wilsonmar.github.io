@@ -24,7 +24,7 @@ National Geographic's several videos filmed in 360:
 
 ## Recording using 360 cameras
 
-Using a camera that records in 360 degree panorama can revolutionize video recording becuase it enables people to concentrate on the conversation rather than framing the shot. Because someone can stand anywhere and still be recorded, framing and zooming can now occur in post-production. This also means subjects can look into the eyes of the cameraman rather than staring into the camera. Additionally, now different speakers in the video and be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 
+Using a camera that records in 360 degree panorama can revolutionize video recording because it enables people to concentrate on the conversation rather than framing the shot. Because someone can stand anywhere and still be recorded, framing and zooming can now occur in post-production. This also means subjects can look into the eyes of the cameraman rather than staring into the camera. Additionally, now different speakers in the video and be positioned on the same spot on the screen. And viewers also get an immersive feel as well (and look around during boring parts). 
 
 ## Choice of cameras
 
