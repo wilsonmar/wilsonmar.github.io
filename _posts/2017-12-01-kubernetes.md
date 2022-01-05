@@ -119,7 +119,8 @@ https://github.com/kubernetes/community/blob/master/sig-list.md</a>
 
 REMEMBER: Unlike other systems, in Kubernetes there are no "users".
 
-Sebastien Goasguen (@sebgoa), author of Kubernetes Cookbook and Docker Cookbook
+Sebastien Goasguen (@sebgoa), author of "Kubernetes Cookbook" and 
+"Docker Cookbook"
 https://github.com/sebgoa/oreilly-kubernetes
 
 <hr />
@@ -138,9 +139,11 @@ But that is easier said than done. The power and flexibility of Kubernetes means
 
 So, alas, some managers fall back to "protecting" Kubernetes in production by enabling only a small number of Operations specialists (separated from developers) to handle Kubernetes. 
 
-When specialists are the only ones capable of doing some part of the work, they often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
+When K8s specialists are the only ones capable of doing key parts of the work, they also often become a <strong>bottleneck to fast progress</strong>. Moreover, specialists have a dis-incentive to educate others deeply. The shortage of Kubernetes skills has resulted in higher salaries for Kubernetes jobs.
 
 "Self-service" portals and custom utilities save developer's time for common activities. But portals can become "anti-patterns" because they can also <strong>limit innovation</strong> (new features) and block individual developers from <strong>learning</strong> to work quickly and troubleshoot independently.
+
+To fill in the gap, individual teams inexperienced in K8s troubleshooting may find useful a tool such as <a target="_blank" href="https://www.Komodor.com/">Komodor</a> which monitors it all and suggests actions, like a human expert would.
 
 
 ## This article (automation)
