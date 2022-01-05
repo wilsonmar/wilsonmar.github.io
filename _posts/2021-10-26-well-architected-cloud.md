@@ -3,7 +3,7 @@ layout: post
 title: "Well Architected Cloud"
 excerpt: "What is your team's maturity at adopting best practices? Here is the comprehensive industry-standard framework from Amazon, Microsoft, and Google"
 tags: [Cloud, comparison]
-date: "2021-10-26"
+date: "2022-01-06"
 file: "well-architected-cloud"
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -89,9 +89,11 @@ The five pillars are listed below in <strong>default priority</strong>.
 
 PROTIP: One memonic to make the 5 easier to remember is "CROPS".
 
-Google adds a "System Design" category.
+Google adds a "System Design" pillar.
 
-ACTIVITY 1 - Have each member of your team prioritize the pillars. Then discuss priorities, as a team. (Why? The Dunning-Kruger effect). Example discussion:
+Amazon accounced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
+
+ACTIVITY 1 - Have each member of your team do a mental exercise to <strong>prioritize the pillars</strong> as the basis for a discussion, as a team. (Why? The Dunning-Kruger effect). Example discussion:
 
    * "Operational Excellence" has to go first because that's about getting up and running with basic services.
 
