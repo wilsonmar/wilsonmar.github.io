@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Elixir-lang"
-excerpt: "Elixir leverages the Erlang VM (BEAM) for running low-latency, distributed, and fault-tolerant systems in web development, embedded software, data ingestion, and multimedia processing."
+excerpt: "Elixir leverages the Erlang BEAM VM for running low-latency, distributed, and fault-tolerant systems in web development, embedded software, data ingestion, and multimedia processing."
 tags: [language]
 date: "2022-01-06"
 file: "elixir-lang"
@@ -27,13 +27,19 @@ comments: true
 
 Famous users mentioned on the Elixir home page are Farmbot and Pepsico.
 
-## Erlang VM (BEAM)
+## Erlang VM (BEAM) users
 
    * https://www.wikiwand.com/en/Elixir_(programming_language)
    <br /><br />
 
 WhatsApp is using it.
 Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then Joe Armstrong's team of THREE devs written software in Erlang in few months and it was huge success. It was basically first production-level implementation of CSP actor model concurrency.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=zL2wcqS78UA">
+VIDEO: Why We've Adopted Elixir</a> by Pusher
+
+https://serokell.io/blog/elixir-in-production-glific
+
 
 ## Install Language
 
@@ -85,6 +91,8 @@ OTP is set of tools and libraries that Elixir inherits from Erlang, a programmin
 
 OTP contains the <strong>Erlang</strong> compiler, databases, test framework, profiler, debugging tools. But, when <strong>Alchemists</strong> (developers program in Elixir) talk about OTP in the context of Elixir, they usually mean the Erlang <strong>actor model</strong> that is based on lightweight processes that make Elixir so efficient.
 
+An Erlang process is much lighter than an operating system's threads and processes.
+
 > "Elixir is synatactic sugering on Erlang"<a href="#[1]">[1]</a>
 
 Erlang functions can be called from Elixir, and vice versa, without run time impact, due to compilation to Erlang bytecode.
@@ -97,6 +105,8 @@ Erlang functions can be called from Elixir, and vice versa, without run time imp
 So, many Elixir projects require a correspondence between the Elixir and Erlang runtime versions.
 
 Like NVM is needed for Node.js work or Rbenv for Ruby, ensure that your project installs a specific version of Elixir and Erlang by using the ASDF version manager.
+
+NOTE: ASDF is not an acronym but is the four letters on the QWERTY keyboard layout home row for the left hand.
 
 ASDF enables you to switch among versions (of multiple languages) by ensuring that each version of each project has the environment it needs.
 
@@ -174,8 +184,17 @@ master-otp-24
 
    Notice that each Elixir version references the version of Erlang (such as 24).
 
-1. Create a <tt><strong>.tool-versions </strong></tt> file in your project folder root to <strong>specify precise versions</strong> of each language to be installed.
+1. Navigate your project folder root to create a <tt><strong>.tool-versions </strong></tt> file to <strong>specify precise versions</strong> of each language to be installed:
 
+   </pre>asdf local erlang 24.2
+asdf local elixir 1.13.1-otp-24
+   </pre>
+
+1. Create a <tt>.tool-versions</tt> file in your account $HOME  directory so that ASDF can use those versions whenever a project doesn't specify versions of its own:
+
+   <pre>asdf global erlang 24.2
+asdf global elixir 1.13.1-otp-24
+   </pre>
 
 1. Install Erlang:
 
@@ -213,20 +232,9 @@ Please see /Users/wilsonmar/.asdf/plugins/erlang/kerl-home/builds/asdf_24.2/otp_
 
    <pre><strong>asdf install elixir 1.13.1-otp-24</strong>
 
-1. Save your chosen versions in a project. From the root of the project, run:
-
-   </pre>asdf local erlang 24.2
-asdf local elixir 1.13.1-otp-24
-   </pre>
-
 1. Replace the versions above with those you used during installation. This will create a <strong>.tool-versions</strong> file in your project, which will instruct ASDF which versions to use. If you'd like to set a global, or default, version, run:
 
-   <pre>asdf global erlang 24.2
-asdf global elixir 1.13.1-otp-24
-   </pre>
-
-   This will create a .tool-versions file in your home directory so that ASDF can use those versions whenever a project doesn't specify versions of its own.
-
+.tool-versions
 
 ### Install dependencies
 
@@ -263,8 +271,6 @@ Unchanged:
  
    <pre><strong>mix help deps | more</strong></pre>
 
-
-
 1. See a list of all repos on GitHub:
 
    https://github.com/topics/elixir
@@ -280,7 +286,9 @@ Unchanged:
 
 1. Navigate to the lib folder:
 
-   REMEMBER: Elixir source code files have extension of <strong>.ex</strong>. Test specification files have extension of <strong>.exs</strong> (containing assert commands).
+   <a target="_blank" href="https://stackoverflow.com/questions/36292620/elixir-when-to-use-ex-and-when-exs-files">REMEMBER</a>: Compiled Elixir source code files have extension of <strong>.ex</strong> for the application's main business logic, invoked using <tt>iex</tt>. <strong>.exs</strong> is for interpreted code. Test specification files have extension of <strong>.exs</strong> (containing assert commands), invoked using <tt>elixir</tt>.
+
+.ex is for compiled code, .exs is for interpreted code.
 
 1. Check whether typespecs are accurate:
 
@@ -314,34 +322,7 @@ dialyxir_erlang-24.2_elixir-1.13.1.plt
        (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution
    </pre>
 
-
-<pre>iex></pre>
-
-
-## Language Features
-
-An Erlang process is much lighter than an operating system's threads and processes.
-
-Shared nothing concurrent programming via message passing (Actor model)
-
-No chance for deadlocking.
-
-Emphasis on recursion and higher-order functions instead of side-effect-based looping.
-
-## Language basics
-
-https://elixirschool.com/en/lessons/basics
-
-## Phoenix Framework
-
-<a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference
-
-https://elixirschool.com/blog/now-with-more-elixir
-From Jekyll to Phoenix using https://elixirschool.com/en/lessons/misc/nimble_publisher
-
-
-https://thoughtbot.com/services/elixir-phoenix
-
+<hr />
 
 ## GitHub repositories
 
@@ -353,8 +334,41 @@ at https://github.com/elixirschool/elixirschool
 https://www.wikiwand.com/en/Mix_(build_tool)
 Mix is a build automation tool that provides tasks for creating, compiling, and testing Elixir projects, managing its dependencies, and more.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=zL2wcqS78UA">
-VIDEO: Why We've Adopted Elixir</a> by Pusher
+
+## Language basics
+
+https://elixirschool.com/en/lessons/basics
+
+## Language Features
+
+Shared nothing concurrent programming via message passing (Actor model)
+
+No chance for deadlocking.
+
+Emphasis on recursion and higher-order functions instead of side-effect-based looping.
+
+https://serokell.io/blog/elixir-metaprogramming
+use Elixir to write code that writes code.
+
+## Octo database toolkit
+
+Ecto is the go-to database library in the Elixir ecosystem, to interact with SQL databases such as Postgres and MySQL - inserting, validating, changing, and querying data.
+
+See https://serokell.io/blog/ecto-guide-for-beginners
+
+
+## Phoenix Framework
+
+VIDEO: https://www.phoenixframework.org/
+
+Previously: <a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference
+
+https://elixirschool.com/blog/now-with-more-elixir
+From Jekyll to Phoenix using https://elixirschool.com/en/lessons/misc/nimble_publisher
+
+https://serokell.io/blog/introduction-to-phoenix
+
+https://thoughtbot.com/services/elixir-phoenix
 
 
 ## Challenges
