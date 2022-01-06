@@ -27,6 +27,7 @@ comments: true
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=pBNOavRoNL0">VIDEO: Elixir Tutorial</a> by Derek Banas
 
+
 ## Erlang VM (BEAM) users
 
    * https://www.wikiwand.com/en/Elixir_(programming_language)
@@ -36,13 +37,17 @@ WhatsApp is using it. Also Pinterest.
 
 Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then Joe Armstrong's team of THREE devs written software in Erlang in few months and it was huge success. It was basically first production-level implementation of CSP actor model concurrency.
 
+https://news.ycombinator.com/item?id=27684045
+stressgrid benchmarks
+
 <a target="_blank" href="https://www.youtube.com/watch?v=zL2wcqS78UA">
 VIDEO: Why We've Adopted Elixir</a> by Pusher
 
 https://serokell.io/blog/elixir-in-production-glific
 
+<hr />
 
-## Install Language
+## Installs
 
    * https://www.pluralsight.com/guides/installing-elixir-erlang-with-asdf
    * https://joyofelixir.com/a-setup-and-install
@@ -61,7 +66,8 @@ If you're creating a <strong>temporary enviornment</strong> to run whatever is t
 
 ### Verify install
 
-<a target="_blank" href="https://www.youtube.com/watch?v=antnsMgA4Ro">VIDEO</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=antnsMgA4Ro">VIDEO</a>:
+   * <a target="_blank" href="https://pragprog.com/titles/jgotp/designing-elixir-systems-with-otp/">BOOK: "Designing Elixir Systems with OTP: Write Highly Scalable, Self-Healing Software with Layers" December 2019 by James Edward Gray, II and Bruce A. Tate
 
 1. Verifying Elixir is done the same way across all *nix operating systems:
 
@@ -80,6 +86,10 @@ Elixir 1.13.1 (compiled with Erlang/OTP 24)
 &nbsp;
 Elixir v1.10.4
    </pre>
+
+   PROTIP: Erlang OTP 24 includes a JIT for the first time. It only runs on x64 but should significantly improve performance on that platform. For some workloads people are reporting as much as a 40% improvement. I would expect to see some improvement in those benchmarks as a result.
+
+   OTP 25 will include JIT support for ARM64 (on AWS Gravator servers).
 
 ### OTP from Erlang
 
@@ -156,6 +166,12 @@ Resolving deltas: 100% (1818/1818), done.
    </pre>
 
 1. If your project requires Node.js, also install the nodejs plugin.
+
+   https://medium.com/@marcelo_lebre/a-tale-of-three-kings-e0be17a16e2b
+   compared Python/Flask, Go, and Elixir (with plug and cowboy) and concluded "Go might be best for processing, Elixir for I/O intensive services, and Python for more mainstream scenarios."
+
+   https://www.researchgate.net/publication/326165107_Comparing_languages_for_engineering_server_software_erlang_go_and_scala_with_akka
+
 
 ### Versions available
 
@@ -313,9 +329,14 @@ dialyxir_erlang-24.2_elixir-1.13.1.plt
 
    <pre>mix test</pre>
 
+   See https://elixirschool.com/en/lessons/testing/basics
+
 1. When running a test initially, watch it step by step:
 
    <pre><strong>mix test.watch</strong></pre>
+
+   <a target="_blank" href="https://www.amazon.com/Testing-Elixir-Andrea-Leopardi-ebook-dp-B09CT1J4P6/dp/B09CT1J4P6">$40 BOOK</a>: https://pragprog.com/titles/lmelixir/testing-elixir/
+   "Testing Elixir: Effective and Robust Testing for Elixir and its Ecosystem" by Andrea Leopardi and Jeffrey Matthias
 
 1. Press <strong>control + C</strong>
 
@@ -335,6 +356,7 @@ at https://github.com/elixirschool/elixirschool
 https://www.wikiwand.com/en/Mix_(build_tool)
 Mix is a build automation tool that provides tasks for creating, compiling, and testing Elixir projects, managing its dependencies, and more.
 
+Weather app
 
 ## Language basics
 
@@ -342,17 +364,22 @@ https://elixirschool.com/en/lessons/basics
 
 ## Language Features
 
-Shared nothing concurrent programming via message passing (Actor model)
-
-No chance for deadlocking.
+Elixir/Erlang aims for predictable behavior that operates gracefully under extreme circumstances.
 
 Emphasis on recursion and higher-order functions instead of side-effect-based looping.
 
-https://serokell.io/blog/elixir-metaprogramming
-use Elixir to write code that writes code.
+Shared nothing concurrent programming via message passing (Actor model)
+See https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
+
+No chance for deadlocking.
+
+Elixir was designed from the ground up for fault tolerance. Unlike Go, the entire Go program goes down when a goroutine crashes. In Elixir, whenever a process dies, only that single process dies, without affecting the rest of the program. Even better, the failed process will get restarted automatically by its supervisor. This allows the failed process to retry the operation that has failed.[5]
+
+Elixir uses NIF's to bring in C or Rust to deal compute heavy math.
 
 ## Octo database toolkit
 
+https://github.com/elixir-ecto/ecto
 Ecto is the go-to database library in the Elixir ecosystem, to interact with SQL databases such as Postgres and MySQL - inserting, validating, changing, and querying data.
 
 See https://serokell.io/blog/ecto-guide-for-beginners
@@ -364,12 +391,41 @@ VIDEO: https://www.phoenixframework.org/
 
 Previously: <a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference
 
+Out of the box, it supports WebSockets, routing, HTML templating language, internationalization, JSON encoders/decoders, seamless ORM integration(Ecto), sessions, SPA toolkit, and a lot more.[5] 
+
+https://elixirschool.com/blog/phoenix-live-view/
+The Phoenix framework has recently introduced LiveView, which allows building rich realtime web interfaces right within Elixir (think Single-Page Applications). No JavaScript needed, no React!
+
+LiveView even takes care of synchronizing the client and server state, which means that we don’t have to worry about developing and maintaining a REST/GraphQL API.
+
+
 https://elixirschool.com/blog/now-with-more-elixir
 From Jekyll to Phoenix using https://elixirschool.com/en/lessons/misc/nimble_publisher
 
 https://serokell.io/blog/introduction-to-phoenix
 
 https://thoughtbot.com/services/elixir-phoenix
+
+https://github.com/dashbitco/broadway
+Broadway enables building of data ingestion/data processing pipelines in Elixir.
+
+BOOK: https://pragprog.com/titles/lhelph
+Functional Web Development with Elixir, OTP, and Phoenix
+
+
+## Nerves Framework
+
+https://pragprog.com/titles/thnerves
+Build a Binary Clock with Elixir and Nerves
+
+### Meta programming
+
+Use Elixir to write code that writes code.
+
+https://serokell.io/blog/elixir-metaprogramming
+
+BOOK: https://pragprog.com/titles/cmelixir
+Metaprogramming Elixir
 
 
 ## Challenges
@@ -383,7 +439,14 @@ https://github.com/bijanbwb/enbala_take_home
 https://www.youtube.com/watch?v=xoNRtWl4fZU
 ElixirDaze 2016 - Processing 2.7 million images with Elixir (vs Ruby) by David Padilla from Confreaks
 
+[5] https://betterprogramming.pub/modern-languages-suck-ad21cbc8a57c
+compares aspects for each language. by Ilya Suzdalnitski, Senior Elixir engineer.
+
+https://pragprog.com/categories/elixir-phoenix-and-otp/
+
 ## Social
+
+http://elixirforum.com/
 
 The first ElixirConf was held 2017 in Warsaw Poland.
 
