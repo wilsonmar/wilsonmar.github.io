@@ -294,6 +294,8 @@ Functions hmac.compare_digest() and secrets.compare_digest() are designed to mit
 
 http://pypi.python.org/pypi/profilehooks
 
+Depth-First Seach (DFS) uses a stack, whereas
+Breadth-First Search (BFS) use a queue.
 
 
 <a name="TimeComplexity"></a>
