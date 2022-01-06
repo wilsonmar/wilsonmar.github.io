@@ -17,6 +17,8 @@ comments: true
 
 1. https://elixir-lang.org/
 
+   Famous users mentioned on the Elixir home page are Farmbot and Pepsico.
+
 1. Open sourced at https://github.com/elixir-lang under Apache 2.0
 
 1. See the documentary featuring José Valim, who created Elixir beginning in 2012. Also appearing are [9:31] Justin Schneck, co-author of the Nerves Project, and [at 9:13] Chris McCord, creator of the <a target="_blank" href="https://www.wikiwand.com/en/Phoenix_(web_framework)">Phoenix Framework</a> which implements the server-side Model View Controller (MVC) pattern:
@@ -25,14 +27,13 @@ comments: true
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=pBNOavRoNL0">VIDEO: Elixir Tutorial</a> by Derek Banas
 
-Famous users mentioned on the Elixir home page are Farmbot and Pepsico.
-
 ## Erlang VM (BEAM) users
 
    * https://www.wikiwand.com/en/Elixir_(programming_language)
    <br /><br />
 
-WhatsApp is using it.
+WhatsApp is using it. Also Pinterest.
+
 Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then Joe Armstrong's team of THREE devs written software in Erlang in few months and it was huge success. It was basically first production-level implementation of CSP actor model concurrency.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=zL2wcqS78UA">
