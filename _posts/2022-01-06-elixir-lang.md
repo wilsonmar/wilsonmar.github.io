@@ -27,35 +27,84 @@ comments: true
 
 Famous users mentioned on the Elixir home page are Farmbot and Pepsico.
 
+## Erlang VM (BEAM)
+
+   * https://www.wikiwand.com/en/Elixir_(programming_language)
+   <br /><br />
+
+WhatsApp is using it.
+Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then Joe Armstrong's team of THREE devs written software in Erlang in few months and it was huge success. It was basically first production-level implementation of CSP actor model concurrency.
 
 ## Install Language
 
-https://www.pluralsight.com/guides/installing-elixir-erlang-with-asdf
+   * https://www.pluralsight.com/guides/installing-elixir-erlang-with-asdf
+   * https://joyofelixir.com/a-setup-and-install
+   * https://elixir-lang.org/install.html
+   <br /><br />
 
-https://joyofelixir.com/a-setup-and-install
+### One-off install
 
-https://elixir-lang.org/install.html
-
-### On Fedora & Ubuntu: 
-
-   See https://gist.github.com/rubencaro/6a28138a40e629b06470
-
-### On MacOS using Homebrew:
-
-If you're creating a temporary enviornment to run whatever the latest version of Elixir (without Erlang):
+If you're creating a <strong>temporary enviornment</strong> to run whatever is the latest version of Elixir (without Erlang), on MacOS using Homebrew:
 
    <ul><pre><strong>brew install elixir</strong></pre></ul>
 
-But don't the above. Instead, use the ASDF version manager for Elixir, which is like NVM for Node.js or Rbenv for Ruby.
+   Alternately, on Fedora & Ubuntu, see:
+   https://gist.github.com/rubencaro/6a28138a40e629b06470
+
+
+### Verify install
+
+<a target="_blank" href="https://www.youtube.com/watch?v=antnsMgA4Ro">VIDEO</a>:
+
+1. Verifying Elixir is done the same way across all *nix operating systems:
+
+   <pre><strong>elixir -v</strong></pre>
+
+   The response at time of writing:
+
+   <pre>Erlang/OTP 24 [erts-12.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit] [dtrace]
+&nbsp;
+Elixir 1.13.1 (compiled with Erlang/OTP 24)
+   </pre>
+
+   Previously:
+
+   <pre>Erlang/OTP 23 [erts-11.1.1] [source] [64-bit] [smp:16:16] [ds:16:16:10] [async-threads:1] [hipe] [dtrace]
+&nbsp;
+Elixir v1.10.4
+   </pre>
+
+### OTP from Erlang
+
+   * https://serokell.io/blog/elixir-otp-guide
+   <br /><br />
+
+Notice the "OTP" in "Erlang/OTP 24" version name?
+
+OTP is set of tools and libraries that Elixir inherits from Erlang, a programming language on whose VM it runs.
+
+OTP contains the <strong>Erlang</strong> compiler, databases, test framework, profiler, debugging tools. But, when <strong>Alchemists</strong> (developers program in Elixir) talk about OTP in the context of Elixir, they usually mean the Erlang <strong>actor model</strong> that is based on lightweight processes that make Elixir so efficient.
+
+> "Elixir is synatactic sugering on Erlang"<a href="#[1]">[1]</a>
+
+Erlang functions can be called from Elixir, and vice versa, without run time impact, due to compilation to Erlang bytecode.
+
+### ASDF to manage Elixir and Erlang versions
+
+   * https://serokell.io/blog/elixir-otp-guide
+   <br /><br />
+
+So, many Elixir projects require a correspondence between the Elixir and Erlang runtime versions.
+
+Like NVM is needed for Node.js work or Rbenv for Ruby, ensure that your project installs a specific version of Elixir and Erlang by using the ASDF version manager.
 
 ASDF enables you to switch among versions (of multiple languages) by ensuring that each version of each project has the environment it needs.
-Such is especially important in Elixir projects, which require a correspondence between the Elixir and Erlang runtimes.
 
 1. On MacOS:
 
    <pre><strong>brew install coreutils curl git</strong></pre>
  
-1. Clone ASDF into your $HOME folder:
+1. Clone ASDF into a folder in your $HOME folder:
 
    <pre><strong>git clone https://github.com/asdf-vm/asdf.git ~/.asdf --depth 1</strong></pre>
 
@@ -67,11 +116,13 @@ Such is especially important in Elixir projects, which require a correspondence 
 
    <pre>source $HOME/.asdf/asdf.sh</pre>
 
-   Alternatively, if you use oh-my-zsh, add asdf to your plugin configuration. To include ASDF in your configuration when using a different shell, consult the documentation.
+   Alternatively, if you use oh-my-zsh, add asdf to your plugin configuration.
 
-1. Install Plugins to support multiple languages. A typical Elixir project needs the Elixir and Erlang plugins:
+1. Install languages as ASDF Plugins. A typical Elixir project needs the Elixir and Erlang plugins:
 
    <pre><strong>asdf plugin add erlang</strong></pre>
+
+   Sample response:
 
    <pre>initializing plugin repository...Cloning into '/Users/wilsonmar/.asdf/repository'...
 remote: Enumerating objects: 3585, done.
@@ -95,7 +146,11 @@ Resolving deltas: 100% (1818/1818), done.
 
 1. If your project requires Node.js, also install the nodejs plugin.
 
-1. ASDF requires you to <strong>specify a precise version</strong> of each language to be installed in the <tt><strong>.tool-versions </strong></tt> file in the project folder root. So pick one from a list  a list of all available versions:
+### Versions available
+
+   PROTIP: ASDF requires that a <strong>precise version be specified</strong> for each language to be installed.
+
+1. Use ASDF to list all available versions of Erlang:
 
    <pre><strong>asdf list-all erlang</strong></pre>
 
@@ -105,10 +160,12 @@ Resolving deltas: 100% (1818/1818), done.
 # ...
    </pre>
 
+1. Use ASDF to list all available versions of Elixir:
+
    <pre><strong>asdf list-all elixir</strong></pre>
    <pre># ...
 1.13.1-otp-23
-1.13.1-otp-24
+<strong>1.13.1-otp-24</strong>
 # ...
 master-otp-23
 master-otp-24
@@ -117,14 +174,16 @@ master-otp-24
 
    Notice that each Elixir version references the version of Erlang (such as 24).
 
-1. Much like other version managers' .nvmrc and .ruby-version files, 
-   ASDF requires you to <strong>specify a precise version</strong> of each language to be installed in the <tt><strong>.tool-versions </strong></tt> file in the project folder root.
+1. Create a <tt><strong>.tool-versions </strong></tt> file in your project folder root to <strong>specify precise versions</strong> of each language to be installed.
+
+
+1. Install Erlang:
 
    <pre><strong>asdf install erlang 24.2</strong>
 
-   Erlang compiles modules based on the available libraries from your system. For example, some features (such as the built-in observer) require wx libraries. You may see messages during the installation about omitted modules, which will not affect the rest of the runtime.
+   In the sample response, there may be messages during the installation about omitted modules, which will not affect the rest of the runtime.
 
-   The response:
+   Erlang compiles modules based on the available libraries from your system. For example, some features (such as the built-in observer) require wx libraries. 
 
    <pre>asdf_24.2 is not a kerl-managed Erlang/OTP installation
 No build named asdf_24.2
@@ -156,44 +215,22 @@ Please see /Users/wilsonmar/.asdf/plugins/erlang/kerl-home/builds/asdf_24.2/otp_
 
 1. Save your chosen versions in a project. From the root of the project, run:
 
-   </pre>asdf local erlang 23.2.1
-asdf local elixir 1.11.2-otp-23
+   </pre>asdf local erlang 24.2
+asdf local elixir 1.13.1-otp-24
    </pre>
 
-1. Replace the versions above with those you used during installation. This will create a .tool-versions file in your project, which will instruct ASDF which versions to use. If you'd like to set a global, or default, version, run:
+1. Replace the versions above with those you used during installation. This will create a <strong>.tool-versions</strong> file in your project, which will instruct ASDF which versions to use. If you'd like to set a global, or default, version, run:
 
-   <pre>asdf global erlang 23.2.1
-asdf global elixir 1.11.2-otp-23
+   <pre>asdf global erlang 24.2
+asdf global elixir 1.13.1-otp-24
    </pre>
 
    This will create a .tool-versions file in your home directory so that ASDF can use those versions whenever a project doesn't specify versions of its own.
 
 
-## Verify install
+### Install dependencies
 
    NOTE: A ".mix" folder is created within your user $HOME folder.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=antnsMgA4Ro">VIDEO</a>:
-
-1. Verifying Elixir is done the same way across all *nix operating systems:
-
-   <pre><strong>elixir -v</strong></pre>
-
-   The response at time of writing:
-
-   <pre>Erlang/OTP 24 [erts-12.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit] [dtrace]
-&nbsp;
-Elixir 1.13.1 (compiled with Erlang/OTP 24)
-   </pre>
-
-   Previously:
-
-   <pre>Erlang/OTP 23 [erts-11.1.1] [source] [64-bit] [smp:16:16] [ds:16:16:10] [async-threads:1] [hipe] [dtrace]
-&nbsp;
-Elixir v1.10.4
-   </pre>
-
-## Install dependencies
 
 1. Install 
 
@@ -226,9 +263,7 @@ Unchanged:
  
    <pre><strong>mix help deps | more</strong></pre>
 
-<pre>iex></pre>
 
-## Sample program
 
 1. See a list of all repos on GitHub:
 
@@ -279,30 +314,13 @@ dialyxir_erlang-24.2_elixir-1.13.1.plt
        (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution
    </pre>
 
-https://serokell.io/blog/elixir-otp-guide
 
-## Erlang VM (EAM)
-
-https://www.wikiwand.com/en/Elixir_(programming_language)
-
-> "Elixir is synatactic sugering on Erlang"<a href="#[1]">[1]</a>
-
-Erlang functions can be called from Elixir, and vice versa, without run time impact, due to compilation to Erlang bytecode.
-
-EAM is amazing piece of technology, running backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then Joe Armstrong team of THREE devs written software in Erlang in few months and it was huge success. It was basically first production-level implementation of CSP actor model concurrency, way ahead of time.
-
-WhatsApp is using it.
-
-https://serokell.io/blog/elixir-otp-guide
-
-OTP is an awesome set of tools and libraries that Elixir inherits from Erlang, a programming language on whose VM it runs.
-
-OTP contains a lot of stuff, such as the Erlang compiler, databases, test framework, profiler, debugging tools. But, when we talk about OTP in the context of Elixir, we usually mean the Erlang actor model that is based on lightweight processes and is the basis of what makes Elixir so efficient.
+<pre>iex></pre>
 
 
-## Features
+## Language Features
 
-13:48 An Erlang process is much lighter than an operating system's threads and processes.
+An Erlang process is much lighter than an operating system's threads and processes.
 
 Shared nothing concurrent programming via message passing (Actor model)
 
@@ -326,8 +344,6 @@ https://thoughtbot.com/services/elixir-phoenix
 
 
 ## GitHub repositories
-
-PROTIP: Those who program in Elixir are called "Alchemists".
 
 https://github.com/search?q=elixir
 
@@ -358,8 +374,8 @@ The first ElixirConf was held 2017 in Warsaw Poland.
 
 <hr />
 
-## More on cloud #
+## More on languages #
 
-This is one of a series on cloud computing:
+This is one of a series on programming languages:
 
 {% include cloud_links.html %}
