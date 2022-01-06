@@ -94,13 +94,29 @@ No chance for deadlocking.
 
 Emphasis on recursion and higher-order functions instead of side-effect-based looping.
 
+## Language basics
+
+https://elixirschool.com/en/lessons/basics
+
+## Phoenix Framework
+
+<a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference
+
+https://elixirschool.com/blog/now-with-more-elixir
+From Jekyll to Phoenix using https://elixirschool.com/en/lessons/misc/nimble_publisher
+
+
+https://thoughtbot.com/services/elixir-phoenix
 
 
 ## GitHub repositories
 
+PROTIP: Those who program in Elixir are called "Alchemists".
+
 https://github.com/search?q=elixir
 
-https://github.com/elixirschool/elixirschool
+STAR: https://elixirschool.com/en
+at https://github.com/elixirschool/elixirschool
 
 https://www.wikiwand.com/en/Mix_(build_tool)
 Mix is a build automation tool that provides tasks for creating, compiling, and testing Elixir projects, managing its dependencies, and more.
@@ -108,12 +124,6 @@ Mix is a build automation tool that provides tasks for creating, compiling, and 
 <a target="_blank" href="https://www.youtube.com/watch?v=zL2wcqS78UA">
 VIDEO: Why We've Adopted Elixir</a> by Pusher
 
-
-## Phoenix 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference
-
-https://thoughtbot.com/services/elixir-phoenix
 
 ## Challenges
 
@@ -125,6 +135,7 @@ https://github.com/bijanbwb/enbala_take_home
 
 https://www.youtube.com/watch?v=xoNRtWl4fZU
 ElixirDaze 2016 - Processing 2.7 million images with Elixir (vs Ruby) by David Padilla from Confreaks
+
 
 
 <hr />
