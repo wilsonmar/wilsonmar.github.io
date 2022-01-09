@@ -529,9 +529,10 @@ https://thoughtbot.com/services/elixir-phoenix
 
 ### Phoenix Liveview
 
-In 2020 the Phoenix framework introduced LiveView (think Single-Page Applications).It enables building of rich real-time web interfaces within Elixir, with no JavaScript and no React.
+In 2020 the Phoenix framework introduced LiveView to enable building of rich real-time web interfaces within Elixir (like Single-Page Applications, but with no JavaScript and React coding). Thus, more customized user experience with less complexity.
 
-<a target="_blank" href="https://www.youtube.com/playlist?list=PLqj39LCvnOWZTKJ1skrt-CUt2rNcL5pJz" title="Nov 5, 2019">VIDEOS</a>: Phoenix LiveView for web developers who don't know Elixir.
+<img width="1290" alt="elixir-liveview-spa-compare-1290x530" src="https://user-images.githubusercontent.com/300046/148680900-ba1b01e8-cbf6-4537-97b1-8030e573452c.png"><br />
+from <a target="_blank" href="https://www.youtube.com/playlist?list=PLqj39LCvnOWZTKJ1skrt-CUt2rNcL5pJz" title="Nov 5, 2019">VIDEO: "Phoenix LiveView for web developers who don't know Elixir"</a> says "I don't think you can implement Google Maps in LiveView".
 
 https://elixirschool.com/blog/phoenix-live-view/
 
