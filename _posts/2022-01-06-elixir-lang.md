@@ -295,12 +295,15 @@ Please see /Users/wilsonmar/.asdf/plugins/erlang/kerl-home/builds/asdf_24.2/otp_
 1. Replace the versions above with those you used during installation. This will create a <strong>.tool-versions</strong> file in your project, which will instruct ASDF which versions to use. If you'd like to set a global, or default, version, run:
 
 
-### Nave mix install dependencies
+### Have mix install dependencies
 
 At last count (Jan 2022), there were 11,500 packages on <a target="_blank" href="https://www.hex.pm">hex.pm</a>, the package manager for Erlang.
-   Mix is like rake in Ruby, a dependency manager.
+   
+   Mix is like Ruby's RubyGems, Bundler, and Rake combined (for dependency management).
 
    NOTE: A ".mix" folder is created within your user $HOME folder.
+
+See https://elixirschool.com/en/lessons/basics/mix
 
 Mix dependencies as two-item tuples like {:plug, "~> 1.1.0"}
 
@@ -308,7 +311,7 @@ Mix dependencies as two-item tuples like {:plug, "~> 1.1.0"}
 
    <pre><strong>mix deps.get</strong></pre>
 
-   The response:
+   Example response:
 
    <pre>Resolving Hex dependencies...
 Dependency resolution completed:
@@ -335,11 +338,16 @@ Unchanged:
  
    <pre><strong>mix help deps | more</strong></pre>
 
+1. Create a Mix project for a new app:
+   https://elixirschool.com/en/lessons/basics/documentation#exdoc-4
+
+   <pre>mix new hello_world</pre>
+
+   ### Get sample code in GitHub
+
 1. See a list of all repos on GitHub:
 
    https://github.com/topics/elixir
-
-   ### Get sample code in GitHub
 
 1. In the list of libraries containing code samples:
 
@@ -386,46 +394,143 @@ dialyxir_erlang-24.2_elixir-1.13.1.plt
 
 <hr />
 
+## GitHub repositories
+
+https://github.com/search?q=elixir
+
+STAR: https://elixirschool.com/en
+at https://github.com/elixirschool/elixirschool
+
+https://www.wikiwand.com/en/Mix_(build_tool)
+Mix is a build automation tool that provides tasks for creating, compiling, and testing Elixir projects, managing its dependencies, and more.
+
+Weather app
+
+
+<hr />
+
+## Hello World Interactive
+
+The Greetings.ex program in Elixir defines two nested modules:
+
+* String concatenation uses the <> operator:
+
+   <pre>iex> name = "Sean"
+iex> IO.puts("Hello " <> name )
+"Hello Sean"
+   </pre>
+
+
+<pre>defmodule Greetings do
+  @moduledoc """                # attribute
+  Example of basic language features
+  """
+  def morning(name) do
+    "Good morning, #{name}"  # string interpolation is like in Ruby
+    IO.puts("Hello " <> ${name} )  # <> concatenates
+  end
+end
+   </pre>
+
+To execute within Elixir's interactive mode:
+
+<pre><strong>iex</strong></pre>
+
+<pre>iex> <strong>Greetings.morning "Joe"</strong></pre>
+
+The response:
+
+<pre>"Good morning, Joe"</pre>
+
 ## Language Features
 
 <a target="_blank" href="https://elixirschool.com/en/lessons/basics/basics#trying-interactive-mode-2">https://elixirschool.com on basics</a>
 covers the subject so succinctly. Some notable features:
 
-* An atom is a constant whose name is its value. Atoms are symbols.
+* <strong>Sigils</strong> which start with a tilde "~" is Elixir's unique way of handling literals. https://elixirschool.com/en/lessons/basics/sigils
 
-   <pre>:true === true
+* Elixir supports Perl Compatible Regular Expressions (PCRE), so "i" can be appended to the end of a sigil to turn off case sensitivity.
+
+* An <strong>atom</strong> is a constant (symbol) whose name is a colon and its value:
+
+   <pre>iex> :true === true
 true
    </pre>
 
-* Atoms are also used to reference modules from Erlang libraries, including built in ones.
+* Atoms are used to reference <a target="_blank" href="https://elixirschool.com/en/lessons/basics/modules">modules</a> from Erlang libraries (including built in ones):
 
+   <pre>@doc Using crypto library:
 :crypto.strong_rand_bytes 3
-<<23, 104, 108>>
-
-* String interpolation in Elixir looks likr Ruby:
-
-   <pre>iex> name = "Sean"
-iex> "Hello #{name}"
-"Hello Sean"
+&LT;&LT;23, 104, 108>>
    </pre>
 
-* String concatenation uses the <> operator:
-
-   <pre>iex> name = "Sean"
-iex> "Hello " <> name
-"Hello Sean"
-   </pre>
-
-* List concatenation
+* List concatenation:
 
    <pre>iex> [1, 2] ++ [3, 4, 1]
 [1, 2, 3, 4, 1]
-   <pre>iex> [1] -- [3, 4, 1]
+&nbsp;
+iex> [1] -- [3, 4, 1]
 [2, 3, 4, 1]
    </pre>
 
 * "++/2" describes the function as having an <strong>Arity</strong> of 2 arguments.
 
+* Import List to use its "last" and "first" (item) functions:
+
+   <pre>iex> import List
+nil
+iex> first([1, 2, 3])
+1
+iex> last([1, 2, 3])
+3
+   <pre>
+
+* Use <a target="_blank" href="https://elixirschool.com/en/lessons/basics/comprehensions">List comprehension</a> - square root generator:
+
+   <pre>iex> list = [1, 2, 3, 4, 5]
+iex> for x <- list, do: x*x
+[1, 4, 9, 16, 25]
+   </pre>
+
+* Keyword list:
+
+   <pre>iex> for {_key, val} <- [one: 1, two: 2, three: 3], do: val
+[1, 2, 3]
+   </pre>
+
+* From a keyword list create into a map:
+
+   <pre>iex> for {k, v} <- [one: 1, two: 2, three: 3], into: %{}, do: {k, v}
+%{one: 1, three: 3, two: 2}
+   </pre>
+
+* Maps are unordered keyword lists:
+
+   <pre>iex> map = %{:foo => "bar", "hello" => :world}
+%{:foo => "bar", "hello" => :world}
+&nbsp;
+iex> %{map | foo: "baz"}
+%{foo: "baz", hello: "world"}
+&nbsp;
+iex> map[:foo]
+"bar"
+&nbsp;
+iex> key = "hello"
+"hello"
+&nbsp;
+iex> %{key => "world"}
+%{"hello" => "world"}
+&nbsp;
+iex> map.hello
+"world"
+   </pre>
+
+See 
+* https://elixirschool.com/en/lessons/basics/enum
+* https://elixirschool.com/en/lessons/basics/pattern_matching
+* https://elixirschool.com/en/lessons/basics/control_structures
+* https://elixirschool.com/en/lessons/basics/functions
+* https://elixirschool.com/en/lessons/basics/pipe_operator is <tt>|></tt>
 
 ## Logging
 
@@ -464,24 +569,6 @@ Elixir 1.11 in 2020 completes all log levels in Erlang:
 
    ExUnit is Elixir's official unit testing framework -- maintained by the Elixir team and shipped with Elixir, so you don't have to install anything additional.
 
-
-<hr />
-
-## GitHub repositories
-
-https://github.com/search?q=elixir
-
-STAR: https://elixirschool.com/en
-at https://github.com/elixirschool/elixirschool
-
-https://www.wikiwand.com/en/Mix_(build_tool)
-Mix is a build automation tool that provides tasks for creating, compiling, and testing Elixir projects, managing its dependencies, and more.
-
-Weather app
-
-## Language basics
-
-https://elixirschool.com/en/lessons/basics
 
 ## Language Features
 
