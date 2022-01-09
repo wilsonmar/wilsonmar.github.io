@@ -3,7 +3,7 @@ layout: post
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
-date: "2021-10-13"
+date: "2022-01-03"
 file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
@@ -204,10 +204,10 @@ ISO Code of practice for information security controls defines 114 controls grou
 
 Four categories of processes:
 
-   1. Agreement processes, including acquisition and supply
-   2. Organizational project-enabling processes, including infrastructure management, quality management, and knowledge management
-   3. Technical management processes, including project planning, risk management, configuration management, and quality assurance
-   4. Technical processes, including system requirements definition, system analysis, implementation, integration, operation, maintenance, and disposal
+   1. <strong>Agreement</strong> processes, including acquisition and supply
+   2. <strong>Organizational project-enabling</strong> processes, including infrastructure management, quality management, and knowledge management
+   3. <strong>Technical management</strong> processes, including project planning, risk management, configuration management, and quality assurance
+   4. <strong>Technical</strong> processes, including system requirements definition, system analysis, implementation, integration, operation, maintenance, and disposal
    <br /><br />
 
 <a name="CIS"></a>

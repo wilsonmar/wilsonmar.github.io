@@ -15,15 +15,35 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-1. https://elixir-lang.org/
+This is a hands-on tutorial to provide you a deep yet succinct introduction sequenced in logical order for fastest learning. "PROTIP" tags identify items which are not in most other sites.
 
-   Famous users mentioned on the Elixir home page are Farmbot and Pepsico.
+1. <a target="_blank" href="https://elixir-lang.org/">https://elixir-lang.org</a> is the marketing home page for the Elixir language.
 
-1. Open sourced at https://github.com/elixir-lang under Apache 2.0
+   Famous users of Elixir mentioned on the Elixir home page are Farmbot and Pepsico. 
 
-1. See the documentary featuring José Valim, who created Elixir beginning in 2012. Also appearing are [9:31] Justin Schneck, co-author of the Nerves Project, and [at 9:13] Chris McCord, creator of the <a target="_blank" href="https://www.wikiwand.com/en/Phoenix_(web_framework)">Phoenix Framework</a> which implements the server-side Model View Controller (MVC) pattern:
-   https://www.youtube.com/watch?v=lxYFOM3UJzo
-   https://cult.honeypot.io/originals/elixir-the-documentary
+   * https://serokell.io/blog/elixir-companies
+   * https://serokell.io/blog/elixir-in-production
+
+   Elixir was created after Go and Rust.
+
+   The website is built using Jekyll at<br />
+   <a target="_blank" href="https://github.com/elixir-lang/elixir-lang.github.com">https://github.com/elixir-lang/elixir-lang.github.com</a> 
+
+1. Elixir is open sourced under Apache 2.0 license at<br /><a target="_blank" href="https://github.com/elixir-lang/elixir/">https://github.com/elixir-lang/elixir</a> 
+   * 668 watchers and 19.7k stars as of Jan 5, 2021
+
+   * Among <a target="_blank" href="https://github.com/elixir-lang/elixir/graphs/contributors">1,100 contributors</a> is José Valim, who created Elixir beginning in 2012, and continues to be a active author.
+
+   * <a target="_blank" href="https://github.com/elixir-lang/elixir/pulse">15 authors</a>
+   * 1,950,000,000 downloads
+   <br /><br />
+
+1. https://github.com/elixir-lang/elixir/wiki
+
+1. See the 12-minute documentary featuring: Jose Valim; Justin Schneck, co-author of the <a href="#Nerves">Nerves framework</a>; and [at 9:13] <a target="_blank" href="https://twitter.com/chris_mccord">@Chris_McCord</a>, creator of the <a target="_blank" href="https://www.wikiwand.com/en/Phoenix_(web_framework)">Phoenix Framework</a>
+
+   * https://www.youtube.com/watch?v=lxYFOM3UJzo
+   * https://cult.honeypot.io/originals/elixir-the-documentary
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=pBNOavRoNL0">VIDEO: Elixir Tutorial</a> by Derek Banas
 
@@ -31,11 +51,17 @@ comments: true
 ## Erlang VM (BEAM) users
 
    * https://www.wikiwand.com/en/Elixir_(programming_language)
+   * https://github.com/membraneframework/beamchmark
    <br /><br />
 
 WhatsApp is using it. Also Pinterest.
 
-Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then Joe Armstrong's team of THREE devs written software in Erlang in few months and it was huge success. It was basically first production-level implementation of CSP actor model concurrency.
+> Elixir and Erlang compile to the same bytecode.
+
+Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then <a target="_blank" href="https://www.wikiwand.com/en/Joe_Armstrong_(programmer)">Joe Armstrong</a>'s team of THREE devs written software in Erlang in few months and it was huge success. It was basically the first production-level implementation of CSP actor model concurrency.
+
+https://github.com/llaisdy/beam_languages
+There are 33 languages on the BEAM!
 
 https://news.ycombinator.com/item?id=27684045
 stressgrid benchmarks
@@ -45,10 +71,14 @@ VIDEO: Why We've Adopted Elixir</a> by Pusher
 
 https://serokell.io/blog/elixir-in-production-glific
 
+https://github.com/0xAX/erlang-bookmarks/blob/master/ErlangBookmarks.md
+List of websites about Erlang
+
 <hr />
 
 ## Installs
 
+This section is based on:
    * https://www.pluralsight.com/guides/installing-elixir-erlang-with-asdf
    * https://joyofelixir.com/a-setup-and-install
    * https://elixir-lang.org/install.html
@@ -87,16 +117,29 @@ Elixir 1.13.1 (compiled with Erlang/OTP 24)
 Elixir v1.10.4
    </pre>
 
-   PROTIP: Erlang OTP 24 includes a JIT for the first time. It only runs on x64 but should significantly improve performance on that platform. For some workloads people are reporting as much as a 40% improvement. I would expect to see some improvement in those benchmarks as a result.
+   ### IEX (Interpreted Elixir)
 
-   OTP 25 will include JIT support for ARM64 (on AWS Gravator servers).
+1. You'll see the same version by invoking the Interactive Elixir console:
+
+   <pre><strong>iex</strong></pre>
+
+   <pre>Erlang/OTP 24 [erts-12.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit] [dtrace]
+&nbsp;
+Interactive Elixir (1.13.1) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)> _
+   </pre>
+
 
 ### OTP from Erlang
 
+PROTIP: The "OTP" in "Erlang/OTP 24" version name stands for "Open Telecommunications Platform". Telecommunications because the Erlang library was developed by the Swedish telecommunications company Ericsson in the 1990's.
+   
+   PROTIP: Erlang OTP version 24 adds a JIT compiler. It only runs on x64 but should significantly improve performance on that platform. For some workloads people are reporting as much as a 40% improvement. I would expect to see some improvement in those benchmarks as a result.
+
+   OTP 25 plans to have JIT support for ARM64 (on AWS Gravator servers).
+
    * https://serokell.io/blog/elixir-otp-guide
    <br /><br />
-
-Notice the "OTP" in "Erlang/OTP 24" version name?
 
 OTP is set of tools and libraries that Elixir inherits from Erlang, a programming language on whose VM it runs.
 
@@ -251,11 +294,15 @@ Please see /Users/wilsonmar/.asdf/plugins/erlang/kerl-home/builds/asdf_24.2/otp_
 
 1. Replace the versions above with those you used during installation. This will create a <strong>.tool-versions</strong> file in your project, which will instruct ASDF which versions to use. If you'd like to set a global, or default, version, run:
 
-.tool-versions
 
-### Install dependencies
+### Nave mix install dependencies
+
+At last count (Jan 2022), there were 11,500 packages on <a target="_blank" href="https://www.hex.pm">hex.pm</a>, the package manager for Erlang.
+   Mix is like rake in Ruby, a dependency manager.
 
    NOTE: A ".mix" folder is created within your user $HOME folder.
+
+Mix dependencies as two-item tuples like {:plug, "~> 1.1.0"}
 
 1. Install 
 
@@ -292,20 +339,32 @@ Unchanged:
 
    https://github.com/topics/elixir
 
-1. See the know libraries:
+   ### Get sample code in GitHub
 
-   https://github.com/h4cc/awesome-elixir
+1. In the list of libraries containing code samples:
 
-1. Get
+   <a target="_blank" href="
+   https://github.com/h4cc/awesome-elixir">
+   https://github.com/h4cc/awesome-elixir</a>
 
-   <pre><strong>git clone git@github.com:bijanbwb/enbala_take_home.git --depth 1
-   cd enbala_take_home</strong></pre>
+   There is this:
+
+1. Get the "Learn with me" repo github.com/Maultasche/LwmElixirCode before starting from the first of Kevin Peter's 82 learning diary entries on <a target="_blank" href="https://inquisitivedeveloper.com/lwm-elixir-1/">The Inquisitive Developer</a>:
+
+   <pre><strong>git clone git@github.com:Maultasche/LwmElixirCode.git --depth 1
+   cd LwmElixirCode</strong></pre>
 
 1. Navigate to the lib folder:
+   
+   Like Python and Javascript, Elixir is a dynamically-typed language, where data types can be determined at run time rather than compile time.
 
-   <a target="_blank" href="https://stackoverflow.com/questions/36292620/elixir-when-to-use-ex-and-when-exs-files">REMEMBER</a>: Compiled Elixir source code files have extension of <strong>.ex</strong> for the application's main business logic, invoked using <tt>iex</tt>. <strong>.exs</strong> is for interpreted code. Test specification files have extension of <strong>.exs</strong> (containing assert commands), invoked using <tt>elixir</tt>.
+   ### Invocation
 
-.ex is for compiled code, .exs is for interpreted code.
+   <a target="_blank" href="https://stackoverflow.com/questions/36292620/elixir-when-to-use-ex-and-when-exs-files">REMEMBER</a>: <strong>Compiled</strong> Elixir source code files have extension of <strong>.ex</strong> for the application's main business logic, invoked using <tt>iex app.ex</tt>. 
+   
+   <strong>.exs</strong> file extension are for <strong>interpreted</strong> code. Test specification files have extension of .exs (containing assert commands), invoked using <tt>elixir test.exs</tt>.
+
+   Again, .ex is for compiled code, .exs is for interpreted code.
 
 1. Check whether typespecs are accurate:
 
@@ -325,6 +384,61 @@ dialyxir_erlang-24.2.plt
 dialyxir_erlang-24.2_elixir-1.13.1.plt
    </pre>
 
+<hr />
+
+## Language Features
+
+<a target="_blank" href="https://elixirschool.com/en/lessons/basics/basics#trying-interactive-mode-2">https://elixirschool.com on basics</a>
+covers the subject so succinctly. Some notable features:
+
+* An atom is a constant whose name is its value. Atoms are symbols.
+
+   <pre>:true === true
+true
+   </pre>
+
+* Atoms are also used to reference modules from Erlang libraries, including built in ones.
+
+:crypto.strong_rand_bytes 3
+<<23, 104, 108>>
+
+* String interpolation in Elixir looks likr Ruby:
+
+   <pre>iex> name = "Sean"
+iex> "Hello #{name}"
+"Hello Sean"
+   </pre>
+
+* String concatenation uses the <> operator:
+
+   <pre>iex> name = "Sean"
+iex> "Hello " <> name
+"Hello Sean"
+   </pre>
+
+* List concatenation
+
+   <pre>iex> [1, 2] ++ [3, 4, 1]
+[1, 2, 3, 4, 1]
+   <pre>iex> [1] -- [3, 4, 1]
+[2, 3, 4, 1]
+   </pre>
+
+* "++/2" describes the function as having an <strong>Arity</strong> of 2 arguments.
+
+
+## Logging
+
+Elixir 1.11 in 2020 completes all log levels in Erlang:
+
+* Logger.notice
+* Logger.critical
+* Logger.alert
+* Logger.emergency
+<br /><br />
+
+## Testing Elixir
+
 1. Execute the test:
 
    <pre>mix test</pre>
@@ -337,12 +451,19 @@ dialyxir_erlang-24.2_elixir-1.13.1.plt
 
    <a target="_blank" href="https://www.amazon.com/Testing-Elixir-Andrea-Leopardi-ebook-dp-B09CT1J4P6/dp/B09CT1J4P6">$40 BOOK</a>: https://pragprog.com/titles/lmelixir/testing-elixir/
    "Testing Elixir: Effective and Robust Testing for Elixir and its Ecosystem" by Andrea Leopardi and Jeffrey Matthias
+   (Pragmatic Bookshelf, July 2021)
+   "Create and structure a comprehensive ExUnit test suite, starting from the basics, and build comprehensive test coverage that will provide safety for refactoring and confidence that your code performs as designed. Explore testing Elixir-specific challenges such as OTP-based modules, asynchronous code, Ecto-based applications, and Phoenix applications."
 
 1. Press <strong>control + C</strong>
 
    <pre>BREAK: (a)bort (A)bort with dump (c)ontinue (p)roc info (i)nfo
        (l)oaded (v)ersion (k)ill (D)b-tables (d)istribution
    </pre>
+
+1. Craft ExUnit tests
+
+   ExUnit is Elixir's official unit testing framework -- maintained by the Elixir team and shipped with Elixir, so you don't have to install anything additional.
+
 
 <hr />
 
@@ -368,14 +489,17 @@ Elixir/Erlang aims for predictable behavior that operates gracefully under extre
 
 Emphasis on recursion and higher-order functions instead of side-effect-based looping.
 
-Shared nothing concurrent programming via message passing (Actor model)
-See https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
+Shared nothing concurrent programming via asynchronous immutable message passing by self-contained  <a target="_blank" href="https://en.wikipedia.org/wiki/Actor_model">Actors</a> like Akka. See https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
 
 No chance for deadlocking.
 
+Elixir is a functional language, which have lazy evaulation, pattern matching, and "higher-order" functions which can receive and output a function as well as data.
+
+Elixir uses <a target="_blank" href="https://www.erlang.org/doc/tutorial/nif.html">Erlang NIF's</a> (Native Implemented Functions) to bring in C or Rust to compute heavy math.
+
 Elixir was designed from the ground up for fault tolerance. Unlike Go, the entire Go program goes down when a goroutine crashes. In Elixir, whenever a process dies, only that single process dies, without affecting the rest of the program. Even better, the failed process will get restarted automatically by its supervisor. This allows the failed process to retry the operation that has failed.[5]
 
-Elixir uses NIF's to bring in C or Rust to deal compute heavy math.
+Robustness is achieved by supervisors which monitor Elixir processes and restart them when they crash.
 
 ## Octo database toolkit
 
@@ -389,34 +513,69 @@ See https://serokell.io/blog/ecto-guide-for-beginners
 
 VIDEO: https://www.phoenixframework.org/
 
-Previously: <a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference
+Previously: <a target="_blank" href="https://www.youtube.com/watch?v=bk3icU8iIto">VIDEO: "Phoenix a Web Framework for the New Web"</a> by José Valim at GOTO 2016 Conference.
 
-Out of the box, it supports WebSockets, routing, HTML templating language, internationalization, JSON encoders/decoders, seamless ORM integration(Ecto), sessions, SPA toolkit, and a lot more.[5] 
-
-https://elixirschool.com/blog/phoenix-live-view/
-The Phoenix framework has recently introduced LiveView, which allows building rich realtime web interfaces right within Elixir (think Single-Page Applications). No JavaScript needed, no React!
-
-LiveView even takes care of synchronizing the client and server state, which means that we don’t have to worry about developing and maintaining a REST/GraphQL API.
-
+Out of the box, Phoenix supports WebSockets, routing, HTML templating language, internationalization, JSON encoders/decoders, seamless ORM integration(Ecto), sessions, SPA toolkit, and a lot more.[5] 
 
 https://elixirschool.com/blog/now-with-more-elixir
 From Jekyll to Phoenix using https://elixirschool.com/en/lessons/misc/nimble_publisher
+
+Phoenix implements the server-side Model View Controller (MVC) pattern.
 
 https://serokell.io/blog/introduction-to-phoenix
 
 https://thoughtbot.com/services/elixir-phoenix
 
+
+### Phoenix Liveview
+
+In 2020 the Phoenix framework introduced LiveView (think Single-Page Applications).It enables building of rich real-time web interfaces within Elixir, with no JavaScript and no React.
+
+<a target="_blank" href="https://www.youtube.com/playlist?list=PLqj39LCvnOWZTKJ1skrt-CUt2rNcL5pJz" title="Nov 5, 2019">VIDEOS</a>: Phoenix LiveView for web developers who don't know Elixir.
+
+https://elixirschool.com/blog/phoenix-live-view/
+
+<a target="_blank" href="https://www.youtube.com/watch?v=U_Pe8Ru06fM">VIDEO</a>:
+LiveView takes care of synchronizing client and server state, so you don’t have to develop and maintain a REST/GraphQL API.
+
+<a name="[7]">[7]</a> <a target="_blank" href="http://mng.bz/qeaE">BOOK: "Phoenix in Action"</a> (Manning 2021 TWITLESS40) by <a target="_blank" href="https://www.geoffreylasse.com/">Geoffrey Lessel</a> <a target="_blank" href="https://www.youtube.com/watch?v=fyg0FuSL5DY">VIDEO</a>
+
+See https://www.testingliveview.com/
+
+## Livebook
+
+Livebook https://github.com/livebook-dev/livebook is inspired by Jupyter Notebooks and Deepnote. Like Jupyter, combining markdown with executable Elixir code blocks that let the reader not only learn from the docs but try out the system being documented right in the ReadMe.
+
+
+<a name="Nerves"></a>
+
+## Nerves Framework
+
+Nerves is an easy to use and powerful framework for building embedded systems in Elixir.
+
+https://twitter.com/NervesProject
+
+https://hexdocs.pm/nerves/installation.html
+
+https://pragprog.com/titles/thnerves
+Build a Binary Clock with Elixir and Nerves
+
+Nerves can be used together with Phoenix:
+<a target="_blank" href="https://dev.to/dasky/an-iot-birdhouse-with-elixir-nerves-phoenix-liveview-components-5cb2">
+An IoT Birdhouse Picam  MJPG stream with Elixir Nerves (poncho project) & Phoenix LiveView Components (DHT GenServer)</a> at https://github.com/daskycodes/bird_app. Setup include SSH & WiFi to send snaps to a telegram chat
+
+
+### Broadway
+
 https://github.com/dashbitco/broadway
 Broadway enables building of data ingestion/data processing pipelines in Elixir.
 
 BOOK: https://pragprog.com/titles/lhelph
-Functional Web Development with Elixir, OTP, and Phoenix
+"Functional Web Development with Elixir, OTP, and Phoenix"
+by Lance Halvorsen
+(Pragmatic BookshelfJanuary 2018) 
+uses Elixir version 1.5 or higher and Phoenix 1.3.
 
-
-## Nerves Framework
-
-https://pragprog.com/titles/thnerves
-Build a Binary Clock with Elixir and Nerves
 
 ### Meta programming
 
@@ -432,23 +591,72 @@ Metaprogramming Elixir
 
 https://github.com/bijanbwb/enbala_take_home
 
+## Video Subcriptions
+
+Various technical subscription service vendors stream video tutorials (view instead of Netflix, HBO, Disney+, etc.):
+
+<a target="_blank" href="https://www.oreilly.com/search/?query=elixir/">OReilly.com</a> has videos and live classes as well as books from Pragmatic (for one $499 subscription).
+
+At Pluralsight:
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/elixir-big-picture">""Elixir: The Big Picture"</a> By trainer <a target="_blank" href="https://www.aj-foster.com/">AJ Foster</a> Mar 25, 2021
+   * <a target="_blank" href="https://app.pluralsight.com/guides/10-essential-erlang-tools-for-erlang-developers">"10 Essential Erlang Tools for Erlang Developers"</a> Sep 06, 2019
+   <br /><br />
+
+At time of writing, these services did not have:
+
+   * <a target="_blank" href="https://acloudguru.com/search?s=elixir">ACloudGuru.com</a>
+   * <a target="_blank" href="https://cloudacademy.com/search/?q=elixir">CodeAcademy.com</a>
+   * <a target="_blank" href="https://www.coursera.org/search?query=elixir&">coursera.com</a>
+   * <a target="_blank" href="https://www.datacamp.com/search?q=elixir">datacamp.com</a>
+   * <a target="_blank" href="https://www.edx.org/search?q=elixir">edx.org</a>
+   * <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=elixir">LinkedIn Learning</a>
+   <br /><br />
+
+
 ## References
 
 <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=cWAHpvkh8Vs" title="Apr 24, 2018">VIDEO: Why Elixir Matters: A Genealogy of Functional Programming</a> by Osayame Gaius-Obaseki (<a target="_blank" href="https://github.com/osagius/">@osagius</a>)
 
-https://www.youtube.com/watch?v=xoNRtWl4fZU
-ElixirDaze 2016 - Processing 2.7 million images with Elixir (vs Ruby) by David Padilla from Confreaks
+<a name="[2]">[2]</a> <a target="_blank" href="
+Nate Taylor</a>
 
 [5] https://betterprogramming.pub/modern-languages-suck-ad21cbc8a57c
 compares aspects for each language. by Ilya Suzdalnitski, Senior Elixir engineer.
 
 https://pragprog.com/categories/elixir-phoenix-and-otp/
 
+BOOK: "Elixir in Action, Second Edition"
+by Sasa Juric
+(Manning, February 2019)
+"teaches you how to build production-quality distributed applications using the Elixir programming language. Author Saša Juric introduces this powerful language using examples that highlight the benefits of Elixir’s functional and concurrent programming."
+
+
 ## Social
+
+https://twitter.com/hashtag/myelixirstatus
+https://twitter.com/elixirlang
+https://twitter.com/elixir_radar
 
 http://elixirforum.com/
 
-The first ElixirConf was held 2017 in Warsaw Poland.
+The first <a target="_blank" href="https://www.elixirconf.com/events">ElixirConf</a> was held 2017 in Warsaw Poland. SUBSCRIBE.
+
+   * <a target="_blank" href="https://www.youtube.com/c/ElixirConf/playlists">ElixirConf playlist</a>
+   <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=xoNRtWl4fZU">
+VIDEO: ElixirDaze 2016 - Processing 2.7 million images with Elixir (vs Ruby)</a> by David Padilla from Confreaks
+
+
+## Jobs
+
+https://www.indeed.com/jobs?q=elixir&l=Remote
+
+https://www.linkedin.com/jobs/search/?geoId=103644278&keywords=elixir&location=United%20States
+
+https://bendyworks.com/#what-we-do
+
+DockYard
 
 <hr />
 
