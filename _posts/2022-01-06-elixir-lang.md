@@ -44,6 +44,8 @@ This is a hands-on tutorial to provide you a deep yet succinct introduction sequ
 
    * https://www.youtube.com/watch?v=lxYFOM3UJzo
    * https://cult.honeypot.io/originals/elixir-the-documentary
+   * https://elixircasts.io/getting-started-with-phoenix
+   <br /><br />
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=pBNOavRoNL0">VIDEO: Elixir Tutorial</a> by Derek Banas
 
@@ -58,9 +60,11 @@ This is a hands-on tutorial to provide you a deep yet succinct introduction sequ
 
 BEAM for Erlang is like JVM for Java.
 
-WhatsApp is using it. Also Pinterest.
+WhatsApp is using it. Also Pinterest. "Almost all telecoms"?
 
 Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then <a target="_blank" href="https://www.wikiwand.com/en/Joe_Armstrong_(programmer)">Joe Armstrong</a>'s team of THREE devs written software in Erlang in few months and it was huge success. It was basically the first production-level implementation of CSP actor model concurrency.
+
+Any Erlang thread can push code to any node in the mesh.
 
 https://github.com/llaisdy/beam_languages
 There are 33 languages on the BEAM!
@@ -499,6 +503,8 @@ iex> t.hour
 true
    </pre>
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=w3lKmFsmlvQ&t=6m42s">CAUTION</a>: Atoms are not garbage collected, so can be a vector for denial of service attacks.
+
 * Atoms are used to reference <a target="_blank" href="https://elixirschool.com/en/lessons/basics/modules">modules</a> from Erlang libraries (including built in ones):
 
    <pre>@doc Using crypto library:
@@ -667,17 +673,11 @@ Elixir was designed from the ground up for fault tolerance. Unlike Go, the entir
 Robustness is achieved by supervisors which monitor Elixir processes and restart them when they crash.
 
 
-## Octo database toolkit
-
-https://github.com/elixir-ecto/ecto
-Ecto is the go-to database library in the Elixir ecosystem, to interact with SQL databases such as Postgres and MySQL - inserting, validating, changing, and querying data.
-
-See https://serokell.io/blog/ecto-guide-for-beginners
-
-
 <a name="Phoenix"></a>
 
 ## Phoenix Framework
+
+<a target="_blank" href="https://elixircasts.io/getting-started-with-phoenix">VIDEO: Getting Started with Phoenix</a> to bootstrap a web app.
 
 VIDEO: https://www.phoenixframework.org/
 
@@ -692,20 +692,36 @@ Phoenix implements the server-side Model View Controller (MVC) pattern.
 
 https://serokell.io/blog/introduction-to-phoenix
 
-<a target="_blank" href="https://www.linkedin.com/in/donabailey/">Don A. Bailey</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=42k70Y-yTYY" title="Unauthorized Erlang: A Demonstration by  ">VIDEO</a> 
-and <a target="_blank" href="https://www.linkedin.com/in/andrei-clinciu/">Andrei Clinciu</a> <a target="_blank" href="https://andreiclinciu.net/erlang-elixir-node-security-flaws">pointed out</a> a concern with use of <strong>cookies</strong> in distributed Phoenix. 
+CAUTION: "Don't put BEAM on a public network, ever". In distributed Phoenix/Erlang, monotonic timers are used to auto-generate cookies based on host uptime (nmap). Cookies are converted to an atom. -- <a target="_blank" href="https://www.linkedin.com/in/donabailey/">Don A. Bailey</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=42k70Y-yTYY&t=6m24s" title="Unauthorized Erlang: A Demonstration by  ">VIDEO description of exploit</a> was <a target="_blank" href="https://andreiclinciu.net/erlang-elixir-node-security-flaws">pointed out</a> by <a target="_blank" href="https://www.linkedin.com/in/andrei-clinciu/">Andrei Clinciu</a>.
 
-So setup Erlang with TLS/SSL with certificates and public key encryption,
-as <tt>epmd</tt> may still talk UNENCRYPTED.
+PROTIP: So setup Erlang with TLS/SSL with certificates and public key encryption, as <tt>epmd</tt> may still talk UNENCRYPTED.
 
 And setup a firewall that blocks everything unless specifically allowed.
 
 <a target="_blank" href="https://asciinema.org/a/c9utphy34c8remqlsvfbkjnf9">VIDEO</a>: 
-<a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">VIDEO</a>: 
-<a target="_blank" href="https://github.com/nccgroup/sobelow">
-Sobelow</a> is a security-focused static analysis tool to identify (OWASP) vulnerabilities in the Phoenix Framework.
+<a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">VIDEO</a>: Sobelow
+by <a target="_blank" href="https://www.griffinbyatt.com/post/analysis-plug-security-vulns">Griffin Byatt</a> is a security-focused static analysis tool to identify (OWASP) vulnerabilities in the Phoenix Framework.
 
-https://thoughtbot.com/services/elixir-phoenix
+1. <a target="_blank" href="https://www.youtube.com/watch?v=w3lKmFsmlvQ&t=29m40s" title="ElixirConf 2017 - Plugging the Security Holes in Your Phoenix Application">VIDEO: "</a>. Install <a target="_blank" href="https://github.com/nccgroup/sobelow">github.com/nccgroup/Sobelow</a>
+
+   <pre>mix archive.install hex sobelow</pre>
+
+1. Run Sobelow (-compact):
+
+   <pre>mix sobelow -v</pre>
+
+
+TOOL: https://snyk.io/blog/secure-elixir-development-with-snyk/
+
+## Octo database toolkit
+
+Phoenix ships with PostgreSQL as the database.
+
+https://github.com/elixir-ecto/ecto
+Ecto is the go-to database library in the Elixir ecosystem, to interact with SQL databases such as Postgres and MySQL - inserting, validating, changing, and querying data.
+
+See https://serokell.io/blog/ecto-guide-for-beginners
+
 
 
 <a name="LiveView"></a>
@@ -780,6 +796,8 @@ https://github.com/bijanbwb/enbala_take_home
 
 Various technical subscription service vendors stream video tutorials (view instead of Netflix, HBO, Disney+, etc.):
 
+<a target="_blank" href="https://elixircasts.io/">https://elixircasts.io</a> $190/year for "Alchemist's Edition" paywall.
+
 <a target="_blank" href="https://www.oreilly.com/search/?query=elixir/">OReilly.com</a> has videos and live classes as well as books from Pragmatic (for one $499 subscription).
 
 At Pluralsight:
@@ -851,6 +869,10 @@ https://www.linkedin.com/jobs/search/?geoId=103644278&keywords=elixir&location=U
 https://bendyworks.com/#what-we-do
 
 DockYard
+
+https://thoughtbot.com/services/elixir-phoenix
+
+
 
 <hr />
 
