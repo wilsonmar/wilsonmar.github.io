@@ -47,6 +47,8 @@ This is a hands-on tutorial to provide you a deep yet succinct introduction sequ
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=pBNOavRoNL0">VIDEO: Elixir Tutorial</a> by Derek Banas
 
+> Elixir and Erlang compile to the same bytecode.
+
 
 ## Erlang VM (BEAM) users
 
@@ -54,9 +56,9 @@ This is a hands-on tutorial to provide you a deep yet succinct introduction sequ
    * https://github.com/membraneframework/beamchmark
    <br /><br />
 
-WhatsApp is using it. Also Pinterest.
+BEAM for Erlang is like JVM for Java.
 
-> Elixir and Erlang compile to the same bytecode.
+WhatsApp is using it. Also Pinterest.
 
 Erlang BEAM runs backbone switches with 500-600 gigabits throughput per each in eighties with like 10-20 milliseconds of downtime per year. They actually originally written software for those switches in C++ (few years of hundreds of devs work) but it crashed with like few dozen simultaneous calls, so that project was a huge failure and then <a target="_blank" href="https://www.wikiwand.com/en/Joe_Armstrong_(programmer)">Joe Armstrong</a>'s team of THREE devs written software in Erlang in few months and it was huge success. It was basically the first production-level implementation of CSP actor model concurrency.
 
@@ -128,6 +130,8 @@ Elixir v1.10.4
 Interactive Elixir (1.13.1) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)> _
    </pre>
+
+CAUTION: If you are connected to a <strong>compromised distributed node</strong>, your computer can then run code on YOUR PC (to view your private files, steal SSH keys, etc.).  That can occur via remote shell option <tt>iex \-\-remsh</tt> or <tt>\-\-sname</tt>
 
 
 ### OTP from Erlang
@@ -256,13 +260,26 @@ asdf local elixir 1.13.1-otp-24
 asdf global elixir 1.13.1-otp-24
    </pre>
 
+   ### Security vulnerabilities
+
+1. View the list of security vulnerabilities identified:
+
+   http://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=elixir
+
+   https://vulmon.com/searchpage?q=elixir
+
+   
+   ### Install ASDF version manager
+
 1. Install Erlang:
 
    <pre><strong>asdf install erlang 24.2</strong>
 
    In the sample response, there may be messages during the installation about omitted modules, which will not affect the rest of the runtime.
 
-   Erlang compiles modules based on the available libraries from your system. For example, some features (such as the built-in observer) require wx libraries. 
+   Erlang compiles modules based on the available libraries from your system. For example, some features (such as the built-in observer) require <tt>wx</tt> libraries. 
+
+   CAUTION: Usage of <tt>:observer.start</tt> REQUIRES use of the cookie-based node system.
 
    <pre>asdf_24.2 is not a kerl-managed Erlang/OTP installation
 No build named asdf_24.2
@@ -343,6 +360,10 @@ Unchanged:
 
    <pre>mix new hello_world</pre>
 
+1. To identify vulnerabilities, see 
+
+   https://snyk.io/blog/secure-elixir-development-with-snyk/
+
    ### Get sample code in GitHub
 
 1. See a list of all repos on GitHub:
@@ -373,6 +394,9 @@ Unchanged:
    <strong>.exs</strong> file extension are for <strong>interpreted</strong> code. Test specification files have extension of .exs (containing assert commands), invoked using <tt>elixir test.exs</tt>.
 
    Again, .ex is for compiled code, .exs is for interpreted code.
+
+   https://elixirschool.com/en/lessons/basics/iex_helpers#iexexs-2
+   Every time IEx starts it will look for a configuration file named <tt>.iex.exs</tt> in the current directory or the user’s $HOME directory as the fallback.
 
 1. Check whether typespecs are accurate:
 
@@ -444,14 +468,32 @@ The response:
 
 ## Language Features
 
+<a target="_blank" href="https://www.youtube.com/watch?v=gom6nEvtl3U">VIDEO</a>: "Elixir: The only Sane Choice in an Insane World" by Brian Cardarella at GOTO 2017
+
+<a target="_blank" href="https://www.youtube.com/watch?v=OcExABAAsXs">"Why We Chose Erlang over Java, Scala, Go, C"</a> at InfoQ
+
+
 <a target="_blank" href="https://elixirschool.com/en/lessons/basics/basics#trying-interactive-mode-2">https://elixirschool.com on basics</a>
 covers the subject so succinctly. Some notable features:
 
-* <strong>Sigils</strong> which start with a tilde "~" is Elixir's unique way of handling literals. https://elixirschool.com/en/lessons/basics/sigils
+* <strong>Sigils</strong>, which are prefixed with a tilde "~", is Elixir's way of handling literals. https://elixirschool.com/en/lessons/basics/sigils
+
+   <pre>iex> Date.utc_today
+~D[2028-12-31]
+&nbsp;
+iex> t = Time.utc_now
+~T[19:39:31.056226]
+&nbsp;
+iex> t.hour
+19
+&nbsp;
+   </pre>
+
+   https://elixirschool.com/en/lessons/basics/date_time
 
 * Elixir supports Perl Compatible Regular Expressions (PCRE), so "i" can be appended to the end of a sigil to turn off case sensitivity.
 
-* An <strong>atom</strong> is a constant (symbol) whose name is a colon and its value:
+* An <strong>atom</strong> is a constant (what Ruby calls symbol) whose name is a colon and its value:
 
    <pre>iex> :true === true
 true
@@ -473,7 +515,22 @@ iex> [1] -- [3, 4, 1]
 [2, 3, 4, 1]
    </pre>
 
-* "++/2" describes the function as having an <strong>Arity</strong> of 2 arguments.
+* "++/2" describes the function as having an <strong>Arity</strong> of 2 arguments. To list built-in modules and their Arity:
+
+   <pre>iex> Map.  # press Tab
+delete/2             drop/2               equal?/2             
+fetch!/2             fetch/2              filter/2             
+from_struct/1        get/2                get/3                
+get_and_update!/3    get_and_update/3     get_lazy/3           
+has_key?/2           keys/1               map/2                
+merge/2              merge/3              new/0                
+new/1                new/2                pop!/2               
+pop/2                pop/3                pop_lazy/3           
+put/3                put_new/3            put_new_lazy/3       
+reject/2             replace!/3           replace/3            
+split/2              take/2               to_list/1            
+update!/3            update/4             values/1        
+   </pre>
 
 * Import List to use its "last" and "first" (item) functions:
 
@@ -542,7 +599,32 @@ Elixir 1.11 in 2020 completes all log levels in Erlang:
 * Logger.emergency
 <br /><br />
 
-## Testing Elixir
+PROTIP: Catching of logging sensitive information is difficult to automate (even during Dynamic Security Testing) and thus currently require manual/team code review.
+
+## Thread Safety
+
+   * https://dockyard.com/blog/2021/03/30/elixir-is-safe
+   <br /><br />
+
+Like Akka, Elixir uses the "<a target="_blank" href="https://en.wikipedia.org/wiki/Actor_model">Actor Model</a>" where processes don’t share memory and communicate only with messages. Instead of sharing memory, Elixir/Erlang only passes messages. Thus, stack smashing is impossible since everything is held in the HEAP and the stack is simulated.
+
+No chance for deadlocking.
+
+To spawn a self-contained process thread for non-blocking IO:
+
+<pre>IO.inspect ["Hello from process ", self()]
+spawn(fn -> IO.inspect ["Hello from process ", self()] end)
+</pre>
+
+
+### BEAM Performance
+
+Erlang uses an alternative to XML, JSON, etc. by using <strong>zlib compression</strong> (<tt>:erlang.term_to_binary</tt> and <tt>:erlang.binary_to_term</tt>) to serialie data to binary before sending it over the wire or saving it in files, which may be vulnerable to "binary zip bombs" which can consume more memory than the app has. So vigilence is necessary.
+
+See https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
+
+
+## Testing Elixir Functionality
 
 1. Execute the test:
 
@@ -576,17 +658,14 @@ Elixir/Erlang aims for predictable behavior that operates gracefully under extre
 
 Emphasis on recursion and higher-order functions instead of side-effect-based looping.
 
-Shared nothing concurrent programming via asynchronous immutable message passing by self-contained  <a target="_blank" href="https://en.wikipedia.org/wiki/Actor_model">Actors</a> like Akka. See https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
-
-No chance for deadlocking.
-
-Elixir is a functional language, which have lazy evaulation, pattern matching, and "higher-order" functions which can receive and output a function as well as data.
+Elixir is a functional language, which means lazy evaulation, pattern matching, and "higher-order" functions which can receive and output a function as well as data.
 
 Elixir uses <a target="_blank" href="https://www.erlang.org/doc/tutorial/nif.html">Erlang NIF's</a> (Native Implemented Functions) to bring in C or Rust to compute heavy math.
 
 Elixir was designed from the ground up for fault tolerance. Unlike Go, the entire Go program goes down when a goroutine crashes. In Elixir, whenever a process dies, only that single process dies, without affecting the rest of the program. Even better, the failed process will get restarted automatically by its supervisor. This allows the failed process to retry the operation that has failed.[5]
 
 Robustness is achieved by supervisors which monitor Elixir processes and restart them when they crash.
+
 
 ## Octo database toolkit
 
@@ -595,6 +674,8 @@ Ecto is the go-to database library in the Elixir ecosystem, to interact with SQL
 
 See https://serokell.io/blog/ecto-guide-for-beginners
 
+
+<a name="Phoenix"></a>
 
 ## Phoenix Framework
 
@@ -611,8 +692,23 @@ Phoenix implements the server-side Model View Controller (MVC) pattern.
 
 https://serokell.io/blog/introduction-to-phoenix
 
+<a target="_blank" href="https://www.linkedin.com/in/donabailey/">Don A. Bailey</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=42k70Y-yTYY" title="Unauthorized Erlang: A Demonstration by  ">VIDEO</a> 
+and <a target="_blank" href="https://www.linkedin.com/in/andrei-clinciu/">Andrei Clinciu</a> <a target="_blank" href="https://andreiclinciu.net/erlang-elixir-node-security-flaws">pointed out</a> a concern with use of <strong>cookies</strong> in distributed Phoenix. 
+
+So setup Erlang with TLS/SSL with certificates and public key encryption,
+as <tt>epmd</tt> may still talk UNENCRYPTED.
+
+And setup a firewall that blocks everything unless specifically allowed.
+
+<a target="_blank" href="https://asciinema.org/a/c9utphy34c8remqlsvfbkjnf9">VIDEO</a>: 
+<a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">VIDEO</a>: 
+<a target="_blank" href="https://github.com/nccgroup/sobelow">
+Sobelow</a> is a security-focused static analysis tool to identify (OWASP) vulnerabilities in the Phoenix Framework.
+
 https://thoughtbot.com/services/elixir-phoenix
 
+
+<a name="LiveView"></a>
 
 ### Phoenix Liveview
 
@@ -630,6 +726,7 @@ LiveView takes care of synchronizing client and server state, so you don’t hav
 
 See https://www.testingliveview.com/
 
+
 ## Livebook
 
 Livebook https://github.com/livebook-dev/livebook is inspired by Jupyter Notebooks and Deepnote. Like Jupyter, combining markdown with executable Elixir code blocks that let the reader not only learn from the docs but try out the system being documented right in the ReadMe.
@@ -639,7 +736,7 @@ Livebook https://github.com/livebook-dev/livebook is inspired by Jupyter Noteboo
 
 ## Nerves Framework
 
-Nerves is an easy to use and powerful framework for building embedded systems in Elixir.
+Nerves is a programming framework for building <strong>embedded</strong> systems in Elixir, such as Raspberry Pi.
 
 https://twitter.com/NervesProject
 
@@ -690,6 +787,15 @@ At Pluralsight:
    * <a target="_blank" href="https://app.pluralsight.com/guides/10-essential-erlang-tools-for-erlang-developers">"10 Essential Erlang Tools for Erlang Developers"</a> Sep 06, 2019
    <br /><br />
 
+<a target="_blank" href="https://www.udemy.com/courses/search/?src=ukw&q=elixir">Udemy.com has several courses from independent authors</a>
+
+   * <a target="_blank" href="https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/">"The Complete Elixir and Phoenix Bootcamp" (17 hours)</a> - Master Functional Programming techniques with Elixir and Phoenix while learning to build compelling web applications!" by Stephen Grider, whose code for the course is different branches of https://github.com/StephenGrider/ElixirCode from 2018, with <a target="_blank" href="https://app.diagrams.net/#Hwilsonmar%2FElixirCode%2Fmaster%2Fdiagrams.xml">digrams</a>.
+
+   * <a name="[3]">[3]</a> <a target="_blank" href="https://www.udemy.com/course/functional-programming-using-elixir-the-complete-course/">"Functional Programming using Elixir - The Complete Course"</a> (9 hours) Learn the cutting edge functional programming language Elixir and build fault tolerant software" from Eduonix Learning Solutions, Eduonix-Tech .
+
+
+
+
 At time of writing, these services did not have:
 
    * <a target="_blank" href="https://acloudguru.com/search?s=elixir">ACloudGuru.com</a>
@@ -698,6 +804,7 @@ At time of writing, these services did not have:
    * <a target="_blank" href="https://www.datacamp.com/search?q=elixir">datacamp.com</a>
    * <a target="_blank" href="https://www.edx.org/search?q=elixir">edx.org</a>
    * <a target="_blank" href="https://www.linkedin.com/learning/search?keywords=elixir">LinkedIn Learning</a>
+   * <a target="_blank" href="https://www.udacity.com/courses/all?search=elixir">Udacity</a>
    <br /><br />
 
 
@@ -705,8 +812,7 @@ At time of writing, these services did not have:
 
 <a name="[1]">[1]</a> <a target="_blank" href="https://www.youtube.com/watch?v=cWAHpvkh8Vs" title="Apr 24, 2018">VIDEO: Why Elixir Matters: A Genealogy of Functional Programming</a> by Osayame Gaius-Obaseki (<a target="_blank" href="https://github.com/osagius/">@osagius</a>)
 
-<a name="[2]">[2]</a> <a target="_blank" href="
-Nate Taylor</a>
+<a name="[2]">[2]</a> <a target="_blank" href="https://www.youtube.com/watch?v=wVrnoxNbOts" title="Jul 15, 2017">VIDEO</a>: <a target="_blank" href="https://taylonr.com/talks/539-2/">"Let’s Get Functional with Elixir!"</a> by Nate Taylor</a>: "Elixir is a functional language for everyone, where I felt dumb with Haskell".
 
 [5] https://betterprogramming.pub/modern-languages-suck-ad21cbc8a57c
 compares aspects for each language. by Ilya Suzdalnitski, Senior Elixir engineer.
