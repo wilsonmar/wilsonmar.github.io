@@ -625,7 +625,7 @@ spawn(fn -> IO.inspect ["Hello from process ", self()] end)
 
 ### BEAM Performance
 
-Erlang uses an alternative to XML, JSON, etc. by using <strong>zlib compression</strong> (<tt>:erlang.term_to_binary</tt> and <tt>:erlang.binary_to_term</tt>) to serialie data to binary before sending it over the wire or saving it in files, which may be vulnerable to "binary zip bombs" which can consume more memory than the app has. So vigilence is necessary.
+<a target="_blank" href="https://www.griffinbyatt.com/post/analysis-plug-security-vulns">According to Griffin Byatt</a>, Erlang uses an alternative to XML, JSON, etc. by using <strong>zlib compression</strong> (<tt>:erlang.term_to_binary</tt> and <tt>:erlang.binary_to_term</tt>) to serialie data to binary before sending it over the wire or saving it in files, which may be vulnerable to "binary zip bombs" which can consume more memory than the app has. So vigilence is necessary.
 
 See https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go
 
@@ -692,7 +692,9 @@ Phoenix implements the server-side Model View Controller (MVC) pattern.
 
 https://serokell.io/blog/introduction-to-phoenix
 
-CAUTION: "Don't put BEAM on a public network, ever". In distributed Phoenix/Erlang, monotonic timers are used to auto-generate cookies based on host uptime (nmap). Cookies are converted to an atom. -- <a target="_blank" href="https://www.linkedin.com/in/donabailey/">Don A. Bailey</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=42k70Y-yTYY&t=6m24s" title="Unauthorized Erlang: A Demonstration by  ">VIDEO description of exploit</a> was <a target="_blank" href="https://andreiclinciu.net/erlang-elixir-node-security-flaws">pointed out</a> by <a target="_blank" href="https://www.linkedin.com/in/andrei-clinciu/">Andrei Clinciu</a>.
+<a target="_blank" href="https://www.youtube.com/watch?v=42k70Y-yTYY&t=6m24s" title="Unauthorized Erlang: A Demonstration by  ">CAUTION: <strong>"Don't put BEAM on a public network, ever. Ericsson is not going to fix it".</strong></a> said <a target="_blank" href="https://www.linkedin.com/in/donabailey/">Don A. Bailey</a> in 2017. (In distributed Phoenix/Erlang, monotonic timers are used to auto-generate cookies based on host uptime (nmap). Cookies are converted to an atom.) 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=42k70Y-yTYY&t=6m24s" title="Unauthorized Erlang: A Demonstration by  ">VIDEO description of exploit</a> was <a target="_blank" href="https://andreiclinciu.net/erlang-elixir-node-security-flaws">pointed out</a> by <a target="_blank" href="https://www.linkedin.com/in/andrei-clinciu/">Andrei Clinciu</a>.
 
 PROTIP: So setup Erlang with TLS/SSL with certificates and public key encryption, as <tt>epmd</tt> may still talk UNENCRYPTED.
 
