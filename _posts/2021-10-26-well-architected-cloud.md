@@ -316,7 +316,7 @@ AWS published these General Design Principles:
 
 ## Security pillar
 
-<img align="right" width="99" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
+<img align="right" width="99" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=GdzZUXfzw2k" title="Sep 16, 2021">VIDEO: AWS Well Architected Cloud Framework, a Deep-Dive into IT Security Pillar"</a>
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
@@ -325,7 +325,7 @@ AWS published these General Design Principles:
    * <a target="_blank" href="https://www.youtube.com/watch?v=i-ErdXn9DFA">VIDEO: AWS Tech talk</a>
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/security/">Microsoft Security Documentation</a>
-
+   
    * <a target="_blank" href="https://cloud.google.com/architecture/framework/security">Google: Security, privacy, and compliance</a>
    <br /><br />
 
@@ -373,23 +373,23 @@ Key Design principles for security in the cloud:
 
 1. How do you securely operate each workload?
 
-   a. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common guardrails as workloads grow.
+   1. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common guardrails as workloads grow.
 
-   b. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
+   2. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
 
-   c. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
+   3. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
 
-   d. <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
+   4. <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
 
-   e. <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
+   5. <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
 
-   f. <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
+   6. <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
 
-   g. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize threats and adapt security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   7. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize threats and adapt security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
 
-   h. <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
+   8. <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
 
-<a name="ManageIdentities"></a>
+   <a name="ManageIdentities"></a>
 
 2. How do you manage identities for people and machines?
 
