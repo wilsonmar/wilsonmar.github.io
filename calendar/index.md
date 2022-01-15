@@ -37,11 +37,16 @@ I have a separate calendar I use to plan my day.
 
 ## Calendar services
 
-There are several services that
+There are several services that enable others to pick a time to meet with you:
 
-calendly.com is popular. But their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a> and <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">they only offer email customer service</a>.
+* calendly.com is popular. But their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a> and <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">they only offer email customer service</a>.
 
-x.ai
+* x.ai
+
+If you're using Microsoft Outlook, to minimize the back and forth emails in scheduling, <a target="_blank" href="https://docs.microsoft.com/en-us/microsoft-365/admin/manage/share-calendars-with-external-users?view=o365-worldwide">enable calendar sharing using the Microsoft 365 admin center</a>, then <a target="_blank" href="https://www.magenium.com/resources/how-create-link-your-outlook-calendar-email-signatures/">
+create a link to Your Outlook Calendar in your email signature</a>.
+
+ <a target="_blank" href="https://support.microsoft.com/en-us/topic/how-to-create-a-findtime-poll-4dc806ed-fde3-4ea7-8c5e-b5d1fddab4a6">install an Outlook add-in for scheduling meetings</a> called <a target="_blank" href="https://findtime.microsoft.com/">FindTime</a> which adds a "Reply with Meeting poll" button to the Home tab. The organizer can send multiple time options through FindTime 
 
 
 ## Speedy Outlook usage with Keyboard shortcuts

@@ -317,6 +317,7 @@ AWS published these General Design Principles:
 ## Security pillar
 
 <img align="right" width="99" alt="well-architected-SEC-gold-101x134.png" src="https://user-images.githubusercontent.com/300046/139144053-7c59ff46-8774-4684-bed2-df3e9dd4fc71.png">
+   * <a target="_blank" href="https://www.youtube.com/watch?v=GdzZUXfzw2k" title="Sep 16, 2021">VIDEO: AWS Well Architected Cloud Framework, a Deep-Dive into IT Security Pillar"</a>
    * https://wa.aws.amazon.com/wat.pillar.security.en.html
    * <a target="_blank" href="https://www.youtube.com/watch?v=ujRf2BzgGGg">VIDEO: Well-Architected for Security: Advanced Session</a> by Amazon Web Services
    * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
@@ -355,28 +356,44 @@ Key Design principles for security in the cloud:
 
 <hr />
 
+1. <a href="#SecureWorkload">Securely operate each workload</a>
+2. <a href="#ManageIdentities">Manage identities for people and machines</a>
+3. <a href="#ManagePermissions">Manage permissions for people and machines</a>
+4. <a href="#DetectEvents">Detect and investigate security events</a>
+5. <a href="#ProtectNetwork">Protect network resources</a>
+6. <a href="#ProtectCompute">Protect compute resources</a>
+7. <a href="#ClassifyData">Classify data</a>
+8. <a href="#ProtectDataAtRest">Protect data at rest</a>
+9. <a href="#ProtectDataInTransit">Protect data in transit</a>
+10. <a name="IncidentRecovery">Anticipate, respond to, and recover from incidents</a>
+
+<br /><br />
+
+<a name="SecureWorkload"></a>
+
 1. How do you securely operate each workload?
 
-   * <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common guardrails as workloads grow.
+   a. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common guardrails as workloads grow.
 
-   * <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
+   b. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
 
-   * <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
+   c. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
 
-   * <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
+   d. <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
 
-   * <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
+   e. <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
 
-   * <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
+   f. <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
 
-   * <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize threats and adapt security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   g. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize threats and adapt security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
 
-   * <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
+   h. <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
+
+<a name="ManageIdentities"></a>
 
 2. How do you manage identities for people and machines?
 
-   * <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer.
-Use temporary credentials
+   * <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
 
    * <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
 
@@ -387,6 +404,8 @@ Use temporary credentials
    * <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
 
    * <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
+
+<a name="ManagePermissions"></a>
 
 3. How do you manage permissions for people and machines?
 
@@ -406,6 +425,8 @@ Use temporary credentials
 
    * <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
 
+<a name="DetectEvents"></a>
+
 4. How do you detect and investigate security events?
 
    * <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
@@ -415,6 +436,8 @@ Use temporary credentials
    * <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
 
    * <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
+
+<a name="ProtectNetwork"></a>
 
 5. How do you protect network resources?
 
@@ -426,6 +449,7 @@ Use temporary credentials
 
    * <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
 
+<a name="ProtectCompute"></a>
 
 6. How do you protect compute resources?
 
@@ -441,14 +465,17 @@ Use temporary credentials
 
    * <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
 
+<a name="ClassifyData"></a>
+
 7. How do you classify data?
 
    * <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensititve, and more.
 
-   * <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls.
-Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
+   * <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
 
    * <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
+
+<a name="ProtectDataAtRest"></a>
 
 8. How do you protect data at rest?
 
@@ -462,6 +489,8 @@ Automate identification and classification</strong> of data to reduce the risk o
 
    * <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
 
+<a name="ProtectDataInTransit"></a>
+
 9. How do you protect data in transit?
 
    * <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
@@ -471,6 +500,8 @@ Automate identification and classification</strong> of data to reduce the risk o
    * <strong>Automate detection of unintended data access</strong> - Use tools such as GuardDuty to automatically detect attempts to move data outside of defined boundaries based on data classification level, for example, to detect a trojan that is copying data to an unknown or untrusted network using the DNS protocol.
 
    * <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
+
+<a name="IncidentRecovery"></a>
 
 9. How do you anticipate, respond to, and recover from incidents?
 
@@ -490,6 +521,7 @@ Automate identification and classification</strong> of data to reduce the risk o
 
 <a target="_blank" href="https://amzn.to/3j8TTXS" title="07 MAY 2020">Security Hub Foundational Security Best Practices</a> automates the <a target="_blank" href="https://aws.amazon.com/blogs/security/top-10-security-items-to-improve-in-your-aws-account/">Top 10 security items to improve in your AWS account</a>
 
+Amazon Detective organizes various relationships in a <strong>Graph visualization</strong> to see how events are interconnected.
 
 <hr />
 

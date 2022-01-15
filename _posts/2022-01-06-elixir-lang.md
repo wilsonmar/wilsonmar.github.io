@@ -700,6 +700,8 @@ PROTIP: So setup Erlang with TLS/SSL with certificates and public key encryption
 
 And setup a firewall that blocks everything unless specifically allowed.
 
+<a target="_blank" href="https://github.com/dependabot/elixir-security-advisories/tree/master/packages">github.com/dependabot/elixir-security-advisories</a> is a repository of CVE security advisories filed against published Elixir packages.
+
 <a target="_blank" href="https://asciinema.org/a/c9utphy34c8remqlsvfbkjnf9">VIDEO</a>: 
 <a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">VIDEO</a>: Sobelow
 by <a target="_blank" href="https://www.griffinbyatt.com/post/analysis-plug-security-vulns">Griffin Byatt</a> is a security-focused static analysis tool to identify (OWASP) vulnerabilities in the Phoenix Framework.
