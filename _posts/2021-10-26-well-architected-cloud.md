@@ -258,11 +258,27 @@ But note that it's for work across all pillars together, not for individual pill
 
 <hr />
 
+## Cloud Adoption Framework
+
+<a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html" title="November 22, 2021">AWS Cloud Adoption Framework (AWS CAF)</a> discusses these perspectives:
+
+   * Business
+   * People
+   * Governance
+   * Platform
+   * Security
+   * Operations
+   <br /><br />
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/149641454-9ff03c13-02d9-4964-88a4-0190e9811be4.png"><img alt="aws-cloud-adoption-11-2500x1470" src="https://user-images.githubusercontent.com/300046/149641454-9ff03c13-02d9-4964-88a4-0190e9811be4.png"></a>
+
+
+<hr />
+
 ## Training on WA
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
 Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
-
 
 ### AWS Well-Architected Labs
 
@@ -525,7 +541,6 @@ Questions:
 <a target="_blank" href="https://amzn.to/3j8TTXS" title="07 MAY 2020">Security Hub Foundational Security Best Practices</a> automates the <a target="_blank" href="https://aws.amazon.com/blogs/security/top-10-security-items-to-improve-in-your-aws-account/">Top 10 security items to improve in your AWS account</a>
 
 Amazon GuardDuty senses threats
-http://bit.ly/2EWlARo
 
 Amazon Detective organizes various relationships in a <strong>Graph visualization</strong> to see how events are interconnected.
 
