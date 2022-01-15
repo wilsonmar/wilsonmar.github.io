@@ -405,7 +405,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
 
-<a name="ManagePermissions"></a>
+   <a name="ManagePermissions"></a>
 
 3. How do you manage permissions for people and machines?
 
@@ -425,7 +425,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
 
-<a name="DetectEvents"></a>
+   <a name="DetectEvents"></a>
 
 4. How do you detect and investigate security events?
 
@@ -437,7 +437,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
 
-<a name="ProtectNetwork"></a>
+   <a name="ProtectNetwork"></a>
 
 5. How do you protect network resources?
 
@@ -449,7 +449,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
 
-<a name="ProtectCompute"></a>
+   <a name="ProtectCompute"></a>
 
 6. How do you protect compute resources?
 
@@ -465,7 +465,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
 
-<a name="ClassifyData"></a>
+   <a name="ClassifyData"></a>
 
 7. How do you classify data?
 
@@ -475,7 +475,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
 
-<a name="ProtectDataAtRest"></a>
+   <a name="ProtectDataAtRest"></a>
 
 8. How do you protect data at rest?
 
@@ -489,7 +489,7 @@ Key Design principles for security in the cloud:
 
    1. <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
 
-<a name="ProtectDataInTransit"></a>
+   <a name="ProtectDataInTransit"></a>
 
 9. How do you protect data in transit?
 
@@ -501,13 +501,13 @@ Key Design principles for security in the cloud:
 
    1. <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
 
-<a name="IncidentRecovery"></a>
+   <a name="IncidentRecovery"></a>
 
 9. How do you anticipate, respond to, and recover from incidents?
 
    1. <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
 
-   1. <strong>Develop incident management plans</strong> - Create plans to help you respond to, communicate during, and recover from an incident. For example, you can start an incident response plan with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
+   1. <strong>Develop incident management plans</strong> - Create "playbooks" to help  respond to, communicate during, and recover from an incident. For example, start an <u>incident response plan</u> with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
 
    1. <strong>Prepare forensic capabilities</strong> - Identify and prepare forensic investigation capabilities that are suitable, including external specialists, tools, and automation.
 
@@ -520,6 +520,9 @@ Key Design principles for security in the cloud:
    1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
 
 <a target="_blank" href="https://amzn.to/3j8TTXS" title="07 MAY 2020">Security Hub Foundational Security Best Practices</a> automates the <a target="_blank" href="https://aws.amazon.com/blogs/security/top-10-security-items-to-improve-in-your-aws-account/">Top 10 security items to improve in your AWS account</a>
+
+Amazon GuardDuty senses threats
+http://bit.ly/2EWlARo
 
 Amazon Detective organizes various relationships in a <strong>Graph visualization</strong> to see how events are interconnected.
 
