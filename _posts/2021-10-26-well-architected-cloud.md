@@ -429,95 +429,95 @@ Key Design principles for security in the cloud:
 
 4. How do you detect and investigate security events?
 
-   * <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
+   1. <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
 
-   * <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
+   1. <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
 
-   * <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
+   1. <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
 
-   * <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
+   1. <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
 
 <a name="ProtectNetwork"></a>
 
 5. How do you protect network resources?
 
-   * <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
+   1. <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
 
-   * <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
+   1. <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
 
-   * <strong>Automate network protection</strong> - Automate protection mechanisms to provide a self-defending network based on threat intelligence and anomaly detection. For example, intrusion detection and prevention tools that can pro-actively adapt to current threats and reduce their impact.
+   1. <strong>Automate network protection</strong> - Automate protection mechanisms to provide a self-defending network based on threat intelligence and anomaly detection. For example, intrusion detection and prevention tools that can pro-actively adapt to current threats and reduce their impact.
 
-   * <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
+   1. <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
 
 <a name="ProtectCompute"></a>
 
 6. How do you protect compute resources?
 
-   * <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
+   1. <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
 
-   * <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
+   1. <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
 
-   * <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
+   1. <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
 
-   * <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
+   1. <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
 
-   * <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
+   1. <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
 
-   * <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
+   1. <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
 
 <a name="ClassifyData"></a>
 
 7. How do you classify data?
 
-   * <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensititve, and more.
+   1. <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensititve, and more.
 
-   * <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
+   1. <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
 
-   * <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
+   1. <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
 
 <a name="ProtectDataAtRest"></a>
 
 8. How do you protect data at rest?
 
-   * <strong>Implement secure key management</strong> - Encryption keys must be stored securely, with strict access control, for example, by using a key management service such as AWS KMS. Consider using different keys, and access control to the keys, combined with the AWS IAM and resource policies, to align with data classification levels and segregation requirements.
+   1. <strong>Implement secure key management</strong> - Encryption keys must be stored securely, with strict access control, for example, by using a key management service such as AWS KMS. Consider using different keys, and access control to the keys, combined with the AWS IAM and resource policies, to align with data classification levels and segregation requirements.
 
-   * <strong>Enforce encryption at rest</strong> - Enforce encryption requirements based on the latest standards and recommendations to help protect data at rest.
+   1. <strong>Enforce encryption at rest</strong> - Enforce encryption requirements based on the latest standards and recommendations to help protect data at rest.
 
-   * <strong>Automate data at rest protection</strong> - Use automated tools to validate and enforce data at rest protection continuously, for example, verify that there are only encrypted storage resources.
+   1. <strong>Automate data at rest protection</strong> - Use automated tools to validate and enforce data at rest protection continuously, for example, verify that there are only encrypted storage resources.
 
-   * <strong>Enforce access control</strong> - Enforce access control with least privileges and mechanisms, including backups, isolation, and versioning, to help protect data at rest. Prevent operators from granting public access to data.
+   1. <strong>Enforce access control</strong> - Enforce access control with least privileges and mechanisms, including backups, isolation, and versioning, to help protect data at rest. Prevent operators from granting public access to data.
 
-   * <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
+   1. <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
 
 <a name="ProtectDataInTransit"></a>
 
 9. How do you protect data in transit?
 
-   * <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
+   1. <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
 
-   * <strong>Enforce encryption in transit</strong> - Enforce defined encryption requirements based on appropriate standards and recommendations to help you meet organizational, legal, and compliance requirements.
+   1. <strong>Enforce encryption in transit</strong> - Enforce defined encryption requirements based on appropriate standards and recommendations to help you meet organizational, legal, and compliance requirements.
 
-   * <strong>Automate detection of unintended data access</strong> - Use tools such as GuardDuty to automatically detect attempts to move data outside of defined boundaries based on data classification level, for example, to detect a trojan that is copying data to an unknown or untrusted network using the DNS protocol.
+   1. <strong>Automate detection of unintended data access</strong> - Use tools such as GuardDuty to automatically detect attempts to move data outside of defined boundaries based on data classification level, for example, to detect a trojan that is copying data to an unknown or untrusted network using the DNS protocol.
 
-   * <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
+   1. <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
 
 <a name="IncidentRecovery"></a>
 
 9. How do you anticipate, respond to, and recover from incidents?
 
-   * <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
+   1. <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
 
-   * <strong>Develop incident management plans</strong> - Create plans to help you respond to, communicate during, and recover from an incident. For example, you can start an incident response plan with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
+   1. <strong>Develop incident management plans</strong> - Create plans to help you respond to, communicate during, and recover from an incident. For example, you can start an incident response plan with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
 
-   * <strong>Prepare forensic capabilities</strong> - Identify and prepare forensic investigation capabilities that are suitable, including external specialists, tools, and automation.
+   1. <strong>Prepare forensic capabilities</strong> - Identify and prepare forensic investigation capabilities that are suitable, including external specialists, tools, and automation.
 
-   * <strong>Automate containment capability</strong> and recovery of an incident to reduce response times and organizational impact.
+   1. <strong>Automate containment capability</strong> and recovery of an incident to reduce response times and organizational impact.
 
-   * <strong>Pre-provision access</strong> - Ensure that incident responders have the correct access pre-provisioned into AWS to reduce the time for investigation through to recovery.
+   1. <strong>Pre-provision access</strong> - Ensure that incident responders have the correct access pre-provisioned into AWS to reduce the time for investigation through to recovery.
 
-   * <strong>Pre-deploy tools</strong> - Ensure that security personnel have the right tools pre-deployed into AWS to reduce the time for investigation through to recovery.
+   1. <strong>Pre-deploy tools</strong> - Ensure that security personnel have the right tools pre-deployed into AWS to reduce the time for investigation through to recovery.
 
-   * <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
+   1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
 
 <a target="_blank" href="https://amzn.to/3j8TTXS" title="07 MAY 2020">Security Hub Foundational Security Best Practices</a> automates the <a target="_blank" href="https://aws.amazon.com/blogs/security/top-10-security-items-to-improve-in-your-aws-account/">Top 10 security items to improve in your AWS account</a>
 
