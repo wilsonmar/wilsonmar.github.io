@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Making videos"
-excerpt: "Tediously using Camtasia, Audacity, and animated PowerPoint on a Mac"
+excerpt: "Tediously using Camtasia, Audacity, and automating animated PowerPoint on a Mac"
 tags: [Videos, Evangelism]
-date: "2021-03-26"
+date: "2022-01-06"
 file: "making-videos"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -437,6 +437,22 @@ PROTIP: Those hard of hearing would appreciate you offering closed captioning in
 1. Have another native-speaker review the translation.
 
 1. Upload the file to YouTube.
+
+## Python code to upload YouTube video
+
+<pre>from pytube import YouTube
+from pytube.cli import on_progress
+videos = [
+    'https://www.youtube.com/watch?v=FOO',
+    'https://www.youtube.com/watch?v=BAR',
+    'https://www.youtube.com/watch?v=BAZ',
+]
+for video in videos:
+    YouTube(video, on_progress_callback=on_progress).streams.filter(
+        progressive=True,
+        file_extension='mp4',
+    ).order_by('resolution').desc().first().download()
+</pre>
 
 
 ## More Resources
