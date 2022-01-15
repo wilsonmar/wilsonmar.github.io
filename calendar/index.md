@@ -3,7 +3,7 @@ layout: page
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
-date: "2019-08-03"
+date: "2022-01-03"
 file: "calendar"
 image:
 # pic white calendar 1900x500-c28.jpg
@@ -20,7 +20,7 @@ Pick a time from <a target="_blank" href="https://calendly.com/wilsonmar">https:
 <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
 https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com</a>
 
-NOTE: I usually am up by 4 am Pacific Time (5 am Mountain, 6 am Central, 7 am Eastern).
+NOTE: I usually am up by 5 am Mountain (4 am Pacific Time, 6 am Central, 7 am Eastern).
 
 0. The yellow column is today. Scroll to see the red line which marks the current time.
 
@@ -34,6 +34,15 @@ NOTE: I usually am up by 4 am Pacific Time (5 am Mountain, 6 am Central, 7 am Ea
 
 NOTE: In this calendar I keep only the times I cannot move.
 I have a separate calendar I use to plan my day.
+
+## Calendar services
+
+There are several services that
+
+calendly.com is popular. But their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a> and <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">they only offer email customer service</a>.
+
+x.ai
+
 
 ## Speedy Outlook usage with Keyboard shortcuts
 
@@ -65,7 +74,7 @@ Reply - COMMAND+R<br />
 Reply to all - Shift+  COMMAND +R<br />
 Forward message - COMMAND +J
 
-Hide Outlook - command+Q
+Quit Outlook - command+Q
 
 
 ## Update Jekyll Theme with Calendar
