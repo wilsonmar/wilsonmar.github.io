@@ -21,7 +21,9 @@ NOTE: There is a biological Cognito, which is not this topic.
 <img align="right" width="100" alt="aws-cognito-feds-398x1168" src="https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png">
 Amazon Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, SAML to GitHub or Microsoft Active Directory, and custom mechanisms.
 
-PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for AWS to interact with.
+PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for Cognito to interact with.
+
+High level short summary <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
 ### Cognito service landing page
 
@@ -53,11 +55,19 @@ When creating a user pool, my notes about each menu item:
 
 Users can also be added using a CSV import.
 
+## Basic Cognito workflow
+
+A simple example is to access GitHub Pages, explained by <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
+
+QUESTION: JavaScript API can be AWS Amplify?
+
+
 ## Workflow thru API Gateway
 
    * https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
    * https://www.youtube.com/watch?v=o7OHogUcRmI
    * https://www.youtube.com/watch?v=al5I9v5Y-kA
+   * https://www.youtube.com/watch?v=yCAlJv6zfn4
    * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw">VIDEO</a>:
    <br /><br />
 
@@ -66,25 +76,21 @@ Users can also be added using a CSV import.
 
 1) Users from a web browser typically invoke JavaScript which addresses an Amazon API Gateway, which controls access. 2) If authenticated, the API Gateway invokes a JWT Authorizer which 3) connects Amazon Cognito. 4) Cognito returns to JWT Authorizer 5) back to API Gateway, which 6) invokes a Lambda that 7) returns to the user's browser.
 
+A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
+
+Ultimately, add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
 
 
 ## Laptop Setup
 
 https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
 
-* AWS CLI
+* AWS CLI2
 * Python Boto3
 * AWS Cognito
 
 ## References
 
-<a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
-
-   * <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
-
-   * <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a>
-
-   * <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
 
 
 Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
@@ -343,3 +349,6 @@ HTTP APIs can be edge-optimized, private, and use AWS WAF with resource policies
 
 HTTP APIs can have execution logs and use X-Ray tracing via Access logs to Amazon Kinesis Data Firehose (REST APIs can't)
 
+## References
+
+https://www.youtube.com/watch?v=tAUmz94O2Qo
