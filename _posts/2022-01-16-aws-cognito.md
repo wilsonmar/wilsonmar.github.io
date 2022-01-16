@@ -50,8 +50,7 @@ Users can also be added using a CSV import.
 
 ## User Attributes
 
-Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained.
-
+Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained:
 <img width="949" alt="aws-cognito-attribs-1898x778" src="https://user-images.githubusercontent.com/300046/149676615-8b65c35b-2b89-4cdd-8db1-3db7fef23d3e.png">
 
 
@@ -65,14 +64,6 @@ NOTE: There is a biological Cognito, which is not this topic.
 
 * https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
 
-## The sequence:
-
-1. User clicks on static web page
-2. Request login
-3. Python Lambda program trigger
-4. API Gateway 
-5. AWS Cognito (or Auth0)
-
 
 ## Laptop Setup
 
@@ -82,19 +73,29 @@ https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom
 * Python Boto3
 * AWS Cognito
 
-## Video course
+## References
 
 <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
    * <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
 
    * <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a>
-   * <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a>
-   <br /><br />
+
+   * <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
+
 
 Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
 
+The workflow:
+
+1. User clicks on static web page
+2. Request login
+3. Python Lambda program trigger
+4. API Gateway 
+5. AWS Cognito (or Auth0)
+
 Each high-level folder is a workspace defined in package.json:
+
 
 The <strong>infrastructure</strong> folder
    * AWS <a target="_blank" href="https://wilsonmar.github.io/aws-cdk/" title="Cloud Development Kit">CDK</a>> leveraging pre-configured app components in TypeScript
@@ -236,7 +237,7 @@ Terraform for <a target="_blank" href="https://registry.terraform.io/providers/h
 
 ### Client SRP Auth
 
-<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client</a>, which sets up <a href="#SRP_auth">SRP auth</a> with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel marketing communication analytics and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
+<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client</a>, which sets up <a href="#SRP_auth">SRP auth</a>, optionally with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel <a target="_blank" href="http://aws.amazon.com/mobileanalytics/faqs/">marketing communication analytics</a> and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
 
 The SRP (Secure Remote Password) protocol is an augmented password-authenticated key exchange (PAKE) protocol, designed so an attacker who steals server data would not be able to masquerade as the client (unless they first perform a brute force search for the password). <a target="_blank" href="https://www.wikiwand.com/en/Secure_Remote_Password_protocol">A Wiki entry</a> says it was specifically designed to work around existing patents.
 
