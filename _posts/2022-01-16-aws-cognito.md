@@ -16,12 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<img align="right" width="199" alt="aws-cognito-feds-398x1168" src="https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png">
-AWS Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, SAML to GitHub or Microsoft Active Directory, and custom mechanisms.
+NOTE: There is a biological Cognito, which is not this topic.
+
+<img align="right" width="100" alt="aws-cognito-feds-398x1168" src="https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png">
+Amazon Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, SAML to GitHub or Microsoft Active Directory, and custom mechanisms.
 
 PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for AWS to interact with.
 
-#### Cognito service landing page
+### Cognito service landing page
 
 Version 1 of the Amazon GUI for Cognito at<br />
 https://us-west-2.console.aws.amazon.com/cognito/welcome?region=us-west-2<br />
@@ -31,10 +33,15 @@ Version 2 of the Amazon GUI for Cognito at<br />
 https://us-west-2.console.aws.amazon.com/cognito/v2/home?region=us-west-2#<br />
 has a drop down to "Grant access to AWS services" before clicking the orange "Create indentity pool".
 
-1. Click Create a user pool. My notes about each menu item:
+When creating a user pool, my notes about each menu item:
 
-   * (Pool) Name - convention?
-   * <a href="#UserAttributes">(User) Attributes - see below</a> (Click "Also sign-in with verified email address" because email addresses are uniqu, but requires users to have one)
+   * (Pool) Name - QUESTION: What is the naming convention?
+
+   <a name="UserAttributes"></a>
+
+   * (User) Attributes - cClick "Also sign-in with verified email address" because email addresses are uniqu, but requires users to have one). Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained:<br />
+   <img width="949" alt="aws-cognito-attribs-1898x778" src="https://user-images.githubusercontent.com/300046/149676615-8b65c35b-2b89-4cdd-8db1-3db7fef23d3e.png">
+
    * Policies - password minimum length. Selecting "Only allow administrators to create users" requires more toil by administrators.
    * MFA and verifications - recovery; attributes to verify
    * Message customizations
@@ -46,23 +53,19 @@ has a drop down to "Grant access to AWS services" before clicking the orange "Cr
 
 Users can also be added using a CSV import.
 
-<a name="UserAttributes"></a>
+## Workflow thru API Gateway
 
-## User Attributes
+   * https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
+   * https://www.youtube.com/watch?v=o7OHogUcRmI
+   * https://www.youtube.com/watch?v=al5I9v5Y-kA
+   * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw">VIDEO</a>:
+   <br /><br />
 
-Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained:
-<img width="949" alt="aws-cognito-attribs-1898x778" src="https://user-images.githubusercontent.com/300046/149676615-8b65c35b-2b89-4cdd-8db1-3db7fef23d3e.png">
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png">
+<img width="631" alt="aws-cognito-thru-api-631x518" src="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png"></a>
 
+1) Users from a web browser typically invoke JavaScript which addresses an Amazon API Gateway, which controls access. 2) If authenticated, the API Gateway invokes a JWT Authorizer which 3) connects Amazon Cognito. 4) Cognito returns to JWT Authorizer 5) back to API Gateway, which 6) invokes a Lambda that 7) returns to the user's browser.
 
-
-## Thru API Gateway
-
-This article describes how to use AWS Cognito through API Gateway 
-to authorize users via a Python Lambda program.
-
-NOTE: There is a biological Cognito, which is not this topic.
-
-* https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
 
 
 ## Laptop Setup
@@ -324,6 +327,9 @@ WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access
 <a name="HTTP_API"></a>
 
 ## HTTP API
+
+   * https://www.youtube.com/watch?v=yCAlJv6zfn4
+   <br /><br />
 
 https://sanderknape.com/2020/08/amazon-cognito-jwts-authenticate-amazon-http-api/
 Using Amazon Cognito JWTs to authenticate with an Amazon HTTP API
