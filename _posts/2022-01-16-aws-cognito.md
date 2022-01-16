@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Cognito (from AWS)"
-excerpt: "Federate authentication of users to AWS Cognito through API Gateway via Python Lambda"
+title: "AWS Cognito (federation)"
+excerpt: "Federate authentication of authentication through API Gateway via Python Lambda"
 tags: [aws, security, management]
-date: "2021-02-01"
-file: "cognito"
+date: "2021-01-16"
+file: "aws-cognito"
 image:
 # python-samples-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
@@ -18,6 +18,8 @@ comments: true
 
 This article describes how to use AWS Cognito through API Gateway 
 to authorize users via a Python Lambda program.
+
+* https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
 
 ## The sequence:
 
@@ -38,7 +40,7 @@ https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom
 
 ## Video course
 
-Code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">https://github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
+Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
 
 Each high-level folder is a workspace defined in package.json:
 
@@ -153,6 +155,12 @@ OpenID is designed to only allow a service provider (Google) to initiate the ide
 
 ## Cognito Terraform
 
+https://registry.terraform.io/modules/rhythmictech/elb-cognito-auth/aws/latest
+https://github.com/rhythmictech/terraform-aws-elb-cognito-auth
+provides Terraform that creates an ALB listener rule configured for Cognito authentication using a local user pool. It can also be used with a supplied Cognito user pool allowing for greater customizability. This module is meant to be a better solution when you need to protect web assets and don't want to use server-side HTTP basic authentication to keep the general public out of a staging site. 
+
+Among other benefits, this means your backend configuration does not have to change to restrict access and also means that users can have individual usernames/passwords that they can perform account resets on.
+
 Cognito...
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_resource_server">resource server</a> for a scope.
 
@@ -175,3 +183,17 @@ assume_role_policy
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cognito_user_pool_clients">clients data</a>
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_ui_customization">UI customization</a>
 
+
+## HTTP API
+
+https://sanderknape.com/2020/08/amazon-cognito-jwts-authenticate-amazon-http-api/
+Using Amazon Cognito JWTs to authenticate with an Amazon HTTP API
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html
+Amazon Cognito can be used as a JWT issuer for REST APIs.
+
+PROTIP: AWS HTTP API costs 30% less than REST API calls.
+
+HTTP APIs can be edge-optimized, private, and use AWS WAF with resource policies and certificates for backend authentication.
+
+HTTP APIs can have execution logs and use X-Ray tracing via Access logs to Amazon Kinesis Data Firehose (REST APIs can't)
