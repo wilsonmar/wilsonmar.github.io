@@ -275,7 +275,7 @@ But note that it's for work across all pillars together, not for individual pill
 
 <hr />
 
-## Training on WA
+## Microsoft Training on WA
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
 Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
@@ -308,6 +308,7 @@ It is a "JAM" stack app where JavaScript in each user's browser interacts with a
 STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below:
 Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
 
+<hr />
 
 ### General Design Principles
 
@@ -539,11 +540,7 @@ Questions:
 
    1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
 
-<a target="_blank" href="https://amzn.to/3j8TTXS" title="07 MAY 2020">Security Hub Foundational Security Best Practices</a> automates the <a target="_blank" href="https://aws.amazon.com/blogs/security/top-10-security-items-to-improve-in-your-aws-account/">Top 10 security items to improve in your AWS account</a>
 
-Amazon GuardDuty senses threats
-
-Amazon Detective organizes various relationships in a <strong>Graph visualization</strong> to see how events are interconnected.
 
 <hr />
 
@@ -1564,13 +1561,33 @@ https://www.youtube.com/watch?v=XHwFJDw9Mec
 AWS Cost Optimization: Tools and Methods to Reduce Your Spend With Us
 AWS Events
 
+<hr />
+
+<a name="WA-Review"></a>
+
+## Well-Architected Framework Review
+
+   Enterprise subscribers ($15,000/month) can have AWS Solution Architects (from <a target="_blank" href="https://aws.amazon.com/professional-services/">Amazon Professional Services</a>) conduct a "Well-Architected Review" of advice covered in the Well-Architected Framework described in <a target="_blank" href="https://www.aws.training/learningobject/curriculum?id=12049">this free video training</a> and books (in <a target="_blank" href="https://d1.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf">pdf</a> and Kindle).
 
 
+   
 ### Apptio CloudAbility
 
 <hr />
 
 ## References
+
+In the deprecated AWS classroom training site, <a target="_blank" href="https://www.aws.training/learningobject/curriculum?id=12049">curriculum?id=12049</a> provides a separate document/video summarizing each of the topics covered in the Well-Architected Framework:
+
+   * Cost Optimization
+   * Performance
+   * Security
+   * Fault Tolerance
+   * Service Limits
+   <br /><br />
+
+https://explore.skillbuilder.aws/learn
+https://explore.skillbuilder.aws/learn/learning_plan/view/91/security-learning-plan
 
 https://tutorialsdojo.com/aws-well-architected-framework-five-pillars/
 

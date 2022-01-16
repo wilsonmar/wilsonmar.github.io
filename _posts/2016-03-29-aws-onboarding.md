@@ -17,9 +17,9 @@ comments: true
 {% include _toc.html %}
 
 <a target="_blank" href="https://wilsonmar.github.io/aws-onboarding/">
-This</a> is a hands-on tutorial to get new users setup to effectively access and use the AWS cloud. Here you do some action and explanations and PROTIP advice is provided. PROTIPs included how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by the pros.
+This</a> is a hands-on tutorial to get new users setup to effectively access and use the AWS cloud - without tedious "talking head" lectures. Here you do some action and explanations. "PROTIP" tags highlight my advice, found in few other places.
 
-This is adapted from what is in <a target="_blank" href="https://aws.amazon.com/getting-started/">Amazon's Getting Started tutorials</a>.
+Covered here are instructions on how to install and use AWS CLI automation, smart phone apps, and 3rd party tools used by pros.
 
 
 ## GUI, CLI, API
@@ -32,34 +32,22 @@ There are several ways to interact with AWS:
 
    * Write a program that makes calls to AWS's <a href="#APIKeys">API (Application Programming Interface)</a>. This is the mechanism behind the scenes by <a href="#MobileApps">mobile apps</a>.
 
+   * On Mobile apps
+
 <hr />
 
-<a name="APIKeys"></a>
-
-## API Keys
-
-   API Keys are assigned to developers using the AWS CLI (Command Line Interface) for programmatic (by a program) rather than manual clicking and typing on a keyboard. 
-
-   API keys make use of pairs of public (access) key and private (secret) key which stand in for real users typing in passwords.
-
-## SSH Keys
-
-    SSH keys are used only with AWS CodeCommit to access their repositories.
-
-
-This document describes <a href="#SecureCredential">steps and scripts to store your AWS credentials securely (below)</a>, not in clear text as described by AWS.
 
 <a name="MobileApps"></a>
 
 ## Mobile apps for smart phones
 
-1. On your Android, Get the <strong>AWS Console</strong> installed:
+1. To get the <strong>AWS Console</strong> on your mobile phone:
 
-   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">On Google Android mobile phones</a>
+   <a target="_blank" href="http://www.amazon.com/AWS-Mobile-LLC-Console/dp/B00ATSN730">install on Google Android mobile phones</a>
 
-2. On your iOS, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. It's from "AMZN Mobile LLC" which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
+   On your iOS, open the Store app and search to get <a target="_blank" href="https://itunes.apple.com/us/app/aws-console/id580990573?mt=8">AWS Console</a>. It's from "AMZN Mobile LLC" which creates <a target="_blank" href="https://itunes.apple.com/us/developer/amzn-mobile-llc/id297606954?mt=8">all Amazon's apps</a>.
 
-   PROTIP: These app got low review scores because the app only lets people read-only,
+   PROTIP: These apps got low review scores because the app only lets people read-only,
    but not change anything. And the 2FA is clunky.
 
 3. In the Store app, search for "<strong>Google Authenticator</strong>" and install it
@@ -67,8 +55,7 @@ This document describes <a href="#SecureCredential">steps and scripts to store y
 
    PROTIP: Many keep the Authenticator running on their smart phone.
 
-TODO: To avoid embedding an access key with the app (even in encrypted storage), use Amazon Cognito to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
-
+1. To avoid embedding an access key with the app (even in encrypted storage), use <a target="_blank" href="https://wilsonmar.github.io/cognito">Amazon Cognito</a> to manage user identity by authenticating users using Login with Amazon, Facebook, Google, or any OpenID Connect (OIDC)–compatible identity provider.<a target="_blank" href="https://aws.amazon.com/blogs/mobile/using-the-amazon-cognito-credentials-provider/">*</a>
 
 
 <a name="AWS_Account"></a>
@@ -80,6 +67,21 @@ In enterprises, identify the Administrator who dispenses user accounts.
 If you're the Global Administrator, see my htts://wilsonmar.github.io/aws-iam
 
 The remainder of this is for users and super users.
+
+
+<a name="APIKeys"></a>
+
+## API Keys
+
+   API Keys are assigned to developers using the AWS CLI (Command Line Interface) for programmatic (by a program) rather than manual clicking and typing on a keyboard. 
+
+   API keys make use of pairs of public (access) key and private (secret) key which stand in for real users typing in passwords.
+
+## SSH Keys
+
+SSH keys (such as what Linux machines use) are used only with AWS CodeCommit to access their repositories.
+
+See <a href="#SecureCredential">steps and scripts to store your AWS credentials securely (below)</a>, not in clear text as described by AWS.
 
 
 
@@ -1180,6 +1182,8 @@ aws_secret_access_key = 123456782Nwk156aPF0SxZ8KGY+RrhEbq3AIHUSS
 
 
 ## References
+
+This is adapted from what is in <a target="_blank" href="https://aws.amazon.com/getting-started/">Amazon's Getting Started tutorials</a>.
 
 TODO: Put each AWS CLI command in a script at
 https://medium.com/circuitpeople/aws-cli-with-jq-and-bash-9d54e2eabaf1
