@@ -813,15 +813,13 @@ At Pluralsight:
 
    * <a target="_blank" href="https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/">"The Complete Elixir and Phoenix Bootcamp" (17 hours)</a> - Master Functional Programming techniques with Elixir and Phoenix while learning to build compelling web applications!" by Stephen Grider, whose code for the course is different branches of https://github.com/StephenGrider/ElixirCode from 2018, with <a target="_blank" href="https://app.diagrams.net/#Hwilsonmar%2FElixirCode%2Fmaster%2Fdiagrams.xml">digrams</a>.
 
-   * <a name="[3]">[3]</a> <a target="_blank" href="https://www.udemy.com/course/functional-programming-using-elixir-the-complete-course/">"Functional Programming using Elixir - The Complete Course"</a> (9 hours) Learn the cutting edge functional programming language Elixir and build fault tolerant software" from Eduonix Learning Solutions, Eduonix-Tech .
+   * <a name="[3]">[3]</a> <a target="_blank" href="https://www.udemy.com/course/functional-programming-using-elixir-the-complete-course/">"Functional Programming using Elixir - The Complete Course"</a> (9 hours) Learn the cutting edge functional programming language Elixir and build fault tolerant software" from Eduonix Learning Solutions, Eduonix-Tech.
 
-
-
-
-At time of writing, these services did not have:
+At time of writing, these services did not return content after a search for "elixir":
 
    * <a target="_blank" href="https://acloudguru.com/search?s=elixir">ACloudGuru.com</a>
-   * <a target="_blank" href="https://cloudacademy.com/search/?q=elixir">CodeAcademy.com</a>
+   * <a target="_blank" href="https://cloudacademy.com/search/?q=elixir">CloudAcademy.com</a>
+   * <a target="_blank" href="https://codeacademy.com/search/?query=elixir">CodeAcademy.com</a>
    * <a target="_blank" href="https://www.coursera.org/search?query=elixir&">coursera.com</a>
    * <a target="_blank" href="https://www.datacamp.com/search?q=elixir">datacamp.com</a>
    * <a target="_blank" href="https://www.edx.org/search?q=elixir">edx.org</a>
