@@ -16,10 +16,47 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<img align="right" width=“199” alt=“aws-cognito-feds-398x1168" src=“https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png“>
-AWS Cognito enables federated authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, SAML to Microsoft Active Directory, and custom mechanisms.
+<img align="right" width="199" alt="aws-cognito-feds-398x1168" src="https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png">
+AWS Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, SAML to GitHub or Microsoft Active Directory, and custom mechanisms.
 
-PROTIP: A developer accounts needs to be setup with each third-party (Facebook).
+PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for AWS to interact with.
+
+#### Cognito service landing page
+
+Version 1 of the Amazon GUI for Cognito at<br />
+https://us-west-2.console.aws.amazon.com/cognito/welcome?region=us-west-2<br />
+enables you to choose between "Manage User Pools" (the directory of users in Amazon Cognito) or "Manage Identity Pools" for Authorization of temporary AWS user credentials.
+
+Version 2 of the Amazon GUI for Cognito at<br />
+https://us-west-2.console.aws.amazon.com/cognito/v2/home?region=us-west-2#<br />
+has a drop down to "Grant access to AWS services" before clicking the orange "Create indentity pool".
+
+1. Click Create a user pool. My notes about each menu item:
+
+   * (Pool) Name - convention?
+   * <a href="#UserAttributes">(User) Attributes - see below</a> (Click "Also sign-in with verified email address" because email addresses are uniqu, but requires users to have one)
+   * Policies - password minimum length. Selecting "Only allow administrators to create users" requires more toil by administrators.
+   * MFA and verifications - recovery; attributes to verify
+   * Message customizations
+   * Tags
+   * Devices
+   * App clients
+   * Triggers
+   <br /><br />   
+
+Users can also be added using a CSV import.
+
+<a name="UserAttributes"></a>
+
+## User Attributes
+
+Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained.
+
+<img width="949" alt="aws-cognito-attribs-1898x778" src="https://user-images.githubusercontent.com/300046/149676615-8b65c35b-2b89-4cdd-8db1-3db7fef23d3e.png">
+
+
+
+## Thru API Gateway
 
 This article describes how to use AWS Cognito through API Gateway 
 to authorize users via a Python Lambda program.
@@ -47,13 +84,10 @@ https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom
 
 ## Video course
 
-CodeAcademy:
-
 <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
-   * <a target="_blank" href="https://cloudacademy.com/course/amazon-cognito/  cognito-lecture-three/">VIDEO: "The Basics of Cognito"</a> by Will Meadows
+   * <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
 
-   * <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a>
    * <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a>
    * <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a>
    <br /><br />
@@ -140,6 +174,7 @@ Example Amazon Cognito message event
 }</pre>
 
 
+
 https://medium.com/@houzier.saurav/aws-cognito-with-python-6a2867dd02c6
 
 https://github.com/JinlianWang/aws-lambda-authentication-python
@@ -151,6 +186,8 @@ Note: the following instructions require you to be using Pipenv for handling you
 ## Authentication providers
 
 <a target="_blank" href="https://www.linkedin.com/learning/aws-for-architects-advanced-security/secure-authentication-with-cognito" title="by Lynn Langit">VIDEO</a>:
+
+When an InitiateAuth operation is successful, Cognito responds with either a token or (another) challenge.
 
 <a name="SAML"></a>
 
@@ -199,7 +236,7 @@ Terraform for <a target="_blank" href="https://registry.terraform.io/providers/h
 
 ### Client SRP Auth
 
-<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client</a>, which sets up <a href="#SRP_auth">SRP auth</a> with pinpoint analytics.
+<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client</a>, which sets up <a href="#SRP_auth">SRP auth</a> with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel marketing communication analytics and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
 
 The SRP (Secure Remote Password) protocol is an augmented password-authenticated key exchange (PAKE) protocol, designed so an attacker who steals server data would not be able to masquerade as the client (unless they first perform a brute force search for the password). <a target="_blank" href="https://www.wikiwand.com/en/Secure_Remote_Password_protocol">A Wiki entry</a> says it was specifically designed to work around existing patents.
 
@@ -220,6 +257,7 @@ To prove that the user knows their password, client and server exchange non-sens
 <a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
 Ramesh Lingappan shows how to install his code for a demo</a>.
 
+
 <a name="UserPools"></a>
 
 ### Cognito User Pools and groups
@@ -231,6 +269,9 @@ Cognito normalizes secrets as CUP (Cognito User Pool) tokens (pronounced "cup to
 But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#IdentityPools">Amazon Cognito Identity Pool</a>.
 
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool">Terraform to setup user pool</a> with SMS and software token MFA, and account recovery.
+
+
+### User Groups
 
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_group">Terraform to setup user group</a>
 
@@ -279,6 +320,8 @@ CAUTION: Currently, each dataset is limited to 1MB because the entire dataset is
 
 WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access the same data as well as to collaborate in real time on shared data.
 
+<a name="HTTP_API"></a>
+
 ## HTTP API
 
 https://sanderknape.com/2020/08/amazon-cognito-jwts-authenticate-amazon-http-api/
@@ -292,5 +335,4 @@ PROTIP: AWS HTTP API costs 30% less than REST API calls.
 HTTP APIs can be edge-optimized, private, and use AWS WAF with resource policies and certificates for backend authentication.
 
 HTTP APIs can have execution logs and use X-Ray tracing via Access logs to Amazon Kinesis Data Firehose (REST APIs can't)
-
 
