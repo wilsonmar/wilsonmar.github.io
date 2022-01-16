@@ -339,6 +339,7 @@ AWS published these General Design Principles:
    * <a target="_blank" href="https://www.amazon.com/Security-Pillar-Well-Architected-Framework-Whitepaper-ebook/dp/B08CF64XRV/" title="July 5, 2020">56 pages on Kindle (mobile) app</a>
    * <a target="_blank" href="https://wellarchitectedlabs.com/security/">AWS Well-Architected Labs for Security</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=i-ErdXn9DFA">VIDEO: AWS Tech talk</a>
+   * <a target="_blank" href="https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html">AWS Security Reference Architecture (AWS SRA)</a>  is a holistic set of guidelines for deploying the full complement of AWS security services in a multi-account environment, with <a target="_blank" href="https://github.com/aws-samples/aws-security-reference-architecture-examples">examples in GitHub</a> for Customizations for AWS <a target="_blank" href="https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-with-control-tower.html">Control Tower</a> (CFCT).
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/security/">Microsoft Security Documentation</a>
    
