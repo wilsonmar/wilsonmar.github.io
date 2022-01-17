@@ -131,7 +131,11 @@ C. The <strong>webapp</strong> folder
 
 ## To make it all happen:
 
-### &nbsp; &nbsp; &nbsp; A. Create the Amazon Cognito user pool
+* Cognito menu for reference:
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png">
+   <img align="right" alt="aws-cognito-menu-221x534" src="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png"></a>
+
+   ### A. Create the Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
@@ -166,7 +170,7 @@ C. The <strong>webapp</strong> folder
 
 ### Dev Laptop Setup
 
-To work with the GitHub,
+To work with GitHub,
 
 https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
 
