@@ -23,7 +23,9 @@ Amazon Cognito is an authentication and user management service that enables <st
 
 PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for Cognito to interact with.
 
-1. High level short summary <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
+High level short summaries:
+
+1. <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
 1. <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
 
@@ -57,26 +59,18 @@ A simple example is to access GitHub Pages, explained by <a target="_blank" href
 A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
 
 
-### Using Amazon Firehose streaming
+### Using S3, CloudFront, Kinesis Firehose streaming
 
 Add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
 
+Also Athena database and AWS Glacier to archive history.
+
+<hr />
 
 ## Code for Reference Workflow
 
 Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
 
-
-### Dev Laptop Setup
-
-https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
-
-* AWS CLI2
-* Python Boto3
-* AWS Cognito
-<br /><br />
-
-QUESTION: How does client JavaScript use the AWS Amplify API?
 
 Each high-level folder is a workspace defined in package.json:
 
@@ -108,7 +102,7 @@ Its workflow:
 <br /><br />
 
 
-### Creating the Amazon Cognito user pool
+### A. Create the Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
@@ -117,7 +111,7 @@ Its workflow:
 5. Configure App client Identity Provider (IdP) and other settings
 6. Add users manually or import several at a time
 
-   ### Setting up an authorization endpoint
+   ### B. Set up an authorization endpoint
 
 1. Creating the authorization Lambda function
 1. Writing the function code
@@ -125,20 +119,34 @@ Its workflow:
 1. Testing the function
 1. Creating an authorization endpoint
    
-   ### Setting up the AWS API Gateway Authorization
+   ### C. Set up AWS API Gateway Authorization
 
 1. Creating an authorizer
 1. Setting up our endpoint authorization
 
-   ### Testing the Secure API Gateway
+   ### D. Test the Secure API Gateway
    
 1. Testing the authorization endpoint
 1. Testing the secure endpoint
 
-   ### Deletes
+   ### E. Delete Cognito Users
    
 1. <a target="_blank" href="https://iotespresso.com/delete-a-cognito-user-using-aws-lambda-python/">Delete Cognito User</a>
 
+<hr />
+
+### Dev Laptop Setup
+
+To work with the GitHub,
+
+https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
+
+* AWS CLI2
+* Python Boto3
+* AWS Cognito
+<br /><br />
+
+QUESTION: How does client JavaScript use the AWS Amplify API?
 
 <hr />
 
@@ -158,9 +166,9 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 ## Create Cognito User Pool using GUI
 
 
-## Cognito service landing page
+### Cognito service landing page
 
-1. GUI
+1. Cognito Management Console GUI:
 
    Version 1 of the Amazon GUI for Cognito at<br />
    https://us-west-2.console.aws.amazon.com/cognito/welcome?region=us-west-2<br />
@@ -174,40 +182,39 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
 1. In Version 1 URL:  
 
-   When creating a user pool, my notes about each menu item:
+   <a name="UserPoolSetup"></a>
 
-   * (Pool) Name - QUESTION: What is the naming convention?
+   ### Cognito User Pool Setup
+
+   Cognito User Pools (CUPs) are referenced during sign-up and sign-in operations.
+
+   Cognito normalizes secrets as CUP (Cognito User Pool) tokens (pronounced "cup tokens") for use with AWS API Gateway and Lambda.
+
+   But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#IdentityPools">Amazon Cognito Identity Pool</a>.
+
+   <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool">Terraform to setup user pool</a> with SMS and software token MFA, and account recovery.
+
+   When creating a user pool:
+
+* (Pool) Name - QUESTION: What is the naming convention?
 
    <a name="UserAttributes"></a>
 
-   * (User) Attributes - cClick "Also sign-in with verified email address" because email addresses are uniqu, but requires users to have one). Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained:<br />
+* (User) Attributes - cClick "Also sign-in with verified email address" because email addresses are uniqu, but requires users to have one). Cognito manages <strong>attribute</strong> values for each user, and ensures that required attributes are obtained:<br />
+
    <img width="949" alt="aws-cognito-attribs-1898x778" src="https://user-images.githubusercontent.com/300046/149676615-8b65c35b-2b89-4cdd-8db1-3db7fef23d3e.png">
 
-   * Policies - password minimum length. Selecting "Only allow administrators to create users" requires more toil by administrators.
-   * MFA and verifications - recovery; attributes to verify
-   * Message customizations
-   * Tags
-   * Devices
-   * App clients
-   * Triggers
-   <br /><br />   
-
-Users can also be added using a CSV import.
-
-<a name="UserPools"></a>
-
-### Cognito User Pool Setup
-
-Cognito User Pools (CUPs) are referenced during sign-up and sign-in operations.
-
-Cognito normalizes secrets as CUP (Cognito User Pool) tokens (pronounced "cup tokens") for use with AWS API Gateway and Lambda.
-
-But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#IdentityPools">Amazon Cognito Identity Pool</a>.
-
-<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool">Terraform to setup user pool</a> with SMS and software token MFA, and account recovery.
+* Policies - password minimum length. Selecting "Only allow administrators to create users" requires more toil by administrators.
+* MFA and verifications - recovery; attributes to verify
+* Message customizations
+* Tags
+* Devices
+* App clients
+* Triggers
+<br /><br />   
 
 
-## User Pool App Clients Config
+### User Pool App Clients Config
 
 <a name="CreateAppClients"></a>
 
@@ -262,6 +269,7 @@ But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#Ident
 
    Alternately, users can also be added manually.
 
+<hr />
 
 ## Coding
 
