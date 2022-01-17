@@ -23,7 +23,9 @@ Amazon Cognito is an authentication and user management service that enables <st
 
 Hosting on AWS means that the SaaS service can scale to a lot users around the world.
 
-High-level short summary: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
+PROTIP: This blog presents configuration using both the AWS GUI Management Console and Terraform coding to provide repeatability and ease of reconfiguration (moving from test to prod on several regions).
+
+High-level short summary of Cognito: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
 <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
 compares the various approaches:
@@ -39,8 +41,34 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 
 There are several options, from simple to more complex/full featured:
 
+https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
 
-### Basic workflow to GitHub Pages
+
+### Cognito in ReactJs Serverless in AWS Amplify
+
+<a target="_blank" href="https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/">AWS workshop: "Build a Serverless Web Application: with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito"</a><br />
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/149707064-243dd76b-0c43-4e78-be1a-12718b25705f.png">
+<img alt="aws-cognito-serverless-974x424" width="974" src="https://user-images.githubusercontent.com/300046/149707064-243dd76b-0c43-4e78-be1a-12718b25705f.png"></a>
+
+Code for the above is at <a target="_blank" href="https://github.com/jspruance/aws-cognito-tutorial-complete">github.com/jspruance/aws-cognito-tutorial-complete</a>
+
+Modules:
+   1. HOST A STATIC WEBSITE (ReactJs with AWS Amplify hosting)
+   2. MANAGE USERS (using Cognito User Pools)
+   3. BUILD A SERVERLESS BACKEND
+   4. DEPLOY A RESTFUL API
+   5. TERMINATE RESOURCES
+   <br /><br />
+
+https://github.com/jspruance/aws-cognito-tutorial-starter
+uses https://github.com/facebook/create-react-app
+to Create React apps with no build configuration.
+
+https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/?trk=gs_card
+
+AWS Amplify API Console provides hosting of CSS, libraries, etc. to JavaScript clients.
+
+### Cognito to GitHub Pages
 
 A simple example is to access GitHub Pages, explained by <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
 
@@ -72,36 +100,14 @@ A more complex example using <strong>S3 buckets</strong> is the <a target="_blan
 Add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a> Athena database and AWS Glacier to archive history.<br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
 
 
-### Cognito in ReactJs Serverless
-
-<a target="_blank" href="https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/">AWS workshop: "Build a Serverless Web Application: with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito"</a> with code at <a target="_blank" href="https://github.com/jspruance/aws-cognito-tutorial-complete">github.com/jspruance/aws-cognito-tutorial-complete</a><br />
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/149707064-243dd76b-0c43-4e78-be1a-12718b25705f.png">
-<img alt="aws-cognito-serverless-974x424" width="974" src="https://user-images.githubusercontent.com/300046/149707064-243dd76b-0c43-4e78-be1a-12718b25705f.png"></a>
-Modules:
-   1. HOST A STATIC WEBSITE (ReactJs with AWS Amplify hosting)
-   2. MANAGE USERS (using Cognito User Pools)
-   3. BUILD A SERVERLESS BACKEND
-   4. DEPLOY A RESTFUL API
-   5. TERMINATE RESOURCES
-   <br /><br />
-
-https://github.com/jspruance/aws-cognito-tutorial-starter
-uses https://github.com/facebook/create-react-app
-to Create React apps with no build configuration.
-
-https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/?trk=gs_card
-
-AWS Amplify API Console provides hosting of CSS, libraries, etc. to JavaScript clients.
-
-
 ### iOS application using Cognito
 
-David Tucker's sample iOS application that uses Cognito User Pools at
+<a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>'s sample iOS application that uses Cognito User Pools is at
 <a target="_blank" href="
 https://github.com/davidtucker/CognitoSampleApplication">
 https://github.com/davidtucker/CognitoSampleApplication</a>
 
-Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">Pluralsight video series "Building Serverless Applications on AWS"</a>.
+<a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> is explained in his <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">Pluralsight video series "Building Serverless Applications on AWS"</a>.
 
 Each high-level folder is a workspace defined in package.json:
 
@@ -120,8 +126,6 @@ B. The <strong>services</strong> folder
 C. The <strong>webapp</strong> folder
    * Frontend ReactJs app built in JavaScript
    <br /><br />
-
-https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
 
 <hr />
 
@@ -190,7 +194,7 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
 <a name="CreateUserPool"></a>
 
-## Create Cognito User Pool using GUI
+## Create Cognito User Pool
 
 See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html
 
@@ -280,7 +284,7 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 
    <a name="CreateDomain"></a>
    
-   ## Create Cognito Domain
+   ### Create Cognito Domain
 
 1. Click on "Domain name" on the Configuration menu.
 
