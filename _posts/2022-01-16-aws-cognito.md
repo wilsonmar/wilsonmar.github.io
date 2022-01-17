@@ -317,9 +317,9 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
    * https://github.com/terraform-aws-modules/terraform-aws-apigateway-v2
    <br /><br />
 
-1. Cognito's Issuer URL for your region:
+1. Get the Cognito Pool Id and ARN within its "General Settings" menu (such as <tt>us-east-1.p40lmEB0d</tt> to construct Cognito's Issuer URL for your region:
 
-   <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com</tt>
+   <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com/<strong>us-east-1.p40lmEB0d</strong></tt>
 
 
 ## Use AWS Directory
