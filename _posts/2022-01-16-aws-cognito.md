@@ -73,15 +73,15 @@ AWS Amplify API Console provides hosting of CSS, libraries, etc. to JavaScript c
 
 A simple example is to access GitHub Pages, explained by <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
 
-### Workflow using the AWS API Gateway:
+### Cognito Workflow using AWS API Gateway
 
-   * https://www.youtube.com/watch?v=o7OHogUcRmI
+   * <a target="_blank" href="https://www.youtube.com/watch?v=o7OHogUcRmI">Use JWT Authorizers with Amazon Cognito and API Gateway</a>
    * https://www.youtube.com/watch?v=al5I9v5Y-kA
    * https://www.youtube.com/watch?v=yCAlJv6zfn4
    * <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html">DOCS: "Amazon Cognito can be used as a JWT issuer for REST APIs"</a>
    * https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
    * <a target="_blank" href="https://sanderknape.com/2020/08/amazon-cognito-jwts-authenticate-amazon-http-api/">BLOG: "Using Amazon Cognito JWTs to authenticate with <a href="#HTTP_API">Amazon HTTP APIs</a>"
-   * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw">VIDEO</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw" title="by ">VIDEO</a> by <a target="_blank" href="https://www.linkedin.com/in/srcecde/">Chirag Rathod</a>
    <br /><br />
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png">
@@ -138,7 +138,7 @@ C. The <strong>webapp</strong> folder
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png">
    <img align="right" alt="aws-cognito-menu-221x534" src="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png"></a>
 
-### &nbsp; &nbsp; &nbsp; A. Create the Amazon Cognito user pool
+### &nbsp; &nbsp; &nbsp; A. Create Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
@@ -163,8 +163,8 @@ C. The <strong>webapp</strong> folder
 
    ### D. Test the Secure API Gateway
    
-1. Testing the authorization endpoint
-1. Testing the secure endpoint
+1. Test the authorization endpoint
+1. Test the secure endpoint
 1. <a href="#WatchJWT">View JWT in CloudWatch Logs</a>
 
    ### E. Delete Cognito Users
@@ -311,6 +311,8 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 
    PROTIP: Flexibility (and less toil) in specifying different regions is why automation IaC is useful -- specify the region in one place and it gets automatically applied without mistakes every time.
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=nwtP-aBXty0&list=RDCMUCwDlyuX3Fkg5WNBufLnH6dw&index=14">VIDEO: Lambda authorizer</a>
+
    <a name="AddAudience"></a>
 
    ### Set up endpoint authorization
@@ -352,7 +354,7 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 
    ### identity_pool_roles_attachment
 
-TODO:
+   TODO:
 
    <a name="WatchJWT"></a>
 
@@ -369,6 +371,7 @@ TODO:
 1. Click on a Log stream ID.
 1. Click on a Log events entry to expand it.
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=1nXy8nQ_6PI">VIDEO: JWT Structure dynamically illustrated</a>
 
 <hr />
 
