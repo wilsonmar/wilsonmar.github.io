@@ -23,11 +23,14 @@ Amazon Cognito is an authentication and user management service that enables <st
 
 Hosting on AWS means that the SaaS service can scale to a lot users around the world.
 
-High-level short summaries:
+High-level short summary: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
-   * <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
-
-   * <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
+<a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
+compares the various approaches:
+   * AWS IAM allows you to configure different OpenID or SAML Identity providers for each of your AWS accounts.
+   * AWS SSO allows you to create a Single Sign-on approach to access multiple AWS accounts within an AWS Organization using a single identity provider for all.
+   * AWS Cognito enables secure authentication to your web or mobile applications using both SAML 2.0 and web identity federation.
+   <br /><br />
 
 PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for Cognito to interact with.
 
@@ -35,6 +38,7 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 ## Cognito usage workflows
 
 There are several options, from simple to more complex/full featured:
+
 
 ### Basic workflow to GitHub Pages
 
@@ -56,23 +60,48 @@ A simple example is to access GitHub Pages, explained by <a target="_blank" href
 
 1) Users from a web browser typically invoke JavaScript which addresses an Amazon API Gateway, which controls access. 2) If authenticated, the API Gateway invokes a JWT Authorizer which 3) connects Amazon Cognito. 4) Cognito returns to JWT Authorizer 5) back to API Gateway, which 6) invokes a Lambda that 7) returns to the user's browser.
 
-### Using S3 buckets
+https://github.com/ghdna/cognito-express Authenticates API requests on a Node application by verifying the JWT signature of AccessToken or IDToken generated 
+
+### Cognito with S3 buckets
 
 A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
 
 
-### Using S3, CloudFront, Kinesis Firehose streaming
+### Cognito with S3, CloudFront, Kinesis Firehose streaming
 
-Add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
+Add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a> Athena database and AWS Glacier to archive history.<br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
 
-Also Athena database and AWS Glacier to archive history.
 
-<hr />
+### Cognito in ReactJs Serverless
 
-## Code for Reference Workflow
+<a target="_blank" href="https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/">AWS workshop: "Build a Serverless Web Application: with AWS Lambda, Amazon API Gateway, AWS Amplify, Amazon DynamoDB, and Amazon Cognito"</a> with code at <a target="_blank" href="https://github.com/jspruance/aws-cognito-tutorial-complete">github.com/jspruance/aws-cognito-tutorial-complete</a><br />
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/149707064-243dd76b-0c43-4e78-be1a-12718b25705f.png">
+<img alt="aws-cognito-serverless-974x424" width="974" src="https://user-images.githubusercontent.com/300046/149707064-243dd76b-0c43-4e78-be1a-12718b25705f.png"></a>
+Modules:
+   1. HOST A STATIC WEBSITE (ReactJs with AWS Amplify hosting)
+   2. MANAGE USERS (using Cognito User Pools)
+   3. BUILD A SERVERLESS BACKEND
+   4. DEPLOY A RESTFUL API
+   5. TERMINATE RESOURCES
+   <br /><br />
 
-Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
+https://github.com/jspruance/aws-cognito-tutorial-starter
+uses https://github.com/facebook/create-react-app
+to Create React apps with no build configuration.
 
+https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/?trk=gs_card
+
+AWS Amplify API Console provides hosting of CSS, libraries, etc. to JavaScript clients.
+
+
+### iOS application using Cognito
+
+David Tucker's sample iOS application that uses Cognito User Pools at
+<a target="_blank" href="
+https://github.com/davidtucker/CognitoSampleApplication">
+https://github.com/davidtucker/CognitoSampleApplication</a>
+
+Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">Pluralsight video series "Building Serverless Applications on AWS"</a>.
 
 Each high-level folder is a workspace defined in package.json:
 
@@ -94,22 +123,15 @@ C. The <strong>webapp</strong> folder
 
 https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
 
-TODO: Its workflow:
+<hr />
 
-1. User clicks on static web page
-2. Request login
-3. Python Lambda program trigger
-4. API Gateway 
-5. AWS Cognito (or Auth0)
-<br /><br />
-
-To make it all happen:
+## To make it all happen:
 
 ### &nbsp; &nbsp; &nbsp; A. Create the Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
-3. Create domain name
+3. <a href="#CreateDomain">Create domain name</a>
 4. <a href="#CreateResourceServer">Create resource server with custom scopes</a>
 5. Configure App client Identity Provider (IdP) and other settings
 6. Add users manually or import several at a time
@@ -124,7 +146,7 @@ To make it all happen:
    
    ### C. Set up AWS API Gateway Authorization
 
-1. Creating an authorizer
+1. <a href="#CreateAPIAuthorizer">Create an API authorizer</a>
 1. Setting up our endpoint authorization
 
    ### D. Test the Secure API Gateway
@@ -150,7 +172,8 @@ https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom
 * etc.
 <br /><br />
 
-QUESTION: How does client JavaScript use the AWS Amplify API?
+https://github.com/jspruance/aws-cognito-tutorial-starter
+ starter ReactJS UI for the "Create a Serverless App" tutorial series by J Spurance
 
 <hr />
 
@@ -169,6 +192,7 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
 ## Create Cognito User Pool using GUI
 
+See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html
 
 ### Cognito service landing page
 
@@ -244,6 +268,7 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
 1. Optionally with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel <a target="_blank" href="http://aws.amazon.com/mobileanalytics/faqs/">marketing communication analytics</a> and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
 
+   See https://github.com/capless/warrant - a Python library for using AWS Cognito with support for SRP.
 
    ### OAuth 2.0 app settings
 
@@ -253,13 +278,15 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
    ![aws-cognito-oauth2-config-577x271](https://user-images.githubusercontent.com/300046/149684586-9307ccf4-2ab5-4344-9bff-a6e453949c68.png)
 
-   ## Cognito Domain
+   <a name="CreateDomain"></a>
+   
+   ## Create Cognito Domain
 
 1. Click on "Domain name" on the Configuration menu.
 
-1. Define the unique name (in each region) that Amazon Cognito uses to host sign-up and sign-in pages for each User Pool:
+1. Define the unique internet domain name (in each region) that Amazon Cognito uses to host sign-up and sign-in pages for each User Pool:
 
-   <ul><tt>https://_______.auth.us-east-1.amazoncognito.com</tt></ul>
+   <tt>https://_______.<strong>auth</strong>.us-east-1.<strong>amazoncognito.com</strong></tt>
 
 1. After association, a DNS alias record needs to be added to the domain's hosted zone.
 
@@ -273,7 +300,32 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
    Alternately, users can also be added manually.
 
-<hr />
+   <a name="CreateAPIAuthorizer"></a>
+
+   ### API Gateway Authorizer config
+
+   Terraform is at 
+   * https://registry.terraform.io/modules/terraform-aws-modules/apigateway-v2/aws/latest
+   * https://github.com/terraform-aws-modules/terraform-aws-apigateway-v2
+   <br /><br />
+
+1. Cognito's Issuer URL for your region:
+
+   <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com</tt>
+
+
+## Use AWS Directory
+
+   * http://aws.amazon.com/directoryservice/faqs/
+   <br /><br />
+
+The AWS Directory service connects existing on-premises Microsoft Active Directory to the AWS cloud.
+
+1. Enable Kerberos
+1. Create an <strong>AD Connector</strong> to connect to your on-premise Microsoft Active Directory domain using AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail using their corporate credentials. 
+1. Configure an <strong>Amazon Virtual Private Cloud (VPC)</strong> with a hardware VPN connection to your on-premises environment, or provision a dedicated connection with AWS Direct Connect. 
+1. Establish a limited privilege account used by AD Connector to authenticate and connect to one of the domain controllers and proxy various authentication, domain join, and look-up requests -- by providing the name of your on-premises Microsoft Active Directory, DNS servers to discover Microsoft Active Directory, and an account name and password pre-created in your Microsoft Active Directory. 
+1. Configure auto scaling.
 
 ## Coding
 
@@ -406,7 +458,6 @@ WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access
 
 ## More technical details
 
-
 <a name="SRP_auth_details"></a>
 
 ### SRP auth details
@@ -443,6 +494,12 @@ PROTIP: AWS HTTP API costs 30% less than REST API calls.
 HTTP APIs can be edge-optimized, private, and use AWS WAF with resource policies and certificates for backend authentication.
 
 HTTP APIs can have execution logs and use X-Ray tracing via Access logs to Amazon Kinesis Data Firehose (REST APIs can't)
+
+### Cognito User Pool Backup/Restore
+
+https://github.com/rahulpsd18/cognito-backup-restore
+
+<hr />
 
 ## References
 
