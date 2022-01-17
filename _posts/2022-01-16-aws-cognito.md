@@ -245,9 +245,19 @@ To prove that the user knows their password, client and server exchange non-sens
 <a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
 Ramesh Lingappan shows how to install his code for a demo</a>.
 
-## Cognito Domain
+   ### OAuth 2.0 app settings
 
-   Amazon Cognito hosts sign-up and sign-in pages for each User Pool with a unique domain name in each region such as:
+1. Define Sign-in Callback and sign-out URLs:
+
+1. Define OAuth 2.0
+
+   ![aws-cognito-oauth2-config-577x271](https://user-images.githubusercontent.com/300046/149684586-9307ccf4-2ab5-4344-9bff-a6e453949c68.png)
+
+   ## Cognito Domain
+
+1. Click on "Domain name" on the Configuration menu.
+
+1. Define the unique name (in each region) that Amazon Cognito uses to host sign-up and sign-in pages for each User Pool:
 
    <ul><tt>https://_______.auth.us-east-1.amazoncognito.com</tt></ul>
 
@@ -255,6 +265,13 @@ Ramesh Lingappan shows how to install his code for a demo</a>.
 
 1. Generate a certificate in the ACM (AWS Certificate Manager).
 
+   ### Create Users and Groups
+
+1. <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_group">Terraform to setup user groups</a>
+
+1. In the GUI "Users and groups", users can also be imported from a CSV file.
+
+   Alternately, users can also be added manually.
 
 
 ## Coding
@@ -338,10 +355,6 @@ Terraform for <a target="_blank" href="https://registry.terraform.io/providers/h
 
 
 
-### User Groups
-
-<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_group">Terraform to setup user group</a>
-
 ### Cognito Data Sources
 
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/cognito_user_pools">data</a>,
@@ -377,6 +390,8 @@ assume_role_policy
 
 <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_identity_pool_provider_principal_tag">provider principal tag</a> provides an AWS Cognito Identity Principal Mapping.
 
+<hr />
+
 ## Amazon Cognito Sync
 
 Amazon Cognito Sync ensures reliancy by storing (for distribution) application state, profile info, previously viewed content, location tracking, etc.
@@ -393,8 +408,6 @@ WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access
 
    * https://www.youtube.com/watch?v=yCAlJv6zfn4
    <br /><br />
-
-
 
 PROTIP: AWS HTTP API costs 30% less than REST API calls.
 
