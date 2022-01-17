@@ -25,7 +25,7 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 
 High level short summary <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
-### Cognito service landing page
+## Cognito service landing page
 
 Version 1 of the Amazon GUI for Cognito at<br />
 https://us-west-2.console.aws.amazon.com/cognito/welcome?region=us-west-2<br />
@@ -34,6 +34,43 @@ enables you to choose between "Manage User Pools" (the directory of users in Ama
 Version 2 of the Amazon GUI for Cognito at<br />
 https://us-west-2.console.aws.amazon.com/cognito/v2/home?region=us-west-2#<br />
 has a drop down to "Grant access to AWS services" before clicking the orange "Create indentity pool".
+
+So it prompts you to create the user pool as the first step.
+
+## Cognito Config Steps
+
+1. <a href="#CreateUserPool">Create user pool</a>
+2. <a href="#CreateAppClients">Create app client without client secret</a>
+3. Create domain name
+4. <a href="#CreateResourceServer">Create resource server with custom scopes</a>
+5. Configure App client settings
+6. Create user
+<br /><br />
+
+## Dev Laptop Setup
+
+https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
+
+* AWS CLI2
+* Python Boto3
+* AWS Cognito
+
+<hr />
+
+## Cognito Terraform
+
+<a target="_blank" href="https://registry.terraform.io/modules/rhythmictech/elb-cognito-auth/aws/latest
+https://github.com/rhythmictech/terraform-aws-elb-cognito-auth">This</a>
+provides Terraform that creates an ALB listener rule configured for Cognito authentication using a local user pool. It can also be used with a supplied Cognito user pool allowing for greater customizability. This module is meant to be a better solution when you need to protect web assets and don't want to use server-side HTTP basic authentication to keep the general public out of a staging site. 
+
+Among other benefits, this means your backend configuration does not have to change to restrict access and also means that users can have individual usernames/passwords that they can perform account resets on.
+
+Cognito stores user information in a <strong>Resource Server</strong> which manages user data in <strong>User Pools</strong>. 
+
+
+<a name="CreateUserPool"></a>
+
+## Create Cognito User Pool using GUI
 
 When creating a user pool, my notes about each menu item:
 
@@ -54,6 +91,65 @@ When creating a user pool, my notes about each menu item:
    <br /><br />   
 
 Users can also be added using a CSV import.
+
+<a name="UserPools"></a>
+
+### Cognito User Pool Setup
+
+Cognito User Pools (CUPs) are referenced during sign-up and sign-in operations.
+
+Cognito normalizes secrets as CUP (Cognito User Pool) tokens (pronounced "cup tokens") for use with AWS API Gateway and Lambda.
+
+But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#IdentityPools">Amazon Cognito Identity Pool</a>.
+
+<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool">Terraform to setup user pool</a> with SMS and software token MFA, and account recovery.
+
+
+## User Pool App Clients Config
+
+<a name="CreateAppClients"></a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=5m17s">VIDEO</a>:
+   <br /><br />
+
+1. Which app clients will have access to each user pool?
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/149683522-e612a661-06ce-468b-babf-78994717e81a.png">
+   <img width="547" alt="aws-cognito-client-config-547x392" src="https://user-images.githubusercontent.com/300046/149683522-e612a661-06ce-468b-babf-78994717e81a.png"></a>
+
+   QUESTION: What are the recommendations for days and minutes:
+   * Refresh token expiration (60 - 3560 days)
+   * Access token expiration (5 minutes - 1 day)
+   * ID token expiration (5 minutes - 1 day)
+   <br /><br />
+
+   <a name="SRP_auth"></a>
+
+   ### Cognito Client SRP Auth
+
+1. The "Generate client secret" or <tt><strong>generate_secret</strong></tt> Boolean <tt>true</tt> parameter in <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client file</a> is what defines use of <a href="#SRP_auth">SRP auth</a>.
+
+1. Optionally with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel <a target="_blank" href="http://aws.amazon.com/mobileanalytics/faqs/">marketing communication analytics</a> and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
+
+NOTE: The SRP (Secure Remote Password) protocol is an augmented password-authenticated key exchange (PAKE) protocol, designed so an attacker who steals server data would not be able to masquerade as the client (unless they first perform a brute force search for the password). <a target="_blank" href="https://www.wikiwand.com/en/Secure_Remote_Password_protocol">A Wiki entry</a> says it was specifically designed to work around existing patents.
+
+SRP is a zero-knowledge proof protocol, where the server doesn’t have to store password equivalently information (hashed version) in a database. Thus, an eavesdropper or man-in-the-middle cannot obtain any meaningful information to perform an attack.
+
+During registration on the browser, a <strong>verifier</strong> posted to the server instead of sending the password entered by the user:
+
+   * <tt>client.generateRandomSalt();</tt> by a KDF (Key Derivation Function) to derive a very large number eg: PBKDF etc.
+
+   * <tt>client.generateVerifier(salt,email,password);</tt> using the derived PBKDF and an SRP group, which consists of one large prime number and a generator. Admins can choose between several groups eg: 1024 bit, 2048 bit, etc
+
+In addition to <a target="_blank" href="https://pkg.go.dev/github.com/agilebits/srp">Go code</a>, there is JavaScript code for the above is at Simon Massey's https://github.com/simbo1905/thinbus-srp-npm, which provides this diagram of authentication using SRP:
+
+<img alt="SRP" src="https://camo.githubusercontent.com/f05a399920c94c81f4b4deab1ad8ab722b4d7c2bafa68b5d87158497e27cc133/687474703a2f2f73696d6f6e6d61737365792e6269746275636b65742e696f2f7468696e6275732f6c6f67696e2d63616368652e706e67">
+
+To prove that the user knows their password, client and server exchange non-sensitive information to generate a key independently for mutual verification. It generates using SRP group a one-time ephemeral (private) a value and its (public) counterpart A, where private a is kept in-memory and its public value A is sent to the server.
+
+<a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
+Ramesh Lingappan shows how to install his code for a demo</a>.
+
 
 ## Basic Cognito workflow
 
@@ -81,17 +177,8 @@ A more complex example using <strong>S3 buckets</strong> is the <a target="_blan
 Ultimately, add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
 
 
-## Laptop Setup
 
-https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
-
-* AWS CLI2
-* Python Boto3
-* AWS Cognito
-
-## References
-
-
+## Code
 
 Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
 
@@ -226,59 +313,13 @@ NOTE: SAML formats in XML.
 Additional back-end processes include mass upload from a CSV file for first-time setup or for disaster recovery.
 
 
-## Cognito Terraform
-
-https://registry.terraform.io/modules/rhythmictech/elb-cognito-auth/aws/latest
-https://github.com/rhythmictech/terraform-aws-elb-cognito-auth
-provides Terraform that creates an ALB listener rule configured for Cognito authentication using a local user pool. It can also be used with a supplied Cognito user pool allowing for greater customizability. This module is meant to be a better solution when you need to protect web assets and don't want to use server-side HTTP basic authentication to keep the general public out of a staging site. 
-
-Among other benefits, this means your backend configuration does not have to change to restrict access and also means that users can have individual usernames/passwords that they can perform account resets on.
-
-Cognito stores user information in a <strong>Resource Server</strong> which manages user data in <strong>User Pools</strong>. 
-
+<a name="CreateResourceServer"></a>
 
 ### Cognito Resource Server and clients
 
 Terraform for <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_resource_server">resource server</a> for a scope.
 
 
-<a name="SRP_auth"></a>
-
-### Client SRP Auth
-
-<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client</a>, which sets up <a href="#SRP_auth">SRP auth</a>, optionally with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel <a target="_blank" href="http://aws.amazon.com/mobileanalytics/faqs/">marketing communication analytics</a> and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
-
-The SRP (Secure Remote Password) protocol is an augmented password-authenticated key exchange (PAKE) protocol, designed so an attacker who steals server data would not be able to masquerade as the client (unless they first perform a brute force search for the password). <a target="_blank" href="https://www.wikiwand.com/en/Secure_Remote_Password_protocol">A Wiki entry</a> says it was specifically designed to work around existing patents.
-
-SRP is a zero-knowledge proof protocol, where the server doesn’t have to store password equivalently information (hashed version) in a database. Thus, an eavesdropper or man-in-the-middle cannot obtain any meaningful information to perform an attack.
-
-During registration on the browser, a <strong>verifier</strong> posted to the server instead of sending the password entered by the user:
-
-   * <tt>client.generateRandomSalt();</tt> by a KDF (Key Derivation Function) to derive a very large number eg: PBKDF etc.
-
-   * <tt>client.generateVerifier(salt,email,password);</tt> using the derived PBKDF and an SRP group, which consists of one large prime number and a generator. Admins can choose between several groups eg: 1024 bit, 2048 bit, etc
-
-In addition to <a target="_blank" href="https://pkg.go.dev/github.com/agilebits/srp">Go code</a>, there is JavaScript code for the above is at Simon Massey's https://github.com/simbo1905/thinbus-srp-npm, which provides this diagram of authentication using SRP:
-
-<img alt="SRP" src="https://camo.githubusercontent.com/f05a399920c94c81f4b4deab1ad8ab722b4d7c2bafa68b5d87158497e27cc133/687474703a2f2f73696d6f6e6d61737365792e6269746275636b65742e696f2f7468696e6275732f6c6f67696e2d63616368652e706e67">
-
-To prove that the user knows their password, client and server exchange non-sensitive information to generate a key independently for mutual verification. It generates using SRP group a one-time ephemeral (private) a value and its (public) counterpart A, where private a is kept in-memory and its public value A is sent to the server.
-
-<a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
-Ramesh Lingappan shows how to install his code for a demo</a>.
-
-
-<a name="UserPools"></a>
-
-### Cognito User Pools and groups
-
-Cognito User Pools (CUPs) are referenced during sign-up and sign-in operations.
-
-Cognito normalizes secrets as CUP (Cognito User Pool) tokens (pronounced "cup tokens") for use with AWS API Gateway and Lambda.
-
-But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#IdentityPools">Amazon Cognito Identity Pool</a>.
-
-<a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool">Terraform to setup user pool</a> with SMS and software token MFA, and account recovery.
 
 
 ### User Groups
