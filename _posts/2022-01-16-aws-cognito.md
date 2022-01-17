@@ -94,7 +94,7 @@ C. The <strong>webapp</strong> folder
 
 https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
 
-Its workflow:
+TODO: Its workflow:
 
 1. User clicks on static web page
 2. Request login
@@ -103,8 +103,9 @@ Its workflow:
 5. AWS Cognito (or Auth0)
 <br /><br />
 
+To make it all happen:
 
-### A. Create the Amazon Cognito user pool
+### &nbsp; &nbsp; &nbsp; A. Create the Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
