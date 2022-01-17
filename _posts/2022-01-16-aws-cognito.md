@@ -30,11 +30,13 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 
 ## Cognito usage workflows
 
+There are several options, from simple to more complex/full featured:
+
+### Basic workflow to GitHub Pages
+
 A simple example is to access GitHub Pages, explained by <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
 
-QUESTION: JavaScript API can be AWS Amplify?
-
-A workflow using the AWS API Gateway:
+### Workflow using the AWS API Gateway:
 
    * https://www.youtube.com/watch?v=o7OHogUcRmI
    * https://www.youtube.com/watch?v=al5I9v5Y-kA
@@ -50,22 +52,31 @@ A workflow using the AWS API Gateway:
 
 1) Users from a web browser typically invoke JavaScript which addresses an Amazon API Gateway, which controls access. 2) If authenticated, the API Gateway invokes a JWT Authorizer which 3) connects Amazon Cognito. 4) Cognito returns to JWT Authorizer 5) back to API Gateway, which 6) invokes a Lambda that 7) returns to the user's browser.
 
+### Using S3 buckets
+
 A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
 
-Ultimately, add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
+
+### Using Amazon Firehose streaming
+
+Add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
 
 
 ## Code for Reference Workflow
 
 Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
-Its workflow:
 
-1. User clicks on static web page
-2. Request login
-3. Python Lambda program trigger
-4. API Gateway 
-5. AWS Cognito (or Auth0)
+
+### Dev Laptop Setup
+
+https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
+
+* AWS CLI2
+* Python Boto3
+* AWS Cognito
 <br /><br />
+
+QUESTION: How does client JavaScript use the AWS Amplify API?
 
 Each high-level folder is a workspace defined in package.json:
 
@@ -87,14 +98,24 @@ C. The <strong>webapp</strong> folder
 
 https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
 
+Its workflow:
+
+1. User clicks on static web page
+2. Request login
+3. Python Lambda program trigger
+4. API Gateway 
+5. AWS Cognito (or Auth0)
+<br /><br />
+
+
 ### Creating the Amazon Cognito user pool
 
-1. Creating the user pool
-1. Adding a user
-1. Creating an App Client
-1. Configuring the App Client Identity Provider (IdP)
-1. Adding a user — cont.
-1. Using the built-in form to register users
+1. <a href="#CreateUserPool">Create user pool</a>
+2. <a href="#CreateAppClients">Create app client without client secret</a>
+3. Create domain name
+4. <a href="#CreateResourceServer">Create resource server with custom scopes</a>
+5. Configure App client Identity Provider (IdP) and other settings
+6. Add users manually or import several at a time
 
    ### Setting up an authorization endpoint
 
@@ -119,37 +140,6 @@ https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws
 1. <a target="_blank" href="https://iotespresso.com/delete-a-cognito-user-using-aws-lambda-python/">Delete Cognito User</a>
 
 
-### Dev Laptop Setup
-
-https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
-
-* AWS CLI2
-* Python Boto3
-* AWS Cognito
-
-
-## Cognito service landing page
-
-Version 1 of the Amazon GUI for Cognito at<br />
-https://us-west-2.console.aws.amazon.com/cognito/welcome?region=us-west-2<br />
-enables you to choose between "Manage User Pools" (the directory of users in Amazon Cognito) or "Manage Identity Pools" for Authorization of temporary AWS user credentials.
-
-Version 2 of the Amazon GUI for Cognito at<br />
-https://us-west-2.console.aws.amazon.com/cognito/v2/home?region=us-west-2#<br />
-has a drop down to "Grant access to AWS services" before clicking the orange "Create indentity pool".
-
-So it prompts you to create the user pool as the first step.
-
-## Cognito User Pool Config Steps
-
-1. <a href="#CreateUserPool">Create user pool</a>
-2. <a href="#CreateAppClients">Create app client without client secret</a>
-3. Create domain name
-4. <a href="#CreateResourceServer">Create resource server with custom scopes</a>
-5. Configure App client settings
-6. Create user
-<br /><br />
-
 <hr />
 
 ## Cognito Terraform
@@ -167,7 +157,24 @@ Cognito stores user information in a <strong>Resource Server</strong> which mana
 
 ## Create Cognito User Pool using GUI
 
-When creating a user pool, my notes about each menu item:
+
+## Cognito service landing page
+
+1. GUI
+
+   Version 1 of the Amazon GUI for Cognito at<br />
+   https://us-west-2.console.aws.amazon.com/cognito/welcome?region=us-west-2<br />
+   enables you to choose between "Manage User Pools" (the directory of users in Amazon Cognito) or "Manage Identity Pools" for Authorization of temporary AWS user credentials.
+
+   Version 2 of the Amazon GUI for Cognito at<br />
+   https://us-west-2.console.aws.amazon.com/cognito/v2/home?region=us-west-2#<br />
+   has a drop down to "Grant access to AWS services" before clicking the orange "Create indentity pool".
+
+   It prompts you to create the user pool as the first step.
+
+1. In Version 1 URL:  
+
+   When creating a user pool, my notes about each menu item:
 
    * (Pool) Name - QUESTION: What is the naming convention?
 
@@ -222,28 +229,10 @@ But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#Ident
 
    ### Cognito Client SRP Auth
 
-1. The "Generate client secret" or <tt><strong>generate_secret</strong></tt> Boolean <tt>true</tt> parameter in <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client file</a> is what defines use of <a href="#SRP_auth">SRP auth</a>.
+1. The "Generate client secret" or <tt><strong>generate_secret</strong></tt> Boolean <tt>true</tt> parameter in <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cognito_user_pool_client">Terraform for client file</a> is what defines use of <a href="#SRP_auth_details">SRP auth details (at the bottom of this page)</a>.
 
 1. Optionally with <a target="_blank" href="https://aws.amazon.com/pinpoint/">AWS Pinpoint</a> for multichannel <a target="_blank" href="http://aws.amazon.com/mobileanalytics/faqs/">marketing communication analytics</a> and to <a target="_blank" href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities.html">send SMS messages to phones</a> from an originator ID.
 
-NOTE: The SRP (Secure Remote Password) protocol is an augmented password-authenticated key exchange (PAKE) protocol, designed so an attacker who steals server data would not be able to masquerade as the client (unless they first perform a brute force search for the password). <a target="_blank" href="https://www.wikiwand.com/en/Secure_Remote_Password_protocol">A Wiki entry</a> says it was specifically designed to work around existing patents.
-
-SRP is a zero-knowledge proof protocol, where the server doesn’t have to store password equivalently information (hashed version) in a database. Thus, an eavesdropper or man-in-the-middle cannot obtain any meaningful information to perform an attack.
-
-During registration on the browser, a <strong>verifier</strong> posted to the server instead of sending the password entered by the user:
-
-   * <tt>client.generateRandomSalt();</tt> by a KDF (Key Derivation Function) to derive a very large number eg: PBKDF etc.
-
-   * <tt>client.generateVerifier(salt,email,password);</tt> using the derived PBKDF and an SRP group, which consists of one large prime number and a generator. Admins can choose between several groups eg: 1024 bit, 2048 bit, etc
-
-In addition to <a target="_blank" href="https://pkg.go.dev/github.com/agilebits/srp">Go code</a>, there is JavaScript code for the above is at Simon Massey's https://github.com/simbo1905/thinbus-srp-npm, which provides this diagram of authentication using SRP:
-
-<img alt="SRP" src="https://camo.githubusercontent.com/f05a399920c94c81f4b4deab1ad8ab722b4d7c2bafa68b5d87158497e27cc133/687474703a2f2f73696d6f6e6d61737365792e6269746275636b65742e696f2f7468696e6275732f6c6f67696e2d63616368652e706e67">
-
-To prove that the user knows their password, client and server exchange non-sensitive information to generate a key independently for mutual verification. It generates using SRP group a one-time ephemeral (private) a value and its (public) counterpart A, where private a is kept in-memory and its public value A is sent to the server.
-
-<a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
-Ramesh Lingappan shows how to install his code for a demo</a>.
 
    ### OAuth 2.0 app settings
 
@@ -401,6 +390,35 @@ Sync info is saved and retrieved by a key-value pair (dictionary) saved within a
 CAUTION: Currently, each dataset is limited to 1MB because the entire dataset is sync'd at once. Each identity can have a maximum of 20 datasets.
 
 WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access the same data as well as to collaborate in real time on shared data.
+
+<hr />
+
+## More technical details
+
+
+<a name="SRP_auth_details"></a>
+
+### SRP auth details
+
+The SRP (Secure Remote Password) protocol is an augmented password-authenticated key exchange (PAKE) protocol, designed so an attacker who steals server data would not be able to masquerade as the client (unless they first perform a brute force search for the password). <a target="_blank" href="https://www.wikiwand.com/en/Secure_Remote_Password_protocol">A Wiki entry</a> says it was specifically designed to work around existing patents.
+
+SRP is a zero-knowledge proof protocol, where the server doesn’t have to store password equivalently information (hashed version) in a database. Thus, an eavesdropper or man-in-the-middle cannot obtain any meaningful information to perform an attack.
+
+During registration on the browser, a <strong>verifier</strong> posted to the server instead of sending the password entered by the user:
+
+   * <tt>client.generateRandomSalt();</tt> by a KDF (Key Derivation Function) to derive a very large number eg: PBKDF etc.
+
+   * <tt>client.generateVerifier(salt,email,password);</tt> using the derived PBKDF and an SRP group, which consists of one large prime number and a generator. Admins can choose between several groups eg: 1024 bit, 2048 bit, etc
+
+In addition to <a target="_blank" href="https://pkg.go.dev/github.com/agilebits/srp">Go code</a>, there is JavaScript code for the above is at Simon Massey's https://github.com/simbo1905/thinbus-srp-npm, which provides this diagram of authentication using SRP:
+
+<img alt="SRP" src="https://camo.githubusercontent.com/f05a399920c94c81f4b4deab1ad8ab722b4d7c2bafa68b5d87158497e27cc133/687474703a2f2f73696d6f6e6d61737365792e6269746275636b65742e696f2f7468696e6275732f6c6f67696e2d63616368652e706e67">
+
+To prove that the user knows their password, client and server exchange non-sensitive information to generate a key independently for mutual verification. It generates using SRP group a one-time ephemeral (private) a value and its (public) counterpart A, where private a is kept in-memory and its public value A is sent to the server.
+
+<a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
+Ramesh Lingappan shows how to install his code for a demo</a>.
+
 
 <a name="HTTP_API"></a>
 
