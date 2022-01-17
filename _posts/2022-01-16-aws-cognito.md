@@ -23,9 +23,9 @@ Amazon Cognito is an authentication and user management service that enables <st
 
 PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for Cognito to interact with.
 
-High level short summary <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
+1. High level short summary <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
-<a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
+1. <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
 
 
 ## Cognito usage workflows
@@ -210,7 +210,7 @@ But to authenticate S3 and DynamoDB, the CUP token is sent to an <a href="#Ident
 1. Which app clients will have access to each user pool?
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/149683522-e612a661-06ce-468b-babf-78994717e81a.png">
-   <img width="547" alt="aws-cognito-client-config-547x392" src="https://user-images.githubusercontent.com/300046/149683522-e612a661-06ce-468b-babf-78994717e81a.png"></a>
+   <img align="right" width="547" alt="aws-cognito-client-config-547x392" src="https://user-images.githubusercontent.com/300046/149683522-e612a661-06ce-468b-babf-78994717e81a.png"></a>
 
    QUESTION: What are the recommendations for days and minutes:
    * Refresh token expiration (60 - 3560 days)
@@ -245,6 +245,15 @@ To prove that the user knows their password, client and server exchange non-sens
 <a target="_blank" href="https://medium.com/swlh/what-is-secure-remote-password-srp-protocol-and-how-to-use-it-70e415b94a76">
 Ramesh Lingappan shows how to install his code for a demo</a>.
 
+## Cognito Domain
+
+   Amazon Cognito hosts sign-up and sign-in pages for each User Pool with a unique domain name in each region such as:
+
+   <ul><tt>https://_______.auth.us-east-1.amazoncognito.com</tt></ul>
+
+1. After association, a DNS alias record needs to be added to the domain's hosted zone.
+
+1. Generate a certificate in the ACM (AWS Certificate Manager).
 
 
 
