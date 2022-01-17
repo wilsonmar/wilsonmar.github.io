@@ -25,6 +25,109 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 
 High level short summary <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
 
+<a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
+
+
+## Cognito usage workflows
+
+A simple example is to access GitHub Pages, explained by <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
+
+QUESTION: JavaScript API can be AWS Amplify?
+
+A workflow using the AWS API Gateway:
+
+   * https://www.youtube.com/watch?v=o7OHogUcRmI
+   * https://www.youtube.com/watch?v=al5I9v5Y-kA
+   * https://www.youtube.com/watch?v=yCAlJv6zfn4
+   * <a target="_blank" href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html">DOCS: "Amazon Cognito can be used as a JWT issuer for REST APIs"</a>
+   * https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
+   * <a target="_blank" href="https://sanderknape.com/2020/08/amazon-cognito-jwts-authenticate-amazon-http-api/">BLOG: "Using Amazon Cognito JWTs to authenticate with <a href="#HTTP_API">Amazon HTTP APIs</a>"
+   * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw">VIDEO</a>:
+   <br /><br />
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png">
+<img width="631" alt="aws-cognito-thru-api-631x518" src="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png"></a>
+
+1) Users from a web browser typically invoke JavaScript which addresses an Amazon API Gateway, which controls access. 2) If authenticated, the API Gateway invokes a JWT Authorizer which 3) connects Amazon Cognito. 4) Cognito returns to JWT Authorizer 5) back to API Gateway, which 6) invokes a Lambda that 7) returns to the user's browser.
+
+A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
+
+Ultimately, add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
+
+
+## Code for Reference Workflow
+
+Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
+Its workflow:
+
+1. User clicks on static web page
+2. Request login
+3. Python Lambda program trigger
+4. API Gateway 
+5. AWS Cognito (or Auth0)
+<br /><br />
+
+Each high-level folder is a workspace defined in package.json:
+
+A. The <strong>infrastructure</strong> folder
+   * <a target="_blank" href="https://wilsonmar.github.io/aws-cdk/" title="Cloud Development Kit">AWS CDK</a>> leveraging pre-configured app components in TypeScript
+   * Cloudwatch for Observability, Logging, metrics, and alarms;
+   * For Communication: event bus and app messaging EventBridge, SQS, SNS
+   * XRay for tracing
+   <br /><br />
+
+B. The <strong>services</strong> folder
+   * Backend Serverless microservices built in JavaScript
+   * For Continous Delivery: CodeBuild, CodePipeline, CloudFormation
+   <br /><br />
+
+C. The <strong>webapp</strong> folder
+   * Frontend ReactJs app built in JavaScript
+   <br /><br />
+
+https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
+
+### Creating the Amazon Cognito user pool
+
+1. Creating the user pool
+1. Adding a user
+1. Creating an App Client
+1. Configuring the App Client Identity Provider (IdP)
+1. Adding a user — cont.
+1. Using the built-in form to register users
+
+   ### Setting up an authorization endpoint
+
+1. Creating the authorization Lambda function
+1. Writing the function code
+1. Granting Cognito access to the function
+1. Testing the function
+1. Creating an authorization endpoint
+   
+   ### Setting up the AWS API Gateway Authorization
+
+1. Creating an authorizer
+1. Setting up our endpoint authorization
+
+   ### Testing the Secure API Gateway
+   
+1. Testing the authorization endpoint
+1. Testing the secure endpoint
+
+   ### Deletes
+   
+1. <a target="_blank" href="https://iotespresso.com/delete-a-cognito-user-using-aws-lambda-python/">Delete Cognito User</a>
+
+
+### Dev Laptop Setup
+
+https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
+
+* AWS CLI2
+* Python Boto3
+* AWS Cognito
+
+
 ## Cognito service landing page
 
 Version 1 of the Amazon GUI for Cognito at<br />
@@ -37,7 +140,7 @@ has a drop down to "Grant access to AWS services" before clicking the orange "Cr
 
 So it prompts you to create the user pool as the first step.
 
-## Cognito Config Steps
+## Cognito User Pool Config Steps
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
@@ -46,14 +149,6 @@ So it prompts you to create the user pool as the first step.
 5. Configure App client settings
 6. Create user
 <br /><br />
-
-## Dev Laptop Setup
-
-https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
-
-* AWS CLI2
-* Python Boto3
-* AWS Cognito
 
 <hr />
 
@@ -151,94 +246,6 @@ To prove that the user knows their password, client and server exchange non-sens
 Ramesh Lingappan shows how to install his code for a demo</a>.
 
 
-## Basic Cognito workflow
-
-A simple example is to access GitHub Pages, explained by <a target="_blank" href="https://cloudacademy.com/lab/manage-authentication-amazon-cognito/">Hands-on 1hr "Manage Authentication with Amazon Cognito"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"><img alt="aws-cognito-flow-899x474" width="899" src="https://user-images.githubusercontent.com/300046/149676668-af6b78a6-e69d-4ac6-b36f-3d96af19a606.png"></a>
-
-QUESTION: JavaScript API can be AWS Amplify?
-
-
-## Workflow thru API Gateway
-
-   * https://sanderknape.com/2017/02/getting-started-with-aws-cognito/
-   * https://www.youtube.com/watch?v=o7OHogUcRmI
-   * https://www.youtube.com/watch?v=al5I9v5Y-kA
-   * https://www.youtube.com/watch?v=yCAlJv6zfn4
-   * <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw">VIDEO</a>:
-   <br /><br />
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png">
-<img width="631" alt="aws-cognito-thru-api-631x518" src="https://user-images.githubusercontent.com/300046/149682167-97a1ec96-470e-4259-acba-1e173dd4e9bc.png"></a>
-
-1) Users from a web browser typically invoke JavaScript which addresses an Amazon API Gateway, which controls access. 2) If authenticated, the API Gateway invokes a JWT Authorizer which 3) connects Amazon Cognito. 4) Cognito returns to JWT Authorizer 5) back to API Gateway, which 6) invokes a Lambda that 7) returns to the user's browser.
-
-A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
-
-Ultimately, add streaming to <strong>Amazon Firehose</strong> by <a target="_blank" href="https://cloudacademy.com/lab/deploy-highly-available-serverless-application-using-aws-services/">Hands-on 2h "Deploy a Highly Available Serverless Application Using AWS Services"</a><br /><a target="_blank" href="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"><img width="605" alt="aws-cognito-with-firehose-802x900" src="https://user-images.githubusercontent.com/300046/149682737-2515adfd-4e99-4b85-aefa-659405658dd8.png"></a>
-
-
-
-## Code
-
-Some of the code here is patterned after monorepo <a target="_blank" href="https://github.com/davidtucker/ps-serverless-app">github.com/davidtucker/ps-serverless-app</a> by <a target="_blank" href="https://www.davidtucker.net/">David Tucker</a>, as explained in his Pluralsight video series <a target="_blank" href="https://app.pluralsight.com/paths/skills/building-serverless-applications-on-aws">"Building Serverless Applications on AWS"</a>.
-
-The workflow:
-
-1. User clicks on static web page
-2. Request login
-3. Python Lambda program trigger
-4. API Gateway 
-5. AWS Cognito (or Auth0)
-
-Each high-level folder is a workspace defined in package.json:
-
-
-The <strong>infrastructure</strong> folder
-   * AWS <a target="_blank" href="https://wilsonmar.github.io/aws-cdk/" title="Cloud Development Kit">CDK</a>> leveraging pre-configured app components in TypeScript
-   * Cloudwatch for Observability, Logging, metrics, and alarms;
-   * For Communication: event bus and app messaging EventBridge, SQS, SNS
-   * XRay for tracing
-
-The <strong>services</strong> folder
-   * Backend Serverless microservices built in JavaScript
-   * For Continous Delivery: CodeBuild, CodePipeline, CloudFormation
-
-The <strong>webapp</strong> folder
-   * Frontend ReactJs app built in JavaScript
-   <br /><br />
-
-https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
-
-### Creating the Amazon Cognito user pool
-
-1. Creating the user pool
-1. Adding a user
-1. Creating an App Client
-1. Configuring the App Client Identity Providers
-1. Adding a user — cont.
-1. Using the built-in form to register users
-
-   ### Setting up an authorization endpoint
-
-1. Creating the authorization Lambda function
-1. Writing the function code
-1. Granting Cognito access to the function
-1. Testing the function
-1. Creating an authorization endpoint
-   
-   ### Setting up the AWS API Gateway Authorization
-
-1. Creating an authorizer
-1. Setting up our endpoint authorization
-
-   ### Testing the Secure API Gateway
-   
-1. Testing the authorization endpoint
-1. Testing the secure endpoint
-
-   ### Deletes
-   
-1. <a target="_blank" href="https://iotespresso.com/delete-a-cognito-user-using-aws-lambda-python/">Delete Cognito User</a>
 
 
 ## Coding
@@ -378,11 +385,7 @@ WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access
    * https://www.youtube.com/watch?v=yCAlJv6zfn4
    <br /><br />
 
-https://sanderknape.com/2020/08/amazon-cognito-jwts-authenticate-amazon-http-api/
-Using Amazon Cognito JWTs to authenticate with an Amazon HTTP API
 
-https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html
-Amazon Cognito can be used as a JWT issuer for REST APIs.
 
 PROTIP: AWS HTTP API costs 30% less than REST API calls.
 
