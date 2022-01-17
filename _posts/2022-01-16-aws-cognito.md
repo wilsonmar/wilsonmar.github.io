@@ -19,15 +19,17 @@ comments: true
 NOTE: There is a biological Cognito, which is not this topic.
 
 <img align="right" width="100" alt="aws-cognito-feds-398x1168" src="https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png">
-Amazon Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, SAML to GitHub or Microsoft Active Directory, and custom mechanisms.
+Amazon Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, <a href="#SAML">SAML</a> to GitHub or Microsoft Active Directory, and custom mechanisms.
+
+Hosting on AWS means that the SaaS service can scale to a lot users around the world.
+
+High-level short summaries:
+
+   * <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
+
+   * <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
 
 PROTIP: A developer accounts needs to be setup with each third-party (Facebook) for Cognito to interact with.
-
-High level short summaries:
-
-1. <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
-
-1. <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
 
 
 ## Cognito usage workflows
@@ -143,7 +145,8 @@ https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom
 
 * AWS CLI2
 * Python Boto3
-* AWS Cognito
+* AWS Cognito web
+* etc.
 <br /><br />
 
 QUESTION: How does client JavaScript use the AWS Amplify API?
@@ -335,8 +338,7 @@ The Resource is then requested and access is granted (sitting within a VIP booth
 
 The amount of time access lasts is determined by the Identity Provider.
 
-A competitor to SAML is OpenID Connect working with OAuth2 is used by Google.
-OpenID is designed to only allow a service provider (Google) to initiate the identification process.
+A competitor to SAML is <strong>OpenID Connect</strong> working with OAuth2 is used by Google. OpenID is designed to only allow a service provider (Google) to initiate the identification process.
 
 NOTE: SAML formats in XML.
 
