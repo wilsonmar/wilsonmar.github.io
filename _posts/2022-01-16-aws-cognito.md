@@ -131,11 +131,13 @@ C. The <strong>webapp</strong> folder
 
 ## To make it all happen:
 
+<a name="CognitoMenu"></a>
+
 * Cognito menu for reference:
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png">
    <img align="right" alt="aws-cognito-menu-221x534" src="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png"></a>
 
-   ### A. Create the Amazon Cognito user pool
+### A. Create the Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
@@ -146,16 +148,16 @@ C. The <strong>webapp</strong> folder
 
    ### B. Set up an authorization endpoint
 
-1. Creating the authorization Lambda function
-1. Writing the function code
-1. Granting Cognito access to the function
-1. Testing the function
-1. Creating an authorization endpoint
+1. Create the authorization Lambda function
+1. Write the function code
+1. Grant Cognito access to the function
+1. Test the function
+1. Create an authorization endpoint
    
    ### C. Set up AWS API Gateway Authorization
 
 1. <a href="#CreateAPIAuthorizer">Create an API authorizer</a>
-1. Setting up our endpoint authorization
+1. <a href="#AddAudience">Setup our endpoint authorization</a>
 
    ### D. Test the Secure API Gateway
    
@@ -317,10 +319,41 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
    * https://github.com/terraform-aws-modules/terraform-aws-apigateway-v2
    <br /><br />
 
-1. Get the Cognito Pool Id and ARN within its "General Settings" menu (such as <tt>us-east-1.p40lmEB0d</tt> to construct Cognito's Issuer URL for your region:
+1. <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=8m49s">VIDEO</a>: Copy the Cognito Pool Id and ARN within its <a href="#CognitoMenu">"General Settings" menu</a> (such as <tt>us-east-1.p40lmEB0d</tt>) to construct Cognito's Issuer URL for your region:
 
    <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com/<strong>us-east-1.p40lmEB0d</strong></tt>
 
+   PROTIP: Flexibility (and less toil) in specifying different regions is why Terraform IaC is useful -- specify the region in one place and it gets automatically applied without mistakes every time.
+
+   <a name="AddAudience"></a>
+
+   ### Set up endpoint authorization
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=9m57s">VIDEO</a>: 
+   "Enter client IDs that are registered with identity providers or any arbitrary string in the JWT audience claim that the authorizer must verify."
+
+1. Click "Add audience".
+1. Switch to the <a href="#CognitoMenu">Cognito menu item "App clients"</a> to highlight and copy the App client Id (such as <tt>2iqdo52jkqg0q2cqbe76qah08</tt>).
+1. Switch back to paste it.
+1. Click "Create and Attach".
+
+   <a name="SetupAuthScope"></a>
+
+   ### Set up authorization scope
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=10m17s">VIDEO</a>: 
+
+1. Click "Add scope".
+1. Switch to the <a href="#CognitoMenu">Cognito menu item "App client settings"</a> to highlight and copy the Allowed Custom Scopes (such as <tt>test/test_read</tt>).
+1. Switch back to paste it.
+1. Click "Create and Attach".
+1. Click "Save".
+
+1. Click "Deploy".
+
+TODO:
+
+<hr />
 
 ## Use AWS Directory
 
