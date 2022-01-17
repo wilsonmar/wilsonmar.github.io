@@ -60,6 +60,7 @@ Modules:
    5. TERMINATE RESOURCES
    <br /><br />
 
+Starter ReactJS UI for the "Create a Serverless App" tutorial series by J Spurance
 https://github.com/jspruance/aws-cognito-tutorial-starter
 uses https://github.com/facebook/create-react-app
 to Create React apps with no build configuration.
@@ -137,7 +138,7 @@ C. The <strong>webapp</strong> folder
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png">
    <img align="right" alt="aws-cognito-menu-221x534" src="https://user-images.githubusercontent.com/300046/149754921-1e99c239-4231-4330-bd18-a51afd38fd04.png"></a>
 
-### A. Create the Amazon Cognito user pool
+### &nbsp; &nbsp; &nbsp; A. Create the Amazon Cognito user pool
 
 1. <a href="#CreateUserPool">Create user pool</a>
 2. <a href="#CreateAppClients">Create app client without client secret</a>
@@ -157,33 +158,18 @@ C. The <strong>webapp</strong> folder
    ### C. Set up AWS API Gateway Authorization
 
 1. <a href="#CreateAPIAuthorizer">Create an API authorizer</a>
-1. <a href="#AddAudience">Setup our endpoint authorization</a>
+1. <a href="#AddAudience">Setup endpoint authorization</a>
+1. <a href="#DeployAuth">Deploy to Stage</a>
 
    ### D. Test the Secure API Gateway
    
 1. Testing the authorization endpoint
 1. Testing the secure endpoint
+1. <a href="#WatchJWT">View JWT in CloudWatch Logs</a>
 
    ### E. Delete Cognito Users
    
 1. <a target="_blank" href="https://iotespresso.com/delete-a-cognito-user-using-aws-lambda-python/">Delete Cognito User</a>
-
-<hr />
-
-### Dev Laptop Setup
-
-To work with GitHub,
-
-https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
-
-* AWS CLI2
-* Python Boto3
-* AWS Cognito web
-* etc.
-<br /><br />
-
-https://github.com/jspruance/aws-cognito-tutorial-starter
- starter ReactJS UI for the "Create a Serverless App" tutorial series by J Spurance
 
 <hr />
 
@@ -314,7 +300,7 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 
    ### API Gateway Authorizer config
 
-   Terraform is at 
+   Terraform for AWS API Gateway is at:
    * https://registry.terraform.io/modules/terraform-aws-modules/apigateway-v2/aws/latest
    * https://github.com/terraform-aws-modules/terraform-aws-apigateway-v2
    <br /><br />
@@ -323,7 +309,7 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 
    <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com/<strong>us-east-1.p40lmEB0d</strong></tt>
 
-   PROTIP: Flexibility (and less toil) in specifying different regions is why Terraform IaC is useful -- specify the region in one place and it gets automatically applied without mistakes every time.
+   PROTIP: Flexibility (and less toil) in specifying different regions is why automation IaC is useful -- specify the region in one place and it gets automatically applied without mistakes every time.
 
    <a name="AddAudience"></a>
 
@@ -337,6 +323,14 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 1. Switch back to paste it.
 1. Click "Create and Attach".
 
+   NOTE: https://github.com/serverless/examples/tree/master/aws-node-auth0-cognito-custom-authorizers-api
+   * AWS CLI2
+   * Python Boto3
+   * AWS Cognito web
+   * etc.
+   <br /><br />
+
+
    <a name="SetupAuthScope"></a>
 
    ### Set up authorization scope
@@ -344,14 +338,37 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
    <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=10m17s">VIDEO</a>: 
 
 1. Click "Add scope".
-1. Switch to the <a href="#CognitoMenu">Cognito menu item "App client settings"</a> to highlight and copy the Allowed Custom Scopes (such as <tt>test/test_read</tt>).
+1. Switch to the <a href="#CognitoMenu">Cognito menu item "App client settings"</a> to highlight and copy the Allowed Custom Scopes (such as <tt>test/test.read</tt>).
 1. Switch back to paste it.
 1. Click "Create and Attach".
 1. Click "Save".
 
-1. Click "Deploy".
+   <a name="DeployAuth"></a>
+
+   ### Deploy
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=10m40s">VIDEO</a>: Click "Deploy".
+1. Select version.
+
+   ### identity_pool_roles_attachment
 
 TODO:
+
+   <a name="WatchJWT"></a>
+
+   ### View JWT in CloudWatch Logs
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=18m28s">VIDEO</a>:
+
+1. In API Gateway, click on menu "Routes".
+1. Click on GET for "/test".
+1. Click on "Configure" for Integration backend resource.
+1. Click on the Lambda function link to open it.
+1. Scroll to click "Monitor" on the bar.
+1. View logs in CloudWatch.
+1. Click on a Log stream ID.
+1. Click on a Log events entry to expand it.
+
 
 <hr />
 
