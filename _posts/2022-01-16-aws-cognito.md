@@ -41,7 +41,9 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 
 There are several options, from simple to more complex/full featured:
 
-https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1
+<a target="_blank" href="https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1">blog</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=HtwPeFjyjPg">VIDEO: In-Depth Introduction to AWS Cognito Service & Its Components</a> by Shirish Munukuntla
 
 
 ### Cognito in ReactJs Serverless in AWS Amplify
@@ -94,6 +96,9 @@ https://github.com/ghdna/cognito-express Authenticates API requests on a Node ap
 ### Cognito with S3 buckets
 
 A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=tAUmz94O2Qo">VIDEO</a>
+![aws-cognito-s3-1890x673](https://user-images.githubusercontent.com/300046/149770556-03e234b5-083a-49bf-8cac-99883c1981fa.png)
 
 
 ### Cognito with S3, CloudFront, Kinesis Firehose streaming
@@ -304,7 +309,9 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
    * https://registry.terraform.io/modules/terraform-aws-modules/apigateway-v2/aws/latest
    * https://github.com/terraform-aws-modules/terraform-aws-apigateway-v2
    <br /><br />
-
+   
+   <img align="right" width="100" alt="aws-api-gatewy-menu-204x698" src="https://user-images.githubusercontent.com/300046/149770685-584a74e0-e3f4-4f87-a0dc-415d7ff6da29.png">
+   
 1. <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=8m49s">VIDEO</a>: Copy the Cognito Pool Id and ARN within its <a href="#CognitoMenu">"General Settings" menu</a> (such as <tt>us-east-1.p40lmEB0d</tt>) to construct Cognito's Issuer URL for your region:
 
    <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com/<strong>us-east-1.p40lmEB0d</strong></tt>
@@ -564,4 +571,3 @@ https://github.com/rahulpsd18/cognito-backup-restore
 
 ## References
 
-https://www.youtube.com/watch?v=tAUmz94O2Qo
