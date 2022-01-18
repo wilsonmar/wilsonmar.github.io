@@ -702,9 +702,13 @@ And setup a firewall that blocks everything unless specifically allowed.
 
 <a target="_blank" href="https://github.com/dependabot/elixir-security-advisories/tree/master/packages">github.com/dependabot/elixir-security-advisories</a> is a repository of CVE security advisories filed against published Elixir packages.
 
+<a name="Sobelow"></a>
+
+#### Sobelow scanner
+
 <a target="_blank" href="https://asciinema.org/a/c9utphy34c8remqlsvfbkjnf9">VIDEO</a>: 
 <a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">VIDEO</a>: Sobelow
-by <a target="_blank" href="https://www.griffinbyatt.com/post/analysis-plug-security-vulns">Griffin Byatt</a> is a security-focused static analysis tool to identify (OWASP) vulnerabilities in the Phoenix Framework.
+by <a target="_blank" href="https://www.griffinbyatt.com/post/analysis-plug-security-vulns">Griffin Byatt</a> is a security-focused static analysis tool to identify <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">(OWASP) vulnerabilities</a> in the Phoenix Framework.
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=w3lKmFsmlvQ&t=29m40s" title="ElixirConf 2017 - Plugging the Security Holes in Your Phoenix Application">VIDEO: "</a>. Install <a target="_blank" href="https://github.com/nccgroup/sobelow">github.com/nccgroup/Sobelow</a>
 

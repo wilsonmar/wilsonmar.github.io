@@ -25,12 +25,14 @@ Hosting on AWS means that the SaaS service can scale to a lot users around the w
 
 PROTIP: This blog presents configuration using both the AWS GUI Management Console and Terraform coding to provide repeatability and ease of reconfiguration (moving from test to prod on several regions).
 
-High-level short summary of Cognito: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a> 
+High-level short summary of Cognito: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=S0liSNlljsY&t=1167">"AWS Identity Federation Course: What AWS Identity Federation is, Types & Demos"</a> by <a target="_blank" href="https://linkedin.com/in/ccforce/">Tom Lynch</a>
 
 <a target="_blank" href="https://cloudacademy.com/course/using-aws-identity-federation-simplify-access-scale-1549/using-aws-identity-federation-to-simplify-access-at-scale/?context_id=42&context_resource=lp">VIDEO: "Using AWS Identity Federation to Simplify Access at Scale"</a>
 compares the various approaches:
    * AWS IAM allows you to configure different OpenID or SAML Identity providers for each of your AWS accounts.
-   * AWS SSO allows you to create a Single Sign-on approach to access multiple AWS accounts within an AWS Organization using a single identity provider for all.
+   * AWS SSO (Single Sign-On -- using a single identity provider for all) with SAML 2.0 for user access to AWS Simple ID, and Microsoft AD and LDAP.
    * AWS Cognito enables secure authentication to your web or mobile applications using both SAML 2.0 and web identity federation.
    <br /><br />
 
@@ -41,10 +43,9 @@ PROTIP: A developer accounts needs to be setup with each third-party (Facebook) 
 
 There are several options, from simple to more complex/full featured:
 
-<a target="_blank" href="https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1">blog</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=HtwPeFjyjPg">VIDEO: In-Depth Introduction to AWS Cognito Service & Its Components</a> by Shirish Munukuntla
-
+* <a target="_blank" href="https://betterprogramming.pub/secure-aws-api-gateway-with-amazon-cognito-and-aws-lambda-535e7c9ffea1">blog</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=HtwPeFjyjPg">VIDEO: In-Depth Introduction to AWS Cognito Service & Its Components</a> by Shirish Munukuntla
+* https://trackit.io/aws-api-gateway-create-api-python-cognito-serverless/ covers install of utilities on laptop (NPM, Python, AWS CLI, Boto3, Serverless, Postman)
 
 ### Cognito in ReactJs Serverless in AWS Amplify
 
@@ -93,12 +94,14 @@ A simple example is to access GitHub Pages, explained by <a target="_blank" href
 
 https://github.com/ghdna/cognito-express Authenticates API requests on a Node application by verifying the JWT signature of AccessToken or IDToken generated 
 
-### Cognito with S3 buckets
+### Cognito with S3 buckets & DynamoDB
 
 A more complex example using <strong>S3 buckets</strong> is the <a target="_blank" href="https://cloudacademy.com/lab/serverless-web-development-python-aws/">Hands-on "Serverless Web Development with Python for AWS"</a><br ><a target="_blank" href="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"><img width="605" alt="aws-cognito-api-mgmt-605x342" src="https://user-images.githubusercontent.com/300046/149680878-cf89a38e-c806-4227-9a87-9cb24bf38c9e.png"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=tAUmz94O2Qo">VIDEO</a>
-![aws-cognito-s3-1890x673](https://user-images.githubusercontent.com/300046/149770556-03e234b5-083a-49bf-8cac-99883c1981fa.png)
+<a target="_blank" href="https://www.youtube.com/watch?v=tAUmz94O2Qo">VIDEO</a>: "Fine-grained Access Control with Amazon Cognito Identity Pools" 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/149770556-03e234b5-083a-49bf-8cac-99883c1981fa.png">
+<img alt="aws-cognito-s3-1890x673" src="https://user-images.githubusercontent.com/300046/149770556-03e234b5-083a-49bf-8cac-99883c1981fa.png"></a>
+shows use of using Attribute-based access controls to pass claims from token as principal tags.
 
 
 ### Cognito with S3, CloudFront, Kinesis Firehose streaming
@@ -310,8 +313,8 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
    * https://github.com/terraform-aws-modules/terraform-aws-apigateway-v2
    <br /><br />
    
-   <img align="right" width="100" alt="aws-api-gatewy-menu-204x698" src="https://user-images.githubusercontent.com/300046/149770685-584a74e0-e3f4-4f87-a0dc-415d7ff6da29.png">
-   
+   <img align="right" width="204" alt="aws-api-gatewy-menu-204x698" src="https://user-images.githubusercontent.com/300046/149770685-584a74e0-e3f4-4f87-a0dc-415d7ff6da29.png">
+
 1. <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=8m49s">VIDEO</a>: Copy the Cognito Pool Id and ARN within its <a href="#CognitoMenu">"General Settings" menu</a> (such as <tt>us-east-1.p40lmEB0d</tt>) to construct Cognito's Issuer URL for your region:
 
    <tt>https://cognito-idp.<strong>us-east-1</strong>.amazonaws.com/<strong>us-east-1.p40lmEB0d</strong></tt>
@@ -358,6 +361,7 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=fL-7UycSsfw&t=10m40s">VIDEO</a>: Click "Deploy".
 1. Select version.
+   ![aws-api-deploy-563x334](https://user-images.githubusercontent.com/300046/149770961-e1fc8ed8-9b74-42db-a649-e7229291f7d9.png)
 
    ### identity_pool_roles_attachment
 
@@ -395,12 +399,18 @@ The AWS Directory service connects existing on-premises Microsoft Active Directo
 1. Establish a limited privilege account used by AD Connector to authenticate and connect to one of the domain controllers and proxy various authentication, domain join, and look-up requests -- by providing the name of your on-premises Microsoft Active Directory, DNS servers to discover Microsoft Active Directory, and an account name and password pre-created in your Microsoft Active Directory. 
 1. Configure auto scaling.
 
-## Coding
+<hr />
 
-https://www.educative.io/edpresso/what-is-the-python-code-for-aws-cognito
+## Cognito Client Coding in various languages
+
+Python:
+   * https://github.com/JinlianWang/aws-lambda-authentication-python
+   * https://www.educative.io/edpresso/what-is-the-python-code-for-aws-cognito
+   * https://medium.com/@houzier.saurav/aws-cognito-with-python-6a2867dd02c6
+   * https://gist.github.com/Integralist/07d62f6a55ba42481b23458c15c00e27 require you to be using Pipenv for handling you Python dev environment.
+   <br /><br />
 
 https://docs.aws.amazon.com/lambda/latest/dg/services-cognito.html
-
 Example Amazon Cognito message event
 
 <pre>{
@@ -425,14 +435,6 @@ Example Amazon Cognito message event
 }</pre>
 
 
-
-https://medium.com/@houzier.saurav/aws-cognito-with-python-6a2867dd02c6
-
-https://github.com/JinlianWang/aws-lambda-authentication-python
-
-https://gist.github.com/Integralist/07d62f6a55ba42481b23458c15c00e27
-1. Python Lambda.md
-Note: the following instructions require you to be using Pipenv for handling you Python dev environment.
 
 ## Authentication providers
 

@@ -3,7 +3,7 @@ layout: post
 title: "AWS Security"
 excerpt: "Securing secrets in Bash shell scripts while learning to pass the AWS Certified Security - Specialty (SCS-C01) exam"
 tags: [Security, DevOps]
-date: "2021-07-22"
+date: "2022-01-17"
 file: "aws-security"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -69,6 +69,7 @@ Exam Readiness 2h free video</a> by Blaine Sundrud
 <a target="_blank" href="https://cloudacademy.com/quiz/35159/?context_resource=lp&context_id=201">
 Cert Prep: AWS Security Specialty Certification</a>
 
+<a target="_blank" href="https://cloudacademy.com/learning-paths/security-specialty-certification-preparation-for-aws-201/">CloudAcademy's 31h video cert prep</a>
 
 <a target="_blank" href="https://app.pluralsight.com/library/courses/demystifying-aws-security-specialty-exam/table-of-contents">VIDEO: 1h COURSE: Demystifying the AWS Certified Security Specialty Exam</a> by Michael Brown covers the options for Key Management (FIPS 140-2 HSM):
    * AWS KMS (Key Management Service) - shared service managed by AWS
@@ -635,6 +636,25 @@ TODO: sample here?
 
 ## Encryption
 
+   * <a target="_blank" href="https://cloudacademy.com/course/s3-encryption-mechanisms/s3-encrypt-introduction/?context_resource=lp&context_id=4125">"Understanding S3 Encryption Mechanisms to Secure your Data"</a> by <a target="_blank" href="https://linkedin.com/in/stuartanthonyscott/">Stuart Scott</a>
+   <br /><br />
+
+REMEMBER:<br />
+SSE = Server-Side Encryption<br />
+CSE = Client-Side Encryption
+
+* ... with S3 Managed Keys (SSE-S3)
+
+* ... with KMS Managed Keys (SSE-KMS)
+* ... with KMS Managed Keys (CSE-KMS)
+
+* ... with Customer Provided keys (SSE-C)
+* ... with Customer Provided Keys (CSE-C)
+<br /><br />
+
+LAB: Encrypting S3 objects using SSE-KMS
+
+
 <a name="KeyManagement"></a>
 
 ### Key Management
@@ -648,10 +668,12 @@ KMS options:
    * How to enforce annual rotation of keys
 
 
-## difference between Cloudtrail vs Cloudwatch
-SSL communication from on-premise to ec2 including how legacy applications communicate when changing from an ELB to ALB
+## difference between CloudTrail vs Cloudwatch
+
+SSL communication from on-premise to ec2 including how legacy applications communicate when changing from an ELB to ALB.
 
 ## S3 access
+
 Bucket ACL’s but know the difference between an ACL and Policy
 Cross-Account Access (S3)
 
