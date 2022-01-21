@@ -32,7 +32,7 @@ This is a hands-on tutorial to provide you a deep yet succinct introduction sequ
 1. Elixir is open sourced under Apache 2.0 license at<br /><a target="_blank" href="https://github.com/elixir-lang/elixir/">https://github.com/elixir-lang/elixir</a> 
    * 668 watchers and 19.7k stars as of Jan 5, 2021
 
-   * Among <a target="_blank" href="https://github.com/elixir-lang/elixir/graphs/contributors">1,100 contributors</a> is José Valim, who created Elixir beginning in 2012, and continues to be a active author.
+   * Among <a target="_blank" href="https://github.com/elixir-lang/elixir/graphs/contributors">1,100 contributors</a> is José Valim, who created Elixir beginning in 2012, and continues to be a active author. <a target="_blank" href="https://www.youtube.com/c/SEKUNHO/videos">Jose's YouTube</a>
 
    * <a target="_blank" href="https://github.com/elixir-lang/elixir/pulse">15 authors</a>
    * 1,950,000,000 downloads
@@ -159,12 +159,12 @@ An Erlang process is much lighter than an operating system's threads and process
 
 Erlang functions can be called from Elixir, and vice versa, without run time impact, due to compilation to Erlang bytecode.
 
+   * As part of https://elixir.libhunt.com/ "Awesome Elixir", Elixir utilities: https://elixir.libhunt.com/categories/935-utilities
+
+
 ### ASDF to manage Elixir and Erlang versions
 
-   * https://serokell.io/blog/elixir-otp-guide
-   <br /><br />
-
-So, many Elixir projects require a correspondence between the Elixir and Erlang runtime versions.
+Thus, many Elixir projects require a correspondence between the Elixir and Erlang runtime versions.
 
 Like NVM is needed for Node.js work or Rbenv for Ruby, ensure that your project installs a specific version of Elixir and Erlang by using the ASDF version manager.
 
@@ -345,7 +345,7 @@ Unchanged:
 * Getting mix_test_watch (Hex package)
 * Getting file_system (Hex package)
 * Getting erlex (Hex package)
-</pre>
+   </pre>
 
 1. Learn about applications:
 
@@ -707,17 +707,24 @@ And setup a firewall that blocks everything unless specifically allowed.
 #### Sobelow scanner
 
 <a target="_blank" href="https://asciinema.org/a/c9utphy34c8remqlsvfbkjnf9">VIDEO</a>: 
-<a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">VIDEO</a>: Sobelow
+<a target="_blank" href="https://elixircasts.io/detect-security-issues-with-sobelow">ElixirCast: Sobelow</a>
 by <a target="_blank" href="https://www.griffinbyatt.com/post/analysis-plug-security-vulns">Griffin Byatt</a> is a security-focused static analysis tool to identify <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">(OWASP) vulnerabilities</a> in the Phoenix Framework.
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=w3lKmFsmlvQ&t=29m40s" title="ElixirConf 2017 - Plugging the Security Holes in Your Phoenix Application">VIDEO: "</a>. Install <a target="_blank" href="https://github.com/nccgroup/sobelow">github.com/nccgroup/Sobelow</a>
 
    <pre>mix archive.install hex sobelow</pre>
 
-1. Run Sobelow (-compact):
+1. Verify Sobelow (-compact):
 
    <pre>mix sobelow -v</pre>
 
+   If you see:
+
+   <pre>WARNING: Sobelow cannot find the router. If this is a Phoenix application
+please use the `--router` flag to specify the router's location.
+   </pre>
+
+   <pre>mix sobelow --router <em>filepath</em></pre>
 
 TOOL: https://snyk.io/blog/secure-elixir-development-with-snyk/
 
@@ -746,7 +753,7 @@ https://elixirschool.com/blog/phoenix-live-view/
 <a target="_blank" href="https://www.youtube.com/watch?v=U_Pe8Ru06fM">VIDEO</a>:
 LiveView takes care of synchronizing client and server state, so you don’t have to develop and maintain a REST/GraphQL API.
 
-<a name="[7]">[7]</a> <a target="_blank" href="http://mng.bz/qeaE">BOOK: "Phoenix in Action"</a> (Manning 2021 TWITLESS40) by <a target="_blank" href="https://www.geoffreylasse.com/">Geoffrey Lessel</a> <a target="_blank" href="https://www.youtube.com/watch?v=fyg0FuSL5DY">VIDEO</a>
+<a name="[7]">[7]</a> <a target="_blank" href="http://mng.bz/qeaE">BOOK: "Phoenix in Action"</a> (Manning 2021 TWITLESS40) by <a target="_blank" href="https://www.geoffreylasse.com/">Geoffrey Lessel</a> <a target="_blank" href="https://www.youtube.com/watch?v=fyg0FuSL5DY">VIDEO</a>. From <a target="_blank" href="https://www.manning.com/books/elixir-in-action-second-edition">Manning [video]</a>
 
 See https://www.testingliveview.com/
 
@@ -851,11 +858,11 @@ by Sasa Juric
 
 ## Social
 
+DOTHIS: Sign up for: <a target="_blank" href="http://elixirforum.com/">http://elixirforum.com</a>
+
 https://twitter.com/hashtag/myelixirstatus
 https://twitter.com/elixirlang
 https://twitter.com/elixir_radar
-
-http://elixirforum.com/
 
 The first <a target="_blank" href="https://www.elixirconf.com/events">ElixirConf</a> was held 2017 in Warsaw Poland. SUBSCRIBE.
 

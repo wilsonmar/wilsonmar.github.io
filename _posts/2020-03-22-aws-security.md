@@ -627,7 +627,7 @@ member accounts.
 
 ### Abuse Notice
 
-TODO: sample here?
+https://aws.amazon.com/premiumsupport/knowledge-center/aws-abuse-report/
 
 
 <hr />

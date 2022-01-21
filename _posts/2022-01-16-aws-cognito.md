@@ -18,14 +18,23 @@ comments: true
 
 NOTE: There is a biological Cognito, which is not this topic.
 
+High-level short summary of Cognito: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a>
+
+PROTIP: This blog presents configuration using both the AWS GUI Management Console and Terraform coding to provide repeatability and ease of reconfiguration (moving from test to prod on several regions).
+
+The <a target="_blank" href="https://docs.aws.amazon.com/cognito/?id=docs_gateway">Amazon Cognito Documentation menu</a> lists 3 products:
+
+   * Amazon Cognito User Pools
+   * Amazon Cognito Identity Pools (Federated Identities)
+   * <a href="#CognitoSync">Amazon Cognito Sync</a>
+   <br /><br />
+
+## Federation
+
 <img align="right" width="100" alt="aws-cognito-feds-398x1168" src="https://user-images.githubusercontent.com/300046/149676097-be698f86-408b-43b2-8025-1958719119fc.png">
 Amazon Cognito is an authentication and user management service that enables <strong>federated</strong> authentication from Amazon user store accounts, Apple, Facebook, Google, Twitter/Digits, OpenID, <a href="#SAML">SAML</a> to GitHub or Microsoft Active Directory, and custom mechanisms.
 
 Hosting on AWS means that the SaaS service can scale to a lot users around the world.
-
-PROTIP: This blog presents configuration using both the AWS GUI Management Console and Terraform coding to provide repeatability and ease of reconfiguration (moving from test to prod on several regions).
-
-High-level short summary of Cognito: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=S0liSNlljsY&t=1167">"AWS Identity Federation Course: What AWS Identity Federation is, Types & Demos"</a> by <a target="_blank" href="https://linkedin.com/in/ccforce/">Tom Lynch</a>
 
@@ -78,6 +87,7 @@ A simple example is to access GitHub Pages, explained by <a target="_blank" href
 
 ### Cognito Workflow using AWS API Gateway
 
+References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=o7OHogUcRmI">Use JWT Authorizers with Amazon Cognito and API Gateway</a>
    * https://www.youtube.com/watch?v=al5I9v5Y-kA
    * https://www.youtube.com/watch?v=yCAlJv6zfn4
@@ -394,9 +404,12 @@ See https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-ident
 The AWS Directory service connects existing on-premises Microsoft Active Directory to the AWS cloud.
 
 1. Enable Kerberos
-1. Create an <strong>AD Connector</strong> to connect to your on-premise Microsoft Active Directory domain using AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail using their corporate credentials. 
+1. Create an <strong>AD Connector</strong> to connect to your on-premise Microsoft Active Directory domain using AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail using their corporate credentials. https://docs.microsoft.com/en-us/azure/active-directory/hybrid/whatis-azure-ad-connect
+
 1. Configure an <strong>Amazon Virtual Private Cloud (VPC)</strong> with a hardware VPN connection to your on-premises environment, or provision a dedicated connection with AWS Direct Connect. 
+
 1. Establish a limited privilege account used by AD Connector to authenticate and connect to one of the domain controllers and proxy various authentication, domain join, and look-up requests -- by providing the name of your on-premises Microsoft Active Directory, DNS servers to discover Microsoft Active Directory, and an account name and password pre-created in your Microsoft Active Directory. 
+
 1. Configure auto scaling.
 
 <hr />
@@ -514,15 +527,17 @@ assume_role_policy
 
 <hr />
 
+<a name="CognitoSync"></a>
+
 ## Amazon Cognito Sync
 
-Amazon Cognito Sync ensures reliancy by storing (for distribution) application state, profile info, previously viewed content, location tracking, etc.
-This include management of caches on mobile devices, to enable offline use.
+WARNING: Amazon is moving users to <a target="_blank" href="https://docs.aws.amazon.com/appsync/latest/devguide/">AWS AppSync</a> which enables multiple users to access the same data for collaboration in real time on shared data.
+
+Amazon Cognito Sync ensures resiliancy by storing (for distribution) application state, profile info, previously viewed content, location tracking, etc. This include management of caches on mobile devices, to enable offline use.
 
 Sync info is saved and retrieved by a key-value pair (dictionary) saved within a <strong>dataset</strong>.
-CAUTION: Currently, each dataset is limited to 1MB because the entire dataset is sync'd at once. Each identity can have a maximum of 20 datasets.
 
-WARNING: Amazon is moving Sync to AWS AppSync to enable multiple users to access the same data as well as to collaborate in real time on shared data.
+CAUTION: Currently, each dataset is limited to 1MB because the entire dataset is sync'd at once. Each identity can have a maximum of 20 datasets.
 
 <hr />
 

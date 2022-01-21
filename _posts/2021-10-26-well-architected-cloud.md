@@ -250,6 +250,12 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
 
 <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG: APIs now available for the AWS Well-Architected Tool</a>
 
+### Microsoft Training on WA
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
+Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
+
+
 ### AWS Milestones
 
 The AWS WA Tool has a way to save several milestones to show an annotated line chart about progress over time.
@@ -260,7 +266,7 @@ But note that it's for work across all pillars together, not for individual pill
 
 ## Cloud Adoption Framework
 
-<a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html" title="November 22, 2021">AWS Cloud Adoption Framework (AWS CAF)</a> discusses these perspectives:
+<a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html" title="November 22, 2021">AWS Cloud Adoption Framework (AWS CAF)</a> discusses these (yet another set of) perspectives:
 
    * Business
    * People
@@ -274,11 +280,6 @@ But note that it's for work across all pillars together, not for individual pill
 
 
 <hr />
-
-## Microsoft Training on WA
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/assessments/?id=azure-architecture-review&mode=pre-assessment">
-Microsoft Azure Well-Architected Review</a> provides guidance by pillar.
 
 ### AWS Well-Architected Labs
 
