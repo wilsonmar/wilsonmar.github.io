@@ -360,8 +360,8 @@ There are several modules which handle date, time, timezones, etc.:
    * date – Manipulate just date ( Month, day, year)
    * time – Time independent of the day (Hour, minute, second, microsecond)
    * datetime – Combination of time and date (Month, day, year, hour, second, microsecond)
-   * timedelta— A duration of time used for manipulating dates
-   * tzinfo— An abstract class for dealing with at https://www.iana.org/time-zones">time zones</a>
+   * timedelta — A duration of time used for manipulating dates
+   * tzinfo — An abstract class for dealing with at <a target="_blank" href="https://www.iana.org/time-zones">https://www.iana.org/time-zones">time zones</a>
    - see https://www.wikiwand.com/en/List_of_tz_database_time_zones
 <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6557">2012 Best Current Practice for Maintaining the Time Zone (TZ) Database</a> is by a group of volunteers.
 Geographical boundaries in the form of coordinate sets are not part of the tz database, but <a target="_blank" href="https://github.com/evansiroky/timezone-boundary-builder/">boundaries are published in the form of vector polygon shapefiles</a>. Using these vector polygons, one can determine, for each place on the globe, the tz database zone in which it is located. 
@@ -727,7 +727,10 @@ append log entries with the identity of intermediary handlers along the log cust
 
 <a name="SQLLite"></a>
 
-### 7.2. Local in-memory SQLLite database  = use_sqlite</a>
+### 7.2. Local in-memory SQLLite database  = use_sqlite
+
+   * <a target="_blank" href="https://www.sqlitetutorial.net/sqlite-python/creating-database/">Functions to use SQLLite</a>
+   <br /><br />
 
 Each country can be referenced using identifiers of either two or three characters ("US" or "USA").
 So it would be useful to make use of a SQL database with an index to each type of identifier.
@@ -1114,7 +1117,7 @@ TODO: Add the cache set to long-term storage (SQL)?
 -- See https://docs.microsoft.com/en-us/azure/architecture/best-practices/caching
 
 Redis would allow duplicates of a program to run in several locations, and update a central momoized_cache.
-The example here uses Azure Cache for Redis</a>, a highly-scalable SaaS service fully-managed by Azure based on the open-source Redis in-memory key-value database.
+The example here uses Azure Cache for Redis, a highly-scalable SaaS service fully-managed by Azure based on the open-source Redis in-memory key-value database.
 
 It helps to write to a more permanent location (in a JSON database) because 
 in order to scale down a Cache, a new instance needs to be setup.
@@ -1158,7 +1161,7 @@ References:
 
 ### 9.9 Make change using Dynamic Programming     = make_change
 
-This "Coin Changing problem" was a <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">PDF: Codility challenge</a> to  returning change for the smallest number of bills/coins</a>, 
+This "Coin Changing problem" was a <a target="_blank" href="https://codility.com/media/train/15-DynamicProgramming.pdf">PDF: Codility challenge</a> to  returning change for the smallest number of bills/coins,
 
 The call to the function is:
 
@@ -2066,7 +2069,7 @@ https://www.youtube.com/watch?v=fUfvBnREBFc&list=RDCMUCvVZ19DRSLIC2-RUOeWx8ug&in
 Google's Text-To-Speech API 
    * https://cloud.google.com/text-to-speech?hl=en
    * https://cloud.google.com/text-to-speech/docs/quickstart-protocol
-   * https://www.youtube.com/watch?v=-AzGZ_CHzJk">Python Voice Assistant Tutorial #1 - Playing Sound with gTTS (Google Text to Speech)</a> by Tech With Tim Aug 31, 2019
+   * https://www.youtube.com/watch?v=-AzGZ_CHzJk">Python Voice Assistant Tutorial #1 - Playing Sound with gTTS (Google Text to Speech), by Tech With Tim Aug 31, 2019
    * https://www.youtube.com/watch?v=tIFEe0W0BEA by Let's Learn About
    * https://www.youtube.com/watch?v=X9rxXFjoWzg with pyttsx3 by Rishabh Narayan
    * https://www.youtube.com/watch?v=_bScjMgipkk with pyttsx3 by Parwiz Forogh

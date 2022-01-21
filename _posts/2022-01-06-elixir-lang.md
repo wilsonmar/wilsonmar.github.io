@@ -434,6 +434,7 @@ Mix is a build automation tool that provides tasks for creating, compiling, and 
 
 Weather app
 
+https://www.codewars.com/collections/elixir
 
 <hr />
 
