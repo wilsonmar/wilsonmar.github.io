@@ -1919,8 +1919,50 @@ JSON Web Token (JWT) is used for authentication to https://hashapi.tierion.com/v
 The response from https://app.pluralsight.com/guides/using-the-tierion-hash-api-with-python
 is good for one hour.
 
-# https://github.com/chainpoint/chainpoint-start
-# https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
+* https://github.com/chainpoint/chainpoint-start
+* https://github.com/chainpoint/chainpoint-gateway/wiki/Gateway-HTTP-API
+
+
+<a name="Asana"></a>
+
+## Asana API
+
+Asana.com is one of the early SaaS providers of team project management software.
+
+1. Several apps integrate with it using their API:
+   
+   https://asana.com/apps
+
+1. Specific example with how-to:
+
+   https://anvil.works/articles/using-the-asana-api
+
+1. Their API Docs:
+
+   https://asana.com/guide/help/api/api
+
+1. Sign up for an account. They have free ones.
+
+   https://asana.com/developers
+
+1. On their API Explorer page, get an API key 
+
+   https://developers.asana.com/explorer
+
+1. Their OpenAPI (Swagger) specification list query perameters:
+
+   https://asana.github.io/developer_docs_prerelease/api_reference/
+
+   It's generated using https://github.com/Asana/developer-docs
+   https://github.com/Asana/api-explorer
+
+1. Their Python library on GitHub:
+
+   https://github.com/Asana/python-asana
+
+* https://developers.asana.com/docs
+
+
 
 
 <a name="verifyemail"></a>
