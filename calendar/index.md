@@ -39,7 +39,7 @@ I have a separate calendar I use to plan my day.
 
 There are several services that enable others to pick a time to meet with you:
 
-* calendly.com is popular. But their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a> and <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">they only offer email customer service</a>.
+* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> is popular. But their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a> and <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">they only offer email customer service</a>.
 
 * x.ai
 
@@ -47,6 +47,63 @@ If you're using Microsoft Outlook, to minimize the back and forth emails in sche
 create a link to Your Outlook Calendar in your email signature</a>.
 
  <a target="_blank" href="https://support.microsoft.com/en-us/topic/how-to-create-a-findtime-poll-4dc806ed-fde3-4ea7-8c5e-b5d1fddab4a6">install an Outlook add-in for scheduling meetings</a> called <a target="_blank" href="https://findtime.microsoft.com/">FindTime</a> which adds a "Reply with Meeting poll" button to the Home tab. The organizer can send multiple time options through FindTime 
+
+
+## Create meetings 
+
+PROTIP: In meetings, I've found it helpful to arrange the next meeting appointment while everyone is still on a call.
+
+I can't find a <strong>keyboard</strong> quiet enough to use while in meeting, where the microphone picks up every sound.
+
+## Voice commands
+
+When I'm alone, I would like to use voice commands such as "Hey Google, add task", then "Pickup mail from post office".
+But I can't find a tutorial on how to set that up (on YouTube).
+
+## Stylus pen & handwriting
+
+A stylus pen is useful for drawing, presentations, and annotating PDF files.
+
+I'm looking for what I had with the Palm back in the day: <strong>control an app</strong> using a stylus. 
+The app converts handwriting to text.
+
+That way, people can enter stuff in the computer with a single hand (perhaps without looking).
+
+QUESTION: How can I use a stylus ($125 Apple Pencil) to manage tasks on my iPhone?
+
+The Google Handwriting Input app is Android-only and free.
+It translates your scribbles directly onscreen as you write, in over 100 languages.
+It allows easy input of ideographic lettering and voice, and recognizes emoji-style drawings.
+Its predictive text at the top of the window to let you tweak its interpretation
+
+
+Apple 2021 iPad Pro 11-Inch $819.00 is the top-of-the-line device, with a camera. Its M1 chip means no lag.
+
+   * <a target="_blank" href="https://apps.apple.com/us/app/pencil-to-do-list/id1498468310">Pencil To Do List</a> by Lu Zhang
+   * $12.99 Mazec works as a <strong>keyboard utility</strong>, for all Android or iOS apps (email, Facebook, etc.). Like others, as you begin to write, Mazec displays predictive suggestions and phrases to choose from so you usually don't have to write out an entire word before the app completes it.  You can choose the font size, auto-scroll area width, word spacing and more. Updates improve the built-in dictionaries and streamline Apple Pencil usability. Mazec intelligently detects your choices, learns specific phrases and even offers emojis – if you write "emoji" or a recognized emoji category name. Mazec supports 12 languages, but you must buy a language pack if you want to use any other than the one you signed in with.  It works in combination with the MyScript engine, let you search, browse the web and complete online forms.
+   * $7.99 MyScript Nebo for Apple iPad Pro and Pencil also supports the latest versions of Android with an active stylus (S Pen or a Wacom pen). In 65 languages. You can export documents as text, Word, PDF or HTML. You can also copy, paste and edit diagrams to PowerPoint.
+   <br /><br />
+
+
+
+Apps that recognize handwriting within their app (not as a separate process such as invoking OpenCV, etc.):
+
+<a target="_blank" href="https://support.microsoft.com/en-us/office/take-handwritten-notes-in-onenote-0ec88c54-05f3-4cac-b452-9ee62cebbd4c">Microsoft reads handwriting</a> in their OneNote apps (on Windows, iPhone, MacOS, iPad):
+   1. On the Draw tab, choose the Lasso Select button.
+   2. On the page, drag a selection over the handwriting you want to convert.
+   3. On the Draw tab, choose Ink to Text.
+   <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=J0an93IK8A4">Handwriting to text on the</a>
+$399 ReMarkable 2 tablet - a 10.3 inch black-and-white "e-paper" screen, so up to 2 weeks on a full charge. It runs on their proprietary Codex operating system with 1GB RAM and 8GM storage. It converts handwriting to text.
+
+Other tablets:
+   * Wacom One does't have a screen. But users don't seem to mind.
+   * Samsung Galaxy Tab S7 (now $500, reg. $650) 
+   * Samsung Tab S6 Lite (now $380, reg. $430) 
+   * Microsoft’s Surface Go 3 (now $390, reg. $550) 
+   * Microsoft's Surface Pro 8 (now $759, reg. $1,100)
+   <br /><br />
 
 
 ## Speedy Outlook usage with Keyboard shortcuts
