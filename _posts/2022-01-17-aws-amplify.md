@@ -38,11 +38,19 @@ Ali Spittel works on the product team.
 
 ## Both web and mobile
 
-
 ## CLI
 
 PROTIP: Although says "build you back-end and front-end in one visual development environment",
 much of the work is done with CLI commands.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=T4MQrRDo20w" title="AWS Amplify Fullstack Project Setup (React, Node, Lambda, REST API)">VIDEO</a>:
+
+<pre>npx create react app
+npm start
+amplify init
+? Enter a name for your project _
+
+</pre>
 
 ## Plugins extend CLI
 

@@ -2143,8 +2143,34 @@ The lang parameter specifies multiple languages.
 
 Play mp3 file using the https://github.com/TaylorSMarks/playsound
 
-Mp3 files can also be played by calling the VLC player using the VLC Python module https://wiki.videolan.org/Python_bindings  
+Mp3 files can also be played by calling the VLC player using the VLC Python module 
+https://wiki.videolan.org/Python_bindings  
 
+<hr />
+
+## UI Libraries
+
+The <a target="_blank" href="https://www.wxwidgets.org/about/">wxwidgets</a> framework was started in 1992 in C++ for portability across Unix and Windows. It now support macOS as well.
+It's free open-sourced at https://github.com/wxWidgets/wxWidgets.
+
+Tutorial: https://zetcode.com/gui/wxwidgets/
+
+Getting started: https://www.youtube.com/watch?v=L3IXsa9Yyr4
+
+Native user interfaces on Windows, Macs, and Linux can be programmed in Python
+using https://www.wxpython.org/
+
+Elixir after this install:
+<pre>WXWIDGETS_PATH="$(brew edit wxwidgets --print-path)"
+# Add the <tt>\-\-enable-compat28</tt> flag for compatibility with Erlang's <tt>:observer</tt>
+cat "$WXWIDGETS_PATH" | sed 's/args = \[/args = \["--enable-compat28",/' >> "$WXWIDGETS_PATH"
+brew install wxwidgets --build-from-source
+</pre>
+
+For Python: <a target="_blank" href="https://www.youtube.com/watch?v=dikn50cu5lo&list=PLYpyJJEou2GF8LGuRH_pB342R5NzwiMu3">VIDEO</a>
+
+
+<hr />
 
 ## References
 

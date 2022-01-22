@@ -25,6 +25,49 @@ The "Special" keys on a Mac's keyboard are represented by both symbols and names
 
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
+## Switch keys on macOS
+
+## Caps Lock unintended
+
+BLAH: It's annoying when all of a sudden everything I type is in caps.
+That happens because I accidentally had my hand too far to the left when I intended to press the A key.
+
+I can type all caps by holding down the shift key with my left or right hand.
+
+We can kill 2 keys at once.
+
+## Caps Lock to Escape
+
+BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
+
+   PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
+
+1. Press the Apple icon and select System Preferences.
+2. Type K. Cursor down to highlight Keyboard. Press space bar to open it.
+3. Click "Modifier Keys" at the lower-right corner.
+
+   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
+
+4. Click the entry for "Caps Lock (&#8682;) Key:" and select "&#9099; Escape".
+
+   ### Swap command and control as well
+
+   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
+   This would also allow you to press two keys at once by pressing between the keys,
+   thus able to perform most combinations using your hands.
+
+4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
+4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
+
+5. Click OK.
+6. Press control+Q or click the red x to dismiss the System Preferences dialog.
+  
+   Alternately, the above actions can be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
+   Python script</a> or by downloading the free 
+   <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner</a>
+   which works on OSX Sierra since <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
+   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">
+   many lingering issues</a>.
 
 <a name="Gymnastics"></a>
 
@@ -53,8 +96,27 @@ PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard 
 
    PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
 
+<hr />
 
-## Keyboard Ergonomics
+## Extra Programmable Keyboard: Stream Deck
+
+Video creators especially appreciate being able to, so they can concentrate on talking, push a button and have a sequence of keys to do what they need, such as share screen 2, leave zoom, etc.
+
+The Stream Deck has programmable buttons, with each button like a little LCD screen.
+Mini has 6 buttons. The MK2 has 15 buttons. The XL has 28 buttons
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">
+You Need A Stream Deck! The Secret To My Productivity Working From Home</a>
+by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">
+5 Stream Deck PLUGINS You Have To Try Out!</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">
+8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
+
+
+## Ergonomic Keyboards
 
 PROTIP: Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
 
@@ -94,70 +156,22 @@ Videos:
 ### Foot pedels
 
 The Kinesis Advantage keyboard has a <a target="_blank" href="https://www.youtube.com/watch?v=dHhr30207JY">
-phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com/products/#se2-foot-pedals">foot peddle</a>
-to press the "Enter" key.
-
+phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com/products/#se2-foot-pedals">foot peddle</a> to press the "Enter" key.
 
 <hr />
-
-## Switch keys on macOS
-
-### Caps Lock unintended
-
-BLAH: It's annoying when all of a sudden everything I type is in caps.
-That happens because I accidentally had my hand too far to the left when I intended to press the A key.
-
-I can type all caps by holding down the shift key with my left or right hand.
-
-We can kill 2 keys at once.
-
-
-## Caps Lock to Escape
-
-BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
-
-   PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
-
-1. Press the Apple icon and select System Preferences.
-2. Type K. Cursor down to highlight Keyboard. Press space bar to open it.
-3. Click "Modifier Keys" at the lower-right corner.
-
-   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
-
-4. Click the entry for "Caps Lock (&#8682;) Key:" and select "&#9099; Escape".
-
-   ### Swap command and control as well
-
-   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
-   This would also allow you to press two keys at once by pressing between the keys,
-   thus able to perform most combinations using your hands.
-
-4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
-4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
-
-5. Click OK.
-6. Press control+Q or click the red x to dismiss the System Preferences dialog.
-  
-   Alternately, the above actions can be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
-   Python script</a> or by downloading the free 
-   <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner</a>
-   which works on OSX Sierra since <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
-   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">
-   many lingering issues</a>.
 
 
 <a name="Voice Recognition"></a>
 
 ## Voice Recognition
 
-   PROTIP: A big benefit of working from home is that I don't have people sitting nearby. So now I can enable <strong>voice recognition</strong> to automatically type some (not all) keys. This has been available since the OSX Yosemite version.
-
+   PROTIP: A big benefit of working from home is that I don't have people sitting nearby. So now I can enable <strong>voice recognition</strong> to automatically type some (not all) keys. 
+   
+   This has been available since the OSX Yosemite version:
    <a target="_blank" href="https://support.apple.com/en-us/HT203085">
    https://support.apple.com/en-us/HT203085</a>
-
-   See <a target="_blank" href="https://www.macworld.com/article/2843499/how-to-command-your-mac-with-your-voice.html">this video</a>:
-
-   Give it a try:
+   
+   See <a target="_blank" href="https://www.macworld.com/article/2843499/how-to-command-your-mac-with-your-voice.html">this video</a> to give it a try:
 
 1. CAUTION: Enabling "Use Enhanced Dictation" (In Apple System Preferences > Dictation & Speech > Turn on Dictation) causes an approximately 800MB file to be downloaded to your Mac. 
 

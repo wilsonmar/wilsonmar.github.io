@@ -22,6 +22,24 @@ Here are my notes on resources for Cyber Security, which is a vast field. But ne
 
 <hr />
 
+## Zero Trust Security Approach
+
+We adopt a "Zero Trust" (ZT) cybersecurity paradigm.
+
+Why? Inadequate access controls can lead to data exfiltration, unauthorized access, lateral movement and/or the introduction of malware into an environment. Consequences of that include damage to brand/reputation, fines, erosion of customer confidence, delays in service delivery due to unplanned downtime, lengthened approval processes and impacts to partner relationships.
+
+So rather than depending solely on using VPNs to access static firewalls to protect all resources within an on-premises network, an end-to-end, "Zero Trust" approach is necessary for operating in public networks.
+
+The term was first popularized by Forrester industry analyst John Kindervag in 2010. In 2020 NIST published <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">50-page PDF: Special Publication SP800-207</a>.
+
+"Zero Trust" means that we "assume breach". So network and access are segregated. Each DAAS (Data, Assets, Applications, Services) resource only interacts with entitites which are authenticated and authorized by dynamic fine-grained "least privilege" policies, on a per-session basis. Both server resources 
+and endpoints which request services (user, machine, app, etc.) each must also prove its identity, using mutual TLS (mTLS).
+
+"Zero Trust" needs to be all-encompassing in its vigilence. The current state of assets, network infrastructure, and communications are continuously collected for forensics in case of breach and for analysis to improves the "security posture" of each device, user, and enterprise as a whole.
+
+Because service accounts and authorization are tightly coupled with the application, it often makes sense to set up identities and policies as part of the application infrastructure deployment. Delegating this authority to the development team allows it to iterate quickly on application development (the DevSecOps model).
+
+
 ## Security Engineer
 
 Here are "Essential Job Functions" based on various job descriptions:
