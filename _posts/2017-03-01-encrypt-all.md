@@ -31,7 +31,31 @@ Let's pretend there are these users:
    * Snape, a user who should no longer have access
    <br /><br />
 
-First, some background:
+PROTIP: <a target="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/kms/index.html">KMS operations (commands) within AWS CLI</a> are arranged by topic here:
+
+* update-primary-region
+* tag-resource, list-resource-tags, untag-resource
+
+* create-custom-key-store, connect-custom-key-store, describe-custom-key-stores, update-custom-key-store, disconnect-custom-key-store, delete-custom-key-store
+
+* get-key-policy, list-key-policies, put-key-policy
+* <a href="#Grants">Grants</a>: create-grant, list-grants, revoke-grant, list-retirable-grants, retire-grant
+* create-key, describe-key, list-keys, replicate-key, enable-key, disable-key, schedule-key-deletion
+* enable-key-rotation, get-key-rotation-status, disable-key-rotation
+
+* import-key-material, delete-imported-key-material
+* generate-data-key, generate-data-key-pair, generate-data-key-without-plaintext, generate-data-key-pair-without-plaintext
+
+* encrypt, decrypt, re-encrypt, sign, verify
+* generate-random, GenerateDataKey, GenerateDataKeyWithoutPlaintext
+* get-public-key, 
+* update-key-description
+* get-parameters-for-import
+
+* create-alias, list-aliases, update-alias, delete-alias
+* cancel-key-deletion
+<br /><br />
+
 
 1. Provide Alice permissions
 
@@ -67,17 +91,6 @@ Let's dive right in. To get a full idea of the complexity of KMS, here are links
    </td></tr>
 </table>
 
-<a target="_blank" href="https://docs.aws.amazon.com/cli/latest/reference/kms/index.html
-">KMS commands within AWS CLI</a>:
-
-* GetKeyPolicy, PutKeyPolicy
-* CreateKey, DescribeKey, EnableKey, DisableKey
-* Encrypt, Decrypt, ReEncrypt
-* GenerateRandom, GenerateDataKey, GenerateDataKeyWithoutPlaintext
-* CreateAlias, ListAliases, DeleteAlias
-* <a href="#Grants">Grants</a>: CreateGrant, ListGrants
-<br /><br />
-
 <a name="Encryption"></a>
 
 ## Envelop Encryption
@@ -104,7 +117,11 @@ CSE = Client-Side Encryption
 
 LAB: Encrypting S3 objects using SSE-KMS
 
-When Customer keys are used, AWS KMS uses what is known as "envelope encryption". An application's cleartext data (of any size) is encrypted using two keys: the <strong>plaintext CMK</strong> and the <strong>Data Encryption Key (DEK)</strong> created from plaintext CMK (Customer-supplied Master Key) using the FIPS 140-2 validated cryptographic module. S3 uses the plaintext CMK to encrypt, then store each encrypted object with the encrypted CMK.
+When Customer keys are used, AWS KMS uses what is known as "envelope encryption". An application's cleartext data (of any size) is encrypted using two keys: the <strong>plaintext CMK</strong> and the <strong>Data Encryption Key (DEK)</strong> created from plaintext CMK (Customer-supplied Master Key) using the FIPS 140-2 validated cryptographic module. 
+
+PROTIP: In 2022, KMS is replacing the term customer master key (CMK) with KMS key and KMS key. The concept has not changed. To prevent breaking changes, KMS is keeping some variations of this term.
+
+Anyway, S3 uses the plaintext CMK to encrypt, then store each encrypted object with the encrypted CMK.
 The plaintext CMK is deleted from memory after use.
 
 When a user requests an encrypted object from S3, S3 makes a request to KMS with the encrypted CMK stored with the object. From that, KMS generates a plaintext DEK for return to S3 for use to decrypt.
