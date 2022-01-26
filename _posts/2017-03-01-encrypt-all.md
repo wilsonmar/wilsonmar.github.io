@@ -22,7 +22,7 @@ This tutorial aims to organize deep-dive insights and advice based on the combin
 
 Each cloud service (AWS with Azure with GCP, etc.) has its own mechanisms.
 
-## AWS KMS (Key Management Service)
+## Personas and their tasks
 
 Let's pretend there are these users:
 
@@ -31,7 +31,17 @@ Let's pretend there are these users:
    * Snape, a user who should no longer have access
    <br /><br />
 
-PROTIP: <a target="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/kms/index.html">KMS operations (commands) within AWS CLI</a> are arranged by topic here:
+1. Provide permissions
+
+   ## AWS CLI for KMS
+
+1. To encrypt a short sentence using the AWS CLI:
+
+   <pre><strong>aws kms encrypt --plaintext "My little secret" --key-id alias/DemoKey \
+   --profile Alice
+   </strong></pre>
+
+   PROTIP: <a target="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/kms/index.html">KMS operations (commands) within AWS CLI</a> are arranged by topic here:
 
 * update-primary-region
 * tag-resource, list-resource-tags, untag-resource
@@ -56,16 +66,9 @@ PROTIP: <a target="_blank" href="https://awscli.amazonaws.com/v2/documentation/a
 * cancel-key-deletion
 <br /><br />
 
+### Terraform for KMS
 
-1. Provide Alice permissions
-
-1. To encrypt a short sentence using the AWS CLI:
-
-   <pre><strong>aws kms encrypt --plaintext "My little secret" --key-id alias/DemoKey \
-   --profile Alice
-   </strong></pre>
-
-Let's dive right in. To get a full idea of the complexity of KMS, here are links to <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform IaC yaml</a>:
+Links to <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform IaC YAML</a>:
 
 <table border="1" cellpadding="4" cellspacing="1">
 <tr><th> Resource </th><th> Data sources </th></tr>
