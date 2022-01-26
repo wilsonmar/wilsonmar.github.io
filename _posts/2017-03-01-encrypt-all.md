@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Encrypt all the things"
-excerpt: "How to store and send files securely"
+title: "Encrypt-all (on AWS)"
+excerpt: "How to store and send files securely using AWS KMS (Key Management Service)"
 tags: [AWS, Security]
-date: "2020-04-05"
+date: "2021-01-15"
 file: "encrypt-all"
 image:
 # pic silver robot white skin handshake 1900x500
@@ -16,17 +16,65 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There is now a way to safely store files in encrypted format and 
-transmit files privately over "hostile" public internet lines.
+There is now a way to encrypt <strong>clear (plain) text</strong> into <strong>cyphertext</strong> which is supposed to be unreadable to others while being stored "at rest" and while "in transit" over "hostile" public internet lines.
 
-That's good news amidst so much bad news about websites being hacked and private credentials stolen.
-It is now well-known that public wi-fi enables others to listen in to what you send.
+This tutorial aims to organize deep-dive insights and advice based on the combination of advice from several sources. Unlike others which first numb you with theory then have you mindlessly follow steps, I aim to provide commentary after each action.
 
 Each cloud service (AWS with Azure with GCP, etc.) has its own mechanisms.
 
+## AWS KMS (Key Management Service) 
 
-<a target="_blank" href="https://www.qwiklabs.com/focuses/10388">
-Qwiklabs.com: Introduction to AWS Key Management Service</a> (free)
+AWS CloudTrail logs each API action within AWS, including actions using KMS.
+Audits of CloudTrail logs would reveal when KMS encryption keys are used, for what reason, and by whom.
+
+Code to use KMS data sources in <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key">Terraform</a>:
+
+<table border="1" cellpadding="4" cellspacing="1">
+<tr><th> Resource </th><th> Data sources </th><th> AWS CLI </th></tr>
+<tr valign="top"><td><a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias">Define/import</a> </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_alias">aws_kms_alias</a>
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_ciphertext">Define/import</a> </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_ciphertext">aws_kms_ciphertext</a>
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key">Define/import</a> </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_key">aws_kms_key</a>
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_external_key">aws_kms_external_key</a> </td><td> - 
+   </td></tr>
+<tr valign="top"><td> - </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_public_key">aws_kms_public_key</a>
+   </td></tr>
+<tr valign="top"><td> - </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_secret">aws_kms_secret</a>
+   </td></tr>
+<tr valign="top"><td> - </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_secrets">aws_kms_secrets</a> 
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_grant">aws_kms_grant</a> </td><td> - 
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_replica_key">aws_kms_replica_key</a> </td><td> - 
+   </td></tr>
+<tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_replica_external_key">aws_kms_replica_external_key</a> </td><td> - 
+   </td></tr>
+</table>
+
+Functions in the KMS CLI:
+
+* GetKeyPolicy
+* CreateKey, DescribeKey, EnableKey, DisableKey
+* Encrypt, Decrypt, ReEncrypt
+* GenerateRandom, GenerateDataKey, GenerateDataKeyWithoutPlaintext
+* CreateAlias, ListAliases, DeleteAlias
+* CreateGrant, ListGrants
+
+aws_kms_alias
+aws_kms_ciphertext
+aws_kms_external_key
+aws_kms_grant
+aws_kms_key
+aws_kms_replica_external_key
+aws_kms_replica_key
+
+
+## AWS Tutorials about KMS
+
+Text tutorial on <a target="_blank" href="https://www.qwiklabs.com/focuses/10388">
+Qwiklabs.com: "Introduction to AWS Key Management Service"</a> (free)
 provides hands-on instructions on these procedures:
 
 1. Create an Encryption Key

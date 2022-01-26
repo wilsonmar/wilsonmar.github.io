@@ -1719,7 +1719,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <br /><br />
 
 
-## Poney Express
+## The Pony Express
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
 "Pony Express" riders</a> (who include "Calamity Jane") operated less than 2 years: 
