@@ -632,28 +632,6 @@ https://aws.amazon.com/premiumsupport/knowledge-center/aws-abuse-report/
 
 <hr />
 
-<a name="Encryption"></a>
-
-## Encryption
-
-   * <a target="_blank" href="https://cloudacademy.com/course/s3-encryption-mechanisms/s3-encrypt-introduction/?context_resource=lp&context_id=4125">"Understanding S3 Encryption Mechanisms to Secure your Data"</a> by <a target="_blank" href="https://linkedin.com/in/stuartanthonyscott/">Stuart Scott</a>
-   <br /><br />
-
-REMEMBER:<br />
-SSE = Server-Side Encryption<br />
-CSE = Client-Side Encryption
-
-* ... with S3 Managed Keys (SSE-S3)
-
-* ... with KMS Managed Keys (SSE-KMS)
-* ... with KMS Managed Keys (CSE-KMS)
-
-* ... with Customer Provided keys (SSE-C)
-* ... with Customer Provided Keys (CSE-C)
-<br /><br />
-
-LAB: Encrypting S3 objects using SSE-KMS
-
 
 <a name="KeyManagement"></a>
 

@@ -22,15 +22,29 @@ This tutorial aims to organize deep-dive insights and advice based on the combin
 
 Each cloud service (AWS with Azure with GCP, etc.) has its own mechanisms.
 
-## AWS KMS (Key Management Service) 
+## AWS KMS (Key Management Service)
 
-AWS CloudTrail logs each API action within AWS, including actions using KMS.
-Audits of CloudTrail logs would reveal when KMS encryption keys are used, for what reason, and by whom.
+Let's pretend there are these users:
 
-Code to use KMS data sources in <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key">Terraform</a>:
+   * Mary, the Key Administrator
+   * Alice, a valued user
+   * Snape, a user who should no longer have access
+   <br /><br />
+
+First, some background:
+
+1. Provide Alice permissions
+
+1. To encrypt a short sentence using the AWS CLI:
+
+   <pre><strong>aws kms encrypt --plaintext "My little secret" --key-id alias/DemoKey \
+   --profile Alice
+   </strong></pre>
+
+Let's dive right in. To get a full idea of the complexity of KMS, here are links to <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform IaC yaml</a>:
 
 <table border="1" cellpadding="4" cellspacing="1">
-<tr><th> Resource </th><th> Data sources </th><th> AWS CLI </th></tr>
+<tr><th> Resource </th><th> Data sources </th></tr>
 <tr valign="top"><td><a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias">Define/import</a> </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_alias">aws_kms_alias</a>
    </td></tr>
 <tr valign="top"><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_ciphertext">Define/import</a> </td><td> <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/kms_ciphertext">aws_kms_ciphertext</a>
@@ -53,22 +67,150 @@ Code to use KMS data sources in <a target="_blank" href="https://registry.terraf
    </td></tr>
 </table>
 
-Functions in the KMS CLI:
+<a target="_blank" href="https://docs.aws.amazon.com/cli/latest/reference/kms/index.html
+">KMS commands within AWS CLI</a>:
 
-* GetKeyPolicy
+* GetKeyPolicy, PutKeyPolicy
 * CreateKey, DescribeKey, EnableKey, DisableKey
 * Encrypt, Decrypt, ReEncrypt
 * GenerateRandom, GenerateDataKey, GenerateDataKeyWithoutPlaintext
 * CreateAlias, ListAliases, DeleteAlias
-* CreateGrant, ListGrants
+* <a href="#Grants">Grants</a>: CreateGrant, ListGrants
+<br /><br />
 
-aws_kms_alias
-aws_kms_ciphertext
-aws_kms_external_key
-aws_kms_grant
-aws_kms_key
-aws_kms_replica_external_key
-aws_kms_replica_key
+<a name="Encryption"></a>
+
+## Envelop Encryption
+
+References at CloudAcademy.com:
+   * <a target="_blank" href="https://cloudacademy.com/course/s3-encryption-mechanisms/s3-encrypt-introduction/?context_resource=lp&context_id=4125">"Understanding S3 Encryption Mechanisms to Secure your Data"</a> by <a target="_blank" href="https://linkedin.com/in/stuartanthonyscott/">Stuart Scott</a>
+   * <a target="_blank" href="https://cloudacademy.com/course/amazon-web-services-key-management-service-kms/understanding-permissions-key-policies/">"Understanding Permissions & Key Policies"</a>
+   <br /><br />
+
+Encryption can occur on the client or server, using several mechanisms:
+
+REMEMBER:<br />
+SSE = Server-Side Encryption<br />
+CSE = Client-Side Encryption
+
+* ... with S3 Managed Keys (SSE-S3) 
+
+* ... with KMS Managed Keys (SSE-KMS)
+* ... with KMS Managed Keys (CSE-KMS)
+
+* ... with Customer Provided keys (SSE-C)
+* ... with Customer Provided Keys (CSE-C)
+<br /><br />
+
+LAB: Encrypting S3 objects using SSE-KMS
+
+When Customer keys are used, AWS KMS uses what is known as "envelope encryption". An application's cleartext data (of any size) is encrypted using two keys: the <strong>plaintext CMK</strong> and the <strong>Data Encryption Key (DEK)</strong> created from plaintext CMK (Customer-supplied Master Key) using the FIPS 140-2 validated cryptographic module. S3 uses the plaintext CMK to encrypt, then store each encrypted object with the encrypted CMK.
+The plaintext CMK is deleted from memory after use.
+
+When a user requests an encrypted object from S3, S3 makes a request to KMS with the encrypted CMK stored with the object. From that, KMS generates a plaintext DEK for return to S3 for use to decrypt.
+
+
+## Key policies
+
+Access to each CMK is governed by key policies for that CMK.
+At least one Key Policy is required for all CMKs.
+Much like IAM policies, Key policies define (in JSON) who can use and access a key in KMS. 
+A template of a Key Policy:
+
+<pre>{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Sid": "statement identifier",
+    "Effect": "effect",
+    "Principal": "principal",
+    "Action": "action",
+    "Resource": "resource",
+    "Condition": {"condition operator": {"condition context key": "context key value"} }    
+  }]
+}</pre>
+
+An example of a Key Policy with IAM Policies:
+
+<pre>{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Action": [
+      "kms:Encrypt",
+      "kms:Decrypt"
+    ]
+    "Resource": [
+      "arn:aws:kms:us-east-1:123456789123:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+      "arn:aws:kms:eu-west-1:123456789123:key/0987dcba-09fe-87dc-65ba-ab0987654321"
+    ]
+  }
+}</pre>
+
+
+### Root and Administrator
+
+To ensure that KMS root account has access, its Key Policy allows all actions to all resources:
+
+<pre>{
+    "Sid": "Enable IAM User Permissions",
+    "Effect": "Allow",
+    "Principal": {"AWS": "arn:aws:iam:123456789123:root},
+    "Action": "kms:*",
+    "Resource": "*"
+}</pre>
+
+When using the AWS Management Console GUI, define the Key Administrator as Principals who administer the CMK, and can perform all but encryption functionality: Create, Describe, Enable, List, Put, Update, Revoke*, Disable*, Get*, Delete*, TagResource, UntagResource, ScheduleKeyDeletion, CancelKeyDeletion.
+
+PROTIP: Enable the Key Administrator to be the only one with the ability to Delete, to ensure against other accounts from making accidental or malicious deletions which make data unreadable. However, the Key Administrator should be easily reachable and quickly responsive to valid requests for deletion when needed.
+
+<a name="Grants"></a>
+
+## Grants
+
+Grants allow delegation of access to another principal, such as a service integrated with KMS or another user.
+
+Grants eliminates the possibility of anyone using the permission <tt>kms:PutKeyPolicy</tt>.
+
+Grants are created using the AWS KMS APIs.
+
+<pre>{
+    "Sid": "Allow attachment of persistent resources",
+    "Effect": "Allow",
+    "Principal": [
+      "AWS": [
+         "arn:aws:iam::456789123345:user/BigCorp},
+      ]
+  ],
+  "Action": [
+     "kms:CreateGrant",
+     "kms:ListGrants",
+     "kms:RevokeGrant",
+  ]
+  "Resource": "*",
+  "Condition": [
+    "Bool": {
+      "kms:GrantIsForAWSResource": true
+    }
+  ]
+}</pre>
+
+A GrantToken and GrantID are issued.
+
+
+Using Key Policies with IAM:
+
+Using Key Policies with Grants:
+
+
+## Logging in CloudTrail
+
+AWS CloudTrail logs each API action within AWS, including actions using KMS.
+Audits of CloudTrail logs would reveal when KMS encryption keys are used, for what reason, and by whom.
+
+KMS keys were once specific to a region. They recently became multi-region for client-side encryption in:
+* AWS Encryption SDK
+* AWS S3 Encryption Client, and
+* AWS DynamoDB Encryption Client.
 
 
 ## AWS Tutorials about KMS
