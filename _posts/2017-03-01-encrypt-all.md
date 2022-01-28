@@ -16,7 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There is now a way to encrypt <strong>clear (plain) text</strong> into <strong>cyphertext</strong> which is supposed to be unreadable to others while being stored "at rest" and while "in transit" over "hostile" public internet lines.
+For storage "at rest" and while "in transit" over telecommunication lines,
+we encrypt <strong>clear (plain) text</strong> into unreadable (scrambled)
+<strong>cyphertext</strong>. 
 
 This tutorial aims to organize deep-dive insights and advice based on the combination of advice from several sources. Unlike others which first numb you with theory then have you mindlessly follow steps, I aim to provide commentary after each action.
 
@@ -31,9 +33,162 @@ Let's pretend there are these users:
    * Snape, a user who should no longer have access
    <br /><br />
 
-1. Provide permissions
+## AWS KMS
 
-   ## AWS CLI for KMS
+   * <a target="_blank" href="https://www.youtube.com/watch?v=f3APF1dP8w0&list=RDCMUChpIik3lwpviVj_tIoCeUHw&start_radio=1&rv=f3APF1dP8w0" title="by Manouj Fernando Apr 24 2020">VIDEO</a>
+   <br /><br />
+
+The AWS KMS (Key Management Service) manages CMKs (Customer Master Keys) for use with most other AWS services.
+
+PROTIP: AWS is trying to replace the term Customer Master Key (CMK) with "KMS key". 
+Its concepts have not changed. To prevent breaking changes, KMS is keeping some variations of this term.
+
+   REMEMBER: KMS itself can only encrypt a maximum of <strong>4 KB</strong>. 
+   So <a href="#DataKeys">Data Keys</a> are used to encrypt larger objects.
+
+<a name="DataKeys"></a>
+
+### Data Keys
+
+To encrypt objects larger than 4KB, 
+
+REMEMBER: AWS KMS does not store Data Keys.
+
+PROTIP: Use a separate Data key for each different dataset, so that if one key falls into the wrong hands, your whole system won't be completely compromised. This is a "Zero Trust" approach.
+
+Encryption can occur on the client or server, using several mechanisms:
+
+REMEMBER:<br />
+SSE = Server-Side Encryption<br />
+CSE = Client-Side Encryption
+
+* ... with S3 Managed Keys (SSE-S3) 
+
+* ... with KMS Managed Keys (SSE-KMS)
+* ... with KMS Managed Keys (CSE-KMS)
+
+* ... with Customer Provided keys (SSE-C)
+* ... with Customer Provided Keys (CSE-C)
+<br /><br />
+
+## Hands-on
+
+Instructions below are an enhanced version of the<a target="_blank" href="https://www.qwiklabs.com/focuses/10388" title=" (now defunct) Qwiklabs.com: Introduction to AWS Key Management Service">text tutorial</a>:
+
+1. <a href="#CMK_using_GUI">Create a CMK Encryption Key using GUI AWS Management Console</a>
+2. <a href="#CMK_using_CLI">Create a CMK Encryption Key using GUI AWS CLI</a>
+3. <a href="#CMK_using_TF">Create a CMK Encryption Key using Terraform</a>
+4. <a href="#CMK_using_API">Create a CMK Encryption Key using a Python program</a> calling the <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/Welcome.html">KMS API</a> 
+
+5. Create an S3 bucket with CloudTrail logging functions
+6. Use an encryption key to encrypt data stored in a S3 bucket
+7. Monitor encryption key usage using CloudTrail
+8. Manage encryption keys for users and roles
+<br /><br />
+
+
+<a name="CMK_using_GUI"></a>
+
+### Create a CMK (KMS Key) using GUI AWS Management Console
+
+<a target="_blank" href="https://www.youtube.com/watch?v=f3APF1dP8w0&t=11m40s&list=RDCMUChpIik3lwpviVj_tIoCeUHw&start_radio=1&rv=f3APF1dP8w0" title="by Manouj Fernando Apr 24 2020">VIDEO</a>shows the manual way using a GUI.
+
+1. Use an internet browser to get on the AWS Management Console, such as:
+
+   https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#
+
+1. Select Key Management Service (KMS) from among AWS services:
+
+   <img width="401" alt="aws-kms-svc-802x308" src="https://user-images.githubusercontent.com/300046/78986307-3cd7d300-7ae8-11ea-9cd3-328902665460.png">
+
+1. Upon entry, "Customer-managed keys" is auto-selected from the left menu:
+
+   * AWS-managed keys
+   * Customer-managed keys (symmetric or asymmetric)
+   * Customer key stores
+   <br /><br />
+
+   About "AWS-managed keys": AWS creates a Default master key that protects the data of each service (such as Cloud9) when no other key is defined.
+
+1. Click "Create Key" (in orange) for the "Configure keys" page.
+
+1. Select a region.
+
+   Private CMK (Customer Master Keys) are created in KMS and remain there.
+
+   REMEMBER: Internally, AWS KMS uses a HSM (Hardware Security Module) to store keys.
+
+   Asymmetric encryption is not available in some regions.
+
+   REMEMBER: A CMK (KMS Key) never leaves the HSM in the region where it was created.
+   
+   KMS keys were once specific to a region. But they recently became multi-region for client-side encryption in:
+   * AWS Encryption SDK
+   * AWS S3 Encryption Client, and
+   * AWS DynamoDB Encryption Client.
+   <br /><br />
+
+1. Click "Help me choose" for a lesson:
+
+   REMEMBER: Symmetric keys are like a password, a single key is used to both encrypt and decrypt. It is fast and efficient. But they cannot be used to sign and verify.
+
+   REMEMBER: Asymmetric keys are public/private key pairs. Key pairs generated using the RSA algorithm are used to encrypt/decrypt or sign/verify operations. Key pairs generated using using ECC (Elliptic curve) algorithms are used to only sign and verify.
+
+1. Click <strong>Symmetric</strong>.
+
+1. Click "Advanced options" to view "Key material origin". Read the KMS docs at 
+
+   https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
+
+   WARNING: Using <a target="_blank" href="https://console.aws.amazon.com/cloudhsm/home">AWS Cloud HSM</a> cluster incurs an hourly fee. And AWS has no visibility or access to encryption keys in HSM.
+
+1. Click "Next" for the "Add labels" page.
+1. Type in an Alias and Description. 
+
+   PROTIP: Define aliases to differentiate keys within the account.
+   
+   PROTIP: Establish a convention for naming keys for all departments, projects, etc.
+
+   Each key has an Alias and Key ID, which are GUIDs with dashes, and enabled.
+
+1. Add Tags?
+1. Click "Next" for the "Define key administrative permissions" page.
+1. Select the Key Administrators already defined:
+
+   Advanced Options: Key material origins: KMS, External, Customer key store (CloudHSM):
+   * KMS are validated to FIPS 140-2 level 2, China region does not suppor asymmetric keys
+   * CloudHSM are validated to FIPS 140-2 level 3, keys and hardware exclusive to customer, either symmetric or asymmetric
+
+1. Leave default-checked "Allow key administrators to delete this key".
+1. Click "Next" for the "Define key usage permissions" page.
+1. Select from "This Account" list your account.
+1. Click "Next" for the "Review and edit key polcy" page. A sample:
+
+   <pre>{
+      "Id": "key-consolepolicy-3",
+      "Version": "2012-10-17",
+      "Statement": [
+         {
+            "Sid": "Enable IAM User Permissions",
+            "Effect": "Allow",
+            "Principal": {
+               "AWS": "arn:aws:iam::11111111:root"
+            },
+            "Action": "kms",
+            "Resource": "*"
+         },
+...
+   </pre>
+
+1. Click "Finish" to see the Alias name you created.
+
+<hr />   
+
+<a name="CMK_using_GUI"></a>
+
+### Create a CMK (KMS Key) using CLI
+
+1. Provide permissions
 
 1. To encrypt a short sentence using the AWS CLI:
 
@@ -43,7 +198,8 @@ Let's pretend there are these users:
 
    PROTIP: <a target="_blank" href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/kms/index.html">KMS operations (commands) within AWS CLI</a> are arranged by topic here:
 
-* update-primary-region
+* update-primary-region 
+
 * tag-resource, list-resource-tags, untag-resource
 
 * create-custom-key-store, connect-custom-key-store, describe-custom-key-stores, update-custom-key-store, disconnect-custom-key-store, delete-custom-key-store
@@ -56,7 +212,8 @@ Let's pretend there are these users:
 * import-key-material, delete-imported-key-material
 * generate-data-key, generate-data-key-pair, generate-data-key-without-plaintext, generate-data-key-pair-without-plaintext
 
-* encrypt, decrypt, re-encrypt, sign, verify
+* encrypt, decrypt, re-encrypt, 
+* sign, verify
 * generate-random, GenerateDataKey, GenerateDataKeyWithoutPlaintext
 * get-public-key, 
 * update-key-description
@@ -66,7 +223,11 @@ Let's pretend there are these users:
 * cancel-key-deletion
 <br /><br />
 
-### Terraform for KMS
+<hr />   
+
+<a name="CMK_using_TF"></a>
+
+### Create a CMK (KMS Key) using Terraform
 
 Links to <a target="_blank" href="https://wilsonmar.github.io/terraform">Terraform IaC YAML</a>:
 
@@ -94,7 +255,8 @@ Links to <a target="_blank" href="https://wilsonmar.github.io/terraform">Terrafo
    </td></tr>
 </table>
 
-<a name="Encryption"></a>
+
+<a name="EnvelopEncryption"></a>
 
 ## Envelop Encryption
 
@@ -103,29 +265,14 @@ References at CloudAcademy.com:
    * <a target="_blank" href="https://cloudacademy.com/course/amazon-web-services-key-management-service-kms/understanding-permissions-key-policies/">"Understanding Permissions & Key Policies"</a>
    <br /><br />
 
-Encryption can occur on the client or server, using several mechanisms:
-
-REMEMBER:<br />
-SSE = Server-Side Encryption<br />
-CSE = Client-Side Encryption
-
-* ... with S3 Managed Keys (SSE-S3) 
-
-* ... with KMS Managed Keys (SSE-KMS)
-* ... with KMS Managed Keys (CSE-KMS)
-
-* ... with Customer Provided keys (SSE-C)
-* ... with Customer Provided Keys (CSE-C)
-<br /><br />
-
 LAB: Encrypting S3 objects using SSE-KMS
 
-When Customer keys are used, AWS KMS uses what is known as "envelope encryption". An application's cleartext data (of any size) is encrypted using two keys: the <strong>plaintext CMK</strong> and the <strong>Data Encryption Key (DEK)</strong> created from plaintext CMK (Customer-supplied Master Key) using the FIPS 140-2 validated cryptographic module. 
+When Customer keys are used, AWS KMS uses what is known as "envelope encryption". An application's cleartext data (of any size) is encrypted using two keys: the <strong>plaintext CMK</strong> and the <strong>Data Encryption Key (DEK)</strong> created from plaintext CMK (Customer-supplied Master Key) using the FIPS 140-2 validated cryptographic module.
 
-PROTIP: In 2022, KMS is replacing the term customer master key (CMK) with KMS key and KMS key. The concept has not changed. To prevent breaking changes, KMS is keeping some variations of this term.
+Outside AWS, OpenSSL or AWS Encryption SDK is used to encrypt data with Data Keys.
 
 Anyway, S3 uses the plaintext CMK to encrypt, then store each encrypted object with the encrypted CMK.
-The plaintext CMK is deleted from memory after use.
+The plaintext CMK is deleted from memory immediately after use.
 
 When a user requests an encrypted object from S3, S3 makes a request to KMS with the encrypted CMK stored with the object. From that, KMS generates a plaintext DEK for return to S3 for use to decrypt.
 
@@ -227,86 +374,13 @@ Using Key Policies with Grants:
 AWS CloudTrail logs each API action within AWS, including actions using KMS.
 Audits of CloudTrail logs would reveal when KMS encryption keys are used, for what reason, and by whom.
 
-KMS keys were once specific to a region. They recently became multi-region for client-side encryption in:
-* AWS Encryption SDK
-* AWS S3 Encryption Client, and
-* AWS DynamoDB Encryption Client.
-
 
 ## AWS Tutorials about KMS
-
-Text tutorial on <a target="_blank" href="https://www.qwiklabs.com/focuses/10388">
-Qwiklabs.com: "Introduction to AWS Key Management Service"</a> (free)
-provides hands-on instructions on these procedures:
-
-1. Create an Encryption Key
-2. Create an S3 bucket with CloudTrail logging functions
-3. Use an encryption key to encrypt data stored in a S3 bucket
-4. Monitor encryption key usage using CloudTrail
-5. Manage encryption keys for users and roles
 
 <hr />
 
 ## Generate secret keys using AWS KMS 
 
-The below describes the manual way using a GUI.
-There is also an <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/Welcome.html">API</a>
-
-PROTIP: Use a separate Data key for different datasets.
-
-1. Use an internet browser to get on the AWS Management Console:
-
-   https://us-east-2.console.aws.amazon.com/console/home?region=us-east-2#
-
-1. Select your region.
-1. Enter Key Management Service (KMS).
-
-   <img width="401" alt="aws-kms-svc-802x308" src="https://user-images.githubusercontent.com/300046/78986307-3cd7d300-7ae8-11ea-9cd3-328902665460.png">
-
-   Notice the service is to securely ???
-
-   Private CMK (Customer Master Keys) are created in KMS and remain there.
-   
-1. Upon entry, there is a left menu:
-
-   * AWS-managed keys
-   * Customer-managed keys (symmetric or asymmetric)
-   * Customer key stores
-   <br /><br />
-
-   "Create a key" on the splash screen can also be invoked within the "Customer managed keys" menu item.
-
-   ## Create a KMS key
-
-   AWS creates a Default master key that protects the data of each service (such as Cloud9) when no other key is defined.
-
-1. Click "Create Key".
-
-1. Click "Advanced options" to view "Key material origin". Read the KMS docs at 
-
-   https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
-
-   WARNING: Using <a target="_blank" href="https://console.aws.amazon.com/cloudhsm/home">AWS Cloud HSM</a> cluster incurs an hourly fee. And AWS has no visibility or access to encryption keys in HSM.
-
-1. On the configuration page, configure keys: click <strong>symmetric</strong>.
-
-   Symmetric keys are like a password, a single encryption key that is used for both encrypt and decrypt operations, 256-bit.
-
-   Asymmetric keys are RSA or elliptic curve (ECC) public/private key pairs used encrypt/decrypt or sign/verify operations
-
-1. On the Add Labels page, type in an Alias and Description. Next.
-
-   PROTIP: Define aliases to differentiate keys within the account.
-   
-   PROTIP: Establish a convention for naming keys for all departments, projects, etc.
-
-   Each key has an Alias and Key ID, which are GUIDs with dashes, and enabled.
-
-1. On the <strong>Define key administrative permissions</strong>, select <i class="far fa-check-square"></i> the user or role you're signed into the Console with.
-
-   Advanced Options: Key material origins: KMS, External, Customer key store (CloudHSM):
-   * KMS are validated to FIPS 140-2 level 2, China region does not suppor asymmetric keys
-   * CloudHSM are validated to FIPS 140-2 level 3, keys and hardware exclusive to customer, either symmetric or asymmetric
 
 <hr />
 
