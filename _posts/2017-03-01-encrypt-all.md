@@ -80,10 +80,13 @@ Instructions below are an enhanced version of the<a target="_blank" href="https:
 3. <a href="#CMK_using_TF">Create a CMK Encryption Key using Terraform</a>
 4. <a href="#CMK_using_API">Create a CMK Encryption Key using a Python program</a> calling the <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/Welcome.html">KMS API</a> 
 
-5. Create an S3 bucket with CloudTrail logging functions
-6. Use an encryption key to encrypt data stored in a S3 bucket
-7. Monitor encryption key usage using CloudTrail
-8. Manage encryption keys for users and roles
+1. <a href="#Encrypt_text_using_API">Encrypt text using CLI</a>
+
+1. Create an S3 bucket with CloudTrail logging functions
+1. Use an encryption key to encrypt data stored in a S3 bucket
+
+1. Monitor encryption key usage using CloudTrail
+1. Manage encryption keys for users and roles
 <br /><br />
 
 
@@ -91,7 +94,7 @@ Instructions below are an enhanced version of the<a target="_blank" href="https:
 
 ### Create a CMK (KMS Key) using GUI AWS Management Console
 
-<a target="_blank" href="https://www.youtube.com/watch?v=f3APF1dP8w0&t=11m40s&list=RDCMUChpIik3lwpviVj_tIoCeUHw&start_radio=1&rv=f3APF1dP8w0" title="by Manouj Fernando Apr 24 2020">VIDEO</a>shows the manual way using a GUI.
+<a target="_blank" href="https://www.youtube.com/watch?v=f3APF1dP8w0&t=11m40s&list=RDCMUChpIik3lwpviVj_tIoCeUHw&start_radio=1&rv=f3APF1dP8w0" title="by Manouj Fernando Apr 24 2020">VIDEO</a>
 
 1. Use an internet browser to get on the AWS Management Console, such as:
 
@@ -118,7 +121,7 @@ Instructions below are an enhanced version of the<a target="_blank" href="https:
 
    REMEMBER: Internally, AWS KMS uses a HSM (Hardware Security Module) to store keys.
 
-   Asymmetric encryption is not available in some regions.
+   Asymmetric encryption is not available in some regions (such as China).
 
    REMEMBER: A CMK (KMS Key) never leaves the HSM in the region where it was created.
    
@@ -140,6 +143,10 @@ Instructions below are an enhanced version of the<a target="_blank" href="https:
 
    https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html
 
+   Advanced Options: Key material origins: KMS, External, Customer key store (CloudHSM):
+   * KMS are validated to FIPS 140-2 level 2
+   * CloudHSM are validated to FIPS 140-2 level 3, keys and hardware exclusive to customer, either symmetric or asymmetric
+
    WARNING: Using <a target="_blank" href="https://console.aws.amazon.com/cloudhsm/home">AWS Cloud HSM</a> cluster incurs an hourly fee. And AWS has no visibility or access to encryption keys in HSM.
 
 1. Click "Next" for the "Add labels" page.
@@ -153,11 +160,25 @@ Instructions below are an enhanced version of the<a target="_blank" href="https:
 
 1. Add Tags?
 1. Click "Next" for the "Define key administrative permissions" page.
+
+   ### Root and Administrator
+
 1. Select the Key Administrators already defined:
 
-   Advanced Options: Key material origins: KMS, External, Customer key store (CloudHSM):
-   * KMS are validated to FIPS 140-2 level 2, China region does not suppor asymmetric keys
-   * CloudHSM are validated to FIPS 140-2 level 3, keys and hardware exclusive to customer, either symmetric or asymmetric
+   To ensure that KMS root account has access, its Key Policy allows all actions to all resources:
+
+   <pre>{
+    "Sid": "Enable IAM User Permissions",
+    "Effect": "Allow",
+    "Principal": {"AWS": "arn:aws:iam:123456789123:root},
+    "Action": "kms:*",
+    "Resource": "*"
+}
+   </pre>
+
+   When using the AWS Management Console GUI, define the Key Administrator as Principals who administer the CMK, and can perform all but encryption functionality: Create, Describe, Enable, List, Put, Update, Revoke*, Disable*, Get*, Delete*, TagResource, UntagResource, ScheduleKeyDeletion, CancelKeyDeletion.
+
+   PROTIP: Enable the Key Administrator to be the only one with the ability to Delete, to ensure against other accounts from making accidental or malicious deletions which make data unreadable. However, the Key Administrator should be easily reachable and quickly responsive to valid requests for deletion when needed.
 
 1. Leave default-checked "Allow key administrators to delete this key".
 1. Click "Next" for the "Define key usage permissions" page.
@@ -184,11 +205,38 @@ Instructions below are an enhanced version of the<a target="_blank" href="https:
 
 <hr />   
 
-<a name="CMK_using_GUI"></a>
+<a name="CMK_using_CLI"></a>
 
-### Create a CMK (KMS Key) using CLI
+### Create a CMK (KMS Data Key) using CLI
 
-1. Provide permissions
+<a target="_blank" href="https://www.youtube.com/watch?v=f3APF1dP8w0&t=15m3s&list=RDCMUChpIik3lwpviVj_tIoCeUHw&start_radio=1&rv=f3APF1dP8w0" title="by Manouj Fernando Apr 24 2020">VIDEO</a>
+
+1. To generate a CMK using the Advanced Encryption Standard:
+
+   <pre><strong>aws kms generate-data-key --key-id alias/demo1 --key-spec AES_256 \
+   --region us-east-2 > keys.txt
+   </strong></pre>
+
+   The command returns two versions of Data Keys in the file specified:
+
+   * Plaintext
+   * KeyId "arn:aws:kms:us-east-2:11111:key/24234-1fac-2222-3333-44444444",
+   * CiphertextBlob
+   <br /><br />
+
+   The above strings are in Base64 encoding.
+
+<hr />   
+
+<a name="Encrypt_text_using_CLI"></a>
+
+### Encrypt text using CLI and CMK
+
+<a target="_blank" href="https://www.youtube.com/watch?v=f3APF1dP8w0&t=15m3s&list=RDCMUChpIik3lwpviVj_tIoCeUHw&start_radio=1&rv=f3APF1dP8w0" title="by Manouj Fernando Apr 24 2020">VIDEO</a>
+
+1. Verify version installed:
+
+   <pre><strong>aws --version</strong></pre>
 
 1. To encrypt a short sentence using the AWS CLI:
 
@@ -314,21 +362,6 @@ An example of a Key Policy with IAM Policies:
 }</pre>
 
 
-### Root and Administrator
-
-To ensure that KMS root account has access, its Key Policy allows all actions to all resources:
-
-<pre>{
-    "Sid": "Enable IAM User Permissions",
-    "Effect": "Allow",
-    "Principal": {"AWS": "arn:aws:iam:123456789123:root},
-    "Action": "kms:*",
-    "Resource": "*"
-}</pre>
-
-When using the AWS Management Console GUI, define the Key Administrator as Principals who administer the CMK, and can perform all but encryption functionality: Create, Describe, Enable, List, Put, Update, Revoke*, Disable*, Get*, Delete*, TagResource, UntagResource, ScheduleKeyDeletion, CancelKeyDeletion.
-
-PROTIP: Enable the Key Administrator to be the only one with the ability to Delete, to ensure against other accounts from making accidental or malicious deletions which make data unreadable. However, the Key Administrator should be easily reachable and quickly responsive to valid requests for deletion when needed.
 
 <a name="Grants"></a>
 
