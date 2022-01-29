@@ -144,6 +144,13 @@ MIT's Introduction to Computer Science using Python course 600.1.X</a> Aug 10, 2
 <a target="_blank" href="https://realpython.com/#course-packages">
 realpython.com</a> has a $60 course package.
 
+Cornell has several certificates on Python:
+
+   * https://ecornell.cornell.edu/certificates/technology/python-programming/ 6 courses for $2,520
+   * https://ecornell.cornell.edu/certificates/data-science/data-visualization-with-python/
+   * https://ecornell.cornell.edu/certificates/data-science/python-for-data-science/
+   * https://ecornell.cornell.edu/certificates/data-science/python-360/ 15 courses for $5,530
+
 
 ### Datacamp
 
