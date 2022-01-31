@@ -23,6 +23,19 @@ Analysis of corporate S-1 filings identified significant spend as percentage of 
 
 ![cloud-svcs-spend-1312x560](https://user-images.githubusercontent.com/300046/138592222-e294f7e7-7271-4da8-83d6-fead30969d83.png)
 
+## What is Cloud Computing?
+
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf">PDF: NIST 800-145</a> defines the characteristics:
+
+   * Resource Pooling (for economies of scale) is the most fundamental characteristic
+   * On-demand Self-Service (using UI/CLI without human interaction)
+   * Broad Network Access (internationally using standard protocols)
+   * Rapid Elasticity (automatically scale UP/OUT and DOWN/IN in response to system load)
+   * Measured Service (pay for what you consume)
+   <br /><br />
+
+   * Multitenancy (distinct from resource pooling) is added by ISO/IEC 17788's six key characteristics.
+   <br /><br />
 
 
 ## Why? Advantages of Cloud

@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"><img align="right" alt="resume-certificate-158x112.png" src="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"><img align="right" alt="resume-certificate-158x112.png" width="100" src="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"></a>
 For security professionals, there are several expensive overlapping certification exams, from competing agencies.
 
 This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
@@ -29,20 +29,19 @@ This map is from <a target="_blank" href="https://pauljerimy.com/category/book-r
 
 <a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the Seattle-based <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a>. 
 
-QUESTION: Can the exam be taken remotely? The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype inactive?</a>
+QUESTION: The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype inactive?</a>
 
-The CCSK is an <strong>open-book, online exam</strong>, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80%.
+<a target="_blank" href="https://www.whizlabs.com/learn/course/ccsk-pt/">
+Whizlabs has sample tests</a> but questionable quality with too many double negative questions and answers.
 
-Of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
+The CCSK is an <strong>open-book, online exam</strong>, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80% 
+of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
 
    * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">2009 Cloud Computing report</a> from the <a target="_blank" href="http://www.enisa.europa.eu/">ENISA (European Network and Information Security Agency)</a>
 
    * 7% are based on <a target="_blank" href="https://cloudsecurityalliance.org/download/cloud-controlsmatrix-v3-0-1/">CSA’s CCM (Cloud Controls Matrix) spreadsheet 3.0.1</a> which cross references the many other standard worldwide (AICPA, PIPEDA, CIS, COBIT, CSA, ENISA, FedRAMP, GAAP, HIPPA, HITRUST, IEC, NIST, PCI, etc.). It is the basis for CSA's <a target="_blank" href="https://cloudsecurityalliance.org/research/working-groups/consensus-assessments/">Consensus Assessments Initiative Questionnaire (CAIQ)</a> industry-accepted way to document which security controls exist in IaaS, PaaS, and SaaS services, which inputs to <a target="_blank" href="https://cloudsecurityalliance.org/star/">"Level 1" of the STAR (CSA Security Trust Assurance and Risk)</a> <a target="_blank" href="https://cloudsecurityalliance.org/star/registry/">Registry</a> of vendors.
 
    * 87% are based on the <a target="_blank" href="https://cloudsecurityalliance.org/download/security-guidance-v4/">CSA Guidance v4</a> at PROTIP: <a target="_blank" href="https://github.com/cloudsecurityalliance/CSA-Guidance">https://github.com/cloudsecurityalliance/CSA-Guidance</a> -- a masterwork providing a summary of terms and concepts which integrate the various worldwide standards. 
-
-<a target="_blank" href="https://www.whizlabs.com/learn/course/ccsk-pt/">
-Whizlabs has sample tests</a> but questionable quality with too many double negative questions and answers.
 
 https://www.meetup.com/Cloud-Security-Alliance-Northeast-Ohio-Chapter/events/275707693/
 Cloud Security Alliance NorthEast Ohio chapter
@@ -66,12 +65,12 @@ Domain 2: Governance and Enterprise Risk Management
 
 Domain 3: Legal Issues, Contracts and Electronic Discovery
 * Legal Frameworks Governing Data Protection and Privacy
-  - Cross-Border Data Transfer
-  - Regional Considerations
+  - Cross-Border Data Transfer (GDPR)
+  - Regional Considerations (California)
 * Contracts and Provider Selection
   - Contracts
   - Due Diligence
-  - Third-Party Audits and Attestations
+  - Third-Party Audits and Attestations (SOC, ISO)
 * Electronic Discovery
   - Data Custody
   - Data Preservation
