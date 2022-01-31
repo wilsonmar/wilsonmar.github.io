@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Automatic remediations (of Vulnerabilities in AWS)"
+title: "AWS Automatic remediations (of Vulnerabilities in AWS)"
 excerpt: "Dynamically audit AWS resource configrations using using OPA Rego, Lambda alerts using SNS through EventBridge, then automatically remediate (via SSM)"
 tags: [DevOps,Security, AWS]
 date: "2022-01-30"
-file: "auto-remediations"
+file: "aws-auto-remediations"
 image:
 # aws-config-rego-1900x500
   feature: https://user-images.githubusercontent.com/300046/141044341-94768793-00e5-4702-a719-293931ff3e6e.png
