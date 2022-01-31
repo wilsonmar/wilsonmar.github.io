@@ -230,7 +230,9 @@ https://stackoverflow.com/questions/66868470/lambda-security-group-deletion-hang
 ## AWS System Manager via AWS Security Hub
 
 https://aws.amazon.com/solutions/implementations/aws-security-hub-automated-response-and-remediation/
-proposes this:
+and https://docs.aws.amazon.com/solutions/latest/aws-security-hub-automated-response-and-remediation/welcome.html
+proposes this using https://github.com/aws-solutions/aws-security-hub-automated-response-and-remediation
+with https://docs.aws.amazon.com/solutions/latest/aws-security-hub-automated-response-and-remediation/aws-security-hub-automated-response-and-remediation.pdf
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/142207571-91faf24c-885e-4756-8e29-615aa349bf7e.png">
 <img width="521" alt="aws-security-hub-automated-response-architecture 11b409c38904e473e603f41e828405eafb30e68d" src="https://user-images.githubusercontent.com/300046/142207571-91faf24c-885e-4756-8e29-615aa349bf7e.png"></a>
