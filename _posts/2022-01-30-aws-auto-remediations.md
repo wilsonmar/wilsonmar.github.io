@@ -16,7 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 Security threats are getting more and more clever and incidious.
 So a <strong>quicker and more thorough</strong> response to remediation is necessary in today's world. 
 
@@ -45,9 +44,13 @@ We will do it all:
 
 Several mechanisms automatically assess, audit, evaluate, and even remediate the configuration of AWS resource configurations (manually in GUI or by Terraform/CloudFormation Infrastructure as Code):
 
+Can be performed on a Mac/Windows laptop:
+
    * <a href="#TFSec">TFSec.dev (by Aqua Security)</a> for shifting security left onto  developer laptops.
 
    * <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform open source (with Atlantis Policy-as-Code)</a> on laptop/server
+
+As a service:
 
    * <a target="_blank" href="https://wilsonmar.github.io/tfe">Terraform Enterprise Cloud SaaS</a> with Sentinel Policy-as-code (from Hashicorp)
 
@@ -55,8 +58,6 @@ Several mechanisms automatically assess, audit, evaluate, and even remediate the
    * <a target="_blank" href="https://aws.amazon.com/config">AWS Config</a> SaaS using Lambda to invoke an OPA engine processing <strong>custom</strong> static rules written in <a href="#RegoLang">Rego</a>
    <br /><br />
 
-The first group (TFSec and Atlantis) can be performed on a Mac/Windows laptop.
-The rest are performed by a service.
 
 
 <a name="Policies"></a>
