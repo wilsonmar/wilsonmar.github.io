@@ -91,7 +91,7 @@ PROTIP: One memonic to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" pillar.
 
-Amazon accounced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
+   6. Amazon accounced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
 
 ACTIVITY 1 - Have each member of your team do a mental exercise to <strong>prioritize the pillars</strong> as the basis for a discussion, as a team. (Why? The Dunning-Kruger effect). Example discussion:
 
@@ -303,10 +303,20 @@ But what are specific actions?
 
 ### AWS Well-Architected Labs
 
-My notes for each pillar are annotated with deep links to hands-on instructions at<br />
-<a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a><br />
-which was built (using Hugo) from<br />
-<a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a>
+Specific hands-on labs from <a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a> built (using Hugo) from <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> 
+for <a href="#Pillars">each pillar</a> in the sections to follow:
+
+   1. <a href="#SecLabs">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
+
+   2. <a href="#ReliabilityLabs">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function
+
+   3. <a href="#OpsLabs">OPS = <strong>Operational Excellence</strong></a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
+
+   4. <a href="#PerfLabs">PERF = <strong>Performance Efficiency</strong></a> = The ability to adapt to changes in load (scale)
+
+   5. <a href="#CostLabs">COST = <strong>Cost Optimization</strong></a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
+
+   6. <a href="#SustLabs"><strong>Sustainability</strong></a>
 
 AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> in-depth training on the Well-Architected Framework so they help companies implement best practices, measure the state of workloads, and make improvements where assistance is required.
 
@@ -327,8 +337,6 @@ It is a "JAM" stack app where JavaScript in each user's browser interacts with a
 
 STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below:
 Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
-
-Specific labs are described in each pillar below.
 
 <hr />
 
@@ -543,7 +551,11 @@ Questions:
 
    1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
 
-AWS LAB: 
+<a name="SecLabs"></a>
+
+<strong>AWS Security hands-on labs:</strong>
+
+
 
 <hr />
 
