@@ -281,6 +281,26 @@ But note that it's for work across all pillars together, not for individual pill
 
 <hr />
 
+### General Design Principles
+
+AWS published these General Design Principles:
+
+   * <strong>Stop guessing capacity needs</strong> - if you make a poor capacity decision when deploying a workload, the team might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. Use as much or as little capacity as needed, and scale up and down automatically.
+
+   * <strong>Test systems at production scale</strong> - In the cloud, a production-scale test environment can be created on demand, complete testing, and then decommission the resources. Because payment is only for the test environment when it's running, you can simulate live environments for a fraction of the cost of testing on premises.
+
+   * <strong>Automate to make architectural experimentation easier</strong> (everything in AWS is an API) - Automation allows you to create and replicate workloads at low cost and avoid the expense of manual effort. You can track changes to the automation, audit the impact, and revert to previous parameters when necessary.
+
+   * <strong>Allow for evolutionary architectures</strong> -  In a traditional environment, architectural decisions are often implemented as static, onetime events, with a few major versions of a system during its lifetime. As a business and its context continue to evolve, these initial decisions might hinder the system's ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice.
+
+   * <strong>Drive architectures using data</strong> - In the cloud, you can collect data on how architectural choices affect the behavior of  workloads. This enable factb-ased decisions on how to improve  workloads. Cloud infrastructure is code, so that data can be used to inform architecture choices and improvements over time.
+
+   * <strong>Improve through "game days"</strong> (dry-run simulation, choas engineering, etc.) - Test how architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
+
+But what are specific actions?
+
+<hr />
+
 ### AWS Well-Architected Labs
 
 My notes for each pillar are annotated with deep links to hands-on instructions at<br />
@@ -308,24 +328,7 @@ It is a "JAM" stack app where JavaScript in each user's browser interacts with a
 STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below:
 Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
 
-<hr />
-
-### General Design Principles
-
-AWS published these General Design Principles:
-
-   * <strong>Stop guessing capacity needs</strong> - if you make a poor capacity decision when deploying a workload, the team might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. Use as much or as little capacity as needed, and scale up and down automatically.
-
-   * <strong>Test systems at production scale</strong> - In the cloud, a production-scale test environment can be created on demand, complete testing, and then decommission the resources. Because payment is only for the test environment when it's running, you can simulate live environments for a fraction of the cost of testing on premises.
-
-   * <strong>Automate to make architectural experimentation easier</strong> (everything in AWS is an API) - Automation allows you to create and replicate workloads at low cost and avoid the expense of manual effort. You can track changes to the automation, audit the impact, and revert to previous parameters when necessary.
-
-   * <strong>Allow for evolutionary architectures</strong> -  In a traditional environment, architectural decisions are often implemented as static, onetime events, with a few major versions of a system during its lifetime. As a business and its context continue to evolve, these initial decisions might hinder the system's ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice.
-
-   * <strong>Drive architectures using data</strong> - In the cloud, you can collect data on how architectural choices affect the behavior of  workloads. This enable factb-ased decisions on how to improve  workloads. Cloud infrastructure is code, so that data can be used to inform architecture choices and improvements over time.
-
-   * <strong>Improve through "game days"</strong> (dry-run simulation, choas engineering, etc.) - Test how architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
-
+Specific labs are described in each pillar below.
 
 <hr />
 
@@ -540,7 +543,7 @@ Questions:
 
    1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
 
-
+AWS LAB: 
 
 <hr />
 
