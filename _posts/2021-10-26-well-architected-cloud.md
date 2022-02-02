@@ -553,8 +553,7 @@ Questions:
 
 <a name="SecLabs"></a>
 
-<strong>AWS Security hands-on labs:</strong>
-
+<a target="_blank" href="https://wellarchitectedlabs.com/security/"><strong>AWS Security hands-on labs:</strong></a>
 
 
 <hr />
@@ -797,6 +796,11 @@ Ideas:
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/transient-faults">Transient fault handling</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/retry-service-specific">Retry guidance for specific services</a>
+   <br /><br />
+
+
+<a name="ReliabilityLabs"></a>
+<a target="_blank" href="https://wellarchitectedlabs.com/reliability/"><strong>AWS Reliability hands-on labs:</strong></a>
 
 <hr />
 
@@ -1075,6 +1079,10 @@ Questions:
 
    1. <strong>Allocate time to make improvements</strong> - Dedicate time and resources within processes to make continuous incremental improvements possible.
 
+<a name="OpsLabs"></a>
+<a target="_blank" href="https://wellarchitectedlabs.com/operational-excellence/"><strong>AWS Operational Excellence hands-on labs:</strong></a>
+
+
 <hr />
 
 <a name="Perf"></a>
@@ -1248,6 +1256,10 @@ Questions:
    1. <strong>Measure the impact of performance improvements</strong> - As changes are made to improve performance, evaluate the collected metrics and data. Use this information to determine impact that the performance improvement had on the workload, the workload’s components, and customers. This measurement helps you understand the improvements that result from the tradeoff, and helps you determine if any negative side-effects were introduced.
 
    1. <strong>Use various performance-related strategies</strong> - Where applicable, utilize multiple strategies to improve performance. For example, using strategies like caching data to prevent excessive network or database calls, using read-replicas for database engines to improve read rates, sharding or compressing data where possible to reduce data volumes, and buffering and streaming of results as they are available to avoid blocking.
+
+<a name="PerfLabs"></a>
+<a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/"><strong>AWS Performance hands-on labs:</strong></a>
+
 
 <hr />
 
@@ -1564,7 +1576,6 @@ AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3
   
 1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
 
-
 https://www.youtube.com/watch?v=NfONXHkTefA
 How do I use the AWS Cost and Usage Report?
 
@@ -1575,6 +1586,27 @@ by Keith Jarrett (Head of AWS Cost Management, Product Marketing and Business In
 https://www.youtube.com/watch?v=XHwFJDw9Mec
 AWS Cost Optimization: Tools and Methods to Reduce Your Spend With Us
 AWS Events
+
+<a name="CostLabs"></a>
+<a target="_blank" href="https://wellarchitectedlabs.com/cost/"><strong>AWS Cost Optimization hands-on labs:</strong></a>
+
+<hr />
+
+## Sustainability
+
+<a name="SustLabs"></a>
+<a target="_blank" href="https://wellarchitectedlabs.com/sustainability/
+"><strong>AWS Sustainability hands-on labs:</strong></a>
+
+   * <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/">Level 300: Turning Cost & Usage Reports into Efficiency Reports</a>
+   in an "improvement" process:
+
+   1. Identify targets for improvement
+   2. Evaluate specific improvements
+   3. Prioritize and plan improvements
+   4. Test and validate improvements
+   5. Deploy changes to production
+   6. Measure results and replicate successes
 
 <hr />
 
