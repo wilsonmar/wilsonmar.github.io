@@ -288,14 +288,13 @@ My notes for each pillar are annotated with deep links to hands-on instructions 
 which was built (using Hugo) from<br />
 <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a>
 
-AWS at <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> provide in-depth training on the Well-Architected Framework to partners to help companies implement best practices, measure the state of your workloads, and make improvements where assistance is required.
+AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> in-depth training on the Well-Architected Framework so they help companies implement best practices, measure the state of workloads, and make improvements where assistance is required.
 
 <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/2045/AWS%2520Well-Architected">
-The AWS Skillbuilder video course</a> is rather verbose, but provides knowledge checks (quizzes).
+The AWS Skillbuilder video course</a> is rather verbose and high-level, but provides knowledge checks (quizzes).
 
-ACTIVITY: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> from an Amazon Cloud Formation template. 
-
-It is a "JAM" stack app where JavaScript in each user's browser interacts with a public API Gateway to a backend API built using Lambda.
+STAR: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> from an <strong>Amazon Cloud Formation template</strong>.
+It is a "JAM" stack app where JavaScript in each user's browser interacts with a public API Gateway to a backend API built using Lambda:
 
    * <a target="_blank" href="https://aws.amazon.com/cloud9/">Amazon Cloud9 IDE</a> in the cloud
    

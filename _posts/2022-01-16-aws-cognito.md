@@ -459,24 +459,48 @@ When an InitiateAuth operation is successful, Cognito responds with either a tok
 
 ### SAML protocol
 
-The Security Assertion Markup Language (SAML) enables Single-Sign-On (SSO) enables users to access various systems from a web browser without repeatedly entering user credentials. 
+The Security Assertion Markup Language (SAML) enables Single-Sign-On (SSO) by users to access various systems from a web browser without repeatedly entering user credentials. It is widely used for Software-as-a-Service (SaaS) solutions.
+
 It works like getting an armband for VIP chairs at a music concert. <a target="_blank" href="https://www.linkedin.com/learning/comptia-security-plus-sy0-601-cert-prep-4-identity-and-access-management-design-and-implementation/saml?autoAdvance=true&autoSkip=false&autoplay=true&resume=true">VIDEO</a>:
 
-![sec-saml-lkin-1755x503](https://user-images.githubusercontent.com/300046/149627769-f392e8d8-c16a-4c0f-81ec-342abbd6d841.png)
+SAML is a mature technology dating back to 2002. The current SAML 2.0 standard was developed in 2005. 
+That's why it uses XML language as its identity data format and simple HTTP and SOAP for its data transport mechanisms. SAML provides communication between identity providers and service providers using encrypted, digitally signed XML-based certificates. As an XML-based protocol, SAML is a feature-rich, versatile standard that can be used on nearly every platform. Thus, SAML is widely used in enterprise and government settings.
 
-A new user (called the "Principal") makes a SSO request to the "Identity" service (like a ticket booth), which authenticates the user and creates an XHTML form so the user can create a "Security Assertion" to the Provider (like showing the armband at the gate). 
-The customizable UI provides an OAuth 2.0 compliant auth server.
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/152088982-0e7c33bd-5d25-4073-acc4-73cc9eb6bfa4.png">
+<img alt="aws-cog-SAML2-flow-650x280" width="650" height="280" src="https://user-images.githubusercontent.com/300046/152088982-0e7c33bd-5d25-4073-acc4-73cc9eb6bfa4.png"></a><br /><em><a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/auth-saml">Image from Microsoft</a></em>
+
+1) A new user (called the "Principal") uses a web browser containing JavaScript which 2) makes a SSO request to the Web App which 3) generates a SAML Authorization request to 4) query the "Identity" service (like at a ticket booth). Identity services include AWS Cogito or Azure AD. Alternately, JavaScript on the browser can directly call the Identity service. 
+
+Either way, 4) the Identity service (such as ADSF2) authenticates the user by referencing its <strong>store of Identities</strong> (<a target="_blank" href="https://aws.amazon.com/blogs/security/enabling-federation-to-aws-using-windows-active-directory-adfs-and-saml-2-0/">such as Windows Active Directory</a>) and 5) creates a SAML security token (<strong>"Security Assertion"</strong> which can include attributes such as name, phone number, email address, etc.) in a callback to the user's web browser. (an XHTML form so the user can create a to the Provider (like showing the armband at the gate). 
+
+6) The web browser redirects tokens (posts SAML assertion) to the Web App Service Provider which 
+7) validates the SAML response with token before 
+8) returning the secure page to user (seats in the VIP section), access to AWS Management Console, etc. 
 
 The Provider then creates a "Security Context" and redirects to the request resource.
 This can be an AWS Lambda trigger to send an email and log the event so the SOC (Security Operations Center) can monitor security-relevant activities.
 
-The Resource is then requested and access is granted (sitting within a VIP booth).
+The customizable UI provides an OAuth 2.0 compliant auth server.
+
 
 The amount of time access lasts is determined by the Identity Provider.
 
-A competitor to SAML is <strong>OpenID Connect</strong> working with OAuth2 is used by Google. OpenID is designed to only allow a service provider (Google) to initiate the identification process.
 
-NOTE: SAML formats in XML.
+<a name="OpenID"></a>
+
+### OIDC = OpenID Connect protocol
+
+A competitor to SAML is <strong>OpenID Connect</strong>.
+
+First published in 2014, OIDC is a simple identity layer <strong>on top of the OAuth 2.0</strong> authorization framework managed by the OpenID Foundation. 
+
+OpenID is designed to only allow a service provider (Google) to initiate the identification process.
+
+The protocol uses RESTful API communication to <strong>transmit JSON web tokens (JWT)</strong> between the identity provider and service provider. Each token contains common claims such as the user’s name, email address, birth date, picture, and other personal data. The tokens are digitally signed and encrypted.
+
+OIDC is easy to implement with lightweight data processing requirements, which makes it the preferred authentication standard for mobile games, social media integrations, and other mobile applications.
+
+OIDC is easy to integrate with simple apps, but also provides security options that adhere to rigorous enterprise requirements. OIDC’s easy-to-consume tokens support a broad spectrum of signature and encryption algorithms.
 
 Additional back-end processes include mass upload from a CSV file for first-time setup or for disaster recovery.
 

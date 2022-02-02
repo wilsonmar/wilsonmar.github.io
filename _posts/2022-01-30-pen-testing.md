@@ -18,6 +18,9 @@ comments: true
 
 <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> is one of the most popular websites on earth becuase it provides in-depth hands-on tutorials and challenges. Its videos, labeled <a target="_blank" href="https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q">"HackerSploit"</a> (from Kenya, Africa) are usually unlisted on YouTube.
 
+PROTIP: It's easiest to login via GitHub, which is one click.
+Choosing login using email would require you to switch to your email page every time you want to login.
+
 FreeCodeCamp's Information Security certification at <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/">freecodecamp.org/learn/information-security</a> 
 is rated at <strong>300 hours</strong> but may be less or more depending on your dedication.
 
@@ -363,24 +366,47 @@ print(message.decode('ascii'))
 
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-an-nmap-scanner-part-1">Developing an Nmap Scanner part 1</a> SYN?
 
-1. <tt>pip3 install python-nmap</tt>
+1. <a target="_blank" href="https://www.youtube.com/watch?v=jYk9XaGoAnk&t=6s">VIDEO</a>:
 
-   <pre>
+   <tt>pip3 install python-nmap</tt>
+
+1. Create scanner.py
+
+   <pre>#!/usr/bin/python3
+import nmap
+scanner = nmap.PortScanner()
+print("Welcome, this is a simple nmap automation tool")
+print("<------------------>)
+ip_addr = input("Please enter the IP address you want to scan: ")
+print("The ip you entered is ", ip_addr)
+type(id_addr)
+&nbsp;
+resp = input("""\nPlease enter the type of scan you want to run 
+                1) SYN ACK scan
+                2) UDP scan
+                3) Comprehesive scan""")
+print("You have selected option: ", resp)
    </pre>
 
 1. On MacOS: <tt>brew install nmap</tt>
 
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-an-nmap-scanner-part-2">Developing an Nmap Scanner part 2</a>
 
+1. 
+
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-a-banner-grabber">Developing a Banner Grabber</a>
+
+
+   ### Port Scanner Challenge
+
+   First, a tutorial:
 
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-a-banner-grabber">Developing a Port Scanner</a>
 
+1. 
 
+   <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner">Port Scanner</a> using Python
 
-### Port Scanner Challenge
-
-<a target="_blank" href="https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner">Port Scanner</a> using Python
 
 ### SHA-1 Password Cracker Challenge
 
