@@ -2443,6 +2443,8 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 
 * <a target="_blank" href="https://www.wired.com/category/threatlevel/">Wired magazine Threat Level</a>
 
+* <a target="_blank" href="https://darknetdiaries.com/">Darknet Diaries podcast</a> from 2017
+
 * <a target="_blank" href="https://www.darkreading.com/">Dark Reading</a> news website
 
 * <a target="_blank" href="https://threatpost.com/">Threatpost</a> news website
