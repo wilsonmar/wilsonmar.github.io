@@ -1,4 +1,4 @@
-n---
+---
 layout: post
 title: "Azure DevOps"
 excerpt: "Pass Microsoft's comprehensive AZ-400 on DevOps for automated CI/CD pipelines in the Azure cloud as well as GitHub Actions"
