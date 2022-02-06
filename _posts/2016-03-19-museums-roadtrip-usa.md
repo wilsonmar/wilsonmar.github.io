@@ -26,13 +26,13 @@ Journeys on water as she flows toward the Equator:
    * <a href="#DownMississippi"> Down the Mississippi River</a> (on a riverboat?)
    * <a href="#DownWestCoast"> Down the Pacific West Coast</a>
 
-Journeys on land:
+<a href="#Westward">Journeys Westward on land</a>:
 
    * <a href="#WestwardVermont"> Westward from Vermont to Kentucky</a>
    * <a href="#NorthernMiddleAmerica">Westward through Northern states</a>
    * <a href="#Southwestward"> Westward through the Southwest</a>
 
-BTW, finding where each site is located was a great geography lesson for me.
+BTW, finding where each site is located resulted in a great geography and historical lesson for me.
 
 
 ## National Parks
@@ -341,7 +341,7 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 
 <ul>
 <li> Walk the Brooklyn Bridge</li>
-<li type="circle"><a target="_blank" href="https://www.opentable.com/river-cafe-brooklyn">River Cafe</a> (Jacket Required) </li>
+<li type="circle"><a target="_blank" href="https://www.opentable.com/river-cafe-brooklyn">River Cafe</a> (Jackets required of men) </li>
 <li><a target="_blank" href="https://www.brooklynmuseum.org/">Brooklyn Museum of Art</a></li>
 <li><a target="_blank" href="https://www.brooklynx.org/rotunda/default.asp">Rotunda Gallery</a></li>
 </ul>
@@ -861,9 +861,22 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 <hr />
 
+<a name="Westward"></a>
+
+## Journeys Westward on land
+
+"Go West, young Man, and grow up with the country!" is the advice widely <a target="_blank" href="https://blog.newspapers.library.in.gov/go-west-young-man-the-mystery-behind-the-famous-phrase/">(but wrongly)</a> attributed to New York Tribune Publisher Horace Greeley, who visited the West only once.
+
+The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png">
+<img alt="museums-usa-100-meridian-825x445" src="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png"></a>
+
+"that line separates wetter climate to the East and the drier air in the West blocked by the Rocky Mountains"
+
 <a id="WestwardVermont"></a>
 
 ## Westward from Vermont to Kentucky
+
 
 <a name="VT"></a>
 
@@ -1295,7 +1308,7 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 
 ## Westward through Northern states
 
-To go from New York City to Seattle, it would take takes 2,852-miles on Interstates 80 and 90, crossing 11 states.
+Going from New York City to Seattle,takes 2,852-miles on Interstates 80 and 90, crossing 11 states.
 
 ### Northern Rail #
 

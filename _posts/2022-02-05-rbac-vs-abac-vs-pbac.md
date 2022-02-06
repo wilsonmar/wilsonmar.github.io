@@ -52,7 +52,14 @@ A. Although ABAC works with AWS Secrets Manager and S3, at time of writing, <str
 
 B. Although ABAC controls bucket objects and folders, it cannot control individual buckets.
 
-C. Coding of ABAC is not in plain language, so requires expert skills with <a target="_blank" href="https://blog.plainid.com/beginners-guide-to-xacml">XACML</a> -- a complex, dated language, which makes ABAC development a error-prone and time-consuming process.
+C. Coding of ABAC is not in plain language, so requires expert skills with <a target="_blank" href="https://blog.plainid.com/beginners-guide-to-xacml">XACML</a> (Extensible Access Control Markup Language) -- a complex, dated language, which makes ABAC development a error-prone and time-consuming process.
+Its complexity is because XACML was defined by OASIS (owned by technical companies) for coding by development teams rather than business owners or compliance teams.
+
+XACML is outdated in that it was first approved in 2003, with version 3.0 in use since 2013.
+XACML was created  to be a standard language for businesses’ -- 
+XACML was designed to control <strong>networking</strong> Authorization <strong>across-the-board</strong> rather than for policies applicable to each specific points of access (email, Internet, etc.). 
+
+Today XACML is fully supported by Policy-Based Access Control (PBAC) as well as being the language of choice for ABAC solutions. 
 
 ## PBAC
 
@@ -77,6 +84,8 @@ using conditions referencing attributes (tags) associated with each user.
 
 In Azure, a Role is a collection of Actions that the assigned identity will be able to perform.
 A Role answers the question "What can be done?"
+
+PROTIP: Azure allows only up to 2,000 Role assignments per account.
 
 https://www.youtube.com/watch?v=xUUxxtgcRzw" title="Jun 18, 2021">
 Manage access to Azure resources at scale using Attribute Based Access Control (ABAC)</a>
