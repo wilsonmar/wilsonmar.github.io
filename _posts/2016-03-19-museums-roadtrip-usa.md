@@ -867,7 +867,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 "Go West, young Man, and grow up with the country!" is the advice widely <a target="_blank" href="https://blog.newspapers.library.in.gov/go-west-young-man-the-mystery-behind-the-famous-phrase/">(but wrongly)</a> attributed to New York Tribune Publisher Horace Greeley, who visited the West only once.
 
-The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 
+The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>): 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png">
 <img alt="museums-usa-100-meridian-825x445" src="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png"></a>
 

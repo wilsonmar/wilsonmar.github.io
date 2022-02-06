@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "ABAC (Attribute-Based Access Control)"
-excerpt: "Scale and simplify IAM using the most fine-trained way access in AWS and Azure"
+title: "RBAC vs ABAC vs PBAC"
+excerpt: "Role, Attribute, and Policy Based Access Control to scale and simplify IAM using the most fine-trained way access in AWS, Azure, Kubernetes, and other systems"
 tags: [aws, security, management]
 date: "2022-02-05"
 file: "rbac-vs-abac-vs-pbac"
