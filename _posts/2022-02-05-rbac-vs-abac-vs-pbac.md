@@ -16,11 +16,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-If you're working in a large enterprise, you need a way to scale GRC (Governance, Risk management, and Compliance)requirements is a way that is also more secure.
+If you're working in a large enterprise, you need a way to scale GRC (Governance, Risk management, and Compliance) requirements in a way that is also more secure.
 
 Enterprise IAM managers and architects who manage thousands of roles controlling access to hundreds of users using traditional RBAC have a "role explosion" toil.
 
-Increasing scale makes it increasingly difficult for overseers of IT management accounts who <strong>operate away from the day-to-day</strong> technical teams and business managers. When "out of the loop", administrators "rubber stamp" key authorization requests. The larger the organization, the greater distance between those in leadership roles and those in IT. And business leaders become more dependent on the IT department. 
+Increasing scale makes it increasingly difficult for overseers of IT management accounts who <strong>operate away from the day-to-day</strong> technical teams and business managers. When "out of the loop", administrators need to "rubber stamp" key authorization requests. The larger the organization, the greater distance between those in leadership roles and those in IT. And business leaders become more dependent on the IT department. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=673ARahq2wI&t=15m23s" title="Okta and AWS: Making it Easier to use Workforce Identity in the AWS Cloud Apr 9, 2021">VIDEO</a>: 
 RBAC is problematic at scale when each team has similar (but different) resources such that <strong>Role Assertions</strong> and <strong>Policy Sets</strong> are established for each team which are near identical except for resource identifiers.
@@ -40,13 +40,7 @@ With ABAC, Polices apply across all projects, including projects which don't yet
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152665796-2b93751b-6f48-4d64-9203-d054ee42ae94.png"><img width="1631" alt="abac-projects-3262x1836" src="https://user-images.githubusercontent.com/300046/152665796-2b93751b-6f48-4d64-9203-d054ee42ae94.png"></a>
 
 
-When a user Assumes a Role, 
-
-as-needed basis
-temporary production access
-
-
-## Concerns about ABAC
+## Concerns about ABAC & XACML
 
 A. Although ABAC works with AWS Secrets Manager and S3, at time of writing, <strong>ABAC does not work with all AWS services</strong>.
 
@@ -55,11 +49,11 @@ B. Although ABAC controls bucket objects and folders, it cannot control individu
 C. Coding of ABAC is not in plain language, so requires expert skills with <a target="_blank" href="https://blog.plainid.com/beginners-guide-to-xacml">XACML</a> (Extensible Access Control Markup Language) -- a complex, dated language, which makes ABAC development a error-prone and time-consuming process.
 Its complexity is because XACML was defined by OASIS (owned by technical companies) for coding by development teams rather than business owners or compliance teams.
 
-XACML is outdated in that it was first approved in 2003, with version 3.0 in use since 2013.
+XACML is outdated today in that it was first approved in 2003, with version 3.0 in use since 2013.
 XACML was created  to be a standard language for businesses’ -- 
 XACML was designed to control <strong>networking</strong> Authorization <strong>across-the-board</strong> rather than for policies applicable to each specific points of access (email, Internet, etc.). 
 
-Today XACML is fully supported by Policy-Based Access Control (PBAC) as well as being the language of choice for ABAC solutions. 
+XACML is supported by Policy-Based Access Control (PBAC) as well as being the language of choice for ABAC solutions. 
 
 ## PBAC
 
@@ -96,10 +90,10 @@ by Azure Power Lunch
 Azure RBAC : The deep dark secrets of role based access control</a>
 by KnowOps
 
-https://www.youtube.com/watch?v=qFoHDTxkQII">
+<a target="_blank" href="https://www.youtube.com/watch?v=qFoHDTxkQII">
 Azure Role-Based Access Control Deep Dive</a>
 
-https://www.youtube.com/watch?v=Lng6Xz1gBGs">
+<a target="_blank" href="https://www.youtube.com/watch?v=Lng6Xz1gBGs">
 The dangers of role-based access control (RBAC)</a>
 Infosec
 
@@ -236,7 +230,7 @@ Attribute-Based Access Control in Hyperledger Fabric a Blockchain Platform Acces
 
 ## References
 
-https://www.youtube.com/watch?v=BBu5WCNR_eI
+<a target="_blank" href="https://www.youtube.com/watch?v=BBu5WCNR_eI">
 1-Minute IAM Lesson</a>
 by Cloud Bart
 
