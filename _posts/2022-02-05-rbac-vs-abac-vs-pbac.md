@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-If you're working in a large enterprise, you need a way to scale that is also more secure.
+If you're working in a large enterprise, you need a way to scale GRC (Governance, Risk management, and Compliance)requirements is a way that is also more secure.
 
 Enterprise IAM managers and architects who manage thousands of roles controlling access to hundreds of users using traditional RBAC have a "role explosion" toil.
 
