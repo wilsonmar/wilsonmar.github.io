@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "RBAC vs ABAC vs PBAC"
-excerpt: "Role, Attribute, and Policy Based Access Control to scale and simplify IAM using the most fine-trained way access in AWS, Azure, Kubernetes, and other systems"
+title: "RBAC vs ABAC vs PBAC (Access Control)"
+excerpt: "Role, Attribute, and Policy  Based Access Control simplify IAM at scale using the most fine-trained way access in AWS, Azure, Kubernetes, and other systems"
 tags: [aws, security, management]
 date: "2022-02-05"
 file: "rbac-vs-abac-vs-pbac"
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-RBAC, ABAC, and PBAC are NOT service offerings from any one cloud vendor, but <strong>approaches</strong> to Access Control. So there are differences in how to operate under each approach in AWS vs Azure vs Kubernetes, etc.
+RBAC, ABAC, and PBAC are NOT service offerings from any one cloud vendor, but <strong>design approaches</strong> to Access Control. So there are differences in how to operate under each approach in AWS vs Azure vs Kubernetes, etc.
 
 If you're working in a large enterprise, you need a way to scale GRC (Governance, Risk management, and Compliance) requirements in a way that is also more secure.
 
@@ -82,13 +82,13 @@ D. XACML was defined by OASIS (owned by technical companies) for coding by devel
 
 ## PBAC
 
-The concent of PBAC is to use a more "human friendly" or "business friendly" language to code policies to 
-provide more visibility into the relationship between identities and resources.
+The concent of PBAC (from <a target="_blank" href="https://www.plainid.com/">PlainID.com</a>) is to use a more "human friendly" or "business friendly" language to code policies which provide more visibility into the relationship between identities and resources.
 
 <a target="_blank" href="https://csrc.nist.gov/CSRC/media/Events/Privilege-Management-Workshop/documents/PvM-Model-Survey-Aug26-2009.pdf">"A Survey of Access Control Models" from US NIST (PDF)</a> concluded:
 
 > “PBAC is an emerging model that seeks to help enterprises address the need to implement concrete access controls based on abstract policy and governance requirements.”
 
+ 
 This is because PBAC is an <strong>automatic process</strong> (requiring much less manual toil than RBAC).
 
 
