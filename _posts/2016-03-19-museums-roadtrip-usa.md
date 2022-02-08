@@ -79,13 +79,13 @@ A map of stations offering Ethanol-free premium gasoline is at <a target="_blank
 
 <a name="CivilWar"></a>
 
-## The Civil War
+## Civil War Confedrates
+
+When the Civil War ended in 1865, The Confederacy included the 11 Southern states of Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia. 
 
 <a target="_blank" href="https://www.nps.gov/civilwar/facts.htm">
 <img width="600" height="300" alt="map-us-states-civil-war-323x227-c64.jpg"
 src="https://cloud.githubusercontent.com/assets/300046/16953089/fc8c99ba-4d88-11e6-9845-7b4120243ea4.jpg">
-
-The Confederacy included the 11 Southern states of Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia. 
 
 The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri.
 
@@ -889,9 +889,18 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 ## Journeys Northward on Cattle Drives 
 
-The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about a cattle drive from Fort Worth North toward Montana and Portland. Although a fictional story, the script mentions real locations: <a target="_blank" href="https://www.frontiertimesmagazine.com/blog/doans-store-red-river">Doan's Store</a> Red River Crossing, established 1878 along the Western Trail to Dodge City, Kansas where trains carried cattle East. In 1881 the trail reached a peak of three hundred and one thousand were driven by to the Kansas shipping point. This was before the "Chisolm Trail".
+The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about one of the cattle drives that brought Texas back from economic collapse after the end of the Civil War in 1865. The drive went from Fort Worth North toward Montana and Portland. Although a fictional story, the script mentions real locations: <a target="_blank" href="https://www.frontiertimesmagazine.com/blog/doans-store-red-river">Doan's Store</a> Red River Crossing, established 1878 along the Western Trail to Dodge City, Kansas where trains carried cattle East.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152900517-ff8c03db-325d-4c27-b225-36a50da6ad3b.png"><img alt="museum-us-1883-great-cattle-750x782" src="https://user-images.githubusercontent.com/300046/152900517-ff8c03db-325d-4c27-b225-36a50da6ad3b.png"></a>
+
+In 1881 the Doan's Cross reached a peak of 301,000 cattle driven by to Kansas shipping points. This was before the "Chisolm Trail".
+
+In 1884 an annual picnic, celebrating the cattle drives and cowboy tradition, began near Doan's Store.
+
+In 1885 long cattle drives was eliminated by both the construction of railroads across north Texas and the fencing of the West using newly invented barbed wire.
+
+The <a target="_blank" href="https://www.wikiwand.com/en/Lonesome_Dove_(miniseries)">TV series "Lonesome Dove"</a>, is set in late 1870s. Just like the "1883" TV series, it is also about cowboys seeking to drive cattle North to settle along Montana's Yellowstone River. Several other movies have characters doing the same.
+
 
 
 <a name="Westward"></a>
