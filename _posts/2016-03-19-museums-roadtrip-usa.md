@@ -114,9 +114,9 @@ The planned route of the courageous <a target="_blank" href="https://www.history
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"><img width="1314" alt="map-freedom-ride" src="https://user-images.githubusercontent.com/300046/86551553-8fb40180-bf02-11ea-88f3-8b070e22aec6.png"></a>
 
-The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segregationists. 
-
 The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
+
+The ride stopped on May 14 in Anniston, Alabama where the bus was burnt by segregationists. 
 
 
 <a name="ME"></a>
