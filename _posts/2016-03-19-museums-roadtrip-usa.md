@@ -37,6 +37,10 @@ Journeys Northward on <a href="#CattleDrives">Cattle Drives</a> in the 1880s.
 BTW, finding where each site is located resulted in a great geography and historical lesson for me.
 
 
+> Do you have a roadtrip map or story? Please send it to me for posting here.
+
+
+
 ## National Parks
 
 America's greatest treasure is the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service.
@@ -94,9 +98,6 @@ Idaho <a target="_blank" href="https://www.wikiwand.com/en/Idaho_in_the_American
 volunteers did not fight against the Confederacy</a>.
 <a target="_blank" href="https://www.wikiwand.com/en/Confederate_Arizona">
 Areas in Arizona and New Mexico were claimed by both sides</a>.
-
-
-> Do you have a roadtrip map? Send it to me and I'll post it here.
 
 
 <a name="DownEastCoast"></a>
