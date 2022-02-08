@@ -889,7 +889,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 ## Journeys Northward on Cattle Drives 
 
-The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about a cattle drive from Fort Worth North toward Montana and Portland, passing through Doan's Store on the Western Trail to Dodge City, Kansas where trains carried cattle East. This was before the "Chisolm Trail".<br />
+The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about a cattle drive from Fort Worth North toward Montana and Portland. Although a fictional story, the script mentions real locations: <a target="_blank" href="https://www.frontiertimesmagazine.com/blog/doans-store-red-river">Doan's Store</a> Red River Crossing, established 1878 along the Western Trail to Dodge City, Kansas where trains carried cattle East. In 1881 the trail reached a peak of three hundred and one thousand were driven by to the Kansas shipping point. This was before the "Chisolm Trail".
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152900517-ff8c03db-325d-4c27-b225-36a50da6ad3b.png"><img alt="museum-us-1883-great-cattle-750x782" src="https://user-images.githubusercontent.com/300046/152900517-ff8c03db-325d-4c27-b225-36a50da6ad3b.png"></a>
 
 
