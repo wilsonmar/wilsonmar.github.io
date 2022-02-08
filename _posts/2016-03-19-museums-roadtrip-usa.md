@@ -898,7 +898,8 @@ The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV serie
 
 ## Journeys Westward on land
 
-The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>): 
+The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png">
 <img alt="museums-usa-100-meridian-825x445" src="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png"></a>
 
@@ -912,10 +913,9 @@ The Western frontier, even today, is separated by the <strong>100th Meridian</st
 ### The Pony Express
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
-"Pony Express" riders</a> (who include "Calamity Jane") operated less than 2 years: 
-between April 3, 1860 to October 24, 1861.
-Their 1,900-mile (3,100 km) route went along 184 stations from St. Joseph, Missouri on the Missouri River
-to San Francisco, California.
+Pony Express riders</a> (who include "Calamity Jane") delivered mail less than 2 years: 
+from April 3, 1860 to October 24, 1861.
+Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from St. Joseph, Missouri on the Missouri River to San Francisco, California:
 
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
 <img alt="map of Pony Express route" src="https://cloud.githubusercontent.com/assets/300046/14632487/35bdb3e0-05d6-11e6-9e8f-3293fe2ffa5b.jpg" width="649" height="221"></a><br />
