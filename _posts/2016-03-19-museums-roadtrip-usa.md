@@ -18,19 +18,21 @@ comments: true
 
 This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses.
 
-It's a large country, so sites here are listed by each state of the union, along natural geography:
+It's a large country, so sites here are listed by each <a href="#CivilWar">state of the union</a>, along natural geography:
 
 Journeys on water as she flows toward the Equator:
 
-   * <a href="#DownEastCoast"> Down the Atlantic Eastern Seaboard</a>
+   * <a href="#DownEastCoast"> Down the Atlantic Eastern Seaboard</a> (<a href="#FreedomRide">Freedom Ride</a>)
    * <a href="#DownMississippi"> Down the Mississippi River</a> (on a riverboat?)
    * <a href="#DownWestCoast"> Down the Pacific West Coast</a>
 
-<a href="#Westward">Journeys Westward on land</a>:
+Journeys Northward on <a href="#CattleDrives">Cattle Drives</a> in the 1880s.
+
+<a href="#Westward">Journeys Westward on land</a> (<a href="#PonyExpress">The Pony Express</a> 
 
    * <a href="#WestwardVermont"> Westward from Vermont to Kentucky</a>
-   * <a href="#NorthernMiddleAmerica">Westward through Northern states</a>
-   * <a href="#Southwestward"> Westward through the Southwest</a>
+   * <a href="#NorthernMiddleAmerica">Westward through Northern states</a> (like <a href="#LewisAndClark">Lewis and Clark</a> and on the <a href="#OregonTrail">Oregon Trail)</a>
+   * <a href="#Southwestward"> Westward through the Southwest (on Route 66)</a>
 
 BTW, finding where each site is located resulted in a great geography and historical lesson for me.
 
@@ -75,6 +77,36 @@ The number of <a target="_blank" href="https://www.tesla.com/supercharger">Tesla
 A map of stations offering Ethanol-free premium gasoline is at <a target="_blank" href="https://www.pure-gas.org/extensions/map.html">pure-gas.org/extensions/map.html</a>. My wife used it to figure out where I should stop along a route from Florida to Montana. It was difficult because we had to figure out where I was on the website's map. She also had to calculate how much further I could go with remaining gas. Somehow we managed to stay married after that.
 
 
+<a name="CivilWar"></a>
+
+## The Civil War
+
+<a target="_blank" href="https://www.nps.gov/civilwar/facts.htm">
+<img width="600" height="300" alt="map-us-states-civil-war-323x227-c64.jpg"
+src="https://cloud.githubusercontent.com/assets/300046/16953089/fc8c99ba-4d88-11e6-9845-7b4120243ea4.jpg">
+
+The Confederacy included the 11 Southern states of Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia. 
+
+The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri.
+
+States in white (Oklahoma) did not fight for either side.
+Idaho <a target="_blank" href="https://www.wikiwand.com/en/Idaho_in_the_American_Civil_War">
+volunteers did not fight against the Confederacy</a>.
+<a target="_blank" href="https://www.wikiwand.com/en/Confederate_Arizona">
+Areas in Arizona and New Mexico were claimed by both sides</a>.
+
+
+> Do you have a roadtrip map? Send it to me and I'll post it here.
+
+
+<a name="DownEastCoast"></a>
+
+## Down the Atlantic Eastern Seaboard
+
+This is where the United States of America began as colonies of England.
+
+<a name="FreedomRide"></a>
+
 ## Freedom Ride
 
 The planned route of the courageous <a target="_blank" href="https://www.history.com/topics/black-history/freedom-rides">Freedom Ride</a> May 1961 through the "Jim Crow" South to test a Supreme Court ruling against “whites-only” restrooms and lunch counters at bus stations:
@@ -85,14 +117,6 @@ The ride stopped on May 14 in Anniston, Alabama when the bus was burnt by segreg
 
 The Woolworth lunch counter in downtown Greensboro, NC is now a <a target="_blank" href="https://www.sitinmovement.org/">museum</a>.
 
-> Do you have a roadtrip map? Send it to me and I'll post it here.
-
-
-<a name="DownEastCoast"></a>
-
-## Down the Atlantic Eastern Seaboard
-
-This is where the United States of America began as colonies of England.
 
 <a name="ME"></a>
 
@@ -677,8 +701,8 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 ## Down the Mississippi River
 
-<a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">(2,300 miles),
-the 4th longest in the world (after Nile, Amazon, Yangtze).<br />
+At <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">2,300 miles, the Mississippi River is 
+the 4th longest in the world (after Nile, Amazon, Yangtze):<br />
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
 
 Viking River Cruises has, an <a target="_blank" href="https://viking.tv/tv/viking-journeys/americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul:<br />
@@ -861,17 +885,42 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 <hr />
 
+<a name="CattleDrives"></a>
+
+## Journeys Northward on Cattle Drives 
+
+The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about a cattle drive from Fort Worth North toward Montana and Portland, passing through Doan's Store on the Western Trail to Dodge City, Kansas where trains carried cattle East. This was before the "Chisolm Trail".<br />
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/152900517-ff8c03db-325d-4c27-b225-36a50da6ad3b.png"><img alt="museum-us-1883-great-cattle-750x782" src="https://user-images.githubusercontent.com/300046/152900517-ff8c03db-325d-4c27-b225-36a50da6ad3b.png"></a>
+
+
 <a name="Westward"></a>
 
 ## Journeys Westward on land
-
-"Go West, young Man, and grow up with the country!" is the advice widely <a target="_blank" href="https://blog.newspapers.library.in.gov/go-west-young-man-the-mystery-behind-the-famous-phrase/">(but wrongly)</a> attributed to New York Tribune Publisher Horace Greeley, who visited the West only once.
 
 The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>): 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png">
 <img alt="museums-usa-100-meridian-825x445" src="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png"></a>
 
 "that line separates wetter climate to the East and the drier air in the West blocked by the Rocky Mountains"
+
+
+"Go West, young Man, and grow up with the country!" is the advice widely <a target="_blank" href="https://blog.newspapers.library.in.gov/go-west-young-man-the-mystery-behind-the-famous-phrase/">(but wrongly)</a> attributed to New York Tribune Publisher Horace Greeley, who visited the West only once.
+
+<a name="PonyExpress"></a>
+
+### The Pony Express
+
+<a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
+"Pony Express" riders</a> (who include "Calamity Jane") operated less than 2 years: 
+between April 3, 1860 to October 24, 1861.
+Their 1,900-mile (3,100 km) route went along 184 stations from St. Joseph, Missouri on the Missouri River
+to San Francisco, California.
+
+<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
+<img alt="map of Pony Express route" src="https://cloud.githubusercontent.com/assets/300046/14632487/35bdb3e0-05d6-11e6-9e8f-3293fe2ffa5b.jpg" width="649" height="221"></a><br />
+<em>Map by William Henry Jackson, American artist. Text: Howard Roscoe Driggs. Scan: US Library of Congress. Photo <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">image</a> obtained/rendered by Gwillhickers. Restoration by Crisco 1492, Public Domain.</em>
+
+
 
 <a id="WestwardVermont"></a>
 
@@ -1730,37 +1779,6 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <li>Harrah's Auto Collection, Reno</li>
 </ul>
 <br /><br />
-
-
-## The Pony Express
-
-<a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
-"Pony Express" riders</a> (who include "Calamity Jane") operated less than 2 years: 
-between April 3, 1860 to October 24, 1861.
-Their 1,900-mile (3,100 km) route went along 184 stations from St. Joseph, Missouri on the Missouri River
-to San Francisco, California.
-
-<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
-<img alt="map of Pony Express route" src="https://cloud.githubusercontent.com/assets/300046/14632487/35bdb3e0-05d6-11e6-9e8f-3293fe2ffa5b.jpg" width="649" height="221"></a>
-<em>Map by William Henry Jackson, American artist. Text: Howard Roscoe Driggs. Scan: US Library of Congress. Photo <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">image</a> obtained/rendered by Gwillhickers. Restoration by Crisco 1492, Public Domain.</em>
-
-## US Civil War #
-
-<a target="_blank" href="https://www.nps.gov/civilwar/facts.htm">
-<img width="600" height="300" alt="map-us-states-civil-war-323x227-c64.jpg"
-src="https://cloud.githubusercontent.com/assets/300046/16953089/fc8c99ba-4d88-11e6-9845-7b4120243ea4.jpg">
-
-The Confederacy included the 11 Southern states of 
-Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia. 
-
-The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri.
-
-States in white (Oklahoma) did not fight for either side.
-Idaho <a target="_blank" href="https://www.wikiwand.com/en/Idaho_in_the_American_Civil_War">
-volunteers did not fight against the Confederacy</a>.
-<a target="_blank" href="https://www.wikiwand.com/en/Confederate_Arizona">
-Areas in Arizona and New Mexico were claimed by both sides</a>.
-
 
 ## All the sights
 
