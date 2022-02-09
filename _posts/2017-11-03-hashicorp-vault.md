@@ -34,6 +34,12 @@ At the end of this tutorial, you should be able to:
 	Tasks get tokens so they can retrieve values.
 <br /><br />
 
+## Competition
+
+Hashicorp Vault competes with <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>,
+also a container-compatible secrets solution.
+
+
 ## Secrets handling best practices
 
 <a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>:
