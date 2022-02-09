@@ -18,16 +18,18 @@ comments: true
 
 RBAC, ABAC, and PBAC are NOT service offerings from any one cloud vendor, but <strong>design approaches</strong> to Access Control. So there are differences in how to operate under each approach in AWS vs Azure vs Kubernetes, etc.
 
-If you're working in a large enterprise, you need a way to scale GRC (Governance, Risk management, and Compliance) requirements in a way that is also more secure.
+If you're working in a large enterprise, you need a way to meet GRC (Governance, Risk management, and Compliance) requirements in a way that is also more secure and scalable.
 
-Enterprise IAM managers and architects who manage thousands of roles controlling access to hundreds of users using traditional RBAC have a "role explosion" toil.
+As an organization increases in size, it becomes increasingly difficult for overseers of IT management accounts who <strong>operate away from the day-to-day</strong> technical teams and business managers. When "out of the loop", administrators need to "rubber stamp" key authorization requests. The larger the organization, the greater distance between those in leadership roles and those in IT. And business leaders become more dependent on the IT department.
 
-Increasing scale makes it increasingly difficult for overseers of IT management accounts who <strong>operate away from the day-to-day</strong> technical teams and business managers. When "out of the loop", administrators need to "rubber stamp" key authorization requests. The larger the organization, the greater distance between those in leadership roles and those in IT. And business leaders become more dependent on the IT department.
-
-Enabling business leaders to participate in security is the result of a progression from RBAC to ABAC to <a name="PBAC">PBAC (Policy-Based Access Control)</a>.
+PROTIP: One innovative approach is to enable business leaders to participate in security configurations by providing them an <strong>easy way to specify rules about access</strong>. That's called <a name="PBAC">PBAC (Policy-Based Access Control)</a> -- the result of a progression from RBAC and ABAC.
 
 
-## "Traditional" RBAC
+## "Role Explosion" in "Traditional" RBAC
+
+Enterprise IAM managers and architects who manage thousands of roles controlling access to hundreds of users.
+
+Do they face "role explosion" toil?
 
 <a target="_blank" href="https://www.youtube.com/watch?v=673ARahq2wI&t=15m23s" title="Okta and AWS: Making it Easier to use Workforce Identity in the AWS Cloud Apr 9, 2021">VIDEO</a>: 
 Traditional RBAC is problematic at scale when each team has similar (but different) resources such that <strong>Role Assertions</strong> and <strong>Policy Sets</strong> are established for each team which are near identical except for resource identifiers.
