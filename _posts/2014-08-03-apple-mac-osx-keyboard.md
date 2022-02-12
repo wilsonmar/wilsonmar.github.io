@@ -373,26 +373,6 @@ PROTIP: To toggle <strong>Full Screen view</strong> using the default configurat
 
 <hr />
 
-## Extra Programmable Keyboard: Stream Deck
-
-Video creators especially appreciate being able to, so they can concentrate on talking, push a button and have a sequence of keys to do what they need, such as share screen 2, leave zoom, etc.
-
-The Stream Deck has programmable buttons, with each button like a little LCD screen.
-Mini has 6 buttons. The MK2 has 15 buttons. The XL has 28 buttons
-
-<a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">
-You Need A Stream Deck! The Secret To My Productivity Working From Home</a>
-by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">
-5 Stream Deck PLUGINS You Have To Try Out!</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">
-8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
-
-<hr />
-
-
 <a name="Voice Recognition"></a>
 
 ## Voice Recognition
@@ -910,9 +890,28 @@ Tmux is a contraction of "Terminal Multiplexer". The "multi" refers to multiple 
 show the keys he defined using Magnet (https://magnet.crowdcafe.com/) and KeyboardMaestro (https://www.keyboardmaestro.com/main/).
 Tyler Hall's code is at https://github.com/tylerhall/
 
+
+<hr />
+
 <a name="StreamDeck"></a>
 
 ## Stream Deck button keyboard
+
+Video creators especially appreciate being able to, so they can concentrate on talking, push a button and have a sequence of keys to do what they need, such as share screen 2, leave zoom, etc.
+
+The Stream Deck has programmable buttons, with each button like a little LCD screen.
+Mini has 6 buttons. The MK2 has 15 buttons. The XL has 28 buttons
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">
+You Need A Stream Deck! The Secret To My Productivity Working From Home</a>
+by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">
+5 Stream Deck PLUGINS You Have To Try Out!</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">
+8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
+
 
 <a target="_blank" href="https://www.youtube.com/watch?v=POt4-8b0iPE" title="">VIDEO</a>:
 Unlike a regular keyboard, each button on the Stream Deck can display different images.
@@ -962,7 +961,13 @@ homebrew/cask-drivers/elgato-wave-link
 
    PROTIP: You can "Set Screensaver..." for a background image. But why?
 
-1. The "Profile" tab enable you to define different Profiles.
+   ### Profiles Backup
+
+1. Click the "Profile" tab to define different Profiles.
+1. <a target="_blank" href="https://help.elgato.com/hc/en-us/articles/360048424432-Elgato-Stream-Deck-How-to-Back-Up-and-Restore-Profiles-">DOTHIS</a>: click the down-arrow to select "Backup All", "Create Backup..." which goes in your Documents folder as a file such as:
+
+   <pre>Stream Deck - 12-02-2022 - 11-59.streamDeckProfilesBackup</pre>
+
 1. Exit Preferences.
 
    ### Pages and Levels
@@ -1007,6 +1012,10 @@ homebrew/cask-drivers/elgato-wave-link
 
    Stream Deck is the darling of gamers and streamers who use OBS Studio, Twitter, Twitch.
 
+1. Control OBS
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=KbEUNg6GxFo">OBS Studio Ultimate Stream Deck Guide</a>
+
 1. Among sound effects, "Cell Phone ring simple" and "Cell Phone Smart Phone Vibrate" can be a good excuse to end meetings.
 
    "Crowd Aww", "Crowd Cheer Clap Scream", "Large Crowd Medium Ovation", "Crowd Disgusted Aww", "Crowd cheers and whistles".
@@ -1050,6 +1059,9 @@ homebrew/cask-drivers/elgato-wave-link
 
    https://github.com/SENTINELITE/StreamDeck-Shortcuts
    This integration is made by GitHub user Sentinelelite and not associated with Apple, which is worth keeping in mind. However, you can find the code here. In my testing, it worked pretty well, launching the couple of existing Shortcuts I had without needing a keyboard shortcut that's not already in use or taking up space in my status bar.
+
+1. PLUGIN: 
+   https://www.youtube.com/watch?v=ny9z6rgJAC4
 
    ## Mute/Unmute
    
