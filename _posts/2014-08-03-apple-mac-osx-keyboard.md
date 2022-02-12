@@ -978,7 +978,9 @@ homebrew/cask-drivers/elgato-wave-link
 
    ### Preferences configuration
 
-1. Cursor all the way to the top of your whole screen and on the Apple bar, click () the StreamDeck.app icon to select <strong>Configure Stream Deck</tstong>, which makes the GUI appear.
+   NOTE: I like to have a clean "full sreen" without the distraction of all the Apple Mac icons at the top, bottom, etc. So ...
+
+1. Hold down <strong>fn+control+F8</strong> or cursor all the way to the top of your whole screen and on the Apple Top Menu bar, click <img alt="keyboard-streamdeck-21x20" width="21" height="20" src="https://user-images.githubusercontent.com/300046/153720313-40c653e7-5fa1-4d42-a3ff-4bd60597e60a.png"> the StreamDeck.app icon to select <strong>Configure Stream Deck</tstong>, which makes the GUI appear.
 1. PROTIP: Press Command+Tab to notice that the app does not appear.
 
 1. Press Command+, (comma) or click the () cog icon for the app's Preferences dialog.
@@ -1053,6 +1055,8 @@ homebrew/cask-drivers/elgato-wave-link
    
 1. Use IFTTT.com to create special web links.
 
+   switch your phone to Do Not Disturb,
+
 1. PowerPoint integration
 
 1. Visual Studio Code Mac or XCode
@@ -1063,11 +1067,15 @@ homebrew/cask-drivers/elgato-wave-link
 
 1. PLUGIN "Time"
 
-1. PLUGIN "OSA Script"
+1. PLUGIN "OSA Script" to put your Mac laptop to sleep with one button.
 
-   TODO: Put your Mac laptop to sleep with one button.
    https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button/
    https://www.reddit.com/r/StreamDeckSDK/comments/jsn7re/setting_up_a_1_button_sleep_mode/
+
+   Apple's own scripting tool, Shortcuts, is not only powerful, but it's built right into MacOS. That can be a huge benefit on its own, but an unofficial plugin lets you activate Shortcuts right from a button on your Stream Deck. 
+
+   https://github.com/SENTINELITE/StreamDeck-Shortcuts
+   This integration is made by GitHub user Sentinelelite and not associated with Apple, which is worth keeping in mind. However, you can find the code here. In my testing, it worked pretty well, launching the couple of existing Shortcuts I had without needing a keyboard shortcut that's not already in use or taking up space in my status bar.
 
    ## Mute/Unmute
    
