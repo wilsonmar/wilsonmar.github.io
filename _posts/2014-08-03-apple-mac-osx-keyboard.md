@@ -22,168 +22,60 @@ This page covers several mechanisms:
 
    * Standard Keyboard
    * <a href="#Hotkey">Hotkey app</a>
-   * <a href="#Streamdeck">StreamDeck</a> extra (macro) buttons
+   * <a href="#StreamDeck">Stream Deck</a> extra (macro) buttons
    <br /><br />
+
 
 ## Special key Names and Symbols
 
-The "Special" keys on a Mac's keyboard are represented by both symbols and names, so memorize this:
+REMEMBER: The "Special" keys on a Mac's keyboard are represented by both symbols and names:
 
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
-## Switch keys on macOS
+* <a target="_blank" href="https://support.apple.com/en-us/HT201236">
+   Apple's default Mac keyboard shortcuts</a>
 
-## Caps Lock unintended
+* <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
+   Mac OS X Keyboard Shortcuts</a>
 
-BLAH: It's annoying when all of a sudden everything I type is in caps.
-That happens because I accidentally had my hand too far to the left when I intended to press the A key.
 
-I can type all caps by holding down the shift key with my left or right hand.
+## Keep your eys on the screen. Don't look at the keyboard
 
-We can kill 2 keys at once.
-
-## Caps Lock to Escape
-
-BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
-
-   PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
-
-1. Press the Apple icon and select System Preferences.
-2. Type K. Cursor down to highlight Keyboard. Press space bar to open it.
-3. Click "Modifier Keys" at the lower-right corner.
-
-   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
-
-4. Click the entry for "Caps Lock (&#8682;) Key:" and select "&#9099; Escape".
-
-   ### Swap command and control as well
-
-   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
-   This would also allow you to press two keys at once by pressing between the keys,
-   thus able to perform most combinations using your hands.
-
-4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
-4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
-
-5. Click OK.
-6. Press control+Q or click the red x to dismiss the System Preferences dialog.
-  
-   Alternately, the above actions can be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
-   Python script</a> or by downloading the free 
-   <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner</a>
-   which works on OSX Sierra since <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
-   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">
-   many lingering issues</a>.
-
-<a name="Gymnastics"></a>
-
-## Full Screen Finger Gymnastics #
-
-![keyboard-god-giphy](https://user-images.githubusercontent.com/300046/116689174-fcf2c080-a974-11eb-81ca-c985ab3fe6a4.gif)
-
-PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
-
-Windows has its F12 key. Apple has Mac users do the equivalent of a <strong>double Summersault</strong> with your fingers.
-How do you type, at the same time:
-
-   <ul><strong>control + command + F</strong></ul>
-
-PROTIP: To toggle <strong>Full Screen view</strong> using the default configuration from Apple: while keeping your left forefinger on the F "home" key, reach with your left thumb to hold down the control key. This may hurt at first (until you get used to it). Try raising your hand
-
-   Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
-
-## Key visibility
+PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking. 
 
 PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to not have to look at the keyboard at all.
 
-PROTIP: Some put tiny drops from a glue gun on strategic points on the keyboard so they can orient their finger in the dark without looking.
+This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
 
-   This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
+## Avoid reaching for the mouse
 
-   PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
+TL;DR: PROTIP: Resourceful coders make it so they don't need to waste time and valuable focus reaching for the mouse. 
 
-<hr />
+### Clean borders without icons
 
-## Extra Programmable Keyboard: Stream Deck
+I like to have a clean "full sreen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
 
-Video creators especially appreciate being able to, so they can concentrate on talking, push a button and have a sequence of keys to do what they need, such as share screen 2, leave zoom, etc.
+<a id="AwkwardKeys"></a>
 
-The Stream Deck has programmable buttons, with each button like a little LCD screen.
-Mini has 6 buttons. The MK2 has 15 buttons. The XL has 28 buttons
+### Awkward fn Keys #
 
-<a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">
-You Need A Stream Deck! The Secret To My Productivity Working From Home</a>
-by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
+However, on the 2017 Mac without a visible Function keys, key combinations to reveal those button are so awkard to use that it's faster and easier to use a mouse or trackpad.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">
-5 Stream Deck PLUGINS You Have To Try Out!</a>
+Since the **fn** and **control** keys are only on the left side of a MacBook keyboard,
+using them requires a Carpel-tunnel Syndrome-inducing move of the left hand.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">
-8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
+   * <strong>fn + control + F2</strong> to highlight the Apple Top Menu.
 
+   * <strong>fn + control + F3</strong> to highlight the Dock at the bottom of the screen.
 
-## Ergonomic Keyboards
+On 2020+ keyboards (after Apple came to their senses):
 
-PROTIP: Resourceful coders make it so they don't need to waste time and attention reaching for the mouse. 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=oOdfefV2R1I">VIDEO</a>: "Among fastest competitive typists, only two use Dvorick key layout".
-
-Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
-makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
-Its keys in the middle transfer more work to thumbs than conventional square keyboards.
-
-![keyboard-kinesis-557x455](https://user-images.githubusercontent.com/300046/99932329-e5a00f00-2d14-11eb-8a1d-3a3cb5ee3722.png)
-
-A <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RMhdn2VvdJWbs">Ergonomics shop TheHumanSolution.com</a>
-note the slant of keys enables <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RM&t=9m44s" title="Jun 24, 2020">natural (rather than bent) wrist placement</a> that prevents repetitive motion injury causing career-ending pain in wrists and shoulders.
-
-However, the keyboard does take some "learning time" as its keys are in a different location than on conventional keyboards.
-The manufacturer has a 7 day return and 3 year warranty policy.
-
-Desiring quieter operation, I chose <a target="_blank" href="https://www.youtube.com/watch?v=1WYWePNJTo4&t=1m28s">Cherry 45g MX <strong>Red</strong> (quiet linear-force, not "clicky") mechanical key switches</a> (instead of Brown keys which provide tactile feedback on each keypress). Cherry Red key switches are also used in the <a target="_blank" href="https://www.youtube.com/watch?v=rGM8Y6yal-8&t=4m58s">iKDC KD104 MX silent keyboards</a>. 
-
-But I don't think the Red keys are<a target="_blank" href="https://www.youtube.com/watch?v=BKbQS1vZz2w&t=3m23s" title="Mar 30, 2019">not much quieter than other keyboards</a>.
-(Razor Opto-mechanical Red or Ornata v2 membrane keyboards seem the quietest to me. They are also have short 1mm travel to activate and quickest debounce delay).
-
-Further quiet may be achieved by lubrication or <a target="_blank" href="https://www.youtube.com/watch?v=O3-9ttpaU0E&t=2m5s">replacing key switches</a> with <a target="_blank" href="https://zealpc.net/products/healio">rubbery Zilent keys</a>. 
-
-(I don't know how the keyboard responds to "rollover" of several keys almost simultaneously, which other keyboards call "anti-ghosting").
-
-For even faster operation, use the keyboard's 2MB of memory on-board to store SmartSet Programming Engine macros.
-
-Videos: 
-
-   * https://www.youtube.com/watch?v=8WwuusfB0QA Aug 20, 2016 is the most detailed
-   * https://www.youtube.com/watch?v=ILItPWuirAk
-   * https://www.youtube.com/watch?v=PhQlZvUzT7w Aug 3, 2016 from Kinesis
-   <br /><br />
-
-
-### Foot pedels
-
-The Kinesis Advantage keyboard has a <a target="_blank" href="https://www.youtube.com/watch?v=dHhr30207JY">
-phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com/products/#se2-foot-pedals">foot peddle</a> to press the "Enter" key.
-
-<hr />
-
-
-<a name="Voice Recognition"></a>
-
-## Voice Recognition
-
-   PROTIP: A big benefit of working from home is that I don't have people sitting nearby. So now I can enable <strong>voice recognition</strong> to automatically type some (not all) keys. 
+   * control+F2 to highlight the Apple Top menu.
    
-   This has been available since the OSX Yosemite version:
-   <a target="_blank" href="https://support.apple.com/en-us/HT203085">
-   https://support.apple.com/en-us/HT203085</a>
-   
-   See <a target="_blank" href="https://www.macworld.com/article/2843499/how-to-command-your-mac-with-your-voice.html">this video</a> to give it a try:
+   * control+F3 to highlight the Dock at the bottom of the screen.
 
-1. CAUTION: Enabling "Use Enhanced Dictation" (In Apple System Preferences > Dictation & Speech > Turn on Dictation) causes an approximately 800MB file to be downloaded to your Mac. 
-
-2. Choose Accessibility. Scroll to Dictation. Scroll to see which commands.
-3. Check Enable Advanced Commands. Scroll to see which commands.
-4. Get into Automator.
+PROTIP: The **fn** key is easy to find without looking because it's at a corner.
+But use a companion key on the right side of the keyboard.
 
 
 <a id="OSComponentz"></a>
@@ -297,40 +189,6 @@ phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com
 <a href="#DesktopShortcut">[1]</a> = PROTIP: This command does not work when the active program is in an extended screen.
 
 
-
-<a id="AwkwardKeys"></a>
-
-### Awkward Keys #
-
-There are some key combinations that are so awkard to use that it's faster and easier to use a mouse or trackpad.
-
-Since the **fn** and **control** keys are only on the left side of a MacBook keyboard,
-using them requires a Carpel-tunnel Syndrome-inducing move of the left hand:
-
-   * control+F2 to highlight the Apple menu.
-   * control+F3 to highlight the Dock at the bottom of the screen.
-
-On a Mac without a visible Function keys, press fn to reveal them, thus:
-
-   * fn + control + F2 to highlight the Apple menu.
-   * fn + control + F3 to highlight the Dock at the bottom of the screen.
-
-PROTIP: The **fn** key is easy to find without looking because it's at a corner.
-But use a companion key on the right side of the keyboard.
-
-
-<a id="Processes"></a>
-
-## Process Navigation #
-
-Press <strong>command + Tab</strong> to cycle through programs (apps) running.
-
-Press shift plus the above reverses the cycling direction.
-
-Stop on the icon of the app you want to make active.
-
-
-
 <a id="ActiveWindowz"></a>
 
 ## Window navigation #
@@ -378,10 +236,17 @@ Stop on the icon of the app you want to make active.
 </td></tr>
 </table>
 
+<hr />
+
+## Cross machine
+
+For a $19 one-time purchase,<br />
+https://symless.com/synergy<br />
+enables you to use a single keyboard and mouse on Mac, Windows, and Linux.
 
 <a id="WinKeyz"></a>
 
-## Microsoft vs. Mac Keyboards #
+### Microsoft vs. Mac Keyboards #
 
 Needing to change habits learned typing is difficult and takes time. 
 It's literally taking physical therapy.
@@ -418,7 +283,7 @@ is actually the <strong>backspace</strong> key to all other operating systems.
 To press the equivalent of the Windows backspace that removes to the left of the cursor:
 
 <ul>
-<li> On a Macintosh notebook keyboard, press fn + Delete.</li>
+<li> On a Macintosh notebook keyboard, press <strong>fn + Delete</strong>.</li>
 <li> On older full-sized Macintosh keyboards, press &#8998; (called "Forward Delete") below the Help key.</li>
 </ul>
 
@@ -442,6 +307,123 @@ on a Mac is problematic, especially within a virtual Windows machine.
 So map <strong>Alt+F1</strong> within 
 VMware Fusion > Preferences > Keyboard &amp; Mouse > Key Mappings.</li>
 </ul>
+
+<hr />
+
+## Switching keys
+
+PROTIP: We optimize for keys we use most, and avoid common mistakes with keys we accidentaly press.
+
+### Caps Lock unintended
+
+BLAH: It's annoying when all of a sudden everything I type is in caps.
+That happens because I accidentally had my hand too far to the left when I intended to press the A key.
+
+I've gotten used to typing all caps by holding down the shift key with my left or right hand.
+
+   ### Caps Lock to Escape
+
+   BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
+
+   PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
+
+1. Press the Apple icon and select System Preferences.
+2. Type K. Cursor down to highlight Keyboard. Press space bar to open it.
+3. Click "Modifier Keys" at the lower-right corner.
+
+   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
+
+4. Click the entry for "Caps Lock &#8682; Key:" and select &#9099; Escape.
+
+   ### Swap command and control as well
+
+   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
+   This would also allow you to press two keys at once by pressing between the keys,
+   thus able to perform most combinations using your hands.
+
+4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
+4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
+
+5. Click OK.
+6. Press control+Q or click the red x to dismiss the System Preferences dialog.
+  
+   Alternately, the above actions can be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
+   Python script</a> or by downloading the free 
+   <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner</a>
+   which works on OSX Sierra since <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
+   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">
+   many lingering issues</a>.
+
+<a name="Gymnastics"></a>
+
+## Full Screen Finger Gymnastics #
+
+![keyboard-god-giphy](https://user-images.githubusercontent.com/300046/116689174-fcf2c080-a974-11eb-81ca-c985ab3fe6a4.gif)
+
+PROTIP: To evaluate Mac developers, some interviewers ask "show me how you enter and exit Full Screen". This is because they assume that the most productive developers work with their hands always on the keyboard. 
+
+Windows has its F12 key. Apple has Mac users do the equivalent of a <strong>double Summersault</strong> with your fingers.
+How do you type, at the same time:
+
+   <ul><strong>control + command + F</strong></ul>
+
+PROTIP: To toggle <strong>Full Screen view</strong> using the default configuration from Apple: while keeping your left forefinger on the F "home" key, reach with your left thumb to hold down the control key. This may hurt at first (until you get used to it). Try raising your hand
+
+   Now, while keeping your right forefinger on the J "home" key, reach with your right thumb to hold down the command key on the right side of the Space Bar. Then you're in position to press F with your left forefinger.
+
+<hr />
+
+## Extra Programmable Keyboard: Stream Deck
+
+Video creators especially appreciate being able to, so they can concentrate on talking, push a button and have a sequence of keys to do what they need, such as share screen 2, leave zoom, etc.
+
+The Stream Deck has programmable buttons, with each button like a little LCD screen.
+Mini has 6 buttons. The MK2 has 15 buttons. The XL has 28 buttons
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">
+You Need A Stream Deck! The Secret To My Productivity Working From Home</a>
+by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">
+5 Stream Deck PLUGINS You Have To Try Out!</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">
+8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
+
+<hr />
+
+
+<a name="Voice Recognition"></a>
+
+## Voice Recognition
+
+   PROTIP: A big benefit of working from home is that I don't have people sitting nearby. So now I can enable <strong>voice recognition</strong> to automatically type some (not all) keys. 
+   
+   This has been available since the OSX Yosemite version:
+   <a target="_blank" href="https://support.apple.com/en-us/HT203085">
+   https://support.apple.com/en-us/HT203085</a>
+   
+   See <a target="_blank" href="https://www.macworld.com/article/2843499/how-to-command-your-mac-with-your-voice.html">this video</a> to give it a try:
+
+1. CAUTION: Enabling "Use Enhanced Dictation" (In Apple System Preferences > Dictation & Speech > Turn on Dictation) causes an approximately 800MB file to be downloaded to your Mac. 
+
+2. Choose Accessibility. Scroll to Dictation. Scroll to see which commands.
+3. Check Enable Advanced Commands. Scroll to see which commands.
+4. Get into Automator.
+
+
+
+<a id="Processes"></a>
+
+## Process Navigation #
+
+Press <strong>command + Tab</strong> to cycle through programs (apps) running.
+
+Press shift plus the above reverses the cycling direction.
+
+Stop on the icon of the app you want to make active.
+
+
 
 
 <a id="RemapKeyboard"></a>
@@ -533,10 +515,11 @@ This change requires a reboot.
 I probably click the Finder Favorites more than anything else.
 So I've memorized the keyboard keys.
 
-* Option + &#8984; + L for the Downloads folder
+* For the Downloads folder: <strong>Option + &#8984; + L </strong>
 
-* Shift + &#8984; + D for the Desktop folder where screen captures are stored (by default).
-* Shift + &#8984; + A for the Applications folder where apps are stored.
+* For the Desktop folder where screen captures are stored (by default): <strong>Shift + &#8984; + D</strong>
+
+* For the Applications folder where apps are stored: <strong>Shift + &#8984; + A </strong>
 
 This enables me to remove default items in the Favorites list (by right-clicking on it)
 so I can instead list my own folders I use most often.
@@ -576,6 +559,7 @@ If the Library folder does not appear:
 To hide Library again:
 
    <tt><strong>sudo chflags hidden /Library/ ~/Library/</strong></tt>
+
 
 ### System Preferences keyboard shortcut
 
@@ -785,7 +769,19 @@ Word Keyboard Shortcuts</a>
 
    * Save = command + S
    * Save As = Shift + command + S
+   <br /><br />
 
+
+## Microsoft Outlook (Email and Calendar)
+
+Among the <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd?ui=en-us&rs=en-us&ad=us">
+Keyboard Shortcuts for Outlook on macOS</a>:
+
+Minimize or expand the ribbon = Options + COMMAND + R
+
+Hide the reading pane or show it on the right = COMMAND + Backslash (\)
+
+Hide the reading pane or show it below = Shift+ COMMAND + Backslash (\)
 
 <a id="SpecialCharz"></a>
 
@@ -890,20 +886,8 @@ Applescript "robot" typist inserts characters into XCode or other application
 https://gist.github.com/xaviershay/6656216<br />
 Creates a mapping that will type out the given text into vim.
 
-## Cross machine
-
-For a $19 one-time purchase,<br />
-https://symless.com/synergy<br />
-enables you to use a single keyboard and mouse on Mac, Windows, and Linux.
-
 
 ## Resources #
-
-* <a target="_blank" href="https://support.apple.com/en-us/HT201236">
-   Apple's default Mac keyboard shortcuts</a>
-
-* <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
-   Mac OS X Keyboard Shortcuts</a>
 
 Instead of the built-in command+Tab to switch among active programs, follow <a target="_blank" href="https://blog.craftlab.hu/how-to-become-a-modern-magician-productivity-tips-for-devs-on-macos-7a886c43d870">Daniel Szpisjak's How to become a modern magician? - productivity tips for devs on macOS</a>
 describes setup and use of <a target="_blank" href="http://www.hammerspoon.org/go/#setup">Hammerspoon</a> Lua language which uses a complex combination such as Shift+Control+Option to be a "Hyper" key such as the CapsLock. <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner+Elements</a>
@@ -915,16 +899,6 @@ Assign Hyper+X to a specific program, and the pop-up shown by command+Tab will n
 <a target="_blank" href="https://github.com/Bash-it/bash-it">https://github.com/Bash-it/bash-it</a>
 community Bash framework of autocompletion, themes, aliases, custom functions based on <a target="_blank" href="https://github.com/robbyrussell/oh-my-zsh">https://github.com/robbyrussell/oh-my-zsh</a>
 
-## Outlook
-
-Among the <a target="_blank" href="https://support.microsoft.com/en-us/office/keyboard-shortcuts-for-outlook-3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd?ui=en-us&rs=en-us&ad=us">
-Keyboard Shortcuts for Outlook on macOS</a>:
-
-Minimize or expand the ribbon = Options + COMMAND + R
-
-Hide the reading pane or show it on the right = COMMAND + Backslash (\)
-
-Hide the reading pane or show it below = Shift+ COMMAND + Backslash (\)
 
 ## Tmux
 
@@ -978,9 +952,9 @@ homebrew/cask-drivers/elgato-wave-link
 
    ### Preferences configuration
 
-   NOTE: I like to have a clean "full sreen" without the distraction of all the Apple Mac icons at the top, bottom, etc. So ...
+   NOTE: I like to have a clean "full sreen" without the distraction of all the Apple Mac icons at the top, bottom, etc. But for those times they need to be seen ...
 
-1. Hold down <strong>fn+control+F8</strong> or cursor all the way to the top of your whole screen and on the Apple Top Menu bar, click <img alt="keyboard-streamdeck-21x20" width="21" height="20" src="https://user-images.githubusercontent.com/300046/153720313-40c653e7-5fa1-4d42-a3ff-4bd60597e60a.png"> the StreamDeck.app icon to select <strong>Configure Stream Deck</tstong>, which makes the GUI appear.
+1. Hold down <strong>fn+control+F8</strong> or cursor all the way to the top of your whole screen and on the Apple Top Menu bar, click <img alt="keyboard-streamdeck-21x20" width="21" height="20" src="https://user-images.githubusercontent.com/300046/153720313-40c653e7-5fa1-4d42-a3ff-4bd60597e60a.png"> the StreamDeck.app icon to select <strong>Configure Stream Deck</strong>, which makes the GUI appear.
 1. PROTIP: Press Command+Tab to notice that the app does not appear.
 
 1. Press Command+, (comma) or click the () cog icon for the app's Preferences dialog.
@@ -1102,6 +1076,49 @@ homebrew/cask-drivers/elgato-wave-link
 https://www.youtube.com/watch?v=_WwnM2VgYHU
 Plug-ins
 Magic Vegas
+
+
+### Foot pedels
+
+The Kinesis Advantage keyboard has a <a target="_blank" href="https://www.youtube.com/watch?v=dHhr30207JY">
+phone plug</a> to connect to a <a target="_blank" href="https://kinesis-ergo.com/products/#se2-foot-pedals">foot peddle</a> to press the "Enter" key.
+
+
+
+## Ergonomic Keyboards
+
+<a target="_blank" href="https://www.youtube.com/watch?v=oOdfefV2R1I">VIDEO</a>: "Among fastest competitive typists, only two use Dvorick key layout".
+
+Although pricey at <a target="_blank" href="https://www.amazon.com/Kinesis-Advantage2-Ergonomic-Keyboard-KB600/dp/B07K1SMRGS/">$340 from Amazon</a> (perhaps the most expensive keyboard available), the "Advantage2" keyboard <a target="_blank" href="https://kinesis-ergo.com/shop/advantage2/">from Kinesis-ergo.com</a> (at Bethel, Washington state)
+makes it easier and faster for your fingers to reach keys due to its unique contoured key wells.
+Its keys in the middle transfer more work to thumbs than conventional square keyboards.
+
+![keyboard-kinesis-557x455](https://user-images.githubusercontent.com/300046/99932329-e5a00f00-2d14-11eb-8a1d-3a3cb5ee3722.png)
+
+A <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RMhdn2VvdJWbs">Ergonomics shop TheHumanSolution.com</a>
+note the slant of keys enables <a target="_blank" href="https://www.youtube.com/watch?v=psC3ysre2RM&t=9m44s" title="Jun 24, 2020">natural (rather than bent) wrist placement</a> that prevents repetitive motion injury causing career-ending pain in wrists and shoulders.
+
+However, the keyboard does take some "learning time" as its keys are in a different location than on conventional keyboards.
+The manufacturer has a 7 day return and 3 year warranty policy.
+
+Desiring quieter operation, I chose <a target="_blank" href="https://www.youtube.com/watch?v=1WYWePNJTo4&t=1m28s">Cherry 45g MX <strong>Red</strong> (quiet linear-force, not "clicky") mechanical key switches</a> (instead of Brown keys which provide tactile feedback on each keypress). Cherry Red key switches are also used in the <a target="_blank" href="https://www.youtube.com/watch?v=rGM8Y6yal-8&t=4m58s">iKDC KD104 MX silent keyboards</a>. 
+
+But I don't think the Red keys are<a target="_blank" href="https://www.youtube.com/watch?v=BKbQS1vZz2w&t=3m23s" title="Mar 30, 2019">not much quieter than other keyboards</a>.
+(Razor Opto-mechanical Red or Ornata v2 membrane keyboards seem the quietest to me. They are also have short 1mm travel to activate and quickest debounce delay).
+
+Further quiet may be achieved by lubrication or <a target="_blank" href="https://www.youtube.com/watch?v=O3-9ttpaU0E&t=2m5s">replacing key switches</a> with <a target="_blank" href="https://zealpc.net/products/healio">rubbery Zilent keys</a>. 
+
+(I don't know how the keyboard responds to "rollover" of several keys almost simultaneously, which other keyboards call "anti-ghosting").
+
+For even faster operation, use the keyboard's 2MB of memory on-board to store SmartSet Programming Engine macros.
+
+Videos: 
+
+   * https://www.youtube.com/watch?v=8WwuusfB0QA Aug 20, 2016 is the most detailed
+   * https://www.youtube.com/watch?v=ILItPWuirAk
+   * https://www.youtube.com/watch?v=PhQlZvUzT7w Aug 3, 2016 from Kinesis
+   <br /><br />
+
 
 
 ## References
