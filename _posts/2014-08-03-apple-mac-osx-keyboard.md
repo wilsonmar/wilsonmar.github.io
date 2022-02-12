@@ -41,32 +41,43 @@ REMEMBER: The "Special" keys on a Mac's keyboard are represented by both symbols
 
 ## Keep your eys on the screen. Don't look at the keyboard
 
-PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking. 
+PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking:
 
-PROTIP: Some use keyboards (RGB) that light up keys in the dark. But I personally think the best strategy is to find a way to not have to look at the keyboard at all.
+   * 2, 5, 8, 0
+   * }
+   * control
+   * .
+   <br /><br />
 
-This may be a generalization. But many top coders actually like the <strong>vi text editor</strong> because it doesn't use difficult-to-reach keys or mouse that require the user to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
+PROTIP: I find (RGB) keyboards that light up keys in different colors distracting. 
+I personally think the best strategy is to find a way to not have to look at the keyboard at all.
 
 ## Avoid reaching for the mouse
 
 TL;DR: PROTIP: Resourceful coders make it so they don't need to waste time and valuable focus reaching for the mouse. 
 
+This may be a generalization. But many top coders like the <strong>vi text editor</strong> because it doesn't demand use of difficult-to-reach keys or mouse which require users to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
+
 ### Clean borders without icons
 
-I like to have a clean "full sreen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
+I like to have a clean "full screen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
 
 <a id="AwkwardKeys"></a>
 
-### Awkward fn Keys #
+### Awkward fn Keys need eyes #
 
 However, on the 2017 Mac without a visible Function keys, key combinations to reveal those button are so awkard to use that it's faster and easier to use a mouse or trackpad.
 
 Since the **fn** and **control** keys are only on the left side of a MacBook keyboard,
-using them requires a Carpel-tunnel Syndrome-inducing move of the left hand.
+using them requires a Carpel-tunnel Syndrome-inducing moves of the left two fingers:
 
-   * <strong>fn + control + F2</strong> to highlight the Apple Top Menu.
+* <strong>fn + control + F3</strong> to highlight the <strong>Dock icons</strong>, which are by default at the bottom of the screen, but which I prefer to be at the right.
 
-   * <strong>fn + control + F3</strong> to highlight the Dock at the bottom of the screen.
+* <strong>fn + control + F2</strong> to highlight the <strong>Apple menu icon</strong> at the upper-left corner. Press down for its menu:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/153725364-fa909d0d-9881-47aa-aea5-ab75e6b97022.png"><img width="236" height="312" alt="macos-apple-menu-236x312" src="https://user-images.githubusercontent.com/300046/153725364-fa909d0d-9881-47aa-aea5-ab75e6b97022.png"></a>
+
+* <strong>fn + control + F8</strong> to highlight the Apple Top-right Menu.
 
 On 2020+ keyboards (after Apple came to their senses):
 
@@ -900,18 +911,6 @@ Tyler Hall's code is at https://github.com/tylerhall/
 Video creators especially appreciate being able to, so they can concentrate on talking, push a button and have a sequence of keys to do what they need, such as share screen 2, leave zoom, etc.
 
 The Stream Deck has programmable buttons, with each button like a little LCD screen.
-Mini has 6 buttons. The MK2 has 15 buttons. The XL has 28 buttons
-
-<a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">
-You Need A Stream Deck! The Secret To My Productivity Working From Home</a>
-by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">
-5 Stream Deck PLUGINS You Have To Try Out!</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">
-8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
-
 
 <a target="_blank" href="https://www.youtube.com/watch?v=POt4-8b0iPE" title="">VIDEO</a>:
 Unlike a regular keyboard, each button on the Stream Deck can display different images.
@@ -994,6 +993,8 @@ homebrew/cask-drivers/elgato-wave-link
 1. Click the "+" on the upper-left of the button icon to pop-up Stream Deck's Icon Library.
 1. Click the icon at the lower-left to open a selection of icons, plugins, music, sound effects.
 
+   ### Single-button website
+
 1. To obtain an icon, replace "linkedin.com" with the website you want:
 
    <pre>https://www.linkedin.com/favicon.ico</pre>
@@ -1004,6 +1005,8 @@ homebrew/cask-drivers/elgato-wave-link
 
    NOTE: Stream Deck allows you to define two states for every key (e.g. on and off).
 
+   ### Icons 
+   
 1. Among icons, I like the Icon collection "Material Icons" (from Google) because of their white on black.
 
    PROTIP: It's best to use black background to avoid annoying glare and reflections on your glasses.
@@ -1016,6 +1019,8 @@ homebrew/cask-drivers/elgato-wave-link
 
    <a target="_blank" href="https://www.youtube.com/watch?v=KbEUNg6GxFo">OBS Studio Ultimate Stream Deck Guide</a>
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=jdI_IeP1K3o&t=2m33s">VIDEO</a>: Noobs Commander OBS scripts.
+
 1. Among sound effects, "Cell Phone ring simple" and "Cell Phone Smart Phone Vibrate" can be a good excuse to end meetings.
 
    "Crowd Aww", "Crowd Cheer Clap Scream", "Large Crowd Medium Ovation", "Crowd Disgusted Aww", "Crowd cheers and whistles".
@@ -1026,7 +1031,7 @@ homebrew/cask-drivers/elgato-wave-link
 
    I especially like "Upbeat Corporate Success" and "Ultimate Inspiration", which are about 120 BPM (Beats Per Minute).
 
-   ### Plugins
+   ### Plugin to control lights
 
 1. Among PLUGINS, "Philips Hue" to turn lights on and off without saying "Alexa" or "Hey Google" by connecting to Phillips, etc.
 
@@ -1085,9 +1090,15 @@ homebrew/cask-drivers/elgato-wave-link
 
 1. Post to Twitter, YouTube, 
 
-https://www.youtube.com/watch?v=_WwnM2VgYHU
-Plug-ins
-Magic Vegas
+References:
+
+   * https://www.youtube.com/watch?v=_WwnM2VgYHU Plug-ins Magic Vegas
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=nrWRzYYC1rE">You Need A Stream Deck! The Secret To My Productivity Working From Home</a> by <a target="_blank" href="https://www.bettercreating.com/">BetterCreating.com</a> has a <a target="_blank" href="https://www.youtube.com/watch?v=tqLU_6ceEOc">custom workpad for StreamDeck</a> controlling <a target="_blank" href="https://www.notion.so/">Notion</a>.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=_WwnM2VgYHU">5 Stream Deck PLUGINS You Have To Try Out!</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=RPMMNZNH73Q">8 Easy Stream Deck Tricks (to Impress Your Viewers)</a>
 
 
 ### Foot pedels
