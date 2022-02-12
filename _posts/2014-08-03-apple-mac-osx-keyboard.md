@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Apple Mac OSX Keyboard Shortcuts"
-excerpt: "Shortcuts and utilities"
+excerpt: "Stay focused and do things faster with Shortcuts, HotKeys, and StreamDeck buttons"
 tags: [apple, mac, keyboard]
 date: "2021-04-29"
 file: "apple-mac-osx-keyboard"
@@ -16,8 +16,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This topic is about how you can do things faster by automating actions on the keyboard controlling your Mac,
-beyond <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's standard Keyboard Shortcuts at https://support.apple.com/en-us/HT201236</a>
+This topic is about how we can <strong>stay focused</strong> and do things <strong>faster</strong> by automating actions on the keyboard controlling our Mac, beyond <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's standard Keyboard Shortcuts (at https://support.apple.com/en-us/HT201236)</a>
+
+This page covers several mechanisms:
+
+   * Standard Keyboard
+   * <a href="#Hotkey">Hotkey app</a>
+   * <a href="#Streamdeck">StreamDeck</a> extra (macro) buttons
+   <br /><br />
 
 ## Special key Names and Symbols
 
@@ -929,6 +935,166 @@ Tmux is a contraction of "Terminal Multiplexer". The "multi" refers to multiple 
 <a target="_blank" href="https://tyler.io/i-may-have-gone-overboard-with-my-keyboard-shortcuts/">Tyler.io</a>
 show the keys he defined using Magnet (https://magnet.crowdcafe.com/) and KeyboardMaestro (https://www.keyboardmaestro.com/main/).
 Tyler Hall's code is at https://github.com/tylerhall/
+
+<a name="StreamDeck"></a>
+
+## Stream Deck button keyboard
+
+<a target="_blank" href="https://www.youtube.com/watch?v=POt4-8b0iPE" title="">VIDEO</a>:
+Unlike a regular keyboard, each button on the Stream Deck can display different images.
+It provides a visual button you don't have to remember.
+
+https://www.wired.com/story/elgato-stream-deck-productivity-tips/
+
+1. Since 2017, there are several editions of Stream Deck. The $150 MK.2 has 6 keys. The $80 "Mini" has 4 keys. The $250 "XL" has 32 keys.
+
+   <a target="_blank" href="https://www.elgato.com/en/stream-deck-pedal">Stream Deck Pedal</a> provides three buttons for your feet to click.
+
+1. Download and install StreamDeck software from 
+
+   <a target="_blank" href="https://www.elgato.com/en/downloads">https://www.elgato.com/en/downloads</a>
+
+   PROTIP: This installs to the <tt>/Applications</tt> folder.
+
+   Alternately, Elgato published several utilities in Homebrew on Mac:
+
+   <pre><strong>brew search elgato</strong></pre>
+   
+   <pre>==> Casks
+homebrew/cask-drivers/elgato-camera-hub
+homebrew/cask-drivers/elgato-control-center
+homebrew/cask-drivers/elgato-game-capture-hd
+homebrew/cask-drivers/elgato-stream-deck
+homebrew/cask-drivers/elgato-thunderbolt-dock
+homebrew/cask-drivers/elgato-video-capture
+homebrew/cask-drivers/elgato-wave-link
+   </pre>
+
+1. PROTIP: If you need to differentiate the USB end of the StreamDeck cable, label it.
+1. PROTIP: If you're using a later-model Mac, you'll need a USB-A to USB-C adapter.
+1. Plug in your deck to a USB-2 port. 
+
+1. Press the blue "WELCOME" button to open the <a target="_blank" href="https://www.elgato.com/en/welcome-to-stream-deck?utm_campaign=Stream-Deck-App&utm_medium=Welcome-Stream-Deck&utm_source=Stream-Deck-App">Elgato webpage</a> on your default browser.
+
+   ### Preferences configuration
+
+1. Cursor all the way to the top of your whole screen and on the Apple bar, click () the StreamDeck.app icon to select <strong>Configure Stream Deck</tstong>, which makes the GUI appear.
+1. PROTIP: Press Command+Tab to notice that the app does not appear.
+
+1. Press Command+, (comma) or click the () cog icon for the app's Preferences dialog.
+1. Select "Sleep After" for 5 minutes or whatever time you prefer.
+
+   PROTIP: You can "Set Screensaver..." for a background image. But why?
+
+1. The "Profile" tab enable you to define different Profiles.
+1. Exit Preferences.
+
+   ### Pages and Levels
+
+1. Click the "+" next to "Pages" (on the middle of the GUI) to add a second page. Notice a right (>) cursor now in the device.
+1. Click on that and the left cursor appears.
+
+   PROTIP: Use the top (home) page as a menu and for buttons you'll want to most often reach quickly during live calls, such as sound effects. 
+   Use another page of icons for websites.
+
+1. Click the () "Control Center" menu item to expand/contract its items.
+
+   PROTIP: I don't use the brightness settings button because they are buttons on my Mac keyboard Control Board for that.
+
+   PROTIP: I don't use the Battery button because I set my Mac to display its percentage on my Mac's top-of-screen menu (set in System Preferences, Dock & Menu Bar, Battery).
+
+   ### Pages, Websites and icons
+
+1. Highlight and copy the URL path of the page you want to go to (starting with "https://").
+1. Create your own Webpage button by expanding the System menu and dragging the "Website" to drop it on the button you want to use.
+1. PROTIP: You can drag a gif (animated) image file from Finder and drop on the default icon.
+1. Type a Title such as "Gmail".
+1. Click on the URL field and paste.
+1. Click the "+" on the upper-left of the button icon to pop-up Stream Deck's Icon Library.
+1. Click the icon at the lower-left to open a selection of icons, plugins, music, sound effects.
+
+1. To obtain an icon, replace "linkedin.com" with the website you want:
+
+   <pre>https://www.linkedin.com/favicon.ico</pre>
+
+   That's always 20x20 pixels, so use a photo editor (such as Sketch) to expand it to 144x144 shown as 72x72.
+
+   https://www.startpage.com/sp/search
+
+   NOTE: Stream Deck allows you to define two states for every key (e.g. on and off).
+
+1. Among icons, I like the Icon collection "Material Icons" (from Google) because of their white on black.
+
+   PROTIP: It's best to use black background to avoid annoying glare and reflections on your glasses.
+
+1. If you're a Figma user, install their icon library.
+
+   Stream Deck is the darling of gamers and streamers who use OBS Studio, Twitter, Twitch.
+
+1. Among sound effects, "Cell Phone ring simple" and "Cell Phone Smart Phone Vibrate" can be a good excuse to end meetings.
+
+   "Crowd Aww", "Crowd Cheer Clap Scream", "Large Crowd Medium Ovation", "Crowd Disgusted Aww", "Crowd cheers and whistles".
+
+1. Download "rim shot" and comedy laugh track sounds.
+
+1. MUSIC track for use during short breaks: Among the longest: "Inspiring Uplifting Motivational" is 4:34; "Come Dine with Me" is 5:32.
+
+   I especially like "Upbeat Corporate Success" and "Ultimate Inspiration", which are about 120 BPM (Beats Per Minute).
+
+   ### Plugins
+
+1. Among PLUGINS, "Philips Hue" to turn lights on and off without saying "Alexa" or "Hey Google" by connecting to Phillips, etc.
+
+   YouTube
+   
+1. "Zoom Plugin"
+
+   https://lostdomain.org/stream-deck-plugin-for-zoom/
+   
+1. Use IFTTT.com to create special web links.
+
+1. PowerPoint integration
+
+1. Visual Studio Code Mac or XCode
+
+1. DevOps for StreamDeck to control GitHub Actions, GitLab, Netlify, etc.
+
+   https://github.com/SantiMA10/devops-streamdeck
+
+1. PLUGIN "Time"
+
+1. PLUGIN "OSA Script"
+
+   TODO: Put your Mac laptop to sleep with one button.
+   https://vninja.net/2021/04/15/elgato-stream-deck-sleep-button/
+   https://www.reddit.com/r/StreamDeckSDK/comments/jsn7re/setting_up_a_1_button_sleep_mode/
+
+   ## Mute/Unmute
+   
+   PROTIP: Most conveniently, Stream Deck buttons don't depend on you being at a specific app.
+
+1. https://demitasse.co.nz/2020/04/zoom-mute-unmute-using-stream-deck/
+
+1. Control Notion app
+
+   https://www.youtube.com/watch?v=nrWRzYYC1rE
+
+1. Use "Mixer" to mute/unmute microphone in Twitch, Mixer, Discord, etc. 
+
+1. Nested folders.
+
+1. "MultiAction" invokes a sequence of actions programmed to open and position several window by one button.
+
+1. Instant Replay of last 15 seconds on YouTube, if you also bought an Elgato capture card hardware.
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=M4ckb53gxh0">VIDEO</a>: Control the OBS streaming app.
+
+1. Post to Twitter, YouTube, 
+
+https://www.youtube.com/watch?v=_WwnM2VgYHU
+Plug-ins
+Magic Vegas
+
 
 ## References
 

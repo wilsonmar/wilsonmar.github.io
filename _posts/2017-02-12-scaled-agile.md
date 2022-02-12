@@ -3,7 +3,7 @@ layout: post
 title: "Scaled Agile"
 excerpt: "You're SAFe with Agile!"
 tags: [Agile]
-date: "2017-02-12"
+date: "2022-02-12"
 file: "scaled-agile"
 image:
 # pic green easter island 2 hillside 1920x1080
@@ -33,11 +33,15 @@ https://ondemand.agileu.com</a>
    * <a target="_blank" href="https://github.com/RallyTools/">
    https://github.com/RallyTools</a>
 
-Version 1.0 of SAFe was published in 2011<br />
+SAFe Version 1.0 was first published in 2011.
 [SAFe V3.0](#v3) was released July 28, 2014.
 The framework's name was changed in January 2016 to<br />
 <a target="_blank" href="http://www.scaledagileframework.com/">
 "SAFe 4.0 for Lean Software and Systems Engineering" on ScaledAgileFramework.com</a>:
+
+
+## v5
+
 
 
 ## v4.5
