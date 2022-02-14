@@ -26,8 +26,10 @@ PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diag
 
 <a name="Diagram1"></a>
 
-Although Terraform <a href="#MultiCloud">handles multiple clouds</a>, 
-to simplify the explanation here, we'll focus on AWS for now:
+## Adoption Strategy
+
+Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, 
+to simplify the explanation here, we'll focus on AWS for now.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/153806004-f936e89a-2c13-40d0-a3b5-592aec1047e4.png"><img width="1756" height="752" alt="terraform-terragoat-1756x752" src="https://user-images.githubusercontent.com/300046/153806004-f936e89a-2c13-40d0-a3b5-592aec1047e4.png"></a>
 
