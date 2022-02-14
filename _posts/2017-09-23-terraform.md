@@ -16,96 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
-
-"Terraform make infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable."
-
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using Hashicorp's Terraform to build, change, and version resources running in clouds.
 
+<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
-<a name="Atlantis"></a>
+"Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
 
-## Atlantis on Terraform
-
-This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
-ensure code reviews.
-
-Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
-It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
-
-Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
-
-![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
-
-Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
-
-https://www.youtube.com/watch?v=bUWmJFzBh0A
-
-
-<a name="AtlantisWorkflow"></a>
-
-## Atlantis-based workflow with Terraform Enterprise
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
-
-1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
-
-   CAUTION: This is a static secret which should be updated occassionally.
-
-   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
-
-   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
-
-2. Copy in base Terraform configuration files. 
-
-   Within files are references to reusable <strong>modules</strong> used by other projects.
-
-   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
-
-3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
-
-4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
-
-   <pre>resource "null_resource" "demo" {}</pre>
-
-5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
-
-   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
-
-6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
-
-  and adds comments on the pull request
-   in addition to creating an execution plan with dependencies.
-
-   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
-
-   https://www.runatlantis.io/docs/autoplanning.html#example
-
-7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
-
-8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
-
-9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
-
-    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
-
-    https://www.runatlantis.io/docs/security.html#mitigations
-
-    Note that apply creates tfstate files.
-
-10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
-
-
-<a name="Repeatable"></a>
-
-### Repeatable from versioning
-
-Terraform provides a <strong>single consistent set of commands and workflow</strong> on all clouds.
-That is "future proofing" infastructure work.
-
-<a name="Versioned"></a>
-
-Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
+PROTIP: As illustrated by my concept-by-concept video <a href="#Diagram1">diagram</a>:
 
 
 ## Multi-cloud/service
@@ -121,7 +38,54 @@ Terraform provides an alternative to each cloud vendor's IaC solution:
 
 Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
+<a name="Diagram1"></a>
 
+To simplify the explanation, we'll focus on AWS for now:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"><img width="1758" height="750" alt="terraform-terragoat-1758x750" src="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"></a>
+
+Resources in AWS can be created and managed using several tools: manually using the AWS GUI Management Console or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. Even though the <strong>AWS Config</strong> service logs every change to AWS resource configurations, those who manage enterpise AWS use prefer people to avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories. And although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> that can is <a href="#Repeatable">repeatable</a>. 
+
+The <strong>AWS Security Hub</strong> service looks for vulnerabilities based on its own <strong>policies</strong> to issue <strong>Findings</strong>. AWS provides <strong>recommendations</strong> for remediation, but they are only about its own GUI or CloudFormation code.
+
+More importantly, Findings from AWS are raised at a time when vulnerabilities are already manifested in resources on the internet. 
+
+PROTIP: To prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources, in the pipeline block conditions which are <strong>violations</strong> found in <strong>static scans</strong> of Infrastructure definition code, based on <strong>Policies as Code</strong> obtained from versioned GitHub.
+
+<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>.
+
+As importantly, in today's hostile internet, we need to achieve full "security maturity" in our Terraform code rather than risking an incremental approach to achieve security.
+
+That means we need a way for, on your <strong>laptops</strong>, to become an expert at <strong>manually editing</strong> Terraform files so they are "bulletproof" from the start. 
+
+Instead of having you risk exposing vulnerabilities with <strong>your files</strong> right away, we make that necessary learning curve less steep by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a>.  
+
+The first time we run known-bad Terraform through <strong>static scans</strong>, the <strong>Policies as Code</strong> will report a lot of violations. But various groups have created <strong>recommendations</strong> for remediating the Terraform.
+
+Terragoat is sample, so we'll need to create additional policies using a <strong>policy creator</strong> provided by the same vendor.
+
+When we have a way to catch all known vulnerabilities, that all Terraform is <strong>known to be good</strong> as we can make it, we can then work on <strong>your app's files</strong>. When we get an <strong>attestation</strong> that your files are secure, we can then safely use that <strong>Pull Request</strong> into GitHub as the <strong>Shareable</strong> version to deploy as resources in the cloud.
+
+Recap:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"><img width="1758" height="750" alt="terraform-terragoat-1758x750" src="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"></a>
+
+
+<hr />
+
+<a name="Repeatable"></a>
+
+### Repeatable from versioning
+
+Terraform provides a <strong>single consistent set of commands and workflow</strong> on all clouds.
+That is "future proofing" infastructure work.
+
+
+<a name="Versioned"></a>
+
+Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
+
+<a name="IaC"></a>
 
 ### Infrastructure as Code (IaC) 
 
@@ -148,7 +112,6 @@ The objective is to accellerate work AND <strong>save money</strong> by automati
    </td><td>Yes</td><td>Yes</td></tr>
 </tbody></table>
 
-
 Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>. 
 
 Kubernetes orchestrates (brings up and down) Docker containers.
@@ -156,6 +119,7 @@ Kubernetes orchestrates (brings up and down) Docker containers.
 Pulumi
 
 dagger.io
+
 
 <a name="CFN"></a>
 
@@ -166,7 +130,7 @@ dagger.io
 <tr><td> <a href="#Providers">Multi-Cloud providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
 <tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
 <tr><td> Open Source contributions? </td><td> <a href="#OpenSourcing">No</a> </td><td> <a href="#OpenSourcing">Yes</a> (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
-<tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> within Terraform </td></tr>
+<tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> in Terraform & AWS S3 </td></tr>
 <tr><td> GUI </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
 <tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
@@ -209,7 +173,6 @@ exports existing AWS resources to Terraform style tf, tfstate. It also comes as 
 
 <a name="x1"></a>*1 - CF/CFN (CloudFormation) is used only within the AWS cloud while others operate on several clouds. CFN is the only <strong>closed-sourced</strong> solution on this list.
 Code for Terraform is open-sourced at <a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
-
 
 Those who create AMI's also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
@@ -296,6 +259,8 @@ PROTIP: WARNING: Terraform does not support rollbacks of changes made.
 "Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
 
 Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
+
+<a name="ParallelExecution"></a>
 
 ### Parallel execution
 
@@ -753,7 +718,7 @@ Chocolatey installed 1/1 packages.
 
 <a name="Linux_Install"></a>
 
-### Install on Linux
+## Install on Linux
 
 * <a target="_blank" href="
    https://github.com/migibert/terraform-role">
@@ -895,6 +860,60 @@ Global options (use these before the subcommand, if any):
 
 ## Reusable Modules
 
+A Terraform module is a container for multiple resources that are used together.
+
+Terraform modules provide "blueprints" to deploy.
+
+The module's source can be on a local disk:
+
+   <pre>module "service_foo" {
+  source = "/modules/microservice"
+  image_id = "ami-12345"
+  num_instances = 3
+}
+   </pre>
+
+  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
+
+   <pre>module "rancher" {
+  source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
+}
+   </pre>
+
+   * Notice "https://" are not part of the source string. It's assumed.
+   * Double slashes in the URL above separate the repo from the subdirectory.
+   * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
+   <br /><br />
+
+
+<a target="_blank" href="
+https://registry.terraform.io/">
+https://registry.terraform.io</a>
+is hosted by Terraform to provide a marketplace of modules. 
+
+<a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">
+https://registry.terraform.io/modules/hashicorp/vault</a>
+module installs Hashicorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">Video of demo</a> by Yevgeniy Brikman:
+<a target="_blank" title="terraform-mod-vaults-1168x207-37317.jpg" href="https://user-images.githubusercontent.com/300046/39780285-1426518c-52c9-11e8-9544-8cac52ff2297.jpg">
+<img alt="terraform-mod-vaults-640x114-16475.jpg" width="640" src="https://user-images.githubusercontent.com/300046/39780240-da22a9b8-52c8-11e8-995e-e8c4a7ce325e.jpg"></a>
+
+The above is created by making use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
+
+   <pre><strong>terraform init hashicorp/vault/aws
+   terraform apply</strong></pre>
+
+It's got 33 resources. The sub-modules are:
+
+   * private-tls-cert (for all providers)
+   * vault-cluster (for all providers)
+   * vault-lb-fr (for Google only)
+   * vault-elb (for AWS only)
+   * vault-security-group-rules (for AWS only)
+   <br /><br />
+
+
 Putting Terraform code in modules enable their reuse by several, which speed development and reduces testing.
 
 But some documentation and training is necessary.
@@ -1022,7 +1041,7 @@ PROTIP: Specifying passwords in environment variables is more secure than typing
 
 ### Terraform on AWS
 
-<a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="June 1, 2020">VIDEO: Implementing Terraform with AWS</a> by Ned Bellavance</a> at <a target="_blank" href="https://github.com/ned1313/Implementing-Terraform-on-AWS">https://github.com/ned1313/Implementing-Terraform-on-AWS</a>
+<a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="June 1, 2020">VIDEO: Implementing Terraform with AWS</a> by Ned Bellavance at <a target="_blank" href="https://github.com/ned1313/Implementing-Terraform-on-AWS">https://github.com/ned1313/Implementing-Terraform-on-AWS</a>
 
 
 <a name="Terraform_Azure"></a>
@@ -2036,7 +2055,7 @@ EOH
    Another option is to run Terraform and Ansible separately but import the data from one to another. 
    Terraform saves all the information about provisioned resources into a Terraform state file. We can find the IP addresses of Terraform-provisioned instances there and import them into the Ansible inventory file. 
 
-   <a target="_blank" https://github.com/adammck/terraform-inventory">Terraform Inventory</a> extract from the state file the IP addresses for use by ab Ansible playbook to configure nodes.
+   <a target="_blank" href="https://github.com/adammck/terraform-inventory">Terraform Inventory</a> extract from the state file the IP addresses for use by ab Ansible playbook to configure nodes.
 
    Ansible can use hash_vault to retrieve secrets from a Hashicorp Vault.
 
@@ -2381,63 +2400,250 @@ It's defined in terraform.tf:
   densify_unique_id       = "${var.name}"
 }</pre>
 
+<hr />
 
-<a name="modules"></a>
+
+<a name="Atlantis"></a>
+
+## Atlantis on Terraform
+
+This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
+ensure code reviews.
+
+Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
+It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
+
+Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
+
+![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
+
+Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
+
+https://www.youtube.com/watch?v=bUWmJFzBh0A
+
+<hr />
+
+## Policy as Code
+
+To use something like a pro, you need to get past mistakes newbies make.
+
+Especially in today's hostile internet, we can't afford to stumble around hoping nobody will notice.
+
+So here is a way we can gain confidence by <strong>identifying and fixing known-bad</strong> Terraform configuration code.
+
+
+### What issues to look for?
+
+There are several industry standards which prescribe "controls" and configurations:
+
+   * AWS Foundations referenced by the AWS Security Hub service
+   * CIS
+
+   * SOC2
+   * ISO
+   * FedRAMP
+
+   * PCI
+   * HIPAA
+   * NIST
+   * Hightrust
+   * etc.
+   <br /><br />
+
+The trouble with standards is that they are in PDF and Excel files.
+
+## AWS-centric recommendations
+
+The AWS Security Hub service lists "findings" based on their "AWS Foundations" set of policies.
+
+The trouble with such findings is that vulnerabilities already exist in resources on the internet.
+
+AWS provides recommendations for remediating findings.
+
+PROTIP: But remediations from AWS show use of the AWS Management Console GUI and AWS Cloud Formation, <strong>not Terraform</strong>. For recommendations in Terraform code, we need to look to TFSec and other products.
+
+
+<a name="PolicyCheckTools"></a>
+
+### Programs processing Policy as Code
+
+PROTIP: To prevent vulnerabilities <srong>before</strong> they are manifested in resources on the internet,
+several groups have created programs which can <strong>automatically attest</strong> to whether a Terraform file actually meets or violates specific <strong>policies</strong> defined as code.
+
+This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
+
+   * Armor Code
+   * SonarQube
+   * Terraform Enterprise Sentinel
+   * Terraform FOSS with Atlantis
+   <br /><br />
+
+
+
+<a name="Terragoat"></a>
+
+## Terragoat for learning
+
+   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+
+   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
    
-## Modules
+1. Get it on your laptop after navigating to a folder:
 
-A Terraform module is a container for multiple resources that are used together.
+   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
+   cd terragoat/terraform
+   </strong></pre>
 
-Terraform modules provide "blueprints" to deploy.
+1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
 
-The module's source can be on a local disk:
+   <pre><strong>ls aws
+   </strong></pre>
 
-   <pre>module "service_foo" {
-  source = "/modules/microservice"
-  image_id = "ami-12345"
-  num_instances = 3
-}
+   <pre>db-app.tf
+ec2.tf
+ecr.tf
+eks.tf
+elb.tf
+es.tf
+iam.tf
+kms.tf
+lambda.tf
+neptune.tf
+rds.tf
+xs3.tf
    </pre>
 
-  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
+   PROTIP: BLAH: These are not 
+   
+   QUESTION: How will you know when new AWS services become available or deprecated?
 
-   <pre>module "rancher" {
-  source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
-}
+
+1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
+
+   <pre>pip install checkov
+checkov --help
    </pre>
 
-   * Notice "https://" are not part of the source string. It's assumed.
-   * Double slashes in the URL above separate the repo from the subdirectory.
-   * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
+1. Scan a directory (folder):
+
+   <pre><strong>checkov -d aws</strong></pre>
+
+   <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">
+   Checkov has 50 built-in checks</a>.
+   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
+   which defines recommended Terraform coding.
+
+   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
+
+   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
+&nbsp;
+• Command line docker Image scanning
+• Free (forever) bridgecrew.cloud account with API access
+• Auto-fix remediation suggestions
+• Enabling of VS Code Plugin
+• Dashboard visualisation of Checkov scans
+• Integration with GitHub for:
+	◦ 	Automated Pull Request scanning
+	◦ 	Auto remediation PR generation
+• Integration with up to 100 cloud resources for:
+	◦ 	Automated cloud resource checks
+	◦ 	Resource drift detection
+&nbsp;
+and much more...
+&nbsp;
+It's easy and only takes 2 minutes. We can do it right now!
+&nbsp;
+To Level-up, press 'y'...
+&nbsp;
+Level up? (y/n): _
+   </pre>
+
+
+   ### Create vulnerable resources
+
+1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
+
+   * "acme" for company_name in TF_VAR_company_name
+   * "mydevsecops" for environment in TF_VAR_environment
+   * TF_VAR_region
    <br /><br />
 
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
 
-<a target="_blank" href="
-https://registry.terraform.io/">
-https://registry.terraform.io</a>
-is hosted by Terraform to provide a marketplace of modules. 
+   <pre>alias      = "plain_text_access_keys_provider"
+  region     = "us-west-1"
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+   </pre>
 
-<a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">
-https://registry.terraform.io/modules/hashicorp/vault</a>
-module installs Hashicorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. 
+   CAUTION: Replace key values with a variable name.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">Video of demo</a> by Yevgeniy Brikman:
-<a target="_blank" title="terraform-mod-vaults-1168x207-37317.jpg" href="https://user-images.githubusercontent.com/300046/39780285-1426518c-52c9-11e8-9544-8cac52ff2297.jpg">
-<img alt="terraform-mod-vaults-640x114-16475.jpg" width="640" src="https://user-images.githubusercontent.com/300046/39780240-da22a9b8-52c8-11e8-995e-e8c4a7ce325e.jpg"></a>
+   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
 
-The above is created by making use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
+1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
 
-   <pre><strong>terraform init hashicorp/vault/aws
-   terraform apply</strong></pre>
+ , and #airiam, 
 
-It's got 33 resources. The sub-modules are:
+https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
 
-   * private-tls-cert (for all providers)
-   * vault-cluster (for all providers)
-   * vault-lb-fr (for Google only)
-   * vault-elb (for AWS only)
-   * vault-security-group-rules (for AWS only)
-   <br /><br />
+
+
+<hr />
+
+<a name="AtlantisWorkflow"></a>
+
+### Atlantis-based workflow with Terraform Enterprise
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
+
+1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
+
+   CAUTION: This is a static secret which should be updated occassionally.
+
+   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
+
+   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
+
+2. Copy in base Terraform configuration files. 
+
+   Within files are references to reusable <strong>modules</strong> used by other projects.
+
+   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
+
+3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
+
+4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
+
+   <pre>resource "null_resource" "demo" {}</pre>
+
+5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
+
+   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
+
+6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
+
+  and adds comments on the pull request
+   in addition to creating an execution plan with dependencies.
+
+   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
+
+   https://www.runatlantis.io/docs/autoplanning.html#example
+
+7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
+
+8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
+
+9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
+
+    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
+
+    https://www.runatlantis.io/docs/security.html#mitigations
+
+    Note that apply creates tfstate files.
+
+10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
 
 <hr />
 
@@ -2638,6 +2844,7 @@ https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scala
 
 https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
 HashiCorp Certified: Terraform Associate Practice Exam 2021
+
 
 ## More on DevOps #
 

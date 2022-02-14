@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Apple Mac OSX Keyboard Shortcuts"
-excerpt: "Stay focused and do things faster with Shortcuts, HotKeys, and StreamDeck buttons"
+excerpt: "Stay focused and do things faster with Keyboard Shortcuts, HotKeys, and StreamDeck buttons"
 tags: [apple, mac, keyboard]
-date: "2021-04-29"
+date: "2022-02-12"
 file: "apple-mac-osx-keyboard"
 image:
 # feature: pic white keyboard british 1900x500.jpg
@@ -202,7 +202,7 @@ But use a companion key on the right side of the keyboard.
 
 <a id="ActiveWindowz"></a>
 
-## Window navigation #
+## Microsoft Windows navigation #
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Purpose </th><th> Menu </th><th> Mouse </th><th> Key </th></tr>
@@ -251,9 +251,10 @@ But use a companion key on the right side of the keyboard.
 
 ## Cross machine
 
-For a $19 one-time purchase,<br />
-https://symless.com/synergy<br />
-enables you to use a single keyboard and mouse on Mac, Windows, and Linux.
+For a $19 one-time purchase from symless.com, the <a target="_blank" href="https://symless.com/synergy/">Synergy</a> app on Mac, Windows, and Linux enables you to use a single keyboard and mouse for use on all machines, copying and pasting from a Mac to a Windows machine to a Linux machine.
+
+It does not support iPads, which Apple's Universal Control does supports.
+
 
 <a id="WinKeyz"></a>
 
