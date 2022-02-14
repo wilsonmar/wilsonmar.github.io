@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Terraform"
-excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning AWS, Azure, GCP, and other clouds using Atlantis team versioning GitOps"
+excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning into AWS, Azure, GCP, and other clouds using Terragoat, Bridgecrew, and Atlantis team versioning GitOps"
 tags: [DevOps, ecosystem]
 date: "2021-08-24"
 file: "terraform"
@@ -29,7 +29,7 @@ PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diag
 Although Terraform <a href="#MultiCloud">handles multiple clouds</a>, 
 to simplify the explanation here, we'll focus on AWS for now:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"><img width="1758" height="750" alt="terraform-terragoat-1758x750" src="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/153806004-f936e89a-2c13-40d0-a3b5-592aec1047e4.png"><img width="1756" height="752" alt="terraform-terragoat-1756x752" src="https://user-images.githubusercontent.com/300046/153806004-f936e89a-2c13-40d0-a3b5-592aec1047e4.png"></a>
 
 Resources in AWS can be created and managed using several tools: manually using the AWS GUI Management Console or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. Even though the <strong>AWS Config</strong> service logs every change to AWS resource configurations, those who manage enterpise AWS use prefer people to avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories. And although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> that can is <a href="#Repeatable">repeatable</a>. 
 
@@ -53,9 +53,11 @@ Terragoat is sample, so we'll need to create additional policies using a <strong
 
 When we have a way to catch all known vulnerabilities, that all Terraform is <strong>known to be good</strong> as we can make it, we can then work on <strong>your app's files</strong>. When we get an <strong>attestation</strong> that your files are secure, we can then safely use that <strong>Pull Request</strong> into GitHub as the <strong>Shareable</strong> version to deploy as resources in the cloud.
 
+Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creating Pull Requests containing remediations. 
+
 Recap:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"><img width="1758" height="750" alt="terraform-terragoat-1758x750" src="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/153806004-f936e89a-2c13-40d0-a3b5-592aec1047e4.png"><img width="1756" height="752" alt="terraform-terragoat-1756x752" src="https://user-images.githubusercontent.com/300046/153806004-f936e89a-2c13-40d0-a3b5-592aec1047e4.png"></a>
 
 
 <hr />
