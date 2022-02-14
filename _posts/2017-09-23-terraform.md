@@ -27,7 +27,7 @@ PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diag
 <a name="Diagram1"></a>
 
 Although Terraform <a href="#MultiCloud">handles multiple clouds</a>, 
-to simplify the explanation, we'll focus on AWS for now:
+to simplify the explanation here, we'll focus on AWS for now:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"><img width="1758" height="750" alt="terraform-terragoat-1758x750" src="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"></a>
 
@@ -74,27 +74,27 @@ Use of <strong>version-controlled</strong> configuration files in an elastic clo
 
 <a name="IaC"></a>
 
-### Infrastructure as Code (IaC) 
+### Infrastructure as Code (IaC) Provisioning Options
 
 The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources quicker and more consistently than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
 
 <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">BLOG: Analysis</a>:
 
 <table border="1" cellpadding="4" cellspacing="0">
-<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
+<thead><tr><th>&nbsp;</th><th>Since</th><th>Community</th><th>Type
    </th><th>Infra.</th><th>Lang.
    </th><th>Agent</th><th>Master</th></tr>
 </thead><tbody>
-<tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a></td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
+<tr valign="top"><td><a title="Cloud Formation (AWS)">CFN/CF</a></td><td>2011 Medium</td><td>Small<a href="#x1">*1</a>
+   </td><td>Immutable</td><td><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small</td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
+<tr valign="top"><td>Heat</td><td>2012 Low</td><td>Small
+   </td><td>Immutable</td><td><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td><strong>Terraform</strong></td><td>2014 Low</td><td>Huge</td><td>Provisioning
-   </td><td>Immutable</td><td bgcolor="yellow"><a href="#Declarative">Declarative</a>
+<tr valign="top"><td><strong>Terraform</strong></td><td>2014 Low</td><td>Huge
+   </td><td>Immutable</td><td><a href="#Declarative">Declarative</a>
    </td><td>No</td><td>No</td></tr>
-<tr valign="top"><td><a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi</a>></td><td>2017 Low</td><td>New</td><td>Provisioning
+<tr valign="top"><td><a target="_blank" href="https://wilsonmar.github.io/pulumi/">Pulumi</a>></td><td>2017 Low</td><td>New
    </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
    </td><td>Yes</td><td>Yes</td></tr>
 </tbody></table>
@@ -142,7 +142,7 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    add version control integration, MFA security, HA, and other enterprise features.
 
 
-<a name="MultiCloud></a>
+<a name="MultiCloud"></a>
 
 ## Multi-cloud/service
 
@@ -156,6 +156,118 @@ Terraform provides an alternative to each cloud vendor's IaC solution:
    <br /><br />
 
 Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
+
+<hr />
+
+
+<a name="Terragoat"></a>
+
+## Terragoat for learning
+
+   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+
+   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
+   
+1. Get it on your laptop after navigating to a folder:
+
+   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
+   cd terragoat/terraform
+   </strong></pre>
+
+1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
+
+   <pre><strong>ls aws
+   </strong></pre>
+
+   <pre>db-app.tf
+ec2.tf
+ecr.tf
+eks.tf
+elb.tf
+es.tf
+iam.tf
+kms.tf
+lambda.tf
+neptune.tf
+rds.tf
+xs3.tf
+   </pre>
+
+   PROTIP: BLAH: These are not 
+   
+   QUESTION: How will you know when new AWS services become available or deprecated?
+
+
+1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
+
+   <pre>pip install checkov
+checkov --help
+   </pre>
+
+1. Scan a directory (folder):
+
+   <pre><strong>checkov -d aws</strong></pre>
+
+   <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">
+   Checkov has 50 built-in checks</a>.
+   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
+   which defines recommended Terraform coding.
+
+   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
+
+   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
+&nbsp;
+• Command line docker Image scanning
+• Free (forever) bridgecrew.cloud account with API access
+• Auto-fix remediation suggestions
+• Enabling of VS Code Plugin
+• Dashboard visualisation of Checkov scans
+• Integration with GitHub for:
+	◦ 	Automated Pull Request scanning
+	◦ 	Auto remediation PR generation
+• Integration with up to 100 cloud resources for:
+	◦ 	Automated cloud resource checks
+	◦ 	Resource drift detection
+&nbsp;
+and much more...
+&nbsp;
+It's easy and only takes 2 minutes. We can do it right now!
+&nbsp;
+To Level-up, press 'y'...
+&nbsp;
+Level up? (y/n): _
+   </pre>
+
+
+   ### Create vulnerable resources
+
+1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
+
+   * "acme" for company_name in TF_VAR_company_name
+   * "mydevsecops" for environment in TF_VAR_environment
+   * TF_VAR_region
+   <br /><br />
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
+
+   <pre>alias      = "plain_text_access_keys_provider"
+  region     = "us-west-1"
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+   </pre>
+
+   CAUTION: Replace key values with a variable name.
+
+   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
+
+1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
+
+ , and #airiam, 
+
+https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
+
 
 <hr />
 
@@ -242,7 +354,7 @@ References about CFN:
 <tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing
    </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
    </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
-   </td><td bgcolor="yellow">No</td><td bgcolor="yellow">No</td></tr>
+   </td><td>No</td><td>No</td></tr>
 </tbody></table>
 
 
@@ -2484,115 +2596,21 @@ STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/
 
 Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
 
+<hr />
 
-<a name="Terragoat"></a>
+## Other PaC (OPA, AWS SCPs)
 
-## Terragoat for learning
+There is an alternative to the proprietary Terraform Sentinel policy language: <a target="_blank" href="https://regula.dev/">Regula</a>, which is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
 
-   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
+<a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
+Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
 
-   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
-   
-1. Get it on your laptop after navigating to a folder:
+The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
 
-   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
-   cd terragoat/terraform
-   </strong></pre>
+Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
 
-1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
-
-   <pre><strong>ls aws
-   </strong></pre>
-
-   <pre>db-app.tf
-ec2.tf
-ecr.tf
-eks.tf
-elb.tf
-es.tf
-iam.tf
-kms.tf
-lambda.tf
-neptune.tf
-rds.tf
-xs3.tf
-   </pre>
-
-   PROTIP: BLAH: These are not 
-   
-   QUESTION: How will you know when new AWS services become available or deprecated?
-
-
-1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
-
-   <pre>pip install checkov
-checkov --help
-   </pre>
-
-1. Scan a directory (folder):
-
-   <pre><strong>checkov -d aws</strong></pre>
-
-   <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">
-   Checkov has 50 built-in checks</a>.
-   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
-   which defines recommended Terraform coding.
-
-   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
-
-   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
-&nbsp;
-• Command line docker Image scanning
-• Free (forever) bridgecrew.cloud account with API access
-• Auto-fix remediation suggestions
-• Enabling of VS Code Plugin
-• Dashboard visualisation of Checkov scans
-• Integration with GitHub for:
-	◦ 	Automated Pull Request scanning
-	◦ 	Auto remediation PR generation
-• Integration with up to 100 cloud resources for:
-	◦ 	Automated cloud resource checks
-	◦ 	Resource drift detection
-&nbsp;
-and much more...
-&nbsp;
-It's easy and only takes 2 minutes. We can do it right now!
-&nbsp;
-To Level-up, press 'y'...
-&nbsp;
-Level up? (y/n): _
-   </pre>
-
-
-   ### Create vulnerable resources
-
-1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
-
-1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
-
-   * "acme" for company_name in TF_VAR_company_name
-   * "mydevsecops" for environment in TF_VAR_environment
-   * TF_VAR_region
-   <br /><br />
-
-1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
-
-   <pre>alias      = "plain_text_access_keys_provider"
-  region     = "us-west-1"
-  access_key = "AKIAIOSFODNN7EXAMPLE"
-  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-   </pre>
-
-   CAUTION: Replace key values with a variable name.
-
-   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
-
-1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
-
- , and #airiam, 
-
-https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
-
+OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub Actions</a> to alert about noncompliant IaC code.
 
 
 <hr />
