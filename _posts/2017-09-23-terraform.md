@@ -22,31 +22,18 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 "Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
 
-PROTIP: As illustrated by my concept-by-concept video <a href="#Diagram1">diagram</a>:
-
-
-## Multi-cloud/service
-
-Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
-
-Terraform provides an alternative to each cloud vendor's IaC solution:
-   * <a href="#CFN">AWS - Cloud Formation</a> & CDK
-   * Microsoft Azure Resource Manager Templates
-   * Google Cloud Platform Deployment Manager
-   * OpenStack Heat (on-premises)
-   <br /><br />
-
-Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
+PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diagram</a> I created:
 
 <a name="Diagram1"></a>
 
-To simplify the explanation, we'll focus on AWS for now:
+Although Terraform <a href="#MultiCloud">handles multiple clouds</a>, 
+to simplify the explanation, we'll focus on AWS for now:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"><img width="1758" height="750" alt="terraform-terragoat-1758x750" src="https://user-images.githubusercontent.com/300046/153801622-2cf22026-fa09-4aaf-bc27-eff6d08b411f.png"></a>
 
 Resources in AWS can be created and managed using several tools: manually using the AWS GUI Management Console or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. Even though the <strong>AWS Config</strong> service logs every change to AWS resource configurations, those who manage enterpise AWS use prefer people to avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories. And although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> that can is <a href="#Repeatable">repeatable</a>. 
 
-The <strong>AWS Security Hub</strong> service looks for vulnerabilities based on its own <strong>policies</strong> to issue <strong>Findings</strong>. AWS provides <strong>recommendations</strong> for remediation, but they are only about its own GUI or CloudFormation code.
+The <strong>AWS Security Hub</strong> service looks for vulnerabilities based on its own their “AWS Foundations” set of <strong>policies</strong> to issue <strong>Findings</strong>. AWS provides <strong>recommendations</strong> for remediation, but they are only about its own GUI or CloudFormation code.
 
 More importantly, Findings from AWS are raised at a time when vulnerabilities are already manifested in resources on the internet. 
 
@@ -143,6 +130,34 @@ dagger.io
 
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
+
+<a name="Licensing"></a>
+
+### Licensing open source for GUI
+
+Although Terraform is "open source", the Terraform GUI requires a license.
+
+   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
+   Paid Pro and Premium licenses of Terraform</a>
+   add version control integration, MFA security, HA, and other enterprise features.
+
+
+<a name="MultiCloud></a>
+
+## Multi-cloud/service
+
+Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
+
+Terraform provides an alternative to each cloud vendor's IaC solution:
+   * <a href="#CFN">AWS - Cloud Formation</a> & CDK
+   * Microsoft Azure Resource Manager Templates
+   * Google Cloud Platform Deployment Manager
+   * OpenStack Heat (on-premises)
+   <br /><br />
+
+Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
+
+<hr />
 
 <a name="Terraforming"></a>
 
@@ -288,17 +303,6 @@ Terraform control, iterations, and (perhaps most of all) management of resources
 
 
 https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
-
-<a name="Licensing"></a>
-
-## Licensing open source for GUI
-
-Although Terraform is "open source", the Terraform GUI requires a license.
-
-   <a target="_blank" href="https://www.hashicorp.com/products/terraform-old/">
-   Paid Pro and Premium licenses of Terraform</a>
-   add version control integration, MFA security, HA, and other enterprise features.
-
 
 <hr />
 
@@ -2452,16 +2456,6 @@ There are several industry standards which prescribe "controls" and configuratio
 
 The trouble with standards is that they are in PDF and Excel files.
 
-## AWS-centric recommendations
-
-The AWS Security Hub service lists "findings" based on their "AWS Foundations" set of policies.
-
-The trouble with such findings is that vulnerabilities already exist in resources on the internet.
-
-AWS provides recommendations for remediating findings.
-
-PROTIP: But remediations from AWS show use of the AWS Management Console GUI and AWS Cloud Formation, <strong>not Terraform</strong>. For recommendations in Terraform code, we need to look to TFSec and other products.
-
 
 <a name="PolicyCheckTools"></a>
 
@@ -2472,12 +2466,23 @@ several groups have created programs which can <strong>automatically attest</str
 
 This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
 
-   * Armor Code
+<a target="_blank" href="https://github.com/iacsecurity/tool-compare">github.com/iacsecurity/tool-compare</a> 
+details each policy check and which tool performs them:
+
+   * OSS Python-based <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> by <a target="_blank" href="https://bridgecrew.io/">Bridgecrew.io</a> (acquired by Palo Alto Networks)
+   * Fremium <a target="_blank" href="https://www.indeni.com/cloudrail">Indeni Cloudrail</a>
+   * OSS Go-based <a target="_blank" href="https://github.com/Checkmarx/kics">Kics</a> (Keeping Infrastructure as Code Secure) by Checkmarx
+   * Freemium <a target="_blank" href="https://snyk.io/">Snyk</a>
+   * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
+   * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
    * SonarQube
    * Terraform Enterprise Sentinel
    * Terraform FOSS with Atlantis
    <br /><br />
 
+STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
+
+Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
 
 
 <a name="Terragoat"></a>
