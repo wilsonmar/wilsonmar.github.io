@@ -31,8 +31,6 @@ PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diag
 Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, 
 to simplify the explanation here, we'll focus on AWS for now.
 
-![terraform-terragoat-1537x662](https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png)
-
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"><img width="1537" height="662" alt="terraform-terragoat-1537x662" src="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"></a>
 
 Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. Even though the <strong>AWS Config</strong> service logs every change to AWS resource configurations, those who manage enterpise AWS use prefer people to avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories. And although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> that can is <a href="#Repeatable">repeatable</a>. Having configurations documented means that <strong>Drift</strong> between defined configurations and actual resources can be easily identified.
@@ -61,7 +59,7 @@ Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creati
 
 Recap:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/153893857-c203e929-31ef-470a-b576-d43bc2e0a0cf.png"><img width="1759" height="755" alt="terraform-terragoat-1759x755" src="https://user-images.githubusercontent.com/300046/153893857-c203e929-31ef-470a-b576-d43bc2e0a0cf.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"><img width="1537" height="662" alt="terraform-terragoat-1537x662" src="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"></a>
 
 
 <hr />
