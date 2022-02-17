@@ -31,35 +31,39 @@ PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diag
 Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, 
 to simplify the explanation here, we'll focus on AWS for now.
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"><img width="1537" height="662" alt="terraform-terragoat-1537x662" src="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"></a>
+<amp-youtube data-videoid="jZXkO6YjX8w" layout="responsive" width="480" height="270">
+</amp-youtube>
 
-Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. Even though the <strong>AWS Config</strong> service logs every change to AWS resource configurations, those who manage enterpise AWS use prefer people to avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories. And although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> that can is <a href="#Repeatable">repeatable</a>. Having configurations documented means that <strong>Drift</strong> between defined configurations and actual resources can be easily identified.
+Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories. 
 
-The <strong>AWS Security Hub</strong> service looks for vulnerabilities based on its own their “AWS Foundations” set of <strong>policies</strong> to issue <strong>Findings</strong>. AWS provides <strong>recommendations</strong> for remediation, but they are only about its own GUI or CloudFormation code.
+Although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> so that it is <a href="#Repeatable">repeatable</a>. Having configurations documented in GitHub enables <strong>drift detection</strong> which identifies differences between what is defined versus what is actually running.
 
-More importantly, Findings from AWS are raised for resource which have already been manifested on the internet, and vulnerable to public attack.
+The <strong>AWS Config</strong> service logs every change in configuration of resources.
+The <strong>AWS Security Hub</strong> service looks in logs for vulnerabilities to issue <strong>Findings</strong> based on its own “AWS Foundations” set of <strong>policies</strong>. AWS provides a webpage of <strong>recommendations</strong> for remediation, but only by using its own GUI or CloudFormation code, not Terraform coding.
 
-PROTIP: To prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources, in the pipeline block conditions which are <strong>violations</strong> found in <strong>static scans</strong> of Infrastructure definition code, based on <strong>Policies as Code</strong> obtained from versioned GitHub.
+More importantly, Findings from AWS are raised for resource which have already been manifested on the internet, and thus vulnerable to public attack.
 
-<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>: Checkov and TFSec have an interface to the popular <strong>VSCode</strong> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
+In today's hostile internet, we can't risk an incremental approach to achieving the security needed. We really need to achieve full "security maturity" in our Terraform code the first time we deploy it onto the internet.
 
-In today's hostile internet, we need to achieve full "security maturity" in our Terraform code because we can't risk an incremental approach to achieve the security needed.
+PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources by finding <strong>violations</strong> in Infrastructure definition code, using a CI/CD pipeline to run <strong>static scans</strong> referencing <strong>Policies as Code</strong>.
 
-That means we need a way for, on your <strong>laptops</strong>, to become an <strong>expert at manually editing</strong> Terraform files so they are "bulletproof" from the start. 
+<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <strong>VSCode</strong> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
 
-Instead of having you risk exposing vulnerabilities with <strong>your files</strong> right away, we make that necessary learning curve less steep by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a>.  
+The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
 
-The first time we run known-bad Terraform through <strong>static scans</strong>, the <strong>Policies as Code</strong> will report a lot of violations. But various groups have created <strong>recommendations</strong> for remediating the Terraform.
+We help you climb that very steep learning curve by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a> in GitHub.  
 
-Terragoat is sample, so we'll need to create additional policies using a <strong>policy creator</strong> provided by the same vendor.
+We learn good Terraform coding by remediating vulnerabilities in bad Terraform code, seeing violations identified  by <strong>static scans</strong> referencing  <strong>Policies as Code</strong>, trying <strong>recommendations</strong> for remediating the Terraform code, while reading <strong>tutorials</strong> about AWS configuration options.
 
-When we have a way to catch all known vulnerabilities, that all Terraform is <strong>known to be good</strong> as we can make it, we can then work on <strong>your app's files</strong>. When we get an <strong>attestation</strong> that your files are secure, we can then safely use that <strong>Pull Request</strong> into GitHub as the <strong>Shareable</strong> version to deploy as resources in the cloud.
+Terragoat covers only a few of 200 plus AWS services, so additional policies need to be created using a <strong>policy creator</strong> provided by the same vendor. Some vendors define policies in the Rego language processed by the OPA engine. Checkov defines policies in Python code.
+
+When we have a way to <strong>attest</strong> that we can catch all known vulnerabilities, that our Terraform is <strong>known good</strong> as we can make it, you then are able to work on <strong>your own files</strong> and safely send a <strong>Pull Request</strong> into GitHub as a <strong>Shareable</strong> version for deployment as resources in the cloud.
 
 Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creating Pull Requests containing remediations. 
 
 Recap:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"><img width="1537" height="662" alt="terraform-terragoat-1537x662" src="https://user-images.githubusercontent.com/300046/154017951-ac2045ae-c7de-4bc5-b631-68b9e5ecc8d5.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"><img width="1524" height="663" alt="terraform-terragoat-1524x663" src="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"></a>
 
 
 <hr />
