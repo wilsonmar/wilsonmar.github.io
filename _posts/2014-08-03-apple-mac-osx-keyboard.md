@@ -21,14 +21,15 @@ This topic is about how we can <strong>stay focused</strong> and do things <stro
 This page covers several mechanisms:
 
    * Standard Keyboard
+   * Modifier Keys
    * <a href="#Hotkey">Hotkey app</a>
    * <a href="#StreamDeck">Stream Deck</a> extra (macro) buttons
    <br /><br />
 
 
-## Special key Names and Symbols
+## Special (Modifier) Key Names and Symbols
 
-REMEMBER: The "Special" keys on a Mac's keyboard are represented by both symbols and names:
+REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and names:
 
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
@@ -38,8 +39,68 @@ REMEMBER: The "Special" keys on a Mac's keyboard are represented by both symbols
 * <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
    Mac OS X Keyboard Shortcuts</a>
 
+   PROTIP: Optimize for keys we use most, and avoid common mistakes with keys we accidentaly press.
 
-## Keep your eys on the screen. Don't look at the keyboard
+   ### Remap Modifier Keys
+
+   You can change them using this dialog:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg"><img alt="mac-modifier-control-399x224-27632" src="https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg"></a>
+
+   ### Caps Lock to Escape
+
+   BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
+
+   BLAH: It's annoying when all of a sudden everything I type is in caps.
+   That happens because I accidentally had my hand too far to the left when I intended to press the A key.
+
+   Anyway I've gotten used to typing all caps by holding down the shift key with my left or right hand.
+
+   PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
+
+1. To open <strong>System Preferences</strong>, click the Apple icon at the upper-right corner to select it
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png"><img alt="keyboard-sys-pref-292x309" src="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png">
+
+   go go directly there by pressing <strong>control+command+command</strong>.
+
+2. Type K reveal a list (without clicking the search box). 
+   Cursor down to highlight Keyboard. Press space bar to open it.
+3. Click "Modifier Keys" at the lower-right corner.
+4. Click the entry for "Caps Lock &#8682; Key:" and select &#9099; Escape.
+
+
+   ### Swap Command and Control
+
+   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
+   This would also allow you to press two keys at once by pressing between the keys,
+   thus able to perform most combinations using your hands.
+
+4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
+4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
+
+5. Click OK.
+6. Press control+Q or click the red x to dismiss the System Preferences dialog.
+  
+   ### Programmatic
+
+   You can do the above automatically when installing <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
+   this Python script</a>.
+   
+   ## Karabiner Elements 
+   
+   Use Homebrew or <a target="_blank" href="https://pqrs.org/osx/karabiner/">Downloading Karabiner-Elements</a>, a free utility somce OSX Sierra when <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
+   
+   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">many lingering issues</a>.
+
+   VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=uaJSjgVEhMQ">Part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=PBPS2D9AKtI">Part 2</a> of Jesse Skelton's tutorial.
+
+   https://www.youtube.com/watch?v=8AeZkSJz28A
+
+
+<a name="TouchTyping"></a>
+
+## Touch Typing: eyes on the screen, not at the keyboard
 
 PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking:
 
@@ -52,15 +113,21 @@ PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and 
 PROTIP: I find (RGB) keyboards that light up keys in different colors distracting. 
 I personally think the best strategy is to find a way to not have to look at the keyboard at all.
 
+<a name="AvoidMouse"></a>
+
 ## Avoid reaching for the mouse
 
 TL;DR: PROTIP: Resourceful coders make it so they don't need to waste time and valuable focus reaching for the mouse. 
 
 This may be a generalization. But many top coders like the <strong>vi text editor</strong> because it doesn't demand use of difficult-to-reach keys or mouse which require users to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
 
-### Clean borders without icons
+<a name="CleanBorders"></a>
+
+## Clean borders without icons
 
 I like to have a clean "full screen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
+
+
 
 <a id="AwkwardKeys"></a>
 
@@ -322,49 +389,6 @@ VMware Fusion > Preferences > Keyboard &amp; Mouse > Key Mappings.</li>
 
 <hr />
 
-## Switching keys
-
-PROTIP: We optimize for keys we use most, and avoid common mistakes with keys we accidentaly press.
-
-### Caps Lock unintended
-
-BLAH: It's annoying when all of a sudden everything I type is in caps.
-That happens because I accidentally had my hand too far to the left when I intended to press the A key.
-
-I've gotten used to typing all caps by holding down the shift key with my left or right hand.
-
-   ### Caps Lock to Escape
-
-   BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
-
-   PROTIP: Make the <strong>caps lock</strong> key work like the Esc key:
-
-1. Press the Apple icon and select System Preferences.
-2. Type K. Cursor down to highlight Keyboard. Press space bar to open it.
-3. Click "Modifier Keys" at the lower-right corner.
-
-   ![mac-modifier-control-399x224-27632](https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg)
-
-4. Click the entry for "Caps Lock &#8682; Key:" and select &#9099; Escape.
-
-   ### Swap command and control as well
-
-   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
-   This would also allow you to press two keys at once by pressing between the keys,
-   thus able to perform most combinations using your hands.
-
-4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
-4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
-
-5. Click OK.
-6. Press control+Q or click the red x to dismiss the System Preferences dialog.
-  
-   Alternately, the above actions can be done using a <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
-   Python script</a> or by downloading the free 
-   <a target="_blank" href="https://pqrs.org/osx/karabiner/">Karabiner</a>
-   which works on OSX Sierra since <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
-   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">
-   many lingering issues</a>.
 
 <a name="Gymnastics"></a>
 
