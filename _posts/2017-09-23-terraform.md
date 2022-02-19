@@ -187,25 +187,25 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
    <pre><strong>ls aws
    </strong></pre>
 
-   <pre>db-app.tf
+   <pre>db-app.tf <em>- database application</em>
 ec2.tf
-ecr.tf
-eks.tf
-elb.tf
+ecr.tf <em>- elastic Kubernetes service</em>
+eks.tf <em>- elastic Kubernetes service</em>
+elb.tf <em>- elastic load balancer</em>
 es.tf
 iam.tf
-kms.tf
+kms.tf <em>- key management service</em>
 lambda.tf
 neptune.tf
-rds.tf
-xs3.tf
+rds.tf <em>- relational database service</em>
+xs3.tf <em>- key management service</em>
    </pre>
 
-   PROTIP: BLAH: These are not 
+   PROTIP: BLAH: These are a few of the 200+ AWS services.
    
    QUESTION: How will you know when new AWS services become available or deprecated?
 
-
+1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
 1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
 
    <pre>pip install checkov

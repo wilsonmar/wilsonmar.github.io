@@ -166,12 +166,15 @@ One is predicting expected profits from a catalog launch by a home-goods manufac
    Standard Error is the error of prediction expressed in the value range of Y.
 
 
-## Language and Theory
+## Labs and classes
 
 There are several classes that teach this topic:
 
+If you have an O'Reilly subscription:
+https://learning.oreilly.com/scenarios/linear-regression-with/9781492098386/
+
 <a target="_blank" href="https://www.datacamp.com/courses/multiple-and-logistic-regression">
-Video course Multiple and Logistic Regression on-line class</a>
+Datacamp Video course Multiple and Logistic Regression on-line class</a>
 by Ben Baumer, Assistant Professor at Smith College
 uses a database of Italian restaurants in New York City to explore the relationship between price and the quality of food, service, and decor. Learn about logistic regression for an arbitrary number of input variables.
 Covered are model and predict both numeric and categorical outcomes. 

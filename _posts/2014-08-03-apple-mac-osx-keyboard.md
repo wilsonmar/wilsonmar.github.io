@@ -62,12 +62,31 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png"><img alt="keyboard-sys-pref-292x309" src="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png">
 
-   go go directly there by pressing <strong>control+command+command</strong>.
+   or go directly there by pressing <strong>control+command+command</strong>.
 
 2. Type K reveal a list (without clicking the search box). 
    Cursor down to highlight Keyboard. Press space bar to open it.
 3. Click "Modifier Keys" at the lower-right corner.
 4. Click the entry for "Caps Lock &#8682; Key:" and select &#9099; Escape.
+
+   NOTE: If you have more than one keyboard, repeat for each keyboard.
+
+   <a name="MagicKeyboard"></a>
+
+   ### Magic Keyboard
+
+   A Bluetooth-connected wireless <a target="_blank" href="https://www.apple.com/us/search/Magic-Keyboard-US-English?tab=accessories">Apple Magic Keyboard</a> solves several deficiencies of the keyboard that comes with MacBook Pro laptops:
+
+   * Adds the control key on the right side, missing on the standard keyboard
+   * Adds keys like on Windows keyboards: <strong>delete</strong> (so you don't need to press fn+delete to backspace), Home, End, Page Up, Page Down
+   * Adds function keys f13 thru f19 to map one-key input of your most frequent URLs or passwords 
+
+   * It's quieter
+   * One keyboard that works with iPads as well
+   * Frees you from the screen for more ergonomic sitting positions, especially if you have an additional screen
+   <br /><br />
+
+   However, every week or so you would need to charge it by plugging in a Thunderbolt cable (same one as iPhone and Magic Mouse).
 
 
    ### Swap Command and Control
@@ -76,17 +95,45 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
    This would also allow you to press two keys at once by pressing between the keys,
    thus able to perform most combinations using your hands.
 
-4. Click the entry for "Control (^) Key:" and select "&#8984; Command".
-4. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
+5. Click the entry for "Control (^) Key:" and select "&#8984; Command".
+6. Click the entry for "Command (&#8984;) Key:" and select "^ Control".
+7. Click OK.
+8. Press control+Q or click the red x to dismiss the System Preferences dialog.
 
-5. Click OK.
-6. Press control+Q or click the red x to dismiss the System Preferences dialog.
-  
-   ### Programmatic
+
+<a id="AwkwardKeys"></a>
+
+### Awkward fn Keys need eyes #
+
+However, on the 2017 Mac without a visible Function keys, key combinations to reveal those button are so awkard to use that it's faster and easier to use a mouse or trackpad.
+
+Since the **fn** and **control** keys are only on the left side of a MacBook keyboard,
+using them requires a Carpel-tunnel Syndrome-inducing moves of the left two fingers:
+
+* <strong>fn + control + F3</strong> to highlight the <strong>Dock icons</strong>, which are by default at the bottom of the screen, but which I prefer to be at the right.
+
+* <strong>fn + control + F2</strong> to highlight the <strong>Apple menu icon</strong> at the upper-left corner. Press down for its menu:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/153725364-fa909d0d-9881-47aa-aea5-ab75e6b97022.png"><img width="236" height="312" alt="macos-apple-menu-236x312" src="https://user-images.githubusercontent.com/300046/153725364-fa909d0d-9881-47aa-aea5-ab75e6b97022.png"></a>
+
+* <strong>fn + control + F8</strong> to highlight the Apple Top-right Menu.
+
+On 2020+ keyboards (after Apple came to their senses):
+
+   * control+F2 to highlight the Apple Top menu.
+   
+   * control+F3 to highlight the Dock at the bottom of the screen.
+
+PROTIP: The **fn** key is easy to find without looking because it's at a corner.
+But use a companion key on the right side of the keyboard.
+
+
+## Programmatic keyboard mapping
 
    You can do the above automatically when installing <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
    this Python script</a>.
-   
+
+
    ## Karabiner Elements 
    
    Use Homebrew or <a target="_blank" href="https://pqrs.org/osx/karabiner/">Downloading Karabiner-Elements</a>, a free utility somce OSX Sierra when <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
@@ -95,8 +142,9 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=uaJSjgVEhMQ">Part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=PBPS2D9AKtI">Part 2</a> of Jesse Skelton's tutorial.
 
-   https://www.youtube.com/watch?v=8AeZkSJz28A
-
+   * https://www.youtube.com/watch?v=_47kJvS8nhk by Gary of macos.com
+   * https://www.youtube.com/watch?v=8AeZkSJz28A
+   * https://www.youtube.com/watch?v=lyJOYgP-Ihc
 
 <a name="TouchTyping"></a>
 
@@ -128,32 +176,6 @@ This may be a generalization. But many top coders like the <strong>vi text edito
 I like to have a clean "full screen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
 
 
-
-<a id="AwkwardKeys"></a>
-
-### Awkward fn Keys need eyes #
-
-However, on the 2017 Mac without a visible Function keys, key combinations to reveal those button are so awkard to use that it's faster and easier to use a mouse or trackpad.
-
-Since the **fn** and **control** keys are only on the left side of a MacBook keyboard,
-using them requires a Carpel-tunnel Syndrome-inducing moves of the left two fingers:
-
-* <strong>fn + control + F3</strong> to highlight the <strong>Dock icons</strong>, which are by default at the bottom of the screen, but which I prefer to be at the right.
-
-* <strong>fn + control + F2</strong> to highlight the <strong>Apple menu icon</strong> at the upper-left corner. Press down for its menu:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/153725364-fa909d0d-9881-47aa-aea5-ab75e6b97022.png"><img width="236" height="312" alt="macos-apple-menu-236x312" src="https://user-images.githubusercontent.com/300046/153725364-fa909d0d-9881-47aa-aea5-ab75e6b97022.png"></a>
-
-* <strong>fn + control + F8</strong> to highlight the Apple Top-right Menu.
-
-On 2020+ keyboards (after Apple came to their senses):
-
-   * control+F2 to highlight the Apple Top menu.
-   
-   * control+F3 to highlight the Dock at the bottom of the screen.
-
-PROTIP: The **fn** key is easy to find without looking because it's at a corner.
-But use a companion key on the right side of the keyboard.
 
 
 <a id="OSComponentz"></a>

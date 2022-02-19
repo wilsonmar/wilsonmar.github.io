@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a step-by-step tutorial on how to install and run the Easy Travel sample stack of apps from <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> so that it can to evaluate its own AppMon and UEM software.
+This is a step-by-step tutorial on how to install and run the Easy Travel sample <strong>stack of apps</strong> from <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> so that it can to evaluate its own AppMon and UEM software.
 
 Currently, this article needs an update about Docker and misses key steps and URLs.
 Thank you for your help.
