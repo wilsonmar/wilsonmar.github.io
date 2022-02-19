@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "EasyTravel sample app (from Dynatrace)"
-excerpt: "A sample multi-tier Java app used as the basis for measuring infrastructure"
+excerpt: "A sample multi-tier Java app used by Dynatrace as the basis for measuring infrastructure"
 tags: [Clouds, Monitoring, Analytics]
 date: "2016-08-30"
 file: "easytravel"
@@ -16,69 +16,111 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is a step-by-step tutorial on how to install and run the Easy Travel sample <strong>stack of apps</strong> from <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> so that it can to evaluate its own AppMon and UEM software.
+This is a step-by-step tutorial on how to install and run the Easy Travel s-+++ample <strong>stack of apps</strong> from <a target="_blank" href="https://wilsonmar.github.io/dynatrace">Dynatrace</a> so that it can to evaluate its own AppMon and UEM software.
 
 Currently, this article needs an update about Docker and misses key steps and URLs.
-Thank you for your help.
+Thank you for your understanding.
+
+There are other demos, such as “Hipster Shop” created using https://github.com/dynatrace-ace/microservices-demo
+containing a 10-tier microservices application. The application is a web-based e-commerce app called where users can browse items, add them to the cart, and purchase them.
 
 ## TL;DR Summary
 
-By "Easy Travel" what we're referring to here is NOT a real travel site like Expedia.com or http://www.easytravel.co.tz.
+By "Easy Travel" what we're referring to here is NOT a real travel site like <a target="_blank" href="https://www.expedia.com/">Expedia.com</a> or <a target="_blank" href="http://www.easytravel.co.tz">easytravel.co.tz</a>.
 
 EasyTravel consists of both consumer and business portals:
 
-   * Consumer users on the easyTravel web portal to log in, search for journeys to various destinations, select promotional journeys directly that are offered and book a journey using credit card details. 
+   * Consumer Customer users access the <strong>Java-based Front-end</strong> web portal to log in, search for journeys to various destinations, select promotional journeys directly that are offered and book a journey using credit card details. 
 
-   * Additionally a Business-to-Business (B2B) web portal for travel agencies to manage the journeys that they offer and review reports about bookings made by consumers.
+   * Business-to-Business (B2B) users use a <strong>.Net</strong> web portal for travel agencies to manage the journeys that they offer and review reports about bookings made by consumers.
 
-EasyTravel is a multi-tier system implemented in a mix of technologies: 
 
-<table border="1" cellpadding="4" cellspacing="0"><thead>
-<tr valign="bottom"><th>#</th><th>Application</th><th>Technology</th><th>Memory</th><th>Notes</th></tr>
-</thead><tbody>
-<tr valign="top"><td>1.</td><td><a href="#Launcher">Launcher</a> (includes Java Derby DB)</td><td>Java/SWT</td><td align="right"> 225 MB</td><td>(SWT pronounced "Swift")</td></tr>
-<tr valign="top"><td>2.</td><td>Customer Frontend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>port 8079 to 8080</td></tr>
-<tr valign="top"><td>3.</td><td>Business Backend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>-</td></tr>
-<tr valign="top"><td>4.</td><td>Credit Card Authorization</td><td> C++/ADK</td><td align="right"> &lt;1 MB<td>-</td></td></tr>
-<tr valign="top"><td>5.</td><td>B2B Frontend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>port 8099 to 9000</td></tr>
-<tr valign="top"><td>6.</td><td>Payment Backend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>-</td></tr>
-<tr valign="top"><td>7.</td><td>Optional Load Balancer</td><td>NONE</td><td align="right"> -</td><td>-</td></tr>
-<tr valign="top"><td colspan="3"><strong>Overall</strong></td><td align="right"> <strong>&lt;800 MB</strong><td>-</td></td></tr>
-</tbody></table>
-
-   "ADK" is the <a target="_blank" href="https://en.wikipedia.org/wiki/Windows_Assessment_and_Deployment_Kit">Microsoft ADK (Windows Assessment and Deployment Kit)</a> native app.
-
-What is special about the system is it is designed to exhibit different problem patterns based on specifications in an XML file referenced by programs.
-<a name="Launcher"></a>
-The Launcher starts programs in the various tiers and enables switching among demo scenarios. By default the easyTravel Launcher offers four scenario groups:
-
-   1. <a target="_blank" href="https://www.dynatrace.com/support/doc/appmon/user-experience-management/">UEM (User Experience Management)</a> tracks user behavior on web pages for business analytics data like the geographic distribution of your web page visitors and average session duration.
-   2. Production usage
-   3. Test Center
-   4. Development Team
-
-This information is from the EasyTravel download website:
-
-   <a target="_blank" href="http://bit.ly/dteasytravel">
-   http://bit.ly/dteasytravel</a>
-   (https://community.dynatrace.com/community/display/DL/Demo+Applications+-+easyTravel)
+## Architecture and Source
 
 1. View YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">Evaluate Dynatrace with easyTravel</a> demo app
    from May 14, 2015. In 1 hour Andreas Grabner (<a target="_blank" href="https://twitter.com/grabnerandi">@grabnerandi</a>) takes a whirlwind tour, half based on random questions,
    which can be confusing to newbies.
    Contents of the video have been incorporated in the steps below.
 
-   CAUTION: Each version of EasyTravel was tested with specific versions of Dynatrace and its AppMon.
+1. In your internet browser, get on the EasyTravel download web page:
 
-   ### Source
+   <a target="_blank" href="http://bit.ly/dteasytravel">
+   <strong>http://bit.ly/dteasytravel</strong></a>
+   = https://confluence.dynatrace.com/community/display/DL/easyTravel
 
-   If you're curious:
+   <strong>CAUTION: Each version of EasyTravel was tested with specific versions of Dynatrace and its AppMon.</strong>
 
-0. Download dynatrace-easytravel-src.zip from http://dexya6d9gs5s.cloudfront.net/latest/dynatrace-easytravel-src.zip
+   2.0.0.3373
 
-0. Expand `dynatrace-easytravel-src.zip` into folder dynatrace-easytravel-src
+1. Click on "easyTravel 2 source code" to download file <strong>dynatrace-easytravel-src.zip</strong> to your downloads folder.
 
-0. View the files and notice:
+   * 864 MB
+   <br /><br />
+
+   https://github.com/dynatrace-ace
+
+1. In the browser or Finder, double-click on `dynatrace-easytravel-src.zip` to expand into folder:
+
+   <tt>dynatrace-easytravel-src</tt>
+
+1. Delete the zip file.
+1. Use a Finder to view the files.
+1. Open <tt><strong>easyTravel - Architecture and Deployments.pptx</strong></tt> (using PowerPoint)
+
+   NOTE: "Compuware" is the name of the company which Dynatrace acquired.
+
+   What is special about the system is it is designed to exhibit different problem patterns based on specifications in an XML file referenced by programs.
+
+   EasyTravel is a multi-tier system implemented in a mix of technologies on Windows and Linux machines.
+   It provides the variety of technologies which Dynatrace can trace.
+
+   <a name="MinimalNodes"></a>
+
+   ### Small (Minimal) Set of Nodes
+
+   The "Small" scenario has a single Apache PHP Web Server receiving from Desktop, Mobile, and an Administration Portal.
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/154799357-17d15bc6-e380-4e2f-babf-462f6d51f510.png"><img alt="easyTravel_small-1272x912" width="1272" height="912" src="https://user-images.githubusercontent.com/300046/154799357-17d15bc6-e380-4e2f-babf-462f6d51f510.png"></a>
+
+   <table border="1" cellpadding="4" cellspacing="0"><thead>
+   <tr valign="bottom"><th>Svr</th><th>Application</th><th>Technology</th><th>Memory</th><th>Notes</th></tr>
+   </thead><tbody>
+   <tr valign="top"><td>1.</td><td><a href="#Launcher"><strong>Launcher</strong></a> & Business Database</td><td>Java/SWT</td><td align="right"> 225 MB</td><td>Java Derby DB (MSSQL) plugins</td></tr>
+   <tr valign="top"><td>2.</td><td>Load Balancer</td><td>Apache PHP?</td><td align="right"> -</td><td>-</td></tr>
+   <tr valign="top"><td>3.</td><td>"Third Party" Customer Frontend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>port 8079 to 8080</td></tr>
+   <tr valign="top"><td>4.</td><td>B2B Frontend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>port 8099 to 9000</td></tr>
+   <tr valign="top"><td>5.</td><td>Business Backend</td><td> Java/Tomcat</td><td align="right"> &lt;190 MB</td><td>-</td></tr>
+   <tr valign="top"><td>6.</td><td>Payment Backend</td><td> .NET/MVC</td><td align="right"> 65 MB</td><td>-</td></tr>
+   <tr valign="top"><td>7.</td><td>Payment Database</td><td>MSSQL Compact</td><td align="right"> ? MB</td><td>-</td></tr>
+   <tr valign="top"><td>8.</td><td>Credit Card Authorization</td><td> C++/ADK</td><td align="right"> &lt;1 MB<td>-</td></td></tr>
+   <tr valign="top"><td>9.</td><td>"Third Party" User emulator</td><td> ?</td><td align="right"> ? MB</td><td>imposes load</td></tr>
+   <tr valign="top"><td colspan="3"><strong>Overall</strong></td><td align="right"> <strong>&lt;800 MB</strong><td>Optional</td></td></tr>
+   </tbody></table>
+
+   <strong>PROTIP: You can't run the whole set on your Mac</strong>
+
+   In the table above, 
+   * "SWT" is pronounced "Swift", the UI framework used by Java programmers
+   * "ADK" is the <a target="_blank" href="https://en.wikipedia.org/wiki/Windows_Assessment_and_Deployment_Kit">Microsoft ADK (Windows Assessment and Deployment Kit)</a> native app.
+
+   ### Large + Microservices offers redundancy
+
+
+https://www.youtube.com/watch?v=KRl3ed8iEiY
+
+<a name="Launcher"></a>
+
+## Launcher 
+
+The Launcher starts programs in the various tiers and enables switching among demo scenarios. By default the easyTravel Launcher offers four scenario groups:
+
+   1. <a target="_blank" href="https://www.dynatrace.com/support/doc/appmon/user-experience-management/">UEM (User Experience Management)</a> tracks user behavior on web pages for business analytics data like the geographic distribution of your web page visitors and average session duration.
+   2. Production usage
+   3. Test Center
+   4. Development Team
+   <br /><br />
+
+
 
    * Angular2
    * HBase
