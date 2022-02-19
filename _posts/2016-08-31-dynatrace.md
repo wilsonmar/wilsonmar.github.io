@@ -44,6 +44,8 @@ PureModel = PurePath + PureStack
    * PurePath traces requests horizontally across processes end-to-end tracing at the code-level
    * PureStack dives into the vertical infrastructure tiers
 
+<a target="_blank" href="https://quizlet.com/br/428990745/dynatrace-become-a-jedi-master-updated-february-2022-flash-cards/">1525 item Dynatrace Quizlet</a>
+
 ## Mind Map
 
 Dyntrace offers <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_professional_certification_mindmap_031618.pdf"> this "MindMap" PDF</a> of the subject matter tested by their Professional-level certification (there is also a <a target="_blank" href="https://d3sj466wqlrld0.cloudfront.net/certificate/docs/dtu_dynatrace_associate_certification_mindmap_031618.pdf">less comprehensive one</a> for the Associate level exam).

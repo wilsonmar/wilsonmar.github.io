@@ -6,16 +6,21 @@ tags: [apple, mac, keyboard]
 date: "2022-02-12"
 file: "apple-mac-osx-keyboard"
 image:
-# feature: pic white keyboard british 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622161/3e9ed170-0585-11e6-81e5-2d3238508e4f.jpg
-  credit: Parallels
-  creditlink: http://kb.parallels.com/en/113541
+# keyboard-mac-1900x500
+  feature: https://user-images.githubusercontent.com/300046/154802444-b4eab52b-bb7c-45de-849a-fed8b956ac50.png
+  credit: Apple
+  creditlink: 
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
+<!-- # feature: pic white keyboard british 1900x500.jpg
+  https://cloud.githubusercontent.com/assets/300046/14622161/3e9ed170-0585-11e6-81e5-2d3238508e4f.jpg
+  credit: Parallels
+  creditlink: http://kb.parallels.com/en/113541
+-->
 This topic is about how we can <strong>stay focused</strong> and do things <strong>faster</strong> by automating actions on the keyboard controlling our Mac, beyond <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's standard Keyboard Shortcuts (at https://support.apple.com/en-us/HT201236)</a>
 
 This page covers several mechanisms:
@@ -62,7 +67,7 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png"><img alt="keyboard-sys-pref-292x309" src="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png">
 
-   or go directly there by pressing <strong>control+command+command</strong>.
+   or go directly there by pressing <strong>control+command+comma</strong>.
 
 2. Type K reveal a list (without clicking the search box). 
    Cursor down to highlight Keyboard. Press space bar to open it.
@@ -91,7 +96,7 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    ### Swap Command and Control
 
-   PROTIP: Some switch the control and command keys on the left side so that they can get to all such keys using thumbs.
+   PROTIP: Some who are used to Windows and need to go back and forth prefer to switch the Mac's control and command keys in order to get to all such keys using thumbs.
    This would also allow you to press two keys at once by pressing between the keys,
    thus able to perform most combinations using your hands.
 
@@ -126,57 +131,6 @@ On 2020+ keyboards (after Apple came to their senses):
 
 PROTIP: The **fn** key is easy to find without looking because it's at a corner.
 But use a companion key on the right side of the keyboard.
-
-
-## Programmatic keyboard mapping
-
-   You can do the above automatically when installing <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
-   this Python script</a>.
-
-
-   ## Karabiner Elements 
-   
-   Use Homebrew or <a target="_blank" href="https://pqrs.org/osx/karabiner/">Downloading Karabiner-Elements</a>, a free utility somce OSX Sierra when <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
-   
-   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">many lingering issues</a>.
-
-   VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=uaJSjgVEhMQ">Part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=PBPS2D9AKtI">Part 2</a> of Jesse Skelton's tutorial.
-
-   * https://www.youtube.com/watch?v=_47kJvS8nhk by Gary of macos.com
-   * https://www.youtube.com/watch?v=8AeZkSJz28A
-   * https://www.youtube.com/watch?v=lyJOYgP-Ihc
-
-<a name="TouchTyping"></a>
-
-## Touch Typing: eyes on the screen, not at the keyboard
-
-PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking:
-
-   * 2, 5, 8, 0
-   * }
-   * control
-   * .
-   <br /><br />
-
-PROTIP: I find (RGB) keyboards that light up keys in different colors distracting. 
-I personally think the best strategy is to find a way to not have to look at the keyboard at all.
-
-<a name="AvoidMouse"></a>
-
-## Avoid reaching for the mouse
-
-TL;DR: PROTIP: Resourceful coders make it so they don't need to waste time and valuable focus reaching for the mouse. 
-
-This may be a generalization. But many top coders like the <strong>vi text editor</strong> because it doesn't demand use of difficult-to-reach keys or mouse which require users to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
-
-<a name="CleanBorders"></a>
-
-## Clean borders without icons
-
-I like to have a clean "full screen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
-
-
-
 
 <a id="OSComponentz"></a>
 
@@ -287,6 +241,56 @@ I like to have a clean "full screen" without the distraction of all the Apple Ma
 
 <a name="[1]"></a>
 <a href="#DesktopShortcut">[1]</a> = PROTIP: This command does not work when the active program is in an extended screen.
+
+
+## Programmatic keyboard mapping
+
+   You can do the above automatically when installing <a target="_blank" href="https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control">
+   this Python script</a>.
+
+
+   ## Karabiner Elements 
+   
+   Use Homebrew or <a target="_blank" href="https://pqrs.org/osx/karabiner/">Downloading Karabiner-Elements</a>, a free utility somce OSX Sierra when <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2450/_index.html">Apple remapped key commands</a>. 
+   
+   It's free but note the package has <a target="_blank" href="https://github.com/tekezo/Karabiner-Elements/issues">many lingering issues</a>.
+
+   VIDEO: <a target="_blank" href="https://www.youtube.com/watch?v=uaJSjgVEhMQ">Part 1</a> and <a target="_blank" href="https://www.youtube.com/watch?v=PBPS2D9AKtI">Part 2</a> of Jesse Skelton's tutorial.
+
+   * https://www.youtube.com/watch?v=_47kJvS8nhk by Gary of macos.com
+   * https://www.youtube.com/watch?v=8AeZkSJz28A
+   * https://www.youtube.com/watch?v=lyJOYgP-Ihc
+
+<a name="TouchTyping"></a>
+
+## Touch Typing: eyes on the screen, not at the keyboard
+
+PROTIP: Although most keyboards have a bump on "F" and "H" ("Home") keys, I and some others put tiny drops from a glue gun on strategic keys so I can orient my finger to reach strange keys in the dark without looking:
+
+   * 2, 5, 8, 0
+   * }
+   * control
+   * .
+   <br /><br />
+
+PROTIP: I find (RGB) keyboards that light up keys in different colors distracting. 
+I personally think the best strategy is to find a way to not have to look at the keyboard at all.
+
+<a name="AvoidMouse"></a>
+
+## Avoid reaching for the mouse
+
+TL;DR: PROTIP: Resourceful coders make it so they don't need to waste time and valuable focus reaching for the mouse. 
+
+This may be a generalization. But many top coders like the <strong>vi text editor</strong> because it doesn't demand use of difficult-to-reach keys or mouse which require users to take their eyes off the screen. DevSecOps coders have no choice because some operating systems only offer only vi (such as during Kubernetes exams). 
+
+<a name="CleanBorders"></a>
+
+## Clean borders without icons
+
+I like to have a clean "full screen" without the distraction of all the Apple Mac icons at the top, bottom, etc. 
+
+
 
 
 <a id="ActiveWindowz"></a>

@@ -26,21 +26,23 @@ containing a 10-tier microservices application. The application is a web-based e
 
 ## TL;DR Summary
 
-By "Easy Travel" what we're referring to here is NOT a real travel site like <a target="_blank" href="https://www.expedia.com/">Expedia.com</a> or <a target="_blank" href="http://www.easytravel.co.tz">easytravel.co.tz</a>.
+"Easy Travel" is NOT a real travel site like <a target="_blank" href="https://www.expedia.com/">Expedia.com</a> or <a target="_blank" href="http://www.easytravel.co.tz">easytravel.co.tz</a>.
 
-EasyTravel consists of both consumer and business portals:
+"EasyTravel" is a (now legacy) multi-tier system implemented in a mix of technologies on Windows and Linux machines. It provides the variety of technologies which Dynatrace can trace.
 
-   * Consumer Customer users access the <strong>Java-based Front-end</strong> web portal to log in, search for journeys to various destinations, select promotional journeys directly that are offered and book a journey using credit card details. 
+What is special about the system is it is designed to exhibit different problem patterns based on specifications in an XML file referenced by programs.
 
-   * Business-to-Business (B2B) users use a <strong>.Net</strong> web portal for travel agencies to manage the journeys that they offer and review reports about bookings made by consumers.
+1. View YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">Evaluate Dynatrace with easyTravel</a> demo app from May 14, 2015. In 1 hour Andreas Grabner (<a target="_blank" href="https://twitter.com/grabnerandi">@grabnerandi</a>) takes a whirlwind tour, half based on random questions, which can be confusing to newbies. Contents of the video have been incorporated in the steps below.
 
 
-## Architecture and Source
+1. <a target="_blank" href="https://www.youtube.com/watch?v=KRl3ed8iEiY">
+   VIDEO: Windows Install</a> by Naveen at QAInsights works with
+   installers from 7/27/2018
 
-1. View YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=ps9Y14KlPyU">Evaluate Dynatrace with easyTravel</a> demo app
-   from May 14, 2015. In 1 hour Andreas Grabner (<a target="_blank" href="https://twitter.com/grabnerandi">@grabnerandi</a>) takes a whirlwind tour, half based on random questions,
-   which can be confusing to newbies.
-   Contents of the video have been incorporated in the steps below.
+1. https://university.dynatrace.com/
+
+
+## Source and Architecture
 
 1. In your internet browser, get on the EasyTravel download web page:
 
@@ -50,14 +52,14 @@ EasyTravel consists of both consumer and business portals:
 
    <strong>CAUTION: Each version of EasyTravel was tested with specific versions of Dynatrace and its AppMon.</strong>
 
-   2.0.0.3373
-
-1. Click on "easyTravel 2 source code" to download file <strong>dynatrace-easytravel-src.zip</strong> to your downloads folder.
-
-   * 864 MB
-   <br /><br />
-
    https://github.com/dynatrace-ace
+
+1. Click on <strong>easyTravel 2 source code</strong> to download file <tt>dynatrace-easytravel-src.zip</tt> to your downloads folder. 
+
+   * 2.0.0.3373 source = zip 864 MB -> 1.51 GB expanded
+
+   * dynatrace-easytravel-windows-x86_64-latest
+   * dynatrace-easytravel-linux-x86_64
 
 1. In the browser or Finder, double-click on `dynatrace-easytravel-src.zip` to expand into folder:
 
@@ -68,11 +70,6 @@ EasyTravel consists of both consumer and business portals:
 1. Open <tt><strong>easyTravel - Architecture and Deployments.pptx</strong></tt> (using PowerPoint)
 
    NOTE: "Compuware" is the name of the company which Dynatrace acquired.
-
-   What is special about the system is it is designed to exhibit different problem patterns based on specifications in an XML file referenced by programs.
-
-   EasyTravel is a multi-tier system implemented in a mix of technologies on Windows and Linux machines.
-   It provides the variety of technologies which Dynatrace can trace.
 
    <a name="MinimalNodes"></a>
 
@@ -103,10 +100,42 @@ EasyTravel consists of both consumer and business portals:
    * "SWT" is pronounced "Swift", the UI framework used by Java programmers
    * "ADK" is the <a target="_blank" href="https://en.wikipedia.org/wiki/Windows_Assessment_and_Deployment_Kit">Microsoft ADK (Windows Assessment and Deployment Kit)</a> native app.
 
-   ### Large + Microservices offers redundancy
+   EasyTravel consists of both consumer and business portals:
+
+   * "Consumer front-end" provides customer users access. The <strong>Java-based Front-end</strong> web portal enables customer user log in, search for journeys to various destinations, select promotional journeys directly that are offered and book a journey using credit card details. 
+
+   * Business-to-Business (B2B) users use a <strong>.Net</strong> web portal for travel agencies to manage the journeys that they offer and review reports about bookings made by consumers.
 
 
-https://www.youtube.com/watch?v=KRl3ed8iEiY
+   ### Large for HA
+   
+   The "Large" configuration is for scalability and redundancy, with a cluster of machines for each node.
+   
+   The "Large + Microservices" is a more "modern" approach
+
+   <a name="Build"></a>
+
+   ### Build from Source
+
+   <em>These instructions are adapted from the README.md file</em>
+
+1. In a Terminal:
+1. cd to the `Distribution` directory
+1. Run this command, which can take up to 10 minutes:
+
+   <pre><strong>ant -f build.xml all</strong></pre>
+   
+   The build result is in the `dist` subdirectory.
+
+   ### Angular frontend
+
+   By default the angular frontend used is taken from the directory `easytravel-angular\last-build` that is part of the sources. If you need to change it, then:
+
+1. Check if you already have the sources - there should be a directory `easytravel-angular` with the sources. If you have them, then go to point 3.
+2. Clone the repository https://bitbucket.lab.dynatrace.org/scm/dem/easytravel-angular.git - it is best to clone it inside the directory with easyTravel sources.
+3. Make the changes you need. Build the angular project by running `yarn build` inside the project.
+4. Copy the changed files to the dist with the script `ant -f build.xml copyAngular` (run from within `easyTravel/Distribution`). Do remember, that the files copied are supposed to be in the directory `easytravel-angular\last-build`. If they are not here but in another place, please update the `build.xml` file accordingly.
+
 
 <a name="Launcher"></a>
 
@@ -119,7 +148,6 @@ The Launcher starts programs in the various tiers and enables switching among de
    3. Test Center
    4. Development Team
    <br /><br />
-
 
 
    * Angular2
@@ -161,14 +189,12 @@ The Launcher starts programs in the various tiers and enables switching among de
 
 ## Install Dynatrace
 
-1. Get license
-
-   Click "Download easyTravel Demo License" https://community.dynatrace.com/community/download/attachments/45383742/dynaTrace_license_201609281051.key?version=2&modificationDate=1486998983333&api=v2
+1. Get license: Click <a target="_blank" href="https://community.dynatrace.com/community/download/attachments/45383742/dynaTrace_license_201609281051.key?version=2&modificationDate=1486998983333&api=v2">"Download easyTravel Demo License" at https://community.dynatrace.com/community/download/attachments/45383742/dynaTrace_license_201609281051.key?version=2&modificationDate=1486998983333&api=v2</a>
 
    <strong>dynaTrace_license_201609281051.key</strong> is downloaded.
 
    CAUTION: The file name is deceptive.
-   Each license is valid within a 3 month period. A new license needs to be downloaded. 
+   Each license is valid within a 3 month period. After that, a new license needs to be downloaded. 
    The license is bound to easyTravel and the pre-configured System Profile that comes with easyTravel.
 
    QUESTION: How is https://community.dynatrace.com/community/display/EVAL/My+dynaTrace+Trial
