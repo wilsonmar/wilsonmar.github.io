@@ -32,32 +32,91 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
    Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
 
 
-## Certification
+## Certification Exam Objectives
 
 <img align="right" width="200" alt="terraformassociate-704x704" src="https://user-images.githubusercontent.com/300046/154810637-8293e9a0-1c6a-4105-b9c0-3d100166ce42.png">
-For just $70, at <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">(terrible)</a> <a target="_blank" href="https://candidate.psiexams.com/">OSI Online</a>, correctly answer 70%+ of 57 multiple-choice/fill-in questions to get <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a> to provide some assurance that you have a practical understanding of these skills it evaluates:
+This page houses both links and my notes to pass the <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a>. For only $70.50 (paid after <a target="_blank" href="https://candidate.psiexams.com/">picking a time on OSI Online</a>, <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">terrible)</a> , correctly answer 70%+ of 57 multiple-choice/fill-in questions to give your employers some assurance that you have a practical knowledge of:
 
-* Understand infrastructure as code (IaC) concepts
-* Understand Terraform's purpose (vs other IaC)
-* Understand Terraform basics
-* Use the Terraform CLI (outside of core workflow)
-* <a href="#Modules">Interact with Terraform modules</a>
-* Navigate Terraform workflow
-* Implement and maintain state
-* Read, generate, and modify configuration
-* Understand Terraform Cloud and Enterprise capabilities
+1. Understand infrastructure as code (IaC) concepts
+   a. Explain <a href="#IaC">what IaC is</a>
+   b. Describe advantages of IaC patterns
+2. Understand Terraform's purpose (vs other IaC)
+   a. Explain multi-cloud and provider-agnostic benefits
+   b. Explain the benefits of <a href="#State">state</a> <em>management</em>
+3. Understand Terraform basics
+   a. Handle Terraform and provider <a href="#Install">installation and versioning</a>
+   b. Describe plugin based architecture
+   c. Demonstrate using multiple providers
+   d. Describe how Terraform finds and fetches providers
+   e. Explain when to use and not use <a href="#Provisioners">provisioners</a> and when to use <a href="#local-exec"><tt>local-exec</tt></a> or <a href="#remote-exec"><tt>remote-exec</tt></a>
+4. Use the Terraform CLI (outside of core workflow)
+   a. Given a scenario: choose when to use <a href="#Fmt"><tt>terraform fmt</tt> to format code
+   b. Given a scenario: choose when to use <a href="#Taint"><tt>terraform taint</tt> to taint Terraform resources
+   c. Given a scenario: choose when to use <a href="#Import"><tt>terraform import</tt> to import existing infrastructure into your Terraform state
+   d. Given a scenario: choose when to use <a href="#Workspace"><tt>terraform workspace</tt> to create workspaces
+   e. Given a scenario: choose when to use <a href="#State"><tt>terraform state</tt> to view Terraform state
+   f. Given a scenario: choose when to enable <a href="#Verbose">verbose logging</a> and what the outcome/value is
+5. <a href="#Modules">Interact with Terraform modules</a>
+   a. Contrast module source options
+   b. Interact with module inputs and outputs
+   c. Describe variable scope within modules/child modules
+   d. Discover modules from the public Terraform Module Registry
+   e. Defining module version
+6. Navigate <a href="#Workflow">Terraform workflow</a>
+   a. Describe Terraform workflow ( Write -> Plan -> Create )
+   b. Initialize a Terraform working directory (terraform init)
+   c. Validate a Terraform configuration (terraform validate)
+   d. Generate and review an execution plan for Terraform (terraform plan)
+   e. Execute changes to infrastructure with Terraform (terraform apply)
+   f. <a href="#Destroy">Destroy Terraform managed infrastructure (terraform destroy)</a>
+7. Implement and maintain state
+   a. Describe default local backend
+   b.	Outline state locking
+   c. Handle backend authentication methods
+   d. Describe remote state storage mechanisms and supported standard backends
+   e. Describe effect of Terraform refresh on state
+   f. Describe backend block in configuration and best practices for partial configurations
+   g. Understand secret management in state files
+8. Read, generate, and modify configuration
+   a. Demonstrate use of variables and outputs
+   b. Describe secure secret injection best practice
+   c. Understand the use of collection and structural types
+   d. Create and differentiate resource and data configuration
+   e. Use resource addressing and resource parameters to connect resources together
+   f. Use Terraform built-in functions to write configuration
+   g. Configure resource using a dynamic block
+   h. Describe built-in dependency management (order of execution based)
+9. Understand Terraform Cloud and Enterprise capabilities
+   a. Describe the benefits of Sentinel, registry, and workspaces
+   b. Differentiate OSS and TFE workspaces
+   c. Summarize features of Terraform Cloud
 <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&index=1&t=47309s">VIDEO</a>: 
-There is a multi-stages:
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&index=1&t=47309s">VIDEO</a>: Registering for the test takes several steps:
 
-1. https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360049382552
-exam portal
-1. https://learn.hashicorp.com/collections/terraform/certification
-1. Authorize Hashicorp to use your GitHub credentials to register for exam
-1. https://home.psiexams.com/#/dashboard/regular-dashboard
-1. https://hashicorp-certifications.zendesk.com/hc/en-us
+1. Clicking on "Register Exam" takes you to the <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360049382552">Zendesk Exam Portal.
+1. Read the <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360048211571">Exam Handbook</a>. Key points:
+   * 48 hour cancellation
+1. There is a <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us">Exam FAQ</a>
+1. Click <a target="_blank" href="https://learn.hashicorp.com/collections/terraform/certification">"Click here to go to the exam platform"</a> for the "Continue with GitHub".
+1. Authorize Hashicorp to use your GitHub credentials to register for exam at the <a target="_blank" href="https://home.psiexams.com/#/dashboard/regular-dashboard">PSI Exam website</a>
+1. Click "Schedule" to the right of "HashiCorp Certified: Terraform Associate - Ready to Schedule"
+1. Select Country & Timezone. Click a day in green. Click a range of hours. Click a specific hour. Click Continue.
+1. In the pop-up, click Continue for "Booking created successfully". Close.
+1. Now you see the $70.50. Check "I acknowledge"... Pay Now.
 
+1. <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360049487571-How-do-I-access-my-badge-and-certificate-">FAQ</a>: After passing the exam, share your badge at 
+
+   https://www.credly.com/users/sign_in
+
+1. In your resume, add a link to your certification as:  
+   
+   <tt>https://www.credly.com/earned/badge/[unique certification ID]</tt>
+<br /><br />
+
+The exam expires in 2 years.
+
+Hashicorp doesn't have a deeper/more difficult "Professional level" cert at time of writing.
 
 <hr />
 
@@ -87,7 +146,7 @@ In today's hostile internet, we can't risk an incremental approach to achieving 
 
 PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources by finding <strong>violations</strong> in Infrastructure definition code, using a CI/CD pipeline to run <strong>static scans</strong> referencing <strong>Policies as Code</strong>.
 
-<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <strong>VSCode</strong> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
+<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <a href="#VSCode">VSCode</a> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
 
 The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
 
@@ -388,6 +447,88 @@ Switching completed</pre>
 1. Proceed to <a href="#Config">Configuration</a> below.
 
 
+<hr />
+
+<a name="Windows_Install"></a>
+
+### Install on Windows
+
+1. In a Run command window as Administrator.
+2. Install Chocolatey cmd:
+3. Install Terraform using Chocolatey:
+
+   <tt><strong>choco install terraform -y
+   </strong></tt>
+
+   The response at time of writing:
+
+   <pre>Chocolatey v0.10.8
+Installing the following packages:
+terraform
+By installing you accept licenses for the packages.
+Progress: Downloading terraform 0.10.6... 100%
+&nbsp;
+terraform v0.10.6 [Approved]
+terraform package files install completed. Performing other installation steps.
+The package terraform wants to run 'chocolateyInstall.ps1'.
+Note: If you don't run this script, the installation will fail.
+Note: To confirm automatically next time, use '-y' or consider:
+choco feature enable -n allowGlobalConfirmation
+Do you want to run the script?([Y]es/[N]o/[P]rint): y
+&nbsp;
+Removing old terraform plugins
+Downloading terraform 64 bit
+  from 'https://releases.hashicorp.com/terraform/0.10.6/terraform_0.10.6_windows_amd64.zip'
+Progress: 100% - Completed download of C:\Users\vagrant\AppData\Local\Temp\chocolatey\terraform\0.10.6\terraform_0.10.6_windows_amd64.zip (12.89 MB).
+Download of terraform_0.10.6_windows_amd64.zip (12.89 MB) completed.
+Hashes match.
+Extracting C:\Users\vagrant\AppData\Local\Temp\chocolatey\terraform\0.10.6\terraform_0.10.6_windows_amd64.zip to C:\ProgramData\chocolatey\lib\terraform\tools...
+C:\ProgramData\chocolatey\lib\terraform\tools
+ ShimGen has successfully created a shim for terraform.exe
+ The install of terraform was successful.
+  Software installed to 'C:\ProgramData\chocolatey\lib\terraform\tools'
+&nbsp;
+Chocolatey installed 1/1 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+    </pre>   
+
+1. Proceed to <a href="#Config">Configuration</a> below.
+
+
+<a name="Linux_Install"></a>
+
+### Install on Linux
+
+* <a target="_blank" href="
+   https://github.com/migibert/terraform-role">
+   https://github.com/migibert/terraform-role</a>
+   Ansible role to install Terraform on Linux machines
+
+* <a target="_blank" href="
+   https://supermarket.chef.io/cookbooks/terraform">
+   https://supermarket.chef.io/cookbooks/terraform</a>
+
+* <a target="_blank" href="
+   https://forge.puppet.com/inkblot/terraform">
+   https://forge.puppet.com/inkblot/terraform</a>
+
+* <a target="_blank" href="
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
+   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
+   builds Docker containers for using the terraform command line program.
+
+To manually install on Ubuntu:
+
+1. On a Console (after substituing the current version):
+
+   <pre>sudo curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
+sudo apt-get install unzip
+sudo mkdir /bin/terraform 
+sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
+   </pre>
+
+<a name="LinuxDocker"></a>
+
 ### Install on Linux to use Docker
 
 1. To install Docker CE on Linux:
@@ -455,7 +596,7 @@ xs3.tf <em>- key management service</em>
 1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
 1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
 
-   <pre>pip install checkov
+   <pre>pip3 install -U checkov
 checkov --help
    </pre>
 
@@ -527,7 +668,12 @@ Check: CKV_AWS_211: "Ensure RDS uses a modern CaCert"
 
    ### full-fast-fail
 
-   https://github.com/JamesWoolfenden/full-fast-fail
+   This library is not yet in Homebrew, so:
+
+   <pre>git clone https://github.com/JamesWoolfenden/full-fast-fail --depth 1
+cd full-fast-fail
+./checker.sh
+   </pre>
 
 
 <hr />
@@ -573,7 +719,7 @@ HashiCorp Certified: Terraform Associate Practice Exam 2021
 
 <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">
 FreeCodeCamp.org has a free course</a> in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021
-by <a target="_blank" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3BST3lnclN3S0hwUUt1V1hYVXhqTlBiZDduUXxBQ3Jtc0tsS1NQQ2V1TFlUanJUejNuWnRGS2c2c3djMWhCRjZ4bXdPSjFudzlhQ2JFLUtxWVdHZDUzNGtGeFhYcWswNlNlMHk0T0h4a2wwV2czc2xQWUlSdTk5U0RBcmNoVS1mbWFjWk9SX1U2N3JRUTlmdXpNYw&q=https%3A%2F%2Ftwitter.com%2Fandrewbrown">Andrew Brown</a> of ExamPro $24 https://www.exampro.co/terraform
+by <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> of ExamPro $24 https://www.exampro.co/terraform
 
 https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview
 by Zeal Vora
@@ -930,88 +1076,6 @@ References:
 
 <hr />
 
-<a name="Windows_Install"></a>
-
-## Install on Windows
-
-1. In a Run command window as Administrator.
-2. Install Chocolatey cmd:
-3. Install Terraform using Chocolatey:
-
-   <tt><strong>choco install terraform -y
-   </strong></tt>
-
-   The response at time of writing:
-
-   <pre>Chocolatey v0.10.8
-Installing the following packages:
-terraform
-By installing you accept licenses for the packages.
-Progress: Downloading terraform 0.10.6... 100%
-&nbsp;
-terraform v0.10.6 [Approved]
-terraform package files install completed. Performing other installation steps.
-The package terraform wants to run 'chocolateyInstall.ps1'.
-Note: If you don't run this script, the installation will fail.
-Note: To confirm automatically next time, use '-y' or consider:
-choco feature enable -n allowGlobalConfirmation
-Do you want to run the script?([Y]es/[N]o/[P]rint): y
-&nbsp;
-Removing old terraform plugins
-Downloading terraform 64 bit
-  from 'https://releases.hashicorp.com/terraform/0.10.6/terraform_0.10.6_windows_amd64.zip'
-Progress: 100% - Completed download of C:\Users\vagrant\AppData\Local\Temp\chocolatey\terraform\0.10.6\terraform_0.10.6_windows_amd64.zip (12.89 MB).
-Download of terraform_0.10.6_windows_amd64.zip (12.89 MB) completed.
-Hashes match.
-Extracting C:\Users\vagrant\AppData\Local\Temp\chocolatey\terraform\0.10.6\terraform_0.10.6_windows_amd64.zip to C:\ProgramData\chocolatey\lib\terraform\tools...
-C:\ProgramData\chocolatey\lib\terraform\tools
- ShimGen has successfully created a shim for terraform.exe
- The install of terraform was successful.
-  Software installed to 'C:\ProgramData\chocolatey\lib\terraform\tools'
-&nbsp;
-Chocolatey installed 1/1 packages.
- See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
-    </pre>   
-
-1. Proceed to <a href="#Config">Configuration</a> below.
-
-
-<a name="Linux_Install"></a>
-
-## Install on Linux
-
-* <a target="_blank" href="
-   https://github.com/migibert/terraform-role">
-   https://github.com/migibert/terraform-role</a>
-   Ansible role to install Terraform on Linux machines
-
-* <a target="_blank" href="
-   https://supermarket.chef.io/cookbooks/terraform">
-   https://supermarket.chef.io/cookbooks/terraform</a>
-
-* <a target="_blank" href="
-   https://forge.puppet.com/inkblot/terraform">
-   https://forge.puppet.com/inkblot/terraform</a>
-
-* <a target="_blank" href="
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform">
-   https://github.com/hashicorp/docker-hub-images/tree/master/terraform</a>
-   builds Docker containers for using the terraform command line program.
-
-To manually install on Ubuntu:
-
-1. On a Console (after substituing the current version):
-
-   <pre>sudo curl -O https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip
-sudo apt-get install unzip
-sudo mkdir /bin/terraform 
-sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
-   </pre>
-
-
-
-<hr />
-
 <a name="Config"></a>
 
 ## Configuration
@@ -1162,7 +1226,7 @@ module installs Hashicorp's own Vault and Consul on <a target="_blank" href="htt
 The above is created by making use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
 
    <pre><strong>terraform init hashicorp/vault/aws
-   terraform apply</strong></pre>
+   </strong></pre>
 
 It's got 33 resources. The sub-modules are:
 
@@ -1173,8 +1237,40 @@ It's got 33 resources. The sub-modules are:
    * vault-security-group-rules (for AWS only)
    <br /><br />
 
+<a name="FileStructure"></a>
 
-Putting Terraform code in modules enable their reuse by several, which speed development and reduces testing.
+## Standard File structure
+
+According to 
+   * https://www.terraform.io/language/modules/develop/structure
+   * https://www.baeldung.com/ops/terraform-best-practices
+the root folder for a Terraform module should contain these files:
+
+* README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
+
+* LICENSE - (no file extension) to define the legal aspects
+
+* main.tf - the entry point of the module
+* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
+* <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
+<br /><br />
+
+The above set of files are repeated in each folder containing a nested module:
+
+* modules/
+   * <em>IAM</a>
+      * README.md
+      * variables.tf
+      * main.tf
+      * outputs.tf
+   * <em>Network</a>
+      * ...
+* examples
+
+
+### Why Modules
+
+Putting Terraform code in modules enable their reuse, which speeds development by reducing testing and increasing the pace of change.
 
 But some documentation and training is necessary.
 
@@ -1378,6 +1474,7 @@ cd terraform-on-azure
    <pre><strong>echo "terraform.tfstate" >>.gitignore
    </strong></pre>
 
+   <a name="VSCode"></a>
 
    ### VSCode
 
@@ -1452,6 +1549,8 @@ commands will detect it and remind you to do so if necessary.
    <pre><strong>az group list -o table</strong></pre>
 
    "Environment" = "terraexample"
+
+   <a name="Destroy"></a>
 
 1. Done with Terraform
 
@@ -1535,6 +1634,9 @@ Docs:
    * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
    * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
    * https://opensource.com/article/20/7/terraform-kubernetes
+
+
+## Module Structure
 
 
 
@@ -1760,6 +1862,8 @@ terraform {
 
 1. Manually verify on the AWS Management Console webpage set to service S3.
 
+   <a name="DestroyState"></a>
+   
    ### Destroy tfstate
 
 1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
@@ -1948,7 +2052,21 @@ ami = ${lookup(var.amis, "us-east-1")}
 
    ### main.tf
 
-   An example of the main.tf file:
+   PROTIP: Remember that a common mistake under each <tt>module</tt> is that providers are specified within a list:
+
+   <pre>module "vpc" {
+  source = "terraform-aws-modules/vpc/aws"
+  providers = {
+    aws = aws.eu
+  }
+   name = "my-vpc"
+   cidr = "10.0.0.0/16"
+   azs = "["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+   ...
+   </pre>
+
+   Another example of the main.tf file:
 
    <pre>
 terraform {
@@ -2255,15 +2373,115 @@ commands will detect it and remind you to do so if necessary.
    This creates a hidden `.terraform\plugins" folder path containing a folder for your os - `darwin_amd64` for MacOS.
 
 
+<hr />
+
 <a name="Provisioners"></a>
 
-### Provisioners
+## Provisioners
 
-   When a resource is initially created, provisioners can be executed to initialize that resource.
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h0m10s">VIDEO</a>:
+When a resource is initially created, provisioners can be executed to initialize that resource.
 
-   Provisioner definitions define the properties of each resource, such as initialization commands. For example, this installs an nginx web server and displays a minimal HTML page:
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h9m9s">VIDEO</a>:
+This defines a string (from a variable) inside the file:
 
-   Provisioner configurations are also plugins.
+   <pre>resource "aws_instance" "web" {
+  # ...
+  provisioner "file" {
+    content = "ami_used: ${self.ami}"
+    destination = "/tmp/file.log"
+}
+   </pre>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h10m5s">VIDEO</a>:
+This examples copies a file on Linux:
+
+   <pre>resource "aws_instance" "web" {
+  # ...
+  provisioner "file" {
+    source = "conf/myapp.conf"
+    destination = "/etc/myapp.conf"
+&nbsp;
+  connection {
+    type     = "ssh"
+    user     = "root"
+    password = "${var.root_password}"
+    host     = "${var.host}"
+  }
+}
+   </pre>
+
+A connection block is needed for the provisioner to pass authentication.
+
+This examples copies a file through Windows Remote Management (winrm):
+
+   <pre>resource "aws_instance" "web" {
+  # ...
+  provisioner "file" {
+    source = "conf/myapp.conf"
+    destination = "C:/App/myapp.conf"
+&nbsp;
+  connection {
+    type     = "winrm"
+    user     = "Administrator"
+    password = "${var.admin_password}"
+    host     = "${var.host}"
+  }
+}
+   </pre>
+
+QUESTION: How about a custom user name rather than generic root/admin account name?
+
+<a name="cloudinit"></a>
+
+CAUTION: What Cloud Provisioners do are not reflected in Terraform state, so better to use cloudinit scripts.
+
+<strong>Cloud-init</strong> is an industry standard for cross-platform cloud instance initializations.
+When your VM is launched on a Cloud Service Provider (CSP) based on YAML or Bash script such as:
+
+   <ul><pre>#!bin/bash
+yum update -y
+yum install -y httpd
+sudo service httpd start
+sudo service httpd enable
+   </pre></ul>
+
+Packer (from Hashicorp) is an automated image-build service for multiple clouds.
+
+   Provisioner definitions define the properties of each resource, such as initialization commands. 
+   
+<a name="remote-exec"></a>
+
+### remote-exec on target machines
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h6m47s">VIDEO</a>:
+After a VM is provisioned, this <strong>inline</strong> script makes uses of Puppet:
+
+   <pre>resource "aws_instance" "web" {
+  # ...
+  provisioner "remote-exec" {
+    inline = [
+      "puppet apply",
+    "sudo service nginx start",
+    "consul join ${aws_instance.web.private_ip}",
+  ]
+}
+   </pre>
+
+Observe that the last line is allowed to have a comma.
+
+REMEMBER: A single "script" is the keyword for when a relative or absolute local script is copied to the remote resource for execution. The plural "scripts" is the keyword when executed <strong>in order</strong>:
+
+   <pre>provisioner "remote-exec" {
+  # ...
+  scripts = [
+    "./setup-users.sh",
+    "/home/anyuser/Desktop/bootstrap",
+  ]
+}
+   </pre>
+
+Another inline example installs an nginx web server and displays a minimal HTML page:
 
    <pre>provisioner "remote-exec" {
   inline = [
@@ -2274,17 +2492,26 @@ commands will detect it and remind you to do so if necessary.
 }
    </pre>
 
-   https://github.com/radekg/terraform-provisioner-ansible
+PROTIP: SECURITY CAUTION: Better to pull in installers and libraries from an internal Artifactory registry which allows for forensics in case something bad happens, since the external one could have been infected an hour before.
 
-   <a name="local-exec"></a>
+   Provisioner configurations are also plugins for Ansible configuration management:
+   
 
-   ### local-exec provisioner
+<a name="Ansible"></a>
+<a name="local-exec"></a>
 
-   <a target="_blank" href="https://www.terraform.io/docs/enterprise/runs/installing-software.html">NOTE</a>: Software can be specified for installation using Packer's `local-exec` provisioner which executes commands on host machines . For example, on a Ubuntu machine:
+### local-exec provisioner Ansible
 
-   <pre>
-resource "null_resource" "local-software" {
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h4m2s">VIDEO</a>:
+"Local" is where Terraform commands are run, which can be your laptop/workstation or
+on a build server (Jenkins, GitHub Actions, GCP Cloud Build, AWS Code Build, etc.).
+Another example is within Hashicorp's "Terraform Cloud Run Environment" of single-use Linux virtual machine.
+
+<a target="_blank" href="https://www.terraform.io/docs/enterprise/runs/installing-software.html">NOTE</a>: Software can be specified for installation using Packer's `local-exec` provisioner which executes commands on host machines. For example:
+
+   <pre>resource "null_resource" "local-software" {
   provisioner "local-exec" {
+    command = "echo ${self.private_ip} >> private_ips.txt"
     command = &LT;&LT;EOH
 sudo apt-get update
 sudo apt-get install -y ansible
@@ -2293,14 +2520,26 @@ EOH
 }
    </pre>
 
-   NOTE: apt-get is in-built within Ubuntu Linux distributions.
+   NOTE: The <tt>apt-get</tt> installer is in-built within Ubuntu Linux distributions.
 
    PROTIP: Use this to bootstrap automation such as assigning permissions and running Ansible or PowerShell DSC, then use DSC scripts for more flexibility and easier debugging.
 
+On a Windows machine:
 
-   <a name="Ansible"></a>
+   <pre>resource "null_resource" "windows-example" {
+  provisioner "local-exec" {
+    command = "Get-Date > completed.txt"
+    interpreter = ["PowerShell", "-Command"]
+  }
+}
+   </pre>
 
-### Ansible
+QUESTION: The interpreter is excuted first, then the command?
+
+
+### Ansible local-exec
+
+See https://github.com/radekg/terraform-provisioner-ansible
 
    To invoke the command to run Ansible playbook.yml:
 
@@ -2326,6 +2565,9 @@ EOH
 
    NOTE: Ansible Tower cannot be used with Terraform.
 
+
+
+<hr />
 
 ### CIDR Subnet function
 
@@ -2564,6 +2806,8 @@ output "loadbalancer_dns_name" {
 }
    </pre>
 
+   <a name="DestroyFlag"></a>
+
    ### Processing flags
 
    HCL can contain flags that affect processing. For example, within a resource specification, 
@@ -2576,16 +2820,16 @@ output "loadbalancer_dns_name" {
 
 0. In the provider's console (EC2), verify
 
+   <a name="Cleanup"></a> 1 59 27
 
    ### Destroy to clean up
 
-0. Destroy instances so they don't rack up charges unproductively:
+0. <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=1h55m48s">VIDEO</a>: Destroy instances (so they don't rack up charges unproductively):
 
    <tt><strong>terraform destroy
    </strong></tt>
 
-   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute,
-   as other cloud providers do.
+   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute, as other cloud providers do.
 
 0. Verify in the provider's console (aws.amazon.com)
 
@@ -2882,6 +3126,22 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
    * <a target="_blank" href="https://www.ybrikman.com/writing/2016/03/31/infrastructure-as-code-microservices-aws-docker-terraform-ecs/">
    BLOG: Infrastructure as code: running microservices on AWS using Docker, Terraform, and ECS</a> Mar 31, 2016
 
+<hr />
+
+<a name="Heros"></a>
+
+## Heros
+
+<strong>Anton Babenko</strong> (<a target="_blank" href="https://github.com/antonbabenko/terraform-aws-devops/">github.com/antonbabenko</a> <a target="_blank" href="https://www.linkedin.com/in/antonbabenko/">linkedin</a>)
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=rgzzkP2L1k8">
+   Manage AWS infrastructure as code using Terraform</a>
+   talk in Norway 14 Dec 2015
+
+   * <a target="_blank" href="https://www.terraform-best-practices.com/">terraform-best-practices.com</a>
+
+   * https://github.com/antonbabenko/terraform-best-practices-workshop
+
 
 <strong>James Turnbull</strong>
 
@@ -2894,13 +3154,12 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
    * <a target="_blank" href="https://github.com/jason-azze/tf-web-exercise">
    https://github.com/jason-azze/tf-web-exercise</a>
 
-Nick Colyer (Skylines Academy)
+<strong>Nick Colyer</strong> (Skylines Academy)
 
    * <a target="_blank" href="https://www.pluralsight.com/courses/terraform-automating-aws-vsphere">
    Automating AWS and vSphere with Terraform (Intermediate level)</a> Jun 12 2017 [1:22]
 
-
-Kirill Shirinkin
+<strong>Kirill Shirinkin</strong>
 
    * <a target="_blank" href="https://www.safaribooksonline.com/library/view/getting-started-with/9781788623537/">Getting Started with Terraform - Second Edition</a>
    from Packt July 2017 (1st edition Jan 2017)
@@ -2911,18 +3170,7 @@ Kirill Shirinkin
    * Engineer at Hashicorp
 
 
-Anton Babenko (<a target="_blank" href="https://github.com/antonbabenko/terraform-aws-devops/">github.com/antonbabenko</a>
-<a target="_blank" href="https://www.linkedin.com/in/antonbabenko/">linkedin</a>)
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=rgzzkP2L1k8">
-   Manage AWS infrastructure as code using Terraform</a>
-   talk in Norway 14 Dec 2015
-
-   * <a target="_blank" href="https://www.terraform-best-practices.com/">terraform-best-practices.com</a>
-
-   * https://github.com/antonbabenko/terraform-best-practices-workshop
-
-dtan4
+<strong>dtan4</strong>
 
    * <a target="_blank" href="
    http://terraforming.dtan4.net/">
