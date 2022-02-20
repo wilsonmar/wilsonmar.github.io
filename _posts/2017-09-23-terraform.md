@@ -20,6 +20,8 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ## What is Terraform?
 
+<a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="from IBM">VIDEO</a>
+
 <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
 "Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
@@ -33,7 +35,7 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 ## Certification
 
 <img align="right" width="200" alt="terraformassociate-704x704" src="https://user-images.githubusercontent.com/300046/154810637-8293e9a0-1c6a-4105-b9c0-3d100166ce42.png">
-For just $70, at <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">(terrible)</a> <a target="_blank" href="https://candidate.psiexams.com/">OSI Online</a> answer 70% of 57 multiple-choice/fill-in questions to get <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a> to provide some assurance that you have a practical understanding of these skills it evaluates:
+For just $70, at <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">(terrible)</a> <a target="_blank" href="https://candidate.psiexams.com/">OSI Online</a>, correctly answer 70%+ of 57 multiple-choice/fill-in questions to get <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a> to provide some assurance that you have a practical understanding of these skills it evaluates:
 
 * Understand infrastructure as code (IaC) concepts
 * Understand Terraform's purpose (vs other IaC)
@@ -214,329 +216,6 @@ https://github.com/Capgemini/terraform-amazon-ecs/
 https://akhilmovva.com/projects/
 
 
-<hr />
-
-<a name="DependencyGraph"></a>
-
-### Dependency Graph for visualization
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><br /><em>(click image for full screen</em></a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=45m26s">VIDEO</a>:
-The above <strong>Resource Graph</strong> visual representation of dependencies can be created by this command:
-
-   <pre>terraform graph | dot -Tsvg > graph.svg</pre>
-
-   The command makes use of Graphviz, which creates graphs specified in the DOT language, with the file name extension <tt>.gv</tt>
-
-The above is from <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app with a <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform/blob/master/src/5-gcp-demo/two-tier/cloudsql.tf">MYSQL_5_7 database</a>, both running under Kubernetes (GKE), with a replica in another region.
-
-A more colorful format using <a target="_blank" href="https://github.com/28mm/blast-radius">Blast Radius</a> <a target="_blank" href="https://28mm.github.io/blast-radius-docs/">[examples]</a>:
-<img width="939" alt="terraform-resource-colorful-1878x1470" src="https://user-images.githubusercontent.com/300046/131344896-407d377a-046d-45b4-8159-a7168e2cabbc.png">
-
-There is also a "webgraphwiz" tool.
-
-## Parallel Execution
-
-Under the covers, Terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
-
-When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
-
-Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
-
-
-https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
-
-
-
-<a name="Terragoat"></a>
-
-## Terragoat for learning
-
-   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
-
-   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
-   
-1. Get it on your laptop after navigating to a folder:
-
-   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
-   cd terragoat/terraform
-   </strong></pre>
-
-1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
-
-   <pre><strong>ls aws
-   </strong></pre>
-
-   Response:
-
-   <pre>db-app.tf <em>- database application</em>
-ec2.tf
-ecr.tf <em>- elastic Kubernetes service</em>
-eks.tf <em>- elastic Kubernetes service</em>
-elb.tf <em>- elastic load balancer</em>
-es.tf
-iam.tf
-kms.tf <em>- key management service</em>
-lambda.tf
-neptune.tf
-rds.tf <em>- relational database service</em>
-xs3.tf <em>- key management service</em>
-   </pre>
-
-   PROTIP: BLAH: These are a few of the 200+ AWS services.
-   
-   QUESTION: How will you know when new AWS services become available or deprecated?
-
-1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
-1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
-
-   <pre>pip install checkov
-checkov --help
-   </pre>
-
-1. Expand your Terminal to full screen.
-1. Let's start by scanning a single tf file within <tt>terragoat/terraform/aws</tt>:
-
-   <pre><strong>checkov -f db-app.tf > db-app.txt</strong></pre>
-
-   It takes several minutes.
-
-   <tt>> db-app.txt</tt> sends the output to a new file. If the file already exists, it overwrites the previous run. 
-
-1. Edit the output file.
-
-   <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">
-   Checkov has 50 built-in checks</a>.
-   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
-   which defines recommended Terraform coding.
-
-   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
-
-   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
-&nbsp;
-• Command line docker Image scanning
-• Free (forever) bridgecrew.cloud account with API access
-• Auto-fix remediation suggestions
-• Enabling of VS Code Plugin
-• Dashboard visualisation of Checkov scans
-• Integration with GitHub for:
-	◦ 	Automated Pull Request scanning
-	◦ 	Auto remediation PR generation
-• Integration with up to 100 cloud resources for:
-	◦ 	Automated cloud resource checks
-	◦ 	Resource drift detection
-&nbsp;
-and much more...
-&nbsp;
-It's easy and only takes 2 minutes. We can do it right now!
-&nbsp;
-To Level-up, press 'y'...
-&nbsp;
-Level up? (y/n): _
-   </pre>
-
-1. Scan a directory (folder):
-
-   <pre><strong>checkov -d aws</strong></pre>
-
-
-   ### Create vulnerable resources
-
-1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
-
-1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
-
-   * "acme" for company_name in TF_VAR_company_name
-   * "mydevsecops" for environment in TF_VAR_environment
-   * TF_VAR_region
-   <br /><br />
-
-1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
-
-   <pre>alias      = "plain_text_access_keys_provider"
-  region     = "us-west-1"
-  access_key = "AKIAIOSFODNN7EXAMPLE"
-  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-   </pre>
-
-   SECURITY WARNING: Replace key values with a variable name.
-
-   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
-
-1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
-
- , and #airiam, 
-
-https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
-
-
-<hr />
-
-<a name="Tutorials"></a>
-
-## Tutorials - 
-
-https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
-HashiCorp Certified: Terraform Associate Practice Exam 2021
-
-<a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">
-FreeCodeCamp.org has a free course</a> in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021
-by <a target="_blank" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3BST3lnclN3S0hwUUt1V1hYVXhqTlBiZDduUXxBQ3Jtc0tsS1NQQ2V1TFlUanJUejNuWnRGS2c2c3djMWhCRjZ4bXdPSjFudzlhQ2JFLUtxWVdHZDUzNGtGeFhYcWswNlNlMHk0T0h4a2wwV2czc2xQWUlSdTk5U0RBcmNoVS1mbWFjWk9SX1U2N3JRUTlmdXpNYw&q=https%3A%2F%2Ftwitter.com%2Fandrewbrown">Andrew Brown</a> of ExamPro $24 https://www.exampro.co/terraform
-
-https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview
-by Zeal Vora
-https://github.com/zealvora/terraform-beginner-to-advanced-resource
-
-
-<hr />
-
-<a name="Terraforming"></a>
-
-### Going from CFN yaml to HCL?
-
-How to generate Terraform HCL from a running AWS account?
-
-The options:
-
-1. Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
-exports existing AWS resources to Terraform style tf, tfstate. It also comes as a Docker container.
-
-2. Install on your MacOS laptop this utlity from Google to create HCL from exiting running cloud resources. This enables you to transition from what was created in the AWS GUI or CFN to HCL you can modify:
-
-   <pre><strong>brew info terraformer
-   brew install terraformer
-   </strong></pre>
-
-3. Deploy your existing CFT instead of trying to convert it:
-
-   https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html
-
-4. It may be possible for simple cases but perhaps very complex (almost impossible) to convert CFT <strong>intrinsic functions</strong>: 
-
-   https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
-
-
-
-<a name="OpenSourcing"></a>
-
-<a name="x1"></a>*1 - CF/CFN (CloudFormation) is used only within the AWS cloud while others operate on several clouds. CFN is the only <strong>closed-sourced</strong> solution on this list.
-Code for Terraform is open-sourced at <a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
-
-Those who create AMI's also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
-https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
-
-TOOL: Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
-
-But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
-
-CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
-
-Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
-
-AWS Cloud Formation and Terraform can both be used at the same time.
-Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong> using Bridgecrew.
-
-<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
-Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
-
-
-References about CFN:
-   * <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">Puppet, Chef, Ansible, Salt</a> AWS API libraries Boto, Fog
-   * AWS CloudFormation Sample Templates at <a target="_blank" href="
-   https://github.com/awslabs/aws-cloudformation-templates">
-   https://github.com/awslabs/aws-cloudformation-templates</a>
-   * <a target="_blank" href="https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">AWS CloudFormation Master Class</a> by Stéphane Maarek from Packt May 2018
-   * Some CloudFormation templates are compatible with OpenStack Heat templates.
-   <br /><br />
-
-
-
-<a name="ConfigMgmt"></a>
-
-### Configuration Management
-
-<table border="1" cellpadding="4" cellspacing="0">
-<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
-   </th><th>Infra.</th><th>Lang.
-   </th><th>Agent</th><th>Master</th></tr>
-</thead><tbody>
-<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td><a href="#Declarative">Declarative</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td ><a href="#Declarative">Declarative</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
-   </td><td>No</td><td>No</td></tr>
-</tbody></table>
-
-Terraform and Ansible can work in unison, complementing each other. Terraform bootstraps the underlying cloud infrastructure for Ansible to configure app settings and the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
-
-
-<a name="Procedural"></a>
-<a name="Declarative"></a>
-
-<strong>"Procedural"</strong> means "programmatic" as in a Python or JavaScript program applies logic.
-This means procedures need to be written to check whether a desired resource is available before provisioning,
-then logic is needed to check whether the provisioning command was effective.
-
-<strong>"Declarative"</strong> means a (yaml format) file defines what is desired, and the system makes it so. tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
-   
-IaC code is <strong>idempotent</strong> (repeated runs results in what is described, and does not create additional items with every run). Terraform takes action only when needed (called "convergence" principle).
-
-Terraform manages explicit and implicit (assumed) dependencies automatically.
-
-Terraform automatically takes care of performing in the correct sequence.
-
-
-<a name="Immutable"></a>
-
-### Immutable?
-
-PROTIP: WARNING: Terraform does not support rollbacks of changes made.
-
-"Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
-
-Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
-
-<a name="ParallelExecution"></a>
-
-### Parallel execution
-
-A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed.
-
-
-<hr />
-
-<a name="Social"></a>
-
-## Social
-
-* <a target="_blank" href="
-https://www.twitch.tv/hashicorplive">
-https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
-
-* <a target="_blank" href="https://discuss.hashicorp.com/">https://discuss.hashicorp.com</a>
-
-* <a target="_blank" href="https://groups.google.com/forum/#!forum/terraform-tool">Google Group terraform-tool</a>
-* <a target="_blank" href="https://linkedin.com/in/terraform">
-   LinkedIn</a>
-* <a target="_blank" href="https://stackoverflow.com/search?q=terraform">StackOverflow</a>
-* <a target="_blank" href="https://www.reddit.com/r/Terraform/">r/Terraform (Reddit sub-reddit)</a>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on <a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">Mitchell Hashimoto (CEO) YouTube channel</a>  
-
-* No IRC (Internet Relay Chat)?
-
 
 <hr />
 
@@ -546,7 +225,11 @@ https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38&t=51m19s">VIDEO</a>:
 
-PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
+1. Terraform is open-sourced in GitHub. A list of <strong>releases</strong> is at: 
+
+   <a target="_blank" href="https://github.com/hashicorp/terraform/releases">https://github.com/hashicorp/terraform/releases</a>
+
+   PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
 1. After installation, get the version number of Terraform:
 
@@ -554,7 +237,7 @@ PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) th
 
    The response I got (at time of writing) is the version and what operating system:
 
-   <pre>Terraform v1.0.11
+   <pre>Terraform v1.1.16
 on darwin_amd64
    </pre>
 
@@ -727,6 +410,359 @@ sudo apt-get update
 sudo apt-get install docker-ce
    </pre>
 
+
+<hr />
+
+<a name="Terragoat"></a>
+
+## Terragoat for learning
+
+   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+
+   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
+   
+1. Get it on your laptop after navigating to a folder:
+
+   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
+   cd terragoat/terraform
+   </strong></pre>
+
+1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
+
+   <pre><strong>ls aws
+   </strong></pre>
+
+   Response:
+
+   <pre>db-app.tf <em>- database application</em>
+ec2.tf
+ecr.tf <em>- elastic Kubernetes service</em>
+eks.tf <em>- elastic Kubernetes service</em>
+elb.tf <em>- elastic load balancer</em>
+es.tf
+iam.tf
+kms.tf <em>- key management service</em>
+lambda.tf
+neptune.tf
+rds.tf <em>- relational database service</em>
+xs3.tf <em>- key management service</em>
+   </pre>
+
+   PROTIP: BLAH: These are a few of the 200+ AWS services.
+   
+   QUESTION: How will you know when new AWS services become available or deprecated?
+
+1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
+1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
+
+   <pre>pip install checkov
+checkov --help
+   </pre>
+
+1. Expand your Terminal to full screen.
+1. Let's start by scanning a single tf file within <tt>terragoat/terraform/aws</tt>:
+
+   <pre><strong>checkov -f db-app.tf > db-app.txt</strong></pre>
+
+   It takes several minutes.
+
+   <tt>> db-app.txt</tt> above sends the output to a new file. If the file already exists, it overwrites the previous run. 
+
+   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
+
+   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
+&nbsp;
+• Command line docker Image scanning
+• Free (forever) bridgecrew.cloud account with API access
+• Auto-fix remediation suggestions
+• Enabling of VS Code Plugin
+• Dashboard visualisation of Checkov scans
+• Integration with GitHub for:
+	◦ 	Automated Pull Request scanning
+	◦ 	Auto remediation PR generation
+• Integration with up to 100 cloud resources for:
+	◦ 	Automated cloud resource checks
+	◦ 	Resource drift detection
+&nbsp;
+and much more...
+&nbsp;
+It's easy and only takes 2 minutes. We can do it right now!
+&nbsp;
+To Level-up, press 'y'...
+&nbsp;
+Level up? (y/n): _
+   </pre>
+
+1. Edit the output file.
+
+   <pre>       _               _              
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V / 
+  \___|_| |_|\___|\___|_|\_\___/ \_/  
+                                      
+By bridgecrew.io | version: 2.0.829 
+Update available 2.0.829 -> 2.0.873
+Run pip3 install -U checkov to update 
+&nbsp;
+terraform scan results:
+&nbsp;
+Passed checks: 12, Failed checks: 14, Skipped checks: 0
+&nbsp;
+Check: CKV_AWS_211: "Ensure RDS uses a modern CaCert"
+	PASSED for resource: aws_db_instance.default
+	File: /db-app.tf:1-41
+   </pre>
+
+   As of this writing, <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">Checkov has 50 built-in checks</a>.
+   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
+   which defines recommended Terraform coding.
+
+1. Remove the file to save disk space.
+
+1. Scan a directory (folder):
+
+   <pre><strong>checkov -d aws</strong></pre>
+
+
+   ### full-fast-fail
+
+   https://github.com/JamesWoolfenden/full-fast-fail
+
+
+<hr />
+
+## Create vulnerable resources
+
+1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
+
+   * "acme" for company_name in TF_VAR_company_name
+   * "mydevsecops" for environment in TF_VAR_environment
+   * TF_VAR_region
+   <br /><br />
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
+
+   <pre>alias      = "plain_text_access_keys_provider"
+  region     = "us-west-1"
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+   </pre>
+
+   SECURITY WARNING: Replace key values with a variable name.
+
+   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
+
+1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
+
+ , and #airiam, 
+
+https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
+
+
+<hr />
+
+<a name="Tutorials"></a>
+
+## Tutorials - 
+
+https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
+HashiCorp Certified: Terraform Associate Practice Exam 2021
+
+<a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">
+FreeCodeCamp.org has a free course</a> in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021
+by <a target="_blank" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa3BST3lnclN3S0hwUUt1V1hYVXhqTlBiZDduUXxBQ3Jtc0tsS1NQQ2V1TFlUanJUejNuWnRGS2c2c3djMWhCRjZ4bXdPSjFudzlhQ2JFLUtxWVdHZDUzNGtGeFhYcWswNlNlMHk0T0h4a2wwV2czc2xQWUlSdTk5U0RBcmNoVS1mbWFjWk9SX1U2N3JRUTlmdXpNYw&q=https%3A%2F%2Ftwitter.com%2Fandrewbrown">Andrew Brown</a> of ExamPro $24 https://www.exampro.co/terraform
+
+https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview
+by Zeal Vora
+https://github.com/zealvora/terraform-beginner-to-advanced-resource
+
+
+<hr />
+
+<a name="Terraforming"></a>
+
+### Going from CFN yaml to HCL?
+
+How to generate Terraform HCL from a running AWS account?
+
+The options:
+
+1. Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
+exports existing AWS resources to Terraform style tf, tfstate. It also comes as a Docker container.
+
+2. Install on your MacOS laptop this utlity from Google to create HCL from exiting running cloud resources. This enables you to transition from what was created in the AWS GUI or CFN to HCL you can modify:
+
+   <pre><strong>brew info terraformer
+   brew install terraformer
+   </strong></pre>
+
+3. Deploy your existing CFT instead of trying to convert it:
+
+   https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html
+
+4. It may be possible for simple cases but perhaps very complex (almost impossible) to convert CFT <strong>intrinsic functions</strong>: 
+
+   https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
+
+
+
+<a name="OpenSourcing"></a>
+
+<a name="x1"></a>*1 - CF/CFN (CloudFormation) is used only within the AWS cloud while others operate on several clouds. CFN is the only <strong>closed-sourced</strong> solution on this list.
+Code for Terraform is open-sourced at <a target="_blank" href="https://github.com/hashicorp/terraform/">https://github.com/hashicorp/terraform</a>
+
+Those who create AMI's also provide <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-guide.html">CFN templates</a> to customers.<a target="_blank" href="
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-sample-templates.html">*</a> (<a target="_blank" href="https://templates.cloudonaut.io/en/stable/">cloudnaut.io has free templates</a>)
+
+TOOL: Troposphere and Sceptre makes CFN easier to write with basic loops and logic that CFN lacks.
+
+But in <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2018/09/introducing-aws-cloudformation-macros/">Sep 2018 CloudFormation got <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">macros</a> to do iteration and interpolation (find-and-replace). Caveat: it requires dependencies to be setup.
+
+CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
+
+Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
+
+AWS Cloud Formation and Terraform can both be used at the same time.
+Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong> using Bridgecrew.
+
+<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
+Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
+
+
+References about CFN:
+   * <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">Puppet, Chef, Ansible, Salt</a> AWS API libraries Boto, Fog
+   * AWS CloudFormation Sample Templates at <a target="_blank" href="
+   https://github.com/awslabs/aws-cloudformation-templates">
+   https://github.com/awslabs/aws-cloudformation-templates</a>
+   * <a target="_blank" href="https://www.safaribooksonline.com/library/view/aws-cloudformation-master/9781789343694/">AWS CloudFormation Master Class</a> by Stéphane Maarek from Packt May 2018
+   * Some CloudFormation templates are compatible with OpenStack Heat templates.
+   <br /><br />
+
+
+
+<a name="ConfigMgmt"></a>
+
+### Configuration Management
+
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
+   </th><th>Infra.</th><th>Lang.
+   </th><th>Agent</th><th>Master</th></tr>
+</thead><tbody>
+<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td><a href="#Declarative">Declarative</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td ><a href="#Declarative">Declarative</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
+   </td><td>No</td><td>No</td></tr>
+</tbody></table>
+
+Terraform and Ansible can work in unison, complementing each other. Terraform bootstraps the underlying cloud infrastructure for Ansible to configure app settings and the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+
+
+<a name="Procedural"></a>
+<a name="Declarative"></a>
+
+<strong>"Procedural"</strong> means "programmatic" as in a Python or JavaScript program applies logic.
+This means procedures need to be written to check whether a desired resource is available before provisioning,
+then logic is needed to check whether the provisioning command was effective.
+
+<strong>"Declarative"</strong> means a (yaml format) file defines what is desired, and the system makes it so. tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
+   
+IaC code is <strong>idempotent</strong> (repeated runs results in what is described, and does not create additional items with every run). Terraform takes action only when needed (called "convergence" principle).
+
+Terraform manages explicit and implicit (assumed) dependencies automatically.
+
+Terraform automatically takes care of performing in the correct sequence.
+
+
+<a name="Immutable"></a>
+
+### Immutable?
+
+PROTIP: WARNING: Terraform does not support rollbacks of changes made.
+
+"Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
+
+Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
+
+
+<hr />
+
+<a name="DependencyGraph"></a>
+
+### Dependency Graph for visualization
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><br /><em>(click image for full screen</em></a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=45m26s">VIDEO</a>:
+The above <strong>Resource Graph</strong> visual representation of dependencies can be created by this command:
+
+   <pre>terraform graph | dot -Tsvg > graph.svg</pre>
+
+   The command makes use of Graphviz, which creates graphs specified in the DOT language, with the file name extension <tt>.gv</tt>
+
+The above is from <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app with a <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform/blob/master/src/5-gcp-demo/two-tier/cloudsql.tf">MYSQL_5_7 database</a>, both running under Kubernetes (GKE), with a replica in another region.
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/154824803-0525264c-24f0-4ec7-a699-a8e0971b0613.png"><img alt="terraform-cloudacad-767x379" width="767" height="379" src="https://user-images.githubusercontent.com/300046/154824803-0525264c-24f0-4ec7-a699-a8e0971b0613.png"></a>
+
+A more colorful format using <a target="_blank" href="https://github.com/28mm/blast-radius">Blast Radius</a> <a target="_blank" href="https://28mm.github.io/blast-radius-docs/">[examples]</a>:
+<img width="939" alt="terraform-resource-colorful-1878x1470" src="https://user-images.githubusercontent.com/300046/131344896-407d377a-046d-45b4-8159-a7168e2cabbc.png">
+
+There is also a "webgraphwiz" tool.
+
+<hr />
+
+<a name="ParallelExecution"></a>
+
+### Parallel execution
+
+A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed.
+
+Under the covers, Terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
+
+When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
+
+Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
+
+
+https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
+
+
+<hr />
+
+<a name="Social"></a>
+
+## Social
+
+* <a target="_blank" href="
+https://www.twitch.tv/hashicorplive">
+https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
+
+* <a target="_blank" href="https://discuss.hashicorp.com/">https://discuss.hashicorp.com</a>
+
+* <a target="_blank" href="https://groups.google.com/forum/#!forum/terraform-tool">Google Group terraform-tool</a>
+* <a target="_blank" href="https://linkedin.com/in/terraform">
+   LinkedIn</a>
+* <a target="_blank" href="https://stackoverflow.com/search?q=terraform">StackOverflow</a>
+* <a target="_blank" href="https://www.reddit.com/r/Terraform/">r/Terraform (Reddit sub-reddit)</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on <a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">Mitchell Hashimoto (CEO) YouTube channel</a>  
+
+* No IRC (Internet Relay Chat)?
 
 
 <hr />
