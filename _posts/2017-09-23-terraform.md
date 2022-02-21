@@ -1211,6 +1211,89 @@ The above set of files are repeated in each folder containing a nested module:
 * examples
 
 
+<a name="ScriptInit"></a>
+
+## Sample Terraform scripts
+
+<a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+
+
+<a name="HCL"></a>
+
+## HCL (Hashicorp Configuration Language) 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
+
+   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
+   https://www.terraform.io/docs/configuration/syntax.html">
+   https://www.terraform.io/docs/configuration/syntax.html</a>.
+   
+   Terraform supports JSON syntax to read output from programmatic creation of such files.
+   The name suffix of files containing JSON "*.tf.json".
+
+   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
+
+   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
+   
+   Multi-line comments are wrapped between `/*` and `*/`.
+
+   `\` back-slashes specify continuation of long lines (as in Bash).
+
+   The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
+
+   <pre>provider "aws" {
+   version = ">= 1.2, < 1.2"
+   alias = "${var.aws_region_alias}"
+   region = "${var.aws_region}"
+   access_key = "${var.aws_access_key}"
+   secret_key = "${var.aws_secret_key}"
+   }
+   resource "aws_instance" "example" {
+      ami = "ami-2757f631"
+      instance_type = "t2.micro"
+   }</pre>
+
+   "provider" and "resource" are each a <strong>configuration block</strong>.
+
+### Interpolation variables
+
+   * Each block defined between curly braces is called a <strong>"stanza"</strong>.
+
+   * Variable substitution (interpolation) has a format similar to shell scripts:
+
+   <tt>image = "${var.aws_region}"</tt>
+
+   PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
+
+   <tt>var.</tt> above references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
+
+   <pre>   variable "aws_access_key" {
+      description = "AWS access key"
+   }
+   variable "aws_secret_key" {
+      description = "AWS secret key"
+   }
+   variable "aws_region" {
+      description = "AWS region"
+   }
+   </pre>
+
+   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
+
+   The value for "name" must be unique or an error is thrown.
+
+   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
+
+   Interpolations can contain logic and mathematical operations, such as abs(), replace(string, search, replace).
+
+   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
+
+   <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
+   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
+   It's not backward compatible, with no direct migration path.
+
+   Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
+
 
 
 <hr />
@@ -1354,6 +1437,11 @@ https://github.com/terraform-community-modules</a>
 https://github.com/gruntwork-io/terratest</a>
 is a Go library that makes it easier to write automated tests for your infrastructure code.
 
+https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
+https://terratest.gruntwork.io/
+https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
+
+
 * <a target="_blank" href="
    https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
    https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
@@ -1414,13 +1502,6 @@ PROTIP: Specifying passwords in environment variables is more secure than typing
 
 
 <hr />
-
-<a name="ScriptInit"></a>
-
-## Sample Terraform scripts
-
-<a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
-
 
 <a name="Terraform_AWS"></a>
 
@@ -1669,81 +1750,8 @@ Docs:
 
 <hr />
 
-<a name="HCL"></a>
 
-## HCL (Hashicorp Configuration Language) 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
-
-   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
-   https://www.terraform.io/docs/configuration/syntax.html">
-   https://www.terraform.io/docs/configuration/syntax.html</a>.
-   
-   Terraform supports JSON syntax to read output from programmatic creation of such files.
-   The name suffix of files containing JSON "*.tf.json".
-
-   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
-
-   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
-   
-   Multi-line comments are wrapped between `/*` and `*/`.
-
-   `\` back-slashes specify continuation of long lines (as in Bash).
-
-   The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
-
-   <pre>provider "aws" {
-   version = ">= 1.2, < 1.2"
-   alias = "${var.aws_region_alias}"
-   region = "${var.aws_region}"
-   access_key = "${var.aws_access_key}"
-   secret_key = "${var.aws_secret_key}"
-   }
-   resource "aws_instance" "example" {
-      ami = "ami-2757f631"
-      instance_type = "t2.micro"
-   }</pre>
-
-   "provider" and "resource" are each a <strong>configuration block</strong>.
-
-### Interpolation variables
-
-   * Each block defined between curly braces is called a <strong>"stanza"</strong>.
-
-   * Variable substitution (interpolation) has a format similar to shell scripts:
-
-   <tt>image = "${var.aws_region}"</tt>
-
-   PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
-
-   <tt>var.</tt> above references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
-
-   <pre>   variable "aws_access_key" {
-      description = "AWS access key"
-   }
-   variable "aws_secret_key" {
-      description = "AWS secret key"
-   }
-   variable "aws_region" {
-      description = "AWS region"
-   }
-   </pre>
-
-   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
-
-   The value for "name" must be unique or an error is thrown.
-
-   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
-
-   Interpolations can contain logic and mathematical operations, such as abs(), replace(string, search, replace).
-
-   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
-
-   <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
-   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
-   It's not backward compatible, with no direct migration path.
-
-   Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
+<a name="fmt"></a>
 
 ### fmt HCL Coding Conventions
 

@@ -21,38 +21,34 @@ comments: true
   credit: Parallels
   creditlink: http://kb.parallels.com/en/113541
 -->
-This topic is about how we can <strong>stay focused</strong> and do things <strong>faster</strong> by automating actions on the keyboard controlling our Mac, beyond <a target="_blank" href="https://support.apple.com/en-us/HT201236">Apple's standard Keyboard Shortcuts (at https://support.apple.com/en-us/HT201236)</a>
+This topic is about how you, a Mac user, can <strong>stay focused</strong> so you can do things faster with less effort by configuring your keyboard and mouse and automating common actions. 
 
-This page covers several mechanisms:
+> PROTIP: Optimize for keys we use most, and avoid common mistakes with keys we accidentaly press.
 
-   * Standard Keyboard
-   * Modifier Keys
-   * <a href="#Hotkey">Hotkey app</a>
-   * <a href="#StreamDeck">Stream Deck</a> extra (macro) buttons
+You'll feel less stress when you can get things done like a pro. Amaze your co-workers. 
+
+   1. <a href="#Modifiers">Know the names and icons for "Modifier Keys"</a>.
+   2. Customize defaults for speed (like the pros)
+   3. Use more <a href="#Hotkey">Hotkey app</a>
+   4. Get a <a href="#StreamDeck">Stream Deck</a> for one-touch automated action (like magic)
    <br /><br />
 
 
-## Special (Modifier) Key Names and Symbols
-
 REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and names:
+
+<a name="Modifiers"></a>
+
+## Special (Modifier) Key Names and Symbols
 
 <amp-img width="413" height="399" alt="Apple keys symbols" src="https://cloud.githubusercontent.com/assets/300046/15536540/fe6cb344-222e-11e6-9f2b-c37419a9d42f.gif"></amp-img>
 
-* <a target="_blank" href="https://support.apple.com/en-us/HT201236">
-   Apple's default Mac keyboard shortcuts</a>
-
-* <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
-   Mac OS X Keyboard Shortcuts</a>
-
-   PROTIP: Optimize for keys we use most, and avoid common mistakes with keys we accidentaly press.
-
-   ### Remap Modifier Keys
+### Remap Modifier Keys
 
    You can change them using this dialog:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg"><img alt="mac-modifier-control-399x224-27632" src="https://user-images.githubusercontent.com/300046/31076959-877c6f84-a731-11e7-8fcc-7d12af4c2c8e.jpg"></a>
 
-   ### Caps Lock to Escape
+### Caps Lock to Escape
 
    BLAH: The Esc (Escape) key is too far North on the keyboard and forces some to look down on the keyboard. And the Caps Lock key is too close to keys, causing problems with accidental password entry and lockouts.
 
@@ -67,14 +63,70 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png"><img alt="keyboard-sys-pref-292x309" src="https://user-images.githubusercontent.com/300046/154780401-5e3f6187-a77c-4a96-a6ad-1c351c63b144.png">
 
-   or go directly there by pressing <strong>control+command+comma</strong>.
+   or get that dialog directly from anywhere by pressing (at the same time) <strong>control + command + comma</strong>. A reminder of that is to the right of "System Preferences" menu item.
 
-2. Type K reveal a list (without clicking the search box). 
-   Cursor down to highlight Keyboard. Press space bar to open it.
-3. Click "Modifier Keys" at the lower-right corner.
-4. Click the entry for "Caps Lock &#8682; Key:" and select &#9099; Escape.
+1. Type K to reveal a list (without clicking the search box). 
+1. Cursor down to highlight <strong>Keyboard</strong>. 
+1. Press return (Enter) to open it.
+
+1. Click "Modifier Keys" at the lower-right corner.
+1. Click the entry for "Caps Lock &#8682; Key:" and select &#9099; Escape.
 
    NOTE: If you have more than one keyboard, repeat for each keyboard.
+
+   ### There is a Keyboard Shortcut for every action
+
+1. Marvel at the full list:
+
+   <a target="_blank" href="https://support.apple.com/en-us/HT201236">
+   Apple's default Mac keyboard shortcuts</a>
+
+   <a target="_blank" href="http://pc.net/resources/shortcuts/mac_os_x#startup">
+   Mac OS X Keyboard Shortcuts</a>
+
+   ### Add Keyboard Shortcut to Sleep
+
+   In the screen above, notice "Sleep" has no reminder of its Keyboard Shortcut, but <a target="_blank" href="https://apple.stackexchange.com/questions/28164/keyboard-shortcut-to-sleep-a-mac">there is</a>:
+   
+   <strong>Command ⌘+Option ⌥+Eject ⏏</strong>
+
+   PROTIP: Putting your laptop to sleep is an important procedure according to HIPAA and other regulations.
+   Sleeping let your laptop rest, which makes it last longer and consume less electricity.
+   So make it easier to put your laptop to sleep.
+
+   See https://ladedu.com/how-to-put-a-mac-to-sleep-incl-keyboard-shortcut/
+
+1. Return to the Keyboard Shortcuts following instructions above, but this time
+1. Click "Shortcuts"
+
+   <img width="687" alt="keyboard-app-shortcuts-1274x784" src="https://user-images.githubusercontent.com/300046/154957946-c59e6343-20e0-49fe-9dc8-712e07c15c57.png">
+
+1. Click "App Shortcuts" in the left menu.
+1. Hit the "+" button to add an item.
+1. Leave Application default at "All Applications".
+1. For Main Title: type "Sleep" (the exact name of the menu command).
+1. Click in the Keyboard Shortcut: field 
+1. Press <strong>Command + Option + Eject</strong>
+1. Click Add button.
+
+Select File | New Shortcut from the menu.
+Shortcuts keyboard shortcut: You can also press Command N, of course.
+Drag and drop the Run Shell Script action to the shortcut area.
+Find Run Shell Script: You can find Run Shell Script under Terminal app or search for shell script.
+If scripting is disabled:
+– Select Shortcuts | Preferences… from the menu.
+– Go to the Advanced tab.
+– Enable Allow Running Scripts.
+Type pmset sleepnow under Run Shell Script.
+Now type a name for the new action over Run Shell Script in the title bar.
+Example: Use something like Put Mac to Sleep.
+
+
+   There is a difference between Sleep and Hibernate
+   https://ladedu.com/how-to-understand-sleep-vs-hibernate-on-a-mac/
+
+   On a Terminal, the command is "pmset sleepnow".
+ 
 
    <a name="MagicKeyboard"></a>
 
@@ -260,6 +312,7 @@ But use a companion key on the right side of the keyboard.
    * https://www.youtube.com/watch?v=_47kJvS8nhk by Gary of macos.com
    * https://www.youtube.com/watch?v=8AeZkSJz28A
    * https://www.youtube.com/watch?v=lyJOYgP-Ihc
+
 
 <a name="TouchTyping"></a>
 
