@@ -50,11 +50,11 @@ This page houses both links and my notes to pass the <a target="_blank" href="ht
    d. Describe how Terraform finds and fetches <a href="#Providers">providers</a> (from the <a href="#Registry">Terraform Registry</a>)<br />
    e. Explain when to use and not use <a href="#Provisioners">provisioners</a> and when to use <a href="#local-exec"><tt>local-exec</tt></a> or <a href="#remote-exec"><tt>remote-exec</tt></a><br />
 4. Use the Terraform CLI (outside of core workflow)<br />
-   a. Given a scenario: choose when to use <a href="#Fmt"><tt>terraform fmt</tt> to format code<br />
-   b. Given a scenario: choose when to use <a href="#Taint"><tt>terraform taint</tt> to taint Terraform resources<br />
-   c. Given a scenario: choose when to use <a href="#Import"><tt>terraform import</tt> to import existing infrastructure into your Terraform state<br />
-   d. Given a scenario: choose when to use <a href="#Workspaces"><tt>terraform workspace</tt> to create workspaces<br />
-   e. Given a scenario: choose when to use <a href="#State"><tt>terraform state</tt> to view Terraform state<br />
+   a. Given a scenario: choose when to use <a href="#Fmt"><tt>terraform fmt</tt></a> to format code<br />
+   b. Given a scenario: choose when to use <a href="#Taint"><tt>terraform taint</tt></a> to taint Terraform resources<br />
+   c. Given a scenario: choose when to use <a href="#Import"><tt>terraform import</tt></a> to import existing infrastructure into your Terraform state<br />
+   d. Given a scenario: choose when to use <a href="#Workspaces"><tt>terraform workspace</tt></a> to create workspaces<br />
+   e. Given a scenario: choose when to use <a href="#State"><tt>terraform state</tt></a> to view Terraform state<br />
    f. Given a scenario: choose when to enable <a href="#Verbose">verbose logging</a> and what the outcome/value is<br />
 5. <a href="#Modules">Interact with Terraform modules</a><br />
    a. Contrast module source options<br />
@@ -120,9 +120,9 @@ Hashicorp doesn't have a deeper/more difficult "Professional level" cert at time
 
 <hr />
 
-<a name="Diagram1"></a>
+<a name="LearningStrategy"></a>
 
-## Adoption Strategy
+## Adoption/Learning Strategy
 
 PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diagram</a> I created:
 
@@ -641,7 +641,7 @@ Level up? (y/n): _
   / __| '_ \ / _ \/ __| |/ / _ \ \ / /
  | (__| | | |  __/ (__|   < (_) \ V / 
   \___|_| |_|\___|\___|_|\_\___/ \_/  
-                                      
+&nbsp;
 By bridgecrew.io | version: 2.0.829 
 Update available 2.0.829 -> 2.0.873
 Run pip3 install -U checkov to update 
@@ -1180,6 +1180,41 @@ Global options (use these before the subcommand, if any):
 
 <hr />
 
+<a name="FileStructure"></a>
+
+## Standard File structure
+
+According to 
+   * https://www.terraform.io/language/modules/develop/structure
+   * https://www.baeldung.com/ops/terraform-best-practices
+the root folder for a Terraform module should contain these files:
+
+* README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
+
+* LICENSE - (no file extension) to define the legal aspects
+
+* main.tf - the entry point of the module
+* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
+* <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
+<br /><br />
+
+The above set of files are repeated in each folder containing a nested module:
+
+* modules/
+   * <em>IAM</a>
+      * README.md
+      * variables.tf
+      * main.tf
+      * outputs.tf
+   * <em>Network</a>
+      * ...
+* examples
+
+
+
+
+<hr />
+
 <a name="Modules"></a>
 
 ## Reusable Modules
@@ -1237,64 +1272,6 @@ It's got 33 resources. The sub-modules are:
    * vault-security-group-rules (for AWS only)
    <br /><br />
 
-<a name="FileStructure"></a>
-
-## Standard File structure
-
-According to 
-   * https://www.terraform.io/language/modules/develop/structure
-   * https://www.baeldung.com/ops/terraform-best-practices
-the root folder for a Terraform module should contain these files:
-
-* README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
-
-* LICENSE - (no file extension) to define the legal aspects
-
-* main.tf - the entry point of the module
-* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
-* <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
-<br /><br />
-
-The above set of files are repeated in each folder containing a nested module:
-
-* modules/
-   * <em>IAM</a>
-      * README.md
-      * variables.tf
-      * main.tf
-      * outputs.tf
-   * <em>Network</a>
-      * ...
-* examples
-
-
-<a name="Modules"></a>
-
-### Modules
-
-
-   PROTIP: Remember: a common mistake under each <tt>module</tt> is that providers are specified within a list:
-
-   <pre>module "vpc" {
-   source = "terraform-aws-modules/vpc/aws"
-   providers = {
-      aws = aws.eu
-   }
-   name = "my-vpc"
-   cidr = "10.0.0.0/16"
-   azs = "["eu-west-1a", "eu-west-1b", "eu-west-1c"]
-   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-   &nbsp;
-   enable_nat_gateway = true
-   enable_vpn_gateway = true
-   &nbsp;
-   tage = {
-      Terraform = "true"
-      Environment = "dev"
-   }
-   </pre>
-
-
 
 ### Why Modules
 
@@ -1336,6 +1313,29 @@ For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
    </pre>
 
    * "azs" designates Availability Zones.
+
+   PROTIP: Remember: a common mistake under each <tt>module</tt> is that providers are specified within a list:
+
+   <pre>module "vpc" {
+   source = "terraform-aws-modules/vpc/aws"
+   providers = {
+      aws = aws.eu
+   }
+   name = "my-vpc"
+   cidr = "10.0.0.0/16"
+   azs = "["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+   &nbsp;
+   enable_nat_gateway = true
+   enable_vpn_gateway = true
+   &nbsp;
+   tage = {
+      Terraform = "true"
+      Environment = "dev"
+   }
+   </pre>
+
+
 
 
 ### Community modules
@@ -1665,23 +1665,28 @@ Docs:
    * https://opensource.com/article/20/7/terraform-kubernetes
 
 
-## Module Structure
 
 
+<hr />
 
 <a name="HCL"></a>
 
 ## HCL (Hashicorp Configuration Language) 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
+
    Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
    https://www.terraform.io/docs/configuration/syntax.html">
    https://www.terraform.io/docs/configuration/syntax.html</a>.
    
+   Terraform supports JSON syntax to read output from programmatic creation of such files.
+   The name suffix of files containing JSON "*.tf.json".
+
    HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
 
-   REMEMBER: The name suffix of files containing JSON "*.tf.json".
-
-   More importantly, unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). Multi-line comments are wrapped between `/*` and `*/`.
+   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
+   
+   Multi-line comments are wrapped between `/*` and `*/`.
 
    `\` back-slashes specify continuation of long lines (as in Bash).
 
@@ -1692,7 +1697,7 @@ Docs:
    alias = "${var.aws_region_alias}"
    region = "${var.aws_region}"
    access_key = "${var.aws_access_key}"
-   ecret_key = "${var.aws_secret_key}"
+   secret_key = "${var.aws_secret_key}"
    }
    resource "aws_instance" "example" {
       ami = "ami-2757f631"
