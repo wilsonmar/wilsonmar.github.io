@@ -37,60 +37,60 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 <img align="right" width="200" alt="terraformassociate-704x704" src="https://user-images.githubusercontent.com/300046/154810637-8293e9a0-1c6a-4105-b9c0-3d100166ce42.png">
 This page houses both links and my notes to pass the <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a>. For only $70.50 (paid after <a target="_blank" href="https://candidate.psiexams.com/">picking a time on OSI Online</a>, <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">terrible)</a> , correctly answer 70%+ of 57 multiple-choice/fill-in questions to give your employers some assurance that you have a practical knowledge of:
 
-1. Understand infrastructure as code (IaC) concepts
-   a. Explain <a href="#IaC">what IaC is</a>
-   b. Describe advantages of IaC patterns
-2. Understand Terraform's purpose (vs other IaC)
-   a. Explain multi-cloud and provider-agnostic benefits
-   b. Explain the benefits of <a href="#State">state</a> <em>management</em>
-3. Understand Terraform basics
-   a. Handle Terraform and provider <a href="#Install">installation and versioning</a>
-   b. Describe plugin based architecture
-   c. Demonstrate using multiple providers
-   d. Describe how Terraform finds and fetches providers
-   e. Explain when to use and not use <a href="#Provisioners">provisioners</a> and when to use <a href="#local-exec"><tt>local-exec</tt></a> or <a href="#remote-exec"><tt>remote-exec</tt></a>
-4. Use the Terraform CLI (outside of core workflow)
-   a. Given a scenario: choose when to use <a href="#Fmt"><tt>terraform fmt</tt> to format code
-   b. Given a scenario: choose when to use <a href="#Taint"><tt>terraform taint</tt> to taint Terraform resources
-   c. Given a scenario: choose when to use <a href="#Import"><tt>terraform import</tt> to import existing infrastructure into your Terraform state
-   d. Given a scenario: choose when to use <a href="#Workspace"><tt>terraform workspace</tt> to create workspaces
-   e. Given a scenario: choose when to use <a href="#State"><tt>terraform state</tt> to view Terraform state
-   f. Given a scenario: choose when to enable <a href="#Verbose">verbose logging</a> and what the outcome/value is
-5. <a href="#Modules">Interact with Terraform modules</a>
-   a. Contrast module source options
-   b. Interact with module inputs and outputs
-   c. Describe variable scope within modules/child modules
-   d. Discover modules from the public Terraform Module Registry
-   e. Defining module version
-6. Navigate <a href="#Workflow">Terraform workflow</a>
-   a. Describe Terraform workflow ( Write -> Plan -> Create )
-   b. Initialize a Terraform working directory (terraform init)
-   c. Validate a Terraform configuration (terraform validate)
-   d. Generate and review an execution plan for Terraform (terraform plan)
-   e. Execute changes to infrastructure with Terraform (terraform apply)
-   f. <a href="#Destroy">Destroy Terraform managed infrastructure (terraform destroy)</a>
-7. Implement and maintain state
-   a. Describe default local backend
-   b.	Outline state locking
-   c. Handle backend authentication methods
-   d. Describe remote state storage mechanisms and supported standard backends
-   e. Describe effect of Terraform refresh on state
-   f. Describe backend block in configuration and best practices for partial configurations
-   g. Understand secret management in state files
-8. Read, generate, and modify configuration
-   a. Demonstrate use of variables and outputs
-   b. Describe secure secret injection best practice
-   c. Understand the use of collection and structural types
-   d. Create and differentiate resource and data configuration
-   e. Use resource addressing and resource parameters to connect resources together
-   f. Use Terraform built-in functions to write configuration
-   g. Configure resource using a dynamic block
-   h. Describe built-in dependency management (order of execution based)
-9. Understand Terraform Cloud and Enterprise capabilities
-   a. Describe the benefits of Sentinel, registry, and workspaces
-   b. Differentiate OSS and TFE workspaces
-   c. Summarize features of Terraform Cloud
-<br /><br />
+1. Understand infrastructure as code (IaC) concepts<br />
+   a. Explain <a href="#IaC">what IaC is</a><br />
+   b. Describe advantages of IaC patterns<br />
+2. Understand Terraform's purpose (vs other IaC)<br />
+   a. Explain multi-cloud and provider-agnostic benefits<br />
+   b. Explain the benefits of <a href="#State">state</a> <em>management</em><br />
+3. Understand Terraform basics<br />
+   a. Handle Terraform and provider <a href="#Install">installation and versioning</a><br />
+   b. Describe plugin based architecture<br />
+   c. Demonstrate using multiple providers<br />
+   d. Describe how Terraform finds and fetches <a href="#Providers">providers</a> (from the <a href="#Registry">Terraform Registry</a>)<br />
+   e. Explain when to use and not use <a href="#Provisioners">provisioners</a> and when to use <a href="#local-exec"><tt>local-exec</tt></a> or <a href="#remote-exec"><tt>remote-exec</tt></a><br />
+4. Use the Terraform CLI (outside of core workflow)<br />
+   a. Given a scenario: choose when to use <a href="#Fmt"><tt>terraform fmt</tt> to format code<br />
+   b. Given a scenario: choose when to use <a href="#Taint"><tt>terraform taint</tt> to taint Terraform resources<br />
+   c. Given a scenario: choose when to use <a href="#Import"><tt>terraform import</tt> to import existing infrastructure into your Terraform state<br />
+   d. Given a scenario: choose when to use <a href="#Workspaces"><tt>terraform workspace</tt> to create workspaces<br />
+   e. Given a scenario: choose when to use <a href="#State"><tt>terraform state</tt> to view Terraform state<br />
+   f. Given a scenario: choose when to enable <a href="#Verbose">verbose logging</a> and what the outcome/value is<br />
+5. <a href="#Modules">Interact with Terraform modules</a><br />
+   a. Contrast module source options<br />
+   b. Interact with module inputs and <a href="#Outputs">outputs</a><br />
+   c. Describe variable scope within modules/child modules<br />
+   d. Discover modules from the public <a href="#Registry">Terraform Module Registry</a><br />
+   e. Defining module version<br />
+6. Navigate <a href="#Workflow">Terraform workflow</a><br />
+   a. Describe Terraform workflow ( Write -> Plan -> Create )<br />
+   b. Initialize a Terraform working directory (terraform init)<br />
+   c. Validate a Terraform configuration (terraform validate)<br />
+   d. Generate and review an execution plan for Terraform (terraform plan)<br />
+   e. Execute changes to infrastructure with Terraform (terraform apply)<br />
+   f. <a href="#Destroy">Destroy Terraform managed infrastructure (terraform destroy)</a><br />
+7. Implement and maintain state<br />
+   a. Describe default local backend<br />
+   b.	Outline state locking<br />
+   c. Handle backend authentication methods<br />
+   d. Describe remote state storage mechanisms and supported standard backends<br />
+   e. Describe effect of Terraform refresh on state<br />
+   f. Describe backend block in configuration and best practices for partial configurations<br />
+   g. Understand secret management in state files<br />
+8. Read, generate, and modify configuration<br />
+   a. Demonstrate use of variables and <a href="#Outputs">outputs</a><br />
+   b. Describe secure secret injection best practice<br />
+   c. Understand the use of collection and structural types<br />
+   d. Create and differentiate resource and data configuration<br />
+   e. Use resource addressing and resource parameters to connect resources together<br />
+   f. Use Terraform built-in functions to write configuration<br />
+   g. Configure resource using a dynamic block<br />
+   h. Describe built-in dependency management (order of execution based)<br />
+9. Understand Terraform Cloud and Enterprise capabilities<br />
+   a. Describe the benefits of Sentinel, registry, and <a href="#Workspaces">workspaces</a><br />
+   b. Differentiate OSS and TFE <a href="#Workspaces">workspaces</a><br />
+   c. Summarize features of Terraform Cloud<br />
+<br />
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&index=1&t=47309s">VIDEO</a>: Registering for the test takes several steps:
 
@@ -1268,6 +1268,34 @@ The above set of files are repeated in each folder containing a nested module:
 * examples
 
 
+<a name="Modules"></a>
+
+### Modules
+
+
+   PROTIP: Remember: a common mistake under each <tt>module</tt> is that providers are specified within a list:
+
+   <pre>module "vpc" {
+   source = "terraform-aws-modules/vpc/aws"
+   providers = {
+      aws = aws.eu
+   }
+   name = "my-vpc"
+   cidr = "10.0.0.0/16"
+   azs = "["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+   &nbsp;
+   enable_nat_gateway = true
+   enable_vpn_gateway = true
+   &nbsp;
+   tage = {
+      Terraform = "true"
+      Environment = "dev"
+   }
+   </pre>
+
+
+
 ### Why Modules
 
 Putting Terraform code in modules enable their reuse, which speeds development by reducing testing and increasing the pace of change.
@@ -1361,6 +1389,7 @@ Since the point of Terraform is to get you into clouds, Terraform looks for spec
    <pre>export AWS_ACCESS_KEY_ID=<em>(your access key id)</em>
 export AWS_SECRET_ACCESS_KEY=<em>(your secret access key)</em>
 export AWS_REGION=<em>(your region in AWS)</em>
+export AWS_REGION_ALIAS="eu"
    </pre>
 
    For Azure:
@@ -1660,6 +1689,7 @@ Docs:
 
    <pre>provider "aws" {
    version = ">= 1.2, < 1.2"
+   alias = "${var.aws_region_alias}"
    region = "${var.aws_region}"
    access_key = "${var.aws_access_key}"
    ecret_key = "${var.aws_secret_key}"
@@ -2051,22 +2081,8 @@ ami = ${lookup(var.amis, "us-east-1")}
    <a name="main.tf"></a>
 
    ### main.tf
-
-   PROTIP: Remember that a common mistake under each <tt>module</tt> is that providers are specified within a list:
-
-   <pre>module "vpc" {
-  source = "terraform-aws-modules/vpc/aws"
-  providers = {
-    aws = aws.eu
-  }
-   name = "my-vpc"
-   cidr = "10.0.0.0/16"
-   azs = "["eu-west-1a", "eu-west-1b", "eu-west-1c"]
-   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-   ...
-   </pre>
-
-   Another example of the main.tf file:
+ 
+   An example of the main.tf file:
 
    <pre>
 terraform {
@@ -2113,18 +2129,25 @@ resource "aws_instance" "web" {
 
 ## Terraform Providers
 
+   <a target="_blank" href="
+   https://www.terraform.io/docs/language/providers/index.html">
+   https://www.terraform.io/docs/language/providers/index.html</a>
+
    Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
+
+1, Get a list of providers
+
+   <pre><strong>terraform providers</strong></pre>
 
    <a target="_blank" href="
    https://github.com/terraform-providers">
    https://github.com/terraform-providers</a>
    
-   <a target="_blank" href="
-   https://www.terraform.io/docs/language/providers/index.html">
-   https://www.terraform.io/docs/language/providers/index.html</a>
-
-
    ### Terraform Built-in Providers
+
+   <a target="_blank" href="
+   https://github.com/hashicorp/terraform/tree/master/builtin/providers">
+   https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
 
    "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
 
@@ -2143,19 +2166,10 @@ resource "aws_instance" "web" {
 
    The follow have been archived: Atlas (Terraform), "clc" (CenturyLinkCloud), OpsGenie, (IBM) SoftLayer, PowerDNS, DNSMadeEasy, Librato, Mailgun, LogEntries, Gridscale, CIDR, etc.
 
-   <a target="_blank" href="
-   https://github.com/hashicorp/terraform/tree/master/builtin/providers">
-   https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
 
+### Custom Providers
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=zOS3v9We1cg">
-   VIDEO INTRO</a>:
-   Terraform now offers a Terraform Cloud provider to manage VCS provider GitHub
-   in temporary test workspaces to see the impact of incremental changes.
-
-   
 Custom Terraform Providers are written in the <a target="_blank" href="https://wilsonmar.github.com/golang">Go language</a>.
-
 
 The steps below are based on
    <a target="_blank" href="
@@ -2206,7 +2220,33 @@ Unpacking objects: 100% (12/12), done.
    AWS provider
 
 
-   ### VPC Security Group
+<a name="Workspaces"></a>
+
+## Temporary Workspaces
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=zOS3v9We1cg">
+   VIDEO INTRO</a>:
+   Terraform now offers a Terraform Cloud provider to manage VCS provider GitHub
+   in temporary test workspaces to see the impact of incremental changes.
+
+   Terraform Cloud has workspaces
+
+
+   <a href="#Registry">
+
+   ### Plugin Registry
+
+   https://registry.terraform.io is public
+
+   hosts both providers and modules (a group of configuration files that provide common configuration).
+
+
+
+
+
+<hr />
+
+## VPC Security Group
 
 2. VPC Security group
 
@@ -2253,14 +2293,14 @@ resource "aws_security_group" "instance" {
    Terraform automatically detects and enforces rule violations, such as 
    use of rogue port numbers other than 80/443.
 
-   <a name="Outputs.tf"></a>
+
+   <a name="Outputs"></a>
 
    ### outputs.tf
 
    Sample contents of an outputs.tf file:
 
-   <pre>
-  output "public_ip" {
+   <pre>  output "public_ip" {
   value = "${aws_instance.example.public_ip}"
 }
   output "url" {
@@ -2270,11 +2310,22 @@ resource "aws_security_group" "instance" {
 
    Sample contents of an outputs.tf file for a cluster points to the Elastic Load Balancer:
 
-   <pre>
-output "elb_dns_name" {
-  value = "${aws_elb.example.dns_name}"
+   <pre>output "aws_elb_public_dns" {
+  value = "${aws_elb.web.dns_name}"
+}
+output "public_ip" {
+  value = "${aws_instance.example.public_ip}"
 }
    </pre>
+
+   <pre>output "azure_rm_dns_cname" {
+  value = "${azurerm_dns_cname_record.elb.id}"
+}
+   </pre>
+
+PROTIP: If the AMI is no longer available, you will get an error message.
+
+
 
    <a name="Examples"></a>
 
@@ -2494,14 +2545,32 @@ Another inline example installs an nginx web server and displays a minimal HTML 
 
 PROTIP: SECURITY CAUTION: Better to pull in installers and libraries from an internal Artifactory registry which allows for forensics in case something bad happens, since the external one could have been infected an hour before.
 
-   Provisioner configurations are also plugins for Ansible configuration management:
-   
+To trigger a map of values
+
+   <pre>resource "aws_instance" "web" {
+  # ...
+  triggers {
+    cluster_instance_ids = "${join(",", aws_instance.cluster.*.id)}"
+  }
+  connection {
+    host     = "${element(aws_instance.cluster.*.public_ip, 0)}"
+  }
+  provisioner "remote-exec" {
+    inline = [
+      "bootstrap-cluster.sh ${join(" ", aws_instance.cluster.*.private_ip)},
+    ]
+  }
+}
+   </pre>
+
 
 <a name="Ansible"></a>
 <a name="local-exec"></a>
 
 ### local-exec provisioner Ansible
 
+Provisioner configurations are also plugins for Ansible configuration management:
+  
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h4m2s">VIDEO</a>:
 "Local" is where Terraform commands are run, which can be your laptop/workstation or
 on a build server (Jenkins, GitHub Actions, GCP Cloud Build, AWS Code Build, etc.).
@@ -2541,7 +2610,14 @@ QUESTION: The interpreter is excuted first, then the command?
 
 See https://github.com/radekg/terraform-provisioner-ansible
 
-   To invoke the command to run Ansible playbook.yml:
+As a general rule, use Ansible for repetitive on-going maintenance tasks such as:
+
+   * Backup table to Datawarehouse
+   * Truncate daily tables
+   <br /><br />
+
+
+   To run Ansible playbook.yml:
 
    <pre>provisioner "local-exec" {
    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook \
@@ -2619,25 +2695,6 @@ private_key_path = "C:\\MyKeys1.pem"
    You can pass profile name by --profile option.
 
 
-   <a name="Output"></a>
-
-### Output
-
-   `outputs.tf` file example:
-
-   <pre>
-output "aws_elb_public_dns" {
-  value = "${aws_elb.web.dns_name}"
-}
-output "public_ip" {
-  value = "${aws_instance.example.public_ip}"
-}
-output "azure_rm_dns_cname" {
-  value = "${azurerm_dns_cname_record.elb.id}"
-}
-   </pre>
-
-1. PROTIP: If the AMI is no longer available, you will get an error message.
 
 
 <hr />
