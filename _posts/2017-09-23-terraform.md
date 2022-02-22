@@ -32,10 +32,10 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
    Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
 
 
-## Certification Exam Objectives
+## Links to Certification Exam Objectives
 
 <img align="right" width="200" alt="terraformassociate-704x704" src="https://user-images.githubusercontent.com/300046/154810637-8293e9a0-1c6a-4105-b9c0-3d100166ce42.png">
-This page houses both links and my notes to pass the <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a>. For only $70.50 (paid after <a target="_blank" href="https://candidate.psiexams.com/">picking a time on OSI Online</a>, <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">terrible)</a> , correctly answer 70%+ of 57 multiple-choice/fill-in questions to give your employers some assurance that you have a practical knowledge of:
+This page houses both links and my notes to pass the <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a>. For only $70.50 (paid after <a target="_blank" href="https://candidate.psiexams.com/">picking a time on OSI Online</a>, <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">terrible)</a> , correctly answer 70%+ of 57 multiple-choice/fill-in questions to give your employers some assurance that you have a practical knowledge of these topics:
 
 1. Understand infrastructure as code (IaC) concepts<br />
    a. Explain <a href="#IaC">what IaC is</a><br />
@@ -66,7 +66,7 @@ This page houses both links and my notes to pass the <a target="_blank" href="ht
    a. Describe Terraform workflow ( Write -> Plan -> Create )<br />
    b. Initialize a Terraform working directory (terraform init)<br />
    c. Validate a Terraform configuration (terraform validate)<br />
-   d. Generate and review an execution plan for Terraform (terraform plan)<br />
+   d. Generate and review an execution plan for Terraform (<a href="#tfplan">terraform plan</a>)<br />
    e. Execute changes to infrastructure with Terraform (terraform apply)<br />
    f. <a href="#Destroy">Destroy Terraform managed infrastructure (terraform destroy)</a><br />
 7. Implement and maintain state<br />
@@ -135,7 +135,7 @@ to simplify the explanation here, we'll focus on AWS for now.
 
 Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod quickly and securely.
 
-Although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> so that it is <a href="#Repeatable">repeatable</a>. Having configurations documented in GitHub enables <strong>drift detection</strong> which identifies differences between what is defined versus what is actually running.
+Although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> so that it is <a href="#Repeatable">repeatable</a>. Having configurations documented in GitHub enables <a href="#DriftManagement">drift detection</a> which identifies differences between what is defined versus what is actually running.
 
 The <strong>AWS Config</strong> service logs every change in configuration of resources.
 The <strong>AWS Security Hub</strong> service looks in logs for vulnerabilities to issue <strong>Findings</strong> based on its own “AWS Foundations” set of <strong>policies</strong>. AWS provides a webpage of <strong>recommendations</strong> for remediation, but only by using its own GUI or CloudFormation code, not Terraform coding.
@@ -224,7 +224,7 @@ dagger.io
 <tr><td> <a href="#Providers">Multi-Cloud providers</a> support </td><td> AWS only </td><td> AWS, GCE, Azure (20+) </td></tr>
 <tr><td> Source code </td><td> closed-source </td><td><a href="#Licensing">open source</a> </td></tr>
 <tr><td> Open Source contributions? </td><td> <a href="#OpenSourcing">No</a> </td><td> <a href="#OpenSourcing">Yes</a> (<a target="_blank" href="https://github.com/hashicorp/terraform/issues">GitHub issues</a>) </td></tr>
-<tr><td> <a href="#State">State management</a> </td><td> by AWS </td><td> in Terraform & AWS S3 </td></tr>
+<tr><td> <a href="#State">State management</a> </td><td><a href="#AWSStateMgmt">by AWS</a> </td><td> in Terraform & AWS S3 </td></tr>
 <tr><td> GUI </td><td> Free Console </td><td> <a href="#Licensing">licen$ed*</a> </td></tr>
 <tr><td> Configuration format </td><td> JSON </td><td> <a href="#HCL">HCL JSON</a> </td></tr>
 <tr><td> <a href="#ExecControl">Execution control*</a> </td><td> No </td><td> Yes </td></tr>
@@ -266,18 +266,6 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 
 <hr />
 
-<a name="SampleTF"></a>
-
-## Sample Terraform files
-
-https://github.com/Capgemini/terraform-amazon-ecs/
-
-https://akhilmovva.com/projects/
-
-
-
-<hr />
-
 <a name="Install"></a>
 
 ## Installation options
@@ -290,6 +278,8 @@ https://akhilmovva.com/projects/
 
    PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
 
+   <a name="tf_version"></a>
+   
 1. After installation, get the version number of Terraform:
 
    <pre><strong>terraform --version</strong></pre>
@@ -551,12 +541,127 @@ sudo apt-get update
 sudo apt-get install docker-ce
    </pre>
 
+<hr />
+
+<a name="SampleTF"></a>
+
+## Obtain sample Terraform scripts
+
+I've found several:
+
+* <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+
+
+
+1. Navigate to your default folder:
+
+   <pre><strong>cd clouddrive</strong></pre>
+
+1. Use Git (installed by default):
+
+   <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
+cd terraform-on-azure
+   </strong></pre>
+
+   The repo contains these folders:
+   * 01-intro
+   * 02-init-plan-apply-destroy
+   * 03-terraform-state
+   * 04-variables
+   * 05-modules
+   * 06-advanced-hcl
+   <br /><br />
+
+Others:
+
+   https://github.com/Capgemini/terraform-amazon-ecs/
+
+   https://akhilmovva.com/projects/
+
+   Terragoat
+
+
+<a name="VSCode"></a>
+
+## VSCode
+
+1. Use VSCode (installed by default) to view blocks in Terraform HCL files:
+
+   <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
+code main.tf
+   </strong></pre>
+
+   NOTE: Each key-value pair is an argument containing an expression of a text value.
+
+   Each HCL file needs to specify the (cloud) provider being used is "azure".
+
+   NOTE: Multiple providers can be specified in the same HCL file.
+
+1. Search for "Resource Group" in Terraform's Azure Provider docs:
+
+   <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
+   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs</a>
+
+   for "azurerm_resource_group".
+
 
 <hr />
 
+<a name="Issues"></a>
+
+### What issues to look for?
+
+There are several industry standards which prescribe "controls" and configurations:
+
+   * AWS Foundations referenced by the AWS Security Hub service
+   * CIS
+
+   * SOC2
+   * ISO
+   * FedRAMP
+
+   * PCI
+   * HIPAA
+   * NIST
+   * Hightrust
+   * etc.
+   <br /><br />
+
+The trouble with standards is that they are in PDF and Excel files.
+
+
+<a name="PolicyCheckTools"></a>
+
+### Programs processing Policy as Code
+
+PROTIP: To prevent vulnerabilities <srong>before</strong> they are manifested in resources on the internet,
+several groups have created programs which can <strong>automatically attest</strong> to whether a Terraform file actually meets or violates specific <strong>policies</strong> defined as code.
+
+This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
+
+<a target="_blank" href="https://github.com/iacsecurity/tool-compare">github.com/iacsecurity/tool-compare</a> 
+details each policy check and which tool performs them:
+
+   * OSS Python-based <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> by <a target="_blank" href="https://bridgecrew.io/">Bridgecrew.io</a> (acquired by Palo Alto Networks)
+   * Fremium <a target="_blank" href="https://www.indeni.com/cloudrail">Indeni Cloudrail</a>
+   * OSS Go-based <a target="_blank" href="https://github.com/Checkmarx/kics">Kics</a> (Keeping Infrastructure as Code Secure) by Checkmarx
+   * Freemium <a target="_blank" href="https://snyk.io/">Snyk</a>
+   * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
+   * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
+   * SonarQube
+   * Terraform Enterprise Sentinel
+   * Terraform FOSS with Atlantis
+   <br /><br />
+
+STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
+
+Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
+
+
+
 <a name="Terragoat"></a>
 
-## Terragoat for learning
+### Terragoat for learning
 
    <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
 
@@ -592,6 +697,50 @@ xs3.tf <em>- key management service</em>
    PROTIP: BLAH: These are a few of the 200+ AWS services.
    
    QUESTION: How will you know when new AWS services become available or deprecated?
+
+
+
+<hr />
+
+<a name="Cloudrail"></a>
+
+## Install Security Scanners
+
+<a target="_blank" href="https://github.com/iacsecurity/tool-compare">https://github.com/iacsecurity/tool-compare</a> lists specific tests (of vulnerability) and which products can detect each.
+
+<a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> is an OSS static scanner of Terraform, AWS Cloud Formation, and Azure ARM templates.
+
+<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
+
+When run on local envrionments, security scanning achieves "shift left". 
+
+
+<a name="TFLint"></a>
+
+### Terraform Enterprise TFLint
+
+   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
+
+   Terraform Enterprise automatically stores the history of all state revisions.
+   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
+   Terraform Enterprise has producers (experts) and read-only consumers.
+   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
+   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
+
+   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
+
+   * Set to public instead of private?
+   
+   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
+
+   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
+
+
+<a name="InstallCheckov"></a>
+
+### Install Checkov scanner
 
 1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
 1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
@@ -661,12 +810,12 @@ Check: CKV_AWS_211: "Ensure RDS uses a modern CaCert"
 
 1. Remove the file to save disk space.
 
-1. Scan a directory (folder):
+1. Scan a directory (folder), such as from <a href="#Terragoat">Terragoat</a>:
 
    <pre><strong>checkov -d aws</strong></pre>
 
 
-   ### full-fast-fail
+   ### Install full-fast-fail scanner
 
    This library is not yet in Homebrew, so:
 
@@ -674,6 +823,22 @@ Check: CKV_AWS_211: "Ensure RDS uses a modern CaCert"
 cd full-fast-fail
 ./checker.sh
    </pre>
+
+<hr />
+
+## Other PaC (OPA, AWS SCPs)
+
+There is an alternative to the proprietary Terraform Sentinel policy language: <a target="_blank" href="https://regula.dev/">Regula</a>, which is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
+
+Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
+<a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
+Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
+
+The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
+
+Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
+
+OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub Actions</a> to alert about noncompliant IaC code.
 
 
 <hr />
@@ -712,7 +877,7 @@ https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-
 
 <a name="Tutorials"></a>
 
-## Tutorials - 
+## Tutorials
 
 https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
 HashiCorp Certified: Terraform Associate Practice Exam 2021
@@ -772,7 +937,7 @@ CF/CFN (Cloud Formation) limits the size of objects uploaded to S3.
 Can’t really do that with CFN alone. Even though Cloud Formation has <strong>nested stack</strong> only for AWS.
 
 AWS Cloud Formation and Terraform can both be used at the same time.
-Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <strong>drift detection</strong> using Bridgecrew.
+Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <a href="#DriftManagement"><strong>drift detection</strong> using Bridgecrew</a>.
 
 <a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
 Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
@@ -789,63 +954,6 @@ References about CFN:
 
 
 
-<a name="ConfigMgmt"></a>
-
-### Configuration Management
-
-<table border="1" cellpadding="4" cellspacing="0">
-<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
-   </th><th>Infra.</th><th>Lang.
-   </th><th>Agent</th><th>Master</th></tr>
-</thead><tbody>
-<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td><a href="#Declarative">Declarative</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td ><a href="#Declarative">Declarative</a>
-   </td><td>Yes</td><td>Yes</td></tr>
-<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing
-   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
-   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
-   </td><td>No</td><td>No</td></tr>
-</tbody></table>
-
-Terraform and Ansible can work in unison, complementing each other. Terraform bootstraps the underlying cloud infrastructure for Ansible to configure app settings and the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
-
-
-<a name="Procedural"></a>
-<a name="Declarative"></a>
-
-<strong>"Procedural"</strong> means "programmatic" as in a Python or JavaScript program applies logic.
-This means procedures need to be written to check whether a desired resource is available before provisioning,
-then logic is needed to check whether the provisioning command was effective.
-
-<strong>"Declarative"</strong> means a (yaml format) file defines what is desired, and the system makes it so. tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
-   
-IaC code is <strong>idempotent</strong> (repeated runs results in what is described, and does not create additional items with every run). Terraform takes action only when needed (called "convergence" principle).
-
-Terraform manages explicit and implicit (assumed) dependencies automatically.
-
-Terraform automatically takes care of performing in the correct sequence.
-
-
-<a name="Immutable"></a>
-
-### Immutable?
-
-PROTIP: WARNING: Terraform does not support rollbacks of changes made.
-
-"Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
-
-Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
-
-
 <hr />
 
 <a name="DependencyGraph"></a>
@@ -857,7 +965,7 @@ Immutable and idempotent means "when I make a mistake in a complicated setup, I 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=45m26s">VIDEO</a>:
 The above <strong>Resource Graph</strong> visual representation of dependencies can be created by this command:
 
-   <pre>terraform graph | dot -Tsvg > graph.svg</pre>
+   <pre><strong>terraform graph | dot -Tsvg > graph.svg</strong></pre>
 
    The command makes use of Graphviz, which creates graphs specified in the DOT language, with the file name extension <tt>.gv</tt>
 
@@ -871,22 +979,6 @@ A more colorful format using <a target="_blank" href="https://github.com/28mm/bl
 There is also a "webgraphwiz" tool.
 
 <hr />
-
-<a name="ParallelExecution"></a>
-
-### Parallel execution
-
-A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed.
-
-Under the covers, Terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
-
-When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
-
-Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
-
-
-https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
-
 
 <hr />
 
@@ -1150,7 +1242,6 @@ Global options (use these before the subcommand, if any):
    <pre><strong>terraform plan --help</strong></pre>
 
 
-
    <a name="Console"></a>
 
    ### Terraform Console
@@ -1178,6 +1269,31 @@ Global options (use these before the subcommand, if any):
    You should now be at your operating system console.
 
 
+<a name="Fmt"></a>
+
+### fmt HCL Coding Conventions
+
+Terraform language style conventions include:
+
+  * A block definition must have block content delimited by "{" and "}" starting on the same line as the block header.
+
+  * Indent using two spaces (not tabs).
+
+  * A space before and after "=" assignment is not required, but makes for easier reading.
+
+1. To validate whether HCL files are syntactically valid and internally consistent, regardless of any provided variables or existing state. Also, correctness of attribute names and value types:
+
+   <pre><strong>terraform validate</strong>
+
+   This is automatically run when terraform plan or terraform apply is run.
+
+1. To reformat HCL files according to rules.
+
+   <pre><strong>terraform fmt</strong>
+
+   This is a destructive command, so make sure to <tt>git commit</tt> before the command.
+
+
 <hr />
 
 <a name="FileStructure"></a>
@@ -1187,7 +1303,8 @@ Global options (use these before the subcommand, if any):
 According to 
    * https://www.terraform.io/language/modules/develop/structure
    * https://www.baeldung.com/ops/terraform-best-practices
-the root folder for a Terraform module should contain these files:
+
+The root folder for a Terraform module should contain these files:
 
 * README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
 
@@ -1203,19 +1320,12 @@ The above set of files are repeated in each folder containing a nested module:
 * modules/
    * <em>IAM</a>
       * README.md
-      * variables.tf
-      * main.tf
-      * outputs.tf
+      * <a href="#variables.tf">variables.tf</a>
+      * <a href="#main.tf">main.tf</a>
+      * <a href="#Outputs.tf">outputs.tf</a>
    * <em>Network</a>
       * ...
 * examples
-
-
-<a name="ScriptInit"></a>
-
-## Sample Terraform scripts
-
-<a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
 
 
 <a name="HCL"></a>
@@ -1284,7 +1394,7 @@ The above set of files are repeated in each folder containing a nested module:
 
    Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
 
-   Interpolations can contain logic and mathematical operations, such as abs(), replace(string, search, replace).
+   Interpolations can contain logic and mathematical operations, such as <tt>abs()</tt>, replace(string, search, replace).
 
    HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
 
@@ -1293,7 +1403,6 @@ The above set of files are repeated in each folder containing a nested module:
    It's not backward compatible, with no direct migration path.
 
    Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
-
 
 
 <hr />
@@ -1340,20 +1449,6 @@ module installs Hashicorp's own Vault and Consul on <a target="_blank" href="htt
 <a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">Video of demo</a> by Yevgeniy Brikman:
 <a target="_blank" title="terraform-mod-vaults-1168x207-37317.jpg" href="https://user-images.githubusercontent.com/300046/39780285-1426518c-52c9-11e8-9544-8cac52ff2297.jpg">
 <img alt="terraform-mod-vaults-640x114-16475.jpg" width="640" src="https://user-images.githubusercontent.com/300046/39780240-da22a9b8-52c8-11e8-995e-e8c4a7ce325e.jpg"></a>
-
-The above is created by making use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
-
-   <pre><strong>terraform init hashicorp/vault/aws
-   </strong></pre>
-
-It's got 33 resources. The sub-modules are:
-
-   * private-tls-cert (for all providers)
-   * vault-cluster (for all providers)
-   * vault-lb-fr (for Google only)
-   * vault-elb (for AWS only)
-   * vault-security-group-rules (for AWS only)
-   <br /><br />
 
 
 ### Why Modules
@@ -1418,12 +1513,11 @@ For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
    }
    </pre>
 
-
-
+<a name="CommunityModules"></a>
 
 ### Community modules
 
-Terrafrom provides its own <a href="#Modules">modules</a>. But where Terraform comes up short, customer administrators can write <a href="#Modules">modules</a> of their own to add more logic to continue using declarative specifications (templates). Thus Terraform defines the "desired state configuration" (DSC). 
+Terrafrom provides its own <a href="#Modules">modules</a>. 
 
 Terraform Modules are how to add "smartness" to manage each DevOps component:
 
@@ -1440,7 +1534,6 @@ is a Go library that makes it easier to write automated tests for your infrastru
 https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
 https://terratest.gruntwork.io/
 https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
-
 
 * <a target="_blank" href="
    https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
@@ -1462,6 +1555,17 @@ at Oct 12, 2017
 How to: Introduction to Terraform Modules</a>
 Nov 18, 2016 by Giuseppe B
 
+<a name="CustomModules"></a>
+
+### Custom modules
+
+To add more logic to continue using declarative specifications (templates), administrators can write <a href="#Modules">modules</a> of their own. 
+
+Thus Terraform defines the "desired state configuration" (DSC). 
+
+1. To get (download and update) modules in the root module <strong>without initializing state or pull provider binaries</strong> like <tt>terraform init</tt>:
+
+   <pre><strong>terraform get</strong></pre>
 
 
 <a name="ProviderCreds"></a>
@@ -1558,62 +1662,55 @@ is 0.15.0. You can update by downloading from https://www.terraform.io/downloads
 
    See what is the <a target="_blank" href="https://releases.hashicorp.com/terraform/">latest version</a> and <a target="_blank" href="https://github.com/terraform-providers/terraform-provider-azure/releases">details for each release</a>.
 
-1. Got storage?
 
-1. Navigate to your default folder:
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/">
+Terraform on Azure documentation</a> index by Microsoft:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/overview">Terraform with Azure</a> on Microsoft Docs summary
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell">Quickstart: Configure Terraform using Azure Cloud Shell</a>
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-powershell">Quickstart: Configure Terraform using Azure PowerShell</a>
+   * https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows to pass in a ps to run, referenced in https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583448#overview
 
-   <pre><strong>cd clouddrive</strong></pre>
+Videos:
+   * <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">
+   1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io at https://github.com/CloudSkills/Terraform-Projects/tree/master/4-Build-Azure-Infrastructure
+   * <a target="_blank" href="https://www.udemy.com/course/learning-terraform-on-microsoft-azure/">Learning Terraform on Microsoft Azure - Terraform v12 / v13</a>
 
-1. Use Git (installed by default):
 
-   <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
-cd terraform-on-azure
+<hr />
+
+<a name="tfinit"></a>
+
+## terraform init
+
+   <tt>terraform init</tt> is run again if you modify or change dependencies.
+
+1. To <strong>Download and install binaries of providers and modules</strong>, initialize each new Terraform project folder:
+
+   <pre><strong>terraform init hashicorp/vault/aws
    </strong></pre>
 
-   The repo contains these folders:
-   * 01-intro
-   * 02-init-plan-apply-destroy
-   * 03-terraform-state
-   * 04-variables
-   * 05-modules
-   * 06-advanced-hcl
+   The above makes use of <a target="_blank" href="https://github.com/hashicorp/terraform-aws-vault">https://github.com/hashicorp/terraform-aws-vault</a> stored as sub-folder <tt>hashicorp/vault/aws</tt>
+
+   It's got 33 resources. The sub-modules are:
+
+   * private-tls-cert (for all providers)
+   * vault-cluster (for all providers)
+   * vault-lb-fr (for Google only)
+   * vault-elb (for AWS only)
+   * vault-security-group-rules (for AWS only)
    <br /><br />
 
-1. To add the tfstate file specification in .gitignore file:
+   Alternately, to skip default installation of plugins:
 
-   <pre><strong>echo "terraform.tfstate" >>.gitignore
+   <pre><strong>terraform init hashicorp/vault/aws -get-plugins-false
    </strong></pre>
 
-   <a name="VSCode"></a>
+   Alternately, to install from a target folder path:
 
-   ### VSCode
-
-1. Use VSCode (installed by default) to view blocks in Terraform HCL file:
-
-   <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
-code main.tf
+   <pre><strong>terraform init hashicorp/vault/aws -plugins-dir="$PLUGIN_PATH"
    </strong></pre>
 
-   NOTE: Each key-value pair is an argument containing an expression of a text value.
-
-   Each HCL file needs to specify the (cloud) provider being used is "azure".
-
-   NOTE: Multiple providers can be specified in the same HCL file.
-
-1. Search for "Resource Group" in Terraform's Azure Provider docs:
-
-   <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
-   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs</a>
-
-   for "azurerm_resource_group".
-
-   <a name="tfinit"></a>
-
-1. <strong>Download and install binaries providers need</strong>:
-
-   <pre><strong>terraform init</strong></pre>
-
-   Response:
+   Sample response:
 
    <pre>Initializing <a href="#Backends">backends</a>...
 &nbsp;
@@ -1638,13 +1735,25 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
    </pre>
 
-   <a name="tfplan"></a>
+1. To confirm that command creates a (hidden) <tt><strong>.terraform</strong></tt> directory:
 
-   ### Terraform Plan
+   <pre><strong>ls -al .terraform
+   </strong></pre>
 
-1. What if Terrform
+1. To confirm that command creates a (hidden) <strong>dependency lock file</strong> to enforce versioning of plugins and Terraform itself:
 
-   <pre><strong>terraform plan</strong></pre>
+   <pre><strong>ls .terraform.lock.hcl
+   </strong></pre>
+
+1. Set a dependency lockfile mode:
+
+   <pre><strong>terraform init -lockfile=MODE
+   </strong></pre>
+
+1. To upgrade all plugins to the latest version (which compiles with the configuration's version constraint):
+
+   <pre><strong>terraform init -upgrade
+   </strong></pre>
 
 1. What if Terraform
 
@@ -1722,42 +1831,11 @@ code main.tf
    }
    </pre>
 
-* <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> shows use of for_each to specify hub-and-spoke netowrking.
-
-<br /><br />
-
-
-<a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/">
-Terraform on Azure documentation</a> index by Microsoft:
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/overview">Terraform with Azure</a> on Microsoft Docs summary
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-cloud-shell">Quickstart: Configure Terraform using Azure Cloud Shell</a>
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/developer/terraform/get-started-powershell">Quickstart: Configure Terraform using Azure PowerShell</a>
-   * https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows to pass in a ps to run, referenced in https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583448#overview
-
-Videos:
-   * <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">
-   1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io at https://github.com/CloudSkills/Terraform-Projects/tree/master/4-Build-Azure-Infrastructure
-   * <a target="_blank" href="https://www.udemy.com/course/learning-terraform-on-microsoft-azure/">Learning Terraform on Microsoft Azure - Terraform v12 / v13</a>
-
 Docs:
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
-   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
-   * https://opensource.com/article/20/7/terraform-kubernetes
-
-
+   * <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> shows use of for_each to specify hub-and-spoke networking.
 
 
 <hr />
-
-
-<a name="fmt"></a>
-
-### fmt HCL Coding Conventions
-
-The <strong>fmt</strong> command reformats HCL files according to rules.
-
-* A space before and after "=" assignment is not required, but makes for easier reading.
 
 
 ### Environment variables
@@ -1768,6 +1846,18 @@ The <strong>fmt</strong> command reformats HCL files according to rules.
 
    But unlike other systems, enviornment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
 
+<hr />
+
+<a name="DriftManagement"></a>
+
+## Drift management
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
+
+
+
+
+<a name="Cloudposse"></a>
 
 ### Cloudposse
 
@@ -1816,7 +1906,6 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191">
    https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191</a>
 
-   <a name="Terragrunt"></a>
 
 
 
@@ -1833,43 +1922,6 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
 
 
-
-<a name="Cloudrail"></a>
-
-### Security Scanners
-
-<a target="_blank" href="https://github.com/iacsecurity/tool-compare">https://github.com/iacsecurity/tool-compare</a> lists specific tests (of vulnerability) and which products can detect each.
-
-<a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> is an OSS static scanner of Terraform, AWS Cloud Formation, and Azure ARM templates.
-
-<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
-
-When run on local envrionments, security scanning achieves "shift left". 
-
-
-<a name="TFLint"></a>
-
-### Terraform Enterprise TFLint
-
-   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
-
-   Terraform Enterprise automatically stores the history of all state revisions.
-   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
-   Terraform Enterprise has producers (experts) and read-only consumers.
-   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
-   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
-
-   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
-
-   * Set to public instead of private?
-   
-   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
-
-   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
-
-
 <a name="StateS3"></a>
 
 ## Saving tfstate in S3 Backend
@@ -1883,8 +1935,7 @@ In a team environment, it helps to store state state files off a local disk and 
    VIDEO: Terraform Remote State on Amazon S3</a>
    describes use of a  file named <strong>`backend.tf`</strong>, such as <a target="_blank" href="https://github.com/Cloud-Yeti/aws-labs/blob/master/terraform-aws/lesson4-s3-backend-state-file/backend.tf">this AWS S3 specification</a>, after substituting "<em>YouOwn</em>" with the (globally unique) S3 bucket name defined with the current AWS credentials:
 
-   <pre>
-terraform {
+   <pre>terraform {
   backend "s3" {
     bucket = "<em>YouOwn</em>-terraform"
     key    = "terraform.tfstate"
@@ -1893,46 +1944,42 @@ terraform {
 }
    </pre>
 
+   <a name="State"></a>
+
    ### Apply to create tfstate
 
-1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
+1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance:
 
-   <pre>tf apply</pre>
+   <pre>terraform apply -auto-approve</pre>
 
-1. Confirm by typing "yes".
+   The console shows resources provisioned in the cloud.
 
-   A new file `terraform.tfstate` is created to save the configuration state.
+1. If "-auto-approve" was not specified, responde to the prompt by typing "yes".
 
-1. Manually verify on the AWS Management Console webpage set to service S3.
+   Apply creates a new file <strong><tt>terraform.tfstate</tt></strong> define the status/condition of cloud resources at a specific time.
+
+   NOTE: Subsequent to apply, any command that modify state results in a <tt><strong>terraform.tfstate.backup</strong></tt> created to store tfstate before it changes.
+
+1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
    <a name="DestroyState"></a>
    
-   ### Destroy tfstate
+   ### Destroy state
 
 1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
 
-   <pre>tf destroy</pre>
+   <pre>terraform destroy</pre>
 
 1. Confirm by typing "yes".
 
-   The file `terraform.tfstate` should be deleted.
+1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
-1. Manually verify on the AWS Management Console webpage set to service S3.
+   <a name=".gitignore"></a>
 
+1. Prevent these files to be added in GitHub and thus saved publicly, in file <tt>.gitignore</tt>:
 
-### Validate .tf files
-
-1. Navigate into the repo and view files in:
-
-   <tt><strong>ls single-web-server
-   </strong></tt>
-
-   The contents:
-
-   <pre>README.md    <a href="#main.tf">main.tf</a>     <a href="#Outputs.tf">outputs.tf</a>   <a href="#variables.tf">variables.tf</a>
-   </pre>
-
-   This set can be within a sub-module folder.
+   <pre><strong>echo "terraform.tfstate" >>.gitignore
+   </strong></pre>
 
 
    <a name="variables.tf"></a>
@@ -2046,8 +2093,7 @@ subnet_count = "2"
 
    The production.tfvars file usually instead contain more instances and thus subnets that go through a load balancer for auto-scaling:
 
-   <pre>
-environment_tag = "prod"
+   <pre>environment_tag = "prod"
 tenant_id = "223d"
 billing_code_tag = "PROD12345"
 dns_site_name = "marketing"
@@ -2067,8 +2113,7 @@ subnet_count = "3"
 
    PROTIP: Variables can be assigned multiple default values selected by a lookup function:
 
-   <pre>
-# AWS_ACCESS_KEY_ID
+   <pre># AWS_ACCESS_KEY_ID
 # AWS_SECRET_ACCESS_KEY
 # export AWS_DEFAULT_REGION=xx-yyyy-0
 &nbsp;
@@ -2097,8 +2142,7 @@ ami = ${lookup(var.amis, "us-east-1")}
  
    An example of the main.tf file:
 
-   <pre>
-terraform {
+   <pre>terraform {
   required_version = ">= 0.8, < 0.9"
 }
 provider "aws" {
@@ -2114,7 +2158,11 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = ["sg-a1fe66aa"]
   tags {
     Identity = "..."
+    Name = "my_server"
   }
+}
+output "public_ip"  {
+  value = aws.instance.my_server[*].public_ip
 }
    </pre>
 
@@ -2655,6 +2703,65 @@ As a general rule, use Ansible for repetitive on-going maintenance tasks such as
    NOTE: Ansible Tower cannot be used with Terraform.
 
 
+<a name="ConfigMgmt"></a>
+
+### Configuration Management
+
+<table border="1" cellpadding="4" cellspacing="0">
+<thead><tr><th>&nbsp;</th><th>Maturity</th><th>Community</th><th>Type
+   </th><th>Infra.</th><th>Lang.
+   </th><th>Agent</th><th>Master</th></tr>
+</thead><tbody>
+<tr valign="top"><td>Puppet</td><td>2005 High</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td><a href="#Declarative">Declarative</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>Chef</td><td>2009 High</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>SaltStack</td><td>2011 Medium</td><td>Large
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td ><a href="#Declarative">Declarative</a>
+   </td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top"><td>Ansible</td><td>2012 Medium</td><td>Huge, fastest growing
+   </td><td><a href="#ConfigMgmt">Config. Mgmt.</a>
+   </td><td>Mutable</td><td><a href="#Procedural">Procedural</a>
+   </td><td>No</td><td>No</td></tr>
+</tbody></table>
+
+Terraform and Ansible can work in unison, complementing each other. Terraform bootstraps the underlying cloud infrastructure for Ansible to configure app settings and the user space. To test a service on a dedicated server, skip using Terraform and run the Ansible playbook on that machine. Derek Morgan has a <a target="_blank" href="https://github.com/linuxacademy/terransible">"Deploy to AWS with Ansible and Terraform" video class</a> at LinuxAcademy which shows how to do just that, with <a target="_blank" href="https://github.com/linuxacademy/terransible">code</a> and <a target="_blank" href="https://www.lucidchart.com/documents/view/c1ceaa2b-647c-49bd-9dca-bcaffc04be3b">diagram</a>.
+
+
+<a name="Procedural"></a>
+<a name="Declarative"></a>
+
+<strong>"Procedural"</strong> means "programmatic" as in a Python or JavaScript program applies logic.
+This means procedures need to be written to check whether a desired resource is available before provisioning,
+then logic is needed to check whether the provisioning command was effective.
+
+<strong>"Declarative"</strong> means a (yaml format) file defines what is desired, and the system makes it so. tf files are <strong>declarative</strong>, meaning that they define the desired end-state (outcomes). If 15 servers are declared, Terraform automatically adds or removes servers to end up with 15 servers rather than specifying procedures to add 5 servers. Terraform can do that because <strong>Terraform knows how many servers it has setup already</strong>.
+   
+IaC code is <strong>idempotent</strong> (repeated runs results in what is described, and does not create additional items with every run). Terraform takes action only when needed (called "convergence" principle).
+
+Terraform manages explicit and implicit (assumed) dependencies automatically.
+
+Terraform automatically takes care of performing in the correct sequence.
+
+
+<a name="Immutable"></a>
+
+### Immutable?
+
+PROTIP: WARNING: Terraform does not support rollbacks of changes made.
+
+"Immutable" means once instantiated, components cannot be changed. In DevOps, this strategy means individual servers are treated like "cattle" (removed from the herd) and not as "pets" (courageously kept alive as long as possible).
+
+Immutable and idempotent means "when I make a mistake in a complicated setup, I can get going again quickly and easily with less troubleshooting because I can just re-run the script."
+
+
+
+
 
 <hr />
 
@@ -2708,15 +2815,43 @@ private_key_path = "C:\\MyKeys1.pem"
    You can pass profile name by --profile option.
 
 
-
-
 <hr />
 
-<a name="TerraformPlan"></a>
+<a name="tfplan"></a>
 
-## Terraform Plan
+## Terraform Plan command
 
-1. Have Terrform evaluate based on vars in a different (parent) folder:
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h18m9s">VIDEO</a>:
+
+   A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed.
+
+1. A simple way 
+
+   <pre><strong>terraform plan -out=happy.plan
+   </strong></pre>
+
+   A sample response:
+
+   <pre>"&LT;computered>" means Terraform figures it out.
+   </pre>
+
+   Under the covers, terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
+
+   The Terraform Plan file output is a binary file (machine code).
+
+   <a name="ParallelExecution"></a>
+
+   ### Parallel execution
+
+   When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
+
+   Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
+
+   * https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
+
+   ### A more sophisticated plan
+
+   Alternately, a more sophisticated way to have Terrform evaluate based on vars in a different (parent) folder:
 
    <pre><strong>terraform plan \
       -var 'site_name=demo.example.com' \
@@ -2736,31 +2871,71 @@ private_key_path = "C:\\MyKeys1.pem"
 
    The "%s" yields a date stamp like 147772345 which is the numer of seconds since the 1/1/1970 epoch.
 
-   A sample response:
-
-   <pre>"&LT;computered>" means Terraform figures it out.
-   </pre>
-
    Pluses and minuses flag additions and deletions. This is a key differentiator for Terraform as a ""
 
    Terraform creates a dependency graph (specfically, a Directed Acyclic Graph).
    This is so that nodes are built in the order they are needed. 
 
 
-   <a name="TerraformApply"></a>
+   <a name="tfapply"></a>
 
    ### Terraform apply
 
-1. Type:
+   <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h1m31s">VIDEO</a>:
 
-   <tt><strong>terraform apply "happy.plan"
-   </strong></tt>
+1. Process the plan created by <tt>terraform plan</tt>
 
-   Alternately,
+   <pre><strong>terraform apply "happy.plan"
+   </strong></pre>
 
-   <tt><strong>terraform apply -state=".\develop\dev.state" \
+   REMEMBER: `terraform apply` generates a <strong><tt>terraform.tfstate</tt></strong> file (containing JSON) to persist the state of runs by mapping resource IDs to their data. There is a one-to-one mapping of resource instances to remote objects in the cloud. 
+
+   Alternately, to specify the state file's output name and attribute:
+
+   <pre><strong>terraform apply -state=".\develop\dev.state" 
       -var="environment_name=development"
-   </strong></tt>
+   </strong></pre>
+
+   Within the file, "version" defines the version of the tfstate JSON format.
+   The "terraform_version" is the <a href="#tf_version">terraform program version</a>.
+   , the file contains a <strong>serial</strong> number to increment every time the file itself changes.
+
+<!--   <pre>dns_names = [
+      [
+         359f20b2-673d-6300-e918-fcea6a314a26.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone,
+         happy-randomizer.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone
+      ]
+   ]
+   primaryIp = [
+      165.225.173.96
+   ]
+   </pre>   
+-->
+
+1. List resources in the state:
+
+   <pre0<strong>terraform state list</strong></pre>
+
+1. Pull current remote state and output to stdout:
+
+   <pre0<strong>terraform state pull</strong></pre>
+
+1. Push (update) remote state from a local state:
+
+   <pre0<strong>terraform state push</strong></pre>
+1. Show a specific resource in the state:
+
+   <pre0<strong>terraform state show</strong></pre>
+
+1. Move an item in the state (to change the reference) instead of renaming a module, which would result in a create and destroy action:
+
+   <pre0<strong>terraform state mv</strong></pre>
+
+1. Remove instances from the state:
+
+   <pre0<strong>terraform state rm</strong></pre>
+
+   ### Alternative
 
    Alternative specification of environment variable:
 
@@ -2770,7 +2945,7 @@ private_key_path = "C:\\MyKeys1.pem"
    Values to Terraform variables define inputs such as run-time DNS/IP addresses into 
    <a href="#Modules">Terraform modules</a>.
 
-   What apply does:
+   What terraform apply does:
 
    1. Generate model from logical definition (the Desired State).
    2. Load current model (preliminary source data).
@@ -2784,19 +2959,6 @@ private_key_path = "C:\\MyKeys1.pem"
    https://terraform.io/docs/configuration/interpolation.html">
    https://terraform.io/docs/configuration/interpolation.html</a>
 
-   Sample response from terraform apply:
-
-   <pre>dns_names = [
-      [
-         359f20b2-673d-6300-e918-fcea6a314a26.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone,
-         happy-randomizer.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone
-      ]
-   ]
-   primaryIp = [
-      165.225.173.96
-   ]
-   </pre>   
-
 
 <a name="State"></a>
 
@@ -2805,11 +2967,9 @@ private_key_path = "C:\\MyKeys1.pem"
 <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
 Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
 
+<a name="AWSStateMgmt"></a>
    Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
    users needs to manage state (using Terraform features).
-
-   `terraform apply` generates <strong>.tfstate</strong> files (containing JSON) to persist the state of runs by mapping resource IDs to their data. In addition to the terraform program version, the file contains a <strong>serial</strong> number to increment every time the file itself changes.
-
 
    PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
 
@@ -2995,81 +3155,6 @@ Developers and Operations people type <tt><strong>atlantis plan</strong></tt> an
 
 https://www.youtube.com/watch?v=bUWmJFzBh0A
 
-<hr />
-
-## Policy as Code
-
-To use something like a pro, you need to get past mistakes newbies make.
-
-Especially in today's hostile internet, we can't afford to stumble around hoping nobody will notice.
-
-So here is a way we can gain confidence by <strong>identifying and fixing known-bad</strong> Terraform configuration code.
-
-
-### What issues to look for?
-
-There are several industry standards which prescribe "controls" and configurations:
-
-   * AWS Foundations referenced by the AWS Security Hub service
-   * CIS
-
-   * SOC2
-   * ISO
-   * FedRAMP
-
-   * PCI
-   * HIPAA
-   * NIST
-   * Hightrust
-   * etc.
-   <br /><br />
-
-The trouble with standards is that they are in PDF and Excel files.
-
-
-<a name="PolicyCheckTools"></a>
-
-### Programs processing Policy as Code
-
-PROTIP: To prevent vulnerabilities <srong>before</strong> they are manifested in resources on the internet,
-several groups have created programs which can <strong>automatically attest</strong> to whether a Terraform file actually meets or violates specific <strong>policies</strong> defined as code.
-
-This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
-
-<a target="_blank" href="https://github.com/iacsecurity/tool-compare">github.com/iacsecurity/tool-compare</a> 
-details each policy check and which tool performs them:
-
-   * OSS Python-based <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> by <a target="_blank" href="https://bridgecrew.io/">Bridgecrew.io</a> (acquired by Palo Alto Networks)
-   * Fremium <a target="_blank" href="https://www.indeni.com/cloudrail">Indeni Cloudrail</a>
-   * OSS Go-based <a target="_blank" href="https://github.com/Checkmarx/kics">Kics</a> (Keeping Infrastructure as Code Secure) by Checkmarx
-   * Freemium <a target="_blank" href="https://snyk.io/">Snyk</a>
-   * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
-   * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
-   * SonarQube
-   * Terraform Enterprise Sentinel
-   * Terraform FOSS with Atlantis
-   <br /><br />
-
-STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
-
-Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
-
-<hr />
-
-## Other PaC (OPA, AWS SCPs)
-
-There is an alternative to the proprietary Terraform Sentinel policy language: <a target="_blank" href="https://regula.dev/">Regula</a>, which is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
-
-Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
-<a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
-Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
-
-The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
-
-Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
-
-OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub Actions</a> to alert about noncompliant IaC code.
-
 
 <hr />
 
@@ -3125,6 +3210,7 @@ OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub
     Note that apply creates tfstate files.
 
 10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
+
 
 <hr />
 
@@ -3195,12 +3281,6 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
 
    * <a target="_blank" href="https://www.ybrikman.com/writing/2016/03/31/infrastructure-as-code-microservices-aws-docker-terraform-ecs/">
    BLOG: Infrastructure as code: running microservices on AWS using Docker, Terraform, and ECS</a> Mar 31, 2016
-
-<hr />
-
-<a name="Heros"></a>
-
-## Heros
 
 <strong>Anton Babenko</strong> (<a target="_blank" href="https://github.com/antonbabenko/terraform-aws-devops/">github.com/antonbabenko</a> <a target="_blank" href="https://www.linkedin.com/in/antonbabenko/">linkedin</a>)
 
@@ -3329,6 +3409,12 @@ Manage SSH with HashiCorp Vault</a>
 https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scalable-dynamic-and-error-resistant-terraform-dcbd6a0ada6a
 
 <a target="_blank" href="https://www.youtube.com/watch?v=YcJ9IeukJL8">2 hr. VIDEO: Terraform for DevOps Beginners</a> + <a target="_blank" href="https://beta.kodekloud.com/courses/lab-terraform-for-beginners/">Labs</a> by Vijin Palazhi.
+
+Docs on Terraform Kubernetes:
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
+   * https://opensource.com/article/20/7/terraform-kubernetes
 
 
 
