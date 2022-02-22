@@ -83,7 +83,9 @@ They can disseminate knowledge (though thoughtful blogs, videos, Slack posts, em
 
 Their success is based on their ability to build strong partnerships at all levels across the enterprise. So they need strong communication skills, both written and verbal. I mean <strong>next level</strong> persuasiveness. 
 
-Thus, courses on negotiation at MasterClass.com and "Difficult Conversations" stress being a good listener by showing empathy; and maintaining curiosity rather than positions.
+Thus, courses on negotiation at <a target="_blank" href="https://online.hbs.edu/courses/negotiation/">HBR</a>, MasterClass.com; as well as "Difficult Conversations" emphasize  being a good listener by showing empathy; maintaining curiosity rather than conflicting positions; and keeping focused on moving forward toward mutual value. 
+
+Distinguished Engineers need to have developed a high level of <a target="_blank" href="https://online.hbs.edu/blog/post/emotional-intelligence-in-leadership">emotional intelligence</a>.
 
 
 ## How to Become a Distinguished Engineer
