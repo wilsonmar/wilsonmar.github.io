@@ -111,17 +111,6 @@ Here's my advice based on what I have tried:
    * Become certified in the products your organization offers
    <br /><br />
 
-<strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
-
-   * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors asked of your vendors.
-   * Even if your organization is dependent on a single cloud vendor, be able to implement a multi-cloud using open technologies:
-   
-     - Open <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Kubernetes</a> services
-     - Open databases (MariaDB, MongoDB, Apache Casandra) instead of AWS DynamoDB or Aurora
-     - Standard networking protocols (BGP, 802.1q)
-     - Open Linux (Ubuntu, Red Hat, CentOS) instead of AWS Linux2
-   <br /><br />
-
 Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV, doom-scrolling, and playing games, spend your nights and weekends learning and getting certified on technologies.
 
    * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub and other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
@@ -131,6 +120,18 @@ Distinguished Engineers need knowledge that's <strong>both wide and deep</strong
    * Build websites for non-profits and friends to hone your front-end development skills
    * Participate in hackathons to hone your base libraries and automation
    * Use interview preparation sites to see what some find to be important
+   <br /><br />
+
+<strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
+
+   * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors asked of your vendors.
+   * Even if your organization is dependent on a single cloud vendor, be able to implement open technologies using a single availability zone (data center) in two clouds (AWS, Azure, GCP):
+   
+     - Open <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Kubernetes</a> services
+     - Open databases (MariaDB, MongoDB, Apache Casandra) instead of AWS DynamoDB or Aurora
+     - Standard networking protocols (802.1q, BGP for load sharing and optimized routing)
+     - Open Linux (Ubuntu, Red Hat, CentOS) instead of AWS Linux2
+     - Commercial non-cloud-specific tools, marketplace firewalls, and VPN concentrators that can hold a nearly identical configuration in both clouds (Cisco, Palo Alto, Fortinet, Checkpoint, etc.).
    <br /><br />
 
 Distinguished Engineers typically <strong>represent their organization externally</strong> when speaking at public events (contributions to open source software, conferences, user groups, meetups, webinars, hackathons, etc.). 
