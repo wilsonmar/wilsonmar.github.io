@@ -116,7 +116,7 @@ Here's my advice based on what I have tried:
    * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors asked of your vendors.
    <br /><br />
 
-Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV and playing games, spend your nights and weekends learning and getting certified on technologies.
+Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV, doom-scrolling, and playing games, spend your nights and weekends learning and getting certified on technologies.
 
    * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub and other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
 
