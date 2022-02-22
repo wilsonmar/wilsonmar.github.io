@@ -114,6 +114,12 @@ Here's my advice based on what I have tried:
 <strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
 
    * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors asked of your vendors.
+   * Even if your organization is dependent on a single cloud vendor, be able to implement a multi-cloud using open technologies:
+   
+     - Open <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Kubernetes</a> services
+     - Open databases (MariaDB, MongoDB, Apache Casandra) instead of AWS DynamoDB or Aurora
+     - Standard networking protocols (BGP, 802.1q)
+     - Open Linux (Ubuntu, Red Hat, CentOS) instead of AWS Linux2
    <br /><br />
 
 Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV, doom-scrolling, and playing games, spend your nights and weekends learning and getting certified on technologies.
