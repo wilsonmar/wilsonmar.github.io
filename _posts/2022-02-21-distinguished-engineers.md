@@ -19,13 +19,13 @@ Organizationally, Distinguished Engineers are still individual contributors, but
 
 In terms of status and pay Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees. So they get a "seat at the table".
 
-> To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify unintended consequences of decisions.
+> To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify and mitigate unintended consequences of decisions involving technology and technology workers.
 
 Why is that necessary? Aren't Officers, Directors, and Vice Presidents suppose to be the voice of the people under them? 
 
 Executive managers are focused primarily on business financial objectives.
 
-Distinguished Engineers stand ready to translate technical jargon to executive management terminology and concepts.
+Distinguished Engineers stand ready to translate technical jargon and concepts to (largely financial) executive management terminology and concepts such as Payback Period, Break-Even Analysis, ARR, NPV, IRR, WACC, EAC, Risk, ROA, ROIC, EBITDA, CAGR, CapEx, Balanced Scorecard, KPI, TBL, PEG, QOQ, SWOT, and other <a target="_blank" href="https://www.investopedia.com/financial-term-dictionary-4769738">financial tools</a>.
 
 Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams.
 
