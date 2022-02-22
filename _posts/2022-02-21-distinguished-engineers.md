@@ -362,7 +362,9 @@ Even better if you have:
 
 ## Conclusion
 
-Even if you're not invited to be a Distinguish Engineer, apply to those jobs anyway.
+Even if you're not invited to be a Distinguish Engineer by an executive recruiter, apply to those jobs anyway.
+
+Or ask to be mentored by a Distinguished Engineer.
 
 And strive to become one by improving yourself and contributing to others.
 
