@@ -5,6 +5,7 @@ excerpt: "Distinguished Engineers provide the voice of technical developers and 
 tags: [DevOps, ecosystem]
 date: "2022-02-21"
 file: "distinguished-engineers"
+image:
 # enterprise-office-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/115942774-0c4fa680-a469-11eb-8337-d57da1650a51.png
   credit: Office-hub
