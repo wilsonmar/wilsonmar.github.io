@@ -5,11 +5,10 @@ excerpt: "Distinguished Engineers provide the voice of technical developers and 
 tags: [DevOps, ecosystem]
 date: "2022-02-21"
 file: "distinguished-engineer"
-image:
-# feature: pic data center slice 1900x500.jpg
-  feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
-  credit:
-  creditlink:
+# enterprise-office-1900x500.png
+  feature: https://user-images.githubusercontent.com/300046/115942774-0c4fa680-a469-11eb-8337-d57da1650a51.png
+  credit: Office-hub
+  creditlink: https://www.office-hub.com/different-office-types/enterprise-office-space
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -18,7 +17,7 @@ comments: true
 
 Organizationally, Distinguished Engineers are still individual contributors, but reporting directly to a VP or the CTO. 
 
-In terms of status and pay Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees.
+In terms of status and pay Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees. So they get a "seat at the table".
 
 > To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify unintended consequences of decisions.
 
@@ -122,9 +121,11 @@ Distinguished Engineers need knowledge that's <strong>both wide and deep</strong
    * Use interview preparation sites to see what some find to be important
    <br /><br />
 
+
 <strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
 
-   * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors asked of your vendors.
+   * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors ask of your cloud vendors.
+   * Know recommendations and tools from vendors around the <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">"Well Architected Framework"</a> for managing clouds
    * Even if your organization is dependent on a single cloud vendor, be able to implement open technologies using a single availability zone (data center) in two clouds (AWS, Azure, GCP):
    
      - Open <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Kubernetes</a> services
