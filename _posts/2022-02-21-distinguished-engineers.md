@@ -1,16 +1,30 @@
-distinguished-engineer.md
-
-## Individual Contributors
+---
+layout: post
+title: "Distinguished Engineers (and Fellows)"
+excerpt: "Distinguished Engineers provide the voice of technical developers and operations among executive managers"
+tags: [DevOps, ecosystem]
+date: "2022-02-21"
+file: "distinguished-engineer"
+image:
+# feature: pic data center slice 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
+  credit:
+  creditlink:
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
 
 Organizationally, Distinguished Engineers are still individual contributors, but reporting directly to a VP or the CTO. 
 
-> To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers.
+> To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify unintended consequences of decisions.
 
 Why is that necessary? Aren't Officers, Directors, and Vice Presidents suppose to be the voice of the people under them? 
 
 Executive managers are focused primarily on business financial objectives.
 
-Distinguished Engineers translate technical requests in management terminology and concepts.
+Distinguished Engineers stand ready to translate technical jargon to executive management terminology and concepts.
 
 Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams about processes:
 
@@ -20,18 +34,22 @@ Distinguished Engineers develop a sense of what technical employees want and nee
    * Data Engineering
    <br /><br />
 
+Distinguished Engineers usually have achieved <strong>both breath and depth</strong> in their knowledge.
+
 A Distinguised Engineer is akin to a senior non-commissioned offer who serves as the subject matter expert in their field (https://www.wikiwand.com/en/Master_sergeant) -- in the US: <strong>Sergeant Major</strong> in the Marines, <strong>Command Sergeant Major</strong> in the Army, <strong>Command Chief Sergeant Major</strong> in the Air Force, or <strong>Master Chief Petty Officer</strong> in the Navy.
 
 
 ## Not just a honorific
 
-So I disagree with statements in https://qr.ae/pGQP7S that "Distinguished Engineer" is an "award" for talent and accomplishment where "a Principal Engineer is a 1st string NFL starter, a Distinguished Engineer is a Pro Bowler or MVP, and a Fellow is a Hall of Fame inductee." (In some organizations "Distinguished Engineer" is the highest engineering position, in others (Google, Bell Labs) there is a higher "Fellow" level.)
+In some organizations "Distinguished Engineer" is the highest engineering position, in others (Google, Bell Labs) there is a higher "Fellow" level.
 
-Distinguished Engineers usually have achieved <strong>both breath and depth</strong> in their knowledge of cloud technologies, software engineering tools, data engineering and data science, artificial intelligence, block chain, and other technical delivery initiatives.
+But I disagree with statements in https://qr.ae/pGQP7S that "Distinguished Engineer" is an "award" for talent and accomplishment where "a Principal Engineer is a 1st string NFL starter, a Distinguished Engineer is a Pro Bowler or MVP, and a Fellow is a Hall of Fame inductee." 
 
 But to me, being a Distinguished Engineer is more than about techical know-how and achievement.
 
 Misunderstandings about role can lead to Distinguished Engineers feeling they should "mansplain" technical topics and give perfunctory "blessings" for technical achievements, which lead to disdain rather than respect.
+
+> My advice? Aspire to be a Distinguished Engineer not because you want a trophy as the "Top Dog", but because you desire to make a bigger impact in the lives of others. To reduce frustration, foster more security, and achieve greater properity for all.
 
 
 ## What Distinguished Engineers Do
@@ -39,21 +57,22 @@ Misunderstandings about role can lead to Distinguished Engineers feeling they sh
 But although Distinguished Engineers can be "the expert other experts go to when they have a problem," their <strong>primary role (contribution)</strong> is not just on individual projects or service, but to:
 
    * <strong>think strategically</strong>
+
    * set the stage for more <strong>innovation</strong>, speed, quality, security
+
    * ensure policies make sense to the entire organization
+
    * identify redundancies and roadblocks to productivity
+
    * lead enterprise-wide technical initiatives 
+
    * provide "thought leadership" to establish best engineering practices, methods, standards, SDLC through solid design decisions, processes and tools.
    <br /><br />
-
-Distinguished Engineers typically represent their organization externally when speaking at public events (contributions to open source software, conferences, user groups, meetups, webinars, hackathons, etc.)
-
-So they have a role in attracting and recruiting the industry’s best talent.
 
 
 ## Diplomatic Skills
 
-In terms of status and pay Distinguished Engineers are generally on the same level with a director; even though they don’t have direct reports. They’re considered executive-tier employees.
+In terms of status and pay Distinguished Engineers are generally on the same level with a director, even though they don’t many direct reports. They’re considered executive-tier employees.
 
 Distinguished Engineers <strong>influence</strong> through logic from experience and research, not positional power.
 
@@ -63,10 +82,50 @@ Distinguished Engineers learns, through reading, tutorials, relationships, and v
 
 They can disseminate knowledge (though thoughtful blogs, videos, Slack posts, emails, etc.) to "level up" others.
 
-Their success is based on their ability to build strong partnerships at all levels across the enterprise. 
+Their success is based on their ability to build strong partnerships at all levels across the enterprise. So they need strong communication skills, both written and verbal. I mean <strong>next level</strong> persuasiveness. 
 
-So they need strong communication skills, both written and verbal.
+Courses on negotiation at MasterClass.com and "Difficult Conversations" stress being a good listener by showing empathy.
 
+
+## How to Become a Distinguished Engineer
+
+Here's my advice based on what I have tried:
+
+<strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
+
+Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV and playing games, spend your nights and weekends learning and getting certified on technologies.
+
+   * Maintain a portfolio of web sites and designs you find attractive or useful
+   * Learn to build websites and databases using various technologies   
+   * Build websites for non-profits to hone your front-end development skills
+   * Participate in hackathons 
+   * Use interview preparation sites to see what some find to be important
+   <br /><br />
+
+Distinguished Engineers typically represent their organization externally when speaking at public events (contributions to open source software, conferences, user groups, meetups, webinars, hackathons, etc.). 
+
+   * Keep track of <a target="_blank" href="https://wilsonmar.github.io/tech-conferences/">industry conferences</a>, and request to speak
+   * Contact other speakers to get mentored
+
+   * Send a connection request to each person who provides you their URL to LinkedIn, such as instructors of courses
+   * Send connection requests to maintainers of open source software. Recently I messaged on LinkedIn a maintainer who was not responding to Issues, and got a reply which resolved a transitive dependency with security vulnerabilities.
+   * Write articles in Medium.com and cross-publish to other websites
+   <br /><br />
+
+Distinguished Engineers have a role in <strong>attracting and recruiting</strong> the industry’s best talent to their organization. So:
+
+   * Read the job descriptions of positions
+   * Review guidelines and training provided to those who interview candidates. There is a science to avoiding bias and identifying needed talent which doesn't shine through on resumes.
+
+   * <a target="_blank" href="https://wilsonmar.github.io/making-videos/">Get the equipment and software to make videos</a> in YouTube, TikTok, etc.
+   * Create courses on Pluralsight, Udemy, etc.
+   * Have others proof-read every page before publication
+
+   * Encourage employees to post positive reviews on Glassdoor, Indeed, etc.
+
+## References:
+
+https://leaddev.com/audience-insights/who-are-staff-principal-and-distinguished-engineers
 
 ## Home Depot Job Description
 
