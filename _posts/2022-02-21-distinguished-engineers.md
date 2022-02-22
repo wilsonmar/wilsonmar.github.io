@@ -26,15 +26,15 @@ Executive managers are focused primarily on business financial objectives.
 
 Distinguished Engineers stand ready to translate technical jargon to executive management terminology and concepts.
 
-Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams about processes:
+Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams.
+
+Distinguished Engineers usually have achieved <strong>both breath and depth</strong> in their knowledge so they can identify and achieve <strong>integration</strong> among domains such as:
 
    * Agile Transformation (Agile Sensei)
    * Site Reliability Engineering (Operations)
    * Digital (application development)
-   * Data Engineering
+   * Data Engineering (and Analytics)
    <br /><br />
-
-Distinguished Engineers usually have achieved <strong>both breath and depth</strong> in their knowledge.
 
 A Distinguised Engineer is akin to a senior non-commissioned offer who serves as the subject matter expert in their field (https://www.wikiwand.com/en/Master_sergeant) -- in the US: <strong>Sergeant Major</strong> in the Marines, <strong>Command Sergeant Major</strong> in the Army, <strong>Command Chief Sergeant Major</strong> in the Air Force, or <strong>Master Chief Petty Officer</strong> in the Navy.
 
@@ -45,7 +45,7 @@ In some organizations "Distinguished Engineer" is the highest engineering positi
 
 But I disagree with statements in https://qr.ae/pGQP7S that "Distinguished Engineer" is an "award" for talent and accomplishment where "a Principal Engineer is a 1st string NFL starter, a Distinguished Engineer is a Pro Bowler or MVP, and a Fellow is a Hall of Fame inductee." 
 
-But to me, being a Distinguished Engineer is more than about techical know-how and achievement.
+> But to me, being a Distinguished Engineer is more than about techical know-how and achievement.
 
 Misunderstandings about role can lead to Distinguished Engineers feeling they should "mansplain" technical topics and give perfunctory "blessings" for technical achievements, which lead to disdain rather than respect.
 
@@ -74,7 +74,7 @@ But although Distinguished Engineers can be "the expert other experts go to when
 
 In terms of status and pay Distinguished Engineers are generally on the same level with a director, even though they don’t many direct reports. They’re considered executive-tier employees.
 
-Distinguished Engineers <strong>influence</strong> through logic from experience and research, not positional power.
+Distinguished Engineers <strong>influence</strong> through logic from experience and research, not positional authority.
 
 They help to articulate a <strong>clear technical vision</strong>.
 
@@ -84,22 +84,26 @@ They can disseminate knowledge (though thoughtful blogs, videos, Slack posts, em
 
 Their success is based on their ability to build strong partnerships at all levels across the enterprise. So they need strong communication skills, both written and verbal. I mean <strong>next level</strong> persuasiveness. 
 
-Courses on negotiation at MasterClass.com and "Difficult Conversations" stress being a good listener by showing empathy.
+Thus, courses on negotiation at MasterClass.com and "Difficult Conversations" stress being a good listener by showing empathy; and maintaining curiosity rather than positions.
 
 
 ## How to Become a Distinguished Engineer
 
 Here's my advice based on what I have tried:
 
-Become an expert on the basics to help others get started quickly:
+<strong>Become an expert on the basics</strong> to help others get productive quickly:
 
    * <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-keyboard/">Configure keyboard shortcuts</a> and other ways to be quick and confident at using computers, so you're not fumbling around
+   * Get experts at PowerPoint, Word, Excel, Zoom, Teams, Slack, etc. to get you to the level where you can help others learn tricks you're comfortable using
+   * Collaborate with experts in the intricacies of adopting Agile and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
+
    * Configure for no long-running secrets on your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
    * Install <a target="_blank" href="https://wilsonmar.github.io/git-signing/">git with secure signing with MFA and perhaps FIDO chips</a> to provide assurance that your account is secure
    * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> so you can contribute without incident
+   
    * Create automation on cloud sandboxes (using <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>) so you can build secure production-level stacks quickly and not leave services running overnight
-
-   * Collaborate with experts in the intricacies of adopting Agile and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
+   
+   * Work with others on initiatives such as <strong>reducing onboarding time</strong> to one day or less, so new employees and contractors feel included and are enabled to be productive immediately. Such efforts can be preparation for other initiatives to improve processes.
 
    * View roadmaps of vendors' products and to vendors be an advocate for <a target="_blank" href="https://wilsonmar.github.io/enterprise-software/">enterprise features</a> your organization needs
 
@@ -273,4 +277,12 @@ Preferred Qualifications:
    * 5+ years building cloud native architectures and architecting enterprise applications on public cloud platforms (AWS, GCP, Azure)
    * 6+ years experience with DevOps or DevSecOps and building CI/CD pipelines using Jenkins, Artifactory, Chef, Ansible, AWS CloudFormation templates, GitHub, and Sonar
 
-   
+## Conclusion
+
+Even if you're not invited to be a Distinguish Engineer, apply to those jobs anyway.
+
+And strive to become one by improving yourself and contributing to others.
+
+All the best to you!
+
+// Wilson
