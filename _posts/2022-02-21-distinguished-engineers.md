@@ -4,7 +4,7 @@ title: "Distinguished Engineers (and Fellows)"
 excerpt: "Distinguished Engineers provide the voice of technical developers and operations among executive managers"
 tags: [DevOps, ecosystem]
 date: "2022-02-21"
-file: "distinguished-engineer"
+file: "distinguished-engineers"
 # enterprise-office-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/115942774-0c4fa680-a469-11eb-8337-d57da1650a51.png
   credit: Office-hub
@@ -236,6 +236,7 @@ Major Tasks, Responsibilities & Key Accountabilities:
 
 * Attracts, retains, develops, and motivates top talent (applicable if incumbent has direct reports)
 
+<hr />
 
 ### Capital One Job Description
 
@@ -285,6 +286,7 @@ Basic Qualifications:
    * Bachelor’s Degree
    * At least 8 years of experience with application architecture and design patterns
    * At least 6 years of experience with complex architectural patterns (SOA), building APIs, microservices, and event streams
+   <br /><br />
 
 Preferred Qualifications:
 
@@ -292,6 +294,68 @@ Preferred Qualifications:
    * 10+ years of experience with application architecture and design patterns.
    * 5+ years building cloud native architectures and architecting enterprise applications on public cloud platforms (AWS, GCP, Azure)
    * 6+ years experience with DevOps or DevSecOps and building CI/CD pipelines using Jenkins, Artifactory, Chef, Ansible, AWS CloudFormation templates, GitHub, and Sonar
+   <br /><br />
+
+<hr />
+
+### Verizon
+
+As a Distinguished Engineer with Verizon’s Managed Network Services team, you will use your experience and knowledge of principles, theories, and concepts of routing, switching, and security technologies to create world-class network designs for external F500 customers seeking network transformation. You will serve as the lead technical design and architectural expert across Verizon Business’ communication solutions portfolio. In this role, you will collaborate with technical and business leaders to develop solutions and designs to execute customer strategies, create greater efficiencies, and transform enterprise networks. The focus of this position will be on LAN, WAN, WLAN, SD-WAN and data center technologies. You will work directly with the customer, build trust with stakeholders, and own the design process as a Network Architect. You will work closely with Verizon and Customer Operations, project management, and engineering teams to ensure the customer’s requirements are met. In addition, you will provide technological vision for network transformation, serve as the engineering team lead back into Verizon, and ensure information is flowing to engineering resources assigned to project.
+
+   * Design, implement, and support solutions involving, but not limited to, WAN, LAN, WLAN, Data Analytics, Security and Virtual (e.g.; Virtualization, SDN, NFV) technologies.
+
+   * Focus on solution development and architectural design for assigned customer base with specific emphasis on Verizon Business’ global managed services and communications solutions portfolio.
+
+   * Create client solutions based on business requirements involving advanced networks, data center, security, and virtualization technologies; as well as development of fault and performance management policies and automation rules.
+
+   * Collaborate with Engineering/Planning, IT, Product Development, and various Verizon and external delivery and support teams to manage the design and implementation of client projects.
+
+   * Provide technical training and support for the Managed Services Operations team.
+
+   * Develop a deep knowledge and strong ability to articulate Verizon offerings across multiple disciplines including data, voice, managed services, IT, security and mobility strategies.
+
+   * Translate customer business issues/opportunities into technical solution/business requirements.
+
+   * Analyze, evaluate, and communicate network capacity and performance data with the objective of driving improvements to customer's network.
+
+   * Provide Matrix supervision of a team for specific projects, resource management, process documentation, and peer mentoring.
+
+   * Oversee customer network documentation such as solution design document, record of change, and network diagrams.
+
+   * Act as an escalation point, providing 4th level incident support for customers.
+
+   * Create presentations and demonstrations related to technology, process, or client solutions as necessary.
+
+   * Author and deliver network designs, statements of work, and technical project plans incorporating service and program management activities.
+
+   * As a Subject Matter Expert in network technologies, address technical challenges and opportunities in your domain of expertise the vast majority of the time.
+
+   * Act as the technical SME for network architecture to Verizon sales professionals by providing customer needs analysis, engineering and design of technical solutions, pricing and proposal assistance, technical presentations, technical consultation to internal and external customers, and to assist as the technical closer on sales opportunities.
+
+This hybrid role will have a defined work location that includes work from home and assigned office days as set by the manager.
+
+What we’re looking for...
+
+You’ll need to have:
+
+   * Bachelor’s degree or four or more years of work experience.
+   * Six or more years of relevant work experience.
+   * Six or more years of experience as a Network Architect.
+   * Six or more years of network architecture experience in conceptualization, definition and development of IT and/or telecom based products and service with verifiable instances of implementing one or more of the following: Data and IP Services (MPLS, VoIP, PIP, VPN, IP PBX), Managed Network Services (LAN, WAN, Content Delivery), Data Center Outsourcing (application hosting, managed storage), IT Applications Management (SOA, Web Services, RTE).
+   <br /><br />
+
+Even better if you have:
+
+   * Master’s Degree in Engineering, Computer Science or other technical field of study.
+   * Six or more years of experience in a Engineering Design Authority (EDA), Data Center technical design and engineering role, with an emphasis on IP-based network, communications and mobility solutions.
+   * Current industry certifications: CCIE, CCDP, CCNP, CISSP, ITILv3, etc.
+   * Six or more years of experience in customer facing positions (sales engineering, consulting).
+   * Demonstrated and verifiable track record of prior successful customer engagements. Examples of network designs, statements of work and/or technical project plans.
+   * Knowledge of network, communications and mobility protocols as well as switching, routing, server, video and mobility equipment.
+   * Experience with Managed Security Solutions.
+   * Excellent interpersonal, written, or verbal skills to effectively work in a team environment and explain complex system solutions customers.
+   * Excellent presentation skills with the ability to present both technical and non-technical information to broad audiences.
+   <br /><br />
 
 <hr />
 
