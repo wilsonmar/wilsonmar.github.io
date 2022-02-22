@@ -25,7 +25,7 @@ Why is that necessary? Aren't Officers, Directors, and Vice Presidents suppose t
 
 Executive managers are focused primarily on business financial objectives.
 
-Distinguished Engineers stand ready to translate technical jargon and concepts to (largely financial) executive management terminology and concepts such as Payback Period, Break-Even Analysis, ARR, NPV, IRR, WACC, EAC, Risk, ROA, ROIC, EBITDA, CAGR, CapEx, Balanced Scorecard, KPI, TBL, PEG, QOQ, SWOT, and other <a target="_blank" href="https://www.investopedia.com/financial-term-dictionary-4769738">financial tools</a>.
+Distinguished Engineers stand ready to translate technical jargon and concepts to (largely financial) executive management terminology and concepts such as Payback Period, Break-Even Analysis, ARR, NPV, IRR, WACC, EAC, Risk, ROA, ROIC, EBITDA, CAGR, CapEx, OpEx, Balanced Scorecard, KPI, OKR, PEG, QOQ, SWOT, TBL, and other <a target="_blank" href="https://www.investopedia.com/financial-term-dictionary-4769738">financial concepts</a>.
 
 Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams.
 
@@ -97,11 +97,11 @@ Here's my advice based on what I have tried:
    * <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-keyboard/">Configure Mac keyboard shortcuts</a> and other ways to be quick and confident at using computers, so you're not fumbling around
    * Achieve expert-level skill at formatting PowerPoint, Word, Excel, Zoom, Teams, Slack, etc. so you can help others learn tricks you're comfortable using
 
-   * Collaborate with experts in the intricacies of adopting Agile and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
+   * Collaborate with experts in the intricacies of adopting Agile ceremonies and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
 
    * Configure for no long-running secrets in your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
-   * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> across several GitHub accounts (organizations) so you can contribute without incident
-   * Install <a target="_blank" href="https://wilsonmar.github.io/git-signing/">git with secure signing with MFA and perhaps FIDO chips</a> to provide assurance that your account is secure
+   * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> across several GitHub accounts (organizations) so you can contribute <a target="_blank" href="https://wilsonmar.github.io/innersource/">Innersource</a> and open source without incident
+   * Install <a target="_blank" href="https://wilsonmar.github.io/git-signing/">git with secure signing using MFA and perhaps FIDO chips</a> to provide assurance that your account is secure
    
    * Create automation on cloud sandboxes (using <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>) so you can build secure production-level stacks quickly and not leave services running overnight
    
