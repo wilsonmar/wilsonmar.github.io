@@ -18,6 +18,8 @@ comments: true
 
 Organizationally, Distinguished Engineers are still individual contributors, but reporting directly to a VP or the CTO. 
 
+In terms of status and pay Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees.
+
 > To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify unintended consequences of decisions.
 
 Why is that necessary? Aren't Officers, Directors, and Vice Presidents suppose to be the voice of the people under them? 
@@ -49,7 +51,7 @@ But I disagree with statements in https://qr.ae/pGQP7S that "Distinguished Engin
 
 Misunderstandings about role can lead to Distinguished Engineers feeling they should "mansplain" technical topics and give perfunctory "blessings" for technical achievements, which lead to disdain rather than respect.
 
-> My advice? Aspire to be a Distinguished Engineer not because you want a trophy as the "Top Dog", but because you desire to make a bigger impact in the lives of others. To reduce frustration, foster more security, and achieve greater properity for all.
+> My advice? Aspire to be a Distinguished Engineer not because you want a trophy as the "Top Dog", but because you desire to make a bigger impact in the lives of others: to reduce frustration, foster more security, and achieve greater properity for all.
 
 
 ## What Distinguished Engineers Do
@@ -72,13 +74,11 @@ But although Distinguished Engineers can be "the expert other experts go to when
 
 ## Diplomatic Skills
 
-In terms of status and pay Distinguished Engineers are generally on the same level with a director, even though they don’t many direct reports. They’re considered executive-tier employees.
-
 Distinguished Engineers <strong>influence</strong> through logic from experience and research, not positional authority.
 
 They help to articulate a <strong>clear technical vision</strong>.
 
-Distinguished Engineers learns, through reading, tutorials, relationships, and videos, new technologies and best practices being used in other organizations.
+Distinguished Engineers learn, through reading, tutorials, relationships, and videos, new technologies and best practices being used in other organizations.
 
 They can disseminate knowledge (though thoughtful blogs, videos, Slack posts, emails, etc.) to "level up" others.
 
@@ -93,13 +93,14 @@ Here's my advice based on what I have tried:
 
 <strong>Become an expert on the basics</strong> to help others get productive quickly:
 
-   * <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-keyboard/">Configure keyboard shortcuts</a> and other ways to be quick and confident at using computers, so you're not fumbling around
-   * Get experts at PowerPoint, Word, Excel, Zoom, Teams, Slack, etc. to get you to the level where you can help others learn tricks you're comfortable using
+   * <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-keyboard/">Configure Mac keyboard shortcuts</a> and other ways to be quick and confident at using computers, so you're not fumbling around
+   * Achieve expert-level skill at formatting PowerPoint, Word, Excel, Zoom, Teams, Slack, etc. so you can help others learn tricks you're comfortable using
+
    * Collaborate with experts in the intricacies of adopting Agile and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
 
-   * Configure for no long-running secrets on your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
+   * Configure for no long-running secrets in your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
+   * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> across several GitHub accounts (organizations) so you can contribute without incident
    * Install <a target="_blank" href="https://wilsonmar.github.io/git-signing/">git with secure signing with MFA and perhaps FIDO chips</a> to provide assurance that your account is secure
-   * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> so you can contribute without incident
    
    * Create automation on cloud sandboxes (using <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>) so you can build secure production-level stacks quickly and not leave services running overnight
    
@@ -117,7 +118,7 @@ Here's my advice based on what I have tried:
 
 Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV and playing games, spend your nights and weekends learning and getting certified on technologies.
 
-   * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub other other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
+   * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub and other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
 
    * Maintain a portfolio of web sites and designs you find attractive or useful
    * Learn to build websites and databases using various technologies   
@@ -126,12 +127,13 @@ Distinguished Engineers need knowledge that's <strong>both wide and deep</strong
    * Use interview preparation sites to see what some find to be important
    <br /><br />
 
-Distinguished Engineers typically represent their organization externally when speaking at public events (contributions to open source software, conferences, user groups, meetups, webinars, hackathons, etc.). 
+Distinguished Engineers typically <strong>represent their organization externally</strong> when speaking at public events (contributions to open source software, conferences, user groups, meetups, webinars, hackathons, etc.). 
 
+   * Seek out the advice of your corporate Public Relations and Marketing people
    * Keep track of <a target="_blank" href="https://wilsonmar.github.io/tech-conferences/">industry conferences</a>, and request to speak
-   * Contact other speakers to get mentored
+   * Contact other speakers before conferences
 
-   * Send a connection request to each person who provides you their URL to LinkedIn, such as instructors of courses
+   * Send a connection request to each person who provides you their URL to LinkedIn, such as instructors of courses and writers of articles
    * Send connection requests to maintainers of open source software. Recently I messaged on LinkedIn a maintainer who was not responding to Issues, and got a reply which resolved a transitive dependency with security vulnerabilities.
    * Write articles in Medium.com and cross-publish to other websites
    <br /><br />
@@ -151,8 +153,13 @@ Distinguished Engineers have a role in <strong>attracting and recruiting</strong
 
 https://leaddev.com/audience-insights/who-are-staff-principal-and-distinguished-engineers
 
+<hr />
 
-## Home Depot Job Description
+## Job Descriptions
+
+Here are samples from the internet
+
+### Home Depot Job Description
 
 Distinguished Engineers are recognized as experts in one or more domains across the industry. 
 
@@ -167,7 +174,7 @@ In addition, you will teach, mentor, and grow other domain experts within the or
 
 Major Tasks, Responsibilities & Key Accountabilities:
 
-## 30% – Strategy & Planning:
+#### 30% – Strategy & Planning:
 
 * Works with senior leaders to shape the go-forward vision for the organization from a specific domain perspective
 
@@ -179,7 +186,7 @@ Major Tasks, Responsibilities & Key Accountabilities:
 
 * Drives thought leadership and innovation within the organization
 
-## 30% – Support & Enablement:
+#### 30% – Support & Enablement:
 
 * Fields questions from product, project and support teams
 
@@ -189,7 +196,7 @@ Major Tasks, Responsibilities & Key Accountabilities:
 
 * Learns, through reading, tutorials, relationships, and videos, new technologies and best practices being used in other organizations
 
-## 25% – Delivery & Execution:
+#### 25% – Delivery & Execution:
 
 * Teaches, mentors, grows, and advises other domain experts in the organization (including direct reports, if applicable)
 
@@ -201,7 +208,7 @@ Major Tasks, Responsibilities & Key Accountabilities:
 
 * Participates in and leads review board sessions to drive consistency across the enterprise
 
-## 15% – People:
+#### 15% – People:
 
 * Acts as a point of escalation for teams facing extremely complex challenges
 
@@ -220,7 +227,7 @@ Major Tasks, Responsibilities & Key Accountabilities:
 * Attracts, retains, develops, and motivates top talent (applicable if incumbent has direct reports)
 
 
-## Capital One Job Description
+### Capital One Job Description
 
 Sr. Distinguished Engineer are ...
 
@@ -238,7 +245,6 @@ Sr. Distinguished Engineer are ...
 Capital One is seeking an Sr Distinguished Engineer to drive technology strategy and adoption. In this role, the engineer will help define and drive towards an end state that is based on simplicity and the adoption of digital technologies, cloud hosting, and open source software. This role also requires significant interaction with business and technical stakeholders. An ideal candidate will have outstanding communication and influencing skills, the ability to overcome hurdles and impediments.
 
 Distinguished Engineers are individual contributors expected to solve problems in a fast-paced, collaborative, and iterative delivery environment. In order to meet these demands, candidates should be influential engineering leaders with deep technology expertise, and a collaborative style that brings others into the decision-making process. Distinguished Engineers will significantly impact the Tech agenda within their organization and devise clear roadmaps to deliver next generation technology solutions across organizational boundaries
-
 
 Responsibilities:
 
@@ -276,6 +282,8 @@ Preferred Qualifications:
    * 10+ years of experience with application architecture and design patterns.
    * 5+ years building cloud native architectures and architecting enterprise applications on public cloud platforms (AWS, GCP, Azure)
    * 6+ years experience with DevOps or DevSecOps and building CI/CD pipelines using Jenkins, Artifactory, Chef, Ansible, AWS CloudFormation templates, GitHub, and Sonar
+
+<hr />
 
 ## Conclusion
 
