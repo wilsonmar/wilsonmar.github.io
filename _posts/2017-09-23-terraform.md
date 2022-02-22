@@ -3,7 +3,7 @@ layout: post
 title: "Terraform"
 excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning into AWS, Azure, GCP, and other clouds using Terragoat, Bridgecrew, and Atlantis team versioning GitOps"
 tags: [DevOps, ecosystem]
-date: "2021-08-24"
+date: "2022-02-22"
 file: "terraform"
 image:
 # feature: pic data center slice 1900x500.jpg

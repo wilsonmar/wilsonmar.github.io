@@ -23,7 +23,7 @@ I'm looking for a more efficient way to make videos to explain concepts.
 
 Here are the video editing software I've heard about:
 
-* $259 Camtasia 2018 is what I'm using. It has both Windows and Mac editions. As with anything, it has <a href="#Camtasia">annoyances</a>.
+* $259 Camtasia is what I'm using to edit videos. It has both Windows and Mac editions. As with anything, it has <a href="#Camtasia">annoyances</a>.
 
 * <a target="_blank" href="https://www.apple.com/final-cut-pro/">
 Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular VR videographers use to make experiences on HTC Vive VR headsets. Intuitive yet powerful. Great if you have the latest iMac Pro with the 5K monitor, multiple camera inputs. Also lots of 3rd-party plug-ins. It's the upgrade to the $70 iMovie.

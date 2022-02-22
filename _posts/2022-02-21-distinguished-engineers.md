@@ -91,14 +91,34 @@ Courses on negotiation at MasterClass.com and "Difficult Conversations" stress b
 
 Here's my advice based on what I have tried:
 
+Become an expert on the basics to help others get started quickly:
+
+   * <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-keyboard/">Configure keyboard shortcuts</a> and other ways to be quick and confident at using computers, so you're not fumbling around
+   * Configure for no long-running secrets on your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
+   * Install <a target="_blank" href="https://wilsonmar.github.io/git-signing/">git with secure signing with MFA and perhaps FIDO chips</a> to provide assurance that your account is secure
+   * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> so you can contribute without incident
+   * Create automation on cloud sandboxes (using <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>) so you can build secure production-level stacks quickly and not leave services running overnight
+
+   * Collaborate with experts in the intricacies of adopting Agile and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
+
+   * View roadmaps of vendors' products and to vendors be an advocate for <a target="_blank" href="https://wilsonmar.github.io/enterprise-software/">enterprise features</a> your organization needs
+
+   * Become certified in the products your organization offers
+   <br /><br />
+
 <strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
+
+   * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors asked of your vendors.
+   <br /><br />
 
 Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV and playing games, spend your nights and weekends learning and getting certified on technologies.
 
+   * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub other other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
+
    * Maintain a portfolio of web sites and designs you find attractive or useful
    * Learn to build websites and databases using various technologies   
-   * Build websites for non-profits to hone your front-end development skills
-   * Participate in hackathons 
+   * Build websites for non-profits and friends to hone your front-end development skills
+   * Participate in hackathons to hone your base libraries and automation
    * Use interview preparation sites to see what some find to be important
    <br /><br />
 
@@ -126,6 +146,7 @@ Distinguished Engineers have a role in <strong>attracting and recruiting</strong
 ## References:
 
 https://leaddev.com/audience-insights/who-are-staff-principal-and-distinguished-engineers
+
 
 ## Home Depot Job Description
 
