@@ -60,7 +60,7 @@ But although Distinguished Engineers can be "the expert other experts go to when
 
    * <strong>think strategically</strong>
 
-   * set the stage for more <strong>innovation</strong>, speed, quality, security
+   * set the stage for more <strong>innovation</strong>, speed, quality, security <strong>transformations</strong>
 
    * ensure policies make sense to the entire organization
 
@@ -68,7 +68,7 @@ But although Distinguished Engineers can be "the expert other experts go to when
 
    * lead enterprise-wide technical initiatives 
 
-   * provide "thought leadership" to establish best engineering practices, methods, standards, SDLC through solid design decisions, processes and tools.
+   * provide "thought leadership" to establish best engineering practices, methods, standards, SDLC through solid design decisions, processes, and tools.
    <br /><br />
 
 
@@ -96,11 +96,12 @@ Here's my advice based on what I have tried:
 <strong>Become an expert on the basics</strong> to help others get productive quickly:
 
    * <a target="_blank" href="https://wilsonmar.github.io/apple-mac-osx-keyboard/">Configure Mac keyboard shortcuts</a> and other ways to be quick and confident at using computers, so you're not fumbling around
+
    * Achieve expert-level skill at formatting PowerPoint, Word, Excel, Zoom, Teams, Slack, etc. so you can help others learn tricks you're comfortable using
 
    * Collaborate with experts in the intricacies of adopting Agile ceremonies and tools such as <a target="_blank" href="https://wilsonmar.github.io/jira/">Jira</a>
 
-   * Configure for no long-running secrets in your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
+   * Configure for no long-running secrets</a> in your laptop and use <a target="_blank" href="https://wilsonmar.github.io/dotfiles/">dotfiles</a> to automate configuration of new laptops
    * Be able to troubleshoot <a target="_blank" href="https://wilsonmar.github.io/git-basics/">use of git with GitHub</a> across several GitHub accounts (organizations) so you can contribute <a target="_blank" href="https://wilsonmar.github.io/innersource/">Innersource</a> and open source without incident
    * Install <a target="_blank" href="https://wilsonmar.github.io/git-signing/">git with secure signing using MFA and perhaps FIDO chips</a> to provide assurance that your account is secure
    
@@ -113,7 +114,7 @@ Here's my advice based on what I have tried:
    * Become certified in the products your organization offers
    <br /><br />
 
-Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Instead of watching TV, doom-scrolling, and playing games, spend your nights and weekends learning and getting certified on technologies.
+Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Shift your time watching TV, doom-scrolling, and playing games, to learning and getting certified on technologies.
 
    * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub and other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
 

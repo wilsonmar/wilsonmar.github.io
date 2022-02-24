@@ -107,7 +107,7 @@ This page houses both links and my notes to pass the <a target="_blank" href="ht
 
 1. <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360049487571-How-do-I-access-my-badge-and-certificate-">FAQ</a>: After passing the exam, share your badge at 
 
-   https://www.credly.com/users/sign_in
+   <a target="_blank" href="https://www.credly.com/users/sign_in">https://www.credly.com/users/sign_in</a>
 
 1. In your resume, add a link to your certification as:  
    
@@ -133,7 +133,7 @@ to simplify the explanation here, we'll focus on AWS for now.
 </amp-youtube>
 <br /><br />
 
-Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod quickly and securely.
+Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod more quickly and securely.
 
 Although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> so that it is <a href="#Repeatable">repeatable</a>. Having configurations documented in GitHub enables <a href="#DriftManagement">drift detection</a> which identifies differences between what is defined versus what is actually running.
 
@@ -650,7 +650,7 @@ details each policy check and which tool performs them:
    * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
    * SonarQube
    * Terraform Enterprise Sentinel
-   * Terraform FOSS with Atlantis
+   * Terraform FOSS with <a href="#Atlantis">Atlantis</a>
    <br /><br />
 
 STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
@@ -1298,7 +1298,7 @@ Terraform language style conventions include:
 
 <a name="FileStructure"></a>
 
-## Standard File structure
+## Standard Files and Folders Structure
 
 According to 
    * https://www.terraform.io/language/modules/develop/structure
@@ -1313,6 +1313,7 @@ The root folder for a Terraform module should contain these files:
 * main.tf - the entry point of the module
 * <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
 * <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
+* <a href="#.gitignore">.gitignore</a> - files and folders to not add and push to GitHub
 <br /><br />
 
 The above set of files are repeated in each folder containing a nested module:
@@ -1326,6 +1327,31 @@ The above set of files are repeated in each folder containing a nested module:
    * <em>Network</a>
       * ...
 * examples
+
+<hr />
+
+<a name=".gitignore"></a>
+
+### .gitignore
+
+1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
+
+   <pre>terraform.tfstate*
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.iml
+*.plan
+vpc
+   </pre>
+
+   `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
+
+   `.terraform/` specifies that the folder is ignored when pushing to GitHub.
+
+   Terraform apply creates a <tt>dev.state.lock.info</tt> file as a way to signal to other processes to stay away while changes to the environment are underway.
+
+   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
 
 
 <a name="HCL"></a>
@@ -1492,7 +1518,7 @@ For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
 
    * "azs" designates Availability Zones.
 
-   PROTIP: Remember: a common mistake under each <tt>module</tt> is that providers are specified within a list:
+   PROTIP: Remember: a common mistake under each <tt>module</tt> is that <a href="#Providers">providers</a> are specified within a list:
 
    <pre>module "vpc" {
    source = "terraform-aws-modules/vpc/aws"
@@ -1846,13 +1872,7 @@ Docs:
 
    But unlike other systems, enviornment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
 
-<hr />
 
-<a name="DriftManagement"></a>
-
-## Drift management
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
 
 
 
@@ -1962,6 +1982,41 @@ In a team environment, it helps to store state state files off a local disk and 
 
 1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
+
+<hr />
+ 
+<a name="DriftManagement"></a>
+
+## Drift management
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
+Drift occurs when the actual state of resources provisioned diverges from the expected state.
+
+If an approved manual configuration has been changed or removed (a VM terminated) using the AWS Console GUI, the state can be <strong>refreshed</strong> by an alias of the command <tt>terraform apply -refresh-only -auto-approve</tt> which doesn't make changes:
+
+   <pre><strong>terraform refresh</strong></pre>
+
+1. If a resources needs to be added, <strong>import</strong> an existing resource (one at a time) into a placeholder definition:
+
+   <pre>resource "aws_instance" "example" {
+    # blank instance configuration
+   }</pre>
+
+   Referenced by:
+
+   <pre><strong>terraform import aws_instance.example" i-abc1111
+   </strong></pre>
+
+1. If an <strong>individual</strong> resource has been damaged or degraded such that it cannot be detected by Terraform, <strong>replace</strong> by resource address <strong>index</strong> in a plan or apply:
+
+   <pre><strong>terraform apply -replace="aws_instance.example[0]"</strong></pre>
+
+   <tt>aws_instance</tt> is a module namespace or resource_type. "example" is its name.
+
+   NOTE: <tt>terraform taint aws_instance.my-app</tt> (to mark a resource for replacement) was deprecated as of version 0.152.
+
+   
+
    <a name="DestroyState"></a>
    
    ### Destroy state
@@ -1973,13 +2028,6 @@ In a team environment, it helps to store state state files off a local disk and 
 1. Confirm by typing "yes".
 
 1. Manually verify on the AWS Management Console GUI webpage set to service S3.
-
-   <a name=".gitignore"></a>
-
-1. Prevent these files to be added in GitHub and thus saved publicly, in file <tt>.gitignore</tt>:
-
-   <pre><strong>echo "terraform.tfstate" >>.gitignore
-   </strong></pre>
 
 
    <a name="variables.tf"></a>
@@ -2281,25 +2329,46 @@ Unpacking objects: 100% (12/12), done.
    AWS provider
 
 
+<hr />
+
 <a name="Workspaces"></a>
 
 ## Temporary Workspaces
 
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=10h55m39s">VIDEO</a>:
+Workspaces enable management of multiple "environments" in alternate state files (dev, qa, stage, prod).
+
    <a target="_blank" href="https://www.youtube.com/watch?v=zOS3v9We1cg">
    VIDEO INTRO</a>:
    Terraform now offers a Terraform Cloud provider to manage VCS provider GitHub
-   in temporary test workspaces to see the impact of incremental changes.
+   in temporary test workspaces, to see the impact of incremental changes.
 
-   Terraform Cloud has workspaces
+1. By default, Terraform creates a workspace in your local backend called "default":
+
+   <pre><strong>terraform workspace list</strong></list>
+
+   This "CLI Workspaces" works locally or via remote backends.
+
+1. Reference the <tt>${terraform.workspace}</tt> named value in HCL:
+
+   <pre>resource "aws_instance" "example" {
+      // Return 5 instead of 1 if the value is not "default"
+      count = "${terraform.workspace == "default" ? 5 : 1 }
+      # ...
+      tags = {
+         Name = "web - ${terraform.workspace}"
+      }
+      # ...
+   }
+
+1. Terraform stores workspace states in a folder called <tt><strong>terraform.tfstate.d</strong></pre>
+
+   <pre><strong>ls -al terraform.tfstate.d</strong></list>
 
 
-   <a href="#Registry">
+PROTIP: Use a remote backend unless you're working by yourself.
 
-   ### Plugin Registry
-
-   https://registry.terraform.io is public
-
-   hosts both providers and modules (a group of configuration files that provide common configuration).
+Terraform Cloud workspaces act like differen working directories (like GitHub branches)
 
 
 
@@ -2347,12 +2416,14 @@ resource "aws_security_group" "instance" {
    The tag value AWS uses to name the EC2 instance.
 
 
+
    <a name="ExecControl"></a>
    
    ### Execution control
 
    Terraform automatically detects and enforces rule violations, such as 
    use of rogue port numbers other than 80/443.
+
 
 
    <a name="Outputs"></a>
@@ -2388,13 +2459,11 @@ PROTIP: If the AMI is no longer available, you will get an error message.
 
 
 
-   <a name="Examples"></a>
+<hr />
+   
+<a name="Tests"></a>
 
-   ### Examples
-
-   <a name="Tests"></a>
-
-   ### Tests
+## Tests
 
    As with Java and other programming code, Terraform coding should be tested too.
 
@@ -2453,8 +2522,7 @@ PROTIP: If the AMI is no longer available, you will get an error message.
 
    Sample response:
 
-   <pre>
-Initializing provider plugins...
+   <pre>Initializing provider plugins...
 - Checking for available provider plugins on https://releases.hashicorp.com...
 - Downloading plugin for provider "aws" (1.17.0)...
 &nbsp;
@@ -2483,6 +2551,7 @@ commands will detect it and remind you to do so if necessary.
    https://www.terraform.io/docs/commands/init.html</a>
    
    This creates a hidden `.terraform\plugins" folder path containing a folder for your os - `darwin_amd64` for MacOS.
+
 
 
 <hr />
@@ -2763,6 +2832,56 @@ Immutable and idempotent means "when I make a mistake in a complicated setup, I 
 
 
 
+<a name="Plugins"></a>
+
+### Plugins into Terraform
+
+All Terraform providers are plugins - multi-process RPC (Remote Procedure Calls).
+
+   <a target="_blank" href="
+   https://github.com/hashicorp/terraform/plugin">
+   https://github.com/hashicorp/terraform/plugin</a>
+
+   <a target="_blank" href="
+   https://terraform.io/docs/plugins/index.html">
+   https://terraform.io/docs/plugins/index.html</a>
+
+Terraform expect plugins to follow a very specific naming convention of terraform-TYPE-NAME. For example, terraform-provider-aws, which tells Terraform that the plugin is a provider that can be referenced as "aws".
+
+PROTIP: Establish a standard for where plugins are located:
+
+For \*nix systems, `~/.terraformrc`
+
+For Windows, `%APPDATA%/terraform.rc`
+
+   <a target="_blank" href="
+   https://www.terraform.io/docs/internals/internal-plugins.html">
+   https://www.terraform.io/docs/internals/internal-plugins.html</a>
+
+PROTIP: When writing your own terraform plugin, create a new Go project in GitHub, then locally use a  directory structure:
+
+   `$GOPATH/src/github.com/USERNAME/terraform-NAME`
+
+where USERNAME is your GitHub username and NAME is the name of the plugin you're developing. This structure is what Go expects and simplifies things down the road.
+
+TODO: 
+
+   * Grafana or Kibana monitoring
+   * PagerDuty alerts
+   * DataDog metrics
+
+
+<a href="#Registry">
+
+### Plugin Registry
+
+   https://registry.terraform.io is public
+
+   hosts both providers and modules (a group of configuration files that provide common configuration).
+
+
+
+
 <hr />
 
 ### CIDR Subnet function
@@ -2787,8 +2906,7 @@ cidr_block = ${cidrsubnet(var.network_info, 8, 2)} # returns 10.2.0.0/16
 
    In this example terraform.tfvars file are credentials for both AWS EC2 and Azure ARM providers:
 
-   <pre>
-bucket_name = "mycompany-sys1-v1"
+   <pre>bucket_name = "mycompany-sys1-v1"
 arm_subscription_id = "???"
 arm_principal = "???"
 arm_passsord = "???"
@@ -2879,7 +2997,7 @@ private_key_path = "C:\\MyKeys1.pem"
 
    <a name="tfapply"></a>
 
-   ### Terraform apply
+   ## Terraform apply
 
    <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h1m31s">VIDEO</a>:
 
@@ -2960,37 +3078,17 @@ private_key_path = "C:\\MyKeys1.pem"
    https://terraform.io/docs/configuration/interpolation.html</a>
 
 
-<a name="State"></a>
+   ( <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
+   Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
 
-## State management
-
-<a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
-Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
-
-<a name="AWSStateMgmt"></a>
+   <a name="AWSStateMgmt"></a>
+   
+   ### Managing State
+   
    Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
    users needs to manage state (using Terraform features).
 
-   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
-
-1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
-
-   <pre>terraform.tfstate*
-*.tfstate
-*.tfstate.backup
-.terraform/
-*.iml
-*.plan
-vpc
-   </pre>
-
-   `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
-
-   `.terraform/` specifies that the folder is ignored when pushing to GitHub.
-
-   Terraform apply creates a <tt>dev.state.lock.info</tt> file as a way to signal to other processes to stay away while changes to the environment are underway.
-
-
+   
    <a name="RemoteState"></a>
 
    ### Remote state
@@ -3005,33 +3103,50 @@ vpc
 
    <a name="Backends"></a>
 
-   ## Backends
+   ### Backends
 
-   Terraform manages state through several backends:
+   Terraform manages state through these backends which persists (stores) data:
 
    * local (the default)
-   * etcd (distributed key value store used by Kubernetes)
-
-   * gcs
-   * azurerm
-   * artifactory
-   * manta
-   * s3
-   * swift
-
    * consul (Hashicorp product)
    * atlas (Hashicorp product)
    * terraform enterprise
+
+   * etcd (distributed key value store used by Kubernetes)
+
+   * s3 - in AWS
+   * gcs - Google Cloud
+   * azurerm
+
+   * artifactory - by JFrog
+   * cos
+   * postgres
+   * manta
+   * swift
    <br /><br />
 
+   Some backends allows multiple named workspace instances to be associated with a single backend configuration (without configuring a new backend authentication).
 
+
+<a name="Crossplane"></a>
+
+### Crossplane
+
+<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
+
+<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
+
+
+
+
+
+   <hr />
 
    ### Output variables #
 
 0. Output Terraform variable:
 
-   <pre>
-output "loadbalancer_dns_name" {
+   <pre>output "loadbalancer_dns_name" {
   value = "${aws_elb.loadbalancer.dns_name}"
 }
    </pre>
@@ -3050,6 +3165,9 @@ output "loadbalancer_dns_name" {
 
 0. In the provider's console (EC2), verify
 
+
+
+
    <a name="Cleanup"></a> 1 59 27
 
    ### Destroy to clean up
@@ -3064,53 +3182,9 @@ output "loadbalancer_dns_name" {
 0. Verify in the provider's console (aws.amazon.com)
 
 
-<a name="Plugins"></a>
-
-## Plugins into Terraform
-
-All Terraform providers are plugins - multi-process RPC (Remote Procedure Calls).
-
-   <a target="_blank" href="
-   https://github.com/hashicorp/terraform/plugin">
-   https://github.com/hashicorp/terraform/plugin</a>
-
-   <a target="_blank" href="
-   https://terraform.io/docs/plugins/index.html">
-   https://terraform.io/docs/plugins/index.html</a>
-
-Terraform expect plugins to follow a very specific naming convention of terraform-TYPE-NAME. For example, terraform-provider-aws, which tells Terraform that the plugin is a provider that can be referenced as "aws".
-
-PROTIP: Establish a standard for where plugins are located:
-
-For \*nix systems, `~/.terraformrc`
-
-For Windows, `%APPDATA%/terraform.rc`
-
-   <a target="_blank" href="
-   https://www.terraform.io/docs/internals/internal-plugins.html">
-   https://www.terraform.io/docs/internals/internal-plugins.html</a>
-
-PROTIP: When writing your own terraform plugin, create a new Go project in GitHub, then locally use a  directory structure:
-
-   `$GOPATH/src/github.com/USERNAME/terraform-NAME`
-
-where USERNAME is your GitHub username and NAME is the name of the plugin you're developing. This structure is what Go expects and simplifies things down the road.
-
-TODO: 
-
-   * Grafana or Kibana monitoring
-   * PagerDuty alerts
-   * DataDog metrics
-
 <hr />
 
-<a name="Crossplane"></a>
 
-### Crossplane
-
-<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
-
-<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
 
 
 ### Densify FinOps
@@ -3141,6 +3215,7 @@ It's defined in terraform.tf:
 
 ## Atlantis on Terraform
 
+<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">VIDEO</a>:
 This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
 ensure code reviews.
 
@@ -3151,12 +3226,7 @@ Read the description and benefits at <a target="_blank" href="https://www.runatl
 
 ![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
 
-Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to triggers Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
-
-https://www.youtube.com/watch?v=bUWmJFzBh0A
-
-
-<hr />
+Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to trigger Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
 
 <a name="AtlantisWorkflow"></a>
 
@@ -3210,6 +3280,10 @@ https://www.youtube.com/watch?v=bUWmJFzBh0A
     Note that apply creates tfstate files.
 
 10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=12m59s58s">VIDEO</a>: 
+## CDK for Terraform
 
 
 <hr />
