@@ -114,7 +114,7 @@ Here's my advice based on what I have tried:
    * Become certified in the products your organization offers
    <br /><br />
 
-Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Shift your time watching TV, doom-scrolling, and playing games, to learning and getting certified on technologies.
+Distinguished Engineers need knowledge that's <strong>both wide and deep</strong>. So don't focus solely on what you've been told to work on. Most organizations want individuals to "stay in their lane" (until they become obsolete). So you'll have to do learning "on your own time". Shift your time watching TV, doom-scrolling, and playing games, to learning and getting certified on technologies needed in future jobs.
 
    * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub and other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
 
