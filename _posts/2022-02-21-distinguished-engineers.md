@@ -118,18 +118,18 @@ Distinguished Engineers need knowledge that's <strong>both wide and deep</strong
 
    * Be fluent writing <a target="_blank" href="https://wilsonmar.github.io/markdown-text-for-github-from-html/">GitHub and other text Markdown</a> so you can contribute to developer documentation and <a target="_blank" href="https://wilsonmar.github.io/jekyll-site-development/">JAM stack websites</a> using <a target="_blank" href="https://wilsonmar.github.io/gatsbyjs/">Gatsby</a> and other tools
 
-   * Maintain a portfolio of web sites and designs you find attractive or useful
-   * Learn to build websites and databases using various technologies   
-   * Build websites for non-profits and friends to hone your front-end development skills
-   * Participate in hackathons to hone your base libraries and automation
-   * Use interview preparation sites to see what some find to be important
+   * Maintain a web page commenting about web sites and their features which are great looking or especially useful
+   * Help build websites with non-profit technologists to hone your front-end development skills using various technologies (Drupal, JAM stack, Serverless, etc.)
+   * Participate in hackathons to hone your base libraries and automation (join devpost.com)
+   * Use interview preparation sites to see what some find to be important (dynamic programming)
    <br /><br />
 
 
 <strong>Reduce your blind spots</strong> (where you don't know what you don't know) by going out of your way to find publications offering alternative views in various disciplines. Keep a list of the periodicals and schedule time to read them each week.
 
+   * Does your organization have a Glossary of Terms and Abbreviations? If not, start one. I created Quizlets while at <a target="_blank" href="https://quizlet.com/605649976/sap-acronyms-flash-cards/">SAP</a>, <a target="_blank" href="https://quizlet.com/13071156/hp-sw-acronymns-flash-cards/">HP</a>, and <a target="_blank" href="https://quizlet.com/306205592/salesforce-glossary-flash-cards/">Salesforce</a>. I also have ones about <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">Secure IoT</a> and <a target="_blank" href="https://quizlet.com/143906977/aws-acronyms-flash-cards/">AWS</a>. 
    * Even if your company is not <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2</a> and ISO certified, be ready by knowing what questions auditors ask of your cloud vendors.
-   * Know recommendations and tools from vendors around the <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">"Well Architected Framework"</a> for managing clouds
+   * Know recommendations and tools from vendors around the <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">"Well Architected Framework"</a> for managing clouds (from Amazon, Azure, Google)
    * Even if your organization is dependent on a single cloud vendor, be able to implement open technologies using a single availability zone (data center) in two clouds (AWS, Azure, GCP):
    
      - Open <a target="_blank" href="https://wilsonmar.github.io/kubernetes">Kubernetes</a> services

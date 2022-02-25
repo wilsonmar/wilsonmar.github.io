@@ -148,6 +148,8 @@ PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vu
 
 <a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <a href="#VSCode">VSCode</a> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
 
++++ PROTIP: This approach is essentially TDD (Test Driven Development) applied to infrastructure code.
+
 The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
 
 We help you climb that very steep learning curve by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a> in GitHub.  
