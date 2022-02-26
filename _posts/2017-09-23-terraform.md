@@ -308,18 +308,21 @@ is 1.1.6. You can update by downloading from https://www.terraform.io/downloads.
    <pre><strong> brew search terraform</strong></pre>
 
    <pre>==> Formulae
-iam-policy-json-to-terraform             terraform@0.11
-terraform                                terraform@0.12
-terraform-docs                           terraform@0.13
-terraform-inventory                      terraform_landscape
-terraform-ls                             terraformer
-terraform-provider-libvirt               terraforming
+hashicorp/tap/consul-terraform-sync      terraform-provider-libvirt
+hashicorp/tap/terraform ✔                terraform-rover
+hashicorp/tap/terraform-ls               terraform@0.11
+iam-policy-json-to-terraform             terraform@0.12
+terraform ✔                              terraform@0.13
+terraform-docs                           terraform_landscape
+terraform-inventory                      terraformer ✔
+terraform-ls                             terraforming
+terraform-lsp
 &nbsp;
 If you meant "terraform" specifically:
 It was migrated from homebrew/cask to homebrew/core.
    </pre>
 
-   This is used to install a back version.
+   Note there are back versions of terraform (11, 12, 13, etc.).
 
 1. Is there a brew for Terraform?
    
@@ -327,23 +330,30 @@ It was migrated from homebrew/cask to homebrew/core.
 
    Yes, but:
 
-   <pre>terraform: stable 1.0.5 (bottled), HEAD
+   <pre>terraform: stable 1.1.6 (bottled), HEAD
 Tool to build, change, and version infrastructure
 https://www.terraform.io/
 Conflicts with:
   tfenv (because tfenv symlinks terraform binaries)
-Not installed
+/usr/local/Cellar/terraform/1.1.6 (6 files, 66.7MB) *
+  Poured from bottle on 2022-02-19 at 10:43:46
 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/terraform.rb
 License: MPL-2.0
 ==> Dependencies
 Build: go ✘
 ==> Options
 --HEAD
-   Install HEAD version
+	Install HEAD version
 ==> Analytics
+install: 47,985 (30 days), 134,541 (90 days), 525,730 (365 days)
+install-on-request: 44,756 (30 days), 125,786 (90 days), 493,333 (365 days)
+   </pre>
+
+Its popularity has grown since:
+   <pre>terraform: stable 1.0.5 (bottled), HEAD
+...
 install: 41,443 (30 days), 125,757 (90 days), 480,344 (365 days)
 install-on-request: 38,839 (30 days), 118,142 (90 days), 455,572 (365 days)
-build-error: 0 (30 days)
    </pre>
 
 1. PROTIP: Although you can <tt>brew install terraform</tt>, don't. So that you can easily <strong>switch among several versions</strong> installed of Terraform, install and use the Terraform <strong>version manager</strong>:
@@ -543,17 +553,60 @@ sudo apt-get update
 sudo apt-get install docker-ce
    </pre>
 
+
+<hr />
+
+<a name="Utilities"></a>
+
+## Utilities
+
+You'll need a text editor with plugins to view HCL:
+
+   * <a href="#VScode">VSCode</a>
+
+
+
+<hr />
+
+<a name="VSCode"></a>
+
+## VSCode
+
+1. Use VSCode (installed by default) to view blocks in Terraform HCL files:
+
+   <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
+code main.tf
+   </strong></pre>
+
+1. Define .gitignore for use with VSCode:
+
+1. Review code:
+
+   NOTE: Each key-value pair is an argument containing an expression of a text value.
+
+   Each HCL file needs to specify the (cloud) provider being used is "azure".
+
+   NOTE: Multiple providers can be specified in the same HCL file.
+
+1. Search for "Resource Group" in Terraform's Azure Provider docs:
+
+   <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
+   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs</a>
+
+   for "azurerm_resource_group".
+
+
+
+
 <hr />
 
 <a name="SampleTF"></a>
 
-## Obtain sample Terraform scripts
+## Sample Terraform scripts
 
-I've found several:
+Let's work with on I found:
 
 * <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
-
-
 
 1. Navigate to your default folder:
 
@@ -580,31 +633,199 @@ Others:
 
    https://akhilmovva.com/projects/
 
-   Terragoat
+   https://github.com/KevinDMack/TerraformKubernetes
+   to establish K8S using Packer within Azure 
+
+<hr />
+
+<a name="FileStructure"></a>
+
+## Standard Files and Folders Structure
+
+According to 
+   * https://www.terraform.io/language/modules/develop/structure
+   * https://www.baeldung.com/ops/terraform-best-practices
+   <br /><br />
+
+The root folder for a Terraform module should contain these files:
+
+* README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
+* LICENSE - (no file extension) to define the legal aspects (whether it's open source)
+
+* <a href="#.gitignore">.gitignore</a> - files and folders to not add and push to GitHub
+* <a href="#main.tf">main.tf</a> - the entry point of the module
+* <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
+* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
+<br /><br />
+
+The above set of files are repeated in each folder containing a nested module:
+
+* <a href="#Modules">modules/</a>
+   * <em>IAM</em>
+      * README.md
+      * <a href="#variables.tf">variables.tf</a>
+      * <a href="#main.tf">main.tf</a>
+      * <a href="#Outputs.tf">outputs.tf</a>
+   * <em>Network</em>
+      * ...
+* examples
+
+REMEMBER: Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
 
 
-<a name="VSCode"></a>
+<hr />
 
-## VSCode
+<a name=".gitignore"></a>
 
-1. Use VSCode (installed by default) to view blocks in Terraform HCL files:
+### .gitignore
 
-   <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
-code main.tf
-   </strong></pre>
+1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
 
-   NOTE: Each key-value pair is an argument containing an expression of a text value.
+   <pre>terraform.tfstate*
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.iml
+*.plan
+vpc
+   </pre>
 
-   Each HCL file needs to specify the (cloud) provider being used is "azure".
+   `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
 
-   NOTE: Multiple providers can be specified in the same HCL file.
+   `.terraform/` specifies that the folder is ignored when pushing to GitHub.
 
-1. Search for "Resource Group" in Terraform's Azure Provider docs:
+   Terraform apply creates a <tt>dev.state.lock.info</tt> file as a way to signal to other processes to stay away while changes to the environment are underway.
 
-   <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
-   https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs</a>
+   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
 
-   for "azurerm_resource_group".
+1. Define .gitignore for use with editors used by the team: VSCode, PyCharm, IntelliJ, etc.
+
+   https://www.toptal.com/developers/gitignore/api/terraform,intellij+all,visualstudiocode
+
+   https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
+
+
+
+<a name="variables.tf"></a>
+   
+### variables.tf
+
+   PROTIP: For reusability, all these static values would be replaced with variables resolved in a separate <tt>variables.tf</tt> file.
+
+   Variable substitution (interpolation) has a format similar to shell scripts:
+
+   <tt>image = "${var.aws_region}"</tt>
+
+   PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
+
+   <tt>var.</tt> above references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
+
+   <pre>   variable "aws_access_key" {
+      description = "AWS access key"
+   }
+   variable "aws_secret_key" {
+      description = "AWS secret key"
+   }
+   variable "aws_region" {
+      description = "AWS region"
+   }
+   </pre>
+
+   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
+
+   The value for "name" must be unique or an error is thrown.
+
+   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
+
+   Interpolations can contain logic and mathematical operations, such as <tt>abs()</tt>, replace(string, search, replace).
+
+   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
+
+   <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
+   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
+   It's not backward compatible, with no direct migration path.
+
+
+
+<a name="HCL"></a>
+
+### HCL (Hashicorp Configuration Language) 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
+
+   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
+   https://www.terraform.io/docs/configuration/syntax.html">
+   https://www.terraform.io/docs/configuration/syntax.html</a>.
+   
+   Terraform supports JSON syntax to read output from programmatic creation of such files.
+   The name suffix of files containing JSON "*.tf.json".
+
+   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
+
+   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
+   
+   Multi-line comments are wrapped between `/*` and `*/`.
+
+   `\` back-slashes specify continuation of long lines (as in Bash).
+
+<hr />
+
+<a name="main.tf></a>
+
+### main.tf
+
+In this minimal sample file, HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
+
+   <pre>terraform {
+  required_version = ">= 0.8, < 0.9"
+}
+provider "aws" {
+  version = ">= 1.2, < 1.2"
+  alias = "${var.aws_region_alias}"
+  region = "${var.aws_region}"
+  access_key = "${var.AWS_ACCESS_KEY}"
+  secret_key = "${var.AWS_SECRET_KEY}"
+}
+&nbsp;
+resource "aws_instance" "web" {
+  ami           = "ami-40d28157"
+  instance_type = "t2.micro"
+  subnet_id     = "subnet-c02a3628"
+  vpc_security_group_ids = ["sg-a1fe66aa"]
+  tags {
+    Identity = "..."
+    Name = "my_server"
+  }
+}
+output "public_ip"  {
+  value = aws.instance.my_server[*].public_ip
+}
+   </pre>
+
+   <tt>terraform</tt>, the first block name, defines an argument (between curly braces) which defines the versions of terraform the file was tested for use.
+
+   Each block defined between curly braces is called a <strong>"stanza"</strong>.
+
+   REMEMBER: Key components of Terraform are: <a href="#Provicers">provider</a>, <a href="#Resources">resource</a>, <a href="#Provision">provision</a>.
+   "provider" and "resource" are each a <strong>configuration block</strong>.
+
+   In the <tt>resource</tt> block, "aws_instance" is the Resource Type. "web" is the Resource Name.
+
+   The ami (amazon machine image) identifier is obtained from Amazon's catalog of public images.
+
+   "t1.micro" qualifies for the Amazon free tier available to first-year subscribers.
+
+   PROTIP: Vertically aligning values helps to make information easier to find.
+
+   `subnet_id` is for the VPC and vpc_security_group_ids array.
+
+   `tags_identity` is to scope permissions.
+
+   See <a target="_blank" href="http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html">
+   http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html</a>
+
+   Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
+
 
 
 <hr />
@@ -636,7 +857,7 @@ The trouble with standards is that they are in PDF and Excel files.
 
 ### Programs processing Policy as Code
 
-PROTIP: To prevent vulnerabilities <srong>before</strong> they are manifested in resources on the internet,
+PROTIP: To prevent vulnerabilities <strong>before</strong> they are manifested in resources on the internet,
 several groups have created programs which can <strong>automatically attest</strong> to whether a Terraform file actually meets or violates specific <strong>policies</strong> defined as code.
 
 This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
@@ -651,7 +872,7 @@ details each policy check and which tool performs them:
    * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
    * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
    * SonarQube
-   * Terraform Enterprise Sentinel
+   * Terraform Enterprise <a href="#Sentinel">Sentinel</a>
    * Terraform FOSS with <a href="#Atlantis">Atlantis</a>
    <br /><br />
 
@@ -660,49 +881,21 @@ STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/
 Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
 
 
+## Other PaC (OPA, AWS SCPs)
 
-<a name="Terragoat"></a>
+There is an alternative to the proprietary Terraform Sentinel policy language: <a target="_blank" href="https://regula.dev/">Regula</a>, which is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
 
-### Terragoat for learning
+Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
+<a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
+Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
 
-   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
 
-   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
-   
-1. Get it on your laptop after navigating to a folder:
+Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
 
-   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
-   cd terragoat/terraform
-   </strong></pre>
-
-1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
-
-   <pre><strong>ls aws
-   </strong></pre>
-
-   Response:
-
-   <pre>db-app.tf <em>- database application</em>
-ec2.tf
-ecr.tf <em>- elastic Kubernetes service</em>
-eks.tf <em>- elastic Kubernetes service</em>
-elb.tf <em>- elastic load balancer</em>
-es.tf
-iam.tf
-kms.tf <em>- key management service</em>
-lambda.tf
-neptune.tf
-rds.tf <em>- relational database service</em>
-xs3.tf <em>- key management service</em>
-   </pre>
-
-   PROTIP: BLAH: These are a few of the 200+ AWS services.
-   
-   QUESTION: How will you know when new AWS services become available or deprecated?
+OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub Actions</a> to alert about noncompliant IaC code.
 
 
-
-<hr />
 
 <a name="Cloudrail"></a>
 
@@ -715,29 +908,6 @@ xs3.tf <em>- key management service</em>
 <a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
 
 When run on local envrionments, security scanning achieves "shift left". 
-
-
-<a name="TFLint"></a>
-
-### Terraform Enterprise TFLint
-
-   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
-
-   Terraform Enterprise automatically stores the history of all state revisions.
-   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
-   Terraform Enterprise has producers (experts) and read-only consumers.
-   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
-   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
-
-   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
-
-   * Set to public instead of private?
-   
-   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
-
-   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
 
 
 <a name="InstallCheckov"></a>
@@ -826,22 +996,79 @@ cd full-fast-fail
 ./checker.sh
    </pre>
 
+
+
+
 <hr />
 
-## Other PaC (OPA, AWS SCPs)
+<a name="Terragoat"></a>
 
-There is an alternative to the proprietary Terraform Sentinel policy language: <a target="_blank" href="https://regula.dev/">Regula</a>, which is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
+### Terragoat for learning
 
-Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
-<a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
-Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
+   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
 
-The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
+   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
+   
+1. Get it on your laptop after navigating to a folder:
 
-Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
+   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
+   cd terragoat/terraform
+   </strong></pre>
 
-OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub Actions</a> to alert about noncompliant IaC code.
+1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
 
+   <pre><strong>ls aws
+   </strong></pre>
+
+   Response:
+
+   <pre>db-app.tf <em>- database application</em>
+ec2.tf
+ecr.tf <em>- elastic Kubernetes service</em>
+eks.tf <em>- elastic Kubernetes service</em>
+elb.tf <em>- elastic load balancer</em>
+es.tf
+iam.tf
+kms.tf <em>- key management service</em>
+lambda.tf
+neptune.tf
+rds.tf <em>- relational database service</em>
+xs3.tf <em>- key management service</em>
+   </pre>
+
+   PROTIP: BLAH: These are a few of the 200+ AWS services.
+   
+   QUESTION: How will you know when new AWS services become available or deprecated?
+
+
+
+<hr />
+
+
+<a name="TFLint"></a>
+
+### Terraform Enterprise TFLint
+
+   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
+
+   Terraform Enterprise automatically stores the history of all state revisions.
+   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
+   Terraform Enterprise has producers (experts) and read-only consumers.
+   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
+   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
+
+   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
+
+   * Set to public instead of private?
+   
+   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
+
+   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
+
+
+<hr />
 
 <hr />
 
@@ -884,9 +1111,11 @@ https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-
 https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
 HashiCorp Certified: Terraform Associate Practice Exam 2021
 
-<a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">
-FreeCodeCamp.org has a free course</a> in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021
-by <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> of ExamPro $24 https://www.exampro.co/terraform
+Several FreeCodeCamp.org have been created on YouTube:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SLB_c_ayRMo" title="">
+   2:20:57 VIDEO: Terraform Course - Automate your AWS cloud infrastructure</a>
+
+   * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro<a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
 
 https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview
 by Zeal Vora
@@ -1295,142 +1524,6 @@ Terraform language style conventions include:
 
    This is a destructive command, so make sure to <tt>git commit</tt> before the command.
 
-
-<hr />
-
-<a name="FileStructure"></a>
-
-## Standard Files and Folders Structure
-
-According to 
-   * https://www.terraform.io/language/modules/develop/structure
-   * https://www.baeldung.com/ops/terraform-best-practices
-
-The root folder for a Terraform module should contain these files:
-
-* README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
-
-* LICENSE - (no file extension) to define the legal aspects
-
-* main.tf - the entry point of the module
-* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
-* <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
-* <a href="#.gitignore">.gitignore</a> - files and folders to not add and push to GitHub
-<br /><br />
-
-The above set of files are repeated in each folder containing a nested module:
-
-* modules/
-   * <em>IAM</a>
-      * README.md
-      * <a href="#variables.tf">variables.tf</a>
-      * <a href="#main.tf">main.tf</a>
-      * <a href="#Outputs.tf">outputs.tf</a>
-   * <em>Network</a>
-      * ...
-* examples
-
-<hr />
-
-<a name=".gitignore"></a>
-
-### .gitignore
-
-1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
-
-   <pre>terraform.tfstate*
-*.tfstate
-*.tfstate.backup
-.terraform/
-*.iml
-*.plan
-vpc
-   </pre>
-
-   `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
-
-   `.terraform/` specifies that the folder is ignored when pushing to GitHub.
-
-   Terraform apply creates a <tt>dev.state.lock.info</tt> file as a way to signal to other processes to stay away while changes to the environment are underway.
-
-   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
-
-
-<a name="HCL"></a>
-
-## HCL (Hashicorp Configuration Language) 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
-
-   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
-   https://www.terraform.io/docs/configuration/syntax.html">
-   https://www.terraform.io/docs/configuration/syntax.html</a>.
-   
-   Terraform supports JSON syntax to read output from programmatic creation of such files.
-   The name suffix of files containing JSON "*.tf.json".
-
-   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
-
-   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
-   
-   Multi-line comments are wrapped between `/*` and `*/`.
-
-   `\` back-slashes specify continuation of long lines (as in Bash).
-
-   The minimal HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
-
-   <pre>provider "aws" {
-   version = ">= 1.2, < 1.2"
-   alias = "${var.aws_region_alias}"
-   region = "${var.aws_region}"
-   access_key = "${var.aws_access_key}"
-   secret_key = "${var.aws_secret_key}"
-   }
-   resource "aws_instance" "example" {
-      ami = "ami-2757f631"
-      instance_type = "t2.micro"
-   }</pre>
-
-   "provider" and "resource" are each a <strong>configuration block</strong>.
-
-### Interpolation variables
-
-   * Each block defined between curly braces is called a <strong>"stanza"</strong>.
-
-   * Variable substitution (interpolation) has a format similar to shell scripts:
-
-   <tt>image = "${var.aws_region}"</tt>
-
-   PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
-
-   <tt>var.</tt> above references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
-
-   <pre>   variable "aws_access_key" {
-      description = "AWS access key"
-   }
-   variable "aws_secret_key" {
-      description = "AWS secret key"
-   }
-   variable "aws_region" {
-      description = "AWS region"
-   }
-   </pre>
-
-   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
-
-   The value for "name" must be unique or an error is thrown.
-
-   Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
-
-   Interpolations can contain logic and mathematical operations, such as <tt>abs()</tt>, replace(string, search, replace).
-
-   HCL does not contain conditional if/else logic, which is why <a href="#Modules">modules (described below)</a> are necessary.
-
-   <a target="_blank" href="https://github.com/hashicorp/hcl2">HCL2</a>
-   is the new experimental version that combines the interpolation language HIL to produce a single configuration language that supports arbitrary expressions.
-   It's not backward compatible, with no direct migration path.
-
-   Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
 
 
 <hr />
@@ -2186,53 +2279,6 @@ ami = ${lookup(var.amis, "us-east-1")}
    <a target="_blank" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.aws.amazon.com%2FAWSEC2%2Flatest%2FUserGuide%2Flaunch-marketplace-console.html&sa=D&sntz=1&usg=AFQjCNGbWvcSfsheH4psSFED8ZF-w6mrqQ">NOTE</a>: Amazon has an approval process for making AMIs available on the public Amazon Marketplace.
 
 
-   <a name="main.tf"></a>
-
-   ### main.tf
- 
-   An example of the main.tf file:
-
-   <pre>terraform {
-  required_version = ">= 0.8, < 0.9"
-}
-provider "aws" {
-  alias = "NorthEast"
-  region = "us-east-1"
-  access_key = "${var.AWS_ACCESS_KEY}"
-  secret_key = "${var.AWS_SECRET_KEY}"
-}
-resource "aws_instance" "web" {
-  ami           = "ami-40d28157"
-  instance_type = "t2.micro"
-  subnet_id     = "subnet-c02a3628"
-  vpc_security_group_ids = ["sg-a1fe66aa"]
-  tags {
-    Identity = "..."
-    Name = "my_server"
-  }
-}
-output "public_ip"  {
-  value = aws.instance.my_server[*].public_ip
-}
-   </pre>
-
-   NOTE: Components of Terraform are: provider, resource, provision.
-
-   "t1.micro" qualifies for the Amazon free tier available to first-year subscribers.
-
-   PROTIP: Vertically aligning values helps to make information easier to find.
-
-   The ami (amazon machine image) identifier is obtained from Amazon's catalog of public images.
-
-   `subnet_id` is for the VPC and vpc_security_group_ids array.
-
-   `tags_identity` is to scope permissions.
-
-   See <a target="_blank" href="http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html">
-   http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html</a>
-
-   Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
-
 
 <hr />
 
@@ -2246,7 +2292,7 @@ output "public_ip"  {
 
    Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
 
-1, Get a list of providers
+1. Get a list of providers
 
    <pre><strong>terraform providers</strong></pre>
 
@@ -3139,14 +3185,11 @@ private_key_path = "C:\\MyKeys1.pem"
 <a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
 
 
+<hr />
 
+### Output variables #
 
-
-   <hr />
-
-   ### Output variables #
-
-0. Output Terraform variable:
+1. Output Terraform variable:
 
    <pre>output "loadbalancer_dns_name" {
   value = "${aws_elb.loadbalancer.dns_name}"
