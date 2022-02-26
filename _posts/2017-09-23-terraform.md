@@ -156,9 +156,9 @@ We help you climb that very steep learning curve by having you learn to fix <str
 
 We learn good Terraform coding by remediating vulnerabilities in bad Terraform code, seeing violations identified  by <strong>static scans</strong> referencing  <strong>Policies as Code</strong>, trying <strong>recommendations</strong> for remediating the Terraform code, while reading <a href="#Tutorials">tutorials</a> about AWS configuration options.
 
-Terragoat covers only a few of 200 plus AWS services, so additional policies need to be created using a <strong>policy creator</strong> provided by the same vendor. Some vendors define policies in the Rego language processed by the OPA engine. Checkov defines policies in Python code.
+Terragoat covers only a few of 200 plus AWS services, so additional policies need to be created using a <strong>policy creator</strong> provided by the same vendor. Some vendors define policies in the Rego language processed by the OPA engine. Checkov defines policies in its own DSL processed by Python code.+++
 
-When we have a way to <strong>attest</strong> that we can catch all known vulnerabilities, that our Terraform is <strong>known good</strong> as we can make it, you then are able to work on <strong>your own files</strong> and safely send a <strong>Pull Request</strong> into GitHub as a <strong>Shareable</strong> version for deployment as resources in the cloud.
+When we have a way to <strong>attest</strong> that we can catch all known vulnerabilities, that our Terraform is <strong>known good</strong> as we can make it, you then are able to +++ safely <strong>modify known-good templates</strong> from a community of Terraform developers refinining <strong>Shareable</strong> policies along with Terraform code. Here is Test-Driven Development of infrastructure as Code.+++
 
 Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creating Pull Requests containing remediations. 
 
@@ -655,8 +655,10 @@ The root folder for a Terraform module should contain these files:
 * <a href="#.gitignore">.gitignore</a> - files and folders to not add and push to GitHub
 * <a href="#main.tf">main.tf</a> - the entry point of the module
 * <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
-* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - variables that can be passed on
+* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - declares a description and optional default values for each variable in *.tf files
 <br /><br />
+
+REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each enviornmet (dev, qa, stage, prod).
 
 The above set of files are repeated in each folder containing a nested module:
 
@@ -670,40 +672,7 @@ The above set of files are repeated in each folder containing a nested module:
       * ...
 * examples
 
-REMEMBER: Terraform processes all .tf files in the directory invoked, in <strong>alphabetical order</strong>.
-
-
-<hr />
-
-<a name=".gitignore"></a>
-
-### .gitignore
-
-1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
-
-   <pre>terraform.tfstate*
-*.tfstate
-*.tfstate.backup
-.terraform/
-*.iml
-*.plan
-vpc
-   </pre>
-
-   `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
-
-   `.terraform/` specifies that the folder is ignored when pushing to GitHub.
-
-   Terraform apply creates a <tt>dev.state.lock.info</tt> file as a way to signal to other processes to stay away while changes to the environment are underway.
-
-   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
-
-1. Define .gitignore for use with editors used by the team: VSCode, PyCharm, IntelliJ, etc.
-
-   https://www.toptal.com/developers/gitignore/api/terraform,intellij+all,visualstudiocode
-
-   https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
-
+REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
 
 
 <a name="variables.tf"></a>
@@ -712,28 +681,15 @@ vpc
 
    PROTIP: For reusability, all these static values would be replaced with variables resolved in a separate <tt>variables.tf</tt> file.
 
-   Variable substitution (interpolation) has a format similar to shell scripts:
+   Terraform 0.11 and earlier required all non-constant expressions to be provided via interpolation syntax with a format similar to shell scripts:
 
    <tt>image = "${var.aws_region}"</tt>
 
    PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
 
+   But this pattern is now deprecated.
+
    <tt>var.</tt> above references values defined in file "variables.tf", which provide the "Enter a value:" prompt when needed:
-
-   <pre>   variable "aws_access_key" {
-      description = "AWS access key"
-   }
-   variable "aws_secret_key" {
-      description = "AWS secret key"
-   }
-   variable "aws_region" {
-      description = "AWS region"
-   }
-   </pre>
-
-   Values are defined in the <a href="#tfvars">terraform.tfvars</a> file.
-
-   The value for "name" must be unique or an error is thrown.
 
    Values can be interpolated using syntax wrapped in $\{\}, called interpolation syntax, in the format of $\{type.name.attribute\}. For example, `$\{aws.instance.base.id\}` is interpolated to something like `i-28978a2`. Literal `$` are coded by doubling up `$$`. 
 
@@ -774,7 +730,7 @@ vpc
 
 ### main.tf
 
-In this minimal sample file, HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
+In this minimal sample file for AWS, HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
    <pre>terraform {
   required_version = ">= 0.8, < 0.9"
@@ -802,6 +758,20 @@ output "public_ip"  {
 }
    </pre>
 
+In this minimal sample file for Azure:
+
+   <pre>provider “azurerm” {
+   version = “~> 2.1.0"
+   subscription_id = var.subscription_id
+&nbsp;
+   client_id = var.client_id
+   client_secret = var.client_secret
+   tenant_id = var.tenant_id
+&nbsp;
+   features {}
+}
+   </pre>
+
    <tt>terraform</tt>, the first block name, defines an argument (between curly braces) which defines the versions of terraform the file was tested for use.
 
    Each block defined between curly braces is called a <strong>"stanza"</strong>.
@@ -825,6 +795,135 @@ output "public_ip"  {
    http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html</a>
 
    Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
+
+
+<a name="tfvars"></a>
+
+## Credentials in tfvars
+
+Actual values which replace each variable in tf files are defined in a <a href="#tfvars">*.tfvars</a> file for each environment:
+
+   PROTIP: Separate Terraform configurations by a folder for each environment:
+
+   * base (template for making changes)
+   * dev 
+   * loadtest (performance/stress testing)
+   * stage
+   * uat (User Acceptance Testing)
+   * prod
+   * demo (demostration used by salespeople)
+   * train (for training users)
+   <br /><br />
+
+Credentials in a sample <strong>terraform.tfvars</strong> file for AWS:
+
+   <pre>aws_access_key = "123456789abcdef123456789"
+aws_secret_key = "<em>Your AWS SecretKey</em>"
+aws_region = "us-east-1"
+aws_accountId = "123456789123456"
+private_key_path = "C:\\<em>PathToYourPrivateKeys</em>\PrivateKey.pem"
+   </pre>
+
+   It's not good security to store such information in a repo potentially shared, so tfvars files are specified in .gitignore,
+   and <a href="#SecretStore">retrieved from secret storage</a> before running terraform commands. 
+   Also for security, the variables are then removed from memory shortly after usage.
+
+1. Navigate into the base folder.
+
+   PROTIP: Terraform commands act only on the current directory, and does not recurse into sub directories.
+
+   A development.tfvars file may also contain:
+
+   <pre>environment_tag = "dev"
+tenant_id = "223dev"
+billing_code_tag = "DEV12345"
+dns_site_name = "dev-web"
+dns_zone_name = "mycorp.xyz"
+dns_resource_group = "DNS"
+instance_count = "1"
+subnet_count = "1"
+   </pre>
+
+   The production.tfvars file usually instead contain more instances and thus subnets that go through a load balancer for auto-scaling:
+
+   <pre>environment_tag = "prod"
+tenant_id = "223prod"
+billing_code_tag = "PROD12345"
+dns_site_name = "marketing"
+dns_zone_name = "mycorp.com"
+dns_resource_group = "DNS"
+instance_count = "6"
+subnet_count = "3"
+   </pre>
+
+   All these would use `main_config.tf` and `variables.tf` files commonly used for all environments:
+
+   <strong>Tag</strong> for cost tracking by codes identifying a particular budget, project, department, etc.
+
+
+   <a name="Lookups"></a>
+
+   ### Defaults and lookup function
+
+   PROTIP: Variables can be assigned multiple default values selected by a lookup function:
+
+   <pre># AWS_ACCESS_KEY_ID
+# AWS_SECRET_ACCESS_KEY
+# export AWS_DEFAULT_REGION=xx-yyyy-0
+&nbsp;
+variable "server_port" {
+  description = "The port the server will use for HTTP requests"
+  default = 8080
+}
+variable "amis" {
+  type = "map”"
+  default = {
+    us-east-1 = "ami-1234"
+    us-west-1 = "ami-5678"
+  }
+}
+ami = ${lookup(var.amis, "us-east-1")}
+   </pre>
+
+   PROTIP: With AWS EC2, region "us-east-1" must be used as the basis for creating others.
+
+   <a target="_blank" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.aws.amazon.com%2FAWSEC2%2Flatest%2FUserGuide%2Flaunch-marketplace-console.html&sa=D&sntz=1&usg=AFQjCNGbWvcSfsheH4psSFED8ZF-w6mrqQ">NOTE</a>: Amazon has an approval process for making AMIs available on the public Amazon Marketplace.
+
+
+
+
+<hr />
+
+<a name=".gitignore"></a>
+
+### .gitignore
+
+1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
+
+   <pre>terraform.tfstate*
+*.tfstate
+*.tfstate.backup
+*.tfvars
+.terraform/
+*.iml
+*.plan
+vpc
+   </pre>
+
+   `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
+
+   `.terraform/` specifies that the folder is ignored when pushing to GitHub.
+
+   Terraform apply creates a <tt>dev.state.lock.info</tt> file as a way to signal to other processes to stay away while changes to the environment are underway.
+
+   PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
+
+1. Define .gitignore for use with editors used by the team: VSCode, PyCharm, IntelliJ, etc.
+
+   https://www.toptal.com/developers/gitignore/api/terraform,intellij+all,visualstudiocode
+
+   https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
+
 
 
 
@@ -883,7 +982,7 @@ Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-o
 
 ## Other PaC (OPA, AWS SCPs)
 
-There is an alternative to the proprietary Terraform Sentinel policy language: <a target="_blank" href="https://regula.dev/">Regula</a>, which is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
+<a target="_blank" href="https://regula.dev/">Regula</a> language code is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
 
 Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
 <a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
@@ -1067,8 +1166,6 @@ xs3.tf <em>- key management service</em>
 
    https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
 
-
-<hr />
 
 <hr />
 
@@ -2189,97 +2286,6 @@ variable "server_port" {
    PROTIP: <strong>Each input</strong> should be defined as a variable.
 
 
-   <a name="tfvars"></a>
-
-   ### Credentials in tfvars
-
-   Define cloud account credentials in a <strong>terraform.tfvars</strong> file containing sample data:
-
-   <pre>aws_access_key = "123456789abcdef123456789"
-aws_secret_key = "<em>Your AWS SecretKey</em>"
-aws_region = "us-east-1"
-aws_accountId = "123456789123456789"
-private_key_path = "C:\\<em>PathToYourPrivateKeys</em>\PrivateKey.pem"
-   </pre>
-
-   This is not good security to risk such information in a repo potentially shared.
-
-   ### tfvars environments
-
-   PROTIP: Separate Terraform configurations by a folder for each environment:
-
-   * base (template for making changes)
-   * dev 
-   * loadtest (performance/stress testing)
-   * stage
-   * uat (User Acceptance Testing)
-   * prod
-   * demo (demostration used by salespeople)
-   * train (for training users)
-   <br /><br />
-
-1. Navigate into the base folder.
-
-   PROTIP: Terraform commands act only on the current directory, and does not recurse into sub directories.
-
-2. View the development.tfvars file:
-
-   <pre>environment_tag = "dev"
-tenant_id = "223d"
-billing_code_tag = "DEV12345"
-dns_site_name = "dev-web"
-dns_zone_name = "mycorp.xyz"
-dns_resource_group = "DNS"
-instance_count = "2"
-subnet_count = "2"
-   </pre>
-
-   The production.tfvars file usually instead contain more instances and thus subnets that go through a load balancer for auto-scaling:
-
-   <pre>environment_tag = "prod"
-tenant_id = "223d"
-billing_code_tag = "PROD12345"
-dns_site_name = "marketing"
-dns_zone_name = "mycorp.com"
-dns_resource_group = "DNS"
-instance_count = "6"
-subnet_count = "3"
-   </pre>
-
-   All these would use `main_config.tf` and `variables.tf` files commonly used for all environments:
-
-   <strong>Tag</strong> for cost tracking by codes identifying a particular budget, project, department, etc.
-
-
-
-   ### Defaults and lookup function
-
-   PROTIP: Variables can be assigned multiple default values selected by a lookup function:
-
-   <pre># AWS_ACCESS_KEY_ID
-# AWS_SECRET_ACCESS_KEY
-# export AWS_DEFAULT_REGION=xx-yyyy-0
-&nbsp;
-variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = 8080
-}
-variable "amis" {
-  type = "map”"
-  default = {
-    us-east-1 = "ami-1234"
-    us-west-1 = "ami-5678"
-  }
-}
-ami = ${lookup(var.amis, "us-east-1")}
-   </pre>
-
-   PROTIP: With AWS EC2, region "us-east-1" must be used as the basis for creating others.
-
-   <a target="_blank" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.aws.amazon.com%2FAWSEC2%2Flatest%2FUserGuide%2Flaunch-marketplace-console.html&sa=D&sntz=1&usg=AFQjCNGbWvcSfsheH4psSFED8ZF-w6mrqQ">NOTE</a>: Amazon has an approval process for making AMIs available on the public Amazon Marketplace.
-
-
-
 <hr />
 
 <a name="Providers"></a>
@@ -3311,6 +3317,10 @@ Developers and Operations people type <tt><strong>atlantis plan</strong></tt> an
    <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
 
    https://www.runatlantis.io/docs/autoplanning.html#example
+
+   <a name="Sentinel"></a>
+
+   ### Sentinal apply
 
 7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
 
