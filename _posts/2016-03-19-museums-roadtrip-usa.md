@@ -1069,6 +1069,8 @@ Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from 
 <li><a target="_blank" href="https://www.cincinnatiartmuseum.org/"> Cincinnati Art Museum</a></li>
 <li><a target="_blank" href="https://www.cincymuseum.org/union-terminal"> Museum Center of Union Terminal</a></li>
 <li>American Neon Sign Museum</a></li>
+<li><a target="_blank" href="https://www.creationmuseum.org/">Creation Museum</a> (is closest to the Cincinnati airport)</li>
+<li><a target="_blank" href="https://arkencounter.com//">Ark Encounter</a> (44 miles South in Kentucky from the Creation Museum)</li>
 </ul>
 
 ### Cleveland:

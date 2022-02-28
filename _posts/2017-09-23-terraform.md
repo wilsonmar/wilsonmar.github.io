@@ -781,6 +781,9 @@ In this minimal sample file for Azure:
 
    In the <tt>resource</tt> block, "aws_instance" is the Resource Type. "web" is the Resource Name.
 
+   If the prefix block name begins with a known provider name such as "time_" or "random_", a <tt>type =" is not needed because Terraform assumes that prefix as the type (<tt>type = time_static</tt>) referenced by <tt>${time_static.time_update.id}</tt>
+
+
    The ami (amazon machine image) identifier is obtained from Amazon's catalog of public images.
 
    "t1.micro" qualifies for the Amazon free tier available to first-year subscribers.
@@ -965,22 +968,31 @@ This enables a CI/CD pipeline to stop processing if a Terraform file fails a sca
 details each policy check and which tool performs them:
 
    * OSS Python-based <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> by <a target="_blank" href="https://bridgecrew.io/">Bridgecrew.io</a> (acquired by Palo Alto Networks)
+
    * Fremium <a target="_blank" href="https://www.indeni.com/cloudrail">Indeni Cloudrail</a>
+
    * OSS Go-based <a target="_blank" href="https://github.com/Checkmarx/kics">Kics</a> (Keeping Infrastructure as Code Secure) by Checkmarx
+
    * Freemium <a target="_blank" href="https://snyk.io/">Snyk</a>
+
    * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
+
    * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
+
+   * https://github.com/accurics/terrascan uses Rego policies
+
    * SonarQube
-   * Terraform Enterprise <a href="#Sentinel">Sentinel</a>
+
    * Terraform FOSS with <a href="#Atlantis">Atlantis</a>
-   <br /><br />
+
+   * Terraform Enterprise <a href="#Sentinel">Sentinel</a>
 
 STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
 
 Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
 
 
-## Other PaC (OPA, AWS SCPs)
+## Other PaC - OPA Regula
 
 <a target="_blank" href="https://regula.dev/">Regula</a> language code is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
 
@@ -989,6 +1001,8 @@ Any language to define policies needs to be a <strong>programming language</stro
 Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
 
 The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
+
+https://github.com/accurics/terrascan uses Rego policies
 
 Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
 
@@ -1205,18 +1219,28 @@ https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-
 
 ## Tutorials
 
-https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/
-HashiCorp Certified: Terraform Associate Practice Exam 2021
+At the top of the list is the in-depth videos and hands-on labs with built-in quizzes of
+<a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
+KodeKloud's "Hashicorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
 
-Several FreeCodeCamp.org have been created on YouTube:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=SLB_c_ayRMo" title="">
-   2:20:57 VIDEO: Terraform Course - Automate your AWS cloud infrastructure</a>
+Videos free on YouTube but a better UI to view vidoes is provided by:
 
    * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro<a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
 
-https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview
-by Zeal Vora
-https://github.com/zealvora/terraform-beginner-to-advanced-resource
+On Udemy: 
+
+   * <a target="_blank" href="https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview">"Terraform: Beginner to Advanced"</a> by Zeal Vora has code at https://github.com/zealvora/terraform-beginner-to-advanced-resource
+
+   * <a target="_blank" href="https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/">HashiCorp Certified: Terraform Associate Practice Exam 2021</a>
+
+Another FreeCodeCamp.org video on YouTube:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SLB_c_ayRMo" title="">
+   2:20:57 VIDEO: Terraform Course - Automate your AWS cloud infrastructure</a>
+
+<a target="_blank" href="https://www.joyent.com/blog/video-simple-terraform-app" title="February 21, 2018">
+"Get started managing a simple application with Terraform"</a> by Alexandra White (at Joyant) shows the deployment of the <a target="_blank" href="https://github.com/heyawhite/joyent_packer-terraform-series/tree/master/1-create-image-with-packer/happy-randomizer">
+Happy Randomizer app</a>
 
 
 <hr />
@@ -2004,11 +2028,11 @@ terraform init
 code main.tf
    </strong></pre>
 
-1. Execute:
+1. Execute plan file "temp"
 
-   <pre><strong>terraform apply -auto-approve</strong></pre>
+   <pre><strong>terraform apply temp -auto-approve</strong></pre>
 
-   Remember that Terraform runs which order to run blocks.
+   REMEMBER: Although <tt>terraform plan -out temp</tt> requires <tt>-out</tt> argument, <tt>terraform apply</tt> does not require an argument in front of the file name. 
 
 1. This example has output blocks to separate tfstate for the virtual network and each resource group (using interpolation):
 
@@ -2159,7 +2183,10 @@ In a team environment, it helps to store state state files off a local disk and 
    <a name="State"></a>
 
    ### Apply to create tfstate
-
+   
+   * https://kodekloud.com/topic/introduction-to-terraform-state/
+   <br /><br />
+   
 1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance:
 
    <pre>terraform apply -auto-approve</pre>
@@ -2226,27 +2253,39 @@ If an approved manual configuration has been changed or removed (a VM terminated
 
    ### variables.tf (vars.tf)
 
-   This file contains a reference to environment variables:
+   * https://www.terraform.io/language/values/variables
+   * https://kodekloud.com/topic/understanding-the-variable-block/
+   <br /><br />
+
+   This file contains defines for each (and every) variable referenced within tf files its description, default.
+
+   Linters identify when they are not.
+
+   For example, reference to environment variables:
+
+   <pre>variable "server_port" {
+  description = "The port the server will use for HTTP requests"
+  default = 8080
+}</pre>   
 
    <pre>variable "aws_access_key" {}
 variable "aws_secret_key" {}
-&nbsp;
 variable "subnet_count" {
   default = 2
 }
-   </pre>   
+   </pre>
 
-   An example of the variables.tf file explained in video: <a target="_blank" href="https://www.joyent.com/blog/video-simple-terraform-app">
-Get started managing a simple application with Terraform</a>
-February 21, 2018 - by Alexandra White (at Joyant) shows the deployment of the
-<a target="_blank" href="https://github.com/heyawhite/joyent_packer-terraform-series/tree/master/1-create-image-with-packer/happy-randomizer">
-Happy Randomizer app</a>
+   There are several types of variables:
 
-   <pre>
-variable "image_name" {
+   <pre>variable "image_name" {
   type        = "string"
   description = "The name of the image for the deployment."
   default     = "happy_randomizer"
+}
+variable "service_networks" {
+  type        = "list"
+  description = "The name or ID of one or more networks the service will operate on."
+  default     = ["Joyent-SDC-Public","Joyent-SDC-Private"]
 }
 variable "image_version" {
   type        = "string"
@@ -2268,22 +2307,68 @@ variable "service_name" {
   description = "The name of the service in CNS."
   default     = "happiness"
 }
-variable "service_networks" {
-  type        = "list"
-  description = "The name or ID of one or more networks the service will operate on."
-  default     = ["Joyent-SDC-Public"]
-}
    </pre>   
 
-   In a cluster environment:
+   <tt>type = list(string)</tt> can be iterated from index 0 for the first item.
 
-   <pre>   
-variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = 8080
-}</pre>   
+   <tt>type = list(number)</tt> causes an error if entries are not numbers.
 
-   PROTIP: <strong>Each input</strong> should be defined as a variable.
+   <pre>variable "someone" {
+  type = object({
+    name = string
+    pant_size = number
+    favorite_foods = list(string)
+    is_available = bool
+  })
+  default = {
+     name = "Joe"
+     pant_size = 42
+     favorite_foods = ["salmon", "chicken", "bananas"]
+     is_available = true
+  }
+}
+   </pre>
+
+   Boolean true/false and numbers are never between quotes.
+
+   <tt>type = set(string)</tt> cannot contain duplicates.
+
+   <tt>type = tuple([string, number, bool])</tt> is used for mixed types in a list.
+
+   KodeKloud's example map:
+
+   <pre>variable "hard_drive" {
+      type = map
+      default = {
+         slow = "HHD"
+         fast = "SSD"
+      }
+}
+   </pre>
+
+   To retrieve indirectly by key name to obtain value "HHD":
+
+   <pre>var.hard_drive("slow")</pre>
+
+
+REMEMBER: When troubleshooting, remember the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
+
+1. Environment variables are overridden most of all:
+
+   <tt>export TFVAR_filename="/root/this.txt"</tt>
+
+2. terraform.tfvars
+
+   <tt>filename = "/root/that.txt"</tt>
+
+3. variable.auto.tfvars (in alphabetical order)
+
+   <tt>filename = "/root/something.txt"</tt>
+
+4. Command-line flags -var or -var-file
+
+   <tt>terraform apply -var "filename=/root/something.txt"</tt>
+
 
 
 <hr />
@@ -2296,16 +2381,13 @@ variable "server_port" {
    https://www.terraform.io/docs/language/providers/index.html">
    https://www.terraform.io/docs/language/providers/index.html</a>
 
-   Terraform translates HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. at:
-
-1. Get a list of providers
-
+1. List providers from <a target="_blank" href="https://github.com/terraform-providers">https://github.com/terraform-providers</a>
+   
    <pre><strong>terraform providers</strong></pre>
 
-   <a target="_blank" href="
-   https://github.com/terraform-providers">
-   https://github.com/terraform-providers</a>
-   
+   Most commonly, Terraform Providers translate HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. Note there is a local provider and also a "random" provider to generate random data:
+
+
    ### Terraform Built-in Providers
 
    <a target="_blank" href="
@@ -2552,6 +2634,8 @@ PROTIP: If the AMI is no longer available, you will get an error message.
 
 1. Add a <a target="_blank" href="https://gist.github.com/jamtur01/a567078b7ba545c3492f7cd32a65450d">
    pre-commit hook to validate in your Git repository</a>
+
+   <a name="main.tf"></a>
 
    ### Main.tf
 
