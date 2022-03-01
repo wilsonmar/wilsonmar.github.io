@@ -32,6 +32,54 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
    Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
 
 
+<a name="LearningStrategy"></a>
+
+## Adoption/Learning Strategy
+
+PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diagram</a> I created:
+
+Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, 
+to simplify the explanation here, we'll focus on AWS for now.
+
+<amp-youtube data-videoid="jZXkO6YjX8w" layout="responsive" width="480" height="270">
+</amp-youtube>
+<br /><br />
+
+Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod more quickly and securely.
+
+Although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> so that it is <a href="#Repeatable">repeatable</a>. Having configurations documented in GitHub enables <a href="#DriftManagement">drift detection</a> which identifies differences between what is defined versus what is actually running.
+
+The <strong>AWS Config</strong> service logs every change in configuration of resources.
+The <strong>AWS Security Hub</strong> service looks in logs for vulnerabilities to issue <strong>Findings</strong> based on its own “AWS Foundations” set of <strong>policies</strong>. AWS provides a webpage of <strong>recommendations</strong> for remediation, but only by using its own GUI or CloudFormation code, not Terraform coding.
+
+More importantly, Findings from AWS are raised for resource which have already been manifested on the internet, and thus vulnerable to public attack.
+
+In today's hostile internet, we can't risk an incremental approach to achieving the security needed. We really need to achieve full "security maturity" in our Terraform code the first time we deploy it onto the internet.
+
+PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources by finding <strong>violations</strong> in Infrastructure definition code, using a CI/CD pipeline to run <strong>static scans</strong> referencing <strong>Policies as Code</strong>.
+
+<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <a href="#VSCode">VSCode</a> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
+
++++ PROTIP: This approach is essentially TDD (Test Driven Development) applied to infrastructure code.
+
+The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
+
+We help you climb that very steep learning curve by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a> in GitHub.  
+
+We learn good Terraform coding by remediating vulnerabilities in bad Terraform code, seeing violations identified  by <strong>static scans</strong> referencing  <strong>Policies as Code</strong>, trying <strong>recommendations</strong> for remediating the Terraform code, while reading <a href="#Tutorials">tutorials</a> about AWS configuration options.
+
+Terragoat covers only a few of 200 plus AWS services, so additional policies need to be created using a <strong>policy creator</strong> provided by the same vendor. Some vendors define policies in the Rego language processed by the OPA engine. Checkov defines policies in its own DSL processed by Python code.+++
+
+When we have a way to <strong>attest</strong> that we can catch all known vulnerabilities, that our Terraform is <strong>known good</strong> as we can make it, you then are able to +++ safely <strong>modify known-good templates</strong> from a community of Terraform developers refinining <strong>Shareable</strong> policies along with Terraform code. Here is Test-Driven Development of infrastructure as Code.+++
+
+Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creating Pull Requests containing remediations. 
+
+Recap:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"><img width="1524" height="663" alt="terraform-terragoat-1524x663" src="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"></a>
+
+
+
 ## Links to Certification Exam Objectives
 
 <img align="right" width="200" alt="terraformassociate-704x704" src="https://user-images.githubusercontent.com/300046/154810637-8293e9a0-1c6a-4105-b9c0-3d100166ce42.png">
@@ -119,52 +167,6 @@ The exam expires in 2 years.
 Hashicorp doesn't have a deeper/more difficult "Professional level" cert at time of writing.
 
 <hr />
-
-<a name="LearningStrategy"></a>
-
-## Adoption/Learning Strategy
-
-PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diagram</a> I created:
-
-Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, 
-to simplify the explanation here, we'll focus on AWS for now.
-
-<amp-youtube data-videoid="jZXkO6YjX8w" layout="responsive" width="480" height="270">
-</amp-youtube>
-<br /><br />
-
-Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod more quickly and securely.
-
-Although AWS provides their own <strong>Cloud Formation</strong> language to describe what to provision in AWS, for <a href="#CFN">various reasons</a>, many prefer <strong>Terraform</strong>. Terraform files are commonly run within an automated <strong>CI/CD pipeline</strong> so that it is <a href="#Repeatable">repeatable</a>. Having configurations documented in GitHub enables <a href="#DriftManagement">drift detection</a> which identifies differences between what is defined versus what is actually running.
-
-The <strong>AWS Config</strong> service logs every change in configuration of resources.
-The <strong>AWS Security Hub</strong> service looks in logs for vulnerabilities to issue <strong>Findings</strong> based on its own “AWS Foundations” set of <strong>policies</strong>. AWS provides a webpage of <strong>recommendations</strong> for remediation, but only by using its own GUI or CloudFormation code, not Terraform coding.
-
-More importantly, Findings from AWS are raised for resource which have already been manifested on the internet, and thus vulnerable to public attack.
-
-In today's hostile internet, we can't risk an incremental approach to achieving the security needed. We really need to achieve full "security maturity" in our Terraform code the first time we deploy it onto the internet.
-
-PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources by finding <strong>violations</strong> in Infrastructure definition code, using a CI/CD pipeline to run <strong>static scans</strong> referencing <strong>Policies as Code</strong>.
-
-<a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <a href="#VSCode">VSCode</a> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
-
-+++ PROTIP: This approach is essentially TDD (Test Driven Development) applied to infrastructure code.
-
-The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
-
-We help you climb that very steep learning curve by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a> in GitHub.  
-
-We learn good Terraform coding by remediating vulnerabilities in bad Terraform code, seeing violations identified  by <strong>static scans</strong> referencing  <strong>Policies as Code</strong>, trying <strong>recommendations</strong> for remediating the Terraform code, while reading <a href="#Tutorials">tutorials</a> about AWS configuration options.
-
-Terragoat covers only a few of 200 plus AWS services, so additional policies need to be created using a <strong>policy creator</strong> provided by the same vendor. Some vendors define policies in the Rego language processed by the OPA engine. Checkov defines policies in its own DSL processed by Python code.+++
-
-When we have a way to <strong>attest</strong> that we can catch all known vulnerabilities, that our Terraform is <strong>known good</strong> as we can make it, you then are able to +++ safely <strong>modify known-good templates</strong> from a community of Terraform developers refinining <strong>Shareable</strong> policies along with Terraform code. Here is Test-Driven Development of infrastructure as Code.+++
-
-Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creating Pull Requests containing remediations. 
-
-Recap:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"><img width="1524" height="663" alt="terraform-terragoat-1524x663" src="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"></a>
 
 
 <hr />
@@ -2102,6 +2104,9 @@ Docs:
    https://github.com/cloudposse</a> has mostly AWS Terraform, such as
    https://github.com/cloudposse/load-testing
 
+
+<a name="Gruntwork"></a>
+
 ### Gruntwork's sample
 
    <a target="_blank" href="#Gruntwork">Gruntwork.io</a> offers (for $4,950), access to their 250,000-line Reference Architecture of starter code to create a production-worthy "defense in depth" setup on AWS:
@@ -2144,18 +2149,33 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
 
 
+   <a name="State"></a>
 
-### AWS EC2 Credentials
+   ### Apply to create tfstate
+   
+   * https://kodekloud.com/topic/introduction-to-terraform-state/
+   <br /><br />
+   
+1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance:
 
-   The above minimal HCL can be in a file named `ec2.tf`.
+   <pre>terraform apply -auto-approve</pre>
 
-   PROTIP: Including in tf files AWS credentials such as these might inadvantly made visible to the public by getting checked into a public repository:
+   The console shows resources provisioned in the cloud.
 
-   <pre>access_key = "ACCESS_KEY_HERE"
-     secret_key = "SECRET_KEY_HERE"
-   </pre>
+   plan"
 
-   If you simply leave out AWS credentials, Terraform will automatically search for saved API credentials (for example, in ~/.aws/credentials) or IAM instance profile credentials.
+   Alternately, to force 
+
+   <pre><strong>terraform plan --refresh=false</strong></pre>
+
+1. If "-auto-approve" was not specified, responde to the prompt by typing "yes".
+
+   Apply creates a new file <strong><tt>terraform.tfstate</tt></strong> define the status/condition of cloud resources at a specific time.
+
+   NOTE: Subsequent to apply, any command that modify state results in a <tt><strong>terraform.tfstate.backup</strong></tt> created to store tfstate before it changes.
+
+1. Manually verify on the AWS Management Console GUI webpage set to service S3.
+
 
 
 <a name="StateS3"></a>
@@ -2179,27 +2199,6 @@ In a team environment, it helps to store state state files off a local disk and 
   }
 }
    </pre>
-
-   <a name="State"></a>
-
-   ### Apply to create tfstate
-   
-   * https://kodekloud.com/topic/introduction-to-terraform-state/
-   <br /><br />
-   
-1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance:
-
-   <pre>terraform apply -auto-approve</pre>
-
-   The console shows resources provisioned in the cloud.
-
-1. If "-auto-approve" was not specified, responde to the prompt by typing "yes".
-
-   Apply creates a new file <strong><tt>terraform.tfstate</tt></strong> define the status/condition of cloud resources at a specific time.
-
-   NOTE: Subsequent to apply, any command that modify state results in a <tt><strong>terraform.tfstate.backup</strong></tt> created to store tfstate before it changes.
-
-1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
 
 <hr />
