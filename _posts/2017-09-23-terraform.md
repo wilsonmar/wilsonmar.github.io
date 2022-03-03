@@ -20,6 +20,7 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ## What is Terraform?
 
+
 <a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="from IBM">VIDEO</a>
 
 <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
@@ -38,12 +39,13 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diagram</a> I created:
 
-Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, 
-to simplify the explanation here, we'll focus on AWS for now.
+Here is my proposal to ensure that cloud resources are <strong>secure when created</strong>, the first time and every time.
 
-<amp-youtube data-videoid="jZXkO6YjX8w" layout="responsive" width="480" height="270">
+<amp-youtube data-videoid="Pb5Isu3Ed98" layout="responsive" width="480" height="270">
 </amp-youtube>
 <br /><br />
+
+Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, to simplify the explanation here, we'll focus on <strong>AWS</strong> for now.
 
 Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod more quickly and securely.
 
@@ -52,31 +54,35 @@ Although AWS provides their own <strong>Cloud Formation</strong> language to des
 The <strong>AWS Config</strong> service logs every change in configuration of resources.
 The <strong>AWS Security Hub</strong> service looks in logs for vulnerabilities to issue <strong>Findings</strong> based on its own “AWS Foundations” set of <strong>policies</strong>. AWS provides a webpage of <strong>recommendations</strong> for remediation, but only by using its own GUI or CloudFormation code, not Terraform coding.
 
-More importantly, Findings from AWS are raised for resource which have already been manifested on the internet, and thus vulnerable to public attack.
-
+More importantly, findings from AWS are raised for resource which have already been manifested on the internet, and thus vulnerable to public attack.
 In today's hostile internet, we can't risk an incremental approach to achieving the security needed. We really need to achieve full "security maturity" in our Terraform code the first time we deploy it onto the internet.
 
 PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources by finding <strong>violations</strong> in Infrastructure definition code, using a CI/CD pipeline to run <strong>static scans</strong> referencing <strong>Policies as Code</strong>.
 
 <a href="#PolicyCheckTools">Several vendors have created static scan programs</a>. Checkov and TFSec have an interface to the popular <a href="#VSCode">VSCode</a> text editor on <strong>laptops</strong>, which "shifts left" the work of security earlier in the development lifecycle.
 
-+++ PROTIP: This approach is essentially TDD (Test Driven Development) applied to infrastructure code.
-
 The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
 
-We help you climb that very steep learning curve by having you learn to fix <strong>known-bad</strong> sample Terraform code such as <a href="#Terragoat">Terragoat</a> in GitHub.  
+One way to climb this steep learning curve is learning to fix <strong>known-bad</strong> sample Terraform code which are accompanied with policies used to detect violations. It's even better to have each policy be associated with <strong>recommendations</strong> for remediating the Terraform code, along with <a href="#Tutorials">tutorials</a> about <strong>configuration options</strong>.
 
-We learn good Terraform coding by remediating vulnerabilities in bad Terraform code, seeing violations identified  by <strong>static scans</strong> referencing  <strong>Policies as Code</strong>, trying <strong>recommendations</strong> for remediating the Terraform code, while reading <a href="#Tutorials">tutorials</a> about AWS configuration options.
+Because cloud services change all the time, a <strong>policy creator</strong> helps to keep up with all the polices needed.
+In the Terraform Cloud, policies are defined in the Sentinel language. Other vendors define policies in the Rego language processed by the OPA engine.
 
-Terragoat covers only a few of 200 plus AWS services, so additional policies need to be created using a <strong>policy creator</strong> provided by the same vendor. Some vendors define policies in the Rego language processed by the OPA engine. Checkov defines policies in its own DSL processed by Python code.+++
+When a community of Terraform developers have policies which <strong>attest</strong> that Terraform code is <strong>known good</strong>, their <strong>templates</strong> can be <strong>Shareable</strong> and thus reduce both risk and much effort by others.
 
-When we have a way to <strong>attest</strong> that we can catch all known vulnerabilities, that our Terraform is <strong>known good</strong> as we can make it, you then are able to +++ safely <strong>modify known-good templates</strong> from a community of Terraform developers refinining <strong>Shareable</strong> policies along with Terraform code. Here is Test-Driven Development of infrastructure as Code.+++
+PROTIP: This approach is essentially TDD (Test Driven Development) applied to infrastructure code.
 
-Vendors (such as Bridgecrew) work like GitHub Dependabot by automatically creating Pull Requests containing remediations. 
+Atlantis provides a mechanism like GitHub Dependabot, which automatically creates Pull Requests containing remediations. 
+Terraform Cloud provides a GUI to display them.
+
+So here it is, our ecosystem your you to create secure Terraform, the first time and every time.
 
 Recap:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"><img width="1524" height="663" alt="terraform-terragoat-1524x663" src="https://user-images.githubusercontent.com/300046/154460150-78598a46-589f-49d6-963c-9387fc2f995b.png"></a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"><img width="1769" height="781" alt="terraform-strategy-22-03-02-1769x781" src="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"></a>
+
+![terraform-strategy-22-03-02]()
+
 
 
 
@@ -2149,6 +2155,168 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
 
 
+<hr />
+
+<a name="tfplan"></a>
+
+## Terraform Plan command
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h18m9s">VIDEO</a>:
+
+   A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. 
+   
+   Terraform identifies <strong>dependencies</strong> among components requested, and <strong>creates them in the order needed</strong>.
+
+1. A simple way 
+
+   <pre><strong>terraform plan -out=happy.plan
+   </strong></pre>
+
+   Alternate format (instead of an equal sign):
+
+   <pre><strong>terraform plan -out happy.plan
+   </strong></pre>
+
+   Alternately, leave out the .plan file extension, as it's assumed:
+
+   <pre><strong>terraform plan -out happy
+   </strong></pre>
+
+   A sample response:
+
+   <pre>"&LT;computered>" means Terraform figures it out.
+   </pre>
+
+   Under the covers, terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
+
+   The Terraform Plan file output is a binary file (machine code).
+
+   <a name="ParallelExecution"></a>
+
+   ### Parallel execution
+
+   When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
+
+   Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
+
+   * https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
+
+   ### A more sophisticated plan
+
+   Alternately, a more sophisticated way to have Terrform evaluate based on vars in a different (parent) folder:
+
+   <pre><strong>terraform plan \
+      -var 'site_name=demo.example.com' \
+      -var-file='..\terraform.tfvars' \
+      -var-file='.\Development\development.tfvars' \
+      -state='.\Development\dev.state' \
+      -out base-`date-+'%s'`.plan
+   </strong></pre>
+
+   The `-var` parameter specifies a value for var.site_name variable.
+
+   The two dots in the command specifies to look above the current folder.
+
+   The `-out` parameter specifies the output file name. 
+   Since the output of terraform plan is fed into the <a href="#TerraformApply">`terraform apply`</a> command, a static file name is best.
+   However, some prefer to avoid overwriting by automatically using a different date stamp in the file name. 
+
+   The "%s" yields a date stamp like 147772345 which is the numer of seconds since the 1/1/1970 epoch.
+
+   Pluses and minuses flag additions and deletions. This is a key differentiator for Terraform as a ""
+
+   Terraform creates a dependency graph (specfically, a Directed Acyclic Graph).
+   This is so that nodes are built in the order they are needed. 
+
+
+   <a name="tfapply"></a>
+
+   ## Terraform apply
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h1m31s">VIDEO</a>:
+
+1. Process the plan created by <tt>terraform plan</tt>
+
+   <pre><strong>terraform apply "happy.plan"
+   </strong></pre>
+
+   REMEMBER: `terraform apply` generates a <strong><tt>terraform.tfstate</tt></strong> file (containing JSON) to persist the state of runs by mapping resource IDs to their data. There is a one-to-one mapping of resource instances to remote objects in the cloud. 
+
+   Alternately, to specify the state file's output name and attribute:
+
+   <pre><strong>terraform apply -state=".\develop\dev.state" 
+      -var="environment_name=development"
+   </strong></pre>
+
+   Within the file, "version" defines the version of the tfstate JSON format.
+   The "terraform_version" is the <a href="#tf_version">terraform program version</a>.
+   , the file contains a <strong>serial</strong> number to increment every time the file itself changes.
+
+<!--   <pre>dns_names = [
+      [
+         359f20b2-673d-6300-e918-fcea6a314a26.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone,
+         happy-randomizer.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone
+      ]
+   ]
+   primaryIp = [
+      165.225.173.96
+   ]
+   </pre>   
+-->
+
+1. List resources in the state:
+
+   <pre0<strong>terraform state list</strong></pre>
+
+1. Pull current remote state and output to stdout:
+
+   <pre0<strong>terraform state pull</strong></pre>
+
+1. Push (update) remote state from a local state:
+
+   <pre0<strong>terraform state push</strong></pre>
+1. Show a specific resource in the state:
+
+   <pre0<strong>terraform state show</strong></pre>
+
+1. Move an item in the state (to change the reference) instead of renaming a module, which would result in a create and destroy action:
+
+   <pre0<strong>terraform state mv</strong></pre>
+
+1. Remove instances from the state:
+
+   <pre0<strong>terraform state rm</strong></pre>
+
+   ### Alternative
+
+   Alternative specification of environment variable:
+
+   <pre><strong>TF_VAR_first_name="John" terraform apply
+   </strong></pre>
+
+   Values to Terraform variables define inputs such as run-time DNS/IP addresses into 
+   <a href="#Modules">Terraform modules</a>.
+
+   What terraform apply does:
+
+   1. Generate model from logical definition (the Desired State).
+   2. Load current model (preliminary source data).
+   3. Refresh current state model by querying remote provider (final source state).
+   4. Calculate difference from source state to target state (plan).
+   5. Apply plan.
+   <br /><br />
+
+   NOTE: Built-in functions:
+   <a target="_blank" href="
+   https://terraform.io/docs/configuration/interpolation.html">
+   https://terraform.io/docs/configuration/interpolation.html</a>
+
+
+   ( <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
+   Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
+
+
+
    <a name="State"></a>
 
    ### Apply to create tfstate
@@ -2162,11 +2330,17 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 
    The console shows resources provisioned in the cloud.
 
-   plan"
 
-   Alternately, to force 
+
+1. To force the state file to be updated during a plan operation:
 
    <pre><strong>terraform plan --refresh=false</strong></pre>
+
+1. To force the state to be updated anytime:
+
+   <pre><strong>terraform refresh</strong></pre>
+
+
 
 1. If "-auto-approve" was not specified, responde to the prompt by typing "yes".
 
@@ -3070,153 +3244,6 @@ private_key_path = "C:\\MyKeys1.pem"
    You can pass profile name by --profile option.
 
 
-<hr />
-
-<a name="tfplan"></a>
-
-## Terraform Plan command
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h18m9s">VIDEO</a>:
-
-   A key differentiator of Terraform is its <strong>plan</strong> command, which provides more than just a "dry-run" before configurations are applied for real. Terraform identifies <strong>dependencies</strong> among components requested, and creates them in the order needed.
-
-1. A simple way 
-
-   <pre><strong>terraform plan -out=happy.plan
-   </strong></pre>
-
-   A sample response:
-
-   <pre>"&LT;computered>" means Terraform figures it out.
-   </pre>
-
-   Under the covers, terraform plan <strong>generates an executable</strong>, and uses it to <a href="#TerraformApply">apply</a> configuration to create infrastructure. This guarantees that what appeared in plan is the same as when apply occurs.
-
-   The Terraform Plan file output is a binary file (machine code).
-
-   <a name="ParallelExecution"></a>
-
-   ### Parallel execution
-
-   When Terraform analyzes a configuration specification, it recognizes where <strong>parallel execution</strong> can occur, which means faster runs to create real infrastructure. 
-
-   Terraform control, iterations, and (perhaps most of all) management of resources already created (desired state configuration) over several cloud providers (not just AWS).
-
-   * https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6
-
-   ### A more sophisticated plan
-
-   Alternately, a more sophisticated way to have Terrform evaluate based on vars in a different (parent) folder:
-
-   <pre><strong>terraform plan \
-      -var 'site_name=demo.example.com' \
-      -var-file='..\terraform.tfvars' \
-      -var-file='.\Development\development.tfvars' \
-      -state='.\Development\dev.state' \
-      -out base-`date-+'%s'`.plan
-   </strong></pre>
-
-   The `-var` parameter specifies a value for var.site_name variable.
-
-   The two dots in the command specifies to look above the current folder.
-
-   The `-out` parameter specifies the output file name. 
-   Since the output of terraform plan is fed into the <a href="#TerraformApply">`terraform apply`</a> command, a static file name is best.
-   However, some prefer to avoid overwriting by automatically using a different date stamp in the file name. 
-
-   The "%s" yields a date stamp like 147772345 which is the numer of seconds since the 1/1/1970 epoch.
-
-   Pluses and minuses flag additions and deletions. This is a key differentiator for Terraform as a ""
-
-   Terraform creates a dependency graph (specfically, a Directed Acyclic Graph).
-   This is so that nodes are built in the order they are needed. 
-
-
-   <a name="tfapply"></a>
-
-   ## Terraform apply
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h1m31s">VIDEO</a>:
-
-1. Process the plan created by <tt>terraform plan</tt>
-
-   <pre><strong>terraform apply "happy.plan"
-   </strong></pre>
-
-   REMEMBER: `terraform apply` generates a <strong><tt>terraform.tfstate</tt></strong> file (containing JSON) to persist the state of runs by mapping resource IDs to their data. There is a one-to-one mapping of resource instances to remote objects in the cloud. 
-
-   Alternately, to specify the state file's output name and attribute:
-
-   <pre><strong>terraform apply -state=".\develop\dev.state" 
-      -var="environment_name=development"
-   </strong></pre>
-
-   Within the file, "version" defines the version of the tfstate JSON format.
-   The "terraform_version" is the <a href="#tf_version">terraform program version</a>.
-   , the file contains a <strong>serial</strong> number to increment every time the file itself changes.
-
-<!--   <pre>dns_names = [
-      [
-         359f20b2-673d-6300-e918-fcea6a314a26.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone,
-         happy-randomizer.inst.d9a01feb-be7d-6a32-b58d-ec4a2bf4ba7d.us-east-3.triton.zone
-      ]
-   ]
-   primaryIp = [
-      165.225.173.96
-   ]
-   </pre>   
--->
-
-1. List resources in the state:
-
-   <pre0<strong>terraform state list</strong></pre>
-
-1. Pull current remote state and output to stdout:
-
-   <pre0<strong>terraform state pull</strong></pre>
-
-1. Push (update) remote state from a local state:
-
-   <pre0<strong>terraform state push</strong></pre>
-1. Show a specific resource in the state:
-
-   <pre0<strong>terraform state show</strong></pre>
-
-1. Move an item in the state (to change the reference) instead of renaming a module, which would result in a create and destroy action:
-
-   <pre0<strong>terraform state mv</strong></pre>
-
-1. Remove instances from the state:
-
-   <pre0<strong>terraform state rm</strong></pre>
-
-   ### Alternative
-
-   Alternative specification of environment variable:
-
-   <pre><strong>TF_VAR_first_name="John" terraform apply
-   </strong></pre>
-
-   Values to Terraform variables define inputs such as run-time DNS/IP addresses into 
-   <a href="#Modules">Terraform modules</a>.
-
-   What terraform apply does:
-
-   1. Generate model from logical definition (the Desired State).
-   2. Load current model (preliminary source data).
-   3. Refresh current state model by querying remote provider (final source state).
-   4. Calculate difference from source state to target state (plan).
-   5. Apply plan.
-   <br /><br />
-
-   NOTE: Built-in functions:
-   <a target="_blank" href="
-   https://terraform.io/docs/configuration/interpolation.html">
-   https://terraform.io/docs/configuration/interpolation.html</a>
-
-
-   ( <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
-   Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
 
    <a name="AWSStateMgmt"></a>
    

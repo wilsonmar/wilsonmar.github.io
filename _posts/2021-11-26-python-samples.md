@@ -2224,6 +2224,13 @@ The "Levenshtein Distance", also known as "Edit Distance", is a metric of the "d
 To compute the Levenshtein distance efficiently, use an algorithmic example of a bottom-up Dynamic Programming. A <strong>matrix</strong> containing the Levenshtein distances between all prefixes of the first string and all prefixes of the second one. We can dynamically compute the values in this matrix. The last value computed will be the distance between the two full strings. 
 https://python-course.eu/applications-python/levenshtein-distance.php
 
+
+## Konwn-bad sample Python code
+
+https://github.com/Contrast-Security-OSS/vulnpy
+is a library of purposely-vulnerable Python functions to install as extensions in a framework (Flask, Django, Pyramid, Falcon, WSGI, Bottle, FastAPI).
+These serve as a foundation for creating insecure web applications, to be used for security testing and demonstration of vulnerability scanners.
+
 <hr />
 
 ## More about Python
