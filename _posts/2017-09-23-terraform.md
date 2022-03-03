@@ -35,9 +35,7 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 <a name="LearningStrategy"></a>
 
-## Adoption/Learning Strategy
-
-PROTIP: As illustrated by this concept-by-concept video <a href="#Diagram1">diagram</a> I created:
+## Secure Learning Tools and Ecosystem
 
 Here is my proposal to ensure that cloud resources are <strong>secure when created</strong>, the first time and every time.
 
