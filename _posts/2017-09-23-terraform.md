@@ -81,9 +81,6 @@ Recap:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"><img width="1769" height="781" alt="terraform-strategy-22-03-02-1769x781" src="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"></a>
 
-![terraform-strategy-22-03-02]()
-
-
 
 
 ## Links to Certification Exam Objectives
