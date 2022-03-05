@@ -44,6 +44,7 @@ Microsoft has published different lists for what services constitute its "Cognit
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/services/iot-edge/">Azure IoT (Edge) Services</a> are separate. 
 
+* https://www.computerworld.com/article/3252218/cortana-explained-why-microsofts-virtual-assistant-is-wired-for-business.html 
 
 
 <a name="Competitors"></a>

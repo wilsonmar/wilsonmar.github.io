@@ -1656,9 +1656,50 @@ Terraform language style conventions include:
 
 ## Reusable Modules
 
-A Terraform module is a container for multiple resources that are used together.
+Modules are self-contained packages of Terraform configurations that are managed as a group.
+
+In other words, a Terraform module is a container for multiple resources used together.
 
 Terraform modules provide "blueprints" to deploy.
+
+PROTIP: Before creating your own module, check out website <a target="_blank" href="https://registry.terraform.io/browse/modules">https://registry.terraform.io/browse/modules</a> containing 9,000 modules shared globally by many.
+For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">github.com/terraform-aws-modules</a>: https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/acm/aws/latest">ACM</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/appsync/aws/latest">Appsync</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/alb/aws/latest">ALB</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/atlantis/aws/latest">Atlantis</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/autoscaling/aws/latest">autoscaling</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/apigateway-v2/aws/latest">API Gateway v2</a>
+
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/bigquery/aws/latest">Big Query</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/cloudwatch/aws/latest">Cloudwatch</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/cloudfront/aws/latest">Cloud Front</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/dynamodb-table/aws/latest">dynamodb-table</a>
+
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/eventbridge/aws/latest">Eventbridge</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/ebs-optimized/aws/latest">ebs-optimized</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest">ec2-instance</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/ecs/aws/latest">ECS</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest">EKS</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/elb/aws/latest">ELB</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest">IAM</a>
+
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/key-pair/aws/latest">key-pair</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/lambda/aws/latest">Lambda</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/lb-http/aws/latest">Load Balancer HTTP</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/org-policy/aws/latest">org-policy</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/redshift/aws/latest">redshift</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/rds-aurora/aws/latest">rds-aurora</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/route53/aws/latest">Route 53 (DNS)</a>
+
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest">S3-bucket</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest">security-group</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/step-functions/aws/latest">step-functions</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/transit-gateway/aws/latest">transit-gateway</a>
+
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpn-gateway/aws/latest">vpn-gateway</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest">VPC</a>
+<br /><br />
 
 The module's source can be on a local disk:
 
