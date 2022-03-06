@@ -2105,11 +2105,11 @@ Memory:
    * A memory leak occurs when a computer program incorrectly manages memory allocations, which can exhaust available system memory as an application runs. 
    <br /><br />
 
-A process is a series of actions or steps taken in order to achieve a particular end. Organizations will define individual processes and their relationship to one another.
+### Processes:
 
-Workflow
+   A process is a series of actions or steps taken in order to achieve a particular end. Organizations will define individual processes and their relationship to one another.
 
-Confinement is a term used to describe processes in a system. When a process is confined, the process is only allowed to read from and write to certain memory locations and resources. Confinement is usually carried out using the operating system, through a confinement service, or using a hypervisor.
+   <strong>Confinement</strong> describes processes confined to only read from and write to certain memory locations and resources. Confinement is usually carried out using the operating system, through a confinement service, or using a hypervisor.
 
 The bounds of a process set limits on the memory addresses and resources the process can access. The bounds logically segment memory areas for each process to use.
 
@@ -2119,7 +2119,10 @@ MPLS is a protocol-independent transport mechanism. Uses labels, but not for IP 
 
 Convergence to use IP protocol for a variety of formats (data, voice, etc.)
 
+TOOL: When using a USB power source only for power, block its ability to transfer data by using a "USB condom". PortaPaw has <a target="_blank" href="https://www.amazon.com/Juice-Jack-Defender-Security-Purchased-Employees/dp/B08WKSNYVC/">4th gen USB-A</a> and <a target="_blank" href="https://www.amazon.com/PortaPow-Data-Blocker-USB-C-Converter/dp/B08XK4WPZ4/">as a USB-A to USB-C converter</a>.
+
 IDS (Intrusion Detection System)
+   * Blocks autorun when USB are attached, a prolific infection vector
    * HIDS (Host-based IDS) on servers
    * A heuristic-based (or rule-based) IDS is an expert system that uses a knowledge base, inference engine, and rule-based programming. 
    * A signature-based IDS analyzes traffic and compares it to attack or state patterns, called signatures, that reside within the IDS database.
@@ -2127,6 +2130,8 @@ IDS (Intrusion Detection System)
    * An anomaly-based IDS analyzes traffic and compares it to normal traffic to determine if said traffic is a threat. 
    * An application-based IDS is a specialized IDS that analyzes transaction log files for a single application.
    <br /><br />
+
+Better to use a sandboxed lab system (sometimes referred to as a "sheep dip").
 
 Backups:
    * GRS (grandfather-father-son) backup rotation scheme Three sets of backup media
