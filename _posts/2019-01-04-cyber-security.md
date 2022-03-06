@@ -2119,7 +2119,7 @@ MPLS is a protocol-independent transport mechanism. Uses labels, but not for IP 
 
 Convergence to use IP protocol for a variety of formats (data, voice, etc.)
 
-TOOL: When using a USB power source only for power, block its ability to transfer data by using a "USB condom". PortaPaw has <a target="_blank" href="https://www.amazon.com/Juice-Jack-Defender-Security-Purchased-Employees/dp/B08WKSNYVC/">4th gen USB-A</a> and <a target="_blank" href="https://www.amazon.com/PortaPow-Data-Blocker-USB-C-Converter/dp/B08XK4WPZ4/">as a USB-A to USB-C converter</a>.
+PROTIP: TOOL: When using a USB power source only for power, block its ability to transfer data by using a "USB condom". PortaPaw has <a target="_blank" href="https://www.amazon.com/Juice-Jack-Defender-Security-Purchased-Employees/dp/B08WKSNYVC/">4th gen USB-A</a> and <a target="_blank" href="https://www.amazon.com/PortaPow-Data-Blocker-USB-C-Converter/dp/B08XK4WPZ4/">as a USB-A to USB-C converter</a>.
 
 IDS (Intrusion Detection System)
    * Blocks autorun when USB are attached, a prolific infection vector
