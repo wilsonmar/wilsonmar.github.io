@@ -1454,11 +1454,14 @@ Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</
 
 ## Attacks
 
-Cryptoanalytic attacks try to deduce the key via brute-force (dictionary most likely)
-
-Cryptographic attacks: man-in-the-middle, replay, timing, radiation,
-
 Attacks: attempts to violate an organization’s security or privacy: REMEMBER: 
+
+<strong>Cryptoanalytic</strong> attacks try to deduce the key via brute-force (dictionary most likely)
+
+<strong>Cryptographic</strong> attacks: man-in-the-middle, replay, timing, radiation,
+
+APT (Advanced Persistent Threat) and AVT (Advanced Volatile Threat) describe a general class of modern fileless/"live off the land" malware that evade detection and continually evolve. <a target="_blank" href=<a target="_blank" href="https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware/what-is-fileless-malware.html">Low Observable Characteristics (LOC) attack</a>.
+
    * A <strong>smurf</strong> attack uses a type of ping packet called an ICMP ECHO REQUEST. 
    * In a <strong>side-channel</strong> attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
    * Evesdropping (traffic analysis). Countermeasures are sending noise, padding messages, mix non-info in data.
@@ -1501,18 +1504,27 @@ Events: System-level, application-level, or user-level? REMEMBER
 
 <a name="Malware"></a>
 
-### Malware (malicious software):
-   * A <strong>worm</strong> is a program that spreads itself through network connections. 
+### Malware (malicious software - malware):
+See https://www.caida.org/research/security/code-red/
+   
+   * <strong>Password spraying</strong> is a horizontal brute-force online attack, where the attacker tries common passwords in conjunction with multiple usernames.
+   * An <strong>offline attack</strong> occurs when the attacker does not interact with the authentication system because he/she has obtained a database of password hashes, such as %SystemRoot%\System32\config\SAM, %SystemRoot%\NTDS\NTDS.DIT (the Active Directory credential store), or /etc/shadow. 
+
+   * A <strong>worm</strong> is memory-resident malware that can run without user intervention and replicate over network resources.
+   * <strong>Fileless malware</strong> uses memory resident techniques to run in its own process rather than writing its code to disk.
    * A <strong>companion</strong> is a new file created with a similar name so users activate it.
    * A <strong>virus</strong> relies upon other application programs to execute itself and infect a system.
    * An armored virus includes protective code that prevents examination of critical elements, such as scans by antivirus software.
 
    * <strong>Spyware</strong> uses tracking cookies to collect and report on a user’s activities to the spyware programmer. 
    * A <strong>Trojan</strong> is malware disguised as a useful utility but embeds malicious code in itself. A symptom of a Trojan horse is that unknown software is using covert channels to perform malicious activities, such as deleting system files and planting a backdoor into a system. The term is based on the "Trojan horse" story where soldiers hid in a large wooden horse which the opposition pulled inside their gates. 
-   * A <strong>RAT</strong> is a Remote Access Trojan
+   * A <strong>RAT</strong> is a Remote Access Trojan backdoor malware that mimics the functionality of legitimate remote control programs, but operate covertly. It allows the threat actor to access the host, upload files, and install software or use "live off the land" techniques to effect further compromises. 
+   * A host that is under malicious control is sometimes described as a "zombie".
    * A <strong>Macro</strong> is written into like VB in Excel.
+   * <strong>Logic bombs</strong> are triggered by events such as a specific date.
+   
+   * <strong>PUPs/PUAs (Potentially Unwanted Programs/Applications)</strong> are installed alongside (bundled with) a package selected by the user, such as part of a new install of operating system (Ubuntu, printer, etc.)without active consent or consent from a purposefully confusing license agreement. Unlike a Trojan, the presence of a PUP is not automatically regarded as malicious, so it's sometimes described as <strong>grayware</strong>.
    * <strong>Adware</strong> is a software application that displays advertisements (which generates revenue) while the application is executing.
-   * <strong>Logic bombs</strong> are triggered by events like a specific date.
    <br /><br />
 
    * Multipartite spreads in different ways

@@ -46,6 +46,8 @@ Its concepts have not changed. To prevent breaking changes, KMS is keeping some 
    REMEMBER: KMS itself can only encrypt a maximum of <strong>4 KB</strong>. 
    So <a href="#DataKeys">Data Keys</a> are used to encrypt larger objects.
 
+   https://github.com/cipherstash/terraform-provider-kms/blob/main/docs/resources/kms_data_key_without_plaintext.md
+
 <a name="DataKeys"></a>
 
 ### Data Keys

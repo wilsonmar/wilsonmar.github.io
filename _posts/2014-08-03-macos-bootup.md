@@ -3,7 +3,7 @@ layout: post
 title: "MacOS Bootup"
 excerpt: "To diagnose and troubleshoot getting started (vs. Linux)"
 tags: [apple, mac, setup, USB]
-date: "2014-08-03"
+date: "2021-03-03"
 file: "macos-bootup"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624434/dab075ca-0597-11e6-9090-f93e259a5554.jpg
@@ -221,6 +221,17 @@ session    optional       pam_mount.so
 
 Each operating sytem has its own set, including use of file pam_env.conf within folder /etc/security.
 
+## Root Kits
+
+Leak of documents from CIA’s Embedded Development Branch (EDB) reveal they developed an OS X “implant” (called DerStarke) that includes a kernel code injection module dubbed Bokor and an EFI (Extensible Firmware Interface)  persistence module (called DarkMatter). The rootkits targeting <strong>firmware</strong> on Apple Macbook laptops<a target="_blank" href="https://www.pcworld.com/article/3179348/after-cia-leak-intel-security-releases-detection-tool-for-efi-rootkits.html">*</a>
+
+The low-level firmware runs before the operating system and initializes the various hardware components during the system boot process. That allows the rootkit to survive major system updates and even reinstallations.
+
+A module for Intel Security's <a target="_blank" href="https://github.com/chipsec/chipsec">CHIPSEC open-source framework</a> finds rogue EFI binaries. CHIPSEC is a set of command-line tools which use low-level interfaces to analyze a system’s hardware, firmware, and platform components. It can be run from Windows, Linux, macOS, or an EFI shell.
+The new CHIPSEC module allows the user to take a clean EFI image immediately after purchase from the computer manufacturer, extract its contents and build a clean list of the binary files inside. It can then compare that list against the system’s current EFI or against an EFI image previously extracted from a system.
+If the tool finds any binary files that don’t match the clean EFI list, it’s possible that the firmware has been infected. The rogue files are listed and can then be further analyzed.
+
+See https://support.apple.com/en-us/HT201518
 
 ## More on OSX
 

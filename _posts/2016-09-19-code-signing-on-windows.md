@@ -19,7 +19,7 @@ comments: true
 This article describes the use of self-signed code signing certificates on 
 Microsoft Windows operating systems.
 
-
+See https://www.microsoft.com/security/blog/2017/10/23/hardening-the-system-and-maintaining-integrity-with-windows-defender-system-guard/
 
 ## Kleopatra UI #
 

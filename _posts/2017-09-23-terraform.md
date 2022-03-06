@@ -43,7 +43,7 @@ Here is my proposal to ensure that cloud resources are <strong>secure when creat
 </amp-youtube>
 <br /><br />
 
-Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, to simplify the explanation here, we'll focus on <strong>AWS</strong> for now.
+Although Terraform <a href="#MultiCloud">works on multiple clouds</a>, to simplify the explanation here, we'll focus on <a href="#AWS">AWS</a> for now.
 
 Resources in AWS can be created and managed using several tools: manually using the AWS Management Console <strong>GUI</strong> or manually invoking on a Terminal running <strong>CLI</strong> (Command Line Interface) shell scripts or programs written to issue REST API calls. But many enterpise AWS users avoid using GUI and CLI and instead use an approach that provides <strong>versioning</strong> of <a href="#IaC">Configuration as Code (IaC)</a> in <strong>GitHub</strong> repositories, so you can go from dev to qa to stage to prod more quickly and securely.
 
@@ -277,11 +277,17 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38&t=51m19s">VIDEO</a>:
 
-1. Terraform is open-sourced in GitHub. A list of <strong>releases</strong> is at: 
+1. Terraform is open-sourced in GitHub. Metadata about <strong>each releases</strong> is at: 
 
    <a target="_blank" href="https://github.com/hashicorp/terraform/releases">https://github.com/hashicorp/terraform/releases</a>
 
    PROTIP: Terraform is written in the [Go language](/golang/), so (unlike Java) there is no separate VM to download.
+
+1. To download an install file for your operating system, click the list of Terraform versions at:
+
+   <a target="_blank" href="https://releases.hashicorp.com/terraform/">https://releases.hashicorp.com/terraform/</a>
+
+   PROTIP: But instead of manually downloading, get the latest version automatically using an installer by following instructions below.
 
    <a name="tf_version"></a>
    
@@ -566,14 +572,14 @@ sudo apt-get install docker-ce
 You'll need a text editor with plugins to view HCL:
 
    * <a href="#VScode">VSCode</a>
-
+   * <a href="#TFLint">Terraform Enterprise TFLint</a>
 
 
 <hr />
 
 <a name="VSCode"></a>
 
-## VSCode
+### VSCode
 
 1. Use VSCode (installed by default) to view blocks in Terraform HCL files:
 
@@ -598,6 +604,30 @@ code main.tf
 
    for "azurerm_resource_group".
 
+<hr />
+
+<a name="TFLint"></a>
+
+### Terraform Enterprise TFLint
+
+   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
+
+   Terraform Enterprise automatically stores the history of all state revisions.
+   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
+   Terraform Enterprise has producers (experts) and read-only consumers.
+   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
+   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
+
+   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
+
+   * Set to public instead of private?
+   
+   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
+
+   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
+
 
 
 
@@ -605,7 +635,7 @@ code main.tf
 
 <a name="SampleTF"></a>
 
-## Sample Terraform scripts
+## Sample Terraform repositories   
 
 Let's work with on I found:
 
@@ -686,7 +716,7 @@ REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>a
 
    Terraform 0.11 and earlier required all non-constant expressions to be provided via interpolation syntax with a format similar to shell scripts:
 
-   <tt>image = "${var.aws_region}"</tt>
+   <pre>image = "${var.aws_region}"</pre>
 
    PROTIP: Interpolation allows a single file to be specified for several environments (dev, qa, stage, prod), with a variable file to specify only values unique to each enviornment.
 
@@ -895,8 +925,42 @@ ami = ${lookup(var.amis, "us-east-1")}
 
    <a target="_blank" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.aws.amazon.com%2FAWSEC2%2Flatest%2FUserGuide%2Flaunch-marketplace-console.html&sa=D&sntz=1&usg=AFQjCNGbWvcSfsheH4psSFED8ZF-w6mrqQ">NOTE</a>: Amazon has an approval process for making AMIs available on the public Amazon Marketplace.
 
+### Count of items processed
 
+<a target="_blank" href="https://kodekloud.com/topic/count/">VIDEO</a>:
+To create several items (such as files) using a count that is indexed from 0:
 
+1. In a .tf file:
+
+   <pre>resource "local_file" "my_data" {
+  my_data_filename = var.my_data_filename[my_data_file_count.index]
+  my_data_file_count = 3
+}
+   </pre>
+
+1. In a variables.tf file, my_data_filename[0] is the first default file name:
+
+   <pre>variable "my_data_filename" {
+  default = [
+     "/root/file_a.txt",
+     "/root/file_b.txt",
+     "/root/file_c.txt",
+     "/root/file_d.txt"
+  ]
+}
+   </pre>
+
+1. After <tt>terraform apply</tt>, a list of files would yield:
+
+   <pre>file_a.txt
+file_b.txt
+file_c.txt
+   </pre>
+
+   The default directory_permission and file_permission is <tt>0777</tt>.
+
+<a target="_blank" href="https://kodekloud.com/topic/for-each/">VIDEO</a>:
+To ensure that items are properly deleted, a for-each is used to create a map referenced by key values instead of a blind list referenced by an index.
 
 <hr />
 
@@ -993,24 +1057,6 @@ details each policy check and which tool performs them:
 STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
 
 Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
-
-
-## Other PaC - OPA Regula
-
-<a target="_blank" href="https://regula.dev/">Regula</a> language code is processed by an <strong>OPA (Open Policy Agent)</strong> (pronounced like the Greek acclaim "oh pa!" to <a target="_blank" href=" to express enthusiasm, shock or surprise, or just after having made a mistake">express enthusiasm, shock or surprise, or just after having made a mistake</a>), <a target="_blank" href="https://github.com/open-policy-agent/opa#example-api-authorization">open-sourced at github.com/open-policy-agent</a> by <a target="_blank" href="https://academy.styra.com/courses/opa-rego">Styra.com</a>, which provides support and training on OPA and the <a target="_blank" href="https://www.openpolicyagent.org/docs/latest/policy-language/">Rego language</a> for defining policy rules.
-
-Any language to define policies needs to be a <strong>programming language</strong> with if/then/else using variables, loops referencing arrays, functions, etc.
-<a target="_blank" href="https://medium.com/@mathurvarun98/how-to-write-great-rego-policies-dc6117679c9f">NOTE</a>: Rego has Python-esque import statements, no semicolons, print() functions, <a target="_blank" href="https://thenewstack.io/5-things-you-didnt-know-about-open-policy-agent/">list comprehensions</a>, etc.
-Rego extends the <a target="_blank" href="https://en.wikipedia.org/wiki/Datalog">Datalog query language</a>.
-
-The Rego language is backed by the CNCF (Cloud-Native Foundation) and thus used in Kafka, Kubernetes, <a target="_blank" href="https://jupiterone.com/features/security-policy-as-code/">JupiterOne</a>, etc.
-
-https://github.com/accurics/terrascan uses Rego policies
-
-Vendors who use OPA and Rego include <a target="_blank" href="https://harness.io/blog/continuous-delivery/policy-as-code/">Harness</a> and <a target="_blank" href="https://spacelift.io/">Spacelift</a> SaaS. Spacelift built sophisticated tooling called Policy Workbench for capturing policy inputs and replaying evaluations, allowing tweaking of policies in a tight feedback loop until they reflect business needs. Unlike Terraform, Spacelift can group and filter resources to understand the architecture or look up their history to get a glimpse of the evolution of your infrastructure.
-
-OPA <a target="_blank" href="https://github.com/fugue/regula-action">runs GitHub Actions</a> to alert about noncompliant IaC code.
-
 
 
 <a name="Cloudrail"></a>
@@ -1157,31 +1203,6 @@ xs3.tf <em>- key management service</em>
    QUESTION: How will you know when new AWS services become available or deprecated?
 
 
-
-<hr />
-
-
-<a name="TFLint"></a>
-
-### Terraform Enterprise TFLint
-
-   An important distinction between Cloud Formmation and Terraform is that Terraform tracks the <strong>state</strong> of each resource. 
-
-   Terraform Enterprise automatically stores the history of all state revisions.
-   <a target="_blank" href="https://www.terraform.io/docs/state/index.html">https://www.terraform.io/docs/state</a>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=s8IZa_o5UGw/">VIDEO</a>:
-   Terraform Enterprise has producers (experts) and read-only consumers.
-   Terraform Enterprise processes HCL with <strong>auditing policies</strong> like linter
-   <a target="_blank" href="https://github.com/terraform-linters/tflint">https://github.com/terraform-linters/tflint</a>, installed on Windows using <a target="_blank" href="https://chocolatey.org/packages/tflint">choco install tflint</a>. See https://spin.atomicobject.com/2019/09/03/cloud-infrastructure-entr/
-
-   [8:25] Terraform Enterprise enforces "policy as code" which automates the application of what CIS (Center for Internet Security) calls (free) "benchmarks" -- secure configuration settings for <strong>hardening</strong> operating systems, for AWS settings at (the 155 page) <a target="_blank" href="https://www.cisecurity.org/benchmark/amazon_web_services/">https://www.cisecurity.org/benchmark/amazon_web_services/</a>.
-
-   * Set to public instead of private?
-   
-   <a target="_blank" href="https://github.com/gruntwork-io/terratest/">Terratest</a> from Gruntwork.
-
-   https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
 
 
 <hr />
@@ -1654,13 +1675,15 @@ Terraform language style conventions include:
 
 <a name="Modules"></a>
 
-## Reusable Modules
+## Modules
 
 Modules are self-contained packages of Terraform configurations that are managed as a group.
 
 In other words, a Terraform module is a container for multiple resources used together.
 
 Terraform modules provide "blueprints" to deploy.
+
+### Reusable Modules
 
 PROTIP: Before creating your own module, check out website <a target="_blank" href="https://registry.terraform.io/browse/modules">https://registry.terraform.io/browse/modules</a> containing 9,000 modules shared globally by many.
 For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">github.com/terraform-aws-modules</a>: https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest
@@ -1692,7 +1715,7 @@ For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">g
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/rds-aurora/aws/latest">rds-aurora</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/route53/aws/latest">Route 53 (DNS)</a>
 
-* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest">S3-bucket</a>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest">S3-bucket</a> <a target="_blank" href="https://kodekloud.com/topic/introduction-to-aws-s3/">VIDEO</a>, <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">AWS docs</ax>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest">security-group</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/step-functions/aws/latest">step-functions</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/transit-gateway/aws/latest">transit-gateway</a>
@@ -2083,7 +2106,7 @@ code main.tf
    <pre><strong>code ~/clouddrive/terraform-on-azure/03-terraform-state/02-remote-state/main.tf
    </strong></pre>
 
-   The output blocks can be moved to a separate output.tf fil.
+   The output blocks can be moved to a separate <a href="#output.tf">output.tf</a> file.
 
 1. data.
 1. variables.tf for reusability. Define default values refered as "var." in:
@@ -2411,16 +2434,14 @@ In a team environment, it helps to store state state files off a local disk and 
    </pre>
 
 
-<hr />
- 
 <a name="DriftManagement"></a>
 
-## Drift management
+### Drift management
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
 Drift occurs when the actual state of resources provisioned diverges from the expected state.
 
-If an approved manual configuration has been changed or removed (a VM terminated) using the AWS Console GUI, the state can be <strong>refreshed</strong> by an alias of the command <tt>terraform apply -refresh-only -auto-approve</tt> which doesn't make changes:
+If an approved manual configuration has been changed or removed, such as when a VM is terminated using the AWS Console GUI, the state can be <strong>refreshed</strong> by an alias of the command <tt>terraform apply -refresh-only -auto-approve</tt> which doesn't make changes:
 
    <pre><strong>terraform refresh</strong></pre>
 
@@ -2443,7 +2464,6 @@ If an approved manual configuration has been changed or removed (a VM terminated
 
    NOTE: <tt>terraform taint aws_instance.my-app</tt> (to mark a resource for replacement) was deprecated as of version 0.152.
 
-   
 
    <a name="DestroyState"></a>
    
@@ -2457,6 +2477,94 @@ If an approved manual configuration has been changed or removed (a VM terminated
 
 1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
+
+
+   <a name="AWSStateMgmt"></a>
+   
+   ### Managing State
+   
+   Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
+   users needs to manage state (using Terraform features).
+
+   
+   <a name="RemoteState"></a>
+
+   ### Remote state
+
+   <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">NOTE</a>
+   terraform.tfstate can be stored over the network in S3, etcd distributed key value store (used by Kubernetes), or a Hashicorp Atlas or Consul server. (Hashicorp Atlas is a licensed solution.)
+
+   State can be obtained using command:
+
+   <pre><strong>terraform remote pull</strong></pre>
+
+
+   <a name="Backends"></a>
+
+   ### Backends
+
+   Terraform can manage state through these backends which persists (stores) data:
+
+   * local (the default)
+   Hashicorp products:
+      * Terraform Enterprise
+      * Consul
+      * Atlas
+      <br /><br />
+   
+   * etcd (distributed key value store used by Kubernetes)
+
+   Cloud vendors:
+      * s3 - in AWS <a target="_blank" href="https://kodekloud.com/topic/remote-backends-with-s3/">VIDEO</a> with DynamoDB
+      * gcs - Google Cloud
+      * azurerm
+
+   * artifactory - by JFrog
+   * cos
+   * postgres
+   * manta
+   * swift
+   <br /><br />
+
+   Some backends allows multiple named workspace instances to be associated with a single backend configuration (without configuring a new backend authentication).
+
+
+<a name="Crossplane"></a>
+
+### Crossplane
+
+<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
+
+<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
+
+
+   <a name="DestroyFlag"></a>
+
+   ### Processing flags
+
+   HCL can contain flags that affect processing. For example, within a resource specification, 
+   `force_destroy = true` forces the provider to delete the resource when done.
+
+
+   <a name="Cleanup"></a>
+
+   ### Destroy to clean up
+
+0. <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=1h55m48s">VIDEO</a>: Destroy instances (so they don't rack up charges unproductively):
+
+   <tt><strong>terraform destroy
+   </strong></tt>
+
+   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute, as other cloud providers do.
+
+0. Verify in the provider's console (aws.amazon.com)
+
+
+
+
+
+
+<hr />
 
    <a name="variables.tf"></a>
 
@@ -2770,10 +2878,11 @@ resource "aws_security_group" "instance" {
    use of rogue port numbers other than 80/443.
 
 
+<a name="output.tf"></a>
 
-   <a name="Outputs"></a>
+<a name="Outputs"></a>
 
-   ### outputs.tf
+ ## outputs.tf
 
    Sample contents of an outputs.tf file:
 
@@ -2800,7 +2909,14 @@ output "public_ip" {
 }
    </pre>
 
-PROTIP: If the AMI is no longer available, you will get an error message.
+   PROTIP: If the AMI is no longer available, you will get an error message.
+
+1. Output Terraform variable:
+
+   <pre>output "loadbalancer_dns_name" {
+  value = "${aws_elb.loadbalancer.dns_name}"
+}
+   </pre>
 
 
 
@@ -3281,81 +3397,6 @@ private_key_path = "C:\\MyKeys1.pem"
 
 
 
-   <a name="AWSStateMgmt"></a>
-   
-   ### Managing State
-   
-   Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
-   users needs to manage state (using Terraform features).
-
-   
-   <a name="RemoteState"></a>
-
-   ### Remote state
-
-   <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">NOTE</a>
-   terraform.tfstate can be stored over the network in S3, etcd distributed key value store (used by Kubernetes), or a Hashicorp Atlas or Consul server. (Hashicorp Atlas is a licensed solution.)
-
-   State can be obtained using command:
-
-   <pre><strong>terraform remote pull</strong></pre>
-
-
-   <a name="Backends"></a>
-
-   ### Backends
-
-   Terraform manages state through these backends which persists (stores) data:
-
-   * local (the default)
-   * consul (Hashicorp product)
-   * atlas (Hashicorp product)
-   * terraform enterprise
-
-   * etcd (distributed key value store used by Kubernetes)
-
-   * s3 - in AWS
-   * gcs - Google Cloud
-   * azurerm
-
-   * artifactory - by JFrog
-   * cos
-   * postgres
-   * manta
-   * swift
-   <br /><br />
-
-   Some backends allows multiple named workspace instances to be associated with a single backend configuration (without configuring a new backend authentication).
-
-
-<a name="Crossplane"></a>
-
-### Crossplane
-
-<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
-
-<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
-
-
-<hr />
-
-### Output variables #
-
-1. Output Terraform variable:
-
-   <pre>output "loadbalancer_dns_name" {
-  value = "${aws_elb.loadbalancer.dns_name}"
-}
-   </pre>
-
-   <a name="DestroyFlag"></a>
-
-   ### Processing flags
-
-   HCL can contain flags that affect processing. For example, within a resource specification, 
-   `force_destroy = true` forces the provider to delete the resource when done.
-
-
    ### Verify websites
 
 0. The website accessible?
@@ -3364,25 +3405,7 @@ private_key_path = "C:\\MyKeys1.pem"
 
 
 
-
-   <a name="Cleanup"></a> 1 59 27
-
-   ### Destroy to clean up
-
-0. <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=1h55m48s">VIDEO</a>: Destroy instances (so they don't rack up charges unproductively):
-
-   <tt><strong>terraform destroy
-   </strong></tt>
-
-   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute, as other cloud providers do.
-
-0. Verify in the provider's console (aws.amazon.com)
-
-
 <hr />
-
-
-
 
 ### Densify FinOps
 
@@ -3393,7 +3416,7 @@ private_key_path = "C:\\MyKeys1.pem"
  <a target="_blank" href="https://www.youtube.com/watch?v=pTxYwbC6GkY">VIDEO</a>:
 ![densify-real-time-807x261](https://user-images.githubusercontent.com/300046/131215844-d6e049b5-443c-4c45-96c6-33562ad0968e.png)
 
-It's defined in terraform.tf:
+It's defined in a tf file:
 
 <pre>module "densify" {
   source = "densify-dev/optimization-as-code/null"
