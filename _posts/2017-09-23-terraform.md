@@ -254,21 +254,6 @@ Although Terraform is "open source", the Terraform GUI requires a license.
    add version control integration, MFA security, HA, and other enterprise features.
 
 
-<a name="MultiCloud"></a>
-
-## Multi-cloud/service
-
-Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
-
-Terraform provides an alternative to each cloud vendor's IaC solution:
-   * <a href="#CFN">AWS - Cloud Formation</a> & CDK
-   * Microsoft Azure Resource Manager Templates
-   * Google Cloud Platform Deployment Manager
-   * OpenStack Heat (on-premises)
-   <br /><br />
-
-Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
-
 <hr />
 
 <a name="Install"></a>
@@ -1984,6 +1969,105 @@ Videos:
    1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io at https://github.com/CloudSkills/Terraform-Projects/tree/master/4-Build-Azure-Infrastructure
    * <a target="_blank" href="https://www.udemy.com/course/learning-terraform-on-microsoft-azure/">Learning Terraform on Microsoft Azure - Terraform v12 / v13</a>
 
+<hr />
+
+
+<hr />
+   
+<a name="Testing"></a>
+
+## Testing Terraform
+
+   As with Java and other programming code, Terraform coding should be tested too.
+
+   Gruntwork has an open-source library to setup and tear down conditions for verifying whether 
+   servers created by Terraform actually work.
+
+   <a target="_blank" href="https://github.com/gruntwork-io/terratest">
+   https://github.com/gruntwork-io/terratest</a>
+   is a Go library that makes it easier to write automated tests for your infrastructure code.
+   It's written in Go that uses Packer, ssh, and other commands
+   to automate experimentation and
+   to collect results (impact of) various configuration changes.
+
+   <a target="_blank" href="https://terratest.gruntwork.io/docs/getting-started/quick-start/">
+   Quick Start Terratest</a>
+
+   <a target="_blank" href="https://www.linkedin.com/pulse/terratest-tf-lint-terraform-compliance-fabio-palumbo/?articleId=6677222508749438976">BLOG</a>:
+
+
+<a name="validate"></a>
+
+### terraform validate
+
+1. Validate the <strong>folder</strong> (see <a target="_blank" href="
+   https://www.terraform.io/docs/commands/validate.html">
+   https://www.terraform.io/docs/commands/validate.html</a>)
+
+   <pre><strong>terraform validate single-web-server
+   </strong></pre>
+
+   If no issues are identified, no message appears. (no news is good news)
+
+1. Add a <a target="_blank" href="https://gist.github.com/jamtur01/a567078b7ba545c3492f7cd32a65450d">
+   pre-commit hook to validate in your Git repository</a>
+
+   <a name="main.tf"></a>
+
+   ### Main.tf
+
+   PROTIP: There should be only one <strong>main.tf</strong> per folder.
+
+
+   <a name="TerraformInit"></a>
+
+   ### Plug-in Initialization
+
+   Cloud providers are not included with the installer, so...
+
+1. In your gits folder:
+
+   <pre>git clone https://github.com/terraform-providers/terraform-provider-aws.git --depth=1
+   </pre>
+
+0. Initialize Terraform working directory (like `git init`) <a href="#PlugIns">plug-ins</a>:
+
+   <tt><strong>terraform init
+   </strong></tt>
+
+   Sample response:
+
+   <pre>Initializing provider plugins...
+- Checking for available provider plugins on https://releases.hashicorp.com...
+- Downloading plugin for provider "aws" (1.17.0)...
+&nbsp;
+The following providers do not have any version constraints in configuration,
+so the latest version was installed.
+&nbsp;
+To prevent automatic upgrades to new major versions that may contain breaking
+changes, it is recommended to add version = "..." constraints to the
+corresponding provider blocks in configuration, with the constraint strings
+suggested below.
+&nbsp;
+* provider.aws: version = "~> 1.17"
+&nbsp;
+Terraform has been successfully initialized!
+&nbsp;
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+&nbsp;
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+   </pre>
+
+   See <a target="_blank" href="https://www.terraform.io/docs/commands/init.html">
+   https://www.terraform.io/docs/commands/init.html</a>
+   
+   This creates a hidden `.terraform\plugins" folder path containing a folder for your os - `darwin_amd64` for MacOS.
+
+
 
 <hr />
 
@@ -2690,9 +2774,26 @@ REMEMBER: When troubleshooting, remember the order of precedence<a target="_blan
 
 <hr />
 
+
+<a name="MultiCloud"></a>
+
+## Multi-cloud/service
+
+Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
+
+Terraform provides an alternative to each cloud vendor's IaC solution:
+   * <a href="#CFN">AWS - Cloud Formation</a> & CDK
+   * Microsoft Azure Resource Manager Templates
+   * Google Cloud Platform Deployment Manager
+   * OpenStack Heat (on-premises)
+   <br /><br />
+
+Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
+
+
 <a name="Providers"></a>
 
-## Terraform Providers
+### Terraform Providers
 
    <a target="_blank" href="
    https://www.terraform.io/docs/language/providers/index.html">
@@ -2917,103 +3018,6 @@ output "public_ip" {
   value = "${aws_elb.loadbalancer.dns_name}"
 }
    </pre>
-
-
-
-<hr />
-   
-<a name="Tests"></a>
-
-## Tests
-
-   As with Java and other programming code, Terraform coding should be tested too.
-
-   Gruntwork has an open-source library to setup and tear down conditions for verifying whether 
-   servers created by Terraform actually work.
-
-   <a target="_blank" href="https://github.com/gruntwork-io/terratest">
-   https://github.com/gruntwork-io/terratest</a>
-   is a Go library that makes it easier to write automated tests for your infrastructure code.
-   It's written in Go that uses Packer, ssh, and other commands
-   to automate experimentation and
-   to collect results (impact of) various configuration changes.
-
-   <a target="_blank" href="https://terratest.gruntwork.io/docs/getting-started/quick-start/">
-   Quick Start Terratest</a>
-
-   <a target="_blank" href="https://www.linkedin.com/pulse/terratest-tf-lint-terraform-compliance-fabio-palumbo/?articleId=6677222508749438976">BLOG</a>:
-
-
-<a name="validate"></a>
-
-### terraform validate
-
-1. Validate the <strong>folder</strong> (see <a target="_blank" href="
-   https://www.terraform.io/docs/commands/validate.html">
-   https://www.terraform.io/docs/commands/validate.html</a>)
-
-   <pre><strong>terraform validate single-web-server
-   </strong></pre>
-
-   If no issues are identified, no message appears. (no news is good news)
-
-1. Add a <a target="_blank" href="https://gist.github.com/jamtur01/a567078b7ba545c3492f7cd32a65450d">
-   pre-commit hook to validate in your Git repository</a>
-
-   <a name="main.tf"></a>
-
-   ### Main.tf
-
-   PROTIP: There should be only one <strong>main.tf</strong> per folder.
-
-
-   <a name="TerraformInit"></a>
-
-   ### Plug-in Initialization
-
-   Cloud providers are not included with the installer, so...
-
-1. In your gits folder:
-
-   <pre>git clone https://github.com/terraform-providers/terraform-provider-aws.git --depth=1
-   </pre>
-
-0. Initialize Terraform working directory (like `git init`) <a href="#PlugIns">plug-ins</a>:
-
-   <tt><strong>terraform init
-   </strong></tt>
-
-   Sample response:
-
-   <pre>Initializing provider plugins...
-- Checking for available provider plugins on https://releases.hashicorp.com...
-- Downloading plugin for provider "aws" (1.17.0)...
-&nbsp;
-The following providers do not have any version constraints in configuration,
-so the latest version was installed.
-&nbsp;
-To prevent automatic upgrades to new major versions that may contain breaking
-changes, it is recommended to add version = "..." constraints to the
-corresponding provider blocks in configuration, with the constraint strings
-suggested below.
-&nbsp;
-* provider.aws: version = "~> 1.17"
-&nbsp;
-Terraform has been successfully initialized!
-&nbsp;
-You may now begin working with Terraform. Try running "terraform plan" to see
-any changes that are required for your infrastructure. All Terraform commands
-should now work.
-&nbsp;
-If you ever set or change modules or backend configuration for Terraform,
-rerun this command to reinitialize your working directory. If you forget, other
-commands will detect it and remind you to do so if necessary.
-   </pre>
-
-   See <a target="_blank" href="https://www.terraform.io/docs/commands/init.html">
-   https://www.terraform.io/docs/commands/init.html</a>
-   
-   This creates a hidden `.terraform\plugins" folder path containing a folder for your os - `darwin_amd64` for MacOS.
 
 
 
