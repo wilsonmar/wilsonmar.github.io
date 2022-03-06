@@ -618,6 +618,248 @@ code main.tf
 
 <hr />
 
+<a name="Issues"></a>
+
+### What issues to look for?
+
+There are several industry standards which prescribe "controls" and configurations:
+
+   * AWS Foundations referenced by the AWS Security Hub service
+   * CIS
+
+   * SOC2
+   * ISO
+   * FedRAMP
+
+   * PCI
+   * HIPAA
+   * NIST
+   * Hightrust
+   * etc.
+   <br /><br />
+
+The trouble with standards is that they are in PDF and Excel files.
+
+
+<a name="PolicyCheckTools"></a>
+
+### Programs processing Policy as Code
+
+PROTIP: To prevent vulnerabilities <strong>before</strong> they are manifested in resources on the internet,
+several groups have created programs which can <strong>automatically attest</strong> to whether a Terraform file actually meets or violates specific <strong>policies</strong> defined as code.
+
+This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
+
+<a target="_blank" href="https://github.com/iacsecurity/tool-compare">github.com/iacsecurity/tool-compare</a> 
+details each policy check and which tool performs them:
+
+   * OSS Python-based <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> by <a target="_blank" href="https://bridgecrew.io/">Bridgecrew.io</a> (acquired by Palo Alto Networks)
+
+   * Fremium <a target="_blank" href="https://www.indeni.com/cloudrail">Indeni Cloudrail</a>
+
+   * OSS Go-based <a target="_blank" href="https://github.com/Checkmarx/kics">Kics</a> (Keeping Infrastructure as Code Secure) by Checkmarx
+
+   * Freemium <a target="_blank" href="https://snyk.io/">Snyk</a>
+
+   * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
+
+   * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
+
+   * https://github.com/accurics/terrascan uses Rego policies
+
+   * SonarQube
+
+   * Terraform FOSS with <a href="#Atlantis">Atlantis</a>
+
+   * Terraform Enterprise <a href="#Sentinel">Sentinel</a>
+
+STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
+
+Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
+
+
+<a name="Cloudrail"></a>
+
+## Install Security Scanners
+
+<a target="_blank" href="https://github.com/iacsecurity/tool-compare">https://github.com/iacsecurity/tool-compare</a> lists specific tests (of vulnerability) and which products can detect each.
+
+<a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> is an OSS static scanner of Terraform, AWS Cloud Formation, and Azure ARM templates.
+
+<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
+
+When run on local envrionments, security scanning achieves "shift left". 
+
+
+<a name="InstallCheckov"></a>
+
+### Install Checkov scanner
+
+1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
+1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
+
+   <pre>pip3 install -U checkov
+checkov --help
+   </pre>
+
+1. Expand your Terminal to full screen.
+1. Let's start by scanning a single tf file within <tt>terragoat/terraform/aws</tt>:
+
+   <pre><strong>checkov -f db-app.tf > db-app.txt</strong></pre>
+
+   It takes several minutes.
+
+   <tt>> db-app.txt</tt> above sends the output to a new file. If the file already exists, it overwrites the previous run. 
+
+   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
+
+   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
+&nbsp;
+• Command line docker Image scanning
+• Free (forever) bridgecrew.cloud account with API access
+• Auto-fix remediation suggestions
+• Enabling of VS Code Plugin
+• Dashboard visualisation of Checkov scans
+• Integration with GitHub for:
+	◦ 	Automated Pull Request scanning
+	◦ 	Auto remediation PR generation
+• Integration with up to 100 cloud resources for:
+	◦ 	Automated cloud resource checks
+	◦ 	Resource drift detection
+&nbsp;
+and much more...
+&nbsp;
+It's easy and only takes 2 minutes. We can do it right now!
+&nbsp;
+To Level-up, press 'y'...
+&nbsp;
+Level up? (y/n): _
+   </pre>
+
+1. Edit the output file.
+
+   <pre>       _               _              
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V / 
+  \___|_| |_|\___|\___|_|\_\___/ \_/  
+&nbsp;
+By bridgecrew.io | version: 2.0.829 
+Update available 2.0.829 -> 2.0.873
+Run pip3 install -U checkov to update 
+&nbsp;
+terraform scan results:
+&nbsp;
+Passed checks: 12, Failed checks: 14, Skipped checks: 0
+&nbsp;
+Check: CKV_AWS_211: "Ensure RDS uses a modern CaCert"
+	PASSED for resource: aws_db_instance.default
+	File: /db-app.tf:1-41
+   </pre>
+
+   As of this writing, <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">Checkov has 50 built-in checks</a>.
+   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
+   which defines recommended Terraform coding.
+
+1. Remove the file to save disk space.
+
+1. Scan a directory (folder), such as from <a href="#Terragoat">Terragoat</a>:
+
+   <pre><strong>checkov -d aws</strong></pre>
+
+
+   ### Install full-fast-fail scanner
+
+   This library is not yet in Homebrew, so:
+
+   <pre>git clone https://github.com/JamesWoolfenden/full-fast-fail --depth 1
+cd full-fast-fail
+./checker.sh
+   </pre>
+
+
+
+
+<hr />
+
+<a name="Terragoat"></a>
+
+### Terragoat for learning
+
+   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+
+   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
+   
+1. Get it on your laptop after navigating to a folder:
+
+   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
+   cd terragoat/terraform
+   </strong></pre>
+
+1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
+
+   <pre><strong>ls aws
+   </strong></pre>
+
+   Response:
+
+   <pre>db-app.tf <em>- database application</em>
+ec2.tf
+ecr.tf <em>- elastic Kubernetes service</em>
+eks.tf <em>- elastic Kubernetes service</em>
+elb.tf <em>- elastic load balancer</em>
+es.tf
+iam.tf
+kms.tf <em>- key management service</em>
+lambda.tf
+neptune.tf
+rds.tf <em>- relational database service</em>
+xs3.tf <em>- key management service</em>
+   </pre>
+
+   PROTIP: BLAH: These are a few of the 200+ AWS services.
+   
+   QUESTION: How will you know when new AWS services become available or deprecated?
+
+
+
+
+<hr />
+
+## Create vulnerable resources
+
+1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
+
+   * "acme" for company_name in TF_VAR_company_name
+   * "mydevsecops" for environment in TF_VAR_environment
+   * TF_VAR_region
+   <br /><br />
+
+1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
+
+   <pre>alias      = "plain_text_access_keys_provider"
+  region     = "us-west-1"
+  access_key = "AKIAIOSFODNN7EXAMPLE"
+  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+   </pre>
+
+   SECURITY WARNING: Replace key values with a variable name.
+
+   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
+
+1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
+
+ , and #airiam, 
+
+https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
+
+
+
+
+<hr />
+
 <a name="SampleTF"></a>
 
 ## Sample Terraform repositories   
@@ -979,247 +1221,6 @@ vpc
 
    https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
 
-
-
-
-<hr />
-
-<a name="Issues"></a>
-
-### What issues to look for?
-
-There are several industry standards which prescribe "controls" and configurations:
-
-   * AWS Foundations referenced by the AWS Security Hub service
-   * CIS
-
-   * SOC2
-   * ISO
-   * FedRAMP
-
-   * PCI
-   * HIPAA
-   * NIST
-   * Hightrust
-   * etc.
-   <br /><br />
-
-The trouble with standards is that they are in PDF and Excel files.
-
-
-<a name="PolicyCheckTools"></a>
-
-### Programs processing Policy as Code
-
-PROTIP: To prevent vulnerabilities <strong>before</strong> they are manifested in resources on the internet,
-several groups have created programs which can <strong>automatically attest</strong> to whether a Terraform file actually meets or violates specific <strong>policies</strong> defined as code.
-
-This enables a CI/CD pipeline to stop processing if a Terraform file fails a scan.
-
-<a target="_blank" href="https://github.com/iacsecurity/tool-compare">github.com/iacsecurity/tool-compare</a> 
-details each policy check and which tool performs them:
-
-   * OSS Python-based <a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> by <a target="_blank" href="https://bridgecrew.io/">Bridgecrew.io</a> (acquired by Palo Alto Networks)
-
-   * Fremium <a target="_blank" href="https://www.indeni.com/cloudrail">Indeni Cloudrail</a>
-
-   * OSS Go-based <a target="_blank" href="https://github.com/Checkmarx/kics">Kics</a> (Keeping Infrastructure as Code Secure) by Checkmarx
-
-   * Freemium <a target="_blank" href="https://snyk.io/">Snyk</a>
-
-   * OSS <a target="_blank" href="https://github.com/accurics/terrascan">Terrascan</a> by Accurics.
-
-   * OSS Go-based <a target="_blank" href="https://github.com/tfsec/tfsec">Tfsec</a> by Aqua Security has a <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=tfsec.tfsec">VSCode extension</a> (/usr/local/Cellar/tfsec/0.56.0: 5 files, 16.9MB)
-
-   * https://github.com/accurics/terrascan uses Rego policies
-
-   * SonarQube
-
-   * Terraform FOSS with <a href="#Atlantis">Atlantis</a>
-
-   * Terraform Enterprise <a href="#Sentinel">Sentinel</a>
-
-STAR: Rob Schoening presents <a target="_blank" href="https://get.soluble.cloud/posts/2021/03/a-guide-to-open-source-iac-testing/">an evaluation</a> of the above tools.
-
-Post deployment, <a target="_blank" href="https://www.pulumi.com/blog/benefits-of-policy-as-code/">Pulumi</a> finds unused resources daily and shut them down. 
-
-
-<a name="Cloudrail"></a>
-
-## Install Security Scanners
-
-<a target="_blank" href="https://github.com/iacsecurity/tool-compare">https://github.com/iacsecurity/tool-compare</a> lists specific tests (of vulnerability) and which products can detect each.
-
-<a target="_blank" href="https://github.com/bridgecrewio/checkov">Checkov</a> is an OSS static scanner of Terraform, AWS Cloud Formation, and Azure ARM templates.
-
-<a target="_blank" href="https://www.indeni.com/">Cloudrail from Indeni</a> is a freemium scanner utility which audits Terraform IaC code for security concerns. It calls itself "context-aware" because (although Terratest requires that you deploy the infra and run tests against the live infra), Cloudrail takes a hybrid (SAST+DAST) approach - parsing static TF files into a database (of resources in a python object) and "continuously" comparing that against the live infrastructure in a separate python object fetched dynamically using their <a target="_blank" href="https://github.com/indeni/dragoneye">Dragoneye data collector</a> (for AWS and Azure).
-
-When run on local envrionments, security scanning achieves "shift left". 
-
-
-<a name="InstallCheckov"></a>
-
-### Install Checkov scanner
-
-1. If you prefer using Conda, please <a target="_blank" href="https://wilsonmar.github.io/python-install/">install that up and setup an environment</a>.
-1. The Terraform files can be analyzed (before they become resources) using static scanners TFSec or <a target="_blank" href="https://github.com/bridgecrewio/checkov/">Checkov</a> (Twitter: #checkov</a>):
-
-   <pre>pip3 install -U checkov
-checkov --help
-   </pre>
-
-1. Expand your Terminal to full screen.
-1. Let's start by scanning a single tf file within <tt>terragoat/terraform/aws</tt>:
-
-   <pre><strong>checkov -f db-app.tf > db-app.txt</strong></pre>
-
-   It takes several minutes.
-
-   <tt>> db-app.txt</tt> above sends the output to a new file. If the file already exists, it overwrites the previous run. 
-
-   Checkov is "freemium" to the licensed <a target="_blank" href="https://bridgecrew.io/platform">Bridgecrew platform</a>, the program asks:
-
-   <pre>Would you like to “level up” your Checkov powers for free?  The upgrade includes:
-&nbsp;
-• Command line docker Image scanning
-• Free (forever) bridgecrew.cloud account with API access
-• Auto-fix remediation suggestions
-• Enabling of VS Code Plugin
-• Dashboard visualisation of Checkov scans
-• Integration with GitHub for:
-	◦ 	Automated Pull Request scanning
-	◦ 	Auto remediation PR generation
-• Integration with up to 100 cloud resources for:
-	◦ 	Automated cloud resource checks
-	◦ 	Resource drift detection
-&nbsp;
-and much more...
-&nbsp;
-It's easy and only takes 2 minutes. We can do it right now!
-&nbsp;
-To Level-up, press 'y'...
-&nbsp;
-Level up? (y/n): _
-   </pre>
-
-1. Edit the output file.
-
-   <pre>       _               _              
-   ___| |__   ___  ___| | _______   __
-  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
- | (__| | | |  __/ (__|   < (_) \ V / 
-  \___|_| |_|\___|\___|_|\_\___/ \_/  
-&nbsp;
-By bridgecrew.io | version: 2.0.829 
-Update available 2.0.829 -> 2.0.873
-Run pip3 install -U checkov to update 
-&nbsp;
-terraform scan results:
-&nbsp;
-Passed checks: 12, Failed checks: 14, Skipped checks: 0
-&nbsp;
-Check: CKV_AWS_211: "Ensure RDS uses a modern CaCert"
-	PASSED for resource: aws_db_instance.default
-	File: /db-app.tf:1-41
-   </pre>
-
-   As of this writing, <a target="_blank" href="https://github.com/bridgecrewio/checkov/blob/master/docs/3.Scans/resource-scans.md">Checkov has 50 built-in checks</a>.
-   Each check has a Guide at https://docs.bridgecrew.io/docs/general-policies
-   which defines recommended Terraform coding.
-
-1. Remove the file to save disk space.
-
-1. Scan a directory (folder), such as from <a href="#Terragoat">Terragoat</a>:
-
-   <pre><strong>checkov -d aws</strong></pre>
-
-
-   ### Install full-fast-fail scanner
-
-   This library is not yet in Homebrew, so:
-
-   <pre>git clone https://github.com/JamesWoolfenden/full-fast-fail --depth 1
-cd full-fast-fail
-./checker.sh
-   </pre>
-
-
-
-
-<hr />
-
-<a name="Terragoat"></a>
-
-### Terragoat for learning
-
-   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
-
-   (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
-   
-1. Get it on your laptop after navigating to a folder:
-
-   <pre><strong>git clone <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a> --depth 1
-   cd terragoat/terraform
-   </strong></pre>
-
-1. Vulnerabilities designed into Terragoat are for <strong>specific services</strong> in AWS, Azure, and GCP clouds. Let's look at aws services:
-
-   <pre><strong>ls aws
-   </strong></pre>
-
-   Response:
-
-   <pre>db-app.tf <em>- database application</em>
-ec2.tf
-ecr.tf <em>- elastic Kubernetes service</em>
-eks.tf <em>- elastic Kubernetes service</em>
-elb.tf <em>- elastic load balancer</em>
-es.tf
-iam.tf
-kms.tf <em>- key management service</em>
-lambda.tf
-neptune.tf
-rds.tf <em>- relational database service</em>
-xs3.tf <em>- key management service</em>
-   </pre>
-
-   PROTIP: BLAH: These are a few of the 200+ AWS services.
-   
-   QUESTION: How will you know when new AWS services become available or deprecated?
-
-
-
-
-<hr />
-
-## Create vulnerable resources
-
-1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
-
-1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>consts.tf</tt>:
-
-   * "acme" for company_name in TF_VAR_company_name
-   * "mydevsecops" for environment in TF_VAR_environment
-   * TF_VAR_region
-   <br /><br />
-
-1. Edit <strong>my setup.sh</strong> file to override default values in file <tt>providers.tf</tt>:
-
-   <pre>alias      = "plain_text_access_keys_provider"
-  region     = "us-west-1"
-  access_key = "AKIAIOSFODNN7EXAMPLE"
-  secret_key = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-   </pre>
-
-   SECURITY WARNING: Replace key values with a variable name.
-
-   https://github.com/bridgecrewio/terragoat#existing-vulnerabilities-auto-generated
-
-1. <a target="_blank" href="https://codifiedsecurity.slack.com/join/shared_invite/zt-fsoojsjq-_7VMmkRvbrD2gklNlEidBA#/shared-invite/email">Sign up</a> for the <a target="_blank" href="https://slack.bridgecrew.io/?utm_source=github&utm_medium=organic_oss&utm_campaign=terragoat">#CodifiedSecurity Slack community</a> (confirm by email).
-
- , and #airiam, 
-
-https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-by-bridgecrew-524b50728887
 
 
 <hr />
