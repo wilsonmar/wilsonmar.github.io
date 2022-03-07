@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Service Catalog"
-excerpt: "Touch"
+excerpt: "Select your way to a set of services to assemble your app, with curated (known-safe) settings"
 tags: [security]
 date: "2022-03-04"
 file: "aws-service-catalog"

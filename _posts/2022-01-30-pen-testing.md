@@ -16,26 +16,23 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+The <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/">Information Security certification at freecodecamp.org/learn/information-security</a> 
+is rated at <strong>300 hours</strong> but may be less or more depending on your dedication and experience.
+
+This tutorials works with both <a href="#JavaScriptPart">Front-End JavaScript</a> and 
+builds <a href="#PythonPart">Python</a> penetration tools, see below.
+
 <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> is one of the most popular websites on earth becuase it provides in-depth hands-on tutorials and challenges. Its videos, labeled <a target="_blank" href="https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q">"HackerSploit"</a> (from Kenya, Africa) are usually unlisted on YouTube.
 
 PROTIP: It's easiest to login via GitHub, which is one click.
 Choosing login using email would require you to switch to your email page every time you want to login.
 
-FreeCodeCamp's Information Security certification at <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/">freecodecamp.org/learn/information-security</a> 
-is rated at <strong>300 hours</strong> but may be less or more depending on your dedication.
-
-PROTIP: The course does not mention a Penetration Testing Certification. But its content is about that.
-
-Usually most tutorials are about a single programming language. But 
-works with both <a href="#JavaScriptPart">Front-End JavaScript</a> and 
-builds <a href="#PythonPart">Python</a> penetration tools, see below.
-
 
 <a name="JavaScriptPart"></a>
 
-## Front-End JavaScript Part: HelmeJS
+## Front-End JavaScript Part: HelmetJS
 
-This is a programming course that makes use of the <a href="#HelmetJs">HelmetJS</a> module - JavaScript middleware for <strong>Express-based</strong> applications that automatically sets HTTP headers. 
+This programming course makes use of the <a href="#HelmetJs">HelmetJS</a> module - JavaScript middleware for <strong>Express-based</strong> applications that automatically sets HTTP headers. 
 This way it can prevent sensitive information from unintentionally being passed between the server and client.
 
 <hr />
@@ -397,13 +394,52 @@ print("You have selected option: ", resp)
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-a-banner-grabber">Developing a Banner Grabber</a>
 
 
-   ### Port Scanner Challenge
+   ### Port Scanner Challenge vs. nmap
+
+1. Use utility <strong>nmap</strong> (Network Mapper). See https://nmap.org/book/man.html
+
+   <pre><strong>brew install nmap</strong></pre>
+   
+   <pre><strong>nmap -A -T4 scanme.nmap.org</strong></pre>
+
+   Notice the hostname (target) comes after flags:
+
+   <tt>-A</tt> enables OS and version detection, script scanning, and traceroute
+   
+   <tt>-T4</tt> for faster execution
+   
+   The response:
+
+   <pre>Starting Nmap 7.92 ( https://nmap.org ) at 2022-03-07 02:19 MST
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.083s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE     VERSION
+22/tcp    open     ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 ac:00:a0:1a:82:ff:cc:55:99:dc:67:2b:34:97:6b:75 (DSA)
+|   2048 20:3d:2d:44:62:2a:b0:5a:9d:b5:b3:05:14:c2:a6:b2 (RSA)
+|   256 96:02:bb:5e:57:54:1c:4e:45:2f:56:4c:4a:24:b2:57 (ECDSA)
+|_  256 33:fa:91:0f:e0:e1:7b:1f:6d:05:a2:b0:f1:54:41:56 (ED25519)
+80/tcp    open     http        Apache httpd 2.4.7 ((Ubuntu))
+|_http-title: Go ahead and ScanMe!
+|_http-favicon: Nmap Project
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+135/tcp   filtered msrpc
+139/tcp   filtered netbios-ssn
+9929/tcp  open     nping-echo  Nping echo
+31337/tcp open     tcpwrapped
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+&nbsp;
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 16.02 seconds
+   </pre>
+
 
    First, a tutorial:
-
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-a-banner-grabber">Developing a Port Scanner</a>
 
-1. 
+1. The challenge:
 
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/information-security-projects/port-scanner">Port Scanner</a> using Python
 
