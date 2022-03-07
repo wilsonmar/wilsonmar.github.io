@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "System Catalogs"
+title: "AWS Service Catalog"
 excerpt: "Touch"
 tags: [security]
 date: "2022-03-04"
-file: "system-catalogs"
+file: "aws-service-catalog"
 image:
 # catalog-card-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/156939748-04d5695c-966c-4fa4-bd30-5986992ade0c.png
@@ -17,12 +17,30 @@ comments: true
 {% include _toc.html %}
 
 <a target="_blank" href="https://aws.amazon.com/servicecatalog/">
-The AWS Service Catalog service</a> enables you to "Create, organize, and govern your curated catalog of AWS products" that is centrally managed. Each service is approved for use and can include virtual machine images, servers, software, and databases -- complete multi-tier application architectures. 
-This helps achieve consistent governance and meet your compliance requirements, while enabling users to quickly deploy only the approved IT services they need. 
+The AWS Service Catalog service</a> enables you to "Create, organize, and govern your curated catalog of AWS products" that is <strong>centrally managed</strong>. 
 
-AWS Service Catalog <strong>AppRegistry</strong> helps organizations understand the application context of AWS resources. Define and manage your applications and their metadata, to keep track of cost, performance, security, compliance, and operational status at the application level.
+The AWS Service Catalog <strong>AppRegistry</strong> defines an organization's application context of AWS resources. Define and manage applications and their metadata, to keep track of cost, performance, security, compliance, and operational status at the application level. AWS Service Catalog AppRegistry provides a single repository for collecting and managing application resources on AWS. You define your application metadata, which may include information from your internal systems, other AWS services, and software vendors. Builders can include a reference to their application within the infrastructure code, and business stakeholders have up-to-date information on application contents and metadata, such as organizational ownership, data sensitivity, and cost center.
 
-AWS Service Catalog AppRegistry provides a single repository for collecting and managing application resources on AWS. You define your application metadata, which may include information from your internal systems, other AWS services, and software vendors. Builders can include a reference to their application within the infrastructure code, and business stakeholders have up-to-date information on application contents and metadata, such as organizational ownership, data sensitivity, and cost center.
+The AWS Service Catalog is primarily made up of portfolios and products.
+A portfolio can provide a number of products and have portfolio level settings such as tags, constraints, and permissions:
+   * Launch constraints can be used to allow products to be deployed without giving an end user permission to interact with billable services directly.
+   * Template constraints can be used to tune which options are available at launch; a good example would be restricting the instance type to a cheaper option like the t2 family when the environment matches development.
+   * When dealing with tag options there is a hard limit set by AWS of 25 values per tag key; this limitation can be overcome by working on splitting large value options across multiple keys.
+   <br /><br />
+
+The ready portfolio can be deployed across several accounts; production, pre-production.
+
+Each service offered can include virtual machine images, servers, software, and databases -- complete multi-tier application architectures. This helps achieve consistent governance and meet compliance requirements, while enabling users to quickly deploy only the approved IT services they need. 
+
+Portfolio management can be assigned to specific users or roles so as to have a clear separation between the maintainer and customer’s end users.
+
+Products can be versioned, and the end users given the choice on which version to deploy; these versions can also be used to migrate existing deployed products to newer versions of the underlying template.
+
+The AWS Service Catalog is accompanied by CLI and SDK access, meaning you can programmatically deploy assigned products from your portfolio as part of your CI/CD pipeline.
+
+
+Service Catalog products can be deployed via the console, the command line and SDKs, CloudFormation, or 3rd party infrastructure as code (IAC) tools such as Terraform.
+
 
 ## Terraform
 
@@ -93,6 +111,12 @@ It launches a single node HANA database instance with a single node HANA product
 Not in the file are parameters set to the defaults in the AWS Service Catalog product.
 
 https://kandi.openweaver.com/java/aws-samples/aws-service-catalog-terraform-reference-architecture
+
+
+## EC2 Terraform Server
+
+https://awscloudfeed.com/whats-new/apn/using-terraform-to-manage-aws-programmable-infrastructures
+Invoked by End User from AWS Service Catalog invoking Cloud Formation templates
 
 
 ## More on Security #

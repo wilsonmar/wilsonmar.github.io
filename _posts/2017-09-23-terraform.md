@@ -242,6 +242,8 @@ dagger.io
 
 To get AWS certified, you’re going to need to know Cloud Formation. 
 
+https://www.stratoscale.com/blog/data-center/choosing-the-right-provisioning-tool-terraform-vs-aws-cloudformation/
+
 
 <a name="Licensing"></a>
 
@@ -1059,6 +1061,12 @@ In this minimal sample file for Azure:
 
    Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
 
+   https://www.ahead.com/resources/how-to-create-custom-ec2-vpcs-in-aws-using-terraform/
+
+
+
+
+<hr />
 
 <a name="tfvars"></a>
 
@@ -1396,7 +1404,13 @@ A popular replacement of some standard terraform commands are <strong>terragrunt
 
    QUESTION: Terraform Enterprise cover features of Terragrunt?
 
-Install on MacOS:
+References: 
+   * https://blog.gruntwork.io/introducing-the-gruntwork-module-service-and-architecture-catalogs-eb3a21b99f70 August 26, 2020
+   * https://www.missioncloud.com/blog/aws-cloudformation-vs-terraform-which-one-should-you-choose
+   <br /><br />
+
+
+### Install on MacOS:
 
 1. To install Terragrunt on macOS:
 
@@ -2460,7 +2474,7 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
 
 
-
+   <a name="AWSStateMgmt"></a>
    <a name="State"></a>
 
    ### Apply to create tfstate
@@ -2495,6 +2509,22 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
 1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
 
+### Terraform State commands
+
+Rather than editing the tfstate file:
+
+1. List 
+
+   <pre><strong>terraform state list</strong></pre>
+
+1. State can be pulled from a remote state backend:
+
+   <pre><strong>terraform state pull</strong></pre>
+
+1. <a target="_blank" href="https://kodekloud.com/topic/terraform-state-commands/">VIDEO</a>: Extract from response above the hash_key:
+
+   <pre>terraform state pull | jq '.resources[] | select(.name == "state-locking-db")|.instances[].attributes.hash_key'</pre>
+
 
 <a name="StateS3"></a>
 
@@ -2519,59 +2549,6 @@ In a team environment, it helps to store state state files off a local disk and 
    </pre>
 
 
-<a name="DriftManagement"></a>
-
-### Drift management
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
-Drift occurs when the actual state of resources provisioned diverges from the expected state.
-
-If an approved manual configuration has been changed or removed, such as when a VM is terminated using the AWS Console GUI, the state can be <strong>refreshed</strong> by an alias of the command <tt>terraform apply -refresh-only -auto-approve</tt> which doesn't make changes:
-
-   <pre><strong>terraform refresh</strong></pre>
-
-1. If a resources needs to be added, <strong>import</strong> an existing resource (one at a time) into a placeholder definition:
-
-   <pre>resource "aws_instance" "example" {
-    # blank instance configuration
-   }</pre>
-
-   Referenced by:
-
-   <pre><strong>terraform import aws_instance.example" i-abc1111
-   </strong></pre>
-
-1. If an <strong>individual</strong> resource has been damaged or degraded such that it cannot be detected by Terraform, <strong>replace</strong> by resource address <strong>index</strong> in a plan or apply:
-
-   <pre><strong>terraform apply -replace="aws_instance.example[0]"</strong></pre>
-
-   <tt>aws_instance</tt> is a module namespace or resource_type. "example" is its name.
-
-   NOTE: <tt>terraform taint aws_instance.my-app</tt> (to mark a resource for replacement) was deprecated as of version 0.152.
-
-
-   <a name="DestroyState"></a>
-   
-   ### Destroy state
-
-1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
-
-   <pre>terraform destroy</pre>
-
-1. Confirm by typing "yes".
-
-1. Manually verify on the AWS Management Console GUI webpage set to service S3.
-
-
-
-   <a name="AWSStateMgmt"></a>
-   
-   ### Managing State
-   
-   Although AWS manages state with CloudFormation, to be cloud-agnostic, Terraform
-   users needs to manage state (using Terraform features).
-
-   
    <a name="RemoteState"></a>
 
    ### Remote state
@@ -2614,13 +2591,53 @@ If an approved manual configuration has been changed or removed, such as when a 
    Some backends allows multiple named workspace instances to be associated with a single backend configuration (without configuring a new backend authentication).
 
 
-<a name="Crossplane"></a>
+<a name="DriftManagement"></a>
 
-### Crossplane
+### Drift management
 
-<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
+Drift occurs when the actual state of resources provisioned diverges from the expected state.
 
-<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
+If an approved manual configuration has been changed or removed, such as when a VM is terminated using the AWS Console GUI, the state can be <strong>refreshed</strong> by an alias of the command <tt>terraform apply -refresh-only -auto-approve</tt> which doesn't make changes:
+
+   <pre><strong>terraform refresh</strong></pre>
+
+1. If a resources needs to be added, <strong>import</strong> an existing resource (one at a time) into a placeholder definition:
+
+   <pre>resource "aws_instance" "example" {
+    # blank instance configuration
+   }</pre>
+
+   Referenced by:
+
+   <pre><strong>terraform import aws_instance.example" i-abc1111
+   </strong></pre>
+
+1. If an <strong>individual</strong> resource has been damaged or degraded such that it cannot be detected by Terraform, <strong>replace</strong> by resource address <strong>index</strong> in a plan or apply:
+
+   <pre><strong>terraform apply -replace="aws_instance.example[0]"</strong></pre>
+
+   <tt>aws_instance</tt> is a module namespace or resource_type. "example" is its name.
+
+   NOTE: <tt>terraform taint aws_instance.my-app</tt> (to mark a resource for replacement) was deprecated as of version 0.152.
+
+
+   <a name="Cleanup"></a>
+   <a name="DestroyState"></a>
+   
+   ### Destroy state
+
+   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute, as other cloud providers do.
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=1h55m48s">VIDEO</a>: Destroy instances (so they don't rack up charges unproductively):
+
+1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
+
+   <pre>terraform destroy</pre>
+
+1. Confirm by typing "yes".
+
+1. Manually verify on the AWS Management Console GUI webpage set to service S3.
 
 
    <a name="DestroyFlag"></a>
@@ -2631,21 +2648,13 @@ If an approved manual configuration has been changed or removed, such as when a 
    `force_destroy = true` forces the provider to delete the resource when done.
 
 
-   <a name="Cleanup"></a>
+<a name="Crossplane"></a>
 
-   ### Destroy to clean up
+### Crossplane
 
-0. <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=1h55m48s">VIDEO</a>: Destroy instances (so they don't rack up charges unproductively):
+<a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
 
-   <tt><strong>terraform destroy
-   </strong></tt>
-
-   PROTIP: At time of this writing, Amazon charges for Windows instances by the hour while it charges for Linux by the minute, as other cloud providers do.
-
-0. Verify in the provider's console (aws.amazon.com)
-
-
-
+<a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
 
 
 
