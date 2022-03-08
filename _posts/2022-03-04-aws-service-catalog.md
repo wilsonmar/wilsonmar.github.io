@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "AWS Service Catalog"
-excerpt: "Select your way to a set of services to assemble your app, with curated (known-safe) settings"
+excerpt: "Select your way to a set of services to assemble your app, with curated (known-safe) settings (in Terraform too)"
 tags: [security]
 date: "2022-03-04"
 file: "aws-service-catalog"
