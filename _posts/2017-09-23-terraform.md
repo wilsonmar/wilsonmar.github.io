@@ -16,10 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to learn to use Hashicorp's Terraform to build, change, and version resources running in <a href="#MultiCloud">multiple cloud platforms</a>.
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to learn to use Hashicorp's Terraform to build, change, and version resources running in <a href="#MultiCloud">multiple cloud platforms</a>. The sequence of topics has been carefully arranged for quicker learning, based on <a href="Tutorials">various tutorials on this topic</a>.
+
 
 ## What is Terraform?
-
 
 <a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="from IBM">VIDEO</a>
 
@@ -550,6 +550,25 @@ sudo apt-get install docker-ce
    </pre>
 
 
+
+<hr />
+
+<a name="Configure"></a>
+
+## Configure Terraform logging
+
+<a target="_blank" href="https://kodekloud.com/topic/debugging/">VIDEO</a>:
+1. To set a <strong>level of logging</strong> (similar to Log4j's INFO &LT; WARNING &LT; ERROR &LT; DEBUG &LT; TRACE to see Terraform's internal logs):
+
+   <pre><strong>export TF_LOG=TRACE</strong></pre>
+
+1. Define where logs are saved:
+
+   <pre><strong>export TF_LOG_PATH=/tmp/terraform.log</strong></pre>
+
+1. Define the above settings in a shell file used to call Terraform.
+
+
 <hr />
 
 <a name="Utilities"></a>
@@ -828,7 +847,9 @@ xs3.tf <em>- key management service</em>
 
 <hr />
 
-## Create vulnerable resources
+<a name="KnownBad"></a>
+
+## Known-bad for training 
 
 1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
 
@@ -937,13 +958,173 @@ The above set of files are repeated in each folder containing a nested module:
 REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
 
 
+<hr />
+
+<a name="HCL"></a>
+
+## HCL (Hashicorp Configuration Language) comments
+
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
+
+   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
+   https://www.terraform.io/docs/configuration/syntax.html">
+   https://www.terraform.io/docs/configuration/syntax.html</a>.
+   
+   Terraform supports JSON syntax to read output from programmatic creation of such files.
+   The name suffix of files containing JSON "*.tf.json".
+
+   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
+
+   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
+   
+   Multi-line comments are wrapped between `/*` and `*/`.
+
+   `\` back-slashes specify continuation of long lines (as in Bash).
+
+
 <a name="variables.tf"></a>
    
-### variables.tf
+## variables.tf (vars.tf)
 
-   PROTIP: For reusability, all these static values would be replaced with variables resolved in a separate <tt>variables.tf</tt> file.
+References:
+   * https://www.terraform.io/language/values/variables
+   * https://kodekloud.com/topic/understanding-the-variable-block/
+   * PROTIP: Specifying passwords in environment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
+   <br /><br />
 
-   Terraform 0.11 and earlier required all non-constant expressions to be provided via interpolation syntax with a format similar to shell scripts:
+   PROTIP: For reusability, static values are replaced with variables resolved in a separate <tt>variables.tf</tt> file.
+
+   This file defines for each (and every) variable referenced within tf files its description, default.
+
+   For example, reference to environment variables:
+
+   <pre>variable "server_port" {
+  description = "The port the server will use for HTTP requests"
+  default = 8080
+}</pre>   
+
+   <pre>variable "aws_access_key" {}
+variable "aws_secret_key" {}
+variable "subnet_count" {
+  default = 2
+}
+   </pre>
+
+   There are several types of variables:
+
+   <pre>variable "image_name" {
+  type        = "string"
+  description = "The name of the image for the deployment."
+  default     = "happy_randomizer"
+}
+variable "service_networks" {
+  type        = "list"
+  description = "The name or ID of one or more networks the service will operate on."
+  default     = ["Joyent-SDC-Public","Joyent-SDC-Private"]
+}
+variable "image_version" {
+  type        = "string"
+  description = "The version of the image for the deployment."
+  default     = "1.0.0"
+}
+variable "image_type" {
+  type        = "string"
+  description = "The type of the image for the deployment."
+  default     = "lx-dataset"
+}
+variable "package_name" {
+  type        = "string"
+  description = "The package to use when making a deployment."
+  default     = "g4-highcpu-128M"
+}
+variable "service_name" {
+  type        = "string"
+  description = "The name of the service in CNS."
+  default     = "happiness"
+}
+   </pre>   
+
+   <tt>type = list(string)</tt> can be iterated from index 0 for the first item.
+
+   <tt>type = list(number)</tt> causes an error if entries are not numbers.
+
+   <pre>variable "someone" {
+  type = object({
+    name = string
+    pant_size = number
+    favorite_foods = list(string)
+    is_available = bool
+  })
+  default = {
+     name = "Joe"
+     pant_size = 42
+     favorite_foods = ["salmon", "chicken", "bananas"]
+     is_available = true
+  }
+}
+   </pre>
+   Boolean true/false and numbers are never between quotes.
+
+   <tt>type = set(string)</tt> cannot contain duplicates.
+
+   <tt>type = tuple([string, number, bool])</tt> is used for mixed types in a list.
+
+
+   <pre>resource ... {
+   ...
+   for_each = toset(var.regio)
+}
+variable region {
+   type = list
+   default = ["us-east-1",
+              "us-east-1",
+              "ca-central-1"]
+   description = "A list of AWS Regions"
+}
+
+   <a target="_blank" href="https://kodekloud.com/topic/more-terraform-functions/">KodeKloud's example map</a>:
+
+   <pre>variable "ami_map" {
+      type = map
+      default = {
+         us-west-1 = "ami-abc",
+         us-east-1 = "ami-xyz",
+         eu-east-1 = "ami-123",
+      }
+}
+   </pre>
+
+   To retrieve indirectly by key name to obtain value "HHD":
+
+   <pre>lookup( var.ami_map, "us-west-1")</pre>
+
+   PROTIP: Enable the latest ami to be used ...
+
+
+REMEMBER: When troubleshooting, remember the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
+
+1. Environment variables are overridden most of all:
+
+   <tt>export TFVAR_filename="/root/this.txt"</tt>
+
+2. terraform.tfvars
+
+   <tt>filename = "/root/that.txt"</tt>
+
+3. variable.auto.tfvars (in alphabetical order)
+
+   <tt>filename = "/root/something.txt"</tt>
+
+4. Command-line flags -var or -var-file
+
+   <tt>terraform apply -var "filename=/root/something.txt"</tt>
+
+
+   Linters identify when they are not.
+
+   ### Interpolation & HCL2 syntax 
+
+   Terraform 0.11 and earlier required all non-constant expressions to be provided via <strong>interpolation syntax</strong> with a format similar to shell scripts:
 
    <pre>image = "${var.aws_region}"</pre>
 
@@ -964,33 +1145,11 @@ REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>a
    It's not backward compatible, with no direct migration path.
 
 
-
-<a name="HCL"></a>
-
-### HCL (Hashicorp Configuration Language) 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
-
-   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
-   https://www.terraform.io/docs/configuration/syntax.html">
-   https://www.terraform.io/docs/configuration/syntax.html</a>.
-   
-   Terraform supports JSON syntax to read output from programmatic creation of such files.
-   The name suffix of files containing JSON "*.tf.json".
-
-   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
-
-   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
-   
-   Multi-line comments are wrapped between `/*` and `*/`.
-
-   `\` back-slashes specify continuation of long lines (as in Bash).
-
 <hr />
 
 <a name="main.tf></a>
 
-### main.tf
+## main.tf
 
 In this minimal sample file for AWS, HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
@@ -1197,11 +1356,12 @@ file_c.txt
 <a target="_blank" href="https://kodekloud.com/topic/for-each/">VIDEO</a>:
 To ensure that items are properly deleted, a for-each is used to create a map referenced by key values instead of a blind list referenced by an index.
 
+
 <hr />
 
 <a name=".gitignore"></a>
 
-### .gitignore
+## .gitignore
 
 1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
 
@@ -1228,37 +1388,6 @@ vpc
    https://www.toptal.com/developers/gitignore/api/terraform,intellij+all,visualstudiocode
 
    https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
-
-
-
-<hr />
-
-<a name="Tutorials"></a>
-
-## Tutorials
-
-At the top of the list is the in-depth videos and hands-on labs with built-in quizzes of
-<a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
-KodeKloud's "Hashicorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
-
-Videos free on YouTube but a better UI to view vidoes is provided by:
-
-   * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro<a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
-
-On Udemy: 
-
-   * <a target="_blank" href="https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview">"Terraform: Beginner to Advanced"</a> by Zeal Vora has code at https://github.com/zealvora/terraform-beginner-to-advanced-resource
-
-   * <a target="_blank" href="https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/">HashiCorp Certified: Terraform Associate Practice Exam 2021</a>
-
-Another FreeCodeCamp.org video on YouTube:
-
-   * <a target="_blank" href="https://www.youtube.com/watch?v=SLB_c_ayRMo" title="">
-   2:20:57 VIDEO: Terraform Course - Automate your AWS cloud infrastructure</a>
-
-<a target="_blank" href="https://www.joyent.com/blog/video-simple-terraform-app" title="February 21, 2018">
-"Get started managing a simple application with Terraform"</a> by Alexandra White (at Joyant) shows the deployment of the <a target="_blank" href="https://github.com/heyawhite/joyent_packer-terraform-series/tree/master/1-create-image-with-packer/happy-randomizer">
-Happy Randomizer app</a>
 
 
 <hr />
@@ -1675,7 +1804,7 @@ Terraform language style conventions include:
 
 <a name="Modules"></a>
 
-## Modules
+## Reusable Modules
 
 Modules are self-contained packages of Terraform configurations that are managed as a group.
 
@@ -1683,9 +1812,54 @@ In other words, a Terraform module is a container for multiple resources used to
 
 Terraform modules provide "blueprints" to deploy.
 
-### Reusable Modules
+References:
+   * <a target="_blank" href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?time_continue=147&v=LVgP63BkhKQ" title="[38:58] at Oct 12, 2017">How to Build Reusable, Composable, Battle tested Terraform Modules</a> 
+   * <a target="_blank" href="https://linuxacademy.com/howtoguides/posts/show/topic/12369-how-to-introduction-to-terraform-modules" title="Nov 18, 2016 by Giuseppe B">How to: Introduction to Terraform Modules</a> 
+   <br /><br />
 
-PROTIP: Before creating your own module, check out website <a target="_blank" href="https://registry.terraform.io/browse/modules">https://registry.terraform.io/browse/modules</a> containing 9,000 modules shared globally by many.
+
+<a name="CustomModules"></a>
+
+### Custom modules
+
+<a target="_blank" href="https://kodekloud.com/topic/using-modules-from-the-registry/">VIDEO</a>
+
+To add more logic to continue using declarative specifications (templates), administrators can write <a href="#Modules">modules</a> of their own. 
+
+Thus Terraform defines the "desired state configuration" (DSC). 
+
+1. To get (download and update) modules in the root module <strong>without initializing state or pull provider binaries</strong> like <tt>terraform init</tt>:
+
+   <pre><strong>terraform get</strong></pre>
+
+zzz
+
+
+The module's source can be on a local disk:
+
+   <pre>module "service_foo" {
+  source = "/modules/microservice"
+  image_id = "ami-12345"
+  num_instances = 3
+}
+   </pre>
+
+  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
+
+   <pre>module "rancher" {
+  source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
+}
+   </pre>
+
+   * Notice "https://" are not part of the source string. It's assumed.
+   * Double slashes in the URL above separate the repo from the subdirectory.
+   * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
+   <br /><br />
+
+
+PROTIP: Learn from modules created by others in <a target="_blank" href="https://registry.terraform.io/browse/modules">Terraform Modules Registry (marketplace) at https://registry.terraform.io/browse/modules</a> which contains 9,000 modules shared globally by many.
+
 For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">github.com/terraform-aws-modules</a>: https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/acm/aws/latest">ACM</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/appsync/aws/latest">Appsync</a>
@@ -1724,32 +1898,6 @@ For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">g
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest">VPC</a>
 <br /><br />
 
-The module's source can be on a local disk:
-
-   <pre>module "service_foo" {
-  source = "/modules/microservice"
-  image_id = "ami-12345"
-  num_instances = 3
-}
-   </pre>
-
-  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
-
-   <pre>module "rancher" {
-  source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
-}
-   </pre>
-
-   * Notice "https://" are not part of the source string. It's assumed.
-   * Double slashes in the URL above separate the repo from the subdirectory.
-   * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
-   <br /><br />
-
-
-<a target="_blank" href="
-https://registry.terraform.io/">
-https://registry.terraform.io</a>
-is hosted by Terraform to provide a marketplace of modules. 
 
 <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">
 https://registry.terraform.io/modules/hashicorp/vault</a>
@@ -1850,68 +1998,11 @@ https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-
 
 * https://github.com/terraform-aws-modules
 
+CAUTION: <a target="_blank" href="https://thenewstack.io/bridgecrew-all-these-misconfigured-terraform-modules-are-a-security-issue/">In 2020, 44%</a> of public registry modules did not meet <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">CIS benchmarks</a>.
+56% of the modules that have ever been downloaded contain what is now considered a misconfiguration.
 
-Blogs and tutorials on modules:
+PROTIP: Don't blindly include public assets in your code. First scan them. Then copy lines and test them.
 
-* <a target="_blank" href="https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d">
-https://blog.gruntwork.io/how-to-create-reusable-infrastructure-with-terraform-modules-25526d65f73d</a>
-
-* <a target="_blank" href="https://www.youtube.com/watch?time_continue=147&v=LVgP63BkhKQ">
-How to Build Reusable, Composable, Battle tested Terraform Modules</a> [38:58]
-at Oct 12, 2017
-
-* <a target="_blank" href="https://linuxacademy.com/howtoguides/posts/show/topic/12369-how-to-introduction-to-terraform-modules">
-How to: Introduction to Terraform Modules</a>
-Nov 18, 2016 by Giuseppe B
-
-<a name="CustomModules"></a>
-
-### Custom modules
-
-To add more logic to continue using declarative specifications (templates), administrators can write <a href="#Modules">modules</a> of their own. 
-
-Thus Terraform defines the "desired state configuration" (DSC). 
-
-1. To get (download and update) modules in the root module <strong>without initializing state or pull provider binaries</strong> like <tt>terraform init</tt>:
-
-   <pre><strong>terraform get</strong></pre>
-
-
-<a name="ProviderCreds"></a>
-
-### Provider credentials
-
-Since the point of Terraform is to get you into clouds, Terraform looks for specific environment variables containing AWS credentials. 
-
-1. Got to IAM in AWS to define a user with a password.
-1. Grant rules to the AWS user to use services.
-1. Mac users: add credentials in their `~/.bash_profile` these lines:
-
-   <pre>export AWS_ACCESS_KEY_ID=<em>(your access key id)</em>
-export AWS_SECRET_ACCESS_KEY=<em>(your secret access key)</em>
-export AWS_REGION=<em>(your region in AWS)</em>
-export AWS_REGION_ALIAS="eu"
-   </pre>
-
-   For Azure:
-
-   <pre>   AZ_PRINCIPAL=""
-   AZ_USER=""
-   AZ_PASSWORD=""
-   AZ_USERNAME=""
-   AZ_TENANT=""
-   AZ_REGION=""  # aka location
-   </pre>
-
-   For Google Cloud:
-
-   <pre>   GCP_PROJECT=""
-   GCP_USER=""
-   GCP_KEY=""
-   GCP_REGION=""
-   </pre>
-
-PROTIP: Specifying passwords in environment variables is more secure than typing passwords in tf files<a target="_blank" href="https://www.youtube.com/watch?v=RA1mNClGYJ4&time=5m52s">*</a>.
 
 
 <hr />
@@ -2591,6 +2682,7 @@ In a team environment, it helps to store state state files off a local disk and 
    Some backends allows multiple named workspace instances to be associated with a single backend configuration (without configuring a new backend authentication).
 
 
+
 <a name="DriftManagement"></a>
 
 ### Drift management
@@ -2602,25 +2694,72 @@ If an approved manual configuration has been changed or removed, such as when a 
 
    <pre><strong>terraform refresh</strong></pre>
 
-1. If a resources needs to be added, <strong>import</strong> an existing resource (one at a time) into a placeholder definition:
+1. When you can't create new resources (you're not in control of resource creattion), and an existing resource needs to be added, <strong>import</strong> an existing resource (one at a time) into a placeholder definition:
 
-   <pre>resource "aws_instance" "example" {
+   <pre>resource "aws_instance" "example1" {
     # blank instance configuration
    }</pre>
 
-   Referenced by:
+   The resource address and its ID is required:
 
-   <pre><strong>terraform import aws_instance.example" i-abc1111
+   <pre><strong>terraform import aws_instance.example1" i-abc1111
    </strong></pre>
 
-1. If an <strong>individual</strong> resource has been damaged or degraded such that it cannot be detected by Terraform, <strong>replace</strong> by resource address <strong>index</strong> in a plan or apply:
+   CAUTION: Importing the same resources is not recommended because that can cause weird behavior.
+
+
+<a name="DataRefs"></a>
+
+### data instance_id import
+
+<a target="_blank" href="https://kodekloud.com/topic/terraform-import/">VIDEO</a>:
+1. To reference an existing instance from within a .tf file, first capture the instance_id of the instance not managed by Terraform.
+
+1. Reference that instance_id in a .tf file:
+
+   <pre>data "aws_instance" "news_server" {
+      instance_id = "i-234124897234"
+   }
+output news_server {
+   value = data.aws_instance.news_server.public_ip
+}
+   </pre>
+
+1. REMEMBER: terrform import brings in the <strong>state</strong> of another resource, and cannot change that other instance. So define a shell resource:
+
+   <pre>resource "aws_instance" "other_server" {
+   # (resource arguments)
+   }
+   </pre>
+
+   Once imported, resources are available for management.
+
+
+
+   <a name="Taint"><a>
+
+   ### Taint to -replace
+
+1. Due to Terraform's design for immutability, if an <strong>individual</strong> resource has been damaged or degraded such that it cannot be detected by Terraform, or to get Terraform to make a configuration change in real time, <strong>replace</strong> by resource address <strong>index</strong> in a plan or apply, for example:
 
    <pre><strong>terraform apply -replace="aws_instance.example[0]"</strong></pre>
 
    <tt>aws_instance</tt> is a module namespace or resource_type. "example" is its name.
 
-   NOTE: <tt>terraform taint aws_instance.my-app</tt> (to mark a resource for replacement) was deprecated as of version 0.152.
+   CAUTION: Replacement of "tainted" resources may cause other resources to be modified, such as public IPs.
 
+   NOTE: <tt>terraform taint</tt> (to mark a resource for replacement) was deprecated as of version 0.152. <a target="_blank" href="https://kodekloud.com/topic/terraform-taint/">VIDEO</a> 
+
+   <pre><strike>terraform taint aws_instance.webserver</strike></pre>
+
+   The above would cause the resource to be deleted and replaced with a resource with the new configuration.
+
+   The opposite command was:
+
+   <pre><strike>terraform untaint aws_instance.webserver</strike></pre>
+
+
+<hr />
 
    <a name="Cleanup"></a>
    <a name="DestroyState"></a>
@@ -2632,7 +2771,8 @@ If an approved manual configuration has been changed or removed, such as when a 
    <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=1h55m48s">VIDEO</a>: Destroy instances (so they don't rack up charges unproductively):
 
 1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance when given the command:
-
+33
+3333300
    <pre>terraform destroy</pre>
 
 1. Confirm by typing "yes".
@@ -2655,130 +2795,6 @@ If an approved manual configuration has been changed or removed, such as when a 
 <a target="_blank" href="https://blog.crossplane.io/">Crossplane.io</a> provides more flexible ways to interact with Kubernetes than Terraform. Their <a target="_blank" href="https://github.com/crossplane">github.com/crossplane</a> has providers for AWS, Azure, and GCP.
 
 <a target="_blank" href="https://blog.crossplane.io/crossplane-vs-terraform/"><img src="../images/terraform-Crossplane-Stack.svg"></a>
-
-
-
-<hr />
-
-   <a name="variables.tf"></a>
-
-   ### variables.tf (vars.tf)
-
-   * https://www.terraform.io/language/values/variables
-   * https://kodekloud.com/topic/understanding-the-variable-block/
-   <br /><br />
-
-   This file contains defines for each (and every) variable referenced within tf files its description, default.
-
-   Linters identify when they are not.
-
-   For example, reference to environment variables:
-
-   <pre>variable "server_port" {
-  description = "The port the server will use for HTTP requests"
-  default = 8080
-}</pre>   
-
-   <pre>variable "aws_access_key" {}
-variable "aws_secret_key" {}
-variable "subnet_count" {
-  default = 2
-}
-   </pre>
-
-   There are several types of variables:
-
-   <pre>variable "image_name" {
-  type        = "string"
-  description = "The name of the image for the deployment."
-  default     = "happy_randomizer"
-}
-variable "service_networks" {
-  type        = "list"
-  description = "The name or ID of one or more networks the service will operate on."
-  default     = ["Joyent-SDC-Public","Joyent-SDC-Private"]
-}
-variable "image_version" {
-  type        = "string"
-  description = "The version of the image for the deployment."
-  default     = "1.0.0"
-}
-variable "image_type" {
-  type        = "string"
-  description = "The type of the image for the deployment."
-  default     = "lx-dataset"
-}
-variable "package_name" {
-  type        = "string"
-  description = "The package to use when making a deployment."
-  default     = "g4-highcpu-128M"
-}
-variable "service_name" {
-  type        = "string"
-  description = "The name of the service in CNS."
-  default     = "happiness"
-}
-   </pre>   
-
-   <tt>type = list(string)</tt> can be iterated from index 0 for the first item.
-
-   <tt>type = list(number)</tt> causes an error if entries are not numbers.
-
-   <pre>variable "someone" {
-  type = object({
-    name = string
-    pant_size = number
-    favorite_foods = list(string)
-    is_available = bool
-  })
-  default = {
-     name = "Joe"
-     pant_size = 42
-     favorite_foods = ["salmon", "chicken", "bananas"]
-     is_available = true
-  }
-}
-   </pre>
-
-   Boolean true/false and numbers are never between quotes.
-
-   <tt>type = set(string)</tt> cannot contain duplicates.
-
-   <tt>type = tuple([string, number, bool])</tt> is used for mixed types in a list.
-
-   KodeKloud's example map:
-
-   <pre>variable "hard_drive" {
-      type = map
-      default = {
-         slow = "HHD"
-         fast = "SSD"
-      }
-}
-   </pre>
-
-   To retrieve indirectly by key name to obtain value "HHD":
-
-   <pre>var.hard_drive("slow")</pre>
-
-
-REMEMBER: When troubleshooting, remember the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
-
-1. Environment variables are overridden most of all:
-
-   <tt>export TFVAR_filename="/root/this.txt"</tt>
-
-2. terraform.tfvars
-
-   <tt>filename = "/root/that.txt"</tt>
-
-3. variable.auto.tfvars (in alphabetical order)
-
-   <tt>filename = "/root/something.txt"</tt>
-
-4. Command-line flags -var or -var-file
-
-   <tt>terraform apply -var "filename=/root/something.txt"</tt>
 
 
 
@@ -2927,7 +2943,7 @@ Workspaces enable management of multiple "environments" in alternate state files
 
 1. Terraform stores workspace states in a folder called <tt><strong>terraform.tfstate.d</strong></pre>
 
-   <pre><strong>ls -al terraform.tfstate.d</strong></list>
+   <pre><strong>ls -al terraform.tfstate.d</strong></pre>
 
 
 PROTIP: Use a remote backend unless you're working by yourself.
@@ -3520,9 +3536,28 @@ Developers and Operations people type <tt><strong>atlantis plan</strong></tt> an
 10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
 
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=12m59s58s">VIDEO</a>: 
 ## CDK for Terraform
 
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=12m59s58s">VIDEO</a>: 
+CDK for Terraform
+
+## Create SSH key pair
+
+1. To create a SSH key pair using CLI using the AWS Test Framework:
+
+   <pre>aws ec2 create-key-pair --endpoint http://aws:4566 
+   --key-name jade \
+   --query 'KeyMaterial' \
+   --output text > /root/terraform-projects/project-jade/jade.pem
+   </pre>
+
+   <pre>aws ec2 describe-instances --endpoint http://aws:4566
+   </pre>
+
+   To just get the id of the EC2 created with this AMI and Instance Type, use filters and jq to filter the data:
+
+   <pre>aws ec2 describe-instances --endpoint http://aws:4566 --filters "Name=image-id,Values=ami-082b3eca746b12a89" | jq -r '.Reservations[].Instances[].InstanceId'
+   </pre>
 
 <hr />
 
@@ -3649,6 +3684,39 @@ Kyle Rockman</a> (<a target="_blank" href="https://twitter.com/Rocktavious">@Roc
 (<a target="_blank" href="https://slides.com/roctavious/estate">slides</a>)
 a self-service app to use Terraform (powered by React+Redux using Jinga2 to Gunicorn + Djanjo back end running HA in AWS) 
 that he hopes to open-source at <a target="_blank" href="https://github.com/underarmour">github.com/underarmour</a>
+
+
+
+<hr />
+
+<a name="Tutorials"></a>
+
+## Tutorials
+
+At the top of the list is the in-depth videos and <strong>hands-on labs with quizzes</strong> of
+<a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
+KodeKloud's "Hashicorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
+
+Among video tutorials at <a target="_blank" href="https://learn.acloud.guru/search?query=terraform&page=1">ACloud.Guru</a> is a 11-hour Associate prep course by Moosa Khalid.
+
+Videos free on YouTube but a better UI to view vidoes is provided by:
+
+   * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro<a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
+
+On Udemy: 
+
+   * <a target="_blank" href="https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview">"Terraform: Beginner to Advanced"</a> by Zeal Vora has code at https://github.com/zealvora/terraform-beginner-to-advanced-resource
+
+   * <a target="_blank" href="https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/">HashiCorp Certified: Terraform Associate Practice Exam 2021</a>
+
+Another FreeCodeCamp.org video on YouTube:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SLB_c_ayRMo" title="">
+   2:20:57 VIDEO: Terraform Course - Automate your AWS cloud infrastructure</a>
+
+<a target="_blank" href="https://www.joyent.com/blog/video-simple-terraform-app" title="February 21, 2018">
+"Get started managing a simple application with Terraform"</a> by Alexandra White (at Joyant) shows the deployment of the <a target="_blank" href="https://github.com/heyawhite/joyent_packer-terraform-series/tree/master/1-create-image-with-packer/happy-randomizer">
+Happy Randomizer app</a>
 
 
 ### Others (YouTube videos):

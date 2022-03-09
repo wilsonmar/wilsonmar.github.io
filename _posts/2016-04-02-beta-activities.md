@@ -3,7 +3,7 @@ layout: post
 title: "Beta Activities"
 excerpt: "7+ strategies to make betas more useful"
 tags: [beta, guava, java, programming]
-date: "2016-04-02"
+date: "2022-03-08"
 file: "beta-activities"
 image:
 # feature: pic jump into tiny pool 1900x500.jpg 
@@ -23,7 +23,7 @@ are often the first time that partners and friends have
 substantial hands-on experience with the upcoming version.
 
 I think too many developers waste the opportunity
-to build goodwill and additional assistance that beta participants can provide.
+to build goodwill and obtain additional assistance that beta participants can provide.
 
 Here is a summary of my advice explained further below:
 
@@ -61,12 +61,12 @@ More about each is described below.
 
    Automation of keystrokes are useful not just for testing.
 
-   Ideally, automation activities should start 
-
    Being able to run the demo sequence automatically would provide 
    <strong>salespeople and others confidence</strong> 
    that their live demo actually works
    rather than having to say sorry.
+
+   Ideally, planning for automation activities could start when a wireframe is available, especially when a tool such as Figma allows some user activity without programming.
 
    Having automated use-case runs also helps to speed the development of
    <strong>product vidoes</strong> needed for not just launch but
