@@ -79,7 +79,7 @@ More about each is described below.
 
 ### Capture detailed factual proof points
 
-   General platitudes like "oh it's great" does a marketer no good.
+   General platitudes such as "overall it's great" does not really provide excitement nor actionable improvement ideas.
 
    Marketers need specific and relatable "sound bites" 
    and quotes that can be published. An example:
