@@ -1081,6 +1081,7 @@ variable region {
               "ca-central-1"]
    description = "A list of AWS Regions"
 }
+   </pre>
 
    <a target="_blank" href="https://kodekloud.com/topic/more-terraform-functions/">KodeKloud's example map</a>:
 
