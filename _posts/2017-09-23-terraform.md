@@ -95,7 +95,7 @@ This page houses both links and my notes to pass the <a target="_blank" href="ht
 3. Understand Terraform basics<br />
    a. Handle Terraform and provider <a href="#Install">installation and versioning</a><br />
    b. Describe plugin based architecture<br />
-   c. Demonstrate using multiple providers<br />
+   c. Demonstrate using multiple <a href="#Providers">providers</a><br />
    d. Describe how Terraform finds and fetches <a href="#Providers">providers</a> (from the <a href="#Registry">Terraform Registry</a>)<br />
    e. Explain when to use and not use <a href="#Provisioners">provisioners</a> and when to use <a href="#local-exec"><tt>local-exec</tt></a> or <a href="#remote-exec"><tt>remote-exec</tt></a><br />
 4. Use the Terraform CLI (outside of core workflow)<br />
@@ -573,11 +573,12 @@ sudo apt-get install docker-ce
 
 <a name="Utilities"></a>
 
-## Utilities
+## Install Utilities
 
 You'll need a text editor with plugins to view HCL:
 
-   * <a href="#VScode">VSCode</a>
+   * <a href="#VScode">VSCode add-on</a>
+   * <a href="#JetBrains">JetBrains IDE add-on</a>
    * <a href="#TFLint">Terraform Enterprise TFLint</a>
 
 
@@ -603,6 +604,8 @@ code main.tf
 
    NOTE: Multiple providers can be specified in the same HCL file.
 
+   Each Provider is a plugin that enables Terraform to interface with the API layer of various cloud platforms and environments.
+
 1. Search for "Resource Group" in Terraform's Azure Provider docs:
 
    <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs">
@@ -610,7 +613,59 @@ code main.tf
 
    for "azurerm_resource_group".
 
+
+<a name="JetBrains"></a>
+
+### JetBrains add-ins
+
+https://plugins.jetbrains.com/plugin/7808-terraform-and-hcl
+
+
+
+<a name="Terraspace"></a>
+
+### Terraspace generates IaC code
+
+<a target="_blank" href="https://learn.boltops.com/courses/terraspace-fundamentals/lessons/terraspace-getting-started-with-aws">VIDEO</a>: <a target="_blank" href="https://terraspace.cloud/">Terraspace.cloud</a> dynamically generates Terraform projects in a centralized manner (which eliminates duplication). 
+So the whole stack can be brought up by a single command: <a target="_blank" href="https://www.youtube.com/watch?v=GjlWeYAGWIE">VIDEO</a>:
+
+   <ul><pre>terraspace up STACK</pre></ul>
+
+<a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
+Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
+
+Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
+
+References:
+   * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
+   <br /><br />
+
+
 <hr />
+
+<a name="Issues"></a>
+
+## Issues to look for
+
+There are several industry standards which prescribe "controls" and configurations:
+
+   * AWS Foundations referenced by the AWS Security Hub service
+   * CIS
+
+   * SOC2
+   * ISO
+   * FedRAMP
+
+   * PCI
+   * HIPAA
+   * NIST
+   * Hightrust
+   * etc.
+   <br /><br />
+
+The trouble with written policies and standards is that they are in PDF and Excel files.
+So few read them.
+
 
 <a name="TFLint"></a>
 
@@ -634,32 +689,6 @@ code main.tf
 
    https://itnext.io/automatic-terraform-linting-with-reviewdog-and-tflint-f4fb66034abb
 
-
-
-
-<hr />
-
-<a name="Issues"></a>
-
-### What issues to look for?
-
-There are several industry standards which prescribe "controls" and configurations:
-
-   * AWS Foundations referenced by the AWS Security Hub service
-   * CIS
-
-   * SOC2
-   * ISO
-   * FedRAMP
-
-   * PCI
-   * HIPAA
-   * NIST
-   * Hightrust
-   * etc.
-   <br /><br />
-
-The trouble with standards is that they are in PDF and Excel files.
 
 
 <a name="PolicyCheckTools"></a>
@@ -849,7 +878,7 @@ xs3.tf <em>- key management service</em>
 
 <a name="KnownBad"></a>
 
-## Known-bad for training 
+## Known-bad IaC for training 
 
 1. To use the Terraform to create resources, I created a <strong>setup.sh</strong> based on CLI code in <a target="_blank" href="https://github.com/bridgecrewio/terragoat/blob/master/README.md">this README.md file</a>.
 
@@ -887,15 +916,13 @@ https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-
 
 ## Sample Terraform repositories   
 
-Let's work with on I found:
+Let's learn from others.
 
-* <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+1. View or download to your containing folder:
 
-1. Navigate to your default folder:
+   <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
 
-   <pre><strong>cd clouddrive</strong></pre>
-
-1. Use Git (installed by default):
+1. Or:
 
    <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
 cd terraform-on-azure
@@ -918,6 +945,61 @@ Others:
 
    https://github.com/KevinDMack/TerraformKubernetes
    to establish K8S using Packer within Azure 
+
+<a name="Gruntwork"></a>
+
+### Gruntwork's sample
+
+   <a target="_blank" href="#Gruntwork">Gruntwork.io</a> offers (for $4,950), access to their 250,000-line Reference Architecture of starter code to create a production-worthy "defense in depth" setup on AWS:
+
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg">
+   <img width="683" alt="terraform-ref-arch-683x407-106209" src="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg"></a>
+
+   An additional $500 a month gets you access to their <a target="_blank" href="https://gruntwork.teachable.com/p/reference-architecture-walkthrough/">
+   Reference Architecture Walktrough video class</a>. But previews of the class is free:
+
+   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211191">Course overview</a>
+   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211435">Architecture overview</a>
+   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211737">Code organization overview</a>
+   <br /><br />
+
+For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" href="https://www.ybrikman.com/">ybrikman.com</a>, co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/">Gruntwork.io</a>) has generously shared:
+
+   * <a target="_blank" href="
+   https://github.com/gruntwork-io/intro-to-terraform">
+   https://github.com/gruntwork-io/intro-to-terraform.git</a>
+
+   * <a target="_blank" href="https://github.com/brikis98/infrastructure-as-code-talk/tree/master/terraform-configurations">https://github.com/brikis98/infrastructure-as-code-talk/tree/master/terraform-configurations</a>
+
+   * <a target="_blank" href="https://github.com/brikis98/terraform-up-and-running-code/tree/master/code">https://github.com/brikis98/terraform-up-and-running-code</a>
+   provides bash scripts to run on Ubuntu server to install Apache, PHP, and a sample PHP app on an Ubuntu server. 
+   It also has automates tests written in Ruby script to make sure it returns "Hello, World".
+   The repo is referenced by the book <a target="_blank" href="https://www.amazon.com/Terraform-Running-Writing-Infrastructure-Code-ebook/dp/B06XKHGJHP/">
+   Terraform Up & Running (OReilly book $11.99 on Amazon)</a> and website:<br />
+   <a target="_blank" href="http://www.terraformupandrunning.com/?ref=gruntwork-blog-comprehensive-terraform">terraformupandrunning.com</a>
+
+   The sample scripts referenced by this tutorial contain moustache variable mark-up so that you can generate a set for your organization.
+
+   * <a target="_blank" href="
+   https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html">
+   https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html</a>
+
+   * <a targt="_blank" href="
+   https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191">
+   https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191</a>
+
+
+<a name="Cloudposse"></a>
+
+### Cloudposse
+
+   <a target="_blank" href="
+   https://github.com/cloudposse">
+   https://github.com/cloudposse</a> has mostly AWS Terraform, such as
+   https://github.com/cloudposse/load-testing
+
+
+
 
 <hr />
 
@@ -1044,9 +1126,14 @@ variable "service_name" {
 }
    </pre>   
 
+   "Collection" variable types allow multiple values of one primitive type variable to be grouped together.
+
    <tt>type = list(string)</tt> can be iterated from index 0 for the first item.
 
    <tt>type = list(number)</tt> causes an error if entries are not numbers.
+
+
+   A "structural" 
 
    <pre>variable "someone" {
   type = object({
@@ -1085,24 +1172,28 @@ variable region {
 
    <a target="_blank" href="https://kodekloud.com/topic/more-terraform-functions/">KodeKloud's example map</a>:
 
-   <pre>variable "ami_map" {
+   <pre>variable "ami" {
       type = map
       default = {
-         us-west-1 = "ami-abc",
-         us-east-1 = "ami-xyz",
-         eu-east-1 = "ami-123",
+         us-west-1 = "ami-...123",
+         us-east-1 = "ami-...456",
+         eu-east-1 = "ami-...789",
       }
 }
    </pre>
 
    To retrieve indirectly by key name to obtain value "HHD":
 
-   <pre>lookup( var.ami_map, "us-west-1")</pre>
+   <pre>ami = lookup( var.ami_map, "us-west-1")</pre>
 
-   PROTIP: Enable the latest ami to be used ...
+   The result is <tt>ami-...123</tt>
+
+   TODO: Obtain the latest ami.
 
 
-REMEMBER: When troubleshooting, remember the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
+   ### Presedence
+
+   REMEMBER: When troubleshooting, remember the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
 
 1. Environment variables are overridden most of all:
 
@@ -1225,6 +1316,118 @@ In this minimal sample file for Azure:
 
 
 
+<hr />
+
+
+<a name="MultiCloud"></a>
+
+## Multi-cloud/service
+
+Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
+
+Terraform provides an alternative to each cloud vendor's IaC solution:
+   * <a href="#CFN">AWS - Cloud Formation</a> & CDK
+   * Microsoft Azure Resource Manager Templates
+   * Google Cloud Platform Deployment Manager
+   * OpenStack Heat (on-premises)
+   <br /><br />
+
+Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
+
+
+<a name="Providers"></a>
+
+### Terraform Providers
+
+   <a target="_blank" href="
+   https://www.terraform.io/docs/language/providers/index.html">
+   https://www.terraform.io/docs/language/providers/index.html</a>
+
+1. List providers from <a target="_blank" href="https://github.com/terraform-providers">https://github.com/terraform-providers</a>
+   
+   <pre><strong>terraform providers</strong></pre>
+
+   Most commonly, Terraform Providers translate HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. Note there is a local provider and also a "random" provider to generate random data:
+
+
+   ### Terraform Built-in Providers
+
+   <a target="_blank" href="
+   https://github.com/hashicorp/terraform/tree/master/builtin/providers">
+   https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
+
+   "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
+
+   In China: "alicloud", "huaweicloud", "tencentcloud", etc.
+
+   Monitoring and other infrastructure services vendors: 
+   "datadog", "grafana", "newrelic", "pagerduty", "bigip" (F5 BigIP), "RabbitMQ", "acme", "yandex", "ciscoasa" (ASA), etc.
+
+   CDN vendors: Dyn, "fastly", "cloudflare", "netlify", "packet" (Terraform Packet), "consul" (Terraform Consul), "nutanix", "ignition", "dnsimple", "fortis", LogicMonitor,  "profitbricks", "statuscake", etc.
+
+   Database and repositories: "influxdb", "mysql", "postgresql", "vault" (Terraform), "bitbucket", "github", "archive", etc.
+
+   Servers: "docker", "dns", UltraDNS, "helm" (Terraform), "http", "vsphere" (VMware vSphere), etc.
+
+   chef, "spotinst", "linode", "hedvig", "selectel", "brightbox", "OVH", "nomad", "local", Panos, NS1, "rundeck", VMWare vRA7, random, external, "null", Icinga2, Arukas, runscope,  etc.
+
+   The follow have been archived: Atlas (Terraform), "clc" (CenturyLinkCloud), OpsGenie, (IBM) SoftLayer, PowerDNS, DNSMadeEasy, Librato, Mailgun, LogEntries, Gridscale, CIDR, etc.
+
+
+### Custom Providers
+
+Custom Terraform Providers are written in the <a target="_blank" href="https://wilsonmar.github.com/golang">Go language</a>.
+
+The steps below are based on
+   <a target="_blank" href="
+   https://www.terraform.io/intro/examples/">
+   https://www.terraform.io/intro/examples</a>
+and implemented in the setup scripts at:
+   <a target="_blank" href="
+   https://github.com/wilsonmar/mac-setup/">
+   https://github.com/wilsonmar/mac-setup</a>
+which performs the following steps for you:
+
+1. Install a Git client if you haven't already.
+1. Use an internet browser (Chrome) to see the sample assets at:
+
+   <a target="_blank" href="
+   https://github.com/terraform-providers/terraform-provider-aws.git">
+   https://github.com/terraform-providers/terraform-provider-aws.git</a>
+
+0. If you are going to make changes, click the <strong>Fork</strong> button.
+0. Create or navigate to a container folder where new repositories are added. For example:
+
+   `~/gits/wilsonmar/tf-sample`
+
+0. Get the repo onto your laptop (substituting "wilsonmar" with your own account name):
+
+   <tt><strong>git clone <a target="_blank" href="
+   https://github.com/terraform-providers/terraform-provider-aws.git">
+   https://github.com/terraform-providers/terraform-provider-aws.git</a> \-\-depth=1 && 
+   cd tf-sample
+   </strong></tt>
+
+   The above is one line, but may be word-wrapped on your screen.
+
+   The response at time of writing:
+
+   <pre>Cloning into 'tf-sample'...
+remote: Counting objects: 12, done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), done.
+   </pre>  
+
+1. PROTIP: Make sure that the AWS region is what you want.
+
+   <a target="_blank" href="
+   https://www.terraform.io/docs/providers/aws/r/instance.html">
+   https://www.terraform.io/docs/providers/aws/r/instance.html</a>
+   AWS provider
+
+
+
 
 <hr />
 
@@ -1255,7 +1458,7 @@ aws_accountId = "123456789123456"
 private_key_path = "C:\\<em>PathToYourPrivateKeys</em>\PrivateKey.pem"
    </pre>
 
-   It's not good security to store such information in a repo potentially shared, so tfvars files are specified in .gitignore,
+   It's not good security to store such information in a repo potentially shared, so tfvars files are specified in <a href="#.gitignore">.gitignore</a>,
    and <a href="#SecretStore">retrieved from secret storage</a> before running terraform commands. 
    Also for security, the variables are then removed from memory shortly after usage.
 
@@ -1376,6 +1579,8 @@ To ensure that items are properly deleted, a for-each is used to create a map re
 vpc
    </pre>
 
+   `terraform.tfstate*` is a wildcard for folder `terraform.tfstate.d` and variants, which contain <a href="#Workspaces">Terraform Workspaces</a>.
+
    `tfstate.backup` is created from the most recent previous execution before the current `tfstate` file contents.
 
    `.terraform/` specifies that the folder is ignored when pushing to GitHub.
@@ -1477,30 +1682,6 @@ A more colorful format using <a target="_blank" href="https://github.com/28mm/bl
 <img width="939" alt="terraform-resource-colorful-1878x1470" src="https://user-images.githubusercontent.com/300046/131344896-407d377a-046d-45b4-8159-a7168e2cabbc.png">
 
 There is also a "webgraphwiz" tool.
-
-<hr />
-
-<hr />
-
-<a name="Social"></a>
-
-## Social
-
-* <a target="_blank" href="
-https://www.twitch.tv/hashicorplive">
-https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
-
-* <a target="_blank" href="https://discuss.hashicorp.com/">https://discuss.hashicorp.com</a>
-
-* <a target="_blank" href="https://groups.google.com/forum/#!forum/terraform-tool">Google Group terraform-tool</a>
-* <a target="_blank" href="https://linkedin.com/in/terraform">
-   LinkedIn</a>
-* <a target="_blank" href="https://stackoverflow.com/search?q=terraform">StackOverflow</a>
-* <a target="_blank" href="https://www.reddit.com/r/Terraform/">r/Terraform (Reddit sub-reddit)</a>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on <a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">Mitchell Hashimoto (CEO) YouTube channel</a>  
-
-* No IRC (Internet Relay Chat)?
 
 
 <hr />
@@ -1654,24 +1835,6 @@ The problem with that is <strong>duplicated</strong> terragrunt.hcl configuratio
    * Change to a directory with `-chdir` parameter.
 
 
-<a name="Terraspace"></a>
-
-## Terraspace
-
-<a target="_blank" href="https://learn.boltops.com/courses/terraspace-fundamentals/lessons/terraspace-getting-started-with-aws">VIDEO</a>: <a target="_blank" href="https://terraspace.cloud/">https://terraspace.cloud/">Terraspace.cloud</a> dynamically generates Terraform projects in a centralized manner (which eliminates duplication). 
-So the whole stack can be brought up by a single command: <a target="_blank" href="https://www.youtube.com/watch?v=GjlWeYAGWIE">VIDEO</a>:
-
-   <ul><pre>terraspace up STACK</pre></ul>
-
-<a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
-Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
-
-Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
-
-References:
-   * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
-   <br /><br />
-
 <hr />
 
 <a name="Config"></a>
@@ -1811,6 +1974,8 @@ Modules are self-contained packages of Terraform configurations that are managed
 
 In other words, a Terraform module is a container for multiple resources used together.
 
+Putting Terraform code in modules enable their reuse, which speeds development by reducing testing and increasing the pace of change.
+
 Terraform modules provide "blueprints" to deploy.
 
 References:
@@ -1834,8 +1999,18 @@ Thus Terraform defines the "desired state configuration" (DSC).
 
    <pre><strong>terraform get</strong></pre>
 
-zzz
+### Output from within a module
 
+From within a module named "some_module":
+
+<pre>output "returned-variable" {
+  value = "1"
+}
+</pre>
+
+Output in the main Terraform code invoking the module:
+
+<pre>module.some_module.returned-variable</pre>
 
 The module's source can be on a local disk:
 
@@ -1846,9 +2021,11 @@ The module's source can be on a local disk:
 }
    </pre>
 
-  The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
+   ### Modules from GitHub
 
-   <pre>module "rancher" {
+   The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
+
+    <pre>module "rancher" {
   source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
 }
    </pre>
@@ -1858,6 +2035,8 @@ The module's source can be on a local disk:
    * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
    <br /><br />
 
+
+   ### Terraform Registry
 
 PROTIP: Learn from modules created by others in <a target="_blank" href="https://registry.terraform.io/browse/modules">Terraform Modules Registry (marketplace) at https://registry.terraform.io/browse/modules</a> which contains 9,000 modules shared globally by many.
 
@@ -1899,9 +2078,9 @@ For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">g
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest">VPC</a>
 <br /><br />
 
+### Vault
 
-<a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">
-https://registry.terraform.io/modules/hashicorp/vault</a>
+Hashicorp Vault can store long-lived credentials in a secure way and dynamically inject short-lived, temporary keys to Terraform at deployment. <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">https://registry.terraform.io/modules/hashicorp/vault</a>
 module installs Hashicorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">Video of demo</a> by Yevgeniy Brikman:
@@ -1909,11 +2088,46 @@ module installs Hashicorp's own Vault and Consul on <a target="_blank" href="htt
 <img alt="terraform-mod-vaults-640x114-16475.jpg" width="640" src="https://user-images.githubusercontent.com/300046/39780240-da22a9b8-52c8-11e8-995e-e8c4a7ce325e.jpg"></a>
 
 
-### Why Modules
+<a name="CommunityModules"></a>
 
-Putting Terraform code in modules enable their reuse, which speeds development by reducing testing and increasing the pace of change.
+### Community modules
 
-But some documentation and training is necessary.
+Terrafrom provides its own <a href="#Modules">modules</a>. 
+
+Terraform Modules are how to add "smartness" to manage each DevOps component:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
+<img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
+
+* <a target="_blank" href="https://github.com/terraform-community-modules">
+https://github.com/terraform-community-modules</a>
+
+* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
+https://github.com/gruntwork-io/terratest</a>
+is a Go library that makes it easier to write automated tests for your infrastructure code.
+
+https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
+https://terratest.gruntwork.io/
+https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
+
+* <a target="_blank" href="
+   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
+   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
+
+* https://github.com/terraform-aws-modules
+
+CAUTION: <a target="_blank" href="https://thenewstack.io/bridgecrew-all-these-misconfigured-terraform-modules-are-a-security-issue/">In 2020, 44%</a> of public registry modules did not meet <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">CIS benchmarks</a>.
+56% of the modules that have ever been downloaded contain what is now considered a misconfiguration.
+
+PROTIP: Don't blindly include public assets in your code. First scan them. Then copy lines and test them.
+
+### Terraform Cloud
+
+TFE provides easy access to shared state and secret data.
+
+Terraform Cloud workspaces store the Terraform configuration in a linked version control repository.
+
+### VPC
 
 <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest">
 For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
@@ -1970,39 +2184,6 @@ For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
       Environment = "dev"
    }
    </pre>
-
-<a name="CommunityModules"></a>
-
-### Community modules
-
-Terrafrom provides its own <a href="#Modules">modules</a>. 
-
-Terraform Modules are how to add "smartness" to manage each DevOps component:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
-<img alt="terraform-devops-vendors-807x352-107086" width="807" src="https://user-images.githubusercontent.com/300046/39751536-bd617afa-5275-11e8-943f-30ebbf17da0e.jpg"></a>
-
-* <a target="_blank" href="https://github.com/terraform-community-modules">
-https://github.com/terraform-community-modules</a>
-
-* <a target="_blank" href="https://github.com/gruntwork-io/terratest">
-https://github.com/gruntwork-io/terratest</a>
-is a Go library that makes it easier to write automated tests for your infrastructure code.
-
-https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
-https://terratest.gruntwork.io/
-https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-to-end-test/
-
-* <a target="_blank" href="
-   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules/">
-   https://www.ybrikman.com/writing/2017/10/13/reusable-composable-battle-tested-terraform-modules</a>
-
-* https://github.com/terraform-aws-modules
-
-CAUTION: <a target="_blank" href="https://thenewstack.io/bridgecrew-all-these-misconfigured-terraform-modules-are-a-security-issue/">In 2020, 44%</a> of public registry modules did not meet <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">CIS benchmarks</a>.
-56% of the modules that have ever been downloaded contain what is now considered a misconfiguration.
-
-PROTIP: Don't blindly include public assets in your code. First scan them. Then copy lines and test them.
 
 
 
@@ -2348,63 +2529,6 @@ Docs:
 
 
 
-
-
-
-<a name="Cloudposse"></a>
-
-### Cloudposse
-
-   <a target="_blank" href="
-   https://github.com/cloudposse">
-   https://github.com/cloudposse</a> has mostly AWS Terraform, such as
-   https://github.com/cloudposse/load-testing
-
-
-<a name="Gruntwork"></a>
-
-### Gruntwork's sample
-
-   <a target="_blank" href="#Gruntwork">Gruntwork.io</a> offers (for $4,950), access to their 250,000-line Reference Architecture of starter code to create a production-worthy "defense in depth" setup on AWS:
-
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg">
-   <img width="683" alt="terraform-ref-arch-683x407-106209" src="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg"></a>
-
-   An additional $500 a month gets you access to their <a target="_blank" href="https://gruntwork.teachable.com/p/reference-architecture-walkthrough/">
-   Reference Architecture Walktrough video class</a>. But previews of the class is free:
-
-   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211191">Course overview</a>
-   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211435">Architecture overview</a>
-   * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211737">Code organization overview</a>
-   <br /><br />
-
-For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" href="https://www.ybrikman.com/">ybrikman.com</a>, co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/">Gruntwork.io</a>) has generously shared:
-
-   * <a target="_blank" href="
-   https://github.com/gruntwork-io/intro-to-terraform">
-   https://github.com/gruntwork-io/intro-to-terraform.git</a>
-
-   * <a target="_blank" href="https://github.com/brikis98/infrastructure-as-code-talk/tree/master/terraform-configurations">https://github.com/brikis98/infrastructure-as-code-talk/tree/master/terraform-configurations</a>
-
-   * <a target="_blank" href="https://github.com/brikis98/terraform-up-and-running-code/tree/master/code">https://github.com/brikis98/terraform-up-and-running-code</a>
-   provides bash scripts to run on Ubuntu server to install Apache, PHP, and a sample PHP app on an Ubuntu server. 
-   It also has automates tests written in Ruby script to make sure it returns "Hello, World".
-   The repo is referenced by the book <a target="_blank" href="https://www.amazon.com/Terraform-Running-Writing-Infrastructure-Code-ebook/dp/B06XKHGJHP/">
-   Terraform Up & Running (OReilly book $11.99 on Amazon)</a> and website:<br />
-   <a target="_blank" href="http://www.terraformupandrunning.com/?ref=gruntwork-blog-comprehensive-terraform">terraformupandrunning.com</a>
-
-   The sample scripts referenced by this tutorial contain moustache variable mark-up so that you can generate a set for your organization.
-
-   * <a target="_blank" href="
-   https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html">
-   https://www.terraform.io/docs/providers/azurerm/r/virtual_machine_scale_set.html</a>
-
-   * <a targt="_blank" href="
-   https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191">
-   https://training.gruntwork.io/courses/reference-architecture-walkthrough/lectures/4211191</a>
-
-
-
 <hr />
 
 <a name="tfplan"></a>
@@ -2561,9 +2685,13 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    https://terraform.io/docs/configuration/interpolation.html">
    https://terraform.io/docs/configuration/interpolation.html</a>
 
+   In Terraform, you cannot create your own user-defined functions.
+   
+   
+   
+   Primitive data types in Terraform are Number, String, Boolean.
 
-   ( <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
-   Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
+   Dynamic blocks CANNOT be used with lifecycle blocks, because Terraform must process lifecycle blocks before it can safely evaluate expressions.
 
 
    <a name="AWSStateMgmt"></a>
@@ -2572,6 +2700,8 @@ For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" hre
    ### Apply to create tfstate
    
    * https://kodekloud.com/topic/introduction-to-terraform-state/
+   * <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
+   Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
    <br /><br />
    
 1. While in the same folder where there is a "backend.tf" file (above), have Terraform read the above to establish an EC2 instance:
@@ -2801,117 +2931,6 @@ output news_server {
 
 <hr />
 
-
-<a name="MultiCloud"></a>
-
-## Multi-cloud/service
-
-Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
-
-Terraform provides an alternative to each cloud vendor's IaC solution:
-   * <a href="#CFN">AWS - Cloud Formation</a> & CDK
-   * Microsoft Azure Resource Manager Templates
-   * Google Cloud Platform Deployment Manager
-   * OpenStack Heat (on-premises)
-   <br /><br />
-
-Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
-
-
-<a name="Providers"></a>
-
-### Terraform Providers
-
-   <a target="_blank" href="
-   https://www.terraform.io/docs/language/providers/index.html">
-   https://www.terraform.io/docs/language/providers/index.html</a>
-
-1. List providers from <a target="_blank" href="https://github.com/terraform-providers">https://github.com/terraform-providers</a>
-   
-   <pre><strong>terraform providers</strong></pre>
-
-   Most commonly, Terraform Providers translate HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. Note there is a local provider and also a "random" provider to generate random data:
-
-
-   ### Terraform Built-in Providers
-
-   <a target="_blank" href="
-   https://github.com/hashicorp/terraform/tree/master/builtin/providers">
-   https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
-
-   "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
-
-   In China: "alicloud", "huaweicloud", "tencentcloud", etc.
-
-   Monitoring and other infrastructure services vendors: 
-   "datadog", "grafana", "newrelic", "pagerduty", "bigip" (F5 BigIP), "RabbitMQ", "acme", "yandex", "ciscoasa" (ASA), etc.
-
-   CDN vendors: Dyn, "fastly", "cloudflare", "netlify", "packet" (Terraform Packet), "consul" (Terraform Consul), "nutanix", "ignition", "dnsimple", "fortis", LogicMonitor,  "profitbricks", "statuscake", etc.
-
-   Database and repositories: "influxdb", "mysql", "postgresql", "vault" (Terraform), "bitbucket", "github", "archive", etc.
-
-   Servers: "docker", "dns", UltraDNS, "helm" (Terraform), "http", "vsphere" (VMware vSphere), etc.
-
-   chef, "spotinst", "linode", "hedvig", "selectel", "brightbox", "OVH", "nomad", "local", Panos, NS1, "rundeck", VMWare vRA7, random, external, "null", Icinga2, Arukas, runscope,  etc.
-
-   The follow have been archived: Atlas (Terraform), "clc" (CenturyLinkCloud), OpsGenie, (IBM) SoftLayer, PowerDNS, DNSMadeEasy, Librato, Mailgun, LogEntries, Gridscale, CIDR, etc.
-
-
-### Custom Providers
-
-Custom Terraform Providers are written in the <a target="_blank" href="https://wilsonmar.github.com/golang">Go language</a>.
-
-The steps below are based on
-   <a target="_blank" href="
-   https://www.terraform.io/intro/examples/">
-   https://www.terraform.io/intro/examples</a>
-and implemented in the setup scripts at:
-   <a target="_blank" href="
-   https://github.com/wilsonmar/mac-setup/">
-   https://github.com/wilsonmar/mac-setup</a>
-which performs the following steps for you:
-
-1. Install a Git client if you haven't already.
-1. Use an internet browser (Chrome) to see the sample assets at:
-
-   <a target="_blank" href="
-   https://github.com/terraform-providers/terraform-provider-aws.git">
-   https://github.com/terraform-providers/terraform-provider-aws.git</a>
-
-0. If you are going to make changes, click the <strong>Fork</strong> button.
-0. Create or navigate to a container folder where new repositories are added. For example:
-
-   `~/gits/wilsonmar/tf-sample`
-
-0. Get the repo onto your laptop (substituting "wilsonmar" with your own account name):
-
-   <tt><strong>git clone <a target="_blank" href="
-   https://github.com/terraform-providers/terraform-provider-aws.git">
-   https://github.com/terraform-providers/terraform-provider-aws.git</a> \-\-depth=1 && 
-   cd tf-sample
-   </strong></tt>
-
-   The above is one line, but may be word-wrapped on your screen.
-
-   The response at time of writing:
-
-   <pre>Cloning into 'tf-sample'...
-remote: Counting objects: 12, done.
-remote: Compressing objects: 100% (12/12), done.
-remote: Total 12 (delta 1), reused 9 (delta 0), pack-reused 0
-Unpacking objects: 100% (12/12), done.
-   </pre>  
-
-1. PROTIP: Make sure that the AWS region is what you want.
-
-   <a target="_blank" href="
-   https://www.terraform.io/docs/providers/aws/r/instance.html">
-   https://www.terraform.io/docs/providers/aws/r/instance.html</a>
-   AWS provider
-
-
-<hr />
-
 <a name="Workspaces"></a>
 
 ## Temporary Workspaces
@@ -2924,11 +2943,21 @@ Workspaces enable management of multiple "environments" in alternate state files
    Terraform now offers a Terraform Cloud provider to manage VCS provider GitHub
    in temporary test workspaces, to see the impact of incremental changes.
 
-1. By default, Terraform creates a workspace in your local backend called "default":
+   Workspaces work locally or via remote backends.
 
-   <pre><strong>terraform workspace list</strong></list>
+1. By default, when working locally, Terraform creates a workspace in your local backend called "default".
 
-   This "CLI Workspaces" works locally or via remote backends.
+   <pre><strong>terraform workspace list</strong></pre>
+
+   `*` identifies the selected workspace
+
+1. Create a new workspace projectX to contain a separate state file:
+
+   <pre><strong>terraform workspace new projectX</strong></pre>
+
+1. To change your current workspace to a workspace:
+
+   <pre>terraform workspace select projectX</pre>
 
 1. Reference the <tt>${terraform.workspace}</tt> named value in HCL:
 
@@ -2941,8 +2970,13 @@ Workspaces enable management of multiple "environments" in alternate state files
       }
       # ...
    }
+   </pre>
 
-1. Terraform stores workspace states in a folder called <tt><strong>terraform.tfstate.d</strong></pre>
+1. To output the current Workspace:
+
+   <pre><strong>??? terraform.workspace</strong></pre>
+
+1. Terraform stores workspace states in a folder called <tt><strong>terraform.tfstate.d</strong></tt>
 
    <pre><strong>ls -al terraform.tfstate.d</strong></pre>
 
@@ -3560,6 +3594,31 @@ CDK for Terraform
    <pre>aws ec2 describe-instances --endpoint http://aws:4566 --filters "Name=image-id,Values=ami-082b3eca746b12a89" | jq -r '.Reservations[].Instances[].InstanceId'
    </pre>
 
+
+<hr />
+
+<a name="Social"></a>
+
+## Social
+
+* <a target="_blank" href="
+https://www.twitch.tv/hashicorplive">
+https://www.twitch.tv/hashicorplive</a> 1st & 3rd PT Fridays every month
+
+* <a target="_blank" href="https://discuss.hashicorp.com/">https://discuss.hashicorp.com</a>
+
+* <a target="_blank" href="https://groups.google.com/forum/#!forum/terraform-tool">Google Group terraform-tool</a>
+* <a target="_blank" href="https://linkedin.com/in/terraform">
+   LinkedIn</a>
+* <a target="_blank" href="https://stackoverflow.com/search?q=terraform">StackOverflow</a>
+* <a target="_blank" href="https://www.reddit.com/r/Terraform/">r/Terraform (Reddit sub-reddit)</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=Q6SGhWK6y0o&list=PL4z1WbdlT5GKw1l2w0U-8YijoTwZp_GvU">0.12-alpha4</a> Dec 20, 2018 on <a target="_blank" href="https://www.youtube.com/channel/UC0gjVbm7HY5GzDTo5NbQruA">Mitchell Hashimoto (CEO) YouTube channel</a>  
+
+* No IRC (Internet Relay Chat)?
+
+
+
 <hr />
 
 <a name="RockStars"></a>
@@ -3698,7 +3757,7 @@ At the top of the list is the in-depth videos and <strong>hands-on labs with qui
 <a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
 KodeKloud's "Hashicorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
 
-Among video tutorials at <a target="_blank" href="https://learn.acloud.guru/search?query=terraform&page=1">ACloud.Guru</a> is a 11-hour Associate prep course by Moosa Khalid.
+Among video tutorials at <a target="_blank" href="https://learn.acloud.guru/search?query=terraform&page=1">ACloud.Guru</a> is a 11-hour Associate prep course by <a target="_blank" href="https://www.linkedin.com/in/moosa-khalid/">Moosa Khalid</a>.
 
 Videos free on YouTube but a better UI to view vidoes is provided by:
 
