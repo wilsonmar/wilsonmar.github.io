@@ -83,6 +83,20 @@ Recap:
 
 ## Links to Certification Exam Objectives
 
+Pluralsight has a 20-question assessment: <a target="_blank" href="https://app.pluralsight.com/paths/skill/managing-infrastructure-with-terraform">Managing Infrastructure with Terraform Skill IQ"</a> covering (Google):
+
+   * Add Terraform to a CI/CD Pipeline
+   * Automate infrastructure deployment
+   * Create and import Modules
+   * Implement Terraform with AWS
+   * Implement Terraform with Google Cloud Platform
+   * Implement Terraform with Microsoft Azure
+   * Import data from external sources
+   * Install and Run Terraform
+   * Manage State in Terraform
+   * Troubleshoot Terraform Issues
+   <br /><br />
+
 <img align="right" width="200" alt="terraformassociate-704x704" src="https://user-images.githubusercontent.com/300046/154810637-8293e9a0-1c6a-4105-b9c0-3d100166ce42.png">
 This page houses both links and my notes to pass the <a target="_blank" href="https://hashicorp.com/certification/terraform-associate/">HashiCorp Terraform Associate certification (at https://hashicorp.com/certification/terraform-associate)</a>. For only $70.50 (paid after <a target="_blank" href="https://candidate.psiexams.com/">picking a time on OSI Online</a>, <a target="_blank" href="https://www.reddit.com/r/Terraform/comments/k6pky2/terraform_exam_psi/">terrible)</a> , correctly answer 70%+ of 57 multiple-choice/fill-in questions to give your employers some assurance that you have a practical knowledge of these topics:
 
@@ -1156,6 +1170,7 @@ variable "service_name" {
 
    <tt>type = tuple([string, number, bool])</tt> is used for mixed types in a list.
 
+   NOTE: A tuple cannot be converted into a string.
 
    <pre>resource ... {
    ...
@@ -1199,17 +1214,21 @@ variable region {
 
    <tt>export TFVAR_filename="/root/this.txt"</tt>
 
-2. terraform.tfvars
+1. terraform.tfvars
 
    <tt>filename = "/root/that.txt"</tt>
 
-3. variable.auto.tfvars (in alphabetical order)
+1. variable.auto.tfvars (in alphabetical order)
 
    <tt>filename = "/root/something.txt"</tt>
 
-4. Command-line flags -var or -var-file
+1. Command-line flags -var or -var-file
 
    <tt>terraform apply -var "filename=/root/something.txt"</tt>
+
+1. To limit the number of <strong>concurrent operations</strong> as Terraform walks the graph:
+
+   <tt>terraform apply ... -parallelism=3</tt>
 
 
    Linters identify when they are not.
@@ -1307,17 +1326,17 @@ In this minimal sample file for Azure:
 
    `tags_identity` is to scope permissions.
 
-   See <a target="_blank" href="http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html">
-   http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html</a>
+   A data source is accessed through a data provider.
 
-   Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
 
-   https://www.ahead.com/resources/how-to-create-custom-ec2-vpcs-in-aws-using-terraform/
-
+   References:
+   * <a target="_blank" href="http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html">   http://www.antonbabenko.com/2016/09/21/how-i-structure-terraform-configurations.html</a>
+   * Another example is from the <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/lab_scripts/main.tf">Terransible lab</a> and <a target="_blank" href="https://github.com/linuxacademy/terransible/blob/master/course_scripts/main.tf">course</a>
+   * https://www.ahead.com/resources/how-to-create-custom-ec2-vpcs-in-aws-using-terraform/
+   <br /><br />
 
 
 <hr />
-
 
 <a name="MultiCloud"></a>
 
@@ -1334,6 +1353,9 @@ Terraform provides an alternative to each cloud vendor's IaC solution:
 
 Terraform can also provision <strong>on-premises</strong> servers running OpenStack, VMWare vSphere, and  CloudStack as well as AWS, Azure, Google Cloud, Digitial Ocean, Fastly, and other <a href="#CloudProviders">cloud providers</a> (responsible for understanding API interacitons and exposing resources).
 
+In GCP, Terraform state is stored as an object in a configurable prefix in a given bucket on GCS (Google Cloud Storage), which supports state locking.
+
+To set an IAM policy for a specified project and replace any existing policy that is already attached, the use a <tt>google_project_iam_policy</tt> authoritative resource.
 
 <a name="Providers"></a>
 
@@ -1348,7 +1370,6 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
    <pre><strong>terraform providers</strong></pre>
 
    Most commonly, Terraform Providers translate HCL into API calls defined in (at last count, 109) cloud provider repositories from Terraform, Inc. Note there is a local provider and also a "random" provider to generate random data:
-
 
    ### Terraform Built-in Providers
 
@@ -1425,6 +1446,8 @@ Unpacking objects: 100% (12/12), done.
    https://www.terraform.io/docs/providers/aws/r/instance.html">
    https://www.terraform.io/docs/providers/aws/r/instance.html</a>
    AWS provider
+
+   A template data store Template Provider exposes data sources which use templates to generate strings for other Terraform resources or outputs.
 
 
 
@@ -1523,6 +1546,9 @@ ami = ${lookup(var.amis, "us-east-1")}
 
    <a target="_blank" href="https://www.google.com/url?q=https%3A%2F%2Fdocs.aws.amazon.com%2FAWSEC2%2Flatest%2FUserGuide%2Flaunch-marketplace-console.html&sa=D&sntz=1&usg=AFQjCNGbWvcSfsheH4psSFED8ZF-w6mrqQ">NOTE</a>: Amazon has an approval process for making AMIs available on the public Amazon Marketplace.
 
+   The "default" argument requires a literal value and cannot reference other objects in the configuration.
+
+
 ### Count of items processed
 
 <a target="_blank" href="https://kodekloud.com/topic/count/">VIDEO</a>:
@@ -1569,15 +1595,27 @@ To ensure that items are properly deleted, a for-each is used to create a map re
 
 1. In the <tt>.gitignore</tt> file are files generated during processing, so don't need to persist in a repository:
 
-   <pre>terraform.tfstate*
-*.tfstate
-*.tfstate.backup
+   <pre>.DS_Store
+*.pem
 *.tfvars
-.terraform/
-*.iml
+*.tfplan
 *.plan
+*.tfstate
+terraform.tfstate*
+*.tfstate.backup
+.terraform/
+*.lock.info
+*.iml
 vpc
    </pre>
+
+   `.DS_Store` is created internally within MacOS and so serves no purpose in GitHub.
+
+   `.pem` are private key files which should never be stored in GitHub.
+
+   `*.tfvars` contains secrets, so should not be saved in GitHub.
+
+   `*.tfplan` is created each time `terraform plan` is run, so no need to save it in GitHub.
 
    `terraform.tfstate*` is a wildcard for folder `terraform.tfstate.d` and variants, which contain <a href="#Workspaces">Terraform Workspaces</a>.
 
@@ -1598,13 +1636,22 @@ vpc
 
 <hr />
 
+## Upgrading Terraform version
+
+When upgrading Terraform version, configurations may need syntax update.
+
+1. To make updates automatically:
+
+   <pre><strong>terraform <em>version</em>upgrade</strong></pre>
+
+
+<hr />
+
 <a name="Terraforming"></a>
 
-### Going from CFN yaml to HCL?
+### Terraforming: from CFN yaml to HCL?
 
-How to generate Terraform HCL from a running AWS account?
-
-The options:
+To generate Terraform HCL from a running AWS account, here are the options:
 
 1. Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
 exports existing AWS resources to Terraform style tf, tfstate. It also comes as a Docker container.
@@ -2778,9 +2825,13 @@ In a team environment, it helps to store state state files off a local disk and 
    <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">NOTE</a>
    terraform.tfstate can be stored over the network in S3, etcd distributed key value store (used by Kubernetes), or a Hashicorp Atlas or Consul server. (Hashicorp Atlas is a licensed solution.)
 
-   State can be obtained using command:
+1. State can be obtained using command:
 
    <pre><strong>terraform remote pull</strong></pre>
+
+1. Retrieve state data from a remote data store:
+
+   <pre><strong>terraform_remote_state</strong></pre>
 
 
    <a name="Backends"></a>
@@ -2812,6 +2863,22 @@ In a team environment, it helps to store state state files off a local disk and 
 
    Some backends allows multiple named workspace instances to be associated with a single backend configuration (without configuring a new backend authentication).
 
+1. When using remote state as a data source, use root-level outputs of Terraform configurations as input data for another configuration:
+
+   <pre>data "terraform_remote_state" "vpc" {
+  backend = "remote"
+  &nbsp;
+  config = {
+    organization = "hashicorp"
+    workspaces = {
+      name = "vpc-prod"
+    }
+  }
+}
+resource "aws_instance" "foo" {
+  subnet_id = data.terraform_remote_state.vpc.<strong>outputs.subnet_id</strong>
+}
+   </pre>
 
 
 <a name="DriftManagement"></a>
@@ -3102,8 +3169,7 @@ This defines a string (from a variable) inside the file:
 }
    </pre>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h10m5s">VIDEO</a>:
-This examples copies a file on Linux:
+1. <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h10m5s">VIDEO</a>: To copy files or directories within a Linux machine, using the file provisioner:
 
    <pre>resource "aws_instance" "web" {
   # ...
@@ -3849,6 +3915,14 @@ Manage SSH with HashiCorp Vault</a>
 https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scalable-dynamic-and-error-resistant-terraform-dcbd6a0ada6a
 
 <a target="_blank" href="https://www.youtube.com/watch?v=YcJ9IeukJL8">2 hr. VIDEO: Terraform for DevOps Beginners</a> + <a target="_blank" href="https://beta.kodekloud.com/courses/lab-terraform-for-beginners/">Labs</a> by Vijin Palazhi.
+
+<a target="_blank" href="https://www.linkedin.com/learning/advanced-terraform/terraform-in-the-real-world?autoplay=true">Advanced Terraform</a> video class on LinkedIn Learning by David Swersky references
+https://github.com/LinkedInLearning/advanced-terraform-2823489
+
+
+<a name="Kubernetes"></a>
+
+### Terraform Kubernetes
 
 Docs on Terraform Kubernetes:
    * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
