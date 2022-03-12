@@ -360,15 +360,15 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
    
    PROTIP: An adult needs about <strong>half gallon (64 oz) per day</strong>. More when exercising.
 
-   The EPA recommends that municipal drinking water have pH of 6.5 to 8.5. Pure water has a pH of 7, which is considered “neutral”. Battery acid have a pH of 0. Orange juice has a pH of 3.3 and black coffee is about 5. Tap water in the U.S. are typically 4.3 to 5.3. Distilled reverse osmosis water has <strong>acidic</strong> pH of 5 to 7. Ocean water and premium bottled water marketed as <strong>alkaline</strong> have a pH of 8 or above. Strongly alkaline substances, such as lye, can have a pH of 14.
+   Pure water has a "neural" pH of 7. The EPA recommends that municipal drinking water have pH of 6.5 to 8.5, but tap water in the U.S. are typically 4.3 to 5.3. Distilled reverse osmosis water has <strong>acidic</strong> pH of 5 to 7. Battery acid has pH of 0. Orange juice is "acidic" with a pH of 3.3 and black coffee is about 5. Ocean water and premium bottled water marketed as <strong>alkaline</strong> have a pH of 8 or above. Strongly alkaliod such as lye have a pH of 14.
 
    <a target="_blank" href="https://www.amazon.com/stores/ZeroWater/page/3252200A-499C-4EF0-8554-C257103876A6">ZeroWater canisters</a> ($10 each) <a target="_blank" href="https://www.youtube.com/watch?v=ja0ioX6GSz0&t=9m29s">reduced alkaninity to 7.5</a> and <a target="_blank" href="https://www.youtube.com/watch?v=ja0ioX6GSz0&t=12m48s">removes heavy metals</a>. I got the <a target="_blank" href="https://lifewithoutplastic.com/stainless-steel-dispenser-by-life-without-plastic-25-l-6-6-gal/">6.6 gallon stainless steel dispenser from lifewithoutplastic.com</a>.
    
    Airport shops charge exhorbitant prices for water bottles.
    And I want to eliminate purchasing plastic for landfills.
    So...<br />
-   [_] To drink tap water with impunity practically anywhere, I got 
-   <a target="_blank" href="https://home.drinkflowater.com/collections/all-products/products/flowater-9-pack">9 Flowater aluminum bottles for $22.49</a> or a single "LifeStraw" bottle for $32 at Walmart.
+   [_] To drink tap water with impunity practically anywhere, <a target="_blank" href="https://www.amazon.com/stores/FloWater/page/7CC76E27-5623-48C6-B12D-536FA3D11C71?ref_=ast_bln">Flowater</a> 
+   <a target="_blank" href="https://home.drinkflowater.com/collections/all-products/products/flowater-9-pack">9  aluminum bottles for $22.49</a> or a single "LifeStraw" bottle for $32 at Walmart.
    
    I just have to remember to empty it before going through airport security.
 
@@ -464,7 +464,7 @@ I keep a small bag in my backpack for essential toiletries:
 
 [_] A <strong>2TB USB drive</strong> containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
 
-[_] A <strong>backup smartphone</strong> in a water and shock proof container in case the regular one is damaged.
+[_] A <strong>backup smartphone (satellite phone)</strong> in a water and shock proof container in case the regular one is damaged.
 
 [_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes">
    $50 Cocoon Silk TravelSheet</a> 

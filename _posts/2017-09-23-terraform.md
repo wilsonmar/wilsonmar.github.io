@@ -1041,8 +1041,6 @@ The root folder for a Terraform module should contain these files:
 * <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - declares a description and optional default values for each variable in *.tf files
 <br /><br />
 
-REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each enviornmet (dev, qa, stage, prod).
-
 The above set of files are repeated in each folder containing a nested module:
 
 * <a href="#Modules">modules/</a>
@@ -1056,6 +1054,9 @@ The above set of files are repeated in each folder containing a nested module:
 * examples
 
 REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
+
+REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environmet (dev, qa, stage, prod),
+so should not be saved in GitHub.
 
 
 <hr />
@@ -1208,32 +1209,7 @@ variable region {
    The result is <tt>ami-...123</tt>
 
    TODO: Obtain the latest ami.
-
-
-   ### Presedence
-
-   REMEMBER: When troubleshooting, remember the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
-
-1. Environment variables are overridden most of all:
-
-   <tt>export TFVAR_filename="/root/this.txt"</tt>
-
-1. terraform.tfvars
-
-   <tt>filename = "/root/that.txt"</tt>
-
-1. variable.auto.tfvars (in alphabetical order)
-
-   <tt>filename = "/root/something.txt"</tt>
-
-1. Command-line flags -var or -var-file
-
-   <tt>terraform apply -var "filename=/root/something.txt"</tt>
-
-1. To limit the number of <strong>concurrent operations</strong> as Terraform walks the graph:
-
-   <tt>terraform apply ... -parallelism=3</tt>
-
+<hr />
 
    Linters identify when they are not.
 
@@ -1602,6 +1578,8 @@ To ensure that items are properly deleted, a for-each is used to create a map re
    <pre>.DS_Store
 *.pem
 *.tfvars
+*.auto.tfvars
+terraform.tfvars.json
 *.tfplan
 *.plan
 *.tfstate
@@ -1631,12 +1609,13 @@ vpc
 
    PROTIP: CAUTION: tfstate files can contain secrets, so .gitignore and delete them before git add.
 
-1. Define .gitignore for use with editors used by the team: VSCode, PyCharm, IntelliJ, etc.
+1. Define .gitignore for use with editors used by the team: <a href="#VSCode">VSCode</a>, PyCharm, IntelliJ, etc.
 
    https://www.toptal.com/developers/gitignore/api/terraform,intellij+all,visualstudiocode
 
-   https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
+   https://intellij-support.jetbrains.com/hc/en-us/community/posts/360006390300-Terraform
 
+   https://community.opengroup.org/osdu/platform/deployment-and-operations/infra-azure-provisioning/-/blob/master/.gitignore
 
 <hr />
 
@@ -1695,9 +1674,12 @@ Can’t really do that with CFN alone. Even though Cloud Formation has <strong>n
 AWS Cloud Formation and Terraform can both be used at the same time.
 Terraform is often used to handle security groups, IAM resources, VPCs, Subnets, and policy documents; while CFN is used for actual infrastructural components, now that cloud formation has released <a href="#DriftManagement"><strong>drift detection</strong> using Bridgecrew</a>.
 
-<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that is much more awkward to do in Terraform. ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, and so forth are all well documented and work pretty straight forward in CloudFormation due to the state being managed purely internal to AWS. 
-Terraform is not really an application level deployment tool and you wind up rolling your own. Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
+<a target="_blank" href="https://www.reddit.com/r/aws/comments/9y25ei/why_should_i_learn_cloudformation_when_we_have/e9yqgcy/">NOTE</a>: "Combined with cfn-init and family, CloudFormation supports different forms of deployment patterns that can be more awkward to do in Terraform: 
+ASGs with different replacement policies, automatic rollbacks based upon Cloudwatch alarms, etc. due to state being managed purely internally by AWS. 
 
+Terraform is not really an application level deployment tool. So you wind up rolling your own. 
+
+Working out an odd mix of null resources and shell commands to deploy an application while trying to roll back is not straightforward and seems like a lot of reinventing the wheel."
 
 References about CFN:
    * <a target="_blank" href="http://www.slideshare.net/AntonBabenko/managing-aws-infrastructure-using-cloudformation">Puppet, Chef, Ansible, Salt</a> AWS API libraries Boto, Fog
@@ -1718,21 +1700,25 @@ References about CFN:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><img alt="terraform-dependency-graph-2257x1019" width="2257" height="1019" src="https://user-images.githubusercontent.com/300046/131201026-93ada43f-58b1-43b5-ac70-c70c85fe15d5.png"><br /><em>(click image for full screen</em></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=45m26s">VIDEO</a>:
+1. <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=45m26s">VIDEO</a>:
 The above <strong>Resource Graph</strong> visual representation of dependencies can be created by this command:
 
    <pre><strong>terraform graph | dot -Tsvg > graph.svg</strong></pre>
 
-   The command makes use of Graphviz, which creates graphs specified in the DOT language, with the file name extension <tt>.gv</tt>
+   The <tt>terraform graph</tt> command creates graphs specified in the DOT language, with the file name extension <tt>.gv</tt>, so the <tt>dot</tt> program is needed to generate <tt>.svg</tt> format used to specify graphics in programs.
 
-The above is from <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app with a <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform/blob/master/src/5-gcp-demo/two-tier/cloudsql.tf">MYSQL_5_7 database</a>, both running under Kubernetes (GKE), with a replica in another region.
+1. Copy the SVG code to Clipboard to paste into <a target="_blank" href="https://www.webgraphwiz.com/">webgraphwiz.com</a>
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/154824803-0525264c-24f0-4ec7-a699-a8e0971b0613.png"><img alt="terraform-cloudacad-767x379" width="767" height="379" src="https://user-images.githubusercontent.com/300046/154824803-0525264c-24f0-4ec7-a699-a8e0971b0613.png"></a>
+   PROTIP: Save that URL among your browser bookmarks.
 
-A more colorful format using <a target="_blank" href="https://github.com/28mm/blast-radius">Blast Radius</a> <a target="_blank" href="https://28mm.github.io/blast-radius-docs/">[examples]</a>:
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/154824803-0525264c-24f0-4ec7-a699-a8e0971b0613.png"><img alt="terraform-cloudacad-767x379" width="767" height="379" src="https://user-images.githubusercontent.com/300046/154824803-0525264c-24f0-4ec7-a699-a8e0971b0613.png"></a>
+
+   The above is from <a target="_blank" href="https://cloudacademy.com/learning-paths/solving-infrastructure-challenges-with-terraform-197/">"Solving Infrastructure Challenges with Terraform" 5h videos on CloudAcademy</a> by <a target="_blank" href="https://www.linkedin.com/in/loganrakai/">Rogan Rakai</a> using GCP and VSCode on <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform">https://github.com/cloudacademy/managing-infrastructure-with-terraform</a> to create a two-tier sample WordPress app with a <a target="_blank" href="https://github.com/cloudacademy/managing-infrastructure-with-terraform/blob/master/src/5-gcp-demo/two-tier/cloudsql.tf">MYSQL_5_7 database</a>, both running under Kubernetes (GKE), with a replica in another region.
+
+   Alternately, several apps can display SVG files, including Sketch.app.
+
+1. A more colorful format using <a target="_blank" href="https://github.com/28mm/blast-radius">Blast Radius</a> <a target="_blank" href="https://28mm.github.io/blast-radius-docs/">[examples]</a>:
 <img width="939" alt="terraform-resource-colorful-1878x1470" src="https://user-images.githubusercontent.com/300046/131344896-407d377a-046d-45b4-8159-a7168e2cabbc.png">
-
-There is also a "webgraphwiz" tool.
 
 
 <hr />
@@ -2145,6 +2131,9 @@ module installs Hashicorp's own Vault and Consul on <a target="_blank" href="htt
 
 Terrafrom provides its own <a href="#Modules">modules</a>. 
 
+PROTIP: Don't blindly include public assets in your code. First scan them. Then copy lines and test them.
+
+
 Terraform Modules are how to add "smartness" to manage each DevOps component:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/39751305-fb4167b4-5274-11e8-9ee4-b62324002453.png">
@@ -2170,7 +2159,9 @@ https://terratest.gruntwork.io/docs/testing-best-practices/unit-integration-end-
 CAUTION: <a target="_blank" href="https://thenewstack.io/bridgecrew-all-these-misconfigured-terraform-modules-are-a-security-issue/">In 2020, 44%</a> of public registry modules did not meet <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">CIS benchmarks</a>.
 56% of the modules that have ever been downloaded contain what is now considered a misconfiguration.
 
-PROTIP: Don't blindly include public assets in your code. First scan them. Then copy lines and test them.
+<a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds at <a target="_blank" href="https://github.com/dod-iac">github.com/dod-iac (DOD Infrastructure as Code)</a> with 36 examples of how the Pentagon uses Terraform within AWS IAM, S3, EBS, KMS, Kinesis api gateway, Lambda, MFA, GuardDuty, Route53, etc.
+Included is <a target="_blank" href="https://github.com/dod-iac/terraform-module-template">https://github.com/dod-iac/terraform-module-template  for creating new terraform modules</a>.
+
 
 ### Terraform Cloud
 
@@ -2567,18 +2558,90 @@ Docs:
    * <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/learn/lecture/25583436#overview">chapter 37</a> shows use of for_each to specify hub-and-spoke networking.
 
 
+
+
+4. To limit the number of <strong>concurrent operations</strong> as Terraform walks the graph:
+
+   <tt>terraform apply ... -parallelism=3</tt>
+
+
+
 <hr />
 
+## How to call
 
-### Environment variables
+   PROTIP: To save yourself typing (and typos), define a shell file to invoke each different pipeline:
 
-* Values for variables can be specified at run-time using variables names starting with "TF_VAR_", such as:
+   <pre><strong>chmod +x abc-dev-fe.sh
+abc-dev-fe.sh
+   </strong></pre>
 
-   <pre>TF_VAR_env=staging</pre>
+   <pre><strong>chmod +x abc-stage-fe.sh
+abc-stage-fe.sh
+   </strong></pre>
 
-   But unlike other systems, enviornment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
+### Handle secrets in *.tfvars securely
+
+   PROTIP: Since *.tfvars files typically containing secrets, handle them securely.
+   
+   Within <tt>abc-dev-fe.sh</tt> For local development only on a laptop, <strong>unencrypt</strong> a <tt>local.tfvars</tt> file.
+
+   For other environments running in the cloud, retrieve a <tt>*.tfvars</tt> file from a trusted cloud vault storage  (such as a Hashicorp Vault, Azure Key Vault, AWS Secrets Manager, etc.).
+
+   References: 
+   * https://learn.hashicorp.com/tutorials/terraform/sensitive-variables?in=terraform/0-14
+   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/secrets-vault?in=terraform/secrets">Inject Secrets into Terraform Using the Vault Provider</a>
+   * https://www.terraform.io/language/state/sensitive-data
+   * https://www.digitalocean.com/community/tutorials/how-to-securely-manage-secrets-with-hashicorp-vault-on-ubuntu-20-04
+   * https://www.linode.com/docs/guides/secrets-management-with-terraform/
+   <br /><br />
+
+### Marking Variables as Sensitive
+
+   <pre>variable "database_password" {
+    description = "Password of database administrator"
+    type = string
+    <strong>sensitive = true</strong>
+}
+variable "database_username" {
+    description = "Username of database administrator"
+    type = string
+}
+   </pre>
 
 
+### Precedence of value override
+
+Terraform provides different mechanisms for obtaining dynamic values.
+
+When troubleshooting, REMEMBER: the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
+
+1. Environment variables defined in shell files are <strong>overridden by all other ways</strong> of specifying data:
+
+   <pre><strong>export TFVAR_filename="/.../abc-stage.txt"</strong></pre>
+
+   Alternately, specify a value for the variable "env" (abbreviation for environment) after prefix <tt>TF_VAR_</tt>:
+
+   <pre><strong>TF_VAR_env=staging</strong></pre>
+
+   CAUTION: It's best to avoid using enviornment variables to store secrets because other programs can read snoop in memory.
+   When using environment variables to set sensitive values, those values remain in your environment and command-line history.
+
+2. Within <tt>terraform.tfvars</tt>
+
+3. Within <tt>terraform.tfvars.json</tt>
+
+4. Within <tt>*.auto.tfvars</tt> (in alphabetical order)
+
+   <pre>filename = "/root/something.txt"</pre>
+
+5. Command-line flags -var or -var-file <strong>overrides all</strong> other techniques of providing values:
+
+   <pre><strong>terraform apply -var "filename=/.../xxx-staging.txt"</strong></pre>
+
+   Values for variables can be specified at run-time using variables names starting with "TF_VAR_", such as:
+
+   But unlike other systems, environment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
 
 <hr />
 
@@ -2652,6 +2715,28 @@ Docs:
 
    Terraform creates a dependency graph (specfically, a Directed Acyclic Graph).
    This is so that nodes are built in the order they are needed. 
+
+
+   <a name="tfshow"></a>
+
+   ## Terraform show
+
+1. View the plan created by <tt>terraform plan</tt>
+
+   <pre><strong>terraform show "happy.plan"
+   </strong></pre>
+
+   This shows output variables defined by tf code such as:
+
+   <pre>output "instance-dns" {
+  value = aws_instance.nodejs1.public_dns
+}
+output "private-dns" {
+  value = aws_instance.nodejs1.private_dns
+}
+   </pre>
+
+   "(known after apply" is resolved by <tt>terraform apply</tt>.
 
 
    <a name="tfapply"></a>
@@ -3827,13 +3912,15 @@ At the top of the list is the in-depth videos and <strong>hands-on labs with qui
 <a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
 KodeKloud's "Hashicorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
 
-Among video tutorials at <a target="_blank" href="https://learn.acloud.guru/search?query=terraform&page=1">ACloud.Guru</a> is a 11-hour Associate prep course by <a target="_blank" href="https://www.linkedin.com/in/moosa-khalid/">Moosa Khalid</a>.
+<a target="_blank" href="https://learn.acloud.guru/search?query=terraform&page=1">ACloud.Guru</a> has a 11-hour Associate prep course by <a target="_blank" href="https://www.linkedin.com/in/moosa-khalid/">Moosa Khalid</a>.
+
+On Linked Learning: <a target="_blank" href="https://www.linkedin.com/learning/advanced-terraform/terraform-in-the-real-world?autoplay=true">Advanced Terraform</a> by David Swersky references <a target="_blank" href="https://github.com/LinkedInLearning/advanced-terraform-2823489">https://github.com/LinkedInLearning/advanced-terraform-2823489</a>
 
 Videos free on YouTube but a better UI to view vidoes is provided by:
 
    * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro<a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
 
-On Udemy: 
+On Udemy.com: 
 
    * <a target="_blank" href="https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview">"Terraform: Beginner to Advanced"</a> by Zeal Vora has code at https://github.com/zealvora/terraform-beginner-to-advanced-resource
 
@@ -3847,6 +3934,7 @@ Another FreeCodeCamp.org video on YouTube:
 <a target="_blank" href="https://www.joyent.com/blog/video-simple-terraform-app" title="February 21, 2018">
 "Get started managing a simple application with Terraform"</a> by Alexandra White (at Joyant) shows the deployment of the <a target="_blank" href="https://github.com/heyawhite/joyent_packer-terraform-series/tree/master/1-create-image-with-packer/happy-randomizer">
 Happy Randomizer app</a>
+
 
 
 ### Others (YouTube videos):
@@ -3912,16 +4000,9 @@ by Alex Podobnik
 <a target="_blank" href="https://www.youtube.com/watch?v=bKe4BkDfdvI">VIDEO: 
 Manage SSH with HashiCorp Vault</a>
 
-<a target="_blank" href="https://github.com/dod-iac">github.com/dod-iac (DOD Infrastructure as Code)</a> is 36 examples of how the Pentagon uses Terraform within AWS IAM, S3, EBS, KMS, Kinesis api gateway, Lambda, MFA, GuardDuty, Route53, etc.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=6UDePj5newo&list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7&index=10">VIDEO: Terraform Provider Azure.gov</a> for standardized templates across clouds.
-
 https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scalable-dynamic-and-error-resistant-terraform-dcbd6a0ada6a
 
 <a target="_blank" href="https://www.youtube.com/watch?v=YcJ9IeukJL8">2 hr. VIDEO: Terraform for DevOps Beginners</a> + <a target="_blank" href="https://beta.kodekloud.com/courses/lab-terraform-for-beginners/">Labs</a> by Vijin Palazhi.
-
-<a target="_blank" href="https://www.linkedin.com/learning/advanced-terraform/terraform-in-the-real-world?autoplay=true">Advanced Terraform</a> video class on LinkedIn Learning by David Swersky references
-https://github.com/LinkedInLearning/advanced-terraform-2823489
 
 
 <a name="Kubernetes"></a>
