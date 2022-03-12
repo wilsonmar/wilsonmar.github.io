@@ -181,8 +181,6 @@ The exam expires in 2 years.
 
 Hashicorp doesn't have a deeper/more difficult "Professional level" cert at time of writing.
 
-<hr />
-
 
 <hr />
 
@@ -607,6 +605,12 @@ You'll need a text editor with plugins to view HCL:
    <pre><strong>cd ~/clouddrive/terraform-on-azure/02-init-plan-apply-destroy/01-intro
 code main.tf
    </strong></pre>
+
+1. In VSCode, press shift+command+X or click the bottom-left menu icon and select "Extensions" to select the add-on from Hashicorp
+
+1. If you use Azure, install the "Azure Terraform" extension from Microsoft.
+
+   CAUTION: Avoid installing anything from publishers you don't know.
 
 1. Define .gitignore for use with VSCode:
 

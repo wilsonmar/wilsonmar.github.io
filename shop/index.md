@@ -354,14 +354,23 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
 
 ## Water 
 
-   [_] A <strong>"LifeStraw" bottle</strong> enables me to drink tap water with impunity. Offices can have water quality issues one cannot see. Its $32 from Walmart is a bargain when considering the exhorbitant prices airport shops charge for water bottles.
-   I just have to remember to empty it before going through airport security.
-
-   PROTIP: On average, a person needs a <strong>half gallon (64 oz) per day</strong>.
-
-   Water weighs 8 pounds per gallon (4 liters). So it can be the heaviest item in a backpack.
-
    BTW, a gallon is 4 quarts. A quart is 2 pints. 4 quarts is 8 pints.
+
+   Water weighs 8 pounds per gallon (3.785 liters). So it can be the heaviest item in a backpack.
+   
+   PROTIP: An adult needs about <strong>half gallon (64 oz) per day</strong>. More when exercising.
+
+   The EPA recommends that municipal drinking water have pH of 6.5 to 8.5. Pure water has a pH of 7, which is considered “neutral”. Battery acid have a pH of 0. Orange juice has a pH of 3.3 and black coffee is about 5. Tap water in the U.S. are typically 4.3 to 5.3. Distilled reverse osmosis water has <strong>acidic</strong> pH of 5 to 7. Ocean water and premium bottled water marketed as <strong>alkaline</strong> have a pH of 8 or above. Strongly alkaline substances, such as lye, can have a pH of 14.
+
+   <a target="_blank" href="https://www.amazon.com/stores/ZeroWater/page/3252200A-499C-4EF0-8554-C257103876A6">ZeroWater canisters</a> ($10 each) <a target="_blank" href="https://www.youtube.com/watch?v=ja0ioX6GSz0&t=9m29s">reduced alkaninity to 7.5</a> and <a target="_blank" href="https://www.youtube.com/watch?v=ja0ioX6GSz0&t=12m48s">removes heavy metals</a>. I got the <a target="_blank" href="https://lifewithoutplastic.com/stainless-steel-dispenser-by-life-without-plastic-25-l-6-6-gal/">6.6 gallon stainless steel dispenser from lifewithoutplastic.com</a>.
+   
+   Airport shops charge exhorbitant prices for water bottles.
+   And I want to eliminate purchasing plastic for landfills.
+   So...<br />
+   [_] To drink tap water with impunity practically anywhere, I got 
+   <a target="_blank" href="https://home.drinkflowater.com/collections/all-products/products/flowater-9-pack">9 Flowater aluminum bottles for $22.49</a> or a single "LifeStraw" bottle for $32 at Walmart.
+   
+   I just have to remember to empty it before going through airport security.
 
    Some hikers enjoy the convenience of an external water tube to reach an internal water bag so it's not necessary to stop and remove the bottle for a drink.
    Some bags have them built-in but there are add-ons available.
@@ -371,13 +380,11 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
    [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
    <strong>Double-walled canisters</strong> keep hot drinks hot and cold drinks cold.
 
-   [_] I got a <strong>cup made of silicon</strong> so I can microwave water or the contents of a large Campbell's soup can.
-   
-   [_] I put it under a paper plate to handle the flimsy silicon when it's hot.
+   PROTIP: To further protect my laptop, it is cushioned by a large measuring cup at the bottom of my backpack:
 
-   [_] At home, I think those plastic containers restaurants use to hold hot take-out soup are fantastic.
+   [_] The <a target="_blank" href="https://www.amazon.com/gp/product/B015CQZKHE/ref=ox_sc_act_title_1?smid=A31X76DW46HF64&psc=1">4-cup (32oz/1,000 ML) $22.50 OXO measuring cup made of silicone</a> provides room to avoid boil-over within the microwave or use with immersion blender. A <a target="_blank" href="https://www.amazon.com/Flexible-Measuring-Heat-Resistant-Rubber-Dishwasher-Safe/dp/B07Z4JY28P?th=1">16 oz (2-cup) (for $11.25)</a> enables me to microwave water (to melt butter) or the contents of a large Campbell's soup can. PROTIP: Put it under a plate to handle the flimsy silicon when it's hot.
 
-   [_] I'm a big fan of Rubbermaid containers. Oh so convenient. But at $9 each, they are more expensive than the food it holds.
+   [_] At home, my refrigerator has stacks of Rubbermaid "Brilliance" clear containers because their lids are airtight and leak-proof, so odor doesn't leach into other items. One dish from fidge to microwave to table. But at around $9 each, they are more expensive than the food it holds. BLAH: I had one lid break, and they refused a replacement with a long write-up. The <a target="_blank" href="https://www.amazon.com/Rubbermaid-2108389-Brilliance-44-Piece-Container/dp/B08KGR6FCR/">plastic</a> scratches. So I prefer the new <a target="_blank" href="https://www.amazon.com/Rubbermaid-Brilliance-Storage-Containers-Pieces/dp/B08B7MYPKS/ref=sr_1_4?crid=1O17SPTROW5OR">glass</a> ones, which are regular oven-safe up to 450F. 
 
 <a name="Food"></a>
 
