@@ -608,6 +608,8 @@ code main.tf
 
 1. In VSCode, press shift+command+X or click the bottom-left menu icon and select "Extensions" to select the add-on from Hashicorp
 
+   <img width="516" alt="terraform-vscode-addon-1032x470" src="https://user-images.githubusercontent.com/300046/158066434-38527f03-a729-4fe4-aa92-61488c27be2a.png">
+
 1. If you use Azure, install the "Azure Terraform" extension from Microsoft.
 
    CAUTION: Avoid installing anything from publishers you don't know.
@@ -2461,6 +2463,18 @@ commands will detect it and remind you to do so if necessary.
    * vault-elb (for AWS only)
    * vault-security-group-rules (for AWS only)
    <br /><br />
+
+   An example of initializing a backend in S3:
+
+   <pre>terraform init \
+    -backend-config="bucket=red30-tfstate" \
+    -backend-config="key=red30/ecommerceapp/app.state" \
+    -backend-config="region=us-east-2" \
+    -backend-config="dynamodb_table=red30-tfstatelock" \
+    -backend-config="access_key={ACCESS_KEY}" \
+    -backend-config="secret_key={SECRET_KEY}"
+   </pre>
+
 
    Alternately, to skip default installation of plugins:
 

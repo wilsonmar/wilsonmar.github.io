@@ -3,7 +3,7 @@ layout: post
 title: "Python Install (Conda Anaconda Miniconda Pip) on MacOS"
 excerpt: "Confusion and errors from too many alternatives and options"
 tags: [python, apple, mac, setup]
-date: "2017-03-03"
+date: "2022-03-03"
 file: "python-install"
 image:
 # pic white python logo 1900x500.jpg
@@ -607,6 +607,17 @@ this</a> with:
 
    <tt><strong>python -m pip install -U pip setuptools
    </strong></tt>
+
+   On Ubuntu 17.04+ Linux:
+
+   <pre><strong>sudo apt update;
+
+   On previous Ubuntu versions, see https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
+
+   <pre>sudo add-apt-repository ppa:deadsnakes/ppa
+   sudo apt-get-update; sudo apt install python3.x
+   </pre>
+
 
 0. On a Mac use the Mac system package manager [Homebrew](/homebrew/)
    to install pip (as <a target="_blank" href="http://penandpants.com/2012/02/24/install-python/">recommended by this site</a>
@@ -2164,6 +2175,11 @@ Successfully installed py4j-0.10.8.1
 macos-install-all/tests/firefox_pycon_search.py
 
 https://blog.xoxzo.com/en/2020/05/09/making-sense-python-environment/
+
+<a target="_blank" href="https://codered.eccouncil.org/courseVideo/black-hat-python-for-pentesters/">
+VIDEO COURSE: EC-Council's CodeRed "Black Hat Python: Python For Pentesters"</a>
+by Cody Jackson
+
 
 ## More on Python
 
