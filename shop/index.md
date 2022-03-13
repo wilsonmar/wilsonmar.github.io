@@ -1,7 +1,10 @@
 ---
 layout: page
+tags: [shop]
+file: "shop"
+date: "2022-03-13"
 title: Shop
-modified: 2016-03-19
+modified: 2022-03-13
 excerpt: "Stuff in my backpack that you might like."
 image:
 # feature: pic sunset backpacker sitting 1900x500-639kb.jpg
@@ -545,6 +548,23 @@ PROTIP: An extra pair of socks and underwear makes for great padding for electro
 [_] <strong>Totes</strong> containing used plastic produce bags so I don't need to consume new ones.
 
 [_] <strong>Storage jars</strong> so I use less plastic.
+
+
+### In a locked box (cooler)
+
+[A <strong>powerful spotlight</strong> is often useful to read small signs or potential dangers across a field in the dark. The <a target="_blank" href="https://1lumen.com/brightest-flashlight/#brightest-flashlight1">most power spotlight</a> is the <a target="_blank" href="https://www.amazon.com/dp/B07RSRXDLX/">$669 Imalent MS18</a>, which throws out 100,000 lumens -- twice as bright as broad daylight (5,000 lumens). So it needs a <strong>noisy cooling fan</strong>. The trouble with such power is that it soon drians its battery. 
+
+Its reach drops precipitously as its battery drains. 
+
+Thus, the trouble I have with most searchlights is their proprietary built-in battery, which lasts only a few hours before needing several hours to recharge.
+
+Although not as powerful, the Dewalt spotlight <a target="_blank" href="https://www.amazon.com/DEWALT-DCL043-20V-Jobsite-Spotlight/dp/B00SKOCRCW/">$56.90 - $89.95 DCL043 MAX LED Work Light with Pivoting Head</a>.
+It can sustain a 1,000-lumen high-power beam to see 508 yards (1525ft.) for 4 hours. 
+It can sustain its 90-lumen low-power bean for 14 hours.
+Because it uses replaceble <a target=:_blank" href="https://www.amazon.com/DEWALT-DCB205-5-0Ah-Lithium-Battery-Pack/dp/B00KWRM5Z4/">$76 20V 5.0Ah Lithium-Ion XR batteries</a> which also plugs into other DeWalt handtools, I can have light almost continuously if I have several batteries (potentialy <a target="_blank" href="https://www.amazon.com/DEWALT-DCB205-2CK-5-0Ah-Starter-Batteries/dp/B01M19SKOP/ref=sr_1_4?crid=1OEKE9U0Y34JG/">changing</a> several at once).
+
+[_] Shining at a blinding <strong>2,500 lumins</strong> is the <a target="_blank" href="https://www.amazon.com/Ryobi-P717-Cordless-Spotlight-Batteries/dp/B06Y61V8G3/">$59.95 Ryobi 18V ONE+ Dual Power LED Spotlight P717</a> which uses Ryobi's <a target="_blank" href="https://www.amazon.com/Ryobi-Capacity-Lithium-Battery-Single/dp/B00CN2ZH8I/">$50 removable 4.0 Ah Li-Ion batteries</a> that comes with an AC adaptor and a 12V cigarette lighter plug (to drain your car's battery) if you don't have its <a target="_blank" href="https://www.amazon.com/Ryobi-P117-Chemistry-IntelliPort-Included/dp/B007NBC2D2/">$37 charger</a>.  
+
 
 ### Car glove compartment
 

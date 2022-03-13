@@ -1208,7 +1208,38 @@ variable region {
 
    The result is <tt>ami-...123</tt>
 
+1. To select the appropriate storage size based on your server plan even using nested lookups like in the example below.
+
+   <pre>storage = lookup(var.storages,lookup(var.plans,var.config,"1xCPU-1GB"),"25")</pre>
+
+   <pre>variable storages {
+   type = map
+   default = {
+      "1xCPU-1GB" = "25"
+      "1xCPU-2GB" = "50"
+      "2xCPU-4GB" = "100"
+   }
+}
+variable plans {
+   type = map
+   default = {
+      "5USD"  = "1xCPU-1GB"
+      "10USD" = "1xCPU-2GB"
+      "20USD" = "2xCPU-4GB"
+   }
+}
+variable config {
+   default = "5USD"
+}
+   </pre>
+
+   If the key does not exist in the map, the interpolation will fail. To avoid issues, you should specify a third argument, a default string value that is returned if the key could not be found. Do note though that this function only works on flat maps and will return an error for maps that include nested lists or maps.
+
+
+
    TODO: Obtain the latest ami.
+
+
 <hr />
 
    Linters identify when they are not.
@@ -1241,6 +1272,10 @@ variable region {
 <a name="main.tf"></a>
 
 ## main.tf
+
+References:
+   * https://www.terraform.io/language/values/variables#booleans
+   <br /><br />
 
 In this minimal sample file for AWS, HCL specifies the provider cloud, instance type used to house the AMI, which is specific to a region:
 
@@ -1336,6 +1371,10 @@ Terraform can also provision <strong>on-premises</strong> servers running OpenSt
 In GCP, Terraform state is stored as an object in a configurable prefix in a given bucket on GCS (Google Cloud Storage), which supports state locking.
 
 To set an IAM policy for a specified project and replace any existing policy that is already attached, the use a <tt>google_project_iam_policy</tt> authoritative resource.
+
+References:
+   * https://oracle-base.com/articles/misc/terraform-variables
+
 
 <a name="Providers"></a>
 
@@ -1993,9 +2032,9 @@ Terraform language style conventions include:
 
    This is automatically run when terraform plan or terraform apply is run.
 
-1. To reformat HCL files according to rules.
+1. To reformat HCL files according to <a target="_blank" href="https://www.terraform.io/docs/configuration/style.html">rules</a>.
 
-   <pre><strong>terraform fmt</strong>
+   <pre><strong>terraform fmt -diff</strong>
 
    This is a destructive command, so make sure to <tt>git commit</tt> before the command.
 
