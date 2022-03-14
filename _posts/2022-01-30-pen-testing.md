@@ -258,7 +258,7 @@ console.log(hash);
    <pre>
 var result = bcrypt.compareSync(myPlaintextPassword, hash);
    console.log(result);
-</pre>
+   </pre>
 
    with the result being a boolean true or false.
 
@@ -299,9 +299,7 @@ https://www.freecodecamp.org/learn/information-security/#python-for-penetration-
 
 <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/introduction-and-setup">Introduction and Setup</a> of VSCode on Kali Linux OS, which uses dpkg (Debian Package Manager) on Windows.
 
-1. Install VSCode:
-
-   <pre>dpkg -i code_1.24.1-1528912196_amd64.deb</pre>
+1. <a target="_blank" href="https://wilsonmar.github.io/text-editors/#visual-studio-code">Install VSCode</a>:
 
 1. In VSCode, click the "Manage" icon at the lower-left, search for "Python" from Microsoft, and install it.
 
@@ -389,7 +387,7 @@ print("You have selected option: ", resp)
 
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-an-nmap-scanner-part-2">Developing an Nmap Scanner part 2</a>
 
-1. 
+1. Consider:
 
    <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/python-for-penetration-testing/developing-a-banner-grabber">Developing a Banner Grabber</a>
 
@@ -447,4 +445,17 @@ Nmap done: 1 IP address (1 host up) scanned in 16.02 seconds
 ### SHA-1 Password Cracker Challenge
 
 <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/information-security-projects/sha-1-password-cracker">SHA-1 Password Cracker</a> using Python
+
+<hr />
+
+## Python for Pentesters
+
+<a target="_blank" href="https://codered.eccouncil.org/courseVideo/black-hat-python-for-pentesters">EC-Council's Black Hat Python: Python For Pentesters</a> video course by Cody Jackson includes
+
+   * Chapter 2: Working with Python Network Recon Framework - Port Scanning, Banner Grabbing, Importing and Using Nmap
+   * Chapter 6: Python Forensics Use Python Scripts for Network Investigation - Parsing Windows Registry
+   * Chapter 3: The Python Spy Web Recon - Web Page Scraping, Phishing Going from Recon to Creds
+   * Chapter 4: The Password Cracker Working with Brute-Force Tools - Pre-Computed Wordlists, Rainbow Tables, Linux Hashes, Zip Files
+   * Chapter 5: Evade Antivirus with Python - Python Ctypes
+   * Chapter 7: Databases - Using SQLAlchemy to Work with SQL Databases and Investigating Firefox Profile Databases
 

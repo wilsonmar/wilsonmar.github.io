@@ -80,6 +80,85 @@ Recap:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"><img width="1769" height="781" alt="terraform-strategy-22-03-02-1769x781" src="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"></a>
 
 
+<hr />
+
+
+<a name="Atlantis"></a>
+
+## Atlantis on Terraform
+
+<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">VIDEO</a>:
+This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
+ensure code reviews.
+
+Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
+It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
+
+Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
+
+![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
+
+Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to trigger Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
+
+<a name="AtlantisWorkflow"></a>
+
+### Atlantis-based workflow with Terraform Enterprise
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
+
+1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
+
+   CAUTION: This is a static secret which should be updated occassionally.
+
+   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
+
+   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
+
+2. Copy in base Terraform configuration files. 
+
+   Within files are references to reusable <strong>modules</strong> used by other projects.
+
+   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
+
+3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
+
+4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
+
+   <pre>resource "null_resource" "demo" {}</pre>
+
+5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
+
+   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
+
+6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
+
+   and adds comments on the pull request
+   in addition to creating an execution plan with dependencies.
+
+   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
+
+   https://www.runatlantis.io/docs/autoplanning.html#example
+
+   <a name="Sentinel"></a>
+
+   ### Sentinal apply
+
+7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
+
+8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
+
+9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
+
+    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
+
+    https://www.runatlantis.io/docs/security.html#mitigations
+
+    Note that apply creates tfstate files.
+
+10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
+
+
+<hr />
 
 ## Links to Certification Exam Objectives
 
@@ -273,6 +352,9 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 <a name="Install"></a>
 
 ## Installation options
+
+There is a version manager to enable you to install several versions of Terraform:
+https://github.com/aaratn/terraenv
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38&t=51m19s">VIDEO</a>:
 
@@ -1057,9 +1139,12 @@ The above set of files are repeated in each folder containing a nested module:
 
 REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
 
-REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environmet (dev, qa, stage, prod),
-so should not be saved in GitHub.
+REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environmet (dev, qa, stage, prod).
+For example: 
 
+   * In dev,  <tt>env_instance_count = 1</tt>
+   * In qa,   <tt>env_instance_count = 2</tt>
+   * In prod, <tt>env_instance_count = 4</tt>
 
 <hr />
 
@@ -1246,7 +1331,8 @@ variable config {
 
    Linters identify when they are not.
 
-   ### Interpolation & HCL2 syntax 
+
+### Interpolation & HCL2 syntax 
 
    Terraform 0.11 and earlier required all non-constant expressions to be provided via <strong>interpolation syntax</strong> with a format similar to shell scripts:
 
@@ -1413,8 +1499,10 @@ References:
 
    chef, "spotinst", "linode", "hedvig", "selectel", "brightbox", "OVH", "nomad", "local", Panos, NS1, "rundeck", VMWare vRA7, random, external, "null", Icinga2, Arukas, runscope,  etc.
 
-   The follow have been archived: Atlas (Terraform), "clc" (CenturyLinkCloud), OpsGenie, (IBM) SoftLayer, PowerDNS, DNSMadeEasy, Librato, Mailgun, LogEntries, Gridscale, CIDR, etc.
+   The follow have been archived: <strong>Atlas (Terraform)</strong>, "clc" (CenturyLinkCloud), OpsGenie, (IBM) SoftLayer, PowerDNS, DNSMadeEasy, Librato, Mailgun, LogEntries, Gridscale, CIDR, etc.
 
+
+<a name="CustomProviders"></a>
 
 ### Custom Providers
 
@@ -2210,6 +2298,42 @@ TFE provides easy access to shared state and secret data.
 
 Terraform Cloud workspaces store the Terraform configuration in a linked version control repository.
 
+
+<hr />
+
+<a name="Terraform_AWS"></a>
+
+### Terraform on AWS
+
+<a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="June 1, 2020">VIDEO: Implementing Terraform with AWS</a> by Ned Bellavance at <a target="_blank" href="https://github.com/ned1313/Implementing-Terraform-on-AWS">https://github.com/ned1313/Implementing-Terraform-on-AWS</a>
+
+
+### CLI List AWS instances
+
+1. Tagged AWS resources with the <tt>environment</tt> 
+
+   <pre>env_instance_tags = {
+   "environment" = "prod"
+   }
+   </pre>
+
+1. List instances filtered for only those resources tagged:
+
+   <pre>export AWS_PAGER=""
+   export ENV="dev"  # or "qa" or "prod"
+    aws ec2 describe-instances \
+    --filters Name=tag:environment,Values=${ENV} \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone,Name:Tags[?Key==`Name`]|[0].Value,Environment:Tags[?Key==`environment`]|[0].Value}' \
+    --output table
+   </pre>
+
+   <tt>export AWS_PAGER=""</tt> disables paging of output.
+
+1. To list all instances:
+
+   <pre>-filters Name=tag-key,Values=Name \</pre>
+
+
 ### VPC
 
 <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest">
@@ -2268,15 +2392,6 @@ For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
    }
    </pre>
 
-
-
-<hr />
-
-<a name="Terraform_AWS"></a>
-
-### Terraform on AWS
-
-<a target="_blank" href="https://app.pluralsight.com/courses/49b66fa5-6bcd-469c-ad04-6135ff739bb6" title="June 1, 2020">VIDEO: Implementing Terraform with AWS</a> by Ned Bellavance at <a target="_blank" href="https://github.com/ned1313/Implementing-Terraform-on-AWS">https://github.com/ned1313/Implementing-Terraform-on-AWS</a>
 
 
 <a name="Terraform_Azure"></a>
@@ -2447,6 +2562,8 @@ commands will detect it and remind you to do so if necessary.
 ## terraform init
 
    <tt>terraform init</tt> is run again if you modify or change dependencies.
+
+   The command causes a <tt>.terraform</tt> folder in the folder.
 
 1. To <strong>Download and install binaries of providers and modules</strong>, initialize each new Terraform project folder:
 
@@ -3701,83 +3818,6 @@ It's defined in a tf file:
   densify_unique_id       = "${var.name}"
 }</pre>
 
-<hr />
-
-
-<a name="Atlantis"></a>
-
-## Atlantis on Terraform
-
-<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">VIDEO</a>:
-This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
-ensure code reviews.
-
-Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
-It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
-
-Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
-
-![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
-
-Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to trigger Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
-
-<a name="AtlantisWorkflow"></a>
-
-### Atlantis-based workflow with Terraform Enterprise
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
-
-1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
-
-   CAUTION: This is a static secret which should be updated occassionally.
-
-   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
-
-   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
-
-2. Copy in base Terraform configuration files. 
-
-   Within files are references to reusable <strong>modules</strong> used by other projects.
-
-   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
-
-3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
-
-4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
-
-   <pre>resource "null_resource" "demo" {}</pre>
-
-5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
-
-   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
-
-6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
-
-  and adds comments on the pull request
-   in addition to creating an execution plan with dependencies.
-
-   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
-
-   https://www.runatlantis.io/docs/autoplanning.html#example
-
-   <a name="Sentinel"></a>
-
-   ### Sentinal apply
-
-7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
-
-8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
-
-9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
-
-    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
-
-    https://www.runatlantis.io/docs/security.html#mitigations
-
-    Note that apply creates tfstate files.
-
-10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
-
 
 ## CDK for Terraform
 
@@ -3801,6 +3841,17 @@ CDK for Terraform
 
    <pre>aws ec2 describe-instances --endpoint http://aws:4566 --filters "Name=image-id,Values=ami-082b3eca746b12a89" | jq -r '.Reservations[].Instances[].InstanceId'
    </pre>
+
+
+<a name="Kubernetes"></a>
+
+### Terraform Kubernetes
+
+Docs on Terraform Kubernetes:
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
+   * https://opensource.com/article/20/7/terraform-kubernetes
 
 
 <hr />
@@ -4057,16 +4108,8 @@ https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scala
 
 <a target="_blank" href="https://www.youtube.com/watch?v=YcJ9IeukJL8">2 hr. VIDEO: Terraform for DevOps Beginners</a> + <a target="_blank" href="https://beta.kodekloud.com/courses/lab-terraform-for-beginners/">Labs</a> by Vijin Palazhi.
 
+https://medium.com/codex/devops-iac-setup-using-terragrunt-and-terraform-5d8a54c97724
 
-<a name="Kubernetes"></a>
-
-### Terraform Kubernetes
-
-Docs on Terraform Kubernetes:
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
-   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
-   * https://opensource.com/article/20/7/terraform-kubernetes
 
 
 

@@ -35,6 +35,18 @@ We will do it all:
 
    4. One-click cross-account remediation. When vulnerabilities are identified in one account, immediately analyze other accounts for similar concerns. Easily deploy the solution across primary and member accounts.
 
+<hr />
+
+![aws-auto-remediation-sns](https://user-images.githubusercontent.com/300046/158234459-f7ca20db-6b60-4957-93ce-035f8668d69e.png)
+
+From https://github.com/cloudconformity/auto-remediate
+
+   1. A user makes an S3 bucket publicly readable via S3 Access Control Lists (ACLs)
+   1. Cloud Conformity identifies the risk in real-time
+   1. Cloud Conformity publishes a message to the specified SNS Topic
+   1. SNS topic triggers the Orchestrator lambda function which in turns calls S3 bucket auto-remediate function
+   1. S3 BucketPublicReadAccess Auto Remediate Function (AutoRemediateS3-001) updates the S3 bucket ACL and closes the security gap
+
 
 <hr />
 

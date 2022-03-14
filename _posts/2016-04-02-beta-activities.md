@@ -72,6 +72,8 @@ More about each is described below.
    <strong>product vidoes</strong> needed for not just launch but
    throughout the product lifecycle.
 
+   PROTIP: Involve functional automation testers, who may be able to code automation scripts instead of writing manual step-by-step procedures. This is so that when workflows change, demo videos can be recreated quickly rather than going through all the workflows to capture even small changes. Cypress.io is popular among functional testers because it's easier to code than Selenium from a previous generation. See https://www.npmjs.com/package/cypress-movie
+
    The more people who views a video, 
    the more varied the extent of feedback.
 
