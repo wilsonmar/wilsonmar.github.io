@@ -82,39 +82,39 @@ Below are discussion of specific attributes versus trade-offs:
 
 ### External quick access vs. security
 
-   [_] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
+   [__] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
 
    A sleek look without side pockets (that never seem to be the right size) is a hallmark of the [Astor, Minaal] packs. Otherwise, I prefer a <strong>front flap</strong> that unzips completely to see at a glance where various small items are (headphones, pens, batteries, cords, SD chips, etc.)
    
-   [_] <strong>External locks</strong> are a trade-off sacrifice of quick easy access to glasses, water. But the types of lock that TSA requires are only a deterrant to pick-pockets, and not effective when left alone in a room you don't control.
+   [__] <strong>External locks</strong> are a trade-off sacrifice of quick easy access to glasses, water. But the types of lock that TSA requires are only a deterrant to pick-pockets, and not effective when left alone in a room you don't control.
    
    PROTIP: Easy open external pockets on backpacks makes for easy pickings for pick-pockets as well. So in those I put stuff I can cheaply and easily replace:
 
-   [_] <strong>lost/emergency contact card</strong> inside a Ziplock bag so water doesn't destroy the ink. The address is not where I actually live.
+   [__] <strong>lost/emergency contact card</strong> inside a Ziplock bag so water doesn't destroy the ink. The address is not where I actually live.
 
-   [_] A <strong>decoy wallet</strong> to give robbers. Dropping it on the floor gives you time to run away.
+   [__] A <strong>decoy wallet</strong> to give robbers. Dropping it on the floor gives you time to run away.
 
-   [_] Moneybelt
+   [__] Moneybelt
 
-   [_] A cache of business cards
+   [__] A cache of business cards
 
-   [_] Pen and small notebook
+   [__] Pen and small notebook
 
-   [_] Small measuring tape  
+   [__] Small measuring tape  
 
-   [_] <strong>Magnetic compass</strong>. The Brunton compass I can squeeze (without a tool) to rotate the plate to remind me to adjust for <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">magnetic declination</a>  vs. True North on maps.
+   [__] <strong>Magnetic compass</strong>. The Brunton compass I can squeeze (without a tool) to rotate the plate to remind me to adjust for <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">magnetic declination</a>  vs. True North on maps.
    
    PROTIP: In the continental U.S., magnetic declination can vary from nearly 20 degrees East in places on the West Coast to nearly 20 degrees west in places on the East Coast. A 15 degree error when traveling over a mile puts you a quarter-mile away from your destination at the end of a day hike. Currently, <a target="_blank" href="https://maps.ngdc.noaa.gov/viewers/historical_declination/">Magnetic North</a> is roughly north of Hudson Bay in Canada. It has moved over 2.5 degrees during the past 22 years and is recently <a target="_blank" href="https://www.ncei.noaa.gov/news/world-magnetic-model-out-cycle-release">moving at a faster rate toward Russia</a>.
    Use the <a target="_blank" href="https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination">use this NOAA website to calculate</a> and <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">learn to use it</a>.
 
    Hanging on the outside of my pack:
 
-   [_] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
+   [__] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
 
-   [_] A <strong>thermometer</strong> for ambient temperature. Not really accurate but good to know. A laser therometer is useful for use while cooking.
+   [__] A <strong>thermometer</strong> for ambient temperature. Not really accurate but good to know. A laser therometer is useful for use while cooking.
    Some smart phones have one.
 
-   [_] Hand sanitizer bottle.
+   [__] Hand sanitizer bottle.
 
 ### Security features
 
@@ -216,13 +216,13 @@ Considerations:
    * hard case?
    <br /><br />
 
-[_] <strong>Polarized sunglasses</strong> are a must-have. Maui Jim's gave free repairs if I pay to ship mine to Hawaii. But after losing too many, I've gone to cheaper ones. Costco has good ones from name brands for $30. 
+[__] <strong>Polarized sunglasses</strong> are a must-have. Maui Jim's gave free repairs if I pay to ship mine to Hawaii. But after losing too many, I've gone to cheaper ones. Costco has good ones from name brands for $30. 
 
 Ray Bans, which are a great value. $30 from Costco.
 
-[_] <strong>Blue-light blocking reading glasses</strong> (in a hard case) for those older 40. I like the ones with a yellow tint which block blue light to help me sleep better. Newer ones, such as the <a target="_blank" href="https://www.amazon.com/gp/product/B097XYVRNT/">$15 Joox</a>, at 40% tint, is a less noticeable yellow tint. Hinges of the <a target="_blank" href="https://www.amazon.com/gp/product/B07DFXFP8P/">$17.50 Gudzws</a> are rather fragile.
+[__] <strong>Blue-light blocking reading glasses</strong> (in a hard case) for those older 40. I like the ones with a yellow tint which block blue light to help me sleep better. Newer ones, such as the <a target="_blank" href="https://www.amazon.com/gp/product/B097XYVRNT/">$15 Joox</a>, at 40% tint, is a less noticeable yellow tint. Hinges of the <a target="_blank" href="https://www.amazon.com/gp/product/B07DFXFP8P/">$17.50 Gudzws</a> are rather fragile.
 
-[_] <strong>Polarized (dark tint) reading glasses</strong> that turn dark for use in the sun.
+[__] <strong>Polarized (dark tint) reading glasses</strong> that turn dark for use in the sun.
 
 
 <a name="FaceMasks"></a>
@@ -236,36 +236,36 @@ https://www.wired.com/gallery/best-face-masks/
 
 ## Adapters
 
-[_] Micro USB to USB-A to transfer and charge Android mobile phone.
+[__] Micro USB to USB-A to transfer and charge Android mobile phone.
 
-[_] PROTIP: The Android mobile battery charger enables me to charge one battery while another is being used.
+[__] PROTIP: The Android mobile battery charger enables me to charge one battery while another is being used.
 
    PROTIP: The ability to remove and replace batteries is why I went with Android S3 rather than iPhones. But there are precious few models left that do. Alas, Verizon doesn't serve its 3G technology.
 
-[_] A Google Cast HDMI plug and micro-USB electrical with a long chord
+[__] A Google Cast HDMI plug and micro-USB electrical with a long chord
    to project to a TV from your laptop.
 
-[_] HDMI and VGA monitor adapter for your Mac or PC, if you speak at conferences. 
+[__] HDMI and VGA monitor adapter for your Mac or PC, if you speak at conferences. 
 
-[_] Ethernet network dongle if you have a Mac.
+[__] Ethernet network dongle if you have a Mac.
 
 <a name="Electrical"></a>
 
 ## Electrical Electronics 
 
-[_] A <strong>electrical cord with 3-prong plugs</strong> enables me to keep all my stuff charged, especially in airports. $9 from Walmart. 
+[__] A <strong>electrical cord with 3-prong plugs</strong> enables me to keep all my stuff charged, especially in airports. $9 from Walmart. 
 
    PROTIP: I don't recommend solar panels. Small ones don't make much energy. Plus I'm not outside much anyway.
 
-[_] A <strong>big Lithium-Ion battery</strong> powers my Mac laptop for a few hours.
+[__] A <strong>big Lithium-Ion battery</strong> powers my Mac laptop for a few hours.
    But it's heavy and can explode.
 
-[_] Instead of turning on the light to wake everyone up,
+[__] Instead of turning on the light to wake everyone up,
    Streamlight 73001 Nano Light Miniature Keychain LED Flashlight is an amazing little flashlight that is super bright and tiny.
 
 BTW Not on this list are locator beacons. I got a few Tile chips (for about $20 each) when they were first on Kickstarter. But after a year, when I needed it, I realized they had died.
 
-[_] Micro SD cards and USB sticks for smartphones and cameras.
+[__] Micro SD cards and USB sticks for smartphones and cameras.
 
 
 
@@ -275,7 +275,7 @@ BTW Not on this list are locator beacons. I got a few Tile chips (for about $20 
 
 The camera built-in at the top of my laptop is still too low. When I have an additional screen to record in 1900 x 1820 (HD) 16:9 aspect ratio for YouTube, etc. I show everyone my nose hairs.
 
-[_] <a target="_blank" href="https://www.logitech.com/en-us/video/webcams">Logitech offers a range of webcams</a>. I got the $70 <a target="_blank" href="https://www.logitech.com/en-us/product/hd-pro-webcam-c920s?crid=34#specification-tabular">920s</a> with an ingenous clip. Unfortunately, on my Mac it "Works in USB Video Device Class (UVC) mode with supported video-calling clients:".
+[__] <a target="_blank" href="https://www.logitech.com/en-us/video/webcams">Logitech offers a range of webcams</a>. I got the $70 <a target="_blank" href="https://www.logitech.com/en-us/product/hd-pro-webcam-c920s?crid=34#specification-tabular">920s</a> with an ingenous clip. Unfortunately, on my Mac it "Works in USB Video Device Class (UVC) mode with supported video-calling clients:".
 
 
 <a target="_blank" href="https://support.logi.com/hc/en-us/articles/360024695174--Downloads-C920s-HD-Pro-Webcam">Logitech's RightSight software (LogiCameraSettings_2.6.2.pkg)</a> automatically moves the camera and adjusts the zoom to comfortably frame meeting participants using 
@@ -370,7 +370,7 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
    Airport shops charge exhorbitant prices for water bottles.
    And I want to eliminate purchasing plastic for landfills.
    So...<br />
-   [_] To drink tap water with impunity practically anywhere, <a target="_blank" href="https://www.amazon.com/stores/FloWater/page/7CC76E27-5623-48C6-B12D-536FA3D11C71?ref_=ast_bln">Flowater</a> 
+   [__] To drink tap water with impunity practically anywhere, <a target="_blank" href="https://www.amazon.com/stores/FloWater/page/7CC76E27-5623-48C6-B12D-536FA3D11C71?ref_=ast_bln">Flowater</a> 
    <a target="_blank" href="https://home.drinkflowater.com/collections/all-products/products/flowater-9-pack">9  aluminum bottles for $22.49</a> or a single "LifeStraw" bottle for $32 at Walmart.
    
    I just have to remember to empty it before going through airport security.
@@ -380,14 +380,14 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
 
 ## Cooking and heating
 
-   [_] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
+   [__] It's a true luxury to have a hot drink on a cold night or a cold drink on a hot day. 
    <strong>Double-walled canisters</strong> keep hot drinks hot and cold drinks cold.
 
    PROTIP: To further protect my laptop, it is cushioned by a large measuring cup at the bottom of my backpack:
 
-   [_] The <a target="_blank" href="https://www.amazon.com/gp/product/B015CQZKHE/ref=ox_sc_act_title_1?smid=A31X76DW46HF64&psc=1">4-cup (32oz/1,000 ML) $22.50 OXO measuring cup made of silicone</a> provides room to avoid boil-over within the microwave or use with immersion blender. A <a target="_blank" href="https://www.amazon.com/Flexible-Measuring-Heat-Resistant-Rubber-Dishwasher-Safe/dp/B07Z4JY28P?th=1">16 oz (2-cup) (for $11.25)</a> enables me to microwave water (to melt butter) or the contents of a large Campbell's soup can. PROTIP: Put it under a plate to handle the flimsy silicon when it's hot.
+   [__] The <a target="_blank" href="https://www.amazon.com/gp/product/B015CQZKHE/ref=ox_sc_act_title_1?smid=A31X76DW46HF64&psc=1">4-cup (32oz/1,000 ML) $22.50 OXO measuring cup made of silicone</a> provides room to avoid boil-over within the microwave or use with immersion blender. A <a target="_blank" href="https://www.amazon.com/Flexible-Measuring-Heat-Resistant-Rubber-Dishwasher-Safe/dp/B07Z4JY28P?th=1">16 oz (2-cup) (for $11.25)</a> enables me to microwave water (to melt butter) or the contents of a large Campbell's soup can. PROTIP: Put it under a plate to handle the flimsy silicon when it's hot.
 
-   [_] At home, my refrigerator has stacks of Rubbermaid "Brilliance" clear containers because their lids are airtight and leak-proof, so odor doesn't leach into other items. One dish from fidge to microwave to table. But at around $9 each, they are more expensive than the food it holds. BLAH: I had one lid break, and they refused a replacement with a long write-up. The <a target="_blank" href="https://www.amazon.com/Rubbermaid-2108389-Brilliance-44-Piece-Container/dp/B08KGR6FCR/">plastic</a> scratches. So I prefer the new <a target="_blank" href="https://www.amazon.com/Rubbermaid-Brilliance-Storage-Containers-Pieces/dp/B08B7MYPKS/ref=sr_1_4?crid=1O17SPTROW5OR">glass</a> ones, which are regular oven-safe up to 450F. 
+   [__] At home, my refrigerator has stacks of Rubbermaid "Brilliance" clear containers because their lids are airtight and leak-proof, so odor doesn't leach into other items. One dish from fidge to microwave to table. But at around $9 each, they are more expensive than the food it holds. BLAH: I had one lid break, and they refused a replacement with a long write-up. The <a target="_blank" href="https://www.amazon.com/Rubbermaid-2108389-Brilliance-44-Piece-Container/dp/B08KGR6FCR/">plastic</a> scratches. So I prefer the new <a target="_blank" href="https://www.amazon.com/Rubbermaid-Brilliance-Storage-Containers-Pieces/dp/B08B7MYPKS/ref=sr_1_4?crid=1O17SPTROW5OR">glass</a> ones, which are regular oven-safe up to 450F. 
 
 <a name="Food"></a>
 
@@ -395,20 +395,20 @@ But the most desired now (May 2019) is <a target="_blank" href="https://www.amaz
 
 I prefer foods without added salt, sugar, MSG, and other chemicals (such as meat jerky).
 
-[_] A bag of mixed unsalted nuts and dried or freeze dried appricots, mangos, strawberries, etc.
+[__] A bag of mixed unsalted nuts and dried or freeze dried appricots, mangos, strawberries, etc.
 
-[_] <strong>Long titanium spoon</strong> to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles. $12
+[__] <strong>Long titanium spoon</strong> to eat from a Mountain House foil pouch. Regular spoons are too short cause you to have food on your knuckles. $12
 
-[_] <strong>Small sissors with rounded tips</strong> for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
+[__] <strong>Small sissors with rounded tips</strong> for kids, with a cover. I've never had TSA at airports flag it. $2 from Walmart's art section. 
 
 <a name="medicines"></a>
 <a name="Liquids"></a>
 
-[_] <strong>Small medicine bottles are waterproof</strong> to hold medicines and herbs and spices to add to food. Tameric. Cardemon. Balsalmic vinegar. Port wine to go in clam and other chowders. (Yes, I'm a foodie snob)
+[__] <strong>Small medicine bottles are waterproof</strong> to hold medicines and herbs and spices to add to food. Tameric. Cardemon. Balsalmic vinegar. Port wine to go in clam and other chowders. (Yes, I'm a foodie snob)
 
 CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a replacement recurring appointment on my calendar a few months out so it's eaten before gong stale.
 
-[_] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
+[__] Small roll of toilet paper in a waterproof and abrasion-resistent bag.
 
 
 <a name="Toiletries"></a>
@@ -417,99 +417,99 @@ CALENDAR PROTIP: Food spoils over time. So write a date on each item and enter a
 
 I keep a small bag in my backpack for essential toiletries:
 
-[_] Deoderant
+[__] Deoderant
 
-[_] Hair gel
+[__] Hair gel
 
-[_] Toothpaste (small size)
+[__] Toothpaste (small size)
 
-[_] Disposeable shaver
+[__] Disposeable shaver
 
-[_] Dental floss
+[__] Dental floss
 
-[_] Wash cloth (polyester for faster drying than cotton)
+[__] Wash cloth (polyester for faster drying than cotton)
    Use it to clean computer screens.
 
-[_] First-aid bag with band-aids
+[__] First-aid bag with band-aids
 
-[_] Breath mints
+[__] Breath mints
 
-[_] Antacids
+[__] Antacids
 
-[_] Earplugs in a plastic case to keep dirt off them
+[__] Earplugs in a plastic case to keep dirt off them
 
-[_] Matches
+[__] Matches
 
-[_] Whistle
+[__] Whistle
 
-[_] Travel-sized Febreze To Go.
+[__] Travel-sized Febreze To Go.
 
 
 ## Just in case
 
-[_] A <strong>mylar reflective blanket</strong>. It's less than an ounce.
+[__] A <strong>mylar reflective blanket</strong>. It's less than an ounce.
    <a target="_blank" href="https://www.amazon.com/Mylar-Mens-Emergency-Thermal-Blankets/dp/B007IYIYFE/ref=wilsonslifenotes?ie=UTF8&qid=1477256492&sr=8-1&keywords=space+blanket">
    $6.20 for 10</a>
 
    I was glad I had one to put on top of someone who had fallen, passed out on the sidewalk.
    That may keep someone from going into shock.
 
-[_] Small patch of clear repair <strong>duct tape</strong> to patch fabric tears without looking trashy.
+[__] Small patch of clear repair <strong>duct tape</strong> to patch fabric tears without looking trashy.
    <a target="_blank" href="https://www.amazon.com/gp/offer-listing/B00O9JNY9W/ref=wilsonslifenotes?ie=UTF8&mv_size_name=0&qid=1477256614&sr=8-1/"> 
    $5.80 for 5 yards 1.5 inch wide</a>. I put this in an insulated box because adhesives degrade.
 
-[_] Needle and thread kit.
+[__] Needle and thread kit.
 
 
 <a name="Suitcase"></a>
 
 ## In Suitcase
 
-[_] A <strong>2TB USB drive</strong> containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
+[__] A <strong>2TB USB drive</strong> containing a full backup of your laptop separately from your backpack, such as in your sleeping bag by your feet.
 
-[_] A <strong>backup smartphone (satellite phone)</strong> in a water and shock proof container in case the regular one is damaged.
+[__] A <strong>backup smartphone (satellite phone)</strong> in a water and shock proof container in case the regular one is damaged.
 
-[_] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes">
+[__] <a target="_blank" href="https://www.amazon.com/Cocoon-TravelSheet-Natural-86-Inch-35-Inch/dp/B001DX9YTQ/ref=wilsonslifenotes">
    $50 Cocoon Silk TravelSheet</a> 
    (Sleep Sack) keeps your skin away from quesionable sheets
    with a nice-feeling one. Lightweight and compresses to a small size.
    (Yeah, I'm spoiled)
 
-[_] A quart-size bag that form a bubble around shirts and suit coat to keep them from being wrinkled.
+[__] A quart-size bag that form a bubble around shirts and suit coat to keep them from being wrinkled.
 
-[_] <strong>UV flashlight</strong> to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
+[__] <strong>UV flashlight</strong> to reveal proteins if sheets are not fresh (free of bed bugs, etc.). I've found issues even in five-star hotels.
 
 
 
 ### Suitcase toiletries bag
 
-[_] Toiletries bag that hangs, such as the Ogio Doppler bag.
+[__] Toiletries bag that hangs, such as the Ogio Doppler bag.
 
-[_] Eye mask
+[__] Eye mask
 
-[_] Q-tips in a box or waterproof small Ziplock bag
+[__] Q-tips in a box or waterproof small Ziplock bag
 
-[_] Nail clipper
+[__] Nail clipper
 
-[_] Mirror
+[__] Mirror
 
 ### Suitcase liquids bag
 
 I get small 3 oz. bottles or fill up little tubes rather than handling and carrying big bottles.
 
-[_] Thick plastic waterproof bags (rather than zip-locks that leak over time)
+[__] Thick plastic waterproof bags (rather than zip-locks that leak over time)
 
-[_] Deoderant
+[__] Deoderant
 
-[_] Shampoo
+[__] Shampoo
 
-[_] Liquid dish soap
+[__] Liquid dish soap
 
-[_] Sunscreen
+[__] Sunscreen
 
-[_] Bug repellant
+[__] Bug repellant
 
-[_] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets so you can hand wash laundry in a sink.
+[__] Woolite Travel Laundry Soap or Travelon Laundry Soap Sheets so you can hand wash laundry in a sink.
 
 
 <a name="Clothing"></a>
@@ -518,22 +518,22 @@ I get small 3 oz. bottles or fill up little tubes rather than handling and carry
 
 PROTIP: An extra pair of socks and underwear makes for great padding for electronics.
 
-[_] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection, but they are slightly heavier.
+[__] Gloves with touch-screen fingertips. I prefer leather gloves for its wind protection, but they are slightly heavier.
 
-[_] Hat (cap), because you loose a lot of heat through your head.
+[__] Hat (cap), because you loose a lot of heat through your head.
 
-[_] Scarf (shemag) of 42 x 42 can be used to filter water and as an evaperative cooler. Also breathes through it in smoke.
+[__] Scarf (shemag) of 42 x 42 can be used to filter water and as an evaperative cooler. Also breathes through it in smoke.
 
-[_] Money & passport hider
+[__] Money & passport hider
 
-[_] A rainsuit (with pants) takes less room than I thought. The Frogger rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
+[__] A rainsuit (with pants) takes less room than I thought. The Frogger rainsuit replaces umbrella, which doesn't work that well anyway for protecting pants. So wear dark pants ;)
 
-[_] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
+[__] Underwear from Ex-officio, at $25 each, is worth every penny to me for its comfort and quick-drying properties (not cotton)
    It doubles as a bathing suit (kept in a waterproof bag)
 
-[_] Extra bag for souvenirs
+[__] Extra bag for souvenirs
 
-[_] One-quart size waterproof airtight bag for storing soiled underwear.
+[__] One-quart size waterproof airtight bag for storing soiled underwear.
 
 
 
@@ -541,50 +541,53 @@ PROTIP: An extra pair of socks and underwear makes for great padding for electro
 
 ## In the Car 
 
-[_] <strong>shopping list</strong> and menu plan I keep in a Google Sheet app on my smartphone.
+[__] <strong>shopping list</strong> and menu plan I keep in a Google Sheet app on my smartphone.
 
-[_] <strong>Insulating tote</strong> to take into grocery stores to keep items cold in the cart and on the way home. PROTIP: Trader Joes have such great ones that used ones show up in eBay for more than new prices.
+[__] <strong>Insulating tote</strong> to take into grocery stores to keep items cold in the cart and on the way home. PROTIP: Trader Joes have such great ones that used ones show up in eBay for more than new prices.
 
-[_] <strong>Totes</strong> containing used plastic produce bags so I don't need to consume new ones.
+[__] <strong>Totes</strong> containing used plastic produce bags so I don't need to consume new ones.
 
-[_] <strong>Storage jars</strong> so I use less plastic.
+[__] <strong>Storage jars</strong> so I use less plastic.
 
 
 ### In a locked box (cooler)
 
 [A <strong>powerful spotlight</strong> is often useful to read small signs or potential dangers across a field in the dark. The <a target="_blank" href="https://1lumen.com/brightest-flashlight/#brightest-flashlight1">most power spotlight</a> is the <a target="_blank" href="https://www.amazon.com/dp/B07RSRXDLX/">$669 Imalent MS18</a>, which throws out 100,000 lumens -- twice as bright as broad daylight (5,000 lumens). So it needs a <strong>noisy cooling fan</strong>. The trouble with such power is that it soon drians its battery. 
 
-Its reach drops precipitously as its battery drains. 
+Brightness (reach) drops precipitously as its battery drains. 
 
 Thus, the trouble I have with most searchlights is their proprietary built-in battery, which lasts only a few hours before needing several hours to recharge.
 
-Although not as powerful, the Dewalt spotlight <a target="_blank" href="https://www.amazon.com/DEWALT-DCL043-20V-Jobsite-Spotlight/dp/B00SKOCRCW/">$56.90 - $89.95 DCL043 MAX LED Work Light with Pivoting Head</a>.
-It can sustain a 1,000-lumen high-power beam to see 508 yards (1525ft.) for 4 hours. 
+Although not as powerful, the Dewalt spotlight <a target="_blank" href="https://www.amazon.com/DEWALT-DCL043-20V-Jobsite-Spotlight/dp/B00SKOCRCW/">$56.90 - $89.95 DCL043 MAX LED Work Light with Pivoting Head</a> can sustain a 1,000-lumen high-power beam to see 508 yards (1525ft.) for 4 hours. 
 It can sustain its 90-lumen low-power bean for 14 hours.
 Because it uses replaceble <a target=:_blank" href="https://www.amazon.com/DEWALT-DCB205-5-0Ah-Lithium-Battery-Pack/dp/B00KWRM5Z4/">$76 20V 5.0Ah Lithium-Ion XR batteries</a> which also plugs into other DeWalt handtools, I can have light almost continuously if I have several batteries (potentialy <a target="_blank" href="https://www.amazon.com/DEWALT-DCB205-2CK-5-0Ah-Starter-Batteries/dp/B01M19SKOP/ref=sr_1_4?crid=1OEKE9U0Y34JG/">changing</a> several at once).
 
-[_] Shining at a blinding <strong>2,500 lumins</strong> is the <a target="_blank" href="https://www.amazon.com/Ryobi-P717-Cordless-Spotlight-Batteries/dp/B06Y61V8G3/">$59.95 Ryobi 18V ONE+ Dual Power LED Spotlight P717</a> which uses Ryobi's <a target="_blank" href="https://www.amazon.com/Ryobi-Capacity-Lithium-Battery-Single/dp/B00CN2ZH8I/">$50 removable 4.0 Ah Li-Ion batteries</a> that comes with an AC adaptor and a 12V cigarette lighter plug (to drain your car's battery) if you don't have its <a target="_blank" href="https://www.amazon.com/Ryobi-P117-Chemistry-IntelliPort-Included/dp/B007NBC2D2/">$37 charger</a>.  
+[__] Shining at a blinding <strong>2,500 lumins</strong> is the <a target="_blank" href="https://www.amazon.com/Ryobi-P717-Cordless-Spotlight-Batteries/dp/B06Y61V8G3/">$59.95 Ryobi 18V ONE+ Dual Power LED Spotlight P717</a> which uses Ryobi's <a target="_blank" href="https://www.amazon.com/Ryobi-Capacity-Lithium-Battery-Single/dp/B00CN2ZH8I/">$50 removable 4.0 Ah Li-Ion batteries</a> that comes with an AC adaptor and a 12V cigarette lighter plug (to drain your car's battery) if you don't have its <a target="_blank" href="https://www.amazon.com/Ryobi-P117-Chemistry-IntelliPort-Included/dp/B007NBC2D2/">$37 charger</a>.  
 
+
+<hr />
 
 ### Car glove compartment
 
-[_] <strong>Metal straws</strong> because 
+[__] <strong>Metal straws</strong> 
 
-[_] Napkins
+[__] Napkins (in a ziplock)
 
-[_] <strong>DC to AC Converter</strong> (400 Watts)
+[__] Extra face masks (in a ziplock), because of COVID
 
-[_] <strong>Registration</strong> from the state DMV.
+[__] <strong>DC to AC Converter</strong> (400 Watts)
 
-[_] <strong>Accident info</strong> card to give to the other driver. This is different than the insurance card, which has your home address. 
+[__] <strong>Registration</strong> from the state DMV.
 
-[_] A <strong>sachel of coins</strong> and small bills for parking meters and toll booths. This to avoid tempting thives to break your car window.
+[__] <strong>Accident info</strong> card to give to the other driver. This is different than the insurance card, which has your home address. 
 
-[_] A pair of waterproof <strong>work gloves</strong>
+[__] A <strong>sachel of coins</strong> and small bills for parking meters and toll booths. This to avoid tempting thives to break your car window.
 
-[_] Screwdrivers (flat and phillips head) multi-tool
+[__] A pair of waterproof <strong>work gloves</strong>
 
-[_] Tire gage 
+[__] Screwdrivers (flat and phillips head) multi-tool
+
+[__] Tire gage 
 
 
 <a href="#SleepInCars"></a>
@@ -593,31 +596,31 @@ Because it uses replaceble <a target=:_blank" href="https://www.amazon.com/DEWAL
 
 In case of breakdown in the Winter, in an old (squarish) backpack containing what is needed to survive a weekend:
 
-[_] Water in boxes.
+[__] Water in boxes.
 
-[_] <strong>Rain suit</strong> (pants, jacket) so you can work outside in the rain - $23 from Walmart
+[__] <strong>Rain suit</strong> (pants, jacket) so you can work outside in the rain - $23 from Walmart
 
-[_] <strong>strap-on headlamp</strong> (with extra batteries and red lens filter)
+[__] <strong>strap-on headlamp</strong> (with extra batteries and red lens filter)
 for being to use both hands in the dark. Smartphones can be used as a flashlight. But a headlamp flashlight will save your phone's battery during extended use.
 
-[_] <strong>Hand warmer</strong> chem packs for skiers. There is an electrical heater so it doesn't use up oxygen. 
+[__] <strong>Hand warmer</strong> chem packs for skiers. There is an electrical heater so it doesn't use up oxygen. 
 This is where electric vehicles like a Tesla come in handy.
 
-[_] Jumper cables with a capacitor battery
+[__] Jumper cables with a capacitor battery
 
-[_] A 3-season sleeping bag and pads 
+[__] A 3-season sleeping bag and pads 
 
-[_] Nylon cord
+[__] Nylon cord
 
-[_] <strong>Trowel</strong> in case I have to dig in dirt
+[__] <strong>Trowel</strong> in case I have to dig in dirt
 
-[_] Earplugs to reduce noise.
+[__] Earplugs to reduce noise.
 
-[_] A bottle with a wide opening to pee in, so you don't need to go outside.
+[__] A bottle with a wide opening to pee in, so you don't need to go outside.
 
-[_] <strong>Pepper spray</strong> as a defensive weapon.
+[__] <strong>Pepper spray</strong> as a defensive weapon.
 
-[_] Extra car battery (if you have the room)
+[__] Extra car battery (if you have the room)
 
 
 
@@ -625,7 +628,7 @@ This is where electric vehicles like a Tesla come in handy.
 
 ### For Rough Sleeping #
 
-[_] A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
+[__] A tent (with stakes) is the item which separates a city pack and wilderness backpacking.
 
    I think it's wise to be experienced and prepared to sleep in the "cuts" (hideaway spots like bushes and alleys). It's not just in case you're homeless. I've been in a city where I can't find any hotel room available.
    I've slept on a sidewalk in front of a store waiting for it to open so I am among the first to buy a hot item.
@@ -649,14 +652,14 @@ This is where electric vehicles like a Tesla come in handy.
    Nordic countries <a target="_blank" href="https://getpocket.com/explore/item/it-s-a-miracle-helsinki-s-radical-solution-to-homelessness?utm_source=pocket-newtab">Finland have substantially cut both their homeless and saved social support costs</a>.
 
 
-[_] <strong>Please donate</strong> to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not requiring resident to exit the premises each morning, allowing pets, and permits mixed gender sleeping arrangements rather than separating families and couples. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
+[__] <strong>Please donate</strong> to the <a target="_blank" href="http://hsh.sfgov.org/services/emergencyshelter/navigation-centers/">Navigation Centers in San Francisco</a>. They provide a viable shelter by proving storage, eliminating curfews (for those who work odd hours), not requiring resident to exit the premises each morning, allowing pets, and permits mixed gender sleeping arrangements rather than separating families and couples. But one has to <a target="_blank" href="https://sf311.org/web/guest/shelter-reservation-waitlist">dial 311</a> (415-701-2311) to get on their waiting list.
 More than a dozen cities from Santa Rosa to Seattle and Austin, Texas, are copying the model<a target="_blank" href="https://www.sfchronicle.com/bayarea/article/SF-s-homeless-navigation-centers-seem-to-be-13025012.php">*</a>
 
 Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. If you're traveling alone, perhaps team up with another homeless person. Better yet, many cities have street counselors.
 
-[_] A chain with lock to tie the backpack like you would a bicycle. They can be heavy, though.
+[__] A chain with lock to tie the backpack like you would a bicycle. They can be heavy, though.
 
-[_] Foldable bicycle.
+[__] Foldable bicycle.
 
 
 ## Resources #
