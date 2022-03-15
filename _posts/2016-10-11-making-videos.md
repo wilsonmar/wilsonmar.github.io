@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Making videos"
-excerpt: "Tediously using Camtasia, Audacity, and automating animated PowerPoint on a Mac"
+excerpt: "Tediously using Camtasia, Audacity, OBS, and automating animated PowerPoint on a Mac"
 tags: [Videos, Evangelism]
 date: "2022-01-06"
 file: "making-videos"
@@ -40,14 +40,14 @@ Apple's $300 Final Cut Pro X</a> (FCPX) is what many 360 degree equirectangular 
 
 * $95 Sony Movie Studio Vegas is only for Windows.
 
-* The program I'd like to try next is Articulate Storyline and <a target="_blank" href="https://articulate.com/360/replay">Replay</a> to create interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS). Although Articulate360 provides a <a target="_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these <strong>Windows</strong> clients:
+* <a target="_blank" href="https://articulate.com/360/">Articulate360</a> Storyline creates interactive video tutorials with webcam and other aspects of a full "learning management suite" (LMS).  A <a target="_blank" href="https://itunes.apple.com/us/app/peek/id1164486237?ls=1&mt=12">free Peek desktop client</a> installed to record on MacOS, the video editing product consists of these <strong>Windows</strong> clients:
 
    * Rise for responsive authoring
    * Articulate Review for collaboration
    * Articulate Live for training
    * Storyline 
    * Studio
-   * Replay
+   * <a target="_blank" href="https://articulate.com/360/replay">Replay</a>
    <br /><br />
 
    These would be for creating RLO (reusable learning objects) by following principles from <a target="_blank" href="https://www.adlnet.gov/scorm">DoD's SCORM</a> (Sharable Content Object Reference Model), <a target="_blank" href="https://en.wikipedia.org/wiki/Aviation_Industry_Computer-Based_Training_Committee">AICC</a> (Aviation Industry CBT Committee), and now xAPI (for Experience API, aka Project Tin Can) from the ADL.
@@ -228,6 +228,39 @@ PROTIP: If you are using a Mac, get a separate monitor of 1900x1080 (Full HD) re
 
 18. Repeat from <a href="#RecordAudio">Record Audio</a> step above.
 
+
+<a name="OBS"></a>
+
+## OBS
+
+References:
+   * <a target="_blank" href="https://obsproject.com/">obsproject.com</a>
+   <br /><br />
+
+1. On MacOS, obtain "OBS.app" in /Applications folder:
+
+   brew install obs
+
+   Recording on Linux & Windows with OBS Recorder v19.0.3
+
+1. Set your system resolution to 1920 x 1080 2. Open the Application.
+3. Click on Settings
+4. Click on Output settings
+   * Output Mode: Simple
+   * 
+5. Click on Video settings
+   * Base (Canvas) Resolution: 1920x1080
+   * Output (Scaled) Resolution: 1920x1080
+   * Downscale Filter: Bilinear (Fastest, but blurry if scaled)
+   * Common FPS Values: 30
+   * Disable Aero: checked
+6. When you save the recording, set video format to MP4.
+7. Start Recording from the main screen.
+9. After you are done recording, upload your videos on Google Drive.
+
+<hr />
+
+<a name="Zoom"></a>
 
 ## Zoom
 
@@ -462,8 +495,6 @@ for video in videos:
 <a target="_blank" href="http://www.davidfrosdick.com/">davidfrosdick.com</a>
 
 <a target="_blank" href="https://www.macintoshtipz.com/">macintoshtipz.com</a>
-
-<a target="_blank" href="https://obsproject.com/">obsproject.com</a>
 
 https://www.youtube.com/watch?v=pSexUljveYE
 Talking head in circle with shadow in Camtasia 2020 | Camtasia Circular Video Tutorial

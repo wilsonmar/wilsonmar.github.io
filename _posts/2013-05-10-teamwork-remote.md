@@ -26,7 +26,7 @@ But when it doesn't work, it's a frustrating mess of ill-will all around.
 
 Here are some of the lessons learned that I thought you'd want to know,
 phrased in questions that help me determine the conditions for effectiveness in multi-team collaboration.
-(Kinda like Joel Splotsky's <a target="_blank" href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">questions asked of employers</a> that <a target="_blank" href="https://stackoverflow.com/jobs">Stackoverflow jobs</a> used to ask). BTW, the site specialize in remote developer/IT jobs.
+(Kinda like Joel Splotsky's <a target="_blank" href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">questions asked of employers</a>.
 
 
 ## Turnover of work
@@ -165,3 +165,5 @@ https://www.inc.com/dom-price/why-ending-remote-work-in-name-of-collaboration-is
 https://www.skillshare.com/classes/Building-Great-Teams-8-Attributes-for-the-Modern-World-Learn-with-Atlassian/1328937032
 Building Great Teams: 8 Attributes for the Modern World | Learn with Atlassian
 by Dominic Price, Head of R&D and Work Futurist
+
+https://www.remotetechjobs.com/
