@@ -27,28 +27,6 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 "Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
 
-* <a target="_blank" href="https://www.terraform.io/docs/enterprise-legacy/glossary/index.html"> Glossary of Terraform terms</a>
-
-* <a target="_blank" href="https://www.terraform.io/intro/getting-started/install.html">
-   Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
-
-
-<a name="CoreWorkflow"></a>
-
-## Core Workflow
-
-The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform  "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
-
-1. Obtain AWS credentials.
-2. Obtain the set of Terraform-related files from GitHub.
-3. Navigate to the folder where .tf files are located.
-4. Customize Terraform variable values (AWS credentials, Region, etc.).
-5. Scan Terraform files for violation of policies.
-6. <tt>terraform init</tt>
-7. <tt>terraform plan -out temp</tt>
-8. <tt>terraform apply temp</tt>
-<br /><br />
-
 
 <a name="LearningStrategy"></a>
 
@@ -100,6 +78,27 @@ So here it is, our ecosystem your you to create secure Terraform, the first time
 
 
 <hr />
+
+
+<a name="CoreWorkflow"></a>
+
+## Core Workflow
+
+The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform  "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
+
+1. Obtain the set of Terraform-related files (from GitHub).
+2. Navigate to the folder where .tf files are located.
+3. Scan Terraform files for violation of policies (running Atlas, TFSec, etc.)
+4. Obtain cloud (AWS) credentials.
+5. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
+6. <tt>terraform init</tt> 
+7. <tt>terraform plan -out plan_file</tt>
+8. <tt>terraform apply plan_file</tt>
+9. If defined, run local and/or remote provisioners (such as Ansible) to configure servers deployed.
+<br /><br />
+
+PROTIP: Run a shell/Python file to automate the above.
+
 
 <a name="Atlantis"></a>
 
@@ -4022,12 +4021,16 @@ a self-service app to use Terraform (powered by React+Redux using Jinga2 to Guni
 that he hopes to open-source at <a target="_blank" href="https://github.com/underarmour">github.com/underarmour</a>
 
 
-
 <hr />
 
 <a name="Tutorials"></a>
 
 ## Tutorials
+
+* <a target="_blank" href="https://www.terraform.io/docs/glossary"> Glossary of Terraform terms</a>
+
+* <a target="_blank" href="https://www.terraform.io/intro/getting-started/install.html">
+   Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
 
 At the top of the list is the in-depth videos and <strong>hands-on labs with quizzes</strong> of
 <a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
