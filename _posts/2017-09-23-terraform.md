@@ -33,6 +33,23 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
    Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
 
 
+<a name="CoreWorkflow"></a>
+
+## Core Workflow
+
+The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform  "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
+
+1. Obtain AWS credentials.
+2. Obtain the set of Terraform-related files from GitHub.
+3. Navigate to the folder where .tf files are located.
+4. Customize Terraform variable values (AWS credentials, Region, etc.).
+5. Scan Terraform files for violation of policies.
+6. <tt>terraform init</tt>
+7. <tt>terraform plan -out temp</tt>
+8. <tt>terraform apply temp</tt>
+<br /><br />
+
+
 <a name="LearningStrategy"></a>
 
 ## Secure Learning Tools and Ecosystem
@@ -75,20 +92,20 @@ Terraform Cloud provides a GUI to display them.
 
 So here it is, our ecosystem your you to create secure Terraform, the first time and every time.
 
-Recap:
+<a name="Recap"></a>
+
+### Recap
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"><img width="1769" height="781" alt="terraform-strategy-22-03-02-1769x781" src="https://user-images.githubusercontent.com/300046/156488722-0dd6e2ad-c64a-494f-80d5-32b91cb3003b.png"></a>
 
 
 <hr />
 
-
 <a name="Atlantis"></a>
 
 ## Atlantis on Terraform
 
-<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">VIDEO</a>:
-This workflow enhances the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform workflow</a><a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">*</a> with GitHub's Pull Request and webhooks mechanism to 
+<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">*</a>
 ensure code reviews.
 
 Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
@@ -696,7 +713,7 @@ code main.tf
 
    CAUTION: Avoid installing anything from publishers you don't know.
 
-1. Define .gitignore for use with VSCode:
+1. Define <a href="#.gitignore">.gitignore</a> for use with VSCode:
 
 1. Review code:
 
