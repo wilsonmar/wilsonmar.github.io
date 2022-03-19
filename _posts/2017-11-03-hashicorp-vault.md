@@ -21,17 +21,35 @@ Here is a hands-on tutorial about how to install and use Hashicorp's <a target="
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
+Vault's secret handling features are provided by several Hashicorp offerings: Trust of that token is first establish by an authentication method:
+
+   * A client app on your laptop, which can also provide dev-mode Vault services.
+   * A Vault server running installed in a cloud environment
+   <br /><br />
+
+Hashicorp Vault's basic job is to provide applications <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> to access databases and other services:
+
+   1. Authenticate with Vault
+   2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
+   3. Verification is obtained
+   4. Return a client token for the application
+   <br /><br />
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
+
+Trust of that token is first establish by an authentication method:
+ 
 At the end of this tutorial, you should be able to:
 
-* <a href="#LaptopInstall">On your laptop install Vault</a>
-* <a href="#InstallServer">On a server install Vault and Consul (using Docker)</a>
-* <a href="#InstallEKS">Install Vault within an AWS EKS cluster</a>
-
+* <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>
 * <a href="#Config">Initialize and Configure Vault</a>
 * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
 * <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
-* Hashicorp Nomad passes secrets as files. It polls for changed values.
-	Tasks get tokens so they can retrieve values.
+
+* <a href="#InstallServer">On a server install Vault and Consul (using Docker)</a>
+* <a href="#InstallEKS">Install Vault within an AWS EKS cluster</a>
+
+* Hashicorp Nomad passes secrets as files. It polls for changed values. Tasks get tokens so they can retrieve values.
 <br /><br />
 
 
@@ -39,7 +57,7 @@ At the end of this tutorial, you should be able to:
 
 ## What are secrets?
 
-A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
+A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, SSH private certificates, and more. 
 
 Questions for secrets management:
 
@@ -54,8 +72,11 @@ Questions for secrets management:
 
 ## Requirements for secret keeping
 
-It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
-This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
+Storing plain-text secrets hard-coded in program code stored in GitHub is like leaving Amazon packages on your door for a long time.
+
+Even if secrets are encrypted (using GPG), machines are powerful enough and hackers have enough time to figure out how to crack encryption algorithms, given enough time.
+
+And you can't simply remove a file in GitHub because old versions hidden in history can be decrypted using old keys.
 
 Coverage of what features a secrets service should have:
 
@@ -90,10 +111,16 @@ Alternatives to Hashicorp Vault include
    * <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
 
 
-
 ## Hashicorp's Value Proposition
 
 Hashicorp first released Vault in 2015.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
+VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
+by Armon Dadgar, Hashicorp's CTO,
+is a whiteboard talk about avoiding "secret sprawl" living in clear text with
+empheral (temporary) passwords and cryptographic offload to a central service:
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
 As of this writing, a unique strong point with Vault is that it can
 change the value of an existing secret (key rotation) without rebooting. 
@@ -111,14 +138,6 @@ Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/v
 Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
 
 Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
-VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
-by Armon Dadgar, Hashicorp's CTO,
-is a whiteboard talk about avoiding "secret sprawl" living in clear text with
-empheral (temporary) passwords and cryptographic offload to a central service:
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
-
 
 
 ## Alternatives to secret management
@@ -272,7 +291,7 @@ In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
 
 ## Vault's Architecture
 
-<a target="_blank" href="
+From <a target="_blank" href="
 https://www.vaultproject.io/docs/internals/architecture">
 https://www.vaultproject.io/docs/internals/architecture</a>
 
@@ -292,31 +311,29 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html#1">
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
 
-A <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service token</a> for a specific Hashicorp Vault cluster must accomodate each API request to access secrets on that cluster. Trust of that token is first establish by an authentication method:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
 
 
+Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">
+"Vault Encryption as a Service"</a> shows how Vault's Transit secrets engine provides encryption as a service.
 
-<hr />
+The <strong>Vault Database secrets engine</strong> generates dynamic, time-bound credentials for many different databases. Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by Roger Berlind) 
+walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
 
-<a name="WithinCode"></a>
 
-## Within App Programming Code
+<a name="Consult"></a>
 
-Even though the "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> (rather than hard-coding them in code stored within GitHub). 
-So, populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
-Seveal utilities have been created for that:
+## Install Consul server
 
-   * <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kubenetes (but not clouds AWS, GCP, etc.).
+Consul coordinates several instances of Vault server software.
 
-   <a name="Daytona"></a>
-   * The Daytona Golang CLI client from Cruise at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+Using Hashicorp's Consul as a <strong>backend</strong> to Vault provides durable storage of encrypted data at rest necessary for fault tolerance, availability, and scalability.
+
+Hashicorp's Nomad ???
 
 
 <a name="envconsul"></a>
 
-## Using Envconsul with GitHub 
+### Using Envconsul with GitHub 
 
 * <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul, at https://github.com/hashicorp/envconsul</a> (from Hashcorp) populates values in environment variables referenced within programming code (12-factor applications which get their configuration via the environment).
 
@@ -343,9 +360,27 @@ Credentials authorizing retrieval requests are defined ...
 
 <hr />
 
-## Basic Course
+<a name="WithinCode"></a>
 
-When given 30-day access to <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-basics">
+## Within App Programming Code
+
+Even though the "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> (rather than hard-coding them in code stored within GitHub). 
+So, populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
+Seveal utilities have been created for that:
+
+   * <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> (but not clouds AWS, GCP, etc.).
+
+   <a name="Daytona"></a>
+   * The Daytona Golang CLI client from Cruise (the autonomous car company) at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+
+
+<hr />
+
+## Instruqt Basic Course
+
+Hashicorp provides hands-on courses at <a target="_blank" href="https://play.instruqt.com/login">https://play.instruqt.com/login</a>.
+
+After given 30-day access to <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-basics">
 the Vault Basics course</a>, its lessons are for running in <a target="_blank" href="https://www.vaultproject.io/docs/concepts/dev-server/">dev mode</a>:
 
 NOTE: Labs timeout every 2 hours.
@@ -447,14 +482,6 @@ NOTE: Labs timeout every 2 hours.
   capabilities = ["create", "read", "list", "update", "delete"]
 }
    </pre>
-
-
-## Install Consul server
-
-Using Hashicorp's Consul as a backend to Vault provides durable storage of encrypted data at rest necessary for
-fault tolerance, availability, and scalability.
-
-Hashicorp's Nomad ???
 
 
 
@@ -1812,6 +1839,8 @@ On <a target="_blank" href="https://www.youtube.com/channel/UC-AdvAxaagE9W2f0web
    <br /><br />
 
 <a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
+
+<a target="_blank" href="https://learn.acloud.guru/course/hashicorp-vault/overview">ACloudGuru.com's HashiCorp Vault</a> 18 hour video course by <a target="_blank" href="https://www.linkedin.com/in/ermin-kreponic-0a420715b/">Ermin Kreponic (a resident of Sarajevo)</a>.
 
 https://www.vaultproject.io/docs/internals/security/
 Security Model

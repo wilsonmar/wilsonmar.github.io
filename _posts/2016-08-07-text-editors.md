@@ -3,7 +3,7 @@ layout: post
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
 tags: [apple, mac, setup]
-date: "2021-02-09"
+date: "2022-02-09"
 file: "text-editors"
 image:
 # feature: pic RichTextEditorToolBar 1900x500.jpg
@@ -639,9 +639,14 @@ abbr _bash #!/bin/bash&LT;CR>
    
    While in command mode, cursor to a position in the document:
 
-   * press X to delete a character.
    * type `set number` to toggle numbering on the left edge.
    * type `set invnumber` to toggle inverse numbering backwards.
+
+   * type G to go to beginning of file.
+   * type shift+G to go to end of file.
+   * type 5GG to go to line (the command won't appear)
+
+   * press X to delete a character.
 
    * type i to enter insert mode at the cursor.
    * type I to enter insert mode at the front of the line.
@@ -649,9 +654,6 @@ abbr _bash #!/bin/bash&LT;CR>
    * type O to insert new line above current position.
 
    * type v to visually select
-
-   * type G to go to end of file.
-   * type 55G to go to line 55.
 
    * type v to visually select.
    * type d to delete (cut) single character.
