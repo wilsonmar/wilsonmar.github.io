@@ -21,24 +21,25 @@ Here is a hands-on tutorial about how to install and use Hashicorp's <a target="
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
-Vault's secret handling features are provided by several Hashicorp offerings: Trust of that token is first establish by an authentication method:
+Vault's secret handling features are provided by several Hashicorp offerings:
 
    * A client app on your laptop, which can also provide dev-mode Vault services.
    * A Vault server running installed in a cloud environment
    <br /><br />
 
+<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
+Hashicorp provides Vault free under open-source licensing. Pay for an Enterprise license for Replication, Diaster Recovery, Namespaces, Monitoring, and support. Hashicorp can provide a list of services partners.
+
 Hashicorp Vault's basic job is to provide applications <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> to access databases and other services:
 
-   1. Authenticate with Vault
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
+
+   1. Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
    2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
    3. Verification is obtained
    4. Return a client token for the application
    <br /><br />
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
-
-Trust of that token is first establish by an authentication method:
- 
 At the end of this tutorial, you should be able to:
 
 * <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>

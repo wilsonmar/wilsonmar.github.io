@@ -20,20 +20,23 @@ comments: true
 Here are my notes on finding a way to earn money that fits your desired lifestyle.
 
 
-## Job Websites
+## Major Job Websites
 
 * <a target="_blank" href="https://www.Indeed.com/">Indeed.com</a> aggregates job postings 
 
-* <a target="_blank" href="https://www.LinkedIn.com/">LinkedIn.com</a> (now owned by Microsoft) is where top companies (who can afford it) search for candidates based on the LinkedIn social platform. It provides salary information.
+* <a target="_blank" href="https://www.LinkedIn.com/">LinkedIn.com</a> (now owned by Microsoft) leverages the LinkedIn social platform of profiles for top companies (who can afford it) search for candidates based on . It provides salary information.
 
-* <a target="_blank" href="https://www.Flexjobs.com (a subscription site)
-
-* <a target="_blank" href="https://www.Glassdoor.com/">
-
-* <a target="_blank" href="https://www.WeWorkRemotely.com/">WeWorkRemotely.com</a>
+* <a target="_blank" href="https://www.Glassdoor.com/">Glassdoor.com</a> has 
 
 * <a target="_blank" href="https://www.AngelList.com">AngelList.com</a> is a meeting place for start-ups, which often hire less experienced candidates
 
 * <a target="_blank" href="https://www.Ladders.com/">Ladders.com</a> (a subscription site)
 
+## Remote work job sites
 
+* <a target="_blank" href="https://www.WeWorkRemotely.com/">WeWorkRemotely.com</a>
+
+* <a target="_blank" href="https://www.Flexjobs.com/">Flexjobs.com</a> (a subscription site)
+
+
+## What
