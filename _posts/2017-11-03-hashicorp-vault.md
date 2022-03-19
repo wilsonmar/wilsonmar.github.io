@@ -3,7 +3,7 @@ layout: post
 title: "Hashicorp Vault (with Consul and Nomad)"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
 tags: [vault, hashicorp, security]
-date: "2021-12-23"
+date: "2022-03-18"
 file: "hashicorp-vault"
 image:
 # pic secret finger over mouth 1900x500
@@ -34,10 +34,144 @@ At the end of this tutorial, you should be able to:
 	Tasks get tokens so they can retrieve values.
 <br /><br />
 
-## Competition
 
-Hashicorp Vault competes with <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>,
-also a container-compatible secrets solution.
+<a name="Secrets"></a>
+
+## What are secrets?
+
+A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
+
+Questions for secrets management:
+
+   1. How do applications get secrets?
+   1. How do humans acquire secrets?
+   1. How are secrets updated? (rotated)
+   1. How is a secret revoked?
+   1. When were secrets used? (lookup in usage logs)
+   1. What do we do in the event of compromise?
+   <br /><br />
+
+
+## Requirements for secret keeping
+
+It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
+This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
+
+Coverage of what features a secrets service should have:
+
+* Server installed in <strong>sealed mode</strong> (provides no access)
+
+* RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
+
+   <pre>--authorization-mode=RBAC</pre>
+
+* Limit access to designated containers
+
+* Encrypted transmission with Mutual authentication (MTLS)
+
+* Audit logging
+
+* Change value of an existing secret (key rotation) without rebooting.
+   This is the strong point with Vault.
+
+* Revocation
+
+* Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
+
+
+## Competitors
+
+Alternatives to Hashicorp Vault include
+
+   * Vormetrix
+
+   * <a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
+
+   * <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
+
+
+
+## Hashicorp's Value Proposition
+
+Hashicorp first released Vault in 2015.
+
+As of this writing, a unique strong point with Vault is that it can
+change the value of an existing secret (key rotation) without rebooting. 
+
+Hashicorp Vault can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
+
+The value that Hashicorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period.
+Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+
+Toward that, Hashicorp provides both an open-source code as well an (expensive) <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
+
+Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a> with a marketing home page at
+<a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
+
+Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
+VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
+by Armon Dadgar, Hashicorp's CTO,
+is a whiteboard talk about avoiding "secret sprawl" living in clear text with
+empheral (temporary) passwords and cryptographic offload to a central service:
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
+
+
+
+## Alternatives to secret management
+
+* <a target="_blank" href="https://12factor.net/config">Chapter III. of the "twelve-factor app"</a> recommends storing config in <strong>environment variables</strong>. The usual mechanism has been in a clear-text file loaded into <strong>operating system variables</strong>, such as:
+
+   <pre>docker run -e VARNAME=mysecret ...</pre>
+
+   PROTIP: However, this is NOT cool anymore because the value of variables (secrets) can end up in logs. All processes have access to secrets (no RBAC). 
+   And this mechanism makes <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#credential-rotation-lifecycle">periodic key rotation</a> manually cumbersome.
+
+* <a target="_blank" href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> was NOT designed for unlicensed (free) standalone containers<a target="_blank" href="https://medium.com/lucjuggery/from-env-variables-to-docker-secrets-bc8802cacdfd">*</a>, but for Enterprise licensed (paid) Docker Swarm services in commands such as:
+
+   <pre>docker service create --secret db_pass --name secret-test alpine bash</pre>
+
+   <tt>db_pass</tt> is a file (with .txt extension) encrypted by a command such as:
+
+   <pre>echo "mysecret" | docker secret create db_pass -
+   docker secret ls</pre>
+
+   Secrets are stored in Docker's logging infra within its <a target="_blank" href="https://medium.com/lucjuggery/raft-logs-on-swarm-mode-1351eff1e690">"Raft"</a> distributed leader consensus mechanism shared with Swarm managers. So encryption needs to be locked in Swarm. 
+
+   Secrets can be added to a running service, but key rotation requires container restart.
+
+   When the service is created (or updated), the secret is mounted onto the container in the <tt>/run/secrets</tt> directory which custom program can retrieve<a target="_blank" href="https://howchoo.com/g/zwzkzduwmjy/getting-started-with-docker-secrets">*</a>
+
+   <pre>def get_secret(secret_name):
+    try:
+        with open('/run/secrets/{0}'.format(secret_name), 'r') as secret_file:
+            return secret_file.read()
+    except IOError:
+        return None
+&nbsp;
+database_password = get_secret('db_pass')
+   </pre>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=j3QJRdiTr1I&t=19m25s">Kubernetes secrets</a> are stored in its etcd process.
+
+   <pre>--experimental-encryption-provider-config</pre>
+
+   <a target="_blank" href="https://github.com/Boostport/kubernetes-vault">https://github.com/Boostport/kubernetes-vault</a>
+
+* Cloud-base KMS (Key Management Service) such as from Amazon
+
+* The Aqua utility provides secrets management to orchestrators so that:
+
+   <pre>docker run -it --rm -e SECRET={dev-vault.secret/password} \
+   --name ubuntu ubuntu /bin/bash</pre>
+
+   <pre>docker inspect ubuntu -f "{{json .Config.Env}}"</pre>
+   returns:
+
+   <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
 
 
 ## Secrets handling best practices
@@ -50,9 +184,9 @@ also a container-compatible secrets solution.
 1. Have a "break-glass" procedure if auth secrets are stolen.
 1. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
 
-## Skill Certification
+## Vault Skill Certification
 
-In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
+In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
 
 1	Compare authentication methods
    * Describe authentication methods
@@ -136,122 +270,7 @@ In 2020 Hashicorp offers a $70 for 1 hour certification exam for Vault.
 <hr />
 
 
-## Requirements for secret keeping
-
-Coverage of what features a secrets service should have:
-
-* Server installed in <strong>sealed mode</strong> (provides no access)
-
-* RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
-
-   <pre>--authorization-mode=RBAC</pre>
-
-* Limit access to designated containers
-
-* Encrypted transmission with Mutual authentication (MTLS)
-
-* Audit logging
-
-* Change value of an existing secret (key rotation) without rebooting.
-   This is the strong point with Vault.
-
-* Revocation
-
-## Alternatives to secret management
-
-* <a target="_blank" href="https://12factor.net/config">The "twelve-factor app"</a> recommends storing config in <strong>environment variables</strong>. The usual mechanism has been in a clear-text file loaded into <strong>operating system variables</strong>, such as:
-
-   <pre>docker run -e VARNAME=mysecret ...</pre>
-
-   PROTIP: However, this is NOT cool anymore because the value of variables (secrets) can end up in logs. All processes have access to secrets (no RBAC). 
-   And this mechanism makes <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#credential-rotation-lifecycle">periodic key rotation</a> manually cumbersome.
-
-* <a target="_blank" href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> was NOT designed for unlicensed (free) standalone containers<a target="_blank" href="https://medium.com/lucjuggery/from-env-variables-to-docker-secrets-bc8802cacdfd">*</a>, but for Enterprise licensed (paid) Docker Swarm services in commands such as:
-
-   <pre>docker service create --secret db_pass --name secret-test alpine bash</pre>
-
-   <tt>db_pass</tt> is a file (with .txt extension) encrypted by a command such as:
-
-   <pre>echo "mysecret" | docker secret create db_pass -
-   docker secret ls</pre>
-
-   Secrets are stored in Docker's logging infra within its <a target="_blank" href="https://medium.com/lucjuggery/raft-logs-on-swarm-mode-1351eff1e690">"Raft"</a> distributed leader consensus mechanism shared with Swarm managers. So encryption needs to be locked in Swarm. 
-
-   Secrets can be added to a running service, but key rotation requires container restart.
-
-   When the service is created (or updated), the secret is mounted onto the container in the <tt>/run/secrets</tt> directory which custom program can retrieve<a target="_blank" href="https://howchoo.com/g/zwzkzduwmjy/getting-started-with-docker-secrets">*</a>
-
-   <pre>def get_secret(secret_name):
-    try:
-        with open('/run/secrets/{0}'.format(secret_name), 'r') as secret_file:
-            return secret_file.read()
-    except IOError:
-        return None
-&nbsp;
-database_password = get_secret('db_pass')
-   </pre>
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=j3QJRdiTr1I&t=19m25s">Kubernetes secrets</a> are stored in its etcd process.
-
-   <pre>--experimental-encryption-provider-config</pre>
-
-   <a target="_blank" href="https://github.com/Boostport/kubernetes-vault">https://github.com/Boostport/kubernetes-vault</a>
-
-* Cloud-base KMS (Key Management Service) such as from Amazon
-
-* The Aqua utility provides secrets management to orchestrators so that:
-
-   <pre>docker run -it --rm -e SECRET={dev-vault.secret/password} \
-   --name ubuntu ubuntu /bin/bash</pre>
-
-   <pre>docker inspect ubuntu -f "{{json .Config.Env}}"</pre>
-   returns:
-
-   <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
-
-
-<a name="Secrets"></a>
-
-## What are secrets?
-
-A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, certificates, and more. 
-
-It's really dangerous to keep in GitHub plain-text secrets such as API Keys, etc.
-This is even if secrets are ecrypted (using GPG) because old versions hidden in history can be decrypted using old keys.
-
-
-## Hashicorp's Value Proposition
-
-The value that Hashicorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period.
-Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-Toward that, Hashicorp provides both an open-source code as well an (expensive) <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
-
-Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a> with a marketing home page at
-<a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
-
-Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
-
-Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
-VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
-by Armon Dadgar, Hashicorp's CTO,
-is a whiteboard talk about avoiding "secret sprawl" living in clear text with
-empheral (temporary) passwords and cryptographic offload to a central service:
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
-
-
-## Competitors
-
-Hashicorp Vault can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
-
-Alternatives to Hashicorp Vault include
-Vormetrix,
-<a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
-
-
-## Architecture
+## Vault's Architecture
 
 <a target="_blank" href="
 https://www.vaultproject.io/docs/internals/architecture">
@@ -285,18 +304,19 @@ A <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">cli
 
 ## Within App Programming Code
 
-The "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> rather than hard-coding them in code stored within GitHub. 
+Even though the "12 Factor App" advocates for app programming code to obtain secret data from <strong>environment variables</strong> (rather than hard-coding them in code stored within GitHub). 
 So, populating environment variables with clear-text secrets would occur outside the app, in the run-time environment.
 Seveal utilities have been created for that:
 
-* <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kubenetes (but not clouds AWS, GCP, etc.).
+   * <a target="_blank" href="https://github.com/jamhed/govaultenv">https://github.com/jamhed/govaultenv</a> includes access to Kubenetes (but not clouds AWS, GCP, etc.).
 
-<a name="Daytona"></a>
-* The Daytona Golang CLI client from Cruise at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+   <a name="Daytona"></a>
+   * The Daytona Golang CLI client from Cruise at <a target="_blank" href="https://github.com/cruise-automation/daytona">https://github.com/cruise-automation/daytona</a> is written in <strong>Golang</strong> to be a "lighter, alternative, implementation" Vault client CLI services and containers. It automates authentication, fetching of secrets, and token renewal to Kubernetes, AWS, and GCP. Daytona is performant because it pre-fetches secrets upon launch and store them either in environment variables, as JSON in a specified file, or as singular or plural secrets in a specified file.
+
 
 <a name="envconsul"></a>
 
-### Using Envconsul with GitHub 
+## Using Envconsul with GitHub 
 
 * <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul, at https://github.com/hashicorp/envconsul</a> (from Hashcorp) populates values in environment variables referenced within programming code (12-factor applications which get their configuration via the environment).
 
@@ -438,7 +458,6 @@ Hashicorp's Nomad ???
 
 
 
-
 <a name="Vaultenv"></a>
 
 ## Using Vaultenv with GitHub 
@@ -462,7 +481,6 @@ Within its configuration file, secrets are requested based on a <strong>specific
    <ul><pre>production/third-party#api-key</pre></ul>
 
 The utility is written in the Haskell language under a 3-clause BSD license and <a target="_blank" href="https://github.com/channable/vaultenv/releases">releases</a> run on Linux (has not been tested on any other platform, such as macOS).
-
 
 
 
@@ -540,11 +558,13 @@ It is well suited for cloud environments where HSMs are either not available or 
    Note there are several:
 
    <pre>==> Formulae
-argocd-vault-plugin           hashicorp/tap/vault ✔         vault ✔                       vaulted
-aws-vault                     ssh-vault                     vault-cli                     vultr
+==> Formulae
+argocd-vault-plugin        ssh-vault                  vaulted
+aws-vault                  vault ✔                    vultr
+hashicorp/tap/vault ✔      vault-cli
 &nbsp;
 ==> Casks
-aws-vault                                btcpayserver-vault                       gmvault
+aws-vault                  btcpayserver-vault         gmvault
 &nbsp;
 If you meant "vault" specifically:
 It was migrated from homebrew/cask to homebrew/core.
@@ -556,14 +576,15 @@ It was migrated from homebrew/cask to homebrew/core.
 
    At time of this writing:
 
-   <pre>vault: stable 1.9.2 (bottled), HEAD
+   <pre>vault: stable 1.9.4 (bottled), HEAD
 Secures, stores, and tightly controls access to secrets
 https://vaultproject.io/
-Not installed
+/usr/local/Cellar/vault/1.9.2 (8 files, 178.7MB) *
+  Poured from bottle on 2021-12-23 at 23:17:56
 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/vault.rb
 License: MPL-2.0
 ==> Dependencies
-Build: go ✘, gox ✘, node@14 ✘, yarn ✘
+Build: go ✘, gox ✘, node@14 ✘, yarn ✔
 ==> Options
 --HEAD
 	Install HEAD version
@@ -573,6 +594,15 @@ To restart vault after an upgrade:
 Or, if you don't want/need a background service you can just run:
   /usr/local/opt/vault/bin/vault server -dev
 ==> Analytics
+install: 11,140 (30 days), 32,117 (90 days), 122,131 (365 days)
+install-on-request: 10,818 (30 days), 31,203 (90 days), 118,906 (365 days)
+build-error: 2 (30 days)
+   </pre>
+
+   Compare growth from a previous version:
+
+   <pre>vault: stable 1.9.2 (bottled), HEAD
+...
 install: 9,528 (30 days), 29,343 (90 days), 116,531 (365 days)
 install-on-request: 9,273 (30 days), 28,580 (90 days), 113,456 (365 days)
 build-error: 6 (30 days)
@@ -586,26 +616,34 @@ build-error: 6 (30 days)
 
    <pre><strong>brew install vault</strong></pre>
 
-   <pre>==> Downloading https://ghcr.io/v2/homebrew/core/vault/manifests/1.9.2
-Already downloaded: /Users/wilsonmar/Library/Caches/Homebrew/downloads/3229ec7e0432efa438f631b1597b1b8835f06511f7bce63aacd2cd4099b88186--vault-1.9.2.bottle_manifest.json
-==> Downloading https://ghcr.io/v2/homebrew/core/vault/blobs/sha256:5fa336a299ea46a7075710391aa229d18f7e20c6a75750999acce
-Already downloaded: /Users/wilsonmar/Library/Caches/Homebrew/downloads/50a32a1145afdad720b2cfa03881c1d3fda65cd58a97d5f65c2bde0956902dd3--vault--1.9.2.monterey.bottle.tar.gz
-==> Pouring vault--1.9.2.monterey.bottle.tar.gz
+   <pre>vault 1.9.2 is already installed but outdated (so it will be upgraded).
+==> Downloading https://ghcr.io/v2/homebrew/core/vault/manifests/1.9.4
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/vault/blobs/sha256:0e71de8e8d51
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Upgrading vault
+  1.9.2 -> 1.9.4 
+&nbsp;
+==> Pouring vault--1.9.4.monterey.bottle.tar.gz
 ==> Caveats
 To restart vault after an upgrade:
   brew services restart vault
 Or, if you don't want/need a background service you can just run:
   /usr/local/opt/vault/bin/vault server -dev
 ==> Summary
-🍺  /usr/local/Cellar/vault/1.9.2: 8 files, 178.7MB
+🍺  /usr/local/Cellar/vault/1.9.4: 8 files, 179.4MB
 ==> Running `brew cleanup vault`...
 Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
 Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
    </pre>
 
    Compare historically:
 
-   <pre>🍺  /usr/local/Cellar/vault/1.3.2: 6 files, 124.2MB
+   <pre>🍺  /usr/local/Cellar/vault/1.9.2: 8 files, 178.7MB
+...
+🍺  /usr/local/Cellar/vault/1.3.2: 6 files, 124.2MB
   Built from source on 2019-11-18 at 05:05:44
    </pre>
 
@@ -621,11 +659,20 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 
    At time of writing, the response:
    
-   <pre>Vault v1.9.2 ('f4c6d873e2767c0d6853b5d9ffc77b0d297bfbdf+CHANGES')</pre>
+   <pre>Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')
+   </pre>
+
+1. Verify location:
+
+   <pre><strong>which vault</strong><pre>
+
+   Result:
+
+   <pre>/usr/local/bin/vault</pre>
 
 1. Persist the version of Vault for use in commands by editing <strong>~/.bash_profile</strong> to add these lines:
 
-   <pre><strong>export VAULT_VERSION="1.9.2"
+   <pre><strong>export VAULT_VERSION="1.9.4"
    complete -C /usr/local/bin/vault vault
    </strong></pre>
 
@@ -634,7 +681,12 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
    <pre><strong>vault -autocomplete-install
    </strong></pre>
 
-   No message is returned.
+   No message is returned. Otherwise, if already installed once:
+
+   <pre>Error executing CLI: 2 errors occurred:
+	* already installed in /Users/wilsonmar/.bash_profile
+	* already installed in /Users/wilsonmar/.zshrc
+   </pre>
 
 1. See menu of commands by running the command without parameters:
 
@@ -676,7 +728,7 @@ Other commands:
 
    Vault commands are described <a target="_blank" href="https://www.vaultproject.io/docs/commands/">here online</a>.
 
-1. Restart your terminal (and provide password):
+1. Restart your Terminal.app (and provide password):
 
    <pre><strong>exec $SHELL
    </strong></pre>
@@ -689,13 +741,29 @@ Other commands:
 
    ### Vault kv store commands
 
-   PROTIP: https://www.vaultproject.io/docs/commands/index.html
+   PROTIP: <a target="_blank" href="https://www.vaultproject.io/docs/commands/index.html">https://www.vaultproject.io/docs/commands/index.html</a>
+
    <a target="_blank" href="https://www.youtube.com/watch?v=vd9f-gGqMV0">VIDEO</a>: HashiCorp Vault Http API - Create and get secrets with curl</a> (aweful drawings)
 
 1. Add a key:
 
    <pre><strong>vault kv put hello/api username=john
    </strong></pre>
+
+   If Vault is not running, you'll see a response such as this:
+
+   <pre>Error making API request.
+&nbsp;
+URL: GET https://vault.whatever-engine.com:8200/v1/sys/internal/ui/mounts/hello/api
+Code: 503. Raw Message:
+&nbsp;
+&LT;html>
+&LT;head>&LT;title>503 Service Temporarily Unavailable&LT;/title>&LT;/head>
+&LT;body>
+&LT;center>&LT;h1>503 Service Temporarily Unavailable</h1>&LT;/center>
+&LT;/body>
+&LT;/html>
+   </pre>
 
 1. List keys and values:
 
@@ -754,7 +822,7 @@ Other commands:
    <a target="_blank" href="https://github.com/Voronenko/hashi_vault_utils">https://github.com/Voronenko/hashi_vault_utils</a>
    provides command scripts and commentary.
 
-   A sample <tt>config-file.hcl</tt> file:
+   A sample <tt>config-file.hcl</tt> contains:
 
    <pre>ui = true
    disable_mlock = true
@@ -1402,7 +1470,7 @@ https://www.vaultproject.io/intro/getting-started/deploy.html
    <pre><strong>vault write secret/donttell value=Pa$$word321 excited=yes
    </strong></pre>
 
-   <tt>secret/</tt> is necessary.
+   REMEMBER: <tt>secret/</tt> prefix to a secret value is necessary, and without double-quotes.
 
    Because commands are stored in shell history, it's preferred to use files when handling secrets.
 
@@ -1428,8 +1496,7 @@ value               Pa$$word321
    <pre><strong>vault read -format=json secret/donttel
    </strong></pre>
 
-   <pre>
-{
+   <pre>{
     "request_id": "68315073-6658-e3ff-2da7-67939fb91bbd",
     "lease_id": "",
     "lease_duration": 2764800,
@@ -1730,11 +1797,19 @@ https://github.com/theskumar/python-dotenv#command-line-interface</a>
 
 That .env file name is specified in the .gitignore so it is ignored when pushing to github.
 
+
+<hr />
+
 <a name="Resourced"></a>
 
 ## Learning Resources
 
 <a target="_blank" href="https://learn.hashicorp.com/vault">https://learn.hashicorp.com/vault</a>
+
+On <a target="_blank" href="https://www.youtube.com/channel/UC-AdvAxaagE9W2f0webyNUQ">Hashicorp's YouTube channel</a>:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=0GmPUeHW2Kw" title="Feb 23, 2022 by Justin Weissig">
+   "Multi-region Replication with HCP Vault"</a> HCP Vault Plus
+   <br /><br />
 
 <a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
 

@@ -3160,7 +3160,10 @@ resource "aws_instance" "foo" {
 
 ### Drift management
 
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
+   * https://www.youtube.com/watch?v=CsCdEvZ5la0
+   * a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
+   <br /><hr />
+
 Drift occurs when the actual state of resources provisioned diverges from the expected state.
 
 If an approved manual configuration has been changed or removed, such as when a VM is terminated using the AWS Console GUI, the state can be <strong>refreshed</strong> by an alias of the command <tt>terraform apply -refresh-only -auto-approve</tt> which doesn't make changes:
@@ -3748,7 +3751,8 @@ TODO:
 
    hosts both providers and modules (a group of configuration files that provide common configuration).
 
-
+https://www.youtube.com/watch?v=Qfp8Jv78yt8
+Writing High Quality Terraform Modules for Exponential Organizations
 
 
 <hr />
