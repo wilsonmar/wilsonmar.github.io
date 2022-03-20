@@ -2,7 +2,7 @@
 layout: post
 title: "Hashicorp Vault (with Consul and Nomad)"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
-tags: [vault, hashicorp, security]
+tags: [vault, hashicorp, security, secrets]
 date: "2022-03-18"
 file: "hashicorp-vault"
 image:
@@ -23,9 +23,14 @@ This course assumes participants bring a Mac or Windows laptop and have prior ex
 
 Vault's secret handling features are provided by several Hashicorp offerings:
 
-   * A client app on your laptop, which can also provide dev-mode Vault services.
-   * A Vault server running installed in a cloud environment
+   * A local client app/exe on your laptop, which can also provide dev-mode Vault services.
+   * A "self-managed" OSS Vault server you install in your cloud environment (AWS, Azure, GCP, etc.) 
+   * Paid <a href="#VaultSaaS">Vault SaaS services<a> provided by HCP (Hashicorp's Cloud Platform)
    <br /><br />
+
+https://cloud.hashicorp.com/docs/vault summarizes the differences between "Self-managed" and HCP Vault cluster.
+
+As with other SaaS products, one can interact with Vault using its GUI, CLI, or API.
 
 <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
 Hashicorp provides Vault free under open-source licensing. Pay for an Enterprise license for Replication, Diaster Recovery, Namespaces, Monitoring, and support. Hashicorp can provide a list of services partners.
@@ -128,13 +133,9 @@ change the value of an existing secret (key rotation) without rebooting.
 
 Hashicorp Vault can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
 
-The value that Hashicorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period.
-Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+The value that Hashicorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
 
-Toward that, Hashicorp provides both an open-source code as well an (expensive) <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
-
-Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a> with a marketing home page at
-<a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
+Toward that, Hashicorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
 
 Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
 
@@ -286,9 +287,11 @@ In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
    * Rotate the encryption key
    <br /><br />
 
+## Vault Operations Professional exam 
+
+HashiCorp’s Vault Operations Pro Certification Is Lab-Based
 
 <hr />
-
 
 ## Vault's Architecture
 
@@ -313,23 +316,82 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/i
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
 
 
-
 Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">
 "Vault Encryption as a Service"</a> shows how Vault's Transit secrets engine provides encryption as a service.
 
 The <strong>Vault Database secrets engine</strong> generates dynamic, time-bound credentials for many different databases. Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by Roger Berlind) 
 walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=scHCqmR25BE">"Hashicorp Vault Dynamic Secrets Demo" by TeKanAid
 
-<a name="Consult"></a>
+
+<a name="VaultSaaS"></a>
+
+## Vault SaaS (HCP) first time with Dev public IP
+
+Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
+
+1. At <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
+1. Obtain an account using your email and password.
+1. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
+1. At the "Overview" page, click "Deploy Vault" for your organization.
+1. Create a Vault Cluster ID (named "vault-cluster" by default). 
+1. Note the Network region (such as "Oregon us-west-2")
+1. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
+1. <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
+   * To start with, select Vault tier: "Development" to be associated with an "Extra Small" Cluster size of 2 vCPU/ 1GiB RAM for $0.30/hr = $7.20/day = $216/month (of 30 days) = $2,592/year
+   * Starter of $0.50/hr = $12/day = $360/month = $4,320/year
+   * Standard of $1.578/hr = $37.87/day = $1,136.16/month = $13,633.92/year
+   * Plus of $1.844/hr = $44.26/day = $1327.68/month = $15,932.16/year
+   <br /><br />
+1. Confirm Network settings (such as CIDR block 172.25.16/0/20, a non-routable address space).
+1. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
+1. PROTIP: <strong>Delete the cluster</strong> while you study the configuration process.
+
+   If you selected "Development" at $0.30/hour, that $50 trial gets you about <strong>7 days</strong> of run time.
+   <br /><br />
+
+   
+   ### Configure for Authentication
+
+1. To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
+
+   Connection between AWS VPC and HCP HVN is using VPC Peering.
+
+1. Read HCP Vault documentation at:
+
+   https://cloud.hashicorp.com/docs/vault
+
+
+1. Click "Manage" to Import to Terraform:
+
+   <pre>terraform import hcp_vault_cluster.&LT;RESOURCE_NAME> vault-cluster</pre>
+
+1. Click "Access Vault" for "Command-line (CLI)".
+1. Click "Use public URL" and click the copy icon to save to your Clipboard, for example:
+
+   <pre>export VAULT_ADDR="https://vault-cluster.vault.a17838e5-60d2-4e49-a43b-cef519b694a5.aws.hashicorp.cloud:8200"; export VAULT_NAMESPACE="admin"</pre>
+
+1. Paste the value ???
+
+1. Authenticate to Vault at https://www.vaultproject.io/docs/concepts/auth#authenticating
+   
+   <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]</pre>
+
+1. https://learn.hashicorp.com/tutorials/vault/getting-started-apis
+
+
+
+
+<hr />
+
+<a name="Consul"></a>
 
 ## Install Consul server
 
 Consul coordinates several instances of Vault server software.
 
 Using Hashicorp's Consul as a <strong>backend</strong> to Vault provides durable storage of encrypted data at rest necessary for fault tolerance, availability, and scalability.
-
-Hashicorp's Nomad ???
 
 
 <a name="envconsul"></a>
@@ -689,6 +751,10 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
    
    <pre>Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')
    </pre>
+
+1. Where is the release simver among History of releases on GitHub?
+
+   <a target="_blank" href="https://github.com/hashicorp/vault/releases">https://github.com/hashicorp/vault/releases</a>
 
 1. Verify location:
 
@@ -1164,6 +1230,10 @@ log files:
 
 ### Binary install
 
+Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a> with a marketing home page at
+<a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
+
+
 1. Hashicorp's steps for installing Vault are at
    <a target="_blank" href="https://vaultproject.io/docs/install/">
    https://vaultproject.io/docs/install</a>.
@@ -1176,9 +1246,9 @@ log files:
    * vault_0.7.3_darwin_amd64.zip for Mac 64 expands to a vault app of 59.6 MB.
    <br /><br />
 
-0. Verify the SHA256 hash.
+0. Verify the SHA256 hash to ensure that not a single bit was lost during download.
 
-0. On a Mac, drag and drop the vault app file to your root Applications folder.
+0. On a Mac, drag and drop the Vault.app file to your root Applications folder.
 
 0. <a target="_blank" href="https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux">Set the PATH</a> to Vault.
 
@@ -1842,6 +1912,9 @@ On <a target="_blank" href="https://www.youtube.com/channel/UC-AdvAxaagE9W2f0web
 <a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
 
 <a target="_blank" href="https://learn.acloud.guru/course/hashicorp-vault/overview">ACloudGuru.com's HashiCorp Vault</a> 18 hour video course by <a target="_blank" href="https://www.linkedin.com/in/ermin-kreponic-0a420715b/">Ermin Kreponic (a resident of Sarajevo)</a>.
+
+At Oreilly.com, <a target="_blank" href="https://www.oreilly.com/videos/getting-started-with/1018947658/">
+"Getting Started with HashiCorp Vault"</a> December 2019 by Bryan Krausen (of Skylines academy, HashiTimes newsletter, and BOOK: <a target="_blank" href="https://www.amazon.com/Running-HashiCorp-Vault-Production-McTeer/dp/B08LNQML27/ref=sr_1_1?keywords=running+hashicorp+vault+in+production&qid=1647712738/" title="October 24, 2020">"Running HashiCorp Vault in Production Paperback"</a> with Dan McTeer
 
 https://www.vaultproject.io/docs/internals/security/
 Security Model
