@@ -16,25 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here is a hands-on tutorial about how to install and use Hashicorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
-
-The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
-This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
-
-Vault's secret handling features are provided by several Hashicorp offerings:
-
-   * A local client app/exe on your laptop, which can also provide dev-mode Vault services.
-   * A "self-managed" OSS Vault server you install in your cloud environment (AWS, Azure, GCP, etc.) 
-   * Paid <a href="#VaultSaaS">Vault SaaS services<a> provided by HCP (Hashicorp's Cloud Platform)
-   <br /><br />
-
-https://cloud.hashicorp.com/docs/vault summarizes the differences between "Self-managed" and HCP Vault cluster.
-
-As with other SaaS products, one can interact with Vault using its GUI, CLI, or API.
-
-<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
-Hashicorp provides Vault free under open-source licensing. Pay for an Enterprise license for Replication, Diaster Recovery, Namespaces, Monitoring, and support. Hashicorp can provide a list of services partners.
-
 Hashicorp Vault's basic job is to provide applications <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> to access databases and other services:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
@@ -45,19 +26,46 @@ Hashicorp Vault's basic job is to provide applications <a target="_blank" href="
    4. Return a client token for the application
    <br /><br />
 
-At the end of this tutorial, you should be able to:
+Vault replaces static long-running secrets with dynamic secrets with a short lifetime (a few hours).
 
-* <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>
-* <a href="#Config">Initialize and Configure Vault</a>
-* <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
-* <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
+As with other SaaS products, one can interact with Vault using its GUI, CLI, or API.
+This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
-* <a href="#InstallServer">On a server install Vault and Consul (using Docker)</a>
-* <a href="#InstallEKS">Install Vault within an AWS EKS cluster</a>
+Vault's secret handling features are provided several ways. The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
-* Hashicorp Nomad passes secrets as files. It polls for changed values. Tasks get tokens so they can retrieve values.
-<br /><br />
+   * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (Hashicorp's Cloud Platform) "Developement" environment which requires only configuration and no installation.
 
+   * <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>, which can also provide dev-mode Vault services.
+
+   * A "self-managed" OSS Vault server you install in your local machine for developer learning.
+
+   * A "self-managed" OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a cluster with 5 Vault nodes over 3 availability zones. <a href="#InstallEKS">AWS EKS cluster</a> 
+
+   * <a href="#InstallServer">On a server install Vault and Consul (using Docker)</a> based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>
+
+<a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
+
+Here is a hands-on tutorial about how to install and use Hashicorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
+
+<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
+Hashicorp provides Vault free under open-source licensing. Pay for an Enterprise license for MFA, Replication, Diaster Recovery, Namespaces, Monitoring, FIPS 140-2 and quicker support. Hashicorp can provide a list of services partners.
+
+https://github.com/hashicorp/vault-guides
+provides the technical content to support the Vault learn site.
+
+## Use cases
+
+Once a Vault instance is available, we dive into:
+
+   * <a href="#Config">Initialize and Configure Vault</a>
+   
+   * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
+   * <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
+   * Within a Golang program
+
+   * Obtain a certificate (instead of manually requesting a CSR and importing the certificate)
+
+<hr />
 
 <a name="Secrets"></a>
 
@@ -287,6 +295,7 @@ In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
    * Rotate the encryption key
    <br /><br />
 
+
 ## Vault Operations Professional exam 
 
 HashiCorp’s Vault Operations Pro Certification Is Lab-Based
@@ -329,6 +338,7 @@ walks you through the generation of dynamic credentials for a MySQL database tha
 
 ## Vault SaaS (HCP) first time with Dev public IP
 
+<a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>:
 Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
 
 1. At <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
@@ -351,8 +361,22 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
    If you selected "Development" at $0.30/hour, that $50 trial gets you about <strong>7 days</strong> of run time.
    <br /><br />
 
-   
+   <a name="Config"></a>
+
    ### Configure for Authentication
+
+1. Configure at least one audit device to write log (before completing the request):
+
+   <pre><strong>vault audit enable file file_path=/var/log/vault_audit.log</strong></pre>
+
+
+   <a name="AWS"></a>
+
+   ### AWS 
+
+   A prerequisite are AWS Credentials to an AWS account.
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-provider-vault?in=vault/cloud-ops">Tutorial: Deploy HCP Valut with Terraform</a> example scenario automatically deploys an AWS VPC, and peers it with your HashiCorp Virtual Network (HVN).
 
 1. To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
 
@@ -370,7 +394,9 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 1. Click "Access Vault" for "Command-line (CLI)".
 1. Click "Use public URL" and click the copy icon to save to your Clipboard, for example:
 
-   <pre>export VAULT_ADDR="https://vault-cluster.vault.a17838e5-60d2-4e49-a43b-cef519b694a5.aws.hashicorp.cloud:8200"; export VAULT_NAMESPACE="admin"</pre>
+   <pre>export VAULT_ADDR="https://vault-cluster.vault.a17838e5-60d2-4e49-a43b-cef519b694a5.aws.hashicorp.cloud:8200"; 
+export VAULT_NAMESPACE="admin"
+   </pre>
 
 1. Paste the value ???
 
@@ -381,6 +407,8 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 1. https://learn.hashicorp.com/tutorials/vault/getting-started-apis
 
 
+Provision a Dev Vault Cluster on AWS with Terraform
+
 
 
 <hr />
@@ -389,9 +417,15 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
 ## Install Consul server
 
+To <a target="_blank" href="Provision a Quick Start Vault & Consul Cluster on AWS with Terraform">provision a Quick Start Vault & Consul Cluster on AWS with Terraform</a>
+
 Consul coordinates several instances of Vault server software.
 
 Using Hashicorp's Consul as a <strong>backend</strong> to Vault provides durable storage of encrypted data at rest necessary for fault tolerance, availability, and scalability.
+
+## Nombad
+
+Hashicorp Nomad passes secrets as files. It polls for changed values. Tasks get tokens so they can retrieve values.
 
 
 <a name="envconsul"></a>
@@ -504,15 +538,57 @@ NOTE: Labs timeout every 2 hours.
 
 * Run a Production Server - Configure, run, initialize, and unseal a production mode Vault server.
 
+   ### Vault Initialization
+
+   *    https://www.vaultproject.io/docs/concepts/seal/
+   <br /><br />
+
    Production servers are configured by a <a target="_blank" href="https://www.vaultproject.io/docs/configuration/">vault-config.hcl file</a> (in folder /vault/config) read by <a target="_blank" href="https://www.vaultproject.io/docs/commands/operator/init/">server init command</a>
 
    <pre><strong>vault server -config=/vault/config/vault-config.hcl
    vault operator init -key-shares=1 -key-threshold=1
    </strong></pre>
 
-   NOTICE that vault command parameters have a single dash, not a double-dash.
+   REMEMBER: Vault command parameters have a single dash, not a double-dash.
 
-   https://www.vaultproject.io/docs/concepts/seal/
+   Vault init generates (using Shamir algorithm) 5 Unseal <tt>-key-shares</tt>, of which a <tt>-key-threshold</tt> quorum of 3 different employees are needed to <strong>Unseal</strong> the server to generate a <strong>Master encryption key</strong>, which is used to protect (encrypt) Data Encryption keys <strong>stored with data</strong> encrypted.
+
+   Each shard can be encrypted with a different PGP key for each person with a shard.
+
+1. Repeat <tt>vault operator unseal</tt> to input each shard key.
+
+   The Root Token is used to initialize Vault, then thrown away.
+
+1. Alternately, use <strong>Cloud Auto Unseal</strong> by retrieving a Master Key by supplying a Key ID stored in a HSM within a cloud (AWS KMS, Google Cloud KMS, Azure Key Vault, etc.). For example, in the Vault config file:
+
+   <pre>seal "awskms" {
+   region = "us-east-1"
+   kms_key_id = "abcd123-abcd123-abcd123-abcd123-abcd123"
+   }
+   </pre>
+
+   NOTE: The Master Key remains memory-resident in a Vault Node memory and not stored.
+
+1. Alternately, use <strong>Vault Transit Unseal</strong> by referencing a separate (leveraged) HA central Core Vault Cluster running the  <strong>Vault Transit engine</strong> configured with this example:
+
+   <pre>seal "transit" {
+  address = "https://vault:8200"
+  token = "s.QsGo2dfFGqIIOCLFWFE"
+  disable_renewal = "false"
+  // Key configuration:
+  key_name = "transit_key_name"
+  mount_path = "transit/"
+  namespace = "nsl/"
+  // TLS Configuration:
+  tls_ca_cert = "/etc/vault/ca_cert.pem"
+  tls_client_cert = "/etc/vault/client_cert.pem"
+  tls_client_key = "/etc/vault/ca_cert.pem"
+  tls_server_name = "vault"
+  tls_skip_verify = "false"
+}
+   </pre>   
+
+   ### VAULT_TOKEN
 
    Save the unseal key response and an initial root token to set the "VAULT_TOKEN" environment variable, using the initial root token that the "init" command returned:
 
@@ -1634,7 +1710,7 @@ Use libraries for:
 * C#
 * Java
 * Node JavaScript
-* Golang
+* <a href="#Golang">Golang</a>
 <br /><br />
 
 Several Vault clients have been written.
@@ -1702,6 +1778,46 @@ It specifies Consul as the backend to store secrets. Consul runs in HA mode. <tt
    cat keys.txt
    </pre>
 
+<hr />
+
+<a name="Golang"></a>
+
+### Golang
+
+https://github.com/Omar-Khawaja/vault-example/blob/master/main.go
+
+   <pre>package main
+&nbsp;
+import (
+	"fmt"
+	"github.com/hashicorp/vault/api"
+	"os"
+)
+&nbsp;
+var token = os.Getenv("TOKEN")
+var vault_addr = os.Getenv("VAULT_ADDR")
+&nbsp;
+func main() {
+	config := &api.Config{
+		Address: vault_addr,
+	}
+	client, err := api.NewClient(config)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	client.SetToken(token)
+	c := client.Logical()
+	secret, err := c.Read("secret/data/foo")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	m := secret.Data["data"].(map[string]interface{})
+	fmt.Println(m["hello"])
+}
+   </pre>
+
 
 <hr />
 
@@ -1738,6 +1854,7 @@ namic Credentials and Encryption as a data service, and "Policy as Code" vs "Sec
 VIDEO COURSE: Getting Started with HashiCorp Vault</a>
 by <a target="_blank" href="https://www.linkedin.com/in/bryan-krausen-5ab8794/">Bryan Krausen</a> (@btkrausen)
 
+
 ## Database
 
 https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
@@ -1762,9 +1879,9 @@ https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
 
 1. Configure the Database Secrets Engine on the Vault server.
 
-All secrets engines must be configured before they can be used.
+   All secrets engines must be configured before they can be used.
 
-We first need to configure the database secrets engine to use the MySQL database plugin and valid connection information. We are configuring a database connection called "wsmysqldatabase" that is allowed to use two roles that we will create below.
+   We first need to configure the database secrets engine to use the MySQL database plugin and valid connection information. We are configuring a database connection called "wsmysqldatabase" that is allowed to use two roles that we will create below.
 
    <pre>vault write lob_a/workshop/database/config/wsmysqldatabase \
   plugin_name=mysql-database-plugin \
@@ -1780,54 +1897,65 @@ We first need to configure the database secrets engine to use the MySQL database
 
    To test this, try running this command:
 
-   vault read lob_a/workshop/database/config/wsmysqldatabase
+   <pre><strong>vault read lob_a/workshop/database/config/wsmysqldatabase
+   </strong></pre>
 
-ey                                   Value
+   <pre>ey                                   Value
 ---                                   -----
 allowed_roles                         [workshop-app workshop-app-long]
 connection_details                    map[connection_url:{{username}}:{{password}}@tcp(localhost:3306)/ username:hashicorp]
 plugin_name                           mysql-database-plugin
 root_credentials_rotate_statements    []
+   </pre>
 
    You will not see the username and password.
 
-We used the initial MySQL username "hashicorp" and password "Password123" above. Validate that you can login to the MySQL server with this command:
+   We used the initial MySQL username "hashicorp" and password "Password123" above. Validate that you can login to the MySQL server with this command:
 
-mysql -u hashicorp -pPassword123
-You should be given a mysql> prompt.
+   <pre><strong>mysql -u hashicorp -pPassword123
+   </strong></pre>
 
-Logout of the MySQL server by typing \q at the mysql> prompt. This should return you to the root@vault-mysql-server:~# prompt.
+   You should be given a mysql> prompt.
 
-We can make the configuration of the database secrets engine even more secure by rotating the root credentials (actually just the password) that we passed into the configuration. We do this by running this command:
+   Logout of the MySQL server by typing \q at the mysql> prompt. This should return you to the root@vault-mysql-server:~# prompt.
 
-vault write -force lob_a/workshop/database/rotate-root/wsmysqldatabase
-This should return "Success! Data written to: lob_a/workshop/database/rotate-root/wsmysqldatabase".
+   We can make the configuration of the database secrets engine even more secure by rotating the root credentials (actually just the password) that we passed into the configuration. We do this by running this command:
 
-Now, if you try to login to the MySQL server with the same command given above, it should fail and give you the message "ERROR 1045 (28000): Access denied for user 'hashicorp'@'localhost' (using password: YES)". Please verify that:
+   <pre><strong>vault write -force lob_a/workshop/database/rotate-root/wsmysqldatabase
+   </strong></pre>
 
-mysql -u hashicorp -pPassword123
-Note: You should not use the actual root user of the MySQL database (despite the reference to "root credentials"); instead, create a separate user with sufficient privileges to create users and to change its own password.
+   This should return "Success! Data written to: lob_a/workshop/database/rotate-root/wsmysqldatabase".
 
-Now, you should create the first of the two roles we will be using, "workshop-app-long", which generates credentials with an initial lease of 1 hour that can be renewed for up to 24 hours.
+   Now, if you try to login to the MySQL server with the same command given above, it should fail and give you the message "ERROR 1045 (28000): Access denied for user 'hashicorp'@'localhost' (using password: YES)". Please verify that:
 
-vault write lob_a/workshop/database/roles/workshop-app-long \
+   <pre><strong>mysql -u hashicorp -pPassword123
+   </strong></pre>
+
+   Note: You should not use the actual root user of the MySQL database (despite the reference to "root credentials"); instead, create a separate user with sufficient privileges to create users and to change its own password.
+
+   Now, you should create the first of the two roles we will be using, "workshop-app-long", which generates credentials with an initial lease of 1 hour that can be renewed for up to 24 hours.
+
+   <pre>vault write lob_a/workshop/database/roles/workshop-app-long \
   db_name=wsmysqldatabase \
   creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL ON my_app.* TO '{{name}}'@'%';" \
   default_ttl="1h" \
   max_ttl="24h"
-This should return "Success! Data written to: lob_a/workshop/database/roles/workshop-app-long".
+   </pre>
 
-And then create the second role, "workshop-app" which has shorter default and max leases of 3 minutes and 6 minutes. (These are intentionally set long enough so that you can use the credentials generated for the role to connect to the database but also see them expire in the next challenge.)
+   This should return "Success! Data written to: lob_a/workshop/database/roles/workshop-app-long".
 
-vault write lob_a/workshop/database/roles/workshop-app \
+   And then create the second role, "workshop-app" which has shorter default and max leases of 3 minutes and 6 minutes. (These are intentionally set long enough so that you can use the credentials generated for the role to connect to the database but also see them expire in the next challenge.)
+
+   <pre>vault write lob_a/workshop/database/roles/workshop-app \
   db_name=wsmysqldatabase \
   creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL ON my_app.* TO '{{name}}'@'%';" \
   default_ttl="3m" \
   max_ttl="6m"
-This should return "Success! Data written to: lob_a/workshop/database/roles/workshop-app".
+   </pre>
 
-The database secrets engine is now configured to talk to the MySQL server and is allowed to create users with two different roles. In the next challenge, you'll generate credentials (username and password) for these roles.
+   This should return "Success! Data written to: lob_a/workshop/database/roles/workshop-app".
 
+   The database secrets engine is now configured to talk to the MySQL server and is allowed to create users with two different roles. In the next challenge, you'll generate credentials (username and password) for these roles.
 
 
 * Generate and use dynamic database credentials for the MySQL database.
