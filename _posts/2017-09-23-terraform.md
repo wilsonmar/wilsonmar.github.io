@@ -430,6 +430,14 @@ It was migrated from homebrew/cask to homebrew/core.
 
    Note there are back versions of terraform (11, 12, 13, etc.).
 
+   ### Several versions of Terraform
+
+1. PROTIP: To switch among different versions of Terraform, one option is to use little-known Homebrew pin and switch commands pointing to different git commits, as described at:
+   https://blog.gruntwork.io/installing-multiple-versions-of-terraform-with-homebrew-899f6d124ff9
+
+
+   ### Standard Homebrew install
+
 1. Is there a brew for Terraform?
    
    <pre><strong>brew info terraform</strong></pre>
@@ -637,7 +645,7 @@ sudo unzip terraform_0.11.5_linux_amd64.zip -d /usr/local/bin/
 
 <a name="LinuxDocker"></a>
 
-### Install on Linux to use Docker
+### Install on Linux using Docker
 
 1. To install Docker CE on Linux:
 
@@ -1068,7 +1076,7 @@ Others:
 
 ### Gruntwork's sample
 
-   <a target="_blank" href="#Gruntwork">Gruntwork.io</a> offers (for $4,950), access to their 250,000-line Reference Architecture of starter code to create a production-worthy "defense in depth" setup on AWS:
+   <a target="_blank" href="#Gruntwork">Gruntwork.io</a> offers (for $795/month = $9,500/year), access to their 250,000-line Reference Architecture of (opinionated) starter code to create a <strong>production-worthy "defense in depth"</strong> setup on AWS:
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg">
    <img width="683" alt="terraform-ref-arch-683x407-106209" src="https://user-images.githubusercontent.com/300046/39746950-248190d8-5269-11e8-840d-ba14a45499bc.jpg"></a>
@@ -1081,7 +1089,14 @@ Others:
    * <a target="_blank" href="https://gruntwork.teachable.com/courses/reference-architecture-walkthrough/lectures/4211737">Code organization overview</a>
    <br /><br />
 
-For those without the big bucks, Yevegeniy (Jim) Brikman (<a target="_blank" href="https://www.ybrikman.com/">ybrikman.com</a>, co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/">Gruntwork.io</a>) has generously shared:
+The <a target="_blank" href="https://docs.gruntwork.io/docs/guides/production-framework/">
+Gruntwork Production Framework</a> organizes <a target="_blank" href="https://docs.gruntwork.io/guides/production-framework/gruntwork-solutions/#gruntwork-solutions">app solutions</a> for going to production on the public cloud:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/159250473-b6c8cb36-e6b6-4c23-b176-8fb7734b7c27.png">
+<img alt="terraform-gruntwork-prod-framework-22-02" width-="696" height="771" src="https://user-images.githubusercontent.com/300046/159250473-b6c8cb36-e6b6-4c23-b176-8fb7734b7c27.png"></a>
+
+
+For those who can't subscribe, Yevegeniy (Jim) Brikman (<a target="_blank" href="https://www.ybrikman.com/">ybrikman.com</a>, co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/">Gruntwork.io</a>) has generously shared:
 
    * <a target="_blank" href="
    https://github.com/gruntwork-io/intro-to-terraform">

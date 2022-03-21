@@ -37,6 +37,8 @@ Vault's secret handling features are provided several ways. The unique contribut
 
    * <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>, which can also provide dev-mode Vault services running in memory.
 
+   * Install a "self-managed" in AWS with a <strong>S3 backend</strong>
+
    * <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
 
    * Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
@@ -290,7 +292,7 @@ In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
    <br /><br />
 
 10	Explain encryption as a service
-    * Configure transit secret engine
+   * Configure transit secret engine
    * Encrypt and decrypt secrets
    * Rotate the encryption key
    <br /><br />
@@ -298,7 +300,54 @@ In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
 
 ## Vault Operations Professional exam 
 
-HashiCorp’s Vault Operations Pro Certification Is Lab-Based
+<a target="_blank" href="https://www.hashicorp.com/certification/vault-operations-professional">
+HashiCorp’s Vault Operations Pro Certification</a> is a $295 4-hour hands-on lab-based as well as multiple-choice.
+
+
+1	Create a working Vault server configuration given a scenario
+   * 1a	Enable and configure secret engines
+   * 1b	Practice production hardening
+   * 1c	Auto unseal Vault
+   * 1d	Implement integrated storage for open source and Enterprise Vault
+   * 1e	Enable and configure authentication methods
+   * 1f	Practice secure Vault initialization
+   * 1g	Regenerate a root token
+   * 1h	Rekey Vault and rotate encryption keys
+
+2	Monitor a Vault environment
+   * 2a	Monitor and understand Vault telemetry
+   * 2b	Monitor and understand Vault audit logs
+   * 2c	Monitor and understand Vault operational logs
+
+3	Employ the Vault security model
+   * 3a	Describe secure introduction of Vault clients
+   * 3b	Describe the security implications of running Vault in Kubernetes
+
+4	Build fault-tolerant Vault environments
+   * 4a	Configure a highly available (HA) cluster
+   * 4b	[Vault Enterprise] Enable and configure disaster recovery (DR) replication
+   * 4c	[Vault Enterprise] Promote a secondary cluster
+
+5	Understand the hardware security module (HSM) integration
+   * 5a	[Vault Enterprise] Describe the benefits of auto unsealing with HSM
+   * 5b	[Vault Enterprise] Describe the benefits and use cases of seal wrap (PKCS#11)
+
+6	Scale Vault for performance
+   * 6a	Use batch tokens
+   * 6b	[Vault Enterprise] Describe the use cases of performance standby nodes
+   * 6c	[Vault Enterprise] Enable and configure performance replication
+   * 6d	[Vault Enterprise] Create a paths filter
+
+7	Configure access control
+   * 7a	Interpret Vault identity entities and groups
+   * 7b	Write, deploy, and troubleshoot ACL policies
+   * 7c	[Vault Enterprise] Understand Sentinel policies
+   * 7d	[Vault Enterprise] Define control groups and describe their basic workflow
+   * 7e	[Vault Enterprise] Describe and interpret multi-tenancy with namespaces
+
+8	Configure Vault Agent
+   * 8a	Securely configure auto-auth and token sink
+   * 8b	Configure templating
 
 <hr />
 
@@ -1006,6 +1055,8 @@ Other commands:
 
    <pre><strong>exec $SHELL
    </strong></pre>
+
+   ### Auto-complete
 
 1. Use autocomplete by typing `vault k` then press tab to complete.
 
