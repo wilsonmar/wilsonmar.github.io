@@ -23,10 +23,24 @@ Hashicorp Vault's basic job is to provide applications <a target="_blank" href="
    1. Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
    2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
    3. Verification is obtained
-   4. Return a client token for the application
+   4. Return a client token for the application. The token has attached policy, which is mapped at authentication time, as the policy is deny all capabilities by default.
    <br /><br />
 
-Vault enables a better Security Posture by replacing static long-running secrets (to be stolen) with dynamic secrets with lifetimes of a few hours.
+Each policy defines a list of paths. Each path expresses the capabilites that are allowed.
+
+<pre>path "secret/data/{{identity.entity.id}}/*" {   
+   capabilities = ["create", "update", "read", "delete"] 
+}  
+path "secret/metadata/{{identity.entity.id}}/*" {   
+   capabilities = ["list"]
+}
+# List existing policies
+path "sys/policies/acl" {
+  capabilities = ["list"]
+}
+</pre>
+
+Vault enables a better Security Posture by replacing static long-running secrets (to be stolen) with dynamic secrets with lifetimes (TTL) of a few hours. Vault also enables a 3rd-party secrets provider across multiple clouds.
 
 As with other SaaS products, one can interact with Vault using its GUI, CLI, or API.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
@@ -97,6 +111,8 @@ And you can't simply remove a file in GitHub because old versions hidden in hist
 Coverage of what features a secrets service should have:
 
 * Server installed in <strong>sealed mode</strong> (provides no access)
+
+   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
 
 * RBAC (Role-based Access Control) so each user has only the rights for his/her specific role. This has to be enabled in Kubernetes:
 
@@ -217,7 +233,11 @@ database_password = get_secret('db_pass')
 
 ## Vault Skill Certification
 
-In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
+In 2020 Hashicorp offers (for just $70) an on-line certification exam for Vault.
+Answer 57 questions in 60 minutes.
+You must wait 7 days between exam attempts.
+You can only attempt an exam 4 times total in a one year period. 
+If you fail 3 exams, you must wait 365 days after your last exam to retake it again.
 
 1	Compare authentication methods
    * Describe authentication methods
@@ -297,12 +317,16 @@ In 2020 Hashicorp offers (for just $70) a 1 hour certification exam for Vault.
    * Rotate the encryption key
    <br /><br />
 
+Prep:
+   * https://www.whizlabs.com/blog/hashicorp-vault-certification/
+   * https://medium.com/bb-tutorials-and-thoughts/how-to-pass-hashicorp-vault-associate-certification-c882892d2f2b
+   * https://medium.com/bb-tutorials-and-thoughts/200-practice-questions-for-hashicorp-vault-associate-certification-ebd7f7d27bc0
 
 ## Vault Operations Professional exam 
 
 <a target="_blank" href="https://www.hashicorp.com/certification/vault-operations-professional">
 HashiCorp’s Vault Operations Pro Certification</a> is a $295 4-hour hands-on lab-based as well as multiple-choice.
-
+The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360049773991-What-are-the-HashiCorp-exam-retake-rules-">includes a free retake after 7 days but within 3 months</a>.
 
 1	Create a working Vault server configuration given a scenario
    * 1a	Enable and configure secret engines
@@ -366,13 +390,35 @@ Vault can work with many Secrets Engines selected in the GUI:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
 
-Protocols selected by each user (if configured):
+1. The policy to mount secret engines:
+
+   <pre>path "sys/mounts/*" {
+  capabilities = ["create", "read", "update", "delete", "list", "sudo"]
+}
+   </pre>
+
+A protocol for Auth Methods is selected by each user (if configured):
 
 <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png">
 <img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
 
+   <tt>vault auth list</tt>
 
-Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
+On developer machines, the GitHub auth method (<tt>auth/github</tt>) is easiest to use. 
+
+   <tt>vault auth enable github</tt>
+
+1. To configure GitHub engineering team authentication to be granted the default and application policies:
+
+   <pre>vault write auth/github/map/teams/emgineering value=default,applications</pre>
+
+But for servers the AppRole method is the recommended choice.
+It uses role_id and secret_id for login. 
+   * If the SecretID used for login is fetched from an AppRole, that is operating in Pull mode.
+   * If a "custom" SecretID is set against an AppRole by the client, that's Push mode.
+
+
+### Backend
 
 When the Vault server is started, it must be provided with a <strong>storage backend</strong> so that data is available across restarts. 
 Similarly, the HTTP API service must be started by the Vault server on start so that clients can interact with it.
