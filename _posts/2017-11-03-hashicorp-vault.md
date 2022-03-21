@@ -26,22 +26,22 @@ Hashicorp Vault's basic job is to provide applications <a target="_blank" href="
    4. Return a client token for the application
    <br /><br />
 
-Vault replaces static long-running secrets with dynamic secrets with a short lifetime (a few hours).
+Vault enables a better Security Posture by replacing static long-running secrets (to be stolen) with dynamic secrets with lifetimes of a few hours.
 
 As with other SaaS products, one can interact with Vault using its GUI, CLI, or API.
 This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
 
 Vault's secret handling features are provided several ways. The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
-   * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (Hashicorp's Cloud Platform) "Developement" environment which requires only configuration and no installation.
+   * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (Hashicorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
 
-   * <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>, which can also provide dev-mode Vault services.
+   * <a href="#LaptopInstall">On your laptop install vault.app on your laptop</a>, which can also provide dev-mode Vault services running in memory.
 
-   * A "self-managed" OSS Vault server you install in your local machine for developer learning.
+   * <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
 
-   * A "self-managed" OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a cluster with 5 Vault nodes over 3 availability zones. <a href="#InstallEKS">AWS EKS cluster</a> 
+   * Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
 
-   * <a href="#InstallServer">On a server install Vault and Consul (using Docker)</a> based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>
+   * Use Enterprise HCP
 
 <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
 
@@ -311,6 +311,18 @@ https://www.vaultproject.io/docs/internals/architecture</a>
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png">
 <img alt="vault-layers" src="https://user-images.githubusercontent.com/300046/83564966-cf8a6200-a4da-11ea-9bdf-1a2492c371df.png"></a>
 
+<a name="SecretEngines"></a>
+
+Vault can work with many Secrets Engines selected in the GUI:
+
+<img target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+
+Protocols selected by each user (if configured):
+
+<img title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png">
+<img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
+
+
 Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
 
 When the Vault server is started, it must be provided with a <strong>storage backend</strong> so that data is available across restarts. 
@@ -423,9 +435,63 @@ Consul coordinates several instances of Vault server software.
 
 Using Hashicorp's Consul as a <strong>backend</strong> to Vault provides durable storage of encrypted data at rest necessary for fault tolerance, availability, and scalability.
 
-## Nombad
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/159198511-5b2ea3df-6b48-499f-bee8-f73ea8e778bd.png"><img width="1533" alt="valut-consul-flow" src="https://user-images.githubusercontent.com/300046/159198511-5b2ea3df-6b48-499f-bee8-f73ea8e778bd.png"></a>
 
-Hashicorp Nomad passes secrets as files. It polls for changed values. Tasks get tokens so they can retrieve values.
+1. Consul Cluster server configurtion sample file <tt>/etc/consul.d/server/consul-node.json</tt>, replacing all caps with your own values:
+
+   <pre>{
+  "server": true
+  "node_name": "NODENAME",
+  "datacenter": "DATACENTERNAME",
+  "data_dir": "/var/consul/data",
+  "bind_addr": "0.0.0.0",
+  "client_addr": "0.0.0.0",
+  "domain": "HOSTAME.com",
+  "advertise_addr": "IPADDR",
+  "bootstrap_expect": 5,
+  "retry_join": ["provider=aws tag_key=consul tag_value=true"],
+  "ui": true,
+  "log_level": "DEBUG",
+  "enable_syslog": true,
+  "primary_datacenter": "DATACENTERNAME",
+  "acl": {
+     "enabled": true,
+     "default_policy": "allow",
+     "down_policy": "extend-cache"
+  },
+  "node_meta": {
+     "zone": "AVAILABILITYZONE"
+  }
+  "autopilot":{  # Enterprise feature
+     "redundancy_zone_tag": "zone"
+  }
+}
+   </pre>
+
+1. To see log entries:
+
+   <pre><strong>sudo tail -F /var/log/messages</strong></pre>
+
+1. Take a snapshot used to restore:
+
+   <pre><strong>consul snapshot save yymmdd-svr1.snap</strong></pre>
+
+   Response:
+
+   <pre>Saved and verified snapshot to index 123</pre>
+
+1. Inspect the snapshot:
+
+   <pre><strong>consul snapshot inspect yymmdd-svr1.snap</strong></pre>
+
+   Response is an ID, Size, Index, Term, Version.
+
+
+## Nomad
+
+Hashicorp Nomad passes secrets as files. 
+
+It polls for changed values. Tasks get tokens so they can retrieve values.
 
 
 <a name="envconsul"></a>
@@ -562,10 +628,15 @@ NOTE: Labs timeout every 2 hours.
 1. Alternately, use <strong>Cloud Auto Unseal</strong> by retrieving a Master Key by supplying a Key ID stored in a HSM within a cloud (AWS KMS, Google Cloud KMS, Azure Key Vault, etc.). For example, in the Vault config file:
 
    <pre>seal "awskms" {
-   region = "us-east-1"
-   kms_key_id = "abcd123-abcd123-abcd123-abcd123-abcd123"
-   }
+  region = "us-east-1"
+  # access_key = "AKIA..."  # use IAM Service Role instead
+  # secret_key = "..."
+  kms_key_id = "abcd123-abcd123-abcd123-abcd123-abcd123"
+  endpoint = "vpc endpoint"
+}
    </pre>
+
+   PROTIP: Store Vault configuration files at <tt>/etc/vault.d/vault.hcl</tt>
 
    NOTE: The Master Key remains memory-resident in a Vault Node memory and not stored.
 
@@ -586,7 +657,40 @@ NOTE: Labs timeout every 2 hours.
   tls_server_name = "vault"
   tls_skip_verify = "false"
 }
-   </pre>   
+   </pre>
+
+1. Other configuration stanzas:
+
+   <pre>listener "tcp" {
+  address = "0.0.0.0:8200"  # all machines
+  cluster_address = "0.0.0.8:8201"
+  tls_disable = "true"  # only in dev (not in PROD)
+  # tls_cert_key & tls_cert_file
+}
+// backend:
+storage "consul" {
+  address = "127.0.0.1:8500"  # locally
+  path = "vault/"
+}
+// Where to publish metrics to upstream systems:
+telemetry {
+  ...
+}
+log_level = "info"
+api_addr = "https://IPADDRESS:8200"
+ui = true
+cluster_name = "my_cluster"
+   </pre>
+
+
+1. After Vault is running, use the UI to configure:
+
+   * Secrets Engine
+   * Authentication Methods
+   * Audit Devices
+   * Policies
+   * Entities & Groups
+
 
    ### VAULT_TOKEN
 
