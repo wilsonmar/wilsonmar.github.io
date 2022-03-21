@@ -39,7 +39,7 @@ Vault's secret handling features are provided several ways. The unique contribut
 
    * <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
 
-   * Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.<br /><img target="_blank" href="https://user-images.githubusercontent.com/300046/159199941-61f0f30c-51c0-4f2e-b627-302c07627d16.png"><img width="1533" alt="vault-consul-flow" src="https://user-images.githubusercontent.com/300046/159199941-61f0f30c-51c0-4f2e-b627-302c07627d16.png"></a>
+   * Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
 
    * Use Enterprise HCP
 
@@ -336,9 +336,6 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html#1">
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
 
-
-Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">
-"Vault Encryption as a Service"</a> shows how Vault's Transit secrets engine provides encryption as a service.
 
 The <strong>Vault Database secrets engine</strong> generates dynamic, time-bound credentials for many different databases. Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by Roger Berlind) 
 walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
@@ -658,6 +655,9 @@ NOTE: Labs timeout every 2 hours.
   tls_skip_verify = "false"
 }
    </pre>
+
+   Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">"Vault Encryption as a Service"</a> shows how Vault's Transit secrets engine provides encryption as a service.
+
 
 1. Other configuration stanzas:
 
