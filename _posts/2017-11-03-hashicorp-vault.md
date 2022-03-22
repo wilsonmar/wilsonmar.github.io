@@ -246,7 +246,7 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
 
 3	Assess Vault tokens
    * Describe Vault token
-   * Differentiate between service and batch tokens. Choose one based on use-case
+   * Differentiate between <a href="#TokenTypes">service and batch tokens</a>. Choose one based on use-case
    * Describe root token uses and lifecycle
    * Define token accessors
    * Explain time-to-live
@@ -427,6 +427,8 @@ A protocol for Auth Methods is selected by each user (if configured):
    <pre>vault write auth/github/map/teams/engineering value=default,applications</pre>
 
 
+<a name="AppRole"></a>
+
 ### AppRole
 
 For servers, the AppRole method is recommended.
@@ -441,15 +443,16 @@ It uses role_id and secret_id for login.
    </pre>
 
 
+<a name="TokenTypes"></a>
 <a name="AttachedPolicy"></a>
 
-### Attached policies
+### Tokens with attached policies
 
 Within Vault, tokens map to information. The information mapped to each token is a set of one or more attached policies. Policies control what is allowed to be done with that information.
 
    * <strong>Service tokens</strong> support common features such as renewal, revocation, creating child tokens, and more. They are tracked and thus replicated, so are considered "heavyweight".
-
-   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/tokens#create-batch-tokens">Batch tokens</a>  can’t be renewed (can’t have an explicit max TTL), so requires no storage on disk to track and replicate, so are "lightweight" and scalable. Batch tokens can’t be root tokens and can’t be used to create tokens.
+                              
+   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/batch-tokens?in=vault/tokens">Batch tokens</a>  can’t be renewed (can’t have an explicit max TTL), so requires no storage on disk to track and replicate, so are "lightweight" and scalable. Batch tokens can’t be root tokens and can’t be used to create tokens.
 
 1. The admin who manages secrets engines needs to be given a policy with capabilities on <strong>mounts</strong> (of secrets engines):
 
@@ -1981,15 +1984,15 @@ See <a target="_blank" href="https://github.com/amarruedo/hashicorp-vault-jenkin
    ### GitHub Token
 
    <pre><strong>
-   vault auth -method=github token=GITHUB_ACCESS_TOKEN
+   vault auth -method=github token=<em>GITHUB_ACCESS_TOKEN</em>
    </strong></pre>
 
 Upon success, a Vault token will be stored at $HOME/.vault-token.
 
-   <pre><strong>vault list secret/path/to/bucket
+   <pre><strong>vault list secret/<em>path/to/bucket</em>
    </strong></pre>
 
-   This uses the token at $HOME/.vault-token if it exists. 
+   This uses the token at <tt>$HOME/.vault-token</tt> if it exists. 
 
    See http://chairnerd.seatgeek.com/practical-vault-usage/
 
