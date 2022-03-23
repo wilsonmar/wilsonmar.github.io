@@ -584,16 +584,17 @@ There is on-going debate about the Operating System to use with Kubernetes.
 
 In Beta as of March 2022, the <a target="_blank" href="ttps://github.com/talos-systems/talos/">open-source</a> headless Talos Linux OS was purpose-built for Kubernetes around the <a target="_blank" href="https://github.com/kubernetes-sigs/cluster-api">Cluster gRPC API (CAPI) project</a>'s <a target="_blank" href="https://cluster-api.sigs.k8s.io/introduction.html"><strong>clusterctl</strong></a> CLI tool. (CAPI is the common system for managing Kubernetes clusters in a declarative fashion.)
 Talos has no shell, no SSH, a read-only file system. 
-Talos' KubeSpan yaml config automates WireGuard encryption to securely add workers on remote networks. 
 
 The lifecycle of each Talos machine is managed by a <a target="_blank" href="https://www.linkedin.com/company/sidero-labs/">SideroLabs</a> (<a target="_blank" href="https://www.youtube.com/c/SideroLabs/videos">Videos</a>, <a target="_blank" href="https://www.sidero.dev/docs/latest/">sidero.dev</a>, <a target="_blank" href="https://twitter.com/siderolabs?lang=en">@SideroLabs</a>) workload cluster, open-sourced at <a target="_blank" href="https://github.com/siderolabs/sidero">github.com/siderolabs/sidero</a>. Sidero provides bootstrap/controlplane providers for running Talos machines on <strong>bare-metal</strong> x86 or arm64 machines on-prem, or <a target="_blank" href="https://www.sidero.dev/docs/v0.5/guides/sidero-on-rpi4/">on Raspberry Pi</a> (<a target="_blank" href="https://www.youtube.com/watch?v=aHu1lFir7UU" title="Mar 10, 2021">VIDEO</a> by <a target="_blank" href="https://www.linkedin.com/in/spencersmith23/">Spencer Smith</a>: "metal-rpl_4-arm64.img.xz" on 16GB SD). 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=LryECwitUcw&t=52s">VIDEO</a>: Try within Docker on MacOS.
 
 Sidero offers a declarative way to provision, assign, wipe servers ("machines as cattle"). 
-Sidero uses port 8081 for a combined iPXE and gRPC service, UDP 69 for TFTP, and UDP 51821 for the IPv6 SideroLink Wireguard keyed point-to-point connections. Sidero <a target="_blank" href="https://www.sidero.dev/docs/v0.5/resource-configuration/servers/#ipmi">uses</a> IPMI information to control Server power state, reboot servers and set boot order.
+Sidero uses port 8081 for a combined iPXE and gRPC service, UDP 69 for TFTP, and UDP 51821 for the IPv6 SideroLink Wireguard keyed point-to-point connections. Talos' KubeSpan yaml config automates WireGuard encryption to securely add workers on remote networks. KubeSpan delivers a solution to the coordination and key exchange problem, allowing all nodes to discover and communicate in an encrypted channel with all other nodes – even across NAT and firewalls. It supports roaming of devices, and transparently handles the correct encryption of traffic that is destined to another member of the cluster, while leaving other traffic unencrypted. This enables Kubernetes to operate <a target="_blank" href="https://www.siderolabs.com/blog/kubespan-and-multi-cloud-kubernetes/">multi-region/multi-cloud</a>.
 
 An <a target="_blank" href="https://www.sidero.dev/docs/v0.5/getting-started/prereq-dhcp/">ISC DHCP server</a> (such as on Ubiquiti EdgeRouter products) <a target="_blank" href="https://www.sidero.dev/docs/v0.5/getting-started/">is needed</a>.
+
+Sidero <a target="_blank" href="https://www.sidero.dev/docs/v0.5/resource-configuration/servers/#ipmi">uses</a> IPMI information to control Server power state, reboot servers and set boot order.
 
 Talos node sends over the <a target="_blank" href="https://www.sidero.dev/docs/v0.5/overview/siderolink/">SideroLink</a> connection two streams: kernel logs (dmesg) and Talos events.
 
