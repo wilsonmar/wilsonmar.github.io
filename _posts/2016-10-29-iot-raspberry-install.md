@@ -23,6 +23,7 @@ Several operating systems can be installed on a Raspberry Pi:
 * <a target="_blank" href="https://developer.android.com/things/get-started/index.html">AndroidThings</a> from Google (another page)
 * Windows 10 IoT from Microsoft (another page)
 * <a target="_blank" href="https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython">CircuitPython</a> from Adafruit
+* <a target="_blank" href="https://wilsonmar.github.io/kubernetes/#sidero-talos-os-on-bare-metal">Sidero Talos OS for Kubernetes</a>
 * Raspbian, a derivative of Debian Linux (described on this page, below):
 <br /><br />
 
