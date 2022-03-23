@@ -341,14 +341,16 @@ It also has a "kube-public" namespace where nothing runs, but contains a ConfigM
 Now <a href="#KublectlCommands">proceed to use other Kublectl commands</a>.
 
 
-### Qwiklabs
+   <a name="acloudguru"></a>
 
-Occassionally, Google offers free time.
+   ### ACloudGuru
 
-### ACloudGuru
+* <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
 
-1. <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
-
+* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
+has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB&technologies%5B0%5D=Kubernetes">guided Labs</a> and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground sandboxes</a> on AWS, GCP, and Azure.
+   
+   <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
 
 
    <a name="CloudAcademy"></a>
@@ -364,6 +366,8 @@ Occassionally, Google offers free time.
 
    <a name="KodeKloud"></a>
 
+   ### KodeKloud
+
 * STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified troubleshooting where it provides a situation you have to figure out the commands, just like in the certification tests.
 
    A KodeKloud subscription includes access to a KataKoda-powered <a target="_blank" href="https://kodekloud.com/courses/enrolled/675122">lab environment</a> for <strong>one hour at a time</strong>, then you have to start over. The instances come up quickly, though. 
@@ -372,17 +376,14 @@ Occassionally, Google offers free time.
 
    PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
 
-   <a name="acloudguru"></a>
-
-* <a target="_blank" href="https://acloudguru.com/">https://acloudguru.com</a>
-has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learningTypes%5B0%5D=ACG_HANDS_ON_LAB&technologies%5B0%5D=Kubernetes">guided Labs</a> and <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">playground sandboxes</a> on AWS, GCP, and Azure.
-   
-   <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
-
 
    <a name="Qwiklabs"></a>
 
+   ### Qwiklabs
+
 * <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. 
+
+   Occassionally, Google offers free time.
 
    Try the FREE <a target="_blank" href="https://google.qwiklabs.com/focuses/8586?parent=catalog">30-minute Kubernetes Engine: Qwik Start</a> which is one of the "quests" in Google's 
    <a target="_blank" href="https://webinars-run.qwiklab.com/quests/29">Kubernetes in the Google Cloud Qwiklab quest</a>. Tasks:
@@ -406,14 +407,15 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
 
    <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. 
 
-* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
+   ### Others
 
+* <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
 
 
 <a name="HandsOnLabs"></a>
 
-##  Hands-on Demos/labs
+## Hands-on Demos/labs
 
 I think the quickest yet deepest way to learn Kubernetes is to follow step-by-step instructions after seeing <strong>guided</strong> <strong>Labs ("demos")</strong> using pre-loaded data. Hands-on practice is how you develop the "muscle memory" need to operate Kubernetes confidently.
 
@@ -495,7 +497,7 @@ Use uniq to aggregate image counts
 
 <a name="Sidecars"></a>
 
-### Sidecards within Pods 
+### Sidecars within Pods 
 
 Those who choose to use the <a target="_blank" href="https://wilsonmar.github.io/service-mesh">Service Mesh Istio architecture</a> place an "Envoy proxy" in each Pod to facilitate communictions and retry logic from app containers with business logic.
 
@@ -542,31 +544,60 @@ The Kubernetes <strong>Master Node</strong> has several services processes which
 
 ## Core K8s Internals 
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
-
-   The above diagram (from CloudAcademy) illustrates core technical concepts about Kubernetes.
-   In the center at the right:
-   
-   Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
-
-   <a href="#Volumes">Volumes of persistent data storage</a>
-
 Kubernetes automates resilience by abstracting the network and storage shared by ephemeral replaceable <strong>pods</strong> which the Kubernetes Controller replicates to increase capacity.
 
 ![k8s-pod-sharing-324x247](https://user-images.githubusercontent.com/300046/103014494-12099f80-44fc-11eb-9e4e-3380963051da.png)
 <a target="_blank" href="https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke/lecture/8l95i/kubernetes-concepts">*</a>
 
+   This diagram (from CloudAcademy) illustrates core technical concepts about Kubernetes.
+   In the center at the right:  
 
+   <a target="_blank" href="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"><img alt="k8s-cloudacademy-after" src="https://user-images.githubusercontent.com/300046/95297556-e4378780-0837-11eb-9d12-7c924dc0f449.png"></a>
+
+   Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
+
+   <a href="#Volumes">Volumes of persistent data storage</a>
+
+
+### Auto-Scaling
 
 Within AWS, Auto Scaling Groups (ASGs) are used to scale nodes.
 
-* https://spot.io/resources/kubernetes-autoscaling-3-methods-and-how-to-make-them-great/
-* https://spot.io/resources/kubernetes-autoscaling/kubernetes-replicaset-kubernetes-scalability-explained/
-<br /><br />
+   * https://spot.io/resources/kubernetes-autoscaling-3-methods-and-how-to-make-them-great/
+   * https://spot.io/resources/kubernetes-autoscaling/kubernetes-replicaset-kubernetes-scalability-explained/
+   * https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-vertical-autoscaler.html
+   <br /><br />
 
 <a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
 <a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
 
+VPA (Vertical Pod Autoscaler)
+
+<a name="SideroTalos"></a>
+
+## Sidero Talos OS on Bare Metal
+
+Since Kubernetes manages stuff, how about running it on bare-metal machines, get the most performance
+possible out of the hardware, with minimal overhead?
+
+There is on-going debate about the Operating System to use with Kubernetes.
+
+In Beta as of March 2022, the <a target="_blank" href="ttps://github.com/talos-systems/talos/">open-source</a> headless Talos Linux OS was purpose-built for Kubernetes around the <a target="_blank" href="https://github.com/kubernetes-sigs/cluster-api">Cluster gRPC API (CAPI) project</a>'s <a target="_blank" href="https://cluster-api.sigs.k8s.io/introduction.html"><strong>clusterctl</strong></a> CLI tool. (CAPI is the common system for managing Kubernetes clusters in a declarative fashion.)
+Talos has no shell, no SSH, a read-only file system. 
+Talos' KubeSpan yaml config automates WireGuard encryption to securely add workers on remote networks. 
+
+The lifecycle of each Talos machine is managed by a <a target="_blank" href="https://www.linkedin.com/company/sidero-labs/">SideroLabs</a> (<a target="_blank" href="https://www.sidero.dev/docs/latest/">sidero.dev</a>, <a target="_blank" href="https://twitter.com/siderolabs?lang=en">@SideroLabs</a>) workload cluster, open-sourced at <a target="_blank" href="https://github.com/siderolabs/sidero">github.com/siderolabs/sidero</a>. Sidero provides bootstrap/controlplane providers for running Talos machines on <strong>bare-metal</strong> x86 or arm64 machines on-prem, or <a target="_blank" href="https://www.sidero.dev/docs/v0.5/guides/sidero-on-rpi4/">on Raspberry Pi</a> (<a target="_blank" href="https://www.youtube.com/watch?v=aHu1lFir7UU" title="by Spencer">VIDEO</a>: "metal-rpl_4-arm64.img.xz" on 16GB SD). 
+
+Sidero offers a declarative way to provision, assign, wipe servers ("machines as cattle"). 
+Sidero uses port 8081 for a combined iPXE and gRPC service, UDP 69 for TFTP, and UDP 51821 for the IPv6 SideroLink Wireguard keyed point-to-point connections. Sidero <a target="_blank" href="https://www.sidero.dev/docs/v0.5/resource-configuration/servers/#ipmi">uses</a> IPMI information to control Server power state, reboot servers and set boot order.
+
+An <a target="_blank" href="https://www.sidero.dev/docs/v0.5/getting-started/prereq-dhcp/">ISC DHCP server</a> (such as on Ubiquiti EdgeRouter products) <a target="_blank" href="https://www.sidero.dev/docs/v0.5/getting-started/">is needed</a>.
+
+Talos node sends over the <a target="_blank" href="https://www.sidero.dev/docs/v0.5/overview/siderolink/">SideroLink</a> connection two streams: kernel logs (dmesg) and Talos events.
+
+Sidero also supports BMC and IPMI management for automation.
+
+Arges is its multi-environment management service.
 
 
 <a name="Internals"></a>
@@ -1568,7 +1599,7 @@ v2beta2.autoscaling                    Local     True        24s
 
    <a name="kubectl"></a>
 
-   ## kubectl CLI client install
+   ### kubectl CLI client install
 
    Kubernetes administrators use <strong>kubectl</strong> (kube + ctl)
    the CLI tool running outside Kubernetes servers to control them. 
@@ -2190,8 +2221,6 @@ PROTIP: Install <a target="_blank" href="https://github.com/ahmetb/kubectx">http
 <a name="OpenShift"></a>
 
 ### OpenShift project wall namespaces
-
-https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-vertical-autoscaler.html
 
 Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces</strong>, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding <strong>security annotations</strong> which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
 
@@ -3263,11 +3292,6 @@ provides deep-dive notes and code.
 ## HPA (HorizontalPodAutoscaler)
 
 increases the instance count.
-
-
-VPA (Vertical Pod Autoscaler)
-
-
 
 <a target="_blank" href="https://linuxacademy.com/cp/guides/download/refsheets/guides/refsheets/linuxacademy-kubernetesadmin-archdiagrams-1_1516737832.pdf">This Architectural Diagram pdf</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/51218893-5a75b700-18fc-11e9-89af-7ba9ca3000c5.jpg"><img alt="

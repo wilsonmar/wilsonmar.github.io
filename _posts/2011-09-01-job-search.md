@@ -32,6 +32,9 @@ Here are my notes on finding a way to earn money that fits your desired lifestyl
 
 * <a target="_blank" href="https://www.Ladders.com/">Ladders.com</a> (a subscription site)
 
+* Monster I ocassionally hear from, so I update my resume there.
+
+
 ## Remote work job sites
 
 * <a target="_blank" href="https://www.WeWorkRemotely.com/">WeWorkRemotely.com</a>
@@ -39,4 +42,33 @@ Here are my notes on finding a way to earn money that fits your desired lifestyl
 * <a target="_blank" href="https://www.Flexjobs.com/">Flexjobs.com</a> (a subscription site)
 
 
-## What
+## Jobs, Companies to target?
+
+As Yogi Berra said in his twisted way: 
+
+> "If you don't know where you want to go, you'll end up somewhere else".
+
+So target employers you want instead of waiting fruitlessly or wasting your time interacting with employers you would rather not want to work at.
+
+There are several aspects:
+
+   * Where the company stands among employee reviews on Glassdoor.com
+
+   * Where the company stands in their Net Promoter Score (NPS)
+
+   * Where the company stands in their Diversity, Equity, and Inclusion
+
+   * Where the company stands in their Environmental consciousness
+
+   * Where the company stands among competitors according to Gartner, Forrester, G2, etc.
+
+   * Profitabity of the company versus competitors in the same industry
+
+   * Locations of company HQ and branches
+
+   * Benefits deductions and limits in Medical, Dental, Disability, etc.
+
+   
+
+
+
