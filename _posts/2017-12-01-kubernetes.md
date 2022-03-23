@@ -577,8 +577,8 @@ VPA (Vertical Pod Autoscaler)
 
 ## Sidero Talos OS on Bare Metal
 
-Since Kubernetes manages stuff, how about running it on bare-metal machines, get the most performance
-possible out of the hardware, with minimal overhead?
+How about running Kubernetes on bare-metal machines to get the most performance
+possible out of hardware, with minimal overhead?
 
 There is on-going debate about the Operating System to use with Kubernetes.
 
