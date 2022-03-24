@@ -16,10 +16,21 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial provides manual instructions and automation scripts to setup and 
-run apps under Raspbian on a <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 3 B with 8GB RAM</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (GZD-P020-17) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$170 w/128 SD "Extreme Kit" from CanaKit</a>
+This tutorial provides manual instructions and automation scripts to setup and run apps.
 
-https://projects.raspberrypi.org/en/projects
+Why?
+
+<a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
+are targeted for learning by children.
+
+Within enterprises, Raspberry Pi have ARM chips, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. People run apps in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings and <strong>automation</strong>, especially on ARM machines. The cost of an "extreme" Pi setup (under $200 each) is less than a perhaps a single day running Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
+
+## Hardware 
+
+<a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 3 B with 8GB RAM</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (GZD-P020-17) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$170 w/128 SD "Extreme Kit" from CanaKit</a>
+
+
+## Operating Systems
 
 Several operating systems can be installed on a Raspberry Pi:
 * <a target="_blank" href="https://developer.android.com/things/get-started/index.html">AndroidThings</a> from Google (another page)
@@ -63,11 +74,6 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 1. At <a target="_blank" href="https://www.raspberrypi.org/downloads/raspbian/">
    https://www.raspberrypi.org/downloads/raspbian</a>
 
-   ![iot-rasp-stretch-download-942x496-65658](https://user-images.githubusercontent.com/300046/35048284-8965e086-fb6a-11e7-87d3-a792e85e812e.png)
-
-   <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
-   PROTIP</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
-
 1. Click "Download for macOS".
 1. Obtain the <strong>Imager</strong>
 
@@ -77,9 +83,12 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
 1. Drag the Raspberry picture over the folder and drop.
 1. Press command+Q or click the red dot at the upper-right.
+1. The Imager automatically downloads a zip file to your Downloads folder.
 
+   ![iot-rasp-stretch-download-942x496-65658](https://user-images.githubusercontent.com/300046/35048284-8965e086-fb6a-11e7-87d3-a792e85e812e.png)
 
-   NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
+   <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
+   PROTIP</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
 
    Versions of Debian are named after 
    <a target="_blank" href="https://www.wikiwand.com/en/List_of_Toy_Story_characters">characters in Disney's “Toy Story” films</a>
@@ -125,8 +134,9 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    If you clicked "Raspbian Stretch with desktop and recommended software", the file name downloaded would contain "-full", and be bigger.
 
-1. While you're waiting, read blogs at 
-   <a target="_blank" href="https://www.raspberrypi.org/blog/">
+   NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
+
+1. While you're waiting, read <a target="_blank" href="https://www.raspberrypi.org/blog/">
    blog at Raspberrypi.org</a>.
 
 1. For the next step, open a Terminal and cd ~/Downloads.
