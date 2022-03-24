@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IoT Raspberry Install"
-excerpt: "How to setup a Raspberry Pi 3B Pi Raspbian with Python Ansible Node"
+excerpt: "How to setup a Raspberry Pi with Raspbian, Python, Node, Ansible, Kubernetes"
 tags: [IoT, Raspberry, Mono, Mac]
 date: "2016-10-29"
 file: "iot-raspberry-install"
@@ -17,7 +17,9 @@ comments: true
 {% include _toc.html %}
 
 This tutorial provides manual instructions and automation scripts to setup and 
-run apps under Raspbian on a Raspberry Pi 3 B.
+run apps under Raspbian on a <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 3 B with 8GB RAM</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (GZD-P020-17) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$170 w/128 SD "Extreme Kit" from CanaKit</a>
+
+https://projects.raspberrypi.org/en/projects
 
 Several operating systems can be installed on a Raspberry Pi:
 * <a target="_blank" href="https://developer.android.com/things/get-started/index.html">AndroidThings</a> from Google (another page)
@@ -52,10 +54,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
 ## Download Raspbian disk image
 
-   We need an operating system written for the <strong>ARMv8 CPU on the Pi 3</strong>.<br />
-   It replaces Pi 2 and its ARMv7 CPU.
-
-   Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
+   We need an operating system written for the <strong>ARMv8 CPU on the Pi 3</strong>, which replaces Pi 2 and its ARMv7 CPU. Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
 
    NOTE: Only one operating system can be loaded on the Pi.
 
@@ -69,11 +68,23 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
    PROTIP</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
 
+1. Click "Download for macOS".
+1. Obtain the <strong>Imager</strong>
+
+   | Date/File | Version | Download | Unzipped | Blog |
+   | --------- | ------- | ----: | ---: | ---- |
+   | 2019-04-08 imager_1.7.1.dmg | - | 18.7 MB | ? GB | - |
+
+1. Drag the Raspberry picture over the folder and drop.
+1. Press command+Q or click the red dot at the upper-right.
+
+
    NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
 
    Versions of Debian are named after 
    <a target="_blank" href="https://www.wikiwand.com/en/List_of_Toy_Story_characters">characters in Disney's “Toy Story” films</a>
 
+   * "Buster" is Andy's pet miniature dachshund
    * "Stretch" the rubber octopus is voiced by Whoopi Goldberg
    * "Jessie" is the cowgirl, voiced by Joan Cusack
    * <a target="_blank" href="http://disney.wikia.com/wiki/Wheezy_(Toy_Story)">
@@ -84,13 +95,14 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    QUESTION: Where is the history of old versions 
    and how does one get announcement emails?
    
-1. Click the red <strong>Download ZIP</strong> below
+   Click the red <strong>Download ZIP</strong> below
    <strong>Raspbian STRETCH WITH DESKTOP</strong>, not "Raspbian Stretch with desktop and recommended software".
 
    PROTIP: The button sends you to downloading URL <a target="_blank" href="https://downloads.raspberrypi.org/raspbian_latest">
    https://downloads.raspberrypi.org/raspbian_latest</a>
-   which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
-   unattended shell scripts to automate the clicking</a>.
+   (which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
+   unattended shell scripts to automate the clicking</a>).
+
 
 1. Click "Save File", the OK in the pop-up to begin download 
 
@@ -98,6 +110,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    | Date/File | Version | Download | Unzipped | Blog |
    | --------- | ------- | ----: | ---: | ---- |
+   | 2020-02-13-raspian-buster.zip | ? | 1.19 GB | ? GB | - |
    | 2019-04-08-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
    | 2018-06-27-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
    | 2018-03-13-raspbian-stretch.zip | 4.10 | 1.78 GB | 4.96 GB | - |
