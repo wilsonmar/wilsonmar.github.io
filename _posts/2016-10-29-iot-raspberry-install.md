@@ -31,6 +31,10 @@ For enterprises, Raspberry Pi have ARM chips, so is a good platform to <strong>t
 
 <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 3 B with 8GB RAM</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (GZD-P020-17) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$170 w/128 SD "Extreme Kit" from CanaKit</a>
 
+You'll need a monitor. The Pi supoports 1900x1080 (HD) monitors with full-size HDMI ports.
+
+Newer Pi have <strong>mini HDMI</strong> ports, so be sure to have an adapter or a cable with a mini on one end and a full HDMI adapter on the other end.
+
 
 ## Operating Systems
 
