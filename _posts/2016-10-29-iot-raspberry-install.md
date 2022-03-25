@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IoT Raspberry Install"
-excerpt: "How to setup a Raspberry Pi with Raspbian, Python, Node, Ansible, Kubernetes"
+excerpt: "How to setup a Raspberry Pi on macOS with Raspbian, Python, Node, Ansible, Kubernetes"
 tags: [IoT, Raspberry, Mono, Mac]
 date: "2016-10-29"
 file: "iot-raspberry-install"
@@ -18,41 +18,63 @@ comments: true
 
 This tutorial provides manual instructions and automation scripts to setup and run apps.
 
-Why?
+<a name="Why"></a>
 
 <a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
 are targeted for learning by children.
 
-Within enterprises, Raspberry Pi have ARM chips, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. People run apps in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings and <strong>automation</strong>, especially on ARM machines. The cost of an "extreme" Pi setup (under $200 each) is less than a perhaps a single day running Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
+For enterprises, Raspberry Pi have ARM chips, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. People run apps in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity testing. The cost of a cluster of <href="#Hardware">"extreme" Pi clustser</a> is less than a perhaps a single day running Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
 
-## Hardware 
+<a name="Hardware"></a>
+
+## Hardware
 
 <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 3 B with 8GB RAM</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (GZD-P020-17) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$170 w/128 SD "Extreme Kit" from CanaKit</a>
 
 
 ## Operating Systems
 
+The Raspberry Pi needs an operating system written for the <strong>ARMv8 CPU on the Pi 3</strong>, which replaces Pi 2 and its ARMv7 CPU. Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
+
 Several operating systems can be installed on a Raspberry Pi:
 * <a target="_blank" href="https://developer.android.com/things/get-started/index.html">AndroidThings</a> from Google (another page)
-* Windows 10 IoT from Microsoft (another page)
+* Windows 10 IoT from Microsoft (another page on this website)
 * <a target="_blank" href="https://learn.adafruit.com/welcome-to-circuitpython/what-is-circuitpython">CircuitPython</a> from Adafruit
 * <a target="_blank" href="https://wilsonmar.github.io/kubernetes/#sidero-talos-os-on-bare-metal">Sidero Talos OS for Kubernetes</a>
-* Raspbian, a derivative of Debian Linux (described on this page, below):
+* <strong>Raspbian</strong>, a derivative of Debian Linux (described on this page, below)
+   <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
+   PROTIP</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
 <br /><br />
 
-To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
+To install:
 
-1. <a href="#Download">Download Raspian disk image</a> 
-0. <a href="#CalcHash">Calculate and compare SHA hash for download integrity</a>
-0. <a href="#Adapter">Insert micro-SD card via a USB adapter</a>
-0. Format micro-SD card with Raspbian image on <a href="#WinPrep">Windows</a> or <a href="#MacPrep">MacOS</a>
-0. <a href="#PowerUp">Power up the stock Pi into the Raspbian GUI</a>
-0. <a href="#WiFi">Configure wi-fi connections</a> on the Pi
-0. <a href="#Addons">Configure HAT addons</a>
-0. <a href="#SSH">Configure SSH into Pi</a> from your Mac laptop
-0. <a href="#GetConfigScripts">Get and run configuration scripts</a> 
+1. <a href="#Adapter">If needed, get an adapter for your laptop to read micro-SD card</a>
+1. <a href="#InsertChip">Insert micro-SD chip in your laptop</a>
 
-* Run Bash shell script on boot-up to download a script from GitHub and run it.
+On <a href="#MacPrep">MacOS</a>
+   1. Format micro-SD card 
+   1. <a href="#DownloadTalos">Download disk image for Talos</a> 
+   1. <a href="#DownloadImager">Download Pi OS Imager</a> 
+   1. <a href="#CalcHash">Calculate and compare SHA hash</a> (for download integrity)
+   1. <a href="#FormatChip">Format micro-SD chip for MacOS</a> or Windows
+   1. <a href="#LoadImage">Load OS image to the Pi SD</a> (on macOS)
+
+On <a href="#WinPrep">Windows</a> 
+   1. Format micro-SD card 
+   1. <a href="#DownloadTalos">Download disk image for Talos</a> 
+   1. <a href="#DownloadImager">Download Pi OS Imager</a> 
+   1. <a href="#CalcHash">Calculate and compare SHA hash</a> (for download integrity)
+   1. <a href="#FormatChip">Format micro-SD chip for MacOS</a> or Windows
+   1. <a href="#LoadImage">Load OS image to the Pi SD</a> (on macOS)
+
+<a href="#OnThePi">On the Raspberry Pi</a>
+1. <a href="#PowerUp">Power up the stock Pi into the Raspbian GUI</a>
+1. <a href="#WiFi">Configure wi-fi connections</a> on the Pi
+1. <a href="#Addons">Configure HAT addons</a>
+1. <a href="#SSH">Configure SSH into Pi</a> from your Mac laptop
+1. <a href="#GetConfigScripts">Get and run configuration scripts</a> 
+
+1. Run Bash shell script on boot-up to download a script from GitHub and run it.
 
 * <a href="#CronJob">Run cron background</a> Python code to periodically 
    <a href="#Temp">measure board's temperature</a> and free memory over time.
@@ -61,34 +83,116 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
 <hr />
 
-<a name="Download"></a>
 
-## Download Raspbian disk image
+<a name="Adapter"></a>
 
-   We need an operating system written for the <strong>ARMv8 CPU on the Pi 3</strong>, which replaces Pi 2 and its ARMv7 CPU. Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
+## Micro-SD and USB Adapter needed?
 
-   NOTE: Only one operating system can be loaded on the Pi.
+You may need to buy a 32 or 64 GB SD chip along with an adapter if you need one (as for cameras).
 
-   <a name="SHA256"></a>
+   2017+ Mac Book Pros do not have a slot to read SD cards, 
+   so need a USB-C converter rather than older types of USB ports. 
+
+   WARNING: You need to plug the micro SD chip into a full-size SD chip adapter,
+   which goes into the Mac's SD card slot.
+   You may also use an adapter for USB, which may need to be plugged into a USB port
+   rather than on a USB hub (even a powered one).
+
+   CAUTION: Be sure the adapter can read the size of chip.
+   Older ones for reading 4GB cannot read the 32GB or 64GB let alone 128GB chips.
+
+
+   <a name="InsertChip"></a>
+   
+   ### Insert micro-SD chip in your laptop
+
+1. CAUTION: Before touching delicate electrical boards,
+   dissipate static electricity (from just walking around)
+   by touching grounded metal.
+
+1. Insert the Micro-SD chip into your laptop. 
+
+
+<a name="DownloadTalos"></a>
+
+## Download RPI image
+
+If you want to install Talos:
+
+1. Make or navigate to a folder so you can easily tell what is downloaded:
+
+   <pre><strong>cd; mkdir projects/talos</strong></pre>
+
+1. Download the compressed image file per <a target="_blank" href="https://www.talos.dev/v0.14/single-board-computers/rpi_4/#download-the-image">this doc</a>:
+
+   <pre><strong>curl -LO https://github.com/talos-systems/talos/releases/latest/download/metal-rpi_4-arm64.img.xz</strong></pre>
+
+1. Uncompress using the xz utility:
+
+   <pre><strong>xz -d metal-rpi_4-arm64.img.xz</strong></pre>
+
+1. Verify downloaded file size:
+
+   <pre><strong>ls -al</strong></pre>
+
+   <pre>-rw-r--r--  1 wilsonmar  staff  94156684 Mar 24 19:12 metal-rpi_4-arm64.img.xz</pre>
+
+   That's 94,156,684
+
+
+<a name="DownloadImager"></a>
+
+## Download Pi OS Imager
 
 1. At <a target="_blank" href="https://www.raspberrypi.org/downloads/raspbian/">
-   https://www.raspberrypi.org/downloads/raspbian</a>
+   https://www.raspberrypi.org/downloads</a>
 
-1. Click "Download for macOS".
-1. Obtain the <strong>Imager</strong>
+   NOTE: Because many operating systems can be used now, mention of "Raspian" have been removed from this page. Previously this appeared:
+   
+   ![iot-rasp-stretch-download-942x496-65658](https://user-images.githubusercontent.com/300046/35048284-8965e086-fb6a-11e7-87d3-a792e85e812e.png)
+
+   REMEMBER: Only one operating system can be loaded on the Pi.
+
+1. Click "Download for macOS" to download the <strong>Imager</strong> app:
 
    | Date/File | Version | Download | Unzipped | Blog |
    | --------- | ------- | ----: | ---: | ---- |
    | 2019-04-08 imager_1.7.1.dmg | - | 18.7 MB | ? GB | - |
 
-1. Drag the Raspberry picture over the folder and drop.
+1. Open file "imager_1.7.1.dmg" to pop-up <tt>/Volumes/Raspberry Pi Imager</tt>.
+1. Drag the <tt>Raspberry Pi Imager.app</tt> icon and drop it over the blue folder (to move it into the Applications folder).
 1. Press command+Q or click the red dot at the upper-right.
-1. The Imager automatically downloads a zip file to your Downloads folder.
+1. Delete file "imager.x.x.x.dmg" file (to recover disk space).
+1. Find file "Raspberry Pi Imager.app" and click to run it.
+1. Click "Open" for the dialog about "Are you sure you want to open it?".
+1. Click "CHOOSE OS" (do NOT select the first "Raspberry Pi" you see because it is for older 32-bit chips).
+1. If you are installing for a Raspberry Pi 64-bit, select "Raspberry Pi OS (other)", then a 64-bit one "with no desktop environment" (because you're a pro). 
 
-   ![iot-rasp-stretch-download-942x496-65658](https://user-images.githubusercontent.com/300046/35048284-8965e086-fb6a-11e7-87d3-a792e85e812e.png)
+   <a name="zipSizes"></a>
 
-   <a target="_blank" href="https://distrowatch.com/table.php?distribution=raspbian">
-   PROTIP</a>: The Raspbian OS (based on Debian) is the official release for Raspberry Pi.
+   | Date/File | Version | Download | Unzipped | Blog |
+   | --------- | ------- | ----: | ---: | ---- |
+   | 2020-02-13-raspian-buster.zip | ? | 1.19 GB | ? GB | - |
+   | 2019-04-08-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
+   | 2018-06-27-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
+   | 2018-03-13-raspbian-stretch.zip | 4.10 | 1.78 GB | 4.96 GB | - |
+   | 2017-09-07-raspbian-stretch.zip | 4.9 | 1.76 GB | 4.92 GB | - |
+   | 2017-04-10-raspbian-jessie.zip | 4.4 | 1.57 GB | ? GB | <a target="_blank" href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/">blog</a> |
+   | 2016-09-23-Raspbian-jessie.zip | 4.3 | 1.40 GB | 4.3 GB | - |
+
+   The large size of the file means it will take a while,
+   depending on the speed of your network.
+
+   Alternately, Raspian provides sudo-free access to GPIO (file read/write ports), so the above can be done in an Ubuntu terminal.
+
+   If you clicked "Raspbian Stretch with desktop and recommended software", the file name downloaded would contain "-full", and be bigger.
+
+   NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
+
+   Alternately, if you are installing Talos, scroll down to select "Use custom" and navigate to where you downloaded a zip file for that.
+
+1. While you're waiting, read <a target="_blank" href="https://www.raspberrypi.org/blog/">
+   blog at Raspberrypi.org</a>.
 
    Versions of Debian are named after 
    <a target="_blank" href="https://www.wikiwand.com/en/List_of_Toy_Story_characters">characters in Disney's “Toy Story” films</a>
@@ -112,37 +216,16 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    (which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
    unattended shell scripts to automate the clicking</a>).
 
-
-1. Click "Save File", the OK in the pop-up to begin download 
-
-   <a name="zipSizes"></a>
-
-   | Date/File | Version | Download | Unzipped | Blog |
-   | --------- | ------- | ----: | ---: | ---- |
-   | 2020-02-13-raspian-buster.zip | ? | 1.19 GB | ? GB | - |
-   | 2019-04-08-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
-   | 2018-06-27-raspbian-stretch.zip | 4.14 | 1.76 GB | 4.83 GB | - |
-   | 2018-03-13-raspbian-stretch.zip | 4.10 | 1.78 GB | 4.96 GB | - |
-   | 2017-09-07-raspbian-stretch.zip | 4.9 | 1.76 GB | 4.92 GB | - |
-   | 2017-04-10-raspbian-jessie.zip | 4.4 | 1.57 GB | ? GB | <a target="_blank" href="https://www.raspberrypi.org/blog/raspbian-jessie-is-here/">blog</a> |
-   | 2016-09-23-Raspbian-jessie.zip | 4.3 | 1.40 GB | 4.3 GB | - |
-
-   The large size of the file means it will take a while,
-   depending on the speed of your network.
-
-   Alternately, Raspian provides sudo-free access to GPIO (file read/write ports), so the above can be done in an Ubuntu terminal.
-
-   If you clicked "Raspbian Stretch with desktop and recommended software", the file name downloaded would contain "-full", and be bigger.
-
-   NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
-
-1. While you're waiting, read <a target="_blank" href="https://www.raspberrypi.org/blog/">
-   blog at Raspberrypi.org</a>.
+   <a name="SHA256"></a>
 
 1. For the next step, open a Terminal and cd ~/Downloads.
 
    PROTIP: Do not unzip the file downloaded because the program that processes it expects a zip file.
 
+
+If you are using <a href="#WinPrep">Windows, skip to the Windows Prep SD section below</a>.
+
+This steps below is for Mac:
 
    <a name="CalcHash"></a>
 
@@ -167,8 +250,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    Alternately, use the openssl utility:
 
-   <pre><strong>
-   openssl sha256 2018-06-27-raspbian-stretch.zip
+   <pre><strong>openssl sha256 2018-06-27-raspbian-stretch.zip
    </strong></pre>
 
 1. The output should match the SHA-256 associated with the downloaded file on the website.
@@ -185,81 +267,9 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    <a href="#zipSizes">The file must be smaller</a> (which it is...for now).
 
 
-   <a name="Adapter"></a>
-
-   ### Micro-SD and USB Adapter
-
-1. Buy a 32 or 64 GB SD chip along with an adapter if you need one (as for cameras).
-
-   Some laptops require an adapter for USB. 
-   Be sure the adapter can read the size of chip.
-   Older ones for reading 4GB cannot read the 32GB or 64GB.
-
-   WARNING: You need to plug the micro SD chip into a full-size SD chip adapter,
-   which goes into the Mac's SD card slot.
-   You may also use an adapter for USB, which may need to be plugged into a USB port
-   rather than on a USB hub (even a powered one).
-
-   2017+ Mac Book Pros do not have a slot to read SD card, and need a USB-C converter rather than older types of USB ports.
-
-1. CAUTION: Before touching delicate electrical boards,
-   dissipate static electricity (from just walking around)
-   by touching grounded metal.
-
-0. Insert the Micro-SD chip into your laptop. 
-
-0. If you are using a Mac, <a href="#MacPrep">skip to the Mac Prep SD section below</a>.
-
-   <a name="WinPrep"></a>
-
-   ### Windows Prep SD
-
-   To get full capacity from USB/SD drives 
-   (which format does not solve):
-
-0. On a Windows machine, press the Windows key and type in the omni-search box
-
-   <tt><strong>
-   diskpart
-   </strong></tt>
-
-0. Get the disk number:
-
-   <tt><strong>
-   list disk
-   </strong></tt>
-
-   Identify the disk number for the SD drive based on size of disk.
-
-   "3850 MB" is displayed for drives sold as "4 GB".
-
-0. Reset:
-
-   <pre><strong>
-   select disk 1
-   select partition 1
-   delete partition
-   partition
-   clean
-   create partition primary
-   format
-   </strong></pre>
-
-   Formatting takes several minutes. 
-
-   "DiskPart successfully formatted the volume."
-
-0. Close the window:
-
-   <tt><strong>
-   exit
-   </strong></tt>
-
-0. In File Explorer, right-click on the drive and select <strong>Eject</strong>.
-
-   <a name="MacPrep"></a>
-
-   ### Mac Prep Micro-SD
+   <a name="FormatChip"></a>
+   
+   ### Format micro-SD chip on your MacOS
 
    A new entry should appear in Finder when you plug in the SD card.
 
@@ -272,14 +282,12 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
 0. Identify the SD disk identifier:
 
-   <tt><strong>
-   diskutil list
+   <tt><strong>diskutil list
    </strong></tt>
 
    A sample response on Mac High Sierra and Mac Mojava:
 
-   <pre>
-/dev/disk0 (internal):
+   <pre>/dev/disk0 (internal):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                         500.3 GB   disk0
    1:                        EFI EFI                     314.6 MB   disk0s1
@@ -308,8 +316,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    Alternately, the sample response for Mac Sierra and before:
 
-   <pre>
-/dev/disk0 (internal, physical):
+   <pre>/dev/disk0 (internal, physical):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                        *500.1 GB   disk0
    1:                        EFI EFI                     209.7 MB   disk0s1
@@ -334,8 +341,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    by constructing a command containing the disk identifier number
    for your SD card (3 in the example above):
 
-   <tt><strong>
-   diskutil unmountDisk /dev/disk3
+   <tt><strong>diskutil unmountDisk /dev/disk3
    </strong></tt>
 
    Again, instead of "disk3", you may type a different one.
@@ -344,7 +350,6 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    
    <pre>Unmount of all volumes on disk3 was successful</pre>
 
-0. If you are using Windows, skip to <a href="#WinFlash">WindowsFlash</a>.
 
    <a name="Etcher-Install"></a>
 
@@ -382,8 +387,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 1. Click "Open" to the pop-up about "balanaEtcher.app" is an app downloaded from the internet.
 1. In a MacOS Terminal, navigate to the user Applications folder and invoke the program:
 
-   <tt><strong>
-   open ~/Applications/balenaEtcher.app
+   <tt><strong>open ~/Applications/balenaEtcher.app
    </strong></tt>
 
 1. In Finder, free up disk space on your machine by right-clicking on the .dmg file and "Move to Trash".
@@ -414,8 +418,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 1. Manually construct a command to write the image downloaded onto the SD Card. 
    Replace the X in rdiskX with the disk number from before.
 
-   <tt><strong>
-   sudo dd bs=1m if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3
+   <tt><strong>sudo dd bs=1m if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3
    </strong></tt>
 
    <a target="_blank" href="http://www.computerhope.com/unix/dd.htm">
@@ -441,11 +444,11 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
    No status is shown during the 30 minutes or more that it takes.
    An example of the ending response:
 
-   <pre>
-4147+0 records in
+   <pre>4147+0 records in
 4147+0 records out
 4348444672 bytes transferred in 265.020326 secs (16407967 bytes/sec)
    </pre>
+
 
    <a name="VerifySD"></a>
 
@@ -458,8 +461,7 @@ To install the Raspian operating system on a Raspberry Pi 3 board from a Mac:
 
    This sample response confirms that the flash drive is not visible to the Mac:
 
-   <pre>
-Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
+   <pre>Filesystem      Size   Used  Avail Capacity iused               ifree %iused  Mounted on
 /dev/disk1s1   466Gi  426Gi   29Gi    94% 3576707 9223372036851199100    0%   /
 devfs          344Ki  344Ki    0Bi   100%    1190                   0  100%   /dev
 /dev/disk1s4   466Gi   10Gi   29Gi    26%      11 9223372036854775796    0%   /private/var/vm
@@ -469,13 +471,63 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 
 0. In Finder, press the eject button for the disk.
 
-0. Skip past alternative activity below (for Windows) to <a href="#PowerUp">Power Up Pi</a>.
+0. Skip past alternative activity below (for Windows) to <a href="#PowerUp">Power Up to GUI in SD card</a>.
+
+
 
 <hr />
 
-<a name="WinFlash"></a>
+<a name="OnThePi"></a>
 
-## Unzip and Flash using Windows
+## On the Raspberry Pi:
+
+
+<a name="WinPrep"></a>
+
+## Windows Prep SD
+
+   To get full capacity from USB/SD drives 
+   (which format does not solve):
+
+0. On a Windows machine, press the Windows key and type in the omni-search box
+
+   <tt><strong>diskpart
+   </strong></tt>
+
+0. Get the disk number:
+
+   <tt><strong>list disk
+   </strong></tt>
+
+   Identify the disk number for the SD drive based on size of disk.
+
+   "3850 MB" is displayed for drives sold as "4 GB".
+
+0. Reset:
+
+   <pre><strong>select disk 1
+   select partition 1
+   delete partition
+   partition
+   clean
+   create partition primary
+   format
+   </strong></pre>
+
+   Formatting takes several minutes. 
+
+   "DiskPart successfully formatted the volume."
+
+0. Close the window:
+
+   <tt><strong>exit
+   </strong></tt>
+
+0. In File Explorer, right-click on the drive and select <strong>Eject</strong>.
+
+   <a name="WinFlash"></a>
+
+   ### Unzip and Flash using Windows
 
 0. Unzip to an <strong>.img</strong> file.
 
@@ -542,6 +594,10 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 0. Invoke the program.
 0. Select the drive containing the .img file on your laptop.
 
+
+
+
+<hr />
 
 <a name="PowerUp"></a>
 
