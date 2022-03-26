@@ -3,7 +3,7 @@ layout: post
 title: "PowerShell Install Coding"
 excerpt: "Make PowerShell your superpower on Windows and Macs, for fun and profit"
 tags: [mac, cloud, powershell, microsoft]
-date: "2021-03-05"
+date: "2022-03-05"
 file: "powershell-install-coding"
 image:
 # powershell blue banner-1900x500-296kb.jpg
@@ -1649,6 +1649,16 @@ Security Considerations for PowerShell Remoting using WinRM
 <a target="_blank" href="https://www.simple-talk.com/blogs/psyaml-powershell-yaml/">
 https://www.simple-talk.com/blogs/psyaml-powershell-yaml</a>
 
+## References
+
+"Practical PowerShell for IT Security":
+   * <a target="_blank" href="https://www.varonis.com/blog/practical-powershell-for-it-security-part-i-file-event-monitoring">Part I: File Event Monitoring</a>
+   * <a target="_blank" href="https://www.varonis.com/blog/practical-powershell-for-it-security-part-ii-file-access-analytics-faa/?hsLang=en">Part II: File Access Analytics (FAA)</a>
+   * <a target="_blank" href="https://www.varonis.com/blog/practical-powershell-security-part-iii-classification-budget/?hsLang=en">Part III: Classification on a Budget</a>
+   * <a target="_blank" href="https://www.varonis.com/blog/practical-powershell-security-part-iv-security-scripting-platform-ssp/?hsLang=en">Part IV:  Security Scripting Platform (SSP)</a>
+   * <a target="_blank" href="https://www.varonis.com/blog/practical-powershell-for-it-security-part-v-security-scripting-platform-gets-a-makeover/?hsLang=en">Part V: Security Scripting Platform Gets a Makeover</a>
+
+https://docs.broadcom.com/doc/increased-use-of-powershell-in-attacks-16-en
 
 ## More on DevSecOps #
 

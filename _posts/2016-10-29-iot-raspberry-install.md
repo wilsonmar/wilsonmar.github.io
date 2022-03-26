@@ -25,7 +25,7 @@ are targeted for learning by children.
 
 For enterprises, Raspberry Pi have <strong>ARM chips</strong>, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. 
 
-<a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width=“209” alt=“rasp-pi-rack-836x960" src=“https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png“></a>
+<a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width="209" alt=“rasp-pi-rack-836x960" src="https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png"></a>
 People run apps (within Docker containers) in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X9fSMGkjtug" title="Jul 15, 2021 i built a Raspberry Pi SUPER COMPUTER!! // ft. Kubernetes (k3s cluster w/ Rancher)">This video</a> describes <a target="_blank" href="https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview">install of Ubuntu plus</a>
@@ -453,6 +453,8 @@ This steps below is for Mac:
 
 <hr />
 
+   <a name="FlashSD"></a>
+
    ### Flash OS on SD card using a Mac
 
 1. cd to the folder where your .img file exists. For example, to go to the Desktop:
@@ -463,29 +465,37 @@ This steps below is for Mac:
 1. Manually construct a command to write the image downloaded onto the SD Card. 
    Replace the X in rdiskX with the disk number from before. For example:
 
-   <tt><strong>sudo dd bs=1m if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3
+   <tt><strong>sudo dd if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3 bs=1m
    </strong></tt>
-
-   <a target="_blank" href="http://www.computerhope.com/unix/dd.htm">
-   The Linux dd command</a>
-   copies a file and also optionally re-formats.
-
-   `conv=` specifies conversion, but is not specified in the command above.
-
-   `if=` specifies the input file name.
-
-   `of=` specifies the output file disk identified by the <a href="#diskutil">diskutil command above</a>.
-
-   `bs=1m` specifies 1 megabyte chunks to write at a time.
-
-   `rdisk` gives faster write speed to the SD card.
 
    BLAH: The dd command does not have a verbose mode to show progress.
 
    NOTE: The dd program is also used to <a href="#Backup">
    backup the SD onto your laptop</a>.
 
+   <a target="_blank" href="http://www.computerhope.com/unix/dd.htm">
+   The Linux dd command</a> copies a file and also optionally re-formats.
+
+   `if=` specifies the input file name.
+
+   `of=` specifies the output file disk identified by the <a href="#diskutil">diskutil command above</a>.
+
+   `rdisk` gives faster write speed to the SD card.
+
+   `bs=1m` specifies 1 megabyte chunks to write at a time.
+
+   `count=256k` limits the number of blocks processed. 
+
+   `oflag=direct` bypasses the kernel's page cache (memory cache), writing directly to the storage. 
+
+1. Alternately, 
+
+   <pre><strong>sudo dd if=metal-rpi_4-arm64.img of=/dev/mmcblk0 bs=4M conv=fsync</strong></pre>
+
+   `conv=fsync` synchronizes output data and metadata just before finishing. Some operations are stored in RAM and postponed to be later written on the disk. Some devices use buffers and caches in order to improve their throughput and latency performance. So this flag tells dd to write everything on the disk (forcing a physical write of output data and metadata). This command makes the device flush its buffers and caches so that if the device is removed the data is written to it before the operation is marked as complete and before control passes back to the terminal prompt. See https://abbbi.github.io/dd/
+
 1. Type in your password then wait. 
+   
    No status is shown during the 30 minutes or more that it takes.
    An example of the ending response:
 
