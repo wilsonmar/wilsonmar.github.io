@@ -2266,7 +2266,7 @@ For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">g
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/rds-aurora/aws/latest">rds-aurora</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/route53/aws/latest">Route 53 (DNS)</a>
 
-* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest">S3-bucket</a> <a target="_blank" href="https://kodekloud.com/topic/introduction-to-aws-s3/">VIDEO</a>, <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">AWS docs</ax>
+* <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/s3-bucket/aws/latest">S3-bucket</a> <a target="_blank" href="https://kodekloud.com/topic/introduction-to-aws-s3/">VIDEO</a>, <a target="_blank" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">AWS docs</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws/latest">security-group</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/step-functions/aws/latest">step-functions</a>
 * <a target="_blank" href="https://registry.terraform.io/modules/terraform-aws-modules/transit-gateway/aws/latest">transit-gateway</a>

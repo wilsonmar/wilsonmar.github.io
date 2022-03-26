@@ -23,15 +23,43 @@ This tutorial provides manual instructions and automation scripts to setup and r
 <a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
 are targeted for learning by children.
 
-For enterprises, Raspberry Pi have ARM chips, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. People run apps (within Docker containers) in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity testing. The cost of a cluster of <a href="#Hardware">"extreme" Pi clustser</a> is less than a perhaps a single day running Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
+For enterprises, Raspberry Pi have <strong>ARM chips</strong>, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. 
+
+<a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width=“209” alt=“rasp-pi-rack-836x960" src=“https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png“></a>
+People run apps (within Docker containers) in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=X9fSMGkjtug" title="Jul 15, 2021 i built a Raspberry Pi SUPER COMPUTER!! // ft. Kubernetes (k3s cluster w/ Rancher)">This video</a> describes <a target="_blank" href="https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview">install of Ubuntu plus</a>
+ <a target="_blank" href="https:/get.k3s.io/">light-weight K3S</a> from SUSE Rancher dashboard app to manage the private cloud "supercomputer" cluster.
+
+<a target="_blank" href="https://www.linkedin.com/pulse/adventures-cluster-computing-tim-wood/">Tim Wood's cluster consists of</a>
+   1. Binary Clock python script with Blinkt! LED board.
+   2. Apache with Nagios network monitoring server.
+   3. Network-wide DHCP server and DNS filtering through Pi-hole.
+   4. Upstream DNS filtering through Pi-hole for high availability, VPN though Wireguard to help bring internet traffic from my devices back through DNS filtering (even if I'm outside of my home network).
+   <br /><br />
+
+You can also run a <strong>private GitHub server</strong> on a Pi.
+
+Run Home Automation to control and log events.
+
+References:
+   * https://github.com/mikeroyal/Raspberry-Pi-Guide
+   * https://opensource.com/article/20/6/kubernetes-raspberry-pi
+   * https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview
+   * https://dev.to/andypiper/building-a-compact-pi-cluster-1pia
+   <br /><br />
+
+
 
 <a name="Hardware"></a>
 
-## Hardware
+## Hardware Each Node
 
 The Pi is a Single Board Computer (SBC).
 
 If you want the <strong>maximum on-board 8GB RAM</strong> on each board, order the <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 4 B</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (with no SD card) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$187.90 w/128 SD "Extreme Kit" with fan in black box and cables from CanaKit</a>.
+
+You'll want a fan or high heat would reduce the life of a board.
 
 You'll need at least one monitor display. 
 CAUTION: Multiple displays will make the chip run hotter.
@@ -908,8 +936,7 @@ If you setup WiFi on your laptop, you would have already used the information ne
    The script calls a Python script <strong>rpi-system-info.py</strong>
    which issues output such as this:
 
-   <pre>
-Serial number:     d85fdaa0
+   <pre>Serial number:     d85fdaa0
 IP-address:        10.0.0.6
 Up time hours:     1 day,  8:58
 Free RAM:          766 of 925 MB total (1GB)
