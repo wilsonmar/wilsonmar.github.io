@@ -29,7 +29,9 @@ For enterprises, Raspberry Pi have ARM chips, so is a good platform to <strong>t
 
 ## Hardware
 
-If you want <strong>8GB RAM</strong>, you would need to get the <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 4 B</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (with no SD card) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$187.90 w/128 SD "Extreme Kit" with fan in black box and cables from CanaKit</a>.
+The Pi is a Single Board Computer (SBC).
+
+If you want the <strong>maximum on-board 8GB RAM</strong> on each board, order the <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 4 B</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (with no SD card) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$187.90 w/128 SD "Extreme Kit" with fan in black box and cables from CanaKit</a>.
 
 You'll need at least one monitor display. 
 CAUTION: Multiple displays will make the chip run hotter.
@@ -37,8 +39,18 @@ The Pi supoports 1900x1080 (HD) monitors with full-size HDMI ports.
 
 Newer Pi have <strong>mini HDMI</strong> ports, so be sure to have an adapter or a cable with a mini on one end and a full HDMI adapter on the other end.
 
+### Competitor SBC hardware
 
-## Operating Systems
+Small form factor computers with a tiny footprint that put full-sized PC power in the palm of your hand:
+
+* Banana Pi M64
+* Libre Computer Board ALL-H3-CC
+* Pine64
+* Pine64 Rock64
+* Radxa ROCK PI 4c
+* <a target="_blank" href="https://www.intel.com/content/www/us/en/products/details/nuc.html">Intel NUC</a> (Next Unit of Computing, pronounced like “luck” or “truck”), available with Windows 10 and up to 4.40 GHz
+
+## Operating Systems for the Pi
 
 The Raspberry Pi needs an operating system written for the <strong>ARMv8 CPU on the Pi 3</strong>, which replaces Pi 2 and its ARMv7 CPU. Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>.
 
@@ -116,14 +128,14 @@ You may need to buy a 32 or 64 GB SD chip along with an adapter if you need one 
    dissipate static electricity (from just walking around)
    by touching grounded metal.
 
-1. Insert the Micro-SD chip into your laptop. 
+1. Insert the Micro-SD chip into your laptop or adapter.
 
 
 <a name="DownloadTalos"></a>
 
-## Download RPI image
+## Download Talos RPI image
 
-If you want to install Talos:
+Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install Talos:
 
 1. Make or navigate to a folder so you can easily tell what is downloaded:
 
@@ -420,9 +432,8 @@ This steps below is for Mac:
    <tt><strong>cd ~/Desktop
    </strong></tt>
 
-
 1. Manually construct a command to write the image downloaded onto the SD Card. 
-   Replace the X in rdiskX with the disk number from before.
+   Replace the X in rdiskX with the disk number from before. For example:
 
    <tt><strong>sudo dd bs=1m if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3
    </strong></tt>
