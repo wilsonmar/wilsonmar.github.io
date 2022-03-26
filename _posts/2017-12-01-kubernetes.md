@@ -589,7 +589,8 @@ The lifecycle of each Talos machine is managed by a <a target="_blank" href="htt
 
 <a target="_blank" href="https://www.youtube.com/watch?v=LryECwitUcw&t=52s">VIDEO</a>: Try within Docker on MacOS.
 
-Sidero offers a declarative way to provision, assign, wipe servers ("machines as cattle"). 
+Sidero offers a <strong>declarative</strong> way to provision, assign, wipe servers ("machines as cattle"). 
+
 Sidero uses port 8081 for a combined iPXE and gRPC service, UDP 69 for TFTP, and UDP 51821 for the IPv6 SideroLink Wireguard keyed point-to-point connections. Talos' KubeSpan yaml config automates WireGuard encryption to securely add workers on remote networks. KubeSpan delivers a solution to the coordination and key exchange problem, allowing all nodes to discover and communicate in an encrypted channel with all other nodes – even across NAT and firewalls. It supports roaming of devices, and transparently handles the correct encryption of traffic that is destined to another member of the cluster, while leaving other traffic unencrypted. 
 
 All that enables Kubernetes to operate <a target="_blank" href="https://www.siderolabs.com/blog/kubespan-and-multi-cloud-kubernetes/">multi-region/multi-cloud</a>.

@@ -322,7 +322,7 @@ Terraform installs infrastructure in cloud and VM as <strong>workflows</strong>.
 
 Kubernetes orchestrates (brings up and down) Docker containers.
 
-Pulumi
+Pulumi (see my notes on it)
 
 dagger.io
 
@@ -1156,17 +1156,29 @@ The root folder for a Terraform module should contain these files:
 * <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - declares a description and optional default values for each variable in *.tf files
 <br /><br />
 
-The above set of files are repeated in each folder containing a nested module:
+<a target="_blank" href="https://gruntwork.teachable.com/courses/494207/lectures/9081271">
+VIDEO: In this 2 hour video mastercourse "The Gruntwork Infrastructure Module Cookbook" on Teachable</a>, Yevgenly (Jim) Birkman (of Gruntwork) provides the logic of how to structure a Terraform project folder.
 
 * <a href="#Modules">modules/</a>
-   * <em>IAM</em>
+   * install-vault
+      * install-vault.sh
+   * run-vault
+      * run-vault.sh
+   * vault-cluster
+   * vault-security-group-rules
+   * vault-elb
+   &nbsp;
+   * IAM <em>(folder)</em>
       * README.md
       * <a href="#variables.tf">variables.tf</a>
       * <a href="#main.tf">main.tf</a>
       * <a href="#Outputs.tf">outputs.tf</a>
-   * <em>Network</em>
+   * Network <em>(folder)</em>
       * ...
-* examples
+   &nbsp;
+* <strong>examples</strong> <em>(folder)</em>
+* <strong>test</strong>
+<br /><br />
 
 REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
 
@@ -3132,9 +3144,9 @@ In a team environment, it helps to store state state files off a local disk and 
 
    * local (the default)
    Hashicorp products:
-      * Terraform Enterprise
-      * Consul
-      * Atlas
+      * Terraform Enterprise (cloud)
+      * Consul (a distributed key-value store)
+      * Atlas 
       <br /><br />
    
    * etcd (distributed key value store used by Kubernetes)

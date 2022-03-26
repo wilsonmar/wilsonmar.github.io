@@ -7,10 +7,10 @@ shorturl: "https://goo.gl/TY7bSn"
 date: "2011-09-01"
 file: "job-search"
 image:
-# pic autonomous-cars-1900x500-815k.png
-  feature: https://user-images.githubusercontent.com/300046/28310427-76f56532-6b7a-11e7-8548-19080bf3b5c9.png
-  credit: 
-  creditlink: 
+# job-search-1900x500
+  feature: https://user-images.githubusercontent.com/300046/160238693-7b00a4ce-8291-4bb7-962e-367141773cd0.png
+  credit: Reynolds
+  creditlink: https://www.reynolds.k12.or.us/rhs/job-search-tips-teens
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -52,7 +52,7 @@ So target employers you want instead of waiting fruitlessly or wasting your time
 
 There are several aspects:
 
-   * Where the company stands among employee reviews on Glassdoor.com
+   * Where the company stands among employee reviews on <a target="_blank" href="https://www.glassdoor.com/">Glassdoor.com</a>
 
    * Where the company stands in their Net Promoter Score (NPS)
 
@@ -67,8 +67,4 @@ There are several aspects:
    * Locations of company HQ and branches
 
    * Benefits deductions and limits in Medical, Dental, Disability, etc.
-
-   
-
-
 
