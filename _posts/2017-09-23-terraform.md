@@ -1157,7 +1157,12 @@ The root folder for a Terraform module should contain these files:
 <br /><br />
 
 <a target="_blank" href="https://gruntwork.teachable.com/courses/494207/lectures/9081271">
-VIDEO: In this 2 hour video mastercourse "The Gruntwork Infrastructure Module Cookbook" on Teachable</a>, Yevgenly (Jim) Birkman (of Gruntwork) provides the logic of how to structure a Terraform project folder.
+VIDEO: In this 2 hour video mastercourse "The Gruntwork Infrastructure Module Cookbook" on Teachable</a>, 
+<a target="_blank" href="https://www.linkedin.com/in/jbrikman/">Yevgeniy (Jim) Brikman (of Gruntwork)</a> demos the logic of how to structure (from 2017, before Workspaces) a Terraform project folder such as <a target="_blank" href="https://github.com/gruntwork-io/terragrunt-infrastructure-live-example/">Gruntwork's example</a>: Gruntwork recommends separate folders:
+   * vpc (networking)
+   * frontend
+   * mysql (db)
+   <br /><br />
 
 * <a href="#Modules">modules/</a>
    * install-vault
@@ -1185,9 +1190,11 @@ REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>a
 REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environmet (dev, qa, stage, prod).
 For example: 
 
-   * In dev,  <tt>env_instance_count = 1</tt>
-   * In qa,   <tt>env_instance_count = 2</tt>
-   * In prod, <tt>env_instance_count = 4</tt>
+   * In dev,   <tt>env_instance_count = 1</tt>
+   * In qa,    <tt>env_instance_count = 2</tt>
+   * In stage, <tt>env_instance_count = 4</tt>
+   * In prod,  <tt>env_instance_count = 4</tt>
+   <br /><br />
 
 <hr />
 
@@ -2037,6 +2044,7 @@ AUTHOR(S):
 A terragrunt.hcl is needed in each folder where we want Terragrunt to generates a Terraform project in that folder. So people end up with a bunch of folders that represent all your modules, environments, regions permutations - one folder for each permutation of env+server+region+account.<a target="_blank" href="https://www.reddit.com/r/Terraform/comments/naugwe/anyone_using_or_recommends_terraspace_or/">*</a>
 
 The problem with that is <strong>duplicated</strong> terragrunt.hcl configurations, which create the need to plan Terragrunt project structure carefully upfront. However, recent TF versions have:
+
    * partial backend configurations (so you can pass backend as CLI flags)
 
    * ability to set data directory  tf_data_dir
@@ -2635,6 +2643,7 @@ commands will detect it and remind you to do so if necessary.
     -backend-config="secret_key={SECRET_KEY}"
    </pre>
 
+   QUESTION: Are interpolations now allowed in backend .tf statements?
 
    Alternately, to skip default installation of plugins:
 
@@ -3048,6 +3057,7 @@ output "private-dns" {
 
    ### Apply to create tfstate
    
+   References:
    * https://kodekloud.com/topic/introduction-to-terraform-state/
    * <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">BLOG: 
    Yevgeniy Brikman (Gruntwork) "How to manage Terraform state"</a>
@@ -3305,7 +3315,9 @@ output news_server {
 
 <a name="Workspaces"></a>
 
-## Temporary Workspaces
+## Workspaces
+
+NOTE: The <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/">Terragrunt</a> wrapper for terraform plan/apply/destroy commands (and in file <tt>terraform.tfvars</tt>) provide an alternative to Hashicorp's Workspaces feature (described at https://www.terraform.io/docs/state/workspaces.html).
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=10h55m39s">VIDEO</a>:
 Workspaces enable management of multiple "environments" in alternate state files (dev, qa, stage, prod).
