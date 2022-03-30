@@ -1,4 +1,4 @@
----
+x---
 layout: post
 title: "Hashicorp Vault (with Consul and Nomad)"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
@@ -42,6 +42,8 @@ Vault's secret handling features are provided several ways. The unique contribut
    * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (Hashicorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
 
    * <a href="#VaultAgent">On your laptop install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
+
+   * <a href="#VaultCompose">On your laptop, install Vault server using Docker Compose</a>
 
    * Install a "self-managed" in AWS with a <strong>S3 backend</strong>
 
@@ -561,7 +563,7 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</
 <a target="_blank" href="
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html#1">
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
-
+is the slidedeck Hashicorp Sales Engineers use for a high-level presentation.
 
 The <strong>Vault Database secrets engine</strong> generates dynamic, time-bound credentials for many different databases. Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by Roger Berlind) 
 walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
@@ -1070,6 +1072,18 @@ It is well suited for cloud environments where HSMs are either not available or 
    GCP_ACCT="mememe"
    gcloud beta compute --project "${THIS_PROJECT_NAME}" instances create "${THIS_INSTANCE_NAME}" --zone "us-central1-f" --machine-type "n1-standard-1" --subnet "default" --maintenance-policy "MIGRATE" --service-account "{$GCP_ACCT}@developer.gserviceaccount.com" --scopes "https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring.write","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" --min-cpu-platform "Automatic" --tags "http","https","web","http-server","https-server" --image "ubuntu-1604-xenial-v20171026a" --image-project "ubuntu-os-cloud" --boot-disk-size "10" --boot-disk-type "pd-standard" --boot-disk-device-name "${THIS_INSTANCE_NAME}"
    </pre>
+
+<a name="VaultCompose"></a>
+
+## Docker Compose of Vault server
+
+<pre>brew install docker
+brew install docker-compose  # now a plug-in to docker
+cd; mkdir -p projects/vault; cd ~/projects/vault
+git clone https://github.com/ryanhartje/containers.git
+cd containers/consul-vault/
+docker-compose up -d
+</pre>
 
 
 <a name="Homebrew"></a>

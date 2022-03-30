@@ -3,7 +3,7 @@ layout: post
 title: "Python Tutorials"
 excerpt: "Who will teach you to code in python"
 tags: [python, apple, mac, setup]
-date: "2021-02-01"
+date: "2022-03-30"
 file: "python-tutorials"
 image:
 # pic white python logo 1900x500.jpg
@@ -25,7 +25,7 @@ is the official tutorial.
 
 <a target="_blank" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a> is the official documentation.
 
-## Mind map
+## Mind maps
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
 from <a target="_blank" href="http://www.seleniumframework.com/python-course/">http://www.seleniumframework.com/python-course</a>
@@ -37,6 +37,19 @@ from <a target="_blank" href="http://www.seleniumframework.com/python-course/">h
 Data-Flair</a> offers <a target="_blank" href="https://data-flair.training/blogs/python-projects-with-source-code/">projects</a>
 
 Microsoft LEARN: <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/intro-to-python/">1 hr text Introduction to Python</a>
+
+<a target="_blank" href="https://www.fullstackpython.com/">Full Stack Python</a> is an open source book that explains technical concepts in plain language. Every layer is about code written in Python: Development Environments, Data, Web Development, Deployment, DevOps.
+
+<a target="_blank" href="https://pyneng.readthedocs.io/en/latest/">Python Networking Engineering on ReadTheDocs</a>
+by <a target="_blank" href="https://www.linkedin.com/in/nsamoylenko/">Natasha Samoylenko (in Ukraine)</a>
+hosts <a target="_blank" href="https://github.com/natenka/pyneng-examples-exercises-en">exercises</a> and <a traget="_blank" href="https://github.com/natenka/pyneng-answers-en/tree/main/answers">answers</a> in GitHub.
+
+https://www.reddit.com/r/Python/comments/1ls7vq/best_written_projects_on_python_github/
+
+https://www.programiz.com/python-programming/examples
+
+https://www.github.com/rg3/youtube-dl
+Reading the code for youtube-dl turned me into a web-scraping machine. I picked up many good habits and tricks from following the code carefully.
 
 
 ### Python for Everyone

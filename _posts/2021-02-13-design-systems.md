@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Design Systems"
-excerpt: "Specifications for look and feel"
+excerpt: "Specifications for look and feel by various tech companies"
 tags: [API, text to speech, JavaScript, programming]
-date: "2021-02-13"
+date: "2022-03-30"
 file: "design-systems"
 image:
 # feature: pic easter island clenched-fist-1900x500
@@ -47,8 +47,6 @@ SAP Fiori at <a target="_blank" href="https://experience.sap.com/fiori-design/">
 
 <a target="_blank" href="https://polaris.shopify.com/">Shopify's "Polaris" Design System</a> shows Ecommerce giant 
 
-Amazon
-
 Apple <a target="_blank" href="https://developer.apple.com/design/">developer.apple.com/design</a> for "Human Interface Guidelines"
 Apple hands out awards for those who designed apps using their system. 
 <a target="_blank" href="https://developer.apple.com/videos/design/">Videos</a>
@@ -59,6 +57,9 @@ Microsoft's Fluent Design System at <a target="_blank" href="https://fluent.micr
 Google Material Design
 
 Facebook
+
+<a target="_blank" href="https://design-system-components-hashicorp.vercel.app/">Hashicorp's Design System</a>
+
 
 
 <a name="Tools"></a>
@@ -71,7 +72,7 @@ Salesforce provides a <a target="_blank" href="https://www.lightningdesignsystem
     * Salesforce articles https://www.lightningdesignsystem.com/resources/articles/
     <br /><br />
 
-Figma
+Same with Figma
 
 
 <a name="Design_Tokens"></a>
