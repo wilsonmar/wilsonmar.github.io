@@ -20,13 +20,19 @@ This tutorial provides manual instructions and automation scripts to setup and r
 
 <a name="Why"></a>
 
+## Why: Use cases for the Pi
+
 <a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
 are targeted for learning by children.
 
-For enterprises, Raspberry Pi have <strong>ARM chips</strong>, so is a good platform to <strong>thoroughly test</strong> whether apps work well on ARM (rather than traditional x86) chips. 
+You can also run a <strong>private GitHub server</strong> on a Pi.
 
-<a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width="209" alt=“rasp-pi-rack-836x960" src="https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png"></a>
-People run apps (within Docker containers) in Kubernetes on Rasperberry Pi in order to become proficient at configuring the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
+Run Home Automation to control and log events.
+
+For enterprises, the Raspberry Pi uses <strong>ARM CPU chips</strong>, so is a good platform to <strong>thoroughly test</strong> whether apps work well on AWS Graviton (rather than traditional Intel x86) instances.
+
+<a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width="209" alt="rasp-pi-rack-836x960" src="https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png"></a>
+Run apps (within Docker containers) in <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> on a cluster of Rasperberry Pi computers in order to become proficient at <strong>configuring</strong> the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=X9fSMGkjtug" title="Jul 15, 2021 Raspberry Pi ft. Kubernetes (k3s cluster w/ Rancher)">This video brags about</a>  (but does not show how) to  <a target="_blank" href="https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview">install of Ubuntu plus</a>
  <a target="_blank" href="https:/get.k3s.io/">light-weight K3S</a> from SUSE Rancher dashboard app to manage the private cloud "supercomputer" cluster.
@@ -37,10 +43,6 @@ People run apps (within Docker containers) in Kubernetes on Rasperberry Pi in or
    3. Network-wide DHCP server and DNS filtering through Pi-hole.
    4. Upstream DNS filtering through Pi-hole for high availability, VPN though Wireguard to help bring internet traffic from my devices back through DNS filtering (even if I'm outside of my home network).
    <br /><br />
-
-You can also run a <strong>private GitHub server</strong> on a Pi.
-
-Run Home Automation to control and log events.
 
 References:
    * https://github.com/mikeroyal/Raspberry-Pi-Guide
@@ -55,9 +57,12 @@ References:
 
 ## Hardware Each Node
 
-The Pi is a Single Board Computer (SBC).
-
 If you want the <strong>maximum on-board 8GB RAM</strong> on each board, order the <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 4 B</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (with no SD card) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$187.90 w/128 SD "Extreme Kit" with fan in black box and cables from CanaKit</a>.
+
+Power supply:
+   * Pi 3 INPUT: 0.3 A, OUTPUT: +5V = 2.5A with micro USB port
+   * Pi 4 INPUT: 0.5 A, OUTPUT: +5.1V = 3.0A with USB-C port
+   <br /><br />
 
 You'll want a fan or high heat would reduce the life of a board.
 
@@ -69,7 +74,7 @@ Newer Pi have <strong>mini HDMI</strong> ports, so be sure to have an adapter or
 
 ### Competitor SBC hardware
 
-Small form factor computers with a tiny footprint that put full-sized PC power in the palm of your hand:
+The Pi is a Single Board Computer (SBC), a "small form factor" computer with a tiny footprint that put full-sized PC power in the palm of your hand:
 
 * Banana Pi M64
 * Libre Computer Board ALL-H3-CC
@@ -94,7 +99,9 @@ Several operating systems can be installed on a Raspberry Pi:
 
 To install:
 
-1. <a href="#Adapter">If needed, get an adapter for your laptop to read micro-SD card</a>
+1. <a href="#Adapter">On a Mac, get an adapter for your laptop to read micro-SD card</a>
+
+1. Attach a static discharge bracket to your wrist to ground.
 1. <a href="#InsertChip">Insert micro-SD chip in your laptop</a>
 
 On <a href="#MacPrep">MacOS</a>
@@ -205,15 +212,6 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
    | --------- | ------- | ----: | ---: | ---- |
    | 2019-04-08 imager_1.7.1.dmg | - | 18.7 MB | ? GB | - |
 
-1. Open file "imager_1.7.1.dmg" to pop-up <tt>/Volumes/Raspberry Pi Imager</tt>.
-1. Drag the <tt>Raspberry Pi Imager.app</tt> icon and drop it over the blue folder (to move it into the Applications folder).
-1. Press command+Q or click the red dot at the upper-right.
-1. Delete file "imager.x.x.x.dmg" file (to recover disk space).
-1. Find file "Raspberry Pi Imager.app" and click to run it.
-1. Click "Open" for the dialog about "Are you sure you want to open it?".
-1. Click "CHOOSE OS" (do NOT select the first "Raspberry Pi" you see because it is for older 32-bit chips).
-1. If you are installing for a Raspberry Pi 64-bit, select "Raspberry Pi OS (other)", then a 64-bit one "with no desktop environment" (because you're a pro). 
-
    <a name="zipSizes"></a>
 
    | Date/File | Version | Download | Unzipped | Blog |
@@ -231,17 +229,7 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
 
    Alternately, Raspian provides sudo-free access to GPIO (file read/write ports), so the above can be done in an Ubuntu terminal.
 
-   If you clicked "Raspbian Stretch with desktop and recommended software", the file name downloaded would contain "-full", and be bigger.
-
-   NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
-
-   Alternately, if you are installing Talos, scroll down to select "Use custom" and navigate to where you downloaded a zip file for that.
-
-1. While you're waiting, read <a target="_blank" href="https://www.raspberrypi.org/blog/">
-   blog at Raspberrypi.org</a>.
-
-   Versions of Debian are named after 
-   <a target="_blank" href="https://www.wikiwand.com/en/List_of_Toy_Story_characters">characters in Disney's “Toy Story” films</a>
+   PROTIP: Versions of Debian are named after <a target="_blank" href="https://www.wikiwand.com/en/List_of_Toy_Story_characters">characters in Disney's “Toy Story” films</a>
 
    * "Buster" is Andy's pet miniature dachshund
    * "Stretch" the rubber octopus is voiced by Whoopi Goldberg
@@ -251,8 +239,7 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
    * <a target="_blank" href="http://pixar.wikia.com/wiki/Sid_Phillips">"Sid"</a> is the bad boy.
    <br /><br />
 
-   QUESTION: Where is the history of old versions 
-   and how does one get announcement emails?
+   QUESTION: Where is the history of old versions and how does one get announcement emails?
    
    Click the red <strong>Download ZIP</strong> below
    <strong>Raspbian STRETCH WITH DESKTOP</strong>, not "Raspbian Stretch with desktop and recommended software".
@@ -262,17 +249,12 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
    (which can be used in <a target="_blank" href="https://github.com/debian-pi/raspbian-ua-netinst/releases/">
    unattended shell scripts to automate the clicking</a>).
 
+   If you clicked "Raspbian Stretch with desktop and recommended software", the file name downloaded would contain "-full", and be bigger.
+
+   NOTE: The previous version name PIXEL, which stands for "Pi Improved X-Windows Environmet, Lightweight". But many refer it simply as "X".
+
+
    <a name="SHA256"></a>
-
-1. For the next step, open a Terminal and cd ~/Downloads.
-
-   PROTIP: Do not unzip the file downloaded because the program that processes it expects a zip file.
-
-
-If you are using <a href="#WinPrep">Windows, skip to the Windows Prep SD section below</a>.
-
-This steps below is for Mac:
-
    <a name="CalcHash"></a>
 
    ### Calculate and compare hash on Mac
@@ -313,6 +295,40 @@ This steps below is for Mac:
    <a href="#zipSizes">The file must be smaller</a> (which it is...for now).
 
 
+   ### Run Imager
+
+1. Open file "imager_1.7.1.dmg" to pop-up <tt>/Volumes/Raspberry Pi Imager</tt>.
+1. Drag the <tt>Raspberry Pi Imager.app</tt> icon and drop it over the blue folder (to move it into the Applications folder).
+1. Press command+Q or click the red dot at the upper-right.
+1. Delete file "imager.x.x.x.dmg" file (to recover disk space).
+1. Find file "Raspberry Pi Imager.app" and click to run it.
+1. Click "Open" for the dialog about "Are you sure you want to open it?".
+1. Click "CHOOSE OS" (do NOT select the first "Raspberry Pi" you see because it is for older 32-bit chips).
+1. If you are installing for a Raspberry Pi 64-bit, select "Raspberry Pi OS (other)", then a 64-bit one "with no desktop environment" (because you're a pro). 
+
+   Alternately, if you are installing Talos, scroll down to select "Use custom" and navigate to where you downloaded a zip file for that.
+
+1. Click "CHOOSE" in under "Storage" and select "Generic- Micro SD/M2 Media - 128.2 GB".
+1. Click "WRITE" and "YES" to "All existing data ... will be erased. Are you sure you want to continue?".
+1. Click "OK" to "Raspberry Pi Imager.app" would like to access files on a removeable volume."
+1. While you're waiting, read <a target="_blank" href="https://www.raspberrypi.org/blog/">
+   blog at Raspberrypi.org</a>.
+
+1. Click "CONTINUE" when "Write Successful" appears, "You can now remove the SD card from the reader" appears.
+1. Press command+Q to exit the Imager app.
+
+   ### Remove zip/tz file
+
+1. For the next step, open a Terminal and cd ~/Downloads.
+
+   PROTIP: Do not unzip the file downloaded because the program that processes it expects a zip file.
+   
+   If you are using <a href="#WinPrep">Windows, skip to the Windows Prep SD section below</a>.
+
+   This steps below is for Mac working with Talos:
+
+1. Delete the file "metal-rpi_4-arm64.img.xz" if disk space on your Mac is an issue for you.
+
    <a name="FormatChip"></a>
    
    ### Format micro-SD chip on your MacOS
@@ -331,7 +347,7 @@ This steps below is for Mac:
    <tt><strong>diskutil list
    </strong></tt>
 
-   A sample response on Mac High Sierra and Mac Mojava:
+   A sample response:
 
    <pre>/dev/disk0 (internal):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
@@ -343,21 +359,22 @@ This steps below is for Mac:
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      APFS Container Scheme -                      +500.0 GB   disk1
                                  Physical Store disk0s2
-   1:                APFS Volume Macintosh HD            457.2 GB   disk1s1
-   2:                APFS Volume Preboot                 20.9 MB    disk1s2
-   3:                APFS Volume Recovery                517.8 MB   disk1s3
-   4:                APFS Volume VM                      10.7 GB    disk1s4
+   1:                APFS Volume ⁨Macintosh HD - Data⁩     447.4 GB   disk1s1
+   2:                APFS Volume ⁨Preboot⁩                 334.3 MB   disk1s2
+   3:                APFS Volume ⁨Recovery⁩                1.1 GB     disk1s3
+   4:                APFS Volume ⁨VM⁩                      3.2 GB     disk1s4
+   5:                APFS Volume ⁨Macintosh HD⁩            15.8 GB    disk1s5
+   6:              APFS Snapshot ⁨com.apple.os.update-...⁩ 15.8 GB    disk1s5s1
 &nbsp;
 /dev/disk2 (disk image):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:     Apple_partition_scheme                        +24.2 MB    disk2
-   1:        Apple_partition_map                         32.3 KB    disk2s1
-   2:                  Apple_HFS Flash Player            24.2 MB    disk2s2
+   0:      GUID_partition_scheme                        +109.1 MB   disk2
+   1:                  Apple_HFS ⁨Raspberry Pi Imager⁩     109.0 MB   disk2s1
 &nbsp;
-/dev/disk3 (external, physical):
+/dev/disk3 (disk image):
    #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:     FDisk_partition_scheme                        *63.9 GB    disk3
-   1:               Windows_NTFS S3 nice guy             63.8 GB    disk3s1
+   0:      GUID_partition_scheme                        +109.1 MB   disk3
+   1:                  Apple_HFS ⁨Raspberry Pi Imager⁩     109.0 MB   disk3s1
    </pre>
 
    Alternately, the sample response for Mac Sierra and before:
