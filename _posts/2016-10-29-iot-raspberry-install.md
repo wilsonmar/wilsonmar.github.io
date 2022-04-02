@@ -309,12 +309,25 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
    Alternately, if you are installing Talos, scroll down to select "Use custom" and navigate to where you downloaded a zip file for that.
 
 1. Click "CHOOSE" in under "Storage" and select "Generic- Micro SD/M2 Media - 128.2 GB".
+
+   If you don't see the selection, unplug the chip and insert again.
+
+1. If you are installing Raspian, click the gear icon to configure wi-fi SSID and password.
+
+   If you are installing Talos, do not click the gear icon to configure, or you'll see "Operating system did not mount FAT32 partition" later.
+
 1. Click "WRITE" and "YES" to "All existing data ... will be erased. Are you sure you want to continue?".
 1. Click "OK" to "Raspberry Pi Imager.app" would like to access files on a removeable volume."
-1. While you're waiting, read <a target="_blank" href="https://www.raspberrypi.org/blog/">
-   blog at Raspberrypi.org</a>.
+1. Provide your laptop's password to allow writing.
+
+1. While you're waiting for the writing and verifying, read <a target="_blank" href="https://www.raspberrypi.org/blog/">blog at Raspberrypi.org</a>.
+
+   If you see "Operating system did not mount FAT32 partition", ???
 
 1. Click "CONTINUE" when "Write Successful" appears, "You can now remove the SD card from the reader" appears.
+
+1. If you have another chip, repeat the above steps so you'll have a backup at the ready.
+
 1. Press command+Q to exit the Imager app.
 
    ### Remove zip/tz file
@@ -549,11 +562,6 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 
 <hr />
 
-<a name="OnThePi"></a>
-
-## On the Raspberry Pi:
-
-
 <a name="WinPrep"></a>
 
 ## Windows Prep SD
@@ -671,21 +679,29 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
 
 <hr />
 
-<a name="PowerUp"></a>
+<a name="OnThePi"></a>
 
-## Power Up to GUI in SD card
+## On the Raspberry Pi:
 
-Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>, if you insert a stock Raspbian image flash SD drive into the Pi and power it up, it would by default display a GUI, with no WiFi connection.
+1. Plug in a USB keyboard.
+   
+   <a name="PowerUp"></a>
 
-0. Unlug the power adapter.
+   ### Power Up to GUI in SD card
 
-0. Insert the micro SD card into the receptable at the bottom on the Pi.
+   Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/installation/installing-images/mac.md">this</a>, if you insert a stock Raspbian image flash SD drive into the Pi and power it up, it would by default display a GUI, with no WiFi connection.
+
+1. Unlug the power adapter.
+
+   NOTE: There is no physical on/off switch on the Pi.
+
+1. Insert the micro SD card into the receptable at the bottom on the Pi.
 
    PROTIP: The metallic side of the card should face the Pi board.
 
    When in, the chip sticks out a bit.
 
-0. Plug in monitor and keyboard.
+1. Plug in monitor and keyboard.
 
    The Pi 3 is capable of playing <strong>1080p HD video</strong> (1900x800 pixels).
    So you can plug the other end of the HDMI cable into a TV.
@@ -693,7 +709,7 @@ Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/inst
    Older TVs without HDMI can still be used by using an adapter that converts
    HDMI signals, albeit at a lower resolution.
 
-0. Power up by plugging in the power.
+1. Power up by plugging in the power.
 
    CONGRATULATIONS: Isn't it exciting to see the screen appear on a new computer?
 
@@ -713,18 +729,18 @@ Based on <a target="_blank" href="https://www.raspberrypi.org/documentation/inst
 
    ### Exit and return to GUI 
 
-0. Exit GUI mode by pressing <strong>Ctrl + alt + F2</strong>
+1. Exit GUI mode by pressing <strong>Ctrl + alt + F2</strong>
    (from among F1-F12 keys) at the same time.
 
 
    ### Enable boot to CLI console
 
-0. When the regular Terminal window appears
+1. When the regular Terminal window appears
    <a href="#ConfigurePi">Configure the Pi</a>
 
-0. Select the "Enable Boot to Desktop/Scratch" option
+1. Select the "Enable Boot to Desktop/Scratch" option
 
-0. Select "Console Text console". 
+1. Select "Console Text console". 
 
 
    ### Start Raspbian GUI

@@ -21,11 +21,12 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 ## What is Terraform?
 
-<a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="from IBM">VIDEO</a>
-
 <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
 "Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="2020 by IBMer Sai Vennom">
+<img width="1680" alt="terraform-ibm-sai-vennam-3360x2100" src="https://user-images.githubusercontent.com/300046/161367565-7e7871ee-176f-4964-bd12-1b6f05534a6d.png"></a>
 
 
 <a name="LearningStrategy"></a>
