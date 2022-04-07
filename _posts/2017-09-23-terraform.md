@@ -4174,7 +4174,7 @@ https://medium.com/capital-one-tech/terraform-poka-yokes-writing-effective-scala
 
 https://medium.com/codex/devops-iac-setup-using-terragrunt-and-terraform-5d8a54c97724
 
-
+Like Sentinel, the env0 includes policy as code guardrails.
 
 
 ## More on DevOps #

@@ -59,18 +59,26 @@ References:
 
 If you want the <strong>maximum on-board 8GB RAM</strong> on each board, order the <a target="_blank" href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/?variant=raspberry-pi-4-model-b-8gb">Raspberry Pi 4 B</a> (dual displays, 1.5GHz quad-core, 15W USB-C, 2xUSBv2, 2xUSBv3) -- BMC2711 <a target="_blank" href="https://www.horione.com/shop/4-b-8-model-pi-raspberry-gb">$67.49 (with no SD card) from Horione</a> or <a target="_blank" href="https://www.aliexpress.com/item/4000069398795.html?_randl_currency=USD&_randl_shipto=US&src=google&aff_fcid=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&aff_fsk=UneMJZVf&aff_platform=aaf&sk=UneMJZVf&aff_trace_key=3e83a28aae264343827b958b1a6c8632-1648061139548-02952-UneMJZVf&terminal_id=223b83d2f8bd44ec91f1e2831cde0b20&afSmartRedirect=y">$157.86 with power, 32 GB SD, and fan in clear case from AliExpress</a>, or <a target="_blank" href="https://www.canakit.com/raspberry-pi-4-extreme-kit.html">$187.90 w/128 SD "Extreme Kit" with fan in black box and cables from CanaKit</a>.
 
+The Extreme Kit's box comes with a <strong>fan</strong>, because heat reduces the life of a board.
+
+<strong>Heat sinks</strong> glued on top of each chip helps to difuse heat.
+
 Power supply:
    * Pi 3 INPUT: 0.3 A, OUTPUT: +5V = 2.5A with micro USB port
    * Pi 4 INPUT: 0.5 A, OUTPUT: +5.1V = 3.0A with USB-C port
    <br /><br />
-
-You'll want a fan or high heat would reduce the life of a board.
 
 You'll need at least one monitor display. 
 CAUTION: Multiple displays will make the chip run hotter.
 The Pi supoports 1900x1080 (HD) monitors with full-size HDMI ports.
 
 Newer Pi have <strong>mini HDMI</strong> ports, so be sure to have an adapter or a cable with a mini on one end and a full HDMI adapter on the other end.
+
+   * The black ports are v2 for a mouse and keyboard. 
+   * The blue ports are v3 for ?
+   <br /><br />
+
+Speaker
 
 ### Competitor SBC hardware
 
@@ -383,12 +391,9 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
    #:                       TYPE NAME                    SIZE       IDENTIFIER
    0:      GUID_partition_scheme                        +109.1 MB   disk2
    1:                  Apple_HFS ⁨Raspberry Pi Imager⁩     109.0 MB   disk2s1
-&nbsp;
-/dev/disk3 (disk image):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        +109.1 MB   disk3
-   1:                  Apple_HFS ⁨Raspberry Pi Imager⁩     109.0 MB   disk3s1
    </pre>
+
+   <strong>PROTIP: Use "/dev/disk2" because that "109.1 MB" is your "128 GB" chip.</strong> The difference between those two numbers is in the different ways the computer versus marketing people calculate the amount of bits. Inside the computer, bits are calculated using 1024 blocks.
 
    Alternately, the sample response for Mac Sierra and before:
 
@@ -492,10 +497,14 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
    <tt><strong>cd ~/Desktop
    </strong></tt>
 
+1. To avoid "Operation not permitted" in the dd command below, on a Mac go to System Preferences > Security & Privacy > Full Disk Access > Terminal (or iTerm2, etc.).
+
+https://github.com/siderolabs/talos/releases/download/v1.0.0/talosctl-$(uname -s | tr "[:upper:]" "[:lower:]")-amd64
+
 1. Manually construct a command to write the image downloaded onto the SD Card. 
    Replace the X in rdiskX with the disk number from before. For example:
 
-   <tt><strong>sudo dd if=2018-06-27-raspbian-stretch.img of=/dev/rdisk3 bs=1m
+   <tt><strong>sudo dd if=2018-06-27-raspbian-stretch.img of=/dev/rdisk2 bs=1m
    </strong></tt>
 
    BLAH: The dd command does not have a verbose mode to show progress.
@@ -520,7 +529,7 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
 
 1. Alternately, 
 
-   <pre><strong>sudo dd if=metal-rpi_4-arm64.img of=/dev/mmcblk0 bs=4M conv=fsync</strong></pre>
+   <pre><strong>sudo dd if=metal-rpi_4-arm64.img of=/dev/disk2 bs=4m conv=fsync</strong></pre>
 
    `conv=fsync` synchronizes output data and metadata just before finishing. Some operations are stored in RAM and postponed to be later written on the disk. Some devices use buffers and caches in order to improve their throughput and latency performance. So this flag tells dd to write everything on the disk (forcing a physical write of output data and metadata). This command makes the device flush its buffers and caches so that if the device is removed the data is written to it before the operation is marked as complete and before control passes back to the terminal prompt. See https://abbbi.github.io/dd/
 
@@ -534,6 +543,13 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
 4348444672 bytes transferred in 265.020326 secs (16407967 bytes/sec)
    </pre>
 
+1. Unmount (construct command with correct disk2):
+
+   <pre><strong>sudo diskutil unmountDisk /dev/disk2</strong></pre>
+
+   Response:
+   
+   <pre>Unmount of all volumes on disk2 was successful</pre>
 
    <a name="VerifySD"></a>
 
@@ -2622,10 +2638,12 @@ NexDock
 
 https://medium.freecodecamp.org/the-easy-way-to-set-up-docker-on-a-raspberry-pi-7d24ced073ef
 
-   curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
-   sudo groupadd docker
-   sudo gpasswd -a $USER docker
-   docker run hello-world
+<a target="_blank" href="https://learn.acloud.guru/course/hands-on-iot-on-gcp/learn/86133277-9850-4650-ae29-5b322c308909/11ce4fef-15bd-4051-9269-a08b179824fc/watch">Setting Up Raspberry Pi</a>
+as part of ACloudGuru video <a target="_blank" href="https://learn.acloud.guru/course/hands-on-iot-on-gcp/dashboard">IoT on GCP</a> by Karlos Knox.
+
+<a target="_blank" href="https://learn.acloud.guru/series/acg-projects/view/102" title="24 October 2017">
+#102 - DIY Alexa with a Raspberry Pi</a>
+
 
 ## More on IoT #
 
