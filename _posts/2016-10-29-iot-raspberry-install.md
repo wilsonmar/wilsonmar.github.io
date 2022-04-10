@@ -22,14 +22,20 @@ This tutorial provides manual instructions and automation scripts to setup and r
 
 ## Why: Use cases for the Pi
 
-<a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
+What to run on a Raspberry Pi?
+
+   * <a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
 are targeted for learning by children.
 
-You can also run a <strong>private GitHub server</strong> on a Pi.
+   * Run a <strong>private GitHub server</strong> on a Pi.
 
-Run Home Automation to control and log events.
+   * Run Home Automation to control and log events.
 
-For enterprises, the Raspberry Pi uses <strong>ARM CPU chips</strong>, so is a good platform to <strong>thoroughly test</strong> whether apps work well on AWS Graviton (rather than traditional Intel x86) instances.
+   * Run one of the "goat" server which contains known security issues. <a target="_blank" href="https://wilsonmar.github.io/owasp/">OWASP</a>
+
+For enterprises, the Raspberry Pi uses <strong>ARM CPU chips</strong>, so is a good platform to 
+
+   * <strong>thoroughly test</strong> whether apps work well on AWS Graviton (rather than traditional Intel x86) instances.
 
 <a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width="209" alt="rasp-pi-rack-836x960" src="https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png"></a>
 Run apps (within Docker containers) in <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> on a cluster of Rasperberry Pi computers in order to become proficient at <strong>configuring</strong> the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 

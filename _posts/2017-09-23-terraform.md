@@ -2253,6 +2253,7 @@ The module's source can be on a local disk:
    * PROTIP: The ref above is the first 7 hex digits of a commit SHA hash ID. Alternately, semantic version tag value (such as "v1.2.3") can be specified. This is a key enabler for immutable strategy.
    <br /><br />
 
+The ability to loop over modules with a single module call became available August 2020 with the release of Terraform 0.13.
 
    ### Terraform Registry
 
@@ -4176,6 +4177,9 @@ https://medium.com/codex/devops-iac-setup-using-terragrunt-and-terraform-5d8a54c
 
 Like Sentinel, the env0 includes policy as code guardrails.
 
+https://medium.com/4th-coffee/on-devops-30-9-extraordinary-terraform-best-practices-that-will-change-your-infra-world-278d98d209ee
+
+https://medium.com/@ben.arundel/godaddy-and-terraform-a-brief-poc-f3afac56c402
 
 ## More on DevOps #
 
