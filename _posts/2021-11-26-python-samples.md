@@ -2171,13 +2171,21 @@ For Python: <a target="_blank" href="https://www.youtube.com/watch?v=dikn50cu5lo
 
 <hr />
 
-## 
+## Coursera Google IT Automation Professional Certificate
 
 <a target="_blank" href="https://www.coursera.org/professional-certificates/google-it-automation">
 On Coursera.com is the "Google IT Automation with Python" Professional Certificate</a> from 2019 consists of six courses, each set over 4 weeks, using Qwiklabs. <a target="_blank" href="https://medium.com/javarevisited/review-googles-it-automation-with-python-professional-certification-on-coursera-f75c1ba670e8">Worth it?</a>
+My notes from it are below.
 
 1. Crash Course on Python
-2. Using Python to Interact with the Operating System
+
+2. <a target="_blank" href="https://www.coursera.org/learn/python-operating-system/">Using Python to Interact with the Operating System</a>
+
+   * <a target="_blank" href="https://docs.python.org/3/reference/index.html">The official language reference</a> may seem unintelligible to beginners. But it's the definitive source for the most experienced devs.
+   * <a target="_blank" href="https://automatetheboringstuff.com/">BOOK: Automate the Boring Stuff with Python</a> includes a lot of practical programming exercises for beginners. You can refer to this content to read more about some of the things that we'll be discussing, and get inspired with more ideas of things that can be automated.
+   * <a target="_blank" href="https://docs.python-guide.org/">Hitchhiker’s Guide to Python</a> 
+   <br /><br />
+
 3. Introduction to Git and GitHub 
    * Week 1: Introduction to Git and GitHub (Version Control)
    * Week 2: Advanced Git interaction, Undoing Things, Branching and Merging, 
@@ -2185,6 +2193,7 @@ On Coursera.com is the "Google IT Automation with Python" Professional Certifica
    * Week 4: Collaboration, Pull Requests, Code Reviews, Managing Projects
 
    * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/master/Course3/Lab4/validations.py">validations.py</a>
+   <br /><br />
 
 4. <a target="_blank" href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/home/welcome">Troubleshooting and Debugging Techniques</a> (by Amanda Ballas, Google Security Systems Administrator)
 
@@ -2207,9 +2216,9 @@ On Coursera.com is the "Google IT Automation with Python" Professional Certifica
    * https://landing.google.com/sre/sre-book/chapters/effective-troubleshooting/
 
    * Download the file only once from the URL.
-   * Pre-process it so that the same calculation doesn't need to be done over and over again. This can be done in two ways. You can choose any one of them:
-   * To create a dictionary with the start dates and then use the data in the dictionary instead of the complicated calculation.
-   * To sort the data by start_date and then go date by date.
+   * Pre-process it so that the same calculation doesn't need to be done over and over again. This can be done in two ways ("Dynamic Programming").
+   * Create a dictionary with the start dates and then use the data in the dictionary instead of the complicated calculation.
+   * Sort data by start_date and then go date by date.
    <br /><br />
 
 5. <a target="_blank" href="https://www.coursera.org/learn/configuration-management-cloud?specialization=google-it-automation">Configuration Management and the Cloud</a> by SRE includes Deploying <a target="_blank" href="https://www.coursera.org/learn/configuration-management-cloud/lecture/wAyPs/what-is-puppet">Puppet 6</a> ("the current standard"), Automation in the Cloud, Managing Cloud Instances at Scale
@@ -2226,11 +2235,13 @@ On Coursera.com is the "Google IT Automation with Python" Professional Certifica
    * 1:30:00 lab - Debug Puppet
 
    * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/master/Course5/Lab3/hello_cloud.py">hello-cloud.py</a> "A simple Hello World type app which can serve on port 8000."
+   <br /><br />
 
 6. <a target="_blank" href="https://www.coursera.org/learn/automating-real-world-tasks-python?specialization=google-it-automation">"Automating Real-World Tasks with Python"</a> by SRE Matt Gaunt - how to extend the capabilities of your python code by using some modules and libraries such as python image library (PIL) to work with images and also learn how to communicate with the world outside of your network such as using APIs and more.
 
    1. Use the Pillow <a target="_blank" href="https://pillow.readthedocs.io/en/stable/handbook/tutorial.html">Python Imaging Library</a> (import PIL) to do the following to a batch of images: Open an image, Rotate an image, Resize an image, Save an image in a specific format in a separate directory.
    2. Python Requests two programs to communicate with each other. Data serialization to a Comma-Separated Value (CSV) or JSON (JavaScript Object Notation) file.
+   <br /><br />
 
    * https://github.com/wilsonmar/systematic -  a collection of OS level and programming tools for python, mainly just packing stuff I use all the time to one place.
 
