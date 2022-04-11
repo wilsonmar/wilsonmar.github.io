@@ -2177,16 +2177,25 @@ For Python: <a target="_blank" href="https://www.youtube.com/watch?v=dikn50cu5lo
 On Coursera.com is the "Google IT Automation with Python" Professional Certificate</a> from 2019 consists of six courses, each set over 4 weeks, using Qwiklabs. <a target="_blank" href="https://medium.com/javarevisited/review-googles-it-automation-with-python-professional-certification-on-coursera-f75c1ba670e8">Worth it?</a>
 My notes from it are below.
 
-1. Crash Course on Python
+1. <a target="_blank" href="https://www.coursera.org/learn/python-crash-course?specialization=google-it-automation">Crash Course on Python</a>
 
 2. <a target="_blank" href="https://www.coursera.org/learn/python-operating-system/">Using Python to Interact with the Operating System</a>
 
    * <a target="_blank" href="https://docs.python.org/3/reference/index.html">The official language reference</a> may seem unintelligible to beginners. But it's the definitive source for the most experienced devs.
    * <a target="_blank" href="https://automatetheboringstuff.com/">BOOK: Automate the Boring Stuff with Python</a> includes a lot of practical programming exercises for beginners. You can refer to this content to read more about some of the things that we'll be discussing, and get inspired with more ideas of things that can be automated.
    * <a target="_blank" href="https://docs.python-guide.org/">Hitchhiker’s Guide to Python</a> 
+
+   * <a target="_blank" href="http://www.pyladies.com/blog/Get-Your-Mac-Ready-for-Python-Programming/">Installing Python 3 on MacOS with Homebrew</a>
+   * <a target="_blank" href="https://devblogs.microsoft.com/python/python-in-the-windows-10-may-2019-update/">Python in the Microsoft Store for Windows 10</a>
+   * <a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-local-programming-environment-on-windows-10">Installing Python 3 on Windows 10 with Chocolatey</a>
+   * <a target="_blank" href="https://www.digitalocean.com/community/tutorials/package-management-basics-apt-yum-dnf-pkg">Package management basics on Linux</a>
+
+   * <a target="_blank" href="https://www.softwaretestinghelp.com/python-ide-code-editors/">Python IDEs and Code Editors (Guide)</a>
+   * <a target="_blank" href="https://www.softwaretestinghelp.com/python-ide-code-editors/">Best Python IDEs and Code Editors</a>
+   * <a target="_blank" href="https://www.datacamp.com/community/tutorials/data-science-python-ide">Top 5 Python IDEs for Data Science</a>
    <br /><br />
 
-3. Introduction to Git and GitHub 
+3. <a target="_blank" href="https://www.coursera.org/learn/introduction-git-github?specialization=google-it-automation">Introduction to Git and GitHub</a>
    * Week 1: Introduction to Git and GitHub (Version Control)
    * Week 2: Advanced Git interaction, Undoing Things, Branching and Merging, 
    * Week 3: Working with Remotes, Introduction to GitHub, Using a Remote Repository, Solving Conflicts
