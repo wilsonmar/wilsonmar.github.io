@@ -2169,6 +2169,72 @@ brew install wxwidgets --build-from-source
 
 For Python: <a target="_blank" href="https://www.youtube.com/watch?v=dikn50cu5lo&list=PLYpyJJEou2GF8LGuRH_pB342R5NzwiMu3">VIDEO</a>
 
+<hr />
+
+## 
+
+<a target="_blank" href="https://www.coursera.org/professional-certificates/google-it-automation">
+On Coursera.com is the "Google IT Automation with Python" Professional Certificate</a> from 2019 consists of six courses, each set over 4 weeks, using Qwiklabs. <a target="_blank" href="https://medium.com/javarevisited/review-googles-it-automation-with-python-professional-certification-on-coursera-f75c1ba670e8">Worth it?</a>
+
+1. Crash Course on Python
+2. Using Python to Interact with the Operating System
+3. Introduction to Git and GitHub 
+   * Week 1: Introduction to Git and GitHub (Version Control)
+   * Week 2: Advanced Git interaction, Undoing Things, Branching and Merging, 
+   * Week 3: Working with Remotes, Introduction to GitHub, Using a Remote Repository, Solving Conflicts
+   * Week 4: Collaboration, Pull Requests, Code Reviews, Managing Projects
+
+   * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/master/Course3/Lab4/validations.py">validations.py</a>
+
+4. <a target="_blank" href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/home/welcome">Troubleshooting and Debugging Techniques</a> (by Amanda Ballas, Google Security Systems Administrator)
+
+   * <tt>od-cx/dev/urandom</tt>
+   * <tt>top</tt>  control+C
+   * traffice shaping?
+   * memory_profiler
+
+   * https://realpython.com/python-concurrency/
+   * https://hackernoon.com/threaded-asynchronous-magic-and-how-to-wield-it-bba9ed602c32
+   * https://www.pluralsight.com/blog/tutorials/how-to-profile-memory-usage-in-python
+   * https://www.linuxjournal.com/content/troubleshooting-network-problems
+
+   * Eisenhower - Importance vs Urgent matrix
+   * Technical Debt = make more work for ourselves later by taking shortcuts now
+   * https://blog.rescuetime.com/how-to-prioritize/
+
+   * https://simpleprogrammer.com/understanding-the-problem-domain-is-the-hardest-part-of-programming/
+   * https://blog.turbonomic.com/blog/on-technology/thinking-like-an-architect-understanding-failure-domains
+   * https://landing.google.com/sre/sre-book/chapters/effective-troubleshooting/
+
+   * Download the file only once from the URL.
+   * Pre-process it so that the same calculation doesn't need to be done over and over again. This can be done in two ways. You can choose any one of them:
+   * To create a dictionary with the start dates and then use the data in the dictionary instead of the complicated calculation.
+   * To sort the data by start_date and then go date by date.
+   <br /><br />
+
+5. <a target="_blank" href="https://www.coursera.org/learn/configuration-management-cloud?specialization=google-it-automation">Configuration Management and the Cloud</a> by SRE includes Deploying <a target="_blank" href="https://www.coursera.org/learn/configuration-management-cloud/lecture/wAyPs/what-is-puppet">Puppet 6</a> ("the current standard"), Automation in the Cloud, Managing Cloud Instances at Scale
+
+   * https://quizlet.com/106907330/puppet-exam-questions-flash-cards/
+   * IaC (Infrastructure as Code) - Using a version control system to deploy and manage node configurations
+   * https://puppet.com/docs/puppet/latest/lang_resources.html
+   * https://puppet.com/blog/deploy-packages-across-your-windows-estate-with-bolt-and-chocolatey/
+   * Fact = A variable representing characteristics of a system
+   * Idempotent = An action can be performed repeatedly without changing the system after the first run
+   * https://en.wikipedia.org/wiki/Domain-specific_language
+   * http://radar.oreilly.com/2015/04/the-puppet-design-philosophy.html
+   * Puppet facts are stored in hashes. If we wanted to use a conditional statement to perform a specific action based on a fact value, what symbol must precede the facts variable for the Puppet DSL to recognize it?
+   * 1:30:00 lab - Debug Puppet
+
+   * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/master/Course5/Lab3/hello_cloud.py">hello-cloud.py</a> "A simple Hello World type app which can serve on port 8000."
+
+6. <a target="_blank" href="https://www.coursera.org/learn/automating-real-world-tasks-python?specialization=google-it-automation">"Automating Real-World Tasks with Python"</a> by SRE Matt Gaunt - how to extend the capabilities of your python code by using some modules and libraries such as python image library (PIL) to work with images and also learn how to communicate with the world outside of your network such as using APIs and more.
+
+   1. Use the Pillow <a target="_blank" href="https://pillow.readthedocs.io/en/stable/handbook/tutorial.html">Python Imaging Library</a> (import PIL) to do the following to a batch of images: Open an image, Rotate an image, Resize an image, Save an image in a specific format in a separate directory.
+   2. Python Requests two programs to communicate with each other. Data serialization to a Comma-Separated Value (CSV) or JSON (JavaScript Object Notation) file.
+
+   * https://github.com/wilsonmar/systematic -  a collection of OS level and programming tools for python, mainly just packing stuff I use all the time to one place.
+
+
 
 <hr />
 
