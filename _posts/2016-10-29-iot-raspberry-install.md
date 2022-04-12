@@ -22,25 +22,40 @@ This tutorial provides manual instructions and automation scripts to setup and r
 
 ## Why: Use cases for the Pi
 
-What to run on a Raspberry Pi?
+<a target="_blank" href="https://www.youtube.com/watch?v=rS9CbsohFGk" title="Geerling Buy 2022">VIDEO</a>: 
+What to run on a Raspberry Pi? 
 
    * <a target="_blank" href="https://projects.raspberrypi.org/en/projects">Many existing Raspberry projects</a> 
 are targeted for learning by children.
 
+   * Block Ad tracking on your own network DHCP DNS using <a target="_blank" href="https://docs.pi-hole.net/">PiHole</a> <a target="_blank" href="https://docs.pi-hole.net/guides/vpn/openvpn/overview/">paired with a VPN</a>
+
+   * A <strong>camera/webcam</strong> for time lapse videos or smart object-detection (running Tensorflow)
+
+   * Light show based on what music is playing
+
+   * Setup a <a target="_blank" href="https://www.youtube.com/watch?v=rS9CbsohFGk&t=2m38s">NAS (Network Attached Storage)</a> using OpenMediaVault * Run a media library to play songs, videos (from a separate drive)
+
    * Run a <strong>private GitHub server</strong> on a Pi.
 
-   * Run Home Automation to control and log events.
+   * Run Home Assistant or OpenHAB to control lights, monitor environment, and other automation. <a target="_blank" href="https://www.youtube.com/watch?v=rS9CbsohFGk&t=3m23s" title="Geerling Guy">Zigbee</a>. <a target="_blank" href="https://www.youtube.com/watch?v=PV41VEZCTNE&t=3m">HOOBS</a> integrates Alexa, Nestcam, etc. with Apple HomeKit.
+
+   * Display a <strong>clock</strong>, task list, calendar, a static menu like at a restaurant), or rotating pictures in a nursing home -- from an old PC or older Pi.
 
    * Run one of the "goat" server which contains known security issues. <a target="_blank" href="https://wilsonmar.github.io/owasp/">OWASP</a>
 
+   * Geerling: build a 4G/5G wireless router modem (instead of buying one)
+
+   * Process video to .mp4
+
 For enterprises, the Raspberry Pi uses <strong>ARM CPU chips</strong>, so is a good platform to 
 
-   * <strong>thoroughly test</strong> whether apps work well on ARM chips, such as ones used on AWS Graviton server types (rather than traditional Intel x86).
+   * <strong>thoroughly test</strong> whether apps work well the <strong>ARM chip</strong>, such as ones used on AWS Graviton server types (rather than traditional Intel x86).
 
 <a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width="209" alt="rasp-pi-rack-836x960" src="https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png"></a>
-Run apps (within Docker containers) in <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> on a cluster of Rasperberry Pi computers in order to become proficient at <strong>configuring</strong> the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. 
+Run apps (within Docker containers) in <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> on a cluster of ("bramble") Rasperberry Pi computers in order to become proficient at <strong>configuring</strong> the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. Compare performance using Linpack Benchmark vs Turnpike2.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=X9fSMGkjtug" title="Jul 15, 2021 Raspberry Pi ft. Kubernetes (k3s cluster w/ Rancher)">This video brags about</a>  (but does not show how) to  <a target="_blank" href="https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview">install of Ubuntu plus</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=X9fSMGkjtug" title="Jul 15, 2021 Raspberry Pi ft. Kubernetes (k3s cluster w/ Rancher)">VIDEO</a>: <a target="_blank" href="https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview">install of Ubuntu plus</a>
  <a target="_blank" href="https:/get.k3s.io/">light-weight K3S</a> from SUSE Rancher dashboard app to manage the private cloud "supercomputer" cluster.
 
 <a target="_blank" href="https://www.linkedin.com/pulse/adventures-cluster-computing-tim-wood/">Tim Wood's cluster consists of</a>
@@ -69,7 +84,7 @@ The Extreme Kit's box comes with a <strong>fan</strong>, because heat reduces th
 
 <strong>Heat sinks</strong> glued on top of each chip helps to difuse heat.
 
-Power supply:
+<a target="_blank" href="https://www.wikiwand.com/en/Power_over_Ethernet">Power over Internet cables and network switch</a> or Power supply:
    * Pi 3 INPUT: 0.3 A, OUTPUT: +5V = 2.5A with micro USB port
    * Pi 4 INPUT: 0.5 A, OUTPUT: +5.1V = 3.0A with USB-C port
    <br /><br />
@@ -86,7 +101,12 @@ Newer Pi have <strong>mini HDMI</strong> ports, so be sure to have an adapter or
 
 Speaker
 
-### Competitor SBC hardware
+https://cloudinit.readthedocs.io/en/latest/
+
+
+<hr />
+
+## Hardware competiting with Pi
 
 The Pi is a Single Board Computer (SBC), a "small form factor" computer with a tiny footprint that put full-sized PC power in the palm of your hand:
 

@@ -2193,6 +2193,8 @@ My notes from it are below.
    * <a target="_blank" href="https://www.softwaretestinghelp.com/python-ide-code-editors/">Python IDEs and Code Editors (Guide)</a>
    * <a target="_blank" href="https://www.softwaretestinghelp.com/python-ide-code-editors/">Best Python IDEs and Code Editors</a>
    * <a target="_blank" href="https://www.datacamp.com/community/tutorials/data-science-python-ide">Top 5 Python IDEs for Data Science</a>
+   
+   * <a target="_blank" href="https://xkcd.com/1205/">Is it worth the time table</a>
    <br /><br />
 
 3. <a target="_blank" href="https://www.coursera.org/learn/introduction-git-github?specialization=google-it-automation">Introduction to Git and GitHub</a>
