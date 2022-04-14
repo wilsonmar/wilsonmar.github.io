@@ -3,7 +3,7 @@ layout: post
 title: "IoT Raspberry Install"
 excerpt: "How to setup a Raspberry Pi on macOS with Raspbian, Python, Node, Ansible, Kubernetes"
 tags: [IoT, Raspberry, Mono, Mac]
-date: "2016-10-29"
+date: "2022-04-12"
 file: "iot-raspberry-install"
 image:
 # feature: pic white robots woman 1900x500.jpg
@@ -44,26 +44,46 @@ are targeted for learning by children.
 
    * Run one of the "goat" server which contains known security issues. <a target="_blank" href="https://wilsonmar.github.io/owasp/">OWASP</a>
 
-   * Geerling: build a 4G/5G wireless router modem (instead of buying one)
+   * Geerling: build a 4G/5G wireless router modem (instead of buying one such as <a target="_blank" href="https://www.wired.com/review/firewalla-purple/">The $319 gigabit Firewalla Purple</a>, between your router and modem, bundles networking, ad-blocking,  intrusion detection and prevention, parental controls, and a virtual private network (VPN) into one compact, purple box and a mobile app.
 
    * Process video to .mp4
 
-For enterprises, the Raspberry Pi uses <strong>ARM CPU chips</strong>, so is a good platform to 
+   * HTPC (Home Theater Personal Computer) services running on k3s at https://github.com/fabito/htk8s
+
+## Kubernetes on Pi
+
+For enterprises, the Raspberry Pi doesn't come with the corporate buracracy.
+
+   * uses <strong>ARM CPU chips</strong>, so is a good platform to 
 
    * <strong>thoroughly test</strong> whether apps work well the <strong>ARM chip</strong>, such as ones used on AWS Graviton server types (rather than traditional Intel x86).
+
+https://github.com/k8s-at-home has a 
+<a target="_blank" href="https://github.com/k8s-at-home/awesome-home-kubernetes">list of GitHub repos</a>
 
 <a target="_blank" href="https://thepihut.com/products/cluster-case-for-raspberry-pi"><img align="right" width="209" alt="rasp-pi-rack-836x960" src="https://user-images.githubusercontent.com/300046/160224852-23710881-184f-4168-989d-1cbd4104c494.png"></a>
 Run apps (within Docker containers) in <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> on a cluster of ("bramble") Rasperberry Pi computers in order to become proficient at <strong>configuring</strong> the correct mix of settings for ARM and to <strong>refine automation</strong> scripts for functional and capacity (load balancing and scaling) testing of containers. The cost of a each board in a <a href="#Hardware">"extreme" Pi cluster</a> which orchestrates <strong>several Pi's</strong> together is less than a perhaps a single day running a Kubernetes cluster in a "pay as you go" cloud environment. Without cost pressures, a stand-alone Pi can run overnight (or all week) without the hassle of needing to be brought down for cost reasons. Compare performance using Linpack Benchmark vs Turnpike2.
 
+   * <a target="_blank" href="https://github.com/geekdojo-ofc/rpi-talos-netboot">	Re-runnable script for standing up N number of Talos nodes on Raspberry PIs using Netboot (dnsmasq+apache).</a>
+   * <a target="_blank" href="https://github.com/ust84/k8s-gitops">	Sidero/Talos provisioned cluster with Gitops/Flux and Renovate. 3 Pi4 masters and 3 NUCs.</a>
+   * <a target="_blank" href="https://github.com/Truxnell/home-cluster">	Sidero/Talos cluster defined with GitOps/Flux. Utilizing SOPS & Renovate. Raspi4 8GB Master + 3 Intel NUC Workers.</a>
+   <br /><br />
+
 <a target="_blank" href="https://www.youtube.com/watch?v=X9fSMGkjtug" title="Jul 15, 2021 Raspberry Pi ft. Kubernetes (k3s cluster w/ Rancher)">VIDEO</a>: <a target="_blank" href="https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview">install of Ubuntu plus</a>
  <a target="_blank" href="https:/get.k3s.io/">light-weight K3S</a> from SUSE Rancher dashboard app to manage the private cloud "supercomputer" cluster.
 
-<a target="_blank" href="https://www.linkedin.com/pulse/adventures-cluster-computing-tim-wood/">Tim Wood's cluster consists of</a>
+<a target="_blank" href="https://www.linkedin.com/pulse/adventures-cluster-computing-tim-wood/">Tim Wood's hardware cluster consists of</a>
    1. Binary Clock python script with Blinkt! LED board.
    2. Apache with Nagios network monitoring server.
    3. Network-wide DHCP server and DNS filtering through Pi-hole.
    4. Upstream DNS filtering through Pi-hole for high availability, VPN though Wireguard to help bring internet traffic from my devices back through DNS filtering (even if I'm outside of my home network).
    <br /><br />
+
+Software:
+   1. https://github.com/fluxcd/flux2 -- a tool for keeping Kubernetes clusters in sync with sources of configuration (like Git repositories), and automating updates to configuration when there is new code to deploy.
+   <br /><br />
+
+
 
 References:
    * https://github.com/mikeroyal/Raspberry-Pi-Guide
@@ -71,7 +91,6 @@ References:
    * https://ubuntu.com/tutorials/how-to-kubernetes-cluster-on-raspberry-pi#1-overview
    * https://dev.to/andypiper/building-a-compact-pi-cluster-1pia
    <br /><br />
-
 
 
 <a name="Hardware"></a>
