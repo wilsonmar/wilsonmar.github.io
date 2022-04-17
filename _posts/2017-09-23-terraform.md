@@ -4181,6 +4181,14 @@ https://medium.com/4th-coffee/on-devops-30-9-extraordinary-terraform-best-practi
 
 https://medium.com/@ben.arundel/godaddy-and-terraform-a-brief-poc-f3afac56c402
 
+VIDEO: "Learning Live with AWS & HashiCorp" multi-part series by Jenna Pederson from AWS (@jennapederson) and J. Cole Morrison from HashiCorp (@jcolemorrison):
+   1. <a target="_blank" href="https://www.youtube.com/watch?v=UAH3CkWrNmo">Laying the Foundations of a Microservices Architecture</a>
+   2. <a target="_blank" href="https://www.youtube.com/watch?v=imppNTvnM18">Creating Your First Containerized Microservice</a>
+   3. <a target="_blank" href="https://www.youtube.com/watch?v=q3zODwmSqp0">Extending Your Application with Private Microservices</a>
+   4. <a target="_blank" href="https://www.youtube.com/watch?v=qYpqzbxPSdA">Introducing a Service Mesh with Consul</a>
+   <br /><br />
+
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
