@@ -1,4 +1,4 @@
-x---
+---
 layout: post
 title: "Hashicorp Vault (with Consul and Nomad)"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
