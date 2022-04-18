@@ -3,7 +3,7 @@ layout: post
 title: "Markdown text for GitHub from HTML"
 excerpt: "Tricks to force Markdown to show things the way you want."
 tags: [HTML, personalization, jekyll]
-date: "2020-12-27"
+date: "2022-04-16"
 file: "markdown-text-for-github-from-html"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14624073/7b96364a-0594-11e6-9643-06decef9dbfd.jpg
@@ -72,20 +72,22 @@ The easiest way to convert HTML to Markdown text is to use Aaron Swartz’s
 > My experience is that we'll need to pretty much go through each line
 to make it look good in Markdown text.
 
-You can specify a URL in this website, which converts HTML page to text:
+1. Here's a website that returns a page of Markdown text based on what you paste into it:
 
-   <ul><a target="_blank" href="http://www.aaronsw.com/2002/html2text/">http://www.aaronsw.com/2002/html2text</a>
-   </ul>
+   <a target="_blank" href="https://pandoc.org/try/">https://pandoc.org/try</a>
 
-   The website returns a page of Markdown text you can then copy and paste to a Markdown file.
+   <img width="904" alt="markdown-pandoc-1808x370" src="https://user-images.githubusercontent.com/300046/163710756-0ee0986d-bdb4-497f-bb05-703cf139f23d.png">
 
-The author of that site provides his Python program at:
+1. Specify a URL in this website to convert the HTML page to text:
 
-   * <a target="_blank" href="https://github.com/aaronsw/html2text">
+   <a target="_blank" href="http://www.aaronsw.com/2002/html2text/">http://www.aaronsw.com/2002/html2text</a>
+
+1. Use this Python program to convert:
+
+   <a target="_blank" href="https://github.com/aaronsw/html2text">
    https://github.com/aaronsw/html2text</a>
 
-Download and run the program using this syntax
-(assuming Python is installed):
+   Download and run the program using this syntax (assuming Python is installed):
 
    ```
 chmod a+x html2text.py ; ./html2text.py erlang.html

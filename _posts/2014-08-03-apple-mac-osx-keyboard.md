@@ -86,15 +86,16 @@ REMEMBER: "Special" keys on a Mac's keyboard are represented by both symbols and
 
    ### Add Keyboard Shortcut to Sleep
 
-   In the screen above, notice "Sleep" has no reminder of its Keyboard Shortcut, but <a target="_blank" href="https://apple.stackexchange.com/questions/28164/keyboard-shortcut-to-sleep-a-mac">there is</a>:
+1. In the screen above, notice "Sleep" has no reminder of its Keyboard Shortcut, but <a target="_blank" href="https://apple.stackexchange.com/questions/28164/keyboard-shortcut-to-sleep-a-mac">there is</a>:
    
-   <strong>Command ⌘+Option ⌥+Eject ⏏</strong>
+   <strong>Command ⌘ + Option ⌥ + Eject ⏏</strong>
 
-   PROTIP: Putting your laptop to sleep is an important procedure according to HIPAA and other regulations.
-   Sleeping let your laptop rest, which makes it last longer and consume less electricity.
-   So make it easier to put your laptop to sleep.
+   PROTIP: Putting your laptop to sleep is an important privacy procedure according to HIPAA and other regulations. Also, sleeping let your laptop rest, which makes it last longer and consume less electricity.
+   So make it easier to put your laptop to sleep.<a target="_blank" href="https://ladedu.com/how-to-put-a-mac-to-sleep-incl-keyboard-shortcut/">*</a>
 
-   See https://ladedu.com/how-to-put-a-mac-to-sleep-incl-keyboard-shortcut/
+1. If there is a Terminal instance open, the machine does not go into sleep until you manually respond to this pop-up dialog:
+
+   <img alt="macos-term-process-260x218" width="260" height="218" src="https://user-images.githubusercontent.com/300046/163742732-0b3c9829-148b-46d1-9344-db974be6a4c2.png">
 
 1. Return to the Keyboard Shortcuts following instructions above, but this time
 1. Click "Shortcuts"
