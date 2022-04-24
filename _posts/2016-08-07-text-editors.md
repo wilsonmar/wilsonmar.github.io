@@ -102,11 +102,11 @@ Intelligent adaptation depending on type of format (Markdown, Java, Bash, etc.):
 * Static code scan on the fly
 * Debugging with breakpoints, step into, etc.
 
-* The "Shades of Purple" theme in VSCode presents markdown commands in a less visible color than main Moutext.
-
-* <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night">Tokyo Night theme</a>
-
 * Sublime Text Keymap if you're used to Sublime's keys.
+
+Themes:
+   * The "Shades of Purple" theme in VSCode presents markdown commands in a less visible color than main Moutext.
+   * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night">Tokyo Night theme</a>
 
 * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vsts.team">Azure Repos</a> to connect to Azure DevOps Services and Team Foundation Server supportkng Team Foundation Version Control (TFVC). 
 
@@ -170,12 +170,16 @@ For TextMate, you can install the Avian Missing Bundle and add TM_STRIP_WHITESPA
 
 ## Visual Studio Code #
 
-Microsoft's Visual Studio Code (VSCode)'s core engine is built using GitHub's Electron for multi-plantform (Mac, Windows, etc.) as open-source Monacle Editor at https://microsoft.github.io/monaco-editor. 
+Microsoft's Visual Studio Code (VSCode)'s core engine is built using GitHub's Electron for multi-plantform (Mac, Windows, etc.) as open-source <a target="_blank" href="https://microsoft.github.io/monaco-editor">Monacle Editor</a>. 
 
-VSCode is slower to startup than Sublime Text.
+PROTIP: VSCode is slower to startup than Sublime Text.
 
 But VSCode's windowing is much more configurable, which has enabled many add-ons.
 This has made VSCode the most feature-rich and thus most preferred editor today. 
+
+Ahmad Awais, <a target="_blank" href="https://www.youtube.com/watch?v=M6E5L1-TVoc">VIDEO</a>
+VSCode Power User Tips & Tricks</a> 
+                                                                                                                                                                                                                                                                                                          
 
 ### Install
 

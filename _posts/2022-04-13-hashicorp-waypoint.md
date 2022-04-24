@@ -49,13 +49,13 @@ Among <a target="_blank" href="https://www.youtube.com/c/HashiCorp">Hashicorp's 
 
    <pre><strong>waypoint up</strong></pre>
 
-   Waypoint takes care of Nomad, K8s, Lambda, etc.
+   Waypoint takes care of Docker build/push, kubectl apply/push
 
 1. Demo videos:
 
    <a target="_blank" href="https://www.youtube.com/watch?v=azoQYaJsxGk">from HashiCorp</a>
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=xiD3tg2iih8">Demo Tutorial With GitLab CI/CD and Kubernetes</a> by Sam Gabriel (TeKanAid) Nov 2, 2020 with <a target="_blank" href="https://tekanaid.com/hashicorp-waypoint-will-it-replace-your-ci-cd/">companion blog</a> shows deploy of a Python Flask weblog app referencing MongoDB running within GKE with a Vault agent sidecar to inject secrets:
+1. <a target="_blank" href="https://www.youtube.com/watch?v=xiD3tg2iih8">Demo Tutorial With GitLab CI/CD and Kubernetes</a> by Sam Gabriel (TeKanAid) [46:51] Nov 2, 2020 with <a target="_blank" href="https://tekanaid.com/hashicorp-waypoint-will-it-replace-your-ci-cd/">companion blog</a> demos differences in deploy of his Python Flask weblog app referencing MongoDB running within GKE with a Vault agent sidecar to inject secrets:
 
    * Manual - No CI/CD tools (git commit/push, docker build/push, kubectl apply)
    * With Waypoint - No CI/CD tools
@@ -72,6 +72,14 @@ Among <a target="_blank" href="https://www.youtube.com/c/HashiCorp">Hashicorp's 
 
 ## Waypoint commands
 
+1. Install
+
+   waypoint install 
+
+1. Server
+
+   waypoint server run 
+
 1. Log
 
    waypoint logs
@@ -80,6 +88,9 @@ Among <a target="_blank" href="https://www.youtube.com/c/HashiCorp">Hashicorp's 
 
    waypoint exec
 
+## Roadmap
+
+https://www.waypointproject.io/docs/roadmap
 
 ## About Hashicorp
 

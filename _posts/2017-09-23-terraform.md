@@ -1535,9 +1535,12 @@ References:
    https://github.com/hashicorp/terraform/tree/master/builtin/providers">
    https://github.com/hashicorp/terraform/tree/master/builtin/providers</a>
 
-   "aws", "google", "google-beta", "azurerm", "azuread",  "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, OpenStack, "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "azurestack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
+   US Majors: "aws", "azurestack", "google", "google-beta", "azurerm", "azuread", 
+   
+   "heroku", Kubernetes, "gitlab", DigitalOcean, Heroku, GitHub, 
+   "cloudscale", "cloudstack", "opentelekomcloud", "oci" (Oracle Cloud Infrastructure), "opc" (Oracle Public Cloud), "oracclepass" (Oracle Platform Cloud), "flexibleengine", "nsxt", "rancher", "rancher2", (VMware NSX-T), "vcd" (VMware vCloud Director ), "openstack", "scaleway", "UCloud", "JDcloud", Joyent Triton, Circonus, NaverCloud, TelefonicaOpenCloud, oneandone, Skytap, etc.
 
-   In China: "alicloud", "huaweicloud", "tencentcloud", etc.
+   Cloud operators in China: "alicloud", "huaweicloud", "tencentcloud", etc.
 
    Monitoring and other infrastructure services vendors: 
    "datadog", "grafana", "newrelic", "pagerduty", "bigip" (F5 BigIP), "RabbitMQ", "acme", "yandex", "ciscoasa" (ASA), etc.
@@ -4188,6 +4191,8 @@ VIDEO: "Learning Live with AWS & HashiCorp" multi-part series by Jenna Pederson 
    4. <a target="_blank" href="https://www.youtube.com/watch?v=qYpqzbxPSdA">Introducing a Service Mesh with Consul</a>
    <br /><br />
 
+<a target="_blank" href="https://www.youtube.com/watch?v=iKeItbMIyZE">VIDEO</a>:
+Microsoft's <strong>Terrafy</strong> (pronounced "terrify" as in Holloween?) at <a target="_blank" href="https://github.com/Azure/aztfy">https://github.com/Azure/aztfy</a> generates *.tf (Terraform configuration files) and State based on resources based on what is in an AzureRM resource group. Those files can then be used in regular Terraform commands as if they were originally created using Terraform Plan and Apply.
 
 ## More on DevOps #
 

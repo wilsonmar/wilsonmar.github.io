@@ -1210,7 +1210,7 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 
 1. Verify location:
 
-   <pre><strong>which vault</strong><pre>
+   <pre><strong>which vault</strong></pre>
 
    Result:
 
@@ -1222,7 +1222,7 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
    complete -C /usr/local/bin/vault vault
    </strong></pre>
 
-1. Install auto completions: https://www.vaultproject.io/docs/commands/#autocompletion
+1. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
 
    <pre><strong>vault -autocomplete-install
    </strong></pre>
@@ -1238,6 +1238,8 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 
    <pre><strong>vault
    </strong></pre>
+
+   Response:
 
    <pre>Usage: vault &LT;command> [args]
 &nbsp;
@@ -1281,7 +1283,9 @@ Other commands:
 
    ### Auto-complete
 
-1. Use autocomplete by typing `vault k` then press tab to complete.
+1. Use autocomplete by typing `vault k` 
+
+   Auto-complete is working if you can press tab to complete:
 
    <pre><strong>vault kv
    </strong></pre>
@@ -1291,7 +1295,7 @@ Other commands:
 
    PROTIP: <a target="_blank" href="https://www.vaultproject.io/docs/commands/index.html">https://www.vaultproject.io/docs/commands/index.html</a>
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=vd9f-gGqMV0">VIDEO</a>: HashiCorp Vault Http API - Create and get secrets with curl</a> (aweful drawings)
+   <a target="_blank" href="https://www.youtube.com/watch?v=vd9f-gGqMV0">VIDEO: HashiCorp Vault Http API - Create and get secrets with curl</a> (aweful drawings)
 
 1. Add a key:
 
