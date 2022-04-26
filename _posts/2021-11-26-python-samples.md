@@ -2177,7 +2177,7 @@ For Python: <a target="_blank" href="https://www.youtube.com/watch?v=dikn50cu5lo
 
 <a target="_blank" href="https://www.coursera.org/professional-certificates/google-it-automation">
 On Coursera.com is the "Google IT Automation with Python" Professional Certificate</a> from 2019 consists of six courses, each set over 4 weeks, using Qwiklabs. <a target="_blank" href="https://medium.com/javarevisited/review-googles-it-automation-with-python-professional-certification-on-coursera-f75c1ba670e8">Worth it?</a>
-My <a target="_blank" href="https://github.com/elmoallistair/google-it-automation">notes while taking it</a> are below.
+My <a target="_blank" href="https://github.com/elmoallistair/google-it-automation" title="by Elmo Allistair in Indonesia">notes while taking it</a> are below.
 
 1. <a target="_blank" href="https://www.coursera.org/learn/python-crash-course?specialization=google-it-automation">Crash Course on Python</a>
 

@@ -208,15 +208,21 @@ You may need to buy a 32 or 64 GB SD chip along with an adapter if you need one 
    Older ones for reading 4GB cannot read the 32GB or 64GB let alone 128GB chips.
 
 
-   <a name="InsertChip"></a>
+<a name="InsertChip"></a>
    
-   ### Insert micro-SD chip in your laptop
+### Insert micro-SD chip in your laptop
 
 1. CAUTION: Before touching delicate electrical boards,
    dissipate static electricity (from just walking around)
    by touching grounded metal.
 
 1. Insert the Micro-SD chip into your laptop or adapter.
+
+1. Click "Initialize..." if you see "The disk you attached was not readable by this computer.".
+
+1. In the macOS Disk Utility, click the "Apple SDXC Reader Media" at the left.
+
+   NOTE: It says "8.17 GB" even though the SD chip may be larger.
 
 
 <a name="DownloadTalos"></a>
@@ -531,7 +537,6 @@ Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install 
 
 1. Skip to the <a href="#VerifySD">verify step below</a> to use the bootable Flash drive.
 
-<hr />
 
    <a name="FlashSD"></a>
 
@@ -1023,7 +1028,7 @@ If you setup WiFi on your laptop, you would have already used the information ne
    CAUTION: IN DRAFT MODE AT TIME OF WRITING:
 
    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/iot/master/pi-jessie-bootstrap.sh)"
-   </strong>
+   </strong></pre>
 
    Alternately, if your Pi doesn't have an internet connection,
    copy the bootstrap script and reference the shell script to a USB drive
@@ -1335,7 +1340,7 @@ become: false
 ## Configuration
 
 
-   ### Exploratory commands #
+### Exploratory commands #
 
    Based on http://www.miqu.me/blog/2015/01/14/tip-exfat-hdd-with-raspberry-pi/
 
@@ -1484,7 +1489,7 @@ mnt /dev/sda1 /mnt/PIHDD
    http://raspberrypiprogramming.blogspot.com/2014/08/change-prompt-color-in-bash.html
 
 
-0.  See the current prompt settings:
+0. See the current prompt settings:
 
    <tt><strong>
    echo $PS1<br />
@@ -1493,11 +1498,11 @@ mnt /dev/sda1 /mnt/PIHDD
 
    PS2 is for when the command line shows multiple lines (rare).
 
-   Reboot
+0. Reboot
 
    ### Configure user
 
-   After the Pi reboots, it requires entry of user name and password to log into the system.
+0. After the Pi reboots, it requires entry of user name and password to log into the system.
 
    If the user name and password in the configuration program are not changed,
    the defaults are:
@@ -2234,12 +2239,12 @@ There needs to be some password protection because that can get in the wrong han
 But that’s a hassle because a password would need to be entered every time the device boots up.
 
 
-   ### Send SMS to Phone
+### Send SMS to Phone
 
    via Twillio REST API
 
 
-   ### Send to cloud collector
+### Send to cloud collector
 
    Send the reading to a cloud collector.
 
@@ -2550,8 +2555,7 @@ Alternately:</a>
 0. If the disk does not appear among Finder devices, you may need servicing.
 0. Get the device and disk the Mac uses to identify the SD card:
 
-   <tt><strong>
-   diskutil list
+   <tt><strong>diskutil list
    </strong></tt>
 
    Device and disk names are listed on the left.
@@ -2688,6 +2692,8 @@ as part of ACloudGuru video <a target="_blank" href="https://learn.acloud.guru/c
 
 <a target="_blank" href="https://learn.acloud.guru/series/acg-projects/view/102" title="24 October 2017">
 #102 - DIY Alexa with a Raspberry Pi</a>
+
+https://github.com/seamusdemora/PiFormulae
 
 
 ## More on IoT #
