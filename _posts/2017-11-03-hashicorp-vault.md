@@ -852,9 +852,11 @@ NOTE: Labs timeout every 2 hours.
 
 * Run a Production Server - Configure, run, initialize, and unseal a production mode Vault server.
 
-   <a name="VaultInit"></a>
+<hr />
 
-   ### Vault Initialization
+<a name="VaultInit"></a>
+
+### Vault Initialization
 
    * https://www.vaultproject.io/docs/concepts/seal/
    <br /><br />
