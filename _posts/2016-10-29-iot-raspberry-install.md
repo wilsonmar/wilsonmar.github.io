@@ -218,11 +218,34 @@ You may need to buy a 32 or 64 GB SD chip along with an adapter if you need one 
 
 1. Insert the Micro-SD chip into your laptop or adapter.
 
+   <a name="InitializeChip"></a>
+   
+   ### Initialize micro-SD chip in your laptop
+
 1. Click "Initialize..." if you see "The disk you attached was not readable by this computer.".
 
 1. In the macOS Disk Utility, click the "Apple SDXC Reader Media" at the left.
 
    NOTE: It says "8.17 GB" even though the SD chip may be larger.
+
+1. Right-click the "Apple SDXC Reader Media" to select <strong>Erase...</strong>
+
+   That's just so we see more information.
+
+1. Click on Format to show the different formats:
+   * Mac OS Extended (Journaled)
+   * Mac OS Extended (Case-sensitive, Journaled)
+   * MS-DOS (FAT)
+   * ExFAT
+   <br /><br />
+
+1. Click on "Scheme":
+   * GUID Partition Map
+   * Master Boot Record
+   * Apple Partition Map
+   <br /><br />
+
+1. Click "Cancel".
 
 
 <a name="DownloadTalos"></a>
@@ -230,6 +253,8 @@ You may need to buy a 32 or 64 GB SD chip along with an adapter if you need one 
 ## Download Talos RPI image
 
 Skip to <a href="#DownloadImager">DownloadImager</a> unless you want to install Talos:
+
+Steps in this section can be performed by a script.
 
 1. Make or navigate to a folder so you can easily tell what is downloaded:
 

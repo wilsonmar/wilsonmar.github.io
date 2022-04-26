@@ -330,7 +330,7 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
    * 1c	Auto unseal Vault
    * 1d	Implement integrated storage for open source and Enterprise Vault
    * 1e	Enable and configure authentication methods
-   * 1f	Practice secure Vault initialization
+   * 1f	Practice secure <a href="#VaultInit">Vault initialization</a>
    * 1g	Regenerate a root token
    * 1h	Rekey Vault and rotate encryption keys
 
@@ -799,8 +799,12 @@ NOTE: Labs timeout every 2 hours.
 
 * The Vault API - Use the Vault HTTP API
 
-   <pre>curl http://localhost:8200/v1/sys/health | jq
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+   <pre><strong>curl http://localhost:8200/v1/sys/health | jq
+   </strong></pre>
+
+   Response includes "cluster" only if Vault was setup as a cluster:
+
+   <pre>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0{
   "initialized": true,
@@ -818,6 +822,8 @@ NOTE: Labs timeout every 2 hours.
    </pre>
 
    <pre><strong>curl --header "X-Vault-Token: root" http://localhost:8200/v1/secret/data/my-first-secret | jq</strong></pre>
+
+   Response:
 
    <pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -845,6 +851,8 @@ NOTE: Labs timeout every 2 hours.
    </pre>
 
 * Run a Production Server - Configure, run, initialize, and unseal a production mode Vault server.
+
+   <a name="VaultInit"></a>
 
    ### Vault Initialization
 
@@ -1639,10 +1647,10 @@ log files:
 
 1. Start the Docker daemon
 
-1. Download the Docker image maintained by Hashicorp:
+1. Download the Docker image maintained by Hashicorp at <a target="_blank" href="https://hub.docker.com/_/vault/">https://hub.docker.com/_/vault</a>
 
-   <pre><strong>docker pull <a target="_blank" href="https://hub.docker.com/_/vault/">vault</a>
-   </pre>
+   <pre><strong>docker pull vault 
+   </strong></pre>
 
    NOTE: If you see "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?"
    start the Docker daemon, then try again.
