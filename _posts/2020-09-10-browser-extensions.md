@@ -26,9 +26,9 @@ comments: true
    * <a target="_blank" href="https://www.torproject.org/download/">Tor (The Onion Browser)</a> to "Protect yourself against tracking, surveillance, and censorship."
    <br /><br />
 
-The browsers themselves are installed by mac-setup.sh script.
+The browsers themselves are installed by mac-setup.zsh script.
 
-To enable invocation of the browser GUI from the CLI (command line Terminal), they are defined in <strong>aliases.sh</strong>.
+To enable invocation of the browser GUI from the CLI (command line Terminal), they are defined in <strong>aliases.zsh</strong>.
 
 Browser extensions inject <strong>JavaScript</strong> code within internet browsers to modify web content users see and interact with, changing and extending the behavior of the browser itself.
 
