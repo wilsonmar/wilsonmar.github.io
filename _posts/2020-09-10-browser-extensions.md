@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Browser Extensions"
+title: "Browsers (and their Extensions)"
 excerpt: "Make websites look and do what you want!"
 tags: [browsers, UI]
-date: "2020-09-10"
+date: "2022-04-23"
 file: "browser-extensions"
 image:
 # browser-extensions-1900x500.jpg
@@ -16,16 +16,23 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+"Browsers" today refer to internet browsers:
+
+   * Google Chrome = https://developer.chrome.com/extensions/overview
+   * Edge (from Microsoft) accepts extensions from other browsers
+   * Firefox from Mozilla
+   * Safari from Apple
+   * Brave (into crypto currencies)
+   * <a target="_blank" href="https://www.torproject.org/download/">Tor (The Onion Browser)</a> to "Protect yourself against tracking, surveillance, and censorship."
+   <br /><br />
+
+The browsers themselves are installed by mac-setup.sh script.
+
+To enable invocation of the browser GUI from the CLI (command line Terminal), they are defined in <strong>aliases.sh</strong>.
+
 Browser extensions inject <strong>JavaScript</strong> code within internet browsers to modify web content users see and interact with, changing and extending the behavior of the browser itself.
 
 The value of this tutorial is the painstaking arrangement of a learning sequence that is both thorough yet logical.
-
-Each browser is a bit different. Documentation:
-   * https://developer.chrome.com/extensions/overview
-   * Mozilla Firefox
-   * Microsoft Edge accepts extensions from other browsers
-   * Apple Safari
-   <br /><br />
 
 
 ## Show me some Chrome extensions
