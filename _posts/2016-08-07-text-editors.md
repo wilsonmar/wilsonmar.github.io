@@ -20,13 +20,13 @@ comments: true
 
 Below is a list of text editors grouped by licensing term:
 
-Built-in to (comes with) macOS:
+## Built-in (comes with) macOS :
 
    * <a href="#nano">nano</a> is an open source clone of <a href="#pico">pico</a>.
    * <a href="#pico">pico</a> 
    * <a href="#vim">vim</a> (for mouse-free editing efficiency)
 
-Free to download and use:
+## Free to download and use :
 
    * <a href="#Code">Visual Studio Code</a> from Microsoft
    * <a href="#atom">Atom</a> from GitHub (free, built using GitHub's Electron)
@@ -39,41 +39,46 @@ Free to download and use:
    Python IDLE Editor</a>
 
    * <a href="#MacVim">MacVim</a> for Mac
+   * <a target="_blank" href="https://neovim.io/">NeoVim</a> (<a target="_blank" href="https://neovim.io/doc/user/">nvim command</a>) supports Vimscript engine with Lua.
 
-Free IDEs:
+## Free IDEs :
 
+   * <a href="#Code">Visual Studio Code</a> (from Microsoft)
    * <a href="#Eclipse">Eclipse</a> for Java
    * <a target="_blank" href="https://github.com/spyder-ide/spyder">Spyder</a> (for Python pyflakes and pylint code analysis)
-   * <a href="#Code">Visual Studio Code</a> (from Microsoft)
-   * <a target="_blank" href="https://www.jetbrains.com/go/">Gogland</a>,
-   an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
+   * <a target="_blank" href="https://www.jetbrains.com/go/">Gogland</a>, an IDE for Go from Jetbrains (makers of IntelliJ, PyCharm, etc.)
    * Aptana Studio
    * NetBeans
 
-Nagware (free to start, then pop-ups asking for money):
+## Nagware :
+
+Free to start, then pop-ups asking for money:
 
    * $89 <a href="#SublimeTextz">Sublime Text</a>
    * Texttastic
    * Byword 
    * (There is no equivalent of Windows Notepad++ on MacOS)
 
-Licensed IDEs:
+## Licensed IDEs :
 
    * IntelliJ for Java, WebStorm and PhpStorm, $200 PyCharm for Python. All from JetBrains
    * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio, which is licensed) for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a> and Unity apps in the C# language
    * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
    * <a target="_blank" href="https://www.activestate.com/products/komodo-ide/">multi-platform Komodo IDE</a> since 2018 is "free" as is part of an ActiveState Platform subscription. Its plug-ins are based on Mozilla add-ons such as a DOM Inspector.
 
-On-line (SaaS) browser-based subscriptions avoids need for setup and makes collaboration easier:
+## On-line (SaaS) :
+
+Browser-based subscriptions avoids need for setup and makes collaboration easier:
 
    * <a href="#Cloud9">Cloud9 from Amazon</a> runs in an EC2 instance to provide a debugger and terminal to various dev environments for AWS Lambda serverless, CodeStar, CodeBuild, CodePipeline, etc.
 
    * <a target="_blank" href="https://www.gitpod.io/">gitpod.io</a> is a Chrome add-on which replaces the green "Clone or download" button with their "Gitpod" button to an on-line IDE in the cloud and automation.
 
-   * <a target="_blank" href="">SnapLogic</a>
-   <br /><br />
+   * <a target="_blank" href="https://www.snaplogic.com/">SnapLogic</a>
 
-Not for MacOS (Windows or Linux only):
+## Not for MacOS :
+
+For installation on Windows or Linux only:
 
    * <a href="#Lite">Lite</a>
    * Notepad++
