@@ -18,6 +18,7 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to learn to use Hashicorp's Terraform to build, change, and version resources running in <a href="#MultiCloud">multiple cloud platforms</a>. The sequence of topics has been carefully arranged for quicker learning, based on <a href="Tutorials">various tutorials on this topic</a>.
 
+NOTE: This (and all other content on this website) expresses my personal opinion and not from any employer, past or present.
 
 ## What is Terraform?
 
@@ -4109,7 +4110,12 @@ Happy Randomizer app</a>
 
 
 
-### Others (YouTube videos):
+### Other YouTube videos :
+
+* On Feb 2022 <a target="_blank" href="https://www.linkedin.com/in/sid-palas/">Sid Palas (of DevOps Directive)</a> released his
+<a target="_blank" href="https://www.youtube.com/watch?v=7xngnjfIlK4">2h 38m VIDEO "Complete Terraform Course - From BEGINNER to PRO! (Learn Infrastructure as Code)"</a> with code at 
+<a target="_blank" href="https://github.com/sidpalas/devops-directive-terraform-course">https://github.com/sidpalas/devops-directive-terraform-course</a> and
+<a target="_blank" href="https://discord.gg/pNhjgCYX">Discord channel for discussions</a>.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=p2ESyuqPw1A">
 Terraform w/ Lee Trout Chadev</a>
@@ -4193,6 +4199,7 @@ VIDEO: "Learning Live with AWS & HashiCorp" multi-part series by Jenna Pederson 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=iKeItbMIyZE">VIDEO</a>:
 Microsoft's <strong>Terrafy</strong> (pronounced "terrify" as in Holloween?) at <a target="_blank" href="https://github.com/Azure/aztfy">https://github.com/Azure/aztfy</a> generates *.tf (Terraform configuration files) and State based on resources based on what is in an AzureRM resource group. Those files can then be used in regular Terraform commands as if they were originally created using Terraform Plan and Apply.
+
 
 ## More on DevOps #
 
