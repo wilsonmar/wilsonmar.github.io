@@ -16,7 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are my notes about technical aspects of how cars can drive themselves.
+Here are my notes about technical aspects of how CI/CD can occur using a command line interface similar to Terraform.
+
+{% include whatever.html %}
 
 ## Why?
 

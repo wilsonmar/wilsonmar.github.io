@@ -514,6 +514,114 @@ spec:
       name: http
    </pre> 
 
+## Other Instruqt Labs
+
+https://play.instruqt.com/hashicorp/tracks/consul-basics
+Consul Basics
+
+https://play.instruqt.com/hashicorp/tracks/consul-sandbox
+Hands-On: Consul Sandbox
+
+https://play.instruqt.com/hashicorp/tracks/consul-something-do-something
+Consul something: Do Something
+
+https://play.instruqt.com/hashicorp/tracks/consul-life-of-a-developer
+Consul: Life of a Developer
+
+https://play.instruqt.com/hashicorp/tracks/consul-life-of-a-developer-dev
+Consul: Life of a Developer dev
+
+https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh
+Consul: Zero Trust Networking with Service Mesh
+
+https://play.instruqt.com/hashicorp/tracks/zero-trust-hashicups
+Zero Trust demo with Vault, Consul and Waypoint
+
+https://play.instruqt.com/hashicorp/tracks/att-consul-hcs-pov
+att-consul-hcs-pov
+
+https://play.instruqt.com/hashicorp/tracks/tfe-custom-worker
+Customizing Terraform Build Worker
+
+https://play.instruqt.com/hashicorp/tracks/app-migration
+App Migration with Service Mesh
+
+https://play.instruqt.com/hashicorp/tracks/consul-service-discovery-health-monitoring
+Consul: Service Discovery and Health Monitoring
+
+https://play.instruqt.com/hashicorp/tracks/consul-multicloud-service-discovery
+Consul - Cloud Service Discovery
+
+https://play.instruqt.com/hashicorp/tracks/consul-autopilot
+Consul Enterprise Academy: Autopilot Upgrades
+
+https://play.instruqt.com/hashicorp/tracks/consul-gateways-deployment
+Consul Enterprise Academy: Deploy Consul Gateways
+
+https://play.instruqt.com/hashicorp/tracks/consul-backups
+Consul Enterprise Academy: Backup and Restore
+
+https://play.instruqt.com/hashicorp/tracks/consul-ingress-gateways-deployment
+Consul Enterprise Academy: Deploy Consul Ingress Gateways
+
+https://play.instruqt.com/hashicorp/tracks/consul-ent-basics
+Consul Enterprise Academy: Deploy a Consul Cluster
+
+https://play.instruqt.com/hashicorp/tracks/consul-datacenter-federation
+Consul Enterprise Academy: Federate Multiple Datacenters
+
+https://play.instruqt.com/hashicorp/tracks/consul-kubernetes
+Consul Enterprise Academy: Running Consul on Kubernetes
+
+https://play.instruqt.com/hashicorp/tracks/consul-secure-deployment
+Consul Enterprise Academy: Secure your Consul Deployment
+
+https://play.instruqt.com/hashicorp/tracks/consul-service-discovery
+Consul Enterprise Academy: Service Discovery
+
+https://play.instruqt.com/hashicorp/tracks/consul-service-mesh
+Consul Enterprise Academy: Service Mesh
+
+
+https://play.instruqt.com/hashicorp/tracks/tf-azure-consul-f5-workshop
+Consul F5 Service Discovery
+
+https://play.instruqt.com/hashicorp/tracks/consul-prepared-query
+Consul Prepared Query
+
+https://play.instruqt.com/hashicorp/tracks/consul-service-discovery-and-health-monitoring
+Consul Service Discovery and Health Monitoring
+
+https://play.instruqt.com/hashicorp/tracks/consul-aws-ecs-poc-shutterfly
+Consul on AWS - Shutterfly POC
+
+https://play.instruqt.com/hashicorp/tracks/consul-aws-ecs-poc-shutterfly-acl
+Consul on AWS - Shutterfly POC - ACL
+
+https://play.instruqt.com/hashicorp/tracks/consul-on-azure
+Consul on Azure
+
+https://play.instruqt.com/hashicorp/tracks/consul-connect
+Getting started with Consul Connect
+
+https://play.instruqt.com/hashicorp/tracks/multi-cloud-service-networking-with-consul-dev
+Multi Cloud Service Networking with Consul Dev
+
+https://play.instruqt.com/hashicorp/tracks/multi-cloud-service-networking-with-consul-jp
+Multi Cloud Service Networking with Consul (Japanese)
+
+https://play.instruqt.com/hashicorp/tracks/multi-cloud-service-networking-with-consul-dev-version
+Multi Cloud Service Networking with Consul Dev Version
+
+https://play.instruqt.com/hashicorp/tracks/hrs-03172021-test-multi-cloud-service-networking-with-consul
+hrs-03172021-test-Multi Cloud Service Networking with Consul
+
+https://play.instruqt.com/hashicorp/tracks/2020-hackathon-consul-sd
+2020-Hackathon-Consul-SD
+
+https://play.instruqt.com/hashicorp/tracks/service-mesh-with-consul-jona-version
+jona-version-Service Mesh with Consul-jona-version
+
 
 ## Competitors
 
