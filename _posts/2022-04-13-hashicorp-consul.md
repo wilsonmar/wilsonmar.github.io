@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here is my attempt at presenting a hands-on approach to take a technical deep dive that is succinct and logically sequenced.
+This aims to present a hands-on approach for a technical deep dive that is succinct and logically sequenced.
 
 {% include whatever.html %}
 
