@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-04-13"
+date: "2022-05-09"
 file: "hashicorp-consul"
 title: "Hashicorp Consul"
 excerpt: "Enterprise Service Mesh securing APIs in VMs & K8s"
@@ -39,8 +39,11 @@ Here is my attempt at presenting a hands-on approach to take a technical deep di
 
    ## Why Consul
 
-   In order to build a fast and reliable system in the cloud today,
-   enterprises use microservices instead of monolithic architectures that are comparatively brittle.
+   To build a fast and reliable system in the cloud today, enterprises architect systems using distributed <strong>microservices</strong> instead of monolithic architectures.
+
+   > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
+
+   But the distributed nature of microservices can lead to insecure implementations.
 
    Consul provides both better security and less toil for workers.
    
