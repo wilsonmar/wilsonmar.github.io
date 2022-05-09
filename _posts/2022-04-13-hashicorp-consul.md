@@ -67,6 +67,8 @@ This aims to present a hands-on approach for a technical deep dive that is succi
    https://www.youtube.com/watch?v=K93ZaUzwEWk
    How does Consul work with Kubernetes and other workloads?
 
+   https://github.com/hashicorp/consul-k8s
+
    https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/
 
 
