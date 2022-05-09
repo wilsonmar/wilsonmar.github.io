@@ -36,6 +36,10 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
    https://stackoverflow.com/search?q=%23hashicorp-consul
 
+1. Reddit:
+
+   https://www.reddit.com/search/?q=hashicorp%20consul
+   
 
    ## Why Consul
 
