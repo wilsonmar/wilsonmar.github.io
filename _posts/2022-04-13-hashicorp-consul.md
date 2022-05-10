@@ -77,12 +77,12 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652200423/consult-multi-envoy-1734x972_ymgi7l.png"><img alt="Consult Multi-cloud Envoy" width="1734" height="972" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652200423/consult-multi-envoy-1734x972_ymgi7l.png"></a>
 
-> "Multi-platform finds you, due to acquisitions"
+   Consul also integrates with legacy IBM mainframes.
+
+> "Multi-platform chooses you, due to acquisitions"
 
    Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
    
-   Consul also integrates with legacy IBM mainframes.
-
 > To encrypt traffic between nodes, each asset is given an encrypted identity in the form of a TLS certificate (in X.509, <a target="_blank" href="https://spiffe.io/">SPIFFE-compatible</a> format). Consul also provides a Proxy to enforce communications between nodes using "Mutual TLS" where each party exchange certificates with each other.
 
    Consul's <strong>auto-join provider</strong> enables nodes running outside of Kubernetes to join a Consul cluster running on Kubernetes API.
@@ -103,12 +103,19 @@ This aims to present a hands-on approach for a technical deep dive that is succi
    * <a target="_blank" href="https://www.youtube.com/watch?v=UHLr8UsHuDA">VIDEO: HashiCorp Consul Introduction: What is a Service Mesh?</a> by (former) Developer Advocate <a target="_blank" href="https://www.linkedin.com/in/nicolereneehubbard/">Nicole Hubbard</a> 
    * <a target="_blank" href="https://www.youtube.com/watch?v=K93ZaUzwEWk">VIDEO: How does Consul work with Kubernetes and other workloads?</a>
    * https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/
+   * https://learn.hashicorp.com/tutorials/terraform/multicloud-kubernetes?in=consul/kubernetes
    <br /><br />
 
 
+<a name="HCP"></a>
+
+## HCP (Hashicorp Cloud Platform)
+
+   To be free of server install and management hassles, use <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. The easiest way to use Consul is to use the Hashcorp-Managed Cloud.
+
 <a name="HCPWorkflows"></a>
 
-## HCP workflows
+### HCP workflows
 
 TODO: 
 
@@ -118,19 +125,6 @@ TODO:
    * Identity
    * Resource Management
    <br /><br />
- 
-
-<hr />
-
-   <a name="HCP"></a>
-
-   ### HCP (Hashicorp Cloud Platform)
-
-   To be free of server install and management hassles, use <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. The easiest way to use Consul is to use the Hashcorp-Managed Cloud.
-
-
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Consul Reference Architecture</a>
-
 
 
    DEFINITION: To Hashicorp, a "data center" is a stand-alone set of nodes.
@@ -143,9 +137,11 @@ TODO:
 
 ## Demo
 
-<a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by Hashicorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>:
+Hashicorp provides several ways to run each of its <a target="_blank" href="https://github.com/hashicorp-demoapp/">demo apps from https://github.com/hashicorp-demoapp/</a>.
 
-Based on a Kubernetes 5-node cluster created using a Helm chart:
+<a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by Hashicorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using a Helm chart:
 
 <pre>helm install ./consul-helm -f ./consul-helm/demo.values.yaml --name consul</pre>
 
@@ -266,9 +262,7 @@ Or, if you don't want/need a background service you can just run:
 
    <a href="#RunForeground">Option B: Run Consul in foreground, which occupies the Terminal and does not start again at login:</a>
 
-   <pre><strong>consul agent -dev -bind 127.0.0.1</strong></pre>
-
-   <pre><strong>consul agent -dev -node machine</strong></pre>
+   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
 
    <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
    </pre>
@@ -333,9 +327,165 @@ Available commands are:
 
    <tt><strong>-node $(hostname)</strong></pre> is specified for macOS users: Consul uses your hostname as the default node name. If your hostname contains periods, DNS queries to that node will not work with Consul. To avoid this, explicitly set the name of your node with the 
    
-   <tt>-config-dir="/etc/consul.d"</tt> specifies the configuration file rather than using defaults.
+   <tt>-config-dir="/etc/consul.d"</tt> specifies the configuration .ini file:
 
-   "Node info in sync"
+   <pre>[unit]
+Description=Consul
+Requires=network-online.target
+After=network-online.target
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/bin/consul agent -config-dir="/etc/consul.d"
+User=consul
+   </pre>
+
+<hr />
+
+<a name="RunBackground"></a>
+
+## Start server in background
+
+1. Use:
+
+   <pre>brew services start hashicorp/tap/consul</pre>
+
+   
+   <a name="ConsulWebGUI"></a>
+
+   ## Consul web GUI
+
+1. When the Consul server is running:
+
+   <pre>http://localhost:8080/ui/<em>datacenter</em>/services</pre>
+
+   <img alt="Consul GUI" width="573" height="104" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652110651/consul-gui-573x104_zb5lsx.png">
+
+   The Consul GUI provides a clickable way for you to work with these:
+
+   * <a href="#Services">Services</a>
+   * <a href="#Nodes">Nodes</a> is the number of Consul instances
+   * <a href="#KeyValue">Key/Value</a> datastore of IP address generated
+   * <a href="#ACL">ACL</a> (Access Control List)
+   * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
+   <br /><br />
+
+   <a name="Services"></a>
+
+   ### Services
+
+
+   <a name="ACL"></a>
+
+   ### ACL (Access Control List)
+
+
+
+   <a name="SidecarInject"></a>
+
+   ### Sidecar proxy injection
+
+   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft).
+   This means that migration to Consul can occur gradually. ???
+
+1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  name: cats
+  annotations:
+    "consul.hashicorp.com/connect-inject": "true"
+spec:
+  containers:
+  - name: cats
+    image: grove-mountain/cats:1.0.1
+    ports:
+    - containerPort: 8000
+      name: http
+   </pre> 
+
+
+
+
+
+
+<a name="Enterprise"></a>
+   
+## Enterprise licensing
+
+   However, additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
+   
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
+
+   From v1.10.0, a full license file must be defined in the server config file before installation:
+
+   <pre>log_level      = "INFO"
+server         = true
+ui             = true
+datacenter     = "us-east-1"
+license_path   = "/opt/consul/consul.hclic"
+client_addr    = "0.0.0.0"
+bind_addr      = "10.1.4.11"
+advertise_addr = "10.1.4.11"
+advertise_addr_wan = "10.1.4.11"
+   </pre>
+
+   IP addresses can be in IPv6 format.
+
+   <tt>advertise_addr</tt> are reacheable outside the datacenter.
+
+   Agent configurations have a different IP address and these settings:
+
+   <pre>data_dir  = "/opt/consul/data"
+bootstrap_expect = 5
+retry_join       = ["provider=aws tag_key=Environment-Name tag_value=consul-cluster region=us-east-1"]
+connect = {
+   enabled = true
+}
+performance = {
+   raft_multiplier = 1
+}
+   </pre>
+
+   <tt>retry_join</tt> specifies the cloud provider and other metadata for discovery by other Consul agents.
+
+   <tt>connect</tt> refers to <strong>Consul Connect</strong> (disabled by default for security).
+
+   
+   ### Enterprise Redundancy Zones
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Reference Architecture</a>
+   for a single cluster is <strong>5 server nodes</strong> across <strong>3 availability zones</strong>:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"><img alt="Consul Ref. Arch" width="1033" height="401" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"></a>
+
+   DEFINITION: To Hashicorp, a "data center" is a stand-alone set of nodes.
+   PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
+
+   The yellow star marks the <strong>LEADER</strong> node. Others are "FOLLOWER".
+   If the LEADER server fails, an election is automatically held among a quorum (adequate number of) followers to elect a new LEADER.
+
+
+
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
+
+   For write redunancy through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "Consul Autopilot":
+
+   <pre>autopilot = {
+  redundancy_zone_tag = "az"
+   }
+node_meta = {
+   az = "Zone1"
+}
+   </pre>
+
+   Note that redundant zones do not participate in quorum, including leader election.
+
+
+
+   ## Manage from another Terminal
 
 1. Press control+C to exit the Consul instance.
 
@@ -356,38 +506,8 @@ wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a
    </pre>
 
 
-   <a name="Enterprise"></a>
-   
-   ### Enterprise licensing
 
-   However, additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
-   
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
-
-   From v1.10.0, a full license file must be defined in the server config file before installation:
-
-   <pre>log_level      = "INFO"
-server         = true
-ui             = true
-datacenter     = "us-east-1"
-license_path   = "/opt/consul/consul.hclic"
-client_addr    = "0.0.0.0"
-bind_addr      = "10.1.4.11"
-advertise_addr = "10.1.4.11"
-   </pre>
-
-   Agent configurations have a different IP address and these settings:
-
-   <pre>data_dir  = "/opt/consul/data"
-bootstrap_expect = 5
-retry_json       = ["provider=aws tag_key=Environment-Name tag_value=consul-cluster region=us-east-1"]
-connect = {
-   enabled = true
-}
-performance = {
-   raft_multiplier = 1
-}
-   </pre>
+   <a name="API"></a>
 
    ### API
 
@@ -446,13 +566,6 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
 ;; WHEN: Sun May 08 22:35:21 MDT 2022
 ;; MSG SIZE  rcvd: 113
    </pre>
-
-
-   <a name="RunBackground"></a>
-
-   ### Start server in background
-
-   <pre>brew services start hashicorp/tap/consul</pre>
 
 
    ### Leave (Stop) Consul gracefully
@@ -632,62 +745,6 @@ Raft is the protocol used by Consul for ensuring data consistency, checkout this
 
 
 
-   <a name="ConsulWebGUI"></a>
-
-   ## Consul web GUI
-
-   <pre>http://localhost:8080/ui/<em>datacenter</em>/services</pre>
-
-   <img alt="Consul GUI" width="573" height="104" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652110651/consul-gui-573x104_zb5lsx.png">
-
-   The Consul GUI provides a clickable way for you to work with these:
-
-   * <a href="#Services">Services</a>
-   * <a href="#Nodes">Nodes</a> is the number of Consul instances
-   * <a href="#KeyValue">Key/Value</a> datastore of IP address generated
-   * <a href="#ACL">ACL</a> (Access Control List)
-   * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
-   <br /><br />
-
-
-<a name="Services"></a>
-
-## Services
-
-
-<a name="ACL"></a>
-
-## ACL
-
-
-
-
-<a name="SidecarInject"></a>
-
-## Sidecar proxy registration
-
-Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft).
-This means that migration to Consul can occur gradually. ???
-
-1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
-
-   <pre>apiVersion: v1
-kind: Pod
-metadata:
-  name: cats
-  annotations:
-    "consul.hashicorp.com/connect-inject": "true"
-spec:
-  containers:
-  - name: cats
-    image: grove-mountain/cats:1.0.1
-    ports:
-    - containerPort: 8000
-      name: http
-   </pre> 
-
-
-
 <hr />
 
 ## Hashicorp Instruqt Labs
@@ -803,7 +860,11 @@ jona-version-Service Mesh with Consul-jona-version
 
 ## Competitors
 
+<a target="_blank" href="https://www.hashicorp.com/resources/tide-self-service-service-mesh-with-consul">
+CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its adoption of <strong>AWS AppMesh</strong> in favor of HashiCorp Consul, making the transition in only 6 weeks with no downtime and no big-bang migration.
+
 https://konghq.com/kong-mesh
+
 
 ## References
 
