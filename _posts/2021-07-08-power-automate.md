@@ -18,6 +18,8 @@ comments: true
 
 This article provides a hands-on tour with commentary. 
 
+{% include whatever.html %}
+
 Microsoft's PowerAutomate marketing homepage at <a target="_blank" href="https://powerautomate.microsoft.com/en-us/">https://powerautomate.microsoft.com/en-us</a> says: 
 
 > "Streamline repetitive tasks and paperless processes"

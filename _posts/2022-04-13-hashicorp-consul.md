@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This aims to present a hands-on approach for a technical deep dive that is succinct and logically sequenced.
+This aims to present a hands-on approach about using automation for a comprehensive technical deep dive that is succinct and logically sequenced. 
 
 {% include whatever.html %}
 
@@ -27,6 +27,10 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 1. Detailed documentation for the offering is also at that host name:
 
    https://www.consul.io/docs
+
+1. Tutorials
+
+   https://learn.hashicorp.com/tutorials/consul/service-mesh
 
 1. Technical Discussions:
 
@@ -39,6 +43,14 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 1. Reddit:
 
    https://www.reddit.com/search/?q=hashicorp%20consul
+
+1. Rock stars within Hashicorp:
+
+   <a target="_blank" href="https://www.linkedin.com/in/rosemarywang/">Rosemary Wang</a> (Developer Advocate) - <a target="_blank" href="https://joatmon08.github.io">joatmon08.github.io</a>
+
+   Join Luke Kysow (Principal Engineer, Consul)
+   
+1. Ambassadors (<a target="_blank" href="https://www.hashicorp.com/blog/hashicorp-ambassador-call-for-nominations">first announced March, 2020</a>)
 
 
 <hr />
@@ -68,21 +80,23 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
    Consul also integrates with legacy IBM mainframes.
 
-> "Multi-platform chooses you, due to acquisitions"
+> "Multi-platform chooses you, due to corporate acquisitions"
+
 
 ## Complexitiies of Kubernetes
 
-   Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
-   
    The <strong>distributed</strong> nature of microservices require Enterprise teams to ensure those processes are addressed:
 
 
-   * Discovery: kube-dns, kube-proxy
+   * Automated Discovery: kube-dns, kube-proxy
    
    * Configuration: Configmaps
    
    * Segmentation: Network Policy + Controller
 
+
+   Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
+   
 > To encrypt traffic between nodes, each asset is given an encrypted identity in the form of a TLS certificate (in X.509, <a target="_blank" href="https://spiffe.io/">SPIFFE-compatible</a> format). Consul also provides a Proxy to enforce communications between nodes using "Mutual TLS" where each party exchange certificates with each other.
 
    Consul's <strong>auto-join provider</strong> enables nodes running outside of Kubernetes to join a Consul cluster running on Kubernetes API.
@@ -96,8 +110,9 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
    Catalog Sync: Sync Consul services into first-class Kubernetes services and vice versa. This enables Kubernetes to easily access external services and for non-Kubernetes nodes to easily discover and access Kubernetes services.
 
-   References:
+   References about Kubernetes with Consul:
    * https://github.com/hashicorp/consul-k8s
+   * https://learn.hashicorp.com/tutorials/consul/kubernetes-reference-architecture?in=consul/kubernetes-production
    * <a target="_blank" href="https://www.youtube.com/watch?v=mxeMdl0KvBI">VIDEO: Introduction to HashiCorp Consul</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=Qbo8Oc-pJwc">VIDEO: What is the Crawl, Walk, Run Journey of Adopting Consul</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=UHLr8UsHuDA">VIDEO: HashiCorp Consul Introduction: What is a Service Mesh?</a> by (former) Developer Advocate <a target="_blank" href="https://www.linkedin.com/in/nicolereneehubbard/">Nicole Hubbard</a> 
@@ -107,11 +122,15 @@ This aims to present a hands-on approach for a technical deep dive that is succi
    <br /><br />
 
 
+
 <a name="HCP"></a>
 
 ## HCP (Hashicorp Cloud Platform)
 
-   To be free of on-prem. server install and management hassles (security, scaling disk space, upgrades, etc.), many prefer using the <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. The easiest way to use Consul is to use the Hashcorp-Managed Cloud.
+   To be free of on-prem. server install and management hassles (security, scaling disk space, upgrades, etc.), many prefer using the <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. 
+   
+   The fastest and easiest way to use Consul is to use the Hashcorp-Managed Cloud.
+
 
 <a name="HCPWorkflows"></a>
 
@@ -127,15 +146,28 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
 <hr />
 
-## Demo
+## Demo environments
 
-Hashicorp provides several ways to run each of its <a target="_blank" href="https://github.com/hashicorp-demoapp/">demo apps from https://github.com/hashicorp-demoapp/</a>.
+Hashicorp has prepared several ways to run each of its <a target="_blank" href="https://github.com/hashicorp-demoapp/">demo apps from https://github.com/hashicorp-demoapp/</a>.
 
-<a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
+A. <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by Hashicorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using a Helm chart:
+B. Install Vagrant and download the Vagrantfile 
+   
+   <pre>brew install vagrant  # Vagrant 2.2.19
+curl -O https://github.com/hashicorp/consul/blog/master/demo/vagrant-cluster/Vagrantfile
+   </pre>
 
-<pre>helm install ./consul-helm -f ./consul-helm/demo.values.yaml --name consul</pre>
+   CAUTION: As of this writing, Vagrant does not work on Apple M (ARM) chipset on new macOS laptops.
+
+   <tt>vagrant up</tt>
+
+   SSH into each server: <tt>vagrant ssh n1</tt>
+
+C. <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by Hashicorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using a Helm chart:
+
+   <pre>helm install ./consul-helm -f ./consul-helm/demo.values.yaml --name consul</pre>
+
 
    1. <a href="InstallConsulBinary">Install Consul binary</a>
    2. Add Consul Connect to a Kube app
@@ -212,6 +244,7 @@ Connect to a Payment service outside Kubernetes.
 
    Install the client using Hashicorp's tap:
    * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
+   <br /><br />
 
 1. WARNING: Don't use "brew install consul" ???
 
@@ -352,7 +385,7 @@ User=consul
 
    <img alt="Consul GUI" width="573" height="104" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652110651/consul-gui-573x104_zb5lsx.png">
 
-   The Consul GUI provides a clickable way for you to work with these:
+   The Consul GUI provides a clickable way for you to work with these (explained below):
 
    * <a href="#Services">Services</a>
    * <a href="#Nodes">Nodes</a> is the number of Consul instances
@@ -360,6 +393,30 @@ User=consul
    * <a href="#ACL">ACL</a> (Access Control List)
    * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
    <br /><br />
+
+
+   <a name="Intentions"></a>
+
+   ## Service Graph Intentions
+
+   The Consul GUI enables searching for connections by name (instead of IP addresses) as well as enable management of connections between specific <strong>services by name</strong> (instead of IP addresses):
+
+   <img alt="Consul Intentions GUI" width="1614" height="1680" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652266696/consul-intentions-gui-1614x1680_gm9diw.png"></a>
+
+1. On the CLI, Deny the web server from talking to anything:
+
+   <pre><strong>consul intention create -deny web '*'
+   </strong></pre>
+
+1. On the CLI, Allow the web server to talk to db (the database):
+
+   <pre><strong>consul intention create -allow web db
+   </strong></pre>
+
+   Rules are set on the service itself, not on where they are implemented.
+
+   
+
 
    <a name="Services"></a>
 
@@ -370,6 +427,20 @@ User=consul
 
    ### ACL (Access Control List)
 
+   ACLs define access granted through specific ports through firewalls (on Enterprise network traffic in "L3" segments).
+   
+   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from other agents
+   * 8301 TCP/UDP for Serf LAN gossip between agents on the same cluster
+   * 8302 TCP/UDP for Serf WAN gossip across clusters
+   * 8500 & 8501 TCP for localhost API
+   * 8502 TCP for Envoy sidecar proxy xDS gRPC API (disabled by default)
+   * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
+   * 21000 - 21255 TCP (automatically assigned ) for Sidecar proxy registrations
+   <br /><br />
+
+   For bootstrapping and configuration of <tt>agent.hcl</tt>, see
+   * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
+   <br /><br />
 
 
    <a name="SidecarInject"></a>
@@ -409,6 +480,86 @@ spec:
    
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
+
+   ### Enterprise Redundancy for Scalability
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Reference Architecture</a>
+   for a single cluster is <strong>5 Consul server nodes</strong> across <strong>3 availability zones</strong> in order for the datacenter to withstand the sudden loss of an entire availability zone.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"><img alt="Consul Ref. Arch" width="1033" height="401" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"></a>
+
+   <strong>CAUTION: A Consul cluster cannot operate in a single Availability Zone.</strong>
+
+   <a name="Raft"></a>
+
+   ### Raft
+
+   Raft is the protocol used by Consul for ensuring data consistency.
+   The <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state store for updating catalog, session, prepared query, ACL, and KV state.
+   
+   The yellow star marks the <strong>LEADER</strong> node. The leader is responsible for ingesting new log entries of cluster changes, writing that to durable storage, and replicating to followers. If the LEADER server fails, an election is automatically held among a quorum (adequate number of) FOLLOWERs to elect a new LEADER from among candidates.
+
+   https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started
+
+   PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
+
+   The Enterprise edition of Consul ensures additional resiliency and performance by implementing a multi-cluster architecture using Federate Multiple Datacenters coordinated using <strong>WAN Gossip</strong>.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
+
+   For <strong>write redunancy</strong> through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/autopilot-datacenter-operations">Consul Autopilot</a>":
+
+   <pre>autopilot = {
+  redundancy_zone_tag = "az"
+   }
+node_meta = {
+   az = "Zone1"
+}
+   </pre>
+
+   Enterprise Autopilot features perform automatic, operator-friendly management of Consul servers, including cleanup of dead servers, monitoring the state of the Raft cluster, automated upgrades, and stable server introduction.
+
+   Autopilot enables Enterprise Redundancy Zones to improve resiliency and scaling of a Consul cluster. It can add "non-voting" servers which will be promoted to voting status in case of voting server failure.
+   Unless during failure, Redundant zones do not participate in quorum, including leader election.
+
+1. To get Autopilot configuration settings:
+
+   <pre><strong>consul operator autopilot get-config</strong></pre>
+
+   sample response:
+
+   <pre>CleanupDeadServers = true
+LastContactThreshold = 200ms
+MaxTrailingLogs = 250
+MinQuorum = 0
+ServerStabilizationTime = 10s
+RedundancyZoneTag = ""
+DisableUpgradeMigration = false
+UpgradeVersionTag = ""
+   </pre>
+
+   Alternately, make an API call for JSON response:
+
+   <pre><strong>curl http://127.0.0.1:8500/v1/operator/autopilot/configuration</strong></pre>
+
+   <pre>{
+  "CleanupDeadServers": true,
+  "LastContactThreshold": "200ms",
+  "MaxTrailingLogs": 250,
+  "MinQuorum": 0,
+  "ServerStabilizationTime": "10s",
+  "RedundancyZoneTag": "",
+  "DisableUpgradeMigration": false,
+  "UpgradeVersionTag": "",
+  "CreateIndex": 5,
+  "ModifyIndex": 5
+}
+   </pre>
+
+
+   ### Enterprise configuration
+   
    From v1.10.0, a full license file must be defined in the server config file before installation:
 
    <pre>log_level      = "INFO"
@@ -421,6 +572,8 @@ bind_addr      = "10.1.4.11"
 advertise_addr = "10.1.4.11"
 advertise_addr_wan = "10.1.4.11"
    </pre>
+
+   To Consul, a "<strong>datacenter</strong>" is a single region.
 
    IP addresses can be in IPv6 format.
 
@@ -439,55 +592,38 @@ performance = {
 }
    </pre>
 
-   <tt>retry_join</tt> specifies the cloud provider and other metadata for discovery by other Consul agents.
+   <tt>retry_join</tt> specifies the cloud provider and other metadata for <strong>auto-discovery</strong> by other Consul agents.
 
    <tt>connect</tt> refers to <strong>Consul Connect</strong> (disabled by default for security).
 
+   <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability. 
+
    
-### Enterprise Redundancy for Scalability
+   ### Telemetry and capacity tests
 
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Reference Architecture</a>
-   for a single cluster is <strong>5 server nodes</strong> across <strong>3 availability zones</strong>:
+   Adequate reserve capacity for each component are necessary to absorb sudden increases in activity.
+   
+   Alerts are necessary to request manual or automated intervention.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"><img alt="Consul Ref. Arch" width="1033" height="401" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"></a>
+   Those alerts are based on telemetry described at https://www.consul.io/docs/agent/telemetry
 
-   The yellow star marks the <strong>LEADER</strong> node. Others are "FOLLOWER".
-   If the LEADER server fails, an election is automatically held among a quorum (adequate number of) followers to elect a new LEADER.
+   Artificial loads need to be applied to ensure that alerts and interventions will actually occur when appropriate. Load testing exposes the correlation of metric values at various levels of load.
+   All this is part of a robust "Chaos Engineering" needed for pre-production.
 
-   https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started
-
-   DEFINITION: To Hashicorp, a <strong>"data center"</strong> is a stand-alone set of nodes.
-   PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
-
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
-
-   For <strong>write redunancy</strong> through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "Consul Autopilot":
-
-   <pre>autopilot = {
-  redundancy_zone_tag = "az"
-   }
-node_meta = {
-   az = "Zone1"
-}
-   </pre>
-
-   Redundant zones do not participate in quorum, including leader election.
-
-   <strong>read scalability</strong> is achieved using non-voting servers.
-
+> At scale, customers need to optimize for stability at the gossip layer.<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">*</a>
 
 ## Manage from another Terminal
 
 1. If you're running a Consul agent instance,<br />
-   Create another Terminal shell instance to interact with the Consul agent running:
+   create another Terminal shell instance to interact with the Consul agent running:
 
    <pre><strong>consul members</strong></pre>
 
    <pre>Node         Address         Status  Type    Build  Protocol  DC   Partition Segment
 Judiths-MBP  127.0.0.1:8301  alive   server  1.12.0  2         dc1  default &LT;all>
    </pre>
+
+   PROTIP: The above command is only needed once to join a cluster. After that, agents gossip with each other to propagate membership information with each other.
 
 1. For more detail about Tags:
 
@@ -531,6 +667,8 @@ wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a
   }
 ]
    </pre>
+
+   <a name="DNSQueries"></a>
 
 1. Discover nodes using DNS interface <tt>dig</tt> command to the Consul agent's <strong>DNS server</strong>, which runs on port 8600 by default:
 
@@ -620,23 +758,6 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
 
 <hr />
 
-<a name="Intentions"></a>
-
-## Service Graph Intentions
-
-1. Deny the web server from talking to anything:
-
-   <pre><strong>consul intention create -deny web '*'
-   </strong></pre>
-
-1. Allow the web server to talk to db (the database):
-
-   <pre><strong>consul intention create -allow web db
-   </strong></pre>
-
-   Rules are set on the service itself, not on where they are implemented.
-
-   
 
 
 
@@ -708,9 +829,7 @@ What we covered above are aspeces of "Zero-Trust"
 * Audited & Logged
 <br /><br />
 
-## Raft
 
-Raft is the protocol used by Consul for ensuring data consistency, checkout this interactive tutorial.
 
 ## To create the demo environment
 
@@ -743,6 +862,7 @@ Raft is the protocol used by Consul for ensuring data consistency, checkout this
 
 <hr />
 
+<!--
 ## Hashicorp Instruqt Labs
 
 https://play.instruqt.com/hashicorp/tracks/consul-basics
@@ -851,7 +971,7 @@ https://play.instruqt.com/hashicorp/tracks/2020-hackathon-consul-sd
 https://play.instruqt.com/hashicorp/tracks/service-mesh-with-consul-jona-version
 jona-version-Service Mesh with Consul-jona-version
 
-
+-->
 
 
 ## Competitors
@@ -860,6 +980,11 @@ jona-version-Service Mesh with Consul-jona-version
 CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its adoption of <strong>AWS AppMesh</strong> in favor of HashiCorp Consul, making the transition in only 6 weeks with no downtime and no big-bang migration.
 
 https://konghq.com/kong-mesh
+
+## Consul and Nomad
+
+https://learn.hashicorp.com/tutorials/nomad/consul-service-mesh
+
 
 
 ## References

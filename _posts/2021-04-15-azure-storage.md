@@ -16,9 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 Unlike a lot of <a href="#Overviews">overview/summary/high-level tutorials and videos on Azure storage</a>, 
 this article is a <strong>deep</strong> yet concise presentation, using HTML tables to organize complex information to make them easier to visualize and remember. I created this while studying for <a target="_blank" href="https://wilsonmar.github.io/azure-certifications/">Azure certification exams</a>.
+
+{% include whatever.html %}
 
 <a target="_blank" href="https://azure.microsoft.com/en-us/product-categories/storage/">azure.microsoft.com/en-us/product-categories/storage</a>
 

@@ -18,6 +18,8 @@ comments: true
 
 Organizationally, Distinguished Engineers are individual contributors reporting directly to a VP or the CTO. 
 
+{% include whatever.html %}
+
 In terms of status and pay, Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees. So they get a "seat at the table".
 
 > To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify and mitigate unintended consequences of decisions involving technology and technology workers.

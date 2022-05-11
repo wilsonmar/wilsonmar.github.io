@@ -18,6 +18,8 @@ comments: true
 
 This article presents my notes toward a guided tour to introduce use of Microsoft's <strong>Machine Learning</strong> offerings running on the Azure cloud.
 
+{% include whatever.html %}
+
 TL;DR look for "PROTIP:" in this article highlight the author's hard-won experience.You likely won't find such information anywhere else.
 My contribution to the world (to you) is a less overwhelming <a href="#LearningSequence">learning sequence</a>, one that starts with the <strong>least complex</strong> of technologies used, then more complex ones.
 

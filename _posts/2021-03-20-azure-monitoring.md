@@ -16,6 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
 
 Several Azure services are related to all the monitoring happening within Azure:
    * <a href="#Monitor">Azure Monitor</a>

@@ -17,7 +17,9 @@ comments: true
 
 Front-end designers and developers are excited about AWS Amplify Studio, which adds front-end UI development to AWS Amplify app hosting service. <a target="_blank" href="https://aws.amazon.com/blogs/mobile/aws-amplify-studio-figma-to-fullstack-react-app-with-minimal-programming/">Announced on December 2, 2021</a> in (public preview), Amplify Studio accelerates UI development (with minimal coding) by automatically translating  designs made in Figma to human-readable React UI component code. Within Amplify Studio, developers can visually connect UI components to app backend data supporting configuration and management capabilities.
 
-This aims to be a suscint yet deep dive about the "mind sets" needed by IT teams in the cloud.
+{% include whatever.html %}
+
+This aims to be a succint yet deep dive about the "mind sets" needed by IT teams in the cloud.
 
 
 ## Annoucement December 2021

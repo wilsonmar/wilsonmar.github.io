@@ -15,7 +15,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This aims to be a suscint yet deep dive about the "mind sets" needed by IT teams in the cloud.
+This aims to be a succint yet deep dive about the "mind sets" needed by IT teams in the cloud.
+
+{% include whatever.html %}
 
 Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and "best practices", but specifically for successfully working in the public cloud.
 

@@ -20,7 +20,9 @@ NOTE: There is a biological Cognito, which is not this topic.
 
 High-level short summary of Cognito: <a target="_blank" href="https://cloudacademy.com/course/using-amazon-cognito-manage-authentication-authorization-mobile-web-apps-1560/cognito-lecture-one/?context_resource=lp&context_id=241">VIDEO course: "Using Amazon Cognito to Manage Authentication & Authorization to your Mobile and Web Apps"</a>
 
-PROTIP: This blog presents configuration using both the AWS GUI Management Console and Terraform coding to provide repeatability and ease of reconfiguration (moving from test to prod on several regions).
+{% include whatever.html %}
+
+PROTIP: This article presents configurations using both the AWS GUI Management Console and Terraform coding to provide repeatability and ease of reconfiguration (moving from test to prod on several regions).
 
 The <a target="_blank" href="https://docs.aws.amazon.com/cognito/?id=docs_gateway">Amazon Cognito Documentation menu</a> lists 3 products:
 

@@ -17,6 +17,8 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-data/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running <strong>managing data</strong> Azure cloud.
 
+{% include whatever.html %}
+
 ## Microsoft Data Products Marketing
 
 https://azure.microsoft.com/en-us/resources/videos/dev-stories-troy-hunt-video/

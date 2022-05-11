@@ -22,6 +22,8 @@ package managers (which helps you find and install Python packages).
 
 Here I'm taking a "deep dive" approach because I haven't seen one on the internet.
 
+{% include whatever.html %}
+
 I've pulled out the various incantations suggested by others on StackOverlow
 and put them here in context.
 
@@ -61,9 +63,9 @@ An additional complication is that there are several alternative virtual environ
 * <a href="#easy_install">easy_install</a> is an environment manager.
 
 * <a href="#MiniConda">Miniconda</a> is a lightweight distribution of Conda, and uses conda commands.
-* Anaconda is installed on top of miniconda to provide a curated collection of <a target="_blank" href="https://docs.continuum.io/anaconda/pkgs.html">over 720 "common" packages</a> for scientific Python users.
+* Anaconda is installed on top of miniconda to provide a curated collection of <a target="_blank" href="https://docs.continuum.io/anaconda/pkgs.html">over 720 "common" packages</a> for scientific Python users. It is no longer recommended due to the security vulnerabilities in that many packages. So it's best to install the base Miniconda and add only the packages you actually use.
 
-It's a "hot mess".
+### Python
 
 Despite all this hassle around versioning, Python is the preferred language of 
 Artificial Intelligence and Machine Learning at the forefront of computer science innovation today.
@@ -154,8 +156,7 @@ Python 2 comes installed on MacOS machines.
 
    The response:
 
-   <pre>
-   python is /usr/bin/python
+   <pre>python is /usr/bin/python
    </pre>
 
    You may also see the following if you've installed a shim to enable switching of Python versions:

@@ -18,6 +18,8 @@ comments: true
 
 There are a lot of summary/high-level tutorials and videos. But <a target="_blank" href="https://wilsonmar.github.io/azure-devops/">this article</a> skips the generalized sales hype and presents a <strong>"deep dive" with automation</strong> with logical and succinct hands-on steps so you get perficient quickly.
 
+{% include whatever.html %}
+
 <a href="#YourSettings">
 
 ## Your settings (Naming Conventions)

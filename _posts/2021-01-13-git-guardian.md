@@ -18,6 +18,8 @@ comments: true
 
 This is a hands-on introduction to Git Guardian ("GG"), a utility to detect (monitor) API keys and other credentials and secrets exposed in source code on public SaaS or private (internal/on-prem) GitHub. 
 
+{% include whatever.html %}
+
 GG's documentation is published at<br /><a target="_blank" href="https://docs.gitguardian.com/internal-repositories-monitoring/home">https://docs.gitguardian.com/internal-repositories-monitoring/home</a>
 
 PROTIP: Know the <strong>Glossary</strong> of technical terms before you dive into other docs, at:<br /><a target="_blank" href="https://docs.gitguardian.com/internal-repositories-monitoring/glossary">https://docs.gitguardian.com/internal-repositories-monitoring/glossary</a>

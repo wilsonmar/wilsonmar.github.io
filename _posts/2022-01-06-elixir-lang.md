@@ -17,6 +17,8 @@ comments: true
 
 This is a hands-on tutorial to provide you a deep yet succinct introduction sequenced in logical order for fastest learning. "PROTIP" tags identify items which are not in most other sites.
 
+{% include whatever.html %}
+
 1. <a target="_blank" href="https://elixir-lang.org/">https://elixir-lang.org</a> is the marketing home page for the Elixir language.
 
    Famous users of Elixir mentioned on the Elixir home page are Farmbot and Pepsico. 

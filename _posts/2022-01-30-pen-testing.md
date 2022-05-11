@@ -19,7 +19,9 @@ comments: true
 The <a target="_blank" href="https://www.freecodecamp.org/learn/information-security/">Information Security certification at freecodecamp.org/learn/information-security</a> 
 is rated at <strong>300 hours</strong> but may be less or more depending on your dedication and experience.
 
-This tutorials works with both <a href="#JavaScriptPart">Front-End JavaScript</a> and 
+{% include whatever.html %}
+
+This tutorial works with both <a href="#JavaScriptPart">Front-End JavaScript</a> and 
 builds <a href="#PythonPart">Python</a> penetration tools, see below.
 
 <a target="_blank" href="https://www.freecodecamp.org/">FreeCodeCamp.org</a> is one of the most popular websites on earth becuase it provides in-depth hands-on tutorials and challenges. Its videos, labeled <a target="_blank" href="https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q">"HackerSploit"</a> (from Kenya, Africa) are usually unlisted on YouTube.

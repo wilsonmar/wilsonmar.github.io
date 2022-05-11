@@ -19,6 +19,8 @@ comments: true
 Security threats are getting more and more clever and incidious.
 So a <strong>quicker and more thorough</strong> response to remediation is necessary in today's world. 
 
+{% include whatever.html %}
+
 There are mechanisms:
 
    1. <strong>Scan IaC (Infrastructure as Code)</strong> (Terraform and CloudFormation) using TFSec and <a href="#IaCScanTools">similar IaC scan tools</a>, before they are used to create resources in AWS. This is a "shift left" approach <strong>while on laptops</strong>. This is needed because by the time that vulnerabilities are spotted in AWS Config and AWS Security Hub, the vulnerability already exists. This evaluation can be repeated as part of every CI/CD infra deploy pipeline run.

@@ -20,7 +20,9 @@ This is implementation of suggestions in <a target="_blank" href="https://www.li
 
 > It's no longer impressive to have open-source libraries under your name. Concern about malicious libraries and their unsecure transitive dependencies has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
 
-Most sample code lacks security, editing, internationalization, etc. So, along with some friends, we created this repo containing coding that has various features all (safely) working together in one program file:
+{% include whatever.html %}
+
+It has been reported that much sample code lacks security, editing, internationalization, etc. So, along with some friends, we created this repo containing coding that has various features all (safely) working together in one program file:
 
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>

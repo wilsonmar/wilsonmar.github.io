@@ -20,6 +20,8 @@ comments: true
 
 Behind every major organization creating websites is a "Design System" publication which specifies the UX (User Experience) and provides tools for website designers that UX.
 
+{% include whatever.html %}
+
 UX includes more than colors, fonts (typography), icons (iconography), <a href="#Design_Tokens">Design Tokens</a>, line height, and other aspects of styling websites and Andriod/iOS mobile apps. Design Systems provide Guidelines on Voice and Tone, Animation, Accessibility, Layout, Navigation, Search, Messaging, Data Visualization, Localization, etc. 
 Component blueprints provide examples to code components such as Accordion, Checkbox, etc. in the form of 
 

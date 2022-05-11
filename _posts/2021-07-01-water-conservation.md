@@ -16,8 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
 
-As of September 1, 2021, Lake Mead in California (the largest man-made lake in the US) is reduced to 37% of capacity. And there are 120 F temparatures in Washington and Canada.
+As of September 1, 2021, Lake Mead in California (the largest man-made lake in the US) is at 37% of its capacity. And there are record-setting 120 F temparatures in Washington and Canada.
 
 At my spread in Montana, the well and spring is producing less water than before.
 

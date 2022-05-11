@@ -16,6 +16,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
 ## Internet Computer via DFINITY's dfx to ic0.app
 
 The "Internet Computer" (public cyberspace) extends the internet with compute to host "humanity's logic and data".

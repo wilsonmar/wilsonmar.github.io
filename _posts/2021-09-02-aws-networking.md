@@ -18,6 +18,8 @@ comments: true
 
 This tutorial covers how to access servers and other resources within AWS.
 
+{% include whatever.html %}
+
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11e6-8471-46d2602d3f39.jpg"></amp-img>
 

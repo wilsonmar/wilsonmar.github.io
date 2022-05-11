@@ -18,6 +18,7 @@ comments: true
 
 This is a hands-on deep-dive introduction to installing and using Docusaurus as a static (JAM stack) website builder.
 
+{% include whatever.html %}
 
 1. Visit <a target="_blank" href="https://v2.docusaurus.io/">https://v2.docusaurus.io</a>
 

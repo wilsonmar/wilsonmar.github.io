@@ -19,6 +19,9 @@ comments: true
 
 This is a deep yet concise hands-on technical introduction to ServiceNow.
 
+{% include whatever.html %}
+
+
 <a name="URLs"></a>
 
 ## ServiceNow URLs and logins

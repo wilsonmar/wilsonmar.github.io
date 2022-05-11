@@ -16,6 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
+
 <a name="Sample"></a>
 
 ## Sample

@@ -16,12 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 To successfully cater to enterprises, software vendors must incorporate features enterprises wnat and need. A salesperson at a well-known developer tools software company once actually said in a meeting (unconvincingly):
 
 > "We're enterprise software because we have enterprise users"
 
 The stinging rebuff was: "I think your software will actually be an enterprise offering when those 30 specific feature we identified are implemented."
+
+{% include whatever.html %}
 
 Here are the <strong>concerns</strong> enterprises have that need to be addressed by vendors:
 

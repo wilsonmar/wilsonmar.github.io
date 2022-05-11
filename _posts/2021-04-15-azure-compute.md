@@ -17,6 +17,8 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/azure-compute/">This</a> is the hands-on step-by-step tutorial I would give to a developer or administrator getting up and running compute on Azure cloud.
 
+{% include whatever.html %}
+
 ## Compute options
 
    * SaaS (Software as a Service): O365

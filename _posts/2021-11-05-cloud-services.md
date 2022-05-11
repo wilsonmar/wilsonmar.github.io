@@ -16,6 +16,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
 ## How many AWS Services are there?
 
 Among the 200+, the <a target="_blank" href="https://pages.awscloud.com/rs/112-TZM-766/images/How-to-Design-a-Least-Privilege-Architecture-in-AWS-Slides.pdf">key services</a>:

@@ -16,8 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 This is a hands-on tour of how cloud-native applications getting more proactive health metrics, faster, with less work. The contribution of this write-up is a logically presented and deep yet succinct tutorial that incorporates many of the videos and documentation about the subject. Commentary along the way include "NOTE" and "PROTIP" flags to hard-won advice available no where else, without the marketing generalities. 
+
+{% include whatever.html %}
 
 The objective here is to enable you to says "hell yeah" in job interviews:
    * Possesses expertise designing, analyzing, and troubleshooting large-scale distributed systems.

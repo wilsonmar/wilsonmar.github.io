@@ -22,6 +22,8 @@ This page covers preparation for certification exams by several dimensions:
    * by <a href="#TypeofSvc">type of AWS service</a>
    <br /><br />
 
+{% include whatever.html %}
+
 <hr />
 
 <a name="TypeofSvc"></a>

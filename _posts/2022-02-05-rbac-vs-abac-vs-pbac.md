@@ -18,6 +18,8 @@ comments: true
 
 RBAC, ABAC, and PBAC are NOT service offerings from any one cloud vendor, but <strong>design approaches</strong> to Access Control. So there are differences in how to operate under each approach in AWS vs Azure vs Kubernetes, etc.
 
+{% include whatever.html %}
+
 If you're working in a large enterprise, you need a way to meet GRC (Governance, Risk management, and Compliance) requirements in a way that is also more secure and scalable.
 
 As an organization increases in size, it becomes increasingly difficult for overseers of IT management accounts who <strong>operate away from the day-to-day</strong> technical teams and business managers. When "out of the loop", administrators need to "rubber stamp" key authorization requests. The larger the organization, the greater distance between those in leadership roles and those in IT. And business leaders become more dependent on the IT department.

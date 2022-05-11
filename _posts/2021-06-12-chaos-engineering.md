@@ -18,6 +18,8 @@ comments: true
 
 > "40% of organizations will implement chaos engineering practices as part of DevOps initiatives by 2023, <strong>reducing unplanned downtime</strong> by 20%." [<a target="_blank" href="https://www.gartner.com/smarterwithgartner/the-io-leaders-guide-to-chaos-engineering/">Source: Gartner</a>]
 
+{% include whatever.html %}
+
 ## Definitions
 
 The definition <a target="_blank" href="https://www.wikiwand.com/en/Chaos_engineering">"Chaos Engineering" on Wikipedia</a>:
