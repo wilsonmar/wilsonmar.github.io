@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This aims to present a hands-on approach about using automation for a comprehensive technical deep dive that is succinct and logically sequenced. 
+This aims to present a hands-on approach about using automation for a comprehensive technical deep dive that is succinct and logically sequenced. All without sales generalizations.
 
 {% include whatever.html %}
 
@@ -68,6 +68,7 @@ This aims to present a hands-on approach about using automation for a comprehens
    * Greater operational efficiency
    <br /><br />
    
+
 ## Integration with legacy VMware
    
    <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=10m" title="Running Consul on Kubernetes and Beyond">VIDEO</a>:
@@ -83,10 +84,9 @@ This aims to present a hands-on approach about using automation for a comprehens
 > "Multi-platform chooses you, due to corporate acquisitions"
 
 
-## Complexitiies of Kubernetes
+## Complexities addressed
 
    The <strong>distributed</strong> nature of microservices require Enterprise teams to ensure those processes are addressed:
-
 
    * Automated Discovery: kube-dns, kube-proxy
    
@@ -95,8 +95,25 @@ This aims to present a hands-on approach about using automation for a comprehens
    * Segmentation: Network Policy + Controller
 
 
+## Value Proposition
+
+Adoption of Consul aims to yield these benefits to organizations: Proof of Value (POV)
+
+* Compliance with regulatory demands (automated processes)
+* Reduce risk of breach
+* Reduce risk of downtime
+
+* Faster velocity (getting things done)
+* Reduce cost via people
+* Reduce cost via tools
+<br /><br />
+
+
    Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
    
+
+### Mutual TLS
+
 > To encrypt traffic between nodes, each asset is given an encrypted identity in the form of a TLS certificate (in X.509, <a target="_blank" href="https://spiffe.io/">SPIFFE-compatible</a> format). Consul also provides a Proxy to enforce communications between nodes using "Mutual TLS" where each party exchange certificates with each other.
 
    Consul's <strong>auto-join provider</strong> enables nodes running outside of Kubernetes to join a Consul cluster running on Kubernetes API.
@@ -399,9 +416,11 @@ User=consul
 
    ## Service Graph Intentions
 
-   The Consul GUI enables searching for connections by name (instead of IP addresses) as well as enable management of connections between specific <strong>services by name</strong> (instead of IP addresses):
+   The Consul GUI enables search for connections by name (instead of IP addresses) as well as specifying connections between specific <strong>services by name</strong> (instead of IP addresses):
 
    <img alt="Consul Intentions GUI" width="1614" height="1680" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652266696/consul-intentions-gui-1614x1680_gm9diw.png"></a>
+
+   PROTIP: Working with service names using a GUI not only reduces hassle but also <strong>minimizes mistakes</strong>, which have dire Security consequences.
 
 1. On the CLI, Deny the web server from talking to anything:
 
@@ -425,14 +444,14 @@ User=consul
 
    <a name="ACL"></a>
 
-   ### ACL (Access Control List)
+   ### Ports in ACL (Access Control List)
 
    ACLs define access granted through specific ports through firewalls (on Enterprise network traffic in "L3" segments).
    
    * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from other agents
    * 8301 TCP/UDP for Serf LAN gossip between agents on the same cluster
    * 8302 TCP/UDP for Serf WAN gossip across clusters
-   * 8500 & 8501 TCP for localhost API
+   * 8500 & 8501 TCP for localhost API listeners
    * 8502 TCP for Envoy sidecar proxy xDS gRPC API (disabled by default)
    * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
    * 21000 - 21255 TCP (automatically assigned ) for Sidecar proxy registrations
@@ -598,19 +617,22 @@ performance = {
 
    <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability. 
 
-   
+
+   <a name="Telemetry"></a>
+
    ### Telemetry and capacity tests
 
    Adequate reserve capacity for each component are necessary to absorb sudden increases in activity.
    
    Alerts are necessary to request manual or automated intervention.
 
-   Those alerts are based on telemetry described at https://www.consul.io/docs/agent/telemetry
+   Those alerts are based on <strong>metrics</strong> for each component described at <a target="_blank" href="https://www.consul.io/docs/agent/telemetry">https://www.consul.io/docs/agent/telemetry</a>
 
    Artificial loads need to be applied to ensure that alerts and interventions will actually occur when appropriate. Load testing exposes the correlation of metric values at various levels of load.
    All this is part of a robust "Chaos Engineering" needed for pre-production.
 
 > At scale, customers need to optimize for stability at the gossip layer.<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">*</a>
+
 
 ## Manage from another Terminal
 
@@ -833,7 +855,7 @@ What we covered above are aspeces of "Zero-Trust"
 
 ## To create the demo environment
 
-1.
+1. Yaml file:
 
    * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
    * consul-helm
@@ -981,6 +1003,7 @@ CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its ado
 
 https://konghq.com/kong-mesh
 
+
 ## Consul and Nomad
 
 https://learn.hashicorp.com/tutorials/nomad/consul-service-mesh
@@ -990,6 +1013,10 @@ https://learn.hashicorp.com/tutorials/nomad/consul-service-mesh
 ## References
 
 https://www.pagerduty.com/docs/guides/consul-integration-guide
+
+https://www.youtube.com/watch?v=7VtZEZAi6qU&t=14s
+Simplifying Infrastructure and Network Automation with HashiCorp (Consul and Nomad) and Traefik 
+
 
 <a name="CorporateSocial"></a>
 
@@ -1002,3 +1029,4 @@ Facebook: https://www.facebook.com/HashiCorp
 ## Competition
 
 ArgoCD
+
