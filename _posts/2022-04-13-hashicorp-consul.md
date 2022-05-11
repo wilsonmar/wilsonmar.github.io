@@ -50,24 +50,13 @@ This aims to present a hands-on approach for a technical deep dive that is succi
    > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
    Benefits of Microservices include:
-      * Simplified testing of individual services
-      * Each service can move and scale independently
-      * Increased agility (from ephemeral infrastructure)
-      * Greater operational efficiency
-      <br /><br />
-   
-   ## Kubernetes
-
-   The distributed nature of microservices can lead to insecure implementations.
-
-   So enterprises make use of Kubernetes.
-
-   * Discovery: kube-dns, kube-proxy
-   * Configuration: Configmaps
-   * Segmentation: Network Policy + Controller
+   * Simplified testing of individual services
+   * Each service can move and scale independently
+   * Increased agility (from ephemeral infrastructure)
+   * Greater operational efficiency
    <br /><br />
-
-   ## Kubernetes with legacy VMware
+   
+## Integration with legacy VMware
    
    <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=10m" title="Running Consul on Kubernetes and Beyond">VIDEO</a>:
 
@@ -81,8 +70,19 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
 > "Multi-platform chooses you, due to acquisitions"
 
+## Complexitiies of Kubernetes
+
    Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
    
+   The <strong>distributed</strong> nature of microservices require Enterprise teams to ensure those processes are addressed:
+
+
+   * Discovery: kube-dns, kube-proxy
+   
+   * Configuration: Configmaps
+   
+   * Segmentation: Network Policy + Controller
+
 > To encrypt traffic between nodes, each asset is given an encrypted identity in the form of a TLS certificate (in X.509, <a target="_blank" href="https://spiffe.io/">SPIFFE-compatible</a> format). Consul also provides a Proxy to enforce communications between nodes using "Mutual TLS" where each party exchange certificates with each other.
 
    Consul's <strong>auto-join provider</strong> enables nodes running outside of Kubernetes to join a Consul cluster running on Kubernetes API.
@@ -111,13 +111,11 @@ This aims to present a hands-on approach for a technical deep dive that is succi
 
 ## HCP (Hashicorp Cloud Platform)
 
-   To be free of server install and management hassles, use <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. The easiest way to use Consul is to use the Hashcorp-Managed Cloud.
+   To be free of on-prem. server install and management hassles (security, scaling disk space, upgrades, etc.), many prefer using the <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. The easiest way to use Consul is to use the Hashcorp-Managed Cloud.
 
 <a name="HCPWorkflows"></a>
 
 ### HCP workflows
-
-TODO: 
 
    * Access Control
    * Billing
@@ -125,12 +123,6 @@ TODO:
    * Identity
    * Resource Management
    <br /><br />
-
-
-   DEFINITION: To Hashicorp, a "data center" is a stand-alone set of nodes.
-   PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
-
-   https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started
 
 
 <hr />
@@ -452,26 +444,26 @@ performance = {
    <tt>connect</tt> refers to <strong>Consul Connect</strong> (disabled by default for security).
 
    
-   ### Enterprise Redundancy Zones
+### Enterprise Redundancy for Scalability
 
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Reference Architecture</a>
    for a single cluster is <strong>5 server nodes</strong> across <strong>3 availability zones</strong>:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"><img alt="Consul Ref. Arch" width="1033" height="401" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"></a>
 
-   DEFINITION: To Hashicorp, a "data center" is a stand-alone set of nodes.
-   PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
-
    The yellow star marks the <strong>LEADER</strong> node. Others are "FOLLOWER".
    If the LEADER server fails, an election is automatically held among a quorum (adequate number of) followers to elect a new LEADER.
 
+   https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started
 
+   DEFINITION: To Hashicorp, a <strong>"data center"</strong> is a stand-alone set of nodes.
+   PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
 
-   For write redunancy through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "Consul Autopilot":
+   For <strong>write redunancy</strong> through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "Consul Autopilot":
 
    <pre>autopilot = {
   redundancy_zone_tag = "az"
@@ -481,15 +473,15 @@ node_meta = {
 }
    </pre>
 
-   Note that redundant zones do not participate in quorum, including leader election.
+   Redundant zones do not participate in quorum, including leader election.
+
+   <strong>read scalability</strong> is achieved using non-voting servers.
 
 
+## Manage from another Terminal
 
-   ## Manage from another Terminal
-
-1. Press control+C to exit the Consul instance.
-
-1. Create another Terminal shell instance to interact with the instance:
+1. If you're running a Consul agent instance,<br />
+   Create another Terminal shell instance to interact with the Consul agent running:
 
    <pre><strong>consul members</strong></pre>
 
@@ -500,8 +492,10 @@ Judiths-MBP  127.0.0.1:8301  alive   server  1.12.0  2         dc1  default &LT;
 1. For more detail about Tags:
 
    <pre><strong>consul members -detailed</strong></pre>
-% consul members -detailed
-Node                  Address         Status  Tags
+
+   Sample response:
+
+   <pre>Node                  Address         Status  Tags
 wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a8cdb4,dc=dc1,ft_fs=1,ft_si=1,id=40fee474-cf41-1063-2790-c8ff2b14d4af,port=8300,raft_vsn=3,role=consul,segment=&LT;all>,vsn=2,vsn_max=3,vsn_min=2,wan_join_port=8302
    </pre>
 
@@ -575,6 +569,8 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
 1. Gracefully stop the Consul by making it leave the Consul datacenter and shut down:
 
    <pre><strong>consul leave</strong></pre>
+
+   Logs in the sample response:
 
    <pre>[INFO]  agent.server: server starting leave
 [INFO]  agent.server.serf.wan: serf: EventMemberLeave: wilsonmar-N2NYQJN46F.dc1 127.0.0.1
