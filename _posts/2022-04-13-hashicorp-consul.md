@@ -99,17 +99,19 @@ This aims to present a hands-on approach about using automation for a comprehens
 
 Adoption of Consul aims to yield these benefits to organizations: Proof of Value (POV)
 
-* Compliance with regulatory demands (automated processes)
-* Reduce risk of breach
-* Reduce risk of downtime
+* Faster Time to Market from velocity of getting things done
 
-* Faster velocity (getting things done)
-* Reduce cost via people
-* Reduce cost via tools
+* Reduce cost via tools (operational efficiency through more visibility and automation)
+* Reduce cost via people from improved availability (uptime)
+
+* Reduce risk of downtime from better reliability
+* Compliance with regulatory demands (automated processes)
+* Reduce risk of breach from better guardrails
 <br /><br />
 
+Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
 
-   Consul provides better security along with less toil (productivity) for both Kubernetes and legacy VMs.
+https://learn.hashicorp.com/well-architected-framework
    
 
 ### Mutual TLS
