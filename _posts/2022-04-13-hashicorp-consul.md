@@ -72,10 +72,10 @@ This aims to present a hands-on approach about using automation for a comprehens
 
    Hashicorp provides modern mechnisms for the security of access and communication processes:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"><img alt="Zero-Trust CIA Triad" width="1732" height="824" https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"><img alt="Zero-Trust CIA Triad" width="1732" height="824" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"></a>
 
-   * Identity-driven instead of server identity (by IP address)
-   * Mutually authenticated (server and client certificates)
+   * Identity-driven server identity (instead of by IP address)
+   * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Authorized
    * Time-bound (instead of long-lived static secrets to be hacked)
    * Encrypted Data & Trust (in transit and at rest)
@@ -146,6 +146,7 @@ Consul provides better security along with less toil (productivity) for both Kub
 
 https://learn.hashicorp.com/well-architected-framework
    
+<a name="MutualTLS"></a>
 
 ### Mutual TLS
 
