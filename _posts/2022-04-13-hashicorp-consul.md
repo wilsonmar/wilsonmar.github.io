@@ -70,7 +70,9 @@ This aims to present a hands-on approach about using automation for a comprehens
 
 ## Zero Trust (Defense in Depth)
 
-   Access and communication processes now need to be:
+   Hashicorp provides modern mechnisms for the security of access and communication processes:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"><img alt="Zero-Trust CIA Triad" width="1732" height="824" https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"></a>
 
    * Identity-driven instead of server identity (by IP address)
    * Mutually authenticated (server and client certificates)
@@ -238,13 +240,18 @@ Connect to a Payment service outside Kubernetes.
 
 ## Ways to install Consul binary
    
-   <strong>PROTIP: The Consul executable binary is designed to run either as a local agent or as server. See install instructions below.</strong>
+   PROTIP: The Consul executable binary is designed to run either as a local long-running <strong>daemon</strong> or in <strong>server mode</strong>. See install instructions below for each operating system:
+   macOS, Linux, Windows.
 
-1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code from:
+   Consul can be controlled using CLI, API, GUI.
+
+1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
 
    <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
 
-   Initiated in 2014, it has garnered over 24,000 stars, with over a million downloads monthly.
+   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+
+   Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
 
 
    ### Core use cases of Consul
