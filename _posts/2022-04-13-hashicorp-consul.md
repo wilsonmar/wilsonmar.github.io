@@ -72,7 +72,6 @@ This aims to present a hands-on approach about using automation for a comprehens
 ## Integration with legacy VMware
    
    <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=10m" title="Running Consul on Kubernetes and Beyond">VIDEO</a>:
-
    Almost all enterprises also have legacy applications running VMware or in a mainframe. 
    
    That's where Hashicorp Consul comes in, with <a target="_blank" href="https://www.consul.io/use-cases/multi-platform-service-mesh">multi-platform/cloud</a>
@@ -886,6 +885,50 @@ What we covered above are aspeces of "Zero-Trust"
 
 <hr />
 
+## Video Tutorials
+
+In <a target="_blank" href="https://www.youtube.com/c/HashiCorp">
+Hashicorp's YouTube channel covering all their 8 products</a>:
+
+Cole Morrison and Rosemary Wang (Developer Advocates at HashiCorp) 
+show how to learn Consul "the hard way" by setting it from scratch in their
+<a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">
+10-part VIDEO series: "Getting into HashiCorp Consul"</a> recorded on 
+<a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive on Twitch</a> (two hours each):
+
+<a target="_blank" href="https://www.youtube.com/watch?v=0H06VKvlTJQ&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=1"> 
+Part 1: Aug 9, 2021 - Security, Traffic Encryption, and ACLs</a> [1:47:59]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=2PUMjq9-dyk&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=2">
+Part 2: Configuring Service Discovery for Consul on AWS</a> [2:20:50]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_lIJg0c5les&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=3">
+Part 3: Scaling, Outage Recovery, and Metrics for Consul on AWS</a> [2:03:17]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=wIub6PZWRmY&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=4">
+Part 4: Security, Traffic Encryption, and ACLs</a> [2:06:44]
+ - secure gossip communication between Consul agents, 
+encrypt RPC calls between client and server with TLS, and begin setting up ACLs.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=HB4u_C85HV8&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=5">
+Part 5: All About Access Control Lists</a> [1:34:12]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=KpxlbRngc98&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=6">
+Part 6: Auto Configuration with Vault</a> [2:00:09]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yBgmsWBElZ0&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=7">
+Part 7: Enabling Consul Service Mesh</a> [2:08:43]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kGGu0m2StRA&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=8">
+Part 8: Traffic Shaping and Envoy Debugging</a> [1:58:28]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=qqVJJh8cLVk&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=9">
+Part 9: Service Mesh Proxy Metrics</a> [1:51:03]
+
+<a target="_blank" href="https://www.youtube.com/watch?v=eGunZqGNISM&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=10">
+Part 10: Terminating & Ingress Gateways</a> [1:34:44]
+
+
 <!--
 ## Hashicorp Instruqt Labs
 
@@ -1003,8 +1046,43 @@ jona-version-Service Mesh with Consul-jona-version
 <a target="_blank" href="https://www.hashicorp.com/resources/tide-self-service-service-mesh-with-consul">
 CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its adoption of <strong>AWS AppMesh</strong> in favor of HashiCorp Consul, making the transition in only 6 weeks with no downtime and no big-bang migration.
 
+Istio
+
+GitLab
+
 https://konghq.com/kong-mesh
 
+Cisco
+
+H3C
+
+ManageEngine OpManager
+
+Extreme Networks, Inc
+
+Arista Networks
+
+Big Cloud Fabric
+
+Equinix Performance Hub
+
+HPE Synergy
+
+NSX for Horizon
+
+OpenManage Network Manager
+
+CenturyLink
+
+Huawei Cloud Fabric
+
+Aricent
+
+Cloudscaling
+
+Cumulus
+
+HostDime
 
 ## Consul and Nomad
 

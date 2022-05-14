@@ -1459,6 +1459,13 @@ Use multiple threads, processes, mutexes, barriers, waitgroups, queues, pipes, c
 
 https://www.udemy.com/course/parallel-computing-in-python/
 
+On LinkedIn Learning: "<a target="_blank" href="https://github.com/bomonike/python-parallel-concurrent
+">Python Parallel and Concurrent Programming</a>" <a target="_blank" href="https://www.linkedin.com/learning/python-parallel-and-concurrent-programming-part-1/" title="Released: 8/29/2019">2h 11m Part 1</a> and <a target="_blank" href="https://www.linkedin.com/learning/python-parallel-and-concurrent-programming-part-2/">Part 2</a> (using Python 3.7.3 on Windows PC machines) 
+by Barron Stone and Olivia Chiu Stone Advanced
+
+* A Mutex can only be acquired/released by the same thread.<br />
+   A Semaphore can be acquired/released by different threads.
+
 ## More about Python
 
 This is one of a series about Python:

@@ -16,22 +16,51 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are my notes studying for DevOps Institute’s DOL (DevOps Leader) V2.0 certification.
+Here are my notes studying for DevOps Institute’s DOL (DevOps Leader) certification, now in <a target="_blank" href="https://www.devopsinstitute.com/devops-leadership-whats-new-in-devops-institutes-version-2-0-certification/">v2.0</a> based on the DevOps Collective Body of Knowledge (CBok).
 
-## Yeah, I know it's hard
+## Yeah, we know it's hard
 
-Machiavelli's book "The Prince" 
+> "there is nothing more difficult to carry out, nor more doubtful of success, nor more dangerous to handle, than to initiate a new order of things." --Niccolò Machiavelli in "The Prince" 
 
-> "There is no greater ..."
+
+## But it needs to happen
 
 > "You can't spell CHALLENGE without CHANGE".
 
 
-## Database of Targets
+## Database of Targets (Contacts)
 
 1. Do you have a database of your target audience?
 
-1. Metadata about each person
+1. Metadata about each person?
+   * Email
+   * Nickname
+   * Honorific (Dr, etc.)
+   * Title
+   * Manager
+   * Tenure
+   * Location
+   * Time Zone
+   * Preferred working hours
+   * etc.
+   <br /><br />
+
+   Such information may come from a company directory, but due to privacy protections may not be readily available.
+
+   When people are working on bringing new ways of thinking and new ways of working to an organization, there will naturally be some people more open and ready for the change than others who will be more resistant – as we learned looking at the change curve in the DevOps Foundation course. It’s an important skill for a DevOps Leader to be able to identify their supporters and early adopters.
+
+   ### Bateson Stakeholder Map
+
+1. Assess each stakeholder's Level of Understanding and  Level of Emotional Engagement Map into one of six categories: 
+   
+   <strong>critics, cynics, spectators, unengaged, ambassadors, and enthusiasts</strong>
+ 
+   This activity ensures that the most appropriate messages are sent to specific individuals based upon , to elevate each stakeholder through the categories over time.
+
+   This approach comes from Ranger4’s Philippa Hale, building on the change curve. 
+   
+1. The "Bateson Stakeholder Map" summarizes the number of stakeholders in each category to provide a visualization of the collective mindset at points in time.
+ 
 
    ## Response Tracking Systems
 
@@ -51,35 +80,40 @@ Machiavelli's book "The Prince"
 
 Terms mentioned in the curriculum are from various experts in organizational psychology:
 
-12 Factor App
+* 12 Factor App
 
-Agile Framework
+* Agile Framework
 
-Backlog Grooming (Agile ceremony)
+* Backlog Grooming (Agile ceremony)
 
-Bateson Stakeholder Map
 
-Gantt chart (timeline)
+* Change Curve
 
-Guilds (from Spotify's Squad Model)
 
-Kolb’s Learning Style
+* Gantt chart (timeline)
 
-Karpman Drama Triangle (Rescuer, Persecutor, Victim)
+* Guilds (from Spotify's Squad Model)
 
-Mindset
+* Kolb’s Learning Style
 
-Retrospectives (Agile ceremony)
+* Karpman Drama Triangle (Rescuer, Persecutor, Victim)
 
-SKIL Framework: Skills, Knowledge, Ideas, and Learning.
-   * https://devopsinstitute.com/about/about-the-skil-framework/
+* Mindset
+
+* Retrospectives (Agile ceremony)
+
+* SKIL Framework: Skills, Knowledge, Ideas, and Learning.
+   https://devopsinstitute.com/about/about-the-skil-framework/
    <br /><br />
 
-Top-down and bottom-up
+* Top-down and bottom-up organizational hierarchy
 
-Training from the Back of the Room — the 4 Cs (Connection, Concept, Concrete, Conclusion)
+* "Training from the Back of the Room" — the 4 Cs (Connection, Concept, Concrete, Conclusion)
 
-Wilber’s Quadrants
+* "Way of Working"
+
+* Wilber’s Quadrants
+
 
 > "Change is inevitible. Growth is optional"
 > "Change begins at the end of your comfort zone" -- Roy T. Bennett
