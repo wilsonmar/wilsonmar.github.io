@@ -61,16 +61,59 @@ This aims to present a hands-on approach about using automation for a comprehens
 
    > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
-   Benefits of Microservices include:
-   * Simplified testing of individual services
-   * Each service can move and scale independently
-   * Increased agility (from ephemeral infrastructure)
+   Microservices seem like a good idea because:
+   * <strong>Ephemeral services</strong> enable each service to move and scale independently (reduce dev teams waiting for each other)
+   * That simplifies unit testing of individual services
+   * That increases agility
    * Greater operational efficiency
    <br /><br />
+
+## Zero Trust (Defense in Depth)
+
+   Access and communication processes now need to be:
+
+   * Identity-driven instead of server identity (by IP address)
+   * Mutually authenticated (server and client certificates)
+   * Authorized
+   * Time-bound (instead of long-lived static secrets to be hacked)
+   * Encrypted Data & Trust (in transit and at rest)
+   * Audited & Logged
+   <br /><br />
+
+## Addressing Complexities
+
+   The <strong>distributed</strong> nature of microservices require Enterprise teams to address several concerns:
    
+   * <strong>"Ephemeral" infrastructure</strong> means IP addresses are dynamic (and toil to assign IP addresses to each service)
+   * Each service should not communicate with any other service (complicated communication rules)
+   * To distribute load among individual servers, load balancers used are a single point of failure
+   * Complex mechanisms to <strong>secure perimeter yet communicate with outside systems</strong> (legecy and payment systems) are problematic
+   * Whole-application <strong>(end-to-end) testing</strong> requires multi-team collaboration (time consuming and expensive)
+   * Manual & complex processes in application delivery
+   <br /><br />
+
+   (<a target="_blank" href="https://www.youtube.com/watch?v=C3N4i1cFIZ0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk" title="whiteboard by HashiCorp Co-Founder and CTO, Armon Dadgar May 9, 2022">VIDEO</a>: 
+   <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> 
+   was designed with features to address each, but Consul sychronizes across everal Kubernetes instances -- in different clouds -- and also sychronizes with Serverless, Cloud Foundry, OpenShift, <a href="#VMware">legacy VMs</a>, even mainframes). That's full enterprise.
+
+   <img alt="Consul multi-platform" width="373" height="271" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652569270/consul-multi-platforms-373x21_jpn1bj.png">
+
+## Consul work
+
+   * <strong>Service Discovery</strong>: (kube-dns, kube-proxy) but Consul is the #1 discovery tool on AWS to identify and connect any service on any cloud or runtime.
+   
+   * <strong>Service Configuration</strong>: (K8s Configmaps) but Consul also updates F5 and other load balancer rules, for dynamic configuration across distributed services (in milliseconds)
+   
+   * <strong>Segmentation</strong>: (Network Policy + Controller), providing <strong>network infrastructure automation</strong>
+
+   * <strong>Multi-service Service Mesh</strong>: secure service-to-service traffic with <strong>Mutual TLS certificates</strong>, plus enable progressive application delivery practices.
+
+<hr />
+
+<a name="VMware"></a>
 
 ## Integration with legacy VMware
-   
+
    <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=10m" title="Running Consul on Kubernetes and Beyond">VIDEO</a>:
    Almost all enterprises also have legacy applications running VMware or in a mainframe. 
    
@@ -81,17 +124,6 @@ This aims to present a hands-on approach about using automation for a comprehens
    Consul also integrates with legacy IBM mainframes.
 
 > "Multi-platform chooses you, due to corporate acquisitions"
-
-
-## Complexities addressed
-
-   The <strong>distributed</strong> nature of microservices require Enterprise teams to ensure those processes are addressed:
-
-   * Automated Discovery: kube-dns, kube-proxy
-   
-   * Configuration: Configmaps
-   
-   * Segmentation: Network Policy + Controller
 
 
 ## Value Proposition
@@ -524,6 +556,9 @@ spec:
    PROTIP: The recommended maximum size for a single datacenter is 5,000 Consul client agents.
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
 
+
+   ## Multi-region federation
+
    The Enterprise edition of Consul ensures additional resiliency and performance by implementing a multi-cluster architecture using Federate Multiple Datacenters coordinated using <strong>WAN Gossip</strong>.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
@@ -929,7 +964,8 @@ Part 8: Traffic Shaping and Envoy Debugging</a> [1:58:28] Nov 23, 2021
 
 <a target="_blank" href="https://www.youtube.com/watch?v=qqVJJh8cLVk&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=9">
 Part 9: Service Mesh Proxy Metrics</a> [1:51:03] Jan 18, 2022
-<a target="_blank" href="https://github.com/hashicorp/learn-consul-vms/blob/main/service-mesh/deploy/scripts/vagrant-linux-priv-prometheus.sh">Install</a>/config. prometheus.io static & dynamic scrape, exposing Envoy
+
+- <a target="_blank" href="https://github.com/hashicorp/learn-consul-vms/blob/main/service-mesh/deploy/scripts/vagrant-linux-priv-prometheus.sh">Install</a>/config. prometheus.io static & dynamic scrape, exposing Envoy
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eGunZqGNISM&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=10">
 Part 10: Terminating & Ingress Gateways</a> [1:34:44] Mar 7, 2022
