@@ -882,6 +882,10 @@ What we covered above are aspeces of "Zero-Trust"
    <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
 
 
+## Outside
+
+A "terminating gateway"
+
 
 <hr />
 
@@ -890,43 +894,50 @@ What we covered above are aspeces of "Zero-Trust"
 In <a target="_blank" href="https://www.youtube.com/c/HashiCorp">
 Hashicorp's YouTube channel covering all their 8 products</a>:
 
-Cole Morrison and Rosemary Wang (Developer Advocates at HashiCorp) 
-show how to learn Consul "the hard way" by setting it from scratch in their
+J. Cole Morrison and Rosemary Wang (Developer Advocates at HashiCorp) 
+show how to learn Consul "the hard way" (and no Kubernetes) 
+by setting it from scratch in their
 <a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">
 10-part VIDEO series: "Getting into HashiCorp Consul"</a> recorded on 
-<a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive on Twitch</a> (two hours each):
+<a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive on Twitch</a> [about two hours each],
+with code at <a target="_blank" href="https://github.com/jcolemorrison/getting-into-consul">
+https://github.com/jcolemorrison/getting-into-consul</a>
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652502401/consul-getting-into-1920x1080_gku46e.png">
+<img alt="Consul" width="1090" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652502401/consul-getting-into-1920x1080_gku46e.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=0H06VKvlTJQ&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=1"> 
 Part 1: Aug 9, 2021 - Security, Traffic Encryption, and ACLs</a> [1:47:59]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2PUMjq9-dyk&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=2">
-Part 2: Configuring Service Discovery for Consul on AWS</a> [2:20:50]
+Part 2: Aug 23, 2021 - Configuring Service Discovery for Consul on AWS</a> [2:20:50]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=_lIJg0c5les&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=3">
-Part 3: Scaling, Outage Recovery, and Metrics for Consul on AWS</a> [2:03:17]
+Part 3: Sep 3, 2021 - Scaling, Outage Recovery, and Metrics for Consul on AWS</a> [2:03:17]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wIub6PZWRmY&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=4">
-Part 4: Security, Traffic Encryption, and ACLs</a> [2:06:44]
+Part 4: Sep 20, 2021 - Security, Traffic Encryption, and ACLs</a> [2:06:44]
  - secure gossip communication between Consul agents, 
 encrypt RPC calls between client and server with TLS, and begin setting up ACLs.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=HB4u_C85HV8&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=5">
-Part 5: All About Access Control Lists</a> [1:34:12]
+Part 5: Oct 4, 2021 - All About Access Control Lists</a> [1:34:12]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=KpxlbRngc98&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=6">
-Part 6: Auto Configuration with Vault</a> [2:00:09]
+Part 6: Oct 21, 2021 - Auto Configuration with Vault</a> [2:00:09]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=yBgmsWBElZ0&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=7">
-Part 7: Enabling Consul Service Mesh</a> [2:08:43]
+Part 7: Nov 15, 2021 - Enabling Consul Service Mesh</a> [2:08:43]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=kGGu0m2StRA&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=8">
-Part 8: Traffic Shaping and Envoy Debugging</a> [1:58:28]
+Part 8: Nov 23, 2021 - Traffic Shaping and Envoy Debugging</a> [1:58:28]
 
 <a target="_blank" href="https://www.youtube.com/watch?v=qqVJJh8cLVk&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=9">
-Part 9: Service Mesh Proxy Metrics</a> [1:51:03]
+Part 9: Jan 18, 2022 - Service Mesh Proxy Metrics</a> [1:51:03] 
+<a target="_blank" href="https://github.com/hashicorp/learn-consul-vms/blob/main/service-mesh/deploy/scripts/vagrant-linux-priv-prometheus.sh">Install</a>/config. prometheus.io static & dynamic scrape, exposing Envoy
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eGunZqGNISM&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=10">
-Part 10: Terminating & Ingress Gateways</a> [1:34:44]
+Part 10: Mar 7, 2022 - Terminating & Ingress Gateways</a> [1:34:44]
 
 
 <!--
