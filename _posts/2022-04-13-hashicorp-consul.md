@@ -255,7 +255,7 @@ Part 3: Scaling, Outage Recovery, and Metrics for Consul on AWS</a> [2:03:17] Se
 
 <a target="_blank" href="https://www.youtube.com/watch?v=wIub6PZWRmY&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=4">
 Part 4: Security, Traffic Encryption, and ACLs</a> [2:06:44] Sep 20, 2021
- - secure gossip communication between Consul agents, 
+ - secure <a href="#Gossip">Gossip communication</a> between Consul agents, 
 encrypt RPC calls between client and server with TLS, and begin setting up ACLs.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=HB4u_C85HV8&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=5">
@@ -381,21 +381,24 @@ Connect to a Payment service outside Kubernetes.
 
    ### Ports in ACL (Access Control List)
 
-   ACLs define access granted through specific ports through firewalls (on Enterprise network traffic in "L3" segments).
+   ACLs define access granted through specific ports through firewalls (on Enterprise network traffic in "L3" segments). The defaults:
    
-   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from other agents
-   * 8301 TCP/UDP for Serf LAN gossip between agents on the same cluster
-   * 8302 TCP/UDP for Serf WAN gossip across clusters
-   * 8500 & 8501 TCP for localhost API listeners
-   * 8502 TCP for Envoy sidecar proxy xDS gRPC API (disabled by default)
+   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong>
+   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip on the same cluster
+   * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
+   
+   * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
+   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
+
    * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
-   * 21000 - 21255 TCP (automatically assigned ) for Sidecar proxy registrations
+   
+   * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
    <br /><br />
 
    For bootstrapping and configuration of <tt>agent.hcl</tt>, see
    * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
    <br /><br />
-
+   
 
 <a name="CLI-commands"></a>
 
@@ -628,6 +631,21 @@ spec:
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
 
    <!-- https://hashicorp.app.workramp.com/task_assignments/cbb60ad0-cfd5-11ec-aade-06cf503dca07 -->
+
+
+<a name="Gossip"></a>
+
+### Serf LAN & WAN Gossip 
+
+The Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> is used to ensure that data is distributed, with reliable communication is not assumed. The protocol provides for:
+
+   * Membership information
+   * Events broadcasting
+   * Failure detection
+   <br /><br />
+
+Review Gossip Telemetry output.
+
 
 ## Multi-region federation
 
