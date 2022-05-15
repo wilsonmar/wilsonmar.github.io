@@ -256,7 +256,8 @@ Part 3: Scaling, Outage Recovery, and Metrics for Consul on AWS</a> [2:03:17] Se
 <a target="_blank" href="https://www.youtube.com/watch?v=wIub6PZWRmY&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=4">
 Part 4: Security, Traffic Encryption, and ACLs</a> [2:06:44] Sep 20, 2021
  - secure <a href="#Gossip">Gossip communication</a> between Consul agents, 
-encrypt RPC calls between client and server with TLS, and begin setting up ACLs.
+encrypt RPC calls between client and server with TLS, and begin setting up ACLs. 
+ - Generate 32-bit encryption key. Apply key to agents. Rotate keys.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=HB4u_C85HV8&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=5">
 Part 5: All About Access Control Lists</a> [1:34:12] Oct 4, 2021
@@ -375,16 +376,60 @@ Connect to a Payment service outside Kubernetes.
 
    ### Services
 
-   TODO:
+   TODO: Define default connection limits, for better security.
+
+   QUESTION: API Gateway?
+
+   QUESTION: Linux Security Model integrated into operating system, such as AppArmor, SELinux, Seccomp.
+
+   See https://www.consul.io/docs/security/security-models/core
+   
 
    <a name="ACL"></a>
 
+   ### ACL (Access Control List) Operations
+
+   ACLs define access granted through specific ports <strong>through firewalls</strong> (on Enterprise network traffic in "L3" segments). 
+   
+   ACL are used to 
+   - Add nodes to the datacenter
+   - Remove nodes from the datacenter
+   - Add services
+   - Remove services
+   - Consul KV (CRUD)
+   - Block Catalog Access
+   - Discover services
+   - API/CLI operations to interact with the datacenter
+   <br /><br />
+
+   <pre># Policy A
+service "web" {
+   policy = "read"
+}
+key-prefix "foo-path/" {
+   policy = "write"
+}
+   </pre>
+
+   <pre># Policy B
+service "db" {
+   policy = "deny"
+}
+node "" {
+   policy = "read"
+}
+   </pre>
+
+   To define "least privilege", provide "remove" permissions to a separate account than the account which performs "add".
+   
+   <a name="Ports"></a>
+
    ### Ports in ACL (Access Control List)
 
-   ACLs define access granted through specific ports through firewalls (on Enterprise network traffic in "L3" segments). The defaults:
+   The default ports:
    
-   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong>
-   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip on the same cluster
+   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
+   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip on the same cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
    * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
    
    * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
@@ -399,6 +444,13 @@ Connect to a Payment service outside Kubernetes.
    * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
    <br /><br />
    
+   <a name="HTTP-headers"></a>
+
+   ### Customize HTTP Response Headers
+
+1. Ask whether you app should have additional security headers such as 
+   <tt>X-XSS-Protection</tt> for API responses.
+
 
 <a name="CLI-commands"></a>
 
@@ -560,8 +612,6 @@ User=consul
 
    <pre>brew services start hashicorp/tap/consul</pre>
 
-   
-
 
    <a name="SidecarInject"></a>
 
@@ -589,9 +639,6 @@ spec:
 
 
 
-
-
-
 <a name="Enterprise"></a>
    
 ## Enterprise licensing
@@ -601,33 +648,42 @@ spec:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
 
-### Enterprise Redundancy
+### Enterprise HA (High Availability)
 
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Reference Architecture</a>
-   for a single cluster is <strong>5 Consul server nodes</strong> across <strong>3 availability zones</strong> in order for the datacenter to withstand the sudden loss of an entire availability zone.
+   In order for a datacenter to withstand the sudden loss of a server within a single Availability Center or the loss of an entire Availability Zone, setup <strong>6 servers</strong> for best resilience:
+
+   <a name="6servers"></a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652577580/consul-6-nodes-970x541_b2biuh.png"><img alt="Consul 6 nodes" width="970" height="541" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652577580/consul-6-nodes-970x541_b2biuh.png"></a>
+
+   The yellow star in the <a href="#6servers">diagram above</a> marks the <strong>LEADER</strong> Consul server. The leader is responsible for ingesting new log entries of cluster changes, writing that to durable storage, and replicating to followers. 
+
+   <strong>PROTIP: Only the LEADER processes requests.</strong> FOLLOWERs do not respond to request as their job is just to receive replication data (enjoy the food and stand by like a Prince). This architecture is similar to Vault's.
+   
+   <a name="Scalability"></a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652576658/consul-non-voting-1136x352_upxo3y.png"><img alt="Consul Non-voting for scale" width="1136" height="352" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652576658/consul-non-voting-1136x352_upxo3y.png"></a>
+
+   IMPORTANT: For better <strong>scalability</strong>, use Consul's <a href="#Autopilot">Enterprise "Autopilot" mechanism</a> to setup <strong>"NON-VOTER"</strong> Consul server nodes to handle additional processing. 
+
+   The NON-VOTER is in Zone 2 because leadership may switch to different FOLLOWER servers over time.
+
+   So keep the above in mind when using <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">this page</a> to describe the Small and Large server type in each cloud.
+
+   PROTIP: The recommended maximum number of Consul client nodes for a single datacenter is 5,000.
+   
+   <strong>CAUTION: A Consul cluster cannot operate in a single Availability Zone.</strong>
+
+   Actually, <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Enterprise Reference Architecture</a> for a single cluster is <strong>5 Consul server nodes</strong> across <strong>3 availability zones</strong>.
 
    <a name="RefArch"></a>
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"><img alt="Consul Ref. Arch" width="1033" height="401" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208811/hashicor-consult-ref-arch-1033x401_veqcwx.png"></a>
 
-   <strong>CAUTION: A Consul cluster cannot operate in a single Availability Zone.</strong>
+   Within an Availability Zone, if a voting FOLLOWER becomes unavailable, a non-voting member in the same Availability Zone is promoted to a voting member:
 
-   The yellow star in the <a href="#RefArch">diagram above</a> marks the <strong>LEADER</strong> node. The leader is responsible for ingesting new log entries of cluster changes, writing that to durable storage, and replicating to followers. 
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652579825/consul-promote-in-az-550x342_a87mri.png"><img alt="Consul promote in AZ" width="550" height="342" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652579825/consul-promote-in-az-550x342_a87mri.png"></a>
 
-   <strong>PROTIP:</strong> Only the LEADER processes requests. FOLLOWERs do not respond to request as their job is to stand by and receive replication data (enjoy the food like a Prince). 
-   
-   So keep that in mind when using <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">this page</a> to describe the Small and Large server type in each cloud.
-
-<a name="Scalability"></a>
-
-### Non-voting Enterprise Scalability
-
-   IMPORTANT: Setup <strong>"non-voting"</strong> Consul server nodes to handle additional processing (for scaling load handling).
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652576658/consul-non-voting-1136x352_upxo3y.png"><img alt="Consul Non-voting for scale" width="1136" height="352" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652576658/consul-non-voting-1136x352_upxo3y.png"></a>
-
-   PROTIP: The recommended maximum number of Consul client nodes for a single datacenter is 5,000.
-   
 
 <a name="Raft"></a>
 
@@ -650,12 +706,19 @@ spec:
 
 The Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> is used to ensure that data is distributed, with reliable communication is not assumed. The protocol provides for:
 
-   * Membership information
-   * Events broadcasting
-   * Failure detection
-   <br /><br />
+   * Membership information which enable servers to perform cross-datacenter requests
 
-Review Gossip Telemetry output.
+   * Events broadcasting
+   
+   * Failure detection to gracefully handle loss of connectivity
+
+1. Generate Gossip encryption key (a 32-byte AES GCM symmetric key that's base64-encoded).
+
+1. Arrange for regular key rotation (using the Keyring built in Consul)
+
+1. Install encryption key on each agent.
+
+1. Review Gossip Telemetry output.
 
 
 ## Multi-region federation
@@ -664,7 +727,17 @@ Review Gossip Telemetry output.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
 
-   For <strong>write redunancy</strong> through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/autopilot-datacenter-operations">Consul Autopilot</a>":
+   Use <strong>consul-replicate</strong> to replicate KV between datacenters. There is no built-in replication between datacenters.
+
+   Cache ACLs for them to "ride out partitions".
+
+<hr />
+
+<a name="Autopilot"></a>
+
+### Enterprise Autopilot CLI Commands
+
+   For <strong>write redundancy</strong> through automatic replication across several zones, add a tag "az" for "availability zone" to invoke the Enterprise feature "<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/autopilot-datacenter-operations">Consul Autopilot</a>":
 
    <pre>autopilot = {
   redundancy_zone_tag = "az"
@@ -754,6 +827,22 @@ performance = {
 
    <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability. 
 
+   <a name="TLS-config"></a>
+
+   ### TLS configuration
+
+1. Generate TLS .pem files.
+
+1. Update the Consul Agent config file:
+
+   <pre>verify_incoming = true
+verify_outgoing = true
+verify_server_hostname = true
+ca_file = "consul-agent-ca.pem"
+cert_file = "dc1-server-consul-0.pem"
+key_file = "dc1-server-consul-0-key.pem"
+   </pre>
+
 
    <a name="Telemetry"></a>
 
@@ -768,7 +857,7 @@ performance = {
    Artificial loads need to be applied to ensure that alerts and interventions will actually occur when appropriate. Load testing exposes the correlation of metric values at various levels of load.
    All this is part of a robust "Chaos Engineering" needed for pre-production.
 
-> At scale, customers need to optimize for stability at the gossip layer.<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">*</a>
+> At scale, customers need to optimize for stability at the <a href="#Gossip">Gossip</a> layer.<a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">*</a>
 
 
 ## Manage from another Terminal
@@ -782,7 +871,7 @@ performance = {
 Judiths-MBP  127.0.0.1:8301  alive   server  1.12.0  2         dc1  default &LT;all>
    </pre>
 
-   PROTIP: The above command is only needed once to join a cluster. After that, agents gossip with each other to propagate membership information with each other.
+   PROTIP: The above command is only needed once to join a cluster. After that, agents Gossip with each other to propagate membership information with each other.
 
 1. For more detail about Tags:
 
