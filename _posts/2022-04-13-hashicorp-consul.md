@@ -95,17 +95,6 @@ The entire Hashicorp product line provides modern mechnisms for the security of 
    <br /><br />
 
 
-### Core use cases of Consul
-
-   * Multi-cloud service mesh which provides:
-        Application networking and security with identity-based authorization
-        L7 traffic management
-        Service-to-service encryption
-   
-   * Service discovery with Consul DNS
-   
-   * Health checking to automatically remove services that fail health checks
-
 <a name="VMware"></a>
 
 ### Integration with legacy platforms
@@ -148,13 +137,17 @@ The entire Hashicorp product line provides modern mechnisms for the security of 
    * Resource Management
    <br /><br />
 
-   * <strong>Service Discovery</strong>: (kube-dns, kube-proxy) but Consul is the #1 discovery tool on AWS to identify and connect any service on any cloud or runtime.
+   * <strong>Service Discovery</strong>: (kube-dns, kube-proxy) but Consul is the #1 discovery tool on AWS to identify and connect any service on any cloud or runtime. with Consul DNS
    
    * <strong>Service Configuration</strong>: (K8s Configmaps) but Consul also updates F5 and other load balancer rules, for dynamic configuration across distributed services (in milliseconds)
    
    * <strong>Segmentation</strong>: (Network Policy + Controller), providing <strong>network infrastructure automation</strong>
 
    * <strong>Multi-service Service Mesh</strong>: secure service-to-service traffic with <strong>Mutual TLS certificates</strong>, plus enable progressive application delivery practices.
+    - Application networking and security with identity-based authorization
+    - L7 traffic management
+    - Service-to-service encryption
+    - Health checking to automatically remove services that fail health checks
 
 <hr />
 
@@ -635,7 +628,7 @@ spec:
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
 
    <!-- https://hashicorp.app.workramp.com/task_assignments/cbb60ad0-cfd5-11ec-aade-06cf503dca07 -->
-   
+
 ## Multi-region federation
 
    The Enterprise edition of Consul ensures additional resiliency and performance by implementing a multi-cluster architecture using Federate Multiple Datacenters coordinated using <strong>WAN Gossip</strong>.
