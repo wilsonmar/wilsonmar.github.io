@@ -391,7 +391,7 @@ Connect to a Payment service outside Kubernetes.
    * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
 
    * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
-   
+
    * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
    <br /><br />
 
@@ -601,7 +601,7 @@ spec:
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
 
-### Enterprise Redundancy for Scalability
+### Enterprise Redundancy
 
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/reference-architecture?in=well-architected-framework/zero-trust-networking">Hashicorp's Consul Reference Architecture</a>
    for a single cluster is <strong>5 Consul server nodes</strong> across <strong>3 availability zones</strong> in order for the datacenter to withstand the sudden loss of an entire availability zone.
@@ -612,23 +612,34 @@ spec:
 
    <strong>CAUTION: A Consul cluster cannot operate in a single Availability Zone.</strong>
 
+   The yellow star in the <a href="#RefArch">diagram above</a> marks the <strong>LEADER</strong> node. The leader is responsible for ingesting new log entries of cluster changes, writing that to durable storage, and replicating to followers. 
+
+   <strong>PROTIP:</strong> Only the LEADER processes requests. FOLLOWERs do not respond to request as their job is to stand by and receive replication data (enjoy the food like a Prince). 
+   
+   So keep that in mind when using <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">this page</a> to describe the Small and Large server type in each cloud.
+
+<a name="Scalability"></a>
+
+### Non-voting Enterprise Scalability
+
+   IMPORTANT: Setup <strong>"non-voting"</strong> Consul server nodes to handle additional processing (for scaling load handling).
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652576658/consul-non-voting-1136x352_upxo3y.png"><img alt="Consul Non-voting for scale" width="1136" height="352" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652576658/consul-non-voting-1136x352_upxo3y.png"></a>
+
+   PROTIP: The recommended maximum number of Consul client nodes for a single datacenter is 5,000.
+   
+
 <a name="Raft"></a>
 
 ### Raft concensus algorithm
 
    To ensure data <strong>consistency</strong> among nodes across Availability Zones, the <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state storage for updating catalog, session, prepared query, ACL, and KV state.
    
-   The yellow star in the <a href="#RefArch">diagram above</a> marks the <strong>LEADER</strong> node. The leader is responsible for ingesting new log entries of cluster changes, writing that to durable storage, and replicating to followers. 
-   
    Each transaction is considered "comitted" when more than half the followers register it.
    
    If the LEADER server fails, an election is automatically held among a quorum (adequate number of) FOLLOWERs to elect a new LEADER from among candidates.
 
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">TUTORIAL</a>:
-
-   PROTIP: The recommended maximum number of Consul client agents for a single datacenter is 5,000.
-   
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">This page</a> describes the Small and Large server type in each cloud.
 
    <!-- https://hashicorp.app.workramp.com/task_assignments/cbb60ad0-cfd5-11ec-aade-06cf503dca07 -->
 
