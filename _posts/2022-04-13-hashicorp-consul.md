@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This aims to present a hands-on approach about using automation for a comprehensive technical deep dive that is succinct and logically sequenced. All without sales generalizations. All in this one single big page for easy search.
+This presents a <strong>hands-on</strong> approach about using <strong>automation</strong> for a comprehensive technical <strong>deep dive</strong> that is succinct and <strong>logically sequenced</strong>. All without sales generalizations. All in this one single big page for easy search.
 
 {% include whatever.html %}
 
@@ -50,9 +50,10 @@ This aims to present a hands-on approach about using automation for a comprehens
 
    - Use this environment to learn about configuring for High Availability across multiple regions
 
-PROTIP: Adapt the samples and naming conventions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
 
 ## Demo apps
+
+PROTIP: Adapt the samples and naming conv entions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
 
 1. Hashicorp-provided demo apps are created at:
 
@@ -70,7 +71,6 @@ Because this document aims to present concepts in a logic flow for learning, it 
 https://www.hashicorp.com/certification/consul-associate
 
 1.	Explain Consul architecture
-
    a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
    b.	Prepare Consul for high availability and performance<br />
    c.	Identify Consul's core functionality<br />
