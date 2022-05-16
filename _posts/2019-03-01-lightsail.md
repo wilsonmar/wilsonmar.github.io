@@ -18,6 +18,8 @@ comments: true
 
 <a href="https://wilsonmar.github.io/lightsail/">This tutorial</a> is about <a target="_blank" href="https://aws.amazon.com/lightsail/">Amazon Lightsail</a>, which charges a <strong>fixed monthly price</strong> for a single VPS (Virtual Private Server) running on a physical machine shared with others.
 
+{% include whatever.html %}
+
 Amazon Lightsail was announced in 2018, to make "server management easier by automatically configuring key resources like networking and security". One signs up for a specific mix of compute, memory, disk, and data transfer capacities. This is like <a target="_blank" href="https://www.awsrails.com/rails-ec2/">selecting EC2</a> instance types, but without specifying VPC, networking, and permissions.
 
 USD per month for single Linux or Microsoft Windows instances:

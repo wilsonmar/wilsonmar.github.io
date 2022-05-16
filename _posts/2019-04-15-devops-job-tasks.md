@@ -20,6 +20,8 @@ comments: true
 
 Most job descriptons for DevOps roles focus on vendor <strong>product offerings</strong> (GitHub, Jenkins, etc.).
 
+{% include whatever.html %}
+
 <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx"><img align="right" alt="azure-devopsexpert-230x258-7173.jpg" width="115" src="https://user-images.githubusercontent.com/300046/56392303-56548080-61ee-11e9-8c6c-016ec8c3625a.jpg"></a>
 However, <a target="_blank" href="https://wilsonmar.github.io/devops-job-tasks/">this page</a> lists the contributions, achievements, and outcomes from working DevOps (DevTestSecOps or DevXOps), based on Job Task Analysis done for the <a target="_blank" href="https://www.microsoft.com/en-us/learning/exam-AZ-400.aspx">Implementing Azure DevOps Solutions exam AZ-400</a> which fuilfills requirements to be designated a <a target="_blank" href="https://www.microsoft.com/en-us/learning/azure-devops.aspx">Microsoft Certified: Azure DevOps Engineer Expert</a>. Expand all (click on) these high-level statements of <strong>contributions</strong>:
 

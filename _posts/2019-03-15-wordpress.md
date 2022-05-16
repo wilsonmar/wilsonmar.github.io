@@ -19,6 +19,8 @@ comments: true
 
 The interest in WordPress here is making use of recent (working) scripts and instructions created by various people in the community to easily install and maintain WordPress. <a href="#ManyWaysToHost">See below</a>.
 
+{% include whatever.html %}
+
 My code for this is at <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/tree/master/wordpress">https://github.com/wilsonmar/DevSecOps/tree/master/wordpress</a>
 
 https://designextreme.com/

@@ -17,6 +17,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
 ## TL;DR Summary
 
 Protractor was written by the team within Google who created the <a target="_blank" href="https://www.wikiwand.com/en/Angular_(web_framework)">Angular testing framework</a> in order to automate its testing.

@@ -18,6 +18,8 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/cloud-perftest/">This</a> is my draft of sequencing a logical presentation about how to ensure scalability, availability, resilience, and affordability from building, testing, and running computer software applications in production on various cloud environments. 
 
+{% include whatever.html %}
+
 * I begin with the <a href="#TestingTools">"Full Stack" Testing Tools Landscape</a> 
 * <a href="#Statics">Static vs. Dynamic HTML generation</a> and <a href="#CDNx">CDNs</a>
 * <a href="#RunTypes">Performance test run types</a>

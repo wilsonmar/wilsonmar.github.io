@@ -20,6 +20,8 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/git-messages/">Here</a> are suggestions to make Git commit messages more useful and convenient.
 
+{% include whatever.html %}
+
 1. The same message can be associated with all commits added before a commit. So before doing a git commit, check what changes have been added already:
 
    <pre><strong>git status</strong></pre>

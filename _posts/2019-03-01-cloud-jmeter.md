@@ -17,6 +17,8 @@ comments: true
 
 The diagram here describes progress toward distributing runs of JMeter within EC2 and/or Docker, and scaling those instances to increase load on app servers. Each step is a deliverable within the sequence of MVP (Minimim Viable Product) stages.
 
+{% include whatever.html %}
+
 ## Setup Scenarios
 
 The components necessary for performance/capacity emulating scripting and test runs are:
