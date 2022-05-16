@@ -28,33 +28,23 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
 <a href="HCPDemo">A. On the HCP (HashiCorp Platform) in a SaaS cloud</a> (the easiest, most standardized way to use Consul)
 
-   - Use this environment to learn about day-to-day workflows.
-      <br /><br />
+   - Use this to learn about day-to-day workflows.
 
 <a href="#LaptopWay">B. On a macOS laptop using Docker</a>
 
-   - Use this environment to learn about CLI, API, GUI commands.
-      <br /><br />
+   - Use this to learn about CLI, API, GUI commands.
 
-<a href="#TheHardWay">C. In a single datacenter (no Kubernetes)</a>
+<a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes)</a>
 
-   - Use this environment to learn about configuration of Gateways
-      <br /><br />
+   - Use this to learn about configuration of app Gateways, Sidecar monitoring
 
-<a href="#K9sWay">D. In a single datacenter using Kubernetes</a>
+<a href="#Enmeshed">D. In a single 6-node datacenter</a>
 
-   - Use this environment to learn about Sidecar monitoring
-      <br /><br />
+   - Use this to learn about manual backup and recovery using Snapshots and Enterprise Snapshot Agents
 
-<a href="#Enmeshed">E. In a single datacenter using Service Mesh</a>
+<a href="#MultiDatacenters">E. For HA on multiple datacenters federated over WAN</a>
 
-   - Use this environment to learn about Sidecar monitoring
-      <br /><br />
-
-<a href="#MultiDatacenters">F. On multiple datacenters federated over WAN</a>
-
-   - Use this environment to learn about configuring for High Availability across multiple regions
-      <br /><br />
+   - Use this to learn about configuring for High Availability across multiple regions
 
 
 ## Demo apps
@@ -127,7 +117,7 @@ https://www.hashicorp.com/certification/consul-associate
    4d	Monitor KV changes using envconsul and consul-template<br />
    <br />
    
-5.	<a href="#Snapshots">Back up and restore</a>
+5.	<a href="#Snapshots">Back up and restore</a><br />
    5a	<a href="#Snapshots">Describe the content of a snapshot</a>
    5b	Back up and restore the datacenter<br />
    5c	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
@@ -164,7 +154,7 @@ https://www.hashicorp.com/certification/consul-associate
 
 <hr />
 
-## References
+## Most Frequent References
 
 1. The marketing home page for Hashicorp's Consul is:
 
@@ -1147,16 +1137,12 @@ References about Kubernetes with Consul:
 
 <a name="TheHardWay"></a>
 
-### C. In a single datacenter (with network Gateways)
+### C. In a single datacenter (with Kubernetes)
 
 In <a target="_blank" href="https://www.youtube.com/c/HashiCorp">
 Hashicorp's YouTube channel covering all their 8 products</a>:
 
-<a target="_blank" href="https://www.linkedin.com/in/rosemarywang/">Rosemary Wang</a> (<a target="_blank" href="https://joatmon08.github.io">joatmon08.github.io</a>, Developer Advocate) with J. Cole Morrison hold fun <a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive Twitch parties</a> [about two hours each] to show how to learn Consul "the hard way" (and no Kubernetes) 
-by setting it from scratch in their
-<a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">
-10-part VIDEO series: "Getting into HashiCorp Consul"</a> 
-with code at <a target="_blank" href="https://github.com/jcolemorrison/getting-into-consul">
+<a target="_blank" href="https://www.linkedin.com/in/rosemarywang/">Rosemary Wang</a> (<a target="_blank" href="https://joatmon08.github.io">joatmon08.github.io</a>, Developer Advocate) with J. Cole Morrison hold fun <a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive Twitch parties</a> [about two hours each] to show how to learn Consul "the hard way" by setting it up from scratch, using code from <a target="_blank" href="https://github.com/jcolemorrison/getting-into-consul">
 github.com/jcolemorrison/getting-into-consul</a>
 
 <a name="GatewaysDiagram"></a>
@@ -1171,6 +1157,7 @@ To enforce intentions between services, Consul offers three types of Gateways in
    <br /><br />
 
 
+Recorded for viewing at <a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">YouTube: "Getting into HashiCorp Consul"</a>:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=0H06VKvlTJQ&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=1"> 
 Part 1: Security, Traffic Encryption, and ACLs</a> [1:47:59] Aug 9, 2021
@@ -1502,7 +1489,7 @@ Connect to a Payment service outside Kubernetes.
 
 <a name="Enmeshed"></a>
 
-## E. In a single Enterprise datacenter using Service Mesh
+## D. In a single 6-node datacenter
 
 
 <a name="Enterprise"></a>
@@ -1573,13 +1560,15 @@ Connect to a Payment service outside Kubernetes.
    * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
    <br /><br />
 
-The Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> is used to ensure that data is distributed, with reliable communication not assumed. The protocol provides for:
+To ensure that data is distributed with reliable communication not assumed, Consul uses the Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a>. The protocol provides for:
 
    * Membership information which enable servers to perform cross-datacenter requests
 
    * Events broadcasting
    
    * Failure detection to gracefully handle loss of connectivity
+
+If Vault is not used, do it the hard way:
 
 1. Generate Gossip encryption key (a 32-byte AES GCM symmetric key that's base64-encoded).
 
@@ -1594,7 +1583,11 @@ The Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol"
 
 <a name="MultiDatacenters"></a>
 
-## F. On multiple datacenters over WAN
+## E. For HA on multiple datacenters federated over WAN
+
+   REMEMBER: Like Vault, Consul Datacenter federation is not a solution for data replication.
+   There is no built-in replication between datacenters.
+   So use <strong>consul-replicate</strong> to replicate KV between datacenters. 
 
 
 ### Multi-region federation
@@ -1602,10 +1595,6 @@ The Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol"
    The Enterprise edition of Consul enables communication across datacenters using Federate Multiple Datacenters coordinated using <strong>WAN Gossip</strong>.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
-
-   REMEMBER: Datacenter federation is not a solution for data replication.
-   There is no built-in replication between datacenters.
-   So use <strong>consul-replicate</strong> to replicate KV between datacenters. 
 
 
 ### Setup Network Areas
