@@ -29,33 +29,39 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 <a href="HCPDemo">A. On the HCP (HashiCorp Platform) in a SaaS cloud</a> (the easiest, most standardized way to use Consul)
 
    - Use this environment to learn about day-to-day workflows.
+      <br /><br />
 
 <a href="#LaptopWay">B. On a macOS laptop using Docker</a>
 
    - Use this environment to learn about CLI, API, GUI commands.
+      <br /><br />
 
 <a href="#TheHardWay">C. In a single datacenter (no Kubernetes)</a>
 
    - Use this environment to learn about configuration of Gateways
+      <br /><br />
 
 <a href="#K9sWay">D. In a single datacenter using Kubernetes</a>
 
    - Use this environment to learn about Sidecar monitoring
+      <br /><br />
 
 <a href="#Enmeshed">E. In a single datacenter using Service Mesh</a>
 
    - Use this environment to learn about Sidecar monitoring
+      <br /><br />
 
 <a href="#MultiDatacenters">F. On multiple datacenters federated over WAN</a>
 
    - Use this environment to learn about configuring for High Availability across multiple regions
+      <br /><br />
 
 
 ## Demo apps
 
 PROTIP: Adapt the samples and naming conv entions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
 
-1. Hashicorp-provided demo apps are created at:
+1. Hashicorp-provided demo apps included in the practice environments are defined at:
 
    <a target="_blank" href="https://github.com/hashicorp-demoapp/">
    https://github.com/hashicorp-demoapp/</a>
@@ -63,88 +69,11 @@ PROTIP: Adapt the samples and naming conv entions here to use your own app <stro
    <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
 
 
-<hr />
-
-## Certification exam
-
-Because this document aims to present concepts in a logic flow for learning, it has a different order than topics for the Consul Associate one-hour $70 exam at:<br />
-https://www.hashicorp.com/certification/consul-associate
-
-1.	Explain Consul architecture
-   a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
-   b.	Prepare Consul for high availability and performance<br />
-   c.	Identify Consul's core functionality<br />
-   d.	Differentiate agent roles<br />
-   <br /><br />
-
-2.	Deploy a single datacenter
-
-   2a	Start and manage the Consul process<br />
-   2b	Interpret a Consul agent configuration<br />
-   2c	Configure Consul network addresses and ports<br />
-   2d	Describe and configure agent join and leave behaviors<br />
-   <br /><br />
-   
-3.	Register services and use service discovery
-
-   3a	Interpret a service registration<br />
-   3b	Differentiate ways to register a single service<br />
-   3c	Interpret a service configuration with health check<br />
-   3d	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
-   3e	Interpret a prepared query<br />
-   3f	Use a prepared query<br />
-   <br /><br />
-   
-4.	Access the Consul key/value (KV)
-
-   4a	Understand the capabilities and limitations of the KV store<br />
-   4b	Interact with the KV store using both the Consul CLI and UI<br />
-   4c	Monitor KV changes using watch<br />
-   4d	Monitor KV changes using envconsul and consul-template<br />
-   <br />
-   
-5.	<a href="#Snapshots">Back up and restore</a>
-
-   5a	<a href="#Snapshots">Describe the content of a snapshot</a>
-   5b	Back up and restore the datacenter<br />
-   5c	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
-   <br />
-   
-6.	Use Consul service mesh
-
-   6a	Understand Consul Connect service mesh high level architecture<br />
-   6b	Describe configuration for registering a service proxy<br />
-   6c	Describe intentions for Consul Connect service mesh<br />
-   6d	Check intentions in both the Consul CLI and UI<br />
-   <br /><br />
-   
-7.	<a href="#MutualTLS">Secure agent communication</a>
-
-   7a	Understanding Consul security/threat model<br />
-   7b	Differentiate certificate types needed for TLS encryption<br />
-   7c	Understand the different TLS encryption settings for a fully secure datacenter<br />
-   <br />
-   
-8.	Secure services with basic access control lists (ACL)
-
-   8a	Set up and configure a basic ACL system<br />
-   8b	Create policies<br />
-   8c	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
-   8d	Perform a CLI request using a token<br />
-   8e	Perform an API request using a token<br />
-   <br />
-   
-9.	<a href="#Gossip">Use gossip encryption</a>
-
-   9a	Understanding the Consul security/threat model<br />
-   9b	Configure gossip encryption for the existing data center<br />
-   9c	Manage the lifecycle of encryption keys<br />
-   <br />
-   
-
 ## Value Proposition
 
-Adoption of Consul aims to yield these benefits to organizations: Proof of Value (POV) https://learn.hashicorp.com/well-architected-framework
+> The above are used for showing Proof of Value (POV) from product/workflow adoption.
+
+Adoption of Consul aims to yield these benefits: 
 
 * Faster Time to Market from velocity of getting things done
 
@@ -157,6 +86,80 @@ Adoption of Consul aims to yield these benefits to organizations: Proof of Value
 * Reduce risk of breach from better guardrails
 
 * Compliance with regulatory demands (automated processes)
+
+https://learn.hashicorp.com/well-architected-framework
+
+
+<hr />
+
+## Certification exam
+
+Because this document aims to present concepts in a logic flow for learning, it has a different order than topics for the Consul Associate one-hour $70 exam at:<br />
+https://www.hashicorp.com/certification/consul-associate
+
+1.	Explain Consul architecture<br />
+   a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
+   b.	Prepare Consul for high availability and performance<br />
+   c.	Identify Consul's core functionality<br />
+   d.	Differentiate agent roles<br />
+   <br />
+
+2.	Deploy a single datacenter<br />
+   2a	Start and manage the Consul process<br />
+   2b	Interpret a Consul agent configuration<br />
+   2c	Configure Consul network addresses and ports<br />
+   2d	Describe and configure agent join and leave behaviors<br />
+   <br />
+   
+3.	Register services and use service discovery<br />
+   3a	Interpret a service registration<br />
+   3b	Differentiate ways to register a single service<br />
+   3c	Interpret a service configuration with health check<br />
+   3d	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
+   3e	Interpret a prepared query<br />
+   3f	Use a prepared query<br />
+   <br />
+   
+4.	Access the Consul key/value (KV)<br />
+   4a	Understand the capabilities and limitations of the KV store<br />
+   4b	Interact with the KV store using both the Consul CLI and UI<br />
+   4c	Monitor KV changes using watch<br />
+   4d	Monitor KV changes using envconsul and consul-template<br />
+   <br />
+   
+5.	<a href="#Snapshots">Back up and restore</a>
+   5a	<a href="#Snapshots">Describe the content of a snapshot</a>
+   5b	Back up and restore the datacenter<br />
+   5c	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
+   <br />
+   
+6.	Use Consul service mesh<br />
+   6a	Understand Consul Connect service mesh high level architecture<br />
+   6b	Describe configuration for registering a service proxy<br />
+   6c	Describe intentions for Consul Connect service mesh<br />
+   6d	Check intentions in both the Consul CLI and UI<br />
+   <br />
+   
+7.	<a href="#MutualTLS">Secure agent communication</a><br />
+   7a	Understanding Consul security/threat model<br />
+   7b	Differentiate certificate types needed for TLS encryption<br />
+   7c	Understand the different TLS encryption settings for a fully secure datacenter<br />
+   <br />
+   
+8.	Secure services with basic access control lists (ACL)<br />
+   8a	Set up and configure a basic ACL system<br />
+   8b	Create policies<br />
+   8c	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
+   8d	Perform a CLI request using a token<br />
+   8e	Perform an API request using a token<br />
+   <br />
+   
+9.	<a href="#Gossip">Use gossip encryption</a><br />
+   9a	Understanding the Consul security/threat model<br />
+   9b	Configure gossip encryption for the existing data center<br />
+   9c	Manage the lifecycle of encryption keys<br />
+   <br />
+   
 
 
 <hr />
@@ -230,6 +233,7 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
    * To distribute load among individual servers, load balancers (such as F5) used are a single point of failure. They work based on IP address.
 
       - Consul can replace legacy Load Balancers. QUESTION: Use round-robin? least-connections?
+      <br /><br />
 
    * Complex mechanisms to <strong>secure perimeter yet communicate with outside systems</strong> (legecy and payment systems) are problematic
 
@@ -271,10 +275,11 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
 ## A. HCP (Hashicorp Cloud Platform)
 
-   To be free of on-prem. server install and management hassles (security, scaling disk space, upgrades, etc.), many prefer using the <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. 
+   The fastest and easiest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
    
-   The fastest and easiest way to use Consul is to use the Hashcorp-Managed Cloud.
-   It provides all the features of the Enterprise edition:
+   HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. 
+   
+   It provides all the features of the self-managed Enterprise edition, plus:
 
    * No monitoring to ensure disk space, CPU, memory, etc. are adequate
    * No tedious capacity testing to ensure configurations are optimal
