@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The object of this tutorial is to succintly present 
+The object of this tutorial is to succinctly present 
 <strong>step-by-step</strong> instructions to use Cloud Formation to automate work within AWS 
 (instead of AWS GUI Console).
 

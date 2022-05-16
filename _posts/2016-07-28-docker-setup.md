@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The object of this tutorial is a succint yet deep <strong>step-by-step</strong> instructions to setup of Docker on <a href="#Mac">MacOS</a>, CentOS Linux, and <a href="#Docker4Windows">Windows</a>.
+The object of this tutorial is a succinct yet deep <strong>step-by-step</strong> instructions to setup of Docker on <a href="#Mac">MacOS</a>, CentOS Linux, and <a href="#Docker4Windows">Windows</a>.
 
 
 ## VMs on MacOS vs. Docker #

@@ -46,23 +46,17 @@ This document begins with files from Hashicorps and adds automation.
 
    https://www.reddit.com/search/?q=hashicorp%20consul
 
-1. Rock stars within Hashicorp:
-
-   <a target="_blank" href="https://www.linkedin.com/in/rosemarywang/">Rosemary Wang</a> (Developer Advocate) - <a target="_blank" href="https://joatmon08.github.io">joatmon08.github.io</a>
-
-   Luke Kysow (Principal Engineer, Consul)
-   
 
 
 <hr />
 
 ## Zero Trust (Defense in Depth)
 
-Consul is part of the Hashicorp product line which provides modern mechanisms for the security of access and communication processes:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"><img alt="Zero-Trust CIA Triad" width="1732" height="824" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"></a>
+Consul is part of the Hashicorp product line which provides modern mechanisms for better  security and efficiency in access and communication processes:
 
 In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp can describe their systems with these mechanisms within the "CIA Triad":
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"><img alt="Zero-Trust CIA Triad" width="1732" height="824" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"></a>
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Identity-driven authentication (instead of by IP address)
@@ -111,7 +105,7 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
 ### Multi-platform (VMWare, mainframe)
 
    <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=10m" title="Running Consul on Kubernetes and Beyond">VIDEO</a>:
-   Almost all enterprises also have legacy applications running VMware or in a mainframe. 
+   Many enterprises also have legacy applications running VMware or in a mainframe. 
    
    That's where Hashicorp Consul comes in, with <a target="_blank" href="https://www.consul.io/use-cases/multi-platform-service-mesh">multi-platform/cloud</a>
 
@@ -175,9 +169,6 @@ Such a health check added to service registration:
    </pre>
 
 
-
-
-
 2. Discover DNS SRV record
 
    <pre><strong>curl \ http://localhost:8500/v1/catalog/services/redis</strong></pre>
@@ -220,7 +211,6 @@ iptables -t nat -A OUTPUT -d localhost -d upd -m
    </strong></pre>
 
    The response is <tt>53 -j REDIRECT \-\-to ports 8600</tt> 
-
 
 
 References about templating/generating JSON & YAML:
@@ -278,6 +268,10 @@ Adoption of Consul aims to yield these benefits to organizations: Proof of Value
 
 * Compliance with regulatory demands (automated processes)
 
+
+
+
+<hr />
 
 <a name="MutualTLS"></a>
 
@@ -1133,7 +1127,7 @@ References about Kubernetes with Consul:
 In <a target="_blank" href="https://www.youtube.com/c/HashiCorp">
 Hashicorp's YouTube channel covering all their 8 products</a>:
 
-Rosemary Wang (Developer Advocates at HashiCorp) with J. Cole Morrison hold fun <a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive Twitch parties</a> [about two hours each] to show how to learn Consul "the hard way" (and no Kubernetes) 
+<a target="_blank" href="https://www.linkedin.com/in/rosemarywang/">Rosemary Wang</a> (<a target="_blank" href="https://joatmon08.github.io">joatmon08.github.io</a>, Developer Advocate) with J. Cole Morrison hold fun <a target="_blank" href="https://www.twitch.tv/hashicorplive">hashicorplive Twitch parties</a> [about two hours each] to show how to learn Consul "the hard way" (and no Kubernetes) 
 by setting it from scratch in their
 <a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">
 10-part VIDEO series: "Getting into HashiCorp Consul"</a> 

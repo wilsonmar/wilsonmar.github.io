@@ -15,7 +15,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This aims to be a succint yet deep dive about the "mind sets" needed by IT teams in the cloud.
+This aims to be a succinct yet deep dive about the "mind sets" needed by IT teams in the cloud.
 
 {% include whatever.html %}
 
@@ -32,7 +32,7 @@ Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provi
    * Improve the quality of workloads
    <br /><br />
 
-But WA is different in that it's the rare occassion when it's what major cloud vendors all agree on.
+But WA is different in that it's the rare occasion when it's what major cloud vendors all agree on.
 
 WA is pragmatic, proven advice, NOT by theories from "Architecture Astronauts".
 
@@ -52,7 +52,7 @@ PROTIP: To visualize progress toward using public cloud effectively, I created t
 
 The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: level target</strong> (the outer red line).
 
-The gaps (delta) between "Now" and "Next" are addresed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
+The gaps (delta) between "Now" and "Next" are addressed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
 
 Percentages in the Radar Chart are based on a <strong>consistent and comprehensive</strong> set of <strong>design principles</strong> and <strong>best practices</strong> defined in the "Well-Architected" (WA) Framework.
 
@@ -63,7 +63,7 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
    * https://aws.amazon.com/architecture/well-architected/
    * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
    * https://wa.aws.amazon.com/index.en.html
-   * June 2020 "Well Architeced Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
+   * June 2020 "Well Architected Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
    * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/ ">Microsoft's WA Framework at https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)</a>
@@ -89,11 +89,11 @@ The five pillars are listed below in <strong>default priority</strong>.
 
 <em>Click each pillar name to go contents about that pillar. (Note that "you" and "your" have been removed from text by AWS):</em>
 
-PROTIP: One memonic to make the 5 easier to remember is "CROPS".
+PROTIP: One mnemonic  to make the 5 easier to remember is "CROPS".
 
 Google adds a "System Design" pillar.
 
-   6. Amazon accounced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
+   6. Amazon announced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
 
 ACTIVITY 1 - Have each member of your team do a mental exercise to <strong>prioritize the pillars</strong> as the basis for a discussion, as a team. (Why? The Dunning-Kruger effect). Example discussion:
 
@@ -128,7 +128,7 @@ ACTIVITY 1 - Have each member of your team do a mental exercise to <strong>prior
 
 ## WA Assessment Tools
 
-Both Microsoft Azure and Amazon AWS have a WA assessement tool.
+Both Microsoft Azure and Amazon AWS have a WA assessment tool.
 
 But Microsoft's tool comes up with recommendations automatically based on what has been configured in its Azure cloud.
 
@@ -295,9 +295,9 @@ AWS published these General Design Principles:
 
    * <strong>Allow for evolutionary architectures</strong> -  In a traditional environment, architectural decisions are often implemented as static, onetime events, with a few major versions of a system during its lifetime. As a business and its context continue to evolve, these initial decisions might hinder the system's ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice.
 
-   * <strong>Drive architectures using data</strong> - In the cloud, you can collect data on how architectural choices affect the behavior of  workloads. This enable factb-ased decisions on how to improve  workloads. Cloud infrastructure is code, so that data can be used to inform architecture choices and improvements over time.
+   * <strong>Drive architectures using data</strong> - In the cloud, you can collect data on how architectural choices affect the behavior of  workloads. This enable fact-based decisions on how to improve  workloads. Cloud infrastructure is code, so that data can be used to inform architecture choices and improvements over time.
 
-   * <strong>Improve through "game days"</strong> (dry-run simulation, choas engineering, etc.) - Test how architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
+   * <strong>Improve through "game days"</strong> (dry-run simulation, chaos engineering, etc.) - Test how architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events.
 
 But what are specific actions?
 
@@ -503,7 +503,7 @@ Questions:
 
 7. How do you classify data?
 
-   1. <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensititve, and more.
+   1. <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive  , and more.
 
    1. <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
 
@@ -1131,10 +1131,10 @@ Design principles for Performance Efficiency:
 
 Best practices:
 
-1. <a href="#SelectPerfArch">Delect the best performing architecture</a>
+1. <a href="#SelectPerfArch">Select the best performing architecture</a>
 2. <a href="#SelectSolution">Select the compute solution</a>
 3. <a href="#SelectStorage">Select storage solutions</a>
-4. <a href="#SelectDatabase">Delect database solutions</a>
+4. <a href="#SelectDatabase">Select database solutions</a>
 5. <a href="#ConfigNetwork">Configure networking solutions</a>
 6. <a href="#EvolveWorkload">Evolve each workload to take advantage of new releases</a>
 7. <a href="#MonitorResourceForPerf">Monitor resources to ensure they are performing</a>
@@ -1183,7 +1183,7 @@ Questions:
 
    1. <strong>Understand storage characteristics and requirements</strong> - Understand the different characteristics (for example, shareable, file size, cache size, access patterns, latency, throughput, and persistence of data) that are required to select the services that best fit the workload, such as object storage, block storage, file storage, or instance storage.
 
-   1. <strong>Evaluate available configuration options</strong> - Evaluate the various characteristics and configuration options and how they relate to storage. Understand where and how to use provisioned IOPS, SSDs, magnetic storage, object storage, archival storage, or ephemeral storage to optimize storage space and performance for eadh workload.
+   1. <strong>Evaluate available configuration options</strong> - Evaluate the various characteristics and configuration options and how they relate to storage. Understand where and how to use provisioned IOPS, SSDs, magnetic storage, object storage, archival storage, or ephemeral storage to optimize storage space and performance for each workload.
 
    1. <strong>Make decisions based on access patterns and metrics</strong> - Choose storage systems based on each workload's access patterns and configure them by determining how the workload accesses data. Increase storage efficiency by choosing object storage over block storage. Configure the storage options you choose to match  data access patterns.
 
@@ -1279,7 +1279,7 @@ Questions:
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/">Microsoft Cost Optimization Documentation</a> \| <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist">Checklist</a>
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/optimize-checklist">Microsft's cost optimization checklist</a>
 
-   * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization">Google: Cost optimizatin</a>
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework/cost-optimization">Google: Cost optimization</a>
    <br /><br />
 
 <hr />
@@ -1474,7 +1474,7 @@ Questions lead to these goals/focus areas (and the services used to get there):
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/practice-cloud-financial-management.html">Practice Cloud Financial Management</a> -
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/expenditure-and-usage-awareness.html">Expenditure and usage awareness</a> –  AWS Cost Explorer, AWS Budgets
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/cost-effective-resources.html">Cost-Effective resources</a> – Cost Explorer, Amazon CloudWatch and Trusted Advisor, Amazon Aurora for RDS, AWS Direct Connect with Amazon CloudFront
-   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/manage-demand-and-supply-resources.html">Matchi supply and demand</a> – Auto Scaling
+   * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/manage-demand-and-supply-resources.html">Matching supply and demand</a> – Auto Scaling
    * <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/optimize-over-time.html">Optimize Over Time</a> – AWS News Blog and the What’s New section on the AWS website, AWS Trusted Advisor
    <br /><br />
 
@@ -1538,7 +1538,7 @@ Tasks:
 <a target="_blank" href="https://cloudacademy.com/learning-paths/aws-cost-management-and-optimization-3567/">7 hr video course "AWS FinOps: Cost Management & Optimization"</a> by Oliver Gehrmann identified these strategies for cost optimization:
 
    * Right-sizing instances
-   * Increase elasticitiy
+   * Increase elasticity
    * Pick the right pricing model
    * Match usage to Storage costs
 

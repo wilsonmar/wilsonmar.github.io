@@ -19,7 +19,7 @@ Front-end designers and developers are excited about AWS Amplify Studio, which a
 
 {% include whatever.html %}
 
-This aims to be a succint yet deep dive about the "mind sets" needed by IT teams in the cloud.
+This aims to be a succinct yet deep dive about the "mind sets" needed by IT teams in the cloud.
 
 
 ## Annoucement December 2021

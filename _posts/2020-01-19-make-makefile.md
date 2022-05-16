@@ -19,7 +19,7 @@ comments: true
 
 NOTE: This page is still actively under construction.
 
-The contribution of this article is the logical ordering of concepts presented in a succint way, as a hands-on narrated scenic tour.
+The contribution of this article is the logical ordering of concepts presented in a succinct way, as a hands-on narrated scenic tour.
 
 A Makefile contains a set of <strong>directives</strong> which the <strong>"make"</strong> program reads to automate compilation of source code (such as C and java) into binary files (such as class and jar object files).
 

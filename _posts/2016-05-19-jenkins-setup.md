@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial aims to succintly present
+This tutorial aims to succinctly present
 <strong>step-by-step</strong> instructions 
 to setup Jenkins on Mac OSX and CentOS, both locally and in various cloud environments.
 

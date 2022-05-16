@@ -1382,7 +1382,7 @@ Costs include annual maintenance.
 
 ### Microsoft's STRIDE
 
-Microsoft Threat Model Tool uses "STRIDE" as a memonic for classification of threats in an application:
+Microsoft Threat Model Tool uses "STRIDE" as a mnemonic  for classification of threats in an application:
    * Spoofing of user identity
    * Tampering
    * Repudiation

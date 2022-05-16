@@ -1231,7 +1231,7 @@ to use Space Complexity from O(n · k) to O(k).
 
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=jaNZ83Q3QGc">VIDEO by Stephen O'Neil</a> of <a target="_blank" href="https://www.codebelts.com/">codebelts.com</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: memonic "FAST" method by Sam Gavis-Hughson at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://github.com/samgh/DynamicProgrammingEbook/tree/master/python">DP (Dynamic Programming) ebook for Python</a>.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=X8f87hi_c7c&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm">VIDEO</a>: mnemonic  "FAST" method by Sam Gavis-Hughson at <a target="_blank" href="https://www.byte-by-byte.com/dpbook-resources/">Byte by Byte</a>, author of <a target="_blank" href="https://github.com/samgh/DynamicProgrammingEbook/tree/master/python">DP (Dynamic Programming) ebook for Python</a>.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=m2Elp9ubY3w">VIDEO by Derrick Sherrill</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=jgiZlGzXMBw&list=RDCMUCmJz2DV1a3yfgrR7GqRtUUA&start_radio=1&rv=jgiZlGzXMBw">VIDEO by "Back to Back SWE</a> https://b2bswe.co/change-making-problem
