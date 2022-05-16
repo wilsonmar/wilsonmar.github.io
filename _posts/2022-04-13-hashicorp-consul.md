@@ -168,7 +168,7 @@ by installing the Consul ESM on ___.
 
 Such a health check added to service registration:
 
-   <pre>token "...",
+   <pre>token "12345678-1234-abcd-5678-1234567890ab",
   check {
     id = ""
   }
@@ -300,7 +300,7 @@ Adoption of Consul aims to yield these benefits to organizations: Proof of Value
 
    Catalog Sync: Sync Consul services into first-class Kubernetes services and vice versa. This enables Kubernetes to easily access external services and for non-Kubernetes nodes to easily discover and access Kubernetes services.
 
-1. Have Vault act as the Certificate Authority (CA) for Consul Connect. On an already configured Vault:
+1. Have Vault act as the Certificate Authority (CA) for Consul Connect. On an already configured Vault, enable:
 
    <pre><strong>vault secrets enable pki
 vault secrets enable consul
@@ -427,10 +427,22 @@ PROTIP: Adapt the template to use your own app after you are confident you have 
    macOS, Linux, Windows.
 
    Consul can be controlled using:
-   * <a href="#ConsulWebGUI">GUI</a>
-   * <a href="#CLI-commands">CLI</a>
+   * <a href="#CLI-commands">CLI</a> (Command Line Interface) on Terminal sessions
    * API calls from within a custom program (written in Go, etc.)
+   * <a href="#ConsulWebGUI">GUI</a> (Graphic User Interface) on an internet browser such as Google Chrome
    <br /><br />
+
+<a name="CLI-commands"></a>
+
+### Consul CLI commands
+
+1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
+
+   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
+
+   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+
+   Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
 
 
 <a name="ConsulWebGUI"></a>
@@ -455,6 +467,7 @@ PROTIP: Adapt the template to use your own app after you are confident you have 
 
    * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
 
+
 <a name="Snapshots"></a>
 
 ### Data Snapshots
@@ -465,21 +478,134 @@ BTW, the above data are captured in complete point-in-time snapshots (gzipped ta
    * Prepared queries
    <br /><br />
 
-Snapshots are typically performed by the LEADER, but a FOLLOWER can take it if the <tt>\-\-stale</tt> flag is specified.
+1. Specify the ACL Token ("12345678-1234-abcd-5678-1234567890ab")
 
-<hr />
+   <pre><strong>export CONSUL_HTTP_TOKEN="${CONSUL_ACL_TOKEN}"
+   </strong></pre>
 
-<a name="CLI-commands"></a>
+1. Define file name as a timestamp in UTC time zone, such as <tt>2022-05-16T03:10:15.386UTC.tgz</tt>
 
-### CLI commands
+   <pre><strong>brew install coreutils
+   CONSUL_BACKUP_FILENAME="$( gdate -u +'%Y-%m-%dT%H:%M:%S.%3N%Z' ).tgz"
+   </strong></pre>   
 
-1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
+   Snapshots are typically performed on the LEADER node, but a FOLLOWER can take it if the <tt>\-\-stale</tt> flag is specified.
 
-   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
+1. Create the snapshot manually using the CLI, API, 
 
-   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+   <pre><strong>consul snapshot save "${CONSUL_BACKUP_FILENAME}"
+   </strong></pre>
 
-   Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
+   <pre><strong>curl --header "X-Consul-Token: "${CONSUL_ACL_TOKEN}" \
+   "${CONSUL_URL_WITH_PORT_VER}/snapshot  -o ${CONSUL_BACKUP_FILENAME}"
+   </strong></pre>
+
+1. View snapshots available on the local filesystem:
+
+   <pre><strong>consul snapshot inspect</strong></pre>
+
+1. PROTIP: It's more secure to transfer snapshots offsite, held under an account separate from day-to-day operations.
+
+   * Amazon S3
+   * Azure Blob Storage
+   * Google Cloud Storage
+   <br /><br />
+
+   For example, define an S3 bucket. Get a service account to run:
+
+1. Enterprise-licensed users can run the Consul Snapshot Agent Service:
+
+   <pre><strong>consul snapshot agent -config-dir=/etc/consul-snapshot.d
+   </strong></pre>
+
+   Registration is done automatically.
+
+   A sample <tt>consul-snapshot.d</tt> file:
+
+   <pre>{
+  "snapshot_agent": {
+     "http_addr": "127.0.0.1:8500",
+     "token": "12345678-1234-abcd-5678-1234567890ab",
+     "datacenter": "dc1",
+     "snapshot": {
+        "interval": "30m",
+        "retain": 336,
+        "deregister_after": "8h"
+     },
+   "aws_storage": {
+      "s3_region": "us-east-1",
+      "s3_bucket": "<em>my-consul-snapshots-bucket</em>"   
+    }
+  }
+}
+   </pre>
+
+   Alternately, a systemd agent configuration file:
+
+   <pre>[unit]
+Description="HashiCorp Consul Snapshot Agent"
+Documentation=https://www.consul.io/
+Requires=network-online.target
+After=consul.service
+ConditionFileNotEmpty=/etc/snapshot.d/shapshot.json
+&nbsp;
+[Service]
+User=consul
+Group=consul
+ExecStart=/usr/local/bin/consul snapshot agent -config-dir=/etc/snapshot
+KillMode=process
+Restart=on-failure
+LimitNOFILE=65535
+&nbsp;
+[Install]
+WantedBy=multi-user.target
+   </pre>
+
+1. Snapshots are for Disaster Recovery, to a fresh set of Consul servers. 
+
+   <pre>consul snapshot restore</pre>
+
+   <pre><strong>curl --header "X-Consul-Token: "${CONSUL_ACL_TOKEN}" \
+   --request PUT \
+   --data-binary "@${CONSUL_BACKUP_FILENAME}" \
+   "${CONSUL_URL_WITH_PORT_VER}/snapshot
+   </strong></pre>
+
+   There is no selective restore of data.
+
+1. After each configuration change, make a backup copy of the file seed (version) file to establish quorum, at:
+
+   <tt>raft/peers.json</tt> 
+
+   That file contains information needed for manual Recovery:
+
+   <pre>[
+  {
+    "id": "12345678-1234-abcd-5678-1234567890ab",
+    "address": "10.1.0.1:8300",
+    "non-voter": false
+  }
+  ...
+]
+   </pre>
+
+### Down for maintenance
+
+1. To bring a node offline, enable maintenace mode:
+
+   <pre><strong>consul maint -enable -server redis  -reason "Server patching"
+   </strong></pre>   
+
+1. To bring a node back online, disable maintenace mode:
+
+   <pre><strong>consul maint -disable -server redis
+   </strong></pre>   
+
+
+Practicing use of the above should be part of your pre-production Chaos Engineering/Incident Management process.
+
+
+
 
 
 <hr />
@@ -518,7 +644,7 @@ Snapshots are typically performed by the LEADER, but a FOLLOWER can take it if t
    <pre>{
   "service": {
      "name": "web",
-     "token": "12345678-..."
+     "token": "12345678-1234-abcd-5678-1234567890ab",
      "port": 80,
      "check":  {
         "id": "http",
@@ -679,7 +805,7 @@ When a local Consul agent cannot be installed locally, such as in cloud-managed 
 to keep Consul's service catalog up to date, periodically poll those services
 by installing the Consul ESM on ___. Such a health check is added to service registration like this:
 
-   <pre>token "...",
+   <pre>token "12345678-1234-abcd-5678-1234567890ab",
   check {
     id = "some-check"
     http = "http://localhost:9002/health",
@@ -760,7 +886,7 @@ node "" {
    <pre>service {
   name = "dashboard",
   port = 9002,
-  token = "2345678-...",
+  token = "12345678-1234-abcd-5678-1234567890ab",
 }
    </pre>
 
@@ -938,7 +1064,7 @@ User=consul
 
    ### Sidecar proxy injection
 
-   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft).
+   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft). 
    This means that migration to Consul can occur gradually. ???
 
 1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
@@ -958,6 +1084,31 @@ spec:
       name: http
    </pre> 
 
+
+1. Yaml file:
+
+   * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
+   * consul-helm
+   * counting.yaml
+   * dashboard.yaml
+   <br /><br />
+
+1. Command:
+
+   <pre><strong>helm install consul -f helm-consul-values.yaml ./consul-helm
+   </strong></pre>
+
+1. On a new Terminal window:
+
+   k port-forward svc/consul-tonsul-ui 8080:80
+
+   <pre>Forwarding from 127.0.0.1:8080 -> 8500
+   Forwarding from [::1]:8080 -> 8500
+   </pre>
+
+1. View the Consul dashboard:
+
+   <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
 
 
 References about Kubernetes with Consul:
@@ -1545,6 +1696,15 @@ wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a
    </pre>
 
 
+   ### Rejoin existing server
+
+   If a Consul server fails in a multi-server cluster, bring the server back online <strong>using the same IP address</strong>.
+
+   <pre><strong>consul agent -bootstrap-expect=3 \
+   -bind=192.172.2.4 -auto-rejoin=192.172.2.3
+   </strong></pre>
+
+
    ### Leave (Stop) Consul gracefully
 
    CAUTION: When operating as a server, a graceful leave is important to avoid causing a potential availability outage affecting the consensus protocol.
@@ -1601,44 +1761,6 @@ wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a
    Consul automatically tries to reconnect to a failed node, assuming that it may be unavailable because of a network partition, and that it may be coming back.
 
 
-
-
-
-
-
-<hr />
-
-## To create the demo environment
-
-1. Yaml file:
-
-   * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
-   * consul-helm
-   * counting.yaml
-   * dashboard.yaml
-   <br /><br />
-
-1. Command:
-
-   <pre><strong>helm install consul -f helm-consul-values.yaml ./consul-helm
-   </strong></pre>
-
-1. On a new Terminal window:
-
-   k port-forward svc/consul-tonsul-ui 8080:80
-
-   <pre>Forwarding from 127.0.0.1:8080 -> 8500
-   Forwarding from [::1]:8080 -> 8500
-   </pre>
-
-1. View the Consul dashboard:
-
-   <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
-
-
-## Outside
-
-A "terminating gateway"
 
 
 <hr />
