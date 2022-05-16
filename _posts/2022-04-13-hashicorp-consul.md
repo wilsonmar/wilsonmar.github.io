@@ -26,19 +26,138 @@ This aims to present a hands-on approach about using automation for a comprehens
 
 > PROTIP: Become comfortable operating Consul by building several environments, in order of complexity:
 
-PROTIP: Adapt the samples and naming conventions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
-
 <a href="HCPDemo">A. On the HCP (HashiCorp Platform) in a SaaS cloud</a> (the easiest, most standardized way to use Consul)
+
+   - Use this environment to learn about day-to-day workflows.
 
 <a href="#LaptopWay">B. On a macOS laptop using Docker</a>
 
-<a href="#TheHardWay">C. In a single datacenter</a>
+   - Use this environment to learn about CLI, API, GUI commands.
+
+<a href="#TheHardWay">C. In a single datacenter (no Kubernetes)</a>
+
+   - Use this environment to learn about configuration of Gateways
 
 <a href="#K9sWay">D. In a single datacenter using Kubernetes</a>
 
+   - Use this environment to learn about Sidecar monitoring
+
 <a href="#Enmeshed">E. In a single datacenter using Service Mesh</a>
 
+   - Use this environment to learn about Sidecar monitoring
+
 <a href="#MultiDatacenters">F. On multiple datacenters federated over WAN</a>
+
+   - Use this environment to learn about configuring for High Availability across multiple regions
+
+PROTIP: Adapt the samples and naming conventions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
+
+## Demo apps
+
+1. Hashicorp-provided demo apps are created at:
+
+   <a target="_blank" href="https://github.com/hashicorp-demoapp/">
+   https://github.com/hashicorp-demoapp/</a>
+
+   <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
+
+
+<hr />
+
+## Certification exam
+
+Because this document aims to present concepts in a logic flow for learning, it has a different order than topics for the Consul Associate one-hour $70 exam at:<br />
+https://www.hashicorp.com/certification/consul-associate
+
+1.	Explain Consul architecture
+
+   a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
+   b.	Prepare Consul for high availability and performance<br />
+   c.	Identify Consul's core functionality<br />
+   d.	Differentiate agent roles<br />
+   <br /><br />
+
+2.	Deploy a single datacenter
+
+   2a	Start and manage the Consul process<br />
+   2b	Interpret a Consul agent configuration<br />
+   2c	Configure Consul network addresses and ports<br />
+   2d	Describe and configure agent join and leave behaviors<br />
+   <br /><br />
+   
+3.	Register services and use service discovery
+
+   3a	Interpret a service registration<br />
+   3b	Differentiate ways to register a single service<br />
+   3c	Interpret a service configuration with health check<br />
+   3d	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
+   3e	Interpret a prepared query<br />
+   3f	Use a prepared query<br />
+   <br /><br />
+   
+4.	Access the Consul key/value (KV)
+
+   4a	Understand the capabilities and limitations of the KV store<br />
+   4b	Interact with the KV store using both the Consul CLI and UI<br />
+   4c	Monitor KV changes using watch<br />
+   4d	Monitor KV changes using envconsul and consul-template<br />
+   <br />
+   
+5.	<a href="#Snapshots">Back up and restore</a>
+
+   5a	<a href="#Snapshots">Describe the content of a snapshot</a>
+   5b	Back up and restore the datacenter<br />
+   5c	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
+   <br />
+   
+6.	Use Consul service mesh
+
+   6a	Understand Consul Connect service mesh high level architecture<br />
+   6b	Describe configuration for registering a service proxy<br />
+   6c	Describe intentions for Consul Connect service mesh<br />
+   6d	Check intentions in both the Consul CLI and UI<br />
+   <br /><br />
+   
+7.	<a href="#MutualTLS">Secure agent communication</a>
+
+   7a	Understanding Consul security/threat model<br />
+   7b	Differentiate certificate types needed for TLS encryption<br />
+   7c	Understand the different TLS encryption settings for a fully secure datacenter<br />
+   <br />
+   
+8.	Secure services with basic access control lists (ACL)
+
+   8a	Set up and configure a basic ACL system<br />
+   8b	Create policies<br />
+   8c	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
+   8d	Perform a CLI request using a token<br />
+   8e	Perform an API request using a token<br />
+   <br />
+   
+9.	<a href="#Gossip">Use gossip encryption</a>
+
+   9a	Understanding the Consul security/threat model<br />
+   9b	Configure gossip encryption for the existing data center<br />
+   9c	Manage the lifecycle of encryption keys<br />
+   <br />
+   
+
+## Value Proposition
+
+Adoption of Consul aims to yield these benefits to organizations: Proof of Value (POV) https://learn.hashicorp.com/well-architected-framework
+
+* Faster Time to Market from velocity of getting things done
+
+* Reduce cost via tools (operational efficiency through more visibility and automation)
+
+* Reduce cost via people from improved availability (uptime)
+
+* Reduce risk of downtime from better reliability
+
+* Reduce risk of breach from better guardrails
+
+* Compliance with regulatory demands (automated processes)
+
 
 <hr />
 
@@ -67,103 +186,6 @@ PROTIP: Adapt the samples and naming conventions here to use your own app <stron
 1. Reddit:
 
    https://www.reddit.com/search/?q=hashicorp%20consul
-
-<hr />
-
-## Certification exam
-
-This document presents concepts in a different order than the order of topics for the Consul Associate one-hour $70 exam at:<br />
-https://www.hashicorp.com/certification/consul-associate
-
-1.	Explain Consul architecture
-
-   1a	Identify the components of Consul datacenter, including agents and communication protocols<br />
-   1b	Prepare Consul for high availability and performance<br />
-   1c	Identify Consul's core functionality<br />
-   1d	Differentiate agent roles<br />
-   <br /><br />
-
-2.	Deploy a single datacenter
-
-   2a	Start and manage the Consul process<br />
-   2b	Interpret a Consul agent configuration<br />
-   2c	Configure Consul network addresses and ports<br />
-   2d	Describe and configure agent join and leave behaviors<br />
-   <br /><br />
-   
-3.	Register services and use service discovery
-
-   3a	Interpret a service registration<br />
-   3b	Differentiate ways to register a single service<br />
-   3c	Interpret a service configuration with health check<br />
-   3d	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
-   3e	Interpret a prepared query<br />
-   3f	Use a prepared query<br />
-   <br /><br />
-   
-4.	Access the Consul key/value (KV)
-
-   4a	Understand the capabilities and limitations of the KV store<br />
-   4b	Interact with the KV store using both the Consul CLI and UI<br />
-   4c	Monitor KV changes using watch<br />
-   4d	Monitor KV changes using envconsul and consul-template<br />
-   <br /><br />
-   
-5.	Back up and restore
-
-   5a	Describe the content of a snapshot<br />
-   5b	Back up and restore the datacenter<br />
-   5c	[Enterprise] Describe the benefits of snapshot agent features<br />
-   <br /><br />
-   
-6.	Use Consul service mesh
-
-   6a	Understand Consul Connect service mesh high level architecture<br />
-   6b	Describe configuration for registering a service proxy<br />
-   6c	Describe intentions for Consul Connect service mesh<br />
-   6d	Check intentions in both the Consul CLI and UI<br />
-   <br /><br />
-   
-7.	Secure agent communication
-
-   7a	Understanding Consul security/threat model<br />
-   7b	Differentiate certificate types needed for TLS encryption<br />
-   7c	Understand the different TLS encryption settings for a fully secure datacenter<br />
-   <br /><br />
-   
-8.	Secure services with basic access control lists (ACL)
-
-   8a	Set up and configure a basic ACL system<br />
-   8b	Create policies<br />
-   8c	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
-   8d	Perform a CLI request using a token<br />
-   8e	Perform an API request using a token<br />
-   <br /><br />
-   
-9.	Use gossip encryption
-
-   9a	Understanding the Consul security/threat model<br />
-   9b	Configure gossip encryption for the existing data center<br />
-   9c	Manage the lifecycle of encryption keys<br />
-   <br /><br />
-   
-
-## Value Proposition
-
-Adoption of Consul aims to yield these benefits to organizations: Proof of Value (POV) https://learn.hashicorp.com/well-architected-framework
-
-* Faster Time to Market from velocity of getting things done
-
-* Reduce cost via tools (operational efficiency through more visibility and automation)
-
-* Reduce cost via people from improved availability (uptime)
-
-* Reduce risk of downtime from better reliability
-
-* Reduce risk of breach from better guardrails
-
-* Compliance with regulatory demands (automated processes)
-
 
 <hr />
 
@@ -214,7 +236,8 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
    * Whole-application <strong>(end-to-end) testing</strong> requires multi-team collaboration (time consuming and expensive)
 
    * Manual & complex processes in application delivery
-   <br /><br />
+
+Within a single datacenter, Consul provides automatic failover for services by omitting failed service instances from DNS lookups and by providing service health information in APIs. In Consul's <a target="_blank" href="https://www.consul.io/docs/internals/coordinates.html">network coordinate subsystem</a>
 
 
 <a name="Multi-platform"></a>
@@ -243,17 +266,6 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
 
 <hr />
 
-## Demo apps
-
-1. Hashicorp-provided demo apps are created at:
-
-   <a target="_blank" href="https://github.com/hashicorp-demoapp/">
-   https://github.com/hashicorp-demoapp/</a>
-
-   <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
-
-
-
 
 <a name="HCP"></a>
 
@@ -262,6 +274,16 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
    To be free of on-prem. server install and management hassles (security, scaling disk space, upgrades, etc.), many prefer using the <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. 
    
    The fastest and easiest way to use Consul is to use the Hashcorp-Managed Cloud.
+   It provides all the features of the Enterprise edition:
+
+   * No monitoring to ensure disk space, CPU, memory, etc. are adequate
+   * No tedious capacity testing to ensure configurations are optimal
+   * Backups taken care of automatically
+   * Restores taken care of for you when needed
+   * No risk of security vulnerabilities introduced by inexperienced personnel
+   
+   * Enable your limited in-house personnel to focus on business needs.
+   <br /><br />
 
 
 <a name="HCPCloudPricing"></a>
@@ -291,7 +313,7 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
 
 <a name="InstallConsulBinary"></a>
 
-### Ways to use Consul binary
+### One Agent as Client or Server
    
    PROTIP: The Consul executable binary is designed to run either as a local long-running <strong>daemon</strong> or in <strong>server mode</strong>. See install instructions below for each operating system:
    macOS, Linux, Windows.
@@ -313,6 +335,9 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
    Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
 
    Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
+
+<em>Let's 
+
 
 
 <a name="ConsulWebGUI"></a>
@@ -337,6 +362,103 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
 
    * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
 
+<a name="API"></a>
+
+### API
+
+1. Custom programs (written in Go, etc.) can communication with Consul using HTTP API calls defined in:
+
+   <a target="_blank" href="https://www.consul.io/api">https://www.consul.io/api</a>
+
+1. To list nodes in JSON using API:
+
+   <pre><strong>curl localhost:8500/v1/catalog/nodes</strong></pre>
+
+   <pre>[
+  {
+    "ID": "019063f6-9215-6f2c-c930-9e84600029da",
+    "Node": "Judiths-MBP",
+    "Address": "127.0.0.1",
+    "Datacenter": "dc1",
+    "TaggedAddresses": {
+      "lan": "127.0.0.1",
+      "wan": "127.0.0.1"
+    },
+    "Meta": {
+      "consul-network-segment": ""
+    },
+    "CreateIndex": 9,
+    "ModifyIndex": 10
+  }
+]
+   </pre>
+
+TODO: DNS
+
+<a name="PreparedQueries"></a>
+
+#### Prepared Queries
+
+   * https://www.consul.io/api-docs/query
+   <br /><br />
+
+BLAH: This feature is only available when using API calls (not CLI).
+
+More complex DNS queries can be made using API calls than limiting entry points exposed by DNS. 
+
+To get a set of healthy nodes which provide a given service:
+
+1. Edit a prepared <strong>query template</strong> file in this format:
+
+   <pre>{
+  "Template": {
+    "Type": "name_prefix_match",
+    "Regexp": "^geo-db-(.*?)-([^\\-]+?)$",
+    "RemoveEmptyTags": false
+  }
+}
+   </pre>
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/automate-geo-failover">Automate Geo-Failover with Prepared Queries</a>:
+
+1. Register a query template (named, for example "banking-app") using in-line:
+
+   <pre>curl "${CONSUL_URL_WITH_PORT_VER}/query" \
+    --request POST \
+    --data @- << EOF
+{
+  "Name": "banking-app",
+  "Service": {
+    "Service": "banking-app",
+    "Tags": ["v1.2.3"],
+    "Failover": {
+      "Datacenters": ["dc2", "dc3"]
+    }
+  }
+}
+EOF
+   </pre>
+
+   Alternately, instead of EOF, create a file:
+
+   <pre>CONSUL_QUERY_FILENAME="payload.json"
+   </pre>
+
+1. Make the request by providing a valid Token:
+
+   <pre><strong>curl --request PUT \
+    --data "@${CONSUL_QUERY_FILENAME}" \
+    "${CONSUL_URL_WITH_PORT_VER}/query/${CONSUL_TOKEN}"
+</strong></pre>
+
+Queries are also <a target="_blank" href=https://www.consul.io/docs/security/acl/acl-rules#prepared-query-rules">used for ACL</a>
+
+Query execution is subject to node/node_prefix and service/service_prefix policies.
+
+
+
+
+<hr />
 
 <a name="Snapshots"></a>
 
@@ -345,7 +467,7 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
 BTW, the above data are captured in complete point-in-time snapshots (gzipped tar file) of Consul's committed state. Other data also in the Snapshot include:
 
    * Sessions
-   * Prepared queries
+   * <a href="#PreparedQueries">Prepared queries</a>
    <br /><br />
 
 1. Specify the ACL Token ("12345678-1234-abcd-5678-1234567890ab")
@@ -382,6 +504,8 @@ BTW, the above data are captured in complete point-in-time snapshots (gzipped ta
    <br /><br />
 
    For example, define an S3 bucket. Get a service account to run:
+
+   <a name="SnapshotAgent"></a>
 
 1. Enterprise-licensed users can run the Consul Snapshot Agent Service:
 
@@ -431,9 +555,11 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
    </pre>
 
-1. Snapshots are for Disaster Recovery, to a fresh set of Consul servers. 
+1. Snapshots are intended for utter Disaster Recovery, to restore to a fresh set of Consul servers. 
 
    <pre>consul snapshot restore</pre>
+
+   Alternately, using API:
 
    <pre><strong>curl --header "X-Consul-Token: "${CONSUL_ACL_TOKEN}" \
    --request PUT \
@@ -441,7 +567,7 @@ WantedBy=multi-user.target
    "${CONSUL_URL_WITH_PORT_VER}/snapshot
    </strong></pre>
 
-   There is no selective restore of data.
+   PROTIP: There is no selective restore of data.
 
 1. After each configuration change, make a backup copy of the file seed (version) file to establish quorum, at:
 
@@ -1439,6 +1565,9 @@ Connect to a Payment service outside Kubernetes.
 
 ### Serf LAN & WAN Gossip 
 
+   * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
+   <br /><br />
+
 The Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> is used to ensure that data is distributed, with reliable communication not assumed. The protocol provides for:
 
    * Membership information which enable servers to perform cross-datacenter requests
@@ -1754,37 +1883,6 @@ Judiths-MBP  127.0.0.1:8301  alive   server  1.12.0  2         dc1  default &LT;
 wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a8cdb4,dc=dc1,ft_fs=1,ft_si=1,id=40fee474-cf41-1063-2790-c8ff2b14d4af,port=8300,raft_vsn=3,role=consul,segment=&LT;all>,vsn=2,vsn_max=3,vsn_min=2,wan_join_port=8302
    </pre>
 
-
-   <a name="API"></a>
-
-   ### API
-
-1. Custom programs (written in Go, etc.) can communication with Consul using HTTP API calls defined in:
-
-   <a target="_blank" href="https://www.consul.io/api">https://www.consul.io/api</a>
-
-1. Obtain JSON using API:
-
-   <pre><strong>curl localhost:8500/v1/catalog/nodes</strong></pre>
-
-   <pre>[
-  {
-    "ID": "019063f6-9215-6f2c-c930-9e84600029da",
-    "Node": "Judiths-MBP",
-    "Address": "127.0.0.1",
-    "Datacenter": "dc1",
-    "TaggedAddresses": {
-      "lan": "127.0.0.1",
-      "wan": "127.0.0.1"
-    },
-    "Meta": {
-      "consul-network-segment": ""
-    },
-    "CreateIndex": 9,
-    "ModifyIndex": 10
-  }
-]
-   </pre>
 
 
    ### Rejoin existing server
