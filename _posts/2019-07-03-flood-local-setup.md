@@ -18,6 +18,8 @@ comments: true
 
 This is a hands-on step-by-step introduction to automate installation of the <a target="_blank" href="https://flood.io/"><strong>flood.io</strong></a> Element CLI which validates TypeScript locally. After validation, the scripts are used on flood.io in the cloud to performance test public websites.
 
+{% include whatever.html %}
+
 This is a component illustrated as the upper-right corner of the video and flowchart at <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">https://wilsonmar.github.io/flood-the-internet</a>, reiterated here:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"><img alt="flood-the-internet-v12-1900x959.jpg" width="1900" src="https://user-images.githubusercontent.com/300046/60763986-3be7b180-a03d-11e9-9002-2e9f3512c589.jpg"></a>
 

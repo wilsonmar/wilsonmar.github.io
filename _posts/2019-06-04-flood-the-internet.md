@@ -22,6 +22,8 @@ Many are familiar with this website: "the-internet" running on herokuapp.com<br 
   </ul>
 The website was created by Dave Hoeffner to present <a href="#Controls">43 controls</a> which provide challenges to those learning to code <a href="#CodeSelenium">Selenium scripts</a> that automate <a href="#ManualActions">manual actions</a> real users perform on an <strong>internet browser</strong> (such as Google Chrome). Dave created the site as the basis for his tutorials at <a target="_blank" href="https://ElementalSelenium.com/">ElementalSelenium.com</a> and <a target="_blank" href="https://SeleniumGuidebook.com/">SeleniumGuidebook.com</a>.
 
+{% include whatever.html %}
+
 
 <a name="ManualActions"></a>
 

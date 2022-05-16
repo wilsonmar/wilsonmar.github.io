@@ -18,6 +18,9 @@ comments: true
 
 Here are my notes studying for DevOps Institute’s DOL (DevOps Leader) certification, now in <a target="_blank" href="https://www.devopsinstitute.com/devops-leadership-whats-new-in-devops-institutes-version-2-0-certification/">v2.0</a> based on the DevOps Collective Body of Knowledge (CBok).
 
+{% include whatever.html %}
+
+
 ## Yeah, we know it's hard
 
 > "there is nothing more difficult to carry out, nor more doubtful of success, nor more dangerous to handle, than to initiate a new order of things." --Niccolò Machiavelli in "The Prince" 

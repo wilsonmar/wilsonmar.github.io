@@ -18,6 +18,8 @@ comments: true
 
 This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using GitHub's Actions to build at <a href="#JobCost">low cost</a>, quickly.
 
+{% include whatever.html %}
+
 GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration <a target="_blank" href="https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions">for NodeJs</a> and a wide range of programming languages.
 
 When developers can merge and deploy code many times in a single day, they can achieve Agile DevOps.

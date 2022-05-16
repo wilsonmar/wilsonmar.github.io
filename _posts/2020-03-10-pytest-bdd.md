@@ -20,6 +20,8 @@ After following this hands-on tutorial manually, you would be able to add to you
 
 > Automated testing of BDD based on Gherkin using Python-based pytest-bdd installed using a Bash script. Integrated libraries for test coverage analysis, data-driven tests, and localization verification.
 
+{% include whatever.html %}
+
 ## Testing Python
 
 Being a dynamic language, errors in Python code can appear only when run rather than when compiled.

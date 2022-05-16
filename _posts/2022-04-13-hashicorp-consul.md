@@ -151,7 +151,6 @@ Consul servers maintain a DNS "Services Registry"
    </pre>
 
 
-
 <a name="ESM"></a>
 
 ### Consul External Services Monitor (ESM)

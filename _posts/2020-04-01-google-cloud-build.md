@@ -18,6 +18,7 @@ comments: true
 
 Here are my (incomplete) notes on the service introduced in 2018.
 
+{% include whatever.html %}
 
 1. https://cloud.google.com/cloud-build/
 

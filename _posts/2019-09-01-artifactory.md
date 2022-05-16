@@ -18,6 +18,8 @@ comments: true
 
 Artifactory stores <strong>binary</strong> format assets such as executable files from builds, virtual memory (container) images, graphic image files, etc. (rather than textual source code). It caches local binary files as a proxy to public repositories, which make them quicker to obtain and provides a way to provide security-vetted (whitelisted) versions.
 
+{% include whatever.html %}
+
 Wikipedia categorizes it as a <a target="_blank" href="https://www.wikiwand.com/en/List_of_software_package_management_systems">"software package management system"</a>.
 
 Artifactory works with another JFrog product: X-Ray, which identifies vulnerabilities in transitive dependencies calling 3rd-party open-source libraries.

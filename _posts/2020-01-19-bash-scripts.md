@@ -18,6 +18,8 @@ comments: true
 
 This article describes a Bash script that, with a <strong>single command</strong> does all this:
 
+{% include whatever.html %}
+
    1. Define initial lines to:
       * First line file type <a href="#Shebang">"shebang"</a>
       * Define bash <a href="#ShellCheck">ShellCheck</a> rules that need to be disabled.

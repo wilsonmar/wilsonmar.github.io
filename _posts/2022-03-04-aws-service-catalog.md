@@ -19,6 +19,8 @@ comments: true
 <a target="_blank" href="https://aws.amazon.com/servicecatalog/">
 The AWS Service Catalog service</a> enables you to "Create, organize, and govern your curated catalog of AWS products" that is <strong>centrally managed</strong>. 
 
+{% include whatever.html %}
+
 The AWS Service Catalog <strong>AppRegistry</strong> defines an organization's application context of AWS resources. Define and manage applications and their metadata, to keep track of cost, performance, security, compliance, and operational status at the application level. AWS Service Catalog AppRegistry provides a single repository for collecting and managing application resources on AWS. You define your application metadata, which may include information from your internal systems, other AWS services, and software vendors. Builders can include a reference to their application within the infrastructure code, and business stakeholders have up-to-date information on application contents and metadata, such as organizational ownership, data sensitivity, and cost center.
 
 The AWS Service Catalog is primarily made up of portfolios and products.

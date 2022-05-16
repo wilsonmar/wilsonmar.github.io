@@ -17,6 +17,8 @@ comments: true
 
 A registry of Docker images is crucial for Kubernetes because a Docker Registry supplies Kubernetes with images it uses to instantiate each Docker container. When the Docker Registry goes down, so does Kubernetes.
 
+{% include whatever.html %}
+
 > Selecting a container registry for your Docker environment can sometimes feel like choosing what to eat at a Chinese restaurant that features a hundred items on its menu—The number of choices can be overwhelming, and you may not understand exactly what each option entails.
 As a result, you end up ordering General Tso’s chicken because it’s the only thing you really recognize. Then you spend the rest of the evening questioning whether you made the right choice and ate an authentic Chinese meal.<a target="_blank" href="https://sweetcode.io/docker-hub-quay-beyond-container-registry/">Chrus Tozzi</a>
 

@@ -17,8 +17,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 <a target="_blank" href="https://wilsonmar.github.io/virtualbox/">This</a> is a hands-on  introduction with insightful commentary carefully sequenced to make complex material easier to understand quickly. This is not a "demo", but an immersive step-by-step "deep dive" tutorial aimed to make you productive.
+
+{% include whatever.html %}
+
 
 NOTE: Docker and <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">Kubernetes</a> is now a superior utility to Virtualbox. Their images are smaller and quicker to load. They have a path to production usage whereas <a href="#Scripts">Virtualbox command scripts</a> are only for local use.
 

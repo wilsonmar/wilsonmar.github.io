@@ -19,7 +19,7 @@ comments: true
 This is a hands-on step-by-step deep-dive introduction to automating manual actions into <a target="_blank" href="https://flood.io/"><strong>flood.io</strong></a> Element TypeScript using Google Chrome Developer Tools. 
 After validation, the scripts are used on flood.io in the cloud to performance test public websites.
 
-NOTE: This page is still under construction as of July 30, 2019.
+{% include whatever.html %}
 
 This is a component illustrated as the upper-right corner of the video and flowchart at <a target="_blank" href="https://wilsonmar.github.io/flood-the-internet/">https://wilsonmar.github.io/flood-the-internet</a>, reiterated here:
 

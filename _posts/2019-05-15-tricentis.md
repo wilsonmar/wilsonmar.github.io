@@ -18,6 +18,8 @@ comments: true
 
 <a target="_blank" href="https://wilsonmar.github.io/tricentis/">This article</a> contains my notes about learning and using <a target="_blank" href="https://www.tricentis.com/">Tricentis</a> Tosca for continuous functional testing.
 
+{% include whatever.html %}
+
 The unique contribution of this article is a maticulously sequenced concise yet deep presentation, with PROTIPs along the way, so you can quickly come up to speed with the product. All one this one page to simplify text search.
 
 <strong>CAUTION: This article is being constructed as of May 20, 2019.</strong>

@@ -89,11 +89,11 @@ The five pillars are listed below in <strong>default priority</strong>.
 
 <em>Click each pillar name to go contents about that pillar. (Note that "you" and "your" have been removed from text by AWS):</em>
 
-PROTIP: One mnemonic  to make the 5 easier to remember is "CROPS".
+PROTIP: One mnemonic to make the 5 easier to remember is "CROPS".
 
-Google adds a "System Design" pillar.
+   * Google adds a "System Design" pillar.
 
-   6. Amazon announced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
+   * Amazon announced a 6th <strong>Sustainability</strong> pillar, for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are over-provisioning, using Gravaton (non-x86) CPUs, etc  .
 
 ACTIVITY 1 - Have each member of your team do a mental exercise to <strong>prioritize the pillars</strong> as the basis for a discussion, as a team. (Why? The Dunning-Kruger effect). Example discussion:
 

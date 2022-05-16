@@ -26,6 +26,8 @@ comments: true
    * <a target="_blank" href="https://www.torproject.org/download/">Tor (The Onion Browser)</a> to "Protect yourself against tracking, surveillance, and censorship."
    <br /><br />
 
+{% include whatever.html %}
+
 The browsers themselves are installed by mac-setup.zsh script.
 
 To enable invocation of the browser GUI from the CLI (command line Terminal), they are defined in <strong>aliases.zsh</strong>.

@@ -18,6 +18,8 @@ comments: true
 
 This is a deep dive from the innnards up:
 
+{% include whatever.html %}
+
 <a target="_blank" href="https://www.wikiwand.com/en/OpenCV">
 OpenCV (Open Computer Vision)</a> is a utility used to recognize objects in the pictures, and the coordinates of objects
 it recognizes in pictures. Its recent adoption of Machine Learning (<a target="_blank" href="https://github.com/opencv/opencv/tree/master/samples/dnn/face_detector">DNN</a> by <a target="_blank" href="https://github.com/arrybn">Aleksandr Rybnikov</a>) has increased its accuracy.

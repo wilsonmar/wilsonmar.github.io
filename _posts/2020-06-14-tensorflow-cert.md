@@ -16,7 +16,6 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-
 Here are links to each skill to be tested by the $100 5-hour 
 <a target="_blank" href="https://www.tensorflow.org/certificate">Tensorflow Certification Exam</a>, 
 according to the <a target="_blank" href="https://www.tensorflow.org/site-assets/downloads/marketing/cert/TF_Certificate_Candidate_Handbook.pdf">Certificate Candidate Handbook pdf</a>:
@@ -26,6 +25,8 @@ according to the <a target="_blank" href="https://www.tensorflow.org/site-assets
 3. <a href="#NLP">Natural language processing (NLP)</a>
 4. <a href="#TimeSeries">Time series, sequences, and predictions</a>
 <br /><br />
+
+{% include whatever.html %}
 
 The above certification categories is used as the structure of 4 classes in the 
 <a target="_blank" href="https://www.coursera.org/specializations/tensorflow-in-practice">

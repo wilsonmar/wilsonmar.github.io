@@ -18,6 +18,8 @@ comments: true
 
 Streamlit (open sourced at <a target="_blank" href="https://github.com/streamlit/streamlit">https://github.com/streamlit/streamlit</a>) is by <a target="_blank" href="https://www.domoritz.de/">Dominik Moritz</a>, who is a visualization god (UW PhD, CMU) at Apple, Microsoft, etc. and developed a grammar of visualizations (Draco).
 
+{% include whatever.html %}
+
 Streamlit's marketing page at <a target="_blank" href="https://streamlit.io/">streamlit.io</a> describes itself as "the first app framework specifically for Machine Learning and Data Science teams."
 
 Streamlit's documentation is at <a target="_blank" href="https://streamlit.io/docs/">https://streamlit.io/docs/</a>

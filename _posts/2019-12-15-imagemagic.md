@@ -18,6 +18,8 @@ comments: true
 
 If you need to convert images, use the popular free open-source <a target="_blank" href="https://imagemagick.org/index.php">https://imagemagick.org</a>
 
+{% include whatever.html %}
+
 ## Install
 
 1. Install using HomeBrew (instead of downloading, gunzip, variables, etc.):

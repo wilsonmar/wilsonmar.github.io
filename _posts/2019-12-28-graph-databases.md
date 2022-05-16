@@ -18,6 +18,8 @@ comments: true
 
 The contribution of this article is a maticulously sequenced presentation that curates concise yet deep insights from the many resources about this topic.
 
+{% include whatever.html %}
+
 ## Graph databases: the latest thing
 
 Graph type databases is the latest in the evolution of data storage mechanisms to handle complexity.

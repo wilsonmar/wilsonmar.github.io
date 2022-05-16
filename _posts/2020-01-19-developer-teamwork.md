@@ -19,8 +19,9 @@ comments: true
 
 This article covers ideas for encouraging teamwork among programmer via pair programming and team code reviews, both automated and manual.
 
-In one survey of developers, social review of code was voted as yielding more benefit than any other "DevOps" technique:
+{% include whatever.html %}
 
+In one survey of developers, social review of code was voted as yielding more benefit than any other "DevOps" technique:
 
 
 

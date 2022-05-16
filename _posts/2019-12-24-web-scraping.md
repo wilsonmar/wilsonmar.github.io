@@ -18,6 +18,8 @@ comments: true
 
 This is a step-by-step hands-on tutorial explaining how to scrape websites for information.
 
+{% include whatever.html %}
+
 PROTIP: If an API is not available, scrape (extract/mine) specific information by parsing HTML from websites using the <a target="_blank" href="http://docs.scrapy.org/en/latest/intro/overview.html">Scrapy</a> web scraping (Spider) framework. See <a target="_blank" href="https://www.inkoop.io/blog/web-scraping-using-python-and-scrapy/">blog</a>.
 
 1. inside a virtual environment

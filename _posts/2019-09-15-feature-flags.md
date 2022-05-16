@@ -19,6 +19,8 @@ comments: true
 This article describes use of "feature flags" to finely control the "blast radius" of changes, 
 done in order to deliver changes faster while minimizing risk.
 
+{% include whatever.html %}
+
 Traditionally, new or updated features made available via a software deployment become visible to ALL users at the same time. 
 And to fix a poorly-implemented feature requires an immediately roll back to the prior version, or to create a fix as quickly as possible and roll forward by deploying a new version. That is risky and stressful.
 
