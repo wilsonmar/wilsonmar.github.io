@@ -52,7 +52,7 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
    - Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
 
-<a href="#HVM">G. Hashicorp Virtual Managed (HVM) Consul peering to customer VPCs</a>
+<a href="#HVN">G. Hashicorp Virtual Network (HVN) Consul peering to customer VPCs</a>
 
    - Use this to learn about cloud peering connections across private networks.
 
