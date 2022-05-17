@@ -397,6 +397,9 @@ console
 
    <tt>-I</tt> specifies -Install of utilities XCode CLI, Homebrew, git, jq, tree, Docker, and components in the Hashicorp ecosystem, including Terraform, Vault, Nomad, <a href="#envconsul">envconsul</a>.
 
+   <tt>-U</tt> specifies -Update of utilities.
+   Do not specify <tt>-I</tt> and  <tt>-U</tt> after initial install (to save a few seconds).
+
    Utilities for working with AWS, Azure, GCP, and other clouds require their own parameter to be specified in order to be installed.
 
 7. Press <strong>command+Tab</strong> to switch to the <strong>Terminal.app</strong>. 
