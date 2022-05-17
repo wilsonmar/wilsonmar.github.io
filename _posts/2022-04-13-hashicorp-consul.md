@@ -33,11 +33,11 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 <a href="#LaptopWay">B. On a macOS laptop using Docker</a>
 
    - Use automation to install the Consult agent
-   - Use this to learn about basic CLI commands, API calls, GUI menus
+   - Use this to learn about basic CLI commands, starting/stopping the Agent, API calls, GUI menus
 
 <a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes)</a>
 
-   - Use this to learn about configuration of nodes in 3 Availability Zones within a single region, app Gateways, Sidecar monitoring
+   - Use this to learn about configuration of 5 Consul nodes in 3 Availability Zones within a single region, app Gateways, Sidecar monitoring
 
 <a href="#Enmeshed">D. In a single 6-node datacenter</a>
 
@@ -390,9 +390,11 @@ console
 
    <tt>-v</tt> specifies optional verbose log output.
 
-   <tt>-I</tt> specifies Install of macOS utilities
+   <a name="EcosystemInstalls"></a>
 
-   <tt>-consul</tt> specifies installation of Hashicorp Consul agent.
+   <tt>-I</tt> specifies -Install of utilities XCode CLI, Homebrew, git, jq, tree, and components in the Hashicorp ecosystem, including Terraform, Vault, Noman, <a href="#envconsul">envconsul</a>.
+
+   Utilities for working with AWS, Azure, GCP, and other clouds require their own parameter to be specified in order to be installed.
 
 7. Press <strong>command+Tab</strong> to switch to the <strong>Terminal.app</strong>. 
 
@@ -450,6 +452,8 @@ Or, if you don't want/need a background service you can just run:
 
    <pre><strong>consul version</strong></pre>
 
+   Example reponse:
+
    <pre>Consul v1.12.0
 Revision 09a8cdb4
 Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
@@ -495,6 +499,8 @@ Available commands are:
     watch          Watch for changes in Consul
    </pre>
 
+   Links have been added above.
+
 CLI commands are used to start and stop the Consul Agent.
 
 
@@ -526,34 +532,56 @@ CLI commands are used to start and stop the Consul Agent.
 
 <a name="ConsulNames"></a>
 
-### Variable Names
+### Environment Variables
 
-The shell script I wrote makes use of several custom environment variables, which minimizes mistakes.
+The shell script I wrote makes use of several custom environment variables, which minimizes mistakes when several commands use the same values. When applicable, my script also captures values output from one step to use in subsequent commands, to avoid the toil and mistakes from manual copy and pasting.
+
+Use of environment variables also enable the same command call to be made for both DEV and PROD use, further avoiding mistakes.
 
 * <tt>DATACENTER1_ID</tt>, which is obtained from my laptop's <tt>$(hostname)</tt>
 
 * CONSUL_AGENT_TOKEN
+
+* <a href="#ACL-Vars">ACL variables</a>
+
+
+<a name="envconsul"></a>
+
+### envconsul
+
+   * https://www.consul.io/docs/intro/vs
+   <br /><br />
+
+The envconsul utility reads and sets environmental variables for processes from data within the Consul Agent.
+
+Installation of the Consul Agent creates these folders and files:
+
+   * <tt>/etc/consul.d</tt>
 
 
 <a name="RunForeground"></a>
 
 ## Start agent in forground
 
-   <pre><strong>consul agent -dev -node $(hostname) -config-dir="/etc/consul.d"</strong></pre>
-
-   <tt><strong>-node $(hostname)</strong></tt> is specified for macOS users: Consul uses your hostname as the default node name. If your hostname contains periods, DNS queries to that node will not work with Consul. To avoid this, explicitly set the name of your node with the 
-   
-   <tt>-config-dir="/etc/consul.d"</tt> specifies the configuration .ini file:
+1. Use a text editor to customize file <tt>/etc/consul.d</tt> in .ini format:
 
    <pre>[unit]
 Description=Consul
 Requires=network-online.target
 After=network-online.target
+&nbsp;
 [Service]
 Restart=on-failure
 ExecStart=/usr/local/bin/consul agent -config-dir="/etc/consul.d"
 User=consul
    </pre>
+
+1. If your Consul Agent is running locally:
+
+   <pre><strong>consul agent -dev -node "$(hostname)" -config-dir="/etc/consul.d"</strong></pre>
+
+   <tt><strong>-node "$(hostname)"</strong></tt> is specified for macOS users: Consul uses your hostname as the default node name. If your hostname contains periods, DNS queries to that node will not work with Consul. To avoid this, explicitly set the name of your node with an environment variable.
+   
 
 <hr />
 
@@ -567,74 +595,64 @@ User=consul
    <pre>brew services start hashicorp/tap/consul</pre>
 
 
-   <a name="SidecarInject"></a>
+   ### Leave (Stop) Consul gracefully
 
-   ### Sidecar proxy injection
+   CAUTION: When operating as a server, a graceful leave is important to avoid causing a potential availability outage affecting the consensus protocol.
 
-   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft). (QUESTION: This means that migration to Consul can occur gradually?)
+1. Gracefully stop the Consul by making it leave the Consul datacenter and shut down:
 
-1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
+   <pre><strong>consul leave</strong></pre>
 
-   <pre>apiVersion: v1
-kind: Pod
-metadata:
-  name: cats
-  annotations:
-    "consul.hashicorp.com/connect-inject": "true"
-spec:
-  containers:
-  - name: cats
-    image: grove-mountain/cats:1.0.1
-    ports:
-    - containerPort: 8000
-      name: http
-   </pre> 
-
-1. Yaml file:
-
-   * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
-   * consul-helm
-   * counting.yaml
-   * dashboard.yaml
-   <br /><br />
-
-1. As <a target="_blank" href="https://github.com/hashicorp/consul-k8s/tree/main/charts/consul">instructed</a>, install Helm:
-
-   <pre>brew install helm</pre>
+   The command notifies other members that the agent left the datacenter. When an agent leaves, its local services running on the same node and their checks are removed from the catalog and Consul doesn't try to contact with that node again.
    
-1. Ensure you have access to the Consul Helm chart and you see the latest chart version listed. If you have previously added the HashiCorp Helm repository, run helm repo update.
+   Log entries in a sample response (without date/time stamps):
 
-   <pre>helm repo add hashicorp https://helm.releases.hashicorp.com</pre>
-
-   <pre><strong>helm search repo hashicorp/consul</strong></pre>
-
-   <pre>NAME                CHART VERSION   APP VERSION DESCRIPTION
- hashicorp/consul    0.35.0          1.10.3      Official HashiCorp Consul Chart
+   <pre>[INFO]  agent.server: server starting leave
+[INFO]  agent.server.serf.wan: serf: EventMemberLeave: wilsonmar-N2NYQJN46F.dc1 127.0.0.1
+[INFO]  agent.server: Handled event for server in area: event=member-leave server=wilsonmar-N2NYQJN46F.dc1 area=wan
+[INFO]  agent.router.manager: shutting down
+[INFO]  agent.server.serf.lan: serf: EventMemberLeave: wilsonmar-N2NYQJN46F 127.0.0.1
+[INFO]  agent.server: Removing LAN server: server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
+[WARN]  agent.server: deregistering self should be done by follower: name=wilsonmar-N2NYQJN46F partition=default
+[DEBUG] agent.server.autopilot: will not remove server as a removal of a majority of servers is not safe: id=40fee474-cf41-1063-2790-c8ff2b14d4af
+[INFO]  agent.server: Waiting to drain RPC traffic: drain_time=5s
+[INFO]  agent: Requesting shutdown
+[INFO]  agent.server: shutting down server
+[DEBUG] agent.server.usage_metrics: usage metrics reporter shutting down
+[INFO]  agent.leader: stopping routine: routine="federation state anti-entropy"
+[INFO]  agent.leader: stopping routine: routine="federation state pruning"
+[INFO]  agent.leader: stopping routine: routine="intermediate cert renew watch"
+[INFO]  agent.leader: stopping routine: routine="CA root pruning"
+[INFO]  agent.leader: stopping routine: routine="CA root expiration metric"
+[INFO]  agent.leader: stopping routine: routine="CA signing expiration metric"
+[INFO]  agent.leader: stopped routine: routine="intermediate cert renew watch"
+[INFO]  agent.leader: stopped routine: routine="CA root expiration metric"
+[INFO]  agent.leader: stopped routine: routine="CA signing expiration metric"
+[ERROR] agent.server: error performing anti-entropy sync of federation state: error="context canceled"
+[INFO]  agent.leader: stopped routine: routine="federation state anti-entropy"
+[DEBUG] agent.server.autopilot: state update routine is now stopped
+[INFO]  agent.leader: stopped routine: routine="CA root pruning"
+[DEBUG] agent.server.autopilot: autopilot is now stopped
+[INFO]  agent.leader: stopping routine: routine="federation state pruning"
+[INFO]  agent.leader: stopped routine: routine="federation state pruning"
+[INFO]  agent.server.autopilot: reconciliation now disabled
+[INFO]  agent.router.manager: shutting down
+[INFO]  agent: consul server down
+[INFO]  agent: shutdown complete
+[DEBUG] agent.http: Request finished: method=PUT url=/v1/agent/leave from=127.0.0.1:62886 latency=11.017448542s
+[INFO]  agent: Stopping server: protocol=DNS address=127.0.0.1:8600 network=tcp
+[INFO]  agent: Stopping server: protocol=DNS address=127.0.0.1:8600 network=udp
+[INFO]  agent: Stopping server: address=127.0.0.1:8500 network=tcp protocol=http
+[INFO]  agent: Waiting for endpoints to shut down
+[INFO]  agent: Endpoints down
+[INFO]  agent: Exit code: code=0
    </pre>
 
-1. Install Consul with the default configuration which creates a consul Kubernetes namespace if not already present, and install Consul on the dedicated namespace:
+   Consul automatically tries to reconnect to a failed node, assuming that it may be unavailable because of a network partition, and that it may be coming back.
 
-   <pre><strong>helm install consul hashicorp/consul --set global.name=consul --create-namespace -n consul</strong></pre>
- 
-    NAME: consul
 
-   Alternately:
 
-   <pre><strong>helm install consul -f helm-consul-values.yaml ./consul-helm
-   </strong></pre>
-
-1. On a new Terminal window:
-
-   <pre><strong>k port-forward svc/consul-tonsul-ui 8080:80</strong></pre>
-
-   <pre>Forwarding from 127.0.0.1:8080 -> 8500
-   Forwarding from [::1]:8080 -> 8500
-   </pre>
-
-1. View the Consul dashboard:
-
-   <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
-
+<hr />
 
 <a name="ConsulWebGUI"></a>
 
@@ -692,6 +710,8 @@ spec:
    </pre>
 
 TODO: DNS
+   <tt>-consul</tt> specifies installation of Hashicorp Consul agent.
+
 
 <a name="PreparedQueries"></a>
 
@@ -1114,7 +1134,6 @@ by installing the Consul ESM on ___. Such a health check is added to service reg
 
 
 
-
 <a name="ACL"></a>
 
 ## ACL (Access Control List) Operations
@@ -1135,10 +1154,12 @@ by installing the Consul ESM on ___. Such a health check is added to service reg
    Vault works the same way as this:
    An ACL Token encapsulates multiple policies, with each policy aggregating one or more rules.
 
-1. Names used in the script:
+   <a name="ACL-Vars"></a>
+
+1. Environment Variable names I use in scripts involving ACL:
 
    <tt>ACL_POLICY_FILE_NAME="some-service-policy.hcl"<br />
-   ACL_POLICY_NAME="some-service-policy"<br />
+   ACL_POLICY_NAME="<em>some-service-policy</em>"<br />
    ACL_POLICY_DESC="Token"
    </tt>
 
@@ -1186,40 +1207,6 @@ node "" {
   token = "12345678-1234-abcd-5678-1234567890ab",
 }
    </pre>
-
-
-
-## Run on your macOS
-
-1. Install Terraform client
-
-2. Get a Terraform account
-
-3. Get AWS credentials
-
-
-
-<a name="envconsul"></a>
-
-### envconsul
-
-https://www.consul.io/docs/intro/vs
-
-envconsul reads and sets environmental variables for processes from Consul.
-
-
-
-References about Kubernetes with Consul:
-   * https://github.com/hashicorp/consul-k8s
-   * https://learn.hashicorp.com/tutorials/consul/kubernetes-reference-architecture?in=consul/kubernetes-production
-   * <a target="_blank" href="https://www.youtube.com/watch?v=mxeMdl0KvBI">VIDEO: Introduction to HashiCorp Consul</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Qbo8Oc-pJwc">VIDEO: What is the Crawl, Walk, Run Journey of Adopting Consul</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=UHLr8UsHuDA">VIDEO: HashiCorp Consul Introduction: What is a Service Mesh?</a> by (former) Developer Advocate <a target="_blank" href="https://www.linkedin.com/in/nicolereneehubbard/">Nicole Hubbard</a> 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=K93ZaUzwEWk">VIDEO: How does Consul work with Kubernetes and other workloads?</a>
-   * https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/
-   * https://learn.hashicorp.com/tutorials/terraform/multicloud-kubernetes?in=consul/kubernetes
-   <br /><br />
-
 
 
 <hr />
@@ -1281,6 +1268,89 @@ Part 9: Service Mesh Proxy Metrics</a> [1:51:03] Jan 18, 2022
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eGunZqGNISM&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=10">
 Part 10: Terminating & Ingress Gateways</a> [1:34:44] Mar 7, 2022
+
+
+<hr />
+   
+<a name="SidecarInject"></a>
+
+## Sidecar proxy injection
+
+   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft). (QUESTION: This means that migration to Consul can occur gradually?)
+
+1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  name: cats
+  annotations:
+    "consul.hashicorp.com/connect-inject": "true"
+spec:
+  containers:
+  - name: cats
+    image: grove-mountain/cats:1.0.1
+    ports:
+    - containerPort: 8000
+      name: http
+   </pre> 
+
+1. Yaml file:
+
+   * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
+   * consul-helm
+   * counting.yaml
+   * dashboard.yaml
+   <br /><br />
+
+1. As <a target="_blank" href="https://github.com/hashicorp/consul-k8s/tree/main/charts/consul">instructed</a>, install Helm:
+
+   <pre>brew install helm</pre>
+   
+1. Ensure you have access to the Consul Helm chart and you see the latest chart version listed. If you have previously added the HashiCorp Helm repository, run helm repo update.
+
+   <pre>helm repo add hashicorp https://helm.releases.hashicorp.com</pre>
+
+   <pre><strong>helm search repo hashicorp/consul</strong></pre>
+
+   <pre>NAME                CHART VERSION   APP VERSION DESCRIPTION
+ hashicorp/consul    0.35.0          1.10.3      Official HashiCorp Consul Chart
+   </pre>
+
+1. Install Consul with the default configuration which creates a consul Kubernetes namespace if not already present, and install Consul on the dedicated namespace:
+
+   <pre><strong>helm install consul hashicorp/consul --set global.name=consul --create-namespace -n consul</strong></pre>
+ 
+    NAME: consul
+
+   Alternately:
+
+   <pre><strong>helm install consul -f helm-consul-values.yaml ./consul-helm
+   </strong></pre>
+
+1. On a new Terminal window:
+
+   <pre><strong>k port-forward svc/consul-tonsul-ui 8080:80</strong></pre>
+
+   <pre>Forwarding from 127.0.0.1:8080 -> 8500
+   Forwarding from [::1]:8080 -> 8500
+   </pre>
+
+1. View the Consul dashboard:
+
+   <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
+
+
+References about Kubernetes with Consul:
+   * https://github.com/hashicorp/consul-k8s
+   * https://learn.hashicorp.com/tutorials/consul/kubernetes-reference-architecture?in=consul/kubernetes-production
+   * <a target="_blank" href="https://www.youtube.com/watch?v=mxeMdl0KvBI">VIDEO: Introduction to HashiCorp Consul</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Qbo8Oc-pJwc">VIDEO: What is the Crawl, Walk, Run Journey of Adopting Consul</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=UHLr8UsHuDA">VIDEO: HashiCorp Consul Introduction: What is a Service Mesh?</a> by (former) Developer Advocate <a target="_blank" href="https://www.linkedin.com/in/nicolereneehubbard/">Nicole Hubbard</a> 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=K93ZaUzwEWk">VIDEO: How does Consul work with Kubernetes and other workloads?</a>
+   * https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/
+   * https://learn.hashicorp.com/tutorials/terraform/multicloud-kubernetes?in=consul/kubernetes
+   <br /><br />
 
 
 <hr />
@@ -1987,63 +2057,6 @@ wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a
    <pre><strong>consul agent -bootstrap-expect=3 \
    -bind=192.172.2.4 -auto-rejoin=192.172.2.3
    </strong></pre>
-
-
-   ### Leave (Stop) Consul gracefully
-
-   CAUTION: When operating as a server, a graceful leave is important to avoid causing a potential availability outage affecting the consensus protocol.
-
-1. Gracefully stop the Consul by making it leave the Consul datacenter and shut down:
-
-   <pre><strong>consul leave</strong></pre>
-
-   Logs in the sample response:
-
-   <pre>[INFO]  agent.server: server starting leave
-[INFO]  agent.server.serf.wan: serf: EventMemberLeave: wilsonmar-N2NYQJN46F.dc1 127.0.0.1
-[INFO]  agent.server: Handled event for server in area: event=member-leave server=wilsonmar-N2NYQJN46F.dc1 area=wan
-[INFO]  agent.router.manager: shutting down
-[INFO]  agent.server.serf.lan: serf: EventMemberLeave: wilsonmar-N2NYQJN46F 127.0.0.1
-[INFO]  agent.server: Removing LAN server: server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
-[WARN]  agent.server: deregistering self should be done by follower: name=wilsonmar-N2NYQJN46F partition=default
-[DEBUG] agent.server.autopilot: will not remove server as a removal of a majority of servers is not safe: id=40fee474-cf41-1063-2790-c8ff2b14d4af
-[INFO]  agent.server: Waiting to drain RPC traffic: drain_time=5s
-[INFO]  agent: Requesting shutdown
-[INFO]  agent.server: shutting down server
-[DEBUG] agent.server.usage_metrics: usage metrics reporter shutting down
-[INFO]  agent.leader: stopping routine: routine="federation state anti-entropy"
-[INFO]  agent.leader: stopping routine: routine="federation state pruning"
-[INFO]  agent.leader: stopping routine: routine="intermediate cert renew watch"
-[INFO]  agent.leader: stopping routine: routine="CA root pruning"
-[INFO]  agent.leader: stopping routine: routine="CA root expiration metric"
-[INFO]  agent.leader: stopping routine: routine="CA signing expiration metric"
-[INFO]  agent.leader: stopped routine: routine="intermediate cert renew watch"
-[INFO]  agent.leader: stopped routine: routine="CA root expiration metric"
-[INFO]  agent.leader: stopped routine: routine="CA signing expiration metric"
-[ERROR] agent.server: error performing anti-entropy sync of federation state: error="context canceled"
-[INFO]  agent.leader: stopped routine: routine="federation state anti-entropy"
-[DEBUG] agent.server.autopilot: state update routine is now stopped
-[INFO]  agent.leader: stopped routine: routine="CA root pruning"
-[DEBUG] agent.server.autopilot: autopilot is now stopped
-[INFO]  agent.leader: stopping routine: routine="federation state pruning"
-[INFO]  agent.leader: stopped routine: routine="federation state pruning"
-[INFO]  agent.server.autopilot: reconciliation now disabled
-[INFO]  agent.router.manager: shutting down
-[INFO]  agent: consul server down
-[INFO]  agent: shutdown complete
-[DEBUG] agent.http: Request finished: method=PUT url=/v1/agent/leave from=127.0.0.1:62886 latency=11.017448542s
-[INFO]  agent: Stopping server: protocol=DNS address=127.0.0.1:8600 network=tcp
-[INFO]  agent: Stopping server: protocol=DNS address=127.0.0.1:8600 network=udp
-[INFO]  agent: Stopping server: address=127.0.0.1:8500 network=tcp protocol=http
-[INFO]  agent: Waiting for endpoints to shut down
-[INFO]  agent: Endpoints down
-[INFO]  agent: Exit code: code=0
-   </pre>
-
-   Consul notifies other members that the agent left the datacenter. When an agent leaves, its local services running on the same node and their checks are removed from the catalog and Consul doesn't try to contact that node again.
-
-   Consul automatically tries to reconnect to a failed node, assuming that it may be unavailable because of a network partition, and that it may be coming back.
-
 
 
 
