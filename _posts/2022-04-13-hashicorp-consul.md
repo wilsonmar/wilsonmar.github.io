@@ -26,13 +26,14 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
 > PROTIP: Become comfortable operating Consul by building several environments, in order of complexity:
 
-<a href="HCPDemo">A. On the HCP (HashiCorp Platform) in a SaaS cloud</a> (the easiest, most standardized way to use Consul)
+<a href="HCPDemo">A. On Hashicorp's Consul SaaS Cloud on the HCP (HashiCorp Platform)</a> (the easiest, most standardized way to use Consul)
 
-   - Use this to learn about day-to-day workflows.
+   - Use this to learn about day-to-day workflows
 
 <a href="#LaptopWay">B. On a macOS laptop using Docker</a>
 
-   - Use this to learn about CLI, API, GUI commands.
+   - Use automation to install the Consult agent
+   - Use this to learn about basic CLI commands, API calls, GUI menus
 
 <a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes)</a>
 
@@ -101,15 +102,13 @@ Because this document aims to present concepts in a logic flow for learning, it 
    1a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
    1b.	Prepare Consul for high availability and performance<br />
    1c.	Identify Consul's core functionality<br />
-   1d.	<a href="#InstallConsulBinary">Differentiate agent roles</a><br />
-   <br />
+   1d.	<a href="#OneConsulAgent">Differentiate agent roles</a><br />
 
 2.	Deploy a single datacenter<br />
    2a.	Start and manage the Consul process<br />
    2b.	Interpret a Consul agent configuration<br />
    2c.	Configure Consul network addresses and ports<br />
    2d.	Describe and configure agent join and leave behaviors<br />
-   <br />
    
 3.	Register services and use service discovery<br />
    3a.	Interpret a service registration<br />
@@ -118,47 +117,40 @@ Because this document aims to present concepts in a logic flow for learning, it 
    3d.	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
    3e.	Interpret a prepared query<br />
    3f.	Use a prepared query<br />
-   <br />
    
 4.	Access the Consul key/value (KV)<br />
    4a.	Understand the capabilities and limitations of the KV store<br />
    4b.	Interact with the KV store using both the Consul CLI and UI<br />
    4c.	Monitor KV changes using watch<br />
    4d.	Monitor KV changes using <a href="#envconsul">envconsul</a> and consul-template<br />
-   <br />
    
 5.	<a href="#Snapshots">Back up and restore</a><br />
    5a.	<a href="#Snapshots">Describe the content of a snapshot</a>
    5b.	Back up and restore the datacenter<br />
    5c.	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
-   <br />
    
 6.	Use Consul service mesh<br />
    6a.	Understand Consul Connect service mesh high level architecture<br />
    6b.	Describe configuration for registering a service proxy<br />
    6c.	Describe intentions for Consul Connect service mesh<br />
    6d.	Check intentions in both the Consul CLI and UI<br />
-   <br />
    
 7.	<a href="#MutualTLS">Secure agent communication</a><br />
    7a.	Understanding Consul security/threat model<br />
    7b.	Differentiate certificate types needed for TLS encryption<br />
    7c.	Understand the different TLS encryption settings for a fully secure datacenter<br />
-   <br />
    
-8.	Secure services with basic access control lists (ACL)<br />
+8.	<a href="#ACL">Secure services with basic access control lists (ACL)</a><br />
    8a.	Set up and configure a basic ACL system<br />
    8b.	Create policies<br />
    8c.	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
    8d.	Perform a CLI request using a token<br />
    8e.	Perform an API request using a token<br />
-   <br />
    
 9.	<a href="#Gossip">Use gossip encryption</a><br />
    9a.	Understanding the Consul security/threat model<br />
    9b.	Configure gossip encryption for the existing data center<br />
    9c.	Manage the lifecycle of encryption keys<br />
-   <br />
 
 
 <hr />
@@ -284,7 +276,7 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
 <a name="HCP"></a>
 
-## A. HCP (Hashicorp Cloud Platform)
+## A. SaaS Consul Cloud in HCP (Hashicorp Cloud Platform)
 
    The fastest and easiest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
    
@@ -328,7 +320,7 @@ VIDEO: "How Consul and Kubernetes work together"</a>
    <tr valign="top"><td> "Plus" prod. </td><td align="right"> $0.104/hr 
       </td><td align="right"> - </td><td> SLA, multi-region
       </td></tr>
-   </tablee>
+   </table>
 
    PROTIP: Assume a 5:1 node to services ratio.
 
@@ -341,9 +333,18 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
 ## B. On a macOS laptop using Docker
 
-<a name="InstallConsulBinary"></a>
+1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
 
-### One Agent as Client or Server
+   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
+
+   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+
+   Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
+
+
+   <a name="OneConsulAgent"></a>
+
+   ### One Agent as Client or Server
    
    PROTIP: The Consul executable binary is designed to run either as a local long-running <strong>daemon</strong> or in <strong>server mode</strong>. See install instructions below for each operating system:
    macOS, Linux, Windows.
@@ -354,17 +355,35 @@ VIDEO: "How Consul and Kubernetes work together"</a>
    * <a href="#ConsulWebGUI">GUI</a> (Graphic User Interface) on an internet browser such as Google Chrome
    <br /><br />
 
-<a name="CLI-commands"></a>
 
-### Consul CLI commands
+   <a name="InstallConsulBinary"></a>
 
-1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
+   ### Install Consul Agent on macOS
 
-   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
+1. To setup your mac for Consul, use the approach described in my blog: 
 
-   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+   https://wilsonmar.github.io/mac-setup
 
-   Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
+6. Use your mouse to triple-click <tt>zsh</tt> in the command below to highlight the line, then press command+C to copy it to your Clipboard:
+
+   <pre><strong>zsh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/mac-setup/main/mac-setup.zsh)" -v -I -U -consul
+   </strong></pre>
+
+   CAUTION: Do not click on the URL (starting with <tt>httpd</tt>) since the terminal program opens a browser to that URL.
+
+   <tt>-v</tt> specifies optional verbose log output.
+
+   <tt>-consul</tt> specifies installation of Hashicorp Consul agent.
+
+7. Press <strong>command+Tab</strong> to switch to the <strong>Terminal.app</strong>. 
+
+8. Click anywhere in the Terminal window and Press <strong>command+V</strong> to paste the command from your Clipboard. 
+
+9. Press Return/Enter on your keyboard to begin execution. 
+
+   <a name="CLI-commands"></a>
+
+   ### Consul CLI commands
 
 
 
@@ -490,9 +509,9 @@ Query execution is subject to node/node_prefix and service/service_prefix polici
 
 <a name="Snapshots"></a>
 
-### Data Snapshots
+## Data Snapshots
 
-BTW, the above data are captured in complete point-in-time snapshots (gzipped tar file) of Consul's committed state. Other data also in the Snapshot include:
+Data in a Consul agent is captured in complete point-in-time snapshots (gzipped tar file) of Consul's committed state. Other data also in the Snapshot include:
 
    * Sessions
    * <a href="#PreparedQueries">Prepared queries</a>
