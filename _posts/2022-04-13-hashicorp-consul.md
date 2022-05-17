@@ -36,7 +36,7 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
 <a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes)</a>
 
-   - Use this to learn about configuration of app Gateways, Sidecar monitoring
+   - Use this to learn about configuration of nodes in 3 Availability Zones within a single region, app Gateways, Sidecar monitoring
 
 <a href="#Enmeshed">D. In a single 6-node datacenter</a>
 
@@ -44,8 +44,11 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
 <a href="#MultiDatacenters">E. For HA on multiple datacenters federated over WAN</a>
 
-   - Use this to learn about configuring for High Availability across multiple regions
+   - Use this to learn about configuring for High Availability across multiple regions (which is a major differentiator of Hashicorp Consul)
 
+<a href="#Integrations">F. Integrations to legacy VMs, mainframes, etc.</a>
+
+   - Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
 
 ## Demo apps
 
@@ -62,6 +65,9 @@ PROTIP: Adapt the samples and naming conv entions here to use your own app <stro
 ## Value Proposition
 
 > The above are used for showing Proof of Value (POV) from product/workflow adoption.
+
+* https://www.consul.io/docs/intro
+<br /><br />
 
 Adoption of Consul aims to yield these benefits: 
 
@@ -84,72 +90,70 @@ https://learn.hashicorp.com/well-architected-framework
 
 ## Certification exam
 
-Because this document aims to present concepts in a logic flow for learning, it has a different order than topics for the Consul Associate one-hour $70 exam at:<br />
-https://www.hashicorp.com/certification/consul-associate
+Because this document aims to present concepts in a logic flow for learning, it has a different order than topics for the Consul Associate one-hour proctored on-line $70 exam at: https://www.hashicorp.com/certification/consul-associate
 
 1.	Explain Consul architecture<br />
-   a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
-   b.	Prepare Consul for high availability and performance<br />
-   c.	Identify Consul's core functionality<br />
-   d.	Differentiate agent roles<br />
+   1a.	Identify the components of Consul datacenter, including agents and communication protocols<br />
+   1b.	Prepare Consul for high availability and performance<br />
+   1c.	Identify Consul's core functionality<br />
+   1d.	<a href="#InstallConsulBinary">Differentiate agent roles</a><br />
    <br />
 
 2.	Deploy a single datacenter<br />
-   2a	Start and manage the Consul process<br />
-   2b	Interpret a Consul agent configuration<br />
-   2c	Configure Consul network addresses and ports<br />
-   2d	Describe and configure agent join and leave behaviors<br />
+   2a.	Start and manage the Consul process<br />
+   2b.	Interpret a Consul agent configuration<br />
+   2c.	Configure Consul network addresses and ports<br />
+   2d.	Describe and configure agent join and leave behaviors<br />
    <br />
    
 3.	Register services and use service discovery<br />
-   3a	Interpret a service registration<br />
-   3b	Differentiate ways to register a single service<br />
-   3c	Interpret a service configuration with health check<br />
-   3d	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
-   3e	Interpret a prepared query<br />
-   3f	Use a prepared query<br />
+   3a.	Interpret a service registration<br />
+   3b.	Differentiate ways to register a single service<br />
+   3c.	Interpret a service configuration with health check<br />
+   3d.	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
+   3e.	Interpret a prepared query<br />
+   3f.	Use a prepared query<br />
    <br />
    
 4.	Access the Consul key/value (KV)<br />
-   4a	Understand the capabilities and limitations of the KV store<br />
-   4b	Interact with the KV store using both the Consul CLI and UI<br />
-   4c	Monitor KV changes using watch<br />
-   4d	Monitor KV changes using envconsul and consul-template<br />
+   4a.	Understand the capabilities and limitations of the KV store<br />
+   4b.	Interact with the KV store using both the Consul CLI and UI<br />
+   4c.	Monitor KV changes using watch<br />
+   4d.	Monitor KV changes using <a href="#envconsul">envconsul</a> and consul-template<br />
    <br />
    
 5.	<a href="#Snapshots">Back up and restore</a><br />
-   5a	<a href="#Snapshots">Describe the content of a snapshot</a>
-   5b	Back up and restore the datacenter<br />
-   5c	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
+   5a.	<a href="#Snapshots">Describe the content of a snapshot</a>
+   5b.	Back up and restore the datacenter<br />
+   5c.	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
    <br />
    
 6.	Use Consul service mesh<br />
-   6a	Understand Consul Connect service mesh high level architecture<br />
-   6b	Describe configuration for registering a service proxy<br />
-   6c	Describe intentions for Consul Connect service mesh<br />
-   6d	Check intentions in both the Consul CLI and UI<br />
+   6a.	Understand Consul Connect service mesh high level architecture<br />
+   6b.	Describe configuration for registering a service proxy<br />
+   6c.	Describe intentions for Consul Connect service mesh<br />
+   6d.	Check intentions in both the Consul CLI and UI<br />
    <br />
    
 7.	<a href="#MutualTLS">Secure agent communication</a><br />
-   7a	Understanding Consul security/threat model<br />
-   7b	Differentiate certificate types needed for TLS encryption<br />
-   7c	Understand the different TLS encryption settings for a fully secure datacenter<br />
+   7a.	Understanding Consul security/threat model<br />
+   7b.	Differentiate certificate types needed for TLS encryption<br />
+   7c.	Understand the different TLS encryption settings for a fully secure datacenter<br />
    <br />
    
 8.	Secure services with basic access control lists (ACL)<br />
-   8a	Set up and configure a basic ACL system<br />
-   8b	Create policies<br />
-   8c	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
-   8d	Perform a CLI request using a token<br />
-   8e	Perform an API request using a token<br />
+   8a.	Set up and configure a basic ACL system<br />
+   8b.	Create policies<br />
+   8c.	Manage token lifecycle: multiple policies, token revoking, ACL roles, service identities<br />
+   8d.	Perform a CLI request using a token<br />
+   8e.	Perform an API request using a token<br />
    <br />
    
 9.	<a href="#Gossip">Use gossip encryption</a><br />
-   9a	Understanding the Consul security/threat model<br />
-   9b	Configure gossip encryption for the existing data center<br />
-   9c	Manage the lifecycle of encryption keys<br />
+   9a.	Understanding the Consul security/threat model<br />
+   9b.	Configure gossip encryption for the existing data center<br />
+   9c.	Manage the lifecycle of encryption keys<br />
    <br />
-   
 
 
 <hr />
@@ -792,6 +796,10 @@ Red x's identify Consul nodes which failed health checks.
 
 ### Consul External Services Monitor (ESM)
 
+   * https://github.com/hashicorp/consul-esm
+   * https://learn.hashicorp.com/tutorials/consul/service-registration-external-services
+   <br /><br />
+
 When a local Consul agent cannot be installed locally, such as in cloud-managed services or incompatible hardware,
 to keep Consul's service catalog up to date, periodically poll those services
 by installing the Consul ESM on ___. Such a health check is added to service registration like this:
@@ -1019,6 +1027,14 @@ Available commands are:
     watch          Watch for changes in Consul
    </pre>
 
+<a name="envconsul"></a>
+
+### envconsul
+
+https://www.consul.io/docs/intro/vs
+
+envconsul reads and sets environmental variables for processes from Consul.
+
 
 <a name="RunForeground"></a>
 
@@ -1150,12 +1166,11 @@ github.com/jcolemorrison/getting-into-consul</a>
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652502401/consul-getting-into-1920x1080_gku46e.png">
 <img alt="Consul" width="1090" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652502401/consul-getting-into-1920x1080_gku46e.png"></a>
 
-To enforce intentions between services, Consul offers three types of Gateways in the data path to validate authenticity and traffic flows:
+Consul offers three types of Gateways in the data path to validate authenticity and traffic flows to enforce intentions between services:
    * Service Mesh Gateway
    * Ingress Gateways
    * Terminating Gateways
    <br /><br />
-
 
 Recorded for viewing at <a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">YouTube: "Getting into HashiCorp Consul"</a>:
 
@@ -1193,7 +1208,6 @@ Part 9: Service Mesh Proxy Metrics</a> [1:51:03] Jan 18, 2022
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eGunZqGNISM&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=10">
 Part 10: Terminating & Ingress Gateways</a> [1:34:44] Mar 7, 2022
-
 
 
 <hr />
@@ -1241,6 +1255,9 @@ Such a health check added to service registration:
 
 
 2. Discover DNS SRV record
+
+   * https://www.wikiwand.com/en/SRV_record
+   <br /><br />
 
    <pre><strong>curl \ http://localhost:8500/v1/catalog/services/redis</strong></pre>
 
@@ -1558,9 +1575,10 @@ Connect to a Payment service outside Kubernetes.
 ### Serf LAN & WAN Gossip 
 
    * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
+   * https://www.consul.io/docs/intro/vs/serf
    <br /><br />
 
-To ensure that data is distributed with reliable communication not assumed, Consul uses the Serf <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a>. The protocol provides for:
+To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by Hashicorp at https://github.com/hashicorp/serf</a> (writte in Golang). Serf provides for:
 
    * Membership information which enable servers to perform cross-datacenter requests
 
@@ -1685,6 +1703,13 @@ Policies:
 
 1. Apply replication token to servers in secondary datacenter:
 
+
+### consul-replicate
+
+   * https://github.com/hashicorp/consul-replicate
+   <br /><br />
+
+To perform cross-data-center Consul K/V replication, use the consul-replicate daemon which runs continuosly.
 
 <hr />
 
@@ -1985,6 +2010,14 @@ https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-consul-provider#hcp_co
 1. Destroy resources
 
 
+<hr />
+
+<a name="Integrations"></a>
+
+## F. Integrations to legacy VMs, mainframes, etc.
+
+   - Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
+
 <!--
 <a name="Instruqt"></a>
 
@@ -2114,6 +2147,8 @@ Ambassador's Edge Stack (AES) for service discovery.
 
 
 ## Competitors
+
+See https://www.consul.io/docs/intro/vs
 
 <a target="_blank" href="https://www.hashicorp.com/resources/tide-self-service-service-mesh-with-consul">
 CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its adoption of <strong>AWS AppMesh</strong> in favor of HashiCorp Consul, making the transition in only 6 weeks with no downtime and no big-bang migration.
