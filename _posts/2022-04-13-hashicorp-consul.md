@@ -107,7 +107,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
 2.	Deploy a single datacenter<br />
    2a.	Start and manage the Consul process<br />
    2b.	Interpret a Consul agent configuration<br />
-   2c.	Configure Consul network addresses and ports<br />
+   2c.	Configure Consul network addresses and <a href="#Ports">ports</a><br />
    2d.	Describe and configure agent join and leave behaviors<br />
    
 3.	Register services and use service discovery<br />
@@ -279,6 +279,8 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 ## A. SaaS Consul Cloud in HCP (Hashicorp Cloud Platform)
 
    The fastest and easiest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
+
+   PROTIP: Initial availability is on Azure only.
    
    <a target="_blank" href="https://www.youtube.com/watch?v=YowP4xV2Jf0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=7" title="Oct 14, 2020">VIDEO:
    "Introduction to HashiCorp Cloud Platform (HCP): Goals and Components"</a>
@@ -339,17 +341,17 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
    Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
 
-   Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
+   Initiated in 2014, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
 
 
    <a name="OneConsulAgent"></a>
 
    ### One Agent as Client or Server
    
-   PROTIP: The Consul executable binary is designed to run either as a local long-running <strong>daemon</strong> or in <strong>server mode</strong>. See install instructions below for each operating system:
-   macOS, Linux, Windows.
+   PROTIP: The Consul executable binary is designed to run either as a local long-running client <strong>daemon</strong> or in <strong>server mode</strong>. 
+   See install instructions below for each operating system: macOS, Linux, Windows (x86 and ARM).
 
-   Consul can be controlled using:
+   Work with the Consul Agent using:
    * <a href="#CLI-commands">CLI</a> (Command Line Interface) on Terminal sessions
    * API calls from within a custom program (written in Go, etc.)
    * <a href="#ConsulWebGUI">GUI</a> (Graphic User Interface) on an internet browser such as Google Chrome
@@ -364,14 +366,31 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
    https://wilsonmar.github.io/mac-setup
 
+2. Notice there are two options to install the Consul Agent:
+
+   <pre><strong>brew search consul</strong></pre>
+
+   <pre>==> Formulae
+consul                    hashicorp/tap/consul ✔             hashicorp/tap/consul-template
+consul-backinator         hashicorp/tap/consul-aws           hashicorp/tap/consul-terraform-sync
+consul-template           hashicorp/tap/consul-esm           hashicorp/tap/envconsul
+envconsul                 hashicorp/tap/consul-k8s           iconsur
+&nbsp;
+==> Casks
+console
+   </pre>
+
 6. Use your mouse to triple-click <tt>zsh</tt> in the command below to highlight the line, then press command+C to copy it to your Clipboard:
 
-   <pre><strong>zsh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/mac-setup/main/mac-setup.zsh)" -v -I -U -consul
+   <pre><strong>zsh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/mac-setup/main/mac-setup.zsh)" \
+   -v -I -U -consul
    </strong></pre>
 
    CAUTION: Do not click on the URL (starting with <tt>httpd</tt>) since the terminal program opens a browser to that URL.
 
    <tt>-v</tt> specifies optional verbose log output.
+
+   <tt>-I</tt> specifies Install of macOS utilities
 
    <tt>-consul</tt> specifies installation of Hashicorp Consul agent.
 
@@ -381,10 +400,240 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
 9. Press Return/Enter on your keyboard to begin execution. 
 
+   In the script, the Consul Agent is installed using Hashicorp's tap, as described at:
+   * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
+   <br /><br />
+
+   Instead of the usual:
+   <pre><strike>brew install consul</strike></pre>
+
+   the Consul client is installed this way:
+
+   <pre><strong>brew tap hashicorp/tap
+brew install hashicorp/tap/consul
+   </strong></pre>
+
+   Notice the response caveats:
+
+   <pre>The darwin_arm64 architecture is not supported for this product
+at this time, however we do plan to support this in the future. The
+darwin_amd64 binary has been installed and may work in
+compatibility mode, but it is not fully supported.
+&nbsp;
+To start hashicorp/tap/consul now and restart at login:
+  brew services start hashicorp/tap/consul
+Or, if you don't want/need a background service you can just run:
+  consul agent -dev -bind 127.0.0.1
+==> Summary
+🍺  /opt/homebrew/Cellar/consul/1.12.0: 4 files, 117.1MB, built in 3 seconds
+   </pre>
+
+
    <a name="CLI-commands"></a>
 
    ### Consul CLI commands
 
+   <a name="RunBackground">Option A: Run Consul in background, which restarts automatically at login:</a>
+
+   <pre>brew services start hashicorp/tap/consul</pre>
+
+   <a href="#RunForeground">Option B: Run Consul in foreground, which occupies the Terminal and does not start again at login:</a>
+
+   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
+
+   <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
+   </pre>
+
+1. TODO: Setup compatibility mode?
+
+1. Verify install:
+
+   <pre><strong>consul version</strong></pre>
+
+   <pre>Consul v1.12.0
+Revision 09a8cdb4
+Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
+   </pre>
+
+1. Obtain the menu of <em>31 command keywords</em>:
+
+   <pre><strong>consul</strong></pre>
+
+   <pre>Usage: consul [--version] [--help] &LT;command> [&LT;args>]
+&nbsp;
+Available commands are:
+    <a href="#ACL">acl</a>            Interact with Consul's ACLs
+    agent          Runs a Consul agent
+    catalog        Interact with the catalog
+    config         Interact with Consul's Centralized Configurations
+    connect        Interact with Consul Connect
+    debug          Records a debugging archive for operators
+    event          Fire a new event
+    exec           Executes a command on Consul nodes
+    force-leave    Forces a member of the cluster to enter the "left" state
+    info           Provides debugging information for operators.
+    <a href="#Intentions">intention</a>      Interact with Connect service intentions
+    join           Tell Consul agent to join cluster
+    keygen         Generates a new encryption key
+    keyring        Manages gossip layer encryption keys
+    kv             Interact with the key-value store
+    leave          Gracefully leaves the Consul cluster and shuts down
+    lock           Execute a command holding a lock
+    login          Login to Consul using an auth method
+    logout         Destroy a Consul token created with login
+    maint          Controls node or service maintenance mode
+    members        Lists the members of a Consul cluster
+    monitor        Stream logs from a Consul agent
+    operator       Provides cluster-level tools for Consul operators
+    reload         Triggers the agent to reload configuration files
+    rtt            Estimates network round trip time between nodes
+    services       Interact with services
+    snapshot       Saves, restores and inspects snapshots of Consul server state
+    tls            Builtin helpers for creating CAs and certificates
+    validate       Validate config files/directories
+    version        Prints the Consul version
+    watch          Watch for changes in Consul
+   </pre>
+
+CLI commands are used to start and stop the Consul Agent.
+
+
+<a name="Ports"></a>
+
+### Ports used by Consul
+
+   The default ports:
+   
+   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
+
+   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip on the same cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
+   * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
+   
+   * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
+   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
+
+   * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
+
+   * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
+   <br /><br />
+
+   For bootstrapping and configuration of <tt>agent.hcl</tt>, see
+   * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
+   <br /><br />
+   
+<hr />
+
+
+<a name="ConsulNames"></a>
+
+### Variable Names
+
+The shell script I wrote makes use of several custom environment variables, which minimizes mistakes.
+
+* <tt>DATACENTER1_ID</tt>, which is obtained from my laptop's <tt>$(hostname)</tt>
+
+* CONSUL_AGENT_TOKEN
+
+
+<a name="RunForeground"></a>
+
+## Start agent in forground
+
+   <pre><strong>consul agent -dev -node $(hostname) -config-dir="/etc/consul.d"</strong></pre>
+
+   <tt><strong>-node $(hostname)</strong></tt> is specified for macOS users: Consul uses your hostname as the default node name. If your hostname contains periods, DNS queries to that node will not work with Consul. To avoid this, explicitly set the name of your node with the 
+   
+   <tt>-config-dir="/etc/consul.d"</tt> specifies the configuration .ini file:
+
+   <pre>[unit]
+Description=Consul
+Requires=network-online.target
+After=network-online.target
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/bin/consul agent -config-dir="/etc/consul.d"
+User=consul
+   </pre>
+
+<hr />
+
+
+<a name="RunBackground"></a>
+
+## Start server in background
+
+1. Use:
+
+   <pre>brew services start hashicorp/tap/consul</pre>
+
+
+   <a name="SidecarInject"></a>
+
+   ### Sidecar proxy injection
+
+   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft). (QUESTION: This means that migration to Consul can occur gradually?)
+
+1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
+
+   <pre>apiVersion: v1
+kind: Pod
+metadata:
+  name: cats
+  annotations:
+    "consul.hashicorp.com/connect-inject": "true"
+spec:
+  containers:
+  - name: cats
+    image: grove-mountain/cats:1.0.1
+    ports:
+    - containerPort: 8000
+      name: http
+   </pre> 
+
+1. Yaml file:
+
+   * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
+   * consul-helm
+   * counting.yaml
+   * dashboard.yaml
+   <br /><br />
+
+1. As <a target="_blank" href="https://github.com/hashicorp/consul-k8s/tree/main/charts/consul">instructed</a>, install Helm:
+
+   <pre>brew install helm</pre>
+   
+1. Ensure you have access to the Consul Helm chart and you see the latest chart version listed. If you have previously added the HashiCorp Helm repository, run helm repo update.
+
+   <pre>helm repo add hashicorp https://helm.releases.hashicorp.com</pre>
+
+   <pre><strong>helm search repo hashicorp/consul</strong></pre>
+
+   <pre>NAME                CHART VERSION   APP VERSION DESCRIPTION
+ hashicorp/consul    0.35.0          1.10.3      Official HashiCorp Consul Chart
+   </pre>
+
+1. Install Consul with the default configuration which creates a consul Kubernetes namespace if not already present, and install Consul on the dedicated namespace:
+
+   <pre><strong>helm install consul hashicorp/consul --set global.name=consul --create-namespace -n consul</strong></pre>
+ 
+    NAME: consul
+
+   Alternately:
+
+   <pre><strong>helm install consul -f helm-consul-values.yaml ./consul-helm
+   </strong></pre>
+
+1. On a new Terminal window:
+
+   <pre><strong>k port-forward svc/consul-tonsul-ui 8080:80</strong></pre>
+
+   <pre>Forwarding from 127.0.0.1:8080 -> 8500
+   Forwarding from [::1]:8080 -> 8500
+   </pre>
+
+1. View the Consul dashboard:
+
+   <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
 
 
 <a name="ConsulWebGUI"></a>
@@ -393,7 +642,7 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
 1. When the <a href="#RunBackground">Consul server is invoked</a>:
 
-   <pre>http://localhost:8080/ui/${DATACENTER1_ID}/services</pre>
+   <pre>open "http://localhost:8080/ui/${DATACENTER1_ID}/services"</pre>
 
    <img alt="Consul GUI" width="573" height="104" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652110651/consul-gui-573x104_zb5lsx.png">
 
@@ -409,6 +658,8 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
    * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
 
+
+
 <a name="API"></a>
 
 ### API
@@ -419,7 +670,7 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
 1. To list nodes in JSON using API:
 
-   <pre><strong>curl localhost:8500/v1/catalog/nodes</strong></pre>
+   <pre><strong>curl "http://localhost:8500/v1/catalog/nodes"</strong></pre>
 
    <pre>[
   {
@@ -495,13 +746,12 @@ EOF
 
    <pre><strong>curl --request PUT \
     --data "@${CONSUL_QUERY_FILENAME}" \
-    "${CONSUL_URL_WITH_PORT_VER}/query/${CONSUL_TOKEN}"
+    "${CONSUL_URL_WITH_PORT_VER}/query/${CONSUL_AGENT_TOKEN}"
 </strong></pre>
 
 Queries are also <a target="_blank" href=https://www.consul.io/docs/security/acl/acl-rules#prepared-query-rules">used for ACL</a>
 
 Query execution is subject to node/node_prefix and service/service_prefix policies.
-
 
 
 
@@ -939,30 +1189,6 @@ node "" {
 
 
 
-   <a name="Ports"></a>
-
-   ### Ports in ACL (Access Control List)
-
-   The default ports:
-   
-   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
-   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip on the same cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
-   * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
-   
-   * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
-   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
-
-   * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
-
-   * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
-   <br /><br />
-
-   For bootstrapping and configuration of <tt>agent.hcl</tt>, see
-   * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
-   <br /><br />
-   
-<hr />
-
 ## Run on your macOS
 
 1. Install Terraform client
@@ -972,108 +1198,6 @@ node "" {
 3. Get AWS credentials
 
 
-   ### Install client on macOS
-
-   Install the client using Hashicorp's tap:
-   * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
-   <br /><br />
-
-1. WARNING: Don't use "brew install consul" ???
-
-   <pre><strong>brew search consul</strong></pre>
-
-   <pre>==> Formulae
-consul                    hashicorp/tap/consul ✔             hashicorp/tap/consul-template
-consul-backinator         hashicorp/tap/consul-aws           hashicorp/tap/consul-terraform-sync
-consul-template           hashicorp/tap/consul-esm           hashicorp/tap/envconsul
-envconsul                 hashicorp/tap/consul-k8s           iconsur
-&nbsp;
-==> Casks
-console
-   </pre>
-
-1. Install the client 
-
-   <pre><strong>brew tap hashicorp/tap
-brew install hashicorp/tap/consul
-   </strong></pre>
-
-   Notice the caveats:
-
-   <pre>The darwin_arm64 architecture is not supported for this product
-at this time, however we do plan to support this in the future. The
-darwin_amd64 binary has been installed and may work in
-compatibility mode, but it is not fully supported.
-&nbsp;
-To start hashicorp/tap/consul now and restart at login:
-  brew services start hashicorp/tap/consul
-Or, if you don't want/need a background service you can just run:
-  consul agent -dev -bind 127.0.0.1
-==> Summary
-🍺  /opt/homebrew/Cellar/consul/1.12.0: 4 files, 117.1MB, built in 3 seconds
-   </pre>
-
-   <a name="RunBackground">Option A: Run Consul in background, which restarts automatically at login:</a>
-
-   <pre>brew services start hashicorp/tap/consul</pre>
-
-   <a href="#RunForeground">Option B: Run Consul in foreground, which occupies the Terminal and does not start again at login:</a>
-
-   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
-
-   <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
-   </pre>
-
-1. TODO: Setup compatibility mode?
-
-1. Verify install:
-
-   <pre><strong>consul version</strong></pre>
-
-   <pre>Consul v1.12.0
-Revision 09a8cdb4
-Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
-   </pre>
-
-1. Obtain the menu of <em>31 command keywords</em>:
-
-   <pre><strong>consul</strong></pre>
-
-   <pre>Usage: consul [--version] [--help] &LT;command> [&LT;args>]
-&nbsp;
-Available commands are:
-    <a href="#ACL">acl</a>            Interact with Consul's ACLs
-    agent          Runs a Consul agent
-    catalog        Interact with the catalog
-    config         Interact with Consul's Centralized Configurations
-    connect        Interact with Consul Connect
-    debug          Records a debugging archive for operators
-    event          Fire a new event
-    exec           Executes a command on Consul nodes
-    force-leave    Forces a member of the cluster to enter the "left" state
-    info           Provides debugging information for operators.
-    <a href="#Intentions">intention</a>      Interact with Connect service intentions
-    join           Tell Consul agent to join cluster
-    keygen         Generates a new encryption key
-    keyring        Manages gossip layer encryption keys
-    kv             Interact with the key-value store
-    leave          Gracefully leaves the Consul cluster and shuts down
-    lock           Execute a command holding a lock
-    login          Login to Consul using an auth method
-    logout         Destroy a Consul token created with login
-    maint          Controls node or service maintenance mode
-    members        Lists the members of a Consul cluster
-    monitor        Stream logs from a Consul agent
-    operator       Provides cluster-level tools for Consul operators
-    reload         Triggers the agent to reload configuration files
-    rtt            Estimates network round trip time between nodes
-    services       Interact with services
-    snapshot       Saves, restores and inspects snapshots of Consul server state
-    tls            Builtin helpers for creating CAs and certificates
-    validate       Validate config files/directories
-    version        Prints the Consul version
-    watch          Watch for changes in Consul
-   </pre>
 
 <a name="envconsul"></a>
 
@@ -1083,105 +1207,6 @@ https://www.consul.io/docs/intro/vs
 
 envconsul reads and sets environmental variables for processes from Consul.
 
-
-<a name="RunForeground"></a>
-
-## Start agent in forground
-
-   <pre><strong>consul agent -dev -node $(hostname) -config-dir="/etc/consul.d"</strong></pre>
-
-   <tt><strong>-node $(hostname)</strong></pre> is specified for macOS users: Consul uses your hostname as the default node name. If your hostname contains periods, DNS queries to that node will not work with Consul. To avoid this, explicitly set the name of your node with the 
-   
-   <tt>-config-dir="/etc/consul.d"</tt> specifies the configuration .ini file:
-
-   <pre>[unit]
-Description=Consul
-Requires=network-online.target
-After=network-online.target
-[Service]
-Restart=on-failure
-ExecStart=/usr/local/bin/consul agent -config-dir="/etc/consul.d"
-User=consul
-   </pre>
-
-<hr />
-
-<a name="RunBackground"></a>
-
-## Start server in background
-
-1. Use:
-
-   <pre>brew services start hashicorp/tap/consul</pre>
-
-
-   <a name="SidecarInject"></a>
-
-   ### Sidecar proxy injection
-
-   Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft). (QUESTION: This means that migration to Consul can occur gradually?)
-
-1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
-
-   <pre>apiVersion: v1
-kind: Pod
-metadata:
-  name: cats
-  annotations:
-    "consul.hashicorp.com/connect-inject": "true"
-spec:
-  containers:
-  - name: cats
-    image: grove-mountain/cats:1.0.1
-    ports:
-    - containerPort: 8000
-      name: http
-   </pre> 
-
-1. Yaml file:
-
-   * <strong>helm-consul-values.yaml</strong> changes the default settings to give a name to the datacenter, specify the number of replicas, and <a href="#SidecarInject">enable Injection</a>
-   * consul-helm
-   * counting.yaml
-   * dashboard.yaml
-   <br /><br />
-
-1. As <a target="_blank" href="https://github.com/hashicorp/consul-k8s/tree/main/charts/consul">instructed</a>, install Helm:
-
-   <pre>brew install helm</pre>
-   
-1. Ensure you have access to the Consul Helm chart and you see the latest chart version listed. If you have previously added the HashiCorp Helm repository, run helm repo update.
-
-   <pre>helm repo add hashicorp https://helm.releases.hashicorp.com</pre>
-
-   <pre><strong>helm search repo hashicorp/consul</strong></pre>
-
-   <pre>NAME                CHART VERSION   APP VERSION DESCRIPTION
- hashicorp/consul    0.35.0          1.10.3      Official HashiCorp Consul Chart
-   </pre>
-
-1. Install Consul with the default configuration which creates a consul Kubernetes namespace if not already present, and install Consul on the dedicated namespace:
-
-   <pre><strong>helm install consul hashicorp/consul --set global.name=consul --create-namespace -n consul</strong></pre>
- 
-    NAME: consul
-
-   Alternately:
-
-   <pre><strong>helm install consul -f helm-consul-values.yaml ./consul-helm
-   </strong></pre>
-
-1. On a new Terminal window:
-
-   <pre><strong>k port-forward svc/consul-tonsul-ui 8080:80</strong></pre>
-
-   <pre>Forwarding from 127.0.0.1:8080 -> 8500
-   Forwarding from [::1]:8080 -> 8500
-   </pre>
-
-1. View the Consul dashboard:
-
-   <pre>http://localhost:8080/ul/<em>datacenter</em>/services</pre>
 
 
 References about Kubernetes with Consul:
