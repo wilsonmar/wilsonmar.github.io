@@ -50,6 +50,11 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
    - Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
 
+<a href="#HVM">G. Hashicorp Virtual Managed (HVM) Consul peering to customer VPCs</a>
+
+   - Use this to learn about cloud peering connections across private networks.
+
+
 ## Demo apps
 
 PROTIP: Adapt the samples and naming conv entions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
@@ -190,17 +195,21 @@ Because this document aims to present concepts in a logic flow for learning, it 
 
 Consul is part of the Hashicorp product line which provides modern mechanisms for better  security and efficiency in access and communication processes:
 
-In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp can describe their systems with these mechanisms within the "CIA Triad":
+<a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: 
+In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using Hashicorp can describe their systems with these mechanisms within the "CIA Triad":
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"><img alt="Zero-Trust CIA Triad" width="1732" height="824" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652570696/zero-trust-triad-1732x824_k2gfer.png"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"><img alt="Zero-Trust CIA Triad" width="3024" height="1432" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"></a>
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
-   * Identity-driven authentication (instead of by IP address)
-   * Encrypted in transit and at rest
+   * Identity-driven authentication ("<a href="#Intentions">Intentions</a>" by name instead of by IP address)
+   * Encrypted in transit and at rest (baked into app lifecycle via CI/CD automation)
 
-   * Authorized by name ("<a href="#Intentions">Intentions</a>")
-   * Time-bound secrets (instead of long-lived static secrets to be hacked)
-   * Audited & Logged
+   * Immutable deployments (no live patching to "cattle")
+   * Time-bound encrypted tokens authorizing each request instead of long-lived static secrets to be hacked)
+
+   * Audited & Logged (for SOC to do forensics)
+   * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
+   * Change Management using version control such as GitHub
    <br /><br />
 
 ## To Serve Microservices
@@ -237,13 +246,21 @@ In SOC2, ISO 27xxx, and other such infosec filings, companies using Hashicorp ca
 
 Within a single datacenter, Consul provides automatic failover for services by omitting failed service instances from DNS lookups and by providing service health information in APIs. In Consul's <a target="_blank" href="https://www.consul.io/docs/internals/coordinates.html">network coordinate subsystem</a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=Lf3DvCNDeQo&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=38" title="Network Infrastructure Automation (NIA) Mar 25, 2021">VIDEO</a>: When not using F5 or NGINX which is Consul-aware, "Network Infrastructure Automation (NIA)" is using the Consul-Terraform Agent where Consul acts as the central broker -- changes trigger Consul to subscribe to Terraform assets.
+
+
+### Kubernetes enhanced by Service Mesh & Consul
+
+<a target="_blank" href="https://www.youtube.com/watch?v=C3N4i1cFIZ0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk" title="May 9, 2022">
+VIDEO: "How Consul and Kubernetes work together"</a>
+
 
 <a name="Multi-platform"></a>
 
 ### Multi-platform (VMWare, mainframe)
 
    <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=10m" title="Running Consul on Kubernetes and Beyond">VIDEO</a>:
-   Many enterprises also have legacy applications running VMware or in a mainframe. 
+   Many enterprises also have legacy applications running VMware or still in a mainframe. 
    
    That's where Hashicorp Consul comes in, with <a target="_blank" href="https://www.consul.io/use-cases/multi-platform-service-mesh">multi-platform/cloud</a>
 
@@ -271,6 +288,9 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
    The fastest and easiest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
    
+   <a target="_blank" href="https://www.youtube.com/watch?v=YowP4xV2Jf0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=7" title="Oct 14, 2020">VIDEO:
+   "Introduction to HashiCorp Cloud Platform (HCP): Goals and Components"</a>
+
    HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI of OSS. 
    
    It provides all the features of the self-managed Enterprise edition, plus:
@@ -280,8 +300,10 @@ Within a single datacenter, Consul provides automatic failover for services by o
    * Backups taken care of automatically
    * Restores taken care of for you when needed
    * No risk of security vulnerabilities introduced by inexperienced personnel
-   
-   * Enable your limited in-house personnel to focus on business needs.
+
+   * Rest from on-going hassles of security patches and version upgrades
+   * Enable limited in-house IT personnel to focus on business needs.
+   * Faster time to value and time to market
    <br /><br />
 
 
@@ -295,11 +317,18 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
    https://cloud.hashicorp.com/docs/consul#features
 
-   * A Development environment starts at 0.027/hr for up to 50 service instances
-
-   * A "Standard" environment starts at $0.069/hr plus $0.02/hr per service Small instance
-
-   * A "Plus" environment starts at $0.104/hr
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Plan </th><th > Base </th><th> + per svc instance hr</th><th> Limits </th></tr>
+   <tr valign="top"><td> Individual Development </td><td align="right"> 0.027/hr<br />$20/mo 
+      </td><td align="right"> - </td><td align="right"> Up to 50 service instances. No uptime SLA.
+      </td></tr>
+   <tr valign="top"><td> "Standard" prod. </td><td align="right"> $0.069/hr<br />$49/mo 
+      </td><td align="right"> $0.02/hr </td><td >Small servers, SLA
+      </td></tr>
+   <tr valign="top"><td> "Plus" prod. </td><td align="right"> $0.104/hr 
+      </td><td align="right"> - </td><td > Large servers, SLA
+      </td></tr>
+   </tablee>
 
    https://www.hashicorp.com/products/consul/pricing
   
@@ -1357,6 +1386,9 @@ References about templating/generating JSON & YAML:
 <a name="ConsulConnect"></a>
 
 ### Consul Connect (Service Mesh)
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8T8t4-hQY74&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=10">VIDEO: "Introduction to HashiCorp Consul Connect"</a>
+   <br /><br />
 
    Integration between Consul and Kubernetes is achieved by running Consul Service Mesh (aka Consul Connect) on Kubernetes:
 
