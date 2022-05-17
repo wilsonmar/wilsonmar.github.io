@@ -402,6 +402,8 @@ console
 
 9. Press Return/Enter on your keyboard to begin execution. 
 
+   <a name="UseHashicorpTaps"></a>
+
    In the script, the Consul Agent is installed using Hashicorp's tap, as described at:
    * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
    <br /><br />
@@ -561,7 +563,7 @@ Installation of the Consul Agent creates these folders and files:
 
 <a name="RunForeground"></a>
 
-## Start agent in forground
+## Start Consul Agent in forground
 
 1. Use a text editor to customize file <tt>/etc/consul.d</tt> in .ini format:
 
@@ -583,14 +585,13 @@ User=consul
    <tt><strong>-node "$(hostname)"</strong></tt> is specified for macOS users: Consul uses your hostname as the default node name. If your hostname contains periods, DNS queries to that node will not work with Consul. To avoid this, explicitly set the name of your node with an environment variable.
    
 
-<hr />
+   <a name="RunBackground"></a>
 
+   ## Start Consul Server in background
 
-<a name="RunBackground"></a>
+   Alternately, referencing the environment created:
 
-## Start server in background
-
-1. Use:
+   Because <a href="#UseHashicorpTaps">Hashicorp's Homebrew tap was used to install</a>:
 
    <pre>brew services start hashicorp/tap/consul</pre>
 
@@ -602,6 +603,8 @@ User=consul
 1. Gracefully stop the Consul by making it leave the Consul datacenter and shut down:
 
    <pre><strong>consul leave</strong></pre>
+
+   QUESTION: Need to specify the node like in start?
 
    The command notifies other members that the agent left the datacenter. When an agent leaves, its local services running on the same node and their checks are removed from the catalog and Consul doesn't try to contact with that node again.
    
