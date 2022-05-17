@@ -30,10 +30,11 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
 
    - Use this to learn about day-to-day workflows
 
-<a href="#LaptopWay">B. On a macOS laptop using Docker</a>
+<a href="#LaptopWay">B. On a macOS laptop install Consul Agent</a>
 
-   - Use automation to install the Consult agent
-   - Use this to learn about basic CLI commands, starting/stopping the Agent, API calls, GUI menus
+   - Use automation to install the Consul agent along with other utilities needed
+   - Use this to learn about basic CLI commands, starting/stopping the Agent, API calls, 
+   GUI menus using a single server within a Docker image
 
 <a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes)</a>
 
@@ -390,9 +391,11 @@ console
 
    <tt>-v</tt> specifies optional verbose log output.
 
+   <tt>-Golang</tt> specifies install of Go programming language development components
+
    <a name="EcosystemInstalls"></a>
 
-   <tt>-I</tt> specifies -Install of utilities XCode CLI, Homebrew, git, jq, tree, and components in the Hashicorp ecosystem, including Terraform, Vault, Noman, <a href="#envconsul">envconsul</a>.
+   <tt>-I</tt> specifies -Install of utilities XCode CLI, Homebrew, git, jq, tree, Docker, and components in the Hashicorp ecosystem, including Terraform, Vault, Nomad, <a href="#envconsul">envconsul</a>.
 
    Utilities for working with AWS, Azure, GCP, and other clouds require their own parameter to be specified in order to be installed.
 
@@ -409,6 +412,7 @@ console
    <br /><br />
 
    Instead of the usual:
+
    <pre><strike>brew install consul</strike></pre>
 
    the Consul client is installed this way:
@@ -1039,12 +1043,21 @@ bootstrap {
 
 
 
+   <a name="dig_discover"></a>
 
 1. "Discover" nodes using DNS interface <tt>dig</tt> command to the Consul agent's <strong>DNS server</strong>, which runs on port 8600 by default:
 
-   <pre><strong>dig @127.0.0.1 -p 8600 "$(hostname).node.consul"</strong></pre>
-
    REMEMBER: Only healthy instances are returned.
+
+   If running within Docker image "hashicorp/counting-service:0.0.2"
+   
+   <pre><strong>dig @127.0.0.1 -p 8600 "counting.service.consul"</strong></pre>
+
+   Alternately, discover apps using <tt>dig appb.service.consul</tt>
+
+   If running locally:
+
+   <pre><strong>dig @127.0.0.1 -p 8600 "$(hostname).node.consul"</strong></pre>
 
    <pre>; &LT;&LT;>> DiG 9.10.6 &LT;&LT;>> @127.0.0.1 -p 8600 wilsonmar-N2NYQJN46F.node.consul
 ; (1 server found)
@@ -1072,8 +1085,6 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    </pre>
 
    QUESTION: SRV lookups
-
-   Alternately, discover apps using <tt>dig appb.service.consul</tt>
 
 3. Connect 
 
