@@ -323,12 +323,14 @@ VIDEO: "How Consul and Kubernetes work together"</a>
       </td><td align="right"> - </td><td align="right"> Up to 50 service instances. No uptime SLA.
       </td></tr>
    <tr valign="top"><td> "Standard" prod. </td><td align="right"> $0.069/hr<br />$49/mo 
-      </td><td align="right"> $0.02/hr </td><td >Small servers, SLA
+      </td><td align="right"> $0.02/hr +</td><td > SLA
       </td></tr>
    <tr valign="top"><td> "Plus" prod. </td><td align="right"> $0.104/hr 
-      </td><td align="right"> - </td><td > Large servers, SLA
+      </td><td align="right"> - </td><td> SLA, multi-region
       </td></tr>
    </tablee>
+
+   PROTIP: Assume a 5:1 node to services ratio.
 
    https://www.hashicorp.com/products/consul/pricing
   
@@ -363,8 +365,6 @@ VIDEO: "How Consul and Kubernetes work together"</a>
    Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
 
    Initiated in 2014, it has garnered nearly 25,000 stars, with over a million downloads monthly.
-
-<em>Let's 
 
 
 
