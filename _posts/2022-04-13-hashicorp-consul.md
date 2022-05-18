@@ -3,7 +3,7 @@ layout: post
 date: "2022-05-09"
 file: "hashicorp-consul"
 title: "Hashicorp Consul"
-excerpt: "Enterprise Service Mesh securing APIs in VMs & K8s"
+excerpt: "Enterprise-grade Service Mesh securing APIs in AWS, Azure, GCP, and other clouds, plus in VMs, K8s, even mainframes"
 tags: [Hashicorp, Kubernetes]
 image:
 # pic silver robot white skin handshake 1900x500
@@ -36,21 +36,21 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
    - Use this to learn about basic CLI commands, starting/stopping the Agent, API calls, 
    GUI menus using a single server within a Docker image
 
-<a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes)</a>
+<a href="#TheHardWay">C. In a single 5-node datacenter (with Kubernetes) to survive loss of a single node</a>
 
    - Use this to learn about configuration of 5 Consul nodes in 3 Availability Zones within a single region, app Gateways, Sidecar monitoring
 
-<a href="#Enmeshed">D. In a single 6-node datacenter</a>
+<a href="#Enmeshed">## D. In a single 6-node datacenter to survive loss of an Availability Zone</a>
 
-   - Use this to learn about manual backup and recovery using Snapshots and Enterprise Snapshot Agents
+   - Use this to learn about manual backup and recovery using Snapshots and Enterprise Snapshot Agents, Telemetry and Capacity
 
 <a href="#MultiDatacenters">E. For HA on multiple datacenters federated over WAN</a>
 
-   - Use this to learn about configuring for High Availability across multiple regions (which is a major differentiator of Hashicorp Consul)
+   - Use this to learn about configuring for High Availability across multiple regions (which is a major differentiator of Hashicorp Consul), Chaos Engineering
 
 <a href="#Integrations">F. Integrations to legacy VMs, mainframes, etc.</a>
 
-   - Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
+   - Use this to learn about configuring for integrating Hashicorp Consul to work with a Payment processor, integrate with load balancers that isn't Consul-aware, and across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
 
 <a href="#HVN">G. Hashicorp Virtual Network (HVN) Consul peering to customer VPCs</a>
 
@@ -184,9 +184,18 @@ Because this document aims to present concepts in a logic flow for learning, it 
 
 <hr />
 
-## Zero Trust (Defense in Depth)
+<a name="Enterprise"></a>
+   
+## Part of an Enterprise suite
 
-Consul is part of the Hashicorp product line which provides modern mechanisms for better  security and efficiency in access and communication processes:
+Consul is part of the Hashicorp product line which provides modern mechanisms for better security and efficiency in access and communication processes:
+
+   Additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
+   
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
+
+
+## Zero Trust (Defense in Depth)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: 
 In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using Hashicorp can describe their systems with these mechanisms within the "CIA Triad":
@@ -281,7 +290,8 @@ VIDEO: "How Consul and Kubernetes work together"</a>
 
    The fastest and easiest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">Hashicorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
 
-   PROTIP: Initial availability is on Azure only.
+   PROTIP: Initial availability is on Azure only. https://www.hashicorp.com/products/consul/service-on-azure
+   <a target="_blank" href="https://www.hashicorp.com/blog/consul-service-on-azure-production-tier">announced Sep 2020</a>
    
    <a target="_blank" href="https://www.youtube.com/watch?v=YowP4xV2Jf0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=7" title="Oct 14, 2020">VIDEO:
    "Introduction to HashiCorp Cloud Platform (HCP): Goals and Components"</a>
@@ -1631,59 +1641,16 @@ server:
    <pre><strong>helm install consul.helm -f values.yaml
    </strong></pre>
 
-   
-   ### Using Vagrant
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by Hashicorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
-
-
-1. Install Vagrant and download the Vagrantfile 
-   
-   <pre>brew install vagrant  # Vagrant 2.2.19
-curl -O https://github.com/hashicorp/consul/blog/master/demo/vagrant-cluster/Vagrantfile
-   </pre>
-
-   CAUTION: As of this writing, Vagrant does not work on Apple M (ARM) chipset on new macOS laptops.
-
-   <tt>vagrant up</tt>
-
-   SSH into each server: <tt>vagrant ssh n1</tt>
-
-   <pre>helm install ./consul-helm -f ./consul-helm/demo.values.yaml --name consul</pre>
-
-   1. <a href="InstallConsulBinary">Install Consul binary</a>
-   2. Add Consul Connect to a Kube app
-   3. Integrate legacy apps with Kubernetes
-   <br /><br />
-
-Kubernetes runs a sample "emojify" app which runs an NGNX website calling the "facebox" service API running a machine-learning model to add emoji images on the faces people in input photos (from <a target="_blank" href="https://www.honeycomb.io/resources/using-honeycomb-and-terraform-provider-with-hashicorp-thanks/?submissionGuid=3c622cca-7c53-4cb3-9449-2627a6302e44">Honeycomb.io</a>)
-
-<img alt="Consul Emojify demo" width="2742" height="1420" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652180719/consul-emojify-payment_z4dd40.png">
-
-"502 Bad Gateway" appears during deployment.
-
-Connect to a Payment service outside Kubernetes.
-
 
 <hr />
 
 <a name="Enmeshed"></a>
 
-## D. In a single 6-node datacenter
+## D. In a single 6-node datacenter (survive loss of an Availability Zone)
 
+### HA (High Availability)
 
-<a name="Enterprise"></a>
-   
-### Enterprise licensing
-
-   However, additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
-   
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
-
-
-### Enterprise HA (High Availability)
-
-   In order for a datacenter to withstand the sudden loss of a server within a single Availability Center or the loss of an entire Availability Zone, setup <strong>6 servers</strong> for best resilience:
+   In order for a datacenter to withstand the sudden loss of a server within a single Availability Center or the loss of an entire Availability Zone, setup <strong>6 servers</strong> for best resilience plus performance under load:
 
    <a name="6servers"></a>
 
@@ -1721,6 +1688,11 @@ Connect to a Payment service outside Kubernetes.
 <a name="Raft"></a>
 
 ### Raft concensus algorithm
+
+Consider these dynamic illustrations about how the Raft mechanism works:
+   * http://thesecretlivesofdata.com/raft/ provides a visualization
+   * https://raft.github.io/
+   <br /><br />
 
    To ensure data <strong>consistency</strong> among nodes across Availability Zones, the <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state storage for updating catalog, session, prepared query, ACL, and KV state.
    
@@ -2122,7 +2094,46 @@ https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-consul-provider#hcp_co
 
 ## F. Integrations to legacy VMs, mainframes, etc.
 
-   - Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul)
+   * https://medium.com/hashicorp-engineering/supercomputing-with-hashicorp-5c827dcb2db8
+   <br /><br />
+
+Use this to learn about configuring for integrating Hashicorp Consul to work across the entire Enteprise landscape of technologies (another major differentiator of Hashicorp Consul).
+
+You can see how Consul behaves on Power 9 (PPC) and IBM Z (S390x) "mainframe supercomputers" without the expense, <strong>emulate</strong> them with Hercules or QEMU on pure X86_64 Windows PC, Xeon Linux workstation and KVM but it can also be done on a Mac. Power9, ended up being much simpler than S390. 
+
+
+### Using Vagrant
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by Hashicorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
+
+
+1. Install Vagrant and download the Vagrantfile 
+   
+   <pre>brew install vagrant  # Vagrant 2.2.19
+curl -O https://github.com/hashicorp/consul/blog/master/demo/vagrant-cluster/Vagrantfile
+   </pre>
+
+   CAUTION: As of this writing, Vagrant does not work on Apple M (ARM) chipset on new macOS laptops.
+
+   <tt>vagrant up</tt>
+
+   SSH into each server: <tt>vagrant ssh n1</tt>
+
+   <pre>helm install ./consul-helm -f ./consul-helm/demo.values.yaml --name consul</pre>
+
+   1. <a href="InstallConsulBinary">Install Consul binary</a>
+   2. Add Consul Connect to a Kube app
+   3. Integrate legacy apps with Kubernetes
+   <br /><br />
+
+Kubernetes runs a sample "emojify" app which runs an NGNX website calling the "facebox" service API running a machine-learning model to add emoji images on the faces people in input photos (from <a target="_blank" href="https://www.honeycomb.io/resources/using-honeycomb-and-terraform-provider-with-hashicorp-thanks/?submissionGuid=3c622cca-7c53-4cb3-9449-2627a6302e44">Honeycomb.io</a>)
+
+<img alt="Consul Emojify demo" width="2742" height="1420" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652180719/consul-emojify-payment_z4dd40.png">
+
+"502 Bad Gateway" appears during deployment.
+
+Connect to a Payment service outside Kubernetes.
+
 
 <!--
 <a name="Instruqt"></a>
