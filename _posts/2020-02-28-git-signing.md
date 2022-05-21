@@ -467,7 +467,7 @@ There are several places you can store GPG keys:
    * <a href="#Keybase">Keybase cloud (below)</a>
    * On a Yubikey physical device
 
-   * <a href="#hashicorp-vault">Hashicorp Vault</a>
+   * <a href="#hashicorp-vault">HashiCorp Vault</a>
    * Azure KeyVault?
    * AWS Key Service (AKS)
    * Google Cloud?
@@ -477,11 +477,11 @@ There are several places you can store GPG keys:
 
 <a name="hashicorp-vault"></a>
 
-### Hashicorp Vault
+### HashiCorp Vault
 
 In a Terminal:
 
-1. Install Hashicorp Vault program on your Mac:
+1. Install HashiCorp Vault program on your Mac:
 
    <pre><strong>brew upgrade vault</strong></pre>
 
@@ -495,7 +495,7 @@ In a Terminal:
 
    <pre>Vault v1.7.3 ('5d517c864c8f10385bf65627891bc7ef55f5e827+CHANGES')</pre>
 
-1. If you don't have a Hashicorp Vault server, follow my instructions to run it (for development/experimentation) locally at:
+1. If you don't have a HashiCorp Vault server, follow my instructions to run it (for development/experimentation) locally at:
 
    <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault">
    https://wilsonmar.github.io/hashicorp-vault</a>
@@ -505,9 +505,9 @@ In a Terminal:
 
    <pre>chmod +x vaultvalues.env</pre>
 
-1. Use an editor to customize environment variables, starting with the host name and port of your Hashicorp Vault server in VAULT_ADDR:
+1. Use an editor to customize environment variables, starting with the host name and port of your HashiCorp Vault server in VAULT_ADDR:
 
-   <pre># URL of the Hashicorp Vault server:
+   <pre># URL of the HashiCorp Vault server:
 export VAULT_ADDR=https://localhost:8200
 &nbsp;
 # The signing backend endpoint (transit or gpg) and optionally hashing function:
@@ -1041,7 +1041,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? _
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/75696173-26349580-5c79-11ea-9227-6731ccd22211.png"><img width="671" alt="git-signed-pass-form" src="https://user-images.githubusercontent.com/300046/75696173-26349580-5c79-11ea-9227-6731ccd22211.png"></a>
             
-   PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault/">Hashicorp Vault</a>), <strong>then</strong> copy it to paste in the prompt. This tactic is to ensure that you really can retrieve it when you use the key in a future command.
+   PROTIP: Save you <strong>Passphrase</strong> in a secure place (such as in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-vault/">HashiCorp Vault</a>), <strong>then</strong> copy it to paste in the prompt. This tactic is to ensure that you really can retrieve it when you use the key in a future command.
 
    REMEMBER: Don't reuse passwords and passphrases.
 

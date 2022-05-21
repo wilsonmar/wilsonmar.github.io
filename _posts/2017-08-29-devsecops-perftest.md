@@ -19,6 +19,8 @@ comments: true
 ## Valuable Insights
 Get <strong>hands-on</strong> experience with continuos integration using the latest versions of the most popular DevSecOps tools, all working together, end-to-end, in a set of servers participants control.
 
+{% include whatever.html %}
+
 Only this course provides participants a full set of <strong>several cloud-based servers</strong> to work on live during the class. This is an opportunity few get even with on-the-job experience.
 
 See how the <a target="_blank" href="https://wilsonmar.github.io/ci-cd">21 groups of DevOps technologies</a> work together in a complete <strong>toolchain</strong> that builds and deploy software: AWS CLI, Git, GitHub/GitLab, Maven/Yarn, Nexus, Jenkins/Cloudbees, Vault, SonarQube, Selenium, Terraform.
@@ -93,13 +95,13 @@ OpenStack LXC<br />
 
 ### Security
 SonarQube code scan run reports<br />
-Hashicorp Vault<br />
+HashiCorp Vault<br />
 Penetration testing<br />
 
 ### Scalable orchestration
-Hashicorp Packer<br />
+HashiCorp Packer<br />
 NetflixOSS<br />
-Hashicorp Consul<br />
+HashiCorp Consul<br />
 Blue/Green deployment<br />
 Failover test run<br />
 Google Kubernetes<br />

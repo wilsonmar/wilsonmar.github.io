@@ -26,6 +26,9 @@ Each approach has its own advantages and disadvantages:
 * <a href="#BootCamp">BootCamp</a>
 * <a href="#VMwareFusion">VMWare Fusion</a>
 * <a href="#Parallels">Parallels</a>
+<br /><br />
+
+{% include whatever.html %}
 
 <hr />
 
@@ -407,7 +410,7 @@ Docker provides a transparent interface to operating systems.
 
 ## Vagrant Virtualbox
 
-Vagrant (at <a target="_blank" href="https://www.vagrantup.com/">https://www.vagrantup.com</a>) is from Hashicorp, the same folks who provide Consul and Terraform.
+Vagrant (at <a target="_blank" href="https://www.vagrantup.com/">https://www.vagrantup.com</a>) is from HashiCorp, the same folks who provide Consul and Terraform.
 
 Vagrant provisions complete virtual machines (Unix, Linux, Mac, or Windows) inside the Mac operating system as virtual machines. The VMs are segregated from other processes. This allows you to test software in a variety of environments.
 
@@ -651,7 +654,7 @@ end
 
    ### Packer Templates
 
-0. Install Packer from Hashicorp. On a Mac <a target="_blank" href="http://brewformulas.org/Packer">use Homebrew</a> even though <a target="_blank" href="https://www.packer.io/docs/install/index.html">Hashicorp shows compiling</a>:
+0. Install Packer from HashiCorp. On a Mac <a target="_blank" href="http://brewformulas.org/Packer">use Homebrew</a> even though <a target="_blank" href="https://www.packer.io/docs/install/index.html">HashiCorp shows compiling</a>:
 
    <tt><strong>brew install packer
    </strong></tt>
@@ -935,7 +938,7 @@ macfusion-ng                                  vmware-fusion-tech-preview        
 
    ### Get Windows image
 
-1. See my article <a target="_blank" href="https://wilsonmar.github.io/packer/">Packer from Hashicorp within macOS</a> to create an ISO image of Windows with a license for the Windows operating system.
+1. See my article <a target="_blank" href="https://wilsonmar.github.io/packer/">Packer from HashiCorp within macOS</a> to create an ISO image of Windows with a license for the Windows operating system.
 
 
    ### Troubleshooting

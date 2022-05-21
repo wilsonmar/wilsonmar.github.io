@@ -20,6 +20,8 @@ To adopt DevOps with less stress and conflict,
 I believe teams need to recognize and reconcile the dichotomy between
 how coding with a "Hacker mentality" is different than coding with a "Sustainer mentality".
 
+{% include whatever.html %}
+
 Note that in this article, I refer to the "white hat" type of "Hackers" with reverance. To me, the "Hacker" designation means that the person seeks to do good. By contrast, "Crackers" intend to damage.<a target="_blank" href="https://www.quora.com/What-is-the-difference-between-hacker-and-cracker">*</a>
 <a target="_blank" href="https://qr.ae/TWmAGh">One commentator at Quora</a> said "Hackers are intellectually curious, like to understand at the core of how things work, and like to be creative with code."
 
@@ -91,7 +93,7 @@ This article provides examples of how each group can benefit from the other.
 
    Sustainers hunt for passwords already in files by periodically running a utility program to scan through the whole code base.
 
-   Secrets get "stale" and need to renewed periodically. That can be done automatically on schedule by <a target="_blank" href="https://wilsonmar.github.io/vault">Hashicorp's Vault</a>, AWS's SSM, or Gravitational's Teleport.
+   Secrets get "stale" and need to renewed periodically. That can be done automatically on schedule by <a target="_blank" href="https://wilsonmar.github.io/vault">HashiCorp's Vault</a>, AWS's SSM, or Gravitational's Teleport.
 
    Sustainers are also usually diligent to store changes made on servers to a repository so that when that particular server goes away, additional servers can be created using the changed configuration. Automation depends on this.
 

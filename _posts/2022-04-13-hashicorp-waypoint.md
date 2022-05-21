@@ -2,9 +2,9 @@
 layout: post
 date: "2022-04-13"
 file: "hashicorp-waypoint"
-title: "Hashicorp Waypoint"
+title: "HashiCorp Waypoint"
 excerpt: "Build, deploy, and release across platforms"
-tags: [Hashicorp, Kubernetes]
+tags: [HashiCorp, Kubernetes]
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -22,7 +22,7 @@ Here are my notes about technical aspects of how CI/CD can occur using a command
 
 ## Why?
 
-Among <a target="_blank" href="https://www.youtube.com/c/HashiCorp">Hashicorp's YouTube channel</a> is<br />
+Among <a target="_blank" href="https://www.youtube.com/c/HashiCorp">HashiCorp's YouTube channel</a> is<br />
 <a target="_blank" href="https://www.youtube.com/watch?v=JL0Qeq4A6So">this whiteboard overview</a> Oct 16, 2020 by HashiCorp Co-Founder and CTO, Armon Dadgar:
 
 1. Waypoint was <a target="_blank" href="https://www.youtube.com/watch?v=nasVKN7Wbtk">introduced in 2020 at the HashiConf Digital Keynote</a>
@@ -94,7 +94,7 @@ Among <a target="_blank" href="https://www.youtube.com/c/HashiCorp">Hashicorp's 
 
 https://www.waypointproject.io/docs/roadmap
 
-## About Hashicorp
+## About HashiCorp
 
 HashiCorp is the leader in multi-cloud infrastructure automation software. The HashiCorp software suite enables organizations to adopt consistent workflows to provision, secure, connect, and run any infrastructure for any application. 
 

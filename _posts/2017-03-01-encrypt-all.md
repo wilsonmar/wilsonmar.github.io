@@ -18,7 +18,9 @@ comments: true
 
 For storage "at rest" and while "in transit" over telecommunication lines,
 we encrypt <strong>clear (plain) text</strong> into unreadable (scrambled)
-<strong>cyphertext</strong>. 
+<strong>cyphertext</strong>.
+
+{% include whatever.html %}
 
 This tutorial aims to organize deep-dive insights and advice based on the combination of advice from several sources. Unlike others which first numb you with theory then have you mindlessly follow steps, I aim to provide commentary after each action.
 

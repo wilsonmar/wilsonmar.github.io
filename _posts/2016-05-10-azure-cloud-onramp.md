@@ -18,6 +18,8 @@ comments: true
 
 This is a deep-dive hands-on tutorial with commentary along the way, covering basic terminology and how to get an account into Azure, set MFA, use Active Directory. Search for what to "REMEMBER" to pass Microsoft's AZ-900 and AZ-104 exams.
 
+{% include whatever.html %}
+
 ## URLs for Microsoft and Azure
 
 
@@ -623,7 +625,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    * Resource groups
    <br /><br />
 
-   It's like Hashicorp's Terraform, which completely controls and maintains changes.
+   It's like HashiCorp's Terraform, which completely controls and maintains changes.
 
    * https://github.com/timothywarner/az500/tree/master/blueprints
    * https://github.com/terraform-providers/terraform-provider-azurerm
@@ -2456,7 +2458,7 @@ BLOG:  Pros & Cons</a>
 
 ## Terraform for Azure
 
-1. On a Mac, install using Homebrew instead of <a target="_blank" href="https://www.terraform.io/downloads.html">Download from Hashicorp website</a> or using 
+1. On a Mac, install using Homebrew instead of <a target="_blank" href="https://www.terraform.io/downloads.html">Download from HashiCorp website</a> or using 
 <tt>brew install terraform</tt>:
 
    <pre><strong>brew install tfenv

@@ -20,6 +20,8 @@ Here are my notes on resources for Cyber Security, which is a vast field. But ne
 
 > “Security is always excessive until it's not enough.” – Robbie Sinclair
 
+{% include whatever.html %}
+
 <hr />
 
 ## Zero Trust Security Approach

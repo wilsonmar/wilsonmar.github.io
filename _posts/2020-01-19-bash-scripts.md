@@ -59,7 +59,7 @@ This article describes a Bash script that, with a <strong>single command</strong
    23. Read secrets from a configuration file in clear text, encrypted file, Vault API using govaultenv
    24. Use CircleCI
    25. Use Yubikey
-   26. Use Hashicorp Vault
+   26. Use HashiCorp Vault
    27. Use NodeJs
    28. Run Virtualenv
    29. Configure Pyenv with virtualenv
@@ -111,7 +111,7 @@ OPTIONS:
 &nbsp;
    -s           -secrets retrieve
    -S "~/.alt.secrets.sh"  -Secrets full file path
-   -H           install/use -Hashicorp Vault secret manager
+   -H           install/use -HashiCorp Vault secret manager
    -m           Setup Vault SSH CA cert
 &nbsp;
    -L           use CircleCI
@@ -159,7 +159,7 @@ USAGE EXAMPLE during testing:
 ./sample.sh -v -W -r -k -a -o -K -D  # WebGoat Docker with Contrast agent
 ./sample.sh -v -s -eggplant -k -a -K -D  # eggplant use docker-compose of selenium-hub images
 ./sample.sh -v -S "$HOME/.mck-secrets.sh" -eks -D
-./sample.sh -v -S "$HOME/.mck-secrets.sh" -H -m -t    # Use SSH-CA certs with -H Hashicorp Vault -test actual server
+./sample.sh -v -S "$HOME/.mck-secrets.sh" -H -m -t    # Use SSH-CA certs with -H HashiCorp Vault -test actual server
 ./sample.sh -v -g "abcdef...89" -p "cp100-1094"  # Google API call
 ./sample.sh -v -n -a  # NodeJs app with MongoDB
 ./sample.sh -v -i -o  # Ruby app
@@ -277,7 +277,7 @@ GitHub_USER_EMAIL="john_doe@a.com"
 
 If that is not specified, or if the file is not found or variable not found, the script falls back to asking for manual input of the variables every run.
 
-In a forthcoming refactoring, we may add use of Hashicorp Vault, which puts another secret in place of the real secret.
+In a forthcoming refactoring, we may add use of HashiCorp Vault, which puts another secret in place of the real secret.
 
 ### Copy Sample files
 

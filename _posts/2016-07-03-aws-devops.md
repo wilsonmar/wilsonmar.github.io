@@ -20,6 +20,8 @@ comments: true
 AWS Certified DevOps Engineer - Professional</a> -- able to setup and manage continuous integration and deployment in the AWS cloud -- after paying $300 USD to <strong>write out</strong> 80 essay (not multiple-choice) questions in 170 minutes (3 hours with no breaks). <strong>That's 2.1 seconds per essay question.</strong>
 Those who fail the exam must wait 30 days before being allowed to retake the exam (at additional cost), and only 3 times in a 12 month period.
 
+{% include whatever.html %}
+
 The previous pre-requisite is passing either one:
 * https://aws.amazon.com/certification/certified-sysops-admin-associate/
 * https://aws.amazon.com/certification/certified-developer-associate/
@@ -265,7 +267,7 @@ this blog from 2013</a>.
 
 They said "We knew that application startup latency would be very important, especially during scale-up operations."
 
-This is simpler than Packer from Hashicorp.
+This is simpler than Packer from HashiCorp.
 
 
 ## Learning Resources #

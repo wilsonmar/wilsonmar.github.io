@@ -28,6 +28,8 @@ Conditions enabling leak of secrets from GitHub and other source repositories:
 8. <a href="#SSH_remains">SSH keys to access GitHub are static, subject to theft</a>
 <br /><br />
 
+{% include whatever.html %}
+
 <a name="HowTo"></a>
 
 Recommendations offered in this article:
@@ -649,7 +651,7 @@ In 2020 GitHub introduced the <strong>Secrets</strong> page within the Settings 
 
 Secrets are not passed to workflows that are triggered by a pull request from a fork.
 
-CAUTION: Anyone with collaborator access to this repository can use these secrets for Actions. So some prefer to store their secrets elsewhere, such as Hashicorp Vault or <a href="#CloudKeyStores">cloud key store</a>.
+CAUTION: Anyone with collaborator access to this repository can use these secrets for Actions. So some prefer to store their secrets elsewhere, such as HashiCorp Vault or <a href="#CloudKeyStores">cloud key store</a>.
 
 
 <hr />
@@ -994,7 +996,7 @@ The SSH protocol extension involves an additional <strong>SSH certificate file</
 
 The SSH certificate file is created by what is called a policy "wrapper" program because it wraps policies around the public key, such as limiting the life span of the key wrapped to 24 hours. 
 
-The Policy Wrapper program is a <strong>Hashicorp Vault</strong> server maintained by an enterprise.
+The Policy Wrapper program is a <strong>HashiCorp Vault</strong> server maintained by an enterprise.
 
 To ensure the authenticity of certificates, GitHub references another public key -- the <strong>Certificate Authority</strong> public key generated on the Vault server and pasted into GitHub by the administrator.
 

@@ -19,6 +19,8 @@ comments: true
 
 ![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
 
+{% include whatever.html %}
+
 Analysis of corporate S-1 filings identified significant spend as percentage of Total Revenue:
 
 ![cloud-svcs-spend-1312x560](https://user-images.githubusercontent.com/300046/138592222-e294f7e7-7271-4da8-83d6-fead30969d83.png)
@@ -109,7 +111,7 @@ There are different ways to make use of cloud infrastructure:
 
 ## Individuals must pick a single cloud?
 
-Organizations are going multi-cloud by using software from Hashicorp, Snowflake for database, etc.
+Organizations are going multi-cloud by using software from HashiCorp, Snowflake for database, etc.
 
 But an individual has a limited amount of time to keep up with changes.
 So many individual technologists need to select the cloud vendor which provides the best career prospects. Here's my logic:
@@ -153,7 +155,7 @@ Major multi-cloud vendors include Oracle, SalesForce's Heroku, SkyTap, etc.
 
 Software for private clouds include Red Hat OpenStack and VMWare. 
 
-Software for hybrid private/public clouds include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, Hashicorp Terraform, and others.
+Software for hybrid private/public clouds include <a target="_blank" href="https://github.com/cloudfoundry/bosh">CloudFoundry</a>, HashiCorp Terraform, and others.
 [NetApp](http://www.netapp.com/us/solutions/cloud/hybrid-cloud/), or [EMC](http://www.emc.com/en-us/cloud/hybrid-cloud-computing/index.htm)
 
 EDITOR's NOTE: This is not a complete treatment. 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Hashicorp Vault (with Consul and Nomad)"
+title: "HashiCorp Vault (with Consul and Nomad)"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
 tags: [vault, hashicorp, security, secrets]
-date: "2022-03-18"
+date: "2022-05-18"
 file: "hashicorp-vault"
 image:
 # pic secret finger over mouth 1900x500
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Hashicorp Vault's basic job is to provide applications <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> to access databases and other services:
+HashiCorp Vault's basic job is to provide applications <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> to access databases and other services:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
 
@@ -39,7 +39,7 @@ This course assumes participants bring a Mac or Windows laptop and have prior ex
 
 Vault's secret handling features are provided several ways. The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
-   * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (Hashicorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
+   * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
 
    * <a href="#VaultAgent">On your laptop install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
 
@@ -55,10 +55,10 @@ Vault's secret handling features are provided several ways. The unique contribut
 
 <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
 
-Here is a hands-on tutorial about how to install and use Hashicorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
+Here is a hands-on tutorial about how to install and use HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
 
 <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
-Hashicorp provides Vault free under open-source licensing. Pay for an Enterprise license for MFA, Replication, Diaster Recovery, Namespaces, Monitoring, FIPS 140-2 and quicker support. Hashicorp can provide a list of services partners.
+HashiCorp provides Vault free under open-source licensing. Pay for an Enterprise license for MFA, Replication, Diaster Recovery, Namespaces, Monitoring, FIPS 140-2 and quicker support. HashiCorp can provide a list of services partners.
 
 https://github.com/hashicorp/vault-guides
 provides the technical content to support the Vault learn site.
@@ -128,7 +128,7 @@ Coverage of what features a secrets service should have:
 
 ## Competitors
 
-Alternatives to Hashicorp Vault include
+Alternatives to HashiCorp Vault include
 
    * Vormetrix
 
@@ -137,13 +137,13 @@ Alternatives to Hashicorp Vault include
    * <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
 
 
-## Hashicorp's Value Proposition
+## HashiCorp's Value Proposition
 
-Hashicorp first released Vault in 2015.
+HashiCorp first released Vault in 2015.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">
 VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
-by Armon Dadgar, Hashicorp's CTO,
+by Armon Dadgar, HashiCorp's CTO,
 is a whiteboard talk about avoiding "secret sprawl" living in clear text with
 empheral (temporary) passwords and cryptographic offload to a central service:
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
@@ -151,15 +151,15 @@ empheral (temporary) passwords and cryptographic offload to a central service:
 As of this writing, a unique strong point with Vault is that it can
 change the value of an existing secret (key rotation) without rebooting. 
 
-Hashicorp Vault can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
+HashiCorp Vault can be deployed to practically any environment, and does not require any special hardware (such as physical HSMs (Hardware Security Modules).
 
-The value that Hashicorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
 
-Toward that, Hashicorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
+Toward that, HashiCorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
 
 Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
 
-Vault from Hashicorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
 
 
 ## Alternatives to secret management
@@ -227,7 +227,7 @@ database_password = get_secret('db_pass')
 
 ## Vault Skill Certification
 
-In 2020 Hashicorp offers (for just $70) an on-line certification exam for Vault.
+In 2020 HashiCorp offers (for just $70) an on-line certification exam for Vault.
 Answer 57 questions in 60 minutes.
 You must wait 7 days between exam attempts.
 You can only attempt an exam 4 times total in a one year period. 
@@ -563,12 +563,12 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss</
 <a target="_blank" href="
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html#1">
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
-is the slidedeck Hashicorp Sales Engineers use for a high-level presentation.
+is the slidedeck HashiCorp Sales Engineers use for a high-level presentation.
 
 The <strong>Vault Database secrets engine</strong> generates dynamic, time-bound credentials for many different databases. Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by Roger Berlind) 
 walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=scHCqmR25BE">"Hashicorp Vault Dynamic Secrets Demo" by TeKanAid
+   * <a target="_blank" href="https://www.youtube.com/watch?v=scHCqmR25BE">"HashiCorp Vault Dynamic Secrets Demo" by TeKanAid
 
 
 <a name="VaultSaaS"></a>
@@ -675,7 +675,7 @@ To <a target="_blank" href="Provision a Quick Start Vault & Consul Cluster on AW
 
 Consul coordinates several instances of Vault server software.
 
-Using Hashicorp's Consul as a <strong>backend</strong> to Vault provides durable storage of encrypted data at rest necessary for fault tolerance, availability, and scalability.
+Using HashiCorp's Consul as a <strong>backend</strong> to Vault provides durable storage of encrypted data at rest necessary for fault tolerance, availability, and scalability.
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198511-5b2ea3df-6b48-499f-bee8-f73ea8e778bd.png"><img width="1533" alt="valut-consul-flow" src="https://user-images.githubusercontent.com/300046/159198511-5b2ea3df-6b48-499f-bee8-f73ea8e778bd.png"></a>
 
@@ -731,7 +731,7 @@ Using Hashicorp's Consul as a <strong>backend</strong> to Vault provides durable
 
 ## Nomad
 
-Hashicorp Nomad passes secrets as files. 
+HashiCorp Nomad passes secrets as files. 
 
 It polls for changed values. Tasks get tokens so they can retrieve values.
 
@@ -757,7 +757,7 @@ It works on many major operating systems with no runtime requirements. On MacOS:
 
 Envconsul is also available via a Docker container for scheduled environments.
 
-Secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault based on a configuration file. A sample of its contents is this, which requests the api-key field of the secret at <em>secret/production/third-party</em>:
+Secrets are requested based on a <strong>specification of secrets</strong> to be fetched from HashiCorp Vault based on a configuration file. A sample of its contents is this, which requests the api-key field of the secret at <em>secret/production/third-party</em>:
 
    <ul><pre>production/third-party#api-key</pre></ul>
 
@@ -783,7 +783,7 @@ Seveal utilities have been created for that:
 
 ## Instruqt Basic Course
 
-Hashicorp provides hands-on courses at <a target="_blank" href="https://play.instruqt.com/login">https://play.instruqt.com/login</a>.
+HashiCorp provides hands-on courses at <a target="_blank" href="https://play.instruqt.com/login">https://play.instruqt.com/login</a>.
 
 After given 30-day access to <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-basics">
 the Vault Basics course</a>, its lessons are for running in <a target="_blank" href="https://www.vaultproject.io/docs/concepts/dev-server/">dev mode</a>:
@@ -978,7 +978,7 @@ cluster_name = "my_cluster"
    Finally, log into the Vault UI with your root token. If you have problems, double-check that you ran all of the above commands.
 
 
-* Enable and use an instance of Hashicorp's <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
+* Enable and use an instance of HashiCorp's <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
 
    <pre><strong>vault secrets enable -version=2 kv</strong></pre>
 
@@ -1016,7 +1016,7 @@ CAUTION: When secrets in Vault change, Vaultenv does not automatically restart s
 By comparison, <a target="_blank" href="https://github.com/hashicorp/envconsul">envconsul from HashiCorp</a> (also describe here), 
 daemonizes and spawns child processes to manage the lifecycle of the process it provides secrets.
 
-Within its configuration file, secrets are requested based on a <strong>specification of secrets</strong> to be fetched from Hashicorp Vault, such as this requesting the api-key field of the secret at secret/production/third-party.
+Within its configuration file, secrets are requested based on a <strong>specification of secrets</strong> to be fetched from HashiCorp Vault, such as this requesting the api-key field of the secret at secret/production/third-party.
 
    <ul><pre>production/third-party#api-key</pre></ul>
 
@@ -1036,7 +1036,7 @@ A system service file is needed for prod instances.
 
 PROTIP: Vault has a single program file for server and client.
 
-There are several ways to obtain a running instance of Hashicorp Vault,
+There are several ways to obtain a running instance of HashiCorp Vault,
 listed from easiest to most difficult:
 
 CAUTION: If you are in a large enterprise, confer with your security team before 
@@ -1057,7 +1057,7 @@ B. <a href="Homebrew">Use Homebrew to install Vault locally on MacOS</a>.
 
 C. <a href="#DockerHub">Pull an image from Docker Hub</a> 
 
-D. <a href="#BinaryInstall">Download from Hashicorp to install locally</a>.
+D. <a href="#BinaryInstall">Download from HashiCorp to install locally</a>.
 
 E. <a href="#Dockerfile">Use a Dockerfile to build your own Docker image.</a> 
    if you're not using vault frequently, and want to get the latest when you do.
@@ -1649,7 +1649,7 @@ log files:
 
 1. Start the Docker daemon
 
-1. Download the Docker image maintained by Hashicorp at <a target="_blank" href="https://hub.docker.com/_/vault/">https://hub.docker.com/_/vault</a>
+1. Download the Docker image maintained by HashiCorp at <a target="_blank" href="https://hub.docker.com/_/vault/">https://hub.docker.com/_/vault</a>
 
    <pre><strong>docker pull vault 
    </strong></pre>
@@ -1662,11 +1662,11 @@ log files:
 
    <a target="_blank" href="https://hub.docker.com/r/sjourdan/vault/">
    https://hub.docker.com/r/sjourdan/vault</a>
-   has Hashicorp Vault on a minimal Alpine Linux box
+   has HashiCorp Vault on a minimal Alpine Linux box
 
    <a target="_blank" href="https://hub.docker.com/r/kintoandar/hashicorp-vault/">
    https://hub.docker.com/r/kintoandar/hashicorp-vault</a>
-   has Hashicorp Vault on a tiny busybox
+   has HashiCorp Vault on a tiny busybox
 
 0. Set environment variables so IP addresses used for the redirect and cluster addresses in Vault's configuration is the address of the named interface inside the container (e.g. eth0):
 
@@ -1702,11 +1702,11 @@ Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/v
 <a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
 
 
-1. Hashicorp's steps for installing Vault are at
+1. HashiCorp's steps for installing Vault are at
    <a target="_blank" href="https://vaultproject.io/docs/install/">
    https://vaultproject.io/docs/install</a>.
 
-0. Installers for a large number of operating systems are downloaded from Hashicorp's website:
+0. Installers for a large number of operating systems are downloaded from HashiCorp's website:
 
    <a target="_blank" href="https://www.vaultproject.io/downloads.html">
    https://www.vaultproject.io/downloads.html</a>
@@ -1935,7 +1935,7 @@ describes "A unified interface to manage and encrypt secrets on the AWS Cloud".
 ### Install Vault within AWS EKS cluster
 
 <a target="_blank" href="https://www.hashicorp.com/blog/announcing-the-vault-helm-chart/">
-Hashicorp announced a Helm chart to setup Vault in Kubernetes</a>
+HashiCorp announced a Helm chart to setup Vault in Kubernetes</a>
 
 https://www.vaultproject.io/docs/platform/k8s/helm
 
@@ -1995,7 +1995,7 @@ https://github.com/jenkinsci/hashicorp-vault-plugin</a>
 is a Jenkins plug-in to establish a build wrapper to 
 populate environment variables from secrets stored in HashiCorp's Vault.
 It uses the "App Role" authentication backend which 
-Hashicorp explicitly recommends for machine-to-machine authentication.
+HashiCorp explicitly recommends for machine-to-machine authentication.
 
 The plug-in allows use of a GitHub/GitLab personal access token
 Github Access Token (https://github.com/blog/1509-personal-api-tokens)
@@ -2114,7 +2114,7 @@ https://holdmybeersecurity.com/2020/11/24/integrating-vault-secrets-into-jupyter
 
 ### Vault CLI Katakoda hands-on lab
 
-The hands-on Katakoda lab <a target="_blank" href="https://katacoda.com/courses/docker-security/vault-secrets">Store Secrets using Hashicorp Vault</a>  makes use of a <tt>vault.hcl</tt> file:
+The hands-on Katakoda lab <a target="_blank" href="https://katacoda.com/courses/docker-security/vault-secrets">Store Secrets using HashiCorp Vault</a>  makes use of a <tt>vault.hcl</tt> file:
 
 <pre>backend "consul" {
   address = "consul:8500"
@@ -2424,12 +2424,12 @@ That .env file name is specified in the .gitignore so it is ignored when pushing
 
 <a target="_blank" href="https://learn.hashicorp.com/vault">https://learn.hashicorp.com/vault</a>
 
-On <a target="_blank" href="https://www.youtube.com/channel/UC-AdvAxaagE9W2f0webyNUQ">Hashicorp's YouTube channel</a>:
+On <a target="_blank" href="https://www.youtube.com/channel/UC-AdvAxaagE9W2f0webyNUQ">HashiCorp's YouTube channel</a>:
    * <a target="_blank" href="https://www.youtube.com/watch?v=0GmPUeHW2Kw" title="Feb 23, 2022 by Justin Weissig">
    "Multi-region Replication with HCP Vault"</a> HCP Vault Plus
    <br /><br />
 
-<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using Hashicorp Vault"</a> provides a web-based interactive bash terminal.
+<a target="_blank" href="https://www.katacoda.com/courses/docker-production/vault-secrets">Katacode's "Store Secrets using HashiCorp Vault"</a> provides a web-based interactive bash terminal.
 
 <a target="_blank" href="https://learn.acloud.guru/course/hashicorp-vault/overview">ACloudGuru.com's HashiCorp Vault</a> 18 hour video course by <a target="_blank" href="https://www.linkedin.com/in/ermin-kreponic-0a420715b/">Ermin Kreponic (a resident of Sarajevo)</a>.
 

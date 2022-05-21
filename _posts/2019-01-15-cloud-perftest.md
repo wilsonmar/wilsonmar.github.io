@@ -866,7 +866,7 @@ AWS has its CloudFormation YAML declarative specifications are "configuration as
 stored in a version control repository such as GitHub, which enables fall-back to the complete set of files at various points back in time.
 Puppet then puts instances into a specific state.
 
-Hashicorp's Terraform equivalent HCL (which adds comments to YAML) is "multi-cloud" (stands up instances in AWS, Azure, GCP, etc.).
+<a target="_blank" href="https://wilsonmar.github.io/terraform">HashiCorp's Terraform</a> equivalent HCL (which adds comments to YAML) is "multi-cloud" (stands up instances in AWS, Azure, GCP, etc.).
 
 
 There are some differences in settings during testing vs. during production. For example, production Auto-Scaling Termination Policies would use "ClosestToNextInstanceHour" to save some money for Windows instances which are charged by the hour rather than Linux instances which are charged by the minute.

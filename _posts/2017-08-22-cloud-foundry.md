@@ -19,6 +19,8 @@ comments: true
 Here is a <strong>hands-on</strong> introduction to Cloud Foundry.
 Concepts are introduced after you take a small action, followed by succinct commentary, with links for more.
 
+{% include whatever.html %}
+
 A lot of thought has gone into the sequencing of information presented 
 so that you learn in the least time possible.
 
@@ -1267,7 +1269,7 @@ If an error occurs, the client side needs to report it and deal with the client 
 
 There are various other implementations of the The GoRouter's design pattern,
 such as <a target="_blank" href="https://coreos.com/etcd/">CoreOS Etcd</a>, 
-Hashicorp Consul, and Puppet Zookeeper. 
+HashiCorp Consul, and Puppet Zookeeper. 
 There are also the Spring Cloud implementations of Eureka and Consul.
 
 <a target="_blank" href="https://docs.google.com/document/d/1qdLNIWQQzluXw5rnc39raAYOnnSdDUjhUOrovUE0NJI/edit#heading=h.f54rg2dpu35y">NOTE</a>: A large effort to remove the Consul open source project from the Cloud Foundry platform’s internal architecture is in progress. 

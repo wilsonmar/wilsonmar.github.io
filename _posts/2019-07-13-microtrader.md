@@ -136,7 +136,7 @@ PROTIP: Since there is a flood of responses, there is a provision in the script 
    * MFA (Multi-factor Authentication) in AWS
    * NodeJS 4.x or higher (to install the npm package manager)
    * Python programming language 2.7.14
-   * <a target="_blank" href="https://packer.io/docs/installation.htm">Packer from Hashicorp</a> 
+   * <a target="_blank" href="https://packer.io/docs/installation.htm">Packer from HashiCorp</a> 
    * <a target="_blank" href="https://wilsonmar.github.io/text-editors">Text editor</a> Sublime Text 3 with (darker) Material Theme.
    * iTerm2 Terminal app for Mac
    * brew install tree - 1.7.0
@@ -440,7 +440,7 @@ From the repo we use file `files/firstrun.sh` to do the same but also
    * provisioners configure software to run images
    * processors build artifacts from images
 
-1. Run Packer (from Hashicorp):
+1. Run Packer (from HashiCorp):
 
    <pre><strong>packer build packer.json</strong></pre>
 

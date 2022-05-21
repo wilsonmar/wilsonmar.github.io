@@ -19,6 +19,8 @@ comments: true
 
 "Service mesh" architecture is about microservices applications working within a "control plane" a standard way to hand-off service-to-service access control authentication, encrypted communications, monitoring, logging, timeout handling, load balancing, health checks, and other operational cross-cutting concerns to a sidecar proxy within its pod, which works with a <strong>control plane</strong> common to all services. 
 
+{% include whatever.html %}
+
 Decentralized microservices apps Dockerized for running in containers make all network communication through its sidecar proxy (like handing a box to UPS to deliver). 
 
 <a target="_blank" href="https://blog.envoyproxy.io/introduction-to-modern-network-load-balancing-and-proxying-a57f6ff80236" title="Dec 27, 2017 by Matt Klein, Engineer @lyft (https://mattklein123.dev/)">BLOG</a>:

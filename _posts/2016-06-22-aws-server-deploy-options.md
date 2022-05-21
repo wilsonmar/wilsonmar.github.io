@@ -19,6 +19,8 @@ comments: true
 <a href="https://wilsonmar.github.io/aws-server-deploy-options/">
 This tutorial</a> describes the options AWS provides to automate setup of multi-stage (dev+QA+prod) enterprise environments within EC2.
 
+{% include whatever.html %}
+
 The options:
 
    * <a href="#ManualConfig">Manually configure</a> the various components using the
@@ -36,7 +38,7 @@ The options:
    * <a href="#AnsibleCF">Ansible using CloudFormation</a>.
 
    * Value-added services outside Amazon, such as <a target="_blank" href="https://www.hashicorp.com/#products">
-   Terraform (and licensed Atlas) from Hashicorp</a>.
+   Terraform (and licensed Atlas) from HashiCorp</a>.
 
 
 <hr />

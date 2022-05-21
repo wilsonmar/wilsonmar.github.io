@@ -60,7 +60,7 @@ Google Material Design
 
 Facebook
 
-<a target="_blank" href="https://design-system-components-hashicorp.vercel.app/">Hashicorp's Design System</a>
+<a target="_blank" href="https://design-system-components-hashicorp.vercel.app/">HashiCorp's Design System</a>
 
 
 

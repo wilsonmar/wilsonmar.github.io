@@ -202,7 +202,7 @@ Inside the program are <strong>feature flags<strong> which the program reference
       1. <a href="use_azure">Retrieve secrets from Azure Key Vault  = use_azure</a>
       2. <a href="use_aws">Retrieve secrets from AWS KMS         = use_aws</a>
       3. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
-      4. <a href="#use_vault">Retrieve secrets from Hashicorp Vault = use_vault</a>
+      4. <a href="#use_vault">Retrieve secrets from HashiCorp Vault = use_vault</a>
 
    11. Applications processing user input with persistance:
       1. <a href="#categorize_bmi">Calculte BMI using units of measure based on country = categorize_bmi</a>
@@ -227,7 +227,7 @@ The program precedence of override:
    1. Prompts of the user from inside the running program (such as for Zip Code) overrides
    2. <a href="#ParseArguments">parameter specifications</a> at run-time, which overrides
    3. key text retrieved from OS Keyring, which overrides
-   4. what is retrieved from Azure, AWS, GCP, Hashicorp Vault, which overrides
+   4. what is retrieved from Azure, AWS, GCP, HashiCorp Vault, which overrides
    5. what is specified in <a href="#run_env">persistent environment (.env) file</a>, which overrides
    6. what is (can safely be) hard-coded in program code, which overides
    7. what is obtained from the operating system.
@@ -829,7 +829,7 @@ Some use this mechanism to retrieve API keys to services that do not ask for per
 But storing any secret in a clear-text (unencrypted) file containing is not recommended.
 
 CAUTION: Leaving secrets anywhere on a laptop is dangerous. One click on a malicious website and it can be stolen.
-It's safer to use a cloud vault such as Amazon KMS, Azure, Hashicorp Vault after signing in.
+It's safer to use a cloud vault such as Amazon KMS, Azure, HashiCorp Vault after signing in.
    * https://blog.gruntwork.io/a-comprehensive-guide-to-managing-secrets-in-your-terraform-code-1d586955ace1#bebe
    * https://vault-cli.readthedocs.io/en/latest/discussions.html#why-not-vault-hvac-or-hvac-cli
    <br /><br />
@@ -1628,7 +1628,7 @@ https://www.youtube.com/watch?v=lKra6E_tp5U&t=0s
 
 <a name="HashicorpVault"></a>
 
-## SECTION 17. Retrieve secrets from Hashicorp Vault
+## SECTION 17. Retrieve secrets from HashiCorp Vault
 
 See my <a targt="_blank" href="https://wilsonmar.github.io/">wilsonmar.github.io/hashicorp-vault</a>.
 
@@ -1679,7 +1679,7 @@ On Ubuntu:
    <pre>setcap -r /usr/bin/vault</pre>
 
 
-1. Get the URL of the Hashicorp Vault instance you'll be using.
+1. Get the URL of the HashiCorp Vault instance you'll be using.
 
    To use Docker Compose to run a contaiinerized Vault instance on your laptop for testing, see
    https://modularsystems.io/blog/securing-secrets-python-vault/
@@ -1766,12 +1766,12 @@ References:
    * https://medium.com/hashicorp-engineering/coding-for-secrets-reliability-with-hashicorp-vault-2090dd8667e
    * https://www.youtube.com/watch?v=SLB_c_ayRMo - Terraform Course - Automate your AWS cloud infrastructure on freeCodeCamp.org
 
-   * https://www.youtube.com/watch?v=-leJQ20Nu0c - Hashicorp Vault without Hassle - Eric Feliksik by TheSmartbit (2017)
+   * https://www.youtube.com/watch?v=-leJQ20Nu0c - HashiCorp Vault without Hassle - Eric Feliksik by TheSmartbit (2017)
 
    * https://www.youtube.com/watch?v=YGs438aJtZg - HashiCorp Vault Azure Secrets Engine Demo
-   * https://www.youtube.com/watch?v=ZWaKF-UXtx8 - Hashicorp Vault PKI Secrets Engine Demo for Certificate Management by TeKanAid
+   * https://www.youtube.com/watch?v=ZWaKF-UXtx8 - HashiCorp Vault PKI Secrets Engine Demo for Certificate Management by TeKanAid
 
-   * https://www.youtube.com/watch?v=G46ovYs_9hs - CloudAcademy Hashicorp: Vault Identity
+   * https://www.youtube.com/watch?v=G46ovYs_9hs - CloudAcademy HashiCorp: Vault Identity
    * https://fakrul.wordpress.com/2020/06/06/python-script-credentials-stored-in-hashicorp-vault/
    * https://learn.hashicorp.com/tutorials/vault/static-secrets
    * https://discuss.hashicorp.com/t/python-code-to-access-static-secret-to-access-snowflake-database/23059
@@ -1839,7 +1839,7 @@ References:
 
 <a name="use_vault"></a>
 
-##  17. Retrieve secrets from Hashicorp Vault = use_vault
+##  17. Retrieve secrets from HashiCorp Vault = use_vault
 
 https://www.amazon.com/Running-HashiCorp-Vault-Production-McTeer-ebook/dp/B08JJLGMZ3/
 

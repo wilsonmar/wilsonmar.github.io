@@ -16,13 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to learn to use Hashicorp's Terraform to build, change, and version resources running in <a href="#MultiCloud">multiple cloud platforms</a>. The sequence of topics has been carefully arranged for quicker learning, based on <a href="Tutorials">various tutorials on this topic</a>.
+This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to learn to use HashiCorp's Terraform to build, change, and version resources running in <a href="#MultiCloud">multiple cloud platforms</a>. The sequence of topics has been carefully arranged for quicker learning, based on <a href="Tutorials">various tutorials on this topic</a>.
 
-NOTE: This (and all other content on this website) expresses my personal opinion and not from any employer, past or present.
+{% include whatever.html %}
 
 ## What is Terraform?
 
-<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (Hashicorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
+<a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (HashiCorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
 "Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
 
@@ -109,7 +109,7 @@ PROTIP: Run a shell/Python file to automate the above.
 <a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">*</a>
 ensure code reviews.
 
-Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined Hashicorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
+Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined HashiCorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
 It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
 
 Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
@@ -259,7 +259,7 @@ This page houses both links and my notes to pass the <a target="_blank" href="ht
    * 48 hour cancellation
 1. There is a <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us">Exam FAQ</a>
 1. Click <a target="_blank" href="https://learn.hashicorp.com/collections/terraform/certification">"Click here to go to the exam platform"</a> for the "Continue with GitHub".
-1. Authorize Hashicorp to use your GitHub credentials to register for exam at the <a target="_blank" href="https://home.psiexams.com/#/dashboard/regular-dashboard">PSI Exam website</a>
+1. Authorize HashiCorp to use your GitHub credentials to register for exam at the <a target="_blank" href="https://home.psiexams.com/#/dashboard/regular-dashboard">PSI Exam website</a>
 1. Click "Schedule" to the right of "HashiCorp Certified: Terraform Associate - Ready to Schedule"
 1. Select Country & Timezone. Click a day in green. Click a range of hours. Click a specific hour. Click Continue.
 1. In the pop-up, click Continue for "Booking created successfully". Close.
@@ -276,7 +276,7 @@ This page houses both links and my notes to pass the <a target="_blank" href="ht
 
 The exam expires in 2 years.
 
-Hashicorp doesn't have a deeper/more difficult "Professional level" cert at time of writing.
+HashiCorp doesn't have a deeper/more difficult "Professional level" cert at time of writing.
 
 
 <hr />
@@ -553,7 +553,7 @@ Installation of terraform v1.0.5 successful. To make this your default version, 
    PROTIP: The above commands create folder <strong>.terraform.d</strong> on your $HOME folder, containing files `checkpoint_cache` and `checkpoint_signature`.
 
    See <a target="_blank" href="https://www.hashicorp.com/blog/announcing-terraform-0-12">
-   Hashicorp's blog</a> about version announcements.
+   HashiCorp's blog</a> about version announcements.
 
 3. Make the latest the default:
 
@@ -714,7 +714,7 @@ You'll need a text editor with plugins to view HCL:
 code main.tf
    </strong></pre>
 
-1. In VSCode, press shift+command+X or click the bottom-left menu icon and select "Extensions" to select the add-on from Hashicorp
+1. In VSCode, press shift+command+X or click the bottom-left menu icon and select "Extensions" to select the add-on from HashiCorp
 
    <img width="516" alt="terraform-vscode-addon-1032x470" src="https://user-images.githubusercontent.com/300046/158066434-38527f03-a729-4fe4-aa92-61488c27be2a.png">
 
@@ -1202,11 +1202,11 @@ For example:
 
 <a name="HCL"></a>
 
-## HCL (Hashicorp Configuration Language) comments
+## HCL (HashiCorp Configuration Language) comments
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
 
-   Terraform defined HCL (Hashicorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
+   Terraform defined HCL (HashiCorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
    https://www.terraform.io/docs/configuration/syntax.html">
    https://www.terraform.io/docs/configuration/syntax.html</a>.
    
@@ -2303,8 +2303,8 @@ For AWS in <a target="_blank" href="https://github.com/terraform-aws-modules/">g
 
 ### Vault
 
-Hashicorp Vault can store long-lived credentials in a secure way and dynamically inject short-lived, temporary keys to Terraform at deployment. <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">https://registry.terraform.io/modules/hashicorp/vault</a>
-module installs Hashicorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. 
+HashiCorp Vault can store long-lived credentials in a secure way and dynamically inject short-lived, temporary keys to Terraform at deployment. <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault">https://registry.terraform.io/modules/hashicorp/vault</a>
+module installs HashiCorp's own Vault and Consul on <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/aws/">AWS EC2</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/azurerm/">Azure</a>, <a target="_blank" href="https://registry.terraform.io/modules/hashicorp/vault/google/">GCP</a>. 
 
 <a target="_blank" href="https://www.youtube.com/watch?v=LVgP63BkhKQ&t=15m46s">Video of demo</a> by Yevgeniy Brikman:
 <a target="_blank" title="terraform-mod-vaults-1168x207-37317.jpg" href="https://user-images.githubusercontent.com/300046/39780285-1426518c-52c9-11e8-9544-8cac52ff2297.jpg">
@@ -2814,7 +2814,7 @@ abc-stage-fe.sh
    
    Within <tt>abc-dev-fe.sh</tt> For local development only on a laptop, <strong>unencrypt</strong> a <tt>local.tfvars</tt> file.
 
-   For other environments running in the cloud, retrieve a <tt>*.tfvars</tt> file from a trusted cloud vault storage  (such as a Hashicorp Vault, Azure Key Vault, AWS Secrets Manager, etc.).
+   For other environments running in the cloud, retrieve a <tt>*.tfvars</tt> file from a trusted cloud vault storage  (such as a HashiCorp Vault, Azure Key Vault, AWS Secrets Manager, etc.).
 
    References: 
    * https://learn.hashicorp.com/tutorials/terraform/sensitive-variables?in=terraform/0-14
@@ -3141,7 +3141,7 @@ In a team environment, it helps to store state state files off a local disk and 
    ### Remote state
 
    <a target="_blank" href="https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa">NOTE</a>
-   terraform.tfstate can be stored over the network in S3, etcd distributed key value store (used by Kubernetes), or a Hashicorp Atlas or Consul server. (Hashicorp Atlas is a licensed solution.)
+   terraform.tfstate can be stored over the network in S3, etcd distributed key value store (used by Kubernetes), or a HashiCorp Atlas or Consul server. (HashiCorp Atlas is a licensed solution.)
 
 1. State can be obtained using command:
 
@@ -3159,7 +3159,7 @@ In a team environment, it helps to store state state files off a local disk and 
    Terraform can manage state through these backends which persists (stores) data:
 
    * local (the default)
-   Hashicorp products:
+   HashiCorp products:
       * Terraform Enterprise (cloud)
       * Consul (a distributed key-value store)
       * Atlas 
@@ -3323,7 +3323,7 @@ output news_server {
 
 ## Workspaces
 
-NOTE: The <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/">Terragrunt</a> wrapper for terraform plan/apply/destroy commands (and in file <tt>terraform.tfvars</tt>) provide an alternative to Hashicorp's Workspaces feature (described at https://www.terraform.io/docs/state/workspaces.html).
+NOTE: The <a target="_blank" href="https://github.com/gruntwork-io/terragrunt/">Terragrunt</a> wrapper for terraform plan/apply/destroy commands (and in file <tt>terraform.tfvars</tt>) provide an alternative to HashiCorp's Workspaces feature (described at https://www.terraform.io/docs/state/workspaces.html).
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=10h55m39s">VIDEO</a>:
 Workspaces enable management of multiple "environments" in alternate state files (dev, qa, stage, prod).
@@ -3544,7 +3544,7 @@ sudo service httpd start
 sudo service httpd enable
    </pre></ul>
 
-Packer (from Hashicorp) is an automated image-build service for multiple clouds.
+Packer (from HashiCorp) is an automated image-build service for multiple clouds.
 
    Provisioner definitions define the properties of each resource, such as initialization commands. 
    
@@ -3621,7 +3621,7 @@ Provisioner configurations are also plugins for Ansible configuration management
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=2h4m2s">VIDEO</a>:
 "Local" is where Terraform commands are run, which can be your laptop/workstation or
 on a build server (Jenkins, GitHub Actions, GCP Cloud Build, AWS Code Build, etc.).
-Another example is within Hashicorp's "Terraform Cloud Run Environment" of single-use Linux virtual machine.
+Another example is within HashiCorp's "Terraform Cloud Run Environment" of single-use Linux virtual machine.
 
 <a target="_blank" href="https://www.terraform.io/docs/enterprise/runs/installing-software.html">NOTE</a>: Software can be specified for installation using Packer's `local-exec` provisioner which executes commands on host machines. For example:
 
@@ -3679,7 +3679,7 @@ As a general rule, use Ansible for repetitive on-going maintenance tasks such as
 
    <a target="_blank" href="https://github.com/adammck/terraform-inventory">Terraform Inventory</a> extract from the state file the IP addresses for use by ab Ansible playbook to configure nodes.
 
-   Ansible can use hash_vault to retrieve secrets from a Hashicorp Vault.
+   Ansible can use hash_vault to retrieve secrets from a HashiCorp Vault.
 
    References:
    * https://www.hashicorp.com/resources/ansible-terraform-better-together
@@ -4048,7 +4048,7 @@ co-founder of DevOps as a Service <a target="_blank" href="https://Gruntwork.io/
 
 <strong>James Nugent</strong>
 
-   * Engineer at Hashicorp
+   * Engineer at HashiCorp
 
 
 <strong>dtan4</strong>
@@ -4079,11 +4079,11 @@ that he hopes to open-source at <a target="_blank" href="https://github.com/unde
 * <a target="_blank" href="https://www.terraform.io/docs/glossary"> Glossary of Terraform terms</a>
 
 * <a target="_blank" href="https://www.terraform.io/intro/getting-started/install.html">
-   Official Getting Started docs at Hashicorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
+   Official Getting Started docs at HashiCorp</a> focus on individual elements (i.e. resources, input variables, output variables, etc).
 
 At the top of the list is the in-depth videos and <strong>hands-on labs with quizzes</strong> of
 <a target="_blank" href="https://kodekloud.com/courses/hashicorp-certified-terraform-associate/">
-KodeKloud's "Hashicorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
+KodeKloud's "HashiCorp Certified Terraform Associate"</a>. It's taught by <a target="_blank" href="https://www.linkedin.com/in/vijin-palazhi-163ba555/">Vijin Palazhi</a>, who also created tutorials on Kubernetes, Jenkins, and other DevOps tools and certifications.
 
 <a target="_blank" href="https://learn.acloud.guru/search?query=terraform&page=1">ACloud.Guru</a> has a 11-hour Associate prep course by <a target="_blank" href="https://www.linkedin.com/in/moosa-khalid/">Moosa Khalid</a>.
 
@@ -4144,7 +4144,7 @@ Oct 13, 2017 by Radek Simko (@RadekSimko), Terraform Expert HashiCorp
 
 ## References
 
-<a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: Hashicorp';'s Cloud Operating Model whitepaper</a>
+<a target="_blank" href="https://www.hashicorp.com/cloud-operating-model">PDF: HashiCorp';'s Cloud Operating Model whitepaper</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=UleogrJkZn0">VIDEO: 
 Learn Terraform in 10 Minutes Tutorial</a>

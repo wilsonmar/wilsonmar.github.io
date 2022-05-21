@@ -20,6 +20,8 @@ k8s_version: 1.22
 
 This article I wrote both while I prepared for the CKAD and while on the job.
 
+{% include whatever.html %}
+
 
 <a name="Keywords"></a>
 
@@ -3819,7 +3821,7 @@ Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by t
    
    For example, to allow containers to access S3, DynamoDB, SQS, or SES at runtime.
 
-   Behind the scenes, Amazon used Hashicorp Packer <a target="_blank" href="https://github.com/awslabs/amazon-eks-ami">config. scripts</a> to make EKS-optimized AMIs run on Amazon Linux 2. The machines are preconfigured with Docker, kubelet, and the <a target="_blank" href="https://github.com/kubernetes-sigs/aws-iam-authenticator">AWS/Heptio AMI Authenticator</a> DaemonSet, plus a EC2 User Data bootstrap script that automatically join an EKS cluster. AMIs that have GPU support are also generated for users who have defined a AWS Marketplace Subscription.
+   Behind the scenes, Amazon used HashiCorp Packer <a target="_blank" href="https://github.com/awslabs/amazon-eks-ami">config. scripts</a> to make EKS-optimized AMIs run on Amazon Linux 2. The machines are preconfigured with Docker, kubelet, and the <a target="_blank" href="https://github.com/kubernetes-sigs/aws-iam-authenticator">AWS/Heptio AMI Authenticator</a> DaemonSet, plus a EC2 User Data bootstrap script that automatically join an EKS cluster. AMIs that have GPU support are also generated for users who have defined a AWS Marketplace Subscription.
 
    See the <a target="_blank" href="https://interactive.linuxacademy.com/diagrams/TheEKSManifest.html">EKS Manifest diagram</a> explained by Mark Richman (@mrichman) in his <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/293">video class</a>, with code at <a target="_blank" href="https://github.com/linuxacademy/eks-deep-dive-2019">https://github.com/linuxacademy/eks-deep-dive-2019</a>.
    
@@ -3968,7 +3970,7 @@ https://github.com/mspnp/aks-secure-baseline
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=NRZ6N4e-Mko">Container Orchestration Wars (2017)</a> at the Velocity Conf 19 Jun 2017 by Karl Isenberg (@karlfi) of Mesosphere
 
-* Hashicorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>
+* HashiCorp <a target="_blank" href="https://www.nomadproject.io/intro/index.html">Nomad</a>
    is a lighter-weight orchestrator, not just for containers.
 
 * Red Hat (which IBM bought in 2018) offers its <strong>OpenShift</strong> to enable Docker and Kubernetes for the enterprise by adding external host names (projects) that add role-based security around <a href="#Namespaces">namespaces</a>. OpenStack enables running of k8s containers in other clouds or within private data centers.
@@ -6225,7 +6227,7 @@ A cgroup (control group) is a group of Linux processes with optional resource is
    * https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data Enable encryption at rest for cluster data
 
 <a target="_blank" href="https://banzaicloud.com/blog/inject-secrets-into-pods-vault-revisited/">
-Banzai cloud vault</a> uses a mutating admission webhook to inject an executable into containers inside Pods, which then request secrets from Hashicorp Vault through special environment variable definitions. This project was inspired by a number of other projects (e.g. channable/vaultenv, hashicorp/envconsul), but one thing that makes it unique is that it is a daemonless solution.
+Banzai cloud vault</a> uses a mutating admission webhook to inject an executable into containers inside Pods, which then request secrets from HashiCorp Vault through special environment variable definitions. This project was inspired by a number of other projects (e.g. channable/vaultenv, hashicorp/envconsul), but one thing that makes it unique is that it is a daemonless solution.
 
 PROTIP: <a target="_blank" href="https://medium.com/@siri.c/inject-aws-secrets-to-containers-be55c859fbf6">BLOG</a>:
 Don't follow the Kubernetes default of storing credentials in Secret resource in plain text, for acess by everyone who has access to Kubernetes clusters.

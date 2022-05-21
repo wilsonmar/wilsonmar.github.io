@@ -20,6 +20,9 @@ The object of this tutorial is to succinctly present
 <strong>step-by-step</strong> instructions to use Cloud Formation to automate work within AWS 
 (instead of AWS GUI Console).
 
+{% include whatever.html %}
+
+
 * <a href="#Iac">IaC (Infrastructure as Code)</a>
 * <a href="#AWSSignup">AWS Account and region</a>
 
