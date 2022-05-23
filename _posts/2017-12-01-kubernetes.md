@@ -343,9 +343,9 @@ It also has a "kube-public" namespace where nothing runs, but contains a ConfigM
 Now <a href="#KublectlCommands">proceed to use other Kublectl commands</a>.
 
 
-   <a name="acloudguru"></a>
+<a name="acloudguru"></a>
 
-   ### ACloudGuru
+### ACloudGuru
 
 * <a target="_blank" href="https://learn.acloud.guru/cloud-playground/cloud-sandboxes">ACloudGuru.com</a>, 
 
@@ -355,9 +355,9 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
    <a target="_blank" href="https://www.acloudguru.com/">ACloudguru.com</a> <a target="_blank" href="https://acloudguru.com/course/certified-kubernetes-application-developer-ckad">CKAD course</a> by <a target="_blank" href="https://www.linkedin.com/in/wilb/">William Boyd</a> has 3.5 hours of video organized according to <a href="#CKAD_ExamDomains">exam domains</a>, 13 hands-on labs, and 3 practice exams <strong>based on v1.13 (older version)</strong>.
 
 
-   <a name="CloudAcademy"></a>
+<a name="CloudAcademy"></a>
 
-   ### CloudAcademy.com
+### CloudAcademy.com
 
 * <a target="_blank" href="https://cloudacademy.com/">https://cloudacademy.com</a> <a target="_blank" href="https://cloudacademy.com/lab/introduction-kubernetes-playground/?context_resource=lp&context_id=451">Playground lab</a> enables you to <strong>skip all the install details</strong>
 
@@ -366,9 +366,9 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
    PROTIP: A browser-based session times out too quickly and is cumbersome to copy and paste. So use SSH instead.
 
 
-   <a name="KodeKloud"></a>
+<a name="KodeKloud"></a>
 
-   ### KodeKloud
+### KodeKloud
 
 * STAR: <a href="#KodeKloud">KodeKloud</a> is especially effective because it's gamified troubleshooting where it provides a situation you have to figure out the commands, just like in the certification tests.
 
@@ -379,9 +379,9 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
    PROTIP: The <a href="#Aliases">k alias for kubectl</a> is already configured, so type <tt>k</tt> instead of <tt>kubectl</tt>.
 
 
-   <a name="Qwiklabs"></a>
+<a name="Qwiklabs"></a>
 
-   ### Qwiklabs
+### Qwiklabs
 
 * <a target="_blank" href="https://run.qwiklabs.com/catalog?keywords=Kubernetes">Qwiklabs has several hands-on labs using Kubernetes</a> on Google Cloud. 
 
@@ -409,7 +409,7 @@ has both <a target="_blank" href="https://learn.acloud.guru/search?page=1&learni
 
    <a target="_blank" href="https://inthecloud.withgoogle.com/kubernetes-training-offer/register.html">30 days free training instances</a> after completing a Tour class. 
 
-   ### Others
+### Others
 
 * <a target="_blank" href="https://play-with-k8s.com">https://play-with-k8s.com</a> was provided free by Docker. Now defunct.
 
@@ -1521,7 +1521,6 @@ kubectl delete po <em>mypod</em> --grace-period=0 --force
    <pre><strong>k get pods -o wide</strong></pre>
 
 
-
 <a name="CRI"></a>
 
 ## Container Runtime Interface
@@ -1530,10 +1529,9 @@ Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/containe
 
 
 
+<a name="GetAPIServices"></a>
 
-   <a name="GetAPIServices"></a>
-
-   ### Get API Services List
+### Get API Services List
 
 1. To see whether the metrics-server is running, or another provider of the resource metrics API (metrics.k8s.io), run the following command:
 

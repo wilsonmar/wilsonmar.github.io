@@ -131,10 +131,11 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
 
 Within a single datacenter, Consul provides automatic failover for services by omitting failed service instances from DNS lookups and by providing service health information in APIs. In Consul's <a target="_blank" href="https://www.consul.io/docs/internals/coordinates.html">network coordinate subsystem</a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Lf3DvCNDeQo&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=38" title="Network Infrastructure Automation (NIA) Mar 25, 2021">VIDEO</a>: When not using F5 or NGINX which is Consul-aware, "Network Infrastructure Automation (NIA)" is using the Consul-Terraform Agent where Consul acts as the central broker -- changes trigger Consul to subscribe to Terraform assets.
+<a target="_blank" href="https://www.youtube.com/watch?v=Lf3DvCNDeQo&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=38" title="Network Infrastructure Automation (NIA) Mar 25, 2021">VIDEO</a>: When not using F5 or NGINX which is Consul-aware, "Network Infrastructure Automation (NIA)" is using the Consul-Terraform Agent where Consul acts as the central broker -- changes trigger Consul to subscribe to Terraform assets.  <a target="_blank" href="https://www.youtube.com/watch?v=Ld40kobI2rs&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=10" title="at HashiConf Global 2021 (Nov 1, 2021)">VIDEO: Network Automation on Terraform Cloud With CTS</a> (Consul-Terraform Sync) which dynamically generates configuration files to invoke Terraform modules. It can interact within Terraform Cloud Driver's Remote Workspaces.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=GcyNmdpS-CI">VIDEO "Integrating Terraform with Consul"</a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=uwgsNYZ3GZk&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=2" title="Opening Keynote Day 2 - HashiConf Global 2021">>VIDEO: "Future of Service Networking"</a>
 
 <a name="WaysToRun"></a>
 
@@ -274,7 +275,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
 
 <a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">YouTube: "Getting into HashiCorp Consul"</a>
 
-
+<a target="_blank" href="https://www.youtube.com/watch?v=u6m_RxLR1fQ&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=22">VIDEO: Consul Roadmap – HashiConf Global 2021</a>
 <hr />
 
 <a name="HCP"></a>
@@ -2507,6 +2508,9 @@ Ambassador's Edge Stack (AES) for service discovery.
 
 See https://www.consul.io/docs/intro/vs
 
+> "[23:07] "Consul Connect is probably the most mature simply because of Consul. Consul is a decade of polished technology, battle-tested in each production environment. It's a safe choice in terms of stability and features." -- <a target="_blank" href="https://www.youtube.com/watch?v=TAlpaC_NSUw&t=23m7s">The Best Service Mesh: Linkerd vs Kuma vs Istio vs Consul Connect comparison + Cilium and OSM on top</a>
+
+
 <a target="_blank" href="https://www.hashicorp.com/resources/tide-self-service-service-mesh-with-consul">
 CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its adoption of <strong>AWS AppMesh</strong> in favor of HashiCorp Consul, making the transition in only 6 weeks with no downtime and no big-bang migration.
 
@@ -2566,8 +2570,14 @@ or https://www.lucidchart.com/blog/how-to-build-aws-architecture-diagrams
 
 https://www.pagerduty.com/docs/guides/consul-integration-guide
 
-https://www.youtube.com/watch?v=7VtZEZAi6qU&t=14s
-Simplifying Infrastructure and Network Automation with HashiCorp (Consul and Nomad) and Traefik 
+<a target="_blank" href="https://www.youtube.com/watch?v=7VtZEZAi6qU&t=14s">
+Simplifying Infrastructure and Network Automation with HashiCorp (Consul and Nomad) and Traefik</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kCAk_LXmGMg" title="May 10, 2022">VIDEO: 
+"Community Office Hours: HashiCorp Consul on AWS ECS"</a> by Rosemary Wong and Luke Kysow
+
+<a target="_blank" href="https://www.youtube.com/watch?v=r8y3T_tkwbY" title="Feb 28, 2022">VIDEO:
+"Service Mesh and Your Legacy Apps: Connecting to Kubernetes with Consul"</a> by Marc LeBlanc (with Arctiq)
 
 
 <a name="CorporateSocial"></a>
