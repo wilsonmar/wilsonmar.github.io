@@ -2413,7 +2413,24 @@ using the package's command line tool) at<br />
 https://github.com/theskumar/python-dotenv#command-line-interface">
 https://github.com/theskumar/python-dotenv#command-line-interface</a>
 
-That .env file name is specified in the .gitignore so it is ignored when pushing to github.
+That .env file name is specified in the .gitignore so it is ignored when pushing to github. But files already in GitHub remains visible.
+
+
+<hr />
+
+## Chrome/ Browser Extension
+
+PROTIP: Here is a tool to test access to a Vault instance (locally and publicly)as well.
+
+<a target="_blank" href="https://chrome.google.com/webstore/detail/vaultpass/kbndeonibamcpiibocdhlagccdlmefco/related?hl=en">VaultPass Chrome/Firefox Browser Extension</a> (installed <a target="_blank" href="https://github.com/mulbc/vaultPass">from GitHub</a>) explained at <a target="_blank" href="https://www.youtube.com/watch?v=bWAtYLR2298&list=PL81sUbsFNc5ZgO3FpSLKNRIIvCBvqm-JA" title="HashiTalks Mar 10, 2022 by Chris Blum">VIDEO</a>: 
+<a target="_blank" href="https://www.hashicorp.com/resources/vaultpass-enabling-teams-to-share-secrets-confidentially">"Enabling Teams to Share Secrets Confidentially"</a>
+
+(rather than using Git, which exposes all teams/users having access to all secrets and each password rotate taking up more space in history. Use of GPG is cumbersome)
+
+<img alt="VaultPass Options" width="786" height="884" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653481659/vaultpass-options-786x884_mkolcc.png"></a>
+
+
+In <a target="_blank" href="https://www.hashicorp.com/resources/developer-first-application-security-and-devsecops">"Developer-First Application Security and DevSecOps"</a> by Kevin Alwell (@alwell-kevin at GitHub)
 
 
 <hr />

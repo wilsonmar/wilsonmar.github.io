@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This presents a <strong>hands-on</strong> approach about using <strong>automation</strong> for a comprehensive technical <strong>deep dive</strong> that is succinct and <strong>logically sequenced</strong>. All without sales generalizations. All in this one single big page for easy search.
+This presents notes while I'm learning about using <strong>automation</strong>, my attampt to be succinct and <strong>logically sequenced</strong>. All without sales generalizations. All in this one single big page for easy search. This is not a replacement for you going through professionally developed trainings.
 
 {% include whatever.html %}
 
@@ -25,13 +25,15 @@ This presents a <strong>hands-on</strong> approach about using <strong>automatio
    
 ## Part of an Enterprise suite
 
-Consul is part of the HashiCorp product line which provides modern mechanisms for better security and efficiency in access and communication processes:
+Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
 
    Additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
    
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
+The Enterprise edition of Consul enables multi-cloud, multi-platform, and multi-tenancy by the creation of Admin Partititions, each with its own Governance and Policies. Such segregation diminishing the "blast radius" from loss of a specific partition.
 
+   * Consul on ECS & Admin Partitions Learn Guide
 
 <a name="ConsulStories"></a>
 
@@ -58,6 +60,8 @@ Here are the Agile-style stories requesting use of HashiCorp Consul: PROTIP:
 
 
 ### Value Proposition
+
+> "Consul is a datacenter runtime that provides service discovery, configuration, and orchestration."
 
 > The above are used for showing Proof of Value (POV) from product/workflow adoption.
 
@@ -121,7 +125,8 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
    * To distribute load among individual servers, load balancers (such as F5) used are a single point of failure. They work based on IP addresses.
 
       - Consul can replace legacy Load Balancers. QUESTION: Use round-robin? least-connections?
-      <br /><br />
+
+      - <a target="_blank" href="https://www.youtube.com/watch?v=AqgEXwzexn8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=6" title="Mar 31, 2021">VIDEO: "Zero Trust Security for Legacy Apps with Service Mesh"</a>
 
    * Complex mechanisms to <strong>secure perimeter yet communicate with outside systems</strong> (legecy and payment systems) are problematic
 
@@ -141,7 +146,7 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
 ## Ways to learn to setup Consul 
 
-> PROTIP: Become comfortable operating Consul by building several environments, in order of complexity:
+> PROTIP: Become comfortable with the naming conventions used by the architecture, workflows, and automation by building several environments, in order of complexity:
 
 <a href="HCPDemo">A. On HashiCorp's Consul SaaS Cloud on the HCP (HashiCorp Cloud Platform)</a> (the easiest, fastest, most standardized way to use Consul)
 
@@ -173,7 +178,12 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
 ## Demo apps
 
-PROTIP: Adapt the samples and naming conv entions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
+PROTIP: Adapt the samples and naming conventions here to use your own app <strong>after</strong> achieving confidence you have the base templates working.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gf43TcWjBrE">VIDEO: 12-Factor Apps and the HashiStack</a>
+
+
+<a name="HashicupsDemoApp"></a>
 
 1. HashiCorp-provided demo apps included in the practice environments are defined at:
 
@@ -181,6 +191,49 @@ PROTIP: Adapt the samples and naming conv entions here to use your own app <stro
    https://github.com/hashicorp-demoapp/</a>
 
    <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-setups">"Hashicups" from https://github.com/hashicorp-demoapp/hashicups-setups</a> comes with a <a target="_blank" href="https://github.com/hashicorp-demoapp/hashicups-client-go">Go library</a>.
+
+1. Consider the HashiCups datacenter which uses both ECS and EKS within AWS:
+
+   * Run front-end services task within a ECS (Elastic Container Service) cluster
+   * Run back-end services task within a EKS (Elastic Kubernetes Service) cluster
+   <br /><br />
+
+   See <a target="_blank" href="https://www.youtube.com/watch?v=K2OJwo5wxEs" title="May 23, 2022">VIDEO "Securely Modernize Application Development with Consul on AWS ECS"</a> by Jairo Camacho (Marketing), Chris Thain, Paul Glass (Engineering)
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653576225/consul-on-ecs-eks-826x520_k0zrxu.png"><img alt="Consul ECS and EKS with HashiCups" width="826" height="520" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653576225/consul-on-ecs-eks-826x520_k0zrxu.png"></a>
+
+1. Create the above environment by running Terraform ???
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653576506/consul-on-ecs-1541x726_lsctrk.png"><img alt="Consult ECS" width="1541" height="726" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653576506/consul-on-ecs-1541x726_lsctrk.png"></a>
+
+1. Use HCP Consul for Service Mesh (without Kubernetes) 
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653577429/consul-hcp-ecs-1187x493_moppvo.png"><img alt="Consul HCP Service Mesh" width="1187" height="493" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653577429/consul-hcp-ecs-1187x493_moppvo.png"></a>
+
+
+   <a name="ACL-Controller"></a>
+
+   ### ACL Controller
+
+   The ACL (Access Control List) Controller is provided by HashiCorp for install within AWS.
+
+   To provide least-privilege access to Consul using Terraform and Vault:
+   https://www.hashicorp.com/blog/managing-hashicorp-consul-access-control-lists-with-terraform-and-vault
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653578783/consul-tf-vault-1162x809_lypmvs.png"><img alt="Consul TF Vault" width="1162" height="809" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653578783/consul-tf-vault-1162x809_lypmvs.png"></a>
+
+
+   <a name="Observability"></a>
+
+   ### Observability
+
+   The Terraform adds Datadog for Observability. 
+
+
+
+1, Consul Enterprise edition menu ...
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653578025/consul-ent-menu-275x585_jjwfqn.png"><img alt="Consul Enterprise menu at v1.1.5" width="275" height="585" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653578025/consul-ent-menu-275x585_jjwfqn.png"></a>
 
 
 <hr />
@@ -278,7 +331,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
 <a target="_blank" href="https://www.youtube.com/watch?v=u6m_RxLR1fQ&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=22">VIDEO: Consul Roadmap – HashiConf Global 2021</a>
 <hr />
 
-<a name="HCP"></a>
+<a name="HCPDemo"></a>
 
 ## A. On HashiCorp's Consul Cloud SaaS HCP (HashiCorp Cloud Platform)
 
@@ -286,6 +339,8 @@ Because this document aims to present concepts in a logic flow for learning, it 
 
    HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI/API of FOSS. 
    
+   <a target="_blank" href="https://www.youtube.com/watch?v=UDbR-TVDUm8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37" title='Apr 1, 2021 by  Anubhav Mishra @build1point0">VIDEO: "Service Mesh - Beyond the Hype"</a>
+
    <a name="SkipEnterprise"></a>
    
    HCP provides a fully managed "Service Mesh as a Service (SMaaS)" Consul features instead of the "self-managed" Enterprise edition. That means:
@@ -307,7 +362,21 @@ References:
    * <a target="_blank" href="https://www.hashicorp.com/blog/consul-service-on-azure-production-tier">announced Sep 2020</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=YowP4xV2Jf0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=7" title="Oct 14, 2020">VIDEO:
    "Introduction to HashiCorp Cloud Platform (HCP): Goals and Components"</a>
-   * https://github.com/hashicorp/terraform-aws-hcp-consul 
+   <br /><br />
+
+https://github.com/hashicorp/terraform-aws-hcp-consul is the Terraform module for connecting a HashiCorp Cloud Platform (HCP) Consul cluster to AWS. There are four examples containing default CIDRs for private and public subbnets:
+
+   * <a target="_blank" href="https://github.com/hashicorp/terraform-aws-hcp-consul/blob/main/examples/existing-vpc/main.tf">existing-vpc</a>
+   * hcp-ec2-demo
+   * hcp-ecs-demo
+   * hcp-eks-demo
+   <br /><br />
+
+1. Run using <tt>terraform init</tt>
+
+   * hcp-ec2-client - [For Testing Only]: installs Consul and runs Consul clients with EC2 virtual machines.
+   * hcp-eks-client - [For Testing Only]: installs the Consul Helm chart on the provided Kubernetes cluster.
+   * k8s-demo-app - [For Testing Only]: installs a demo application onto the Kubernetes cluster, using the Consul service mesh.
    <br /><br />
 
 <a target="_blank" href="https://www.youtube.com/watch?v=JuwSHZqlLj0&t=7s">VIDEO</a>: Try it:
@@ -315,9 +384,11 @@ References:
 
 ### Hashicorp Cloud Account
 
-1. Login
-   https://cloud.hashicorp.com/products/consul
-1. Verify your email.
+1. Sign into:
+   <a target="_blank" href="https://cloud.hashicorp.com/products/consul">
+   https://cloud.hashicorp.com/products/consul</a>
+
+1. Verify your email if it's your first time, or type your email.
 1. The first time, select the Registration Name (such as "wilsonmar-org"), country to create a new org. 
 1. You get $50! You can skip giving out your credit card until you want a PRODUCTION instance or use larger size node servers. For development use, an extra-small (XS) cluster size is deployed by default to handle up to 50 service instances.
 
@@ -325,22 +396,99 @@ References:
 
    <tt>https://portal.cloud.hashicorp.com/services/consul?project_id=...</tt>
 
+1. Click "Access control (IAM)" menu.
+1. Click "Service principals" from the menu and specify the 3 examples below (with your name) for each of 3 roles with ID such as <tt>wilsonmar-123456@12ae4567-f584-4f06-9a9e-240690e2088a</tt>
+
+   * Role "Admin" (as full access to all resources including the right to edit IAM, invite users, edit roles) 
+   * Role "Contributor" (Can create and manage all types of resources but can’t grant access to others.)
+   * Role "Viewer" (Can only view existing resources.)
+   <br /><br />
+
+   PROTIP: Once logged in, a cookie is saved in the browser so that you will be logged in again automatically.
+
+1. For each service principal, click the blue "Create service principal key".
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1653574831/hcp-secrets-1160x808_nu5vb0.png"><img alt="HCP Secrets" width="1160" height="808" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1653574831/hcp-secrets-1160x808_nu5vb0.png"></a>
+
+1. Click the copy icon to save each generated value to your Clipboard (for example):
+
+   <pre>export HCP_CLIENT_ID=kdNNiD8IbU0FZH8juZ10CgkvE6OvLCZK
+export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDqp35OkYSoA
+   </pre>
+
+   Alternately, copy-paste the values directly into provider config file:
+   <pre>provider "hcp" {
+  client_id     = "service-principal-key-client-id"
+  client_secret = "service-principal-key-client-secret"
+}
+   </pre>
+   
+   <a target="_blank" href="https://cloud.hashicorp.com/docs/hcp/admin/access-control/service-principals">CAUTION</a>:
+   The secret is not shown after you leave the screen.
+
+   TODO: Use Vault to keep the above secrets secure.
+
+1. In a file encrypted and away from GitHub
+
    The following steps are based on https://learn.hashicorp.com/tutorials/cloud/consul-deploy referencing https://github.com/hashicorp/terraform-aws-hcp-consul which uses Terraform to do the below:
 
-   1. <a href="#CreateAWSVPC">Create an AWS VPC and associated resources</a>
+   1. <a href="#CreateAWSVPC">Create an AWS VPC and associated resources</a> to manage using additional Consul infra
    2. <a href="#HVN">Create a HashiCorp Virtual Network (HVN)</a>
    3. <a href="#PeerHVN">Peer the AWS VPC with the HVN</a>
    4. <a href="#CreateConsulCluster">Create a HCP Consul cluster</a>
    5. <a href="#RunConsulVPC">Run Consul clients within the provisioned AWS VPC</a>
-   6. <a href="#RunDemoApp">Run a demo application on the chosen AWS runtime</a>
-   7. <a href="#DestroyConsul">Destroy Consul cluster</a>
+   6. <a href="#RunDemoApp">Put load on the demo app within AWS</a>
+   7. <a href="#DestroyConsul">Destroy Consul cluster</a> and app infra under test
    <br /><br />
+
+   https://github.com/hashicorp/consul-guides = Example usage of HashiCorp Consul
 
    <a name="#CreateAWSVPC"></a>
 
    ### 1. Create an AWS VPC and associated resources
+   
+   To create the app infra which Consul works on, 
 
-   Instead of performing manual steps at https://learn.hashicorp.com/tutorials/cloud/consul-deploy, automate it using Terraform by following steps at:
+   Instead of performing manual steps at https://learn.hashicorp.com/tutorials/cloud/consul-deploy, automate it <strong>manually</strong> using Terraform, there are options:
+   
+   * https://github.com/hashicorp/docker-consul = Official Docker images for Consul.
+
+   * https://github.com/hashicorp/learn-hcp-consul
+   * https://github.com/hashicorp/learn-terraform-multicloud-kubernetes
+
+   * hashicorp/consul-snippets Private = Collection of Consul snippets. Configuration bits, scripts, configuration, small demos, etc.
+
+
+   * https://github.com/hashicorp/field-workshops-consul = Slide decks and Instruqt code for Consul Workshops
+   * https://github.com/hashicorp/demo-consul-101 = Tutorial code and binaries for the HashiCorp Consul beginner course.
+   * https://github.com/hashicorp/learn-consul-docker = Docker Compose quick starts for Consul features.
+
+   * https://github.com/hashicorp/terraform-aws-vault  A Terraform Module for how to run Consul on AWS using Terraform and Packer
+
+   * https://github.com/hashicorp/hashicat-aws = A terraform built application for use in Hashicorp workshops
+
+   * https://github.com/hashicorp/consul-template = Template rendering, notifier, and supervisor for @hashicorp Consul and Vault data.
+   
+   * https://github.com/hashicorp/consul-k8s = First-class support for Consul Service Mesh on Kubernetes
+
+   * https://github.com/hashicorp/consul-replicate = Consul cross-DC KV replication daemon.
+
+   * hashicorp/learn-consul-kubernetes
+   * https://github.com/hashicorp/learn-consul-service-mesh
+
+   * https://github.com/hashicorp/consul-api-gateway = The Consul API Gateway is a dedicated ingress solution for intelligently routing traffic to applications running on a C…
+
+   * https://github.com/hashicorp/consul-demo-traffic-splitting = Example application using Docker Compose to demonstrate Consul Service Mesh Traffic Splitting
+
+   * hashicorp/consul-esm = External service monitoring for Consul
+
+   * https://github.com/hashicorp/terraform-aws-consul-starter = A Terraform module for creating an OSS Consul cluster as described by the HashiCorp reference architecture.
+
+   * https://github.com/hashicorp/envconsul = Launch a subprocess with environment variables using data from @hashicorp Consul and Vault.
+
+   * https://github.com/hashicorp/consul-global-scale-benchmark = Terraform configurations and helper scripts for Consul Global Scale Benchmark
+
+    by following steps at:
    https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-consul-provider - it provisions resources that qualify under the AWS free-tier.
 
    Files:
@@ -348,7 +496,36 @@ References:
    * vpc_peering.tf: describes the AWS VPC and the peering with the HVN.
    * variables.tf: sets the variables for your deployment.
    <br /><br />
+   
+   
+<hr />
 
+There are several ways to setup an infrastructure in a cloud datacenter managed by Consul:
+
+<a name="cgsb"></a>
+
+### Consul Global Scale Benchmark
+
+The biggest way to go is using <a target="_blank" href="https://github.com/hashicorp/consul-global-scale-benchmark">https://github.com/hashicorp/consul-global-scale-benchmark</a> used to prove that HashiCorp Consul can update 10,000 nodes and 172,000+ services in under 1 second. It's described by 
+   <a target="_blank" href="https://www.hashicorp.com/cgsb">White paper: "Service Mesh at Global Scale"</a> and 
+   <a target="_blank" href="https://www.hashicorp.com/resources/hashicast-episode-30-anubhav-mishra-paul-banks-hashicorp">Podcast</a> with creator: Anubhav Mishra.
+
+<hr />
+
+1. Obtain AWS credentials (AWS_) and populate file <tt>~/.aws/configuration</tt> or environment variables. If you are a HashiCorp employee, they would be obtained for the "Doormat" website, which grants access to your laptop's IP address for a limited time.
+
+   <pre>export AWS_ACCESS_KEY_ID=<em>your AWS access key ID</em>
+export AWS_SECRET_ACCESS_KEY=<em>your AWS secret access key</em>
+export AWS_SESSION_TOKEN=<em>your AWS session token</em>
+   </pre>
+
+1. In the same browser window, open to the AWS page using those credentials.
+
+1. Set the secret in Terraform to authenticate with HCP:
+
+   <pre>export HCP_CLIENT_ID=<em>your client id</em>
+export HCP_CLIENT_SECRET=<em>the key generated</em>
+   </pre>
 
    <a name="HVN"></a>
 
@@ -360,16 +537,6 @@ References:
    <a name="PeerHVN"></a>
 
    ### 3. Peer HVN to a AWS VPC
-
-1. Obtain AWS credentials (AWS_) and populate file <tt>~/.aws/configuration</tt> or environment variables. If you are a HashiCorp employee, they would be obtained for the "Doormat" website, which grants access to your laptop's IP address for a limited time.
-
-   <pre>export AWS_ACCESS_KEY_ID=<em>your AWS access key ID</em>
-export AWS_SECRET_ACCESS_KEY=<em>your AWS secret access key</em>
-export AWS_SESSION_TOKEN=<em>your AWS session token</em>
-   </pre>
-
-1. In the same browser window, open to the AWS page using those credentials.
-
 1. In the HVN overview page, select the <strong>Peering</strong> connections tab, and click the Create peering connection link. 
 
 1. Input the following information:
@@ -430,7 +597,6 @@ export AWS_SESSION_TOKEN=<em>your AWS session token</em>
 1. Install Consul into those AWS VPC.
 
    This is not in Terraform code???
-
 
    <a name="RunDemoApp"></a>
 
@@ -511,6 +677,9 @@ References about HVN (HashiCorp Virtual Network):
 
 ## B. On a macOS laptop using Docker
 
+   * https://learn.hashicorp.com/tutorials/consul/get-started-agent?in=consul/getting-started
+   <br /><br />
+
 1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
 
    <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
@@ -525,13 +694,124 @@ References about HVN (HashiCorp Virtual Network):
    ### One Agent as Client or Server
    
    PROTIP: The Consul executable binary is designed to run either as a local long-running client <strong>daemon</strong> or in <strong>server mode</strong>. 
-   See install instructions below for each operating system: macOS, Linux, Windows (x86 and ARM).
+   
+   CAUTION: Do not use the manual approach of downloading release binaries from GitHub because 
 
+   So that you avoid the toil the configuring PATH, etc. see install instructions below to use a package manager for each operating system (x86 and ARM):  
+      * Homebrew (brew command) on macOS
+      * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-ent-basics/challenges/install-consul/notes">apt-get on Linux</a>
+      * Chocolately (choco command) on Windows
+      <br /><br />
+   
    Work with the Consul Agent using:
    * <a href="#CLI-commands">CLI</a> (Command Line Interface) on Terminal sessions
    * API calls from within a custom program (written in Go, etc.)
    * <a href="#ConsulWebGUI">GUI</a> (Graphic User Interface) on an internet browser such as Google Chrome
    <br /><br />
+
+
+   <a name="HCDiag"></a>
+
+   ### Install HCDiag
+
+1. Install for macOS <a target="_blank" href="https://github.com/hashicorp/homebrew-tap">from Homebrew</a>:
+
+   <pre><strong>brew install hcdiag</strong></pre>
+
+   <pre>==> Downloading https://releases.hashicorp.com/hcdiag/0.2.0/hcdiag_0.2.0_darwin_amd64.zip
+######################################################################## 100.0%
+==> Installing hcdiag from hashicorp/tap
+==> Caveats
+The darwin_arm64 architecture is not supported for this product
+at this time, however we do plan to support this in the future. The
+darwin_amd64 binary has been installed and may work in
+compatibility mode, but it is not fully supported.
+==> Summary
+🍺  /opt/homebrew/Cellar/hcdiag/0.2.0: 5 files, 7.2MB, built in 2 seconds
+==> Running `brew cleanup hcdiag`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+   </pre>
+
+1. Verify installation by viewing the help:
+
+   <pre><strong>hcdiag -h</strong></pre>
+
+   <pre>Usage of hcdiag:
+  -all
+    	DEPRECATED: Run all available product diagnostics
+  -config string
+    	Path to HCL configuration file
+  -consul
+    	Run Consul diagnostics
+  -dest string
+    	Shorthand for -destination (default ".")
+  -destination string
+    	Path to the directory the bundle should be written in (default ".")
+  -dryrun
+    	Performing a dry run will display all commands without executing them
+  -include-since 72h
+    	Alias for -since, will be overridden if -since is also provided, usage examples: 72h, `25m`, `45s`, `120h1m90s` (default 72h0m0s)
+  -includes value
+    	files or directories to include (comma-separated, file-*-globbing available if 'wrapped-*-in-single-quotes')
+    	e.g. '/var/log/consul-*,/var/log/nomad-*'
+  -nomad
+    	Run Nomad diagnostics
+  -os string
+    	Override operating system detection (default "auto")
+  -serial
+    	Run products in sequence rather than concurrently
+  -since 72h
+    	Collect information within this time. Takes a 'go-formatted' duration, usage examples: 72h, `25m`, `45s`, `120h1m90s` (default 72h0m0s)
+  -terraform-ent
+    	(Experimental) Run Terraform Enterprise diagnostics
+  -vault
+    	Run Vault diagnostics
+  -version
+    	Print the current version of hcdiag
+   </pre>
+
+1. Before submitting a Service ticket to HashiCorp, obtain diagnostics run the HashiCorp utility (originating from <a target="_blank" href="https://github.com/hashicorp/hcdiag">) while a HashiCorp server is running:
+
+   <pre><strong>hcdiag -dryrun</strong></pre>
+
+   <pre>[INFO]  hcdiag: Checking product availability
+[INFO]  hcdiag: Gathering diagnostics
+[INFO]  hcdiag: Running seekers for: product=host
+[INFO]  hcdiag: would run: seeker=stats
+   </pre>
+
+1. Configure environment variables to provide the URL and tokens necessary, per <a target="_blank" href="https://support.hashicorp.com/hc/en-us/articles/4409084297875/">this doc</a>.
+
+1. Specify the parameter to specify data desired for each product:
+
+   * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/hcdiag-with-consul">for Consul</a>
+   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/hcdiag-with-vault">Vault</a>
+   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hcdiag-with-nomad">Nomad</a>
+   * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/hcdiag-with-tfe">Terraform Enterprise</a>.
+   <br /><br />
+
+Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
+
+
+   <a name="InstallConsulLinux"></a>
+
+   ### Install Consul Agent on Linux
+
+   <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-ent-basics/challenges/install-consul/assignment">Accordingly</a>:
+
+   <pre>apt-get update
+# Install utilities curl, wget, jq, 
+apt-get -y install curl wget software-properties-common jq
+curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
+# Get version:
+lsb_release -cs
+# Add the official HashiCorp Linux repository:
+apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com \
+   $(lsb_release -cs) main" 
+# Install Consul Enterprise on the node:
+apt-get -y install consul-enterprise
+   </pre>
 
 
    <a name="InstallConsulBinary"></a>
@@ -1551,7 +1831,7 @@ spec:
  hashicorp/consul    0.35.0          1.10.3      Official HashiCorp Consul Chart
    </pre>
 
-1. Install Consul with the default configuration which creates a consul Kubernetes namespace if not already present, and install Consul on the dedicated namespace:
+1. Install Consul with the default configuration which if not already present, creates a Consul Kubernetes namespace and install Consul on the dedicated namespace:
 
    <pre><strong>helm install consul hashicorp/consul --set global.name=consul --create-namespace -n consul</strong></pre>
  
@@ -1691,19 +1971,15 @@ References about templating/generating JSON & YAML:
 
 ### Consul workflows beyond Kubernetes
 
-   * Access Control
-   * Billing
-   * Networking
-   * Identity
-   * Resource Management
-   <br /><br />
-
-
    * <strong>Service Discovery</strong>: (kube-dns, kube-proxy) to identify and connect any service on any cloud or runtime. with Consul DNS
    
    * <strong>Service Configuration</strong>: (K8s Configmaps) but Consul also updates F5 and other load balancer rules, for dynamic configuration across distributed services (in milliseconds)
    
    * <strong>Segmentation</strong>: (Network Policy + Controller), providing <strong>network infrastructure automation</strong>
+
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=uzS-8ISHr3c">
+   Service Discovery With Consul on Kubernetes</a>
 
 
    <a name="ServiceMesh"></a>
@@ -1719,6 +1995,16 @@ References about templating/generating JSON & YAML:
 
    <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-service-mesh">Consul Enterprise Academy: Service Mesh</a>
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=hnuBVk1aJB8&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=33">Deploying a Service Mesh at Enterprise Scale With Consul - HashiConf Global 2021</a>
+
+Beyond:
+
+   * Access Control
+   * Billing
+   * Networking
+   * Identity
+   * Resource Management
+   <br /><br />
 
 
 <hr />
@@ -2579,6 +2865,17 @@ Simplifying Infrastructure and Network Automation with HashiCorp (Consul and Nom
 <a target="_blank" href="https://www.youtube.com/watch?v=r8y3T_tkwbY" title="Feb 28, 2022">VIDEO:
 "Service Mesh and Your Legacy Apps: Connecting to Kubernetes with Consul"</a> by Marc LeBlanc (with Arctiq)
 
+<a target="_blank" href="https://medium.com/velotio-perspectives/a-practical-guide-to-hashicorp-consul-part-1-5ee778a7fcf4">"A Practical Guide to HashiCorp Consul — Part 1
+"</a> by Velotio Technologies
+
+https://thenewstack.io/3-consul-service-mesh-myths-busted/
+
+https://www.youtube.com/watch?v=UHwoEGSfDlc&list=PL81sUbsFNc5ZgO3FpSLKNRIIvCBvqm-JA&index=33
+The Meshery Adapter for HashiCorp Consul
+
+
+
+<hr />
 
 <a name="CorporateSocial"></a>
 
