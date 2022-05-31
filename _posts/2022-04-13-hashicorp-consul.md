@@ -150,7 +150,6 @@ CTS is used to keep  configurations up-to-date <a target="_blank" href="https://
 References:
 * <a target="_blank" href="https://www.youtube.com/watch?v=GcyNmdpS-CI">VIDEO "Integrating Terraform with Consul"</a>
 * <a target="_blank" href="https://www.youtube.com/watch?v=uwgsNYZ3GZk&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=2" title="Opening Keynote Day 2 - HashiConf Global 2021">VIDEO: "Future of Service Networking"</a>
-* https://learn.hashicorp.com/tutorials/cloud/consul-ecs-hcp
 * https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions
 * https://learn.hashicorp.com/tutorials/cloud/consul-end-to-end-ecs
 <br /><br />
@@ -471,9 +470,14 @@ export AWS_SESSION_TOKEN=<em>your AWS session token</em>
 
    ### Create an AWS VPC and associated resources
    
-   There are several ways to setup infrastructure in a cloud datacenter managed by Consul:
+   There are several ways to setup infrastructure in a cloud datacenter managed by Consul.
 
-   Instead of performing manual steps at https://learn.hashicorp.com/tutorials/cloud/consul-deploy, automate it <strong>manually</strong> using Terraform.
+   Instead of performing manual steps at https://learn.hashicorp.com/tutorials/cloud/consul-deploy, automate it <strong>manually</strong>,
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/consul-ecs-hcp">This</a> describes use of Terraform to create a non-prod HCP Consul environment to manage an ECS cluster, and various AWS services:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1654022287/consul-ecs-hcp-1280x720_j4p2le.png"><img alt="Consul ECS HCP" width="1280" height="'720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1654022287/consul-ecs-hcp-1280x720_j4p2le.png"></a>
+
    
    * https://github.com/hashicorp/docker-consul = Official Docker images for Consul.
 
