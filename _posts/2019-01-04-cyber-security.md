@@ -826,7 +826,7 @@ PROTIP: Many Software Component Vulnerabity scan programs (Rapid7, JFrog Xray, e
    * <a target="_blank" href="https://www.vicarius.io/research-center/os/windows-id20092_6750">Windows OS</a>
    <br /><br />
 
-<a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final">READ: SP 800-53 Rev 5 "Security and Privacy Controls for Information Systems and Organizations"</a><br />
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf">PDF: SP 800-53 Rev 5</a> <a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final">"Security and Privacy Controls for Information Systems and Organizations"</a><br />
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg">
 <img alt="cybersecurity-NIST-Functions-382x390-19166.jpg" width="382" height="390" src="https://user-images.githubusercontent.com/300046/55505840-3f6c3680-5611-11e9-811d-4411e01c5afd.jpg"></a>
 
