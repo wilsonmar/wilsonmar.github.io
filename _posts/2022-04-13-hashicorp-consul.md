@@ -550,11 +550,17 @@ export AWS_SESSION_TOKEN=<em>your AWS session token</em>
 
    https://github.com/hashicorp/terraform-azurerm-hcp-consul
 
+1. Identify your IPv4 address:
 
-1. Configure Terraform variables in a <tt>.auto.tfvars</tt> file with the following:
+   <pre><strong>curl ipinfo.io
+   </strong></pre>
 
-   <pre>region         = "us-east-1"
-lb_ingress_ips = ["<your-ip>/32"]
+1. terraform.tfvars.example
+
+1. Configure Terraform variables in a <tt>.auto.tfvars</tt> (or <tt>terraform.tfvars</tt>) file with, for example:
+
+   <pre>lb_ingress_ips = "47.223.35.123"
+region         = "us-east-1"
 suffix         = "demo"
    </pre>
 
@@ -563,7 +569,7 @@ suffix         = "demo"
    lb_ingress_ips - Your IP. This is used in the load balancer security groups to ensure only you can access the demo application.
 
    <tt><strong>suffix</strong></tt> text value AWS appends to resource names its creates.
-   
+   This needs to be changed in each run because, by default, secrets created by AWS Secrets Manager require 30 days before they can be deleted. If this tutorial is destroyed and recreated, a name conflict error will occur for these secrets.
 
 1. Run using <tt>terraform init</tt>
 
@@ -575,7 +581,58 @@ suffix         = "demo"
    <pre><strong>terraform init
    </strong></pre>
 
-1. Run Sentinel or TFSec, etc?
+   Example response:
+
+   <pre>Initializing modules...
+Downloading registry.terraform.io/hashicorp/consul-ecs/aws 0.2.0 for acl_controller...
+- acl_controller in .terraform/modules/acl_controller/modules/acl-controller
+Downloading registry.terraform.io/hashicorp/consul-ecs/aws 0.2.0 for example_client_app...
+- example_client_app in .terraform/modules/example_client_app/modules/mesh-task
+Downloading registry.terraform.io/hashicorp/consul-ecs/aws 0.2.0 for example_server_app...
+- example_server_app in .terraform/modules/example_server_app/modules/mesh-task
+Downloading registry.terraform.io/terraform-aws-modules/vpc/aws 2.78.0 for vpc...
+- vpc in .terraform/modules/vpc
+&nbsp;
+Initializing the backend...
+&nbsp;
+Initializing provider plugins...
+- Finding hashicorp/hcp versions matching "~> 0.14.0"...
+- Finding hashicorp/aws versions matching ">= 2.70.0, > 3.0.0"...
+- Installing hashicorp/hcp v0.14.0...
+- Installed hashicorp/hcp v0.14.0 (signed by HashiCorp)
+- Installing hashicorp/aws v4.16.0...
+- Installed hashicorp/aws v4.16.0 (signed by HashiCorp)
+&nbsp;
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+&nbsp;
+Terraform has been successfully initialized!
+&nbsp;
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+&nbsp;
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+   </pre>
+
+1. In the folder containing main.tf, run terraform to design:
+
+   <pre><strong>terraform plan
+   </strong></pre>
+
+   After many minutes, sample response:
+   
+   <pre>
+   </pre>
+
+1. If Sentinel or TFSec was installed:
+
+   <pre><strong>tfsec
+   </strong></pre>
 
 1. In the folder containing main.tf, run terraform to instantiate in AWS:
 
