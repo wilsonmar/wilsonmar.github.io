@@ -161,7 +161,7 @@ References:
 
 > PROTIP: Become comfortable with the naming conventions used by the architecture, workflows, and automation by building several environments, in order of complexity:
 
-<a href="HCPDemo">A. On HashiCorp's Consul SaaS Cloud on the HCP (HashiCorp Cloud Platform)</a> (the easiest, fastest, most standardized way to use Consul)
+<a href="#HCPDemo">A. On HashiCorp's Consul SaaS Cloud on the HCP (HashiCorp Cloud Platform)</a> (the easiest, fastest, most standardized way to use Consul)
 
    - You can do this using a Chromebook laptop with no local storage.
    - Use this to learn about creating sample AWS services in a private VPC using Terraform, createing a HCP account, cloud peering connections across private networks, day-to-day workflows on <a target="_blank" href="https://cloud.hashicorp.com/products/consul">https://cloud.hashicorp.com/products/consul</a>
@@ -368,7 +368,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
 
    HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI/API of FOSS. 
    
-   <a target="_blank" href="https://www.youtube.com/watch?v=UDbR-TVDUm8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37" title='Apr 1, 2021 by  Anubhav Mishra @build1point0">VIDEO: "Service Mesh - Beyond the Hype"</a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=UDbR-TVDUm8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37" title="Apr 1, 2021 by  Anubhav Mishra @build1point0">VIDEO: "Service Mesh - Beyond the Hype"</a>
 
    <a name="SkipEnterprise"></a>
    
@@ -478,7 +478,20 @@ export AWS_SESSION_TOKEN=<em>your AWS session token</em>
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1654022287/consul-ecs-hcp-1280x720_j4p2le.png"><img alt="Consul ECS HCP" width="1280" height="'720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1654022287/consul-ecs-hcp-1280x720_j4p2le.png"></a>
 
-   
+1. Do not specify <tt>--depth 1</tt> when cloning:
+
+   <pre><strong>git clone git@github.com:hashicorp/learn-consul-terraform.git
+   </strong></pre>
+
+1. Before going to branch "v0.5" as instructed:
+
+   <pre><strong>git tag
+   </strong></pre>
+
+   <pre><strong>git checkout v0.5
+   cd datacenter-deploy-ecs-hcp/
+   </strong></pre>
+
    * https://github.com/hashicorp/docker-consul = Official Docker images for Consul.
 
 
@@ -1401,7 +1414,7 @@ EOF
     "${CONSUL_URL_WITH_PORT_VER}/query/${CONSUL_AGENT_TOKEN}"
 </strong></pre>
 
-Queries are also <a target="_blank" href=https://www.consul.io/docs/security/acl/acl-rules#prepared-query-rules">used for ACL</a>
+Queries are also <a target="_blank" href="https://www.consul.io/docs/security/acl/acl-rules#prepared-query-rules">used for ACL</a>
 
 Query execution is subject to node/node_prefix and service/service_prefix policies.
 
