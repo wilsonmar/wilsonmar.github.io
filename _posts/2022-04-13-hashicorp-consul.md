@@ -492,6 +492,25 @@ export AWS_SESSION_TOKEN=<em>your AWS session token</em>
    cd datacenter-deploy-ecs-hcp/
    </strong></pre>
 
+1. Study the Terraform specifications:
+
+   * data.tf - Data sources that allow Terraform to use information defined outside of Terraform.
+   * ecs-clusters.tf - AWS ECS cluster deployment resources.
+   * ecs-services.tf - AWS ECS service deployment resources.
+   * hcp-consul.tf - HCP Consul cluster deployment resources.
+   * hvn.tf - HashiCorp Virtual Network (HVN) deployment resources.
+   * load-balancer.tf - AWS Application Load Balancer (ALB) deployment resources.
+   * logging.tf - AWS Cloudwatch logging configuration.
+   * modules.tf - AWS ECS task application definitions.
+   * network-peering.tf - HCP and AWS network communication configuration.
+   * providers.tf - AWS and HCP provider definitions for Terraform.
+   * secrets-manager.tf - AWS Secrets Manager configuration.
+   * security-groups - AWS Security Group port management definitions.
+   * variables.tf - Parameter definitions used to customize unique user environment attributes.
+   * vpc.tf - AWS Virtual Private Cloud (VPC) deployment resources.
+
+   * outputs.tf - Unique values output after Terraform successfully completes a deployment.
+
    * https://github.com/hashicorp/docker-consul = Official Docker images for Consul.
 
 
@@ -621,12 +640,17 @@ commands will detect it and remind you to do so if necessary.
 
 1. In the folder containing main.tf, run terraform to design:
 
-   <pre><strong>terraform plan
+   <pre><strong>time terraform plan
    </strong></pre>
 
-   After many minutes, sample response:
+   After many minutes, sample response ends with:
    
-   <pre>
+   <pre>Apply complete! Resources: 64 added, 0 changed, 0 destroyed.
+&nbsp;
+Outputs:
+&nbsp;
+client_lb_address = "http://learn-hcp-example-client-app-1643813623.us-east-1.elb.amazonaws.com:9090/ui"
+consul_ui_address = "https://dc1.consul.b17838e5-60d2-4e49-a43b-cef519b694a5.aws.hashicorp.cloud"
    </pre>
 
 1. If Sentinel or TFSec was installed:
@@ -636,16 +660,14 @@ commands will detect it and remind you to do so if necessary.
 
 1. In the folder containing main.tf, run terraform to instantiate in AWS:
 
-   <pre><strong>terraform apply
+   <pre><strong>time terraform apply
    </strong></pre>
 
-
-   (optional) Configure kubectl
+1. (optional) Configure kubectl
 
    <pre><strong>aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw local.eks_cluster_name)
 kubectl get pods -A
-   
-
+   \
 1. To access the Consul UI in HCP, print the URL and bootstrap token to access the Consul UI. The bootstrap token can be used to login to Consul.
 
    <pre><strong>terraform output consul_public_endpoint_url
