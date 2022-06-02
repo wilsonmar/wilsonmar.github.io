@@ -3073,6 +3073,7 @@ See https://www.consul.io/docs/intro/vs
 
 > "[23:07] "Consul Connect is probably the most mature simply because of Consul. Consul is a decade of polished technology, battle-tested in each production environment. It's a safe choice in terms of stability and features." -- <a target="_blank" href="https://www.youtube.com/watch?v=TAlpaC_NSUw&t=23m7s">The Best Service Mesh: Linkerd vs Kuma vs Istio vs Consul Connect comparison + Cilium and OSM on top</a>
 
+Service Discovery: Hystrix, Apache, Eureka, SkyDNS
 
 <a target="_blank" href="https://www.hashicorp.com/resources/tide-self-service-service-mesh-with-consul">
 CASE STUDY: Self-Service Service Mesh With HCP Consul</a> Tide abandoned its adoption of <strong>AWS AppMesh</strong> in favor of HashiCorp Consul, making the transition in only 6 weeks with no downtime and no big-bang migration.
