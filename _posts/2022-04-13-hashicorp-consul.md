@@ -38,6 +38,17 @@ The Enterprise edition of Consul enables multi-cloud, multi-platform, and multi-
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions">Consul on ECS & Admin Partitions Learn Guide</a>
    <br /><br />
 
+   <a name="OSS_repo"></a>
+   
+1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
+
+   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
+
+   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+
+   Initiated in <strong>2014</strong>, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
+
+
 ## To Serve Microservices
 
    To build a fast and reliable system in the cloud today, enterprises architect systems using distributed <strong>microservices</strong> instead of monolithic architectures.
@@ -50,7 +61,6 @@ The Enterprise edition of Consul enables multi-cloud, multi-platform, and multi-
    * That increases agility
    * Greater operational efficiency
    <br /><br />
-
 
 
 <a name="ZeroTrust"></a>
@@ -117,6 +127,30 @@ Adoption of Consul aims to yield these benefits:
 * Reduce risk of downtime from better reliability
 * Reduce risk of breach from better guardrails
 * Compliance with regulatory demands (central source of truth, imutable, automated processes)
+<br /><br />
+
+<a target="_blank" href="https://www.linkedin.com/in/lkysow/">Canadian</a> <a target="_blank" href="https://github.com/lkysow">Luke Kysow</a>, Principal Engineer on Consul at HashiCorp, top contributor to <a target="_blank" href="https://github.com/hashicorp/consul-k8s">hashicorp/consul-k8s</a>, wrote in his <a target="_blank" href="https://learning.oreilly.com/library/view/consul-up-and/9781098106133/" title="June 2022">BOOK: "Consult: Up and Running"</a>:
+
+> "A small operations team can leverage Consul to impact security, reliability, observability, and application delivery across their entire stack —- all without requiring developers to modify their underlying microservices."
+
+<a target="_blank" href="https://github.com/consul-up/examples">Code for the book</a> is organized according to the book's chapters:
+
+1. Service Mesh 101
+2. Introduction to Consul
+3. Deploying Consul
+4. Adding Services to the Mesh
+5. Ingress Gateways
+6. Security
+7. Observability
+8. Reliability
+9. Traffic Control
+10. Advanced Use Cases
+<br /><br />
+
+<a target="_blank" href="https://github.com/consul-up/birdwatcher">birdwatcher app</a>
+
+and <a target="_blank" href="https://discord.com/channels/938313456942190622/938313457638453250">Discord server</a> for the book)
+
 
 ### Addressing Complexities
 
@@ -141,19 +175,41 @@ Adoption of Consul aims to yield these benefits:
 Within a single datacenter, Consul provides automatic failover for services by omitting failed service instances from DNS lookups and by providing service health information in APIs. In Consul's <a target="_blank" href="https://www.consul.io/docs/internals/coordinates.html">network coordinate subsystem</a>
 
 
-### NIA with CTS
+<hr />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=Lf3DvCNDeQo&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=38" title="Network Infrastructure Automation (NIA) Mar 25, 2021">VIDEO</a>: When not using F5 or NGINX (which are Consul-aware), "Network Infrastructure Automation (NIA)" uses the Consul-Terraform Agent where Consul acts as the central broker -- changes trigger Consul to subscribe to Terraform assets.  <a target="_blank" href="https://www.youtube.com/watch?v=Ld40kobI2rs&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=10" title="at HashiConf Global 2021 (Nov 1, 2021)">VIDEO: Network Automation on Terraform Cloud With CTS</a> (Consul-Terraform Sync) which dynamically generates configuration files to invoke Terraform modules. It can interact within Terraform Cloud Driver's Remote Workspaces.
+## Most Frequent References
 
-CTS is used to keep  configurations up-to-date <a target="_blank" href="https://www.youtube.com/watch?v=8Qj6gLDShBA&t=12m50s" title="May 26, 2022">on Fortinet physical and virtual NGFW (Next-Generation FireWall)</a>.
+1. The marketing home page for HashiCorp's Consul is:
 
-References:
-* <a target="_blank" href="https://www.youtube.com/watch?v=GcyNmdpS-CI">VIDEO "Integrating Terraform with Consul"</a>
-* <a target="_blank" href="https://www.youtube.com/watch?v=uwgsNYZ3GZk&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=2" title="Opening Keynote Day 2 - HashiConf Global 2021">VIDEO: "Future of Service Networking"</a>
-* https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions
-* https://learn.hashicorp.com/tutorials/cloud/consul-end-to-end-ecs
-<br /><br />
+   https://www.consul.io/
 
+1. Detailed documentation for the offering is also at that host name:
+
+   https://www.consul.io/docs
+
+1. Tutorials
+
+   https://learn.hashicorp.com/tutorials/consul/service-mesh
+
+1. Technical Discussions:
+
+   https://discuss.hashicorp.com/c/consul/29
+
+1. Stackoverflow has highly technical questions & answers:
+
+   https://stackoverflow.com/search?q=%23hashicorp-consul
+
+1. Reddit:
+
+   https://www.reddit.com/search/?q=hashicorp%20consul
+
+
+<a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">YouTube: "Getting into HashiCorp Consul"</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=u6m_RxLR1fQ&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=22">VIDEO: Consul Roadmap – HashiConf Global 2021</a>
+
+
+<hr />
 
 <a name="WaysToRun"></a>
 
@@ -161,7 +217,7 @@ References:
 
 > PROTIP: Become comfortable with the naming conventions used by the architecture, workflows, and automation by building several environments, in order of complexity:
 
-<a href="#HCPDemo">A. On HashiCorp's Consul SaaS Cloud on the HCP (HashiCorp Cloud Platform)</a> (the easiest, fastest, most standardized way to use Consul)
+<a href="#HCPDemo">A. On HashiCorp's Consul SaaS Cloud on the HCP (HashiCorp Cloud Platform)</a> -- the easiest, fastest, most standardized way to use Consul
 
    - You can do this using a Chromebook laptop with no local storage.
    - Use this to learn about creating sample AWS services in a private VPC using Terraform, createing a HCP account, cloud peering connections across private networks, day-to-day workflows on <a target="_blank" href="https://cloud.hashicorp.com/products/consul">https://cloud.hashicorp.com/products/consul</a>
@@ -184,10 +240,16 @@ References:
 
    - Use this to learn about configuring the <a name="Autopilot">Enterprise Autopilot feature</a> for High Availability across multiple regions (which is a major differentiator of HashiCorp Consul), Chaos Engineering
 
-<a href="#Integrations">F. Integrations to legacy VMs, mainframes, etc.</a>
+<a href="#Integrations">F. Integrations beween K8s to ECS, legacy VMs, mainframes, etc.</a>
 
+   - <a target="_blank" href="https://www.youtube.com/watch?v=C3N4i1cFIZ0&t=34s">Discovery to central service registry across several Kubernetes clusters</a>
    - Use this to learn about configuring for integrating HashiCorp Consul to work with a Payment processor, integrate with load balancers that isn't Consul-aware, and across the entire Enteprise landscape of technologies (another major differentiator of HashiCorp Consul)
 
+Other demos:
+
+* https://www.hashicorp.com/resources/getting-started-with-managed-service-mesh-on-aws First Beta Demo of Consul 
+
+<hr />
 
 ## Demo apps
 
@@ -325,39 +387,6 @@ Because this document aims to present concepts in a logic flow for learning, it 
    9b.	Configure gossip encryption for the existing data center<br />
    9c.	Manage the lifecycle of encryption keys<br />
 
-
-<hr />
-
-## Most Frequent References
-
-1. The marketing home page for HashiCorp's Consul is:
-
-   https://www.consul.io/
-
-1. Detailed documentation for the offering is also at that host name:
-
-   https://www.consul.io/docs
-
-1. Tutorials
-
-   https://learn.hashicorp.com/tutorials/consul/service-mesh
-
-1. Technical Discussions:
-
-   https://discuss.hashicorp.com/c/consul/29
-
-1. Stackoverflow has highly technical questions & answers:
-
-   https://stackoverflow.com/search?q=%23hashicorp-consul
-
-1. Reddit:
-
-   https://www.reddit.com/search/?q=hashicorp%20consul
-
-
-<a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">YouTube: "Getting into HashiCorp Consul"</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=u6m_RxLR1fQ&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=22">VIDEO: Consul Roadmap – HashiConf Global 2021</a>
 <hr />
 
 <a name="HCPDemo"></a>
@@ -365,11 +394,8 @@ Because this document aims to present concepts in a logic flow for learning, it 
 ## A. On HashiCorp's Consul Cloud SaaS HCP (HashiCorp Cloud Platform)
 
    The fastest and easiest, fastest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">HashiCorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
-
-   HCP Consul provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI/API of FOSS. 
+   It provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI/API of FOSS (free open-source software). 
    
-   <a target="_blank" href="https://www.youtube.com/watch?v=UDbR-TVDUm8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37" title="Apr 1, 2021 by  Anubhav Mishra @build1point0">VIDEO: "Service Mesh - Beyond the Hype"</a>
-
    <a name="SkipEnterprise"></a>
    
    HCP provides fully managed "Service Mesh as a Service (SMaaS)" Consul features not provided with the "self-managed" Enterprise edition. That means:
@@ -385,42 +411,18 @@ Because this document aims to present concepts in a logic flow for learning, it 
    * Faster time to value and time to market
    <br /><br />
 
-References:
+References about HCP Consul:
+   * https://github.com/hashicorp/learn-hcp-consul
+   * https://github.com/hashicorp/learn-terraform-multicloud-kubernetes
+
    * <a target="_blank" href="https://learn.hashicorp.com/collections/consul/cloud-get-started">HashiCorp's 7 tutorials on HCP Consul</a>:
    * https://www.hashicorp.com/products/consul/service-on-azure 
    * <a target="_blank" href="https://www.hashicorp.com/blog/consul-service-on-azure-production-tier">announced Sep 2020</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=YowP4xV2Jf0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=7" title="Oct 14, 2020">VIDEO:
    "Introduction to HashiCorp Cloud Platform (HCP): Goals and Components"</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=Aq1uTozNajI" title="Oct 15, 2019">VIDEO: "Consul Service Mesh: Deep Dive"</a>
-   <br /><br />
-
-### Steps
-
-The demo app may changes over time, but the general steps are:
-
-   1. <a href="#ObtainAWSAccount">Obtain an AWS account credentials</a> to adequate premissions
-   1. <a href="#CreateAWSVPC">Create an AWS VPC and associated resources</a> to be managed by additional Consul infra
-   1. Identify your <tt>lb_ingress_ips</tt> used in the load balancer security groups, needed to limit access to the demo app.
-   1. <a href="#ConfigK8s">Configure kubectl</a>
-   1. <a href="#HCP_Account">Create a HashiCorp Platform (HCP) cloud account and organization</a>
-   1. <a href="#StoreSecrets">Store secrets in a safe way</a>
-   1. <a href="#HVN">Create a HashiCorp Virtual Network (HVN)</a>
-   1. <a href="#PeerHVN">Peer the AWS VPC with the HVN</a>
-   1. <a href="#CreateConsulCluster">Create a HCP Consul cluster</a>
-   1. <a href="#ConfigACL">Configure Consul ACL Controller</a>
-   1. <a href="#RunConsulVPC">Run Consul clients within the provisioned AWS VPC</a>
-   1. <a href="#RunDemoApp">Put load on the demo app within AWS</a>
-
-   1. <a href="#DestroyConsul">Destroy Consul cluster</a> and app infra under test
-   <br /><br />
-
-   References:
-
-   * https://github.com/hashicorp/learn-hcp-consul
-   * https://github.com/hashicorp/learn-terraform-multicloud-kubernetes
-
+   * <a target="_blank" href="https://www.youtube.com/watch?v=UDbR-TVDUm8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37" title="Apr 1, 2021 by  Anubhav Mishra @build1point0">VIDEO: "Service Mesh - Beyond the Hype"</a>
    * hashicorp/consul-snippets Private = Collection of Consul snippets. Configuration bits, scripts, configuration, small demos, etc.
-
 
    * https://github.com/hashicorp/field-workshops-consul = Slide decks and Instruqt code for Consul Workshops
    * https://github.com/hashicorp/demo-consul-101 = Tutorial code and binaries for the HashiCorp Consul beginner course.
@@ -451,12 +453,33 @@ The demo app may changes over time, but the general steps are:
 
    * https://github.com/hashicorp/consul-global-scale-benchmark = Terraform configurations and helper scripts for Consul Global Scale Benchmark
 
+   <br /><br />
+
+<a name="HCPDemoSteps"></a>
+
+### The Automated Way
+
+   1. <a href="#ObtainAWSAccount">Obtain an AWS account credentials</a> with adequate premissions
+   1. <a href="#CreateAWSVPC">Create an AWS VPC and associated resources</a> to be managed by additional Consul infra
+   1. Identify your <tt>lb_ingress_ips</tt> used in the load balancer security groups, needed to limit access to the demo app.
+   1. <a href="#ConfigK8s">Configure kubectl</a>
+   1. <a href="#HCP_Account">Create a HashiCorp Platform (HCP) cloud account and organization</a>
+   1. <a href="#StoreSecrets">Store secrets in a safe way</a>
+   1. <a href="#HVN">Create a HashiCorp Virtual Network (HVN)</a>
+   1. <a href="#PeerHVN">Peer the AWS VPC with the HVN</a>
+   1. <a href="#CreateConsulCluster">Create a HCP Consul cluster</a>
+   1. <a href="#ConfigACL">Configure Consul ACL Controller</a>
+   1. <a href="#RunConsulVPC">Run Consul clients within the provisioned AWS VPC</a>
+   1. <a href="#RunDemoApp">Put load on the demo app within AWS</a>
+
+   1. <a href="#DestroyConsul">Destroy Consul cluster</a> and app infra under test
+   <br /><br />
 
    <a name="ObtainAWSAccount"></a>
    
    #### Obtain AWS account credentials
 
-1. Obtain AWS credentials (AWS_) and populate file <tt>~/.aws/configuration</tt> or environment variables. If you are a HashiCorp employee, they would be obtained for the "Doormat" website, which grants access to your laptop's IP address for a limited time.
+1. Obtain AWS credentials (AWS_) and populate file <tt>~/.aws/configuration</tt> or environment variables. 
 
    <pre>export AWS_ACCESS_KEY_ID=<em>your AWS access key ID</em>
 export AWS_SECRET_ACCESS_KEY=<em>your AWS secret access key</em>
@@ -465,111 +488,66 @@ export AWS_SESSION_TOKEN=<em>your AWS session token</em>
 
    Alternately, copy and paste credentials in the <tt>~/.aws/credentials</tt> file that every AWS CLI command references.
 
+   BTW If you are a HashiCorp employee, they would be obtained for the "Doormat" website, which grants access to your laptop's IP address for a limited time.
 
    <a name="#CreateAWSVPC"></a>
 
-   ### Create an AWS VPC and associated resources
+   ### Create resources within AWS 
    
    There are several ways to setup infrastructure in a cloud datacenter managed by Consul.
 
-   Instead of performing manual steps at https://learn.hashicorp.com/tutorials/cloud/consul-deploy, automate it <strong>manually</strong>,
-
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/consul-ecs-hcp">This</a> describes use of Terraform to create a non-prod HCP Consul environment to manage an ECS cluster, and various AWS services:
+   Instead of performing manual steps at https://learn.hashicorp.com/tutorials/cloud/consul-deploy, 
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/consul-ecs-hcp">this</a> describes use of Terraform to create a non-prod HCP Consul environment to manage an ECS cluster, and various AWS services:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1654022287/consul-ecs-hcp-1280x720_j4p2le.png"><img alt="Consul ECS HCP" width="1280" height="'720" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1654022287/consul-ecs-hcp-1280x720_j4p2le.png"></a>
 
-1. Do not specify <tt>--depth 1</tt> when cloning:
+1. Navigate to where you download GitHub repo.
+
+1. Do not specify <tt>--depth 1</tt> when cloning (because we will checkout a branch):
 
    <pre><strong>git clone git@github.com:hashicorp/learn-consul-terraform.git
+   cd learn-consul-terraform
    </strong></pre>
 
-1. Before going to branch "v0.5" as instructed:
+1. Before switching to a branch, get a list of the branches:
 
    <pre><strong>git tag
    </strong></pre>
 
    <pre><strong>git checkout v0.5
-   cd datacenter-deploy-ecs-hcp/
    </strong></pre>
 
-1. Study the Terraform specifications:
+1. Navigate to the folder within the repo:
 
+   <pre><strong>cd datacenter-deploy-ecs-hcp
+   </strong></pre>
+
+   TODO: Study the Terraform specifications:
+
+   * variables.tf - Parameter definitions used to customize unique user environment attributes.
    * data.tf - Data sources that allow Terraform to use information defined outside of Terraform.
+   * providers.tf - AWS and HCP provider definitions for Terraform.
+   * outputs.tf - Unique values output after Terraform successfully completes a deployment.
+   
    * ecs-clusters.tf - AWS ECS cluster deployment resources.
    * ecs-services.tf - AWS ECS service deployment resources.
-   * hcp-consul.tf - HCP Consul cluster deployment resources.
-   * hvn.tf - HashiCorp Virtual Network (HVN) deployment resources.
    * load-balancer.tf - AWS Application Load Balancer (ALB) deployment resources.
    * logging.tf - AWS Cloudwatch logging configuration.
    * modules.tf - AWS ECS task application definitions.
-   * network-peering.tf - HCP and AWS network communication configuration.
-   * providers.tf - AWS and HCP provider definitions for Terraform.
    * secrets-manager.tf - AWS Secrets Manager configuration.
    * security-groups - AWS Security Group port management definitions.
-   * variables.tf - Parameter definitions used to customize unique user environment attributes.
    * vpc.tf - AWS Virtual Private Cloud (VPC) deployment resources.
 
-   * outputs.tf - Unique values output after Terraform successfully completes a deployment.
+   * network-peering.tf - HCP and AWS network communication configuration.
+   * hvn.tf - HashiCorp Virtual Network (HVN) deployment resources.
+   * hcp-consul.tf - HCP Consul cluster deployment resources.
 
-   * https://github.com/hashicorp/docker-consul = Official Docker images for Consul.
+   See https://learn.hashicorp.com/tutorials/consul/reference-architecture
+   for Scaling considerations.
 
+   https://learn.hashicorp.com/tutorials/consul/production-checklist?in=consul/production-deploy
 
-   <a name="cgsb"></a>
-
-   #### Consul Global Scale Benchmark
-
-   The biggest way to go is using <a target="_blank" href="https://github.com/hashicorp/consul-global-scale-benchmark">https://github.com/hashicorp/consul-global-scale-benchmark</a> used to prove that a Service Mesh Control Plane of 5 HashiCorp Consul Servers across 3 availability zones in us-east-1 are able to update 10,000 Consul/Nomad client nodes and 172,000+ services in under 1 second. Each Consul Server run on c5d.9xlarge instance types on EC2 having 36 vCPUs and 72 Gigabytes of memory. It's described by  <a target="_blank" href="https://www.hashicorp.com/cgsb">White paper: "Service Mesh at Global Scale"</a> and 
-   <a target="_blank" href="https://www.hashicorp.com/resources/hashicast-episode-30-anubhav-mishra-paul-banks-hashicorp">Podcast</a> with creator: Anubhav Mishra (Office of the CTO).
-
-
-   <a name="AWS_Repo"></a>
-
-   #### Identify Terraform repo in GitHub
-   
-   To create the app infra which Consul works on, consider the
-   https://github.com/hashicorp-guides
-   Consistent workflows to provision, secure, connect, and run any infrastructure for any application. 
-      * https://github.com/hashicorp-guides/hashistack
-      <br /><br />
-
-   They reference 22 https://github.com/hashicorp-modules such as:
-      * https://github.com/hashicorp-modules/network-aws
-      <br /><br />
-
-   Each module has an examples folder.
-
-   https://www.terraform.io/language/settings/backends/remote
-   Terraform Remote State back-ends
-
-   https://github.com/hashicorp/field-workshops-consul/tree/master/instruqt-tracks/secure-service-networking-for-aws
-
-
-   a.  https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-consul-provider - it provisions resources that qualify under the AWS free-tier.
-
-   Files:
-   * consul.tf: describes the HPC Consul cluster you are going to create.
-   * vpc_peering.tf: describes the AWS VPC and the peering with the HVN.
-   * variables.tf: sets the variables for your deployment.
-   <br /><br />
-
-   b. The following steps are based on https://learn.hashicorp.com/tutorials/cloud/consul-deploy referencing https://github.com/hashicorp/terraform-aws-hcp-consul which uses Terraform to do the below:
-
-   https://github.com/hashicorp/terraform-aws-hcp-consul is the Terraform module for connecting a HashiCorp Cloud Platform (HCP) Consul cluster to AWS. There are four examples containing default CIDRs for private and public subbnets:
-
-   * <a target="_blank" href="https://github.com/hashicorp/terraform-aws-hcp-consul/blob/main/examples/existing-vpc/main.tf">existing-vpc</a>
-   * hcp-ec2-demo
-   * hcp-ecs-demo
-   * hcp-eks-demo
-   <br /><br />
-
-   * hcp-ec2-client - [For Testing Only]: installs Consul and runs Consul clients with EC2 virtual machines.
-   * hcp-eks-client - [For Testing Only]: installs the Consul Helm chart on the provided Kubernetes cluster.
-   * k8s-demo-app - [For Testing Only]: installs a demo application onto the Kubernetes cluster, using the Consul service mesh.
-   <br /><br />
-
-   https://github.com/hashicorp/terraform-azurerm-hcp-consul
-
-1. Identify your IPv4 address:
+1. Identify your IPv4 address (based on the Wi-Fi you're using):
 
    <pre><strong>curl ipinfo.io
    </strong></pre>
@@ -583,7 +561,7 @@ region         = "us-east-1"
 suffix         = "demo"
    </pre>
 
-   region - the AWS region where resources will be deployed. Must be one of the HCP supported regions for the HCP Consul servers.
+   region - the AWS region where resources will be deployed. PROTIP: Must be one of the regions HCP suppors for HCP Consul servers.
 
    lb_ingress_ips - Your IP. This is used in the load balancer security groups to ensure only you can access the demo application.
 
@@ -679,6 +657,86 @@ terraform output consul_bootstrap_token
    <pre><strong>terraform output ecs_ingress_address
    </strong></pre>
 
+
+<a name="NTA_CIS"></a>
+
+### NIA with CTS
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Ld40kobI2rs&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=11">VIDEO</a> by Melissa Kam & Kim Ngo.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Lf3DvCNDeQo&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=38" title="Network Infrastructure Automation (NIA) Mar 25, 2021">VIDEO</a>: When not using F5 or NGINX (which are Consul-aware), "Network Infrastructure Automation (NIA)" uses the Consul-Terraform Agent where Consul acts as the central broker -- changes trigger Consul to subscribe to Terraform assets.  <a target="_blank" href="https://www.youtube.com/watch?v=Ld40kobI2rs&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=10" title="at HashiConf Global 2021 (Nov 1, 2021)">VIDEO: Network Automation on Terraform Cloud With CTS</a> (Consul-Terraform Sync) which dynamically generates configuration files to invoke Terraform modules. It can interact within Terraform Cloud Driver's Remote Workspaces.
+
+BTW, CTS is used to keep configurations up-to-date <a target="_blank" href="https://www.youtube.com/watch?v=8Qj6gLDShBA&t=12m50s" title="May 26, 2022">on Fortinet physical and virtual NGFW (Next-Generation FireWall)</a>.
+
+References:
+* <a target="_blank" href="https://www.youtube.com/watch?v=GcyNmdpS-CI">VIDEO "Integrating Terraform with Consul"</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=uwgsNYZ3GZk&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=2" title="Opening Keynote Day 2 - HashiConf Global 2021">VIDEO: "Future of Service Networking"</a>
+* https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions
+* https://learn.hashicorp.com/tutorials/cloud/consul-end-to-end-ecs
+<br /><br />
+
+
+
+<hr />
+
+Alternative repo:
+
+   <a name="cgsb"></a>
+
+   #### Consul Global Scale Benchmark
+
+   The biggest way to go is using <a target="_blank" href="https://github.com/hashicorp/consul-global-scale-benchmark">https://github.com/hashicorp/consul-global-scale-benchmark</a> used to prove that a Service Mesh Control Plane of 5 HashiCorp Consul Servers across 3 availability zones in us-east-1 are able to update 10,000 Consul/Nomad client nodes and 172,000+ services in under 1 second. Each Consul Server run on c5d.9xlarge instance types on EC2 having 36 vCPUs and 72 Gigabytes of memory. It's described by  <a target="_blank" href="https://www.hashicorp.com/cgsb">White paper: "Service Mesh at Global Scale"</a> and 
+   <a target="_blank" href="https://www.hashicorp.com/resources/hashicast-episode-30-anubhav-mishra-paul-banks-hashicorp">Podcast</a> with creator: Anubhav Mishra (Office of the CTO).
+
+
+   <a name="AWS_Repo"></a>
+
+   #### Identify Terraform repo in GitHub
+   
+   To create the app infra which Consul works on, consider the
+   https://github.com/hashicorp-guides
+   Consistent workflows to provision, secure, connect, and run any infrastructure for any application. 
+      * https://github.com/hashicorp-guides/hashistack
+      <br /><br />
+
+   They reference 22 https://github.com/hashicorp-modules such as:
+      * https://github.com/hashicorp-modules/network-aws
+      <br /><br />
+
+   Each module has an examples folder.
+
+   https://www.terraform.io/language/settings/backends/remote
+   Terraform Remote State back-ends
+
+   https://github.com/hashicorp/field-workshops-consul/tree/master/instruqt-tracks/secure-service-networking-for-aws
+
+
+   a.  https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-consul-provider - it provisions resources that qualify under the AWS free-tier.
+
+   Files:
+   * consul.tf: describes the HPC Consul cluster you are going to create.
+   * vpc_peering.tf: describes the AWS VPC and the peering with the HVN.
+   * variables.tf: sets the variables for your deployment.
+   <br /><br />
+
+   b. The following steps are based on https://learn.hashicorp.com/tutorials/cloud/consul-deploy referencing https://github.com/hashicorp/terraform-aws-hcp-consul which uses Terraform to do the below:
+
+   Among https://github.com/hashicorp/docker-consul = Official Docker images for Consul.
+
+   https://github.com/hashicorp/terraform-aws-hcp-consul is the Terraform module for connecting a HashiCorp Cloud Platform (HCP) Consul cluster to AWS. There are four examples containing default CIDRs for private and public subbnets:
+
+   * <a target="_blank" href="https://github.com/hashicorp/terraform-aws-hcp-consul/blob/main/examples/existing-vpc/main.tf">existing-vpc</a>
+   * hcp-ec2-demo
+   * hcp-ecs-demo
+   * hcp-eks-demo
+   <br /><br />
+
+   * hcp-ec2-client - [For Testing Only]: installs Consul and runs Consul clients with EC2 virtual machines.
+   * hcp-eks-client - [For Testing Only]: installs the Consul Helm chart on the provided Kubernetes cluster.
+   * k8s-demo-app - [For Testing Only]: installs a demo application onto the Kubernetes cluster, using the Consul service mesh.
+   <br /><br />
+
+   https://github.com/hashicorp/terraform-azurerm-hcp-consul
 
 
    <a name="HCP_Account"></a>
@@ -925,6 +983,8 @@ References about HVN (HashiCorp Virtual Network):
 
    * https://learn.hashicorp.com/tutorials/consul/get-started-agent?in=consul/getting-started
    <br /><br />
+
+   <a name="OSS_repo"></a>
 
 1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
 
@@ -1629,6 +1689,8 @@ WantedBy=multi-user.target
   ...
 ]
    </pre>
+
+https://learning.oreilly.com/library/view/consul-up-and/9781098106133/ch02.html#building-consensus-raft
 
 ### Down for maintenance
 
@@ -2419,13 +2481,14 @@ server:
 
    which was v1.12.0 on April 20, 2022.
 
-1. Identify the latest release of <tt>imagek8: "hashicorp/consul-k8s:</tt> at:
+1. STAR: Identify the latest release of <tt>imagek8: "hashicorp/consul-k8s:</tt> at:
 
    https://github.com/hashicorp/consul-k8s/releases
 
-   https://artifacthub.io/packages/helm/hashicorp/consul
+   which, at time of writing, was v0.44.0 (May 17, 2022).
 
-   which was v0.43.0 on April 21, 2022.
+   This is reflected at:
+   https://artifacthub.io/packages/helm/hashicorp/consul
 
    See https://www.consul.io/docs/k8s/installation/install
 
@@ -2820,7 +2883,7 @@ Consul provides an easy SPOC (Single Point of Contact) to specify rules for comm
 
    <a name="members"></a>
 
-1. If you're running a Consul agent instance,<br />
+1. At the Terminal within a Consul agent instance,<br />
    create another Terminal shell instance to interact with the Consul agent running:
 
    <pre><strong>consul members</strong></pre>
@@ -3132,6 +3195,8 @@ or https://www.lucidchart.com/blog/how-to-build-aws-architecture-diagrams
 
 ## References
 
+https://www.hashicorp.com/blog/consul-1-12-hardens-security-on-kubernetes-with-vault?
+
 https://www.pagerduty.com/docs/guides/consul-integration-guide
 
 <a target="_blank" href="https://www.youtube.com/watch?v=7VtZEZAi6qU&t=14s">
@@ -3151,6 +3216,8 @@ https://thenewstack.io/3-consul-service-mesh-myths-busted/
 https://www.youtube.com/watch?v=UHwoEGSfDlc&list=PL81sUbsFNc5ZgO3FpSLKNRIIvCBvqm-JA&index=33
 The Meshery Adapter for HashiCorp Consul
 
+https://webinars.devops.com/getting-hashicorp-terraform-into-production
+(on Azure) by Mike Tharpe with TechStrong
 
 
 <hr />
