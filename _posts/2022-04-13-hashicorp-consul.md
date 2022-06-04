@@ -217,6 +217,8 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
 > PROTIP: Become comfortable with the naming conventions used by the architecture, workflows, and automation by building several environments, in order of complexity:
 
+https://demo.consul.io/ui/dc1/overview/server-status
+
 <a href="#HCPDemo">A. On HashiCorp's Consul SaaS Cloud on the HCP (HashiCorp Cloud Platform)</a> -- the easiest, fastest, most standardized way to use Consul
 
    - You can do this using a Chromebook laptop with no local storage.
@@ -247,7 +249,7 @@ Within a single datacenter, Consul provides automatic failover for services by o
 
 Other demos:
 
-* https://www.hashicorp.com/resources/getting-started-with-managed-service-mesh-on-aws First Beta Demo of Consul 
+* https://www.hashicorp.com/resources/getting-started-with-managed-service-mesh-on-aws First Beta Demo of HCP Consul Service Mesh on AWS.
 
 <hr />
 
@@ -3218,6 +3220,9 @@ The Meshery Adapter for HashiCorp Consul
 
 https://webinars.devops.com/getting-hashicorp-terraform-into-production
 (on Azure) by Mike Tharpe with TechStrong
+
+https://github.com/alvin-huang/consul-kv-github-action
+GitHub Action to pull a value from Consul KV
 
 
 <hr />

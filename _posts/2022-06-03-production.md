@@ -155,49 +155,27 @@ Here are some examples of requirements defined for production:
 1. Audit Logs Regularly -- On Linux systems, contents stored within <tt>/var/log/audit.log</tt> 
 
 
+<a name="Telemetry"></a>
 
-## Conduct Chaos Engineering
+## Telemetry
 
-To see whether your organization is "production ready", conduct experiments to reveal vulnerabilities so that your organization improves its reliability and minimize down-time.
+Added to a time-series database are:
 
-Schools conduct "fire drills" to ensure that students know how to evacuate the building in an orderly basis. Hospital emergency rooms conduct drills to ensure they have tools and procedures in place for various conditons, to see whether they are ready to handle emergencies with minimal mistakes and stress. 
+* <strong>Logs</strong> emitted from apps is used to scan for issues (errors) after they occur. This enables analysis of patterns of activity over time. Centralized logging enables correlation of events happening at different parts of the system.
 
-Security professionals conduct what they call "TableTop Exercises during Game Day".
+* <strong>Monitoring</strong> of resource usage (disk space, memory, etc.) (collected by agents) and response times (latency) are used to identify what conditions led up to an adverse event.
 
-There is software available to help you plan and execute Chaos Engineering experiments.
+* <strong>Tracing</strong> is used to follow what happens in the system after a user makes a request
 
-   * Gremlin
+* <strong>Synthetic transactions</strong> such as logins are injected to provide readings from a consistent load over time.
 
-   * https://harness.io/demo/chaos-engineering
-   <br /><br />
+* <strong>Observability</strong> is about characteristics inferred from metrics, to figure out why something is wrong.
 
-It's called "Chaos Engineering" to emphasize a process that is well-planned and thoroughly executed. Here is a rough outline of the steps:
+They are used as the basis for alerts to be triggered.
 
-   1. Examine a <a href="#ChaosIdeas">list of possible vulnerabilities seen in other systems</a>, and note how others improved their risk posture. Vendors have a public "Chaos Hub".
-   
-   2. Identify possible vulnerabilities in your own organization and systems, sorted by possible impact ("blast radius").
+<a name="Metrics"></a>
 
-   3. Design experiments to expose each vulnerability identified. 
-
-   4. Estimate <strong>costs</strong>, to sequence experimentation by the best probable  payback.
-
-   5. Install methods to gather and display metrics (RTO and RPO), so that measurements of time and resources can be taken during each experiment. This include use of <a href="#ObservabilityTools">observability tools</a> so that attention is focused on problem-solving rather than data gathering when emergencies occur
-   
-   6. Inform the organization. Explain the metrics and calendar experiments.
-   
-   7. Run Chaos Experiments on your target systems to simulate real-world scenarios.
-   
-   8. Analyze results gathered during experiments to identify extent of vulnerabilities and actions from lessons learned to improve reliability.
-
-   9. Decide on implementation based on a balance between likely impact and affordability of each proactive action.
-
-The above is not a "once and done" event.
-SOC2 and ISO27000 audits occur every year.
-
-
-<a name="ObservabilityTools"></a>
-
-## Observability Tools
+## Metrics graphed
 
 A line graph for each metrics over time, by system layer:
 
@@ -225,9 +203,28 @@ A line graph for each metrics over time, by system layer:
 
 * Speed of deplyments from commit to production usage
 
-* RTO and RPO of each incident over time
-
 * Availability percentage each day, week, month, quarter, year
+
+* Peak, minimum, average RTO and RPO of incidents over time
+
+* SLO/SLIs
+
+   <a name="Ratios"></a>
+
+   ### Ratios
+
+* PROTIP: Financial analysts <a target="_blank" href="https://www.suredividend.com/ratios-metrics/#cash">make heavy use</a> of <strong>ratios</strong> to highlight the interaction between two metrics, such as the "Quick Ratio" of cash vs. receivables, Margin, Return on Assets, and other percentages. In IT, the custom ratios include "revenue per transaction", "downloads per user session", <a target="_blank" href="https://erikbern.com/2014/01/23/ratio-metrics.html">clicks per user</a>, etc.
+https://cloud.google.com/monitoring/mql/examples#qlx-ratios
+
+* Internal Error Budget. (popularized by Google SREs) are based
+
+   SLI = Service Level Indicator (percent):
+
+   SLI = ( good events / valid events ) * 100
+
+   Error Budget = Allowable bad events
+
+   Error Budget = 100 - SLI
 
 
 <a name="ChaosIdeas"></a>
@@ -251,6 +248,46 @@ By system layer:
 * Process within app
 
 * Component (Storage)
+
+
+
+## Conduct Chaos Engineering
+
+To see whether your organization is "production ready", conduct experiments to reveal vulnerabilities so that your organization improves its reliability and minimize down-time.
+
+Broadway shows conduct "dressed rehersals". Schools conduct "fire drills" to ensure that students know how to evacuate the building in an orderly basis. Hospital emergency rooms conduct drills to ensure they have tools and procedures in place for various conditons, to see whether they are ready to handle emergencies with minimal mistakes and stress. Security professionals conduct what they call "TableTop Exercises during Game Day".
+
+> <a target="_blank" href="https://www.bigmarker.com/gremlin/Reducing-Trauma-in-Production-with-SLOs-and-Chaos-Engineering">VIDEO</a>: "We inject failure proactively to validate SLOs/SLIs"
+
+There is software available to help you plan and execute Chaos Engineering experiments.
+
+   * Gremlin
+
+   * https://harness.io/demo/chaos-engineering
+   <br /><br />
+
+It's called "Chaos Engineering" to emphasize a process that is well-planned and thoroughly executed. Here is a rough outline of the steps:
+
+   1. Examine a <a href="#ChaosIdeas">list of possible vulnerabilities seen in other systems</a>, and note how others improved their risk posture. Vendors have a public "Chaos Hub".
+   
+   2. Identify possible vulnerabilities in your own organization and systems, sorted by possible impact ("blast radius").
+
+   3. Design experiments to expose each vulnerability identified. 
+
+   4. Estimate <strong>costs</strong>, to sequence experimentation by the best probable  payback.
+
+   5. Install methods to gather and display metrics (RTO and RPO), so that measurements of time and resources can be taken during each experiment. This include use of <a href="#Telemetry">telemetry tools</a> so that attention is focused on problem-solving rather than data gathering when emergencies occur
+   
+   6. Inform the organization. Explain the metrics and calendar experiments.
+   
+   7. Run Chaos Experiments on your target systems to simulate real-world scenarios.
+   
+   8. Analyze results gathered during experiments to identify extent of vulnerabilities and actions from lessons learned to improve reliability.
+
+   9. Decide on implementation based on a balance between likely impact and affordability of each proactive action.
+
+The above is not a "once and done" event.
+SOC2 and ISO27000 audits occur every year.
 
 
 

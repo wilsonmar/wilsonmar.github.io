@@ -6840,6 +6840,7 @@ VIDEO: AWS EKS vs Azure AKS vs Google GKE</a> by Tung Nguyen, CEO of BoltOps
 <a target="_blank" href="https://www.youtube.com/watch?v=Zztufl4mFQ4">
 VIDEO: GKE Autopilot - Fully Managed Kubernetes Service From Google</a> Dec 13, 2021
 
+https://tech.ebayinc.com/engineering/how-ebay-leverages-kubernetes-helm-charts-and-jenkins-pipelines-to-deliver-high-quality-software/
 
 <hr />
 
