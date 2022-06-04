@@ -46,12 +46,12 @@ The Enterprise edition of Consul enables multi-cloud, multi-platform, and multi-
 
    Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
 
-   Initiated in <strong>2014</strong>, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
+   Initiated in <strong>2014</strong>, the repo has garnered nearly 25,000 stars, with over a million downloads monthly.
 
 
 ## To Serve Microservices
 
-   To build a fast and reliable system in the cloud today, enterprises architect systems using distributed <strong>microservices</strong> instead of monolithic architectures.
+   To build a fast and reliable system in the cloud today, enterprises create systems using distributed <strong>microservices</strong> instead of monolithic architectures which are more difficult to evolve.
 
    > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
@@ -436,7 +436,7 @@ References about HCP Consul:
 
    * https://github.com/hashicorp/consul-template = Template rendering, notifier, and supervisor for @hashicorp Consul and Vault data.
    
-   * https://github.com/hashicorp/consul-k8s = First-class support for Consul Service Mesh on Kubernetes
+   * https://github.com/hashicorp/consul-k8s = First-class support for Consul Service Mesh on Kubernetes, with binaries for download at https://releases.hashicorp.com/consul-k8s/
 
    * https://github.com/hashicorp/consul-replicate = Consul cross-DC KV replication daemon.
 
