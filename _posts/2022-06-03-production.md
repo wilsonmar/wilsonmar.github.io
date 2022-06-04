@@ -80,15 +80,17 @@ Here are some examples of requirements defined for production:
 
 1. Scan Terraform and other IaC for vulernabilities before push to GitHub.
 
+1. Run data stores (Oracle, MongoDB, MySQL, PostgreSQL, etc.) outside of Kubernetes (for fine tuning necessary to optimization) [4]
+
 1. Scan container images created.
 
 1. Refer to assets (Container images) by SHA (rather than by name), so content changes can be detected before use.
 
-1. Retrieve assets from an in-house repository (rather than public DockerHub), so that forensics can be performed in case of security issues. 3rd-party packages and libraries can have vulnerabilities injected.
+1. Retrieve assets from an in-house registry (such as JFrog Artifactory, rather than public DockerHub), so that forensics can be performed in case of security issues. 3rd-party packages and libraries can have vulnerabilities injected.
 
 1. Minimize Container Images -- since 3rd-party packages and libraries can contain vulnerabilities, remove those that are not used. Example: Alpine Images are almost 10 times smaller than Ubuntu. use smaller Amazon or Alpine OS instead of Ubuntu. Smaller Docker images take less storage space and build faster.
 
-1. Use a read-only filesystem in containers [3]
+1. Use a read-only filesystem in containers [3] and OS.
 
 1. Use an isolated/dedicated node for each purpose, to avoid resource contention and security issues. On Kubernetes, this can be accomplished by specifying taints and tolerations to restrict what pods can be scheduled to those nodes.
 
@@ -132,11 +134,13 @@ Here are some examples of requirements defined for production:
 
 1. Create test data based on dispersion patterns identified in production data (rather than copying production data for test use)
 
+1. Version database structure definitions and use utilities which enable back-off restore in case of version migration failure.
+
 1. Conduct Proof of Scalability
 
 1. SOC (Security Operations Center)
 
-1. Percentage and Blue/Green Deployments (without downtime)
+1. Percentage and Blue/Green Deployments (without downtime), ensuring that only one version of the application runs, reducing the complexity of handling multiple concurrent versions.
 
 1. Alerts based on log contents
 
@@ -191,6 +195,41 @@ The above is not a "once and done" event.
 SOC2 and ISO27000 audits occur every year.
 
 
+<a name="ObservabilityTools"></a>
+
+## Observability Tools
+
+A line graph for each metrics over time, by system layer:
+
+* # Regions
+
+* # Availability Zones
+
+* # Clusters
+
+* # Pod instances
+
+* Sidecar (within Node) memory
+
+* Node (app) memory
+
+* Process within app memory
+
+* Component (Storage) usage
+
+* Cost of each cloud service, each month, each account
+
+* Number of technical and business transactions each month (for cost per transaction)
+
+* Number of deployment runs
+
+* Speed of deplyments from commit to production usage
+
+* RTO and RPO of each incident over time
+
+* Availability percentage each day, week, month, quarter, year
+
+
 <a name="ChaosIdeas"></a>
 
 ## Possible vulnerabilities, experiments, defenses
@@ -203,18 +242,15 @@ By system layer:
 
 * Cluster
 
-* Node
+* Pod instance
 
-* Process
+* Sidecar (within Node)
+
+* Node (app)
+
+* Process within app
 
 * Component (Storage)
-
-
-<a name="ObservabilityTools"></a>
-
-## Observability Tools
-
-Metrics in place
 
 
 

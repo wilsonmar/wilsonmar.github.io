@@ -133,11 +133,11 @@ Adoption of Consul aims to yield these benefits:
 
 > "A small operations team can leverage Consul to impact security, reliability, observability, and application delivery across their entire stack —- all without requiring developers to modify their underlying microservices."
 
-<a target="_blank" href="https://github.com/consul-up/examples">Code for the book</a> is organized according to the book's chapters:
+<a target="_blank" href="https://github.com/consul-up/examples">Code for the book</a> (which you need to copy and paste into your own GitHub repo) is organized according to the book's chapters:
 
 1. Service Mesh 101
 2. Introduction to Consul
-3. Deploying Consul
+3. <a target="_blank" href="https://learning.oreilly.com/library/view/consul-up-and/9781098106133/ch03.html">Deploying Consul within K8s</a> (in cloud or minikube for automatic port-forwarding) and <a target="_blank" href="https://learning.oreilly.com/library/view/consul-up-and/9781098106133/ch03.html#ch03-deploying-consul-on-vms">on VMs</a>
 4. Adding Services to the Mesh
 5. Ingress Gateways
 6. Security
@@ -1690,7 +1690,7 @@ WantedBy=multi-user.target
 ]
    </pre>
 
-https://learning.oreilly.com/library/view/consul-up-and/9781098106133/ch02.html#building-consensus-raft
+   See https://learning.oreilly.com/library/view/consul-up-and/9781098106133/ch02.html#building-consensus-raft
 
 ### Down for maintenance
 
