@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Production"
-excerpt: "Typical patterns in Production vs. Tests"
+title: "Getting to Production"
+excerpt: "Metrics and procedures addressing concerns "
 tags: [security]
 date: "2022-06-03"
 file: "production"
@@ -16,21 +16,23 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-We often see "this is for learning and not recommended for use in production".
+This article presents the opposite of warnings such as "this is for learning and not recommended for use in production".
 
-So what is the recommendation for use in production?
-
-Here are my notes on the pattern I've seen in production vs. regular test.
+Here are my notes on the question of "how to get into production?".
 
 {% include whatever.html %}
 
 <hr />
 
-## Get to Production while in Test
+## Get to Production while Testing
 
 If there is one piece of advice that DevOps practioners have it's this:
 
 > PROTIP: While your team matures the application code, use that <strong>same timeframe</strong> to mature the operational procedures as well so you're not struggling at the end.
+
+<a href="#[5]" title="24:07 into">This podcast</a> asked "what's one thing you wish you would have known sooner when it comes to running software in production?"
+
+> "Pivoting your understanding of failure in terms of bugs, unforseen events failure in a system. ... Being less freaked out when it happens. Failure is the system giving you new information. There is an opportunity to improve. It is natural. ... It would have saved a lot of stress, to say 'failure is OK'."
 
 
 ## Corporate policies and procedures
@@ -39,24 +41,174 @@ There will be processes which some developers object to, even if it adds only a 
 
 This is why a mechanism is needed where a <strong>corporate policy</strong> is issued by an executive to specify where a way of working needs to occur to ensure security or other important aspect.
 
-Evidence of policies and actual proof of procedure usage are examined by auditors who issue SOC2 and ISO 27000 letters which customers and prospective customers request from salespeople.
+Evidence of policies and actual proof of procedure usage are examined by auditors who issue <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2 and ISO 27000</a> attestion letters which most prospective customers request from salespeople.
 
 
-<a name="Assessment"></a>
+## Day 0, 1, 2, N
 
-## Production Maturity Assessment
+<a href="#[7]" title="">Articles such as this</a> 
+sequence Go-To-Production activities according to a "Crawl, Walk, Run" approach:
 
-Here are some examples of requirements defined for production:
+<strong>Day Zero (Stage and Preparations)</strong>
+
+* Confirmation of communications
+
+* Deployment to Stage environment
+* Administrators prove access to workflows
+* Verfication of transactions with dependencies
+
+* Chaos Engineering by NOC/SOC (Network and Security Operations Center):
+* Deployment (Blue/Green) fallback
+* Disaster Recovery trials (to prove RTO & RPO)
+
+* Proving of Day N activities in Stage environment
+* Scheduling for Day One, Two, etc.
+
+<strong>Day One</strong>
+
+* Administrator access
+* Deployment (Blue/Green)
+
+* Secret Key Initialization
+* Data transfer
+
+* User access provisioning
+* First user transactions
+
+<strong>Day Two</strong>
+
+* Gradually larger user access
+
+<strong>Day N</strong>
+
+* Key Rotation
+* DR Promotion
+* Policy Maintainance cadence
+* Application on-boarding
+
+<hr />
+
+<a name="Concerns"></a>
+
+## Concerns
+
+<a href="#Requirements">Requirements for Production</a> can be categorized by these reasons for concern, prioritized:
+
+<a href="#Communications">A. Communications</a>
+<a href="#On-going">B. On-going activities schedule</a>
+<a href="#Security">C. Security</a>
+<a href="#Observability">D. Observability</a>
+<a href="#DeployVelocity">E. Deploy Velocity</a>
+<a href="#Scalability">F. Scalability</a>
+<a href="#DR">G. Disaster Recovery</a>
+<br /><br />
+
+<hr />
+
+<a name="Communications"></a>
+
+## A. Communications
+
+A reliable mechanism for communicating with all 
+stakeholders is the fundamental capability of management.
+
+Messaging needs to be crafted in order to avoid misunderstandings. Wording may need to be adjusted for different audiences.
+
+Better cooperation is achieved when stakeholders are not surprised and do not feel excluded. 
+
+Ever more important in today's hostile world, quick and thorough communication is needed to achieve coordinated action.
+
+This starts from a complete list of stakeholders and a plan for what is communicated to them at different points in time.
+
+
+<a name="On-going"></a>
+
+## B. On-going activities schedule
+
+By definition, "production" is generally an on-going repetitive activity rather than a temporary project forging  new ground developing systems.
+
+Teams are stood-up to provide continuous (365/24/7) survailance vigilence, and perform emergency response and remediation. Such teams maintain <strong>regular schedules</strong> of activities.
+
+Some call such teams NOC (Network Operations Center), others a SOC (Security Operations Center).
+They enforce policies and monitor for violations.
+
+
+<a name="Security"></a>
+
+## C. Security
+
+Due to the prevalence of sophisticated nation-states holding private data for ransomware and cyberwarfare "killware", keeping data secure is top-of-mind. So <strong>attack surfaces</strong> need to be minimized. That means "locking down" all aspects (networking, apps, data, etc.). Ideally, by being built-in to the architecture and programming. If that takes too long, pragmatically build mechanisms around components (such as Nomad and Consul).
+
+During development work, systems can be restricted to specific IP addresses of just development team members' laptops. However, production systems require wider and more sophisticated access controls, such as "least privilege". Quick yet thorough <strong>on-boarding and off-boarding</strong> becomes more important as adoption grows.
+
+The trick here is to establish the security necessary with minimal slow-down to development work. To build-in security mechanisms, they need to "shift left", such as RBAC policies, requiring pull requests to be authorized, and having applications emit logs when performing activities with security implications.
+
+
+
+<a name="Observability"></a>
+
+## D. Metrics
+
+<strong>Dashboards</strong> of metrics over time provide people at all levels of an organization a way to make more informed (rational) decisions. 
+
+The <a href="#Telemetry">Telemetry section below</a> lists some of the dozens of metrics advanced organizations collect.
+
+Metrics can be external (such as SLAs with customers), or internal within a team (such as Error Budgets).
+There are quantitative and qualitative metrics.
+
+Security and other adverse events can happen suddenly. In today's complex world, it is not enough for people to occassionally glance at dashboards. So <strong>automated alerts</strong> and <strong>automatic remediations</strong> are necessary to respond in a timely manner.
+
+
+
+<a name="DeployVelocity"></a>
+
+## E. Deployment velocity
+
+Metrics about the velocity of events, such as Time from Commit to Production, reveal the <strong>payback</strong> from use of automated CI/CD pipelines and other efforts. By inference, the effectiveness of teamwork.
+
+Balance rates of errors and human mistakes.
+
+
+
+<a name="Scalability"></a>
+
+## F. Scalability and Portability
+
+These two can be grouped together as they ultimately come down to the same thing: maximizing cluster performance. The aim is to ensure that you continue to benefit from Kubernetes’ ability to self-heal nodes, autoscale any infrastructure and adapt to your expanding business, without taking a performance hit.
+
+
+
+<a name="DR"></a>
+
+## G. Disaster Recovery (DR)
+
+Using Kubernetes in conjunction with GitOps can help enormously with disaster recovery, bringing MTTR down from hours to minutes. Even in the case of complete cluster meltdown, GitOps enables you to recreate your container infrastructure quickly and easily.
+
+
+<hr />
+
+<a name="Requirements"></a>
+
+## Requirements for Production 
+
+Here are some examples of requirements defined for production, roughly sequenced according to the development workflow:
 
 1. Monitor and restrict use of CLI (perhaps using AWS Config) instead of versioned IaC.
 
-1. Dynamically generate user accounts and passwords instead of storing secrets.
+   This is to ensure that, by ensuring that all changes are performed only <strong>authorized</strong> people, approved, and tracked, rogue changes are prevented. Vault ensures authentication.
 
-1. Store secrets off laptops (one click on a phising scam would result in loss of control).
+1. Dynamically generate user accounts and passwords instead of storing secrets (Consul Dynamic Secrets)
 
-1. Limit "blast radius" from account loss by limiting the scope of actions by each account (such as only allowing special accounts to delete and limiting read of sensitive information).
+   This ensures that secrets are not available for malicious actors to steal.
+   When secrets are stored on laptops, one click on a phising scam would result in loss of control.
+
+1. Limit "blast radius" from account loss by limiting the scope of actions permitted by each account.
+
+   For example, only allow special accounts to delete and limiting read of sensitive information.
 
 1. Version Control Configurations files -- use a Git-based workflow (which some call "GitOps") so the "who, when, why" of each change is stored. 
+
+   Waypoint?
 
 1. Use CI/CD automation on laptops to automatically run scans.
 
@@ -157,7 +309,7 @@ Here are some examples of requirements defined for production:
 
 <a name="Telemetry"></a>
 
-## Telemetry
+## Metrics Telemetry 
 
 Added to a time-series database are:
 
@@ -300,3 +452,14 @@ SOC2 and ISO27000 audits occur every year.
 [3] https://learnk8s.io/production-best-practices
 
 [4] https://techbeacon.com/devops/one-year-using-kubernetes-production-lessons-learned says "Just using HAProxy (without an ELB) could also work, but you would have to work around dynamic AWS IP addresses on the DNS level."
+
+<a name="[5]">[5]</a> https://open.spotify.com/show/0fGAMsISbRkwOpeQBIEx0H?si=573eb3ede11546ec PagerDuty's "Page it to the Limit".
+
+<a name="[6]">[6]</a> [6] https://www.weave.works/blog/the-definitive-guide-to-kubernetes-in-production
+
+<a name="[7]">[7]</a> https://www.hashicorp.com/resources/adopting-hashicorp-vault 
+
+https://learn.hashicorp.com/tutorials/vault/production-hardening
+
+https://learn.hashicorp.com/tutorials/consul/production-checklist
+

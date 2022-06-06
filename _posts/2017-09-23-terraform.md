@@ -4200,6 +4200,9 @@ VIDEO: "Learning Live with AWS & HashiCorp" multi-part series by Jenna Pederson 
 <a target="_blank" href="https://www.youtube.com/watch?v=iKeItbMIyZE">VIDEO</a>:
 Microsoft's <strong>Terrafy</strong> (pronounced "terrify" as in Holloween?) at <a target="_blank" href="https://github.com/Azure/aztfy">https://github.com/Azure/aztfy</a> generates *.tf (Terraform configuration files) and State based on resources based on what is in an AzureRM resource group. Those files can then be used in regular Terraform commands as if they were originally created using Terraform Plan and Apply.
 
+https://open.spotify.com/episode/54xRbC6doIojY1edvB1QdT?si=8580a6cdebcd438a
+PagerDuty
+
 
 ## More on DevOps #
 

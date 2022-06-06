@@ -1,9 +1,9 @@
 ---
-layout: post
+{% include whatever.html %}layout: post
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
 tags: [travel, roadtrip, museums, monuments, ML]
-date: "2021-02-06"
+date: "2022-06-06"
 file: "museums-roadtrip-usa"
 image:
 # feature: pic road and clouds to mountains 1900x500.jpg
@@ -17,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 This page lists where one can visit, see, and eat at the most important cultural artifacts in America (given unlimited time and money). I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses.
+
+{% include whatever.html %}
 
 It's a large country, so sites here are listed by each <a href="#CivilWar">state of the union</a>, along natural geography:
 
@@ -1579,16 +1581,20 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 
 ## Westward through the Southwest
 
-The route here is a variation of
-<a target="_blank" href="https://en.wikipedia.org/wiki/U.S._Route_66#/media/File:Map_of_US_66.svg">
-Route 66</a>, one of the original highways within the U.S.
-Thus its colloqual name the "Mother Road".
+<a target="_blank" href="https://www.amazon.com/Passport-World-Route-Donna-Bouche/dp/B088DZ79NH/">VIDEO</a>:
+<a target="_blank" href="https://en.wikipedia.org/wiki/U.S._Route_66#/media/File:Map_of_US_66.svg">Route 66</a> was one of the original highways within the U.S. starting in 1924.
+Thus its colloqual name the "Mother Road". It served as a military transport corridor during WWII.
+During post-war years, motels, diners, and gas stations along Route 66 became popular vacaction destinations.
+From 1956, interstates built provide a road without the need to slow down through towns.
 
-<a target="_blank" href="https://www.onroadcar.com/route-66-road-trip/">
-<img alt="!map beige route-66 600x200.jpg" width="600" height="200" src="https://cloud.githubusercontent.com/assets/300046/14080916/1a0a42ca-f4c5-11e5-8230-cb0b95dde974.jpg"></a>
+<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14080916/1a0a42ca-f4c5-11e5-8230-cb0b95dde974.jpg"><img alt="!map beige route-66 600x200.jpg" width="600" height="200" src="https://cloud.githubusercontent.com/assets/300046/14080916/1a0a42ca-f4c5-11e5-8230-cb0b95dde974.jpg"></a>
 
-Route 66 begins in Chicago, goes to St. Louis, Missouri, then through smaller road-side towns
-on the way to Oklahoma City, Amarillo TX, and Flagstaff AZ before ending on the Santa Monica pier in Los Angeles, California.
+Route 66 begins in Michigan Avene in Chicago. Eat at Lou Mitchell's diner
+The route goes to St. Louis, Missouri, then through smaller road-side towns
+on the way to Tulsa and Oklahoma City, Amarillo TX, Alberquque New Mexico, then over mountains to Flagstaff AZ before ending on the Santa Monica pier in Los Angeles, California.
+
+
+### Chisolm Trail
 
 The <a target="_blank" href="https://en.wikipedia.org/wiki/Chisholm_Trail">Chisolm Trail</a> was used between 1867-1884 to drive cows to market from various cowtowns in Texas through Oklahoma Indian Territory to Abilene and other railheads in Kansas. The Lonesome Dove TV series depicts that time.
 
