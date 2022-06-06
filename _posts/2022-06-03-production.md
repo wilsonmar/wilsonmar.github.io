@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Getting to Production"
-excerpt: "Metrics and procedures addressing concerns "
+title: "Get to Production (with less stress)"
+excerpt: "Specific strategies and procedures to address concerns, on schedules, with metrics,"
 tags: [security]
 date: "2022-06-03"
 file: "production"
@@ -18,7 +18,7 @@ comments: true
 
 This article presents the opposite of warnings such as "this is for learning and not recommended for use in production".
 
-Here are my notes on the question of "how to get into production?".
+Here are my notes on the question of "how to get into production?", which can be one of the most stressful times for systems people.
 
 {% include whatever.html %}
 
@@ -51,7 +51,7 @@ sequence Go-To-Production activities according to a "Crawl, Walk, Run" approach:
 
 <strong>Day Zero (Stage and Preparations)</strong>
 
-* Confirmation of communications
+* Confirmation of <a href="#Communications">communications with stakeholders</a>
 
 * Deployment to Stage environment
 * Administrators prove access to workflows
@@ -95,12 +95,12 @@ sequence Go-To-Production activities according to a "Crawl, Walk, Run" approach:
 <a href="#Requirements">Requirements for Production</a> can be categorized by these reasons for concern, prioritized:
 
 <a href="#Communications">A. Communications</a>
-<a href="#On-going">B. On-going activities schedule</a>
+<a href="#Scheduling">B. Scheduling</a>
 <a href="#Security">C. Security</a>
 <a href="#Observability">D. Observability</a>
-<a href="#DeployVelocity">E. Deploy Velocity</a>
+<a href="#DeployVelocity">E. Velocity</a>
 <a href="#Scalability">F. Scalability</a>
-<a href="#DR">G. Disaster Recovery</a>
+<a href="#Resiliency">G. Resiliency</a>
 <br /><br />
 
 <hr />
@@ -114,34 +114,47 @@ stakeholders is the fundamental capability of management.
 
 Messaging needs to be crafted in order to avoid misunderstandings. Wording may need to be adjusted for different audiences.
 
-Better cooperation is achieved when stakeholders are not surprised and do not feel excluded. 
+Better cooperation is achieved when stakeholders are not surprised, do not feel excluded, and hold assumptions of positive intent. 
 
 Ever more important in today's hostile world, quick and thorough communication is needed to achieve coordinated action.
 
-This starts from a complete list of stakeholders and a plan for what is communicated to them at different points in time.
+PROTIP: Compile a complete list of stakeholders, what is important to each of them, to craft a plan for what is communicated to them at different points in time.
+
+PROTIP: Opinion surveys over time elicit feedback necessary to expose "blind spots".
+
+PROTIP: Regularly scheduled one-on-one "crucial conversations" provide opportunities to clear the air on what might become festering resentments which reduce productivity.
+
+On-going communications enable go-to-production teams to know ahead of time whether key personnel and systems are available and ready.
 
 
-<a name="On-going"></a>
+<a name="Scheduling"></a>
 
-## B. On-going activities schedule
+## B. Scheduling
 
-By definition, "production" is generally an on-going repetitive activity rather than a temporary project forging  new ground developing systems.
+By definition, "production" is generally an on-going repetitive activity rather than a temporary project forging new ground developing systems.
 
 Teams are stood-up to provide continuous (365/24/7) survailance vigilence, and perform emergency response and remediation. Such teams maintain <strong>regular schedules</strong> of activities.
 
-Some call such teams NOC (Network Operations Center), others a SOC (Security Operations Center).
-They enforce policies and monitor for violations.
+NOC (Network Operations Center) and SOC (Security Operations Center) analyze logs to monitor for violations and enforce policies.
+
+Disk space usage and component versions need to be monitored for upgrades.
+
+Keys need rotation.
 
 
 <a name="Security"></a>
 
 ## C. Security
 
-Due to the prevalence of sophisticated nation-states holding private data for ransomware and cyberwarfare "killware", keeping data secure is top-of-mind. So <strong>attack surfaces</strong> need to be minimized. That means "locking down" all aspects (networking, apps, data, etc.). Ideally, by being built-in to the architecture and programming. If that takes too long, pragmatically build mechanisms around components (such as Nomad and Consul).
+Due to the prevalence of sophisticated nation-states holding private data for ransomware and cyberwarfare "killware", keeping data secure is top-of-mind. 
+
+PROTIP: Systematically catalog your <strong>attack surfaces</strong> so you know how to minimize risks. That means "locking down" access to networks, apps, data. Ideally, security is built-in to the architecture and programming. 
 
 During development work, systems can be restricted to specific IP addresses of just development team members' laptops. However, production systems require wider and more sophisticated access controls, such as "least privilege". Quick yet thorough <strong>on-boarding and off-boarding</strong> becomes more important as adoption grows.
 
 The trick here is to establish the security necessary with minimal slow-down to development work. To build-in security mechanisms, they need to "shift left", such as RBAC policies, requiring pull requests to be authorized, and having applications emit logs when performing activities with security implications.
+
+HashiCorp Nomad, Consul, Vault pragmatically build mechanisms around components to avoid apps rewrite while making enterprise integration achievable.
 
 
 
@@ -162,7 +175,7 @@ Security and other adverse events can happen suddenly. In today's complex world,
 
 <a name="DeployVelocity"></a>
 
-## E. Deployment velocity
+## E. Velocity
 
 Metrics about the velocity of events, such as Time from Commit to Production, reveal the <strong>payback</strong> from use of automated CI/CD pipelines and other efforts. By inference, the effectiveness of teamwork.
 
@@ -178,9 +191,9 @@ These two can be grouped together as they ultimately come down to the same thing
 
 
 
-<a name="DR"></a>
+<a name="Resiliency"></a>
 
-## G. Disaster Recovery (DR)
+## G. Resiliency
 
 Using Kubernetes in conjunction with GitOps can help enormously with disaster recovery, bringing MTTR down from hours to minutes. Even in the case of complete cluster meltdown, GitOps enables you to recreate your container infrastructure quickly and easily.
 
@@ -463,3 +476,4 @@ https://learn.hashicorp.com/tutorials/vault/production-hardening
 
 https://learn.hashicorp.com/tutorials/consul/production-checklist
 
+https://www.theguardian.com/lifeandstyle/2022/jun/05/how-to-make-good-decisions
