@@ -96,8 +96,10 @@ sequence Go-To-Production activities according to a "Crawl, Walk, Run" approach:
 
 <a href="#Communications">A. Communications</a>
 <a href="#Scheduling">B. Scheduling</a>
+
 <a href="#Security">C. Security</a>
 <a href="#Observability">D. Observability</a>
+
 <a href="#DeployVelocity">E. Velocity</a>
 <a href="#Scalability">F. Scalability</a>
 <a href="#Resiliency">G. Resiliency</a>
@@ -109,8 +111,7 @@ sequence Go-To-Production activities according to a "Crawl, Walk, Run" approach:
 
 ## A. Communications
 
-A reliable mechanism for communicating with all 
-stakeholders is the fundamental capability of management.
+A reliable mechanism for identifying and communicating with <strong>all stakeholders</strong> is the fundamental capability of management. Mechanisms need to include ways to keep the list of stakeholders updated with changes.
 
 Messaging needs to be crafted in order to avoid misunderstandings. Wording may need to be adjusted for different audiences.
 
@@ -118,11 +119,13 @@ Better cooperation is achieved when stakeholders are not surprised, do not feel 
 
 Ever more important in today's hostile world, quick and thorough communication is needed to achieve coordinated action.
 
-PROTIP: Compile a complete list of stakeholders, what is important to each of them, to craft a plan for what is communicated to them at different points in time.
+PROTIP: Compile a complete <strong>list of stakeholders</strong>, what is important to each of them; what channels is preferred and the best time to reach. Such information is needed to craft a plan for what is communicated to them at different points in time.
 
-PROTIP: Opinion surveys over time elicit feedback necessary to expose "blind spots".
+PROTIP: Questionaires obtain input and <strong>opinion surveys</strong> over time elicit feedback necessary to expose "blind spots".
 
-PROTIP: Regularly scheduled one-on-one "crucial conversations" provide opportunities to clear the air on what might become festering resentments which reduce productivity.
+PROTIP: Regularly scheduled <strong>one-on-one conversations</strong> provide opportunities to clear the air on what might become festering resentments which reduce productivity.
+
+PROTIP: A mechanism to track who has (or has not) responded to specific communications (read email, complete questionaire, answer feedback, attending training) provides a guage for the readiness of individuals and the whole organization for production affecting all users.
 
 On-going communications enable go-to-production teams to know ahead of time whether key personnel and systems are available and ready.
 
@@ -206,18 +209,20 @@ Using Kubernetes in conjunction with GitOps can help enormously with disaster re
 
 Here are some examples of requirements defined for production, roughly sequenced according to the development workflow:
 
+1. Configure GitHub organizations to require <a target="_blank" href="https://wilsonmar.github.io/">GPG keys for verified commits</a>. This reduces the chance of roque commits by ensuring that each committer has control of the email address which identity is based.
+
 1. Monitor and restrict use of CLI (perhaps using AWS Config) instead of versioned IaC.
 
-   This is to ensure that, by ensuring that all changes are performed only <strong>authorized</strong> people, approved, and tracked, rogue changes are prevented. Vault ensures authentication.
+   When all changes are performed only <strong>authorized</strong> people, approved, and tracked, rogue changes are minimized. Vault ensures authentication.
+
+1. Limit "blast radius" from account loss by limiting the scope of actions permitted by each account.
+
+   For example, only allow special accounts to delete and limiting read of sensitive information.
 
 1. Dynamically generate user accounts and passwords instead of storing secrets (Consul Dynamic Secrets)
 
    This ensures that secrets are not available for malicious actors to steal.
    When secrets are stored on laptops, one click on a phising scam would result in loss of control.
-
-1. Limit "blast radius" from account loss by limiting the scope of actions permitted by each account.
-
-   For example, only allow special accounts to delete and limiting read of sensitive information.
 
 1. Version Control Configurations files -- use a Git-based workflow (which some call "GitOps") so the "who, when, why" of each change is stored. 
 
@@ -238,8 +243,6 @@ Here are some examples of requirements defined for production, roughly sequenced
 1. Enforce uniqueness in Ingress hostnames [1]
 
 1. Automate end-to-end functional tests exercising GUI and APIs.
-
-1. Have GitHub require GPG keys for verified commits. This ensures each committer has control of the email address which identity is based.
 
 1. Scan for secrets in code before commit/push to GitHub.
 
