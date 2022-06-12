@@ -607,11 +607,11 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 
 <ul>
 <li><a target="_blank" href="https://carlos.emory.edu/">Carlos Museum at Emory University</a></li>
+<li><a target="_blank" href="https://www.worldofcoca-cola.com/">World of Coca Cola</a></li>
 <li><a target="_blank" href="https://www.high.org/">High Museum of Art</a></li>
 <li><a target="_blank" href="https://museum.oglethorpe.edu/">Oglethorpe University Museum</a>, Atlanta</li>
-<li><a target="_blank" href="https://www.jimmycarterlibrary.gov/">
-Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
-<li type="center">Staplehouse restaurant, Atlanta</li>
+<li><a target="_blank" href="https://www.jimmycarterlibrary.gov/">Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
+<li type="center" href="https://www.staplehouse.com/staplehouseabout">Staplehouse restaurant (<a target="_blank" href="https://www.toasttab.com/staplehouse-market-541-edgewood-avenue-southeast/v3/">menu</a>)</li>
 </ul>
 
 <ul>
@@ -624,7 +624,7 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 > <strong> Florida</strong>
 
-### Northwest on 75 up the Gulf coast 
+### St. Petersberg Northwest on 75 up the Gulf coast 
 
 <ul>
 <li type="square"><a target="_blank" href="https://www.ringling.org/">John and Mable Ringling Museum of Art</a>, Sarasota</li>
@@ -647,7 +647,7 @@ Jimmy Carter Presidential Library and Museum</a>, Atlanta</li>
 
 <li><a target="_blank" href="https://www.thebrogan.org/">Mary Brogan Museum of Art and Science</a>, Tallahassee</li>
 <li><a target="_blank" href="https://www.pensacolamuseumofart.org/">Pensacola Museum of Art</a><li><a target="_blank" href="https://www.mofa.fsu.edu/">Florida State University Museum of Fine Arts</a>, Tallahassee</li>
-</li>
+<li target="_blank" href="https://www.kennedyspacecenter.com/">NASA Kennedy Center, Merritt Island</li>
 </ul>
 
 ### South down the East coast 
@@ -860,6 +860,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.themuseum.org/">Alexandria Museum of Art</a></li>
 <li><a target="_blank" href="https://www.cacno.org/">Contemporary Arts Center New Orleans</a></li>
 <li><a target="_blank" href="https://lsm.crt.state.la.us/">Louisiana State Museum</a>, New Orleans</li>
+<li><a target="_blank" href="https://www.mardigrasworld.com/">Mardi Gras World</a>, New Orleans</li>
+
 <li><a target="_blank" href="https://appl003.lsu.edu/museum/moa.nsf/index/">Louisiana State University Museum of Art</a>, Baton Rouge</li>
 <li><a target="_blank" href="https://www.centenary.edu/meadows/">Meadows Museum of Art at Centenary College</a>, Shreveport</li>
 <li><a target="_blank" href="https://www.noma.org/">New Orleans Museum of Art</a></li>
@@ -1791,6 +1793,7 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <ul>
 <li><a target="_blank" href="https://www.guggenheimlasvegas.org/">Guggenheim Hermitage Museum</a>, Las Vegas</li>
 <li><a target="_blank" href="https://www.lasvegasartmuseum.org/">Las Vegas Art Museum</a></li>
+<li><a target="_blank" href="https://www.neonmuseum.org/">The Neon Museum</a></li>
 </ul>
 
 <ul>

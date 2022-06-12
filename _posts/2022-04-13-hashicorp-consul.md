@@ -119,6 +119,19 @@ Here are the Agile-style stories requesting use of HashiCorp Consul: PROTIP:
    * https://learn.hashicorp.com/well-architected-framework
    <br /><br />
 
+Use cases listed at https://www.consul.io/
+
+   * Consul on Kubernetes
+   * Control access with Consul API Gateway
+   * Discover Services with Consul
+   * Enforce Zero Trust Networking with Consul
+   * Load Balancing with Consul
+   * Manage Traffic with Consul
+   * Multi-Platform Service Mesh with Consul
+   * Network Infrastructure Automation with Consul
+   * Observability with Consul
+   </br /><br />
+
 Adoption of Consul aims to yield these benefits: 
 
 * Faster Time to Market from velocity of getting things done
@@ -347,7 +360,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
    2c.	Configure Consul network addresses and <a href="#Ports">ports</a><br />
    2d.	Describe and configure agent join and leave behaviors<br />
    
-3.	<a href="#ServiceDiscovery">Register services and use service discovery</a><br />
+3.	<a href="#Services">Register services and use Service Discovery</a> [<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24400106#questions">BK</a>]<br />
    3a.	Interpret a service registration<br />
    3b.	Differentiate ways to register a single service<br />
    3c.	Interpret a service configuration with health check<br />
@@ -355,18 +368,18 @@ Because this document aims to present concepts in a logic flow for learning, it 
    3e.	Interpret a prepared query<br />
    3f.	Use a prepared query<br />
    
-4.	Access the Consul key/value (KV)<br />
+4.	Access the Consul key/value (KV) <em>even though it's not a popular feature anymore</em><br />
    4a.	Understand the capabilities and limitations of the KV store<br />
    4b.	Interact with the KV store using both the Consul CLI and UI<br />
    4c.	Monitor KV changes using watch<br />
    4d.	Monitor KV changes using <a href="#envconsul">envconsul</a> and consul-template<br />
    
-5.	<a href="#Snapshots">Back up and restore</a><br />
+5.	<a href="#Snapshots">Back up and Restore</a> [<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569032#questions">BK</a><br />
    5a.	<a href="#Snapshots">Describe the content of a snapshot</a>
    5b.	Back up and restore the datacenter<br />
    5c.	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
    
-6.	<a href="#ServiceMesh">Use Consul service mesh</a><br />
+6.	<a href="#ServiceMesh">Use Consul Service Mesh</a><br />
    6a.	Understand Consul Connect service mesh high level architecture<br />
    6b.	Describe configuration for registering a service proxy<br />
    6c.	Describe intentions for Consul Connect service mesh<br />
@@ -384,7 +397,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
    8d.	Perform a CLI request using a token<br />
    8e.	Perform an API request using a token<br />
    
-9.	<a href="#Gossip">Use gossip encryption</a><br />
+9.	<a href="#Gossip">Use Gossip encryption</a><br />
    9a.	Understanding the Consul security/threat model<br />
    9b.	Configure gossip encryption for the existing data center<br />
    9c.	Manage the lifecycle of encryption keys<br />
@@ -1202,6 +1215,9 @@ Or, if you don't want/need a background service you can just run:
 🍺  /opt/homebrew/Cellar/consul/1.12.0: 4 files, 117.1MB, built in 3 seconds
    </pre>
 
+   <tt>-bind</tt> is the interface that Consul agent itself uses.
+
+   <tt>-advertise</tt> is the interface that Consul agent asks others use to connect to it. Useful when the agent has multiple interfaces or the IP of a NAT device to reach through.
 
    <a name="CLI-commands"></a>
 
@@ -1216,6 +1232,25 @@ Or, if you don't want/need a background service you can just run:
    <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
 
    <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
+   </pre>
+
+   Alternately,
+
+   <pre><strong>consul agent -dev -datacenter="aws-1234567890" \
+   -data-dir=/opt/consul  -encrypt="<em>key</em>" \
+   -join="10.0.10.11,10.1.2.3" \
+   -bind="127.0.0.1" -node machine</strong></pre>
+
+   <tt>-join</tt> will fail if the IP addresses (4 or 6) fails to start.
+
+   PROTIP: In production, use configuration file to <strong>auto-join</strong>:
+
+   <pre>{
+  "bootstrap": false,
+  "boostrap_expect": 3,
+  "server": true,
+  "retry_join": ["10.0.10.11,"10.1.2.3"]
+}
    </pre>
 
 1. TODO: Setup compatibility mode?
@@ -1298,7 +1333,7 @@ CLI commands are used to start and stop the Consul Agent.
    For bootstrapping and configuration of <tt>agent.hcl</tt>, see
    * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
    <br /><br />
-   
+
 <hr />
 
 
@@ -1387,12 +1422,13 @@ Consul server startup complete.
 
    <pre><strong>consul leave</strong></pre>
 
-   QUESTION: Need to specify the node like in start?
+   QUESTION: No need to specify the node (like in start) because Gossip is supposed to propagate updated membership state across the cluster. That's "Discovery" at work.
+   
+   CAUTION: Leaving a server affects the Raft peer-set, which results in auto-reconfiguration of the cluster to have fewer servers.
 
    The command notifies other members that the agent left the datacenter. When an agent leaves, its local services running on the same node and their checks are removed from the catalog and Consul doesn't try to contact with that node again.
    
    Log entries in a sample response (without date/time stamps):
-
    <pre>[INFO]  agent.server: server starting leave
 [INFO]  agent.server.serf.wan: serf: EventMemberLeave: wilsonmar-N2NYQJN46F.dc1 127.0.0.1
 [INFO]  agent.server: Handled event for server in area: event=member-leave server=wilsonmar-N2NYQJN46F.dc1 area=wan
@@ -1569,6 +1605,7 @@ Query execution is subject to node/node_prefix and service/service_prefix polici
 ## Backup Data Snapshots
 
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-backups"> Enterprise Academy: Backup and Restore</a>
+   * <a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569084#questions">BK on Udemy</a>
    <br /><br />
 
 Data in a Consul agent is captured in complete point-in-time snapshots (gzipped tar file) of Consul's committed state. Other data also in the Snapshot include:
@@ -1588,7 +1625,7 @@ Data in a Consul agent is captured in complete point-in-time snapshots (gzipped 
    CONSUL_BACKUP_FILENAME="$( gdate -u +'%Y-%m-%dT%H:%M:%S.%3N%Z' ).tgz"
    </strong></pre>   
 
-   Snapshots are typically performed on the LEADER node, but a FOLLOWER can take it if the <tt>\-\-stale</tt> flag is specified.
+   Snapshots are typically performed on the LEADER node, but a FOLLOWER can take it if the <tt>\-\-stale</tt> flag is specified, such as when the Cluster has no Leader.
 
 1. Create the snapshot manually using the CLI, API, 
 
@@ -1610,9 +1647,14 @@ Data in a Consul agent is captured in complete point-in-time snapshots (gzipped 
    * Google Cloud Storage
    <br /><br />
 
-   For example, define an S3 bucket. Get a service account to run:
+   For example, define an S3 bucket. Get a service account to receive snapshots.
+   
 
    <a name="SnapshotAgent"></a>
+
+   * https://www.consul.io/commands/snapshot
+   * https://www.consul.io/api-docs/snapshot
+   <br /><br />
 
 1. Enterprise-licensed users can run the Consul Snapshot Agent Service:
 
@@ -1662,9 +1704,13 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
    </pre>
 
+   ### Restore from Snapshot
+
 1. Snapshots are intended for utter Disaster Recovery, to restore to a fresh set of Consul servers. 
 
    <pre>consul snapshot restore</pre>
+
+   CAUTION: A Consul server stops processing while performing a restore. You don't want it working anyway.` `1
 
    Alternately, using API:
 
@@ -1742,13 +1788,38 @@ Practicing use of the above should be part of your pre-production Chaos Engineer
 
 ## Services
 
+   * https://www.consul.io/docs/discovery/services
+   <br /><br />
+
    Consul discovers services which are setup to be discovered with a file on the service machine.
    
-1. Construct the file CONSUL_SVC_REGIS_FILE such as <tt>/etc/consul.d/nginx.json</tt>
+1. Edit the file:
 
    <pre>{
   "service": {
-     "name": "web",
+     "id": "unique-server-01",
+     "name": "retail-web-1234567890",
+     "token": "12345678-1234-abcd-5678-1234567890ab",
+     "tags": ["v1.02","production"],
+     "address": "10.1.2.2",
+     "port": 80,
+     "checks": [ {
+        "args": ["/usr/local/bin/check_mem.py"],
+        "interval": "30s"
+     } ],
+  }
+}
+   </pre>
+
+   A check is needed for memory ("mem") because it's internal to the app's process.
+
+   https://www.consul.io/docs/discovery/checks
+
+1. Construct the file CONSUL_SVC_REGIS_FILE such as <tt>/etc/consul.d/redis.json</tt> (or hcl):
+
+   <pre>{
+  "service": {
+     "name": "retail-web",
      "token": "12345678-1234-abcd-5678-1234567890ab",
      "port": 80,
      "check":  {
@@ -1762,28 +1833,39 @@ Practicing use of the above should be part of your pre-production Chaos Engineer
 }
    </pre>
 
-1. A service instance is defined by a service name + service ID. QUESTION: "web check"?
+1. A service instance is defined by a service name + service ID. 
 
-1. Provide Consul read permissions on the directory/file used above.
+   QUESTION: "web check"?
 
-   CONSUL_SVC_REGIS_FILE="redis.hcl"
+1. PROTIP: Provide Consul read permissions on the directory/file used above as a variable so the same CLI can be used in dev & prod (for less mistakes):
+
+   <pre>CONSUL_SVC_REGIS_FILE="redis.hcl"</pre>
+
+1. Define the Consul Registration Service:
+
+   <pre>CONSUL_SVC_REGIS_FRONT="http://localhost:8500"</pre>
+
+   Alternately, in production (for example):
+
+   <pre>CONSUL_SVC_REGIS_FRONT="https://consul.example.com:8500}"
+   </pre>
 
 1. Register the service:
 
    <pre><strong>consul services register redis.hcl</strong></pre>
 
-   Alternately, make an API call:
+   Alternately, make an API call specifying -config-file name:
 
    <pre>curl -X PUT --data "@${CONSUL_SVC_REGIS_FILE}" \
-   http://localhost:8500/v1/agent/service/register
+   "${CONSUL_SVC_REGIS_FRONT}/v1/agent/service/register
    </pre>
+
 
 1. Consul does not watch that file after loading, so changes to it after load must be reloaded using:
 
-   <pre><strong>sysctl consul reload</strong></strong>
+   <pre><strong>sysctl consul reload</strong></pre>
 
 1. "Service discovery" finds available service instance addresses and ports.
-
 
 1. TODO: Define default connection limits, for better security.
 
@@ -1795,8 +1877,7 @@ Practicing use of the above should be part of your pre-production Chaos Engineer
 
 1. Consul <strong>load balances</strong> across instances.
 
-
-1.
+1. Define memory variable:
 
    <pre>CONSUL_CONFIG_KIND="extra-config"</pre>
 
@@ -2102,6 +2183,8 @@ Part 10: Terminating & Ingress Gateways</a> [1:34:44] Mar 7, 2022
 
    Consul comes with a Sidecar proxy, but also supports the Kubernetes Envoy proxy (from Lyft). (QUESTION: This means that migration to Consul can occur gradually?)
 
+   You can use Helm but consul-k8s CLI is now the recommended way because it validates your environment and gives you much better error messages and helps with a clean installation
+
 1. To register (inject) Consul as a Sidecar proxy, add this <strong>annotation</strong> in a Helm chart:
 
    <pre>apiVersion: v1
@@ -2182,7 +2265,12 @@ References about Kubernetes with Consul:
 
 <a name="DNSQueries"></a>
 
-## Service Discovery Registry
+## Service Discovery Registry DNS Queries
+
+<a target="_blank" href="https://hashicorp.com/tutorials/consul/dns-forwarding">LEARN</a>:
+In enviornment where Infosec limit DNS traffic to the default UDP port 53,
+we setup dnsmasq or BIND forwarding from port 53 to 8600 because
+we don't want to use root privileges requiredd to use ports below 1024.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652637715/consul-svc-regis-1584x1552_jnnu9g.png"><img alt="Consul Service Registry process" width="1584" height="1552" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652637715/consul-svc-regis-1584x1552_jnnu9g.png"></a>
 
@@ -2232,8 +2320,10 @@ Consul servers maintain a DNS "Services Registry"
 }
    </pre>
 
+   Once registered, a service should appear as available within the Consul service registry.
 
 Centralized ???
+
 
 <a name="ESM"></a>
 
@@ -2369,6 +2459,9 @@ Beyond:
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=8T8t4-hQY74&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=10">VIDEO: "Introduction to HashiCorp Consul Connect"</a>
    * <a target="_blank" href="   * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-connect">Instruqt: Getting started with Consul Connect</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=evrsEc-iyYs&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37&t=177s">A10 & HashiCorp Network Infrastructure Automation with Consul-Terraform-Sync</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=KbWqt-SJgwg&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=63">Observability with HashiCorp Consul Connect (Service Mesh)</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SZvcCdvMH58&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=27">"Combining DevOps with PKI Compliance Using HashiCorp Vault & Consul"</a>
    <br /><br />
 
    Integration between Consul and Kubernetes is achieved by running Consul Service Mesh (aka Consul Connect) on Kubernetes:
@@ -2723,13 +2816,14 @@ To perform cross-data-center Consul K/V replication, use the consul-replicate da
 
    <pre>autopilot = {
   redundancy_zone_tag = "az"
+  min_quorum          = 5
    }
 node_meta = {
    az = "Zone1"
 }
    </pre>
 
-   Enterprise Autopilot features perform automatic, operator-friendly management of Consul servers, including cleanup of dead servers, monitoring the state of the Raft cluster, automated upgrades, and stable server introduction.
+   The Enterprise Autopilot feature performs automatic, operator-friendly management of Consul servers, including cleanup of dead servers, monitoring the state of the Raft cluster, automated upgrades, and stable server introduction.
 
    Autopilot enables <strong>Enterprise Redundancy Zones</strong> to improve resiliency and scaling of a Consul cluster. It can add "non-voting" servers which will be promoted to voting status in case of voting server failure.
    Unless during failure, Redundant zones do not participate in quorum, including leader election.
@@ -2790,11 +2884,11 @@ advertise_addr_wan = "10.1.4.11"
 
    <tt>advertise_addr</tt> are reacheable outside the datacenter.
 
-   Agent configurations have a different IP address and these settings:
+   Agent configurations have a different IP address and these settings to <strong>auto-join</strong> based on cloud (AWS) tags:
 
    <pre>data_dir  = "/opt/consul/data"
 bootstrap_expect = 5
-retry_join       = ["provider=aws tag_key=Environment-Name tag_value=consul-cluster region=us-east-1"]
+retry_join       = ["provider=aws region=us-east-1 tag_key=consul tag_value=true"]
 retry_join_wan   = ["10.1.2.3","10.1.2.4"]
 connect = {
    enabled = true
@@ -3224,6 +3318,15 @@ https://webinars.devops.com/getting-hashicorp-terraform-into-production
 https://github.com/alvin-huang/consul-kv-github-action
 GitHub Action to pull a value from Consul KV
 
+Bryan Krausen provides discount codes to his
+<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/">
+Udemy, "Getting Started with HashiCorp Consul 2022"</a> 
+has 8.5 hours of video recorded at Consul 1.7. It 
+provides quizzes and a >mind-map of each topic and 
+references https://github.com/btkrausen/hashicorp/tree/master/consul
+
+Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-associate-practice-exam/">
+"HashiCorp Certified: Consul Associate Practice Exam"</a> three full exams of 57 questions each.
 
 <hr />
 

@@ -2529,6 +2529,11 @@ Forest Monsen and Kevin Glisson in Netflix's Security Intelligence and Response 
 
 UEBA (User and Entity Behavior Analytics), such as Splunk and Microsoft Advanced Threat Analysis provides automated id. of suspicious activity by user accounts and computer hosts, using AI/ML techniques.
 
+## Resources
+
+At Cisco, <a target="_blank" href="https://www.linkedin.com/in/-rontaylor/">Ron Taylor</a> <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">https://github.com/The-Art-of-Hacking/h4cker</a> (<a target="_blank" href="https://h4cker.org/github/">by</a> <a target="_blank" href="https://www.linkedin.com/in/santosomar/">Omar Santos</a> used in <a target="_blank" href="https://dcloud.cisco.com/">Cisco's Cyber Defense Clinic Lab</a> <a target="_blank" href="https://dcloud2-sjc.cisco.com/content/catalogue">catalog</a>
+
+   * NetFlow uses less disk space than full packete capture.
 
 
 ## More on Security #
