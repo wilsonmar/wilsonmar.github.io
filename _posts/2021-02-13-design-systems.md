@@ -39,6 +39,8 @@ For better performance, Tailwind removes unused CSS using PurgeCSS, which can be
 
 ## Examples
 
+<a target="_blank" href="https://github.com/alexpate/awesome-design-systems">https://github.com/alexpate/awesome-design-systems</a> - a curated list of design systems, highlighting those with components, voice & tone, designers kit.
+
 <a target="_blank" href="https://www.invisionapp.com/inside-design/design-systems/">Your guide to design systems from the world’s leading brands</a> Oct. 9, 2017
 
 US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a> (Slack channel <a target="_blank" href="https://chat.18f.gov/">chat.18f.gov</a>)
