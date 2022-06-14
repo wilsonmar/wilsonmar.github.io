@@ -53,9 +53,11 @@ Consul provides a mechanism for connecting dynamic microservices with legacy net
 
 Consul "discovers" services (configured to be discoverable), then adds each service to a "service registry" (a Key-Value store) which is used to map what service communicates with any other service.
 
-When each service communicates with other services, Consul can perform <strong>health checks</strong> so that it routes traffic only to healthy endpoints. Moreover, Consul can 
-allow or deny communication between specific services by defining "Intentions". 
-Also, Consul can secure communication between services by providing certificate-based encryption on both ends of communication.
+When each service communicates with other services through Consul, Consul can perform <strong>health checks</strong> so that it routes traffic only to healthy endpoints. Moreover, Consul can securely control (allow or deny) communication between specific services based on defined "Intentions". Also, Consul can secure communication between services by providing certificate-based encryption on both ends of communication, with automatic key rotation.
+
+Consul's Service Mesh can enable Kubernetes cluster to securely communicate with services outside Kubernetes, such as databases, ECS, etc. through OSI Level 4 traffic.
+
+BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes that replicate across availability zones and regions. Consul has a mechanism called "WAN Federation" to replicate service metadata across regions.
 
 
 <a name="ZeroTrust"></a>
@@ -91,7 +93,10 @@ Defense in Depth:
 
 ## Why Consul?
 
-<a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO</a>:  
+<a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO</a>:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"><img alt="Consul interactions" width="488"
+ height="510" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"></a>
 
 PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
 
@@ -128,7 +133,7 @@ Consul can be controlled using <strong>CLI commands</strong> without licensing a
 
    Additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
    
-The Enterprise edition of Consul enables multi-cloud, multi-platform, and multi-tenancy by the creation of Admin Partititions, each with its own Governance and Policies. Such segregation diminishing the "blast radius" from loss of a specific partition.
+The Enterprise edition of Consul has a multi-tenancy capability which enables the creation of Admin Partititions, each with its own Governance and Policies. Such segregation diminishes the "blast radius" from potential compromise of credentials to a specific partition.
 
    * https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions">Consul on ECS & Admin Partitions Learn Guide</a>
