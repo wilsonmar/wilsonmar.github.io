@@ -47,22 +47,25 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 
 PROTIP: Each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of static IP addresses manually configured rather than dynamic service names automatically discovered and registered.
 
+<a name="SolveLegacy"></a>
+
 ## Consul to solve legacy mismatch
 
 Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure (even in clouds).
 
 Consul "discovers" services (configured to be discoverable), then adds each service to a "service registry" (a Key-Value store) which is used to map what service communicates with any other service.
 
-When each service communicates with other services through Consul, Consul can perform <strong>health checks</strong> so that it routes traffic only to healthy endpoints. Moreover, Consul can securely control (allow or deny) communication between specific services based on defined "Intentions". Also, Consul can secure communication between services by providing certificate-based encryption on both ends of communication, with automatic key rotation.
+Developers have less code to write (and focus just on business logic and UI) when they code services to communicate with other services through Consul. This allows Consul to perform <strong>health checks</strong> so that it routes traffic only to healthy endpoints. Moreover, Consul can securely control (allow or deny) communication between specific services based on defined "Intentions". Also, Consul can secure communication between services by providing certificate-based encryption on both ends of communication, with automatic key rotation.
 
-Consul's Service Mesh can enable Kubernetes cluster to securely communicate with services outside Kubernetes, such as databases, ECS, etc. through OSI Level 4 traffic.
+Consul's Service Mesh can enable Kubernetes clusters to securely communicate with services outside Kubernetes, such as databases, ECS, VMs, Severless, even across different clouds (through OSI Level 4 traffic).
 
-BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes that replicate across availability zones and regions. Consul has a mechanism called "WAN Federation" to replicate service metadata across regions.
-
+BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes that replicate across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved its enterprise worthiness because Consul replaces load balancers with a Mesh Gateway.
 
 <a name="ZeroTrust"></a>
 
 ## Zero Trust
+
+Consul provides the technology to implement Zero Trust.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: 
 In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using HashiCorp can describe their systems with these mechanisms within the "CIA Triad":
@@ -74,11 +77,10 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
    * Encrypted in transit and at rest (baked into app lifecycle via CI/CD automation)
 
    * Time-bound encrypted tokens authorizing each request instead of long-lived static secrets to be hacked)
-
    * Audited & Logged (for SOC to do forensics)
    <br /><br />
 
-See * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT"
+<a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT"
 Consul: Zero Trust Networking with Service Mesh</a>
 
 Defense in Depth:
