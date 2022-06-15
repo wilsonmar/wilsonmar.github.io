@@ -93,7 +93,7 @@ Add a full set of <strong>audit logs</strong> makes Consul is a fully enterprise
 
 ### Use Cases
 
-Use cases listed at https://www.consul.io/
+In summary, use cases for Consul (listed at https://www.consul.io/):
 
    * Consul on Kubernetes
    * Control access with Consul API Gateway
