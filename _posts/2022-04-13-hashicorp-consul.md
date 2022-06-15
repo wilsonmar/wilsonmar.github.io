@@ -67,10 +67,7 @@ BTW, Consul is designed for enterprise scale with HA and performance scaling mec
 
 Consul provides the technology to implement Zero Trust.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: 
-In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using HashiCorp can describe their systems with these mechanisms within the "CIA Triad":
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"><img alt="Zero-Trust CIA Triad" width="3024" height="1432" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: The six pillars of Zero Trust:
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Identity-driven authentication ("<a href="#Intentions">Intentions</a>" by name instead of by IP address)
@@ -83,7 +80,11 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
 <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT"
 Consul: Zero Trust Networking with Service Mesh</a>
 
-Defense in Depth:
+Additional Defense in Depth:
+
+In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using HashiCorp can describe their systems with these mechanisms within the "CIA Triad":
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"><img alt="Zero-Trust CIA Triad" width="3024" height="1432" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"></a>
 
    * Immutable deployments (no live patching to "cattle")
    * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
@@ -95,7 +96,7 @@ Defense in Depth:
 
 ## Why Consul?
 
-<a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO</a>:
+<a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"><img alt="Consul interactions" width="488"
  height="510" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"></a>
@@ -172,7 +173,7 @@ Adoption of Consul aims to yield these benefits:
 * Reduce cost via people from improved availability (uptime)
 * Reduce risk of downtime from better reliability
 * Reduce risk of breach from better guardrails (using Sentinel & OPA)
-* Compliance with regulatory demands (central source of truth, imutable, automated processes)
+* Compliance with regulatory demands (central source of truth, immutable, automated processes)
 <br /><br />
 
 <a target="_blank" href="https://www.linkedin.com/in/lkysow/">Canadian</a> <a target="_blank" href="https://github.com/lkysow">Luke Kysow</a>, Principal Engineer on Consul at HashiCorp, top contributor to <a target="_blank" href="https://github.com/hashicorp/consul-k8s">hashicorp/consul-k8s</a>, wrote in his <a target="_blank" href="https://learning.oreilly.com/library/view/consul-up-and/9781098106133/" title="June 2022">BOOK: "Consult: Up and Running"</a>:
@@ -3568,6 +3569,16 @@ https://github.com/alvin-huang/consul-kv-github-action
 GitHub Action to pull a value from Consul KV
 
 https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-consul-kubernetes
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/hashicorp-infrastructure-automation/9781800565975/">BOOK: "HashiCorp Infrastructure Automation Certification Guide"</a>by Ravi Mishra
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/hashicorp-infrastructure-automation/9781800565975/" title="Jan 2020">Packt BOOK: "Full Stack Development with JHipster - Second Edition"</a> has a <a target="_blank" href="https://learning.oreilly.com/library/view/full-stack-development/9781838824983/46bcf4ff-3498-4bea-b998-d117b6fe6a01.xhtml">section on</a> management of a full-featured sample Java Spring app using Consul instead of the default Eureka (JHipster Registry) which only supports Spring Boot. The author says The main advantages of using Consul are:
+
+   * It has a lower memory footprint.
+   * It can be used with services that are written in any programming language.
+   * It focuses on consistency rather than availability.
+
+"Consul also provides service discovery, failure detection, multi-datacenter configuration, and key-value storage."
 
 <hr />
 
