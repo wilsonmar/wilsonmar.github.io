@@ -95,10 +95,13 @@ Add a full set of <strong>audit logs</strong> makes Consul is a fully enterprise
 
 Consul provides the technology to implement Zero Trust.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: The six pillars of Zero Trust:
+In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using HashiCorp can describe their systems with these mechanisms within the "CIA Triad": <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: The six pillars of Zero Trust:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"><img alt="Zero-Trust CIA Triad" width="1652" height="874" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"></a>
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Identity-driven authentication ("<a href="#Intentions">Intentions</a>" by name instead of by IP address)
+   * Authenticated
    * Encrypted in transit and at rest (baked into app lifecycle via CI/CD automation)
 
    * Time-bound encrypted tokens authorizing each request instead of long-lived static secrets to be hacked)
@@ -109,10 +112,6 @@ Consul provides the technology to implement Zero Trust.
 Consul: Zero Trust Networking with Service Mesh</a>
 
 Additional Defense in Depth:
-
-In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using HashiCorp can describe their systems with these mechanisms within the "CIA Triad":
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"><img alt="Zero-Trust CIA Triad" width="3024" height="1432" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652759151/zero-trust-triad-3024x1432_hdhcxj.png"></a>
 
    * Immutable deployments (no live patching to "cattle")
    * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
@@ -1516,7 +1515,7 @@ Installation of the Consul Agent creates these folders and files:
 
 <a name="RunForeground"></a>
 
-## Start Consul Agent in forground
+### Start Consul Agent in forground
 
 1. Use a text editor to customize file <tt>/etc/consul.d</tt> in .ini format:
 
@@ -1540,7 +1539,7 @@ User=consul
 
    <a name="RunBackground"></a>
 
-   ## Start Consul Server in background (macOS)
+   ### Start Consul Server in background (macOS)
 
    Alternately, referencing the environment created:
 
@@ -1750,7 +1749,7 @@ Query execution is subject to node/node_prefix and service/service_prefix polici
 <a name="Backup"></a>
 <a name="Snapshots"></a>
 
-## Backup Data Snapshots
+### Backup Data Snapshots
 
    * https://www.consul.io/commands/snapshot
    * https://www.consul.io/api-docs/snapshot
@@ -2262,7 +2261,7 @@ node "" {
 
 <a name="TheHardWay"></a>
 
-### D. In a single datacenter (with Kubernetes)
+## D. In a single datacenter (with Kubernetes)
 
 In <a target="_blank" href="https://www.youtube.com/c/HashiCorp">
 HashiCorp's YouTube channel covering all their 8 products</a>:
@@ -2861,7 +2860,7 @@ server:
 
 <a name="Enmeshed"></a>
 
-## D. In a single 6-node datacenter (survive loss of an Availability Zone)
+## E. In a single 6-node datacenter (survive loss of an Availability Zone)
 
 ### HA (High Availability)
 
