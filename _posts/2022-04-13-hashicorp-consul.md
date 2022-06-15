@@ -20,6 +20,9 @@ Here are notes while I'm learning about this, attempting to be succinct and <str
 
 > Consul is "a multi-cloud service networking platform to connect and secure any service across any runtime platform and public or private cloud".<a target="_blank" href="https://www.youtube.com/watch?v=Aq1uTozNajI" title="HashiConf Oct 15 2019">*</a><a target="_blank" href="https://www.hashicorp.com/resources/consul-service-mesh-deep-dive">*</a>
 
+> "Consul is a datacenter runtime that provides service discovery, configuration, and orchestration."
+
+
 {% include whatever.html %}
 
 
@@ -88,6 +91,21 @@ The set of redudant servers creates a Mesh Gateway which allows Consul to replac
 
 Add a full set of <strong>audit logs</strong> makes Consul is a fully enterprise tool like no other. 
 
+### Use Cases
+
+Use cases listed at https://www.consul.io/
+
+   * Consul on Kubernetes
+   * Control access with Consul API Gateway
+   * Discover Services with Consul
+   * Enforce Zero Trust Networking with Consul
+   * Load Balancing with Consul
+   * Manage Traffic with Consul
+   * Multi-Platform Service Mesh with Consul
+   * Network Infrastructure Automation with Consul
+   * Observability with Consul
+   <br /><br />
+
 
 <a name="ZeroTrust"></a>
 
@@ -121,7 +139,7 @@ Additional Defense in Depth:
 
 <a name="ConsulStories"></a>
 
-## Why Consul?
+## Agile Stories on Why Consul? 
 
 <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
 
@@ -172,37 +190,6 @@ The Enterprise edition of Consul has a multi-tenancy capability which enables th
 
 ### Value Proposition
 
-> "Consul is a datacenter runtime that provides service discovery, configuration, and orchestration."
-
-> The above are used for showing Proof of Value (POV) from product/workflow adoption.
-
-   * https://www.consul.io/docs/intro
-   * https://learn.hashicorp.com/well-architected-framework
-   <br /><br />
-
-Use cases listed at https://www.consul.io/
-
-   * Consul on Kubernetes
-   * Control access with Consul API Gateway
-   * Discover Services with Consul
-   * Enforce Zero Trust Networking with Consul
-   * Load Balancing with Consul
-   * Manage Traffic with Consul
-   * Multi-Platform Service Mesh with Consul
-   * Network Infrastructure Automation with Consul
-   * Observability with Consul
-   <br /><br />
-
-Adoption of Consul aims to yield these benefits: 
-
-* Faster Time to Market and velocity of getting things done from less manual mistakes
-* Reduce cost via tools (operational efficiency through more visibility and automation)
-* Reduce cost via people from improved availability (uptime)
-* Reduce risk of downtime from better reliability
-* Reduce risk of breach from better guardrails (using Sentinel & OPA)
-* Compliance with regulatory demands (central source of truth, immutable, automated processes)
-<br /><br />
-
 <a target="_blank" href="https://www.linkedin.com/in/lkysow/">Canadian</a> <a target="_blank" href="https://github.com/lkysow">Luke Kysow</a>, Principal Engineer on Consul at HashiCorp, top contributor to <a target="_blank" href="https://github.com/hashicorp/consul-k8s">hashicorp/consul-k8s</a>, wrote in his <a target="_blank" href="https://learning.oreilly.com/library/view/consul-up-and/9781098106133/" title="June 2022">BOOK: "Consult: Up and Running"</a>:
 
 > "A small operations team can leverage Consul to impact security, reliability, observability, and application delivery across their entire stack —- all without requiring developers to modify their underlying microservices."
@@ -224,6 +211,24 @@ Adoption of Consul aims to yield these benefits:
 <a target="_blank" href="https://github.com/consul-up/birdwatcher">birdwatcher app</a>
 
 and <a target="_blank" href="https://discord.com/channels/938313456942190622/938313457638453250">Discord server</a> for the book)
+
+
+
+> The above are used for showing Proof of Value (POV) from product/workflow adoption.
+
+   * https://www.consul.io/docs/intro
+   * https://learn.hashicorp.com/well-architected-framework
+   <br /><br />
+
+Adoption of Consul aims to yield these benefits: 
+
+* Faster Time to Market and velocity of getting things done from less manual mistakes
+* Reduce cost via tools (operational efficiency through more visibility and automation)
+* Reduce cost via people from improved availability (uptime)
+* Reduce risk of downtime from better reliability
+* Reduce risk of breach from better guardrails (using Sentinel & OPA)
+* Compliance with regulatory demands (central source of truth, immutable, automated processes)
+<br /><br />
 
 
 ### Addressing Complexities
