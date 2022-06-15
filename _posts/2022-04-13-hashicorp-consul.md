@@ -47,19 +47,47 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 
 PROTIP: Each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of static IP addresses manually configured rather than dynamic service names automatically discovered and registered.
 
+
 <a name="SolveLegacy"></a>
 
 ## Consul to solve legacy mismatch
 
-Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure (even in clouds).
+In my presention to come, I'll be showing several concerns that Consul solves:
 
-Consul "discovers" services (configured to be discoverable), then adds each service to a "service registry" (a Key-Value store) which is used to map what service communicates with any other service.
+   1. Developers now spend too much time coding network communication logic in each program.
+   1. Kubernetes does not check if a service is healthy before trying to communicate.
+   1. Traffic is blindly sent based on static IP addresses without identity authentication
+   1. Network departments now spend too much time connecting static IP addresses.
+   1. Kubernetes does not encrypt communication between services.
+   1. That does not meet "Zero Trust" mandated.
+   1. Kubernetes does not provide a way to communicate with databases and cloud service outisde Kubernetes.
+   1. Load Balancers are a single point of failure. So an alternative is needed for them.
+   <br /><br />
 
-Developers have less code to write (and focus just on business logic and UI) when they code services to communicate with other services through Consul. This allows Consul to perform <strong>health checks</strong> so that it routes traffic only to healthy endpoints. Moreover, Consul can securely control (allow or deny) communication between specific services based on defined "Intentions". Also, Consul can secure communication between services by providing certificate-based encryption on both ends of communication, with automatic key rotation.
+Here's how Consul solves these problems.
 
-Consul's Service Mesh can enable Kubernetes clusters to securely communicate with services outside Kubernetes, such as databases, ECS, VMs, Severless, even across different clouds (through OSI Level 4 traffic).
+Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure in on-prem servers and in clouds.
 
-BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes that replicate across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved its enterprise worthiness because Consul replaces load balancers with a Mesh Gateway.
+Consul "discovers" services (configured to be discoverable) to capture each service's assigned IP address, <strong>associated with a name</strong> in its <strong>service registry</strong> (a Key-Value store) which is used to map what service communicates with any other service.
+
+A key benefit of Consul Service Mesh is that <strong>developers can better focus on business logic and UI</strong> because they have less networking utility code to write. Developers don't need to write logic to retry failed attempts at reaching other services and other aspects when <strong>going through Consul to communicate with other services</strong>. 
+
+Consul routes traffic only to healthy endpoints because Concul tracks the results of  <strong>health checks</strong> on each service.
+
+On behalf of each service, Consul can be set to <strong>allow or deny communication</strong> to other services, referencing what it calls "Intentions" defining routes between specific  services. 
+
+This is why Consul does an <strong>authentication hand-shake</strong> with each service before sending it data. A rogue service cannot pretend to be another legitimate service unless it holds a legitimate encryption certificate assigned by Consul. And each certificate expires, which Consul works to rotate.
+
+As Consul redirects traffic, it secures the traffic by generating certificates used to <strong>encrypt traffic</strong> on both ends of communication, taking care of automatic key rotation hassles, too. BTW This mechanism is called "mTLS" (mutual Transport Layer Security).
+
+Because Kubernetes does not provide that mechanism natively, a lot of Kubernetes installations make use of Consul's Service Mesh. Using Consul also enables a Kubernetes cluster to securely <strong>communicate with services outside Kubernetes</strong>, such as databases, ECS, VMs, Severless, even across different clouds (through "OSI Level 4" traffic).
+
+BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved Consul's enterprise worthiness. 
+
+The set of redudant servers creates a Mesh Gateway which allows Consul to replace expensive load balancers which pose a single point of failure risk. 
+
+Add a full set of <strong>audit logs</strong> makes Consul is a fully enterprise tool like no other. 
+
 
 <a name="ZeroTrust"></a>
 
@@ -2926,9 +2954,10 @@ If Vault is not used, do it the hard way:
 ## F. For HA on multiple datacenters federated over WAN
 
    REMEMBER: Like Vault, Consul Datacenter federation is not a solution for data replication. There is no built-in replication between datacenters.
-   So use <strong>consul-replicate</strong> to replicate KV between datacenters. 
+   <strong>consul-replicate</strong> is what replicates KV between datacenters. 
 
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-datacenter-federation">Enterprise Academy: Federate Multiple Datacenters</a> (Securly connect multiple Consul datacenters with ACL replication)
+   * https://github.com/hashicorp/consul-k8s-wan-fed-vault-backend
    <br /><br />
 
    The Enterprise edition of Consul enables communication across datacenters using <strong>Federate Multiple Datacenters</strong> coordinated using <strong>WAN Gossip</strong> protocol.
