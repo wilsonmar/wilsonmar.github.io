@@ -119,6 +119,7 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Identity-driven authentication ("<a href="#Intentions">Intentions</a>" by name instead of by IP address)
+
    * Authenticated
    * Encrypted in transit and at rest (baked into app lifecycle via CI/CD automation)
 
@@ -127,7 +128,7 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
    <br /><br />
 
 <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT"
-Consul: Zero Trust Networking with Service Mesh</a>
+Consul: Zero Trust Networking with Service Mesh"</a>
 
 Additional Defense in Depth:
 
@@ -333,7 +334,7 @@ By "use case" (Sales Plays):
 
 <a href="#MultiDatacenters">F. For multiple datacenters federated over WAN</a>
 
-   - Use this to learn about configuring the <a href="#Autopilot">Enterprise Autopilot feature</a> for High Availability across multiple regions (which is a major differentiator of HashiCorp Consul), Chaos Engineering
+   - Use this to learn about configuring the <a href="#Autopilot">Enterprise Autopilot feature</a> for High Availability across multiple regions (which is a major differentiator of HashiCorp Consul), Chaos Engineering.
 
 <a href="#Integrations">G. Integrations between K8s Service Mesh to outside database, ECS, VMs, mainframes, etc.</a>
 
@@ -412,9 +413,12 @@ PROTIP: Adapt the samples and naming conventions here to use your own app <stron
 
    ### Observability
 
-   The Terraform adds Datadog for Observability. 
+   REMEMBER: Enterprise editions of Consul is a different binary than OSS edition.
 
-   PROTIP: Enterprise editions of Consul is a different binary than OSS edition.
+   Terraform adds Datadog for Observability. 
+
+   https://www.pagerduty.com/docs/guides/consul-integration-guide/
+   shows how to configure Consul-Alerts to trigger and resolve incidents in a PageDuty service. <a target="_blank" href="https://registry.terraform.io/providers/PagerDuty/pagerduty/latest">PagerDuty</a> is an alarm aggregation and dispatching service for system administrators and support teams. It collects alerts from monitoring tools, gives an overall view of all of monitoring alarms, and alerts an on-duty engineer if there’s a problem. The Terraform Pagerduty provider is a plugin for Terraform that allows for the management of PagerDuty resources using HCL (HashiCorp Configuration Language).
 
 <hr />
 
@@ -769,7 +773,9 @@ terraform output consul_bootstrap_token
 
 ### CTS for NIA 
 
-HashiCorp's <a target="_blank" href="https://www.consul.io/docs/nia">"Network Infrastructure Automation (NIA)"</a> marketing page on consul.io promises to sacel better, decrease the possibility of human error when manually editing configuration files, and decrease overall time taken to push out configuration changes.
+HashiCorp's "Network Infrastructure Automation (NIA)" marketing page (<a target="_blank" href="https://www.consul.io/docs/nia">consul.io/docs/nia</a>) promises to scale better, decrease the possibility of human error when manually editing configuration files, and decrease overall time taken to push out configuration changes.
+
+PROTIP: There are current no competitors in the market for this feature.
 
 <a target="_blank" href="https://learn.hashicorp.com/collections/consul/network-infrastructure-automation?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS">LEARN: Network Infrastructure Automation with Consul-Terraform-Sync</a> hands-on, which uses the sample counting service at port 9003 and dashboard service in port 9002, from https://github.com/hashicorp/demo-consul-101/releases.
 
@@ -1467,7 +1473,7 @@ CLI commands are used to start and stop the Consul Agent.
 
 ### Ports used by Consul
 
-   The default ports:
+   The default ports, which some organizations change in hope of better security through obfuscation:
    
    * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
 
@@ -1564,6 +1570,13 @@ Log output will appear in consul.out...
 nohup: redirecting stderr to stdout
 Consul server startup complete.
    </pre>
+
+
+   <a name="StartServer"></a>
+
+1. Start Consul Server:
+
+   <pre><strong>systemctl start consul</strong></pre>
 
 
    ### Leave (Stop) Consul gracefully
@@ -1810,7 +1823,7 @@ Data in a Consul agent is captured in complete point-in-time snapshots (gzipped 
 
    Enterprise-licensed users can run the Consul Snapshot Agent Service to automatically collect agents periodically.
 
-1. Ensure that an enterprise license is configured.
+1. Ensure that <a href="#EnterpriseConfiguration">an enterprise license is configured</a>.
 
 1. Define the configuration file, such as this sample <tt>consul-snapshot.d</tt> file to take a snapshot every 30 minutes:
 
@@ -2968,6 +2981,8 @@ If Vault is not used, do it the hard way:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"><img alt="Consul Federation" width="804" height="817" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652208152/consul-federation-804x817_l953gc.png"></a>
 
+   * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan?in=consul/networking
+   
 
 ### Setup Network Areas
 
@@ -2976,7 +2991,7 @@ Create compatible areas in each datacenter:
 1. Define DATACENTER IDs
 
    <pre>DATACENTER1_ID="dc1"
-   DATACENTER2_ID="dc2"
+DATACENTER2_ID="dc2"
    </pre>
 
 1. Repeat for each DATACENTER ID value:
@@ -2997,7 +3012,22 @@ Create compatible areas in each datacenter:
 
    This establishes the handshake.
 
-### Replicate ACL entries
+
+   <a name="consul-replicate"></a>
+
+   ### consul-replicate
+
+1. To perform cross-data-center Consul K/V replication, install a specific tag of the consul-replicate daemon to run continuosly:
+
+   https://github.com/hashicorp/consul-replicate/tags
+
+   The daemon consul-replicate integrates with Consul to manage application configuration from a central data center, with low-latency asynchronous replication to other data centers, thus avoiding the need for smart clients that would need to write to all data centers and queue writes to handle network failures.
+
+   QUESTION: No changes since 2017, so no work with TLS1.3, arm64, old Docker versions. Developer Seth Vargo is now at Google.
+
+   https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan?in=consul/networking
+
+   ### Replicate ACL entries
 
    Cache ACLs for them to "ride out partitions".
 
@@ -3060,17 +3090,86 @@ Policies:
 1. Apply replication token to servers in secondary datacenter:
 
 
-
 <hr />
 
-<a name="consul-replicate"></a>
+<a name="EnterpriseConfiguration"></a>
 
-### consul-replicate
+## Enterprise configuration
+   
+   From v1.10.0 on, a full <strong>license file</strong> must be defined in the server config file before installation:
 
-   * https://github.com/hashicorp/consul-replicate
-   <br /><br />
+   <pre>log_level      = "INFO"
+server         = true
+ui             = true
+datacenter     = "us-east-1"
+license_path   = "/opt/consul/consul.hclic"
+client_addr    = "0.0.0.0"
+bind_addr      = "10.1.4.11"
+advertise_addr = "10.1.4.11"
+advertise_addr_wan = "10.1.4.11"
+   </pre>
 
-To perform cross-data-center Consul K/V replication, use the consul-replicate daemon which runs continuosly.
+   DEFINITION: To Consul, a "<strong>datacenter</strong>" is a single region.
+
+   IP addresses can be in IPv6 format.
+
+   <tt>advertise_addr</tt> are reacheable outside the datacenter.
+
+   Agent configurations have a different IP address and these settings to <strong>auto-join</strong> based on cloud (AWS) tags:
+
+   <pre>data_dir  = "/opt/consul/data"
+bootstrap_expect = 5
+retry_join       = ["provider=aws region=us-east-1 tag_key=consul tag_value=true"]
+retry_join_wan   = ["10.1.2.3","10.1.2.4"]
+connect = {
+   enabled = true
+}
+performance = {
+   raft_multiplier = 1
+}
+   </pre>
+
+   <tt>license_path</tt> - PROTIP: some use ".txt" or ".hcl" instead of ".hclic" to avoid the need to change text editor preferences based on file extension.
+
+   <tt>retry_join</tt> specifies the cloud provider and other metadata for <strong>auto-discovery</strong> by other Consul agents.
+
+   <tt>retry_join_wan</tt> specifies the IP address of each datacenter ingress.
+
+   WAN encryption has its own encryption key.
+
+   <tt>connect</tt> refers to <strong>Consul Connect</strong> (disabled by default for security).
+
+   <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability. 
+
+
+   <a name="TLS-config"></a>
+
+   ### TLS configuration
+
+   Consul has root and intermediate CA capability built-in to create certificates.
+   
+   Vault can also be used.
+
+   A CA is named "server.<em>datacenter</em>.<em>domain</em>".
+
+   <a name="GenTLS.pem"></a>
+
+1. Generate TLS .pem files.
+
+   <a name="TLS_Ageny"></a>
+
+1. Add "verify_" TLS encryption settings to the Consul Agent config file:
+
+   <pre>...
+verify_incoming = true
+verify_outgoing = true
+verify_server_hostname = true
+&nbsp;
+ca_file = "consul-agent-ca.pem"
+cert_file = "dc1-server-consul-0.pem"
+key_file = "dc1-server-consul-0-key.pem"
+encrypt = "xxxxxxxx"
+   </pre>
 
 
 <hr />
@@ -3133,82 +3232,20 @@ UpgradeVersionTag = ""
 }
    </pre>
 
+1. <a href="#StartServer">Start a Consul server</a>
+1. See which Consul servers joined:
 
-   ### Enterprise configuration
-   
-   From v1.10.0, a full license file must be defined in the server config file before installation:
+   <pre><strong>consul operator raft list-peers</strong></pre>
 
-   <pre>log_level      = "INFO"
-server         = true
-ui             = true
-datacenter     = "us-east-1"
-license_path   = "/opt/consul/consul.hclic"
-client_addr    = "0.0.0.0"
-bind_addr      = "10.1.4.11"
-advertise_addr = "10.1.4.11"
-advertise_addr_wan = "10.1.4.11"
+   <pre>Node             ID                                    Address            State     Voter  RaftProtocol
+consul-server-1  12345678-1234-abcd-5678-1234567890ab  10.132.1.194:8300  leader    true   3
    </pre>
 
-   To Consul, a "<strong>datacenter</strong>" is a single region.
-
-   IP addresses can be in IPv6 format.
-
-   <tt>advertise_addr</tt> are reacheable outside the datacenter.
-
-   Agent configurations have a different IP address and these settings to <strong>auto-join</strong> based on cloud (AWS) tags:
-
-   <pre>data_dir  = "/opt/consul/data"
-bootstrap_expect = 5
-retry_join       = ["provider=aws region=us-east-1 tag_key=consul tag_value=true"]
-retry_join_wan   = ["10.1.2.3","10.1.2.4"]
-connect = {
-   enabled = true
-}
-performance = {
-   raft_multiplier = 1
-}
-   </pre>
-
-   <tt>retry_join</tt> specifies the cloud provider and other metadata for <strong>auto-discovery</strong> by other Consul agents.
-
-   <tt>retry_join_wan</tt> specifies the IP address of each datacenter ingress.
-
-   WAN encryption has its own encryption key.
-
-   <tt>connect</tt> refers to <strong>Consul Connect</strong> (disabled by default for security).
-
-   <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability. 
+   After a quorum of servers is started (third new server), autopilot detects an equal number of old nodes vs. new nodes and <strong>promotes</strong> new servers as <strong>voters</strong>. This triggers a new leader election, and demotes the old nodes as non-voting members.
 
 
-   <a name="TLS-config"></a>
 
-   ### TLS configuration
-
-   Consul has root and intermediate CA capability built-in to create certificates. 
-   
-   Vault can also be used.
-
-   A CA is named "server.<em>datacenter</em>.<em>domain</em>".
-
-
-   <a name="GenTLS.pem"></a>
-
-1. Generate TLS .pem files.
-
-   <a name="TLS_Ageny"></a>
-
-1. Add "verify_" TLS encryption settings to the Consul Agent config file:
-
-   <pre>...
-verify_incoming = true
-verify_outgoing = true
-verify_server_hostname = true
-&nbsp;
-ca_file = "consul-agent-ca.pem"
-cert_file = "dc1-server-consul-0.pem"
-key_file = "dc1-server-consul-0-key.pem"
-encrypt = "xxxxxxxx"
-   </pre>
+<hr />
 
 <a name="MeshGateway"></a>
 
@@ -3266,15 +3303,26 @@ Consul provides an easy SPOC (Single Point of Contact) to specify rules for comm
    <a name="members"></a>
 
 1. At the Terminal within a Consul agent instance,<br />
-   create another Terminal shell instance to interact with the Consul agent running:
+   create another Terminal shell instance to interact with the Consul agent running
 
    <pre><strong>consul members</strong></pre>
+
+   A sample successful response:
 
    <pre>Node         Address         Status  Type    Build  Protocol  DC   Partition Segment
 Judiths-MBP  127.0.0.1:8301  alive   server  1.12.0  2         dc1  default &LT;all>
    </pre>
 
    PROTIP: The above command is only needed once to join a cluster. After that, agents Gossip with each other to propagate membership information with each other.
+
+   This error response reflects that CLI commands are a wrapper for API calls:
+
+   <pre>Error retrieving members: Get "http://127.0.0.1:8500/v1/agent/members?segment=_all": dial tcp 127.0.0.1:8500: connect: connection refused
+   </pre>
+
+   BTW, to join a WAN, it's
+
+   <pre><strong>consul members -wan</strong></pre>
 
 1. For more detail about Tags:
 
@@ -3285,7 +3333,6 @@ Judiths-MBP  127.0.0.1:8301  alive   server  1.12.0  2         dc1  default &LT;
    <pre>Node                  Address         Status  Tags
 wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a8cdb4,dc=dc1,ft_fs=1,ft_si=1,id=40fee474-cf41-1063-2790-c8ff2b14d4af,port=8300,raft_vsn=3,role=consul,segment=&LT;all>,vsn=2,vsn_max=3,vsn_min=2,wan_join_port=8302
    </pre>
-
 
 
    ### Rejoin existing server
