@@ -3023,7 +3023,7 @@ DATACENTER2_ID="dc2"
 
    The daemon consul-replicate integrates with Consul to manage application configuration from a central data center, with low-latency asynchronous replication to other data centers, thus avoiding the need for smart clients that would need to write to all data centers and queue writes to handle network failures.
 
-   QUESTION: No changes since 2017, so no work with TLS1.3, arm64, old Docker versions. Developer Seth Vargo is now at Google.
+   QUESTION: No changes since 2017, so doesn't work with TLS1.3, arm64, new Docker versions. Developer Seth Vargo is now at Google.
 
    https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan?in=consul/networking
 
