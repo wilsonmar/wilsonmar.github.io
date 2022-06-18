@@ -314,7 +314,8 @@ By "use case" (Sales Plays):
 <a href="#HCPDemo">B. On HashiCorp's Consul <strong>SaaS on the HCP (HashiCorp Cloud Platform)</strong></a>:
 
    - QUESTION: You can use Consul this way with just a Chromebook laptop???
-   - Use this to learn about creating sample AWS services in a private VPC using Terraform, createing a HCP account, cloud peering connections across private networks, day-to-day workflows on <a target="_blank" href="https://cloud.hashicorp.com/products/consul">https://cloud.hashicorp.com/products/consul</a>
+   - Use this to learn about creating sample AWS services in a private VPC using Terraform, createing a HCP account, cloud <strong>peering</strong> connections across private networks to HVN, day-to-day workflows on <a target="_blank" href="https://cloud.hashicorp.com/products/consul">https://cloud.hashicorp.com/products/consul</a>
+   - On AWS or <a target="_blank" href="https://www.hashicorp.com/blog/hcp-consul-on-azure">Azure</a> 
 
 <a href="#LaptopWay">C. On a macOS laptop install to <strong>learn Consul</strong> Agent with two nodes</a> (to see recovery of loss from a single node):
 
