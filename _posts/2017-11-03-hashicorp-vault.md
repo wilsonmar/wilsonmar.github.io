@@ -16,7 +16,44 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-HashiCorp Vault's basic job is to provide applications <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> to access databases and other services:
+<a target="_blank" href="https://www.vaultproject.io/docs/what-is-vault">What is Vault</a>?
+
+HashiCorp's Vault is popular among large enterprises because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
+Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies.
+
+All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
+
+
+Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with dynamic secrets with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+
+
+Vault is offered as open-source software. 
+Vault can interact with Vault using its GUI, CLI, or API, with its CLI a wrapper performing API calls.
+
+### Multi-cloud
+
+Vault provides a <strong>secrets provider</strong> within AWS, Azure, GCP, and other clouds.
+
+
+There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. 
+
+
+### Professionals needed
+
+It is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>professional approach</strong> to guarding their employer's secrets handled by employees.
+Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
+
+In 2021 a Vault SaaS became available from HashiCorp so that companies can obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+
+Vault has several features to solve diferent use cases:
+1. API to API
+2. User 
+3. API
+4. ???
+
+https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+
+Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
 
@@ -26,18 +63,17 @@ HashiCorp Vault's basic job is to provide applications <a target="_blank" href="
    4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
    <br /><br />
 
-See https://www.vaultproject.io/docs/what-is-vault
+### Legacy enterprise support
+
+HashiCorp provides a fully enterprise-level support and products
 
 Vault also can support PKI (Private Key Infrastructure) used to handle certificates.
 
-Vault enables a better Security Posture by replacing static long-running secrets (to be stolen) with dynamic secrets with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
 
-Vault also enables a 3rd-party secrets provider across multiple clouds (AWS, Azure, GCP, etc.) and providing a detailed audit log.
+## This Tutotorial
 
-As with other SaaS products, one can interact with Vault using its GUI, CLI, or API.
-This course assumes participants bring a Mac or Windows laptop and have prior experience with Linux CLI commands.
-
-Vault's secret handling features are provided several ways. The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
+Vault's secret handling features are provided several ways. 
+The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
    * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
 
@@ -62,6 +98,7 @@ HashiCorp provides Vault free under open-source licensing. Pay for an Enterprise
 
 https://github.com/hashicorp/vault-guides
 provides the technical content to support the Vault learn site.
+
 
 ## Use cases
 
