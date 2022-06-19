@@ -37,10 +37,17 @@ Examples of secrets (<a target="_blank" href="https://www.vaultproject.io/docs/u
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
    <br /><br />
 
-Vault provides the mechanisms to implement the "Zero Trust" security infrastructure:
-   * 
+Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
+1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
+1. <strong>Authenticate and authorize</strong> all network traffic through an identity-based approach
+1. Enable <strong>multi-factor authentication</strong> to augment protection
 
-## Multi-platform, Multi-cloud
+1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
+1. Leverage <strong>dynamic secrets</strong> to further strengthen the organization’s security posture
+1. <strong>Encrypt</strong> everything (in transit and at rest) and make it easy to maximize product adoption
+ 
+ 
+## Multi-platform, Multi-cloud enterprise
 
 Vault is designed to be deployed to all major platforms (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.).
 
@@ -51,9 +58,9 @@ Major cloud providers have their own features to keep secrets:
    * etc.
    <br /><br />
 
-But Vault has the distinct advantage of being able to work either inside and outside each cloud.
+But Vault has the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>.
 Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
-This is a requirement for true enterprise capability, due to needs imposed by mergers and acquisitions.
+This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
 Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
 
