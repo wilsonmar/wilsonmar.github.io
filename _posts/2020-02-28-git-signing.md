@@ -179,10 +179,12 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 
    #### Gen GPG using macOS GPG-Suite
 
-1. Click "Show secret keys only" to ignore the Pub (Public) keys there by default.
+1. Click "Show secret keys only" (at the lower-right corner) to ignore the Pub (Public) keys there by default.
+
 1. If there are green boxes marking your email from a previous session, you need to revoke it before creating a new key for that email.
 
 1. To generate a GPG key pair click "+ New" for the pop-up dialog.
+1. If there is a pop-up to access your contacts, click "Don't Allow".
 1. Click "Advanced options" to select Key Type "RSA (sign only)".
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/122693753-78941f80-d1f8-11eb-8c43-23dc4198b426.png">
@@ -191,9 +193,11 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 1. Type your name in title case.
 1. Type your email with the extra "+github" such as "wilsonmar+github@gmail.com".
 1. Define a new password in your password vault, then copy and paste that new password in the two fields.
-1. Make a note of the expiration date (by default four years from current date).
+1. Make a note of the expiration date (by default four years from current date). Some prefer no longer than one year.
 1. Click "Create Key".
+1. Many don't enter a Passphrase to protect the key. Click OK. You'll be prompted again if you didn't enter a Passphrase.
 1. If you select "No, Thanks!" to upload your public key and do that later from the "Key" menu item.
+1. Your new key should now be listed with green icons at the right.
 1. Press Command+Q to quit the GPG Keychain program.
 
 
@@ -244,20 +248,19 @@ Emacs Lisp files have been installed to:
 
    The response at time of writing:
 
-   <pre>ggnupg: stable 2.3.1 (bottled)
+   <pre>gnupg: stable 2.3.6 (bottled)
 GNU Pretty Good Privacy (PGP) package
 https://gnupg.org/
-/usr/local/Cellar/gnupg/2.3.1_1 (149 files, 12.4MB)
-  Poured from bottle on 2021-06-18 at 18:20:55
+Not installed
 From: https://github.com/Homebrew/homebrew-core/blob/HEAD/Formula/gnupg.rb
 License: GPL-3.0-or-later
 ==> Dependencies
 Build: pkg-config ✔
-Required: gettext ✔, gnutls ✔, libassuan ✔, libgcrypt ✔, libgpg-error ✔, libksba ✔, libusb ✔, npth ✔, pinentry ✔, sqlite ✔
+Required: gettext ✔, gnutls ✔, libassuan ✘, libgcrypt ✘, libgpg-error ✘, libksba ✘, libusb ✔, npth ✘, pinentry ✘
 ==> Analytics
-install: 80,503 (30 days), 225,125 (90 days), 862,924 (365 days)
-install-on-request: 74,096 (30 days), 208,203 (90 days), 786,528 (365 days)
-build-error: 0 (30 days)
+install: 73,341 (30 days), 262,763 (90 days), 992,581 (365 days)
+install-on-request: 69,985 (30 days), 248,160 (90 days), 932,987 (365 days)
+build-error: 11 (30 days)
    </pre>
 
 1. Edit your <tt>~/.bash_profile</tt> or <tt>~/.bashrc</tt> file to ensure that commands for "gpg" are routed to gpg2:
@@ -273,7 +276,7 @@ build-error: 0 (30 days)
 
    <pre><strong>brew info gpg</strong></pre>
 
-   Yeah, the same.
+   The version output should be the same.
 
 
    <a name="VerifyGPG"></a>
@@ -285,9 +288,9 @@ in Wikipediat/Wikiwand.com/en/GNU_Privacy_Guard</a> which states the source at <
 
    <pre><strong>gpg --version</strong></pre>
 
-   <pre>gpg (GnuPG/MacGPG2) 2.2.27
-libgcrypt 1.8.7
-Copyright (C) 2021 Free Software Foundation, Inc.
+   <pre>gpg (GnuPG/MacGPG2) 2.2.34
+libgcrypt 1.8.9
+Copyright (C) 2022 g10 Code GmbH
 License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -305,24 +308,29 @@ Compression: Uncompressed, ZIP, ZLIB, BZIP2
 
    <pre><strong>gpg -k</strong></pre>
 
-   Response:
+   Response (if you're John Doe):
 
-   <pre>pub   rsa4096 2021-06-20 [SC] [expires: 2025-06-20]
+   <pre>...
+pub   rsa4096 2021-06-20 [SC] [expires: 2025-06-20]
       123456789E91004D4C5D88CAE21961814AC0EF1B
 uid           [ultimate] John Doe <johndoe+github@gmail.com>
    </pre>
 
+1. Highlight and copy the key to your email, such as
+
+   <pre>123456789E91004D4C5D88CAE21961814AC0EF1B</pre>
 
    ### MacOS GPG Config
 
    PROTIP: The command above creates folder `$HOME/.gnupg`.
 
-1. Update or Create ~/.gnupg/gpg.conf
+1. Update or Create <tt>~/.gnupg/gpg.conf</tt> using your favorite text editor:
 
    <pre><strong>code $HOME/.gnupg/gpg.conf
    </strong></pre>
 
-   Visual Studio Code should open with lines such as:
+   The above would open Visual Studio Code containing lines such as:
+   
    <pre>auto-key-retrieve
 no-emit-version
    </pre>
@@ -344,6 +352,8 @@ no-emit-version
 1. Update permissions on your `~/.gnupg` Directory:
 
    <pre><strong>chmod 700 ~/.gnupg</strong></pre>
+   
+   No response is expected if the command is successful.
 
 1. Proceed to <a href="#Config">Configuration (below)</a>
 
@@ -493,7 +503,9 @@ In a Terminal:
 
    <pre><strong>vault --version</strong></pre>
 
-   <pre>Vault v1.7.3 ('5d517c864c8f10385bf65627891bc7ef55f5e827+CHANGES')</pre>
+   At time of writing:
+   
+   <pre>Vault v1.10.4 (6a1dde56c18c4a1be2756b931ce3c872d8ca5a76)</pre>
 
 1. If you don't have a HashiCorp Vault server, follow my instructions to run it (for development/experimentation) locally at:
 
@@ -1186,13 +1198,19 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    Alternately, open the file using a text editor, select all file contents, and copy to Clipboard.
 
-   The public key contents should include markers "-----BEGIN PGP PUBLIC KEY BLOCK-----" and "-----END PGP PUBLIC KEY BLOCK-----".
+   The public key contents should include markers<br />
+   "-----BEGIN PGP PUBLIC KEY BLOCK-----" and <br />
+   "-----END PGP PUBLIC KEY BLOCK-----".
 
-1. Switch to the GitHub page opened and click on the input field (so the field border turns blue), then press command+V to paste. Click "Add GPG key".
+1. Switch to the GitHub page opened and click on the input field (so the field border turns blue)
+1. Click "Add GPG key".
+1. Type a name for the key. For example: "mac M1 16 2022".
+1. Click on the space under the "Key" heading.
+1. Press command+V to paste what was saved to your invisible Clipboard using the pbcopy command above.
 
    PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
    
-1. Check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
+1. Scroll down the same page to check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
 
    <img width="612" alt="github-vigilent-mode-1224322" src="https://user-images.githubusercontent.com/300046/122704309-ac7b3f00-d210-11eb-8e06-3a8e11bb837c.png">
 
