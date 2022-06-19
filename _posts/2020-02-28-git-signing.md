@@ -1,4 +1,4 @@
----
+`---
 layout: post
 title: "Git Signing"
 excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
@@ -479,11 +479,13 @@ See https://help.github.com/en/github/administering-a-repository/about-required-
 
 ## Generate and store keys
 
+Skip to <a href="#ListKeys">List GPG Keys</a> if you don't want to store keys off your laptop (in the cloud).
+
 There are several places you can store GPG keys:
 
-   * On your local drive (which will be lost if your laptop dies or get lost)
+   * On your local drive (which will be lost if your laptop dies or gets lost)
    * <a href="#Keybase">Keybase cloud (below)</a>
-   * On a Yubikey physical device
+   * On a Yubikey physical device you obtain (from your employer or Amazon, etc.)
 
    * <a href="#hashicorp-vault">HashiCorp Vault</a>
    * Azure KeyVault?
@@ -1104,7 +1106,7 @@ sub   rsa2048 2020-03-01 [E] [expires: 2022-03-01]
 
    WARNING: Notice the expiry period is <strong>two years</strong> from date of creation.
 
-   "rsa2048" is the encryption algorithm used.
+   "rsa4096" or "rsa2048" is the encryption algorithm used.
 
 
 
@@ -1124,13 +1126,13 @@ gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
 gpg: next trustdb check due at 2022-03-01
 /Users/wilson_mar/.gnupg/pubring.kbx
 ------------------------------------
-sec   rsa2048/62C414BA89BFBE52 2020-03-01 [SC] [expires: 2022-03-01]
+sec   rsa2048/<strong>62C414BA89BFBE52</strong> 2020-03-01 [SC] [expires: 2022-03-01]
       0BB29E3C5216420CC50ACF8D62C414BA89BFBE52
 uid                 [ultimate] John Doe &LT;john_doe+github@gmail.com>
 ssb   rsa2048/7F2026C2A22F2B37 2020-03-01 [E] [expires: 2022-03-01]
    </pre>
 
-   NOTE: Only the "[ultimate]" key is used. Ignore the ones marke "[ revoked]".
+   NOTE: Only the "[ultimate]" key is used. Ignore any marked "[ revoked]".
 
 1. Manually highlight and copy the GPG key ID, which is after "rsa2048/" in the sec section, <tt>62C414BA89BFBE52</tt> in the sample above.
 
