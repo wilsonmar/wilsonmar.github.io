@@ -1466,6 +1466,17 @@ To github.com:wilsonmar/git-utilities
 
 <hr />
 
+<a name="ConfigVSCode"></a>
+
+## Configure VSCode
+
+1. Within VSCode, press command , (comma) or click the cog icon at the lower-left.
+1. On top of "Search settings" at the top, type "GPG". No need to press Enter.
+1. Check "Enables commit signing with GPG or X.509.
+1. Click the X to the right of the top "Settings" tab to to dismiss that tab.
+
+<hr />
+
 <a name="DeleteTags"></a>
 
 ## Delete Tags
@@ -1723,6 +1734,9 @@ https://www.thegeekyway.com/hands-on-guide-on-gpg-keys/
 by GeekyShacklebolt
 
 http://varrette.gforge.uni.lu/blog/2017/03/14/tutorial-gpg-gnu-privacy-guard/
+
+<a target="_blank" href="https://www.youtube.com/watch?v=2ISu2KTPzuQ">
+VIDEO: Source Control Tip 19: Signing a commit via GPG</a>
 
 
 ## More on DevOps #
