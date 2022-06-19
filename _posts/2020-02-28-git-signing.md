@@ -121,7 +121,10 @@ Then all a new working developer needs to do is, on a pre-configured laptop, mak
 
 <a name="install_gpg-suite"></a>
 
-### Install on macOS GUI app GPG-Suite 
+### Install on macOS GUI app GPG-Suite
+
+   * https://medium.com/@rwbutler/signing-commits-using-gpg-on-macos-7210362d15
+   <br /><br />
 
 Instead of <a target="_blank" href="https://www.youtube.com/watch?v=FrrT9fYoL3Y">VIDEO: downloading from website and clicking</a> manually:
 
@@ -174,8 +177,6 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 
    <img width="126" alt="git-signing-gpg-suite" src="https://user-images.githubusercontent.com/300046/95812445-a83a7180-0cd2-11eb-8c70-bfa7b1a5032b.png">
 
-1. Click here to <a href="VerifyGPG">skip to Verify GPG (below)</a>.
-
 
    #### Gen GPG using macOS GPG-Suite
 
@@ -183,7 +184,7 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 
 1. If there are green boxes marking your email from a previous session, you need to revoke it before creating a new key for that email.
 
-1. To generate a GPG key pair click "+ New" for the pop-up dialog.
+1. To generate a GPG key pair click <strong>+ New</strong> for the pop-up dialog.
 1. If there is a pop-up to access your contacts, click "Don't Allow".
 1. Click "Advanced options" to select Key Type "RSA (sign only)".
 
@@ -192,14 +193,18 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 
 1. Type your name in title case.
 1. Type your email with the extra "+github" such as "wilsonmar+github@gmail.com".
-1. Define a new password in your password vault, then copy and paste that new password in the two fields.
-1. Make a note of the expiration date (by default four years from current date). Some prefer no longer than one year.
+
+1. Switch to 1Password, LastPass, etc. to define a new password, then copy and paste that new password in the two fields.
+1. Make a note of the expiration date (by default four years from current date). Some prefer no longer than one year so that if your secrets are compromised, thieves only have a year to use it ;)
+
 1. Click "Create Key".
 1. Many don't enter a Passphrase to protect the key. Click OK. You'll be prompted again if you didn't enter a Passphrase.
 1. If you select "No, Thanks!" to upload your public key and do that later from the "Key" menu item.
 1. Your new key should now be listed with green icons at the right.
 1. Press Command+Q to quit the GPG Keychain program.
 
+   Also install utility to handle GPG within your Terminal:
+   
 
    <a name="gnupg2_mac_install"></a>
 
@@ -207,9 +212,7 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 
 1. Open a Terminal. Be at your home user folder.
 
-1. Execute a Bash script to do the following:
-   
-   Alternately, manually install <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew/">brew (Homebrew)</a>
+1. If you have not already, manually install <a target="_blank" href="https://wilsonmar.github.io/macos-homebrew/">brew (Homebrew)</a>
    
 1. Upgrade or Install a Git client using <a target="_blank" href="https://formulae.brew.sh/formula/gnupg">Homebrew's gnupg formulae</a>
 
@@ -263,7 +266,11 @@ install-on-request: 69,985 (30 days), 248,160 (90 days), 932,987 (365 days)
 build-error: 11 (30 days)
    </pre>
 
-1. Edit your <tt>~/.bash_profile</tt> or <tt>~/.bashrc</tt> file to ensure that commands for "gpg" are routed to gpg2:
+1. Install gpg2 :
+
+   <pre><strong>brew install gnupg2</strong></pre>
+
+1. Optionally, edit your <tt>~/.bash_profile</tt> or <tt>~/.bashrc</tt> or <tt>~/.zshrc</tt> file to ensure that commands for "gpg" are routed to gpg2:
 
    <pre>alias gpg="gpg2"
    echo -e "\n$(gpg --version | grep gpg)"    # gpg (GnuPG) 2.2.19
@@ -271,10 +278,6 @@ build-error: 11 (30 days)
 
    PROTIP: The response shows that the installation is specific to each version of macOS:<br />
    <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
-
-1. Install gpg2 :
-
-   <pre><strong>brew install gnupg2</strong></pre>
 
 1. Compare response from:
 
@@ -308,25 +311,16 @@ Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
 Compression: Uncompressed, ZIP, ZLIB, BZIP2
    </pre>
 
-1. Obtain keys:
-
-   <pre><strong>gpg -k</strong></pre>
-
-   Response (if you're John Doe):
-
-   <pre>...
-pub   rsa4096 2021-06-20 [SC] [expires: 2025-06-20]
-      123456789E91004D4C5D88CAE21961814AC0EF1B
-uid           [ultimate] John Doe <johndoe+github@gmail.com>
-   </pre>
-
-1. Highlight and copy the key to your email, such as
-
-   <pre>123456789E91004D4C5D88CAE21961814AC0EF1B</pre>
 
    ### MacOS GPG Config
 
    PROTIP: The command above creates folder `$HOME/.gnupg`.
+
+1. Update permissions on your `~/.gnupg` Directory:
+
+   <pre><strong>chmod 700 ~/.gnupg</strong></pre>
+   
+   No response is expected if the command is successful.
 
 1. Update or Create <tt>~/.gnupg/gpg.conf</tt> using your favorite text editor:
 
@@ -346,20 +340,32 @@ no-emit-version
    use-agent
    </pre>
 
-1. Add the default-key from the steps above:
+1. Switch back to the Terminal to obtain keys:
+
+   <pre><strong>gpg -k</strong></pre>
+
+   Response (if you're John Doe):
+
+   <pre>...
+pub   rsa4096 2021-06-20 [SC] [expires: 2025-06-20]
+      123456789E91004D4C5D88CAE21961814AC0EF1B
+uid           [ultimate] John Doe <johndoe+github@gmail.com>
+   </pre>
+
+1. Double-click to highlight the key above, such as:
+
+   <pre>123456789E91004D4C5D88CAE21961814AC0EF1B</pre>
+
+1. Press command+S to save and copy the key to your invisible clipboard.
+
+1. Switch back to your text editor to complete the command to type "defaul-key " then press command+V to paste the key to end up with something like this:
 
    <pre>default-key 123456789E91004D4C5D88CAE21961814AC0EF1B
    </pre>
 
-1. Save the file. Switch back to the CLI Terminal.
+1. Save the file.
 
-1. Update permissions on your `~/.gnupg` Directory:
-
-   <pre><strong>chmod 700 ~/.gnupg</strong></pre>
-   
-   No response is expected if the command is successful.
-
-1. Proceed to <a href="#Config">Configuration (below)</a>
+1. Proceed to <a href="#Config">Configuration section further down</a> by skipping the Linux install immediately below.
 
 
 <hr />
@@ -447,8 +453,6 @@ At your local command line terminal:
    <pre>user.name=wilsonmar
 user.email=wilsonmar+github@gmail.com
 user.id=WilsonMar+github@gmail.com
-user.username=hotwilson
-user.signingkey=E62CF51CE3E5A4E8
    </pre>
 
 1. You may not want to do this if you're configuring for multiple organizations. But if you are working with only one GitHub account, if you haven't already, while in a Terminal with the present working directory at your local repository, configure you valid GitHub user name and email. For example:
@@ -654,6 +658,20 @@ Push an encrypted copy of your new secret key to the Keybase.io server? [Y/n] Y
 ▶ INFO   user: Patrick Stadler <patrick.stadler@gmail.com>
 ▶ INFO   4096-bit RSA key, ID CB86A866E870EE00, created 2016-04-06
 ▶ INFO Exported new key to the local GPG keychain
+   </pre>
+   
+1. Verify whether it's configured with signingkey:
+
+   <pre><strong>git config --list | grep user
+   </strong></pre>
+
+   Example response:
+
+   <pre>user.name=wilsonmar
+user.email=wilsonmar+github@gmail.com
+user.id=WilsonMar+github@gmail.com
+user.username=hotwilson
+user.signingkey=E62CF51CE3E5A4E8   
    </pre>
 
 1. Skip to <a href="#ListKeys">List GPG keys (below)</a>.
@@ -1741,6 +1759,8 @@ http://varrette.gforge.uni.lu/blog/2017/03/14/tutorial-gpg-gnu-privacy-guard/
 
 <a target="_blank" href="https://www.youtube.com/watch?v=2ISu2KTPzuQ">
 VIDEO: Source Control Tip 19: Signing a commit via GPG</a>
+
+https://medium.com/@acparas/gpg-quickstart-guide-d01f005ca99
 
 
 ## More on DevOps #
