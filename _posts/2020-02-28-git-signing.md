@@ -272,6 +272,10 @@ build-error: 11 (30 days)
    PROTIP: The response shows that the installation is specific to each version of macOS:<br />
    <pre>==> Downloading https://homebrew.bintray.com/bottles/gmp-6.2.0.mojave.bottle.tar.gz</pre>
 
+1. Install gpg2 :
+
+   <pre><strong>brew install gnupg2</strong></pre>
+
 1. Compare response from:
 
    <pre><strong>brew info gpg</strong></pre>
