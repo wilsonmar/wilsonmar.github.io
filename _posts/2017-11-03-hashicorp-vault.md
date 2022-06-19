@@ -16,6 +16,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+The point of this page is to describe CLI command files I created to use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes.
+
+
+
 <a target="_blank" href="https://www.vaultproject.io/docs/what-is-vault">What is Vault</a>?
 
 Vault is offered as open-source software first released in 2015 at:
@@ -51,7 +55,7 @@ Vault provides the mechanisms to implement "Zero Trust" security principles mand
 1. Enable <strong>multi-factor authentication</strong> to augment protection
 
 1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
-1. Leverage <strong>dynamic secrets</strong> to further strengthen the organization’s security posture
+1. Leverage <a href="#DynamicSecrets">dynamic secrets</a> to further strengthen the organization’s security posture
 1. <strong>Encrypt</strong> everything (in transit and at rest) and make it easy to maximize product adoption
  
  
@@ -80,7 +84,8 @@ Ineffective secrets handling has resulted in billions paid in ransomware and the
 
 There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. 
 
-HashiCorp provides a fully enterprise-level 24/7 world-wide support.
+HashiCorp provides a fully enterprise-level 24/7 support worldwide.
+(HashiCorp's remote workfork are in 47 countries)
 
 ### Legacy enterprise support
 
@@ -88,16 +93,15 @@ Vault also can support PKI (Private Key Infrastructure) used to handle certifica
 
 All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
 
-Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with dynamic secrets with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
 
 ### Professionals needed
 
-It is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>professional approach</strong> to guarding their employer's secrets handled by employees.
 Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
 
-In 2021 a Vault SaaS became available from HashiCorp so that companies can obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
 
-https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+In 2021 a Vault SaaS became available from HashiCorp so that companies can obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
 
 Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
 
@@ -111,7 +115,6 @@ Computers talk to each other using API calls. Vault provides to application prog
 
 ## This Tutorial
 
-Vault's secret handling features are provided several ways. 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
    * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
@@ -138,6 +141,8 @@ HashiCorp provides Vault free under open-source licensing. Pay for an Enterprise
 
 https://github.com/hashicorp/vault-guides
 provides the technical content to support the Vault learn site.
+
+https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
 
 
 ## Use cases
@@ -335,7 +340,7 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
 
 5	Compare and configure Vault secrets engines
    * Choose a secret method based on use case
-   * Contrast dynamic secrets vs. static secrets and their use cases
+   * Contrast <a href="#DynamicSecrets">dynamic secrets</a> vs. static secrets and their use cases
    * Define transit engine
    * Define secrets engines
    <br /><br />
@@ -449,7 +454,7 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 A <strong>Vault Agent</strong> is a client daemon that provides:
 
-   * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved dynamic secrets.
+   * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
 
    * Templating -- rendering of user supplied templates, using the token generated by the Auto-Auth step.
 
@@ -467,6 +472,7 @@ A <strong>Vault Agent</strong> is a client daemon that provides:
 Vault can work with many Secrets Engines selected in the GUI:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+
 
 
 <a name="Protocols"></a>
@@ -489,9 +495,9 @@ A protocol for Auth Methods is selected by each user (if configured):
 
    The Vault "cubbyhole" is each user's private "locker". All secrets are namespaced under a token. When that token expires or is revoked, all the secrets in its cubbyhole are revoked with it. Even the root user cannot reach into a cubbyhole. 
    
-   However, secrets in the key/value secrets engine are accessible to other tokens if its policy allows it.
+   However, secrets in the key/value <a href="#SecretsEngines">secrets engine</a> are accessible to other tokens if its policy allows it.
 
-   To provide cover by ensuring that the value being transmitted across the wire is not the actual secret (but a reference to the secret), Vault's <strong>cubbyhole response wrapping</strong> is used where the initial token is stored in the cubbyhole secrets engine. The wrapped secret can be unwrapped using the single-use wrapping token. Even the user or the system created the initial token won't see the original value. 
+   To provide cover by ensuring that the value being transmitted across the wire is not the actual secret (but a reference to the secret), Vault's <strong>cubbyhole response wrapping</strong> is used where the initial token is stored in the cubbyhole <a href="#SecretsEngines">secrets engines</a>. The wrapped secret can be unwrapped using the single-use wrapping token. Even the user or the system created the initial token won't see the original value. 
 
    This mechanism provides malfeasance detection by ensuring that only a single party can ever unwrap the token and see what’s inside (given a limited time).
 
@@ -527,7 +533,7 @@ Within Vault, tokens map to information. The information mapped to each token is
                               
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/batch-tokens?in=vault/tokens">Batch tokens</a>  can’t be renewed (can’t have an explicit max TTL), so requires no storage on disk to track and replicate, so are "lightweight" and scalable. Batch tokens can’t be root tokens and can’t be used to create tokens.
 
-1. The admin who manages secrets engines needs to be given a policy with capabilities on <strong>mounts</strong> (of secrets engines):
+1. The admin who manages <a href="#SecretsEngines">secrets engines</a> needs to be given a policy with capabilities on <strong>mounts</strong> (of secrets engines):
 
    <pre>path "sys/mounts/*" {
   capabilities = ["create", "read", "update", "delete", "list", "sudo"]
@@ -636,11 +642,12 @@ https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/i
 https://hashicorp.github.io/field-workshops-vault/slides/multi-cloud/vault-oss/index.html</a>
 is the slidedeck HashiCorp Sales Engineers use for a high-level presentation.
 
-The <strong>Vault Database secrets engine</strong> generates dynamic, time-bound credentials for many different databases. Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by Roger Berlind) 
-walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=scHCqmR25BE">"HashiCorp Vault Dynamic Secrets Demo" by TeKanAid
+Secrets engines are Vault plugins that store, generate, or encrypt data. Secrets engines are incredibly flexible, so it is easiest to think about them in terms of their function.
 
+
+
+<hr />
 
 <a name="VaultSaaS"></a>
 
@@ -1442,6 +1449,10 @@ Code: 503. Raw Message:
     region=us-east-1
    </strong></pre>
 
+1. List secrets stored:
+
+   <pre><strong>vault secrets list
+   </strong></pre>
 
 <hr />
 
@@ -1820,7 +1831,7 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
 
    <pre>https://127.0.0.1:8200/v1/sys/seal-status</pre>
 
-1. Open a new Terminal window to Verify:
+1. Open a new Terminal window to Verify whether it's unsealed (Sealed = false):
 
    <pre><strong>vault status
    </strong></pre>
@@ -1834,12 +1845,26 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
    ---                    -----
    Recovery Seal Type     shamir
    Initialized            true
-   Sealed                 false
+   <strong>Sealed                 false</strong>
    Total Recovery Shares  5
    Threshold              3
-   Version                1.0.2
-   ...
+   Version                  1.9.4+ent
+   Storage Type             raft
+   Cluster Name             vault-cluster-ac95e06f
+   Cluster ID               30255f02-0dd4-cc7e-9bad-616790463be9
+   HA Enabled               true
+   HA Cluster               https://vault-server:8201
+   HA Mode                  active
+   Active Since             2022-06-19T16:49:41.486917632Z
+   Raft Committed Index     149
+   Raft Applied Index       149
+   Last WAL                 21
    </pre>
+
+   <pre><strong>RESPONSE=$( vault status )
+
+   </strong></pre>
+
 
 
    <a name="Journaling"></a>
@@ -2430,10 +2455,161 @@ https://www.vaultproject.io/docs/secrets/databases/#usage https://www.vaultproje
 
 
 
-## Generate dynamic credentials for a MySQL database from Vault.
+<a name="DynamicSecrets"></a>
 
-https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
+### Dynamic Secrets
 
+   * https://www.vaultproject.io/docs/secrets/databases/ 
+   * https://www.vaultproject.io/docs/secrets/databases/mysql-maria/
+   * https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
+   * https://www.vaultproject.io/api/secret/databases/#generate-credentials
+   <br /><br />
+
+The <strong>Vault Database</strong> <a href="#SecretsEngines">Secrets Engine</a> generates dynamic, time-bound credentials for many different databases (MySQL, Maria, PostgreSQL, etc.).
+
+   * Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials">"Vault Dynamic Database Credentials"</a> (by ex-HashiCorp Roger Berlind) walks you through the generation of dynamic credentials for a MySQL database that runs on the same server program as the Vault server itself.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=scHCqmR25BE">"HashiCorp Vault Dynamic Secrets Demo" by TeKanAid
+   * https://github.com/ArunNadda/vault_kmip_setup
+   <br /><br />
+
+1. Define variables used in subsequent commands, with values such as:
+
+   VaultDB_PATH="lob_a/workshop/database/creds/workshop-app-long"
+
+   db_name="wsmysqldatabase"
+
+   VAULT_ROLE1="workshop-app"<br />
+   VAULT_ROLE2="workshop-app-long"
+
+   REMEMBER: Bash does not like spaces around = 
+
+1. Enable the Database secrets engine on the Vault server:
+
+   <pre><strong>vault secrets enable -path=???/workshop/database database
+   </strong></pre>
+
+1. To configure the Database Secrets Engine, use a template:
+
+   <pre><strong>vault write {{ VaultDB_PATH }} \
+  plugin_name=mysql-database-plugin \
+  connection_url="{{username}}:{{password}}@tcp(localhost:3306)/" \
+  allowed_roles="workshop-app","workshop-app-long" \
+  username="hashicorp" \
+  password="Password123"
+  </strong></pre>
+
+1. Confirm:
+
+  <pre><strong>vault read "${VaultDB_PATH}"
+  </strong></pre>
+
+1. Rotate root credentials (the password):
+
+  <pre><strong>vault write -force "${VaultDB_PATH}"
+  </strong></pre>
+
+1. Validate that you can login to the MySQL server:
+
+   mysql -u hashicorp -pPassword123
+
+   vault write -force "${VaultDB_PATH}"
+
+1. Generate and Use Dynamic Database Credentials:
+
+1. Create a role:
+
+   <pre><strong>vault write {{ VaultDB_PATH }} \
+  db_name=wsmysqldatabase \
+  creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL ON my_app.* TO '{{name}}'@'%';" \
+  default_ttl="1h" \
+  max_ttl="24h"
+   </strong></pre>
+
+   <pre><strong>vault write {{ VaultDB_PATH }} \
+  db_name=wsmysqldatabase \
+  creation_statements="CREATE USER '{{name}}'@'%' IDENTIFIED BY '{{password}}';GRANT ALL ON my_app.* TO '{{name}}'@'%';" \
+  default_ttl="3m" \
+  max_ttl="6m"
+   </strong></pre>
+
+1. Download the JSON:
+
+   <pre><strong>curl --header "X-Vault-Token: root" "http://localhost:8200/v1/${VaultDB_PATH}" | jq
+   </strong></pre>
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   313  100   313    0     0  28962      0 --:--:-- --:--:-- --:--:-- 31300
+{
+  "request_id": "ca942ad6-e8a2-c97f-b4d8-e492c9e6aa3a",
+  "lease_id": "lob_a/workshop/database/creds/workshop-app-long/njLCNZvyXbMbU1cP7fVA1rKP",
+  "renewable": true,
+  "lease_duration": 3600,
+  "data": {
+    "password": "Y0R3sw0g-c8amBCr5k34",
+    "username": "v-token-workshop-a-No6c9RKuXDMG6"
+  },
+  "wrap_info": null,
+  "warnings": null,
+  "auth": null
+}
+   </pre>
+
+1. Output a table to capture lease_id="${LEASE_ID}, ${USERNAME}, ${PASSWORD}
+:
+
+   <pre><strong>vault read "${VaultDB_PATH}"
+   </strong></pre>
+
+   <pre>Key                Value
+---                -----
+lease_id           lob_a/workshop/database/creds/workshop-app-long/k4yNJ4YvLYxp3OwYedRNE7BM
+lease_duration     1h
+lease_renewable    true
+password           -dt7pJ1NpgQ0rkEiUjgi
+username           v-token-workshop-a-yYZVxgfpj9s9C
+   </pre>
+
+1. Highlight the lease_id value to craft a command to extend a lease by an increment of seconds:
+
+   vault write sys/leases/renew lease_id="${LEASE_ID}" increment="120"
+
+1. Checkout:
+
+   vault write sys/leases/lookup lease_id="${LEASE_ID}"
+
+   #### Login
+
+1. Login the database:
+
+   <pre><strong>mysql -u "${USERNAME}" -p
+   </strong></pre>
+
+1. Paste the password before pressing Enter.
+
+   <tt>mysql></tt> appears when you're in the database.
+
+1. Do something:
+
+   <pre><strong>show databases;
+   </strong></pre>
+
+   TODO: See that credentials were automatically deleted.
+
+1. Log out of MySQL:
+
+   <pre><strong>\q</strong></pre>
+
+1. Renew and Revoke Database Credentials:
+
+   * https://www.vaultproject.io/api/system/leases/#renew-lease https://www.vaultproject.io/api/system/leases/#revoke-lease
+   <br /><br />
+
+   Using the variable value captured:
+
+   <pre><strong>vault write sys/leases/revoke lease_id="${LEASE_ID}"</strong></pre>
+
+1. Verify by trying to login using credentials revoked.
 
 <hr />
 

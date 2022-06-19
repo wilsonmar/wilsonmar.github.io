@@ -40,12 +40,13 @@ The workflow:
 
    1. <a href="#Variations">Make decisions about install variations</a>
    2. <a href="#Installers">Install apps and programs locally</a>
-   3. <a href="#Configurations">Configure emails</a> and <a href="#RequireSigned">set up GitHub to require signing</a>
-   4. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
+   3. <a href="#Configurations">Configure emails</a> 4. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
    5. <a href="#CopyPasteGitHub">Add public GPG key to GitHub</a>
-   6. <a href="#SignCommits">Sign Git commits and merges</a>
-   7. <a href="#SignGitTags">Sign Git Tags</a>
-   8. Import key to GPG on another host
+   6. <a href="#RequireSigned">Set up GitHub to require signing</a>
+   7. <a href="#SignCommits">Sign Git commits and merges</a>
+   8. <a href="#SignGitTags">Sign Git Tags</a>
+   9. Remove 
+   10. Copy GPG keys off to a secure cloud
    <br /><br />
 
 BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a> and <a href="#FacebookSigning">getting Facebook to encrypt notification emails it sends you</a>.https://www.cnet.com/how-to/how-to-make-facebook-send-you-encrypted-notification-emails/
@@ -462,15 +463,6 @@ user.id=WilsonMar+github@gmail.com
    </strong></pre>
 
    IMPORTANT PROTIP: Any name and email can be specified in Git, which means anyone can impersonate someone else to get a malicious commit PR accepted. This is a big reason organizations ask for cryptographically signing commits in GitHub, which requires that the email specified be validated.
-
-
-<a name="RequireSigned"></a>
-
-### Require Signed Commit on GitHub
-
-GitHub Admins repos can require that commits be signed by <a target="_blank" href="https://docs.github.com/en/github/administering-a-repository/managing-a-branch-protection-rule#creating-a-branch-protection-rule">specifying branch protection rules</a> for all branches, for a specific branch, or for any branch that matches a name pattern matching a <a target="_blank" href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch">fnmatch syntax</a> such as <tt>*release*</tt> for branches containing the word "release".
-
-See https://help.github.com/en/github/administering-a-repository/about-required-commit-signing
 
 
 <hr />
@@ -1204,9 +1196,9 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
 1. Navigate to your <tt>.ssh</tt> folder:
 
-   <pre><strong>cd & cd .ssh</strong></pre>   
+   <pre><strong>cd ~/.ssh</strong></pre>   
 
-1. Print the public GPG key, in <strong>ASCII armor</strong> format so that they can be sent in a standard messaging format such as email. (Otherwise, the output is in binary format). 
+1. Print a command such as this to emit a public GPG key, in <strong>ASCII armor</strong> format so that they can be sent in a standard messaging format such as email. (Otherwise, the output is in binary format):
 
    <pre><strong>gpg --armor --export 62C414BA89BFBE52 >$HOME/mygitsigning.pub</strong></pre>
 
@@ -1216,7 +1208,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    <pre><strong>pbcopy < "$HOME/mygitsigning.pub"</strong></pre>
 
-   On Windows, pipe file contents to the clip.exe program built in within C:\Windows\system32 <a target="_blank" href="https://superuser.com/questions/472598/pbcopy-for-windows">*</a>:
+   Alternately, on Windows, pipe file contents to the clip.exe program built in within C:\Windows\system32 <a target="_blank" href="https://superuser.com/questions/472598/pbcopy-for-windows">*</a>:
 
    <pre><strong>type mygitsigning.pub | clip</strong></pre>
 
@@ -1234,9 +1226,18 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
    
+   <a name="RequireSigned"></a>
+
+   ### Require Signed Commits
+
 1. Scroll down the same page to check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
 
    <img width="612" alt="github-vigilent-mode-1224322" src="https://user-images.githubusercontent.com/300046/122704309-ac7b3f00-d210-11eb-8e06-3a8e11bb837c.png">
+
+
+   GitHub Admins repos can require that commits be signed by <a target="_blank" href="https://docs.github.com/en/github/administering-a-repository/managing-a-branch-protection-rule#creating-a-branch-protection-rule">specifying branch protection rules</a> for all branches, for a specific branch, or for any branch that matches a name pattern matching a <a target="_blank" href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch">fnmatch syntax</a> such as <tt>*release*</tt> for branches containing the word "release".
+
+   See https://help.github.com/en/github/administering-a-repository/about-required-commit-signing
 
 
 
@@ -1333,7 +1334,7 @@ echo 'export GPG_TTY=$(tty)' >> ~/.profile
 
 ## Sign Git Commits & merges
 
-1. git clone a repo, then edit some file.
+1. git clone a repo, then edit one of its files.
 
 1. Configure for the repo (and each additional repo) the private "no reply" email from <a href="#GitHubEmail">above</a> so your email is not exposed publicly:
 
@@ -1669,6 +1670,8 @@ Standard signing and clear signing both create ciphertext from the cleartext inp
 
    <pre><strong>gpg -o outputfile ciphertextfile</strong></pre>
 
+
+<hr />
 
 <a name="FacebookSigning"></a>
 
