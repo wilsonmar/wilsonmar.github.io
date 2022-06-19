@@ -29,13 +29,21 @@ is a whiteboard talk about avoiding "secret sprawl" living in clear text with
 empheral (temporary) passwords and cryptographic offload to a central service:
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
-Examples of secrets (<a target="_blank" href="https://www.vaultproject.io/docs/use-cases">use cases</a>):
+Examples of individual secrets (<a target="_blank" href="https://www.vaultproject.io/docs/use-cases">use cases</a>):
    * Passwords typed in with User names to login manually
    * Database credentials
    * API tokens provided by programs to obtain data from servers
    * TLS certificates used to encrypt network traffic
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
    <br /><br />
+
+The types of secrets 
+1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
+what a machine is enabled to do.
+2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
+3. Human-to-machine access concerns how we control which humans are allowed to speak to which
+machines.
+4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
 
 Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
 1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
@@ -52,13 +60,13 @@ Vault provides the mechanisms to implement "Zero Trust" security principles mand
 Vault is designed to be deployed to all major platforms (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.).
 
 Major cloud providers have their own features to keep secrets:
-   * AWS KMS (Key Management Server)
-   * Azure Key Vault
+   * AWS KMS (Key Management Server), AWS Secrets Manager, or AWS Key Service (AKS)
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
    * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
    * etc.
    <br /><br />
 
-But Vault has the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>.
+But Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>.
 Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
 This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
