@@ -3,7 +3,7 @@ layout: post
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
 tags: [vault, hashicorp, security, secrets]
-date: "2022-06-18"
+date: "2022-06-20"
 file: "hashicorp-vault"
 image:
 # pic secret finger over mouth 1900x500
@@ -1042,10 +1042,10 @@ NOTE: Labs timeout every 2 hours.
 
 <a name="TransitEngine"></a>
 
-### Vault Transit Engine (VTS)
+### Encryption in Transit with VTS
 
    * https://www.vaultproject.io/docs/secrets/transit/
-   * https://learn.hashicorp.com/tutorials/vault/eaas-transit = advantages at customer sites (by Lance Larsen)
+   * https://learn.hashicorp.com/tutorials/vault/eaas-transit = advantages at customer sites provides all steps.
    * Instruqt course: <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">"Vault Encryption as a Service"</a> enabling a Python app to talk to a MySQL database.
    <br /><br />
 
@@ -1066,8 +1066,7 @@ NOTE: Labs timeout every 2 hours.
    <pre><strong>vault write -f "${VTS_PATH}/keys/customer-key"
    </strong></pre>
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655723999/vault-transit-flow-980x365_rkc9up.png"><img alt="VTS flow" width="980" height="365" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655723999/vault-transit-flow-980x365_rkc9up.png"></a>
-
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"><img alt="VTS flow" width="1730" height="652" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"></a>
 
 1. A HA central Core Vault Cluster is referenced (leveraged by) this  <strong>Vault Transit Unseal</strong> configuration:
 
@@ -1088,7 +1087,7 @@ NOTE: Labs timeout every 2 hours.
 }
    </pre>
 
-   * https://www.vaultproject.io/docs/secrets/transit#key-types
+   PROTIP: Encryption uses by default AES-GCM with a 256-bit AES or other key type defined at https://www.vaultproject.io/docs/secrets/transit#key-types
 
 1. Other configuration stanzas:
 
