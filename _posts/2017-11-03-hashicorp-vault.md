@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HashiCorp Vault (with Consul and Nomad)"
+title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret, but still shared and refreshed."
 tags: [vault, hashicorp, security, secrets]
 date: "2022-06-18"
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The point of this page is to describe CLI command files I created to use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes.
+The point of this page is to describe CLI command files I created so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes.
 
 
 
@@ -421,7 +421,7 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 4	Build fault-tolerant Vault environments
    * 4a	Configure a highly available (HA) cluster
-   * 4b	[Vault Enterprise] Enable and configure disaster recovery (DR) replication
+   * 4b	[Vault Enterprise] Enable and configure <a href="#DR">disaster recovery (DR) replication</a>
    * 4c	[Vault Enterprise] Promote a secondary cluster
 
 5	Understand the hardware security module (HSM) integration
@@ -728,20 +728,50 @@ Provision a Dev Vault Cluster on AWS with Terraform
 
 <hr />
 
+<a name="Centralization"></a>
+
+## Centralization
+
+Centralization enables a common set of <strong>policies</strong> to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
+
+ and policy management that is highly available and scaleable as the number of clients and their functional needs increase. 
+
+
 <a name="Replication"></a>
 
-## Replication 
+## Replication and DR
 
-For organizations with infrastructure that spans multiple datacenters/regions, Vault provides identity management, secrets storage, and policy management that is highly available and scaleable as the number of clients and their functional needs increase. At the same time, a common set of policies need to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
+<em>The objective of this presentation is objection handling -- to have listeners accept the need to bring up <strong>32 servers</strong>, which seems like a lot. So we bring up the recommendations of others and analogies.</em>
 
-Vault has two approaches to replicate its secrets in <strong>secondaries</strong>, transparently to the client:
+For large global organizations with infrastructure that must stay up, Vault replicates centralized secrets across multiple datacenters/regions around the world.
 
-* In performance replication, secondaries keep track of their own tokens and leases but share the underlying configuration, policies, and supporting secrets (K/V values, encryption keys for Transit, etc). When a user action modifies an underlying shared state, the secondary forwards the request to the primary to be handled. If the primary fails, the secondary cannot take over.
+<strong>Additional servers</strong> (called "<strong>secondaries</strong>") are added around the world, in different regions, to ensure that there is <strong>adequate capacity</strong> to handle two different scenarios:
+   
+   A) <strong>scale up</strong> to handle more transactions to provide identity management, secrets storage, and other Vault functionality. This performance replication achieves <strong>scalability</strong> without incident.
 
-* In disaster recovery (or DR) replication, secondaries do not handle client requests, but are on stand-by to continue operations, on the election of the DR secondary, with applications connecting to the original primary when it fails.
+   B) <strong>recover</strong> from failure quickly in case one of the regions fail. This helps to achieve what's called HA (High Availability).
+   
+Let's dive in a bit to understand the architecture which enables achievement of minimal RPO and RTO when a failure occurs:
 
+   * RPO stands for the Recovery Point Objective, which measures the time frame within which transactions are lost during an outage.
 
+   * RTO stands for the Recovery Time Objective, which measures the time users go without service during an outage.
 
+Within the AWS cloud, for minimal recovery time, AWS recommends a complete <strong>secondary set</strong> of servers to be running continuously, to minimize the time it takes to switch from primary to secondary servers.
+
+To minimize risk, Like a group of reserve soliders, secondaries do not handle client requests, but are on <strong>stand-by</strong> to continue operations. 
+
+<!-- Upon failure of the primary, an election among DR secondaries is held to identify a new primary which applications connect to.
+All this happens transparently to the client. 
+-->
+
+Also to minimize risk, additional servers are brought in to scale traffic handling.
+
+When a user action modifies an underlying shared state, the secondary forwards the request to the primary for handling. 
+
+In performance replication mode to scale up, each secondary keeps track of tokens and leases in its own region. But share with other regions the underlying configuration, policies, and supporting secrets (K/V values, encryption keys for Transit, etc). 
+
+If the primary fails, the secondary cannot take over.
 
 <hr />
 
@@ -1845,7 +1875,8 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
    ---                    -----
    Recovery Seal Type     shamir
    Initialized            true
-   <strong>Sealed                 false</strong>
+   <strong>S
+   /aled                  false</strong>
    Total Recovery Shares  5
    Threshold              3
    Version                  1.9.4+ent

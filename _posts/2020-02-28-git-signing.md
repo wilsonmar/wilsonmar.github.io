@@ -1,4 +1,4 @@
-`---
+---
 layout: post
 title: "Git Signing"
 excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
@@ -1224,7 +1224,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 1. Click on the space under the "Key" heading.
 1. Press command+V to paste what was saved to your invisible Clipboard using the pbcopy command above.
 
-   PROTIP: IMPORTANT: If you lost your laptop, immediately remove the SSH and GPG keys associated with that laptop.
+   PROTIP: IMPORTANT: If you lost your laptop, <strong>immediately </strong> log into GitHub Settings on another laptop to remove the SSH and GPG keys associated with that laptop.
    
    <a name="RequireSigned"></a>
 
@@ -1233,7 +1233,6 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 1. Scroll down the same page to check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
 
    <img width="612" alt="github-vigilent-mode-1224322" src="https://user-images.githubusercontent.com/300046/122704309-ac7b3f00-d210-11eb-8e06-3a8e11bb837c.png">
-
 
    GitHub Admins repos can require that commits be signed by <a target="_blank" href="https://docs.github.com/en/github/administering-a-repository/managing-a-branch-protection-rule#creating-a-branch-protection-rule">specifying branch protection rules</a> for all branches, for a specific branch, or for any branch that matches a name pattern matching a <a target="_blank" href="https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch">fnmatch syntax</a> such as <tt>*release*</tt> for branches containing the word "release".
 
