@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The point of this page is to describe CLI command files I created so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes.
+The point of this page is to describe CLI command files I created so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
 
 <a target="_blank" href="https://www.vaultproject.io/docs/what-is-vault">What is Vault</a>?
@@ -1038,13 +1038,38 @@ NOTE: Labs timeout every 2 hours.
 
    NOTE: The Master Key remains memory-resident in a Vault Node memory and not stored.
 
-   <a name="TransitEngine"></a>
 
-   ### Transit Engine
 
-   Vault's Transit Secrets engine handles cryptographic functions on data-in-transit and doesn't store data sent to it, so it is called an "encryption as a service".
+<a name="TransitEngine"></a>
 
-1. Alternately, use <strong>Vault Transit Unseal</strong> by referencing a separate (leveraged) HA central Core Vault Cluster running the  <strong>Vault Transit engine</strong> configured with this example:
+### Vault Transit Engine (VTS)
+
+   * https://www.vaultproject.io/docs/secrets/transit/
+   * https://learn.hashicorp.com/tutorials/vault/eaas-transit = advantages at customer sites (by Lance Larsen)
+   * Instruqt course: <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">"Vault Encryption as a Service"</a> enabling a Python app to talk to a MySQL database.
+   <br /><br />
+
+   Secrets are encrypted outside of Vault using Vault's Transit Secrets engine "encryption as a service" (EaaS). To be secure, Vault performs cryptographic fuvtsnctions on <strong>data-in-transit</strong> and doesn't store data sent to it.
+
+1. Define the path, such as:
+
+   <pre><strong>VTS_PATH="lob_a/workshop/transit"
+   </strong></pre>
+
+1. Enable the secret transit engine (a Vault plugin):
+
+   <pre><strong>vault secrets enable -path="${VTS_PATH}" transit
+   </strong></pre>
+
+1. Write a Vault key:
+
+   <pre><strong>vault write -f "${VTS_PATH}/keys/customer-key"
+   </strong></pre>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655723999/vault-transit-flow-980x365_rkc9up.png"><img alt="VTS flow" width="980" height="365" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655723999/vault-transit-flow-980x365_rkc9up.png"></a>
+
+
+1. A HA central Core Vault Cluster is referenced (leveraged by) this  <strong>Vault Transit Unseal</strong> configuration:
 
    <pre>seal "transit" {
   address = "https://vault:8200"
@@ -1063,11 +1088,7 @@ NOTE: Labs timeout every 2 hours.
 }
    </pre>
 
-   Instruqt course <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-encryption-as-a-service">"Vault Encryption as a Service"</a> shows how Vault's Transit secrets engine provides encryption as a service.
-
-1. Enable a secret transit engine:
-
-   <pre><strong>vault secrets enable transit</strong></pre>
+   * https://www.vaultproject.io/docs/secrets/transit#key-types
 
 1. Other configuration stanzas:
 
@@ -1102,20 +1123,25 @@ cluster_name = "my_cluster"
    * Entities & Groups
 
 
-   ### VAULT_TOKEN
+   ### VAULT_TOKEN from unseal
 
    Save the unseal key response and an initial root token to set the "VAULT_TOKEN" environment variable, using the initial root token that the "init" command returned:
 
    <pre>export VAULT_TOKEN="$root_token"</pre>
 
-   You next need to unseal your Vault server, providing the unseal key that the "init" command returned:
-   vault operator unseal
+1. Unseal Vault server, providing the unseal key that the "init" command returned:
 
-   This will return the status of the server which should show that "Initialized" is "true" and that "Sealed` is "false".
+   <pre><strong>vault operator unseal</strong></pre>
 
-   To check the status of your Vault server at any time, you can run the "vault status" command. If it shows that "Sealed" is "true", re-run the "vault operator unseal" command.
+   This returns the status of the server as "Initialized = true" and that "Sealed = false".
 
-   Finally, log into the Vault UI with your root token. If you have problems, double-check that you ran all of the above commands.
+1. Check the status of the Vault server:
+
+   <pre><strong>vault status</strong></pre>
+
+   If the response is "Sealed = true", re-run the "vault operator unseal" command.
+
+1. Log into the Vault UI with your root token. If you have problems, double-check that you ran all of the above commands.
 
 
 * Enable and use an instance of HashiCorp's <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
