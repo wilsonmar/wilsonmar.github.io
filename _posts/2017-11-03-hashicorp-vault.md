@@ -136,8 +136,7 @@ The unique contribution of this article is to provide a deep yet concise approac
 
 Here is a hands-on tutorial about how to install and use HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
 
-<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
-HashiCorp provides Vault free under open-source licensing. Pay for an Enterprise license for MFA, Replication, Diaster Recovery, Namespaces, Monitoring, FIPS 140-2 and quicker support. HashiCorp can provide a list of services partners.
+<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: HashiCorp provides Vault free under open-source licensing. Pay for an Enterprise license for MFA, Replication, Diaster Recovery, Namespaces, Monitoring, FIPS 140-2, and quicker support. HashiCorp can provide a list of services partners.
 
 https://github.com/hashicorp/vault-guides
 provides the technical content to support the Vault learn site.
@@ -741,37 +740,65 @@ Centralization enables a common set of <strong>policies</strong> to be enforced 
 
 ## Replication and DR
 
-<em>The objective of this presentation is objection handling -- to have listeners accept the need to bring up <strong>32 servers</strong>, which seems like a lot. So we bring up the recommendations of others and analogies.</em>
+   * https://www.vaultproject.io/docs/enterprise/replication
+   * https://www.youtube.com/watch?v=0K1b1mT6t8E
+   <br /><br />
 
-For large global organizations with infrastructure that must stay up, Vault replicates centralized secrets across multiple datacenters/regions around the world.
+<em>The objective of this presentation is objection handling -- to have listeners accept the need to bring up <strong>32 servers</strong> for HA and scalability. That seems like a lot. So we bring up the recommendations of others, KPI metrics, and analogies.</em>
 
-<strong>Additional servers</strong> (called "<strong>secondaries</strong>") are added around the world, in different regions, to ensure that there is <strong>adequate capacity</strong> to handle two different scenarios:
+For large global organizations with a <strong>production</strong> infrastructure that must stay up, <strong>additional servers</strong> (called "<strong>secondaries</strong>") are added around the world, in different regions, to ensure that there is <strong>adequate capacity</strong>. 
+
+Most enterprises have traffic worldwide. So the basic strategy involves adding complete datacenters in different cloud regions around the world -- in different subnets and using different accounts for better security.
+
+Many of the Global 2000 enterprises run this set of servers across 3 regions:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"><img alt="" width="1298" height="728" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"></a>
+
+When (not just if) the primary region fails completely, other regions absorb the traffic.
+
+Within a datacenter, 5 servers are spread across 3 Availability Zones so that if an Availability Zone goes down, another can take its place.
+
+Notice there are two different types of replication being used:
    
-   A) <strong>scale up</strong> to handle more transactions to provide identity management, secrets storage, and other Vault functionality. This performance replication achieves <strong>scalability</strong> without incident.
+   A) To handle more transactions to provide identity management, secrets storage, and other Vault functionality, we <strong>scale up</strong> with more <strong>Read replicas</strong> to achieve <strong>scalability</strong> without incident.
 
-   B) <strong>recover</strong> from failure quickly in case one of the regions fail. This helps to achieve what's called HA (High Availability).
+   B) To achieve what's called HA (High Availability), we need to quickly <strong>recover</strong> when a whole primary datacenter fails within a region, a stand-by datacenter comes online within the same region.
    
+The more <strong>suddenly</strong> that additional load will come online, the more reserve capacity needs to be running. Running additional capacity <strong>absorbs</strong> burts of traffic while additional servers are being onboarded.
+
+<a name="DR"></a>
+
+The same can be said of disaster recovery.
+
 Let's dive in a bit to understand the architecture which enables achievement of minimal RPO and RTO when a failure occurs:
 
    * RPO stands for the Recovery Point Objective, which measures the time frame within which transactions are lost during an outage.
 
    * RTO stands for the Recovery Time Objective, which measures the time users go without service during an outage.
 
+These production metrics are kept low by adopting an architecture that ensures it.
+
 Within the AWS cloud, for minimal recovery time, AWS recommends a complete <strong>secondary set</strong> of servers to be running continuously, to minimize the time it takes to switch from primary to secondary servers.
 
-To minimize risk, Like a group of reserve soliders, secondaries do not handle client requests, but are on <strong>stand-by</strong> to continue operations. 
+To minimize risk, Like a group of reserve soliders, secondaries for DR do not handle client requests, but are on <strong>stand-by</strong>.
 
 <!-- Upon failure of the primary, an election among DR secondaries is held to identify a new primary which applications connect to.
+Raft protocol.
 All this happens transparently to the client. 
 -->
 
-Also to minimize risk, additional servers are brought in to scale traffic handling.
-
 When a user action modifies an underlying shared state, the secondary forwards the request to the primary for handling. 
 
-In performance replication mode to scale up, each secondary keeps track of tokens and leases in its own region. But share with other regions the underlying configuration, policies, and supporting secrets (K/V values, encryption keys for Transit, etc). 
+In performance replication mode to scale up, each read replica secondary keeps track of tokens and leases in its own region. But share with other regions the underlying configuration, policies, and supporting secrets (K/V values, encryption keys for Transit, etc). 
 
-If the primary fails, the secondary cannot take over.
+With performance data replication, if the primary fails, the secondary cannot take over.
+<!-- what??? -->
+
+Now let's look at the mechanics
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=DtMjqpJTRbE" type="Jul 6, 2020">VIDEO: "HashiCorp Vault Enterprise and Open Source High-Availability Demo" by Sam Gabrial
+   <br /><br />
+
 
 <hr />
 

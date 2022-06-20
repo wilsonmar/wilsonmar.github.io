@@ -40,16 +40,21 @@ The workflow:
 
    1. <a href="#Variations">Make decisions about install variations</a>
    2. <a href="#Installers">Install apps and programs locally</a>
-   3. <a href="#Configurations">Configure emails</a> 4. <a href="#GenKeys">Generate</a> and <a href="#ListKeys">list keys</a>
-   5. <a href="#CopyPasteGitHub">Add public GPG key to GitHub</a>
-   6. <a href="#RequireSigned">Set up GitHub to require signing</a>
-   7. <a href="#SignCommits">Sign Git commits and merges</a>
-   8. <a href="#SignGitTags">Sign Git Tags</a>
-   9. Remove 
-   10. Copy GPG keys off to a secure cloud
+   3. <a href="#Configurations">Configure emails</a> 
+   4. <a href="#GenKeys">Generate keys</a> 
+   5. <a href="#ListKeys">list keys</a> to verify
+   6. <a href="#CopyPasteGitHub">Add public GPG key to GitHub</a>
+   7. <a href="#RequireSigned">Set up GitHub to require signing</a>
+   8. <a href="#SignCommits">Sign Git commits and merges</a>
+   9. <a href="#SignGitTags">Sign Git Tags</a>
+   9. Remove keys from GitHub immediately after losing your laptop
    <br /><br />
 
-BONUS: Since we're using GPG, here are also <a href="#EncryptFiles">notes about signing of whole files using GPG</a> and <a href="#FacebookSigning">getting Facebook to encrypt notification emails it sends you</a>.https://www.cnet.com/how-to/how-to-make-facebook-send-you-encrypted-notification-emails/
+   BONUS: Since we have GPG installed, here are also notes about:
+   * <a href="#EncryptFiles">signing of whole files using GPG</a> 
+   * <a href="#FacebookSigning">getting Facebook to encrypt notification emails it sends you</a>.
+   * <a href="#CopyGPG">Copy GPG keys off to a secure cloud</a> 
+   <br /><br />
 
 
 <hr />
@@ -199,8 +204,13 @@ drwxr-xr-x   3 root  admin    96 May 14 18:37 _CodeSignature
 1. Make a note of the expiration date (by default four years from current date). Some prefer no longer than one year so that if your secrets are compromised, thieves only have a year to use it ;)
 
 1. Click "Create Key".
+
 1. Many don't enter a Passphrase to protect the key. Click OK. You'll be prompted again if you didn't enter a Passphrase.
-1. If you select "No, Thanks!" to upload your public key and do that later from the "Key" menu item.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655687689/git-signing-upload-726x890_isfdef.png">
+   <img alt="Git Signing Upload" width="726" height="890" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655687689/git-signing-upload-726x890_isfdef.png"></a>
+
+1. If you select "No, Thanks!" to upload your public key, you can do that later from the "Key" menu item.
 1. Your new key should now be listed with green icons at the right.
 1. Press Command+Q to quit the GPG Keychain program.
 
@@ -1676,8 +1686,7 @@ Standard signing and clear signing both create ciphertext from the cleartext inp
 
 ## Getting Facebook to encrypt notification emails
 
-<a target="_blank" href="https://www.cnet.com/how-to/how-to-make-facebook-send-you-encrypted-notification-emails/">In 2015</a>,
-Facebook introduced an option to it to encrypt notification emails -- account recovery emails, in particular. It's done by you (the user) adding your <strong>OpenPGP public key</strong> to your Facebook profile.
+<a target="_blank" href="https://www.cnet.com/how-to/how-to-make-facebook-send-you-encrypted-notification-emails/">In 2015</a>, Facebook introduced an option to encrypt notification emails -- account recovery emails, in particular. It's done by you (the user) adding your <strong>OpenPGP public key</strong> to your Facebook profile.
 
 1. Generate your public and private keys.
 1. Copy and paste the text block of your PGP public key, starting with: -----BEGIN PGP PUBLIC KEY BLOCK----- and including -----END PGP PUBLIC KEY BLOCK----- at the end. (On a Mac, I exported my public key as a plain-text ASC file from the GPG Keychain application that I was then able to open in TextEdit to copy the text block mentioned above.)
