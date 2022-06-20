@@ -742,35 +742,23 @@ Centralization enables a common set of <strong>policies</strong> to be enforced 
 
    * https://www.vaultproject.io/docs/enterprise/replication
    * https://www.youtube.com/watch?v=0K1b1mT6t8E
+   * https://www.somerfordassociates.com/blog/hashicorp-vault-enterprise-blog/
    <br /><br />
 
-<em>The objective of this presentation is objection handling -- to have listeners accept the need to bring up <strong>32 servers</strong> for HA and scalability. That seems like a lot. So we bring up the recommendations of others, KPI metrics, and analogies.</em>
+<em>The objective of this particular presentation is objection handling -- to have listeners accept the need to bring up a minimum of <strong>32 servers</strong> for multi-region HA and scalability. That seems like a lot. So we bring up the recommendations of others, KPI metrics, analogies, with security and technical justifications.</em>
 
-For large global organizations with a <strong>production</strong> infrastructure that must stay up, <strong>additional servers</strong> (called "<strong>secondaries</strong>") are added around the world, in different regions, to ensure that there is <strong>adequate capacity</strong>. 
+We talked earlier about a <strong>datacenter</strong> where if a whole Availability Zone goes down, another can take its place.
+To make that work, each datacenter has 3 Availability Zones, with 5 servers total.
 
-Most enterprises have traffic worldwide. So the basic strategy involves adding complete datacenters in different cloud regions around the world -- in different subnets and using different accounts for better security.
+Most enterprises have traffic worldwide, in different regions. For security, each region should be in a different subnet, using different accounts. So the usual enterprise strategy involves adding complete datacenters in different cloud regions around the world.
 
-Many of the Global 2000 enterprises run this set of servers across 3 regions:
+For large global organizations with a <strong>production</strong> infrastructure that must stay up, <strong>duplicate datacenters</strong> (called "<strong>secondaries</strong>") are added around the world, in different regions.
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"><img alt="" width="1298" height="728" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"></a>
 
-When (not just if) the primary region fails completely, other regions absorb the traffic.
+Many of the Global 2000 enterprises duplicate a set of datacenters across 3 regions -- one <strong>primary</strong> region and two secondaries. So when eventually the primary region fails completely, another region can take its place.
 
-Within a datacenter, 5 servers are spread across 3 Availability Zones so that if an Availability Zone goes down, another can take its place.
-
-Notice there are two different types of replication being used:
-   
-   A) To handle more transactions to provide identity management, secrets storage, and other Vault functionality, we <strong>scale up</strong> with more <strong>Read replicas</strong> to achieve <strong>scalability</strong> without incident.
-
-   B) To achieve what's called HA (High Availability), we need to quickly <strong>recover</strong> when a whole primary datacenter fails within a region, a stand-by datacenter comes online within the same region.
-   
-The more <strong>suddenly</strong> that additional load will come online, the more reserve capacity needs to be running. Running additional capacity <strong>absorbs</strong> burts of traffic while additional servers are being onboarded.
-
-<a name="DR"></a>
-
-The same can be said of disaster recovery.
-
-Let's dive in a bit to understand the architecture which enables achievement of minimal RPO and RTO when a failure occurs:
+This architecture enables achievement of minimal RPO and RTO when a failure occurs:
 
    * RPO stands for the Recovery Point Objective, which measures the time frame within which transactions are lost during an outage.
 
@@ -778,26 +766,40 @@ Let's dive in a bit to understand the architecture which enables achievement of 
 
 These production metrics are kept low by adopting an architecture that ensures it.
 
-Within the AWS cloud, for minimal recovery time, AWS recommends a complete <strong>secondary set</strong> of servers to be running continuously, to minimize the time it takes to switch from primary to secondary servers.
+Within the AWS cloud, for minimal recovery time, AWS recommends a complete <strong>secondary set</strong> of servers to be running continuously, to minimize the time it takes to switch from primary to secondary servers. 
 
-To minimize risk, Like a group of reserve soliders, secondaries for DR do not handle client requests, but are on <strong>stand-by</strong>.
+Like a group of reserve soliders in an army, secondaries for DR do not handle client requests, but are on <strong>stand-by</strong>.
 
-<!-- Upon failure of the primary, an election among DR secondaries is held to identify a new primary which applications connect to.
-Raft protocol.
-All this happens transparently to the client. 
--->
+So each region has two datacenters: one for performance and one for Disaster Recovery.
 
-When a user action modifies an underlying shared state, the secondary forwards the request to the primary for handling. 
+This allows more servers to be added when needed. The more <strong>suddenly</strong> that additional load might come online, the more reserve capacity needs to be running for quick upgrade. The additional capacity <strong>absorbs</strong> burts of traffic while additional servers are being onboarded.
 
-In performance replication mode to scale up, each read replica secondary keeps track of tokens and leases in its own region. But share with other regions the underlying configuration, policies, and supporting secrets (K/V values, encryption keys for Transit, etc). 
+<a name="ReplicationFiltering"></a>
 
-With performance data replication, if the primary fails, the secondary cannot take over.
-<!-- what??? -->
+All server configuration changes and encryption keys are replicated to all servers all the time. 
 
-Now let's look at the mechanics
+Vault doesn't use the legacy approach of a "load balancer" where all servers run all the time, using a back-end to store data. Such approaches are known to be single points of failure in the add-on load balancer or single database.
+
+Instead, the way to minimize the chance of data corruption today is this: within each performance cluster, only the <strong>primary server modifies</strong> underlying data. Secondary servers are called "read replicas" because they respond only to read requests, and transparently forward write requests to the primary. This works because, in practice, there are many more read requests than write requests.
+
+Thus, each read replica secondary keeps track of tokens and leases in its own region. For better security, when a primary fails and a secondary is promoted, applications reauthenticate and obtain new leases from the newly-promoted primary.
+
+This is how modern system such as Vault Enterprise are made bullet-proof today.
+
+
+<a name="DR"></a>
+
+Now let's look at the mechanics:
+
+   * https://medium.com/@bernardo.gza83/hashicorp-vault-performance-replication-7ff8b8d08f04
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=DtMjqpJTRbE" type="Jul 6, 2020">VIDEO: "HashiCorp Vault Enterprise and Open Source High-Availability Demo" by Sam Gabrial
+
+   * https://banzaicloud.com/blog/vault-multi-datacenter/
    <br /><br />
+
+Enterprise edition licenses also enable 
+"Replication Filters" (aka "mount filters") to enforce data sovereignty requirements through fine-grained allow and deny policies around data replication.
 
 
 <hr />
