@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The point of this page is to describe CLI command files I created so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
+The point of this page is to describe CLI commands I created (based on docs and tutorials) so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
 
 <a target="_blank" href="https://www.vaultproject.io/docs/what-is-vault">What is Vault</a>?
@@ -1056,14 +1056,15 @@ NOTE: Labs timeout every 2 hours.
    <pre><strong>VTS_PATH="lob_a/workshop/transit"
    </strong></pre>
 
-1. Enable the secret transit engine (a Vault plugin):
+1. Enable (mount) the secret transit engine (a Vault plugin) to a custom path different than the "transit" mount:
 
    <pre><strong>vault secrets enable -path="${VTS_PATH}" transit
    </strong></pre>
 
 1. Write a Vault key:
 
-   <pre><strong>vault write -f "${VTS_PATH}/keys/customer-key"
+   <pre><strong>VTS_PATH="some-key"
+vault write -f "${VTS_PATH}/keys/${VTS_PATH}"
    </strong></pre>
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"><img alt="VTS flow" width="1730" height="652" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"></a>
