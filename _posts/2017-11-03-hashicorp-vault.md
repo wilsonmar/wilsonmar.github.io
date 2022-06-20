@@ -19,7 +19,6 @@ comments: true
 The point of this page is to describe CLI command files I created so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes.
 
 
-
 <a target="_blank" href="https://www.vaultproject.io/docs/what-is-vault">What is Vault</a>?
 
 Vault is offered as open-source software first released in 2015 at:
@@ -49,14 +48,17 @@ what a machine is enabled to do.
 machines.
 4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
 
+### Zero Trust
+
 Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
+
 1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
 1. <strong>Authenticate and authorize</strong> all network traffic through an identity-based approach
 1. Enable <strong>multi-factor authentication</strong> to augment protection
 
 1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
-1. Leverage <a href="#DynamicSecrets">dynamic secrets</a> to further strengthen the organization’s security posture
-1. <strong>Encrypt</strong> everything (in transit and at rest) and make it easy to maximize product adoption
+1. Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal.
+1. <strong>Encrypt</strong> everything (in transit and at rest) 
  
  
 ## Multi-platform, Multi-cloud enterprise
@@ -64,7 +66,7 @@ Vault provides the mechanisms to implement "Zero Trust" security principles mand
 Vault is designed to be deployed to all major platforms (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.).
 
 Major cloud providers have their own features to keep secrets:
-   * AWS KMS (Key Management Server), AWS Secrets Manager, or AWS Key Service (AKS)
+   * AWS KMS (Key Management Server), AWS Secrets Manager, or the AWS Key Service (AKS)
    * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
    * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
    * etc.
@@ -740,6 +742,7 @@ Centralization enables a common set of <strong>policies</strong> to be enforced 
 
 ## Replication and DR
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/video/upload/v1655703805/vault-dr-1_huxtc3.wav">AUDIO</a>: 
    * https://www.vaultproject.io/docs/enterprise/replication
    * https://www.youtube.com/watch?v=0K1b1mT6t8E
    * https://www.somerfordassociates.com/blog/hashicorp-vault-enterprise-blog/
@@ -778,7 +781,7 @@ This allows more servers to be added when needed. The more <strong>suddenly</str
 
 All server configuration changes and encryption keys are replicated to all servers all the time. 
 
-Vault doesn't use the legacy approach of a "load balancer" where all servers run all the time, using a back-end to store data. Such approaches are known to be single points of failure in the add-on load balancer or single database.
+Vault doesn't use the legacy approach of a "load balancer" where all servers run all the time, using a back-end to store data. Such approaches are now known to be single points of failure in the add-on load balancer or single database.
 
 Instead, the way to minimize the chance of data corruption today is this: within each performance cluster, only the <strong>primary server modifies</strong> underlying data. Secondary servers are called "read replicas" because they respond only to read requests, and transparently forward write requests to the primary. This works because, in practice, there are many more read requests than write requests.
 
