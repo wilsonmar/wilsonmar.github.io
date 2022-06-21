@@ -103,7 +103,22 @@ Installation and maintenance of Vault requires some configuration and tuning alo
 
 So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
 
-In 2021 a Vault SaaS became available from HashiCorp so that companies can obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+The typical arrangement is a differentiation between Service Owners  Security Owners:
+
+Service Owners being responsible for:
+   * Operational Access
+   * Authentication Methods
+   * Reliability of Vault (Availability reporting)
+   <br /><br />
+
+Security Owners being responsible for:
+   * Authorization Methods
+   * Secrets Policy
+   * Rotation Strategy
+   * Data, Application, and Systems Access
+   <br /><br />
+
+In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
 
 Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
 
@@ -411,7 +426,7 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
    * 1g	Regenerate a root token
    * 1h	Rekey Vault and rotate encryption keys
 
-2	Monitor a Vault environment
+2	<a href="#Monitoring">Monitor a Vault environment</a>
    * 2a	Monitor and understand Vault telemetry
    * 2b	Monitor and understand Vault audit logs
    * 2c	Monitor and understand Vault operational logs
@@ -470,10 +485,26 @@ A <strong>Vault Agent</strong> is a client daemon that provides:
 
 ## Secrets Engines
 
-Vault can work with many Secrets Engines selected in the GUI:
-
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
 
+PROTIP: Some secrets engines (such as AD accounts) are managed using CLI/API rather than GUI.
+
+Supported secrets engines (alphabetically):
+   * Active Directory (AD)
+   * AliCloud
+   * AWS
+   * Azure (cloud from Microsoft)
+   * GoogleCloud
+   * GoogleCloud KMS (Key Managerment Service)
+   * Consul (from HashiCorp)
+   * Nomad (from HashiCorp)
+   * RabbitMQ messagging
+   * SSH (Secure Shell used by Linux)
+   * Transit (from HashiCorp)
+   * PKI (Public Key Infrastructure used by Microsoft, etc.)
+   * KV (Key/Value)
+   * TOTP (Time-based One-time Password https://datatracker.ietf.org/doc/html/rfc6238)? See https://datatracker.ietf.org/doc/html/rfc6238
+   <br /><br />
 
 
 <a name="Protocols"></a>
@@ -494,13 +525,18 @@ A protocol for Auth Methods is selected by each user (if configured):
    <pre><strong>vault login -method=github token="${VAULT_TOKEN}
    </strong></pre>   
 
-   The Vault "cubbyhole" is each user's private "locker". All secrets are namespaced under a token. When that token expires or is revoked, all the secrets in its cubbyhole are revoked with it. Even the root user cannot reach into a cubbyhole. 
+   To ensure that no secret value is transmitted across the wire, Vault's <strong>cubbyhole response wrapping</strong> is used where the initial token is stored in the cubbyhole <a href="#SecretsEngines">secrets engines</a>. 
+   A reference to the secret within a cubbyhole.
+   The wrapped secret can be unwrapped using the single-use wrapping token. Even the user or the system created the initial token won't see the original value. 
+
+   The Vault "cubbyhole" is each user's private "locker" which a specific Token accesses.
+
+   This mechanism provides malfeasance detection by ensuring that only a single party can ever unwrap the token and see what’s inside (given a limited time).
+
+   All secrets are namespaced under a token. When that token expires or is revoked, all the secrets in its cubbyhole are revoked with it. Even the root user cannot reach into a cubbyhole. 
    
    However, secrets in the key/value <a href="#SecretsEngines">secrets engine</a> are accessible to other tokens if its policy allows it.
 
-   To provide cover by ensuring that the value being transmitted across the wire is not the actual secret (but a reference to the secret), Vault's <strong>cubbyhole response wrapping</strong> is used where the initial token is stored in the cubbyhole <a href="#SecretsEngines">secrets engines</a>. The wrapped secret can be unwrapped using the single-use wrapping token. Even the user or the system created the initial token won't see the original value. 
-
-   This mechanism provides malfeasance detection by ensuring that only a single party can ever unwrap the token and see what’s inside (given a limited time).
 
 1. Configure GitHub engineering team authentication to be granted the default and application policies:
 
@@ -783,7 +819,7 @@ All server configuration changes and encryption keys are replicated to all serve
 
 Vault doesn't use the legacy approach of a "load balancer" where all servers run all the time, using a back-end to store data. Such approaches are now known to be single points of failure in the add-on load balancer or single database.
 
-Instead, the way to minimize the chance of data corruption today is this: within each performance cluster, only the <strong>primary server modifies</strong> underlying data. Secondary servers are called "read replicas" because they respond only to read requests, and transparently forward write requests to the primary. This works because, in practice, there are many more read requests than write requests.
+Instead, the way to minimize the chance of data corruption today is this: within each performance cluster, only the <strong>primary server modifies</strong> underlying data. Secondary servers are called "read replicas" because they respond only to read requests, and transparently forward (using gPRC protocol) requests to the primary. This works because, in practice, there are many more read requests than write requests.
 
 Thus, each read replica secondary keeps track of tokens and leases in its own region. For better security, when a primary fails and a secondary is promoted, applications reauthenticate and obtain new leases from the newly-promoted primary.
 
@@ -1051,23 +1087,23 @@ NOTE: Labs timeout every 2 hours.
 
    Secrets are encrypted outside of Vault using Vault's Transit Secrets engine "encryption as a service" (EaaS). To be secure, Vault performs cryptographic fuvtsnctions on <strong>data-in-transit</strong> and doesn't store data sent to it.
 
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"><img alt="VTS flow" width="1730" height="652" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"></a>
+
 1. Define the path, such as:
 
    <pre><strong>VTS_PATH="lob_a/workshop/transit"
    </strong></pre>
 
-1. Enable (mount) the secret transit engine (a Vault plugin) to a custom path different than the "transit" mount:
+1. Enable (mount) the secret transit engine (a Vault plugin) to a custom path different than the default "transit" mount:
 
    <pre><strong>vault secrets enable -path="${VTS_PATH}" transit
    </strong></pre>
 
-1. Write a Vault key:
+1. Create a key ring:
 
-   <pre><strong>VTS_PATH="some-key"
-vault write -f "${VTS_PATH}/keys/${VTS_PATH}"
+   <pre><strong>VTS_KEY_RING="orders"
+vault write -f "${VTS_PATH}/keys/${VTS_KEY_RING}"
    </strong></pre>
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"><img alt="VTS flow" width="1730" height="652" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655725359/vault-transit-flow-1730x652_t8ewp2.png"></a>
 
 1. A HA central Core Vault Cluster is referenced (leveraged by) this  <strong>Vault Transit Unseal</strong> configuration:
 
@@ -1112,7 +1148,6 @@ api_addr = "https://IPADDRESS:8200"
 ui = true
 cluster_name = "my_cluster"
    </pre>
-
 
 1. After Vault is running, use the UI to configure:
 
@@ -2767,6 +2802,43 @@ PROTIP: Here is a tool to test access to a Vault instance (locally and publicly)
 
 
 In <a target="_blank" href="https://www.hashicorp.com/resources/developer-first-application-security-and-devsecops">"Developer-First Application Security and DevSecOps"</a> by Kevin Alwell (@alwell-kevin at GitHub)
+
+<hr />
+
+<a name="Monitoring"></a>
+
+## Monitoring/Observability
+
+https://www.consul.io/docs/agent/options
+https://www.consul.io/docs/agent/options#_log_file
+
+Configure loging in ExecStart of the service that is created on the yum installation for Consul. To direct logs from consul to say /var/log/, add <tt>-log-file=</tt><em>some-path</em> at the end of:
+
+<pre>[Unit]
+Description="HashiCorp Consul - A service mesh solution"
+Documentation=https://www.consul.io/
+Requires=network-online.target
+After=network-online.target
+ConditionFileNotEmpty=/etc/consul.d/consul.hcl
+&nbsp;
+[Service]
+User=consul
+Group=consul
+ExecStart=/usr/bin/consul agent -config-dir=/etc/consul.d/ -log-file=/var/log/consul/
+ExecReload=/bin/kill --signal HUP $MAINPID
+KillMode=process
+KillSignal=SIGTERM
+Restart=on-failure
+LimitNOFILE=65536
+&nbsp;
+[Install]
+WantedBy=multi-user.target
+   </pre>
+
+1. To retrieve system logs in -reverse order (the most recent first):
+
+   <pre><strong>sudo journalctl -u consul.service -r
+   </strong></pre>
 
 
 <hr />
