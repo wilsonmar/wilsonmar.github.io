@@ -149,9 +149,9 @@ Additional Defense in Depth:
 
 PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
 
-1. As a Developer, when a new microservice comes online, <strong>obtain their IP addresses automatically</strong> rather than manually creating a ticket for manual action by Networking people.
+1. When a new microservice comes online, <strong>obtain their IP addresses automatically</strong> rather than manually creating a ticket for manual action by Networking people.
 
-2. As a Network Engineer, automatically <strong>discover services</strong> when they get created in order to obtain their IP addresses -- so that I can focus on troubleshooting work instead of manual toil that can be automated (by Consul).
+2. When a new service is created, it is automatically <strong>discover services</strong> in order to obtain their IP addresses -- so that I can focus on troubleshooting work instead of manual toil that can be automated (by Consul).
 
    Instead of <strong>manually</strong> changing static IP addresses and firewall rules in Load Balancers, Consul enables dynamic allocation and distribution of addresses from the Consul central "Key-Value" datastore. (Large enterprises have up to 4,000 microservices running at the same time.)
 
@@ -1271,7 +1271,9 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
    * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/hcdiag-with-tfe">Terraform Enterprise</a>.
    <br /><br />
 
-Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
+   Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
+
+   QUESTION: Would this 
 
 
    <a name="InstallConsulLinux"></a>
@@ -2946,12 +2948,12 @@ Consider these dynamic illustrations about how the Raft mechanism works:
    * https://www.consul.io/docs/intro/vs/serf
    <br /><br />
 
-To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). Serf provides for:
+To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). The <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> is used by the Serf library. which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
 
-   * Membership information which enable servers to perform cross-datacenter requests
+Serf provides for:
 
-   * Events broadcasting
-   
+   * Events broadcasting to perform cross-datacenter requests based on  Membership information
+
    * Failure detection to gracefully handle loss of connectivity
 
 If Vault is not used, do it the hard way:
@@ -2963,6 +2965,11 @@ If Vault is not used, do it the hard way:
 1. Install encryption key on each agent.
 
 1. Review Gossip Telemetry output.
+
+
+NOTE: To manage membership and broadcast messages to the cluster, 
+
+Refer to the Serf documentation 
 
 
 <hr />

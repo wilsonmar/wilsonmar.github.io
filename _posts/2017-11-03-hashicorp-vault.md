@@ -134,17 +134,18 @@ Computers talk to each other using API calls. Vault provides to application prog
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
-   * A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
+   A. A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
 
-   * <a href="#VaultAgent">On your laptop install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
+   B. <a href="#VaultAgent">On your laptop install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
 
-   * <a href="#VaultCompose">On your laptop, install Vault server using Docker Compose</a>
+   C. <a href="#VaultCompose">On your laptop, install Vault server using Docker Compose</a>
 
-   * Install a "self-managed" in AWS with a <strong>S3 backend</strong>
+   D. <a href="HashiCups">Follow step-by-step instructions</a> for the fictional use case at HashiCups, Inc.
+   Install a "self-managed" Enterprise in AWS with a <strong>S3 backend</strong> by 
 
-   * <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
+   E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
 
-   * Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
+   F. Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
 
    * Use Enterprise HCP
    <br /><br />
@@ -1296,6 +1297,113 @@ cd containers/consul-vault/
 docker-compose up -d
 </pre>
 
+
+<a name="HashiCups"></a>
+
+## HashiCups
+
+Here I have for you an experience of how we, as a DevOps engineer, can improve the secrets management posture of a fictitious company called "HashiCups, Inc.".
+
+
+ manages secrets while moving to the cloud.  by adopting HashiCorp Vault to centralize secrets to access data in git repos, shared mounts, and spreadsheets. Following <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/vault-managing-secrets-and-moving-to-cloud">this hands-on Instruqt class</a>:
+
+1. Start by using <tt>vault login</tt> (as root token), list secrets. Among the types of secrets is "kv" (for KeyValue), so read a path:
+
+   <pre>vault read kv/db/postgres/product-db-creds</pre>
+
+   https://www.vaultproject.io/docs/auth/kubernetes/
+
+1. Migrate a shared secret (to access a database) from a shared NFS mount to Vault within Kubernetes:
+
+   <pre>vault kv put kv/db/postgres/product-db-creds \
+  username="postgres" \
+  password="password"
+   </pre>
+
+   https://www.vaultproject.io/docs/platform/k8s/injector/
+
+1. Use ACLs to restrict Access to only specific identities accessing the <tt>kv/database</tt> path. Each policy is in a different file:
+
+   products-api has read-only:
+
+   <pre>path "kv/db/postgres/product-db-creds" {
+  capabilities = ["read"]
+}
+   </pre>
+
+   dba-operator of customer Profile database:
+
+   <pre>path "kv/db/*" {
+  capabilities = ["list", "read", "create", "update"]
+}
+   </pre>
+
+   Run:
+   
+   <pre><strong>vault policy write dba-operator policies/dba-operator-policy.hcl
+   </strong></pre>
+
+1. Enable and create static username with password:
+
+   <pre>vault auth enable userpass
+vault write auth/userpass/users/dba-dan password=dba-dan policies=dba-operator
+   </pre>
+
+   Login as that user:
+
+   <pre>unset VAULT_TOKEN
+vault login -method=userpass username=dba-dan password=dba-dan
+   </pre>
+
+1. Generate dynamic secrets to a database instead of shared passwords. 
+
+   <pre>vault secrets enable database
+vault read kv/db/postgres/product-db-creds
+export PG_HOST=$(kubectl get svc -l app=postgres -o=json | jq -r '.items[0].spec.clusterIP')
+export PG_USER=postgres
+export PG_PASS=password
+vault write database/config/hashicups-pgsql \
+    plugin_name=postgresql-database-plugin \
+    allowed_roles="products-api" \
+    connection_url="postgresql://{{username}}:{{password}}@$PG_HOST:5432/?sslmode=disable" \
+    username=$PG_USER \
+    password=$PG_PASS
+vault write database/roles/products-api \
+    db_name=hashicups-pgsql \
+    creation_statements="CREATE ROLE \"{{name}}\" WITH LOGIN PASSWORD '{{password}}' VALID UNTIL '{{expiration}}' SUPERUSER; \
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";" \
+    default_ttl="30m" \
+    max_ttl="1h"
+   </pre>
+
+1. Verify by using username and password copied from response above:
+
+   <pre>vault read database/creds/products-api
+psql -U <em>GENERATED_USERNAME</em> -h $PG_HOST products
+Password for user ...
+\q
+   </pre>
+
+1. Rotate root credentials:
+
+   <pre>vault write -force database/rotate-root/hashicups-pgsql
+# Confirm can't access:
+psql -U postgres -h $PG_HOST
+# Delete old path:
+vault kv delete kv/db/postgres/product-db-creds
+   </pre>
+
+   kubectl delete deployment products-api-deployment
+
+   kubectl get deployment
+
+1. Modify the "products-api.yml" Kubernetes deployment file to leverage the <tt>vault-k8s</tt> agent to inject secrets. It leverages the Kubernetes Mutating Admission Webhook to intercept and augment specifically annotated pod configuration for secret injection using Init and Sidecar containers.
+
+   That enables applications to not need to manage tokens, connect to an external API, or other mechanisms for direct interaction with Vault. App code only need to be concerned with specifying a path to find a secret.
+
+   <pre>sed -i 's/kv\/db\/postgres\/product-db-creds/database\/creds\/products-api/g' /root/k8s/products-api.yml
+kubectl apply -f k8s/products-api.yml
+   </pre>
 
 <a name="Homebrew"></a>
 
@@ -2812,7 +2920,7 @@ In <a target="_blank" href="https://www.hashicorp.com/resources/developer-first-
 https://www.consul.io/docs/agent/options
 https://www.consul.io/docs/agent/options#_log_file
 
-Configure loging in ExecStart of the service that is created on the yum installation for Consul. To direct logs from consul to say /var/log/, add <tt>-log-file=</tt><em>some-path</em> at the end of:
+Configure logging in <tt>ExecStart</tt> of the service created using the yum installation for Consul. To direct logs from consul to say /var/log/, add <tt>-log-file=</tt><em>some-path</em> at the end of:
 
 <pre>[Unit]
 Description="HashiCorp Consul - A service mesh solution"

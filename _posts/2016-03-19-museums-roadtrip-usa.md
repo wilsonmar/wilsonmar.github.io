@@ -3,7 +3,7 @@
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
 tags: [travel, roadtrip, museums, monuments, ML]
-date: "2022-06-06"
+date: "2022-06-23"
 file: "museums-roadtrip-usa"
 image:
 # feature: pic road and clouds to mountains 1900x500.jpg
@@ -867,6 +867,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.noma.org/">New Orleans Museum of Art</a></li>
 <li><a target="_blank" href="https://www.softdisk.com/comp/norton/">R.W. Norton Art Gallery</a>, Shreveport</li>
 <li><a target="_blank" href="https://www.ogdenmuseum.org/">Ogden Museum of Southern Art</a>, New Orleans</li>
+<li><a target="_blank" href="https://www.crt.state.la.us/dataprojects/archaeology/povertypoint/mound-a.html">Mounds at Poverty Point</a></li>
 <li> Delgado Museum of Art</li>
 <li> Louisiane State Museum</li>
 </ul>
@@ -1277,38 +1278,45 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.vcmha.org/">Ventura County Museum of History and Art</a>, Ventura</li>
 </ul>
 
-### Los Angeles:
+### West Side, Los Angeles:
 
 <ul>
-<li><a target="_blank" href="https://www.nixonlibrary.gov/">
-Richard Nixon Presidential Library and Museum</a>, Yorba Linda</li>
-<li><a target="_blank" href="https://www.reagan.utexas.edu/">
-Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 <li><a target="_blank" href="https://www.getty.edu/museum/"><strong>J. Paul Getty Museum</strong></a>, Malibu</li>
 <li><a target="_blank" href="https://www.smmoa.org/">Santa Monica Museum of Art</a></li>
 <li><a target="_blank" href="https://www.fowler.ucla.edu/incEngine/">UCLA Fowler Museum of Cultural History</a>, Los Angeles</li>
 <li><a target="_blank" href="https://www.hammer.ucla.edu/">Armand Hammer Museum of Art at UCLA</a>, Los Angeles</li>
-<li><a target="_blank" href="https://www.skirball.org/">Skirball Cultural Center</a>, Los Angeles</li>
-<li><a target="_blank" href="https://www.mtr.org/">Museum of Television and Radio</a>, Beverly Hills</li>
 </ul>
 <ul>
+<li><a target="_blank" href="https://www.mtr.org/">Museum of Television and Radio</a>, Beverly Hills</li>
+<li><a target="_blank" href="https://www.skirball.org/">Skirball Cultural Center</a>, Los Angeles</li>
 <li><a target="_blank" href="https://www.lacma.org/">Los Angeles County Museum of Art</a>, Los Angeles</li>
-<li><a target="_blank" href="https://www.corita.org/">Corita [Kent] Art Center</a>, Los Angeles</li>
+<li><a target="_blank" href="https://www.caam.ca.gov/">California African-American Museum</a>, Los Angeles</li>
 <li><a target="_blank" href="https://www.moca-la.org/">Museum of Contemporary Art</a></li>
+</ul>
+
+### Downtown Los Angeles:
+
+<ul>
+<li><a target="_blank" href="https://www.corita.org/">Corita [Kent] Art Center</a>, Los Angeles</li>
 <li><a target="_blank" href="https://www.neonmona.org/">Museum of Neon Art</a>, Los Angeles</li>
 <li><a target="_blank" href="https://www.kamuseum.org/">Korean American Museum</a>, Los Angeles</li>
 <li><a target="_blank" href="https://www.usc.edu/org/fishergallery/">Fisher Gallery at the University of Southern California</a>, Los Angeles</li>
+<li><a target="_blank" href="https://www.thebroad.org/">The Broad</a>, then <a target="_blank" href="https://otiumla.com/menus/">Otium restaurant</a>, downtown Los Angeles</li>
+
 <li><a target="_blank" href="https://southwestmuseum.org/">Southwest Museum</a>, Los Angeles</li>
-<li><a target="_blank" href="https://www.autry-museum.org/">Autry Museum of Western Heritage</a></li>
-<li><a target="_blank" href="https://www.caam.ca.gov/">California African-American Museum</a>, Los Angeles</li>
 </ul>
+
+### East Los Angeles:
+
 <ul>
+<li><a target="_blank" href="https://www.autry-museum.org/">Autry Museum of Western Heritage</a></li>
+<li><a target="_blank" href="https://www.reagan.utexas.edu/">Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 <li><a target="_blank" href="https://www.huntington.org/">Huntington Library</a>, San Marino</li>
 <li><a target="_blank" href="https://www.nortonsimon.org/">Norton Simon Museum</a>, Pasadena</li>
 <li><a target="_blank" href="https://www.pacificasiamuseum.org/">Pacific Asia Museum</a>, Pasadena</li>
 </ul>
 
-### Orange County:
+### South Bay, Long Beach:
 
 <ul>
 <li><a target="_blank" href="https://www.molaa.com/">Museum of Latin American Art</a>, Long Beach</li>
@@ -1316,7 +1324,11 @@ Ronald Reagan Presidential Library and Museum</a>, Simi Valley</li>
 <li><a target="_blank" href="https://www.csulb.edu/~uam/">California State University Art Museum</a>, Long Beach</li>
 <li><a target="_blank" href="https://www.csulb.edu/library/arts/">California State University Library</a>, Long Beach</li>
 </ul>
+
+### Orange County:
+
 <ul>
+<li><a target="_blank" href="https://www.nixonlibrary.gov/">Richard Nixon Presidential Library and Museum</a>, Yorba Linda</li>
 <li><a target="_blank" href="https://www.ci.fullerton.ca.us/museum/">Fullerton Museum Center</a></li>
 <li><a target="_blank" href="https://disneyland.disney.go.com/">Disneyland</a>, Anaheim</li>
 <li><a target="_blank" href="https://www.bowers.org/">Bowers Museum of Cultural Art</a>, Santa Ana</li>
