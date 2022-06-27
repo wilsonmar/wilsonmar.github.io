@@ -6,10 +6,10 @@ title: "prodsys - production systems"
 excerpt: "Here we maintain assets SREs (System Reliability Engineers) use  to fearlessesly and adroitly face production."
 tags: [HashiCorp, Kubernetes, Security]
 image:
-# pic silver robot white skin handshake 1900x500
-  feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
-  credit: 
-  creditlink: 
+# maze at thebroad 1900x500
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1656337416/prod-baselines-maze-1900x500_axzivx.png
+  credit: Hank Wilis Thomas
+  creditlink: https://www.thebroad.org/art/hank-willis-thomas/america-0
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -69,13 +69,7 @@ The vitality and security of your production system at work reflects your dilige
 
 
 
-## Demo Apps
-
-https://learn.hashicorp.com/tutorials/consul/kubernetes-deployment-guide
-
-https://learn.hashicorp.com/collections/consul/kubernetes-production
-
-HashiCorp's HashiCups demo app.
+## HashiCorp HashiCups demo rig
 
 https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp
 from Sep 2020 (by <a target="_blank" href="https://www.linkedin.com/in/derek-strickland-59258a/">Derek Strickland</a>)
@@ -83,6 +77,24 @@ contains application and dashboard definitions for the <a target="_blank" href="
 
 It uses HashiCup, one of the standard HashiCorp demo apps.
 It leverages micro-services and Consul Service Mesh to connect them all together.
+
+https://learn.hashicorp.com/tutorials/consul/kubernetes-deployment-guide
+
+https://learn.hashicorp.com/collections/consul/kubernetes-production
+
+In the https://github.com/hashicorp-demoapp organization are code to create each component:
+
+   * https://github.com/hashicorp-demoapp/frontend
+   * https://github.com/hashicorp-demoapp/payments
+   * https://github.com/hashicorp-demoapp/postgres
+   <br /><br />
+
+   Also the infrastructure:
+
+   * https://hub.docker.com/repository/docker/hashicorpdemoapp/traffic-simulation
+   * https://github.com/hashicorp-demoapp/traffic-simulation by 
+nicholas jackson
+   <br /><br />
 
 https://github.com/hashicorp/terraform-provider-hashicups
 
