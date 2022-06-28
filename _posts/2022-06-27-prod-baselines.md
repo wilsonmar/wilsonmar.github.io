@@ -18,13 +18,17 @@ comments: true
 
 "The best and fastest way to learn a language is to live like a native".
 
-> PROTIP: To really learn a system, troubleshoot a running production system, as an SRE.
+> PROTIP: To really learn a system, troubleshoot a running production system, as an SRE (System Reliability Engineer).
+
+The job title "SRE" has existed only a few years. It's evovlved from "System Administrator".
 
 Most who hold SREs today got their job out of accident. Being in the right place at the right time.
+Few 10-year-olds have ever stated that they want to grow up to be an SRE like they say they want to be an astronaut.
 
-We think that's a wreckless and stupid way to equip people for one of the most important jobs in a company.
+We think that's a wreckless and stupid way to equip people for one of the <strong>most important jobs in a company</strong>.
+SREs keep safe and alive websites and other systems critical to the operation of nearly every organization today.
 
-We think that great SREs are built, not born.
+> We think that great SREs are built, not born.
 
 We think what's needed is people collaborating to advance a baseline with variations.
 
@@ -49,9 +53,9 @@ Going from newbie to Junior to Senior to Master.
 
 The vitality and security of your production system at work reflects your diligence at learning these stages:
 
-1. Master basic skills: Touch Typing, MacOS/Linux commands, Shell scripting, Git and GitHub, GitHub Markdown, CI/CD (GitHub Actions?), Docker, Terraform, Ansible, Helm, Kubernetes, self control (to make time).
+1. Master basic skills: self control (to make time), Touch Typing/vim, VSCode, MacOS/Linux commands (sed, awk, jq, jsonette, etc.), Shell & Python scripting, Git and GitHub, Git and GitHub Markdown, CI/CD (GitHub Actions?), Docker, Terraform, Ansible, Helm, Kubernetes. Then there's effective collaboration applying etiquette and tricks to using email, Slack, SMS, Zoom/Teams, etc.
 
-1. Customize the <strong>plan templates</strong> here about how to introduce and sustain the entire implementation lifecycle.
+1. Customize the <strong>adoption plan templates</strong> here about how to introduce and sustain the entire implementation lifecycle.
 
 1. Study the <strong>baseline configuration assets</strong> (Terraform, Policies, GitHub Actions scripts, etc.) by reading and viewing videos.
 
@@ -71,18 +75,15 @@ The vitality and security of your production system at work reflects your dilige
 
 ## HashiCorp HashiCups demo rig
 
-https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp
+<a target="_blank" href="https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp">https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp</a>
 from Sep 2020 (by <a target="_blank" href="https://www.linkedin.com/in/derek-strickland-59258a/">Derek Strickland</a>)
 contains application and dashboard definitions for the <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/kubernetes-layer7-observability">Consul Layer 7 observability with Kubernetes guide located at learn.hashicorp.com</a>
 
-It uses HashiCup, one of the standard HashiCorp demo apps.
 It leverages micro-services and Consul Service Mesh to connect them all together.
 
-https://learn.hashicorp.com/tutorials/consul/kubernetes-deployment-guide
+It uses HashiCups, one of the standard HashiCorp demo apps.
 
-https://learn.hashicorp.com/collections/consul/kubernetes-production
-
-In the https://github.com/hashicorp-demoapp organization are code to create each component:
+Code to create the Hashicups app is from https://github.com/hashicorp-demoapp :
 
    * https://github.com/hashicorp-demoapp/frontend
    * https://github.com/hashicorp-demoapp/payments
@@ -96,15 +97,19 @@ In the https://github.com/hashicorp-demoapp organization are code to create each
 nicholas jackson
    <br /><br />
 
-https://github.com/hashicorp/terraform-provider-hashicups
-
-https://github.com/hashicorp/learn-terraform-hashicups-provider
-
 https://github.com/hashicorp/learn-consul-k8s-hashicups
 
 https://github.com/hashicorp/field-demo-hashicups-sample
 
 https://learn.hashicorp.com/tutorials/terraform/provider-setup
+
+https://learn.hashicorp.com/tutorials/consul/kubernetes-deployment-guide
+
+https://learn.hashicorp.com/collections/consul/kubernetes-production
+
+https://github.com/hashicorp/terraform-provider-hashicups
+
+https://github.com/hashicorp/learn-terraform-hashicups-provider
 
 
 # END

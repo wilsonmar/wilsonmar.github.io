@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are notes while I'm learning about this, attempting to be succinct and <strong>logically sequenced</strong>. All without sales generalizations. All in this one single big page for easy search. This is not a replacement for you going through professionally developed trainings.
+Here are notes while I'm learning about Consul, attempting to be succinct and <strong>logically sequenced</strong>. All without sales generalizations. All in this one single big page for easy search. This is not a replacement for you going through professionally developed trainings.
 
 > Consul is "a multi-cloud service networking platform to connect and secure any service across any runtime platform and public or private cloud".<a target="_blank" href="https://www.youtube.com/watch?v=Aq1uTozNajI" title="HashiConf Oct 15 2019">*</a><a target="_blank" href="https://www.hashicorp.com/resources/consul-service-mesh-deep-dive">*</a>
 
@@ -34,6 +34,7 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
+* <a target="_blank" href="https://discuss.hashicorp.com/c/consul/29?_gl=1*t7dw55*_ga*MTA2MDg1NDA3OS4xNjUyMDY3NzI4*_ga_P7S46ZYEKW*MTY1NjM2OTY5OS4zLjAuMTY1NjM2OTY5OS4w&_ga=2.216397086.965313461.1656369701-1060854079.1652067728">Consul Discussion items</a>
 
 ## First comes Microservices
 
