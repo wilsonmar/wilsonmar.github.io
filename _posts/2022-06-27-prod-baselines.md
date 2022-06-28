@@ -20,13 +20,12 @@ comments: true
 
 > PROTIP: To really learn a system, troubleshoot a running production system, as an SRE (System Reliability Engineer).
 
-The job title "SRE" has existed only a few years. It's evovlved from "System Administrator".
+Most who hold SREs today got their job out of accident. Being in the right place at the right time. SREs did not say when they were 10-year-old that they they want to grow up to be an SRE like they say they want to be an astronaut.
 
-Most who hold SREs today got their job out of accident. Being in the right place at the right time.
-Few 10-year-olds have ever stated that they want to grow up to be an SRE like they say they want to be an astronaut.
+The job title "SRE" has existed only a few years. It's evovlved from "System Administrator". Google popularized the "Site Reliability Engineering" at https://sre.google/sre-book/table-of-contents/ 
 
-We think that's a wreckless and stupid way to equip people for one of the <strong>most important jobs in a company</strong>.
-SREs keep safe and alive websites and other systems critical to the operation of nearly every organization today.
+
+We think that's not an optimal way to equip people for one of the <strong>most important jobs in a company</strong>. SREs need deep and wide knowledge and skills to keep safe and alive websites and other systems critical to the operation of nearly every organization today.
 
 > We think that great SREs are built, not born.
 
@@ -112,4 +111,22 @@ https://github.com/hashicorp/terraform-provider-hashicups
 https://github.com/hashicorp/learn-terraform-hashicups-provider
 
 
-# END
+## Terraform CDK
+
+Production use often raises the need to handle more complexity.
+
+Wish you can use loops, switch statements, and other complex configurations in HashiCorp's declarative Configuration Language?
+
+Want to leverage the power of your existing toolchain for testing, dependency management, etc.?
+
+HashiCorp's CDKTF (Cloud Development Kit for Terraform) enables several general programming languages to define and provision infrastructure:
+
+   * TypeScript, Python, Java, C#, and Go (experimental)
+   <br /><br />
+
+CDKTF was in beta as of May, 2022.
+
+CDKTF provides access to the entire Terraform ecosystem, without coding HashiCorp Configuration Language (HCL).
+
+CDKTF competes with Pulumi.
+
