@@ -38,7 +38,7 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 
 ## First comes Microservices
 
-   To build a fast and reliable system in the cloud today, enterprises create systems using distributed <strong>microservices</strong> instead of monolithic architectures which are more difficult to evolve.
+   To build a fast and reliable system in the cloud today, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures which are more difficult to evolve.
 
    > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
@@ -54,7 +54,7 @@ PROTIP: Each new paradigm comes with new problems. And the problem with dynamic 
 
 <a name="SolveLegacy"></a>
 
-## Consul to solve legacy mismatch
+## Consul solves legacy mismatches
 
 In my presention to come, I'll be showing several concerns that Consul solves:
 
@@ -86,7 +86,9 @@ As Consul redirects traffic, it secures the traffic by generating certificates u
 
 Because Kubernetes does not provide that mechanism natively, a lot of Kubernetes installations make use of Consul's Service Mesh. Using Consul also enables a Kubernetes cluster to securely <strong>communicate with services outside Kubernetes</strong>, such as databases, ECS, VMs, Severless, even across different clouds (through "OSI Level 4" traffic).
 
-BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved Consul's enterprise worthiness. 
+BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved Consul's enterprise worthiness.
+
+https://hashicorp-services.github.io/enablement-consul-slides/markdown/architecture/#1
 
 The set of redudant servers creates a Mesh Gateway which allows Consul to replace expensive load balancers which pose a single point of failure risk. 
 
@@ -808,6 +810,11 @@ References:
 CTS (Consul-Terraform Sync) Agent is an executable binary ("consul-terraform-sync"
 daemon separate from Consul) installed on a server. 
 
+NOTE: HashiCorp also provides binaries for various back releases at<br />
+https://releases.hashicorp.com/consul-terraform-sync/
+
+Notice the "+ent" for enterprise editions.
+
    <ul><pre><strong>brew tap hashicorp/tap
 brew install hashicorp/tap/consul-terraform-sync
 consul-terraform-sync -h
@@ -1348,6 +1355,8 @@ console
 
    <a name="UseHashicorpTaps"></a>
 
+   ### Install using Brew taps
+
    In the script, the Consul Agent is installed using HashiCorp's tap, as described at:
    * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
    <br /><br />
@@ -1356,13 +1365,13 @@ console
 
    <pre><strike>brew install consul</strike></pre>
 
-   the Consul client is installed this way:
+   or 
 
-   <pre><strong>brew tap hashicorp/tap
+   <pre><strike>brew tap hashicorp/tap
 brew install hashicorp/tap/consul
-   </strong></pre>
+   </strike></pre>
 
-   Notice the response caveats:
+   Notice the response caveats from brew install consul:
 
    <pre>The darwin_arm64 architecture is not supported for this product
 at this time, however we do plan to support this in the future. The
@@ -1380,6 +1389,21 @@ Or, if you don't want/need a background service you can just run:
    <tt>-bind</tt> is the interface that Consul agent itself uses.
 
    <tt>-advertise</tt> is the interface that Consul agent asks others use to connect to it. Useful when the agent has multiple interfaces or the IP of a NAT device to reach through.
+
+
+   ### Install by Download
+
+   PROTIP: Download Enterprise binaries with name ending with "+ent" from Fastly servers at:<br />
+   https://releases.hashicorp.com/consul/
+
+   File names containing "SHA256SUMS" are for verifying whether download was complete.
+
+   Download "darwin_amd64" files for older Intel MacOS.<br />
+   Download "darwin_arm64" files for newer M1/M2 MacOS with Apple Silicon.
+
+1. Unzip
+1. Verify using check sum.
+1. Add to $PATH.
 
    <a name="CLI-commands"></a>
 
@@ -1481,7 +1505,7 @@ CLI commands are used to start and stop the Consul Agent.
    
    * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
 
-   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip on the same cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
+   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip within the same region cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
    * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
    
    * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
@@ -1493,8 +1517,7 @@ CLI commands are used to start and stop the Consul Agent.
    * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
 
    For bootstrapping and configuration of <tt>agent.hcl</tt>, see
-   * https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
-   <br /><br />
+   https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
 
 <hr />
 
@@ -1818,7 +1841,8 @@ Data in a Consul agent is captured in complete point-in-time snapshots (gzipped 
    * Google Cloud Storage
    <br /><br />
 
-   For example, define an S3 bucket. Get another service account to receive snapshots.
+   For example, define an S3 bucket. 
+   PROTIP: Use different cloud service account to write and another to receive snapshots.
    
 
    <a name="SnapshotAgent"></a>
@@ -1888,7 +1912,9 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
    </pre>
 
-
+   * https://unix.stackexchange.com/questions/506347/why-do-most-systemd-examples-contain-wantedby-multi-user-target
+   <br /><br />
+   
    ### Restore from Snapshot
 
    Snapshots are intended for full Disaster Recovery, not for selective restore back to a specific point in the past (like GitHub can do).
@@ -1926,6 +1952,8 @@ WantedBy=multi-user.target
    </pre>
 
    See https://learning.oreilly.com/library/view/consul-up-and/9781098106133/ch02.html#building-consensus-raft
+
+   PROTIP: As per <a target="_blank" href="https://en.wikipedia.org/wiki/CAP_theorem">CAP Theorem</a>, Raft emphasizes Consistency (every read receives the most recent write value) over Availability.
 
 
 ### Down for maintenance
@@ -2055,7 +2083,13 @@ Practicing use of the above should be part of your pre-production Chaos Engineer
 
 1. TODO: Define default connection limits, for better security.
 
-1. QUESTION: API Gateway?
+1. Consul API Gateway = 
+
+   * https://www.youtube.com/watch?v=JtVDliGL3mE Video for Consul API Gateway with Jeff Apple, PM of API Gateway
+   * https://www.hashicorp.com/blog/announcing-hashicorp-consul-api-gateway
+   * https://learn.hashicorp.com/tutorials/consul/kubernetes-api-gateway?in=consul/developer-mesh
+   * https://www.hashicorp.com/blog/consul-api-gateway-now-generally-available Feb 24 2022
+   <br /><br />
 
 1. QUESTION: Linux Security Model integrated into operating system, such as AppArmor, SELinux, Seccomp.
 
@@ -2297,12 +2331,15 @@ github.com/jcolemorrison/getting-into-consul</a>
 <img alt="Consul" width="1090" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652502401/consul-getting-into-1920x1080_gku46e.png"></a>
 
 Consul offers three types of Gateways in the data path to validate authenticity and traffic flows to enforce intentions between services: Enterprise Academy:
+
    * Service Mesh Gateway</a>
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-ingress-gateways-deployment">Enterprise Academy: Ingress Gateways</a>
    * Terminating Gateways</a>
    <br /><br />
 
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/amazon-transit-gateway?in=vault/cloud-ops">DOC</a>: Transit gateway
+
+   ( https://play.instruqt.com/hashicorp/tracks/vault-advanced-data-protection-with-transform)
 
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-secure-deployment">Enterprise Academy: Deploy Consul Ingress Gateways</a> (Deploy an Ingress Gateway for Inbound Mesh Connectivity)
    <br /><br />
@@ -2372,7 +2409,7 @@ func-e use 1.20.1
 
 ### Recordings
 
-Recordings of live Twitch.tv by Developer Evangelists Rosemary Wang and J. Cole Morrison:
+A series of recordings live on Twitch.tv by Developer Evangelists Rosemary Wang and J. Cole Morrison:
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=0H06VKvlTJQ&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=1" title="[1:47:59] Aug 9, 2021">Part 1: Security, Traffic Encryption, and ACLs</a> 
 
@@ -2949,7 +2986,7 @@ Consider these dynamic illustrations about how the Raft mechanism works:
    * https://www.consul.io/docs/intro/vs/serf
    <br /><br />
 
-To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). The <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> is used by the Serf library. which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
+To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). The <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> is also used by the <a target="_blank" href="https://serf.apache.org/">Apache Serf library</a>, which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
 
 Serf provides for:
 
@@ -3118,7 +3155,12 @@ advertise_addr = "10.1.4.11"
 advertise_addr_wan = "10.1.4.11"
    </pre>
 
-   DEFINITION: To Consul, a "<strong>datacenter</strong>" is a single region.
+Within CLI:
+   
+   <pre>license_path = "/etc/consul.d/consul.hclic"
+   </pre>
+   
+   DEFINITION: To Consul, a "<strong>datacenter</strong>" is a cluster of Consul servers within a single region. EC2 & EKS in same region.
 
    IP addresses can be in IPv6 format.
 
@@ -3685,6 +3727,7 @@ Facebook: https://www.facebook.com/HashiCorp
 
 ## Competition
 
+Performance begins to degrade after 7 voting nodes due to server-to-server Raft protocol traffic, which is expensive on the network.
 
 
 # END

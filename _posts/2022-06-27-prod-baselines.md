@@ -71,6 +71,15 @@ The vitality and security of your production system at work reflects your dilige
 1. Create *tutorials* for others. Mentor others.
 
 
+## Choice of AWS Region
+
+> "Friends don't let friends use region us-east-1 in production"
+
+AWS typically introduces new services in the us-east-1 (Northern Virginia) region.
+
+Thus, that region has suffered more outages than others.
+
+<hr />
 
 ## HashiCorp HashiCups demo rig
 
@@ -115,9 +124,11 @@ https://github.com/hashicorp/learn-terraform-hashicups-provider
 
 Production use often raises the need to handle more complexity.
 
-Wish you can use loops, switch statements, and other complex configurations in HashiCorp's declarative Configuration Language?
+So users of HashiCorp's declarative Configuration Language (HCL) would eventually reach a point where loops, switch statements, and other complex logic would be useful.
 
 Want to leverage the power of your existing toolchain for testing, dependency management, etc.?
+
+https://www.terraform.io/cdktf
 
 HashiCorp's CDKTF (Cloud Development Kit for Terraform) enables several general programming languages to define and provision infrastructure:
 
@@ -128,5 +139,13 @@ CDKTF was in beta as of May, 2022.
 
 CDKTF provides access to the entire Terraform ecosystem, without coding HashiCorp Configuration Language (HCL).
 
+https://www.terraform.io/cdktf/examples
+
 CDKTF competes with Pulumi.
+
+https://www.hashicorp.com/blog/managing-hashicorp-consul-access-control-lists-with-terraform-and-vault
+
+https://learn.hashicorp.com/tutorials/vault/production-hardening
+
+## Terramate
 

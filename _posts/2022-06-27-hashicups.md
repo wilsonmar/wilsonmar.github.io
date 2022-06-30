@@ -18,6 +18,8 @@ comments: true
 
 {% include whatever.html %}
 
+"HashiCups" is the demo app used across several products from HashiCorp.
+
 HashiCups is not a "bare bones" toy app. Unlike many others, HashiCups comes with configuration settings for installing in several clouds running with Kubernetes, Gateways, and other production-grade infrastructure.
 
 That's because HashiCorp created it and actively maintains it as the base for testing, demos, training, observability instrumentation (logging, monintoring, tracing), and performance benchmarks of HashiCorp's industry-grade Terraform, Vault, Consul, Nomad, Waypoint, Packer, Vagrant, and others used by many Global 2000 enterprises around the world.
@@ -30,12 +32,27 @@ HashiCups leverages micro-services and Consul Service Mesh to connect components
 
 All that means complexity to learn. So being comfortable installing and using HashiCups takes some time and cloud credits (if you're not using Instruqt labs). But you'll be learning a production-quality way to make use of the latest IT technologies.
 
+## My files in GitHub
+
 <em>The above is why here is where I put notes about integrating various HashiCorp products with utility software such as Kubernetes. Files for this topic is under my personal account:</em>
 
 <ul>https://github.com/wilsonmar/hashicups</ul>
 
-## Tutorials
+1. For use while going through a <a target="_blank" href="https://play.instruqt.com/HashiCorp-EA/tracks/consul-ent-basics">a class</a>:
 
+   <pre>export SCRIPT="consul-server-install.sh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/hashicups/main/${SCRIPT})" -v
+   </pre>
+
+
+## Doc & Tutorials
+
+https://github.com/hashicorp/learn-consul-k8s-hashicups
+
+https://github.com/hashicorp/field-demo-hashicups-sample
+
+
+# https://wilsonmar.github.io/hashicups/#hashicorps-codebase-for-hashicups
 ## HashiCorp's Codebase for HashiCups
 
 Code to create an instance of Hashicups is (Apache 2) open-sourced at the GitHub Organization: https://github.com/hashicorp-demoapp
@@ -68,17 +85,15 @@ nicholas jackson is the code to https://hub.docker.com/repository/docker/hashico
 Its <a target="_blank" href="https://github.com/hashicorp-demoapp/go-hckit/blob/master/go.mod">standard library of reusable abstractions</a> (in Golang)
 uses Opentracing, Zipkin, Jaeger.
 
-
 ## Consul K8s Prometheus Grafana dashboard
 
 <a target="_blank" href="https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp">https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp</a>
 from Sep 2020 (by <a target="_blank" href="https://www.linkedin.com/in/derek-strickland-59258a/">Derek Strickland</a>)
 contains application and dashboard definitions for the <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/kubernetes-layer7-observability">Consul Layer 7 observability with Kubernetes guide located at learn.hashicorp.com</a>
 
+https://www.consul.io/docs/agent/telemetry
 
-https://github.com/hashicorp/learn-consul-k8s-hashicups
-
-https://github.com/hashicorp/field-demo-hashicups-sample
+https://www.consul.io/docs/connect/observability
 
 https://learn.hashicorp.com/tutorials/terraform/provider-setup
 
