@@ -25,16 +25,63 @@ Here are notes while I'm learning about Consul, attempting to be succinct and <s
 
 {% include whatever.html %}
 
+## Most Popular Websites about Consul
 
-<a name="Enterprise"></a>
-   
-## Part of a Cloud Operating Model suite
+The most popular websites about Consul:
 
-Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
+1. The marketing home page for HashiCorp's Consul:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
+   https://www.consul.io/
 
-* <a target="_blank" href="https://discuss.hashicorp.com/c/consul/29?_gl=1*t7dw55*_ga*MTA2MDg1NDA3OS4xNjUyMDY3NzI4*_ga_P7S46ZYEKW*MTY1NjM2OTY5OS4zLjAuMTY1NjM2OTY5OS4w&_ga=2.216397086.965313461.1656369701-1060854079.1652067728">Consul Discussion items</a>
+1. Detailed technical documentation:
+
+   https://www.consul.io/docs
+
+1. Tutorials from HashiCorp:
+
+   https://learn.hashicorp.com/tutorials/consul/service-mesh
+
+1. Technical Discussions:
+
+   <a target="_blank" href="https://discuss.hashicorp.com/c/consul/29">https://discuss.hashicorp.com/c/consul/29</a>
+
+1. Stackoverflow has highly technical questions & answers:
+
+   https://stackoverflow.com/search?q=%23hashicorp-consul
+
+1. Reddit:
+
+   https://www.reddit.com/search/?q=hashicorp%20consul
+
+
+<a name="EnterpriseLicense"></a>
+
+## Free Open Source vs. Enterprise
+
+Consul is available as free open-source.
+
+<a target="_blank" href="https://www.consul.io/docs/enterprise">Consul Enterprise</a> can be licensed <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">on the Amazon Marketplace</a>
+at $8,000 per year for up to 50 nodes and bronze support. It adds:
+
+A. <strong>Authenticate using OIDC</strong> identity provider (such as Okta) instead of ACL tokens -- this enables SSO (Single Sign On) based on indentity information maintained in email systems, so that addition and deletions of email get reflected in applications immediately.
+
+B. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once -- this avoids the need for manual effort and elimination of times when different versions exist at the same time.
+
+C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns
+
+D. Enable <strong>Multi-Tenancy of tenants</strong> using Admin Partitions as "Namespaces" -- enables segmentation to separate different teams within a single Consul datacenter, a key "Zero Trust" principal.
+
+E. The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
+
+F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems
+
+G. Better Resilency from <strong>scheduled Backups</strong> of Consul state to snapshot files -- this makes backups happen without needing to remember to take manual effort.
+
+H. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-voting nodes") -- providing scalability to handle high load traffic.
+
+   "Performance begins to degrade after 7 voting nodes due to server-to-server Raft protocol traffic, which is expensive on the network."
+
+I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
 
 
 ## First comes Microservices
@@ -53,37 +100,9 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 PROTIP: However, each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of <strong>static IP addresses</strong> manually configured rather than dynamic service names automatically discovered and registered.
 
 
-<a name="EnterpriseLicense"></a>
-
-## Free Open Source vs. Enterprise
-
-Consul is available free open-source.
-
-<a target="_blank" href="https://www.consul.io/docs/enterprise">Consul Enterprise</a> can be licensed <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">on the Amazon Marketplace</a>
-at $8,000 per year for 50 nodes and bronze support. It adds:
-
-A. <strong>Authenticate using OIDC</strong> identity provider (such as Okta) instead of ACL tokens
-
-B. Enhanced <strong>Audit logging</strong> to better understand access and API usage patterns
-
-C. Better Resilency from <strong>Automated Backups</strong> of Consul state to snapshots
-
-D. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-voting nodes") to handle high load traffic Scalability
-
-E. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once vs. one at a time
-
-F. Enable <strong>Multi-Tenancy of tenants</strong>  using Admin Partitions as "Namespaces" (Segmentation to separate different teams within a single Consul datacenter).
-
-G. The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized, then update Terraform code dynamically for automatic resources reconfiguration. This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
-
-H. Support <strong>complex Network Topologies</strong> across regions between Consul datacenters (with "pairwise federation").
-
-I. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems.
-
- 
 <a name="SolveLegacy"></a>
 
-## Consul solves legacy mismatches
+## Legacy mismatches
 
 In my presention to come, I'll be showing several concerns that Consul solves:
 
@@ -142,15 +161,36 @@ In summary, use cases for Consul (listed at https://www.consul.io/):
    <br /><br />
 
 
+<a name="COM"></a>
+   
+## Part of a Cloud Operating Model suite
+
+Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
+
+Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
+
+
 <a name="ZeroTrust"></a>
 
-## Zero Trust
+## Security Frameworks: Zero Trust, etc.
 
-Consul provides the technology to implement Zero Trust.
+There are several frameworks which security professionals use to organize controls they install to prevent ransomware, data leaks, and other potential security catatrophes:
 
-In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xxx, and other such infosec filings, companies using HashiCorp can describe their systems with these mechanisms within the "CIA Triad": <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: The six pillars of Zero Trust:
+   * <a href="#ZeroTrust">"Zero Trust" in CIA</a>
+   * <a href="#KillChain">"Kill Chain"</a>
+   * <a href="#Attack">ATT&CK Enterprise Framework</a>
+   <br /><br />
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"><img alt="Zero-Trust CIA Triad" width="1652" height="874" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"></a>
+<a name="ZeroTrust"></a>
+
+Here, the "CIA Triad" is applied to <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: the six pillars of Zero Trust:
+
+   <ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"><img alt="Zero-Trust CIA Triad" width="1652" height="874" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"></a>
+   </ul>
+
+   According the NIST ___:
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Identity-driven authentication ("<a href="#Intentions">Intentions</a>" by name instead of by IP address)
@@ -162,15 +202,64 @@ In <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 27xx
    * Audited & Logged (for SOC to do forensics)
    <br /><br />
 
-<a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT"
-Consul: Zero Trust Networking with Service Mesh"</a>
+   References:
 
-Additional Defense in Depth:
+   * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT Consul: Zero Trust Networking with Service Mesh"</a>
+   <br /><br />
+
+Additional "Defense in Depth" techniques:
 
    * Immutable deployments (no live patching to "cattle")
+
    * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
-   * Change Management using version control such as GitHub
-   <br /><br />
+
+   * Change Management using source version control systems such as Git clients interacting with the GitHub cloud
+
+<a name="KillChain"></a>
+
+The "Kill Chain", maintained by Lockheed-Martin, organizes security work into the 9 stages how malicious actors work.
+
+<a name="Attack"></a>
+
+Specific security techniques for specific platforms are listed among 14 categories in the <a target="_blank" href="https://attack.mitre.org/matrices/enterprise/">"ATT&CK" Enterprise Matrix</a> from Mitre Corporation (US government think-tank).
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Kill Chain </th><th> Mitre ATT&CK </th><th> Control </th></tr>
+<tr valign="top"><td> 1. Reconnaissance </td><td>
+   Reconnaissance<br />
+   Resource Development
+   </td><td> mTLS
+   </td></tr>
+<tr valign="top"><td> 2. </td><td>
+   Initial Access<br />
+   Execution
+   </td><td> Authentication
+   </td></tr>
+<tr valign="top"><td> 3. </td><td>
+   Persistence<br />
+   </td><td> Audit logs
+   </td></tr>
+<tr valign="top"><td> 4.  </td><td>
+   Privilege Escalation
+   </td><td> ACL
+   </td></tr>
+<tr valign="top"><td> 5. </td><td>
+   Credential Access
+   Discovery
+   Lateral Movement
+   </td><td> Authorization
+   </td></tr>
+<tr valign="top"><td> 6. </td><td>
+   Collection
+   Command and Control
+   </td><td> Segmentation
+   </td></tr>
+<tr valign="top"><td> 7. </td><td>
+   Exfiltration<br />
+   Impact
+   </td><td> DL
+   </td></tr>
+</table>
 
 
 <a name="ConsulStories"></a>
@@ -293,31 +382,6 @@ Within a single datacenter, Consul provides <strong>automatic failover</strong> 
 
 <hr />
 
-## Most Frequent References
-
-1. The marketing home page for HashiCorp's Consul is:
-
-   https://www.consul.io/
-
-1. Detailed documentation for the offering is also at that host name:
-
-   https://www.consul.io/docs
-
-1. Tutorials
-
-   https://learn.hashicorp.com/tutorials/consul/service-mesh
-
-1. Technical Discussions:
-
-   https://discuss.hashicorp.com/c/consul/29
-
-1. Stackoverflow has highly technical questions & answers:
-
-   https://stackoverflow.com/search?q=%23hashicorp-consul
-
-1. Reddit:
-
-   https://www.reddit.com/search/?q=hashicorp%20consul
 
 
 <a target="_blank" href="https://www.youtube.com/playlist?list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK">YouTube: "Getting into HashiCorp Consul"</a>
@@ -3747,9 +3811,10 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 
 <a name="CorporateSocial"></a>
 
-## Corporate Social 
+## HashiCorp Corporate Social 
 
 Twitter: @hashicorp 
+
 Ambassadors (<a target="_blank" href="https://www.hashicorp.com/blog/hashicorp-ambassador-call-for-nominations">first announced March, 2020</a>)
 
 LinkedIn: https://www.linkedin.com/company/hash...
@@ -3758,8 +3823,6 @@ Facebook: https://www.facebook.com/HashiCorp
 
 
 ## Competition
-
-Performance begins to degrade after 7 voting nodes due to server-to-server Raft protocol traffic, which is expensive on the network.
 
 
 # END
