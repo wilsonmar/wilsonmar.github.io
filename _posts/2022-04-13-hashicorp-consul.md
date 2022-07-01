@@ -36,6 +36,7 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 
 * <a target="_blank" href="https://discuss.hashicorp.com/c/consul/29?_gl=1*t7dw55*_ga*MTA2MDg1NDA3OS4xNjUyMDY3NzI4*_ga_P7S46ZYEKW*MTY1NjM2OTY5OS4zLjAuMTY1NjM2OTY5OS4w&_ga=2.216397086.965313461.1656369701-1060854079.1652067728">Consul Discussion items</a>
 
+
 ## First comes Microservices
 
    To build a fast and reliable system in the cloud today, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures which are more difficult to evolve.
@@ -49,23 +50,54 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
    * Greater operational efficiency
    <br /><br />
 
-PROTIP: Each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of static IP addresses manually configured rather than dynamic service names automatically discovered and registered.
+PROTIP: However, each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of <strong>static IP addresses</strong> manually configured rather than dynamic service names automatically discovered and registered.
 
 
+<a name="EnterpriseLicense"></a>
+
+## Free Open Source vs. Enterprise
+
+Consul is available free open-source.
+
+<a target="_blank" href="https://www.consul.io/docs/enterprise">Consul Enterprise</a> can be licensed <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">on the Amazon Marketplace</a>
+at $8,000 per year for 50 nodes and bronze support. It adds:
+
+A. <strong>Authenticate using OIDC</strong> identity provider (such as Okta) instead of ACL tokens
+
+B. Enhanced <strong>Audit logging</strong> to better understand access and API usage patterns
+
+C. Better Resilency from <strong>Automated Backups</strong> of Consul state to snapshots
+
+D. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-voting nodes") to handle high load traffic Scalability
+
+E. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once vs. one at a time
+
+F. Enable <strong>Multi-Tenancy of tenants</strong>  using Admin Partitions as "Namespaces" (Segmentation to separate different teams within a single Consul datacenter).
+
+G. The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized, then update Terraform code dynamically for automatic resources reconfiguration. This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
+
+H. Support <strong>complex Network Topologies</strong> across regions between Consul datacenters (with "pairwise federation").
+
+I. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems.
+
+ 
 <a name="SolveLegacy"></a>
 
 ## Consul solves legacy mismatches
 
 In my presention to come, I'll be showing several concerns that Consul solves:
 
-   1. Developers now spend too much time coding network communication logic in each program.
-   1. Kubernetes does not check if a service is healthy before trying to communicate.
-   1. Traffic is blindly sent based on static IP addresses without identity authentication
-   1. Network departments now spend too much time connecting static IP addresses.
-   1. Kubernetes does not encrypt communication between services.
-   1. That does not meet "Zero Trust" mandated.
-   1. Kubernetes does not provide a way to communicate with databases and cloud service outisde Kubernetes.
-   1. Load Balancers are a single point of failure. So an alternative is needed for them.
+   A. "East-West" (internal) Load Balancers are a single point of failure. So an alternative is needed for them.
+
+   B. Traffic is blindly sent based on static IP addresses without identity authentication (a violation of "Zero Trust" mandate).
+   C. Developers now spend too much time coding network communication logic in each program (for retries, tracing, secure TLS, etc.) - mTLS.
+
+   D. Developers now spend too much time requesting permissions to be defined based on IP addresses.
+   E. Network departments now spend too much time connecting static IP addresses for internal communications among services.
+
+   F. Kubernetes does not check if a service is healthy before trying to communicate.
+   G. Kubernetes does not encrypt communication between services.
+   H. Kubernetes does not provide a way to communicate with databases and cloud service outisde Kubernetes.
    <br /><br />
 
 Here's how Consul solves these problems.
@@ -215,7 +247,6 @@ The Enterprise edition of Consul has a multi-tenancy capability which enables th
 <a target="_blank" href="https://github.com/consul-up/birdwatcher">birdwatcher app</a>
 
 and <a target="_blank" href="https://discord.com/channels/938313456942190622/938313457638453250">Discord server</a> for the book)
-
 
 
 > The above are used for showing Proof of Value (POV) from product/workflow adoption.
@@ -502,12 +533,12 @@ Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/consul-end-to-end-existing-eks?in=consul/cloud-deploy-automation">LEARN: "Create a HCP Consul cluster for an existing EKS run time"</a>
    <br /><br />
 
-   Perhaps the fastest and easiest, fastest way to use Consul is to use the Hashcorp-Managed <a name="HCPCloud">HashiCorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
+   Perhaps the fastest and easiest way to begin using Consul is to use the Hashcorp-Managed <a name="HCPCloud">HashiCorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
    It provides a convenient clickable <a href="#ConsulWebGUI">Web GUI</a> rather than the CLI/API of FOSS (free open-source software). 
    
    <a name="SkipEnterprise"></a>
    
-   HCP provides fully managed "Service Mesh as a Service (SMaaS)" Consul features not provided with the "self-managed" Enterprise edition. That means:
+   HCP provides a fully managed "Service Mesh as a Service (SMaaS)" Consul features not provided with the "self-managed" Enterprise edition. That means:
 
    * Monitoring to ensure disk space, CPU, memory, etc. is already staffed
    * Capacity testing to ensure configurations are made optimal by specialists
@@ -519,6 +550,8 @@ Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-
    * Enable limited in-house IT personnel to focus on business needs.
    * Faster time to value and time to market
    <br /><br />
+
+   On the other hand, at of this writing, HCP does not have all the features of Consul Enterprise.
 
 References about HCP Consul:
    * https://github.com/hashicorp/learn-hcp-consul
@@ -781,7 +814,7 @@ HashiCorp's "Network Infrastructure Automation (NIA)" marketing page (<a target=
 
 PROTIP: There are current no competitors in the market for this feature.
 
-<a target="_blank" href="https://learn.hashicorp.com/collections/consul/network-infrastructure-automation?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS">LEARN: Network Infrastructure Automation with Consul-Terraform-Sync</a> hands-on, which uses the sample counting service at port 9003 and dashboard service in port 9002, from https://github.com/hashicorp/demo-consul-101/releases.
+<a target="_blank" href="https://learn.hashicorp.com/collections/consul/network-infrastructure-automation?utm_source=WEBSITE&utm_medium=WEB_IO&utm_offer=ARTICLE_PAGE&utm_content=DOCS">LEARN: Network Infrastructure Automation with Consul-Terraform-Sync</a> hands-on, which uses the sample counting service at port 9003 and dashboard service in port 9002, from https://github.com/hashicorp/demo-consul-101/releases
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655174636/consul-cts-flow-1010x660_qtfo80.png"><img alt="Consul NIA CTA" width="1010" height="660" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655174636/consul-cts-flow-1010x660_qtfo80.png"></a>
 
@@ -802,8 +835,6 @@ References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=Ld40kobI2rs&list=PL81sUbsFNc5arDZYNn3i8N_I7ZeCe02ve&index=11" title="Nov 1, 2021">VIDEO</a> by Kim Ngo & Melissa Kam.
    * <a target="_blank" href="https://www.youtube.com/watch?v=YQMDRM2ujA4&list=PL81sUbsFNc5b8i2g2sB_tG-PuZxEdlDpK&index=12" title="[1:57:30] Jun 13, 2022">Part 13: Consul-Terraform-Sync</a> 
    <br /><br />
-
- decreasing the possibility of human error in manually editing configuration files, as well as decreasing the overall time taken to push out configuration changes.
 
 <img align="right" alt="CTS flow" width="165" height="365" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655133023/consul-cts-165x365_tefhlu.png">
 
@@ -1886,6 +1917,7 @@ Data in a Consul agent is captured in complete point-in-time snapshots (gzipped 
 
    Registration is done automatically.
 
+   https://www.consul.io/commands/snapshot/agent
 
    ### Service file
 
@@ -1914,7 +1946,7 @@ WantedBy=multi-user.target
 
    * https://unix.stackexchange.com/questions/506347/why-do-most-systemd-examples-contain-wantedby-multi-user-target
    <br /><br />
-   
+
    ### Restore from Snapshot
 
    Snapshots are intended for full Disaster Recovery, not for selective restore back to a specific point in the past (like GitHub can do).
