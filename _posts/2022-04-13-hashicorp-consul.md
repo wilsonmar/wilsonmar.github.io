@@ -29,28 +29,22 @@ Here are notes while I'm learning about Consul, attempting to be succinct and <s
 
 The most popular websites about Consul:
 
-1. The marketing home page for HashiCorp's Consul:
-
+1. The marketing home page for HashiCorp's Consul:<br />
    https://www.consul.io/
 
-1. Detailed technical documentation:
-
+1. Detailed technical documentation:<br />
    https://www.consul.io/docs
 
-1. Tutorials from HashiCorp:
-
+1. Tutorials from HashiCorp:<br />
    https://learn.hashicorp.com/tutorials/consul/service-mesh
 
-1. Technical Discussions:
-
+1. Technical Discussions:<br />
    <a target="_blank" href="https://discuss.hashicorp.com/c/consul/29">https://discuss.hashicorp.com/c/consul/29</a>
 
-1. Stackoverflow has highly technical questions & answers:
-
+1. Stackoverflow has highly technical questions & answers:<br />
    https://stackoverflow.com/search?q=%23hashicorp-consul
 
-1. Reddit:
-
+1. Reddit:<br />
    https://www.reddit.com/search/?q=hashicorp%20consul
 
 
@@ -84,7 +78,7 @@ H. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-votin
 I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
 
 
-## First comes Microservices
+## The problem starts with Microservices
 
    To build a fast and reliable system in the cloud today, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures which are more difficult to evolve.
 
@@ -97,7 +91,7 @@ I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topolo
    * Greater operational efficiency
    <br /><br />
 
-PROTIP: However, each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of <strong>static IP addresses</strong> manually configured rather than dynamic service names automatically discovered and registered.
+> PROTIP: However, each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of <strong>static IP addresses manually configured</strong> rather than dynamic service names automatically discovered and registered.
 
 
 <a name="SolveLegacy"></a>
@@ -207,60 +201,90 @@ Here, the "CIA Triad" is applied to <a target="_blank" href="https://www.youtube
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT Consul: Zero Trust Networking with Service Mesh"</a>
    <br /><br />
 
-Additional "Defense in Depth" techniques:
-
-   * Immutable deployments (no live patching to "cattle")
-
-   * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
-
-   * Change Management using source version control systems such as Git clients interacting with the GitHub cloud
-
 <a name="KillChain"></a>
 
-The "Kill Chain", maintained by Lockheed-Martin, organizes security work into the 9 stages how malicious actors work.
+The "Kill Chain", <a target="_blank" href="https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html">maintained by Lockheed-Martin</a>, organizes security work into the 9 stages how malicious actors work.
 
 <a name="Attack"></a>
 
-Specific security techniques for specific platforms are listed among 14 categories in the <a target="_blank" href="https://attack.mitre.org/matrices/enterprise/">"ATT&CK" Enterprise Matrix</a> from Mitre Corporation (US government think-tank).
+Specific tools and techniques that adversaries use (on specific platforms) are organized within <a target="_blank" href="https://attack.mitre.org/docs/attack_matrix_poster_2021_june.pdf">PDF: 14 categories</a> in the <a target="_blank" href="https://attack.mitre.org/matrices/enterprise/">"ATT&CK" Enterprise Matrix</a> from Mitre Corporation (a US defense think-tank).
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Kill Chain </th><th> Mitre ATT&CK </th><th> Control </th></tr>
+<tr><th> Kill Chain </th><th> Mitre ATT&CK </th><th> <a href="#Mitigations">Mitigations</a> </th></tr>
 <tr valign="top"><td> 1. Reconnaissance </td><td>
-   Reconnaissance<br />
+   Reconnaissance,<br />
    Resource Development
    </td><td> mTLS
    </td></tr>
-<tr valign="top"><td> 2. </td><td>
-   Initial Access<br />
+<tr valign="top"><td> 2. Weponization </td><td>
+   Initial Access,<br />
    Execution
    </td><td> Authentication
    </td></tr>
-<tr valign="top"><td> 3. </td><td>
-   Persistence<br />
-   </td><td> Audit logs
-   </td></tr>
-<tr valign="top"><td> 4.  </td><td>
+<tr valign="top"><td> 3. Delivery</td><td>
+   Persistence,<br />
    Privilege Escalation
+   </td><td> Audit logs & Alerts
+   </td></tr>
+<tr valign="top"><td> 4. Exploitation </td><td>
+   Defense Evasion (Access Token Manipulation)
    </td><td> ACL
    </td></tr>
-<tr valign="top"><td> 5. </td><td>
-   Credential Access
-   Discovery
-   Lateral Movement
+<tr valign="top"><td> 5. Installation</td><td>
+   Credential Access,<br />
+   Discovery (System Network Connections Discovery),<br />
+   Lateral Movement (Exploitation of Remote Services, Remote Service Session Hijacking ),<br />
+   Collection (Man-in-the-Middle)
    </td><td> Authorization
    </td></tr>
-<tr valign="top"><td> 6. </td><td>
-   Collection
-   Command and Control
+<tr valign="top"><td> 6. Command and Control </td><td>
+   Command and Control (Application Layer Protocol, Web Service, Dynamic Resolution)
    </td><td> Segmentation
    </td></tr>
-<tr valign="top"><td> 7. </td><td>
-   Exfiltration<br />
+<tr valign="top"><td> 7. Actions on Objectives</td><td>
+   Exfiltration,<br />
    Impact
    </td><td> DL
    </td></tr>
 </table>
 
+<a name="Mitigations"></a>
+
+## Mitigations
+
+Categories of "Defense in Depth" techniques identified in <a target="_blank" href="https://attack.mitre.org/docs/attack_roadmap_2020_october.pdf">PDF: Map</a>
+
+* Password Policies
+* Active Directory Configuration
+* `User Account Control`
+* Update Software
+* `Limit Access to Resources Over Network`
+* `Audit`
+* Operating System Configuration
+* User Account Management
+* `Execution Prevention`
+* `Privileged Account Management`
+* `Disable or Remove Feature or Program`
+* Code Signing
+* Exploit Protection
+* `Application Isolation and Sandboxing`
+* Antivirus/Antimalware
+* `Filter Network Traffic`
+* `Network Segmentation`
+* User Training
+* `SSL/TLS Inspection`
+* Restrict Web-based Content
+
+Additional controls:
+
+   * To prevent Lateral Movement (Taint Shared Content): Immutable deployments (no live patching to "cattle")
+
+   * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
+
+   * Change Management using source version control systems such as Git clients interacting with the GitHub cloud
+
+
+<hr />
 
 <a name="ConsulStories"></a>
 
