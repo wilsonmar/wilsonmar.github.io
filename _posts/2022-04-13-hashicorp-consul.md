@@ -211,33 +211,33 @@ Specific tools and techniques that adversaries use (on specific platforms) are o
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Kill Chain </th><th> Mitre ATT&CK </th><th> <a href="#Mitigations">Mitigations</a> </th></tr>
-<tr valign="top"><td> 1. Reconnaissance </td><td>
+<tr valign="top"><td> 1. Reconnaissance (harvesting) </td><td>
    Reconnaissance,<br />
    Resource Development
-   </td><td> mTLS
-   </td></tr>
-<tr valign="top"><td> 2. Weponization </td><td>
-   Initial Access,<br />
-   Execution
    </td><td> Authentication
    </td></tr>
-<tr valign="top"><td> 3. Delivery</td><td>
+<tr valign="top"><td> 2. Weponization (exploit of backdoor into a deliverable payload) </td><td>
+   Initial Access,<br />
+   Execution
+   </td><td> mTLS
+   </td></tr>
+<tr valign="top"><td> 3. Delivery (into victim)</td><td>
    Persistence,<br />
    Privilege Escalation
    </td><td> Audit logs & Alerts
    </td></tr>
-<tr valign="top"><td> 4. Exploitation </td><td>
+<tr valign="top"><td> 4. Exploitation (of vulnerability) </td><td>
    Defense Evasion (Access Token Manipulation)
    </td><td> ACL
    </td></tr>
-<tr valign="top"><td> 5. Installation</td><td>
+<tr valign="top"><td> 5. Installation (of malware)</td><td>
    Credential Access,<br />
    Discovery (System Network Connections Discovery),<br />
    Lateral Movement (Exploitation of Remote Services, Remote Service Session Hijacking ),<br />
    Collection (Man-in-the-Middle)
    </td><td> Authorization
    </td></tr>
-<tr valign="top"><td> 6. Command and Control </td><td>
+<tr valign="top"><td> 6. Command and Control (remote manipulation) </td><td>
    Command and Control (Application Layer Protocol, Web Service, Dynamic Resolution)
    </td><td> Segmentation
    </td></tr>
@@ -252,28 +252,29 @@ Specific tools and techniques that adversaries use (on specific platforms) are o
 
 ## Mitigations
 
-Categories of "Defense in Depth" techniques identified in <a target="_blank" href="https://attack.mitre.org/docs/attack_roadmap_2020_october.pdf">PDF: Map</a>
+Categories of "Defense in Depth" techniques listed in <a target="_blank" href="https://attack.mitre.org/docs/attack_roadmap_2020_october.pdf">PDF: Mitre's map of defense to data sources</a>:
 
 * Password Policies
 * Active Directory Configuration
-* `User Account Control`
+* *User Account Control*
 * Update Software
-* `Limit Access to Resources Over Network`
-* `Audit`
+* *Limit Access to Resources Over Network*
+* *Audit*
 * Operating System Configuration
 * User Account Management
-* `Execution Prevention`
-* `Privileged Account Management`
-* `Disable or Remove Feature or Program`
+* *Execution Prevention*
+* *Privileged Account Management*
+* *Disable or Remove Feature or Program*
 * Code Signing
 * Exploit Protection
-* `Application Isolation and Sandboxing`
+* *Application Isolation and Sandboxing*
 * Antivirus/Antimalware
-* `Filter Network Traffic`
-* `Network Segmentation`
+* *Filter Network Traffic*
+* *Network Segmentation*
 * User Training
-* `SSL/TLS Inspection`
+* *SSL/TLS Inspection*
 * Restrict Web-based Content
+<br /><br />
 
 Additional controls:
 
