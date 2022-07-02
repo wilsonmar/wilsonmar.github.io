@@ -256,23 +256,23 @@ Categories of "Defense in Depth" techniques listed in <a target="_blank" href="h
 
 * Password Policies
 * Active Directory Configuration
-* *User Account Control*
+* <strong>User Account Control</strong>
 * Update Software
-* *Limit Access to Resources Over Network*
-* *Audit*
+* <strong>Limit Access to Resources Over Network</strong>
+* <strong>Audit (Logging)</strong>
 * Operating System Configuration
-* User Account Management
-* *Execution Prevention*
-* *Privileged Account Management*
-* *Disable or Remove Feature or Program*
+* <strong>User Account Management</strong>
+* <strong>Execution Prevention</strong>
+* <strong>Privileged Account Management</strong>
+* <strong>Disable or Remove Feature or Program
 * Code Signing
 * Exploit Protection
-* *Application Isolation and Sandboxing*
+* <strong>Application Isolation and Sandboxing</strong>
 * Antivirus/Antimalware
-* *Filter Network Traffic*
-* *Network Segmentation*
+* <strong>Filter Network Traffic</strong>
+* <strong>Network Segmentation</strong>
 * User Training
-* *SSL/TLS Inspection*
+* <strong>SSL/TLS Inspection</strong>
 * Restrict Web-based Content
 <br /><br />
 
