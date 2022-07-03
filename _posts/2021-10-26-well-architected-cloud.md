@@ -307,9 +307,11 @@ AWS Skillbuilder video courses</a> are rather verbose and high-level, but provid
 
 <hr />
 
+<a name="WAL"></a>
+
 ### AWS Well-Architected Labs
 
-Specific hands-on labs from <a target="_blank" href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com</a> built (using Hugo) from <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> 
+Specific hands-on labs from <a target="_blank" href="https://wellarchitectedlabs.com/"><strong>https://wellarchitectedlabs.com</strong></a> built (using Hugo) from <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> 
 for <a href="#Pillars">each pillar</a> in the sections to follow:
 
    1. <a href="#SecLabs">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
@@ -337,8 +339,8 @@ The AWS WellArchitectedLabs.com has dozens of labs, grouped by
 1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/">
     200 - Automating operations with Playbooks and Runbooks</a>
 
-   <a name="WAFLab-Sec"></a>
-   
+   <a name="WAL-Sec"></a>
+
    ### Security
 
 1. <a target="_blank" href="https://wellarchitectedlabs.com/security/100_labs/">100:  Foundational Labs</a>
@@ -428,7 +430,9 @@ The AWS WellArchitectedLabs.com has dozens of labs, grouped by
 1. <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/"> 300: Turning Cost & Usage Reports into Efficiency Reports</a>
    <br /><br />
 
-## Sample App for Amazon
+<hr />
+
+## "Blue Car" Sample App
 
 STAR: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> from an <strong>Amazon Cloud Formation template</strong>.
 It is a "JAM" stack app where JavaScript in each user's browser interacts with a public API Gateway to a backend API built using Lambda:

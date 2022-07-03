@@ -4,7 +4,7 @@ title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
-date: "2021-09-09"
+date: "2022-07-01"
 file: "kubernetes"
 image:
 # kubernetes-head-1900x500-472493.jpg
@@ -6841,6 +6841,10 @@ VIDEO: AWS EKS vs Azure AKS vs Google GKE</a> by Tung Nguyen, CEO of BoltOps
 VIDEO: GKE Autopilot - Fully Managed Kubernetes Service From Google</a> Dec 13, 2021
 
 https://tech.ebayinc.com/engineering/how-ebay-leverages-kubernetes-helm-charts-and-jenkins-pipelines-to-deliver-high-quality-software/
+
+STAR: <a target="_blank" href="https://dev.to/aurelievache/understanding-kubernetes-in-a-visual-way-in-video-part-1-pods-1jpg">"Understanding Kubernetes in a visual way" 20-part series</a> by Aurélie Vache, in French with English subtitles. Like the <a target="_blank" href="https://www.imdb.com/title/tt0211915/">French film Amelie</a>, well worth the effort.
+
+
 
 <hr />
 

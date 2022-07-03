@@ -3872,7 +3872,7 @@ Twitter: @hashicorp
 
 Ambassadors (<a target="_blank" href="https://www.hashicorp.com/blog/hashicorp-ambassador-call-for-nominations">first announced March, 2020</a>)
 
-LinkedIn: https://www.linkedin.com/company/hash...
+LinkedIn: https://www.linkedin.com/company/hashicorp
 
 Facebook: https://www.facebook.com/HashiCorp
 
