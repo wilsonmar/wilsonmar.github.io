@@ -337,8 +337,18 @@ It is a "JAM" stack app where JavaScript in each user's browser interacts with a
    * Amazon DynamoDB provides a persistence layer where data can be stored by the API’s Lambda function.
    <br /><br />
 
-STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below:
-Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
+STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below: Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
+
+Here are the dozens of labs:
+
+1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">
+    100 - Inventory and Patch Management</a>
+1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_dependency_monitoring/">
+    100 - Dependency Monitoring</a>
+1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/">
+    200 - Automating operations with Playbooks and Runbooks</a>
+
+1. <a target="_blank" href="">?</a>
 
 <hr />
 
