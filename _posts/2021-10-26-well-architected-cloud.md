@@ -342,7 +342,7 @@ AWS' WellArchitectedLabs.com provides dozens of labs:
 
 PROTIP: We are in the process of creating for each for each lab Terraform (with Bash shell scripts and Ansible, where applicable).
 
-### &nbsp; &nbsp; &nbsp; &nbsp; Operational Excellence
+### &nbsp; &nbsp; &nbsp; &nbsp; Operational Excellence Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">100 - Inventory and Patch Management</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_dependency_monitoring/">100 - Dependency Monitoring</a>
@@ -351,7 +351,7 @@ PROTIP: We are in the process of creating for each for each lab Terraform (with 
 
    <a name="WAL-Sec"></a>
 
-   ### Security
+   ### Security Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/100_labs/">100:  Foundational Labs</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_vpc/">200: Automated Deployment of VPC</a>
@@ -374,7 +374,7 @@ PROTIP: We are in the process of creating for each for each lab Terraform (with 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_vpc_flow_logs_analysis_dashboard/">300: VPC Flow Logs Analysis Dashboard</a>
    <br /><br />
 
-   ### Reliability
+   ### Reliability Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/100_labs/100_deploy_cloudformation/">100: Deploy a Reliable Multi-tier Infrastructure using CloudFormation</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_bidirectional_replication_for_s3/">200: Implementing Bi-Directional Cross-Region Replication (CRR) for Amazon Simple Storage Service (Amazon S3)</a>
@@ -387,19 +387,7 @@ PROTIP: We are in the process of creating for each for each lab Terraform (with 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_testing_for_resiliency_of_ec2_rds_and_s3/"> 300: Testing for Resiliency of EC2, RDS, and AZ</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_fault_isolation_with_shuffle_sharding/"> 300: Fault Isolation with Shuffle Sharding</a>
 
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/100_labs/100_deploy_cloudformation/">100: Deploy a Reliable Multi-tier Infrastructure using CloudFormation</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_bidirectional_replication_for_s3/">200: Implementing Bi-Directional Cross-Region Replication (CRR) for Amazon Simple Storage Service (Amazon S3)</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_deploy_and_update_cloudformation/">200: Deploy and Update CloudFormation</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_testing_backup_and_restore_of_data/"> 200: Testing Backup and Restore of Data</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_testing_for_resiliency_of_ec2/"> 200: Testing for Resiliency of EC2 instances</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_backup_restore_failback_analytics/"> 200: Backup and Restore with Failback for Analytics Workload</a>
-
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_health_checks_and_dependencies/"> 300: Implementing Health Checks and Managing Dependencies to improve Reliability</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_testing_for_resiliency_of_ec2_rds_and_s3/"> 300: Testing for Resiliency of EC2, RDS, and AZ</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_fault_isolation_with_shuffle_sharding/"> 300: Fault Isolation with Shuffle Sharding</a>
-   <br /><br />
-
-   ### Performance Efficiency
+   ### Performance Efficiency Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_with_cloudwatch_dashboards/"> 100: Monitoring with CloudWatch Dashboards</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_clock_source_performance/"> 100: Calculating differences in clock source</a>
@@ -407,7 +395,7 @@ PROTIP: We are in the process of creating for each for each lab Terraform (with 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_linux_ec2_cloudwatch/"> 100: Monitoring an Amazon Linux EC2 instance with CloudWatch Dashboards</a>
    <br /><br />
 
-   ### Cost Optimization
+   ### Cost Optimization Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_1_aws_account_setup/"> 100: AWS Account Setup: Lab Guide</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_2_cost_and_usage_governance/"> 100: Cost and Usage Governance</a>
@@ -438,7 +426,7 @@ PROTIP: We are in the process of creating for each for each lab Terraform (with 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_organization_data_cur_connection/"> 300: Organization Data CUR Connection</a>
    <br /><br />
 
-   ### Sustainability
+   ### Sustainability Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_optimize_data_pattern_using_redshift_data_sharing/"> 300: Optimize Data Pattern using Amazon Redshift Data Sharing</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/"> 300: Turning Cost & Usage Reports into Efficiency Reports</a>
