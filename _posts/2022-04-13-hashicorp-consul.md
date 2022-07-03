@@ -50,38 +50,9 @@ The most popular websites about Consul:
 1. Reddit:<br />
    https://www.reddit.com/search/?q=hashicorp%20consul
 
+<hr />
 
-<a name="EnterpriseLicense"></a>
-
-## Free Open Source vs. Enterprise
-
-Consul is available as free open-source.
-
-<a target="_blank" href="https://www.consul.io/docs/enterprise">Consul Enterprise</a> can be licensed <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">on the Amazon Marketplace</a>
-at $8,000 per year for up to 50 nodes and bronze support. It adds:
-
-A. <strong>Authenticate using OIDC</strong> identity provider (such as Okta) instead of ACL tokens -- this enables SSO (Single Sign On) based on indentity information maintained in email systems, so that addition and deletions of email get reflected in applications immediately.
-
-B. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once -- this avoids the need for manual effort and elimination of times when different versions exist at the same time.
-
-C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns
-
-D. Enable <strong>Multi-Tenancy of tenants</strong> using Admin Partitions as "Namespaces" -- enables segmentation to separate different teams within a single Consul datacenter, a key "Zero Trust" principal.
-
-E. The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
-
-F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems
-
-G. Better Resilency from <strong>scheduled Backups</strong> of Consul state to snapshot files -- this makes backups happen without needing to remember to take manual effort.
-
-H. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-voting nodes") -- providing scalability to handle high load traffic.
-
-   "Performance begins to degrade after 7 voting nodes due to server-to-server Raft protocol traffic, which is expensive on the network."
-
-I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
-
-
-## The problem starts with Microservices
+## Need for Consul with Microservices
 
    To build a fast and reliable system in the cloud today, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures which are more difficult to evolve.
 
@@ -94,89 +65,36 @@ I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topolo
    * Greater operational efficiency
    <br /><br />
 
-> PROTIP: However, each new paradigm comes with new problems. And the problem with dynamic services is that it depends on legacy networking connecting services. Legacy networking assumes use of <strong>static IP addresses manually configured</strong> rather than dynamic service names automatically discovered and registered.
 
-
-<a name="SolveLegacy"></a>
+<a name="LegacyMismatches"></a>
 
 ## Legacy mismatches
 
-Implementation of microservices within legacy infrastructure creates these concerns:
+However, each new paradigm comes with new problems. 
 
-   A. "East-West" (internal) Load Balancers are a single point of failure. So an alternative is needed for them.
+Implementation of microservices within legacy infrastructure and "fortress with a moat" mindset (rather than <a href="#ZeroTrust">"Zero Trust" principles</a>) creates these concerns:
 
-   B. Traffic is blindly sent based on static IP addresses without identity authentication (a violation of "Zero Trust" mandate).
+   A. Traffic is blindly sent from apps based on static IP addresses without identity authentication (a violation of "Zero Trust" mandate).
 
-   C. Developers now spend too much time coding network communication logic in each program (for retries, tracing, secure TLS, etc.) - mTLS.
+   B. Traffic routing mechanisms such as IPTables were designed to manage external traffic, not traffic internally within a firewall.
 
-   D. Developers now spend too much time requesting permissions to be defined based on IP addresses.
+   C. Developers now spend too much time requesting permissions to be defined based on IP addresses.
 
-   E. Network departments now spend too much time connecting static IP addresses for internal communications among services.
+   D. Network departments now spend too much time connecting static IP addresses for internal communications among services.
+
+   E. Developers now spend too much time coding network communication logic in each program (for retries, tracing, secure TLS, etc.) - mTLS.
+
+   F. "East-West" (internal) Load Balancers are a single point of failure. So an alternative is needed for them.
 
 Additionally, Kubernetes currently have these deficiencies:
 
-   F. Kubernetes does not check if a service is healthy before trying to communicate.
+   G. Kubernetes does not check if a service is healthy before trying to communicate.
 
-   G. Kubernetes does not encrypt communication between services.
+   H. Kubernetes does not encrypt communication between services.
 
-   H. Kubernetes does not provide a way to communicate with databases and cloud service outisde Kubernetes.
+   I. Kubernetes does not provide a way to communicate with databases and cloud service outside Kubernetes.
 
-PROTIP: Here's how Consul solves the mismatches:
-
-Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure. 
-
-Since Consul is added as additional servers within the same infrastructure, changes to app code is not necessary. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
-
-Consul "discovers" services (configured to be discoverable) to capture each service's assigned IP address, <strong>associated with a name</strong> in its <strong>service registry</strong> (a Key-Value store) which is used to map what service communicates with any other service.
-
-A key benefit of Consul Service Mesh is that <strong>developers can better focus on business logic and UI</strong> because they have less networking utility code to write. Developers don't need to write logic to retry failed attempts at reaching other services and other aspects when <strong>going through Consul to communicate with other services</strong>. 
-
-Consul routes traffic only to healthy endpoints because Concul tracks the results of  <strong>health checks</strong> on each service.
-
-On behalf of each service, Consul can be set to <strong>allow or deny communication</strong> to other services, referencing what it calls "Intentions" defining routes between specific  services. 
-
-This is why Consul does an <strong>authentication hand-shake</strong> with each service before sending it data. A rogue service cannot pretend to be another legitimate service unless it holds a legitimate encryption certificate assigned by Consul. And each certificate expires, which Consul works to rotate.
-
-As Consul redirects traffic, it secures the traffic by generating certificates used to <strong>encrypt traffic</strong> on both ends of communication, taking care of automatic key rotation hassles, too. BTW This mechanism is called "mTLS" (mutual Transport Layer Security).
-
-Because Kubernetes does not provide that mechanism natively, a lot of Kubernetes installations make use of Consul's Service Mesh. Using Consul also enables a Kubernetes cluster to securely <strong>communicate with services outside Kubernetes</strong>, such as databases, ECS, VMs, Severless, even across different clouds (through "OSI 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">4" traffic).
-
-BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved Consul's enterprise worthiness.
-
-https://hashicorp-services.github.io/enablement-consul-slides/markdown/architecture/#1
-
-The set of redudant servers creates a Mesh Gateway which allows Consul to replace expensive load balancers which pose a single point of failure risk. 
-
-Add a full set of <strong>audit logs</strong> makes Consul is a fully enterprise tool like no other. 
-
-### Use Cases
-
-In summary, use cases for Consul (listed at https://www.consul.io/):
-
-   * Consul on Kubernetes
-   * Control access with Consul API Gateway
-   * Discover Services with Consul
-   * Enforce Zero Trust Networking with Consul
-   * Load Balancing with Consul
-   * Manage Traffic with Consul
-   * Multi-Platform Service Mesh with Consul
-   * Network Infrastructure Automation with Consul
-   * Observability with Consul
-   <br /><br />
-
-
-<a name="COM"></a>
-   
-## Part of a Cloud Operating Model suite
-
-Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=XsOt2MAAm3g">VIDEO</a> Microservices with Terraform, Consul, and Vault
-
-Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
-
+<hr />
 
 <a name="ZeroTrust"></a>
 
@@ -296,17 +214,36 @@ Additional controls:
 
    * Change Management using source version control systems such as Git clients interacting with the GitHub cloud
 
+<hr />
+
+<a name="SolveLegacy"></a>
+
+### Legacy mismatches solved by Consul
+
+The list below send you to how each edition of Consul solves the mismatches described above.
+
+   * <a href="#FOSSFeatures">Free Open Source</a>
+   * <a href="#EnterpriseFeatures">Paid Enterprise</a> for self-installed/managed on-prem or in private clouds
+   * SaaS in the HCP (HashiCorp Platform) in the cloud
+   <br /><br />
 
 <hr />
 
-<a name="ConsulStories"></a>
+<a name="FOSSFeatures"></a>
 
-## Agile Stories on Why Consul? 
+## Free Open Source Software Features
 
-<a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
+Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
+<ul>
+   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"><img alt="Consul interactions" width="488"
- height="510" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"></a>
+   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+
+   Initiated in 2014, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
+</ul>
+
+References:
+   * <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
 
 PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
 
@@ -326,28 +263,128 @@ PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written
 
 7. Use the familiar Consul infrastructure across <strong>multiple clouds</strong> (AWS, Azure, GCP, etc.), to reduce the learning necessary to people to work on different clouds. <a target="_blank" href="https://www.youtube.com/watch?v=xWwXLKhWzNk" title="DevOps Lab | Workload authentication to HashiCorp ">VIDEO</a>
 
-<a name="OSS_repo"></a>
 
-## FOSS (Free Open Source Software)
 
-Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
+### Addressing Complexities
 
-   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
+A high-level explanation:
 
-   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
-
-   Initiated in <strong>2014</strong>, the repo has garnered nearly 25,000 stars, with over a million downloads monthly. 
- 
-### Enterprise Admin Partitions
-
-   Additional (teamwork) features are unlocked with licensing of an "Enterprise" Consul installed by customer-(self)-managed organizations.
+   The <strong>distributed</strong> nature of microservices require Enterprise teams to address several concerns:
    
-The Enterprise edition of Consul has a multi-tenancy capability which enables the creation of Admin Partititions, each with its own Governance and Policies. Such segregation diminishes the "blast radius" from potential compromise of credentials to a specific partition.
+   * <strong>"Ephemeral" infrastructure</strong> means IP addresses are dynamic (and toil to assign IP addresses to each service)
+
+   * Each service should not communicate with any other service (complicated communication rules)
+
+   * To distribute load among individual servers, load balancers (such as F5) used are a single point of failure. They work based on IP addresses.
+
+      - Consul can replace legacy Load Balancers. QUESTION: Use round-robin? least-connections?
+
+      - <a target="_blank" href="https://www.youtube.com/watch?v=AqgEXwzexn8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=6" title="Mar 31, 2021">VIDEO: "Zero Trust Security for Legacy Apps with Service Mesh"</a>
+
+   * Complex mechanisms to <strong>secure perimeter yet communicate with outside systems</strong> (legecy and payment systems) are problematic
+
+   * Whole-application <strong>(end-to-end) testing</strong> requires multi-team collaboration (time consuming and expensive)
+
+   * Manual & complex processes in application delivery
+
+
+Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure. 
+
+Since Consul is added as additional servers within the same infrastructure, changes to app code is not necessary. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
+
+Consul "discovers" services (configured to be discoverable) to capture each service's assigned IP address, <strong>associated with a name</strong> in its <strong>service registry</strong> (a Key-Value store) which is used to map what service communicates with any other service.
+
+A key benefit of Consul Service Mesh is that <strong>developers can better focus on business logic and UI</strong> because they have less networking utility code to write. Developers don't need to write logic to retry failed attempts at reaching other services and other aspects when <strong>going through Consul to communicate with other services</strong>. 
+
+Consul routes traffic only to healthy endpoints because Concul tracks the results of  <strong>health checks</strong> on each service.
+
+On behalf of each service, Consul can be set to <strong>allow or deny communication</strong> to other services, referencing what it calls "Intentions" defining routes between specific  services. 
+
+This is why Consul does an <strong>authentication hand-shake</strong> with each service before sending it data. A rogue service cannot pretend to be another legitimate service unless it holds a legitimate encryption certificate assigned by Consul. And each certificate expires, which Consul works to rotate.
+
+As Consul redirects traffic, it secures the traffic by generating certificates used to <strong>encrypt traffic</strong> on both ends of communication, taking care of automatic key rotation hassles, too. BTW This mechanism is called "mTLS" (mutual Transport Layer Security).
+
+Because Kubernetes does not provide that mechanism natively, a lot of Kubernetes installations make use of Consul's Service Mesh. Using Consul also enables a Kubernetes cluster to securely <strong>communicate with services outside Kubernetes</strong>, such as databases, ECS, VMs, Severless, even across different clouds (through "OSI 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">4" traffic).
+
+BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved Consul's enterprise worthiness.
+
+https://hashicorp-services.github.io/enablement-consul-slides/markdown/architecture/#1
+
+The set of redudant servers creates a Mesh Gateway which allows Consul to replace expensive load balancers which pose a single point of failure risk. 
+
+Add a full set of <strong>audit logs</strong> makes Consul is a fully enterprise tool like no other. 
+
+
+<a name="EnterpriseFeatures"></a>
+
+#### Paid Enterprise Features
+
+Additional (teamwork and security) features are unlocked with licensing of an <a target="_blank" href="https://www.consul.io/docs/enterprise">Consul Enterprise</a> installed by customer-(self)-managed organizations.
+   * <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">On the Amazon Marketplace</a> at $8,000 per year for up to 50 nodes and bronze support. 
+   <br /><br />
+
+Features:
+
+A. <strong>Authenticate using OIDC</strong> identity provider (such as Okta) instead of ACL tokens -- this enables SSO (Single Sign On) based on indentity information maintained in email systems, so that addition and deletions of email get reflected in applications immediately.
+
+B. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once -- this avoids the need for manual effort and elimination of times when different versions exist at the same time.
+
+C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns
+
+D. Enable <strong>Multi-Tenancy of tenants</strong> enabled using "Admin Partitions" as "Namespaces" to segment data into separate different teams within a single Consul datacenter, a key "Zero Trust" principal to diminish the "blast radius" from potential compromise of credentials to a specific partition.
 
    * https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions">Consul on ECS & Admin Partitions Learn Guide</a>
    <br /><br />
 
+E. The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
+
+F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems
+
+G. Better Resilency from <strong>scheduled Backups</strong> of Consul state to snapshot files -- this makes backups happen without needing to remember to take manual effort.
+
+H. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-voting nodes") -- providing scalability to handle high load traffic.
+
+   * "Performance begins to degrade after 7 voting nodes due to server-to-server Raft protocol traffic, which is expensive on the network."
+   <br /><br />
+
+I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
+
+
+
+<hr />
+
+<a name="COM"></a>
+   
+## Part of a Cloud Operating Model suite
+
+Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=XsOt2MAAm3g">VIDEO</a> Microservices with Terraform, Consul, and Vault
+
+Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
+
+
+<a name="UseCases"></a>
+
+### Summary of Use Cases
+
+In summary, use cases for Consul (listed at https://www.consul.io/):
+
+   * Consul on Kubernetes
+   * Control access with Consul API Gateway
+   * Discover Services with Consul
+   * Enforce Zero Trust Networking with Consul
+   * Load Balancing with Consul
+   * Manage Traffic with Consul
+   * Multi-Platform Service Mesh with Consul
+   * Network Infrastructure Automation with Consul
+   * Observability with Consul
+   <br /><br />
+
+<hr />
 
 ### Value Proposition
 
@@ -389,27 +426,6 @@ Adoption of Consul aims to yield these benefits:
 * Reduce risk of breach from better guardrails (using Sentinel & OPA)
 * Compliance with regulatory demands (central source of truth, immutable, automated processes)
 <br /><br />
-
-
-### Addressing Complexities
-
-   The <strong>distributed</strong> nature of microservices require Enterprise teams to address several concerns:
-   
-   * <strong>"Ephemeral" infrastructure</strong> means IP addresses are dynamic (and toil to assign IP addresses to each service)
-
-   * Each service should not communicate with any other service (complicated communication rules)
-
-   * To distribute load among individual servers, load balancers (such as F5) used are a single point of failure. They work based on IP addresses.
-
-      - Consul can replace legacy Load Balancers. QUESTION: Use round-robin? least-connections?
-
-      - <a target="_blank" href="https://www.youtube.com/watch?v=AqgEXwzexn8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=6" title="Mar 31, 2021">VIDEO: "Zero Trust Security for Legacy Apps with Service Mesh"</a>
-
-   * Complex mechanisms to <strong>secure perimeter yet communicate with outside systems</strong> (legecy and payment systems) are problematic
-
-   * Whole-application <strong>(end-to-end) testing</strong> requires multi-team collaboration (time consuming and expensive)
-
-   * Manual & complex processes in application delivery
 
 
 
@@ -1290,15 +1306,8 @@ References about HVN (HashiCorp Virtual Network):
    * https://learn.hashicorp.com/tutorials/consul/get-started-agent?in=consul/getting-started
    <br /><br />
 
-   <a name="OSS_repo"></a>
-
-1. Consul can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
-
-   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
-
-   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
-
-   Initiated in 2014, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"><img alt="Consul interactions" width="488"
+ height="510" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"></a>
 
 
    <a name="OneConsulAgent"></a>
