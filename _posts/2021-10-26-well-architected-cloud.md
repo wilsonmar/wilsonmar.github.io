@@ -81,7 +81,7 @@ The five pillars are listed here <a href="#Ordering">discussed below</a>.
 
    1. <a href="#Ops">OPS = <strong>Operational Excellence</strong></a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
 
-   2. <a href="#Sec">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
+   2. <a href="#Sec">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google adds <strong>privacy, and compliance</strong>.
 
    3. <a href="#Reliability">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function. Also called "High Availability" by Azure.
 
@@ -89,15 +89,15 @@ The five pillars are listed here <a href="#Ordering">discussed below</a>.
 
    5. <a href="#Cost">COST = <strong>Cost Optimization</strong></a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
 
+PROTIP: One mnemonic to make the 5 easier to remember is "<strong>CROPS</strong>".
+
 Additions by individual vendors:
 
 <ul>
    6. <a href="#SustLabs">SUST = <strong>Sustainability</strong></a> (only by AWS) for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are stopping over-provisioning, using more efficient Gravaton (non-x86) CPUs, etc.
-
+<br /><br />
    6. Google adds its own <a target="_blank" href="https://cloud.google.com/architecture/framework/system-design">"System Design" pillar</a>.
 </ul>
-
-PROTIP: One mnemonic to make the 5 easier to remember is "<strong>CROPS</strong>".
 
 <a name="Ordering"></a>
 
