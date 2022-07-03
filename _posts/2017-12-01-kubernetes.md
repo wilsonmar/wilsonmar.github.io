@@ -304,7 +304,7 @@ A subscription is needed on some.
 
 ### KataKode
 
-1. <a target="_blank" href="https://www.katacoda.com/courses/kubernetes/playground">KataKoda</a>
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://www.katacoda.com/courses/kubernetes/playground">KataKoda</a>
 
 1. PROTIP: I prefer KataKoda because it provides <strong>Two terminal sessions</strong> when other options I have mess with jumping back and forth.
 
@@ -892,7 +892,7 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 1. Select the date, your time zone. The website is incredibly slow.
 1. Click the date again in orange. Click the time range.
 
-1. <a target="_blank" href="https://chrome.google.com/webstore/detail/innovative-exams-screensh/dkbjhjljfaagngbdhomnlcheiiangfle/related">Install the Chrome extension</a> used to take exams, verified during exam scheduling.
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://chrome.google.com/webstore/detail/innovative-exams-screensh/dkbjhjljfaagngbdhomnlcheiiangfle/related">Install the Chrome extension</a> used to take exams, verified during exam scheduling.
 
    Click the green "I agree", then "Confirm Reservation".
 
@@ -928,10 +928,10 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
    ### Sample exam questions 
 
-1. <a target="_blank" href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a> 
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://github.com/dgkanatsios/CKAD-exercises">https://github.com/dgkanatsios/CKAD-exercises</a> 
    by Dimitris-Ilias Gkanatsios (of Microsoft) provides sample exercises to prepare for the CKAD exam.
 
-1. <a target="_blank" href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552">Practice enough</a> 
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552">Practice enough</a> 
 
 
    ### Build speed
@@ -1265,7 +1265,7 @@ build-error: 0 (30 days)
 
    <pre><strike>minikube config set driver hyperkit</strike></pre>
 
-1. <a target="_blank" href="https://matthewpalmer.net/kubernetes-app-developer/articles/guide-install-kubernetes-mac.html">Install</a>
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://matthewpalmer.net/kubernetes-app-developer/articles/guide-install-kubernetes-mac.html">Install</a>
 
    <pre><strong>brew install minikube
    </strong></pre>
@@ -6179,7 +6179,7 @@ Having read several books on Kubernetes, Ivan Fioravanti, writing for Hackernoon
 
 Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/files/resourcefiles/kubernetes-learning-path/Kubernetes%20Learning%20Path%20version%201.0.pdf?utm_campaign=ossonazure">PDF: 50 days from zero to hero with Kubernetes</a>" includes:
 
-1. <a target="_blank" href="https://azure.microsoft.com/mediahandler/files/resourcefiles/phippy-goes-to-the-zoo/Phippy%20Goes%20To%20The%20Zoo_MSFTonline.pdf">Phippy Goes to the Zoo</a> is a children's book character Phippy (from Docker) introduct pods, replica sets, deployments, ingress.
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://azure.microsoft.com/mediahandler/files/resourcefiles/phippy-goes-to-the-zoo/Phippy%20Goes%20To%20The%20Zoo_MSFTonline.pdf">Phippy Goes to the Zoo</a> is a children's book character Phippy (from Docker) introduct pods, replica sets, deployments, ingress.
 
 2. <a target="_blank" href="https://www.youtube.com/watch?v=EUitQ8DaZW8&list=PLLasX02E8BPCrIhFrc_ZiINhbRkYMKdPT&index=1&t=0s">The 6-part YouTube videos</a> by Brendan Burns drawing behind glass.
 
@@ -6204,7 +6204,7 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
 
 9. <a target="_blank" href="https://learnk8s.io/troubleshooting-deployments/">A visual guide on troubleshooting Kubernetes deployments</a> DECEMBER 2019
 
-1. <a target="_blank" href="https://coreos.com/blog/kubectl-tips-and-tricks">https://coreos.com/blog/kubectl-tips-and-tricks</a>
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://coreos.com/blog/kubectl-tips-and-tricks">https://coreos.com/blog/kubectl-tips-and-tricks</a>
 
    <a target="_blank" href="https://www.youtube.com/watch?v=GEKTz5E22hY">VIDEO</a> from Jun 22, 2017
    Covers bash completion   
@@ -6608,7 +6608,7 @@ I have several tabs open taking it:
 
 1. For CKA, he also authored <a target="_blank" href="https://github.com/mmumshad/kubernetes-the-hard-way">https://github.com/mmumshad/kubernetes-the-hard-way</a> (on Virtualbox and Vagrant using Docker instead of containerd) which takes a manual approach to bootstrap a Kubernetes cluster from scratch, for learning to understand each task performed by the automation. The tutorial adapts the original using GCP developed by Kelsey Hightower.
 
-1. <a target="_blank" href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://join.slack.com/t/kodekloudworkspace/shared_invite/zt-fz4nok2p-4~RJZBLNgThqSeuroLSPiQ">Join</a> the Slack channel for <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CDR4R9Z7E/thread/CDR4R9Z7E-1604511588.117400">CKAD</a> and <a target="_blank" href="https://app.slack.com/client/TDSBA9B9V/CHMV3P9NV/thread/CDR4R9Z7E-1604511588.117400">CKA</a> students.
 
 1. KodeKloud's Mock Tests, which Ansar (Amoury) Memon's <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">"The FrontOpsGuys" on YouTube</a> answers for 
    <a target="_blank" href="https://www.youtube.com/channel/UCXOYtKi39m28Gd7FGaDVYGw">Test 1</a> and 
@@ -6734,7 +6734,7 @@ Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.
 
 <a target="_blank" href="https://www.coursera.org/specializations/architecting-google-kubernetes-engine">Coursera's "Architecting with Google Kubernetes Engine Specialization"</a> is focused on building efficient computing infrastructures using Kubernetes and Google Kubernetes Engine (GKE). The specialization introduces participants to deploying and managing containerized applications on GKE and the other services provided by Google Cloud Platform. Through a combination of presentations, demos, and hands-on labs, participants explore and deploy solution elements, including infrastructure components such as pods, containers, deployments, and services; as well as networks and application services. The specialization also covers deploying practical solutions including security and access management, resource management, and resource monitoring. 
 
-1. <a target="_blank" href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://www.coursera.org/learn/gcp-fundamentals">Google Cloud Platform Fundamentals: Core Infrastructure</a>
 
    This course introduces you to concepts and terminology for working with Google Cloud Platform (GCP). You learn about, and compare, many of the computing and storage services available in Google Cloud Platform, including Google App Engine, Google Compute Engine, Google Kubernetes Engine, Google Cloud Storage, Google Cloud SQL, and BigQuery. You learn about important resource and policy management tools, such as the Google Cloud Resource Manager hierarchy and Google Cloud Identity and Access Management. Hands-on labs give you foundational skills for working with GCP.
 
@@ -6843,8 +6843,6 @@ VIDEO: GKE Autopilot - Fully Managed Kubernetes Service From Google</a> Dec 13, 
 https://tech.ebayinc.com/engineering/how-ebay-leverages-kubernetes-helm-charts-and-jenkins-pipelines-to-deliver-high-quality-software/
 
 STAR: <a target="_blank" href="https://dev.to/aurelievache/understanding-kubernetes-in-a-visual-way-in-video-part-1-pods-1jpg">"Understanding Kubernetes in a visual way" 20-part series</a> by Aurélie Vache, in French with English subtitles. Like the <a target="_blank" href="https://www.imdb.com/title/tt0211915/">French film Amelie</a>, well worth the effort.
-
-
 
 <hr />
 

@@ -132,7 +132,7 @@ This is why Consul does an <strong>authentication hand-shake</strong> with each 
 
 As Consul redirects traffic, it secures the traffic by generating certificates used to <strong>encrypt traffic</strong> on both ends of communication, taking care of automatic key rotation hassles, too. BTW This mechanism is called "mTLS" (mutual Transport Layer Security).
 
-Because Kubernetes does not provide that mechanism natively, a lot of Kubernetes installations make use of Consul's Service Mesh. Using Consul also enables a Kubernetes cluster to securely <strong>communicate with services outside Kubernetes</strong>, such as databases, ECS, VMs, Severless, even across different clouds (through "OSI 1. <a target="_blank" href="?">4" traffic).
+Because Kubernetes does not provide that mechanism natively, a lot of Kubernetes installations make use of Consul's Service Mesh. Using Consul also enables a Kubernetes cluster to securely <strong>communicate with services outside Kubernetes</strong>, such as databases, ECS, VMs, Severless, even across different clouds (through "OSI 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="?">4" traffic).
 
 BTW, Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. A massive performance test proved Consul's enterprise worthiness.
 
@@ -586,7 +586,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
    5c.	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
    
 6.	<a href="#ServiceMesh">Use Consul Service Mesh</a><br />
-   6a.	Understand Consul Connect service mesh high 1. <a target="_blank" href="?">architecture<br />
+   6a.	Understand Consul Connect service mesh high 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="?">architecture<br />
    6b.	Describe configuration for registering a service proxy<br />
    6c.	Describe intentions for Consul Connect service mesh<br />
    6d.	Check intentions in both the Consul CLI and UI<br />
@@ -1603,7 +1603,7 @@ Available commands are:
     maint          Controls node or service maintenance mode
     <a href="#members">members</a>        Lists the members of a Consul cluster
     monitor        Stream logs from a Consul agent
-    operator       Provides cluster-1. <a target="_blank" href="?">tools for Consul operators
+    operator       Provides cluster-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="?">tools for Consul operators
     reload         Triggers the agent to reload configuration files
     rtt            Estimates network round trip time between nodes
     services       Interact with services
@@ -3290,7 +3290,7 @@ Policies:
    
    From v1.10.0 on, a full <strong>license file</strong> must be defined in the server config file before installation:
 
-   <pre>log_1. <a target="_blank" href="?">     = "INFO"
+   <pre>log_1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="?">     = "INFO"
 server         = true
 ui             = true
 datacenter     = "us-east-1"
@@ -3595,7 +3595,7 @@ You can see how Consul behaves on Power 9 (PPC) and IBM Z (S390x) "mainframe sup
 
 ### Using Vagrant
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by HashiCorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
+1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href=""> href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by HashiCorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
 
 
 1. Install Vagrant and download the Vagrantfile 
