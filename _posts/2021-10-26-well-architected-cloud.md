@@ -301,6 +301,10 @@ AWS published these General Design Principles:
 
 But what are specific actions?
 
+
+<a target="_blank" href="https://explore.skillbuilder.aws/learn/course/2045/AWS%2520Well-Architected">
+AWS Skillbuilder video courses</a> are rather verbose and high-level, but provides knowledge checks (quizzes).
+
 <hr />
 
 ### AWS Well-Architected Labs
@@ -324,7 +328,7 @@ AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/w
 
 The AWS WellArchitectedLabs.com has dozens of labs, grouped by 
 
-###     Operational Excellence
+### &nbsp; &nbsp; &nbsp; &nbsp; Operational Excellence
 
 1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">
     100 - Inventory and Patch Management</a>
@@ -337,8 +341,7 @@ The AWS WellArchitectedLabs.com has dozens of labs, grouped by
    
    ### Security
 
-1. <a target="_blank" href="https://wellarchitectedlabs.com/security/100_labs/">
-    100 1. <a target="_blank" href=""> Foundational Labs</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/100_labs/">100:  Foundational Labs</a>
 1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_vpc/">200: Automated Deployment of VPC</a>
 1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_web_application_firewall/">200: Automated Deployment of Web Application Firewall</a>
 1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_iam_user_cleanup/">200: Automated IAM User Cleanup</a>
@@ -425,8 +428,7 @@ The AWS WellArchitectedLabs.com has dozens of labs, grouped by
 1. <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/"> 300: Turning Cost & Usage Reports into Efficiency Reports</a>
    <br /><br />
 
-<a target="_blank" href="https://explore.skillbuilder.aws/learn/course/2045/AWS%2520Well-Architected">
-The AWS Skillbuilder video course</a> is rather verbose and high-level, but provides knowledge checks (quizzes).
+## Sample App for Amazon
 
 STAR: Follow <a target="_blank" href="https://wellarchitectedlabs.com/well-architectedpartners/100_labs/100_automating_serverless_best_practices_with_dashbird/1_deploy_blue_car_application/">these instructions to deploy Amazon's "Blue Car" sample app</a> from an <strong>Amazon Cloud Formation template</strong>.
 It is a "JAM" stack app where JavaScript in each user's browser interacts with a public API Gateway to a backend API built using Lambda:
