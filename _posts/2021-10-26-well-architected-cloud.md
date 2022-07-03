@@ -3,7 +3,7 @@ layout: post
 title: "Well Architected Cloud"
 excerpt: "What is your team's maturity at adopting best practices? Here is the comprehensive industry-standard framework from Amazon, Microsoft, and Google"
 tags: [Cloud, comparison]
-date: "2022-01-06"
+date: "2022-07-01"
 file: "well-architected-cloud"
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -50,7 +50,7 @@ PROTIP: To visualize progress toward using public cloud effectively, I created t
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
 <img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
 
-The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: level target</strong> (the outer red line).
+The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: 1. <a target="_blank" href="?">target</strong> (the outer red line).
 
 The gaps (delta) between "Now" and "Next" are addressed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
 
@@ -117,7 +117,7 @@ ACTIVITY 1 - Have each member of your team do a mental exercise to <strong>prior
 
    The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships. 
 
-   The "<strong>AWS Organization</strong>" refers to the top-level Organization setting, with special permissions to an administrator of it.
+   The "<strong>AWS Organization</strong>" refers to the top-1. <a target="_blank" href="?">Organization setting, with special permissions to an administrator of it.
 
    <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.runbook.en.html">Runbooks</a> are predefined procedures containing the minimum information necessary to successfully perform the procedure.
 
@@ -322,6 +322,109 @@ for <a href="#Pillars">each pillar</a> in the sections to follow:
 
 AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> in-depth training on the Well-Architected Framework so they help companies implement best practices, measure the state of workloads, and make improvements where assistance is required.
 
+The AWS WellArchitectedLabs.com has dozens of labs, grouped by 
+
+###     Operational Excellence
+
+1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">
+    100 - Inventory and Patch Management</a>
+1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_dependency_monitoring/">
+    100 - Dependency Monitoring</a>
+1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/">
+    200 - Automating operations with Playbooks and Runbooks</a>
+
+   <a name="WAFLab-Sec"></a>
+   
+   ### Security
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/100_labs/">
+    100 1. <a target="_blank" href=""> Foundational Labs</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_vpc/">200: Automated Deployment of VPC</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_web_application_firewall/">200: Automated Deployment of Web Application Firewall</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_iam_user_cleanup/">200: Automated IAM User Cleanup</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_basic_ec2_with_waf_protection/">200: Basic EC2 Web Application Firewall Protection</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_certificate_manager_request_public_certificate/">200: AWS Certificate Manager Request Public Certificate</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_cloudfront_for_web_application/">200: CloudFront for Web Application</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_cloudfront_with_waf_protection/">200: CloudFront with WAF Protection</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_remote_configuration_installation_and_viewing_cloudwatch_logs/">200: Remote Configuration, Installation, and Viewing of CloudWatch logs</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_multilayered_api_security_with_cognito_and_waf/">300: Multilayered API Security with Cognito and WAF</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_autonomous_monitoring_of_cryptographic_activity_with_kms/">300: Autonomous Monitoring Of Cryptographic Activity With KMS</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_autonomous_patching_with_ec2_image_builder_and_systems_manager/">300: Autonomous Patching With EC2 Image Builder And Systems Manager</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_iam_permission_boundaries_delegating_role_creation/">300: IAM Permission Boundaries Delegating Role Creation</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_iam_tag_based_access_control_for_ec2/">300: IAM Tag Based Access Control for EC2</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_incident_response_playbook_with_jupyter-aws_iam/">300: Incident Response Playbook with Jupyter - AWS IAM</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_incident_response_with_aws_console_and_cli/">300: Incident Response with AWS Console and CLI</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_lambda_cross_account_bucket_policy/">300: Lambda Cross Account Using Bucket Policy</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_lambda_cross_account_iam_role_assumption/">300: Lambda Cross Account IAM Role Assumption</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_vpc_flow_logs_analysis_dashboard/">300: VPC Flow Logs Analysis Dashboard</a>
+
+   ### Reliability
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/100_labs/100_deploy_cloudformation/">100: Deploy a Reliable Multi-tier Infrastructure using CloudFormation</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_bidirectional_replication_for_s3/">200: Implementing Bi-Directional Cross-Region Replication (CRR) for Amazon Simple Storage Service (Amazon S3)</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_deploy_and_update_cloudformation/">200: Deploy and Update CloudFormation</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_testing_backup_and_restore_of_data/"> 200: Testing Backup and Restore of Data</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_testing_for_resiliency_of_ec2/"> 200: Testing for Resiliency of EC2 instances</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_backup_restore_failback_analytics/"> 200: Backup and Restore with Failback for Analytics Workload</a>
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_health_checks_and_dependencies/"> 300: Implementing Health Checks and Managing Dependencies to improve Reliability</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_testing_for_resiliency_of_ec2_rds_and_s3/"> 300: Testing for Resiliency of EC2, RDS, and AZ</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_fault_isolation_with_shuffle_sharding/"> 300: Fault Isolation with Shuffle Sharding</a>
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/100_labs/100_deploy_cloudformation/">100: Deploy a Reliable Multi-tier Infrastructure using CloudFormation</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_bidirectional_replication_for_s3/">200: Implementing Bi-Directional Cross-Region Replication (CRR) for Amazon Simple Storage Service (Amazon S3)</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_deploy_and_update_cloudformation/">200: Deploy and Update CloudFormation</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_testing_backup_and_restore_of_data/"> 200: Testing Backup and Restore of Data</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_testing_for_resiliency_of_ec2/"> 200: Testing for Resiliency of EC2 instances</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/200_labs/200_backup_restore_failback_analytics/"> 200: Backup and Restore with Failback for Analytics Workload</a>
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_health_checks_and_dependencies/"> 300: Implementing Health Checks and Managing Dependencies to improve Reliability</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_testing_for_resiliency_of_ec2_rds_and_s3/"> 300: Testing for Resiliency of EC2, RDS, and AZ</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_fault_isolation_with_shuffle_sharding/"> 300: Fault Isolation with Shuffle Sharding</a>
+
+   ### Performance Efficiency
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_with_cloudwatch_dashboards/"> 100: Monitoring with CloudWatch Dashboards</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_clock_source_performance/"> 100: Calculating differences in clock source</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_windows_ec2_cloudwatch/"> 100: Monitoring Windows EC2 instance with CloudWatch Dashboards</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_linux_ec2_cloudwatch/"> 100: Monitoring an Amazon Linux EC2 instance with CloudWatch Dashboards</a>
+
+   ### Cost Optimization
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_1_aws_account_setup/"> 100: AWS Account Setup: Lab Guide</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_2_cost_and_usage_governance/"> 100: Cost and Usage Governance</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_3_pricing_models/"> 100: Pricing Models</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_4_cost_and_usage_analysis/"> 100: Cost and Usage Analysis</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_5_cost_visualization/"> 100: Cost Visualization</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_aws_resource_optimization/"> 100: Rightsizing Recommendations</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_cost_estimation/"> 100: Cost Estimation</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_goals_and_targets/"> 100: Goals and Targets</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/100_labs/100_8_tag_policies/"> 100: Tag Policies</a>
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_2_cost_and_usage_governance/"> 200: Cost and Usage Governance</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_3_pricing_models/"> 200: Pricing Models</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_4_cost_and_usage_analysis/"> 200: Cost and Usage Analysis</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_5_cost_visualization/"> 200: Cost Visualization</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_aws_resource_optimization/"> 200: Rightsizing with Compute Optimizer</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_pricing_model_analysis/"> 200: Pricing Model Analysis</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_cloud_intelligence/"> 200: Cloud Intelligence Dashboards</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_workload_efficiency/"> 200: Workload Efficiency</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_licensing/"> 200: Licensing</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/200_labs/200_cost_journey/"> 200: Cost Journey</a>
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_automated_cur_query_and_email_delivery/"> 300: Automated Athena CUR Query and E-mail Delivery</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_automated_cur_updates_and_ingestion/"> 300: Automated CUR Updates and Ingestion</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_cur_queries/"> 300: AWS CUR Query Library</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_splitting_sharing_cur_access/"> 300: Splitting the CUR and Sharing Access</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_optimization_data_collection/"> 300: Optimization Data Collection</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_organization_data_cur_connection/"> 300: Organization Data CUR Connection</a>
+
+   ### Sustainability
+
+1. <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_optimize_data_pattern_using_redshift_data_sharing/"> 300: Optimize Data Pattern using Amazon Redshift Data Sharing</a>
+1. <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/"> 300: Turning Cost & Usage Reports into Efficiency Reports</a>
+   <br /><br />
+
 <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/2045/AWS%2520Well-Architected">
 The AWS Skillbuilder video course</a> is rather verbose and high-level, but provides knowledge checks (quizzes).
 
@@ -339,16 +442,6 @@ It is a "JAM" stack app where JavaScript in each user's browser interacts with a
 
 STATUS: I've been getting an error. Maintainer Stephen Salim contacted for below: Use <a target="_blank" href="https://wellarchitectedlabs.com/wapartners/100_Automating_Serverless_Best_Practices_with_Dashbird/Code/templates/section1/section1-oncall-health-sample-app.yaml">this</a> <a target="_blank" href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-create-stack.html">stack</a>.
 
-Here are the dozens of labs:
-
-1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">
-    100 - Inventory and Patch Management</a>
-1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_dependency_monitoring/">
-    100 - Dependency Monitoring</a>
-1. <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/">
-    200 - Automating operations with Playbooks and Runbooks</a>
-
-1. <a target="_blank" href="">?</a>
 
 <hr />
 
@@ -457,7 +550,7 @@ Questions:
 
    2. <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
 
-   1. <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right level of access when they require it. For example, establish a process for administrators to verify and approve their request.
+   1. <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
 
    1. <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
 
@@ -917,7 +1010,7 @@ Questions:
 
    1. <strong>Mechanisms exist to request additions, changes, and exceptions</strong> - You are able to make requests to owners of processes, procedures, and resources. Make informed decisions to approve requests where viable and determined to be appropriate after an evaluation of benefits and risks.
 
-   1. <strong>Responsibilities between teams are predefined or negotiated</strong> - There are defined or negotiated agreements between teams describing how they work with and support each other (for example, response times, service level objectives, or service level agreements). Understanding the impact of the teams’ work on business outcomes, and the outcomes of other teams and organizations, informs the prioritization of their tasks and enables them to respond appropriately.
+   1. <strong>Responsibilities between teams are predefined or negotiated</strong> - There are defined or negotiated agreements between teams describing how they work with and support each other (for example, response times, service 1. <a target="_blank" href="?">objectives, or service 1. <a target="_blank" href="?">agreements). Understanding the impact of the teams’ work on business outcomes, and the outcomes of other teams and organizations, informs the prioritization of their tasks and enables them to respond appropriately.
 
    <a name="OrgCulture2Outcome"></a>
 
@@ -959,13 +1052,13 @@ Questions:
 
    1. <strong>Use version control</strong> - Use version control to enable tracking of changes and releases.
 
-   1. <strong>Test and validate changes</strong> - Test and validate changes to help limit and detect errors. Automate testing to reduce errors caused by manual processes, and reduce the level of effort to test.
+   1. <strong>Test and validate changes</strong> - Test and validate changes to help limit and detect errors. Automate testing to reduce errors caused by manual processes, and reduce the 1. <a target="_blank" href="?">of effort to test.
 
-   1. <strong>Use configuration management systems</strong> - Use configuration management systems to make and track configuration changes. These systems reduce errors caused by manual processes and reduce the level of effort to deploy changes.
+   1. <strong>Use configuration management systems</strong> - Use configuration management systems to make and track configuration changes. These systems reduce errors caused by manual processes and reduce the 1. <a target="_blank" href="?">of effort to deploy changes.
 
-   1. <strong>Use build and deployment management systems</strong> - Use build and deployment management systems. These systems reduce errors caused by manual processes and reduce the level of effort to deploy changes.
+   1. <strong>Use build and deployment management systems</strong> - Use build and deployment management systems. These systems reduce errors caused by manual processes and reduce the 1. <a target="_blank" href="?">of effort to deploy changes.
 
-   1. <strong>Perform patch management</strong> - Perform patch management to gain features, address issues, and remain compliant with governance. Automate patch management to reduce errors caused by manual processes, and reduce the level of effort to patch.
+   1. <strong>Perform patch management</strong> - Perform patch management to gain features, address issues, and remain compliant with governance. Automate patch management to reduce errors caused by manual processes, and reduce the 1. <a target="_blank" href="?">of effort to patch.
 
    1. <strong>Share design standards</strong> - Share best practices across teams to increase awareness and maximize the benefits of development efforts.
 
@@ -1029,7 +1122,7 @@ Questions:
 
    1. <strong>Alert when workload anomalies are detected</strong> - Raise an alert when workload anomalies are detected so that you can respond appropriately if necessary.
 
-   1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of  workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. <a target="_blank" href="?">view of  workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
 
    <a name="UnderstandOperationsHealth"></a>
 
@@ -1049,7 +1142,7 @@ Questions:
 
    1. <strong>Alert when operations anomalies are detected</strong> so that you can respond appropriately if necessary.
 
-   1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-level view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. <a target="_blank" href="?">view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
 
    <a name="ManageEvents"></a>
 
@@ -1185,7 +1278,7 @@ Questions:
 
    1. <strong>Use the available elasticity of resources</strong> - The cloud provides the flexibility to expand or reduce resources dynamically through a variety of mechanisms to meet changes in demand. Combined with compute-related metrics, a workload can automatically respond to changes and utilize the optimal set of resources to achieve its goal.
 
-   1. <strong>Re-evaluate compute needs based on metrics</strong> - Use system-level metrics to identify the behavior and requirements of  workloads over time. Evaluate workload needs by comparing the available resources with these requirements and make changes to  compute environment to best match each workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
+   1. <strong>Re-evaluate compute needs based on metrics</strong> - Use system-1. <a target="_blank" href="?">metrics to identify the behavior and requirements of  workloads over time. Evaluate workload needs by comparing the available resources with these requirements and make changes to  compute environment to best match each workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
 
    <a name="SelectStorage"></a>
 
@@ -1217,7 +1310,7 @@ Questions:
 
    1. <strong>Understand how networking impacts performance</strong> - Analyze and understand how network-related decisions impact workload performance. For example, network latency often impacts the user experience, and using the wrong protocols can starve network capacity through excessive overhead.
 
-   1. <strong>Evaluate available networking features</strong> - Evaluate networking features in the cloud that may increase performance. Measure the impact of these features through testing, metrics, and analysis. For example, take advantage of network-level features that are available to reduce latency, network distance, or jitter.
+   1. <strong>Evaluate available networking features</strong> - Evaluate networking features in the cloud that may increase performance. Measure the impact of these features through testing, metrics, and analysis. For example, take advantage of network-1. <a target="_blank" href="?">features that are available to reduce latency, network distance, or jitter.
 
    1. <strong>Choose appropriately sized dedicated connectivity or VPN for hybrid workloads</strong> - When there is a requirement for on-premise communication, ensure that you have adequate bandwidth for workload performance. Based on bandwidth requirements, a single dedicated connection or a single VPN might not be enough, and you must enable traffic load balancing across multiple connections.
 
@@ -1410,7 +1503,7 @@ Questions:
 
    1. <strong>Select software with cost effective licensing</strong> - Open source software will eliminate software licensing costs, which can contribute significant costs to workloads. Where licensed software is required, avoid licenses bound to arbitrary attributes such as CPUs, look for licenses that are bound to output or outcomes. The cost of these licenses scales more closely to the benefit they provide.
 
-   1. <strong>Select components of this workload to optimize cost in line with organization priorities</strong> - Factor in cost when selecting all components. This includes using application level and managed services, such as Amazon RDS, Amazon DynamoDB, Amazon SNS, and Amazon SES to reduce overall organization cost. Use serverless and containers for compute, such as AWS Lambda, Amazon S3 for static websites, and Amazon ECS. 
+   1. <strong>Select components of this workload to optimize cost in line with organization priorities</strong> - Factor in cost when selecting all components. This includes using application 1. <a target="_blank" href="?">and managed services, such as Amazon RDS, Amazon DynamoDB, Amazon SNS, and Amazon SES to reduce overall organization cost. Use serverless and containers for compute, such as AWS Lambda, Amazon S3 for static websites, and Amazon ECS. 
    
    1. <strong>Minimize license costs</strong> by using open source software, or software that does not have license fees: for example, Amazon Linux for compute workloads or migrate databases to Amazon Aurora.
 
@@ -1440,7 +1533,7 @@ Questions:
 
    1. <strong>Implement pricing models for all components of this workload</strong> - Permanently running resources should utilize reserved capacity such as Savings Plans or reserved Instances. Short term capacity is configured to use Spot Instances, or Spot Fleet. On demand is only used for short-term workloads that cannot be interrupted and do not run long enough for reserved capacity, between 25% to 75% of the period, depending on the resource type.
 
-   1. <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account level for commitment discounts.
+   1. <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account 1. <a target="_blank" href="?">for commitment discounts.
 
    <a name="PlanDataTransferCharges"></a>
 
@@ -1586,7 +1679,7 @@ AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3
 
 1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
   
-1. For Daily views, in preferences, check "Hourly and Resource Level Data" which costs more money.
+1. For Daily views, in preferences, check "Hourly and Resource 1. <a target="_blank" href="?">Data" which costs more money.
 
 https://www.youtube.com/watch?v=NfONXHkTefA
 How do I use the AWS Cost and Usage Report?
@@ -1610,7 +1703,7 @@ AWS Events
 <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/
 "><strong>AWS Sustainability hands-on labs:</strong></a>
 
-   * <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/">Level 300: Turning Cost & Usage Reports into Efficiency Reports</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/">1. <a target="_blank" href="?">300: Turning Cost & Usage Reports into Efficiency Reports</a>
    in an "improvement" process:
 
    1. Identify targets for improvement
