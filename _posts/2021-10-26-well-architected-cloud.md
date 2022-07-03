@@ -89,10 +89,12 @@ The five pillars are listed here <a href="#Ordering">discussed below</a>.
 
    5. <a href="#Cost">COST = <strong>Cost Optimization</strong></a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
 
-   6. <a href="#SustLabs">SUST = <strong>Sustainability</strong></a> (only by AWS) for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are stopping over-provisioning, using more efficient Gravaton (non-x86) CPUs, etc.
+Additions by individual vendors:
 
 <ul>
-   6. Google adds its own "System Design" pillar.
+   6. <a href="#SustLabs">SUST = <strong>Sustainability</strong></a> (only by AWS) for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are stopping over-provisioning, using more efficient Gravaton (non-x86) CPUs, etc.
+
+   6. Google adds its own <a target="_blank" href="https://cloud.google.com/architecture/framework/system-design">"System Design" pillar</a>.
 </ul>
 
 PROTIP: One mnemonic to make the 5 easier to remember is "<strong>CROPS</strong>".
