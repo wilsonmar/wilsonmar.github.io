@@ -25,6 +25,9 @@ Here are notes while I'm learning about Consul, attempting to be succinct and <s
 
 {% include whatever.html %}
 
+"PROTIP:" flags information unique to this website, based on my personal research and experience.
+
+
 ## Most Popular Websites about Consul
 
 The most popular websites about Consul:
@@ -163,6 +166,8 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
+<a target="_blank" href="https://www.youtube.com/watch?v=XsOt2MAAm3g">VIDEO</a> Microservices with Terraform, Consul, and Vault
+
 Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
 
 
@@ -179,12 +184,10 @@ There are several frameworks which security professionals use to organize contro
 
 <a name="ZeroTrust"></a>
 
-Here, the "CIA Triad" is applied to <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: the six pillars of Zero Trust:
+Here, the "CIA Triad" is applied to <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: the six pillars of Zero Trust (US NIST 800-12):
 
    <ul><a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"><img alt="Zero-Trust CIA Triad" width="1652" height="874" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"></a>
    </ul>
-
-   According the NIST ___:
 
    * <a href="#MutualTLS">Mutually authenticated</a> (server and client certificates)
    * Identity-driven authentication ("<a href="#Intentions">Intentions</a>" by name instead of by IP address)
@@ -207,10 +210,11 @@ The "Kill Chain", <a target="_blank" href="https://www.lockheedmartin.com/en-us/
 
 <a name="Attack"></a>
 
-Specific tools and techniques that adversaries use (on specific platforms) are organized within <a target="_blank" href="https://attack.mitre.org/docs/attack_matrix_poster_2021_june.pdf">PDF: 14 categories</a> in the <a target="_blank" href="https://attack.mitre.org/matrices/enterprise/">"ATT&CK" Enterprise Matrix</a> from Mitre Corporation (a US defense think-tank).
+Specific tools and techniques that adversaries use (on specific platforms) are organized within <a target="_blank" href="https://attack.mitre.org/docs/attack_matrix_poster_2021_june.pdf">PDF: 14 goals</a> in the <a target="_blank" href="https://attack.mitre.org/matrices/enterprise/">"ATT&CK" Enterprise Matrix</a> lifecycle from Mitre Corporation (a US defense think-tank) in 2013.
+
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Kill Chain </th><th> Mitre ATT&CK </th><th> <a href="#Mitigations">Mitigations</a> </th></tr>
+<tr><th> <a href="#KillChain">Kill Chain</a> </th><th> <a href="#Attack">Mitre ATT&CK</a> </th><th> <a href="#Mitigations">Mitigations</a> </th></tr>
 <tr valign="top"><td> 1. Reconnaissance (harvesting) </td><td>
    Reconnaissance,<br />
    Resource Development
@@ -244,9 +248,10 @@ Specific tools and techniques that adversaries use (on specific platforms) are o
 <tr valign="top"><td> 7. Actions on Objectives</td><td>
    Exfiltration,<br />
    Impact
-   </td><td> DL
+   </td><td> DLP (Data Loss Prevention)
    </td></tr>
 </table>
+
 
 <a name="Mitigations"></a>
 
@@ -304,7 +309,7 @@ PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written
 
    Instead of <strong>manually</strong> changing static IP addresses and firewall rules in Load Balancers, Consul enables dynamic allocation and distribution of addresses from the Consul central "Key-Value" datastore. (Large enterprises have up to 4,000 microservices running at the same time.)
 
-3. As a Network Engineer, specify <strong>routing (segmentation) of traffic</strong> between app client and to app services using allow/deny <strong>rules referenced by name</strong> rather than by IP address (such as "C can talk to A" or "C cannot talk to A.") so that it takes less time then using IP addresses, and result in less mistakes being made. This is called the <a target="_blank" href="https://www.hashicorp.com/resources/introduction-consul-connect">Consul Connect feature</a>.
+3. As a Network Engineer, specify <strong>routing (segmentation) of traffic</strong> between app client and to app services using allow/deny <strong>rules referenced by name</strong> rather than by IP address (such as "C can talk to A" or "C cannot talk to A.") so that it takes less time then using IP addresses, and result in less mistakes being made. This is called the <a target="_blank" href="https://www.hashicorp.com/resources/introduction-consul-connect">Consul Connect feature</a>. <a target="_blank" href="https://www.youtube.com/watch?v=UpR-3GBTKsk">VIDEO</a>
 
 4. Within the system for Enterprises, route traffic using a cluster of <strong>highly available (fault tolerant)</strong> Consul servers instead of using "East-West" load balancers, to remove load balancers (in front of each type of service) as a single-point-of-failure risk.
 
@@ -312,8 +317,7 @@ PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written
 
 6. Within the system, take <strong>automatic action when health status changes</strong> --  notifying apps and firewalls, to <strong>keep security rules current</strong> (using <a href="#NIA_CTS">NIA CTS</a>)
 
-7. Use the familiar Consul infrastructure across <strong>multiple clouds</strong> (AWS, Azure, GCP, etc.), to reduce the learning necessary by people working on different clouds.
-
+7. Use the familiar Consul infrastructure across <strong>multiple clouds</strong> (AWS, Azure, GCP, etc.), to reduce the learning necessary to people to work on different clouds. <a target="_blank" href="https://www.youtube.com/watch?v=xWwXLKhWzNk" title="DevOps Lab | Workload authentication to HashiCorp ">VIDEO</a>
 
 <a name="OSS_repo"></a>
 
@@ -574,7 +578,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
    4a.	Understand the capabilities and limitations of the KV store<br />
    4b.	Interact with the KV store using both the Consul CLI and UI<br />
    4c.	Monitor KV changes using watch<br />
-   4d.	Monitor KV changes using <a href="#envconsul">envconsul</a> and consul-template<br />
+   4d.	Monitor KV changes using <a href="#envconsul">envconsul</a> and <a href="#consul-template">consul-template</a><br />
    
 5.	<a href="#Snapshots">Back up and Restore</a> [<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569032#questions">BK</a><br />
    5a.	<a href="#Snapshots">Describe the content of a snapshot</a>
@@ -680,8 +684,6 @@ References about HCP Consul:
    * hashicorp/consul-esm = External service monitoring for Consul
 
    * https://github.com/hashicorp/terraform-aws-consul-starter = A Terraform module for creating an OSS Consul cluster as described by the HashiCorp reference architecture.
-
-   * https://github.com/hashicorp/envconsul = Launch a subprocess with environment variables using data from @hashicorp Consul and Vault.
 
    * https://github.com/hashicorp/consul-global-scale-benchmark = Terraform configurations and helper scripts for Consul Global Scale Benchmark
 
@@ -1657,18 +1659,40 @@ Use of environment variables also enable the same command call to be made for bo
 * <a href="#ACL-Vars">ACL variables</a>
 
 
+
 <a name="envconsul"></a>
 
 ### envconsul
 
    * https://www.consul.io/docs/intro/vs
+   * https://github.com/hashicorp/envconsul
    <br /><br />
 
-The envconsul utility reads and sets environmental variables for processes from data within the Consul Agent.
+The envconsul utility reads and sets environmental variables from data within the Consul Agent. It is installed when the Consul Agent is created. 
 
-Installation of the Consul Agent creates these folders and files:
+1. To launch a subprocess with environment variables using data from @hashicorp Consul and Vault.
 
-   * <tt>/etc/consul.d</tt>
+   <pre><strong>envconsul</strong></pre>
+
+
+<a name="consul-template"></a>
+
+### Consul Templates
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=kW0Vi3RvbvA&t=16m6s" title="Thomas Kula">VIDEO</a>
+   <br /><br />
+
+Consul-template is a separate binary which reads a template file to substitue variables defined between {{ }} ("moustashe quotes" ) and replace each with values. An example:
+
+   <pre>[client]
+host={{ env "DB_HOSTNAME" }}
+port={{ env "DB_PORT" }}
+{{ with secret "database/cred/my-backend" }}
+user={{ .Data.username }}
+password={{ .Data.password }}
+# Lease: {{ .LeaseID }}
+{{ end }}
+   </pre>
 
 
 <a name="RunForeground"></a>
@@ -1908,13 +1932,12 @@ Queries are also <a target="_blank" href="https://www.consul.io/docs/security/ac
 Query execution is subject to node/node_prefix and service/service_prefix policies.
 
 
-
 <hr />
 
 <a name="Backup"></a>
 <a name="Snapshots"></a>
 
-### Backup Data Snapshots
+## Backup Consul data to Snapshots
 
    * https://www.consul.io/commands/snapshot
    * https://www.consul.io/api-docs/snapshot
@@ -1922,24 +1945,26 @@ Query execution is subject to node/node_prefix and service/service_prefix polici
    * <a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569084#questions">BK on Udemy</a>
    <br /><br />
 
-Data in a Consul agent is captured in complete point-in-time snapshots (gzipped tar file) of Consul's committed state. Other data also in the Snapshot include:
+Consul keeps its data in memory (rather than in a database on a hard drive).
+
+So data in a Consul agent has to be captured in complete point-in-time snapshots (gzipped tar file) of Consul's committed state. Other data also in the Snapshot include:
 
    * Sessions
    * <a href="#PreparedQueries">Prepared queries</a>
    <br /><br />
 
-1. Specify the ACL Token ("12345678-1234-abcd-5678-1234567890ab")
+1. Specify the ACL Token (such as "12345678-1234-abcd-5678-1234567890ab") (also used for UI login):
 
    <pre><strong>export CONSUL_HTTP_TOKEN="${CONSUL_ACL_TOKEN}"
    </strong></pre>
 
-1. Define file name as a timestamp in UTC time zone, such as <tt>2022-05-16T03:10:15.386UTC.tgz</tt>
+1. PROTIP: Name files with a timestamp in UTC time zone, such as <tt>2022-05-16T03:10:15.386UTC.tgz</tt>
 
    <pre><strong>brew install coreutils
    CONSUL_BACKUP_FILENAME="$( gdate -u +'%Y-%m-%dT%H:%M:%S.%3N%Z' ).tgz"
    </strong></pre>   
 
-   Snapshots are typically performed on the LEADER node, but a FOLLOWER can take it if the <tt>\-\-stale</tt> flag is specified, such as when the Cluster has no Leader.
+   Snapshots are typically performed on the LEADER node, but when the Cluster has no Leader, a FOLLOWER can take it if the <tt>\-\-stale</tt> flag is specified.
 
 1. Create the snapshot manually using the CLI, API, 
 
@@ -3833,6 +3858,11 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 "Consul also provides service discovery, failure detection, multi-datacenter configuration, and key-value storage."
 
 <hr />
+
+
+https://www.youtube.com/watch?v=2Hnz9prnZis
+Fun With Consul: Build A Service Killswitch
+
 
 <a name="CorporateSocial"></a>
 

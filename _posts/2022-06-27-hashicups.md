@@ -85,11 +85,60 @@ nicholas jackson is the code to https://hub.docker.com/repository/docker/hashico
 Its <a target="_blank" href="https://github.com/hashicorp-demoapp/go-hckit/blob/master/go.mod">standard library of reusable abstractions</a> (in Golang)
 uses Opentracing, Zipkin, Jaeger.
 
+## HashiStack
+
+"HashiStack" is the nickname for an implementation that makes use of HashiCorp's main products:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Component </th><th> Usage </th></tr>
+<tr valign="top"><td> 
+<tr>
+<td style="text-align: center"><img src="https://blog.marcolancini.it/images/posts/icons/consul.png" width="50px" /> <em><a href="https://www.consul.io/">Consul</a></em></td>
+<td style="text-align: left">Service Discovery.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="https://blog.marcolancini.it/images/posts/icons/vault.png" width="50px" /> <em><a href="https://www.vaultproject.io/">Vault</a></em></td>
+<td style="text-align: left">Secrets Management.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="https://blog.marcolancini.it/images/posts/icons/nomad.png" width="50px" /> <em><a href="https://www.nomadproject.io/">Nomad</a></em></td>
+<td style="text-align: left">Applications Management.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="https://blog.marcolancini.it/images/posts/icons/docker.png" width="50px" /> <em><a href="https://www.docker.com/">Docker</a></em></td>
+<td style="text-align: left">Applications Containerization.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="https://blog.marcolancini.it/images/posts/icons/dnsmasq.png" width="50px" /> <em><a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">Dnsmasq</a></em></td>
+<td style="text-align: left">Internal Hostnames Resolution.</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td style="text-align: center"><img src="https://blog.marcolancini.it/images/posts/icons/traefik.png" width="50px" /> <em><a href="https://traefik.io/">Traefik</a></em></td>
+<td style="text-align: left">Reverse Proxy.</td>
+</tr>
+</tbody>
+</table>
+
+https://blog.marcolancini.it/2019/blog-offensive-infrastructure-hashistack/
+
+
 ## Consul K8s Prometheus Grafana dashboard
 
 <a target="_blank" href="https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp">https://github.com/hashicorp/consul-k8s-prometheus-grafana-hashicups-demoapp</a>
 from Sep 2020 (by <a target="_blank" href="https://www.linkedin.com/in/derek-strickland-59258a/">Derek Strickland</a>)
 contains application and dashboard definitions for the <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/kubernetes-layer7-observability">Consul Layer 7 observability with Kubernetes guide located at learn.hashicorp.com</a>
+
+## References
 
 https://www.consul.io/docs/agent/telemetry
 
