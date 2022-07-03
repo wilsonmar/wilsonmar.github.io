@@ -89,9 +89,9 @@ The five pillars are listed here <a href="#Ordering">discussed below</a>.
 
    5. <a href="#Cost">COST = <strong>Cost Optimization</strong></a> = The ability to achieve business outcomes at the lowest price point - Managing costs to maximize the value delivered
 
-PROTIP: One mnemonic to make the 5 easier to remember is "<strong>CROPS</strong>".
+PROTIP: "<strong>CROPS</strong>" is a mnemonic to make the 5 easier to remember.
 
-Additions by individual vendors:
+Additional pillars added by individual vendors:
 
 <ul>
    6. <a href="#SustLabs">SUST = <strong>Sustainability</strong></a> (only by AWS) for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are stopping over-provisioning, using more efficient Gravaton (non-x86) CPUs, etc.
@@ -113,7 +113,7 @@ Have each member of your team do a mental exercise to <strong>prioritize the pil
 
    * PROTIP: It's really not appropriate to rank these pillars. They need to be done pretty much in parallel. So we need to look in each and prioritize the impact of tasks within each pillar.
 
-QUESTION: Is it appropriate to assign a leader/team to be responsible for a separate pillar?
+QUESTION: Is it appropriate to assign a leader/team to be responsible for each separate pillar?
 
 
 ## Common definitions:
@@ -131,9 +131,9 @@ Make sure everyone has a common understanding of each word:
    The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships. 
    The "<strong>AWS Organization</strong>" refers to the top-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">Organization setting, with special permissions to an administrator of it.
 
-   <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.runbook.en.html">Runbooks</a> are predefined procedures containing the minimum information necessary to successfully perform the procedure.
+   <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.runbook.en.html"><strong>Runbooks</strong></a> are predefined procedures containing the minimum information necessary to successfully perform the procedure.
 
-   <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.playbook.en.html">Playbooks</a> document the investigation process - the predefined steps to gathering applicable information, identifying potential sources of failure, isolating faults, or determining the root cause of issues.
+   <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.playbook.en.html"><strong>Playbooks</strong></a> document the investigation process - the predefined steps to gathering applicable information, identifying potential sources of failure, isolating faults, or determining the root cause of issues.
 
    <a target="_blank" href="https://wa.aws.amazon.com/wat.concepts.wa-concepts.en.html">Other AWS concepts</a>
 
@@ -201,7 +201,7 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
 5. One pillar at a time, in the <a href="#Pillars">priority identified</a>, select each question, then select applicable items.
 
 
-   ### Lens
+   ### AWS Lenses
 
 6. If applicable, select a <strong>lens</strong> (listed alphabetically here) to reveal additional terms, processes, etc.:
 

@@ -101,24 +101,31 @@ I. <strong>Multi-region</strong> redundancy using <strong>complex Network Topolo
 
 ## Legacy mismatches
 
-In my presention to come, I'll be showing several concerns that Consul solves:
+Implementation of microservices within legacy infrastructure creates these concerns:
 
    A. "East-West" (internal) Load Balancers are a single point of failure. So an alternative is needed for them.
 
    B. Traffic is blindly sent based on static IP addresses without identity authentication (a violation of "Zero Trust" mandate).
+
    C. Developers now spend too much time coding network communication logic in each program (for retries, tracing, secure TLS, etc.) - mTLS.
 
    D. Developers now spend too much time requesting permissions to be defined based on IP addresses.
+
    E. Network departments now spend too much time connecting static IP addresses for internal communications among services.
 
+Additionally, Kubernetes currently have these deficiencies:
+
    F. Kubernetes does not check if a service is healthy before trying to communicate.
+
    G. Kubernetes does not encrypt communication between services.
+
    H. Kubernetes does not provide a way to communicate with databases and cloud service outisde Kubernetes.
-   <br /><br />
 
-Here's how Consul solves these problems.
+PROTIP: Here's how Consul solves the mismatches:
 
-Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure in on-prem servers and in clouds.
+Consul provides a mechanism for connecting dynamic microservices with legacy networking infrastructure. 
+
+Since Consul is added as additional servers within the same infrastructure, changes to app code is not necessary. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
 
 Consul "discovers" services (configured to be discoverable) to capture each service's assigned IP address, <strong>associated with a name</strong> in its <strong>service registry</strong> (a Key-Value store) which is used to map what service communicates with any other service.
 
