@@ -91,7 +91,9 @@ The five pillars are listed here <a href="#Ordering">discussed below</a>.
 
    6. <a href="#SustLabs">SUST = <strong>Sustainability</strong></a> (only by AWS) for "Minimizing the environmental impacts of running cloud workloads. It includes a shared responsibility model for sustainability, understanding impact, and maximizing utilization to minimize required resources and reduce downstream impacts". Examples are stopping over-provisioning, using more efficient Gravaton (non-x86) CPUs, etc.
 
-   \6. Google adds its own "System Design" pillar.
+<ul>
+   6. Google adds its own "System Design" pillar.
+</ul>
 
 PROTIP: One mnemonic to make the 5 easier to remember is "<strong>CROPS</strong>".
 
@@ -340,7 +342,7 @@ AWS' WellArchitectedLabs.com provides dozens of labs refered in AWS Certificatio
 
 <a name="Terraform"></a>
 
-PROTIP: We are in the process of creating for each for each lab Terraform (with Bash shell scripts and Ansible, where applicable).
+PROTIP: <strong>[Terraform]</strong> links to instead create each lab using Terraform files (with Bash shell scripts and Ansible, where applicable). That's instead of manual clicking and typing, so you can apply Infrastructure-as-Code for better collaboration versioning, security, etc.
 
 #### &nbsp; &nbsp; &nbsp; &nbsp; Operational Excellence Labs
 
