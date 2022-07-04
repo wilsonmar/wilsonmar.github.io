@@ -1095,7 +1095,7 @@ Alternative repo:
 
    <a name="cgsb"></a>
 
-   #### Consul Global Scale Benchmark
+#### Consul Global Scale Benchmark
 
    The biggest way to go is using <a target="_blank" href="https://github.com/hashicorp/consul-global-scale-benchmark">https://github.com/hashicorp/consul-global-scale-benchmark</a> used to prove that a Service Mesh Control Plane of 5 HashiCorp Consul Servers across 3 availability zones in us-east-1 are able to update 10,000 Consul/Nomad client nodes and 172,000+ services in under 1 second. Each Consul Server run on c5d.9xlarge instance types on EC2 having 36 vCPUs and 72 Gigabytes of memory. It's described by  <a target="_blank" href="https://www.hashicorp.com/cgsb">White paper: "Service Mesh at Global Scale"</a> and 
    <a target="_blank" href="https://www.hashicorp.com/resources/hashicast-episode-30-anubhav-mishra-paul-banks-hashicorp">Podcast</a> with creator: Anubhav Mishra (Office of the CTO).
@@ -1103,7 +1103,7 @@ Alternative repo:
 
    <a name="AWS_Repo"></a>
 
-   #### Identify Terraform repo in GitHub
+#### Identify Terraform repo in GitHub
    
    To create the app infra which Consul works on, consider the
    https://github.com/hashicorp-guides
@@ -1153,7 +1153,7 @@ Alternative repo:
 
    <a name="HCP_Account"></a>
 
-   ### Hashicorp Cloud Account
+### Hashicorp Cloud Account
 
 1. Sign into:
    <a target="_blank" href="https://cloud.hashicorp.com/products/consul">
@@ -1403,7 +1403,7 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
 
    <a name="OneConsulAgent"></a>
 
-   ### One Agent as Client or Server
+### One Agent as Client or Server
    
    PROTIP: The Consul executable binary is designed to run either as a local long-running client <strong>daemon</strong> or in <strong>server mode</strong>. 
    
@@ -1429,7 +1429,7 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
 
    <a name="HCDiag"></a>
 
-   ### Install HCDiag
+### Install HCDiag
 
 1. Install for macOS <a target="_blank" href="https://github.com/hashicorp/homebrew-tap">from Homebrew</a>:
 
@@ -1688,7 +1688,7 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
    <pre>Usage: consul [--version] [--help] &LT;command> [&LT;args>]
 &nbsp;
 Available commands are:
-    <a href="#ACL">acl</a>            Interact with Consul's ACLs
+    <a href="#ACL">acl            Interact with Consul's ACLs</a>
     agent          Runs a Consul agent
     catalog        Interact with the catalog
     config         Interact with Consul's Centralized Configurations
@@ -3021,7 +3021,7 @@ iptables -t nat -A OUTPUT -d localhost -d upd -m
 
    <a name="ServiceMesh"></a>
 
-   ### Service Mesh
+### Service Mesh
 
    <strong>Multi-service Service Mesh</strong>: secure service-to-service traffic with <strong>Mutual TLS certificates</strong>, plus enable progressive application delivery practices.
     - Application networking and security with identity-based authorization
@@ -3444,10 +3444,11 @@ advertise_addr_wan = "10.1.4.11"
 
 Within CLI:
    
-   <pre>license_path = "/etc/consul.d/consul.hclic"
+   <pre><strong>license_path</strong> = "/etc/consul.d/consul.hclic"
    </pre>
    
-   <tt>advertise_addr</tt> are reacheable outside the datacenter.
+   <pre><strong>advertise_addr</strong></pre>
+   are reacheable outside the datacenter.
 
    Agent configurations have a different IP address and these settings to <strong>auto-join</strong> based on cloud (AWS) tags:
 
@@ -3473,12 +3474,12 @@ performance = {
 
    <tt>connect</tt> refers to <strong>Consul Connect</strong> (disabled by default for security).
 
-   <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability. 
+   <tt>raft_multiplier = 1</tt> overrides for high-performance production usage the <a target="_blank" href="https://www.consul.io/docs/install/performance">default value 5 for dev usage</a>. This setting multiplies the time between failed leader detection and new leader election. Higher numbers extends the time (slower) to reduce leadership churn and associated unavailability.
 
 
    <a name="TLS-config"></a>
 
-   ### TLS configuration
+### TLS configuration
 
    Consul has root and intermediate CA capability built-in to create certificates.
    
