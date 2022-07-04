@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-06-13"
+date: "2022-07-03"
 file: "hashicorp-consul"
 title: "HashiCorp Consul"
 excerpt: "Enterprise-grade secure Zero-Trust routing to replace East-West load-balancing using service names rather than static IP addresses. Enhance Service Mesh with mTLS and health-based APIs in AWS, Azure, GCP, and other clouds running Kubernetes as well as ECS, EKS, VMs, databases, even mainframes outside Kubernetes"
@@ -287,10 +287,11 @@ F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://ww
 G. Better Resilency from <strong>scheduled Backups</strong> of Consul state to snapshot files -- this makes backups happen without needing to remember to take manual effort.
 
 <a name="EntFeatureH"></a>
-H. <strong>"Redundancy Zones"</strong> for adding read capacity (with "non-voting nodes") -- providing scalability to handle high load traffic.
+H. Consul is designed for additional Consul servers to be added to a Consul Cluster to achieve enterprise-scale scalability. The performance scaling mechanism involves adding <strong>"Redundancy Zones"</strong> which only read metadata (as "non-voting" nodes).
 
    * Large enterprises have up to 4,000 microservices running at the same time.
    * "Performance begins to degrade after 7 voting nodes due to server-to-server Raft protocol traffic, which is expensive on the network."
+   * <a href="#cgsb">Global Consul Scale Benchmark tests (below)</a> proved Consul's enterprise scalability.
    <br /><br />
 
 <a name="EntFeatureI"></a>
@@ -299,21 +300,34 @@ I. <strong>Consul Service Mesh (also called Enterprise "Consul Connect")</strong
    As with HashiCorp's Terraform, because the format of infrastructure configuration across <strong>multiple clouds</strong> (AWS, Azure, GCP, etc.) are similar in Consul, the learning necessary for people to work on different clouds is reduced, which yields faster implementations in case of mergers and acquisitions which require multiple cloud platforms to be integrated quickly. <a target="_blank" href="https://www.youtube.com/watch?v=xWwXLKhWzNk" title="DevOps Lab | Workload authentication to HashiCorp ">VIDEO</a>
 
 <a name="EntFeatureJ"></a>
-J. <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
+J. Consul can be setup for Disaster Recovery (DR) from failure to an entire cloud Region. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. 
 
-   <a href="#cgsb">Global Consul Scale Benchmark tests (below)</a> proved Consul's enterprise scalability.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"><img alt="Consul Multi-Region setup with 5 nodes each" width="1298" height="728" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"></a>
 
+   Fail-over to a whole Region is typically setup to involve manual intervention. However, the use of Consul Service Mesh with Health Checks would enable automated failover within the context of a SOC (Security Operations Center)Governance Model.
+
+   References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=gRV4sAD0YrU">VIDEO: "Consul and Complex Networks"</a>
    <br /><br />
 
 <a name="EntFeatureK"></a>
-K. The above features enable a cluster of Consul servers for Enterprises to provide both <strong>Highly Availability (fault tolerance)</strong> to whole Availability Zone failure and Disaster Recovery (DR) from whole Region failure. Additional Consul servers can also be added to handle additional load.
+K.    
+<a name="EntFeatureL"></a>
+L. 
 
-   Consul is designed for enterprise scale with HA and performance scaling mechanisms which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability.
+<strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
 
-   Within a single datacenter, Consul provides <strong>automatic failover</strong> for services by omitting failed service instances from DNS lookups and by providing service health information in APIs. 
-   
-   References:
+
+
+The above features enable a cluster of Consul servers for Enterprises to provide both <strong>Highly Availability (fault tolerance)</strong> to whole Availability Zone failure 
+
+   Within a single datacenter, Consul can be setup (using a combination of Service Mesh and Health Check) to provide <strong>automatic failover</strong> for services by omitting failed service instances from DNS lookups and by providing service health information in APIs.
+
+s which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. 
+
+
+
+References:
    * https://hashicorp-services.github.io/enablement-consul-slides/markdown/architecture/#1
    * Consul's <a target="_blank" href="https://www.consul.io/docs/internals/coordinates.html">network coordinate subsystem</a>
    <br /><br />
@@ -326,12 +340,29 @@ K. The above features enable a cluster of Consul servers for Enterprises to prov
 
 This section provides more context and detail about security features of Consul.
 
-There are several frameworks which security professionals use to organize controls they install to prevent ransomware, data leaks, and other potential security catatrophes:
+There are several frameworks which security professionals use to organize controls they install to prevent ransomware, data leaks, and other potential security catatrophes. Here are the most well-known:
 
+   * <a href="#WAF">Well-Architected Framework</a>
    * <a href="#ZeroTrust">"Zero Trust" in CIA</a>
    * <a href="#KillChain">"Kill Chain"</a>
    * <a href="#Attack">ATT&CK Enterprise Framework</a>
+   * <a href="#SOC2">SOC2/ISO 27000 attestations</a>
    <br /><br />
+
+   PROTIP: Within the description of each framework, links are provided here to specific features which Consul provides (as <a href="#Mitigations">Security Mitigations</a>).
+
+<a name="WAF"></a>
+
+### Well-Architected Framework (WAF)
+
+A "Well-Architected Framework" is referenced by all major cloud providers.
+   * 
+https://wa.aws.amazon.com/wat.pillar.security.en.html
+
+The security:
+
+   * 
+
 
 <a name="ZeroTrust"></a>
 
@@ -347,10 +378,13 @@ Zero-trust applies to those three:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"><img alt="Zero-Trust CIA Triad" width="1652" height="874" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655279628/zero-trust-220613-1652x874_o01oyw.png"></a>
 
    * <strong>Identity-driven</strong> authentication (by requester name instead of by IP address)
+
    * <a href="#MutualTLS">Mutually authenticated</a> -- both server and client use a cryptographic certificate to 
+
    * <strong>Encrypt</strong> for transit and at rest (baked into app lifecycle via CI/CD automation)
 
    * Each request is <strong>time-bounded</strong> (instead of long-lived static secrets to be hacked)
+   
    * Audited & Logged (for SOC to do forensics)
    <br /><br />
 
@@ -359,6 +393,8 @@ Zero-trust applies to those three:
    * US NIST SP 800-207 defines "Zero Trust Architecture" (ZTA) at <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">PDF: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a> (50 pages)
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT Consul: Zero Trust Networking with Service Mesh"</a>
    <br /><br />
+
+zzz
 
 
 <a name="KillChain"></a>
@@ -472,6 +508,7 @@ Additionally:
    * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
 
    * Change Management using source version control systems such as Git clients interacting with the GitHub cloud
+
 
 <a name="UseCases"></a>
 
@@ -2862,8 +2899,10 @@ spec:
    * https://github.com/hashicorp/consul-k8s
    * https://learn.hashicorp.com/tutorials/consul/kubernetes-reference-architecture?in=consul/kubernetes-production
    * <a target="_blank" href="https://www.youtube.com/watch?v=mxeMdl0KvBI">VIDEO: Introduction to HashiCorp Consul</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Qbo8Oc-pJwc">VIDEO: What is the Crawl, Walk, Run Journey of Adopting Consul</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=UHLr8UsHuDA">VIDEO: HashiCorp Consul Introduction: What is a Service Mesh?</a> by (former) Developer Advocate <a target="_blank" href="https://www.linkedin.com/in/nicolereneehubbard/">Nicole Hubbard</a> 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Qbo8Oc-pJwc">VIDEO: "What is the Crawl, Walk, Run Journey of Adopting Consul"</a>
+   
+   * <a target="_blank" href="https://www.youtube.com/watch?v=UHLr8UsHuDA">VIDEO: "HashiCorp Consul Introduction: What is a Service Mesh?"</a> by (former) Developer Advocate <a target="_blank" href="https://www.linkedin.com/in/nicolereneehubbard/">Nicole Hubbard</a> showing use of Shipyard and K3s.
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=K93ZaUzwEWk">VIDEO: How does Consul work with Kubernetes and other workloads?</a>
    * https://platform9.com/blog/understanding-kubernetes-loadbalancer-vs-nodeport-vs-ingress/
    * https://learn.hashicorp.com/tutorials/terraform/multicloud-kubernetes?in=consul/kubernetes
@@ -3283,6 +3322,8 @@ Serf provides for:
    * Events broadcasting to perform cross-datacenter requests based on  Membership information
 
    * Failure detection to gracefully handle loss of connectivity
+
+### No Vault - Hard Way
 
 If Vault is not used, do it the hard way:
 

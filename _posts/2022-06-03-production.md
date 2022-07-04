@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-06-03"
+file: "production"
 title: "Get to Production (with less stress)"
 excerpt: "Specific strategies and procedures to address concerns, on schedules, with metrics,"
 tags: [security]
-date: "2022-06-03"
-file: "production"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
   feature: https://user-images.githubusercontent.com/300046/61989997-46bab400-aff5-11e9-9045-8075ede3d5a3.jpg
@@ -480,3 +480,11 @@ https://learn.hashicorp.com/tutorials/vault/production-hardening
 https://learn.hashicorp.com/tutorials/consul/production-checklist
 
 https://www.theguardian.com/lifeandstyle/2022/jun/05/how-to-make-good-decisions
+
+
+
+## More on front-end styling #
+
+This is one of several topics:
+
+{% include front-end_links.html %}

@@ -1,11 +1,11 @@
 ---
 layout: post
+date: "2022-07-01"
+file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
 modified:
 tags: [google, cloud]
-date: "2022-07-01"
-file: "kubernetes"
 image:
 # kubernetes-head-1900x500-472493.jpg
   feature: https://user-images.githubusercontent.com/300046/39955449-b791191e-558b-11e8-8bde-9042df1b66ab.jpg
