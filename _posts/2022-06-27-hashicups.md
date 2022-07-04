@@ -72,7 +72,9 @@ Code to create an instance of Hashicups is (Apache 2) open-sourced at the GitHub
 
 SREs look at this regarding infrastructure:
 
-   * https://github.com/hashicorp-demoapp/instruqt uses <a target="_blank" href="https://www.softwareadvice.com/workflow/shipyard-profile/">Shipyard data workflows</a> https://shipyard.build/
+   * https://github.com/hashicorp-demoapp/instruqt uses <a target="_blank" href="https://www.softwareadvice.com/workflow/shipyard-profile/">Shipyard data workflows</a> https://shipyard.run/ referencing 
+   https://github.com/shipyard-run/shipyard to run Cloud Native Dev deployments on local environments (managing dependencies better than Docker Compose & Postman)
+
    * https://github.com/hashicorp-demoapp/hashicups-setups
    * https://github.com/hashicorp-demoapp/infrastructure
 

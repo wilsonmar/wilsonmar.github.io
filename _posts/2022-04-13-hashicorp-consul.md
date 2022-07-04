@@ -92,7 +92,7 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    C. So mechanisms intended to secure external traffic (such as IPTables) are drafted for use to secure internal traffic among app services. Such mechanisms are usually owned and managed for the whole enterprise by the Networking department. So developers spend too much time <strong>requesting permissions</strong> for accessing IP addresses. And Network departments now spend too much time connecting internal static IP addresses for internal communications among services when many don't consider it part of their job.
 
    <a name="MismatchD"></a>
-   D. Due to lack of authentication (using IP Addresses), current routing does not have <strong>mechanisms for fine-grained permission policies</strong> that limit what operation (such as Read, Write, Update, Delete, etc.) is allowed.
+   D. Due to lack of authentication (using IP Addresses), current routing does not have <strong>mechanisms for fine-grained permission policies</strong> that limit what operation (such as Read, Write, Update, Delete, etc.) is allowed. That implements "Least Privilege" principles.
 
    <a name="MismatchE"></a>
    E. Also due to lack of authentication, current routing does not have the metadata to <strong>segment traffic</strong> in order to split a percentage of traffic to different targets for various types of testing.
@@ -301,7 +301,10 @@ I. <strong>Consul Service Mesh (also called Enterprise "Consul Connect")</strong
 <a name="EntFeatureJ"></a>
 J. <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
 
-   A global performance test proved Consul's enterprise worthiness -- running 20,000 transactions per minute.
+   <a href="#cgsb">Global Consul Scale Benchmark tests (below)</a> proved Consul's enterprise scalability.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gRV4sAD0YrU">VIDEO: "Consul and Complex Networks"</a>
+   <br /><br />
 
 <a name="EntFeatureK"></a>
 K. The above features enable a cluster of Consul servers for Enterprises to provide both <strong>Highly Availability (fault tolerance)</strong> to whole Availability Zone failure and Disaster Recovery (DR) from whole Region failure. Additional Consul servers can also be added to handle additional load.
@@ -422,6 +425,8 @@ Consul is part of the HashiCorp "Cloud Operating Model" product line which provi
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
 
 These products are collectively referred to as "HashiStack".
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gf43TcWjBrE">VIDEO: "12-Factor Apps and the HashiStack"</a>
+   <br /><br />
 
 Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
 
@@ -770,7 +775,7 @@ Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-
    * <a target="_blank" href="https://www.hashicorp.com/blog/consul-service-on-azure-production-tier">announced Sep 2020</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=YowP4xV2Jf0&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=7" title="Oct 14, 2020">VIDEO:
    "Introduction to HashiCorp Cloud Platform (HCP): Goals and Components"</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Aq1uTozNajI" title="Oct 15, 2019">VIDEO: "Consul Service Mesh: Deep Dive"</a>
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=UDbR-TVDUm8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37" title="Apr 1, 2021 by  Anubhav Mishra @build1point0">VIDEO: "Service Mesh - Beyond the Hype"</a>
    * hashicorp/consul-snippets Private = Collection of Consul snippets. Configuration bits, scripts, configuration, small demos, etc.
 
@@ -798,8 +803,6 @@ Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-
    * hashicorp/consul-esm = External service monitoring for Consul
 
    * https://github.com/hashicorp/terraform-aws-consul-starter = A Terraform module for creating an OSS Consul cluster as described by the HashiCorp reference architecture.
-
-   * https://github.com/hashicorp/consul-global-scale-benchmark = Terraform configurations and helper scripts for Consul Global Scale Benchmark
 
    <br /><br />
 
@@ -1099,6 +1102,8 @@ Alternative repo:
 
    The biggest way to go is using <a target="_blank" href="https://github.com/hashicorp/consul-global-scale-benchmark">https://github.com/hashicorp/consul-global-scale-benchmark</a> used to prove that a Service Mesh Control Plane of 5 HashiCorp Consul Servers across 3 availability zones in us-east-1 are able to update 10,000 Consul/Nomad client nodes and 172,000+ services in under 1 second. Each Consul Server run on c5d.9xlarge instance types on EC2 having 36 vCPUs and 72 Gigabytes of memory. It's described by  <a target="_blank" href="https://www.hashicorp.com/cgsb">White paper: "Service Mesh at Global Scale"</a> and 
    <a target="_blank" href="https://www.hashicorp.com/resources/hashicast-episode-30-anubhav-mishra-paul-banks-hashicorp">Podcast</a> with creator: Anubhav Mishra (Office of the CTO).
+
+   See also: https://github.com/hashicorp/consul-global-scale-benchmark = Terraform configurations and helper scripts for Consul Global Scale Benchmark
 
 
    <a name="AWS_Repo"></a>
@@ -1436,7 +1441,6 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
    <pre><strong>brew install hcdiag</strong></pre>
 
    <pre>==> Downloading https://releases.hashicorp.com/hcdiag/0.2.0/hcdiag_0.2.0_darwin_amd64.zip
-######################################################################## 100.0%
 ==> Installing hcdiag from hashicorp/tap
 ==> Caveats
 The darwin_arm64 architecture is not supported for this product
@@ -1510,8 +1514,6 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 
    Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
 
-   QUESTION: Would this 
-
 
    <a name="InstallConsulLinux"></a>
 
@@ -1535,7 +1537,7 @@ apt-get -y install consul-enterprise
 
    <a name="InstallConsulBinary"></a>
 
-   ### Install Consul Agent on macOS
+### Install Consul Agent on macOS
 
 1. To setup your mac for Consul, use the approach described in my blog: 
 
@@ -1584,7 +1586,7 @@ console
 
    <a name="UseHashicorpTaps"></a>
 
-   ### Install using Brew taps
+   ### Install using Brew taps on MacOS
 
    In the script, the Consul Agent is installed using HashiCorp's tap, as described at:
    * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
@@ -2572,7 +2574,7 @@ node "" {
 
    Policy dispositions in rules include "read", "write", "read", "list".
 
-   TODO: To define "least privilege", provide "remove" permissions to a separate account than the account which performs "add".
+   TODO: To define according to "Least Privilege" principles, provide "remove" permissions to a separate account than the account which performs "add".
    
 1. Initiate the policy using the policy file:
 
@@ -2646,6 +2648,7 @@ Consul offers three types of Gateways in the data path to validate authenticity 
    * https://www.consul.io/docs/connect
    * https://www.udemy.com/course/hashicorp-consul/learn/lecture/24649092#questions
    * <a target="_blank" href="https://www.youtube.com/watch?v=AqgEXwzexn8&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=6" title="Mar 31, 2021">VIDEO: "Zero Trust Security for Legacy Apps with Service Mesh"</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Aq1uTozNajI" title="Oct 15, 2019">VIDEO: "Consul Service Mesh: Deep Dive"</a>
    <br /><br />
 
 This Consul Enterprise feature is called the <a target="_blank" href="https://www.hashicorp.com/resources/introduction-consul-connect">"Consul Connect"</a>. <a target="_blank" href="https://www.youtube.com/watch?v=UpR-3GBTKsk">VIDEO</a>
