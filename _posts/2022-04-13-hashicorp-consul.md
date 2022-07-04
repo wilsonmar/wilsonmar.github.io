@@ -123,6 +123,10 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    <a name="MismatchI"></a>
    I. Kubernetes does not provide a way to communicate with components and cloud <strong>services outside Kubernetes</strong> such as databases, ECS, other EKS clusters, Serverless, Observability platforms, etc. Thus, Kubernetes by default does not by itself enable deep transaction tracing.
 
+   References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2Hnz9prnZis">
+   Fun With Consul: Build A Service Killswitch</a>
+   <br /><br />
 
 <hr />
 
@@ -313,7 +317,7 @@ K. The above features enable a cluster of Consul servers for Enterprises to prov
 
 <a name="SecurityFrameworks"></a>
 
-## Security Frameworks: Zero Trust, etc.
+## Security Frameworks
 
 This section provides more context and detail about security features of Consul.
 
@@ -3980,11 +3984,6 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 
 <hr />
 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=2Hnz9prnZis">
-Fun With Consul: Build A Service Killswitch</a>
-
-
 <a name="CorporateSocial"></a>
 
 ## HashiCorp Corporate Social 
@@ -3996,9 +3995,5 @@ Ambassadors (<a target="_blank" href="https://www.hashicorp.com/blog/hashicorp-a
 LinkedIn: https://www.linkedin.com/company/hashicorp
 
 Facebook: https://www.facebook.com/HashiCorp
-
-
-## Competition
-
 
 # END
