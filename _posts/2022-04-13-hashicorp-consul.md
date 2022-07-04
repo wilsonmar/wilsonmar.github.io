@@ -700,7 +700,7 @@ Because this document aims to present concepts in a logic flow for learning, it 
    5c.	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
    
 6.	<a href="#ServiceMesh">Use Consul Service Mesh</a><br />
-   6a.	Understand <a href="#ConsulConnect">Consul Connect service mesh</a> high 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">architecture<br />
+   6a.	Understand <a href="#ConsulConnect">Consul Connect service mesh</a> high-level architecture<br />
    6b.	Describe configuration for registering a service proxy<br />
    6c.	Describe intentions for <a href="#ConsulConnect">Consul Connect service mesh</a><br />
    6d.	Check intentions in both the Consul CLI and UI<br />
@@ -1710,7 +1710,7 @@ Available commands are:
     maint          Controls node or service maintenance mode
     <a href="#members">members</a>        Lists the members of a Consul cluster
     monitor        Stream logs from a Consul agent
-    operator       Provides cluster-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">tools for Consul operators
+    operator       Provides cluster-level tools for Consul operators
     reload         Triggers the agent to reload configuration files
     rtt            Estimates network round trip time between nodes
     services       Interact with services
@@ -3394,7 +3394,7 @@ service_prefix "" {
    <pre><strong>create acl token create \
   -description "ACL replication token" \
   -policy-name acl-replication  
-   </pre>
+   </strong></pre>
 
    Sample response:
 
@@ -3431,7 +3431,7 @@ Policies:
    
    From v1.10.0 on, a full <strong>license file</strong> must be defined in the server config file before installation:
 
-   <pre>log_1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">     = "INFO"
+   <pre>log_level     = "INFO"
 server         = true
 ui             = true
 datacenter     = "us-east-1"
@@ -3732,7 +3732,7 @@ You can see how Consul behaves on Power 9 (PPC) and IBM Z (S390x) "mainframe sup
 
 ### Using Vagrant
 
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by HashiCorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
+1. <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by HashiCorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
 
 
 1. Install Vagrant and download the Vagrantfile 
