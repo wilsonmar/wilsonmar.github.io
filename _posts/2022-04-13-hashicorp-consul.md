@@ -45,12 +45,12 @@ The most popular websites about Consul:
 1. Reddit:<br />
    https://www.reddit.com/search/?q=hashicorp%20consul
 
-1. Licensed Support from HashiCorp is conducted using a ___ system:<br />
-   ___
+1. Licensed Support from HashiCorp is conducted using those authorized to access HashiCorp's ZenDesk system:<br />
+   https://hashicorp.freshservice.com/helpdesk/tickets
 
 <hr />
 
-## About Microservices
+## Due to Microservices
 
 > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
@@ -95,12 +95,13 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    D. Due to lack of authentication (using IP Addresses), current routing does not have <strong>mechanisms for fine-grained permission policies</strong> that limit what operation (such as Read, Write, Update, Delete, etc.) is allowed.
 
    <a name="MismatchE"></a>
-   <a name="KeyValue"></a>
    E. Also due to lack of authentication, current routing does not have the metadata to <strong>segment traffic</strong> in order to split a percentage of traffic to different targets for various types of testing.
+
+      DEFINITION: "Micro segmentation" is the logical division of the internal network into distinct security segments at the service/API level. Its use enables granular access control to, and visiblity of, discrete service interface points. Reference: <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/CNAP_RefDesign_v1.0.pdf">PDF: "US Department of Defense (DoD) Cloud Native Access Point (CNAP) Reference Design (RD)"</a>
    
-   The segmentation that "East-West" (internal) Load Balancers with advanced "ISO Level 7" capability (such as F5) can perform is more limited that what Consul can do with its more granualar metadata about each service. 
+      The segmentation that "East-West" (internal) Load Balancers with advanced "ISO Level 7" capability (such as F5) can perform is more limited that what Consul can do with its more granualar metadata about each service. 
    
-   Not only that, Load Balancers are <strong>a single point of failure</strong>. So an alternative is needed which has been architected for resilience and high availability to failures in individual nodes, Availability Zones, and whole Regions.
+      Not only that, Load Balancers are <strong>a single point of failure</strong>. So an alternative is needed which has been architected for resilience and high availability to failures in individual nodes, Availability Zones, and whole Regions.
 
    <a name="MismatchF"></a>
    F. In an effort mitigate the network features lacking, many developers now spend too much time coding network-related communication logic into each application program (for retries, tracing, secure TLS, etc.).
@@ -198,7 +199,8 @@ when it comes online, based on the configuration defined for each service. This 
 
    <a name="Policies"></a>
    <a name="Roles"></a>
-
+   <a name="KeyValue"></a>
+   
    #### Roles and Policies
 
 1. Consul's <strong>Key/Value store</strong> holds a <strong>"service registry"</strong> containing <strong>ACL (Access Control List) policy entries</strong> which define what operations (such as Read, Write, Update, Delete, etc.) is allowed or denied for each <strong>role</strong> assigned to each named entity. This <a href="#MismatchD">adds fine-grained security functionality</a> needed for "Zero Trust".
@@ -350,7 +352,8 @@ Zero-trust applies to those three:
    <br /><br />
 
    References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: the six pillars of Zero Trust (US NIST 800-12):
+   * <a target="_blank" href="https://www.youtube.com/watch?v=aE_on5mZQoQ&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=21" titile="What are the 5 Marks of a Hybrid Cloud Operating Model? Jan 24, 2020">VIDEO</a>: "The six pillars of Zero Trust"
+   * US NIST SP 800-207 defines "Zero Trust Architecture" (ZTA) at <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">PDF: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a> (50 pages)
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT Consul: Zero Trust Networking with Service Mesh"</a>
    <br /><br />
 
@@ -407,7 +410,31 @@ A comparison between the above:
 
 <a name="Mitigations"></a>
 
-## Mitigations
+## Mitigation Actions
+
+
+<a name="COM"></a>
+   
+### Part of a Cloud Operating Model suite
+
+Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
+
+These products are collectively referred to as "HashiStack".
+
+Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
+
+   References:
+   * <a target="_blank" href="https://www.youtube.com/watch ? v=XsOt2MAAm3g">VIDEO</a> Microservices with Terraform, Consul, and Vault
+   <br /><br />
+
+
+### Zero Trust Maturity Model
+
+HashiCorp's HashiStack is used by many enterprises to transition from "Traditional" to "Optimal", as detailed by the US CISA "Zero Trust Maturity Model" at <a target="_blank" href="https://www.cisa.gov/sites/default/files/publications/CISA%20Zero%20Trust%20Maturity%20Model_Draft.pdf">https://www.cisa.gov/sites/default/files/publications/CISA%20Zero%20Trust%20Maturity%20Model_Draft.pdf</a> (19 pages):
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1656899266/zerotrust-maturity-22-06-1456x1326_x0xvl6.png"><img alt="Zero Trust Maturity" width="1456" height="1326" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1656899266/zerotrust-maturity-22-06-1456x1326_x0xvl6.png"></a>
+
 
 Categories of "Defense in Depth" techniques listed in <a target="_blank" href="https://attack.mitre.org/docs/attack_roadmap_2020_october.pdf">PDF: Mitre's map of defense to data sources</a>:
 
@@ -469,21 +496,6 @@ In summary, use cases for Consul (listed at https://www.consul.io/):
 * Reduce risk of breach from better guardrails (using Sentinel & OPA)
 * Compliance with regulatory demands (central source of truth, immutable, automated processes)
 <br /><br />
-
-
-<hr />
-
-<a name="COM"></a>
-   
-#### Part of a Cloud Operating Model suite
-
-Consul is part of the HashiCorp "Cloud Operating Model" product line which provides modern mechanisms for better security and efficiency in access and communication processes:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"><img alt="hashi-oss-prods-3130x1306" width="3130" height="1306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652140723/hashi-oss-prods-3130x1306_rso9yn.png"></a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=XsOt2MAAm3g">VIDEO</a> Microservices with Terraform, Consul, and Vault
-
-Consul, Vault, and Boundary together provides the technologies and workflows to achieve <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2/ISO27000</a> and "Zero Trust" mandates in commercial enterprises and within the U.S. federal government and its suppliers.
 
 
 <hr />
