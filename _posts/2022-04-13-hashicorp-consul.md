@@ -30,6 +30,13 @@ The most popular websites about Consul:
 1. The marketing home page for HashiCorp's Consul:<br />
    https://www.consul.io/
 
+1. Wikipedia entry:<br />
+   https://www.wikiwand.com/en/Consul_(software)
+
+   "Consul was initially released in 2014 as a service discovery platform. In addition to service discovery, it now provides a full-featured service mesh for secure service segmentation across any cloud or runtime environment, and distributed key-value storage for application configuration.[2]
+   
+   Registered services and nodes can be queried using a DNS interface or an HTTP interface.[1] Envoy proxy provides security, observability, and resilience for all application traffic."
+
 1. Detailed technical documentation:<br />
    https://www.consul.io/docs
 
