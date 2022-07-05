@@ -33,9 +33,11 @@ The most popular websites about Consul:
 1. Wikipedia entry:<br />
    https://www.wikiwand.com/en/Consul_(software)
 
-   "Consul was initially released in 2014 as a service discovery platform. In addition to service discovery, it now provides a full-featured service mesh for secure service segmentation across any cloud or runtime environment, and distributed key-value storage for application configuration.[2]
-   
+   "Consul was initially released in 2014 as a service discovery platform. In addition to service discovery, it now provides a full-featured service mesh for secure service segmentation across any cloud or runtime environment, and distributed key-value storage for application configuration.
    Registered services and nodes can be queried using a DNS interface or an HTTP interface.[1] Envoy proxy provides security, observability, and resilience for all application traffic."
+
+1. Open-source:<br />
+   https://github.com/hashicorp/consul
 
 1. Detailed technical documentation:<br />
    https://www.consul.io/docs
@@ -59,9 +61,9 @@ The most popular websites about Consul:
 
 ## Due to Microservices
 
-> "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
-
 In hopes of building more reliable systems in the cloud faster and cheaper, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures (which are more difficult to evolve).
+
+> "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
 Microservices seem like a good idea because it promises:
    * Their <strong>Ephemeral services</strong> enable each service to move and scale independently (reduce dev teams waiting for each other)
@@ -77,26 +79,16 @@ Microservices seem like a good idea because it promises:
 
 However, each new paradigm comes with new problems. 
 
-A common explanation of what Consul does references three technical categories:
-
-The concerns that Consul solves can be categorized thus:
-
-> "Consul is a datacenter runtime that provides 1) service discovery, 2) configuration, and 3) orchestration."
-
 Implementation of microservices within legacy infrastructure and "fortress with a moat" mindset (rather than <a href="#ZeroTrust">"Zero Trust"</a> and other security principles) creates these concerns:
 
-#### Orchestration
-
    <a name="MismatchA"></a>
-   A. When traffic is routed based on IP addresses, traffic is <strong>sent blindly without identity authentication</strong> (a violation of <a href="#ZeroTrust">"Zero Trust" mandates</a>).
+   A. When traffic is routed based on static IP addresses, traffic is <strong>sent blindly without identity authentication</strong> (a violation of <a href="#ZeroTrust">"Zero Trust" mandates</a>).
 
    <a name="MismatchB"></a>
    B. Traffic routing mechanisms (such as IPTables) were designed to manage external traffic, not traffic <strong>internally between services</strong>.
 
-### Service Discovery
-
    <a name="MismatchC"></a>
-   C. So mechanisms intended to secure external traffic (such as IPTables) are drafted for use to secure internal traffic among app services. Such mechanisms are usually owned and managed for the whole enterprise by the Networking department. So developers spend too much time <strong>requesting permissions</strong> for accessing IP addresses. And Network departments now spend too much time connecting internal static IP addresses for internal communications among services when many don't consider it part of their job.
+   C. Mechanisms intended to secure external traffic (such as IPTables) are usually owned and managed for the whole enterprise by the Networking department. So when their mechanism is drafted for use to secure internal traffic, app services developers need to spend time <strong>requesting permissions</strong> for accessing IP addresses. And Network departments now spend too much time connecting internal static IP addresses for internal communications among services when many don't consider it part of their job.
 
    <a name="MismatchD"></a>
    D. Due to lack of authentication (using IP Addresses), current routing does not have <strong>mechanisms for fine-grained permission policies</strong> that limit what operation (such as Read, Write, Update, Delete, etc.) is allowed. That implements "Least Privilege" principles.
@@ -111,14 +103,12 @@ Implementation of microservices within legacy infrastructure and "fortress with 
       Not only that, Load Balancers are <strong>a single point of failure</strong>. So an alternative is needed which has been architected for resilience and high availability to failures in individual nodes, Availability Zones, and whole Regions.
 
    <a name="MismatchF"></a>
-   F. In an effort mitigate the network features lacking, many developers now spend too much time coding network-related communication logic into each application program (for retries, tracing, secure TLS, etc.).
+   F. In an effort mitigate the network features lacking, many developers now feel they spend too much time <strong>coding network-related communication logic</strong> into each application program (for retries, tracing, secure TLS, etc.). When different developers use different techniques for that, errors occur which are difficult to track down.
 
 
 ### Kubernetes a partial solution
 
    <a target="_blank" href="https://wilsonmar.github.com/kubernetes">Kubernetes (largely from Google)</a> has been popular as "orchestrator" to replace instances of pods (holding Containers) when any of them go offline.
-
-   NOTE: Kubernetes is currently not mature when it comes to adding more pods (to scale up) or removing pods (to scale down).
 
    However, core Kubernetes currently still has these deficiencies:
 
@@ -131,6 +121,9 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    <a name="MismatchI"></a>
    I. Kubernetes does not provide a way to communicate with components and cloud <strong>services outside Kubernetes</strong> such as databases, ECS, other EKS clusters, Serverless, Observability platforms, etc. Thus, Kubernetes by default does not by itself enable deep transaction tracing.
 
+   <a name="MismatchJ"></a>
+   J. Kubernetes is currently not mature when it comes to automatically adding more pods (to scale up) or removing pods (to scale down).
+   
    References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=2Hnz9prnZis">
    Fun With Consul: Build A Service Killswitch</a>
@@ -148,8 +141,13 @@ The list below send you to how each edition of Consul solves the mismatches desc
 
    * <a href="#FOSSFeatures">Free Open Source</a>
    * <a href="#EnterpriseFeatures">Paid Enterprise</a> for self-installed/managed on-prem or in private clouds
-   * SaaS in the HCP (HashiCorp Platform) in the cloud
+   * <a href="#HCP">SaaS in the HCP (HashiCorp Platform) in the HashiCorp-managed cloud</a>
    <br /><br />
+
+A common explanation of what Consul does references three technical categories:
+
+> "Consul is a datacenter runtime that provides 1) service discovery, 2) configuration, and 3) orchestration."
+
 
 <hr />
 
@@ -1583,11 +1581,128 @@ apt-get -y install consul-enterprise
 
 ### Install Consul Agent on macOS
 
-1. To setup your mac for Consul, use the approach described in my blog: 
+1. To setup your mac for development work, use the approach described in my blog: 
 
    https://wilsonmar.github.io/mac-setup
 
-2. Notice there are two options to install the Consul Agent:
+   PROTIP: There are two options to install the Consul Agent:
+   A. Download
+   B. Homebrew
+   <br /><br />
+
+#### A. Download
+
+1. Use a browser to view a list of releases:
+
+   https://releases.hashicorp.com/consul/
+
+1. Click one that is NOT "alpha" or "beta", such as:
+
+   consul_1.12.2+ent
+
+   for https://releases.hashicorp.com/consul/1.12.2+ent/
+
+1. Click the "darwin". "arm64" if your macOS laptop has Apple Silicon M1/M2 chip.
+
+   consul_1.12.2+ent_darwin_arm64.zip
+
+   #### Check SHA256SUM
+   
+   File names containing "SHA256SUMS" are for verifying whether download was complete.
+
+   The steps below generate a hash of the downloaded file, then compares it with the hash generated by the author, also downloaded. Since even one bit difference between the zip file would generate a different hash, we compare the before and after to determine if the file was corrupted.
+
+   HashiCorp provides 3 different hash files.
+   See https://www.hashicorp.com/security
+
+1. Show the hash of files listed within the SHA256SUMS file:
+
+   <pre><strong>cat consul_1.12.2+ent_SHA256SUMS
+   </strong></pre>
+
+   <pre>dc7d0b536b2646812a3b6bea88648f9b0b6f9ec13a850ebc893383faf2267f1d  consul_1.12.2+ent_darwin_amd64.zip
+1213b93c6465de0c66de043bc3f7afa9934d5122e8f662cb76885a156af58a88  consul_1.12.2+ent_darwin_arm64.zip
+   </pre>
+
+1. Select whether to use gpg instead of shasum.
+
+   See https://www.youtube.com/watch?v=4bbyMEuTW7Y
+
+#### Use GPG 
+   
+1. Click to download the ".sig" file such as
+
+   consul_1.12.2+ent_SHA256SUMS.72D7468F.sig
+
+   BTW: The file was created using a command such as <br />
+   <tt>gpg --detach-sign consul_1.12.2+ent_darwin_arm64.zip</tt>
+
+   Ignore the other files, such as<br />
+   consul_1.12.2+ent_SHA256SUMS.sig
+
+1. Switch to Terminal.
+1. If you have not installed gpg, do so. Verify if you have it installed:
+
+   <pre><strong>where gpg
+   </strong></pre>
+
+   The desired response is:<br />
+   <tt>/usr/local/bin/gpg</tt>
+
+1. Command:
+   
+   <pre><strong>gpg --verify consul_1.12.2+ent_SHA256SUMS.sig \
+   consul_1.12.2+ent_darwin_arm64.zip
+   </strong></pre>
+
+   The response desired is "Good signature":
+
+   <pre>gpg: assuming signed data in 'consul_1.12.2+ent_SHA256SUMS'
+gpg: Signature made Fri Jun  3 13:58:17 2022 MDT
+gpg:                using RSA key 374EC75B485913604A831CC7C820C6D5CD27AB87
+gpg: Can't check signature: No public key
+   </pre>
+
+   QUESTION: Huh?
+
+1. Skip to <a href="#CLI-commands">use CLI commands</a>
+
+#### Use shasum to check SHA256SUM
+
+1. Verify if you have the program installed:
+
+   <pre><strong>where shasum
+   </strong></pre>
+
+   If the response is "/usr/bin/shasum", download<br />
+   consul_1.12.2+ent_SHA256SUMS for use with the shasum utility
+
+1. Generate a hash based on the zip file downloaded:
+
+   <pre>shasum consul_1.12.2+ent_darwin_arm64.zip</pre>
+
+1. Compare hashes:
+
+   <pre><strong>sha256sum -c consul_1.12.2+ent_SHA256SUMS
+   </strong></pre>
+
+   The zip file is not corrupted if you see:
+
+   <pre>consul_1.12.2+ent_darwin_arm64.zip: OK</pre>
+
+   Ignore lines containing "FAILED open or read" for other hashes in the SHASUM file.
+
+1. Unzip the zip file: within Finder, click the zip file to unzip it to yield file: <tt>consul</tt> (with no file extension).
+
+1. mv consul /usr/local/bin
+1. rm consul_1.12.2+ent_darwin_arm64.zip
+1. rm consul_1.12.2+ent_SHA256SUMS
+
+1. Skip to <a href="#CLI-commands">use CLI commands</a>
+
+#### B. Install from Homebrew using brew
+
+1. Notice 
 
    <pre><strong>brew search consul</strong></pre>
 
@@ -1628,9 +1743,12 @@ console
 
 9. Press Return/Enter on your keyboard to begin execution. 
 
+9. Skip to <a href="#CLI-commands">use CLI commands</a>
+
+
    <a name="UseHashicorpTaps"></a>
 
-   ### Install using Brew taps on MacOS
+### Install using Brew taps on MacOS
 
    In the script, the Consul Agent is installed using HashiCorp's tap, as described at:
    * https://learn.hashicorp.com/tutorials/consul/get-started-install?in=consul/getting-started
@@ -1665,24 +1783,11 @@ Or, if you don't want/need a background service you can just run:
 
    <tt>-advertise</tt> is the interface that Consul agent asks others use to connect to it. Useful when the agent has multiple interfaces or the IP of a NAT device to reach through.
 
+<hr />
 
-   ### Install by Download
+<a name="CLI-commands"></a>
 
-   PROTIP: Download Enterprise binaries with name ending with "+ent" from Fastly servers at:<br />
-   https://releases.hashicorp.com/consul/
-
-   File names containing "SHA256SUMS" are for verifying whether download was complete.
-
-   Download "darwin_amd64" files for older Intel MacOS.<br />
-   Download "darwin_arm64" files for newer M1/M2 MacOS with Apple Silicon.
-
-1. Unzip
-1. Verify using check sum.
-1. Add to $PATH.
-
-   <a name="CLI-commands"></a>
-
-   ### Consul CLI commands
+## Consul CLI commands
 
    <a name="RunBackground">Option A: Run Consul in background, which restarts automatically at login:</a>
 
