@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-03-03"
+file: "python-install"
 title: "Python Install (Conda Anaconda Miniconda Pip) on MacOS"
 excerpt: "Confusion and errors from too many alternatives and options"
 tags: [python, apple, mac, setup]
-date: "2022-03-03"
-file: "python-install"
 image:
 # pic white python logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
@@ -274,14 +274,12 @@ Most new features introduced with Python 3 are not backwards compatible with ver
 
 1. Python3 is installed in a different folder than Python 2.
 
-   <pre><strong>
-   type -a python3
+   <pre><strong>type -a python3
    </strong></pre>
 
    The response:
 
-   <pre>
-   python3 is /Users/wilsonmar/.pyenv/shims/python3
+   <pre>python3 is /Users/wilsonmar/.pyenv/shims/python3
    python3 is /usr/local/bin/python3
    </pre>
 
@@ -612,6 +610,7 @@ this</a> with:
    On Ubuntu 17.04+ Linux:
 
    <pre><strong>sudo apt update;
+   </strong></pre>
 
    On previous Ubuntu versions, see https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
 
