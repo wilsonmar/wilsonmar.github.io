@@ -167,6 +167,7 @@ The main component of the Consul product -- the Consul Agent executable "consul"
 </ul>
 
    References:
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-getting-started-cert/table-of-contents" title="3h 54m Released 9 May 2022">Video course on Pluralsight: "Getting Started with HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/weshigbee/">Wes Higbee</a>
    * <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=EPcmgr04twM" title="by ex-HashiCorp Nicole Hubbard Apr 24, 2020">VIDEO: "Using Consul for Network Observability & Health Monitoring"</a> referencing <a target="_blank" href="https://github.com/hashicorp/consul-demo-tracking/datadog">this repo</a>
    <br /><br />
@@ -191,17 +192,20 @@ Consul manages applications made available as <strong>Services</strong> on the n
 
 <strong>Nodes</strong> are Consul servers which manage network traffic. They can be installed separately from application infrastructure.
 
+   <a name="UnMismatchA"></a>
 1. Rather than <a href="#MismatchA">A. blindly routing traffic based on IP addresses, which have no basis for authentication</a> (a violation of <a href="#ZeroTrust">"Zero Trust" mandates</a>), 
 <strong>Consul routes traffic based on named entities</strong> (such as "C can talk to A" or "C cannot talk to A.").
 
    <a name="AuthMethods"></a>
    Consul Enterprise can authenticate using several <strong>Authentication Methods</strong>
    
+   <a name="UnMismatchB"></a>
 1. Rather than <a href="#MismatchB">B. routing based on IPTables designed to manage external traffic</a>, 
 Consul routes from its list of "Intentions" which define which other entities each entity (name) can access.
 
    Consul does an <strong>authentication hand-shake</strong> with each service before sending it data. A rogue service cannot pretend to be another legitimate service unless it holds a legitimate encryption certificate assigned by Consul. And each certificate expires, which Consul works to rotate.
 
+   <a name="UnMismatchD"></a>
 1. Rather than <a href="#MismatchC">C. manually creating a ticket for manual action by Networking people connecting internal static IP addresses</a>, Consul <strong>discovers the network metadata (such as IP addresses)</strong> of each application service
 when it comes online, based on the configuration defined for each service. This also means that Network people would spend less time for internal communications, freeing them up for analysis, debugging, and other tasks.
 
@@ -211,23 +215,25 @@ when it comes online, based on the configuration defined for each service. This 
    
    #### Roles and Policies
 
+   <a name="UnMismatchD"></a>
 1. Consul's <strong>Key/Value store</strong> holds a <strong>"service registry"</strong> containing <strong>ACL (Access Control List) policy entries</strong> which define what operations (such as Read, Write, Update, Delete, etc.) is allowed or denied for each <strong>role</strong> assigned to each named entity. This <a href="#MismatchD">adds fine-grained security functionality</a> needed for "Zero Trust".
 
    As Consul redirects traffic, it secures the traffic by generating certificates used to <strong>encrypt traffic</strong> on both ends of communication, taking care of automatic key rotation hassles, too. BTW This mechanism is called "mTLS" (mutual Transport Layer Security).
 
-   <a name="MismatchE"></a>
+   <a name="UnMismatchE"></a>
 1. Instead of <a href="#MismatchE">E. requiring a Load Balancer</a> or application coding to split a percentage of traffic to different targets for various types of testing, Consul can <strong>segment traffic based on attributes</strong> associated with each entity. This enables more sophisticated logic than what traditional Load Balancer offer.
 
    Consul can route based on various algorithms (like F5) "Round-robin", "Least-connections", etc.
 
-   That means Consul can, in many cases, replace "East-West" load balancers</a>, to remove load balancers (in front of each type of service) as a single-point-of-failure risk.
+   That means Consul can, in many cases, replace "East-West" load balancers, to remove load balancers (in front of each type of service) as a single-point-of-failure risk.
 
-1. With Consul, instead of <a href="#MismatchF">F. Developers spending too much time coding network communication logic</a> in each program (for retries, tracing, secure TLS, etc.)</a>, networking logic can be managed in a GUI.
+   <a name="UnMismatchF"></a>
+1. With Consul, instead of <a href="#MismatchF">F. Developers spending too much time coding network communication logic</a> in each program (for retries, tracing, secure TLS, etc.), networking can be managed by Consul and made visible in the Consul GUI.
 
-   Since Consul is added as additional servers in parallel in the same infrastructure, changes usually involve configuration rater than app code changes. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
+   Since Consul is added as additional servers in parallel in the same infrastructure, changes usually involve configuration rather than app code changes. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
 
-<a href="#MismatchG">
-1. Within the system, obtain the <strong>health status of each app server</strong> so that <strong>traffic is routed only to healthy app services</strong>, so provide a more aware approach than load balancers blindly routing (by Round-Robin).
+   <a name="UnMismatchG"></a>
+1. Within the system, obtain the <strong>health status of each app server</strong> so that <strong>traffic is routed only to healthy app services</strong>, so provide a more aware approach than <a href="#MismatchG">load balancers blindly routing</a> (by Round-Robin, etc.).
 
 
 ### Partial Kubernetes Remediation using Service Mesh
@@ -244,7 +250,7 @@ when it comes online, based on the configuration defined for each service. This 
 
    When app developers allow all communication in and out of their app through a Sidecar proxy, they <strong>can focus more on business logic</strong> rather than the intricacies of retries after network failure, traffic encryption, transaction tracing, etc.
 
-   Due to <a href="#MismatchG">G. Kubernetes and Sidecars not encrypting communications between services, Consul is becoming a popular add-on to Kubernetes Service Mesh because it can <strong>add mTLS (use of mutual TLS certificates used to encrypt transmissions</strong> on both server and clients) without coding in application code.
+   Due to <a href="#MismatchG">G. Kubernetes and Sidecars not encrypting communications between services</a>, Consul is becoming a popular add-on to Kubernetes Service Mesh because it can <strong>add mTLS (use of mutual TLS certificates used to encrypt transmissions</strong> on both server and clients) without coding in application code.
 
    Although <a href="#MismatchH">H. Kubernetes does not check if a service is healthy before trying to communicate</a>, Consul performs health checks and maintains the status of each service. Thus, <strong>Consul never routes traffic to known unhealthy pods</strong>. And so apps don't need to be coded with complex timeouts and retry logic.
 
@@ -1637,11 +1643,11 @@ apt-get -y install consul-enterprise
 
    consul_1.12.2+ent_SHA256SUMS.72D7468F.sig
 
+   BTW: "72D7468F" is described at "PGP Public Keys" within https://www.hashicorp.com/security
+
    BTW: The file was created using a command such as <br />
    <tt>gpg --detach-sign consul_1.12.2+ent_darwin_arm64.zip</tt>
    (which outputs <tt>gpg: using "C7AF3CB20D417CAE08C03507A931D0E933B64F94" as default secret key for signing</tt>).
-
-   "72D7468F" is described at "PGP Public Keys" within https://www.hashicorp.com/security
 
    consul_1.12.2+ent_SHA256SUMS.sig
 
@@ -4155,6 +4161,8 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
    * It focuses on consistency rather than availability.
 
 "Consul also provides service discovery, failure detection, multi-datacenter configuration, and key-value storage."
+
+
 
 <hr />
 
