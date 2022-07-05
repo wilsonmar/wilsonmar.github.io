@@ -96,11 +96,13 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    <a name="MismatchE"></a>
    E. Also due to lack of authentication, current routing does not have the metadata to <strong>segment traffic</strong> in order to split a percentage of traffic to different targets for various types of testing.
 
+   <ul>
       DEFINITION: "Micro segmentation" is the logical division of the internal network into distinct security segments at the service/API level. Its use enables granular access control to, and visiblity of, discrete service interface points. Reference: <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/CNAP_RefDesign_v1.0.pdf">PDF: "US Department of Defense (DoD) Cloud Native Access Point (CNAP) Reference Design (RD)"</a>
    
       The segmentation that "East-West" (internal) Load Balancers with advanced "ISO Level 7" capability (such as F5) can perform is more limited that what Consul can do with its more granualar metadata about each service. 
    
       Not only that, Load Balancers are <strong>a single point of failure</strong>. So an alternative is needed which has been architected for resilience and high availability to failures in individual nodes, Availability Zones, and whole Regions.
+   </ul>
 
    <a name="MismatchF"></a>
    F. In an effort mitigate the network features lacking, many developers now feel they spend too much time <strong>coding network-related communication logic</strong> into each application program (for retries, tracing, secure TLS, etc.). When different developers use different techniques for that, errors occur which are difficult to track down.
