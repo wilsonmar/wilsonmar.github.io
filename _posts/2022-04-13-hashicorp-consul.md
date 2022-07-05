@@ -97,22 +97,22 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    E. Also due to lack of authentication, current routing does not have the metadata to <strong>segment traffic</strong> in order to split a percentage of traffic to different targets for various types of testing.
 
    <ul>
-      DEFINITION: "Micro segmentation" is the logical division of the internal network into distinct security segments at the service/API level. Its use enables granular access control to, and visiblity of, discrete service interface points. Reference: <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/CNAP_RefDesign_v1.0.pdf">PDF: "US Department of Defense (DoD) Cloud Native Access Point (CNAP) Reference Design (RD)"</a>
-   
+      DEFINITION: "Micro segmentation" is the logical division of the internal network into distinct security segments at the service/API level. Its use enables granular access control to, and visiblity of, discrete service interface points. [<a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/CNAP_RefDesign_v1.0.pdf" title="PDF: US Department of Defense (DoD) Cloud Native Access Point (CNAP) Reference Design (RD)">Reference</a>]
+      <br /><br />
       The segmentation that "East-West" (internal) Load Balancers with advanced "ISO Level 7" capability (such as F5) can perform is more limited that what Consul can do with its more granualar metadata about each service. 
-   
-      Not only that, Load Balancers are <strong>a single point of failure</strong>. So an alternative is needed which has been architected for resilience and high availability to failures in individual nodes, Availability Zones, and whole Regions.
+      <br /><br />   
+      Not only that, Load Balancers are <strong>a single point of failure</strong>. So an alternative is needed which has been architected for (lower cost) resilience and high availability to failures in individual nodes, Availability Zones, and whole Regions.
    </ul>
 
    <a name="MismatchF"></a>
-   F. In an effort mitigate the network features lacking, many developers now feel they spend too much time <strong>coding network-related communication logic</strong> into each application program (for retries, tracing, secure TLS, etc.). When different developers use different techniques for that, errors occur which are difficult to track down.
+   F. To mitigate the network features lacking, many developers now feel they spend too much time <strong>coding network-related communication logic</strong> into each application program (for retries, tracing, secure TLS, etc.). When different developers use different techniques for that, errors occur which are difficult to track down.
 
 
 ### Kubernetes a partial solution
 
    <a target="_blank" href="https://wilsonmar.github.com/kubernetes">Kubernetes (largely from Google)</a> has been popular as "orchestrator" to replace instances of pods (holding Containers) when any of them go offline.
 
-   However, core Kubernetes currently still has these deficiencies:
+   However, core Kubernetes defaults currently has these deficiencies:
 
    <a name="MismatchG"></a>
    G. Kubernetes does <strong>not check if a service is healthy</strong> before trying to communicate with it. This leads to the need for coding of applications to perform time-outs, which is a distraction and usually not a skill by most business application coders.
@@ -127,7 +127,7 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    J. Kubernetes is currently not mature when it comes to automatically adding more pods (to scale up) or removing pods (to scale down).
    
    References:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=2Hnz9prnZis">
+   * <a target="_blank" href="https://www.youtube.com/watch?v=2Hnz9prnZis">VIDEO: 
    Fun With Consul: Build A Service Killswitch</a>
    <br /><br />
 
@@ -155,7 +155,7 @@ A common explanation of what Consul does references three technical categories:
 
 <a name="FOSSFeatures"></a>
 
-## Free Open Source Software Features
+### Free Open Source Software Features
 
 The main component of the Consul product -- the Consul Agent executable "consul" -- can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
 <ul>
@@ -173,9 +173,10 @@ The main component of the Consul product -- the Consul Agent executable "consul"
 
 PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
 
+
 <a name="ConsulConcepts"></a>
 
-### Consul Concepts in UI Menu
+#### Consul Concepts in UI Menu
 
 <a name="UIMenu"></a>
 
@@ -480,7 +481,7 @@ Consul, Vault, and Boundary together provides the technologies and workflows to 
 
 ### Zero Trust Maturity Model
 
-HashiCorp's HashiStack is used by many enterprises to transition from "Traditional" to "Optimal", as detailed by the US CISA "Zero Trust Maturity Model" at <a target="_blank" href="https://www.cisa.gov/sites/default/files/publications/CISA%20Zero%20Trust%20Maturity%20Model_Draft.pdf">https://www.cisa.gov/sites/default/files/publications/CISA%20Zero%20Trust%20Maturity%20Model_Draft.pdf</a> (19 pages):
+HashiCorp's HashiStack is used by many enterprises to transition from "Traditional" to "Optimal", as detailed by the <a target="_blank" href="https://www.cisa.gov/sites/default/files/publications/CISA%20Zero%20Trust%20Maturity%20Model_Draft.pdf" title="(19 pages)">US CISA "Zero Trust Maturity Model"</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1656899266/zerotrust-maturity-22-06-1456x1326_x0xvl6.png"><img alt="Zero Trust Maturity" width="1456" height="1326" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1656899266/zerotrust-maturity-22-06-1456x1326_x0xvl6.png"></a>
 
 
@@ -1638,8 +1639,10 @@ apt-get -y install consul-enterprise
 
    BTW: The file was created using a command such as <br />
    <tt>gpg --detach-sign consul_1.12.2+ent_darwin_arm64.zip</tt>
+   (which outputs <tt>gpg: using "C7AF3CB20D417CAE08C03507A931D0E933B64F94" as default secret key for signing</tt>).
 
-   Ignore the other files, such as<br />
+   "72D7468F" is described at "PGP Public Keys" within https://www.hashicorp.com/security
+
    consul_1.12.2+ent_SHA256SUMS.sig
 
 1. Switch to Terminal.
