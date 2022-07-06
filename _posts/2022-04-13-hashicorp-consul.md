@@ -55,7 +55,7 @@ The most popular websites about Consul:
    https://www.reddit.com/search/?q=hashicorp%20consul
 
 1. Licensed Support from HashiCorp is conducted using those authorized to access HashiCorp's ZenDesk system:<br />
-   https://hashicorp.freshservice.com/helpdesk/tickets
+   https://hashicorp.zendesk.com/agent/dashboard
 
 <hr />
 
@@ -196,8 +196,7 @@ Consul manages applications made available as <strong>Services</strong> on the n
 1. Rather than <a href="#MismatchA">A. blindly routing traffic based on IP addresses, which have no basis for authentication</a> (a violation of <a href="#ZeroTrust">"Zero Trust" mandates</a>), 
 <strong>Consul routes traffic based on named entities</strong> (such as "C can talk to A" or "C cannot talk to A.").
 
-   <a name="AuthMethods"></a>
-   Consul Enterprise can authenticate using several <strong>Authentication Methods</strong>
+   <a href="#AuthMethods">Consul Enterprise can authenticate using several <strong>Authentication Methods</strong></a>
    
    <a name="UnMismatchB"></a>
 1. Rather than <a href="#MismatchB">B. routing based on IPTables designed to manage external traffic</a>, 
@@ -271,15 +270,14 @@ Features:
 <a name="EntFeatureA"></a>
 <a name="Tokens"></a>
 
-#### Tokens
-
+<a name="AuthMethods"></a>
 A. <strong>Authenticate using a variety </strong> of methods. In addition to ACL Tokens, use enteprise-level identity providers (such as Okta and GitHub, Kuberos with Windows, etc.) for SSO (Single Sign On) based on indentity information maintained in email systems, so that addition and deletions of email get reflected in applications immediately.
 
 <a name="EntFeatureB"></a>
 B. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once -- this avoids the need for manual effort and elimination of times when different versions exist at the same time.
 
 <a name="EntFeatureC"></a>
-C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns. A full set of <strong>audit logs</strong> makes Consul a fully enterprise-worthy utility.
+C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns. A full set of <strong>audit logs</strong> makes Consul a fully enterprise-worthy utility. 
 
 <a name="EntFeatureD"></a>
 D. Enable <strong>Multi-Tenancy of tenants</strong> enabled using "Admin Partitions" as "Namespaces" to segment data into separate different teams within a single Consul datacenter, a key "Zero Trust" principal to diminish the "blast radius" from potential compromise of credentials to a specific partition.
@@ -295,7 +293,7 @@ such as notifying apps and firewalls, to <strong>keep security rules current</st
    The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
 
 <a name="EntFeatureF"></a>
-F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems
+F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems. For example, when ACL processing is disabled, the SOC team is alerted.
 
 <a name="EntFeatureG"></a>
 G. Better Resilency from <strong>scheduled Backups</strong> of Consul state to snapshot files -- this makes backups happen without needing to remember to take manual effort.
@@ -314,20 +312,18 @@ I. <strong>Consul Service Mesh (also called Enterprise "Consul Connect")</strong
    As with HashiCorp's Terraform, because the format of infrastructure configuration across <strong>multiple clouds</strong> (AWS, Azure, GCP, etc.) are similar in Consul, the learning necessary for people to work on different clouds is reduced, which yields faster implementations in case of mergers and acquisitions which require multiple cloud platforms to be integrated quickly. <a target="_blank" href="https://www.youtube.com/watch?v=xWwXLKhWzNk" title="DevOps Lab | Workload authentication to HashiCorp ">VIDEO</a>
 
 <a name="EntFeatureJ"></a>
-J. Consul can be setup for Disaster Recovery (DR) from failure to an entire cloud Region. Consul has a mechanism called "WAN Federation" which replicate service metadata across regions to enable multi-region capability. 
+J. Consul can be setup for Disaster Recovery (DR) from failure to an entire cloud Region. Consul has a mechanism called "<strong>WAN Federation</strong>" which distributes service metadata across regions to enable multi-region capability. 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"><img alt="Consul Multi-Region setup with 5 nodes each" width="1298" height="728" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"></a>
 
-   Fail-over to a whole Region is typically setup to involve manual intervention. However, the use of Consul Service Mesh with Health Checks would enable automated failover within the context of a SOC (Security Operations Center)Governance Model.
+   Fail-over to a whole Region is typically setup to involve manual intervention. 
+   
+   Use of Consul Service Mesh with Health Checks enables <strong>automated failover</strong>.
 
    References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=gRV4sAD0YrU">VIDEO: "Consul and Complex Networks"</a>
    <br /><br />
 
-<a name="EntFeatureK"></a>
-K.    
-<a name="EntFeatureL"></a>
-L. 
 
 <strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
 

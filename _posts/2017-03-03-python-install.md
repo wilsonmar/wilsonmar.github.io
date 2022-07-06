@@ -758,7 +758,7 @@ You must give at least one requirement to install (see "pip help install")
    Automatically download the packages listed
    (after you manually change the /path/to)
 
-   <pre><source>source bin/activate
+   <pre><strong>source bin/activate
    pip install -r /path/to/requirements.txt  
    </strong></pre>
 
@@ -776,7 +776,7 @@ You must give at least one requirement to install (see "pip help install")
    </strong></tt>
 
 
-   ### pip scikit-learn #
+### pip scikit-learn #
 
 0. In a Terminal on any folder, globally install dependencies libraries:
 
@@ -1466,7 +1466,7 @@ to PATH in your /Users/mac/.bash_profile ? [yes|no]
 
    The response is like:
 
-   <pre>conda 4.3.9
+   <pre>conda 4.11.0
    </pre>
   
 
