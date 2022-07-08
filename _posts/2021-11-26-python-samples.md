@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2021-12-12"
+file: "python-samples"
 title: "Python Samples"
 excerpt: "Commentary on a practical example of how to code Python securely in a production setting."
 tags: [python, coding]
-date: "2021-12-12"
-file: "python-samples"
 image:
 # python-samples-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
@@ -2309,6 +2309,7 @@ API Security Top 10
 Mobile Top 10
 Internet of Things Top 10
 
+
 ### Levenshtein/Edit Distance
 
 The "Levenshtein Distance", also known as "Edit Distance", is a metric of the "distance" between two strings -- the number of edit operations (substitutions and deletions) needed to transform one string into another one. Its mathematical definition is recursive (inefficient).
@@ -2316,7 +2317,7 @@ The "Levenshtein Distance", also known as "Edit Distance", is a metric of the "d
 To compute the Levenshtein distance efficiently, use an algorithmic example of a bottom-up Dynamic Programming. A <strong>matrix</strong> containing the Levenshtein distances between all prefixes of the first string and all prefixes of the second one. We can dynamically compute the values in this matrix. The last value computed will be the distance between the two full strings. 
 https://python-course.eu/applications-python/levenshtein-distance.php
 
-## Profiling Pyhon Code
+## Profiling Python Code
 
 https://machinelearningmastery.com/profiling-python-code/
 
@@ -2325,6 +2326,12 @@ https://machinelearningmastery.com/profiling-python-code/
 https://github.com/Contrast-Security-OSS/vulnpy
 is a library of purposely-vulnerable Python functions to install as extensions in a framework (Flask, Django, Pyramid, Falcon, WSGI, Bottle, FastAPI).
 These serve as a foundation for creating insecure web applications, to be used for security testing and demonstration of vulnerability scanners.
+
+## References
+
+https://towardsthecloud.com/update-macos-packages-single-command
+Update your macOS packages with a single command | Towards the Cloud
+
 
 <hr />
 

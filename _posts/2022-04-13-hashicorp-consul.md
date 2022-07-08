@@ -43,7 +43,15 @@ The most popular websites about Consul:
    https://www.consul.io/docs
 
 1. Tutorials from HashiCorp:<br />
+   https://learn.hashicorp.com/consul
+   
    https://learn.hashicorp.com/tutorials/consul/service-mesh
+
+1. Hands-on tutorials:<br />
+   https://play.instruqt.com/hashicorp?query=Consul
+
+1. Specifications:<br />
+   https://cloud.hashicorp.com/docs/consul/specifications
 
 1. Technical Discussions:<br />
    <a target="_blank" href="https://discuss.hashicorp.com/c/consul/29">https://discuss.hashicorp.com/c/consul/29</a>
@@ -148,7 +156,9 @@ The list below send you to how each edition of Consul solves the mismatches desc
 
 A common explanation of what Consul does references three technical categories:
 
-> "Consul is a datacenter runtime that provides 1) service discovery, 2) configuration, and 3) orchestration."
+> "Consul is a datacenter runtime that provides 1) service discovery, 2) network segmentation, and 3) orchestration."
+
+This is explained here.
 
 
 <hr />
@@ -161,13 +171,13 @@ The main component of the Consul product -- the Consul Agent executable "consul"
 <ul>
    <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
 
-   Consul written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+   Consul is written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
 
    Initiated in 2014, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
 </ul>
 
    References:
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-getting-started-cert/table-of-contents" title="3h 54m Released 9 May 2022">Video course on Pluralsight: "Getting Started with HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/weshigbee/">Wes Higbee</a>
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-getting-started-cert/table-of-contents" title="3h 54m Released 9 May 2022 at Consul v1.11.4">Video course on Pluralsight: "Getting Started with HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/weshigbee/">Wes Higbee</a> refercing code at https://github.com/g0t4/course2-consul-gs and Docker images at https://hub.docker.com/washigbee
    * <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=EPcmgr04twM" title="by ex-HashiCorp Nicole Hubbard Apr 24, 2020">VIDEO: "Using Consul for Network Observability & Health Monitoring"</a> referencing <a target="_blank" href="https://github.com/hashicorp/consul-demo-tracking/datadog">this repo</a>
    <br /><br />
@@ -229,7 +239,7 @@ when it comes online, based on the configuration defined for each service. This 
    <a name="UnMismatchF"></a>
 1. With Consul, instead of <a href="#MismatchF">F. Developers spending too much time coding network communication logic</a> in each program (for retries, tracing, secure TLS, etc.), networking can be managed by Consul and made visible in the Consul GUI.
 
-   Since Consul is added as additional servers in parallel in the same infrastructure, changes usually involve configuration rather than app code changes. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
+   Consul is "platform agnostic" because Consul is added as additional servers in parallel in the same infrastructure, changes usually involve configuration rather than app code changes. Thus, Consul can connect/integrate services running both on-prem servers and in clouds, inside and outside Kubernetes.
 
    <a name="UnMismatchG"></a>
 1. Within the system, obtain the <strong>health status of each app server</strong> so that <strong>traffic is routed only to healthy app services</strong>, so provide a more aware approach than <a href="#MismatchG">load balancers blindly routing</a> (by Round-Robin, etc.).
@@ -259,41 +269,51 @@ when it comes online, based on the configuration defined for each service. This 
 
 <a name="EnterpriseFeatures"></a>
 
-#### Paid Enterprise Features
+#### Paid Enterprise (Production) Features
 
-Additional (teamwork and security) features are unlocked with licensing of an <a target="_blank" href="https://www.consul.io/docs/enterprise">Consul Enterprise</a> installed by customer-(self)-managed organizations.
-   * <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">On the Amazon Marketplace</a> at $8,000 per year for up to 50 nodes and bronze support. 
-   <br /><br />
+Larger enterprises running in production need features for higher security, greater teamwork, and larger scalability that open-source can provide. Those additional features are provided by the <a target="_blank" href="https://www.consul.io/docs/enterprise">Enterprise edition of Consul</a> which is 
+ self-installed and managed by customers. 
+ 
+A <strong>different installer</strong> for Consul (named "+ent") contains Enterprise features
+such that both FOSS and Enterprise editions of the Consul agent have the same name ("consul").
+This makes for minimal impact when upgrading from FOSS to Enterprise.
 
-Features:
+But the Enterprise edition looks for a license file within configuration settings. 
+The Enterprise edition is provided in the AMI image of <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">consul on Amazon Marketplace</a>, which charges $8,000 per year for up to 50 nodes and bronze support. 
 
 <a name="EntFeatureA"></a>
 <a name="Tokens"></a>
 
 <a name="AuthMethods"></a>
-A. <strong>Authenticate using a variety </strong> of methods. In addition to ACL Tokens, use enteprise-level identity providers (such as Okta and GitHub, Kuberos with Windows, etc.) for SSO (Single Sign On) based on indentity information maintained in email systems, so that addition and deletions of email get reflected in applications immediately.
+A. <strong>Authenticate using a variety of methods</strong>. In addition to ACL Tokens, use enteprise-level identity providers (such as Okta and GitHub, Kuberos with Windows, etc.) for SSO (Single Sign On) based on indentity information maintained in email and other systems, so that additions, modifications, and deletions of emails get quickly reflected in Consul. Such immediacy is important to minimize the time when credentials are stale and thus available for compromise.
 
 <a name="EntFeatureB"></a>
 B. <strong>Automatic Upgrades</strong> ("Autopilot" feature) of a whole set of nodes at once -- this avoids the need for manual effort and elimination of times when different versions exist at the same time.
 
 <a name="EntFeatureC"></a>
-C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns. A full set of <strong>audit logs</strong> makes Consul a fully enterprise-worthy utility. 
+C. Enhanced <strong>Audit logging</strong> -- to better understand access and API usage patterns. A full set of <strong>audit logs</strong> makes Consul a fully enterprise-worthy utility.
 
 <a name="EntFeatureD"></a>
-D. Enable <strong>Multi-Tenancy of tenants</strong> enabled using "Admin Partitions" as "Namespaces" to segment data into separate different teams within a single Consul datacenter, a key "Zero Trust" principal to diminish the "blast radius" from potential compromise of credentials to a specific partition.
+D. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems. For example:
+
+   * when ACL processing is disabled, the SOC team is alerted.
+   * When the consul agent is set to bind with all IP addresses on the open internet, a warning is issued.
+   <br /><br />
+
+<a name="EntFeatureE"></a>
+E. Enable <strong>Multi-Tenancy of tenants</strong> enabled using "Admin Partitions" as "Namespaces" to segment data into separate different teams within a single Consul datacenter, a key "Zero Trust" principal to diminish the "blast radius" from potential compromise of credentials to a specific partition.
 
    * https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/amazon-ecs-admin-partitions">Consul on ECS & Admin Partitions Learn Guide</a>
    <br /><br />
 
-<a name="EntFeatureE"></a>
-E. Consul can take <strong>automatic action when its metadata changes</strong>,
+<a name="EntFeatureF"></a>
+F. Consul can take <strong>automatic action when its metadata changes</strong>,
 such as notifying apps and firewalls, to <strong>keep security rules current</strong> (using <a href="#NIA_CTS">NIA CTS</a>).
 
+   <ul>
    The "consul-terraform-sync" (CTS) module <strong>broadcast changes</strong> recognized which can be used to update Terraform code dynamically for automatic resources reconfiguration -- This decreases the possibility of human error in manually editing configuration files and decreases time to propagate configuration changes to networks. 
-
-<a name="EntFeatureF"></a>
-F. <strong>Policy enforcement</strong> using <a target="_blank" href="https://www.consul.io/docs/agent/sentinel">Sentinel</a> extend the ACL system in Consul beyond the static "read", "write", and "deny" policies to support full conditional logic during writes to the KV store. Also integrates with external systems. For example, when ACL processing is disabled, the SOC team is alerted.
+   </ul>
 
 <a name="EntFeatureG"></a>
 G. Better Resilency from <strong>scheduled Backups</strong> of Consul state to snapshot files -- this makes backups happen without needing to remember to take manual effort.
@@ -309,38 +329,29 @@ H. Consul is designed for additional Consul servers to be added to a Consul Clus
 <a name="EntFeatureI"></a>
 I. <strong>Consul Service Mesh (also called Enterprise "Consul Connect")</strong> enables a Kubernetes cluster to securely <strong>communicate with services outside itself</strong>. Connect enables communication between a Sidecar proxy in Kubernetes to reach an API Gateway (which acts like a K8s Sidecar proxy) surrounding stand-alone databases, ECS, VMs, Severless, even across different clouds.
 
+   <ul>
    As with HashiCorp's Terraform, because the format of infrastructure configuration across <strong>multiple clouds</strong> (AWS, Azure, GCP, etc.) are similar in Consul, the learning necessary for people to work on different clouds is reduced, which yields faster implementations in case of mergers and acquisitions which require multiple cloud platforms to be integrated quickly. <a target="_blank" href="https://www.youtube.com/watch?v=xWwXLKhWzNk" title="DevOps Lab | Workload authentication to HashiCorp ">VIDEO</a>
+   </ul>
 
 <a name="EntFeatureJ"></a>
-J. Consul can be setup for Disaster Recovery (DR) from failure to an entire cloud Region. Consul has a mechanism called "<strong>WAN Federation</strong>" which distributes service metadata across regions to enable multi-region capability. 
+J. Consul can be setup for <strong>Disaster Recovery (DR) from failure to an entire cloud Region</strong>. Consul has a mechanism called "<strong>WAN Federation</strong>" which distributes service metadata across regions to enable multi-region capability. 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"><img alt="Consul Multi-Region setup with 5 nodes each" width="1298" height="728" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"></a>
 
-   Fail-over to a whole Region is typically setup to involve manual intervention. 
-   
+   <ul>
+   Fail-over to a whole Region is typically setup to involve manual intervention by the SOC (Security Operations Center).
+   <br /><br />
    Use of Consul Service Mesh with Health Checks enables <strong>automated failover</strong>.
+   <br /><br />
+   Multi-region redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
+   </ul>
 
    References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=gRV4sAD0YrU">VIDEO: "Consul and Complex Networks"</a>
-   <br /><br />
-
-
-<strong>Multi-region</strong> redundancy using <strong>complex Network Topologies</strong> between Consul datacenters (with "pairwise federation") -- this provides the basis for disaster recovery in case an entire region disappears.
-
-
-
-The above features enable a cluster of Consul servers for Enterprises to provide both <strong>Highly Availability (fault tolerance)</strong> to whole Availability Zone failure 
-
-   Within a single datacenter, Consul can be setup (using a combination of Service Mesh and Health Check) to provide <strong>automatic failover</strong> for services by omitting failed service instances from DNS lookups and by providing service health information in APIs.
-
-s which has duplicate nodes by <strong>replicating metadata</strong> across availability zones and regions. 
-
-
-
-References:
    * https://hashicorp-services.github.io/enablement-consul-slides/markdown/architecture/#1
    * Consul's <a target="_blank" href="https://www.consul.io/docs/internals/coordinates.html">network coordinate subsystem</a>
    <br /><br />
+
 
 <hr />
 
@@ -403,8 +414,6 @@ Zero-trust applies to those three:
    * US NIST SP 800-207 defines "Zero Trust Architecture" (ZTA) at <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf">PDF: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf</a> (50 pages)
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-zero-trust-networking-with-service-mesh">INSTRUQT Consul: Zero Trust Networking with Service Mesh"</a>
    <br /><br />
-
-zzz
 
 
 <a name="KillChain"></a>
@@ -1883,6 +1892,11 @@ Available commands are:
 
 CLI commands are used to start and stop the Consul Agent.
 
+## Keyboard shortcuts
+
+Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts:
+
+
 
 <a name="Ports"></a>
 
@@ -2773,14 +2787,14 @@ github.com/jcolemorrison/getting-into-consul</a>
 
 Consul offers three types of Gateways in the data path to validate authenticity and traffic flows to enforce intentions between services: Enterprise Academy:
 
-   * Service Mesh Gateway</a>
+   * Service Mesh Gateway
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-ingress-gateways-deployment">Enterprise Academy: Ingress Gateways</a>
-   * Terminating Gateways</a>
+   * Terminating Gateways
    <br /><br />
 
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/amazon-transit-gateway?in=vault/cloud-ops">DOC</a>: Transit gateway
 
-   ( https://play.instruqt.com/hashicorp/tracks/vault-advanced-data-protection-with-transform)
+   (https://play.instruqt.com/hashicorp/tracks/vault-advanced-data-protection-with-transform)
 
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-secure-deployment">Enterprise Academy: Deploy Consul Ingress Gateways</a> (Deploy an Ingress Gateway for Inbound Mesh Connectivity)
    <br /><br />
@@ -2853,7 +2867,7 @@ func-e use 1.20.1
    NOTE: brew install envoy installs version 1.22.2 (at time of writing).
 
 
-### Recordings
+### Twitch Recordings
 
 A series of recordings live on Twitch.tv by Developer Evangelists Rosemary Wang and J. Cole Morrison:
 
@@ -3228,7 +3242,7 @@ Beyond:
 ### Consul Connect (Service Mesh)
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=8T8t4-hQY74&list=PL81sUbsFNc5bT9C9ZZxg4biWcwzkPGEfk&index=10">VIDEO: "Introduction to HashiCorp Consul Connect"</a>
-   * <a target="_blank" href="   * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-connect">Instruqt: Getting started with Consul Connect</a>
+   * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-connect">Instruqt: Getting started with Consul Connect</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=evrsEc-iyYs&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=37&t=177s">A10 & HashiCorp Network Infrastructure Automation with Consul-Terraform-Sync</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=KbWqt-SJgwg&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=63">Observability with HashiCorp Consul Connect (Service Mesh)</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=SZvcCdvMH58&list=PL81sUbsFNc5ZfswcAV3KS0WFQmAYULkbq&index=27">"Combining DevOps with PKI Compliance Using HashiCorp Vault & Consul"</a>
@@ -3280,6 +3294,35 @@ vault secrets enable consul
    <pre>vault read consul/creds/my-role</pre>
 
 1. For each access, human users generate a new ACL token from Vault.
+
+<hr />
+
+<a name="Tcpflow"></a>
+
+### Capturing Network Traffic
+
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=2c4a39d1-7fbe-459b-b3b9-f6578e86fe25">explained</a>
+   * https://formulae.brew.sh/formula/tcpflow
+   * https://www.onworks.net/programs/tcpflow-online?amp=0
+   * https://developer.apple.com/documentation/network/recording_a_packet_trace
+   <br /><br />
+
+   To prove whether communication over the network is encrypted.
+
+1. On MacOS, install Tcpflow :
+
+   <pre><strong>brew install tcpflow</strong></pre>
+
+1. Construct command:
+
+   <pre><strong>tcpflow -i eth0 -gc</strong></pre>
+
+   <tt>-i eth0</tt> specifies the Ethernet network interface.
+
+   <tt>-gc</tt> adds color to the output going to STDOUT (rather than to a file).
+
+1. Issue a curl command.
+1. Press control+C to stop collection.
 
 <hr />
 
@@ -3749,6 +3792,9 @@ consul-server-1  12345678-1234-abcd-5678-1234567890ab  10.132.1.194:8300  leader
 
 ### Mesh Gateway
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=KZIu33sbwQQ">VIDEO:  Connecting Services with Consul: Connect Deep-dive on Usage and Internals</a>
+   <br /><br />
+
 When performing cross-cloud service communication:
 
 <img alt="multi-cluster-comm" width="907" width="266" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652142333/multi-cloud-comm-907x266_b3ceyf.png">
@@ -3847,10 +3893,6 @@ wilsonmar-N2NYQJN46F  127.0.0.1:8301  alive   acls=0,ap=default,build=1.12.0:09a
 
 ## Consul Tutorials from HashiCorp
 
-https://learn.hashicorp.com/consul
-
-https://cloud.hashicorp.com/docs/consul/specifications
-
 Leader/Follower (instead of Master/Slave)
 
    https://learn.hashicorp.com/tutorials/cloud/get-started-consul?in=consul/cloud-get-started
@@ -3897,7 +3939,6 @@ You can see how Consul behaves on Power 9 (PPC) and IBM Z (S390x) "mainframe sup
 ### Using Vagrant
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4&t=11m34s" title="by HashiCorp Ambassador within Honeycomb.io Jason Harley @redmind">VIDEO</a>: Based on a Kubernetes 5-node cluster created using this Helm chart:
-
 
 1. Install Vagrant and download the Vagrantfile 
    
@@ -4158,6 +4199,8 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 
 "Consul also provides service discovery, failure detection, multi-datacenter configuration, and key-value storage."
 
+<a target="_blank" href="https://www.youtube.com/watch?v=Z4wkTDdjWBY" title="Oct 21, 2019">VIDEO: 
+"HashiCorp Consul: Service Networking Made Easy"</a>
 
 
 <hr />
