@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2021-03-19"
+file: "docusaurus"
 title: "Docusaurus (v2)"
 excerpt: "Build book-like internationalized, indexed,  searcheable websites using React made easy"
 tags: [cloud]
-date: "2021-03-19"
-file: "docusaurus"
 image:
 # ![docusaurus2-hero-1900x500]
   feature: https://user-images.githubusercontent.com/300046/111859862-8ab8a600-8909-11eb-9e10-998eef488ba1.png
@@ -49,7 +49,8 @@ This is a hands-on deep-dive introduction to installing and using Docusaurus as 
 
    Docusaurus was created and now maintained by Facebook, as a free open-source resource.
 
-   264 watching and 22,400 Stars
+   22-07-09 had 326 watchers and 34,700 Stars<br />
+   21-03-19 had 264 watchers and 22,400 Stars<br />
 
 4. <a target="_blank" href="https://github.com/facebook/docusaurus/issues">https://github.com/facebook/docusaurus/issues</a>
 

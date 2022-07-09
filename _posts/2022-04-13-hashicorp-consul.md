@@ -73,12 +73,7 @@ In hopes of building more reliable systems in the cloud faster and cheaper, ente
 
 > "Microservices is the most popular architectural approach today. It's extremely effective. It's the approach used by many of the most successful companies in the world, particularly the big web companies." --<a target="_blank" href="https://www.youtube.com/watch?v=zzMLg3Ys5vI" title="Oct 28, 2020">Dave Farley</a>
 
-Microservices seem like a good idea because it promises:
-   * Their <strong>Ephemeral services</strong> enable each service to move and scale independently (reduce dev teams waiting for each other)
-   * It simplifies unit testing of individual services
-   * It increases agility
-   * Greater operational efficiency
-   <br /><br />
+Microservices is based on development of separate programs providing services. Each program can move and scale independently of other programs, existing in an <strong>ephemeral</strong> (temporary) way. Because dev teams won't have the same "hard-coded" dependencies in monolithic approaches, there is less need to wait for teams to finish work at the same time. This increases agility and greater operational efficiency.
 
 
 <a name="LegacyMismatches"></a>
