@@ -67,6 +67,10 @@ The most popular websites about Consul:
 
 <hr />
 
+## Why Consul? Use Cases
+
+
+
 ## Due to Microservices
 
 In hopes of building more reliable systems in the cloud faster and cheaper, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures (which are more difficult to evolve).
