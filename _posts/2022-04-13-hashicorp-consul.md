@@ -71,7 +71,7 @@ The most popular websites about Consul:
 
 There are several compelling uses for HashiCorp Consul.
 
-> Fundamentally, Consul enables the ensure secure use of <a href="#Microservices">microservices</a>.
+> Fundamentally, Consul secures networking between <a href="#Microservices">microservices</a> based on "Zero Trust" principles.
 
 Consul <a href="#K8s_partial">overcomes several deficiencies in Kubernetes</a>.
 
@@ -94,7 +94,7 @@ Generic benefits from adoption of Consul and just about anything else:
 
 <a name="UseCases"></a>
 
-The word cloud of words used to describe what Consul can do (listed at https://www.consul.io/):
+Technical words that describe what Consul can do (listed at https://www.consul.io/):
 
    * Consul on Kubernetes
    * Control access with Consul API Gateway
