@@ -67,11 +67,53 @@ The most popular websites about Consul:
 
 <hr />
 
-## Why Consul? Use Cases
+## Why Consul? 
+
+There are several compelling uses for HashiCorp Consul.
+
+> Fundamentally, Consul enables the ensure secure use of <a href="#Microservices">microservices</a>.
+
+Consul <a href="#K8s_partial">overcomes several deficiencies in Kubernetes</a>.
+
+The most compelling use of Consul is for those who have installed a <strong>Service Mesh</strong>.
+Adding Consul as an additional sidecar to Envoy provides the enterprise a
+<strong>multi-DC, hybrid-cloud, multi-cloud global mesh</strong>.
 
 
+<a name="Benefits"></a>
+
+Generic benefits from adoption of Consul and just about anything else:
+
+* Faster Time to Market and velocity of getting things done from less manual mistakes
+* Reduce cost via tools (operational efficiency through more visibility and automation)
+* Reduce cost via people from improved availability (uptime)
+* Reduce risk of downtime from better reliability
+* Reduce risk of breach from better guardrails (using Sentinel & OPA)
+* Compliance with regulatory demands (central source of truth, immutable, automated processes)
+<br /><br />
+
+<a name="UseCases"></a>
+
+The word cloud of words used to describe what Consul can do (listed at https://www.consul.io/):
+
+   * Consul on Kubernetes
+   * Control access with Consul API Gateway
+   * Discover Services with Consul
+   * Enforce Zero Trust Networking with Consul
+   * Load Balancing with Consul
+   * Manage Traffic with Consul
+   * Multi-Platform Service Mesh with Consul
+   * Network Infrastructure Automation with Consul
+   * Observability with Consul
+   <br /><br />
+
+<hr />
+
+<a name="Microservices"></a>
 
 ## Due to Microservices
+
+Consul can form the backbone of your microservice architecture.
 
 In hopes of building more reliable systems in the cloud faster and cheaper, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures (which are more difficult to evolve).
 
@@ -114,6 +156,8 @@ Implementation of microservices within legacy infrastructure and "fortress with 
    <a name="MismatchF"></a>
    F. To mitigate the network features lacking, many developers now feel they spend too much time <strong>coding network-related communication logic</strong> into each application program (for retries, tracing, secure TLS, etc.). When different developers use different techniques for that, errors occur which are difficult to track down.
 
+
+<a name="K8s_partial"></a>
 
 ### Kubernetes a partial solution
 
@@ -272,13 +316,20 @@ when it comes online, based on the configuration defined for each service. This 
 
 Larger enterprises running in production need features for higher security, greater teamwork, and larger scalability that open-source can provide. Those additional features are provided by the <a target="_blank" href="https://www.consul.io/docs/enterprise">Enterprise edition of Consul</a> which is 
  self-installed and managed by customers. 
- 
-A <strong>different installer</strong> for Consul (named "+ent") contains Enterprise features
-such that both FOSS and Enterprise editions of the Consul agent have the same name ("consul").
-This makes for minimal impact when upgrading from FOSS to Enterprise.
 
-But the Enterprise edition looks for a license file within configuration settings. 
-The Enterprise edition is provided in the AMI image of <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">consul on Amazon Marketplace</a>, which charges $8,000 per year for up to 50 nodes and bronze support. 
+   * Namespaces
+   * Enhanced read scalability
+   * Network segments
+   * Redundancy zone
+   * Advanced federation for complex network topologies
+   * Automated backups
+   * Automated upgrades
+   * Audit Logging
+   * SSO Support
+   * Multi-Tenancy with Admin Partitions
+   <br /><br />
+
+Below are more details.
 
 <a name="EntFeatureA"></a>
 <a name="Tokens"></a>
@@ -526,36 +577,6 @@ Additionally:
    * IaC CI/CD Automation (processes have Security and Repeatability baked-in, less toil)
 
    * Change Management using source version control systems such as Git clients interacting with the GitHub cloud
-
-
-<a name="UseCases"></a>
-
-### Summary of Use Cases
-
-In summary, use cases for Consul (listed at https://www.consul.io/):
-
-   * Consul on Kubernetes
-   * Control access with Consul API Gateway
-   * Discover Services with Consul
-   * Enforce Zero Trust Networking with Consul
-   * Load Balancing with Consul
-   * Manage Traffic with Consul
-   * Multi-Platform Service Mesh with Consul
-   * Network Infrastructure Automation with Consul
-   * Observability with Consul
-   <br /><br />
-
-<a name="Benefits"></a>
-
-## Benefits of Adoption of Consul aims to yield these benefits: 
-
-* Faster Time to Market and velocity of getting things done from less manual mistakes
-* Reduce cost via tools (operational efficiency through more visibility and automation)
-* Reduce cost via people from improved availability (uptime)
-* Reduce risk of downtime from better reliability
-* Reduce risk of breach from better guardrails (using Sentinel & OPA)
-* Compliance with regulatory demands (central source of truth, immutable, automated processes)
-<br /><br />
 
 
 <hr />
@@ -1547,7 +1568,7 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
     	Print the current version of hcdiag
    </pre>
 
-1. Before submitting a Service ticket to HashiCorp, obtain diagnostics run the HashiCorp utility (originating from <a target="_blank" href="https://github.com/hashicorp/hcdiag">) while a HashiCorp server is running:
+1. Before submitting a Service ticket to HashiCorp, obtain diagnostics about the HashiCorp utility (originating from <a target="_blank" href="https://github.com/hashicorp/hcdiag">) while a HashiCorp server is running:
 
    <pre><strong>hcdiag -dryrun</strong></pre>
 
@@ -1574,7 +1595,7 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 
    ### Install Consul Agent on Linux
 
-   <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-ent-basics/challenges/install-consul/assignment">Accordingly</a>:
+   <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-ent-basics/challenges/install-consul/assignment">Accordingly</a>: TODO: Add signature verification.
 
    <pre>apt-get update
 # Install utilities curl, wget, jq, 
@@ -1592,18 +1613,64 @@ apt-get -y install consul-enterprise
 
    <a name="InstallConsulBinary"></a>
 
-### Install Consul Agent on macOS
+### Install Enterprise Consul Agent on macOS
 
-1. To setup your mac for development work, use the approach described in my blog: 
+A <strong>different installer</strong> for Consul (named "+ent") contains Enterprise features
+such that both FOSS and Enterprise editions of the Consul agent have the same name ("consul").
+This makes for minimal impact when upgrading from FOSS to Enterprise.
 
-   https://wilsonmar.github.io/mac-setup
+But the Enterprise edition looks for a license file within configuration settings. 
+The Enterprise edition is provided in the AMI image of <a target="_blank" href="https://aws.amazon.com/marketplace/pp/prodview-dpe4zzqvo27n4">consul on Amazon Marketplace</a>, which charges $8,000 per year for up to 50 nodes and bronze support. 
 
-   PROTIP: There are two options to install the Consul Agent:
-   A. Download
-   B. Homebrew
-   <br /><br />
+   Homebrew does not have an installer for the enterprise edition of Consul.
 
-#### A. Download
+   <tt>-rwxr-xr-x  1 wilsonmar  staff  127929168 Jun  3 13:46 /usr/local/bin/consul</tt>
+   
+   PROTIP: I wrote a shell script to make it both safer and easier for you to install the Enterpise edition of Consul. It uses the GPG utility to ensure that what is downloaded is exactly what the author intended, as defined in signature files the author created at time of creation. The shell script which follows the manual install, but adds automated checks before and after each step. 
+
+   The shell script makes use of Homebrew's brew command for other utilities.
+
+   https://github.com/wilsonmar/hashicups/blob/main/consul-download.sh
+
+   This command below runs the RAW format of the script.
+
+1. Use your mouse to triple-click <tt>zsh</tt> in the command below to highlight the line, then press command+C to copy it to your Clipboard:
+
+   TODO: https://raw.githubusercontent.com/wilsonmar/hashicups/main/consul-download.sh
+
+   <pre><strong>zsh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/mac-setup/main/mac-setup.zsh)" \
+   -v -I -U -consul
+   </strong></pre>
+
+   CAUTION: Do not click on the URL (starting with <tt>httpd</tt>) since the terminal program opens a browser to that URL.
+
+   <tt>-v</tt> specifies optional verbose log output.
+
+   <tt>-Golang</tt> specifies install of Go programming language development components
+
+   <a name="EcosystemInstalls"></a>
+
+   <tt>-I</tt> specifies -Install of utilities XCode CLI, Homebrew, git, jq, tree, Docker, and components in the HashiCorp ecosystem, including Terraform, Vault, Nomad, <a href="#envconsul">envconsul</a>.
+
+   <tt>-U</tt> specifies -Update of utilities.
+   Do not specify <tt>-I</tt> and  <tt>-U</tt> after initial install (to save a few seconds).
+
+   Utilities for working with AWS, Azure, GCP, and other clouds require their own parameter to be specified in order to be installed.
+
+   When no version is specified, the script identifies the <strong>latest version</strong> and installs that.
+   Alternately, a specific verify can be specified.
+
+7. Press <strong>command+Tab</strong> to switch to the <strong>Terminal.app</strong>. 
+
+8. Click anywhere in the Terminal window and Press <strong>command+V</strong> to paste the command from your Clipboard. 
+
+9. Press Return/Enter on your keyboard to begin execution. 
+
+9. Skip to <a href="#CLI-commands">use CLI commands</a>
+
+
+
+Here is a description of the steps that script takes:
 
 1. Use a browser to view a list of releases:
 
@@ -1731,35 +1798,6 @@ envconsul                 hashicorp/tap/consul-k8s           iconsur
 console
    </pre>
 
-6. Use your mouse to triple-click <tt>zsh</tt> in the command below to highlight the line, then press command+C to copy it to your Clipboard:
-
-   <pre><strong>zsh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/mac-setup/main/mac-setup.zsh)" \
-   -v -I -U -consul
-   </strong></pre>
-
-   CAUTION: Do not click on the URL (starting with <tt>httpd</tt>) since the terminal program opens a browser to that URL.
-
-   <tt>-v</tt> specifies optional verbose log output.
-
-   <tt>-Golang</tt> specifies install of Go programming language development components
-
-   <a name="EcosystemInstalls"></a>
-
-   <tt>-I</tt> specifies -Install of utilities XCode CLI, Homebrew, git, jq, tree, Docker, and components in the HashiCorp ecosystem, including Terraform, Vault, Nomad, <a href="#envconsul">envconsul</a>.
-
-   <tt>-U</tt> specifies -Update of utilities.
-   Do not specify <tt>-I</tt> and  <tt>-U</tt> after initial install (to save a few seconds).
-
-   Utilities for working with AWS, Azure, GCP, and other clouds require their own parameter to be specified in order to be installed.
-
-7. Press <strong>command+Tab</strong> to switch to the <strong>Terminal.app</strong>. 
-
-8. Click anywhere in the Terminal window and Press <strong>command+V</strong> to paste the command from your Clipboard. 
-
-9. Press Return/Enter on your keyboard to begin execution. 
-
-9. Skip to <a href="#CLI-commands">use CLI commands</a>
-
 
    <a name="UseHashicorpTaps"></a>
 
@@ -1798,58 +1836,34 @@ Or, if you don't want/need a background service you can just run:
 
    <tt>-advertise</tt> is the interface that Consul agent asks others use to connect to it. Useful when the agent has multiple interfaces or the IP of a NAT device to reach through.
 
+
 <hr />
 
 <a name="CLI-commands"></a>
 
 ## Consul CLI commands
 
-   <a name="RunBackground">Option A: Run Consul in background, which restarts automatically at login:</a>
-
-   <pre>brew services start hashicorp/tap/consul</pre>
-
-   <a href="#RunForeground">Option B: Run Consul in foreground, which occupies the Terminal and does not start again at login:</a>
-
-   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
-
-   <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
-   </pre>
-
-   Alternately,
-
-   <pre><strong>consul agent -dev -datacenter="aws-1234567890" \
-   -data-dir=/opt/consul  -encrypt="<em>key</em>" \
-   -join="10.0.10.11,10.1.2.3" \
-   -bind="127.0.0.1" -node machine</strong></pre>
-
-   <tt>-join</tt> will fail if the IP addresses (4 or 6) fails to start.
-
-   PROTIP: In production, use configuration file to <strong>auto-join</strong>:
-
-   <pre>{
-  "bootstrap": false,
-  "boostrap_expect": 3,
-  "server": true,
-  "retry_join": ["10.0.10.11,"10.1.2.3"]
-}
-   </pre>
-
-1. TODO: Setup compatibility mode?
-
 1. Verify install:
 
    <pre><strong>consul version</strong></pre>
 
-   Example reponse:
+   Alternately:
 
-   <pre>Consul v1.12.0
-Revision 09a8cdb4
+   <pre><strong>consul version</strong></pre>
+
+   If the Enterprise version was installed:
+
+   <pre>Consul v1.12.2+ent
+Revision 0a4743c5
 Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
    </pre>
+
 
 1. Obtain the menu of <em>31 command keywords</em>:
 
    <pre><strong>consul</strong></pre>
+
+   (<tt>--help</tt> is not needed)
 
    <pre>Usage: consul [--version] [--help] &LT;command> [&LT;args>]
 &nbsp;
@@ -1889,7 +1903,110 @@ Available commands are:
 
    Links have been added above.
 
-CLI commands are used to start and stop the Consul Agent.
+   CLI commands are used to start and stop the Consul Agent.
+
+1. You can invoke -development functionality:
+
+   <pre><strong>consul agent -dev</strong></pre>
+
+   If you haven't installed:
+
+   <pre>==> Starting Consul agent...
+           Version: '1.12.2+ent'
+           Node ID: '5b9b8b16-4e67-4808-dae8-e594948eb261'
+         Node name: 'wilsonmar-N2NYQJN46F'
+        Datacenter: 'dc1' (Segment: '&LT;all>')
+            Server: true (Bootstrap: false)
+       Client Addr: [127.0.0.1] (HTTP: 8500, HTTPS: -1, gRPC: 8502, DNS: 8600)
+      Cluster Addr: 127.0.0.1 (LAN: 8301, WAN: 8302)
+           Encrypt: Gossip: false, TLS-Outgoing: false, TLS-Incoming: false, Auto-Encrypt-TLS: false
+&nbsp;
+==> Log data will now stream in as it occurs:
+   </pre>
+
+   <tt>Datacenter: 'dc1'</tt> is the default data center value.
+
+   DEFINITION: 
+
+   <tt>Server: true</tt> says it's running server mode (as node type: server).<br />
+   <tt>Server: false</tt> means it's running client mode (as node type: client).
+
+   <tt>Client Addr: [127.0.0.1] (HTTP: 8500, HTTPS: -1, gRPC: 8502, DNS: 8600)</tt><br />
+   means that you can access the UI web page at: <tt>http://127.0.0.1:8500</tt>
+
+1. In the address bar within a browser:
+
+   <tt>http://localhost:8500/services</tt>
+
+   But not if you also see log lines like these:
+
+   <pre>2022-07-12T12:18:00.234-0600 [ERROR] agent: Error starting agent: error="license is missing. To add a license, configure "license_path" in your configuration file, use the CONSUL_LICENSE environment variable, or use the CONSUL_LICENSE_PATH environment variable. For a trial license of Consul Enterprise, visit https://consul.io/trial."
+2022-07-12T12:18:00.234-0600 [INFO]  agent: Exit code: code=1
+   </pre>
+
+   If you haven't specified the Enterprise license key:
+
+   <a name="EnterpriseLicense"></a>
+
+   ### Configure Enterprise license
+
+1. In a browser, fill out the form for a 30-day evaluation license of Enterprice Consul  at 
+
+   https://www.hashicorp.com/contact-sales/consul?email=wilson.mar@hashicorp.com
+   
+   https://www.hashicorp.com/products/consul/trial
+
+   https://license.hashicorp.services/customers
+
+   TODO:
+
+   After Expiration, licenses still work until Termination date 10 years later.
+
+   For Consul agent installed using brew: TODO:
+
+
+<hr />
+
+   <a name="RunBackground"></a>
+   
+   ### Run in Background
+
+   Option A: Run Consul in background, which restarts automatically at login:
+
+   <pre>brew services start hashicorp/tap/consul</pre>
+
+
+   <a name="RunForeground"></a>
+
+   ### Run in Foreground
+
+   Option B: Run Consul in foreground, which occupies the Terminal and does not start again at login:
+
+   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
+
+   <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
+   </pre>
+
+   Alternately,
+
+   <pre><strong>consul agent -dev -datacenter="aws-1234567890" \
+   -data-dir=/opt/consul  -encrypt="<em>key</em>" \
+   -join="10.0.10.11,10.1.2.3" \
+   -bind="127.0.0.1" -node machine</strong></pre>
+
+   <tt>-join</tt> will fail if the IP addresses (4 or 6) fails to start.
+
+   PROTIP: In production, use configuration file to <strong>auto-join</strong>:
+
+   <pre>{
+  "bootstrap": false,
+  "boostrap_expect": 3,
+  "server": true,
+  "retry_join": ["10.0.10.11,"10.1.2.3"]
+}
+   </pre>
+
+1. TODO: Setup compatibility mode?
 
 ## Keyboard shortcuts
 
@@ -2263,10 +2380,13 @@ Degraded modes:
 
 ### Backup Consul data to Snapshots
 
+   * https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter
    * https://www.consul.io/commands/snapshot
    * https://www.consul.io/api-docs/snapshot
    * <a target="_blank" href="https://play.instruqt.com/hashicorp/tracks/consul-backups"> Enterprise Academy: Backup and Restore</a>
    * <a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569084#questions">BK on Udemy</a>
+   * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ef6f8fc1-d62c-49c6-8047-a1859a7ad57a">Ensuring Security in HashiCorp Consul</a> video class
+   * https://bit.ly/consul-security-threat-model
    <br /><br />
 
 Consul keeps its data in memory (rather than in a database on a hard drive).
@@ -2624,10 +2744,12 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
 ;; MSG SIZE  rcvd: 113
    </pre>
 
-   QUESTION: SRV lookups
+   <a target="_blank" href="https://www.cloudflare.com/learning/dns/dns-records/dns-srv-record/">DEFINITION</a>: DNS SRV lookups include port numbers and follow "Priority" and "Weight" values defined for each.
+   A server with a <u>lower</u> priority value receives <u>more</u> traffic than servers defined with a higher priority. 
+   "Weight" does not matter when servers have different priority values.
+   If several servers have the same priority, the server with the <u>higher</u> <strong>weight</strong> receives <u>more</u> traffic than servers with lower weight.
 
 3. Connect 
-
 
    NOTE: Unhealthy nodes are filtered out.
 
@@ -4201,6 +4323,10 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 <a target="_blank" href="https://www.youtube.com/watch?v=Z4wkTDdjWBY" title="Oct 21, 2019">VIDEO: 
 "HashiCorp Consul: Service Networking Made Easy"</a>
 
+## References
+
+<a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-ensuring-security/table-of-contents" title="27 Feb 2022, 1h 27m">Pluralsight "Ensuring Security in HashiCorp Consul"</a>
+by <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chris Green</a> (direct-root.com)
 
 <hr />
 
@@ -4216,4 +4342,5 @@ LinkedIn: https://www.linkedin.com/company/hashicorp
 
 Facebook: https://www.facebook.com/HashiCorp
 
-# END
+
+
