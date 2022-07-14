@@ -19,9 +19,38 @@ This aims to be a succinct yet deep dive about the "mind sets" needed by IT team
 
 {% include whatever.html %}
 
-Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provides <strong>common</strong> terminology and "best practices", but specifically for successfully working in the public cloud.
+On the surface, the "Well Architected Framework" (WAF) is a bunch of <strong>open-ended questions</strong> such as:
+
+   * How do you manage permissions for people and machines?
+   <br /><br />
+
+But below that, for each question are <strong>considerations</strong> such as:
+
+   * Define access requirements
+   * Grant least privilege access 
+   <br /><br />
+
+Considerations include <strong>best practice recommendations</strong> such as:
+
+   * Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
+   * Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions.
+   <br /><br />
+
+Questions are grouped with several <a href="#Pillars">"pillars"</a> which <strong>comprehensively cover</strong> all major aspects of Information Technology in the cloud, not just security. And WAF covers the entire lifecycle of apps and data.
+
+You want your assets to be <strong>Well Architected By Design (WABD)</strong>. 
+That's self-designated, but you need to explain why your infra, apps, data are "great" by using WAF.
+
+"Greatness" is defined by WAF. 
+But WAF is not used as the basis of an <strong>audit</strong> like SOC2, ISO 2700, FedRamp, etc.
 
 ## Why?
+
+However, like ITIL, PMI, SAFe, etc., the Well-Architected Framework provides <strong>"industry-standard" common terminology</strong> for concepts.
+
+Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://wilsonmar.github.io/aws-certs">AWS certification exams</a>.
+
+
 
 <a target="_blank" href="https://www.youtube.com/watch?v=rbIQ2eRJY0g" title="Aug 11, 2021">Why? Potential benefits</a> sound like what is claimed for every product:
 
@@ -32,43 +61,7 @@ Like ITIL, PMI, FedRamp, SAFe, etc., the "Well-Architected" (WA) Framework provi
    * Improve the quality of workloads
    <br /><br />
 
-But WA is different in that it's the rare occasion when it's what major cloud vendors all agree on.
-
-WA is pragmatic, proven advice, NOT by theories from "Architecture Astronauts".
-
-It is for not a one-time check, but throughout the lifecycle.
-
-WA is <strong>not audited for</strong> like SOC2 or FedRamp.
-
-Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://wilsonmar.github.io/aws-certs">AWS certification exams</a>
-
-
-## Your Radar Chart of Progress:
-
-PROTIP: To visualize progress toward using public cloud effectively, I created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/well-architected-radar.xlsx?raw=true">Excel file I built</a>:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
-<img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
-
-The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">target</strong> (the outer red line).
-
-The gaps (delta) between "Now" and "Next" are addressed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
-
-Percentages in the Radar Chart are based on a <strong>consistent and comprehensive</strong> set of <strong>design principles</strong> and <strong>best practices</strong> defined in the "Well-Architected" (WA) Framework.
-
-The Well Architected Framework is really an <strong>industry standard</strong> because it is referenced by Amazon, Microsoft, and Google:
-
-   * https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html
-   * <a target="_blank" href="https://docs.aws.amazon.com/index.html?ref=wellarchitected">https://docs.aws.amazon.com/index.html?ref=wellarchitected</a>
-   * https://aws.amazon.com/architecture/well-architected/
-   * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
-   * https://wa.aws.amazon.com/index.en.html
-   * June 2020 "Well Architected Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
-   * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
-
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/ ">Microsoft's WA Framework at https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)</a>
-
-   * <a target="_blank" href="https://cloud.google.com/architecture/framework">Google's WA Framework at https://cloud.google.com/architecture/framework</a>
+https://www.effectual.com/5-reasons-your-development-team-should-be-using-the-well-architected-framework/
 
 
 <a name="Pillars"></a>
@@ -91,6 +84,8 @@ The five pillars are listed here <a href="#Ordering">discussed below</a>.
 
 PROTIP: "<strong>CROPS</strong>" is a mnemonic to make the 5 easier to remember.
 
+Those core 5 is the rare occasion when it's what major cloud vendors all agree on.
+
 Additional pillars added by individual vendors:
 
 <ul>
@@ -98,6 +93,36 @@ Additional pillars added by individual vendors:
 <br /><br />
    6. Google adds its own <a target="_blank" href="https://cloud.google.com/architecture/framework/system-design">"System Design" pillar</a>.
 </ul>
+
+
+## Your Radar Chart of Progress:
+
+PROTIP: To visualize (provide a mental picture of) progress toward using public cloud effectively, I created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/well-architected-radar.xlsx?raw=true">Excel file I built</a>:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png">
+<img width="1762" alt="well-architected-radar-1762x662" src="https://user-images.githubusercontent.com/300046/139370139-f6ec275e-5882-4c80-80a7-5c309b48177b.png"></a>
+
+The position of each pillar can be changed.
+
+The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">target</strong> (the outer red line).
+
+The gaps (delta) between "Now" and "Next" are addressed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
+
+Percentages in the Radar Chart are based on a <strong>consistent and comprehensive</strong> set of <strong>design principles</strong> and <strong>best practices</strong> defined in the "Well-Architected" (WA) Framework.
+
+The Well Architected Framework is really an <strong>industry standard</strong> because it is referenced by Amazon, Microsoft, and Google:
+
+   * https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html
+   * <a target="_blank" href="https://docs.aws.amazon.com/index.html?ref=wellarchitected">https://docs.aws.amazon.com/index.html?ref=wellarchitected</a>
+   * https://aws.amazon.com/architecture/well-architected/
+   * https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/
+   * https://wa.aws.amazon.com/index.en.html
+   * June 2020 "Well Architected Framework" summary (155 pages) in <a target="_blank" href="https://www.amazon.com/AWS-Well-Architected-Framework-Whitepaper-ebook/dp/B08CFW9PXN/">Kindle mobile app</a>
+   * https://explore.skillbuilder.aws/learn/course/2045/play/6898/the-aws-well-architected-framework
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/ ">Microsoft's WA Framework at https://docs.microsoft.com/en-us/azure/architecture/framework/ (introduced July, 2020)</a>
+   * <a target="_blank" href="https://cloud.google.com/architecture/framework">Google's WA Framework at https://cloud.google.com/architecture/framework</a>
+   <br /><br />
+
 
 <a name="Ordering"></a>
 
@@ -503,7 +528,9 @@ Key Design principles for security in the cloud:
 
 <hr />
 
-Best practices:
+<a name="SecBestPractices"></a>
+
+Best practices for Security:
 
 1. <a href="#SecureWorkload">Securely operate each workload</a>
 2. <a href="#ManageIdentities">Manage identities for people and machines</a>
@@ -711,7 +738,7 @@ Design principles for reliability:
 
 <hr />
 
-Best practices:
+Best practices for Reliability:
 
 1. <a href="#ManageServiceQuotes">Manage service quotas and constraints</a>
 2. <a href="#PlanNetwork">Plan network topology</a>
@@ -970,7 +997,7 @@ Design Principles for Operational Excellence:
 
 <hr />
 
-Best practices:
+Best practices for Operational Excellence:
 
 1. <a href="#DeterminePriorities">Determine what <strong>operational priorities</strong> are</a>
 2. <a href="#StructureBusinessOutcomes">Structure the organization to support business outcomes</a>
@@ -985,7 +1012,7 @@ Best practices:
 11. <a href="#EvolveOperations">Evolve operations</a>
 <br /><br />
 
-Questions:
+Questions for Operational Excellence:
 
 <a name="DeterminePriorities"></a>
 
@@ -1245,7 +1272,7 @@ Design principles for Performance Efficiency:
 
 <hr />
 
-Best practices:
+Best practices for Performance Efficiency:
 
 1. <a href="#SelectPerfArch">Select the best performing architecture</a>
 2. <a href="#SelectSolution">Select the compute solution</a>
@@ -1257,7 +1284,7 @@ Best practices:
 8. <a href="#UsePerfTradeoffs">Use tradeoffs to improve performance</a>
 <br /><br />
 
-Questions:
+Questions for Performance Efficiency:
 
 <a name="SelectPerfArch"></a>
 
@@ -1417,7 +1444,7 @@ AWS Cost Optimization Abstract:
 
 <hr />
 
-Best practices:
+Best practices for Cost Optimization:
 
 1. <a href="#ImplementFinMgmt">Implement cloud financial management</a>
 2. <a href="#GovernUsage">Govern usage</a>
@@ -1431,7 +1458,7 @@ Best practices:
 10. <a href="#EvaluateNewSvcs">Evaluate new services</a>
 <br /><br />
 
-Questions:
+Questions for Cost Optimization:
 
 <a name="ImplementFinMgmt"></a>
 
