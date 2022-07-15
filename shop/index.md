@@ -1,10 +1,10 @@
 ---
 layout: page
-tags: [shop]
-file: "shop"
-date: "2022-03-13"
+modified: "2022-07-13"
+date: "2022-07-13"
 title: Shop
-modified: 2022-03-13
+file: "shop"
+tags: [shop]
 excerpt: "Stuff in my backpack that you might like."
 image:
 # feature: pic sunset backpacker sitting 1900x500-639kb.jpg
@@ -620,7 +620,6 @@ This is where electric vehicles like a Tesla come in handy.
 
 [__] <strong>Pepper spray</strong> as a defensive weapon.
 
-[__] Extra car battery (if you have the room)
 
 
 
@@ -661,6 +660,29 @@ Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. I
 
 [__] Foldable bicycle.
 
+<hr />
+
+<a name="Power"></a>
+
+## UPS Power At home
+
+I've bought a few big batteries to provide backup power to my freezer at home, which I take in the car on weekend trips.
+<a target="_blank" href="https://www.youtube.com/watch?v=JcJf6OP7bGU">VIDEO: evaluation and spreadsheet</a>
+
+* Goal Zero - was my first one 10 years ago. It broke down within a year. Like marrying too young.
+
+* Duracell - 
+
+* <a target="_blank" href="https://www.jackery.com/products/explorer-2000-portable-power-station?aff=593">$2,099 Jackery Explorer 2000</a> promises 2060Wh capacity at 2200W AC,
+   which runs a 679kWh/year refigerator for 20 hours. Its 1000W wall charger takes 2 hours to recharge up to 80%. Its cigarette lighter plug takes 18 hours to charge.
+   Its "SOLARPEAK TECHNOLOGY" (MPPT controller) recharges in 2.5 hours to 80% by 4*SolarSaga 200W solar panels ($245 each). 
+
+* <a target="_blank" href="https://www.bluettipower.com/products/ac200max-power-station?sscid=71k6_f80zt&">$1,799 Bluetti "AC200 MAX"</a> promises 2048Wh capacity at 2,200W AC,
+   expandable Up To 6,144Wh with 2×B230, or 8,192Wh with 2×B300. 
+   Its Lithium-Ion-Phosphate (LiFePO4) battery recharges 7x more than regular Lithium-Ion batteries. 
+   But it's twice as heavy as regular Lithium-Ion.
+
+* <a target="_blank" href="https://www.costco.com/massimo-2000w-portable-lithium-ion-battery-power-station.product.100856857.html">$1,400 Massimo 2000W Portable Lithium Ion Battery Power Station on Costco</a>
 
 ## Resources #
 

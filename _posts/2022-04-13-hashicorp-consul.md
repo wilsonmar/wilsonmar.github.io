@@ -79,6 +79,12 @@ The most compelling use of Consul is for those who have installed a <strong>Serv
 Adding Consul as an additional sidecar to Envoy provides the enterprise a
 <strong>multi-DC, hybrid-cloud, multi-cloud global mesh</strong>.
 
+> Consul';'s "Secure Service Networking" provides Enterprise-scale features and support needed by complex Global 2000 - multi-cloud, hybrid-cloud, multi-platform <strong>global mesh</strong>
+
+   * <a target="_blank" href="https://www.hashicorp.com/events/webinars/how-comcast-runs-consul-service-mesh-on-amazon-ecs">VIDEO: "How Comcast runs Consul on AWS Elastic Container Service"</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=0H06VKvlTJQ">Getting into Consul, Part 1</a>
+
+<hr />
 
 <a name="Benefits"></a>
 
@@ -113,7 +119,10 @@ Technical words that describe what Consul can do (listed at https://www.consul.i
 
 ## Due to Microservices
 
-Consul can form the backbone of your microservice architecture.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=b8TDodu5E0k">"The Evolution of Microservices"</a>
+   <br /><br />
+
+Consul provides a "backbone" for a microservice architecture.
 
 In hopes of building more reliable systems in the cloud faster and cheaper, enterprises create distributed <strong>microservices</strong> instead of monolithic architectures (which are more difficult to evolve).
 
@@ -123,6 +132,9 @@ Microservices is based on development of separate programs providing services. E
 
 
 ## 4 pillars and 6 principles of modern app design
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=gf43TcWjBrE">VIDEO: "12 Factor Apps and the HashiCorp stack"</a> 
+   <br /><br />
 
 <a target="_blank" href="https://www.arabianbusiness.com/opinion/4-pillars-6-principles-modern-apps">from</a> Libby Meren, Senior Manager for OSS Evangelism, NGINX at F5.
 
@@ -1547,7 +1559,7 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
    
    Work with the Consul Agent using:
    * <a href="#CLI-commands">CLI</a> (Command Line Interface) on Terminal sessions
-   * API calls from within a custom program (written in Go, etc.)
+   * <a href="#APICalls">API calls from curl</a> or within a custom program (written in Go, etc.)
    * <a href="#ConsulWebGUI">GUI</a> (Graphic User Interface) on an internet browser such as Google Chrome
    <br /><br />
 
@@ -1907,6 +1919,12 @@ Revision 0a4743c5
 Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
    </pre>
 
+   The response if the Open Source version was installed:
+
+   <pre>Consul v1.12.2+ent
+Revision 0a4743c5
+Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
+   </pre>
 
 1. Obtain the menu of <em>31 command keywords</em>:
 
@@ -1954,7 +1972,7 @@ Available commands are:
 
    CLI commands are used to start and stop the Consul Agent.
 
-1. You can invoke -development functionality:
+1. You can invoke -dev (for "development") functionality:
 
    <pre><strong>consul agent -dev</strong></pre>
 
@@ -1977,66 +1995,235 @@ Available commands are:
 
    DEFINITION: 
 
-   <tt>Server: true</tt> says it's running server mode (as node type: server).<br />
-   <tt>Server: false</tt> means it's running client mode (as node type: client).
+   <tt>Server: true</tt> says it's running <strong>server mode</strong> (as node type: server).<br />
+   <tt>Server: false</tt> means it's running <strong>client mode</strong> (as node type: client).
 
    <tt>Client Addr: [127.0.0.1] (HTTP: 8500, HTTPS: -1, gRPC: 8502, DNS: 8600)</tt><br />
    means that you can access the UI web page at: <tt>http://127.0.0.1:8500</tt>
 
+   <a name="APICalls"></a>
+
+   ### CLI API
+
+1. The build info is also displayed (along with other configuration information) in response to this API:
+
+   <pre><strong>curl localhost:8500/v1/agent/self</strong></pre> 
+
+   In the "Stats" section:
+
+   <pre>        "agent": {
+            "check_monitors": "0",
+            "check_ttls": "0",
+            "checks": "0",
+            "services": "0"
+        },
+        "build": {
+            "prerelease": "",
+            "revision": "19041f20",
+            "version": "1.12.2",
+            "version_metadata": ""
+        },
+        "consul": {
+            "acl": "disabled",
+            "bootstrap": "false",
+            "known_datacenters": "1",
+            "leader": "true",
+            "leader_addr": "127.0.0.1:8300",
+            "server": "true"
+   </pre>
+
+   The JSON file returned include a long list of Debug info:
+   
+   <pre>           "runtime": {
+            "arch": "arm64",
+            "cpu_count": "10",
+            "goroutines": "105",
+            "max_procs": "10",
+            "os": "darwin",
+            "version": "go1.18.1"
+   </pre>
+
+   <a name="RaftConfig"></a>
+
+   ### Raft configuration
+
+   Settings for the Raft protocol:
+
+   <pre>        "raft": {
+            "applied_index": "1849",
+            "commit_index": "1849",
+            "fsm_pending": "0",
+            "last_contact": "0",
+            "last_log_index": "1849",
+            "last_log_term": "2",
+            "last_snapshot_index": "0",
+            "last_snapshot_term": "0",
+            "latest_configuration": "[{Suffrage:Voter ID:5a5a1066-8c29-8c1e-c5a9-bdcbb01c24c7 Address:127.0.0.1:8300}]",
+            "latest_configuration_index": "0",
+            "num_peers": "0",
+            "protocol_version": "3",
+            "protocol_version_max": "3",
+            "protocol_version_min": "0",
+            "snapshot_version_max": "1",
+            "snapshot_version_min": "0",
+            "state": "Leader",
+            "term": "2"
+   </pre>
+
+
+   <a name="Raft"></a>
+
+   ### Raft concensus algorithm
+
+   Consider these dynamic illustrations about how the Raft mechanism works:
+   * http://thesecretlivesofdata.com/raft/ provides a visualization
+   * https://raft.github.io/
+   <br /><br />
+
+   To ensure data <strong>consistency</strong> among nodes across Availability Zones, the <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state storage for updating catalog, session, prepared query, ACL, and KV state.
+   
+   Each transaction is considered "comitted" when more than half the followers register it.
+   
+   If the LEADER server fails, an election is automatically held among a quorum (adequate number of) FOLLOWERs to elect a new LEADER from among candidates.
+
+   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">TUTORIAL</a>:
+
+   <!-- https://hashicorp.app.workramp.com/task_assignments/cbb60ad0-cfd5-11ec-aade-06cf503dca07 -->
+
+
+
+   <a name="EnvoyConfig"></a>
+
+   The last stanza provides a list of (Service Mesh) Envoy proxies compatible with the Consul version installed:
+
+   <pre> "xDS": {
+        "SupportedProxies": {
+            "envoy": [
+                "1.22.0",
+                "1.21.1",
+                "1.20.2",
+                "1.19.3"
+            ]
+        },
+        "Port": 8502
+   </pre>
+
+
+   <a name="Ports"></a>
+
+   ### Ports used by Consul
+
+   The default ports (which some organizations change in hope of "better security through obfuscation"):
+   
+   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
+
+   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip within the same region cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
+   * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
+   
+   * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
+   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
+   * 8558 - Consul-Terraform-Sync daemon
+
+   * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
+
+   * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
+
+   For bootstrapping and configuration of <tt>agent.hcl</tt>, see
+   https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
+
+
+   <a name="SerfConfig"></a>
+
+   There is a <tt>"serf_lan"</tt> and <tt>"serf_wan"</tt> each:
+
+   <pre>            "coordinate_resets": "0",
+            "encrypted": "false",
+            "event_queue": "1",
+            "event_time": "2",
+            "failed": "0",
+            "health_score": "0",
+            "intent_queue": "0",
+            "left": "0",
+            "member_time": "1",
+            "members": "1",
+            "query_queue": "0",
+            "query_time": "1"
+   </pre>
+
+
+   <a name="Gossip"></a>
+
+   ### Serf LAN & WAN Gossip 
+
+   * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
+   * https://www.consul.io/docs/intro/vs/serf
+   <br /><br />
+
+   To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). The <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> is also used by the <a target="_blank" href="https://serf.apache.org/">Apache Serf library</a>, which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
+
+   Serf provides for:
+
+   * Events broadcasting to perform cross-datacenter requests based on  Membership information
+
+   * Failure detection to gracefully handle loss of connectivity
+   <br /><br />
+
+
+<a name="ConsulGUI"></a>
+
+## Consul GUI
+
 1. In the address bar within a browser:
 
    <tt>http://localhost:8500/services</tt>
- 
-   <a name="EnterpriseLicense"></a>
+ zzz
 
-   ### Configure Enterprise license
+
+<hr />
+
+<a name="EnterpriseLicense"></a>
+
+### Configure Enterprise license
  
-   But not if you also see log lines like these:
+   About the Enterprise license key:
+   * https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=consul/enterprise
+   <br /><br />
+
+1. If you installed an Enterprise edition of Consul:
+
+   <pre><strong>consul agent -dev</strong></pre>
+
+   If no license was installed, you'll see log lines like these returned:
 
    <pre>2022-07-12T12:18:00.234-0600 [ERROR] agent: Error starting agent: error="license is missing. To add a license, configure "license_path" in your configuration file, use the CONSUL_LICENSE environment variable, or use the CONSUL_LICENSE_PATH environment variable. For a trial license of Consul Enterprise, visit https://consul.io/trial."
 2022-07-12T12:18:00.234-0600 [INFO]  agent: Exit code: code=1
    </pre>
 
-   or
+   If an expired Enterprise license was installed, you'll see log lines like these returned:
 
    <pre>2022-07-14T19:01:32.448-0600 [ERROR] agent: Error starting agent: error="error initializing license: 1 error occurred:
 	* license is no longer valid
    </pre>
 
-   If you haven't specified the Enterprise license key:
-
-   * https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=consul/enterprise
-   <br /><br />
+   REMEMBER: After Expiration, licenses still work until Termination date 10 years later.
 
 1. In a browser, fill out the form for a 30-day evaluation license of Enterprice Consul  at 
 
    https://www.hashicorp.com/products/consul/trial for a 30-day trial
 
+1. Configure your browser to pop up for this URL:
+
    https://license.hashicorp.services/customers
 
    TODO:  hcp-activations@hashicorp.com?
 
-   After Expiration, licenses still work until Termination date 10 years later.
-
    For Consul agent installed using brew: TODO:
-
-
-<hr />
-
-   <a name="RunBackground"></a>
-   
-   ### Run in Background
-
-   Option A: Run Consul in background, which restarts automatically at login:
-
-   <pre>brew services start hashicorp/tap/consul</pre>
-
 
    <a name="RunForeground"></a>
 
    ### Run in Foreground
 
-   Option B: Run Consul in foreground, which occupies the Terminal and does not start again at login:
+   Run Consul in foreground, which occupies the Terminal and does not start again at login:
 
    <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
 
@@ -2062,37 +2249,20 @@ Available commands are:
 }
    </pre>
 
+
+   <a name="RunBackground"></a>
+   
+   Alternately, if you installed Consul using brew (which we don't recommend), to run it in background so it restarts automatically at login:
+
+   <pre>brew services start hashicorp/tap/consul</pre>
+
+
 1. TODO: Setup compatibility mode?
 
 ## Keyboard shortcuts
 
 Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts:
 
-
-
-<a name="Ports"></a>
-
-### Ports used by Consul
-
-   The default ports, which some organizations change in hope of better security through obfuscation:
-   
-   * 8300 TCP for RPC (Remote Procedure Call) by all Consul server agents to handle incoming requests from <strong>other Consul agents</strong> to discover services and make Value requests for Consul KV
-
-   * 8301 TCP/UDP for Serf <strong>LAN</strong> Gossip within the same region cluster for Consensus communication, for agreement on adding data to the data store, and replication of data
-   * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
-   
-   * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
-   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
-   * 8558 - Consul-Terraform-Sync daemon
-
-   * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
-
-   * 21000 - 21255 TCP (automatically assigned) for Sidecar proxy registrations
-
-   For bootstrapping and configuration of <tt>agent.hcl</tt>, see
-   https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
-
-<hr />
 
 
 <a name="ConsulNames"></a>
@@ -2289,9 +2459,9 @@ Consul server startup complete.
 
 
 
-<a name="API"></a>
+<a name="ListNodes"></a>
 
-### API
+### List Consul Nodes
 
 1. Custom programs (written in Go, etc.) can communication with Consul using HTTP API calls defined in:
 
@@ -3625,42 +3795,6 @@ server:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1652579825/consul-promote-in-az-550x342_a87mri.png"><img alt="Consul promote in AZ" width="550" height="342" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652579825/consul-promote-in-az-550x342_a87mri.png"></a>
 
-
-<a name="Raft"></a>
-
-### Raft concensus algorithm
-
-Consider these dynamic illustrations about how the Raft mechanism works:
-   * http://thesecretlivesofdata.com/raft/ provides a visualization
-   * https://raft.github.io/
-   <br /><br />
-
-   To ensure data <strong>consistency</strong> among nodes across Availability Zones, the <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state storage for updating catalog, session, prepared query, ACL, and KV state.
-   
-   Each transaction is considered "comitted" when more than half the followers register it.
-   
-   If the LEADER server fails, an election is automatically held among a quorum (adequate number of) FOLLOWERs to elect a new LEADER from among candidates.
-
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">TUTORIAL</a>:
-
-   <!-- https://hashicorp.app.workramp.com/task_assignments/cbb60ad0-cfd5-11ec-aade-06cf503dca07 -->
-
-
-<a name="Gossip"></a>
-
-### Serf LAN & WAN Gossip 
-
-   * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
-   * https://www.consul.io/docs/intro/vs/serf
-   <br /><br />
-
-To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). The <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> is also used by the <a target="_blank" href="https://serf.apache.org/">Apache Serf library</a>, which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
-
-Serf provides for:
-
-   * Events broadcasting to perform cross-datacenter requests based on  Membership information
-
-   * Failure detection to gracefully handle loss of connectivity
 
 ### No Vault - Hard Way
 
