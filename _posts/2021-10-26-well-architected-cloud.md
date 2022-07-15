@@ -590,27 +590,35 @@ Questions and Considerations for Security:
 
 1. How do you securely operate each workload?
 
+   <a name="SEC-01-01-GrowSepAccts"></a>
    1. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
    <br /><tt>SEC-01-01-GrowSepAccts</tt>
 
+   <a name="SEC-01-02-SecAccts"></a>
    2. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
    <br /><tt>SEC-01-02-SecAccts</tt>
 
+   <a name="SEC-01-03-ControlObjs"></a>
    3. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation. 
    <br /><tt>SEC-01-03-ControlObjs</tt>
 
+   <a name="SEC-01-04-NoticeThreats"></a>
    4. <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
    <br /><tt>SEC-01-04-NoticeThreats</tt>
 
+   <a name="SEC-01-05-NoticeRecommendations"></a>
    5. <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
    <br /><tt>SEC-01-05-NoticeRecommendations</tt>
 
+   <a name="SEC-01-06-AutoTesting"></a>
    6. <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
    <br /><tt>SEC-01-06-AutoTesting</tt>
 
+   <a name="SEC-01-07-ThreatModel"></a>
    7. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. <strong>Prioritize threats and adapt</strong> security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
    <br /><tt>SEC-01-07-ThreatModel</tt>
 
+   <a name="SEC-01-08-EvalNewSvcs"></a>
    8. <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
    <br /><tt>SEC-01-08-EvalNewSvcs</tt>
 
@@ -618,21 +626,27 @@ Questions and Considerations for Security:
 
 2. How do you manage identities for people and machines?
 
+   <a name="SEC-02-01-SignInMFA"></a>
    1. <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
    <br /><tt>SEC-02-01-SignInMFA</tt>
 
+   <a name="SEC-02-02-SSO-IAM"></a>
    1. <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
    <br /><tt>SEC-02-02-SSO-IAM</tt>
 
+   <a name="SEC-02-03-AutoRotationSvc"></a>
    1. <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
    <br /><tt>SEC-02-03-AutoRotationSvc</tt>
 
+   <a name="SEC-02-04-CentralIdP"></a>
    1. <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location -- making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
    <br /><tt>SEC-02-04-CentralIdP</tt>
 
+   <a name="SEC-02-05-LongCredRotation"></a>
    1. <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
    <br /><tt>SEC-02-05-LongCredRotation</tt>
 
+   <a name="SEC-02-06-UserAttributes"></a>
    1. <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
    <br /><tt>SEC-02-06-UserAttributes</tt>
 
@@ -640,27 +654,35 @@ Questions and Considerations for Security:
 
 3. How do you manage permissions for people and machines?
 
+   <a name="SEC-03-01-DefAccess"></a>
    1. <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
    <br /><tt>SEC-03-01-DefAccess</tt>
 
+   <a name="SEC-03-02-LeastPrivilege"></a>
    2. <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
    <br /><tt>SEC-03-02-LeastPrivilege</tt>
 
+   <a name="SEC-03-03-EmergAccess"></a>
    1. <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
    <br /><tt>SEC-03-03-EmergAccess</tt>
 
+   <a name="SEC-03-04-ReducePerms"></a>
    1. <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
    <br /><tt>SEC-03-04-ReducePerms</tt>
 
+   <a name="SEC-03-05-PermisGuards"></a>
    1. <strong>Define permission guardrails for the organization</strong> - Establish common controls that restrict access to all identities in the organization. For example, you can restrict access to specific AWS Regions, or prevent operators from deleting common resources, such as an IAM role used for the central security team.
    <br /><tt>SEC-03-05-PermisGuards</tt>
 
+   <a name="SEC-03-06-FederatedLifecycle"></a>
    1. <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
    <br /><tt>SEC-03-06-FederatedLifecycle</tt>
 
+   <a name="SEC-03-07-CrossAcctAccess"></a>
    1. <strong>Analyze public and cross-account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
    <br /><tt>SEC-03-07-CrossAcctAccess</tt>
 
+   <a name="SEC-03-08-SharedAccess"></a>
    1. <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
    <br /><tt>SEC-03-08-SharedAccess</tt>
 
@@ -668,15 +690,19 @@ Questions and Considerations for Security:
 
 4. How do you detect and investigate security events?
 
+   <a name="SEC-04-01-"></a>
    1. <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
    <br /><tt>SEC-04-01-</tt>
 
+   <a name="SEC-04-02-"></a>
    1. <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
    <br /><tt>SEC-04-02-</tt>
 
+   <a name="SEC-04-03-"></a>
    1. <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
    <br /><tt>SEC-04-03-</tt>
 
+   <a name="SEC-04-04-"></a>
    1. <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
    <br /><tt>SEC-04-04-</tt>
 
@@ -684,15 +710,19 @@ Questions and Considerations for Security:
 
 5. How do you protect network resources?
 
+   <a name="SEC-05-01-"></a>
    1. <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
    <br /><tt>SEC-05-08-NetLayers</tt>
 
+   <a name="SEC-05-02-"></a>
    1. <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
    <br /><tt>SEC-05-08-ControlTraffic</tt>
 
+   <a name="SEC-05-03-"></a>
    1. <strong>Automate network protection</strong> - Automate protection mechanisms to provide a self-defending network based on threat intelligence and anomaly detection. For example, intrusion detection and prevention tools that can pro-actively adapt to current threats and reduce their impact.
    <br /><tt>SEC-05-08-ProtectNetwork</tt>
 
+   <a name="SEC-05-04-"></a>
    1. <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
    <br /><tt>SEC-05-08-InspectNet</tt>
 
@@ -700,21 +730,27 @@ Questions and Considerations for Security:
 
 6. How do you protect compute resources?
 
+   <a name="SEC-06-01-"></a>
    1. <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
    <br /><tt>SEC-06-01-</tt>
 
+   <a name="SEC-06-02-"></a>
    1. <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
    <br /><tt>SEC-06-02-</tt>
 
+   <a name="SEC-06-03-"></a>
    1. <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
    <br /><tt>SEC-06-03-</tt>
 
+   <a name="SEC-06-04-"></a>
    1. <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
    <br /><tt>SEC-06-04-</tt>
 
+   <a name="SEC-06-05-"></a>
    1. <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
    <br /><tt>SEC-06-05-</tt>
 
+   <a name="SEC-06-06-"></a>
    1. <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
    <br /><tt>SEC-06-06-</tt>
 
@@ -722,12 +758,15 @@ Questions and Considerations for Security:
 
 7. How do you classify data?
 
+   <a name="SEC-07-01-"></a>
    1. <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive  , and more.
    <br /><tt>SEC-07-01-</tt>
 
+   <a name="SEC-07-02-"></a>
    1. <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
    <br /><tt>SEC-07-02-</tt>
 
+   <a name="SEC-07-03-"></a>
    1. <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
    <br /><tt>SEC-07-03-</tt>
 
@@ -735,18 +774,23 @@ Questions and Considerations for Security:
 
 8. How do you protect data at rest?
 
+   <a name="SEC-08-01-"></a>
    1. <strong>Implement secure key management</strong> - Encryption keys must be stored securely, with strict access control, for example, by using a key management service such as AWS KMS. Consider using different keys, and access control to the keys, combined with the AWS IAM and resource policies, to align with data classification levels and segregation requirements.
    <br /><tt>SEC-08-01-</tt>
 
+   <a name="SEC-08-02-"></a>
    1. <strong>Enforce encryption at rest</strong> - Enforce encryption requirements based on the latest standards and recommendations to help protect data at rest.
    <br /><tt>SEC-08-02-</tt>
 
+   <a name="SEC-08-03-"></a>
    1. <strong>Automate data at rest protection</strong> - Use automated tools to validate and enforce data at rest protection continuously, for example, verify that there are only encrypted storage resources.
    <br /><tt>SEC-08-03-</tt>
 
+   <a name="SEC-08-04-"></a>
    1. <strong>Enforce access control</strong> - Enforce access control with least privileges and mechanisms, including backups, isolation, and versioning, to help protect data at rest. Prevent operators from granting public access to data.
    <br /><tt>SEC-08-04-</tt>
 
+   <a name="SEC-08-05-"></a>
    1. <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
    <br /><tt>SEC-08-05-</tt>
 
@@ -754,15 +798,19 @@ Questions and Considerations for Security:
 
 9. How do you protect data in transit?
 
+   <a name="SEC-09-01-TransitKeys"></a>
    1. <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
    <br /><tt>SEC-09-01-TransitKeys</tt>
 
+   <a name="SEC-09-02-EnforceTransit"></a>
    1. <strong>Enforce encryption in transit</strong> - Enforce defined encryption requirements based on appropriate standards and recommendations to help you meet organizational, legal, and compliance requirements.
    <br /><tt>SEC-09-02-EnforceTransit</tt>
 
+   <a name="SEC-09-03-DetectAccesst"></a>
    1. <strong>Automate detection of unintended data access</strong> - Use tools such as GuardDuty to automatically detect attempts to move data outside of defined boundaries based on data classification level, for example, to detect a trojan that is copying data to an unknown or untrusted network using the DNS protocol.
    <br /><tt>SEC-09-03-DetectAccess</tt>
 
+   <a name="SEC-09-04-AuthNetComm"></a>
    1. <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
    <br /><tt>SEC-09-04-AuthNetComm</tt>
 
@@ -770,24 +818,31 @@ Questions and Considerations for Security:
 
 9. How do you anticipate, respond to, and recover from incidents?
 
+   <a name="SEC-10-01-"></a>
    1. <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
    <br /><tt>SEC-10-01-</tt>
 
+   <a name="SEC-10-02-"></a>
    1. <strong>Develop incident management plans</strong> - Create "playbooks" to help  respond to, communicate during, and recover from an incident. For example, start an <u>incident response plan</u> with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
    <br /><tt>SEC-10-02-</tt>
 
+   <a name="SEC-10-03-"></a>
    1. <strong>Prepare forensic capabilities</strong> - Identify and prepare forensic investigation capabilities that are suitable, including external specialists, tools, and automation.
    <br /><tt>SEC-10-03-</tt>
 
+   <a name="SEC-10-04-"></a>
    1. <strong>Automate containment capability</strong> and recovery of an incident to reduce response times and organizational impact.
    <br /><tt>SEC-10-04-</tt>
 
+   <a name="SEC-10-05-"></a>
    1. <strong>Pre-provision access</strong> - Ensure that incident responders have the correct access pre-provisioned into AWS to reduce the time for investigation through to recovery.
    <br /><tt>SEC-10-05-</tt>
 
+   <a name="SEC-10-06-"></a>
    1. <strong>Pre-deploy tools</strong> - Ensure that security personnel have the right tools pre-deployed into AWS to reduce the time for investigation through to recovery.
    <br /><tt>SEC-10-06-</tt>
 
+   <a name="SEC-10-07-"></a>
    1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
    <br /><tt>SEC-10-07-</tt>
 
@@ -860,21 +915,27 @@ Questions and considerations for Reliability:
 
 1. How do you manage service quotas and constraints?
 
+   <a name="REL-01-01-"></a>
    1. <strong>Aware of service quotas and constraints</strong> - You are aware of default quotas and quota increase requests for workload architecture. You additionally know which resource constraints, such as disk or network, are potentially impactful.
    <br /><tt>REL-01-01-</tt>
 
+   <a name="REL-01-02-"></a>
    1. <strong>Manage service quotas across accounts and regions</strong> - If you are using multiple AWS accounts or AWS Regions, ensure that you request the appropriate quotas in all environments in which  production workloads run.
    <br /><tt>REL-01-02-</tt>
 
+   <a name="REL-01-03-"></a>
    1. <strong>Accommodate fixed service quotas and constraints through architecture</strong> - Be aware of unchangeable service quotas and physical resources, and architect to prevent these from impacting reliability.
    <br /><tt>REL-01-03-</tt>
 
+   <a name="REL-01-04-"></a>
    1. <strong>Monitor and manage quotas</strong> - Evaluate potential usage and increase quotas appropriately allowing for planned growth in usage.
    <br /><tt>REL-01-04-</tt>
 
+   <a name="REL-01-05-"></a>
    1. <strong>Automate quota management</strong> - Implement tools to alert you when thresholds are being approached. By using AWS Service Quotas APIs, you can automate quota increase requests.
    <br /><tt>REL-01-05-</tt>
 
+   <a name="REL-01-06-"></a>
    1. <strong>Ensure that a sufficient gap exists between the current quotas and the maximum usage to accommodate failover</strong> - When a resource fails, it may still be counted against quotas until its successfully terminated. Ensure that quotas cover the overlap of all failed resources with replacements before the failed resources are terminated. You should consider an Availability Zone failure when calculating this gap.
    <br /><tt>REL-01-06-</tt>
 
@@ -882,18 +943,23 @@ Questions and considerations for Reliability:
 
 2. How do you plan network topology?
 
+   <a name="REL-02-01-"></a>
    1. <strong>Use highly available network connectivity for workload public endpoints</strong> - These endpoints and the routing to them must be highly available. To achieve this, use highly available DNS, content delivery networks (CDNs), API Gateway, load balancing, or reverse proxies.
    <br /><tt>REL-02-01-</tt>
 
+   <a name="REL-02-02-"></a>
    1. <strong>Provision redundant connectivity between private networks in the cloud and on-premises environments</strong> - Use multiple AWS Direct Connect (DX) connections or VPN tunnels between separately deployed private networks. Use multiple DX locations for high availability. If using multiple AWS Regions, ensure redundancy in at least two of them. You might want to evaluate AWS Marketplace appliances that terminate VPNs. If you use AWS Marketplace appliances, deploy redundant instances for high availability in different Availability Zones.
    <br /><tt>REL-02-02-</tt>
 
+   <a name="REL-02-03-"></a>
    1. <strong>Ensure IP subnet allocation accounts for expansion and availability</strong> - Amazon VPC IP address ranges must be large enough to accommodate workload requirements, including factoring in future expansion and allocation of IP addresses to subnets across Availability Zones. This includes load balancers, EC2 instances, and container-based applications.
    <br /><tt>REL-02-03-</tt>
 
+   <a name="REL-02-04-"></a>
    1. <strong>Prefer hub-and-spoke topologies over many-to-many mesh</strong> - If more than two network address spaces (for example, VPCs and on-premises networks) are connected via VPC peering, AWS Direct Connect, or VPN, then use a hub-and-spoke model, like that provided by AWS Transit Gateway.
    <br /><tt>REL-02-04-</tt>
 
+   <a name="REL-02-05-"></a>
    1. <strong>Enforce non-overlapping private IP address ranges in all private address spaces where they are connected</strong> - The IP address ranges of each of VPCs must not overlap when peered or connected via VPN. You must similarly avoid IP address conflicts between a VPC and on-premises environments or with other cloud providers that you use. You must also have a way to allocate private IP address ranges when needed.
    <br /><tt>REL-02-05-</tt>
 
@@ -901,12 +967,15 @@ Questions and considerations for Reliability:
 
 3. How do you design workload service architecture?
 
+   <a name="REL-03-01-"></a>
    1. <strong>Choose how to segment workloads</strong> - Monolithic architecture should be avoided. Instead, you should choose between SOA and microservices. When making each choice, balance the benefits against the complexities—what is right for a new product racing to first launch is different than what a workload built to scale from the start needs. The benefits of using smaller segments include greater agility, organizational flexibility, and scalability. Complexities include possible increased latency, more complex debugging, and increased operational burden
    <br /><tt>REL-03-01-</tt>
 
+   <a name="REL-03-02-"></a>
    1. <strong>Build services focused on specific business domains and functionality</strong> - SOA builds services with well-delineated functions defined by business needs. Microservices use domain models and bounded context to limit this further so that each service does just one thing. Focusing on specific functionality enables you to differentiate the reliability requirements of different services, and target investments more specifically. A concise business problem and having a small team associated with each service also enables easier organizational scaling.
    <br /><tt>REL-03-02-</tt>
 
+   <a name="REL-03-03-"></a>
    1. <strong>Provide service contracts per API</strong> - Service contracts are documented agreements between teams on service integration and include a machine-readable API definition, rate limits, and performance expectations. A versioning strategy allows clients to continue using the existing API and migrate their applications to the newer API when they are ready. Deployment can happen anytime, as long as the contract is not violated. The service provider team can use the technology stack of their choice to satisfy the API contract. Similarly, the service consumer can use their own technology.
    <br /><tt>REL-03-03-</tt>
 
@@ -914,15 +983,19 @@ Questions and considerations for Reliability:
 
 4. How do you design interactions in a distributed system to prevent failures?
 
+   <a name="REL-04-01-"></a>
    1. <strong>Identify which kind of distributed system is required</strong> - Hard real-time distributed systems require responses to be given synchronously and rapidly, while soft real-time systems have a more generous time window of minutes or more for response. Offline systems handle responses through batch or asynchronous processing. Hard real-time distributed systems have the most stringent reliability requirements.
    <br /><tt>REL-04-01-</tt>
 
+   <a name="REL-04-02-"></a>
    1. <strong>Implement loosely coupled dependencies</strong> - Dependencies such as queuing systems, streaming systems, workflows, and load balancers are loosely coupled. Loose coupling helps isolate behavior of a component from other components that depend on it, increasing resiliency and agility
    <br /><tt>REL-04-02-</tt>
 
+   <a name="REL-04-03-"></a>
    1. <strong>Make all responses idempotent</strong> - An idempotent service promises that each request is completed exactly once, such that making multiple identical requests has the same effect as making a single request. An idempotent service makes it easier for a client to implement retries without fear that a request will be erroneously processed multiple times. To do this, clients can issue API requests with an idempotency token—the same token is used whenever the request is repeated. An idempotent service API uses the token to return a response identical to the response that was returned the first time that the request was completed.
    <br /><tt>REL-04-03-</tt>
 
+   <a name="REL-04-04-"></a>
    1. <strong>Do constant work</strong> - Systems can fail when there are large, rapid changes in load. For example, a health check system that monitors the health of thousands of servers should send the same size payload (a full snapshot of the current state) each time. Whether no servers are failing, or all of them, the health check system is doing constant work with no large, rapid changes.
    <br /><tt>REL-04-04-</tt>
 
@@ -930,49 +1003,63 @@ Questions and considerations for Reliability:
 
 5. How do you design interactions in a distributed system to mitigate or withstand failures?
 
+   <a name="REL-05-01-"></a>
    1. <strong>Implement graceful degradation to transform applicable hard dependencies into soft dependencies</strong> - When a component's dependencies are unhealthy, the component itself can still function, although in a degraded manner. For example, when a dependency call fails, failover to a predetermined static response.
    <br /><tt>REL-05-01-</tt>
 
+   <a name="REL-05-02-"></a>
    1. <strong>Throttle requests</strong> - This is a mitigation pattern to respond to an unexpected increase in demand. Some requests are honored but those over a defined limit are rejected and return a message indicating they have been throttled. The expectation on clients is that they will back off and abandon the request or try again at a slower rate.
    <br /><tt>REL-05-02-</tt>
 
+   <a name="REL-05-03-"></a>
    1. <strong>Control and limit retry calls</strong> - Use exponential backoff to retry after progressively longer intervals. Introduce jitter to randomize those retry intervals, and limit the maximum number of retries.
    <br /><tt>REL-05-03-</tt>
 
+   <a name="REL-05-04-"></a>
    1. <strong>Fail fast and limit queues</strong> - If the workload is unable to respond successfully to a request, then fail fast. This allows the releasing of resources associated with a request, and permits the service to recover if it’s running out of resources. If the workload is able to respond successfully but the rate of requests is too high, then use a queue to buffer requests instead. However, do not allow long queues that can result in serving stale requests that the client has already given up on.
    <br /><tt>REL-05-04-</tt>
 
+   <a name="REL-05-05-"></a>
    1. <strong>Set client timeouts</strong> - Set timeouts appropriately, verify them systematically, and do not rely on default values as they are generally set too high
    <br /><tt>REL-05-05-</tt>
 
+   <a name="REL-05-06-"></a>
    1. <strong>Make services stateless where possible</strong> - Services should either not require state, or should offload state such that between different client requests, there is no dependence on locally stored data on disk or in memory. This enables servers to be replaced at will without causing an availability impact. Amazon ElastiCache or Amazon DynamoDB are good destinations for offloaded state.
-   <br /><tt>REL-05-05-</tt>
-
-   1. <strong>Implement emergency levers</strong> - These are rapid processes that may mitigate availability impact on workloads. They can be operated in the absence of a root cause. An ideal emergency lever reduces the cognitive burden on the resolvers to zero by providing fully deterministic activation and deactivation criteria. Example levers include blocking all robot traffic or serving a static response. Levers are often manual, but they can also be automated.
    <br /><tt>REL-05-06-</tt>
+
+   <a name="REL-05-07-"></a>
+   1. <strong>Implement emergency levers</strong> - These are rapid processes that may mitigate availability impact on workloads. They can be operated in the absence of a root cause. An ideal emergency lever reduces the cognitive burden on the resolvers to zero by providing fully deterministic activation and deactivation criteria. Example levers include blocking all robot traffic or serving a static response. Levers are often manual, but they can also be automated.
+   <br /><tt>REL-05-07-</tt>
 
    <a name="MonitorWorkload"></a>
 
 6. How do you monitor workload resources?
 
+   <a name="REL-06-01-"></a>
    1. <strong>Monitor all components for the workload (Generation)</strong> - Monitor the components of the workload with Amazon CloudWatch or third-party tools. Monitor AWS services with Personal Health Dashboard
    <br /><tt>REL-06-01-</tt>
 
+   <a name="REL-06-02-"></a>
    1. <strong>Define and calculate metrics (Aggregation)</strong> - Store log data and apply filters where necessary to calculate metrics, such as counts of a specific log event, or latency calculated from log event timestamps
    <br /><tt>REL-06-02-</tt>
 
+   <a name="REL-06-03-"></a>
    1. <strong>Send notifications (Real-time processing and alarming)</strong> - Organizations that need to know, receive notifications when significant events occur
    <br /><tt>REL-06-03-</tt>
 
+   <a name="REL-06-04-"></a>
    1. <strong>Automate responses (Real-time processing and alarming)</strong> - Use automation to take action when an event is detected, for example, to replace failed components
    <br /><tt>REL-06-03-</tt>
 
+   <a name="REL-06-04-"></a>
    1. <strong>Storage and Analytics</strong> - Collect log files and metrics histories and analyze these for broader trends and workload insights
    <br /><tt>REL-06-04-</tt>
 
+   <a name="REL-06-05-"></a>
    1. <strong>Conduct reviews regularly</strong> - Frequently review how workload monitoring is implemented and update it based on significant events and changes
    <br /><tt>REL-06-05-</tt>
 
+   <a name="REL-06-06-"></a>
    1. <strong>Monitor end-to-end tracing of requests through the system</strong> - Use AWS X-Ray or third-party tools so that developers can more easily analyze and debug distributed systems to understand how their applications and its underlying services are performing
    <br /><tt>REL-06-06-</tt>
 
@@ -980,15 +1067,19 @@ Questions and considerations for Reliability:
 
 7. How do you design workloads to adapt to changes in demand?
 
+   <a name="REL-07-01-"></a>
    1. <strong>Use automation when obtaining or scaling resources</strong> - When replacing impaired resources or scaling workloads, automate the process by using managed AWS services, such as Amazon S3 and AWS Auto Scaling. You can also use third-party tools and AWS SDKs to automate scaling.
    <br /><tt>REL-07-01-</tt>
 
+   <a name="REL-07-02-"></a>
    1. <strong>Obtain resources upon detection of impairment to a workload</strong> - Scale resources reactively when necessary if availability is impacted, to restore workload availability.
    <br /><tt>REL-07-02-</tt>
 
+   <a name="REL-07-03-"></a>
    1. <strong>Obtain resources upon detection that more resources are needed for a workload</strong> - Scale resources proactively to meet demand and avoid availability impact.
    <br /><tt>REL-07-03-</tt>
 
+   <a name="REL-07-04-"></a>
    1. <strong>Load test workloads</strong> - Adopt a load testing methodology to measure if scaling activity meets workload requirements.
    <br /><tt>REL-07-04-</tt>
 
@@ -996,18 +1087,23 @@ Questions and considerations for Reliability:
 
 8. How do you implement change?
 
+   <a name="REL-08-01-"></a>
    1. <strong>Use runbooks for standard activities such as deployment</strong> - Runbooks are the predefined steps used to achieve specific outcomes. Use runbooks to perform standard activities, whether done manually or automatically. Examples include deploying a workload, patching it, or making DNS modifications.
    <br /><tt>REL-08-01-</tt>
 
+   <a name="REL-08-02-"></a>
    1. <strong>Integrate functional testing as part of deployments</strong> - Functional tests are run as part of automated deployment. If success criteria are not met, the pipeline is halted or rolled back.
    <br /><tt>REL-08-02-</tt>
 
+   <a name="REL-08-03-"></a>
    1. <strong>Integrate resiliency testing as part of deployments</strong> - Resiliency tests (as part of chaos engineering) are run as part of the automated deployment pipeline in a pre-prod environment.
    <br /><tt>REL-08-03-</tt>
 
+   <a name="REL-08-04-"></a>
    1. <strong>Deploy using immutable infrastructure</strong> - This is a model that mandates that no updates, security patches, or configuration changes happen in-place on production workloads. When a change is needed, the architecture is built onto new infrastructure and deployed into production.
    <br /><tt>REL-08-04-</tt>
 
+   <a name="REL-08-05-"></a>
    1. <strong>Deploy changes with automation</strong> - Automate Deployments and patching to eliminate negative impact.
    <br /><tt>REL-08-05-</tt>
 
@@ -1015,15 +1111,19 @@ Questions and considerations for Reliability:
 
 9. How do you back up data?
 
+   <a name="REL-09-01-"></a>
    1. <strong>Identify and back up all data that needs to be backed up, or reproduce the data from sources</strong> - Amazon S3 can be used as a backup destination for multiple data sources. AWS services such as Amazon EBS, Amazon RDS, and Amazon DynamoDB have built in capabilities to create backups. Third-party backup software can also be used. Alternatively, if the data can be reproduced from other sources to meet RPO, you might not require a backup
    <br /><tt>REL-09-01-</tt>
 
+   <a name="REL-09-02-"></a>
    1. <strong>Secure and encrypt backups</strong> - Detect access using authentication and authorization, such as AWS IAM, and detect data integrity compromise by using encryption.
    <br /><tt>REL-09-02-</tt>
 
+   <a name="REL-09-03-"></a>
    1. <strong>Perform data backup automatically</strong> - Configure backups to be taken automatically based on a periodic schedule, or by changes in the dataset. RDS instances, EBS volumes, DynamoDB tables, and S3 objects can all be configured for automatic backup. AWS Marketplace solutions or third-party solutions can also be used.
    <br /><tt>REL-09-03-</tt>
 
+   <a name="REL-09-04-"></a>
    1. <strong>Perform periodic recovery of the data to verify backup integrity and processes</strong> - Validate that backup process implementation meets recovery time objectives (RTO) and recovery point objectives (RPO) by performing a recovery test.
    <br /><tt>REL-09-04-</tt>
 
@@ -1031,12 +1131,15 @@ Questions and considerations for Reliability:
 
 9. How do you use fault isolation to protect workloads?
 
+   <a name="REL-10-01-"></a>
    * <strong>Deploy the workload to multiple locations</strong> - Distribute workload data and resources across multiple Availability Zones or, where necessary, across AWS Regions. These locations can be as diverse as required.
    <br /><tt>REL-10-01-</tt>
 
+   <a name="REL-10-02-"></a>
    * <strong>Automate recovery for components constrained to a single location</strong> - If components of the workload can only run in a single Availability Zone or on-premises data center, you must implement the capability to do a complete rebuild of the workload within defined recovery objectives.
    <br /><tt>REL-10-02-</tt>
 
+   <a name="REL-10-03-"></a>
    * <strong>Use bulkhead architectures</strong> - Like the bulkheads on a ship, this pattern ensures that a failure is contained to a small subset of requests/users so the number of impaired requests is limited, and most can continue without error. Bulkheads for data are usually called partitions or shards, while bulkheads for services are known as cells.
    <br /><tt>REL-10-03-</tt>
 
@@ -1044,61 +1147,77 @@ Questions and considerations for Reliability:
 
 9. How do you design workloads to withstand component failures?
 
+   <a name="REL-11-01-"></a>
    1. <strong>Monitor all components of the workload to detect failures</strong> - Continuously monitor the health of workloads so that people and automated systems are aware of degradation or complete failure as soon as they occur. Monitor for key performance indicators (KPIs) based on business value.
-   <br /><tt>REL-10-01-</tt>
+   <br /><tt>REL-11-01-</tt>
 
+   <a name="REL-11-02-"></a>
    2. <strong>Fail over to healthy resources</strong> - Ensure that if a resource failure occurs, that healthy resources can continue to serve requests. For location failures (such as Availability Zone or AWS Region) ensure you have systems in place to fail over to healthy resources in unimpaired locations.
-   <br /><tt>REL-10-02-</tt>
+   <br /><tt>REL-11-02-</tt>
 
+   <a name="REL-11-03-"></a>
    3. <strong>Automate healing on all layers</strong> - Upon detection of a failure, use automated capabilities to perform actions to remediate.
-   <br /><tt>REL-10-03-</tt>
+   <br /><tt>REL-11-03-</tt>
 
+   <a name="REL-11-04-"></a>
    4. <strong>Use static stability to prevent bimodal behavior</strong> - Bimodal behavior is when a workload exhibits different behavior under normal and failure modes, for example, relying on launching new instances if an Availability Zone fails. You should instead build workloads that are statically stable and operate in only one mode. In this case, provision enough instances in each Availability Zone to handle the workload load if one AZ were removed and then use Elastic Load Balancing or Amazon Route 53 health checks to shift load away from the impaired instances.
-   <br /><tt>REL-10-04-</tt>
+   <br /><tt>REL-11-04-</tt>
 
+   <a name="REL-11-05-"></a>
    5. <strong>Send notifications when events impact availability</strong> - Notifications are sent upon the detection of significant events, even if the issue caused by the event was automatically resolved.
-   <br /><tt>REL-10-05-</tt>
+   <br /><tt>REL-11-05-</tt>
 
    <a name="TestReliability"></a>
 
 9. How do you test reliability?
 
+   <a name="REL-12-01-"></a>
    1. <strong>Use playbooks to investigate failures</strong> - Enable consistent and prompt responses to failure scenarios that are not well understood, by documenting the investigation process in playbooks. Playbooks are the predefined steps performed to identify the factors contributing to a failure scenario. The results from any process step are used to determine the next steps to take until the issue is identified or escalated.
-   <br /><tt>REL-11-01-</tt>
+   <br /><tt>REL-12-01-</tt>
 
+   <a name="REL-12-02-"></a>
    1. <strong>Perform post-incident analysis</strong> - Review customer-impacting events, and identify the contributing factors and preventative action items. Use this information to develop mitigations to limit or prevent recurrence. Develop procedures for prompt and effective responses. Communicate contributing factors and corrective actions as appropriate, tailored to target audiences. Have a method to communicate these causes to others as needed.
-   <br /><tt>REL-11-02-</tt>
+   <br /><tt>REL-12-02-</tt>
 
+   <a name="REL-12-03-"></a>
    1. <strong>Test functional requirements</strong> - These include unit tests and integration tests that validate required functionality.
-   <br /><tt>REL-11-03-</tt>
+   <br /><tt>REL-12-03-</tt>
 
+   <a name="REL-12-04-"></a>
    1. <strong>Test scaling and performance requirements</strong> - This includes load testing to validate that the workload meets scaling and performance requirements.
-   <br /><tt>REL-11-04-</tt>
+   <br /><tt>REL-12-04-</tt>
 
+   <a name="REL-12-05-"></a>
    1. <strong>Test resiliency using chaos engineering</strong> - Run tests that inject failures regularly into pre-production and production environments. Hypothesize how each workload will react to the failure, then compare hypothesis to the testing results and iterate if they do not match. Ensure that production testing does not impact users.
-   <br /><tt>REL-11-05-</tt>
+   <br /><tt>REL-12-05-</tt>
 
+   <a name="REL-12-06-"></a>
    1. <strong>Conduct game days regularly</strong> - Use game days to regularly exercise failure procedures as close to production as possible (including in production environments) with the people who will be involved in actual failure scenarios. Game days enforce measures to ensure that production testing does not impact users.
-   <br /><tt>REL-11-06-</tt>
+   <br /><tt>REL-12-06-</tt>
 
    <a name="PlanforDR"></a>
 
 9. How do you plan for disaster recovery (DR)?
 
+   <a name="REL-13-01-"></a>
    1. <strong>Define recovery objectives for downtime and data loss</strong> - The workload has a recovery time objective (RTO) and recovery point objective (RPO).
-   <br /><tt>REL-12-01-</tt>
+   <br /><tt>REL-13-01-</tt>
 
+   <a name="REL-13-02-"></a>
    1. <strong>Use defined recovery strategies to meet the recovery objectives</strong> - Define a disaster recovery (DR) strategy to meet objectives.
-   <br /><tt>REL-12-02-</tt>
+   <br /><tt>REL-13-02-</tt>
 
+   <a name="REL-13-03-"></a>
    1. <strong>Test disaster recovery implementation to validate the implementation</strong> - Regularly test failover to DR to ensure that RTO and RPO are met.
-   <br /><tt>REL-12-03-</tt>
+   <br /><tt>REL-13-03-</tt>
 
+   <a name="REL-13-04-"></a>
    1. <strong>Manage configuration drift at the DR site or region</strong> - Ensure that the infrastructure, data, and configuration are as needed at the DR site or region. For example, check that AMIs and service quotas are up to date.
-   <br /><tt>REL-12-04-</tt>
+   <br /><tt>REL-13-04-</tt>
 
+   <a name="REL-13-05-"></a>
    1. <strong>Automate recovery</strong> - Use AWS or third-party tools to automate system recovery and route traffic to the DR site or region.
-   <br /><tt>REL-12-05-</tt>
+   <br /><tt>REL-13-05-</tt>
 
 Ideas:
 
