@@ -1304,24 +1304,31 @@ Questions and Considerations for Operational Excellence:
 
 1. How do you determine what <strong>operational priorities</strong> are?
 
+   <a name="OPS-01-01-"></a>
    1. <strong>Evaluate external customer needs</strong> - Involve key stakeholders, including business, development, and operations teams, to determine where to focus efforts on external customer needs. This will ensure that you have a thorough understanding of the operations support that is required to achieve desired business outcomes.
    <br /><tt>OPS-01-01-</tt>
 
+   <a name="OPS-01-02-"></a>
    1. <strong>Evaluate internal customer needs</strong> - Involve key stakeholders, including business, development, and operations teams, when determining where to focus efforts on internal customer needs. This will ensure that you have a thorough understanding of the operations support that is required to achieve business outcomes.
    <br /><tt>OPS-01-02-</tt>
 
+   <a name="OPS-01-03-"></a>
    1. <strong>Evaluate governance requirements</strong> - Ensure awareness of guidelines or obligations defined by organization that may mandate or emphasize specific focus. Evaluate internal factors, such as organization policy, standards, and requirements. Validate that you have mechanisms to identify changes to governance. If no governance requirements are identified, ensure that you have applied due diligence to this determination.
    <br /><tt>OPS-01-03-</tt>
 
+   <a name="OPS-01-04-"></a>
    1. <strong>Evaluate compliance requirements</strong> - Evaluate external factors, such as regulatory compliance requirements and industry standards, to ensure that you are aware of guidelines or obligations that may mandate or emphasize specific focus. If no compliance requirements are identified, ensure that you apply due diligence to this determination.
    <br /><tt>OPS-01-04-</tt>
 
+   <a name="OPS-01-05-"></a>
    1. <strong>Evaluate threat landscape</strong> - Evaluate threats to the business (for example, competition, business risk and liabilities, operational risks, and information security threats) and maintain current information in a risk registry. Include the impact of risks when determining where to focus efforts.
    <br /><tt>OPS-01-05-</tt>
 
+   <a name="OPS-01-06-"></a>
    1. <strong>Evaluate tradeoffs</strong> - Evaluate the impact of tradeoffs between competing interests or alternative approaches, to help make informed decisions when determining where to focus efforts or choosing a course of action. For example, accelerating speed to market for new features may be emphasized over cost optimization, or you may choose a relational database for non-relational data to simplify the effort to migrate a system, rather than migrating to a database optimized by data type and updating application.
    <br /><tt>OPS-01-06-</tt>
 
+   <a name="OPS-01-07-"></a>
    1. <strong>Manage benefits and risks</strong> - Manage benefits and risks to make informed decisions when determining where to focus efforts. For example, it may be beneficial to deploy a workload with unresolved issues so that significant new features can be made available to customers. It may be possible to mitigate associated risks, or it may become unacceptable to allow a risk to remain, in which case you will take action to address the risk.
    <br /><tt>OPS-01-07-</tt>
 
@@ -1331,24 +1338,31 @@ Questions and Considerations for Operational Excellence:
 
    aka the "Operating Model"
 
+   <a name="OPS-02-01-"></a>
    1. <strong>Resources have identified owners</strong> - Understand who has ownership of each application, workload, platform, and infrastructure component, what business value is provided by that component, and why that ownership exists. Understanding the business value of these individual components and how they support business outcomes informs the processes and procedures applied against them.
    <br /><tt>OPS-02-01-</tt>
 
+   <a name="OPS-02-02-"></a>
    1. <strong>Processes and procedures have identified owners</strong> - Understand who has ownership of the definition of individual processes and procedures, why those specific process and procedures are used, and why that ownership exists. Understanding the reasons that specific processes and procedures are used enables identification of improvement opportunities.
    <br /><tt>OPS-02-02-</tt>
 
+   <a name="OPS-02-03-"></a>
    1. <strong>Operations activities have identified owners responsible for their performance</strong> - Understand who has responsibility to perform specific activities on defined workloads and why that responsibility exists. Understanding who has responsibility to perform activities informs who will conduct the activity, validate the result, and provide feedback to the owner of the activity.
    <br /><tt>OPS-02-03-</tt>
 
+   <a name="OPS-02-04-"></a>
    1. <strong>Team members know what they are responsible for</strong> - Understanding the responsibilities of each role and how they contribute to business outcomes informs the prioritization of tasks and why each role is important. This enables team members to recognize needs and respond appropriately.
    <br /><tt>OPS-02-04-</tt>
 
+   <a name="OPS-02-05-"></a>
    1. <strong>Mechanisms exist to identify responsibility and ownership</strong> - Where no individual or team is identified, there are defined escalation paths to someone with the authority to assign ownership or plan for that need to be addressed.
    <br /><tt>OPS-02-05-</tt>
 
+   <a name="OPS-02-06-"></a>
    1. <strong>Mechanisms exist to request additions, changes, and exceptions</strong> - You are able to make requests to owners of processes, procedures, and resources. Make informed decisions to approve requests where viable and determined to be appropriate after an evaluation of benefits and risks.
    <br /><tt>OPS-02-06-</tt>
 
+   <a name="OPS-02-07-"></a>
    1. <strong>Responsibilities between teams are predefined or negotiated</strong> - There are defined or negotiated agreements between teams describing how they work with and support each other (for example, response times, service 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">objectives, or service 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">agreements). Understanding the impact of the teams’ work on business outcomes, and the outcomes of other teams and organizations, informs the prioritization of their tasks and enables them to respond appropriately.
    <br /><tt>OPS-02-07-</tt>
 
@@ -1356,27 +1370,35 @@ Questions and Considerations for Operational Excellence:
 
 3. How does <strong>organizational culture</strong> support business outcomes?
 
+   <a name="OPS-03-01-"></a>
    1. <strong>Executive Sponsorship</strong> - Senior leadership clearly sets expectations for the organization and evaluates success. Senior leadership is the sponsor, advocate, and driver for the adoption of best practices and evolution of the organization
    <br /><tt>OPS-03-01-</tt>
 
+   <a name="OPS-03-02-"></a>
    1. <strong>Team members are empowered to take action when outcomes are at risk</strong> - The workload owner has defined guidance and scope empowering team members to respond when outcomes are at risk. Escalation mechanisms are used to get direction when events are outside of the defined scope.
    <br /><tt>OPS-03-02-</tt>
 
+   <a name="OPS-03-03-"></a>
    1. <strong>Escalation is encouraged</strong> - Team members have mechanisms and are encouraged to escalate concerns to decision makers and stakeholders if they believe outcomes are at risk. Escalation should be performed early and often so that risks can be identified, and prevented from causing incidents.
    <br /><tt>OPS-03-03-</tt>
 
+   <a name="OPS-03-04-"></a>
    1. <strong>Communications are timely, clear, and actionable</strong> - Mechanisms exist and are used to provide timely notice to team members of known risks and planned events. Necessary context, details, and time (when possible) are provided to support determining if action is necessary, what action is required, and to take action in a timely manner. For example, providing notice of software vulnerabilities so that patching can be expedited, or providing notice of planned sales promotions so that a change freeze can be implemented to avoid the risk of service disruption.
    <br /><tt>OPS-03-04-</tt>
 
+   <a name="OPS-03-05-"></a>
    1. <strong>Experimentation is encouraged</strong> - Experimentation accelerates learning and keeps team members interested and engaged. An undesired result is a successful experiment that has identified a path that will not lead to success. Team members are not punished for successful experiments with undesired results. Experimentation is required for innovation to happen and turn ideas into outcomes.
    <br /><tt>OPS-03-05-</tt>
 
+   <a name="OPS-03-06-"></a>
    1. <strong>Team members are enabled and encouraged to maintain and grow their skill sets</strong> - Teams must grow their skill sets to adopt new technologies, and to support changes in demand and responsibilities in support of workloads. Growth of skills in new technologies is frequently a source of team member satisfaction and supports innovation. Support team members’ pursuit and maintenance of industry certifications that validate and acknowledge their growing skills. Cross train to promote knowledge transfer and reduce the risk of significant impact when you lose skilled and experienced team members with institutional knowledge. Provide dedicated structured time for learning.
    <br /><tt>OPS-03-06-</tt>
 
+   <a name="OPS-03-07-"></a>
    1. <strong>Resource teams appropriately</strong> - Maintain team member capacity, and provide tools and resources, to support  workload needs. Overtasking team members increases the risk of incidents resulting from human error. Investments in tools and resources (for example, providing automation for frequently executed activities) can scale the effectiveness of the team, enabling them to support additional activities.
    <br /><tt>OPS-03-07-</tt>
 
+   <a name="OPS-03-08-"></a>
    1. <strong>Diverse opinions are encouraged and sought within and across teams</strong> - Leverage cross-organizational diversity to seek multiple unique perspectives. Use this perspective to increase innovation, challenge assumptions, and reduce the risk of confirmation bias. Grow inclusion, diversity, and accessibility within teams to gain beneficial perspectives.
    <br /><tt>OPS-03-08-</tt>
 
@@ -1384,18 +1406,23 @@ Questions and Considerations for Operational Excellence:
 
 4. How do you design workloads to understand its state?
 
+   <a name="OPS-04-01-"></a>
    1. <strong>Implement application telemetry</strong> - Instrument  application code to emit information about its internal state, status, and achievement of business outcomes. For example, queue depth, error messages, and response times. Use this information to determine when a response is required.
    <br /><tt>OPS-04-01-</tt>
 
+   <a name="OPS-04-02-"></a>
    1. <strong>Implement and configure workload telemetry</strong> - Design and configure workloads to emit information about its internal state and current status. For example, API call volume, HTTP status codes, and scaling events. Use this information to help determine when a response is required.
    <br /><tt>OPS-04-02-</tt>
 
+   <a name="OPS-04-03-"></a>
    1. <strong>Implement user activity telemetry</strong> - Instrument  application code to emit information about user activity, for example, click streams, or started, abandoned, and completed transactions. Use this information to help understand how the application is used, patterns of usage, and to determine when a response is required.
    <br /><tt>OPS-04-03-</tt>
 
+   <a name="OPS-04-04-"></a>
    1. <strong>Implement dependency telemetry</strong> - Design and configure workloads to emit information about the status (for example, reachability or response time) of resources it depends on. Examples of external dependencies can include, external databases, DNS, and network connectivity. Use this information to determine when a response is required.
    <br /><tt>OPS-04-04-</tt>
 
+   <a name="OPS-04-05-"></a>
    1. <strong>Implement transaction traceability</strong> - Implement  application code and configure workload components to emit information about the flow of transactions across the workload. Use this information to determine when a response is required and to assist you in identifying the factors contributing to an issue.
    <br /><tt>OPS-04-05-</tt>
 
@@ -1403,33 +1430,43 @@ Questions and Considerations for Operational Excellence:
 
 5. How do you reduce defects, ease remediation, and improve flow into production?
 
+   <a name="OPS-05-01-"></a>
    1. <strong>Use version control</strong> - Use version control to enable tracking of changes and releases.
    <br /><tt>OPS-05-01-</tt>
 
+   <a name="OPS-05-02-"></a>
    1. <strong>Test and validate changes</strong> - Test and validate changes to help limit and detect errors. Automate testing to reduce errors caused by manual processes, and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to test.
    <br /><tt>OPS-05-02-</tt>
 
+   <a name="OPS-05-03-"></a>
    1. <strong>Use configuration management systems</strong> - Use configuration management systems to make and track configuration changes. These systems reduce errors caused by manual processes and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to deploy changes.
    <br /><tt>OPS-05-03-</tt>
 
+   <a name="OPS-05-04-"></a>
    1. <strong>Use build and deployment management systems</strong> - Use build and deployment management systems. These systems reduce errors caused by manual processes and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to deploy changes.
    <br /><tt>OPS-05-04-</tt>
 
+   <a name="OPS-05-05-"></a>
    1. <strong>Perform patch management</strong> - Perform patch management to gain features, address issues, and remain compliant with governance. Automate patch management to reduce errors caused by manual processes, and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to patch.
    <br /><tt>OPS-05-05-</tt>
 
+   <a name="OPS-05-06-"></a>
    1. <strong>Share design standards</strong> - Share best practices across teams to increase awareness and maximize the benefits of development efforts.
    <br /><tt>OPS-05-06-</tt>
 
+   <a name="OPS-05-07-"></a>
    1. <strong>Implement practices to improve code quality</strong> - Implement practices to improve code quality and minimize defects. For example, test-driven development, code reviews, and standards adoption.
    <br /><tt>OPS-05-07-</tt>
 
+   <a name="OPS-05-08-"></a>
    1. <strong>Use multiple environments</strong> - Use multiple environments to experiment, develop, and test workloads. Use increasing levels of controls as environments approach production to gain confidence each workload will operate as intended when deployed.
    <br /><tt>OPS-05-08-</tt>
 
+   <a name="OPS-05-09-"></a>
    1. <strong>Make frequent, small, reversible changes</strong> - Frequent, small, and reversible changes reduce the scope and impact of a change. This eases troubleshooting, enables faster remediation, and provides the option to roll back a change.
    <br /><tt>OPS-05-09-</tt>
 
+   <a name="OPS-05-10-"></a>
    1. <strong>Fully automate integration and deployment</strong> - Automate build, deployment, and testing of the workload. This reduces errors caused by manual processes and reduces the effort to deploy changes.
    <br /><tt>OPS-05-10-</tt>
 
@@ -1437,27 +1474,35 @@ Questions and Considerations for Operational Excellence:
 
 6. How do you mitigate deployment risks?
 
+   <a name="OPS-06-01-"></a>
    1. <strong>Plan for unsuccessful changes</strong> - Plan to revert to a known good state, or remediate in the production environment if a change does not have the desired outcome. This preparation reduces recovery time through faster responses.
    <br /><tt>OPS-06-01-</tt>
 
+   <a name="OPS-06-02-"></a>
    1. <strong>Test and validate changes</strong> - Test changes and validate the results at all lifecycle stages to confirm new features and minimize the risk and impact of failed deployments.
    <br /><tt>OPS-06-02-</tt>
 
+   <a name="OPS-06-03-"></a>
    1. <strong>Use deployment management systems</strong> - Use deployment management systems to track and implement change. This reduces errors cause by manual processes and reduces the effort to deploy changes.
    <br /><tt>OPS-06-03-</tt>
 
+   <a name="OPS-06-04-"></a>
    1. <strong>Test using limited deployments</strong> - Test with limited deployments alongside existing systems to confirm desired outcomes prior to full scale deployment. For example, use deployment canary testing or one-box deployments.
    <br /><tt>OPS-06-04-</tt>
 
+   <a name="OPS-06-05-"></a>
    1. <strong>Deploy using parallel environments</strong> - Implement changes onto parallel environments, and then transition over to the new environment. Maintain the prior environment until there is confirmation of successful deployment. Doing so minimizes recovery time by enabling rollback to the previous environment.
    <br /><tt>OPS-06-05-</tt>
 
+   <a name="OPS-06-06-"></a>
    1. <strong>Deploy frequent, small, reversible changes</strong> - Use frequent, small, and reversible changes to reduce the scope of a change. This results in easier troubleshooting and faster remediation with the option to roll back a change.
    <br /><tt>OPS-06-06-</tt>
 
+   <a name="OPS-06-07-"></a>
    1. <strong>Fully automate integration and deployment</strong> - Automate build, deployment, and testing of the workload. This reduces errors cause by manual processes and reduces the effort to deploy changes.
    <br /><tt>OPS-06-07-</tt>
 
+   <a name="OPS-06-08-"></a>
    1. <strong>Automate testing and rollback</strong> - Automate testing of deployed environments to confirm desired outcomes. Automate rollback to previous known good state when outcomes are not achieved to minimize recovery time and reduce errors caused by manual processes.
    <br /><tt>OPS-06-08-</tt>
 
@@ -1465,18 +1510,23 @@ Questions and Considerations for Operational Excellence:
 
 7. How do you know that you are ready to support a workload?
 
+   <a name="OPS-07-01-"></a>
    1. <strong>Ensure personnel capability</strong> - Have a mechanism to validate that you have the appropriate number of trained personnel to provide support for operational needs. Train personnel and adjust personnel capacity as necessary to maintain effective support.
    <br /><tt>OPS-07-01-</tt>
 
+   <a name="OPS-07-02-"></a>
    1. <strong>Ensure consistent review of operational readiness</strong> - Ensure you have a consistent review of readiness to operate a workload. Reviews must include, at a minimum, the operational readiness of the teams and the workload, and security requirements. Implement review activities in code and trigger automated review in response to events where appropriate, to ensure consistency, speed of execution, and reduce errors caused by manual processes.
    <br /><tt>OPS-07-02-</tt>
 
+   <a name="OPS-07-03-"></a>
    1. <strong>Use runbooks to perform procedures</strong> - Runbooks are documented procedures to achieve specific outcomes. Enable consistent and prompt responses to well-understood events by documenting procedures in runbooks. Implement runbooks as code and trigger the execution of runbooks in response to events where appropriate, to ensure consistency, speed responses, and reduce errors caused by manual processes.
    <br /><tt>OPS-07-03-</tt>
 
+   <a name="OPS-07-04-"></a>
    1. <strong>Use playbooks to investigate issues</strong> - Enable consistent and prompt responses to issues that are not well understood, by documenting the investigation process in playbooks. Playbooks are the predefined steps performed to identify the factors contributing to a failure scenario. The results from any process step are used to determine the next steps to take until the issue is identified or escalated.
    <br /><tt>OPS-07-04-</tt>
 
+   <a name="OPS-07-05-"></a>
    1. <strong>Make informed decisions to deploy systems and changes</strong> - Evaluate the capabilities of the team to support the workload and the workload's compliance with governance. Evaluate these against the benefits of deployment when determining whether to transition a system or change into production. Understand the benefits and risks to make informed decisions.
    <br /><tt>OPS-07-05-</tt>
 
@@ -1484,27 +1534,35 @@ Questions and Considerations for Operational Excellence:
 
 8. How do you understand the health of each workload?
 
+   <a name="OPS-08-01-"></a>
    1. <strong>Identify key performance indicators (KPIs)</strong> based on desired business outcomes (for example, order rate, customer retention rate, and profit versus operating expense) and customer outcomes (for example, customer satisfaction). Evaluate KPIs to determine workload success.
    <br /><tt>OPS-08-01-</tt>
 
+   <a name="OPS-08-02-"></a>
    1. <strong>Define workload metrics</strong> - Define workload metrics to measure the achievement of KPIs (for example, abandoned shopping carts, orders placed, cost, price, and allocated workload expense). Define workload metrics to measure the health of the workload (for example, interface response time, error rate, requests made, requests completed, and utilization). Evaluate metrics to determine if the workload is achieving desired outcomes, and to understand the health of the workload.
    <br /><tt>OPS-08-02-</tt>
 
+   <a name="OPS-08-03-"></a>
    1. <strong>Collect and analyze workload metrics</strong> - Perform regular proactive reviews of metrics to identify trends and determine where appropriate responses are needed.
    <br /><tt>OPS-08-03-</tt>
 
+   <a name="OPS-08-04-"></a>
    1. <strong>Establish workload metrics baselines</strong> to provide expected values as the basis for comparison and identification of under and over performing components. Identify thresholds for improvement, investigation, and intervention.
    <br /><tt>OPS-08-04-</tt>
 
+   <a name="OPS-08-05-"></a>
    1. <strong>Learn expected patterns of activity for workload</strong> - Establish patterns of workload activity to identify anomalous behavior so that you can respond appropriately if required.
    <br /><tt>OPS-08-05-</tt>
 
+   <a name="OPS-08-06-"></a>
    1. <strong>Alert when workload outcomes are at risk</strong> - Raise an alert when workload outcomes are at risk so that you can respond appropriately if necessary.
    <br /><tt>OPS-08-06-</tt>
 
+   <a name="OPS-08-07-"></a>
    1. <strong>Alert when workload anomalies are detected</strong> - Raise an alert when workload anomalies are detected so that you can respond appropriately if necessary.
    <br /><tt>OPS-08-07-</tt>
 
+   <a name="OPS-08-08-"></a>
    1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">view of  workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
    <br /><tt>OPS-08-08-</tt>
 
@@ -1512,27 +1570,35 @@ Questions and Considerations for Operational Excellence:
 
 9. How do you understand the health of operations?
 
+   <a name="OPS-09-01-"></a>
    1. <strong>Identify key performance indicators (KPIs) based on desired business (for example, new features delivered) and customer outcomes (for example, customer support cases). Evaluate KPIs to determine operations success.
    <br /><tt>OPS-09-01-</tt>
 
+   <a name="OPS-09-02-"></a>
    1. <strong>Define operations metrics</strong> to measure the achievement of KPIs (for example, successful deployments, and failed deployments). Define operations metrics to measure the health of operations activities (for example, mean time to detect an incident (MTTD), and mean time to recovery (MTTR) from an incident). Evaluate metrics to determine if operations are achieving desired outcomes, and to understand the health of operations activities.
    <br /><tt>OPS-09-02-</tt>
 
+   <a name="OPS-09-03-"></a>
    1. <strong>Collect and analyze operations metrics</strong> - Perform regular, proactive reviews of metrics to identify trends and determine where appropriate responses are needed.
    <br /><tt>OPS-09-03-</tt>
 
+   <a name="OPS-09-04-"></a>
    1. <strong>Establish operations metrics baselines</strong> to provide expected values as the basis for comparison and identification of under and over performing operations activities.
    <br /><tt>OPS-09-04-</tt>
 
+   <a name="OPS-09-05-"></a>
    1. <strong>Learn the expected patterns of activity for operations</strong> to identify anomalous activity so that you can respond appropriately if necessary.
    <br /><tt>OPS-09-05-</tt>
 
+   <a name="OPS-09-06-"></a>
    1. <strong>Alert when operations outcomes are at risk</strong> - Raise an alert when operations outcomes are at risk so that you can respond appropriately if necessary.
    <br /><tt>OPS-09-06-</tt>
 
+   <a name="OPS-09-07-"></a>
    1. <strong>Alert when operations anomalies are detected</strong> so that you can respond appropriately if necessary.
    <br /><tt>OPS-09-07-</tt>
 
+   <a name="OPS-09-08-"></a>
    1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
    <br /><tt>OPS-09-08-</tt>
 
@@ -1540,24 +1606,31 @@ Questions and Considerations for Operational Excellence:
 
 9. How do you manage workload and operations events?
 
+   <a name="OPS-10-01-"></a>
    1. <strong>Use processes for event, incident, and problem management</strong> - Have processes to address observed events, events that require intervention (incidents), and events that require intervention and either recur or cannot currently be resolved (problems). Use these processes to mitigate the impact of these events on the business and customers by ensuring timely and appropriate responses.
    <br /><tt>OPS-10-01-</tt>
 
+   <a name="OPS-10-02-"></a>
    1. <strong>Have a process per alert</strong> - Have a well-defined response (runbook or playbook), with a specifically identified owner, for any event for which you raise an alert. This ensures effective and prompt responses to operations events and prevents actionable events from being obscured by less valuable notifications.
    <br /><tt>OPS-10-02-</tt>
 
+   <a name="OPS-10-03-"></a>
    1. <strong>Prioritize operational events based on business impact</strong> - Ensure that when multiple events require intervention, those that are most significant to the business are addressed first. For example, impacts can include loss of life or injury, financial loss, or damage to reputation or trust.
    <br /><tt>OPS-10-03-</tt>
 
+   <a name="OPS-10-04-"></a>
    1. <strong>Define escalation paths</strong> - Define escalation paths in runbooks and playbooks, including what triggers escalation, and procedures for escalation. Specifically identify owners for each action to ensure effective and prompt responses to operations events.
    <br /><tt>OPS-10-04-</tt>
 
+   <a name="OPS-10-05-"></a>
    1. <strong>Enable push notifications</strong> - Communicate directly with users (for example, with email or SMS) when the services they use are impacted, and again when the services return to normal operating conditions, to enable users to take appropriate action.
    <br /><tt>OPS-10-05-</tt>
 
+   <a name="OPS-10-06-"></a>
    1. <strong>Communicate status through dashboards</strong> - Provide dashboards tailored to their target audiences (for example, internal technical teams, leadership, and customers) to communicate the current operating status of the business and provide metrics of interest.
    <br /><tt>OPS-10-06-</tt>
 
+   <a name="OPS-10-07-"></a>
    1. <strong>Automate responses to events</strong> - Automate responses to events to reduce errors caused by manual processes, and to ensure prompt and consistent responses.
    <br /><tt>OPS-10-07-</tt>
 
@@ -1565,30 +1638,39 @@ Questions and Considerations for Operational Excellence:
 
 9. How do you evolve operations?
 
+   <a name="OPS-11-01-"></a>
    1. <strong>Have a process for continuous improvement</strong> - Regularly evaluate and prioritize opportunities for improvement to focus efforts where they can provide the greatest benefits.
    <br /><tt>OPS-11-01-</tt>
 
+   <a name="OPS-11-02-"></a>
    1. <strong>Perform post-incident analysis</strong> - Review customer-impacting events, and identify the contributing factors and preventative actions. Use this information to develop mitigations to limit or prevent recurrence. Develop procedures for prompt and effective responses. Communicate contributing factors and corrective actions as appropriate, tailored to target audiences.
    <br /><tt>OPS-11-02-</tt>
 
+   <a name="OPS-11-03-"></a>
    1. <strong>Implement feedback loops</strong> - Include feedback loops in procedures and workloads to help you identify issues and areas that need improvement.
    <br /><tt>OPS-11-03-</tt>
 
+   <a name="OPS-11-04-"></a>
    1. <strong>Perform Knowledge Management</strong> - Mechanisms exist for team members to discover the information that they are looking for in a timely manner, access it, and identify that it’s current and complete. Mechanisms are present to identify needed content, content in need of refresh, and content that should be archived so that it’s no longer referenced.
    <br /><tt>OPS-11-04-</tt>
 
+   <a name="OPS-11-05-"></a>
    1. <strong>Define drivers for improvement</strong> - Identify drivers for improvement to help you evaluate and prioritize opportunities.
    <br /><tt>OPS-11-05-</tt>
 
+   <a name="OPS-11-06-"></a>
    1. <strong>Validate insights</strong> - Review analysis results and responses with cross-functional teams and business owners. Use these reviews to establish common understanding, identify additional impacts, and determine courses of action. Adjust responses as appropriate.
    <br /><tt>OPS-11-06-</tt>
 
+   <a name="OPS-11-07-"></a>
    1. <strong>Perform operations metrics reviews</strong> - Regularly perform retrospective analysis of operations metrics with cross-team participants from different areas of the business. Use these reviews to identify opportunities for improvement, potential courses of action, and to share lessons learned.
    <br /><tt>OPS-11-07-</tt>
 
+   <a name="OPS-11-08-"></a>
    1. <strong>Document and share lessons learned</strong> from the execution of operations activities so that you can use them internally and across teams.
    <br /><tt>OPS-11-08-</tt>
 
+   <a name="OPS-11-09-"></a>
    1. <strong>Allocate time to make improvements</strong> - Dedicate time and resources within processes to make continuous incremental improvements possible.
    <br /><tt>OPS-11-09-</tt>
 
@@ -1662,24 +1744,31 @@ Questions and Considerations for Performance Efficiency:
 
 1. How do you select the best performing architecture?
 
+   <a name="PERF-01-01-"></a>
    1. <strong>Understand the available services and resources</strong> - Learn about and understand the wide range of services and resources available in the cloud. Identify the relevant services and configuration options for each workload, and understand how to achieve optimal performance. <tt>PERF-01-IdentifySvcs</tt>
    <br /><tt>PERF-01-01-</tt>
 
+   <a name="PERF-01-02-"></a>
    1. <strong>Define a process for architectural choices</strong> - Use internal experience and knowledge of the cloud, or external resources such as published use cases, relevant documentation, or whitepapers to define a process to choose resources and services. You should define a process that encourages experimentation and benchmarking with the services that could be used by workloads. <tt>PERF-02-Process</tt>
    <br /><tt>PERF-01-02-</tt>
 
+   <a name="PERF-01-03-"></a>
    1. <strong>Factor cost requirements into decisions</strong> - Workloads often have cost requirements for operation. Use internal cost controls to select resource types and sizes based on predicted resource need.
    <br /><tt>PERF-01-03-</tt>
 
+   <a name="PERF-01-04-"></a>
    1. <strong>Use policies or reference architectures</strong> - Maximize performance and efficiency by evaluating internal policies and existing reference architectures and using analysis to select services and configurations for each workload.
    <br /><tt>PERF-01-04-</tt>
 
+   <a name="PERF-01-05-"></a>
    1. <strong>Use guidance from cloud providers or partners</strong> - Use cloud company resources, such as solutions architects, professional services, or an appropriate partner to guide decisions. These resources can help review and improve the architecture for optimal performance.
    <br /><tt>PERF-01-05-</tt>
 
+   <a name="PERF-01-06-"></a>
    1. <strong>Benchmark existing workloads</strong> - Benchmark the performance of an existing workload to understand how it performs on the cloud. Use the data collected from benchmarks to drive architectural decisions.
    <br /><tt>PERF-01-06-</tt>
 
+   <a name="PERF-01-07-"></a>
    1. <strong>Load test workloads</strong> - Deploy the latest workload architecture on the cloud using different resource types and sizes. Monitor the deployment to capture performance metrics that identify bottlenecks or excess capacity. Use this performance information to design or improve architecture and resource selection.
    <br /><tt>PERF-01-07-</tt>
 
@@ -1687,21 +1776,27 @@ Questions and Considerations for Performance Efficiency:
 
 2. How do you select the compute solution?
 
+   <a name="PERF-02-01-"></a>
    1. <strong>Evaluate the available compute options</strong> - Understand the performance characteristics of the compute-related options available to you. Know how instances, containers, and functions work, and what advantages, or disadvantages, they bring to  workloads.
    <br /><tt>PERF-02-01-</tt>
 
+   <a name="PERF-02-02-"></a>
    1. <strong>Understand the available compute configuration options</strong> - Understand how various options complement workloads, and which configuration options are best for the system. Examples of these options include instance family, sizes, features (GPU, I/O), function sizes, container instances, and single versus multi-tenancy.
    <br /><tt>PERF-02-02-</tt>
 
+   <a name="PERF-02-03-"></a>
    1. <strong>Collect compute-related metrics</strong> - One of the best ways to understand how compute systems are performing is to record and track the <strong>true utilization of various resources</strong>. This data can be used to make more accurate determinations about resource requirements.
    <br /><tt>PERF-02-03-</tt>
 
+   <a name="PERF-02-04-"></a>
    1. <strong>Determine the required configuration by right-sizing</strong> - Analyze the various <strong>performance characteristics</strong> of each workload and how these characteristics relate to memory, network, and CPU usage. Use this data to choose resources that best match each workload's profile. For example, a memory-intensive workload, such as a database, could be served best by the r-family of instances. However, a bursting workload can benefit more from an elastic container system.
    <br /><tt>PERF-02-04-</tt>
 
+   <a name="PERF-02-05-"></a>
    1. <strong>Use the available elasticity of resources</strong> - The cloud provides the flexibility to expand or reduce resources dynamically through a variety of mechanisms to meet changes in demand. Combined with compute-related metrics, a workload can automatically respond to changes and utilize the optimal set of resources to achieve its goal.
    <br /><tt>PERF-02-05-</tt>
 
+   <a name="PERF-02-06-"></a>
    1. <strong>Re-evaluate compute needs based on metrics</strong> - Use system-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">metrics to identify the behavior and requirements of  workloads over time. Evaluate workload needs by comparing the available resources with these requirements and make changes to  compute environment to best match each workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
    <br /><tt>PERF-02-06-</tt>
 
@@ -1709,12 +1804,15 @@ Questions and Considerations for Performance Efficiency:
 
 3. How do you select storage solutions?
 
+   <a name="PERF-03-01-"></a>
    1. <strong>Understand storage characteristics and requirements</strong> - Understand the different characteristics (for example, shareable, file size, cache size, access patterns, latency, throughput, and persistence of data) that are required to select the services that best fit the workload, such as object storage, block storage, file storage, or instance storage.
    <br /><tt>PERF-03-01-</tt>
 
+   <a name="PERF-03-02-"></a>
    1. <strong>Evaluate available configuration options</strong> - Evaluate the various characteristics and configuration options and how they relate to storage. Understand where and how to use provisioned IOPS, SSDs, magnetic storage, object storage, archival storage, or ephemeral storage to optimize storage space and performance for each workload.
    <br /><tt>PERF-03-04-</tt>
 
+   <a name="PERF-03-03-"></a>
    1. <strong>Make decisions based on access patterns and metrics</strong> - Choose storage systems based on each workload's access patterns and configure them by determining how the workload accesses data. Increase storage efficiency by choosing object storage over block storage. Configure the storage options you choose to match  data access patterns.
    <br /><tt>PERF-03-05-</tt>
 
@@ -1722,18 +1820,23 @@ Questions and Considerations for Performance Efficiency:
 
 4. How do you select database solutions?
 
+   <a name="PERF-04-01-"></a>
    1. <strong>Understand data characteristics</strong> - Understand the different characteristics of data in each workload. Determine if the workload requires transactions, how it interacts with data, and what its performance demands are. Use this data to select the best performing database approach for each workload (for example, relational databases, NoSQL Key-value, document, wide column, graph, time series, or in-memory storage).
    <br /><tt>PERF-04-01-</tt>
 
+   <a name="PERF-04-02-"></a>
    1. <strong>Evaluate the available options</strong> - Evaluate the services and storage options that are available as part of the selection process for each workload's storage mechanisms. Understand how, and when, to use a given service or system for data storage. Learn about available configuration options that can optimize database performance or efficiency, such as provisioned IOPs, memory and compute resources, and caching.
    <br /><tt>PERF-04-02-</tt>
 
+   <a name="PERF-04-03-"></a>
    1. <strong>Collect and record database performance metrics</strong> - Use tools, libraries, and systems that record performance measurements related to database performance. For example, measure transactions per second, slow queries, or system latency introduced when accessing the database. Use this data to understand the performance of database systems.
    <br /><tt>PERF-04-03-</tt>
 
+   <a name="PERF-04-04-"></a>
    1. <strong>Choose data storage based on access patterns</strong> - Use the access patterns of the workload to decide which services and technologies to use. For example, utilize a relational database for workloads that require transactions, or a key-value store that provides higher throughput but is eventually consistent where applicable.
    <br /><tt>PERF-04-04-</tt>
 
+   <a name="PERF-04-05-"></a>
    1. <strong>Optimize data storage based on access patterns and metrics</strong> - Use performance characteristics and access patterns that optimize how data is stored or queried to achieve the best possible performance. Measure how optimizations such as indexing, key distribution, data warehouse design, or caching strategies impact system performance or overall efficiency.
    <br /><tt>PERF-04-05-</tt>
 
@@ -1741,24 +1844,31 @@ Questions and Considerations for Performance Efficiency:
 
 5. How do you configure networking solutions?
 
+   <a name="PERF-05-01-"></a>
    1. <strong>Understand how networking impacts performance</strong> - Analyze and understand how network-related decisions impact workload performance. For example, network latency often impacts the user experience, and using the wrong protocols can starve network capacity through excessive overhead.
    <br /><tt>PERF-05-01-</tt>
 
+   <a name="PERF-05-02-"></a>
    1. <strong>Evaluate available networking features</strong> - Evaluate networking features in the cloud that may increase performance. Measure the impact of these features through testing, metrics, and analysis. For example, take advantage of network-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">features that are available to reduce latency, network distance, or jitter.
    <br /><tt>PERF-05-02-</tt>
 
+   <a name="PERF-05-03-"></a>
    1. <strong>Choose appropriately sized dedicated connectivity or VPN for hybrid workloads</strong> - When there is a requirement for on-premise communication, ensure that you have adequate bandwidth for workload performance. Based on bandwidth requirements, a single dedicated connection or a single VPN might not be enough, and you must enable traffic load balancing across multiple connections.
    <br /><tt>PERF-05-03-</tt>
 
+   <a name="PERF-05-04-"></a>
    1. <strong>Leverage load-balancing and encryption offloading</strong> - Distribute traffic across multiple resources or services to allow each workload to take advantage of the elasticity that the cloud provides. You can also use load balancing for offloading encryption termination to improve performance and to manage and route traffic effectively.
    <br /><tt>PERF-05-04-</tt>
 
+   <a name="PERF-05-05-"></a>
    1. <strong>Choose network protocols to improve performance</strong> - Make decisions about protocols for communication between systems and networks based on the impact to the workload’s performance.
    <br /><tt>PERF-05-05-</tt>
 
+   <a name="PERF-05-06-"></a>
    1. <strong>Choose each workload’s location based on network requirements</strong> - Use the cloud location options available to reduce network latency or improve throughput. Utilize AWS Regions, Availability Zones, placement groups, and edge locations such as Outposts, Local Regions, and Wavelength, to reduce network latency or improve throughput.
    <br /><tt>PERF-05-06-</tt>
 
+   <a name="PERF-05-07-"></a>
    1. <strong>Optimize network configuration based on metrics</strong> - Use collected and analyzed data to make informed decisions about optimizing network configuration. Measure the impact of those changes and use the impact measurements to make future decisions.
    <br /><tt>PERF-05-07-</tt>
 
@@ -1766,12 +1876,15 @@ Questions and Considerations for Performance Efficiency:
 
 6. How do you evolve each workload to take advantage of new releases?
 
+   <a name="PERF-06-01-"></a>
    1. <strong>Stay up-to-date on new resources and services</strong> - Evaluate ways to improve performance as new services, design patterns, and product offerings become available. Determine which of these could improve performance or increase the efficiency of the workload through ad-hoc evaluation, internal discussion, or external analysis.
    <br /><tt>PERF-06-01-</tt>
 
+   <a name="PERF-06-02-"></a>
    1. <strong>Define a process to improve workload performance</strong> - Evaluate new services, design patterns, resource types, and configurations as they become available. For example, run existing performance tests on new instance offerings to determine their potential to improve the workload.
    <br /><tt>PERF-06-02-</tt>
 
+   <a name="PERF-06-03-"></a>
    1. <strong>Evolve workload performance over time</strong> - As an organization, use the information gathered through the evaluation process to actively drive adoption of new services or resources when they become available.
    <br /><tt>PERF-06-03-</tt>
 
@@ -1779,21 +1892,27 @@ Questions and Considerations for Performance Efficiency:
 
 7. How do you monitor resources to ensure they are performing?
 
+   <a name="PERF-07-01-"></a>
    1. <strong>Record performance-related metrics</strong> - Use a monitoring and observability service to record performance-related metrics. For example, record database transactions, slow queries, I/O latency, HTTP request throughput, service latency, or other key data.
    <br /><tt>PERF-07-01-</tt>
 
+   <a name="PERF-07-02-"></a>
    1. <strong>Analyze metrics when events or incidents occur</strong> - In response to (or during) an event or incident, use monitoring dashboards or reports to understand and diagnose the impact. These views provide insight into which portions of the workload are not performing as expected.
    <br /><tt>PERF-07-02-</tt>
 
+   <a name="PERF-07-03-"></a>
    1. <strong>Establish Key Performance Indicators (KPIs) to measure workload performance</strong> - Identify the KPIs that indicate whether the workload is performing as intended. For example, an API-based workload might use overall response latency as an indication of overall performance, and an e-commerce site might choose to use the number of purchases as its KPI.
    <br /><tt>PERF-07-03-</tt>
 
+   <a name="PERF-07-04-"></a>
    1. <strong>Use monitoring to generate alarm-based notifications</strong> - Using the performance-related key performance indicators (KPIs) that you defined, use a monitoring system that generates alarms automatically when these measurements are outside expected boundaries.
    <br /><tt>PERF-07-04-</tt>
 
+   <a name="PERF-07-05-"></a>
    1. <strong>Review metrics at regular intervals</strong> - As routine maintenance, or in response to events or incidents, review which metrics are collected. Use these reviews to identify which metrics were key in addressing issues and which additional metrics, if they were being tracked, would help to identify, address, or prevent issues.
    <br /><tt>PERF-07-05-</tt>
 
+   <a name="PERF-07-06-"></a>
    1. <strong>Monitor and alarm proactively</strong> - Use key performance indicators (KPIs), combined with monitoring and alerting systems, to proactively address performance-related issues. Use alarms to trigger automated actions to remediate issues where possible. Escalate the alarm to those able to respond if automated response is not possible. For example, you may have a system that can predict expected key performance indicators (KPI) values and alarm when they breach certain thresholds, or a tool that can automatically halt or roll back deployments if KPIs are outside of expected values.
    <br /><tt>PERF-07-06-</tt>
 
@@ -1801,18 +1920,23 @@ Questions and Considerations for Performance Efficiency:
 
 8. How do you use tradeoffs to improve performance?
 
+   <a name="PERF-08-01-"></a>
    1. <strong>Understand the areas where performance is most critical</strong> - Understand and identify areas where increasing the performance of the workload will have a positive impact on efficiency or customer experience. For example, a website that has a large amount of customer interaction can benefit from using edge services to move content delivery closer to customers.
    <br /><tt>PERF-08-01-</tt>
 
+   <a name="PERF-08-02-"></a>
    1. <strong>Learn about design patterns and services</strong> - Research and understand the various design patterns and services that help improve workload performance. As part of the analysis, identify what you could trade to achieve higher performance. For example, using a cache service can help to reduce the load placed on database systems; however, it requires some engineering to implement safe caching or possible introduction of eventual consistency in some areas.
    <br /><tt>PERF-08-02-</tt>
 
+   <a name="PERF-08-03-"></a>
    1. <strong>Identify how tradeoffs impact customers and efficiency</strong> - When evaluating performance-related improvements, determine which choices will impact customers and workload efficiency. For example, if using a key-value data store increases system performance, it is important to evaluate how the eventually consistent nature of it will impact customers.
    <br /><tt>PERF-08-03-</tt>
 
+   <a name="PERF-08-04-"></a>
    1. <strong>Measure the impact of performance improvements</strong> - As changes are made to improve performance, evaluate the collected metrics and data. Use this information to determine impact that the performance improvement had on the workload, the workload’s components, and customers. This measurement helps you understand the improvements that result from the tradeoff, and helps you determine if any negative side-effects were introduced.
    <br /><tt>PERF-08-04-</tt>
 
+   <a name="PERF-08-05-"></a>
    1. <strong>Use various performance-related strategies</strong> - Where applicable, utilize multiple strategies to improve performance. For example, using strategies like caching data to prevent excessive network or database calls, using read-replicas for database engines to improve read rates, sharding or compressing data where possible to reduce data volumes, and buffering and streaming of results as they are available to avoid blocking.
    <br /><tt>PERF-08-05-</tt>
 
@@ -1885,24 +2009,31 @@ Questions and Considerations for Cost Optimization:
    <a target="_blank" href="https://wa.aws.amazon.com/wat.question.COST_1.en.html">
    Best practices and Improvement Plan items</a>:
 
+   <a name="COST-01-01-"></a>
    1. <strong>Establish a cost optimization function</strong> - Create a team that is responsible for establishing and maintaining cost awareness across the organization. The team requires people from finance, technology, and business roles across the organization.
    <br /><tt>COST-01-01-</tt>
 
+   <a name="COST-01-02-"></a>
    1. <strong>Establish a partnership between finance and technology</strong> - Involve finance and technology teams in cost and usage discussions at all stages of the cloud journey. Teams regularly meet and discuss topics such as organizational goals and targets, current state of cost and usage, and financial and accounting practices.
    <br /><tt>COST-01-02-</tt>
 
+   <a name="COST-01-03-"></a>
    1. <strong>Establish cloud budgets and forecasts</strong> - Adjust existing organizational budgeting and forecasting processes to be compatible with the highly variable nature of cloud costs and usage. Processes must be dynamic using trend based or business driver-based algorithms, or a combination.
    <br /><tt>COST-01-03-</tt>
 
+   <a name="COST-01-04-"></a>
    1. <strong>Implement cost awareness</strong> into new or existing processes that impact usage, and leverage existing processes for cost awareness. Implement cost awareness into employee training.
    <br /><tt>COST-01-04-</tt>
 
+   <a name="COST-01-05-"></a>
    1. <strong>Report and notify on cost optimization</strong> - Configure AWS Budgets to provide notifications on cost and usage against targets. Have regular meetings to analyze this workload’s cost efficiency and to promote cost aware culture.
    <br /><tt>COST-01-05-</tt>
 
+   <a name="COST-01-06-"></a>
    1. <strong>Monitor cost proactively</strong> - Implement tooling and dashboards to monitor cost proactively for the workload. Do not just look at costs and categories when you receive notifications. This helps to identify positive trends and promote them throughout the organization.
    <br /><tt>COST-01-06-</tt>
 
+   <a name="COST-01-07-"></a>
    1. <strong>Keep up to date with new service releases</strong> - Consult regularly with experts or APN Partners to consider which services and features provide lower cost. Review AWS blogs and other information sources.
    <br /><tt>COST-01-07-</tt>
 
@@ -1910,21 +2041,27 @@ Questions and Considerations for Cost Optimization:
 
 2. How do you govern usage?
 
+   <a name="COST-02-01-"></a>
    1. <strong>Develop policies based on organization requirements</strong> - Develop policies that define how resources are managed by the organization. Policies should cover cost aspects of resources and workloads, including creation, modification and decommission over the resource lifetime.
    <br /><tt>COST-02-01-</tt>
 
+   <a name="COST-02-02-"></a>
    1. <strong>Implement both cost and usage goals for each workload</strong> - Goals provide direction to the organization on cost and usage, and targets provide measurable outcomes for each workload.
    <br /><tt>COST-02-02-</tt>
 
+   <a name="COST-02-03-"></a>
    1. <strong>Implement an account structure</strong> that maps to the organization. This assists in allocating and managing costs throughout the organization.
    <br /><tt>COST-02-03-</tt>
 
+   <a name="COST-02-04-"></a>
    1. <strong>Implement groups and roles</strong> that align to policies and control who can create, modify, or decommission instances and resources in each group. For example, implement development, test, and production groups. This applies to AWS services and third-party solutions.
    <br /><tt>COST-02-04-</tt>
 
+   <a name="COST-02-05-"></a>
    1. <strong>Implement cost controls</strong> based on organization policies and defined groups and roles. These ensure that costs are only incurred as defined by organization requirements: for example, control access to regions or resource types with IAM policies.
    <br /><tt>COST-02-05-</tt>
 
+   <a name="COST-02-06-"></a>
    1. <strong>Track project lifecycle</strong> - measure, and audit the lifecycle of projects, teams, and environments to avoid using and paying for unnecessary resources.
    <br /><tt>COST-02-06-</tt>
 
@@ -1932,24 +2069,31 @@ Questions and Considerations for Cost Optimization:
 
 3. How do you monitor usage and cost?
 
+   <a name="COST-03-01-"></a>
    1. <strong>Configure detailed information sources</strong> - Configure the AWS Cost and Usage Report, and Cost Explorer hourly granularity, to provide detailed cost and usage information. Configure workloads to have log entries for every delivered business outcome.
    <br /><tt>COST-03-01-</tt>
 
+   <a name="COST-03-02-"></a>
    1. <strong>Identify cost attribution categories</strong> that could be used to allocate cost within the organization.
    <br /><tt>COST-03-02-</tt>
 
+   <a name="COST-03-03-"></a>
    1. <strong>Establish organization metrics</strong> required for each workload. Example metrics of a workload are customer reports produced or web pages served to customers.
    <br /><tt>COST-03-03-</tt>
 
+   <a name="COST-03-04-"></a>
    1. <strong>Configure billing and cost management tools</strong> - Configure AWS Cost Explorer and AWS Budgets inline with organization policies.
    <br /><tt>COST-03-04-</tt>
 
+   <a name="COST-03-05-"></a>
    1. <strong>Add organization information to cost and usage</strong> - Define a tagging schema based on organization, and workload attributes, and cost allocation categories. 
    <br /><tt>COST-03-05-</tt>
 
+   <a name="COST-03-06-"></a>
    1. <strong>Implement tagging across all resources.</strong> - Use Cost Categories to group costs and usage according to organization attributes.
    <br /><tt>COST-03-06-</tt>
 
+   <a name="COST-03-07-"></a>
    1. <strong>Allocate costs based on workload metrics</strong> - Allocate the workload’s costs by metrics or business outcomes to measure workload cost efficiency. Implement a process to analyze the AWS Cost and Usage Report with Amazon Athena, which can provide insight and charge back capability.
    <br /><tt>COST-03-07-</tt>
 
@@ -1961,40 +2105,51 @@ Questions and Considerations for Cost Optimization:
    1. Use terraformer to collect Terraform files for all AWS services
    1. Archive to AWS Glacier. Test retrieval.
 
+   <a name="COST-04-01-"></a>
    1. <strong>Track resources over their life time</strong> - Define and implement a method to track resources and their associations with systems over their life time. You can use tagging to identify the workload or function of the resource.
    <tt>COST-04-01-</tt>
 
+   <a name="COST-04-02-"></a>
    1. <strong>Implement a decommissioning process</strong> - Implement a process to identify and decommission orphaned resources.
-   <tt>COST-04-01-</tt>
+   <tt>COST-04-02-</tt>
 
+   <a name="COST-04-03-"></a>
    1. <strong>Decommission resources</strong> triggered by events such as periodic audits, or changes in usage. Decommissioning is typically performed periodically, and is manual or automated.
-   <tt>COST-04-01-</tt>
+   <tt>COST-04-03-</tt>
 
+   <a name="COST-04-04-"></a>
    1. <strong>Decommission resources automatically</strong> - Design workloads to gracefully handle resource termination as you identify and decommission non-critical resources, resources that are not required, or resources with low utilization.
-   <tt>COST-04-01-</tt>
+   <tt>COST-04-04-</tt>
 
    <a name="EvaluateServices"></a>
 
 5. How do you evaluate when you select services?
 
+   <a name="COST-05-01-"></a>
    1. <strong>Identify organization requirements for cost</strong> - Work with team members to define the balance between cost optimization and other pillars, such as performance and reliability, for this workload.
    <br /><tt>COST-05-01-</tt>
 
+   <a name="COST-05-02-"></a>
    1. <strong>Analyze all components of this workload</strong> - Ensure every workload component is analyzed, regardless of current size or current costs. Review effort should reflect potential benefit, such as current and projected costs.
    <br /><tt>COST-05-02-</tt>
 
+   <a name="COST-05-03-"></a>
    1. <strong>Perform a thorough analysis of each component</strong> - the overall cost of each component. Look at total cost of ownership by factoring in cost of operations and management, especially when using managed services. Review effort should reflect potential benefit: for example, time spent analyzing is proportional to component cost.
    <br /><tt>COST-05-03-</tt>
 
+   <a name="COST-05-04-"></a>
    1. <strong>Select software with cost effective licensing</strong> - Open source software will eliminate software licensing costs, which can contribute significant costs to workloads. Where licensed software is required, avoid licenses bound to arbitrary attributes such as CPUs, look for licenses that are bound to output or outcomes. The cost of these licenses scales more closely to the benefit they provide.
    <br /><tt>COST-05-04-</tt>
 
+   <a name="COST-05-05-"></a>
    1. <strong>Select components of this workload to optimize cost in line with organization priorities</strong> - Factor in cost when selecting all components. This includes using application 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">and managed services, such as Amazon RDS, Amazon DynamoDB, Amazon SNS, and Amazon SES to reduce overall organization cost. Use serverless and containers for compute, such as AWS Lambda, Amazon S3 for static websites, and Amazon ECS. 
    <br /><tt>COST-05-05-</tt>
    
+   <a name="COST-05-06-"></a>
    1. <strong>Minimize license costs</strong> by using open source software, or software that does not have license fees: for example, Amazon Linux for compute workloads or migrate databases to Amazon Aurora.
    <br /><tt>COST-05-06-</tt>
 
+   <a name="COST-05-07-"></a>
    1. <strong>Perform cost analysis for different usage over time</strong> - Workloads can change over time. Some services or features are more cost effective at different usage levels. By performing the analysis on each component over time and at projected usage, you ensure the workload remains cost effective over its lifetime..
    <br /><tt>COST-05-07-</tt>
 
@@ -2004,12 +2159,15 @@ Questions and Considerations for Cost Optimization:
 
    Ensure that you choose the appropriate resource size and number of resources for the task at hand. You minimize waste by selecting the most cost effective type, size, and number.
 
+   <a name="COST-06-01-"></a>
    1. <strong>Perform cost modeling</strong> - Identify organization requirements and perform cost modeling of the workload and each of its components. Perform benchmark activities for the workload under different predicted loads and compare the costs. The modeling effort should reflect potential benefit: for example, time spent is proportional to component cost.
    <br /><tt>COST-06-01-</tt>
 
+   <a name="COST-06-02-"></a>
    1. <strong>Select resource type, size, and number based on data</strong> about the workload and resource characteristics: for example, compute, memory, throughput, or write intensive. This selection is typically made using a previous version of the workload (such as an on-premises version), using documentation, or using other sources of information about the workload.
-<br />   <tt>COST-06-02-</tt>
+   <br /><tt>COST-06-02-</tt>
 
+   <a name="COST-06-03-"></a>
    1. <strong>Select resource type, size, and number automatically based on metrics</strong> - Use metrics from the currently running workload to select the right size and type to optimize for cost. Appropriately provision throughput, sizing, and storage for services such as Amazon EC2, Amazon DynamoDB, Amazon EBS (PIOPS), Amazon RDS, Amazon EMR, and networking. This can be done with a feedback loop such as automatic scaling or by custom code in the workload.
    <br /><tt>COST-06-03-</tt>
 
@@ -2017,31 +2175,39 @@ Questions and Considerations for Cost Optimization:
 
 7. How do you use pricing models to reduce cost?
 
+   <a name="COST-07-01-"></a>
    1. <strong>Perform pricing model analysis</strong> - Analyze each component of the workload. Determine if the component and resources will be running for extended periods (for commitment discounts), or dynamic and short running (for spot or on-demand). Perform an analysis on the workload using the Recommendations feature in AWS Cost Explorer.
    <br /><tt>COST-07-01-</tt>
 
+   <a name="COST-07-02-"></a>
    1. <strong>Implement regions based on cost</strong> - Resource pricing can be different in each region. Factoring in region cost ensures you pay the lowest overall price for this workload
    <br /><tt>COST-07-02-</tt>
 
+   <a name="COST-07-03-"></a>
    1. <strong>Select third party agreements with cost efficient terms</strong> to ensure the cost of these services scales with the benefits they provide. Select agreements and pricing that scale when they provide additional benefits to the organization.
    <br /><tt>COST-07-03-</tt>
 
+   <a name="COST-07-04-"></a>
    1. <strong>Implement pricing models for all components of this workload</strong> - Permanently running resources should utilize reserved capacity such as Savings Plans or reserved Instances. Short term capacity is configured to use Spot Instances, or Spot Fleet. On demand is only used for short-term workloads that cannot be interrupted and do not run long enough for reserved capacity, between 25% to 75% of the period, depending on the resource type.
    <br /><tt>COST-07-04-</tt>
 
+   <a name="COST-07-05-"></a>
    1. <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">for commitment discounts.
-   <br /><tt>COST-07-04-</tt>
+   <br /><tt>COST-07-05-</tt>
 
    <a name="PlanDataTransferCharges"></a>
 
 8. How do you plan for <strong>data transfer</strong> charges?
 
+   <a name="COST-08-01-"></a>
    1. <strong>Perform data transfer modeling</strong> - Gather organization requirements and perform data transfer modeling of the workload and each of its components. This identifies the lowest cost point for its current data transfer requirements.
    <br /><tt>COST-08-01-</tt>
 
+   <a name="COST-08-02-"></a>
    1. <strong>Select components to optimize data transfer cost</strong> - All components are selected, and architecture is designed to reduce data transfer costs. This includes using components such as WAN optimization and Multi-AZ configurations
    <br /><tt>COST-08-02-</tt>
 
+   <a name="COST-08-03-"></a>
    1. <strong>Implement services to reduce data transfer costs</strong> - For example, use a CDN such as Amazon CloudFront to deliver content to end users, caching layers using Amazon ElastiCache, or using AWS Direct Connect instead of VPN for connectivity to AWS.
    <br /><tt>COST-08-03-</tt>
 
@@ -2051,15 +2217,19 @@ Questions and Considerations for Cost Optimization:
 
    For a workload that has balanced spend and performance, ensure that everything you pay for is used and avoid significantly underutilizing instances. A skewed utilization metric in either direction has an adverse impact on the organization, in either operational costs (degraded perform
 
+   <a name="COST-09-01-"></a>
    1. <strong>Perform an analysis on the workload demand</strong> over time. Ensure the analysis covers seasonal trends and accurately represents operating conditions over the full workload lifetime. Analysis effort should reflect potential benefit: for example, time spent is proportional to the workload cost.
    <br /><tt>COST-09-01-</tt>
 
+   <a name="COST-09-02-"></a>
    1. <strong>Implement a buffer or throttle to manage demand</strong> - Buffering and throttling modify the demand on each workload, smoothing out any peaks. Implement throttling when clients perform retries. Implement buffering to store the request and defer processing until a later time. Ensure throttles and buffers are designed so clients receive a response in the required time.
    <br /><tt>COST-09-02-</tt>
 
+   <a name="COST-09-03-"></a>
    1. <strong>Supply resources dynamically</strong> - Resources are provisioned in a planned manner. This can be demand-based, such as through automatic scaling, or time-based, where demand is predictable and resources are provided based on time. These methods result in the least amount of over or under provisioning.
    <br /><tt>COST-09-03-</tt>
    
+   <a name="COST-09-04-"></a>
    1. Decommission resources, entire services, and systems no longer required.
    <br /><tt>COST-09-04-</tt>
 
@@ -2069,9 +2239,11 @@ Questions and Considerations for Cost Optimization:
 
    As AWS releases new services and features, it’s a best practice to review existing architectural decisions to ensure they continue to be the most cost effective.
 
+   <a name="COST-10-01-"></a>
    1. <strong>Develop a workload review process</strong> that defines the criteria and process for workload review. The review effort should reflect potential benefit: for example, core workloads or workloads with a value of over 10% of the bill are reviewed quarterly, while workloads below 10% are reviewed annually.
    <br /><tt>COST-10-01-</tt>
 
+   <a name="COST-10-02-"></a>
    1. <strong>Review and analyze this workload regularly</strong> - Existing workloads are regularly reviewed as per defined processes.
    <br /><tt>COST-10-02-</tt>
 

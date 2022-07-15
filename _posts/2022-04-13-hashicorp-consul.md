@@ -122,6 +122,55 @@ In hopes of building more reliable systems in the cloud faster and cheaper, ente
 Microservices is based on development of separate programs providing services. Each program can move and scale independently of other programs, existing in an <strong>ephemeral</strong> (temporary) way. Because dev teams won't have the same "hard-coded" dependencies in monolithic approaches, there is less need to wait for teams to finish work at the same time. This increases agility and greater operational efficiency.
 
 
+## 4 pillars and 6 principles of modern app design
+
+<a target="_blank" href="https://www.arabianbusiness.com/opinion/4-pillars-6-principles-modern-apps">from</a> Libby Meren, Senior Manager for OSS Evangelism, NGINX at F5.
+
+Here are nuances of attributes of ‘modern apps’ crucial to respond to the intense pressure of spinning up additional compute infrastructure quickly to meet unexpected demand:
+four pillars: scalability, portability, resiliency, and agility.
+
+* Pillar 1: Scalability
+
+   Fast scaling - increase an application’s capacity by 100% within five minutes. 
+   Can the application expand quickly capacity to meet unforeseen increases in demand?
+
+   Long scaling - increase an application’s capacity 10x over a year or more, without requiring a major refactoring of code or large shifts in infrastructure requirements. 
+   Does the app have a clean design with loose dependencies and loose couplings to infrastructure components.
+
+* Pillar 2: Portability
+
+   Functional portability - app code runs inside a container without external dependencies tightly coupled to a single environment. 
+   Can core functional elements, code, and logic of an application remain the same regardless of the environment in which it is running?
+   
+   Management portability - Can the app be monitored, secured, and observed in the same way, with the same tooling and same sets of reporting capabilities, regardless of the environment?
+
+* Pillar 3: Resiliency
+
+   User‑facing resiliency - Do application users, either machine or human, notice a performance issue or functionality problem caused by a fault or failure of either a modern app itself or any service or infrastructure it depends on? Or do failures cascade, impacting even automated services and highly dependent microservices?
+
+   Failover resiliency - A modern app is able to restore within five minutes any critical service to 100 percent of what is necessary to handle average workloads. Designers should think about failing over to unaffected compute resources as a key part of application design and one that is implicit in self‑healing, and environmentally aware.
+
+* Pillar 4: Agility
+
+   Code agility - Is the app's code designed to constantly absorb new code? To enforce loose coupling and reduce intra‑application code dependencies and rigidity, applications are composed of microservices and linked via APIs.
+   
+   Infrastructure agility - Can the app's infrastructure be spun up or down to satisfy the needs of all customers including application development teams, security teams, and DevOps teams?
+
+The six principles of modern apps most modern apps employ architectures following these <a target="_blank" href="https://www.ibm.com/blogs/cloud-computing/2018/06/20/modern-app-microservices/">six principles</a>:
+
+   1. Be platform agnostic - Build applications to run without any consideration of the platforms or environments where it is likely to run containers have become the <em>de-facto</em> standard for platform‑agnostic runtimes.
+   
+   2. Prioritize open source software - So that developers can "look under the hood of the code" in order to design for portability and scalability.
+   
+   3. Define everything (possible) by code - To move at faster-than-human speed to make changes and approvals.
+   
+   4. Design with automated CI/CD as a native/default state - for complete and quick code pushes, infrastructure deployment, and security requirements.
+   
+   5. Practice secure development - "shift left" to test all code as early as possible in the development process using software composition analysis (SCA), static application security testing (SAST), dynamic code analysis (DCA), and formatting checkers.
+   
+   6. Widely distribute storage and infrastructure. Replicating storage and compute across multiple zones or clouds or hybrid deployments can ensure greater resiliency and scalability.
+
+
 <a name="LegacyMismatches"></a>
 
 ## Legacy networking infrastructure mismatches
