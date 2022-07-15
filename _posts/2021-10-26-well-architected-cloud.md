@@ -19,38 +19,52 @@ This aims to be a succinct yet deep dive about the "mind sets" needed by IT team
 
 {% include whatever.html %}
 
+Like ITIL, PMI, SAFe, etc., the Well-Architected Framework provides <a href="#CommonDefinitions">"industry-standard" common terminology</a> for concepts.
+
+Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://wilsonmar.github.io/aws-certs">AWS certification exams</a>.
+
+AWS organized their hands-on tutorials to each of the WAF Pillars in their <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/#aws-well-architected-labs">WellArchitectedLabs.com</a>.
+Each tutorial shows only how AWS tools are used (Cloud9, CloudFormation, etc.).
+This is how Amazon get people to use their tooling rather than alternatives such as Terraform, Vault, etc.
+
+Vendors offering alternative tools would need their own tutorials on their own websites.
+
+## What is it? Overview
+
 On the surface, the "Well Architected Framework" (WAF) is a bunch of <strong>open-ended questions</strong> such as:
 
    * How do you manage permissions for people and machines?
    <br /><br />
 
-But below that, for each question are <strong>considerations</strong> such as:
+But each question is a rephrasing of a <strong>best practice category</strong> such as:
+
+   * Manage permissions for people and machines
+   <br /><br />
+
+For each question are <strong>considerations</strong> such as:
 
    * Define access requirements
    * Grant least privilege access 
    <br /><br />
 
-Considerations include <strong>best practice recommendations</strong> such as:
+Considerations include <strong>specific recommendations</strong> such as:
 
    * Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
    * Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions.
    <br /><br />
 
-Questions are grouped with several <a href="#Pillars">"pillars"</a> which <strong>comprehensively cover</strong> all major aspects of Information Technology in the cloud, not just security. And WAF covers the entire lifecycle of apps and data.
+PROTIP: To self-designate your organization and systems assets "<strong>Well Architected By Design (WABD)</strong>", convert WAF recommendations into <strong>verifiable statements</strong>. 
 
-You want your assets to be <strong>Well Architected By Design (WABD)</strong>. 
-That's self-designated, but you need to explain why your infra, apps, data are "great" by using WAF.
+   * Our ____ document defines who or what should have access to each component, which specifies the appropriate identity type and method of authentication and authorization.
+   * We use <strong>Consul's ACL features</strong> to grant only the access that identities require by allowing access to specific actions on specific resources under specific conditions.
+   <br /><br />
 
-"Greatness" is defined by WAF. 
-But WAF is not used as the basis of an <strong>audit</strong> like SOC2, ISO 2700, FedRamp, etc.
+Such statements -- and <strong>evidence</strong> that prove their actual usage over time -- can then be used as the basis for obtaining annual <strong>attestations from auditor</strong> based on <a target="_blank" href="https://wilsonmar.github.io/soc2">SOC2</a>, ISO 2700, FedRamp, etc.
+
+> WAF questions are grouped into several <a href="#Pillars">"pillars"</a> which <strong>comprehensively cover</strong> all major aspects of Information Technology in the cloud, not just security. And WAF covers the entire lifecycle of apps and data.
+
 
 ## Why?
-
-However, like ITIL, PMI, SAFe, etc., the Well-Architected Framework provides <strong>"industry-standard" common terminology</strong> for concepts.
-
-Knowledge about WA (best practices) is <strong>tested for</strong> in <a target="_blank" href="https://wilsonmar.github.io/aws-certs">AWS certification exams</a>.
-
-
 
 <a target="_blank" href="https://www.youtube.com/watch?v=rbIQ2eRJY0g" title="Aug 11, 2021">Why? Potential benefits</a> sound like what is claimed for every product:
 
@@ -94,6 +108,22 @@ Additional pillars added by individual vendors:
    6. Google adds its own <a target="_blank" href="https://cloud.google.com/architecture/framework/system-design">"System Design" pillar</a>.
 </ul>
 
+<a name="Ordering"></a>
+
+### ACTIVITY 1 - Rank the pillars
+
+Have each member of your team do a mental exercise to <strong>prioritize the pillars</strong> as the basis for a discussion, as a team. (Why? The Dunning-Kruger effect). Example realization from this exercise:
+
+   * PROTIP: "Operational Excellence" has to go first because that's provides the fundamentals of getting up and running with basic services.
+
+   * "Security" has to go first because we don't want to have the risk of anything exposed and thus ruin our brand.
+
+   * Let's not slow ourselves down with Cost considerations when getting started.
+
+   * PROTIP: It's really not appropriate to rank these pillars. They need to be done pretty much in parallel. So we need to look in each and prioritize the impact of tasks within each pillar.
+
+QUESTION: Is it appropriate to assign a leader/team to be responsible for each separate pillar?
+
 
 ## Your Radar Chart of Progress:
 
@@ -123,23 +153,12 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
    * <a target="_blank" href="https://cloud.google.com/architecture/framework">Google's WA Framework at https://cloud.google.com/architecture/framework</a>
    <br /><br />
 
+https://aws.amazon.com/blogs/architecture/use-templated-answers-to-perform-well-architected-reviews-at-scale/
 
-<a name="Ordering"></a>
+https://github.com/aws-samples/aws-well-architected-tool-template-automation
 
-### ACTIVITY 1 - Rank the pillars
 
-Have each member of your team do a mental exercise to <strong>prioritize the pillars</strong> as the basis for a discussion, as a team. (Why? The Dunning-Kruger effect). Example realization from this exercise:
-
-   * PROTIP: "Operational Excellence" has to go first because that's provides the fundamentals of getting up and running with basic services.
-
-   * "Security" has to go first because we don't want to have the risk of anything exposed and thus ruin our brand.
-
-   * Let's not slow ourselves down with Cost considerations when getting started.
-
-   * PROTIP: It's really not appropriate to rank these pillars. They need to be done pretty much in parallel. So we need to look in each and prioritize the impact of tasks within each pillar.
-
-QUESTION: Is it appropriate to assign a leader/team to be responsible for each separate pillar?
-
+<a name="CommonDefinitions"></a>
 
 ## Common definitions:
 
@@ -163,11 +182,18 @@ Make sure everyone has a common understanding of each word:
    <a target="_blank" href="https://wa.aws.amazon.com/wat.concepts.wa-concepts.en.html">Other AWS concepts</a>
 
 
+<a name="AssessmentTools"></a>
+
 ## WA Assessment Tools
 
-Both Microsoft Azure and Amazon AWS have a WA assessment tool.
+Both Microsoft Azure and Amazon AWS have an assessment tool based on WAF.
 
-But Microsoft's tool comes up with recommendations automatically based on what has been configured in its Azure cloud.
+Amazon's Tool is operated by specialists who run an analysis of resources defined for each account.
+
+Microsoft's tool is also based on what has been configured in its Azure cloud.
+But its results are displayed automatically on every login unless it's turned off.
+
+https://www.sogosurvey.com/
 
 ### Microsoft Azure Advisor
 
@@ -198,7 +224,6 @@ Azure Advisor <a target="_blank" href="https://docs.microsoft.com/en-us/azure/ad
 
 Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (for $79/mo. after 14 day trial) continuously runs multiple best practice checks against serverless workloads, to provide actionable advice on how to improve the applications in alignment with Well-Architected best practices.
 
-
 ### AWS WA Assessment Tool
 
 <img align="right" width="99" alt="well-architected-aws-tool-154x254.png" src="https://user-images.githubusercontent.com/300046/139374726-0a7d74c5-86f8-4f67-a79b-b4f1038ab1c0.png">
@@ -225,6 +250,14 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
 
 5. One pillar at a time, in the <a href="#Pillars">priority identified</a>, select each question, then select applicable items.
 
+<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG: APIs now available for the AWS Well-Architected Tool</a>
+
+https://aws.amazon.com/blogs/architecture/use-templated-answers-to-perform-well-architected-reviews-at-scale/
+
+https://github.com/aws-samples/aws-well-architected-tool-template-automation
+
+
+   <a name="Lenses"></a>
 
    ### AWS Lenses
 
@@ -287,7 +320,6 @@ Amazon partner <a target="_blank" href="https://dashbird.io/">dashbird.io/</a> (
    6. Monitoring
    <br /><br />
 
-<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2020/12/apis-now-available-for-aws-well-architected-tool/">BLOG: APIs now available for the AWS Well-Architected Tool</a>
 
 ### Microsoft Training on WA
 
@@ -322,7 +354,7 @@ But note that it's for work across all pillars together, not for individual pill
 
 ### General Design Principles
 
-AWS published these General Design Principles:
+AWS published these <a target="_blank" href="https://wa.aws.amazon.com/wat.design_principles.wa-dp.en.html">General Design Principles</a>:
 
    * <strong>Stop guessing capacity needs</strong> - if you make a poor capacity decision when deploying a workload, the team might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. Use as much or as little capacity as needed, and scale up and down automatically.
 
@@ -351,11 +383,11 @@ AWS Skillbuilder video courses</a> are rather verbose and high-level, but provid
 Specific hands-on labs from <a target="_blank" href="https://wellarchitectedlabs.com/"><strong>https://wellarchitectedlabs.com</strong></a> built (using Hugo) from <a target="_blank" href="https://github.com/awslabs/aws-well-architected-labs">https://github.com/awslabs/aws-well-architected-labs</a> 
 for <a href="#Pillars">each pillar</a> (links to details in each section):
 
-   1. <a href="#SecLabs">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
+   1. <a href="#OpsLabs">OPS = <strong>Operational Excellence</strong></a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
 
-   2. <a href="#ReliabilityLabs">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function
+   2. <a href="#SecLabs">SEC = <strong>Security</strong></a> = The ability to protect information, systems, and assets (applications and data) from threats. Google calls this "Security, privacy, and compliance".
 
-   3. <a href="#OpsLabs">OPS = <strong>Operational Excellence</strong></a> = The ability to run and monitor systems to deliver business value and continually improve supporting processes and procedures 
+   3. <a href="#ReliabilityLabs">REL = <strong>Reliability</strong></a> = The ability to recover from failures and continue to function
 
    4. <a href="#PerfLabs">PERF = <strong>Performance Efficiency</strong></a> = The ability to adapt to changes in load (scale)
 
@@ -366,6 +398,14 @@ for <a href="#Pillars">each pillar</a> (links to details in each section):
 AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/well-architected/">its partners</a> in-depth training on the Well-Architected Framework so they help companies implement best practices, measure the state of workloads, and make improvements where assistance is required.
 
 AWS' WellArchitectedLabs.com provides dozens of labs refered in AWS Certification Exam prep and in <a target="_blank" href="https://www.wellarchitectedlabs.com/security/quests/">security quests</a> referenced during <a target="_blank" href="https://aws-startup-lofts.com/amer">free Loft live sessions AWS runs for Startups</a>
+
+Third parties:
+
+   * https://www.xtremelabs.io/xtremelabs-now-offers-aws-well-architected-labs/
+   provides AWS user credentials that are managed and maintained by XtremeLabs.
+   * <a target="_blank" href="hhttps://www.linkedin.com/learning/paths/master-the-aws-well-architected-framework">On LinkedIn Learning: "Master the AWS Well-Architected Framework" series</a> by Mark Wilkins (in 2020)
+   * <a target="_blank" href="https://acloudguru.com/course/mastering-the-aws-well-architected-framework">On ACloudGuru: "Mastering the AWS Well-Architected Framework"</a> by <a target="_blank" href="https://www.linkedin.com/in/marknca/">Mark Nunnikhoven</a>
+   <br /><br />
 
 <a name="Terraform"></a>
 
@@ -530,7 +570,7 @@ Key Design principles for security in the cloud:
 
 <a name="SecBestPractices"></a>
 
-Best practices for Security:
+Best practice categories for Security:
 
 1. <a href="#SecureWorkload">Securely operate each workload</a>
 2. <a href="#ManageIdentities">Manage identities for people and machines</a>
@@ -544,157 +584,211 @@ Best practices for Security:
 10. <a href="#IncidentRecovery">Anticipate, respond to, and recover from incidents</a>
 <br /><br />
 
-Questions:
+Questions and Considerations for Security:
 
 <a name="SecureWorkload"></a>
 
 1. How do you securely operate each workload?
 
-   1. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common guardrails as workloads grow.
+   1. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. <tt>SEC-01-01-GrowSepAccts</tt>
 
-   2. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts.
+   2. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
+   <tt>SEC-01-02-SecAccts</tt>
 
-   3. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation.
+   3. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation. 
+   <tt>SEC-01-03-ControlObjs</tt>
 
    4. <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
+   <tt>SEC-01-04-NoticeThreats</tt>
 
    5. <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
+   <tt>SEC-01-05-NoticeRecommendations</tt>
 
    6. <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
+   <tt>SEC-01-06-AutoTesting</tt>
 
-   7. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. Prioritize threats and adapt security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   7. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. <strong>Prioritize threats and adapt</strong> security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   <tt>SEC-01-07-ThreatModel</tt>
 
    8. <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
+   <tt>SEC-01-08-EvalNewSvcs</tt>
 
    <a name="ManageIdentities"></a>
 
 2. How do you manage identities for people and machines?
 
    1. <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
+   <tt>SEC-02-01-SignInMFA</tt>
 
    1. <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
+   <tt>SEC-02-02-SSO-IAM</tt>
 
    1. <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
+   <tt>SEC-02-03-AutoRotationSvc</tt>
 
-   1. <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
+   1. <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location -- making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
+   <tt>SEC-02-04-CentralIdP</tt>
 
    1. <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
+   <tt>SEC-02-05-LongCredRotation</tt>
 
    1. <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
+   <tt>SEC-02-06-UserAttributes</tt>
 
    <a name="ManagePermissions"></a>
 
 3. How do you manage permissions for people and machines?
 
    1. <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
+   <tt>SEC-03-01-DefAccess</tt>
 
    2. <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
+   <tt>SEC-03-02-LeastPrivilege</tt>
 
    1. <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
+   <tt>SEC-03-03-EmergAccess</tt>
 
    1. <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
+   <tt>SEC-03-04-ReducePerms</tt>
 
    1. <strong>Define permission guardrails for the organization</strong> - Establish common controls that restrict access to all identities in the organization. For example, you can restrict access to specific AWS Regions, or prevent operators from deleting common resources, such as an IAM role used for the central security team.
+   <tt>SEC-03-05-PermisGuards</tt>
 
-   1. <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and  centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
+   1. <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
+   <tt>SEC-03-06-FederatedLifecycle</tt>
 
-   1. <strong>Analyze public and cross account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
+   1. <strong>Analyze public and cross-account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
+   <tt>SEC-03-07-CrossAcctAccess</tt>
 
    1. <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
+   <tt>SEC-03-08-SharedAccess</tt>
 
    <a name="DetectEvents"></a>
 
 4. How do you detect and investigate security events?
 
    1. <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
+   <tt>SEC-04-01-</tt>
 
    1. <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
+   <tt>SEC-04-02-</tt>
 
    1. <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
+   <tt>SEC-04-03-</tt>
 
    1. <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
+   <tt>SEC-04-04-</tt>
 
    <a name="ProtectNetwork"></a>
 
 5. How do you protect network resources?
 
    1. <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
+   <tt>SEC-05-08-</tt>
 
    1. <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
+   <tt>SEC-05-08-</tt>
 
    1. <strong>Automate network protection</strong> - Automate protection mechanisms to provide a self-defending network based on threat intelligence and anomaly detection. For example, intrusion detection and prevention tools that can pro-actively adapt to current threats and reduce their impact.
+   <tt>SEC-05-08-</tt>
 
    1. <strong>Implement inspection and protection</strong> - Inspect and filter traffic at each layer. For example, use a web application firewall to help protect against inadvertent access at the application network layer. For Lambda functions, third-party tools can add application-layer firewalling to the runtime environment.
+   <tt>SEC-05-08-</tt>
 
    <a name="ProtectCompute"></a>
 
 6. How do you protect compute resources?
 
    1. <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
+   <tt>SEC-06-01-</tt>
 
    1. <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
+   <tt>SEC-06-02-</tt>
 
    1. <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
+   <tt>SEC-06-03-</tt>
 
    1. <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
+   <tt>SEC-06-04-</tt>
 
    1. <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
+   <tt>SEC-06-06-</tt>
 
    1. <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
+   <tt>SEC-06-06-</tt>
 
    <a name="ClassifyData"></a>
 
 7. How do you classify data?
 
    1. <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive  , and more.
+   <tt>SEC-07-01-</tt>
 
    1. <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
+   <tt>SEC-07-02-</tt>
 
    1. <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
+   <tt>SEC-07-03-</tt>
 
    <a name="ProtectDataAtRest"></a>
 
 8. How do you protect data at rest?
 
    1. <strong>Implement secure key management</strong> - Encryption keys must be stored securely, with strict access control, for example, by using a key management service such as AWS KMS. Consider using different keys, and access control to the keys, combined with the AWS IAM and resource policies, to align with data classification levels and segregation requirements.
+   <tt>SEC-08-01-</tt>
 
    1. <strong>Enforce encryption at rest</strong> - Enforce encryption requirements based on the latest standards and recommendations to help protect data at rest.
+   <tt>SEC-08-02-</tt>
 
    1. <strong>Automate data at rest protection</strong> - Use automated tools to validate and enforce data at rest protection continuously, for example, verify that there are only encrypted storage resources.
+   <tt>SEC-08-03-</tt>
 
    1. <strong>Enforce access control</strong> - Enforce access control with least privileges and mechanisms, including backups, isolation, and versioning, to help protect data at rest. Prevent operators from granting public access to data.
+   <tt>SEC-08-04-</tt>
 
    1. <strong>Use mechanisms to keep people away from data</strong> - Keep all users away from directly accessing sensitive data and systems under normal operational circumstances. For example, provide a dashboard instead of direct access to a data store to run queries. Where CI/CD pipelines are not used, determine which controls and processes are required to adequately provide a normally disabled break-glass access mechanism.
+   <tt>SEC-08-05-</tt>
 
    <a name="ProtectDataInTransit"></a>
 
 9. How do you protect data in transit?
 
    1. <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
+   <tt>SEC-09-01-</tt>
 
    1. <strong>Enforce encryption in transit</strong> - Enforce defined encryption requirements based on appropriate standards and recommendations to help you meet organizational, legal, and compliance requirements.
+   <tt>SEC-09-02-</tt>
 
    1. <strong>Automate detection of unintended data access</strong> - Use tools such as GuardDuty to automatically detect attempts to move data outside of defined boundaries based on data classification level, for example, to detect a trojan that is copying data to an unknown or untrusted network using the DNS protocol.
+   <tt>SEC-09-03-</tt>
 
    1. <strong>Authenticate network communications</strong> - Verify the identity of communications by using protocols that support authentication, such as Transport Layer Security (TLS) or IPsec.
+   <tt>SEC-09-04-</tt>
 
    <a name="IncidentRecovery"></a>
 
 9. How do you anticipate, respond to, and recover from incidents?
 
    1. <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
+   <tt>SEC-10-01-</tt>
 
    1. <strong>Develop incident management plans</strong> - Create "playbooks" to help  respond to, communicate during, and recover from an incident. For example, start an <u>incident response plan</u> with the most likely scenarios for workloads and organizations. Include how you would communicate and escalate both internally and externally.
+   <tt>SEC-10-02-</tt>
 
    1. <strong>Prepare forensic capabilities</strong> - Identify and prepare forensic investigation capabilities that are suitable, including external specialists, tools, and automation.
+   <tt>SEC-10-03-</tt>
 
    1. <strong>Automate containment capability</strong> and recovery of an incident to reduce response times and organizational impact.
+   <tt>SEC-10-04-</tt>
 
    1. <strong>Pre-provision access</strong> - Ensure that incident responders have the correct access pre-provisioned into AWS to reduce the time for investigation through to recovery.
+   <tt>SEC-10-05-</tt>
 
    1. <strong>Pre-deploy tools</strong> - Ensure that security personnel have the right tools pre-deployed into AWS to reduce the time for investigation through to recovery.
+   <tt>SEC-10-06-</tt>
 
    1. <strong>Run game days</strong> - Practice incident response game days (simulations) regularly, incorporate lessons learned into  incident management plans, and continuously improve.
+   <tt>SEC-10-07-</tt>
 
 <a name="SecLabs"></a>
 
@@ -738,7 +832,9 @@ Design principles for reliability:
 
 <hr />
 
-Best practices for Reliability:
+<a name="RelBestPractices"></a>
+
+Best practice categories for Reliability:
 
 1. <a href="#ManageServiceQuotes">Manage service quotas and constraints</a>
 2. <a href="#PlanNetwork">Plan network topology</a>
@@ -755,7 +851,9 @@ Best practices for Reliability:
 13. <a href="#PlanforDR">Plan for disaster recovery (DR)</a>
 <br /><br />
 
-Questions:
+<a name="RelQuestions"></a>
+
+Questions and considerations for Reliability:
 
 <a name="ManageServiceQuotes"></a>
 
@@ -997,7 +1095,9 @@ Design Principles for Operational Excellence:
 
 <hr />
 
-Best practices for Operational Excellence:
+<a name="OpsBestPractices"></a>
+
+Best practice categories for Operational Excellence:
 
 1. <a href="#DeterminePriorities">Determine what <strong>operational priorities</strong> are</a>
 2. <a href="#StructureBusinessOutcomes">Structure the organization to support business outcomes</a>
@@ -1012,7 +1112,9 @@ Best practices for Operational Excellence:
 11. <a href="#EvolveOperations">Evolve operations</a>
 <br /><br />
 
-Questions for Operational Excellence:
+<a name="OpsQuestions"></a>
+
+Questions and Considerations for Operational Excellence:
 
 <a name="DeterminePriorities"></a>
 
@@ -1272,7 +1374,9 @@ Design principles for Performance Efficiency:
 
 <hr />
 
-Best practices for Performance Efficiency:
+<a name="PerfBestPractices"></a>
+
+Best practice categories for Performance Efficiency:
 
 1. <a href="#SelectPerfArch">Select the best performing architecture</a>
 2. <a href="#SelectSolution">Select the compute solution</a>
@@ -1284,15 +1388,17 @@ Best practices for Performance Efficiency:
 8. <a href="#UsePerfTradeoffs">Use tradeoffs to improve performance</a>
 <br /><br />
 
-Questions for Performance Efficiency:
+<a name="PerfQuestions"></a>
+
+Questions and Considerations for Performance Efficiency:
 
 <a name="SelectPerfArch"></a>
 
 1. How do you select the best performing architecture?
 
-   1. <strong>Understand the available services and resources</strong> - Learn about and understand the wide range of services and resources available in the cloud. Identify the relevant services and configuration options for each workload, and understand how to achieve optimal performance.
+   1. <strong>Understand the available services and resources</strong> - Learn about and understand the wide range of services and resources available in the cloud. Identify the relevant services and configuration options for each workload, and understand how to achieve optimal performance. <tt>PERF-01-IdentifySvcs</tt>
 
-   1. <strong>Define a process for architectural choices</strong> - Use internal experience and knowledge of the cloud, or external resources such as published use cases, relevant documentation, or whitepapers to define a process to choose resources and services. You should define a process that encourages experimentation and benchmarking with the services that could be used by workloads.
+   1. <strong>Define a process for architectural choices</strong> - Use internal experience and knowledge of the cloud, or external resources such as published use cases, relevant documentation, or whitepapers to define a process to choose resources and services. You should define a process that encourages experimentation and benchmarking with the services that could be used by workloads. <tt>PERF-02-Process</tt>
 
    1. <strong>Factor cost requirements into decisions</strong> - Workloads often have cost requirements for operation. Use internal cost controls to select resource types and sizes based on predicted resource need.
 
@@ -1444,7 +1550,9 @@ AWS Cost Optimization Abstract:
 
 <hr />
 
-Best practices for Cost Optimization:
+<a name="CostBestPractices"></a>
+
+Best practice categories for Cost Optimization:
 
 1. <a href="#ImplementFinMgmt">Implement cloud financial management</a>
 2. <a href="#GovernUsage">Govern usage</a>
@@ -1458,7 +1566,9 @@ Best practices for Cost Optimization:
 10. <a href="#EvaluateNewSvcs">Evaluate new services</a>
 <br /><br />
 
-Questions for Cost Optimization:
+<a name="CostQuestions"></a>
+
+Questions and Considerations for Cost Optimization:
 
 <a name="ImplementFinMgmt"></a>
 
@@ -1728,9 +1838,8 @@ https://www.youtube.com/watch?v=gl0zpKLbRe0
 AWS re:Invent 2020: Billing management and cost control
 by Keith Jarrett (Head of AWS Cost Management, Product Marketing and Business Intelligence)
 
-https://www.youtube.com/watch?v=XHwFJDw9Mec
-AWS Cost Optimization: Tools and Methods to Reduce Your Spend With Us
-AWS Events
+<a target="_blank" href="https://www.youtube.com/watch?v=XHwFJDw9Mec">
+AWS Cost Optimization: Tools and Methods to Reduce Your Spend With Us</a>
 
 <a name="CostLabs"></a>
 <a target="_blank" href="https://wellarchitectedlabs.com/cost/"><strong>AWS Cost Optimization hands-on labs:</strong></a>

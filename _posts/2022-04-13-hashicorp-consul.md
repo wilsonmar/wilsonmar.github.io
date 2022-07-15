@@ -1849,9 +1849,9 @@ Or, if you don't want/need a background service you can just run:
 
    Alternately:
 
-   <pre><strong>consul version</strong></pre>
+   <pre><strong>consul --version</strong></pre>
 
-   If the Enterprise version was installed:
+   The response if the Enterprise ("+ent") version was installed:
 
    <pre>Consul v1.12.2+ent
 Revision 0a4743c5
@@ -1869,7 +1869,7 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
 &nbsp;
 Available commands are:
     <a href="#ACL">acl            Interact with Consul's ACLs</a>
-    agent          Runs a Consul agent
+    agent          <a target="_blank" href="https://www.consul.io/docs/agent">Runs a Consul agent</a>
     catalog        Interact with the catalog
     config         Interact with Consul's Centralized Configurations
     connect        Interact with <a href="#ConsulConnect">Consul Connect</a>
@@ -1937,18 +1937,27 @@ Available commands are:
 1. In the address bar within a browser:
 
    <tt>http://localhost:8500/services</tt>
+ 
+   <a name="EnterpriseLicense"></a>
 
+   ### Configure Enterprise license
+ 
    But not if you also see log lines like these:
 
    <pre>2022-07-12T12:18:00.234-0600 [ERROR] agent: Error starting agent: error="license is missing. To add a license, configure "license_path" in your configuration file, use the CONSUL_LICENSE environment variable, or use the CONSUL_LICENSE_PATH environment variable. For a trial license of Consul Enterprise, visit https://consul.io/trial."
 2022-07-12T12:18:00.234-0600 [INFO]  agent: Exit code: code=1
    </pre>
 
+   or
+
+   <pre>2022-07-14T19:01:32.448-0600 [ERROR] agent: Error starting agent: error="error initializing license: 1 error occurred:
+	* license is no longer valid
+   </pre>
+
    If you haven't specified the Enterprise license key:
 
-   <a name="EnterpriseLicense"></a>
-
-   ### Configure Enterprise license
+   * https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=consul/enterprise
+   <br /><br />
 
 1. In a browser, fill out the form for a 30-day evaluation license of Enterprice Consul  at 
 
