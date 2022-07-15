@@ -2010,13 +2010,11 @@ Available commands are:
 
 1. In a browser, fill out the form for a 30-day evaluation license of Enterprice Consul  at 
 
-   https://www.hashicorp.com/contact-sales/consul?email=wilson.mar@hashicorp.com
-   
-   https://www.hashicorp.com/products/consul/trial
+   https://www.hashicorp.com/products/consul/trial for a 30-day trial
 
    https://license.hashicorp.services/customers
 
-   TODO:
+   TODO:  hcp-activations@hashicorp.com?
 
    After Expiration, licenses still work until Termination date 10 years later.
 
