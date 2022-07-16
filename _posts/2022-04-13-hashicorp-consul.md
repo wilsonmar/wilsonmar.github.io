@@ -271,6 +271,11 @@ This is explained here.
 
 ### Free Open Source Software Features
 
+
+PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
+
+
+
 The main component of the Consul product -- the Consul Agent executable "consul" -- can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
 <ul>
    <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
@@ -286,9 +291,7 @@ The main component of the Consul product -- the Consul Agent executable "consul"
    * <a target="_blank" href="https://www.youtube.com/watch?v=EPcmgr04twM" title="by ex-HashiCorp Nicole Hubbard Apr 24, 2020">VIDEO: "Using Consul for Network Observability & Health Monitoring"</a> referencing <a target="_blank" href="https://github.com/hashicorp/consul-demo-tracking/datadog">this repo</a>
    <br /><br />
 
-PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
-
-
+   
 <a name="ConsulConcepts"></a>
 
 #### Consul Concepts in UI Menu
@@ -1900,6 +1903,7 @@ Or, if you don't want/need a background service you can just run:
 
 <hr />
 
+<a name="ConsulVersion"></a>
 <a name="CLI-commands"></a>
 
 ## Consul CLI commands
@@ -1926,7 +1930,7 @@ Revision 0a4743c5
 Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
    </pre>
 
-1. Obtain the menu of <em>31 command keywords</em>:
+1. Obtain the menu of <em>31 command keywords</em> listed alphabetically:
 
    <pre><strong>consul</strong></pre>
 
@@ -1936,21 +1940,21 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
 &nbsp;
 Available commands are:
     <a href="#ACL">acl            Interact with Consul's ACLs</a>
-    agent          <a target="_blank" href="https://www.consul.io/docs/agent">Runs a Consul agent</a>
+    <a href="#ConsulAgent">agent          Runs a Consul agent</a>
     catalog        Interact with the catalog
     config         Interact with Consul's Centralized Configurations
     connect        Interact with <a href="#ConsulConnect">Consul Connect</a>
     debug          Records a debugging archive for operators
     event          Fire a new event
     exec           Executes a command on Consul nodes
-    force-leave    Forces a member of the cluster to enter the "left" state
+    <a href="#ConsulLeave">force-leave    Forces a member of the cluster to enter the "left" state</a>
     info           Provides debugging information for operators.
     <a href="#Intentions">intention</a>      Interact with Connect service intentions
     join           Tell Consul agent to join cluster
     keygen         Generates a new encryption key
     keyring        Manages gossip layer encryption keys
     kv             Interact with the key-value store
-    leave          Gracefully leaves the Consul cluster and shuts down
+    <a href="#ConsulLeave">leave          Gracefully leaves the Consul cluster and shuts down</a>
     lock           Execute a command holding a lock
     login          Login to Consul using an auth method
     logout         Destroy a Consul token created with login
@@ -1972,11 +1976,103 @@ Available commands are:
 
    CLI commands are used to start and stop the Consul Agent.
 
-1. You can invoke -dev (for "development") functionality:
+   <a name="Shortcuts"></a>
+   
+   ## Keyboard shortcuts
+
+   TODO: Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts
+   (https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh):
+
+   <pre>alias ccn="consul catalog nodes"
+alias ccs="consul catalog services"
+   </pre>
+
+* <tt>ccn</tt> for the list of nodes, instead of:
+
+   <pre><strong>consul catalog nodes</strong></pre>
+
+   <pre>Node                  ID        Address    DC
+wilsonmar-N2NYQJN46F  5a5a1066  127.0.0.1  dc1
+   </pre>
+
+* <tt>cml</tt> for the list of node members, instead of:
+
+   <pre><strong>consul members</strong></pre>
+
+   <pre>Node             Address           Status  Type    Build       Protocol  DC   Partition  Segment
+consul-server-1  10.132.0.90:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
+consul-server-2  10.132.0.42:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
+consul-server-3  10.132.0.37:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
+consul-server-4  10.132.1.11:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
+consul-server-5  10.132.0.35:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
+consul-server-6  10.132.0.41:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
+   </pre>
+
+* <tt>cmw</tt> for the list of node members, instead of:
+
+   <pre><strong>consul members -wan</strong></pre>
+
+   <pre>Node                 Address             Status  Type    Build       Protocol  DC   Partition  Segment
+consul-server-4.dc2  10.132.255.99:8302  alive   server  1.12.2+ent  2         dc2  default    &LT;all>
+consul-server-5.dc2  10.132.255.90:8302  alive   server  1.12.2+ent  2         dc2  default    &LT;all>
+consul-server-6.dc2  10.132.255.96:8302  alive   server  1.12.2+ent  2         dc2  default    &LT;all>
+   </pre>
+
+* <tt>ccs</tt> for the list of services, instead of:
+
+   <pre><strong>consul catalog services</strong></pre>
+
+   When no Consul service has been configured yet, the response is:
+
+   <pre>consul
+   </pre>
+
+* <tt>cnl</tt> for the list of raft peers, instead of:
+
+   <pre><strong>consul namespace list</strong></pre>
+
+   Example:
+
+   <pre>
+   # app-team:
+   #    Description:
+   #       Namespace for app-team managing the production dashboard application
+   #    Partition:   default
+   # db-team:
+   #    Description:
+   #       Namespace for db-team managing the production counting application
+   #    Partition:   default
+   # default:
+   #    Description:
+   #       Builtin Default Namespace
+   </pre>
+
+* <tt>crl</tt> for the list of raft peers, instead of:
+
+   <pre><strong>consul operator raft list-peers</strong></pre>
+
+   Example:
+
+   <pre>Node             ID                                    Address              State     Voter  RaftProtocol
+consul-server-1  5dbd5919-c144-93b2-9693-dccfff8a1c53  10.132.255.118:8300  leader    true   3
+consul-server-2  098c8594-e105-ef93-071b-c2e24916ad78  10.132.255.119:8300  follower  true   3
+consul-server-3  93a611a0-d8ee-0937-d1f0-af3377d90a19  10.132.255.120:8300  follower  true   3
+   </pre>
+
+
+
+   <a name="ConsulAgent"></a>
+   
+   ## Consul agent
+
+   * <a target="_blank" href="https://www.consul.io/docs/agent">consul.io/docs/agent (Runs a Consul agent)</a>
+   <br /><br />
+    
+1. Invoke -dev (for "development") on a Terminal:
 
    <pre><strong>consul agent -dev</strong></pre>
 
-   If you haven't installed:
+   The response begins with some build info:
 
    <pre>==> Starting Consul agent...
            Version: '1.12.2+ent'
@@ -1991,37 +2087,228 @@ Available commands are:
 ==> Log data will now stream in as it occurs:
    </pre>
 
-   <tt>Datacenter: 'dc1'</tt> is the default data center value.
-
    DEFINITION: 
 
    <tt>Server: true</tt> says it's running <strong>server mode</strong> (as node type: server).<br />
    <tt>Server: false</tt> means it's running <strong>client mode</strong> (as node type: client).
 
+   <a name="Setdc1variable"></a>
+
+   <tt>Datacenter: 'dc1'</tt> is the default data center value.
+
+1. Define variables for other CLI commands:
+
+   <pre>export DATACENTER1_ID="dc1"</strong></pre>
+
+   <a name="ConsulDNS"></a>
+
+1. Analyze protocol info returned from the command above:
+
    <tt>Client Addr: [127.0.0.1] (HTTP: 8500, HTTPS: -1, gRPC: 8502, DNS: 8600)</tt><br />
-   means that you can access the UI web page at: <tt>http://127.0.0.1:8500</tt>
+   means that you can access the UI web page at: <tt>http://127.0.0.1:8500</tt> - see <a href="#ConsulGUI">Consul GUI</a> below.
+
+   <tt>HTTPS: -1</tt> means it's not available (until SSL/TLS certificates are defined)
+   
+   <tt>gRPC: 8502</tt> Remote Procedure Call
+   
+   ### Consul DNS 
+
+   <tt>DNS: 8600</tt> is the <a href="#Ports">port number (the default)</a> for Consul's built-in DNS server.
+
+   The Domain Name Service (DNS) matches IP addresses with server names. It's a major component of TCP networking.
+   
+   By working in the environment around application program, Consul doesn't require changes to application code.
+
+
+   <a name="dig_discover"></a>
+
+   ### dig command for DNS
+
+1. "Discover" nodes using DNS interface <tt>dig</tt> command to the Consul agent's <strong>DNS server</strong>, which runs on port 8600 by default:
+
+   <pre><strong>dig @127.0.0.1 -p 8600</strong></pre>
+
+   Where no services have been defined yet:
+
+   <pre>; &LT;&LT;>> DiG 9.10.6 &LT;&LT;>> @127.0.0.1 -p 8600
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER&LT;&LT;- opcode: QUERY, status: <strong>REFUSED</strong>, id: 60743
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 0
+;; WARNING: recursion requested but not available
+&nbsp;
+;; QUESTION SECTION:
+;.				IN	NS
+&nbsp;
+;; Query time: 2 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Sat Jul 16 01:30:09 MDT 2022
+;; MSG SIZE  rcvd: 17
+   </pre>
+
+   QUESTION: NOTE the response include "REFUSED".  
+
+<!-- 
+1. When the Consul Agent has <strong>tokens</strong> to work with nodes, such as "shipments":
+
+   <pre><strong>dig @127.0.0.1 -p 8600 shipments.service.consul -t SRV</strong></pre>
+
+   The response:
+
+   <pre>; &LT;&LT;>> DiG 9.10.6 &LT;&LT;>> @127.0.0.1 -p 8600 shipments.service.consul -t SRV
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER&LT;&LT;- opcode: QUERY, status: NXDOMAIN, id: 4610
+;; flags: qr aa rd; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+;; WARNING: recursion requested but not available
+&nbsp;
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;shipments.service.consul.	IN	SRV
+&nbsp;
+;; AUTHORITY SECTION:
+consul.			0	IN	SOA	ns.consul. hostmaster.consul. 1657957518 3600 600 86400 0
+&nbsp;
+;; Query time: 38 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Sat Jul 16 01:36:12 MDT 2022
+;; MSG SIZE  rcvd: 103
+   </pre>
+
+   <pre>;; ANSWER SECTION:
+shipments.service.consul. 0 IN SRV 1 1 8080 0a00001e.addr.dc1.consul.
+;; ADDITIONAL SECTION:
+0a00001e.addr.dc1.consul. 0 IN A  10.0.0.30
+mxx01.node.dc1.consul. 0 IN TXT "consul-network-segment="
+   </pre>
+
+   ### DNS SRV Priority and Weights
+
+   <a target="_blank" href="https://www.cloudflare.com/learning/dns/dns-records/dns-srv-record/">DEFINITION</a>: DNS SRV lookups include port numbers and follow "Priority" and "Weight" values defined for each.
+   A server with a <u>lower</u> priority value receives <u>more</u> traffic than servers defined with a higher priority. 
+   "Weight" does not matter when servers have different priority values.
+   If several servers have the same priority, the server with the <u>higher</u> <strong>weight</strong> receives <u>more</u> traffic than servers with lower weight.
+
+   TODO: This approach enables automatic load balancing. Decentralizes DNS.
+
+
+   Alternately, if running within Docker image "hashicorp/counting-service:0.0.2"
+   
+   <pre><strong>dig @127.0.0.1 -p 8600 "counting.service.consul"</strong></pre>
+
+   Alternately, discover apps using <tt>dig appb.service.consul</tt>
+
+   If running locally:
+
+   <pre><strong>dig @127.0.0.1 -p 8600 "$(hostname).node.consul"</strong></pre>
+
+   REMEMBER: Only healthy instances are returned. Unhealthy nodes are filtered out.
+
+   <pre>; &LT;&LT;>> DiG 9.10.6 &LT;&LT;>> @127.0.0.1 -p 8600 wilsonmar-N2NYQJN46F.node.consul
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER&LT;&LT;- opcode: QUERY, status: NOERROR, id: 16775
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
+;; WARNING: recursion requested but not available
+&nbsp;
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;wilsonmar-N2NYQJN46F.node.consul. IN	A
+&nbsp;
+;; ANSWER SECTION:
+wilsonmar-N2NYQJN46F.node.consul. 0 IN	A	127.0.0.1
+&nbsp;
+;; ADDITIONAL SECTION:
+wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
+&nbsp;
+;; Query time: 2 msec
+;; SERVER: 127.0.0.1#8600(127.0.0.1)
+;; WHEN: Sun May 08 22:35:21 MDT 2022
+;; MSG SIZE  rcvd: 113
+   </pre>
+
+-->
+
+   <a name="ConsulGUI"></a>
+
+   ## Consul GUI
+
+1. In the address bar within a browser:
+
+   <tt>http://localhost:8500/services</tt>
+
+   <a name="ConsulWebGUI"></a>
+
+   ### Consul web GUI
+
+   After the <a href="#RunBackground">Consul server is invoked</a>, on the Terminal window:
+
+1. Open
+
+   <pre><strong>open "http://localhost:8080/ui/${DATACENTER1_ID}/services"</strong></pre>
+
+
+
+   <img alt="Consul GUI" width="573" height="104" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652110651/consul-gui-573x104_zb5lsx.png">
+
+   The Consul GUI provides a mouse-clickable way for you to convienently work with these:
+
+   * <a href="#Services">Services</a> (in the Service Catalog)
+
+   * <a href="#Nodes">Nodes</a> is the number of Consul instances
+
+   * <a href="#KeyValue">Key/Value</a> datastore of IP address generated
+
+   * <a href="#ACL">ACL</a> (Access Control List) entries which block or allow network access based on port number
+
+   * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
+   
+
+
+   <hr />
 
    <a name="APICalls"></a>
 
    ### CLI API
 
-1. The build info is also displayed (along with other configuration information) in response to this API:
+1. For all configuration information, run this API:
 
    <pre><strong>curl localhost:8500/v1/agent/self</strong></pre> 
 
    In the "Stats" section:
+
+   The JSON file returned includes build values also displayed by <a href="#ConsulVersion">consul version command</a>:
+   
+   <pre>        "build": {
+            "prerelease": "",
+            "revision": "19041f20",
+            "version": "1.12.2",
+            "version_metadata": ""
+   </pre>
+
+   "runtime" settings are about the "arm64" chip, "darwin" operating system, and Golang version:
+
+   <pre>           "runtime": {
+            "arch": "arm64",
+            "cpu_count": "10",
+            "goroutines": "105",
+            "max_procs": "10",
+            "os": "darwin",
+            "version": "go1.18.1"
+   </pre>
+
+   About Consul operations:
 
    <pre>        "agent": {
             "check_monitors": "0",
             "check_ttls": "0",
             "checks": "0",
             "services": "0"
-        },
-        "build": {
-            "prerelease": "",
-            "revision": "19041f20",
-            "version": "1.12.2",
-            "version_metadata": ""
         },
         "consul": {
             "acl": "disabled",
@@ -2032,20 +2319,9 @@ Available commands are:
             "server": "true"
    </pre>
 
-   The JSON file returned include a long list of Debug info:
-   
-   <pre>           "runtime": {
-            "arch": "arm64",
-            "cpu_count": "10",
-            "goroutines": "105",
-            "max_procs": "10",
-            "os": "darwin",
-            "version": "go1.18.1"
-   </pre>
-
    <a name="RaftConfig"></a>
 
-   ### Raft configuration
+   ## Raft configuration
 
    Settings for the Raft protocol:
 
@@ -2080,7 +2356,7 @@ Available commands are:
    * https://raft.github.io/
    <br /><br />
 
-   To ensure data <strong>consistency</strong> among nodes across Availability Zones, the <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state storage for updating catalog, session, prepared query, ACL, and KV state.
+   To ensure data <strong>consistency</strong> among nodes (even across different Availability Zones), the <a target="_blank" href="https://www.consul.io/docs/architecture/consensus#deployment_table">Raft consensus algorithm</a> (a simpler implementation of <a target="_blank" href="https://en.wikipedia.org/wiki/Paxos_%28computer_science%29">Paxos</a>) maintains consistent state storage for updating data maintained by Consul's (catalog, session, prepared query, ACL, and KV state).
    
    Each transaction is considered "comitted" when more than half the followers register it.
    
@@ -2089,7 +2365,6 @@ Available commands are:
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/get-started-create-datacenter?in=consul/getting-started">TUTORIAL</a>:
 
    <!-- https://hashicorp.app.workramp.com/task_assignments/cbb60ad0-cfd5-11ec-aade-06cf503dca07 -->
-
 
 
    <a name="EnvoyConfig"></a>
@@ -2134,6 +2409,8 @@ Available commands are:
 
    <a name="SerfConfig"></a>
 
+   ## serf_lan and serf_wan
+
    There is a <tt>"serf_lan"</tt> and <tt>"serf_wan"</tt> each:
 
    <pre>            "coordinate_resets": "0",
@@ -2150,33 +2427,22 @@ Available commands are:
             "query_time": "1"
    </pre>
 
-
    <a name="Gossip"></a>
 
    ### Serf LAN & WAN Gossip 
 
-   * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
-   * https://www.consul.io/docs/intro/vs/serf
-   <br /><br />
+      * https://learn.hashicorp.com/tutorials/consul/federation-gossip-wan
+      * https://www.consul.io/docs/intro/vs/serf
+      <br /><br />
 
-   To ensure that data is distributed with reliable communication not assumed, Consul uses the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). The <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> is also used by the <a target="_blank" href="https://serf.apache.org/">Apache Serf library</a>, which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
+   To ensure that data is distributed with reliable communication not assumed, Consul makes use of the <a target="_blank" href="https://en.wikipedia.org/wiki/Gossip_protocol">Gossip protocol</a> powered by the multi-platform <a target="_blank" href="https://www.serf.io/">Serf</a> <a target="_blank" href="https://github.com/hashicorp/serf">library open-sourced by HashiCorp at https://github.com/hashicorp/serf</a> (writte in Golang). Serf is based on the <a target="_blank" href="https://consul.io/docs/architecture/gossip/">Gossip protocol</a> also used by the <a target="_blank" href="https://serf.apache.org/">Apache Serf library</a>, which is a modified version of the SWIM (Scalable Weakly-consistent Infection-style Process Group Membership) protocol.
 
    Serf provides for:
 
-   * Events broadcasting to perform cross-datacenter requests based on  Membership information
+   * Events broadcasting to perform cross-datacenter requests based on Membership information.
 
    * Failure detection to gracefully handle loss of connectivity
    <br /><br />
-
-
-<a name="ConsulGUI"></a>
-
-## Consul GUI
-
-1. In the address bar within a browser:
-
-   <tt>http://localhost:8500/services</tt>
- zzz
 
 
 <hr />
@@ -2256,13 +2522,7 @@ Available commands are:
 
    <pre>brew services start hashicorp/tap/consul</pre>
 
-
-1. TODO: Setup compatibility mode?
-
-## Keyboard shortcuts
-
-Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts:
-
+QUESTION: Setup compatibility mode?
 
 
 <a name="ConsulNames"></a>
@@ -2373,6 +2633,8 @@ Consul server startup complete.
    No message is returned unless there is an error.
 
 
+   <a name="ConsulLeave"></a>
+
    ### Leave (Stop) Consul gracefully
 
    CAUTION: When operating as a server, a graceful leave is important to avoid causing a potential availability outage affecting the consensus protocol.
@@ -2434,30 +2696,6 @@ Consul server startup complete.
 
 
 <hr />
-
-<a name="ConsulWebGUI"></a>
-
-### Consul web GUI
-
-1. When the <a href="#RunBackground">Consul server is invoked</a>:
-
-   <pre>open "http://localhost:8080/ui/${DATACENTER1_ID}/services"</pre>
-
-   <img alt="Consul GUI" width="573" height="104" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1652110651/consul-gui-573x104_zb5lsx.png">
-
-   The Consul GUI provides a mouse-clickable way for you to conviently work with these (explained below):
-
-   * <a href="#Services">Services</a> (in the Service Catalog)
-
-   * <a href="#Nodes">Nodes</a> is the number of Consul instances
-
-   * <a href="#KeyValue">Key/Value</a> datastore of IP address generated
-
-   * <a href="#ACL">ACL</a> (Access Control List) entries which block or allow network access based on port number
-
-   * <a href="#Intentions">Intentions</a> to allow or deny connections between specific <strong>services by name</strong> (instead of IP addresses) in the Service Graph
-
-
 
 <a name="ListNodes"></a>
 
@@ -2929,57 +3167,6 @@ bootstrap {
 
 
 
-   <a name="dig_discover"></a>
-
-1. "Discover" nodes using DNS interface <tt>dig</tt> command to the Consul agent's <strong>DNS server</strong>, which runs on port 8600 by default:
-
-   REMEMBER: Only healthy instances are returned.
-
-   If running within Docker image "hashicorp/counting-service:0.0.2"
-   
-   <pre><strong>dig @127.0.0.1 -p 8600 "counting.service.consul"</strong></pre>
-
-   Alternately, discover apps using <tt>dig appb.service.consul</tt>
-
-   If running locally:
-
-   <pre><strong>dig @127.0.0.1 -p 8600 "$(hostname).node.consul"</strong></pre>
-
-   <pre>; &LT;&LT;>> DiG 9.10.6 &LT;&LT;>> @127.0.0.1 -p 8600 wilsonmar-N2NYQJN46F.node.consul
-; (1 server found)
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER&LT;&LT;- opcode: QUERY, status: NOERROR, id: 16775
-;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 2
-;; WARNING: recursion requested but not available
-&nbsp;
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 4096
-;; QUESTION SECTION:
-;wilsonmar-N2NYQJN46F.node.consul. IN	A
-&nbsp;
-;; ANSWER SECTION:
-wilsonmar-N2NYQJN46F.node.consul. 0 IN	A	127.0.0.1
-&nbsp;
-;; ADDITIONAL SECTION:
-wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
-&nbsp;
-;; Query time: 2 msec
-;; SERVER: 127.0.0.1#8600(127.0.0.1)
-;; WHEN: Sun May 08 22:35:21 MDT 2022
-;; MSG SIZE  rcvd: 113
-   </pre>
-
-   <a target="_blank" href="https://www.cloudflare.com/learning/dns/dns-records/dns-srv-record/">DEFINITION</a>: DNS SRV lookups include port numbers and follow "Priority" and "Weight" values defined for each.
-   A server with a <u>lower</u> priority value receives <u>more</u> traffic than servers defined with a higher priority. 
-   "Weight" does not matter when servers have different priority values.
-   If several servers have the same priority, the server with the <u>higher</u> <strong>weight</strong> receives <u>more</u> traffic than servers with lower weight.
-
-3. Connect 
-
-   NOTE: Unhealthy nodes are filtered out.
-
-   TODO: This approach enables automatic load balancing. Decentralizes DNS.
 
 <a name="Nodes"></a>
 
