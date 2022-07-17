@@ -409,21 +409,36 @@ Third parties:
 
 <a name="Terraform"></a>
 
-PROTIP: <strong>[Terraform]</strong> links to instead create each lab using Terraform files (with Bash shell scripts and Ansible, where applicable). That's instead of manual clicking and typing, so you can apply Infrastructure-as-Code for better collaboration versioning, security, etc.
+PROTIP: Complaints about AWS' Well Archtected Labs are that they:
+   * have instructions which require Admin permissions not available to some enterprise users
+   * have too many instructions for <strong>clicking and typing in GUI forms</strong> instead of automated actions performed by scripts (such as <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_vpc/1_create_vpc_stack/">these steps to create VPCs in 3 AZs</a>) instead of shell scripts
+   * reference AWS' <strong>CloudFormation templates</strong> (such as <a target="_blank" href="https://wellarchitectedlabs.com/Common/Create_VPC_Stack/Code/vpc-alb-app-db.yaml">this 2138-line vpc-alb-app-db.yaml file</a>) as Infrastructure-as-Code (for better repeatability, collaboration versioning, security, etc.) instead of HashiCorp Terraform files
+   <br /><br />
+   
+Thus, items below have <strong>[Terraform]</strong> links to Terraform HCL (plus Bash shell scripts and Ansible, where applicable).
 
-#### &nbsp; &nbsp; &nbsp; &nbsp; Operational Excellence Labs
+Each link will go to a web page containing a Twitch-type Zoom recording walking through the steps, then showing the equivalent Terraform.
+
+PROTIP: We analyze utilities <a target="_blank" href="https://github.com/GoogleCloudPlatform/terraformer">Google's terraformer</a> and <a target="_blank" href="https://blog.cycloid.io/what-is-terracognita">cloud diagram creator Cycloid's</a> <a target="_blank" href="https://github.com/cycloidio/terracognita">terracognita</a> which create Terraform files based on what has been created in AWS ("reverse Terraform").
+Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formation to Terraform, with mixed results.
+
+href="https://spacelift.io/blog/importing-exisiting-infrastructure-into-terraform">
+
+<a name="WAL-OPS-labs"></a>
+
+#### Operational Excellence Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_inventory_patch_management/">100 - Inventory and Patch Management</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/100_labs/100_dependency_monitoring/">100 - Dependency Monitoring</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.wellarchitectedlabs.com/operational-excellence/200_labs/200_automating_operations_with_playbooks_and_runbooks/">200 - Automating operations with Playbooks and Runbooks</a>
    <br /><br />
 
-   <a name="WAL-Sec"></a>
+   <a name="WAL-SEC-labs"></a>
 
    #### Security Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/100_labs/">100:  Foundational Labs</a>
-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_vpc/">200: Automated Deployment of VPC</a>
+1. [<a target="_blank" href="#Terraform" title="by Wisdom"><strong>Terraform</strong></a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_vpc/">200: Automated Deployment of VPC</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_deployment_of_web_application_firewall/">200: Automated Deployment of Web Application Firewall</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_automated_iam_user_cleanup/">200: Automated IAM User Cleanup</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/200_labs/200_basic_ec2_with_waf_protection/">200: Basic EC2 Web Application Firewall Protection</a>
@@ -443,6 +458,8 @@ PROTIP: <strong>[Terraform]</strong> links to instead create each lab using Terr
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/security/300_labs/300_vpc_flow_logs_analysis_dashboard/">300: VPC Flow Logs Analysis Dashboard</a>
    <br /><br />
 
+   <a name="WAL-REL-labs"></a>
+
    #### Reliability Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/100_labs/100_deploy_cloudformation/">100: Deploy a Reliable Multi-tier Infrastructure using CloudFormation</a>
@@ -457,6 +474,8 @@ PROTIP: <strong>[Terraform]</strong> links to instead create each lab using Terr
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/reliability/300_labs/300_fault_isolation_with_shuffle_sharding/"> 300: Fault Isolation with Shuffle Sharding</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://www.wellarchitectedlabs.com/reliability/disaster-recovery/"> Disaster Recovery</a>
 
+   <a name="WAL-REL-labs"></a>
+
    #### Performance Efficiency Labs
 
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_with_cloudwatch_dashboards/"> 100: Monitoring with CloudWatch Dashboards</a>
@@ -464,6 +483,8 @@ PROTIP: <strong>[Terraform]</strong> links to instead create each lab using Terr
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_windows_ec2_cloudwatch/"> 100: Monitoring Windows EC2 instance with CloudWatch Dashboards</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_linux_ec2_cloudwatch/"> 100: Monitoring an Amazon Linux EC2 instance with CloudWatch Dashboards</a>
    <br /><br />
+
+   <a name="WAL-COST-labs"></a>
 
    #### Cost Optimization Labs
 
@@ -495,6 +516,8 @@ PROTIP: <strong>[Terraform]</strong> links to instead create each lab using Terr
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_optimization_data_collection/"> 300: Optimization Data Collection</a>
 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="https://wellarchitectedlabs.com/cost/300_labs/300_organization_data_cur_connection/"> 300: Organization Data CUR Connection</a>
    <br /><br />
+
+   <a name="WAL-SUST-labs"></a>
 
    #### Sustainability Labs
 

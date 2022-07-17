@@ -16,11 +16,16 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are notes while I'm learning about Consul, attempting to be succinct and <strong>logically sequenced</strong>. All without sales generalizations. All in this one single big page for easy search. This is not a replacement for you going through professionally developed trainings.
-
 > Consul is "a multi-cloud service networking platform to connect and secure any service across any runtime platform and public or private cloud".<a target="_blank" href="https://www.youtube.com/watch?v=Aq1uTozNajI" title="HashiConf Oct 15 2019">*</a><a target="_blank" href="https://www.hashicorp.com/resources/consul-service-mesh-deep-dive">*</a>
 
 {% include whatever.html %}
+
+This is not a replacement for you going through professionally developed trainings.
+
+This takes a <strong>deep dive</strong> bottom-up hands-on appraoch to usage in production.
+So automation (shell scripts) are used to minimize you typing and clicking (which is not repeatable and error-prone).
+But rather than throwing a bunch of buzzwords for you to memorize, commentary  <strong>logically sequenced</strong> to introduce concepts in the context of what you just typed.
+All without sales generalizations. All in this one single big page for easy search. 
 
 
 ## Most Popular Websites about Consul
@@ -36,8 +41,11 @@ The most popular websites about Consul:
    "Consul was initially released in 2014 as a service discovery platform. In addition to service discovery, it now provides a full-featured service mesh for secure service segmentation across any cloud or runtime environment, and distributed key-value storage for application configuration.
    Registered services and nodes can be queried using a DNS interface or an HTTP interface.[1] Envoy proxy provides security, observability, and resilience for all application traffic."
 
-1. Open-source:<br />
+1. Source code:<br />
    https://github.com/hashicorp/consul
+
+   Initiated in 2014, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
+   It's 1.5K bytes after <tt>git clone ... -depth 1</tt> (just the latest main branch contents)
 
 1. Detailed technical documentation:<br />
    https://www.consul.io/docs
@@ -253,7 +261,6 @@ Consul provides a mechanism for connecting dynamic microservices with legacy net
 
 The list below send you to how each edition of Consul solves the mismatches described above.
 
-   * <a href="#FOSSFeatures">Free Open Source</a>
    * <a href="#EnterpriseFeatures">Paid Enterprise</a> for self-installed/managed on-prem or in private clouds
    * <a href="#HCP">SaaS in the HCP (HashiCorp Platform) in the HashiCorp-managed cloud</a>
    <br /><br />
@@ -267,36 +274,13 @@ This is explained here.
 
 <hr />
 
-<a name="FOSSFeatures"></a>
-
-### Free Open Source Software Features
-
-
-PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
-
-
-
-The main component of the Consul product -- the Consul Agent executable "consul" -- can be controlled using <strong>CLI commands</strong> without licensing as FOSS (Free open-sourced software) using code open-sourced at:
-<ul>
-   <a target="_blank" href="https://github.com/hashicorp/consul">https://github.com/hashicorp/consul</a>
-
-   Consul is written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>. The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
-
-   Initiated in 2014, this repo has garnered nearly 25,000 stars, with over a million downloads monthly.
-</ul>
-
-   References:
-   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-getting-started-cert/table-of-contents" title="3h 54m Released 9 May 2022 at Consul v1.11.4">Video course on Pluralsight: "Getting Started with HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/weshigbee/">Wes Higbee</a> refercing code at https://github.com/g0t4/course2-consul-gs and Docker images at https://hub.docker.com/washigbee
-   * <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=EPcmgr04twM" title="by ex-HashiCorp Nicole Hubbard Apr 24, 2020">VIDEO: "Using Consul for Network Observability & Health Monitoring"</a> referencing <a target="_blank" href="https://github.com/hashicorp/consul-demo-tracking/datadog">this repo</a>
-   <br /><br />
-
-   
 <a name="ConsulConcepts"></a>
 
 #### Consul Concepts in UI Menu
 
 <a name="UIMenu"></a>
+
+PROTIP: Here are Agile-style stories requesting use of HashiCorp Consul (written by me): 
 
 The Consul Enterprise edition menu can serve as a list of concepts about Consul:
 
@@ -1354,8 +1338,6 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
    For now, create file <tt>config</tt>
 
 
-
-
    https://github.com/hashicorp/consul-guides = Example usage of HashiCorp Consul
 
 
@@ -1562,97 +1544,32 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
    
    Work with the Consul Agent using:
    * <a href="#CLI-commands">CLI</a> (Command Line Interface) on Terminal sessions
-   * <a href="#APICalls">API calls from curl</a> or within a custom program (written in Go, etc.)
+   * <a href="#APICalls">API calls using curl</a> or within a custom program (written in Go, etc.)
    * <a href="#ConsulWebGUI">GUI</a> (Graphic User Interface) on an internet browser such as Google Chrome
    <br /><br />
 
-   The API at <tt>/connect/intentions/exact</tt> provides the most features to create Service Intentions.
-
    REMEMBER: Normally, there is no reason to SSH directly into Consul servers.
    
-   The UI and API are intended to be consumed from remote systems, such as a user's desktop or an application looking to discover a remote service in which it needs to establish connectivity. In addition, 
+   The UI and API are intended to be consumed from remote systems, such as a user's desktop or an application looking to discover a remote service in which it needs to establish connectivity. 
 
-   <a name="HCDiag"></a>
+   The API at <tt>/connect/intentions/exact</tt> provides the most features to create Service Intentions.
 
-### Install HCDiag
 
-1. Install for macOS <a target="_blank" href="https://github.com/hashicorp/homebrew-tap">from Homebrew</a>:
+   <a name="ConsulNames"></a>
 
-   <pre><strong>brew install hcdiag</strong></pre>
+   ### Environment Variables
 
-   <pre>==> Downloading https://releases.hashicorp.com/hcdiag/0.2.0/hcdiag_0.2.0_darwin_amd64.zip
-==> Installing hcdiag from hashicorp/tap
-==> Caveats
-The darwin_arm64 architecture is not supported for this product
-at this time, however we do plan to support this in the future. The
-darwin_amd64 binary has been installed and may work in
-compatibility mode, but it is not fully supported.
-==> Summary
-🍺  /opt/homebrew/Cellar/hcdiag/0.2.0: 5 files, 7.2MB, built in 2 seconds
-==> Running `brew cleanup hcdiag`...
-Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
-Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
-   </pre>
+   The shell script I wrote makes use of several custom environment variables, which minimizes mistakes when several commands use the same values. When applicable, my script also captures values output from one step to use in subsequent commands, to avoid the toil and mistakes from manual copy and pasting.
 
-1. Verify installation by viewing the help:
+   Use of environment variables also enable the same command call to be made for both DEV and PROD use, further avoiding mistakes.
 
-   <pre><strong>hcdiag -h</strong></pre>
+   * <tt>export DATACENTER1_ID="dc1"</tt> - or by default is obtained from my laptop's <tt>$(hostname)</tt>
 
-   <pre>Usage of hcdiag:
-  -all
-    	DEPRECATED: Run all available product diagnostics
-  -config string
-    	Path to HCL configuration file
-  -consul
-    	Run Consul diagnostics
-  -dest string
-    	Shorthand for -destination (default ".")
-  -destination string
-    	Path to the directory the bundle should be written in (default ".")
-  -dryrun
-    	Performing a dry run will display all commands without executing them
-  -include-since 72h
-    	Alias for -since, will be overridden if -since is also provided, usage examples: 72h, `25m`, `45s`, `120h1m90s` (default 72h0m0s)
-  -includes value
-    	files or directories to include (comma-separated, file-*-globbing available if 'wrapped-*-in-single-quotes')
-    	e.g. '/var/log/consul-*,/var/log/nomad-*'
-  -nomad
-    	Run Nomad diagnostics
-  -os string
-    	Override operating system detection (default "auto")
-  -serial
-    	Run products in sequence rather than concurrently
-  -since 72h
-    	Collect information within this time. Takes a 'go-formatted' duration, usage examples: 72h, `25m`, `45s`, `120h1m90s` (default 72h0m0s)
-  -terraform-ent
-    	(Experimental) Run Terraform Enterprise diagnostics
-  -vault
-    	Run Vault diagnostics
-  -version
-    	Print the current version of hcdiag
-   </pre>
+   * CONSUL_AGENT_TOKEN
 
-1. Before submitting a Service ticket to HashiCorp, obtain diagnostics about the HashiCorp utility (originating from <a target="_blank" href="https://github.com/hashicorp/hcdiag">) while a HashiCorp server is running:
+   * <a href="#ACL-Vars">ACL variables</a>
 
-   <pre><strong>hcdiag -dryrun</strong></pre>
-
-   <pre>[INFO]  hcdiag: Checking product availability
-[INFO]  hcdiag: Gathering diagnostics
-[INFO]  hcdiag: Running seekers for: product=host
-[INFO]  hcdiag: would run: seeker=stats
-   </pre>
-
-1. Configure environment variables to provide the URL and tokens necessary, per <a target="_blank" href="https://support.hashicorp.com/hc/en-us/articles/4409084297875/">this doc</a>.
-
-1. Specify the parameter to specify data desired for each product:
-
-   * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/hcdiag-with-consul">for Consul</a>
-   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/hcdiag-with-vault">Vault</a>
-   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hcdiag-with-nomad">Nomad</a>
-   * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/hcdiag-with-tfe">Terraform Enterprise</a>.
-   <br /><br />
-
-   Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
+   * export <a href="#LicenseConfiguration">LICENSE_FILE</a>="/etc/consul.d/consul.hclic"
 
 
    <a name="InstallConsulLinux"></a>
@@ -1846,9 +1763,10 @@ gpg: Can't check signature: No public key
 
 1. Skip to <a href="#CLI-commands">use CLI commands</a>
 
+
 #### B. Install from Homebrew using brew
 
-1. Notice 
+1. I
 
    <pre><strong>brew search consul</strong></pre>
 
@@ -1926,7 +1844,7 @@ Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use p
    The response if the Open Source version was installed:
 
    <pre>Consul v1.12.2+ent
-Revision 0a4743c5
+Revision 19041f20
 Protocol 2 spoken by default, understands 2 to 3 (agent will automatically use protocol >2 when speaking to compatible agents)
    </pre>
 
@@ -1976,15 +1894,54 @@ Available commands are:
 
    CLI commands are used to start and stop the Consul Agent.
 
+   <a name="AutoCompletions"></a>
+
+1. Get a list that all fits on the screen by typing <tt>consul</tt> then press the <strong>Tab</strong> key on the keyboard:
+
+   <pre>acl          event        keygen       logout       rtt          watch
+agent        exec         keyring      maint        services     
+catalog      force-leave  kv           members      snapshot     
+config       info         leave        monitor      tls          
+connect      intention    lock         operator     validate     
+debug        join         login        reload       version      
+   </pre>
+
+   The above appears only if <tt>~/.zshrc</tt> or <tt>~/.bashrc</tt> contains:
+
+   <pre>complete -o nospace -C /usr/local/bin/consul consul</pre>
+
+   That line is inserted to the correct file by:
+
+   <pre><strong>consul -autocomplete-install</strong></pre>
+
+   <a name="InCode"></a>
+
+   Each command in the list above are defined by code within the GitHub repository at:
+
+   <a target="_blank" href="https://github.com/hashicorp/consul/tree/main/command">https://github.com/hashicorp/consul/tree/main/command</a>
+
+   NOTE: Subcommand force-leave is in folder <tt>forceleave</tt>
+
+   These folders are in addition to subcommands: cli, flags, helpers.
+
+   Since Consul is written in the <a target="_blank" href="https://wilsonmar.github.io/golang/">Go programming language</a>,
+   each command is process by a go language file in each folder.
+
+   The GUI is in JavaScript with Handlebars templating, SCSS, and Gherkin.
+
+
    <a name="Shortcuts"></a>
    
    ## Keyboard shortcuts
 
-   TODO: Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts
-   (https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh):
+   PROTIP: Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts
+   (https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh).
 
    <pre>alias ccn="consul catalog nodes"
 alias ccs="consul catalog services"
+alias cmw="consul members -wan"
+alias cnl="consul namespace list"
+alias crl="consul operator raft list-peers"
    </pre>
 
 * <tt>ccn</tt> for the list of nodes, instead of:
@@ -2059,6 +2016,11 @@ consul-server-2  098c8594-e105-ef93-071b-c2e24916ad78  10.132.255.119:8300  foll
 consul-server-3  93a611a0-d8ee-0937-d1f0-af3377d90a19  10.132.255.120:8300  follower  true   3
    </pre>
 
+* <tt>csc</tt> for the contents of <tt>server.hcl</tt> configuration file in its default folder path:
+
+   <pre><strong>code ???/server.hcl</strong></pre>
+
+   You may come up with other aliases.
 
 
    <a name="ConsulAgent"></a>
@@ -2068,7 +2030,7 @@ consul-server-3  93a611a0-d8ee-0937-d1f0-af3377d90a19  10.132.255.120:8300  foll
    * <a target="_blank" href="https://www.consul.io/docs/agent">consul.io/docs/agent (Runs a Consul agent)</a>
    <br /><br />
     
-1. Invoke -dev (for "development") on a Terminal:
+1. Invoke -dev (for "development" only) on a Terminal:
 
    <pre><strong>consul agent -dev</strong></pre>
 
@@ -2234,6 +2196,103 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
 
 -->
 
+
+   <a name="EnterpriseLicense"></a>
+
+   ### Configure Enterprise license
+ 
+   About the Enterprise license key:
+   * https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=consul/enterprise
+   <br /><br />
+
+1. If you installed an Enterprise edition of Consul:
+
+   <pre><strong>consul agent -dev</strong></pre>
+
+   If no license was installed, you'll see log lines like these returned:
+
+   <pre>2022-07-12T12:18:00.234-0600 [ERROR] agent: Error starting agent: error="license is missing. To add a license, configure "license_path" in your configuration file, use the CONSUL_LICENSE environment variable, or use the CONSUL_LICENSE_PATH environment variable. For a trial license of Consul Enterprise, visit https://consul.io/trial."
+2022-07-12T12:18:00.234-0600 [INFO]  agent: Exit code: code=1
+   </pre>
+
+   If an expired Enterprise license was installed, you'll see log lines like these returned:
+
+   <pre>2022-07-14T19:01:32.448-0600 [ERROR] agent: Error starting agent: error="error initializing license: 1 error occurred:
+	* license is no longer valid
+   </pre>
+
+   REMEMBER: After Expiration, licenses still work until Termination date 10 years later.
+
+1. In a browser, fill out the form for a 30-day evaluation license of Enterprice Consul  at 
+
+   https://www.hashicorp.com/products/consul/trial for a 30-day trial
+
+1. Configure your browser to pop up for this URL:
+
+   https://license.hashicorp.services/customers
+
+   TODO:  hcp-activations@hashicorp.com?
+
+   For Consul agent installed using brew: TODO:
+
+   <a name="RunForeground"></a>
+
+   ### Run in Foreground
+
+   Run Consul in foreground, which occupies the Terminal and does not start again at login:
+
+   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
+
+   <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
+   </pre>
+
+   Alternately,
+
+   <pre><strong>consul agent -dev -datacenter="aws-1234567890" \
+   -data-dir=/opt/consul  -encrypt="<em>key</em>" \
+   -join="10.0.10.11,10.1.2.3" \
+   -bind="127.0.0.1" -node machine</strong></pre>
+
+   <tt>-join</tt> will fail if the IP addresses (4 or 6) fails to start.
+
+   PROTIP: In production, use configuration file to <strong>auto-join</strong>:
+
+   <pre>{
+  "bootstrap": false,
+  "boostrap_expect": 3,
+  "server": true,
+  "retry_join": ["10.0.10.11,"10.1.2.3"]
+}
+   </pre>
+
+   <a name="bind"></a>
+
+   <tt>-bind</tt> defines the IP addresses of clients which the agent will work with. "0.0.0.0" means everyone.
+   
+   For cluster communications within <tt>nodes/conf/server.hcl</tt> the <tt>bine_addr</tt> is .
+
+   <pre>bind_addr = "{{ GetPrivateInterfaces | include \"network\" \"10.0.0.0/16\" | attr \"address\" }}"</pre>
+
+   For client communications (via UI,DNS,API):
+
+   <pre>client_addr = "0.0.0.0"
+   </pre>
+
+   <pre>recursors = ["1.1.1.1"]
+   &nbsp;
+   data_dir = "/consul/data"
+   </pre>
+
+
+   <a name="RunBackground"></a>
+   
+   Alternately, if you installed Consul using brew (which we don't recommend), to run it in background so it restarts automatically at login:
+
+   <pre>brew services start hashicorp/tap/consul</pre>
+
+QUESTION: Setup compatibility mode?
+
+
    <a name="ConsulGUI"></a>
 
    ## Consul GUI
@@ -2275,6 +2334,12 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    <a name="APICalls"></a>
 
    ### CLI API
+
+   PROTIP: All Consul's endpoints registered are defined at https://github.com/hashicorp/consul/blob/main/agent/http_register.go
+   Beware of deprecated ones at the bottom of the list.
+
+
+   <a name="AgentSelf"></a>
 
 1. For all configuration information, run this API:
 
@@ -2396,7 +2461,7 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    * 8302 TCP/UDP for Serf <strong>WAN</strong> Gossip across regions
    
    * 8500 & 8501 <strong>TCP-only</strong> for localhost API and UI
-   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (disabled by default)
+   * 8502 TCP-only for Envoy sidecar proxy xDS gRPC API (not configured by default)
    * 8558 - Consul-Terraform-Sync daemon
 
    * 8600 TCP/UDP for <a href="#DNSQueries">DNS queries</a>
@@ -2406,6 +2471,17 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    For bootstrapping and configuration of <tt>agent.hcl</tt>, see
    https://learn.hashicorp.com/tutorials/consul/access-control-setup-production
 
+   <a name="ConfigPort"></a>
+
+   To change the DNS port, edit at folder <tt>kv/conf/</tt> file <tt>agent.hcl</tt> 
+
+   <pre>ports {
+      dns = 53
+      grps = 8502
+   }
+   </pre>
+
+   Envoy uses "xDS" for dynamic discovery.
 
    <a name="SerfConfig"></a>
 
@@ -2444,116 +2520,154 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    * Failure detection to gracefully handle loss of connectivity
    <br /><br />
 
-
-<hr />
-
-<a name="EnterpriseLicense"></a>
-
-### Configure Enterprise license
- 
-   About the Enterprise license key:
-   * https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=consul/enterprise
-   <br /><br />
-
-1. If you installed an Enterprise edition of Consul:
-
-   <pre><strong>consul agent -dev</strong></pre>
-
-   If no license was installed, you'll see log lines like these returned:
-
-   <pre>2022-07-12T12:18:00.234-0600 [ERROR] agent: Error starting agent: error="license is missing. To add a license, configure "license_path" in your configuration file, use the CONSUL_LICENSE environment variable, or use the CONSUL_LICENSE_PATH environment variable. For a trial license of Consul Enterprise, visit https://consul.io/trial."
-2022-07-12T12:18:00.234-0600 [INFO]  agent: Exit code: code=1
-   </pre>
-
-   If an expired Enterprise license was installed, you'll see log lines like these returned:
-
-   <pre>2022-07-14T19:01:32.448-0600 [ERROR] agent: Error starting agent: error="error initializing license: 1 error occurred:
-	* license is no longer valid
-   </pre>
-
-   REMEMBER: After Expiration, licenses still work until Termination date 10 years later.
-
-1. In a browser, fill out the form for a 30-day evaluation license of Enterprice Consul  at 
-
-   https://www.hashicorp.com/products/consul/trial for a 30-day trial
-
-1. Configure your browser to pop up for this URL:
-
-   https://license.hashicorp.services/customers
-
-   TODO:  hcp-activations@hashicorp.com?
-
-   For Consul agent installed using brew: TODO:
-
-   <a name="RunForeground"></a>
-
-   ### Run in Foreground
-
-   Run Consul in foreground, which occupies the Terminal and does not start again at login:
-
-   <pre><strong>consul agent -dev -bind 127.0.0.1 -node machine</strong></pre>
-
-   <pre>[DEBUG] agent.router.manager: Rebalanced servers, new active server: number_of_servers=1 active_server="wilsonmar-N2NYQJN46F (Addr: tcp/127.0.0.1:8300) (DC: dc1)"
-   </pre>
-
-   Alternately,
-
-   <pre><strong>consul agent -dev -datacenter="aws-1234567890" \
-   -data-dir=/opt/consul  -encrypt="<em>key</em>" \
-   -join="10.0.10.11,10.1.2.3" \
-   -bind="127.0.0.1" -node machine</strong></pre>
-
-   <tt>-join</tt> will fail if the IP addresses (4 or 6) fails to start.
-
-   PROTIP: In production, use configuration file to <strong>auto-join</strong>:
-
-   <pre>{
-  "bootstrap": false,
-  "boostrap_expect": 3,
-  "server": true,
-  "retry_join": ["10.0.10.11,"10.1.2.3"]
-}
-   </pre>
-
-
-   <a name="RunBackground"></a>
    
-   Alternately, if you installed Consul using brew (which we don't recommend), to run it in background so it restarts automatically at login:
+   ### server.hcl
 
-   <pre>brew services start hashicorp/tap/consul</pre>
-
-QUESTION: Setup compatibility mode?
-
-
-<a name="ConsulNames"></a>
-
-### Environment Variables
-
-The shell script I wrote makes use of several custom environment variables, which minimizes mistakes when several commands use the same values. When applicable, my script also captures values output from one step to use in subsequent commands, to avoid the toil and mistakes from manual copy and pasting.
-
-Use of environment variables also enable the same command call to be made for both DEV and PROD use, further avoiding mistakes.
-
-* <tt>DATACENTER1_ID</tt>, which is obtained from my laptop's <tt>$(hostname)</tt>
-
-* CONSUL_AGENT_TOKEN
-
-* <a href="#ACL-Vars">ACL variables</a>
-
-
+   <pre>node_name = "sec"
+connect {
+  enabled                            = true
+  enable_mesh_gateway_wan_federation = true
+}
+primary_gateways = [
+  "consul-primary-client:4431",
+]
+primary_gateways_interval = "5s"
+retry_interval_wan        = "5s"
+   </pre>
 
 <a name="envconsul"></a>
 
 ### envconsul
 
-   * https://www.consul.io/docs/intro/vs
    * https://github.com/hashicorp/envconsul
    <br /><br />
 
-The envconsul utility reads and sets environmental variables from data within the Consul Agent. It is installed when the Consul Agent is created. 
+   The envconsul utility <strong>launches</strong> a subprocess after reading and seting environmental variables from data obtained from the Consul Agent. 
 
-1. To launch a subprocess with environment variables using data from @hashicorp Consul and Vault.
+   The tool is inspired by <a target="_blank" href="https://pypi.python.org/pypi/envdir">envdir</a> and <a target="_blank" href="https://github.com/sorah/envchain">envchain</a>, but works on many major operating systems with no runtime requirements. It is also available via a Docker container for scheduled environments.
 
-   <pre><strong>envconsul</strong></pre>
+   envconsul is installed automatically when the Consul Agent is installed. 
+
+1. For a full list of parameters:
+
+   <pre><strong>envconsul -h</strong></pre>
+
+   Watches values from Consul's K/V store and Vault secrets to set environment
+   variables when the values are changed. It spawns a child process populated
+   with the environment variables.
+
+1. With a Consul agent running ...
+
+1. To have envconsul connect to Consul and read data from its KV (key-value) store based on the KV prefix such as "my-app" specified :
+
+   <pre><strong>envconsul -log-level debug -prefix my-app env</strong></pre>
+
+   BLAH QUESTION: This outputs a list of all environment variables and their values.
+
+1. The above will error out unless you've written data to that prefix, such as:
+
+   <pre>consul kv put my-app/address 1.2.3.4
+consul kv put my-app/port 80
+consul kv put my-app/max_conns 5
+   </pre>
+
+   The response expected:
+
+   <pre>Success! Data written to: my-app/address
+Success! Data written to: my-app/port
+Success! Data written to: my-app/max_conns
+   </pre>
+
+   NOTE: The command above launches a subprocess with environment variables using data from @hashicorp Consul and Vault.
+
+1. Read secrets from Vault:
+
+   envconsul -secret secret/my-app ./my-app
+
+
+<a name="HCDiag"></a>
+
+### Install HCDiag
+
+1. Install for macOS <a target="_blank" href="https://github.com/hashicorp/homebrew-tap">from Homebrew</a>:
+
+   <pre><strong>brew install hcdiag</strong></pre>
+
+   <pre>==> Downloading https://releases.hashicorp.com/hcdiag/0.2.0/hcdiag_0.2.0_darwin_amd64.zip
+==> Installing hcdiag from hashicorp/tap
+==> Caveats
+The darwin_arm64 architecture is not supported for this product
+at this time, however we do plan to support this in the future. The
+darwin_amd64 binary has been installed and may work in
+compatibility mode, but it is not fully supported.
+==> Summary
+🍺  /opt/homebrew/Cellar/hcdiag/0.2.0: 5 files, 7.2MB, built in 2 seconds
+==> Running `brew cleanup hcdiag`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+   </pre>
+
+1. Verify installation by viewing the help:
+
+   <pre><strong>hcdiag -h</strong></pre>
+
+   <pre>Usage of hcdiag:
+  -all
+    	DEPRECATED: Run all available product diagnostics
+  -config string
+    	Path to HCL configuration file
+  -consul
+    	Run Consul diagnostics
+  -dest string
+    	Shorthand for -destination (default ".")
+  -destination string
+    	Path to the directory the bundle should be written in (default ".")
+  -dryrun
+    	Performing a dry run will display all commands without executing them
+  -include-since 72h
+    	Alias for -since, will be overridden if -since is also provided, usage examples: 72h, `25m`, `45s`, `120h1m90s` (default 72h0m0s)
+  -includes value
+    	files or directories to include (comma-separated, file-*-globbing available if 'wrapped-*-in-single-quotes')
+    	e.g. '/var/log/consul-*,/var/log/nomad-*'
+  -nomad
+    	Run Nomad diagnostics
+  -os string
+    	Override operating system detection (default "auto")
+  -serial
+    	Run products in sequence rather than concurrently
+  -since 72h
+    	Collect information within this time. Takes a 'go-formatted' duration, usage examples: 72h, `25m`, `45s`, `120h1m90s` (default 72h0m0s)
+  -terraform-ent
+    	(Experimental) Run Terraform Enterprise diagnostics
+  -vault
+    	Run Vault diagnostics
+  -version
+    	Print the current version of hcdiag
+   </pre>
+
+1. Before submitting a Service ticket to HashiCorp, obtain diagnostics about the HashiCorp utility (originating from <a target="_blank" href="https://github.com/hashicorp/hcdiag">) while a HashiCorp server is running:
+
+   <pre><strong>hcdiag -dryrun</strong></pre>
+
+   <pre>[INFO]  hcdiag: Checking product availability
+[INFO]  hcdiag: Gathering diagnostics
+[INFO]  hcdiag: Running seekers for: product=host
+[INFO]  hcdiag: would run: seeker=stats
+   </pre>
+
+1. Configure environment variables to provide the URL and tokens necessary, per <a target="_blank" href="https://support.hashicorp.com/hc/en-us/articles/4409084297875/">this doc</a>.
+
+1. Specify the parameter to specify data desired for each product:
+
+   * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/consul/hcdiag-with-consul">for Consul</a>
+   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/vault/hcdiag-with-vault">Vault</a>
+   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hcdiag-with-nomad">Nomad</a>
+   * <tt>hcdiag -terraform-ent</tt> for <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/hcdiag-with-tfe">Terraform Enterprise</a>.
+   <br /><br />
+
+   Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
+
+<hr />
 
 
 <a name="consul-template"></a>
@@ -2904,7 +3018,7 @@ So data in a Consul agent has to be captured in complete point-in-time snapshots
 
    Enterprise-licensed users can run the Consul Snapshot Agent Service to automatically collect agents periodically.
 
-1. Ensure that <a href="#EnterpriseConfiguration">an enterprise license is configured</a>.
+1. Ensure that <a href="#EnterpriseLicense">an enterprise license is configured</a>.
 
 1. Define the configuration file, such as this sample <tt>consul-snapshot.d</tt> file to take a snapshot every 30 minutes:
 
@@ -3527,7 +3641,7 @@ spec:
 }
    </pre>
 
-1. Registering a Service Proxy:
+1. In the hcl file defining each service, registering a Service Proxy:
 
    <pre>{
    "service": {
@@ -3541,6 +3655,16 @@ spec:
             "proxy": {
                "upstreams": [{
                   "destination_name": "db01"
+               }
+            ]
+         }
+      }
+      "connect": [ {
+         "sidecar_proxy": {
+            "proxy": {
+               "upstreams": [{
+                  "destination_name": "db01"
+                  "local_bind_port": "6000"
                }
             ]
          }
@@ -4129,7 +4253,7 @@ Policies:
 
 <hr />
 
-<a name="EnterpriseConfiguration"></a>
+<a name="LicenseConfiguration"></a>
 
 ## Enterprise configuration
    
@@ -4146,7 +4270,8 @@ advertise_addr = "10.1.4.11"
 advertise_addr_wan = "10.1.4.11"
    </pre>
 
-Within CLI:
+TODO: Handle the license file as a secret.
+
    
    <pre><strong>license_path</strong> = "/etc/consul.d/consul.hclic"
    </pre>
@@ -4702,8 +4827,12 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 
 ## References
 
-<a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-ensuring-security/table-of-contents" title="27 Feb 2022, 1h 27m">Pluralsight "Ensuring Security in HashiCorp Consul"</a>
-by <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chris Green</a> (direct-root.com)
+   References on Consul:
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-getting-started-cert/table-of-contents" title="3h 54m Released 9 May 2022 at Consul v1.11.4">Video course on Pluralsight: "Getting Started with HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/weshigbee/">Wes Higbee</a> refercing code at https://github.com/g0t4/course2-consul-gs which uses <tt>docker compose</tt> referencing Docker images at https://hub.docker.com/washigbee
+   * <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=EPcmgr04twM" title="by ex-HashiCorp Nicole Hubbard Apr 24, 2020">VIDEO: "Using Consul for Network Observability & Health Monitoring"</a> referencing <a target="_blank" href="https://github.com/hashicorp/consul-demo-tracking/datadog">this repo</a>
+
+   * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-ensuring-security/table-of-contents" title="27 Feb 2022, 1h 27m">Pluralsight "Ensuring Security in HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chris Green</a> (direct-root.com)
 
 <hr />
 
