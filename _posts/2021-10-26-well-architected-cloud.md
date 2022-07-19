@@ -648,22 +648,20 @@ Questions and Considerations for Security:
 
 2. How do you manage identities for people and machines?
 
-   <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a>
+   1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a><br /><br />
+   <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
+   
+   1. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a><br /><br />
+   <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
+   
+   <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a> :
 
-   1. <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
-   
-   <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a>
-
-   1. <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
-   
-   <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a>
-   
    1. <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
    
+   <a name="SEC-02-04-CentralIdP"><tt>SEC-02-04-CentralIdP</tt></a> :
 
-   <a name="SEC-02-04-CentralIdP"></a>
    1. <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location -- making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
-   <tt>SEC-02-04-CentralIdP</tt>
+   
 
    <a name="SEC-02-05-LongCredRotation"></a>
    1. <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
