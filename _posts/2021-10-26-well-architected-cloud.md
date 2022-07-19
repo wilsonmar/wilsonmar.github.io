@@ -424,6 +424,8 @@ Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formatio
 
 href="https://spacelift.io/blog/importing-exisiting-infrastructure-into-terraform">
 
+https://github.com/aws-samples/aws-well-architected-tool-template-automation
+
 <a name="WAL-OPS-labs"></a>
 
 #### Operational Excellence Labs

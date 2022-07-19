@@ -41,6 +41,9 @@ The most popular websites about Consul:
    "Consul was initially released in 2014 as a service discovery platform. In addition to service discovery, it now provides a full-featured service mesh for secure service segmentation across any cloud or runtime environment, and distributed key-value storage for application configuration.
    Registered services and nodes can be queried using a DNS interface or an HTTP interface.[1] Envoy proxy provides security, observability, and resilience for all application traffic."
 
+1. Live classes on HashiCorp's Enterprise Academy:<br />
+   https://events.hashicorp.com/hashicorp-enterprise-academy
+
 1. Source code:<br />
    https://github.com/hashicorp/consul
 
@@ -867,6 +870,7 @@ Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-
 ## B. On HashiCorp's Consul Cloud SaaS HCP (HashiCorp Cloud Platform)
 
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/consul-end-to-end-existing-eks?in=consul/cloud-deploy-automation">LEARN: "Create a HCP Consul cluster for an existing EKS run time"</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=jScI79u0vYc&list=PL81sUbsFNc5bQpQiONLrwSzP__l3EfoMX&index=4" title="Mar 15, 2022">VIDEO: "Community Office Hours: HCP Consul with Terraform"</a> with Daniele Carcasole (HC Ed.)
    <br /><br />
 
    Perhaps the fastest and easiest way to begin using Consul is to use the Hashcorp-Managed <a name="HCPCloud">HashiCorp Cloud Platform (<strong>HCP</strong>) Consul Cloud</a>. 
@@ -919,8 +923,6 @@ Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-
 
    * hashicorp/learn-consul-kubernetes
    * https://github.com/hashicorp/learn-consul-service-mesh
-
-   * https://github.com/hashicorp/consul-api-gateway = The Consul API Gateway is a dedicated ingress solution for intelligently routing traffic to applications running on a C…
 
    * https://github.com/hashicorp/consul-demo-traffic-splitting = Example application using Docker Compose to demonstrate Consul Service Mesh Traffic Splitting
 
@@ -2965,6 +2967,7 @@ Degraded modes:
    * <a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569084#questions">BK on Udemy</a>
    * <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=ef6f8fc1-d62c-49c6-8047-a1859a7ad57a">Ensuring Security in HashiCorp Consul</a> video class
    * https://bit.ly/consul-security-threat-model
+   * Similar to <a target="_blank" href="https://www.youtube.com/watch?v=VrpLyYko17U">Vault & AWS Lambda: Towards a Sub Minute Recovery</a> by Kevin De Notariis
    <br /><br />
 
 Consul keeps its data in memory (rather than in a database on a hard drive).
@@ -3237,9 +3240,11 @@ WantedBy=multi-user.target
 
 1. Consul API Gateway = 
 
-   * https://www.youtube.com/watch?v=JtVDliGL3mE Video for Consul API Gateway with Jeff Apple, PM of API Gateway
+   * <a target="_blank" href="https://www.youtube.com/watch?v=JtVDliGL3mE">VIDEO: Consul API Gateway with Jeff Apple, PM of API Gateway</a>
    * https://www.hashicorp.com/blog/announcing-hashicorp-consul-api-gateway
    * https://learn.hashicorp.com/tutorials/consul/kubernetes-api-gateway?in=consul/developer-mesh
+   * https://github.com/hashicorp/consul-api-gateway = The Consul API Gateway is a dedicated ingress solution for intelligently routing traffic to applications running on a C…
+   * <a target="_blank" href="https://www.youtube.com/watch?v=JtVDliGL3mE&list=PL81sUbsFNc5bQpQiONLrwSzP__l3EfoMX&index=3" title="Feb 15, 2022">Community Office Hours: Consul API Gateway & Chaos Engineering</a>
    * https://www.hashicorp.com/blog/consul-api-gateway-now-generally-available Feb 24 2022
    <br /><br />
 
@@ -4849,4 +4854,5 @@ LinkedIn: https://www.linkedin.com/company/hashicorp
 Facebook: https://www.facebook.com/HashiCorp
 
 
-
+   * <a target="_blank" href="https://www.youtube.com/watch?v=bEFILWrRJJ4" title="Oct 15, 2019">VIDEO: Demystifying Service Mesh</a> by <a target="_blank" href="https://www.linkedin.com/in/stephen-wilson-9420617/">Stephen Wilson (Chief Enablement Architect)</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=bEFILWrRjj4">VIDEO: Consul Service Mesh - Deep Dive</a>

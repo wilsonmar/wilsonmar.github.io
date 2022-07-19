@@ -666,8 +666,14 @@ Anyway, dangers from rough sleeping makes it helpful to have a buddy with you. I
 
 ## UPS Power At home
 
-On weekend trips I put them in the car. But I bought a few big batteries to provide backup power to my <strong>freezer</strong> at home so things don't melt in case power goes out.
-So max power capability is important.
+I bought a big battery to provide backup power to my <strong>freezer</strong> at home so things don't melt in case power goes out. It's portable so on weekend trips I put them in the car to power my laptop in the tent. My large chest freezer is rated at 350W, but when starting it can draw 2-3 times that (700-1000W). My Jackery "1000W" portable power station outputs 85% of its rated 1000W, so it will keep the freezer running 2.4 hours according this calculation:
+   <ul>
+   0.85 * 1000 Wh =  850 Wh / 350 W = ~2.4 h
+   </ul>
+
+A 2000W battery would double that time.
+
+That is when new. Batteries also degrade over time.
 
 * Goal Zero - was my first one 10 years ago. It broke down within a year. Like marrying too young.
 
@@ -682,6 +688,7 @@ Both have "Anderson" plugs for solar panels.
    Its "SOLARPEAK TECHNOLOGY" (MPPT controller) recharges in 2.5 hours to 80% by 4*SolarSaga 200W solar panels ($245 each). 
 
    The problem is that regular Lithinum-Ion battery are rated to recharge 500 times before degradation.
+   So it's better to get ...
 
 * <a target="_blank" href="https://www.bluettipower.com/products/ac200max-power-station?sscid=71k6_f80zt&">$1,799 Bluetti "AC200 MAX"</a> promises 2048Wh capacity at 2,200W AC,
    expandable Up To 6,144Wh with 2×B230, or 8,192Wh with 2×B300. 

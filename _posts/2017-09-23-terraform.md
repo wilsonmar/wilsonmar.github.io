@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-07-12"
+file: "terraform"
 title: "Terraform"
 excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning into AWS, Azure, GCP, and other clouds using Terragoat, Bridgecrew, and Atlantis team versioning GitOps"
 tags: [DevOps, ecosystem]
-date: "2022-02-22"
-file: "terraform"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -1816,17 +1816,77 @@ When upgrading Terraform version, configurations may need syntax update.
 
 <a name="Terraforming"></a>
 
-### Terraforming: from CFN yaml to HCL?
+### Reverse Terraforming
 
-To generate Terraform HCL from a running AWS account, here are the options:
+To generate from resources created under an AWS account/Azure Subscription Terraform HCL files,
+here are the options:
 
-1. Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>
-exports existing AWS resources to Terraform style tf, tfstate. It also comes as a Docker container.
+NOTE: No longer supported is the Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a> . It also comes as a Docker container.
 
-2. Install on your MacOS laptop this utlity from Google to create HCL from exiting running cloud resources. This enables you to transition from what was created in the AWS GUI or CFN to HCL you can modify:
+Created about the same time are:
+* <a target="_blank" href="https://github.com/GoogleCloudPlatform/terraformer">Google's terraformer</a> 
+* <a target="_blank" href="https://blog.cycloid.io/what-is-terracognita">cloud diagram creator Cycloid's</a> <a target="_blank" href="https://github.com/cycloidio/terracognita">terracognita</a> 
+<br /><br />
+
+Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formation to Terraform, with mixed results.
+
+Both are installed onto MacOS using Homebrew.
+
+   <pre><strong>brew info terracognita
+brew install terracognita
+terracognita aws resources | wc -l      # 119
+terracognita azurerm resources | wc -l  # 119
+terracognita google resources | wc -l   #  21
+   </strong></pre>
+
+   On GCP, customize based on video at https://asciinema.org/a/330055 :
+
+   <pre><strong>terracognita google --project cycloid-sandbox --region us-central1 \
+   --credentials "$HOME/cycloid/google/cycloid-iam-9789b351a19b.json \
+   --tfstate resources.tfstate \
+   --hcl resources.tf \
+   -i google_compute_instance \
+   -i google_compute_network
+   </strong></pre>
+
+   On Azure:
+
+   <pre><strong>terracognita azurerm --tenant-id $TENANT_ID \
+   --subscription-id $SUBSCRIPTION_ID \
+   --resource-group-name $GROUP_NAME [format to import] \
+   --client-id $CLIENT_ID --client-secret $CLIENT_SECRET 
+   </strong></pre>
+
+   On AWS with profiles:
+
+   <pre><strong>terracognita aws --aws-default-region $AWS_REGION [format to import] \
+   --aws-profile $PROFILE_NAME 
+   </strong></pre>
+
+   On AWS with credentials:
+
+   <pre><strong>terracognita aws --aws-default-region $AWS_REGION [format to import] \
+   --aws-access-key $AWS_ACCESS_KEY --aws-secret-access-key $AWS_SECRET_ACCESS_KEY 
+   </strong></pre>
+
+   On AWS with credentials file:
+
+   <pre><strong>terracognita aws --aws-default-region $AWS_REGION [format to import] \
+   --aws-shared-credentials-file $FILE_PATH 
+   </strong></pre>
+
+   Additionally on AWS: 
+
+   <pre><strong>   --hcl <em>test.tf</em> \
+   --module <em>module-name (as tf module) Optional with this format:</em> \
+   --module-variables <em>file.json/yaml (to limit vars on the module)</em> \
+   --tfstate <em>test.tfstate (as tfstate)</em>
+   </strong></pre>
+
+   More info at https://github.com/cycloidio/terracognita#modules
 
    <pre><strong>brew info terraformer
-   brew install terraformer
+brew install terraformer
    </strong></pre>
 
 3. Deploy your existing CFT instead of trying to convert it:
@@ -1837,6 +1897,10 @@ exports existing AWS resources to Terraform style tf, tfstate. It also comes as 
 
    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
 
+
+### Azure AzTfy
+
+Export Terraform from existing deployments
 
 
 <a name="OpenSourcing"></a>
