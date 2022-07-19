@@ -651,53 +651,50 @@ Questions and Considerations for Security:
    1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a><br /><br />
    <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
    
-   1. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a><br /><br />
+   2. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a><br /><br />
    <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
    
-   <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a> :
-
-   1. <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
+   3. <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a><br /><br />
+   <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
    
    <a name="SEC-02-04-CentralIdP"><tt>SEC-02-04-CentralIdP</tt></a> :
 
    1. <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location -- making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
    
 
-   <a name="SEC-02-05-LongCredRotation"></a>
+   <a name="SEC-02-05-LongCredRotation"><tt>SEC-02-05-LongCredRotation</tt></a>
    1. <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
-   <tt>SEC-02-05-LongCredRotation</tt>
-
-   <a name="SEC-02-06-UserAttributes"></a>
+   
+   <a name="SEC-02-06-UserAttributes"><tt>SEC-02-06-UserAttributes</tt></a>
    1. <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
-   <tt>SEC-02-06-UserAttributes</tt>
+   
 
    <a name="ManagePermissions"></a>
 
 3. How do you manage permissions for people and machines?
 
-   <a name="SEC-03-01-DefAccess"></a>
+   <a name="SEC-03-01-DefAccess"><tt>SEC-03-01-DefAccess</tt></a>
    1. <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
-   <tt>SEC-03-01-DefAccess</tt>
+   
 
-   <a name="SEC-03-02-LeastPrivilege"></a>
+   <a name="SEC-03-02-LeastPrivilege"><tt>SEC-03-02-LeastPrivilege</tt></a>
    2. <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
-   <tt>SEC-03-02-LeastPrivilege</tt>
-
-   <a name="SEC-03-03-EmergAccess"></a>
-   1. <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
+   
+   3. <a name="SEC-03-03-EmergAccess"></a>
+   <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
    <tt>SEC-03-03-EmergAccess</tt>
 
-   <a name="SEC-03-04-ReducePerms"></a>
+   <a name="SEC-03-04-ReducePerms"><tt>SEC-03-04-ReducePerms</tt></a>
    1. <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
-   <tt>SEC-03-04-ReducePerms</tt>
+   
 
-   <a name="SEC-03-05-PermisGuards"></a>
+   <a name="SEC-03-05-PermisGuards"><tt>SEC-03-05-PermisGuards</tt></a>
    1. <strong>Define permission guardrails for the organization</strong> - Establish common controls that restrict access to all identities in the organization. For example, you can restrict access to specific AWS Regions, or prevent operators from deleting common resources, such as an IAM role used for the central security team.
-   <tt>SEC-03-05-PermisGuards</tt>
+   
 
-   <a name="SEC-03-06-FederatedLifecycle"></a>
+   <a name="SEC-03-06-FederatedLifecycle"><tt>SEC-03-06-FederatedLifecycle</tt></a>
    1. <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
-   <tt>SEC-03-06-FederatedLifecycle</tt>
+   
 
    <a name="SEC-03-07-CrossAcctAccess"></a>
    1. <strong>Analyze public and cross-account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
