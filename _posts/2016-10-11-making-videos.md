@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-01-06"
+file: "making-videos"
 title: "Making videos"
 excerpt: "Tediously using Camtasia, Audacity, OBS, and automating animated PowerPoint on a Mac"
 tags: [Videos, Evangelism]
-date: "2022-01-06"
-file: "making-videos"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -17,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 I'm looking for a more efficient way to make videos to explain concepts.
+
+{% include whatever.html %}
 
 
 ## Video editing software options
@@ -284,7 +286,9 @@ References:
 
 15. Record live video or animated introduction and ending.
 
-    The recording would be in 1920x1080 pixels ("Full HD") for 1080p.
+    The recording would be in 1920x1080 pixels ("Full HD") for 1080p. ("4K", marketed as UHD, is 3840x2160)
+
+    (BTW Professional DCI 4K cameras record in 4096x2160. "5K" on Mac Retina is 5120x2880. "8K" is 7680x4320.)
 
     The title formats can be re-used, with differeent text.
 
