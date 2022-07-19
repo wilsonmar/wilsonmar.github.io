@@ -615,37 +615,30 @@ Questions and Considerations for Security:
 
 1. How do you securely operate each workload?
 
-   1. <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a>
-
+   1. <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a><br /><br />
    <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
 
-   2. <a name="SEC-01-02-SecAccts"><tt>SEC-01-02-SecAccts</tt></a>
-   
+   2. <a name="SEC-01-02-SecAccts"><tt>SEC-01-02-SecAccts</tt></a><br /><br />   
    <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
 
-   3. <a name="SEC-01-03-ControlObjs"><tt>SEC-01-03-ControlObjs</tt></a>
+   3. <a name="SEC-01-03-ControlObjs"><tt>SEC-01-03-ControlObjs</tt></a><br /><br />
    
    <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation. 
    <br />
 
-   4. <a name="SEC-01-04-NoticeThreats"><tt>SEC-01-04-NoticeThreats</tt></a>
-   
+   4. <a name="SEC-01-04-NoticeThreats"><tt>SEC-01-04-NoticeThreats</tt></a><br /><br />   
    <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
 
-   5. <a name="SEC-01-05-NoticeRecommendations"><tt>SEC-01-05-NoticeRecommendations</tt></a>
-   
+   5. <a name="SEC-01-05-NoticeRecommendations"><tt>SEC-01-05-NoticeRecommendations</tt></a><br /><br />   
    <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
    
-   6. <a name="SEC-01-06-AutoTesting"><tt>SEC-01-06-AutoTesting</tt></a>
-   
+   6. <a name="SEC-01-06-AutoTesting"><tt>SEC-01-06-AutoTesting</tt></a><br /><br />   
    <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
    
-   7. <a name="SEC-01-07-ThreatModel"><tt>SEC-01-07-ThreatModel</tt></a>
-
+   7. <a name="SEC-01-07-ThreatModel"><tt>SEC-01-07-ThreatModel</tt></a><br /><br />
    <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. <strong>Prioritize threats and adapt</strong> security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
    
-   8. <a name="SEC-01-08-EvalNewSvcs"><tt>SEC-01-08-EvalNewSvcs</tt></a>
-   
+   8. <a name="SEC-01-08-EvalNewSvcs"><tt>SEC-01-08-EvalNewSvcs</tt></a><br /><br />   
    <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
    
 
@@ -653,16 +646,13 @@ Questions and Considerations for Security:
 
 2. How do you manage identities for people and machines?
 
-   1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a>
-
+   1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a><br /><br />
    <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
    
-   2. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a>
-
+   2. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a><br /><br />
    <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
    
-   3. <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a>
-
+   3. <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a><br /><br />
    <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
    
    4. <a name="SEC-02-04-CentralIdP"><tt>SEC-02-04-CentralIdP</tt></a>
