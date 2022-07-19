@@ -615,126 +615,142 @@ Questions and Considerations for Security:
 
 1. How do you securely operate each workload?
 
-   <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a>
-   1. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
+   1. <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a>
 
-   <a name="SEC-01-02-SecAccts"><tt>SEC-01-02-SecAccts</tt></a>
-   2. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
+   <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
 
-   <a name="SEC-01-03-ControlObjs"><tt>SEC-01-03-ControlObjs</tt></a>
-   3. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation. 
+   2. <a name="SEC-01-02-SecAccts"><tt>SEC-01-02-SecAccts</tt></a>
+   
+   <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
+
+   3. <a name="SEC-01-03-ControlObjs"><tt>SEC-01-03-ControlObjs</tt></a>
+   
+   <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation. 
    <br />
 
-   <a name="SEC-01-04-NoticeThreats"><tt>SEC-01-04-NoticeThreats</tt></a>
-   4. <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
-
-   <a name="SEC-01-05-NoticeRecommendations"><tt>SEC-01-05-NoticeRecommendations</tt></a>
-   5. <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
+   4. <a name="SEC-01-04-NoticeThreats"><tt>SEC-01-04-NoticeThreats</tt></a>
    
+   <strong>Keep up to date with security threats</strong> - Recognize attack vectors by staying up to date with the latest security threats to help you define and implement appropriate controls.
 
-   <a name="SEC-01-06-AutoTesting"><tt>SEC-01-06-AutoTesting</tt></a>
-   6. <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
+   5. <a name="SEC-01-05-NoticeRecommendations"><tt>SEC-01-05-NoticeRecommendations</tt></a>
    
-
-   <a name="SEC-01-07-ThreatModel"><tt>SEC-01-07-ThreatModel</tt></a>
-   7. <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. <strong>Prioritize threats and adapt</strong> security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   <strong>Keep up to date with security recommendations</strong> - Stay up to date with both AWS and industry security recommendations to evolve the security posture of workloads.
    
+   6. <a name="SEC-01-06-AutoTesting"><tt>SEC-01-06-AutoTesting</tt></a>
+   
+   <strong>Automate testing and validation of security controls in pipelines</strong> - Establish secure baselines and templates for security mechanisms that are tested and validated as part of builds, pipelines, and processes. Use tools and automation to test and validate all security controls continuously. For example, scan items such as machine images and infrastructure as code templates for security vulnerabilities, irregularities, and drift from an established baseline at each stage.
+   
+   7. <a name="SEC-01-07-ThreatModel"><tt>SEC-01-07-ThreatModel</tt></a>
 
-   <a name="SEC-01-08-EvalNewSvcs"><tt>SEC-01-08-EvalNewSvcs</tt></a>
-   8. <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
+   <strong>Identify and prioritize risks using a threat model</strong> - Use a threat model to identify and maintain an up-to-date register of potential threats. <strong>Prioritize threats and adapt</strong> security controls to prevent, detect, and respond. Revisit and maintain this in the context of the evolving security landscape.
+   
+   8. <a name="SEC-01-08-EvalNewSvcs"><tt>SEC-01-08-EvalNewSvcs</tt></a>
+   
+   <strong>Evaluate and implement new security services and features regularly</strong> - AWS and APN Partners constantly release new features and services that allow you to evolve the security posture of workloads.
    
 
    <a name="ManageIdentities"></a>
 
 2. How do you manage identities for people and machines?
 
-   1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a><br /><br />
+   1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a>
+
    <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
    
-   2. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a><br /><br />
+   2. <a name="SEC-02-02-SSO-IAM"><tt>SEC-02-02-SSO-IAM</tt></a>
+
    <strong>Require identities to dynamically acquire temporary credentials.</strong> - For workforce identities, use AWS Single Sign-On, or federation with IAM roles to access AWS accounts. For machine identities, require the use of IAM roles instead of long term access keys.
    
-   3. <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a><br /><br />
+   3. <a name="SEC-02-03-AutoRotationSvc"><tt>SEC-02-03-AutoRotationSvc</tt></a>
+
    <strong>Store and use secrets securely</strong> - For workforce and machine identities that require secrets such as passwords to third party applications, store them with automatic rotation using the latest industry standards in a specialized service.
    
-   <a name="SEC-02-04-CentralIdP"><tt>SEC-02-04-CentralIdP</tt></a> :
+   4. <a name="SEC-02-04-CentralIdP"><tt>SEC-02-04-CentralIdP</tt></a>
 
-   1. <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location -- making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
+   <strong>Rely on a centralized identity provider</strong> - For workforce identities, rely on an identity provider that enables you to manage identities in a centralized place. This enables you to create, manage, and revoke access from a single location -- making it easier to manage access. This reduces the requirement for multiple credentials and provides an opportunity to integrate with HR processes.
    
 
-   <a name="SEC-02-05-LongCredRotation"><tt>SEC-02-05-LongCredRotation</tt></a>
-   1. <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
+   5. <a name="SEC-02-05-LongCredRotation"><tt>SEC-02-05-LongCredRotation</tt></a>
    
-   <a name="SEC-02-06-UserAttributes"><tt>SEC-02-06-UserAttributes</tt></a>
-   1. <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
+   <strong>Audit and rotate credentials periodically</strong> - When you cannot rely on temporary credentials and require long term credentials, audit credentials to ensure that the defined controls (for example, MFA) are enforced, rotated regularly, and have appropriate access level.
+   
+   6. <a name="SEC-02-06-UserAttributes"><tt>SEC-02-06-UserAttributes</tt></a>
+   
+   <strong>Leverage user groups and attributes</strong> - Place users with common security requirements in groups defined by identity providers, and put mechanisms in place to ensure that user attributes that may be used for access control (e.g., department or location) are correct and updated. Use these groups and attributes, rather than individual users, to control access. This manages access centrally by changing a user’s group membership or attributes once, rather than updating many individual policies when a user’s access needs change.
    
 
    <a name="ManagePermissions"></a>
 
 3. How do you manage permissions for people and machines?
 
-   <a name="SEC-03-01-DefAccess"><tt>SEC-03-01-DefAccess</tt></a>
-   1. <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
+   1. <a name="SEC-03-01-DefAccess"><tt>SEC-03-01-DefAccess</tt></a>
    
+   <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
 
-   <a name="SEC-03-02-LeastPrivilege"><tt>SEC-03-02-LeastPrivilege</tt></a>
-   2. <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
+   2. <a name="SEC-03-02-LeastPrivilege"><tt>SEC-03-02-LeastPrivilege</tt></a>
    
-   3. <a name="SEC-03-03-EmergAccess"></a>
+   <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
+   
+   3. <a name="SEC-03-03-EmergAccess"><tt>SEC-03-03-EmergAccess</tt></a>
+
    <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
-   <tt>SEC-03-03-EmergAccess</tt>
 
-   <a name="SEC-03-04-ReducePerms"><tt>SEC-03-04-ReducePerms</tt></a>
-   1. <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
+   4. <a name="SEC-03-04-ReducePerms"><tt>SEC-03-04-ReducePerms</tt></a>
+
+   <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
+
+   5. <a name="SEC-03-05-PermisGuards"><tt>SEC-03-05-PermisGuards</tt></a>
+   
+   <strong>Define permission guardrails for the organization</strong> - Establish common controls that restrict access to all identities in the organization. For example, you can restrict access to specific AWS Regions, or prevent operators from deleting common resources, such as an IAM role used for the central security team.
+   
+   6. <a name="SEC-03-06-FederatedLifecycle"><tt>SEC-03-06-FederatedLifecycle</tt></a>
+   
+   <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
    
 
-   <a name="SEC-03-05-PermisGuards"><tt>SEC-03-05-PermisGuards</tt></a>
-   1. <strong>Define permission guardrails for the organization</strong> - Establish common controls that restrict access to all identities in the organization. For example, you can restrict access to specific AWS Regions, or prevent operators from deleting common resources, such as an IAM role used for the central security team.
+   7. <a name="SEC-03-07-CrossAcctAccess"><tt>SEC-03-07-CrossAcctAccess</tt></a>
+
+   <strong>Analyze public and cross-account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
    
+   8. <a name="SEC-03-08-SharedAccess"><tt>SEC-03-08-SharedAccess</tt></a>
 
-   <a name="SEC-03-06-FederatedLifecycle"><tt>SEC-03-06-FederatedLifecycle</tt></a>
-   1. <strong>Manage access based on life cycle</strong> - Integrate access controls with operator and application life cycle and centralized federation providers. For example, remove a user’s access when they leave the organization or change roles.
+   <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
    
-
-   <a name="SEC-03-07-CrossAcctAccess"></a>
-   1. <strong>Analyze public and cross-account access</strong> - Continuously monitor findings that highlight public and cross account access. Reduce public access and cross account access to only resources that require this type of access.
-   <tt>SEC-03-07-CrossAcctAccess</tt>
-
-   <a name="SEC-03-08-SharedAccess"></a>
-   1. <strong>Share resources securely</strong> - Govern the consumption of shared resources across accounts or within the AWS Organization. Monitor shared resources and review shared resource access.
-   <tt>SEC-03-08-SharedAccess</tt>
 
    <a name="DetectEvents"></a>
 
 4. How do you detect and investigate security events?
 
-   <a name="SEC-04-01-"></a>
-   1. <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
-   <tt>SEC-04-01-</tt>
+   1. <a name="SEC-04-01-"><tt>SEC-04-01-</tt></a>
+   
+   <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
+   
+   2. <a name="SEC-04-02-"><tt>SEC-04-02-</tt></a>
+   
+   <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
+   
 
-   <a name="SEC-04-02-"></a>
-   1. <strong>Analyze logs, findings, and metrics centrally</strong> - All logs, metrics, and telemetry should be collected centrally, and automatically analyzed to detect anomalies and indicators of unauthorized activity. A dashboard can provide you easy to access insight into real-time health. For example, ensure that Amazon GuardDuty and Security Hub logs are sent to a central location for alerting and analysis.
-   <tt>SEC-04-02-</tt>
+   3. <a name="SEC-04-03-"><tt>SEC-04-03-</tt></a>
+   
+   <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
 
-   <a name="SEC-04-03-"></a>
-   1. <strong>Automate response to events</strong> - Using automation to investigate and remediate events reduces human effort and error, and enables you to scale investigation capabilities. Regular reviews will help you tune automation tools, and continuously iterate. For example, automate responses to Amazon GuardDuty events by automating the first investigation step, then iterate to gradually remove human effort.
-   <tt>SEC-04-03-</tt>
-
-   <a name="SEC-04-04-"></a>
-   1. <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
-   <tt>SEC-04-04-</tt>
+   4. <a name="SEC-04-04-"><tt>SEC-04-04-</tt></a>
+   
+   <strong>Implement actionable security events</strong> - Create alerts that are sent to and can be actioned by the team. Ensure that alerts include relevant information for the team to take action. For example, ensure that Amazon GuardDuty and AWS Security Hub alerts are sent to the team to action, or sent to response automation tooling with the team remaining informed by messaging from the automation framework.
+   
 
    <a name="ProtectNetwork"></a>
 
 5. How do you protect network resources?
 
-   <a name="SEC-05-01-"></a>
-   1. <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
-   <tt>SEC-05-08-NetLayers</tt>
-
-   <a name="SEC-05-02-"></a>
-   1. <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
-   <tt>SEC-05-08-ControlTraffic</tt>
+   1. <a name="SEC-05-01-"><tt>SEC-05-08-NetLayers</tt></a>
+   
+   <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
+   
+   2. <a name="SEC-05-02-"><tt>SEC-05-08-ControlTraffic</tt></a>
+   
+   <strong>Control traffic at all layers</strong> - Apply controls with a defense in depth approach for both inbound and outbound traffic. For example, for Amazon Virtual Private Cloud (VPC) this includes security groups, Network ACLs, and subnets. For AWS Lambda, consider running in private VPC with VPC-based controls.
+   
 
    <a name="SEC-05-03-"></a>
    1. <strong>Automate network protection</strong> - Automate protection mechanisms to provide a self-defending network based on threat intelligence and anomaly detection. For example, intrusion detection and prevention tools that can pro-actively adapt to current threats and reduce their impact.
