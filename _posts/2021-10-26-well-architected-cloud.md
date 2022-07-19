@@ -615,11 +615,11 @@ Questions and Considerations for Security:
 
 1. How do you securely operate each workload?
 
-   1. <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a>
-   <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
+   <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a>
+   1. <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
 
-   2. <a name="SEC-01-02-SecAccts"><tt>SEC-01-02-SecAccts</tt></a><br />
-   <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
+   <a name="SEC-01-02-SecAccts"><tt>SEC-01-02-SecAccts</tt></a>
+   2. <strong>Secure AWS account Secure access to accounts</strong> - for example by enabling MFA and restrict use of the root user, and configure account contacts. 
 
    <a name="SEC-01-03-ControlObjs"></a>
    3. <strong>Identify and validate control objectives</strong> - Based on compliance requirements and risks identified from the threat model, derive and validate the control objectives and controls that you need to apply to workloads. Ongoing validation of control objectives and controls help you measure the effectiveness of risk mitigation. 
