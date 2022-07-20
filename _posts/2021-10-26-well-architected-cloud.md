@@ -613,7 +613,7 @@ Questions and Considerations for Security:
 
 <a name="SecureWorkload"></a>
 
-1. How do you securely operate each workload?
+### 1. How do you securely operate each workload?
 
    1. <a name="SEC-01-01-GrowSepAccts"><tt>SEC-01-01-GrowSepAccts</tt></a><br /><br />
    <strong>Separate workloads using accounts</strong> - Organize workloads in separate accounts and group accounts based on function or a common set of controls rather than mirroring the company’s reporting structure. Start with security and infrastructure in mind to enable the organization to set common <strong>guardrails</strong> as workloads grow. 
@@ -643,7 +643,7 @@ Questions and Considerations for Security:
 
    <a name="ManageIdentities"></a>
 
-2. How do you manage identities for people and machines?
+### 2. How do you manage identities for people and machines?
 
    1. <a name="SEC-02-01-SignInMFA"><tt>SEC-02-01-SignInMFA</tt></a><br /><br />
    <strong>Use strong sign-in mechanisms</strong> - Enforce minimum password length, and educate users to avoid common or re-used passwords. Enforce multi-factor authentication (MFA) with software or hardware mechanisms to provide an additional layer. Use temporary credentials
@@ -667,7 +667,7 @@ Questions and Considerations for Security:
 
    <a name="ManagePermissions"></a>
 
-3. How do you manage permissions for people and machines?
+### 3. How do you manage permissions for people and machines?
 
    1. <a name="SEC-03-01-DefAccess"><tt>SEC-03-01-DefAccess</tt></a><br /><br />   
    <strong>Define access requirements</strong> - Each component or resource of a workload needs to be accessed by administrators, end users, or other components. Have a clear definition of who or what should have access to each component, choose the appropriate identity type and method of authentication and authorization.
@@ -697,7 +697,7 @@ Questions and Considerations for Security:
 
    <a name="DetectEvents"></a>
 
-4. How do you detect and investigate security events?
+### 4. How do you detect and investigate security events?
 
    1. <a name="SEC-04-01-"><tt>SEC-04-01-</tt></a><br /><br />   
    <strong>Configure service and application logging</strong> - Configure logging throughout the workload, including application logs, resource logs, and AWS service logs. For example, ensure that AWS CloudTrail, Amazon CloudWatch Logs, Amazon GuardDuty and AWS Security Hub are enabled for all accounts within the organization.
@@ -714,7 +714,7 @@ Questions and Considerations for Security:
 
    <a name="ProtectNetwork"></a>
 
-5. How do you protect network resources?
+### 5. How do you protect network resources?
 
    1. <a name="SEC-05-01-"><tt>SEC-05-08-NetLayers</tt></a><br /><br />   
    <strong>Create network layers</strong> - Group (separate) components that share reachability requirements into layers. For example, a database cluster in a VPC with no need for internet access should be placed in subnets with no route to or from the internet. In a serverless workload operating without a VPC, similar layering and segmentation with microservices can achieve the same goal.
@@ -731,7 +731,7 @@ Questions and Considerations for Security:
 
    <a name="ProtectCompute"></a>
 
-6. How do you protect compute resources?
+### 6. How do you protect compute resources?
 
    1. <a name="SEC-06-01-"><tt>SEC-06-01-</tt></a><br /><br />
    <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
@@ -754,7 +754,7 @@ Questions and Considerations for Security:
 
    <a name="ClassifyData"></a>
 
-7. How do you classify data?
+### 7. How do you classify data?
 
    1. <a name="SEC-07-01-"><tt>SEC-07-01-</tt></a><br /><br />
    <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive, and more.
@@ -769,7 +769,7 @@ Questions and Considerations for Security:
 
    <a name="ProtectDataAtRest"></a>
 
-8. How do you protect data at rest?
+### 8. How do you protect data at rest?
 
    1. <a name="SEC-08-01-"><tt>SEC-08-01-</tt></a><br /><br />
    <strong>Implement secure key management</strong> - Encryption keys must be stored securely, with strict access control, for example, by using a key management service such as AWS KMS. Consider using different keys, and access control to the keys, combined with the AWS IAM and resource policies, to align with data classification levels and segregation requirements.
@@ -789,7 +789,7 @@ Questions and Considerations for Security:
 
    <a name="ProtectDataInTransit"></a>
 
-9. How do you protect data in transit?
+### 9. How do you protect data in transit?
 
    1. <a name="SEC-09-01-TransitKeys"><tt>SEC-09-01-TransitKeys</tt></a><br /><br />
    <strong>Implement secure key and certificate management</strong> - Store encryption keys and certificates securely and rotate them at appropriate time intervals while applying strict access control; for example, by using a certificate management service, such as AWS Certificate Manager (ACM).
@@ -807,7 +807,7 @@ Questions and Considerations for Security:
 
    <a name="IncidentRecovery"></a>
 
-9. How do you anticipate, respond to, and recover from incidents?
+### 10. How do you anticipate, respond to, and recover from incidents?
 
    1. <a name="SEC-10-01-"><tt>SEC-10-01-</tt></a><br /><br />
    <strong>Identify key personnel and external resources</strong> - Identify internal and external personnel, resources, and legal obligations that would help the organization respond to an incident.
