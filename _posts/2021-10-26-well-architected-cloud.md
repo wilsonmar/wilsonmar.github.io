@@ -676,7 +676,7 @@ Questions and Considerations for Security:
    <strong>Grant least privilege access</strong> - Grant only the access that identities require by allowing access to specific actions on specific AWS resources under specific conditions. Rely on groups and identity attributes to dynamically set permissions at scale, rather than defining permissions for individual users. For example, you can allow a group of developers access to manage only resources for their project. This way, when a developer is removed from the group, access for the developer is revoked everywhere that group was used for access control, without requiring any changes to the access policies.
    
    3. <a name="SEC-03-03-EmergAccess"><tt>SEC-03-03-EmergAccess</tt></a><br /><br />
-   <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of access when they require it. For example, establish a process for administrators to verify and approve their request.
+   <strong>Establish emergency access process</strong> - A process that allows emergency access to workloads in the unlikely event of an automated process or pipeline issue. This will help you rely on least privilege access, but ensure users can obtain the right of access when they require it. For example, establish a process for administrators to verify and approve their request.
 
    4. <a name="SEC-03-04-ReducePerms"><tt>SEC-03-04-ReducePerms</tt></a><br /><br />
    <strong>Reduce permissions continuously</strong> - As teams and workloads determine what access they need, remove permissions they no longer use and establish review processes to achieve least privilege permissions. Continuously monitor and reduce unused identities and permissions.
@@ -1052,7 +1052,7 @@ Questions and considerations for Reliability:
    3. <a name="REL-08-03-"><tt>REL-08-03-</tt></a><br /><br />
    <strong>Integrate resiliency testing as part of deployments</strong> - Resiliency tests (as part of chaos engineering) are run as part of the automated deployment pipeline in a pre-prod environment.
 
-   4.<a name="REL-08-04-"><tt>REL-08-04-</tt></a><br /><br />
+   4. <a name="REL-08-04-"><tt>REL-08-04-</tt></a><br /><br />
    <strong>Deploy using immutable infrastructure</strong> - This is a model that mandates that no updates, security patches, or configuration changes happen in-place on production workloads. When a change is needed, the architecture is built onto new infrastructure and deployed into production.
 
    5. <a name="REL-08-05-"><tt>REL-08-05-</tt></a><br /><br />
@@ -1080,7 +1080,7 @@ Questions and considerations for Reliability:
 
 9. How do you use fault isolation to protect workloads?
 
-   1. <a name="REL-10-01-"></a><br /><br />
+   1. <a name="REL-10-01-"><tt>REL-10-01-</tt></a><br /><br />
    <strong>Deploy the workload to multiple locations</strong> - Distribute workload data and resources across multiple Availability Zones or, where necessary, across AWS Regions. These locations can be as diverse as required.
 
    2. <a name="REL-10-02-"><tt>REL-10-02-</tt></a><br /><br />
@@ -1095,7 +1095,7 @@ Questions and considerations for Reliability:
 
 9. How do you design workloads to withstand component failures?
 
-   1. <a name="REL-11-01-"></a><br /><br />
+   1. <a name="REL-11-01-"><tt>REL-11-01-</tt></a><br /><br />
    <strong>Monitor all components of the workload to detect failures</strong> - Continuously monitor the health of workloads so that people and automated systems are aware of degradation or complete failure as soon as they occur. Monitor for key performance indicators (KPIs) based on business value.
 
    2. <a name="REL-11-02-"><tt>REL-11-02-</tt></a><br /><br />
@@ -1286,7 +1286,7 @@ Questions and Considerations for Operational Excellence:
    <strong>Mechanisms exist to request additions, changes, and exceptions</strong> - You are able to make requests to owners of processes, procedures, and resources. Make informed decisions to approve requests where viable and determined to be appropriate after an evaluation of benefits and risks.
 
    7. <a name="OPS-02-07-"><tt>OPS-02-07-</tt></a><br /><br />
-   <strong>Responsibilities between teams are predefined or negotiated</strong> - There are defined or negotiated agreements between teams describing how they work with and support each other (for example, response times, service 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">objectives, or service 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">agreements). Understanding the impact of the teams’ work on business outcomes, and the outcomes of other teams and organizations, informs the prioritization of their tasks and enables them to respond appropriately.
+   <strong>Responsibilities between teams are predefined or negotiated</strong> - There are defined or negotiated agreements between teams describing how they work with and support each other (for example, response times, service objectives, or service agreements). Understanding the impact of the teams’ work on business outcomes, and the outcomes of other teams and organizations, informs the prioritization of their tasks and enables them to respond appropriately.
    
 
    <a name="OrgCulture2Outcome"></a>
@@ -1346,16 +1346,16 @@ Questions and Considerations for Operational Excellence:
    <strong>Use version control</strong> - Use version control to enable tracking of changes and releases.
 
    2. <a name="OPS-05-02-"><tt>OPS-05-02-</tt></a><br /><br />
-   <strong>Test and validate changes</strong> - Test and validate changes to help limit and detect errors. Automate testing to reduce errors caused by manual processes, and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to test.
+   <strong>Test and validate changes</strong> - Test and validate changes to help limit and detect errors. Automate testing to reduce errors caused by manual processes, and reduce the effort to test.
 
    3. <a name="OPS-05-03-"><tt>OPS-05-03-</tt></a><br /><br />
-   <strong>Use configuration management systems</strong> - Use configuration management systems to make and track configuration changes. These systems reduce errors caused by manual processes and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to deploy changes.
+   <strong>Use configuration management systems</strong> - Use configuration management systems to make and track configuration changes. These systems reduce errors caused by manual processes and reduce the effort to deploy changes.
 
    4. <a name="OPS-05-04-"><tt>OPS-05-04-</tt></a><br /><br />
-   <strong>Use build and deployment management systems</strong> - Use build and deployment management systems. These systems reduce errors caused by manual processes and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to deploy changes.
+   <strong>Use build and deployment management systems</strong> - Use build and deployment management systems. These systems reduce errors caused by manual processes and reduce the effort to deploy changes.
 
    5. <a name="OPS-05-05-"><tt>OPS-05-05-</tt></a><br /><br />
-   <strong>Perform patch management</strong> - Perform patch management to gain features, address issues, and remain compliant with governance. Automate patch management to reduce errors caused by manual processes, and reduce the 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">of effort to patch.
+   <strong>Perform patch management</strong> - Perform patch management to gain features, address issues, and remain compliant with governance. Automate patch management to reduce errors caused by manual processes, and reduce the effort to patch.
    
 
    6. <a name="OPS-05-06-"><tt>OPS-05-06-</tt></a><br /><br />
@@ -1370,9 +1370,9 @@ Questions and Considerations for Operational Excellence:
    9. <a name="OPS-05-09-"><tt>OPS-05-09-</tt></a><br /><br />
    <strong>Make frequent, small, reversible changes</strong> - Frequent, small, and reversible changes reduce the scope and impact of a change. This eases troubleshooting, enables faster remediation, and provides the option to roll back a change.
 
-   <a name="OPS-05-10-"></a><br /><br />
-   1. <strong>Fully automate integration and deployment</strong> - Automate build, deployment, and testing of the workload. This reduces errors caused by manual processes and reduces the effort to deploy changes.
-   <tt>OPS-05-10-</tt>
+   9. <a name="OPS-05-10-"><tt>OPS-05-10-</tt></a><br /><br />
+   <strong>Fully automate integration and deployment</strong> - Automate build, deployment, and testing of the workload. This reduces errors caused by manual processes and reduces the effort to deploy changes.
+   
 
    <a name="MitigateDeploymentRisks"></a>
 
@@ -1471,18 +1471,15 @@ Questions and Considerations for Operational Excellence:
    5. <a name="OPS-09-05-"><tt>OPS-09-05-</tt></a><br /><br />
    <strong>Learn the expected patterns of activity for operations</strong> to identify anomalous activity so that you can respond appropriately if necessary.
    
+   6. <a name="OPS-09-06-"><tt>OPS-09-06-</tt></a><br /><br />
+   <strong>Alert when operations outcomes are at risk</strong> - Raise an alert when operations outcomes are at risk so that you can respond appropriately if necessary.
 
-   <a name="OPS-09-06-"></a><br /><br />
-   1. <strong>Alert when operations outcomes are at risk</strong> - Raise an alert when operations outcomes are at risk so that you can respond appropriately if necessary.
-   <tt>OPS-09-06-</tt>
+   7. <a name="OPS-09-07-"><tt>OPS-09-07-</tt></a><br /><br />
+   <strong>Alert when operations anomalies are detected</strong> so that you can respond appropriately if necessary.
 
-   <a name="OPS-09-07-"></a><br /><br />
-   1. <strong>Alert when operations anomalies are detected</strong> so that you can respond appropriately if necessary.
-   <tt>OPS-09-07-</tt>
-
-   <a name="OPS-09-08-"></a><br /><br />
-   1. <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
-   <tt>OPS-09-08-</tt>
+   8. <a name="OPS-09-08-"><tt>OPS-09-08-</tt></a><br /><br />
+   <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   
 
    <a name="ManageEvents"></a>
 
@@ -1506,8 +1503,8 @@ Questions and Considerations for Operational Excellence:
    6. <a name="OPS-10-06-"><tt>OPS-10-06-</tt></a><br /><br />
    <strong>Communicate status through dashboards</strong> - Provide dashboards tailored to their target audiences (for example, internal technical teams, leadership, and customers) to communicate the current operating status of the business and provide metrics of interest.
 
-   <a name="OPS-10-07-"><tt>OPS-10-07-</tt></a><br /><br />
-   1. <strong>Automate responses to events</strong> - Automate responses to events to reduce errors caused by manual processes, and to ensure prompt and consistent responses.
+   7. <a name="OPS-10-07-"><tt>OPS-10-07-</tt></a><br /><br />
+   <strong>Automate responses to events</strong> - Automate responses to events to reduce errors caused by manual processes, and to ensure prompt and consistent responses.
    
 
    <a name="EvolveOperations"></a>
@@ -1654,7 +1651,7 @@ Questions and Considerations for Performance Efficiency:
    <strong>Use the available elasticity of resources</strong> - The cloud provides the flexibility to expand or reduce resources dynamically through a variety of mechanisms to meet changes in demand. Combined with compute-related metrics, a workload can automatically respond to changes and utilize the optimal set of resources to achieve its goal.
 
    6. <a name="PERF-02-06-"><tt>PERF-02-06-</tt></a><br /><br />
-   <strong>Re-evaluate compute needs based on metrics</strong> - Use system-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">metrics to identify the behavior and requirements of  workloads over time. Evaluate workload needs by comparing the available resources with these requirements and make changes to  compute environment to best match each workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
+   <strong>Re-evaluate compute needs based on metrics</strong> - Use system-1. [<a target="_blank" href="#Terraform">Terraform</a>] metrics to identify the behavior and requirements of  workloads over time. Evaluate workload needs by comparing the available resources with these requirements and make changes to  compute environment to best match each workload's profile. For example, over time a system might be observed to be more memory-intensive than initially thought, so moving to a different instance family or size could improve both performance and efficiency.
    
 
    <a name="SelectStorage"></a>
@@ -1684,12 +1681,11 @@ Questions and Considerations for Performance Efficiency:
    3. <a name="PERF-04-03-"><tt>PERF-04-03-</tt></a><br /><br />
    <strong>Collect and record database performance metrics</strong> - Use tools, libraries, and systems that record performance measurements related to database performance. For example, measure transactions per second, slow queries, or system latency introduced when accessing the database. Use this data to understand the performance of database systems.
 
-   <a name="PERF-04-04-"><tt>PERF-04-04-</tt></a><br /><br />
-   1. <strong>Choose data storage based on access patterns</strong> - Use the access patterns of the workload to decide which services and technologies to use. For example, utilize a relational database for workloads that require transactions, or a key-value store that provides higher throughput but is eventually consistent where applicable.
+   4. <a name="PERF-04-04-"><tt>PERF-04-04-</tt></a><br /><br />
+   <strong>Choose data storage based on access patterns</strong> - Use the access patterns of the workload to decide which services and technologies to use. For example, utilize a relational database for workloads that require transactions, or a key-value store that provides higher throughput but is eventually consistent where applicable.
    
-
-   <a name="PERF-04-05-"><tt>PERF-04-05-</tt></a><br /><br />
-   1. <strong>Optimize data storage based on access patterns and metrics</strong> - Use performance characteristics and access patterns that optimize how data is stored or queried to achieve the best possible performance. Measure how optimizations such as indexing, key distribution, data warehouse design, or caching strategies impact system performance or overall efficiency.
+   5. <a name="PERF-04-05-"><tt>PERF-04-05-</tt></a><br /><br />
+   <strong>Optimize data storage based on access patterns and metrics</strong> - Use performance characteristics and access patterns that optimize how data is stored or queried to achieve the best possible performance. Measure how optimizations such as indexing, key distribution, data warehouse design, or caching strategies impact system performance or overall efficiency.
    
 
    <a name="ConfigNetwork"></a>
@@ -1933,7 +1929,7 @@ Questions and Considerations for Cost Optimization:
    <strong>Decommission resources</strong> triggered by events such as periodic audits, or changes in usage. Decommissioning is typically performed periodically, and is manual or automated.
 
    4. <a name="COST-04-04-"><tt>COST-04-04-</tt></a><br /><br />
-   1. <strong>Decommission resources automatically</strong> - Design workloads to gracefully handle resource termination as you identify and decommission non-critical resources, resources that are not required, or resources with low utilization.
+   <strong>Decommission resources automatically</strong> - Design workloads to gracefully handle resource termination as you identify and decommission non-critical resources, resources that are not required, or resources with low utilization.
    
 
    <a name="EvaluateServices"></a>
