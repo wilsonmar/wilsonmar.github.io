@@ -736,40 +736,35 @@ Questions and Considerations for Security:
    1. <a name="SEC-06-01-"><tt>SEC-06-01-</tt></a><br /><br />
    <strong>Perform vulnerability management</strong> - Frequently scan and patch for vulnerabilities in code, dependencies, and  infrastructure to help protect against new threats.
    
-
-   <a name="SEC-06-02-"><tt>SEC-06-02-</tt></a><br /><br />
-   1. <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
+   2. <a name="SEC-06-02-"><tt>SEC-06-02-</tt></a><br /><br />
+   <strong>Reduce attack surface</strong> - Reduce attack surfaces by hardening operating systems, minimizing components, libraries, and externally consumable services in use.
    
+   3. <a name="SEC-06-03-"><tt>SEC-06-03-</tt></a><br /><br />
+   <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
 
-   <a name="SEC-06-03-"><tt>SEC-06-03-</tt></a><br /><br />
-   1. <strong>Implement managed services</strong> - Implement services that manage resources, such as Amazon RDS, AWS Lambda, and Amazon ECS, to reduce security maintenance tasks as part of the shared responsibility model.
+   4. <a name="SEC-06-04-"><tt>SEC-06-04-</tt></a><br /><br />
+   <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
+
+   5. <a name="SEC-06-05-"><tt>SEC-06-05-</tt></a><br /><br />
+   <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
    
-
-   <a name="SEC-06-04-"><tt>SEC-06-04-</tt></a><br /><br />
-   1. <strong>Automate compute protection</strong> - Automate protective compute mechanisms, including vulnerability management, for reduction in attack surface, and management of resources.
-   
-
-   <a name="SEC-06-05-"><tt>SEC-06-05-</tt></a><br /><br />
-   1. <strong>Enable people to perform actions at a distance</strong> - Removing the ability for interactive access reduces the risk of human error, and the potential for manual configuration or management. For example, use a change management workflow to deploy EC2 instances using infrastructure as code, then manage EC2 instances using tools instead of allowing direct access or a bastion host.
-   
-
-   <a name="SEC-06-06-"><tt>SEC-06-06-</tt></a><br /><br />
-   1. <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
+   6. <a name="SEC-06-06-"><tt>SEC-06-06-</tt></a><br /><br />
+   <strong>Validate software integrity</strong> - Implement mechanisms (for example, code signing) to validate that the software, code, and libraries used in the workload are from trusted sources and have not been tampered with.
    
 
    <a name="ClassifyData"></a>
 
 7. How do you classify data?
 
-   <a name="SEC-07-01-"><tt>SEC-07-01-</tt></a><br /><br />
-   1. <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive, and more.
+   1. <a name="SEC-07-01-"><tt>SEC-07-01-</tt></a><br /><br />
+   <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive, and more.
 
-   <a name="SEC-07-02-"><tt>SEC-07-03-</tt></a><br /><br />
-   1. <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
+   2. <a name="SEC-07-02-"><tt>SEC-07-03-</tt></a><br /><br />
+   <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
    <tt>SEC-07-02-</tt>
 
-   <a name="SEC-07-03-"><tt>SEC-07-03-</tt></a><br /><br />
-   1. <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
+   3. <a name="SEC-07-03-"><tt>SEC-07-03-</tt></a><br /><br />
+   <strong>Define data lifecycle management</strong> - The defined lifecycle strategy should be based on sensitivity level, as well as legal and organization requirements. Aspects including the duration you retain data for, data destruction, data access management, data transformation, and data sharing should be considered.
    
 
    <a name="ProtectDataAtRest"></a>
@@ -2163,6 +2158,8 @@ AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3
   
 1. For Daily views, in preferences, check "Hourly and Resource 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">Data" which costs more money.
 
+<hr />
+
 https://www.youtube.com/watch?v=NfONXHkTefA
 How do I use the AWS Cost and Usage Report?
 
@@ -2233,6 +2230,8 @@ https://www.trendmicro.com/en_us/what-is/cloud-security/cloud-architecture.html
 highlights considerations for Components, sub-components, etc.
 
 https://www.trendmicro.com/en_us/what-is/cloud-security.html
+
+https://learn.hashicorp.com/tutorials/well-architected-framework/implement-cloud-operating-model?in=well-architected-framework/com
 
 <hr />
 
