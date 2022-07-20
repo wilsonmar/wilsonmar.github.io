@@ -134,7 +134,7 @@ PROTIP: To visualize (provide a mental picture of) progress toward using public 
 
 The position of each pillar can be changed.
 
-The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">target</strong> (the outer red line).
+The percentage for each <a href="#Pillars">"pillar" category</a> is based on what has been <strong>achieved Now:</strong> (the inner blue line) and the <strong>Next: target</strong> (the outer red line).
 
 The gaps (delta) between "Now" and "Next" are addressed by a <strong>backlog of activities</strong> designed to reach higher organizational and systems capability at building and operating systems using shared public clouds.
 
@@ -173,7 +173,7 @@ Make sure everyone has a common understanding of each word:
    The "<strong>architecture</strong>" is how components work together in a workload, usually illustrated by  architecture diagrams that show how components communicate and interact.
 
    The "<strong>organization</strong>" refers to the people in the hierarchy of reporting relationships. 
-   The "<strong>AWS Organization</strong>" refers to the top-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">Organization setting, with special permissions to an administrator of it.
+   The "<strong>AWS Organization</strong>" refers to the top- Organization setting, with special permissions to an administrator of it.
 
    <a target="_blank" href="https://wa.aws.amazon.com/wat.concept.runbook.en.html"><strong>Runbooks</strong></a> are predefined procedures containing the minimum information necessary to successfully perform the procedure.
 
@@ -1449,7 +1449,7 @@ Questions and Considerations for Operational Excellence:
    <strong>Alert when workload anomalies are detected</strong> - Raise an alert when workload anomalies are detected so that you can respond appropriately if necessary.
 
    8. <a name="OPS-08-08-"><tt>OPS-08-08-</tt></a><br /><br />
-   <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">view of  workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-view of  workload operations to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
    
 
    <a name="UnderstandOperationsHealth"></a>
@@ -1478,7 +1478,7 @@ Questions and Considerations for Operational Excellence:
    <strong>Alert when operations anomalies are detected</strong> so that you can respond appropriately if necessary.
 
    8. <a name="OPS-09-08-"><tt>OPS-09-08-</tt></a><br /><br />
-   <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">view of  operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
+   <strong>Validate the achievement of outcomes and the effectiveness of KPIs and metrics</strong> - Create a business-view of operations activities to help you determine if you are satisfying needs and to identify areas that need improvement to reach business goals. Validate the effectiveness of KPIs and metrics and revise them if necessary.
    
 
    <a name="ManageEvents"></a>
@@ -1696,7 +1696,7 @@ Questions and Considerations for Performance Efficiency:
    <strong>Understand how networking impacts performance</strong> - Analyze and understand how network-related decisions impact workload performance. For example, network latency often impacts the user experience, and using the wrong protocols can starve network capacity through excessive overhead.
 
    2. <a name="PERF-05-02-"><tt>PERF-05-02-</tt></a><br /><br />
-   <strong>Evaluate available networking features</strong> - Evaluate networking features in the cloud that may increase performance. Measure the impact of these features through testing, metrics, and analysis. For example, take advantage of network-1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">features that are available to reduce latency, network distance, or jitter.
+   <strong>Evaluate available networking features</strong> - Evaluate networking features in the cloud that may increase performance. Measure the impact of these features through testing, metrics, and analysis. For example, take advantage of network- features that are available to reduce latency, network distance, or jitter.
 
    3. <a name="PERF-05-03-"><tt>PERF-05-03-</tt></a><br /><br />
    <strong>Choose appropriately sized dedicated connectivity or VPN for hybrid workloads</strong> - When there is a requirement for on-premise communication, ensure that you have adequate bandwidth for workload performance. Based on bandwidth requirements, a single dedicated connection or a single VPN might not be enough, and you must enable traffic load balancing across multiple connections.
@@ -1949,7 +1949,7 @@ Questions and Considerations for Cost Optimization:
    <strong>Select software with cost effective licensing</strong> - Open source software will eliminate software licensing costs, which can contribute significant costs to workloads. Where licensed software is required, avoid licenses bound to arbitrary attributes such as CPUs, look for licenses that are bound to output or outcomes. The cost of these licenses scales more closely to the benefit they provide.
 
    5. <a name="COST-05-05-"><tt>COST-05-05-</tt></a><br /><br />
-   <strong>Select components of this workload to optimize cost in line with organization priorities</strong> - Factor in cost when selecting all components. This includes using application 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">and managed services, such as Amazon RDS, Amazon DynamoDB, Amazon SNS, and Amazon SES to reduce overall organization cost. Use serverless and containers for compute, such as AWS Lambda, Amazon S3 for static websites, and Amazon ECS. 
+   <strong>Select components of this workload to optimize cost in line with organization priorities</strong> - Factor in cost when selecting all components. This includes using application and managed services, such as Amazon RDS, Amazon DynamoDB, Amazon SNS, and Amazon SES to reduce overall organization cost. Use serverless and containers for compute, such as AWS Lambda, Amazon S3 for static websites, and Amazon ECS. 
    
    6. <a name="COST-05-06-"><tt>COST-05-06-</tt></a><br /><br />
    <strong>Minimize license costs</strong> by using open source software, or software that does not have license fees: for example, Amazon Linux for compute workloads or migrate databases to Amazon Aurora.
@@ -1992,7 +1992,7 @@ Questions and Considerations for Cost Optimization:
    <tt>COST-07-04-</tt>
 
    5. <a name="COST-07-05-"><tt>COST-07-05-</tt></a><br /><br />
-   <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">for commitment discounts.
+   <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account for commitment discounts.
    
 
    <a name="PlanDataTransferCharges"></a>
@@ -2152,7 +2152,7 @@ AWS billing reports are published to an Amazon Simple Storage Service (Amazon S3
 
 1. Click "Cost Explorer" to launch Cost Explorer for "AWS Cost Management"
   
-1. For Daily views, in preferences, check "Hourly and Resource 1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">Data" which costs more money.
+1. For Daily views, in preferences, check "Hourly and Resource Data" which costs more money.
 
 <hr />
 
@@ -2177,7 +2177,7 @@ AWS Cost Optimization: Tools and Methods to Reduce Your Spend With Us</a>
 <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/
 "><strong>AWS Sustainability hands-on labs:</strong></a>
 
-   * <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/">1. [<a target="_blank" href="#Terraform">Terraform</a>] <a target="_blank" href="?">300: Turning Cost & Usage Reports into Efficiency Reports</a>
+   * <a target="_blank" href="https://wellarchitectedlabs.com/sustainability/300_labs/300_cur_reports_as_efficiency_reports/">300: Turning Cost & Usage Reports into Efficiency Reports</a>
    in an "improvement" process:
 
    1. Identify targets for improvement
