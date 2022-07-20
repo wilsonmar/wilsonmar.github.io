@@ -1987,9 +1987,8 @@ Questions and Considerations for Cost Optimization:
    3. <a name="COST-07-03-"><tt>COST-07-03-</tt></a><br /><br />
    <strong>Select third party agreements with cost efficient terms</strong> to ensure the cost of these services scales with the benefits they provide. Select agreements and pricing that scale when they provide additional benefits to the organization.
 
-   4. <a name="COST-07-04-"></a><br /><br />
+   4. <a name="COST-07-04-"><tt>COST-07-04-</tt></a><br /><br />
    <strong>Implement pricing models for all components of this workload</strong> - Permanently running resources should utilize reserved capacity such as Savings Plans or reserved Instances. Short term capacity is configured to use Spot Instances, or Spot Fleet. On demand is only used for short-term workloads that cannot be interrupted and do not run long enough for reserved capacity, between 25% to 75% of the period, depending on the resource type.
-   <tt>COST-07-04-</tt>
 
    5. <a name="COST-07-05-"><tt>COST-07-05-</tt></a><br /><br />
    <strong>Perform pricing model analysis at the master account level</strong> - Use Cost Explorer Savings Plans and Reserved Instance recommendations to perform regular analysis at the master account for commitment discounts.
@@ -2034,13 +2033,11 @@ Questions and Considerations for Cost Optimization:
 
    As AWS releases new services and features, it’s a best practice to review existing architectural decisions to ensure they continue to be the most cost effective.
 
-   <a name="COST-10-01-"></a><br /><br />
-   1. <strong>Develop a workload review process</strong> that defines the criteria and process for workload review. The review effort should reflect potential benefit: for example, core workloads or workloads with a value of over 10% of the bill are reviewed quarterly, while workloads below 10% are reviewed annually.
-   <tt>COST-10-01-</tt>
+   1. <a name="COST-10-01-"><tt>COST-10-01-</tt></a><br /><br />
+   <strong>Develop a workload review process</strong> that defines the criteria and process for workload review. The review effort should reflect potential benefit: for example, core workloads or workloads with a value of over 10% of the bill are reviewed quarterly, while workloads below 10% are reviewed annually.
 
-   <a name="COST-10-02-"></a><br /><br />
-   1. <strong>Review and analyze this workload regularly</strong> - Existing workloads are regularly reviewed as per defined processes.
-   <tt>COST-10-02-</tt>
+   2. <a name="COST-10-02-"><tt>COST-10-02-</tt></a><br /><br />
+   <strong>Review and analyze this workload regularly</strong> - Existing workloads are regularly reviewed as per defined processes.
 
 
 <hr />
