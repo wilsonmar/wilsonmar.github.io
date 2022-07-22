@@ -1816,7 +1816,9 @@ When upgrading Terraform version, configurations may need syntax update.
 
 <a name="Terraforming"></a>
 
-### Reverse Terraforming
+### Terraform reversed from resources
+
+Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formation files to Terraform, with mixed results.
 
 To generate from resources created under an AWS account/Azure Subscription Terraform HCL files,
 here are the options:
@@ -1825,10 +1827,8 @@ NOTE: No longer supported is the Ruby-based <a target="_blank" href="https://git
 
 Created about the same time are:
 * <a target="_blank" href="https://github.com/GoogleCloudPlatform/terraformer">Google's terraformer</a> 
-* <a target="_blank" href="https://blog.cycloid.io/what-is-terracognita">cloud diagram creator Cycloid's</a> <a target="_blank" href="https://github.com/cycloidio/terracognita">terracognita</a> 
+* <a target="_blank" href="https://docs.cycloid.io/open-source-software/terracognita.html">cloud diagram creator Cycloid's</a> <a target="_blank" href="https://github.com/cycloidio/terracognita">terracognita</a> https://blog.cycloid.io/what-is-terracognita
 <br /><br />
-
-Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formation to Terraform, with mixed results.
 
 Both are installed onto MacOS using Homebrew.
 
@@ -1900,7 +1900,10 @@ brew install terraformer
 
 ### Azure AzTfy
 
-Export Terraform from existing deployments
+From Azure:
+https://github.com/Azure/aztfy
+a tool to bring existing Azure resources under the management of Terraform,
+based on https://github.com/hashicorp/terraform-provider-azurerm
 
 
 <a name="OpenSourcing"></a>

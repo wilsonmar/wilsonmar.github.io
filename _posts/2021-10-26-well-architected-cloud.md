@@ -399,7 +399,7 @@ AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/w
 
 AWS' WellArchitectedLabs.com provides dozens of labs refered in AWS Certification Exam prep and in <a target="_blank" href="https://www.wellarchitectedlabs.com/security/quests/">security quests</a> referenced during <a target="_blank" href="https://aws-startup-lofts.com/amer">free Loft live sessions AWS runs for Startups</a>
 
-Third parties:
+Video tutorials on third-party subscription websites:
 
    * https://www.xtremelabs.io/xtremelabs-now-offers-aws-well-architected-labs/
    provides AWS user credentials that are managed and maintained by XtremeLabs.
@@ -898,7 +898,7 @@ Questions and considerations for Reliability:
 
 <a name="ManageServiceQuotes"></a>
 
-1. How do you manage service quotas and constraints?
+### 1. How do you manage service quotas and constraints?
 
    1. <a name="REL-01-01-"><tt>REL-01-01-</tt></a><br /><br />
    <strong>Aware of service quotas and constraints</strong> - You are aware of default quotas and quota increase requests for workload architecture. You additionally know which resource constraints, such as disk or network, are potentially impactful.
@@ -921,7 +921,7 @@ Questions and considerations for Reliability:
 
    <a name="PlanNetwork"></a>
 
-2. How do you plan network topology?
+### 2. How do you plan network topology?
 
    1. <a name="REL-02-01-"><tt>REL-02-01-</tt></a><br /><br />
    <strong>Use highly available network connectivity for workload public endpoints</strong> - These endpoints and the routing to them must be highly available. To achieve this, use highly available DNS, content delivery networks (CDNs), API Gateway, load balancing, or reverse proxies.
@@ -941,7 +941,7 @@ Questions and considerations for Reliability:
 
    <a name="DesignWorkload"></a>
 
-3. How do you design workload service architecture?
+### 3. How do you design workload service architecture?
 
    1. <a name="REL-03-01-"><tt>REL-03-01-</tt></a><br /><br />
    <strong>Choose how to segment workloads</strong> - Monolithic architecture should be avoided. Instead, you should choose between SOA and microservices. When making each choice, balance the benefits against the complexities—what is right for a new product racing to first launch is different than what a workload built to scale from the start needs. The benefits of using smaller segments include greater agility, organizational flexibility, and scalability. Complexities include possible increased latency, more complex debugging, and increased operational burden.
@@ -955,7 +955,7 @@ Questions and considerations for Reliability:
 
    <a name="PreventFailures"></a>
 
-4. How do you design interactions in a distributed system to prevent failures?
+### 4. How do you design interactions in a distributed system to prevent failures?
 
    1. <a name="REL-04-01-"><tt>REL-04-01-</tt></a><br /><br />
    <strong>Identify which kind of distributed system is required</strong> - Hard real-time distributed systems require responses to be given synchronously and rapidly, while soft real-time systems have a more generous time window of minutes or more for response. Offline systems handle responses through batch or asynchronous processing. Hard real-time distributed systems have the most stringent reliability requirements.
@@ -972,7 +972,7 @@ Questions and considerations for Reliability:
 
    <a name="WithstandFailure"></a>
 
-5. How do you design interactions in a distributed system to mitigate or withstand failures?
+### 5. How do you design interactions in a distributed system to mitigate or withstand failures?
 
    1. <a name="REL-05-01-"><tt>REL-05-01-</tt></a><br /><br />
    <strong>Implement graceful degradation to transform applicable hard dependencies into soft dependencies</strong> - When a component's dependencies are unhealthy, the component itself can still function, although in a degraded manner. For example, when a dependency call fails, failover to a predetermined static response.
@@ -998,7 +998,7 @@ Questions and considerations for Reliability:
 
    <a name="MonitorWorkload"></a>
 
-6. How do you monitor workload resources?
+### 6. How do you monitor workload resources?
 
    1. <a name="REL-06-01-"><tt>REL-06-01-</tt></a><br /><br />
    <strong>Monitor all components for the workload (Generation)</strong> - Monitor the components of the workload with Amazon CloudWatch or third-party tools. Monitor AWS services with Personal Health Dashboard
@@ -1024,7 +1024,7 @@ Questions and considerations for Reliability:
 
    <a name="AdaptToDemand"></a>
 
-7. How do you design workloads to adapt to changes in demand?
+### 7. How do you design workloads to adapt to changes in demand?
 
    1. <a name="REL-07-01-"><tt>REL-07-01-</tt></a><br /><br />
    <strong>Use automation when obtaining or scaling resources</strong> - When replacing impaired resources or scaling workloads, automate the process by using managed AWS services, such as Amazon S3 and AWS Auto Scaling. You can also use third-party tools and AWS SDKs to automate scaling.
@@ -1041,7 +1041,7 @@ Questions and considerations for Reliability:
 
    <a name="ImplementChange"></a>
 
-8. How do you implement change?
+### 8. How do you implement change?
 
    1. <a name="REL-08-01-"><tt>REL-08-01-</tt></a><br /><br />
    <strong>Use runbooks for standard activities such as deployment</strong> - Runbooks are the predefined steps used to achieve specific outcomes. Use runbooks to perform standard activities, whether done manually or automatically. Examples include deploying a workload, patching it, or making DNS modifications.
@@ -1061,7 +1061,7 @@ Questions and considerations for Reliability:
 
    <a name="BackUpData"></a>
 
-9. How do you back up data?
+### 9. How do you back up data?
 
    1. <a name="REL-09-01-"><tt>REL-09-01-</tt></a><br /><br />
    <strong>Identify and back up all data that needs to be backed up, or reproduce the data from sources</strong> - Amazon S3 can be used as a backup destination for multiple data sources. AWS services such as Amazon EBS, Amazon RDS, and Amazon DynamoDB have built in capabilities to create backups. Third-party backup software can also be used. Alternatively, if the data can be reproduced from other sources to meet RPO, you might not require a backup
@@ -1078,7 +1078,7 @@ Questions and considerations for Reliability:
 
    <a name="FaultIsolation"></a>
 
-9. How do you use fault isolation to protect workloads?
+### 10. How do you use fault isolation to protect workloads?
 
    1. <a name="REL-10-01-"><tt>REL-10-01-</tt></a><br /><br />
    <strong>Deploy the workload to multiple locations</strong> - Distribute workload data and resources across multiple Availability Zones or, where necessary, across AWS Regions. These locations can be as diverse as required.
@@ -1093,7 +1093,7 @@ Questions and considerations for Reliability:
 
    <a name="WithstandComponentFailure"></a>
 
-9. How do you design workloads to withstand component failures?
+### 11. How do you design workloads to withstand component failures?
 
    1. <a name="REL-11-01-"><tt>REL-11-01-</tt></a><br /><br />
    <strong>Monitor all components of the workload to detect failures</strong> - Continuously monitor the health of workloads so that people and automated systems are aware of degradation or complete failure as soon as they occur. Monitor for key performance indicators (KPIs) based on business value.
@@ -1113,7 +1113,7 @@ Questions and considerations for Reliability:
 
    <a name="TestReliability"></a>
 
-9. How do you test reliability?
+### 12. How do you test reliability?
 
    1. <a name="REL-12-01-"><tt>REL-12-01-</tt></a><br /><br />
    <strong>Use playbooks to investigate failures</strong> - Enable consistent and prompt responses to failure scenarios that are not well understood, by documenting the investigation process in playbooks. Playbooks are the predefined steps performed to identify the factors contributing to a failure scenario. The results from any process step are used to determine the next steps to take until the issue is identified or escalated.
@@ -1136,7 +1136,7 @@ Questions and considerations for Reliability:
 
    <a name="PlanforDR"></a>
 
-9. How do you plan for disaster recovery (DR)?
+### 13. How do you plan for disaster recovery (DR)?
 
    1. <a name="REL-13-01-"><tt>REL-13-01-</tt></a><br /><br />
    <strong>Define recovery objectives for downtime and data loss</strong> - The workload has a recovery time objective (RTO) and recovery point objective (RPO).
@@ -1237,7 +1237,7 @@ Questions and Considerations for Operational Excellence:
 
 <a name="DeterminePriorities"></a>
 
-1. How do you determine what <strong>operational priorities</strong> are?
+### 1. How do you determine what <strong>operational priorities</strong> are?
 
    1. <a name="OPS-01-01-"><tt>OPS-01-01-</tt></a><br /><br />
    <strong>Evaluate external customer needs</strong> - Involve key stakeholders, including business, development, and operations teams, to determine where to focus efforts on external customer needs. This will ensure that you have a thorough understanding of the operations support that is required to achieve desired business outcomes.
@@ -1263,7 +1263,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="StructureBusinessOutcomes"></a>
 
-2. How do you structure the organization to support business outcomes?
+### 2. How do you structure the organization to support business outcomes?
 
    aka the "Operating Model"
 
@@ -1291,7 +1291,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="OrgCulture2Outcome"></a>
 
-3. How does <strong>organizational culture</strong> support business outcomes?
+### 3. How does <strong>organizational culture</strong> support business outcomes?
 
    1. <a name="OPS-03-01-"><tt>OPS-03-01-</tt></a><br /><br />
    <strong>Executive Sponsorship</strong> - Senior leadership clearly sets expectations for the organization and evaluates success. Senior leadership is the sponsor, advocate, and driver for the adoption of best practices and evolution of the organization
@@ -1320,7 +1320,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="Design4State"></a>
 
-4. How do you design workloads to understand its state?
+### 4. How do you design workloads to understand its state?
 
    1. <a name="OPS-04-01-"><tt>OPS-04-01-</tt></a><br /><br />
    <strong>Implement application telemetry</strong> - Instrument  application code to emit information about its internal state, status, and achievement of business outcomes. For example, queue depth, error messages, and response times. Use this information to determine when a response is required.
@@ -1340,7 +1340,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="ReduceDefects"></a>
 
-5. How do you reduce defects, ease remediation, and improve flow into production?
+### 5. How do you reduce defects, ease remediation, and improve flow into production?
 
    1. <a name="OPS-05-01-"><tt>OPS-05-01-</tt></a><br /><br />
    <strong>Use version control</strong> - Use version control to enable tracking of changes and releases.
@@ -1376,7 +1376,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="MitigateDeploymentRisks"></a>
 
-6. How do you mitigate deployment risks?
+### 6. How do you mitigate deployment risks?
 
    1. <a name="OPS-06-01-"><tt>OPS-06-01-</tt></a><br /><br />
    <strong>Plan for unsuccessful changes</strong> - Plan to revert to a known good state, or remediate in the production environment if a change does not have the desired outcome. This preparation reduces recovery time through faster responses.
@@ -1405,7 +1405,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="ReadySupport"></a>
 
-7. How do you know that you are ready to support a workload?
+### 7. How do you know that you are ready to support a workload?
 
    1. <a name="OPS-07-01-"><tt>OPS-07-01-</tt></a><br /><br />
    <strong>Ensure personnel capability</strong> - Have a mechanism to validate that you have the appropriate number of trained personnel to provide support for operational needs. Train personnel and adjust personnel capacity as necessary to maintain effective support.
@@ -1425,7 +1425,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="UnderstandWorkloadHealth"></a>
 
-8. How do you understand the health of each workload?
+### 8. How do you understand the health of each workload?
 
    1. <a name="OPS-08-01-"><tt>OPS-08-01-</tt></a><br /><br />
    <strong>Identify key performance indicators (KPIs)</strong> based on desired business outcomes (for example, order rate, customer retention rate, and profit versus operating expense) and customer outcomes (for example, customer satisfaction). Evaluate KPIs to determine workload success.
@@ -1454,7 +1454,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="UnderstandOperationsHealth"></a>
 
-9. How do you understand the health of operations?
+### 9. How do you understand the health of operations?
 
    1. <a name="OPS-09-01-"><tt>OPS-09-01-</tt></a><br /><br />
    <strong>Identify key performance indicators (KPIs) based on desired business (for example, new features delivered) and customer outcomes (for example, customer support cases). Evaluate KPIs to determine operations success.
@@ -1483,7 +1483,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="ManageEvents"></a>
 
-9. How do you manage workload and operations events?
+### 9. How do you manage workload and operations events?
 
    1. <a name="OPS-10-01-"><tt>OPS-10-01-</tt></a><br /><br />
    <strong>Use processes for event, incident, and problem management</strong> - Have processes to address observed events, events that require intervention (incidents), and events that require intervention and either recur or cannot currently be resolved (problems). Use these processes to mitigate the impact of these events on the business and customers by ensuring timely and appropriate responses.
@@ -1509,7 +1509,7 @@ Questions and Considerations for Operational Excellence:
 
    <a name="EvolveOperations"></a>
 
-9. How do you evolve operations?
+### 9. How do you evolve operations?
 
    1. <a name="OPS-11-01-"><tt>OPS-11-01-</tt></a><br /><br />
    <strong>Have a process for continuous improvement</strong> - Regularly evaluate and prioritize opportunities for improvement to focus efforts where they can provide the greatest benefits.
@@ -1607,7 +1607,7 @@ Questions and Considerations for Performance Efficiency:
 
 <a name="SelectPerfArch"></a>
 
-1. How do you select the best performing architecture?
+### 1. How do you select the best performing architecture?
 
    1. <a name="PERF-01-01-"><tt>PERF-01-IdentifySvcs</tt></a><br /><br />
    <strong>Understand the available services and resources</strong> - Learn about and understand the wide range of services and resources available in the cloud. Identify the relevant services and configuration options for each workload, and understand how to achieve optimal performance. 
@@ -1633,7 +1633,7 @@ Questions and Considerations for Performance Efficiency:
 
    <a name="SelectSolution"></a>
 
-2. How do you select the compute solution?
+### 2. How do you select the compute solution?
 
    1. <a name="PERF-02-01-"><tt>PERF-02-01-</tt></a><br /><br />
    <strong>Evaluate the available compute options</strong> - Understand the performance characteristics of the compute-related options available to you. Know how instances, containers, and functions work, and what advantages, or disadvantages, they bring to  workloads.
@@ -1656,7 +1656,7 @@ Questions and Considerations for Performance Efficiency:
 
    <a name="SelectStorage"></a>
 
-3. How do you select storage solutions?
+### 3. How do you select storage solutions?
 
    1. <a name="PERF-03-01-"><tt>PERF-03-01-</tt></a><br /><br />
    <strong>Understand storage characteristics and requirements</strong> - Understand the different characteristics (for example, shareable, file size, cache size, access patterns, latency, throughput, and persistence of data) that are required to select the services that best fit the workload, such as object storage, block storage, file storage, or instance storage.
@@ -1670,7 +1670,7 @@ Questions and Considerations for Performance Efficiency:
 
    <a name="SelectDatabase"></a>
 
-4. How do you select database solutions?
+### 4. How do you select database solutions?
 
    1. <a name="PERF-04-01-"><tt>PERF-04-01-</tt></a><br /><br />
    <strong>Understand data characteristics</strong> - Understand the different characteristics of data in each workload. Determine if the workload requires transactions, how it interacts with data, and what its performance demands are. Use this data to select the best performing database approach for each workload (for example, relational databases, NoSQL Key-value, document, wide column, graph, time series, or in-memory storage).
@@ -1690,7 +1690,7 @@ Questions and Considerations for Performance Efficiency:
 
    <a name="ConfigNetwork"></a>
 
-5. How do you configure networking solutions?
+### 5. How do you configure networking solutions?
 
    1. <a name="PERF-05-01-"><tt>PERF-05-01-</tt></a><br /><br />
    <strong>Understand how networking impacts performance</strong> - Analyze and understand how network-related decisions impact workload performance. For example, network latency often impacts the user experience, and using the wrong protocols can starve network capacity through excessive overhead.

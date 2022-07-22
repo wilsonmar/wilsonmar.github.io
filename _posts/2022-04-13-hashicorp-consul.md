@@ -815,18 +815,19 @@ Because this document aims to present concepts in a logic flow for learning, it 
 3.	<a href="#Services">Register services and use Service Discovery</a> [<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24400106#questions">BK</a>]<br />
    3a.	Interpret a service registration<br />
    3b.	Differentiate ways to register a single service<br />
-   3c.	Interpret a service configuration with health check<br />
+   3c.	Interpret a <a href="#ServiceConfiguration">ServiceConfiguration">service configuration</a> with health check<br />
    3d.	Check the service catalog status from the output of the DNS/API interface or via the Consul UI<br />
+
    3e.	Interpret a prepared query<br />
    3f.	Use a prepared query<br />
    
-4.	Access the Consul key/value (KV) <em>even though it's not a popular feature anymore</em><br />
+4.	Access the Consul key/value (KV)<br />
    4a.	Understand the capabilities and limitations of the KV store<br />
    4b.	Interact with the KV store using both the Consul CLI and UI<br />
    4c.	Monitor KV changes using watch<br />
    4d.	Monitor KV changes using <a href="#envconsul">envconsul</a> and <a href="#consul-template">consul-template</a><br />
    
-5.	<a href="#Snapshots">Back up and Restore</a> [<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569032#questions">BK</a><br />
+5.	<a href="#Snapshots">Back up and Restore</a> [<a target="_blank" href="https://www.udemy.com/course/hashicorp-consul/learn/lecture/24569032#questions">BK</a>]<br />
    5a.	<a href="#Snapshots">Describe the content of a snapshot</a>
    5b.	Back up and restore the datacenter<br />
    5c.	<a href="#SnapshotAgent">[Enterprise] Describe the benefits of snapshot agent features</a>
@@ -1512,10 +1513,7 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
       </td></tr>
    </table>
 
-   PROTIP: Assume a 5:1 node to services ratio.
-
-   https://www.hashicorp.com/products/consul/pricing
-  
+   PROTIP: Assume a 5:1 Consul node to app services ratio.  
 
 <hr />
 
@@ -1524,6 +1522,7 @@ export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDq
 ## C. On a macOS laptop using Docker
 
    * https://learn.hashicorp.com/tutorials/consul/get-started-agent?in=consul/getting-started
+   * https://cloudaffaire.com/how-to-install-hashicorp-consul/
    <br /><br />
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655225727/consul-interactions-488x510_uw40ga.png"><img alt="Consul interactions" width="488"
@@ -1871,7 +1870,7 @@ Available commands are:
     info           Provides debugging information for operators.
     <a href="#Intentions">intention</a>      Interact with Connect service intentions
     join           Tell Consul agent to join cluster
-    keygen         Generates a new encryption key
+    <a href="#Keygen">keygen         Generates a new encryption key</a>
     keyring        Manages gossip layer encryption keys
     kv             Interact with the key-value store
     <a href="#ConsulLeave">leave          Gracefully leaves the Consul cluster and shuts down</a>
@@ -1934,16 +1933,22 @@ debug        join         login        reload       version
 
    <a name="Shortcuts"></a>
    
-   ## Keyboard shortcuts
+   ## Consul Keyboard shortcuts
 
-   PROTIP: Instead of tediously typing out long commands every time, consider adding these aliases to the file that executes everytime your Terminal starts
-   (https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh).
+   Below are the most commonly use command statements typed on Terminal.
+   
+   PROTIP: If you find it tedious to repeatedly type out long commands every time, consider memorizing these keyboard shortcuts, defined as aliases in a file that executes everytime your Terminal starts (https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh).
+   You may change your alias key to anything that is not already used by another program.
 
-   <pre>alias ccn="consul catalog nodes"
+   <pre>alias csl="curl http://127.0.0.1:8500/v1/status/leader"
+alias cacc="consul agent -config-dir /etc/consul.d/config"
+alias ccn="consul catalog nodes"
 alias ccs="consul catalog services"
-alias cmw="consul members -wan"
+alias cml="consul members -wan"
+alias cmld="consul members -detailed"
 alias cnl="consul namespace list"
 alias crl="consul operator raft list-peers"
+alias crj="cat /var/consul/raft/peers.json"
    </pre>
 
 * <tt>ccn</tt> for the list of nodes, instead of:
@@ -1967,14 +1972,19 @@ consul-server-5  10.132.0.35:8301  alive   server  1.12.2+ent  2         dc1  de
 consul-server-6  10.132.0.41:8301  alive   server  1.12.2+ent  2         dc1  default    &LT;all>
    </pre>
 
+* <tt>cmld</tt> for the list of node members with details, instead of:
+
+   <pre><strong>consul members -details</strong></pre>
+
+   <pre>???
+   </pre>
+
 * <tt>cmw</tt> for the list of node members, instead of:
 
    <pre><strong>consul members -wan</strong></pre>
 
-   <pre>Node                 Address             Status  Type    Build       Protocol  DC   Partition  Segment
-consul-server-4.dc2  10.132.255.99:8302  alive   server  1.12.2+ent  2         dc2  default    &LT;all>
-consul-server-5.dc2  10.132.255.90:8302  alive   server  1.12.2+ent  2         dc2  default    &LT;all>
-consul-server-6.dc2  10.132.255.96:8302  alive   server  1.12.2+ent  2         dc2  default    &LT;all>
+   <pre>Node                      Address         Status  Type    Build   Protocol  DC   Partition  Segment
+wilsonmar-N2NYQJN46F.dc1  127.0.0.1:8302  alive   server  1.12.2  2         dc1  default    &LT;all>
    </pre>
 
 * <tt>ccs</tt> for the list of services, instead of:
@@ -1983,14 +1993,17 @@ consul-server-6.dc2  10.132.255.96:8302  alive   server  1.12.2+ent  2         d
 
    When no Consul service has been configured yet, the response is:
 
-   <pre>consul
+   <pre>Node                      Address         Status  Tags
+wilsonmar-N2NYQJN46F.dc1  127.0.0.1:8302  alive   acls=0,ap=default,build=1.12.2:19041f20,dc=dc1,ft_fs=1,ft_si=1,id=5a5a1066-8c29-8c1e-c5a9-bdcbb01c24c7,port=8300,raft_vsn=3,role=consul,segment=&LT;all>,vsn=2,vsn_max=3,vsn_min=2
    </pre>
+
+   See TODO: for more information about Tags.
 
 * <tt>cnl</tt> for the list of raft peers, instead of:
 
    <pre><strong>consul namespace list</strong></pre>
 
-   Example:
+   Example output:
 
    <pre>
    # app-team:
@@ -3849,7 +3862,7 @@ iptables -t nat -A OUTPUT -d localhost -d upd -m
 
    * <strong>Service Discovery</strong>: (kube-dns, kube-proxy) to identify and connect any service on any cloud or runtime. with Consul DNS
    
-   * <strong>Service Configuration</strong>: (K8s Configmaps) but Consul also updates F5 and other load balancer rules, for dynamic configuration across distributed services (in milliseconds)
+   * <a href="#ServiceConfiguration">Service Configuration</a>: (K8s Configmaps) but Consul also updates F5 and other load balancer rules, for dynamic configuration across distributed services (in milliseconds)
    
    * <strong>Segmentation</strong>: (Network Policy + Controller), providing <strong>network infrastructure automation</strong>
 
@@ -3880,6 +3893,7 @@ Beyond:
    * Identity
    * Resource Management
    <br /><br />
+
 
 
 <hr />
@@ -4829,6 +4843,18 @@ https://www.hashicorp.com/resources/unboxing-service-mesh-interface-smi-spec-con
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Z4wkTDdjWBY" title="Oct 21, 2019">VIDEO: 
 "HashiCorp Consul: Service Networking Made Easy"</a>
+
+
+<a name="ServiceConfiguration">
+
+### Service Configuration
+
+REMEMBER: There is a striction on each KV store object size of <strong>512 KB</strong>.
+
+REMEMBER: Unlike Vault which uses slashes as folders within a hierarchial path, Consul treats slashes as any other chacter in a string.
+
+
+<hr />
 
 ## References
 
