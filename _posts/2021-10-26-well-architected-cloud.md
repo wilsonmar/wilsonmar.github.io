@@ -399,7 +399,7 @@ AWS provides <a target="_blank" href="https://aws.amazon.com/partners/programs/w
 
 AWS' WellArchitectedLabs.com provides dozens of labs refered in AWS Certification Exam prep and in <a target="_blank" href="https://www.wellarchitectedlabs.com/security/quests/">security quests</a> referenced during <a target="_blank" href="https://aws-startup-lofts.com/amer">free Loft live sessions AWS runs for Startups</a>
 
-Video tutorials on third-party subscription websites:
+Video tutorials on third-party subscription sites:
 
    * https://www.xtremelabs.io/xtremelabs-now-offers-aws-well-architected-labs/
    provides AWS user credentials that are managed and maintained by XtremeLabs.
