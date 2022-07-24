@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-07-21"
+file: "jekyll-site-development"
 title: "Jekyll (JAM) site development"
 excerpt: "Getting started with Jekyll"
 tags: [website, builder, simplicity, jekyll]
-date: "2016-03-21"
-file: "jekyll-site-development"
 image:
 # feature: scr white jekyll static tools 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622170/48b1ceb0-0585-11e6-8b19-b9d09feebd6f.jpg
@@ -12,17 +12,8 @@ image:
   creditlink:
 comments: true
 ---
-<i>{{ page.excerpt }}</i>
-<p align="right"><a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=es&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="Español (Spanish)" width="20" height="14" src="../images/flags/es.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=fr&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="Français (French)" width="20" height="14" src="../images/flags/fr.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=de&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="Deutsch (German)" width="20" height="14" src="../images/flags/de.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=it&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="Italiano" width="20" height="14" src="../images/flags/it.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=pt&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="Português" width="20" height="14" src="../images/flags/pt.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ru&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="Cyrillic Russian" width="20" height="14" src="../images/flags/ru.png"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=zh-CN&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="中文 (简体) Chinese (Simplified)" width="20" height="14" src="../images/flags/cn.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ja&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="日本語 Japanese" width="20" height="14" src="../images/flags/jp.gif"></a> &nbsp;
-<a target="_blank" href="https://translate.google.com/translate?sl=auto&tl=ko&u=https%3A%2F%2Fwilsonmar.github.io%2Fjekyll-site-development%2F"><img alt="한국어 Korean" width="20" height="14" src="../images/flags/ko.gif"></a>
-</p>
+<i>{{ page.excerpt }}</i> 
+{% include l18n.html %}
 {% include _toc.html %}
 
 This article contains notes on getting started with Jekyll and other static websites.
@@ -37,7 +28,12 @@ This is one in a series:
    0. [Authenticate on static sites](/authentication-on-static-site/)
    0. [Clickable maps in Jekyll sites](/clickable-maps-in-jekyll-posts/)
 
-Jekyll is currently the [most popular among static site builder options](/static-websites/).
+{% include whatever.html %}
+
+There is also <a target="_blank" href="https://wilsonmar.github.io/gatsby">Gatsby</a> and others.
+
+But Jekyll is still currently the [most popular among static site builder options](/static-websites/).
+
 
 ## The objective
 
@@ -1262,6 +1258,8 @@ http://loyc.net/2014/javascript-toc.html
 
 QUESTION: Spell checking in GitHub?
 
+<hr />
+
 ## Footnotes
 
 There is no need to repeat excellent tutorials:
@@ -1285,7 +1283,8 @@ There is no need to repeat excellent tutorials:
 
 * <a target="_blank" href="https://www.youtube.com/playlist?list=PL58Wk5g77lF-UQ39pejLX2Zn5DxQyExBa">JAMstack Conf 2018 - San Francisco 19 videos</a>
 
-
+* https://www.tomordonez.com/jekyll-text-expand-collapsible-markdown/ to hide text unless clicked
+* https://karttur.github.io/setup-theme-blog/blog/blog-hide-show-div/
 
 ## More on front-end styling #
 
