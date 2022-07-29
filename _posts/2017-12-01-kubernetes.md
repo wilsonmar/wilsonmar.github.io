@@ -270,7 +270,7 @@ But being open-source has enabled Kubernetes to flourish on multiple clouds<a ta
 * OKD = <a href="#OpenShift">OpenShift</a> (Red Hat) Enterprise platform as a service (PaaS) Origin community distribution - OpenShift Dedicated, OpenShift Online
 * KUBE2GO
 
-* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), merphe from PCS
+* PKS = VMWare Tanzu purchase of Pivotal, Heptio (Joe Bada, Craig McLukie), morph from PCS
 * <a target="_blank" href="https://rancher.com/products/rke/">RKE = Rancher Kubernetes Engine</a>
 * Rackspace's Kubernetes as a Service
 
@@ -756,7 +756,7 @@ Here is the full text of the <a target="_blank" href="https://github.com/cncf/cu
 18% Configuration (<a href="#ConfigMaps">ConfigMaps</a>, <a href="#SecurityContexts">SecurityContexts</a>, <a href="#Resources">Resource Requirements</a>, Create & consume <a href="#Secrets">Secrets</a>, <a href="#ServiceAccounts">ServiceAccounts</a>
    <br /><br />
 
-10% <a href="#Multi-Container">Multi-Container Pods</a> design patterns (e .g. <a href="#Ambassador">ambassador</a>, <a href="#Adapter">adapter</a>, <a href="#Sidecar">sidecar</a>)
+10% <a href="#Multi-Container">Multi-Container Pods</a> design patterns (e.g., <a href="#Ambassador">ambassador</a>, <a href="#Adapter">adapter</a>, <a href="#Sidecar">sidecar</a>)
    <br /><br />
 
 18% Observability (<a href="#Probes">Liveness & Readiness Probes</a>, Container Logging, Metrics server, Monitoring apps, Debugging)  <br /><br />
@@ -3744,7 +3744,7 @@ gcloud container images delete gcr.io/demo-project-123/demo:2.0
 
    ## Google Kubernetes Threat Detection
 
-   Google's Kubernetes Service offers KTD (Kubnetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
+   Google's Kubernetes Service offers KTD (Kubernetes Threat Detection). On each node a KTD daemonset that collects, interprets, and annotates signals for a back-end <strong>KTD Detection Plane</strong> that uses Machine Learning to make findings for the Google SCC (Security Command Center) and Cloud Logging:
 
    <a target="_blank" href="https://cloudonair.withgoogle.com/events/security-talks-march-2021/watch?talk=detect-threats"><img width="386" alt="k8s-ktd" src="https://user-images.githubusercontent.com/300046/109877993-e9ef9880-7c30-11eb-8320-ce3b431a9186.png"></a>
 

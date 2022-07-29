@@ -757,7 +757,7 @@ Questions and Considerations for Security:
 ### 7. How do you classify data?
 
    1. <a name="SEC-07-01-"><tt>SEC-07-01-</tt></a><br /><br />
-   <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer personally identifiable information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive, and more.
+   <strong>Identify the data within workloads</strong> - This includes the type and classification of data, the associated business processes. data owner, applicable legal and compliance requirements, where it’s stored, and the resulting controls that are needed to be enforced. This may include classifications to indicate if the data is intended to be publicly available, if the data is internal use only such as customer Personally Identifiable Information (PII), or if the data is for more restricted access such as intellectual property, legally privileged or marked sensitive, and more.
 
    2. <a name="SEC-07-02-"><tt>SEC-07-03-</tt></a><br /><br />
    <strong>Define data protection controls</strong> - Protect data according to its classification level. For example, secure data classified as public by using relevant recommendations while protecting sensitive data with additional controls. Automate identification and classification</strong> of data to reduce the risk of human error from manual interactions.
