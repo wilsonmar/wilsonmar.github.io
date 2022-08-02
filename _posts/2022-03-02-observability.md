@@ -24,7 +24,7 @@ Different vendors have varying definitions about "Observability".
 
 QUESTION [1] - Over the lifetime of this system, about how often (per week) do measurements of the system need to be considered by each persona in the company?
 
-Example for a hypothetical 1,000-user scenario:
+Example for a hypothetical 1,000-user scenario, where <strong>% Each</strong> is the percentage of total users grouped into that persona.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="top"><th> Persona </th><th> % Each </th><th> # Users 
@@ -52,21 +52,41 @@ Example for a hypothetical 1,000-user scenario:
    </td></tr>
 </table>
 
-<strong>% Each</strong> is the percentage of total users grouped into that persona.
-
 
 <a name="[2]"></a>
 <a name="LifetimeViews"></a>
 
+## Lifetime of system
+
 QUESTION [2] - What is the <strong>expected lifetime</strong> of this system? (based on existing systems in the organization)
 
-Example: 10 years * 50 weeks per year = 500 weeks (or 120 months)
+Example: 10 years * 50 weeks per year = 500 weeks
 
 500 weeks * weekly views = Lifetime views
 
+
+## Expectations
+
+<a name="[3]"></a>
+
+QUESTION [3] - What expectations for Availability (Uptime) do each persona have of the system?
+
+* Developers
+* Operations
+* Security
+* Managers 
+* Auditors
+* Others
+<br /><br />
+
+
+<a name="[4]"></a>
+
 ## Measurements
 
-Monitoring at each system asset component:
+QUESTION [4] - What monitoring is desired?
+
+Examples at each aspect of the system:
 
 * User logins
 * User Groups
@@ -102,7 +122,7 @@ The discussion below traverses from left to right through this table:
    </td><td>4 - Observability
 </td></tr>
 <tr valign="top"><td> Investment:
-   </td><td>Minimal <a href="#[4]">[4]</a>
+   </td><td>Minimal <a href="#[6]">[6]</a>
    </td><td>~3X
    </td><td>~10X
    </td><td>~20X
@@ -126,7 +146,7 @@ The discussion below traverses from left to right through this table:
    </td><td>Human <strong>oversight</strong> and tuning still needed
 </td></tr>
 <tr valign="top"><td> Achievable (Uptime): 
-   </td><td> &LT; 65% <a href="#[3]">[3]</a>
+   </td><td> &LT; 65% <a href="#[5]">[5]</a>
    </td><td> &LT; 85%
    </td><td> &LT; 90.0%
    </td><td> &LT; 99.5%
@@ -135,28 +155,18 @@ The discussion below traverses from left to right through this table:
 
 <hr />
 
-## Discussion
-
-<a name="[3]"></a>
-
-QUESTION [3] - What expectations for Availability (Uptime) do each persona have of the system?
-
-* Developers
-* Operations
-* Security
-* Managers 
-* Auditors
-* Others
-<br /><br />
-
-
-<a name="[4]"></a>
-
-QUESTION: [4] A reactive monitoring system means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
-
 <a name="[5]"></a>
 
-QUESTION: [5] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
+## Reactive Monitoring
+
+QUESTION: [5] A reactive monitoring system means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
+
+
+<a name="[6]"></a>
+
+## Minimal investment
+
+QUESTION: [6] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
 
 FOSS options include Prometheus and Grafana dashboards.
 
