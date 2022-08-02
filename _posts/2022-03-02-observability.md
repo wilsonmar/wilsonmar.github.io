@@ -18,17 +18,29 @@ comments: true
 Different vendors have varying definitions about "Observability".
 
 
+<a name="[1]"></a>
+<a name="LifetimeViews"></a>
+
+## Lifetime of system
+
+QUESTION [1] - What is the <strong>expected lifetime</strong> of this system? (based on existing systems in the organization)
+
+Example: 10 years * 50 weeks per year = 500 weeks
+
+500 weeks * weekly views = Lifetime views
+
+
+<a name="[2]"></a>
+
 ## User Demographics 
 
-<a name="[1]"></a>
-
-QUESTION [1] - Over the lifetime of this system, about how often (per week) do measurements of the system need to be considered by each persona in the company?
+QUESTION [2] - Over the lifetime of this system, about how often (per week) do measurements of the system need to be considered by each persona in the company?
 
 Example for a hypothetical 1,000-user scenario, where <strong>% Each</strong> is the percentage of total users grouped into that persona.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="top"><th> Persona </th><th> % Each </th><th> # Users 
-</th><th> #/Week </th><th> <a href="LifetimeViews"># Lifetime Views</a> </th><th> Notes </th></tr>
+</th><th> #/Week </th><th> <a href="LifetimeViews"># Lifetime<br />Views [1]</a> </th><th> Notes </th></tr>
 <tr valign="top" align="right"><td> Developers </td><td> 55% </td><td> 550
    </td><td> 30 </td><td> 15,000 </td><td> -
    </td></tr>
@@ -53,30 +65,21 @@ Example for a hypothetical 1,000-user scenario, where <strong>% Each</strong> is
 </table>
 
 
-<a name="[2]"></a>
-<a name="LifetimeViews"></a>
-
-## Lifetime of system
-
-QUESTION [2] - What is the <strong>expected lifetime</strong> of this system? (based on existing systems in the organization)
-
-Example: 10 years * 50 weeks per year = 500 weeks
-
-500 weeks * weekly views = Lifetime views
-
-
 ## Expectations
 
 <a name="[3]"></a>
 
 QUESTION [3] - What expectations for Availability (Uptime) do each persona have of the system?
 
-* Developers
-* Operations
-* Security
-* Managers 
-* Auditors
-* Others
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Persona </th><th> Uptime %<br />Expectation</th></tr>
+<tr valign="top"><td> Developers    </td><td align="right"> 95% + </td></tr>
+<tr valign="top"><td> Operations    </td><td align="right"> 99% + </td></tr>
+<tr valign="top"><td> Security      </td><td align="right"> 99% + </td></tr>
+<tr valign="top"><td> Managers      </td><td align="right"> 80% + </td></tr>
+<tr valign="top"><td> Auditors      </td><td align="right"> 99% + </td></tr>
+<tr valign="top"><td> Others        </td><td align="right"> 85% + </td></tr>
+</table>
 <br /><br />
 
 
@@ -110,6 +113,26 @@ Examples at each aspect of the system:
 <br /><br />
 
 
+<a name="[5]"></a>
+
+## Minimal investment
+
+QUESTION: [5] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
+
+Level 0 is to use only commands provided by default by the operating system being used.
+
+Level 1 is to install FOSS monitoring utilities such as Prometheus with Grafana dashboards or Elastic Stack.
+
+Level 2 is to install licensed monitoring utilities such as Datadog, Splunk, New Relic, Honeycomb, etc.
+
+   <ul>NOTE: Some vendors (such as SolarWinds) specialize in network monitoring based on the SNMP (Simple Network Management Protocol). However, more and more data centers disable SNMP to improve security against external hacking.
+   </ul>
+
+Level 3 is to install the above plus PagerDuty for smart alerting.
+
+Level 4 is to install Machine-Learning (AI) based "Observability" systems such as InsightFinder, StackState, etc.
+
+
 ## Levels of monitoring investment
 
 The discussion below traverses from left to right through this table:
@@ -121,32 +144,32 @@ The discussion below traverses from left to right through this table:
    </td><td>3 - Next Generation Monitoring
    </td><td>4 - Observability
 </td></tr>
-<tr valign="top"><td> Investment:
-   </td><td>Minimal <a href="#[6]">[6]</a>
+<tr valign="top"><td> Investment (TCO):
+   </td><td>Minimal <a href="#[5]">[5]</a>
    </td><td>~3X
    </td><td>~10X
    </td><td>~20X
 </td></tr>
 <tr valign="top"><td> Approach:
-   </td><td>Reactive<br />collections
+   </td><td><a name="Reactive"></a>Reactive<br />collections
    </td><td>In-depth<br />trends
    </td><td>Responsive<br />alerts
    </td><td>Proactive<br />self-healing
 </td></tr>
 <tr valign="top"><td> Mechanism:
-   </td><td>Each component monitored using a different <strong>independent</strong> appraoch
+   </td><td>Each component monitored using a different <strong>independent</strong> approach
    </td><td><strong>Dashboards</strong> display various components of each specific service
    </td><td><strong>Interdependence</strong> among components apparent when a specific component is changed
    </td><td>Anomalous behavior automatically identified and remediated before a crisis, using Machine Learning (AI)
 </td></tr>
-<tr valign="top"><td> Deficiency: <a href="#[2]">[2]</a>
-   </td><td>Extensive and frequent manual investigation <a href="#[3]">[3]</a>
+<tr valign="top"><td> Deficiency: 
+   </td><td>Extensive and frequent manual investigation <a href="#[6]">[6]</a>
    </td><td>Issues impacting the <strong>entire IT stack</strong> not apparent
    </td><td><strong>Manual</strong> remediation necessary
    </td><td>Human <strong>oversight</strong> and tuning still needed
 </td></tr>
 <tr valign="top"><td> Achievable (Uptime): 
-   </td><td> &LT; 65% <a href="#[5]">[5]</a>
+   </td><td> &LT; 65%<a href="#[6]">[6]</a>
    </td><td> &LT; 85%
    </td><td> &LT; 90.0%
    </td><td> &LT; 99.5%
@@ -155,20 +178,11 @@ The discussion below traverses from left to right through this table:
 
 <hr />
 
-<a name="[5]"></a>
+<a name="[6]"></a>
 
 ## Reactive Monitoring
 
-QUESTION: [5] A reactive monitoring system means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
-
-
-<a name="[6]"></a>
-
-## Minimal investment
-
-QUESTION: [6] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
-
-FOSS options include Prometheus and Grafana dashboards.
+QUESTION: [6] A  <a href="#Reactive">"reactive" monitoring system</a> means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
 
 
 ## Commercial options for monitoring include
