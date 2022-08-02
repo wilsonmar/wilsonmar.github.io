@@ -1823,7 +1823,8 @@ Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formatio
 To generate from resources created under an AWS account/Azure Subscription Terraform HCL files,
 here are the options:
 
-NOTE: No longer supported is the Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a> . It also comes as a Docker container.
+NOTE: No longer supported is the Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>. 
+It also comes as a Docker container.
 
 Created about the same time are:
 * <a target="_blank" href="https://github.com/GoogleCloudPlatform/terraformer">Google's terraformer</a> 
@@ -1889,6 +1890,16 @@ terracognita google resources | wc -l   #  21
 brew install terraformer
    </strong></pre>
 
+2. Other diagramming tools:
+
+   https://cloudcraft.co/
+
+   https://www.hava.io/
+
+   LucidChart
+
+   https://cloudviz.io/ for AWS
+
 3. Deploy your existing CFT instead of trying to convert it:
 
    https://www.terraform.io/docs/providers/aws/r/cloudformation_stack.html
@@ -1896,6 +1907,7 @@ brew install terraformer
 4. It may be possible for simple cases but perhaps very complex (almost impossible) to convert CFT <strong>intrinsic functions</strong>: 
 
    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html
+
 
 
 ### Azure AzTfy

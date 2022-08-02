@@ -15,6 +15,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+Different vendors have varying definitions about "Observability".
+
 
 ## User Demographics 
 
@@ -56,9 +58,11 @@ Example for a hypothetical 1,000-user scenario:
 <a name="[2]"></a>
 <a name="LifetimeViews"></a>
 
-QUESTION [2] - What is the expected lifetime of this system? (based on existing systems in the organization)
+QUESTION [2] - What is the <strong>expected lifetime</strong> of this system? (based on existing systems in the organization)
 
 Example: 10 years * 50 weeks per year = 500 weeks (or 120 months)
+
+500 weeks * weekly views = Lifetime views
 
 ## Measurements
 
@@ -66,6 +70,14 @@ Monitoring at each system asset component:
 
 * User logins
 * User Groups
+* Rate of users abondoning workflows
+* Number of accesses over time
+
+* Number of incidents to investigate
+* TTD (Time To Detect) issue
+* TTR (Time to Remediate/Repair) issue
+* Frequency of incidents
+* Severity level of events
 
 * Cloud Regions
 * Cloud resource components (Nodes, ELB)
@@ -75,9 +87,6 @@ Monitoring at each system asset component:
 * Services
 * Intentions
 * ACLs
-
-* MTTD (Mean Time To Detect) issues
-* MTTR (Mean Time to Remediate/Repair) issues
 <br /><br />
 
 
@@ -93,7 +102,7 @@ The discussion below traverses from left to right through this table:
    </td><td>4 - Observability
 </td></tr>
 <tr valign="top"><td> Investment:
-   </td><td>Minimal <a href="#[1]">[1]</a>
+   </td><td>Minimal <a href="#[4]">[4]</a>
    </td><td>~3X
    </td><td>~10X
    </td><td>~20X
@@ -116,40 +125,40 @@ The discussion below traverses from left to right through this table:
    </td><td><strong>Manual</strong> remediation necessary
    </td><td>Human <strong>oversight</strong> and tuning still needed
 </td></tr>
-<tr valign="top"><td> Likely conditions: <a href="#[4]">[4]</a>
-   </td><td> &LT; 65% Uptime <a href="#[5]">[5]</a>
+<tr valign="top"><td> Achievable (Uptime): 
+   </td><td> &LT; 65% <a href="#[3]">[3]</a>
    </td><td> &LT; 85%
    </td><td> &LT; 90.0%
    </td><td> &LT; 99.5%
 </td></tr>
 </table>
 
-Different vendors have varying definitions about "Observability".
-
-   * Some vendors use "Observability" to measure the level of "maturity"
-   <br /><br />
-
+<hr />
 
 ## Discussion
 
 <a name="[3]"></a>
 
-QUESTION [3] - What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
+QUESTION [3] - What expectations for Availability (Uptime) do each persona have of the system?
 
-FOSS options include Prometheus and Grafana dashboards.
+* Developers
+* Operations
+* Security
+* Managers 
+* Auditors
+* Others
+<br /><br />
+
 
 <a name="[4]"></a>
 
-QUESTION: What expectations for Availability do users and management have of the system? [4]
+QUESTION: [4] A reactive monitoring system means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
 
 <a name="[5]"></a>
 
-[5] A reactive monitoring system means that significant issues may NOT be noticed until users complain (high MTTD and low user satisfaction). High MTTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
+QUESTION: [5] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
 
-<a name="[6]"></a>
-
-QUESTION: What expectations for Availability (Uptime) do users and management have of the system? [6]
-
+FOSS options include Prometheus and Grafana dashboards.
 
 
 ## Commercial options for monitoring include
