@@ -89,12 +89,18 @@ QUESTION [3] - What expectations for Availability (Uptime) do each persona have 
 
 QUESTION [4] - What monitoring is desired?
 
-Examples at each aspect of the system:
+Examples of usage statistics:
+
+* Cloud Regions
+* Cloud resource components (Nodes, ELB)
+* Files
 
 * User logins
 * User Groups
 * Rate of users abondoning workflows
 * Number of accesses over time
+
+Example of "shallow" metrics:
 
 * Number of incidents to investigate
 * TTD (Time To Detect) issue
@@ -102,9 +108,7 @@ Examples at each aspect of the system:
 * Frequency of incidents
 * Severity level of events
 
-* Cloud Regions
-* Cloud resource components (Nodes, ELB)
-* Files
+Examples of app-specific statistics:
 
 * Apps
 * Services
@@ -118,10 +122,10 @@ The discussion below traverses from left to right through this table:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="top"><td> Level of monitoring:
-   </td><td>1 - Shallow Individual Component Monitoring
-   </td><td>2 - In-Depth Monitoring on Different Levels
-   </td><td>3 - Next Generation Monitoring
-   </td><td>4 - Observability
+   </td><td><a href="#Level1">1 - Shallow Individual Component Monitoring</a>
+   </td><td><a href="#Level2">2 - In-Depth Monitoring on Different Levels</a>
+   </td><td><a href="#Level3">3 - Next Generation Monitoring</a>
+   </td><td><a href="#Level4">4 - Observability</a>
 </td></tr>
 <tr valign="top"><td> Investment (TCO):
    </td><td><a href="#[5]">Minimal [5]</a>
@@ -163,34 +167,44 @@ The discussion below traverses from left to right through this table:
 
 QUESTION: [5] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
 
+<a name="[6]"></a>
+<a name="Reactive"></a>
+
+### Level 0 - 
+
 Level 0 is to use only commands provided by default by the operating system being used.
+
+
+<a name="Level1"></a>
+
+### Level 1 - Reactive Monitoring
 
 Level 1 is to install FOSS monitoring utilities such as Prometheus with Grafana dashboards or Elastic Stack.
 
-   <ul>PROTIP: Instead of having each app team figure out how to install, configure, and manage monitoring, many enterprises <strong>staff a monitoring team</strong> to provide quick start expertise and reduce the time and frustration by each team.</ul>
+   <ul>PROTIP: Instead of having each app team figure out how to install, configure, and manage monitoring, many enterprises <strong>staff a monitoring team</strong> to provide quick start expertise and reduce the time and frustration by each team.
+   <br /><br />
+   [6] A <a href="#Reactive">"reactive" monitoring system</a> means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
+   </ul>
 
+
+<a name="Level2"></a>
 Level 2 is to install licensed monitoring utilities such as Datadog, Splunk, New Relic, Honeycomb, etc.
 
    <ul>NOTE: Some vendors (such as SolarWinds) specialize in network monitoring based on the SNMP (Simple Network Management Protocol). However, more and more data centers disable SNMP to improve security against external hacking. https://learn.hashicorp.com/tutorials/terraform/tfe-log-forwarding?in=terraform/recommended-patterns<br /><br />
    </ul>
 
+
+<a name="Level3"></a>
+
 Level 3 is to add <strong>tracing</strong> a single user's impact across components, plus PagerDuty for smart alerting.
 
-   <ul>The time that a specific HTTP request or a database call takes to go across various components is called a <strong>"span"</strong>. Each span is associated with <strong>attributes</strong>. Such  <strong>instrumentation</strong> is done by functions in an open-source Open Telemetry (OTel) library for each programming language. Spans are displayed in the program's console (STDOUT) and also exported to an application performance monitoring utility such as Datadog, which correlates the various spans on a visual dashboard. Spans can be nested, and have a parent-child relationship with other spans. This aggregating of spans is done by a "distributed tracing backend" such as Jaeger, . See https://open-telemetry.github.io/opentelemetry-python/getting-started.html
+   <ul>The time that a specific HTTP request or a database call takes to go across various components is called a <strong>"span"</strong>. Each span is associated with <strong>attributes</strong>. Such  <strong>instrumentation</strong> is done by functions in an open-source Open Telemetry (OTel) library for each programming language and <a target="_blank" href="https://github.com/open-telemetry/opentelemetry-python-contrib/tree/master/instrumentation">framework</a> (such as Flask for Python). Spans are displayed in the program's console (STDOUT) and also exported to an application performance monitoring utility such as Datadog, which correlates the various spans on a visual dashboard. Spans can be nested, and have a parent-child relationship with other spans. This aggregating of spans is done by a "distributed tracing backend" such as Jaeger, . See https://open-telemetry.github.io/opentelemetry-python/getting-started.html
    </ul>
+
+
+<a name="Level4"></a>
 
 Level 4 is to install Machine-Learning (AI) based "Observability" systems such as InsightFinder, StackState, etc.
 
-
-
-<a name="[6]"></a>
-<a name="Reactive"></a>
-
-## Reactive Monitoring
-
-QUESTION: [6] A  <a href="#Reactive">"reactive" monitoring system</a> means that significant issues may NOT be noticed until users complain (high TTD and low user satisfaction). Tracing of issues encountered by a specific user is not possible at this level. High TTR is likely because success at incident response depend on lucky guesses, every time there is an issue. And troublshooting is needed for <strong>every incident</strong> because issues are not avoided while time is spent on troubleshooting. This approach also requires long tenure of people, which is unlikely since turnover is usually high under these work conditions. So Uptime would be low, especially if investments in backup and restore are also minimal.
-
-
-## Commercial options for monitoring include
-
-Instrumentation is necessary to determine whether system are able to achieve scalability and availability objectives (and when they are not). Measurable reliability goals enable people to know when to stop tuning efforts. However, there are financial and operational tradeoffs for adopting each level of instrumentation. It is convenient and less stressful when systems are self-healing. But can the organization afford the time and expense to achieve that convenience? One can over-invest in achieving the ultimate level of observability. Over-investment in monitoring drains focus from feature development work. On the other hand, under-investment in monitoring can reduce development teams to “spinning their wheels” on guesses that waste precious time and create frustration which leads to turnover.
+   <ul>Instrumentation is necessary to determine whether system are able to achieve scalability and availability objectives (and when they are not). Measurable reliability goals enable people to know when to stop tuning efforts. However, there are financial and operational tradeoffs for adopting each level of instrumentation. It is convenient and less stressful when systems are self-healing. But can the organization afford the time and expense to achieve that convenience? One can over-invest in achieving the ultimate level of observability. Over-investment in monitoring drains focus from feature development work. On the other hand, under-investment in monitoring can reduce development teams to “spinning their wheels” on guesses that waste precious time and create frustration which leads to turnover.
+   </ul>
