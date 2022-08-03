@@ -112,27 +112,6 @@ Examples at each aspect of the system:
 * ACLs
 <br /><br />
 
-
-<a name="[5]"></a>
-
-## Minimal investment
-
-QUESTION: [5] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
-
-Level 0 is to use only commands provided by default by the operating system being used.
-
-Level 1 is to install FOSS monitoring utilities such as Prometheus with Grafana dashboards or Elastic Stack.
-
-Level 2 is to install licensed monitoring utilities such as Datadog, Splunk, New Relic, Honeycomb, etc.
-
-   <ul>NOTE: Some vendors (such as SolarWinds) specialize in network monitoring based on the SNMP (Simple Network Management Protocol). However, more and more data centers disable SNMP to improve security against external hacking.
-   </ul>
-
-Level 3 is to install the above plus PagerDuty for smart alerting.
-
-Level 4 is to install Machine-Learning (AI) based "Observability" systems such as InsightFinder, StackState, etc.
-
-
 ## Levels of monitoring investment
 
 The discussion below traverses from left to right through this table:
@@ -145,13 +124,13 @@ The discussion below traverses from left to right through this table:
    </td><td>4 - Observability
 </td></tr>
 <tr valign="top"><td> Investment (TCO):
-   </td><td>Minimal <a href="#[5]">[5]</a>
+   </td><td><a href="#[5]">Minimal [5]</a>
    </td><td>~3X
    </td><td>~10X
    </td><td>~20X
 </td></tr>
 <tr valign="top"><td> Approach:
-   </td><td><a name="Reactive"></a>Reactive<br />collections
+   </td><td><a href="#Reactive"></a>Reactive<br />collections
    </td><td>In-depth<br />trends
    </td><td>Responsive<br />alerts
    </td><td>Proactive<br />self-healing
@@ -178,7 +157,34 @@ The discussion below traverses from left to right through this table:
 
 <hr />
 
+<a name="[5]"></a>
+
+## Minimal investment
+
+QUESTION: [5] What do you consider to be the <strong>minimal</strong> investment in monitoring infrastructure?
+
+Level 0 is to use only commands provided by default by the operating system being used.
+
+Level 1 is to install FOSS monitoring utilities such as Prometheus with Grafana dashboards or Elastic Stack.
+
+   <ul>PROTIP: Instead of having each app team figure out how to install, configure, and manage monitoring, many enterprises <strong>staff a monitoring team</strong> to provide quick start expertise and reduce the time and frustration by each team.</ul>
+
+Level 2 is to install licensed monitoring utilities such as Datadog, Splunk, New Relic, Honeycomb, etc.
+
+   <ul>NOTE: Some vendors (such as SolarWinds) specialize in network monitoring based on the SNMP (Simple Network Management Protocol). However, more and more data centers disable SNMP to improve security against external hacking. https://learn.hashicorp.com/tutorials/terraform/tfe-log-forwarding?in=terraform/recommended-patterns<br /><br />
+   </ul>
+
+Level 3 is to add <strong>tracing</strong> a single user's impact across components, plus PagerDuty for smart alerting.
+
+   <ul>The time that a specific HTTP request or a database call takes to go across various components is called a <strong>"span"</strong>. Each span is associated with <strong>attributes</strong>. Such  <strong>instrumentation</strong> is done by functions in an open-source Open Telemetry (OTel) library for each programming language. Spans are displayed in the program's console (STDOUT) and also exported to an application performance monitoring utility such as Datadog, which correlates the various spans on a visual dashboard. Spans can be nested, and have a parent-child relationship with other spans. This aggregating of spans is done by a "distributed tracing backend" such as Jaeger, . See https://open-telemetry.github.io/opentelemetry-python/getting-started.html
+   </ul>
+
+Level 4 is to install Machine-Learning (AI) based "Observability" systems such as InsightFinder, StackState, etc.
+
+
+
 <a name="[6]"></a>
+<a name="Reactive"></a>
 
 ## Reactive Monitoring
 
