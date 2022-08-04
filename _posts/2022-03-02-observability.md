@@ -32,7 +32,7 @@ Example: 10 years * 50 weeks per year = 500 weeks
 
 <a name="[2]"></a>
 
-## User Demographics 
+## Usage Demographics 
 
 QUESTION [2] - Over the lifetime of this system, about how often (per week) do measurements of the system need to be considered by each persona in the company?
 
@@ -63,6 +63,10 @@ Example for a hypothetical 1,000-user scenario, where <strong>% Each</strong> is
    </td><td> 182 </td><td> 91,000 </td><td> -
    </td></tr>
 </table>
+
+The number of Lifetime accesses is used to understand how much history will be stored.
+
+QUESTION [_] - What is the corporate data retention policy which specifies how long historical data is maintained?
 
 
 ## Expectations
@@ -97,23 +101,42 @@ Examples of usage statistics:
 
 * User logins
 * User Groups
+* Number of accesses by each persona over time <a href="#[2]">[2]</a>
 * Rate of users abondoning workflows
-* Number of accesses over time
+<br /><br />
 
-Example of "shallow" metrics:
+Example of limits imposed by cloud vendors:
+
+* Number of endpoints to the AWS API gateway REST API service - errors after 300 endpoints.
+* Response time of Lambda API - if more than 30 seconds, a user of your service receives a 504 HTTP Error even though that Lambda transaction is still running in the background.
+* The AWS API gateway can have 10,000 (RPS limit) x 29 (timeout limit) = 290,000 open connections. Growth beyond that result in 429 "too many requests".
+* There are many other <a target="_blank" href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS service quotas</a>
+<br /><br />
+
+Example of "shallow" incident management metrics:
 
 * Number of incidents to investigate
 * TTD (Time To Detect) issue
 * TTR (Time to Remediate/Repair) issue
 * Frequency of incidents
 * Severity level of events
+<br /><br />
 
-Examples of app-specific statistics:
+Examples of <strong>app-specific</strong> statistics:
 
-* Apps
+* App size 
 * Services
 * Intentions
 * ACLs
+<br /><br />
+
+Examples of <strong>computing resource</strong> statistics:
+
+* CPU
+* Memory
+* Storage usage
+* Disk I/O
+* Network I/O
 <br /><br />
 
 ## Levels of monitoring investment
@@ -196,7 +219,7 @@ Level 2 is to install licensed monitoring utilities such as Datadog, Splunk, New
 
 <a name="Level3"></a>
 
-Level 3 is to add <strong>tracing</strong> a single user's impact across components, plus PagerDuty for smart alerting.
+Level 3 is to add <strong>tracing</strong> a single user's impact across components, plus PagerDuty or XMatters for smart alerting/incident management.
 
    <ul>The time that a specific HTTP request or a database call takes to go across various components is called a <strong>"span"</strong>. Each span is associated with <strong>attributes</strong>. Such  <strong>instrumentation</strong> is done by functions in an open-source Open Telemetry (OTel) library for each programming language and <a target="_blank" href="https://github.com/open-telemetry/opentelemetry-python-contrib/tree/master/instrumentation">framework</a> (such as Flask for Python). Spans are displayed in the program's console (STDOUT) and also exported to an application performance monitoring utility such as Datadog, which correlates the various spans on a visual dashboard. Spans can be nested, and have a parent-child relationship with other spans. This aggregating of spans is done by a "distributed tracing backend" such as Jaeger, . See https://open-telemetry.github.io/opentelemetry-python/getting-started.html
    </ul>
