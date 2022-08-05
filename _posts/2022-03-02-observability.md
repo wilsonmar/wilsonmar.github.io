@@ -107,6 +107,7 @@ Examples of usage statistics:
 
 Example of limits imposed by cloud vendors:
 
+* App executable size bytes on disk and when loaded in RAM
 * Number of endpoints to the AWS API gateway REST API service - errors after 300 endpoints.
 * Response time of Lambda API - if more than 30 seconds, a user of your service receives a 504 HTTP Error even though that Lambda transaction is still running in the background.
 * The AWS API gateway can have 10,000 (RPS limit) x 29 (timeout limit) = 290,000 open connections. Growth beyond that result in 429 "too many requests".
@@ -122,15 +123,7 @@ Example of "shallow" incident management metrics:
 * Severity level of events
 <br /><br />
 
-Examples of <strong>app-specific</strong> statistics:
-
-* App size 
-* Services
-* Intentions
-* ACLs
-<br /><br />
-
-Examples of <strong>computing resource</strong> statistics:
+Examples of <strong>computing resource</strong> usage statistics (at various points in time):
 
 * CPU
 * Memory
@@ -138,6 +131,17 @@ Examples of <strong>computing resource</strong> statistics:
 * Disk I/O
 * Network I/O
 <br /><br />
+
+PROTIP: Monitoring <strong>queues</strong> enables identification of bottlenecks which delay response time.
+
+Examples of <strong>app-specific</strong> statistics, for Consul:
+
+* KV count
+* Intentions
+* ACLs
+* etc.
+<br /><br />
+
 
 ## Levels of monitoring investment
 
@@ -165,8 +169,8 @@ The discussion below traverses from left to right through this table:
 <tr valign="top"><td> Mechanism:
    </td><td>Each component monitored using a different <strong>independent</strong> approach
    </td><td><strong>Dashboards</strong> display various components of each specific service
-   </td><td><strong>Interdependence</strong> among components apparent when a specific component is changed
-   </td><td>Anomalous behavior automatically identified and remediated before a crisis, using Machine Learning (AI)
+   </td><td><strong>Interdependence</strong> among components apparent when a specific component is changed for <strong>manual</strong> RCA
+   </td><td>Anomalous behavior automatically identified for automated RCA and remediation, using Machine Learning (AI), before a crisis
 </td></tr>
 <tr valign="top"><td> Deficiency: 
    </td><td>Extensive and frequent manual investigation <a href="#[6]">[6]</a>

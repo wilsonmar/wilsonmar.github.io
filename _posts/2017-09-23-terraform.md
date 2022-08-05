@@ -1894,11 +1894,13 @@ brew install terraformer
 
    https://cloudcraft.co/
 
-   https://www.hava.io/
+   https://www.hava.io/blog/aws-network-diagram-generator
+   AWS network diagram generator and visualize security group, traffic and open port details.
+   Generates to  Visio, draw.io or any VSDX.
 
    LucidChart
 
-   https://cloudviz.io/ for AWS
+   https://cloudviz.io/ for AWS at $10/month
 
 3. Deploy your existing CFT instead of trying to convert it:
 
