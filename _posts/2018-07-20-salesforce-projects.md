@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2018-07-20"
+file: "salesforce-projects"
 title: "Salesforce projects, superbadges, and sample apps"
 excerpt: "Build a portfolio of apps you built yourself"
 tags: [salesforce]
-date: "2018-07-20"
-file: "salesforce-projects"
 image:
   feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
   credit: Salesforce
