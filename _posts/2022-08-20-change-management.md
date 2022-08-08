@@ -37,7 +37,14 @@ Effective leadership is critical to successful change and requires active sponso
 
 <hr />
 
-## Certifications specifically about change mangement
+## Certifications about change mangement
+
+There are several out there.
+
+
+
+
+### Certifications specifically about change mangement
 
 * $213 <a target="_blank" href="https://gaqm.org/certifications/change_management/cpcm">Certified Problem and Change Manager (CPCM)</a> by the Global Association for Quality Management (GAQM), focuses specifically on identifying and fixing problems in an organization - those working with development processes or overseeing product life cycles. It covers identifying areas for change, implementing that change, encouraging employee buy-in, and creating resilient strategies. It's based on <a target="_blank" href="https://itprofessionalism.org/about-it-professionalism/competences/the-e-competence-framework/">EU's e-Competency Framework</a> organized around macro processes PLAN – BUILD – RUN – ENABLE – MANAGE.
 
@@ -57,7 +64,7 @@ Effective leadership is critical to successful change and requires active sponso
 
    The exam covers approaches to helping others engage with organizational change, aligning changes with departmental or organizational changes, developing change plans, and creating relationships between change professionals in the organization.
 
-* Three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s Change Manager Competency Model and their <a target="_blank" href="https://change-management-institute.com/cmbok/">2015 Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the "Effective Change Manager's Handbook". 
+* Three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s Change Manager Competency Model and their <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the $74.95 "Effective Change Manager's Handbook". 
 
    <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
 
@@ -72,9 +79,9 @@ Effective leadership is critical to successful change and requires active sponso
 
    <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
 
-* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>e Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">VIDEO</a>. $300 for a retake.
+* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>e Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> 
    
-   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management:<br />
+   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
 
    1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
 
@@ -85,6 +92,14 @@ Effective leadership is critical to successful change and requires active sponso
    4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
 
    5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
+   <br /><br />
+
+* $2,999 for "the most comprehensive online change management course available today" - 11 hours of video online from <a target="_blank" href="https://www.linkedin.com/in/robertlbogue/">Rob Bogue</a>'s <a target="_blank" href="https://confidentchangemanagement.com/change-models/acmp-standard-for-change-management/">confidentchangemanagement.com</a> provides a shortcoming of the ACMP Standard:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1659890660/chg-acmp-.3246x2098_lfdvsj.png"><img align="right" alt="ACMP Flow" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1659890660/chg-acmp-.3246x2098_lfdvsj.png"></a>
+   <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:05]</a> The Standard is ... broader in structure than most models. While the Standard is more detailed than most models, it doesn't appear to help practitioners know what to do. 
+   <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:47]</a> The Standard model is completely process-focused and therefore ignores the skill of the practitioner. Other than development of strategies for communication, stakeholders, and learning, the Standard is quiet in terms of how to motivate stakeholders to want to do the change. This is curious since most of the effort in a change project is developing the desire the change. However, this gets minimal attention in the Standard. Ultimately, the Standard is a tool to understand the project management aspects of change, with minimal support for the people aspects of change.
+
 
 * $1,495 for members of The Association for Talent Development (ATD) for the <a target="_blank" href="https://www.td.org/education-courses/change-management-certificate">ATD Change Management Certificate</a> trains HR/learning professionals on how to improve efficiency, productivity, and service quality. The (six-session over 12 hours, online or 2 days in person) covers: implementing change processes, change management tools, qualities of a change leader, and how to encourage the organization to embrace change. Learn how to conduct diagnostic assessments, define change efforts, analyze data, provide feedback, understand change management theories, select the right change model, create implementation designs, develop communication plans, and manage any consequences of change.
    
@@ -97,7 +112,7 @@ Effective leadership is critical to successful change and requires active sponso
    1. Awareness of the need for change
    2. Desire to participate and support the change
    3. Knowledge on how to change
-   4. Ability to implement desired skills and behaviors
+   4. Ability to implement desired skills and behaviors (adopt and change)
    5. Reinforcement to sustain the change
    <br /><br />
 
@@ -143,3 +158,5 @@ Effective leadership is critical to successful change and requires active sponso
 
 https://www.youtube.com/watch?v=feK9hkJ9p2E
 DevOps and the Future of Change Management - YouTube
+
+[4] https://www.inc.com/marcel-schwantes/5-things-the-most-confident-leaders-do-to-manage-change.html
