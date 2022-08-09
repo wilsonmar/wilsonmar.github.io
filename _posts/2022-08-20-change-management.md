@@ -40,7 +40,7 @@ Thus, effective leadership is critical to successful change and requires active 
 <a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
 Deming describes use of what he calls the Ishikawa diagram, which others call a Fishbone or Herringbone diagram.
 
-1. The starting point is a short description of a <strong>problem</strong>, in a box at the right side of the page.
+1. The starting point is a short description of a <strong>single problem</strong>, in a box at the right side of the page.
 
    State as a question, such as "why did the website crash"?
 
@@ -49,14 +49,15 @@ Deming describes use of what he calls the Ishikawa diagram, which others call a 
    * Cycle Time too slow
    * Time to Retore too high
    * Changes take too much time
+   * People are waiting for others too often
+   * Too many work items "dropped through the cracks" - no accountability (no aging reports for management)
 
+   * Too many work items for the number of resources assigned
    * Changes take too much effort
    * Costs too high
-
-   * Quality (Availability) too low
+   
+   * Quality (Availability) too low - not meeting SLAs/SLOs
    * Too many errors 
-   * Too many work items are "dropping through the cracks" - no accountability (no aging reports for management)
-   * Too many work items for the number of resources assigned
    <br /><br />
 
 2. Draw a horizontal line and "ribs" to each category.
@@ -84,6 +85,12 @@ Deming describes use of what he calls the Ishikawa diagram, which others call a 
    Have each team member silently assign a priority to each cause.
 
 7. Create an Action Register to track follow-up on ideas.
+
+   A common action is to collect more 
+
+8. Prioritize actions
+
+9. Define countermeasures (Step 5 of A3)
 
 <hr />
 
