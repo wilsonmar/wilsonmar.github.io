@@ -33,7 +33,42 @@ Research has shown that major transformational change has only a 30% chance of m
 
 3) Build support – Left to their own devices, those with power in the old system will actively (though not always visibly) defend the current state and those who will benefit the most from the new system will tend to be more passive in their support. In writing “The Prince”, Machiavelli hoped to provide the reader with an understanding of the challenges that lay ahead so that they may be better prepared. Therefore it is a critical role of the sponsor to work at closing the gap by reducing resistance from the first group and building support from the second.
 
-Effective leadership is critical to successful change and requires active sponsorship throughout the change, expecting and managing resistance, and building support. 
+Thus, effective leadership is critical to successful change and requires active sponsorship throughout the change, expecting and managing resistance, and building support. 
+
+## Root Cause (Fishbone) Diagram
+
+<a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
+Deming describes use of what he calls the Ishikawa diagram, which others call a Fishbone or Herringbone diagram.
+
+1. The starting point is a short description of a problem, in a box at the right side of the page.
+
+   State as a question, such as "why did the website crash"?
+
+2. Draw a horizontal line and "ribs" to each category.
+
+3. Define categories (buckets) to prompt brainstorming of causes:
+
+   My six-category example: Surroundings/Environment, People/Skill, Measurement/Information, Method/Process, Machine/System/Equipment, Material/Supplier
+
+   Common categories: People, Information, System, Process (PIPS)
+
+   Common categores in services: Surroundings, Suppliers, Systems, Skill
+
+   Common categories in manufacturing: Man, Machine, Material, Method, Measurement
+
+4. Brainstorm causes under each category, asking Why 5 times.
+
+   During this step, don't throw out suggestions that may have little impact on the problem.
+   
+   Remember this is partly a team-building exercise, where you're building fun memories.
+
+5. Review categories.
+
+6. Analyze results.
+
+   Have each team member silently assign a priority to each cause.
+
+7. Create an Action Register to track follow-up on ideas.
 
 <hr />
 
@@ -52,7 +87,21 @@ There are several out there.
 
    Pass 70% of 40 questions in 1 hour online by ProctorU. Closed book. Valid for life.
 
-* $245 <a target="_blank" href="https://www.devopsinstitute.com/certifications/devops-leader/">DevOps Leader (DOL)</a> for a <a target="_blank" href="https://www.bmc.com/blogs/transformational-leadership/">transformational leadership approach</a> to make an impact within their organization by implementing DevOps.
+* $245 <a target="_blank" href="https://www.devopsinstitute.com/certifications/devops-leader/">DevOps Leader (DOL)</a> for a <a target="_blank" href="https://www.bmc.com/blogs/transformational-leadership/">transformational leadership approach</a> to make an impact within their organization by implementing DevOps. Answer 65% of 40 multiple-choice questions in an hour, online, with open book. Leading people through a DevOps evolution requires new skills, tools, innovative thinking, and transformational leadership. Leaders up, down and across an organization must align and collaborate to break down silos and evolve the organization. The exam and <a target="_blank" href="https://www.devopsinstitute.com/wp-content/uploads/2021/01/DevOps-Leader-v2.0_Course-Description_07.2020.pdf">course</a> highlights the <strong>human dynamics</strong> of cultural change and equips participants with practices, methods, and tools to engage people across the DevOps spectrum, such as <strong>Value Stream Mapping</strong>. Topics include:
+
+   * DevOps and time to value
+   * Mindset and mental models
+   * Key differences between DevOps IT and traditional IT
+   * Target operating models and organizational design
+   * Performance management, rewards and motivation
+   * Preparing investment cases
+   * Focusing on value outcomes
+   * Ideas for organizing workflows
+   * Empowerment and participation
+   * Defining meaningful metrics
+   * Value stream mapping
+   * Driving cultural and behavioral change
+   <br /><br />
 
 * $300 <a target="_blank" href="https://www.msicertified.com/business/change-management-certification/">Change Management Specialist (CMS)</a> from MSI (Management and Strategy Institute) is 2-hour online. Fee includes self-paced online training materials that covers basic change management principles.
 
@@ -133,6 +182,10 @@ There are several out there.
       * Activate Sustainment - What is needed to ensure the change sticks?
       * Transfer Ownership - Who will assume ownership and sustain outcomes?
       <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
+<a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage Consulting</a>
+
 
 ## Certifications with a change management component:
 
