@@ -15,6 +15,10 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+> The importance of effective Change Management can’t be understated.  Positive changes to a business can help it be more efficient, less wasteful, and more productive. Organizational change management is essentially a wide-scale plan that aims to increase individual and organizational effectiveness by making use of <strong>behavioral science</strong> technology. The purpose of this is to reduce the chances of negative fallout in a business and to put more emphasis on the <strong>people side</strong> of how an organization can change. -- <a href="#MSI">MSI</a>
+
+But change management isn't easy.
+
 The most common quote I've seen about change management is from the book "The Prince" (originally in 16th century Italian) by Niccolo Machiavelli, considered by many as the father of modern political science:
 
 > … there is nothing more difficult and dangerous, or more doubtful of success, than an attempt to introduce a new order of things…
@@ -133,9 +137,10 @@ There are several out there.
    * Driving cultural and behavioral change
    <br /><br />
 
+<a name="MSI"></a>
+
 * $300 <a target="_blank" href="https://www.msicertified.com/business/change-management-certification/">Change Management Specialist (CMS)</a> from MSI (Management and Strategy Institute) is 2-hour online. Fee includes self-paced online training materials that covers basic change management principles.
 
-   "The importance of effective Change Management can’t be understated.  Positive changes to a business can help it be more efficient, less wasteful, and more productive.  Organizational change management is essentially a wide-scale plan that aims to increase individual and organizational effectiveness by making use of behavioral science technology. The purpose of this is to reduce the chances of negative fallout in a business and to put more emphasis on the “people side” of how an organization can change.
 
 * $340 <a target="_blank" href="https://apmg-international.com/product/change-management">Organizational Change Management Foundation</a> (among <a target="_blank" href="https://apmg-international.com/search?search_api_views_fulltext=contact%20OR%20contact%20OR%20apmg">other certifications administered by APGM-International</a>) 
 
