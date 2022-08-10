@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-08-20"
+date: "2022-08-05"
 file: "change-management"
 title: "Change Management (for IT)"
 excerpt: "This may be the most important skill for Digital Transformation or to implement any change"
@@ -27,15 +27,21 @@ Research has shown that major transformational change has only a 30% chance of m
 
 [2] Machiavelli directly addresses three core principles of successful change management:
 
-1) Change is a process – Change is not an announcement or an event, it is a process. It is difficult for people to put their faith in something that they have not experienced. This is why it is critical to have active and visible sponsorship throughout the change. More than one change has found itself floundering because the sponsors observed substantial progress and moved on to the next issue, trusting in ‘momentum’ to carry it the rest of the way. The reality is that as soon as the sponsors lose visibility, the momentum shifts to the defenders of the old way and hard-earned gains are soon lost.
+<strong>1) Change is a process</strong> – Change is NOT just an announcement or an event, it is a process. It is difficult for people to put their faith in something that they have not experienced. This is why it is critical to have active and visible <strong>sponsorship</strong> throughout the change. More than one change has found itself floundering because the sponsors observed substantial progress and moved on to the next issue, trusting in ‘momentum’ to carry it the rest of the way. The reality is that as soon as the sponsors lose visibility, the momentum shifts to the defenders of the old way and hard-earned gains are soon lost.
 
-2) Expect resistance – Major change alters power structures, shifts responsibilities, and crosses organizational boundaries, which affects real people with real influence. These real people get their real influence from the existing power structures, responsibilities and organizational roles.  Therefore, it is dangerous to underestimate the power of the desire to hold onto the current state. Machiavelli provided this observation as a reminder that people tend to work in their own self-interest and that the fear of losing something is generally stronger than the hope of gaining something. In other words, don’t waste energy wondering why people are resisting and focus your efforts on leading through the resistance.
+<strong>2) Expect resistance</strong> – Major change alters power structures, shifts responsibilities, and crosses organizational boundaries, which affects real people with real influence. These real people get their real influence from the existing power structures, responsibilities, and organizational roles.  Therefore, it is dangerous to underestimate the power of the desire to hold onto the current state. Machiavelli provided this observation as a reminder that people tend to work in their own self-interest and that the fear of losing something is generally stronger than the hope of gaining something. In other words, don’t waste energy wondering why people are resisting and focus your efforts on leading through the resistance.
 
-3) Build support – Left to their own devices, those with power in the old system will actively (though not always visibly) defend the current state and those who will benefit the most from the new system will tend to be more passive in their support. In writing “The Prince”, Machiavelli hoped to provide the reader with an understanding of the challenges that lay ahead so that they may be better prepared. Therefore it is a critical role of the sponsor to work at closing the gap by reducing resistance from the first group and building support from the second.
+<strong>3) Build support</strong> – Left to their own devices, those with power in the old system will actively (though not always visibly) defend the current state and those who will benefit the most from the new system will tend to be more passive in their support. In writing “The Prince”, Machiavelli hoped to provide the reader with an understanding of the challenges that lay ahead so that they may be better prepared. Therefore it is a critical role of the sponsor to work at closing the gap by reducing resistance from the first group and building support from the second.
 
 Thus, effective leadership is critical to successful change and requires active sponsorship throughout the change, expecting and managing resistance, and building support. 
 
-## Root Cause (Fishbone) Diagram
+<hr />
+
+## Tools
+
+There are several conceptual and practical tools:
+
+### Root Cause (Fishbone) Diagram
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
 Deming describes use of what he calls the Ishikawa diagram, which others call a Fishbone or Herringbone diagram.
@@ -60,7 +66,9 @@ Deming describes use of what he calls the Ishikawa diagram, which others call a 
    * Too many errors 
    <br /><br />
 
-2. Draw a horizontal line and "ribs" to each category.
+2. Draw a horizontal line and "ribs" to each category. When working on-site, this can be on a large white-board where participants paste sticky notes.
+
+   A "fishbone" provides a visual approach to organize ideas into categories.
 
 3. Define categories (buckets) to prompt brainstorming of causes:
 
