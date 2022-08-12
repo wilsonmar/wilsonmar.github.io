@@ -29,6 +29,12 @@ Research has shown that major transformational change has only a 30% chance of m
 
 > Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
 
+## Formula
+
+
+
+## Summary
+
 [2] Machiavelli directly addresses three core principles of successful change management:
 
 <strong>1) Change is a process</strong> – Change is NOT just an announcement or an event, it is a process. It is difficult for people to put their faith in something that they have not experienced. This is why it is critical to have active and visible <strong>sponsorship</strong> throughout the change. More than one change has found itself floundering because the sponsors observed substantial progress and moved on to the next issue, trusting in ‘momentum’ to carry it the rest of the way. The reality is that as soon as the sponsors lose visibility, the momentum shifts to the defenders of the old way and hard-earned gains are soon lost.
@@ -38,71 +44,6 @@ Research has shown that major transformational change has only a 30% chance of m
 <strong>3) Build support</strong> – Left to their own devices, those with power in the old system will actively (though not always visibly) defend the current state and those who will benefit the most from the new system will tend to be more passive in their support. In writing “The Prince”, Machiavelli hoped to provide the reader with an understanding of the challenges that lay ahead so that they may be better prepared. Therefore it is a critical role of the sponsor to work at closing the gap by reducing resistance from the first group and building support from the second.
 
 Thus, effective leadership is critical to successful change and requires active sponsorship throughout the change, expecting and managing resistance, and building support. 
-
-<hr />
-
-## Tools
-
-There are several conceptual and practical tools:
-
-### Root Cause (Fishbone) Diagram
-
-<a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
-Deming describes use of what he calls the Ishikawa diagram, which others call a Fishbone or Herringbone diagram.
-
-1. The starting point is a short description of a <strong>single problem</strong>, in a box at the right side of the page.
-
-   State as a question, such as "why did the website crash"?
-
-   Alternately, the problem can be associated with a KPI (Key Performance Indicator), such as:
-
-   * Cycle Time too slow
-   * Time to Retore too high
-   * Changes take too much time
-   * People are waiting for others too often
-   * Too many work items "dropped through the cracks" - no accountability (no aging reports for management)
-
-   * Too many work items for the number of resources assigned
-   * Changes take too much effort
-   * Costs too high
-   
-   * Quality (Availability) too low - not meeting SLAs/SLOs
-   * Too many errors 
-   <br /><br />
-
-2. Draw a horizontal line and "ribs" to each category. When working on-site, this can be on a large white-board where participants paste sticky notes.
-
-   A "fishbone" provides a visual approach to organize ideas into categories.
-
-3. Define categories (buckets) to prompt brainstorming of causes:
-
-   My six-category example: Surroundings/Environment, People/Skill, Measurement/Information, Method/Process, Machine/System/Equipment, Material/Supplier
-
-   Common categories: People, Information, System, Process (PIPS)
-
-   Common categores in services: Surroundings, Suppliers, Systems, Skill
-
-   Common categories in manufacturing: Man, Machine, Material, Method, Measurement
-
-4. Brainstorm causes under each category, asking Why 5 times.
-
-   During this step, don't throw out suggestions that may have little impact on the problem.
-   
-   Remember this is partly a team-building exercise, where you're building fun memories.
-
-5. Review categories.
-
-6. Analyze results.
-
-   Have each team member silently assign a priority to each cause.
-
-7. Create an Action Register to track follow-up on ideas.
-
-   A common action is to collect more 
-
-8. Prioritize actions
-
-9. Define countermeasures (Step 5 of A3)
 
 <hr />
 
@@ -229,6 +170,91 @@ There are several out there.
    https://www.cio.com/article/228204/pmp-project-management-certification-guide.html
 
 * $3,100 <a target="_blank" href="#Certifications">ITIL4 Foundation from Axelos</a> includes a Service Management category
+
+
+## Tools
+
+There are several conceptual and practical tools:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yuH35ottILU">7 QC Tools</a> used in Six Sigma:
+
+1. <a name="Fishbone">Fishbone Diagram</a>
+2. Check Sheets
+3. Pareto Charts
+4. Histogram
+5. Flowchart
+6. Scatter Diagrams
+7. Control Charts
+
+<a name="FishBone"></a>
+
+### Root Cause (Fishbone) Diagram
+
+<a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
+Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which others call a Fishbone or Herringbone diagram.
+
+1. The starting point is a short description of a <strong>single problem</strong>, in a box at the right side of the page.
+
+   State as a question, such as "why did the website crash"?
+
+   Alternately, the problem can be associated with a KPI (Key Performance Indicator), such as:
+
+   * Cycle Time too slow
+   * Time to Retore too high
+   * Changes take too much time
+   * People are waiting for others too often
+   * Too many work items "dropped through the cracks" - no accountability (no aging reports for management)
+
+   * Too many work items for the number of resources assigned
+   * Changes take too much effort
+   * Costs too high
+   
+   * Quality (Availability) too low - not meeting SLAs/SLOs
+   * Too many errors 
+   <br /><br />
+
+2. Draw a horizontal line and "ribs" to each category. When working on-site, this can be on a large white-board where participants paste sticky notes.
+
+   A "fishbone" provides a visual approach to organize ideas into categories.
+
+3. Define categories (buckets) to prompt brainstorming of causes:
+
+   My six-category example: Surroundings/Environment, People/Skill, Measurement/Information, Method/Process, Machine/System/Equipment, Material/Supplier
+
+   Common categories: People, Information, System, Process (PIPS)
+
+   Common categores in services: Surroundings, Suppliers, Systems, Skill
+
+   Common categories in manufacturing: Manpower, Money, Methods, Machine/Materials, Metrics, Mother Nature (culture)
+
+   https://www.youtube.com/watch?v=XinW5dwuKsI
+
+4. Brainstorm causes under each category, asking Why 5 times.
+
+   During this step, don't throw out suggestions that may have little impact on the problem.
+   
+   Remember this is partly a team-building exercise, where you're building fun memories.
+
+5. Review categories.
+
+6. Analyze results.
+
+   Have each team member silently assign a priority to each cause.
+
+7. Create an Action Register to track follow-up on ideas.
+
+   A common action is to collect more 
+
+8. Prioritize actions
+
+9. Define countermeasures (Step 5 of A3)
+
+<hr />
+
+<a name="ReverseFishBone"></a>
+
+### Reverse Fishbone Diagram
+
 
 
 <hr />
