@@ -32,6 +32,22 @@ Research has shown that major transformational change has only a 30% chance of m
 ## Formula
 
 
+## Stages
+
+<a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
+
+Lewin describes three stages:
+
+Prosci describes five stages:
+
+Stages:
+
+Kotta: 
+
+Brooks describes a Neutral Zone between Ending, Losing, and Letting Go on the way to a New Beginning.
+
+
 
 ## Summary
 
@@ -178,12 +194,12 @@ There are several conceptual and practical tools:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=yuH35ottILU">7 QC Tools</a> used in Six Sigma:
 
-1. <a name="Fishbone">Fishbone Diagram</a>
+1. Flowchart
 2. Check Sheets
-3. Pareto Charts
-4. Histogram
-5. Flowchart
-6. Scatter Diagrams
+3. Pareto Charts with a cumultive line (to separate the vital few from the trivial many)
+4. <a name="Fishbone">Fishbone Diagram</a> (5 Whys)
+5. Histogram
+6. Scatter Diagrams (XY Scatter Chart) and Correlation
 7. Control Charts
 
 <a name="FishBone"></a>
@@ -225,7 +241,7 @@ Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which other
 
    Common categores in services: Surroundings, Suppliers, Systems, Skill
 
-   Common categories in manufacturing: Manpower, Money, Methods, Machine/Materials, Metrics, Mother Nature (culture)
+   Common categories in manufacturing 8M's: Manpower, Money, Machine/Materials, Methods, Maintenance, Metrics, Mother Nature (culture), Management
 
    https://www.youtube.com/watch?v=XinW5dwuKsI
 
