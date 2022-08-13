@@ -29,6 +29,8 @@ Research has shown that major transformational change has only a 30% chance of m
 
 > Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
 
+Kurt Lewin uses the word "subversion" not to imply any sinister motive, but to state what happens when change isn’t reinforced. https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/
+
 ## Formula
 
 
@@ -37,9 +39,32 @@ Research has shown that major transformational change has only a 30% chance of m
 <a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
 
-Lewin describes three stages:
+<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages 
+to conceptualize broad categories of the change process before discovering more detailed models:
 
-Prosci describes five stages:
+   <ul>Unfreezing, Change and Transition, Refreezing</ul>
+
+The Prosci Process for organizational change has <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a>:
+
+   1. Prepare Approach - deliverable Change Management Strategy establishes the approach needed to deliver desired project outcomes.
+      * Define Success - What are we trying to achieve
+      * Define Impact - Who has to do their jobs differently and how?
+      * Define Approach - What will it take to achieve success?
+      <br /><br />
+   2. Manage Change - deliverable Master Change Management Plan consolidates individual plans and serves as the guiding document for the change management team.
+      * Plan and Act - What wil we do to prepare, eqipt, and support people?
+      * Track Performance - How are we doing?
+      * Adapt Actions - What adjustments do we need to make?
+      <br /><br />
+   3. Sustain Outcomes - the deliverable Change Management Closeout documents the change performance status, plus prepares the organization to own and sustain change outcomes.
+      * Review Performance - Where are we? Are we done yet?
+      * Activate Sustainment - What is needed to ensure the change sticks?
+      * Transfer Ownership - Who will assume ownership and sustain outcomes?
+      <br /><br />
+
+<a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
+<a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage Consulting</a>
+
 
 Stages:
 
@@ -156,27 +181,6 @@ There are several out there.
    4. Ability to implement desired skills and behaviors (adopt and change)
    5. Reinforcement to sustain the change
    <br /><br />
-
-   The Prosci Process for organizational change has <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a>:
-
-   1. Prepare Approach - deliverable Change Management Strategy establishes the approach needed to deliver desired project outcomes.
-      * Define Success - What are we trying to achieve
-      * Define Impact - Who has to do their jobs differently and how?
-      * Define Approach - What will it take to achieve success?
-      <br /><br />
-   2. Manage Change - deliverable Master Change Management Plan consolidates individual plans and serves as the guiding document for the change management team.
-      * Plan and Act - What wil we do to prepare, eqipt, and support people?
-      * Track Performance - How are we doing?
-      * Adapt Actions - What adjustments do we need to make?
-      <br /><br />
-   3. Sustain Outcomes - the deliverable Change Management Closeout documents the change performance status, plus prepares the organization to own and sustain change outcomes.
-      * Review Performance - Where are we? Are we done yet?
-      * Activate Sustainment - What is needed to ensure the change sticks?
-      * Transfer Ownership - Who will assume ownership and sustain outcomes?
-      <br /><br />
-
-<a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
-<a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage Consulting</a>
 
 
 ## Certifications with a change management component:
