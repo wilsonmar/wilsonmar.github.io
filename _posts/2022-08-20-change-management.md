@@ -27,17 +27,38 @@ Implementing innovative solutions is hard work, and it requires strong collabora
 
 Research has shown that major transformational change has only a 30% chance of meeting all or most of the results expected. 
 
+Machiavelli continues ...
+
 > Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
 
 Kurt Lewin uses the word "subversion" not to imply any sinister motive, but to state what happens when change isn’t reinforced. https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/
 
-## Formula
+## The Formula
 
+We can predict whether a change will actually happen by answering this question asked by
 
-## Stages
+> Is the pain (cost) of making a change (X) less than the pain of staying the same?
+
+Beckhard and Harris suggests:
+
+<strong>X < (A + B + D)</strong>
+
+   A = Level of dissatisfaction with the status quo
+
+   B = Desirability of the proposed or end state (such as FOMO)
+
+   D = Practicality of the change
+
+   X = Cost of changing
+
+<hr />
+
+## Stages of change
 
 <a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
+
+(At the bottom of the diagram), Brooks describes a Neutral Zone between Ending, Losing, and Letting Go on the way to a New Beginning.
 
 <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages 
 to conceptualize broad categories of the change process before discovering more detailed models:
@@ -62,15 +83,29 @@ The Prosci Process for organizational change has <a target="_blank" href="https:
       * Transfer Ownership - Who will assume ownership and sustain outcomes?
       <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
-<a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage Consulting</a>
-
+   <a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
+   <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage  Consulting</a>
 
 Stages:
 
-Kotta: 
+   1. In precontemplation, the individual is completely unwilling to consider a change.
+   2. During contemplation, actors are planning for change - how do you setup the right systems to increase the chances of success.
+   3. Preparation.
+   4. Action against previous holding things in one’s hands.
+   5. Maintenance.
+   <br /><br />
 
-Brooks describes a Neutral Zone between Ending, Losing, and Letting Go on the way to a New Beginning.
+Kotter:
+
+   1. Inefficiency
+   2. Coalition
+   3. Create Vision
+   4. Communicate Vision
+   5. Obstacles
+   6. Short-Term Gains
+   7. Build
+   8. Anchor
+   <br /><br />
 
 
 
