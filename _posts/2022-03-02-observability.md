@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-03-02"
+date: "2022-08-02"
 file: "monitoring"
 title: "Monitoring infrastructure"
 excerpt: "Toward Observability"
@@ -14,6 +14,8 @@ comments: true
 <i>{{ page.excerpt }}</i> 
 {% include l18n.html %}
 {% include _toc.html %}
+
+> "The database is a cache of the logs."
 
 Different vendors have varying definitions about "Observability".
 
@@ -235,3 +237,7 @@ Level 4 is to install Machine-Learning (AI) based "Observability" systems such a
 
    <ul>Instrumentation is necessary to determine whether system are able to achieve scalability and availability objectives (and when they are not). Measurable reliability goals enable people to know when to stop tuning efforts. However, there are financial and operational tradeoffs for adopting each level of instrumentation. It is convenient and less stressful when systems are self-healing. But can the organization afford the time and expense to achieve that convenience? One can over-invest in achieving the ultimate level of observability. Over-investment in monitoring drains focus from feature development work. On the other hand, under-investment in monitoring can reduce development teams to “spinning their wheels” on guesses that waste precious time and create frustration which leads to turnover.
    </ul>
+
+## Resources
+
+https://f.hubspotusercontent20.net/hubfs/516677/monitoring-maturity-model-2020.pdf

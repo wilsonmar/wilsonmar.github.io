@@ -5,17 +5,21 @@ file: "change-management"
 title: "Change Management (for IT)"
 excerpt: "This may be the most important skill for Digital Transformation or to implement any change"
 tags: [management]
-image:
-  feature: https://user-images.githubusercontent.com/300046/43513032-f7cb0bd2-9539-11e8-88db-f3bff1cbfe17.jpg
-  credit: Salesforce
-  creditlink: 
+image: # pic-black-bkg-white-cloud_1920x1200
+  feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
+  credit: Theme Bin
+  creditlink: http://www.themebin.com/hd-wallpapers/wandering-clouds-hd-wallpaper/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-> The importance of effective Change Management can’t be understated.  Positive changes to a business can help it be more efficient, less wasteful, and more productive. Organizational change management is essentially a wide-scale plan that aims to increase individual and organizational effectiveness by making use of <strong>behavioral science</strong> technology. The purpose of this is to reduce the chances of negative fallout in a business and to put more emphasis on the <strong>people side</strong> of how an organization can change. -- <a href="#MSI">MSI</a>
+> Organizational Change Management (OCM) is essentially a wide-scale plan that aims to increase individual and organizational effectiveness by making use of <strong>behavioral science</strong> technology. The purpose of this is to reduce the chances of negative fallout in a business and to put more emphasis on the <strong>people side</strong> of how an organization can change. -- <a href="#MSI">MSI</a>
+
+> Organizational Change Management is commonly referred to as communication and training, but that is a very limited and inaccurate description. Change management has to do with the people side of the transformation. How jobs are going to be redefined. New organizational structures. Change impacts: understanding how people's roles and responsibilities are going to change. [Lack of attention to Change Management] is the number one reason why a majority of transformations fail -- because they don't address Organizational Change Management. --<a target="_blank" href="youtube.com/watch?v=0aUKyxkVgGk&list=RDCMUCJ3oB3ghEUdGhHnXZD4Dx3g&start_radio=1&rv=0aUKyxkVgGk&t=5m48s">VIDEO</a>: <a target="_blank" href="https://www.linkedin.com/in/erickimberling/">Eric Kimberling of consultancy Third Stage</a>.
+
+Positive changes to a business can help it be more efficient, less wasteful, and more productive. 
 
 But change management isn't easy.
 
@@ -33,23 +37,35 @@ Machiavelli continues ...
 
 Kurt Lewin uses the word "subversion" not to imply any sinister motive, but to state what happens when change isn’t reinforced. https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/
 
-## The Formula
+{% include whatever.html %}
 
-We can predict whether a change will actually happen by answering this question asked by
+## The Formula Predicting Success
+
+We can predict whether a change will actually happen by answering a question:
 
 > Is the pain (cost) of making a change (X) less than the pain of staying the same?
 
-Beckhard and Harris suggests:
+Beckhard and Harris suggest a formula like this:
 
-<strong>X < (A + B + D)</strong>
+<strong>X < (A + E + P)</strong>
 
-   A = Level of dissatisfaction with the status quo
+   A = Level of <strong>dissatisfaction</strong> with the status quo
 
-   B = Desirability of the proposed or end state (such as FOMO)
+   E = Desirability of the proposed or <strong>end state</strong>
 
-   D = Practicality of the change
+   P = <strong>Practicality</strong> of the change
 
    X = Cost of changing
+
+The above means that we can tilt the odds by:
+
+   * Raising (recognizing/admitting) to all the cost of the existing environment and processes
+
+   * Ensuring that all have a clear understanding of the future
+
+   * Ensuring that each persona understands their role in getting to that future
+
+   * Reducing the cost of changing through experienced support and automation
 
 <hr />
 
@@ -65,7 +81,7 @@ to conceptualize broad categories of the change process before discovering more 
 
    <ul>Unfreezing, Change and Transition, Refreezing</ul>
 
-The Prosci Process for organizational change has <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a>:
+There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a> in the <a name="Prosci">Prosci Process for organizational change</a>:
 
    1. Prepare Approach - deliverable Change Management Strategy establishes the approach needed to deliver desired project outcomes.
       * Define Success - What are we trying to achieve
@@ -169,7 +185,6 @@ There are several out there.
 
    <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
 
-
    The exam focuses on key skills for change management, including motivating employees, engaging stakeholders, assembling teams, and delivering on effective change strategies. 
    
    The <a target="_blank" href="https://change-management-institute.com/acm-foundation/">Foundational</a> $575 foundation level</a> (discounted to $450 with CMI-endorsed training at Prosi or <a target="_blank" href="https://apmg-international.com/product/change-management">APMG</a>) requires a written application essay explaining capabilities and competencies, along with a reference from a manager who has “directly observed your behavior in a change management role.” You’ll also need to complete relevant change management education, either through a CMI-endorsed course or one that aligns with the <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
@@ -180,7 +195,7 @@ There are several out there.
 
    <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
 
-* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>e Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> 
+* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> 
    
    <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
 
@@ -207,6 +222,10 @@ There are several out there.
 * $3,100 <a target="_blank" href="https://www.imaworldwide.com/aim-change-management-certification">AIM Change Management Professional (ACMP) certification</a> is obtained after a 3-day training (virtual or on-site) by consultant Don Harrison. "it’s a day longer than most, because there is so much to know — including how to manage leaders and how to deal with the power and politics of change". 
 
    Accelerating Implementation Methodology (AIM) focuses on the human side of risk; rather than look at how technology or software fails us, it encourages leaders to strengthen processes that involve employees, given that human-error is one of the biggest risks for failure. The certification is targeted at human resources, organizational development, IT, and business and clinical leaders, as well as project managers.
+
+   <a name="Prosci"></a>
+   
+   ### Prosci
 
 * The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder Jeff Hiatt after studying the change patterns of more than 700 organizations:
 
