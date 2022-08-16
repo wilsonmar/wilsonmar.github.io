@@ -1,10 +1,10 @@
 ---
-{% include whatever.html %}layout: post
+layout: post
+date: "2022-06-23"
+file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
 tags: [travel, roadtrip, museums, monuments, ML]
-date: "2022-06-23"
-file: "museums-roadtrip-usa"
 image:
 # feature: pic road and clouds to mountains 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622142/26a94d34-0585-11e6-8f3e-8819131c0392.jpg

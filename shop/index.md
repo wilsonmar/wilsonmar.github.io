@@ -24,15 +24,15 @@ So I've made notes here, so I remember where I got them. I focus on the (luxurio
 
 ## Backpack #
 
-Since I travel a lot, I need a backpack designed for secure <strong>urban</strong> travel through airports and sidewalks rather than wilderness bushwacking.
+Pre-pandemic, I wanted a backpack designed for secure <strong>urban</strong> travel through airports and sidewalks (rather than wilderness bushwacking).
 
-For years I've made do with cheap ones I got during conferences.
+For years I've made do with cheap ones received from vendors during conferences.
 
-So the backpack that makes the most sense for my everyday carry needs is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved 55x40x20 inch Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
-<img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="Cabin Max Backpack" />
-I'd like to put a patch (such as an American flag) over their big logo, though.
+I've had several backpacks over the years.
 
 Below are discussion of specific attributes versus trade-offs:
+
+The <a target="_blank" href="https://www.sfbags.com/collections/laptop-backpacks/products/pro-executive-laptop-backpack">leather executive backpack</a> looks stylish, but is too expensive (at $415), too heavy, and too small.
 
 ### Size & Weight
 
@@ -40,27 +40,33 @@ Below are discussion of specific attributes versus trade-offs:
    <a target="_blank" href="https://en.wikipedia.org/wiki/Hand_luggage">Some airplanes can only accomodate smaller</a>, down to <strong>21 x 14 x 8 inches</strong> (40 x 30 x 20 cm). 
    PROTIP: I prefer a backpack this size so I have the flexibility to carry several laptops, cameras, recording gear, etc.
 
+The largest is <a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS">Cabin Max Metz Backpack Flight Approved 55x40x20 inch Carry on Bag ($50)</a><a target="_blank" href="http://www.amazon.com/gp/product/B00IR2VEUS/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00IR2VEUS&linkCode=as2&tag=wilsonslifenotes&linkId=LGM2HVV7JYHE5QRS"><img align="right" width="150" src="../images/Cabin Max Metz Backpack.png" /></a>
+<img align="right" src="http://ir-na.amazon-adsystem.com/e/ir?t=wilsonslifenotes&l=as2&o=1&a=B00IR2VEUS" width="1" height="1" border="0" alt="Cabin Max Backpack" />
+I'd like to put a patch (such as an American flag) over their big logo, though.
+
    The room's there when needed at a **lightweight** 700g with <strong>water resistant</strong> 600D material, which the <a target="_blank" href="https://www.amazon.com/dp/B01J24H2K0/">Amazon Basics bag</a> does not have. 
 
-   Such a size may be too big for most.
-   The pack has side <strong>compression/cinch straps</strong> to flatten it out. 
-   But I rarely use them.
+   Such a size may be <strong>too big</strong> for most, I would think.
+
+   However, the pack has side <strong>compression/cinch straps</strong> to flatten it out. 
    I would rather cinch up a pack than not have enough room when I need it.
+   But I rarely use that feature.
 
    A big backpack plus carry-on roller-bag would allow me to get on the plane with the maximum amount of luggage space.
 
-   Some people can't carry backpacks, so a regular rolling bag would be needed.
-   Wheels add weight, so I've steered away from them (sorry, can't resist the pun here).
+   Once when I hurt my shoulder, I couldn't get my arms around backpack straps.
+   So a rolling bag was helpful.
+   However, when I recovered, I steered away from it (sorry, can't resist the pun here).
 
 ### Comfort
 
    <img align="right" alt="sho-backpack-carry-276x418-217789.png" width="139" height="209" src="https://user-images.githubusercontent.com/300046/52171400-8382ae00-272a-11e9-9d00-01c79c8f9712.png">
    A backpack the size of carry-on luggage seems less comfortable to carry for long periods, and less "executive business style". Walking into an office with it may look like you're invading the place. But that may be the message you want to send.
 
-   It would be nice to have more adjustable shoulder straps that <strong>transfers weight to the hips</strong>.
-   Front straps are especially important for a women's physique.
+   It would be nice to have more adjustable shoulder straps that <strong>transfers weight to the hips</strong>. Such adjustments are especially important for a women's physique.
 
-   A smaller <strong>"day pack"</strong> that mates with a carry-on would be ideal, but I haven't found one I like.
+   A smaller <strong>"day pack"</strong> that mates with a carry-on would be nice. 
+   But I haven't found one I like.
 
 ### Colors
 
@@ -73,28 +79,42 @@ Below are discussion of specific attributes versus trade-offs:
    "YKK" brand zippers (from Japan) are considered the best.
    New versions are leak-resistant.
    
-   <a target="_blank" href="https://www.rei.com/c/luggage/f/f-waterproof">Dry duffle bags</a> are waterproof, but are carried by hand.
+   <a target="_blank" href="https://www.rei.com/c/luggage/f/f-waterproof">Dry duffle bags</a> are waterproof.
 
    <a target="_blank" href="https://www.rimowa.com/us/en/">
-   Rimowa</a> hard-shells (with wheels) have a waterproof seal and made of material airplanes use: Aluminim and light-weight polycarbonate. Their <a target="_blank" href="https://www.rimowa.com/us/en/luggage/polycarbonate/cabin-s/88352614.html">Cabin S</a> carry-on is $820.
+   Rimowa</a> hard-shells (with wheels) have a waterproof seal and made of material airplanes use: Aluminum and light-weight polycarbonate. Their <a target="_blank" href="https://www.rimowa.com/us/en/luggage/polycarbonate/cabin-s/88352614.html">Cabin S</a> carry-on is $820.
 
    https://heysamerica.com/products/atlantis-elite-26
 
-### External quick access vs. security
+### Moneybelt
 
    [__] Valuables such as passport and currency I put in a <strong>internal wallet</strong> I wear under my shirt.
 
-   A sleek look without side pockets (that never seem to be the right size) is a hallmark of the [Astor, Minaal] packs. Otherwise, I prefer a <strong>front flap</strong> that unzips completely to see at a glance where various small items are (headphones, pens, batteries, cords, SD chips, etc.)
-   
-   [__] <strong>External locks</strong> are a trade-off sacrifice of quick easy access to glasses, water. But the types of lock that TSA requires are only a deterrant to pick-pockets, and not effective when left alone in a room you don't control.
-   
-   PROTIP: Easy open external pockets on backpacks makes for easy pickings for pick-pockets as well. So in those I put stuff I can cheaply and easily replace:
-
-   [__] <strong>lost/emergency contact card</strong> inside a Ziplock bag so water doesn't destroy the ink. The address is not where I actually live.
+   [__] Moneybelt.
 
    [__] A <strong>decoy wallet</strong> to give robbers. Dropping it on the floor gives you time to run away.
 
-   [__] Moneybelt
+   [__] <strong>lost/emergency contact card</strong> inside a Ziplock bag so water doesn't destroy the ink. The address is not where I actually live.
+
+### Adventurer look
+
+Kids like stuff hanging on the outside of the pack :
+
+   [__] Hand sanitizer bottle.
+
+   [__] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
+
+   [__] A <strong>thermometer</strong> for ambient temperature. Not really accurate but good to know. A laser therometer is useful for use while cooking.
+   Some smart phones have one.
+
+### External quick access
+
+   [__] **Easily lockable zippers** make it harder for people standing behind me in line to explore the pockets on my backpack.
+
+   [__] <strong>External locks</strong> are a trade-off sacrifice of quick easy access to glasses, water. But the types of lock that TSA requires are only a deterrant to pick-pockets, and not effective when left alone in a room you don't control.
+   
+   PROTIP: Easy open external pockets on backpacks makes for easy pickings for pick-pockets. 
+   So in such pockets I put stuff I can cheaply and easily replace:
 
    [__] A cache of business cards
 
@@ -107,20 +127,9 @@ Below are discussion of specific attributes versus trade-offs:
    PROTIP: In the continental U.S., magnetic declination can vary from nearly 20 degrees East in places on the West Coast to nearly 20 degrees west in places on the East Coast. A 15 degree error when traveling over a mile puts you a quarter-mile away from your destination at the end of a day hike. Currently, <a target="_blank" href="https://maps.ngdc.noaa.gov/viewers/historical_declination/">Magnetic North</a> is roughly north of Hudson Bay in Canada. It has moved over 2.5 degrees during the past 22 years and is recently <a target="_blank" href="https://www.ncei.noaa.gov/news/world-magnetic-model-out-cycle-release">moving at a faster rate toward Russia</a>.
    Use the <a target="_blank" href="https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination">use this NOAA website to calculate</a> and <a target="_blank" href="https://www.rei.com/learn/expert-advice/compass-declination.html">learn to use it</a>.
 
-   Hanging on the outside of my pack:
-
-   [__] Large <strong>carabiner and straps</strong> to attach the pack so it stays on top the handle of a rolling luggage bag.
-
-   [__] A <strong>thermometer</strong> for ambient temperature. Not really accurate but good to know. A laser therometer is useful for use while cooking.
-   Some smart phones have one.
-
-   [__] Hand sanitizer bottle.
-
 ### Security features
 
    Mimizing external pockets also minimizes the number of (TSA approved) locks to secure the pack when I need to.
-
-   **Easily lockable zippers** make it harder for people standing behind me in line to explore the pockets on my backpack.
 
    <a name="Bobby"></a>
    Hidden (anti-theft) zippers and <strong>cut-proof</strong> fabric are key features of the [<a target="_blank" href="https://www.xd-design.com/">
@@ -129,20 +138,19 @@ Below are discussion of specific attributes versus trade-offs:
    <a target="_blank" href="https://www.indiegogo.com/projects/bobby-the-best-anti-theft-backpack-by-xd-design#/">
    Indiegogo</a>.
 
-### Bulletproof inserts
+### Bulletproof 
 
    30 sheets of DuPont Kevlar fabric weighing 8 ounces have been rated "Level 3A" by the National Institute of Justice (NIJ, a wing of the U.S. Justice Department) to "resist" handgun bullets of .357/.44/.45 or 9mm caliber. 
 
-   If you want an inserts, you might as well get the <a target="_blank" href="https://kincorner.com/collections/bulletproof-accessories/products/bulletproof-defender-notebook-folio">$190 bulletproof writing+tablet folio</a> of 3 lbs. at 10 x 13.75 x 1" wide.
+   If you want an insert, consider the <a target="_blank" href="https://kincorner.com/collections/bulletproof-accessories/products/bulletproof-defender-notebook-folio">$190 bulletproof writing+tablet folio</a> of 3 lbs. at 10 x 13.75 x 1" wide.
 
    <a target="_blank" href="https://www.leatherbackgear.com/pages/civilian-one">
    This $330 backpack separates to form a bulletproof vest:<br />
    <img alt="shop-bulletproof-vest-347891.png" src="https://user-images.githubusercontent.com/300046/62169681-1a00e800-b2e6-11e9-8311-529e98862dda.png"></a>
 
-   PROTIP: It won't protect against shots to the head or from the side. They also don't stop high-powered rifles like the AR-15 used by shooters. And protection expire after 5 years, less if exposed to high heat. So don't buy used ones. 
+   PROTIP: It won't protect against shots to the head or from the side. They also don't stop high-powered bullets from AR-15 assault rifles. And protection expire after 5 years, less if exposed to high heat. So don't buy used ones. 
 
-   There is <a target="_blank" href="https://www.bulletblocker.com/bunijiibuarw.html">$7,400 Armani suit</a> or 
-   <a target="_blank" href="https://www.bulletblocker.com/bulletblocker-nij-iiia-bulletproof-fleece-vest.html">$850 vest</a> with bulletproof lining.
+   NOTE: There is <a target="_blank" href="https://www.bulletblocker.com/bunijiibuarw.html">$7,400 Armani suit</a> or <a target="_blank" href="https://www.bulletblocker.com/bulletblocker-nij-iiia-bulletproof-fleece-vest.html">$850 vest</a> with bulletproof lining.
 
 ### Additional features
 
@@ -167,6 +175,8 @@ Other qualities and alternatives I've considered during my survey of various one
 
 ### Backpack Alternatives 
 
+   A sleek look without side pockets (that never seem to be the right size) is a hallmark of the [Astor, Minaal] packs. Otherwise, I prefer a <strong>front flap</strong> that unzips completely to see at a glance where various small items are (headphones, pens, batteries, cords, SD chips, etc.)
+   
    * <a target="_blank" href="http://sdrtraveller.com/products/d3-traveller">
    The D3 Traveller</a> is a duffle bag which costs $983 because it looks like a used trash can liner.
    It is ultralight even though has double walls of waterproof <strong>scan-resistent</strong> fabric.
@@ -176,7 +186,6 @@ Other qualities and alternatives I've considered during my survey of various one
    * <a target="_blank" href="https://www.amazon.com/dp/B072LX8CCT/ref=wilsonslifenotes">$55: Hynes Eagle 38L</a>
 
    * <a target="_blank" href="http://thru-hiker.com/projects/lab_pack.php">How to make your own backpack</a>
-
 
 ### Internal arrangement
 
@@ -205,7 +214,8 @@ Other qualities and alternatives I've considered during my survey of various one
 
 ## Glasses
 
-Glasses are one of my essentials. So I keep an extra set in my backpack, in the car, in my suitcase.
+Glasses are one of my essentials. 
+So I keep a set on my pocket, in my backpack, in the car, in my suitcase.
 
 Considerations:
    * width appropriate for face?

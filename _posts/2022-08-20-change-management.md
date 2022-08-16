@@ -184,7 +184,7 @@ There are several out there.
 
    The exam covers approaches to helping others engage with organizational change, aligning changes with departmental or organizational changes, developing change plans, and creating relationships between change professionals in the organization.
 
-* Three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s Change Manager Competency Model and their <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the $74.95 "Effective Change Manager's Handbook". 
+* Three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s Change Manager Competency Model and their <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the <a target="_blank" href="https://www.amazon.com/gp/product/1925171027/" title="March 31, 2022">The Effective Change Manager</a>. 
 
    <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
 
@@ -351,3 +351,5 @@ https://www.youtube.com/watch?v=feK9hkJ9p2E
 DevOps and the Future of Change Management - YouTube
 
 [4] https://www.inc.com/marcel-schwantes/5-things-the-most-confident-leaders-do-to-manage-change.html
+
+[5] https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics

@@ -93,9 +93,10 @@ QUESTION [3] - What expectations for Availability (Uptime) do each persona have 
 
 ## Measurements
 
-QUESTION [4] - What monitoring is desired?
+QUESTION [4] - What monitoring is desired? 
 
-Examples of usage statistics:
+
+Examples of <strong>usage volume</strong> statistics:
 
 * Cloud Regions
 * Cloud resource components (Nodes, ELB)
@@ -134,7 +135,7 @@ Examples of <strong>computing resource</strong> usage statistics (at various poi
 * Network I/O
 <br /><br />
 
-PROTIP: Monitoring <strong>queues</strong> enables identification of bottlenecks which delay response time.
+PROTIP: Monitoring <strong>queues</strong> enables identification of bottlenecks which delay response time. Capacity bottlenecks are revealed when a queue builds up with additional simultaneous users.
 
 Examples of <strong>app-specific</strong> statistics, for Consul:
 
@@ -144,6 +145,33 @@ Examples of <strong>app-specific</strong> statistics, for Consul:
 * etc.
 <br /><br />
 
+<strong>Unit Cost</strong> measurements provide data for business-level assessments
+when costs are measured against outputs:
+
+   * What does it cost to process each request/transaction, by type of process?
+   * How much of a difference is the cost of a new request vs. existing request?
+   * What is the cost per change request?
+   <br /><br />
+
+<strong>Productivity</strong> measurements reveal improvements in terms of speed and effort.
+
+* Cycle time – How long does it take to complete a unit of work, in total, and by phase?
+   * Break it out by new vs. maintenance work (most will be maintenance)
+   * Average time to create new document/message
+   * Average time to change existing document/message
+   <br /><br />
+
+Requests completed per person – What number of new and/or change requests per person per period?
+   * Break it out by new vs. maintenance work (most will be maintenance)
+   * Average change requests completed per person
+   * Average new requests completed per person
+   <br /><br />
+
+Iterations per release – How many content edit cycles are needed?
+   * Iterations per maintenance release
+   * Iterations per new document/message release
+   * Firms with alignment on standards, customer experience objectives, and the roles responsible for each generally have less churn and resulting delay. This can have a significant impact on cycle time and overall productivity.
+   <br /><br />
 
 ## Levels of monitoring investment
 
