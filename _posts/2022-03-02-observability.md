@@ -135,7 +135,7 @@ Examples of <strong>computing resource</strong> usage statistics (at various poi
 * Network I/O
 <br /><br />
 
-PROTIP: Monitoring <strong>queues</strong> enables identification of bottlenecks which delay response time. Capacity bottlenecks are revealed when a queue builds up with additional simultaneous users.
+PROTIP: Monitoring <strong>queues</strong> enables identification of bottlenecks which delay response time. Capacity bottlenecks are not revealed until a queue builds up when additional simultaneous users during load tests.
 
 Examples of <strong>app-specific</strong> statistics, for Consul:
 
@@ -161,16 +161,19 @@ when costs are measured against outputs:
    * Average time to change existing document/message
    <br /><br />
 
-Requests completed per person – What number of new and/or change requests per person per period?
-   * Break it out by new vs. maintenance work (most will be maintenance)
+* Dev. "Productivity" - Requests completed per person – What number of new and/or change requests per person per period?
+   * Requests by new vs. maintenance work (most will be maintenance)
    * Average change requests completed per person
    * Average new requests completed per person
    <br /><br />
 
-Iterations per release – How many content edit cycles are needed?
+
+* Dev. Velocity - How many content edit cycles (iterations) are needed? This can have a significant impact on cycle time and overall productivity.
+   * Iterations per new release
    * Iterations per maintenance release
-   * Iterations per new document/message release
-   * Firms with alignment on standards, customer experience objectives, and the roles responsible for each generally have less churn and resulting delay. This can have a significant impact on cycle time and overall productivity.
+   <br /><br />
+   
+   <a target="_blank" href="https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics">PROTIP</a>: Firms with alignment on standards, customer experience objectives, and the roles responsible for each generally have less churn and resulting delay. 
    <br /><br />
 
 ## Levels of monitoring investment
