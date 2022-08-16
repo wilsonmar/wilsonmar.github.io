@@ -45,10 +45,10 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 <a target="_blank" href="https://ironbutt.org/rides/">Iron Butt</a> motocyle rallies award bonus points for reaching the four corners of the nation:
 
-   * Blaine, WA
-   * Madawaska, ME
-   * Key West, FL
-   * San Ysidro, CA
+   * NorthEast: Madawaska, ME
+   * SouthEast: Key West, FL
+   * SouthWest: San Ysidro, CA
+   * NorthWest: Blaine, WA
    <br /><br />
 
 
@@ -56,12 +56,12 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 ## Touching each state
 
-To deter prospective record breakers from reckless or dangerous driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
+To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
 
 <a target="_blank" href="http://goo.gl/maps/ZdUYQ">This Google route map</a> was actually used by <a target="_blank" href="http://www.datapointed.net/2012/08/fastest-route-to-visit-all-fifty-united-states/">recent finishers</a>:
 
-<a target="_blank" href="
-<img alt="6 days" width="750" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg">
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg">
+<img alt="6 days" width="750" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg"></a>
 
 In 2014, a <a target="_blank" href="https://www.facebook.com/51in51/">tour of state capitals</a>:
 
@@ -85,20 +85,23 @@ A map of stations offering <strong>Ethanol-free</strong> premium gasoline (at hi
 
 America's greatest treasure is the <a target="_blank" href="https://www.wikiwand.com/en/National_Park_Service">63</a> <a target="_blank" href="https://www.nps.gov/index.htm">national parks managed by the U.S. National Park Service.
 
+
+<img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
+The <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">map above</a> is missing White Sands National Park (New Mexico), Indiana Dunes, and Gateway Arch (St. Louis).
+
+
+<a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">One couple visited the most significant parks in this order</a>:
+<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg">
+<img alt="us-tour-natl-park-route" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg"></a>
+
+
 <a target="_blank" title="Route around the US on Google map" href="https://wilsonmar.github.io/US_Landmarks_Roadtrip_v01.html">
 <img alt="map us_landmarks_roadtrip_v01_683x396" width="683" height="396" src="https://cloud.githubusercontent.com/assets/300046/14229554/5531ac58-f8f3-11e5-8ce4-c01a5289358e.png"></a>
 
 The above route through major landmarks in the lower 48 states was optimized for least driving time across 6,813 miles, using Google Maps API driven by <a target="_blank" href="
 https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/master/optimal-road-trip/Computing%20the%20optimal%20road%20trip%20across%20the%20U.S..ipynb">Machine Learning algorithms run in a Python Jupyter Notebook</a> as <a target="_blank" href="http://www.randalolson.com/2015/03/08/computing-the-optimal-road-trip-across-the-u-s/">described by Randal S. Olson</a>.
 
-<a target="_blank" href="https://tbandjtravel.com/the-u-s-map/">One couple visited the most significant parks in this order</a>:
-<a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg">
-<img alt="us-tour-natl-park-route" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560224/6b14fde6-2d1c-11e7-952e-52e883844808.jpg"></a>
-
 <a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">CAUTION</a>: as COVID lockdowns relax, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
-
-<img alt="us-nps-ma-1500x938.jpeg" width="1500" height="938" src="https://user-images.githubusercontent.com/300046/133946844-809c6182-2763-45ba-8d29-217ea2eb28cc.jpeg">
-The <a target="_blank" href="https://www.amazon.com/US-National-Parks-Map-22-5/dp/B072ZWHL8V">map above</a> is missing White Sands National Park (New Mexico), Indiana Dunes, and Gateway Arch (St. Louis).
 
 Many "Western" movies were filmed in iconic "Mighty 5" parks below Salt Lake City in Utah: <a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?msa=0&mid=16KbY2hCvDQEAAPsK6bwyEDjPZyc&ll=37.542383125235986%2C-110.57365010534873&z=8">Las Vegas from the South and Denver from the North <img width="841" alt="us-might5-route-1682x1014" src="https://user-images.githubusercontent.com/300046/134821783-60f33b47-ccea-4ab0-a12f-69505411c763.png">322 miles in 5 hours without stopping (click for Google Map)</a>:
    1. Zion 
