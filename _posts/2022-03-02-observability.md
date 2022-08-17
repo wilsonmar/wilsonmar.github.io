@@ -173,7 +173,7 @@ when costs are measured against outputs:
    * Iterations per maintenance release
    <br /><br />
    
-   <a target="_blank" href="https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics">PROTIP</a>: Firms with alignment on standards, customer experience objectives, and the roles responsible for each generally have less churn and resulting delay. 
+   <a target="_blank" href="https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics">PROTIP</a>: Less churn and resulting delays occur in firms with alignment on standards, customer experience objectives, and roles responsible. 
    <br /><br />
 
 ## Levels of monitoring investment
@@ -256,9 +256,11 @@ Level 2 is to install licensed monitoring utilities such as Datadog, Splunk, New
 
 <a name="Level3"></a>
 
-Level 3 is to add <strong>tracing</strong> a single user's impact across components, plus PagerDuty or XMatters for smart alerting/incident management.
+Level 3 is to add an enterprise-wide end-to-end <strong>"capabilities dashboard"</strong> plus  <strong>tracing</strong> to a single user's impact across components, plus PagerDuty or XMatters for smart alerting/incident management.
 
    <ul>The time that a specific HTTP request or a database call takes to go across various components is called a <strong>"span"</strong>. Each span is associated with <strong>attributes</strong>. Such  <strong>instrumentation</strong> is done by functions in an open-source Open Telemetry (OTel) library for each programming language and <a target="_blank" href="https://github.com/open-telemetry/opentelemetry-python-contrib/tree/master/instrumentation">framework</a> (such as Flask for Python). Spans are displayed in the program's console (STDOUT) and also exported to an application performance monitoring utility such as Datadog, which correlates the various spans on a visual dashboard. Spans can be nested, and have a parent-child relationship with other spans. This aggregating of spans is done by a "distributed tracing backend" such as Jaeger, . See https://open-telemetry.github.io/opentelemetry-python/getting-started.html
+
+   The "Capabilities Dashboard" at FT.com uses react-based Heimdall to visualise monitoring data collected into Prometheus:<br /><a target="_blank" href="https://medium.com/ft-product-technology/our-journey-with-capability-monitoring-at-the-ft-6df9aaa1d7b0"><img alt="Heimdall at FT" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660765583/monitoring-heimdall-at-ft-1400x966_ukcjyt.png"></a>
    </ul>
 
 
@@ -268,6 +270,9 @@ Level 4 is to install Machine-Learning (AI) based "Observability" systems such a
 
    <ul>Instrumentation is necessary to determine whether system are able to achieve scalability and availability objectives (and when they are not). Measurable reliability goals enable people to know when to stop tuning efforts. However, there are financial and operational tradeoffs for adopting each level of instrumentation. It is convenient and less stressful when systems are self-healing. But can the organization afford the time and expense to achieve that convenience? One can over-invest in achieving the ultimate level of observability. Over-investment in monitoring drains focus from feature development work. On the other hand, under-investment in monitoring can reduce development teams to “spinning their wheels” on guesses that waste precious time and create frustration which leads to turnover.
    </ul>
+
+## Dashboards
+
 
 ## Resources
 

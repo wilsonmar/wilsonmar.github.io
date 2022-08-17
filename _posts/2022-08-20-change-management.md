@@ -228,9 +228,11 @@ There are several out there.
 
    <a name="Prosci"></a>
    
-   ### Prosci
+### Prosci
 
-* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations:
+* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their models.
+
+   <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
 
    1. Awareness of the need for change
    2. Desire to participate and support the change
@@ -239,8 +241,10 @@ There are several out there.
    5. Reinforcement to sustain the change
    <br /><br />
 
+   When we identify where <strong>each stakeholder</strong> is so that we don't waste time and resources rehashing what the stakeholder has already passed.
 
-## Certifications with a change management component:
+
+## Pro Certifications with a change management component:
 
 * $405 <a href="https://www.cio.com/article/228204/pmp-project-management-certification-guide.html">Project Management Professional (PMP)</a>   (for PMI members) 
 
@@ -332,6 +336,8 @@ Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which other
 
 ### Reverse Fishbone Diagram
 
+<a target="_blank" href="https://www.youtube.com/watch?v=42zyea2DXos&t=4m40s">3 Hr VIDEO:
+Organizational Change Management Training</a> by Eric Kimberling
 
 
 <hr />

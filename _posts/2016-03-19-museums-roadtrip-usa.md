@@ -56,16 +56,13 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 ## Touching each state
 
-To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
-
-<a target="_blank" href="http://goo.gl/maps/ZdUYQ">This Google route map</a> was actually used by <a target="_blank" href="http://www.datapointed.net/2012/08/fastest-route-to-visit-all-fifty-united-states/">recent finishers</a>:
+<a target="_blank" href="http://goo.gl/maps/ZdUYQ">This Google route map</a> was actually used by <a target="_blank" href="http://www.datapointed.net/2012/08/fastest-route-to-visit-all-fifty-united-states/">recent finishers</a> to go around the 48 states in 6 days:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg">
 <img alt="6 days" width="750" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660661005/ThomasCannonandJustinMorrisRoute-589x301_g6ygsm.jpg"></a>
 
-In 2014, a <a target="_blank" href="https://www.facebook.com/51in51/">tour of state capitals</a>:
+To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660662330/roadtrip-us-capitals-941x526_gr3pbz.jpg"><img alt="51in51" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660662330/roadtrip-us-capitals-941x526_gr3pbz.jpg"></a>
 
 ## Highway Refueling and ReCharging
 
