@@ -113,17 +113,21 @@ Stages:
 
 <a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">John K. Kotter</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review:
 
-   1. Create Climate for Change:
-      \1. Create Urgency
-      \2. Build a Coalition
-      \3. Create a Vision
-   2. Engage and Enable the Organization:
-      \4. Communicate that Vision
-      \5. Empower Others to overcome Obstacles
-      \6. Create Short-Term Quick Gains
-   3. Implement & Sustain:
-      \7. Build on the Change
-      \8. Embed (Anchor) the Change
+1. Create Climate for Change:<br />
+   \1. Create Urgency<br />
+   \2. Build a Coalition<br />
+   \3. Create a Vision
+   <br /><br />
+
+2. Engage and Enable the Organization:<br />
+   \4. Communicate that Vision<br />
+   \5. Empower Others to overcome Obstacles<br />
+   \6. Create Short-Term Quick Gains
+   <br /><br />
+
+3. Implement & Sustain:<br />
+   \7. Build on the Change<br />
+   \8. Embed (Anchor) the Change
    <br /><br />
 
 <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a>
@@ -233,6 +237,8 @@ There are several out there.
 * The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their models.
 
    <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
+   <br /><br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
 
    1. Awareness of the need for change
    2. Desire to participate and support the change
@@ -336,8 +342,6 @@ Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which other
 
 ### Reverse Fishbone Diagram
 
-<a target="_blank" href="https://www.youtube.com/watch?v=42zyea2DXos&t=4m40s">3 Hr VIDEO:
-Organizational Change Management Training</a> by Eric Kimberling
 
 
 <hr />
@@ -353,9 +357,12 @@ Organizational Change Management Training</a> by Eric Kimberling
 
 [3] https://www.cio.com/article/221699/7-change-management-certifications-to-boost-your-it-career.html
 
-https://www.youtube.com/watch?v=feK9hkJ9p2E
+[4] <a target="_blank" href="https://www.youtube.com/watch?v=42zyea2DXos&t=4m40s">VIDEO:
+Organizational Change Management Training</a> 3 Hr class by Eric Kimberling
+
+[5] https://www.youtube.com/watch?v=feK9hkJ9p2E
 DevOps and the Future of Change Management - YouTube
 
-[4] https://www.inc.com/marcel-schwantes/5-things-the-most-confident-leaders-do-to-manage-change.html
+[6] https://www.inc.com/marcel-schwantes/5-things-the-most-confident-leaders-do-to-manage-change.html
 
-[5] https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics
+[7] https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics
