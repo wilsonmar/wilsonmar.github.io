@@ -99,8 +99,30 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
       * Transfer Ownership - Who will assume ownership and sustain outcomes?
       <br /><br />
 
+<a name="ADKAR"></a>
+
+### Prosci's ADKAR
+
    <a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
    <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage  Consulting</a>
+
+   <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
+   <br /><br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
+
+   1. Awareness of the need for change
+
+   2. Desire to participate and support the change
+   
+   3. Knowledge on how to change
+   
+   4. Ability to implement desired skills and behaviors (adopt and change)
+   
+   5. Reinforcement to sustain the change
+   <br /><br />
+
+   When we identify where <strong>each stakeholder</strong> is so that we don't waste time and resources rehashing what the stakeholder has already passed.
+
 
 Stages:
 
@@ -234,20 +256,7 @@ There are several out there.
    
 ### Prosci
 
-* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their models.
-
-   <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
-   <br /><br />
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
-
-   1. Awareness of the need for change
-   2. Desire to participate and support the change
-   3. Knowledge on how to change
-   4. Ability to implement desired skills and behaviors (adopt and change)
-   5. Reinforcement to sustain the change
-   <br /><br />
-
-   When we identify where <strong>each stakeholder</strong> is so that we don't waste time and resources rehashing what the stakeholder has already passed.
+* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their models: ADKAR.
 
 
 ## Pro Certifications with a change management component:
@@ -277,8 +286,10 @@ There are several conceptual and practical tools:
 
 ### Root Cause (Fishbone) Diagram
 
+The fishbone diagram visually presents the results of brainstorming exercise aimed at identifying root causes of a problem.
+
 <a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
-Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which others call a Fishbone or Herringbone diagram.
+Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which others call a fishbone (or herringbone) diagram.
 
 1. The starting point is a short description of a <strong>single problem</strong>, in a box at the right side of the page.
 

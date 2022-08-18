@@ -277,4 +277,7 @@ Level 4 is to install Machine-Learning (AI) based "Observability" systems such a
 
 ## Resources
 
-https://f.hubspotusercontent20.net/hubfs/516677/monitoring-maturity-model-2020.pdf
+[1] https://f.hubspotusercontent20.net/hubfs/516677/monitoring-maturity-model-2020.pdf
+
+https://www.hashicorp.com/blog/improve-observability-with-opentelemetry-and-consul-service-mesh
+
