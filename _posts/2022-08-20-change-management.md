@@ -110,17 +110,20 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
    <br /><br />
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
 
-   1. Awareness of the need for change
+   Where an individual's journey can get blocked:
 
-   2. Desire to participate and support the change
+   1. <strong>Awareness</strong> of the need for change (not just that change is happening)
+
+   2. <strong>Desire</strong> to participate and support the change -  the personal choice to get onboard
    
-   3. Knowledge on how to change
+   3. <strong>Knowledge</strong> on how to change
    
-   4. Ability to implement desired skills and behaviors (adopt and change)
+   4. <strong>Ability</strong> to implement desired skills and behaviors (adopt and change)
    
-   5. Reinforcement to sustain the change
+   5. <strong>Reinforcement</strong> to sustain the change
    <br /><br />
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=L_7I03LOyyk">VIDEO</a>:
    When we identify where <strong>each stakeholder</strong> is so that we don't waste time and resources rehashing what the stakeholder has already passed.
 
 
@@ -224,7 +227,7 @@ There are several out there.
 
    <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
 
-* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> 
+* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>.
    
    <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
 
@@ -311,13 +314,15 @@ Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which other
    * Too many errors 
    <br /><br />
 
+   The problem can be the biggest bar (the largest contribution) to causes of problems in a Pareto chart.
+
 2. Draw a horizontal line and "ribs" to each category. When working on-site, this can be on a large white-board where participants paste sticky notes.
 
    A "fishbone" provides a visual approach to organize ideas into categories.
 
 3. Define categories (buckets) to prompt brainstorming of causes:
 
-   My six-category example: Surroundings/Environment, People/Skill, Measurement/Information, Method/Process, Machine/System/Equipment, Material/Supplier
+   My six-category example: Surroundings/Environment, People/Skill, Measurement/Information, Method/Process, Machine/System/Equipment (Physical causes), Material/Supplier
 
    Common categories: People, Information, System, Process (PIPS)
 
@@ -327,15 +332,18 @@ Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which other
 
    https://www.youtube.com/watch?v=XinW5dwuKsI
 
-4. Brainstorm causes under each category, asking Why 5 times.
+4. Brainstorm causes under each category.
 
    During this step, don't throw out suggestions that may have little impact on the problem.
    
    Remember this is partly a team-building exercise, where you're building fun memories.
 
-5. Review categories.
+   <a target="_blank" href="https://www.youtube.com/watch?v=igpvai40HL0">Jay calls</a>
+   diagrams that are too big "whalebone" diagrams.
 
-6. Analyze results.
+5. Branch out each cause by adding a leaf after asking Why (5 times).
+
+6. Review categories to Analyze results.
 
    Have each team member silently assign a priority to each cause.
 
@@ -346,6 +354,7 @@ Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which other
 8. Prioritize actions
 
 9. Define countermeasures (Step 5 of A3)
+
 
 <hr />
 
