@@ -100,12 +100,14 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
       <br /><br />
 
 <a name="ADKAR"></a>
+<a name="Prosci"></a>
 
 ### Prosci's ADKAR
 
    <a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
-   <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage  Consulting</a>
-
+   <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage  Consulting</a> 
+   
+   Prosci (generalinquiry 970-203-9332) 
    <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
    <br /><br />
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
@@ -124,7 +126,7 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
    <br /><br />
 
    <a target="_blank" href="https://www.youtube.com/watch?v=L_7I03LOyyk">VIDEO</a>:
-   When we identify where <strong>each stakeholder</strong> is so that we don't waste time and resources rehashing what the stakeholder has already passed.
+   When we identify where <strong>each stakeholder</strong> stands and act accordingly, we don't waste time and resources rehashing what the stakeholder has already passed, or getting ahead of that person.
 
 
 Stages:
@@ -156,6 +158,20 @@ Stages:
    <br /><br />
 
 <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a>
+
+   
+   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
+
+   1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
+
+   2. <strong>Formulate the Change Management Strategy</strong> - The processes in this group develop the high-level approach for change management with sponsors, change leaders, content developers, program managers, customers, and others on the project. This approach includes governance, risks, resources, budget, and reporting. The change strategy will incorporate, integrate, and align change management plans, activities, tasks, and milestones into the other activities and operations of an organization and its stakeholders at the onset of a change (timing and sequence). Stakeholder engagement is included in this process group.
+
+   3. <strong>Develop the Change Management Plan</strong> - The processes in this group employ specific change management methodologies and tools to develop detailed plans for implementing the change management strategy. These plans include communications, sponsorship, stakeholder engagement, learning and development, risk management, and measurement and benefits realization. Ongoing integration with project management is included in this process group.
+
+   4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
+
+   5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
+   <br /><br />
 
 ## Summary
 
@@ -228,19 +244,19 @@ There are several out there.
    <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
 
 * $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>.
-   
-   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
 
-   1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
+   According to their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, applicants are required to have 21 hours of training (from <a href="#Prosci">Prosci</a> or ChangeIt), plus write an essay for 3 of 5 of domains:
 
-   2. <strong>Formulate the Change Management Strategy</strong> - The processes in this group develop the high-level approach for change management with sponsors, change leaders, content developers, program managers, customers, and others on the project. This approach includes governance, risks, resources, budget, and reporting. The change strategy will incorporate, integrate, and align change management plans, activities, tasks, and milestones into the other activities and operations of an organization and its stakeholders at the onset of a change (timing and sequence). Stakeholder engagement is included in this process group.
+   1. For a project completed in the last two years, discuss how your assessment of the history, culture, and value systems of an organization helped the employees through a change process and has impacted employee expectations about change management plans and activities during that change project, today, and into the future.
 
-   3. <strong>Develop the Change Management Plan</strong> - The processes in this group employ specific change management methodologies and tools to develop detailed plans for implementing the change management strategy. These plans include communications, sponsorship, stakeholder engagement, learning and development, risk management, and measurement and benefits realization. Ongoing integration with project management is included in this process group.
+   2. How did you address the readiness strategy in your last change project? What would you change if you could go back in time, to ensure a smoother transition during change?
 
-   4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
+   3. Describe specific actions you have taken to measure and assess the effectiveness of a Learning & Development Plan. Include major challenges you encountered and how you dealt with them.
 
-   5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
-   <br /><br />
+   4. Describe a situation where you needed to modify the Change Management Plan during the execution phase and include the circumstances leading to the modifications and to the end results. Clearly identify if new items were added, if current items were eliminated, altered, or realigned in response to internal or external pressures.
+
+   5. Describe two major lessons learned from Change Management projects/processes that you have been involved in and explain how you included these lessons into current change projects going forward.
+
 
 * $2,999 for "the most comprehensive online change management course available today" - 11 hours of video online from <a target="_blank" href="https://www.linkedin.com/in/robertlbogue/">Rob Bogue</a>'s <a target="_blank" href="https://confidentchangemanagement.com/change-models/acmp-standard-for-change-management/">confidentchangemanagement.com</a> provides a shortcoming of the ACMP Standard:
 
