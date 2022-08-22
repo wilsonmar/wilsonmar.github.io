@@ -18,7 +18,7 @@ comments: true
 
 The "Zero-Trust" "Data Centric" focus was coined in 2010 by John Kindervag when he was at Forrester.
 
-> Zero Trust is a set of security principles that treat every component and user of a system as continuouly exposed to and potentially compromised by a malicious adversary. -- <a target="_blank" href="https://www.youtube.com/watch?v=6I6bnNdZ5XU">VIDEO: "Zero Trust Explained in 4 mins"</a> by the MIT Lincoln Laboratory (the largest US federally funded research and development center), which has identified gaps in ZTA guidance
+> Zero Trust is a set of security principles that treat every component and user of a system as continuouly exposed to and potentially compromised by a malicious adversary. -- <a target="_blank" href="https://www.youtube.com/watch?v=6I6bnNdZ5XU&18m56s">VIDEO: "Zero Trust Explained in 4 mins"</a> by the MIT Lincoln Laboratory (the largest US federally funded research and development center), which has identified gaps in ZTA guidance
 
 
 {% include whatever.html %}
@@ -26,8 +26,7 @@ The "Zero-Trust" "Data Centric" focus was coined in 2010 by John Kindervag when 
 
 ## A new paradigm needed
 
-Zero Trust addresses the <a target="_blank" href="https://www.youtube.com/watch?v=FMMWSLIcaME" title="IBM Bob Kalka">
-"elephants in the room" federated threat management which have been ignored</a>
+Zero Trust addresses the outdated assumptions, the <a target="_blank" href="https://www.youtube.com/watch?v=FMMWSLIcaME" title="IBM Bob Kalka">"elephants in the room" which have been ignored</a>.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="bottom"><th> # </th><th> Traditional </th><th> Zero Trust </th></tr>
