@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2017-03-04"
+file: "python-api-flask"
 title: "Python API flask"
 excerpt: "Step-by-step using the Flask REST API library using SQLite3 locally in venv on a Mac"
 tags: [python, coding]
-date: "2017-03-04"
-file: "python-api-flask"
 image:
 # pic white python logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
@@ -16,11 +16,12 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Flask is called a "micro-framework" because (unlike Django and its analogue Ruby on Rails)
+Flask is called a "micro-framework" because (unlike Python Django and its analogue Ruby on Rails)
 it provides only what is necessary to do core web development, leaving you to add plug-ins beyond its minimal subset.
 Flask's approach keeps your code and workflow simple, particularly on smaller projects. 
 
-Extensions are added to enable database access, web form, user authentication, payments, etc.
+Unlike Django, which has security built-in,
+<strong>extensions</strong> are added to Flask to enable database access, web form, user authentication, payments, etc.
 
 This is a hands-on walkthrough of the intricacies of creating a sample Python server program to process REST API calls from a user's browser. By hands-on I mean explanations are provided after you do each action. 
 

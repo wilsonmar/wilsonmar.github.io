@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-08-12"
+file: "apple-mac-osx-keyboard"
 title: "Apple Mac OSX Keyboard Shortcuts"
 excerpt: "Stay focused and do things faster with Keyboard Shortcuts, HotKeys, and StreamDeck buttons"
 tags: [apple, mac, keyboard]
-date: "2022-02-12"
-file: "apple-mac-osx-keyboard"
 image:
 # keyboard-mac-1900x500
   feature: https://user-images.githubusercontent.com/300046/154802444-b4eab52b-bb7c-45de-849a-fed8b956ac50.png
@@ -1021,7 +1021,10 @@ The Stream Deck has programmable buttons, with each button like a little LCD scr
 Unlike a regular keyboard, each button on the Stream Deck can display different images.
 It provides a visual button you don't have to remember.
 
-https://www.wired.com/story/elgato-stream-deck-productivity-tips/
+References:
+   * https://www.wired.com/story/elgato-stream-deck-productivity-tips/
+   * https://www.youtube.com/watch?v=6VyVCddCk-Q&t=95s
+   <br /><br />
 
 1. Since 2017, there are several editions of Stream Deck. The $150 MK.2 has 6 keys. The $80 "Mini" has 4 keys. The $250 "XL" has 32 keys.
 

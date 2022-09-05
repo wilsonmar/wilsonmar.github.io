@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-09-02"
+file: "git-signing"
 title: "Git Signing"
 excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
 tags: [git, security]
-date: "2021-07-22"
-file: "git-signing"
 image:
 # git-signing-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/75621485-00b56800-5b63-11ea-8d13-489c24db0957.jpg
@@ -52,8 +52,9 @@ The workflow:
 
    BONUS: Since we have GPG installed, here are also notes about:
    * <a href="#EncryptFiles">signing of whole files using GPG</a> 
-   * <a href="#FacebookSigning">getting Facebook to encrypt notification emails it sends you</a>.
+   * <a href="#FacebookSigning">getting Facebook to encrypt notification emails it sends you</a>
    * <a href="#CopyGPG">Copy GPG keys off to a secure cloud</a> 
+   * <a href="#GPGEmail">Encrypt emails in transit (between Gmail and Protonmail)</a> 
    <br /><br />
 
 
@@ -1240,7 +1241,7 @@ Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 
    ### Require Signed Commits
 
-1. Scroll down the same page to check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
+1. In GitHub, scroll down the same page to check "Flag unsigned commits as unverified" under the "Vigilent Mode" heading:
 
    <img width="612" alt="github-vigilent-mode-1224322" src="https://user-images.githubusercontent.com/300046/122704309-ac7b3f00-d210-11eb-8e06-3a8e11bb837c.png">
 
@@ -1679,6 +1680,9 @@ Standard signing and clear signing both create ciphertext from the cleartext inp
 
    <pre><strong>gpg -o outputfile ciphertextfile</strong></pre>
 
+CAUTION: Sending GPG-encrypted messages hides only the contents of the file but NOT meta-data such as the sender/receiver of the message nor the message size (bytes).
+
+It's up to you to make sure you’re actually talking to the intended person.
 
 <hr />
 
@@ -1704,6 +1708,111 @@ Standard signing and clear signing both create ciphertext from the cleartext inp
 1. In your email program, decrypt the email from Facebook and click the link.
 <br /><br /> 
 
+
+<hr />
+
+<a name="GPGEmail"></a>
+
+## Encrypt emails in transit
+
+There are two ways to encrypt emails in transit using asymetric keys: 
+S/MIME and <a href="#TLSEmail">TLS</a>.
+
+<a target="_blank" href="https://security.stackexchange.com/questions/260895/securing-email-use-gpg-for-all-emails/260901#260901?newreg=59936a42d2a1443fa7f03588cc26fd8f">CAUTION</a>: If you use Google's native Gmail client, since Google does the encryption using your key, Google (and law enforcement) always has access to your clear text body data.
+
+Even if you use an out-of-browser program, due to the nature of the SMTP open protocol used for email, all of your metadata is still known to mail services. OpenPGP addresses message content rather than SMTP or TCP/IP transport metadata.
+
+CAUTION: The downside of encrypting Body data is that Google will not apply its powerful engine to check for spam in the body of incoming messages (one of the main reasons we use Gmail). Since you publicly publish your public key, <strong>spammers can send you encrypted email</strong> which are not filtered by Google's spam engine. So before opening ANY message from an unknown source, verify the URL using <a target="_blank" href="https://virultotal.com/">virustotal.com</a>.
+
+### SMIME
+
+1. If you're not the Workspace Administrator, ask for <a target="_blank" href="https://support.google.com/mail/answer/6330403">S/MIME to be enabled</a>.
+
+1. Using a Workspace Admin email address, 
+
+   <a target="_blank" href="https://admin.google.com/ac/apps/gmail/usersettings">
+   https://admin.google.com/ac/apps/gmail/usersettings</a>
+
+   Alternately, sign in to your Google Workspace admin dashboard:   
+   <a target="_blank" href="https://admin.google.com/">https://admin.google.com</a>
+
+   Then click the "sandwich" icon for the menu and select <strong>Apps</strong> > Google Workspace > Gmail > User Settings.
+
+1. Accept the terms of service if that comes up.
+
+1. Change the "Enable S/MIME encryption" for sending and receiving emails option. 
+
+   Here is where I'm personally stuck because I don't see the options shown in 
+   <a target="_blank" href="https://www.computerworld.com/article/3322497/gmail-encryption.html" title="Nov 24, 2020 Gmail encryption: Everything you need to know">this Computerworld article</a>:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1662229106/gmail-smime-menu-734x152_ekzyjq.jpg"><img alt="Google Gmail SMIME menu choice" width="734" height="152" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1662229106/gmail-smime-menu-734x152_ekzyjq.jpg"></a>
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1662229117/gmail-smime-config-784x690_qclzdg.jpg"><img alt="Google Gmail SMIME menu choice" width="784" height="690" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1662229117/gmail-smime-config-784x690_qclzdg.jpgg"></a>
+
+   S/MIME makes use of digital signatures to confirm that the sender's email address was actually the email address used to send it. 
+   
+1. Obtain your email's S/MIME certificate from a Certificate Authority (CA). 
+
+   Italian CA <a target="_blank" href="https://www.actalis.it/en/certificates-for-secure-electronic-mail.aspx">Actalis.it</a> provides them <a target="_blank" href="https://extrassl.actalis.it/portal/uapub/freemail?lang=en">free of charge</a> based on just your email (valid for 1 year).
+ 
+    1. Copy the verification code from the email to paste on their web page.
+    1. Copy the password on their web page and save in your 1Password or other secret vault.
+    1. Open the email to save the SMIME key and your Private Personal Code (CRP).
+
+    1. Save that verification code, password, and Private Personal Code in your 1Password
+    1. Delete the email.    
+    <br /><br />
+
+   Certificate authorities provide S/MIME certificate bundles either as a PKCS #12 file (.p12 or .pfx) if they generated the certificate for you or as a PKCS #7 (.p7b) file if you created the private key on your own computer and submitted a Certificate Signing Request (CSR) to the CA. 
+
+    CAUTION: Can you trust Actalis.it to keep you certs secret? I don't know.
+
+1. Rules can be set up to require outgoing messages be sent with S/MIME (Secure/Multipurpose Internet Mail Extensions) for encryption. 
+   
+   "Verified" email address indicates that the associated email address is validated by a digital signature.
+
+
+<a name="TLSEmail"></a>
+
+### TLS
+
+Don’t expect Google to set up site-wide end-to-end encryption, however. For Google to monetize Gmail, it must be able to scan messages in order to serve targeting ads to users. It’s an advertising business, after all.
+
+1. In Gmail.com, on a usually paid) Enterprise edition of Gmail:
+1. Click "Compose" to start composing a message.
+1. Add a recipients to the "To" field.
+1. To the right of the <strong>Subject:</strong>, a lock icon shows the level of encryption supported by your message's recipients. If there are multiple users with various encryption levels, the icon will show the lowest encryption status:
+
+   * <img src="https://lh3.googleusercontent.com/WmzEOw364ngqLin-wCJv3HD08VRBhfjXKHy5QdOU0MHjvn_HFLocO85chSI3-9usUbU=w36-h36"> Green (S/MIME enhanced encryption) Encryption on. Suitable for your most sensitive information. S/MIME encrypts all outgoing messages if we have the recipient's public key. Only the recipient with the corresponding private key can decrypt this message.
+   
+   * Gray = "standard" TLS (Transport Layer Security) used for messages exchanged with other email services who don't support S/MIME. Encryption using TLS ensures that no third party can overhear or tamper with messages When a server and client communicate. For delivery TLS to work, the email delivery services of both the sender and the receiver always have to use TLS. That’s like why we send important messages in sealed envelopes rather than on the back of postcards. Tip: TLS support is not guaranteed. Support is inferred from past communications with the email service. 
+   
+   * <img src="https://lh3.googleusercontent.com/WmzEOw364ngqLin-wCJv3HD08VRBhfjXKHy5QdOU0MHjvn_HFLocO85chSI3-9usUbU=w36-h36"> Red (no encryption) No encryption. That mail is not secure. Past messages sent to the recipient's domain are used to predict whether the message you're sending won't be reliably encrypted.
+   
+1. Click "View Details" 
+1. Remove addressees or delete confidential information for emails marked red.
+
+1. To change your S/MIME settings or learn more about your recipient's level of encryption, click the lock, then View details.
+
+B. Check if a message you received is encrypted
+
+   1. In a Gmail account with S/MIME enabled, open a message.
+   1. On an Android device: Tap View details and then View security details.
+   1. On an iPhone or iPad: Tap View details.
+   1. You'll see a colored lock icon that shows you what level of encryption was used to send the message.
+
+https://medium.com/plain-and-simple/how-to-use-gpg-fc095e944120
+
+That mechanism involves an exchange of cryptographic certificates.
+mTLS (Mutual Transport Layer Security)
+
+Protonmail can be the recipient.
+
+<a target="_blank" href="https://support.google.com/a/answer/7448393?hl=en&ref_topic=9061730">
+CA certificates trusted by Gmail for S/MIME</a>
+
+<a target="_blank" href="https://support.google.com/a/answer/7280976?hl=en">
+rules</a>
 
 <hr />
 
@@ -1774,6 +1883,8 @@ http://varrette.gforge.uni.lu/blog/2017/03/14/tutorial-gpg-gnu-privacy-guard/
 VIDEO: Source Control Tip 19: Signing a commit via GPG</a>
 
 https://medium.com/@acparas/gpg-quickstart-guide-d01f005ca99
+
+<a target="_blank" href="https://levelup.gitconnected.com/5-applications-of-digital-signatures-4e785d22d439">5 Applications of Digital Signatures</a>
 
 
 ## More on DevOps #

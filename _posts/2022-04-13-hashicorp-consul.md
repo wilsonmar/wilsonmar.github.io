@@ -382,10 +382,10 @@ Larger enterprises running in production need features for higher security, grea
 
 Below are more details.
 
-<a name="EntFeatureA"></a>
 <a name="Tokens"></a>
 
 <a name="AuthMethods"></a>
+<a name="EntFeatureA"></a>
 A. <strong>Authenticate using a variety of methods</strong>. In addition to ACL Tokens, use enteprise-level identity providers (such as Okta and GitHub, Kuberos with Windows, etc.) for SSO (Single Sign On) based on indentity information maintained in email and other systems, so that additions, modifications, and deletions of emails get quickly reflected in Consul. Such immediacy is important to minimize the time when credentials are stale and thus available for compromise.
 
 <a name="EntFeatureB"></a>
@@ -435,7 +435,7 @@ I. <strong>Consul Service Mesh (also called Enterprise "Consul Connect")</strong
    </ul>
 
 <a name="EntFeatureJ"></a>
-J. Consul can be setup for <strong>Disaster Recovery (DR) from failure to an entire cloud Region</strong>. Consul has a mechanism called "<strong>WAN Federation</strong>" which distributes service metadata across regions to enable multi-region capability. 
+J. Consul can be setup for <strong>Disaster Recovery (DR) from failure to an entire cloud Region</strong>. Consul has a mechanism called "<strong>WAN Federation</strong>" which distributes service metadata across regions to enable multi-region capability. Alternately, use
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"><img alt="Consul Multi-Region setup with 5 nodes each" width="1298" height="728" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1655690643/vault-multi-region-map-1298x728_yjgvcv.png"></a>
 
@@ -478,12 +478,8 @@ There are several frameworks which security professionals use to organize contro
 ### Well-Architected Framework (WAF)
 
 A "Well-Architected Framework" is referenced by all major cloud providers.
-   * 
-https://wa.aws.amazon.com/wat.pillar.security.en.html
+   * https://wa.aws.amazon.com/wat.pillar.security.en.html
 
-The security:
-
-   * 
 
 
 <a name="ZeroTrust"></a>
@@ -863,6 +859,9 @@ references https://github.com/btkrausen/hashicorp/tree/master/consul
 
 Also from Bryan is <a target="_blank" href="https://www.udemy.com/course/consul-associate-practice-exam/">
 "HashiCorp Certified: Consul Associate Practice Exam"</a> three full exams of 57 questions each.
+
+<a target="_blank" href="https://community.kodekloud.com/t/about-the-hashicorp-certification-courses-category/138133">
+KodeKloud Q&A for HashiCorp Certification Courses</a>
 
 <hr />
 
