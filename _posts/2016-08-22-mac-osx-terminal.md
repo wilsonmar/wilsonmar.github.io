@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-09-11"
+file: "mac-osx-terminal"
 title: "Mac OSX Terminal (command-line tips and tricks)"
 excerpt: "Make things happen quickly without touching the mouse"
 tags: [apple, mac, setup]
-date: "2016-08-22"
-file: "mac-osx-terminal"
 image:
 # feature: pic brown wood apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622035/740efa5c-0584-11e6-9a41-db5b03eaff85.jpg
@@ -1094,24 +1094,31 @@ and most configuration files are hidden.
 
 ## PS1 terminal prompt setting #
 
-<div class="sidenote">
+The <tt>PS1</tt> variable defines how to display the prompt.
+
+<a target="_blank" href="https://starship.rs/">https://starship.rs</a>
+is a Rust-powered 
+
+<pre><strong>yes | curl -sS https://starship.rs/install.sh | sh</strong></pre>
+
+
 Paul Irish offers his setup-a-new-machine.sh at
 <a target="_blank" href="https://github.com/paulirish/dotfiles">https://github.com/paulirish/dotfiles</a>
 
 ZShell (included with Mac and can be set as the default in Terminal)
-* oh-my-zsh as a ZShell framework
-* The oh-my-zsh Git plugin
-* And the oh-my-zsh theme called jnroweï»¿
-</p></div>
+   * oh-my-zsh as a ZShell framework
+   * The oh-my-zsh Git plugin
+   * The oh-my-zsh theme called jnroweï»¿
+   <br /><br />
 
 By default, if you have a long file name, it would leave little room to type in commands before it wraps to the next line.
 
 <a target="_blank" rel="amphtml" href="http://code.tutsplus.com/tutorials/how-to-customize-the-command-prompt--net-20586">
 To redefine what appears in the prompt</a>,
 edit this file using the vi editor that comes with each Mac:
-<tt>
-vi .bashrc 
-</tt>
+
+<tt>vi .bashrc</tt>
+
 Copy this and paste to the bottom of the .bashrc file:
 <pre>
 txtblk='\e[0;30m' # Black - Regular

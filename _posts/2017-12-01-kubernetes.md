@@ -6844,6 +6844,9 @@ https://tech.ebayinc.com/engineering/how-ebay-leverages-kubernetes-helm-charts-a
 
 STAR: <a target="_blank" href="https://dev.to/aurelievache/understanding-kubernetes-in-a-visual-way-in-video-part-1-pods-1jpg">"Understanding Kubernetes in a visual way" 20-part series</a> by Aurélie Vache, in French with English subtitles. Like the <a target="_blank" href="https://www.imdb.com/title/tt0211915/">French film Amelie</a>, well worth the effort.
 
+https://www.youtube.com/watch?v=oC0UZ-pms9o&list=RDCMUCBdfli20jrAscmR9COL35qg&start_radio=1&rv=oC0UZ-pms9o  
+Cloud with Raj
+
 <hr />
 
 ## More on DevOps #

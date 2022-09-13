@@ -4284,6 +4284,9 @@ Microsoft's <strong>Terrafy</strong> (pronounced "terrify" as in Holloween?) at 
 https://open.spotify.com/episode/54xRbC6doIojY1edvB1QdT?si=8580a6cdebcd438a
 PagerDuty
 
+https://aws-ia.github.io/standards-terraform/
+THE AWS INTEGRATION & AUTOMATION TEAM'S BEST PRACTICES FOR TERRAFORM
+
 
 ## More on DevOps #
 

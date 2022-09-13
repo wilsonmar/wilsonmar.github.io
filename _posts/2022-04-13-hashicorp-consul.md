@@ -4857,12 +4857,40 @@ REMEMBER: Unlike Vault which uses slashes as folders within a hierarchial path, 
 
 ## References
 
+It's amazing to me that much of Consul was described by Armon Dadgar <a target="_blank" href="https://www.infoq.com/presentations/consul/">in this video at the March 7, 2014 qconsf.com</a> (<a target="_blank" href="https://www.slideshare.net/InfoQ/consul-serviceoriented-at-scale">Slide deck here</a>).
+
+<a target="_blank" href="https://www.slideshare.net/richardhightower/consul-46378821">"Consul: Microservice Enabling Microservices and Reactive Programming"</a> Mar. 27, 2015 by Rick Hightower provides a concise yet deep description of Consul:
+
+   <ul>Consul is a service discovery system that provides a microservice style interface to services, service topology and service health.
+
+With service discovery you can look up services which are organized in the topology of your datacenters. Consul uses client agents and RAFT to provide a consistent view of services. Consul provides a consistent view of configuration as well also using RAFT. Consul provides a microservice interface to a replicated view of your service topology and its configuration. Consul can monitor and change services topology based on health of individual nodes.
+Consul provides scalable distributed health checks. Consul only does minimal datacenter to datacenter communication so each datacenter has its own Consul cluster. Consul provides a domain model for managing topology of datacenters, server nodes, and services running on server nodes along with their configuration and current health status.
+Consul is like combining the features of a DNS server plus Consistent Key/Value Store like etcd plus features of ZooKeeper for service discovery, and health monitoring like Nagios but all rolled up into a consistent system. Essentially, Consul is all the bits you need to have a coherent domain service model available to provide service discovery, health and replicated config, service topology and health status. Consul also provides a nice REST interface and Web UI to see your service topology and distributed service config.
+Consul organizes your services in a Catalog called the Service Catalog and then provides a DNS and REST/HTTP/JSON interface to it.
+To use Consul you start up an agent process. The Consul agent process is a long running daemon on every member of Consul cluster. The agent process can be run in server mode or client mode. Consul agent clients would run on every physical server or OS virtual machine (if that makes more sense). Client runs on server hosting services. The clients use gossip and RPC calls to stay in sync with Consul.
+
+A client, consul agent running in client mode, forwards request to a server, consul agent running in server mode. Clients are mostly stateless. The client does LAN gossip to the server nodes to communicate changes.
+A server, consul agent running in server mode, is like a client agent but with more tasks. The consul servers use the RAFT quorum mechanism to see who is the leader. The consul servers maintain cluster state like the Service Catalog. The leader manages a consistent view of config key/value pairs, and service health and topology. Consul servers also handle WAN gossip to other datacenters. Consul server nodes forwards queries to leader, and forward queries to other datacenters.
+A Datacenter is fairly obvious. It is anything that allows for fast communication between nodes, with as few or no hops, little or no routing, and in short: high speed communication. This could be an Amazon EC2 availability zone, a networking environment like a subnet, or any private, low latency, high
+   </ul>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=gRV4sAD0YrU" title="At HashiConf 2017 - 41:59">VIDEO: "Consul and Complex Networks"</a> by James Phillips, Consul Lead at HashiCorp</a> (<a target="_blank" href="https://www.slideshare.net/slackpad/consul-and-complex-networks">Slidedeck</a>)
+
    References on Consul:
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-getting-started-cert/table-of-contents" title="3h 54m Released 9 May 2022 at Consul v1.11.4">Video course on Pluralsight: "Getting Started with HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/weshigbee/">Wes Higbee</a> refercing code at https://github.com/g0t4/course2-consul-gs which uses <tt>docker compose</tt> referencing Docker images at https://hub.docker.com/washigbee
    * <a target="_blank" href="https://www.hashicorp.com/resources/consul-eliminates-load-balancers">VIDEO: "Consul eliminates load balancers"</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=EPcmgr04twM" title="by ex-HashiCorp Nicole Hubbard Apr 24, 2020">VIDEO: "Using Consul for Network Observability & Health Monitoring"</a> referencing <a target="_blank" href="https://github.com/hashicorp/consul-demo-tracking/datadog">this repo</a>
 
    * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-consul-ensuring-security/table-of-contents" title="27 Feb 2022, 1h 27m">Pluralsight "Ensuring Security in HashiCorp Consul"</a> by <a target="_blank" href="https://www.linkedin.com/in/chris-james-green/">Chris Green</a> (direct-root.com)
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=nZqAAjHI0c4">VIDEO: "Running Consul on Kubernetes and Beyond"</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=cmntZnE1qZU">Amplify Your Service Mesh Without Compromising Zero Trust Security"</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=RrK89J_pzbk">VIDEO: "Multi Tenancy with Admin Partitions on HCP Consul"</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=uBfUN6PemIk">VIDEO: "Provision to Production with Terraform Enterprise"</a>
+
 
 <hr />
 

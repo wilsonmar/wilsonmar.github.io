@@ -397,6 +397,13 @@ by Sandeep Dinesh
 title="[44:37]">APIs, Microservices, and the Service Mesh (Cloud Next '19)</a>
 by <a target="_blank" href="https://www.linkedin.com/in/dinochiesa/">Dino Chiesa</a>
 
+By https://www.linkedin.com/in/rickhigh/
+   * https://www.linkedin.com/pulse/why-you-might-need-istio-rick-hightower/ "Istio decorates a network stream as AOP decorates a method call. Istio decorates a network stream as a Servlet Filter decorates an HTTP request/response."
+   * https://www.linkedin.com/pulse/istio-hard-way-rick-hightower/
+   * https://www.linkedin.com/pulse/istio-hard-way-round-2-rick-hightower/?published=t
+   * https://linkedin.com/pulse/service-mesh-compared-aop-servlet-filters-rick-hightower/
+   * https://www.linkedin.com/pulse/service-mesh-compared-aop-servlet-filters-rick-hightower/
+   <br /><br />
 
 ## Social
 
