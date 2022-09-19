@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-02"
+date: "2022-09-14"
 file: "git-signing"
 title: "Git Signing"
 excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
@@ -29,11 +29,14 @@ The contribution of this article is a logical ordering of <strong>deep-dive</str
 This workflow can seem complicated because there are several options: <a href="#Variations">tooling variations (described below)</a>:
 
    * Operating system of local machine (macOS, Windows, Linux flavors)
+
    * Install a GUI app and/or Command-line program to sign keys
+
    * Download <a href="#Installers">installer</a> from publisher web page or run package manager (Homebrew, Chocolately)
 
    * The secret-keeping service (macOS Keychain, GPG, Yubikey, <a href="#Keybase">Keybase.io</a>, <a href="#SelfService">employer-specified</a>, etc.)
-   * Sign every commit or just git tag each release?
+
+   * <a href="#RequireSigned">Sign every commit or just git tag each release?</a>
    <br /><br />
 
 The workflow:
@@ -64,12 +67,20 @@ The workflow:
 
 ## Install client utilities
 
-The alternatives:
+The alternatives on macOS:
 
    * <a href="#install_gpg-suite">Install on macOS GUI GPG-Suite </a> app which stores keys in the protected macOS KeyChain. This is the simplest approach.
-
+   * <a href="#1password">Generate and retrieve SSH & GPG from 1Password</a> 
    * <a href="#gnupg2_mac_install">Install on macOS CLI GPGN2</a>
    * <a target="_blank" href="https://www.goanywhere.com/openpgp-studio">Install Open GPG Studio from GoAnywhere (free)</a>
+   <br /><br />
+
+The alternatives on Linux:
+
+   * <a name="LinuxInstallers">Linux installers</a>
+   <br /><br />
+
+The alternatives on Windows:
 
    * <a href="#InstallWindowsCLI">Install on Windows CLI program</a>
    * <a href="#install-win">Install on Windows a GUI app</a>
@@ -84,7 +95,8 @@ Enterprises would use a centrally administered system to install for all users, 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/mem/intune/protect/certificates-pfx-configure">Microsoft InTune for Windows laptops</a>
    <br /><br />
 
-Desired "Self-Serve" Workflow:
+
+## Desired Self-Serve Workflow
 
 Here's the workflow I would like to see. It's not so much self-service as a tool for administrators. Anyway...
 
@@ -94,6 +106,31 @@ The app generates the certificate pairs, stores them in Vault, installs them on 
 
 Then all a new working developer needs to do is, on a pre-configured laptop, make a change and do a git <a href="#SignTag">tag</a> or <a href="#SignCommits">add and commit with a tag</a>, then <a href="#Push">push</a>.
 
+
+<a name="1password">1Password</a> 
+
+## Generate and retrieve SSH & GPG from 1Password
+
+https://www.darkreading.com/dr-tech/how-to-use-ssh-keys-and-1password-to-sign-git-commits
+describes use of 1Password with GitHub:
+
+1. Update to Git 2.34.0 or later, then go to https://github.com/settings/keys and select "new SSH key," followed by selecting "Signing Key."
+
+   CAUTION: I don't see "Signing Key" on GitHub.
+
+2. From there, navigate to the "Key" box and select the 1Password logo, select "Create SSH Key," fill in a title, and then select "Create and Fill."
+
+3. For the last step, select "Add SSH Key," and the GitHub part of the process is complete.
+
+Once the key is set up in GitHub, proceed to 1Password on your desktop to configure your .gitconfig file to sign with their SSH key.
+
+1. Select the "Configure" option in the banner displayed on top, where a window will open with a snippet you can add to the .gitconfig file.
+
+2. Select the "Edit Automatically" option to have 1Password update the .gitconfig file with one click.
+
+3. Users in need of more advanced configuration can copy the snippet and do things manually.
+   
+<hr />
 
 <a name="GitHubEmail"></a>
 

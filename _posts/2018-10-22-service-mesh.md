@@ -1,11 +1,11 @@
 ---
 layout: post
+date: "2022-09-14"
+file: "service-mesh"
 title: "Service Mesh (Envoy, Istio, Linkerd)"
-excerpt: "The sidecar proxy separates cross-cutting operational concerns from business logic, handing off to a control pane to do the rest"
+excerpt: "The sidecar proxy enables business logic to hand off to a control pane to take care of cross-cutting operational concerns"
 modified:
 tags: [git]
-date: "2021-01-04"
-file: "service-mesh"
 image:
 # svcmesh-istio-api-egress-metrics-1900x500-73342.jpg
   feature: https://user-images.githubusercontent.com/300046/47396182-01282e00-d6e7-11e8-8038-149ab2c7bc8b.jpg

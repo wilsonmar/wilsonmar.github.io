@@ -2603,6 +2603,12 @@ Success! Data written to: my-app/max_conns
 
 ### Install HCDiag
 
+1. HCDiag is open-sourced by HashiCorp at
+   <a target="_blank" href="https://github.com/hashicorp/hcdiag">github.com/hashicorp/hcdiag</a>
+
+1. Get hands-on tutorials from HashiCorp at:
+   <a target="_blank" href="https://learn.hashicorp.com/search?query=hcdiag">learn.hashicorp.com/search?query=hcdiag</a>
+
 1. Install for macOS <a target="_blank" href="https://github.com/hashicorp/homebrew-tap">from Homebrew</a>:
 
    <pre><strong>brew install hcdiag</strong></pre>
@@ -2680,6 +2686,13 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
    <br /><br />
 
    Warning: The hcdiag tool makes no attempt to obscure secrets or sensitive information. So inspect the bundle to ensure it contains only information that is appropriate to share. 
+
+1. If you don't have a sample app, consider:
+   <a target="_blank" href="https://github.com/hashicorp/petshop">github.com/hashicorp/petshop</a>
+
+1. <a target="_blank" href="https://github.com/makrchristopherwest/hcdiag">Mark Christopher West's fork of HCDiag</a> and 
+   <a target="_blank" href="https://github.com/hashicorp/translator">github.com/hashicorp/translator</a>
+
 
 <hr />
 
