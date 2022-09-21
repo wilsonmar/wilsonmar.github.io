@@ -4904,6 +4904,9 @@ A Datacenter is fairly obvious. It is anything that allows for fast communicatio
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=uBfUN6PemIk">VIDEO: "Provision to Production with Terraform Enterprise"</a>
 
+* <a target="_blank" href="https://twitter.com/i/lists/1514979955482017802" title="Jun 27, 2019">VIDEO: "A Closer Look at HashiCorp Consul"</a> by Janakiram MSV
+
+
 
 <hr />
 
