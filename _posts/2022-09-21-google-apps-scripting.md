@@ -20,37 +20,44 @@ comments: true
 
 ## My project: sync between Google Doc and Google Sheet
 
-Scan through a Google Doc for lines tagged with "QUESTION:" or "TODO:"
-and paste that line in a Google Sheet. One sheet for QUESTIONs and another with TODO.
-
-The QUESTION sheet headings:<br />
-<tt>_Seq,_QID,_Question,_Origin,_LastChange</tt>
-
-Add a sequential number to each QUESTION found and update the Doc so there is a unique reference into the Sheet.
-
-   <ul>QUESTION 122: How are you?</ul>
-
-Include in the Sheet a _Origin column a link back to where the item was found in the Doc.
-Example: "Heading 1" etc. captured as you progress through the Doc.
-
-This may be an update instead of a new entry in the Sheet.
-If there is a change, add a sortable date/time stamp to the existing item in the Sheet.
-If it's a new entry, add a sortable date/time stamp.
-Format of the date/time stamp: 22-09-20T24:59:59Z (for Zulu/GMT local time)
-
 We can progress in stages:
-1. Extract question and update a new Sheet.
-2. Add or Update Question Number in Doc: from "QUESTION: text" to "QUESTION 33: text". For now, Ignore anything between QUESTION and :.
-3. Add date/time stamp column in Sheet.
 
-4. The tricky part of this is syncing between Doc and Sheet. 
-We want to keep the extra columns sync'd with its question text.
+1. Sequentially scan through (line by line) a Google Doc for lines tagged with "QUESTION:"
+and paste that line in a Google Sheet. 
 
-To simplify, we only update question text in the Doc, not in the Sheet.
-The heading and question text can change.
-However, the extra columns in the Sheet can be updated.
+   <img alt="SampleDoc1" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg">
+
+   <img alt="SampleSheet1" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg">
+
+   The sheet can be a new file every run.
+
+2. Add a sequential number to each QUESTION found and update the Doc so there is a unique reference into the Sheet.
+
+   Add or Update Question Number in Doc: from "QUESTION: text" to "QUESTION 33: text". For now, Ignore anything between QUESTION and :.
+
+3. Add a sortable date/time stamp column in Sheet for each item added or updated.
+
+   Format of the date/time stamp: 22-09-20T24:59:59Z (for Zulu/GMT local time)
+
+4. Include in the Sheet a _Origin column a link back to where the item was found in the Doc.
+
+   This means that you'll be keeping track of headings as you progress sequentially through the file.
+   
+   Example: "Heading 1" etc. captured as you progress through the Doc.
 
 5. In origin, add a URL link to the Heading text.
+
+6. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
+
+   We want to keep the extra columns sync'd with its question text.
+
+   If there is a change, add a sortable date/time stamp to the existing item in the Sheet.
+
+   To simplify, we only update question text in the Doc, not in the Sheet.
+   The heading and question text can change.
+   However, the extra columns in the Sheet can be updated.
+
+7. Additional tags, such as TODO, PROTIP, etc.
 <br /><br />
 
 Tests:
