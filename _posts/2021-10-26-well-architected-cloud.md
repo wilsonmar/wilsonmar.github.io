@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-07-01"
+date: "2022-09-22"
 file: "well-architected-cloud"
 title: "Well Architected Cloud"
 excerpt: "What is your team's maturity at adopting best practices? Here is the comprehensive industry-standard framework from Amazon, Microsoft, and Google"
@@ -156,6 +156,14 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
 https://aws.amazon.com/blogs/architecture/use-templated-answers-to-perform-well-architected-reviews-at-scale/
 
 https://github.com/aws-samples/aws-well-architected-tool-template-automation
+
+
+<a name="WAF-MindMap"></a>
+
+## WAF Mind Map
+
+Click on individual item for the AWS web page on it:
+<a target="_blank" href="https://wa.aws.amazon.com/wat.map.en.html"><img alt="AWS" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663860063/waf-aws-mindmap-2098_2190_djpoz4.jpg"></a>
 
 
 <a name="CommonDefinitions"></a>
