@@ -18,6 +18,8 @@ comments: true
 
 {% include whatever.html %}
 
+This can be a common situation needing automation.
+
 ## My project: sync between Google Doc and Google Sheet
 
 We can progress in stages:
@@ -39,23 +41,25 @@ and paste that line in a Google Sheet.
 
    For now, the sheet (or CSV file) can be a new file every run.
 
-2. Add a sequential number to each QUESTION found and update the Doc so there is a unique reference into the Sheet.
+2. Have button in google Doc & sheet which invokes the script to run. 
+
+3. Add a sequential number to each QUESTION found and update the Doc so there is a unique reference into the Sheet.
 
    Add or Update Question Number in Doc: from "QUESTION: text" to "QUESTION 33: text". For now, Ignore anything between QUESTION and :.
 
-3. Add a sortable date/time stamp column in Sheet for each item added or updated.
+4. Add a sortable date/time stamp column in Sheet for each item added or updated.
 
    Format of the date/time stamp: 22-09-20T24:59:59Z (for Zulu/GMT local time)
 
-4. Include in the Sheet a _Origin column a link back to where the item was found in the Doc.
+5. Include in the Sheet a _Origin column a link back to where the item was found in the Doc.
 
    This means that you'll be keeping track of headings as you progress sequentially through the file.
    
    Example: "Heading 1" etc. captured as you progress through the Doc.
 
-5. In origin, add a URL link to the Heading text.
+6. In origin, add a URL link to the Heading text.
 
-6. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
+7. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
 
    We want to keep the extra columns sync'd with its question text.
 
@@ -65,7 +69,7 @@ and paste that line in a Google Sheet.
    The heading and question text can change.
    However, the extra columns in the Sheet can be updated.
 
-7. Additional tags, such as TODO, PROTIP, etc.
+8. Additional tags, such as TODO, PROTIP, etc.
 <br /><br />
 
 Tests:
