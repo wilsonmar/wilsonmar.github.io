@@ -25,16 +25,17 @@ We can progress in stages:
 First of all, this can be done old school after export to Microsoft Word and Excel files,
 then use VBA. But the corporate mandate is to use Google.
 
-I was thinking this can be best done <a target="_blank" href="https://towardsdatascience.com/how-to-load-the-content-of-a-google-document-in-python-1d23fd8d8e52">using Python reaching into Google Worspaces</a>, writing out to CSV file.
+Google App Script in JavaScript may provide more efficient higher level helper functions.
+But there is a danger that it can be limited, as it may not be fully mature.
 
-But Google App Script in JavaScript may provide more efficient helper functions.
+I was thinking this can be best done <a target="_blank" href="https://towardsdatascience.com/how-to-load-the-content-of-a-google-document-in-python-1d23fd8d8e52">using Python reaching into Google Worspaces</a>, using the <a target="_blank" href="https://medium.com/analytics-vidhya/how-to-read-and-write-data-to-google-spreadsheet-using-python-ebf54d51a72c">Google Sheet API</a> or writing out to CSV file.
 
 1. Sequentially scan through (line by line) a Google Doc for lines tagged with "QUESTION:"
 and paste that line in a Google Sheet. 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg"><img alt="SampleDoc1" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg"></a>
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"><img alt="SampleSheet1" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"><img alt="SampleSheet1" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"></a>
 
    For now, the sheet (or CSV file) can be a new file every run.
 
