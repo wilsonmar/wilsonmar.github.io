@@ -1370,8 +1370,9 @@ References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=bGC2fNALbNU">VIDEO by CS Dojo</a> from Facebook
    * <a target="_blank" href="https://www.youtube.com/watch?v=qH7fVuYlOOc&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=2">VIDEO: by Paul</a>
    * <a target="_blank" href="https://www.youtube.com/watch?v=HWW-jA6YjHk">VIDEO by interiewing.io</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=sn0DWI-JdNA">VIDEO by Hackerrank</a>
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=sn0DWI-JdNA">VIDEO by Hackerrank</a> on the Coin Change problem using Memoization and DP
+   * https://www.hackerrank.com/domains/python
 
 <a name="fill_knapsack"></a>
 

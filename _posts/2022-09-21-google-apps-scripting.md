@@ -37,29 +37,31 @@ and paste that line in a Google Sheet.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg"><img alt="SampleDoc1" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg"></a>
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"><img alt="SampleSheet1" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"></a>
-
    For now, the sheet (or CSV file) can be a new file every run.
 
-2. Have button in google Doc & sheet which invokes the script to run. 
+2. Create in Google Sheet (instead of CSV)
 
-3. Add a sequential number to each QUESTION found and update the Doc so there is a unique reference into the Sheet.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"><img alt="SampleSheet1" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"></a>
+
+3. Have button in google Doc & sheet which invokes the script to run. 
+
+4. Add a sequential number to each QUESTION found and update the Doc so there is a unique reference into the Sheet.
 
    Add or Update Question Number in Doc: from "QUESTION: text" to "QUESTION 33: text". For now, Ignore anything between QUESTION and :.
 
-4. Add a sortable date/time stamp column in Sheet for each item added or updated.
+5. Add a sortable date/time stamp column in Sheet for each item added or updated.
 
    Format of the date/time stamp: 22-09-20T24:59:59Z (for Zulu/GMT local time)
 
-5. Include in the Sheet a _Origin column a link back to where the item was found in the Doc.
+6. Include in the Sheet a _Origin column a link back to where the item was found in the Doc.
 
    This means that you'll be keeping track of headings as you progress sequentially through the file.
    
    Example: "Heading 1" etc. captured as you progress through the Doc.
 
-6. In origin, add a URL link to the Heading text.
+7. In origin, add a URL link to the Heading text.
 
-7. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
+8. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
 
    We want to keep the extra columns sync'd with its question text.
 
@@ -69,7 +71,8 @@ and paste that line in a Google Sheet.
    The heading and question text can change.
    However, the extra columns in the Sheet can be updated.
 
-8. Additional tags, such as TODO, PROTIP, etc.
+9. Additional tags, such as TODO, PROTIP, etc.
+
 <br /><br />
 
 Tests:

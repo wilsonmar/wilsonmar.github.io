@@ -125,6 +125,14 @@ Have each member of your team do a mental exercise to <strong>prioritize the pil
 QUESTION: Is it appropriate to assign a leader/team to be responsible for each separate pillar?
 
 
+<a name="WAF-MindMap"></a>
+
+## WAF AWS Mind Map
+
+Click twice on individual item for the AWS web page on it:
+<a target="_blank" href="https://wa.aws.amazon.com/wat.map.en.html"><img alt="AWS" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663860063/waf-aws-mindmap-2098_2190_djpoz4.jpg"></a>
+
+
 ## Your Radar Chart of Progress:
 
 PROTIP: To visualize (provide a mental picture of) progress toward using public cloud effectively, I created this sample Radar Chart within an <a target="_blank" href="https://github.com/wilsonmar/wilsonmar.github.io/blob/master/docs/well-architected-radar.xlsx?raw=true">Excel file I built</a>:
@@ -156,14 +164,6 @@ The Well Architected Framework is really an <strong>industry standard</strong> b
 https://aws.amazon.com/blogs/architecture/use-templated-answers-to-perform-well-architected-reviews-at-scale/
 
 https://github.com/aws-samples/aws-well-architected-tool-template-automation
-
-
-<a name="WAF-MindMap"></a>
-
-## WAF Mind Map
-
-Click on individual item for the AWS web page on it:
-<a target="_blank" href="https://wa.aws.amazon.com/wat.map.en.html"><img alt="AWS" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663860063/waf-aws-mindmap-2098_2190_djpoz4.jpg"></a>
 
 
 <a name="CommonDefinitions"></a>
