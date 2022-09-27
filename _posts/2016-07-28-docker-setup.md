@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-09-26"
+file: "docker-setup"
 title: "Docker setup"
 excerpt: "Get bits working in lightweight containers"
 tags: [Docker, devops, ci, setup]
-date: "2016-07-28"
-file: "docker-setup"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -395,10 +395,15 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 
 <a name="Docker4Windows"></a>
 
-## Install Docker on Windows 10 #
+## Install Docker on Windows 10+ #
 
-<a target="_blank" href="https://docs.docker.com/docker-for-windows/">
-https://docs.docker.com/docker-for-windows</a> is the official docs.
+My recommendation is to install using Chocolately so you don't have to click through the <a target="_blank" href="https://docs.docker.com/docker-for-windows/">
+https://docs.docker.com/docker-for-windows</a> official installer.
+
+<pre><strong>choco install docker-desktop</strong></pre>
+
+https://community.chocolatey.org/packages/docker-desktop
+
 
 <a name="DockerAWS"></a>
 
@@ -407,7 +412,7 @@ https://docs.docker.com/docker-for-windows</a> is the official docs.
    Native Windows images have been running within AWS EC2 clouds.
 
    But since Docker images containing Windows OS can run on other machines (such as MacOS and Linux), 
-   thir use would reduce testing and admin. effort.
+   their use would reduce testing and admin. effort.
 
    The marketing page about run Windows within AWS EC2 is<br />
    <a target="_blank" href="https://docs.docker.com/machine/examples/aws/">

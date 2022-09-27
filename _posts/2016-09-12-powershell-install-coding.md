@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-09-25"
+file: "powershell-install-coding"
 title: "PowerShell Install Coding"
 excerpt: "Make PowerShell your superpower on Windows and Macs, for fun and profit"
 tags: [mac, cloud, powershell, microsoft]
-date: "2022-03-05"
-file: "powershell-install-coding"
 image:
 # powershell blue banner-1900x500-296kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18789323/d2ff6614-8167-11e6-94b5-f37637e01d9c.jpg
@@ -59,7 +59,13 @@ PowerShell is open-sourced</a> for all OSs at
 https://github.com/PowerShell/PowerShell</a>.
 
 
-## PowerShell Install on Windows
+## Install PowerShell on Windows
+
+https://aka.ms/PSWindows
+for PowerShell 7 on Windows 11 installed to:
+<tt>$env:ProgramFiles\PowerShell\7</tt>
+
+choco install powershell-core
 
 <a target="_blank" href="https://technet.microsoft.com/en-us/library/dn807169.aspx">
 Windows PowerShellGet Module</a> if you don't want to install these from the

@@ -57,16 +57,21 @@ WSL provides no GPU support, so it can’t run Linux GUI programs such as Gnome,
    If your System type is not "64-bit", get a computer that is. 
    The technical explanation is that WSL currently runs ELF64 Linux binaries.
 
-   ## Windows 10 Build #
+   ## Option A: Windows 10 Build #
 
    Alternately, if you have configured PowerShell to run commands,
    get your Windows Server build number within PowerShell:
 
    <pre>systeminfo | Select-String "^OS Name","^OS Version"</pre>
 
+   Example response:
+   <pre>OS Name: Microsoft Windows 11 Home
+OS Version: 10.0.22000 N/A Build 22000
+   </pre>
+
    If your OS Build is not <strong>18917</strong> or higher, update.
 
-   ## Windows Insider Build
+   ## Option B: Windows Insider Build
 
    As of this writing, WSL is in Preview, so <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Register</a> to be in the <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Windows Insider</a>. (Beta was in the Windows 10 "Anniversary Update Creators Update", then "Fall Creators Update")
 
