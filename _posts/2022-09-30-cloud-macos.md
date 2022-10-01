@@ -59,16 +59,29 @@ Using the AWS Mananagement Console UI from your laptop:
 1. Click the "Next: Storage" to
 1. increase the size of the Root Volume from a default of 60 to 300 GiB (or whatever your capacity 
 analysis runs reveal). 
-1. The Volume Type can be increased by selecting faster Provisioned IOPS SSD volumes can be up to <strong>6 TiB (Terrabytes)</strong> can be selected for mac instance types:
+1. Select Volume Type:
 
+   * Magnetic (Standard)
    * General Purpose SSD (gp2)
    * General Purpose SSD (gp3)
+
    * Provisional IOPS SSD (io1)
-   * Provisional IOPS SSD (io2)
-   * Magnetic (Standard)
+   * Provisional IOPS SSD (io2) on new Nitro-based Amazon EC2 instances using the Scalable Reliable Datagram (SRD) networking protocol
    <br /><br />
 
-   PROTIP: Mac server types can obtain a maxiumum throughput of <strong>up to 1,000 MiB/s</strong> (Megabytes per second) by specifying <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/provisioned-iops.html#EBSVolumeTypes_piops">Provisioned IOPS SSD (Solid State Drive) volumes</a> of up to 64,000 (using I/O in 16 KiB blocks).
+   Provisioned IOPS (Input-Output Per Second) SSD volumes are designed for time-sensitive sustained I/O for sub-millisecond latency in database retrieval speed. Latency is a measurement of time it takes for individual packet to be transferred.
+
+   An example of pricing for 100 GB for a month at 1000 IOPS is the total of:
+   * Cost of EBS-optimized EC2 instance
+   * Number of 100 GB allocated 
+   * <strong>Fixed charge</strong> for the IOPS level selected during that month (rather than the variable millions of I/O requests for standard volumes).
+   <br /><br />
+   
+   Throughput is a measurement of how much (Megabytes of) sequential data (such as a video file) can be transferred per second.
+
+   Up to <strong>6 TiB (Terrabytes)</strong> can be selected for mac instance types.
+
+   PROTIP: Mac server types can obtain a maximum throughput of <strong>up to 1,000 MiB/s</strong> (Megabytes per second) by specifying <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/provisioned-iops.html#EBSVolumeTypes_piops">Provisioned IOPS SSD (Solid State Drive) volumes</a> of up to 64,000 IOPS (using I/O in 16 KiB blocks). 
    This is illustrated by the orange line reaching the upper-right:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1664652178/aws_io1_throughput-1275_460_qautbp.png"><img alt="aws io1 throughput" width="1275" height="460" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1664652178/aws_io1_throughput-1275_460_qautbp.png"></a>
@@ -77,7 +90,9 @@ analysis runs reveal).
 
    PROTIP: The blue line illustrates the "worst case" maximum throughut of <strong>500 MiB/s</strong> when 2,000 IOPs is specified and using larger 256 KiB blocks.
    
-   BTW: Mac instances are not among EC2 instance types C7g, R5b, X2idn, and X2iedn which can use <strong>io2 Block Express volumes</strong> which provide the maximum throughput from any instance at <strong>4,000 MiB/s</strong> (using smaller 16 KiB I/O blocks) when 256,000 MiB/s of IOPS is selected. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/provisioned-iops.html
+   BTW: Mac instances are not among EC2 instance types C7g, R5b, X2idn, and X2iedn which can use <a target="_blank" href="http://aws.amazon.com/ebs/provisioned-iops/">io2 Block Express volumes</a> which provide the maximum throughput from any instance at <strong>4,000 MiB/s</strong> (using smaller 16 KiB I/O blocks) when 256,000 IOPS is selected. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/provisioned-iops.html
+
+   PROTIP: Analysis of actual and simulated peak usage is done to reveal the IOPS level needed. Specifying higher IOPS for increased capacity in many cases does not improve latency. Selection of IOPS and instance type sets a fixed expenditure per month regardless of how much was actually used.
 
 1. Add tags per your administrator's guidelines and examples.
 1. Select a Security Group.
