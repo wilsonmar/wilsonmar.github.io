@@ -16,9 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-{% include whatever.html %}
-
 This can be a common situation needing automation.
+
+{% include whatever.html %}
 
 ## My project: sync between Google Doc and Google Sheet
 
@@ -67,22 +67,23 @@ and paste that line in a Google Sheet.
 
 7. In origin, add a URL link to the Heading text.
 
+   Add a sortable date/time stamp to the existing item in the Sheet.
+
 8. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
 
-   We want to keep the extra columns sync'd with its question text.
+   From here, we will be updating the Sheet rather than creating one.
 
-   If there is a change, add a sortable date/time stamp to the existing item in the Sheet.
-
-   To simplify, we only update question text in the Doc, not in the Sheet.
-   The heading and question text can change.
-   However, the extra columns in the Sheet can be updated.
-
+   We are adding IDs in the Doc and sheet (such as SEC-02-1) which provides a key to those extra columns in the sheet.
+   Based on that code, changes in Question text in the Doc should update the sheet.
+   
+   Update the sortable date/time stamp to each line changed in the Sheet.
+   
+   If there is a difference, please add a text in the _Note field in the Sheet.
+   
    NOTE: This is what the file looks like after processing. Initially, there would be no number after the QUESTION.  On the first pass, create a new sheet. In the Doc insert a sequential number between QUESTION and : (I prefer to have a space before and after the colon : ).  Let’s call that Question ID or QID.  On the first pass, remove any text between QUESTION and : then replace it with a number.
 
-8. On subsequent runs, open the Sheet to update. Do not update the Doc file.
+9. On subsequent runs, open the Sheet to update. Do not update the Doc file.
    We will need to change the QID in the Doc, such as BX-22 at the bottom.
-
-9. 
 
 10. Generate a new document for each additional column (one additional column for each user role).
 
@@ -247,3 +248,10 @@ https://railsware.com/blog/google-apps-script-gotchas-to-develop-an-add%E2%80%91
 
 https://xfanatical.com/blog/how-to-add-an-apps-script-to-my-google-doc-sheets-forms-slides/
 (outdated)
+
+
+## More on MacOS
+
+This is one of a series on MacOS:
+
+{% include mac_links.html %}
