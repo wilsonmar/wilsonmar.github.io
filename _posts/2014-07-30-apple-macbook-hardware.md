@@ -16,6 +16,177 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+## Mac within AWS cloud
+
+In 2022 AWS <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/">announced</a> availability of on-demand MacOS server types built on AWS Nitro System  within the AWS EC2 cloud.
+<a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html">
+Documentation</a>:
+
+One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
+
+   * mac1.metal are Mac Mini's with Intel’s 8th generation (Coffee Lake) 3.2 GHz (4.6 GHz turbo) Core i7 x86 processors 
+
+   * mac2.metal has Apple's M1 or M2 ARM (16-core Neural Engine) processors
+   <br /><br />
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th>Instance</th><th>vCPU cores</th><th>GiB memory</th><th>Gbps Network</th><th>Gbps EBS Bandwidth</th></tr
+   <tr valign="top"><td>mac1.metal</td><td>12</td><td>32</td><td>10</td><td>8</td></tr>
+   <tr valign="top"><td>m2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
+   </table>
+
+Using the AWS Mananagement Console UI from your laptop:
+
+1. Login
+
+1. PROTIP: <a target="_blank" href="https://www.youtube.com/watch?v=8UqtMcX_kg0">As with other instance types</a>, define a Security Group using port 22 protocol TCP source <strong>your laptop's IP address</strong> (rather than 0.0.0.0/0 for just anyone, which is unsafe).
+
+1. Create a pem key (such as "malx-us-west-2.pem" in the example below).
+1. <tt>chmod 0400 malx-us-west-2.pem</tt>
+
+1. Define an IAM role.
+
+1. Type "EC2" in the search box.
+1. Select <strong>Dedicated Hosts</strong> from the left menu.
+1. Select the region (at the upper-right).
+1. Select one of the instance types shown (Oregon Mac1 Dedicated Host).
+1. Pull down the Actions list to select "Launch instance onto host".
+1. Select "macOS Big Sur 11.2.3" among Amazon Machine Images.
+1. Click "Next:" at the lower-right corner.
+1. Choose an IAM role.
+1. Click the "Next: Storage" if you need to
+1. Increase the size of the Root Volume from a default of 60 to 300 GiB.
+1. The Volume Type can be increased by selecting faster <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/provisioned-iops.html#EBSVolumeTypes_piops">Provisioned IOPS SSD (Solid State Drive) volumes</a>. Provisioned IOPS SSD volumes can be 4 GiB to 16 TiB.
+
+   * General Purpose SSD (gp2) for 3000 IOPS.
+   * General Purpose SSD (gp3) for 3000 IOPS.
+   * Provisional IOPS SSD (io1) for up to 5,000 IOPS
+   * Provisional IOPS SSD (io2) for up to 50,000 IOPS
+   * Magnetic (Standard)
+
+1. Add tags per your administrator's guidelines and examples.
+1. Select a Security Group.
+1. Select the key pair.
+1. Click the blue "Launch".
+1. After Instance State is "Running",
+1. Highlight the Public IPv4 address to your Clipboard.
+1. Proceed to <a href="#AWSMacConnect">Connect to AWS MacOS</a> below.
+<br /><br />
+
+
+Alternately, using AWS CLI:
+
+1. Download the <tt>malx-us-west-2.pem</tt> from the keypair.
+1. Allocate hosts:
+
+   <pre><strong>
+   aws ec2 allocate-hosts --instance-type="mac1.metal" \
+   --quantity=1 \
+   --region="us-west-2" --availability-zone="us-west-2b" \
+   --auto-placement="on" --host-recovery="off"
+   </strong></pre>
+
+   Response:
+
+   <pre>{
+    "hostIds": [
+      "h-043de1b44a0374973"
+    ]
+   }
+   </pre>
+
+1. View file <tt>mapping.json</tt> for <tt>--block-device-mappings</tt>
+
+   <pre>
+   [
+      {
+         "DeviceName": "/dev/sda1",
+         "Ebs": {
+              "VolumeSize": 300,
+              "VolumeType": "gp3"
+         }
+      }
+   ]
+   </pre>
+
+1. Run the instance using the image-id associated with the region selected:
+
+   <pre><strong>
+   aws ec2 run-instances --region="us-west-2" \
+   --image-id="ami-04fdffdf922f4de8e" \
+   --key-name="malx-us-west-2" \
+   --block-device-mappings file://mapping.json \
+   --associate-public-ip-address \
+   --placement="Tenancy"="host"
+   </strong></pre>
+
+
+<a name="AWSMacConnect"></a>
+
+### Connect to AWS MacOS
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=8UqtMcX_kg0">As with other instance types</a>, use SSH to connect to your Mac instance :
+
+   <pre><strong>
+   ssh -i malx-us-west-2.pem ec2-user@35.161.43.6
+   </strong></pre>
+
+1. Once on the Mac prompt:
+
+   <pre><strong>
+   sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart \
+   -activate -configure -access -on \
+   -configure -allowAccessFor -allUsers \
+   -configure -restart -agent -privs -all
+   exit
+   </strong></pre>
+
+1. Disconnect and reconnect to enable the GUI.
+
+   <pre><strong>
+   ssh -L 5900:localhost:5900 -i malx-us-west-2.pem ec2-user@35.161.43.6
+   </strong></pre>
+
+1. Press command+spacebar for Spotlight to search for the screen-sharing app.
+
+1. Login using your password.
+
+1. If you selected a larger volume (above), <a target="_blank" href="https://www.youtube.com/watch?v=--BfdlnIc7Y">VIDEO</a>:
+
+   <pre><strong>
+   PDISK=$(diskutil list physical external | head -n1 | cut -d' ' -f1 )
+   sudo diskutil repairDisk $PDISK
+   </strong></pre>
+
+1. Resize (which takes a few minutes):
+
+   <pre><strong>
+   APFSCONT=$(dikutil list physical external | grepApple_APFS | tr -s ' ' | cut -d ' ' -f8 )
+   sudo diskutil apfs resizeContainer $APFSCONT 0
+   </strong></pre>
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=--BfdlnIc7Y&t=4m11s">Take a snapshot</a> backup at volume or instance level to copy across regions or accounts to create new AMI machine images.
+
+1. The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pricing">unit of billing</a> is the <a target="_blank" href="https://aws.amazon.com/ec2/dedicated-hosts/pricing/">dedicated host</a> US region price which have a <strong>24-hour minimum allocation period</strong> (required by Apple). For 
+
+   * mac1 US per hour $0.650 x 24 = $15.6/day or $468 per 30-day month
+   * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
+   <br /><br />
+
+   More that a few months, you might as well buy your own Mac at $2,500.
+   
+   Save up to 44% off On-Demand pricing with a 3-year commitment. 
+
+   They're not available on all regions world-wide.
+
+   * mac1 Mumbai per hour $1.14
+   * mac2 Frankfurt per hour $1.298
+   <br /><br />
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=XWcCzqEemQQ">VIDEO: macOS Workers with Kubernetes and Jenkins</a>
+
+<hr />
+
 ## Hardware Versions
 
 1. Click the Apple icon at the upper left corner and select

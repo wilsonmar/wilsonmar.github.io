@@ -32,14 +32,18 @@ But there is a danger that it can be limited, as it may not be fully mature.
 
 I was thinking this can be best done <a target="_blank" href="https://towardsdatascience.com/how-to-load-the-content-of-a-google-document-in-python-1d23fd8d8e52">using Python reaching into Google Worspaces</a>, using the <a target="_blank" href="https://medium.com/analytics-vidhya/how-to-read-and-write-data-to-google-spreadsheet-using-python-ebf54d51a72c">Google Sheet API</a> or writing out to CSV file.
 
+The end objective is that a change can be made in the Doc and be reflected in the Sheet.
+There are several sheets: one for text tagged as a QUESTION, another for TODO, etc.
+The sync is necessary because the sheet has additional columns associated with each text line.
+For example, the QUESTION sheet data is associated with a flags for applicable to each persona (job role).
+The sheet is used to generate docs of questions applicable only to each persona.
+
 1. Sequentially scan through (line by line) a Google Doc for lines tagged with "QUESTION:"
 and paste that line in a Google Sheet. 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg"><img alt="SampleDoc1" width="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847395/SampleDoc1_hrpsqb.jpg"></a>
 
-   For now, the sheet (or CSV file) can be a new file every run.
-
-2. Create in Google Sheet (instead of CSV)
+2. Create in new Google Sheet 
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"><img alt="SampleSheet1" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663847384/SampleSheet1_rssovw.jpg"></a>
 
@@ -59,6 +63,8 @@ and paste that line in a Google Sheet.
    
    Example: "Heading 1" etc. captured as you progress through the Doc.
 
+   ---------
+
 7. In origin, add a URL link to the Heading text.
 
 8. Here's the tricky (but cool) part - syncing between Doc and Sheet. 
@@ -71,7 +77,18 @@ and paste that line in a Google Sheet.
    The heading and question text can change.
    However, the extra columns in the Sheet can be updated.
 
-9. Additional tags, such as TODO, PROTIP, etc.
+   NOTE: This is what the file looks like after processing. Initially, there would be no number after the QUESTION.  On the first pass, create a new sheet. In the Doc insert a sequential number between QUESTION and : (I prefer to have a space before and after the colon : ).  Let’s call that Question ID or QID.  On the first pass, remove any text between QUESTION and : then replace it with a number.
+
+8. On subsequent runs, open the Sheet to update. Do not update the Doc file.
+   We will need to change the QID in the Doc, such as BX-22 at the bottom.
+
+9. 
+
+10. Generate a new document for each additional column (one additional column for each user role).
+
+    In each document for a particular role, only print the question text which has been flagged "Yes"/True in the column for that role.
+
+11. Additional tags, such as TODO, PROTIP, etc.
 
 <br /><br />
 
@@ -92,6 +109,9 @@ https://github.com/googleworkspace/apps-script-samples
 https://www.neenopal.com/GoogleAppScript.html
 
 Google announced that it will discontinue its Apps Script UI Service on July 15, 2019.
+
+https://edu.gcfglobal.org/en/topics/googleapps/
+Tutorials on Gmail, Keep, Docs, Sheets, Drive, Slides, Maps, Forms
 
 
 ## Install
