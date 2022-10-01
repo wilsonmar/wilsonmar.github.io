@@ -180,7 +180,7 @@ Alternately, using AWS CLI:
    AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
    But more that a few months, you might as well buy your own Mac at $2,500.
 
-   Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</at>
+   Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
    <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
 
    * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
