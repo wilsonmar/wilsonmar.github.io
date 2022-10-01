@@ -30,7 +30,7 @@ One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
    <br /><br />
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th>Instance</th><th>vCPU cores</th><th>GiB memory</th><th>Gbps Network</th><th>Gbps EBS Bandwidth</th></tr
+   <tr><th>Instance</th><th>vCPU cores</th><th>GiB memory</th><th>Gbps Network</th><th>Gbps EBS Bandwidth</th></tr>
    <tr valign="top"><td>mac1.metal</td><td>12</td><td>32</td><td>10</td><td>8</td></tr>
    <tr valign="top"><td>m2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
@@ -171,19 +171,30 @@ Alternately, using AWS CLI:
 
    * mac1 US per hour $0.650 x 24 = $15.6/day or $468 per 30-day month
    * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
-   <br /><br />
-
-   More that a few months, you might as well buy your own Mac at $2,500.
-   
-   Save up to 44% off On-Demand pricing with a 3-year commitment. 
-
-   They're not available on all regions world-wide.
-
    * mac1 Mumbai per hour $1.14
    * mac2 Frankfurt per hour $1.298
    <br /><br />
 
+   It's not available on all regions world-wide.
+
+   AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
+   But more that a few months, you might as well buy your own Mac at $2,500.
+
+   Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</at>
+   <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
+
+   * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
+   * mac1 (Gen 4 Mac mini) with 64 GB for $299 per month
+   * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
+   <br /><br />
+   
 1. <a target="_blank" href="https://www.youtube.com/watch?v=XWcCzqEemQQ">VIDEO: macOS Workers with Kubernetes and Jenkins</a>
+
+   Orka orchestrates macOS in a cloud environment using Kubernetes technology on genuine Apple hardware.
+
+   Anka is designed specifically for Mac-based CI workflows and easily integrates with existing container-based DevOps CI pipelines.
+
+
 
 <hr />
 
@@ -238,6 +249,7 @@ Alternately, using AWS CLI:
    Install Geekbench to obtain CPU Benchmark statics for your own machine <a target="_blank" href="https://browser.geekbench.com/v4/cpu/8746987">posted on their website</a>.
 
    The Compute Benchmark is run and <a target="_blank" href="https://browser.geekbench.com/v4/compute/2532765">posted</a> separately.
+
 
 ### Mac Specs.
 
