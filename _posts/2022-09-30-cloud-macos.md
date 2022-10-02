@@ -2,7 +2,7 @@
 layout: post
 date: "2022-09-30"
 file: "cloud-macos"
-title: "cloud MacOS"
+title: "Cloud MacOS"
 excerpt: "Temporary MacOS instances from AWS EC2 and MacStadium"
 tags: [apple, mac, setup, cloud]
 image:
@@ -105,6 +105,7 @@ analysis runs reveal).
 
 
 Alternately, using AWS CLI:
+https://aws.amazon.com/blogs/aws/use-amazon-ec2-m1-mac-instances-to-build-test-macos-ios-ipados-tvos-and-watchos-apps/
 
 1. Download the <tt>malx-us-west-2.pem</tt> from the keypair.
 1. Allocate hosts:
@@ -115,6 +116,11 @@ Alternately, using AWS CLI:
    --region="us-west-2" --availability-zone="us-west-2b" \
    --auto-placement="on" --host-recovery="off"
    </strong></pre>
+
+   Auto-placment = on preserves the Dedicated Host for targeted launch requests,
+   allow untargeted (no host ID specified) requests to succeed.
+   
+   When Host recovery = on, it automatically restarts instances to a new replacement host if failures are detected on the Dedicated Host.
 
    Response:
 
