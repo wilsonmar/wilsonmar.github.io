@@ -601,12 +601,16 @@ Within Kubernetes are these auto-scaling mechanisms:
             memory: 8000k
    </pre>
 
-   The <tt>lowerBound</tt> limit defines the minimum amount of resources that containers need. For example, an application can use more than 256MB of memory, but Kubernetes will guarantee a minimum of 256MB to the container if its request is 256MB of memory.
+   The <tt>lowerBound</tt> limit defines the minimum amount of resources that containers need. 
 
    If configured, the VPA updater can automatically restart nodes to carry out its recommendations and <strong>increase or decrease existing pod containers</strong>. But that is not recommended in production because of concerns about churn disrupting reliability -- exceeding the <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">Kubernetes PodDisruptionBudget</a> (PDB) -- minAvailable and maxUnAvailable.
 
-* Densivy.com provides a commercially available (paid) option which uses sophisticated Machine Learning mechanisms.
+* <a target="_blank" href="https://www.densify.com/product"k8>Densify.com</a> provides a commercially available (paid) option which uses sophisticated Machine Learning mechanisms. It provides an <a target="_blank" href="https://www.densify.com/docs-api/Content/APIHome.htm">API</a>.
 
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"><img alt="Desify" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"></a>
+
+
+<a name="VPA"></a>
 
 ### VPA (Vertical Pod Autoscaler)
 
