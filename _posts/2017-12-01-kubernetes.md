@@ -561,6 +561,8 @@ Kubernetes automates resilience by abstracting the network and storage shared by
    <a href="#Volumes">Volumes of persistent data storage</a>
 
 
+<a name="AutoScaling"></a>
+
 ### Auto-Scaling
 
 Within AWS, Auto Scaling Groups (ASGs) are used to scale nodes.
@@ -570,35 +572,169 @@ Within AWS, Auto Scaling Groups (ASGs) are used to scale nodes.
    * https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-vertical-autoscaler.html
    <br /><br />
 
-<a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
-<a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
+Within Kubernetes are these auto-scaling mechanisms:
+
+* <strong>Cluster Autoscaler (CA)</strong> adjusts the <strong>number of nodes in a cluster</strong>. It automatically adds or removes nodes in a cluster when nodes have insufficient resources to run a pod (adds a node) or when a node remains underutilized, and its pods can be assigned to another node (removes a node).
+
+* <strong>HPA (Horizontal Pod Autoscaler)</strong> scales <strong>more copies of the same pod</strong> (assuming that the hosted application supports horizontal scaling via replication). HPA uses <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#scaling-on-custom-metrics">custom metrics</a> such as the number of incoming session requests by end-users to a service load balancer.
+
+<a name="SampleVPARec"></a>
+* <strong>VPA (Vertical Pod Autoscaler)</strong> analyzes standard CPU and memory resource usage metrics to provide recommendations CPU and memory resource configuration to align cluster resource allotment with actual usage. An example of its recommendation output:
+
+   <pre>
+    status:
+      conditions:
+          - lastTransitionTime: "2020-12-23T10:33:13Z"
+          status: "True"
+          type: RecommendationProvided
+      recommendation:
+         containerRecommendations:
+         - containerName: nginx
+         lowerBound:
+            cpu: 40m
+            memory: 3100k
+         target:
+            cpu: 60m
+            memory: 3500k
+         upperBound:
+            cpu: 831m
+            memory: 8000k
+   </pre>
+
+   The <tt>lowerBound</tt> limit defines the minimum amount of resources that containers need. For example, an application can use more than 256MB of memory, but Kubernetes will guarantee a minimum of 256MB to the container if its request is 256MB of memory.
+
+   If configured, the VPA updater can automatically restart nodes to carry out its recommendations and <strong>increase or decrease existing pod containers</strong>. But that is not recommended in production because of concerns about churn disrupting reliability -- exceeding the <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">Kubernetes PodDisruptionBudget</a> (PDB) -- minAvailable and maxUnAvailable.
+
+* Densivy.com provides a commercially available (paid) option which uses sophisticated Machine Learning mechanisms.
 
 
 ### VPA (Vertical Pod Autoscaler)
 
+This section is based on several references:
+
+   * https://www.kubecost.com/kubernetes-autoscaling/kubernetes-vpa/ (the best description)
+   * https://www.densify.com/kubernetes-autoscaling/kubernetes-vpa (identifies issues with VPA)
+   * https://www.giantswarm.io/blog/vertical-autoscaling-in-kubernetes
    * https://docs.aws.amazon.com/eks/latest/userguide/vertical-pod-autoscaler.html
    * https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+   * https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
+   * <a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
+   * <a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
+   * https://blog.digitalis.io/kubernetes-capacity-planning-with-vertical-pod-autoscaler-7c1690dc38b3
+   * https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengusingverticalpodautoscaler.htm
+   * https://www.alibabacloud.com/help/en/container-service-for-kubernetes/latest/vertical-pod-autoscaling
    <br /><br />
 
-The Kubernetes Vertical Pod Autoscaler (VPA) automatically adjusts the CPU and memory reservations for your pods to help "right size" your applications. This adjustment can improve cluster resource utilization and free up CPU and memory for other pods. 
+By default, the Kubernetes scheduler does not re-evaluate a pod’s resource needs after that pod is scheduled. As a result, over-allocated resources are not freed or scaled-down. Conversely, if a pod didn’t request sufficient resources, the scheduler won’t increase them to meet the higher demand.
+The implications of this is that:
 
-To deploy the Vertical Pod Autoscaler to your cluster 
+   * If resources are over-allocated, unnecessary workers are added, waste unused resources, and monthly bills increase.
 
-1. Open a terminal window 
-2. Navigate to a directory where you would like to download the Vertical Pod Autoscaler source code.
-3. Clone the kubernetes/autoscaler GitHub repository and change to directory:
+   * If resources are under-allocated, resources will get used up quickly, application performance will suffer, and the kubelet may start killing pods until resource utilization drops.
+   <br /><br />
 
+The Kubernetes Vertical Pod Autoscaler (VPA) VPA automatically adjusts the CPU and memory reservations for pods to "right size" applications. It analyzes resource usage over time to either down-scale pods that are over-requesting resources, and up-scale pods that are under-requesting resources.
+It maintains ratios between limits and requests specified in initial containers configuration.
+VPA frees users from manually adjusting resource limits and requests for containers in their pods. 
+
+To deploy the Vertical Pod Autoscaler to your cluster: 
+
+1. Define a Kubernetes Deployment that uses VPA for resource recommendations, using this sample YAML manifest:
+
+   <pre>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.8
+        ports:
+        - containerPort: 80
+   </pre>
+
+    Note that the file above has no CPU or memory requests. The pods in the Deployment belong to the VerticalPodAutoscaler (shown in the next paragraph) as they are designated with the kind, Deployment and name, nginx-deployment.
+
+1. Define a VPA resource:
+
+   <pre>
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: app-vpa
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: app
+  resourcePolicy:
+    containerPolicies:
+      - containerName: '*'
+        controlledResources:
+          - cpu
+          - memory
+        maxAllowed:
+          cpu: 1
+          memory: 500Mi
+        minAllowed:
+          cpu: 100m
+          memory: 50Mi
+  updatePolicy:
+    updateMode: "Auto"   
+   </pre>
+
+   The targetRef (reference) allows specification of which workload is subject VPA actions. The above example says <tt>kind: Deployment</tt>, it can also be any of Deployment, DaemonSet, ReplicaSet, StatefulSet, ReplicationController, Job, or CronJob.
+
+1. Create an existing Amazon EKS cluster.
+1. The <a target="_blank" href="https://github.com/kubernetes-incubator/metrics-server">Metrics server</a> must be deployed in your cluster.
+1. Open a terminal window.
+1. Upgrade openssl to at least version 1.1.1 (currently LibreSSL 2.8.3):
+
+   <pre><strong>openssl version</strong></pre>
+
+1. Navigate to a directory that corresponds to your GitHub account, where you want to download source code.
+1. View the documentation
+
+   https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+
+   Autoscaling is configured with a Custom Resource Definition object called VerticalPodAutoscaler. 
+
+   CAUTION: There is a <a target="_blank" href="https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler#installation">VPA version specific to each version of Kubernetes</a>.
+
+1. Clone the kubernetes/autoscaler GitHub repository and change to directory:
+             
    <pre><strong>
    git clone https://github.com/kubernetes/autoscaler.git
    cd autoscaler/vertical-pod-autoscaler/
    </strong></pre>
 
-4. (Optional) If you have already deployed another version of the Vertical Pod Autoscaler, remove it:
+1. unset environment variables $REGISTRY and $TAG unless you want to use a non-default version of VPA.
 
-   <pre>./hack/vpa-down.sh
-   </pre>
+1. (Optional) If you have already deployed another version of the Vertical Pod Autoscaler, remove it:
 
-5. If your nodes don't have internet access to the k8s.gcr.io container registry, then you need to pull the following images and push them to your own private repository. For more information about how to pull the images and push them to your own private repository, see Copy a container image from one repository to another repository.
+   If running on GKE, clean up role bindings created in Prerequisites:
+
+   <pre><strong>kubectl delete clusterrolebinding myname-cluster-admin-binding
+   </strong></pre>
+
+   <pre><strong>./hack/vpa-down.sh
+   </strong></pre>
+
+   If VPA stops running in a cluster, resource requests for the pods already modified by VPA will not change, but any new pods will get resources as defined in your controllers (i.e. deployment or replicaset) and not according to previous recommendations made by VPA.
+
+1. This assumes your nodes have internet access to the k8s.gcr.io container registry. If not, pull the following images and push them to your own private repository. For more information about how to pull the images and push them to your own private repository, see https://docs.aws.amazon.com/eks/latest/userguide/copy-image-to-repository.html
+Copy a container image from one repository to another repository.
 
    <pre>
    k8s.gcr.io/autoscaling/vpa-admission-controller:0.10.0
@@ -614,11 +750,61 @@ To deploy the Vertical Pod Autoscaler to your cluster
    sed -i.bak -e 's/k8s.gcr.io/111122223333.dkr.ecr..dkr.ecr.region-codeamazonaws.com/' ./deploy/updater-deployment.yaml
    </pre>
  
-6. Deploy the Vertical Pod Autoscaler to your cluster with the following command.
+1. Check if all Kubernetes system components are running: 3 pods (recommender, updater and admission-controller) all in Running state:
+
+   <pre><strong>kubectl --namespace=kube-system get pods|grep vpa
+   </strong></pre>
+
+1. Check that the VPA service actually exists:
+
+   <pre><strong>kubectl describe -n kube-system service vpa-webhook
+   </strong></pre>
+
+   <pre>Name:              vpa-webhook
+Namespace:         kube-system
+Labels:            &LT;none>
+Annotations:       &LT;none>
+Selector:          app=vpa-admission-controller
+Type:              ClusterIP
+IP:                &LT;some_ip>
+Port:              &LT;unset>  443/TCP
+TargetPort:        8000/TCP
+Endpoints:         &LT;some_endpoint>
+Session Affinity:  None
+Events:            &LT;none>
+   </pre>
+
+1. Check that the VPA admission controller is running correctly:
+
+   <pre><strong>kubectl get pod -n kube-system | grep vpa-admission-controller
+   </strong></pre>
+
+   Sample output:
+   
+   <pre>vpa-admission-controller-69645795dc-sm88s 1/1 Running 0 1m
+   </pre>
+
+1. Check the logs of the admission controller using its id from the previous command, such as:
+
+   <pre><strong>kubectl logs -n kube-system vpa-admission-controller-69645795dc-sm88s
+   </strong></pre>
+
+If the admission controller is up and running, but there is no indication of it actually processing created pods or VPA objects in the logs, the webhook is not registered correctly.
+
+1. Deploy the Vertical Pod Autoscaler to your cluster:
 
    <pre><strong>./hack/vpa-up.sh</storng></pre>
 
-7. Verify that the Vertical Pod Autoscaler pods have been created successfully:
+   CAUTION: Whenever VPA updates pod resources, the pod is recreated, which causes all running containers to be restarted. The pod may be recreated on a different node.
+
+   VPA recommendation might exceed available resources (e.g. Node size, available size, available quota) and cause pods to go pending. This can be partly addressed by using VPA together with <a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#basics">Cluster Autoscaler</a>.
+
+1. Check that the VPA Custom Resource Definition was created:
+
+   <pre><strong>kubectl get customresourcedefinition | grep verticalpodautoscalers
+   </strong></pre>
+
+1. Verify that the Vertical Pod Autoscaler pods have been created successfully:
 
    <pre><strong>kubectl get pods -n kube-system</strong></pre>
 
@@ -632,12 +818,45 @@ To deploy the Vertical Pod Autoscaler to your cluster
    vpa-updater-786b96955c-bgp9d                1/1     Running   0          8s
    </pre>
 
-8. To verify that it works, deploy the hamster.yaml Vertical Pod Autoscaler example:
+   The VPA project's components:
+
+   * <strong>Recommender</strong> monitors the current and past resource consumption and, based on it, provides recommended values for the containers' cpu and memory requests.
+
+   * <strong>Updater</strong> checks which of the managed pods have correct resources set and, if not, kills them so that they can be recreated by their controllers with the updated requests.
+
+   * <strong>K8s Admission Plugin</strong> sets the correct resource requests on new pods (either just created or recreated by their controller due to Updater's activity).
+
+   <a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/FAQ.md">Parameters to above in FAQ</a>. 
+
+1. To verify that it works, deploy the hamster.yaml Vertical Pod Autoscaler:
 
    <pre><strong>kubectl apply -f examples/hamster.yaml
    </strong></pre>
 
-9. Get the pods from the hamster example application:
+   Example contents at <tt>autoscaler/vertical-pod-autoscaler/examples/hamster.yaml</tt>
+
+   <pre>apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: my-app-vpa
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind:       Deployment
+    name:       my-app
+  updatePolicy:
+    updateMode: "Auto"
+   </pre>
+
+   * <tt>updateMode = auto</tt> applies the recommendations directly by updating/recreating the pods.
+   CAUTION: When VPA applies the change, each pod restarts, which causes a workload disruption.
+
+   * <tt>updateMode = initial</tt> applies the recommended values to newly created pods only.
+
+   * <tt>updateMode = off</tt> simply stores the recommended values for reference. This is preferred in production environments. Feed the recommendations to a capacity monitoring dashboard such as Grafana, and apply the recommendations in the next deployment cycle.
+   <br /><br />
+
+1. Get pod IDs from the hamster sample application:
 
    <pre><strong>
    kubectl get pods -l app=hamster
@@ -646,11 +865,10 @@ To deploy the Vertical Pod Autoscaler to your cluster
    Sample output:
 
    <pre>hamster-c7d89d6db-rglf5   1/1     Running   0          48s
-hamster-c7d89d6db-znvz5   1/1     Running   0          48s
+   hamster-c7d89d6db-znvz5   1/1     Running   0          48s
    </pre>
 
-9. Describe one of the pods to view its cpu and memory reservation. 
-   Replace c7d89d6db-rglf5 with one of the IDs returned in your output from the previous step.
+1. Describe one of the pods to view its cpu and memory reservation to replace "c7d89d6db-rglf5" with one of the IDs returned in from the previous step:
 
    <pre><strong>
    kubectl describe pod hamster-c7d89d6db-rglf5
@@ -681,14 +899,16 @@ hamster-c7d89d6db-znvz5   1/1     Running   0          48s
 
    See that the original pod reserves 100 millicpu of CPU and 50 mebibytes of memory. For this example application, 100 millicpu is less than the pod needs to run, so it is CPU-constrained. It also reserves much less memory than it needs. The Vertical Pod Autoscaler vpa-recommender deployment analyzes the hamster pods to see if the CPU and memory requirements are appropriate. If adjustments are needed, the vpa-updater relaunches the pods with updated values.
 
-9. Wait for the vpa-updater to launch a new hamster pod. This should take a minute or two. You can monitor the pods:
+1. Wait for the vpa-updater to launch a new hamster pod. This should take a minute or two. You can monitor the pods:
 
    Note: If you are not sure that a new pod has launched, compare the pod names with your previous list. When the new pod launches, you will see a new pod name.
 
    <pre><strong>kubectl get --watch pods -l app=hamster
    </strong></pre>
 
-9. When a new hamster pod is started, describe it and view the updated CPU and memory reservations.
+   The response is a pod ID such as "hamster-c7d89d6db-jxgfv".
+
+1. When a new hamster pod is started, describe it and view the updated CPU and memory reservations.
 
    <pre><strong>kubectl describe pod hamster-c7d89d6db-jxgfv
    </pre></strong>
@@ -718,7 +938,28 @@ hamster-c7d89d6db-znvz5   1/1     Running   0          48s
 
    In the sample output above, see that the cpu reservation increased to 587 millicpu, which is over five times the original value. The memory increased to 262,144 Kilobytes, which is around 250 mebibytes, or five times the original value. This pod was under-resourced, and the Vertical Pod Autoscaler corrected the estimate with a much more appropriate value.
 
-9. View the new recommendation:
+1. View the new recommendation:
+
+   <pre><strong>kubectl describe vpa vpa/hamster-vpa
+   </strong></pre>
+
+   Sample output was <a name="SampleVPARec">shown above</a>:
+
+   <pre>recommendation:
+	containerRecommendations:
+	- containerName: nginx
+  	lowerBound:
+    	cpu: 40m
+    	memory: 3100k
+  	target:
+    	cpu: 60m
+    	memory: 3500k
+  	upperBound:
+    	cpu: 831m
+    	memory: 8000k
+   </pre>
+
+1. View the new recommendation:
 
    <pre><strong>kubectl describe vpa/hamster-vpa
    </strong></pre>
@@ -767,11 +1008,17 @@ Status:
 Events:          &LT;none>
    </pre>
 
-9. Delete it with the following command.
+1. Print YAML contents with all resources that would be understood by <tt>kubectl diff|apply|...</tt> commands:
+
+   <pre><strong>./hack/vpa-process-yamls.sh print
+   </strong></pre>
+
+1. Delete it by running the same yaml file as used to create it:
 
    <pre><strong>
    kubectl delete -f examples/hamster.yaml
    </strong></pre>
+
 
 
 <hr />
