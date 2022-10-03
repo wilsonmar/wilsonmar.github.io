@@ -95,6 +95,10 @@ analysis runs reveal).
    PROTIP: Analysis of actual and simulated peak usage is done to reveal the IOPS level needed. Specifying higher IOPS for increased capacity in many cases does not improve latency. Selection of IOPS and instance type sets a fixed expenditure per month regardless of how much was actually used.
 
 1. Add tags per your administrator's guidelines and examples.
+
+   Usage reports do not distinguish between io2 Block Express volumes and io2 volumes. 
+   So add tags to identify the volume used is a io2 Block Express volume.
+
 1. Select a Security Group.
 1. Select the key pair.
 1. Click the blue "Launch".

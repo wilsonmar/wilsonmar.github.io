@@ -573,7 +573,208 @@ Within AWS, Auto Scaling Groups (ASGs) are used to scale nodes.
 <a target="_blank" href="https://medium.com/infrastructure-adventures/vertical-pod-autoscaler-deep-dive-limitations-and-real-world-examples-9195f8422724">BLOG</a>:
 <a target="_blank" href="https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler">verticalpodautoscaler CRD</a>
 
-VPA (Vertical Pod Autoscaler)
+
+### VPA (Vertical Pod Autoscaler)
+
+   * https://docs.aws.amazon.com/eks/latest/userguide/vertical-pod-autoscaler.html
+   * https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+   <br /><br />
+
+The Kubernetes Vertical Pod Autoscaler (VPA) automatically adjusts the CPU and memory reservations for your pods to help "right size" your applications. This adjustment can improve cluster resource utilization and free up CPU and memory for other pods. 
+
+To deploy the Vertical Pod Autoscaler to your cluster 
+
+1. Open a terminal window 
+2. Navigate to a directory where you would like to download the Vertical Pod Autoscaler source code.
+3. Clone the kubernetes/autoscaler GitHub repository and change to directory:
+
+   <pre><strong>
+   git clone https://github.com/kubernetes/autoscaler.git
+   cd autoscaler/vertical-pod-autoscaler/
+   </strong></pre>
+
+4. (Optional) If you have already deployed another version of the Vertical Pod Autoscaler, remove it:
+
+   <pre>./hack/vpa-down.sh
+   </pre>
+
+5. If your nodes don't have internet access to the k8s.gcr.io container registry, then you need to pull the following images and push them to your own private repository. For more information about how to pull the images and push them to your own private repository, see Copy a container image from one repository to another repository.
+
+   <pre>
+   k8s.gcr.io/autoscaling/vpa-admission-controller:0.10.0
+   k8s.gcr.io/autoscaling/vpa-recommender:0.10.0
+   k8s.gcr.io/autoscaling/vpa-updater:0.10.0
+   </pre>
+
+   If you're pushing the images to a private Amazon ECR repository, then replace k8s.gcr.io in the manifests with your registry. Replace 111122223333 with your account ID. Replace region-code with the AWS Region that your cluster is in. The following commands assume that you named your repository the same as the repository name in the manifest. If you named your repository something different, then you'll need to change it too.
+
+   <pre>
+   sed -i.bak -e 's/k8s.gcr.io/111122223333.dkr.ecr.region-codeamazonaws.com/' ./deploy/admission-controller-deployment.yaml
+   sed -i.bak -e 's/k8s.gcr.io/111122223333.dkr.ecr..dkr.ecr.region-codeamazonaws.com/' ./deploy/recommender-deployment.yaml
+   sed -i.bak -e 's/k8s.gcr.io/111122223333.dkr.ecr..dkr.ecr.region-codeamazonaws.com/' ./deploy/updater-deployment.yaml
+   </pre>
+ 
+6. Deploy the Vertical Pod Autoscaler to your cluster with the following command.
+
+   <pre><strong>./hack/vpa-up.sh</storng></pre>
+
+7. Verify that the Vertical Pod Autoscaler pods have been created successfully:
+
+   <pre><strong>kubectl get pods -n kube-system</strong></pre>
+
+   Sample output:
+
+   <pre>NAME                                        READY   STATUS    RESTARTS   AGE
+   ...
+   metrics-server-8459fc497-kfj8w              1/1     Running   0          83m
+   vpa-admission-controller-68c748777d-ppspd   1/1     Running   0          7s
+   vpa-recommender-6fc8c67d85-gljpl            1/1     Running   0          8s
+   vpa-updater-786b96955c-bgp9d                1/1     Running   0          8s
+   </pre>
+
+8. To verify that it works, deploy the hamster.yaml Vertical Pod Autoscaler example:
+
+   <pre><strong>kubectl apply -f examples/hamster.yaml
+   </strong></pre>
+
+9. Get the pods from the hamster example application:
+
+   <pre><strong>
+   kubectl get pods -l app=hamster
+   </strong></pre>
+
+   Sample output:
+
+   <pre>hamster-c7d89d6db-rglf5   1/1     Running   0          48s
+hamster-c7d89d6db-znvz5   1/1     Running   0          48s
+   </pre>
+
+9. Describe one of the pods to view its cpu and memory reservation. 
+   Replace c7d89d6db-rglf5 with one of the IDs returned in your output from the previous step.
+
+   <pre><strong>
+   kubectl describe pod hamster-c7d89d6db-rglf5
+   </strong></pre>
+
+   Sample output:
+
+   <pre>Containers:
+   hamster:
+    Container ID:  docker://e76c2413fc720ac395c33b64588c82094fc8e5d590e373d5f818f3978f577e24
+    Image:         k8s.gcr.io/ubuntu-slim:0.1
+    Image ID:      docker-pullable://k8s.gcr.io/ubuntu-slim@sha256:b6f8c3885f5880a4f1a7cf717c07242eb4858fdd5a84b5ffe35b1cf680ea17b1
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /bin/sh
+    Args:
+      -c
+      while true; do timeout 0.5s yes >/dev/null; sleep 0.5s; done
+    State:          Running
+      Started:      Fri, 27 Sep 2019 10:35:16 -0700
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        100m
+      memory:     50Mi
+   </pre>
+
+   See that the original pod reserves 100 millicpu of CPU and 50 mebibytes of memory. For this example application, 100 millicpu is less than the pod needs to run, so it is CPU-constrained. It also reserves much less memory than it needs. The Vertical Pod Autoscaler vpa-recommender deployment analyzes the hamster pods to see if the CPU and memory requirements are appropriate. If adjustments are needed, the vpa-updater relaunches the pods with updated values.
+
+9. Wait for the vpa-updater to launch a new hamster pod. This should take a minute or two. You can monitor the pods:
+
+   Note: If you are not sure that a new pod has launched, compare the pod names with your previous list. When the new pod launches, you will see a new pod name.
+
+   <pre><strong>kubectl get --watch pods -l app=hamster
+   </strong></pre>
+
+9. When a new hamster pod is started, describe it and view the updated CPU and memory reservations.
+
+   <pre><strong>kubectl describe pod hamster-c7d89d6db-jxgfv
+   </pre></strong>
+
+   Sample output:
+
+   <pre>Containers:
+  hamster:
+    Container ID:  docker://2c3e7b6fb7ce0d8c86444334df654af6fb3fc88aad4c5d710eac3b1e7c58f7db
+    Image:         k8s.gcr.io/ubuntu-slim:0.1
+    Image ID:      docker-pullable://k8s.gcr.io/ubuntu-slim@sha256:b6f8c3885f5880a4f1a7cf717c07242eb4858fdd5a84b5ffe35b1cf680ea17b1
+    Port:          &LT;none>
+    Host Port:     &LT;none>
+    Command:
+      /bin/sh
+    Args:
+      -c
+      while true; do timeout 0.5s yes >/dev/null; sleep 0.5s; done
+    State:          Running
+      Started:      Fri, 27 Sep 2019 10:37:08 -0700
+    Ready:          True
+    Restart Count:  0
+    Requests:
+      cpu:        587m
+      memory:     262144k
+   </pre>
+
+   In the sample output above, see that the cpu reservation increased to 587 millicpu, which is over five times the original value. The memory increased to 262,144 Kilobytes, which is around 250 mebibytes, or five times the original value. This pod was under-resourced, and the Vertical Pod Autoscaler corrected the estimate with a much more appropriate value.
+
+9. View the new recommendation:
+
+   <pre><strong>kubectl describe vpa/hamster-vpa
+   </strong></pre>
+
+   Sample output:
+
+   <pre>
+Name:         hamster-vpa
+Namespace:    default
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"autoscaling.k8s.io/v1beta2","kind":"VerticalPodAutoscaler","metadata":{"annotations":{},"name":"hamster-vpa","namespace":"d...
+API Version:  autoscaling.k8s.io/v1beta2
+Kind:         VerticalPodAutoscaler
+Metadata:
+  Creation Timestamp:  2019-09-27T18:22:51Z
+  Generation:          23
+  Resource Version:    14411
+  Self Link:           /apis/autoscaling.k8s.io/v1beta2/namespaces/default/verticalpodautoscalers/hamster-vpa
+  UID:                 d0d85fb9-e153-11e9-ae53-0205785d75b0
+Spec:
+  Target Ref:
+    API Version:  apps/v1
+    Kind:         Deployment
+    Name:         hamster
+Status:
+  Conditions:
+    Last Transition Time:  2019-09-27T18:23:28Z
+    Status:                True
+    Type:                  RecommendationProvided
+  Recommendation:
+    Container Recommendations:
+      Container Name:  hamster
+      Lower Bound:
+        Cpu:     550m
+        Memory:  262144k
+      Target:
+        Cpu:     587m
+        Memory:  262144k
+      Uncapped Target:
+        Cpu:     587m
+        Memory:  262144k
+      Upper Bound:
+        Cpu:     21147m
+        Memory:  387863636
+Events:          &LT;none>
+   </pre>
+
+9. Delete it with the following command.
+
+   <pre><strong>
+   kubectl delete -f examples/hamster.yaml
+   </strong></pre>
+
+
+<hr />
 
 <a name="SideroTalos"></a>
 
@@ -582,10 +783,59 @@ VPA (Vertical Pod Autoscaler)
 How about running Kubernetes on bare-metal machines to get the most performance
 possible out of hardware, with minimal overhead?
 
-There is on-going debate about the Operating System to use with Kubernetes.
+There is on-going debate about <a target="_blank" href="https://thenewstack.io/a-guide-to-linux-operating-systems-for-kubernetes/">what Operating System to use with Kubernetes</a>
+to reduce overhead and security exposures. Options are Ubuntu, Debian, CentOS, Red Hat Enterprise Linux (RHEL), Fedora. Operating systems compatible with Google Kubernetes Engine on Linux:
+https://cloud.google.com/migrate/containers/docs/compatible-os-versions
 
-In Beta as of March 2022, the <a target="_blank" href="ttps://github.com/talos-systems/talos/">open-source</a> headless Talos Linux OS was purpose-built for Kubernetes around the <a target="_blank" href="https://github.com/kubernetes-sigs/cluster-api">Cluster gRPC API (CAPI) project</a>'s <a target="_blank" href="https://cluster-api.sigs.k8s.io/introduction.html"><strong>clusterctl</strong></a> CLI tool. (CAPI is the common system for managing Kubernetes clusters in a declarative fashion.)
+https://computingforgeeks.com/minimal-container-operating-systems-for-kubernetes/
+
+In Beta as of March 2022, the <a target="_blank" href="ttps://github.com/talos-systems/talos/">open-source</a> headless Talos Linux OS was <a target="_blank" href="https://www.siderolabs.com/platform/talos-os-for-kubernetes/">purpose-built for Kubernetes</a> around the <a target="_blank" href="https://github.com/kubernetes-sigs/cluster-api">Cluster gRPC API (CAPI) project</a>'s <a target="_blank" href="https://cluster-api.sigs.k8s.io/introduction.html"><strong>clusterctl</strong></a> CLI tool. (CAPI is the common system for managing Kubernetes clusters in a declarative fashion.)
 Talos has no shell, no SSH, a read-only file system -- making it small and secure.
+
+
+### Replace failed node
+
+PROTIP: Consider what happens if adding a new member results in an error and cannot join the cluster (due to a misconfiguration). See https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#replacing-a-failed-etcd-member
+
+1. To remove a failed node, <strong>first remove</strong> the failed nodes before adding new ones.
+
+   If you have a 3-node etcd cluster, even if one failed, adding another node would make it a 4-node cluster (counting the down node). That results in upping the minimum quorum to 3 nodes to prevent "split brain" cluster failure. If the new member is misconfigured, and cannot join the cluster, you now then have two failed nodes, and not meet the required quorum of 3.
+
+   Use of Talos Linux makes recovery of Kubernetes simpler because Talos Linux has helper functions that automate the removal of down etcd nodes. 
+
+   <pre><strong>talosctl etcd remove-member ip-172-31-41-76
+   kubectl delete node ip-172-31-41-76
+   </strong></pre>
+
+   Without Talos, adding an extra node increases quorum, which is actually not a good thing. For example, if you have a 3-node etcd cluster, a quorum of 2 nodes is required for the cluster to continue processing writes. Removing a working node would remove fault tolerance. A failure during the transition before another node is successfully added would cause the cluster to be downed. So...
+
+   With Talos, adding an extra node does NOT increase quorum. Since Talos Linux uses the <strong>Learner feature of etcd</strong> — all new control plane nodes join etcd as non-voting learners. When they have caught up with all transactions, the node is automatically promoted to a voting member.   
+   
+1. To add a new control plane node under Talos Linux, boot a new node with the <tt>controlplane.yaml</tt> used to create other control plane nodes.
+
+### Replace working node
+
+If the node to be replaced is still working, the order of actions is the opposite of when the node has failed. For example, if you have a 3-node etcd cluster, a quorum of 2 nodes is required for the cluster to continue processing writes. Removing a working node would remove fault tolerance. A failure during the transition before another node is successfully added would cause the cluster to be downed. So...
+
+1. BEFORE removing the working node, add the new node, (with a more preferable AWS server type for different CPU or memory). This would increase a 3-node cluster to increased to 4 nodes.
+
+   A failure during the transition would reduce the cluster to 3 nodes, still a viable cluster.
+
+   Add the new control plane node by booting using the <tt>controlplane.yaml</tt> file.
+
+2. Remove the working node by telling the node that it is being replaced to leave the cluster. Using a  sample IP address:
+
+   <pre><strong>
+   talosctl -n 172.31.138.87 reset
+   kubectl delete node
+   </strong></pre>
+
+   Since Talos is aware that it's in a control plane node, it knows to gracefully leave etcd (be erased) when it receives the reset command.
+
+A multi-master configuration is required so a single Master does not become a single point of failure.
+Workers connect to and communicate with any master's kube-apiserver via a high availability load balancer. See https://dominik-tornow.medium.com/kubernetes-high-availability-d2c9cbbdd864
+
+### Talos
 
 The lifecycle of each Talos machine is managed by a <a target="_blank" href="https://www.linkedin.com/company/sidero-labs/">SideroLabs</a> (<a target="_blank" href="https://www.youtube.com/c/SideroLabs/videos">Videos</a>, <a target="_blank" href="https://www.sidero.dev/docs/latest/">sidero.dev</a>, <a target="_blank" href="https://twitter.com/siderolabs?lang=en">@SideroLabs</a>) workload cluster, open-sourced at <a target="_blank" href="https://github.com/siderolabs/sidero">github.com/siderolabs/sidero</a>. Sidero provides bootstrap/controlplane providers for running Talos machines on <strong>bare-metal</strong> x86 or arm64 machines on-prem, or <a target="_blank" href="https://www.sidero.dev/docs/v0.5/guides/sidero-on-rpi4/">on Raspberry Pi</a> (<a target="_blank" href="https://www.youtube.com/watch?v=aHu1lFir7UU" title="Mar 10, 2021">VIDEO</a> by <a target="_blank" href="https://www.linkedin.com/in/spencersmith23/">Spencer Smith</a>: "metal-rpl_4-arm64.img.xz" on 16GB SD). 
 
@@ -605,6 +855,8 @@ Sidero also supports BMC automation.
 
 Talos node sends over the <a target="_blank" href="https://www.sidero.dev/docs/v0.5/overview/siderolink/">SideroLink</a> connection two streams: kernel logs (dmesg) and Talos events.
 
+
+<hr />
 
 <a name="Internals"></a>
 
