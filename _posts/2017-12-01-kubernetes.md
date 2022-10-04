@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-07-01"
+date: "2022-10-01"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
