@@ -93,7 +93,7 @@ Dockerizing apps and running them as containers are standard DevOps practice. Bu
 
    PROTIP: To simplify, I've created several shell scripts (in GitHub) that gets it all done instead of manually typing after stopping and rewinding videos to specific spots.
    
-A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs on MacOs the <a href="#microtrader4">4 microtrader processes<a> after building them from source and testing them using mocha.
+A. <a href="#microtrader-setup">microtrader-setup.sh</a> installs on MacOs the <a href="#microtrader4">4 microtrader processes</a> after building them from source and testing them using mocha.
 
 B. <a href="#docker-setup">ecr-setup.sh</a> creates within AWS Docker images in a private Elastic Repository (ECR) and configures Dockerfiles for use in ECS (Elastic Container Service).
 
@@ -169,7 +169,7 @@ Menga's course from 2017 identified <a targe="_blank" title="1:17 into" href="ht
 
 ### microtrader-setup.sh (app build from code & test locally)
 
-1. PROTIP: I've created a shell script (in GitHub) to install the <a href="#microtrader4">4 microtrader processes<a>. View it within an internet browser at:
+1. PROTIP: I've created a shell script (in GitHub) to install the <a href="#microtrader4">4 microtrader processes</a>. View it within an internet browser at:
 
    <a target="_blank" href="https://github.com/wilsonmar/DevSecOps/blob/master/microtrader/microtrader-setup.sh">https://github.com/wilsonmar/DevSecOps/blob/master/microtrader/microtrader-setup.sh</a>
 

@@ -1282,7 +1282,7 @@ complete
 PROTIP: Ignore videos which are NOT applicable to the current "2019" version:
    * <a target="_blank" href="https://www.youtube.com/watch?v=DS4zGjyo4Zs">VIDEO: Install when it was in Preview</a>  Jan 10, 2019.
    * <a target="_blank" href="https://www.youtube.com/watch?v=jUiuIAZt6Dw">Using Git with Visual Studio</a> Apr 7, 2017
-   * <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno<a>). which covers mobile development as well.
+   * <a target="_blank" href="https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-12-Getting-Started-with-Visual-Studio-for-Mac">VIDEO: Snack Pack 12: Getting Started with Visual Studio 2017 for Mac</a> May 31, 2017 by James Montemagno (<a target="_blank" href="http://twitter.com/jamesmontemagno">@jamesmontemagno</a>). which covers mobile development as well.
    <br /><br />
 
 The following was written after <a target="_blank" href="https://devblogs.microsoft.com/visualstudio/visual-studio-2019-for-mac-is-now-available/">April 9, 2019 release</a>.

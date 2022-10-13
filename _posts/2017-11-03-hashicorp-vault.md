@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "HashiCorp Vault"
-excerpt: "How to keep secrets secret, but still shared and refreshed."
-tags: [vault, hashicorp, security, secrets]
-date: "2022-06-20"
+date: "2022-10-12"
 file: "hashicorp-vault"
+title: "HashiCorp Vault"
+excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
+tags: [vault, hashicorp, security, secrets]
 image:
 # pic secret finger over mouth 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
@@ -32,6 +32,21 @@ is a whiteboard talk about avoiding "secret sprawl" living in clear text with
 empheral (temporary) passwords and cryptographic offload to a central service:
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
 
+
+## Types of secrets 
+1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
+what a machine is enabled to do.
+
+2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
+
+3. Human-to-machine access concerns how we control which humans are allowed to speak to which
+machines.
+
+4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
+
+
+## Use cases
+
 Examples of individual secrets (<a target="_blank" href="https://www.vaultproject.io/docs/use-cases">use cases</a>):
    * Passwords typed in with User names to login manually
    * Database credentials
@@ -40,27 +55,6 @@ Examples of individual secrets (<a target="_blank" href="https://www.vaultprojec
    * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
    <br /><br />
 
-The types of secrets 
-1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
-what a machine is enabled to do.
-2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
-3. Human-to-machine access concerns how we control which humans are allowed to speak to which
-machines.
-4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
-
-### Zero Trust
-
-Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
-
-1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
-1. <strong>Authenticate and authorize</strong> all network traffic through an identity-based approach
-1. Enable <strong>multi-factor authentication</strong> to augment protection
-
-1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
-1. Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal.
-1. <strong>Encrypt</strong> everything (in transit and at rest) 
- 
- 
 ## Multi-platform, Multi-cloud enterprise
 
 Vault is designed to be deployed to all major platforms (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.).
@@ -78,24 +72,45 @@ This is a requirement for true enterprise capability, due to needs imposed by co
 
 Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
 
+## Multi-Region redundancy and capacity
+
+
+## Zero Trust
+
+Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+
+Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
+
+1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
+1. <strong>Authenticate and authorize</strong> all network traffic through an identity-based approach
+1. Enable <strong>multi-factor authentication</strong> to augment protection
+
+1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
+1. Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal.
+1. <strong>Encrypt</strong> everything (in transit and at rest) 
+ 
+
 
 ## Enterprise worthy
 
 HashiCorp's Vault is popular among large enterprises because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
 Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
 
-There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. 
+There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
+<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
 
 HashiCorp provides a fully enterprise-level 24/7 support worldwide.
-(HashiCorp's remote workfork are in 47 countries)
 
-### Legacy enterprise support
+HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
+Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
+(next to the Salesforce Transit Center).
 
-Vault also can support PKI (Private Key Infrastructure) used to handle certificates.
+Vault supports PKI (Private Key Infrastructure) used to handle certificates.
 
 All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
 
-Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
+and responds to security events.
 
 ### Professionals needed
 
@@ -105,43 +120,51 @@ So it is assumed that Vault server and SaaS offerings provide a <strong>central 
 
 The typical arrangement is a differentiation between Service Owners  Security Owners:
 
-Service Owners being responsible for:
+Service Owners are responsible for:
    * Operational Access
    * Authentication Methods
    * Reliability of Vault (Availability reporting)
    <br /><br />
 
-Security Owners being responsible for:
+Security Owners are responsible for:
    * Authorization Methods
    * Secrets Policy
    * Rotation Strategy
    * Data, Application, and Systems Access
    <br /><br />
 
-In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+<hr />
+
+## API calls
+
+   * https://www.vaultproject.io/api-docs/
+   <br /><br />
 
 Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
 
-   1. Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
+   1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
+
    2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
+   
    3. Verification is obtained
+   
    4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
    <br /><br />
 
 ## This Tutorial
 
+From easies to more difficult:
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
-   A. A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment<a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation.
+   A. A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
 
-   B. <a href="#VaultAgent">On your laptop install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
+   B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
 
-   C. <a href="#VaultCompose">On your laptop, install Vault server using Docker Compose</a>
+   C. Free <a href="#VaultCompose">on your laptop, install Vault server using Docker Compose</a>
 
-   D. <a href="HashiCups">Follow step-by-step instructions</a> for the fictional use case at HashiCups, Inc.
-   Install a "self-managed" Enterprise in AWS with a <strong>S3 backend</strong> by 
+   D. In AWS, install a "self-managed" Enterprise  <a href="HashiCups">HashiCups fictional sample app</a>  with a <strong>S3 backend</strong>.
 
    E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
 
@@ -219,6 +242,8 @@ Coverage of what features a secrets service should have:
 
 * Change value of an existing secret (key rotation) without rebooting.
    This is the strong point with Vault.
+
+   https://github.com/scarolan/painless-password-rotation
 
 * Revocation
 
@@ -314,7 +339,6 @@ database_password = get_secret('db_pass')
 1. Limit exposure if auth secrets disclosed. Use Least Privilege.
 1. Have a "break-glass" procedure if auth secrets are stolen.
 1. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
-
 
 <hr />
 	
@@ -1181,6 +1205,7 @@ cluster_name = "my_cluster"
 
 
 * Enable and use an instance of HashiCorp's <a target="_blank" href="https://www.vaultproject.io/docs/secrets/kv/kv-v2">KV v2 Secrets engine</a> (the default when running in dev mode):
+   https://www.vaultproject.io/docs/secrets/kv/kv-v2/
 
    <pre><strong>vault secrets enable -version=2 kv</strong></pre>
 
@@ -1518,10 +1543,14 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
    <pre><strong>vault --version
    </strong></pre>
 
-   At time of writing, the response:
+   At time of writing, the response now includes a date built:
    
-   <pre>Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')
-   </pre>
+   <pre>Vault v1.11.3 (17250b25303c6418c283c95b1d5a9c9f16174fe8), built 2022-08-26T10:27:10Z</pre>
+
+   Previously:
+
+   <pre>Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')</pre>
+
 
 1. Where is the release simver among History of releases on GitHub?
 
@@ -1531,14 +1560,18 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 
    <pre><strong>which vault</strong></pre>
 
-   Result:
+   Result on an ARM :
+
+   <pre>/bin/vault</pre>
+
+   Result on an Intel :
 
    <pre>/usr/local/bin/vault</pre>
 
 1. Persist the version of Vault for use in commands by editing <strong>~/.bash_profile</strong> to add these lines:
 
-   <pre><strong>export VAULT_VERSION="1.9.4"
-   complete -C /usr/local/bin/vault vault
+   <pre><strong>export VAULT_VERSION="1.11.3"
+   complete -C $( which vault )
    </strong></pre>
 
 1. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
@@ -1595,6 +1628,44 @@ Other commands:
 
    Vault commands are described <a target="_blank" href="https://www.vaultproject.io/docs/commands/">here online</a>.
 
+1. For documentation about subcommands:
+
+   <pre><strong>vault secrets -h
+   </strong></pre>
+
+   <pre>
+Usage: vault secrets &LT;subcommand> [options] [args]
+&nbsp;
+  This command groups subcommands for interacting with Vault's secrets engines.
+  Each secret engine behaves differently. Please see the documentation for
+  more information.
+&nbsp;
+  List all enabled secrets engines:
+&nbsp;
+      $ vault secrets list
+&nbsp;
+  Enable a new secrets engine:
+&nbsp;
+      $ vault secrets enable database
+&nbsp;
+  Please see the individual subcommand help for detailed usage information.
+&nbsp;
+Subcommands:
+    disable    Disable a secret engine
+    enable     Enable a secrets engine
+    list       List enabled secrets engines
+    move       Move a secrets engine to a new path
+    tune       Tune a secrets engine configuration
+   </pre>
+
+1. For documentation about subcommands:
+
+   <pre><strong>vault read -h
+   </strong></pre>
+
+   <pre>
+   </pre>
+
 1. Restart your Terminal.app (and provide password):
 
    <pre><strong>exec $SHELL
@@ -1610,11 +1681,45 @@ Other commands:
    </strong></pre>
 
 
+
+
+   ### Health check
+
+1. <pre><strong>curl http://localhost:8200/v1/sys/health | jq</strong></pre>
+   
+   Response:
+
+   <pre>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   294  100   294    0     0   113k      0 --:--:-- --:--:-- --:--:--  143k
+{
+  "initialized": true,
+  "sealed": false,
+  "standby": false,
+  "performance_standby": false,
+  "replication_performance_mode": "disabled",
+  "replication_dr_mode": "disabled",
+  "server_time_utc": 1665596227,
+  "version": "1.9.2",
+  "cluster_name": "vault-cluster-65afdb12",
+  "cluster_id": "8a06df9e-17c3-3f30-9c5f-b3b0be95067e"
+}
+   </pre>
+
+
+   <pre><strong>curl --header "X-Vault-Token: root" \
+   http://localhost:8200/v1/secret/data/my-first-secret | jq
+   </strong></pre>
+
+
    ### Vault kv store commands
 
    PROTIP: <a target="_blank" href="https://www.vaultproject.io/docs/commands/index.html">https://www.vaultproject.io/docs/commands/index.html</a>
 
    <a target="_blank" href="https://www.youtube.com/watch?v=vd9f-gGqMV0">VIDEO: HashiCorp Vault Http API - Create and get secrets with curl</a> (aweful drawings)
+
+   If a Vault server is operational:
 
 1. Add a key:
 
@@ -2110,6 +2215,8 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
 
    ### Start Dev Server
 
+   * https://www.vaultproject.io/docs/concepts/dev-server/
+
 0. Start the Dev Server per <a target="_blank" href="https://www.vaultproject.io/intro/getting-started/dev-server.html">https://www.vaultproject.io/intro/getting-started/dev-server.html</a>
 
    <pre><strong>vault server -dev
@@ -2117,7 +2224,11 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
 
    PROTIP: This is the command put in a server start-up script.
 
-   Alternately, specific a configuration file in the current folder:
+   <pre><strong>vault server -dev -dev-listen-address=0.0.0.0:8200 \
+   -dev-root-token-id=root
+   </strong></pre>
+
+   Alternately, pull in parameters defined in a hcl file in the current folder:
 
    <pre><strong>vault server -config=config-file.hcl
    </strong></pre>

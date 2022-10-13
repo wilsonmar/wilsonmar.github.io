@@ -402,3 +402,15 @@ DevOps and the Future of Change Management - YouTube
 [6] https://www.inc.com/marcel-schwantes/5-things-the-most-confident-leaders-do-to-manage-change.html
 
 [7] https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics
+
+https://jtask.com/ccmp-quizzes/
+instructor-led over 4 fridays 8-2pm PT. Nov 4
+$780/$880 You will receive a US $100 discount and pay just US $780. Use the code ALLPRO.
+for 24 Hrs. (21 Hrs. of Instruction)
+
+https://acuityinstitute.com/change-management/
+$799 Acuity Institute - 3 months of online course access virtual simulation
+   The company also does Six Sigma and Lean training.
+
+https://www.credly.com/org/association-of-change-management-professionals/badge/certified-change-management-professional-ccmp
+

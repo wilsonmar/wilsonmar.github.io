@@ -1,11 +1,11 @@
 ---
 layout: post
+date: "2022-10-07"
+file: "bash-coding"
 title: "Bash (script) coding"
 excerpt: "Walk though the tricks (Bashisms) used in a script to install, configure, and run many programs on macOS and Linux"
 tags: [devops, bash, programming]
 Categories: Devops
-date: "2021-01-21"
-file: "bash-coding"
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
   credit: And Beyond
@@ -1101,6 +1101,18 @@ If you have an O'Reilly subscription: <a target="_blank" href="https://learning.
    3. Using Positional Parameters (35 minutes) and how to process their values within the scripts.
    4. Applying Pattern Matching substituion (35 minutes), to shape them exactly as required for specific tasks.
    5. Using looping structures (70 minutes) with common looping structures, such as if, case, for and while.
+
+<hr />
+
+## Logging
+
+https://www.conjur.org/blog/improving-logs-in-bash-scripts/
+
+https://serverfault.com/questions/103501/how-can-i-fully-log-all-bash-scripts-actions
+
+https://github.com/Zordrak/bashlog
+
+
 
 
 ## More on DevSecOps #

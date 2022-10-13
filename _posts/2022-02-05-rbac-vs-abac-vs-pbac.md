@@ -142,7 +142,7 @@ VIDEO</a> (by <a target="_blank" href="https://www.linkedin.com/in/yuri-duchovny
 <a target="_blank" href="https://www.youtube.com/watch?v=XW5amgAuRIo&t=11m40s" title="Feb 25, 2020">
 How to Use Azure Active Directory (AD) with AWS SSO</a> and 
 <a target="_blank" href="https://www.youtube.com/watch?v=3CJsAVVz49o" title="May 28, 2020">
-Using AWS SSO with Okta, Active Directory, and AWS SSO Identities<a> - <a target="_blank" href="https://aws.amazon.com/events/online-tech-talks/">AWS Online Tech Talks</a>
+Using AWS SSO with Okta, Active Directory, and AWS SSO Identities</a> - <a target="_blank" href="https://aws.amazon.com/events/online-tech-talks/">AWS Online Tech Talks</a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Iq_hDc385t4">VIDEO:
 AWS re:Inforce 2019: Scale Permissions Management in AWS w/ Attribute-Based Access Control (SDD350)</a>
@@ -160,7 +160,7 @@ Okta sends SAML Authentication assertions using SCIM sync protocol to make ABAC 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152659518-e81b3321-3971-4963-bf31-a08e2ed499da.png"><img width="1110" alt="abac-okta-2220x1130" src="https://user-images.githubusercontent.com/300046/152659518-e81b3321-3971-4963-bf31-a08e2ed499da.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=673ARahq2wI&t=21m30s" title="Okta and AWS: Making it Easier to use Workforce Identity in the AWS Cloud Apr 9, 2021">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=dT_2HilqIfY&t=1m39s" title="Okta Workflows and AWS Single Sign On Apr 7, 2021">DEMO</a>: 
-The <a target="_blank" href="https://www.okta.com/blog/2021/04/okta-amazon-web-services-aws-automate-aws-sso-with-okta-workflows/" title="April 2, 2021">"Okta Workflows Connector for AWS SSO"</a> (with Pre-built Okta Workflows like <a href="#" title="If This Then That">IFTTT<a>) uses a drag-and-drop GUI to design actions within Okta which call AWS APIs to automatically manipulate Entitlements (Accounts and Permission Set):
+The <a target="_blank" href="https://www.okta.com/blog/2021/04/okta-amazon-web-services-aws-automate-aws-sso-with-okta-workflows/" title="April 2, 2021">"Okta Workflows Connector for AWS SSO"</a> (with Pre-built Okta Workflows like <a href="#" title="If This Then That">IFTTT</a>) uses a drag-and-drop GUI to design actions within Okta which call AWS APIs to automatically manipulate Entitlements (Accounts and Permission Set):
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/152665382-c7ddb252-0cd8-4edd-9177-780c90f529c0.png"><img width="1031" alt="okta-Workflows Connector for AWS SSO=2062x1398" src="https://user-images.githubusercontent.com/300046/152665382-c7ddb252-0cd8-4edd-9177-780c90f529c0.png"></a>
 
 <a target="_blank" href="https://www.youtube.com/watch?v=iM5_1UtKwEI">

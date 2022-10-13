@@ -3336,7 +3336,7 @@ output news_server {
 
 
 
-   <a name="Taint"><a>
+   <a name="Taint"></a>
 
    ### Taint to -replace
 
@@ -4172,7 +4172,7 @@ On Linked Learning: <a target="_blank" href="https://www.linkedin.com/learning/a
 
 Videos free on YouTube but a better UI to view vidoes is provided by:
 
-   * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro<a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
+   * <a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> posted from his <a target="_blank" href="https://www.exampro.co/terraform">$24 Exampro</a> to in <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&list=RDCMUC8butISFwT-Wl7EV0hUK0BQ&start_radio=1&rv=V4waklkBC38">one 13-hour on YouTube</a> dated Oct 5, 2021, <a target="_blank" href="https://www.freecodecamp.org/news/hashicorp-terraform-associate-certification-study-course-pass-the-exam-with-this-free-12-hour-course/">described here</a>.
 
 On Udemy.com: 
 
