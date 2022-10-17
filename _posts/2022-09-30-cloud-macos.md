@@ -37,14 +37,52 @@ One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
    <tr valign="top"><td>mac2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
 
+   ### Costs?
+
+1. The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pricing">unit of billing</a> is the <a target="_blank" href="https://aws.amazon.com/ec2/dedicated-hosts/pricing/">dedicated host</a> US region price which have a <strong>24-hour minimum allocation period</strong> (required by Apple). For 
+
+   * mac1 US per hour $0.650 x 24 = $15.6/day or $468 per 30-day month
+   * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
+
+   * mac1 Mumbai per hour $1.14
+
+   * mac2 Frankfurt per hour $1.298
+   <br /><br />
+
+   It's not available on all regions world-wide.
+
+   AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
+   But more that a few months, you might as well buy your own Mac at $2,500.
+
+   Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
+   <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
+
+   * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
+   * mac1 (Gen 4 Mac mini) with 64 GB for $299 per month
+   * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
+   <br /><br />
+
+
 <hr />
 
 ## Using Terraform
 
 The easiest way to create an instance is using automation based on Terraform.
 
-Daniel Dias (in Berlin, Germany) created
-https://github.com/DanielRDias/terraform-aws-dedicated-host
+Daniel Dias (in Berlin, Germany) created<br />
+
+   <pre>https://github.com/DanielRDias/terraform-aws-dedicated-host
+   using his module<br />
+   https://registry.terraform.io/modules/DanielRDias/dedicated-host/aws/latest/examples/macOS
+   </pre>
+
+Notice it contains creation of a dedicated-host.
+
+It needs to be updated:
+
+   * from use of macOS Catalina to macOS Monterary
+   * from use of mac1.metal to mac2.metal
+   <br /><br />
 
 But to use that automation, you first need to decide and define these values in AWS:
 
@@ -52,10 +90,14 @@ But to use that automation, you first need to decide and define these values in 
 * pem key file name
 * AWS Region
 * AWS Availability zone (such as "us-west-2a")
-* Instance Name
-* Tags
 * Architecture, such as "64-bit (Mac-Arm)" for Mac2.
+* AMI for Architecture in Region
 
+* Instance Name
+* AWS Tags (for company project, etc.)
+* cf_stack_id	Cloud Formation Stack ID
+* dedicated_host_id	Dedicated Host ID
+* dedicated_hosts	Maps with the dedicated hosts IDs
 
 ## Using AWS GUI
 
@@ -294,29 +336,6 @@ https://aws.amazon.com/blogs/aws/use-amazon-ec2-m1-mac-instances-to-build-test-m
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=--BfdlnIc7Y&t=4m11s">Take a snapshot</a> backup at volume or instance level to copy across regions or accounts to create new AMI machine images.
 
-
-   ### Costs?
-
-1. The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pricing">unit of billing</a> is the <a target="_blank" href="https://aws.amazon.com/ec2/dedicated-hosts/pricing/">dedicated host</a> US region price which have a <strong>24-hour minimum allocation period</strong> (required by Apple). For 
-
-   * mac1 US per hour $0.650 x 24 = $15.6/day or $468 per 30-day month
-   * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
-   * mac1 Mumbai per hour $1.14
-   * mac2 Frankfurt per hour $1.298
-   <br /><br />
-
-   It's not available on all regions world-wide.
-
-   AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
-   But more that a few months, you might as well buy your own Mac at $2,500.
-
-   Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
-   <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
-
-   * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
-   * mac1 (Gen 4 Mac mini) with 64 GB for $299 per month
-   * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
-   <br /><br />
 
 
 <hr />
