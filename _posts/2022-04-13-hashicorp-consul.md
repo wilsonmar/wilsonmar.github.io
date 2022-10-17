@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-07-03"
+date: "2022-10-17"
 file: "hashicorp-consul"
 title: "HashiCorp Consul"
 excerpt: "Enterprise-grade secure Zero-Trust routing to replace East-West load-balancing using service names rather than static IP addresses. Enhance Service Mesh with mTLS and health-based APIs in AWS, Azure, GCP, and other clouds running Kubernetes as well as ECS, EKS, VMs, databases, even mainframes outside Kubernetes"
@@ -1983,7 +1983,16 @@ consul-server-6  10.132.0.41:8301  alive   server  1.12.2+ent  2         dc1  de
    <pre><strong>consul members -wan</strong></pre>
 
    <pre>Node                      Address         Status  Type    Build   Protocol  DC   Partition  Segment
-wilsonmar-N2NYQJN46F.dc1  127.0.0.1:8302  alive   server  1.12.2  2         dc1  default    &LT;all>
+wilsonmar-....dc1    127.0.0.1:8302  alive   server  1.12.2  2         dc1  default    &LT;all>
+   </pre>
+
+   <pre>Node                 Address           Status  Type    Build       Protocol  DC   Partition  Segment
+consul-server-0.dc1  10.52.2.9:8302    alive   server  1.13.2+ent  2         dc1  default    &LT;all>
+consul-server-0.dc2  10.232.2.7:8302   alive   server  1.13.2+ent  2         dc2  default    &LT;all>
+consul-server-1.dc1  10.52.0.11:8302   alive   server  1.13.2+ent  2         dc1  default    &LT;all>
+consul-server-1.dc2  10.232.1.10:8302  alive   server  1.13.2+ent  2         dc2  default    &LT;all>
+consul-server-2.dc1  10.52.1.8:8302    alive   server  1.13.2+ent  2         dc1  default    &LT;all>
+consul-server-2.dc2  10.232.0.10:8302  alive   server  1.13.2+ent  2         dc2  default    &LT;all>
    </pre>
 
 * <tt>ccs</tt> for the list of services, instead of:

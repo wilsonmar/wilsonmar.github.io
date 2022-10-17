@@ -23,6 +23,8 @@ Positive changes to a business can help it be more efficient, less wasteful, and
 
 But change management isn't easy.
 
+<a target="_blank" href="https://hbr.org/2020/06/3-things-youre-getting-wrong-about-organizational-change">A Harvard Business Review article</a> noted that "to stay in business, you need to reinvent yourself every 3 years"
+
 The most common quote I've seen about change management is from the book "The Prince" (originally in 16th century Italian) by Niccolo Machiavelli, considered by many as the father of modern political science:
 
 > … there is nothing more difficult and dangerous, or more doubtful of success, than an attempt to introduce a new order of things…
@@ -173,6 +175,26 @@ Stages:
    5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
    <br /><br />
 
+## Influencers
+
+* <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=Pc7EVXnF2aI">"The Evolution of the 21st Centry Organization"</a>
+
+* <a target="_blank" href="https://linkedin.com/in/adammgrant/">Adam Grant</a>, Professor of Organizational Psychology at Wharton School of Business in Pennsylvania. @AdamMGrant
+
+* <a target="_blank" href="https://linkedin.com/in/timcreasey/">Tim Creasey</a>, Chief Innovation Officer at <a name="Prosci">Prosci</a>. @timcreasey has benchmarking studies.
+
+* <a target="_blank" href="https://linkedin.com/in/nicktasler/">Nick Tealser</a>, @NickTasker
+
+* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker @YvonneRAkpoveta
+
+* <a target="_blank" href="https://linkedin.com/in/carstentams/">Carsten Tams</a>, Consultant & Blogger (on Forbes) @Carsten_tams
+
+* <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
+
+<hr />
+
 ## Summary
 
 [2] Machiavelli directly addresses three core principles of successful change management:
@@ -191,7 +213,7 @@ Thus, effective leadership is critical to successful change and requires active 
 
 There are several out there.
 
-
+https://www.cio.com/article/3276004/7-change-management-certifications-to-boost-your-it-career.html
 
 
 ### Certifications specifically about change mangement
@@ -243,9 +265,11 @@ There are several out there.
 
    <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
 
-* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Chang<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after 21 hours of training based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>.
+* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Change<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after <strong>21 hours of face-to-face training</strong> based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>. 
 
-   According to their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, applicants are required to have 21 hours of training (from <a href="#Prosci">Prosci</a> or ChangeIt), plus write an essay for 3 of 5 of domains:
+   Vendors include <a href="#Prosci">Prosci</a>, ChangeIt, etc.
+
+   According to their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, applicants are also required to <strong>write an essay for 3 of 5 of domains</strong>:
 
    1. For a project completed in the last two years, discuss how your assessment of the history, culture, and value systems of an organization helped the employees through a change process and has impacted employee expectations about change management plans and activities during that change project, today, and into the future.
 
@@ -257,6 +281,8 @@ There are several out there.
 
    5. Describe two major lessons learned from Change Management projects/processes that you have been involved in and explain how you included these lessons into current change projects going forward.
 
+* $1,495 for members of The Association for Talent Development (ATD) for the <a target="_blank" href="https://www.td.org/education-courses/change-management-certificate">ATD Change Management Certificate</a> trains HR/learning professionals on how to improve efficiency, productivity, and service quality. The (six-session over 12 hours, online or 2 days in person) covers: implementing change processes, change management tools, qualities of a change leader, and how to encourage the organization to embrace change. Learn how to conduct diagnostic assessments, define change efforts, analyze data, provide feedback, understand change management theories, select the right change model, create implementation designs, develop communication plans, and manage any consequences of change.
+   
 
 * $2,999 for "the most comprehensive online change management course available today" - 11 hours of video online from <a target="_blank" href="https://www.linkedin.com/in/robertlbogue/">Rob Bogue</a>'s <a target="_blank" href="https://confidentchangemanagement.com/change-models/acmp-standard-for-change-management/">confidentchangemanagement.com</a> provides a shortcoming of the ACMP Standard:
 
@@ -265,8 +291,6 @@ There are several out there.
    <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:47]</a> The Standard model is completely process-focused and therefore ignores the skill of the practitioner. Other than development of strategies for communication, stakeholders, and learning, the Standard is quiet in terms of how to motivate stakeholders to want to do the change. This is curious since most of the effort in a change project is developing the desire the change. However, this gets minimal attention in the Standard. Ultimately, the Standard is a tool to understand the project management aspects of change, with minimal support for the people aspects of change.
 
 
-* $1,495 for members of The Association for Talent Development (ATD) for the <a target="_blank" href="https://www.td.org/education-courses/change-management-certificate">ATD Change Management Certificate</a> trains HR/learning professionals on how to improve efficiency, productivity, and service quality. The (six-session over 12 hours, online or 2 days in person) covers: implementing change processes, change management tools, qualities of a change leader, and how to encourage the organization to embrace change. Learn how to conduct diagnostic assessments, define change efforts, analyze data, provide feedback, understand change management theories, select the right change model, create implementation designs, develop communication plans, and manage any consequences of change.
-   
 * $3,100 <a target="_blank" href="https://www.imaworldwide.com/aim-change-management-certification">AIM Change Management Professional (ACMP) certification</a> is obtained after a 3-day training (virtual or on-site) by consultant Don Harrison. "it’s a day longer than most, because there is so much to know — including how to manage leaders and how to deal with the power and politics of change". 
 
    Accelerating Implementation Methodology (AIM) focuses on the human side of risk; rather than look at how technology or software fails us, it encourages leaders to strengthen processes that involve employees, given that human-error is one of the biggest risks for failure. The certification is targeted at human resources, organizational development, IT, and business and clinical leaders, as well as project managers.
@@ -275,7 +299,7 @@ There are several out there.
    
 ### Prosci
 
-* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs $4,850 for 3-days on-site or $4,500 virtually to learn their models: ADKAR.
+* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs <strong>$4,850 for 3-days on-site</strong> or $4,500 virtually to learn their ADKAR models.
 
 
 ## Pro Certifications with a change management component:
@@ -414,3 +438,18 @@ $799 Acuity Institute - 3 months of online course access virtual simulation
 
 https://www.credly.com/org/association-of-change-management-professionals/badge/certified-change-management-professional-ccmp
 
+https://www.theknowledgeacademy.com/us/courses/change-management-training/certified-change-management-professional-ccmp-/
+$1995 request for discount
+   Does a variety of other trainings - 
+
+<a target="_blank" href="https://app.pluralsight.com/paths/skills/certified-change-management-professionaltm-ccmptm">
+"Certified Change Management Professional (CCMP™)" 10 hour video course on Pluralsight</a>
+by <a target="_blank" href="https://www.linkedin.com/in/alicemeredith/">Alice Meredith</a> and <a target="_blank" href="https://www.linkedin.com/in/kjmst29/">Kevin J. Miller</a>.
+The course does not qualify as that 21 hours of required training for taking the exam (because ACMP insists on live training, either in-person or live online with the instructor present at the time of training). However, the Pluralsight courses qualify for PDUs once you pass the exam, to keep it current. 
+And the course provides and explains use of templates to use in your job as a change manager or analyst.
+
+   <a target="_blank" href="https://app.pluralsight.com/channels/details/5b9d5357-c699-43b7-b1c7-4b753e3b1363">Join the ACMP channel on Pluralsight</a>
+
+https://whatfix.com/blog/change-management-certification/
+"Top 10 Change Management Certifications to Complete (2022)"
+   

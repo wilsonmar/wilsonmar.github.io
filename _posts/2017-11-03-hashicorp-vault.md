@@ -1551,8 +1551,7 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 
    <pre>Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')</pre>
 
-
-1. Where is the release simver among History of releases on GitHub?
+1. Is that really the latest release? simver among History of releases on GitHub?
 
    <a target="_blank" href="https://github.com/hashicorp/vault/releases">https://github.com/hashicorp/vault/releases</a>
 
@@ -1560,23 +1559,23 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 
    <pre><strong>which vault</strong></pre>
 
-   Result on an ARM :
+   Result on ARM (Apple macOS):
 
    <pre>/bin/vault</pre>
 
-   Result on an Intel :
+   Result on Intel (Windows):
 
    <pre>/usr/local/bin/vault</pre>
 
 1. Persist the version of Vault for use in commands by editing <strong>~/.bash_profile</strong> to add these lines:
 
    <pre><strong>export VAULT_VERSION="1.11.3"
-   complete -C $( which vault )
    </strong></pre>
 
 1. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
 
-   <pre><strong>vault -autocomplete-install
+   <pre><strong>   complete -C $( which vault )
+   vault -autocomplete-install
    </strong></pre>
 
    No message is returned. Otherwise, if already installed once:
@@ -1685,6 +1684,8 @@ Subcommands:
 
    ### Health check
 
+   Vault servers have a health check API:
+
 1. <pre><strong>curl http://localhost:8200/v1/sys/health | jq</strong></pre>
    
    Response:
@@ -1707,6 +1708,13 @@ Subcommands:
 }
    </pre>
 
+1. To convert 1665596227 UTC to your local time ???
+
+
+
+
+
+1. List a secret
 
    <pre><strong>curl --header "X-Vault-Token: root" \
    http://localhost:8200/v1/secret/data/my-first-secret | jq

@@ -2267,7 +2267,9 @@ Each namespace has its own set of quotas, network policies, RBAC.
    <pre><strong>kubectl config current-context
    </strong></pre>
 
-   The expected response on macOS is "minikube".
+   The expected response on macOS is "minikube". In production, it would include cloud, region, etc.
+
+   <pre>gke_p-1yly4mizr0ot-0_europe-west1-c_consul-dc1</pre>
 
 2. To avoid "The connection to the server localhost:8080 was refused"
 
