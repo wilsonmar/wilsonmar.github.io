@@ -76,7 +76,11 @@ Daniel Dias (in Berlin, Germany) created<br />
    https://registry.terraform.io/modules/DanielRDias/dedicated-host/aws/latest/examples/macOS
    </pre>
 
-Notice it contains creation of a dedicated-host.
+Use it to createice it to create for you:
+
+   * dedicated_host_id
+   * mac_ami_id for the region and Architecture, such as "64-bit (Mac-Arm)" for Mac2.
+   <br /><br />
 
 It needs to be updated:
 
@@ -90,13 +94,10 @@ But to use that automation, you first need to decide and define these values in 
 * pem key file name
 * AWS Region
 * AWS Availability zone (such as "us-west-2a")
-* Architecture, such as "64-bit (Mac-Arm)" for Mac2.
-* AMI for Architecture in Region
 
 * Instance Name
 * AWS Tags (for company project, etc.)
 * cf_stack_id	Cloud Formation Stack ID
-* dedicated_host_id	Dedicated Host ID
 * dedicated_hosts	Maps with the dedicated hosts IDs
 
 ## Using AWS GUI
