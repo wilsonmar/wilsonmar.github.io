@@ -34,28 +34,87 @@ One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th>Instance</th><th>vCPU cores</th><th>GiB memory</th><th>Gbps Network</th><th>Gbps EBS Bandwidth</th></tr>
    <tr valign="top"><td>mac1.metal</td><td>12</td><td>32</td><td>10</td><td>8</td></tr>
-   <tr valign="top"><td>m2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
+   <tr valign="top"><td>mac2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
+
+<hr />
+
+## Using Terraform
+
+The easiest way to create an instance is using automation based on Terraform.
+
+Daniel Dias (in Berlin, Germany) created
+https://github.com/DanielRDias/terraform-aws-dedicated-host
+
+But to use that automation, you first need to decide and define these values in AWS:
+
+* Security Group (with your IP address)
+* pem key file name
+* AWS Region
+* AWS Availability zone (such as "us-west-2a")
+* Instance Name
+* Tags
+* Architecture, such as "64-bit (Mac-Arm)" for Mac2.
+
+
+## Using AWS GUI
 
 Using the AWS Mananagement Console UI from your laptop:
 
-1. Login
+1. Login AWS.
 
+   ### Security Group & pem file
 1. PROTIP: <a target="_blank" href="https://www.youtube.com/watch?v=8UqtMcX_kg0">As with other instance types</a>, define a Security Group using port 22 protocol TCP source <strong>your laptop's IP address</strong> (rather than 0.0.0.0/0 for just anyone, which is unsafe).
 
 1. Create a pem key (such as "malx-us-west-2.pem" in the example below).
 1. <tt>chmod 0400 malx-us-west-2.pem</tt>
-
 1. Define an IAM role.
 
-1. Type "EC2" in the search box.
-1. Select <strong>Dedicated Hosts</strong> from the left menu.
-1. Select the region (at the upper-right).
-1. Select one of the instance types shown (Oregon Mac1 Dedicated Host).
-1. Pull down the Actions list to select "Launch instance onto host".
-1. Select "macOS Big Sur 11.2.3" among Amazon Machine Images.
-1. Click "Next:" at the lower-right corner.
-1. Choose an IAM role.
+   ### Region?
+
+1. At the top upper-right, select Region "us-west-2" (Oregon), us-east-1, or us-east-2.
+
+   PROTIP: At time of writing, region "us-west-1 (N. California)" does not support MacOS instances.
+   
+   ### Dedicated Hosts
+
+1. If you don't see the left menu, click the "hamburger" icon at the upper-left corner.
+1. Select <strong>Dedicated Hosts</strong> from the left menu. (You cannot "Launch instance" with macs)
+1. Click "Allocate Dedicated Host".
+1. Type a Name.
+1. For Instance family, select "mac2".
+1. For Instance type, select "mac2.metal".
+1. For Availability Zone, select one, such as "us-west-2a".
+1. Ignore the other settings providing default values.
+1. Click "Allocate".
+1. Hightlight and copy your Host ID (such as "h-04c3a0f681de175c8") and Availability Zone (such as "us-west-2a").
+1. VERIFY: Scroll down to see "Available".
+
+   ### Launch into dedicated Host
+
+1. Pull down the Actions list to select "Launch instance(s) onto host".
+   
+   That puts you in the "Launch an instance" UI.
+
+1. Select the "macOS" icon for a list of instance types for the region. Example for Oregon:
+
+   <img alt="AWS EC2 images for macOS release" src="https://i.pinimg.com/originals/4b/dc/aa/4bdcaa65d2d49751730ad2a1ae8587c9.jpg"></a>
+
+   The "macOS" icon would NOT appear if the region chosen does not carry mac1 server types.
+
+1. If you don't want the latest MacOS operating system (Monterey at time of this writing), click the down arrow icon to select the previus macOS release.
+1. In the Architecture pull-down, selec "64-bit (Mac-Arm)" for Mac2.
+1. Highlight and copy the AMI ID (for example, "ami-0a413e26da8676cb7" for "(Mac-Arm)" in us-west-2).
+
+   WARNING: The AMI ID changes when there is any change to operating system or other components.
+
+1. For Key pair (login), click "Create new key pair" if you haven't already created a pem file. 
+1. Create security group to Allow SSH traffic from "My IP".
+1. In Advanced details, you cannot check "Request Spot instances".
+1. Under "Tenancy", select "Dedicated host - launch this instance on a dedicated Host".
+
+   "The selected instance type must be launched onto a Dedicated Host. To continue, choose a Dedicated Host  that has been allocated for this instance type.
+
 1. Click the "Next: Storage" to
 1. increase the size of the Root Volume from a default of 60 to 300 GiB (or whatever your capacity 
 analysis runs reveal). 
@@ -99,14 +158,33 @@ analysis runs reveal).
    Usage reports do not distinguish between io2 Block Express volumes and io2 volumes. 
    So add tags to identify the volume used is a io2 Block Express volume.
 
-1. Select a Security Group.
-1. Select the key pair.
-1. Click the blue "Launch".
+   ### Launch
+
+1. Click the blue "Launch" for "Success! Successfully initiated launch of instance".
+1. Click "Instances" and scroll down to your Instance ID.
+1. Press command+R to refresh until "Status check: Initializing" changes to "passed". ???
+
+   CAUTION: Do not click "Launch instances" in the Instances UI.
+
+1. Return to "Dedicated Hosts".
+
+   ### Connect
+
+1. Click "Connect to instance".
+1. Click the orange "Connect" which creates a new browser window.
+
+   FIXME:
+
+   Failed to connect to your instance<br />
+   EC2 Instance Connect is unable to connect to your instance. Ensure your instance network settings are configured correctly for EC2 Instance Connect. For more information, see Set up EC2 Instance Connect at https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html.
+
 1. After Instance State is "Running",
 1. Highlight the Public IPv4 address to your Clipboard.
 1. Proceed to <a href="#AWSMacConnect">Connect to AWS MacOS</a> below.
 <br /><br />
 
+
+## AWS CLI
 
 Alternately, using AWS CLI:
 https://aws.amazon.com/blogs/aws/use-amazon-ec2-m1-mac-instances-to-build-test-macos-ios-ipados-tvos-and-watchos-apps/
@@ -160,6 +238,7 @@ https://aws.amazon.com/blogs/aws/use-amazon-ec2-m1-mac-instances-to-build-test-m
    --placement="Tenancy"="host"
    </strong></pre>
 
+<hr />
 
 <a name="AWSMacConnect"></a>
 
