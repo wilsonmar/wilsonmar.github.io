@@ -37,9 +37,11 @@ One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
    <tr valign="top"><td>mac2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
 
-   ### Costs?
+## Cost?
 
-1. The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pricing">unit of billing</a> is the <a target="_blank" href="https://aws.amazon.com/ec2/dedicated-hosts/pricing/">dedicated host</a> US region price which have a <strong>24-hour minimum allocation period</strong> (required by Apple). For 
+It's not available on all regions world-wide.
+
+The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pricing">unit of billing</a> is the <a target="_blank" href="https://aws.amazon.com/ec2/dedicated-hosts/pricing/">dedicated host</a> US region price which have a <strong>24-hour minimum allocation period</strong> (required by Apple). For 
 
    * mac1 US per hour $0.650 x 24 = $15.6/day or $468 per 30-day month
    * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
@@ -49,46 +51,53 @@ One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
    * mac2 Frankfurt per hour $1.298
    <br /><br />
 
-   It's not available on all regions world-wide.
-
    AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
    But more that a few months, you might as well buy your own Mac at $2,500.
 
-   Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
+Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
    <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
 
+   * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
    * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
    * mac1 (Gen 4 Mac mini) with 64 GB for $299 per month
-   * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
    <br /><br />
 
 
 <hr />
 
-## Using Terraform
+## Using Terraform Dedicated Host Module
 
 The easiest way to create an instance is using automation based on Terraform.
 
-Daniel Dias (in Berlin, Germany) created<br />
-
-   <pre>https://github.com/DanielRDias/terraform-aws-dedicated-host
-   using his module<br />
+1. Download the module Daniel Dias (in Berlin, Germany) created<br />
    https://registry.terraform.io/modules/DanielRDias/dedicated-host/aws/latest/examples/macOS
+
+   <pre>git clone https://github.com/DanielRDias/terraform-aws-dedicated-host
    </pre>
 
-Use it to createice it to create for you:
+   Use it to create for you:
 
    * dedicated_host_id
    * mac_ami_id for the region and Architecture, such as "64-bit (Mac-Arm)" for Mac2.
    <br /><br />
 
-It needs to be updated:
+1. View the <tt>.gitignore</tt> file. Notice it has "stage.auto.tfvars.example" and "stage.auto.tfvars" along with other specifications of files and folders not to upload to GitHub.
 
-   * from use of macOS Catalina to macOS Monterary
+1. Rename <tt>stage.auto.tfvars.example</tt> to <tt>stage.auto.tfvars</tt>, then edit it:
+
+   <pre>instance_type     = "mac2.metal"
+   availability_zone = "us-east-1a"
+   </pre>
+
+   TODO: It needs to be updated:
+
    * from use of mac1.metal to mac2.metal
+   * Add specification of ARM for mac2.metal
+   * from use of macOS Catalina to macOS Monteray
    <br /><br />
 
-But to use that automation, you first need to decide and define these values in AWS:
+
+To use that dedicated_host_id automation, you first need to decide and define these values in AWS:
 
 * Security Group (with your IP address)
 * pem key file name
