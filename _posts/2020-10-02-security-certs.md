@@ -1,0 +1,982 @@
+---
+layout: post
+date: "2022-10-17"
+file: "security-certs"
+title: "Security Certifications"
+excerpt: "There are several (overlapping) ones. Collect them all!"
+tags: [security,certs]
+image:
+# cyber-security-hero-1900x500-22924.jpb/.png 
+  feature: https://user-images.githubusercontent.com/300046/103753295-19cf4680-4fc8-11eb-9c7a-d23d3c5c2d79.jpg
+  credit: Paul Jerimy
+  creditlink: https://pauljerimy.com/security-certification-roadmap
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"><img align="right" alt="resume-certificate-158x112.png" width="100" src="https://user-images.githubusercontent.com/300046/120815122-c9bfc600-c50c-11eb-8a48-3dac8358542c.png"></a>
+For security professionals, there are several expensive overlapping certification exams, from competing agencies.
+
+{% include whatever.html %}
+
+This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
+<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"></a>
+<em>Click for full screen image.</em>
+
+
+## CCSK (Cloud Security Alliance Certificate of Security Knowledge)
+
+<a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the Seattle-based <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a>. 
+
+QUESTION: The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype inactive?</a>
+
+<a target="_blank" href="https://www.whizlabs.com/learn/course/ccsk-pt/">
+Whizlabs has sample tests</a> but questionable quality with too many double negative questions and answers.
+
+The CCSK is an <strong>open-book, online exam</strong>, completed in 90 minutes. Purchasing the exam costs $395 (free to veterans) for two test attempts, which you will have 2 years to use. The minimum passing score is 80% 
+of the 60 multiple-choice vendor-neutral questions selected randomly from the CCSK question pool in v4 of the exam available December 1, 2017:
+
+   * 6% are based on the <a target="_blank" href="http://www.enisa.europa.eu/act/rm/files/deliverables/cloud-computing-riskassessment">2009 Cloud Computing report</a> from the <a target="_blank" href="http://www.enisa.europa.eu/">ENISA (European Network and Information Security Agency)</a>
+
+   * 7% are based on <a target="_blank" href="https://cloudsecurityalliance.org/download/cloud-controlsmatrix-v3-0-1/">CSA’s CCM (Cloud Controls Matrix) spreadsheet 3.0.1</a> which cross references the many other standard worldwide (AICPA, PIPEDA, CIS, COBIT, CSA, ENISA, FedRAMP, GAAP, HIPPA, HITRUST, IEC, NIST, PCI, etc.). It is the basis for CSA's <a target="_blank" href="https://cloudsecurityalliance.org/research/working-groups/consensus-assessments/">Consensus Assessments Initiative Questionnaire (CAIQ)</a> industry-accepted way to document which security controls exist in IaaS, PaaS, and SaaS services, which inputs to <a target="_blank" href="https://cloudsecurityalliance.org/star/">"Level 1" of the STAR (CSA Security Trust Assurance and Risk)</a> <a target="_blank" href="https://cloudsecurityalliance.org/star/registry/">Registry</a> of vendors.
+
+   * 87% are based on the <a target="_blank" href="https://cloudsecurityalliance.org/download/security-guidance-v4/">CSA Guidance v4</a> at PROTIP: <a target="_blank" href="https://github.com/cloudsecurityalliance/CSA-Guidance">https://github.com/cloudsecurityalliance/CSA-Guidance</a> -- a masterwork providing a summary of terms and concepts which integrate the various worldwide standards. 
+
+https://www.meetup.com/Cloud-Security-Alliance-Northeast-Ohio-Chapter/events/275707693/
+Cloud Security Alliance NorthEast Ohio chapter
+
+Domain 1 Cloud Computing Concepts and Architectures
+* Definitions of Cloud Computing
+   - Service Models
+   - Deployment Models
+   - Reference and Architecture Models
+   - Logical Model
+* Cloud Security Scope, Responsibilities, and Models
+* Areas of Critical Focus in Cloud Security
+<br /><br />
+
+Domain 2: Governance and Enterprise Risk Management
+* Tools of Cloud Governance
+* Enterprise Risk Management in the Cloud
+* Effects of various Service and Deployment Models
+* Cloud Risk Trade-offs and Tools
+<br /><br />
+
+Domain 3: Legal Issues, Contracts and Electronic Discovery
+* Legal Frameworks Governing Data Protection and Privacy
+  - Cross-Border Data Transfer (GDPR)
+  - Regional Considerations (California)
+* Contracts and Provider Selection
+  - Contracts
+  - Due Diligence
+  - Third-Party Audits and Attestations (SOC, ISO)
+* Electronic Discovery
+  - Data Custody
+  - Data Preservation
+  - Data Collection
+  - Response to a Subpoena or Search Warrant
+<br /><br />
+
+Domain 4: Compliance and Audit Management
+* Compliance in the Cloud
+  - Compliance impact on cloud contracts
+  - Compliance scope
+  - Compliance analysis requirements
+
+* Audit Management in the Cloud
+  - Right to audit
+  - Audit scope
+  - Auditor requirements
+<br /><br />
+
+Domain 5: Information Governance
+* Governance Domains
+* Six phases of the Data Security Lifecycle and their key elements
+* Data Security Functions, Actors and Controls
+<br /><br />
+
+Domain 6: Management Plane and Business Continuity
+* Business Continuity and Disaster Recovery in the Cloud
+* Architect for Failure
+* Management Plane Security
+<br /><br />
+
+Domain 7: Infrastructure Security
+* Cloud Network Virtualization
+* Security Changes With Cloud Networking
+* Challenges of Virtual Appliances
+* SDN Security Benefits
+* Micro-segmentation and the Software Defined Perimeter
+* Hybrid Cloud Considerations
+* Cloud Compute and Workload Security
+<br /><br />
+
+Domain 8: Virtualization and Containers
+* Mayor Virtualizations Categories
+* Network
+* Storage
+* Containers
+<br /><br />
+
+Domain 9: Incident Response
+* Incident Response Lifecycle
+* How the Cloud Impacts IR
+<br /><br />
+
+Domain 10: Application Security
+* Opportunities and Challenges
+* Secure Software Development Lifecycle
+* How Cloud Impacts Application Design and Architectures
+<br /><br />
+
+Domain 11: Data Security and Encryption
+* Data Security Controls
+* Cloud Data Storage Types
+* Managing Data Migrations to the Cloud
+* Securing Data in the Cloud
+<br /><br />
+
+Domain 12: Identity, Entitlement, and Access Management
+* IAM Standards for Cloud Computing
+* Managing Users and Identities
+* Authentication and Credentials
+* Entitlement and Access Management
+<br /><br />
+
+Domain 13: Security as a Service
+* Potential Benefits and Concerns of SecaaS
+* Major Categories of Security as a Service Offerings
+<br /><br />
+
+Domain 14: Related Technologies
+* Big Data
+* Internet of Things
+* Mobile
+* Serverless Computing
+<br /><br />
+
+
+## ISC2.org
+
+ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="https://www.isc2.org/ethics">https://www.isc2.org/ethics</a>
+
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">Prices for exams</a> taken at Pearson Vue test centers:
+
+<a name="SSCP"></a>
+
+### SSCP
+
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$249 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/SSCP">SSCP (Systems Security Certified Practitioner)</a>
+
+
+<a name="CISSP"></a>
+
+### CISSP
+
+<img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src="https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
+Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> (pronouced "sis pee") is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+
+The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
+Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
+
+Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adaptive, asking 100-150 questions, depending on whether answers are correct. 
+PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you'll get all hard questions. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
+With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours.
+<a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
+This also means you won't be able to go back and change answers in previous questions answered.
+
+There is a 5 year experience requirement, attested by other professionals.
+
+You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
+
+PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw/videos">on YouTube</a>) provide the most detailed, best sequenced learning, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated for the May 2021 BOK</a>. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+
+   1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
+   Security and Risk Management</a> - 334
+   2. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
+   Asset Security</a> - 44
+   3. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
+   Security Architecture and Engineering</a> - 268
+   4. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
+   Communication and Network Security</a> - 114 on OSI model
+   5. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   Identity and Access Management (IAM)</a> - 82 on biometrics
+   6. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   Security Assessment and Testing</a> - 41 on NIST SP 800-92
+   7. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
+   Security Operations</a> - 245 
+   8. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
+   Secure Software Development Lifecycle</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
+   <br /><br />
+
+Official Flash cards of definitions:
+
+   1. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-and-Risk-Management"> The Information Security Environment</a> - 18 items
+   2. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Asset-Security">Information Asset Security</a> - 17 items
+   3. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Architecture-and-Engineering">Identity and Access Management (IAM)</a> - 24 items
+   4. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Communication-and-Network-Security">Security Architecture and Engineering</a> - 48 items
+   5. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Identity-and-Access-Management">Communication and Network Security</a> - 88 items
+   6. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Assessment-and-Testing">Software Development Security</a> - 101 items
+   7. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Security-Operations">Security Assessment and Testing</a> - 18 items
+   8. <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development">Security Operations</a> - 62 items
+
+   * <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development-Security">Putting it All Together</a> - 34 items
+   <br /><br >
+
+Quizzes on CloudAcademy.com by exam domain:
+
+   1. <a target="_blank" href="https://cloudacademy.com/quiz/35709/">Security and Risk Assessment</a>
+   2. <a target="_blank" href="https://cloudacademy.com/quiz/35788/">Asset Security</a>
+   3. <a target="_blank" href="https://cloudacademy.com/quiz/35824/">Security Architecture and Engineering</a>
+   4. <a target="_blank" href="https://cloudacademy.com/quiz/35869/">Communication and Network Security</a>
+   5. <a target="_blank" href="https://cloudacademy.com/quiz/36014/">Identity and Access Management</a>
+   6. <a target="_blank" href="https://cloudacademy.com/quiz/36540/">Security Testing and Assessment</a>
+   7. <a target="_blank" href="https://cloudacademy.com/quiz/36541/">Security Operations</a>
+   8. <a target="_blank" href="https://cloudacademy.com/quiz/36542/">Security Development Security</a>
+   <br /><br />
+
+Written References:
+
+   * <a target="_blank" href="https://www.amazon.com/Certified-Information-Security-Professional-Official/dp/1119523265/">$58</a> <a target="_blank" href="https://learning.oreilly.com/library/view/isc2-cissp-certified/9781119475934/">Sybex BOOK</a>: "(ISC)2 CISSP Certified Information Systems Security Professional <strong>Official Study Guide</strong> & Practice Tests Bundle Second Edition" by Mike Chapple, who has a video course on LinkedIn Learning which is deep yet concise, with effective sequencing of topics. He also shows demos of security-related Windows programs where appropriate, such as Windows Firewall Log Viewer.
+
+   * <a target="_blank" href="https://josephdelgadillo.com/cissp-testprep-cheatsheet/">Joseph Delgadillo's cissp-testprep-cheatsheet</a> provides a PowerPoint file.
+
+   * <a target="_blank" href="https://wilsonmar.github.io/cyber-security/">My notes on cyber security</a> highlights what to remember.
+
+<a target="_blank" href="https://www.linkedin.com/pulse/where-do-i-find-cissp-practice-questions-nick-webb/">Practice Questions</a>:
+
+   * PROTIP: The toughest questions among samples is <a target="_blank" href="https://twitter.com/ITDojo">@ITDojo</a> <a target="_blank" href="https://www.youtube.com/watch?v=jZSAZ1neFZk&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37">VIDEO: Question of the day</a>, 100+ of them explained by Colin Weaver from 2017. 
+
+   * <a target="_blank" href="https://cloudacademy.com/learning-paths/preparation-for-the-cissp-certification-640/">CloudAcademy.com "CISSP Prep."</a> [subscription] has a timed (40 minute) Knowledge Check of about 20 questions for each domain, available on mobile phones.
+
+   * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
+   
+   * <a target="_blank" href="https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos">On Youtube</a>
+
+   * For 20 years, <a target="_blank" href="https://www.linkedin.com/in/deanbushmiller/">Dean Bushmiller</a> has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp on OReilly.com</a> includes a set of <a target="_blank" href="https://drive.google.com/drive/folders/1-0qj1lmbI0x89ZPTC_sPEmMdLDBTvE3F" title="1@vmlt.com">proprietary visual "mind maps"</a> to collect, practice, and verify your knowledge, <a target="_blank" href="https://github.com/deanbushmiller/CISSP-Bootcamp">on GitHub</a>.
+
+   * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
+
+   * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-ahmed-446601133/">Luke Ahmed</a>, who is dedicated to CISSP education.
+
+   * https://learning.oreilly.com/videos/cissp-certification-training/9781771373753/9781771373753-video212908
+
+
+Video prep courses view:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics. From 2020.
+
+   * <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">OReilly LiveSessions CISSP</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) I think is indeed the most thorough (deep dive) of all video courses I've viewed. 26 hours. A quize of terms at the end of each video. From 2018.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">YouTube playlist on CISSP FREE</a> by "Skillset" provides a good overview, but it's from 2016.
+
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test provides questions. The <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> software enables display of individual domains from all 4 tests at once, showing only questions you missed before. Explanations are given as to why each response is correct or not.
+
+   * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CSSLP">CSSLP (Certified Secure Software Lifecycle Professional)</a> is the secure <strong>software development</strong> certification. The 15 Sep 2020 edition is NOT covered in the <a target="_blank" href="https://learning.oreilly.com/library/view/csslp-certification-all-in-one/9781260441697/">All-in-One book</a> by Wm. Arthur Conklin, Daniel Paul Shoemaker. 
+
+
+   <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
+
+   1. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-1-secure-software-concepts?u=26886050">Secure Software Concepts</a> Released Feb 12, 2020 (Confidentiality, Integrity, Availability triad, IAM, design)
+   
+   2. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-2-secure-software-requirements?u=26886050">Secure Software Requirements</a>
+
+   3. <a target="_blank" href="https://www.linkedin.com/learning/csslp-cert-prep-3-secure-software-design?u=26886050">Secure Software Design</a> 1h 48m 
+
+   4. Secure Software Implementation/Programming
+
+   5. Secure Software Testing (<a target="_blank" href="https://www.linkedin.com/learning/online-application-security-testing-essential-training/">online</a> and <a target="_blank" href="https://www.linkedin.com/learning/offline-application-security-testing-essential-training/">offline</a>)
+
+   6. Secure Lifecycle Management
+
+   7. Secure Deployment, Operations, and Maintenance
+
+   8. Supply Chain and Software Acquisition
+
+Quizzing Tests:
+
+   * <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">Official 20-item</a> CSSLP Flashcards on Quizlet vs. <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">89-item</a>
+
+   * https://github.com/deanbushmiller/CISSP-Bootcamp
+
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/certified-secure-software-lifecycle-professional-csslpr">Pluralsight video courses</a> by Kevin Henry (kevinmhenry at msn) is from 2017 and is too high general for me.
+
+   * <a target="_blank" href="https://thorteaches.com/udemy/">On Udemy</a>, <a target="_blank" href="https://mckinsey.udemy.com/course/cissp-certification-practice-exam-1/learn/quiz/4377650#overview">McK</a> <a target="_blank" href="https://www.udemy.com/user/thorpedersen/​">Thor Pederson courses</a> and <a target="_blank" href="https://www.udemy.com/course/cissp-certification-practice-exam-1/">3 sets of 125 questions in 3 hours</a>. Has a Facebook Groups to join: <a target="_blank" href="https://www.facebook.com/groups/ThorTeaches">ThorTeaches</a>
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Mpn3Sd9f4lc&list=PLOYQCApvKhV2-j38RvgfHHdsB_VSDPfpP&index=2">8 YouTube videos from The Cloud Tech Guy Joe</a> Jan, 2020 talks about the subject rather than taking a deep dive.
+
+   * <a target="_blank" href="https://mckinsey.udemy.com/course/isc2-csslp-certification-exam-prep-practice-exams/">Practice Exams 2020</a> by Chandrika Patel
+
+   * <a target="_blank" href="https://www.amazon.co.uk/Eleventh-Hour-CISSP%C2%AE-Study-Guide/dp/0128112484/">18.17 LB BOOK: 11th Hour</a>
+
+   * Mindmap videos: https://www.youtube.com/channel/UCXk6...​ 
+
+   * <a target="_blank" href="https://www.Cissprep.net">Cissprep.net Memorisation sheet</a>
+   * Exam tips: https://www.youtube.com/watch?v=HWg2g...​  
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Igq9Q3r00uk">CISSP MasterClass™ Mission</a> by Sagar Bansal
+
+   * <a target="_blank" href="https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template/">https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template</a>$14.99 eBook: InfoSec Brain Dump Template w/Study Schedule
+
+   * Kelly Handerhan, the "Mister Rogers of CISSP" <a target="_blank" href="https://www.youtube.com/watch?v=v2Y6Zog8h2A">"Why you will pass the CISSP" video</a> among her <a target="_blank" href="https://www.youtube.com/watch?v=-99b1YUFx0A&list=PLJ-B2OMLT_K89_2YNVj2I7UJMIwuxZydg">YouTube CyberTrain.IT playlist</a> 
+
+   * <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> 
+
+   * <a target="_blank" href="https://www.amazon.co.uk/CISSP-Official-ISC-Practice-Tests-ebook/dp/B07D8FZN8M/">BOOK: ISC2 official practice tests</a>
+
+YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank" href="https://www.linkedin.com/in/jberti/">John Berti</a> of Destination Certifications:
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=geGALIfOxtI​&t=30s">Security & Risk Management</a>
+
+2. 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=aN9zkmzYTmQ​&t=30s">Asset Classification</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lrI4QIa8S2I​&t=30s">Privacy:</a>
+   <br /><br />
+
+3.
+   * Models and Frameworks: https://www.youtube.com/watch?v=qZB6_lp9M30​&t=30s
+   * Evaluation Criteria: https://www.youtube.com/watch?v=WqHmDL7YAvw​&t=30s
+   * Trusted Computing Base: https://www.youtube.com/watch?v=fwU7n_3h058​&t=30s
+   * Vulnerabilities in Systems: https://www.youtube.com/watch?v=fPUypU7ysMw​&t=30s
+   * Cloud: https://www.youtube.com/watch?v=-rWQ7YuxiLY​&t=30s
+   * Cryptography: https://www.youtube.com/watch?v=LLRaa0kOMDM​&t=30s
+   * Digital Certificates, Digital Signatures & PKI: https://www.youtube.com/watch?v=8XKdFSG3ua4​&t=30s
+   * Cryptanalysis: https://www.youtube.com/watch?v=pnITDgs63M4​&t=30s
+   * Physical Security: https://www.youtube.com/watch?v=7ESQwNJ9HXU​&t=30s
+   <br /><br />
+
+5.
+   * Access Control Overview: https://www.youtube.com/watch?v=BUcoABZzeQ4​&t=30s
+   * Single Sign-on & Federated Access: https://www.youtube.com/watch?v=_U4QMIxVk8M​&t=30s
+   <br /><br />
+
+6.
+   * Security Assessment and Testing Overview: https://www.youtube.com/watch?v=eDVZvw5NziA​&t=30s
+   * Vulnerability Assessment and Penetration Testing: https://www.youtube.com/watch?v=vZ0S8GdWiIk​&t=30s
+   * Logging & Monitoring: https://www.youtube.com/watch?v=cwcARccyWyY​&t=30s
+   <br /><br />
+
+7. Security Operations:
+   * Investigations: https://www.youtube.com/watch?v=Urev5cZgny8​&t=30s - Locard's Principle: perp. will leave something behind and take something
+   * Incident Response: https://www.youtube.com/watch?v=PwxFwndQ7Jk​&t=30s
+   * Malware: https://www.youtube.com/watch?v=SVbrRozyIpo​&t=30s
+   * Patching & Change Management: https://www.youtube.com/watch?v=xX4U6Lz82Bk​&t=30s
+   * Recovery Strategies: https://www.youtube.com/watch?v=DrrfrJBnx28​&t=30s
+   * Business Continuity Management (BCM): https://www.youtube.com/watch?v=oAjNL3I_3-E​&t=30s
+   <br /><br />
+
+8.
+   * Secure Software Development: https://youtu.be/fS5WWjuyFmQ​&t=30s
+   * Databases: https://youtu.be/-70DBd6cNDw&t=30s
+   <br /><br />
+
+Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
+
+posted by SANS Blue Team Ops:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=bopYRxAyTU8">CISSP Cram Session</a> Jun 28, 2020. Slides at <a target="_blank" href="https://www.EricConrad.com/">EricConrad.com</a>, author of <a target="_blank" href="https://mtg414.com/">MGT414.com</a>: SANS Training Program for CISSP® Certification, as well as the <a target="_blank" href="https://www.amazon.com/CISSP-Study-Guide-Third-Conrad/dp/0128024372">CISSP® Study Guide (Syngress)</a>.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">Test-Taking Tactics</a>
+
+Flash cards:
+
+   * https://quizlet.com/343215416/csslp-exam-guide-flash-cards/
+
+Suggestions:
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8BvAx0n500k&list=RD8BvAx0n500k&start_radio=1&rv=8BvAx0n500k&t=0">
+   Ignore the Orange Book</a>. Focus on 15408 Common Criteria on how to build computers based on Bella-Padua. 
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=tjOjjXVPQeU">Graph your progress</a> from <a target="_blank" href="https://www.sageknowsit.com/">sageknowsit.com</a>
+
+### CCSP
+
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CCSP">CCSP (Certified Cloud Security Professional)</a>. Get 70% of 125 questions correct in 3 hours. Whew. The domains, 17% each, 
+
+   * Cloud Concepts, Architecture and Design
+   * Cloud Data Security
+   * Cloud Platform & Infrastructure Security
+   * Cloud Application Security
+   * Cloud Security Operations
+   * Legal, Risk and Compliance
+   <br /><br />
+
+<a target="_blank" href="https://www.isc2.org/-/media/ISC2/Certifications/Exam-Outlines/CCSP-Exam-Outline.ashx">This PDF</a> has the details.
+
+<a target="_blank" href="https://ccsp.alukos.com/">ccsp.alukos.com</a> is a GitBook-formatted listing with glossary of terms, laws by country, standards by each body, frameworks.
+
+
+Prep courses:
+
+> I think ISC2 is being too clever with their questions, past the point of making the test as much about knowing the twisted mind of the test maker rather than understanding the underlying material. I wich that ISC2 test writers see "Advanced" level of "knowledge" as higher order thinking (such as evaluation) rather than teasing out twisted meaning of words in tests.
+
+   * YOUTUBE: <a target="_blank" href="https://www.youtube.com/watch?v=dCPRZoKntX0&list=PL0hT6hgexlYy_gE_y09ORyupgfVOHM_TN">CCSP Exam Cram series</a> by Prabh Nair
+
+   * <a target="_blank" href="https://www.linkedin.com/learning/ccsp-cert-prep-4-cloud-application-security-audio-review/">LinkedIn audio review</a> with practice questions. By Mike Chapple. I recommend this because it has quizzes and shows use of apps such as WebGoat.
+
+   * <a target="_blank" href="https://app.pluralsight.com/paths/skills/ccspr-certified-cloud-security-professional">Pluralsight CCSP</a> by Lyron H. Andrews CISSP/CCSP/SSCP/CISM/CCSK
+
+Bragging:
+
+   * https://charbelnemnom.com/passed-official-ccsp-exam-certified-cloud-security-professional/
+   
+<hr />
+
+## ISACA.org
+
+<a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a> asks for a $50 test application processing fee in addition to membership fee for a US$185 discount to the US$760 online, remotely-proctored exam fee. 
+
+   * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">CSX Fundamentals</a>
+
+   * CRISC (Certified in Risk and Information Systems Control)
+
+   * $50 <a target="_blank" href="https://www.isaca.org/credentialing/cism">CISM (Certified Information Security Manager)</a>
+
+   * CGEIT (Certified in the Governance of Enterprise IT)
+
+   * <a target="_blank" href="https://www.isaca.org/credentialing/certified-data-privacy-solutions-engineer">CDPSE (Certified Data Privacy Solutions Engineer)</a> covers privacy governance, privacy architecture, data lifecycle
+
+   * <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a> is derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyberframework</a> is 4 hours.
+
+### ISACA CSX
+
+ISACA's <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity">Cybersecurity Nexus (CSX) Certificates</a>  
+
+   * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">Security Fundamentals</a>
+
+
+## Offensive Security
+
+Offensive Security is a for-profit company offering courses with labs and certifications:
+
+   * OSCP (Certified Professional) is one of the most difficult to pass because it is part hazing ritual, proctored via webcam. It is a 24-hour time-boxed test where you penetrate of as many machines as you can within a massive virtual environment, using Kali Linux. 
+
+   * <a target="_blank" href="https://www.offensive-security.com/awe-osee/">OSEE (Offensive Security Exploitation Expert)</a> covers DEP, ASLR evasion, heap spraying, function pointer overwrites. OSEE holders must complete the Advanced Windows Exploitation (AWE) course by Offensive Security held in a live hands-on environment at a Black Hat conference in Las Vegas, NV.
+   
+   That plus pass a rigorous <strong>72-hour practical exam</strong> that includes preparing a comprehensive penetration test report. So this certificate indicates a level of expertise far beyond that of most penetration testers.
+
+   Topics include: 64-bit Exploitation, Debugging, DEP ByPass, Disarming EMET Mitigations, Exploit Development, Heap Spray, Kernel Driver Exploitation, Kernel Pool Exploitation, Memory Protection Bypass, NX/ASLR Bypass, ROP Chain, Sandbox Escape, Shellcode, WinDBG, Windows Kernel Exploitation.
+    
+   * <a target="_blank" href="https://www.offensive-security.com/awae-oswe/">OSWE (OSWE Web Expert)</a> covers web security testing: XSS attacks, SQL injection, XML external entity injection, Weak random token generation, DOM XSS, Server side template injection, Command injection via websockets (black box material)
+
+   * OSCE is being retired. It covered exploits used by attackers to breach security infrastructures
+
+## SANS
+
+SANS formed the Global Information Assurance Certification (GIAC) program to act as the certification arm for its training courses.
+GIAC has a https://www.giac.org/certifications/get-certified/roadmap
+to dozen of exams across six specific domains. It offers remote proctoring through ProctorU.
+
+   * <a target="_blank" href="https://www.giac.org/certification/enterprise-vulnerability-assessor-geva">GEVA (GIAC Enterprise Vulnerability Assessor)</a>requires 71% correct from among 75 questions over 2 hours. It covers Vulnerability assessment framework planning and methodology in an enterprise environment; Discovery and validation of vulnerabilities using tactics like network scanning and PowerShell scripting; Remediation and reporting techniques utilizing proper data management
+
+   * <a target="_blank" href="https://www.giac.org/certification/certified-incident-handler-gcih">GCIH (GIAC Certified Incident Handler)</a> requires an undeterminate correct from among 100-150 questions over 4 hours. It covers Incident Handling (Response) and Computer Crime Investigation; Computer and Network Hacker Exploits; Hacker Tools (Nmap, Nessus, Metasploit, Netcat). A single chapter on NIST800-61.
+
+   Based on the <a target="_blank" href="https://www.giac.org/certifications/niceframework">NICE framework</a>
+
+   * <a target="_blank" href="https://www.giac.org/certification/certified-enterprise-defender-gced">GCED (GIAC Certified Enterprise Defender)</a> requires 70% correct from among 115 questions over 3 hours. It covers Incident handling and computer crime investigation; Computer and network hacker exploits; Hacker tools (Nmap, Nessus, Metasploit and Netcat)
+
+   * <a target="_blank" href="https://www.giac.org/certification/security-expert-gse">GSE (GIAC Security Expert)</a> is the premier security-related certification available today. After you score at least the gold level in 2 of 3 tests above, you take a multiple-choice test, then a hands-on lab (not available due to COVID). The proctored Exam has Minimum Passing Score of 64% to 24 VM-based Hands-On Questions with a 3-Hour Time Limit.
+
+
+## CompTIA
+
+So compliance with <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">DoD 8570-2005</a> retired by <a target="_blank" href="https://www.nist.gov/news-events/news/2016/08/dod-directive-814001-cyberspace-workforce-management">NIST DoD Directive 8140.01</a> means job candidates need to have passed to it to just apply for some government jobs. DoD 8140 expands on DoD 8570 to leverage the <a target="_blank" href="https://dodcio.defense.gov/Cyber-Workforce/DCWF.aspx">Defense Cybersecurity Workforce Framework (DCWF)</a>, which draws from the original <a target="_blank" href="https://www.nist.gov/itl/applied-cybersecurity/nice/nice-cybersecurity-workforce-framework-resource-center">National Initiative for Cybersecurity Education (NICE) Cybersecurity Workforce Framework (NCWF)</a> and DoD Joint Cyberspace Training and Certification Standards (JCT&CS).
+
+CompTIA certifications were designed for compliance with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011.
+
+
+### Security+
+
+<a target="_blank" href="https://www.comptia.org/certifications/security">Security+</a> 
+is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. 
+
+PROTIP: I passed the Security+ after studying literally 4 years, on and off. What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+
+https://public.cyber.mil/devsecops/
+
+### PenTest+
+
+https://www.whizlabs.com/comptia-pentest/
+
+
+### CASP+
+
+<a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
+CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is a hands-on, performance-based certification for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
+For $396 for COMPTia members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. The domains:
+
+   1. 19% Risk Management  
+   1. 25% Enterprise Security Architecture  
+   1. 20% Enterprise Security Operations  
+   1. 23% Technical Integration of Enterprise Security  
+   1. 13% Research, Development, and Collaboration 
+   <br /><br />
+
+<a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
+<a target="_blank" href="https://quizlet.com/it/513316332/casp-cas-003-performance-based-questions-flash-cards/">12 Flash cards</a>
+Sample
+
+* To check config on RedHat 5.5:
+
+   <pre><strong>chkconfig --test</strong></pre>
+
+* Services to disable on DNS:
+
+   http, mysqld, lopd, bluetooth, wpa supplicant
+
+* To stop service:
+
+   <pre><strong>service httpd stop</strong></pre>
+
+CASP+ satisfies <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod-approved-8570-baseline-certifications/">Baseline Certification for DoD IAT (Information Assurance Technical) Level III</a>, IAM (Information Assurance Management) Level II, and IASAE (Information Assurance Security Architecture and Engineering) level I and II jobs.
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/casp-practice-tests/9781119683728/">CASP+ Practice Tests</a>
+by Nadean H. Tanner (at Puppet, Metasploit)
+
+   * <a target="_blank" href="https://exploit-exercises.com/">Exploit-Exercises.com</a> provides virtual machines, documentation, and challenges covering a wide range of security issues.
+   * <a target="_blank" href="https://www.hacking-lab.com/index.html">hacking-lab.com/index.html</a> provides capture-the-flag (CTF) exercises in a variety of fields.
+   * <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Hacking_Lab">www.owasp.org/index.php/OWASP_Hacking_Lab</a>
+   OWASP Hacking Lab provides excellent web application–focused exercises.
+   * <a target="_blank" href="https://www.pentesterlab.com/exercises/">PentesterLab</a> provides subscription-based access to penetration testing exercises
+   <br /><br />
+
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">O'Reilly video 18+ hours</a> released Jan. 2018 by Michael J. Shannon
+
+1. Risk Management
+
+   1: Business and Industry Influences and Risks
+
+   2: Organizational Security Privacy Policies and Procedures
+
+   3: Risk Mitigation Strategies and Controls
+
+   4: Risk Metric Scenarios for Enterprise Security
+
+2. Enterprise network and Security Architecture
+
+   5: Integrating Network and Security Components, Concepts, and Architectures
+
+   6: Integrating Security Controls for Host Devices
+
+   7: Integrating Controls for Mobile and Small Form Factor Devices
+
+   8: Selecting Software Security Controls
+
+3. Enterprise Security Operations
+
+   9: Conducting Security Assessments
+
+   10: Selecting the Proper Security Assessment Tools
+
+   11: Implementing Incident Response and Recovery
+
+4. Technical Integration of Enterprise Security
+
+   12: Integrating Hosts, Storage, and Applications in the Enterprise
+
+   13: Integrating Cloud and Virtualization Technologies in the Enterprise
+
+   14: Integrating and Troubleshooting Advanced AAA Technologies
+
+   15: Implementing Cryptographic Techniques
+
+   16: Secure Communication and Collaboration Solutions
+
+5. Research, Development and Collaboration
+
+   17: Applying Research Methods for Trend and Impact Analysis
+
+   18: Implementing Security Activities Across the Technology Life Cycle
+
+   19: Interacting Across Diverse Business Units
+
+
+Kelly Handerhan's Cybrary videos
+
+<a target="_blank" href="https://www.reddit.com/r/CompTIA/comments/aoyk2q/casp_cas003_help/">CASP CAS-003 help on Reddit</a> (archived)
+
+Ucertify has good labs 
+
+Sybex book has labs as well
+
+
+<a target="_blank" href="https://www.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/">
+Udemy video "Prepatory course for the exam CAS-003"</a>
+
+   1. Understanding Risk Management - 2hr 22min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616263#reviews">QUIZ</a>
+   2. Network and Security - 1hr 55m <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616410#reviews">QUIZ</a>
+   3. Implementing Advanced Authentication and Cryptographic Techniques - 1hr 46min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616464#reviews">QUIZ</a>
+   4. Implementing Security for Systems, Applications, and Storage - 2hr 23min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616574#reviews">QUIZ</a>
+   5. Implementing Security for Cloud and Virtualization Technologies - 1hr 45min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616602#reviews">QUIZ</a>
+   6. Utilizing Security Assessments and Incident Response - 1hr 42min <a target="_blank" href="https://mckinsey.udemy.com/course/comptia-advanced-security-practitioner-casp-exam-cas-003/learn/quiz/4616616#reviews">QUIZ</a>
+   <br /><br />
+
+<a target="_blank" href="https://www.amazon.com/s?k=casp+cas-003&crid=3XWIZV0LMDWT&sprefix=CASP+CAS%2Caps%2C194&ref=nb_sb_ss_ts-a-p_1_8">Amazon search CAS-003</a>
+
+<a target="_blank" href="https://www.amazon.com/Official-CompTIA-Self-Paced-Certification-CAS-003/dp/1642740632/">The Official CompTIA CASP+ Self-Paced Certification Study Guide (Exam CAS-003)</a> Paperback by Jason Nufryk is $219.00
+
+Notes:
+
+Memory dump tools: Memdump, KnTTools on Windows, FATKit 
+
+Runtime Debugging: AddressSanitizer, C# Deleaker, Software Verify
+
+Attestation provides evidence about a target to an appraiser so that policy compliance can be determined prior to authorization of access.
+
+The Annualized Loss Expectancy (ALE) is the product of the Annual Rate of Occurrence (ARO) multiplied by the Single Loss Expectancy (SLE).
+
+Bluesnarfing is the unauthorized access of a device by an attacker who is trying to access information on the device.
+
+Hyperconvergence takes convergence a step further by utilizing software to perform integration without requiring hardware changes.
+
+
+<a name="CySA+"></a>
+
+### CompTIA CySA+
+
+CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes
+
+<a target="_blank" href="https://www.infosecinstitute.com/webinar/comptia-cysa-certification-changes-everything-you-need-to-know/?utm_status=success">VIDEO</a>:
+
+1. Threat and vulnerability management:
+
+   1. Explain the importance of threat data and intelligence.
+   1. Given a scenario, utilize threat intelligene to support organizatoinal security.
+   1. Given a scenario, perform vulnerability management activities.
+   1. Given a scenario, analyze the output from common vulnerability assessment tools.
+   1. Explain the threats and vulnerabilities associated with operating in the cloud.
+   1. Given a scenario, implement controls to mitigate attacks and software vulnerabilities.
+
+2. Software and systems security
+   1. Given a scenario, apply security solutions for infastructure management
+   2. Explain software assurance best practices
+   3. Explain hardware assurance best practices
+
+3. Security operations and monitoring:
+   1. Given a scenario, analyze data as part of security monitoring activities.
+   2. Given a scenario, implement configuration changes to existing controls to improve security.
+   3. Explain the importance of proactive threat hunting.
+   4. Compare and contrast automation concepts and technologies.
+
+4. Incident response
+   1. Explain the importance of the incident response process.
+   1. Given a scenario, apply the appropriate incident response procedure.
+   1. Given an incident, analyze potential indicators of compromise.
+   1. Given a scenario, utilize basic digital forensics techniques.
+
+1. Compliance and assessment
+   1. Understand the importance of data privacy and protection
+   2. Given a scenario, apply security concepts in support of organizational risk mitigation
+   3. Explain the importance of frameworks, policies, procedures and controls.
+   
+https://www.udemy.com/course/comptiacsaplus/learn/lecture/21082126#overview
+
+
+## Cisco CCIE
+
+<a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html">CCIE - Cisco</a>
+
+Only 4,000 people have passed it world-wide.
+
+
+## EC-Council Penetration Tester
+
+(International Council of E-Commerce Consultants) EC-Council from Malaysia since 2001 has 3 levels of certification. See FAQ at <a target="_blank" href="https://cert.eccouncil.org/faq.html">https://cert.eccouncil.org/faq.html</a>
+
+33% off until Dec 31.
+
+### CEH 
+
+The CEHv10 (Certified Ethical Hacker version 11) ANSI exam 
+as defined by <a target="_blank" href="https://www.eccouncil.org/programs/certified-ethical-hacker-ceh">https://www.eccouncil.org/programs/certified-ethical-hacker-ceh</a>
+asks 125 multiple-choice questions in 4 hours.
+
+The exam is protored by ECC EXAM (as 312-50) and Pearson VUE (as 312-50), 
+courseware is discounted to $850, with upgrade for VUE exam for $100.
+from "Aspen iLabs".
+
+Exam Brochure:
+https://www.eccouncil.org/wp-content/uploads/2016/07/CEHv10-Brochure.pdf
+
+CEH Candidate Handbook:
+https://s3-us-west-2.amazonaws.com/edm-image/documents/CEH-Handbook-v2.2.pdf
+
+Blueprint: https://cert.eccouncil.org/images/doc/CEH-Exam-Blueprint-v2.0.pdf
+
+### CPENT / ECSA 
+
+The Advanced level is ECSA: Security Analyst
+https://www.eccouncil.org/programs/certified-security-analyst-ecsa-practical/
+is being phased out in Oct. 2020 in favor of the <a target="_blank" href="https://cert.eccouncil.org/certified-penetration-testing-professional-cpent.html">CPENT (Certified Penetration Testing Professional)</a>.
+
+Covers "double pivoting".
+
+$2199 w/ training, $799 for challenge.
+
+<a name="LPT"></a>
+
+### LPT
+
+At the Expert Level is LPT: Licensed Penetration Tester [Master]
+https://www.eccouncil.org/programs/licensed-penetration-tester-lpt-master/
+with training via CPENT.
+
+### EC-Council
+
+EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
+
+## IIBA Cybersecuity Analysis
+
+IIBA, the International Institute of Business Analysis (Pickering, Ontario, Canada), has an affiliation with the IEEE. Membership costs $139/year. For <a target="_blank" href="https://my.iiba.org/portal/s/store#/store/browse/detail/a133l000008axueAAA">$250 until Oct 31, 2022</a> then $400/$475 for members/non-members, it offers the <a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certificate-in-cybersecurity-analysis/">CCA (Certification in Cybersecurity Analysis)</a> among its 6 other certifications administered online by PSI. IIBA does not disclose the score needed to pass, scores attained, nor scoring percentages.
+
+<a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certification-digital-badge-program-and-directory#certification-registries">As of Aug 2022, 266</a> CCA attendees had 90 minutes to answer 75 multiple-choice questions in these Knowledge Areas:
+* Cybersecurity Overview and Basic Concepts 14%
+* Enterprise Risk 14%
+* Cybersecurity Risks and Controls 12%
+* Securing the Layers 5%
+* Data Security 15%
+* User Access Control 15%
+* Solution Delivery 13%
+* Operations 12%
+<br /><br />
+
+
+## AWS Security
+
+See my notes at <a target="_blank" href="https://wilsonmar.github.io/aws-security">https://wilsonmar.github.io/aws-security</a>
+
+## Microsoft SC-900 & AZ-500
+
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUH">PDF</a>: Updated Jan 21, 2021 
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">
+Microsoft's AZ-500 Azure Security Technologies</a> <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-devops/?wt.mc_id=esi_lxp_webpage_wwl">Associate</a> online exam for people who maintain security posture, identify and remediate vulnerabilities by using a variety of security tools, implement threat protection, and respond to security incident escalations. Domains:
+
+   1. Manage Identity and Access (30-35%)
+   2. Implement Platform Protection (15-20%)
+   3. Manage Security Operations (25-30%)
+   4. Secure data and applications (20-25%) (Policy and Data Infrastucture & Data at Rest, App Security, Key Vault)
+   <br /><br />
+
+It costs $165 to Pearson Vue, less if you're a certified trainer or in the <a target="_blank" href="https://esi.microsoft.com/getcertification">esi.microsoft.com/getcertification</a>, which has practice tests from MeasureUp.
+
+Prequisite is certification as either:
+
+   * <a target="_blank" href="https://cloudacademy.com/lab-challenge/microsoft-azure-administrator-az-104-challenge">Challenge</a>
+
+   or 
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/azure-developer/">Microsoft Certified: Azure Developer Associate</a> exam <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-204">AZ-204 "Developing Solutions for Microsoft Azure"</a>.
+
+Microsoft's learning paths for AZ-500 :
+
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-apps/">
+Secure your <strong>cloud</strong> applications in Azure</a> 6 Modules - 5 hr 36 min
+   1. Microsoft Azure <a href="#MSWAF">Well-Architected Framework</a> - Security - 1 hr 2 min
+   2. Top 5 security items to consider before pushing to production - 45 min
+   3. Create security baselines - 1 hr
+   4. Manage secrets in your server apps with Azure Key Vault - 46 min
+   5. Secure an ASP.NET Core web app with the Identity framework - 1 hr 8 min
+   6. Control authentication for your APIs with Azure API Management - 55 min
+   <br /><br />
+
+2. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-resource-mgmt-security/">
+Implement <strong>resource management</strong> security in Azure</a> 6 Modules - 3 hr 27 min
+   1. Protect against security threats on Azure - 25 min
+   2. Build a cloud governance strategy on Azure - 48 min
+   3. Control and organize Azure resources with Azure Resource Manager - 46 min
+   4. Secure your Azure resources with Azure role-based access control (Azure RBAC) - 37 min
+   5. Manage access to an Azure subscription by using Azure role-based access control (Azure RBAC) - 21 min
+   6. Create custom roles for Azure resources with role-based access control (RBAC) - 30 min
+   <br /><br />
+
+3. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-network-security/">
+Implement <strong>network</strong> security in Azure</a> 5 Modules - 5 hr 8 min
+   1. Secure network connectivity on Azure - 32 min
+   2. Configure the network for your virtual machines - 1 hr 34 min
+   3. Secure and isolate access to Azure resources by using network security groups and service endpoints - 43 min
+   4. Encrypt network traffic end to end with Azure Application Gateway - 1 hr 17 min
+   5. Monitor and troubleshoot your end-to-end Azure network infrastructure by using network monitoring tools - 1 hr 2 min
+   <br /><br />
+
+4. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/implement-host-security/">
+Implement <strong>virtual machine host</strong> security in Azure</a> 6 Modules - 6 hr 4 min
+   1. Microsoft Azure Well-Architected Framework - Security - 1 hr 2 min
+   2. Create security baselines - 1 hr
+   3. Create a Linux virtual machine in Azure - 1 hr 26 min
+   4. Create a Windows virtual machine in Azure - 51 min
+   5. Secure your Azure virtual machine disks - 1 hr 1 min
+   6. Protect your servers and VMs from brute-force and malware attacks with Azure Security Center - 44 min
+   <br /><br />
+
+5. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-identity-and-access/">
+Manage <strong>identity and access</strong> in Azure Active Directory</a> 9 Modules - 5 hr 17 min
+   1. Protect against security threats on Azure - 25 min
+   2. Create an Azure account - 39 min
+   3. Manage users and groups in Azure Active Directory - 50 min
+   4. Create Azure users and groups in Azure Active Directory - 41 min
+   5. Secure your application by using OpenID Connect and Azure AD - 50 min
+   6. Secure Azure Active Directory users with Multi-Factor Authentication - 38 min
+   7. Manage device identity with Azure AD join and Enterprise State Roaming - 25 min
+   8. Allow users to reset their password with Azure Active Directory self-service password reset - 31 min
+   9. Add custom domain name to Azure Active Directory - 18 min
+   <br /><br />
+
+6. <a target="_blank" href="https://docs.microsoft.com/en-us/learn/paths/manage-security-operations/">
+Manage <strong>security operations</strong> in Azure</a> 8 Modules - 6 hr
+   1. Protect against security threats on Azure - 25 min of <a target="_blank" href="https://www.tailwindtraders.com/">tailwindtraders.com</a>. Its security posture is monitored using <a target="_blank" href="https://azure.microsoft.com/services/security-center">Azure Security Center</a> adaptive application controls to define rules for <a target="_blank" href="https://docs.microsoft.com/en-us/azure/security-center/secure-score-security-controls">secure score</a>. Azure Logic Apps and Security Center connectors. Azure Sentinel SIEM using Common Event Format (CEF) messaging standard, Syslog, or REST API.
+   2. Create security baselines - 1 hr
+   3. Identify security threats with Azure Security Center - 43 min
+   4. Resolve security threats with Azure Security Center - 44 min
+   5. Protect your servers and VMs from brute-force and malware attacks with Azure Security Center - 44 min
+   Security Center uses network security group (NSG) rules to restrict access to management ports when not in use.
+   6. Analyze your Azure infrastructure by using Azure Monitor logs - 36 min
+   7. Improve incident response with alerting on Azure - 53 min
+   8. Capture Web Application Logs with App Service Diagnostics Logging - 55 min
+   <br /><br />
+
+https://microsoft.github.io/AzureTipsAndTricks/
+
+https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/
+
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Wry2get_RRc">VIDEO</a>: <a target="_blank" href="https://docs.microsoft.com/en-us/azure/security/develop/threat-modeling-tool">DOCS</a>: <a target="_blank" href="https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling">
+Microsoft Threat Modeling Tool</a>
+
+
+<a name="MSWAF"></a>
+
+### Well Architected Framework
+
+The <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/">Microsoft Azure Well-Architecture Framework</a> 5 pillars are the same as <a target="_blank" href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html">Amazon's</a>:
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/cost/overview">Cost Optimization</a> - Managing costs to maximize the value delivered.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/devops/overview">Operational Excellence</a> - Operations processes that keep a system running in production.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/scalability/overview">Performance Efficiency</a> - The ability of a system to adapt to changes in load.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/overview">Reliability</a> - The ability of a system to recover from failures and continue to function.
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/architecture/framework/security/overview">Security</a> - Protecting applications and data from threats.
+   <br /><br />
+
+Peter Zerger (@pzerger) :
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BkP6NZ83U5c">VIDEO: How to prepare</a> <a target="_blank" href="https://bit.ly/AZ500ExamPrep">https://bit.ly/AZ500ExamPrep</a>
+
+   * <a target="_blank" href="https://aka.ms/MCRA/">PDF Map: Microsoft Azure Cybersecurity Reference Architecture</a>
+
+   * <a target="_blank" href="https://bit.ly/InsideAzure">Inside Azure (free book)</a>
+
+   * <a target="_blank" href="https://lnkd.in/gyf9WBV">5 Tips and 3 Freebies for AZ-500 Prep</a>
+
+   * <a target="_blank" href="https://lnkd.in/g8Be3pY">Strategy for "How should I prepare for AZ-500 Exam?"</a>
+
+   * <a target="_blank" href="https://lnkd.in/gBC_c8x">AZ-500 Exam Cram Series</a>
+
+   * <a target="_blank" href="https://lnkd.in/gmg6dJu">AZ-500 Video Practice Exam Questions</a>
+
+<a target="_blank" href="https://cloudacademy.com/learning-paths/az-500-exam-preparation-microsoft-azure-security-technologies-650/">CloudAcademy.com</a> 16h video series by Thomas Mitchell
+
+<a target="_blank" href="https://mckinsey.udemy.com/course/exam-azure-2/">McK</a> <a target="_blank" href="https://www.udemy.com/course/exam-azure-2">Udemy.com "updated 2020"</a> 15.5h videos by Alan Anthony Rodrigues
+
+Other videos:
+
+   * https://zimmergren.net/passing-az-500-microsoft-certified-azure-security-engineer-associate/
+
+   * https://www.pluralsight.com/courses/microsoft-azure-incident-response-remediation
+
+   * https://blog.ahasayen.com/az-500-azure-security-engineer-exam/
+
+## Google
+
+<a target="_blank" href="https://cloud.google.com/certification/cloud-security-engineer">
+Google Professional Cloud Security Engineer</a>, for $200 for 50 questions in 120 minutes, will have obtained the skills to “enable organizations to design and implement a secure infrastructure on Google Cloud Platform. Through an understanding of security best practices and industry security requirements, this individual designs, develops, and manages a secure infrastructure leveraging Google security technologies. Topics and skills:
+
+   * Configure access within a cloud solution environment
+   * Configure network security
+   * Ensure data protection
+   * Manage operations within a cloud solution environment
+   * Ensure compliance
+   <br /><br />
+
+<a name="SAP"></a>
+
+## SAP
+
+First, <a target="_blank" href="https://quizlet.com/605649976/sap-acronyms-flash-cards/">memorize SAP Acronyms using my flashcards on Quizlet.com</a>
+
+SAP has two levels of certifications for Security pros. 
+Both costs $242 USD to answer 65% of 80 multiple-choice questions in 3 hours. 
+
+* <a target="_blank" href="https://training.sap.com/certification/c_secauth_20-sap-certified-technology-associate---sap-system-security-and-authorizations-g/"><strong>C_SECAUTH_20</strong>
+SAP Certified Technology Associate - SAP System Security and Authorizations</a> Domains:
+
+   * Authorization and Role Maintenance - >12%
+   * SAP Fiori Authorizations and S/4HANA - >12%
+   * Access Governance and Compliance in SAP - 8%-12%
+   * Infrastructure Security and Authentication - 8%-12%
+   * User Administration8% - 12%
+   * Security Monitoring and Security Assessment8% - 12%
+   * Data Privacy Governance and Cybersecurity8% - 12%
+   * Security Audit - 8%-12%
+   <br /><br />
+
+* <a target="_blank" href="https://training.sap.com/certification/p_tsec10_75-sap-certified-technology-professional---system-security-architect-g/"><strong>P_TSEC10_75</strong>
+SAP Certified Technology Professional - System Security Architect</a> is the most popular among all SAP exams.
+
+   * SAP System Security Fundamentals - >12%
+   * Authorization Concept for SAP Business Suite - >12%
+   * Authorization Concept for SAP S/4HANA - >12%
+   * Secure SAP System Management - >12%
+   * SAP Netweaver Application Server Security - >12%
+   * Authorization, Security and Scenarios in SAP HANA8% - 12%
+   * Security in SAP Gateway and SAP Fiori System Landscape - &LT;8%
+
+   * https://myerp-training.com/sap-security-certification/
+   * <a target="_blank" href="https://www.credly.com/org/sap/badge/sap-certified-technology-professional-sap-system-security-architect">After passing, post your cert on Credly</a>
+   <br /><br />
+
+* <a target="_blank" href="https://training.sap.com/course/cer006-sap-global-certification-online-exam-six-attempts-certification-online-010-us-en/?">$606 USD CER006</a> <a target="_blank" href="https://training.sap.com/certification/c_grcac_12-sap-certified-application-associate---sap-access-control-120-g/">C_GRCAC_12 SAP GRC (Governance, Risk, and Compliance) AC certification exam</a>
+   * https://training.sap.com/trainingpath/Applications-Governance,+Risk+and+Compliance+(GRC)-SAP+BusinessObjects
+   <br /><br />
+
+* <a target="_blank" href="https://help.sap.com/viewer/product-finder?q=">SAP documentation</a>
+
+* SAP provides a 14 day free trial of their $25/month Learning Hub (using an "S-account") at https://learninghub.sap.com/. 800-872-1727 
+
+Elsewhere:
+   * https://www.udemy.com/course/sap-security-and-authorizations/
+   * https://www.udemy.com/course/sap-hana-installation-operation-and-administration/
+
+
+## Secure Coding
+
+CodeBashing.com from Checkmarx has gamified tutorials on identifying and mitgating vulnerabilities in code for many languages:
+<a target="_blank" href="https://free.codebashing.com/courses/hacking_headlines">Hacking Headlines</a>, 
+<a target="_blank" href="https://free.codebashing.com/courses/source_codes">Source Code (for each language)</a>:
+Android (Java), iOS, 
+C/C++, 
+<a target="_blank" href="https://free.codebashing.com/courses/dotnet">C# .NET</a>, .NET Backend, .NET Advanced,
+Go,
+<a target="_blank" href="https://free.codebashing.com/courses/java">Java</a>, Java Backend, Java Advanced, Scala
+NodeJS,
+PHP,
+Python Django,
+Ruby on Rails,
+
+
+## References
+
+On Udemy: <a target="_blank" href="https://mckinsey.udemy.com/course/secure-product-lifecycle-101/">McK</a> <a target="_blank" href="https://www.udemy.com/course/secure-product-lifecycle-101/">
+Security Product Lifecycle 101</a> (SPLC) by Implementing Security. Voiced by an enthusiastic voice pro.
+References SAMM 2.0, OWASP Top 10.
+
+* Data-Driven Security (Pearson) by Jacobs and Rudis
+
+* <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">
+
+Podcast: Evan Francen's Unsecurity
+
+
+## More on Security #
+
+This is one of a series on Security in DevSecOps:
+
+{% include security_links.html %}
