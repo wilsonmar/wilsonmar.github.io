@@ -726,11 +726,11 @@ with training via CPENT.
 
 EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
 
-## IIBA
+## IIBA Cybersecuity Analysis
 
-IIBA, the International Institute of Business Analysis, in 2021 added the <a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certificate-in-cybersecurity-analysis/">CCA (Certification in Cybersecurity Analyis)</a> to it's 6 other certifications. <a target="_blank" href="https://my.iiba.org/portal/s/store#/store/browse/detail/a133l000008axueAAA">$475/400</a> for members/non-members, $250 until Oct 31, 2022. Membership costs $139.
+IIBA, the International Institute of Business Analysis (Pickering, Ontario, Canada), has an affiliation with the IEEE. Membership costs $139/year. For <a target="_blank" href="https://my.iiba.org/portal/s/store#/store/browse/detail/a133l000008axueAAA">$250 until Oct 31, 2022</a> then $400/$475 for members/non-members, it offers the <a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certificate-in-cybersecurity-analysis/">CCA (Certification in Cybersecurity Analysis)</a> among its 6 other certifications administered online by PSI. IIBA does not disclose the score needed to pass, scores attained, nor scoring percentages.
 
-CCA attendees have 90 minutes to answer 75 multiple-choice questions in these Knowledge Areas:
+<a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certification-digital-badge-program-and-directory#certification-registries">As of Aug 2022, 266</a> CCA attendees had 90 minutes to answer 75 multiple-choice questions in these Knowledge Areas:
 * Cybersecurity Overview and Basic Concepts 14%
 * Enterprise Risk 14%
 * Cybersecurity Risks and Controls 12%
