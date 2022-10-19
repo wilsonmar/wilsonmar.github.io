@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-10-17"
+file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
 tags: [security,certs]
-date: "2021-07-17"
-file: "security-certs"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
   feature: https://user-images.githubusercontent.com/300046/103753295-19cf4680-4fc8-11eb-9c7a-d23d3c5c2d79.jpg
@@ -722,7 +722,25 @@ At the Expert Level is LPT: Licensed Penetration Tester [Master]
 https://www.eccouncil.org/programs/licensed-penetration-tester-lpt-master/
 with training via CPENT.
 
+### EC-Council
+
 EC-Council built the Advanced Penetration Testing Cyber Range (ECCAPT).
+
+## IIBA
+
+IIBA, the International Institute of Business Analysis, in 2021 added the <a target="_blank" href="https://www.iiba.org/business-analysis-certifications/certificate-in-cybersecurity-analysis/">CCA (Certification in Cybersecurity Analyis)</a> to it's 6 other certifications. <a target="_blank" href="https://my.iiba.org/portal/s/store#/store/browse/detail/a133l000008axueAAA">$475/400</a> for members/non-members, $250 until Oct 31, 2022. Membership costs $139.
+
+CCA attendees have 90 minutes to answer 75 multiple-choice questions in these Knowledge Areas:
+* Cybersecurity Overview and Basic Concepts 14%
+* Enterprise Risk 14%
+* Cybersecurity Risks and Controls 12%
+* Securing the Layers 5%
+* Data Security 15%
+* User Access Control 15%
+* Solution Delivery 13%
+* Operations 12%
+<br /><br />
+
 
 ## AWS Security
 
