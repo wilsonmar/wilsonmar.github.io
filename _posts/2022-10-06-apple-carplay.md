@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-06"
+date: "2022-10-21"
 file: "apple-carplay"
 title: "apple-carplay"
 excerpt: "Apple's integration for practically every car except Tesla"
