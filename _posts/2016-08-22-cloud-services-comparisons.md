@@ -228,16 +228,17 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15745
 
 * https://vultr.com/ - Vultr (pronounced Vulture) - get $150 off code from a Linus Tech Tips video,
 
-* <a target="_blank" href="https://docs.akash.network/">Akash Network</a> is the Airbnb for cloud hosting app such as <a target="_blank" href="https://ecosystem.akash.network/">these</a>. It provides a decentralized cloud marketplace where otherwise underutilized machines can be rented temporarily (like AWS Spot Instances). For "one-third the cost of" mainstream clouds. Compare prices live at <a target="_blank" href="https://cloudmos.io/price-compare">Cloudmos.io</a>. 
+* <a target="_blank" href="https://docs.akash.network/">Akash Network</a> is the Airbnb for cloud hosting webapps such as <a target="_blank" href="https://ecosystem.akash.network/">these</a>. Akash provides a decentralized cloud marketplace where otherwise underutilized machines can be rented temporarily (like AWS Spot Instances). For "one-third the cost of" mainstream clouds. Compare prices live at <a target="_blank" href="https://cloudmos.io/price-compare">Cloudmos.io</a>. 
 
    Akash runs a Kubernetes service to orchestrate and manage your containers.
 
    Asset transfer occurs off-chain over mTLS.
 
-   Its users define a <tt>deploy.yaml</tt> "manifest" file written in their "Stack Definition Language (SDL) declarative language (not HashiCorp HCL).
+   Many are web3 related.    Payments are via <a target="_blank" href="https://www.coingecko.com/en/coins/akash-network">AKT blockchain coin</a>.
 
-   Payments are via AKT blockchain coin.
-   The network is maintained by a network of validators and governed by AKT stakers.
+   And the network is maintained by a network of validators and governed by AKT stakers.
+
+   Its users define a <tt>deploy.yaml</tt> "manifest" file written in their "Stack Definition Language (SDL) declarative language (not HashiCorp HCL).
 
    https://www.reddit.com/r/akashnetwork/
 
