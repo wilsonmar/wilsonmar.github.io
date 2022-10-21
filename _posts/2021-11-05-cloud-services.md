@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-10-20"
+file: "cloud-services"
 title: "Cloud Services"
 excerpt: "Here is a dictionary of the 200+ AWS."
 tags: [AWS, EC2, cloud, on-boarding]
-date: "2021-11-05"
-file: "cloud-services"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
