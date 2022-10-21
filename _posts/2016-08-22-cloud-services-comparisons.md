@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-10-20"
+file: "cloud-services-comparisons"
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
 tags: [Cloud, comparison]
-date: "2021-10-23"
-file: "cloud-services-comparisons"
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
   credit: Theme Bin
@@ -21,7 +21,7 @@ comments: true
 
 {% include whatever.html %}
 
-Analysis of corporate S-1 filings identified significant spend as percentage of Total Revenue:
+Analysis of corporate S-1 filings identified significant <strong>cloud spend</strong> as percentage of Total Revenue:
 
 ![cloud-svcs-spend-1312x560](https://user-images.githubusercontent.com/300046/138592222-e294f7e7-7271-4da8-83d6-fead30969d83.png)
 
@@ -61,7 +61,7 @@ Evaluations can be based on the advantages of cloud:
 8. <strong>Go global</strong> - make use of compute and network infrastructure established around the world (time consuming, expensive, and dangerous to do on one's own).
 <br /><br />
 
-PROTIP: Memorize the above list for exams.
+PROTIP: Memorize the above list for exams and interviews.
 
 Amazon's "Well Architected" notes the constraints removed by being in the cloud:
    * Test production at scale 
@@ -69,26 +69,9 @@ Amazon's "Well Architected" notes the constraints removed by being in the cloud:
    * Allow architecture to evolve (rather than being frozen in time)
    <br /><br />
 
+## Landing Zones
+
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone">Microsoft calls "Landing Zones"</a> the output of a multisubscription Azure environment that accounts for scale, security, governance, networking, and identity. Azure Landing Zones enable application migrationa and greenfield development at enterprise-scale in Azure. These zones consider all platform resources required to support the customer's application portfolio and don't differentiate between infrastructure as a service or platform as a service.
-
-
-## Triggers to go cloud
-
-The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">need to</a>:
-
-* <strong>Rehost (migration)</strong> ("lift-and-shift") to rehost with little code changes, to minimize application downtime.
-
-Modernizaton: 
-
-* <strong>Refactor</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
-
-* <strong>Rearchitect</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
-
-* <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
-
-* <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
-
-Despite all the good reasons, individuals used to the old way may still "drag their heels".
 
 
 ## Cloud "as a Service" (*aaS) models
@@ -108,6 +91,25 @@ There are different ways to make use of cloud infrastructure:
 * IaaS - Networking
 <br /><br />
 
+
+## Triggers to go cloud
+
+The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">need to</a>:
+
+* <strong>Rehost (migration)</strong> ("lift-and-shift") to rehost with little code changes, to minimize application downtime.
+
+Modernizaton: 
+
+* <strong>Refactor</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
+
+* <strong>Rearchitect</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
+
+* <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
+
+* <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
+
+Despite all the good reasons, individuals used to the old way may still "drag their heels".
+See my posts about <a target="_blank" href="https://wilsonmar.github.io/change-management">Change Management</a>.
 
 ## Individuals must pick a single cloud?
 
@@ -219,6 +221,25 @@ layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/15745
    which are of low cost because they can be taken away at any moment
    by someone who outbids.
 
+
+### Alternative clouds
+
+* https://console.hetzner.cloud/ - Hetzner Cloud 
+
+* https://vultr.com/ - Vultr (pronounced Vulture) - get $150 off code from a Linus Tech Tips video,
+
+* <a target="_blank" href="https://docs.akash.network/">Akash Network</a> is the Airbnb for server hosting. It provides a decentralized cloud marketplace where otherwise underutilized machines can be rented temporarily (like AWS Spot Instances). For "one-third the cost of" mainstream clouds. Compare prices live at <a target="_blank" href="https://cloudmos.io/price-compare">Cloudmos.io</a>. 
+
+   Akash runs a Kubernetes service to orchestrate and manage your containers.
+
+   Asset transfer occurs off-chain over mTLS.
+
+   Its users define a <tt>deploy.yaml</tt> "manifest" file written in their "Stack Definition Language (SDL) declarative language (not HashiCorp HCL).
+
+   Payments are via AKT blockchain coin.
+   The network is maintained by a network of validators and governed by AKT stakers.
+
+
 <a name="marketshare"></a>
 
 ## Market share #
@@ -239,7 +260,7 @@ Earlier in 2015:
 ## Operating Systems aliances #
 
 As of May 2016, Microsoft Azure works with <strong>SUSE</strong> and Oracle Java,
-but <strong>NOT Red Hat</strong> Enterprise Linux (RHEL).
+but <strong>NOT Red Hat</strong>/IBM Enterprise Linux (RHEL).
 
 Amazon provides software to host whatever OS is put into images.
 But its free server images are based on CentOS, derived from <strong>Red Hat</strong> as both use the yum package manager.
