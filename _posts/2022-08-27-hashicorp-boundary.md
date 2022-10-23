@@ -53,6 +53,8 @@ Again, that's why Boundary manages the "identity" of each user.
 
 
 {% include whatever.html %}
+WARNING: This page is under construction!
+
 
 HashiCorp's Boundary is an intelligent proxy.
 
@@ -150,37 +152,66 @@ I'm working on a shell file that does the following with one command.
 
    ### Start Boundary in local dev mode
 
+   <a name="controller"></a>
+
+2. Instantiate a Boundary controller process locally:
+  
    <pre><strong>boundary dev</strong></pre>
 
 
    ### Postgres database required
 
-   If a Postgres database is not available, you'll see an error like this:
+   If the Boundary server cannto find a Postgres database to use, you'll see an error like this:
 
    <pre>Error creating dev database container: unable to start dev database with dialect postgres: could not start resource: : dial unix /var/run/docker.sock: connect: connection refused
    </pre>
 
    So try again after installing Docker and running a Docker image containing Postgres.
 
-   ??? URL to use
+   <a name=scopes"></a>
+
+1. To migrate a throw-away instance:
+  
+   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
+   boundary database init -config $"{BOUNDARY_DB_CONFIG}" \
+      -skip-auth-method-creation \
+      -skip-scopes-creation \
+      -skip-initial-login-role-creation
+   </pre>
+
+   Additionally:<br />
+   <pre>export BOUNDARY_TLS_INSECURE=true</pre>
+
+   Alternately, to migrate a long-running instance, specify those 3 skips in the controller.hcl file:
+  
+   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
+   boundary database init -config $"{BOUNDARY_DB_CONFIG}"
+   </pre>
+
+2. Define the Boundary Controller URL address, with the standard port:
+
+   <pre>export BOUNDARY_ADDR="https://11.22.33.44:9200"</pre>
+
 
    ### Boundary.app GUI
 
-1. To install the Desktop client, click the .dmg (64-bit) on macOS.
+3. To install the Desktop client, click the .dmg (64-bit) on macOS.
 
    Drag the <strong>Boundary.app</strong> icon and drop on the app folder at:
 
    <pre>/Applications/Boundary.app</pre>
 
-1. If you access it often, drag the icon and drop it among others.
+4. If you access it often, drag the icon and drop it among others.
 
-1. Invoke the app by double-clicking or 
+5. Invoke the app by double-clicking or 
   
-1. Type the URI to the Boundary server:
+6. Type the URI to the Boundary server:
 
    <img alt="HashiCorp Boundary.app GUI Landing" width="800" height="494" src="https://i.pinimg.com/originals/c1/db/9f/c1db9f7193fa92b06d1790e1b73652a4.jpg">
 
+7. Login Authentication
 
+   <img alt="HashiCorp Boundary Auth" width="476" height="562" src="https://i.pinimg.com/originals/a3/3d/96/a33d963a6364dd67a2f70fd0094e471e.jpg">
 
 <a name="HCP"></a>
 
@@ -197,13 +228,20 @@ It provides one-click deployment.
 
 ## Cloud
 
-1. To install Boundary on different platforms on a single cloud region, navigate to a folder to hold.
+1. To install Boundary on different platforms on a single cloud region, navigate to ther folder associated with the account where you'll create cloned repositories:
+
+   $PROJDIR
+
 2. Clone so that only the master branch is downloaded (because there are many other branches):
 
    <pre><strong>git clone git@github.com:hashicorp/boundary.git --depth 1
    cd boundary</strong></pre>
 
-   
+3. Clone the dev:
+  
+   <pre><strong>git clone git@github.com:hashicorp/boundary-reference-architecture.git --depth 1
+   cd boundary-reference-architecture/deployment
+   </strong></pre>
 
 
    https://github.com/hashicorp/boundary-reference-architecture/tree/main/deployment
@@ -233,7 +271,7 @@ For a full list of commands (and functionality of Boundary):
 &nbsp;
 Commands:
     accounts                  Manage Boundary accounts
-    auth-methods              Manage Boundary auth methods
+    <a href="#auth-methods">auth-methods</a>              Manage Boundary auth methods
     auth-tokens               Manage Boundary auth tokens
     authenticate              Authenticate the Boundary command-line client
     config                    Manage resources related to Boundary's local configuration
@@ -250,11 +288,11 @@ Commands:
     logout                    Delete the current token within Boundary and forget it locally
     managed-groups            Manage Boundary managed groups
     roles                     Manage Boundary roles
-    scopes                    Manage Boundary scopes
+    <a href="#scopes">scopes</a>                    Manage Boundary scopes
     server                    Start a Boundary server
     sessions                  Manage Boundary sessions
     <a href="#targets">targets</a>                   Manage Boundary targets
-    users                     Manage Boundary users
+    <a href="#users">users</a>                     Manage Boundary users
     workers                   Manage Boundary workers
    </pre>
 
@@ -325,11 +363,157 @@ Commands:
 
 1. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
 
-## Boundary granular access
+   <a name="sessions"></a>
+   sessions
 
-connect to cloud 
+   <a name="permissions"></a>
+   permissions
+
+   <a name="grant"></a>
+
+   grant
+
+  <a name="KMS"></a>
+
+  ### KMS
+
+  <tt>-recover-config controller.hcl</tt> is specified in most every boundary command TODO:
+
+  Within AWS:
+
+  <pre># Root KMS configuration block: this is the root key for Boundary
+# Use a production KMS such as AWS KMS in production installs
+    kms "awskms" {
+      purpose = "root"
+      region = "us-east-1"
+      kms_key_id = "..."
+    }
+# Worker authorization KMS
+# This key is the same key used in the worker configuration  
+    kms "awskms" {
+      purpose = "worker-auth"
+      region = "us-east-1"
+      kms_key_id = "..."
+    }
+# Recovery KMS block: configures the recovery key for Boundary
+    kms "awskms" {
+      purpose = "recovery"
+      region = "us-east-1"
+      kms_key_id = "..."
+    }
+  </pre>
+
+  PROTIP: Remove the Recovery KMS block if recovery is not needed (such as on dev clusters).
+
+  config keys are also optional.
+
+  ### Users
+
+   <a name="users"></a>
+
+2. List users:
+  
+   <pre><strong>boundary users list -scope-id global \
+   -recover-config controller.hcl
+   </strong></pre>
+
+3. Add
+
+   <pre><strong>BOUNDARY_THIS_USER_ID="???" 
+   BOUNDARY_THIS_ACCOUNT_ID="???"
+   boundary users add-accounts -id $"{BOUNDARY_THIS_USER_ID}" \
+   -account $"{BOUNDARY_THIS_ACCOUNT_ID}" \
+   -recovery-config controller.hcl
+   </strong></pre>
+  
+  <a name="roles"></a>
+
+   PROTIP: Creating a role also involves creating grants and principals:
+
+1. Login admin role:
+
+   <pre><strong>boundary roles create -grant-scope-id global -scope-id global \
+   -name Administration \
+   -recovery-config controller.hcl
+   </strong></pre>
+  
+1. add-grants to do everything for Administration :
+
+   <pre><strong>BOUNDARY_THIS_GRANT_ID="???" 
+   boundary roles add-grants -id $"{BOUNDARY_THIS_GRANT_ID}" \
+   -grant "id=*;type=*;actions=*" \
+   -recovery-config controller.hcl
+   </strong></pre>
+  
+  4. add-principal for Administration:
+
+   <pre><strong>BOUNDARY_PRINCIPAL_ID="???" \
+   BOUNDARY_ORG_ID="???" \
+   boundary roles add-principals -id $"{BOUNDARY_PRINCIPAL_ID}" \
+   -principal $"{BOUNDARY_ORG_ID}" \
+   -recovery-config controller.hcl
+   </strong></pre>
+
+
+   ### For Users
+
+2. Login globally:
+
+   <pre><strong>boundary roles create -grant-scope-id global -scope-id global \
+   -name "Login and Default Grants" \
+   -recovery-config controller.hcl
+   </strong></pre>
+  
+3. add-grants templated for account.id:
+
+   <pre><strong>BOUNDARY_THIS_GRANT_ID="???" 
+   boundary roles add-grants -id $"{BOUNDARY_THIS_GRANT_ID}" \
+   -grant "id=*;type-scope;actions=list,no-op" \
+   -grant "id={{account.id}};actions=read,change-password" \
+   -grant "id=*;type=auth-token;actions=list,read:self,delete:self" \
+   -recovery-config controller.hcl
+   </strong></pre>
+  
+4. add-principals
+
+   <pre><strong>BOUNDARY_PRINCIPAL_ID="???"
+   boundary roles add-principals -id $"{BOUNDARY_PRINCIPAL_ID}" \
+   -principal u_anon \
+   -recovery-config controller.hcl
+   </strong></pre>
+
+<hr />
+
 
 ## Use with Okta IdP
+
+   <a name="auth-methods"></a>
+   auth-methods
+
+Within <tt>"$PROJDIR/boundary-reference-architecture/deployment/gcp/gcp/templates"</tt>
+are <strong>template (.tpl) files</strong>:
+   * boundary.hcl.tpl
+   * controller.hcl.tpl
+   * worker.hcl.tpl
+   <br /><br />
+
+On Linux, the worker service is specified in:
+
+   <pre>/etc/systemd/system/boundary-worker.service</pre>
+
+1. Specify
+
+   <pre><strong>boundary auth-methods create password -scope-id global \
+   -recovery-config controller.hcl
+   </strong></pre>
+
+   Alternately, specify the specific Method ID when creating passwords:
+
+   <pre><strong>BOUNDARY_THIS_METHOD_ID="???" 
+   boundary accounts create password -auth-method-id $"{BOUNDARY_THIS_METHOD_ID}" \
+   -login-name admin \
+   -recovery-config controller.hcl
+   </strong></pre>
 
 ## Use with AWS
 
