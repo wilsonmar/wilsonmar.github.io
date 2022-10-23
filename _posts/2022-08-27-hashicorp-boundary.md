@@ -18,6 +18,8 @@ comments: true
 
 HashiCorp's Boundary is revolutionizing how we connect remotely into servers.
 
+HashiCorp first announced Boundary October 2020.
+
 There is a rush to Boundary due to the need to install <strong>Zero-Trust Networking</strong>,
 especially within the US federal government in repsonse to the White House Executive Order.
 
@@ -61,12 +63,6 @@ because it authenticates & authorizes via OIDC protocol with a 3rd-party IdP suc
 
 With Boundary, a user works with the <strong>identity name</strong> of a server rather than its IP address and port number.
 
-That's because Boundary maintains a Dynamic Host Catalog of hosts and targets.
-
-   * HashiCorp Boundary is available for enterprise use with support on SaaS cloud from HashiCorp.
-
-   * Support from HashiCorp is not currently available for those who install the free Open-Source edition.
-
 Boundary provides a Just-In-Time network access.
 
    * A user may be allowed access to a server for only, say, 5-minute session the same day.
@@ -74,23 +70,30 @@ Boundary provides a Just-In-Time network access.
 
 Boundary automates service discovery as workloads are created or changed dynamically.
 
+Boundary maintains a Dynamic Host Catalog of hosts and targets.
 
-## SaaS Boundary on HCP
 
-Boundary was first announced by HashiCorp October 2020.
+## Different ways to run Boundary Serer
 
-Boundary on HCP (SaaS service managed by HashiCorp) went (free) beta preview July 2022.
+There are different ways
 
-Boundary automates and standardizes the workflow for on-boarding and off-boarding hosts and targets.
+   * <a href="#LocalInstall">Run Boundary in dev mode locally</a>.
 
-It provides one-click deployment.
+   * <a href="#HCP">SaaS Boundary on HCP</a> - HashiCorp Boundary is available for enterprise use with support on SaaS cloud from HashiCorp.
 
+   * <a href="#OSS">Open-Source</a> - Support from HashiCorp is not currently available for those who install the free Open-Source edition.
+   <br /><br />
 
 <hr />
 
-## Install executable
+<a name="LocalInstall"></a>
 
-1. Use browser to
+## Installs for local usage
+
+I'm working on a shell file that does the following with one command.
+
+
+1. In a browser specify URL:
 
    <a target="_blank" href="https://boundaryproject.io">https://boundaryproject.io</a>
 
@@ -101,7 +104,9 @@ It provides one-click deployment.
 
    Boundary consists of two server components: Controllers, which serve the API and coordinate session requests; and Workers, which perform the actual session handling. A normal Boundary installation will consist of one or more Controllers paired with one or more Workers. A single Boundary binary can act in either of these two modes.
 
-   HashiCorp has created both a Desktop and CLI executables.
+   HashiCorp has created executables for both CLI and <a href="#<a name="Boundary.app_GUI">GUI app</a>.
+
+   ### CLI install
 
 1. On macOS, HashiCorp doesn't provide a "brew install boundary", so:
 
@@ -118,9 +123,21 @@ It provides one-click deployment.
 
    There is no response to that unless an error occured.
 
-2. In a Terminal, run boundary without parameters for a menu:
+   ### Shortcuts
+
+1. For quicker invocation of "boundary", set an alias to use "bdy" instead
+
+   <pre>alias bdy="boundary"</pre>
+
+   <a name="Boundary.app_GUI"></a>
+
+1. In a Terminal, run boundary without parameters for a menu:
   
+   <pre><strong>bdy version</strong></pre>
+   or
    <pre><strong>boundary version</strong></pre>
+   or
+   <pre><strong>boundary -v</strong></pre>
 
    <pre>Version information:
   Git Revision:        1d42091e81ca11353376ce116275890e3ae67f6b
@@ -162,9 +179,10 @@ Commands:
    </pre>
 
 
-## Start Boundary in dev mode
+   ### Start Boundary in local dev mode
 
    <pre><strong>boundary dev</strong></pre>
+
 
    ### Postgres database required
 
@@ -173,13 +191,11 @@ Commands:
    <pre>Error creating dev database container: unable to start dev database with dialect postgres: could not start resource: : dial unix /var/run/docker.sock: connect: connection refused
    </pre>
 
-<hr />
+   So try again after installing Docker and running a Docker image containing Postgres.
 
-## Boundary.app UI
+   ??? URL to use
 
-1. For quicker invocation of "boundary", set an alias to use "bdy" instead
-
-   <pre>alias bdy="boundary"</pre>
+   ### Boundary.app GUI
 
 1. To install the Desktop client, click the .dmg (64-bit) on macOS.
 
@@ -195,6 +211,29 @@ Commands:
 
    <img alt="HashiCorp Boundary.app GUI Landing" width="800" height="494" src="https://i.pinimg.com/originals/c1/db/9f/c1db9f7193fa92b06d1790e1b73652a4.jpg">
 
+<hr />
+
+<a name="HCP"></a>
+
+## SaaS Boundary on HCP
+
+Boundary on HCP (SaaS service managed by HashiCorp) went (free) beta preview July 2022.
+
+Boundary automates and standardizes the workflow for on-boarding and off-boarding hosts and targets.
+
+It provides one-click deployment.
+
+1. Specify different <strong>orgs (organizations)</strong> such as "Engineering", etc.
+
+   <img alt="HashiCorp Boundary.app GUI menu" width="1552" height="574" src="https://i.pinimg.com/originals/b4/40/43/b44043dd82c7676dc9a742cc01de3165.jpg">
+
+1. Specify <strong>project</strong>, each with its own scope ID (to organize targets and host catalogs):
+  
+   * DevOps
+   * Staging
+   * Production
+   <br /><br />
+   
 
 
 ## Cloud
