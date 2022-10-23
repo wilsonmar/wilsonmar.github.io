@@ -334,12 +334,28 @@ Commands:
    * App Servers
    * Log Servers
    <br /><br />
+
+
+   <a name="Groups"></a>
+
+   Groups
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th> Group </th><th> DevOps Engr. </th><th> Devs </th><th> Testers </th></th> Prod Admin </th></th> SOC </th></tr>
+   <tr valign="top" align="center"><td align="left"> SSH (all) </td><td> Yes </td><td> -  </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
+   <tr valign="top" align="center"><td align="left"> Staging App </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
+   <tr valign="top" align="center"><td align="left"> Staging Logs </td><td> Yes </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td></tr> 
+   <tr valign="top" align="center"><td align="left"> Staging App Admin </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
+   <tr valign="top" align="center"><td align="left"> Prod. App Admin </td><td> - </td><td> - </td><td> - </td><td> - </td><td> Yes </td><td> - </td></tr> 
+   <tr valign="top" align="center"><td align="left"> Prod. Logs </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
+   <tr valign="top" align="center"><td align="left"> Prod. Log Delete </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> Yes </td></tr> 
+   </table>
   
    <a name="hosts"></a>
 
    Hosts are specific Boundary server instances, created under a host set.
    
-1. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
+2. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
 
    TODO: Assign IP address???
 
@@ -347,7 +363,7 @@ Commands:
 
    Boundary targets are the server which we seek to remote into. 
    
-1. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
+3. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
    * Production Application Admin
    * Production SSH
    * Production Logs
@@ -361,7 +377,7 @@ Commands:
    * Default Port
    <br /><br />
 
-1. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
+4. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
 
    <a name="sessions"></a>
    sessions
@@ -371,7 +387,7 @@ Commands:
 
    <a name="grant"></a>
 
-   grant
+   grant to a particular <strong>project</strong>.
 
   <a name="KMS"></a>
 
@@ -549,3 +565,12 @@ Which app can talk with each service?
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-boundary-first-look/table-of-contents">On Pluralsight: "HashiCorp Boundary: First Look" 21 Sep 2021
 by Chris Green when Boundary was at version 0.5.1.
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=8x1pespWOXo&t=1m19s">Secure Access to Hosts and Services with HashiCorp Boundary</a> Nov 2, 2021
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">HashiCorp Boundary Demo for Secure Sessions Management</a> by TeKanAid
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I"> HashiConf Digital Keynote - Boundary</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=f2aghMgU4IQ"> Deploying HashiCorp Boundary in Azure with Terraform</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=2FAKSK2oDng">Using Boundary for Identity-Based Multi-Cloud Access</a>
