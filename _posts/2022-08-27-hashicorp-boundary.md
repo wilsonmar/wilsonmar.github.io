@@ -28,12 +28,6 @@ Want to connect to a server (such as PostgreSQL, MySQL, etc.) within AWS, Azure,
 {% include whatever.html %}
 WARNING: This page is under construction!
 
-<a name="targets"></a>
-
-Boundary is called "Software-Defined Perimeter (SDP)" software because it provides secure access into a private network's <strong>targets</strong> (apps, machines, and endpoints) to users 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">VIDEO: What is Boundary?</a>(Whiteboard introduction to HashiCorp Boundary with CTO Armon Dadgar)
-
 
 <a name="Why"></a>
 
@@ -71,23 +65,27 @@ That's why Boundary manages the "identity" of each user.
 
 ## Solution: Identity-based
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">VIDEO: What is Boundary?</a> (Whiteboard introduction to HashiCorp Boundary by CTO Armon Dadgar)
+   <br /><br />
+
+<a name="targets"></a>
+
+Boundary is called "Software-Defined Perimeter (SDP)" software because it provides secure access into a private network's <strong>targets</strong> (app server endpoints).
+
 <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I&t=3m36s">VIDEO:</a>: 
-HashiCorp's Boundary eliminates the issues described above by authenticating & authorizing (via OIDC protocol) with a 3rd-party IdP (trusted identity provider such as Okta, GitHub, Auth0, AWS, Azure, GCP, etc.). 
+HashiCorp's Boundary eliminates the issues described above by authenticating & authorizing 
+based on the <strong>identity name</strong> of a server rather than its IP address and port number. (via OIDC protocol) with a 3rd-party IdP (trusted identity provider such as Okta, GitHub, Auth0, AWS, Azure, GCP, etc.). 
 
-Again, that's why Boundary manages the "identity" of each user.
+Boundary automates service discovery as workloads are created or changed dynamically.
 
-With Boundary, a user works with the <strong>identity name</strong> of a server rather than its IP address and port number.
-
-In other words, HashiCorp's Boundary is an intelligent proxy.
-
-Boundary provides Just-In-Time network access.
+Additionally, Boundary provides Just-In-Time network access.
 A user may be allowed access to a server for only, say, 5-minute session the same day.
 Credentials provided by Boundary are temporary, so it can't be lost like a static secret.
 And if lost, damage is limited.
 
-Boundary automates service discovery as workloads are created or changed dynamically.
-
 Boundary maintains a Dynamic Host Catalog of hosts and targets (in a Postgres database).
+
+In other words, HashiCorp's Boundary is an intelligent proxy.
 
 
 <hr />
@@ -134,14 +132,15 @@ HCP Boundary is <strong>FREE for the first 50 sessions each month</strong>, usin
 1. Define a strong password (more than 20 characters)
 1. Click "Deploy".
   
-1. Copy the Cluster URL, such as:
-
-   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud
-
 1. Copy and save the <strong>Admin UI</strong>, such as:
 
    https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud/scopes/global/authenticate/ampw_vPzFIBfZXJ
 
+1. Copy the Cluster URL, such as:
+
+   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud
+
+   This is the address registered users would provide to gain access.
 
 <hr />
 
@@ -164,7 +163,7 @@ TODO: I'm working on a shell file that does the following with one command.
 
    HashiCorp has created executables for both CLI and <a href="#<a name="Boundary.app_GUI">GUI app</a>.
 
-   ### CLI install
+   ### CLI executable install
 
 1. On macOS, HashiCorp doesn't provide a "brew install boundary", so:
 
@@ -175,24 +174,27 @@ TODO: I'm working on a shell file that does the following with one command.
 
    The installer recognizes whether you have a M1/M2 ARM or an Intel machine.
 
-1. Install autocompletion:
+1. Install autocompletion to <tt>$HOME/.bash_profile </tt> and <tt> $HOME/.zshrc</tt> so this only needs to be done once:
 
    <pre><strong>boundary config autocomplete install</strong></pre>
 
-   There is no response to that unless an error occured.
+   There is no response to that unless an error occures, such as running it more than once.
 
-   ### Shortcuts
-
-1. For quicker invocation of "boundary", set an alias to use "bdy" instead
-
-   <pre>alias bdy="boundary"</pre>
-
-   <a name="Boundary.app_GUI"></a>
-
-1. In a Terminal, run boundary without parameters for a menu:
+1. The above would enable you to <strong>press tab once or twice</strong> after typing:
   
-   <pre><strong>bdy version</strong></pre>
-   or
+   <pre><strong>boundary</strong></pre>
+   <pre>accounts              credentials           managed-groups
+auth-methods          database              roles
+auth-tokens           dev                   scopes
+authenticate          groups                server
+config                host-catalogs         sessions
+connect               host-sets             targets
+credential-libraries  hosts                 users
+credential-stores     logout                workers
+   </pre>
+
+1. Get the program's version:
+
    <pre><strong>boundary version</strong></pre>
    or
    <pre><strong>boundary -v</strong></pre>
@@ -205,8 +207,18 @@ TODO: I'm working on a shell file that does the following with one command.
    The Git Revision is the SHA for the git commit creating a release at:
    https://github.com/hashicorp/boundary/releases
 
+   ### CLI Shortcuts
 
-  <a name="PostgresInDocker"></a>
+1. Alternately, if you prefer less typing, for quicker invocation of "boundary", set an alias to use "bdy" instead
+
+   <pre>alias bdy="boundary"</pre>
+
+1. That would enable you to spend less time typing:
+  
+   <pre><strong>bdy version</strong></pre>
+
+
+   <a name="PostgresInDocker"></a>
 
    ### Postgres database in Docker
 
@@ -227,14 +239,14 @@ TODO: I'm working on a shell file that does the following with one command.
 
    <a name="controller"></a>
 
-2. Instantiate a Boundary controller-mode process locally on a Terminal session:
+1. Instantiate a Boundary controller-mode process locally on a Terminal session:
   
    <pre><strong>boundary dev</strong></pre>
 
    Sample reponse:
 
    <pre>==> Boundary server configuration:
-&nbsp;
+   &nbsp;
         [Controller] AEAD Key Bytes: vL7W9ben+hLr5vbwGl1H+9Sr1Psp38bc
           [Recovery] AEAD Key Bytes: gmHrDl6zSd8NtAe5+IhHBUbX9GZD86sV
        [Worker-Auth] AEAD Key Bytes: JpmOdRcp7RHwyVXOYb7r+dRQHsn/V9KU
@@ -269,20 +281,25 @@ TODO: I'm working on a shell file that does the following with one command.
          Worker Auth Current Key Id: auction-acutely-shawl-bonanza-semifinal-portal-worry-bodacious
            Worker Auth Storage Path: /var/folders/rq/rvb3xv916b976fm4sszjym400000gq/T/nodeenrollment3782666038
            Worker Public Proxy Addr: 127.0.0.1:9202
-&nbsp;
+   &nbsp;
 ==> Boundary server started! Log data will stream in below:
 ...
    </pre>
 
 1. Create a new Terminal window if you want to make any more CLI commands.
    
-
    ### BOUNDARY_ADDR URL with port
 
-1. Define the Boundary Controller URL address, with the standard port:
+1. Notice in the output above the <strong>Listener</strong> IP address, which defines the Boundary Controller URL address, with its standard port:
+
+   <pre>export BOUNDARY_ADDR="https://127.0.0.1:9200"</pre>
+
+   If instead the Boundary Controller is on a server:
 
    <pre>export BOUNDARY_ADDR="https://11.22.33.44:9200"</pre>
 
+
+   <a name="Boundary.app_GUI"></a>
 
    ### Boundary.app GUI
 
