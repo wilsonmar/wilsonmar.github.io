@@ -147,37 +147,6 @@ I'm working on a shell file that does the following with one command.
    The Git Revision is the SHA for the git commit creating a release at:
    https://github.com/hashicorp/boundary/releases
 
-1. In a Terminal, run boundary without parameters for a menu:
-  
-   <pre>Usage: boundary <command> [args]
-&nbsp;
-Commands:
-    accounts                  Manage Boundary accounts
-    auth-methods              Manage Boundary auth methods
-    auth-tokens               Manage Boundary auth tokens
-    authenticate              Authenticate the Boundary command-line client
-    config                    Manage resources related to Boundary's local configuration
-    connect                   Connect to a target through a Boundary worker
-    credential-libraries      Manage Boundary credential librarys
-    credential-stores         Manage Boundary credential stores
-    credentials               Manage Boundary credentials
-    database                  Manage Boundary's database
-    dev                       Start a Boundary dev environment
-    groups                    Manage Boundary groups
-    host-catalogs             Manage Boundary host catalogs
-    host-sets                 Manage Boundary host sets
-    hosts                     Manage Boundary hosts
-    logout                    Delete the current token within Boundary and forget it locally
-    managed-groups            Manage Boundary managed groups
-    roles                     Manage Boundary roles
-    scopes                    Manage Boundary scopes
-    server                    Start a Boundary server
-    sessions                  Manage Boundary sessions
-    targets                   Manage Boundary targets
-    users                     Manage Boundary users
-    workers                   Manage Boundary workers
-   </pre>
-
 
    ### Start Boundary in local dev mode
 
@@ -211,7 +180,7 @@ Commands:
 
    <img alt="HashiCorp Boundary.app GUI Landing" width="800" height="494" src="https://i.pinimg.com/originals/c1/db/9f/c1db9f7193fa92b06d1790e1b73652a4.jpg">
 
-<hr />
+
 
 <a name="HCP"></a>
 
@@ -223,17 +192,7 @@ Boundary automates and standardizes the workflow for on-boarding and off-boardin
 
 It provides one-click deployment.
 
-1. Specify different <strong>orgs (organizations)</strong> such as "Engineering", etc.
-
-   <img alt="HashiCorp Boundary.app GUI menu" width="1552" height="574" src="https://i.pinimg.com/originals/b4/40/43/b44043dd82c7676dc9a742cc01de3165.jpg">
-
-1. Specify <strong>project</strong>, each with its own scope ID (to organize targets and host catalogs):
-  
-   * DevOps
-   * Staging
-   * Production
-   <br /><br />
-   
+<hr />
 
 
 ## Cloud
@@ -254,7 +213,117 @@ It provides one-click deployment.
    <pre><strong>boundary auth-methods list
    </strong></pre>
 
+
 <hr />
+
+<a name="Configuration"></a>
+
+## Configuration
+
+
+<a name="CLIMenu"></a>
+
+### CLI Menu
+
+For a full list of commands (and functionality of Boundary):
+
+1. In a Terminal, run boundary without parameters for a menu of concepts in alphabetical order:
+  
+   <pre>Usage: boundary <command> [args]
+&nbsp;
+Commands:
+    accounts                  Manage Boundary accounts
+    auth-methods              Manage Boundary auth methods
+    auth-tokens               Manage Boundary auth tokens
+    authenticate              Authenticate the Boundary command-line client
+    config                    Manage resources related to Boundary's local configuration
+    connect                   Connect to a target through a Boundary worker
+    credential-libraries      Manage Boundary credential librarys
+    credential-stores         Manage Boundary credential stores
+    credentials               Manage Boundary credentials
+    database                  Manage Boundary's database
+    dev                       Start a Boundary dev environment
+    groups                    Manage Boundary groups
+    <a href="#host-catalogs">host-catalogs</a>             Manage Boundary host catalogs
+    <a href="#host-sets">host-sets</a>                 Manage Boundary host sets
+    <a href="#hosts">hosts</a>                     Manage Boundary hosts
+    logout                    Delete the current token within Boundary and forget it locally
+    managed-groups            Manage Boundary managed groups
+    roles                     Manage Boundary roles
+    scopes                    Manage Boundary scopes
+    server                    Start a Boundary server
+    sessions                  Manage Boundary sessions
+    <a href="#targets">targets</a>                   Manage Boundary targets
+    users                     Manage Boundary users
+    workers                   Manage Boundary workers
+   </pre>
+
+   Using automation to create a Baseline Environment or these manual edits to configure
+   in this logical order:
+
+1. Specify different <strong>orgs (organizations)</strong> such as "Engineering", etc.
+
+   <img alt="HashiCorp Boundary.app GUI menu" width="1552" height="574" src="https://i.pinimg.com/originals/b4/40/43/b44043dd82c7676dc9a742cc01de3165.jpg">
+
+   <a name="projects"></a>
+
+1. Specify <strong>project</strong>, each with its own scope ID (to organize targets and host catalogs):
+  
+   * DevOps
+   * Staging
+   * Production
+   * Support
+   <br /><br />
+
+
+   <a name="host-catalogs"></a>
+
+1. Define a host catalog (a collection of hosts and host sets) for:
+
+   Within the DevOps project:
+   * CICD
+   <br /><br />
+
+   Within each app project:
+   * Application Stack
+   * Monitoring
+   <br /><br />
+
+   <a name="host-sets"></a>
+
+   Inside the Boundary catalog are "host-sets" that are a collection of hosts which are identical except for  access requirements. This allows a random host to be selected automatically so that it's less fragile than specifying a specific host name.
+
+   * App Servers
+   * Log Servers
+   <br /><br />
+  
+   <a name="hosts"></a>
+
+   Hosts are specific Boundary server instances, created under a host set.
+   
+1. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
+
+   TODO: Assign IP address???
+
+   <a name="targets"></a>
+
+   Boundary targets are the server which we seek to remote into. 
+   
+1. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
+   * Production Application Admin
+   * Production SSH
+   * Production Logs
+   <br /><br />
+
+   Parameters for each target set:
+   * Name
+   * Description
+   * Maximum Duration (in seconds)
+   * Maximum Connections (specify 2 in case one gets stuck. -1 means infinite)
+   * Default Port
+   <br /><br />
+
+1. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
 
 ## Boundary granular access
 
