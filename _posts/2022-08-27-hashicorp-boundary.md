@@ -25,10 +25,18 @@ especially within the US federal government in repsonse to the White House Execu
 
 Want to connect to a server (such as PostgreSQL, MySQL, etc.) within AWS, Azure, or other cloud?
 
+<a name="targets"></a>
+
 Boundary is called "Software-Defined Perimeter (SDP)" software because it provide secure access to
 <strong>targets</strong> (apps, machines, and endpoints) to users outside a private network.
 
-## No paying for Bastion Host Jump Box
+## Why? The problem addressed
+
+<a href="#[1]"></a> 
+<a target="_blank" href="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"><img alt="HashiCorp Boundary beats vpn 1466x610.jpg" width="1466" height="610" src="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"></a>
+
+
+### No paying for Bastion Host Jump Box
 
 The now "traditional" (<em>passe</em> security-wise) is to go through a Linux <strong>SSH bastion host</strong>, with a command such as:
 
@@ -42,37 +50,39 @@ SSH takes some work to setup securely - users would need to mess with another se
 To a Bastion host, all users are not differentiated because the host provides "all or nothing" access.
 That's why Boundary manages the "identity" of each user.
 
-## VPN tunnels
+### VPN tunnels
 
 VPNs improves on Bastion hosts in that VPNs controls access by each user's IP address.
 VPNs are difficult to install by each user.
 And they're expensive, introduce bandwidth limits, and don't scale well.
 Multiple VPNs are difficult to setup, and even more costly.
 
-Again, that's why Boundary manages the "identity" of each user.
-
 
 {% include whatever.html %}
 WARNING: This page is under construction!
 
 
-HashiCorp's Boundary is an intelligent proxy.
+<hr />
 
-## Identity-based
+## Solution: Identity-based
 
-HashiCorp's Boundary eliminates the hassle of messing with another set of credentials to access a server
-because it authenticates & authorizes via OIDC protocol with a 3rd-party IdP such as Okta, GitHub, Auth0, AWS, Azure, GCP, etc. 
+<a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I&t=3m36s">VIDEO:</a>: 
+HashiCorp's Boundary eliminates the issues described above by authenticating & authorizing (via OIDC protocol) with a 3rd-party IdP (trusted identity provider such as Okta, GitHub, Auth0, AWS, Azure, GCP, etc.). 
+
+Again, that's why Boundary manages the "identity" of each user.
 
 With Boundary, a user works with the <strong>identity name</strong> of a server rather than its IP address and port number.
 
-Boundary provides a Just-In-Time network access.
+In other words, HashiCorp's Boundary is an intelligent proxy.
 
-   * A user may be allowed access to a server for only, say, 5-minute session the same day.
-   <br /><br />
+Boundary provides Just-In-Time network access.
+A user may be allowed access to a server for only, say, 5-minute session the same day.
+Credentials provided by Boundary are temporary, so it can't be lost like a static secret.
+And if lost, damage is limited.
 
 Boundary automates service discovery as workloads are created or changed dynamically.
 
-Boundary maintains a Dynamic Host Catalog of hosts and targets.
+Boundary maintains a Dynamic Host Catalog of hosts and targets (in a Postgres database).
 
 
 ## Different ways to run Boundary Serer
@@ -215,20 +225,51 @@ I'm working on a shell file that does the following with one command.
 
    <img alt="HashiCorp Boundary Auth" width="476" height="562" src="https://i.pinimg.com/originals/a3/3d/96/a33d963a6364dd67a2f70fd0094e471e.jpg">
 
-<a name="HCP"></a>
-
-## SaaS Boundary on HCP
-
-Boundary on HCP (SaaS service managed by HashiCorp) went (free) beta preview July 2022.
-
 Boundary automates and standardizes the workflow for on-boarding and off-boarding hosts and targets.
 
 It provides one-click deployment.
 
 <hr />
 
+<a name="HCP"></a>
 
-## Cloud
+## SaaS Boundary on SaaS HCP 
+
+Boundary on HCP (SaaS service managed by HashiCorp) went (free) beta preview July 2022.
+<a target="_blank" href="https://cloud.hashicorp.com/products/boundary/pricing">HCP Pricing</a>: 
+HCP Boundary is <strong>FREE for the first 50 sessions each month</strong>, using less than 1GB of data transfer per session. Beyond that, you are charged $.50 per session and $.50/per additional GB of session transfer data.
+
+1. Create a HCP account at 
+
+   https://portal.cloud.hashicorp.com/sign-up?product_intent=boundary
+
+1. On the left HCP menu, click Services: Boundary.
+1. Click the blue "Deploy Boundary".
+
+   <a target="_blank" href="https://i.pinimg.com/originals/f8/97/5a/f8975aca169c269fe1fa525e963ad50f.jpg"><img alt="HCP Boundary init" src="https://i.pinimg.com/originals/f8/97/5a/f8975aca169c269fe1fa525e963ad50f.jpg"></a>
+
+1. Define a Boundary name according to a convention such as:
+
+   base-boundary-cluster
+
+1. Define an Administrator account name (according to a convention)
+
+   base-boundary-cluster-admin
+
+1. Define a strong password (more than 20 characters)
+1. Click "Deploy".
+  
+1. Copy the Cluster URL, such as:
+
+   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud
+
+1. Copy and save the <strong>Admin UI</strong>, such as:
+
+   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud/scopes/global/authenticate/ampw_vPzFIBfZXJ
+
+<hr />
+
+## Local server
 
 1. To install Boundary on different platforms on a single cloud region, navigate to ther folder associated with the account where you'll create cloned repositories:
 
@@ -245,7 +286,6 @@ It provides one-click deployment.
    cd boundary-reference-architecture/deployment
    </strong></pre>
 
-
    https://github.com/hashicorp/boundary-reference-architecture/tree/main/deployment
 
    There is automation for aws, azure, docker (compose), docker_cts, gcp (Google Cloud Platform), Kubernetes. Most examples use Terraform for provisioning and configuring Boundary.
@@ -253,17 +293,33 @@ It provides one-click deployment.
    <pre><strong>boundary auth-methods list
    </strong></pre>
 
+## Use with AWS
+
+
+## Use with Azure
+
+
+## Use with GCP
+
+
 
 <hr />
 
 <a name="Configuration"></a>
 
-## Configuration
+## Configuring Boundary Cluster
+
+
+* <a target="_blank" href="https://learn.hashicorp.com/tutorials/boundary/oss-manage-scopes?in=boundary%2Fbasic-administration">Manage Scopes</a>
+* <a target="_blank" href="https://learn.hashicorp.com/tutorials/boundary/oss-manage-targets?in=boundary/oss-administration">Manage Targets</a>
+* <a target="_blank" href="https://learn.hashicorp.com/tutorials/boundary/oss-manage-targets?in=boundary/oss-administration">Manage Users and Groups</a>
+
+https://learn.hashicorp.com/boundary
 
 
 <a name="CLIMenu"></a>
 
-### CLI Menu
+## CLI Menu
 
 For a full list of commands (and functionality of Boundary):
 
@@ -540,12 +596,6 @@ On Linux, the worker service is specified in:
    -recovery-config controller.hcl
    </strong></pre>
 
-## Use with AWS
-
-## Use with Azure
-
-## Use with GCP
-
 <hr />
 
 
@@ -567,20 +617,22 @@ Which app can talk with each service?
 
 ## Videos
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=1THcoXyIJwc">HashiCorp Boundary: Then & Now</a> Jul 7, 2022
+* <a target="_blank" href="https://www.youtube.com/watch?v=1THcoXyIJwc">VIDEO: HashiCorp Boundary: Then & Now</a> Jul 7, 2022
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-boundary-first-look/table-of-contents">If you have a  Pluralsight subscription: "HashiCorp Boundary: First Look" 21 Sep 2021
-by Chris Green when Boundary was at version 0.5.1.
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-boundary-first-look/table-of-contents">If you have a  Pluralsight subscription: VIDEO: "HashiCorp Boundary: First Look" 21 by Chris Green (when Boundary was at Boundary version 0.5.1 on Sep 2021).
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=8x1pespWOXo&t=1m19s">Secure Access to Hosts and Services with HashiCorp Boundary</a> Nov 2, 2021
+* <a target="_blank" href="https://www.youtube.com/watch?v=8x1pespWOXo&t=1m19s">VIDEO: Secure Access to Hosts and Services with HashiCorp Boundary</a> Nov 2, 2021
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I"> HashiConf Digital Keynote - Boundary</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=f2aghMgU4IQ">VIDEO:  Deploying HashiCorp Boundary in Azure with Terraform</a>
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=f2aghMgU4IQ"> Deploying HashiCorp Boundary in Azure with Terraform</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=2FAKSK2oDng">VIDEO: Using Boundary for Identity-Based Multi-Cloud Access</a>
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=2FAKSK2oDng">Using Boundary for Identity-Based Multi-Cloud Access</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">VIDEO: HashiCorp Boundary Demo for Secure Sessions Management</a> Oct 26, 2020 by TeKanAid uses WireShark to see detailed communications of a Linux and Windows RDP connections.
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">HashiCorp Boundary Demo for Secure Sessions Management</a> Oct 26, 2020 by TeKanAid uses WireShark to see detailed communications of a Linux and Windows RDP connections.
+* <a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">VIDEO: Introduction to HashiCorp Boundary with Armon Dadgar</a>
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">Introduction to HashiCorp Boundary with Armon Dadgar</a>
+
+## References
+
+<a name="[1]"></a> <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I">VIDEO: HashiConf Digital Keynote - Boundary</a> by CTO Armon Dadgar explains Boundary vs. Traditional Access approaches
 
