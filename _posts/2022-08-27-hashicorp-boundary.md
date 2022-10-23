@@ -341,7 +341,8 @@ Commands:
    Groups
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Group </th><th> DevOps Engr. </th><th> Devs </th><th> Testers </th></th> Prod Admin </th></th> SOC </th></tr>
+   <tr valign="bottom"><th> Group </th><th> DevOps<br />Engr. </th><th> Devs </th><th> Testers </th><th> Prod Admin </th><th> SOC </th></tr>
+   <tr valign="top" align="center"><td align="left"> Build Server </td><td> Yes </td><td> Yes  </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
    <tr valign="top" align="center"><td align="left"> SSH (all) </td><td> Yes </td><td> -  </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
    <tr valign="top" align="center"><td align="left"> Staging App </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
    <tr valign="top" align="center"><td align="left"> Staging Logs </td><td> Yes </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td></tr> 
@@ -387,7 +388,7 @@ Commands:
 
    <a name="grant"></a>
 
-   grant to a particular <strong>project</strong>.
+   grant scope to a particular <strong>project</strong>.
 
   <a name="KMS"></a>
 
@@ -567,7 +568,7 @@ by Chris Green when Boundary was at version 0.5.1.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=8x1pespWOXo&t=1m19s">Secure Access to Hosts and Services with HashiCorp Boundary</a> Nov 2, 2021
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">HashiCorp Boundary Demo for Secure Sessions Management</a> by TeKanAid
+* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">HashiCorp Boundary Demo for Secure Sessions Management</a> by TeKanAid uses WireShark to see detailed communications of a Linux and Windows RDP connections.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I"> HashiConf Digital Keynote - Boundary</a>
 
