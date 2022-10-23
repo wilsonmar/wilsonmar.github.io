@@ -3,7 +3,7 @@ layout: post
 date: "2022-10-22"
 file: "hashicorp-boundary"
 title: "HashiCorp Boundary"
-excerpt: "Granular control of least-privilege just-in-time access to dynamically created servers by authorized humans, using HashiCorp's proxy to SSH, based on Zero-Trust principles"
+excerpt: "Granular control of least-privilege just-in-time access to remotely access using SSH & RDP, to follow Zero-Trust principles"
 tags: [HashiCorp, Network]
 image:
 # pic silver robot white skin handshake 1900x500
@@ -170,6 +170,8 @@ I'm working on a shell file that does the following with one command.
 
    <a name=scopes"></a>
 
+   A scope is an abstract boundary modeled as a container. A scope can contain socopes forming a tree.
+
 1. To migrate a throw-away instance:
   
    <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
@@ -299,11 +301,17 @@ Commands:
    Using automation to create a Baseline Environment or these manual edits to configure
    in this logical order:
 
+   ### Organizations
+
+   Each organization is a top-level container (scope) whichowns zero to many <strong>projects</strong> and zero to many authentication methods. An organization inherits from scope, allowing it to own zero to many groups, roles, policies, targets, host catalogs, or credential stores.
+
 1. Specify different <strong>orgs (organizations)</strong> such as "Engineering", etc.
 
-   <img alt="HashiCorp Boundary.app GUI menu" width="1552" height="574" src="https://i.pinimg.com/originals/b4/40/43/b44043dd82c7676dc9a742cc01de3165.jpg">
+   <a target="_blank" href="https://i.pinimg.com/originals/b4/40/43/b44043dd82c7676dc9a742cc01de3165.jpg"><img alt="HashiCorp Boundary.app GUI menu" width="1552" height="574" src="https://i.pinimg.com/originals/b4/40/43/b44043dd82c7676dc9a742cc01de3165.jpg"></a>
 
    <a name="projects"></a>
+
+   Projects are child scope within an organization.
 
 1. Specify <strong>project</strong>, each with its own scope ID (to organize targets and host catalogs):
   
@@ -341,7 +349,7 @@ Commands:
    Groups
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Group </th><th> DevOps<br />Engr. </th><th> Devs </th><th> Testers </th><th> Prod Admin </th><th> SOC </th></tr>
+   <tr valign="bottom"><th> Group </th><th> DevOps<br />Engr. </th><th> Devs </th><th> Testers </th><th> Prod<br />Admin </th><th> SOC </th><th> Log<br />Del. </th></tr>
    <tr valign="top" align="center"><td align="left"> Build Server </td><td> Yes </td><td> Yes  </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
    <tr valign="top" align="center"><td align="left"> SSH (all) </td><td> Yes </td><td> -  </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
    <tr valign="top" align="center"><td align="left"> Staging App </td><td> Yes </td><td> Yes </td><td> - </td><td> - </td><td> - </td><td> - </td></tr> 
@@ -356,7 +364,7 @@ Commands:
 
    Hosts are specific Boundary server instances, created under a host set.
    
-2. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
+1. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
 
    TODO: Assign IP address???
 
@@ -364,7 +372,7 @@ Commands:
 
    Boundary targets are the server which we seek to remote into. 
    
-3. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
+1. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
    * Production Application Admin
    * Production SSH
    * Production Logs
@@ -378,7 +386,7 @@ Commands:
    * Default Port
    <br /><br />
 
-4. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
+1. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
 
    <a name="sessions"></a>
    sessions
@@ -559,19 +567,20 @@ Which app can talk with each service?
 
 ## Videos
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">Introduction to HashiCorp Boundary with Armon Dadgar</a>
-
 * <a target="_blank" href="https://www.youtube.com/watch?v=1THcoXyIJwc">HashiCorp Boundary: Then & Now</a> Jul 7, 2022
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-boundary-first-look/table-of-contents">On Pluralsight: "HashiCorp Boundary: First Look" 21 Sep 2021
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/hashicorp-boundary-first-look/table-of-contents">If you have a  Pluralsight subscription: "HashiCorp Boundary: First Look" 21 Sep 2021
 by Chris Green when Boundary was at version 0.5.1.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=8x1pespWOXo&t=1m19s">Secure Access to Hosts and Services with HashiCorp Boundary</a> Nov 2, 2021
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">HashiCorp Boundary Demo for Secure Sessions Management</a> by TeKanAid uses WireShark to see detailed communications of a Linux and Windows RDP connections.
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I"> HashiConf Digital Keynote - Boundary</a>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=f2aghMgU4IQ"> Deploying HashiCorp Boundary in Azure with Terraform</a>
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=2FAKSK2oDng">Using Boundary for Identity-Based Multi-Cloud Access</a>
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">HashiCorp Boundary Demo for Secure Sessions Management</a> Oct 26, 2020 by TeKanAid uses WireShark to see detailed communications of a Linux and Windows RDP connections.
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">Introduction to HashiCorp Boundary with Armon Dadgar</a>
+
