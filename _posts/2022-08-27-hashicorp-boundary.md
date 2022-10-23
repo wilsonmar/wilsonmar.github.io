@@ -25,15 +25,22 @@ especially within the US federal government in repsonse to the White House Execu
 
 Want to connect to a server (such as PostgreSQL, MySQL, etc.) within AWS, Azure, or other cloud?
 
+{% include whatever.html %}
+WARNING: This page is under construction!
+
 <a name="targets"></a>
 
-Boundary is called "Software-Defined Perimeter (SDP)" software because it provide secure access to
-<strong>targets</strong> (apps, machines, and endpoints) to users outside a private network.
+Boundary is called "Software-Defined Perimeter (SDP)" software because it provides secure access into a private network's <strong>targets</strong> (apps, machines, and endpoints) to users 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">VIDEO: What is Boundary?</a>(Whiteboard introduction to HashiCorp Boundary with CTO Armon Dadgar)
+
+
+<a name="Why"></a>
 
 ## Why? The problem addressed
 
 <a href="#[1]"></a> 
-<a target="_blank" href="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"><img alt="HashiCorp Boundary beats vpn 1466x610.jpg" width="1466" height="610" src="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"></a>
+<a target="_blank" href="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"><img alt="HashiCorp Boundary beats vpn and bastion hosts 1466x610.jpg" width="1466" height="610" src="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"></a>
 
 
 ### No paying for Bastion Host Jump Box
@@ -48,7 +55,6 @@ With Bastion hosts, you are essentially paying for an additonal server for hacke
 SSH takes some work to setup securely - users would need to mess with another set of secrets to a <strong>specific IP address</strong>.
 
 To a Bastion host, all users are not differentiated because the host provides "all or nothing" access.
-That's why Boundary manages the "identity" of each user.
 
 ### VPN tunnels
 
@@ -58,8 +64,7 @@ And they're expensive, introduce bandwidth limits, and don't scale well.
 Multiple VPNs are difficult to setup, and even more costly.
 
 
-{% include whatever.html %}
-WARNING: This page is under construction!
+That's why Boundary manages the "identity" of each user.
 
 
 <hr />
@@ -85,25 +90,66 @@ Boundary automates service discovery as workloads are created or changed dynamic
 Boundary maintains a Dynamic Host Catalog of hosts and targets (in a Postgres database).
 
 
+<hr />
+
 ## Different ways to run Boundary Serer
 
-There are different ways
-
-   * <a href="#LocalInstall">Run Boundary in dev mode locally</a>.
+There are different ways:
 
    * <a href="#HCP">SaaS Boundary on HCP</a> - HashiCorp Boundary is available for enterprise use with support on SaaS cloud from HashiCorp.
+
+   * <a href="#LocalInstall">Run Boundary in dev mode locally</a>.
 
    * <a href="#OSS">Open-Source</a> - Support from HashiCorp is not currently available for those who install the free Open-Source edition.
    <br /><br />
 
 <hr />
 
+
+<a name="HCP"></a>
+
+## SaaS Boundary on SaaS HCP 
+
+Boundary on HCP (SaaS service managed by HashiCorp) went (free) beta preview July 2022.
+<a target="_blank" href="https://cloud.hashicorp.com/products/boundary/pricing">HCP Pricing</a>: 
+HCP Boundary is <strong>FREE for the first 50 sessions each month</strong>, using less than 1GB of data transfer per session. Beyond that, you are charged $.50 per session and $.50/per additional GB of session transfer data.
+
+1. Create a HCP account at 
+
+   https://portal.cloud.hashicorp.com/sign-up?product_intent=boundary
+
+1. On the left HCP menu, click Services: Boundary.
+1. Click the blue "Deploy Boundary".
+
+   <a target="_blank" href="https://i.pinimg.com/originals/f8/97/5a/f8975aca169c269fe1fa525e963ad50f.jpg"><img alt="HCP Boundary init" src="https://i.pinimg.com/originals/f8/97/5a/f8975aca169c269fe1fa525e963ad50f.jpg"></a>
+
+1. Define a Boundary name according to a convention such as:
+
+   base-boundary-cluster
+
+1. Define an Administrator account name (according to a convention)
+
+   base-boundary-cluster-admin
+
+1. Define a strong password (more than 20 characters)
+1. Click "Deploy".
+  
+1. Copy the Cluster URL, such as:
+
+   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud
+
+1. Copy and save the <strong>Admin UI</strong>, such as:
+
+   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud/scopes/global/authenticate/ampw_vPzFIBfZXJ
+
+
+<hr />
+
 <a name="LocalInstall"></a>
 
-## Installs for local usage
+## Install for local usage
 
-I'm working on a shell file that does the following with one command.
-
+TODO: I'm working on a shell file that does the following with one command.
 
 1. In a browser specify URL:
 
@@ -160,68 +206,101 @@ I'm working on a shell file that does the following with one command.
    https://github.com/hashicorp/boundary/releases
 
 
-   ### Start Boundary in local dev mode
+  <a name="PostgresInDocker"></a>
 
-   <a name="controller"></a>
+   ### Postgres database in Docker
 
-2. Instantiate a Boundary controller process locally:
-  
-   <pre><strong>boundary dev</strong></pre>
+1. After installing Docker Desktop and have it running on its default port,
+1. This command makes use of the container image in Docker Hub (https://hub.docker.com/_/postgres)
 
+   <pre><strong>docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+   </strong></pre>
 
-   ### Postgres database required
-
-   If the Boundary server cannto find a Postgres database to use, you'll see an error like this:
+   This prevents this error message when you do <tt>boundary dev</tt> :
 
    <pre>Error creating dev database container: unable to start dev database with dialect postgres: could not start resource: : dial unix /var/run/docker.sock: connect: connection refused
    </pre>
 
-   So try again after installing Docker and running a Docker image containing Postgres.
+   <a name="BoundaryDev"></a>
+ 
+   ### Boundary dev mode controller
 
-   <a name=scopes"></a>
+   <a name="controller"></a>
 
-   A scope is an abstract boundary modeled as a container. A scope can contain socopes forming a tree.
-
-1. To migrate a throw-away instance:
+2. Instantiate a Boundary controller-mode process locally on a Terminal session:
   
-   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
-   boundary database init -config $"{BOUNDARY_DB_CONFIG}" \
-      -skip-auth-method-creation \
-      -skip-scopes-creation \
-      -skip-initial-login-role-creation
+   <pre><strong>boundary dev</strong></pre>
+
+   Sample reponse:
+
+   <pre>==> Boundary server configuration:
+&nbsp;
+        [Controller] AEAD Key Bytes: vL7W9ben+hLr5vbwGl1H+9Sr1Psp38bc
+          [Recovery] AEAD Key Bytes: gmHrDl6zSd8NtAe5+IhHBUbX9GZD86sV
+       [Worker-Auth] AEAD Key Bytes: JpmOdRcp7RHwyVXOYb7r+dRQHsn/V9KU
+               [Recovery] AEAD Type: aes-gcm
+                   [Root] AEAD Type: aes-gcm
+    [Worker-Auth-Storage] AEAD Type: aes-gcm
+            [Worker-Auth] AEAD Type: aes-gcm
+                                Cgo: disabled
+     Controller Public Cluster Addr: 127.0.0.1:9201
+             Dev Database Container: sleepy_wiles
+                   Dev Database Url: postgres://postgres:password@localhost:55000/boundary?sslmode=disable
+         Generated Admin Login Name: admin
+           Generated Admin Password: password
+          Generated Host Catalog Id: hcst_1234567890
+                  Generated Host Id: hst_1234567890
+              Generated Host Set Id: hsst_1234567890
+      Generated Oidc Auth Method Id: amoidc_1234567890
+             Generated Org Scope Id: o_1234567890
+  Generated Password Auth Method Id: ampw_1234567890
+         Generated Project Scope Id: p_1234567890
+                Generated Target Id: ttcp_1234567890
+  Generated Unprivileged Login Name: user
+    Generated Unprivileged Password: password
+                         Listener 1: tcp (addr: "127.0.0.1:9200", cors_allowed_headers: "[]", cors_allowed_origins: "[*]", cors_enabled: "true", max_request_duration: "1m30s", purpose: "api")
+                         Listener 2: tcp (addr: "127.0.0.1:9201", max_request_duration: "1m30s", purpose: "cluster")
+                         Listener 3: tcp (addr: "127.0.0.1:9203", max_request_duration: "1m30s", purpose: "ops")
+                         Listener 4: tcp (addr: "127.0.0.1:9202", max_request_duration: "1m30s", purpose: "proxy")
+                          Log Level: info
+                              Mlock: supported: false, enabled: false
+                            Version: Boundary v0.11.0
+                        Version Sha: 1d42091e81ca11353376ce116275890e3ae67f6b
+         Worker Auth Current Key Id: auction-acutely-shawl-bonanza-semifinal-portal-worry-bodacious
+           Worker Auth Storage Path: /var/folders/rq/rvb3xv916b976fm4sszjym400000gq/T/nodeenrollment3782666038
+           Worker Public Proxy Addr: 127.0.0.1:9202
+&nbsp;
+==> Boundary server started! Log data will stream in below:
+...
    </pre>
 
-   Additionally:<br />
-   <pre>export BOUNDARY_TLS_INSECURE=true</pre>
+1. Create a new Terminal window if you want to make any more CLI commands.
+   
 
-   Alternately, to migrate a long-running instance, specify those 3 skips in the controller.hcl file:
-  
-   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
-   boundary database init -config $"{BOUNDARY_DB_CONFIG}"
-   </pre>
+   ### BOUNDARY_ADDR URL with port
 
-2. Define the Boundary Controller URL address, with the standard port:
+1. Define the Boundary Controller URL address, with the standard port:
 
    <pre>export BOUNDARY_ADDR="https://11.22.33.44:9200"</pre>
 
 
    ### Boundary.app GUI
 
-3. To install the Desktop client, click the .dmg (64-bit) on macOS.
+1. To install the Desktop client, click the .dmg (64-bit) on macOS.
 
    Drag the <strong>Boundary.app</strong> icon and drop on the app folder at:
 
    <pre>/Applications/Boundary.app</pre>
 
-4. If you access it often, drag the icon and drop it among others.
+1. If you access it often, drag the icon and drop it among others.
 
-5. Invoke the app by double-clicking or 
+1. Invoke the app by double-clicking or 
   
-6. Type the URI to the Boundary server:
+1.  Type the URI to the Boundary server:
 
    <img alt="HashiCorp Boundary.app GUI Landing" width="800" height="494" src="https://i.pinimg.com/originals/c1/db/9f/c1db9f7193fa92b06d1790e1b73652a4.jpg">
 
-7. Login Authentication
+1. Login Authentication
 
    <img alt="HashiCorp Boundary Auth" width="476" height="562" src="https://i.pinimg.com/originals/a3/3d/96/a33d963a6364dd67a2f70fd0094e471e.jpg">
 
@@ -231,51 +310,19 @@ It provides one-click deployment.
 
 <hr />
 
-<a name="HCP"></a>
 
-## SaaS Boundary on SaaS HCP 
+<a name="SelfHosted"></a>
 
-Boundary on HCP (SaaS service managed by HashiCorp) went (free) beta preview July 2022.
-<a target="_blank" href="https://cloud.hashicorp.com/products/boundary/pricing">HCP Pricing</a>: 
-HCP Boundary is <strong>FREE for the first 50 sessions each month</strong>, using less than 1GB of data transfer per session. Beyond that, you are charged $.50 per session and $.50/per additional GB of session transfer data.
+## Self-Hosted Local server
 
-1. Create a HCP account at 
+   * <a target="_blank" href="https://learn.hashicorp.com/collections/boundary/oss-getting-started">Tutorial</a>
+  <br /><br />
 
-   https://portal.cloud.hashicorp.com/sign-up?product_intent=boundary
+1. To install Boundary on different platforms (on a single cloud region), navigate to a folder associated with the account where you'll create cloned repositories:
 
-1. On the left HCP menu, click Services: Boundary.
-1. Click the blue "Deploy Boundary".
+   <pre>export PROJDIR="$HOME/<strike>github-wilsonmar</strike>"</pre>
 
-   <a target="_blank" href="https://i.pinimg.com/originals/f8/97/5a/f8975aca169c269fe1fa525e963ad50f.jpg"><img alt="HCP Boundary init" src="https://i.pinimg.com/originals/f8/97/5a/f8975aca169c269fe1fa525e963ad50f.jpg"></a>
-
-1. Define a Boundary name according to a convention such as:
-
-   base-boundary-cluster
-
-1. Define an Administrator account name (according to a convention)
-
-   base-boundary-cluster-admin
-
-1. Define a strong password (more than 20 characters)
-1. Click "Deploy".
-  
-1. Copy the Cluster URL, such as:
-
-   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud
-
-1. Copy and save the <strong>Admin UI</strong>, such as:
-
-   https://c805c67f-eaa7-43f8-90d4-4c2a4e28a9ea.boundary.hashicorp.cloud/scopes/global/authenticate/ampw_vPzFIBfZXJ
-
-<hr />
-
-## Local server
-
-1. To install Boundary on different platforms on a single cloud region, navigate to ther folder associated with the account where you'll create cloned repositories:
-
-   $PROJDIR
-
-2. Clone so that only the master branch is downloaded (because there are many other branches):
+2. because there are many other branches (taking up space), clone so that only the master branch is downloaded:
 
    <pre><strong>git clone git@github.com:hashicorp/boundary.git --depth 1
    cd boundary</strong></pre>
@@ -357,7 +404,32 @@ Commands:
    Using automation to create a Baseline Environment or these manual edits to configure
    in this logical order:
 
-   ### Organizations
+   <a name=scopes"></a>
+
+### Boundary Scope
+
+   A Boundary <strong>scope</strong> is an abstract boundary modeled as a container. A scope can contain socopes forming a tree.
+
+1. To migrate a throw-away instance:
+  
+   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
+   boundary database init -config $"{BOUNDARY_DB_CONFIG}" \
+      -skip-auth-method-creation \
+      -skip-scopes-creation \
+      -skip-initial-login-role-creation
+   </pre>
+
+   Additionally:<br />
+   <pre>export BOUNDARY_TLS_INSECURE=true</pre>
+
+   Alternately, to migrate a long-running instance, specify those 3 skips in the controller.hcl file:
+  
+   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
+   boundary database init -config $"{BOUNDARY_DB_CONFIG}"
+   </pre>
+
+
+### Organizations
 
    Each organization is a top-level container (scope) whichowns zero to many <strong>projects</strong> and zero to many authentication methods. An organization inherits from scope, allowing it to own zero to many groups, roles, policies, targets, host catalogs, or credential stores.
 
@@ -629,7 +701,6 @@ Which app can talk with each service?
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0">VIDEO: HashiCorp Boundary Demo for Secure Sessions Management</a> Oct 26, 2020 by TeKanAid uses WireShark to see detailed communications of a Linux and Windows RDP connections.
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=tUMe7EsXYBQ">VIDEO: Introduction to HashiCorp Boundary with Armon Dadgar</a>
 
 
 ## References
