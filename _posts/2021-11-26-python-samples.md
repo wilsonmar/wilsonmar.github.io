@@ -2451,11 +2451,22 @@ https://python-course.eu/applications-python/levenshtein-distance.php
 
 https://machinelearningmastery.com/profiling-python-code/
 
-## Konwn-bad sample Python code
+## Knonwn-bad sample Python code
 
 https://github.com/Contrast-Security-OSS/vulnpy
 is a library of purposely-vulnerable Python functions to install as extensions in a framework (Flask, Django, Pyramid, Falcon, WSGI, Bottle, FastAPI).
 These serve as a foundation for creating insecure web applications, to be used for security testing and demonstration of vulnerability scanners.
+
+## Parallel
+
+<a target="_blank" href="https://www.dask.org/">dask.org</a> Futures
+is used to scale Python libraries that you know and love (NumPy, pandas, and scikit-learn).
+Dask is used throughout the PyData ecosystem for parallel processing.
+It is included in many libraries today like Xarray, Prefect, RAPIDS, and XGBoost.
+
+
+Adam Breindel held on OReilly <a target="_blank" href="https://learning.oreilly.com/live-events/scale-your-python-processing-with-dask/0636920310099/0636920080246/">"Scale your Python processing with Dask"</a> Oct. 28, 2022. Dask array; Dask Bag.
+
 
 ## References
 

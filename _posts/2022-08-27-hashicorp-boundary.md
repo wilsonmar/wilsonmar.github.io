@@ -37,7 +37,7 @@ WARNING: This page is under construction!
 <a target="_blank" href="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"><img alt="HashiCorp Boundary beats vpn and bastion hosts 1466x610.jpg" width="1466" height="610" src="https://i.pinimg.com/originals/74/b7/fe/74b7fea8474d4353b277051b4b898e50.jpg"></a>
 
 
-### No paying for Bastion Host Jump Box
+### No more Bastion Host Jump Box
 
 The now "traditional" (<em>passe</em> security-wise) is to go through a Linux <strong>SSH bastion host</strong>, with a command such as:
 
@@ -50,7 +50,7 @@ SSH takes some work to setup securely - users would need to mess with another se
 
 To a Bastion host, all users are not differentiated because the host provides "all or nothing" access.
 
-### VPN tunnels
+### No more VPN tunnels
 
 VPNs improves on Bastion hosts in that VPNs controls access by each user's IP address.
 VPNs are difficult to install by each user.
@@ -154,7 +154,7 @@ TODO: I'm working on a shell file that does the following with one command.
 
    <a target="_blank" href="https://boundaryproject.io">https://boundaryproject.io</a>
 
-   Notice that HashiCorp supports a wide range of modern and legacy oerating systems:<br />
+   Notice that HashiCorp supports a wide range of modern and legacy operating systems:<br />
    macOS, Windows, Linux, FreeBSD, NetBSD, OpenBSD, Solaris
 
    PROTIP: The Boundary executable contains functionality to be used as a client, worker, server, in Dev mode
@@ -239,7 +239,7 @@ credential-stores     logout                workers
 
    <a name="controller"></a>
 
-1. Instantiate a Boundary controller-mode process locally on a Terminal session:
+1. Instantiate a Boundary controller-mode process locally on a Terminal session <strong>using default parameter values</strong>:
   
    <pre><strong>boundary dev</strong></pre>
 
@@ -286,11 +286,24 @@ credential-stores     logout                workers
 ...
    </pre>
 
+   <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0&t=17m25s">VIDEO</a>: Alternately, specify parameters:
+  
+   <pre><strong>boundary dev \
+   -api-listen-address=0.0.0.0 \
+   -cluster-listen-address=0.0.0.0 \
+   -proxy-listen-address=0.0.0.0 \
+   -worker-public-address=192.168.1.80
+   </strong></pre>
+
+   Noticed that Generated are the Admin Login Name: "admin" and (insecure) Admin Password: "password",
+   which the GUI requests manually.
+
+
 1. Create a new Terminal window if you want to make any more CLI commands.
    
    ### BOUNDARY_ADDR URL with port
 
-1. Notice in the output above the <strong>Listener</strong> IP address, which defines the Boundary Controller URL address, with its standard port:
+2. Notice in the output above the <strong>Listener</strong> IP address, which defines the Boundary Controller URL address, with its standard port:
 
    <pre>export BOUNDARY_ADDR="https://127.0.0.1:9200"</pre>
 
@@ -303,21 +316,21 @@ credential-stores     logout                workers
 
    ### Boundary.app GUI
 
-1. To install the Desktop client, click the .dmg (64-bit) on macOS.
+3. To install the Desktop client, click the .dmg (64-bit) on macOS.
 
    Drag the <strong>Boundary.app</strong> icon and drop on the app folder at:
 
    <pre>/Applications/Boundary.app</pre>
 
-1. If you access it often, drag the icon and drop it among others.
+4. If you access it often, drag the icon and drop it among others.
 
-1. Invoke the app by double-clicking or 
+5. Invoke the app by double-clicking or 
   
-1.  Type the URI to the Boundary server:
+6. Type the URI to the Boundary server:
 
    <img alt="HashiCorp Boundary.app GUI Landing" width="800" height="494" src="https://i.pinimg.com/originals/c1/db/9f/c1db9f7193fa92b06d1790e1b73652a4.jpg">
 
-1. Login Authentication
+7. Login Authentication
 
    <img alt="HashiCorp Boundary Auth" width="476" height="562" src="https://i.pinimg.com/originals/a3/3d/96/a33d963a6364dd67a2f70fd0094e471e.jpg">
 
@@ -460,16 +473,23 @@ Commands:
 
 1. Specify <strong>project</strong>, each with its own scope ID (to organize targets and host catalogs):
   
-   * DevOps
-   * Staging
-   * Production
-   * Support
+   * DevOps - such as Jenkins (instead of SaaS GitHub Actions).
+
+   * Dev - the environment used by developers to unit test functionality. Often scrubbed or obfuscated data for security purposes.
+
+   * Test - an environment also known as pre-prod used to ensure merging with production systems can be performed successfully. May have full volume or production data to ensure functionality.
+
+   * Staging - an environment also known as pre-prod used to ensure merging with production systems can be performed successfully. May have full volume or production data to ensure functionality.
+
+   * Production – the production or live environment where all live data and systems inter-operate. Requires implementation of all security controls.
+
+   * Support - contains CSM (Customer Support Management) system to track communications with customers
    <br /><br />
 
 
    <a name="host-catalogs"></a>
 
-1. Define a host catalog (a collection of hosts and host sets) for:
+2. Define a host catalog (a collection of hosts and host sets) for:
 
    Within the DevOps project:
    * CICD
@@ -509,7 +529,7 @@ Commands:
 
    Hosts are specific Boundary server instances, created under a host set.
    
-1. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
+3. Assign names using a convention such as "app-server_0" and "log-server_0" (numbers starting from zero?).
 
    TODO: Assign IP address???
 
@@ -517,7 +537,7 @@ Commands:
 
    Boundary targets are the server which we seek to remote into. 
    
-1. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
+4. In each app project, specify a Boundary target as a logical collection of host sets which may be used to initiate sessions.
    * Production Application Admin
    * Production SSH
    * Production Logs
@@ -531,7 +551,7 @@ Commands:
    * Default Port
    <br /><br />
 
-1. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
+5. Optionally, in the Internal project, specify a target such as "Ticketing" for the ticketing app server.
 
    <a name="sessions"></a>
    sessions

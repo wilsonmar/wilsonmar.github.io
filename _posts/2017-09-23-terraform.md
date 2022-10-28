@@ -4287,6 +4287,10 @@ PagerDuty
 https://aws-ia.github.io/standards-terraform/
 THE AWS INTEGRATION & AUTOMATION TEAM'S BEST PRACTICES FOR TERRAFORM
 
+https://www.youtube.com/watch?v=G7l6ggJit3Q
+HashiCorp - Terraform on AWS
+by Chris Dunlap
+
 
 ## More on DevOps #
 

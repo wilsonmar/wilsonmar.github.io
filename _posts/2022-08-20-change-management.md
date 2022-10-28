@@ -2,8 +2,8 @@
 layout: post
 date: "2022-10-21"
 file: "change-management"
-title: "Change Management (for IT)"
-excerpt: "This may be the most important skill for Digital Transformation or to implement any change"
+title: "OCM (Organizational Change Management)"
+excerpt: "This may be the most important skill for Digital Transformation -- or to implement any change"
 tags: [management]
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
