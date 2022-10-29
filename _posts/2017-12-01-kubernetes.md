@@ -5206,11 +5206,9 @@ root      9735     1  3 Oct07 ?        00:54:09 /usr/bin/kubelet --bootstrap-kub
 
    <pre>sudo more $(sudo find / -name *install-cni* | grep /log/containers)</pre>
 
-   sudo less /var/log/calico/cni/cni.log
+   <pre>sudo less /var/log/calico/cni/cni.log</pre>
 
-   sudo less /etc/cni/net.d/calico-kubeconfig
-
-   </pre>
+   <pre>sudo less /etc/cni/net.d/calico-kubeconfig</pre>
 
 
 <a name="cAdvisor"></a>
@@ -6379,7 +6377,7 @@ spec:
 
 ### Security Context
 
-The `security.yml` defines a secrurity context pod:
+This `security.yml` defines a secrurity context pod:
 
    <pre>
 apiVersion: v1

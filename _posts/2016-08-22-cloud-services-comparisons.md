@@ -15,9 +15,14 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">In 2020*</a>, accelerating growth in spending on shared cloud infrastructure was such that it exceeded spending on on-prem. data center hardware:
+<a target="_blank" href="https://www.srgresearch.com/articles/2020-the-year-that-cloud-service-revenues-finally-dwarfed-enterprise-spending-on-data-centers">SRG Research reports that in 2020</a>, spending on shared cloud infrastructure exceeded spending on on-prem. data center hardware:
 
 ![cloud-svcs-exceeded-2020](https://user-images.githubusercontent.com/300046/138579710-70bcc651-3fe4-4fe7-880c-7047162043ea.jpg)
+
+A larger research firm, Gartner, reports the cross-over to occur in 2024:
+
+<a target="_blank" href="https://i.pinimg.com/originals/ae/ea/96/aeea9618726a88ffa1576f42720c1baa.jpg"><img alt="Gartner-cloud-market-holori-2022-1045×684" src="https://i.pinimg.com/originals/ae/ea/96/aeea9618726a88ffa1576f42720c1baa.jpg"></a>
+
 
 {% include whatever.html %}
 
