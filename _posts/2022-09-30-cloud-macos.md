@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-21"
+date: "2022-10-31"
 file: "cloud-macos"
 title: "Cloud MacOS"
 excerpt: "Temporary MacOS instances from AWS EC2 and MacStadium"
@@ -20,11 +20,8 @@ comments: true
 
 ## Mac within AWS cloud
 
-In 2022 AWS <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/">announced</a> availability of on-demand MacOS server types built on AWS Nitro System  within the AWS EC2 cloud.
-<a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html">
-Documentation</a>:
-
-One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
+In 2022 AWS <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/">announced</a> availability of on-demand MacOS server types built on AWS Nitro System  within the AWS EC2 cloud, 
+as an <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/">EC2 instance type</a>:
 
    * mac1.metal are Mac Mini's with Intel’s 8th generation (Coffee Lake) 3.2 GHz (4.6 GHz turbo) Core i7 x86 processors 
 
@@ -37,9 +34,11 @@ One of the EC2 instance types https://aws.amazon.com/ec2/instance-types/
    <tr valign="top" align="right"><td align="left">mac2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
 
+
 ## Cost?
 
-It's not available on all regions world-wide.
+CAUTION: AWS' minimum billing is one day, even if you use a few minutes. 
+That's why AWS forces the use of "Dedicated Hosts".
 
 The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pricing">unit of billing</a> is the <a target="_blank" href="https://aws.amazon.com/ec2/dedicated-hosts/pricing/">dedicated host</a> US region price which have a <strong>24-hour minimum allocation period</strong> (required by Apple). For 
 
@@ -52,12 +51,17 @@ The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pric
    <br /><br />
 
    AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
-   But more that a few months, you might as well buy your own Mac at $2,500.
 
-   CAUTION: AWS' minimum billing is one day, even if you use a few minutes.
+   PROTIP: If you're using these more that a few months, you might as well buy your own Mac at $2,500.
 
-Compare against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
-   <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
+<a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-mac-instances.html">
+Documentation</a>.
+
+
+## Competitors 
+
+Compare AWS against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
+<a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
 
    * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
    * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
@@ -65,27 +69,52 @@ Compare against <a target="_blank" href="https://www.macstadium.com/pricing">Mac
    <br /><br />
 
 
-<hr />
+## Limited availability across regions
+
+CAUTION: At time of writing, macOS instance types are currently available only on a subset of regions world-wide:
+
+   * us-east-1a
+   * us-west-1a
+   <br /><br />
+
+"When provisioning normal instances in an availability zone that doesn't support that instance type you get the error "Your requested instance type (mac2.metal) is not supported in your requested Availability Zone (us-east-1b). Please retry your request by not specifying an availability zone or choosing us-east-1a, us-east-1c, us-east-1d"
+-- http://blog.piefox.com/2011/07/ec2-availability-zones-and-instance.html
+
+https://blyx.com/2016/03/24/how-to-restrict-by-regions-and-instance-types-in-aws-with-iam/
+
 
 ## Using Terraform Dedicated Host Module
 
-The easiest way to create an instance is using automation based on Terraform.
+The easiest way to create an instance is using automation based on <a target="_blank" href="https://wilsonmar.github.io/terraform/">Terraform</a>.
 
-1. Download the module Daniel Dias (in Berlin, Germany) created<br />
-   https://registry.terraform.io/modules/DanielRDias/dedicated-host/aws/latest/examples/macOS
+More specifically, leverage the "dedicated-host" Terraform module created by Daniel Dias (in Berlin, Germany):
+   <ul>
+   https://registry.terraform.io/modules/DanielRDias/dedicated-host/aws/latest
+   </ul>
 
-   <pre>git clone https://github.com/DanielRDias/terraform-aws-dedicated-host
-   </pre>
+It can create for you:
 
-   Use it to create for you:
-
-   * dedicated_host_id
-   * mac_ami_id for the region and Architecture, such as "64-bit (Mac-Arm)" for Mac2.
+   * <strong>dedicated_host_id</strong>
+   * <strong>mac_ami_id</strong> for the region and Architecture, such as "64-bit (Mac-Arm)" for Mac2.
    <br /><br />
 
-1. View the <tt>.gitignore</tt> file. Notice it has "stage.auto.tfvars.example" and "stage.auto.tfvars" along with other specifications of files and folders not to upload to GitHub.
 
-1. Rename <tt>stage.auto.tfvars.example</tt> to <tt>stage.auto.tfvars</tt>, then edit it:
+CAUTION: I am currently working with Daniel on this module to use his
+
+In a Terminal:
+
+1. As stated <a target="_blank" href="https://registry.terraform.io/modules/DanielRDias/dedicated-host/aws/latest/examples/macOS">here</a>, after forking the module
+
+   <pre>https://github.com/DanielRDias/terraform-aws-dedicated-host
+   </pre>
+
+   git clone it and cd into the download.
+
+2. View the <tt>.gitignore</tt> file. Notice it has "stage.auto.tfvars.example" and "stage.auto.tfvars" along with other specifications of files and folders not to upload to GitHub.
+
+3. Edit the ____ file.
+   
+4. Rename <tt>stage.auto.tfvars.example</tt> to <tt>stage.auto.tfvars</tt>, then edit it:
 
    <pre>instance_type     = "mac2.metal"
    availability_zone = "us-east-1a"
