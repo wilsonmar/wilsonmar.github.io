@@ -46,9 +46,10 @@ The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pric
    * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
 
    * mac1 Mumbai per hour $1.14
-
    * mac2 Frankfurt per hour $1.298
    <br /><br />
+
+PROTIP: Different prices are charged depending on AWS region. mac rental prices are higher in Europe than in India, which are higher than prices in the US.
 
    AWS offers savings up to 44% off On-Demand pricing for a 3-year commitment. 
 
@@ -112,15 +113,18 @@ In a Terminal:
 
 2. View the <tt>.gitignore</tt> file. Notice it has "stage.auto.tfvars.example" and "stage.auto.tfvars" along with other specifications of files and folders not to upload to GitHub.
 
-3. Edit the ____ file.
+3. Rename the <tt>stage.auto.tfvars.example</tt> file to <tt>stage.auto.tfvars</tt>.
+
+   <pre><strong>mv stage.auto.tfvars.example  stage.auto.tfvars
+   </strong></pre>
    
-4. Rename <tt>stage.auto.tfvars.example</tt> to <tt>stage.auto.tfvars</tt>, then edit it:
+4. Edit file <tt>stage.auto.tfvars</tt> to:
 
    <pre>instance_type     = "mac2.metal"
    availability_zone = "us-east-1a"
    </pre>
 
-   CAUTION: Mac editions are not available in all regions world-wide.
+   REMEMBER: Mac editions are not available in all regions world-wide.
 
    TODO: Logic to switch if not available? CDK for this? Reserved instance?
 
@@ -131,18 +135,90 @@ In a Terminal:
    * os_version ??? from use of macOS Catalina to macOS Monteray
    <br /><br />
 
+   ### What mac you have
 
-To use that dedicated_host_id automation, you first need to decide and define these values in AWS:
+   If you want to replicate a specific physical macOS laptop you have:
 
-* Security Group (with your IP address)
-* pem key file name
-* AWS Region
-* AWS Availability zone (such as "us-west-2a")
+1. Navigate to (after creating) the folder where you add GitHub repos.
+1. Obtain the repo:
 
-* Instance Name
-* AWS Tags (for company project, etc.)
-* cf_stack_id	Cloud Formation Stack ID
-* dedicated_hosts	Maps with the dedicated hosts IDs
+   <pre><strong>git clone git@github.com:DanielRDias/terraform-aws-mac.git
+   cd terraform-aws-mac
+   </strong></pre>
+
+1. Press Shift+Command+/ for the Apple menu. Click on the Apple logo, then "About This Mac" 
+
+   <img alt="mac-about-this-121x62.jpg" width="121" height="62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667270209/mac-about-this-121_x62_wnv4by.jpg">
+
+1. In the pop-up, notice whether it says "M1" or "M2", and the amount of memory (16 GB?):
+
+   <img alt="mac-monterey-m1-398x244.jpg" width="398" height="244" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667270788/mac-monterey-m1-398_x244_bmi7q4.jpg">
+
+
+   ### Config for your AWS
+
+2. Edit file ____ to define these values for AWS to use:
+
+   * Security Group (with your IP address)
+   * pem key file name
+   * AWS Region
+   * AWS Availability zone (such as "us-east-1a")
+
+   * Instance Name
+   * AWS Tags (for company project, etc.)
+   * cf_stack_id	Cloud Formation Stack ID
+   * dedicated_hosts	Maps with the dedicated hosts IDs
+
+3. Make sure you're connected to AWS.
+
+4. Initialize Terraform folder:
+
+   <pre><strong>terraform init
+   </strong></pre>
+
+   Example expected response:
+
+   <pre>Initializing the backend...
+&nbsp;
+Initializing provider plugins...
+- Finding latest version of hashicorp/aws...
+- Installing hashicorp/aws v4.37.0...
+- Installed hashicorp/aws v4.37.0 (signed by HashiCorp)
+&nbsp;
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+&nbsp;
+Terraform has been successfully initialized!
+&nbsp;
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+&nbsp;
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+   </pre>
+
+1. Create a run plan:
+
+   <pre><strong>terraform plan
+   # terraform policy?
+   </strong></pre>
+
+1. Apply the plan file created:
+
+   <pre><strong>terraform apply
+   </strong></pre>
+
+1. If it ran well, you should see something like:
+
+   <pre>instance_type     = "mac2.metal"
+   availability_zone = "us-east-1a"
+   </pre>
+
+<hr />
 
 ## Using AWS GUI
 
@@ -156,15 +232,15 @@ Using the AWS Mananagement Console UI from your laptop:
 
 1. PROTIP: <a target="_blank" href="https://www.youtube.com/watch?v=8UqtMcX_kg0">As with other instance types</a>, define a Security Group using port 22 protocol TCP source <strong>your laptop's IP address</strong> (rather than 0.0.0.0/0 for just anyone, which is unsafe).
 
-1. Create a pem key (such as "malx-us-west-2.pem" in the example below).
-1. <tt>chmod 0400 malx-us-west-2.pem</tt>
+1. Create a pem key (such as "malx-us-east-1a.pem" in the example below).
+1. <tt>chmod 0400 malx-us-east-1a.pem</tt>
 1. Define an IAM role.
 
    ### Region?
 
-1. At the top upper-right, select Region "us-west-2" (Oregon), us-east-1, or us-east-2.
+1. At the top upper-right, select Region "us-east-1" (Oregon), us-east-1, or us-east-2.
 
-   PROTIP: At time of writing, region "us-west-1 (N. California)" does not support MacOS instances.
+   PROTIP: At time of writing, region "us-west-2" does not support MacOS instances.
    
    ### Dedicated Hosts
 
