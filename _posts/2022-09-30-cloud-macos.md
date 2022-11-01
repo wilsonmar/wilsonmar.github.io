@@ -29,9 +29,9 @@ as an <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/">EC2 i
    <br /><br />
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th>Instance</th><th>vCPU cores</th><th>GiB memory</th><th>Gbps Network</th><th>Gbps EBS Bandwidth</th></tr>
-   <tr valign="top" align="right"><td align="left">mac1.metal</td><td>12</td><td>32</td><td>10</td><td>8</td></tr>
-   <tr valign="top" align="right"><td align="left">mac2.metal</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
+   <tr><th>Instance</th><th>Processor</th><th>vCPU cores</th><th>GiB memory</th><th>Gbps Network</th><th>Gbps EBS Bandwidth</th></tr>
+   <tr valign="top" align="right"><td align="left">mac1.metal</td><td>Intel x86</td><td>12</td><td>32</td><td>10</td><td>8</td></tr>
+   <tr valign="top" align="right"><td align="left">mac2.metal</td><td>arm64</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
 
 
