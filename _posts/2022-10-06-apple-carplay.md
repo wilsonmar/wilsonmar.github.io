@@ -6,8 +6,8 @@ title: "apple-carplay"
 excerpt: "Apple's integration for practically every car except Tesla"
 tags: [auto, networking]
 image:
-# pic silver robot white skin handshake 1900x500
-  feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
+# apple-auto-dash-1900x500.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1667472245/apple-auto-dash-1900x500_s9qhrx.png
   credit: 
   creditlink: 
 comments: true
