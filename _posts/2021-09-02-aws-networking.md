@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-02"
+file: "aws-networking"
 title: "AWS Networking"
 excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, BGP, etc."
 tags: [AWS, EC2, cloud, VPC]
-date: "2021-09-02"
-file: "aws-networking"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -114,6 +114,7 @@ and adds additional PROTIPs and NOTEs.
 
    * private       10.1.0.0/24 &nbsp; (< 129)
    * public &nbsp; 10.129.0.0/24 (> 128)
+   <br /><br />
 
    <a name="NonRouted"></a>
 
@@ -124,10 +125,12 @@ and adds additional PROTIPs and NOTEs.
    * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
    <br /><br />
 
-   <strong>The CIDR block for a default VPC is always 172.31.0.0/16.</strong>
+   <strong>REMEMBER: The CIDR block for a default VPC is always 172.31.0.0/16.</strong>
 
-   PROTIP: Use addresses from  different IP classes.
-   For example, for the production site, use VPC CIDR 10.0.0.0/16 and for DR regions VPC CIDR 172.16.0.0/16.
+   PROTIP: Use addresses from different IP classes. For example, 
+   * use VPC CIDR 10.0.0.0/16 for production 
+   * use VPC CIDR 172.16.0.0/16 for DR regions
+   <br /><br />
 
    PROTIP: Carefully predict how many nodes each subnet might need.
    Once assigned, AWS VPC subnet blocks can’t be modified.

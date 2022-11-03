@@ -6,8 +6,8 @@ title: "Cloud MacOS"
 excerpt: "Temporary MacOS instances from AWS EC2 and MacStadium"
 tags: [apple, mac, setup, cloud]
 image:
-# ![apple-store-fisheye-1900x500-42783.jpg
-  feature: https://user-images.githubusercontent.com/300046/62640513-ff8ac800-b8fe-11e9-842b-e83ec4fdabb2.jpg
+# apple-black-pins-1900x500.png
+  feature: https://i.pinimg.com/originals/03/73/a3/0373a3d465688b2570b2903191b307db.jpg
   credit: 
   creditlink: 
 comments: true
@@ -20,12 +20,11 @@ comments: true
 
 ## Mac within AWS cloud
 
-In 2022 AWS <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/">announced</a> availability of on-demand MacOS server types built on AWS Nitro System  within the AWS EC2 cloud, 
-as an <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/">EC2 instance type</a>:
+In 2022 AWS announced availability of on-demand MacOS server types within the AWS EC2 cloud, (built on AWS Nitro System) as an <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/">EC2 instance types</a>:
 
-   * mac1.metal are Mac Mini's with Intel’s 8th generation (Coffee Lake) 3.2 GHz (4.6 GHz turbo) Core i7 x86 processors 
+   * <strong>mac1.metal</strong> are Mac Mini's with Intel’s 8th generation (Coffee Lake) 3.2 GHz (4.6 GHz turbo) Core i7 x86 processors 
 
-   * mac2.metal has Apple's M1 or M2 ARM (16-core Neural Engine) processors
+   * <strong>mac2.metal</strong> has Apple's M1 or M2 ARM (16-core Neural Engine) processors made by Apple using TSMC's 5nm process (N5)
    <br /><br />
 
    <table border="1" cellpadding="4" cellspacing="0">
@@ -33,6 +32,10 @@ as an <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/">EC2 i
    <tr valign="top" align="right"><td align="left">mac1.metal</td><td>Intel x86</td><td>12</td><td>32</td><td>10</td><td>8</td></tr>
    <tr valign="top" align="right"><td align="left">mac2.metal</td><td>arm64</td><td>8</td><td>16</td><td>10</td><td>8</td></tr>
    </table>
+
+As of this writing, AWS doesn't yet support M2 processors, which is about 18% faster than M1.
+See https://www.macrumors.com/guide/m1-vs-m2-chip/
+M2 can go up to 24GB or 32GB of RAM.
 
 
 ## Cost?
@@ -76,6 +79,7 @@ CAUTION: At time of writing, macOS instance types are currently available only o
 
    * us-east-1a
    * us-west-1a
+   * TODO: What others???
    <br /><br />
 
 "When provisioning normal instances in an availability zone that doesn't support that instance type you get the error "Your requested instance type (mac2.metal) is not supported in your requested Availability Zone (us-east-1b). Please retry your request by not specifying an availability zone or choosing us-east-1a, us-east-1c, us-east-1d"
@@ -83,6 +87,19 @@ CAUTION: At time of writing, macOS instance types are currently available only o
 
 https://blyx.com/2016/03/24/how-to-restrict-by-regions-and-instance-types-in-aws-with-iam/
 
+
+## Get one now
+
+TODO: David will work to create a shell file that will provide you a macOS desktop by you issuing a single shell command. Automation will:
+
+   1. <a href="#DedicatedHost">Create a Dedicated Host</a> instance in AWS
+   2. Create EC2 instance
+   3. Install XCode command utilities, brew; use brew to install utilities, run dotfiles to configure macOS; define aliases, etc.
+   4. Create EC2 images for each region (if requested)
+   <br /><br />
+
+
+<a name="DedicatedHost"></a>
 
 ## Using Terraform Dedicated Host Module
 
@@ -109,16 +126,18 @@ In a Terminal:
    <pre>https://github.com/DanielRDias/terraform-aws-dedicated-host
    </pre>
 
+   This repo makes use of a module. But originally 
+
    git clone it and cd into the download.
 
-2. View the <tt>.gitignore</tt> file. Notice it has "stage.auto.tfvars.example" and "stage.auto.tfvars" along with other specifications of files and folders not to upload to GitHub.
+1. View the <tt>.gitignore</tt> file. Notice it has "stage.auto.tfvars.example" and "stage.auto.tfvars" along with other specifications of files and folders not to upload to GitHub.
 
-3. Rename the <tt>stage.auto.tfvars.example</tt> file to <tt>stage.auto.tfvars</tt>.
+1. Rename the <tt>stage.auto.tfvars.example</tt> file to <tt>stage.auto.tfvars</tt>.
 
    <pre><strong>mv stage.auto.tfvars.example  stage.auto.tfvars
    </strong></pre>
    
-4. Edit file <tt>stage.auto.tfvars</tt> to:
+1. Edit file <tt>stage.auto.tfvars</tt> to:
 
    <pre>instance_type     = "mac2.metal"
    availability_zone = "us-east-1a"
@@ -139,13 +158,6 @@ In a Terminal:
 
    If you want to replicate a specific physical macOS laptop you have:
 
-1. Navigate to (after creating) the folder where you add GitHub repos.
-1. Obtain the repo:
-
-   <pre><strong>git clone git@github.com:DanielRDias/terraform-aws-mac.git
-   cd terraform-aws-mac
-   </strong></pre>
-
 1. Press Shift+Command+/ for the Apple menu. Click on the Apple logo, then "About This Mac" 
 
    <img alt="mac-about-this-121x62.jpg" width="121" height="62" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667270209/mac-about-this-121_x62_wnv4by.jpg">
@@ -153,6 +165,16 @@ In a Terminal:
 1. In the pop-up, notice whether it says "M1" or "M2", and the amount of memory (16 GB?):
 
    <img alt="mac-monterey-m1-398x244.jpg" width="398" height="244" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667270788/mac-monterey-m1-398_x244_bmi7q4.jpg">
+
+1. Navigate to (after creating) the folder where you add GitHub repos.
+1. Obtain the repo:
+
+   <pre><strong>git clone git@github.com:DanielRDias/terraform-aws-mac.git --depth 1
+   cd terraform-aws-mac
+   </strong></pre>
+
+1. Edit the file:
+
 
 
    ### Config for your AWS
@@ -201,10 +223,14 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
    </pre>
 
-1. Create a run plan:
+1. Create a run plan file:
 
    <pre><strong>terraform plan
-   # terraform policy?
+   </strong></pre>
+
+1. Verify for vulnerabilities (after installing tfsec):
+
+   <pre><strong>tfsec
    </strong></pre>
 
 1. Apply the plan file created:
