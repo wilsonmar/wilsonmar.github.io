@@ -33,7 +33,7 @@ but CarPlay does not work with iPads or iPods.
 
 There is no standalone CarPlay app.
 
-CarPlay is <a target="_blank"href="https://www.apple.com/ios/carplay/available-models/">
+CarPlay is <a target="_blank" href="https://www.apple.com/ios/carplay/available-models/">
 available on a large range of auto manufacturers</a> (except Tesla, which charges $10/month).
 While other brands support Google Auto as well, Mini and Rolls-Royce only support CarPlay.
 
