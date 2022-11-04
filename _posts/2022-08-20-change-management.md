@@ -15,11 +15,19 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+## What is it?
+
+ACMP defines change management as the application of knowledge, skills, abilities, methodologies, processes, tools, and techniques to transition an individual or group from a current state to a future state to achieve expected benefits and organizational objectives. 
+
 > Organizational Change Management (OCM) is essentially a wide-scale plan that aims to increase individual and organizational effectiveness by making use of <strong>behavioral science</strong> technology. The purpose of this is to reduce the chances of negative fallout in a business and to put more emphasis on the <strong>people side</strong> of how an organization can change. -- <a href="#MSI">MSI</a>
 
 > Organizational Change Management is commonly referred to as communication and training, but that is a very limited and inaccurate description. Change management has to do with the people side of the transformation. How jobs are going to be redefined. New organizational structures. Change impacts: understanding how people's roles and responsibilities are going to change. [Lack of attention to Change Management] is the number one reason why a majority of transformations fail -- because they don't address Organizational Change Management. --<a target="_blank" href="youtube.com/watch?v=0aUKyxkVgGk&list=RDCMUCJ3oB3ghEUdGhHnXZD4Dx3g&start_radio=1&rv=0aUKyxkVgGk&t=5m48s">VIDEO</a>: <a target="_blank" href="https://www.linkedin.com/in/erickimberling/">Eric Kimberling of consultancy Third Stage</a>.
 
+## Why?
+
 Positive changes to a business can help it be more efficient, less wasteful, and more productive. 
+
+## It's not easy
 
 But change management isn't easy.
 
@@ -109,7 +117,7 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
    <a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
    <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage  Consulting</a> 
    
-   Prosci (generalinquiry 970-203-9332) 
+   Prosci (general inquiry 970-203-9332) 
    <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
    <br /><br />
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
@@ -130,7 +138,6 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
    <a target="_blank" href="https://www.youtube.com/watch?v=L_7I03LOyyk">VIDEO</a>:
    When we identify where <strong>each stakeholder</strong> stands and act accordingly, we don't waste time and resources rehashing what the stakeholder has already passed, or getting ahead of that person.
 
-
 Stages:
 
    1. In precontemplation, the individual is completely unwilling to consider a change.
@@ -143,21 +150,22 @@ Stages:
 <a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">John K. Kotter</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review:
 
 1. Create Climate for Change:<br />
-   \1. Create Urgency<br />
-   \2. Build a Coalition<br />
-   \3. Create a Vision
+   1). Create Urgency<br />
+   2). Build a Coalition<br />
+   3). Create a Vision
    <br /><br />
 
 2. Engage and Enable the Organization:<br />
-   \4. Communicate that Vision<br />
-   \5. Empower Others to overcome Obstacles<br />
-   \6. Create Short-Term Quick Gains
+   4). Communicate that Vision<br />
+   5). Empower Others to overcome Obstacles<br />
+   6). Create Short-Term Quick Gains
    <br /><br />
 
 3. Implement & Sustain:<br />
-   \7. Build on the Change<br />
-   \8. Embed (Anchor) the Change
+   7). Build on the Change<br />
+   8). Embed (Anchor) the Change
    <br /><br />
+
 
 <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a>
 
@@ -174,6 +182,7 @@ Stages:
 
    5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
    <br /><br />
+
 
 ## Influencers
 
@@ -207,6 +216,7 @@ Stages:
 
 Thus, effective leadership is critical to successful change and requires active sponsorship throughout the change, expecting and managing resistance, and building support. 
 
+
 <hr />
 
 ## Certifications about change mangement
@@ -217,6 +227,8 @@ https://www.cio.com/article/3276004/7-change-management-certifications-to-boost-
 
 
 ### Certifications specifically about change mangement
+
+Listed from cheapest to most expensive/prestigeous:
 
 * $213 <a target="_blank" href="https://gaqm.org/certifications/change_management/cpcm">Certified Problem and Change Manager (CPCM)</a> by the Global Association for Quality Management (GAQM), focuses specifically on identifying and fixing problems in an organization - those working with development processes or overseeing product life cycles. It covers identifying areas for change, implementing that change, encouraging employee buy-in, and creating resilient strategies. It's based on <a target="_blank" href="https://itprofessionalism.org/about-it-professionalism/competences/the-e-competence-framework/">EU's e-Competency Framework</a> organized around macro processes PLAN – BUILD – RUN – ENABLE – MANAGE.
 
@@ -240,6 +252,7 @@ https://www.cio.com/article/3276004/7-change-management-certifications-to-boost-
    * Driving cultural and behavioral change
    <br /><br />
 
+
 <a name="MSI"></a>
 
 * $300 <a target="_blank" href="https://www.msicertified.com/business/change-management-certification/">Change Management Specialist (CMS)</a> from MSI (Management and Strategy Institute) is 2-hour online. Fee includes self-paced online training materials that covers basic change management principles.
@@ -251,25 +264,11 @@ https://www.cio.com/article/3276004/7-change-management-certifications-to-boost-
 
    The exam covers approaches to helping others engage with organizational change, aligning changes with departmental or organizational changes, developing change plans, and creating relationships between change professionals in the organization.
 
-* Three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s Change Manager Competency Model and their <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the <a target="_blank" href="https://www.amazon.com/gp/product/1925171027/" title="March 31, 2022">The Effective Change Manager</a>. 
 
-   <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
+* $595 for the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">CCMP (Certified Change Manager)</a>  by the Association of Change Management Professions (ACMP) based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s 64-page Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>. The exam is 150 questions over <strong>3 hours</strong>. The passing percentage of correct answers is not published, nor are what score each candidate received.
+https://www.acmpglobal.org/page/the_standard
 
-   The exam focuses on key skills for change management, including motivating employees, engaging stakeholders, assembling teams, and delivering on effective change strategies. 
-   
-   The <a target="_blank" href="https://change-management-institute.com/acm-foundation/">Foundational</a> $575 foundation level</a> (discounted to $450 with CMI-endorsed training at Prosi or <a target="_blank" href="https://apmg-international.com/product/change-management">APMG</a>) requires a written application essay explaining capabilities and competencies, along with a reference from a manager who has “directly observed your behavior in a change management role.” You’ll also need to complete relevant change management education, either through a CMI-endorsed course or one that aligns with the <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
-
-   The $675 specialist level requires 3-6 years of experience operating at the project or program level as evidenced by a written assessment that provides evidence of your skills, backed up with references from those who have observed your abilities, and you’ll need to complete a virtual interview with an independent assessor. 
-   
-   The $1,050 master level accreditation is for “highly experienced, senior change practitioners to stand out from their peers as leaders in the profession,” and is best suited for those with more than 7 years’ experience.
-
-   <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
-
-* $595 for members of the Association of Change Management Professions (ACMP) is the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">Certified Change<a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a> Change Management Professional (CCMP)</a> of an essay plus 150 multiple-choice questions over 3 hours taken through Kryteriononline.com after <strong>21 hours of face-to-face training</strong> based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>. 
-
-   Vendors include <a href="#Prosci">Prosci</a>, ChangeIt, etc.
-
-   According to their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, applicants are also required to <strong>write an essay for 3 of 5 of domains</strong>:
+   Their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, requires to <strong>write an essay for 3 of these 5 domains</strong>:
 
    1. For a project completed in the last two years, discuss how your assessment of the history, culture, and value systems of an organization helped the employees through a change process and has impacted employee expectations about change management plans and activities during that change project, today, and into the future.
 
@@ -281,35 +280,123 @@ https://www.cio.com/article/3276004/7-change-management-certifications-to-boost-
 
    5. Describe two major lessons learned from Change Management projects/processes that you have been involved in and explain how you included these lessons into current change projects going forward.
 
+   As of this writing Nov 2022, there are 1,525 CCMPs. https://acmp.learningbuilder.com/Profile/MyAccount
+   
+   To meet the 21 hours of live instructor-led instruction:
+
+   * Roger Watson at https://jtask.com/ conducts on-line over 4 fridays 8-2pm PT. for $880 ($780 for ACMP members). Valid for 7 years.
+   * <a href="#Prosci">Prosci</a>
+   * ChangeIt
+   * https://acuityinstitute.com/change-management/
+   $799 Acuity Institute - 3 months of online course access virtual simulation
+   The company also does Six Sigma and Lean training.
+   * Confident Change Management
+   <br /><br />
+
+   https://jtask.com/app/uploads/2022/02/Guide-ACMP-CCMP-Certification-Path-Explained.pdf
+   Certification Path Explained
+
+   Chapter 5 of ACMP's Standard ACMP's Standard consists of 31 processes organized into 5 process groups:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th> Group </th><th> Processses </td></tr>
+   <tr valign="top"><td>1. Evaluate Change <strong>Impact</strong> & Organizational <strong>Readiness</strong> 
+      </td><td align="right"> 15 </td></tr>
+   <tr valign="top"><td>2. <strong>Formulate</strong> the Change Management <strong>Strategy</strong>
+      </td><td align="right"> 7 </td></tr>
+   <tr valign="top"><td>3. Develop the Change Management <strong>Plan</strong>
+      </td><td align="right"> 4 </td></tr>
+   <tr valign="top"><td>4. <strong>Evaluate</strong> the Change Management Plan
+      </td><td align="right"> 2 </td></tr>
+   <tr valign="top"><td>5. <strong>Complete</strong> the Change Management Effort
+      </td><td align="right"> 3 </td></tr>
+   </table>
+
+   The Standard defines the inputs and outputs of each process for these strategies and plans:
+
+   1. Resource Plan
+   2. Communication
+   3. Sponsorship
+   4. Stakeholder Engagement
+   5. Change Impact and Readiness Strategy
+   6. Learning and Development
+   7. Measurement and Benefit Realization
+   8. Sustainability
+   <br /><br />
+
+* In Australia, three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/cmi_change_manager_competency_models_preview_sept17.pdf">Change Manager Competency Model</a> and  <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the <a target="_blank" href="https://www.amazon.com/gp/product/1925171027/" title="March 31, 2022">The Effective Change Manager</a>. 
+
+   <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
+
+   The exam focuses on key skills for change management, including motivating employees, engaging stakeholders, assembling teams, and delivering on effective change strategies. 
+   <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/accreditation_handbook_jul20.pdf">PDF: Accreditation Handbook</a> notes that 
+   
+   The <a target="_blank" href="https://change-management-institute.com/acm-foundation/">$575 foundation level</a> (discounted to $450 with CMI-endorsed training at Prosi or <a target="_blank" href="https://apmg-international.com/product/change-management">APMG</a>) with the <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
+
+   The $675 Specialist level requires 3-6 years of experience operating at the project or program level as evidenced by a written assessment that provides evidence of your skills, backed up with references from those who have observed your abilities, and you’ll need to complete a virtual interview with an independent assessor. 
+   
+   The $1,050 Master level accreditation is for "highly experienced, senior change practitioners to stand out from their peers as leaders in the profession," and is best suited for those with more than 7 years’ experience.
+
+   <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
+
+
 * $1,495 for members of The Association for Talent Development (ATD) for the <a target="_blank" href="https://www.td.org/education-courses/change-management-certificate">ATD Change Management Certificate</a> trains HR/learning professionals on how to improve efficiency, productivity, and service quality. The (six-session over 12 hours, online or 2 days in person) covers: implementing change processes, change management tools, qualities of a change leader, and how to encourage the organization to embrace change. Learn how to conduct diagnostic assessments, define change efforts, analyze data, provide feedback, understand change management theories, select the right change model, create implementation designs, develop communication plans, and manage any consequences of change.
    
 
-* $2,999 for "the most comprehensive online change management course available today" - 11 hours of video online from <a target="_blank" href="https://www.linkedin.com/in/robertlbogue/">Rob Bogue</a>'s <a target="_blank" href="https://confidentchangemanagement.com/change-models/acmp-standard-for-change-management/">confidentchangemanagement.com</a> provides a shortcoming of the ACMP Standard:
+* $2,999 for 11 hours of video online from <a target="_blank" href="https://www.linkedin.com/in/robertlbogue/">Rob Bogue</a>'s <a target="_blank" href="https://confidentchangemanagement.com/change-models/acmp-standard-for-change-management/">confidentchangemanagement.com</a> explains the shortcoming of the ACMP Standard:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1659890660/chg-acmp-.3246x2098_lfdvsj.png"><img align="right" alt="ACMP Flow" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1659890660/chg-acmp-.3246x2098_lfdvsj.png"></a>
-   <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:05]</a> The Standard is ... broader in structure than most models. While the Standard is more detailed than most models, it doesn't appear to help practitioners know what to do. 
-   <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:47]</a> The Standard model is completely process-focused and therefore ignores the skill of the practitioner. Other than development of strategies for communication, stakeholders, and learning, the Standard is quiet in terms of how to motivate stakeholders to want to do the change. This is curious since most of the effort in a change project is developing the desire the change. However, this gets minimal attention in the Standard. Ultimately, the Standard is a tool to understand the project management aspects of change, with minimal support for the people aspects of change.
+   <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:05]</a> "The Standard is ... broader in structure than most models. While the Standard is more detailed than most models, it doesn't appear to help practitioners know what to do."
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:47]</a> "The Standard model is completely process-focused and therefore ignores the skill of the practitioner. Other than development of strategies for communication, stakeholders, and learning, the Standard is quiet in terms of how to motivate stakeholders to want to do the change. This is curious since most of the effort in a change project is developing the desire the change. However, this gets minimal attention in the Standard. Ultimately, the Standard is a tool to understand the project management aspects of change, with minimal support for the people aspects of change."
 
 
 * $3,100 <a target="_blank" href="https://www.imaworldwide.com/aim-change-management-certification">AIM Change Management Professional (ACMP) certification</a> is obtained after a 3-day training (virtual or on-site) by consultant Don Harrison. "it’s a day longer than most, because there is so much to know — including how to manage leaders and how to deal with the power and politics of change". 
 
    Accelerating Implementation Methodology (AIM) focuses on the human side of risk; rather than look at how technology or software fails us, it encourages leaders to strengthen processes that involve employees, given that human-error is one of the biggest risks for failure. The certification is targeted at human resources, organizational development, IT, and business and clinical leaders, as well as project managers.
 
-   <a name="Prosci"></a>
-   
-### Prosci
-
-* The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> program costs <strong>$4,850 for 3-days on-site</strong> or $4,500 virtually to learn their ADKAR models.
+* <strong>$4,850 for 3-days on-site</strong> or $4,500 virtually to learn their ADKAR models. The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> 
 
 
 ## Pro Certifications with a change management component:
 
-* $405 <a href="https://www.cio.com/article/228204/pmp-project-management-certification-guide.html">Project Management Professional (PMP)</a>   (for PMI members) 
+* $405 <a href="https://www.cio.com/article/228204/pmp-project-management-certification-guide.html">Project Management Professional (PMP)</a> (for PMI members) 
 
    https://www.cio.com/article/228204/pmp-project-management-certification-guide.html
 
+   https://jtask.com/app/uploads/2020/09/task-pmp-eco.pdf
+
 * $3,100 <a target="_blank" href="#Certifications">ITIL4 Foundation from Axelos</a> includes a Service Management category
 
+ISO 21500:2012(E) Guidance on project management
+
+<hr />
+
+
+<a name="ACMP Standard"></a>
+
+## ACMP Standard
+
+
+* 5.1.1	Define the Change
+* 5.1.2	Determine Why the Change is Required
+* 5.1.3	Develop a Clear Vision of the Future State
+* 5.1.4	Identify Goals, Objectives and Success Criteria
+* 5.1.5	Identify Sponsors Accountable for the Change
+* 5.1.6	Identify Stakeholders Affected by the Change
+* 5.1.7	Assess the Change Impact
+* 5.1.8	Assess Alignment of the Change with Organizational Strategic Objectives and Performance Measurement
+* 5.1.9	Assess External Factors that may Affect Organizational Change
+* 5.1.10	Assess Organization Culture(s) Related to the Change
+* 5.1.11	Assess Organizational Capacity for Change
+* 5.1.12	Assess Organizational Readiness for Change
+* 5.1.13	Assess Communication Needs, Communication Channels and Ability to Deliver Key Messages
+* 5.1.14	Assess Learning Capabilities
+* 5.1.15	Conduct Change Risks Assessment
+
+
+
+<hr />
 
 ## Tools
 
@@ -324,6 +411,7 @@ There are several conceptual and practical tools:
 5. Histogram
 6. Scatter Diagrams (XY Scatter Chart) and Correlation
 7. Control Charts
+
 
 <a name="FishBone"></a>
 
@@ -426,15 +514,6 @@ DevOps and the Future of Change Management - YouTube
 [6] https://www.inc.com/marcel-schwantes/5-things-the-most-confident-leaders-do-to-manage-change.html
 
 [7] https://blog.doculabs.com/focus-on-objectives-when-capturing-ccm-metrics
-
-https://jtask.com/ccmp-quizzes/
-instructor-led over 4 fridays 8-2pm PT. Nov 4
-$780/$880 You will receive a US $100 discount and pay just US $780. Use the code ALLPRO.
-for 24 Hrs. (21 Hrs. of Instruction)
-
-https://acuityinstitute.com/change-management/
-$799 Acuity Institute - 3 months of online course access virtual simulation
-   The company also does Six Sigma and Lean training.
 
 https://www.credly.com/org/association-of-change-management-professionals/badge/certified-change-management-professional-ccmp
 

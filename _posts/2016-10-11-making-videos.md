@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-01-06"
+date: "2022-11-02"
 file: "making-videos"
 title: "Making videos"
 excerpt: "Tediously using Camtasia, Audacity, OBS, and automating animated PowerPoint on a Mac"
@@ -282,13 +282,19 @@ References:
 
 ## Video
 
-    PROTIP: It's friendlier to see someone's face initially.
+   PROTIP: It's friendlier to see someone's face initially.
 
 15. Record live video or animated introduction and ending.
 
-    The recording would be in 1920x1080 pixels ("Full HD") for 1080p. ("4K", marketed as UHD, is 3840x2160)
+    The recording would be in 1920x1080 pixels ("Full HD") for 1080p. 
+    
+    "4K" is 3840x2160, 8.3 megapixels, aspect ratio 16:9. 
 
-    (BTW Professional DCI 4K cameras record in 4096x2160. "5K" on Mac Retina is 5120x2880. "8K" is 7680x4320.)
+    Ultra HD television is recorded using professional DCI 4K cameras in 4096x2160 (4,000 pixels, 8.8 megapixels, aspect ratio 17:9) for digital cinema.
+
+    "5K" on Mac Retina is 5120x2880. 
+    
+    "8K" is 7680x4320.
 
     The title formats can be re-used, with differeent text.
 
@@ -490,6 +496,37 @@ for video in videos:
         file_extension='mp4',
     ).order_by('resolution').desc().first().download()
 </pre>
+
+## Video viewing
+
+VLC is used by many because it's a free, open-source video player VLC.
+Combine it with the free-while-in-beta Blu-ray ripper app MakeMKV -- can let you play Blu-rays.
+
+1. Download VLC and install it.
+
+   brew install --cask vlc
+
+2. Download the latest beta of MakeMKV(opens in new tab) and install it from
+
+   http://makemkv.com/download/?__c=1
+ 
+3. validate the downloaded file's checksum before you open it, just to be safe. MakeMKV's author makes each beta version of the app available for a few months before it expires; after that, you simply need to download the latest version again. Should you need a beta key to run the app, find the most recent one on MakeMKV's forums:
+
+   https://forum.makemkv.com/forum/viewtopic.php?f=5&t=1053&__c=1
+
+4. Open MakeMKV and go to Preferences > Integration. In the list of eligible apps under the Integration tab in MakeMKVs Preferences, check the box next to VLC, and then click OK. 
+   
+   MakeMKV can share the tools it uses to decrypt Blu-ray discs with other apps, most notably VLC. 
+ 
+   https://forum.makemkv.com/forum/viewtopic.php?f=10&t=7008&__c=1
+
+   Unless or until you download a fresh copy or updated version of VLC in the future, you should only need to do this once to play Blu-rays to your heart's content.
+
+5. Close MakeMKV and open VLC. Make sure your Blu-ray of choice is loaded in your disc drive. 
+6. In VLC, select File > Open Disc. The window that appears should show the Blu-ray you've loaded. 
+7. Click "Open." In my tests, discs loaded in just a few seconds, and VLC offered full menu, audio, and subtitle support. 
+
+   The audio occasionally stuttered on the menu screens as the disc loaded new information, but the movies themselves played back smoothly.
 
 
 ## More Resources

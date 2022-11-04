@@ -836,23 +836,27 @@ Spacemacs, a community driven distro of Emacs, attempts to address some of Emacs
 
 Many tutorials make use of this tool from Jon Skinner.
 
-At time of writing, there were two simultaneous production versions of Sublime Text: 2 and 3.
-This is because Sublime contains its own Python interpreter to run add-ons.
-<strong>Choose version 3.</strong>
+Sublime Text 4 is now available.
+(Previously, there were two simultaneous production versions of Sublime Text: 2 and 3.
+This is because Sublime contains its own Python interpreter to run add-ons.)
 
 
 ### Download and Install Sublime Text
 
-* <a target="_blank" href="https://www.sublimetext.com/3">https://www.sublimetext.com/3</a>
-   is recommended even though it's labeled "beta" because desirable packages are being written for it.
+There is no brew install for Sublime Text.
+ 
+1. <a target="_blank" href="https://www.sublimetext.com/">https://www.sublimetext.com/</a>
 
-* <a target="_blank" href="https://www.sublimetext.com/2">https://www.sublimetext.com/2</a>
+1. Expanded explanations for various platforms:
 
-Expanded explanations for various platforms:
+   * http://docs.sublimetext.info/en/latest/getting_started/install.html
 
-* http://docs.sublimetext.info/en/latest/getting_started/install.html
+   * On Linux: https://github.com/TCattd/sublime-text-linux-installer
 
-* On Linux: https://github.com/TCattd/sublime-text-linux-installer
+1. The zip file is downloaded to your Downloads folder. Clever.
+1. Switch to Finder. Navigate to /Applications folder. 
+1. Drag and drop the "Sublime Text.app" into the /Applications folder.
+
 
 ### Configure for command-line invocation
 
