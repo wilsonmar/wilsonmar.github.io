@@ -15,6 +15,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
+
 ## What is it?
 
 ACMP defines change management as the application of knowledge, skills, abilities, methodologies, processes, tools, and techniques to transition an individual or group from a current state to a future state to achieve expected benefits and organizational objectives. 
@@ -29,11 +32,9 @@ Positive changes to a business can help it be more efficient, less wasteful, and
 
 ## It's not easy
 
-But change management isn't easy.
+<a target="_blank" href="https://hbr.org/2020/06/3-things-youre-getting-wrong-about-organizational-change">A Harvard Business Review article</a> noted that "to stay in business, you need to reinvent yourself every 3 years".
 
-<a target="_blank" href="https://hbr.org/2020/06/3-things-youre-getting-wrong-about-organizational-change">A Harvard Business Review article</a> noted that "to stay in business, you need to reinvent yourself every 3 years"
-
-The most common quote I've seen about change management is from the book "The Prince" (originally in 16th century Italian) by Niccolo Machiavelli, considered by many as the father of modern political science:
+In the book "The Prince" (originally in 16th century Italian) by Niccolo Machiavelli, considered by many as the father of modern political science:
 
 > … there is nothing more difficult and dangerous, or more doubtful of success, than an attempt to introduce a new order of things…
 
@@ -41,21 +42,18 @@ Implementing innovative solutions is hard work, and it requires strong collabora
 
 Research has shown that major transformational change has only a 30% chance of meeting all or most of the results expected. 
 
-Machiavelli continues ...
-
 > Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
 
-Kurt Lewin uses the word "subversion" not to imply any sinister motive, but to state what happens when change isn’t reinforced. https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/
+<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> uses the word "subversion" not to imply any sinister motive, but to state what happens when change isn’t reinforced. 
 
-{% include whatever.html %}
 
 ## The Formula Predicting Success
 
-We can predict whether a change will actually happen by answering a question:
+Beckhard and Harris says we can predict whether a change will actually happen by answering a question:
 
 > Is the pain (cost) of making a change (X) less than the pain of staying the same?
 
-Beckhard and Harris suggest a formula like this:
+In other words, this formula:
 
 <strong>X < (A + E + P)</strong>
 
@@ -81,10 +79,12 @@ The above means that we can tilt the odds by:
 
 ## Stages of change
 
+Many authors have used different words to describe the process of change.
+
 <a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
 
-(At the bottom of the diagram), Brooks describes a Neutral Zone between Ending, Losing, and Letting Go on the way to a New Beginning.
+(At the bottom of the diagram), * <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a> describes a "Neutral Zone" between Ending, Losing, and Letting Go on the way to a New Beginning.
 
 <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages 
 to conceptualize broad categories of the change process before discovering more detailed models:
@@ -147,27 +147,6 @@ Stages:
    5. Maintenance.
    <br /><br />
 
-<a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">John K. Kotter</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review:
-
-1. Create Climate for Change:<br />
-   1). Create Urgency<br />
-   2). Build a Coalition<br />
-   3). Create a Vision
-   <br /><br />
-
-2. Engage and Enable the Organization:<br />
-   4). Communicate that Vision<br />
-   5). Empower Others to overcome Obstacles<br />
-   6). Create Short-Term Quick Gains
-   <br /><br />
-
-3. Implement & Sustain:<br />
-   7). Build on the Change<br />
-   8). Embed (Anchor) the Change
-   <br /><br />
-
-
-<a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a>
 
    
    <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
@@ -186,9 +165,31 @@ Stages:
 
 ## Influencers
 
+<a name="JohnKotter"></a>
+
 * <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
 
    <a target="_blank" href="https://www.youtube.com/watch?v=Pc7EVXnF2aI">"The Evolution of the 21st Centry Organization"</a>
+
+   <a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">John K. Kotter</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review:
+
+   1. Create Climate for Change:<br />
+      1). Create Urgency<br />
+      2). Build a Coalition<br />
+      3). Create a Vision
+      <br /><br />
+
+   2. Engage and Enable the Organization:<br />
+      4). Communicate that Vision<br />
+      5). Empower Others to overcome Obstacles<br />
+      6). Create Short-Term Quick Gains
+      <br /><br />
+
+   3. Implement & Sustain:<br />
+      7). Build on the Change<br />
+      8). Embed (Anchor) the Change
+      <br /><br />
+
 
 * <a target="_blank" href="https://linkedin.com/in/adammgrant/">Adam Grant</a>, Professor of Organizational Psychology at Wharton School of Business in Pennsylvania. @AdamMGrant
 
@@ -196,7 +197,7 @@ Stages:
 
 * <a target="_blank" href="https://linkedin.com/in/nicktasler/">Nick Tealser</a>, @NickTasker
 
-* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker @YvonneRAkpoveta
+* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker - @YvonneRAkpoveta
 
 * <a target="_blank" href="https://linkedin.com/in/carstentams/">Carsten Tams</a>, Consultant & Blogger (on Forbes) @Carsten_tams
 
@@ -258,14 +259,16 @@ Listed from cheapest to most expensive/prestigeous:
 * $300 <a target="_blank" href="https://www.msicertified.com/business/change-management-certification/">Change Management Specialist (CMS)</a> from MSI (Management and Strategy Institute) is 2-hour online. Fee includes self-paced online training materials that covers basic change management principles.
 
 
-* $340 <a target="_blank" href="https://apmg-international.com/product/change-management">Organizational Change Management Foundation</a> (among <a target="_blank" href="https://apmg-international.com/search?search_api_views_fulltext=contact%20OR%20contact%20OR%20apmg">other certifications administered by APGM-International</a>) 
+* $340 <a target="_blank" href="https://apmg-international.com/product/change-management">Organizational Change Management Foundation</a> (among <a target="_blank" href="https://apmg-international.com/search?search_api_views_fulltext=contact%20OR%20contact%20OR%20apmg">other certifications administered by APGM-International</a> based in London, UK), which has 45,822 followers on <a target="_blank" href="https://www.linkedin.com/company/apmg-international/">their LinkedIn page</a>.
+
 
 * $390 <a target="_blank" href="https://apmg-international.com/product/certified-local-change-agent">Certified Local Change Agent (CCLA)</a> is administered by APGM for leaders and staff after a 2-day class. Open book pass 50% of 40 questions over 45 minutes.
 
    The exam covers approaches to helping others engage with organizational change, aligning changes with departmental or organizational changes, developing change plans, and creating relationships between change professionals in the organization.
 
+   ### CCMP from ACMP
 
-* $595 for the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">CCMP (Certified Change Manager)</a>  by the Association of Change Management Professions (ACMP) based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s 64-page Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>. The exam is 150 questions over <strong>3 hours</strong>. The passing percentage of correct answers is not published, nor are what score each candidate received.
+* <img align="right" alt="ccmp-logo-179x225.jpg" width="179" height="225" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667626383/ccmp-logo-179x225_zckb7z.jpg">$595 for the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">CCMP (Certified Change Manager)</a>  by the Association of Change Management Professions (ACMP) based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s 64-page Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>. The exam is 150 questions over <strong>3 hours</strong>. The passing percentage of correct answers is not published, nor are what score each candidate received.
 https://www.acmpglobal.org/page/the_standard
 
    Their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, requires to <strong>write an essay for 3 of these 5 domains</strong>:
@@ -280,9 +283,11 @@ https://www.acmpglobal.org/page/the_standard
 
    5. Describe two major lessons learned from Change Management projects/processes that you have been involved in and explain how you included these lessons into current change projects going forward.
 
-   As of this writing Nov 2022, there are 1,525 CCMPs. https://acmp.learningbuilder.com/Profile/MyAccount
+   As of this writing Nov 2022, there are 1,525 CCMPs. 
    
-   To meet the 21 hours of live instructor-led instruction:
+   https://acmp.learningbuilder.com/Profile/MyAccount
+   
+   To meet the 21 hours of live instructor-led instruction (before registering for the exam):
 
    * Roger Watson at https://jtask.com/ conducts on-line over 4 fridays 8-2pm PT. for $880 ($780 for ACMP members). Valid for 7 years.
    * <a href="#Prosci">Prosci</a>
@@ -299,7 +304,7 @@ https://www.acmpglobal.org/page/the_standard
    Chapter 5 of ACMP's Standard ACMP's Standard consists of 31 processes organized into 5 process groups:
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Group </th><th> Processses </td></tr>
+   <tr valign="bottom"><th> Group </th><th align="right"> Processses </th></tr>
    <tr valign="top"><td>1. Evaluate Change <strong>Impact</strong> & Organizational <strong>Readiness</strong> 
       </td><td align="right"> 15 </td></tr>
    <tr valign="top"><td>2. <strong>Formulate</strong> the Change Management <strong>Strategy</strong>
@@ -351,14 +356,12 @@ https://www.acmpglobal.org/page/the_standard
    <a target="_blank" href="https://www.youtube.com/watch?v=FgJ7QlEqL7w">[3:47]</a> "The Standard model is completely process-focused and therefore ignores the skill of the practitioner. Other than development of strategies for communication, stakeholders, and learning, the Standard is quiet in terms of how to motivate stakeholders to want to do the change. This is curious since most of the effort in a change project is developing the desire the change. However, this gets minimal attention in the Standard. Ultimately, the Standard is a tool to understand the project management aspects of change, with minimal support for the people aspects of change."
 
 
-* $3,100 <a target="_blank" href="https://www.imaworldwide.com/aim-change-management-certification">AIM Change Management Professional (ACMP) certification</a> is obtained after a 3-day training (virtual or on-site) by consultant Don Harrison. "it’s a day longer than most, because there is so much to know — including how to manage leaders and how to deal with the power and politics of change". 
-
-   Accelerating Implementation Methodology (AIM) focuses on the human side of risk; rather than look at how technology or software fails us, it encourages leaders to strengthen processes that involve employees, given that human-error is one of the biggest risks for failure. The certification is targeted at human resources, organizational development, IT, and business and clinical leaders, as well as project managers.
+* $3,100 <a target="_blank" href="https://www.imaworldwide.com/aim-change-management-certification">AIM Change Management Professional certification</a> is obtained after a 3-day training (virtual or on-site) by consultant Don Harrison. "it’s a day longer than most, because there is so much to know — including how to manage leaders and how to deal with the power and politics of change". AIM focuses on the human side of risk; rather than look at how technology or software fails us, it encourages leaders to strengthen processes that involve employees, given that human-error is one of the biggest risks for failure. The certification is targeted at human resources, organizational development, IT, and business and clinical leaders, as well as project managers.
 
 * <strong>$4,850 for 3-days on-site</strong> or $4,500 virtually to learn their ADKAR models. The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> 
 
 
-## Pro Certifications with a change management component:
+## Certifications with a change management component:
 
 * $405 <a href="https://www.cio.com/article/228204/pmp-project-management-certification-guide.html">Project Management Professional (PMP)</a> (for PMI members) 
 
