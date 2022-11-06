@@ -428,8 +428,8 @@ Vault server has stopped.
 
    Each component illustrated in the diagram is a container running within Docker.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg">
-   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg">
+   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg"></a>
 
 1. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
