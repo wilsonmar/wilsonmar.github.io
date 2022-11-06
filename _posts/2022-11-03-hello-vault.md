@@ -562,9 +562,10 @@ services:
    <a name="PortsUsed"></a>
    
    ### Ports used by each container
-
+   <!--
    <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
    </strong></pre>
+   -->
 
    <pre>NAMES                               PORTS
 sample-app-app-1                    0.0.0.0:8080->8080/tcp
@@ -586,8 +587,10 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
    
    ### Container invocations
 
+   <!--
    <pre><strong>docker ps --format "table &#123;&#123;.Names&#125;&#125;\t&#123;&#123;.Command&#125;&#125;"
    </strong></pre>
+   -->
 
    <pre>NAMES                               COMMAND
 sample-app-app-1                    "java -jar /app.jar"
@@ -615,6 +618,11 @@ sample-app-database-1               "docker-entrypoint.s…"
 
    <pre><strong>cat run-tests.sh</strong></pre>
 
+   The shell script <tt>run-tests.sh</tt> invokes two calls to the Web App:
+
+   A. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+
+   B. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
 
 
 <a name="Flowchart"></a>
@@ -625,15 +633,15 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667767708/hello-vault-flow-1920x1080_a1zhpn.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667767708/hello-vault-flow-1920x1080_a1zhpn.jpg"></a>
 
-1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
+   1. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
 
-   A. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+   2. The app get static secret
 
-   B. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
+   6. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
 
-2. To generate secrets ...
+   1. To generate secrets ...
 
-   A. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
+   1. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
 
    <pre>vault kv put kv-v2/api-key apikey=my-secret-key
    </pre>
@@ -651,18 +659,18 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
    </pre>
 
-3. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+   2. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
 
    "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
 
    Even the root account cannot read the contents of an individual cubbyhole.
    -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
-4. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+   3. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
 
    The token sent to the Web App acts as a pointer to the user's Cubbyhole.
  
-5. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+   4. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
 
    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
    Thus, the library can detect malfeasance with the response-wrapping token.
@@ -678,7 +686,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
-1. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+   5. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
 
    NOTE: PostgreSQL is used in this sample, but Vault also works with MySQL, Microsoft SQL Server, etc.
       
@@ -755,7 +763,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    Unspecified in code, Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
 
-12. View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+9.  View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat pom.xml</strong></pre>
 
