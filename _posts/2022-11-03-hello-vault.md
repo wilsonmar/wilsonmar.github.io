@@ -486,22 +486,15 @@ services:
 
 5. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
 
-   <pre><strong>
-   docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
-   </strong></pre>
-   
-   <tt>docker ps --format "table \{\{.Names}}\t{{.Ports}}"
-   </tt>
-
-   <pre><strong>docker ps --format "table {{.Names\}\}\t\{\{.Status\}\}\t\{\{.Ports\}\}"
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
    </strong></pre>
 
-   <pre>NAMES                                   STATUS                        PORTS
-   sample-app-app-1                    Up 3 minutes (healthy)   0.0.0.0:8080->8080/tcp
-   sample-app-trusted-orchestrator-1   Up 3 minutes (healthy)
-   sample-app-vault-server-1           Up 3 minutes (healthy)   0.0.0.0:8200->8200/tcp
-   sample-app-secure-service-1         Up 3 minutes (healthy)   0.0.0.0:1717->80/tcp
-   sample-app-database-1               Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp
+   <pre>NAMES                               PORTS
+sample-app-app-1                    0.0.0.0:8080->8080/tcp
+sample-app-trusted-orchestrator-1   
+sample-app-vault-server-1           0.0.0.0:8200->8200/tcp
+sample-app-secure-service-1         0.0.0.0:1717->80/tcp
+sample-app-database-1               0.0.0.0:5432->5432/tcp
    </pre>
 
    ### Output logs
