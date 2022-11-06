@@ -490,15 +490,15 @@ services:
 
 5. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
 
-   <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Command}}\t{{.Ports}}"
    </strong></pre>
 
-   <pre>NAMES                               PORTS
-sample-app-app-1                    0.0.0.0:8080->8080/tcp
-sample-app-trusted-orchestrator-1   
-sample-app-vault-server-1           0.0.0.0:8200->8200/tcp
-sample-app-secure-service-1         0.0.0.0:1717->80/tcp
-sample-app-database-1               0.0.0.0:5432->5432/tcp
+   <pre>NAMES                               COMMAND                  PORTS
+sample-app-app-1                    "java -jar /app.jar"     0.0.0.0:8080->8080/tcp
+sample-app-trusted-orchestrator-1   "./entrypoint.sh"        
+sample-app-vault-server-1           "/vault/entrypoint.sh"   0.0.0.0:8200->8200/tcp
+sample-app-secure-service-1         "/docker-entrypoint.…"   0.0.0.0:1717->80/tcp
+sample-app-database-1               "docker-entrypoint.s…"   0.0.0.0:5432->5432/tcp
    </pre>
 
    ### Output logs
@@ -521,7 +521,7 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
 
 This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
 
-   <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/tree/main/sample-app#docker-compose-architecture"><img alt="hello-vault-flow-1287x847.jpg" width="1287" height="847" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667737711/hello-vault-flow-1287x847_ubbae3.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667756054/hello-vault-flow-1920x1080_bxoigy.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667756054/hello-vault-flow-1920x1080_bxoigy.jpg"></a>
 
    Each component illustrated in the diagram is a container running within Docker, as defined by docker compose. In production, they would be created using Terraform.
 
@@ -597,3 +597,100 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
 
 
+
+
+
+
+   
+   <a name="APP_ADDRESS"></a>
+   
+   ### APP_ADDRESS
+
+6. Notice <tt>APP_ADDRESS</tt> is hard-coded:
+
+    <tt>APP_ADDRESS="http://localhost:8080"</tt>
+
+    But in production, the program would instead <strong>retrieve</strong> APP_ADDRESS from a system variable. Also, production APP_ADDRESS would, instead of "http", specify use of secure "https" protocol (on default port 443).
+    
+    Also, Production code would retrieve the <tt>APP_TOKEN</tt> to ensure valid identity for using Vault.
+
+
+    <a name="Dockerfile"></a>
+
+    ### Dockerfile
+
+7. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+
+    <pre>
+    FROM maven:3.8.4-openjdk-17 as build
+    &nbsp;
+    COPY . /build-project
+    WORKDIR /build-project
+    &nbsp;
+    RUN mvn clean package -DskipTests
+    &nbsp;
+    FROM openjdk:17
+    EXPOSE 8080
+    COPY --from=build /build-project/target/hello-vault-spring.jar /app.jar
+    ENTRYPOINT ["java","-jar", "/app.jar"]
+    &nbsp;
+    HEALTHCHECK \
+        --start-period=1s \
+        --interval=10s \
+        --timeout=1s \
+        --retries=30 \
+            CMD curl --fail -s http://localhost:8080/healthcheck || exit 1
+    </pre>
+
+    ### Occassional version update
+    
+    The top line FROM clause retrieves from maven hub openjdk version 17.
+    This would needs to be updated occassionally.
+
+    build-project folder???
+
+8. This invokes Maven to compile programs:
+   
+    <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
+
+   Unspecified in code, Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
+
+12. View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+ 
+   <pre><strong>cat pom.xml</strong></pre>
+
+   In the file, note that versions need to be updated over time. See
+   * https://github.com/spring-projects/spring-boot/releases is v2.7.5 as of October, 2022
+   * https://github.com/spring-projects/spring-framework/releases
+
+12. File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
+
+    <pre>
+    package com.hashicorp.hellovaultspring;
+    &nbsp;
+    import org.junit.jupiter.api.Test;
+    import org.springframework.boot.test.context.SpringBootTest;
+    &nbsp;
+    @SpringBootTest
+    class HelloVaultSpringApplicationTests {
+    &nbsp;
+        @Test
+        void contextLoads() {
+        }
+    &nbsp;
+    }
+    </pre>
+
+
+
+    which specifies java to compile using using 
+   
+13. Copy the app.jar file created to the root folder:
+
+    <tt>COPY --from=build /build-project/target/hello-vault-spring.jar /app.jar</tt> 
+
+14. Invoke the <tt>app.jar</tt> program from above:
+ 
+    <tt>ENTRYPOINT ["java","-jar", "/app.jar"]</tt>
+
+  
