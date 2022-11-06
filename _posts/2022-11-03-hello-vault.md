@@ -465,9 +465,7 @@ Vault server has stopped.
 
     build-project folder???
 
-18. Maven opens file <tt>pom.xml</tt>, which specifies java source files to compile.
-
-    https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/pom.xml
+18. Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">>pom.xml</a>, which specifies java source files to compile.
    
 19. File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
 
