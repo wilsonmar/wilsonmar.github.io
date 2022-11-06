@@ -507,9 +507,9 @@ Vault server has stopped.
 
 25. The "trap" line is executed after the service exits:
 
-   <pre># bring down the services on exit
-   trap 'docker compose down --volumes' EXIT
-   </pre>
+    <pre>/# bring down the services on exit
+    trap 'docker compose down --volumes' EXIT
+    </pre>
 
 26. This retrieves from Vault's payments secret:
 
