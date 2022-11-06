@@ -3,7 +3,7 @@ layout: post
 date: "2022-11-03"
 file: "hello-vault"
 title: "Hello-Vault"
-excerpt: "How to code your app to use HashiCorp Vault: write and read static secrets and eliminate database password theft with cubbyholes and wrapped secrets"
+excerpt: "How to code your app to use HashiCorp Vault to write and read static secrets and eliminate database password theft with cubbyholes and wrapped secrets"
 tags: [secrets]
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -109,7 +109,9 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
 4. Install the compiler for your language of choice:
 
-   For Java, Zulu is my favorite open-source edition of Java:
+   ### Install Java
+
+   For Java, Zulu is my favorite open-source compiler:
 
    <pre><strong>brew install zulu
    </strong></pre>
@@ -126,18 +128,80 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    brew install --cask temurin11
    </strong></pre>
 
-   Go:
+   ### Install Go
 
-   Dotnot:
+   <pre><strong>brew install golang
+   go version
+   </strong></pre>
+
+   Sample response:
+
+   <pre>go version go1.19.2 darwin/arm64</pre>
+
+   See https://formulae.brew.sh/formula/go
+   https://jimkang.medium.com/install-go-on-mac-with-homebrew-5fa421fc55f5
+
+   <pre><strong>mkdir -p $HOME/go/{bin,src,pkg}
+   </strong></pre>
+
+   In ~/.bashrc or .zshrc
+
+   <pre>export GOPATH=$HOME/go
+   export GOROOT="$(brew --prefix golang)/libexec"
+   export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+   </pre>   
+
+   ### Install C#
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=w8vQnmS3EZ4">VIDEO</a>:
+
+   1. Click <a target="_blank" href="https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.402-macos-arm64-installer">
+   this link to download dotnet-sdk-6.0.402-osx-arm64.pkg</a> at https://dotnet.microsoft.com
+   (Ignore https://learn.microsoft.com/en-us/dotnet/core/install/macos)
+
+   2. Expand the zip. Click Continue, Install. Password. Close.
+   3. Verify SDK installed:
+
+   <pre><strong>dotnet --list-sdks
+   </strong></pre>
+
+   Sample response:
+
+   <pre>6.0.401 [/usr/local/share/dotnet/sdk]
+   6.0.402 [/usr/local/share/dotnet/sdk]
+   </pre>
+
+   4. Install Visual Studo Code Unversal Stable version from https://code.visualstudio.com by clicking <a target="_blank" href="https://code.visualstudio.com/docs/?dv=osx">this link</a> for file "VSCode-darwin-universal.zip".
+   5. Unzip.
+   6. Open VSCode.
+   7. Install the C# extension.
+   8. Verify .NET runtimes (.NET Core) installed:
+
+   <pre><strong>dotnet --list-runtimes
+   </strong></pre>
+
+   <pre>Microsoft.AspNetCore.App 6.0.9 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+   Microsoft.NETCore.App 6.0.9 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+   </pre>
+
+   <a target="_blank" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version">C# versions</a>:<br />
+   C# 11 is supported only on .NET 7 and newer versions.<br />
+   C# 10 is supported only on .NET 6 and newer versions.<br />
+   C#  9 is supported only on .NET 5 and newer versions.
+
+   ### Install Ruby
 
    Ruby:
 
+   ### Install Rust
+
    Rust:
+
+   ### Install Python
 
    Python:
 
-   <pre><strong>
-   brew install python 
+   <pre><strong>brew install python 
    python --version
    pip install virtualenv   # used to:
    python -m venv venv   # create venv enviornment to activate by:
@@ -146,6 +210,8 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    </strong></pre>
 
    <tt>virtualvenv</tt> is used to ensure that Python packages play nice with each other - so that other Python projects with competing or incompatible versions of the same add-ons (dependencies) don't collide with this package.
+
+   ### Verify Java
 
 5. Verify version to see if install took: 
 
@@ -156,8 +222,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    You should see something like this:
    
-   <pre>
-   openjdk 19.0.1 2022-10-18
+   <pre>openjdk 19.0.1 2022-10-18
    OpenJDK Runtime Environment Zulu19.30+11-CA (build 19.0.1+10)
    OpenJDK 64-Bit Server VM Zulu19.30+11-CA (build 19.0.1+10, mixed mode, sharing)
    </pre>
@@ -757,8 +822,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
     PROTIP: "Rustic Webcam" and "Haunted Coloring Book" are returned because the database was loaded from the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/setup/database/2-data.sql">2-data.sql</a> file within folder /setup/database:
     
-    <pre>
-    INSERT INTO products (name)
+    <pre>INSERT INTO products (name)
     VALUES
         ('Rustic Webcam'),
         ('Haunted Coloring Book');
@@ -768,3 +832,69 @@ This seems so complex (clever) that I am making a video to gradually (logically)
         ('Winston', 'Higginsbury', 'higgs@example.com',    '555-555-5555'),
         ('Vivian',  'Vavilov',     'vivivavi@example.com', '555-555-5556');
     </pre>     
+
+
+
+   ### Create username and password in Database
+
+12. This <tt>2-data.sql</tt> was invoked to define a role used to create a user within the database:
+
+    <pre>CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
+    CREATE ROLE readonly NOINHERIT;
+    &nbsp;
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
+    </pre>
+
+
+   ### Ad hoc request
+
+11. Open another Terminal to define the <a href="#APP_ADDRESS">APP_ADDRESS defined earlier</a>:
+
+    <pre>APP_ADDRESS="http://localhost:8080"
+    </pre>
+
+21. Issue an ad hoc call:
+
+    <pre><strong>echo "$APP_ADDRESS"
+    curl --silent --request GET "${APP_ADDRESS}/products"
+    </strong></pre>
+
+
+    ### Inside the app
+
+22. Set breakpoint in the Java program: ???
+
+
+
+<hr />
+
+## Renewal of keys
+
+1. View file <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/vault_renewal.go">vault_renewal.go</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=24m49s">VIDEO</a>: this sample code uses an extraordinaryly short TTL (Time To Live) in order to trigger renewals to show how it works. In production, timeouts are <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=31m38s">generally 30-60 minutes</a>.
+
+
+   ???
+
+   <a target="_blank" href="https://github.com/bomonike/hello-vault-python/blob/main/sample-app/pics/renewal-diagram.svg"><img width="200" src="sample-app/pics/renewal-diagram.svg"></a>
+
+   See <a target="_blank" href="https://www.youtube.com/watch?v=YrtTR0VDlDk">VIDEO:</a>
+   Vault 1.2: Database Credential Rotation and Identity Tokens
+
+Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>.
+The equivalent CLI command to specify daily renewal period (repeatable indefinitely):
+
+   <pre>
+   vault write auth/token/create policies="example" period="24h"
+   </pre
+   
+   The number of times that a token can be renewed is set by <tt>-use-limit=2</tt>
+   
+<hr />
+
+## References
+
+* https://medium.com/hashicorp-engineering/essential-elements-of-vault-part-1-5a64d3de3be8
+* https://medium.com/hashicorp-engineering/essential-patterns-of-vault-part-2-b4d34976f1dc
+
