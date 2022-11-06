@@ -297,7 +297,7 @@ Vault server has stopped.
    <pre><strong>cd sample-app</strong></pre>
 
 
-### run.sh
+   ### run.sh
 
 1. Let's use a text editor code (VSCode) to look at the <tt>run.sh</tt> file within sample-app.
 
@@ -310,7 +310,7 @@ Vault server has stopped.
    docker compose up -d --build
    </pre>
 
-   Those commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">>docker-compose.yml</a> which defines the containers created in the next step.
+   Those commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> which defines the containers created in the next step.
 
    The <tt>--build</tt> parameter invokes a build referencing the <tt>Dockerfile</tt>.
 
@@ -324,22 +324,22 @@ Vault server has stopped.
 
    <pre>...
    [+] Running 8/8
-      ⠿ Network sample-app_default               Created                0.1s 
-      ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created                0.0s 
-      ⠿ Container sample-app-secure-service-1            Healthy               11.1s
-      ⠿ Container sample-app-database-1                  Healthy               11.1s
-      ⠿ Container sample-app-vault-server-1              Healthy               11.0s
-      ⠿ Container sample-app-trusted-orchestrator-1      Healthy               11.9s
-      ⠿ Container sample-app-app-1               Healthy               22.7s
-      ⠿ Container sample-app-healthy-1                   Started               22.9s
+      ⠿ Network sample-app_default                       Created            0.1s 
+      ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created            0.0s 
+      ⠿ Container sample-app-secure-service-1            Healthy           11.1s
+      ⠿ Container sample-app-database-1                  Healthy           11.1s
+      ⠿ Container sample-app-vault-server-1              Healthy           11.0s
+      ⠿ Container sample-app-trusted-orchestrator-1      Healthy           11.9s
+      ⠿ Container sample-app-app-1                       Healthy           22.7s
+      ⠿ Container sample-app-healthy-1                   Started           22.9s
    </pre>
 
-3. To ensure that Docker processes, expand the width of the Terminal wide and:
+3. To ensure that Docker processes are running, expand the width of the Terminal wide and:
 
-      <pre><strong>docker ps
-      </strong></pre>
+   <pre><strong>docker ps
+   </strong></pre>
 
-      ### processes in Docker
+   ### processes in Docker
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom"><th> Setup in yaml </th><th> Container/Volume </th></tr>
@@ -364,16 +364,15 @@ Vault server has stopped.
 
 4.  Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
 
-    <pre><strong>cd ..
-    cd sample-app
+    <pre><strong>
     code run-tests.sh
     </strong></pre>
 
 5.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
-    <tt># bring down the services on exit
+    <pre># bring down the services on exit
     \# trap 'docker compose down --volumes' EXIT
-    </tt>
+    </pre>
 
 6.  Save the file and exit.
 
