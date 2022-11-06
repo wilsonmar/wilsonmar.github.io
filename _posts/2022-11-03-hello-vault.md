@@ -682,8 +682,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
     </pre>
 
 
-
-    which specifies java to compile using using 
+    which specifies java to compile using  
    
 13. Copy the app.jar file created to the root folder:
 
@@ -694,3 +693,78 @@ This seems so complex (clever) that I am making a video to gradually (logically)
     <tt>ENTRYPOINT ["java","-jar", "/app.jar"]</tt>
 
   
+    ### Invoking the app HEALTHCHECK
+
+15. The <tt>HEALTHCHECK</tt> in the <a href="#Dockerfile">Dockerfile</a> makes a call to the <tt>healthcheck</tt> API to the server.
+
+16. The "trap" line is executed after the service exits:
+
+    <pre>/# bring down the services on exit
+    trap 'docker compose down --volumes' EXIT
+    </pre>
+
+17. This retrieves from Vault's payments secret:
+
+    <pre># TEST 1: POST /payments (static secrets)
+    output1=$(curl --silent --request POST "${APP_ADDRESS}/payments")
+    </pre>
+
+    That is what causes the response:
+
+    <pre>[TEST 1]: output: {"message":"hello world!"}</pre>
+
+    "hello world" was issued from <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/setup/secure-service/default.conf.template">file default.conf.template</a> within folder /sample-app/setup/secure-service/default.conf.template which defines server responses:
+
+    <pre>
+    server {
+        listen       80;
+        server_name  localhost secure-service;
+        default_type application/json;
+     &nbsp;
+        location /healthcheck {
+            return 200 "{\"message\":\"ok\"}";
+        }
+     &nbsp;
+        location /api {
+            if ($http_x_api_key != "${EXPECTED_API_KEY}") {
+                return 401 "{\"error\":\"unauthorized\"}";
+            }
+            return 200 "{\"message\":\"hello world!\"}";
+        }
+     &nbsp;
+        location / {
+            return 404 "{\"error\":\"resource not found\"}";
+        }
+    }
+    </pre>
+
+    QUESTION: Can you think of a better response than "hello world". 
+    How about "posted"?
+
+    QUESTION: In Production, "localhost" would not be there. What replaces it?
+
+18. This obtains the products secret:
+
+    <pre># TEST 2: GET /products (dynamic secrets)
+    output2=$(curl --silent --request GET "${APP_ADDRESS}/products")
+    </pre>
+
+    That curl CLI command is what causes response:
+
+    <pre>[TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
+    [TEST 2]: OK
+    </pre>
+
+    PROTIP: "Rustic Webcam" and "Haunted Coloring Book" are returned because the database was loaded from the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/setup/database/2-data.sql">2-data.sql</a> file within folder /setup/database:
+    
+    <pre>
+    INSERT INTO products (name)
+    VALUES
+        ('Rustic Webcam'),
+        ('Haunted Coloring Book');
+    &nbsp;
+    INSERT INTO customers (first_name, last_name, email, phone)
+    VALUES
+        ('Winston', 'Higginsbury', 'higgs@example.com',    '555-555-5555'),
+        ('Vivian',  'Vavilov',     'vivivavi@example.com', '555-555-5556');
+    </pre>     
