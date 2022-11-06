@@ -3,7 +3,7 @@ layout: post
 date: "2022-11-03"
 file: "hello-vault"
 title: "Hello-Vault"
-excerpt: "How to code your app to use Vault: write and read static secrets and eliminate database password theft with cubbyholes and wrapped secrets"
+excerpt: "How to code your app to use HashiCorp Vault: write and read static secrets and eliminate database password theft with cubbyholes and wrapped secrets"
 tags: [secrets]
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -17,7 +17,7 @@ comments: true
 
 ## Why this?
 
-Keeping secrets secret is a fundamental skill for all developers in today's hostile internet full of scammers and even state-sponsored terrorists.
+Keeping secrets secret is a fundamental skill for all developers, especially in today's hostile internet full of scammers, ransomware gangs, and state-sponsored terrorism using "killware".
 
 This is like working on your TV the different remotes and logins to setup different streaming services.
 Once you go through the motions, you can get through quickly (for awhile until you change TV).
@@ -203,7 +203,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    <a name="DevAuthentication"></a>
    
-   ### Dev Authenticatio
+   ### Dev Authentication
 
    A message is not issued for authentication unless it's unsuccessful: 
    "unable to initialize Vault client:"
@@ -316,51 +316,51 @@ Vault server has stopped.
 
 2. Do the run:
 
-    <pre><strong>
-    ./run.sh
-    </strong></pre>
-
-    Wait for a bunch of lines to scroll by until ending with this list and statuses:
-
-    <pre>...
-    [+] Running 8/8
-        ⠿ Network sample-app_default               Created                0.1s 
-        ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created                0.0s 
-        ⠿ Container sample-app-secure-service-1            Healthy               11.1s
-        ⠿ Container sample-app-database-1                  Healthy               11.1s
-        ⠿ Container sample-app-vault-server-1              Healthy               11.0s
-        ⠿ Container sample-app-trusted-orchestrator-1      Healthy               11.9s
-        ⠿ Container sample-app-app-1               Healthy               22.7s
-        ⠿ Container sample-app-healthy-1                   Started               22.9s
-    </pre>
-
-3.  To ensure that Docker processes, expand the width of the Terminal wide and:
-
-   <pre><strong>docker ps
+   <pre><strong>
+   ./run.sh
    </strong></pre>
 
-   ### processes in Docker
+   Wait for a bunch of lines to scroll by until ending with this list and statuses:
+
+   <pre>...
+   [+] Running 8/8
+      ⠿ Network sample-app_default               Created                0.1s 
+      ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created                0.0s 
+      ⠿ Container sample-app-secure-service-1            Healthy               11.1s
+      ⠿ Container sample-app-database-1                  Healthy               11.1s
+      ⠿ Container sample-app-vault-server-1              Healthy               11.0s
+      ⠿ Container sample-app-trusted-orchestrator-1      Healthy               11.9s
+      ⠿ Container sample-app-app-1               Healthy               22.7s
+      ⠿ Container sample-app-healthy-1                   Started               22.9s
+   </pre>
+
+3. To ensure that Docker processes, expand the width of the Terminal wide and:
+
+      <pre><strong>docker ps
+      </strong></pre>
+
+      ### processes in Docker
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom"><th> Setup in yaml </th><th> Container/Volume </th></tr>
    <tr valign="top"><td> app:
-       </td><td> sample-app-app-1   </td></tr>
+      </td><td> sample-app-app-1   </td></tr>
    <tr valign="top"><td>vault-server:
    </td><td> sample-app-vault-server-1  </td></tr>
    <tr valign="top"><td> trusted-orchestrator:
-    </td><td> sample-app-trusted-orchestrator-1 </td></tr>
+   </td><td> sample-app-trusted-orchestrator-1 </td></tr>
    <tr valign="top"><td> database:
-       </td><td> sample-app-database-1 </td></tr>
+      </td><td> sample-app-database-1 </td></tr>
    <tr valign="top"><td> secure-service:
-       </td><td> sample-app-secure-service-1 </td></tr>
+      </td><td> sample-app-secure-service-1 </td></tr>
    <tr valign="top"><td> healthy:
-       </td><td> sample-app-healthy-1   </td></tr>
+      </td><td> sample-app-healthy-1   </td></tr>
    <tr valign="top"><td> volumes:
-       </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
+      </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
    </table>
 
 
-   ### run-tests.sh
+    ### run-tests.sh
 
 4.  Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
 
