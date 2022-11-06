@@ -341,6 +341,10 @@ Vault server has stopped.
 
     Otherwise, you should see a bunch of lines scroll by until ending with this list and statuses:
 
+   <a name="ContainerServices"></a>
+   
+   ### Container services
+
    <pre>
     [+] Running 8/8
       ⠿ Network sample-app_default                       Created   0.1s 
@@ -353,8 +357,13 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started  22.9s
    </pre>
 
+   <a name="ContainersFlowchart"></a>
+
+   ### Container services flowchart
+
    Each of these is explained in the <a href="#Flowchart">flowchart below</a>.
 
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667753746/hello-vault-images-1920x1080_hxdgvi.jpg"><img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667753746/hello-vault-images-1920x1080_hxdgvi.jpg"></a>
 
    ### Edit run-tests.sh
 
@@ -568,8 +577,9 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
    * https://www.vaultproject.io/docs/concepts/response-wrapping 
    * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
-   
-   BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" scenario after a breach).
+   <br /><br />
+
+   BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
 1. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
 
