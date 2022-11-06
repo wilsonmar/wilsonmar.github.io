@@ -529,23 +529,21 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    A. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
 
-   ```
-   vault kv put kv-v2/api-key apikey=my-secret-key
-   ```
+   <pre>vault kv put kv-v2/api-key apikey=my-secret-key
+   </pre>
 
    B. Vault has created integrations with database vendors for the database to create (dynamically) temporary (short-lived) credentials (instead of long-lived static passwords). The equivalent CLI command is:
 
-   ```
-   kv put secret/mysql/webapp db-name-"users" username="admin" password="12345"
-   ```
+   <pre>kv put secret/mysql/webapp db-name-"users" \
+   username="admin" password="12345"
+   </pre>
    
    Remember that the 3-define file contains:
    
-   ```
-   CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
+   <pre>CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
    CREATE ROLE readonly NOINHERIT;
    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
-   ```
+   </pre>
 
 3. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
 
