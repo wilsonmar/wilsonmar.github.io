@@ -246,13 +246,16 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    * file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
    * "secret" is defined as the <strong>mountPoint</strong> 
    * "my-secret-password" is defined as the <strong>path</strong> 
+   <br /><br />
 
    In Java/Spring:
    * function <tt>opsForVersionedKeyValue()</tt> 
    * <tt>put</tt> function to "data".
+   <br /><br />
 
    In Python:
    * hvac is the library
+   <br /><br />
   
 
    ### Expected output
@@ -275,8 +278,6 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    </pre>
 
    The <tt>--build</tt> parameter invokes a build referencing the <a href="#Dockerfile">Dockerfile</a>.
-
-   https://vsupalov.com/docker-arg-env-variable-guide/
 
    Notice the dev Vault server is started with a parameter:
 
@@ -353,6 +354,7 @@ Vault server has stopped.
    </pre>
 
    Each of these is explained in the <a href="#Flowchart">flowchart below</a>.
+
 
    ### Edit run-tests.sh
 
