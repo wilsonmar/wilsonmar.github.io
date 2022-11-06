@@ -164,6 +164,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    * Java 17 the latest (3rd) LTS was released on September 14, 2021. 
    * Java 19 General Availability began on September 20, 2022.
+   <br /><br />
    See https://www.wikiwand.com/en/Java_version_history
 
 6. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
@@ -243,17 +244,20 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    Each programming language uses a different library to perform low-level functionality.
 
    In the dotnet (C#) repo:
+   
    * file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
    * "secret" is defined as the <strong>mountPoint</strong> 
    * "my-secret-password" is defined as the <strong>path</strong> 
    <br /><br />
 
    In Java/Spring:
+
    * function <tt>opsForVersionedKeyValue()</tt> 
    * <tt>put</tt> function to "data".
    <br /><br />
 
    In Python:
+
    * hvac is the library
    <br /><br />
   
