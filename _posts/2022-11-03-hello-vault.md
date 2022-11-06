@@ -597,15 +597,6 @@ sample-app-secure-service-1         "/docker-entrypoint.…"
 sample-app-database-1               "docker-entrypoint.s…"
    </pre>
 
-
-1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
-
-   <pre><strong>cat run-tests.sh</strong></pre>
-
-
-
-
-
    ### Output logs
 
 2. Print logs that were output from the app process:
@@ -620,13 +611,19 @@ sample-app-database-1               "docker-entrypoint.s…"
 
    BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
 
+1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
+
+   <pre><strong>cat run-tests.sh</strong></pre>
+
+
+
 <a name="Flowchart"></a>
 
 ## Flowchart
 
 This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667756054/hello-vault-flow-1920x1080_bxoigy.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667756054/hello-vault-flow-1920x1080_bxoigy.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667767708/hello-vault-flow-1920x1080_a1zhpn.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667767708/hello-vault-flow-1920x1080_a1zhpn.jpg"></a>
 
 1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
 
