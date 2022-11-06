@@ -579,8 +579,8 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
 
    Each component illustrated in this diagram is a container running within Docker.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg">
-   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg">
+   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
 
 
    <a name="ContainerPorts"></a>
@@ -631,7 +631,8 @@ sample-app-database-1               "docker-entrypoint.s…"
 
 This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667767708/hello-vault-flow-1920x1080_a1zhpn.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667767708/hello-vault-flow-1920x1080_a1zhpn.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"></a>
+
 
    1. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
 
