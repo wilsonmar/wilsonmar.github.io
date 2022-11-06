@@ -486,12 +486,12 @@ Vault server has stopped.
     </pre>
 
 
-21. <tt>RUN mvn clean package -DskipTests</tt>
+21. This specifies java to compile using using Maven referencing the pom.xml file.
 
-    uses maven to compile ???
+    <tt>RUN mvn clean package -DskipTests</tt>
+
+    That creates a "src" folder.
    
-    This specifies java to compile, which creates a "src" folder.
-
 22. Copy the app.jar file created to the root folder:
 
     <tt>COPY --from=build /build-project/target/hello-vault-spring.jar /app.jar</tt> 
@@ -501,45 +501,45 @@ Vault server has stopped.
     <tt>ENTRYPOINT ["java","-jar", "/app.jar"]</tt>
 
   
-   ### Invoking the app HEALTHCHECK
+    ### Invoking the app HEALTHCHECK
 
 24. The <tt>HEALTHCHECK</tt> in the <a href="#Dockerfile">Dockerfile</a> makes a call to the <tt>healthcheck</tt> API to the server.
 
 25. The "trap" line is executed after the service exits:
 
-   <tt># bring down the services on exit
+   <pre># bring down the services on exit
    trap 'docker compose down --volumes' EXIT
-   </tt>
+   </pre>
 
 26. This retrieves from Vault's payments secret:
 
-   <tt># TEST 1: POST /payments (static secrets)
-   output1=$(curl --silent --request POST "${APP_ADDRESS}/payments")
-   </tt>
+    <pre># TEST 1: POST /payments (static secrets)
+    output1=$(curl --silent --request POST "${APP_ADDRESS}/payments")
+    </pre>
 
-   That is what causes the response:
+    That is what causes the response:
 
-   <pre>[TEST 1]: output: {"message":"hello world!"}</pre>
+    <pre>[TEST 1]: output: {"message":"hello world!"}</pre>
 
-   "hello world" was issued from <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/setup/secure-service/default.conf.template">file default.conf.template</a> within folder /sample-app/setup/secure-service/default.conf.template which defines server responses:
+    "hello world" was issued from <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/setup/secure-service/default.conf.template">file default.conf.template</a> within folder /sample-app/setup/secure-service/default.conf.template which defines server responses:
 
-   <pre>
+    <pre>
     server {
         listen       80;
         server_name  localhost secure-service;
         default_type application/json;
-    &nbsp;
+     &nbsp;
         location /healthcheck {
             return 200 "{\"message\":\"ok\"}";
         }
-    &nbsp;
+     &nbsp;
         location /api {
             if ($http_x_api_key != "${EXPECTED_API_KEY}") {
                 return 401 "{\"error\":\"unauthorized\"}";
             }
             return 200 "{\"message\":\"hello world!\"}";
         }
-    &nbsp;
+     &nbsp;
         location / {
             return 404 "{\"error\":\"resource not found\"}";
         }
@@ -583,11 +583,11 @@ Vault server has stopped.
 
 12. This <tt>2-data.sql</tt> was invoked to define a role used to create a user within the database:
 
-   <pre>CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
-CREATE ROLE readonly NOINHERIT;
-&nbsp;
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
-   </pre>
+    <pre>CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
+    CREATE ROLE readonly NOINHERIT;
+    &nbsp;
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
+    </pre>
 
 
    ### Ad hoc request
@@ -599,10 +599,9 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
 
 21.  Issue an ad hoc call:
 
-    <tt>
-    echo "$APP_ADDRESS"
+    <pre><strong>echo "$APP_ADDRESS"
     curl --silent --request GET "${APP_ADDRESS}/products"
-    </tt>
+    </strong></pre>
 
 
     ### Inside the app
