@@ -268,6 +268,16 @@ Let's dive in by installing pre-requities. Each technology has a different set o
  
    <pre><strong>cat run.sh</strong></pre>
 
+   Notice it uses <tt>docker compose</tt> commands to bring processes down then up again:
+
+   <pre>docker compose down --volumes
+   docker compose up -d --build
+   </pre>
+
+   The <tt>--build</tt> parameter invokes a build referencing the <a href="#Dockerfile">Dockerfile</a>.
+
+   https://vsupalov.com/docker-arg-env-variable-guide/
+
    Notice the dev Vault server is started with a parameter:
 
    <tt>-e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token'</tt>
@@ -323,10 +333,15 @@ Vault server has stopped.
    <pre><strong>./run.sh
    </strong></pre>
 
-   Wait for a bunch of lines to scroll by until ending with this list and statuses:
+    This response means Docker Desktop is not running:
+    
+    <pre>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+    </pre>
 
-   <pre>...
-   [+] Running 8/8
+    Otherwise, you should see a bunch of lines scroll by until ending with this list and statuses:
+
+   <pre>
+    [+] Running 8/8
       ⠿ Network sample-app_default                       Created   0.1s 
       ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created   0.0s 
       ⠿ Container sample-app-secure-service-1            Healthy  11.1s
@@ -339,19 +354,71 @@ Vault server has stopped.
 
    Each of these is explained in the <a href="#Flowchart">flowchart below</a>.
 
-3. View the <tt>run.sh</tt> file within sample-app using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
+   ### Edit run-tests.sh
 
-   <pre><strong>cat run.sh</strong></pre>
+3. Edit the <tt>run-tests.sh</tt> file (within folder sample-app) by using <tt>code</tt> to use VSCode) or other utility:
 
-   Notice it uses <tt>docker compose</tt> commands to bring processes down then up again:
+    <pre><strong>code run-tests.sh
+    </strong></pre>
 
-   <pre>docker compose down --volumes
-   docker compose up -d --build
-   </pre>
+4. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
-   The <tt>--build</tt> parameter invokes a build referencing the <a href="#Dockerfile">Dockerfile</a>.
+    <pre># bring down the services on exit
+    # trap 'docker compose down --volumes' EXIT
+    </pre>
 
-   https://vsupalov.com/docker-arg-env-variable-guide/
+    If you comment out the <tt>compose down</tt> and save the file, 
+    processes will continue to run unless you break out by pressing <strong>command+C</strong>.
+
+5. Restart Docker.
+   
+6. Let's run it, then analyze the output:
+
+   <pre><strong>./run-tests.sh
+   </strong></pre>
+
+   Wait for a bunch of lines to scroll by until ending with this list and statuses:
+
+    <pre>
+    [+] Running 6/6
+    ⠿ Container sample-app-database-1              Healthy               1.7s
+    ⠿ Container sample-app-secure-service-1        Healthy               1.7s
+    ⠿ Container sample-app-vault-server-1          Healthy               1.7s
+    ⠿ Container sample-app-trusted-orchestrator-1  Healthy               1.7s
+    ⠿ Container sample-app-app-1                   Healthy               2.3s
+    ⠿ Container sample-app-healthy-1               Started               2.6s
+    </pre>
+
+    ### App output
+
+    These lines are output from the app (which we'll examine next):
+
+    <pre>
+    [TEST 1]: output: {"message":"hello world!"}
+    [TEST 1]: OK
+    [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
+    [TEST 2]: OK
+    </pre>
+
+    ### Docker removal output
+
+    These lines are output from Docker won't appear if you edited out the removal commands:
+
+    <pre>
+    [+] Running 8/8
+    ⠿ Container sample-app-healthy-1                 Removed              0.0s
+    ⠿ Container sample-app-app-1                     Removed              4.4s
+    ⠿ Container sample-app-trusted-orchestrator-1    Removed              0.2s
+    ⠿ Container sample-app-secure-service-1          Removed              0.2s
+    ⠿ Container sample-app-vault-server-1            Removed              0.2s
+    ⠿ Container sample-app-database-1                Removed              0.3s
+    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed              0.0s
+    ⠿ Network sample-app_default                     Removed              0.0s
+    </pre>
+
+7. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
+
+   <pre><strong>cat run-tests.sh</strong></pre>
 
    ### docker-compose.xml
 
@@ -359,9 +426,11 @@ Vault server has stopped.
 
    NOTE: <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
 
-4. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
+8. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
 
    <pre><strong>cat docker-compose.yml</strong></pre>
+
+   The file begins with ...
 
    <pre>version: "3.9"
 services:
@@ -379,8 +448,8 @@ services:
       DATABASE_INITIAL_CATALOG:         example
       DATABASE_TIMEOUT:                 30
       SECURE_SERVICE_ENDPOINT:          http://secure-service/api
+   ...
    </pre>
-
 
    ### Processes in Docker
 
@@ -524,76 +593,6 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
 
 
-
-   ### run-tests.sh
-
-1. Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
-
-    <pre><strong>code run-tests.sh
-    </strong></pre>
-
-2. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
-
-    <pre># bring down the services on exit
-    # trap 'docker compose down --volumes' EXIT
-    </pre>
-
-    If you make such edits, processes will continue to run unless you break out by pressing <strong>command+C</strong>.
-
-3. If you've made changes, save the file before exiting.
-
-4. Run the sample app:
-
-    <pre><strong>./run-tests.sh
-    </strong></pre>
-
-    This response means Docker Desktop is not running:
-    
-    <pre>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
-    </pre>
-
-    Otherwise, you should see a bunch of lines beginnging with these from Docker:
-
-    <pre>
-    [+] Running 6/6
-    ⠿ Container sample-app-database-1              Healthy               1.7s
-    ⠿ Container sample-app-secure-service-1        Healthy               1.7s
-    ⠿ Container sample-app-vault-server-1          Healthy               1.7s
-    ⠿ Container sample-app-trusted-orchestrator-1  Healthy               1.7s
-    ⠿ Container sample-app-app-1                   Healthy               2.3s
-    ⠿ Container sample-app-healthy-1               Started               2.6s
-    </pre>
-
-    ### App output
-
-    These lines are output from the app (which we'll examine next):
-
-    <pre>
-    [TEST 1]: output: {"message":"hello world!"}
-    [TEST 1]: OK
-    [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
-    [TEST 2]: OK
-    </pre>
-
-    ### Docker removal output
-
-    These lines are output from Docker to confirm removal:
-
-    <pre>
-    [+] Running 8/8
-    ⠿ Container sample-app-healthy-1                 Removed              0.0s
-    ⠿ Container sample-app-app-1                     Removed              4.4s
-    ⠿ Container sample-app-trusted-orchestrator-1    Removed              0.2s
-    ⠿ Container sample-app-secure-service-1          Removed              0.2s
-    ⠿ Container sample-app-vault-server-1            Removed              0.2s
-    ⠿ Container sample-app-database-1                Removed              0.3s
-    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed              0.0s
-    ⠿ Network sample-app_default                     Removed              0.0s
-    </pre>
-
-5. Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
-
-   <pre><strong>code run-tests.sh</strong></pre>
 
    
    <a name="APP_ADDRESS"></a>
