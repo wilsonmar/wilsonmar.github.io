@@ -173,7 +173,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    4. Install Visual Studo Code Unversal Stable version from https://code.visualstudio.com by clicking <a target="_blank" href="https://code.visualstudio.com/docs/?dv=osx">this link</a> for file "VSCode-darwin-universal.zip".
    5. Unzip.
-   6. Open VSCode.
+   6. In /Applications, open "Visual Studio Code.app".
    7. Install the C# extension.
    8. Verify .NET runtimes (.NET Core) installed:
 
@@ -426,87 +426,28 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started  22.9s
    </pre>
 
-   <a name="ContainersFlowchart"></a>
+   Each component illustrated in the diagram is a container running within Docker.
 
-   ### Container services flowchart
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg">
+   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg"></a>
 
-   Each of these is explained in the <a href="#Flowchart">flowchart below</a>.
+1. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+ 
+   <pre><strong>cat run.sh</strong></pre>
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg"><img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg"></a>
+   The two commands invokes <tt>docker compose</tt> first down, then up again.
 
-   ### Edit run-tests.sh
-
-3. Edit the <tt>run-tests.sh</tt> file (within folder sample-app) by using <tt>code</tt> to use VSCode) or other utility:
-
-    <pre><strong>code run-tests.sh
-    </strong></pre>
-
-4. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
-
-    <pre># bring down the services on exit
-    # trap 'docker compose down --volumes' EXIT
-    </pre>
-
-    If you comment out the <tt>compose down</tt> and save the file, 
-    processes will continue to run unless you break out by pressing <strong>command+C</strong>.
-
-5. Restart Docker.
-   
-6. Let's run it, then analyze the output:
-
-   <pre><strong>./run-tests.sh
-   </strong></pre>
-
-   Wait for a bunch of lines to scroll by until ending with this list and statuses:
-
-    <pre>
-    [+] Running 6/6
-    ⠿ Container sample-app-database-1              Healthy               1.7s
-    ⠿ Container sample-app-secure-service-1        Healthy               1.7s
-    ⠿ Container sample-app-vault-server-1          Healthy               1.7s
-    ⠿ Container sample-app-trusted-orchestrator-1  Healthy               1.7s
-    ⠿ Container sample-app-app-1                   Healthy               2.3s
-    ⠿ Container sample-app-healthy-1               Started               2.6s
-    </pre>
-
-    ### App output
-
-    These lines are output from the app (which we'll examine next):
-
-    <pre>
-    [TEST 1]: output: {"message":"hello world!"}
-    [TEST 1]: OK
-    [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
-    [TEST 2]: OK
-    </pre>
-
-    ### Docker removal output
-
-    These lines are output from Docker won't appear if you edited out the removal commands:
-
-    <pre>
-    [+] Running 8/8
-    ⠿ Container sample-app-healthy-1                 Removed              0.0s
-    ⠿ Container sample-app-app-1                     Removed              4.4s
-    ⠿ Container sample-app-trusted-orchestrator-1    Removed              0.2s
-    ⠿ Container sample-app-secure-service-1          Removed              0.2s
-    ⠿ Container sample-app-vault-server-1            Removed              0.2s
-    ⠿ Container sample-app-database-1                Removed              0.3s
-    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed              0.0s
-    ⠿ Network sample-app_default                     Removed              0.0s
-    </pre>
-
-7. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
-
-   <pre><strong>cat run-tests.sh</strong></pre>
+   <pre>docker compose down --volumes
+   docker compose up -d --build
+   </pre>
 
    ### docker-compose.xml
 
-   <tt>docker compose</tt> commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> which contain specification for running containers.
+   <tt>docker compose</tt> commands always invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> in the same folder. It contains declarations to setup containers.
 
    NOTE: <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
 
-8. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
+1. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
 
    <pre><strong>cat docker-compose.yml</strong></pre>
 
@@ -531,6 +472,8 @@ services:
    ...
    </pre>
 
+   The heading for each group in the file correspond to the Container name:
+
    ### Processes in Docker
 
    <table border="1" cellpadding="4" cellspacing="0">
@@ -551,11 +494,75 @@ services:
       </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
    </table>
 
+
+   ### Edit run-tests.sh
+
+1. Edit the <tt>run-tests.sh</tt> file (within folder sample-app) by using <tt>code</tt> to use VSCode) or other utility:
+
+    <pre><strong>code run-tests.sh
+    </strong></pre>
+
+2. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
+
+    <pre># bring down the services on exit
+    # trap 'docker compose down --volumes' EXIT
+    </pre>
+
+    If you comment out the <tt>compose down</tt> and save the file, 
+    processes will continue to run unless you break out by pressing <strong>command+C</strong>.
+
+3. Restart Docker.
+   
+4. Let's run it, then analyze the output:
+
+   <pre><strong>./run-tests.sh
+   </strong></pre>
+
+   Wait for a bunch of lines to scroll by until ending with this list and statuses:
+
+   <pre>
+    [+] Running 6/6
+    ⠿ Container sample-app-database-1              Healthy               1.7s
+    ⠿ Container sample-app-secure-service-1        Healthy               1.7s
+    ⠿ Container sample-app-vault-server-1          Healthy               1.7s
+    ⠿ Container sample-app-trusted-orchestrator-1  Healthy               1.7s
+    ⠿ Container sample-app-app-1                   Healthy               2.3s
+    ⠿ Container sample-app-healthy-1               Started               2.6s
+   </pre>
+
+   ### App output
+
+   These lines are output from the app (which we'll examine next):
+
+   <pre>[TEST 1]: output: {"message":"hello world!"}
+    [TEST 1]: OK
+    [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
+    [TEST 2]: OK
+   </pre>
+
+   ### Docker removal output
+
+   These lines are output from Docker won't appear if you edited out the removal commands:
+
+   <pre>
+    [+] Running 8/8
+    ⠿ Container sample-app-healthy-1                 Removed              0.0s
+    ⠿ Container sample-app-app-1                     Removed              4.4s
+    ⠿ Container sample-app-trusted-orchestrator-1    Removed              0.2s
+    ⠿ Container sample-app-secure-service-1          Removed              0.2s
+    ⠿ Container sample-app-vault-server-1            Removed              0.2s
+    ⠿ Container sample-app-database-1                Removed              0.3s
+    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed              0.0s
+    ⠿ Network sample-app_default                     Removed              0.0s
+   </pre>
+
+   <a name="PortsUsed"></a>
+   
    ### Ports used
 
-5. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
+5. Obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
 
-   <pre><strong>docker ps --format "table {{.Names}}\t{{.Command}}\t{{.Ports}}"
+   <pre><strong>docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
    </strong></pre>
 
    <pre>NAMES                               COMMAND                  PORTS
@@ -565,6 +572,14 @@ sample-app-vault-server-1           "/vault/entrypoint.sh"   0.0.0.0:8200->8200/
 sample-app-secure-service-1         "/docker-entrypoint.…"   0.0.0.0:1717->80/tcp
 sample-app-database-1               "docker-entrypoint.s…"   0.0.0.0:5432->5432/tcp
    </pre>
+
+1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
+
+   <pre><strong>cat run-tests.sh</strong></pre>
+
+
+
+
 
    ### Output logs
 
@@ -587,8 +602,6 @@ sample-app-database-1               "docker-entrypoint.s…"   0.0.0.0:5432->543
 This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667756054/hello-vault-flow-1920x1080_bxoigy.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667756054/hello-vault-flow-1920x1080_bxoigy.jpg"></a>
-
-   Each component illustrated in the diagram is a container running within Docker, as defined by docker compose. In production, they would be created using Terraform.
 
 1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
 
