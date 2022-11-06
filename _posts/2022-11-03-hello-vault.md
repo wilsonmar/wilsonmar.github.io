@@ -426,11 +426,6 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started  22.9s
    </pre>
 
-   Each component illustrated in this diagram is a container running within Docker.
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg">
-   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg"></a>
-
 1. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat run.sh</strong></pre>
@@ -558,22 +553,11 @@ services:
     ⠿ Network sample-app_default                     Removed              0.0s
    </pre>
 
-   <a name="ContainerCmd"></a>
+   <a name="ContainerPorts"></a>
    
-   ### Commands to create each container
+   ### Additional command to show ports
 
 5. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
-
-   <pre><strong>docker ps --format "table {{.Names}}\t{{.Command}}"
-   </strong></pre>
-
-   <pre>NAMES                               COMMAND
-sample-app-app-1                    "java -jar /app.jar"
-sample-app-trusted-orchestrator-1   "./entrypoint.sh"
-sample-app-vault-server-1           "/vault/entrypoint.sh"
-sample-app-secure-service-1         "/docker-entrypoint.…"
-sample-app-database-1               "docker-entrypoint.s…"
-   </pre>
 
    <a name="PortsUsed"></a>
    
@@ -588,6 +572,29 @@ sample-app-trusted-orchestrator-1
 sample-app-vault-server-1           0.0.0.0:8200->8200/tcp
 sample-app-secure-service-1         0.0.0.0:1717->80/tcp
 sample-app-database-1               0.0.0.0:5432->5432/tcp
+   </pre>
+
+   ### Containers diagram with Ports
+
+   Each component illustrated in this diagram is a container running within Docker.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg">
+   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg"></a>
+
+
+   <a name="ContainerPorts"></a>
+   
+   ### Container invocations
+
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Command}}"
+   </strong></pre>
+
+   <pre>NAMES                               COMMAND
+sample-app-app-1                    "java -jar /app.jar"
+sample-app-trusted-orchestrator-1   "./entrypoint.sh"
+sample-app-vault-server-1           "/vault/entrypoint.sh"
+sample-app-secure-service-1         "/docker-entrypoint.…"
+sample-app-database-1               "docker-entrypoint.s…"
    </pre>
 
 
