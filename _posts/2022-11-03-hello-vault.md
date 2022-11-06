@@ -426,7 +426,7 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started  22.9s
    </pre>
 
-   Each component illustrated in the diagram is a container running within Docker.
+   Each component illustrated in this diagram is a container running within Docker.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg">
    <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667764247/hello-vault-images-1920x1080_k7pedf.jpg"></a>
@@ -564,9 +564,8 @@ services:
 
 5. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
 
-   ```shell-session
-   docker ps --format "table {{.Names}}\t\{/{.Command}}"
-   ```
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Command}}"
+   </strong></pre>
 
    <pre>NAMES                               COMMAND
 sample-app-app-1                    "java -jar /app.jar"
@@ -580,9 +579,8 @@ sample-app-database-1               "docker-entrypoint.s…"
    
    ### Ports used by each container
 
-   ```shell-session
-   docker ps --format "table {{.Names}}\t{{.Ports}}"
-   ```
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
+   </strong></pre>
 
    <pre>NAMES                               PORTS
 sample-app-app-1                    0.0.0.0:8080->8080/tcp
