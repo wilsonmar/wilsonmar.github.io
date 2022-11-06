@@ -129,8 +129,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    For Java/Spring:
 
-   <pre><strong>
-   java --version
+   <pre><strong>java --version
    </strong></pre>
 
    You should see something like this:
@@ -143,8 +142,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
 5. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
 
-   <pre><strong>
-   brew install docker
+   <pre><strong>brew install docker
    brew install docker-desktop
    </strong></pre>
    
@@ -157,8 +155,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
 6. Verify Docker version:
 
-   <pre><strong>
-   docker compose version
+   <pre><strong>docker compose version
    </strong></pre>
 
    The response, at time of writing, was:
@@ -316,8 +313,7 @@ Vault server has stopped.
 
 2. Do the run:
 
-   <pre><strong>
-   ./run.sh
+   <pre><strong>./run.sh
    </strong></pre>
 
    Wait for a bunch of lines to scroll by until ending with this list and statuses:
@@ -364,8 +360,7 @@ Vault server has stopped.
 
 4.  Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
 
-    <pre><strong>
-    code run-tests.sh
+    <pre><strong>code run-tests.sh
     </strong></pre>
 
 5.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
@@ -378,8 +373,7 @@ Vault server has stopped.
 
 7.  Run the sample app:
 
-    <pre><strong>
-    ./run-tests.sh
+    <pre><strong>./run-tests.sh
     </strong></pre>
 
     This response means Docker Desktop is not running:
@@ -387,7 +381,7 @@ Vault server has stopped.
     <pre>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
     </pre>
 
-    You should see a bunch of lines beginnging with these from Docker:
+    Otherwise, you should see a bunch of lines beginnging with these from Docker:
 
     <pre>
     [+] Running 6/6
@@ -424,7 +418,7 @@ Vault server has stopped.
 
     The processes continue to run unless you break out by pressing <strong>command+C</strong>.
 
-8.  Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
+8. Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
 
    <pre><strong>code run-tests.sh</strong></pre>
 
@@ -435,18 +429,18 @@ Vault server has stopped.
 
 16. In production, APP_ADDRESS is retrieved from a system variable instead of a hard-coded:
 
-   <tt>APP_ADDRESS="http://localhost:8080"</tt>
+    <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
-   A production instance of Vault would use an SSL/TLS certificate to enable secure https protocol.
+    A production instance of Vault would use an SSL/TLS certificate to enable secure https protocol.
 
-   Production also uses the <tt>APP_TOKEN</tt> to ensure valid identity for using Vault.
+    Production also uses the <tt>APP_TOKEN</tt> to ensure valid identity for using Vault.
 
 
-   <a name="Dockerfile"></a>
+    <a name="Dockerfile"></a>
 
 18. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
-   <pre>
+    <pre>
     FROM maven:3.8.4-openjdk-17 as build
     &nbsp;
     COPY . /build-project
@@ -465,11 +459,11 @@ Vault server has stopped.
         --timeout=1s \
         --retries=30 \
             CMD curl --fail -s http://localhost:8080/healthcheck || exit 1
-   </pre>
+    </pre>
 
-   The top line FROM clause retrieves from maven hub openjdk version 17.
+    The top line FROM clause retrieves from maven hub openjdk version 17.
 
-   build-project folder???
+    build-project folder???
 
 18. Maven opens file <tt>pom.xml</tt>, which specifies java source files to compile.
 
