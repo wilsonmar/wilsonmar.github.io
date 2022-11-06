@@ -620,9 +620,9 @@ sample-app-database-1               "docker-entrypoint.s…"
 
    The shell script <tt>run-tests.sh</tt> invokes two calls to the Web App:
 
-   A. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+   "[TEST 1]" = <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments API
 
-   B. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
+   "[TEST 2]" = <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
 
 
 <a name="Flowchart"></a>
@@ -634,20 +634,24 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"></a>
 
 
-   1. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+   1. <tt>run-tests.sh</tt> calls <tt>POST /api/payments</tt> to <strong>write</strong> the <strong>static</strong> API keys to be used to call the payments API. The call can also be to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.). 
 
-   2. The app get static secret
+   2. The app calls Vault (at APP_ADDRESS) to get static secret.
 
-   6. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
+   3. The static API key and value is added into Vault. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
 
-   1. To generate secrets ...
+      <pre>vault kv put kv-v2/api-key apikey=my-secret-key
+      </pre>
 
-   1. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
+   4. The app adds the static API key in the HTTP header before calling the secure-service.
 
-   <pre>vault kv put kv-v2/api-key apikey=my-secret-key
-   </pre>
+   5. The response from the app to <tt>run-tests.sh</tt> is "hello world".
 
-   B. Vault has created integrations with database vendors for the database to create (dynamically) temporary (short-lived) credentials (instead of long-lived static passwords). The equivalent CLI command is:
+   6. <tt>run-tests.sh</tt> calls <tt>GET /api/products</tt> to access the products database based on <strong>dynamic</strong> credentials obtained by Vault.
+
+   7. The app calls Vault to get dynamic DB credentials (instead of using long-lived static passwords).
+
+   8. Vault uses its pre-defined partnership with PostgreSQL to request that temporary (short-lived) credentials be created dynamically. The equivalent CLI command is:
 
    <pre>kv put secret/mysql/webapp db-name-"users" \
    username="admin" password="12345"
@@ -660,18 +664,20 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
    </pre>
 
-   2. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+   NOTE: Although PostgreSQL is used in this sample, Vault also works with MySQL, Microsoft SQL Server, and other database vendors.
+   
+   9. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
 
    "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
 
    Even the root account cannot read the contents of an individual cubbyhole.
    -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
-   3. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+   10.  Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
 
    The token sent to the Web App acts as a pointer to the user's Cubbyhole.
  
-   4. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+   11. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
 
    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
    Thus, the library can detect malfeasance with the response-wrapping token.
@@ -687,10 +693,8 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
-   5. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+   <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
 
-   NOTE: PostgreSQL is used in this sample, but Vault also works with MySQL, Microsoft SQL Server, etc.
-      
    * <strong>secure-service</strong> - a simulated 3rd party (mock) service that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call.
 
       The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
@@ -715,7 +719,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    
    ### APP_ADDRESS
 
-6. Notice <tt>APP_ADDRESS</tt> is hard-coded:
+1. Notice <tt>APP_ADDRESS</tt> is hard-coded:
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
@@ -728,7 +732,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
     ### Dockerfile
 
-7. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+2. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
     <pre>
     FROM maven:3.8.4-openjdk-17 as build
@@ -758,13 +762,13 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
     build-project folder???
 
-8. This invokes Maven to compile programs:
+3. This invokes Maven to compile programs:
    
     <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
 
    Unspecified in code, Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
 
-9.  View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+4.  View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat pom.xml</strong></pre>
 
