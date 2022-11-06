@@ -586,7 +586,7 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
    
    ### Container invocations
 
-   <pre><strong>docker ps --format "table {{.Names}}\t{{.Command}}"
+   <pre><strong>docker ps --format "table &#123;&#123;.Names&#125;&#125;\t&#123;&#123;.Command&#125;&#125;"
    </strong></pre>
 
    <pre>NAMES                               COMMAND
