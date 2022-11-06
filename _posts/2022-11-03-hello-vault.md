@@ -476,6 +476,8 @@ services:
 
    ### Processes in Docker
 
+   To summarize the name of each group in docker-compose.yml:
+
    <table border="1" cellpadding="4" cellspacing="0">
    <tr valign="bottom"><th> docker-compose.yaml </th><th> Container/Volume in Docker</th></tr>
    <tr valign="top"><td> app:
@@ -556,29 +558,40 @@ services:
     ⠿ Network sample-app_default                     Removed              0.0s
    </pre>
 
-   <a name="PortsUsed"></a>
+   <a name="ContainerCmd"></a>
    
-   ### Ports used
+   ### Commands to create each container
 
-5. Obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
-
-   <pre><strong>docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
-   </strong></pre>
-
-   <tt>docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
-   </tt>
+5. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
 
    ```shell-session
-   docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
+   docker ps --format "table {{.Names}}\t\{/{.Command}}"
    ```
 
-   <pre>NAMES                               COMMAND                  PORTS
-sample-app-app-1                    "java -jar /app.jar"     0.0.0.0:8080->8080/tcp
-sample-app-trusted-orchestrator-1   "./entrypoint.sh"        
-sample-app-vault-server-1           "/vault/entrypoint.sh"   0.0.0.0:8200->8200/tcp
-sample-app-secure-service-1         "/docker-entrypoint.…"   0.0.0.0:1717->80/tcp
-sample-app-database-1               "docker-entrypoint.s…"   0.0.0.0:5432->5432/tcp
+   <pre>NAMES                               COMMAND
+sample-app-app-1                    "java -jar /app.jar"
+sample-app-trusted-orchestrator-1   "./entrypoint.sh"
+sample-app-vault-server-1           "/vault/entrypoint.sh"
+sample-app-secure-service-1         "/docker-entrypoint.…"
+sample-app-database-1               "docker-entrypoint.s…"
    </pre>
+
+   <a name="PortsUsed"></a>
+   
+   ### Ports used by each container
+
+   ```shell-session
+   docker ps --format "table {{.Names}}\t{{.Ports}}"
+   ```
+
+   <pre>NAMES                               PORTS
+sample-app-app-1                    0.0.0.0:8080->8080/tcp
+sample-app-trusted-orchestrator-1   
+sample-app-vault-server-1           0.0.0.0:8200->8200/tcp
+sample-app-secure-service-1         0.0.0.0:1717->80/tcp
+sample-app-database-1               0.0.0.0:5432->5432/tcp
+   </pre>
+
 
 1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
 
