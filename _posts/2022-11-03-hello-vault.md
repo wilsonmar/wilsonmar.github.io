@@ -486,9 +486,9 @@ services:
 
 5. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
 
-   ```shell-session
+   <pre><strong>
    docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
-   ```
+   </strong></pre>
    
    <tt>docker ps --format "table \{\{.Names}}\t{{.Ports}}"
    </tt>
