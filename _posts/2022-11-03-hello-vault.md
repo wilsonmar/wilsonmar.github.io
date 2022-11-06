@@ -305,7 +305,6 @@ Stopping Vault dev server..
 Vault server has stopped.
    </pre>
 
-   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
 
 <hr />
 
@@ -313,18 +312,9 @@ Vault server has stopped.
 
 ## sample-app
 
-This seems so complex (clever) that I had to make a video to gradually this.
-
-   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
-
-
-
-
-
 1. Navigate out of quick-start and into:
 
    <pre><strong>cd sample-app</strong></pre>
-
 
    ### run.sh
 
@@ -374,11 +364,6 @@ This seems so complex (clever) that I had to make a video to gradually this.
       ⠿ Container sample-app-healthy-1                   Started           22.9s
    </pre>
 
-4. To ensure that Docker processes are running, expand the width of the Terminal wide and:
-
-   <pre><strong>docker ps
-   </strong></pre>
-
    ### Processes in Docker
 
    <table border="1" cellpadding="4" cellspacing="0">
@@ -399,15 +384,129 @@ This seems so complex (clever) that I had to make a video to gradually this.
       </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
    </table>
 
+   ### Ports used
+
+4. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
+
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+   </strong></pre>
+
+   <pre>NAMES                                   STATUS                        PORTS
+   sample-app-app-1                    Up 3 minutes (healthy)   0.0.0.0:8080->8080/tcp
+   sample-app-trusted-orchestrator-1   Up 3 minutes (healthy)
+   sample-app-vault-server-1           Up 3 minutes (healthy)   0.0.0.0:8200->8200/tcp
+   sample-app-secure-service-1         Up 3 minutes (healthy)   0.0.0.0:1717->80/tcp
+   sample-app-database-1               Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp
+   </pre>
+
+1. Print logs that were output from a process:
+
+   <pre><strong>docker logs sample-app-app-1
+
+   <pre>...
+   2022/01/11 20:29:01 getting secret api key from vault
+   2022/01/11 20:29:01 getting secret api key from vault: success!
+   [GIN] 2022/01/11 - 20:29:01 | 200 |    7.366042ms |   192.168.192.1 | POST     "/payments"
+   </pre>
+
+   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
+
+
+   ### Flowchart
+
+This seems so complex (clever) that I am making a video to gradually this flow:
+
+   <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/tree/main/sample-app#docker-compose-architecture"><img alt="hello-vault-flow-1287x847.jpg" width="1287" height="847" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667737711/hello-vault-flow-1287x847_ubbae3.jpg"></a>
+
+   Each component illustrated in the diagram is a container running within Docker, as defined by docker compose. In production, they would be created using Terraform.
+
+   1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
+
+   A. <tt>POST/api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+
+   B. <tt>GET/api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
+
+   2. To generate secrets ...
+
+   A. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
+
+   ```
+   vault kv put kv-v2/api-key apikey=my-secret-key
+   ```
+
+   B. Vault has created integrations with database vendors for the database to create (dynamically) temporary (short-lived) credentials (instead of long-lived static passwords). The equivalent CLI command is:
+
+   ```
+   kv put secret/mysql/webapp db-name-"users" username="admin" password="12345"
+   ```
+   
+   Remember that the 3-define file contains:
+   
+   ```
+   CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
+   CREATE ROLE readonly NOINHERIT;
+   GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
+   ```
+
+   3. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+
+   "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
+
+   Even the root account cannot read the contents of an individual cubbyhole.
+   -- <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
+
+   4. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+
+   The token sent to the Web App acts as a pointer to the user's Cubbyhole.
+ 
+   5. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+
+   Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
+   Thus, the library can detect malfeasance with the response-wrapping token.
+
+   Even the system who created the initial token won't see the original value. 
+   See https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
+
+   Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data.   
+   * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
+   * https://www.vaultproject.io/docs/concepts/response-wrapping 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
+   
+   BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" scenario after a breach).
+
+   1. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+
+      NOTE: PostgreSQL is used in this sample, but Vault also works with MySQL, Microsoft SQL Server, etc.
+      
+   * <strong>secure-service</strong> - a simulated 3rd party (mock) service that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call.
+
+      The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
+   
+   * <strong>trusted-orchestrator</strong> contains a <tt>Dockerfile</tt> used to build its container image and an <tt>entryfile.sh</tt> invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
+      
+   * <strong>vault-server</strong> contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeeded
+   
+   Additionally, two services appears in the list of containers:
+   
+   * <strong>app</strong> - "Web App" in the diagram
+      
+
+
+   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
+
+
+
+
+
 
    ### run-tests.sh
 
-5. Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
+1. Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
 
     <pre><strong>code run-tests.sh
     </strong></pre>
 
-6.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
+2.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
     <pre># bring down the services on exit
     # trap 'docker compose down --volumes' EXIT
@@ -415,9 +514,9 @@ This seems so complex (clever) that I had to make a video to gradually this.
 
     If you make such edits, processes will continue to run unless you break out by pressing <strong>command+C</strong>.
 
-7. If you've made changes, save the file before exiting.
+3. If you've made changes, save the file before exiting.
 
-8. Run the sample app:
+4. Run the sample app:
 
     <pre><strong>./run-tests.sh
     </strong></pre>
@@ -466,7 +565,7 @@ This seems so complex (clever) that I had to make a video to gradually this.
     ⠿ Network sample-app_default                     Removed              0.0s
     </pre>
 
-9. Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
+5. Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
 
    <pre><strong>code run-tests.sh</strong></pre>
 
@@ -475,7 +574,7 @@ This seems so complex (clever) that I had to make a video to gradually this.
    
    ### APP_ADDRESS
 
-10. Notice <tt>APP_ADDRESS</tt> is hard-coded:
+6.  Notice <tt>APP_ADDRESS</tt> is hard-coded:
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
@@ -488,7 +587,7 @@ This seems so complex (clever) that I had to make a video to gradually this.
 
     ### Dockerfile
 
-11. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+7.  <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
     <pre>
     FROM maven:3.8.4-openjdk-17 as build
@@ -518,7 +617,7 @@ This seems so complex (clever) that I had to make a video to gradually this.
 
     build-project folder???
 
-12. This invokes Maven to compile programs:
+8.  This invokes Maven to compile programs:
    
     <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
 
