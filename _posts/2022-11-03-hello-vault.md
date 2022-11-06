@@ -39,10 +39,9 @@ This has features other sample code lack:
 
 ## What does this contribute?
 
-This is a step-by-step deep-dive tour, with commentary, covering several repositories
-created by developers inside and outside HashiCorp. 
-
 {% include whatever.html %}
+
+This article provides a step-by-step deep-dive tour, with commentary, contrasting code across several repositories created by developers inside and outside HashiCorp. 
 
 1. Navigate to a folder, and obtain the repo for your language of choice. For example:
 
@@ -115,36 +114,39 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    Python:
 
-   ```
+   <pre>
    brew install python 
    python --version
    pip install virtualenv   # used to:
    python -m venv venv   # create venv enviornment to activate by:
    source venv/bin/activate  # for (venv) prompt to:
    pip install hvac   # needed for Python to work with HashiCorp Vault
-   ```
-   virtualvenv is used to ensure that Python packages play nice with each other - so that other Python projects with competing or incompatible versions of the same add-ons (dependencies) don't collide with this package.
+   </pre>
 
-4. Verify: for Java/Spring:
+   <tt>virtualvenv</tt> is used to ensure that Python packages play nice with each other - so that other Python projects with competing or incompatible versions of the same add-ons (dependencies) don't collide with this package.
 
-   ```
+4. Verify version to see if install took: 
+
+   For Java/Spring:
+
+   <pre><strong>
    java --version
-   ```
+   </strong></pre>
 
    You should see something like this:
    
-   ```
+   <pre>
    openjdk 19.0.1 2022-10-18
    OpenJDK Runtime Environment Zulu19.30+11-CA (build 19.0.1+10)
    OpenJDK 64-Bit Server VM Zulu19.30+11-CA (build 19.0.1+10, mixed mode, sharing)
-   ```
+   </pre
 
 5. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
 
-   ```
+   <pre><strong>
    brew install docker
    brew install docker-desktop
-   ```
+   </strong></pre>
    
    Alternately, instead of docker-compose, use <a target="_blank" href="https://bmiguel-teixeira.medium.com/goodbye-docker-compose-hello-kubelet-75306472de27">Kublet static pod</a>
 
@@ -155,19 +157,19 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
 6. Verify Docker version:
 
-   ```
+   <pre><strong>
    docker compose version
-   ```
+   </strong></pre>
 
    The response, at time of writing, was:
 
-   ```
+   <pre>
    Docker Compose version 2.12.2
-   ```
+   </pre>
 
 7. Invoke the Docker desktop.
    
-8. View file <tt>.gitignore</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+8.  View file <tt>.gitignore</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat .gitignore</strong></pre>
    
@@ -231,7 +233,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    ### Other Vault Secret Engines
 
-   Note that Vault has other <a target="_blank" href="https://developer.hashicorp.com/vault/docs/secrets">Secret Engines</a> to handle other types of secrets not demonstrated by this sample program, such as generation of SSH certificates, X.509 certificates for SSL/TLS, etc.
+   Note that Vault has <a target="_blank" href="https://developer.hashicorp.com/vault/docs/secrets">other Secret Engines</a> to handle other types of secrets not demonstrated by this sample program, such as generation of SSH certificates, X.509 certificates for SSL/TLS, etc.
 
    ### Expected output
 
@@ -240,19 +242,20 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    * After reading the secrets successfully, the program outputs "Access granted!".
    <br /><br />
 
-3. View file <tt>run.sh</tt> file using <tt>cat</tt> or a text editor such as code (for VSCode).
+3. View file <tt>run.sh</tt> file using <tt>cat</tt> or a text editor such as code (for VSCode):
  
    <pre><strong>cat run.sh</strong></pre>
 
-   The dev Vault server is started with a parameter:
+   Notice the dev Vault server is started with a parameter:
 
    <tt>-e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token'</tt>
 
-   In production, several mechanisms can be used to start the Vault server.
+   In production, several mechanisms can be used to start the Vault server, including access to cloud provider secret managers.
 
    ### Source compilation
 
-   In the Spring (Java) repo, command <tt>mvn clean package</tt> references the <tt>pom.xml</tt> file to compile the source code file App.java into the <tt>target</tt> folder.
+   In the Spring (Java) repo, command <tt>mvn clean package</tt> references the <tt>pom.xml</tt> file to compile the source code file App.java into file <tt>quickstart.jar</tt> in the <tt>target</tt> folder.
+
    <tt>java -jar target/quickstart.jar</tt> runs the result of App.java source file compilation.
 
    In the dotnet (C#) repo, command <tt>dotnet run Program.cs<tt> compiles the Program.cs source file.
@@ -262,7 +265,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 4. If you want to keep the app running so you can make additional commands, insert a <tt>#</tt> character at the left edge of these commands to comment them out of executing:
 
    <tt># docker stop "${container_id}" > /dev/null
-   # echo "Vault server has stopped."
+   \# echo "Vault server has stopped."
    </tt>
 
 5. Make sure that Docker Desktop is runnning.
@@ -302,10 +305,10 @@ Vault server has stopped.
 
    Notice it uses <tt>docker compose</tt> commands to bring processes down then up again:
 
-   ```
+   <pre>
    docker compose down --volumes
    docker compose up -d --build
-   ```
+   </pre>
 
    Those commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">>docker-compose.yml</a> which defines the containers created in the next step.
 
@@ -313,21 +316,21 @@ Vault server has stopped.
 
 2. Do the run:
 
-    ```
+    <pre><strong>
     ./run.sh
-    ```
+    </strong></pre>
 
     Wait for a bunch of lines to scroll by until ending with this list and statuses:
 
     <pre>...
     [+] Running 8/8
-        ⠿ Network sample-app_default                       Created                0.1s 
+        ⠿ Network sample-app_default               Created                0.1s 
         ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created                0.0s 
         ⠿ Container sample-app-secure-service-1            Healthy               11.1s
         ⠿ Container sample-app-database-1                  Healthy               11.1s
         ⠿ Container sample-app-vault-server-1              Healthy               11.0s
         ⠿ Container sample-app-trusted-orchestrator-1      Healthy               11.9s
-        ⠿ Container sample-app-app-1                       Healthy               22.7s
+        ⠿ Container sample-app-app-1               Healthy               22.7s
         ⠿ Container sample-app-healthy-1                   Started               22.9s
     </pre>
 
@@ -369,7 +372,7 @@ Vault server has stopped.
 5.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
     <tt># bring down the services on exit
-    # trap 'docker compose down --volumes' EXIT
+    \# trap 'docker compose down --volumes' EXIT
     </tt>
 
 6.  Save the file and exit.
@@ -389,12 +392,12 @@ Vault server has stopped.
 
     <pre>
     [+] Running 6/6
-    ⠿ Container sample-app-database-1              Healthy                                 1.7s
-    ⠿ Container sample-app-secure-service-1        Healthy                                 1.7s
-    ⠿ Container sample-app-vault-server-1          Healthy                                 1.7s
-    ⠿ Container sample-app-trusted-orchestrator-1  Healthy                                 1.7s
-    ⠿ Container sample-app-app-1                   Healthy                                 2.3s
-    ⠿ Container sample-app-healthy-1               Started                                 2.6s
+    ⠿ Container sample-app-database-1              Healthy               1.7s
+    ⠿ Container sample-app-secure-service-1        Healthy               1.7s
+    ⠿ Container sample-app-vault-server-1          Healthy               1.7s
+    ⠿ Container sample-app-trusted-orchestrator-1  Healthy               1.7s
+    ⠿ Container sample-app-app-1                   Healthy               2.3s
+    ⠿ Container sample-app-healthy-1               Started               2.6s
     </pre>
 
     These lines are output from the app (which we'll examine next):
@@ -406,18 +409,18 @@ Vault server has stopped.
     [TEST 2]: OK
     </pre>
 
-    These lines are output from Docker:
+    These lines are output from Docker to confirm removal:
 
     <pre>
     [+] Running 8/8
-    ⠿ Container sample-app-healthy-1                 Removed                               0.0s
-    ⠿ Container sample-app-app-1                     Removed                               4.4s
-    ⠿ Container sample-app-trusted-orchestrator-1    Removed                               0.2s
-    ⠿ Container sample-app-secure-service-1          Removed                               0.2s
-    ⠿ Container sample-app-vault-server-1            Removed                               0.2s
-    ⠿ Container sample-app-database-1                Removed                               0.3s
-    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed                               0.0s
-    ⠿ Network sample-app_default                     Removed                               0.0s
+    ⠿ Container sample-app-healthy-1                 Removed              0.0s
+    ⠿ Container sample-app-app-1                     Removed              4.4s
+    ⠿ Container sample-app-trusted-orchestrator-1    Removed              0.2s
+    ⠿ Container sample-app-secure-service-1          Removed              0.2s
+    ⠿ Container sample-app-vault-server-1            Removed              0.2s
+    ⠿ Container sample-app-database-1                Removed              0.3s
+    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed              0.0s
+    ⠿ Network sample-app_default                     Removed              0.0s
     </pre>
 
     The processes continue to run unless you break out by pressing <strong>command+C</strong>.
@@ -615,7 +618,6 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
 
 3.  Set breakpoint in the Java program: ???
 
-<hr />
 
 
 <hr />
@@ -637,14 +639,11 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
 Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>.
 The equivalent CLI command to specify daily renewal period (repeatable indefinitely):
 
-   ```
+   <pre>
    vault write auth/token/create policies="example" period="24h"
-   ```
+   </pre
    
-   The number of times that a token can be renewed is set by:
-   ```
-   -use-limit=2
-   ```
+   The number of times that a token can be renewed is set by <tt>-use-limit=2</tt>
    
 <hr />
 
