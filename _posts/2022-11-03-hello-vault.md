@@ -22,6 +22,14 @@ Keeping secrets secret is a fundamental skill for all developers, especially in 
 This is like working on your TV the different remotes and logins to setup different streaming services.
 Once you go through the motions, you can get through quickly (for awhile until you change TV).
 
+<a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
+
+## What does this contribute?
+
+{% include whatever.html %}
+
+This article provides a step-by-step deep-dive tour, with commentary, contrasting code across several repositories created by developers inside and outside HashiCorp. 
+
 This article takes a deep dive into sample (template) code within a GitHub repo.
 This has features other sample code lack:
 
@@ -35,15 +43,7 @@ This has features other sample code lack:
 
    * The same app in other languages: Go, dotnet C#, Java, Ruby to compare and learn
 
-<a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
-
-## What does this contribute?
-
-{% include whatever.html %}
-
-This article provides a step-by-step deep-dive tour, with commentary, contrasting code across several repositories created by developers inside and outside HashiCorp. 
-
-1. Navigate to a folder, and obtain the repo for your language of choice. For example:
+1. Obtain the repo for your language of choice. For example:
 
    <pre><strong>git clone https://github.com/hashicorp/hello-vault-spring
    cd hello-vault-spring
@@ -75,57 +75,79 @@ This article provides a step-by-step deep-dive tour, with commentary, contrastin
 
    * <a href="#sample-app"><strong>sample-app</strong></a> to make API calls (using curl CLI commands) to an app server which interacts with a database
 
+   BTW Vault has <a target="_blank" href="https://developer.hashicorp.com/vault/docs/secrets">other Secret Engines</a> to handle other types of secrets not demonstrated by this sample program, such as generation of SSH certificates, X.509 certificates for SSL/TLS, etc.
+
 <hr />
 
-## Install Spring on macOS:
+<a name="macOSInstall"></a>
+
+## Install on macOS:
 
 Let's dive in by installing pre-requities. Each technology has a different set of technologies:
 
 1. On macOS, install the Apple XCode Command Line utilities, if needed.
 
-1. Install OS package manager: 
+1. Install OS package manager so that you can upgrade to the latest version with a single command.
 
-   On macOS, Homebrew.
+   On macOS: Homebrew.
+
+   <pre><strong>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   </strong></pre>
    
-   Using brew means that you can upgrade to the latest version with a single command.
+2. Install utilities using package manager. 
 
-2. Install utilities using package manager. On macOS:
+   On macOS:
 
-   ```
-   brew install  curl  jq  docker
-   ```
+   <pre><strong>brew install  curl  jq  tree</strong></pre>
 
-3. Install the compiler and repo for your language of choice:
+   NOTE: Brew now knows to not re-install the latest version if it's already installed.
+
+3. On newer macOS laptops with the M1 ARM chip:
+
+   <pre><strong>sudo softwareupdate --install-rosetta
+   </strong></pre>
+
+4. Install the compiler for your language of choice:
 
    For Java, Zulu is my favorite open-source edition of Java:
 
-   ```
-   brew install zulu
-   java --version
-   ```
+   <pre><strong>brew install zulu
+   </strong></pre>
+
+   Alternately, to install the latest version of OpenJDK:
+
+   <pre><strong>brew install --cask temurin
+   </strong></pre>
+
+   Alternately, to install a specific version of OpenJDK:
+
+   <pre><strong>brew tap homebrew/cask-versions
+   brew install --cask temurin8
+   brew install --cask temurin11
+   </strong></pre>
 
    Go:
 
-   dotnot:
+   Dotnot:
 
-   ruby:
+   Ruby:
 
-   rust:
+   Rust:
 
    Python:
 
-   <pre>
+   <pre><strong>
    brew install python 
    python --version
    pip install virtualenv   # used to:
    python -m venv venv   # create venv enviornment to activate by:
    source venv/bin/activate  # for (venv) prompt to:
    pip install hvac   # needed for Python to work with HashiCorp Vault
-   </pre>
+   </strong></pre>
 
    <tt>virtualvenv</tt> is used to ensure that Python packages play nice with each other - so that other Python projects with competing or incompatible versions of the same add-ons (dependencies) don't collide with this package.
 
-4. Verify version to see if install took: 
+5. Verify version to see if install took: 
 
    For Java/Spring:
 
@@ -138,22 +160,24 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    openjdk 19.0.1 2022-10-18
    OpenJDK Runtime Environment Zulu19.30+11-CA (build 19.0.1+10)
    OpenJDK 64-Bit Server VM Zulu19.30+11-CA (build 19.0.1+10, mixed mode, sharing)
-   </pre
+   </pre>
 
-5. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
+   * Java 17 the latest (3rd) LTS was released on September 14, 2021. 
+   * Java 19 General Availability began on September 20, 2022.
+   See https://www.wikiwand.com/en/Java_version_history
+
+6. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
 
    <pre><strong>brew install docker
    brew install docker-desktop
    </strong></pre>
    
-   Alternately, instead of docker-compose, use <a target="_blank" href="https://bmiguel-teixeira.medium.com/goodbye-docker-compose-hello-kubelet-75306472de27">Kublet static pod</a>
-
-   The utility now would not re-install the latest version if it's already installed.
+   Alternately, instead of docker-compose, consider <a target="_blank" href="https://bmiguel-teixeira.medium.com/goodbye-docker-compose-hello-kubelet-75306472de27">Kublet static pod</a>.
 
    PROTIP: Get the Docker Desktop logo on your Mac Taskbar: pinch four fingers on your trackpad to drag and drop the logo onto your Taskbar.
    You should see the Docker logo when you point the mouse at the top of your screen.
 
-6. Verify Docker version:
+7. Verify Docker version:
 
    <pre><strong>docker compose version
    </strong></pre>
@@ -164,9 +188,9 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    Docker Compose version 2.12.2
    </pre>
 
-7. Invoke the Docker desktop.
+8. Invoke the Docker desktop.
    
-8.  View file <tt>.gitignore</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+9.  View file <tt>.gitignore</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat .gitignore</strong></pre>
    
@@ -193,9 +217,10 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    Alternately, it's <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/Program.cs">Program.cs</a> for dotnet (C#).
 
-   ### APP_ADDRESS
+   ### Static dev APP_ADDRESS
 
-   In Java, the Host, Port, and Scheme are hard-coded for combination into "http://127.0.0.1:8200". 
+   In dev programs, the Host, Port, and Scheme are hard-coded for combination into "http://127.0.0.1:8200". 
+
    But in production code, those are obtained from an environment variable <tt>APP_ADDRESS</tt> with a value such as <tt>vault.mycorp.com</tt>.
 
    <a name="DevAuthentication"></a>
@@ -217,20 +242,18 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    
    Each programming language uses a different library to perform low-level functionality.
 
-   In the dotnet (C#) repo, file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
+   In the dotnet (C#) repo:
+   * file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
+   * "secret" is defined as the <strong>mountPoint</strong> 
+   * "my-secret-password" is defined as the <strong>path</strong> 
 
-   In the python repo, hvac is used.
+   In Java/Spring:
+   * function <tt>opsForVersionedKeyValue()</tt> 
+   * <tt>put</tt> function to "data".
 
-   In the dotnet C# code:
-   "secret" is defined as the <strong>mountPoint</strong> 
-   but Java uses function <tt>opsForVersionedKeyValue()</tt> 
-   
-   "my-secret-password" is defined as the <strong>path</strong> in dotnet C# but 
-   Java uses a <tt>put</tt> function to "data".
-
-   ### Other Vault Secret Engines
-
-   Note that Vault has <a target="_blank" href="https://developer.hashicorp.com/vault/docs/secrets">other Secret Engines</a> to handle other types of secrets not demonstrated by this sample program, such as generation of SSH certificates, X.509 certificates for SSL/TLS, etc.
+   In Python:
+   * hvac is the library
+  
 
    ### Expected output
 
@@ -238,6 +261,8 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    * After writing a secret, the program outputs "Secret written successfully.".
    * After reading the secrets successfully, the program outputs "Access granted!".
    <br /><br />
+
+   Of course, in your own program, you can output whatever text you want.
 
 3. View file <tt>run.sh</tt> file using <tt>cat</tt> or a text editor such as code (for VSCode):
  
@@ -247,7 +272,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    <tt>-e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token'</tt>
 
-   In production, several mechanisms can be used to start the Vault server, including access to cloud provider secret managers.
+   In production, several mechanisms can be used to start the Vault server securely, including access to cloud provider secret managers.
 
    ### Source compilation
 
@@ -261,9 +286,9 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
 4. If you want to keep the app running so you can make additional commands, insert a <tt>#</tt> character at the left edge of these commands to comment them out of executing:
 
-   <tt># docker stop "${container_id}" > /dev/null
+   <pre><strong># docker stop "${container_id}" > /dev/null
    \# echo "Vault server has stopped."
-   </tt>
+   </strong></pre>
 
 5. Make sure that Docker Desktop is runnning.
 6. Restart Docker to clear it from a previous run.
@@ -274,20 +299,27 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    Wait for various lines to appear until this appears:
 
-   <pre>
-Secret written successfully.
+   <pre>Secret written successfully.
 Access granted!
 Stopping Vault dev server..
 Vault server has stopped.
    </pre>
 
-   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. Such centralization provides a detailed enterprise-wide history of operations that makes security forensics possible.
+   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
 
 <hr />
 
 <a name="sample-app"></a>
 
 ## sample-app
+
+This seems so complex (clever) that I had to make a video to gradually this.
+
+   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
+
+
+
+
 
 1. Navigate out of quick-start and into:
 
@@ -302,16 +334,28 @@ Vault server has stopped.
 
    Notice it uses <tt>docker compose</tt> commands to bring processes down then up again:
 
-   <pre>
-   docker compose down --volumes
+   <pre>docker compose down --volumes
    docker compose up -d --build
    </pre>
 
-   Those commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> which defines the containers created in the next step.
+   The <tt>--build</tt> parameter invokes a build referencing the <a href="#Dockerfile">Dockerfile</a>.
 
-   The <tt>--build</tt> parameter invokes a build referencing the <tt>Dockerfile</tt>.
+   https://vsupalov.com/docker-arg-env-variable-guide/
 
-2. Do the run:
+   ### docker-compose.xml
+
+   <tt>docker compose</tt> commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> which defines the containers created in the next step.
+
+   NOTE: In <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
+
+2. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
+
+   <pre><strong>cat docker-compose.yml</strong></pre>
+
+   
+   ### Dockerfile
+
+3. Let's do the run, then analyze how it got there:
 
    <pre><strong>./run.sh
    </strong></pre>
@@ -330,15 +374,15 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started           22.9s
    </pre>
 
-3. To ensure that Docker processes are running, expand the width of the Terminal wide and:
+4. To ensure that Docker processes are running, expand the width of the Terminal wide and:
 
    <pre><strong>docker ps
    </strong></pre>
 
-   ### processes in Docker
+   ### Processes in Docker
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Setup in yaml </th><th> Container/Volume </th></tr>
+   <tr valign="bottom"><th> Setup in yaml </th><th> Container/Volume in Docker</th></tr>
    <tr valign="top"><td> app:
       </td><td> sample-app-app-1   </td></tr>
    <tr valign="top"><td>vault-server:
@@ -356,22 +400,24 @@ Vault server has stopped.
    </table>
 
 
-    ### run-tests.sh
+   ### run-tests.sh
 
-4.  Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
+5. Look at the <tt>run-tests.sh</tt> file within sample-app by using <tt>code</tt> to use VSCode, etc.):
 
     <pre><strong>code run-tests.sh
     </strong></pre>
 
-5.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
+6.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
     <pre># bring down the services on exit
-    \# trap 'docker compose down --volumes' EXIT
+    # trap 'docker compose down --volumes' EXIT
     </pre>
 
-6.  Save the file and exit.
+    If you make such edits, processes will continue to run unless you break out by pressing <strong>command+C</strong>.
 
-7.  Run the sample app:
+7. If you've made changes, save the file before exiting.
+
+8. Run the sample app:
 
     <pre><strong>./run-tests.sh
     </strong></pre>
@@ -393,6 +439,8 @@ Vault server has stopped.
     ⠿ Container sample-app-healthy-1               Started               2.6s
     </pre>
 
+    ### App output
+
     These lines are output from the app (which we'll examine next):
 
     <pre>
@@ -401,6 +449,8 @@ Vault server has stopped.
     [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
     [TEST 2]: OK
     </pre>
+
+    ### Docker removal output
 
     These lines are output from Docker to confirm removal:
 
@@ -416,9 +466,7 @@ Vault server has stopped.
     ⠿ Network sample-app_default                     Removed              0.0s
     </pre>
 
-    The processes continue to run unless you break out by pressing <strong>command+C</strong>.
-
-8. Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
+9. Let's use a text editor code (VSCode) to look at the <tt>run-tests.sh</tt> file within sample-app.
 
    <pre><strong>code run-tests.sh</strong></pre>
 
@@ -427,18 +475,20 @@ Vault server has stopped.
    
    ### APP_ADDRESS
 
-16. In production, APP_ADDRESS is retrieved from a system variable instead of a hard-coded:
+10. Notice <tt>APP_ADDRESS</tt> is hard-coded:
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
-    A production instance of Vault would use an SSL/TLS certificate to enable secure https protocol.
-
-    Production also uses the <tt>APP_TOKEN</tt> to ensure valid identity for using Vault.
+    But in production, the program would instead <strong>retrieve</strong> APP_ADDRESS from a system variable. Also, production APP_ADDRESS would, instead of "http", specify use of secure "https" protocol (on default port 443).
+    
+    Also, Production code would retrieve the <tt>APP_TOKEN</tt> to ensure valid identity for using Vault.
 
 
     <a name="Dockerfile"></a>
 
-18. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+    ### Dockerfile
+
+11. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
     <pre>
     FROM maven:3.8.4-openjdk-17 as build
@@ -461,13 +511,28 @@ Vault server has stopped.
             CMD curl --fail -s http://localhost:8080/healthcheck || exit 1
     </pre>
 
+    ### Occassional version update
+    
     The top line FROM clause retrieves from maven hub openjdk version 17.
+    This would needs to be updated occassionally.
 
     build-project folder???
 
-18. Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">>pom.xml</a>, which specifies java source files to compile.
+12. This invokes Maven to compile programs:
    
-19. File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
+    <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
+
+   Unspecified in code, Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
+
+12. View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+ 
+   <pre><strong>cat pom.xml</strong></pre>
+
+   In the file, note that versions need to be updated over time. See
+   * https://github.com/spring-projects/spring-boot/releases is v2.7.5 as of October, 2022
+   * https://github.com/spring-projects/spring-framework/releases
+
+12. File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
 
     <pre>
     package com.hashicorp.hellovaultspring;
@@ -486,32 +551,29 @@ Vault server has stopped.
     </pre>
 
 
-21. This specifies java to compile using using Maven referencing the pom.xml file.
 
-    <tt>RUN mvn clean package -DskipTests</tt>
-
-    That creates a "src" folder.
+    which specifies java to compile using using 
    
-22. Copy the app.jar file created to the root folder:
+13. Copy the app.jar file created to the root folder:
 
     <tt>COPY --from=build /build-project/target/hello-vault-spring.jar /app.jar</tt> 
 
-23. Invoke the <tt>app.jar</tt> program from above:
+14. Invoke the <tt>app.jar</tt> program from above:
  
     <tt>ENTRYPOINT ["java","-jar", "/app.jar"]</tt>
 
   
     ### Invoking the app HEALTHCHECK
 
-24. The <tt>HEALTHCHECK</tt> in the <a href="#Dockerfile">Dockerfile</a> makes a call to the <tt>healthcheck</tt> API to the server.
+15. The <tt>HEALTHCHECK</tt> in the <a href="#Dockerfile">Dockerfile</a> makes a call to the <tt>healthcheck</tt> API to the server.
 
-25. The "trap" line is executed after the service exits:
+16. The "trap" line is executed after the service exits:
 
     <pre>/# bring down the services on exit
     trap 'docker compose down --volumes' EXIT
     </pre>
 
-26. This retrieves from Vault's payments secret:
+17. This retrieves from Vault's payments secret:
 
     <pre># TEST 1: POST /payments (static secrets)
     output1=$(curl --silent --request POST "${APP_ADDRESS}/payments")
@@ -547,16 +609,15 @@ Vault server has stopped.
     </pre>
 
     QUESTION: Can you think of a better response than "hello world". 
-    
     How about "posted"?
 
     QUESTION: In Production, "localhost" would not be there. What replaces it?
 
-11. This obtains the products secret:
+18. This obtains the products secret:
 
-    <tt># TEST 2: GET /products (dynamic secrets)
+    <pre># TEST 2: GET /products (dynamic secrets)
     output2=$(curl --silent --request GET "${APP_ADDRESS}/products")
-    </tt>
+    </pre>
 
     That curl CLI command is what causes response:
 
