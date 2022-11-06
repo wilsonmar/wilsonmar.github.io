@@ -244,7 +244,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    Each programming language uses a different library to perform low-level functionality.
 
    In the dotnet (C#) repo:
-   
+
    * file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
    * "secret" is defined as the <strong>mountPoint</strong> 
    * "my-secret-password" is defined as the <strong>path</strong> 
@@ -338,7 +338,7 @@ Vault server has stopped.
    <pre><strong>./run.sh
    </strong></pre>
 
-    This response means Docker Desktop is not running:
+    If you get this response, it means you need to get Docker Desktop running:
     
     <pre>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
     </pre>
@@ -367,7 +367,7 @@ Vault server has stopped.
 
    Each of these is explained in the <a href="#Flowchart">flowchart below</a>.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667753746/hello-vault-images-1920x1080_hxdgvi.jpg"><img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667753746/hello-vault-images-1920x1080_hxdgvi.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg"><img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667755396/hello-vault-images-1920x1080_lgfluo.jpg"></a>
 
    ### Edit run-tests.sh
 
@@ -485,4 +485,115 @@ services:
    <tr valign="top"><td> volumes:
       </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
    </table>
+
+   ### Ports used
+
+5. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
+
+   <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
+   </strong></pre>
+
+   <pre>NAMES                               PORTS
+sample-app-app-1                    0.0.0.0:8080->8080/tcp
+sample-app-trusted-orchestrator-1   
+sample-app-vault-server-1           0.0.0.0:8200->8200/tcp
+sample-app-secure-service-1         0.0.0.0:1717->80/tcp
+sample-app-database-1               0.0.0.0:5432->5432/tcp
+   </pre>
+
+   ### Output logs
+
+6. Print logs that were output from the app process:
+
+   <pre><strong>docker logs sample-app-app-1
+
+   <pre>...
+   2022/01/11 20:29:01 getting secret api key from vault
+   2022/01/11 20:29:01 getting secret api key from vault: success!
+   [GIN] 2022/01/11 - 20:29:01 | 200 |    7.366042ms |   192.168.192.1 | POST     "/payments"
+   </pre>
+
+   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
+
+<a name="Flowchart"></a>
+
+## Flowchart
+
+This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
+
+   <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/tree/main/sample-app#docker-compose-architecture"><img alt="hello-vault-flow-1287x847.jpg" width="1287" height="847" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667737711/hello-vault-flow-1287x847_ubbae3.jpg"></a>
+
+   Each component illustrated in the diagram is a container running within Docker, as defined by docker compose. In production, they would be created using Terraform.
+
+1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
+
+   A. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+
+   B. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
+
+2. To generate secrets ...
+
+   A. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
+
+   <pre>vault kv put kv-v2/api-key apikey=my-secret-key
+   </pre>
+
+   B. Vault has created integrations with database vendors for the database to create (dynamically) temporary (short-lived) credentials (instead of long-lived static passwords). The equivalent CLI command is:
+
+   <pre>kv put secret/mysql/webapp db-name-"users" \
+   username="admin" password="12345"
+   </pre>
+   
+   Remember that the 3-define file contains:
+   
+   <pre>CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
+   CREATE ROLE readonly NOINHERIT;
+   GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
+   </pre>
+
+3. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+
+   "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
+
+   Even the root account cannot read the contents of an individual cubbyhole.
+   -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
+
+4. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+
+   The token sent to the Web App acts as a pointer to the user's Cubbyhole.
+ 
+5. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+
+   Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
+   Thus, the library can detect malfeasance with the response-wrapping token.
+
+   Even the system who created the initial token won't see the original value. 
+   See https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
+
+   Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data:
+   * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
+   * https://www.vaultproject.io/docs/concepts/response-wrapping 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
+   <br /><br />
+
+   BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
+
+1. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+
+   NOTE: PostgreSQL is used in this sample, but Vault also works with MySQL, Microsoft SQL Server, etc.
+      
+   * <strong>secure-service</strong> - a simulated 3rd party (mock) service that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call.
+
+      The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
+   
+   * <strong>trusted-orchestrator</strong> contains a <tt>Dockerfile</tt> used to build its container image and an <tt>entryfile.sh</tt> invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
+      
+   * <strong>vault-server</strong> contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeeded
+   
+   Additionally, two services appears in the list of containers:
+   
+   * <strong>app</strong> - "Web App" in the diagram
+
+   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
+
 
