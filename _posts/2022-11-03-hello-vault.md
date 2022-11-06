@@ -565,6 +565,13 @@ services:
    <pre><strong>docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
    </strong></pre>
 
+   <tt>docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
+   </tt>
+
+   ```shell-session
+   docker ps --format "table \{/{.Names}}\t{{.Command}}\t{{.Ports}}"
+   ```
+
    <pre>NAMES                               COMMAND                  PORTS
 sample-app-app-1                    "java -jar /app.jar"     0.0.0.0:8080->8080/tcp
 sample-app-trusted-orchestrator-1   "./entrypoint.sh"        
@@ -583,7 +590,7 @@ sample-app-database-1               "docker-entrypoint.s…"   0.0.0.0:5432->543
 
    ### Output logs
 
-6. Print logs that were output from the app process:
+2. Print logs that were output from the app process:
 
    <pre><strong>docker logs sample-app-app-1
 
