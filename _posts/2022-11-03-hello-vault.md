@@ -190,7 +190,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
 8. Invoke the Docker desktop.
    
-9.  View file <tt>.gitignore</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+9. View file <tt>.gitignore</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat .gitignore</strong></pre>
    
@@ -364,10 +364,12 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started           22.9s
    </pre>
 
+   Each of these will be explained in the <a href="#Flowchart">flowchart below</a>.
+
    ### Processes in Docker
 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> Setup in yaml </th><th> Container/Volume in Docker</th></tr>
+   <tr valign="bottom"><th> docker-compose.yaml </th><th> Container/Volume in Docker</th></tr>
    <tr valign="top"><td> app:
       </td><td> sample-app-app-1   </td></tr>
    <tr valign="top"><td>vault-server:
@@ -388,7 +390,10 @@ Vault server has stopped.
 
 4. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
 
-   <pre><strong>docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+   <tt>docker ps --format "table {{.Names}}\t{{.Ports}}"
+   </tt>
+
+   <pre><strong>docker ps --format "table \{\{.Names\}\}\t\{\{.Status\}\}\t\{\{.Ports\}\}"
    </strong></pre>
 
    <pre>NAMES                                   STATUS                        PORTS
@@ -398,6 +403,8 @@ Vault server has stopped.
    sample-app-secure-service-1         Up 3 minutes (healthy)   0.0.0.0:1717->80/tcp
    sample-app-database-1               Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp
    </pre>
+
+   ### Output logs
 
 1. Print logs that were output from a process:
 
@@ -412,21 +419,21 @@ Vault server has stopped.
    BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
 
 
-   ### Flowchart
+## Flowchart
 
-This seems so complex (clever) that I am making a video to gradually this flow:
+This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
 
    <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/tree/main/sample-app#docker-compose-architecture"><img alt="hello-vault-flow-1287x847.jpg" width="1287" height="847" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667737711/hello-vault-flow-1287x847_ubbae3.jpg"></a>
 
    Each component illustrated in the diagram is a container running within Docker, as defined by docker compose. In production, they would be created using Terraform.
 
-   1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
+1. At the left side of the diagram, the shell script <tt>run-tests.sh</tt> invokes calls to the Web App:
 
-   A. <tt>POST/api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
+   A. <tt>POST /api/payments</tt> obtains <strong>static</strong> API keys to call the payments database
 
-   B. <tt>GET/api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
+   B. <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
 
-   2. To generate secrets ...
+2. To generate secrets ...
 
    A. The API key to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.) is obtained using that system's web UI, then pasted in the Vault web UI. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
 
@@ -453,7 +460,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
    "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
 
    Even the root account cannot read the contents of an individual cubbyhole.
-   -- <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
+   -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
    4. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
 
@@ -467,7 +474,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
    Even the system who created the initial token won't see the original value. 
    See https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
 
-   Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data.   
+   Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data:
    * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
    * https://www.vaultproject.io/docs/concepts/response-wrapping 
    * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
@@ -489,8 +496,6 @@ This seems so complex (clever) that I am making a video to gradually this flow:
    Additionally, two services appears in the list of containers:
    
    * <strong>app</strong> - "Web App" in the diagram
-      
-
 
    * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
 
@@ -506,7 +511,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
     <pre><strong>code run-tests.sh
     </strong></pre>
 
-2.  If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
+2. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
     <pre># bring down the services on exit
     # trap 'docker compose down --volumes' EXIT
@@ -574,7 +579,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
    
    ### APP_ADDRESS
 
-6.  Notice <tt>APP_ADDRESS</tt> is hard-coded:
+6. Notice <tt>APP_ADDRESS</tt> is hard-coded:
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
@@ -587,7 +592,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
 
     ### Dockerfile
 
-7.  <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+7. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
     <pre>
     FROM maven:3.8.4-openjdk-17 as build
@@ -617,7 +622,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
 
     build-project folder???
 
-8.  This invokes Maven to compile programs:
+8. This invokes Maven to compile programs:
    
     <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
 
@@ -757,7 +762,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
     <pre>APP_ADDRESS="http://localhost:8080"
     </pre>
 
-21.  Issue an ad hoc call:
+21. Issue an ad hoc call:
 
     <pre><strong>echo "$APP_ADDRESS"
     curl --silent --request GET "${APP_ADDRESS}/products"
@@ -766,7 +771,7 @@ This seems so complex (clever) that I am making a video to gradually this flow:
 
     ### Inside the app
 
-3.  Set breakpoint in the Java program: ???
+22. Set breakpoint in the Java program: ???
 
 
 
