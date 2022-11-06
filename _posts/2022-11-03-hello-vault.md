@@ -318,7 +318,28 @@ Vault server has stopped.
 
    ### run.sh
 
-1. Let's use a text editor code (VSCode) to look at the <tt>run.sh</tt> file within sample-app.
+2. Let's run it, then analyze the output:
+
+   <pre><strong>./run.sh
+   </strong></pre>
+
+   Wait for a bunch of lines to scroll by until ending with this list and statuses:
+
+   <pre>...
+   [+] Running 8/8
+      ⠿ Network sample-app_default                       Created   0.1s 
+      ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created   0.0s 
+      ⠿ Container sample-app-secure-service-1            Healthy  11.1s
+      ⠿ Container sample-app-database-1                  Healthy  11.1s
+      ⠿ Container sample-app-vault-server-1              Healthy  11.0s
+      ⠿ Container sample-app-trusted-orchestrator-1      Healthy  11.9s
+      ⠿ Container sample-app-app-1                       Healthy  22.7s
+      ⠿ Container sample-app-healthy-1                   Started  22.9s
+   </pre>
+
+   Each of these is explained in the <a href="#Flowchart">flowchart below</a>.
+
+3. View the <tt>run.sh</tt> file within sample-app using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
 
    <pre><strong>cat run.sh</strong></pre>
 
@@ -334,37 +355,32 @@ Vault server has stopped.
 
    ### docker-compose.xml
 
-   <tt>docker compose</tt> commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> which defines the containers created in the next step.
+   <tt>docker compose</tt> commands invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> which contain specification for running containers.
 
-   NOTE: In <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
+   NOTE: <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
 
-2. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
+4. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
 
    <pre><strong>cat docker-compose.yml</strong></pre>
 
-   
-   ### Dockerfile
-
-3. Let's do the run, then analyze how it got there:
-
-   <pre><strong>./run.sh
-   </strong></pre>
-
-   Wait for a bunch of lines to scroll by until ending with this list and statuses:
-
-   <pre>...
-   [+] Running 8/8
-      ⠿ Network sample-app_default                       Created            0.1s 
-      ⠿ Volume "sample-app_trusted-orchestrator-volume"  Created            0.0s 
-      ⠿ Container sample-app-secure-service-1            Healthy           11.1s
-      ⠿ Container sample-app-database-1                  Healthy           11.1s
-      ⠿ Container sample-app-vault-server-1              Healthy           11.0s
-      ⠿ Container sample-app-trusted-orchestrator-1      Healthy           11.9s
-      ⠿ Container sample-app-app-1                       Healthy           22.7s
-      ⠿ Container sample-app-healthy-1                   Started           22.9s
+   <pre>version: "3.9"
+services:
+&nbsp;
+  app:
+    build: WebService/
+    environment:
+      VAULT_ADDRESS:                    http://vault-server:8200
+      VAULT_APPROLE_ROLE_ID:            demo-web-app
+      VAULT_APPROLE_SECRET_ID_FILE:     /tmp/secret
+      VAULT_API_KEY_PATH:               api-key
+      VAULT_API_KEY_FIELD:              api-key-descriptor
+      VAULT_DATABASE_CREDENTIALS_ROLE:  dev-readonly
+      DATABASE_DATA_SOURCE:             tcp:database,1433
+      DATABASE_INITIAL_CATALOG:         example
+      DATABASE_TIMEOUT:                 30
+      SECURE_SERVICE_ENDPOINT:          http://secure-service/api
    </pre>
 
-   Each of these will be explained in the <a href="#Flowchart">flowchart below</a>.
 
    ### Processes in Docker
 
@@ -388,12 +404,16 @@ Vault server has stopped.
 
    ### Ports used
 
-4. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
+5. To obtain the ports that Docker uses, avoid expanding the width of the Terminal wide with this command:
 
-   <tt>docker ps --format "table {{.Names}}\t{{.Ports}}"
+   ```shell-session
+   docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+   ```
+   
+   <tt>docker ps --format "table \{\{.Names}}\t{{.Ports}}"
    </tt>
 
-   <pre><strong>docker ps --format "table \{\{.Names\}\}\t\{\{.Status\}\}\t\{\{.Ports\}\}"
+   <pre><strong>docker ps --format "table {{.Names\}\}\t\{\{.Status\}\}\t\{\{.Ports\}\}"
    </strong></pre>
 
    <pre>NAMES                                   STATUS                        PORTS
@@ -406,7 +426,7 @@ Vault server has stopped.
 
    ### Output logs
 
-1. Print logs that were output from a process:
+6. Print logs that were output from the app process:
 
    <pre><strong>docker logs sample-app-app-1
 
@@ -418,6 +438,7 @@ Vault server has stopped.
 
    BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
 
+<a name="Flowchart"></a>
 
 ## Flowchart
 
@@ -455,18 +476,18 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    GRANT SELECT ON ALL TABLES IN SCHEMA public TO "readonly";
    ```
 
-   3. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+3. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
 
    "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
 
    Even the root account cannot read the contents of an individual cubbyhole.
    -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
-   4. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+4. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
 
    The token sent to the Web App acts as a pointer to the user's Cubbyhole.
  
-   5. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+5. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
 
    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
    Thus, the library can detect malfeasance with the response-wrapping token.
@@ -481,9 +502,9 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    
    BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" scenario after a breach).
 
-   1. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+1. <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
 
-      NOTE: PostgreSQL is used in this sample, but Vault also works with MySQL, Microsoft SQL Server, etc.
+   NOTE: PostgreSQL is used in this sample, but Vault also works with MySQL, Microsoft SQL Server, etc.
       
    * <strong>secure-service</strong> - a simulated 3rd party (mock) service that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call.
 
