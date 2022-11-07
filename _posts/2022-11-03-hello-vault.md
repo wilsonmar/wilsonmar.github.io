@@ -780,6 +780,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
     In the file, note that versions need to be updated over time. See
     * https://github.com/spring-projects/spring-boot/releases is v2.7.5 as of October, 2022
     * https://github.com/spring-projects/spring-framework/releases
+    <br /><br />
 
 12. File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
 
@@ -888,7 +889,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
 
 
-   ### Create username and password in Database
+    ### Create username and password in Database
 
 12. This <tt>2-data.sql</tt> was invoked to define a role used to create a user within the database:
 
@@ -899,7 +900,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
     </pre>
 
 
-   ### Ad hoc request
+    ### Ad hoc request
 
 11. Open another Terminal to define the <a href="#APP_ADDRESS">APP_ADDRESS defined earlier</a>:
 
@@ -923,14 +924,16 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
 ## Renewal of keys
 
+Currently, only hello-vault-go has renewal logic.
+
 1. View file <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/vault_renewal.go">vault_renewal.go</a>
 
    <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=24m49s">VIDEO</a>: this sample code uses an extraordinaryly short TTL (Time To Live) in order to trigger renewals to show how it works. In production, timeouts are <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=31m38s">generally 30-60 minutes</a>.
 
 
-   ???
+   <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/pics/renewal-diagram.svg">This diagram</a> illustrates the interaction between Auth and database.
 
-   <a target="_blank" href="https://github.com/bomonike/hello-vault-python/blob/main/sample-app/pics/renewal-diagram.svg"><img width="200" src="sample-app/pics/renewal-diagram.svg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"><img width="200" src="[sample-app/pics/renewal-diagram.svg](https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg)"></a>
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=YrtTR0VDlDk">VIDEO:</a>
    Vault 1.2: Database Credential Rotation and Identity Tokens
