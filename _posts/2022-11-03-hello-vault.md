@@ -944,7 +944,7 @@ Thus, we have two TTLs for each component:
 
    * A default TTL for each individual token.
 
-   * A maximum TTL when no more renewals are allowed, and authentication or reconnection is required again. Renewal usually occurs half way into that period. 
+   * A maximum TTL when no more renewals are allowed, and authentication or reconnection is required again.
 
 Additionally, there can be limits on the number of times a lease/token can be renewed.
 
@@ -961,9 +961,9 @@ Notice that the TTL is longest at the top component and gets shorter as we go do
 
 Each component has a different name for each TTL:
 
-   * The <strong>wrapping-token</strong> ???
-
    * Each token for authorization into the system must be renewed before the <strong>token_ttl</strong>. When the maximum number of token renewals or <strong>token_max_ttl</strong> is reached, another login is necessary again.
+
+   * The <strong>wrapping-token</strong> lifetime is limited by the token_max_ttl.
 
    * If an account needs to login again, that account must also getcreds and reconnect to the database.
 
@@ -971,13 +971,12 @@ Each component has a different name for each TTL:
 
 Now let's analyze the coding to achieve the above.
 
-1. Coding for renewal is performed by <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/vault_renewal.go">vault_renewal.go</a>. Currently, only hello-vault-go has renewal logic.
+Coding for renewal is performed by <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/vault_renewal.go">vault_renewal.go</a>. Currently, only hello-vault-go has renewal logic.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=24m49s">VIDEO</a>: this sample code uses an extraordinaryly short TTL (Time To Live) in order to trigger renewals to show how it works. In production, timeouts are <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=31m38s">generally 30-60 minutes</a>.
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=YrtTR0VDlDk">VIDEO:</a>
    Vault 1.2: Database Credential Rotation and Identity Tokens
-
 
 Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>. 
 
@@ -988,6 +987,10 @@ The equivalent CLI command to specify daily renewal period (repeatable indefinit
    
    Limiting the number of times that a token can be renewed to 2 is set by <tt>-use-limit=2</tt>
    
+<hr />
+
+## Database within Kubernetes
+
 <hr />
 
 ## References
