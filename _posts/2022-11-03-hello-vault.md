@@ -922,36 +922,65 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
 <hr />
 
-## Renewal of keys
+## Renewal of wrapping tokens
 
-Currently, only hello-vault-go has renewal logic.
+We know that static passwords with unlimited validity are bad because that provides time when secrets can be stolen.
 
-1. View file <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/vault_renewal.go">vault_renewal.go</a>
+So we improve security by limiting the duration when each secret is valid by giving each secret a limited <strong>Time To Live (TTL)</strong> before expiration. We do this by creating a <strong>token</strong> that grants access with a specific TTL.
+
+Monitoring is necessary to achieve a balance between two extremes:
+
+   * A token which provides longer time than needeed exposes the asset to risk of compromise.
+
+   * A token which provides not enough time would cause delay and errors in processing, which we want to avoid.
+
+We track how often either condition occurs. And we track the distribution of how long leases are actually needed in order to set the TTL a bit longer after the average time needed. 
+
+PROTIP: Track the maximum time a lease is actually needed.
+
+To reduce the disruption of apps experiencing expired tokens, we provide a way to <strong>renew</strong> tokens during a "grace period". Renewals are done instead or re-issuing tokens because the cryptographic processing to create tokens require some effort. Renewals take less computing effort.
+
+Thus, we have two TTLs for each component:
+
+   * A default TTL for each individual token.
+
+   * A maximum TTL when no more renewals are allowed, and authentication or reconnection is required again. Renewal usually occurs half way into that period. 
+
+Additionally, there can be limits on the number of times a lease/token can be renewed.
+
+<a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/pics/renewal-diagram.svg">This diagram</a> illustrates the relationship of renewals among components.
+   
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"><img alt="vault-renewal-flow-1496 x1054.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"></a>
+
+Notice that the TTL is longest at the top component and gets shorter as we go down the stack toward the asset:
+
+   * Wrapping tokens managed by the Trusted Orchestrator have a TTL that is the token_max_ttl
+   * Account authorization tokens managed by Vault 
+   * Each lease to access the database (the asset) has the shortest TTL
+   <br />
+
+Each component has a different name for each TTL:
+
+   * The <strong>wrapping-token</strong> ???
+
+   * Each token for authorization into the system must be renewed before the <strong>token_ttl</strong>. When the maximum number of token renewals or <strong>token_max_ttl</strong> is reached, another login is necessary again.
+
+   * If an account needs to login again, that account must also getcreds and reconnect to the database.
+
+   * Each lease to access the database must be renewed before the <strong>default_ttl</strong>. When the maximum number of lease renewals or <strong>max_ttl</strong> is reached, reconnection is necessary again.
+
+Now let's analyze the coding to achieve the above.
+
+1. Coding for renewal is performed by <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/vault_renewal.go">vault_renewal.go</a>. Currently, only hello-vault-go has renewal logic.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=24m49s">VIDEO</a>: this sample code uses an extraordinaryly short TTL (Time To Live) in order to trigger renewals to show how it works. In production, timeouts are <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=31m38s">generally 30-60 minutes</a>.
-
-   <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/pics/renewal-diagram.svg">This diagram</a> illustrates the interaction between Auth and database.
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"><img alt="vault-renewal-flow-1496 x1054.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"></a>
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=YrtTR0VDlDk">VIDEO:</a>
    Vault 1.2: Database Credential Rotation and Identity Tokens
 
-   The different periods of time:
 
-   * wrapping-token
-   * default_ttl
-   * max_ttl
-   * token_ttl
-   * token_max_ttl
-   <br /><br />
+Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>. 
 
-   A <strong>wrapping token</strong>
-
-   Halfway through the <tt><strong>token_max_ttl</strong></tt>
-
-
-Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>.
 The equivalent CLI command to specify daily renewal period (repeatable indefinitely):
 
    <pre>vault write auth/token/create policies="example" period="24h"
