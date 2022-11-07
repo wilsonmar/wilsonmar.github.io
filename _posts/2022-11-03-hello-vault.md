@@ -930,22 +930,34 @@ Currently, only hello-vault-go has renewal logic.
 
    <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=24m49s">VIDEO</a>: this sample code uses an extraordinaryly short TTL (Time To Live) in order to trigger renewals to show how it works. In production, timeouts are <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs&t=31m38s">generally 30-60 minutes</a>.
 
-
    <a target="_blank" href="https://github.com/hashicorp/hello-vault-go/blob/main/sample-app/pics/renewal-diagram.svg">This diagram</a> illustrates the interaction between Auth and database.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"><img width="200" src="[sample-app/pics/renewal-diagram.svg](https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg)"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"><img alt="vault-renewal-flow-1496 x1054.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667793012/vault-renewal-flow-1496_x1054_tt5bqm.jpg"></a>
 
    See <a target="_blank" href="https://www.youtube.com/watch?v=YrtTR0VDlDk">VIDEO:</a>
    Vault 1.2: Database Credential Rotation and Identity Tokens
 
+   The different periods of time:
+
+   * wrapping-token
+   * default_ttl
+   * max_ttl
+   * token_ttl
+   * token_max_ttl
+   <br /><br />
+
+   A <strong>wrapping token</strong>
+
+   Halfway through the <tt><strong>token_max_ttl</strong></tt>
+
+
 Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>.
 The equivalent CLI command to specify daily renewal period (repeatable indefinitely):
 
-   <pre>
-   vault write auth/token/create policies="example" period="24h"
-   </pre
+   <pre>vault write auth/token/create policies="example" period="24h"
+   </pre>
    
-   The number of times that a token can be renewed is set by <tt>-use-limit=2</tt>
+   Limiting the number of times that a token can be renewed to 2 is set by <tt>-use-limit=2</tt>
    
 <hr />
 
