@@ -695,26 +695,28 @@ This seems so complex (clever) that I am making a video to gradually (logically)
  
 10. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
 
-   Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
-   Thus, the library can detect malfeasance with the response-wrapping token.
+    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
+    Thus, the library can detect malfeasance with the response-wrapping token.
 
-   Even the system who created the initial token won't see the original value. 
-   See https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
+    Even the system who created the initial token won't see the original value. 
+    See https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
 
-   Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data:
-   * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
-   * https://www.vaultproject.io/docs/concepts/response-wrapping 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
-   <br /><br />
+    Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data:
+    * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
+    * https://www.vaultproject.io/docs/concepts/response-wrapping 
+    * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
+    <br /><br />
 
-   BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
+    BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
 11. The app uses the Vault-provided credentials to access the database.
 12. The data returned from the database is output by run-tests.sh 
 
     <tt>[TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]</tt>
 
-   
+    <tt>OK</tt> is output after the response is validated.
+
+
    <a name="APP_ADDRESS"></a>
    
    ### APP_ADDRESS
