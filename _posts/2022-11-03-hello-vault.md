@@ -583,6 +583,22 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
    <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
 
 
+   * <strong>app</strong> - "Web App" running <strong>app.jar</strong> compiled from <tt>App.java</tt>.
+
+   * <strong>secure-service</strong> - a simulated 3rd party (mock) service <tt>docker-entrypoint</tt> that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call. The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
+   
+   * <strong>database</strong>, from <tt>docker-entrypoint.s</tt>, contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+
+   * <strong>trusted-orchestrator</strong> is created from a <tt>Dockerfile</tt> used to build its container image and an <tt><strong>entrypoint.sh</strong></tt> at the root. It is invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
+      
+   * <strong>vault-server</strong>, initiated by <tt>/vault/entrypoint.sh</tt>, contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeed.
+   
+   Additionally, two services appears in the list of containers:
+   
+   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
+
+
+
    <a name="ContainerPorts"></a>
    
    ### Container invocations
@@ -600,20 +616,6 @@ sample-app-secure-service-1         "/docker-entrypoint.…"
 sample-app-database-1               "docker-entrypoint.s…"
    </pre>
 
-   ### Output logs
-
-2. Print logs that were output from the app process:
-
-   <pre><strong>docker logs sample-app-app-1
-
-   <pre>...
-   2022/01/11 20:29:01 getting secret api key from vault
-   2022/01/11 20:29:01 getting secret api key from vault: success!
-   [GIN] 2022/01/11 - 20:29:01 | 200 |    7.366042ms |   192.168.192.1 | POST     "/payments"
-   </pre>
-
-   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
-
 1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
 
    <pre><strong>cat run-tests.sh</strong></pre>
@@ -627,31 +629,45 @@ sample-app-database-1               "docker-entrypoint.s…"
 
 <a name="Flowchart"></a>
 
-## Flowchart
+## Flowchart sequence
 
 This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"></a>
 
 
-   1. <tt>run-tests.sh</tt> calls <tt>POST /api/payments</tt> to <strong>write</strong> the <strong>static</strong> API keys to be used to call the payments API. The call can also be to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.). 
+1. <tt>run-tests.sh</tt> calls <tt>POST /api/payments</tt> to <strong>write</strong> the <strong>static</strong> API keys to be used to call the payments API. The call can also be to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.). 
 
-   2. The app calls Vault (at APP_ADDRESS) to get static secret.
+2. The app calls Vault (at APP_ADDRESS) to get static secret.
 
-   3. The static API key and value is added into Vault. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
+3. The static API key and value is added into Vault. For our mock example, at the right side of the diagram, we manually store the API key to our Secure Server using this Vault CLI command:
 
-      <pre>vault kv put kv-v2/api-key apikey=my-secret-key
-      </pre>
+   <pre>vault kv put kv-v2/api-key apikey=my-secret-key
+   </pre>
 
-   4. The app adds the static API key in the HTTP header before calling the secure-service.
+   ### Output logs
 
-   5. The response from the app to <tt>run-tests.sh</tt> is "hello world".
+   Print logs that were output from the app process:
 
-   6. <tt>run-tests.sh</tt> calls <tt>GET /api/products</tt> to access the products database based on <strong>dynamic</strong> credentials obtained by Vault.
+   <pre><strong>docker logs sample-app-app-1
 
-   7. The app calls Vault to get dynamic DB credentials (instead of using long-lived static passwords).
+   <pre>...
+   2022/01/11 20:29:01 getting secret api key from vault
+   2022/01/11 20:29:01 getting secret api key from vault: success!
+   [GIN] 2022/01/11 - 20:29:01 | 200 |    7.366042ms |   192.168.192.1 | POST     "/payments"
+   </pre>
 
-   8. Vault uses its pre-defined partnership with PostgreSQL to request that temporary (short-lived) credentials be created dynamically. The equivalent CLI command is:
+   BTW, in production, there would be a background process that forwards logs to a central collection SIEM (Security Information and Event Management) system such as Splunk. This log centralization provides a detailed enterprise-wide history of operations that makes security forensics possible by the corporate SOC (Security Operations Center).
+
+4. The app adds the static API key in the HTTP header before calling the secure-service.
+
+5. The response from the app to <tt>run-tests.sh</tt> is "hello world".
+
+6. <tt>run-tests.sh</tt> calls <tt>GET /api/products</tt> to access the products database based on <strong>dynamic</strong> credentials obtained by Vault.
+
+7. The app calls Vault to request dynamic DB credentials (instead of using long-lived static passwords).
+
+8. Vault uses its pre-defined partnership with PostgreSQL to request that temporary (short-lived) credentials be created dynamically. The equivalent CLI command is:
 
    <pre>kv put secret/mysql/webapp db-name-"users" \
    username="admin" password="12345"
@@ -666,18 +682,18 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    NOTE: Although PostgreSQL is used in this sample, Vault also works with MySQL, Microsoft SQL Server, and other database vendors.
    
-   9. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+9. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
 
    "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
 
    Even the root account cannot read the contents of an individual cubbyhole.
    -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
-   10.  Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+10.  Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
 
    The token sent to the Web App acts as a pointer to the user's Cubbyhole.
  
-   11. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+11. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
 
    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
    Thus, the library can detect malfeasance with the response-wrapping token.
@@ -692,26 +708,6 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    <br /><br />
 
    BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
-
-   <strong>database</strong> contains SQL to 1- create the database, 2- populate with data, 3- define roles 
-
-   * <strong>secure-service</strong> - a simulated 3rd party (mock) service that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call.
-
-      The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
-   
-   * <strong>trusted-orchestrator</strong> contains a <tt>Dockerfile</tt> used to build its container image and an <tt>entryfile.sh</tt> invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
-      
-   * <strong>vault-server</strong> contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeeded
-   
-   Additionally, two services appears in the list of containers:
-   
-   * <strong>app</strong> - "Web App" in the diagram
-
-   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
-
-
-
-
 
 
    
