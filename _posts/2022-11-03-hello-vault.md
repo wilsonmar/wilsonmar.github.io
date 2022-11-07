@@ -682,18 +682,18 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    NOTE: Although PostgreSQL is used in this sample, Vault also works with MySQL, Microsoft SQL Server, and other database vendors.
    
-9. To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+   To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
 
    "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
 
    Even the root account cannot read the contents of an individual cubbyhole.
    -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
-10.  Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+9. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
 
    The token sent to the Web App acts as a pointer to the user's Cubbyhole.
  
-11. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+10. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
 
    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
    Thus, the library can detect malfeasance with the response-wrapping token.
@@ -709,13 +709,17 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
    BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
+11. The app uses the Vault-provided credentials to access the database.
+12. The data returned from the database is output by run-tests.sh 
+
+    <tt>[TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]</tt>
 
    
    <a name="APP_ADDRESS"></a>
    
    ### APP_ADDRESS
 
-1. Notice <tt>APP_ADDRESS</tt> is hard-coded:
+13. Notice <tt>APP_ADDRESS</tt> is hard-coded:
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
@@ -728,7 +732,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
     ### Dockerfile
 
-2. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+14. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
     <pre>
     FROM maven:3.8.4-openjdk-17 as build
@@ -758,13 +762,13 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
     build-project folder???
 
-3. This invokes Maven to compile programs:
+15. This invokes Maven to compile programs:
    
     <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
 
    Unspecified in code, Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
 
-4.  View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+16. View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat pom.xml</strong></pre>
 
