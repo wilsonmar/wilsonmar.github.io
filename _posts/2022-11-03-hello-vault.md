@@ -771,7 +771,7 @@ This seems so complex (clever) that I am making a video to gradually (logically)
    
     <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
 
-    Unspecified in code, Maven opens file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
+    Although unspecified in code, Maven always open file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
 
 16. View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
