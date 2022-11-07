@@ -716,12 +716,15 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
     <tt>OK</tt> is output after the response is validated.
 
+<hr />
 
-   <a name="APP_ADDRESS"></a>
+## Diving into run-tests.sh
+
+<a name="APP_ADDRESS"></a>
    
-   ### APP_ADDRESS
+### APP_ADDRESS
 
-13. Notice <tt>APP_ADDRESS</tt> is hard-coded:
+1.  Notice <tt>APP_ADDRESS</tt> is hard-coded:
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
