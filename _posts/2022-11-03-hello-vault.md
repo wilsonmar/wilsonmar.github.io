@@ -481,7 +481,7 @@ Vault server has stopped.
 
    <tt>docker compose</tt> commands always invoke the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> in the same folder. It contains declarations to setup containers.
 
-   NOTE: <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
+   NOTE: Within hello-vault-dotnet</a>, a separate <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
 
 4. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
 
