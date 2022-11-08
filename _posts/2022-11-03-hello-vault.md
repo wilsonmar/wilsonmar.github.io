@@ -410,10 +410,6 @@ Vault server has stopped.
 
     Otherwise, you should see a bunch of lines scroll by until ending with this list and statuses:
 
-   <a name="ContainerServices"></a>
-   
-   ### Container services
-
    <pre>
     [+] Running 8/8
       ⠿ Network sample-app_default                       Created   0.1s 
@@ -426,7 +422,52 @@ Vault server has stopped.
       ⠿ Container sample-app-healthy-1                   Started  22.9s
    </pre>
 
-1. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+   We'll next take a deep dive into each service.
+
+   Since we're using Docker Compose, a <tt>docker-compose.yaml</tt> file declares how each service is setup. Here's the correspondance between definition and container name above.
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr valign="bottom"><th> docker-compose.yaml </th><th> Container/Volume in Docker</th></tr>
+   <tr valign="top"><td> app:
+      </td><td> sample-app-app-1   </td></tr>
+   <tr valign="top"><td>vault-server:
+   </td><td> sample-app-vault-server-1  </td></tr>
+   <tr valign="top"><td> trusted-orchestrator:
+   </td><td> sample-app-trusted-orchestrator-1 </td></tr>
+   <tr valign="top"><td> database:
+      </td><td> sample-app-database-1 </td></tr>
+   <tr valign="top"><td> secure-service:
+      </td><td> sample-app-secure-service-1 </td></tr>
+   <tr valign="top"><td> healthy:
+      </td><td> sample-app-healthy-1   </td></tr>
+   <tr valign="top"><td> volumes:
+      </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
+   </table>
+
+
+   <a name="ContainersDiagram"></a>
+
+   ### Containers diagram (with ports)
+
+   Each component illustrated in this diagram is a container running within Docker.
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg">
+   <img alt="hello-vault-flow0-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
+
+   * <strong>app</strong> - "Web App" running <strong>app.jar</strong> compiled from <tt>App.java</tt>.
+
+   * <strong>secure-service</strong> - a simulated 3rd party (mock) service <tt>docker-entrypoint</tt> that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call. The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
+   
+   * <strong>database</strong>, from <tt>docker-entrypoint.s</tt>, contains SQL to 1- create the database, 2- populate with data, 3- define roles 
+
+   * <strong>trusted-orchestrator</strong> is created from a <tt>Dockerfile</tt> used to build its container image and an <tt><strong>entrypoint.sh</strong></tt> at the root. It is invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
+      
+   * <strong>vault-server</strong>, initiated by <tt>/vault/entrypoint.sh</tt>, contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeed.
+   
+   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
+
+
+3. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat run.sh</strong></pre>
 
@@ -442,7 +483,7 @@ Vault server has stopped.
 
    NOTE: <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">hello-vault-dotnet, as separate docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
 
-1. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
+4. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
 
    <pre><strong>cat docker-compose.yml</strong></pre>
 
@@ -466,31 +507,6 @@ services:
       SECURE_SERVICE_ENDPOINT:          http://secure-service/api
    ...
    </pre>
-
-   The heading for each group in the file correspond to the Container name:
-
-   ### Processes in Docker
-
-   To summarize the name of each group in docker-compose.yml:
-
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr valign="bottom"><th> docker-compose.yaml </th><th> Container/Volume in Docker</th></tr>
-   <tr valign="top"><td> app:
-      </td><td> sample-app-app-1   </td></tr>
-   <tr valign="top"><td>vault-server:
-   </td><td> sample-app-vault-server-1  </td></tr>
-   <tr valign="top"><td> trusted-orchestrator:
-   </td><td> sample-app-trusted-orchestrator-1 </td></tr>
-   <tr valign="top"><td> database:
-      </td><td> sample-app-database-1 </td></tr>
-   <tr valign="top"><td> secure-service:
-      </td><td> sample-app-secure-service-1 </td></tr>
-   <tr valign="top"><td> healthy:
-      </td><td> sample-app-healthy-1   </td></tr>
-   <tr valign="top"><td> volumes:
-      </td><td> sample-app_trusted-orchestrator-volume  </td></tr>
-   </table>
-
 
    ### Edit run-tests.sh
 
@@ -527,8 +543,6 @@ services:
     ⠿ Container sample-app-healthy-1               Started               2.6s
    </pre>
 
-   ### App output
-
    These lines are output from the app (which we'll examine next):
 
    <pre>[TEST 1]: output: {"message":"hello world!"}
@@ -537,9 +551,7 @@ services:
     [TEST 2]: OK
    </pre>
 
-   ### Docker removal output
-
-   These lines are output from Docker won't appear if you edited out the removal commands:
+   These lines are output from Docker won't appear if you edited out the removal command:
 
    <pre>
     [+] Running 8/8
@@ -553,15 +565,12 @@ services:
     ⠿ Network sample-app_default                     Removed              0.0s
    </pre>
 
-   <a name="ContainerPorts"></a>
+   <a name="PortsUsed"></a>
    
-   ### Additional command to show ports
+   ### Container Ports used by each container
 
 5. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
 
-   <a name="PortsUsed"></a>
-   
-   ### Ports used by each container
    <!--
    <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
    </strong></pre>
@@ -575,34 +584,10 @@ sample-app-secure-service-1         0.0.0.0:1717->80/tcp
 sample-app-database-1               0.0.0.0:5432->5432/tcp
    </pre>
 
-   ### Containers diagram with Ports
-
-   Each component illustrated in this diagram is a container running within Docker.
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg">
-   <img alt="hello-vault-flow0-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
-
-
-   * <strong>app</strong> - "Web App" running <strong>app.jar</strong> compiled from <tt>App.java</tt>.
-
-   * <strong>secure-service</strong> - a simulated 3rd party (mock) service <tt>docker-entrypoint</tt> that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call. The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
-   
-   * <strong>database</strong>, from <tt>docker-entrypoint.s</tt>, contains SQL to 1- create the database, 2- populate with data, 3- define roles 
-
-   * <strong>trusted-orchestrator</strong> is created from a <tt>Dockerfile</tt> used to build its container image and an <tt><strong>entrypoint.sh</strong></tt> at the root. It is invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
-      
-   * <strong>vault-server</strong>, initiated by <tt>/vault/entrypoint.sh</tt>, contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeed.
-   
-   Additionally, two services appears in the list of containers:
-   
-   * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
-
-
    <a name="ContainerPorts"></a>
    
    ### Container invocations
 
-   docker ps
    <!--
    <pre><strong>docker ps --format "table &#123;&#123;.Names&#125;&#125;\t&#123;&#123;.Command&#125;&#125;"
    </strong></pre>
@@ -617,9 +602,10 @@ sample-app-database-1               "docker-entrypoint.s…"
    </pre>
 
 
+
 <a name="Flowchart1"></a>
 
-### Flowchart sequence
+### [TEST 1] flow
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911521/hello-vault-flow1-1920x1080_ms4pee.jpg"><img alt="hello-vault-flow1-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911521/hello-vault-flow1-1920x1080_ms4pee.jpg"></a>
 
