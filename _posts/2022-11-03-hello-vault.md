@@ -386,9 +386,10 @@ Stopping Vault dev server..
 Vault server has stopped.
    </pre>
 
-   ### Secret zero
+   ### Secret zero for dev Vault
    
-   Notice Vault is invoked using its built-in "dev-only-token" rather than a cryptographically-created one used in production mode.
+   To reduce manual efforts to add security necessary for production usage, 
+   here Vault is invoked using its built-in "dev-only-token" rather than a cryptographically-created one used in production mode.
    
    <tt>container_id=$(docker run --rm --detach -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token' vault:1.11.0)</tt>
 
@@ -697,6 +698,8 @@ sample-app-database-1               "docker-entrypoint.s…"
    The token sent to the Web App acts as a pointer to the user's Cubbyhole.
  
 10. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
+
+    See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
 
     Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
     Thus, the library can detect malfeasance with the response-wrapping token.
