@@ -580,7 +580,7 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
    Each component illustrated in this diagram is a container running within Docker.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg">
-   <img alt="hello-vault-images-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
+   <img alt="hello-vault-flow0-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
 
 
    * <strong>app</strong> - "Web App" running <strong>app.jar</strong> compiled from <tt>App.java</tt>.
@@ -598,11 +598,11 @@ sample-app-database-1               0.0.0.0:5432->5432/tcp
    * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
 
 
-
    <a name="ContainerPorts"></a>
    
    ### Container invocations
 
+   docker ps
    <!--
    <pre><strong>docker ps --format "table &#123;&#123;.Names&#125;&#125;\t&#123;&#123;.Command&#125;&#125;"
    </strong></pre>
@@ -616,6 +616,13 @@ sample-app-secure-service-1         "/docker-entrypoint.…"
 sample-app-database-1               "docker-entrypoint.s…"
    </pre>
 
+
+<a name="Flowchart1"></a>
+
+### Flowchart sequence
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911521/hello-vault-flow1-1920x1080_ms4pee.jpg"><img alt="hello-vault-flow1-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911521/hello-vault-flow1-1920x1080_ms4pee.jpg"></a>
+
 1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
 
    <pre><strong>cat run-tests.sh</strong></pre>
@@ -626,15 +633,7 @@ sample-app-database-1               "docker-entrypoint.s…"
 
    "[TEST 2]" = <tt>GET /api/products</tt> obtains <strong>dynamic</strong> credentials to call the products database 
 
-
-<a name="Flowchart"></a>
-
-## Flowchart sequence
-
-This seems so complex (clever) that I am making a video to gradually (logically) reveal each component in this flow:
-
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768816/hello-vault-flow-1920x1080_rnwtpv.jpg"></a>
-
+### [TEST 1] flow
 
 1. <tt>run-tests.sh</tt> calls <tt>POST /api/payments</tt> to <strong>write</strong> the <strong>static</strong> API keys to be used to call the payments API. The call can also be to a 3rd-party service (such as Twilio for mail, SMS, PayPal, etc.). 
 
@@ -662,6 +661,15 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 4. The app adds the static API key in the HTTP header before calling the secure-service.
 
 5. The response from the app to <tt>run-tests.sh</tt> is "hello world".
+
+
+<a name="Flowchart2"></a>
+
+### [TEST 2] flow
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911466/hello-vault-flow2-1920x1080_ksbfgd.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911466/hello-vault-flow2-1920x1080_ksbfgd.jpg"></a>
+
+(I am making a video to gradually (logically) reveal each component in this flow:)
 
 6. <tt>run-tests.sh</tt> calls <tt>GET /api/products</tt> to access the products database based on <strong>dynamic</strong> credentials obtained by Vault.
 
@@ -921,6 +929,8 @@ This seems so complex (clever) that I am making a video to gradually (logically)
 
 
 <hr />
+
+<a name="Renewal"></a>
 
 ## Renewal of wrapping tokens
 

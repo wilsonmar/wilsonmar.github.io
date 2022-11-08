@@ -226,6 +226,10 @@ There are several out there.
 
 https://www.cio.com/article/3276004/7-change-management-certifications-to-boost-your-it-career.html
 
+President of ACMP Roxanne Brown of Change Decision says <a target="_blank" href="https://www.youtube.com/watch?v=Z0D8pAJrxXU">VIDEO</a>: 
+A certification is for attending a class.
+The CCMP designation is obtained after class and passing an exam based on an industry-standard of terminology, but also demonstrated flexibility.
+
 
 ### Certifications specifically about change mangement
 
@@ -358,7 +362,7 @@ Listed from cheapest to most expensive/prestigeous:
 * $3,100 <a target="_blank" href="https://www.imaworldwide.com/aim-change-management-certification">AIM Change Management Professional certification</a> is obtained after a 3-day training (virtual or on-site) by consultant Don Harrison. "it’s a day longer than most, because there is so much to know — including how to manage leaders and how to deal with the power and politics of change". AIM focuses on the human side of risk; rather than look at how technology or software fails us, it encourages leaders to strengthen processes that involve employees, given that human-error is one of the biggest risks for failure. The certification is targeted at human resources, organizational development, IT, and business and clinical leaders, as well as project managers.
 
 * <strong>$4,850 for 3-days on-site</strong> or $4,500 virtually to learn their ADKAR models. The <a target="_blank" href="https://www.prosci.com/training/change-management-certification">Prosci Certified Change Practioner certification</a> 
-
+   * https://www.youtube.com/watch?v=oMiI59NMO2Q
 
 ## Certifications with a change management component:
 
