@@ -230,6 +230,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    * Java 17 the latest (3rd) LTS was released on September 14, 2021. 
    * Java 19 General Availability began on September 20, 2022.
    <br /><br />
+
    See https://www.wikiwand.com/en/Java_version_history
 
 6. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
@@ -238,10 +239,10 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    brew install docker-desktop
    </strong></pre>
    
-   Alternately, instead of docker-compose, consider <a target="_blank" href="https://bmiguel-teixeira.medium.com/goodbye-docker-compose-hello-kubelet-75306472de27">Kublet static pod</a>.
-
    PROTIP: Get the Docker Desktop logo on your Mac Taskbar: pinch four fingers on your trackpad to drag and drop the logo onto your Taskbar.
    You should see the Docker logo when you point the mouse at the top of your screen.
+
+   Alternately, instead of docker-compose, consider <a target="_blank" href="https://bmiguel-teixeira.medium.com/goodbye-docker-compose-hello-kubelet-75306472de27">Kublet static pod</a>.
 
 7. Verify Docker version:
 
@@ -385,6 +386,12 @@ Stopping Vault dev server..
 Vault server has stopped.
    </pre>
 
+   ### Secret zero
+   
+   Notice Vault is invoked using its built-in "dev-only-token" rather than a cryptographically-created one used in production mode.
+   
+   <tt>container_id=$(docker run --rm --detach -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token' vault:1.11.0)</tt>
+
 
 <hr />
 
@@ -396,6 +403,8 @@ Vault server has stopped.
 
    <pre><strong>cd sample-app</strong></pre>
 
+   <a name="run.sh"></a>
+   
    ### run.sh
 
 2. Let's run it, then analyze the output:
@@ -467,7 +476,7 @@ Vault server has stopped.
    * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
 
 
-3. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+1. View file <tt>run.sh</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
    <pre><strong>cat run.sh</strong></pre>
 
@@ -483,7 +492,7 @@ Vault server has stopped.
 
    NOTE: Within hello-vault-dotnet</a>, a separate <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/sample-app/docker-compose.arm64.yaml">docker-compose.arm64.yaml</a> is, at time of writing, needed to work around mssql/server's incompatibility with arm64 architecture.
 
-4. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
+1. Let's use a text editor code (VSCode) to look at the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/docker-compose.yml">docker-compose.yml</a> file within the sample-app folder:
 
    <pre><strong>cat docker-compose.yml</strong></pre>
 
@@ -515,7 +524,7 @@ services:
     <pre><strong>code run-tests.sh
     </strong></pre>
 
-2. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
+1. If you don't want processes to stop after the script ends (so you can issue more commands), type a "#" comment character in front of the <tt>docker compose down</tt> command line, like this:
 
     <pre># bring down the services on exit
     # trap 'docker compose down --volumes' EXIT
@@ -524,9 +533,9 @@ services:
     If you comment out the <tt>compose down</tt> and save the file, 
     processes will continue to run unless you break out by pressing <strong>command+C</strong>.
 
-3. Restart Docker.
+1. Restart Docker.
    
-4. Let's run it, then analyze the output:
+1. Let's run it, then analyze the output:
 
    <pre><strong>./run-tests.sh
    </strong></pre>
@@ -546,9 +555,9 @@ services:
    These lines are output from the app (which we'll examine next):
 
    <pre>[TEST 1]: output: {"message":"hello world!"}
-    [TEST 1]: OK
-    [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
-    [TEST 2]: OK
+   [TEST 1]: OK
+   [TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]
+   [TEST 2]: OK
    </pre>
 
    These lines are output from Docker won't appear if you edited out the removal command:
@@ -569,7 +578,7 @@ services:
    
    ### Container Ports used by each container
 
-5. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
+1. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
 
    <!--
    <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
@@ -718,7 +727,7 @@ sample-app-database-1               "docker-entrypoint.s…"
    
 ### APP_ADDRESS
 
-1.  Notice <tt>APP_ADDRESS</tt> is hard-coded:
+1.  Notice <tt>APP_ADDRESS</tt> is hard-coded, referencing what was established by <a href="#run.sh">run.sh</a>
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
 
@@ -731,7 +740,7 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     ### Dockerfile
 
-14. <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
+2.  <tt>docker compose up -d --build --quiet-pull</tt> builds based on the <a target="_blank" href="https://github.com/bomonike/hello-vault-spring/blob/main/sample-app/Dockerfile">Dockerfile</a>
 
     <pre>
     FROM maven:3.8.4-openjdk-17 as build
@@ -761,13 +770,13 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     build-project folder???
 
-15. This invokes Maven to compile programs:
+3.  This invokes Maven to compile programs:
    
     <pre><strong>RUN mvn clean package -DskipTests</strong></pre>
 
     Although unspecified in code, Maven always open file <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/pom.xml">pom.xml</a>
 
-16. View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
+4.  View file <tt>pom.xml</tt> using <tt>cat</tt> or a text editor such as code (for VSCode).
  
     <pre><strong>cat pom.xml</strong></pre>
 
@@ -776,7 +785,7 @@ sample-app-database-1               "docker-entrypoint.s…"
     * https://github.com/spring-projects/spring-framework/releases
     <br /><br />
 
-12. File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
+5.  File <tt>HelloVaultSpringApplicationTests.java</tt> within folder path <tt>/test/java/com/hashicorp/hellovaultsprint</tt> is compiled:
 
     <pre>
     package com.hashicorp.hellovaultspring;
@@ -797,26 +806,26 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     which specifies java to compile using  
    
-13. Copy the app.jar file created to the root folder:
+6.  Copy the app.jar file created to the root folder:
 
     <tt>COPY --from=build /build-project/target/hello-vault-spring.jar /app.jar</tt> 
 
-14. Invoke the <tt>app.jar</tt> program from above:
+7.  Invoke the <tt>app.jar</tt> program from above:
  
     <tt>ENTRYPOINT ["java","-jar", "/app.jar"]</tt>
 
   
     ### Invoking the app HEALTHCHECK
 
-15. The <tt>HEALTHCHECK</tt> in the <a href="#Dockerfile">Dockerfile</a> makes a call to the <tt>healthcheck</tt> API to the server.
+8.  The <tt>HEALTHCHECK</tt> in the <a href="#Dockerfile">Dockerfile</a> makes a call to the <tt>healthcheck</tt> API to the server.
 
-16. The "trap" line is executed after the service exits:
+9.  The "trap" line is executed after the service exits:
 
     <pre>/# bring down the services on exit
     trap 'docker compose down --volumes' EXIT
     </pre>
 
-17. This retrieves from Vault's payments secret:
+10. This retrieves from Vault's payments secret:
 
     <pre># TEST 1: POST /payments (static secrets)
     output1=$(curl --silent --request POST "${APP_ADDRESS}/payments")
@@ -856,7 +865,7 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     QUESTION: In Production, "localhost" would not be there. What replaces it?
 
-18. This obtains the products secret:
+11. This obtains the products secret:
 
     <pre># TEST 2: GET /products (dynamic secrets)
     output2=$(curl --silent --request GET "${APP_ADDRESS}/products")
@@ -896,12 +905,12 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     ### Ad hoc request
 
-11. Open another Terminal to define the <a href="#APP_ADDRESS">APP_ADDRESS defined earlier</a>:
+13. Open another Terminal to define the <a href="#APP_ADDRESS">APP_ADDRESS defined earlier</a>:
 
     <pre>APP_ADDRESS="http://localhost:8080"
     </pre>
 
-21. Issue an ad hoc call:
+14. Issue an ad hoc call:
 
     <pre><strong>echo "$APP_ADDRESS"
     curl --silent --request GET "${APP_ADDRESS}/products"
@@ -910,7 +919,7 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     ### Inside the app
 
-22. Set breakpoint in the Java program: ???
+15. Set breakpoint in the Java program: ???
 
 
 
