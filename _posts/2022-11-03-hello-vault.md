@@ -32,6 +32,10 @@ This article provides a step-by-step deep-dive tour, with commentary, contrastin
 
 {% include whatever.html %}
 
+If you want a production setup for Vault and database, you'd want to use <strong>Terraform</strong>, such as: 
+   * https://github.com/averche/vault-guides
+   <br /><br />
+
 ## For local development
 
 To code your app to create temporary passwords via Vault, you need a rig that runs locally on your laptop
@@ -72,10 +76,6 @@ Here are the steps:
    These repos provides single shell scripts to make it easier than following guides such as:
    * https://spring.io/guides/gs/accessing-vault/
    * https://github.com/mp911de/spring-cloud-vault-config-samples
-   <br /><br />
-
-   Alternately, to install Vault using Terraform, etc. for production use, see:
-   * https://github.com/averche/vault-guides
    <br /><br />
 
 2. Each repo has two folders with two example apps:
