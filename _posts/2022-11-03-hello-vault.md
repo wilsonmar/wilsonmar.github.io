@@ -32,26 +32,17 @@ This article provides a step-by-step deep-dive tour, with commentary, contrastin
 
 {% include whatever.html %}
 
-To code your app to create temporary passwords via Vault, you need:
+## For local development
 
-   * A running Vault instance that runs locally on your laptop
-   * A database instance that runs locally on your laptop
+To code your app to create temporary passwords via Vault, you need a rig that runs locally on your laptop
+
+   * A running Vault (dev) instance
+   * A database instance (PostgreSQL or MySQL for C#)
+   * Shell scripts that only require a single command to create the enviornment on new Apple M1 ARM64 chips as well as older Intel x86 macOS machines
    * A sample app in your programming language of choice that demonstrates how to access the above.
    <br /><br />
 
 So HashiCorp developers created a set of repos that makes use of <strong>Docker Compose</strong> so that you can run it on a variety of laptops.
-
-This article takes a deep dive into sample (template) code within a GitHub repo.
-This has features other sample code lack:
-
-   * A run.sh shell file that creates servics needed within Docker Compose containers
-   * A run-tests.sh that calls the program's APIs
-   * The scripts work on new Apple M1 ARM64 chips as well as older Intel x86 macOS machines
-
-   * Containers created include a local instance of HashiCorp Vault for the app to store and retrieve secrets
-   * A database able to communicate with Vault to dynamically create credentials
-   * Example of how to generate secrets dynamically instead of using long-running secrets for others to steal
-   <br /><br />
 
 <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
 
@@ -65,6 +56,8 @@ The languages, listed alphabetically:
    * https://github.com/hashicorp/hello-vault-ruby
    * https://github.com/hashicorp/hello-vault-rust (under construction)
    <br /><br />
+
+This article takes a deep dive into sample (template) code within a GitHub repo, giving deep-dive explanations for devs while other articles talked in generalities.
 
 Here are the steps:
 
