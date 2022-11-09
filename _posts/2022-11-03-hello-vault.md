@@ -19,16 +19,27 @@ comments: true
 
 Keeping secrets secret is a fundamental skill for all developers, especially in today's hostile internet full of scammers, ransomware gangs, and state-sponsored terrorism using "killware".
 
+## Never lose another database password
+
+To outwit hackers, HashiCorp Vault has created an amazing enterprise-capable approach that creates usernames and passwords for temporary use.
+
+But to take advantage of their cleverness, developers need to learn how it works.
+
 This is like working on your TV the different remotes and logins to setup different streaming services.
 Once you go through the motions, you can get through quickly (for awhile until you change TV).
 
-<a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
-
-## What does this contribute?
+This article provides a step-by-step deep-dive tour, with commentary, contrasting code across several repositories created by developers inside and outside HashiCorp. 
 
 {% include whatever.html %}
 
-This article provides a step-by-step deep-dive tour, with commentary, contrasting code across several repositories created by developers inside and outside HashiCorp. 
+To code your app to create temporary passwords via Vault, you need:
+
+   * A running Vault instance that runs locally on your laptop
+   * A database instance that runs locally on your laptop
+   * A sample app in your programming language of choice that demonstrates how to access the above.
+   <br /><br />
+
+So HashiCorp developers created a set of repos that makes use of <strong>Docker Compose</strong> so that you can run it on a variety of laptops.
 
 This article takes a deep dive into sample (template) code within a GitHub repo.
 This has features other sample code lack:
@@ -40,23 +51,28 @@ This has features other sample code lack:
    * Containers created include a local instance of HashiCorp Vault for the app to store and retrieve secrets
    * A database able to communicate with Vault to dynamically create credentials
    * Example of how to generate secrets dynamically instead of using long-running secrets for others to steal
+   <br /><br />
 
-   * The same app in other languages: Go, dotnet C#, Java, Ruby to compare and learn
+<a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
+
+The languages, listed alphabetically:
+
+   * Bash (not yet under construction)
+   * https://github.com/hashicorp/hello-vault-dotnet (C# with MS-SQL)
+   * https://github.com/hashicorp/hello-vault-go
+   * https://github.com/hashicorp/hello-vault-python (under construction)
+   * https://github.com/hashicorp/hello-vault-spring (Maven, Java) using<br /> https://spring.io/projects/spring-vault
+   * https://github.com/hashicorp/hello-vault-ruby
+   * https://github.com/hashicorp/hello-vault-rust (under construction)
+   <br /><br />
+
+Here are the steps:
 
 1. Obtain the repo for your language of choice. For example:
 
    <pre><strong>git clone https://github.com/hashicorp/hello-vault-spring
    cd hello-vault-spring
    </strong></pre>
-
-   * https://github.com/hashicorp/hello-vault-bash (under construction)
-   * https://github.com/hashicorp/hello-vault-dotnet (C# with MS-SQL)
-   * https://github.com/hashicorp/hello-vault-go
-   * https://github.com/hashicorp/hello-vault-python (under construction)
-   * https://github.com/hashicorp/hello-vault-spring (Maven, Java) using https://spring.io/projects/spring-vault
-   * https://github.com/hashicorp/hello-vault-ruby
-   * https://github.com/hashicorp/hello-vault-rust (under construction)
-   <br /><br />
 
    Each repo uses <strong>Docker Compose</strong> to create a dev environment containing a dev Vault instance and an app database. All the example repos make calls to a PostgreSQL database, except for the C# (dotnet) example, which calls a MS-SQL database.
 
