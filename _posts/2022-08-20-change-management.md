@@ -147,7 +147,9 @@ Stages:
    5. Maintenance.
    <br /><br />
 
+   Attendance at Prosci's class includes a 1-year subscription to their Practitioner eToolkit that contains PowerPoint, Word, and Excel templates for most of the Prosci tools. 
 
+## ACMP Standards
    
    <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
 
@@ -213,7 +215,7 @@ Stages:
 
 <strong>2) Expect resistance</strong> – Major change alters power structures, shifts responsibilities, and crosses organizational boundaries, which affects real people with real influence. These real people get their real influence from the existing power structures, responsibilities, and organizational roles.  Therefore, it is dangerous to underestimate the power of the desire to hold onto the current state. Machiavelli provided this observation as a reminder that people tend to work in their own self-interest and that the fear of losing something is generally stronger than the hope of gaining something. In other words, don’t waste energy wondering why people are resisting and focus your efforts on leading through the resistance.
 
-<strong>3) Build support</strong> – Left to their own devices, those with power in the old system will actively (though not always visibly) defend the current state and those who will benefit the most from the new system will tend to be more passive in their support. In writing “The Prince”, Machiavelli hoped to provide the reader with an understanding of the challenges that lay ahead so that they may be better prepared. Therefore it is a critical role of the sponsor to work at closing the gap by reducing resistance from the first group and building support from the second.
+<strong>3) Build support</strong> 
 
 Thus, effective leadership is critical to successful change and requires active sponsorship throughout the change, expecting and managing resistance, and building support. 
 
@@ -535,6 +537,10 @@ And the course provides and explains use of templates to use in your job as a ch
 
    <a target="_blank" href="https://app.pluralsight.com/channels/details/5b9d5357-c699-43b7-b1c7-4b753e3b1363">Join the ACMP channel on Pluralsight</a>
 
-https://whatfix.com/blog/change-management-certification/
-"Top 10 Change Management Certifications to Complete (2022)"
-   
+<a target="_blank" href="https://whatfix.com/blog/change-management-certification/">
+"Top 10 Change Management Certifications to Complete (2022)</a>
+
+<a target="_blank" href="https://www.ecornell.com/certificates/leadership-and-strategic-management/change-management/">eCornell Change Management Certificate</a>
+
+<a target="_blank" href="https://www.extension.harvard.edu/professional-development/programs/strategies-leading-successful-change-initiatives">Strategies for Leading Successful Change Initiatives</a> program at <a target="_blank" href="https://www.extension.harvard.edu/professional-development/">Harvard Extension School for Professional Development</a>.
+

@@ -3,7 +3,7 @@ layout: post
 date: "2022-11-03"
 file: "hello-vault"
 title: "Hello-Vault"
-excerpt: "How to code your app to use HashiCorp Vault to write and read static secrets and eliminate database password theft with cubbyholes and wrapped secrets"
+excerpt: "How to code your app to use HashiCorp Vault to get rid of static database passwords by generating credentials in Secret_ID temporarily in cubbyholes, wrapped for transfer, and accessed using AppRole"
 tags: [secrets]
 image: # pic-black-bkg-white-cloud_1920x1200
   feature: https://cloud.githubusercontent.com/assets/300046/15269257/8104a824-19b6-11e6-9c42-014bf608009a.jpg
@@ -467,8 +467,8 @@ Vault server has stopped.
 
    Each component illustrated in this diagram is a container running within Docker.
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg">
-   <img alt="hello-vault-flow0-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667768898/hello-vault-images-1920x1080_ctyelg.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow0-1920x1080_eigfyk.jpg">
+   <img alt="hello-vault-flow0-1920x1080.jpg" width="1920" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow0-1920x1080_eigfyk.jpg"></a>
 
    * <strong>app</strong> - "Web App" running <strong>app.jar</strong> compiled from <tt>App.java</tt>.
 
@@ -623,7 +623,7 @@ sample-app-database-1               "docker-entrypoint.s…"
 
 ### [TEST 1] flow
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911521/hello-vault-flow1-1920x1080_ms4pee.jpg"><img alt="hello-vault-flow1-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911521/hello-vault-flow1-1920x1080_ms4pee.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow1-1920x1080_bdq4je.jpg"><img alt="hello-vault-flow1-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow1-1920x1080_bdq4je.jpg"></a>
 
 1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
 
@@ -669,13 +669,16 @@ sample-app-database-1               "docker-entrypoint.s…"
 
 ### [TEST 2] flow
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911466/hello-vault-flow2-1920x1080_ksbfgd.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667911466/hello-vault-flow2-1920x1080_ksbfgd.jpg"></a>
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow2-1920x1080_vkexol.jpg"><img alt="hello-vault-flow-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow2-1920x1080_vkexol.jpg"></a>
 
 (I am making a video to gradually (logically) reveal each component in this flow:)
 
 6. <tt>run-tests.sh</tt> calls <tt>GET /api/products</tt> to access the products database based on <strong>dynamic</strong> credentials obtained by Vault.
 
-7. The app calls Vault to request dynamic DB credentials (instead of using long-lived static passwords).
+7. Instead of using long-lived static passwords sitting around to be stolen, the app calls Vault to request dynamic DB credentials.
+
+   * https://aiven.io/blog/secure-your-db-with-vault
+   <br /><br />
 
 8. Vault uses its pre-defined partnership with PostgreSQL to request that temporary (short-lived) credentials be created dynamically. The equivalent CLI command is:
 
@@ -683,7 +686,7 @@ sample-app-database-1               "docker-entrypoint.s…"
    username="admin" password="12345"
    </pre>
    
-   Remember that the 3-define file contains:
+9. The database creates a username and password based on ROLE defined in its <tt>3-define</tt> file:
    
    <pre>CREATE ROLE vault_db_user LOGIN SUPERUSER PASSWORD 'vault_db_password';
    CREATE ROLE readonly NOINHERIT;
@@ -692,41 +695,56 @@ sample-app-database-1               "docker-entrypoint.s…"
 
    NOTE: Although PostgreSQL is used in this sample, Vault also works with MySQL, Microsoft SQL Server, and other database vendors.
    
-   To transmit created credentials securely to the Web App, Vault puts the secret in a <strong>cubbyhole</strong> for each user.
+    ### Vault Cubbyholes
 
-   "Cubbyhole" is an American phrase for a small safe place allocated to each individual.
+10. Vault stores the credentials from the database in a <strong>Cubbyhole</strong> Vault creates. "Cubbyhole" is an American phrase for a small safe place allocated to each individual. Each Cubbyhold can be read only once. It's also temporary in that it has an expiration date. Also, only a specific user can retrieve it. Even Vault's root account cannot read the contents of an individual Cubbyhole. -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
 
-   Even the root account cannot read the contents of an individual cubbyhole.
-   -- see <a target="_blank" href="https://cloudacademy.com/course/hashicorp-vault/hashicorp-vault-cubbyhole/">COURSE at CloudAcademy.com</a>
+    ### Secret ID and AppRole
 
-9. Rather than exposing the client token during transmission, for safe delivery to the Web App, Vault has a <strong>Trusted Orchestrator</strong> figuratively <strong>"wrap"</strong> that secret within a short-lived single-use token. 
+    Vault assigns a <strong>SecretID</strong> used to retrieve the contents of a Cubbyhole.
+    The SecretID is like an password associated with a <strong>AppRole</strong> definition, which is like a username.
 
-   The token sent to the Web App acts as a pointer to the user's Cubbyhole.
+    Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data. See:
+
+    * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO:</a> Cubbyhold Vault GUI demo.
+    * https://www.hashicorp.com/blog/how-and-why-to-use-approle-correctly-in-hashicorp-vault
+    * https://developer.hashicorp.com/vault/tutorials/recommended-patterns/pattern-approle?in=vault%2Frecommended-patterns
+    <br /><br />
+
+    ### Trusted Orchestrator
+
+    Vault needs to send that Secret ID to the web-app through a <strong>Trusted Orchestrator</strong> (such as Kubernetes or Consul). 
  
-10. The Web App receives the wrapping token for "unwrap" by retrieving the secret from its cubbyhole ???
-
-    See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
-
-    Note that retrieval can only occur once. An error is logged (and sent to the SOC) if additional retrievals are attempted.
-    Thus, the library can detect malfeasance with the response-wrapping token.
-
-    Even the system who created the initial token won't see the original value. 
-    See https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
-
-    Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data:
-    * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping   
+11. Rather than exposing database credentials in transmission, for safe delivery to the Web App, Vault <strong>"wraps"</strong> the SecretID (address) within a short-lived single-use <strong>Wrapper token</strong>. 
+ 
     * https://www.vaultproject.io/docs/concepts/response-wrapping 
+    * https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
+    * https://learn.hashicorp.com/tutorials/vault/cubbyhole-response-wrapping
     * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
     <br /><br />
 
+12. The Trusted Orchestrator delivers the wrapping token to the web-app.
+   
+13. The Web App receives the wrapping token and "unwraps" it to obtain the SecretID associated with an <strong>AppRole</strong>.
+
     BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
-11. The app uses the Vault-provided credentials to access the database.
-12. The data returned from the database is output by run-tests.sh 
+14. A one-time temporary token ??? is returned by Vault to the web-app.
+    
+15. The app uses the Vault-provided credentials to access the database.
+
+    Vault ensures that retrieval of a Cubbyhole's contents can only occur once. 
+    Vault logs an error is logged (and sent to the SOC) if additional retrievals are attempted.
+    Thus, the library can detect malfeasance with the response-wrapping token.
+
+16. The database returns data to the web-app, like it always does.
+    
+17. The data returned from the database is output by run-tests.sh 
 
     <tt>[TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]</tt>
 
     <tt>OK</tt> is output after the response is validated.
+
 
 <hr />
 
