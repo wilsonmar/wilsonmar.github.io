@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-02"
+date: "2022-11-08"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -1031,18 +1031,21 @@ Events:          &LT;none>
 
 ## Sidero Talos OS on Bare Metal
 
-How about running Kubernetes on bare-metal machines to get the most performance
-possible out of hardware, with minimal overhead?
-
 There is on-going debate about <a target="_blank" href="https://thenewstack.io/a-guide-to-linux-operating-systems-for-kubernetes/">what Operating System to use with Kubernetes</a>
 to reduce overhead and security exposures. Options are Ubuntu, Debian, CentOS, Red Hat Enterprise Linux (RHEL), Fedora. Operating systems compatible with Google Kubernetes Engine on Linux:
-https://cloud.google.com/migrate/containers/docs/compatible-os-versions
 
-https://computingforgeeks.com/minimal-container-operating-systems-for-kubernetes/
+   * https://cloud.google.com/migrate/containers/docs/compatible-os-versions
+   * https://computingforgeeks.com/minimal-container-operating-systems-for-kubernetes/
+   <br /><br />
 
-In Beta as of March 2022, the <a target="_blank" href="ttps://github.com/talos-systems/talos/">open-source</a> headless Talos Linux OS was <a target="_blank" href="https://www.siderolabs.com/platform/talos-os-for-kubernetes/">purpose-built for Kubernetes</a> around the <a target="_blank" href="https://github.com/kubernetes-sigs/cluster-api">Cluster gRPC API (CAPI) project</a>'s <a target="_blank" href="https://cluster-api.sigs.k8s.io/introduction.html"><strong>clusterctl</strong></a> CLI tool. (CAPI is the common system for managing Kubernetes clusters in a declarative fashion.)
+Reaching v1.0 April 2022, the <a target="_blank" href="ttps://github.com/talos-systems/talos/">open-source</a> headless Talos Linux OS is <a target="_blank" href="https://www.siderolabs.com/platform/talos-os-for-kubernetes/">purpose-built for Kubernetes</a>.
+
 Talos has no shell, no SSH, a read-only file system -- making it small and secure.
 
+To get the most performance possible out of hardware, with minimal overhead,
+run Kubernetes on bare-metal machines.
+
+To simplify the creation and management of bare metal Kubernetes clusters, Sidero Labs, the company behind Talos Linux, also released Sidero Metal, a cluster API provider for bare metal, that installs Talos Linux based Kubernetes clusters, in a scalable and declarative way. (It's built around the <a target="_blank" href="https://github.com/kubernetes-sigs/cluster-api">Cluster gRPC API (CAPI) project</a>’s <a target="_blank" href="https://cluster-api.sigs.k8s.io/introduction.html"><strong>clusterctl</strong></a> CLI tool.
 
 ### Replace failed node
 

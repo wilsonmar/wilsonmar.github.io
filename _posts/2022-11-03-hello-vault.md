@@ -196,6 +196,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    ### Install Rust
 
    Rust:
+   
 
    ### Install Python
 
@@ -297,7 +298,7 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    A message is not issued for authentication unless it's unsuccessful: 
    "unable to initialize Vault client:"
 
-   <tt>dev-only-token</tt> is hard-coded. But in production code, the <tt>APP_TOKEN</tt> environment variable is read by the app to retrieve a secure Token that is unique to each user for access to Vault. 
+   <tt>dev-only-token</tt> is hard-coded. But in production code, the <tt>VAULT_TOKEN</tt> environment variable is read by the app to retrieve a secure Token that is unique to each user for access to Vault. 
    And the Token's value should never be revealed in messages to ensure confidentiality.
 
    ### Write/Read Static secrets
@@ -305,13 +306,13 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    The program writes a <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/secrets-management/versioned-kv">static secret</a> named "password" with a value of "Hashi123", then reads it back. 
    But normal apps would usually just read secrets written by another program.
    
-   ### Vault client library functions
+   <a name="VaultAPILibraries"></a>
+
+   ### Vault API library functions
    
    Each programming language uses a different library to perform low-level functionality.
 
-   In the dotnet (C#) repo:
-
-   * file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
+   In the dotnet (C#) repo, file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
    * "secret" is defined as the <strong>mountPoint</strong> 
    * "my-secret-password" is defined as the <strong>path</strong> 
    <br /><br />
@@ -320,6 +321,11 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    * function <tt>opsForVersionedKeyValue()</tt> 
    * <tt>put</tt> function to "data".
+   <br /><br />
+
+   In Rust, <a target="_blank" href="https://www.linkedin.com/in/jonathan-lawn-bb48851/">Jonathan Lawn</a>'s <a target="_blank" href="https://github.com/Metaswitch/vault-client">vault-client</a> is a Rust-based (generated based on Swagger spec) native client library to access HashiCorp Vault APIs. It's an alternative to <a target="_blank" href="https://www.linkedin.com/in/chrismacnaughton/">Chris MacNaughton</a>'s <a taget="_blank" href="https://crates.io/crates/hashicorp_vault">crates.io</a> <a target="_blank" href="https://lib.rs/crates/secret-vault">library</a>, a less featured client that covers a broader range of the Vault API.
+
+   * function calls TBD.
    <br /><br />
 
    In Python:
@@ -733,6 +739,8 @@ sample-app-database-1               "docker-entrypoint.s…"
 1.  Notice <tt>APP_ADDRESS</tt> is hard-coded, referencing what was established by <a href="#run.sh">run.sh</a>
 
     <tt>APP_ADDRESS="http://localhost:8080"</tt>
+
+    Notice the "http" protocol, which uses unencrypted communication.
 
     But in production, the program would instead <strong>retrieve</strong> APP_ADDRESS from a system variable. Also, production APP_ADDRESS would, instead of "http", specify use of secure "https" protocol (on default port 443).
     

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-31"
+date: "2022-11-07"
 file: "cloud-macos"
 title: "Cloud MacOS"
 excerpt: "Temporary MacOS instances from AWS EC2 and MacStadium"
@@ -48,8 +48,8 @@ The <a target="_blank" href="https://aws.amazon.com/ec2/instance-types/mac/#Pric
    * mac1 US per hour $0.650 x 24 = $15.6/day or $468 per 30-day month
    * mac2 US per hour $1.083 x 24 = $25.992/day or $779.76 per 30-day month
 
-   * mac1 Mumbai per hour $1.14
-   * mac2 Frankfurt per hour $1.298
+   * mac1 Mumbai per hour $1.14 (75% more than US price)
+   * mac2 Frankfurt per hour $1.298 (20% more than US price)
    <br /><br />
 
 PROTIP: Different prices are charged depending on AWS region. mac rental prices are higher in Europe than in India, which are higher than prices in the US.
@@ -62,14 +62,19 @@ PROTIP: Different prices are charged depending on AWS region. mac rental prices 
 Documentation</a>.
 
 
-## Competitors 
+<hr />
 
-Compare AWS against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>
-<a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>:
+## MacStadium
 
-   * mac2 (Gen 5 Mac mini) with 16 GB for $171 per month
-   * mac1 (Gen 4 Mac mini) with 32 GB for $239 per month
-   * mac1 (Gen 4 Mac mini) with 64 GB for $299 per month
+Compare AWS against <a target="_blank" href="https://www.macstadium.com/pricing">MacStadium.com</a>, who has machines in Atlanta, Dublin, Las Vegas
+
+Their <a target="_blank" href="https://portal.macstadium.com/bare-metal-mac/create">prices for bare-metal</a>, billed monthly:
+
+	CPU	RAM	STORAGE	MONTHLY	HOURLY
+   * Gen 4 Mac mini (G4B/G4D) Intel i7 3.2GHz 6C	32 GB	512 GB SSD $239.00 /mo = $0.33/hour
+   * Gen 4 Mac mini (G4C/G4E) Intel i7 3.2GHz 6C	64 GB	1 TB SSD	$299.00 /mo = $0.41/hour
+   * Gen 5 Mac mini (G5A/G5I) Apple Silicon M1	8 GB	256 GB SSD	$132.00 /mo = $0.18/hour
+   * Gen 5 Mac mini (G5G/G5K) Apple Silicon M1	16 GB	1 TB SSD	$171.00 /mo = $0.23
    <br /><br />
 
 
@@ -79,7 +84,8 @@ CAUTION: At time of writing, macOS instance types are currently available only o
 
    * us-east-1a
    * us-west-1a
-   * TODO: What others???
+   * eu-central-1a
+   TODO: What others??? An API program is needed.
    <br /><br />
 
 "When provisioning normal instances in an availability zone that doesn't support that instance type you get the error "Your requested instance type (mac2.metal) is not supported in your requested Availability Zone (us-east-1b). Please retry your request by not specifying an availability zone or choosing us-east-1a, us-east-1c, us-east-1d"
