@@ -15,7 +15,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-## Why this?
+This article takes a deep dive into sample (template) code within a GitHub repo, giving technical explanations for devs (instead of generalities).
+
+## Why?
 
 Keeping secrets secret is a fundamental skill for all developers, especially in today's hostile internet full of scammers, ransomware gangs, and state-sponsored terrorism using "killware".
 
@@ -60,8 +62,6 @@ The languages, listed alphabetically:
    * https://github.com/hashicorp/hello-vault-ruby
    * https://github.com/hashicorp/hello-vault-rust (under construction)
    <br /><br />
-
-This article takes a deep dive into sample (template) code within a GitHub repo, giving deep-dive explanations for devs while other articles talked in generalities.
 
 Here are the steps:
 
@@ -487,8 +487,10 @@ Vault server has stopped.
 
    * <strong>trusted-orchestrator</strong> is created from a <tt>Dockerfile</tt> used to build its container image and an <tt><strong>entrypoint.sh</strong></tt> at the root. It is invoked when the service becomes active. It is the mechanism that launches applications and injects them with a Secret ID at runtime; typically something like Terraform, K8s, or Chef. ??? See https://learn.hashicorp.com/tutorials/vault/secure-introduction#trusted-orchestrator 
       
-   * <strong>vault-server</strong>, initiated by <tt>/vault/entrypoint.sh</tt>, contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeed.
+   * <strong>vault-server</strong>, initiated by <tt>/vault/entrypoint.sh</tt>, contains a <tt>default.conf.template</tt> file which issues the "hello world!" response if API calls succeed. This effort to setup a built-in Vault dev (unsecure) server is equivalent to the command:
    
+      <ul><pre>vault server -dev</pre></ul>
+
    * <strong>app-healthy</strong> - a dummy service to block "docker compose up -d" from returning until all services are up & healthy
 
 
@@ -580,14 +582,14 @@ services:
 
    <pre>
     [+] Running 8/8
-    ⠿ Container sample-app-healthy-1                 Removed              0.0s
-    ⠿ Container sample-app-app-1                     Removed              4.4s
-    ⠿ Container sample-app-trusted-orchestrator-1    Removed              0.2s
-    ⠿ Container sample-app-secure-service-1          Removed              0.2s
-    ⠿ Container sample-app-vault-server-1            Removed              0.2s
-    ⠿ Container sample-app-database-1                Removed              0.3s
-    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed              0.0s
-    ⠿ Network sample-app_default                     Removed              0.0s
+    ⠿ Container sample-app-healthy-1                 Removed    0.0s
+    ⠿ Container sample-app-app-1                     Removed    4.4s
+    ⠿ Container sample-app-trusted-orchestrator-1    Removed    0.2s
+    ⠿ Container sample-app-secure-service-1          Removed    0.2s
+    ⠿ Container sample-app-vault-server-1            Removed    0.2s
+    ⠿ Container sample-app-database-1                Removed    0.3s
+    ⠿ Volume sample-app_trusted-orchestrator-volume  Removed    0.0s
+    ⠿ Network sample-app_default                     Removed    0.0s
    </pre>
 
    <a name="PortsUsed"></a>
@@ -686,14 +688,20 @@ sample-app-database-1               "docker-entrypoint.s…"
 
 7. Instead of using long-lived static passwords sitting around to be stolen, the app calls Vault to request dynamic DB credentials.
 
-   * https://aiven.io/blog/secure-your-db-with-vault
+   * https://aiven.io/blog/secure-your-db-with-vault provides code for populating PostgreSQL.
    <br /><br />
 
-8. Vault uses its pre-defined partnership with PostgreSQL to request that temporary (short-lived) credentials be created dynamically. The equivalent CLI command is:
+8. Vault uses a pre-defined <a target="_blank" href="https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql">PostgreSQL Database Secrets Engine <tt>postgresql-database-plugin</tt></a> to request that temporary (short-lived) credentials be created dynamically. The equivalent CLI command is:
 
-   <pre>kv put secret/mysql/webapp db-name-"users" \
-   username="admin" password="12345"
-   </pre>
+   <pre>vault write database/config/aiven-for-postgresql-database \
+    plugin_name=postgresql-database-plugin \
+    allowed_roles="metrics-readwrite" \
+    connection_url="postgresql://{{username}}:{{password}}@[HOST]:[PORT]/defaultdb" \
+    username=[USER] \
+    password=[PASSWORD]
+    </pre>
+
+    https://www.vaultproject.io/api-docs/secret/databases/postgresql
    
 9. The database creates a username and password based on ROLE defined in its <tt>3-define</tt> file:
    
@@ -753,6 +761,13 @@ sample-app-database-1               "docker-entrypoint.s…"
     <tt>[TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]</tt>
 
     <tt>OK</tt> is output after the response is validated.
+
+
+    ### Security alerts
+
+    Most enterprises today have a SOC (Security Operations Center) to constantly monitor for anomalous events such as intrusion attempts.
+
+18. Attempts at retrieving a wrapped token a second time returns a HTTP 400 error, which should trigger a security alert to the SOC to handle the new incident. This is typically tested during Penetration testing pre-production. TODO: Code (an additional shell file) for penetration testers to perform the malicious request to ensure it trigger alerts during penetration testing.
 
 
 <hr />
@@ -1032,6 +1047,17 @@ The equivalent CLI command to specify daily renewal period (repeatable indefinit
    
 <hr />
 
+## Security
+
+Most enterprises today have a SOC (Security Opertions Center) to constantly monitor to anomalous events.
+During Penetration testing, we want to ensure that attempts to 
+see what happens when a 
+One triggering event to test for 
+as incidents and take action
+
+
+<hr />
+
 ## Database within Kubernetes
 
 <hr />
@@ -1041,3 +1067,4 @@ The equivalent CLI command to specify daily renewal period (repeatable indefinit
 * https://medium.com/hashicorp-engineering/essential-elements-of-vault-part-1-5a64d3de3be8
 * https://medium.com/hashicorp-engineering/essential-patterns-of-vault-part-2-b4d34976f1dc
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=5Y-EeH_j47I">VIDEO: Secret Zero Problem Solved for HashiCorp Vault</a> by TeKanAid
