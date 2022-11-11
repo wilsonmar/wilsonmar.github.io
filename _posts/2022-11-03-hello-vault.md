@@ -171,14 +171,14 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    2. Expand the zip. Click Continue, Install. Password. Close.
    3. Verify SDK installed:
 
-   <pre><strong>dotnet --list-sdks
-   </strong></pre>
+      <pre><strong>dotnet --list-sdks
+      </strong></pre>
 
-   Sample response:
+      Sample response:
 
-   <pre>6.0.401 [/usr/local/share/dotnet/sdk]
-   6.0.402 [/usr/local/share/dotnet/sdk]
-   </pre>
+      <pre>6.0.401 [/usr/local/share/dotnet/sdk]
+      6.0.402 [/usr/local/share/dotnet/sdk]
+      </pre>
 
    4. Install Visual Studo Code Unversal Stable version from https://code.visualstudio.com by clicking <a target="_blank" href="https://code.visualstudio.com/docs/?dv=osx">this link</a> for file "VSCode-darwin-universal.zip".
    5. Unzip.
@@ -401,13 +401,12 @@ Stopping Vault dev server..
 Vault server has stopped.
    </pre>
 
-   ### Secret zero for dev Vault
+   ### dev Vault
    
    To reduce manual efforts to add security necessary for production usage, 
    here Vault is invoked using its built-in "dev-only-token" rather than a cryptographically-created one used in production mode.
    
    <tt>container_id=$(docker run --rm --detach -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token' vault:1.11.0)</tt>
-
 
 <hr />
 
@@ -1068,3 +1067,7 @@ as incidents and take action
 * https://medium.com/hashicorp-engineering/essential-patterns-of-vault-part-2-b4d34976f1dc
 
 * <a target="_blank" href="https://www.youtube.com/watch?v=5Y-EeH_j47I">VIDEO: Secret Zero Problem Solved for HashiCorp Vault</a> by TeKanAid
+
+* https://www.hashicorp.com/resources/vault-response-wrapping-makes-the-secret-zero-challenge-a-piece-of-cake
+   <br /><br />
+
