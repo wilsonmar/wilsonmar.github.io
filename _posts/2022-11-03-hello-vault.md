@@ -186,12 +186,12 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    7. Install the C# extension.
    8. Verify .NET runtimes (.NET Core) installed:
 
-   <pre><strong>dotnet --list-runtimes
-   </strong></pre>
+      <pre><strong>dotnet --list-runtimes
+      </strong></pre>
 
-   <pre>Microsoft.AspNetCore.App 6.0.9 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
-   Microsoft.NETCore.App 6.0.9 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
-   </pre>
+      <pre>Microsoft.AspNetCore.App 6.0.9 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.App]
+      Microsoft.NETCore.App 6.0.9 [/usr/local/share/dotnet/shared/Microsoft.NETCore.App]
+      </pre>
 
    <a target="_blank" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version">C# versions</a>:<br />
    C# 11 is supported only on .NET 7 and newer versions.<br />
