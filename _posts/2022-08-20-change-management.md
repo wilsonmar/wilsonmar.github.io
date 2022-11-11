@@ -205,6 +205,9 @@ Stages:
 
 * <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
 
+* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
+
+
 <hr />
 
 ## Summary
