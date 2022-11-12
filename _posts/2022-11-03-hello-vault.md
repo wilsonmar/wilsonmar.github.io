@@ -1,4 +1,4 @@
----
+ata---
 layout: post
 date: "2022-11-11"
 file: "hello-vault"
@@ -24,8 +24,6 @@ Keeping secrets secret is a fundamental skill for all developers, especially in 
 ## Never lose another database password
 
 To outwit hackers, HashiCorp Vault has created an amazing enterprise-capable approach that creates usernames and passwords for temporary use.
-
-But to take advantage of their cleverness, developers need to learn how it works.
 
 This is like working on your TV the different remotes and logins to setup different streaming services.
 Once you go through the motions, you can get through quickly (for awhile until you change TV).
@@ -809,20 +807,21 @@ sample-app-database-1               "docker-entrypoint.s…"
     ### Secret ID and AppRole
 
     Vault assigns a <strong>SecretID</strong> used to retrieve the contents of a Cubbyhole.
-    The SecretID is like an password associated with a <strong>AppRole</strong> definition, which is like a username.
+    The SecretID is like a password associated with a <strong>AppRole</strong> definition, which is like a username.
 
     Functionally speaking, the token provides authorization to use an encryption key from Vault's keyring to decrypt the data. See:
 
     * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO:</a> Cubbyhold Vault GUI demo.
     * https://www.hashicorp.com/blog/how-and-why-to-use-approle-correctly-in-hashicorp-vault
     * https://developer.hashicorp.com/vault/tutorials/recommended-patterns/pattern-approle?in=vault%2Frecommended-patterns
+    * <a target="_blank" href="https://www.youtube.com/watch?v=OIcIzFWjThM" title="Mar 9, 2018">VIDEO</a>: "Delivering Secret Zero: Vault AppRole with Terraform + Chef", with <a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/identity/vault-chef-approle">repo</a> by SE Teddy Sacilowski references Seth Vargo's Chef + Vault <a target="_blank" href="https://www.hashicorp.com/blog/using-hashicorps-vault-with-chef">blog</a>/webinar
     <br /><br />
 
     ### Trusted Orchestrator
 
     Vault needs to send that Secret ID to the web-app through a <strong>Trusted Orchestrator</strong> (such as Kubernetes or Consul). 
  
-11. Rather than exposing database credentials in transmission, for safe delivery to the Web App, Vault <strong>"wraps"</strong> the SecretID (address) within a short-lived single-use <strong>Wrapper token</strong>. 
+1.  Rather than exposing database credentials in transmission, for safe delivery to the Web App, Vault <strong>"wraps"</strong> the SecretID (address) within a short-lived single-use <strong>Wrapper token</strong>. 
  
     * https://www.vaultproject.io/docs/concepts/response-wrapping 
     * https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
@@ -830,23 +829,23 @@ sample-app-database-1               "docker-entrypoint.s…"
     * <a target="_blank" href="https://www.youtube.com/watch?v=BkL_lYCeCxY">VIDEO</a>: Using the Cubbyhole Secret's Engine in HashiCorp Vault to Securely Share Secrets
     <br /><br />
 
-12. The Trusted Orchestrator delivers the wrapping token to the web-app.
+2.  The Trusted Orchestrator delivers the wrapping token to the web-app.
    
-13. The Web App receives the wrapping token and "unwraps" it to obtain the SecretID associated with an <strong>AppRole</strong>.
+3.  The Web App receives the wrapping token and "unwraps" it to obtain the SecretID associated with an <strong>AppRole</strong>.
 
     BTW, the wrapping token can be revoked (just like any other token) to minimize risk of unauthorized access (especially in a "Break Glass" stop-loss action after a breach).
 
-14. A one-time temporary token ??? is returned by Vault to the web-app.
+4.  A one-time temporary token ??? is returned by Vault to the web-app.
     
-15. The app uses the Vault-provided credentials to access the database.
+5.  The app uses the Vault-provided credentials to access the database.
 
     Vault ensures that retrieval of a Cubbyhole's contents can only occur once. 
     Vault logs an error is logged (and sent to the SOC) if additional retrievals are attempted.
     Thus, the library can detect malfeasance with the response-wrapping token.
 
-16. The database returns data to the web-app, like it always does.
+6.  The database returns data to the web-app, like it always does.
     
-17. The data returned from the database is output by run-tests.sh 
+7.  The data returned from the database is output by run-tests.sh 
 
     <tt>[TEST 2]: output: [{"id":1,"name":"Rustic Webcam"},{"id":2,"name":"Haunted Coloring Book"}]</tt>
 
@@ -857,7 +856,7 @@ sample-app-database-1               "docker-entrypoint.s…"
 
     Most enterprises today have a SOC (Security Operations Center) to constantly monitor for anomalous events such as intrusion attempts.
 
-18. Attempts at retrieving a wrapped token a second time returns a HTTP 400 error, which should trigger a security alert to the SOC to handle the new incident. This is typically tested during Penetration testing pre-production. TODO: Code (an additional shell file) for penetration testers to perform the malicious request to ensure it trigger alerts during penetration testing.
+8.  Attempts at retrieving a wrapped token a second time returns a HTTP 400 error, which should trigger a security alert to the SOC to handle the new incident. This is typically tested during Penetration testing pre-production. TODO: Code (an additional shell file) for penetration testers to perform the malicious request to ensure it trigger alerts during penetration testing.
 
 
 <hr />
@@ -1113,6 +1112,8 @@ Each component has a different name for each TTL:
 
    * The <strong>wrapping-token</strong> lifetime is limited by the token_max_ttl.
 
+      The lifetime of a wrapped token should be less than the lifetime of the SecretID being wrapped.
+
    * If an account needs to login again, that account must also getcreds and reconnect to the database.
 
    * Each lease to access the database must be renewed before the <strong>default_ttl</strong>. When the maximum number of lease renewals or <strong>max_ttl</strong> is reached, reconnection is necessary again.
@@ -1126,6 +1127,9 @@ Coding for renewal is performed by <a target="_blank" href="https://github.com/h
    See <a target="_blank" href="https://www.youtube.com/watch?v=YrtTR0VDlDk">VIDEO:</a>
    Vault 1.2: Database Credential Rotation and Identity Tokens
 
+   "Not only are credentials unmanaged and uncontrolled in the case of sprawl, but also present an availability risk, particularly as we adopt more complex architectures where there is a higher possibility of shared services. As a result, should Jane, a developer, rotate the password for the database credentials to Application A, without notifying Application B, Application B may suffer an outage as a result. Conversely, if we broker the permissions to the database based on identity, we can rotate the database password without any concern for degradation of service." --<a target="_blank" href="https://cloudedvision.substack.com/p/fcto-supplement-wait-identity-brokering">
+   Sarah Polan</a>
+
 Legacy services that can't handle token regeneration would use <strong>"periodic" tokens with no max_ttl</strong>. 
 
 The equivalent CLI command to specify daily renewal period (repeatable indefinitely):
@@ -1135,6 +1139,19 @@ The equivalent CLI command to specify daily renewal period (repeatable indefinit
    
    Limiting the number of times that a token can be renewed to 2 is set by <tt>-use-limit=2</tt>
    
+The equivalent CLI command to specify daily renewal period (repeatable indefinitely):
+
+   <pre>vault write auth/.../...approle \
+   secret_id_num_uses=1 \
+   secret_id_ttl=300s \
+   token_ttl=1800s
+   &nbsp;
+   path "kv/pipeline-secrets" {
+      capabilities="read"
+   }
+   </pre>
+
+
 <hr />
 
 ## Security
@@ -1152,13 +1169,19 @@ as incidents and take action
 
 <hr />
 
+
 ## References
 
 * https://medium.com/hashicorp-engineering/essential-elements-of-vault-part-1-5a64d3de3be8
 * https://medium.com/hashicorp-engineering/essential-patterns-of-vault-part-2-b4d34976f1dc
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=5Y-EeH_j47I">VIDEO: Secret Zero Problem Solved for HashiCorp Vault</a> by TeKanAid
+* <a target="_blank" href="https://www.youtube.com/watch?v=5Y-EeH_j47I">VIDEO: Secret Zero Problem Solved for HashiCorp Vault</a> by TeKanAid, with <a target="_blank" href="https://tekanaid.com/posts/secret-zero-problem-solved-for-hashicorp-vault/">associated blog</a>
 
 * https://www.hashicorp.com/resources/vault-response-wrapping-makes-the-secret-zero-challenge-a-piece-of-cake
-   <br /><br />
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=skENC9aXgco" title="at HashiConf 2016">VIDEO</a>: "Managing Secrets in a Container Environment" by <a target="_blank" href="https://www.linkedin.com/in/jefferai/">Jeff Mitchell</a>
+
+
+https://speakerdeck.com/misug/vault-response-wrapping-makes-secret-zero-challenge-a-piece-of-cake?slide=7
+with <a target="_blank" href="https://github.com/misurellig/hashitalks-demo/">demo repo</a> by <a target="_blank" href="https://linkedin.com/in/giusseppe-misurelli-5378292">Giusseppe Misurelli</a>
+(author of https://github.com/misurellig/terraform-vault-identities)
