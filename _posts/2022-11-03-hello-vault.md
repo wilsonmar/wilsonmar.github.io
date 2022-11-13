@@ -1,4 +1,4 @@
-ata---
+---
 layout: post
 date: "2022-11-11"
 file: "hello-vault"
@@ -95,7 +95,7 @@ Rigs for these languages so far, listed alphabetically:
    <br /><br />
 
    <a name=".gitignore"></a>
-   
+
    ### .gitignore from GitHub
 
 3. If you have not already done so, create a <tt>global .gitignore</tt> configuration file on your machine $HOME folder:
