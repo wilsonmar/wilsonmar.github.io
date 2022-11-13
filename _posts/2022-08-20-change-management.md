@@ -109,6 +109,7 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
       * Transfer Ownership - Who will assume ownership and sustain outcomes?
       <br /><br />
 
+
 <a name="ADKAR"></a>
 <a name="Prosci"></a>
 
@@ -148,22 +149,6 @@ Stages:
    <br /><br />
 
    Attendance at Prosci's class includes a 1-year subscription to their Practitioner eToolkit that contains PowerPoint, Word, and Excel templates for most of the Prosci tools. 
-
-## ACMP Standards
-   
-   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
-
-   1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
-
-   2. <strong>Formulate the Change Management Strategy</strong> - The processes in this group develop the high-level approach for change management with sponsors, change leaders, content developers, program managers, customers, and others on the project. This approach includes governance, risks, resources, budget, and reporting. The change strategy will incorporate, integrate, and align change management plans, activities, tasks, and milestones into the other activities and operations of an organization and its stakeholders at the onset of a change (timing and sequence). Stakeholder engagement is included in this process group.
-
-   3. <strong>Develop the Change Management Plan</strong> - The processes in this group employ specific change management methodologies and tools to develop detailed plans for implementing the change management strategy. These plans include communications, sponsorship, stakeholder engagement, learning and development, risk management, and measurement and benefits realization. Ongoing integration with project management is included in this process group.
-
-   4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
-
-   5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
-   <br /><br />
-
 
 ## Influencers
 
@@ -206,6 +191,22 @@ Stages:
 * <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
 
 * <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
+
+
+## ACMP Standards
+   
+   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
+
+   1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
+
+   2. <strong>Formulate the Change Management Strategy</strong> - The processes in this group develop the high-level approach for change management with sponsors, change leaders, content developers, program managers, customers, and others on the project. This approach includes governance, risks, resources, budget, and reporting. The change strategy will incorporate, integrate, and align change management plans, activities, tasks, and milestones into the other activities and operations of an organization and its stakeholders at the onset of a change (timing and sequence). Stakeholder engagement is included in this process group.
+
+   3. <strong>Develop the Change Management Plan</strong> - The processes in this group employ specific change management methodologies and tools to develop detailed plans for implementing the change management strategy. These plans include communications, sponsorship, stakeholder engagement, learning and development, risk management, and measurement and benefits realization. Ongoing integration with project management is included in this process group.
+
+   4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
+
+   5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
+   <br /><br />
 
 
 <hr />

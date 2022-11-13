@@ -32,36 +32,47 @@ This article provides a step-by-step deep-dive tour, with commentary, contrastin
 
 {% include whatever.html %}
 
-If you want a production setup for Vault and database, you'd want to use <strong>Terraform</strong>, such as: 
+## Dev environment for you
+
+Terraform is typically used to create resources in the cloud or in on-prem. machines for production usage. For resilience in productive use, Vault is usually setup in a cluster of several servers.
    * https://github.com/averche/vault-guides
    <br /><br />
 
-## For local development
+But to learn to code your app to access Vault, app developers need a (temporary) rig that provides:
 
-To code your app to create temporary passwords via Vault, you need a rig that runs locally on your laptop
-
-   * A running Vault (dev) instance
+   * A Vault single-node instance
    * A database instance (PostgreSQL or MySQL for C#)
-   * Shell scripts that only require a single command to create the enviornment on new Apple M1 ARM64 chips as well as older Intel x86 macOS machines
+   * Shell scripts so that only a single command (such as <tt>run.sh</tt>) creates the enviornment on new Apple M1 ARM64 chips as well as older Intel x86 macOS machines
    * A sample app in your programming language of choice that demonstrates how to access the above.
    <br /><br />
 
-So HashiCorp developers created a set of repos that makes use of <strong>Docker Compose</strong> so that you can run it on a variety of laptops.
+This article describes such a rig.
 
+App programs interacting with Vault client API libraries of various programming languages at:
+
+   * <a target="_blank" href="https:/www.vaultproject.io/api-docs/libraries">https:/www.vaultproject.io/api-docs/libraries</a>
+   <br /><br />
+
+
+## For local development on laptops
+
+But for app development work on laptops, it's most convenient to have resources running locally.
+
+To save app developers time and hassle of setting up the above, HashiCorp Vault developers figured out the intricacies of specifications to use <strong>docker-compose</strong>. Docker Compose is a Docker tool used to define and run multi-container applications.
 <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
 
-The languages, listed alphabetically:
+Rigs for these languages so far, listed alphabetically:
 
    * Bash (not yet under construction)
    * https://github.com/hashicorp/hello-vault-dotnet (C# with MS-SQL)
    * https://github.com/hashicorp/hello-vault-go
+   * Groovy - no plans
+   * Haskell - no plans
    * https://github.com/hashicorp/hello-vault-python (under construction)
    * https://github.com/hashicorp/hello-vault-spring (Maven, Java) using<br /> https://spring.io/projects/spring-vault
    * https://github.com/hashicorp/hello-vault-ruby
    * https://github.com/hashicorp/hello-vault-rust (under construction)
    <br /><br />
-
-Here are the steps:
 
 1. Obtain the repo for your language of choice. For example:
 
@@ -76,17 +87,18 @@ Here are the steps:
    * https://github.com/mp911de/spring-cloud-vault-config-samples
    <br /><br />
 
-2. Each repo has two folders with two example apps:
+2. Notice that each repo contains two folders with two example apps:
 
    * <a href="#quick-start"><strong>quick-start</strong></a> to write a secret, then read that secret back
 
    * <a href="#sample-app"><strong>sample-app</strong></a> to make API calls (using curl CLI commands) to an app server which interacts with a database
    <br /><br />
 
-
+   <a name=".gitignore"></a>
+   
    ### .gitignore from GitHub
 
-1. If you have not already done so, create a <tt>global .gitignore</tt> configuration file on your machine $HOME folder:
+3. If you have not already done so, create a <tt>global .gitignore</tt> configuration file on your machine $HOME folder:
 
    On a Mac or Linux:
 
@@ -111,11 +123,11 @@ Here are the steps:
 
    Your global .gitignore file specifies extraneous (unnecessary) files and folders created by your operating system and editors from loading into GitHub.
 
-1. Use a text editor such as code (for VSCode) to edit the file:
+4. Install and use a text editor such as code (for VSCode) to edit the file:
  
    <pre><strong>code .gitignore</strong></pre>
    
-1. Highlight and copy these lines and paste into your global .gitignore file this starter set. The specification format is explained <a target="_blank" href="https://www.w3schools.com/git/git_ignore.asp?remote=github">here</a>:
+5. Highlight and copy these lines and paste into your global .gitignore file this starter set. The specification format is explained <a target="_blank" href="https://www.w3schools.com/git/git_ignore.asp?remote=github">here</a>:
 
    <pre># MacOS:
 .DS_Store
@@ -175,17 +187,17 @@ log/
 
 <hr />
 
+Let's dive in by installing prerequities. Each technology has a different set of technologies:
+
 <a name="macOSInstall"></a>
 
 ## Install on macOS:
-
-Let's dive in by installing pre-requities. Each technology has a different set of technologies:
 
 1. On macOS, install the Apple XCode Command Line utilities, if needed.
 
 2. Install OS package manager so that you can upgrade to the latest version with a single command.
 
-   On macOS: Homebrew.
+   On macOS, install Homebrew:
 
    <pre><strong>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    </strong></pre>
@@ -197,6 +209,11 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    <pre><strong>brew install  curl  jq  tree</strong></pre>
 
    NOTE: Brew now knows to not re-install the latest version if it's already installed.
+
+   On Linux:
+
+   <pre><strong>sudo apt-get install jq
+   </strong></pre>
 
 4. On newer macOS laptops with the M1 ARM chip:
 
@@ -285,15 +302,6 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    C# 10 is supported only on .NET 6 and newer versions.<br />
    C#  9 is supported only on .NET 5 and newer versions.
 
-   ### Install Ruby
-
-   Ruby:
-
-   ### Install Rust
-
-   Rust:
-   
-
    ### Install Python
 
    Python:
@@ -308,7 +316,8 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    <tt>virtualvenv</tt> is used to ensure that Python packages play nice with each other - so that other Python projects with competing or incompatible versions of the same add-ons (dependencies) don't collide with this package.
 
-   ### Verify Java
+
+   ### Verify 
 
 6. Verify version to see if install took: 
 
@@ -329,6 +338,8 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    <br /><br />
 
    See https://www.wikiwand.com/en/Java_version_history
+
+   ### Install Docker Compose
 
 7. Install the Docker Desktop. On macOS, see https://docs.docker.com/desktop/mac/apple-silicon/
 
@@ -400,6 +411,9 @@ Let's dive in by installing pre-requities. Each technology has a different set o
    
    Each programming language uses a different library to perform low-level functionality.
 
+   https://developer.hashicorp.com/vault/api-docs/libraries
+   lists them.
+
    In the dotnet (C#) repo, file <a target="_blank" href="https://github.com/hashicorp/hello-vault-dotnet/blob/main/quick-start/quickstart.csproj">quickstart.csproj</a> defines the library used.
    * "secret" is defined as the <strong>mountPoint</strong> 
    * "my-secret-password" is defined as the <strong>path</strong> 
@@ -413,12 +427,15 @@ Let's dive in by installing pre-requities. Each technology has a different set o
 
    In Rust, <a target="_blank" href="https://www.linkedin.com/in/jonathan-lawn-bb48851/">Jonathan Lawn</a>'s <a target="_blank" href="https://github.com/Metaswitch/vault-client">vault-client</a> is a Rust-based (generated based on Swagger spec) native client library to access HashiCorp Vault APIs. It's an alternative to <a target="_blank" href="https://www.linkedin.com/in/chrismacnaughton/">Chris MacNaughton</a>'s <a taget="_blank" href="https://crates.io/crates/hashicorp_vault">crates.io</a> <a target="_blank" href="https://lib.rs/crates/secret-vault">library</a>, a less featured client that covers a broader range of the Vault API.
 
-   * function calls TBD.
-   <br /><br />
-
    In Python:
 
-   * hvac is the library
+   * hvac is the library at https://github.com/hvac/hvac
+   * https://www.youtube.com/watch?v=wogkvUnaFtk How to use Python HVAC for Hashicorp Vault CRUD Operations
+   * https://fakrulalam.medium.com/python-script-credentials-stored-in-hashicorp-vault-54ffa5ca2b04
+  
+   * https://developers.google.com/vault/quickstart/python
+   * https://pypi.org/project/vault-cli/
+   * https://pypi.org/project/pyvault/
    <br /><br />
   
 
@@ -545,7 +562,7 @@ Vault server has stopped.
 
       BTW Vault has <a target="_blank" href="https://developer.hashicorp.com/vault/docs/secrets">other Secret Engines</a> to handle other types of secrets not demonstrated by this sample program, such as generation of SSH certificates, X.509 certificates for SSL/TLS, etc.
 
-   * <strong>secure-service</strong> - a simulated 3rd party (mock) service <tt>docker-entrypoint</tt> that responds to calls authenticated by a static API key sent as the value to the <strong>X-Vault-Token</strong> HTTP header of the call. The response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
+   * <strong>secure-service</strong> - a simulated 3rd party (mock) service <tt>docker-entrypoint</tt> that responds to calls authenticated by a static API key sent as the value of the <tt><strong>X-Vault-Token</strong></tt> HTTP header in each REST API call. The expected response is 200 from GET & LIST and 204 from POST, PUT, DELETE.
    
    * <strong>database</strong>, from <tt>docker-entrypoint.s</tt>, contains SQL to 1- create the database, 2- populate with data, 3- define roles 
 
@@ -723,6 +740,8 @@ sample-app-database-1               "docker-entrypoint.s…"
 ### [TEST 1] flow
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow1-1920x1080_bdq4je.jpg"><img alt="hello-vault-flow1-1900x1080.jpg" width="1900" height="1080" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1668013977/hello-vault-flow1-1920x1080_bdq4je.jpg"></a>
+
+   NOTE: A similar explanation (for containers) is at <a target="_blank" href="https://www.youtube.com/watch?v=skENC9aXgco&t=16m48s" title="at HashiConf 2016 Managing Secrets in a Container Environment">this VIDEO</a> by <a target="_blank" href="https://www.linkedin.com/in/jefferai/">Vault Principal Engineer Jeff Mitchell</a>.
 
 1. View the <a target="_blank" href="https://github.com/hashicorp/hello-vault-spring/blob/main/sample-app/run-tests.sh">run-tests.sh</a> file (within sample-app) using the built-in <tt>cat</tt> command or use a text editor code (VSCode):
 
@@ -1178,8 +1197,6 @@ as incidents and take action
 * <a target="_blank" href="https://www.youtube.com/watch?v=5Y-EeH_j47I">VIDEO: Secret Zero Problem Solved for HashiCorp Vault</a> by TeKanAid, with <a target="_blank" href="https://tekanaid.com/posts/secret-zero-problem-solved-for-hashicorp-vault/">associated blog</a>
 
 * https://www.hashicorp.com/resources/vault-response-wrapping-makes-the-secret-zero-challenge-a-piece-of-cake
-
-* <a target="_blank" href="https://www.youtube.com/watch?v=skENC9aXgco" title="at HashiConf 2016">VIDEO</a>: "Managing Secrets in a Container Environment" by <a target="_blank" href="https://www.linkedin.com/in/jefferai/">Jeff Mitchell</a>
 
 
 https://speakerdeck.com/misug/vault-response-wrapping-makes-secret-zero-challenge-a-piece-of-cake?slide=7
