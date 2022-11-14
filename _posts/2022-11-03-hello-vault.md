@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-11"
+date: "2022-11-13"
 file: "hello-vault"
 title: "Hello-Vault"
 excerpt: "How to code your app to use HashiCorp Vault to get rid of static database passwords by generating credentials in Secret_ID temporarily in cubbyholes, wrapped for transfer, and accessed using AppRole"
@@ -25,6 +25,9 @@ Keeping secrets secret is a fundamental skill for all developers, especially in 
 
 To outwit hackers, HashiCorp Vault has created an amazing enterprise-capable approach that creates usernames and passwords for temporary use.
 
+   * https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql
+   <br /><br />
+
 This is like working on your TV the different remotes and logins to setup different streaming services.
 Once you go through the motions, you can get through quickly (for awhile until you change TV).
 
@@ -35,7 +38,7 @@ This article provides a step-by-step deep-dive tour, with commentary, contrastin
 ## Dev environment for you
 
 Terraform is typically used to create resources in the cloud or in on-prem. machines for production usage. For resilience in productive use, Vault is usually setup in a cluster of several servers.
-   * https://github.com/averche/vault-guides
+   * https://github.com/hashicorp/vault-guides
    <br /><br />
 
 But to learn to code your app to access Vault, app developers need a (temporary) rig that provides:
@@ -62,7 +65,6 @@ To save app developers time and hassle of setting up the above, HashiCorp Vault 
 <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
 
 Rigs for these languages so far, listed alphabetically:
-
    * Bash (not yet under construction)
    * https://github.com/hashicorp/hello-vault-dotnet (C# with MS-SQL)
    * https://github.com/hashicorp/hello-vault-go
@@ -93,6 +95,8 @@ Rigs for these languages so far, listed alphabetically:
 
    * <a href="#sample-app"><strong>sample-app</strong></a> to make API calls (using curl CLI commands) to an app server which interacts with a database
    <br /><br />
+
+   You can also run your own commands.
 
    <a name=".gitignore"></a>
 
@@ -154,6 +158,9 @@ log/
 # vi editor:
 *~
 &nbsp;
+# iPython Jupyter Notebooks:
+.ipynb_checkpoints/
+venv/
   </pre>
 
    We don't want to hold in GitHub/GitLab files and folders <strong>generated</strong> because they will be re-generated again upon, such as <tt>temp</tt> folders. 
@@ -304,8 +311,6 @@ Let's dive in by installing prerequities. Each technology has a different set of
 
    ### Install Python
 
-   Python:
-
    <pre><strong>brew install python 
    python --version
    pip install virtualenv   # used to:
@@ -350,6 +355,83 @@ Let's dive in by installing prerequities. Each technology has a different set of
    PROTIP: Get the Docker Desktop logo on your Mac Taskbar: pinch four fingers on your trackpad to drag and drop the logo onto your Taskbar.
    You should see the Docker logo when you point the mouse at the top of your screen.
 
+   ### Docker licensing
+
+   On August 31 2021 Docker Inc. announced a change in the licensing model for Docker Desktop. As of January 31 2022, Docker Desktop is no longer free and commercial users (businesses) need to pay a monthly subscription fee of $5 per month.
+
+   An alternative to Docker is <a target="_blank" href="https://cloudnweb.dev/2019/06/replacing-docker-with-podman-power-of-podman/">Podman</a>. It's available free as it was <a target="_blank" href="https://developers.redhat.com/topics/open-source">open-sourced</a> by <a target="_blank" href="https://developers.redhat.com/blog/2020/11/19/transitioning-from-docker-to-podman#transition_to_the_podman_cli">Red Hat</a> as a Linux-native tool designed to develop, manage, and run Open Container Initiative (OCI) containers and pods. 
+
+   <a target="_blank" href="https://cloudnweb.dev/2019/10/heres-why-podman-is-more-secured-than-docker-devsecops/">Podman is supposed to be more secure than Docker</a>. And <a target="_blank" href="https://community.atlassian.com/t5/Trust-Security-articles/Hiding-malware-in-Docker-Desktop-s-virtual-machine/ba-p/1924743">Docker can theoretically run malicious code within its Virtual Machines</a>
+
+   NOTE: <a target="_blank" href="https://www.redhat.com/sysadmin/podman-mac-machine-architecture">Podman's architecture</a> is daemonless.
+   Podman has a similar directory structure than Docker (with Buildah, Skopeo, and CRI-O). 
+   
+   <pre><strong>brew install podman
+   </strong></pre>
+   
+   Although <a target="_blank" href="https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/?intcmp=701f20000012ngPAAQ">it's said</a> that "Podman doesn't require an active container engine for its commands to work".
+   However:
+   
+   <pre><strong># podman machine init  # default 1 CPU, 2GB RAM and 10GB disk space
+   podman machine init --cpus 4 --memory 8092 --disk-size 50
+   podman machine list
+   </strong></pre>
+
+   If you see this error message:
+   <pre>Error: podman-machine-default: VM already exists
+   </pre>
+   follow instructions at the bottom of <a target="_blank" href="https://github.com/containers/podman/issues/10824">this post</a>:
+
+   <pre><strong>brew uninstall podman
+   # Remove containers files:
+   rm -rf ~/.config/containers/
+   rm -rf ~/.local/share/containers
+   rm ~/.ssh/podman*
+   brew install podman
+   </strong></pre>
+
+   Otherwise, the response at time of writing is:
+   <pre>Downloading VM image: fedora-coreos-36.20221030.2.3-qemu.aarch64.qcow2.xz: done  
+   Extracting compressed file
+   Image resized.
+   Machine init complete
+   To start your machine run:
+      podman machine start
+   </pre>
+
+   To restart podman after an upgrade:
+   
+   brew services restart podman
+   
+   Successfully started `podman` (label: homebrew.mxcl.podman)
+   
+   <pre><strong>podman machine start
+   </strong></pre>
+
+   To stop:
+
+   <pre><strong>podman machine stop
+   </strong></pre>
+
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=15PFfjuxtvM&t=17s">VIDEO</a>:
+   But the problem comes with replacing <tt>docker-compose</tt>.
+   Many have proposed making intricate commands and settings to make Podman work with Docker-Compose.
+      * <a target="_blank" href="https://medium.com/team-rockstars-it/how-to-implement-a-docker-desktop-alternative-in-macos-with-podman-bbf728d033da">This</a>
+      * https://gist.github.com/kaaquist/dab64aeb52a815b935b11c86202761a3
+      * https://balagetech.com/convert-docker-compose-services-to-pods/
+      * https://news.ycombinator.com/item?id=28462495
+      * https://news.ycombinator.com/item?id=28413470
+      * https://fedoramagazine.org/use-docker-compose-with-podman-to-orchestrate-containers-on-fedora/
+      <br /><br />
+
+   RedHat is working on a replacement for podman-compose at https://github.com/containers/podman-compose
+   
+   <pre><strong>pip3 install podman-compose
+   </strong></pre>
+
+   PROTIP: I would wait until podman-compose works.
+   
    Alternately, instead of docker-compose, consider <a target="_blank" href="https://bmiguel-teixeira.medium.com/goodbye-docker-compose-hello-kubelet-75306472de27">Kublet static pod</a>.
 
 8. Verify Docker version:
@@ -503,8 +585,23 @@ Vault server has stopped.
    
    To reduce manual efforts to add security necessary for production usage, 
    here Vault is invoked using its built-in "dev-only-token" rather than a cryptographically-created one used in production mode.
-   
+
    <tt>container_id=$(docker run --rm --detach -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token' vault:1.11.0)</tt>
+
+1. The Vault -dev server is initiated with a "root" token:
+
+   <pre><strong>curl -H "X-Vault-Request: true" -H "X-Vault-Token: root" http://127.0.0.1:8200/v1/sys/mounts | jq
+   </strong></pre>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=JDBcCvY0hmI&t=7m46s">VIDEO</a>:
+   shows the output
+
+2. Open the Vault Explorer GUI in the default internet browser (Chrome):
+
+   <pre><strong>open http://127.0.0.1:8200/ui/vault/secret
+   </strong></pre>
+
+   sign-in
 
 <hr />
 
@@ -1176,10 +1273,39 @@ The equivalent CLI command to specify daily renewal period (repeatable indefinit
 ## Security
 
 Most enterprises today have a SOC (Security Opertions Center) to constantly monitor to anomalous events.
-During Penetration testing, we want to ensure that attempts to 
-see what happens when a 
-One triggering event to test for 
-as incidents and take action
+
+During Penetration testing, we want to ensure that attempts to obtain data triggers alerts.
+
+<hr />
+
+## Performance
+
+You might be wondering:
+
+> "Doesn't creating a new username and password with every session add a lot of overhead on the database server?"
+
+To answer that question, internally HashiCorp has a benchmarking tool based on use of <a target="_blank" href="https://www.wikiwand.com/en/Vegeta_(software)">Vegata</a>, first released August 13, 2013 by <a target="_blank" href="https://www.linkedin.com/in/tsenart">Tomás Senart from Portugal</a>.
+
+Because Vegata is written in Go and thus compiled to a single binary, no addtional install of runtimes is needed (unlike JMeter). There is <a target="_blank" href="https://hub.docker.com/r/peterevans/vegeta">an image from Docker Hub</a>. 
+
+Articles:
+   * https://geshan.com.np/blog/2020/09/vegeta-load-testing-primer-with-examples/
+   * https://medium.com/@carlosaugustosouzalima/do-you-need-to-run-load-tests-vegeta-to-the-rescue-7e8818127a65
+   * https://www.reddit.com/r/golang/comments/uo3flw/vegeta_http_load_testing_tool_written_in_go/
+   <br /><br />
+
+Articles about install on various platforms:
+   * https://geshan.com.np/blog/2020/09/vegeta-load-testing-primer-with-examples/
+   for running on macos - Geshan Manandhar | 06-Sep-2020
+   * https://www.scaleway.com/en/docs/tutorials/load-testing-vegeta/
+   for running on Linux
+   * https://www.kimsereylam.com/aws/2018/12/21/vegeta-load-test.html
+   for running on Windows
+   * https://serialized.net/2017/06/load-testing-with-vegeta-and-python/
+   using Python in Jupyter Notebooks
+   <br /><br />
+
+BTW, if you're wondering what "it's 9000!" means, see <a target="_blank" href="https://www.youtube.com/watch?v=V7O5JY4uh-I">this Know Your Meme</a> explanation.
 
 
 <hr />
@@ -1202,3 +1328,9 @@ as incidents and take action
 https://speakerdeck.com/misug/vault-response-wrapping-makes-secret-zero-challenge-a-piece-of-cake?slide=7
 with <a target="_blank" href="https://github.com/misurellig/hashitalks-demo/">demo repo</a> by <a target="_blank" href="https://linkedin.com/in/giusseppe-misurelli-5378292">Giusseppe Misurelli</a>
 (author of https://github.com/misurellig/terraform-vault-identities)
+
+   * https://github.com/averche/vault-guides
+   <br /><br />
+
+
+

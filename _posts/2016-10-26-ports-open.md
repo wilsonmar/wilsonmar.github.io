@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-13"
+file: "ports-open"
 title: "Ports Open (Networking)"
 excerpt: "What ports are open for hacking on my Mac and Linux machine?"
 tags: [Mac, Security, Networking]
-date: "2021-03-01"
-file: "ports-open"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -25,7 +25,7 @@ which consumes electricity and thus reduce battery life.
 
 <a name="ports"></a>
 
-## Ports
+## Port numbers assigned
 
 PAT (Port Address Translation) maps ports.:
    * 0 - 1023 = well-know ports
@@ -111,7 +111,7 @@ Apple's macOS <strong>Spotlight</strong> is like Window's Search omni-box.
    <pre><strong>lsof -nP +c 15 | grep LISTEN
    </strong></pre>
 
-   PROTIP: If you'll be using this often, create an alias such as `of`.
+   PROTIP: If you'll be using this often, create an alias such as `listening`.
 
    "lsof" is a contraction for "list open files".
    Without any options specifications, lsof lists all open files belonging to all active processes.
@@ -125,16 +125,50 @@ Apple's macOS <strong>Spotlight</strong> is like Window's Search omni-box.
 
    Piping to grep filters out only lines containing "LISTEN".
 
-   NOTE: All options are shown by this command:
+   A sample response:
+
+   <pre>rapportd          615 wilsonmar    4u     IPv4 0xafaa508... TCP *:53150 (LISTEN)
+rapportd          615 wilsonmar    5u     IPv6 0xafaa508... TCP *:53150 (LISTEN)
+ControlCenter     697 wilsonmar   14u     IPv4 0xafaa508... TCP *:7000 (LISTEN)
+ControlCenter     697 wilsonmar   15u     IPv6 0xafaa508... TCP *:7000 (LISTEN)
+ControlCenter     697 wilsonmar   16u     IPv4 0xafaa508... TCP *:5000 (LISTEN)
+ControlCenter     697 wilsonmar   17u     IPv6 0xafaa508... TCP *:5000 (LISTEN)
+Stream\x20Deck   1332 wilsonmar   13u     IPv4 0xafaa508... TCP 127.0.0.1:28196 (LISTEN)
+AMPDevicesAgent  3340 wilsonmar   10u     IPv4 0xafaa508... TCP *:49748 (LISTEN)
+com.docker.back 19614 wilsonmar   33u     IPv4 0xafaa508... TCP *:53680 (LISTEN)
+com.docker.back 19614 wilsonmar  131u     IPv6 0xafaa508... TCP *:8080 (LISTEN)
+com.docker.back 19614 wilsonmar  158u     IPv6 0xafaa508... TCP *:5432 (LISTEN)
+com.docker.back 19614 wilsonmar  159u     IPv6 0xafaa508... TCP *:8200 (LISTEN)
+com.docker.back 19614 wilsonmar  160u     IPv6 0xafaa508... TCP *:1717 (LISTEN)
+vpnkit-bridge   19710 wilsonmar    8u     IPv4 0xafaa508... TCP *:53680 (LISTEN)
+grafana-server  23515 wilsonmar   17u     IPv6 0xafaa508... TCP *:3000 (LISTEN)
+   </pre>
+
+   <tt>rapportd</tt> is <a target="_blank" href="https://apple.stackexchange.com/questions/308294/what-is-rapportd-and-why-does-it-want-incoming-network-connections">Apple's</a>
+
+   <tt>AMPDevicesAgent</tt> may <a target="_blank" href="<a target="_blank" href="https://macreports.com/ampdevicesagent-what-is-it/">">ask you for a password</a> when you connect using USB the first time. It can <a target="_blank" href="https://www.saintlad.com/high-cpu-usage-by-ampdevicesagent/">cause 100% CPU usage</a>. To avoid this, in iPhone Apple Music, uncheck the "automatically sync over wifi" box. To quit the process, go into Activity Monitor, find 'AMPDevicesAgent', select it and click on the information button, and quit the process.  Then eject the iOS devices on Finder.
+   
+   <tt>ControlCenter</tt> listens when “AirPlay Receiver” is turned on in System Preferences -> “Sharing”. Control Center stops listening to those ports when that's turned off.
+
+   <tt>vpnkit-bridge</tt> goes away after Docker Desktop is stopped. The process is <a target="_blank" href="https://unifiedguru.com/how-docker-desktop-networking-works-under-the-hood-docker-blog/">used by Docker Desktop under the hood</a>. The process has <a target="_blank" href="https://github.com/docker/for-mac/issues/4277">caused 100% memory usage, and Fixed in Docker 2.3</a>. It's at file /Applications/Docker.app/Contents/MacOS/vpnkit-bridge.
+
+   <tt>grafana</tt> and other background services can be stopped:
+
+   <pre><strong>brew services list
+   brew services stop grafana
+   </strong></pre>
+
+1. <a target="_blank" href="https://www.joesandbox.com/#windows">https://www.joesandbox.com/#mac</a> creates a report such as <a target="_blank" href="https://www.joesandbox.com/analysis/349885/0/pdf">this</a>.
+
+1. NOTE: All options are shown by this command:
 
    lsof -h
 
    See http://www.thegeekstuff.com/2012/08/lsof-command-examples
 
-0. Drag your Terminal window wider to remove word-wrap.
+2. Drag your Terminal window wider to remove word-wrap.
 
-   <pre>
-COMMAND           PID USER   FD      TYPE DEVICE                   SIZE     NODE     NAME
+   <pre>COMMAND           PID USER   FD      TYPE DEVICE                   SIZE     NODE     NAME
 mongod            429  mac    6u     IPv4 0xeef754dd0b1f6a1b        0t0      TCP 127.0.0.1:27017 (LISTEN)
 2BUA8C4S2C.com.   437  mac   11u     IPv4 0xeef754dd0b1f7c0b        0t0      TCP 127.0.0.1:6258 (LISTEN)
 2BUA8C4S2C.com.   437  mac   12u     IPv6 0xeef754dd02830d03        0t0      TCP [::1]:6258 (LISTEN)
