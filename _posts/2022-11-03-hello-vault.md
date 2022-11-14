@@ -355,7 +355,7 @@ Let's dive in by installing prerequities. Each technology has a different set of
    PROTIP: Get the Docker Desktop logo on your Mac Taskbar: pinch four fingers on your trackpad to drag and drop the logo onto your Taskbar.
    You should see the Docker logo when you point the mouse at the top of your screen.
 
-   ### Docker licensing
+   ### Use Podman instead of Docker
 
    On August 31 2021 Docker Inc. announced a change in the licensing model for Docker Desktop. As of January 31 2022, Docker Desktop is no longer free and commercial users (businesses) need to pay a monthly subscription fee of $5 per month.
 
@@ -363,25 +363,24 @@ Let's dive in by installing prerequities. Each technology has a different set of
 
    <a target="_blank" href="https://cloudnweb.dev/2019/10/heres-why-podman-is-more-secured-than-docker-devsecops/">Podman is supposed to be more secure than Docker</a>. And <a target="_blank" href="https://community.atlassian.com/t5/Trust-Security-articles/Hiding-malware-in-Docker-Desktop-s-virtual-machine/ba-p/1924743">Docker can theoretically run malicious code within its Virtual Machines</a>
 
-   NOTE: <a target="_blank" href="https://www.redhat.com/sysadmin/podman-mac-machine-architecture">Podman's architecture</a> is daemonless.
-   Podman has a similar directory structure than Docker (with Buildah, Skopeo, and CRI-O). 
-   
    <pre><strong>brew install podman
    </strong></pre>
    
    Although <a target="_blank" href="https://developers.redhat.com/blog/2019/01/15/podman-managing-containers-pods/?intcmp=701f20000012ngPAAQ">it's said</a> that "Podman doesn't require an active container engine for its commands to work".
-   However:
    
-   <pre><strong># podman machine init  # default 1 CPU, 2GB RAM and 10GB disk space
-   podman machine init --cpus 4 --memory 8092 --disk-size 50
-   podman machine list
-   </strong></pre>
+   The expected response is like this:
+   <pre>Downloading VM image: fedora-coreos-36.20221030.2.3-qemu.aarch64.qcow2.xz: done  
+   Extracting compressed file
+   Image resized.
+   Machine init complete
+   To start your machine run:
+      podman machine start
+   </pre>
 
-   If you see this error message:
+   If instead you see this error message:
    <pre>Error: podman-machine-default: VM already exists
    </pre>
    follow instructions at the bottom of <a target="_blank" href="https://github.com/containers/podman/issues/10824">this post</a>:
-
    <pre><strong>brew uninstall podman
    # Remove containers files:
    rm -rf ~/.config/containers/
@@ -390,14 +389,8 @@ Let's dive in by installing prerequities. Each technology has a different set of
    brew install podman
    </strong></pre>
 
-   Otherwise, the response at time of writing is:
-   <pre>Downloading VM image: fedora-coreos-36.20221030.2.3-qemu.aarch64.qcow2.xz: done  
-   Extracting compressed file
-   Image resized.
-   Machine init complete
-   To start your machine run:
-      podman machine start
-   </pre>
+   <pre><strong>podman machine list
+   </strong></pre>
 
    To restart podman after an upgrade:
    
@@ -413,6 +406,12 @@ Let's dive in by installing prerequities. Each technology has a different set of
    <pre><strong>podman machine stop
    </strong></pre>
 
+   NOTE: <a target="_blank" href="https://www.redhat.com/sysadmin/podman-mac-machine-architecture">Podman's architecture</a> is daemonless.
+   Podman has a similar directory structure than Docker (with Buildah, Skopeo, and CRI-O). 
+   So Podman audaciously suggests that all docker commands be automatically converted to podman within the CLI:
+
+   <pre><strong>alias docker=podman
+   </strong></pre>
 
    <a target="_blank" href="https://www.youtube.com/watch?v=15PFfjuxtvM&t=17s">VIDEO</a>:
    But the problem comes with replacing <tt>docker-compose</tt>.
@@ -425,8 +424,12 @@ Let's dive in by installing prerequities. Each technology has a different set of
       * https://fedoramagazine.org/use-docker-compose-with-podman-to-orchestrate-containers-on-fedora/
       <br /><br />
 
-   RedHat is working on a replacement for podman-compose at https://github.com/containers/podman-compose
+   RedHat is working on a replacement for podman-compose at <a target="_blank" href="https://github.com/containers/podman-compose">
+   https://github.com/containers/podman-compose</a>
    
+   Before using it, consider the <a target="_blank" href="https://github.com/containers/podman-compose/issues">
+   many issues currently open for podman-compose</a>.
+
    <pre><strong>pip3 install podman-compose
    </strong></pre>
 
