@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-14"
+file: "aws-service-catalog"
 title: "AWS Service Catalog"
 excerpt: "Select your way to a set of services to assemble your app, with curated (known-safe) settings (in Terraform too)"
 tags: [security]
-date: "2022-03-04"
-file: "aws-service-catalog"
 image:
 # catalog-card-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/156939748-04d5695c-966c-4fa4-bd30-5986992ade0c.png
@@ -42,6 +42,13 @@ The AWS Service Catalog is accompanied by CLI and SDK access, meaning you can pr
 
 
 Service Catalog products can be deployed via the console, the command line and SDKs, CloudFormation, or 3rd party infrastructure as code (IAC) tools such as Terraform.
+
+## Mindmap
+
+<a target="_blank" href="https://www.shanebart.com/wp-content/uploads/2018/06/Coggle-blog.png">Mindmap from Shane Bartholomeusz
+
+<a target="_blank" href="https://www.shanebart.com/wp-content/uploads/2018/06/Coggle-blog.png">
+<img alt="aws-svcs-mindmap-3010x2052.png" src="https://www.shanebart.com/wp-content/uploads/2018/06/Coggle-blog.png"></a>
 
 
 ## Terraform
