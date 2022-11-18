@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-21"
+date: "2022-11-17"
 file: "hashicorp-consul"
 title: "HashiCorp Consul"
 excerpt: "Enterprise-grade secure Zero-Trust routing to replace East-West load-balancing using service names rather than static IP addresses. Enhance Service Mesh with mTLS and health-based APIs in AWS, Azure, GCP, and other clouds running Kubernetes as well as ECS, EKS, VMs, databases, even mainframes outside Kubernetes"
@@ -3534,7 +3534,7 @@ tetratelabs/func-e info installed /usr/local/bin/func-e
 
    <pre><strong>export FUNC_E_PLATFORM=darwin/amd64
 func-e use 1.20.1
-   </strong><pre>
+   </strong></pre>
 
    <pre>downloading https://archive.tetratelabs.io/envoy/download/v1.20.1/envoy-v1.20.1-darwin-amd64.tar.xz
    </pre>

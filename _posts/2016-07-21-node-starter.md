@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-17"
+file: "node-starter"
 title: "Node API Starter"
 excerpt: "Add routes to basic features included"
 tags: [Node, API]
-date: "2016-07-21"
-file: "node-starter"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -816,7 +816,7 @@ exports.index = (req, res) => {
 
 0. To add a new Viz route, add (above the Error Handler section):
 
-   <pre></strong>
+   <pre><strong>
    /**
     * Custom routes:
     */

@@ -915,7 +915,7 @@ spec:
 1. When a new hamster pod is started, describe it and view the updated CPU and memory reservations.
 
    <pre><strong>kubectl describe pod hamster-c7d89d6db-jxgfv
-   </pre></strong>
+   </strong></pre>
 
    Sample output:
 
@@ -1248,10 +1248,32 @@ Kubernetes is called "container orchestration" software because it automates the
 
 <hr />
 
+## KCNA Exam 
+
+The Kubernetes and Cloud Native Associate is the entry level certification in Kubernetes.
+
+https://www.cncf.io/certification/kcna/
+
+<a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/frequently-asked-questions-kcna">FAQ</a:
+The $250 closed-book exam is proctored by PSI online. Answer 75% of 90 multiple-choice questions in 1.5 hours.
+Good for 3 years.
+
+<a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2">
+The exam Handbook</a> lists:
+
+   * Kubernetes Fundamentals 46%
+   * Container Orchestration 22%
+   * Cloud Native Architecture 16%
+   * Cloud Native Observability 8%
+   * Cloud Native Application Delivery 8%
+   <br /><br />
+
+
+
 
 <a name="CKAD_ExamDomains"></a>
 
-### CKAD Exam Domains
+## CKAD Exam 
 
 Here is the full text of the <a target="_blank" href="https://github.com/cncf/curriculum">CNCF's exam curriculum</a>
 
@@ -1645,10 +1667,18 @@ Kind (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">
 
    CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
 
-   NOTE: Kubernetes can use alternative container runtimes than Docker
-   to run on top of cri-o, such as RedHat's podman, or LXC.
+   <a name="ContainerRuntimes"></a>
 
-k3d
+   Runc is the OCI standardized container runtime
+
+   NOTE: Kubernetes can use alternative container runtimes than Docker to run on top of :
+   * Docker (Containerd runtime using Runc)
+   * LXC (Linux native containers)
+   * RedHat's Podman (CRI-o runtime using Runc)
+   * Systemd-nspawn
+   <br /><br />
+
+k3d:
 
    <pre>go install github.com/rancher/k3d
 k3d create
@@ -2248,17 +2278,6 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
    <pre><strong>kubectl cluster-info dump</strong></pre>
 
 
-<a name="Namespaces"></a>
-
-## Namespaces
-
-Every request is namespaced:
-
-   <tt>GET https://localhost:8001/api/v1/namespaces/default/pods</tt>
-
-Each namespace has its own set of quotas, network policies, RBAC.
-
-
 
 <a name="Config"></a>
 <a name="Contexts"></a>
@@ -2501,14 +2520,25 @@ spec:
 
 <a name="Namespaces"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=1h46m19s">NinaK</a>:
+## Namespaces
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=1h46m19s">NinaK</a>:
    * <a target="_blank" href="https://kubernetesbyexample.com//ns/">kubernetesbyexample.com: Namespaces</a>
+   <br /><br />
+
+Every request is namespaced:
+
+   <tt>GET https://localhost:8001/api/v1/namespaces/default/pods</tt>
+
+Namespaces are intended for use in environments with many users spread across multiple teams. 
+
+Namespaces provide <strong>isolation</strong> among different project teams, so they don't overwrite each other's definitions.
 
 Namespaces provide a <strong>scope</strong> for names, as a way to divide cluster resources.
 
-PROTIP: Each UUID created (described) by K8s is unique across all namespaces within a cluster.
+Each namespace has its own set of quotas, network policies, RBAC.
 
-Namespaces are intended for use in environments with many users spread across multiple teams. 
+PROTIP: Each <strong>UUID</strong> created (described) by K8s is unique across all namespaces within a cluster.
 
 K8s namespaces are used to separate resources (network, files, users, processes, IPCs, etc.) into 
 <strong>virtual clusters</strong> inside a K8s cluster.
@@ -2524,8 +2554,6 @@ K8s namespaces are used to separate resources (network, files, users, processes,
    * Blue/Green production
    <br /><br />
 
-Namespaces provide <strong>isolation</strong> among different project teams, so they don't overwrite each other's definitions.
-
 <a href="#Secrets">Secrets</a> and <a href="#ConfigMaps">ConfigMaps</a> are not shared across namespaces.
 
 Different limits on resources (CPU, RAM, storage) can be defined for each namespace.
@@ -2538,15 +2566,15 @@ You don't need to create or think about the default namespace.
 
    <strong>k run nginx --image=nginx</strong>
 
-1. Attach a namespace as the context for all subsequent commands:
+2. Attach a namespace as the context for all subsequent commands:
 
    <strong>k config set-context --current --namespace=namespace-1</strong>
 
-1. List pods across a namespace across a cluster:
+3. List pods across a namespace across a cluster:
 
    <strong>k get pods --all=namespace</strong>
 
-1. API Resources within a namespace:
+4. API Resources within a namespace:
 
    <strong>k api-resources --namespaced=true</strong>
 
@@ -2554,12 +2582,12 @@ You don't need to create or think about the default namespace.
 
    Many of the objects shown are for SysAdmins (storageclasses, etc.)
 
-1. API versions:
+5. API versions:
 
    <strong>k api-versions</strong>
 
 
-1. List where KubeDNS is running:
+6. List where KubeDNS is running:
 
    Out of the box, without creating anything:
 
@@ -6716,7 +6744,21 @@ Microsoft's "<a target="_blank" href="https://azure.microsoft.com/mediahandler/f
    Covers bash completion   
 
 
-A cgroup (control group) is a group of Linux processes with optional resource isolation, accounting, and limits.
+<a name="cgroups"></a>
+
+#### cgroups
+
+A cgroup (control group) is a group of Linux processes providing resource allocation,
+with optional resource isolation, accounting, and limits.
+Cgroups ensure that a container cannot get more than the resources specified for it.
+
+<a name="chroot"></a>
+
+#### chroot
+
+CGroups evolved from chroot.
+The chroot jail, introduced in the 1970s, is still used as the foundation of each container.
+It isolates processes from the root by presenting only the contents of a specific directory (folder) to the process.
 
 
 

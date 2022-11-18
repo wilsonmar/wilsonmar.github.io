@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-17"
+file: "iot-raspberry-install"
 title: "IoT Raspberry Install"
 excerpt: "How to setup a Raspberry Pi on macOS with Raspbian, Python, Node, Ansible, Kubernetes"
 tags: [IoT, Raspberry, Mono, Mac]
-date: "2022-04-12"
-file: "iot-raspberry-install"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -2464,7 +2464,7 @@ Server running at http://127.0.0.1:3001/
    to a single file, `server.js` with an absolute file path
    to the `/home/pi/` folder.
    
-   <pre></strong>
+   <pre><strong>
    su pi -c 'node /home/pi/server.js < /dev/null &'
    </strong></pre>
 
