@@ -797,7 +797,7 @@ If the admission controller is up and running, but there is no indication of it 
 
 1. Deploy the Vertical Pod Autoscaler to your cluster:
 
-   <pre><strong>./hack/vpa-up.sh</storng></pre>
+   <pre><strong>./hack/vpa-up.sh</strong></pre>
 
    CAUTION: Whenever VPA updates pod resources, the pod is recreated, which causes all running containers to be restarted. The pod may be recreated on a different node.
 
@@ -1671,7 +1671,7 @@ Kind (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">
 
    Runc is the OCI standardized container runtime
 
-   NOTE: Kubernetes can use alternative container runtimes than Docker to run on top of :
+   Kubernetes can use alternative container runtimes than CRI - Docker:
    * Docker (Containerd runtime using Runc)
    * LXC (Linux native containers)
    * RedHat's Podman (CRI-o runtime using Runc)
@@ -2465,7 +2465,7 @@ spec:
    <pre>command: [ "sleep", "5000" ]
    </pre>
 
-This references Dockerfile:
+This references Dockerfile (aka Containerfile):
 
    <pre>ENTRYPOINT ["python", "app.py"]
 CMD ["--color", "red"]
