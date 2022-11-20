@@ -328,11 +328,11 @@ Listed from cheapest to most expensive/prestigeous:
 
    The Standard defines the inputs and outputs of each process for these strategies and plans:
 
-   1. Resource Plan
+   1. Resource Plan (no Strategy)
    2. Communication
    3. Sponsorship
    4. Stakeholder Engagement
-   5. Change Impact and Readiness Strategy
+   5. Change Impact and Readiness Strategy (no Plan)
    6. Learning and Development
    7. Measurement and Benefit Realization
    8. Sustainability
@@ -548,3 +548,5 @@ And the course provides and explains use of templates to use in your job as a ch
 
 <a target="_blank" href="https://www.extension.harvard.edu/professional-development/programs/strategies-leading-successful-change-initiatives">Strategies for Leading Successful Change Initiatives</a> program at <a target="_blank" href="https://www.extension.harvard.edu/professional-development/">Harvard Extension School for Professional Development</a>.
 
+"When environment are complex and dynamic, strategy is about adaptability"
+-- MIT Sloan magazine Dec 2020, article "The Essence of Strategy Is Now How to Change" by B. Tom Hunsaker, Jonathan Knowles

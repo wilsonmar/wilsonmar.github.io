@@ -1206,9 +1206,13 @@ The programmatic approach of scripts mean that code is needed to check condition
 
 <a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
 
-Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat and its competing <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology used with OpenShift.
+This diagram is <a href=#Sanders">Sander</a> on a lightboard:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1668917299/k8s-docker-runtiimes-966x636_owe72k.jpg"><img alt="k8s-docker-runtiimes-966x636.jpg" width="966" width="636" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1668917299/k8s-docker-runtiimes-966x636_owe72k.jpg"></a>
 
 Runc is supported by CRI-O, Docker, ContainerD. Runc is the low-level tool which does the "heavy lifting" of spawning a Linux container. (<a target="_blank" href="https://www.youtube.com/watch?v=0uy2V2kYl4U" title="Feb 15, 2019">See CVE-2019-5736</a>).
+
+BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") containers, which provided a CLI for containers as part of CoreOS. Rkt became the first archived project of CNCF after IBM bought Red Hat and its competing <a target="_blank" href="https://github.com/kubernetes-sigs/cri-o">cri-o technology used with OpenShift.
 
 
 <a name="Inside"></a>
@@ -7235,6 +7239,11 @@ Certified Kubernetes Application Developer (CKAD) Prep Course</a> July 2019 [4h 
 and <a target="_blank" href="https://github.com/bmuschko/ckad-crash-course">https://github.com/bmuschko/ckad-crash-course "In-depth and hands-on practice for acing the exam"</a> by Benjamin Muschko (@bmuschko, <a target="_blank" href="https://www.bmuschko.com/">bmuschko.com</a>, <a target="_blank" href="https://www.automatedascent.com/">automatedascent.com</a>) 
 
 https://github.com/bmuschko/cka-crash-course
+
+
+<a name="Sanders"></a>
+
+#### Sander's class
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
 7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->

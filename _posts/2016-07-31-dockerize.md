@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-19"
+file: "dockerize"
 title: "Dockerize apps"
 excerpt: "Define how little bits work together"
 tags: [Docker, devops, ci, setup]
-date: "2016-07-31"
-file: "dockerize"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -44,6 +44,18 @@ Container orchestration utilities such as Kubernetes or Docker Compose make requ
 
 Docker images and containers are a key building block for the Service Mesh architecture which has an Envoy component in each pod to handle communication and security certificates.
 
+
+## TL;DR; Docker Security
+
+This article describes how to Dockerize apps in a "hardened" way. That means:
+
+* Include as little as possible in container images. This makes them both quicker to load and also more secure. Thus, we prefer Alpin OS rather than open-source Ubuntu which includes software we don't need nor want.
+* Run <strong>rootless</strong> containers.
+* Crypographically sign each image created.
+* Use verified images.
+* Use access control on registries rather than allowing anyone to use them.
+* Use Kubernetes for implementing RBAC (Role-Based Access Control)
+* Run containers on isolated networks (by adding AWS Security Groups)
 
 ## Dockerize apps #
 

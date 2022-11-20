@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-26"
+date: "2022-11-19"
 file: "docker-setup"
 title: "Docker setup"
 excerpt: "Get bits working in lightweight containers"
@@ -286,8 +286,8 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 0. Install the Stable version of Homebrew:
 
-   <tt><strong>brew install --cask docker && docker ps
-   </strong></tt>
+   <pre><strong>brew install --cask docker && docker ps
+   </strong></pre>
  
    If one was already installed, it is replaced:
 
@@ -575,8 +575,8 @@ To get the latest and greatest version, install Docker from the official Docker 
 
 0. First, update the package database:
 
-   <tt><strong>sudo yum check-update
-   </strong></tt>
+   <pre><strong>sudo yum check-update
+   </strong></pre>
 
    The response:
 
@@ -591,13 +591,12 @@ Loading mirror speeds from cached hostfile
 
 0. Add the official Docker repository, download the latest version of Docker, and install it:
 
-   <tt><strong>curl -fsSL https://get.docker.com/ | sh
-   </strong></tt>
+   <pre><strong>curl -fsSL https://get.docker.com/ | sh
+   </strong></pre>
 
    The response:
 
-   <pre>
-+ sh -c 'sleep 3; yum -y -q install docker-engine'
+   <pre>+ sh -c 'sleep 3; yum -y -q install docker-engine'
 Failed to set locale, defaulting to C
 warning: /var/cache/yum/x86_64/7/docker-main-repo/packages/docker-engine-selinux-1.11.2-1.el7.centos.noarch.rpm: Header V4 RSA/SHA512 Signature, key ID 2c52609d: NOKEY
 Public key for docker-engine-selinux-1.11.2-1.el7.centos.noarch.rpm is not installed
@@ -622,8 +621,8 @@ Remember that you will have to log out and back in for this to take effect!
 
 0. With installation complete, start the Docker daemon:
 
-   <tt><strong>sudo systemctl start docker
-   </strong></tt>
+   <pre><strong>sudo systemctl start docker
+   </strong></pre>
 
    No response is returned.
 
@@ -633,8 +632,8 @@ Remember that you will have to log out and back in for this to take effect!
 
 0. Verify it's running:
 
-   <tt><strong>sudo systemctl status docker -l
-   </strong></tt>
+   <pre><strong>sudo systemctl status docker -l
+   </strong></pre>
 
    The response:
 
@@ -665,8 +664,8 @@ Jul 27 22:37:40 centos-512mb-sfo2-01 systemd[1]: Started Docker Application Cont
 
 0. Configure to git it to start at every server reboot:
 
-   <tt><strong>sudo systemctl enable docker
-   </strong></tt>
+   <pre><strong>sudo systemctl enable docker
+   </strong></pre>
 
    NOTE: This only needs to be done once per instance.
 
@@ -741,13 +740,12 @@ These instructions apply to Docker running within all operating systems.
 
 0. List all docker command options:
 
-   <tt><strong>docker
-   </strong></tt>
+   <pre><strong>docker
+   </strong></pre>
 
    The response:
 
-   <pre>
-Usage:   docker COMMAND
+   <pre>Usage:   docker COMMAND
 &nbsp;
 A self-sufficient runtime for containers
 &nbsp;
@@ -821,8 +819,8 @@ Run 'docker COMMAND --help' for more information on a command.
 
 0. Get Docker version property using either the short or long form of parameter:
 
-   <tt><strong>docker \-\-version
-   </strong></tt>
+   <pre><strong>docker \-\-version
+   </strong></pre>
 
    The response:
    
@@ -834,13 +832,12 @@ Docker version 17.09.0-ce, build afdb6d4
 
 0. Obtain the version number using a sub-command:
 
-   <tt><strong>docker version
-   </strong></tt>
+   <pre><strong>docker version
+   </strong></pre>
 
    Sample response on the Mac:
 
-    <pre>
-Client:
+    <pre>Client:
  Version:      17.09.0-ce
  API version:  1.32
  Go version:   go1.8.3
@@ -913,13 +910,12 @@ Server:
 0. PROTIP: The most detailed status is obtained using the 
    info sub-command, which requires the docker daemon to be running.
 
-   <tt><strong>docker info
-   </strong></tt>
+   <pre><strong>docker info
+   </strong></pre>
 
    An example of command output for docker info on Windows:
 
-   <pre>
-Containers: 0
+   <pre>Containers: 0
  Running: 0
  Paused: 0
  Stopped: 0
@@ -1026,9 +1022,8 @@ RHEL Enterprise Linux 8 Beta</a> introduces a new <strong>Container Tools</stron
 0. Type in a short description and click Create.
 0. Under the "Docker Pull Command" at the right pane, for example:
 
-   <tt><strong>
-   docker pull wilsonmar/99bottles-jmeter
-   </strong></tt>
+   <pre><strong>docker pull wilsonmar/99bottles-jmeter
+   </strong></pre>
 
    Notice that, to Dockerhub, "target" isn't a URL but an account name.
 
@@ -1036,8 +1031,7 @@ RHEL Enterprise Linux 8 Beta</a> introduces a new <strong>Container Tools</stron
 
    The response if you're in the right folder for Docker:
 
-   <pre>
-Using default tag: latest
+   <pre>Using default tag: latest
 Pulling repository docker.io/wilsonmar/99bottles-jmeter
 Tag latest not found in repository docker.io/wilsonmar/99bottles-jmeter
    </pre>
@@ -1047,8 +1041,8 @@ Tag latest not found in repository docker.io/wilsonmar/99bottles-jmeter
 
 0. List images pulled:
 
-   <tt><strong>docker images -a -q
-   </strong></tt>
+   <pre><strong>docker images -a -q
+   </strong></pre>
 
    A sample response:
 
@@ -1060,13 +1054,13 @@ nginx               latest              1e5ab59102ce        8 days ago          
 
 0. Remove all images pulled, to save disk space:
 
-   <tt><strong>docker rmi $(docker images -a -q)
-   </strong></tt>
+   <pre><strong>docker rmi $(docker images -a -q)
+   </strong></pre>
 
 0. Remove a list of dangling images:
 
-   <tt><strong>docker rmi $(docker images -f dangling=true -q)
-   </strong></tt>
+   <pre><strong>docker rmi $(docker images -f dangling=true -q)
+   </strong></pre>
 
 
    ### Setup Credential Store
@@ -1108,40 +1102,37 @@ nginx               latest              1e5ab59102ce        8 days ago          
 
    The response:
 
-   <pre>
-   WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+   <pre>WARNING! Using --password via the CLI is insecure. Use --password-stdin.
    </pre>
 
    PROTIP: Using STDIN prevents the password from ending up in the shell's history and log files.
 
 0. PROTIP: At your home folder create a `.secrets` file containing set statements:
 
-   <tt><strong>
-   cd 
+   <pre><strong>cd 
    echo set >.secrets
-   </strong></tt>
+   </strong></pre>
 
 0. Edit the text file to contain the username and password you setup at https://hub.docker.com/  for example:
 
-   <tt><strong>
+   <pre><strong>
    export DOCKER_USERNAME=wilsonmar
    export DOCKER_PASSWORD=12345abcde7890jl;k
    echo $DOCKER_USERNAME
    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin -e none
-   </strong></tt>
+   </strong></pre>
 
 0. Run the file:
 
-   <tt><strong>
-   source .secrets
-   </strong></tt>
+   <pre><strong>source .secrets
+   </strong></pre>
 
    You should see your user name reflected.
 
    Alternately, supply the authentication information in the command (replacing **** with your own):
 
-   <tt><strong>docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-   </strong></tt>
+   <pre><strong>docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+   </strong></pre>
 
    (The --email flag was required by Docker older that 1.11)
 
@@ -1149,14 +1140,12 @@ nginx               latest              1e5ab59102ce        8 days ago          
 
    The successful response is:
 
-   <pre>
-   WARNING: login credentials saved in C:\Users\...\\.docker\config.json
+   <pre>WARNING: login credentials saved in C:\Users\...\\.docker\config.json
    </pre>
 
    When Docker is installed, it creates a <strong>.docker</strong> folder at your account root folder. It contains files daemon.json and ~/.docker/config.json:
 
-   <pre>
-{
+   <pre>{
   "auths" : {
     "https://index.docker.io/v1/" : {
          "auth": "YW11cmRhY2E6c3VwZXJzZWNyZXRwYXNzd29yZA==",
@@ -1177,15 +1166,14 @@ nginx               latest              1e5ab59102ce        8 days ago          
 
    The trouble with this is that it’s encrypted. The base64 string can be converted back to clear ASCII text:
 
-   <tt><strong>
+   <pre><strong>
    echo YW11cmRhY2E6c3VwZXJzZWNyZXRwYXNzd29yZA== | base64 -d -
-   </strong></tt>
+   </strong></pre>
 
 0. The authentication information is removed upon:
 
-   <tt><strong>
-   docker logout
-   </strong></tt>
+   <pre><strong>docker logout
+   </strong></pre>
 
    The response is about `cat ~/.docker/config.json`
 
@@ -1195,16 +1183,12 @@ nginx               latest              1e5ab59102ce        8 days ago          
 
    which would avoid the following error later:
 
-   <pre>
-docker: Error response from daemon: Get https://registry-1.docker.io/v2/library/hello-world/manifests/latest: unauthorized: incorrect username or password.
+   <pre>docker: Error response from daemon: Get https://registry-1.docker.io/v2/library/hello-world/manifests/latest: unauthorized: incorrect username or password.
    </pre>
-
-
 
    However, if you are not setup correctly, you'll see:
 
-   <pre>
-Warning: failed to get default registry endpoint from daemon (Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?). Using system default: https://index.docker.io/v1/
+   <pre>Warning: failed to get default registry endpoint from daemon (Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?). Using system default: https://index.docker.io/v1/
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
    </pre>
 
@@ -1224,13 +1208,13 @@ Login with your Docker ID to push and pull images from Docker Hub. If you don't 
 
    /etc/systemd/system/docker.service
 
-   <tt><strong>systemctl status docker.service
-   </strong></tt>
+   <pre><strong>systemctl status docker.service
+   </strong></pre>
 
    For detail:
 
-   <tt><strong>journalctl -u docker.service
-   </strong></tt>
+   <pre><strong>journalctl -u docker.service
+   </strong></pre>
 
    On ubuntu server, restart: 
 
@@ -1244,8 +1228,8 @@ Login with your Docker ID to push and pull images from Docker Hub. If you don't 
 
    To start:
 
-   <tt><strong>systemctl start docker
-   </strong></tt>
+   <pre><strong>systemctl start docker
+   </strong></pre>
 
 
 <a name="ModulesInstalled"></a>
@@ -1271,8 +1255,8 @@ Login with your Docker ID to push and pull images from Docker Hub. If you don't 
 
 0. PROTIP: There's a different version of each Docker module:
 
-   <tt><strong>docker-compose \-\-version
-   </strong></tt>
+   <pre><strong>docker-compose \-\-version
+   </strong></pre>
 
    A sample response:
 
@@ -1282,8 +1266,8 @@ Login with your Docker ID to push and pull images from Docker Hub. If you don't 
 
 0. PROTIP: There's a different version of each Docker module:
 
-   <tt><strong>docker-machine \-\-version
-   </strong></tt>
+   <pre><strong>docker-machine \-\-version
+   </strong></pre>
 
    A sample response:
 
@@ -1310,28 +1294,28 @@ On Linux:
 
     To apply the setting on a live system type: 
 
-    <tt><strong>sysctl -w vm.max_map_count=262144
-    </strong></tt>
+    <pre><strong>sysctl -w vm.max_map_count=262144
+    </strong></pre>
 
 OSX with Docker for Mac
 
    The vm_max_map_count setting must be set within the xhyve virtual machine:
 
-   <tt><strong>screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
-   </strong></tt>
+   <pre><strong>screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty
+   </strong></pre>
 
    Log in with root and no password. Then configure the sysctl setting as you would for Linux:
 
-   <tt><strong>sysctl -w vm.max_map_count=262144
-   </strong></tt>
+   <pre><strong>sysctl -w vm.max_map_count=262144
+   </strong></pre>
 
 MacOS with Docker Toolbox:
 
    The vm_max_map_count setting must be set via docker-machine:
 
-   <tt><strong>docker-machine ssh<br />
+   <pre><strong>docker-machine ssh<br />
    sudo sysctl -w vm.max_map_count=262144
-   </strong></tt>
+   </strong></pre>
 
 
 ## Run from Docker Hub
@@ -1352,7 +1336,7 @@ MacOS with Docker Toolbox:
 
 0. To verify whether you can access a simple image:
 
-   <tt><strong>docker run hello-world
+   <pre><strong>docker run hello-world
    </strong>
 
    Like Maven Central, 
@@ -1368,8 +1352,7 @@ MacOS with Docker Toolbox:
 
    If the image is not available locally, it is pulled from Dockerhub:
 
-   <pre>
-Unable to find image 'hello-world:latest' locally
+   <pre>Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 c04b14da8d14: Pull complete 
 Digest: sha256:0256e8a36e2070f7bf2d0b0763dbabdd67798512411de4cdcf9431a1feb60fd9
@@ -1378,8 +1361,7 @@ Status: Downloaded newer image for hello-world:latest
 
    The expected response is:
 
-   <pre>
-Hello from Docker!
+   <pre>Hello from Docker!
 This message shows that your installation appears to be working correctly.
 &nbsp;
 To generate this message, Docker took the following steps:
@@ -1400,16 +1382,14 @@ Share images, automate workflows, and more with a free Docker Hub account:
 
 0. Run the container just downloaded in a Mac:
 
-   <tt><strong>
-   docker run -it ubuntu bash
-   </strong></tt>
+   <pre><strong>docker run -it ubuntu bash
+   </strong></pre>
 
    PROTIP: Mac uses Ubuntu commands.
 
    The response:
 
-   <pre>
-Unable to find image 'ubuntu:latest' locally
+   <pre>Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
 43db9dbdcb30: Pull complete 
 2dc64e8f8d4f: Pull complete 
@@ -1424,14 +1404,12 @@ root@27eb89b0dc54:
 
    Alternately, on a CentOS machine:
 
-   <tt><strong>
-   docker run -it centos bash
-   </strong></tt>
+   <pre><strong>docker run -it centos bash
+   </strong></pre>
 
    The response:
 
-   <pre>
-Unable to find image 'centos:latest' locally
+   <pre>Unable to find image 'centos:latest' locally
 latest: Pulling from library/centos
 8c3d77a518cb: Pull complete 
 Digest: sha256:7b754086d2c7d74ac39dc0a2545d7b06d4266f873d502feb5b3e8bfca27c5dd8
@@ -1450,11 +1428,10 @@ Status: Downloaded newer image for centos:latest
 
 0. Get a list of all the docker run command parameters:
 
-   <tt><strong>docker run \-\-help
-   </strong></tt>
+   <pre><strong>docker run \-\-help
+   </strong></pre>
 
-   <pre>
-Usage:   docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+   <pre>Usage:   docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 &nbsp;
 Run a command in a new container
 &nbsp;
@@ -1566,16 +1543,13 @@ Options:
 
 0. Make sure the Docker process can run by getting a Terminal inside the container:
 
-   <tt><strong>
-   docker exec -it test ps aux
-   </strong></tt>
+   <pre><strong>docker exec -it test ps aux
+   </strong></pre>
 
-   <pre>
-   Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+   <pre>Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
    </pre>
 
-   <pre>
-docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
+   <pre>docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?.
 See 'docker run --help'.
    </pre>
 
@@ -1587,13 +1561,12 @@ See 'docker run --help'.
    
 1. To bring the Dockerfile local without running it also:
 
-   <tt><strong>docker pull library/hello-world
-   </strong></tt>
+   <pre><strong>docker pull library/hello-world
+   </strong></pre>
 
    A sample response:
 
-   <pre>
-Using default tag: latest
+   <pre>Using default tag: latest
 latest: Pulling from library/hello-world
 b04784fba78d: Pull complete 
 Digest: sha256:f3b3b28a45160805bb16542c9531888519430e9e6d6ffc09d72261b0d26ff74f
@@ -1602,13 +1575,12 @@ Status: Downloaded newer image for hello-world:latest
 
 0. List images downloaded locally:
 
-   <tt><strong>docker images
-   </strong></tt>
+   <pre><strong>docker images
+   </strong></pre>
 
    The response:
 
-   <pre>
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+   <pre>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 centos              latest              50dae1ee8677        8 days ago          196.7 MB
 hello-world         latest              c54a2cc56cbb        3 weeks ago         1.848 kB
 node                0.10.44-slim        f73347dab179        12 weeks ago        192.6 MB
@@ -1629,9 +1601,11 @@ node                0.10.44-slim        f73347dab179        12 weeks ago        
 0. Run it again from your local cache using
    the default "library" user, so the command is equivalent to:
 
-   <tt><strong>docker run library/hello-world
-   </strong></tt>
+   <pre><strong>docker run library/hello-world
+   </strong></pre>
 
+
+<hr />
 
 ### Dockviz
 
@@ -1649,6 +1623,8 @@ PROTIP: Consider a third-party tool to display visualizations of image data:
    and discover which layers are shared by multiple images.
    It presents an ImageLayers badge about the size of an image, and how many layers it is composed of.
 
+
+<hr />
 
 <a name="DockerSearch"></a>
 
@@ -1673,7 +1649,9 @@ See the Officially supported repositories at:<br />
    note they are designed to be used from "Windows Insider program" Windows Server or Windows 10 Container hosts.
    They are of "beta" quality.
 
-   docker pull microsoft/windowsservercore-insider
+   <pre><strong>docker pull microsoft/windowsservercore-insider
+   </strong></pre>
+
 
 ### Ubuntu search
 
@@ -1681,13 +1659,12 @@ See the Officially supported repositories at:<br />
    <a target="_blank" href="https://hub.docker.com/">
    https://hub.docker.com</a>
 
-   <tt><strong>docker search ubuntu
-   </strong></tt>
+   <pre><strong>docker search ubuntu
+   </strong></pre>
    
    The response (27 Jul 2016):
 
-   <pre>
-NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+   <pre>NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
 ubuntu                            Ubuntu is a Debian-based Linux operating s...   4343      [OK]       
 ubuntu-upstart                    Upstart is an event-based replacement for ...   65        [OK]       
 rastasheep/ubuntu-sshd            Dockerized SSH service, built on top of of...   30                   [OK]
@@ -1722,12 +1699,11 @@ webhippie/ubuntu                  Docker images for ubuntu                      
    <a target="_blank" href="https://hub.docker.com">
    https://hub.docker.com</a>
 
-   <tt><strong>docker search centos</strong></tt>
+   <pre><strong>docker search centos</strong></pre>
    
    The response (27 Jul 2016):
 
-   <pre>
-NAME                          DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+   <pre>NAME                          DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
 centos                        The official build of CentOS.                   2475      [OK]       
 jdeathe/centos-ssh            CentOS-6 6.8 x86_64 / CentOS-7 7.2.1511 x8...   26                   [OK]
 nimmis/java-centos            This is docker images of CentOS 7 with dif...   13                   [OK]
@@ -1780,19 +1756,19 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
 0. In a Terminal, navigate to where you can add a repo.
 0. Get it and navigate into the repo:
 
-   <tt><strong>git clone https://github.com/wilsonmar/Dockerfiles && cd Dockerfiles
-   </strong></tt>
+   <pre><strong>git clone https://github.com/wilsonmar/Dockerfiles && cd Dockerfiles
+   </strong></pre>
 
    PROTIP: I recommend putting the Dockerfile for an app within that app's repository
    rather than in a separate one.
 
 0. List the contents of the repo:
 
-   <tt><strong>ls -al
-   </strong></tt>
+   <pre><strong>ls -al
+   </strong></pre>
 
-   <tt><strong>cd hello-world;docker run hello-world
-   </strong></tt>
+   <pre><strong>cd hello-world;docker run hello-world
+   </strong></pre>
 
 0. Turn your Wi-Fi back on because the rest of this tutorial assumes it.
 
@@ -1832,8 +1808,8 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
 
 0. Run the latest version image pulled for nginx:
 
-   <tt><strong>docker run -i -t nginx:latest /bin/bash
-   </strong></tt>
+   <pre><strong>docker run -i -t nginx:latest /bin/bash
+   </strong></pre>
 
    `-i` means interactive: Keep STDIN open even if not attached
 
@@ -1843,8 +1819,8 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
 
    Run an NGINX web server detached:
    
-   <tt><strong>docker run -d -p 8080:80 nginx
-   </strong></tt>
+   <pre><strong>docker run -d -p 8080:80 nginx
+   </strong></pre>
 
    `-d` specifies running in <strong>detached mode</strong>
    so the container continues to run in background until stopped,
@@ -1864,13 +1840,12 @@ repositoryjp/centos           Docker Image for CentOS.                        0 
 
 0. To see if that machine responds:
 
-   <tt><strong>curl $(docker-machine ip default):8080
+   <pre><strong>curl $(docker-machine ip default):8080
    </strong>
 
-   A common error message is:
+   A common error message is like this:
 
-   <pre>
-curl: (7) Failed to connect to 192.168.99.100 port 8000: Connection refused
+   <pre>curl: (7) Failed to connect to 192.168.99.100 port 8000: Connection refused
    </pre>
 
    Fix the above by making sure you're specifying the correct port (8000 vs 80).
@@ -1880,13 +1855,12 @@ curl: (7) Failed to connect to 192.168.99.100 port 8000: Connection refused
    
 0. List the history of processes:
 
-   <tt><strong>docker ps -a
-   </strong></tt>
+   <pre><strong>docker ps -a
+   </strong></pre>
 
    Widen to see a response such as this, with random NAMES automatically assigned by Docker:
 
-   <pre>
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                    PORTS                         NAMES
+   <pre>CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                    PORTS                         NAMES
 0b7f9b9eb35a        hello-world         "/hello"                 4 hours ago         Exited (0) 4 hours ago                                  eager_lamarr
 ago                                  compassionate_leakey
 aa2ccdb153cc        nginx               "nginx -g 'daemon ..."   5 hours ago         Up 5 hours                0.0.0.0:80->80/tcp, 443/tcp   webserver
@@ -1897,12 +1871,12 @@ aa2ccdb153cc        nginx               "nginx -g 'daemon ..."   5 hours ago    
    
 0. Get the history of space for an image:
 
-   <tt><strong>docker history hello-world
-   </strong></tt>
+   <pre><strong>docker history hello-world
+   </strong></pre>
 
 0. To get the JSON associated with a 12-character container ID:
 
-   <tt><strong>docker inspect 0b7f9b9eb35a
+   <pre><strong>docker inspect 0b7f9b9eb35a
    </strong>
 
 
@@ -1910,21 +1884,20 @@ aa2ccdb153cc        nginx               "nginx -g 'daemon ..."   5 hours ago    
 
 0. Stop running containers based on list:
 
-   <tt><strong>docker stop $(docker ps -a -q)
-   </strong></tt>
+   <pre><strong>docker stop $(docker ps -a -q)
+   </strong></pre>
 
-   The response is a list of container IDs:
+   The response is a list of container IDs like this:
 
-   <pre>
-254d5641eee4
+   <pre>254d5641eee4
 dad20a229af5
 62aa89bb8170
    </pre>
 
 0. Remove the list of all containers listed:
 
-   <tt><strong>docker rm $(docker ps -a -q)
-   </strong></tt>
+   <pre><strong>docker rm $(docker ps -a -q)
+   </strong></pre>
 
    See https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
 
@@ -1944,8 +1917,8 @@ dad20a229af5
 
 0. Connect to the image:
 
-   <tt><strong>docker exec -it db /bin/bash
-   </strong></tt>
+   <pre><strong>docker exec -it db /bin/bash
+   </strong></pre>
 
    The prompt changes to include the Container ID:
 
@@ -1953,13 +1926,12 @@ dad20a229af5
 
 0. Run a process:
 
-   <tt><strong>mysql -uroot -p123  
-   </strong></tt>
+   <pre><strong>mysql -uroot -p123  
+   </strong></pre>
 
    The prompt changes to SQL after some information:
 
-   <pre>
-mysql: [Warning] Using a password on the command line interface can be insecure.
+   <pre>mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 3
 Server version: 5.7.20 MySQL Community Server (GPL)
@@ -2062,19 +2034,17 @@ https://blog.docker.com/2013/08/containers-docker-how-secure-are-they/
 
    After downloads, you should see a bash prompt such as:
 
-   <pre>
-root@ee355a835ff8:/# 
+   <pre>root@ee355a835ff8:/# 
    </pre>
 
 0. Get version information using a Linux command (which doesn't work on MacOS):
 
-   <tt><strong>cat /etc/lsb-release
-   </strong></tt>
+   <pre><strong>cat /etc/lsb-release
+   </strong></pre>
 
    The response:
 
-   <pre>
-DISTRIB_ID=Ubuntu
+   <pre>DISTRIB_ID=Ubuntu
 DISTRIB_RELEASE=16.04
 DISTRIB_CODENAME=xenial
 DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
@@ -2084,8 +2054,8 @@ DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
 
 0. Press Control+C or type exit:
 
-   <tt><strong>exit
-   </strong></tt>
+   <pre><strong>exit
+   </strong></pre>
 
 
 
@@ -2095,8 +2065,8 @@ DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
 
 0. List Docker containers and their identifiers:
 
-   <tt><strong>docker ps -a
-   </strong></tt>
+   <pre><strong>docker ps -a
+   </strong></pre>
 
    PROTIP: In Linux the ps command is for processes. In a way, that's what Docker containers are, a process.
 
@@ -2105,8 +2075,7 @@ DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
 
    Widen your screen to avoid wrapping:
 
-   <pre>
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS                                           NAMES
+   <pre>CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS                                           NAMES
 2289fc019878        nginxdemos/hello    "nginx -g 'daemon off"   32 minutes ago      Up 32 minutes               0.0.0.0:32769->80/tcp, 0.0.0.0:32768->443/tcp   trusting_euler
 75ae035ab68b        hello-world         "/hello"                 39 minutes ago      Exited (0) 39 minutes ago                                                   serene_sammet
    </pre>
@@ -2114,8 +2083,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 0. PROTIP: Customize the layout by specifying a memory variable containing format template
    using tabs and line breaks.
 
-   <pre>
-\nID\t\{\{.ID}}\nIMAGE\t\{\{.Image}}\nCOMMAND\t\{\{.Command}}\nCREATED\t\{\{.RunningFor\}\}\nSTATUS\t\{\{.Status}}\n
+   <pre>\nID\t\{\{.ID}}\nIMAGE\t\{\{.Image}}\nCOMMAND\t\{\{.Command}}\nCREATED\t\{\{.RunningFor\}\}\nSTATUS\t\{\{.Status}}\n
    </pre>
 
    <pre><strong>docker ps -a --format $FORMAT
@@ -2126,11 +2094,10 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 0. To list Docker images downloaded:
 
-   <tt><strong>docker images
-   </strong></tt>
+   <pre><strong>docker images
+   </strong></pre>
 
-   <pre>
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+   <pre>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 nginxdemos/hello    latest              0ec165d1eb3a        12 hours ago        54.24 MB
 ubuntu              latest              f753707788c5        4 weeks ago         127.2 MB
 hello-world         latest              c54a2cc56cbb        4 months ago        1.848 kB
@@ -2138,13 +2105,12 @@ hello-world         latest              c54a2cc56cbb        4 months ago        
 
 0. List Docker machines:
 
-   <tt><strong>docker-machine ls
-   </strong></tt>
+   <pre><strong>docker-machine ls
+   </strong></pre>
 
    Example response:
 
-   <pre>
-NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER    ERRORS
+   <pre>NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER    ERRORS
 default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1.12.3   
    </pre>
 
@@ -2153,8 +2119,8 @@ default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1
 0. Connect your shell to the new machine
    (per https://docs.docker.com/machine/reference/env/):
 
-   <tt><strong>eval "$(docker-machine env default)"
-   </strong></tt>
+   <pre><strong>eval "$(docker-machine env default)"
+   </strong></pre>
 
    No response is displayed because the "eval" command above runs the output of the command:
 
@@ -2164,19 +2130,18 @@ default   -        virtualbox   Running   tcp://192.168.99.100:2376           v1
 
 ### Configre Docker client
 
-   <pre>
-# export DOCKER_TLS_VERIFY="1" specifies authentication of the Docker daemon 
+   <pre># export DOCKER_TLS_VERIFY="1" specifies authentication of the Docker daemon 
 # the client attempts to communicate with:
 export DOCKER_TLS_VERIFY="1"
-
+&nbsp;
 # export DOCKER_HOST informs the client of the socket location to use when 
 # communicating with the Docker daemon:
 export DOCKER_HOST="tcp://192.168.99.100:2376"
-
+&nbsp;
 # export DOCKER_CERT_PATH specifies the location of key and certificates the 
 # client uses for TLS-enabled communication:
 export DOCKER_CERT_PATH="/Users/mac/.docker/machine/machines/default"
-
+&nbsp;
 export DOCKER_MACHINE_NAME="default"
 # Run this command to configure your shell: 
 # eval $(docker-machine env)
@@ -2187,8 +2152,8 @@ export DOCKER_MACHINE_NAME="default"
 
 1. Verify the environment variables are set:
 
-   <tt><strong>env | grep DOCKER
-   </strong></tt>
+   <pre><strong>env | grep DOCKER
+   </strong></pre>
 
 1. In the tls folder, edit the file <tt>CA-CSR.json</tt> that defines the algorithm (rsa), the size of bits (4096), and names of the OU hierarchy used to generate the cert:
 
@@ -2198,31 +2163,31 @@ export DOCKER_MACHINE_NAME="default"
 
    <pre>cfssl gencert -ca=ca.pem -ca-key=ca-key.pem \
       -config=ca-config.json -profile=daemon daemon-csr.json \
-      | cfssljson -bare daemon -</pre>
+      | cfssljson -bare daemon -
+   </pre>
 
 1. Verify the daemon-key.pem and daemon.pem files were generated:
 
-   <tt><strong>ls -l daemon*.pem</strong></tt>
+   <pre><strong>ls -l daemon*.pem</strong></pre>
 
 1. Use regex to specify all files to make readable:
 
-   <tt><strong>chmod -v 0400 {ca,daemon}*.pem</strong></tt>
+   <pre><strong>chmod -v 0400 {ca,daemon}*.pem</strong></pre>
 
 1. Copy the file to where they are referenced:
 
-   <tt><strong>sudo mkdir /etc/docker/tls
+   <pre><strong>sudo mkdir /etc/docker/tls
    sudo cp {daemon*,ca}.pem /etc/docker/tls
-   rm -f daemon*.pem</strong></tt>
+   rm -f daemon*.pem</strong></pre>
 
 1. After use, to unset environment variables:
 
-   <tt><strong>eval $(docker-machine env -u)
-   </strong></tt>
+   <pre><strong>eval $(docker-machine env -u)
+   </strong></pre>
 
    which runs:
 
-   <pre>
-unset DOCKER_TLS_VERIFY
+   <pre>unset DOCKER_TLS_VERIFY
 unset DOCKER_HOST
 unset DOCKER_CERT_PATH
 unset DOCKER_MACHINE_NAME
@@ -2235,8 +2200,8 @@ unset DOCKER_MACHINE_NAME
 
 1. To remove an individual Docker image listed above (to free up disk space):
 
-   <tt><strong>docker rmi hello-world
-   </strong></tt>
+   <pre><strong>docker rmi hello-world
+   </strong></pre>
 
    A common error response if you have not first
 
@@ -2247,25 +2212,23 @@ Error response from daemon: conflict: unable to remove repository reference "hel
 
 1. To stop all running docker containers:
 
-   <tt><strong>docker stop $(docker ps -a -q)
+   <pre><strong>docker stop $(docker ps -a -q)
    </strong>
 
    The response is a list of CONTAINER ID's stopped, such as:
 
-   <pre>
-   aa2ccdb153cc
+   <pre>aa2ccdb153cc
    </pre>
 
 1. To save disk space, remove containers identified in a list of container IDs obtained:
 
-   <tt><strong>docker rm $(docker ps -a -q)
-   </strong></tt>
+   <pre><strong>docker rm $(docker ps -a -q)
+   </strong></pre>
 
    You may see this error message:
 
-   <tt>
-Error response from daemon: You cannot remove a running container aa2ccdb153cc54070e6e2ef24e004b40e3e78555b0bca77badd143c3d984bb1c. Stop the container before attempting removal or force remove
-   </tt>
+   <pre>Error response from daemon: You cannot remove a running container aa2ccdb153cc54070e6e2ef24e004b40e3e78555b0bca77badd143c3d984bb1c. Stop the container before attempting removal or force remove
+   </pre>
 
    See <a target="_blank" href="https://docs.docker.com/docker-for-windows/">
    https://docs.docker.com/docker-for-windows</a>
@@ -2283,26 +2246,25 @@ Error response from daemon: You cannot remove a running container aa2ccdb153cc54
 
 0. Disable this reporting by creating an empty file called no-error-report under your installations .docker/machine directory:
 
-   <tt><strong>touch ~/.docker/machine/no-error-report
-   </strong></tt>
+   <pre><strong>touch ~/.docker/machine/no-error-report
+   </strong></pre>
 
 
    ### Start using old boot2docker
 
 0. Start again, you don't need to specify "default":
 
-   <tt><strong>docker-machine start default
-   </strong></tt>
+   <pre><strong>docker-machine start default
+   </strong></pre>
 
 0. Connect:
 
-   <tt><strong>docker-machine ssh
-   </strong></tt>
+   <pre><strong>docker-machine ssh
+   </strong></pre>
 
    You should see a whale in ASCII art:
 
-   <pre>
-                        ##         .
+   <pre>                        ##         .
                   ## ## ##        ==
                ## ## ## ## ##    ===
            /"""""""""""""""""\___/ ===
@@ -2332,8 +2294,8 @@ Docker version 1.12.3, build 6b644ec
 
 0. Hard stop the default machine:
 
-   <tt><strong>docker-machine stop default
-   </strong></tt>
+   <pre><strong>docker-machine stop default
+   </strong></pre>
 
    PROTIP: Those who use this a often create aliases to limit typing.
    For example, "dmon" for the above command.
@@ -2354,13 +2316,12 @@ remotely from your personal computer.
 
 0. Type the command by itself for a list of sub-commands:
 
-   <tt><strong>docker-machine
-   </strong></tt>
+   <pre><strong>docker-machine
+   </strong></pre>
 
    The response shows the sub-commands and options available:
 
-   <pre>
-Usage: docker-machine [OPTIONS] COMMAND [arg...]
+   <pre>Usage: docker-machine [OPTIONS] COMMAND [arg...]
 &nbsp;
 Create and manage machines running Docker.
 &nbsp;
@@ -2418,8 +2379,8 @@ Run 'docker-machine COMMAND --help' for more information on a command.
 
 0. List Docker machine instances:
 
-   <tt><strong>docker-machine ls
-   </strong></tt>
+   <pre><strong>docker-machine ls
+   </strong></pre>
 
    The response is a heading above lines, if any:
 
@@ -2428,8 +2389,8 @@ Run 'docker-machine COMMAND --help' for more information on a command.
 
 0. List Docker machine Internet Protocol addresses:
 
-   <tt><strong>docker-machine ip
-   </strong></tt>
+   <pre><strong>docker-machine ip
+   </strong></pre>
 
    The response:
 
@@ -2445,8 +2406,7 @@ Run 'docker-machine COMMAND --help' for more information on a command.
 
    It creates a window containing:
 
-   <pre>
-Creating CA: /Users/mac/.docker/machine/certs/ca.pem
+   <pre>Creating CA: /Users/mac/.docker/machine/certs/ca.pem
 Creating client certificate: /Users/mac/.docker/machine/certs/cert.pem
 Running pre-create checks...
 (default) Default Boot2Docker ISO is out-of-date, downloading the latest release...
@@ -2478,13 +2438,13 @@ bash: print: command not found
 
 0. Create a Docker machine named node1 in the local Virtualbox, in debug mode:
 
-   <tt><strong>docker-machine create -d virtualbox node1
-   </strong></tt>
+   <pre><strong>docker-machine create -d virtualbox node1
+   </strong></pre>
 
    Alternately, if you are running docker-machine on windows, you should use Hyper-V :
 
-   <tt><strong>docker-machine create \-\-driver hyperv vm
-   </strong></tt>
+   <pre><strong>docker-machine create \-\-driver hyperv vm
+   </strong></pre>
 
 
 
@@ -2500,8 +2460,7 @@ Compose file version 3 reference</a> lists the correspondance between Compose fi
 1. Describe you stack in a <strong>docker-compose.yml</strong>.
    Example:
 
-   <pre>
-   web:
+   <pre>web:
       build .
       command: python app.py
    ports:
@@ -2521,13 +2480,12 @@ Compose file version 3 reference</a> lists the correspondance between Compose fi
 
 1. Type the command by itself for a list of sub-commands:
 
-   <tt><strong>docker-compose
-   </strong></tt>
+   <pre><strong>docker-compose
+   </strong></pre>
 
    The response:
 
-   <pre>
-Define and run <strong>multi-container applications</strong> with Docker.
+   <pre>Define and run <strong>multi-container applications</strong> with Docker.
 &nbsp;
 Usage:
   docker-compose [-f &LT;arg>...] [options] [COMMAND] [ARGS...]
@@ -2633,8 +2591,7 @@ cAdvisor can write to InfluxDB time-series database for display by Grafana.
 
 1. Get the IP address of the running Docker instance:
 
-   <pre>
-DOCKER_HOST=$(docker-machine ip $(docker-machine active))
+   <pre>DOCKER_HOST=$(docker-machine ip $(docker-machine active))
 curl -v http://$DOCKER_HOST  # visit in your browser.
    </pre>
 
@@ -2651,8 +2608,8 @@ It scales containers by dispersing containers across multiple hosts.
 1. Initializing Docker Swarm launches a container that is used as
 the <strong>Swarm Manager</strong> master which communicates with all nodes in a Swarm cluster.
 
-   <tt><strong>docker swarm init
-   </strong></tt>
+   <pre><strong>docker swarm init
+   </strong></pre>
 
    The response:<a target="_blank" href="https://app.pluralsight.com/player?course=using-docker-aws&author=david-clinton&name=440cc04e-14c6-45e5-ba8d-2df97c1b1358&clip=1&mode=live">*</a>
 
@@ -2667,8 +2624,8 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 
 2. Do it:
 
-   <tt><strong>docker stack deploy -c wordpress-stack.yml  mywordpress
-   </strong></tt>
+   <pre><strong>docker stack deploy -c wordpress-stack.yml  mywordpress
+   </strong></pre>
 
    response:
 
@@ -2679,8 +2636,8 @@ Creating service mywordpress_db
 
 3. Get IP address of the host ("192.168.0.195"):
 
-   <tt><strong>ip a
-   </strong></tt>
+   <pre><strong>ip a
+   </strong></pre>
 
    <pre>
 en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
@@ -2691,22 +2648,22 @@ en0: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
 
 4. Open the website:
 
-   <tt><strong>http://192.168.0.195:80</strong></tt>
+   <pre><strong>http://192.168.0.195:80</strong></pre>
 
    If you get "Error establishing a database connection"
 
 <hr />
 
-   <tt><strong>docker run swarm create
-   </strong></tt>
+   <pre><strong>docker run swarm create
+   </strong></pre>
 
 See <a target="_blank" href="https://docs.docker.com/swarm/">https://docs.docker.com/swarm</a>
 
-   <tt><strong>docker run -d swarm join --addr=node_ip:2375 token://cluster_id
-   </strong></tt>
+   <pre><strong>docker run -d swarm join --addr=node_ip:2375 token://cluster_id
+   </strong></pre>
 
-   <tt><strong>docker run -d -p swarm_port:2375 swarm manage token://cluster_id
-   </strong></tt>
+   <pre><strong>docker run -d -p swarm_port:2375 swarm manage token://cluster_id
+   </strong></pre>
 
 See <a target="_blank" href="http://autopilotpattern.io/">http://autopilotpattern.io</a>
 
