@@ -105,8 +105,7 @@ See <a target="_blank" href="https://github.com/coreos/prometheus-operator">http
 
 PROTIP: Prometheus has not reached "1.0" yet so use of apt-get, yum, brew, installer packages are not recommended at this time for production use. But that hasn't stopped many from using it in production.
 
-<pre>
-$ cd /tmp
+<pre>$ cd /tmp
 $ wget https://github.com/prometheus/prometheus/releases/download/v2.2.0/prometheus-2.2.0.linux-amd64.tar.gz
 $ tar -xzf prometheus-2.2.0.linux-amd64.tar.gz
 &nbsp;

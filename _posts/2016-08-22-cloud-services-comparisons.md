@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-20"
+date: "2022-11-22"
 file: "cloud-services-comparisons"
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
@@ -141,6 +141,9 @@ So many individual technologists need to select the cloud vendor which provides 
 
 
 ## Cloud vendor comparisons
+
+<a target="_blank" href="https://aws.amazon.com/resources/analyst-reports/22-global-gartner-mq-cips/">Gartner's Cloud Vendor Magic Quadrant</a> <a target="_blank" href="https://www.gartner.com/doc/reprints?id=1-2AOZQAQL&ct=220728&st=sb">19 October 2022<br />
+<img alt="cloud-gartner-21-964x1026.jpg" width="964" height="1026" src="https://i.pinimg.com/originals/31/04/1d/31041d245abd55e08dac2cf1b82e4133.jpg"></a>
 
 <img class="img-right" align="right"
 alt="cloud platforms black icons 300x330-300-58kb.jpg" width="300" height="330" src="https://cloud.githubusercontent.com/assets/300046/17864330/e4dbabc0-685a-11e6-84e5-361c5fc8c28d.jpg">

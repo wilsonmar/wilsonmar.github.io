@@ -75,12 +75,13 @@ Let's begin with an example.
 
    For example:
 
-   <pre>
-FROM node:0.10.44-slim
+   <pre>FROM node:0.10.44-slim
 COPY . /home/demo/box/
 RUN cd /home/demo/box && npm install
 ENTRYPOINT ["/home/demo/box/boot.sh"]
    </pre>
+
+   REMEMBER: Commands cannot change the ENTRYPOINT value.
 
    <a href="#VerifyInstall">Skip to see this built</a>.
 
@@ -124,10 +125,9 @@ ENTRYPOINT ["/home/demo/box/boot.sh"]
    <a target="_blank" href="https://rawgit.com/sudo-bmitch/dc2018/master/faq-stackoverflow-lightning.html#20">PROTIP</a>: A chmod or chown changes a timestamp on the file even when there is no permission or ownership change made. Each dd command adds a 1MB layer.
    Thus, each chmod command changes permissions and causes a copy of the entire 1MB file to the next layer.
 
-   PROTIP: Reduce the image size by merging RUN lines:
+   PROTIP: Reduce the image size by merging RUN lines so they work on a single layer:
 
-   <pre>
-FROM busybox
+   <pre>FROM busybox
 RUN mkdir /data \
  && dd if=/dev/zero bs=1024 count=1024 of=/data/one \
  && chmod -R 0777 /data \
@@ -140,8 +140,7 @@ CMD ls -alh /data
 
   To handle UID/GID and permission issues, update image to match host uid/gid:
 
-   <pre>
-FROM debian:latest
+   <pre>FROM debian:latest
 ARG UID=1000
 ARG GID=1000
 RUN groupadd -g $GID cuser \
@@ -157,8 +156,7 @@ $ docker build \
    <a target="_blank" href="https://docs.docker.com/engine/reference/builder/#/exec-form-entrypoint-example">
    This</a> Dockerfile shows use of the ENTRYPOINT to run Apache in the foreground (i.e., as PID 1):
 
-   <pre>
-FROM debian:stable
+   <pre>FROM debian:stable
 RUN apt-get update && apt-get install -y --force-yes apache2
 EXPOSE 80 443
 VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
@@ -167,8 +165,7 @@ ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
    <a target="_blank" href="https://rawgit.com/sudo-bmitch/dc2018/master/faq-stackoverflow-lightning.html#43">Another example</a>:
 
-   <pre>
-FROM jenkins/jenkins:lts
+   <pre>FROM jenkins/jenkins:lts
 USER root
 RUN  apt-get update \
   && wget -O /usr/local/bin/gosu "https://github.com/..." \
@@ -181,8 +178,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 
    An example for Java on WebLogic:
 
-   <pre>
-FROM kmandel/java:8
+   <pre>FROM kmandel/java:8
 VOLUME /tmp
 #ADD ${project.build.final}.jar app.jar
 ADD my-api.jar app.jar
@@ -193,6 +189,10 @@ ENTRYPOINT ["java","<a target="_blank" href="http://www.thezonemanager.com/2015/
   After a Dockerfile is prepared, execute from command prompt to create the corresponding image:
 
   <pre>docker build . </pre>
+
+  <pre><strong>docker build -t <em>username</em>/<em>imagename</em>:<em>tagname</em> </strong></pre>
+
+### Docker run
 
   Run docker run <em>image-name</em> to create a container out of the image to execute it.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-08"
+date: "2022-11-21"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -12,7 +12,7 @@ image:
   credit: Jeremy Thomas
   creditlink: https://www.flickr.com/photos/132218932@N03/page2
 comments: true
-k8s_version: 1.22
+k8s_version: 1.25
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
@@ -58,6 +58,7 @@ Discovery,
 <a href="#InitContainers">Init Containers</a>,
 <a href="#Ingress">Ingress</a>,
 <a href="#JSONPath">JSONPath</a>,
+<a href="#Kind">Kind</a>,
 <a href="#Kubelet">Kubelet</a>,
 <a href="#kube-proxy">kube-proxy</a>,
 <a href="#Labels">Labels</a>, 
@@ -65,6 +66,7 @@ Discovery,
 <a href="#Logging">Logging</a>,
 <a href="#Metadata">Metadata</a>,
 <a href="#Namespaces"><strong>ns</strong>=Namespaces</a>, 
+<a href="#Networking">Networking</a>, 
 <a href="#NetworkPolicies"><strong>netpol</strong>=NetworkPolicies</a>, 
 <a href="#Nodes"><strong>no</strong>=Nodes</a>,
 <a href="#NodePort">NodePort</a>,
@@ -187,7 +189,7 @@ Kubernetes applies principles of the <a target="_blank" href="https://www.reacti
 ## TL;DR Professional certifications in Kubernetes
 
 <a target="_blank" href="https://www.youtube.com/watch?v=L6K_8dOFR5w" title="Tips to Pass the CKAD Exam from CloudAcademy">VIDEO:</a>:
-If you're here for advice on how to pass the CKAD, here is my advice:
+If you're here for advice on how to pass the KCNA, CKAD, here is my advice:
 
 1. PROTIP: Instead of trying to memorize everything, during the test you're given access only to <a target="_blank" href="https://kubernetes.io/docs/home/">Kubernetes official documentation</a>, get used to navigating those set of pages to look stuff up. NOTE: There is support for other languages other than English. Foresake all other docs and utilities until after you pass (and get a real job using Kubernetes where you would consider Service Mesh, <a href="#Kustomize">Kustomize</a>, <a href="#Jsonnet">Jsonnet</a>, etc.).
 
@@ -219,20 +221,26 @@ The website, and the Kubernetes code is maintained by the Linux Foundation, whic
 
 <a name="K8sVersion"></a>
 
-Within the <a target="_blank" href="https://github.com/kubernetes/">GitHub.com/kubernetes</a> where Kubernetes source code  is open-sourced, its <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">releases</a>:
+Versions of Kubernetes are listed at:
 
-   * v1.0 (first commit by Joe Beda within GitHub) was on July 2015, and released on July 21, <strong>2015</strong>
+* <a target="_blank" href="https://kubernetes.io/releases/">kubernetes.io/releases</a> website
+* <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a> where Kubernetes source code  is open-sourced, its releases</a>:
+<br /><br />
+
+History:
+   * v1.0 (first commit by Joe Beda within GitHub) on July 2015, and released on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
    * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
-   * v1.22 is when containerD replaces Docker as the default container runtime
-   * {{ page.k8s_version }} was the version at Sep 2021.
+   * v1.22 - containerD replaces Docker as the default container runtime (Red Hat uses CRI-O instead)
+   * {{ page.k8s_version }} 
    <br /><br />
 
-1. PROTIP: Get the latest Semantic version of a stable release of Kubernetes (such as "v1.22.1") as variable <tt>K8_VERSION</tt> :
+1. Get the latest Semantic version of a stable release of Kubernetes (such as "v1.22.1") as variable <tt>K8_VERSION</tt> :
 
-   <pre>curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt</pre>
-
+   <pre><strong>K8_VERSION=$( curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt )
+   echo $K8_VERSION
+   </strong></pre>
 
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
@@ -427,17 +435,32 @@ PROTIP: To pass Kubernetes exams, you need to master the many CLI commands that 
 
 There are several options to run kubectl:
 
-   * In a Terminal on your laptop use the Cloud Shell/Console CLI programs provided by the cloud vendor (AWS, Azure, GCP, etc.), which may involve costly bills.
-   
-   * If you have a <strong>laptop</strong> with enough memory and CPU, install <a href="#Minikube">Minikube</a>, <a href="#EKSAnywhere">AWS ECS & EKS Anywhere</a>, or <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>.
+A. Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
 
-   * Just the Kubectl CLI program can be installed on your laptop for you to communicate directly to a K8s master.
+B. More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes.
 
-   * More commonly in production use, you use SSH to tunnel into a "Bastion host" in the cloud. Cloud-based training vendor <a href="#CloudAcademy">CloudAcademy</a> provides training on how to setup Kubernetes.
+C. In a Terminal on your laptop use the Cloud Shell/Console CLI programs provided by the cloud vendor (AWS, Azure, GCP, etc.), which may involve costly bills.
+ 
+D. If you have a <strong>laptop</strong> with enough memory and CPU, install a <a target="_blank" href="https://technologyconversations.com/2021/10/11/should-we-replace-docker-desktop-with-rancher-desktop/#more-5308" title="Blog">Minimal distribution</a>: 
 
-   * <strong>K8s on Raspberry Pi</strong> don't consume disk space on your laptop because they are separate computers that are cheap ($70 USD), silent, and private. But Pi's are limited to 8 GB of RAM and based on newer ARM architecture rather than Intel x86 architecture used by PC's and MacOS.
+   * <a href="#Minikube">Minikube (see below)</a>
+   * <a href="#EKSAnywhere">AWS ECS & EKS Anywhere</a>
+   * <a target="_blank" href="https://www.aquasec.com/cloud-native-academy/kubernetes-101/kubernetes-architecture/">install</a> from the <a target="_blank" href="https://x-team.com/blog/introduction-kubernetes-architecture/">K8s hypercube Docker container</a>
+   * Rancher Desktop at https://rancherdesktop.io
+   * K3s
+   * Microk8s on Linux
+   * Minishift
+   * <a target="_blank" href="https://youtu.be/C0v5gJSWuSo">VIDEO</a>: KIND (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
+   <br /><br />
+
+E. <a href="#RaspPi">K8s on Raspberry Pi</a> 
 
 <a name="RaspPi"></a>
+
+A K8s on Raspberry Pi run on separate computers that are cheap ($70 USD), silent, and private. 
+So they don't consume disk space on your laptop.
+
+But Pi's are limited to 8 GB of RAM and based on newer ARM architecture rather than Intel x86 architecture used by PC's and MacOS.
 
 On Sep 2021, Dan Tofan released on Pluralsight "How to build a Kubernetes Cluster on 3+ Raspberry Pi".
 
@@ -529,17 +552,23 @@ Again, "Replicas" of Pods are created within "Worker Nodes".
 
 ## Control Plane Orchestration within a Master Node
 
-Each cloud vendor has its own "control plane" GUI (<strong>Master Node</strong>) to run and manage <strong>Worker Nodes</strong>.
+To run and manage (orchestrates) several <strong>Worker Nodes</strong>, 
+the <strong>Master Node</strong> of each cloud vendor maintains its "control plane"
+consisting of several key processes (aka service components):
 
-The Kubernetes <strong>Master Node</strong> has several services processes which together orchestrates (manages) several <strong>Worker Nodes</strong>. The Master Node (aka "Control Plane") runs several key processes (aka service components):
+   * The <strong>API server</strong> (named "kube-apiserver") receives all administrative commands as REST API calls. So it's called the "front-end". Command-line programs communicating with Kubernetes do so by converting commands into REST API calls to the API server.
 
    * <strong>etcd</strong> is the database (key-value data store) within each cluster. PROTIP: etcd is the one <strong>stateful</strong> component, so many run it in a cluster separate for its own HA redundancy.
 
-   * The <strong>Kube-Controller-Manager</strong> watches the state (status) of each cluster (as persisted in etcd) and  attempts to move current the state towards the desired state (as defined in Yaml files). <a href="#Controllers">Various Controllers</a> actually instantiate the actual resource represented by Kubernetes resource definitions. 
+   * The <strong>Kube-Controller-Manager</strong> watches the state (status) of each cluster (as persisted in etcd) and  attempts to move the current state towards the desired state (as defined in Yaml files). <a href="#Controllers">Various Controllers</a> actually instantiate the actual resource represented by Kubernetes resource definitions. 
 
-   * The <strong>kube-scheduler</strong> assigns Pods to Nodes. 
+   * The <strong>kube-scheduler</strong> assigns Pods to Nodes and communicates to the Kubelet to sechedule Pods.
 
-   * The <strong>API server</strong> receives all administrative commands as REST API calls. Command-line programs communicating with Kubernetes do so by converting commands into REST API calls to the API server (named "kube-apiserver").
+   * The <strong>kublet</strong> agent on all nodes ensures containers are started.
+
+   * The <strong>cloud-controller-manager</strong> optionally runs containers within Kubernetes.
+
+   * Container runtime runs containers within Kubernetes.
 
 
 <a name="Internals"></a>
@@ -559,6 +588,7 @@ Kubernetes automates resilience by abstracting the network and storage shared by
    Pods consume static <a href="#ConfigMaps">Configmaps</a> and <a href="#Secrets">Secrets</a>.
 
    <a href="#Volumes">Volumes of persistent data storage</a>
+
 
 
 <a name="AutoScaling"></a>
@@ -874,8 +904,7 @@ spec:
 
 1. Describe one of the pods to view its cpu and memory reservation to replace "c7d89d6db-rglf5" with one of the IDs returned in from the previous step:
 
-   <pre><strong>
-   kubectl describe pod hamster-c7d89d6db-rglf5
+   <pre><strong>kubectl describe pod hamster-c7d89d6db-rglf5
    </strong></pre>
 
    Sample output:
@@ -970,8 +999,7 @@ spec:
 
    Sample output:
 
-   <pre>
-Name:         hamster-vpa
+   <pre>Name:         hamster-vpa
 Namespace:    default
 Labels:       <none>
 Annotations:  kubectl.kubernetes.io/last-applied-configuration:
@@ -1148,9 +1176,24 @@ Use my step-by-step instructions to get CLI installed and configured on your lap
    <br /><br />
 
 
+<a name="onprem"></a>
+
+## On-premise
+
+Kubernetes distributions with on-prem. focus:
+   * Canonical Kubernetes
+   * Google Anthos
+   * K3s
+   * Red Hat OpenShift
+   * SUSE Rancher
+   * VMware Tanzu
+   <br /><br />
+
+
+
 <a name="EKSAnywhere"></a>
 
-## AWS ECS & EKS Anywhere
+### AWS ECS & EKS Anywhere
 
 https://aws.amazon.com/ko/blogs/aws/getting-started-with-amazon-ecs-anywhere-now-generally-available/
 
@@ -1226,7 +1269,20 @@ BTW Kubernetes had worked with <strong>rkt</strong> (pronounced "rocket") contai
 <img width="914" alt="k8s-docker" src="https://user-images.githubusercontent.com/300046/95684822-564dfa80-0bb1-11eb-803a-1c742cf0bd07.png">
 
 
+<a name="Networking"></a>
 
+## Networking
+
+Within Kubernetes are four types of network traffic:
+
+* Container-to-container traffic is handled within the Pod.
+* Pod-to-Pod traffic is handled by a SDN (Software-Defined Network).
+* Pod-to-Service traffic is handled by kube-proxy and packet filters on the node.
+* External-to-Service traffic is handled by kube-proxy and node-based packet filters (such as Consul)
+<br /><br />
+
+
+<hr />
 
 ## Aggregation Layer
 
@@ -1244,7 +1300,7 @@ Kubernetes is called "container orchestration" software because it automates the
 
    * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
    * Load balancing
-   * Mixed operating systems (Ubuntu, Alpine, etc.)
+   * Mixed operating systems (Ubuntu, Alpine, Talos, etc.)
    * Using images in Docker avoids the "it works on my machine" troubleshooting of setup or dependencies
    * Unlike Elastic Beanstalk, the k8s master controls what each of its nodes do
    <br /><br />
@@ -1258,7 +1314,7 @@ The Kubernetes and Cloud Native Associate is the entry level certification in Ku
 
 https://www.cncf.io/certification/kcna/
 
-<a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/frequently-asked-questions-kcna">FAQ</a:
+<a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/frequently-asked-questions-kcna">FAQ</a>:
 The $250 closed-book exam is proctored by PSI online. Answer 75% of 90 multiple-choice questions in 1.5 hours.
 Good for 3 years.
 
@@ -1635,14 +1691,6 @@ PROTIP: CAUTION: Whatever resource you use, ensure it is to the <a href="#K8sVer
 
 ## MacOS Laptop Installation
 
-https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/installation.html
-
-<a target="_blank" href="https://technologyconversations.com/2021/10/11/should-we-replace-docker-desktop-with-rancher-desktop/#more-5308">BLOG</a>:
-Before diving in, know that instead of minikube, there's also Rancher Desktop, K3s, Microk8s on Linux, Minishift.
-
-https://rancherdesktop.io
-you could select a specific version of K8s. And it works with Mac M1 chips while minikube does not.
-
 <pre>$ brew search rancher
 ==> Formulae
 rancher-cli                rancher-compose            ranger
@@ -1654,22 +1702,9 @@ nerdctl
 
 kim (Kubernetes Image Manager) uses K8s instead of Docker
 
+https://redhat-scholars.github.io/kubernetes-tutorial/kubernetes-tutorial/installation.html
 
-<a name="minikube"></a>
 
-### Minikube Alternatives
-
-<a target="_blank" href="https://youtu.be/C0v5gJSWuSo">VIDEO</a>:
-Kind (Kubernetes in Docker) <a target="_blank" href="https://kind.sigs.k8s.io/">https://kind.sigs.k8s.io/</a> builds K8s clusters out of Docker containers running Docker in Docker, good for integration with a CI/CD pipeline.
-
-1. Identify the version:
-2. Define cluster
-
-   <pre>GO111MODULE="on" go get sigs.k8s.io/kind@v.0.4.0
-   kid create cluster
-   </pre>
-
-   CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
 
    <a name="ContainerRuntimes"></a>
 
@@ -1693,29 +1728,116 @@ k3d create
 
 ### Minikube install 
 
-<a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-minikube/">REF</a>:
-But let's start by installing minikube on your laptop.
-https://github.com/kubernetes/minikube
+   * <a target="_blank" href="https://kubernetes.io/docs/tasks/tools/install-minikube/">REF</a>:
+   * Minikube at https://minikube.sigs.k8s.io/docs/start/
+   <br /><br />
 
-Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
-and includes a node and a Master when it spins up in a local environment (such as your laptop).
+1. To install minikube on your laptop:
+   https://github.com/kubernetes/minikube
 
-CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>has 257 issues and 20 pending Pull Requests, but we're using it anyway.
-MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
-(<a href="#Ingress">Ingress</a> and ingress-dns addons are not supported on Linux)
+1. Identify the version:
 
-PROTIP: Minikube makes your Mac's fan fly!
-Before starting minikube, in command+Spacebar type "Activity Monitor.app" and click to open it. 
-Click the "% CPU" tab label to sort on it. Note the number for process "com.docker.hyperkit".
-If the mac's fan spins constantly: in Docker's Properties Resources, adjust Memory higher.
+   <pre><strong>minikube version</strong></pre>
 
-Each node in a cluster uses at least 300 MiB of memory.
+   <pre>minikube version: v1.28.0
+commit: 986b1ebd987211ed16f8cc10aed7d2c42fc8392f
+   </pre>
+
+   NOTE: Minikube goes beyond older Docker For Mac (DFM) and Docker for Windows (DFW)
+   and includes a node and a Master when it spins up in a local environment (such as your laptop).
+
+   CAUTION: At time of writing, <a target="_blank" href="https://github.com/kubernetes/minikube">https://github.com/kubernetes/minikube</a>has 257 issues and 20 pending Pull Requests, but we're using it anyway.
+   MUST READ: <a target="_blank" href="https://minikube.sigs.k8s.io/docs/drivers/docker/#known-issues">Known Issues with Minikube</a>
+   (<a href="#Ingress">Ingress</a> and ingress-dns addons are not supported on Linux)
+
+1. Before starting minikube, in command+Spacebar type "Activity Monitor.app" and click to open it. 
+
+1. Start your Docker Desktop (or Podman) or you'll see this message output from the next command:
+
+   <pre>💣  Exiting due to PROVIDER_DOCKER_NOT_RUNNING: "docker version --format -" exit status 1: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+💡  Suggestion: Start the Docker service
+📘  Documentation: https://minikube.sigs.k8s.io/docs/drivers/docker/
+   </pre>
+
+1. Start using a driver (docker or podman?). It will take several minutes:
+
+   <pre><strong>minikube start --vm-driver=docker
+   </strong></pre>
+
+   <pre>😄  minikube v1.28.0 on Darwin 12.6.1 (arm64)
+🆕  Kubernetes 1.25.3 is now available. If you would like to upgrade, specify: --kubernetes-version=v1.25.3
+✨  Using the docker driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+💾  Downloading Kubernetes v1.23.3 preload ...
+    > preloaded-images-k8s-v18-v1...:  317.16 MiB / 317.16 MiB  100.00% 16.93 M
+🔄  Restarting existing docker container for "minikube" ...
+🐳  Preparing Kubernetes v1.23.3 on Docker 20.10.12 ...
+    ▪ kubelet.housekeeping-interval=5m
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+&nbsp;
+❗  /opt/homebrew/bin/kubectl is version 1.25.4, which may have incompatibilities with Kubernetes 1.23.3.
+    ▪ Want kubectl v1.23.3? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+    </pre>
+
+   Because PKI certificates (crt files) used for authentication were defined in file <tt>~/.kube/config</tt>,
+   you can now run <tt>kubectl</tt> commands on the CLI 
+
+1. Get the status of -All pods (Kubernetes components) on all namespaces:
+
+   <pre><strong>minikube kubectl -- get pods -A
+   </strong></pre>
+
+   <pre>NAMESPACE     NAME                                           READY   STATUS    RESTARTS       AGE
+consul        consul-client-xpfwk                            1/1     Running   1 (94s ago)    169d
+consul        consul-connect-injector-9fd87d987-2hrkc        1/1     Running   37 (94s ago)   169d
+consul        consul-connect-injector-9fd87d987-khpjl        1/1     Running   35 (94s ago)   169d
+consul        consul-controller-6564fc54b-9ksjv              1/1     Running   45 (94s ago)   169d
+consul        consul-server-0                                1/1     Running   1 (94s ago)    169d
+consul        consul-webhook-cert-manager-59546c4b99-bh4ks   1/1     Running   1 (94s ago)    169d
+consul        prometheus-server-86f7fbf8fd-bctn5             2/2     Running   4 (94s ago)    169d
+kube-system   coredns-64897985d-zpfxq                        1/1     Running   1 (94s ago)    171d
+kube-system   etcd-minikube                                  1/1     Running   1 (94s ago)    171d
+kube-system   kube-apiserver-minikube                        1/1     Running   1 (94s ago)    171d
+kube-system   kube-controller-manager-minikube               1/1     Running   1 (94s ago)    171d
+kube-system   kube-proxy-vvv4q                               1/1     Running   1 (94s ago)    171d
+kube-system   kube-scheduler-minikube                        1/1     Running   1 (94s ago)    171d
+kube-system   storage-provisioner                            1/1     Running   30 (43s ago)   171d
+   </pre>
+
+1. Get the status of pods (Kubernetes components) within a single namespace:
+
+   <pre><strong>minikube kubectl get pods kube-apiserver-minikube -n kube-system
+   </strong></pre>
+
+   <pre>NAME                                           READY   STATUS    RESTARTS       AGE
+kube-system   kube-apiserver-minikube                        1/1     Running   1 (94s ago)    171d
+   </pre>
+
+1. Click the "% CPU" tab label to sort on it. Note the number for process "com.docker.hyperkit".
+   If the mac's fan spins constantly: in Docker's Properties Resources, adjust Memory higher.
+
+   NOTE: Each node in a cluster uses at least 300 MiB of memory.
+
+2. Define cluster
+
+   <pre><strong>GO111MODULE="on" go get sigs.k8s.io/kind@v.0.4.0
+   kid create cluster
+   </strong></pre>
+
+   CAUTION: This utility is built for the Kubernetes team's convenience and thus does not have some convenience features and add-ons.
 
 More about drivers:
 * https://docs.okd.io/latest/minishift/getting-started/setting-up-virtualization-environment.html
 * https://minikube.sigs.k8s.io/docs/drivers/
 
-### Docker Desktop install on macOS
+
+<hr />
+
+## Docker Desktop install on macOS
 
    NOTE: Docker drivers do not currently support ARM architecture (only AMD64).
 
@@ -2063,10 +2185,32 @@ kubectl delete po <em>mypod</em> --grace-period=0 --force
 
 <a name="CRI"></a>
 
-## Container Runtime Interface
+## CRI = Container Runtime Interface
 
 Kubernetes' <a target="_blank" href="https://kubernetes.io/blog/2016/12/container-runtime-interface-cri-in-kubernetes/">Container Runtime Interface (CRI) specification</a> ensures that every image can be run within every K8s runtime.
 
+Command <tt>crictl</tt> is used to monitor containers (instead of docker).
+
+1. SSH into minikube instance:
+
+   <pre><strong>minikube ssh
+   </strong></pre>
+
+1. List running containers:
+   
+   <pre><strong>sudo crictl ps</strong></pre>
+
+   <pre>CONTAINER  IMAGE  CREATED  STATE  NAME  ATTEMPT  POD ID
+   abc...
+   </pre>
+
+1. Inspect CONTAINER identifier starting with "abc":
+   
+   <pre><strong>sudo crictl inspect <em>abc</em></strong></pre>
+
+1. Remember to exit the session:
+   
+   <pre><strong>exit</strong></pre>
 
 
 <a name="GetAPIServices"></a>
@@ -2521,6 +2665,7 @@ spec:
         mountPath: /var/run/docker.sock       
    </pre>
 
+1. Generate a Deployment from image :
 
 <a name="Namespaces"></a>
 
@@ -2532,11 +2677,12 @@ spec:
 
 Every request is namespaced:
 
-   <tt>GET https://localhost:8001/api/v1/namespaces/default/pods</tt>
+   <ul><tt>GET https://localhost:8001/api/v1/namespaces/default/pods</tt></ul>
 
 Namespaces are intended for use in environments with many users spread across multiple teams. 
 
-Namespaces provide <strong>isolation</strong> among different project teams, so they don't overwrite each other's definitions.
+Namespaces provide <strong>isolation</strong> among different project teams, 
+so one team can't overwrite each other's definitions.
 
 Namespaces provide a <strong>scope</strong> for names, as a way to divide cluster resources.
 
@@ -2934,16 +3080,16 @@ spec:
 
    <a name="CRD"></a>
 
-### CRD (Custom Resource Definition)
+### CRD (Custom Resource Definitions)
    
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/crd-128.png?raw=true">
    
    <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/kubernetes-crd-faas?in=terraform/kubernetes">
-   CRDs define a custom/another/new resource kind</a>.
+   CRDs define a custom/another/new resource <strong>kind</strong></a> stored in <tt>etcd</tt>.
    
-   It uses <tt>apiVersion: apiextensions.k8s.io</tt> (like built-in code for <a href="#StatefulSets">StatefulSets</a>).
+   CRD line <tt>apiVersion: apiextensions.k8s.io</tt> (like built-in code for <a href="#StatefulSets">StatefulSets</a>).
 
-   Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
+   Alternately, Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
    For examaple: <tt>kubectl tree etcdcluster example</tt>
 
 #### Terraform Provider Alpha
@@ -4324,6 +4470,8 @@ gcloud container images delete gcr.io/demo-project-123/demo:2.0
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"><img alt="k8s-aws-kubernauts" src="https://user-images.githubusercontent.com/300046/95669605-ccb21480-0b3f-11eb-956b-a5a09c90f3ac.png"></a>
 
+https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+
 <a target="_blank" href="https://aws.amazon.com/ecs/">
 Amazon ECS (Elastic Container Service for Kubernetes)</a> is "supercharged" by the<br /><a target="_blank" href="https://aws.amazon.com/eks/">Amazon EKS (Elastic Kubernetes Service)</a>, which provides deeper integration into AWS infrastructure (than ECS) for better reliability (at higher cost). Amazon said it runs upstream K8s, not a fork (such as AWS ELasticSearch), so it should be portable to other clouds and on-premises.
 
@@ -4845,20 +4993,23 @@ Performs system integrity checks and implements firewalls, audit logging, and au
 You can enable node auto upgrades to keep all of your nodes running the latest version of Kubernetes.
 You can choose to run private clusters, which contain nodes without external IP addresses.
 You can also choose to run the cluster master for a private cluster without a publicly reachable end point using Master authorized networks.
+
 By default, private clusters do not allow TCP IP addresses to access the cluster master end point.
 Using private clusters with master authorized networks, makes your cluster master reachable only by the specific address ranges that you choose.
-Nodes within your cluster VPC network can still access the master, and so can Google's internal production jobs that manage it for you.
-Make sure to protect your secrets by using encrypted secrets.
+
+Nodes within a cluster VPC network can still access the master, and so can Google's internal production jobs that manage it for you.
+
+Protect your secrets by using encrypted secrets.
+
 To store sensitive configuration information rather than storing them in config maps.
 Whenever possible, grant privilege to groups rather than individual users.
 This applies both to Cloud IAM which lets you grant rules to Google groups, as well as kubernetes are back which lets you
 grant roles to kubernetes groups.
-Suppose you grant privileges to an administrator named Pat in many places and then Pat leaves your company.
-You now must track down all the places where Pat has privileges, and remove them.
-That's tedious and error-prone.
 
-If you follow the best practice of always granting privileges to groups rather than to users, you can remove Pat's access simply
-by taking Pat out of the administrator group. 
+If you grant privileges to an administrator who later leaves your company, you now must track down all the places where that administrator has privileges, in order to remove them. That's tedious and error-prone.
+
+So it's best practice to always grant privileges based on groups rather than to individual users, so 
+you can remove access simply by taking someone out of the administrator group. 
 
 <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13131337?parent=lti_session">Qwiklab: Implementing Role-Based Access Control with Google Kubernetes Engine</a>:
 
@@ -4986,6 +5137,18 @@ Pod phases:
 
    Rules obeyed by the Scheduler about pods are called <strong>"Tolerances"</strong>.
 
+
+<hr />
+
+<a name="Volumes"></a>
+
+## Volumes
+
+Kubernetes Volumes enable data to survive beyond container lifetimes.
+
+Volumes enable sharing / passing of data among different containers.
+
+However, Kubernetes Volumes do not offer high security.
 
 <hr />
 
@@ -5227,7 +5390,7 @@ To get access to a global HTTP(S) Load Balancing configuration, use an Ingress o
 
 1. Find which cni is installed:
 
-   <pre>ps -ef | grep cni</pre>
+   <pre><strong>ps -ef | grep cni</strong></pre>
 
    <pre>student   3638  9589  0 23:24 pts/0    00:00:00 grep --color=auto cni
 root      9735     1  3 Oct07 ?        00:54:09 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf 
@@ -5237,7 +5400,19 @@ root      9735     1  3 Oct07 ?        00:54:09 /usr/bin/kubelet --bootstrap-kub
 --pod-infra-container-image=k8s.gcr.io/pause:3.2
    </pre>
 
-1. View cni installer files (to troubleshooting network configuration issues):
+1. Identify the Network Bridge:
+
+   <pre><strong>ip a</strong></pre>
+
+   <pre>3: docker0 ...
+   link...
+   inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+   ...
+   </pre>
+
+   The address "172.17.0.1" is an address accessible only from the same machine (not outside).
+
+2. View cni installer files (to troubleshooting network configuration issues):
 
    <pre>sudo more $(sudo find / -name *install-cni* | grep /log/containers)</pre>
 
@@ -5954,7 +6129,7 @@ More:
 ## Sample micro-service apps
 
    * <a target="_blank" href="https://kubernetesbyexample.com//services/">kubernetesbyexample.com: Services</a>
-
+   <br /><br />
 
 Bob Reselman's 3-day hands-on classes on Kubernetes makes use of <strong>bash scripts</strong> and sample app at <a target="_blank" href="https://github.com/reselbob/CoolWithKube">https://github.com/reselbob/CoolWithKube</a>
   
@@ -6521,10 +6696,9 @@ The container engine pulls images and stopping/starting containers.
 The Controller Network Interface (CNI) is installed using 
 basic cbr0 using the bridge and host-local CNI plugins.
 
-The CNI plugin is selected by passing Kubelet the command-line option:
+The CNI plugin is selected by passing Kubelet the command-line option, such as:
 
-   <pre>
-   --network-plugin=cni 
+   <pre>--network-plugin=cni 
    </pre>
 
 See https://kubernetes.io/docs/concepts/cluster-administration/network-plugins/
@@ -6564,7 +6738,12 @@ Others:
    * Contrail
    * NSX-T
    * OpenVswitch
+   * Multus
+   <br /><br />
 
+DNET directly exposes Pod IP address to the outside.
+
+<hr />
 
 ## Make your own K8s
 
@@ -7246,9 +7425,11 @@ https://github.com/bmuschko/cka-crash-course
 #### Sander's class
 
 <a target="_blank" href="https://learning.oreilly.com/videos/certified-kubernetes-application/">
-7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are on a lightboard. <!-- mail@sandervanvugt.nl -->
+7h video class over 3 days live course</a> by <a target="_blank" href="https://www.linkedin.com/in/sandervanvugt/">Sander van Vugt</a>, who, as a Linux expert, provides in-depth CentOS install advice (including SELinux) and <a target="_blank" href="https://github.com/sandervanvugt/ckad">files</a> available nowhere else. His diagrams are drawn on a lightboard.
 
-BLAH: O'Reilly's videos are annoying because you have to move the sound up on every new chapter.
+https://github.com/sandervanvugt/kcna
+
+BLAH: O'Reilly's videos are annoying because you have to unmute the sound on every new chapter.
 
 ### Pluralsight
 
@@ -7404,6 +7585,11 @@ STAR: <a target="_blank" href="https://dev.to/aurelievache/understanding-kuberne
 https://www.youtube.com/watch?v=oC0UZ-pms9o&list=RDCMUCBdfli20jrAscmR9COL35qg&start_radio=1&rv=oC0UZ-pms9o  
 Cloud with Raj
 
+## Fun facts
+
+NOTE: The Container Host Interface is NOT a common standard.
+
+https://csrc.nist.gov/CSRC/media/Presentations/dod-enterprise-devsecops-initiative/images-media/DoD%20Enterprise%20DevSecOps%20Initiative%20%20v2.5.pdf
 <hr />
 
 ## More on DevOps #
@@ -7411,4 +7597,3 @@ Cloud with Raj
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
-
