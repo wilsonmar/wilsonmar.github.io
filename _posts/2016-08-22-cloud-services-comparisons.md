@@ -97,24 +97,49 @@ There are different ways to make use of cloud infrastructure:
 <br /><br />
 
 
-## Triggers to go cloud
+## What to do with legacy systems
 
-The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">need to</a>:
+* <strong>Retain</strong> - and keep recruiting/retraining new people on how to work on the app, knowing that it would be difficult to attract and retain the best willing to endure the toil and disrespect from their friends.
 
-* <strong>Rehost (migration)</strong> ("lift-and-shift") to rehost with little code changes, to minimize application downtime.
+* <strong>Retire</strong> the system to force workers to do something else.
 
-Modernizaton: 
+* <strong>Repurchase</strong> a SaaS application (such as Salesforce) and migrate the data, then shut down the on-prem system.
 
+### Migrate to cloud
+
+   * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">6 strategies</a>
+   <br /><br />
+
+* <strong>Relocate</strong> - migrate just hypervisor hosts (of Oracle database) to VMWare Cloud on AWS.
+
+* <strong>Rehost ("lift-and-shift")</strong> with little app code changes. 
+
+   <a target="_blank" href="https://i.pinimg.com/originals/e0/31/0c/e0310c5a495252faeb5b0c5820987685.jpg"><img alt="cloud-rehost-aws-2742x682" src="https://i.pinimg.com/originals/e0/31/0c/e0310c5a495252faeb5b0c5820987685.jpg"></a>
+
+   This is a functional recreation of infrastructure in the cloud: Networks would be recreated using VPCs. Apps would be place into EC2 instances. Storage drives would be converted to S3 buckets. That would shift CAPEX to OPEX variable expenses.
+
+   This would occur with minimal disruption and downtime to end-users. This would likely cost less than building alternatives. Consider the <a target="_blank" href="https://pages.awscloud.com/rs/112-TZM-766/images/hackett-group-the-business-value-of-migration-to-aws-012022.pdf">PDF: Business Value of Migration to Amazon Web Services</a>
+   and the <a target="_blank" href="https://aws.amazon.com/server-migration-service/">AWS Server Migration Service</a>.
+
+   WARNING: Legacy application code tend to have security issues which must be patched. So Rehosting would buy more time to work on the app code, but not eliminate the need to remediate security issues in app code.
+   
+* <strong>Replatform ("Lift-tinker-and-shift")</strong> - making targeted cloud optimizations such as switching databases to cloud-based AWS RDS.
+
+   <a target="_blank" href="https://i.pinimg.com/originals/66/96/cf/6696cf4901a64a849bb68e392b95be3d.jpg"><img alt="cloud-replatform-aws-2764x672.jpg" src="https://i.pinimg.com/originals/66/96/cf/6696cf4901a64a849bb68e392b95be3d.jpg"></a>
+  
 * <strong>Refactor</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
 
-* <strong>Rearchitect</strong> - isolate  application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
-
 * <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
+
+* <strong>Rearchitect</strong> - isolate application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
 
 * <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
 
 Despite all the good reasons, individuals used to the old way may still "drag their heels".
 See my posts about <a target="_blank" href="https://wilsonmar.github.io/change-management">Change Management</a>.
+
+
+<hr/>
 
 ## Individuals must pick a single cloud?
 
