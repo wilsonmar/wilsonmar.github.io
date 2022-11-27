@@ -112,14 +112,14 @@ There are different ways to make use of cloud infrastructure:
 
 * <strong>Relocate</strong> - migrate just hypervisor hosts (of Oracle database) to VMWare Cloud on AWS.
 
-* <strong>Rehost ("lift-and-shift")</strong> with little app code changes. 
+* <strong>Rehost ("lift-and-shift")</strong> infrastructure, with no/little app code changes. 
 
    <a target="_blank" href="https://i.pinimg.com/originals/e0/31/0c/e0310c5a495252faeb5b0c5820987685.jpg"><img alt="cloud-rehost-aws-2742x682" src="https://i.pinimg.com/originals/e0/31/0c/e0310c5a495252faeb5b0c5820987685.jpg"></a>
 
    This is a functional recreation of infrastructure in the cloud: Networks would be recreated using VPCs. Apps would be place into EC2 instances. Storage drives would be converted to S3 buckets. That would shift CAPEX to OPEX variable expenses.
 
    This would occur with minimal disruption and downtime to end-users. This would likely cost less than building alternatives. Consider the <a target="_blank" href="https://pages.awscloud.com/rs/112-TZM-766/images/hackett-group-the-business-value-of-migration-to-aws-012022.pdf">PDF: Business Value of Migration to Amazon Web Services</a>
-   and the <a target="_blank" href="https://aws.amazon.com/server-migration-service/">AWS Server Migration Service</a>.
+   and the <a target="_blank" href="https://aws.amazon.com/server-migration-service/">AWS Server Migration Service</a>. AWS Professional Services created the <a target="_blank" href="">Cloud Adoption Framework</a>.
 
    WARNING: Legacy application code tend to have security issues which must be patched. So Rehosting would buy more time to work on the app code, but not eliminate the need to remediate security issues in app code.
    

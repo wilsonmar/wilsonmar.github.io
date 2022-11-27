@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-27"
+file: "design-systems"
 title: "Design Systems"
 excerpt: "Specifications for look and feel by various tech companies"
 tags: [API, text to speech, JavaScript, programming]
-date: "2022-03-30"
-file: "design-systems"
 image:
 # feature: pic easter island clenched-fist-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15212221/c77ab1ba-17fc-11e6-924d-0c5d01e53522.jpg
@@ -44,6 +44,10 @@ For better performance, Tailwind removes unused CSS using PurgeCSS, which can be
 <a target="_blank" href="https://www.invisionapp.com/inside-design/design-systems/">Your guide to design systems from the world’s leading brands</a> Oct. 9, 2017
 
 US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a> (Slack channel <a target="_blank" href="https://chat.18f.gov/">chat.18f.gov</a>)
+
+AWS products and services uses <a target="_blank" href="https://cloudscape.design/">cloudscape.design</a> since 2016.
+It's open-sourced at <a target="_blank" href="https://github.com/cloudscape-design">github.com/cloudscape-design</a>.
+It's used in <a target="_blank" href="https://github.com/aws-solutions-library-samples/guidance-for-crossregion-failover-and-graceful-failback-and-observability-on-aws">this solution</a>
 
 Salesforce has their Salesforce Lightning Design System (SLDS) at <a target="_blank" href="https://www.lightningdesignsystem.com/">lightningdesignsystem.com</a>
 
