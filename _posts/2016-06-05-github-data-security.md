@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-28"
+file: "github-data-security"
 title: "GitHub Data Security"
 excerpt: "How to keep secrets out of GitHub"
 tags: [github, security]
-date: "2021-01-20"
-file: "github-data-security"
 image:
 # pic secret finger over mouth 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
@@ -1006,8 +1006,8 @@ Having the 24 hour key rotation policy in place means new certificate are create
 
 Here is a static flowchart of the process described above:
 
-<a target="_blank" hrf="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png">
-<img alt="github-data-ssh-keyrotation-2806x1656" width="640" src="https://user-images.githubusercontent.com/300046/103477675-5576d000-4d7e-11eb-836d-c109e52f2b32.png"></a>
+<a target="_blank" hrf="https://res.cloudinary.com/dcajqrroq/image/upload/v1669637730/github-data-ssh-keyrotation-1876x1104_ekjngm.jpg">
+<img alt="github-data-ssh-keyrotation-1876x1104" width="640" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1669637730/github-data-ssh-keyrotation-1876x1104_ekjngm.jpg"></a>
 
 Steps to make this happen include:
 

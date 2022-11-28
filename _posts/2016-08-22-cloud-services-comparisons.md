@@ -119,7 +119,7 @@ There are different ways to make use of cloud infrastructure:
    This is a functional recreation of infrastructure in the cloud: Networks would be recreated using VPCs. Apps would be place into EC2 instances. Storage drives would be converted to S3 buckets. That would shift CAPEX to OPEX variable expenses.
 
    This would occur with minimal disruption and downtime to end-users. This would likely cost less than building alternatives. Consider the <a target="_blank" href="https://pages.awscloud.com/rs/112-TZM-766/images/hackett-group-the-business-value-of-migration-to-aws-012022.pdf">PDF: Business Value of Migration to Amazon Web Services</a>
-   and the <a target="_blank" href="https://aws.amazon.com/server-migration-service/">AWS Server Migration Service</a>. AWS Professional Services created the <a target="_blank" href="">Cloud Adoption Framework</a>.
+   and the <a target="_blank" href="https://aws.amazon.com/server-migration-service/">AWS Server Migration Service</a>. AWS Professional Services created their <a target="_blank" href="">Cloud Adoption Framework</a>.
 
    WARNING: Legacy application code tend to have security issues which must be patched. So Rehosting would buy more time to work on the app code, but not eliminate the need to remediate security issues in app code.
    
@@ -129,11 +129,16 @@ There are different ways to make use of cloud infrastructure:
   
 * <strong>Refactor</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
 
+   The different <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/1096/play/56757/aws-partner-accreditation-technical">strategies to migration</a>:<br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1669613198/cloud-x-migration-3176x1516_e0rc4v.jpg"><img alt="" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1669613198/cloud-x-migration-3176x1516_e0rc4v.jpg"></a>
+
 * <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
 
 * <strong>Rearchitect</strong> - isolate application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
 
 * <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
+
+
 
 Despite all the good reasons, individuals used to the old way may still "drag their heels".
 See my posts about <a target="_blank" href="https://wilsonmar.github.io/change-management">Change Management</a>.
