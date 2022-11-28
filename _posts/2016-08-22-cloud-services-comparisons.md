@@ -96,10 +96,20 @@ There are different ways to make use of cloud infrastructure:
 * IaaS - Networking
 <br /><br />
 
+## Triggers to migration
+
+An IDC July 2020 study identified these "trigger events" most important in leading the organization to use cloud services:
+1. Data has grown beyond the capacity of existing system.
+2. IT budgets being contstrained or reduced.
+3. Support digital transformation initiative.
+4. Need functionality or services only found in cloud offerings
+5. Keeping up with compliance across regions (GDPR, etc.)
+6. Failing to meet demands of business due to legacy systems
+   
 
 ## What to do with legacy systems
 
-* <strong>Retain</strong> - and keep recruiting/retraining new people on how to work on the app, knowing that it would be difficult to attract and retain the best willing to endure the toil and disrespect from their friends.
+* <strong>Retain</strong> (not moving) - keep recruiting/retraining new people on how to work on the app, knowing that it would be difficult to attract and retain the best willing to endure the toil and disrespect from their friends.
 
 * <strong>Retire</strong> the system to force workers to do something else.
 
@@ -109,6 +119,9 @@ There are different ways to make use of cloud infrastructure:
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/6-technology-strategy">6 strategies</a>
    <br /><br />
+
+   The different <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/11840/play/43890/aws-partner-migration-programs-and-resources">strategies to migration</a>:<br />
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1669639383/cloud-migration-1748x865_nnzvaa.jpg"><img alt="cloud-migration-1748x865" width="1748" height="865" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1669639383/cloud-migration-1748x865_nnzvaa.jpg"></a>
 
 * <strong>Relocate</strong> - migrate just hypervisor hosts (of Oracle database) to VMWare Cloud on AWS.
 
@@ -129,15 +142,11 @@ There are different ways to make use of cloud infrastructure:
   
 * <strong>Refactor</strong> - transform existing apps with minimal code change to <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">use Docker and Kubernetes</a>, robust <a target="_blank" href="https://docs.microsoft.com/en-us/Azure/containers/">logging</a>, "elastic" <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/app-service-autoscale-rules/">auto-scaling</a> in & out, etc.
 
-   The different <a target="_blank" href="https://explore.skillbuilder.aws/learn/course/1096/play/56757/aws-partner-accreditation-technical">strategies to migration</a>:<br />
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1669613198/cloud-x-migration-3176x1516_e0rc4v.jpg"><img alt="" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1669613198/cloud-x-migration-3176x1516_e0rc4v.jpg"></a>
-
 * <strong>Rebuild</strong> - reconstruct existing app on a new PaaS platform.
 
 * <strong>Rearchitect</strong> - isolate application functionalities into separate <strong>microservices</strong> that can be independently deployed, tested, scaled up or down, and managed.
 
 * <strong>Replace</strong> - retire existing on-premises application and rewriting functionality under a new architecture such as a Serverless or SaaS ("cloud native") application.
-
 
 
 Despite all the good reasons, individuals used to the old way may still "drag their heels".
