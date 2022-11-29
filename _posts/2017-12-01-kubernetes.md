@@ -595,19 +595,19 @@ Kubernetes automates resilience by abstracting the network and storage shared by
 
 ### Auto-Scaling
 
-Within AWS, Auto Scaling Groups (ASGs) are used to scale nodes.
-
+Unlike within AWS, where Auto Scaling Groups (ASGs) are used to scale nodes,<br />
+Within Kubernetes are these auto-scaling mechanisms:
    * https://spot.io/resources/kubernetes-autoscaling-3-methods-and-how-to-make-them-great/
    * https://spot.io/resources/kubernetes-autoscaling/kubernetes-replicaset-kubernetes-scalability-explained/
    * https://docs.openshift.com/container-platform/4.8/nodes/pods/nodes-pods-vertical-autoscaler.html
    <br /><br />
 
-Within Kubernetes are these auto-scaling mechanisms:
-
 * <strong>Cluster Autoscaler (CA)</strong> adjusts the <strong>number of nodes in a cluster</strong>. It automatically adds or removes nodes in a cluster when nodes have insufficient resources to run a pod (adds a node) or when a node remains underutilized, and its pods can be assigned to another node (removes a node).
 
 * <strong>HPA (Horizontal Pod Autoscaler)</strong> scales <strong>more copies of the same pod</strong> (assuming that the hosted application supports horizontal scaling via replication). HPA uses <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#scaling-on-custom-metrics">custom metrics</a> such as the number of incoming session requests by end-users to a service load balancer.
 
+* <strong>Event-Driven Autoscaler</strong> is a Red Hat/Microsoft project that can scale a wide range of objects automatically.
+  
 <a name="SampleVPARec"></a>
 * <strong>VPA (Vertical Pod Autoscaler)</strong> analyzes standard CPU and memory resource usage metrics to provide recommendations CPU and memory resource configuration to align cluster resource allotment with actual usage. An example of its recommendation output:
 
@@ -638,6 +638,10 @@ Within Kubernetes are these auto-scaling mechanisms:
 * <a target="_blank" href="https://www.densify.com/product"k8>Densify.com</a> provides a commercially available (paid) option which uses sophisticated Machine Learning mechanisms. It provides an <a target="_blank" href="https://www.densify.com/docs-api/Content/APIHome.htm">API</a>.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"><img alt="Desify" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"></a>
+
+* Prometheus Adapter for Kubernetes API? 
+
+<a target="_blank" href="https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/9780137993413-KCN1_04_07_03/">VIDEO</a>: Install the Metrics Server from https://github.com/kubernetes-sigs/metrics-server
 
 
 <a name="VPA"></a>

@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-11-29"
+file: "self-driving-cars"
 title: "Self-driving cars"
 excerpt: "What can possibly go wrong with robots smarter than humans?"
 tags: [Python, Machine Learning]
-date: "2017-02-03"
-file: "self-driving-cars"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -16,11 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are my notes about technical aspects of how cars can drive themselves.
+Here are my notes about technical aspects of how cars can drive themselves to provide personal mobility.
 
 TAGS: #autonomousdriving #AI
 
 ## Why AV (Autonomous Vehicles)
+
+"Cut traffic deaths by half".
 
 Part of the facination (and fear) about Artificial Intelligence (AI) is computers becoming <strong>better and faster</strong> than humans in many arenas.
 
@@ -30,11 +32,11 @@ at the current rate of progress on AVs (Autonomous Vehicles), eventually the cos
 
 Then, governments, auto makers, insurance companies, and others will make it more difficult to own human-driven cars. 
 
-Also, as cars automate more, and human drivers have less to do, inattention becomes even more of an issue.
-
 Over time, as AI take over the road, self-driving cars can <strong>travel faster</strong> than what people can safely handle (around 70 mph). This would create a market for <strong>mini-hotels</strong> such as
 <a target="_blank" href="https://www.wallpaper.com/lifestyle/volvo-360c-autonomous-concept-car-review">Volvo’s 360c concept car</a> unveiled in 2018<a target="_blank" href="https://www.linkedin.com/pulse/5-ways-self-driving-cars-could-make-our-world-lives-better-marr/">*</a>
 Without constant attention to driving, personal vehicles can be RVs with a desk, bed, toilet, frige, etc. Commute without stress. Travel between cities without going through security.
+
+Less drag.
 
 
 ## The race to AV
@@ -46,7 +48,7 @@ Among the <a target="_blank" href="https://www.cbinsights.com/research/autonomou
 <tr><th>Company</th><th>Automaker</th><th>Notes</th></tr>
 <tr valign="top"><td><a href="#Apple">Apple</a></td><td>Mercedes</td><td>Drive.ai</td></tr>
 <tr valign="top"><td><a href="#Apple">Bosch</a></td><td>Daimler</td><td>-</td></tr>
-<tr valign="top"><td><a href="#Argo">Argo</a></td><td>Ford/VW</td></tr>
+<tr valign="top"><td><a href="#Argo">Argo</a></td><td>Ford/VW/Amazon</td></tr>
 <tr valign="top"><td><a href="#Audi">Audi</a></td><td>Audi</td></tr>
 <tr valign="top"><td><a href="#Baidu">Baidu</a></td><td>Lincoln MKZ</td><td>China</td></tr>
 <tr valign="top"><td><a href="#Comma">Comma</a></td><td>(Honda)</td></tr>
@@ -56,20 +58,58 @@ Among the <a target="_blank" href="https://www.cbinsights.com/research/autonomou
 <tr valign="top"><td><a href="#Tesla">Tesla</a></td><td>Tesla</td></tr>
 <tr valign="top"><td><a href="#Uber">Uber</a></td><td>-</td></tr>
 <tr valign="top"><td><a href="#Google">Waymo/Google</a></td><td>Volvo XC90</td></tr>
+<tr valign="top"><td><a href="#Amazon">Zoox/Amazon</a></td><td>custom</td></tr>
 </table>
 
-Honda's 2017 models and onward are built with self-driving features.
+Honda's 2017 models and onward are built with self-driving features. (I have a 2018 model)
+
+
+<a name="DriverTasks"></a>
+
+## Driver tasks
+
+Lateral control - steering
+
+Longitudinal control - braking, accelerating
+
+OEDR: Object and Event Detection and Response - The ability to detect objects and events that immediately affect the driving task, and to react to them appropriately. Slowing down when seeing a construction zone ahead. Swerve and slow down to avoid a pedestrian. Pulling over upon hearing sirens. Stopping at a red light.
+
+Planning: Short term, Long term
+
+Miscellaneous: Signaling other drivers
 
 
 ## Levels of autonomy 
 
-(from the Society of Automotive Engineers):
+ODD (Operational Design Domain) - The set of conditions under which a given system is designed to function. For example, a self driving car can have a control system designed for driving in urban environments, and another for driving on the highway.
+In the rain. Chaning lanes.
+
+Taxonomy from the Society of Automotive Engineers in 2014 <a target="_blank" href="https://www.sae.org/">SAE</a> <a target="_blank" href="https://www.sae.org/standards/content/j3016_201806/">J3016</a>:
+
+\0. No automation
 
 1. Driver Assistance - driver is fully engaged. Voice prompts.
-2. Partial Automation - lane keeping with cruise control.
-3. Conditional Automation - driver is ready to take over.
-4. High Automation - no controls for human use, operating within a geofence
-5. Full Automation - starting from without a geofence in a closed venue low-speed environment such as by minibuses, valet parking, delivery robots.
+
+2. Partial Automation - lane keeping with adaptive cruise control to maintain constant speed. No OEDR.
+
+3. Conditional Automation - Partial Driving Automation with OEDR. Change lanes. Driver is ready to take over. GM Super Cruise & Nissan ProPilot Assist Audi A8 sedan can perform OEDR in slow traffic. Ford is hoping to do it too.
+
+4. High Automation - Fully autonomous in controlled conditions. ADAS [advanced driver assistance systems] Does not require full user alertness. no controls for human use, operating within a geofence. Waymo.
+
+5. Full Automation - unrestricted ODD (any road surface and road type) starting from without a geofence in a closed venue low-speed environment by minibuses, valet parking, delivery robots.
+<br /><br />
+
+PROTIP: As cars automate more, and human drivers have less to do, inattention becomes even more of an issue.
+
+Volvo's Road Train had automated vehicles following a human lead vehicle.
+
+In 2012, Nevada issued Google the first autonomous vehicle testing license on public roads.
+California followed.
+
+HAZOP: Hazard and Operability Study - A variation of FMEA (Failure Mode and Effects Analysis) which uses guide words to brainstorm over sets of possible failures that can arise.
+
+NHTSA: National Highway Traffic Safety Administration - An agency of the Executive Branch of the U.S. government who has developed a <a target="_blank" href="https://www.nhtsa.gov/sites/nhtsa.dot.gov/files/documents/13069a-ads2.0_090617_v9a_tag.pdf">12-part framework PDF</a> to structure safety assessment for autonomous driving. 
+
 
 
 ### Shared rides
@@ -92,6 +132,20 @@ NOTE: On Teslas even the glovebox lock is controlled by the computer.
 Zoox got the first California permit to transport passengers in self-driving cars, in 2018.
 Waymo in 2019. Uber in 2020.
 
+## DARPA
+
+Carnagie Mellon university won the 2nd DARPA grand challenge. Stanford was second.
+
+
+
+<a name="Amazon"></a>
+
+## Amazon
+
+https://www.fastcompany.com/90754276/inside-the-design-of-zoox-amazons-quirky-self-driving-car
+
+https://www.businessinsider.com/amazon-zoox-seattle-self-driving-cars-test-rain-weather-climate-2021-10 
+
 
 ## Companies
 
@@ -110,6 +164,29 @@ A disclosure in 2018 states that 5,000 employees at Apple know about a self-driv
 
 In April 2018, Apple hired Google's former AI boss to run Siri and machine learning.
 
+<a name="Argo"></a>
+
+### Argo
+
+https://www.wired.com/story/ford-abandons-the-self-driving-road-to-nowhere/
+Argo had pedigree, thanks to president Peter Rander, an alumnus of Uber’s abandoned self-driving project and among those the ride-hailing company had poached from the National Robotics Engineering Center, and CEO Bryan Salesky, a veteran of the Darpa challenges that kicked off the 21st century’s rush to autonomy. home base of Pittsburgh.
+
+https://www.cnn.com/2022/10/26/tech/ford-self-driving-argo-shutdown
+Ford takes $2.7 billion hit as it drops efforts to develop full self-driving cars
+
+https://www.bloomberg.com/news/articles/2022-11-21/amazon-amzn-self-driving-car-deal-with-ford-f-vw-fell-through
+Amazon Backed Out of Taking a Stake in Argo. Then the Self-Driving Startup Folded.
+
+https://corporate.ford.com/operations/ford-autonomous-vehicles-and-mobility.html
+Ford is building a commercial self-driving service for ride-hailing and goods delivery starting in 
+Austin, TX, <a target="_blank" href="https://medium.com/self-driven/the-ford-journey-in-miami-dade-reaches-a-milestone-three-years-in-our-first-self-driving-city-29c95d5ff8ec">Miami, FL</a> and Washington, D.C. with plans to scale. 
+
+Clemson
+
+modelers at Revolution Design Studios
+
+Ford is bringing together all the complex pieces needed to launch a scalable, successful self-driving service: this includes the self-driving system we are developing with our technology partner Argo AI, integrated into our <strong>Ford Escape Hybrid</strong> vehicle platform, a thoughtful customer experience across all touchpoints, physical infrastructure in the cities where we operate, as well as working with ride-hailing and delivery demand partners to bring our service to customers.
+See https://medium.com/self-driven
 
 <a name="Google"></a>
 
@@ -122,6 +199,8 @@ Google also owns Waymo.
 Chris Urmson, head of Google's driverless car program, shares footage showing how cars see.
 
 <a target="_blank" href="https://www.wikiwand.com/en/Waymo">https://www.wikiwand.com/en/Waymo</a>
+
+Google had a "firefly" vehicle.
 
 
 <a name="Baidu"></a>
@@ -142,7 +221,6 @@ Baidu's AV has 5 cameras and 12 ultrasonic radars. Processors onboard run Xilinx
 DuerOS</a> is Baidu's conversational AI program with embedded AI speech and image recognition. <a target="_blank" href="https://duer.baidu.com/en/html/dueros/index.html">*</a>
 
    <a target="_blank" href="https://github.com/ApolloAuto/apollo/blob/master/docs/quickstart/apollo_2_5_hardware_system_installation_guide_v1.md">(Apollo 2.5)</a>
-
 
  
 
@@ -189,22 +267,7 @@ Elon Musk became the wealthiest person in the world with 25% ownership in Tesla.
 
 ### X-Motors
 
-<hr />
 
-## Trainings
-
-<a target="_blank" href="https://www.youtube.com/watch?v=1L0TKZQcUtA">VIDEO</a>:
-<a target="_blank" href="http://selfdrivingcars.mit.edu/">
-MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars</a>
-
-BTW David Silver worked at Ford's self-driving car program and is now teaching online Udacity's hands-on Nanodegree programs on self-driving cars at the 
-<a target="_blank" href="https://www.udacity.com/course/intro-to-self-driving-cars--nd113">4-month Intro</a> and <a target="_blank" href="https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013">advanced Engineer (2 three-month terms)</a>. Students work on Udacity's car named Nanna.
-
-   * https://discussions.udacity.com/
-   * Slack for students
-   <br /><br />
-
-Udacity is founded by Sabastian Thrun (from Sweden), the "father" of self-driving car. When he was a professor at Stanford, his team won the first DARPA Grand Challenge car race. He then joined Google.
 
 <hr />
 
@@ -217,6 +280,14 @@ Intel's Mobileye</a>.
 
 ASUS GTX1080 GPU-A8G- Gaming GPU Card
 
+GNSS: Global Navigation Satellite System - A generic term for all satellite systems which provide position estimation. The Global Positioning System (GPS) made by the United States is a type of GNSS. Another example is the Russian made GLONASS (Globalnaya Navigazionnaya Sputnikovaya Sistema).
+
+IMU: Inertial Measurement Unit - A sensor device consisting of an accelerometer and a gyroscope. The IMU is used to measure vehicle acceleration and angular velocity, and its data can be fused with other sensors for state estimation.
+
+RADAR: Radio Detection And Ranging - A type of sensor which detects range and movement by transmitting radio waves and measuring return time and shifts of the reflected signal.
+
+SONAR: Sound Navigation And Ranging - A type of sensor which detects range and movement by transmitting sound waves and measuring return time and shifts of the reflected signal. 
+
 
 #### Controls
 
@@ -227,10 +298,19 @@ So vehicles need to be equipped with by-wire systems: brake by-wire, steering by
 Additional organizations work with the 
 Autonomous Technology Certification Facility (ATCF)
 
+LTI: Linear Time Invariant - A linear system whose dynamics do not change with time. For example, a car using the unicycle model is a LTI system. If the model includes the tires degrading over time (and changing the vehicle dynamics), then the system would no longer be LTI.
+
+MPC: Model Predictive Control - A method of control whose control input optimizes a user defined cost function over a finite time horizon. A common form of MPC is finite horizon LQR (linear quadratic regulation).
+LQR: Linear Quadratic Regulation - A method of control utilizing full state feedback. The method seeks to optimize a quadratic cost function dependent on the state and control input.
 
 <hr />
 
 ## Software
+
+PID: Proportional Integral Derivative Control - A common method of control defined by 3 gains:
+1) A proportional gain which scales the control output based on the amount of the error
+2) An integral gain which scales the control output based on the amount of accumulated error
+3) A derivative gain which scales the control output based on the error rate of change
 
 
 ### Architecture of Processes
@@ -302,18 +382,34 @@ https://backchannel.com/how-my-public-records-request-triggered-waymos-self-driv
 by <a target="_blank" href="https://medium.com/@meharris/">@meharris</a>
 
 
-
 <a name="Perception"></a>
 
 ### Perception
 
-High defition (HD) maps use computer vision to recognize objects within images captured.
+Ego localization: Position, Velocity, acceleration, Orientation, angular motion.
+
+High defition (HD) maps use computer vision to recognize objects within images captured:
+   * Road and lane markings on-road
+   * Potholes on-road
+   * Construction signs, obstructions on-road
+   * Curbs off-road
+   * Traffic lights off-road
+   * Road signs off-road
+   <br />
+
+Sensor uncertainty.
+
+Occlusion, reflection, illumation, lens flare. So redundant sensors are useful.
 
 Classification, detection, segmentation.
+
 Perception using CNN (Convolutional Neural Networks)
 cameras, radar, LiDAR (Light Detection and Ranging System).
 
 Deep (learning) Neural Networks are used to draw bounding boxes to identify which lane the car is using.
+
+<a target="_blank" href="http://www.cvlibs.net/datasets/kitti/">
+The KITTI Vision Benchmark Suite</a>
 
 
 <a name="Prediction"></a>
@@ -331,10 +427,89 @@ Software creates <strong>waypoints</strong> that plot the plan.
 
 ### Planning
 
-Planning the expected route...
+Predictive planning - Planning the expected route...
+
+Reactive planning
 
 Analyzing the actual route traveled.
 
+<a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/7490340">
+Frazzioli’s Survey for Autonomous Planning</a> [for purchase]
+for motion planning and other high-level behaviour
+
+<a target="_blank" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/rob.20255">
+Autonomous driving in urban environments: "Boss" and the Urban Challenge</a> 
+discusses one of the very early mixed planning systems from the winner of the DARPA Urban Challenge.
 
 
+Here are some rules for driving at a stop sign. Which of the following is an appropriate priority ranking?
 
+1) For non all-way stop signs, stop at a point where you can see oncoming traffic  without blocking the intersection
+
+2) If there are pedestrians crossing, stop until they have crossed
+
+3) If you reach a stop sign before another vehicle, you should move first if safe
+
+
+<hr />
+
+## Trainings
+
+<a target="_blank" href="https://www.youtube.com/watch?v=1L0TKZQcUtA">VIDEO</a>:
+<a target="_blank" href="http://selfdrivingcars.mit.edu/">
+MIT 6.S094: Introduction to Deep Learning and Self-Driving Cars</a>
+
+BTW David Silver worked at Ford's self-driving car program and is now teaching online Udacity's hands-on Nanodegree programs on self-driving cars at the 
+<a target="_blank" href="https://www.udacity.com/course/intro-to-self-driving-cars--nd113">4-month Intro</a> and <a target="_blank" href="https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013">advanced Engineer (2 three-month terms)</a>. Students work on Udacity's car named Nanna.
+
+   * https://discussions.udacity.com/
+   * Slack for students
+   <br /><br />
+
+Udacity is founded by Sabastian Thrun (from Sweden), the "father" of self-driving car. When he was a professor at Stanford, his team won the first DARPA Grand Challenge car race. He then joined Google.
+
+
+<a name="Coursera"></a>
+
+### Coursera
+
+Coursera.com offers a 100% on-line <a target="_blank" href="https://www.coursera.org/specializations/self-driving-cars">"Self-Driving Cars" specialization</a> from the University of Toronto, Canada professors
+of Applied Engineering (Aerospace Studies)
+<a target="_blank" href="https://www.linkedin.com/in/stevenlwaslander/">Steven Waslander</a> and 
+<a target="_blank" href="https://www.linkedin.com/in/jonathanscottkelly/">Jonathan Kelly</a> at the
+Waterloo Autonomous Vehicles LaboratoryWaterloo Autonomous Vehicles Laboratory
+(wavelab.uwaterloo.ca).
+Giving talks are experts from Oxbotica and Zoox.
+
+Build your own self-driving software stack and get ready to apply for jobs in the autonomous vehicle industry.
+
+<a target="_blank" href="https://www.coursera.org/learn/intro-self-driving-cars/programming/ac8R5/final-project-self-driving-vehicle-control/instructions">Your own final project</a> is to implement a Python controller and create a trajectory.txt file containing waypoints to navigate a provided track using Throttle, Steering, and Brake commands. 
+
+<a target="_blank" href="https://www.coursera.org/learn/intro-self-driving-cars/supplement/pGdcu/carla-installation-guide">Install</a> a customized version of the <strong>CARLA simulator</strong> created using <a target="_blank" href="https://www.unrealengine.com/en-US/features">Unreal Engine</a>: 
+macOS is not natively supported by CARLA and therefore the CARLA binaries that we provide also do not support macOS. It is recommended to create a dual-boot to either Linux or Windows in order to setup CARLA for the course.
+   * Dual-Boot between Ubuntu and MacOS - https://help.ubuntu.com/community/MactelSupportTeam/AppleIntelInstallation
+   * Install Windows on your Mac with Boot Camp - https://support.apple.com/en-ca/HT201468
+   <br /><br />
+   * Windows 7 64-bit (or later) or Ubuntu 16.04 (or later), Quad-core Intel or AMD processor (2.5 GHz or faster), NVIDIA GeForce 470 GTX or AMD Radeon 6870 HD series card or higher, 8 GB RAM, and OpenGL 3 or greater (for Linux computers).
+
+https://github.com/carla-simulator/carla/
+Use the shell script to start CARLA.
+  
+https://www.coursera.support/s/article/360044758731-Solving-common-issues-with-Coursera-Labs?
+
+Server mode
+
+Background is preferred in linear algebra, probability, statistics, calculus, physics, control theory, and Python programming. 
+
+4-courses:
+1. Introduction to Self-Driving Cars
+2. State Estimation and Localization for Self-Driving Cars (Kalman filters)
+3. Visual Perception for Self-Driving Cars
+4. Motion Planning for Self-Driving Cars
+<br /><br />
+
+<hr />
+
+## References
+
+https://interestingengineering.com/transportation/autonomous-self-driving-cars-tesla
