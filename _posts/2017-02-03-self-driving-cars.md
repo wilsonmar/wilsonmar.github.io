@@ -3,7 +3,7 @@ layout: post
 date: "2022-11-29"
 file: "self-driving-cars"
 title: "Self-driving cars"
-excerpt: "What can possibly go wrong with robots smarter than humans?"
+excerpt: "What can possibly go wrong with autonomous vehicle robots smarter than humans?"
 tags: [Python, Machine Learning]
 image:
 # pic silver robot white skin handshake 1900x500
@@ -48,7 +48,7 @@ Among the <a target="_blank" href="https://www.cbinsights.com/research/autonomou
 <tr><th>Company</th><th>Automaker</th><th>Notes</th></tr>
 <tr valign="top"><td><a href="#Apple">Apple</a></td><td>Mercedes</td><td>Drive.ai</td></tr>
 <tr valign="top"><td><a href="#Apple">Bosch</a></td><td>Daimler</td><td>-</td></tr>
-<tr valign="top"><td><a href="#Argo">Argo</a></td><td>Ford/VW/Amazon</td></tr>
+<tr valign="top"><td><a href="#Argo"><strike>Argo</strike></a></td><td>Ford/VW/Amazon</td><td>Lyft</td></tr>
 <tr valign="top"><td><a href="#Audi">Audi</a></td><td>Audi</td></tr>
 <tr valign="top"><td><a href="#Baidu">Baidu</a></td><td>Lincoln MKZ</td><td>China</td></tr>
 <tr valign="top"><td><a href="#Comma">Comma</a></td><td>(Honda)</td></tr>
@@ -75,6 +75,7 @@ Longitudinal control - braking, accelerating
 OEDR: Object and Event Detection and Response - The ability to detect objects and events that immediately affect the driving task, and to react to them appropriately. Slowing down when seeing a construction zone ahead. Swerve and slow down to avoid a pedestrian. Pulling over upon hearing sirens. Stopping at a red light.
 
 Planning: Short term, Long term
+   * https://arxiv.org/abs/2011.13099 An Autonomous Driving Framework for Long-term Decision-making and Short-term Trajectory Planning on Frenet Space
 
 Miscellaneous: Signaling other drivers
 
