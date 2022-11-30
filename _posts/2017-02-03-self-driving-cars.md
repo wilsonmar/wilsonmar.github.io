@@ -62,7 +62,11 @@ Among the <a target="_blank" href="https://www.cbinsights.com/research/autonomou
 </table>
 
 Honda's 2017 models and onward are built with self-driving features. (I have a 2018 model)
+Honda Sensing suite to Honda Sensing Elite to Honda Sensing 360.
+with Renesas Electronics Corporation
+utilizes five millimeter-wave radars
 
+Ford BlueCruise system
 
 <a name="DriverTasks"></a>
 
@@ -72,10 +76,16 @@ Lateral control - steering
 
 Longitudinal control - braking, accelerating
 
+> It's more complex than flying an airplane.
+
 OEDR: Object and Event Detection and Response - The ability to detect objects and events that immediately affect the driving task, and to react to them appropriately. Slowing down when seeing a construction zone ahead. Swerve and slow down to avoid a pedestrian. Pulling over upon hearing sirens. Stopping at a red light.
 
 Planning: Short term, Long term
-   * https://arxiv.org/abs/2011.13099 An Autonomous Driving Framework for Long-term Decision-making and Short-term Trajectory Planning on Frenet Space
+   * https://arxiv.org/abs/2011.13099 An Autonomous Driving Framework for Long-term Decision-making and Short-term Trajectory Planning on Frenet Space. Intelligent driving models (IDM and MOBIL)
+   * S. M. LaValle. Planning Algorithms. Cambridge University Press, Cambridge, U.K., 2006. Available at http://planning.cs.uiuc.edu/.
+   * S. Thrun, W. Burgard, and D. Fox, Probabilistic robotics. Cambridge, MA: MIT Press, 2010.
+   * N. J. Nilsson, “Artificial intelligence: A modern approach,” Artificial Intelligence, vol. 82, no. 1-2, pp. 369–380, 1996.
+   <br />
 
 Miscellaneous: Signaling other drivers
 
@@ -91,18 +101,18 @@ Taxonomy from the Society of Automotive Engineers in 2014 <a target="_blank" hre
 
 1. Driver Assistance - driver is fully engaged. Voice prompts.
 
-2. Partial Automation - lane keeping with adaptive cruise control to maintain constant speed. No OEDR.
+2. Partial Automation - lane keeping with adaptive cruise control to maintain constant speed. ADAS [advanced driver assistance systems] No OEDR.
 
-3. Conditional Automation - Partial Driving Automation with OEDR. Change lanes. Driver is ready to take over. GM Super Cruise & Nissan ProPilot Assist Audi A8 sedan can perform OEDR in slow traffic. Ford is hoping to do it too.
+3. Conditional Automation - "Traffic Jam Pilots" - Partial Driving Automation with OEDR. Change lanes. Driver is ready to take over. GM Super Cruise & Nissan ProPilot Assist Audi A8 sedan can perform OEDR in slow traffic. Ford is hoping to do it too.
 
-4. High Automation - Fully autonomous in controlled conditions. ADAS [advanced driver assistance systems] Does not require full user alertness. no controls for human use, operating within a geofence. Waymo.
+4. High Automation - Fully autonomous in controlled conditions. Does not require full user alertness. no controls for human use, operating within a geofence. Waymo.
 
 5. Full Automation - unrestricted ODD (any road surface and road type) starting from without a geofence in a closed venue low-speed environment by minibuses, valet parking, delivery robots.
 <br /><br />
 
 PROTIP: As cars automate more, and human drivers have less to do, inattention becomes even more of an issue.
 
-Volvo's Road Train had automated vehicles following a human lead vehicle.
+Volvo's Road Train "platooning" had automated vehicles following a human lead vehicle (at high speeds).
 
 In 2012, Nevada issued Google the first autonomous vehicle testing license on public roads.
 California followed.
@@ -115,23 +125,26 @@ NHTSA: National Highway Traffic Safety Administration - An agency of the Executi
 
 ### Shared rides
 
+From https://www.vtpi.org/avip.pdf:
+<img alt="av-economics-1312x654.jpg" width="1312" height="654" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1669798295/av-economics-1312x654_jqnwvp.jpg">
+
 The high cost of computing power on purpose-built AVs forces amortization across many rides in taxis.
 
-City governments may actually see lack of need for parking undermine revenue from cark parks and traffic tickets.
+Uber and Lyft has dessicimated the jobs of human drivers.
+
+COVID-19 is making it even more dangerous to be a driver.
+
+City governments may resist because this undermines parking revenue from cark parks and traffic tickets.
 
 Uber has, since 2012, been offering free rides in driverless cars aroud Pittsberg and Chandler, AZ.
-
+Zoox got the first California permit to transport passengers in self-driving cars, in 2018.
+Waymo in 2019. Uber in 2020.
 Cruise has been offering rides in San Francisco, California.
 
 Las Vegas.
 
-Uber and Lyft has dessicimated the jobs of human drivers.
-COVID-19 is making it even more dangerous to be a driver.
-
 NOTE: On Teslas even the glovebox lock is controlled by the computer.
 
-Zoox got the first California permit to transport passengers in self-driving cars, in 2018.
-Waymo in 2019. Uber in 2020.
 
 ## DARPA
 
@@ -256,7 +269,7 @@ There are also infrared LEDs on Comma's windshield case to provide night-time dr
 
 ### Lyft
 
-<a target="_blank" href="https://twitter.com/LyftLevel5">Lyft's Level5</a>
+<a target="_blank" href="https://twitter.com/LyftLevel5">Lyft's Level5 Twitter</a>
 
 
 ### Tesla Motors
@@ -289,6 +302,12 @@ RADAR: Radio Detection And Ranging - A type of sensor which detects range and mo
 
 SONAR: Sound Navigation And Ranging - A type of sensor which detects range and movement by transmitting sound waves and measuring return time and shifts of the reflected signal. 
 
+Camera sensor:
+   * Forsyth, D. A. and J. Ponce. (2003). Computer vision: a modern approach (2nd edition). New Jersey: Pearson. Read sections 1.1, 1.2, 2.3, 5.1, 5.2.
+   * Szeliski, R. (2010). Computer vision: algorithms and applications. Springer Science & Business Media. Read sections 2.1, 2.2, 2.3 (PDF available online: http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf)
+   * Hartley, R., & Zisserman, A. (2003). Multiple view geometry in computer vision. Cambridge university press. Read sections 1.1, 1.2, 2.1, 6.1, 6.2
+   <br />
+
 
 #### Controls
 
@@ -312,7 +331,20 @@ PID: Proportional Integral Derivative Control - A common method of control defin
 1) A proportional gain which scales the control output based on the amount of the error
 2) An integral gain which scales the control output based on the amount of accumulated error
 3) A derivative gain which scales the control output based on the error rate of change
+<br />
 
+3D Point Coordinates from Stereopsis to derive depth [R t] to b (baseline) and f (focal length).
+
+Disparity estimation: Use stereo rectification to force Epipolar lines to be horizontal.
+   * http://vision.middlebury.edu/stereo/eval3/ benchmark
+   <br />
+
+Convolution is an associative cross-correlation where the filter is flipped both horizontally and verticallly before being applied to the image. For template matching. For Gradient Computation.
+
+Image filtering (OpenCV), https://docs.opencv.org/3.4.3/d4/d86/group__imgproc__filter.html
+
+<a target="_blank" href="https://www.coursera.org/learn/visual-perception-self-driving-cars/ungradedLab/TX6tn/practice-assignment-applying-stereo-depth-to-a-driving-scenario">
+LAB</a>: <a target="_blank" href="https://www.coursera.org/learn/visual-perception-self-driving-cars/ungradedLab/TX6tn/practice-assignment-applying-stereo-depth-to-a-driving-scenario/lab?path=%2Ftree">Applying Stereo Depth to a Driving Scenario</a>
 
 ### Architecture of Processes
 
@@ -382,6 +414,23 @@ Alex Lidow, CEO and cofounder of Efficient Power Conversion, a provider of the g
 https://backchannel.com/how-my-public-records-request-triggered-waymos-self-driving-car-lawsuit-1699ff35ac28#.vi4talr7i
 by <a target="_blank" href="https://medium.com/@meharris/">@meharris</a>
 
+Random variables are IID (independent and identically distributed) - Each random variable follows the same probability distribution and all the variables are mutually independent (i.e., the cross-covariance of any pair is zero).
+So use <a target="_blank" href="https://www.coursera.org/learn/state-estimation-localization-self-driving-cars/lecture/Ewy9K/lesson-1-part-2-squared-error-criterion-and-the-method-of-least-squares">VIDEO</a>: Weighted Least Squares. The higher the expected noise, the lower the weight on the measurement.
+   * <a target="_blank" href="https://www.coursera.org/learn/state-estimation-localization-self-driving-cars/ungradedLab/oUqWi/lesson-1-practice-notebook-least-squares/lab">Jupyter Notebook</a> - define H (the Jacobian matrix) & R.
+   * Here's an interactive least squares fitting simulator provided by the PhET Interactive Simulations project at the University of Colorado: https://phet.colorado.edu/sims/html/least-squares-regression/latest/least-squares-regression_en.html
+   * You can find an overview of the Method of Least Squares in the Georgia Tech online textbook: <a target="_blank" href="https://textbooks.math.gatech.edu/ila/least-squares.html">Dan Margalit and Joseph Rabinoff, Interactive Linear Algebra</a>.
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Least_squares">Wikipedia</a>
+   * Read Chapter 3, Sections 1 and 2 of <a target="_blank" href="https://onlinelibrary.wiley.com/doi/book/10.1002/0470045345">Dan Simon, Optimal State Estimation (2006)</a>.
+   <br /><br />
+
+<a target="_blank" href="https://www.coursera.org/learn/state-estimation-localization-self-driving-cars/lecture/0UbTb/lesson-2-recursive-least-squares">VIDEO</a>: <a target="_blank" href="https://en.wikipedia.org/wiki/Recursive_least_squares_filter">Wikipedia</a>: Linear Recursive Estimator using Recursive Least Squares of running measurement of the previous time step.
+
+Least Squares and Maximum Likelihood:
+<a target="_blank" href="http://mfviz.com/central-limit/">interactive explanation of the Central Limit Theorem by Michael Freeman</a>. <a target="_blank" href="https://newonlinecourses.science.psu.edu/stat414/node/191/">STAT 414/415 website from Penn State</a>. <a target="_blank" href="https://arxiv.org/pdf/0804.2996.pdf">History</a> of the method of maximum likelihood and its relationship to least squares.
+
+Iterative Closest Point (ICP) algorithm
+
+
 
 <a name="Perception"></a>
 
@@ -411,6 +460,14 @@ Deep (learning) Neural Networks are used to draw bounding boxes to identify whic
 
 <a target="_blank" href="http://www.cvlibs.net/datasets/kitti/">
 The KITTI Vision Benchmark Suite</a>
+
+[Forsyth]  -- Forsyth, David A., and Jean Ponce. "A modern approach." Computer vision: a modern approach (2003): 88-101.
+
+[Goodfellow] -- Goodfellow, I., Bengio, Y., Courville, A., & Bengio, Y. (2016). Deep learning (Vol. 1). Cambridge: MIT press. PDF available online: https://www.deeplearningbook.org/
+
+[Szeliski] -- Szeliski, R. (2010). Computer vision: algorithms and applications. Springer Science & Business Media. PDF available online: http://szeliski.org/Book/drafts/SzeliskiBook_20100903_draft.pdf
+
+[Hartley] -- Hartley, R., & Zisserman, A. (2003). Multiple view geometry in computer vision. Cambridge university press.
 
 
 <a name="Prediction"></a>
@@ -500,17 +557,31 @@ https://www.coursera.support/s/article/360044758731-Solving-common-issues-with-C
 
 Server mode
 
-Background is preferred in linear algebra, probability, statistics, calculus, physics, control theory, and Python programming. 
+Background is preferred in 
+* linear algebra, probability, statistics, calculus, physics, control theory, and Python programming. 
+* intermediate programming experience in Python 3
+* familiarity with linear algebra (matrices, vectors, matrix multiplication, rank, eigenvalues and vectors, and inverses)
+* statistics (Gaussian probability distributions)
+* multivariate calculus (derivatives, partial derivatives)
+* physics (forces, moments, inertia, Newton's laws)
+<br /><br />
 
 4-courses:
 1. Introduction to Self-Driving Cars
-2. State Estimation and Localization for Self-Driving Cars (Kalman filters)
-3. Visual Perception for Self-Driving Cars
-4. Motion Planning for Self-Driving Cars
+
+2. <a target="_blank" href="https://www.coursera.org/learn/state-estimation-localization-self-driving-cars/home/week/1">State Estimation and Localization for Self-Driving Cars</a> (Kalman filters)
+
+3. <a target="_blank" href="https://www.coursera.org/learn/visual-perception-self-driving-cars">Visual Perception for Self-Driving Cars</a>
+   
+4. <a target="_blank" href="https://www.coursera.org/learn/motion-planning-self-driving-cars/home/week/1">Motion Planning for Self-Driving Cars</a> - mission planning, behavior planning, and local planning. Find the shortest path over a graph or road network using Dijkstra's and the A* algorithm, use finite state machines to select safe behaviors to execute, and design optimal, smooth paths and velocity profiles to navigate safely around obstacles while obeying traffic laws. Build occupancy grid maps of static elements in the environment and use them for efficient collision checking.
 <br /><br />
+
+1,840 views of the specialization congratulations video.
 
 <hr />
 
 ## References
 
 https://interestingengineering.com/transportation/autonomous-self-driving-cars-tesla
+
+https://www.mckinsey.com/features/mckinsey-center-for-future-mobility/our-insights/whats-next-for-autonomous-vehicles
