@@ -331,12 +331,23 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
    <br /><br />
 
 
+## Video courses
+
+The most friendly and enthusiastically delivered <a target="_blank" href="https://kodekloud.com/courses/certified-associate-in-python-programming/">"PCAP – Python Certification Course"</a> I think is by 20-something <a target="_blank" href="https://www.linkedin.com/in/lydia-hallie/">Lydia Hallie living in Scandanavia</a> (https://www.lydiahallie.io). The content is delivered in enthusiastic, perfect English by the 20-something developer whiz, who presents "visualized" diagrams. As with other KodeKloud (subscription) video courses, this clas includes labs, Quizzes, Mock Exams, 
+ and <a target="_blank" href="https://kodekloud.com/community/c/python/18">Q&A participants</a>
+to cover
+Module, Packages and PIP,
+String and List Methods,
+Exceptions,
+Object Oriented Programming, etc.
+
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/413">
 The video course at LinuxAcademy</a> by Keith Thompson references 
 includes a practice exam.
 
 https://www.udemy.com/topic/certified-associate-in-python-programming-pcap/
 Udemy.com's mock PCAP tests 
+
 
 
 ## More about Python

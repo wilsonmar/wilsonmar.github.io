@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-20"
+date: "2022-12-06"
 file: "terraform"
 title: "Terraform"
 excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning into AWS, Azure, GCP, and other clouds using Terragoat, Bridgecrew, and Atlantis team versioning GitOps"
@@ -20,13 +20,13 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 
 {% include whatever.html %}
 
-## What is Terraform?
+## Why Terraform?
 
 <a target="_blank" href="https://www.terraform.io/intro/index.html">terraform.io</a> (HashiCorp's marketing home page) says the product is a "tool for building, changing, and versioning infrastructure safely and efficiently".
 
 "Terraform makes infrastructure provisioning: <a href="#Repeatable">Repeatable</a>. <a href="#Versioned">Versioned</a>. Documented. Automated. Testable. Shareable." 
 
-<a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="2020 by IBMer Sai Vennom">
+<a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="2020 by Sai Vennom when he was at IBM">
 <img width="1680" alt="terraform-ibm-sai-vennam-3360x2100" src="https://user-images.githubusercontent.com/300046/161367565-7e7871ee-176f-4964-bd12-1b6f05534a6d.png"></a>
 
 
@@ -58,7 +58,7 @@ PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vu
 
 The crucial skill needed today is expertise at <strong>manually editing</strong> Terraform files which are "bulletproof".
 
-One way to climb this steep learning curve is learning to fix <strong>known-bad</strong> sample Terraform code which are accompanied with policies used to detect violations. It's even better to have each policy be associated with <strong>recommendations</strong> for remediating the Terraform code, along with <a href="#Tutorials">tutorials</a> about <strong>configuration options</strong>.
+One way to climb this steep learning curve is learning to learn <a href="#KnownGoodProjects">known-good</a> and fix <strong>known-bad</strong> sample Terraform code which are accompanied with policies used to detect violations. It's even better to have each policy be associated with <strong>recommendations</strong> for remediating the Terraform code, along with <a href="#Tutorials">tutorials</a> about <strong>configuration options</strong>.
 
 Because cloud services change all the time, a <strong>policy creator</strong> helps to keep up with all the polices needed.
 In the Terraform Cloud, policies are defined in the Sentinel language. Other vendors define policies in the Rego language processed by the OPA engine.
@@ -84,23 +84,122 @@ So here it is, our ecosystem your you to create secure Terraform, the first time
 
 <a name="CoreWorkflow"></a>
 
-## Core Workflow
+## Core Workflow, Automated
 
-The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform  "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
+1. <a href="#TaskTemplate">In GitHub create a Template repo for Task to install utilities locally</a>
+2. <a href="#KnownGoodProjects">Obtain known-good Terraform projects (from GitHub or Terraform.io)</a>
 
-1. Obtain the set of Terraform-related files (from GitHub).
-2. Navigate to the folder where .tf files are located.
-3. Scan Terraform files for violation of policies (running Atlas, TFSec, etc.)
-4. Obtain cloud (AWS) credentials.
-5. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
-6. <tt>terraform init</tt> 
-7. <tt>terraform plan -out plan_file</tt>
-8. <tt>terraform apply plan_file</tt>
-9. If defined, run local and/or remote provisioners (such as Ansible) to configure servers deployed.
+3. Navigate to the folder where .tf files are located.
+4. Scan Terraform files for violation of policies (running Atlas, TFSec, etc.)
+5. Obtain cloud (AWS) credentials.
+6. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
+
+   The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform  "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
+
+7. <tt>terraform init</tt> 
+8. <tt>terraform plan -out plan_file</tt>
+9.  <tt>terraform apply plan_file</tt>
+10. If defined, run local and/or remote provisioners (such as Ansible) to configure servers deployed.
 <br /><br />
 
-PROTIP: Run a shell/Python file to automate the above.
+<a name="TaskTemplate"></a>
 
+### Task Template to Install Utilities Locally
+
+PROTIP: Several utilities are needed to ensure the correctness and security of each type of file used.
+Using the latest version may not result in all of them working well together.
+So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalenarndt/">Kalen Arndt</a> created a GitHub template that automatically installs versions of utilities your Mac needs which he has validated. His template makes use of <strong>Task</strong> (an improvement over Linux Make, but written in Go) and <strong>adsf</strong>.
+
+1. In a browser go to:
+
+   <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template">https://github.com/kalenarndt/terraform-repo-template</a>
+
+2. Click "Uses this template" and "Create a new repository".
+3. Click "Select an owner" and one of your accounts (which I call <em>your_acct</em> below).
+4. Type a Repository name (which I call <em>your_repo_name</em> below)
+5. Click the green "Create repository from template". 
+
+6. In a Terminal, if you haven't already, install Homebrew (see https://brew.sh).
+7. Use Homebrew to install utilities:
+
+   <pre><strong>brew install jq, tree, git
+   brew install go-task/tap/go-task  # https://taskfile.dev/
+   </strong></pre>
+
+   <pre><strong>brew install --cask visual-studio-code</strong></pre>
+
+8. Construct a command to download the repo you created above:
+
+   <pre><strong>clone git clone git@github.com:<em>your_acct</em>/<em>your_repo_name</em>.git ; cd <em>your_repo_name</em>
+
+9. View file <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions">.tool-versions</a> listing versions of utilities. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
+   
+   * <a target="_blank" href="https://github.com/hashicorp/terraform/releases">terraform</a>
+   * <a target="_blank" href="https://github.com/terraform-docs/terraform-docs/releases">terraform-docs</a> - Generate documentation from Terraform modules in various output formats 
+   * <a target="_blank" href="https://github.com/minamijoyo/tfupdate/releases">tfupdate</a> - Update version constraints in your Terraform configurations
+   * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.
+   * <a target="_blank" href="https://github.com/aquasecurity/tfsec/releases">tfsec</a> - Security scanner for your Terraform code
+   * <a target="_blank" href="https://github.com/pre-commit/pre-commit/releases">pre-commit</a> - A framework for managing and maintaining multi-language pre-commit hooks.
+   * <a target="_blank" href="https://www.python.org/downloads/">python</a> - The Python programming language
+   * <a target="_blank" href="https://github.com/mvdan/sh/releases">shfmt</a> -  A shell parser, formatter, and interpreter with bash support; includes shfmt
+   * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
+   * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
+   <br />
+   
+10. Initialize the utilities on your mac as outlined in .tools-versions
+   
+    task init
+
+    <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/Taskfile.yaml">Taskfile.yaml</a> is what the <tt>task init</tt> command runs.
+
+    Note that to add a utility, both the <tt>Taskfile.yaml</tt> and <tt>.tool-versions</tt> files need to be edited.
+
+11. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions to be installed in Visual Studio Code:
+
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=pjmiravalle.terraform-advanced-syntax-highlighting">pjmiravalle.terraform-advanced-syntax-highlighting</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">editorconfig.editorconfig</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">oderwat.indent-rainbow</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one">yzhang.markdown-all-in-one</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint">davidanson.vscode-markdownlint</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=mohsen1.prettify-json">mohsen1.prettify-json</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=run-at-scale.terraform-doc-snippets">run-at-scale.terraform-doc-snippets</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree">gruntfuggly.todo-tree</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">redhat.vscode-yaml</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons-team.vscode-icons</a>
+    * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a>
+    <br />
+
+12. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines for each type of file the indents Visual Studio Code should use, to ensure consistent formatting.
+
+13. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a>
+    to verify the version numbers:
+   
+    * https://github.com/pre-commit/pre-commit-hooks/releases/
+    * https://github.com/antonbabenko/pre-commit-terraform/releases/
+    * https://github.com/syntaqx/git-hooks/releases/
+    <br />
+
+
+<a name="KnownGoodProjects"></a>
+
+## Known-Good Terraform Projects
+
+<a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">AWS Partner Solutions</a> (formerly Quick Starts) include:
+    * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-ipam">Terraform Module for create AWS IPAM Resources</a>
+    * https://github.com/kalenarndt/terraform-vault-consul-k8s-integration
+    * TODO: <em>More to come</em>
+    <br />
+
+1.  Edit Terraform-related code files:
+
+    * main.tf
+    * outputs.tf
+    * providers.tf
+    * terraform.auto.tfvars
+    * variables.tf
+    * versions.tf
+    <br />
+   
 
 <a name="Atlantis"></a>
 
@@ -370,6 +469,15 @@ Although Terraform is "open source", the Terraform GUI requires a license.
 <a name="Install"></a>
 
 ## Installation options
+
+A) Manually type commands in Terminal. This is tedius and time consuming because there are several utilities to install.
+
+B) Use a GitHub Template to install utilities and create a Terraform template.
+
+
+<a name="ManualInstall"></a>
+
+### Manual install
 
 There is a version manager to enable you to install several versions of Terraform:
 https://github.com/aaratn/terraenv

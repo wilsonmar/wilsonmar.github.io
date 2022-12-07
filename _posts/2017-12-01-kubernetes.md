@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-21"
+date: "2022-11-29"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -3188,13 +3188,25 @@ Several containers: the webapp, log-agent, Istio, etc.
 
 Patterns:
 
+<a name="InitContainers"></a>
+
+An Init container prepares the main container started from the same Pod.
+
+So Init containers are run before the main container.
+
+
 <a name="Ambassador"></a> 
 
-The <strong>ambassador</strong> pattern is to <strong>proxy</strong> in front of accessing a database (perhaps charded)<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
+The <strong>ambassador</strong> pattern is a <strong>proxy</strong> in front of accessing <strong>data</strong>.
 
-One use case is to make consistent the format of dates sent to the database.
+Use cases:
 
-Another use case is to route requests to one of several databases (dev/test/prod).
+   * chard data among several physical databases, for better performance and redundancy<a target="_blank" href="https://medium.com/@bjammal/hands-on-ambassador-pattern-625a13ceb8b7?">*</a>
+
+   * make consistent the format of dates sent to the database.
+
+   * route requests to one of several databases (dev/test/prod).
+
 
 <a name="Adapter"></a>
 
@@ -4604,7 +4616,15 @@ Deploy a model as web service on Azure Container Instances by combining ACI with
    * Twistlock 
    * Aqua cloud native security platform
    * Sysdig
+   * NeuVector
    <br /><br />
+
+https://blog.digitalis.io/vals-operator-managing-kubernetes-secrets-866f0a419759
+
+https://blog.digitalis.io/kubernetes-how-do-we-do-it-cc7b38b06d91
+
+https://cert-manager.io/
+creates TLS certs automatically using the company’s internal CA or letsencrypt
 
 References:
 
@@ -7570,7 +7590,17 @@ is normally $997, with a 60 day money-back guarantee.
 
 https://cloud.google.com/kubernetes-engine/docs/concepts/verticalpodautoscaler
 
+## Fun facts
+
+NOTE: The Container Host Interface is NOT a common standard.
+
+https://csrc.nist.gov/CSRC/media/Presentations/dod-enterprise-devsecops-initiative/images-media/DoD%20Enterprise%20DevSecOps%20Initiative%20%20v2.5.pdf
+
+<hr />
+
 ## References
+
+https://learnk8s.io/academy has a library of written materials for $499.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Bcji3AlT7v8&t=2511s">
 Demo of Fairwinds Insights dashboard</a>
@@ -7589,11 +7619,8 @@ STAR: <a target="_blank" href="https://dev.to/aurelievache/understanding-kuberne
 https://www.youtube.com/watch?v=oC0UZ-pms9o&list=RDCMUCBdfli20jrAscmR9COL35qg&start_radio=1&rv=oC0UZ-pms9o  
 Cloud with Raj
 
-## Fun facts
+https://medium.com/@mengkiatlim/how-to-add-ssl-to-your-services-k8s-704a6d2d5fd8
 
-NOTE: The Container Host Interface is NOT a common standard.
-
-https://csrc.nist.gov/CSRC/media/Presentations/dod-enterprise-devsecops-initiative/images-media/DoD%20Enterprise%20DevSecOps%20Initiative%20%20v2.5.pdf
 <hr />
 
 ## More on DevOps #

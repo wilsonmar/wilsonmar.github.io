@@ -44,7 +44,7 @@ Research has shown that major transformational change has only a 30% chance of m
 
 > Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
 
-<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> uses the word "subversion" not to imply any sinister motive, but to state what happens when change isn’t reinforced. 
+<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> (founder of Sociology at MIT) uses the word <strong>"subversion"</strong> not to imply any sinister motive, but to state what happens when change isn’t managed. 
 
 
 ## The Formula Predicting Success
@@ -84,12 +84,12 @@ Many authors have used different words to describe the process of change.
 <a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
 
-(At the bottom of the diagram), * <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a> describes a "Neutral Zone" between Ending, Losing, and Letting Go on the way to a New Beginning.
+(At the bottom of the diagram), <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/lecture/Q5PtK/bridges-transition-model">VIDEO</a>: <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a> describes a "Neutral Zone" between Ending, Losing, and Letting Go on the way to a New Beginning.
 
-<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages 
-to conceptualize broad categories of the change process before discovering more detailed models:
+<a target="_blank" href="https://www.coursera.org/videos/agile-leadership-organization/UWNP3">VIDEO</a>: <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages to conceptualize broad categories of the change process:
 
-   <ul>Unfreezing, Change and Transition, Refreezing</ul>
+   <ul>Unfreeze -> Change and Transition --> Refreezing
+   </ul>
 
 There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a> in the <a name="Prosci">Prosci Process for organizational change</a>:
 
@@ -110,53 +110,76 @@ There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-pr
       <br /><br />
 
 
-<a name="ADKAR"></a>
 <a name="Prosci"></a>
 
-### Prosci's ADKAR
+## Prosci
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
-   <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage  Consulting</a> 
-   
+   * <a target="_blank" href="https://www.youtube.com/watch?v=RqlKtpjPBBo">VIDEO</a>
+   * <a target="_blank" href="https://www.linkedin.com/company/third-stage-consulting-group/">Third Stage Consulting on LinkedIn</a>
+   * <a target="_blank" href="https://www.commerce.wa.gov/wp-content/uploads/2021/11/Best-Practices-in-Change-Management-Full-Report-Digital-11thEdition.pdf">Best Practices in Change Management</a>
+   <br />
+
    Prosci (general inquiry 970-203-9332) 
    <a target="_blank" href="https://www.amazon.com/ADKAR-Change-Business-Government-Community/dp/1930885504/">BOOK</a>: <a target="_blank" href="https://www.youtube.com/watch?v=oRDd9umVFT8&list=PLnPoJi83DPgIkLjQHQRJHNvprZn_3FtoQ&index=1">VIDEO</a>: <a target="_blank" href="https://www.prosci.com/methodology/adkar">ADKAR model for individual change</a> developed in the 90s by Prosci founder <a target="_blank" href="https://www.amazon.com/Jeff-Hiatt/e/B001HOIOF6/">Jeff Hiatt</a> after studying the change patterns of more than 700 organizations. Here is a common volcabulary for describing what each individual needs to successfully adopt each change.
    <br /><br />
+
+<a name="ADKAR"></a>
+
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"><a img alt="ADKAR" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660777114/chg-adkar-1218x270_y6alcr.jpg"></a>   
 
-   Where an individual's journey can get blocked:
+   Where an individual's journey can get blocked if not achieved <strong>in this specific sequence</strong>:
 
-   1. <strong>Awareness</strong> of the need for change (not just that change is happening)
+   1. <strong>Awareness</strong> of the <strong>need</strong> for change (not just that change is happening)
 
-   2. <strong>Desire</strong> to participate and support the change -  the personal choice to get onboard
+   2. <strong>Desire</strong> to participate and <strong>support</strong> the change -  the personal choice to get onboard
    
-   3. <strong>Knowledge</strong> on how to change
+   3. <strong>Knowledge</strong> about <strong>how</strong> to change (through training and coaching)
    
-   4. <strong>Ability</strong> to implement desired skills and behaviors (adopt and change)
+   4. <strong>Ability</strong> to implement desired skills and behaviors (adopt and change through <strong>practice</strong>)
    
-   5. <strong>Reinforcement</strong> to sustain the change
+   5. <strong>Reinforcement</strong> to <strong>sustain</strong> the change (through evaluation, correction, celebrations)
    <br /><br />
 
    <a target="_blank" href="https://www.youtube.com/watch?v=L_7I03LOyyk">VIDEO</a>:
    When we identify where <strong>each stakeholder</strong> stands and act accordingly, we don't waste time and resources rehashing what the stakeholder has already passed, or getting ahead of that person.
 
+   ADKAR resources:
+   * <a target="_blank" href="https://www.coursera.org/videos/agile-leadership-organization/hEStP" title="by Oxana Trotsenko at U of Colorado Denver">VIDEO</a> from the <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/">Agile Transformation course</a> within the <a target="_blank" href="https://www.coursera.org/specializations/agile-leadership-change-management">5-course Agile Leadership Specialization on Coursera</a>
+   * <a target="_blank" href="https://www.process.st/checklist/adkar-model-change-management-process-checklist/">ADKAR checklist</a>
+   * <a target="_blank" href="https://www.howspace.com/resources/how-to-take-the-adkar-model-from-theory-to-practice">How to take ADKAR from theory to practice</a>
+   * <a target="_blank" href="http://www.change-management.com/pilot-webinar-comp/elearning/competency2/adkar-business-worksheet.pdf">ADKAR personal transformation form</a>
+   <br />
+
+GROW model for mentoring and coaching:
+
+   * Goal
+   * Reality
+   * Opportunity
+   * Way Forward
+   <br />
+
 Stages:
 
    1. In precontemplation, the individual is completely unwilling to consider a change.
    2. During contemplation, actors are planning for change - how do you setup the right systems to increase the chances of success.
-   3. Preparation.
+   3. Preparation to address need for change.
    4. Action against previous holding things in one’s hands.
    5. Maintenance.
    <br /><br />
 
-   Attendance at Prosci's class includes a 1-year subscription to their Practitioner eToolkit that contains PowerPoint, Word, and Excel templates for most of the Prosci tools. 
+   Attendance at Prosci's class includes a 1-year subscription to their Practitioner eToolkit which contains PowerPoint, Word, and Excel templates for most of the Prosci tools. 
+
 
 ## Influencers
 
 <a name="JohnKotter"></a>
 
-* <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
+* <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/lecture/UW5kt/kotters-8-step-model-part-1">VIDEO</a>: <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=Pc7EVXnF2aI">"The Evolution of the 21st Centry Organization"</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Pc7EVXnF2aI">"The Evolution of the 21st Centry Organization"</a>
+   * <a target="_blank" href="https://wmbridges.com/clients/case-studies/">Transition case studies</a>
+   * <a target="_blank" href="http://www.tmcorp.com/SiteData/docs/TMC_PepsiCo_03/9ffce16a0e3f1f24acabb42129fba3ca/TMC_PepsiCo_03.pdf">Kotter’s 8 Step Model case study</a>
+   <br />
 
    <a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">John K. Kotter</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review:
 
@@ -190,7 +213,7 @@ Stages:
 
 * <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
 
-* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
+* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> (of LeadershipIQ.com) writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
 
 
 ## ACMP Standards
@@ -284,15 +307,15 @@ Listed from cheapest to most expensive/prestigeous:
 
    1. For a project completed in the last two years, discuss how your assessment of the history, culture, and value systems of an organization helped the employees through a change process and has impacted employee expectations about change management plans and activities during that change project, today, and into the future.
 
-   2. How did you address the readiness strategy in your last change project? What would you change if you could go back in time, to ensure a smoother transition during change?
+   2. How did you address the <strong>readiness strategy</strong> in your last change project? What would you change if you could go back in time, to ensure a smoother transition during change?
 
-   3. Describe specific actions you have taken to measure and assess the effectiveness of a Learning & Development Plan. Include major challenges you encountered and how you dealt with them.
+   3. Describe specific actions you have taken to <strong>measure and assess</strong> the effectiveness of a Learning & Development Plan. Include major challenges you encountered and how you dealt with them.
 
-   4. Describe a situation where you needed to modify the Change Management Plan during the execution phase and include the circumstances leading to the modifications and to the end results. Clearly identify if new items were added, if current items were eliminated, altered, or realigned in response to internal or external pressures.
+   4. Describe a situation where you needed to <strong>modify the Change Management Plan</strong> during the execution phase and include the circumstances leading to the modifications and to the end results. Clearly identify if new items were added, if current items were eliminated, altered, or realigned in response to internal or external pressures.
 
-   5. Describe two major lessons learned from Change Management projects/processes that you have been involved in and explain how you included these lessons into current change projects going forward.
+   5. Describe two major <strong>lessons learned</strong> from Change Management projects/processes that you have been involved in and explain how you included these lessons into current change projects going forward.
 
-   As of this writing Nov 2022, there are 1,525 CCMPs. 
+   As of this writing Nov 2022, there were 1,525 CCMPs. 
    
    https://acmp.learningbuilder.com/Profile/MyAccount
    
@@ -337,6 +360,9 @@ Listed from cheapest to most expensive/prestigeous:
    7. Measurement and Benefit Realization
    8. Sustainability
    <br /><br />
+
+   ACMP provides <a target="_blank" href="https://acmp.learningbuilder.com/Public/PractitionerLookup/Search?ReturnToUrl=&FirstName=Wilson&LastName=Mar">its own certification verification/lookup page</a>.
+
 
 * In Australia, three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/cmi_change_manager_competency_models_preview_sept17.pdf">Change Manager Competency Model</a> and  <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the <a target="_blank" href="https://www.amazon.com/gp/product/1925171027/" title="March 31, 2022">The Effective Change Manager</a>. 
 
@@ -550,3 +576,19 @@ And the course provides and explains use of templates to use in your job as a ch
 
 "When environment are complex and dynamic, strategy is about adaptability"
 -- MIT Sloan magazine Dec 2020, article "The Essence of Strategy Is Now How to Change" by B. Tom Hunsaker, Jonathan Knowles
+
+## Social groups
+
+* https://www.linkedin.com/groups/63688/ Organizational Change Practitioners
+
+* https://www.linkedin.com/groups/96892/ Change Consulting DIGITAL TRANSFORMATION CHANGE MANAGEMENT STRATEGY INNOVATION DISRUPT AGILE SCRUM 136,073 members
+
+## Consultancies
+
+* https://www.ibm.com/downloads/cas/YPAPB0A2
+* https://www.accenture.com/nl-en/blogs/insights/mappe-model-for-transformation
+* https://www.accenture.com/us-en/services/talent-organization/change-management
+* https://www.accenture.com/ie-en/case-studies/about/it-change-adoption
+
+* https://www.bain.com/consulting-services/change-management-results-delivery/
+

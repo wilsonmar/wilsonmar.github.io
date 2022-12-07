@@ -3,8 +3,8 @@ layout: post
 date: "2022-10-22"
 file: "hashicorp-boundary"
 title: "HashiCorp Boundary"
-excerpt: "Granular control of least-privilege just-in-time access to remotely access using SSH & RDP, to follow Zero-Trust principles"
-tags: [HashiCorp, Network]
+excerpt: "Secure SSH accessing servers in AWS and other clouds: implement Zero-Trust with granular control of least-privilege just-in-time access using HashiCorp Boundary"
+tags: [Zero-Trust, HashiCorp, Network]
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -15,6 +15,10 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+Zero-Trust is about shifting from obsolete assumptions, processes, and tools.
+
+Do not leave <strong>long-term SSH keys</strong> around to be stolen?
 
 HashiCorp's Boundary is revolutionizing how we connect remotely into servers.
 
@@ -744,3 +748,4 @@ Which app can talk with each service?
 
 <a name="[1]"></a> <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I">VIDEO: HashiConf Digital Keynote - Boundary</a> by CTO Armon Dadgar explains Boundary vs. Traditional Access approaches
 
+https://goteleport.com/blog/how-uber-netflix-facebook-do-ssh/

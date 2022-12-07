@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-17"
+date: "2022-12-04"
 file: "hashicorp-consul"
 title: "HashiCorp Consul"
 excerpt: "Enterprise-grade secure Zero-Trust routing to replace East-West load-balancing using service names rather than static IP addresses. Enhance Service Mesh with mTLS and health-based APIs in AWS, Azure, GCP, and other clouds running Kubernetes as well as ECS, EKS, VMs, databases, even mainframes outside Kubernetes"
@@ -2710,10 +2710,8 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 
 ### Consul Templates
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=kW0Vi3RvbvA&t=16m6s" title="Thomas Kula">VIDEO</a>
-   <br /><br />
-
-Consul-template is a separate binary which reads a template file to substitue variables defined between {{ }} ("moustashe quotes" ) and replace each with values. An example:
+<a target="_blank" href="https://www.youtube.com/watch?v=kW0Vi3RvbvA&t=16m6s" title="by Thomas Kula in 2019">VIDEO</a>:
+Consul-template is a separate binary/executable which reads a template file to substitute variables defined between \{\{ \}\} ("moustashe quotes") and replace each with values. An example:
 
    <pre>[client]
 host={{ env "DB_HOSTNAME" }}
@@ -2724,6 +2722,11 @@ password={{ .Data.password }}
 # Lease: {{ .LeaseID }}
 {{ end }}
    </pre>
+
+   <a target="_blank" href="https://medium.com/@serg-digitalis/cassandra-ssl-certificates-rotation-e4ff6fe86493">
+   "Cassandra SSL certificates rotation"</a> shows how The consul-template daemon can query Vault to retrieve the SSL cert with two added bonuses: it will update the cert when it expires and it can run an arbitrary command (a script here) used to reload the certificates. The template definition (contents in the example) can be stored into different files but Sergio shows how to use it all in one as it reduces the number of config files that need to copy over to each database node.
+
+   <a target="_blank" href="https://github.com/hashicorp/consul-template/blob/main/docs/templating-language.md#pkicert">Definition of the templating language</a>
 
 
 <a name="RunForeground"></a>

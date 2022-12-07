@@ -376,9 +376,12 @@ FreeCodeCamp.org
 
 ## Community
 
-* <a target="_blank" href="https://www.reddit.com/r/learnpython/">LearPython SubReddit</a>
+* <a target="_blank" href="https://www.reddit.com/r/learnpython/">LearnPython SubReddit</a>
 
 * <a target="_blank" href="https://stackoverflow.com/questions/tagged/python">Stack Overflow questions and answers tagged "Python"</a>
+
+* <a target="_blank" href="https://kodekloud.com/community/c/python/18">Q&A participants</a>
+
 
 ## Desktop apps
 
@@ -394,6 +397,10 @@ https://dev.to/sewinter/25-best-github-repos-for-python-developers-5419?utm_sour
 
 https://github.com/GeekTrainer/Introduction-Programming-Python
 by Christopher Harrison, Program Manager at Microsoft Cloud & AI.
+
+## References
+
+<a target="_blank" href="https://kodekloud.com/community/c/python/18">KodeKloud's Q&A about the Python Entry Level Programmer Certification and Certified Associate in Python Programming</a>
 
 
 ## More on Python
