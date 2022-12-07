@@ -82,16 +82,17 @@ So here it is, our ecosystem your you to create secure Terraform, the first time
 
 <hr />
 
-
 <a name="CoreWorkflow"></a>
 
 ## Core Workflow, Automated
 
+PROTIP: Here is how to get started, from scratch, the quickest (and safest) way with the most automation:
+
 1. <a href="#TaskTemplate">In GitHub create a Template repo for Task to install tools/utilities locally</a>
 1. <a href="#KnownGoodProjects">Obtain known-good Terraform code (from GitHub or Terraform.io)</a>
 
-1. Obtain cloud credentials from AWS, Azure, GCP, etc.
-1. Navigate to the folder where .tf files are located.
+1. Navigate to the folder where your HCL-formatted <tt>.tf</tt> files are located.
+1. Obtain cloud credentials and network info from AWS, Azure, GCP, etc.
 1. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
 
    The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
@@ -138,29 +139,29 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
 9. Within folder <tt>.github</tt>, the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json</a>
 
-10. View file <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions"><strong>.tool-versions</strong></a> listing versions of tools/utilities. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
+9. View file <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions"><strong>.tool-versions</strong></a> listing versions of tools/utilities. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
    
    <a name="tool-versions"></a>
 
-    * <a target="_blank" href="https://github.com/hashicorp/terraform/releases">terraform</a> [See <a target="_blank" href="https://wilsonmar.github.io/terraform/">my tutorial on Terraform</a>]
+   * <a target="_blank" href="https://github.com/hashicorp/terraform/releases">terraform</a> [See <a target="_blank" href="https://wilsonmar.github.io/terraform/">my tutorial on Terraform</a>]
     
-    * <a target="_blank" href="https://github.com/terraform-docs/terraform-docs/releases">terraform-docs</a> - Generate documentation from Terraform modules in various output formats 
+   * <a target="_blank" href="https://github.com/terraform-docs/terraform-docs/releases">terraform-docs</a> - Generate documentation from Terraform modules in various output formats 
     
-    * <a target="_blank" href="https://github.com/minamijoyo/tfupdate/releases">tfupdate</a> - Update version constraints in your Terraform configurations
+   * <a target="_blank" href="https://github.com/minamijoyo/tfupdate/releases">tfupdate</a> - Update version constraints in your Terraform configurations
     
-    * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.
+   * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.
     
-    * <a target="_blank" href="https://github.com/aquasecurity/tfsec/releases">tfsec</a> - Security scanner for your Terraform code. TODO: Use other scanners as well?
+   * <a target="_blank" href="https://github.com/aquasecurity/tfsec/releases">tfsec</a> - Security scanner for your Terraform code. TODO: Use other scanners as well?
     
-    * <a target="_blank" href="https://github.com/pre-commit/pre-commit/releases">pre-commit</a> - A framework for managing and maintaining multi-language git pre-commit hooks (that automates actions).
+   * <a target="_blank" href="https://github.com/pre-commit/pre-commit/releases">pre-commit</a> - A framework for managing and maintaining multi-language git pre-commit hooks (that automates actions).
     
-    * <a target="_blank" href="https://www.python.org/downloads/">python</a> - The Python programming language [See <a target="_blank" href="https://wilsonmar.github.io/python/">my tutorial on Python</a>]
+   * <a target="_blank" href="https://www.python.org/downloads/">python</a> - The Python programming language [See <a target="_blank" href="https://wilsonmar.github.io/python/">my tutorial on Python</a>]
     
-    * <a target="_blank" href="https://github.com/mvdan/sh/releases">shfmt</a> -  A shell parser, formatter, and interpreter with bash support; includes shfmt
+   * <a target="_blank" href="https://github.com/mvdan/sh/releases">shfmt</a> -  A shell parser, formatter, and interpreter with bash support; includes shfmt
     
-    * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
+   * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
     
-    * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
+   * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
     <br /><br />
    
 11. Install the tools/utilities on your mac as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
