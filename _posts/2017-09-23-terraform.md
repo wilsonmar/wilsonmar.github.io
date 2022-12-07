@@ -88,21 +88,21 @@ So here it is, our ecosystem your you to create secure Terraform, the first time
 
 PROTIP: Here is how to get started, from scratch, the quickest (and safest) way with the most automation:
 
-1. <a href="#TaskTemplate">In GitHub create a Template repo for Task to install tools/utilities locally</a>
-1. <a href="#KnownGoodProjects">Obtain known-good Terraform code (from GitHub or Terraform.io)</a>
+1. <a href="#TaskTemplate">Use the GitHub Template to create your repo and use Task to install tools/utilities locally</a>
+2. <a href="#KnownGoodProjects">Obtain known-good Terraform code (from GitHub or Terraform.io)</a>
 
-1. Navigate to the folder where your HCL-formatted <tt>.tf</tt> files are located.
-1. Obtain cloud credentials and network info from AWS, Azure, GCP, etc.
-1. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
+3. Navigate to the folder where your HCL-formatted <tt>.tf</tt> files are located.
+4. Obtain cloud credentials and network info from AWS, Azure, GCP, etc.
+5. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
 
    The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
 
-1. <tt>terraform init</tt> 
-1. <tt>terraform plan -out plan_file</tt>
-1. Scan Terraform files for violation of policies (running TFSec, etc.)
-1.  <tt>terraform apply plan_file</tt>
+6. <tt>terraform init</tt> 
+7. <tt>terraform plan -out plan_file</tt>
+8. Scan Terraform files for violation of policies (running TFSec, etc.)
+9.  <tt>terraform apply plan_file</tt>
    
-1. If defined, local and/or remote provisioners (such as Ansible) are run on servers to configure their processes.
+10. If defined, local and/or remote provisioners (such as Ansible) are run on servers to configure their processes.
 <br /><br />
 
 <hr />
@@ -139,7 +139,7 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
 9. Within folder <tt>.github</tt>, the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json</a>
 
-9. View file <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions"><strong>.tool-versions</strong></a> listing versions of tools/utilities. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
+9. <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions">View file  <strong>.tool-versions</strong></a> listing versions of each tool/utility. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">GitHub issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
    
    <a name="tool-versions"></a>
 
@@ -168,7 +168,7 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
    
     <pre><strong>task init</strong></pre>
 
-    <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/Taskfile.yaml">Taskfile.yaml</a> is what the <tt>task init</tt> command runs. Note it uses <a target="_blank" href="https://asdf-vm.com/">ASDF</a>, which provides a single CLI tool and command interface to manage the install of <strong>multiple versions of each project</strong> runtime.
+    This command runs the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/Taskfile.yaml">Taskfile.yaml</a>. Note it invokes <a target="_blank" href="https://asdf-vm.com/">ASDF</a>, which provides a single CLI tool and command interface to manage the install of <strong>multiple versions of each project</strong> runtime.
 
     Notice that to add a utility, both the <tt>Taskfile.yaml</tt> and <tt>.tool-versions</tt> files need to be edited.
 
@@ -187,14 +187,16 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a>
     <br /><br />
 
-13. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines for each type of file the indents Visual Studio Code should use, to ensure consistent formatting.
+13. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
 
 14. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
    
-    * https://github.com/pre-commit/pre-commit-hooks/releases/
-    * https://github.com/antonbabenko/pre-commit-terraform/releases/
-    * https://github.com/syntaqx/git-hooks/releases/
-    <br />
+   * https://github.com/pre-commit/pre-commit-hooks/releases/
+  
+   * https://github.com/antonbabenko/pre-commit-terraform/releases/
+
+   * https://github.com/syntaqx/git-hooks/releases/
+   <br /><br />
 
 15. Within the <tt>.github/workflows</tt> folder, 
 
@@ -204,10 +206,11 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 ## Known-Good Terraform Code
 
 <a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">AWS Partner Solutions</a> (formerly Quick Starts) include:
-    * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-ipam">Terraform Module for create AWS IPAM Resources</a>
-    * https://github.com/kalenarndt/terraform-vault-consul-k8s-integration
-    * TODO: <em>More to come</em>
-    <br />
+
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-ipam">Terraform Module for create AWS IPAM Resources</a>
+   * https://github.com/kalenarndt/terraform-vault-consul-k8s-integration
+   * TODO: <em>More to come</em>
+   <br /><br />
 
 1.  Edit Terraform-related code files:
 
