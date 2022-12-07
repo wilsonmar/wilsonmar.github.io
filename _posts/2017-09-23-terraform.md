@@ -191,12 +191,12 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
 14. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
    
-   * https://github.com/pre-commit/pre-commit-hooks/releases/
+    * https://github.com/pre-commit/pre-commit-hooks/releases/
   
-   * https://github.com/antonbabenko/pre-commit-terraform/releases/
+    * https://github.com/antonbabenko/pre-commit-terraform/releases/
 
-   * https://github.com/syntaqx/git-hooks/releases/
-   <br /><br />
+    * https://github.com/syntaqx/git-hooks/releases/
+    <br /><br />
 
 15. Within the <tt>.github/workflows</tt> folder, 
 
