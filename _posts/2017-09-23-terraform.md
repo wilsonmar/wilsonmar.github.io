@@ -50,6 +50,7 @@ The <strong>AWS Config</strong> service logs every change in configuration of re
 The <strong>AWS Security Hub</strong> service looks in logs for vulnerabilities to issue <strong>Findings</strong> based on its own “AWS Foundations” set of <strong>policies</strong>. AWS provides a webpage of <strong>recommendations</strong> for remediation, but only by using its own GUI or CloudFormation code, not Terraform coding.
 
 More importantly, findings from AWS are raised for resource which have already been manifested on the internet, and thus vulnerable to public attack.
+
 In today's hostile internet, we can't risk an incremental approach to achieving the security needed. We really need to achieve full "security maturity" in our Terraform code the first time we deploy it onto the internet.
 
 PROTIP: We prevent vulnerabilities <srong>before</strong> they are created as vulnerable resources by finding <strong>violations</strong> in Infrastructure definition code, using a CI/CD pipeline to run <strong>static scans</strong> referencing <strong>Policies as Code</strong>.
@@ -132,29 +133,31 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
    <pre><strong>clone git clone git@github.com:<em>your_acct</em>/<em>your_repo_name</em>.git ; cd <em>your_repo_name</em>
 
-9. View file <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions">.tool-versions</a> listing versions of utilities. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
+9. Within folder <tt>.github</tt>, the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json</a>
    
-   * <a target="_blank" href="https://github.com/hashicorp/terraform/releases">terraform</a>
-   * <a target="_blank" href="https://github.com/terraform-docs/terraform-docs/releases">terraform-docs</a> - Generate documentation from Terraform modules in various output formats 
-   * <a target="_blank" href="https://github.com/minamijoyo/tfupdate/releases">tfupdate</a> - Update version constraints in your Terraform configurations
-   * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.
-   * <a target="_blank" href="https://github.com/aquasecurity/tfsec/releases">tfsec</a> - Security scanner for your Terraform code
-   * <a target="_blank" href="https://github.com/pre-commit/pre-commit/releases">pre-commit</a> - A framework for managing and maintaining multi-language pre-commit hooks.
-   * <a target="_blank" href="https://www.python.org/downloads/">python</a> - The Python programming language
-   * <a target="_blank" href="https://github.com/mvdan/sh/releases">shfmt</a> -  A shell parser, formatter, and interpreter with bash support; includes shfmt
-   * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
-   * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
-   <br />
+10. View file <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions">.tool-versions</a> listing versions of utilities. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
    
-10. Initialize the utilities on your mac as outlined in .tools-versions
+    * <a target="_blank" href="https://github.com/hashicorp/terraform/releases">terraform</a>
+    * <a target="_blank" href="https://github.com/terraform-docs/terraform-docs/releases">terraform-docs</a> - Generate documentation from Terraform modules in various output formats 
+    * <a target="_blank" href="https://github.com/minamijoyo/tfupdate/releases">tfupdate</a> - Update version constraints in your Terraform configurations
+    * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.
+    * <a target="_blank" href="https://github.com/aquasecurity/tfsec/releases">tfsec</a> - Security scanner for your Terraform code
+    * <a target="_blank" href="https://github.com/pre-commit/pre-commit/releases">pre-commit</a> - A framework for managing and maintaining multi-language pre-commit hooks.
+    * <a target="_blank" href="https://www.python.org/downloads/">python</a> - The Python programming language
+    * <a target="_blank" href="https://github.com/mvdan/sh/releases">shfmt</a> -  A shell parser, formatter, and interpreter with bash support; includes shfmt
+    * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
+    * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
+    <br />
    
-    task init
+11. Initialize the utilities on your mac as outlined in .tools-versions
+   
+    <pre><strong>task init</strong></pre>
 
     <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/Taskfile.yaml">Taskfile.yaml</a> is what the <tt>task init</tt> command runs.
 
     Note that to add a utility, both the <tt>Taskfile.yaml</tt> and <tt>.tool-versions</tt> files need to be edited.
 
-11. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions to be installed in Visual Studio Code:
+12. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions to be installed in Visual Studio Code:
 
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=pjmiravalle.terraform-advanced-syntax-highlighting">pjmiravalle.terraform-advanced-syntax-highlighting</a>
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">editorconfig.editorconfig</a>
@@ -169,15 +172,17 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a>
     <br />
 
-12. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines for each type of file the indents Visual Studio Code should use, to ensure consistent formatting.
+13. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines for each type of file the indents Visual Studio Code should use, to ensure consistent formatting.
 
-13. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a>
+14. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a>
     to verify the version numbers:
    
     * https://github.com/pre-commit/pre-commit-hooks/releases/
     * https://github.com/antonbabenko/pre-commit-terraform/releases/
     * https://github.com/syntaqx/git-hooks/releases/
     <br />
+
+15. Within the <tt>.github/workflows</tt> folder, 
 
 
 <a name="KnownGoodProjects"></a>
