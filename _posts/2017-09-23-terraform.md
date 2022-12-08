@@ -223,11 +223,13 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
 8. Construct a command to download the repo you created above:
 
-   <pre><strong>clone git clone git@github.com:<em>your_acct</em>/<em>your_repo_name</em>.git ; cd <em>your_repo_name</em>
+   <pre><strong>clone git clone git@github.com:<em>your_acct</em>/<em>your_repo_name</em>.git
+   cd <em>your_repo_name</em>
+   </strong></pre>
 
-9. Within folder <tt>.github</tt>, the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json</a>
+   PROTIP: Pick a name with the most important keywords first.
 
-9. <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions">View file  <strong>.tool-versions</strong></a> listing versions of each tool/utility. A <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">GitHub issue such as this</a> is created by <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a> to identify version upgrades which Kalen will update:
+9. <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.tool-versions">File <strong>.tool-versions</strong></a> specifies current versions of each tool/utility installed. 
    
    <a name="tool-versions"></a>
 
@@ -250,8 +252,20 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
    * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
     
    * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
-   
-10. Install the tools/utilities on your mac as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
+
+1. But rather than occassionally checking manually, <strong>Kalen updates</strong> each version based on <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">GitHub issue such as this</a> created automatically by the <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a>. The "renovate" utility automates update of 3rd-party dependencies (Multi-platform and multi-language) via pull requests. It is configured by <a target="_blank" href="https://docs.renovatebot.com/presets-default/#dependencydashboard">preset "extends"</a> (like ESLint).
+
+   References: 
+   * https://docs.renovatebot.com/
+   * https://www.mend.io/free-developer-tools/renovate/
+   * https://www.augmentedmind.de/2021/07/25/renovate-bot-cheat-sheet/
+   * https://blog.logrocket.com/renovate-dependency-updates-on-steroids/
+   <br /><br />
+
+1. FYI: Whether settings define whether pre-commit and asdf are enabled is specified in the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json file</a> within folder <tt>.github</tt>. 
+
+
+1. Install the tools/utilities on your laptop as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
    
     <pre><strong>task init</strong></pre>
 
@@ -263,7 +277,7 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     
     asdf is used instead of switching among different versions of Terraform using <tt>tfenv</tt> or the little-known <a target="_blank" href="https://blog.gruntwork.io/installing-multiple-versions-of-terraform-with-homebrew-899f6d124ff9">Homebrew pin and switch commands pointing to different git commits</a>.
 
-11. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions Kalen likes to be installed in Visual Studio Code:
+1. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions Kalen likes to be installed in Visual Studio Code:
 
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=pjmiravalle.terraform-advanced-syntax-highlighting">pjmiravalle.terraform-advanced-syntax-highlighting</a>
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">editorconfig.editorconfig</a>
@@ -278,9 +292,9 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a>
     <br /><br />
 
-12. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
+1. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
 
-13. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
+1. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
    
     * https://github.com/pre-commit/pre-commit-hooks/releases/
   
@@ -288,9 +302,9 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
     * https://github.com/syntaqx/git-hooks/releases/
 
-14. Within the <tt>.github/workflows</tt> folder is the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/workflows/push-tf-registry.yml">push-tf-registry.yml file</a> which defines GitHub Actions to "Release to terraform public registry" specific SHA's.
+1. QUESTION: Within the <tt>.github/workflows</tt> folder is the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/workflows/push-tf-registry.yml">push-tf-registry.yml file</a> which defines GitHub Actions to "Release to terraform public registry" specific SHA's.
 
-renovate chore(deps): pin dependencies 
+   <tt>renovate chore(deps): pin dependencies</tt>
 
 <hr />
 
@@ -301,26 +315,86 @@ Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
 
 ## 4) Sample Terraform Code
 
-Let's learn from others.
+PROTIP: It's too dangerous to start from scratch because misconfigurations can cost large cloud bills and leak valuable data. So let's learn from others.
 
-<a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">AWS Partner Solutions</a> (formerly Quick Starts) include:
+PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes cloud service is the least time-consuming (but costs the most).
 
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Cloud 
+   </th><th> VMs 
+   </th><th> Container 
+   </th><th> <a href="#Kubernetes">K8s</a> 
+   </th></tr>
+<tr valign="top"><td> AWS
+   </td><td> <a href="#EC2" title="Elastic Compute Cloud">EC2</a>
+   </td><td> <a href="#ECS" title="Elastic Container Service">ECS</a>
+   </td><td> <a href="#EKS" title="Elastic Kubernetes Service">EKS</a> 
+   </td></tr>
+<tr valign="top"><td> Azure
+   </td><td> <a href="#AVM" title="Azure Virtual Machines">AVM</a> 
+   </td><td> <a href="#ACS" title="Azure Container Service">ACS</a> 
+   </td><td> <a href="#AKS" title="Azure Kubernetes Service">AKS</a> 
+   </td></tr>
+<tr valign="top"><td> GCP 
+   </td><td> <a href="#GCE" title="Google Cloud Engine">GCE</a> 
+   </td><td> <a href="#GCS" title="Google Container Service">GCS</a> 
+   </td><td> <a href="#GKE" title="Google Kubernetes Engine">GKE</a> 
+   </td></tr>
+</table>
+
+
+<a name="Kubernetes"></a>
+
+### Terraform Kubernetes
+
+Docs on Terraform Kubernetes:
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
+   * https://opensource.com/article/20/7/terraform-kubernetes
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=-UtqHkrvFro">VIDEO: Terraforming the Kubernetes Land</a> Oct 13, 2017 by <a target="_blank" href="https://www.linkedin.com/in/radeksimko/">Radek Simko</a> (@RadekSimko)
+
+   * https://logz.io/blog/kubernetes-as-a-service-gke-aks-eks/
+
+### Amazon
+
+The AWS Partner Solutions website has "Quick Starts" of IaC code.
+<a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">A search of for "terraform"</a> include:
+
+   * <a target="_blank" href="https://aws.amazon.com/solutions/partners/terraform-modules/?quickstart-all.sort-by=item.additionalFields.sortDate&quickstart-all.sort-order=desc">Terraform modules</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-vpc">Amazon VPC for Terraform on AWS</a> Provisions Amazon Virtual Private Cloud (Amazon VPC) resources managed by Terraform on the Amazon Web Services (AWS) Cloud.
    * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-ipam">Terraform Module for create AWS IPAM Resources</a>
-   * https://github.com/kalenarndt/terraform-vault-consul-k8s-integration
-   * TODO: <em>More to come</em>
+
+   * https://github.com/aws-quickstart/quickstart-eks-hashicorp-consul
+   * https://aws-quickstart.github.io/quickstart-hashicorp-consul/
    <br /><br />
 
-1. View or download to your containing folder:
+<a name="EC2"></a>
 
-   <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+<a name="ECS"></a>
+   https://developer.hashicorp.com/consul/tutorials/cloud-production/consul-ecs-hcp
 
-2. Or:
+   https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
+
+<a name="EKS"></a>
+
+https://github.com/hashicorp/terraform-aws-consul-ent-k8s
+
+### Azure
+
+<a name="AVM"></a>
+https://learn.microsoft.com/en-us/azure/architecture/aws-professional/compute
+<a name="ACS"></a>
+<a name="AKS"></a>
+
+https://github.com/hashicorp/terraform-azure-consul-ent-k8s
 
    <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
 cd terraform-on-azure
    </strong></pre>
 
-   The repo contains these folders:
+   It contains these folders:
    * 01-intro
    * 02-init-plan-apply-destroy
    * 03-terraform-state
@@ -329,27 +403,24 @@ cd terraform-on-azure
    * 06-advanced-hcl
    <br /><br />
 
-Others:
-
-   https://github.com/Capgemini/terraform-amazon-ecs/
-
-   https://akhilmovva.com/projects/
-
-<a name="Kubernetes"></a>
-
-### Terraform Kubernetes
-
    https://github.com/KevinDMack/TerraformKubernetes
    to establish K8S using Packer within Azure 
 
-Docs on Terraform Kubernetes:
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
-   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
-   * https://opensource.com/article/20/7/terraform-kubernetes
 
-Videos:
-   * <a target="_blank" href="https://www.youtube.com/watch?v=-UtqHkrvFro">Terraforming the Kubernetes Land</a> Oct 13, 2017 by <a target="_blank" href="https://www.linkedin.com/in/radeksimko/">Radek Simko</a> (@RadekSimko)
+### Google
+
+<a name="GCE"></a>
+https://www.msp360.com/resources/blog/azure-vm-vs-amazon-ec2-vs-google-ce-cloud-computing-comparison/
+<a name="GCS"></a>
+
+<a name="GKE"></a>
+
+https://github.com/hashicorp/terraform-gcp-consul-ent-k8s
+
+### CI/CD
+
+   <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+
 
 <a name="Terraspace"></a>
 
@@ -368,6 +439,9 @@ Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/d
    * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
    <br /><br />
 
+### Specific app (Consul)
+
+https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample helm values file.
 
 <hr />
 
@@ -379,12 +453,49 @@ Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
 
 PROTIP: Consistent definition of HCL folders and files in your Terraform projects would enhance efficiency and teamwork.
 
+
+<a name="tfvars"></a>
+
+### tfvars files
+
+REMEMBER: Files named with the <tt>.tfvars</tt> file ending extension contains actual <strong>values</strong> used in each environment (dev, qa, stage, prod). 
+
+Each environment has different needs. For example, the number of instances:
+
+   * In dev,   <tt>env_instance_count = 1</tt>
+   * In qa,    <tt>env_instance_count = 2</tt>
+   * In stage, <tt>env_instance_count = 4</tt>
+   * In prod,  <tt>env_instance_count = 4</tt>
+   <br /><br />
+
+PROTIP: Since there can be secret values, use a mechanism that guarantees the file is never uploaded into GitHub. 
+
+The <tt>terraform.auto.tfvars</tt> file should be specified in .gitignore.
+
+In <a target="_blank" href="https://www.youtube.com/watch?v=M90VcTPkb3w&t=1h44m7s">VIDEO: "Bootstrapping Terraform Secrets with 1Password CLI"</a>, <a target="_blank" href="https://www.linkedin.com/in/jillian-wilson/">Jillian (Wilson) Morgan</a> shows that plaintext secrets can be replaced with a reference to 1Password protocol "op://". Within 1Password, the "devs" vault, "gcp" item, "credentials" field:
+
+   <pre>GOOGLE_CREDENTIAL=op://devs/gcp/credential
+   </pre>
+
+To populate, run a keyboard alias command that executes:
+
+   <pre>op run --env-file=.env terraform apply
+   </pre>
+
+References: 
+   * https://developer.1password.com/docs/cli
+   * https://1password.developers
+   * https://join.slack.com/t/1password-devs/shared_invite/zt-1halo11ps-609pEv96xZ3LtX_VEOfJQA
+   <br /><br />   
+
+References:
+   * https://www.terraform.io/language/modules/develop/structure
+   * https://www.baeldung.com/ops/terraform-best-practices
+   <br /><br />
+
 <a name="HCL"></a>
 
 ### What's HCL?
-
-
-### HCL (HashiCorp Configuration Language) comments
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
 
@@ -403,7 +514,7 @@ PROTIP: Consistent definition of HCL folders and files in your Terraform project
 
    `\` back-slashes specify continuation of long lines (as in Bash).
 
-<a name="Files"></a>
+<a name="HCL_Files"></a>
 
 ### Files in the root folder:
 
@@ -427,24 +538,8 @@ The root folder of <strong>each module</strong> should contain these files:
 
 * <a target="_blank" href="https://www.terraform.io/language/values/variables"><tt>variables.tf</tt></a> declares a description and optional default values for each variable in *.tf files
 
-### tfvars files
 
-* terraform.auto.tfvars
-
-REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environment (dev, qa, stage, prod). For example, within
-
-   * In dev,   <tt>env_instance_count = 1</tt>
-   * In qa,    <tt>env_instance_count = 2</tt>
-   * In stage, <tt>env_instance_count = 4</tt>
-   * In prod,  <tt>env_instance_count = 4</tt>
-   <br /><br />
-
-References:
-   * https://www.terraform.io/language/modules/develop/structure
-   * https://www.baeldung.com/ops/terraform-best-practices
-   <br /><br />
-
-<a name="Folders"></a>
+<a name="HCL_Folders"></a>
 
 ### Folders in the project:
 
@@ -603,7 +698,7 @@ HashiCorp doesn't have a deeper/more difficult "Professional level" cert at time
 
 ### Infrastructure as Code (IaC) Provisioning Options
 
-The objective is to accellerate work AND <strong>save money</strong> by automating the configuration of servers and other resources quicker and more consistently than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
+The objective is to accelerate work AND <strong>save money</strong> by automating the configuration of servers and other resources quicker and more consistently than manually clicking through the GUI. That's called the <a target="_blank" href="https://apparently.me.uk/terraform-environment-application-pattern/overview.html"> "Infrastructure-Application Pattern (I-A)"</a>.
 
 <a target="_blank" href="https://blog.gruntwork.io/why-we-use-terraform-and-not-chef-puppet-ansible-saltstack-or-cloudformation-7989dad2865c">BLOG: Analysis</a>:
 
