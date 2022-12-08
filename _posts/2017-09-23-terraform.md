@@ -29,6 +29,14 @@ This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> intr
 <a target="_blank" href="https://www.youtube.com/watch?v=HmxkYNv1ksg" title="2020 by Sai Vennom when he was at IBM">
 <img width="1680" alt="terraform-ibm-sai-vennam-3360x2100" src="https://user-images.githubusercontent.com/300046/161367565-7e7871ee-176f-4964-bd12-1b6f05534a6d.png"></a>
 
+<a name="Repeatable"></a>
+
+Repeatable from versioning: Terraform provides a <strong>single consistent set of commands and workflow</strong> on all clouds. That is "future proofing" infastructure work.
+
+<a name="Versioned"></a>
+
+Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
+
 
 <a name="LearningStrategy"></a>
 
@@ -84,32 +92,119 @@ So here it is, our ecosystem your you to create secure Terraform, the first time
 
 <a name="CoreWorkflow"></a>
 
-## Core Workflow, Automated
+## Terraform Usage Workflow Stages, Automated
 
 PROTIP: Here is how to get started, from scratch, the quickest (and safest) way with the most automation:
 
-1. <a href="#TaskTemplate">Use the GitHub Template to create your repo and use Task to install tools/utilities locally</a>
-2. <a href="#KnownGoodProjects">Obtain known-good Terraform code (from GitHub or Terraform.io)</a>
+1. <a href="#BaseTooling">Install base tools/utilities locally on your mac</a>.
+2. <a href="#TaskTemplate">Use the GitHub Template to create your repo and use Task to install tools/utilities locally</a>.
+3. <a href="#KnownGoodProjects">Obtain sample Terraform code</a> (from GitHub or Terraform.io module registry).
+4. <a href="#Folders">Define your Terraform project's folders and files</a>.
 
-3. Navigate to the folder where your HCL-formatted <tt>.tf</tt> files are located.
-4. Obtain cloud credentials and network info from AWS, Azure, GCP, etc.
-5. Define values for variables (AWS credentials and other secrets) or retrieve a variables file from a vault.
+5. Obtain cloud credentials, <a href="#cidr-subnet-function">network CIDR subnet</a> definitions, and other preferences for your region(s) in AWS, Azure, GCP, etc., securely saved to and retrieved from a secure secrets vault.
+6. Code cloud resources in HCL-formatted <tt>.tf</tt> files.
 
-   The <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform "happy path" workflow</a> consists of <a target="_blank" href="https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code">these steps</a>:
-
-6. <tt>terraform init</tt> 
-7. <tt>terraform plan -out plan_file</tt>
-8. Scan Terraform files for violation of policies (running TFSec, etc.)
-9.  <tt>terraform apply plan_file</tt>
+7. Use GitHub Actions to automatically kick off a CI/CD run instead of typing <a href="#AdhocCLIcommands">ad-hoc CLI commands</a> to <a href="#Testing">test Terraform</a>.
    
-10. If defined, local and/or remote provisioners (such as Ansible) are run on servers to configure their processes.
+8. If defined, provisioners for <a href="#remote-exec-on-target-machines">remote-exec</a> and <a href="#local-exec-provisioner-ansible">local-exec (such as Ansible)</a> are run on servers to configure their processes.
+9. Optionally, <a href="#dependency-graph-for-visualization">Generate a Dependency Graph for visualization</a>.
+10. Identify security issues running in the cloud (using AWS Config, etc.).
+11. Perform tuning using <a href="#densify-finops">Densify</a> for Finops, etc.
 <br /><br />
 
 <hr />
 
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
+
+<a name="BaseTooling"></a>
+
+## 1) Install base tools/utilities
+
+1. In a Terminal, if you haven't already, install Homebrew (see https://brew.sh).
+1. Use Homebrew to install base tools/utilities:
+
+   <pre><strong>brew install jq, tree, git
+   brew install go-task/tap/go-task  # https://taskfile.dev/
+   </strong></pre>
+
+   <pre><strong>brew install --cask visual-studio-code</strong></pre>
+
+1. If you prefer using Python, there is a Python module to provide a wrapper of terraform command line tool at <a target="_blank" href="https://github.com/beelit94/python-terraform">https://github.com/beelit94/python-terraform</a>
+
+   <a name="KeyboardAliases"></a>
+
+   ### CLI Keyboard aliases
+
+2. To save time typing <a href="#TerraformCommands">Ad hoc Terraform CLI commands</a>, define keyboard aliases in a shell file such as my <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh">.aliases.zsh</a> : 
+
+   <pre>alias tf="terraform $1"  # provide a parameter
+alias tfa="terraform apply -auto-approve"
+alias tfd="terraform destroy"
+alias tffd="terraform fmt -diff"
+alias tfi="terraform init"
+alias tfp="terraform plan"
+alias tfr="terraform refresh"
+alias tfs="terraform show"
+alias tfsl="terraform state list"
+alias tfsp="terraform state pull"
+alias tfv="terraform validate"
+   </pre>
+
+
+   ### Shell files to call
+
+1. PROTIP: To save yourself typing (and typos), define a shell file to invoke each different pipeline:
+
+   <pre><strong>chmod +x abc-dev-fe.sh
+abc-dev-fe.sh
+   </strong></pre>
+
+   <pre><strong>chmod +x abc-stage-fe.sh
+abc-stage-fe.sh
+   </strong></pre>
+
+
+   ### Precedence of value override
+
+   Terraform provides different mechanisms for obtaining dynamic values.
+
+   When troubleshooting, REMEMBER: the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
+
+1. Environment variables defined in shell files are <strong>overridden by all other ways</strong> of specifying data:
+
+   <pre><strong>export TFVAR_filename="/.../abc-stage.txt"</strong></pre>
+
+   Alternately, specify a value for the variable "env" (abbreviation for environment) after prefix <tt>TF_VAR_</tt>:
+
+   <pre><strong>TF_VAR_env=staging</strong></pre>
+
+   CAUTION: It's best to avoid using enviornment variables to store secrets because other programs can read snoop in memory.
+   When using environment variables to set sensitive values, those values remain in your environment and command-line history.
+
+2. Within <tt>terraform.tfvars</tt>
+
+3. Within <tt>terraform.tfvars.json</tt>
+
+4. Within <tt>*.auto.tfvars</tt> (in alphabetical order)
+
+   <pre>filename = "/root/something.txt"</pre>
+
+5. Command-line flags -var or -var-file <strong>overrides all</strong> other techniques of providing values:
+
+   <pre><strong>terraform apply -var "filename=/.../xxx-staging.txt"</strong></pre>
+
+   Values for variables can be specified at run-time using variables names starting with "TF_VAR_", such as:
+
+   But unlike other systems, environment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
+
+
+<hr />
+
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
+
 <a name="TaskTemplate"></a>
 
-### Task Template to Install Utilities Locally
+## 2) Task Template to Install Utilities Locally
 
 PROTIP: Several utilities are needed to ensure the correctness and security of each type of file used.
 Using the latest version may not result in all of them working well together.
@@ -124,14 +219,7 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 4. Type a Repository name (which I call <em>your_repo_name</em> below)
 5. Click the green "Create repository from template". 
 
-6. In a Terminal, if you haven't already, install Homebrew (see https://brew.sh).
-7. Use Homebrew to install utilities:
-
-   <pre><strong>brew install jq, tree, git
-   brew install go-task/tap/go-task  # https://taskfile.dev/
-   </strong></pre>
-
-   <pre><strong>brew install --cask visual-studio-code</strong></pre>
+   In a Terminal app:
 
 8. Construct a command to download the repo you created above:
 
@@ -149,7 +237,7 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     
    * <a target="_blank" href="https://github.com/minamijoyo/tfupdate/releases">tfupdate</a> - Update version constraints in your Terraform configurations
     
-   * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by Bridgecrew.
+   * <a target="_blank" href="https://github.com/bridgecrewio/checkov/releases">checkov</a> - Prevent cloud misconfigurations and find vulnerabilities during build-time in infrastructure as code, container images and open source packages with Checkov by <a target="_blank" href="https://bridgecrew.io/platform/">Bridgecrew</a> (owned by Prisma Cloud).
     
    * <a target="_blank" href="https://github.com/aquasecurity/tfsec/releases">tfsec</a> - Security scanner for your Terraform code. TODO: Use other scanners as well?
     
@@ -162,17 +250,20 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
    * <a target="_blank" href="https://github.com/koalaman/shellcheck/releases">shellcheck</a> - ShellCheck, a static analysis tool for shell scripts
     
    * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
-    <br /><br />
    
-11. Install the tools/utilities on your mac as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
+10. Install the tools/utilities on your mac as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
    
     <pre><strong>task init</strong></pre>
 
-    This command runs the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/Taskfile.yaml">Taskfile.yaml</a>. Note it invokes <a target="_blank" href="https://asdf-vm.com/">ASDF</a>, which provides a single CLI tool and command interface to manage the install of <strong>multiple versions of each project</strong> runtime.
+    This command runs the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/Taskfile.yaml">Taskfile.yaml</a>.
 
     Notice that to add a utility, both the <tt>Taskfile.yaml</tt> and <tt>.tool-versions</tt> files need to be edited.
 
-12. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions to be installed in Visual Studio Code:
+    Note that Task invokes <a target="_blank" href="https://asdf-vm.com/">ASDF</a>, which provides a single CLI tool and command interface to manage the install of <strong>multiple versions of each project</strong> runtime. [<a target="_blank" href="https://asdf-vm.com/guide/introduction.html">Intro doc</a>] 
+    
+    asdf is used instead of switching among different versions of Terraform using <tt>tfenv</tt> or the little-known <a target="_blank" href="https://blog.gruntwork.io/installing-multiple-versions-of-terraform-with-homebrew-899f6d124ff9">Homebrew pin and switch commands pointing to different git commits</a>.
+
+11. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions Kalen likes to be installed in Visual Studio Code:
 
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=pjmiravalle.terraform-advanced-syntax-highlighting">pjmiravalle.terraform-advanced-syntax-highlighting</a>
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">editorconfig.editorconfig</a>
@@ -187,23 +278,30 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a>
     <br /><br />
 
-13. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
+12. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
 
-14. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
+13. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
    
     * https://github.com/pre-commit/pre-commit-hooks/releases/
   
     * https://github.com/antonbabenko/pre-commit-terraform/releases/
 
     * https://github.com/syntaqx/git-hooks/releases/
-    <br /><br />
 
-15. Within the <tt>.github/workflows</tt> folder, 
+14. Within the <tt>.github/workflows</tt> folder is the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/workflows/push-tf-registry.yml">push-tf-registry.yml file</a> which defines GitHub Actions to "Release to terraform public registry" specific SHA's.
 
+renovate chore(deps): pin dependencies 
 
+<hr />
+
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
+
+<a name="SampleTF"></a>
 <a name="KnownGoodProjects"></a>
 
-## Known-Good Terraform Code
+## 4) Sample Terraform Code
+
+Let's learn from others.
 
 <a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">AWS Partner Solutions</a> (formerly Quick Starts) include:
 
@@ -212,91 +310,186 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
    * TODO: <em>More to come</em>
    <br /><br />
 
-1.  Edit Terraform-related code files:
+1. View or download to your containing folder:
 
-    * main.tf
-    * outputs.tf
-    * providers.tf
-    * terraform.auto.tfvars
-    * variables.tf
-    * versions.tf
-    <br /><br />
+   <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+
+2. Or:
+
+   <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
+cd terraform-on-azure
+   </strong></pre>
+
+   The repo contains these folders:
+   * 01-intro
+   * 02-init-plan-apply-destroy
+   * 03-terraform-state
+   * 04-variables
+   * 05-modules
+   * 06-advanced-hcl
+   <br /><br />
+
+Others:
+
+   https://github.com/Capgemini/terraform-amazon-ecs/
+
+   https://akhilmovva.com/projects/
+
+<a name="Kubernetes"></a>
+
+### Terraform Kubernetes
+
+   https://github.com/KevinDMack/TerraformKubernetes
+   to establish K8S using Packer within Azure 
+
+Docs on Terraform Kubernetes:
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
+   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
+   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
+   * https://opensource.com/article/20/7/terraform-kubernetes
+
+Videos:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=-UtqHkrvFro">Terraforming the Kubernetes Land</a> Oct 13, 2017 by <a target="_blank" href="https://www.linkedin.com/in/radeksimko/">Radek Simko</a> (@RadekSimko)
+
+<a name="Terraspace"></a>
+
+### Terraspace generates IaC code
+
+<a target="_blank" href="https://learn.boltops.com/courses/terraspace-fundamentals/lessons/terraspace-getting-started-with-aws">VIDEO</a>: <a target="_blank" href="https://terraspace.cloud/">Terraspace.cloud</a> dynamically generates Terraform projects in a centralized manner (which eliminates duplication). 
+So the whole stack can be brought up by a single command: <a target="_blank" href="https://www.youtube.com/watch?v=GjlWeYAGWIE">VIDEO</a>:
+
+   <ul><pre>terraspace up STACK</pre></ul>
+
+<a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
+Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
+
+Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
+
+   * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
+   <br /><br />
 
 
 <hr />
 
-<a name="Atlantis"></a>
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
 
-## Atlantis on Terraform
+<a name="Conventions"></a>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">*</a>
-ensure code reviews.
+## 4) Terraform project conventions
 
-Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined HashiCorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
-It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
+PROTIP: Consistent definition of HCL folders and files in your Terraform projects would enhance efficiency and teamwork.
 
-Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
+<a name="HCL"></a>
 
-![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
+### What's HCL?
 
-Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to trigger Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
 
-<a name="AtlantisWorkflow"></a>
+### HCL (HashiCorp Configuration Language) comments
 
-### Atlantis-based workflow with Terraform Enterprise
+<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
 
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
+   Terraform defined HCL (HashiCorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
+   https://www.terraform.io/docs/configuration/syntax.html">
+   https://www.terraform.io/docs/configuration/syntax.html</a>.
+   
+   Terraform supports JSON syntax to read output from programmatic creation of such files.
+   The name suffix of files containing JSON "*.tf.json".
 
-1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
+   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
 
-   CAUTION: This is a static secret which should be updated occassionally.
+   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
+   
+   Multi-line comments are wrapped between `/*` and `*/`.
 
-   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
+   `\` back-slashes specify continuation of long lines (as in Bash).
 
-   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
+<a name="Files"></a>
 
-2. Copy in base Terraform configuration files. 
+### Files in the root folder:
 
-   Within files are references to reusable <strong>modules</strong> used by other projects.
+The root folder of the repo should contain these files:
 
-   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
+* <a href="#.gitignore"><tt><strong>.gitignore</strong></tt></a> - files and folders to not add and push to GitHub
 
-3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
+* <tt><strong>LICENSE</strong></tt> - (no file extension) to define the legal aspects (whether it's open source)
 
-4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
+The root folder of <strong>each module</strong> should contain these files:
 
-   <pre>resource "null_resource" "demo" {}</pre>
+* <tt><strong>README.md</strong></tt> describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
 
-5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
+* <a href="#main.tf"><tt>main.tf</tt></a> is the <strong>entry point</strong> of the module.
 
-   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
+* <tt>providers.tf</tt>
 
-6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
+* <a target="_blank" href="https://www.terraform.io/language/values/outputs"><tt>outputs.tf</tt></a> defines data values output by a terraform run.
 
-   and adds comments on the pull request
-   in addition to creating an execution plan with dependencies.
+* <tt>versions.tf</tt>
 
-   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
+* <a target="_blank" href="https://www.terraform.io/language/values/variables"><tt>variables.tf</tt></a> declares a description and optional default values for each variable in *.tf files
 
-   https://www.runatlantis.io/docs/autoplanning.html#example
+### tfvars files
 
-   <a name="Sentinel"></a>
+* terraform.auto.tfvars
 
-   ### Sentinal apply
+REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environment (dev, qa, stage, prod). For example, within
 
-7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
+   * In dev,   <tt>env_instance_count = 1</tt>
+   * In qa,    <tt>env_instance_count = 2</tt>
+   * In stage, <tt>env_instance_count = 4</tt>
+   * In prod,  <tt>env_instance_count = 4</tt>
+   <br /><br />
 
-8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
+References:
+   * https://www.terraform.io/language/modules/develop/structure
+   * https://www.baeldung.com/ops/terraform-best-practices
+   <br /><br />
 
-9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
+<a name="Folders"></a>
 
-    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
+### Folders in the project:
 
-    https://www.runatlantis.io/docs/security.html#mitigations
+Within folder <strong>examples</strong>
 
-    Note that apply creates tfstate files.
+Within folder <strong>test</strong>
 
-10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
+Within folder <a href="#Modules"><strong>modules</strong></a>
+
+   * install-vault
+      * install-vault.sh
+   * run-vault
+      * run-vault.sh
+   * vault-cluster
+   * vault-security-group-rules
+   * vault-elb
+   &nbsp;
+   * IAM <em>(folder)</em>
+      * README.md
+      * <a href="#variables.tf">variables.tf</a>
+      * <a href="#main.tf">main.tf</a>
+      * <a href="#Outputs.tf">outputs.tf</a>
+   * Network <em>(folder)</em>
+      * ...
+<br /><br />
+
+REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
+
+
+
+<hr />
+
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
+
+## 5) Obtain cloud credentials and network preferences
+
+
+
+<hr />
+
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
+
+<a name="HCL"></a>
+
+## 6) Code cloud resources in HCL
 
 
 <hr />
@@ -308,9 +501,11 @@ Pluralsight has a 20-question assessment: <a target="_blank" href="https://app.p
    * Add Terraform to a CI/CD Pipeline
    * Automate infrastructure deployment
    * Create and import Modules
+
    * Implement Terraform with AWS
    * Implement Terraform with Google Cloud Platform
    * Implement Terraform with Microsoft Azure
+  
    * Import data from external sources
    * Install and Run Terraform
    * Manage State in Terraform
@@ -404,18 +599,6 @@ HashiCorp doesn't have a deeper/more difficult "Professional level" cert at time
 
 <hr />
 
-<a name="Repeatable"></a>
-
-### Repeatable from versioning
-
-Terraform provides a <strong>single consistent set of commands and workflow</strong> on all clouds.
-That is "future proofing" infastructure work.
-
-
-<a name="Versioned"></a>
-
-Use of <strong>version-controlled</strong> configuration files in an elastic cloud means that the infrastructure Terraform creates can be treated as <strong>disposable</strong>. This is a powerful concept. Parallel production-like environments can now be created easily (without ordering hardware) temporarily for experimentation, testing, and redundancy for High Availability.
-
 <a name="IaC"></a>
 
 ### Infrastructure as Code (IaC) Provisioning Options
@@ -450,7 +633,6 @@ Kubernetes orchestrates (brings up and down) Docker containers.
 Pulumi (see my notes on it)
 
 dagger.io
-
 
 <a name="CFN"></a>
 
@@ -563,11 +745,6 @@ It was migrated from homebrew/cask to homebrew/core.
    </pre>
 
    Note there are back versions of terraform (11, 12, 13, etc.).
-
-   ### Several versions of Terraform
-
-1. PROTIP: To switch among different versions of Terraform, one option is to use little-known Homebrew pin and switch commands pointing to different git commits, as described at:
-   https://blog.gruntwork.io/installing-multiple-versions-of-terraform-with-homebrew-899f6d124ff9
 
 
    ### Standard Homebrew install
@@ -882,25 +1059,6 @@ https://plugins.jetbrains.com/plugin/7808-terraform-and-hcl
 
 
 
-<a name="Terraspace"></a>
-
-### Terraspace generates IaC code
-
-<a target="_blank" href="https://learn.boltops.com/courses/terraspace-fundamentals/lessons/terraspace-getting-started-with-aws">VIDEO</a>: <a target="_blank" href="https://terraspace.cloud/">Terraspace.cloud</a> dynamically generates Terraform projects in a centralized manner (which eliminates duplication). 
-So the whole stack can be brought up by a single command: <a target="_blank" href="https://www.youtube.com/watch?v=GjlWeYAGWIE">VIDEO</a>:
-
-   <ul><pre>terraspace up STACK</pre></ul>
-
-<a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
-Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
-
-Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
-
-References:
-   * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
-   <br /><br />
-
-
 <hr />
 
 <a name="Issues"></a>
@@ -1172,40 +1330,6 @@ https://medium.com/bridgecrew/terragoat-vulnerable-by-design-terraform-training-
 
 <hr />
 
-<a name="SampleTF"></a>
-
-## Sample Terraform repositories   
-
-Let's learn from others.
-
-1. View or download to your containing folder:
-
-   <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
-
-1. Or:
-
-   <pre><strong>git clone https://github.com/lukeorellana/terraform-on-azure
-cd terraform-on-azure
-   </strong></pre>
-
-   The repo contains these folders:
-   * 01-intro
-   * 02-init-plan-apply-destroy
-   * 03-terraform-state
-   * 04-variables
-   * 05-modules
-   * 06-advanced-hcl
-   <br /><br />
-
-Others:
-
-   https://github.com/Capgemini/terraform-amazon-ecs/
-
-   https://akhilmovva.com/projects/
-
-   https://github.com/KevinDMack/TerraformKubernetes
-   to establish K8S using Packer within Azure 
-
 <a name="Gruntwork"></a>
 
 ### Gruntwork's sample
@@ -1274,22 +1398,6 @@ For those who can't subscribe, Yevegeniy (Jim) Brikman (<a target="_blank" href=
 
 ## Standard Files and Folders Structure
 
-According to 
-   * https://www.terraform.io/language/modules/develop/structure
-   * https://www.baeldung.com/ops/terraform-best-practices
-   <br /><br />
-
-The root folder for a Terraform module should contain these files:
-
-* README.md describes to humans how the module works. REMEMBER: Don't put a README file within internal module folders because its existance determines whether a module is considered usable by an external user.
-* LICENSE - (no file extension) to define the legal aspects (whether it's open source)
-
-* <a href="#.gitignore">.gitignore</a> - files and folders to not add and push to GitHub
-* <a href="#main.tf">main.tf</a> - the entry point of the module
-* <a target="_blank" href="https://www.terraform.io/language/values/outputs">outputs.tf</a> - Values output by run
-* <a target="_blank" href="https://www.terraform.io/language/values/variables">variables.tf</a> - declares a description and optional default values for each variable in *.tf files
-<br /><br />
-
 <a target="_blank" href="https://gruntwork.teachable.com/courses/494207/lectures/9081271">
 VIDEO: In this 2 hour video mastercourse "The Gruntwork Infrastructure Module Cookbook" on Teachable</a>, 
 <a target="_blank" href="https://www.linkedin.com/in/jbrikman/">Yevgeniy (Jim) Brikman (of Gruntwork)</a> demos the logic of how to structure (from 2017, before Workspaces) a Terraform project folder such as <a target="_blank" href="https://github.com/gruntwork-io/terragrunt-infrastructure-live-example/">Gruntwork's example</a>: Gruntwork recommends separate folders:
@@ -1298,61 +1406,7 @@ VIDEO: In this 2 hour video mastercourse "The Gruntwork Infrastructure Module Co
    * mysql (db)
    <br /><br />
 
-* <a href="#Modules">modules/</a>
-   * install-vault
-      * install-vault.sh
-   * run-vault
-      * run-vault.sh
-   * vault-cluster
-   * vault-security-group-rules
-   * vault-elb
-   &nbsp;
-   * IAM <em>(folder)</em>
-      * README.md
-      * <a href="#variables.tf">variables.tf</a>
-      * <a href="#main.tf">main.tf</a>
-      * <a href="#Outputs.tf">outputs.tf</a>
-   * Network <em>(folder)</em>
-      * ...
-   &nbsp;
-* <strong>examples</strong> <em>(folder)</em>
-* <strong>test</strong>
-<br /><br />
-
-REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
-
-REMEMBER: A <tt>.tfvars</tt> file defines the actual values used in each environmet (dev, qa, stage, prod).
-For example: 
-
-   * In dev,   <tt>env_instance_count = 1</tt>
-   * In qa,    <tt>env_instance_count = 2</tt>
-   * In stage, <tt>env_instance_count = 4</tt>
-   * In prod,  <tt>env_instance_count = 4</tt>
-   <br /><br />
-
 <hr />
-
-<a name="HCL"></a>
-
-## HCL (HashiCorp Configuration Language) comments
-
-<a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=3h46m36s">VIDEO</a>:
-
-   Terraform defined HCL (HashiCorp Configuration Language) for both human and machine consumption. HCL is defined at <a target="_blank" href="https://github.com/hashicorp/hcl">https://github.com/hashicorp/hcl</a> and described at <a target="_blank" href="
-   https://www.terraform.io/docs/configuration/syntax.html">
-   https://www.terraform.io/docs/configuration/syntax.html</a>.
-   
-   Terraform supports JSON syntax to read output from programmatic creation of such files.
-   The name suffix of files containing JSON "*.tf.json".
-
-   HCL is less verbose than JSON and more concise than YML. <a target="_blank" href="https://www.terraform.io/docs/configuration/syntax.html">*</a> 
-
-   Unlike JSON and YML, <strong>HCL allows annotations (comments)</strong>. As in bash scripts: single line comments start with `#` (pound sign) or `//` (double forward slashes). 
-   
-   Multi-line comments are wrapped between `/*` and `*/`.
-
-   `\` back-slashes specify continuation of long lines (as in Bash).
-
 
 <a name="variables.tf"></a>
    
@@ -1629,7 +1683,7 @@ In this minimal sample file for Azure:
 
 ## Multi-cloud/service
 
-Terraform is better characterized as a <strong>multi-service</strong> tool rather than a "multi-cloud tool". PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
+Terraform is more accurately characterized as a "<strong>multi-service</strong>" tool rather than a "multi-cloud tool" because PROTIP: One would need to rewrite templates to move from, say, AWS to Azure. Terraform doesn't abstract resources needed to do that. However, it does ease migration among clouds to avoid cloud vendor lock-in.
 
 Terraform provides an alternative to each cloud vendor's IaC solution:
    * <a href="#CFN">AWS - Cloud Formation</a> & CDK
@@ -2272,79 +2326,6 @@ The problem with that is <strong>duplicated</strong> terragrunt.hcl configuratio
 
 <hr />
 
-<a name="Config"></a>
-
-## Configuration
-
-Instructions below are for the Command Line. 
-
-If you prefer using Python, there is a Python module to provide a wrapper of terraform command line tool at <a target="_blank" href="https://github.com/beelit94/python-terraform">https://github.com/beelit94/python-terraform</a>
-
-
-### Command Alias list & help
-
-1. For a list of commands, use the abbreviated alternate to the `terraform` command:
-
-   <tt><strong>tf</strong></tt>
-
-   Alternately, use the long form:
-
-   <tt><strong>terraform</strong></tt>
-
-   Either way, the response is a menu (at time of writing):
-
-   <pre>Usage: terraform [global options] &LT;subcommand> [args]
-&nbsp;
-The available commands for execution are listed below.
-The primary workflow commands are given first, followed by
-less common or more advanced commands.
-&nbsp;
-Main commands:
-  init          Prepare your working directory for other commands
-  validate      Check whether the configuration is valid
-  plan          Show changes required by the current configuration
-  apply         Create or update infrastructure
-  destroy       Destroy previously-created infrastructure
-&nbsp;
-All other commands:
-  console       Try Terraform expressions at an interactive command prompt
-  fmt           Reformat your configuration in the standard style
-  force-unlock  Release a stuck lock on the current workspace
-  get           Install or upgrade remote Terraform modules
-  graph         Generate a Graphviz graph of the steps in an operation
-  import        Associate existing infrastructure with a Terraform resource
-  login         Obtain and save credentials for a remote host
-  logout        Remove locally-stored credentials for a remote host
-  output        Show output values from your root module
-  providers     Show the providers required for this configuration
-  refresh       Update the state to match remote systems
-  show          Show the current state or a saved plan
-  state         Advanced state management
-  taint         Mark a resource instance as not fully functional
-  test          Experimental support for module integration testing
-  untaint       Remove the 'tainted' state from a resource instance
-  version       Show the current Terraform version
-  workspace     Workspace management
-&nbsp;
-Global options (use these before the subcommand, if any):
-  -chdir=DIR    Switch to a different working directory before executing the
-                given subcommand.
-  -help         Show this help output, or the help for a specified subcommand.
-  -version      An alias for the "version" subcommand.
-   </pre>
-
-   NOTE: The `terraform remote` command configures remote state storage.
-
-   BLAH: Terraform doesn't have an alias command (like Git) to add custom subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
-
-3. Install Terragrunt wrapper:
-
-   https://github.com/gruntwork-io/terragrunt
-
-3. Help on a specific command, for example:
-
-   <pre><strong>terraform plan --help</strong></pre>
-
 
    <a name="Console"></a>
 
@@ -2384,19 +2365,6 @@ Terraform language style conventions include:
   * Indent using two spaces (not tabs).
 
   * A space before and after "=" assignment is not required, but makes for easier reading.
-
-1. To validate whether HCL files are syntactically valid and internally consistent, regardless of any provided variables or existing state. Also, correctness of attribute names and value types:
-
-   <pre><strong>terraform validate</strong>
-
-   This is automatically run when terraform plan or terraform apply is run.
-
-1. To reformat HCL files according to <a target="_blank" href="https://www.terraform.io/docs/configuration/style.html">rules</a>.
-
-   <pre><strong>terraform fmt -diff</strong>
-
-   This is a destructive command, so make sure to <tt>git commit</tt> before the command.
-
 
 
 <hr />
@@ -2460,7 +2428,7 @@ The module's source can be on a local disk:
 
    The source can be from a GitHub repo such as <a target="_blank" href="https://github.com/objectpartners/tf-modules">https://github.com/objectpartners/tf-modules</a>
 
-    <pre>module "rancher" {
+   <pre>module "rancher" {
   source = "<a target="_blank" href="https://github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590">github.com/objectpartners/tf-modules//rancher/server-standalone-elb-db&ref=9b2e590</a>"
 }
    </pre>
@@ -2639,9 +2607,9 @@ For example</a>, to create a simple AWS VPC (Virtual Private Cloud),
 }
    </pre>
 
-   * "azs" designates Availability Zones.
+   REMEMBER: "azs" designates Availability Zones.
 
-   PROTIP: Remember: a common mistake under each <tt>module</tt> is that <a href="#Providers">providers</a> are specified within a list:
+   PROTIP: Remember: a common mistake under each <tt>module</tt> is forgetting that <a href="#Providers">providers</a> are specified within a list:
 
    <pre>module "vpc" {
    source = "terraform-aws-modules/vpc/aws"
@@ -2724,9 +2692,6 @@ Videos:
    * <a target="_blank" href="https://www.udemy.com/course/terraform-on-azure-2021/">
    1.5 hr Udemy video course: Terraform on Azure 2021</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-orellana/">Luke Orellana</a> under Mike Pfiffer's CloudSkills.io at https://github.com/CloudSkills/Terraform-Projects/tree/master/4-Build-Azure-Infrastructure
    * <a target="_blank" href="https://www.udemy.com/course/learning-terraform-on-microsoft-azure/">Learning Terraform on Microsoft Azure - Terraform v12 / v13</a>
-
-<hr />
-
 
 <hr />
    
@@ -3009,18 +2974,6 @@ Docs:
 
 <hr />
 
-## How to call
-
-   PROTIP: To save yourself typing (and typos), define a shell file to invoke each different pipeline:
-
-   <pre><strong>chmod +x abc-dev-fe.sh
-abc-dev-fe.sh
-   </strong></pre>
-
-   <pre><strong>chmod +x abc-stage-fe.sh
-abc-stage-fe.sh
-   </strong></pre>
-
 ### Handle secrets in *.tfvars securely
 
    PROTIP: Since *.tfvars files typically containing secrets, handle them securely.
@@ -3051,44 +3004,42 @@ variable "database_username" {
    </pre>
 
 
-### Precedence of value override
-
-Terraform provides different mechanisms for obtaining dynamic values.
-
-When troubleshooting, REMEMBER: the order of precedence<a target="_blank" href="https://kodekloud.com/topic/using-variables-in-terraform/">*</a>
-
-1. Environment variables defined in shell files are <strong>overridden by all other ways</strong> of specifying data:
-
-   <pre><strong>export TFVAR_filename="/.../abc-stage.txt"</strong></pre>
-
-   Alternately, specify a value for the variable "env" (abbreviation for environment) after prefix <tt>TF_VAR_</tt>:
-
-   <pre><strong>TF_VAR_env=staging</strong></pre>
-
-   CAUTION: It's best to avoid using enviornment variables to store secrets because other programs can read snoop in memory.
-   When using environment variables to set sensitive values, those values remain in your environment and command-line history.
-
-2. Within <tt>terraform.tfvars</tt>
-
-3. Within <tt>terraform.tfvars.json</tt>
-
-4. Within <tt>*.auto.tfvars</tt> (in alphabetical order)
-
-   <pre>filename = "/root/something.txt"</pre>
-
-5. Command-line flags -var or -var-file <strong>overrides all</strong> other techniques of providing values:
-
-   <pre><strong>terraform apply -var "filename=/.../xxx-staging.txt"</strong></pre>
-
-   Values for variables can be specified at run-time using variables names starting with "TF_VAR_", such as:
-
-   But unlike other systems, environment variables have less precedence than -var-file and -var definitions, followed by automatic variable files.
-
 <hr />
+
+<a name="TerraformCommands"></a>
+
+## Terraform CLI Commands
+
+
+   Use them to perform the <a target="_blank" href="https://www.terraform.io/guides/core-workflow.html">traditional core Terraform "happy path" workflow</a> consists of <a target="_blank" href="https://developer.hashicorp.com/terraform/tutorials/aws-get-started/infrastructure-as-code">these steps</a>:
+
+   <a name="AdhocCLIcommands"></a>
+
+   ### Ad hoc Terraform CLI commands
+
+1. <tt>terraform init</tt> 
+1. <tt>terraform validate</tt>
+1. <tt>terraform plan -out plan_file</tt>
+1. Scan Terraform files for violation of policies (running TFSec, etc.)
+1. <tt>terraform apply plan_file</tt>
+
+1. To validate whether HCL files are syntactically valid and internally consistent, regardless of any provided variables or existing state. Also, correctness of attribute names and value types:
+
+   <pre><strong>terraform validate</strong>
+
+   This is automatically run when terraform plan or terraform apply is run.
+
+1. To reformat HCL files according to <a target="_blank" href="https://www.terraform.io/docs/configuration/style.html">rules</a>.
+
+   <pre><strong>terraform fmt -diff</strong>
+
+   This is a destructive command, so make sure to <tt>git commit</tt> before the command.
+
+
 
 <a name="tfplan"></a>
 
-## Terraform Plan command
+### Terraform Plan command
 
 <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h18m9s">VIDEO</a>:
 
@@ -3217,26 +3168,26 @@ output "private-dns" {
 
 1. List resources in the state:
 
-   <pre0<strong>terraform state list</strong></pre>
+   <pre><strong>terraform state list</strong></pre>
 
 1. Pull current remote state and output to stdout:
 
-   <pre0<strong>terraform state pull</strong></pre>
+   <pre><strong>terraform state pull</strong></pre>
 
 1. Push (update) remote state from a local state:
 
-   <pre0<strong>terraform state push</strong></pre>
+   <pre><strong>terraform state push</strong></pre>
 1. Show a specific resource in the state:
 
-   <pre0<strong>terraform state show</strong></pre>
+   <pre><strong>terraform state show</strong></pre>
 
 1. Move an item in the state (to change the reference) instead of renaming a module, which would result in a create and destroy action:
 
-   <pre0<strong>terraform state mv</strong></pre>
+   <pre><strong>terraform state mv</strong></pre>
 
 1. Remove instances from the state:
 
-   <pre0<strong>terraform state rm</strong></pre>
+   <pre><strong>terraform state rm</strong></pre>
 
    ### Alternative
 
@@ -3417,8 +3368,8 @@ resource "aws_instance" "foo" {
 ### Drift management
 
    * https://www.youtube.com/watch?v=CsCdEvZ5la0
-   * a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
-   <br /><hr />
+   * <a target="_blank" href="https://www.youtube.com/watch?v=V4waklkBC38&t=6h24m19s">VIDEO</a>:
+   <br /><br />
 
 Drift occurs when the actual state of resources provisioned diverges from the expected state.
 
@@ -4121,15 +4072,80 @@ CDK for Terraform
    </pre>
 
 
-<a name="Kubernetes"></a>
+<hr />
 
-### Terraform Kubernetes
+<a name="Atlantis"></a>
 
-Docs on Terraform Kubernetes:
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
-   * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
-   * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
-   * https://opensource.com/article/20/7/terraform-kubernetes
+## Atlantis on Terraform
+
+<a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">*</a>
+ensure code reviews.
+
+Atlantis was created in 2017 by Anubhav Mishra and Luke Kysow. Before they <a target="_blank" href="https://www.hashicorp.com/blog/terraform-collaboration-for-everyone">joined HashiCorp in 2018</a>, they saw Hootsuite use their <a target="_blank" href="https://github.com/runatlantis/atlantis">github.com/runatlantis/atlantis</a>, a self-hosted golang application that listens for Terraform pull request events via webhooks.
+It can run as a Golang binary or Docker image deployed on VMs, Kubernetes, Fargate, etc.
+
+Read the description and benefits at <a target="_blank" href="https://www.runatlantis.io/">runatlantis.io</a>:
+
+![terraform-atlantis-flow-1005x209](https://user-images.githubusercontent.com/300046/132090669-bae6deea-e658-4e5d-a0a7-8cfce44513f2.png) 
+
+Developers and Operations people type <tt><strong>atlantis plan</strong></tt> and <tt><strong>atlantis apply</strong></tt> in the GitHub GUI to trigger Atlantis invoking <tt>terraform plan</tt> and <tt>terraform apply</tt> in the CLI.
+
+<a name="AtlantisWorkflow"></a>
+
+### Atlantis-based workflow with Terraform Enterprise
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"><img alt="terraform-logical-flow-1249x626" width="1249" height="626" src="https://user-images.githubusercontent.com/300046/132103765-090a7081-6bb6-4f5f-838a-81e02e32dc30.png"></a>
+
+1. In your GitHub account Developer settings, generate a <a target="_blank" href="https://github.com/settings/tokens/new">Personal Access Token</a> (named "Terraform Atlantis") and check only repo scope (to run webhooks).
+
+   CAUTION: This is a static secret which should be updated occassionally.
+
+   Click the clipboard icon. On your MacOS Terminal, within a project folder, <a target="_blank" href="https://www.youtube.com/watch?v=TmIPWda0IKg">install Atlantis bootstrap</a> locally and provide the GitHub PAT.
+
+   Atlantis creates a starter GitHub repo, then downloads the ngrok utility to fork an "atlantis-example" repo under your account. It sets up a server at ngrok.io.
+
+2. Copy in base Terraform configuration files. 
+
+   Within files are references to reusable <strong>modules</strong> used by other projects.
+
+   An <a target="_blank" href="https://www.runatlantis.io/docs/custom-workflows.html#tfvars-files">atlantis.yaml file</a> specifies projects to be automatically planned when a module is modified.
+
+3. Manually run <tt>tf init</tt> to install cloud provider plug-ins.
+
+4. In main.tf add a null resource as a test: from perhaps https://github.com/jnichols3/terraform-envs
+
+   <pre>resource "null_resource" "demo" {}</pre>
+
+5. Anyone can open up a <strong>pull request</strong> in the GitHub repo holding your Terraform configuration files.
+
+   This ensures that other team members are aware of changes pending. When plan is run, the directory and Terraform workspace are Locked until the pull request is merged or closed, or the plan is manually deleted. With locking, you can ensure that no other changes will be made until the pull request is merged. https://www.runatlantis.io/docs/locking.html#why
+
+6. Instead of manually invoking <tt>terraform plan</tt>, Atlantis invokes them when <tt>atlantis plan</tt>is typed in GitHub GUI which triggers the Atlantis server to run. <a target="_blank" href="https://www.runatlantis.io/docs/autoplanning.html#example">Atlantis can be invoked automatically on any new pull request or new commit to an existing pull request</a>.
+
+   and adds comments on the pull request
+   in addition to creating an execution plan with dependencies.
+
+   <a target="_blank" href="https://www.runatlantis.io/guide/testing-locally.html#create-a-pull-request">atlantis plan can be for a specific directory or workspace</a>
+
+   https://www.runatlantis.io/docs/autoplanning.html#example
+
+   <a name="Sentinel"></a>
+
+   ### Sentinal apply
+
+7. Those licenced to use Terrform Cloud as a remote backend provisioner, <tt>sentinel apply</tt> is also invoked to create cost projections and policy alerts based on sentinel policy definitions.
+
+8. Someone else on your team reviews the pull request, makes edits and rerun <tt>atlantis plan</tt> several times before clicking <strong>approve PR</strong>.
+
+9. In a GitHub GUI comment, type <tt>atlantis apply</tt> to trigger Atlantis to run <tt>terraform apply</tt> and add comments about its provisioning of resources. Atlantis makes output from apply visible in GitHub.
+
+    Atlantis can be configured to automatically merge a pull request after all plans have been successfully applied.<a target="_blank" href="https://www.runatlantis.io/docs/automerging.html#how-to-enable">*</a>
+
+    https://www.runatlantis.io/docs/security.html#mitigations
+
+    Note that apply creates tfstate files.
+
+10. Optionally, a "local-exec" provisioner can invoke Ansible to configure programs inside each server.
 
 
 <hr />
@@ -4345,10 +4361,6 @@ Jun 26, 2017 by Nicki Watt, CTO at OpenCredo
 Journey to the Cloud with Packer and Terraform</a>
 Oct 12, 2017 by Nadeem Ahmad, Software Engineer at Box
 
-* <a target="_blank" href="https://www.youtube.com/watch?v=-UtqHkrvFro">
-Terraforming the Kubernetes Land</a>
-Oct 13, 2017 by Radek Simko (@RadekSimko), Terraform Expert HashiCorp
-
 * <a target="_blank" href="https://www.youtube.com/watch?v=Ynfo8qLb_Q8">
 [JFrog Webinar] Infrastructure as Code with Terraform</a>
 25:22
@@ -4422,6 +4434,77 @@ THE AWS INTEGRATION & AUTOMATION TEAM'S BEST PRACTICES FOR TERRAFORM
 https://www.youtube.com/watch?v=G7l6ggJit3Q
 HashiCorp - Terraform on AWS
 by Chris Dunlap
+
+
+
+<a name="Config"></a>
+
+## Configuration
+
+   ### Command Alias list & help
+
+1. Use the abbreviated alternate to the `terraform` command:
+
+   <tt><strong>tf</strong></tt>
+
+   Alternately, use the long form:
+
+   <tt><strong>terraform</strong></tt>
+
+   Either way, the response is a menu (at time of writing):
+
+   <pre>Usage: terraform [global options] &LT;subcommand> [args]
+&nbsp;
+The available commands for execution are listed below.
+The primary workflow commands are given first, followed by
+less common or more advanced commands.
+&nbsp;
+Main commands:
+  init          Prepare your working directory for other commands
+  validate      Check whether the configuration is valid
+  plan          Show changes required by the current configuration
+  apply         Create or update infrastructure
+  destroy       Destroy previously-created infrastructure
+&nbsp;
+All other commands:
+  console       Try Terraform expressions at an interactive command prompt
+  fmt           Reformat your configuration in the standard style
+  force-unlock  Release a stuck lock on the current workspace
+  get           Install or upgrade remote Terraform modules
+  graph         Generate a Graphviz graph of the steps in an operation
+  import        Associate existing infrastructure with a Terraform resource
+  login         Obtain and save credentials for a remote host
+  logout        Remove locally-stored credentials for a remote host
+  output        Show output values from your root module
+  providers     Show the providers required for this configuration
+  refresh       Update the state to match remote systems
+  show          Show the current state or a saved plan
+  state         Advanced state management
+  taint         Mark a resource instance as not fully functional
+  test          Experimental support for module integration testing
+  untaint       Remove the 'tainted' state from a resource instance
+  version       Show the current Terraform version
+  workspace     Workspace management
+&nbsp;
+Global options (use these before the subcommand, if any):
+  -chdir=DIR    Switch to a different working directory before executing the
+                given subcommand.
+  -help         Show this help output, or the help for a specified subcommand.
+  -version      An alias for the "version" subcommand.
+   </pre>
+
+   NOTE: The `terraform remote` command configures remote state storage.
+
+   BLAH: Terraform doesn't have an alias command (like Git) to add custom subcommands, so one has to remember which command is Terragrunt and which are standard Terraform?
+
+3. Install Terragrunt wrapper:
+
+   https://github.com/gruntwork-io/terragrunt
+
+3. Help on a specific command, for example:
+
+   <pre><strong>terraform plan --help</strong></pre>
+
 
 
 ## More on DevOps #
