@@ -325,17 +325,17 @@ PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes c
    </th><th> Container 
    </th><th> <a href="#Kubernetes">K8s</a> 
    </th></tr>
-<tr valign="top"><td> AWS
+<tr valign="top"><td> <a href="#AWS" title="Amazon Web Services">AWS</a>
    </td><td> <a href="#EC2" title="Elastic Compute Cloud">EC2</a>
    </td><td> <a href="#ECS" title="Elastic Container Service">ECS</a>
    </td><td> <a href="#EKS" title="Elastic Kubernetes Service">EKS</a> 
    </td></tr>
-<tr valign="top"><td> Azure
+<tr valign="top"><td> <a href="#Azure" title="Azure (by Microsoft)">Azure</a>
    </td><td> <a href="#AVM" title="Azure Virtual Machines">AVM</a> 
    </td><td> <a href="#ACS" title="Azure Container Service">ACS</a> 
    </td><td> <a href="#AKS" title="Azure Kubernetes Service">AKS</a> 
    </td></tr>
-<tr valign="top"><td> GCP 
+<tr valign="top"><td> <a href="#GCP" title="Google Cloud Program">GCP</a>
    </td><td> <a href="#GCE" title="Google Cloud Engine">GCE</a> 
    </td><td> <a href="#GCS" title="Google Container Service">GCS</a> 
    </td><td> <a href="#GKE" title="Google Kubernetes Engine">GKE</a> 
@@ -357,7 +357,10 @@ Docs on Terraform Kubernetes:
 
    * https://logz.io/blog/kubernetes-as-a-service-gke-aks-eks/
 
-### Amazon
+
+<a name="AWS"></a>
+
+### AWS
 
 The AWS Partner Solutions website has "Quick Starts" of IaC code.
 <a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">A search of for "terraform"</a> include:
@@ -379,7 +382,27 @@ The AWS Partner Solutions website has "Quick Starts" of IaC code.
 
 <a name="EKS"></a>
 
-https://github.com/hashicorp/terraform-aws-consul-ent-k8s
+https://aws.amazon.com/eks/ 
+
+PROTIP: Kubernetes has a lot of "knobs". So simplify by using "Blueprints" to "compose" complete EKS clusters that are fully bootstrapped with the operational software needed to deploy and operate workloads.
+
+1. <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">This blog</a> describes how to edit Blueprint configuration files within <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints">https://github.com/aws-ia/terraform-aws-eks-blueprints</a> to "enable" each pre-configured component to achieve the desired state of your EKS environment, such as the control plane, worker nodes, and Kubernetes add-ons, as an IaC blueprint. 
+
+   EKS Blueprints also helps you implement relevant security controls needed to operate workloads from multiple teams in the same cluster.
+
+2. Add <strong>add-ons</strong>, including Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
+
+   ### Consul add-on
+   
+   https://github.com/hashicorp/terraform-aws-consul-ent-k8s
+
+   https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
+
+1. <strong>Reuse</strong> configured blueprints to consistently "stamp out" instances across multiple AWS accounts and Regions using continuous deployment automation.
+
+<hr />
+
+<a name="Azure"></a>
 
 ### Azure
 
@@ -406,6 +429,9 @@ cd terraform-on-azure
    https://github.com/KevinDMack/TerraformKubernetes
    to establish K8S using Packer within Azure 
 
+<hr />
+
+<a name="GCP"></a>
 
 ### Google
 
@@ -417,10 +443,16 @@ https://www.msp360.com/resources/blog/azure-vm-vs-amazon-ec2-vs-google-ce-cloud-
 
 https://github.com/hashicorp/terraform-gcp-consul-ent-k8s
 
+
+<hr />
+
+<a name="CICD"></a>
+
 ### CI/CD
 
    <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
 
+<hr />
 
 <a name="Terraspace"></a>
 
@@ -438,10 +470,6 @@ Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/d
 
    * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
    <br /><br />
-
-### Specific app (Consul)
-
-https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample helm values file.
 
 <hr />
 
@@ -472,12 +500,14 @@ PROTIP: Since there can be secret values, use a mechanism that guarantees the fi
 
 The <tt>terraform.auto.tfvars</tt> file should be specified in .gitignore.
 
-In <a target="_blank" href="https://www.youtube.com/watch?v=M90VcTPkb3w&t=1h44m7s">VIDEO: "Bootstrapping Terraform Secrets with 1Password CLI"</a>, <a target="_blank" href="https://www.linkedin.com/in/jillian-wilson/">Jillian (Wilson) Morgan</a> shows that plaintext secrets can be replaced with a reference to 1Password protocol "op://". Within 1Password, the "devs" vault, "gcp" item, "credentials" field:
+In <a target="_blank" href="https://www.youtube.com/watch?v=M90VcTPkb3w&t=1h44m7s">VIDEO: "Bootstrapping Terraform Secrets with 1Password CLI"</a>, <a target="_blank" href="https://www.linkedin.com/in/jillian-wilson/">Jillian (Wilson) Morgan</a> shows that plaintext secrets can be replaced with a reference to 1Password protocol "op://". 
+
+1. Within 1Password, the "devs" vault, "gcp" item, "credentials" field:
 
    <pre>GOOGLE_CREDENTIAL=op://devs/gcp/credential
    </pre>
 
-To populate, run a keyboard alias command that executes:
+1. To populate, run a keyboard alias command that executes:
 
    <pre>op run --env-file=.env terraform apply
    </pre>
