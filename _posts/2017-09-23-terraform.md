@@ -439,7 +439,11 @@ Blueprints for Terraform is open-sourced two ways, in different repos and worksh
 
 #### EKS Blueprints for Terraform
 
-The manual steps and automation used below installs within AWS an EKS cluster containing:
+The manual steps and automation used below installs within AWS:
+
+   * A VPC with 3 Private Subnets and 3 Public Subnets
+   * EKS Cluster Control plane with one managed node group
+   * Internet gateway for Public Subnets and NAT Gateway for Private Subnets
 
    * AWS Load Balancer Controller
    * Cluster Autoscaler
@@ -461,6 +465,19 @@ Other <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-bluep
 
    PROTIP: Add-ons can be both open-source or licensed.
 
+<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">Modules</a> include:
+
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-fargate-profiles">aws-eks-fargate-profiles</a>
+   * aws-eks-managed-node-groups</a>
+   * aws-eks-self-managed-node-groups</a>
+   * aws-eks-teams</a>
+   * aws-kms</a>
+   * emr-on-eks</a>
+   * irsa</a>
+   * kubernetes-addons</a>
+   * launch-templates</a>
+   <br /><br />
+
 PROTIP: I created a shell script to automate the steps described in <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/">"Getting Started"</a>.
 
 1. Let's examine what it does:
@@ -481,19 +498,39 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
    <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">website "Amazon EKS Blueprints for Terraform"</a>.
    This results in the <tt>du -h</tt> command showing 26MB of disk space usage (instead of 40MB with all branches).
 
-   Upon failure, the script automatically runs <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/#cleanup">Cleanup <tt>terraform destroy</tt> commands</a>.
+   Upon failure, the script automatically runs <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/#cleanup">Cleanup <tt>terraform destroy</tt> commands</a> (unless the script's -xD parameter is specified).
+
+   <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc">Set your region</a>:   
+   <pre>export AWS_REGION=us-west-2
+   aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
+   aws configure list | grep region
+   aws configure get region --profile $PROFILE_NAME
+   terraform plan
+   </pre>
 
    PROTIP: Tfsec (and other scans of Terraform HCL) are run from the output of <tt>terraform plan</tt>.
 
    terraform apply -target="module.vpc" -auto
-   
+
    Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
+
+   kubectl config view --minify -o jsonpath='{.clusters[].name}'
+   
+   arn:aws:eks:us-west-2:670394095681:cluster/eks-cluster-with-new-vpc% 
+
+   configure_kubectl = "aws eks --region us-west-2 update-kubeconfig --name eks-cluster-with-new-vpc"
+   aws eks --region "$AWS_REGION" update-kubeconfig --name eks-cluster-with-new-vpc
+   </pre>
 
 2. Configure AWS credentials. The account used should be granted <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/iam/minimum-iam-policy/">this minimum set of IAM policies</a>.
 
 3. Run using parameters 
 
    https://github.com/wilsonmar/mac-setup/eks-start1.sh
+
+4. See UI
+5. Diagram resources.
+6. AWS Config. security alerts, if any.
 
 #### Next
 
@@ -558,6 +595,8 @@ https://www.msp360.com/resources/blog/azure-vm-vs-amazon-ec2-vs-google-ce-cloud-
 
 https://github.com/hashicorp/terraform-gcp-consul-ent-k8s
 
+1. To obtain the name of cluster (stored in custom metadata of nodes) from inside a node<a target="_blank" href="https://stackoverflow.com/questions/38242062/how-to-get-kubernetes-cluster-name-from-k8s-api">:</a>
+<pre>curl http://metadata/computeMetadata/v1/instance/attributes/cluster-name -H "Metadata-Flavor: Google"</pre>
 
 <hr />
 
