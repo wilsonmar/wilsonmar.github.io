@@ -99,10 +99,10 @@ PROTIP: Here is how to get started, from scratch, the quickest (and safest) way 
 1. <a href="#BaseTooling">Install base tools/utilities locally on your mac</a>.
 2. <a href="#TaskTemplate">Use the GitHub Template to create your repo and use Task to install tools/utilities locally</a>.
 3. <a href="#KnownGoodProjects">Obtain sample Terraform code</a> (from GitHub or Terraform.io module registry).
-4. <a href="#Folders">Define your Terraform project's folders and files</a>.
+4. Obtain cloud credentials, <a href="#cidr-subnet-function">network CIDR subnet</a> definitions, and other preferences for your region(s) in AWS, Azure, GCP, etc., securely saved to and retrieved from a secure secrets vault.
 
-5. Obtain cloud credentials, <a href="#cidr-subnet-function">network CIDR subnet</a> definitions, and other preferences for your region(s) in AWS, Azure, GCP, etc., securely saved to and retrieved from a secure secrets vault.
-6. Code cloud resources in HCL-formatted <tt>.tf</tt> files.
+5. <a href="#Folders">Define your Terraform project's folders and files</a>.
+6. Code resources in HCL-formatted <tt>.tf</tt> files.
 
 7. Use GitHub Actions to automatically kick off a CI/CD run instead of typing <a href="#AdhocCLIcommands">ad-hoc CLI commands</a> to <a href="#Testing">test Terraform</a>.
    
@@ -164,7 +164,7 @@ abc-stage-fe.sh
    </strong></pre>
 
 
-   ### Precedence of value override
+   ### tfvars & override precedence
 
    Terraform provides different mechanisms for obtaining dynamic values.
 
@@ -253,7 +253,9 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     
    * <a target="_blank" href="https://github.com/hashicorp/vault/releases">vault</a> - A tool for secrets management, encryption as a service, and privileged access management
 
-1. But rather than occassionally checking manually, <strong>Kalen updates</strong> each version based on <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">GitHub issue such as this</a> created automatically by the <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a>. The "renovate" utility automates update of 3rd-party dependencies (Multi-platform and multi-language) via pull requests. It is configured by <a target="_blank" href="https://docs.renovatebot.com/presets-default/#dependencydashboard">preset "extends"</a> (like ESLint).
+   * TODO: Install awscli, kubectl, etc. for <a href="#EKSBFT">Blueprints (below)</a> 
+
+10. But rather than occassionally checking manually, <strong>Kalen updates</strong> each version based on <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/issues/10">GitHub issue such as this</a> created automatically by the <a target="_blank" href="https://docs.renovatebot.com/key-concepts/dashboard/">Renovate dependency checker</a>. The "renovate" utility automates update of 3rd-party dependencies (Multi-platform and multi-language) via pull requests. It is configured by <a target="_blank" href="https://docs.renovatebot.com/presets-default/#dependencydashboard">preset "extends"</a> (like ESLint).
 
    References: 
    * https://docs.renovatebot.com/
@@ -262,10 +264,10 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
    * https://blog.logrocket.com/renovate-dependency-updates-on-steroids/
    <br /><br />
 
-1. FYI: Whether settings define whether pre-commit and asdf are enabled is specified in the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json file</a> within folder <tt>.github</tt>. 
+11. FYI: Whether settings define whether pre-commit and asdf are enabled is specified in the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/renovate.json">renovate.json file</a> within folder <tt>.github</tt>. 
 
 
-1. Install the tools/utilities on your laptop as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
+12. Install the tools/utilities on your laptop as defined in the <a href="#tool-versions">.tools-versions file described above</a>:
    
     <pre><strong>task init</strong></pre>
 
@@ -277,7 +279,7 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     
     asdf is used instead of switching among different versions of Terraform using <tt>tfenv</tt> or the little-known <a target="_blank" href="https://blog.gruntwork.io/installing-multiple-versions-of-terraform-with-homebrew-899f6d124ff9">Homebrew pin and switch commands pointing to different git commits</a>.
 
-1. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions Kalen likes to be installed in Visual Studio Code:
+13. Get to know the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.vscode/extensions.json">.vscode/extensions.json</a> file listing extensions Kalen likes to be installed in Visual Studio Code:
 
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=pjmiravalle.terraform-advanced-syntax-highlighting">pjmiravalle.terraform-advanced-syntax-highlighting</a>
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig">editorconfig.editorconfig</a>
@@ -292,9 +294,9 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
     * <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced">shd101wyy.markdown-preview-enhanced</a>
     <br /><br />
 
-1. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
+14. FYI: The <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.editorconfig">.editorconfig</a> file defines (for each type of file) the indents and other specifications Visual Studio Code should use to enforce consistent formatting.
 
-1. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
+15. View <strong>pre-commit</strong> actions defined in <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a> to verify the version numbers:
    
     * https://github.com/pre-commit/pre-commit-hooks/releases/
   
@@ -302,9 +304,22 @@ So the multi-talented <a target="_blank" href="https://www.linkedin.com/in/kalen
 
     * https://github.com/syntaqx/git-hooks/releases/
 
-1. QUESTION: Within the <tt>.github/workflows</tt> folder is the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/workflows/push-tf-registry.yml">push-tf-registry.yml file</a> which defines GitHub Actions to "Release to terraform public registry" specific SHA's.
+16. QUESTION: Within the <tt>.github/workflows</tt> folder is the <a target="_blank" href="https://github.com/kalenarndt/terraform-repo-template/blob/main/.github/workflows/push-tf-registry.yml">push-tf-registry.yml file</a> which defines GitHub Actions to "Release to terraform public registry" specific SHA's.
 
    <tt>renovate chore(deps): pin dependencies</tt>
+
+
+
+
+<hr />
+
+Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
+
+## 4) Obtain cloud credentials and network preferences
+
+
+
+
 
 <hr />
 
@@ -313,11 +328,11 @@ Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
 <a name="SampleTF"></a>
 <a name="KnownGoodProjects"></a>
 
-## 4) Sample Terraform Code
+## 5) Get sample Terraform code
 
-PROTIP: It's too dangerous to start from scratch because misconfigurations can cost large cloud bills and leak valuable data. So let's learn from others.
+PROTIP: It's too dangerous to start from scratch because misconfigurations can cost large cloud bills and leak valuable data. So we need to help each other on a collaborative mutual "known-secure" platform.
 
-PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes cloud service is the least time-consuming (but costs the most).
+PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes cloud service is the least time-consuming approach. But that costs more money.
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Cloud 
@@ -375,30 +390,130 @@ The AWS Partner Solutions website has "Quick Starts" of IaC code.
 
 <a name="EC2"></a>
 
+### EC2
+
+https://aws.amazon.com/ec2/ 
+
 <a name="ECS"></a>
+
+### ECS
+
+https://aws.amazon.com/ecs/ 
+
    https://developer.hashicorp.com/consul/tutorials/cloud-production/consul-ecs-hcp
 
    https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
 
 <a name="EKS"></a>
 
+### EKS Blueprints
+
 https://aws.amazon.com/eks/ 
 
-PROTIP: Kubernetes has a lot of "knobs". So simplify by using "Blueprints" to "compose" complete EKS clusters that are fully bootstrapped with the operational software needed to deploy and operate workloads.
+PROTIP: Kubernetes has a lot of "knobs". So simplify by using "Blueprints" consisting of <strong>Terraform</strong> which create complete (production-worthy) EKS clusters that are fully bootstrapped with the operational software and security controls needed to safely deploy and operate workloads.
 
-1. <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">This blog</a> describes how to edit Blueprint configuration files within <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints">https://github.com/aws-ia/terraform-aws-eks-blueprints</a> to "enable" each pre-configured component to achieve the desired state of your EKS environment, such as the control plane, worker nodes, and Kubernetes add-ons, as an IaC blueprint. 
+<a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">"Amazon EKS Blueprints"</a> enables construction of a <strong>tool-chain platform</strong> for multiple teams to deploy EKS across any number of accounts and regions, with a self-service UI. Blueprints provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. All embedded with relevant security controls built-in.
 
-   EKS Blueprints also helps you implement relevant security controls needed to operate workloads from multiple teams in the same cluster.
+Why? This accelerates time to market for platform initiatives by <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint/benefits">Separation of Concerns - Platform Teams vs Application Teams</a>:
 
-2. Add <strong>add-ons</strong>, including Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
+> Platform teams build the tools that provision, manage, and secure the underlying infrastructure while application teams are free to focus on building the applications that deliver business value to customers. It also gives operators more control in making sure production applications are secure, compliant, and highly available.
+Platform teams have full control to define standards on security, software delivery, monitoring, and networking that must be used across all applications deployed. 
+
+> This allows developers to be more productive because they don’t have to configure and manage the underlying cloud resources themselves. 
+Application teams need to focus on writing code and quickly shipping product, but there must be certain standards that are uniform across all production applications to make them secure, compliant, and highly available.
+
+Blueprints for Terraform is open-sourced two ways, in different repos and workshops: 
+   * <a href="#EKSBFT">EKS Blueprints for Terraform</a> (below)
+   * EKS Blueprints for CDK workshop at https://catalog.workshops.aws/
+   <br /><br />
+
+* EKS Blueprints for CDK workshop at https://catalog.workshops.aws/eks-blueprints-for-cdk/en-US
+   * https://github.com/aws-quickstart/cdk-eks-blueprints
+   * https://www.npmjs.com/package/@aws-quickstart/eks-blueprints NPM module
+   * https://github.com/aws-samples/cdk-eks-blueprints-patterns
+   * https://github.com/aws-samples/eks-blueprints-workloads
+   <br /><br />
+
+
+<a name="EKSBFT"></a>
+
+#### EKS Blueprints for Terraform
+
+The manual steps and automation used below installs within AWS an EKS cluster containing:
+
+   * AWS Load Balancer Controller
+   * Cluster Autoscaler
+   * CoreDNS
+   * kube-proxy
+   * Metrics Server
+   * vpc-cni
+   <br /><br />
+
+Scripts below reference <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/eks-cluster-with-new-vpc/main.tf ">the "eks-cluster-with-new-vpc"</a> example created by AWS IA (infrastructure and automation) team led by <a target="_blank" href="https://www.linkedin.com/in/wellsiau/">Welly Siauw</a>.
+
+Other <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">example deployment options ("constructs")</a> not demonstrated here:
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/karpenter">Karpenter auto-scaler for EKS</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/grafana-loki">Grafana Loki</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/observability">Observability Grafana</a>
+   * IPV6 EKS clusters
+   * Analytics clusters with Spark or EMR on EKS
+   <br /><br />
+
+   PROTIP: Add-ons can be both open-source or licensed.
+
+PROTIP: I created a shell script to automate the steps described in <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/">"Getting Started"</a>.
+
+1. Let's examine what it does:
+
+   https://github.com/wilsonmar/mac-setup/eks-start1.sh
+
+   The script presents a menu if no parameters are provided.
+
+   The script installs on your laptop what are needed:
+   * Homebrew to install jq, git, tree, etc.
+   * awscli, kubctl, terraform, etc.
+   <br /><br />
+
+   In STEP 9, the script clones:
+   <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/README.md">https://github.com/aws-ia/terraform-aws-eks-blueprints</a> 
+   
+   <tt>--depth 1</tt> excludes branches such as gh-pages referenced to display
+   <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">website "Amazon EKS Blueprints for Terraform"</a>.
+   This results in the <tt>du -h</tt> command showing 26MB of disk space usage (instead of 40MB with all branches).
+
+   Upon failure, the script automatically runs <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/#cleanup">Cleanup <tt>terraform destroy</tt> commands</a>.
+
+   PROTIP: Tfsec (and other scans of Terraform HCL) are run from the output of <tt>terraform plan</tt>.
+
+   terraform apply -target="module.vpc" -auto
+   
+   Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
+
+2. Configure AWS credentials. The account used should be granted <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/iam/minimum-iam-policy/">this minimum set of IAM policies</a>.
+
+3. Run using parameters 
+
+   https://github.com/wilsonmar/mac-setup/eks-start1.sh
+
+#### Next
+
+4. Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
+   
+   https://catalog.workshops.aws/eks-blueprints-terraform/en-US
+
+   https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples</a> includes:
+
+5. The <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">long list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
 
    ### Consul add-on
    
+   https://developer.hashicorp.com/consul/docs/k8s/installation/install
+
    https://github.com/hashicorp/terraform-aws-consul-ent-k8s
 
    https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
 
-1. <strong>Reuse</strong> configured blueprints to consistently "stamp out" instances across multiple AWS accounts and Regions using continuous deployment automation.
+6. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
 <hr />
 
@@ -466,10 +581,8 @@ So the whole stack can be brought up by a single command: <a target="_blank" hre
 <a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
 Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
 
-Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is "more concise and cleaner".
+Terraspace claims that their <a target="_blank" href="https://terraspace.cloud/docs/config/hooks/">CLI hook syntax</a> is <a target="_blank" href="https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/">"more concise and cleaner"</a>.
 
-   * https://blog.boltops.com/2020/09/28/terraform-vs-terragrunt-vs-terraspace/
-   <br /><br />
 
 <hr />
 
@@ -484,7 +597,7 @@ PROTIP: Consistent definition of HCL folders and files in your Terraform project
 
 <a name="tfvars"></a>
 
-### tfvars files
+### tfvars files by env
 
 REMEMBER: Files named with the <tt>.tfvars</tt> file ending extension contains actual <strong>values</strong> used in each environment (dev, qa, stage, prod). 
 
@@ -544,6 +657,7 @@ References:
 
    `\` back-slashes specify continuation of long lines (as in Bash).
 
+
 <a name="HCL_Files"></a>
 
 ### Files in the root folder:
@@ -579,33 +693,24 @@ Within folder <strong>test</strong>
 
 Within folder <a href="#Modules"><strong>modules</strong></a>
 
-   * install-vault
-      * install-vault.sh
-   * run-vault
-      * run-vault.sh
-   * vault-cluster
-   * vault-security-group-rules
-   * vault-elb
-   &nbsp;
-   * IAM <em>(folder)</em>
+   IAM <em>(folder)</em>
       * README.md
       * <a href="#variables.tf">variables.tf</a>
       * <a href="#main.tf">main.tf</a>
       * <a href="#Outputs.tf">outputs.tf</a>
-   * Network <em>(folder)</em>
+   Network <em>(folder)</em>
       * ...
-<br /><br />
+   Vault
+     * install-vault
+        * install-vault.sh
+     * run-vault
+        * run-vault.sh
+     * vault-cluster
+     * vault-security-group-rules
+     * vault-elb
+     <br /><br />
 
-REMEMBER: Terraform processes all .tf files in a directory invoked, in <strong>alphabetical order</strong>.
-
-
-
-<hr />
-
-Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
-
-## 5) Obtain cloud credentials and network preferences
-
+REMEMBER: Terraform processes all .tf files in a directory invoked in <strong>alphabetical order</strong>.
 
 
 <hr />
