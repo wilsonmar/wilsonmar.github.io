@@ -522,15 +522,38 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
    aws eks --region "$AWS_REGION" update-kubeconfig --name eks-cluster-with-new-vpc
    </pre>
 
+   NOTE: Blueprints are defined/added <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/external-secrets/main.tf">in main.tf file</a> in each example folder.
+
 2. Configure AWS credentials. The account used should be granted <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/iam/minimum-iam-policy/">this minimum set of IAM policies</a>.
 
-3. Run using parameters 
+3. Download the script:
 
-   https://github.com/wilsonmar/mac-setup/eks-start1.sh
+   <pre><strong>curl -s "https://raw.githubusercontent.com/wilsonmar/mac-setup/master/eks-start1.sh" --output eks-start1.sh
+   </strong></pre>
 
-4. See UI
-5. Diagram resources.
-6. AWS Config. security alerts, if any.
+4. Set permissions (needed only one time):
+
+   <pre><strong>chmod +x eks-start1.sh
+   </strong></pre>
+
+5. Set your Mac to not sleep: Click the Apple logo on the top-left corner of your screen, and select System Preferences. In the upper-right, type on Battery. At the left menu, click Battery. Drag the slider to Never. Click "Power Adapter" and drag that slider to Never.
+   
+6. In Terminal: Run using parameters: 
+
+   <pre><strong>./eks-start1.sh -email johndoe@gmail.com -v -tf
+   </strong></pre>
+
+   Update your AWS credentials if you see messages like this:
+   <pre>│ Error: configuring Terraform AWS Provider: error validating provider credentials: error calling sts:GetCallerIdentity: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: 9e49efe4-dd08-4b2c-a6df-22a754b8a04d, api error ExpiredToken: The security token included in the request is expired
+│
+│   with provider["registry.terraform.io/hashicorp/aws"],
+│   on main.tf line 1, in provider "aws":
+│    1: provider "aws" {
+│   </pre>
+
+6. See UI
+7. Diagram resources.
+8. AWS Config. security alerts, if any.
 
 #### Next
 
