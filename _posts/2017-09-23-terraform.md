@@ -340,17 +340,17 @@ PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes c
    </th><th> Container 
    </th><th> <a href="#Kubernetes">K8s</a> 
    </th></tr>
-<tr valign="top"><td> <a href="#AWS" title="Amazon Web Services">AWS</a>
+<tr valign="top" align="center"><td align="left"> <a href="#AWS" title="Amazon Web Services">AWS</a>:
    </td><td> <a href="#EC2" title="Elastic Compute Cloud">EC2</a>
    </td><td> <a href="#ECS" title="Elastic Container Service">ECS</a>
-   </td><td> <a href="#EKS" title="Elastic Kubernetes Service">EKS</a> 
+   </td><td> <a href="#EKS" title="Elastic Kubernetes Service first GA June 2018">EKS</a> 
    </td></tr>
-<tr valign="top"><td> <a href="#Azure" title="Azure (by Microsoft)">Azure</a>
+<tr valign="top" align="center"><td align="left">  <a href="#Azure" title="Azure (by Microsoft)">Azure</a>:
    </td><td> <a href="#AVM" title="Azure Virtual Machines">AVM</a> 
    </td><td> <a href="#ACS" title="Azure Container Service">ACS</a> 
-   </td><td> <a href="#AKS" title="Azure Kubernetes Service">AKS</a> 
+   </td><td> <a href="#AKS" title="Azure Kubernetes Service first GA June 2018">AKS</a> 
    </td></tr>
-<tr valign="top"><td> <a href="#GCP" title="Google Cloud Program">GCP</a>
+<tr valign="top" align="center"><td align="left"> <a href="#GCP" title="Google Cloud Platform">GCP</a>:
    </td><td> <a href="#GCE" title="Google Cloud Engine">GCE</a> 
    </td><td> <a href="#GCS" title="Google Container Service">GCS</a> 
    </td><td> <a href="#GKE" title="Google Kubernetes Engine">GKE</a> 
@@ -375,7 +375,7 @@ Docs on Terraform Kubernetes:
 
 <a name="AWS"></a>
 
-### AWS
+## AWS
 
 The AWS Partner Solutions website has "Quick Starts" of IaC code.
 <a target="_blank" href="https://aws.amazon.com/quickstart/?solutions-all.sort-by=item.additionalFields.sortDate&solutions-all.sort-order=desc&awsf.filter-content-type=*all&awsf.filter-tech-category=*all&awsf.filter-industry=*all&awsm.page-solutions-all=1&solutions-all.q=terraform&solutions-all.q_operator=AND">A search of for "terraform"</a> include:
@@ -414,7 +414,7 @@ PROTIP: Kubernetes has a lot of "knobs". So simplify by using "Blueprints" consi
 
 <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">"Amazon EKS Blueprints"</a> enables construction of a <strong>tool-chain platform</strong> for multiple teams to deploy EKS across any number of accounts and regions, with a self-service UI. Blueprints provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. All embedded with relevant security controls built-in.
 
-Why? This accelerates time to market for platform initiatives by <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint/benefits">Separation of Concerns - Platform Teams vs Application Teams</a>:
+Why? Use of Kubernetes accelerates time to market for platform initiatives through the <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint/benefits">Separation of Concerns - Platform Teams vs Application Teams</a>:
 
 > Platform teams build the tools that provision, manage, and secure the underlying infrastructure while application teams are free to focus on building the applications that deliver business value to customers. It also gives operators more control in making sure production applications are secure, compliant, and highly available.
 Platform teams have full control to define standards on security, software delivery, monitoring, and networking that must be used across all applications deployed. 
@@ -538,6 +538,9 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 
 5. Set your Mac to not sleep: Click the Apple logo on the top-left corner of your screen, and select System Preferences. In the upper-right, type on Battery. At the left menu, click Battery. Drag the slider to Never. Click "Power Adapter" and drag that slider to Never.
    
+   <pre><strong>sudo systemsetup -setcomputersleep Never
+   </strong></pre>
+
 6. In Terminal: Run using parameters: 
 
    <pre><strong>./eks-start1.sh -email johndoe@gmail.com -v -tf
@@ -555,6 +558,10 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 7. Diagram resources.
 8. AWS Config. security alerts, if any.
 
+References on EKS:
+   * https://logz.io/blog/aws-eks-features/
+   <br /><br />
+
 #### Next
 
 4. Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
@@ -565,7 +572,7 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 
 5. The <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">long list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
 
-   ### Consul add-on
+### Consul add-on
    
    https://developer.hashicorp.com/consul/docs/k8s/installation/install
 
@@ -579,12 +586,33 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 
 <a name="Azure"></a>
 
-### Azure
+## Azure
 
 <a name="AVM"></a>
+
+### AVM
+
+https://azure.microsoft.com/en-us/products/virtual-machines/
+
 https://learn.microsoft.com/en-us/azure/architecture/aws-professional/compute
+
 <a name="ACS"></a>
+
+### ACS (Azure Container Service)
+
+Retire on 31st Jan 2020.
+
+A wrapper on top of Azure IAAS to deploy a production ready Kubernetes, DC/OS, or Docker Swarm cluster.
+
+https://azure.microsoft.com/en-us/products/container-apps/
+
 <a name="AKS"></a>
+
+### AKS
+
+https://learn.microsoft.com/en-us/azure/aks/quotas-skus-regions
+
+https://azure.microsoft.com/en-us/products/kubernetes-service/
 
 https://github.com/hashicorp/terraform-azure-consul-ent-k8s
 
@@ -608,13 +636,21 @@ cd terraform-on-azure
 
 <a name="GCP"></a>
 
-### Google
+## Google
 
 <a name="GCE"></a>
+
+### GCE
+
 https://www.msp360.com/resources/blog/azure-vm-vs-amazon-ec2-vs-google-ce-cloud-computing-comparison/
+
 <a name="GCS"></a>
 
+### GCS
+
 <a name="GKE"></a>
+
+### GKE
 
 https://github.com/hashicorp/terraform-gcp-consul-ent-k8s
 

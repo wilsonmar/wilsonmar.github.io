@@ -15,8 +15,11 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-{% include whatever.html %}
+## Why?
 
+Positive changes to a business can help it be more efficient, less wasteful, and more productive. 
+
+{% include whatever.html %}
 
 ## What is it?
 
@@ -25,26 +28,6 @@ ACMP defines change management as the application of knowledge, skills, abilitie
 > Organizational Change Management (OCM) is essentially a wide-scale plan that aims to increase individual and organizational effectiveness by making use of <strong>behavioral science</strong> technology. The purpose of this is to reduce the chances of negative fallout in a business and to put more emphasis on the <strong>people side</strong> of how an organization can change. -- <a href="#MSI">MSI</a>
 
 > Organizational Change Management is commonly referred to as communication and training, but that is a very limited and inaccurate description. Change management has to do with the people side of the transformation. How jobs are going to be redefined. New organizational structures. Change impacts: understanding how people's roles and responsibilities are going to change. [Lack of attention to Change Management] is the number one reason why a majority of transformations fail -- because they don't address Organizational Change Management. --<a target="_blank" href="youtube.com/watch?v=0aUKyxkVgGk&list=RDCMUCJ3oB3ghEUdGhHnXZD4Dx3g&start_radio=1&rv=0aUKyxkVgGk&t=5m48s">VIDEO</a>: <a target="_blank" href="https://www.linkedin.com/in/erickimberling/">Eric Kimberling of consultancy Third Stage</a>.
-
-## Why?
-
-Positive changes to a business can help it be more efficient, less wasteful, and more productive. 
-
-## It's not easy
-
-<a target="_blank" href="https://hbr.org/2020/06/3-things-youre-getting-wrong-about-organizational-change">A Harvard Business Review article</a> noted that "to stay in business, you need to reinvent yourself every 3 years".
-
-In the book "The Prince" (originally in 16th century Italian) by Niccolo Machiavelli, considered by many as the father of modern political science:
-
-> … there is nothing more difficult and dangerous, or more doubtful of success, than an attempt to introduce a new order of things…
-
-Implementing innovative solutions is hard work, and it requires strong collaboration and broad consensus building, not only with direct partners and supporters, but also amongst perceived competitors.[1]
-
-Research has shown that major transformational change has only a 30% chance of meeting all or most of the results expected. 
-
-> Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
-
-<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> (founder of Sociology at MIT) uses the word <strong>"subversion"</strong> not to imply any sinister motive, but to state what happens when change isn’t managed. 
 
 
 ## The Formula Predicting Success
@@ -77,6 +60,70 @@ The above means that we can tilt the odds by:
 
 <hr />
 
+## It's not easy
+
+<a target="_blank" href="https://hbr.org/2020/06/3-things-youre-getting-wrong-about-organizational-change">A Harvard Business Review article</a> noted that "to stay in business, you need to reinvent yourself every 3 years".
+
+In the book "The Prince" (originally in 16th century Italian) by Niccolo Machiavelli, considered by many as the father of modern political science:
+
+> … there is nothing more difficult and dangerous, or more doubtful of success, than an attempt to introduce a new order of things…
+
+Implementing innovative solutions is hard work, and it requires strong collaboration and broad consensus building, not only with direct partners and supporters, but also amongst perceived competitors.[1]
+
+Research has shown that major transformational change has only a 30% chance of meeting all or most of the results expected. 
+
+> Hence it is that, whenever the opponents of the new order of things have the opportunity to attack it, they will do it with the zeal of partisans, whilst the others defend it but feebly, so that it is dangerous to rely upon the latter.
+
+<a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> (founder of Sociology at MIT) uses the word <strong>"subversion"</strong> not to imply any sinister motive, but to state what happens when change isn’t managed. 
+
+## OCM Influencers
+
+PROTIP: Follow these on LinkedIn, Twitter:
+
+<a name="JohnKotter"></a>
+
+* <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Pc7EVXnF2aI">"The Evolution of the 21st Centry Organization"</a>
+   * <a target="_blank" href="https://wmbridges.com/clients/case-studies/">Transition case studies</a>
+   * <a target="_blank" href="http://www.tmcorp.com/SiteData/docs/TMC_PepsiCo_03/9ffce16a0e3f1f24acabb42129fba3ca/TMC_PepsiCo_03.pdf">Kotter’s 8 Step Model case study</a>
+   <br /><br />
+
+   <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/lecture/UW5kt/kotters-8-step-model-part-1">VIDEO</a>: <a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">BOOK</a>: Kotter's <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review advises:
+
+   1. Create Climate for Change:<br />
+      1). Create Urgency<br />
+      2). Build a Coalition<br />
+      3). Create a Vision
+      <br />
+
+   2. Engage and Enable the Organization:<br />
+      4). Communicate that Vision<br />
+      5). Empower Others to overcome Obstacles<br />
+      6). Create Short-Term Quick Gains
+      <br /><br />
+
+   3. Implement & Sustain:<br />
+      7). Build on the Change<br />
+      8). Embed (Anchor) the Change
+      <br /><br />
+
+
+* <a target="_blank" href="https://linkedin.com/in/adammgrant/">Adam Grant</a>, Professor of Organizational Psychology at Wharton School of Business in Pennsylvania. @AdamMGrant
+
+* <a target="_blank" href="https://linkedin.com/in/timcreasey/">Tim Creasey</a>, Chief Innovation Officer at <a name="Prosci">Prosci</a>. @timcreasey has benchmarking studies.
+
+* <a target="_blank" href="https://linkedin.com/in/nicktasler/">Nick Tealser</a>, @NickTasker
+
+* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker - @YvonneRAkpoveta
+
+* <a target="_blank" href="https://linkedin.com/in/carstentams/">Carsten Tams</a>, Consultant & Blogger (on Forbes) @Carsten_tams
+
+* <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
+
+* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> (of LeadershipIQ.com) writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
+
+
 ## Stages of change
 
 Many authors have used different words to describe the process of change.
@@ -88,7 +135,7 @@ Many authors have used different words to describe the process of change.
 
 <a target="_blank" href="https://www.coursera.org/videos/agile-leadership-organization/UWNP3">VIDEO</a>: <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages to conceptualize broad categories of the change process:
 
-   <ul>Unfreeze -> Change and Transition --> Refreezing
+   <ul>Unfreeze -> Change and Transition -> Refreezing
    </ul>
 
 There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a> in the <a name="Prosci">Prosci Process for organizational change</a>:
@@ -169,67 +216,77 @@ Stages:
 
    Attendance at Prosci's class includes a 1-year subscription to their Practitioner eToolkit which contains PowerPoint, Word, and Excel templates for most of the Prosci tools. 
 
+<hr />
 
-## Influencers
+## Scott Mautz
 
-<a name="JohnKotter"></a>
+Vest-wearing inspirational speaker and author of book "Leading from the Middle" and <a target="_blank" href="https://www.linkedin.com/newsletters/6778524658191998977/?trk=lil-course-description">newsletter</a> <a target="_blank" href="https://www.linkedin.com/in/scottmautz/">Scott Mautz</a>, in his <a target="_blank" href="https://www.linkedin.com/learning/change-management-foundations-10041380/how-to-get-employees-invested-in-change?autoplay=true">13-hour video course [LinkedIn subscription]</a> has us remember that: 
 
-* <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/lecture/UW5kt/kotters-8-step-model-part-1">VIDEO</a>: <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
+Questions before implementing change:
+  1. Clear on problem you're solving?
+  2. Avoiding change drift?
+  3. Clear vision for change?
+  4. Changes in policies, processes, jobs?
+  5. Owners of the change?
+  6. Measure success?
+  <br /><br />
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=Pc7EVXnF2aI">"The Evolution of the 21st Centry Organization"</a>
-   * <a target="_blank" href="https://wmbridges.com/clients/case-studies/">Transition case studies</a>
-   * <a target="_blank" href="http://www.tmcorp.com/SiteData/docs/TMC_PepsiCo_03/9ffce16a0e3f1f24acabb42129fba3ca/TMC_PepsiCo_03.pdf">Kotter’s 8 Step Model case study</a>
-   <br />
-
-   <a target="_blank" href="https://www.amazon.com/John-P-Kotter/e/B001H6NM1K">John K. Kotter</a>'s <a target="_blank" href="https://www.youtube.com/watch?v=22coAwMD9M0">8-step model</a> first published in the Harvard Business Review:
-
-   1. Create Climate for Change:<br />
-      1). Create Urgency<br />
-      2). Build a Coalition<br />
-      3). Create a Vision
-      <br /><br />
-
-   2. Engage and Enable the Organization:<br />
-      4). Communicate that Vision<br />
-      5). Empower Others to overcome Obstacles<br />
-      6). Create Short-Term Quick Gains
-      <br /><br />
-
-   3. Implement & Sustain:<br />
-      7). Build on the Change<br />
-      8). Embed (Anchor) the Change
-      <br /><br />
-
-
-* <a target="_blank" href="https://linkedin.com/in/adammgrant/">Adam Grant</a>, Professor of Organizational Psychology at Wharton School of Business in Pennsylvania. @AdamMGrant
-
-* <a target="_blank" href="https://linkedin.com/in/timcreasey/">Tim Creasey</a>, Chief Innovation Officer at <a name="Prosci">Prosci</a>. @timcreasey has benchmarking studies.
-
-* <a target="_blank" href="https://linkedin.com/in/nicktasler/">Nick Tealser</a>, @NickTasker
-
-* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker - @YvonneRAkpoveta
-
-* <a target="_blank" href="https://linkedin.com/in/carstentams/">Carsten Tams</a>, Consultant & Blogger (on Forbes) @Carsten_tams
-
-* <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
-
-* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> (of LeadershipIQ.com) writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
-
-
-## ACMP Standards
-   
-   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
-
-   1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
-
-   2. <strong>Formulate the Change Management Strategy</strong> - The processes in this group develop the high-level approach for change management with sponsors, change leaders, content developers, program managers, customers, and others on the project. This approach includes governance, risks, resources, budget, and reporting. The change strategy will incorporate, integrate, and align change management plans, activities, tasks, and milestones into the other activities and operations of an organization and its stakeholders at the onset of a change (timing and sequence). Stakeholder engagement is included in this process group.
-
-   3. <strong>Develop the Change Management Plan</strong> - The processes in this group employ specific change management methodologies and tools to develop detailed plans for implementing the change management strategy. These plans include communications, sponsorship, stakeholder engagement, learning and development, risk management, and measurement and benefits realization. Ongoing integration with project management is included in this process group.
-
-   4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
-
-   5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
+"Temperature check":
+   * The Skill
+   * The Will
+   * The Hill (barriers to overcome)
    <br /><br />
+
+Enthusiasm Blockers:
+   * Skepticism
+   * Undercommunicating the change vision
+   * Misinformation, rumors, fear
+   * Structures or systems that work against change - make the old ways unavailable. Help employees become skilled at the new ways faster
+   * Change fatigue
+   <br /><br />
+
+Define change in a BEST Guide (basis to assess, anticipate, overcome barriers):
+   * Behaviors
+   * Expectations
+   * Skills required
+   * Training
+   <br /><br />
+
+Managers get commitment from workers who feel:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1670750200/ocm-committed-1148x1068_pfbkd4.jpg"><img alt="ocm-committed-1148x1068.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1670750200/ocm-committed-1148x1068_pfbkd4.jpg"></a>
+
+   * Safe
+   * Involved
+   * Accountable
+   <br /><br />
+
+"Excited urgency" is inspiring employees to take action based on enthusiasm for the end state more than based on fear of repercussions.
+
+
+
+Offering support:
+   * Empathetic words
+   * Stories of your own change experience
+   * Access to change leaders
+   * Tangible support -> training
+   <br /><br />
+
+## Social groups
+
+* <a target="_blank" href="https://www.linkedin.com/groups/8929718/">Leading During Times of Change</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/63688/">LinkedIn:  Organizational Change Practitioners</a>
+
+* <a target="_blank" href="https://www.linkedin.com/groups/96892/">LinkedIn: Change Consulting DIGITAL TRANSFORMATION CHANGE MANAGEMENT STRATEGY INNOVATION DISRUPT AGILE SCRUM 136,073 members
+
+## Consultancies
+
+* https://www.ibm.com/downloads/cas/YPAPB0A2
+* https://www.accenture.com/nl-en/blogs/insights/mappe-model-for-transformation
+* https://www.accenture.com/us-en/services/talent-organization/change-management
+* https://www.accenture.com/ie-en/case-studies/about/it-change-adoption
+
+* https://www.bain.com/consulting-services/change-management-results-delivery/
 
 
 <hr />
@@ -301,9 +358,11 @@ Listed from cheapest to most expensive/prestigeous:
 
    ### CCMP from ACMP
 
-* <img align="right" alt="ccmp-logo-179x225.jpg" width="179" height="225" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667626383/ccmp-logo-179x225_zckb7z.jpg">$595 for the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">CCMP (Certified Change Manager)</a> by the Association of Change Management Professions (ACMP) based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s 64-page Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">first released in 2014</a>. The exam is 150 questions over <strong>3 hours</strong>. The passing percentage of correct answers is not published, nor are what score each candidate received. https://www.acmpglobal.org/page/the_standard
+* <img align="right" alt="ccmp-logo-179x225.jpg" width="179" height="225" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1667626383/ccmp-logo-179x225_zckb7z.jpg">$595 for the <a target="_blank" href="https://www.acmpglobal.org/page/ccmp">CCMP (Certified Change Manager)</a> by the Association of Change Management Professions (ACMP) based on <a target="_blank" href="https://www.acmpglobal.org/page/ACMPStandard">ACMP’s 64-page Standard for Change Management©</a> <a target="_blank" href="https://www.youtube.com/watch?v=8hzL8FZOsZg">VIDEO: first released in 2014</a>. 
 
-   Their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">Candidate Handbook</a>, requires to <strong>write an essay for 3 of these 5 domains</strong>:
+   The exam is 150 questions online over <strong>3 hours</strong>. The passing percentage of correct answers is not published, nor are what score each candidate received. 
+
+   Their <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/CCMP_Docs/ACMP_CCMP_Handbook.pdf">PDF: Candidate Handbook</a>, requires  <strong>write of an essay for 3 of these 5 domains</strong> on <a target="_blank" href="https://acmp.learningbuilder.com/Profile/MyAccount">their website</a>:
 
    1. For a project completed in the last two years, discuss how your assessment of the history, culture, and value systems of an organization helped the employees through a change process and has impacted employee expectations about change management plans and activities during that change project, today, and into the future.
 
@@ -317,21 +376,17 @@ Listed from cheapest to most expensive/prestigeous:
 
    As of this writing Nov 2022, there were 1,525 CCMPs. 
    
-   https://acmp.learningbuilder.com/Profile/MyAccount
-   
-   To meet the 21 hours of live instructor-led instruction (before registering for the exam):
+   To meet the 21 hours of <strong>live instructor-led</strong> instruction (before registering for the exam):
 
-   * Roger Watson at https://jtask.com/ conducts on-line over 4 fridays 8-2pm PT. for $880 ($780 for ACMP members). Valid for 7 years.
-   * <a href="#Prosci">Prosci</a>
-   * ChangeIt
-   * https://acuityinstitute.com/change-management/
-   $799 Acuity Institute - 3 months of online course access virtual simulation
+   * Roger Watson at <a target="_blank" href="https://jtask.com/">jtask.com</a> conducts on-line over 4 fridays 8-2pm PT. for $880 ($780 for ACMP members). Free retakes and valid for 7 years. Included in the fee is a physical deck of cards to help you memorize the process items. (I took this in Nov 2022 and found it excellent).
+   * $799 <a target="_blank" href="https://acuityinstitute.com/change-management/">Acuity Institute</a> - 3 months of online course access virtual simulation.
    The company also does Six Sigma and Lean training.
    * Confident Change Management
+   * <a href="#Prosci">Prosci</a>
+   * ChangeIt
    <br /><br />
 
-   https://jtask.com/app/uploads/2022/02/Guide-ACMP-CCMP-Certification-Path-Explained.pdf
-   Certification Path Explained
+   <a target="_blank" href="https://jtask.com/app/uploads/2022/02/Guide-ACMP-CCMP-Certification-Path-Explained.pdf">PDF: Certification Path Explained</a>
 
    Chapter 5 of ACMP's Standard ACMP's Standard consists of 31 processes organized into 5 process groups:
 
@@ -364,20 +419,17 @@ Listed from cheapest to most expensive/prestigeous:
    ACMP provides <a target="_blank" href="https://acmp.learningbuilder.com/Public/PractitionerLookup/Search?ReturnToUrl=&FirstName=Wilson&LastName=Mar">its own certification verification/lookup page</a>.
 
 
-* In Australia, three levels of <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> are based on the institute’s <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/cmi_change_manager_competency_models_preview_sept17.pdf">Change Manager Competency Model</a> and  <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the <a target="_blank" href="https://www.amazon.com/gp/product/1925171027/" title="March 31, 2022">The Effective Change Manager</a>. 
+* A $1,050 Master level accreditation is for "highly experienced, senior change practitioners to stand out from their peers as leaders in the profession," and is best suited for those with more than 7 years’ experience.
 
-   <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
+* The $675 Specialist level requires 3-6 years of experience operating at the project or program level as evidenced by a written assessment that provides evidence of your skills, backed up with references from those who have observed your abilities, and you’ll need to complete a virtual interview with an independent assessor. 
 
-   The exam focuses on key skills for change management, including motivating employees, engaging stakeholders, assembling teams, and delivering on effective change strategies. 
-   <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/accreditation_handbook_jul20.pdf">PDF: Accreditation Handbook</a> notes that 
-   
-   The <a target="_blank" href="https://change-management-institute.com/acm-foundation/">$575 foundation level</a> (discounted to $450 with CMI-endorsed training at Prosi or <a target="_blank" href="https://apmg-international.com/product/change-management">APMG</a>) with the <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.
+* The <a target="_blank" href="https://change-management-institute.com/acm-foundation/">$575 foundation level</a> (discounted to $450 with CMI-endorsed training at Prosi or <a target="_blank" href="https://apmg-international.com/product/change-management">APMG</a>) based on the <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>.   
 
-   The $675 Specialist level requires 3-6 years of experience operating at the project or program level as evidenced by a written assessment that provides evidence of your skills, backed up with references from those who have observed your abilities, and you’ll need to complete a virtual interview with an independent assessor. 
-   
-   The $1,050 Master level accreditation is for "highly experienced, senior change practitioners to stand out from their peers as leaders in the profession," and is best suited for those with more than 7 years’ experience.
+   The two above are from the 3-levels described in the <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/accreditation_handbook_jul20.pdf">PDF: Accreditation Handbook</a> for <a target="_blank" href="https://www.change-management-institute.com/accreditation">Change Management Institute Certification (CMI)</a> based on a privately-owned Australian institute’s <a target="_blank" href="https://change-management-institute.com/wp-content/uploads/2022/06/cmi_change_manager_competency_models_preview_sept17.pdf">Change Manager Competency Model</a> and <a target="_blank" href="https://change-management-institute.com/cmbok/">Body of Knowledge (CMBoK)</a> by the <a target="_blank" href="https://www.change-management-institute.com/">Change Management Institute</a> who wrote the <a target="_blank" href="https://www.amazon.com/gp/product/1925171027/" title="March 31, 2022">The Effective Change Manager book</a> and <a target="_blank" href="https://change-management-institute.com/cmbok/">Change Management Body of Knowledge (CMBoK)</a>. 
 
-   <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>
+   Their exam's focus include: motivating employees, engaging stakeholders, assembling teams, and delivering on effective change strategies.    
+
+   <a target="_blank" href="https://change-management-institute.com/become-member/">Membership in CMI is $190 USD</a>/year.
 
 
 * $1,495 for members of The Association for Talent Development (ATD) for the <a target="_blank" href="https://www.td.org/education-courses/change-management-certificate">ATD Change Management Certificate</a> trains HR/learning professionals on how to improve efficiency, productivity, and service quality. The (six-session over 12 hours, online or 2 days in person) covers: implementing change processes, change management tools, qualities of a change leader, and how to encourage the organization to embrace change. Learn how to conduct diagnostic assessments, define change efforts, analyze data, provide feedback, understand change management theories, select the right change model, create implementation designs, develop communication plans, and manage any consequences of change.
@@ -413,126 +465,47 @@ ISO 21500:2012(E) Guidance on project management
 
 <a name="ACMP Standard"></a>
 
-## ACMP Standard
-
-
-* 5.1.1	Define the Change
-* 5.1.2	Determine Why the Change is Required
-* 5.1.3	Develop a Clear Vision of the Future State
-* 5.1.4	Identify Goals, Objectives and Success Criteria
-* 5.1.5	Identify Sponsors Accountable for the Change
-* 5.1.6	Identify Stakeholders Affected by the Change
-* 5.1.7	Assess the Change Impact
-* 5.1.8	Assess Alignment of the Change with Organizational Strategic Objectives and Performance Measurement
-* 5.1.9	Assess External Factors that may Affect Organizational Change
-* 5.1.10	Assess Organization Culture(s) Related to the Change
-* 5.1.11	Assess Organizational Capacity for Change
-* 5.1.12	Assess Organizational Readiness for Change
-* 5.1.13	Assess Communication Needs, Communication Channels and Ability to Deliver Key Messages
-* 5.1.14	Assess Learning Capabilities
-* 5.1.15	Conduct Change Risks Assessment
-
-
-
-<hr />
-
-## Tools
-
-There are several conceptual and practical tools:
-
-<a target="_blank" href="https://www.youtube.com/watch?v=yuH35ottILU">7 QC Tools</a> used in Six Sigma:
-
-1. Flowchart
-2. Check Sheets
-3. Pareto Charts with a cumultive line (to separate the vital few from the trivial many)
-4. <a name="Fishbone">Fishbone Diagram</a> (5 Whys)
-5. Histogram
-6. Scatter Diagrams (XY Scatter Chart) and Correlation
-7. Control Charts
-
-
-<a name="FishBone"></a>
-
-### Root Cause (Fishbone) Diagram
-
-The fishbone diagram visually presents the results of brainstorming exercise aimed at identifying root causes of a problem.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=dPenE6NzrCM" title="Fishbone diagram using Excel">VIDEO</a>:
-Deming describes use of what he calls the (Kaouru) Ishikawa diagram, which others call a fishbone (or herringbone) diagram.
-
-1. The starting point is a short description of a <strong>single problem</strong>, in a box at the right side of the page.
-
-   State as a question, such as "why did the website crash"?
-
-   Alternately, the problem can be associated with a KPI (Key Performance Indicator), such as:
-
-   * Cycle Time too slow
-   * Time to Retore too high
-   * Changes take too much time
-   * People are waiting for others too often
-   * Too many work items "dropped through the cracks" - no accountability (no aging reports for management)
-
-   * Too many work items for the number of resources assigned
-   * Changes take too much effort
-   * Costs too high
+## The ACMP Standard
    
-   * Quality (Availability) too low - not meeting SLAs/SLOs
-   * Too many errors 
+   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
+
+   1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
+
+   2. <strong>Formulate the Change Management Strategy</strong> - The processes in this group develop the high-level approach for change management with sponsors, change leaders, content developers, program managers, customers, and others on the project. This approach includes governance, risks, resources, budget, and reporting. The change strategy will incorporate, integrate, and align change management plans, activities, tasks, and milestones into the other activities and operations of an organization and its stakeholders at the onset of a change (timing and sequence). Stakeholder engagement is included in this process group.
+
+   3. <strong>Develop the Change Management Plan</strong> - The processes in this group employ specific change management methodologies and tools to develop detailed plans for implementing the change management strategy. These plans include communications, sponsorship, stakeholder engagement, learning and development, risk management, and measurement and benefits realization. Ongoing integration with project management is included in this process group.
+
+   4. <strong>Execute the Change Management Plan</strong> - The processes in this group focus on the implementation of work/actions in the detailed change management plans. The work in this area is required to achieve the expected benefits of the change management implementation.
+
+   5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
    <br /><br />
 
-   The problem can be the biggest bar (the largest contribution) to causes of problems in a Pareto chart.
-
-2. Draw a horizontal line and "ribs" to each category. When working on-site, this can be on a large white-board where participants paste sticky notes.
-
-   A "fishbone" provides a visual approach to organize ideas into categories.
-
-3. Define categories (buckets) to prompt brainstorming of causes:
-
-   My six-category example: Surroundings/Environment, People/Skill, Measurement/Information, Method/Process, Machine/System/Equipment (Physical causes), Material/Supplier
-
-   Common categories: People, Information, System, Process (PIPS)
-
-   Common categores in services: Surroundings, Suppliers, Systems, Skill
-
-   Common categories in manufacturing 8M's: Manpower, Money, Machine/Materials, Methods, Maintenance, Metrics, Mother Nature (culture), Management
-
-   https://www.youtube.com/watch?v=XinW5dwuKsI
-
-4. Brainstorm causes under each category.
-
-   During this step, don't throw out suggestions that may have little impact on the problem.
-   
-   Remember this is partly a team-building exercise, where you're building fun memories.
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=igpvai40HL0">Jay calls</a>
-   diagrams that are too big "whalebone" diagrams.
-
-5. Branch out each cause by adding a leaf after asking Why (5 times).
-
-6. Review categories to Analyze results.
-
-   Have each team member silently assign a priority to each cause.
-
-7. Create an Action Register to track follow-up on ideas.
-
-   A common action is to collect more 
-
-8. Prioritize actions
-
-9. Define countermeasures (Step 5 of A3)
-
-
-<hr />
-
-<a name="ReverseFishBone"></a>
-
-### Reverse Fishbone Diagram
-
-
-
-<hr />
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1659813529/linkedin-chg-mgmt-1501x575_ck9j3q.jpg"><img alt="LinkedIn Change Management" width="1501" height="575" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1659813529/linkedin-chg-mgmt-1501x575_ck9j3q.jpg"></a>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Memonic </th><th> Section </th></tr>
+<tr valign="top"><td> D </td><td> 
+5.1.1	Define the Change<br />
+5.1.2	Determine Why the Change is Required<br />
+5.1.3	Develop a Clear Vision of the Future State
+   </td></tr>
+<tr valign="top"><td> I </td><td> 
+5.1.4	Identify Goals, Objectives and Success Criteria<br />
+5.1.5	Identify Sponsors Accountable for the Change<br />
+5.1.6	Identify Stakeholders Affected by the Change
+   </td></tr>
+<tr valign="top"><td> A </td><td> 
+5.1.7	Assess the Change Impact<br />
+5.1.8	Assess Alignment of the Change with Organizational Strategic Objectives and Performance Measurement<br />
+5.1.9	Assess External Factors that may Affect Organizational Change
+   </td></tr>
+<tr valign="top"><td> C </td><td> 
+5.1.10	Assess Organization Culture(s) Related to the Change<br />
+5.1.11	Assess Organizational Capacity for Change<br />
+5.1.12	Assess Organizational Readiness for Change<br />
+5.1.13	Assess Communication Needs, Communication Channels and Ability to Deliver Key Messages<br />
+5.1.14	Assess Learning Capabilities<br />
+5.1.15	Conduct Change Risks Assessment
+   </td></tr>
+</table>
 
 
 ## References
@@ -576,19 +549,3 @@ And the course provides and explains use of templates to use in your job as a ch
 
 "When environment are complex and dynamic, strategy is about adaptability"
 -- MIT Sloan magazine Dec 2020, article "The Essence of Strategy Is Now How to Change" by B. Tom Hunsaker, Jonathan Knowles
-
-## Social groups
-
-* https://www.linkedin.com/groups/63688/ Organizational Change Practitioners
-
-* https://www.linkedin.com/groups/96892/ Change Consulting DIGITAL TRANSFORMATION CHANGE MANAGEMENT STRATEGY INNOVATION DISRUPT AGILE SCRUM 136,073 members
-
-## Consultancies
-
-* https://www.ibm.com/downloads/cas/YPAPB0A2
-* https://www.accenture.com/nl-en/blogs/insights/mappe-model-for-transformation
-* https://www.accenture.com/us-en/services/talent-organization/change-management
-* https://www.accenture.com/ie-en/case-studies/about/it-change-adoption
-
-* https://www.bain.com/consulting-services/change-management-results-delivery/
-
