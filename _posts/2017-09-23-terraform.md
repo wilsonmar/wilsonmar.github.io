@@ -400,9 +400,10 @@ https://aws.amazon.com/ec2/
 
 https://aws.amazon.com/ecs/ 
 
-   https://developer.hashicorp.com/consul/tutorials/cloud-production/consul-ecs-hcp
-
-   https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
+   * https://developer.hashicorp.com/consul/tutorials/cloud-production/consul-ecs-hcp
+   * https://logz.io/blog/aws-eks-features/
+   * https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
+   <br /><br />
 
 <a name="EKS"></a>
 
@@ -558,29 +559,38 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 7. Diagram resources.
 8. AWS Config. security alerts, if any.
 
-References on EKS:
-   * https://logz.io/blog/aws-eks-features/
-   <br /><br />
+9. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
-#### Next
+10. Add-on add-ons: There is <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">growing list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
 
-4. Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
+   ### Consul add-on
+   
+   As an example of <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/extensibility/">extensibility</a>, Consul is added in <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/main.tf">modules/kubernetes-addons/main.tf</a>:
+
+   <pre>module "consul" {
+  count             = var.enable_consul ? 1 : 0
+  source            = "./consul"
+  helm_config       = var.consul_helm_config
+  manage_via_gitops = var.argocd_manage_add_ons
+  addon_context     = local.addon_context
+}
+   </pre>
+
+
+   https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
+
+### More
+
+Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
    
    https://catalog.workshops.aws/eks-blueprints-terraform/en-US
 
    https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples</a> includes:
 
-5. The <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">long list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
-
-### Consul add-on
-   
    https://developer.hashicorp.com/consul/docs/k8s/installation/install
 
    https://github.com/hashicorp/terraform-aws-consul-ent-k8s
 
-   https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
-
-6. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
 <hr />
 

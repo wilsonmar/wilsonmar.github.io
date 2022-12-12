@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-12-11"
+file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
 tags: [security]
-date: "2022-01-03"
-file: "cyber-security"
 image:
 # cyber-security-hero-1900x500-22924.jpb/.png 
   feature: https://user-images.githubusercontent.com/300046/61989997-46bab400-aff5-11e9-9045-8075ede3d5a3.jpg
@@ -2534,7 +2534,11 @@ UEBA (User and Entity Behavior Analytics), such as Splunk and Microsoft Advanced
 At Cisco, <a target="_blank" href="https://www.linkedin.com/in/-rontaylor/">Ron Taylor</a> <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">https://github.com/The-Art-of-Hacking/h4cker</a> (<a target="_blank" href="https://h4cker.org/github/">by</a> <a target="_blank" href="https://www.linkedin.com/in/santosomar/">Omar Santos</a> used in <a target="_blank" href="https://dcloud.cisco.com/">Cisco's Cyber Defense Clinic Lab</a> <a target="_blank" href="https://dcloud2-sjc.cisco.com/content/catalogue">catalog</a>
 
    * NetFlow uses less disk space than full packete capture.
+   <br /><br />
 
+<a target="_blank" href="https://www.microsoft.com/en-us/securityengineering/sdl">Microsoft's Security Development Lifecycle</a>
+
+https://flaksec.com/not-all-metrics-are-created-equal-a-gitlab-security-case-study/
 
 ## More on Security #
 

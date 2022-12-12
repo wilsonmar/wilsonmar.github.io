@@ -76,11 +76,21 @@ Research has shown that major transformational change has only a 30% chance of m
 
 <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> (founder of Sociology at MIT) uses the word <strong>"subversion"</strong> not to imply any sinister motive, but to state what happens when change isn’t managed. 
 
-## OCM Influencers
 
-PROTIP: Follow these on LinkedIn, Twitter:
+## Stages of change
 
-<a name="JohnKotter"></a>
+Many authors have used different words to describe the process of change.
+
+<a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
+
+(At the bottom of the diagram), <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/lecture/Q5PtK/bridges-transition-model">VIDEO</a>: <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a> describes a "Neutral Zone" between Ending, Losing, and Letting Go on the way to a New Beginning.
+
+<a target="_blank" href="https://www.coursera.org/videos/agile-leadership-organization/UWNP3">VIDEO</a>: <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages to conceptualize broad categories of the change process:
+
+   <ul>Unfreeze -> Change and Transition -> Refreezing
+   </ul>
+
 
 * <a target="_blank" href="https://linkedin.com/in/johnkotter/">John Kotter</a>, former Harvard Business School professor is the authority on change. @JohnPKotter
 
@@ -101,44 +111,14 @@ PROTIP: Follow these on LinkedIn, Twitter:
       4). Communicate that Vision<br />
       5). Empower Others to overcome Obstacles<br />
       6). Create Short-Term Quick Gains
-      <br /><br />
+      <br />
 
    3. Implement & Sustain:<br />
       7). Build on the Change<br />
       8). Embed (Anchor) the Change
-      <br /><br />
+      <br />
 
-
-* <a target="_blank" href="https://linkedin.com/in/adammgrant/">Adam Grant</a>, Professor of Organizational Psychology at Wharton School of Business in Pennsylvania. @AdamMGrant
-
-* <a target="_blank" href="https://linkedin.com/in/timcreasey/">Tim Creasey</a>, Chief Innovation Officer at <a name="Prosci">Prosci</a>. @timcreasey has benchmarking studies.
-
-* <a target="_blank" href="https://linkedin.com/in/nicktasler/">Nick Tealser</a>, @NickTasker
-
-* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker - @YvonneRAkpoveta
-
-* <a target="_blank" href="https://linkedin.com/in/carstentams/">Carsten Tams</a>, Consultant & Blogger (on Forbes) @Carsten_tams
-
-* <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
-
-* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> (of LeadershipIQ.com) writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
-
-
-## Stages of change
-
-Many authors have used different words to describe the process of change.
-
-<a target="_blank" href="https://confidentchangemanagement.com/courses/change-models/lessons/lewins-change-model/">Comparing the stages defined by various change management experts</a>:<br />
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"><img alt="Change Models" width="1000" height="410" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660424385/ChangeModels-1000x410_n5ds1y.png"></a>
-
-(At the bottom of the diagram), <a target="_blank" href="https://www.coursera.org/learn/agile-leadership-organization/lecture/Q5PtK/bridges-transition-model">VIDEO</a>: <a target="_blank" href="https://www.amazon.com/William-Bridges/e/B000AQ4MUS">William Bridges</a> describes a "Neutral Zone" between Ending, Losing, and Letting Go on the way to a New Beginning.
-
-<a target="_blank" href="https://www.coursera.org/videos/agile-leadership-organization/UWNP3">VIDEO</a>: <a target="_blank" href="https://confidentchangemanagement.com/book-reviews/dynamic-theory-of-personality-selected-papers-of-kurt-lewin/">Kurt Lewin</a> describes three stages to conceptualize broad categories of the change process:
-
-   <ul>Unfreeze -> Change and Transition -> Refreezing
-   </ul>
-
-There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a> in the <a name="Prosci">Prosci Process for organizational change</a>:
+* There are <a target="_blank" href="https://www.prosci.com/methodology/3-phase-process?hsLang=en-us">3 phases</a> in the <a name="Prosci">Prosci Process for organizational change</a>:
 
    1. Prepare Approach - deliverable Change Management Strategy establishes the approach needed to deliver desired project outcomes.
       * Define Success - What are we trying to achieve
@@ -270,6 +250,28 @@ Offering support:
    * Access to change leaders
    * Tangible support -> training
    <br /><br />
+
+
+## OCM Influencers
+
+PROTIP: Follow these on LinkedIn, Twitter:
+
+<a name="JohnKotter"></a>
+
+* <a target="_blank" href="https://linkedin.com/in/adammgrant/">Adam Grant</a>, Professor of Organizational Psychology at Wharton School of Business in Pennsylvania. @AdamMGrant
+
+* <a target="_blank" href="https://linkedin.com/in/timcreasey/">Tim Creasey</a>, Chief Innovation Officer at <a name="Prosci">Prosci</a>. @timcreasey has benchmarking studies.
+
+* <a target="_blank" href="https://linkedin.com/in/nicktasler/">Nick Tealser</a>, @NickTasker
+
+* <a target="_blank" href="https://linkedin.com/in/yvonneakpoveta/">Yvonne Ruke Akpoveta</a>, Change Leadership Advocate, Speaker - @YvonneRAkpoveta
+
+* <a target="_blank" href="https://linkedin.com/in/carstentams/">Carsten Tams</a>, Consultant & Blogger (on Forbes) @Carsten_tams
+
+* <a target="_blank" href="https://linkedin.com/in/barbaratrautlein/">Barbara Tautlein, PhD</a>, @brautlein
+
+* <a target="_blank" href="https://www.linkedin.com/in/markamurphy/">Mark Murphy</a> (of LeadershipIQ.com) writes in <a target="_blank" href="https://www.forbes.com/sites/markmurphy/?sh=71907803184d">Forbes magazine</a> 
+
 
 ## Social groups
 
