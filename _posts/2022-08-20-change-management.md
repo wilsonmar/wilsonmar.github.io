@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-21"
+date: "2022-11-12"
 file: "change-management"
 title: "OCM (Organizational Change Management)"
 excerpt: "This may be the most important skill for Digital Transformation -- or to implement any change"
@@ -458,9 +458,7 @@ Listed from cheapest to most expensive/prestigeous:
 
    https://jtask.com/app/uploads/2020/09/task-pmp-eco.pdf
 
-* $3,100 <a target="_blank" href="#Certifications">ITIL4 Foundation from Axelos</a> includes a Service Management category
-
-ISO 21500:2012(E) Guidance on project management
+* $3,100 <a target="_blank" href="#Certifications">ITIL4 Foundation from Axelos</a> includes a "Service Management" category.
 
 <hr />
 
@@ -469,7 +467,9 @@ ISO 21500:2012(E) Guidance on project management
 
 ## The ACMP Standard
    
-   <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a> based on an extensive Practice Analysis Study, which investigated leading practices in change management with professionals around the world. It references ISO 21500:2012(E) Guidance on project management. There are 23 steps in the process:
+Under ACMP, professionals around the world collaborated in an extensive Practice Analysis Study of leading practices in change management and ended up with <a target="_blank" href="https://cdn.ymaws.com/www.acmpglobal.org/resource/resmgr/files/ACMP_Standard_2019_03_21.pdf">The 2019 Edition of the 79-page Standard defines best practices and ethics in change management</a>. It references ISO 21500:2012(E) Guidance on project management. 
+
+In The Standard, there are 23 steps organized into:
 
    1. <strong>Evaluate Change Impact and Organizational Readiness</strong> - The processes in this group assess, evaluate, and anticipate an organization and its stakeholders’ readiness, ability, and capacity to undergo a transition from the current state to a future state. The processes also include an assessment of the change and the impact the change will have on the individual and organization. History, culture, and value systems play key roles in these evaluations. The results provide change practitioners with information to calibrate leader expectations and to scale and customize change management plans and activities.
 
@@ -482,30 +482,32 @@ ISO 21500:2012(E) Guidance on project management
    5. <strong>Complete the Change Management Effort</strong> - The processes in this group reinforce the work in the change management plans, determine the effectiveness of the work, monitor progress, and transition the change initiative to the business. These processes include measuring results and comparing to the expected benefits or business objectives. These processes also include the continuous improvement activities that come from the post-project analysis and lessons learned.
    <br /><br />
 
+Within "Evaluate Change Impact and Organizational Readiness":
+
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> Memonic </th><th> Section </th></tr>
+<tr><th> Memonic </th><th> Section 5.1...</th></tr>
 <tr valign="top"><td> D </td><td> 
-5.1.1	Define the Change<br />
-5.1.2	Determine Why the Change is Required<br />
-5.1.3	Develop a Clear Vision of the Future State
+1	Define the Change<br />
+2	Determine Why the Change is Required<br />
+3	Develop a Clear Vision of the Future State
    </td></tr>
 <tr valign="top"><td> I </td><td> 
-5.1.4	Identify Goals, Objectives and Success Criteria<br />
-5.1.5	Identify Sponsors Accountable for the Change<br />
-5.1.6	Identify Stakeholders Affected by the Change
+4	Identify Goals, Objectives and Success Criteria<br />
+5	Identify Sponsors Accountable for the Change<br />
+6	Identify Stakeholders Affected by the Change
    </td></tr>
 <tr valign="top"><td> A </td><td> 
-5.1.7	Assess the Change Impact<br />
-5.1.8	Assess Alignment of the Change with Organizational Strategic Objectives and Performance Measurement<br />
-5.1.9	Assess External Factors that may Affect Organizational Change
+7	Assess the Change Impact<br />
+8	Assess Alignment of the Change with Organizational Strategic Objectives and Performance Measurement<br />
+9	Assess External Factors that may Affect Organizational Change
    </td></tr>
 <tr valign="top"><td> C </td><td> 
-5.1.10	Assess Organization Culture(s) Related to the Change<br />
-5.1.11	Assess Organizational Capacity for Change<br />
-5.1.12	Assess Organizational Readiness for Change<br />
-5.1.13	Assess Communication Needs, Communication Channels and Ability to Deliver Key Messages<br />
-5.1.14	Assess Learning Capabilities<br />
-5.1.15	Conduct Change Risks Assessment
+10	Assess Organization Culture(s) Related to the Change<br />
+11	Assess Organizational Capacity for Change<br />
+12	Assess Organizational Readiness for Change<br />
+13	Assess Communication Needs, Communication Channels and Ability to Deliver Key Messages<br />
+14	Assess Learning Capabilities<br />
+15	Conduct Change Risks Assessment
    </td></tr>
 </table>
 

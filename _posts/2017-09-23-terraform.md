@@ -515,15 +515,18 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 
    Apply complete! Resources: 23 added, 0 changed, 0 destroyed.
 
-   kubectl config view --minify -o jsonpath='{.clusters[].name}'
+   <pre>kubectl config view --minify -o jsonpath='{.clusters[].name}'
+   </pre>
    
-   arn:aws:eks:us-west-2:670394095681:cluster/eks-cluster-with-new-vpc% 
-
-   configure_kubectl = "aws eks --region us-west-2 update-kubeconfig --name eks-cluster-with-new-vpc"
-   aws eks --region "$AWS_REGION" update-kubeconfig --name eks-cluster-with-new-vpc
+   <pre>arn:aws:eks:us-west-2:670394095681:cluster/eks-cluster-with-new-vpc% 
    </pre>
 
-   NOTE: Blueprints are defined/added <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/external-secrets/main.tf">in main.tf file</a> in each example folder.
+   <pre>set configure_kubectl = "aws eks --region us-west-2 update-kubeconfig --name eks-cluster-with-new-vpc"
+   aws eks --region "$AWS_REGION" update-kubeconfig --name eks-cluster-with-new-vpc
+   Updated context arn:aws:eks:us-west-2:670394095681:cluster/eks-cluster-with-new-vpc in /Users/wilsonmar/.kube/config
+   </pre>
+
+   <a target="_blank" href="https://medium.com/hashicorp-engineering/terraform-to-airtable-for-analytics-and-reporting-afe4f3d285f">Cost estimates</a>
 
 2. Configure AWS credentials. The account used should be granted <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/iam/minimum-iam-policy/">this minimum set of IAM policies</a>.
 
@@ -542,30 +545,37 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
    <pre><strong>sudo systemsetup -setcomputersleep Never
    </strong></pre>
 
-6. In Terminal: Run using parameters: 
+6. Among Application Utilities, invoke Apple's Activity Monitor to identify high CPU processes to close, then how much CPU and Memory is consumed by processes Terminal and "terraform".
 
-   <pre><strong>./eks-start1.sh -email johndoe@gmail.com -v -tf
+6. In Terminal: Run using a timer and script parameters: 
+
+   <pre><strong>time ./eks-start1.sh -email johndoe@gmail.com -v -tf
    </strong></pre>
 
    Update your AWS credentials if you see messages like this:
    <pre>│ Error: configuring Terraform AWS Provider: error validating provider credentials: error calling sts:GetCallerIdentity: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: 9e49efe4-dd08-4b2c-a6df-22a754b8a04d, api error ExpiredToken: The security token included in the request is expired
-│
-│   with provider["registry.terraform.io/hashicorp/aws"],
-│   on main.tf line 1, in provider "aws":
-│    1: provider "aws" {
-│   </pre>
 
-6. See UI
-7. Diagram resources.
-8. AWS Config. security alerts, if any.
+   <tt>time</tt> outputs <a target="_blank" href="https://stackoverflow.com/questions/556405/what-do-real-user-and-sys-mean-in-the-output-of-time1/556411#556411">three timings: real, user and sys</a>, such as:
+
+   <pre>real    1m47.363s
+user    2m41.318s
+sys     0m4.013s
+   </pre>
+
+7. QUESTION: What is the UI that can be seen?
+8. QUESTION: How to access services within EKS? 
+9. QUESTION: Diagram resources.
+9. QUESTION: AWS Config. security alerts, if any.
 
 9. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
-10. Add-on add-ons: There is <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">growing list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
-
-   ### Consul add-on
+## Consul add-on
    
-   As an example of <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/extensibility/">extensibility</a>, Consul is added in <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/main.tf">modules/kubernetes-addons/main.tf</a>:
+   Blueprints are defined/added <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/external-secrets/main.tf">in main.tf file</a> in each example folder.
+
+Add-on add-ons: There is <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">growing list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
+
+Each add-on is a module defined in <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/main.tf">modules/kubernetes-addons/main.tf</a> file. For example:
 
    <pre>module "consul" {
   count             = var.enable_consul ? 1 : 0
@@ -576,10 +586,61 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 }
    </pre>
 
+Each module has a folder, such as Consul's <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/kubernetes-addons/consul">modules/kubernetes-addons/consul</a>.
 
-   https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
+<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/kubernetes-addons/consul">Consul's locals.tf file</a> defines:
 
-### More
+   <pre>  default_helm_config = {
+    name             = local.name
+    chart            = local.name
+    repository       = "https://helm.releases.hashicorp.com"
+    version          = "1.0.1"
+    namespace        = local.name
+    create_namespace = true
+    description      = "Consul helm Chart deployment configuration"
+    values           = [templatefile("${path.module}/values.yaml", {})]
+  }
+  &nbsp;
+  helm_config = merge(local.default_helm_config, var.helm_config)
+  &nbsp;
+  argocd_gitops_config = {
+    enable = true
+  }
+     </pre>
+
+Add-ons are enabled by specification in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/locals.tf">modules/kubernetes-addons/locals.tf</a> file.
+
+   <pre>argocd_addon_config = {
+   ...
+   consul = var.enable_consul ? module.consul[0].argocd_gitops_config : null
+   </pre>
+
+   As an example of <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/extensibility/">extensibility</a>, 
+   The HashiCorp Consul add-on is described <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/docs/add-ons/consul.md?plain=1">here in the docs</a> [<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/docs/add-ons/consul.md?plain=1">editable</a>].
+
+   https://developer.hashicorp.com/consul/docs/k8s/installation/install
+
+   https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/consul/README.md?plain=1
+   which references docs at
+   https://developer.hashicorp.com/consul/tutorials/get-started-kubernetes/kubernetes-gs-deploy
+
+   added in <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/main.tf">modules/kubernetes-addons/main.tf</a>:
+
+   <pre>module "consul" {
+  count             = var.enable_consul ? 1 : 0
+  source            = "./consul"
+  helm_config       = var.consul_helm_config
+  manage_via_gitops = var.argocd_manage_add_ons
+  addon_context     = local.addon_context
+}
+   </pre>
+
+   <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/consul/values.yaml">values.yaml</a> specifies a 3-replica server.
+
+   The "Inputs" section in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/consul/README.md">README</a> are coded within <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/consul/variables.tf">variables.yaml</a> which defines "addon_context" variables.
+
+   To use GitOps, edit and change <tt>variable "manage_via_gitops"</tt>
+   setting <tt>default     = false</tt> to <strong>true</strong>. QUESTION?
 
 Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
    
@@ -590,6 +651,10 @@ Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
    https://developer.hashicorp.com/consul/docs/k8s/installation/install
 
    https://github.com/hashicorp/terraform-aws-consul-ent-k8s
+
+### More
+
+   https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
 
 
 <hr />

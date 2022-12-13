@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Distinguished Engineers (and Fellows)"
-excerpt: "Distinguished Engineers provide the voice of technical developers and operations among executive managers"
-tags: [DevOps, ecosystem]
-date: "2022-02-21"
+date: "2022-12-12"
 file: "distinguished-engineers"
+title: "Distinguished Engineers (and Fellows)"
+excerpt: "What is the highest level for technical people? How does one get there?"
+tags: [DevOps, ecosystem]
 image:
 # enterprise-office-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/115942774-0c4fa680-a469-11eb-8337-d57da1650a51.png
@@ -16,36 +16,20 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Organizationally, Distinguished Engineers are individual contributors reporting directly to a VP or the CTO. 
-
 {% include whatever.html %}
 
-In terms of status and pay, Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees. So they get a "seat at the table".
-
-> To me, Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify and mitigate unintended consequences of decisions involving technology and technology workers.
-
-Why is that necessary? Aren't Officers, Directors, and Vice Presidents suppose to be the voice of the people under them? 
-
-Executive managers are focused primarily on business financial objectives.
-
-Distinguished Engineers stand ready to translate technical jargon and concepts to (largely financial) executive management terminology and concepts such as Payback Period, Break-Even Analysis, ARR, NPV, IRR, WACC, EAC, Risk, ROA, ROIC, EBITDA, CAGR, CapEx, OpEx, Balanced Scorecard, KPI, OKR, PEG, QOQ, SWOT, TBL, and other <a target="_blank" href="https://www.investopedia.com/financial-term-dictionary-4769738">financial concepts</a>.
-
-Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams.
-
-Distinguished Engineers usually have achieved <strong>both breath and depth</strong> in their knowledge so they can identify and achieve <strong>integration</strong> among domains such as:
-
-   * Agile Transformation (Agile Sensei)
-   * Site Reliability Engineering (Operations)
-   * Digital (application development)
-   * Data Engineering (and Analytics)
-   <br /><br />
+In some organizations "Distinguished Engineer" is the highest engineering position, in others (Google, Bell Labs) there is a higher "Fellow" level.
 
 A Distinguised Engineer is akin to a senior non-commissioned offer who serves as the subject matter expert in their field (https://www.wikiwand.com/en/Master_sergeant) -- in the US: <strong>Sergeant Major</strong> in the Marines, <strong>Command Sergeant Major</strong> in the Army, <strong>Command Chief Sergeant Major</strong> in the Air Force, or <strong>Master Chief Petty Officer</strong> in the Navy.
 
-
 ## Not just a honorific
 
-In some organizations "Distinguished Engineer" is the highest engineering position, in others (Google, Bell Labs) there is a higher "Fellow" level.
+Grade ladders describe the grades and steps to which a worker is eligible to progress and compensation value associated with that grade and step. You may create different grade ladders for your enterprise: one for technical grades, another for management grades, and a third for administrative grades.
+Examples of Job Grade Ladders:
+
+   * At <a target="_blank" href="https://capgemini.github.io/grade-ladder/">Capgemini consulting</a>, the highest level is <a target="_blank" href="https://capgemini.github.io/grade-ladder/grades/A9">"A9"</a>.
+   * https://docs.oracle.com/en/cloud/saas/talent-management/22d/faitm/grade-ladders.html#s20030835
+   <br /><br />
 
 But I disagree with statements in https://qr.ae/pGQP7S that "Distinguished Engineer" is an "award" for talent and accomplishment where "a Principal Engineer is a 1st string NFL starter, a Distinguished Engineer is a Pro Bowler or MVP, and a Fellow is a Hall of Fame inductee." 
 
@@ -54,6 +38,30 @@ But I disagree with statements in https://qr.ae/pGQP7S that "Distinguished Engin
 Misunderstandings about role can lead to Distinguished Engineers feeling they should "mansplain" technical topics and give perfunctory "blessings" for technical achievements, which lead to disdain rather than respect.
 
 > My advice? Aspire to be a Distinguished Engineer not because you want a trophy as the "Top Dog", but because you desire to make a bigger impact in the lives of others: to reduce frustration, foster more security, and achieve greater properity for all.
+
+## Reporting
+
+Organizationally, Distinguished Engineers are individual contributors reporting directly to a VP or the CTO. 
+
+In terms of status and pay, Distinguished Engineers are generally on the same level with Directors, even though they don’t have many direct reports. They’re considered executive-tier employees. 
+
+> Distinguished Engineers provide the <strong>voice</strong> of technical developers and operations among executive managers. They identify and mitigate unintended consequences of decisions involving technology and technology workers.
+
+Why is that necessary? Aren't Officers, Directors, and Vice Presidents suppose to be the voice of the people under them? 
+
+Executive managers are focused primarily on business financial objectives, using (largely financial) executive management terminology and concepts such as Payback Period, Break-Even Analysis, ARR, NPV, IRR, WACC, EAC, Risk, ROA, ROIC, EBITDA, CAGR, CapEx, OpEx, Balanced Scorecard, KPI, OKR, PEG, QOQ, SWOT, TBL, and other <a target="_blank" href="https://www.investopedia.com/financial-term-dictionary-4769738">financial concepts</a>.
+
+Distinguished Engineers translate technical to financial.
+
+That's because Distinguished Engineers usually have achieved <strong>both breath and depth</strong> in their knowledge so they can identify and achieve <strong>integration</strong> among domains such as:
+
+   * Agile Transformation (Agile Sensei)
+   * Site Reliability Engineering (Operations)
+   * Digital (application development)
+   * Data Engineering (and Analytics)
+   <br /><br />
+
+Distinguished Engineers develop a sense of what technical employees want and need while coaching and mentoring engineering teams.
 
 
 ## What Distinguished Engineers Do
