@@ -317,9 +317,23 @@ Among <a href="#CoreWorkflow">Terraform usage workflow stages</a>:
 
 ## 4) Obtain cloud credentials and network preferences
 
+Running my <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/aliases.zsh">script to defined keyboard aliases</a> enables you to issue on Terminal:
 
+   <pre><strong>awscreds</strong></pre>
 
+That would invoke your favorite editor to edit <tt>~/.aws/credentials</tt>.
 
+Alternately, you can
+
+   <pre><strong>aws configure</strong></pre>
+
+to specify:
+
+   <pre>AWS Access Key ID [****************MHQJ]: 
+AWS Secret Access Key [****************CXH7]: 
+Default region name [us-east-1]: 
+Default output format [json]: 
+   </pre>
 
 <hr />
 
@@ -357,10 +371,31 @@ PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes c
    </td></tr>
 </table>
 
+There's also NKS (Naver Kuernetes Service).
 
 <a name="Kubernetes"></a>
 
 ### Terraform Kubernetes
+
+Use of Kubernetes accelerates time to market for platform initiatives through the <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint/benefits">Separation of Concerns - Platform Teams vs Application Teams</a>:
+
+> Platform teams build the tools that provision, manage, and secure the underlying infrastructure while application teams are free to focus on building the applications that deliver business value to customers. It also gives operators more control in making sure production applications are secure, compliant, and highly available.
+Platform teams have full control to define standards on security, software delivery, monitoring, and networking that must be used across all applications deployed. 
+
+> This allows developers to be more productive because they don’t have to configure and manage the underlying cloud resources themselves. 
+Application teams need to focus on writing code and quickly shipping product, but there must be certain standards that are uniform across all production applications to make them secure, compliant, and highly available.
+
+<a target="_blank" href="https://wilsonmar.github.io/kubernetes">My blog on Kubernetes</a> describes these advantages of using Kubernetes:
+   * Resiliency (auto-restart nodes that fail)
+   * Imposition of a shared operational workflow using common software development lifecycle (SDLC), common management API
+Deployment velocity that can be better supported by a central team of experts
+   * Achieve resource utilization density
+   <br /><br />
+
+Bear in mind that Kubernetes is not magic:
+   * Nodes can take 15 seconds to start, so overprivisioning is necessary
+   * Clusters run all time even when there is no traffic
+   <br /><br />
 
 Docs on Terraform Kubernetes:
    * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs
@@ -405,92 +440,158 @@ https://aws.amazon.com/ecs/
    * https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
    <br /><br />
 
+<hr />
+
 <a name="EKS"></a>
 
-### EKS Blueprints
+### EKS
 
 https://aws.amazon.com/eks/ 
 
-PROTIP: Kubernetes has a lot of "knobs". So simplify by using "Blueprints" consisting of <strong>Terraform</strong> which create complete (production-worthy) EKS clusters that are fully bootstrapped with the operational software and security controls needed to safely deploy and operate workloads.
+PROTIP: EKS has a lot of "knobs". There is a lot to configure. 
+So we would like to have a "starter set" of versioned Infrastructure and Code (IaC) in Terraform to create a <strong>Baseline environment</strong> containing various <a href="#add-ons">add-ons typically added to Kubernetes</a> which, ideally, contain the security controls needed to be "production-worthy", but be brought up quickly for <strong>further customization</strong>
 
-<a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">"Amazon EKS Blueprints"</a> enables construction of a <strong>tool-chain platform</strong> for multiple teams to deploy EKS across any number of accounts and regions, with a self-service UI. Blueprints provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. All embedded with relevant security controls built-in.
-
-Why? Use of Kubernetes accelerates time to market for platform initiatives through the <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint/benefits">Separation of Concerns - Platform Teams vs Application Teams</a>:
-
-> Platform teams build the tools that provision, manage, and secure the underlying infrastructure while application teams are free to focus on building the applications that deliver business value to customers. It also gives operators more control in making sure production applications are secure, compliant, and highly available.
-Platform teams have full control to define standards on security, software delivery, monitoring, and networking that must be used across all applications deployed. 
-
-> This allows developers to be more productive because they don’t have to configure and manage the underlying cloud resources themselves. 
-Application teams need to focus on writing code and quickly shipping product, but there must be certain standards that are uniform across all production applications to make them secure, compliant, and highly available.
-
-Blueprints for Terraform is open-sourced two ways, in different repos and workshops: 
-   * <a href="#EKSBFT">EKS Blueprints for Terraform</a> (below)
-   * EKS Blueprints for CDK workshop at https://catalog.workshops.aws/
+Some "best practices" followed include:
+   * <a target="_blank" href="https://aws.github.io/aws-eks-best-practices/">"EKS Best Practices Guides"</a> A best practices guide for day 2 operations, including operational excellence, security, reliability, performance efficiency, and cost optimization. <a target="_blank" href="https://github.com/aws/aws-eks-best-practices">From this repo</a>.
+   * <a target="_blank" href="https://learnk8s.io/terraform-eks" titile="OCTOBER 2020 by Kristijan Mitevski">"Provisioning Kubernetes clusters on AWS with Terraform and EKS" (using eksctl)</a> 
    <br /><br />
-
-* EKS Blueprints for CDK workshop at https://catalog.workshops.aws/eks-blueprints-for-cdk/en-US
-   * https://github.com/aws-quickstart/cdk-eks-blueprints
-   * https://www.npmjs.com/package/@aws-quickstart/eks-blueprints NPM module
-   * https://github.com/aws-samples/cdk-eks-blueprints-patterns
-   * https://github.com/aws-samples/eks-blueprints-workloads
-   <br /><br />
-
 
 <a name="EKSBFT"></a>
 
 #### EKS Blueprints for Terraform
 
-The manual steps and automation used below installs within AWS:
+So I created the shell script which enables you, with <strong>one command in Terminal</a>, to install <strong>on a Mac</strong> utilities needed to create a base set of AWS resources and <strong>various utilities</strong> installed to support a production instance of EKS. It's a much simpler alternative than using <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/020-setup/self-paced">AWS Cloud9 IDE</a> on a Linux machine, using during delivery of <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">Workshop Studio</a> sessions during AWS conferences.
+
+The Blueprint enables construction of a <strong>tool-chain platform</strong>" for multiple teams to deploy EKS across any number of accounts and regions. Blueprints provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. 
+
+<a href="#MyShellScript">My shell script</a> makes use of this repo created by the AWS IA (infrastructure and automation) team within AWS:
+
+   <ul><a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main">https://github.com/aws-ia/terraform-aws-eks-blueprints</a></ul>
+
+Its <tt>gh-pages</tt> branch is used to display <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">
+this webpage</a>. 
+
+<a name="add-ons"></a>
+
+##### Blueprint add-ons
+
+<a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">That webpage lists the <strong>dozens</strong> of add-ons</a> that have already been integrated into the Blueprints for securing, scaling, monitoring, and operating containerized infrastructure.
+
+Each add-on (feature) is defined as a <strong>module</strong> within <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">this module folder</a>.
+
+All embedded with relevant security controls built-in.
+
+
+<a name="examples"></a>
+
+##### Blueprint examples
+
+<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">
+Several "examples"</a> (use cases) has been defined to reference a particular set of modules.
+
+##### eks-cluster-with-new-vpc
+
+This blog post demonstrates use of <a href="#MyShellScript">my shell script</a> making use of the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc">eks-cluster-with-new-vpc example folder</a> to create a Kubernetes cluster with the same name. 
+
+Manual steps to make it come alive are described in the <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/">AWS EKS Blueprints "Getting Started" page</a>.
+
+<a href="#MyShellScript">My shell script</a> automates those steps by a <strong>lone individual developer/SRE/student</strong> to independently create in AWS an entire set of resources <strong>isolated from all others</strong>:
 
    * A VPC with 3 Private Subnets and 3 Public Subnets
    * EKS Cluster Control plane with one managed node group
    * Internet gateway for Public Subnets and NAT Gateway for Private Subnets
-
-   * AWS Load Balancer Controller
-   * Cluster Autoscaler
-   * CoreDNS
-   * kube-proxy
-   * Metrics Server
-   * vpc-cni
    <br /><br />
 
-Scripts below reference <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/eks-cluster-with-new-vpc/main.tf ">the "eks-cluster-with-new-vpc"</a> example created by AWS IA (infrastructure and automation) team led by <a target="_blank" href="https://www.linkedin.com/in/wellsiau/">Welly Siauw</a>.
+Yes, it does cost some money to run all that. But remember that the objective is to have a production-worthy enviornment.
 
-Other <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">example deployment options ("constructs")</a> not demonstrated here:
-   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/karpenter">Karpenter auto-scaler for EKS</a>
-   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/grafana-loki">Grafana Loki</a>
-   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/observability">Observability Grafana</a>
-   * IPV6 EKS clusters
-   * Analytics clusters with Spark or EMR on EKS
+Once proven independently, the IaC code can then be committed properly into the team's GitHub repo for running within <strong>shared</strong> CI/CD infrastructure (using GitHub Actions, etc.).
+
+But one can use <a href="#MyShellScript">my shell script</a> while they also learn to use CI/CD SaaS operations, without begging for team access.
+
+
+
+<a name="k8s_nodes_pods_list"></a>
+
+#### k8s_nodes_pods created
+
+After Terraform in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc">eks-cluster-with-new-vpc example folder</a> is done creating resources, confirm what was created:
+
+<pre><strong>kubectl get nodes</strong></pre>
+
+should return a list such as this:
+
+<pre>NAME                                        STATUS   ROLES    AGE     VERSION
+ip-10-0-10-190.us-west-2.compute.internal   Ready    &LT;none>   9m14s   v1.23.13-eks-fb459a0
+ip-10-0-11-151.us-west-2.compute.internal   Ready    &LT;none>   9m9s    v1.23.13-eks-fb459a0
+ip-10-0-12-239.us-west-2.compute.internal   Ready    &LT;none>   9m15s   v1.23.13-eks-fb459a0
+</pre>
+
+<pre><strong>kubectl get pods -n kube-system</strong></pre>
+
+should return "Running" status for:
+
+<pre>NAME                                                         READY
+aws-load-balancer-controller-854cb78798-fzsgl                1/1
+aws-load-balancer-controller-854cb78798-pst6c                1/1
+aws-node-8znhp                                               1/1
+aws-node-hxbv5                                               1/1
+aws-node-jb5bs                                               1/1
+cluster-autoscaler-aws-cluster-autoscaler-7ccbf68bc9-8j8vd   1/1
+cluster-proportional-autoscaler-coredns-6fcfcd685f-btczg     1/1
+coredns-57ff979f67-6bm6d                                     1/1
+coredns-57ff979f67-6xnsl                                     1/1
+ebs-csi-controller-79998cddcc-pvfz6                          6/6
+ebs-csi-controller-79998cddcc-v2nmk                          6/6
+ebs-csi-node-85zfq                                           3/3
+ebs-csi-node-mgkq8                                           3/3
+ebs-csi-node-xwx5c                                           3/3
+kube-proxy-m67j6                                             1/1
+kube-proxy-vbj8z                                             1/1
+kube-proxy-vrsxx                                             1/1
+metrics-server-7d76b744cd-7m56x                              1/1
+</pre>
+
+The 18 nodes created are:
+
+   * 2 AWS Load Balancer Controllers
+   * 3 AWS nodes
+   * 1 Cluster Autoscaler
+   * 1 proportional autoscaler for CoreDNS
+   * 2 CoreDNS
+   * 2 ebs CSI controllers
+   * 2 ebs CSI nodes
+   * 3 kube-proxy nodes
+   * 1 Prometheus metrics server
+   * vpc-cni ?
    <br /><br />
 
-   PROTIP: Add-ons can be both open-source or licensed.
+TODO: A <a href="#DiagrammingTools">diagram</a> of resources above?
 
-<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">Modules</a> include:
+TODO: Description of what each node does here.
 
-   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-fargate-profiles">aws-eks-fargate-profiles</a>
-   * aws-eks-managed-node-groups</a>
-   * aws-eks-self-managed-node-groups</a>
-   * aws-eks-teams</a>
-   * aws-kms</a>
-   * emr-on-eks</a>
-   * irsa</a>
-   * kubernetes-addons</a>
-   * launch-templates</a>
-   <br /><br />
+<hr />
 
-PROTIP: I created a shell script to automate the steps described in <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/">"Getting Started"</a>.
+<a name="MyShellScript"></a>
 
-1. Let's examine what it does:
+##### My shell script
 
-   https://github.com/wilsonmar/mac-setup/eks-start1.sh
+Before running any script on your machine, you should understand what it does.
 
-   The script presents a menu if no parameters are provided.
+So let's run the script as-is before we enable <a href="#MoreAddons">more add-ons</a>.
 
-   The script installs on your laptop what are needed:
-   * Homebrew to install jq, git, tree, etc.
-   * awscli, kubctl, terraform, etc.
-   <br /><br />
+1. In a browser, view this URL:
+
+   <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh">https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh</a>
+
+   STEP 01 - 
+   
+   The script presents a menu if no parameters is provided.
+
+   <a name="Utilities"></a>
+
+   ##### Utilities to run Blueprint
+
+   At the start of each run, <a href="#MyShellScript">my shell script</a> installs all the utilities needed (brew, jq, git, tree, awscli, kubectl, terraform, etc.).
 
    In STEP 9, the script clones:
    <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/README.md">https://github.com/aws-ia/terraform-aws-eks-blueprints</a> 
@@ -547,7 +648,7 @@ PROTIP: I created a shell script to automate the steps described in <a target="_
 
 6. Among Application Utilities, invoke Apple's Activity Monitor to identify high CPU processes to close, then how much CPU and Memory is consumed by processes Terminal and "terraform".
 
-6. In Terminal: Run using a timer and script parameters: 
+7. In Terminal: Run using a timer and script parameters: 
 
    <pre><strong>time ./eks-start1.sh -email johndoe@gmail.com -v -tf
    </strong></pre>
@@ -564,16 +665,17 @@ sys     0m4.013s
 
 7. QUESTION: What is the UI that can be seen?
 8. QUESTION: How to access services within EKS? 
-9. QUESTION: Diagram resources.
 9. QUESTION: AWS Config. security alerts, if any.
 
-9. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
+10. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
 ## Consul add-on
    
    Blueprints are defined/added <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/external-secrets/main.tf">in main.tf file</a> in each example folder.
 
-Add-on add-ons: There is <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">growing list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul:
+Add-on add-ons: There is <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">growing list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul.
+
+Here we example <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/extensibility/">extensibility</a> for Consul.
 
 Each add-on is a module defined in <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/main.tf">modules/kubernetes-addons/main.tf</a> file. For example:
 
@@ -608,14 +710,13 @@ Each module has a folder, such as Consul's <a target="_blank" href="https://gith
   }
      </pre>
 
-Add-ons are enabled by specification in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/locals.tf">modules/kubernetes-addons/locals.tf</a> file.
+Add-ons are enabled together by specification in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/modules/kubernetes-addons/locals.tf">modules/kubernetes-addons/locals.tf</a> file.
 
    <pre>argocd_addon_config = {
    ...
    consul = var.enable_consul ? module.consul[0].argocd_gitops_config : null
    </pre>
 
-   As an example of <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/extensibility/">extensibility</a>, 
    The HashiCorp Consul add-on is described <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/docs/add-ons/consul.md?plain=1">here in the docs</a> [<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/docs/add-ons/consul.md?plain=1">editable</a>].
 
    https://developer.hashicorp.com/consul/docs/k8s/installation/install
@@ -642,7 +743,61 @@ Add-ons are enabled by specification in the <a target="_blank" href="https://git
    To use GitOps, edit and change <tt>variable "manage_via_gitops"</tt>
    setting <tt>default     = false</tt> to <strong>true</strong>. QUESTION?
 
-Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
+<a name="MoreAddons"></a>
+
+#### Additional customizations
+
+TODO: Add a sample application (such as HashiCups).
+
+https://developer.hashicorp.com/consul/docs/k8s/helm
+
+https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing
+
+* Deployment platform
+* Deployment topology
+* TLS Certificates
+* Connectivity for operator and clients
+* Logging
+* Host monitoring
+* Application telemetry
+* Backups
+* Restores
+* Upgrades
+
+#### Other add-ons
+
+Other <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">example deployment options ("constructs")</a> not demonstrated here:
+
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/karpenter">Karpenter auto-scaler for EKS</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/grafana-loki">Grafana Loki</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/observability">Observability Grafana</a>
+   * IPV6 EKS clusters
+   * Analytics clusters with Spark or EMR on EKS
+   <br /><br />
+
+   PROTIP: Add-ons can be both open-source or licensed.
+
+<a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">Modules</a> include:
+
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-fargate-profiles">aws-eks-fargate-profiles</a>
+   * aws-eks-managed-node-groups</a>
+   * aws-eks-self-managed-node-groups</a>
+   * aws-eks-teams</a>
+   * aws-kms</a>
+   * emr-on-eks</a>
+   * irsa</a>
+   * kubernetes-addons</a>
+   * launch-templates</a>
+   <br /><br />
+
+???
+
+   <ul><a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh">https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh</a></ul>
+
+ 
+ 
+ 
+ Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
    
    https://catalog.workshops.aws/eks-blueprints-terraform/en-US
 
@@ -655,6 +810,19 @@ Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
 ### More
 
    https://github.com/kalenarndt/terraform-vault-consul-k8s-integration from Kalen is a module that builds the Root CA, Server TLS Intermediate, Consul Connect Intermediate, Connect Inject Intermediate, Controller Intermediate, KV Secrets Engine, Bootstrap Tokens, Gossip Tokens, Consul Licenses, Vault Policies, Kubernetes Roles for authentication with the policies associated, and outputs a sample Helm values file.
+
+
+Blueprints for Terraform is open-sourced two ways, in different repos and workshops: 
+   * <a href="#EKSBFT">EKS Blueprints for Terraform</a> (below)
+   * EKS Blueprints for CDK workshop at https://catalog.workshops.aws/
+   <br /><br />
+
+* EKS Blueprints for CDK workshop at https://catalog.workshops.aws/eks-blueprints-for-cdk/en-US
+   * https://github.com/aws-quickstart/cdk-eks-blueprints
+   * https://www.npmjs.com/package/@aws-quickstart/eks-blueprints NPM module
+   * https://github.com/aws-samples/cdk-eks-blueprints-patterns
+   * https://github.com/aws-samples/eks-blueprints-workloads
+   <br /><br />
 
 
 <hr />
@@ -2409,8 +2577,7 @@ When upgrading Terraform version, configurations may need syntax update.
 
 Wisdom Hambolu analyzes use of a utility that attempts to convert Cloud Formation files to Terraform, with mixed results.
 
-To generate from resources created under an AWS account/Azure Subscription Terraform HCL files,
-here are the options:
+To generate from resources created under an AWS account/Azure Subscription Terraform HCL files, here are the options:
 
 NOTE: No longer supported is the Ruby-based <a target="_blank" href="https://github.com/dtan4/terraforming">https://github.com/dtan4/terraforming</a>. 
 It also comes as a Docker container.
@@ -2449,25 +2616,26 @@ terracognita google resources | wc -l   #  21
 
    On AWS with profiles:
 
-   <pre><strong>terracognita aws --aws-default-region $AWS_REGION [format to import] \
-   --aws-profile $PROFILE_NAME 
+   <pre><strong>terracognita aws --aws-default-region "$AWS_REGION" \
+     [format to import] --aws-profile $PROFILE_NAME 
    </strong></pre>
 
    On AWS with credentials:
 
-   <pre><strong>terracognita aws --aws-default-region $AWS_REGION [format to import] \
-   --aws-access-key $AWS_ACCESS_KEY --aws-secret-access-key $AWS_SECRET_ACCESS_KEY 
+   <pre><strong>terracognita aws --aws-default-region '$AWS_REGION" \
+     [format to import] --aws-access-key $AWS_ACCESS_KEY \
+     --aws-secret-access-key $AWS_SECRET_ACCESS_KEY 
    </strong></pre>
 
    On AWS with credentials file:
 
-   <pre><strong>terracognita aws --aws-default-region $AWS_REGION [format to import] \
-   --aws-shared-credentials-file $FILE_PATH 
+   <pre><strong>terracognita aws --aws-default-region $AWS_REGION \
+      [format to import] --aws-shared-credentials-file $FILE_PATH 
    </strong></pre>
 
    Additionally on AWS: 
 
-   <pre><strong>   --hcl <em>test.tf</em> \
+   <pre><strong>--hcl <em>test.tf</em> \
    --module <em>module-name (as tf module) Optional with this format:</em> \
    --module-variables <em>file.json/yaml (to limit vars on the module)</em> \
    --tfstate <em>test.tfstate (as tfstate)</em>
@@ -2479,17 +2647,26 @@ terracognita google resources | wc -l   #  21
 brew install terraformer
    </strong></pre>
 
-2. Other diagramming tools:
+   <a name="DiagrammingTools"></a>
 
-   https://cloudcraft.co/
+2. Other diagram generation tools:
 
-   https://www.hava.io/blog/aws-network-diagram-generator
-   AWS network diagram generator and visualize security group, traffic and open port details.
-   Generates to  Visio, draw.io or any VSDX.
+   The <a target="_blank" href="https://www.hava.io/blog/aws-network-diagram-generator">AWS network diagram generator</a> from <a target="_blank" href="https://www.linkedin.com/company/team-hava/">Hava.io</a>
+   visualizes security groups, traffic, and open port details on AWS, Azure, and GCP.
 
-   LucidChart
+   <a target="_blank" href="https://i.pinimg.com/originals/99/16/40/99164086b2d6abf8f5e1356dac1f800f.jpg"><img alt="hava-multi-cloud-2788x1432.png" width="874" src="https://i.pinimg.com/originals/99/16/40/99164086b2d6abf8f5e1356dac1f800f.jpg"></a>
+
+   For a 14-day trial on AWS, provide your Cross-Account ARN.
+      
+   <a target="_blank" href="https://www.hava.io/blog/aws-vpc-diagram-generator"><img alt="aws-hava.io-diagram-874x926.png" width="874" height="926" src="https://i.pinimg.com/originals/30/c6/57/30c657c2c3352b0d51d328fec541a9a2.jpg"></a>
+
+   Hava.io can generate 3D diagrams as well as output to Visio, draw.io or any VSDX.
+
+   <a target="_blank" href="https://cloudcraft.co/">cloudcraft.co</a>
 
    https://cloudviz.io/ for AWS at $10/month
+
+   LucidChart?
 
 3. Deploy your existing CFT instead of trying to convert it:
 
