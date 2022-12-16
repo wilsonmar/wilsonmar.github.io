@@ -471,6 +471,7 @@ The Blueprint enables construction of a <strong>tool-chain platform</strong>" fo
 Its <tt>gh-pages</tt> branch is used to display <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">
 this webpage</a>. 
 
+
 <a name="add-ons"></a>
 
 ##### Blueprint add-ons
@@ -487,34 +488,44 @@ All embedded with relevant security controls built-in.
 ##### Blueprint examples
 
 <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">
-Several "examples"</a> (use cases) has been defined to reference a particular set of modules.
+Several "examples" (cluster use cases)</a> have been defined. Each example references a particular set of modules. 
 
-##### eks-cluster-with-new-vpc
 
-This blog post demonstrates use of <a href="#MyShellScript">my shell script</a> making use of the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc">eks-cluster-with-new-vpc example folder</a> to create a Kubernetes cluster with the same name. 
+<a name="eks-cluster-with-new-vpc"></a>
 
-Manual steps to make it come alive are described in the <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/">AWS EKS Blueprints "Getting Started" page</a>.
+##### example eks-cluster-with-new-vpc
 
-<a href="#MyShellScript">My shell script</a> automates those steps by a <strong>lone individual developer/SRE/student</strong> to independently create in AWS an entire set of resources <strong>isolated from all others</strong>:
+This blog post demonstrates use of <a href="#MyShellScript">my shell script</a>, which enables a <strong>lone individual developer/SRE/student</strong> to independently and quickly create an isolated  <strong>full-featured production-candidate</strong> EKS environment, by typing a single command.
 
-   * A VPC with 3 Private Subnets and 3 Public Subnets
+> Most Kubernetes tutorials (KodeKloud, etc.) teach you about atomic kubectl and eksctl commands. You need that to pass KCAD exams. But here I describe a way to repeatedly create a production environment with all its complexities, which is the job of Kubernetes admins.
+
+Specifically, <a href="#MyShellScript">my shell script</a> currently <strong>automates</strong> several manual steps described at the <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/">AWS EKS Blueprints "Getting Started" page</a>, to run Terraform in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc"><strong>eks-cluster-with-new-vpc</strong> folder</a> to create a Kubernetes cluster (in one Terminal command):
+
+   * A VPC with 3 Private Subnets and 3 Public Subnets (or more if you choose)
    * EKS Cluster Control plane with one managed node group
    * Internet gateway for Public Subnets and NAT Gateway for Private Subnets
+   * Plus many possible add-ons
    <br /><br />
 
-Yes, it does cost some money to run all that. But remember that the objective is to have a production-worthy enviornment.
+That is the starting point for a full-featured production-worthy environment.
 
-Once proven independently, the IaC code can then be committed properly into the team's GitHub repo for running within <strong>shared</strong> CI/CD infrastructure (using GitHub Actions, etc.).
+   PROTIP: It's quicker and easier to run a script. Manually invoking one command at a time is time consuming and error prone. It's too easy to skip a step, which causes errors and wasted time troubleshooting. A script ensures that steps are run in sequence. Checks can be added to make sure conditions for each command are met before, and after each command to ensure that each step achieves what was intended.
 
-But one can use <a href="#MyShellScript">my shell script</a> while they also learn to use CI/CD SaaS operations, without begging for team access.
+<a href="#MyShellScript">My shell script</a> makes it quicker to test changes in Helm charts and addition of <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">add-on</a> for more capability in your Kubernetes environment (such as Observability, backup, etc.).
 
+Once proven independently, changes to the IaC code base can then be confidently committed into the team GitHub repo for running within <strong>shared</strong> CI/CD infrastructure (using GitHub Actions, etc.). This enables you to say in your PR:
 
+   <ul>Yes, I have tested the PR using my local account setup (Provide any test evidence report under Additional Notes)</ul>
+
+Use <a href="#MyShellScript">my shell script</a> while learning to use CI/CD SaaS operations (such as Argo CD), without begging for team access.
+
+Let's start by the end-product of a cluster.
 
 <a name="k8s_nodes_pods_list"></a>
 
 #### k8s_nodes_pods created
 
-After Terraform in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc">eks-cluster-with-new-vpc example folder</a> is done creating resources, confirm what was created:
+After running <a href="#MyShellScript">my shell script</a> or typing manual Terraform commands, confirm what was created:
 
 <pre><strong>kubectl get nodes</strong></pre>
 
@@ -551,15 +562,15 @@ kube-proxy-vrsxx                                             1/1
 metrics-server-7d76b744cd-7m56x                              1/1
 </pre>
 
-The 18 nodes created are:
+The 18 nodes created above are:
 
-   * 2 AWS Load Balancer Controllers
+   * 2 <a target="_blank" href="https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html">AWS Load Balancer Controllers</a>
    * 3 AWS nodes
    * 1 Cluster Autoscaler
    * 1 proportional autoscaler for CoreDNS
    * 2 CoreDNS
-   * 2 ebs CSI controllers
-   * 2 ebs CSI nodes
+   * 2 EBS CSI (Container Storage Interface) controllers
+   * 2 EBS CSI nodes
    * 3 kube-proxy nodes
    * 1 Prometheus metrics server
    * vpc-cni ?
@@ -567,31 +578,75 @@ The 18 nodes created are:
 
 TODO: A <a href="#DiagrammingTools">diagram</a> of resources above?
 
-TODO: Description of what each node does here.
+TODO: Description of what each node provides and how they communicate with each other.
 
 <hr />
 
 <a name="MyShellScript"></a>
 
-##### My shell script
+## The calling shell script
 
-Before running any script on your machine, you should understand what it does.
+PROTIP: Before running any script on your machine, a good security practice is to understand what it really does.
 
-So let's run the script as-is before we enable <a href="#MoreAddons">more add-ons</a>.
-
-1. In a browser, view this URL:
+1. In a browser, view the script online in GitHub:
 
    <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh">https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh</a>
 
-   STEP 01 - 
-   
-   The script presents a menu if no parameters is provided.
+   PROTIP: A basic tenant of scripts is that no action is taken unless the user specifies a parameter.
+
+   If a script is called with no parameters, the script presents a menu of parameters and stops:
+
+       <ul><pre><strong>./eks-start1.sh
+       </ul>
+
+   <pre>=========================== 2022-??-15T15.05.50-0700 ./eks-start1.sh v0.19
+PARAMETER OPTIONS:
+   -h          #  show this help menu by running without any parameters
+   -cont       #  continue (NOT stop) on error
+   -v          # -verbose (list more details to console)
+   -x          #  set -x to display every console command
+   -q          # -quiet headings for each step
+ &nbsp;
+   -vers       #  list versions released
+   -I          # -Install utilities brew, etc. (default is install)
+   -tf "1.3.6"            # version of Terraform to install
+   -gpg        #  Install gpg2 utility and generate key if needed
+   -email "johndoe@gmail.com"     # to generate GPG keys for
+ &nbsp;
+   -DGB        # Delete GitHub at Beginning (download again)
+   -c          # -clone again from GitHub (default uses what exists)
+   -GFP "/Users/wilsonmar/githubs"   # Folder path to install repo from GitHub
+ &nbsp;
+   -aws        # -AWS cloud awscli
+   -region "us-east-1"    # region in the cloud awscli
+ &nbsp;
+   -KTD        # Kubernetes Terraform Deploy
+   -DTB        # Destroy Terraform-created resources at Beginning of run
+   -DTE        # Destroy Terraform-created resources at End of run
+   </pre>
+
+   To run the script to establish Kubernetes cluster:
+
+       <ul><pre><strong>time ./eks-start1.sh -v -KTD
+       </ul>
+
+   But before you do that, let's look at the tools and utilities that need to be installed.
 
    <a name="Utilities"></a>
 
    ##### Utilities to run Blueprint
 
-   At the start of each run, <a href="#MyShellScript">my shell script</a> installs all the utilities needed (brew, jq, git, tree, awscli, kubectl, terraform, etc.).
+   To install all the utilities needed (brew, jq, git, tree, awscli, kubectl, terraform, etc.):
+
+       <ul><pre><strong>./eks-start1.sh -I -v
+       </ul>
+
+   <tt>-v</tt> displays additonal verbosity.
+
+   <tt>-q</tt> quiets the headings displayed by the <tt>h2</tt> custom-defined command.
+
+
+   ### GitHub to load Blueprints
 
    In STEP 9, the script clones:
    <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/README.md">https://github.com/aws-ia/terraform-aws-eks-blueprints</a> 
@@ -600,9 +655,12 @@ So let's run the script as-is before we enable <a href="#MoreAddons">more add-on
    <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">website "Amazon EKS Blueprints for Terraform"</a>.
    This results in the <tt>du -h</tt> command showing 26MB of disk space usage (instead of 40MB with all branches).
 
-   Upon failure, the script automatically runs <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/#cleanup">Cleanup <tt>terraform destroy</tt> commands</a> (unless the script's -xD parameter is specified).
+   ### Run
+
+   Upon failure, the script automatically runs <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/getting-started/#cleanup">Cleanup <tt>terraform destroy</tt> commands</a> (unless the script's override parameter was specified).
 
    <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/eks-cluster-with-new-vpc">Set your region</a>:   
+   
    <pre>export AWS_REGION=us-west-2
    aws ec2 describe-availability-zones --output text --query 'AvailabilityZones[0].[RegionName]'
    aws configure list | grep region
@@ -629,26 +687,26 @@ So let's run the script as-is before we enable <a href="#MoreAddons">more add-on
 
    <a target="_blank" href="https://medium.com/hashicorp-engineering/terraform-to-airtable-for-analytics-and-reporting-afe4f3d285f">Cost estimates</a>
 
-2. Configure AWS credentials. The account used should be granted <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/iam/minimum-iam-policy/">this minimum set of IAM policies</a>.
+1. Configure AWS credentials. The account used should be granted <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/iam/minimum-iam-policy/">a minimum set of IAM policies</a>.
 
-3. Download the script:
+2. Download the script:
 
    <pre><strong>curl -s "https://raw.githubusercontent.com/wilsonmar/mac-setup/master/eks-start1.sh" --output eks-start1.sh
    </strong></pre>
 
-4. Set permissions (needed only one time):
+3. Set permissions (needed only one time):
 
    <pre><strong>chmod +x eks-start1.sh
    </strong></pre>
 
-5. Set your Mac to not sleep: Click the Apple logo on the top-left corner of your screen, and select System Preferences. In the upper-right, type on Battery. At the left menu, click Battery. Drag the slider to Never. Click "Power Adapter" and drag that slider to Never.
+4. Set your Mac to not sleep: Click the Apple logo on the top-left corner of your screen, and select System Preferences. In the upper-right, type on Battery. At the left menu, click Battery. Drag the slider to Never. Click "Power Adapter" and drag that slider to Never.
    
    <pre><strong>sudo systemsetup -setcomputersleep Never
    </strong></pre>
 
-6. Among Application Utilities, invoke Apple's Activity Monitor to identify high CPU processes to close, then how much CPU and Memory is consumed by processes Terminal and "terraform".
+5. Among Application Utilities, invoke Apple's Activity Monitor to identify high CPU processes to close, then how much CPU and Memory is consumed by processes Terminal and "terraform".
 
-7. In Terminal: Run using a timer and script parameters: 
+6. In Terminal: Run using a timer and script parameters: 
 
    <pre><strong>time ./eks-start1.sh -email johndoe@gmail.com -v -tf
    </strong></pre>
@@ -669,8 +727,10 @@ sys     0m4.013s
 
 10. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
-## Consul add-on
+## Add-on for Consul
    
+   https://developer.hashicorp.com/consul/docs/k8s/installation/install
+
    Blueprints are defined/added <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/blob/main/examples/external-secrets/main.tf">in main.tf file</a> in each example folder.
 
 Add-on add-ons: There is <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">growing list of add-ons</a> to the Blueprints include Prometheus, Karpenter, Nginx, Traefik, AWS Load Balancer Controller, Fluent Bit, Keda, ArgoCD, and Consul.
@@ -743,6 +803,7 @@ Add-ons are enabled together by specification in the <a target="_blank" href="ht
    To use GitOps, edit and change <tt>variable "manage_via_gitops"</tt>
    setting <tt>default     = false</tt> to <strong>true</strong>. QUESTION?
 
+
 <a name="MoreAddons"></a>
 
 #### Additional customizations
@@ -753,20 +814,25 @@ https://developer.hashicorp.com/consul/docs/k8s/helm
 
 https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing
 
-* Deployment platform
-* Deployment topology
-* TLS Certificates
-* Connectivity for operator and clients
-* Logging
-* Host monitoring
-* Application telemetry
-* Backups
-* Restores
-* Upgrades
+Additional capabilities to add:
+    * Deployment platform
+    * Deployment topology
+    * TLS Certificates
+    * Connectivity for operator and clients
+    * Logging
+    * Host monitoring
+    * Application telemetry
+    * Backups
+    * Restores
+    * Upgrades
+   <br /><br />
+
 
 #### Other add-ons
 
-Other <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">example deployment options ("constructs")</a> not demonstrated here:
+https://aws-ia.github.io/terraform-aws-eks-blueprints/main/extensibility/
+
+You may want to try implementing other use cases in the <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">example deployment options ("constructs") folder</a> not demonstrated here:
 
    * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/karpenter">Karpenter auto-scaler for EKS</a>
    * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples/grafana-loki">Grafana Loki</a>
@@ -780,21 +846,16 @@ Other <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-bluep
 <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">Modules</a> include:
 
    * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-fargate-profiles">aws-eks-fargate-profiles</a>
-   * aws-eks-managed-node-groups</a>
-   * aws-eks-self-managed-node-groups</a>
-   * aws-eks-teams</a>
-   * aws-kms</a>
-   * emr-on-eks</a>
-   * irsa</a>
-   * kubernetes-addons</a>
-   * launch-templates</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-managed-node-groups">aws-eks-managed-node-groups</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-self-managed-node-groups">aws-eks-self-managed-node-groups</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-eks-teams">aws-eks-teams</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/aws-kms">aws-kms</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/emr-on-eks">emr-on-eks</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/irsa">irsa</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/kubernetes-addons">kubernetes-addons</a>
+   * <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules/launch-templates">launch-templates</a>
    <br /><br />
 
-???
-
-   <ul><a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh">https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh</a></ul>
-
- 
  
  
  Process Helm charts to configure Kubernetes using CNCF GitOps tool ArgoCD:
@@ -907,6 +968,8 @@ https://github.com/hashicorp/terraform-gcp-consul-ent-k8s
 ### CI/CD
 
    <a target="_blank" href="https://github.com/fedekau/terraform-with-circleci-example">https://github.com/fedekau/terraform-with-circleci-example</a>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=8ZTxeV737f4&list=PL81sUbsFNc5ZgO3FpSLKNRIIvCBvqm-JA&index=45">VIDEO</a>: "Create Preview Environments for Terraform" (using GitHub Actions)
 
 <hr />
 
@@ -2649,20 +2712,37 @@ brew install terraformer
 
    <a name="DiagrammingTools"></a>
 
-2. Other diagram generation tools:
+2. Diagram generation tools:
+
+   <a name="Hava.io"></a>
+
+   ### Hava.io
 
    The <a target="_blank" href="https://www.hava.io/blog/aws-network-diagram-generator">AWS network diagram generator</a> from <a target="_blank" href="https://www.linkedin.com/company/team-hava/">Hava.io</a>
-   visualizes security groups, traffic, and open port details on AWS, Azure, and GCP.
-
+   visualizes security groups, connections, etc. on AWS, Azure, and GCP so that you can more easily spot anomalies, review cost forecasts, etc.
+   
    <a target="_blank" href="https://i.pinimg.com/originals/99/16/40/99164086b2d6abf8f5e1356dac1f800f.jpg"><img alt="hava-multi-cloud-2788x1432.png" width="874" src="https://i.pinimg.com/originals/99/16/40/99164086b2d6abf8f5e1356dac1f800f.jpg"></a>
+
+   Selecting each resource reveals its attributes: security groups, connections, subnets, ingress/egress IPs. 
+
+   <a target="_blank" href="https://i.pinimg.com/originals/b2/2c/4a/b22c4ac1e744a7f740a3a7c5aaa83c8b.jpg"><img alt="aws-hava.io-diagram-874x926.png" width="874" height="926" src="https://i.pinimg.com/originals/b2/2c/4a/b22c4ac1e744a7f740a3a7c5aaa83c8b.jpg"></a>
 
    For a 14-day trial on AWS, provide your Cross-Account ARN.
       
    <a target="_blank" href="https://www.hava.io/blog/aws-vpc-diagram-generator"><img alt="aws-hava.io-diagram-874x926.png" width="874" height="926" src="https://i.pinimg.com/originals/30/c6/57/30c657c2c3352b0d51d328fec541a9a2.jpg"></a>
 
-   Hava.io can generate 3D diagrams as well as output to Visio, draw.io or any VSDX.
+   Export diagrams for on-boarding, management, audit and compliance purposes in 3D diagrams as well as output to Visio, draw.io or any VSDX.
+   Diagrams can be <a target="_blank" href="https://www.hava.io/hava-embedded-diagram-viewer">embedded as iframes on webpages</a>.
+
+   <a name="Cloudcraft"></a>
+
+   ### Cloudcraft
 
    <a target="_blank" href="https://cloudcraft.co/">cloudcraft.co</a>
+
+   <a name="Cloudviz"></a>
+
+   ### Cloudviz
 
    https://cloudviz.io/ for AWS at $10/month
 
