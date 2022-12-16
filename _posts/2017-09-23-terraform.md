@@ -466,7 +466,7 @@ The Blueprint enables construction of a <strong>tool-chain platform</strong>" fo
 
 <a href="#MyShellScript">My shell script</a> makes use of this repo created by the AWS IA (infrastructure and automation) team within AWS:
 
-   <ul><a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main">https://github.com/aws-ia/terraform-aws-eks-blueprints</a></ul>
+<ul><a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main">https://github.com/aws-ia/terraform-aws-eks-blueprints</a></ul>
 
 Its <tt>gh-pages</tt> branch is used to display <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">
 this webpage</a>. 
@@ -515,7 +515,7 @@ That is the starting point for a full-featured production-worthy environment.
 
 Once proven independently, changes to the IaC code base can then be confidently committed into the team GitHub repo for running within <strong>shared</strong> CI/CD infrastructure (using GitHub Actions, etc.). This enables you to say in your PR:
 
-   <ul>Yes, I have tested the PR using my local account setup (Provide any test evidence report under Additional Notes)</ul>
+<ul>Yes, I have tested the PR using my local account setup (Provide any test evidence report under Additional Notes)</ul>
 
 Use <a href="#MyShellScript">my shell script</a> while learning to use CI/CD SaaS operations (such as Argo CD), without begging for team access.
 
@@ -596,8 +596,7 @@ PROTIP: Before running any script on your machine, a good security practice is t
 
    If a script is called with no parameters, the script presents a menu of parameters and stops:
 
-       <ul><pre><strong>./eks-start1.sh
-       </ul>
+   <pre><strong>./eks-start1.sh</strong></pre>
 
    <pre>=========================== 2022-??-15T15.05.50-0700 ./eks-start1.sh v0.19
 PARAMETER OPTIONS:
@@ -627,8 +626,7 @@ PARAMETER OPTIONS:
 
    To run the script to establish Kubernetes cluster:
 
-       <ul><pre><strong>time ./eks-start1.sh -v -KTD
-       </ul>
+   <ul><pre><strong>time ./eks-start1.sh -v -KTD</strong></pre></ul>
 
    But before you do that, let's look at the tools and utilities that need to be installed.
 
@@ -638,8 +636,7 @@ PARAMETER OPTIONS:
 
    To install all the utilities needed (brew, jq, git, tree, awscli, kubectl, terraform, etc.):
 
-       <ul><pre><strong>./eks-start1.sh -I -v
-       </ul>
+   <ul><pre><strong>./eks-start1.sh -I -v</strong></pre></ul>
 
    <tt>-v</tt> displays additonal verbosity.
 
@@ -697,7 +694,7 @@ PARAMETER OPTIONS:
 3. Set permissions (needed only one time):
 
    <pre><strong>chmod +x eks-start1.sh
-   </strong></pre>
+   </strong></pre>exam
 
 4. Set your Mac to not sleep: Click the Apple logo on the top-left corner of your screen, and select System Preferences. In the upper-right, type on Battery. At the left menu, click Battery. Drag the slider to Never. Click "Power Adapter" and drag that slider to Never.
    
@@ -980,7 +977,7 @@ https://github.com/hashicorp/terraform-gcp-consul-ent-k8s
 <a target="_blank" href="https://learn.boltops.com/courses/terraspace-fundamentals/lessons/terraspace-getting-started-with-aws">VIDEO</a>: <a target="_blank" href="https://terraspace.cloud/">Terraspace.cloud</a> dynamically generates Terraform projects in a centralized manner (which eliminates duplication). 
 So the whole stack can be brought up by a single command: <a target="_blank" href="https://www.youtube.com/watch?v=GjlWeYAGWIE">VIDEO</a>:
 
-   <ul><pre>terraspace up STACK</pre></ul>
+<ul><pre>terraspace up STACK</pre></ul>
 
 <a target="_blank" href="https://terraspace.cloud/docs/vs/terragrunt/">
 Unlike Terragrunt</a>, Terraspace automatically creates <a target="_blank" href="https://terraspace.cloud/docs/config/backend/">storage Buckets in the back-end</a>. Terraspace intermixes its own features with those of Terraform (e.g. using ERB templates in backend configuration), needed because Terraform doesn’t allow expressions in the backend block. 
@@ -1888,7 +1885,8 @@ cd full-fast-fail
 
 ### Terragoat for learning
 
-   <ul><a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a></ul>
+   * <a target="_blank" href="https://github.com/bridgecrewio/terragoat/">https://github.com/bridgecrewio/terragoat</a>
+   <br /><br />
 
    (It's in the same vein as <a target="_blank" href="https://github.com/RhinoSecurityLabs/cloudgoat">RhinoLabs’  penetration testing training tool, CloudGoat</a>.)
    
@@ -4361,12 +4359,12 @@ CAUTION: What Cloud Provisioners do are not reflected in Terraform state, so bet
 <strong>Cloud-init</strong> is an industry standard for cross-platform cloud instance initializations.
 When your VM is launched on a Cloud Service Provider (CSP) based on YAML or Bash script such as:
 
-   <ul><pre>#!bin/bash
+<ul><pre>#!bin/bash
 yum update -y
 yum install -y httpd
 sudo service httpd start
 sudo service httpd enable
-   </pre></ul>
+</pre></ul>
 
 Packer (from HashiCorp) is an automated image-build service for multiple clouds.
 
