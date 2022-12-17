@@ -452,6 +452,7 @@ PROTIP: EKS has a lot of "knobs". There is a lot to configure.
 So we would like to have a "starter set" of versioned Infrastructure and Code (IaC) in Terraform to create a <strong>Baseline environment</strong> containing various <a href="#add-ons">add-ons typically added to Kubernetes</a> which, ideally, contain the security controls needed to be "production-worthy", but be brought up quickly for <strong>further customization</strong>
 
 Some "best practices" followed include:
+
    * <a target="_blank" href="https://aws.github.io/aws-eks-best-practices/">"EKS Best Practices Guides"</a> A best practices guide for day 2 operations, including operational excellence, security, reliability, performance efficiency, and cost optimization. <a target="_blank" href="https://github.com/aws/aws-eks-best-practices">From this repo</a>.
    * <a target="_blank" href="https://learnk8s.io/terraform-eks" titile="OCTOBER 2020 by Kristijan Mitevski">"Provisioning Kubernetes clusters on AWS with Terraform and EKS" (using eksctl)</a> 
    <br /><br />
@@ -460,16 +461,18 @@ Some "best practices" followed include:
 
 #### EKS Blueprints for Terraform
 
-So I created the shell script which enables you, with <strong>one command in Terminal</a>, to install <strong>on a Mac</strong> utilities needed to create a base set of AWS resources and <strong>various utilities</strong> installed to support a production instance of EKS. It's a much simpler alternative than using <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/020-setup/self-paced">AWS Cloud9 IDE</a> on a Linux machine, using during delivery of <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">Workshop Studio</a> sessions during AWS conferences.
+So I created the shell script which enables you, with <strong>one command in Terminal</a>, to install <strong>on a Mac</strong> utilities needed to create a base set of AWS resources and <strong>various utilities</strong> installed to support a production instance of EKS. It's a simpler <strong>local</strong> alternative than using <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/020-setup/self-paced">AWS Cloud9 IDE</a> on a Linux machine, using during delivery of <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">Workshop Studio</a> sessions during AWS conferences.
 
-The Blueprint enables construction of a <strong>tool-chain platform</strong>" for multiple teams to deploy EKS across any number of accounts and regions. Blueprints provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. 
+<a target="_blank" href="https://www.youtube.com/watch?v=DhoZMbqwwsw"><img alt="tf-aws-blueprint-sai-1072x586.jpg by Sai Vennam" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671256963/tf-aws-blueprint-sai-1072x586_wwkihq.jpg"></a>
 
-<a href="#MyShellScript">My shell script</a> makes use of this repo created by the AWS IA (infrastructure and automation) team within AWS:
+AWS EKS Blueprint (<a target="_blank" href="https://aws.amazon.com/blogs/containers/bootstrapping-clusters-with-eks-blueprints/">announced April 20, 2022</a>) enables construction of a "batteries included" <strong>tool-chain platform</strong>" which provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. Multiple teams to deploy EKS across any number of accounts and regions.
 
 <ul><a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main">https://github.com/aws-ia/terraform-aws-eks-blueprints</a></ul>
 
 Its <tt>gh-pages</tt> branch is used to display <a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/">
 this webpage</a>. 
+
+PROTIP: <a href="#MyShellScript">My shell script</a> makes use of The Blueprints repo created by the AWS IA (infrastructure and automation) team within AWS:
 
 
 <a name="add-ons"></a>
@@ -481,6 +484,9 @@ this webpage</a>.
 Each add-on (feature) is defined as a <strong>module</strong> within <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">this module folder</a>.
 
 All embedded with relevant security controls built-in.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=CB79eTFbR0w&list=RDCMUCfz8x0lVzJpb_dgWm9kPVrw&start_radio=1&rv=CB79eTFbR0w">VIDEO: "10 Must-Have Kubernetes Tools"</a>
+
 
 
 <a name="examples"></a>
@@ -542,27 +548,47 @@ ip-10-0-12-239.us-west-2.compute.internal   Ready    &LT;none>   9m15s   v1.23.1
 should return "Running" status for:
 
 <pre>NAME                                                         READY
-aws-load-balancer-controller-854cb78798-fzsgl                1/1
-aws-load-balancer-controller-854cb78798-pst6c                1/1
-aws-node-8znhp                                               1/1
-aws-node-hxbv5                                               1/1
-aws-node-jb5bs                                               1/1
-cluster-autoscaler-aws-cluster-autoscaler-7ccbf68bc9-8j8vd   1/1
-cluster-proportional-autoscaler-coredns-6fcfcd685f-btczg     1/1
-coredns-57ff979f67-6bm6d                                     1/1
-coredns-57ff979f67-6xnsl                                     1/1
-ebs-csi-controller-79998cddcc-pvfz6                          6/6
-ebs-csi-controller-79998cddcc-v2nmk                          6/6
-ebs-csi-node-85zfq                                           3/3
-ebs-csi-node-mgkq8                                           3/3
-ebs-csi-node-xwx5c                                           3/3
-kube-proxy-m67j6                                             1/1
-kube-proxy-vbj8z                                             1/1
-kube-proxy-vrsxx                                             1/1
-metrics-server-7d76b744cd-7m56x                              1/1
+amazon-cloudwatch   aws-cloudwatch-metrics-8c4dl                                 1/1 
+amazon-cloudwatch   aws-cloudwatch-metrics-g67tv                                 1/1
+amazon-cloudwatch   aws-cloudwatch-metrics-khz28                                 1/1
+cert-manager        cert-manager-559c84c94f-jpdlv                                1/1
+cert-manager        cert-manager-cainjector-69cfd4dbc9-wpftq                     1/1
+cert-manager        cert-manager-webhook-5f454c484c-j8jvl                        1/1
+gatekeeper-system   gatekeeper-audit-9b7795dcf-gzn49                             1/1
+gatekeeper-system   gatekeeper-controller-manager-78b8774b7c-57tt5               1/1
+gatekeeper-system   gatekeeper-controller-manager-78b8774b7c-b7hks               1/1
+gatekeeper-system   gatekeeper-controller-manager-78b8774b7c-hl2vg               1/1
+kube-system         aws-load-balancer-controller-854cb78798-ckcs6                1/1
+kube-system         aws-load-balancer-controller-854cb78798-rpmwc                1/1
+kube-system         aws-node-f4zxh                                               1/1
+kube-system         aws-node-gl9vt                                               1/1
+kube-system         aws-node-qg4nz                                               1/1
+kube-system         cluster-autoscaler-aws-cluster-autoscaler-7ccbf68bc9-d6hc5   1/1
+kube-system         cluster-proportional-autoscaler-coredns-6fcfcd685f-5spb8     1/1
+kube-system         coredns-57ff979f67-4nnh2                                     1/1
+kube-system         coredns-57ff979f67-q4jlj                                     1/1
+kube-system         ebs-csi-controller-79998cddcc-8fttd                          6/6
+kube-system         ebs-csi-controller-79998cddcc-wkssp                          6/6
+kube-system         ebs-csi-node-6pccm                                           3/3
+kube-system         ebs-csi-node-wv2jm                                           3/3
+kube-system         ebs-csi-node-xqjpp                                           3/3
+kube-system         kube-proxy-cgjsq                                             1/1
+kube-system         kube-proxy-fwmv9                                             1/1
+kube-system         kube-proxy-lt8cg                                             1/1
+kube-system         metrics-server-7d76b744cd-ztg98                              1/1
+kubecost            kubecost-cost-analyzer-7fc46777c4-5kdjw                      2/2
+kubecost            kubecost-kube-state-metrics-59fd4555f4-tghnt                 1/1
+kubecost            kubecost-prometheus-node-exporter-89vg6                      1/1
+kubecost            kubecost-prometheus-node-exporter-fll24                      1/1
+kubecost            kubecost-prometheus-node-exporter-pjhsz                      1/1
+kubecost            kubecost-prometheus-server-58d5cf79df-jxtgq                  2/2
 </pre>
 
-The 18 nodes created above are:
+TODO: A <a href="#DiagrammingTools">diagram</a> of resources above?
+
+TODO: Description of what each node provides and how they communicate with each other.
+
+The 18 nodes created under namespace "kube-system" are:
 
    * 2 <a target="_blank" href="https://docs.aws.amazon.com/eks/latest/userguide/network-load-balancing.html">AWS Load Balancer Controllers</a>
    * 3 AWS nodes
@@ -576,10 +602,6 @@ The 18 nodes created above are:
    * vpc-cni ?
    <br /><br />
 
-TODO: A <a href="#DiagrammingTools">diagram</a> of resources above?
-
-TODO: Description of what each node provides and how they communicate with each other.
-
 <hr />
 
 <a name="MyShellScript"></a>
@@ -592,13 +614,15 @@ PROTIP: Before running any script on your machine, a good security practice is t
 
    <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh">https://github.com/wilsonmar/mac-setup/blob/master/eks-start1.sh</a>
 
-   PROTIP: A basic tenant of scripts is that no action is taken unless the user specifies a parameter.
+   PROTIP: A basic tenant of this script's desig is that no action is taken unless the user specifies a parameter.
 
-   If a script is called with no parameters, the script presents a menu of parameters and stops:
+   If a script is called with no parameters:
 
    <pre><strong>./eks-start1.sh</strong></pre>
 
-   <pre>=========================== 2022-??-15T15.05.50-0700 ./eks-start1.sh v0.19
+   the script presents a menu of parameters and command examples:   
+
+   <pre>=========================== 202?-??-15T15.05.50-0700 ./eks-start1.sh v0.19
 PARAMETER OPTIONS:
    -h          #  show this help menu by running without any parameters
    -cont       #  continue (NOT stop) on error
