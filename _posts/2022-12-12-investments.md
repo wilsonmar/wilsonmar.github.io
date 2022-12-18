@@ -30,13 +30,13 @@ I am blessed to have a job that pays well enough so that -- if I don't waste too
 Inflation is the invisible tax, which makes a stack of cash melt value because
 a $100 grocery cart in a year will have less than what can be purchased with a $100 today.
 
-STRATEGY 1 - buy as much non-perishable goods as you have money and space to store.
+STRATEGY 1 - Live within your means.
 
-STRATEGY 2 - support your local food bank because of the need.
+STRATEGY 2 - Support your local food bank because of the need.
 
-STRATEGY 3 - live within your means.
+STRATEGY 3 - Convert cash into tangible assets that retain their value against inflation. Food.
 
-STRATEGY 4 - convert cash into tangible assets that retain their value against inflation.
+STRATEGY 4 - Buy as many goods as you have money and space to store. For each item you consume, buy the quantity of how much you consume based on its shelf life. Define a way to consume the oldest ones first.
 
 ## Stock strategy
 

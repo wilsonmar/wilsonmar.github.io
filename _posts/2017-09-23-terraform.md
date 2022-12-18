@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-06"
+date: "2022-12-16"
 file: "terraform"
 title: "Terraform"
 excerpt: "Immutable declarative versioned Infrastructure as Code (IaC) and Policy as Code provisioning into AWS, Azure, GCP, and other clouds using Terragoat, Bridgecrew, and Atlantis team versioning GitOps"
@@ -5204,6 +5204,14 @@ Global options (use these before the subcommand, if any):
 
    <pre><strong>terraform plan --help</strong></pre>
 
+
+## Identify versions
+
+https://github.com/minamijoyo/tfupdate
+to parse Terraform configurations and updates all version constraints.
+brew install minamijoyo/tfupdate/tfupdate
+It is a best practice to break your Terraform configuration and state into small pieces to minimize the impact of an accident. It is also recommended to lock versions of Terraform core, providers and modules to avoid unexpected breaking changes. If you decided to lock version constraints, you probably want to keep them up-to-date frequently to reduce the risk of version upgrade failures. It's easy to update a single directory, but what if they are scattered across multiple directories?
+
 ## References
 
 https://github.com/terraform-aws-modules/terraform-aws-eks
@@ -5214,6 +5222,9 @@ grep '^resource' modules/node_groups/*.tf
 grep '^resource' *.tf
 grep '^module "' *.tf
 </pre>
+
+https://github.com/gruberdev/tf-free/issues
+Use Terraform to create cloud-native resources which are free-of-charge on major cloud providers (AWS, Azure, Google).
 
 ## More on DevOps #
 
