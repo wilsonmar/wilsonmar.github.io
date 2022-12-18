@@ -367,15 +367,30 @@ PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes c
 <tr valign="top" align="center"><td align="left"> <a href="#GCP" title="Google Cloud Platform">GCP</a>:
    </td><td> <a href="#GCE" title="Google Cloud Engine">GCE</a> 
    </td><td> <a href="#GCS" title="Google Container Service">GCS</a> 
-   </td><td> <a href="#GKE" title="Google Kubernetes Engine">GKE</a> 
+   </td><td> <a href="#GKE" title="Google Kubernetes Engine since 2015">GKE</a> 
    </td></tr>
 </table>
+
+Comparisons:
+   * https://learn.boltops.com/curriculums/aws-and-terraform/courses/aws-eks-kubernetes/lessons/aws-eks-vs-azure-aks-vs-google-gke
+   <br /><br />
+
+Control Plane pricing: AKS is free. GKE is free for one zonal cluster. Otherwise it's $72/month. 
+EKS is $72/month for any cluster.
+
+Difficulty: click-button GUI makes AKS and GKE the easiest to setup.
 
 There's also NKS (Naver Kuernetes Service).
 
 <a name="Kubernetes"></a>
 
 ### Terraform Kubernetes
+
+See <a target="_blank" href="https://wilsonmar.github.io/kubernetes/">my notes on Kubernetes</a>.
+
+PROTIP: Kubernetes has a lot of "knobs". There is a lot to configure. 
+So we would like to have a "starter set" of versioned Infrastructure and Code (IaC) in Terraform to create a <strong>Baseline environment</strong> containing various <a href="#add-ons">add-ons typically added to Kubernetes</a> which, ideally, contain the security controls needed to be "production-worthy", but be brought up quickly for <strong>further customization</strong>.
+
 
 Use of Kubernetes accelerates time to market for platform initiatives through the <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint/benefits">Separation of Concerns - Platform Teams vs Application Teams</a>:
 
@@ -427,14 +442,14 @@ The AWS Partner Solutions website has "Quick Starts" of IaC code.
 
 ### EC2
 
-https://aws.amazon.com/ec2/ 
+   * https://aws.amazon.com/ec2/ 
+   <br /><br />
 
 <a name="ECS"></a>
 
 ### ECS
 
-https://aws.amazon.com/ecs/ 
-
+   * https://aws.amazon.com/ecs/ 
    * https://developer.hashicorp.com/consul/tutorials/cloud-production/consul-ecs-hcp
    * https://logz.io/blog/aws-eks-features/
    * https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
@@ -446,16 +461,18 @@ https://aws.amazon.com/ecs/
 
 ### EKS
 
-https://aws.amazon.com/eks/ 
-
-PROTIP: EKS has a lot of "knobs". There is a lot to configure. 
-So we would like to have a "starter set" of versioned Infrastructure and Code (IaC) in Terraform to create a <strong>Baseline environment</strong> containing various <a href="#add-ons">add-ons typically added to Kubernetes</a> which, ideally, contain the security controls needed to be "production-worthy", but be brought up quickly for <strong>further customization</strong>
+   * https://aws.amazon.com/eks/ 
+   <br /><br />
 
 Some "best practices" followed include:
 
    * <a target="_blank" href="https://aws.github.io/aws-eks-best-practices/">"EKS Best Practices Guides"</a> A best practices guide for day 2 operations, including operational excellence, security, reliability, performance efficiency, and cost optimization. <a target="_blank" href="https://github.com/aws/aws-eks-best-practices">From this repo</a>.
    * <a target="_blank" href="https://learnk8s.io/terraform-eks" titile="OCTOBER 2020 by Kristijan Mitevski">"Provisioning Kubernetes clusters on AWS with Terraform and EKS" (using eksctl)</a> 
    <br /><br />
+
+EKS can be based on AWS Fargate which manages nodes for you.
+(Same with GKE AutoPilot).
+
 
 <a name="EKSBFT"></a>
 
@@ -5187,7 +5204,16 @@ Global options (use these before the subcommand, if any):
 
    <pre><strong>terraform plan --help</strong></pre>
 
+## References
 
+https://github.com/terraform-aws-modules/terraform-aws-eks
+in https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/latest
+
+<pre>grep '^resource' modules/fargate/*.tf
+grep '^resource' modules/node_groups/*.tf
+grep '^resource' *.tf
+grep '^module "' *.tf
+</pre>
 
 ## More on DevOps #
 

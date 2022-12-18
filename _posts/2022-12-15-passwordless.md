@@ -1,0 +1,280 @@
+---
+layout: post
+date: "2022-12-15"
+file: "passwordless"
+title: "Passwordless"
+excerpt: "Block the most common vector for stolen credentials used to inflict ransomware and killware - stolen credentials - by using Passkey and temporary passwords from Vault"
+tags: [security, ecosystem]
+image:
+# feature: pic data center slice 1900x500.jpg
+  feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
+  credit:
+  creditlink:
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+Eventually, you'll click on a link that installs malware or log into a pretender (phising) website thinking it was real.
+
+This article presents a guided tour with commentary to describe the latest mechanisms you can use to protect yourself from that eventuality.
+
+{% include whatever.html %}
+
+   ## Static Passwords Suck
+
+1. Visit <a target="_blank" href="https://www.haveibeenpwned.com/">haveibeenpwned.com</a> and type in your email. Chances are, because of so many leaks of user data from many websites over the years (Facebook, LinkedIn, Yahoo, etc.), your private information have been leaked by some website.
+
+   CAUTION: Users who <strong>reuse the same password</strong> (or use a simple pattern of different passwords) on several sites are providing hackers a very easy way to be hacked everywhere.
+
+   ## 1Password 
+
+   So security-conscious people store passwords in a vault such as in a 1Password vault, which can either only store secrets locally or store in their cloud.
+   
+   But it's still a hassle to provide a password to every website.
+
+
+   ## The safest password is no password
+
+   In late 2022, "Passkey" was introduced as a way for users to not have to remember passwords.
+
+   <a target="_blank" href="https://fidoalliance.org/fido2/">How "Passkey" operates</a> was defined as an "open" standard by FIDO (Fast Identity Online) in cooperation with main operating system vendors:
+   VIDEO:
+      * <a target="_blank" href="https://developer.apple.com/passkeys/">Apple</a>
+      * <a target="_blank" href="https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/expansion-of-fido-standard-and-new-updates-for-microsoft/ba-p/3290633">Microsoft</a>
+      * <a target="_blank" href="https://blog.google/technology/safety-security/one-step-closer-to-a-passwordless-future/">Google</a>
+      <br /><br />
+
+   SUMMARY: The browser or app used, the user's operating system, and the website visited all need to be enabled with coding to use the "WebAuthn" standard to register, accept, store, and interact with a Passkey. 
+   
+1. Use a supported browser on a supported <a href="#OS_supported">operating system</a> to <strong>sign up</strong> to use Passkey on a website that supports Passkeys.
+
+   You'll need to upgrade all your browsers and apps to a version which supports Passkeys.
+
+   Only the latest version of operating systems currently support Passkey:
+
+   * Only macOS 13 Ventura supports Passkey.
+   * Only iOS 16 and iPad 16 onwward supports Passkey.
+   * Only Windows 11 supports Passkey, not Windows 10.
+   <br /><br />
+
+   However, Apple built <strong>preview</strong> Passkey support into its Safari browser across all its operating systems in iOS 15, iPadOS 15, and Safari 15 with macOS 12 Monterey.
+
+   Let's start with the Safari browser app on a macOS laptop accessing a Passkey-enabled website.
+   
+   ## Few apps currently support Passkey
+
+   As of this writing, only a fraction of the most tech-savvy websites have gotten on board with Passkey:
+
+   * Travel website <a target="_blank" href="https://www.kayak.com/">kayak.com</a> app for iOS.
+   * Website provider <a target="_blank" href="https://www.godaddy.com/">GoDaddy.com</a>
+   * Financial services <a target="_blank" href="https://www.paypal.com/">Paypal</a>
+   * Technology store <a target="_blank" href="https://www.bestbuy.com/">Best Buy</a>
+   * Dashlane.com
+   * Auction site <a target="_blank" href="https://www.ebay.com/">Ebay</a>
+   * Website hoster <a target="_blank" href="https://www.wordpress.com/">WordPress.com</a>
+   * CardPointers (20% off for 9to5Mac readers)
+   <br /><br />
+
+   So, you'll still need to continue using 1Password for quite some time on slower-moving website authors.
+
+   Among <a target="_blank" href="https://fidoalliance.org/members/">board-level, sponsoring, and associate members</a> of FIDO are familiar consumer-facing and IT companies which presumably know about Passkeys:
+
+   * Apple.com
+   * Amazon.com
+   * American express
+   * Bank of America
+   * Chase
+   * CVS Health
+   * Discover
+   * ING
+   * Intel
+   * Intuit
+   * Mastercard
+   * Meta
+   * Microsoft
+   * Mozilla
+   * PNC Bank
+   * Rakuten
+   * Red Hat
+   * Salesforce
+   * Samsung
+   * Sony
+   * Twilio
+   * Twitter
+   * US Bank
+   * USAA
+   * Vanguard
+   * Visa
+   * VMware
+   * Wells Fargo
+   <br /><br />
+
+1. One website was created as a reference implementation for other websites to emulate:
+
+   <a target="_blank" href="https://www.passkeys.io/">passkeys.io</a>
+
+   ## Still use 1Password?
+
+1. PROTIP: Switch to 1Password to construct an account with an email for use in sign in. I say "construct" because if your name is "John Doe" and you have a gmail.com account, you should create in 1Password a entry such as 
+
+   <pre>johndoe+3413@gmail.com</pre>
+
+   In 1Password track that you allocated "3413" to each website.
+
+   ## Safari on Apple OS
+
+1. Switch back to the Safari internet browser.
+
+2. Supply your email on the passkeys.io website.
+3. Verification of you email is still necessary.
+
+4. After it responds that your email is new. Notice you don't have to invent a password to sign up.
+
+   ## Registration 
+
+   No password complexity frustrations because the key is automatically generated, and so is guaranteed to meet complexity to make guessing very time consuming.
+
+   "Your device supports passkey authentication. If you use biometrics, we will never see or store your biometric data."
+
+   With Passkey, when a user initially registers with a website, a paired set of encryption key files are created on the user's operating system: a private key file which is never supposed to leave the device where it was created, and a public key which can be openly shared. Thus, the approach is called "public-key cryptography". 
+   
+   Because the private and public keys are different, this is also called "asymmetric encryption keys".
+   Complex mathematics enable the private key to decrypt what was encrypt based on the public key.
+   This approach has been widely used to secure networking using https, Linux SSH, etc.
+
+   The public key can’t be used for login but rather to show that you possess the private key.
+
+5. Clck "Set up a passkey". Again, that means a key pair was created and stored in your device's operating system. And your public key was sent to the website to hold.
+
+6. Click "Continue" for the "You are logged in" message.
+
+7. Click "Logout".
+
+   When a registered user returns to a website after registration, the browser automatically presents the public key. That's why each browser needs to be upgraded to provide Passkey support.
+
+   ### Sign in using Passkey
+
+1. Click "Sign in with a passkey" instead of email, Google, Apple, Facebook, or other "federated" sign-in providers.
+
+   ## Use Apple biometrics
+
+   On an Apple iPhone or iPad, you can use FaceID on the keyboard to read your face or TouchID to read your fingerprint as the "keys" to authenticate yourself for access.
+
+   Apple has implemented Passkey support in iOS 16, iPadOS 16, and macOS Ventura for apps and websites. The credentials are synchronized between the devices of the same user via iCloud. And if you need to log into that app or website via another platform, you can generate a QR Code of the unique key stored on your device to authorize a new one.
+
+   Since these keys are not visible to the user, it’s more difficult for attackers to gain access to them.
+
+2. On an Apple app/device, when you tap on the user name field, you can choose from a list of credentials shown. The fingerprint icon means you can use Touch ID or Face ID instead of typing a password.
+
+3. Click "Sign in with a passkey". You should see this:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"><img alt="passkeys.io-touchid-924x656.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"></a>
+
+4. Put your finger on top of the TouchID keyboard button, which should result in "You are logged in".
+
+5. Click "Logout" when you're done with what you want to do.
+
+<hr />
+
+## Key recovery differences
+
+   The first generation of FIDO stored certificates on <strong>small physical</strong> USB-based "key fobs" (from <a target="_blank" href="https://www.yubico.com/">Yubico</a> or from Titan for Google, etc.).
+
+   There is a high likelihood of fobs being misplaced, so another authentication method (passwords) for key recovery was necessary.
+
+   ## Key storage in the cloud?
+
+   With FIDO2, operating system vendors (Microsoft, Google, Apple) provide not only a (safe) place to store keys locally but also backup keys in each of their back-end systems on the internet cloud:
+      * <a target="_blank" href="https://developer.apple.com/passkeys/">Apple's iCloud keychain</a>
+      * <a target="_blank" href="https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/expansion-of-fido-standard-and-new-updates-for-microsoft/ba-p/3290633">Microsoft's Azure</a>
+      * <a target="_blank" href="https://blog.google/technology/safety-security/one-step-closer-to-a-passwordless-future/">Google</a>
+      <br /><br />
+   
+   Being on the cloud, keys can be uploaded (<strong>synced among multiple devices</strong> of the same user.
+
+   BLAH: QUESTION: With FIDO Passkeys, can one opt-out of having their crentials sent out to some cloud server?
+
+   BLAH QUESTION: How can you be sure the cloud vendor can be trusted to safeguard your credentials from hackers?
+
+   BLAH QUESTION: Are you comfortable trusting your data at a company (such as Google) which makes most of its money selling users' information?
+   
+   PROTIP: If you are concerned about having secrets of any kind in any cloud rather than locally, continue to copy 1Password files onto each of your devices via a USB key fob.
+
+<a name="OS_supported"></a>
+   
+## Operating System lock-in?
+
+   It used to be that you can use any website on any operating system to log in a website with a password.
+
+   But with Passkeys, the best ease-of-use is to have you use the same operating system and app used to register with the website because the private key generated for use with each website are stored in the operating system's specific secrets store.
+
+   REMEMBER: A Passkey created on Google's Chrome browser will NOT be ordinarily be recognized on your Apple iPhone.
+
+   When using Apple's iPhone, iPad, or macOS, it's easiest if you use Apple's Safari browser.<br />
+   When you use Google's Android, it's easiest if you use Google's Chrome browser.
+
+   Where does that put alternative browser vendors such as Firefox, Brave, etc.? 
+   DoesFIDO2 Passkeys hinder them?
+
+## Cross-platform authentication
+   
+1. The FIDO Passkeys spec addresses the use case of you using a friend's laptop, which does not have your credentials.
+ 
+1. On any web browser and operating system that supports Passkeys, type in the URL of the website.
+
+2. <strong>Type in your username</strong>
+3. Select "Add a new phone" for a QR code to scan using your mobile phone's camera. 
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1671327367/passkey-signin-yellow-708x702_vzac4z.jpg"><img alt="passkey-signin-yellow-708x702.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671327367/passkey-signin-yellow-708x702_vzac4z.jpg"></a>
+   
+4. Click on the yellow bar to make use of the URL provided by the QR code.
+5. Click "Continue" to confirm "Do you want to sign in?".
+
+   <a target="_blank" href="https://developer.apple.com/videos/play/wwdc2022/10092/">VIDEO</a>: 
+   Behind the scenes, Apple accomplished the above using <strong>Bluetooth</strong> as a proximity check -- to ensure that the actual user is actually nearby and in control. So this requires <strong>Bluetooth to be constantly activated</strong> (and using up power) on your devices for cross-platform interoperability. 
+
+   You can also share passkeys with others (one at a time).
+
+
+<hr />
+
+<a name="GoogleAutofill"></a>
+
+## Google Chrome Autofill
+
+1. Install and open Google Chrome. Click the three dots at the upper-right corner, then click "Settings". You should now see an "Autofill" option in Settings. Alternately, reach that screen with this:
+
+   <a target="_blank" href="chrome://settings/autofill">chrome://settings/autofill</a>
+
+   "Autofill" is a misnomer for Passkey because Passkey doesn't fill a password form field.
+
+1. Click "Manage Passkey". Notice it says:
+
+   "These Passkey are <strong>only saved on this device</strong>. They aren't saved to your Google Account."
+
+   PROTIP: "this device" means the crypto storage mechanism for the operating system you're using.
+   
+
+<hr />
+
+## Enterprise
+
+REMEMBER: Enterprise website operators need a FIDO server to work with Passkey.
+
+Okta
+
+* <a target="_blank" href="https://www.pingidentity.com/en/resources/blog/post/how-fido-passkeys-accelerate-passwordless-future.html">PingIdentity</a>
+
+Auth0
+
+
+
+## References
+
+   * https://9to5mac.com/2022/06/07/Passkey-passwordless-sign-in-ios-16/
+   * https://www.macworld.com/article/917751/how-to-use-Passkey.html
+   <br /><br />
+
+
