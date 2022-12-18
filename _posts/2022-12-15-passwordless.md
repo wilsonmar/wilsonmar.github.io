@@ -34,6 +34,8 @@ This article presents a guided tour with commentary to describe the latest mecha
    
    But it's still a hassle to provide a password to every website.
 
+   Hackers <a target="_blank" href="https://krebsonsecurity.com/2021/09/the-rise-of-one-time-password-interception-bots/">have been known to fake requests to steal</a> (via Telegram) One-Time-Password numbers from Authy app users.
+
 
    ## The safest password is no password
 
@@ -48,7 +50,7 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    SUMMARY: The browser or app used, the user's operating system, and the website visited all need to be enabled with coding to use the "WebAuthn" standard to register, accept, store, and interact with a Passkey. 
    
-1. Use a supported browser on a supported <a href="#OS_supported">operating system</a> to <strong>sign up</strong> to use Passkey on a website that supports Passkeys.
+2. Use a supported browser on a supported <a href="#OS_supported">operating system</a> to <strong>sign up</strong> to use Passkey on a website that supports Passkeys.
 
    You'll need to upgrade all your browsers and apps to a version which supports Passkeys.
 
@@ -111,13 +113,13 @@ This article presents a guided tour with commentary to describe the latest mecha
    * Wells Fargo
    <br /><br />
 
-1. One website was created as a reference implementation for other websites to emulate:
+3. One website was created as a reference implementation for other websites to emulate:
 
    <a target="_blank" href="https://www.passkeys.io/">passkeys.io</a>
 
    ## Still use 1Password?
 
-1. PROTIP: Switch to 1Password to construct an account with an email for use in sign in. I say "construct" because if your name is "John Doe" and you have a gmail.com account, you should create in 1Password a entry such as 
+4. PROTIP: Switch to 1Password to construct an account with an email for use in sign in. I say "construct" because if your name is "John Doe" and you have a gmail.com account, you should create in 1Password a entry such as 
 
    <pre>johndoe+3413@gmail.com</pre>
 
@@ -125,12 +127,12 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    ## Safari on Apple OS
 
-1. Switch back to the Safari internet browser.
+5. Switch back to the Safari internet browser.
 
-2. Supply your email on the passkeys.io website.
-3. Verification of you email is still necessary.
+6. Supply your email on the passkeys.io website.
+7. Verification of you email is still necessary.
 
-4. After it responds that your email is new. Notice you don't have to invent a password to sign up.
+8. After it responds that your email is new. Notice you don't have to invent a password to sign up.
 
    ## Registration 
 
@@ -146,17 +148,17 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    The public key can’t be used for login but rather to show that you possess the private key.
 
-5. Clck "Set up a passkey". Again, that means a key pair was created and stored in your device's operating system. And your public key was sent to the website to hold.
+9. Clck "Set up a passkey". Again, that means a key pair was created and stored in your device's operating system. And your public key was sent to the website to hold.
 
-6. Click "Continue" for the "You are logged in" message.
+10. Click "Continue" for the "You are logged in" message.
 
-7. Click "Logout".
+11. Click "Logout".
 
    When a registered user returns to a website after registration, the browser automatically presents the public key. That's why each browser needs to be upgraded to provide Passkey support.
 
    ### Sign in using Passkey
 
-1. Click "Sign in with a passkey" instead of email, Google, Apple, Facebook, or other "federated" sign-in providers.
+12. Click "Sign in with a passkey" instead of email, Google, Apple, Facebook, or other "federated" sign-in providers.
 
    ## Use Apple biometrics
 
@@ -166,15 +168,15 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    Since these keys are not visible to the user, it’s more difficult for attackers to gain access to them.
 
-2. On an Apple app/device, when you tap on the user name field, you can choose from a list of credentials shown. The fingerprint icon means you can use Touch ID or Face ID instead of typing a password.
+13. On an Apple app/device, when you tap on the user name field, you can choose from a list of credentials shown. The fingerprint icon means you can use Touch ID or Face ID instead of typing a password.
 
-3. Click "Sign in with a passkey". You should see this:
+14. Click "Sign in with a passkey". You should see this:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"><img alt="passkeys.io-touchid-924x656.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"></a>
 
-4. Put your finger on top of the TouchID keyboard button, which should result in "You are logged in".
+15. Put your finger on top of the TouchID keyboard button, which should result in "You are logged in".
 
-5. Click "Logout" when you're done with what you want to do.
+16. Click "Logout" when you're done with what you want to do.
 
 <hr />
 
@@ -201,6 +203,7 @@ This article presents a guided tour with commentary to describe the latest mecha
    BLAH QUESTION: Are you comfortable trusting your data at a company (such as Google) which makes most of its money selling users' information?
    
    PROTIP: If you are concerned about having secrets of any kind in any cloud rather than locally, continue to copy 1Password files onto each of your devices via a USB key fob.
+
 
 <a name="OS_supported"></a>
    
@@ -263,9 +266,9 @@ This article presents a guided tour with commentary to describe the latest mecha
 
 REMEMBER: Enterprise website operators need a FIDO server to work with Passkey.
 
-Okta
+* <a target="_blank" href="https://www.pingidentity.com/en/resources/blog/post/how-fido-passkeys-accelerate-passwordless-future.html">PingIdentity</a> offers their <a target="_blank" href="https://www.pingidentity.com/en/platform/capabilities/identity-orchestration/pingone-davinci.html">DaVinci "no code" orchestration platform</a>
 
-* <a target="_blank" href="https://www.pingidentity.com/en/resources/blog/post/how-fido-passkeys-accelerate-passwordless-future.html">PingIdentity</a>
+* <a target="_blank" href="https://www.okta.com/blog/2022/09/okta-passkey-management-a-new-feature-flag/">Okta</a>
 
 Auth0
 
