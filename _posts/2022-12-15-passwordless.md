@@ -22,7 +22,7 @@ This article presents a guided tour with commentary to describe the latest mecha
 
 {% include whatever.html %}
 
-   ## Static Passwords Suck
+## Static Passwords Suck
 
 1. Visit <a target="_blank" href="https://www.haveibeenpwned.com/">haveibeenpwned.com</a> and type in your email. Chances are, because of so many leaks of user data from many websites over the years (Facebook, LinkedIn, Yahoo, etc.), your private information have been leaked by some website.
 
@@ -30,11 +30,17 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    ## 1Password 
 
-   So security-conscious people store passwords in a vault such as in a 1Password vault, which can either only store secrets locally or store in their cloud.
+   So security-conscious people store passwords in a vault such as in the 1Password app, which can either only store secrets locally or store in their 1Password cloud.
    
    But it's still a hassle to provide a password to every website.
 
    Hackers <a target="_blank" href="https://krebsonsecurity.com/2021/09/the-rise-of-one-time-password-interception-bots/">have been known to fake requests to steal</a> (via Telegram) One-Time-Password numbers from Authy app users.
+
+2. PROTIP: In 1Password, construct an account with an email for use in sign in. I say "construct" because if your name is "John Doe" and you have a gmail.com account, you should create in 1Password a entry such as 
+
+   <pre>johndoe+3413@gmail.com</pre>
+
+   In 1Password track that you allocated "3413" to each website.
 
 
    ## The safest password is no password
@@ -48,9 +54,9 @@ This article presents a guided tour with commentary to describe the latest mecha
       * <a target="_blank" href="https://blog.google/technology/safety-security/one-step-closer-to-a-passwordless-future/">Google</a>
       <br /><br />
 
-   SUMMARY: The browser or app used, the user's operating system, and the website visited all need to be enabled with coding to use the "WebAuthn" standard to register, accept, store, and interact with a Passkey. 
-   
-2. Use a supported browser on a supported <a href="#OS_supported">operating system</a> to <strong>sign up</strong> to use Passkey on a website that supports Passkeys.
+   ## Safari on Apple OS
+
+   REMEMBER: Use a supported browser on a supported <a href="#OS_supported">operating system</a> to <strong>sign up</strong> to use Passkey on a website that supports Passkeys.
 
    You'll need to upgrade all your browsers and apps to a version which supports Passkeys.
 
@@ -63,8 +69,10 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    However, Apple built <strong>preview</strong> Passkey support into its Safari browser across all its operating systems in iOS 15, iPadOS 15, and Safari 15 with macOS 12 Monterey.
 
-   Let's start with the Safari browser app on a macOS laptop accessing a Passkey-enabled website.
+   SUMMARY: The browser or app used, the user's operating system, and the website visited all need to be enabled with coding to use the "WebAuthn" standard to register, accept, store, and interact with a Passkey. 
    
+2. Let's start with the Safari browser app on a macOS laptop accessing a Passkey-enabled website.
+      
    ## Few apps currently support Passkey
 
    As of this writing, only a fraction of the most tech-savvy websites have gotten on board with Passkey:
@@ -79,7 +87,9 @@ This article presents a guided tour with commentary to describe the latest mecha
    * CardPointers (20% off for 9to5Mac readers)
    <br /><br />
 
-   So, you'll still need to continue using 1Password for quite some time on slower-moving website authors.
+   ## Still use 1Password?
+
+   REMEMBER: You'll still need to continue using 1Password on websites who are slow to upgrade to FIDO Passkey.
 
    Among <a target="_blank" href="https://fidoalliance.org/members/">board-level, sponsoring, and associate members</a> of FIDO are familiar consumer-facing and IT companies which presumably know about Passkeys:
 
@@ -117,26 +127,14 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    <a target="_blank" href="https://www.passkeys.io/">passkeys.io</a>
 
-   ## Still use 1Password?
+4. To <strong>sign up</strong>, type your made-up email on the passkeys.io website.
+5. Verification of you email is still necessary.
 
-4. PROTIP: Switch to 1Password to construct an account with an email for use in sign in. I say "construct" because if your name is "John Doe" and you have a gmail.com account, you should create in 1Password a entry such as 
-
-   <pre>johndoe+3413@gmail.com</pre>
-
-   In 1Password track that you allocated "3413" to each website.
-
-   ## Safari on Apple OS
-
-5. Switch back to the Safari internet browser.
-
-6. Supply your email on the passkeys.io website.
-7. Verification of you email is still necessary.
-
-8. After it responds that your email is new. Notice you don't have to invent a password to sign up.
+6. After it responds that your email is new. Notice you don't have to invent a password to sign up.
 
    ## Registration 
 
-   No password complexity frustrations because the key is automatically generated, and so is guaranteed to meet complexity to make guessing very time consuming.
+   With Passkey, there is no password complexity frustrations because the key is automatically generated, and so is guaranteed to meet complexity to make guessing very time consuming.
 
    "Your device supports passkey authentication. If you use biometrics, we will never see or store your biometric data."
 
@@ -148,35 +146,35 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    The public key can’t be used for login but rather to show that you possess the private key.
 
-9. Clck "Set up a passkey". Again, that means a key pair was created and stored in your device's operating system. And your public key was sent to the website to hold.
+7. Clck "Set up a passkey" to complete sign-up. That means a key pair was created and stored in your device's operating system. And your public key was sent to the website to hold.
 
-10. Click "Continue" for the "You are logged in" message.
+9.  Click "Continue" for the "You are logged in" message.
 
-11. Click "Logout".
+10. Click "Logout".
 
-   When a registered user returns to a website after registration, the browser automatically presents the public key. That's why each browser needs to be upgraded to provide Passkey support.
+    When a registered user returns to a website after registration, the browser automatically presents the public key. That's why each browser needs to be upgraded to provide Passkey support.
 
-   ### Sign in using Passkey
+    ### Sign in using Passkey
 
-12. Click "Sign in with a passkey" instead of email, Google, Apple, Facebook, or other "federated" sign-in providers.
+11. Click "Sign in with a passkey" instead of email, Google, Apple, Facebook, or other "federated" sign-in providers.
 
-   ## Use Apple biometrics
+    ### Use Apple biometrics
 
-   On an Apple iPhone or iPad, you can use FaceID on the keyboard to read your face or TouchID to read your fingerprint as the "keys" to authenticate yourself for access.
+    On an Apple iPhone or iPad, you can use FaceID on the keyboard to read your face or TouchID to read your fingerprint as the "keys" to authenticate yourself for access.
 
-   Apple has implemented Passkey support in iOS 16, iPadOS 16, and macOS Ventura for apps and websites. The credentials are synchronized between the devices of the same user via iCloud. And if you need to log into that app or website via another platform, you can generate a QR Code of the unique key stored on your device to authorize a new one.
+    Apple has implemented Passkey support in iOS 16, iPadOS 16, and macOS Ventura for apps and websites. The credentials are synchronized between the devices of the same user via iCloud. And if you need to log into that app or website via another platform, you can generate a QR Code of the unique key stored on your device to authorize a new one.
 
-   Since these keys are not visible to the user, it’s more difficult for attackers to gain access to them.
+    Since these keys are not visible to the user, it’s more difficult for attackers to gain access to them.
 
-13. On an Apple app/device, when you tap on the user name field, you can choose from a list of credentials shown. The fingerprint icon means you can use Touch ID or Face ID instead of typing a password.
+12. On an Apple app/device, when you tap on the user name field, you can choose from a list of credentials shown. The fingerprint icon means you can use Touch ID or Face ID instead of typing a password.
 
-14. Click "Sign in with a passkey". You should see this:
+13. Click "Sign in with a passkey". You should see this:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"><img alt="passkeys.io-touchid-924x656.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"></a>
 
-15. Put your finger on top of the TouchID keyboard button, which should result in "You are logged in".
+14. Put your finger on top of the TouchID keyboard button, which should result in "You are logged in".
 
-16. Click "Logout" when you're done with what you want to do.
+15. Click "Logout" when you're done with what you want to do.
 
 <hr />
 
