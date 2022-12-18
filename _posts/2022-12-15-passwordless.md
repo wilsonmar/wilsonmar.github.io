@@ -1,8 +1,8 @@
 ---
 layout: post
 date: "2022-12-15"
-file: "passwordless"
-title: "Passwordless"
+file: "passkey"
+title: "(FIDO) Passkey"
 excerpt: "Block the most common vector for stolen credentials used to inflict ransomware and killware - stolen credentials - by using Passkey and temporary passwords from Vault"
 tags: [security, ecosystem]
 image:
