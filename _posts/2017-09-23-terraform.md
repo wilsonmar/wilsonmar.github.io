@@ -462,6 +462,7 @@ The AWS Partner Solutions website has "Quick Starts" of IaC code.
 ### EKS
 
    * https://aws.amazon.com/eks/ 
+   * https://www.youtube.com/watch?v=Qy2A_yJH5-o
    <br /><br />
 
 Some "best practices" followed include:
@@ -502,9 +503,30 @@ Each add-on (feature) is defined as a <strong>module</strong> within <a target="
 
 All embedded with relevant security controls built-in.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=CB79eTFbR0w&list=RDCMUCfz8x0lVzJpb_dgWm9kPVrw&start_radio=1&rv=CB79eTFbR0w">VIDEO: "10 Must-Have Kubernetes Tools"</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=CB79eTFbR0w&list=RDCMUCfz8x0lVzJpb_dgWm9kPVrw&start_radio=1&rv=CB79eTFbR0w">VIDEO</a>: <a target="_blank" href="https://gist.github.com/vfarcic/bc1188d2a4b8d5295890e9c5438b9ce4">"10 Must-Have Kubernetes Tools"</a>
 
+CLI tools:
+* Local development - Rancher Desktop
+* Manifests
+* Operate - kubectl extensions
+   * https://github.com/ahmetb/kubectx to change context arn's and k8s namespaces
+   * kubens
+* 3rd-party apps - databases, etc. using Helm
+* Observe with https://k9scli.io (Terminal + vim + k8s) https://www.youtube.com/watch?v=boaW9odvRCc
+   https://www.youtube.com/watch?v=wEQJi7_4V9Q
+<br /><br />
 
+In cluster:
+* Sychronize current state - ArgoCD or Flux
+* Infrastructure - https://crossplane.io
+* Applications definition - Instead of Helm, crossplane or KubeVela
+* Metrics - Prometheus.io to collect for Grafana dashboards
+* Log collection - grafana.com/oss/loki and Promtail to ship logs
+* Policies (admission controllers) - Kyverno.io or open-policy-agent.github.io/gatekeeper
+* Service Mesh sidecars
+* TLS certificates - https://cert-manager.io use letsencrypt
+
+https://www.youtube.com/watch?v=BII6ZY2Rnlc
 
 <a name="examples"></a>
 
@@ -513,6 +535,9 @@ All embedded with relevant security controls built-in.
 <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/examples">
 Several "examples" (cluster use cases)</a> have been defined. Each example references a particular set of modules. 
 
+From the <a target="_blank" href="https://aws.amazon.com/blogs/containers/bootstrapping-clusters-with-eks-blueprints/">AWS EKS Blueprints announcement</a>:
+<a target="_blank" href="https://i.pinimg.com/originals/f9/64/e9/f964e92ee3ec338a27ea4eebbb87e258.jpg">
+<img alt="eks-blueprints-ref-951x1024.png" src="https://i.pinimg.com/originals/f9/64/e9/f964e92ee3ec338a27ea4eebbb87e258.jpg"></a>
 
 <a name="eks-cluster-with-new-vpc"></a>
 
@@ -5211,6 +5236,12 @@ https://github.com/minamijoyo/tfupdate
 to parse Terraform configurations and updates all version constraints.
 brew install minamijoyo/tfupdate/tfupdate
 It is a best practice to break your Terraform configuration and state into small pieces to minimize the impact of an accident. It is also recommended to lock versions of Terraform core, providers and modules to avoid unexpected breaking changes. If you decided to lock version constraints, you probably want to keep them up-to-date frequently to reduce the risk of version upgrade failures. It's easy to update a single directory, but what if they are scattered across multiple directories?
+
+## Terraform tools
+
+https://github.com/hieven/terraform-visual
+an interactive way of visualizing your Terraform plan
+by https://www.linkedin.com/in/hieven/
 
 ## References
 
