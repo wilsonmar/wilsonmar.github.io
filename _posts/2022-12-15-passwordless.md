@@ -170,7 +170,7 @@ This article presents a guided tour with commentary to describe the latest mecha
 
 13. Click "Sign in with a passkey". You should see this:
 
-   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"><img alt="passkeys.io-touchid-924x656.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"></a>
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"><img alt="passkeys.io-touchid-924x656.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671314706/passkeys.io-touchid-924x656_iovha9.jpg"></a>
 
 14. Put your finger on top of the TouchID keyboard button, which should result in "You are logged in".
 
