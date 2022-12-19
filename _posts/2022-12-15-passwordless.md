@@ -132,7 +132,7 @@ This article presents a guided tour with commentary to describe the latest mecha
 
 6. After it responds that your email is new. Notice you don't have to invent a password to sign up.
 
-   ## Registration 
+   ## Passkey Registration 
 
    With Passkey, there is no password complexity frustrations because the key is automatically generated, and so is guaranteed to meet complexity to make guessing very time consuming.
 
