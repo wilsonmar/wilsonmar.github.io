@@ -198,6 +198,56 @@ Stages:
 
 <hr />
 
+## McKinsey's 7S Change Model
+
+Developed by McKinsey consultants Robert Waterman and Tom Peters during the early 1980s, the McKinsey 7S model refers to seven key interrelated or integrated elements of an organization, all starting with the letter S. 
+
+The 7 are subdivided into hard and soft elements:
+
+<strong>"Hard" elements</strong> are within the <strong>direct control</strong> of management because they can be easily defined and identified:
+
+1) Strategy: the plan of action, roadmap, or blueprint for an organization to gain a competitive advantage or leadership edge.
+
+2) Structure: the organizational structure of who reports to whom.
+
+3) Systems: the day-to-day activities to get tasks get done -- procedures and tools to ensure completion of tasks.
+
+<strong>"Soft" elements</strong> are less tangible and are <strong>difficult to define</strong> as they are more governed by the <strong>culture</strong>, but also important to an organization’s success and growth.
+
+1) Style: leadership behaviors, which influences strategic decisions, people motivation, and organizational performance.
+
+2) Staff: The general staff or the capabilities of the employees
+
+3) Skills: competencies of employees which play a vital role toward organizational success.
+
+4) Shared Values: The core values (superordinate goals) which get reflected within the organizational culture or influence the code of ethics. 
+
+   Shared values are at the center of the model because it influences all the other elements of the model which are interconnected and interrelated.
+
+The 7S model provides elements of a strategic plan of action for reaching from the current state to the desired organizational state:
+
+1. Identification of <strong>inconsistencies or gaps</strong> between various framework elements which do not align.
+
+2. Organizational design for optimal fit, which will be different for different organizations. 
+
+3. Deciding the course of actions or the changes which are required to be implemented. 
+
+4. Actual implementation of the change and the final stage or the fifth stage is the final review of the 7S framework.
+
+<a target="_blank" href="https://www.managementstudyguide.com/mckinsey-7s-change-model.htm">Criticisms of the 7s model</a> include:
+
+* Lack of enough empirical evidences to support explanations.
+* It is rather difficult to assess the degree of fit with accuracy.
+* The model does not explain the concept of organizational effectiveness or performance explicitly.
+* It ignores the importance of the external environment and depicts only the most crucial elements in this model for explaining the interdependence of the key processes and factors within the organization.
+* It misses the intricate or finer areas in which actual gaps in conceptualization and execution of strategy may arise.
+* The model is considered to a static type of model, rather than dynamic over time.
+<br /><br />
+
+
+
+<hr />
+
 ## Scott Mautz
 
 Vest-wearing inspirational speaker and author of book "Leading from the Middle" and <a target="_blank" href="https://www.linkedin.com/newsletters/6778524658191998977/?trk=lil-course-description">newsletter</a> <a target="_blank" href="https://www.linkedin.com/in/scottmautz/">Scott Mautz</a>, in his <a target="_blank" href="https://www.linkedin.com/learning/change-management-foundations-10041380/how-to-get-employees-invested-in-change?autoplay=true">13-hour video course [LinkedIn subscription]</a> has us remember that: 

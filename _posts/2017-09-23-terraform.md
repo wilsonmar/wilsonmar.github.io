@@ -376,7 +376,8 @@ Comparisons:
    <br /><br />
 
 Control Plane pricing: AKS is free. GKE is free for one zonal cluster. Otherwise it's $72/month. 
-EKS is $72/month for any cluster.
+<a target="_blank" href="https://calculator.aws/#/addService/EKS">Pricing for EKS alone</a> is $73/month for each cluster in us-west-2 (0.10 USD per hour x 730 hours per month).
+
 
 Difficulty: click-button GUI makes AKS and GKE the easiest to setup.
 
@@ -417,6 +418,7 @@ Docs on Terraform Kubernetes:
    * https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/guides/getting-started
    * https://kubernetes.io/blog/2020/06/working-with-terraform-and-kubernetes/
    * https://opensource.com/article/20/7/terraform-kubernetes
+   * https://unofficial-kubernetes.readthedocs.io/en/latest/user-guide/kubectl-overview/
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=-UtqHkrvFro">VIDEO: Terraforming the Kubernetes Land</a> Oct 13, 2017 by <a target="_blank" href="https://www.linkedin.com/in/radeksimko/">Radek Simko</a> (@RadekSimko)
 
@@ -450,6 +452,7 @@ The AWS Partner Solutions website has "Quick Starts" of IaC code.
 ### ECS
 
    * https://aws.amazon.com/ecs/ 
+   * https://aws.amazon.com/eks/faqs/
    * https://developer.hashicorp.com/consul/tutorials/cloud-production/consul-ecs-hcp
    * https://logz.io/blog/aws-eks-features/
    * https://github.com/Capgemini/terraform-amazon-ecs/ (not updated since 2016)
@@ -462,6 +465,10 @@ The AWS Partner Solutions website has "Quick Starts" of IaC code.
 ### EKS
 
    * https://aws.amazon.com/eks/ 
+   * https://aws.amazon.com/blogs/aws/amazon-elastic-container-service-for-kubernetes/ from 2015
+   * https://github.com/clowdhaus/eks-reference-architecture
+   * https://github.com/terraform-aws-modules/terraform-aws-eks
+   * https://appfleet.com/blog/amazon-elastic-container-service-for-kubernetes-eks/
    * https://www.youtube.com/watch?v=Qy2A_yJH5-o
    <br /><br />
 
@@ -479,11 +486,11 @@ EKS can be based on AWS Fargate which manages nodes for you.
 
 #### EKS Blueprints for Terraform
 
-So I created the shell script which enables you, with <strong>one command in Terminal</a>, to install <strong>on a Mac</strong> utilities needed to create a base set of AWS resources and <strong>various utilities</strong> installed to support a production instance of EKS. It's a simpler <strong>local</strong> alternative than using <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/020-setup/self-paced">AWS Cloud9 IDE</a> on a Linux machine, using during delivery of <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">Workshop Studio</a> sessions during AWS conferences.
+So I created the shell script which enables you, with <strong>one command in Terminal</strong>, to install <strong>on a Mac</strong> utilities needed to create a base set of AWS resources and <strong>various utilities</strong> installed to support a production instance of EKS. It's a simpler <strong>local</strong> alternative than using <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/020-setup/self-paced">AWS Cloud9 IDE</a> on a Linux machine, using during delivery of <a target="_blank" href="https://catalog.workshops.aws/eks-blueprints-terraform/en-US/010-introduction/what-is-blueprint">Workshop Studio</a> sessions during AWS conferences.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=DhoZMbqwwsw"><img alt="tf-aws-blueprint-sai-1072x586.jpg by Sai Vennam" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1671256963/tf-aws-blueprint-sai-1072x586_wwkihq.jpg"></a>
 
-AWS EKS Blueprint (<a target="_blank" href="https://aws.amazon.com/blogs/containers/bootstrapping-clusters-with-eks-blueprints/">announced April 20, 2022</a>) enables construction of a "batteries included" <strong>tool-chain platform</strong>" which provides a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. Multiple teams to deploy EKS across any number of accounts and regions.
+AWS EKS Blueprint (<a target="_blank" href="https://aws.amazon.com/blogs/containers/bootstrapping-clusters-with-eks-blueprints/">announced April 20, 2022</a>) is a <strong>tool-chain platform</strong>" on top of Helm, Terraform, and ArgoCD, etc. that comes with "batteries included"  a pre-configured base of Terraform IaC components to assemble the desired state of each team's EKS environment, such as the control plane, worker nodes, and Kubernetes. Multiple teams to deploy EKS across any number of accounts and regions.
 
 <ul><a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main">https://github.com/aws-ia/terraform-aws-eks-blueprints</a></ul>
 
@@ -497,7 +504,7 @@ PROTIP: <a href="#MyShellScript">My shell script</a> makes use of The Blueprints
 
 ##### Blueprint add-ons
 
-<a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">That webpage lists the <strong>dozens</strong> of add-ons</a> that have already been integrated into the Blueprints for securing, scaling, monitoring, and operating containerized infrastructure.
+<a target="_blank" href="https://aws-ia.github.io/terraform-aws-eks-blueprints/main/add-ons/">That webpage lists the <strong>dozens</strong> of add-on containers (services)</a> that have already been integrated into the Blueprints for securing, scaling, monitoring, and operating containerized infrastructure.
 
 Each add-on (feature) is defined as a <strong>module</strong> within <a target="_blank" href="https://github.com/aws-ia/terraform-aws-eks-blueprints/tree/main/modules">this module folder</a>.
 
@@ -573,7 +580,11 @@ Let's start by the end-product of a cluster.
 
 #### k8s_nodes_pods created
 
-After running <a href="#MyShellScript">my shell script</a> or typing manual Terraform commands, confirm what was created:
+To confirm what was created, run <a href="#MyShellScript">my shell script</a> with the -v parameter:
+
+<ul><pre><strong>./eks-start1.sh -v</strong></pre></ul>
+
+That does the same as manually typing these Kubernetes status commands:
 
 <pre><strong>kubectl get nodes</strong></pre>
 
@@ -585,7 +596,7 @@ ip-10-0-11-151.us-west-2.compute.internal   Ready    &LT;none>   9m9s    v1.23.1
 ip-10-0-12-239.us-west-2.compute.internal   Ready    &LT;none>   9m15s   v1.23.13-eks-fb459a0
 </pre>
 
-<pre><strong>kubectl get pods -n kube-system</strong></pre>
+<pre><strong>kubectl get pods --all-namespaces</strong></pre>
 
 should return "Running" status for:
 
@@ -641,7 +652,7 @@ The 18 nodes created under namespace "kube-system" are:
    * 2 EBS CSI nodes
    * 3 kube-proxy nodes
    * 1 Prometheus metrics server
-   * vpc-cni ?
+   * vpc-cni (Network Interface)
    <br /><br />
 
 <hr />
@@ -668,7 +679,8 @@ PROTIP: Before running any script on your machine, a good security practice is t
 PARAMETER OPTIONS:
    -h          #  show this help menu by running without any parameters
    -cont       #  continue (NOT stop) on error
-   -v          # -verbose (list more details to console)
+   -v          # -verbose (list rundetails to console)
+   -vv         # -very verbose (instance IDs, volumes, diagnostics, tracing)"
    -x          #  set -x to display every console command
    -q          # -quiet headings for each step
  &nbsp;
@@ -760,7 +772,7 @@ PARAMETER OPTIONS:
 3. Set permissions (needed only one time):
 
    <pre><strong>chmod +x eks-start1.sh
-   </strong></pre>exam
+   </strong></pre>
 
 4. Set your Mac to not sleep: Click the Apple logo on the top-left corner of your screen, and select System Preferences. In the upper-right, type on Battery. At the left menu, click Battery. Drag the slider to Never. Click "Power Adapter" and drag that slider to Never.
    
@@ -771,7 +783,7 @@ PARAMETER OPTIONS:
 
 6. In Terminal: Run using a timer and script parameters: 
 
-   <pre><strong>time ./eks-start1.sh -email johndoe@gmail.com -v -tf
+   <pre><strong>time ./eks-start1.sh -v
    </strong></pre>
 
    Update your AWS credentials if you see messages like this:
@@ -784,11 +796,11 @@ user    2m41.318s
 sys     0m4.013s
    </pre>
 
-7. QUESTION: What is the UI that can be seen?
-8. QUESTION: How to access services within EKS? 
-9. QUESTION: AWS Config. security alerts, if any.
+1. QUESTION: What is the UI that can be seen?
+2. QUESTION: How to access services within EKS? 
+3. QUESTION: AWS Config. security alerts, if any.
 
-10. <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
+4.  <strong>Reuse</strong> configured blueprints (in GitHub) to consistently "stamp out" instances across <strong>multiple AWS accounts and Regions</strong> using continuous deployment automation.
 
 ## Add-on for Consul
    
