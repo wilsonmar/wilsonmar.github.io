@@ -448,7 +448,7 @@ nmap
    This is to avoid conflicting with the system version of the same package.
 
 
-   Alternately, if aswcli is specified for dry-run, the response is:
+   Alternately, if aswcli is specified for dry-run, the response is, on an Intel x86 mac:
 
    <pre>
    Warning: Already linked: /usr/local/Cellar/awscli/1.10.44

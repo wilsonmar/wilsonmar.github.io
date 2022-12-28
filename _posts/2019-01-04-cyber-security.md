@@ -2540,6 +2540,25 @@ At Cisco, <a target="_blank" href="https://www.linkedin.com/in/-rontaylor/">Ron 
 
 https://flaksec.com/not-all-metrics-are-created-equal-a-gitlab-security-case-study/
 
+## Sharing groups
+
+https://www.nationalisacs.org/
+ISAC (Information Sharing and Analysis Center)
+https://www.nationalisacs.org/member-isacs-3
+www.it-isac.org
+https://www.linkedin.com/company/isacindia/
+https://www.linkedin.com/company/it-isac/
+https://www.linkedin.com/company/health-isac/
+      contact@h-isac.org
+https://h-isac.org/health-industry-cybersecurity-practices/  = Video & PDF of practices
+https://h-isac.org/wp-content/uploads/2019/09/405-vol1-508.pdf
+ISAC Certified Basics in Information Security (ICBIS) Course.
+
+
+CISC (Cyber Intelligence Sharing Center)
+
+https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
+
 ## More on Security #
 
 This is one of a series on Security in DevSecOps:

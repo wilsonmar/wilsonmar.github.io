@@ -1466,6 +1466,13 @@ by Barron Stone and Olivia Chiu Stone Advanced
 * A Mutex can only be acquired/released by the same thread.<br />
    A Semaphore can be acquired/released by different threads.
 
+
+
+## Vectors instead of loops
+
+https://medium.com/codex/say-goodbye-to-loops-in-python-and-welcome-vectorization-e4df66615a52
+
+
 ## More about Python
 
 This is one of a series about Python:

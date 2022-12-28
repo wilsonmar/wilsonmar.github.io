@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2022-12-03"
+file: "aws-lambda"
 title: "AWS Lambda Basics"
 excerpt: "Scalable stateless short-lived functions. Nothing to do with Java Lambdas."
 tags: [programming, AWS, EC2, lambda, cloud]
-date: "2016-06-03"
-file: "aws-lambda"
 image:
 # pic friends white shirts 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/16040708/8f5b3cc6-31ee-11e6-9043-15d6ba1326c7.jpg
@@ -19,6 +19,8 @@ comments: true
 AWS Lambda is used to make small (< 512MB) programs making small (< 128 byte) requests to perform short-lived (< 15 second) stateless  processing such as trigging other actions to occur. 
 
 AWS takes care of scaling. Behind the GUI, AWS Lambda acts like a giant single server.
+
+
 
 ## Why? #
 
@@ -161,7 +163,7 @@ Take one step at a time and we point out PROTIPs and notes along the way.
 There are several options for creating Lambda functions:
 
 <ul>
-  <li><a href="#AWSCLI">AWS CLI (Command Line Interface) calling nvm, npm, serverless</a></li>
+  <li><a href="#AWSCLI">awscli (Command Line Interface program) calling nvm, npm, serverless</a></li>
   <li>Console GUI interactively (below)</li>
   <li>Serverless framework</li>
   <li><a href="#Terraform">Terraform</a></li>

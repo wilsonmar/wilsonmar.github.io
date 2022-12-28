@@ -373,6 +373,7 @@ PROTIP: Begin with your cloud vendor selection. Going directly to a Kubernetes c
 
 Comparisons:
    * https://learn.boltops.com/curriculums/aws-and-terraform/courses/aws-eks-kubernetes/lessons/aws-eks-vs-azure-aks-vs-google-gke
+   * https://github.com/boltops-learn (private repos by invitation)
    <br /><br />
 
 Control Plane pricing: AKS is free. GKE is free for one zonal cluster. Otherwise it's $72/month. 
@@ -478,8 +479,49 @@ Some "best practices" followed include:
    * <a target="_blank" href="https://learnk8s.io/terraform-eks" titile="OCTOBER 2020 by Kristijan Mitevski">"Provisioning Kubernetes clusters on AWS with Terraform and EKS" (using eksctl)</a> 
    <br /><br />
 
-EKS can be based on AWS Fargate which manages nodes for you.
-(Same with GKE AutoPilot).
+EKS can be based on AWS Fargate which manages nodes for you so you don't have to specify server instance types. Just tell EKS how much RAM and CPU you need.
+(Same with GKE AutoPilot). 
+
+List commands: <tt>aws eks help</tt>
+   * associate-encryption-config
+   * associate-identity-provider-config
+   * create-addon
+   * create-cluster
+   * create-fargate-profile
+   * create-nodegroup
+   * delete-addon
+   * delete-cluster
+   * delete-fargate-profile
+   * delete-nodegroup
+   * deregister-cluster
+   * describe-addon
+   * describe-addon-versions
+   * describe-cluster
+   * describe-fargate-profile
+   * describe-identity-provider-config
+   * describe-nodegroup
+   * describe-update
+   * disassociate-identity-provider-config
+   * get-token
+   * help
+   * list-addons
+   * list-clusters
+   * list-fargate-profiles
+   * list-identity-provider-configs
+   * list-nodegroups
+   * list-tags-for-resource
+   * list-updates
+   * register-cluster
+   * tag-resource
+   * untag-resource
+   * update-addon
+   * update-cluster-config
+   * update-cluster-version
+   * update-kubeconfig
+   * update-nodegroup-config
+   * update-nodegroup-version
+   * wait
+   <br /><br />
 
 
 <a name="EKSBFT"></a>
@@ -5060,9 +5102,12 @@ Videos free on YouTube but a better UI to view vidoes is provided by:
 
 On Udemy.com: 
 
-   * <a target="_blank" href="https://www.udemy.com/course/terraform-beginner-to-advanced/learn/lecture/19361386#overview">"Terraform: Beginner to Advanced"</a> by Zeal Vora has code at https://github.com/zealvora/terraform-beginner-to-advanced-resource
+   * <a target="_blank" href="https://www.udemy.com/course/terraform-beginner-to-advanced/">"Terraform: Beginner to Advanced"</a> by Zeal Vora has code at https://github.com/zealvora/terraform-beginner-to-advanced-resource
 
    * <a target="_blank" href="https://www.udemy.com/course/hashicorp-certified-terraform-associate-2020/">HashiCorp Certified: Terraform Associate Practice Exam 2021</a>
+
+<a target="_blank" href="https://morethancertified.com/course-resources/more-than-certified-in-terraform/">More than Certified in Terraform</a> by <a target="_blank" href="https://www.linkedin.com/in/derekm1215/">Derek Morgan</a> "will get you ready to start using Terraform in the real world! We cover Terraform from the very basics to more advanced usage while building deployments of Docker, AWS, Kubernetes, Github, Terraform Cloud, and more!" Find the course on Teachable at https://courses.morethancertified.com
+
 
 Another FreeCodeCamp.org video on YouTube:
 
@@ -5268,6 +5313,7 @@ grep '^module "' *.tf
 
 https://github.com/gruberdev/tf-free/issues
 Use Terraform to create cloud-native resources which are free-of-charge on major cloud providers (AWS, Azure, Google).
+
 
 ## More on DevOps #
 

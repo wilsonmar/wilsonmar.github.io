@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-29"
+date: "2022-12-28"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -6330,7 +6330,7 @@ Sample labels and values:
 
    ### JSONPath
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=vljkDorNiuw&list=RDCMUCSWj8mqQCcrcBlXPi4ThRDQ&start_radio=1">VIDEO</a>: To precisely define extracts for processing by another command, use <a target="_blank" href="https://kubernetes.io/docs/reference/kubectl/jsonpath/">JSONPath</a>:
+   <a target="_blank" href="https://www.youtube.com/watch?v=vljkDorNiuw&list=RDCMUCSWj8mqQCcrcBlXPi4ThRDQ&start_radio=1">VIDEO</a> within <a target="_blank" href="https://kodekloud.com/courses/json-path-quiz/">course with quiz</a>: To precisely define extracts for processing by another command, use <a target="_blank" href="https://kubernetes.io/docs/reference/kubectl/jsonpath/">JSONPath</a>: JMESPath
 
 1. Get the IP of the pods with label app=nginx, using JSONPath:
 
@@ -7620,6 +7620,20 @@ https://www.youtube.com/watch?v=oC0UZ-pms9o&list=RDCMUCBdfli20jrAscmR9COL35qg&st
 Cloud with Raj
 
 https://medium.com/@mengkiatlim/how-to-add-ssl-to-your-services-k8s-704a6d2d5fd8
+
+OReilly video class: <a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-observability-and-monitoring/0636920075849/">Kubernetes Observability and Monitoring</a> by Vallard Benincosa, with https://github.com/vallard/K8sClass shows a Slack sign-up app and app secrets manager.
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/-/9781098107093/">
+Book: Kubernetes Security and Observability</a> October 2021
+by Brendan Creane and Amit Gupta
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/-/9781800202450/">
+Packt Book: Kubernetes in Production Best Practices</a> March 2021
+by Aly Saleh and Murat Karslioglu
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/-/9781098138646/">
+OReilly Book: Zero Trust Architecture in Kubernetes</a> November 2022
+by Kim Crawley 
 
 <hr />
 
