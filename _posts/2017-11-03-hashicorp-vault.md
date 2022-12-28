@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-20"
+date: "2022-12-28"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
@@ -21,10 +21,11 @@ The point of this page is to describe CLI commands I created (based on docs and 
 
 <a target="_blank" href="https://www.vaultproject.io/docs/what-is-vault">What is Vault</a>?
 
-Vault is offered as open-source software first released in 2015 at:
+Vault was first released as open-source software in 2015 at:
 <a target="_blank" href="https://github.com/hashicorp/vault">https://github.com/hashicorp/vault</a>
 
-Administrators and users can interact with Vault using its GUI, CLI, or API, with its CLI a wrapper performing API calls.
+Administrators and users can interact with Vault using its GUI, CLI, or API.
+Its CLI is a wrapper performing API calls.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
 by Armon Dadgar, HashiCorp's CTO,

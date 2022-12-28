@@ -4546,6 +4546,8 @@ EKS makes use of <a target="_blank" href="https://aws.amazon.com/fargate/">AWS F
 
    KOPS for AWS (at <a target="_blank" href="https://github.com/kubernetes/kops">https://github.com/kubernetes/kops</a>) is open-source to enable multi-master, multi-AZ cluster setup and management of multiple instance groups. Admins must stand up the master (Control Plane), unlike in ECS/EKS. See <a target="_blank" title="Oct 27, 2017 by Tristan Colgate-McFarlane" href="https://medium.com/qubit-engineering/kubernetes-up-integrated-authentication-5d2c908c2810">"How Qubit built its production ready Kubernetes (k8s) environments"</a>
 
+https://cast.ai/blog/aws-eks-vs-ecs-vs-fargate-where-to-manage-your-kubernetes/
+
 1. Manage EKS nodepgroups:
 
    <pre><strong>eksctl get nodegroup --cluster=demo-cluster-ec2
@@ -7621,7 +7623,7 @@ Cloud with Raj
 
 https://medium.com/@mengkiatlim/how-to-add-ssl-to-your-services-k8s-704a6d2d5fd8
 
-OReilly video class: <a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-observability-and-monitoring/0636920075849/">Kubernetes Observability and Monitoring</a> by Vallard Benincosa, with https://github.com/vallard/K8sClass shows a Slack sign-up app and app secrets manager.
+OReilly video class: <a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-observability-and-monitoring/0636920075849/">Kubernetes Observability and Monitoring</a> by Vallard Benincosa, with https://github.com/vallard/K8sClass shows a Slack sign-up app referencing Secrets Manager.
 
 <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781098107093/">
 Book: Kubernetes Security and Observability</a> October 2021
