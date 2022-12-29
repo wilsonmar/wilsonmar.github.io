@@ -487,6 +487,45 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
    * 8a	Securely configure auto-auth and token sink
    * 8b	Configure templating
 
+<hr />
+
+## Vault Enterprise Licensed Classes
+
+<a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp">These Enterprise Academy courses</a> are instructor-led, and primarily address the needs of Platform Operators using Enterprise Vault features. Individuals are signed up for these group classes using education credits as part of Enterprise Vault licensing.
+
+1.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/approle-auth-method">AppRole Authentication Method</a>   - configure and use Vault's AppRole authentication method.
+
+2.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-auth-method">AWS Authentication Method</a>   - configure and use Vault's AWS authentication method, which uses AWS IAM credentials to authenticate EC2 instances, Lambda functions, etc.
+
+3.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-secrets-engine">AWS Secrets Engine</a>   - dynamically generate short-lived AWS credentials for public cloud platforms (like AWS, Azure, Google Cloud, etc.) instead of long-lived, static credentials minimizes the risk of unauthorized access to your cloud accounts.
+
+4.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/database-secrets-engine">Database Secrets Engine</a>   - Migrate a Python web application from using static database credentials to ones generated dynamically by Vault's MySQL Database secrets engine.
+
+5.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/deploy-consul">Deploy a Consul Cluster</a>   - Deploy and configure a Consul cluster for use behind a Vault Enterprise cluster.
+
+6.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/deploy-vault-consul-storage-dev-test">Deploy a Vault Cluster with Consul Storage</a>   - Deploy and configure a Vault Enterprise cluster.
+
+7.  <a target="_blank" href="">Deploy Vault with Raft Storage</a>   - Deploy and configure a Vault Enterprise cluster - important for making your Vault Enterprise cluster production quality.
+
+8.   <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/gcp-secrets-engine">Google Cloud Secrets Engine</a>   - dynamically generate short-lived GCP credentials with Vault.
+
+9.   <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kubernetes-auth">Kubernetes Authentication Methods</a>   - configure and use Vault's Kubernetes authentication method.
+
+10.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/ldap-auth-method">LDAP Authentication Method</a>   - configure and use Vault's LDAP authentication method.
+
+11.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/pki-secrets-engine">PKI Secrets Engine</a>   - setup a vault server as a intermediate certificate authority to generate dynamic PKI leaf certificates.
+
+12.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-agent">Vault Agent</a>   - configure and use Vault agent as a way of injecting secrets. The Vault agent and web application are running in separate containers inside of a pod in a Kubernetes environment.
+
+13.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-dr">Vault Disaster Recovery Replication</a>   - Configure Disaster Recovery Replication Between Vault Clusters.
+
+14.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-operations">Vault Operations</a>   - audit logs, root token management, and rekeying and rotating of Vault's keys.  <a target="_blank" href="">Migrate a Vault cluster to the GCP Auto-Unseal option.
+
+15.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-pr">Vault Performance Replication</a>   - Configure Performance Replication between Vault Clusters for constant availability of Vault. A mount filter limits what data is shared between NA-1 and EU-1 regions for General Data Protection Regulation (GDPR) compliance.
+
+16.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/tokens-policies">Vault Tokens and Policies</a>   - configure and use Vault Tokens and Policies.
+
+17.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kvv2-versioned-secrets">Versioned Secrets</a>   - use and manage versioned secrets stored in Vault's Key/Value Version 2 (KVv2) secrets engine.
 
 <hr />
 
@@ -569,20 +608,57 @@ A protocol for Auth Methods is selected by each user (if configured):
    <pre>vault write auth/github/map/teams/engineering value=default,applications</pre>
 
 
+<a name="AuthMethods"></a>
+
+### Auth Methods
+
+Auth methods perform authentication to verify the user or machine-supplied information. 
+
+* LDAP auth method enables user authentication using an existing LDAP server while
+* AppRole auth method is recommended for server machines or apps handling automated workflows
+<br /><br />
+
+
 <a name="AppRole"></a>
 
-### AppRole
+### AppRole Auth Method
 
-For servers, the AppRole method is recommended.
-It uses role_id and secret_id for login. 
+   * https://developer.hashicorp.com/vault/tutorials/auth-methods/approle 
+   * https://developer.hashicorp.com/vault/docs/auth/approle
+   <br /><br />
+
+An "AppRole" is a set of Vault policies and login constraints that must be met to receive a token under those policies. The scope can be as narrow or broad as desired. An AppRole can be created for a particular machine, or even a particular user on that machine, or a service spread across machines.  
+AppRole has an open design to enable a varied set of workflows and configurations to handle large numbers of apps.
+
+The approle auth method allows machines or apps to authenticate with Vault-defined roles.
+
+AppRole uses role_id and secret_id for login. Security of AppRole is increased when they are delivered separately by two different tools. This avoids any single person or entity except for the authenticating machine or application knowing both of them.
+
+Credentials required for successful login depend upon the constraints set on the AppRole associated  with the credentials.
    * If the SecretID used for login is fetched from an AppRole, that is operating in Pull mode.
    * If a "custom" SecretID is set against an AppRole by the client, that's Push mode.
+   <br /><br />
 
 1. Log in with AppRole:
 
    <pre>curl --request POST --data @payload.json \
    http://127.0.0.1:8200/v1/auth/approle/login
    </pre>
+
+
+1. Enable a secrets path for kv engine:
+
+   vault secrets enable -path=secret kv
+
+   Version 1 of the KV secrets engine uses write and read commands.
+   Version 2 uses kv put and kv get commands.
+
+1. Write a Secret to the KV Secrets Engine
+
+   vault write secret/app-1 username="app-1-user" password="my-long-password"
+
+   Success! Data written to: secret/app-1
+
 
 
 <a name="TokenTypes"></a>
@@ -1546,36 +1622,43 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 
    At time of writing, the response now includes a date built:
    
-   <pre>Vault v1.11.3 (17250b25303c6418c283c95b1d5a9c9f16174fe8), built 2022-08-26T10:27:10Z</pre>
+   <pre>Vault v1.12.0 (558abfa75702b5dab4c98e86b802fb9aef43b0eb), built 2022-10-10T18:14:33Z
+   </pre>
 
    Previously:
 
-   <pre>Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')</pre>
+   <pre>Vault v1.11.3 (17250b25303c6418c283c95b1d5a9c9f16174fe8), built 2022-08-26T10:27:10Z
+Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')
+   </pre>
 
-1. Is that really the latest release? simver among History of releases on GitHub?
+1. Is that really the latest release? View details on the History of releases on GitHub:
 
-   <a target="_blank" href="https://github.com/hashicorp/vault/releases">https://github.com/hashicorp/vault/releases</a>
+   <pre><strong>open <a target="_blank" href="https://github.com/hashicorp/vault/releases">https://github.com/hashicorp/vault/releases</a>
+   </strong></pre>
 
-1. Verify location:
+2. Persist the version of Vault (such as "v1.12.0") for use in commands by editing <strong>~/.bash_profile</strong> or <a target="_blank" href="https://github.com/wilsonmar/mac-setup/blob/main/.zshrc">.zshrc</a>:
+
+   <pre><strong>export VAULT_VERSION="$( vault --version | awk '{print $2}' )"
+   </strong></pre>
+
+3. Verify location of the vault executable:
 
    <pre><strong>which vault</strong></pre>
 
    Result on ARM (Apple macOS):
 
-   <pre>/bin/vault</pre>
+   <pre>/opt/homebrew/bin//vault</pre>
 
    Result on Intel (Windows):
 
    <pre>/usr/local/bin/vault</pre>
 
-1. Persist the version of Vault for use in commands by editing <strong>~/.bash_profile</strong> to add these lines:
+   
+   ### Install Autocompletes
 
-   <pre><strong>export VAULT_VERSION="1.11.3"
-   </strong></pre>
+4. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
 
-1. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
-
-   <pre><strong>   complete -C $( which vault )
+   <pre><strong>complete -C $( which vault )
    vault -autocomplete-install
    </strong></pre>
 
@@ -1586,7 +1669,9 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
 	* already installed in /Users/wilsonmar/.zshrc
    </pre>
 
-1. See menu of commands by running the command without parameters:
+   ### Basic Vault commands
+
+5. See menu of commands by running the command without parameters:
 
    <pre><strong>vault
    </strong></pre>
@@ -1633,8 +1718,7 @@ Other commands:
    <pre><strong>vault secrets -h
    </strong></pre>
 
-   <pre>
-Usage: vault secrets &LT;subcommand> [options] [args]
+   <pre>Usage: vault secrets &LT;subcommand> [options] [args]
 &nbsp;
   This command groups subcommands for interacting with Vault's secrets engines.
   Each secret engine behaves differently. Please see the documentation for
@@ -1666,30 +1750,95 @@ Subcommands:
    <pre>
    </pre>
 
-1. Restart your Terminal.app (and provide password):
+2. Restart your Terminal.app (and provide password):
 
    <pre><strong>exec $SHELL
    </strong></pre>
 
    ### Auto-complete
 
-1. Use autocomplete by typing `vault k` 
+3. Use autocomplete by typing `vault k` 
 
    Auto-complete is working if you can press tab to complete:
 
    <pre><strong>vault kv
    </strong></pre>
 
+   
+   <a name="StockYard"></a>
 
+   ### Stockyard
 
+4. Using K3s from Rancher.com and <a target="_blank" href="https://www.shipyardapp.com/integrations">Shipyard</a>, <a target="_blank" href="https://youtube.com/watch?v=KIAXQr17-WQ&t=5m17s">VIDEO</a>: <a target="_blank" href="https://www.linkedin.com/in/jacksonnic/">Nic Jackson</a> (HashiCorp Developer Evangelist) creates a Kubernetes cluster with Service Mesh and Consul within Docker on laptops:
 
-   ### Health check
+   <pre><strong>curl https://shipyard.demo.gs/install.sh | bash
+   </strong></pre>
 
-   Vault servers have a health check API:
+   The above creates folder <tt>$HOME/.shipyard</tt> and put its binary file in <tt>/usr/local/bin</tt>, which you should have among values within your $PATH environment variable.
+
+5. Bring up the Docker Decktop app and try again if you see:
+
+   <pre>docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+   </pre>
+
+1. According to the docs at <a target="_blank" href="https://shipyard.demo.gs/">https://shipyard.demo.gs/</a>, success is the creation of:
+
+   <tt>$HOME/.shipyard/shipyard/kubeconfig.yml</tt>
+
+2. Alternately, to bring it up without Consul:
+
+   <pre><strong>yard up --enable-consul false
+   </strong></pre>
+
+   BLAH: On my M1 Mac I get this, which keeps me from going further:
+   
+   <pre>WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+### Creating Kubernetes cluster, this process will take approximately 2 minutes
+#### Create Kubernetes cluster in Docker using K3s
+   </pre>
+
+   Otherwise:
+
+   <pre>     _______. __    __   __  .______   ____    ____  ___      .______       _______  
+    /       ||  |  |  | |  | |   _  \  \   \  /   / /   \     |   _  \     |       \ 
+   |   (----`|  |__|  | |  | |  |_)  |  \   \/   / /  ^  \    |  |_)  |    |  .--.  |
+    \   \    |   __   | |  | |   ___/    \_    _/ /  /_\  \   |      /     |  |  |  |
+.----)   |   |  |  |  | |  | |  |          |  |  /  _____  \  |  |\  \----.|  .--.  |
+|_______/    |__|  |__| |__| | _|          |__| /__/     \__\ | _| `._____||_______/ 
+&nbsp;
+Version: 0.7.0
+&nbsp;
+## Creating K8s cluster in Docker and installing Consul
+   </pre>
+
+1. Tell the local kubectl to look for a Kubernetes cluster based on configurations in the file created by Shipyard:
+
+   <pre><strong>export KUBECONFIG=$HOME/.shipyard/shipyard/kubeconfig.yml
+   </strong></pre>
+
+2. <a target="_blank" href="https://youtube.com/watch?v=KIAXQr17-WQ&t=7m29s">VIDEO</a>: Perform Kubernetes commands:
+
+   kubectl get pods
+
+   You should see two pods: vault-0 and vault-agent-injector.
+
+3. Remove the Shipyard-created K8s cluster:
+
+   <pre><strong>yard down</strong></pre>
+
+   
+<hr />
+
+<a name="HealthChecks"></a>
+
+## Health check
+
+   Vault servers have a health check API using <strong>port 8200</strong>, which is the default port for all Vault instances.
 
 1. <pre><strong>curl http://localhost:8200/v1/sys/health | jq</strong></pre>
    
-   Response:
+   Example response for a dev cluster:
 
    <pre>
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -1709,13 +1858,107 @@ Subcommands:
 }
    </pre>
 
-1. To convert 1665596227 UTC to your local time ???
+1. To convert Linux UTC Epoch server time stamp number to your local time, try this website:
+
+   <a target="_blank" href="https://www.epochconverter.com/">https://www.epochconverter.com</a>
+
+
+   ### ssh into Vault
+
+   ssh -i vault.pem ubuntu@$vault_server_ip
+
+1. Initialize server:
+
+   <pre><strong>curl --silent \
+   --request PUT \
+   --data '{"secret_shares": 1, "secret_threshold": 1}' \
+   ${VAULT_ADDR}/v1/sys/init | tee \
+   >(jq -r .root_token > /home/ubuntu/vault-chef-approle-demo/root-token) \
+   >(jq -r .keys[0] > /home/ubuntu/vault-chef-approle-demo/unseal-key)
+   </strong></pre>
+   
+   ### Unseal
+
+1. Unseal:
+
+   vault operator unseal $(cat /home/ubuntu/vault-chef-approle-demo/unseal-key)
+
+1. Export vault token:
+
+   export VAULT_TOKEN=$(cat /home/ubuntu/vault-chef-approle-demo/root-token)
+   echo "export VAULT_TOKEN=$(cat /home/ubuntu/vault-chef-approle-demo/root-token)" >> /home/ubuntu/.bashrc
+
+
+<hr />
+
+## AppRole Auth Method
+
+1. Within the Vault server
+2. At the /home/ubuntu directory from which Vault commands are run.
+3. File <strong>app-1-secret-read.hcl</strong> gives any Vault token assigned this policy the ability to read the secret/app-1 secret from Vault's KV secrets engine:
+
+   <pre>path "secret/app-1" {
+  capabilities = ["read", "list"]
+}
+   </pre>
+
+1. Register policy with Vault:
+
+   vault policy write app-1-secret-read app-1-secret-read.hcl
+
+   Success! Uploaded policy: app-1-secret-read
+
+1. Enable and Configure the AppRole Auth Method
+
+   vault auth enable -description="AppRole auth method" approle
+
+   Success! Enabled approle auth method at: approle/
+
+1. configure a role for the AppRole auth method:
+
+   vault write auth/approle/role/app-1 policies="app-1-secret-read" token_ttl="10m" token_max_ttl="30m"
+   
+   Success! Data written to: auth/approle/role/app-1
+
+   REMEMBER: Vault tokens obtained by the app after authenticating are initially be valid for 10 minutes but can be renewed for a total life of 30 minutes.
+
+<hr />
+
+<a name="Configure"></a>
+
+## Configure Vault
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-hashicorp-vault-on-azure/"><u>VIDEO: HashiCorp Vault on Azure</u></a> [13:24] by Yoko Hyakuna.
+   * <a target="_blank" href="https://github.com/Voronenko/hashi_vault_utils">https://github.com/Voronenko/hashi_vault_utils</a>
+   provides command scripts and commentary.
+   <br /><br />
+   
+   A sample <tt>config-file.hcl</tt> contains:
+
+   <pre>ui = true
+   disable_mlock = true
+&nbsp;
+   # use the file backend
+   storage "file {
+      path = "data"
+   }
+   listener "tcp" {
+      address = "0.0.0.0:8200"
+      tls_disable = 1
+   }
+   </pre>
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=LY9aSJ_2ni4">
+   VIDEO: How does Vault encrypt data?</a>
 
 
 
+<hr />
 
 
-1. List a secret
+   ### Manage secrets within Vault
+
+2. List a secret
 
    <pre><strong>curl --header "X-Vault-Token: root" \
    http://localhost:8200/v1/secret/data/my-first-secret | jq
@@ -1800,34 +2043,6 @@ Code: 503. Raw Message:
    </strong></pre>
 
 <hr />
-
-
-<a name="Configure"></a>
-
-## Configure Vault
-
-   <a target="_blank" href="https://azure.microsoft.com/en-us/resources/videos/azure-friday-hashicorp-vault-on-azure/"><u>VIDEO: HashiCorp Vault on Azure</u></a> [13:24] by Yoko Hyakuna.
-
-   <a target="_blank" href="https://github.com/Voronenko/hashi_vault_utils">https://github.com/Voronenko/hashi_vault_utils</a>
-   provides command scripts and commentary.
-
-   A sample <tt>config-file.hcl</tt> contains:
-
-   <pre>ui = true
-   disable_mlock = true
-&nbsp;
-   # use the file backend
-   storage "file {
-      path = "data"
-   }
-   listener "tcp" {
-      address = "0.0.0.0:8200"
-      tls_disable = 1
-   }
-   </pre>
-
-   <a target="_blank" href="https://www.youtube.com/watch?v=LY9aSJ_2ni4">
-   VIDEO: How does Vault encrypt data?</a>
 
 
 <a name="consul"></a>
