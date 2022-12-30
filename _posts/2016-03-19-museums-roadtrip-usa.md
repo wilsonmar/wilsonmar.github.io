@@ -1414,7 +1414,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 
 ## Westward through Northern states
 
-Going from New York City to Seattle,takes 2,852-miles on Interstates 80 and 90, crossing 11 states.
+Going from New York City to Seattle takes 2,852-miles on Interstates 80 and 90, crossing 11 states.
 
 ### Northern Rail #
 
@@ -1423,7 +1423,7 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 
 <a target="_blank" title="Amtrak's Empire Builder route" href="https://www.amtrak.com/empire-builder-train"><img alt="click on red dots in travel train glasgow empire builder 650x365.png" width="650" height="365" src="https://cloud.githubusercontent.com/assets/23631541/21246999/7d230200-c2e9-11e6-9fca-1a460dac2399.png"></a>
 
-<a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the moutains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
+<a target="_blank" href="https://www.amtrak.com/california-zephyr-train">Amtrak's California Zephyr</a> (named after the Greek god of the Western wind). <a target="_blank" href="https://www.youtube.com/watch?v=m1gRPEZdKyI">VIDEO: from Chicago to Emeryville (San Franciso)</a> -- 2 nights through 7 states: Naperville, Galesburg, Omaha, Denver (a one hour stop) over the mountains to Grand Junction, Reno, Truckee, Salt Lake City. With no wi-fi between stations.
 
 
 
@@ -1431,16 +1431,14 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 
 ### Lewis and Clark Trail Westward Ho
 
-Historically, there are names for wagon trains traveling through the Northern United States:
+The <a target="_blank" href="https://lewisandclark.org/learn/story.php">Lewis and Clark</a> Expedition of 1804 to 1806 is an 8,000-mile trip to the Pacific (Portland, Oregon) returned with maps and scientific specimens for President Thomas Jefferson.
 
-The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a>
-today is a set of hiking trails that commemorates the Lewis and Clark Expedition of 1804 to 1806.
-The "Corps of Discovery" took a 8,000 miles trip to the Pacific,
-then return with maps and scientific specimens for President Thomas Jefferson:
+The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a> today is a set of hiking trails that commemorates 
 
 <a target="_blank" href="https://lewisandclarktrail.com/">
 <img alt="Lewis and Clark Discovery Trail" width="568" height="249" src="https://cloud.githubusercontent.com/assets/300046/14081970/a9188ca6-f4ca-11e5-9c83-aebeb0aff6f6.jpg"></a>
 
+The "Corps of Discovery" emboldened wagon trains traveling Westward through Northern United States.
 
 <a name="OregonTrail"></a>
 
