@@ -1433,7 +1433,7 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 
 The <a target="_blank" href="https://lewisandclark.org/learn/story.php">Lewis and Clark</a> Expedition of 1804 to 1806 is an 8,000-mile trip to the Pacific (Portland, Oregon) returned with maps and scientific specimens for President Thomas Jefferson.
 
-The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a> today is a set of hiking trails that commemorates 
+The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a> today is a set of hiking trails. "Wm Clark" carved "July 25, 1806" <a target="_blank" href="https://lewis-clark.org/the-trail/clark-on-the-yellowstone/trail-graffiti/">on "Pompey's Pillar" in Billings, Montana</a>.
 
 <a target="_blank" href="https://lewisandclarktrail.com/">
 <img alt="Lewis and Clark Discovery Trail" width="568" height="249" src="https://cloud.githubusercontent.com/assets/300046/14081970/a9188ca6-f4ca-11e5-9c83-aebeb0aff6f6.jpg"></a>
