@@ -727,11 +727,11 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 
 ## Down the Mississippi River
 
-At <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">2,300 miles, the Mississippi River is the 4th longest in the world (after Nile, Amazon, Yangtze). It's part of the largest watershed in the world.<br />
+At <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm" title="US National Park Service">2,300 miles, the Mississippi River is the 4th longest in the world (after Nile, Amazon, Yangtze). It's part of the largest watershed in the world.<br />
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
 <br />
-<a target="_blank" href="https://www.youtube.com/watch?v=BubAF7KSs64&t=3m2s">VIDEO</a>: "It's evitable that the US emerged as a global superpower": the Missisippi is the longest <strong>navigable</strong> river in the world, enabling inland cities to be oceanic ports serving world markets by boat (10-39X cheaper than by road).<br />
-<img alt="usa-mississippi-1920x1080.jpg" width="650" src="[usa-mississippi-1920x1080.jpg](https://res.cloudinary.com/dcajqrroq/image/upload/v1672416011/usa-mississippi-1920x1080_ipjcqr.jpg)"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=BubAF7KSs64&t=3m2s">VIDEO</a>: "It's inevitable that the US emerged as a global superpower": the Missisippi is the longest <strong>navigable</strong> river in the world, enabling inland cities to be oceanic ports serving world markets by boat (10-39X cheaper than by road).<br />
+<img alt="usa-mississippi-1920x1080.jpg" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672416011/usa-mississippi-1920x1080_ipjcqr.jpg"></a>
 <br /><br />
 Viking River Cruises has an <a target="_blank" href="https://www.vikingrivercruises.com/cruise-destinations/mississippi/americas-heartland/2023-st-louis-to-st-paul/resources.html">8 day "America Heartland" cruise between St. Louis and to St. Paul (waterfalls at the head of the Mississipi):<br />
 <img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a>
