@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-06-23"
+date: "2022-12-30"
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
@@ -662,9 +662,6 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <li><a target="_blank" href="https://floridamuseum.org/">Florida International Museum</a>, St. Petersburg</li>
 <li><a target="_blank" href="https://www.fine-arts.org/">Museum of Fine Arts</a>, St. Petersburg</li>
 <li><a target="_blank" href="https://salvadordalimuseum.org/">Salvador Dal&iacute; Museum</a>, St. Petersburg</li>
-<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="scripts/allr.pl?&c=c&search=11054"><font COLOR="#FF0000">Posters from this museum</font></a></li -->
-
-
 <li> Florida State Museum, Gainsville </li>
 <li><a target="_blank" href="https://www.harn.ufl.edu/">Harn Museum at the University of Florida</a>, Gainesville</li>
 <li><a target="_blank" href="https://www.appletonmuseum.org/">Appleton Museum of Art</a>, Ocala

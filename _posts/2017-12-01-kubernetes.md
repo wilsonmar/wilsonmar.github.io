@@ -7637,6 +7637,8 @@ by Aly Saleh and Murat Karslioglu
 OReilly Book: Zero Trust Architecture in Kubernetes</a> November 2022
 by Kim Crawley 
 
+<a target="_blank" href="https://www.youtube.com/watch?v=W6J6UipVNGA&list=PLWnens-FYbIpUpmiiNYfkqTZQUYppGMFV">100 days of Kubernetes</a>, starting as a newbie.
+
 <hr />
 
 ## More on DevOps #

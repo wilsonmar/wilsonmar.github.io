@@ -493,39 +493,39 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp">These Enterprise Academy courses</a> are instructor-led, and primarily address the needs of Platform Operators using Enterprise Vault features. Individuals are signed up for these group classes using education credits as part of Enterprise Vault licensing.
 
-1.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/approle-auth-method">AppRole Authentication Method</a>   - configure and use Vault's AppRole authentication method.
+1. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/approle-auth-method">AppRole Authentication Method</a>   - configure and use Vault's AppRole authentication method.
 
-2.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-auth-method">AWS Authentication Method</a>   - configure and use Vault's AWS authentication method, which uses AWS IAM credentials to authenticate EC2 instances, Lambda functions, etc.
+2. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-auth-method">AWS Authentication Method</a>   - configure and use Vault's AWS authentication method, which uses AWS IAM credentials to authenticate EC2 instances, Lambda functions, etc.
 
-3.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-secrets-engine">AWS Secrets Engine</a>   - dynamically generate short-lived AWS credentials for public cloud platforms (like AWS, Azure, Google Cloud, etc.) instead of long-lived, static credentials minimizes the risk of unauthorized access to your cloud accounts.
+3. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-secrets-engine">AWS Secrets Engine</a>   - dynamically generate short-lived AWS credentials for public cloud platforms (like AWS, Azure, Google Cloud, etc.) instead of long-lived, static credentials minimizes the risk of unauthorized access to your cloud accounts.
 
-4.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/database-secrets-engine">Database Secrets Engine</a>   - Migrate a Python web application from using static database credentials to ones generated dynamically by Vault's MySQL Database secrets engine.
+4. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/database-secrets-engine">Database Secrets Engine</a>   - Migrate a Python web application from using static database credentials to ones generated dynamically by Vault's MySQL Database secrets engine.
 
-5.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/deploy-consul">Deploy a Consul Cluster</a>   - Deploy and configure a Consul cluster for use behind a Vault Enterprise cluster.
+5. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/deploy-consul">Deploy a Consul Cluster</a>   - Deploy and configure a Consul cluster for use behind a Vault Enterprise cluster.
 
-6.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/deploy-vault-consul-storage-dev-test">Deploy a Vault Cluster with Consul Storage</a>   - Deploy and configure a Vault Enterprise cluster.
+6. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/deploy-vault-consul-storage-dev-test">Deploy a Vault Cluster with Consul Storage</a>   - Deploy and configure a Vault Enterprise cluster.
 
-7.  <a target="_blank" href="">Deploy Vault with Raft Storage</a>   - Deploy and configure a Vault Enterprise cluster - important for making your Vault Enterprise cluster production quality.
+7. <a target="_blank" href="">Deploy Vault with Raft Storage</a>   - Deploy and configure a Vault Enterprise cluster - important for making your Vault Enterprise cluster production quality.
 
-8.   <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/gcp-secrets-engine">Google Cloud Secrets Engine</a>   - dynamically generate short-lived GCP credentials with Vault.
+8. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/gcp-secrets-engine">Google Cloud Secrets Engine</a>   - dynamically generate short-lived GCP credentials with Vault.
 
-9.   <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kubernetes-auth">Kubernetes Authentication Methods</a>   - configure and use Vault's Kubernetes authentication method.
+9. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kubernetes-auth">Kubernetes Authentication Methods</a>   - configure and use Vault's Kubernetes authentication method using JWT.
 
-10.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/ldap-auth-method">LDAP Authentication Method</a>   - configure and use Vault's LDAP authentication method.
+10. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/ldap-auth-method">LDAP Authentication Method</a>   - configure and use Vault's LDAP authentication method.
 
-11.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/pki-secrets-engine">PKI Secrets Engine</a>   - setup a vault server as a intermediate certificate authority to generate dynamic PKI leaf certificates.
+11. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/pki-secrets-engine">PKI Secrets Engine</a>   - setup a vault server as a intermediate certificate authority to generate dynamic PKI leaf certificates.
 
-12.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-agent">Vault Agent</a>   - configure and use Vault agent as a way of injecting secrets. The Vault agent and web application are running in separate containers inside of a pod in a Kubernetes environment.
+12. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-agent">Vault Agent</a>   - configure and use Vault agent as a way of injecting secrets. The Vault agent and web application are running in separate containers inside of a pod in a Kubernetes environment.
 
-13.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-dr">Vault Disaster Recovery Replication</a>   - Configure Disaster Recovery Replication Between Vault Clusters.
+13. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-dr">Vault Disaster Recovery Replication</a>   - Configure Disaster Recovery Replication Between Vault Clusters.
 
-14.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-operations">Vault Operations</a>   - audit logs, root token management, and rekeying and rotating of Vault's keys.  <a target="_blank" href="">Migrate a Vault cluster to the GCP Auto-Unseal option.
+14. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-operations">Vault Operations</a>   - audit logs, root token management, and rekeying and rotating of Vault's keys.  <a target="_blank" href="">Migrate a Vault cluster to the GCP Auto-Unseal option.
 
-15.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-pr">Vault Performance Replication</a>   - Configure Performance Replication between Vault Clusters for constant availability of Vault. A mount filter limits what data is shared between NA-1 and EU-1 regions for General Data Protection Regulation (GDPR) compliance.
+15. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-pr">Vault Performance Replication</a>   - Configure Performance Replication between Vault Clusters for constant availability of Vault. A mount filter limits what data is shared between NA-1 and EU-1 regions for General Data Protection Regulation (GDPR) compliance.
 
-16.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/tokens-policies">Vault Tokens and Policies</a>   - configure and use Vault Tokens and Policies.
+16. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/tokens-policies">Vault Tokens and Policies</a>   - configure and use Vault Tokens and Policies.
 
-17.  <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kvv2-versioned-secrets">Versioned Secrets</a>   - use and manage versioned secrets stored in Vault's Key/Value Version 2 (KVv2) secrets engine.
+17. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kvv2-versioned-secrets">Versioned Secrets</a>   - use and manage versioned secrets stored in Vault's Key/Value Version 2 (KVv2) secrets engine.
 
 <hr />
 
@@ -622,9 +622,8 @@ Auth methods perform authentication to verify the user or machine-supplied infor
 <a name="AppRole"></a>
 
 ### AppRole Auth Method
-
-   * https://developer.hashicorp.com/vault/tutorials/auth-methods/approle 
    * https://developer.hashicorp.com/vault/docs/auth/approle
+   * https://developer.hashicorp.com/vault/tutorials/auth-methods/approle 
    <br /><br />
 
 An "AppRole" is a set of Vault policies and login constraints that must be met to receive a token under those policies. The scope can be as narrow or broad as desired. An AppRole can be created for a particular machine, or even a particular user on that machine, or a service spread across machines.  
@@ -1823,11 +1822,214 @@ Version: 0.7.0
 
    You should see two pods: vault-0 and vault-agent-injector.
 
-3. Remove the Shipyard-created K8s cluster:
+3. When done, remove the Shipyard-created K8s cluster:
 
    <pre><strong>yard down</strong></pre>
 
+
+
+   ### Enable Kubernetes Auth Method
+
+   * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings
+   <br /><br />
+
+4. On the Vault client, create the "vault-auth" service account to connect to the kubernetes cluster when validating JWT tokens:
+
+    kubectl create sa vault-auth
    
+1. On the Vault client, apply ClusterRoleBinding :
+
+   kubectl apply -f vault/lab_k8s/k8s/vault-auth-cluster-role-binding.yml
+
+   <pre>---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: role-tokenreview-binding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+- kind: ServiceAccount
+  name: vault-auth
+  namespace: default
+  </pre>
+
+1. Extract service account (sa):
+
+   export VAULT_SA_SECRET_NAME=$(kubectl get sa vault-auth -o jsonpath="{.secrets[0]['name']}")
+   echo $VAULT_SA_SECRET_NAME
+
+1. Extract SA_JWT_TOKEN
+
+   export SA_JWT_TOKEN=$(kubectl get secret $VAULT_SA_SECRET_NAME -o jsonpath="{.data.token}" | base64 --decode; echo)
+   echo $SA_JWT_TOKEN
+
+1. Extract SA_CA_CRT
+
+   export SA_CA_CRT=$(kubectl get secret $VAULT_SA_SECRET_NAME -o jsonpath="{.data['ca\.crt']}" | base64 --decode; echo)
+   echo $SA_CA_CRT
+
+1. Enable the authentication method:
+
+   vault auth enable kubernetes
+
+2. Configure the method by writing to the config/ endpoint for the kubernetes method:
+
+   vault write auth/kubernetes/config \
+   kubernetes_host="$K8S_HOST" \
+   token_reviewer_jwt="$SA_JWT_TOKEN" \
+   kubernetes_ca_cert="$SA_CA_CRT"
+
+   echo $K8S_HOST  # (such as https://10.5.0.65:6443) setup as a part of the environment.
+
+1. List https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+
+   kubectl get namespaces
+
+   For example: ar-app and ap-app
+
+1. List Kubernetes service accounts:
+
+   kubectl -n finance get sa
+   kubectl -n it get sa
+
+2. setup and configure a read and list only policy and role apps:
+
+   vault policy write finance-ar-app-read vault/lab_k8s/policy/finance/ar-app-vault-policy.hcl
+
+   <pre>path "k8s-secret/data/finance/ar-app/*" {
+    capabilities = ["read", "list"]
+}
+   </pre>
+
+1. Write/configure a role to link the policy to the SA in kubernetes:
+   
+   vault write auth/kubernetes/role/finance-ar-app \
+   bound_service_account_names=ar-app \
+   bound_service_account_namespaces=finance \
+   policies=finance-ar-app-read \
+   ttl=24h
+
+1. Run scipt "vault/lab_k8s/scripts/k8s-vault-it.sh"
+
+1. Push secrets to Vault:
+   
+   <pre>echo "Enabling KV secret engine"
+vault secrets enable -path k8s-secret kv-v2
+&nbsp;
+echo "Pushing secrets to vault"
+vault kv put k8s-secret/it/operations/config \
+    ttl='30s' \
+    username='operations' \
+    password='operations-suP3rsec(et!'
+   </pre>
+
+1. Enable K8s ConfigMaps to establish context:
+
+   kubectl -n it create configmap vault-agent-configs --from-file=vault/lab_k8s/k8s/k8sconfig/
+   kubectl -n finance create configmap vault-agent-configs --from-file=vault/lab_k8s/k8s/k8sconfig/
+
+
+   ### ConfigMaps
+
+2. To define the context configuration for each application components within each Namespace:
+
+   <pre>kubectl -n "$THIS_NAMESPACE" create configmap vault-agent-configs \
+   --from-file=vault/lab_k8s/k8s/k8sconfig/
+   </pre>
+
+3. Use this pod template to create context with each namespace's app entries:
+
+   <pre>#!/bin/bash
+cat > vault/lab_k8s/deployment/${NAMESPACE}/${APP}.yaml << EOL
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vault-agent-${NAMESPACE}-${APP}
+spec:
+  serviceAccountName: ${APP}
+  restartPolicy: Never
+  hostAliases:
+  - ip: $VAULT_IP
+    hostnames:
+    - "vault-server"
+  volumes:
+    - name: vault-token
+      emptyDir:
+        medium: Memory
+    - name: config
+      configMap:
+        name: vault-agent-configs
+        items:
+          - key: ${NAMESPACE}-${APP}-agent-config.hcl
+            path: vault-agent-config.hcl
+    - name: ca-pemstore
+      configMap:
+        name: ca-pemstore
+    - name: shared-data
+      emptyDir: {}
+  containers:
+    # Generic container run in the context of vault agent
+    - name: vault-agent
+      image: gcr.io/is-enablement/vault-agent:latest
+      volumeMounts:
+        - name: vault-token
+          mountPath: /home/vault
+        - name: config
+          mountPath: /etc/vault
+        - name: shared-data
+          mountPath: /etc/secrets
+        - name: ca-pemstore
+          mountPath: /etc/ssl/certs/vault-client.pem
+          subPath: vault-client.pem
+          readOnly: false
+      # This assumes Vault running on local host and K8s running in Minikube using VirtualBox
+      env:
+        - name: VAULT_ADDR
+          value: ${VAULT_ADDR}
+        - name: VAULT_K8S_AUTH_MOUNT
+          value: kubernetes
+        - name: VAULT_K8S_AUTH_ROLE
+          value: ${NAMESPACE}-${APP}
+        - name: LOG_LEVEL
+          value: info
+        - name: VAULT_CACERT
+          value: /etc/ssl/certs/vault-client.pem
+      # Run the Vault agent
+      command: ["/bin/vault"]
+      args:
+        [
+          "agent",
+          "-config=/etc/vault/vault-agent-config.hcl",
+          "-log-level=debug",
+        ]
+   # Nginx container
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: shared-data
+          mountPath: /usr/share/nginx/html
+EOL
+   </pre>
+
+1. Get into the shell:
+   
+   kubectl -n "${NAMESPACE}" exec -it vault-agent-finance-ar-app \
+   --container nginx-container -- bash
+
+2. Once in, see the updated password inserted in the file:
+   
+   cat /usr/share/nginx/html/index.html
+
+
+
+
 <hr />
 
 <a name="HealthChecks"></a>
