@@ -668,7 +668,8 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 </li>
 
 <li><a target="_blank" href="https://www.thebrogan.org/">Mary Brogan Museum of Art and Science</a>, Tallahassee</li>
-<li><a target="_blank" href="https://www.pensacolamuseumofart.org/">Pensacola Museum of Art</a><li><a target="_blank" href="https://www.mofa.fsu.edu/">Florida State University Museum of Fine Arts</a>, Tallahassee</li>
+<li><a target="_blank" href="https://www.pensacolamuseumofart.org/">Pensacola Museum of Art</a></li>
+<li><a target="_blank" href="https://www.mofa.fsu.edu/">Florida State University Museum of Fine Arts</a>, Tallahassee</li>
 <li target="_blank" href="https://www.kennedyspacecenter.com/">NASA Kennedy Center, Merritt Island</li>
 </ul>
 
@@ -726,16 +727,15 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 
 ## Down the Mississippi River
 
-At <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">2,300 miles, the Mississippi River is 
-the 4th longest in the world (after Nile, Amazon, Yangtze):<br />
+At <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm">2,300 miles, the Mississippi River is the 4th longest in the world (after Nile, Amazon, Yangtze):<br />
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
-
-Viking River Cruises has, an <a target="_blank" href="https://viking.tv/tv/viking-journeys/americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul:<br />
+<br />
+<a target="_blank" href="https://www.youtube.com/watch?v=BubAF7KSs64">VIDEO</a>: The Missisippi is the longest <strong>navigable</strong> river in the world, enabling inland cities to serve world markets.
+<br />
+Viking River Cruises has, an <a target="_blank" href="https://viking.tv/tv/viking-journeys/americas-heartland">8 day "America Heartland" cruise from St. Louis upstream to St. Paul, the head of the Mississipi River:<br />
 <img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a>
-
+<br />
 Viking also has a <a target="_blank" href="https://viking.tv/tv/viking-journeys/heart-of-the-delta">Hearth of the Delta" cruise</a> from New Orleans to Memphis, with stops in the Vicksburg battlegrounds.
-
-
 
 <a name="IL"></a>
 
