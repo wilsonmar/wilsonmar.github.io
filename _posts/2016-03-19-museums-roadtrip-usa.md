@@ -45,10 +45,10 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 <a target="_blank" href="https://ironbutt.org/rides/">Iron Butt</a> motocyle rallies award bonus points for reaching the four corners of the nation:
 
-   * NorthEast: Madawaska, ME
-   * SouthEast: Key West, FL
-   * SouthWest: San Ysidro, CA
-   * NorthWest: Blaine, WA
+   * NorthWest: <a target="_blank" href="https://en.wikipedia.org/wiki/Blaine%2C_Washington">Blaine, Washington</a> (where the Peace Arch international monument straddles the border of US and Canada)
+   * NorthEast: <a target="_blank" href="https://en.wikipedia.org/wiki/Madawaska%2C_Maine">Madawaska, Maine</a> (87% speak French at home in this most northeastern town in the contiguous United States, next to the province of Quebec, Canada)
+   * SouthEast: <a target="_blank" href="https://en.wikipedia.org/wiki/Key_West">Key West, Florida</a> ("Home of the Sunset" where you can see the <a target="_blank" href="https://eclipsewise.com/lunar/LEprime/2001-2100/LE2029Jun26Tprime.html">total lunar eclipse on June 26, 2029</a> [<a target="_blank" href="https://en.wikipedia.org/wiki/June_2029_lunar_eclipse">Wikipedia</a>])
+   * SouthWest: <a target="_blank" href="https://en.wikipedia.org/wiki/San_Ysidro%2C_San_Diego">San Ysidro, California</a> (the busiest border crossing in Western Hemisphere)
    <br /><br />
 
 
