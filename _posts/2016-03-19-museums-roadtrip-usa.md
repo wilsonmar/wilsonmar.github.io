@@ -64,6 +64,17 @@ BTW, finding where each site is located resulted in a great geography and histor
 To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
 
 
+Notice the separation of green down the middle of the country?
+
+The Western frontier, even today, is separated by the <strong>98th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672445296/usa-frotiier-3455x2234_vjyxxn.jpg"><img alt="usa-frotiier-3455x2234.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672445296/usa-frotiier-3455x2234_vjyxxn.jpg"></a>
+
+"80% of Americans live East of that line which definess the reach of wet storms from the East.
+That line also defines the limit of the "rain shadow" blocking moisture from the West blocked by the tall Rocky Mountains."
+
+When geologist John Westly Powell identified this phenomenon in 1890, that natural line was at the 100th Meridian.
+Since then, "Climate change" continues to shift to the East. 
+
 ## Highway Refueling and ReCharging
 
 Notice the US interstate highway numbering system:
@@ -731,9 +742,9 @@ At <a target="_blank" href="https://www.nps.gov/miss/riverfacts.htm" title="US N
 <img alt="us-watershedbg" width="650" src="https://cloud.githubusercontent.com/assets/300046/25560325/ff5f8ab4-2d1e-11e7-9b96-f34d6aa0d902.jpg"></a>
 <br />
 <a target="_blank" href="https://www.youtube.com/watch?v=BubAF7KSs64&t=3m2s">VIDEO</a>: "It's inevitable that the US emerged as a global superpower": the Missisippi is the longest <strong>navigable</strong> river in the world, enabling inland cities to be oceanic ports serving world markets by boat (10-39X cheaper than by road).<br />
-<img alt="usa-mississippi-1920x1080.jpg" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672416011/usa-mississippi-1920x1080_ipjcqr.jpg"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672416011/usa-mississippi-1920x1080_ipjcqr.jpg"><img alt="usa-mississippi-1920x1080.jpg" width="650" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672416011/usa-mississippi-1920x1080_ipjcqr.jpg"></a>
 <br /><br />
-Viking River Cruises has an <a target="_blank" href="https://www.vikingrivercruises.com/cruise-destinations/mississippi/americas-heartland/2023-st-louis-to-st-paul/resources.html">8 day "America Heartland" cruise between St. Louis and to St. Paul (waterfalls at the head of the Mississipi):<br />
+It takes <a target="_blank" href="https://www.vikingrivercruises.com/cruise-destinations/mississippi/americas-heartland/2023-st-louis-to-st-paul/resources.html">8 days for the "America Heartland" cruise between St. Louis and to St. Paul (waterfalls at the head of the Mississipi):<br />
 <img width="377" alt="roadtrip-usa-viking.png" src="https://user-images.githubusercontent.com/300046/90310441-86796580-deae-11ea-8738-2ac6e5bf7669.png"></a>
 <br />
 Cruise on a riverboat between New Orleans and Memphis, with stops in the Vicksburg battlegrounds.
@@ -940,14 +951,6 @@ The <a target="_blank" href="https://www.wikiwand.com/en/Lonesome_Dove_(miniseri
 <a name="Westward"></a>
 
 ## Journeys Westward on land
-
-The Western frontier, even today, is separated by the <strong>100th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png">
-<img alt="museums-usa-100-meridian-825x445" src="https://user-images.githubusercontent.com/300046/152696324-ad60345e-345c-4a70-8b29-e1837ef952db.png"></a>
-
-"that line separates wetter climate to the East and the drier air in the West blocked by the Rocky Mountains"
-
 
 "Go West, young Man, and grow up with the country!" is the advice widely <a target="_blank" href="https://blog.newspapers.library.in.gov/go-west-young-man-the-mystery-behind-the-famous-phrase/">(but wrongly)</a> attributed to New York Tribune Publisher Horace Greeley, who visited the West only once.
 
@@ -1433,7 +1436,7 @@ Amtrak's Empire Builder train</a> between Chicago to Seattle and Portland takes 
 
 The <a target="_blank" href="https://lewisandclark.org/learn/story.php">Lewis and Clark</a> Expedition of 1804 to 1806 is an 8,000-mile trip to the Pacific (Portland, Oregon) returned with maps and scientific specimens for President Thomas Jefferson.
 
-The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a> today is a set of hiking trails. "Wm Clark" carved "July 25, 1806" <a target="_blank" href="https://lewis-clark.org/the-trail/clark-on-the-yellowstone/trail-graffiti/">on "Pompey's Pillar" in Billings, Montana</a>.
+The <a target="_blank" href="https://lewisandclark.org/wiki/index.php?title=Main_Page">Lewis and Clark Trail</a> today is a set of hiking trails. "Wm Clark" carved "July 25, 1806" <a target="_blank" href="https://lewis-clark.org/the-trail/clark-on-the-yellowstone/trail-graffiti/">on "Pompey's Pillar" 30m miles East of Billings, Montana</a>.
 
 <a target="_blank" href="https://lewisandclarktrail.com/">
 <img alt="Lewis and Clark Discovery Trail" width="568" height="249" src="https://cloud.githubusercontent.com/assets/300046/14081970/a9188ca6-f4ca-11e5-9c83-aebeb0aff6f6.jpg"></a>
