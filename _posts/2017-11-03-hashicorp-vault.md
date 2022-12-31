@@ -614,27 +614,27 @@ A protocol for Auth Methods is selected by each user (if configured):
 
 Auth methods perform authentication to verify the user or machine-supplied information. 
 
-* LDAP auth method enables user authentication using an existing LDAP server while
-* AppRole auth method is recommended for server machines or apps handling automated workflows
+* LDAP auth method enables user authentication using an existing LDAP server
+* <a href="#AppRoleAuth">AppRole auth method</a> for server machines or apps handling automated workflows
 <br /><br />
 
 
-<a name="AppRole"></a>
+<a name="AppRoleAuth"></a>
 
 ### AppRole Auth Method
+
    * https://developer.hashicorp.com/vault/docs/auth/approle
    * https://developer.hashicorp.com/vault/tutorials/auth-methods/approle 
    <br /><br />
 
-An "AppRole" is a set of Vault policies and login constraints that must be met to receive a token under those policies. The scope can be as narrow or broad as desired. An AppRole can be created for a particular machine, or even a particular user on that machine, or a service spread across machines.  
-AppRole has an open design to enable a varied set of workflows and configurations to handle large numbers of apps.
-
 The approle auth method allows machines or apps to authenticate with Vault-defined roles.
 
-AppRole uses role_id and secret_id for login. Security of AppRole is increased when they are delivered separately by two different tools. This avoids any single person or entity except for the authenticating machine or application knowing both of them.
+AppRole uses role_id and secret_id for login. It's like a user_id and password. So it's safer when each is delivered separately using two different tools (email and texting).
 
-Credentials required for successful login depend upon the constraints set on the AppRole associated  with the credentials.
-   * If the SecretID used for login is fetched from an AppRole, that is operating in Pull mode.
+The <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/auth/approle">AppRole API</a> is a set of Vault policies and login constraints that must be met to receive a token under those policies. An AppRole can be created for a particular machine, or even a particular user on that machine, or a service spread across machines.  
+AppRole has an open design to enable a varied set of workflows and configurations to handle large numbers of apps.
+
+   * If the SecretID used for login is fetched from an AppRole, that <a target="_blank" href="https://learn.hashicorp.com/vault/identity-access-management/iam-authentication">Pull mode</a>.
    * If a "custom" SecretID is set against an AppRole by the client, that's Push mode.
    <br /><br />
 
@@ -644,15 +644,17 @@ Credentials required for successful login depend upon the constraints set on the
    http://127.0.0.1:8200/v1/auth/approle/login
    </pre>
 
+   Credentials required for successful login depend upon the constraints set on the AppRole associated  with the credentials.
+   The scope can be as narrow or broad as desired.
 
-1. Enable a secrets path for kv engine:
+2. Enable a secrets path for kv engine:
 
    vault secrets enable -path=secret kv
 
    Version 1 of the KV secrets engine uses write and read commands.
    Version 2 uses kv put and kv get commands.
 
-1. Write a Secret to the KV Secrets Engine
+3. Write a Secret to the KV Secrets Engine
 
    vault write secret/app-1 username="app-1-user" password="my-long-password"
 
@@ -1927,7 +1929,7 @@ vault kv put k8s-secret/it/operations/config \
     password='operations-suP3rsec(et!'
    </pre>
 
-1. Enable K8s ConfigMaps to establish context:
+1. Enable <a target="_blank" href="https://kubernetes.io/docs/concepts/configuration/configmap/">K8s ConfigMap</a> to establish context:
 
    kubectl -n it create configmap vault-agent-configs --from-file=vault/lab_k8s/k8s/k8sconfig/
    kubectl -n finance create configmap vault-agent-configs --from-file=vault/lab_k8s/k8s/k8sconfig/
@@ -2802,17 +2804,16 @@ describes "A unified interface to manage and encrypt secrets on the AWS Cloud".
 <a target="_blank" href="https://www.hashicorp.com/blog/announcing-the-vault-helm-chart/">
 HashiCorp announced a Helm chart to setup Vault in Kubernetes</a>
 
+   * <a target="_blank" href="https://github.com/hashicorp/vault-helm">https://github.com/hashicorp/vault-helm</a>
+   * <a target="_blank" href="https://github.com/hashicorp/consul-helm">https://github.com/hashicorp/consul-helm</a>
+   <br /><br />
+
 https://www.vaultproject.io/docs/platform/k8s/helm
 
-https://github.com/hashicorp/vault-helm
- 
 
-/Users/wilson_mar/Library/Python/3.7/lib/python/site-packages/ansible/modules/cloud/amazon
-To the templates we would need to add monitoring/Observability, SIEM, etc.
+<tt>$HOME/Library/Python/3.7/lib/python/site-packages/ansible/modules/cloud/amazon</tt>
+contains templates to add monitoring/Observability, SIEM, etc.
 
-
-There is a <a target="_blank" href="https://github.com/hashicorp/consul-helm">
-Consul provider helm chart</a>
 
 
 
