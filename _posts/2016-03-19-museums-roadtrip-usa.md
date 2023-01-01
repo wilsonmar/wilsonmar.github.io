@@ -65,11 +65,13 @@ To deter reckless driving among Extreme Road-trippers, the <a target="_blank" hr
 
 Notice the separation of green down the middle of the country?
 
-The Western frontier, even today, is separated by the <strong>98th Meridian</strong>, shown by the green line in this map from <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):<br />
+## The Rain Shadow divide
+
+Today, the <strong>98th Meridian</strong> is shown by the green line in this map from <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
 
-"80% of Americans live East of that line which definess the reach of wet storms from the East.
-That line also defines the limit of the "rain shadow" blocking moisture from the West blocked by the tall Rocky Mountains."
+"80% of Americans live East of that green line, which definess the reach of wet storms from the East.
+That line also defines the limit of the "rain shadow" where the tall Rocky Mountains has blocked moisture from the West."
 
 When geologist John Westly Powell identified this phenomenon in 1890, that natural line was at the 100th Meridian.
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
