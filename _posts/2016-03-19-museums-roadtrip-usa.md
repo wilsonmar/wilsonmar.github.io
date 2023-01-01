@@ -71,11 +71,11 @@ Today, the <strong>98th Meridian</strong> is shown by the green line in this map
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
 
 "80% of Americans live East of that green line, which definess the reach of wet storms from the East.
-That line also defines the limit of the "rain shadow" where the tall Rocky Mountains has blocked moisture from the West."
+That line also defines the limit of the "rain shadow" where the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) which blocks moisture from the Pacific West."
 
-When geologist John Westly Powell identified this phenomenon in 1890, that natural line was at the 100th Meridian.
+When geologist John Westly Powell identified this phenomenon in 1890, that natural line was at the 100th Meridian (vs. 98th today).
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
-Also impact will be agriculture around Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
+Also impact will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
 
 ## Highway Refueling and ReCharging
 
@@ -292,6 +292,7 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <ul>
 <li><a target="_blank" href="https://www.brown.edu/Facilities/David_Winton_Bell_Gallery/">David Winton Bell Gallery at Brown University</a>, Providence</li>
 <li><a target="_blank" href="https://risdmuseum.org/"><strong>Rhode Island School of Design Museum of Art</strong></a> Providence</li>
+
 <li><a target="_blank" href="https://www.newportartmuseum.org/">Newport Art Museum</a></li>
 <li><a target="_blank" href="https://americanillustration.org/">National Museum of American Illustration</a>, Newport</li>
 </ul>
@@ -328,7 +329,7 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 > <strong>New Jersey</strong>
 
 <ul>
-<li><a target="_blank" href="https://www.jerseycitymuseum.org/">Jersey City Museum</a></li>
+<li><a target="_blank" href="https://www.jerseycitymuseum.org/">Jersey City Museum</a> across the Hudson from Manhattan</li>
 <li><a target="_blank" href="https://www.newarkmuseum.org/">Newark Museum</a></li>
 <li><a target="_blank" href="https://www.state.nj.us/state/museum/">New Jersey State Museum</a>, Trenton</li>
 <li><a target="_blank" href="https://www.zimmerlimuseum.rutgers.edu/">Jane Voorhees Zimmerli Art Museum at Rutgers University</a>, Brunswick</li>
@@ -343,7 +344,7 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li><a target="_blank" href="https://www.wheatonvillage.org/">Wheaton Village Museum of American Glass</a>, Millville</li>
 </ul>
 
-<a name="NYC"></a>
+<a name="NY"></a>
 
 > <strong> New York </strong>
 
@@ -351,6 +352,8 @@ John F. Kennedy Presidential Library and Museum</a>, Columbia Point, Boston</li>
 <li><a target="_blank" href="https://www.fdrlibrary.marist.edu/">
 Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 </ul>
+
+<a name="NYC"></a>
 
 ### New York City (Manhattan)
 
@@ -399,6 +402,8 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="https://hispanicsociety.org/">Hispanic Society of America</a></li>
 </ul>
 
+<a name="Brooklyn"></a>
+
 ### New York City (Brooklyn)
 
 <em>DUMBO = Down Under the Manhattan Bridge Overpass</em> is home to 25% of New York based tech firms, including Etsy.
@@ -436,6 +441,8 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li><a target="_blank" href="https://www.rrmuseumpa.org/">Railroad Museum of Pennsylvania</a>, Ronks (Lancaster)</li>
 </ul>
 
+<a name="Philadelphia"></a>
+
 ### Philadelphia:
 
 <ul>
@@ -462,6 +469,8 @@ Franklin D. Roosevelt Presidential Library and Museum</a>, Hyde Park</li>
 <li type="circle"><a target="_blank" href="https://www.thedailymeal.com/vetri">Vetri Cucina</a> <a target="_blank" href="https://www.thedailymeal.com/101-best-restaurants-america-2019/slide-50">[#50]</a></li>
 <li type="circle">Zahav restaurant of Israeli cuisine, Philadelphia</li>
 </ul>
+
+<a name="Pittsburgh"></a>
 
 ### Pittsburgh:
 
@@ -575,13 +584,15 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <li><a target="_blank" href="https://www.wkrac.org/">William King Regional Arts Center</a>, Abingdon</li>
 </ul>
 
+<a name="Williamsburg"></a>
+
 ### Williamsburg:
 
 <ul>
 <li><a target="_blank" href="https://www.wm.edu/muscarelle/">Muscarelle Museum of Art at the College of William and Mary</a></li>
 <li> Abby Aldrich</li>
 <li> Rockefeller Folk Art Collection</li>
-<li> Colonial Williamsburg Villege</li>
+<li><a target="_blank" href="https://www.colonialwilliamsburg.org/">Colonial Williamsburg Villege</a> reenacts 18th centry American village</li>
 </ul>
 
 
@@ -640,6 +651,8 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <li><a target="_blank" href="https://www.columbusmuseum.com/">Columbus Museum</a></li>
 <li><a target="_blank" href="https://www.uga.edu/gamuseum/">Georgia Museum of Art at the University of Georgia</a>, Athens</li>
 </ul>
+
+<a name="Atlanta"></a>
 
 ### Atlanta:
 
@@ -716,6 +729,8 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 
 </ul>
 
+<a name="Miami"></a>
+
 ### Miami:
 
 <ul>
@@ -771,6 +786,8 @@ on <a target="_blank" href="https://www.vikingrivercruises.com/cruise-destinatio
 <li><a target="_blank" href="https://www.eiu.edu/~tarble/">Tarble Arts Center at Eastern Illinois University</a>, Charleston</li>
 </ul>
 
+<a name="Chicago"></a>
+
 ### Chicago:
 
 <ul>
@@ -813,6 +830,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li>Mark Twain Museum, Hanibal</li>
 </ul>
 
+<a name="KC"></a>
+
 ### Kansas City:
 
 <ul>
@@ -820,6 +839,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.kemperart.org/">Kemper Museum of Contemporary Art and Design</a>, Kansas City</li>
 <li><a target="_blank" href="https://www.nelson-atkins.org/"><strong>Nelson-Atkins Museum of Art</strong></a>, Kansas City</li>
 </ul>
+
+<a name="StLouis"></a>
 
 ### St. Louis:
 
@@ -847,6 +868,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li type="circle">The Barn at Blackberry Farm, Walland, Tennessee</li>
 </ul>
 
+<a name="Nashville"></a>
+
 ### Nashville:
 
 <ul>
@@ -855,6 +878,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <li><a target="_blank" href="https://www.tnmuseum.org/">Tennessee State Museum</a>, Nashville</li>
 <li><a target="_blank" href="https://sitemason.vanderbilt.edu/gallery">Vanderbilt University Fine Arts Gallery</a>, Nashville</li>
 </ul>
+
+<a name="Memphis"></a>
 
 ### Memphis:
 
@@ -896,6 +921,8 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 <a name="LA"></a>
 
 > <strong> Louisiana </strong>
+
+<a name="NewOrleans"></a>
 
 <ul>
 <li><a target="_blank" href="https://www.themuseum.org/">Alexandria Museum of Art</a></li>
@@ -1052,6 +1079,8 @@ Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from 
 <li><a target="_blank" href="https://sumweb.syr.edu/suart/">Syracuse University Art Collection</a></li>
 </ul>
 
+<a name="Buffalo"></a>
+
 ### Buffalo:
 
 <ul>
@@ -1101,6 +1130,8 @@ Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from 
 <li type="center"><a target="_blank" href="https://www.opentable.com/table-128-bistro-and-bar">Table 128 Bistro</a>, Toledo</li>
 </ul>
 
+<a name="Cincinnati"></a>
+
 ### Cincinnati:
 
 <ul>
@@ -1110,6 +1141,8 @@ Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from 
 <li><a target="_blank" href="https://www.creationmuseum.org/">Creation Museum</a> (is closest to the Cincinnati airport)</li>
 <li><a target="_blank" href="https://arkencounter.com//">Ark Encounter</a> (44 miles South in Kentucky from the Creation Museum)</li>
 </ul>
+
+<a name="Cleveland"></a>
 
 ### Cleveland:
 
@@ -1124,6 +1157,8 @@ Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from 
 <a name="IN"></a>
 
 > <strong> Indiana </strong>
+
+<a name="Cleveland"></a>
 
 ### Indianapolis:
 
@@ -1201,6 +1236,8 @@ Juneau</li>
 <li><a target="_blank" href="https://www.museumofnwart.org/">Museum of Northwest Art</a>, La Conner</li>
 </ul>
 
+<a name="Spokane"></a>
+
 ### Spokane:
 
 <ul>
@@ -1208,6 +1245,8 @@ Juneau</li>
 <li><a target="_blank" href="https://www.gonzaga.edu/Campus-Resources/Museums-and-Libraries/Jundt-Art-Museum/">
 Jundt Art Center and Museum at Gonzaga University</a></li>
 </ul>
+
+<a name="Seattle"></a>
 
 ### Seattle:
 
@@ -1254,6 +1293,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.dirosapreserve.org/">di Rosa Preserve</a>, Napa</li>
 </ul>
 
+<a name="SF"></a>
 
 ### San Francisco Bay: #
 
@@ -1281,6 +1321,8 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.bampfa.berkeley.edu/">Berkeley Art Museum + Pacific Film Archive at U.C. Berkeley</a></li>
 </ul>
 
+<a name="SanJose"></a>
+
 ### San Jose:
 
 <ul>
@@ -1296,6 +1338,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.montereyart.org/">Monterey Museum of Art</a></li>
 </ul>
 
+<a name="SantaBarbara"></a>
 
 ### Santa Barbara (Central Coast):
 
@@ -1310,6 +1353,8 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.shermanleeinstitute.org/">Lee Institute for Japanese Art</a>, Hanford</li>
 <li><a target="_blank" href="https://www.vcmha.org/">Ventura County Museum of History and Art</a>, Ventura</li>
 </ul>
+
+<a name="WLA"></a>
 
 ### West Side, Los Angeles:
 
@@ -1327,6 +1372,8 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.moca-la.org/">Museum of Contemporary Art</a></li>
 </ul>
 
+<a name="LA"></a>
+
 ### Downtown Los Angeles:
 
 <ul>
@@ -1338,6 +1385,8 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 
 <li><a target="_blank" href="https://southwestmuseum.org/">Southwest Museum</a>, Los Angeles</li>
 </ul>
+
+<a name="WLA"></a>
 
 ### East Los Angeles:
 
@@ -1357,6 +1406,8 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.csulb.edu/~uam/">California State University Art Museum</a>, Long Beach</li>
 <li><a target="_blank" href="https://www.csulb.edu/library/arts/">California State University Library</a>, Long Beach</li>
 </ul>
+
+<a name="OC"></a>
 
 ### Orange County:
 
@@ -1385,6 +1436,7 @@ Jundt Art Center and Museum at Gonzaga University</a></li>
 <li><a target="_blank" href="https://www.psmuseum.org/">Palm Springs Desert Museum</a></li>
 </ul>
 
+<a name="SanDiego"></a>
 
 ### San Diego:
 
@@ -1516,6 +1568,8 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="https://www.beloit.edu/~museum/wright/">Wright Museum of Art at Beloit College</a>, Beloit</li>
 </ul>
 
+<a name="Milwaukee"></a>
+
 ### Milwaukee:
 
 <ul>
@@ -1536,6 +1590,8 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="https://www.d.umn.edu/tma/">Tweed Museum of Art at the University of Minnesota</a>, Duluth</li>
 </ul>
 
+<a name="Minneapolis"></a>
+
 ### Minneapolis:
 
 <ul>
@@ -1545,6 +1601,8 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 <li><a target="_blank" href="https://www.weisman.umn.edu/">Weisman Art Museum at the University of Minnesota</a>, Minneapolis</li>
 <li type="circle">Spoon and Stable restaurant, Minneapolis</li>
 </ul>
+
+<a name="StPaul"></a>
 
 ### St. Paul:
 
@@ -1684,6 +1742,7 @@ we begin from Oklahoma and take a long detour North to avoid too much desert alo
 <li><a target="_blank" href="https://www.art.unt.edu/gallery/">University of North Texas Art Galleries</a>, Denton</li>
 </ul>
 
+<a name="Dallas"></a>
 
 ### Dallas:
 
@@ -1702,6 +1761,8 @@ we begin from Oklahoma and take a long detour North to avoid too much desert alo
 <li><a target="_blank" href="https://www.archives.gov/presidential-libraries/visit#">George W. Bush Presidential Library and Museum</a>, Dallas</li>
 </ul>
 
+<a name="Austin"></a>
+
 ### Austin:
 
 <ul>
@@ -1712,6 +1773,8 @@ we begin from Oklahoma and take a long detour North to avoid too much desert alo
 <li><a target="_blank" href="https://www.georgewbushlibrary.smu.edu/">
 Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 </ul>
+
+<a name="Houston"></a>
 
 ### Houston:
 
@@ -1739,6 +1802,8 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <li><a target="_blank" href="https://www.nps.gov/CAVE/">Carlsbad Caverns National Park</a></li>
 </ul>
 
+<a name="SantaFe"></a>
+
 ### Santa Fe:
 
 <ul>
@@ -1747,6 +1812,8 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <li><a target="_blank" href="https://www.museumofnewmexico.org/">Museum of New Mexico</a></li>
 <li><a target="_blank" href="https://www.nmlegis.gov/">New Mexico Legislature Art Gallery</a></li>
 </ul>
+
+<a name="Taos"></a>
 
 ### Taos:
 
@@ -1767,6 +1834,8 @@ Lyndon Baines Johnson Presidential Library and Museum</a>, Austin</li>
 <li><a target="_blank" href="https://www.usbr.gov/lc/hooverdam/">Hoover Dam</a>, Boulder City</li>
 <li type="circle">Frasca Food & Wine, Boulder</li>
 </ul>
+
+<a name="Denver"></a>
 
 ### Denver:
 
