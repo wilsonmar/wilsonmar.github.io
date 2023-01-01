@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-28"
+date: "2023-01-01"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."

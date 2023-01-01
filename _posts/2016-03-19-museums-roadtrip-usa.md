@@ -63,7 +63,6 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
 
-
 Notice the separation of green down the middle of the country?
 
 The Western frontier, even today, is separated by the <strong>98th Meridian</strong> line of Longitude near (from the South) San Antonio, Fort Worth, Oklahoma City, Wichita, Omaha, Souix Falls, and Fargo. <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):<br />
