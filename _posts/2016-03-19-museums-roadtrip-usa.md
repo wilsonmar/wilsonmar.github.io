@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-30"
+date: "2023-01-01"
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
@@ -23,7 +23,9 @@ I created this page as "bucket list" so that even if I can't visit each one and 
 
 {% include whatever.html %}
 
-It's a large country, so sites here are listed by each <a href="#CivilWar">state of the union</a>, along natural geography East-to-West:
+## Menu
+
+It's a large country, so cites are listed by each <a href="#CivilWar">state of the union</a>, along natural geography East-to-West:
 
 Journeys on water as she flows toward the Equator:
 
@@ -70,7 +72,7 @@ Notice the separation of green down the middle of the country?
 Today, the <strong>98th Meridian</strong> is shown by the green line in this map from <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
 
-"80% of Americans live East of that green line, which definess the reach of wet storms from the East.
+"80% of Americans live East of that green line, which defines the extent wet storms reach from the East.
 That line also defines the limit of the "rain shadow" where the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) which blocks moisture from the Pacific West."
 
 When geologist John Westly Powell identified this phenomenon in 1890, that natural line was at the 100th Meridian (vs. 98th today).
