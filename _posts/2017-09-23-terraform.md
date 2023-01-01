@@ -376,7 +376,7 @@ Comparisons:
    * https://github.com/boltops-learn (private repos by invitation)
    <br /><br />
 
-Control Plane pricing: AKS is free. GKE is free for one zonal cluster. Otherwise it's $72/month. 
+Control Plane pricing: AKS is free. GKE is free for one zonal cluster, then $72/month. 
 <a target="_blank" href="https://calculator.aws/#/addService/EKS">Pricing for EKS alone</a> is $73/month for each cluster in us-west-2 (0.10 USD per hour x 730 hours per month).
 
 
@@ -1195,7 +1195,7 @@ The root folder of <strong>each module</strong> should contain these files:
 
 * <a href="#main.tf"><tt>main.tf</tt></a> is the <strong>entry point</strong> of the module.
 
-* <tt>providers.tf</tt>
+* <tt>providers.tf</tt> specfies how to process HCL code (aws, azure, etc.)
 
 * <a target="_blank" href="https://www.terraform.io/language/values/outputs"><tt>outputs.tf</tt></a> defines data values output by a terraform run.
 
