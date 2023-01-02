@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-16"
+date: "2023-01-02"
 file: "hello-vault"
 title: "Hello-Vault"
 excerpt: "How to code your app to use HashiCorp Vault to get rid of static database passwords by generating credentials in Secret_ID temporarily in cubbyholes, wrapped for transfer, and accessed using AppRole"
@@ -65,7 +65,7 @@ To save app developers time and hassle of setting up the above, HashiCorp Vault 
 <a target="_blank" href="https://www.youtube.com/watch?v=JvPDGcl9Rzs">VIDEO: Meet the team which created this talk about their sample code (in Go)</a>.
 
 Rigs for these languages so far, listed alphabetically:
-   * Bash (not yet under construction)
+   * <a target="_blank" href="https://github.com/wilsonmar/docker-development-youtube-series/tree/master/hashicorp/vault/example-apps/dynamic-postgresql">Bash</a>
    * https://github.com/hashicorp/hello-vault-dotnet (C# with MS-SQL)
    * https://github.com/hashicorp/hello-vault-go
    * Groovy - no plans
