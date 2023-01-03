@@ -27,181 +27,64 @@ Vault was first released as open-source software in 2015 at:
    * https://developer.hashicorp.com/vault
    <br /><br />
 
-## This Tutorial
+## Pricing Enterprise
 
-From easiest to more difficult:
-The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
+<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: HashiCorp provides Vault free under open-source licensing with community support. 
 
-   A. A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
-
-   B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
-
-   C. Free <a href="#VaultCompose">on your laptop, install Vault server using Docker Compose</a>
-
-   D. In AWS, install a "self-managed" Enterprise  <a href="HashiCups">HashiCups fictional sample app</a>  with a <strong>S3 backend</strong>.
-
-   E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
-
-   F. Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
-
-   * Use Enterprise HCP
+HashiCorp makes money from licensing of its cloud and on-prem (self-managed) enterprise capabilities.
+References: 
+   * <a target="_blank" href="https://cloud.hashicorp.com/products/vault">https://cloud.hashicorp.com/products/vault</a>
+   * https://developer.hashicorp.com/hcp/docs/vault
+   * https://developer.hashicorp.com/hcp/docs/vault/security-overview
+   * https://developer.hashicorp.com/vault/tutorials/cloud/vault-introduction
+   * https://developer.hashicorp.com/vault/tutorials/cloud
+   * https://cloud.hashicorp.com/products/vault/pricing
+   * https://portal.cloud.hashicorp.com/sign-in
    <br /><br />
 
-<a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
+Also, HashiCorp supports its enterprise services partners via a team specializing in partner technical support worldwide.
 
-Here is a hands-on tutorial about how to install and use HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
-
-<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: HashiCorp provides Vault free under open-source licensing. Pay for an Enterprise license for MFA, Replication, Diaster Recovery, Namespaces, Monitoring, FIPS 140-2, and quicker support. HashiCorp can provide a list of services partners.
-
-https://github.com/hashicorp/vault-guides
-provides the technical content to support the Vault learn site.
-
-https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
-
-
-## Use cases   s
-
-Examples of individual secrets (<a target="_blank" href="https://www.vaultproject.io/docs/use-cases">use cases</a>):
-   * Passwords typed in with User names to login manually
-   * Database credentials
-   * API tokens provided by programs to obtain data from servers
-   * TLS certificates used to encrypt network traffic
-   * <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
+Vault HCP (HashiCorp Cloud Platform), <a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">announced Oct. 14 2020</a>, is a hosted (SaaS) version of Vault operated by HashiCorp (using the same binary as self-hosted Vault). 
+The Enterprise cloud GUI (providing a consistent user experience) enable organizations to get up and running quickly, plus achieve scale easily -- without the complexity and overhead of self-managed instances. 
+Either way, base Enterprise capabilities include:
+   * quicker "Premium" support world-wide in English, German, Japanese, etc.
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/perf-replication">Replication (for higher performance)</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/high-avail-disaster-recover">Disaster Recovery</a>
+   * Namespaces (to segment data between teams to limit lateral movement by hackers)
+   * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
    <br /><br />
 
-Once a Vault instance is available, we dive into:
+HashiCorp's Vault Enterprise <strong>Advanced Data Protection (ADP) license</strong>
 
-   * <a href="#Config">Initialize and Configure Vault</a>
-   
-   * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
-   * <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
-   * Within a Golang program
-
-   * Obtain a certificate (instead of manually requesting a CSR and importing the certificate)
+Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something. 
+That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc.
+and every application, service, or any other machine-based system that authenticates to Vault.
 
 <hr />
-
-## Enterprise Multi-platform, Multi-cloud
-
-Vault provides a capability that most major cloud providers also provide in their own features:
-   * AWS KMS (Key Management Server), AWS Secrets Manager, or the AWS Key Service (AKS)
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
-   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
-   * etc.
-   <br /><br />
-
-But Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
-
-Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
-This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
-
-Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
-
-
-## Enterprise worthy
-
-HashiCorp's Vault is popular among large enterprises because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
-Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
-
-There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
-<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
-
-HashiCorp provides a fully enterprise-level 24/7 support worldwide.
-
-HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
-Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
-(next to the Salesforce Transit Center).
-
-Vault supports PKI (Private Key Infrastructure) used to handle certificates.
-
-All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
-
-Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
-and responds to security events.
-
-
-## Zero Trust - No Static Secrets
-
-Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
-
-Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
-
-1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
-1. <strong>Authenticate and authorize</strong> all network traffic through an identity-based approach
-1. Enable <strong>multi-factor authentication</strong> to augment protection
-
-1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
-1. Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal.
-1. <strong>Encrypt</strong> everything (in transit and at rest) 
- 
-
-
-### Centralized Professionals
-
-Many of the "global 2000" largest companies license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
-
-Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
-
-So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
-
-The typical arrangement is a differentiation between Service Owners vs. Security Owners:
-
-Service Owners are responsible for:
-   * Operational Access
-   * Authentication Methods
-   * Reliability of Vault (Availability reporting)
-   <br /><br />
-
-Security Owners are responsible for:
-   * Authorization Methods
-   * Secrets Policy
-   * Rotation Strategy
-   * Data, Application, and Systems Access
-   <br /><br />
-
-<hr />
-
-## Different ways to access secrets 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
-by Armon Dadgar, HashiCorp's CTO,
-is a whiteboard talk about avoiding "secret sprawl" living in clear text with
-empheral (temporary) passwords and cryptographic offload to a central service:
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
-
-1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
-what a machine is enabled to do.
-
-2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
-
-3. Human-to-machine access concerns how we control which humans are allowed to speak to which
-machines.
-
-4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
-
-Administrators and users can interact with Vault using its GUI, CLI, or API.
-Its CLI is a wrapper performing API calls.
-
-## API calls
-
-Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
-
-   1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
-
-   2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
-   
-   3. Verification is obtained
-   
-   4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
-   <br /><br />
 
 <a name="Secrets"></a>
 
-## What are secrets?
+## Many types of secrets
 
 A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, SSH private certificates, and more. 
+
+https://developer.hashicorp.com/vault/docs/use-cases
+
+* Passwords associated with userids typed in to login web applications.
+   
+   Vault can store such secrets behind its cryptographic barrier.
+
+* Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
+* Asymmetric X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR or submitting to a root CA.
+* Asymmetric Keys to encrypt and decrypt data stored (at-rest)
+* API Keys provided by programs to obtain data from servers
+* database credentials
+<br /><br />
+
+
+## Why is a system needed?
 
 Questions for secrets management:
 
@@ -210,11 +93,25 @@ Questions for secrets management:
    1. How are secrets updated? (rotated)
    1. How is a secret revoked?
    1. When were secrets used? (lookup in usage logs)
-   1. What do we do in the event of compromise?
+   1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
    <br /><br />
 
+### Secrets handling best practices
 
-## Requirements for secret keeping
+<a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>:
+
+1. Don't let authentication secrets live forever. Use single-use token with short TTL (Time To Live)
+1. Distribute authentication secrets securely.
+1. Limit exposure if auth secrets disclosed. Use Least Privilege.
+1. Have a "break-glass" procedure if auth secrets are stolen.
+1. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
+
+
+### Requirements for keeping secrets
+
+https://developer.hashicorp.com/vault/docs/what-is-vault
+
+The basic requiremet is restricting access to encrypted data, based on a need-to-know basis.
 
 Storing plain-text secrets hard-coded in program code stored in GitHub is like leaving Amazon packages on your door for a long time.
 
@@ -234,7 +131,7 @@ Coverage of what features a secrets service should have:
 
 * Limit access to designated containers
 
-* Encrypted transmission with Mutual authentication (MTLS)
+* Encrypted transmission with Mutual authentication (mTLS)
 
 * Audit logging
 
@@ -247,35 +144,23 @@ Coverage of what features a secrets service should have:
 
 * Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
 
+https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
 
-## Competitors
+https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
+
+
+## Alternatives to secrets management
 
 Alternatives to HashiCorp Vault include:
 
    * Cloud providers' own secret engines
 	
-   * Vormetrix
+   * <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
 
    * <a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
 
-   * <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
+   * France-based Thales in Feb 2017 acquired <a target="_blank" href="https://cpl.thalesgroup.com/encryption/vormetric-data-security-platform">Vormetrix Data Security Platform</a> with <a target="_blank" href="https://www-50.ibm.com/partnerworld/gsd/showimage.do?id=31915">IBM</a>
 
-
-## HashiCorp's Value Proposition
-
-As of this writing, a unique strong point with Vault is that it can
-change the value of an existing secret (key rotation) without rebooting. 
-
-The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-Toward that, HashiCorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
-
-Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
-
-Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
-
-## Alternatives to secret management
 
 * <a target="_blank" href="https://12factor.net/config">Chapter III. of the "twelve-factor app"</a> recommends storing config in <strong>environment variables</strong>. The usual mechanism has been in a clear-text file loaded into <strong>operating system variables</strong>, such as:
 
@@ -328,15 +213,300 @@ database_password = get_secret('db_pass')
    <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
 
 
-## Secrets handling best practices
 
-<a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>:
+### Zero Trust - No Static Secrets
 
-1. Don't let authentication secrets live forever. Use single-use token with short TTL (Time To Live)
-1. Distribute authentication secrets securely.
-1. Limit exposure if auth secrets disclosed. Use Least Privilege.
-1. Have a "break-glass" procedure if auth secrets are stolen.
-1. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
+Vault enables a better <strong>Security Posture</strong> within enterprises by replacing static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+
+Vault provides the mechanisms to implement "Zero Trust" security principles mandated in US federal government:
+
+1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
+1. <strong>Authenticate and authorize</strong> all network traffic through an identity-based approach
+1. Enable <strong>multi-factor authentication</strong> to augment protection
+
+1. <strong>Centrally store</strong> and protect secrets like tokens, passwords, and certificates
+1. Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal.
+1. <strong>Encrypt</strong> everything (in-transit and at rest) 
+ 
+
+<a name="Tasks"></a>
+
+## RBAC Tasks
+
+Enhancements to <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/vault-permissions">HashiCorp's definition of tasks used to grant RBAC permissions</a>:
+
+1. List, View audit logs - Recovery Admin only
+2. Remove backup snapshots, audit logs, clusters - Recovery Admin only
+3. Seal/unseal clusters - Recovery Admin only
+
+4. Create, list, view clusters - Platform Admin only
+5. Generate admin tokens - Platform Admin only
+6. Setup performance replication - Platform Admin only
+7. Cluster scaling - Platform Admin only
+8. View snapshots - Platform Admin only
+9. Expose resources publicly (edit visibility rules) - Platform Admin only
+<br /><br />
+
+PROTIP: Strategies include:
+
+A. Define limited permissions to app developers (read and write but not delete data).
+
+A. Define separate separate admin accounts to delete audit logs and other data needed for forensics and disaster recovery.
+
+B. Define less restrictive permissions to enable creation of clusters
+
+C. Define separate permssions to accounts used to do scaling
+
+D. separate Platform admin accounts
+
+<a name="Roles"></a>
+
+## Roles/Tasks by Persona
+
+Here are various roles used to <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/vault-permissions">define RBAC permissions</a>, as defined by <a target="_blank" href="https://intellipaat.com/blog/what-is-azure-key-vault/">some</a>:
+
+<strong>Subscription</strong>: an identifier used for billing of Azure resources.
+
+<strong>Tenant</strong>: An organization that owns and administers a specific instance of Microsoft cloud services (Azure and Microsoft 365 services) within an Azure subscription.
+
+<strong>Azure Active Directory</strong>: an Azure service managing subscriptions for a single tenant, which can contain one or more domains.
+
+<strong>Subscription Admin</strong>: have financial fudiciary responsiblity for spending billed to  specific subscriptions.
+
+<strong>Resource</strong>: A resource is an entity that may be managed in Azure cloud.
+
+<strong>Resource Group</strong>: a Azure solution container of connected resources managed as a group. 
+
+<strong>Security Principal</strong>: User-created apps, services, and automation tools permitted to access specific Azure resources.
+
+<strong>Managed Identities</strong>: an automatically managed identity pre-defined in Azure AD to access Azure services.
+
+<strong>Vault Owner</strong>: the roles which can build a key vault and have complete lifecycle control and access to it, including auditing logs to keep track of who has access to the secrets and keys. The Vault Owner can restore the key to a new version, back it up, and perform other operations.
+
+<strong>Vault Consumer</strong>: the one who, after being granted access permissions, acts on the assets stored in key vaults.
+
+<strong>Managed HSM Administrators</strong>: A Managed HSM pool is completely under the control of users who have been assigned its Administrator.
+
+<strong>Managed HSM Crypto Service Encryption User</strong>: Built-in roles are typically assigned to users or service principals who will use keys in Managed HSM to perform cryptographic activities. Crypto users can generate new keys but not delete existing ones.
+
+<hr />
+
+## Competition
+
+https://www.udemy.com/course/azure-key-vault-the-complete-introduction/
+
+Azure has higher "Premium" prices for use of it HSM (Hardware Security Module)
+
+
+The necessity to make security information part of the code is eliminated by not needing to store security information in apps.
+RBAC
+
+scaling
+
+The key differentator for Vault is that it completely eliminates storage of secrets and periodic rotation of keys and passwords.
+
+
+
+by pros
+log each transaction to Azure Monitor for forensics 
+steam each transaction to an event hub to trigger immediate alerting and actions
+
+https://azure.microsoft.com/en-us/pricing/details/key-vault/
+ azure store up to 5,000 key vault keys and the ability to access their keys from any device. The subscription price for Azure key vault is $5 per user per month.
+ First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
+
+https://www.saasworthy.com/product/aws-secrets-manager/pricing
+
+https://www.saasworthy.com/product/hashicorp-vault/pricing
+
+https://www.saasworthy.com/product/cyberark-pas/pricing
+
+https://www.saasworthy.com/product/box-keysafe/pricing
+https://www.saasworthy.com/product/manageengine-key-manager-plus/pricing
+https://www.saasworthy.com/product/equinix-smartkey/pricing
+https://www.saasworthy.com/product/akeyless-vault
+
+
+<hr />
+
+## Modes of Vault Installation
+
+Here is a hands-on tutorial about how to install and use HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
+
+From easiest to more difficult:
+The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
+
+   A. A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+
+   B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
+
+   C. Free <a href="#VaultCompose">on your laptop, install Vault server using Docker Compose</a>
+
+   D. In AWS, install a "self-managed" Enterprise  <a href="HashiCups">HashiCups fictional sample app</a>  with a <strong>S3 backend</strong>.
+
+   E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
+
+   F. Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
+
+   * Use Enterprise HCP
+   <br /><br />
+
+<a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
+
+https://github.com/hashicorp/vault-guides
+provides the technical content to support the Vault learn site.
+
+https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+
+
+## Use cases
+
+https://developer.hashicorp.com/vault/docs/use-cases
+
+Once a Vault instance is available, we dive into:
+
+   * <a href="#Config">Initialize and Configure Vault</a>
+   
+   * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
+   * <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
+   * Within a Golang program
+
+   * Obtain a certificate (instead of manually requesting a CSR and importing the certificate)
+
+<hr />
+
+## Enterprise Multi-platform, Multi-cloud
+
+Vault provides a capability that most major cloud providers also provide in their own features:
+   * AWS KMS (Key Management Server)
+   * AWS Secrets Manager
+   * AWS Key Service (AKS)
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
+   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
+   * etc.
+   <br /><br />
+
+But Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
+
+Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
+This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
+
+Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
+
+PROTIP: Vault has a KMIP Secrets Engine for interconnctions.
+
+* Keys to encrypt and decrypt data in transit and at-rest.
+
+
+## Enterprise worthy
+
+HashiCorp's Vault is popular among large enterprises because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
+Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
+
+There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
+<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
+
+HashiCorp provides a fully enterprise-level 24/7 support worldwide.
+
+HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
+Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
+(next to the Salesforce Transit Center).
+
+Vault supports PKI (Private Key Infrastructure) used to handle certificates.
+
+All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
+
+Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
+and responds to security events.
+
+### Admin Configurations
+
+1. Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
+
+2. Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
+
+3. Define the process for cluster resizing and changing tiers. There is a current limitations that no production-grade clusters can be scaled down to the Development tier and you must have enough resources to scale down or delete them accordingly. HCP Vault allows you to change your clusters in place while maintaining the current configurations. 
+
+
+### Centralized Professionals
+
+Many of the "global 2000" largest companies license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
+
+Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
+
+So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
+
+The typical arrangement is a differentiation between Service Owners vs. Security Owners:
+
+Service Owners are responsible for:
+   * Operational Access
+   * Authentication Methods
+   * Reliability of Vault (Availability reporting)
+   <br /><br />
+
+Security Owners are responsible for:
+   * Authorization Methods
+   * Secrets Policy
+   * Rotation Strategy
+   * Data, Application, and Systems Access
+   <br /><br />
+
+<hr />
+
+
+## Different ways to access secrets 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
+by Armon Dadgar, HashiCorp's CTO,
+is a whiteboard talk about avoiding "secret sprawl" living in clear text with
+empheral (temporary) passwords and cryptographic offload to a central service:
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
+
+1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
+what a machine is enabled to do.
+
+2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
+
+3. Human-to-machine access concerns how we control which humans are allowed to speak to which
+machines.
+
+4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
+
+
+Administrators and users can interact with Vault using its GUI, CLI, or API.
+Its CLI is a wrapper performing API calls.
+
+
+
+## API calls
+
+Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
+
+   1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
+
+   2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
+   
+   3. Verification is obtained
+   
+   4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
+   <br /><br />
+
+
+## HashiCorp's Value Proposition
+
+As of this writing, a unique strong point with Vault is that it can
+change the value of an existing secret (key rotation) without rebooting. 
+
+The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+
+Toward that, HashiCorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
+
+Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+
 
 <hr />
 	

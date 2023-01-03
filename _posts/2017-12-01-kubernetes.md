@@ -7639,6 +7639,8 @@ by Kim Crawley
 
 <a target="_blank" href="https://www.youtube.com/watch?v=W6J6UipVNGA&list=PLWnens-FYbIpUpmiiNYfkqTZQUYppGMFV">100 days of Kubernetes</a>, starting as a newbie.
 
+https://medium.com/@rupeshthakur/logging-guide-in-kubernetes-4293e3748038
+
 <hr />
 
 ## More on DevOps #
