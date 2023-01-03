@@ -430,26 +430,30 @@ and responds to security events.
 
 Here are the configuration settings that installers need to specify:
 
-1. <strong>HCP Cloud provider region(s)</strong> support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. But check back to the HashiCorp websites for additional regions added over time:
-
+1. <strong>HCP Cloud provider region(s)</strong> support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS</a>
-      </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure</a> 
+   <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Region</a>
+      </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Location</a> 
       </th></tr>
    <tr valign="top"><td rowspan="4"> US 
-      </td><td> us-east-1	Virginia	</td><td> eastus </td></tr>
-   <tr valign="top"><td> - </td><td> eastus2 </td></tr>
-   <tr valign="top"><td> - </td><td> centralus </td></tr>
-   <tr valign="top"><td> us-west-2 Oregon </td><td> westus2 </td></tr>
+   </td><td> us-east-1 (Virginia)</td><td> eastus (Richmond, Virginia)</td></tr>
+   <tr valign="top"><td> - </td><td> eastus2 (Richmond, Virginia)</td></tr>
+   <tr valign="top"><td> - </td><td> centralus (Des Moines, Iowa)</td></tr>
+   <tr valign="top"><td> us-west-2 (Oregon)</td><td> westus2 (Moses Lake, Washington)</td></tr>
    <tr valign="top"><td rowspan="4"> EU
-      </td><td> eu-west-1	Ireland</td><td>northeurope </td></tr>
-   <tr valign="top"><td> eu-west-2	London</td><td>uksouth </td></tr>
-   <tr valign="top"><td> eu-central-1	Frankfurt</td><td>westeurope </td></tr>
-   <tr valign="top"><td> - </td><td>francecentral </td></tr>
+   </td><td> eu-west-1 (Ireland)</td><td>northeurope (Dublin, Ireland)</td></tr>
+   <tr valign="top"><td> eu-west-2 (London)</td><td>uksouth (London, UK)</td></tr>
+   <tr valign="top"><td> eu-central-1 (Frankfurt)</td><td>westeurope (Amsterdam, Netherlands)</td></tr>
+   <tr valign="top"><td> - </td><td>francecentral (Paris, France)</td></tr>
    <tr valign="top"><td rowspan="2"> Asia
-   </td><td> ap-southeast-1 Singapore</td><td> - </td></tr>
-   <tr valign="top"><td> ap-southeast-2 Sydney</td><td> - </td></tr>
+   </td><td> ap-southeast-1 (Singapore)</td><td> - </td></tr>
+   <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td> - </td></tr>
    </table>
+
+   But check back to the HashiCorp websites for additional regions added over time:
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+   * https://dgtlinfra.com/microsoft-azure-data-center-locations/
+   <br /><br />
 
 2. Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
 
