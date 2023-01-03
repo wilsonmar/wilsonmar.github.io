@@ -425,7 +425,7 @@ and responds to security events.
 
 Here are the configuration settings that installers need to specify:
 
-1. <strong>Cloud provider region(s)</strong> HCP support ise limited to regions specified in  and 
+1. <strong>Cloud provider region(s)</strong> HCP support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements.
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS</a>
@@ -448,7 +448,6 @@ Here are the configuration settings that installers need to specify:
       </td></tr>
    </table>
 
-   PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements.
    But check back to the HashiCorp websites for additional regions added over time.
 
 
