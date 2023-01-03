@@ -424,7 +424,6 @@ Enterprises send logs to a central repository (such as Splunk) where their SOC t
 and responds to security events.
 
 
-
 ## Admin Configurations
 
 Here are the configuration settings that installers need to specify:
@@ -435,9 +434,9 @@ Here are the configuration settings that installers need to specify:
    <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS</a>
       </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure</a> 
       </th></tr>
-   <tr valign="top"><td rowspan="4"> US 
+   <tr valign="top"><td rowspan="4"></td> US 
       </td><td> us-east-1	Virginia	</td><td>eastus
-      </td><td> - </td><td>eastus2
+      </td><td> - </td><td> eastus2
       </td><td> - </td><td> centralus
       </td><td> us-west-2 Oregon </td><td> westus2
       </td></tr>
