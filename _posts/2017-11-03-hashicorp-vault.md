@@ -72,20 +72,22 @@ and every application, service, or any other machine-based system that authentic
 
 ## Many types of secrets
 
-A secret is any "clear text" that you want to tightly control access to, such as API keys, passwords, SSH private certificates, and more. 
-
-https://developer.hashicorp.com/vault/docs/use-cases
+A secret is any "clear text" that you want to tightly control access to, such as:
 
 * Passwords associated with userids typed in to login web applications.
    
    Vault can store such secrets behind its cryptographic barrier.
 
 * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
-* Asymmetric X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR or submitting to a root CA.
+* Asymmetric X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA.
 * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
 * API Keys provided by programs to obtain data from servers
 * database credentials
 <br /><br />
+
+Vault provide <strong>secrets engines</strong> and <strong>authentication methods</strong> to work with each of the above.
+
+Based on https://developer.hashicorp.com/vault/docs/use-cases
 
 
 ## Why is a system needed?
@@ -428,36 +430,33 @@ and responds to security events.
 
 Here are the configuration settings that installers need to specify:
 
-1. <strong>Cloud provider region(s)</strong> HCP support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. But check back to the HashiCorp websites for additional regions added over time:
+1. <strong>HCP Cloud provider region(s)</strong> support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. But check back to the HashiCorp websites for additional regions added over time:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS</a>
       </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure</a> 
       </th></tr>
    <tr valign="top"><td rowspan="4"> US 
-      </td><td> us-east-1	Virginia	</td><td>eastus
-      </td><td> - </td><td> eastus2
-      </td><td> - </td><td> centralus
-      </td><td> us-west-2 Oregon </td><td> westus2
-      </td></tr>
+      </td><td> us-east-1	Virginia	</td><td> eastus </td></tr>
+      </td><td> - </td><td> eastus2 </td></tr>
+      </td><td> - </td><td> centralus </td></tr>
+      </td><td> us-west-2 Oregon </td><td> westus2 </td></tr>
    <tr valign="top"><td rowspan="4"> EU
-      </td><td> eu-west-1	Ireland</td><td>northeurope
-      </td><td> eu-west-2	London</td><td>uksouth
-      </td><td> eu-central-1	Frankfurt</td><td>westeurope
-      </td><td> - </td><td>francecentral
-      </td></tr>
+      </td><td> eu-west-1	Ireland</td><td>northeurope </td></tr>
+      </td><td> eu-west-2	London</td><td>uksouth </td></tr>
+      </td><td> eu-central-1	Frankfurt</td><td>westeurope </td></tr>
+      </td><td> - </td><td>francecentral </td></tr>
    <tr valign="top"><td rowspan="2"> Asia
-      </td><td> ap-southeast-1 Singapore</td><td> -
-      </td><td> ap-southeast-2 Sydney</td><td> -
-      </td></tr>
+      </td><td> ap-southeast-1 Singapore</td><td> - </td></tr>
+      </td><td> ap-southeast-2 Sydney</td><td> - </td></tr>
    </table>
 
 
-1. Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
+2. Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
 
-2. Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
+3. Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
 
-3. Define the process for cluster resizing and changing tiers. There is a current limitations that no production-grade clusters can be scaled down to the Development tier and you must have enough resources to scale down or delete them accordingly. HCP Vault allows you to change your clusters in place while maintaining the current configurations. 
+4. Define the process for cluster resizing and changing tiers. There is a current limitations that no production-grade clusters can be scaled down to the Development tier and you must have enough resources to scale down or delete them accordingly. HCP Vault allows you to change your clusters in place while maintaining the current configurations. 
 
 
 ### Centralized Professionals
