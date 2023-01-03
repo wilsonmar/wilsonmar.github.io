@@ -32,8 +32,10 @@ Vault was first released as open-source software in 2015 at:
 <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: HashiCorp provides Vault free under open-source licensing with community support. 
 
 HashiCorp makes money from licensing of its cloud and on-prem (self-managed) enterprise capabilities.
-References: 
+
+   References to HCP: 
    * <a target="_blank" href="https://cloud.hashicorp.com/products/vault">https://cloud.hashicorp.com/products/vault</a>
+   * https://developer.hashicorp.com/hcp/docs/hcp#how-does-hcp-work
    * https://developer.hashicorp.com/hcp/docs/vault
    * https://developer.hashicorp.com/hcp/docs/vault/security-overview
    * https://developer.hashicorp.com/vault/tutorials/cloud/vault-introduction
@@ -55,6 +57,8 @@ Either way, base Enterprise capabilities include:
    * Namespaces (to segment data between teams to limit lateral movement by hackers)
    * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
    <br /><br />
+
+Each organization hosted within HCP is isolated and secured from other organizations.
 
 HashiCorp's Vault Enterprise <strong>Advanced Data Protection (ADP) license</strong>
 
@@ -429,20 +433,21 @@ Here are the configuration settings that installers need to specify:
 
    <table border="1" cellpadding="4" cellspacing="0">
    <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS</a>
-      </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure</a> </th></tr>
-   <tr valign="top"><td colspan="4"> US 
+      </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure</a> 
+      </th></tr>
+   <tr valign="top"><td rowspan="4"> US 
       </td><td> us-east-1	Virginia	</td><td>eastus
       </td><td> - </td><td>eastus2
       </td><td> - </td><td> centralus
       </td><td> us-west-2 Oregon </td><td> westus2
       </td></tr>
-   <tr valign="top"><td colspan="4"> EU
+   <tr valign="top"><td rowspan="4"> EU
       </td><td> eu-west-1	Ireland</td><td>northeurope
       </td><td> eu-west-2	London</td><td>uksouth
       </td><td> eu-central-1	Frankfurt</td><td>westeurope
       </td><td> - </td><td>francecentral
       </td></tr>
-   <tr valign="top"><td colspan="2"> Asia
+   <tr valign="top"><td rowspan="2"> Asia
       </td><td> ap-southeast-1 Singapore</td><td> -
       </td><td> ap-southeast-2 Sydney</td><td> -
       </td></tr>
