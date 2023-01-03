@@ -419,7 +419,38 @@ All HashiCorp's products provide a detailed <strong>audit logs</strong> needed f
 Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
 and responds to security events.
 
-### Admin Configurations
+
+
+## Admin Configurations
+
+Here are the configuration settings that installers need to specify:
+
+1. <strong>Cloud provider region(s)</strong> HCP support ise limited to regions specified in  and 
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Continent </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS</a>
+      </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure</a> </th></tr>
+   <tr valign="top"><td colspan="4"> US 
+      </td><td> us-east-1	Virginia	</td><td>eastus
+      </td><td> - </td><td>eastus2
+      </td><td> - </td><td> centralus
+      </td><td> us-west-2 Oregon </td><td> westus2
+      </td></tr>
+   <tr valign="top"><td colspan="4"> EU
+      </td><td> eu-west-1	Ireland</td><td>northeurope
+      </td><td> eu-west-2	London</td><td>uksouth
+      </td><td> eu-central-1	Frankfurt</td><td>westeurope
+      </td><td> - </td><td>francecentral
+      </td></tr>
+   <tr valign="top"><td colspan="2"> Asia
+      </td><td> ap-southeast-1 Singapore</td><td> -
+      </td><td> ap-southeast-2 Sydney</td><td> -
+      </td></tr>
+   </table>
+
+   PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements.
+   But check back to the HashiCorp websites for additional regions added over time.
+
 
 1. Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
 
