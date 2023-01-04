@@ -18,6 +18,15 @@ comments: true
 
 The point of this page is to describe the utilities I created (based on docs and tutorials) so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
+## This tutorial
+
+   1. Cloud Providers
+   2. Vault HCP SaaS
+   3. Install Vault Agent+Server app
+   4. Log into (authenticate into) Vault
+   5. <a href="#SecretsEngines">Secrets Engines</a>
+   <br /><br />
+
 ## Open Source Origins
 
 Vault was first released as open-source software in 2015 at:
@@ -79,13 +88,17 @@ A secret is any "clear text" that you want to tightly control access to, such as
    Vault can store such secrets behind its cryptographic barrier.
 
 * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
+
 * Asymmetric X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA.
+
 * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
+
 * API Keys provided by programs to obtain data from servers
+
 * database credentials
 <br /><br />
 
-Vault provide <strong>secrets engines</strong> and <strong>authentication methods</strong> to work with each of the above.
+Vault provides <a href="#SecretsEngines">secrets engines</a> to work with each of the above.
 
 Based on https://developer.hashicorp.com/vault/docs/use-cases
 
@@ -342,7 +355,7 @@ Here is a hands-on tutorial about how to install and use HashiCorp's <a target="
 From easiest to more difficult:
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
-   A. A <a href="#Pricing">paid</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+   A. A <a href="#Pricing">paid/licensed</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
 
    B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
 
@@ -399,12 +412,12 @@ This is a requirement for true enterprise capability, due to needs imposed by co
 
 Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
 
-PROTIP: Vault has a KMIP Secrets Engine for interconnctions.
+PROTIP: Vault has a KMIP Secrets Engine for back-end interconnctions.
 
 * Keys to encrypt and decrypt data in transit and at-rest.
 
 
-## Enterprise worthy
+## Enterprise worthy?
 
 HashiCorp's Vault is popular among large enterprises because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
 Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
@@ -426,7 +439,31 @@ Enterprises send logs to a central repository (such as Splunk) where their SOC t
 and responds to security events.
 
 
-## HP Install Configs
+### Centralized Security Pros
+
+Many of the <a target="_blank" href="https://www.forbes.com/lists/global2000/?sh=79d491635ac0">"Forbes Global 2000" largest companies in the world</a> license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
+
+Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
+
+So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
+
+The typical arrangement is a differentiation between Service Owners vs. Security Owners:
+
+<strong>Service Owners</strong> are responsible for:
+   * Operational Access
+   * Authentication Methods
+   * Reliability of Vault (Availability reporting)
+   <br /><br />
+
+<strong>Security Owners</strong> are responsible for:
+   * Authorization Methods
+   * Secrets Policy
+   * Rotation Strategy
+   * Data, Application, and Systems Access
+   <br /><br />
+
+
+## HPC SaaS Install Configs
 
 Here are the configuration settings that installers of Vault need to specify:
 
@@ -463,29 +500,6 @@ Here are the configuration settings that installers of Vault need to specify:
 4. Define the process for cluster resizing and changing tiers. There is a current limitations that no production-grade clusters can be scaled down to the Development tier and you must have enough resources to scale down or delete them accordingly. HCP Vault allows you to change your clusters in place while maintaining the current configurations. 
 
 
-### Centralized Professionals
-
-Many of the "global 2000" largest companies license Vault's Enterprise capabilities to <strong>centralize management of secrets</strong> for both faster response to changes to personnel and systems.
-
-Installation and maintenance of Vault requires some configuration and tuning along with changes in workflows.
-
-So it is assumed that Vault server and SaaS offerings provide a <strong>central group</strong> of people to provide a <strong>concerted approach</strong> to guarding their employer's secrets handling by employees.
-
-The typical arrangement is a differentiation between Service Owners vs. Security Owners:
-
-Service Owners are responsible for:
-   * Operational Access
-   * Authentication Methods
-   * Reliability of Vault (Availability reporting)
-   <br /><br />
-
-Security Owners are responsible for:
-   * Authorization Methods
-   * Secrets Policy
-   * Rotation Strategy
-   * Data, Application, and Systems Access
-   <br /><br />
-
 <hr />
 
 
@@ -511,6 +525,31 @@ machines.
 Administrators and users can interact with Vault using its GUI, CLI, or API.
 Its CLI is a wrapper performing API calls.
 
+
+<a name="SecretsEngines"></a>
+
+## Enable Secrets Engines
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+
+PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
+
+Supported secrets engines (alphabetically):
+   * Active Directory (AD)
+   * AliCloud
+   * AWS
+   * Azure (cloud from Microsoft)
+   * GoogleCloud
+   * GoogleCloud KMS (Key Managerment Service)
+   * Consul (from HashiCorp)
+   * Nomad (from HashiCorp)
+   * RabbitMQ messagging
+   * SSH (Secure Shell used by Linux)
+   * Transit (from HashiCorp)
+   * PKI (Public Key Infrastructure used by Microsoft, etc.)
+   * KV (Key/Value)
+   * TOTP (Time-based One-time Password <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
+   <br /><br />
 
 
 ## API calls
@@ -644,7 +683,7 @@ Prep:
    * https://medium.com/bb-tutorials-and-thoughts/how-to-pass-hashicorp-vault-associate-certification-c882892d2f2b
    * STAR: https://medium.com/bb-tutorials-and-thoughts/200-practice-questions-for-hashicorp-vault-associate-certification-ebd7f7d27bc0
    * https://www.linkedin.com/pulse/how-pass-hashicorp-vault-associate-certification-yassine-n-/
-   * https://github.com/bmuschko/cva-crash-course for OReilly class</a>
+   * https://github.com/bmuschko/cva-crash-course for <a target="_blank" href="https://learning.oreilly.com/live-events/practical-amazon-elastic-kubernetes-service-eks-for-the-real-world/0636920074620/0636920083154/">"Practical Amazon Elastic Kubernetes Service (EKS) for the Real World" video class on OReilly.com</a>
    <br /><br />
 
 
@@ -673,26 +712,26 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
    3a.	Describe secure introduction of Vault clients<br />
    3b.	Describe the security implications of running Vault in Kubernetes
 
-4.	Build fault-tolerant Vault environments
+4.	Build fault-tolerant Vault environments<br />
    4a.	Configure a highly available (HA) cluster<br />
-   4b.	[Vault Enterprise] Enable and configure <a href="#DR">disaster recovery (DR) replication</a>
+   4b.	[Vault Enterprise] Enable and configure <a href="#DR">disaster recovery (DR) replication</a><br />
    4c.	[Vault Enterprise] Promote a secondary cluster
 
-5.	Understand the hardware security module (HSM) integration
+5.	Understand the hardware security module (HSM) integration<br />
    5a.	[Vault Enterprise] Describe the benefits of auto unsealing with HSM<br />
    5b.	[Vault Enterprise] Describe the benefits and use cases of seal wrap (PKCS#11)
 
-6.	Scale Vault for performance
+6.	Scale Vault for performance<br />
    6a.	Use batch tokens<br />
    6b.	[Vault Enterprise] Describe the use cases of performance standby nodes<br />
    6c.	[Vault Enterprise] Enable and configure performance replication<br />
    6d.	[Vault Enterprise] Create a paths filter
 
-7.	Configure access control
-   7a.	Interpret Vault identity entities and groups
-   7b.	Write, deploy, and troubleshoot ACL policies
-   7c.	[Vault Enterprise] Understand Sentinel policies
-   7d.	[Vault Enterprise] Define control groups and describe their basic workflow
+7.	Configure access control<br />
+   7a.	Interpret Vault identity entities and groups<br />
+   7b.	Write, deploy, and troubleshoot ACL policies<br />
+   7c.	[Vault Enterprise] Understand Sentinel policies<br />
+   7d.	[Vault Enterprise] Define control groups and describe their basic workflow<br />
    7e.	[Vault Enterprise] Describe and interpret multi-tenancy with namespaces
 
 8.	Configure Vault Agent<br />
@@ -739,65 +778,64 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 17. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/kvv2-versioned-secrets">Versioned Secrets</a>   - use and manage versioned secrets stored in Vault's Key/Value Version 2 (KVv2) secrets engine.
 
+
 <hr />
 
 <a name="VaultAgent"></a>
 
 ## Vault Agent on laptops
 
-A <strong>Vault Agent</strong> is a client daemon that provides:
+The <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent">Vault Agent</a> is a client daemon that provides:
+
+   * Caching of client-side responses containing newly created tokens and responses containing leased secrets generated off of these newly created tokens.
 
    * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
 
    * Templating -- rendering of user supplied templates, using the token generated by the Auto-Auth step.
 
-   * Secure delivery/storage of tokens
+   * Secure delivery/storage of tokens (using mTLS communications in-transit).
 
-   * Caching of client-side responses containing newly created tokens and responses containing leased secrets generated off of these newly created tokens.
-
-   * Lifecycle management (renewal and re-authentication) of tokens 
-
-
-<a name="SecretsEngines"></a>
-
-## Secrets Engines
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
-
-PROTIP: Some secrets engines (such as AD accounts) are managed using CLI/API rather than GUI.
-
-Supported secrets engines (alphabetically):
-   * Active Directory (AD)
-   * AliCloud
-   * AWS
-   * Azure (cloud from Microsoft)
-   * GoogleCloud
-   * GoogleCloud KMS (Key Managerment Service)
-   * Consul (from HashiCorp)
-   * Nomad (from HashiCorp)
-   * RabbitMQ messagging
-   * SSH (Secure Shell used by Linux)
-   * Transit (from HashiCorp)
-   * PKI (Public Key Infrastructure used by Microsoft, etc.)
-   * KV (Key/Value)
-   * TOTP (Time-based One-time Password https://datatracker.ietf.org/doc/html/rfc6238)? See https://datatracker.ietf.org/doc/html/rfc6238
-   <br /><br />
+   * Lifecycle management (renewal and re-authentication) of tokens.
 
 
 <a name="Protocols"></a>
+<a name="AuthMethods"></a>
+
+## Auth Methods
+
+Auth methods perform authentication to verify the user or machine-supplied information. 
 
 A protocol for Auth Methods is selected by each user (if configured):
 
-<a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png">
-<img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
+1. When logged into Vault, the default method is Token:
 
    <tt>vault auth list</tt>
 
-1. On developer machines, the GitHub auth method (<tt>auth/github</tt>) is easiest to use. 
+   <pre>Path    Type   Accessor             Description              Version
+   ----    ----   --------             -----------              -------
+   token/  token  auth_token_c635dfe4  token based credentials  n/a
+   </pre>
+
+    <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"><img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
+   
+   * Token
+   * Username
+   * LDAP auth method enables user authentication using an existing LDAP server while
+   * Okta
+   * JWT
+   * OIDC
+   * RADIUS
+   * GitHub
+   <br /><br />
+
+   * AppRole auth method is recommended for server machines or apps handling automated workflows
+   <br /><br />
+
+2. On developer machines, the GitHub auth method (<tt>auth/github</tt>) is easiest to use. 
 
    <tt>vault auth enable github</tt>
 
-1. Log into Vault using the vault CLI:
+3. Log into Vault using the vault CLI:
 
    <pre><strong>vault login -method=github token="${VAULT_TOKEN}
    </strong></pre>   
@@ -814,26 +852,15 @@ A protocol for Auth Methods is selected by each user (if configured):
    
    However, secrets in the key/value <a href="#SecretsEngines">secrets engine</a> are accessible to other tokens if its policy allows it.
 
-
-1. Configure GitHub engineering team authentication to be granted the default and application policies:
+4. Configure GitHub engineering team authentication to be granted the default and application policies:
 
    <pre>vault write auth/github/map/teams/engineering value=default,applications</pre>
-
-
-<a name="AuthMethods"></a>
-
-### Auth Methods
-
-Auth methods perform authentication to verify the user or machine-supplied information. 
-
-* LDAP auth method enables user authentication using an existing LDAP server while
-* AppRole auth method is recommended for server machines or apps handling automated workflows
-<br /><br />
 
 
 <a name="AppRole"></a>
 
 ### AppRole Auth Method
+
    * https://developer.hashicorp.com/vault/docs/auth/approle
    * https://developer.hashicorp.com/vault/tutorials/auth-methods/approle 
    <br /><br />
@@ -3734,6 +3761,12 @@ VIDEO: "HashiCorp Vault Tutorial for Beginners | FULL COURSE in 1 Hour | HashiCo
 by Sam Gabrail
 
 
+https://gist.github.com/davidmintz/d1e71331751e6477082c920e01668121
+Vault TLS authentication, policies, and tokens with named roles
+
+https://github.com/nicholasjackson/vault-application-secrets
+https://www.youtube.com/watch?v=c3SLWu3BoQo
+
 <hr />
 
 ## More on DevOps #
@@ -3747,4 +3780,3 @@ This is one of a series on DevOps:
 This is one of a series on Security:
 
 {% include security_links.html %}
-
