@@ -426,9 +426,9 @@ Enterprises send logs to a central repository (such as Splunk) where their SOC t
 and responds to security events.
 
 
-## Admin Configurations
+## HP Install Configs
 
-Here are the configuration settings that installers need to specify:
+Here are the configuration settings that installers of Vault need to specify:
 
 1. <strong>HCP Cloud provider region(s)</strong> support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
    
@@ -451,7 +451,7 @@ Here are the configuration settings that installers need to specify:
    <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td> - </td></tr>
    </table>
 
-   But check back to the HashiCorp websites for additional regions added over time:
+   Check HashiCorp websites for additional regions added over time:
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
    * https://dgtlinfra.com/microsoft-azure-data-center-locations/
    <br /><br />
@@ -545,10 +545,16 @@ Vault from HashiCorp provides a unified interface to secrets while providing tig
 
 <hr />
 	
-## Vault Skill Certification
+## Vault fundamentals certification
 
-In 2020 HashiCorp offers (for just $70) an on-line certification exam for Vault.
-Answer 57 questions in 60 minutes.
+Since 2020 HashiCorp offers (for just $70) an on-line certification exam for Vault.
+
+   * https://www.hashicorp.com/certification/vault-associate
+   * https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-study
+   <br /><br />
+
+Answer 57 questions (closed book) in 60 minutes. The passing percentage is not published.
+Good for 2 years.
 You must wait 7 days between exam attempts.
 You can only attempt an exam 4 times total in a one year period. 
 If you fail 3 exams, you must wait 365 days after your last exam to retake it again.
@@ -568,7 +574,7 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
 
 3	Assess Vault tokens
    * Describe Vault token
-   * Differentiate between <a href="#TokenTypes">service and batch tokens</a>. Choose one based on use-case
+   * Differentiate between <a href="#TokenTypes">service and batch tokens</a>
    * Describe root token uses and lifecycle
    * Define token accessors
    * Explain time-to-live
@@ -625,7 +631,7 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
    * Explain the value of short-lived, dynamically generated secrets
    <br /><br />
 
-10	Explain encryption as a service
+10	Explain encryption as a service [app access Vault server directly]
    * Configure <a href="#TransitEngine">transit secret engine</a>
    * Encrypt and decrypt secrets
    * Rotate the encryption key
@@ -636,6 +642,8 @@ Prep:
    * https://medium.com/bb-tutorials-and-thoughts/how-to-pass-hashicorp-vault-associate-certification-c882892d2f2b
    * STAR: https://medium.com/bb-tutorials-and-thoughts/200-practice-questions-for-hashicorp-vault-associate-certification-ebd7f7d27bc0
    * https://www.linkedin.com/pulse/how-pass-hashicorp-vault-associate-certification-yassine-n-/
+   * https://github.com/bmuschko/cva-crash-course
+   <br /><br />
 
 
 ## Vault Operations Professional exam 
@@ -644,50 +652,50 @@ Prep:
 HashiCorp’s Vault Operations Pro Certification</a> is a $295 4-hour hands-on lab-based as well as multiple-choice.
 The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zendesk.com/hc/en-us/articles/360049773991-What-are-the-HashiCorp-exam-retake-rules-">includes a free retake after 7 days but within 3 months</a>.
 
-1	Create a working Vault server configuration given a scenario
-   * 1a	Enable and configure secret engines
-   * 1b	Practice production hardening
-   * 1c	Auto unseal Vault
-   * 1d	Implement integrated storage for open source and Enterprise Vault
-   * 1e	Enable and configure authentication methods
-   * 1f	Practice secure <a href="#VaultInit">Vault initialization</a>
-   * 1g	Regenerate a root token
-   * 1h	Rekey Vault and rotate encryption keys
+1.	Create a working Vault server configuration given a scenario<br />
+   1a.	Enable and configure secret engines<br />
+   1b.	Practice production hardening<br />
+   1c.	Auto unseal Vault<br />
+   1d.	Implement integrated storage for open source and Enterprise Vault<br />
+   1e.	Enable and configure authentication methods<br />
+   1f.	Practice secure <a href="#VaultInit">Vault initialization</a><br />
+   1g.	Regenerate a root token<br />
+   1h.	Rekey Vault and rotate encryption keys
 
-2	<a href="#Monitoring">Monitor a Vault environment</a>
-   * 2a	Monitor and understand Vault telemetry
-   * 2b	Monitor and understand Vault audit logs
-   * 2c	Monitor and understand Vault operational logs
+2.	<a href="#Monitoring">Monitor a Vault environment</a><br />
+   2a.	Monitor and understand Vault telemetry<br />
+   2b.	Monitor and understand Vault audit logs<br />
+   2c.	Monitor and understand Vault operational logs
 
-3	Employ the Vault security model
-   * 3a	Describe secure introduction of Vault clients
-   * 3b	Describe the security implications of running Vault in Kubernetes
+3.	Employ the Vault security model<br />
+   3a.	Describe secure introduction of Vault clients<br />
+   3b.	Describe the security implications of running Vault in Kubernetes
 
-4	Build fault-tolerant Vault environments
-   * 4a	Configure a highly available (HA) cluster
-   * 4b	[Vault Enterprise] Enable and configure <a href="#DR">disaster recovery (DR) replication</a>
-   * 4c	[Vault Enterprise] Promote a secondary cluster
+4.	Build fault-tolerant Vault environments
+   4a.	Configure a highly available (HA) cluster<br />
+   4b.	[Vault Enterprise] Enable and configure <a href="#DR">disaster recovery (DR) replication</a>
+   4c.	[Vault Enterprise] Promote a secondary cluster
 
-5	Understand the hardware security module (HSM) integration
-   * 5a	[Vault Enterprise] Describe the benefits of auto unsealing with HSM
-   * 5b	[Vault Enterprise] Describe the benefits and use cases of seal wrap (PKCS#11)
+5.	Understand the hardware security module (HSM) integration
+   5a.	[Vault Enterprise] Describe the benefits of auto unsealing with HSM<br />
+   5b.	[Vault Enterprise] Describe the benefits and use cases of seal wrap (PKCS#11)
 
-6	Scale Vault for performance
-   * 6a	Use batch tokens
-   * 6b	[Vault Enterprise] Describe the use cases of performance standby nodes
-   * 6c	[Vault Enterprise] Enable and configure performance replication
-   * 6d	[Vault Enterprise] Create a paths filter
+6.	Scale Vault for performance
+   6a.	Use batch tokens<br />
+   6b.	[Vault Enterprise] Describe the use cases of performance standby nodes<br />
+   6c.	[Vault Enterprise] Enable and configure performance replication<br />
+   6d.	[Vault Enterprise] Create a paths filter
 
-7	Configure access control
-   * 7a	Interpret Vault identity entities and groups
-   * 7b	Write, deploy, and troubleshoot ACL policies
-   * 7c	[Vault Enterprise] Understand Sentinel policies
-   * 7d	[Vault Enterprise] Define control groups and describe their basic workflow
-   * 7e	[Vault Enterprise] Describe and interpret multi-tenancy with namespaces
+7.	Configure access control
+   7a.	Interpret Vault identity entities and groups
+   7b.	Write, deploy, and troubleshoot ACL policies
+   7c.	[Vault Enterprise] Understand Sentinel policies
+   7d.	[Vault Enterprise] Define control groups and describe their basic workflow
+   7e.	[Vault Enterprise] Describe and interpret multi-tenancy with namespaces
 
-8	Configure Vault Agent
-   * 8a	Securely configure auto-auth and token sink
-   * 8b	Configure templating
+8.	Configure Vault Agent<br />
+   8a.	Securely configure auto-auth and token sink<br />
+   8b.	Configure templating
 
 <hr />
 
@@ -719,7 +727,7 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 12. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-agent">Vault Agent</a>   - configure and use Vault agent as a way of injecting secrets. The Vault agent and web application are running in separate containers inside of a pod in a Kubernetes environment.
 
-13. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-dr">Vault Disaster Recovery Replication</a>   - Configure Disaster Recovery Replication Between Vault Clusters.
+13. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-replication-dr">Vault Disaster Recovery Replication</a> between Vault clusters in different cloud regions.
 
 14. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/vault-operations">Vault Operations</a>   - audit logs, root token management, and rekeying and rotating of Vault's keys.  <a target="_blank" href="">Migrate a Vault cluster to the GCP Auto-Unseal option.
 
@@ -3430,10 +3438,12 @@ https://www.vaultproject.io/docs/secrets/databases/#usage https://www.vaultproje
 
 ### Dynamic Secrets
 
-   * https://www.vaultproject.io/docs/secrets/databases/ 
-   * https://www.vaultproject.io/docs/secrets/databases/mysql-maria/
+   * https://developer.hashicorp.com/vault/docs/secrets/databases
+   * https://developer.hashicorp.com/vault/docs/secrets/databases/mysql-maria
+   * https://developer.hashicorp.com/vault/api-docs/secret/databases#generate-credentials
+
    * https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
-   * https://www.vaultproject.io/api/secret/databases/#generate-credentials
+   * https://github.com/hashicorp/field-workshops-vault/tree/main/instruqt-tracks/vault-dynamic-database-credentials
    <br /><br />
 
 The <strong>Vault Database</strong> <a href="#SecretsEngines">Secrets Engine</a> generates dynamic, time-bound credentials for many different databases (MySQL, Maria, PostgreSQL, etc.).
@@ -3454,12 +3464,12 @@ The <strong>Vault Database</strong> <a href="#SecretsEngines">Secrets Engine</a>
 
    REMEMBER: Bash does not like spaces around = 
 
-1. Enable the Database secrets engine on the Vault server:
+2. Enable the Database secrets engine on the Vault server:
 
    <pre><strong>vault secrets enable -path=???/workshop/database database
    </strong></pre>
 
-1. To configure the Database Secrets Engine, use a template:
+3. To configure the Database Secrets Engine, use a template:
 
    <pre><strong>vault write {{ VaultDB_PATH }} \
   plugin_name=mysql-database-plugin \
@@ -3720,6 +3730,7 @@ https://docs.dapr.io/reference/components-reference/supported-secret-stores/hash
 <a target="_blank" href="https://www.youtube.com/watch?v=ae72pKpXe-s" title="Mar 16, 2022">
 VIDEO: "HashiCorp Vault Tutorial for Beginners | FULL COURSE in 1 Hour | HashiCorp Vault Fundamentals"</a>
 by Sam Gabrail
+
 
 <hr />
 

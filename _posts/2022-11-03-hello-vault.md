@@ -26,6 +26,8 @@ Keeping secrets secret is a fundamental skill for all developers, especially in 
 To outwit hackers, HashiCorp Vault has created an amazing enterprise-capable approach that creates usernames and passwords for temporary use.
 
    * https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql
+   * https://play.instruqt.com/hashicorp/tracks/vault-dynamic-database-credentials
+   * https://developer.hashicorp.com/vault/docs/secrets/databases
    <br /><br />
 
 This is like working on your TV the different remotes and logins to setup different streaming services.
@@ -1323,7 +1325,133 @@ BTW, if you're wondering what "it's 9000!" means, see <a target="_blank" href="h
 
 <hr />
 
-## Database within Kubernetes
+## Dynamic Database credentials within Kubernetes
+
+<a target="_blank" href="https://www.youtube.com/watch?v=KIAXQr17-WQ&t=34m36s" title="Dec 20, 2019">VIDEO</a>:
+"Dynamic Database Credentials with Vault and Kubernetes"</a>
+and <a target="_blank" href="https://www.hashicorp.com/blog/dynamic-database-credentials-with-vault-and-kubernetes" title="Dec 19, 2019">
+associated blog of the same name</a> by Nic Jackson with Anubhav Mishra references
+
+1. Setup a Kubernetes instance with a dev. Vault service and open-source Postgres database.
+
+   https://github.com/nicholasjackson/demo-vault
+   
+1. Within Vault, enable database secrets engine at (path): database/
+
+   vault secrets enable database
+
+2. Apply the ???
+
+   kubectl apply -f ./config/postgres.yml
+
+3. Establish database: Vault connects to database for the first time, using initial credentials, no SSL (which are OK since there is not data yet):
+
+   <pre>vault write database/config/wizard plugin_name=postgresql-database-plugin \
+   connection_url="postgresql://{username}}:{{password}}@postgres:5432/wizard/sslmode=disable" \
+   verify_connection=false \
+   allowed_roles="*" \
+   username="iampostgres" password="password"
+   </pre>
+
+   The above is a one-time action to initialize.
+
+4. Rotate root credentials and store in Vault:
+
+   <pre>vault write --force /database/rotate-root/wizard
+   </pre>
+
+5. Log in the database server:
+
+   <pre>kubectl exec -it postgres-123456789-abcde sh
+   </pre>
+
+6. Use the Postgres terminal:
+
+   <pre>psql -U postgres
+   Password for user postgres: iampostgres
+   password
+   </pre>
+
+7. At the <tt>postgres=#"</tt> prompt get back:
+
+   exit
+
+8.  Create a role (named the user name) using PSQL accepting variable user name, password, expiration date:
+
+   <pre>vault write database/roles/db-app 
+   db_name=wizard \
+   connection_statements="CREATE ROLE \"{{name}}\";\" WITH LOGIN PASSWORD {{password}}' VALID UNTIL {{expiration}}'; \
+   GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";\" \
+   revocation_statements="ALTER ROLE \"{{name}}\" NOLOGIN;" \
+   default_ttl="1h" \
+   max_ttl="24h"
+   </pre>
+
+9.  [43:25] 
+
+   <pre>vault read database/creds/db-app
+   </pre>
+
+10. To get into Kubernetes, use policy file <tt>web-policy.hcl</tt> to only allow reading:
+
+   <pre>path "database/creds/db-app" {
+      capabilities = ["read"]
+   }
+   </pre>
+
+   <pre>vault policy write web-dynamic ./config/web-policy.hcl
+   </pre>
+
+11. Write:
+
+   <pre>vault write auth/kubernetes/role/web \
+   bound_service_account_names-web \
+   bound_service_account_namespaces=default \
+   policies=web_dynamic \
+   ttl=1h
+   </pre>
+
+12. Run:
+
+   <pre>kubectl apply -f ./config/web-policy.hcl
+   </pre>
+
+13. Run:
+
+   <pre>kubectl describe pod web-deployment-...
+   </pre>
+
+   Notice that the vault-agent is automatically added.
+
+14. Get into web pod:
+
+   <pre>kubectl exec -it $(kubectl get pods --selector "app=web" -o jsonpath=="{.items[0].metadata.name}") -c web -- sh
+   </pre>
+
+15. Get into web pod to view database connection string:
+
+   <pre>cd /vault/secrets
+   cat db-creds
+   </pre>
+
+   <pre>{
+      "db_connection": "host=postgres port=5432 user=v-kubernet-db-app-... password=... dbname=wizard sslmode=disable"
+   }
+   </pre>
+
+16. exit
+
+   Notice that the second pod has different username and password generated:
+
+17. Get into web pod:
+
+   <pre>kubectl exec -it $(kubectl get pods --selector "app=web" -o jsonpath=="{.items[0].metadata.name}") -c web -- sh
+   </pre>
+
+
+
+
+
 
 <hr />
 

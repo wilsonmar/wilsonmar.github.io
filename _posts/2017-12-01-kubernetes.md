@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-28"
+date: "2023-01-02"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -7640,6 +7640,8 @@ by Kim Crawley
 <a target="_blank" href="https://www.youtube.com/watch?v=W6J6UipVNGA&list=PLWnens-FYbIpUpmiiNYfkqTZQUYppGMFV">100 days of Kubernetes</a>, starting as a newbie.
 
 https://medium.com/@rupeshthakur/logging-guide-in-kubernetes-4293e3748038
+
+https://blog.devops.dev/kubernetes-complete-reference-badbc2ed9834
 
 <hr />
 
