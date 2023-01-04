@@ -547,10 +547,12 @@ Vault from HashiCorp provides a unified interface to secrets while providing tig
 	
 ## Vault fundamentals certification
 
-Since 2020 HashiCorp offers (for just $70) an on-line certification exam for Vault.
+Since 2020 HashiCorp offers (for just $70.50 USD) an on-line certification exam for Vault.
 
    * https://www.hashicorp.com/certification/vault-associate
    * https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-study
+   * https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-review
+   * https://developer.hashicorp.com/vault/tutorials/associate-cert/associate-questions
    <br /><br />
 
 Answer 57 questions (closed book) in 60 minutes. The passing percentage is not published.
@@ -559,20 +561,20 @@ You must wait 7 days between exam attempts.
 You can only attempt an exam 4 times total in a one year period. 
 If you fail 3 exams, you must wait 365 days after your last exam to retake it again.
 
-1	Compare authentication methods
+1.	Compare authentication methods
    * Describe authentication methods
    * Choose an authentication method based on use case
    * Differentiate human vs. system auth methods
    <br /><br />
 
-2	Create Vault policies
+2.	Create Vault policies
    * Illustrate the value of Vault policy
    * Describe Vault policy syntax: path
    * Describe Vault policy syntax: capabilities
    * Craft a Vault policy based on requirements
    <br /><br />
 
-3	Assess Vault tokens
+3.	Assess Vault tokens
    * Describe Vault token
    * Differentiate between <a href="#TokenTypes">service and batch tokens</a>
    * Describe root token uses and lifecycle
@@ -582,20 +584,20 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
    * Create tokens based on need
    <br /><br />
 
-4	Manage Vault leases
+4.	Manage Vault leases
    * Explain the purpose of a lease ID
    * Renew leases
    * Revoke leases
    <br /><br />
 
-5	Compare and configure Vault secrets engines
+5.	Compare and configure Vault secrets engines
    * Choose a secret method based on use case
    * Contrast <a href="#DynamicSecrets">dynamic secrets</a> vs. static secrets and their use cases
    * Define transit engine
    * Define secrets engines
    <br /><br />
 
-6	Utilize Vault CLI
+6.	Utilize Vault CLI
    * Authenticate to Vault
    * Configure authentication methods
    * Configure Vault policies
@@ -604,7 +606,7 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
    * Configure environment variables
    <br /><br />
 
-7	Utilize Vault UI
+7.	Utilize Vault UI
    * Authenticate to Vault
    * Configure authentication methods
    * Configure Vault policies
@@ -612,12 +614,12 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
    * Enable Secret engines
    <br /><br />
 
-8	Be aware of the Vault API
+8.	Be aware of the Vault API
    * Authenticate to Vault via Curl
    * Access Vault secrets via Curl
    <br /><br />
 
-9	Explain Vault architecture
+9.	Explain Vault architecture
    * Describe the encryption of data stored by Vault
    * Describe cluster strategy
    * Describe storage backends
@@ -631,7 +633,7 @@ If you fail 3 exams, you must wait 365 days after your last exam to retake it ag
    * Explain the value of short-lived, dynamically generated secrets
    <br /><br />
 
-10	Explain encryption as a service [app access Vault server directly]
+9.	Explain encryption as a service [app access Vault server directly]
    * Configure <a href="#TransitEngine">transit secret engine</a>
    * Encrypt and decrypt secrets
    * Rotate the encryption key
@@ -642,7 +644,7 @@ Prep:
    * https://medium.com/bb-tutorials-and-thoughts/how-to-pass-hashicorp-vault-associate-certification-c882892d2f2b
    * STAR: https://medium.com/bb-tutorials-and-thoughts/200-practice-questions-for-hashicorp-vault-associate-certification-ebd7f7d27bc0
    * https://www.linkedin.com/pulse/how-pass-hashicorp-vault-associate-certification-yassine-n-/
-   * https://github.com/bmuschko/cva-crash-course
+   * https://github.com/bmuschko/cva-crash-course for OReilly class</a>
    <br /><br />
 
 
