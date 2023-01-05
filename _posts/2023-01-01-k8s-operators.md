@@ -7,9 +7,9 @@ excerpt: "Control Kubernetes internals from Golang programs, as a part of the Re
 tags: [kubernetes, hashicorp, security, secrets]
 image:
 # pic secret finger over mouth 1900x500
-  feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
-  credit: Forbes
-  creditlink: http://blogs-images.forbes.com/ricksmith/files/2014/11/secret.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1672900896/k8s-operator-controller-1900x500_lnroj9.png
+  credit: Kubermatic
+  creditlink: https://www.kubermatic.com/blog/why-implementing-kubernetes-operators-is-a-good-idea/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
@@ -20,52 +20,60 @@ Docker was once the "next big thing".
 
 Red Hat (now a part of IBM) is now claimed as the "next big thing" in Kubernetes with its Ansible, OpenShift, CoreOS, Quay, and Kubernetes Operators.
 
+## OLM (Operator Lifecycle Manager)
+
 It has long been said that 
 
 > "Kubernetes is a platform for building platforms"
 
+Now the Operator Lifecycle Manager (OLM) - powered from https://github.com/operator-framework/operator-lifecycle-manager - 
+is a platform. It extends Kubernetes to provide a declarative way to install, manage, and upgrade Operators within a Kubernetes cluster.
+
+https://olm.operatorframework.io/
+says OLM facilitates installation, upgrade, and role-based access control (RBAC) of operators within a cluster.
+
+
 ## Operator Hub Registry
 
-https://operatorhub.io/?view=list is a registry of Kubernetes Operators, like Dockerhub (hub.docker.com). 
+https://operatorhub.io/?view=list provides, like Dockerhub (hub.docker.com), a registry (list) of Kubernetes Operators to install. 
 It's powered by https://github.com/k8s-operatorhub/community-operators
 
-Scroll down to the <strong>Capabilities</strong>
+PROTIP: Note that many are for <strong>Open Shift</strong>, Red Hat's proprietary flavor of Kubernetes.
+
+Scroll down to filter among <strong>Capabilities</strong>:
 
 <img alt="k8s-operator-registry-capabilities-384x370" width="384" height="370" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899605/k8s-operator-registry-capabilities-384x370_uka3ju.jpg">
 
-At https://operatorhub.io/getting-started is this diagram:
+At time of this writing (January 2023), there are less than 300 vs. thousands in hub.docker.com and terraform.io modules.
 
-<img alt="k8s-operator-2814x1154.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899456/k8s-operator-2814x1154_g4ueml.jpg">
+https://operatorhub.io/getting-started illustrates the different capability levels:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899456/k8s-operator-2814x1154_g4ueml.jpg"><img alt="k8s-operator-2814x1154.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899456/k8s-operator-2814x1154_g4ueml.jpg"></a>
 
 ### From Helm to Ansible to Golang
 
 The declarative nature of Helm charts (and Terraform) are limited to "Day-1" concerns of installation, configuration, etc. 
 but not "Day-2" concerns of re-configuration, update, backup, failover, restore, etc.
 
-Kubernetes Operators, as a controller, runs as a Pod on Kubernetes cluster master nodes, in a software loop, continously auditing object states to ensure a desired state, by deploying applications in a standardized and opinionated way.
-
-> "With Operators you can stop treating an application as a collection of primitives like Pods, Deployments, Services or ConfigMaps, but instead as a single object that only exposes the knobs that make sense for the application."
-
+QUESTION: How can one assure that all operators within Kubernetes all work well with each other?
 
 ## Kubernetes Operators?
 
 <a target="_blank" href="https://kubernetes.io/docs/concepts/extend-kubernetes/operator/">
 Kubernetes Operators</a> are software extensions to Kubernetes that make use of custom resources to manage applications and their components. Operators follow Kubernetes principles, notably the control loop.
 
-<a target="_blank" href="https://www.linkedin.com/in/brandonphilips/">Brandon Philips</a>, CTO of CoreOS <a target="_blank" href="https://web.archive.org/web/20170129131616/https://coreos.com/blog/introducing-operators.html">blogged on November 3, 2016</a> said:
+Kubernetes Operators, as a controller, runs as a Pod on Kubernetes cluster master nodes, in a software loop, continously auditing object states to ensure a desired state, by deploying applications in a standardized and opinionated way.
+
+> "With Operators you can stop treating an application as a collection of primitives like Pods, Deployments, Services or ConfigMaps, but instead as a single object that only exposes the knobs that make sense for the application."
+
+<a target="_blank" href="https://www.linkedin.com/in/brandonphilips/">Brandon Philips</a>, CTO of CoreOS <a target="_blank" href="https://web.archive.org/web/20170129131616/https://coreos.com/blog/introducing-operators.html">blogged on November 3, 2016</a> wrote:
 
 > "An Operator is an application-specific controller that extends the Kubernetes API to create, configure, and manage instances of complex stateful applications on behalf of a Kubernetes user. ... Examples of complex administrative tasks that an Operator might handle include safe coordination of application upgrades, configuration of backups to offsite storage, service discovery via native Kubernetes APIs, application TLS certificate configuration, and disaster recovery."
 
 Kubernetes Operators are installed as a Kubernetes deployment kind of yaml (Stateful Sets), which define a new third party application instance type.
 
-## OLM (Operator Lifecycle Manager)
 
-The Operator Lifecycle Manager (OLM) - powered from https://github.com/operator-framework/operator-lifecycle-manager - 
-extends Kubernetes to provide a declarative way to install, manage, and upgrade Operators on a cluster.
-
-https://olm.operatorframework.io/
-says OLM facilitates installation, upgrade and role-based access control (RBAC) of operators within a cluster.
-
+<hr />
 
 ## operator-sdk
 
@@ -236,7 +244,8 @@ See https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/
 
 ## Resources
 
-<a target="_blank" href="https://github.com/cncf/tag-app-delivery/blob/eece8f7307f2970f46f100f51932db106db46968/operator-wg/whitepaper/Operator-WhitePaper_v1-0.md">CNCF Operator white paper</a>
+* https://cloud.redhat.com/blog/build-your-kubernetes-operator-with-the-right-tool
+* <a target="_blank" href="https://github.com/cncf/tag-app-delivery/blob/eece8f7307f2970f46f100f51932db106db46968/operator-wg/whitepaper/Operator-WhitePaper_v1-0.md">CNCF Operator white paper</a>
 
 
 <hr />
