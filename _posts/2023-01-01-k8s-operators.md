@@ -18,7 +18,9 @@ comments: true
 
 Docker was once the "next big thing".
 
-Red Hat (now a part of IBM) is now claimed as the "next big thing" in Kubernetes with its Ansible, OpenShift, CoreOS, Quay, and Kubernetes Operators.
+Red Hat (now a part of IBM) is now claimed as the "next big thing" in Kubernetes with its Ansible, <a target="_blank" href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.11">OpenShift Container Platform</a>, CoreOS, Quay, and Kubernetes Operators.
+
+<a name="OLM"></a>
 
 ## OLM (Operator Lifecycle Manager)
 
@@ -26,16 +28,16 @@ It has long been said that
 
 > "Kubernetes is a platform for building platforms"
 
-Now the Operator Lifecycle Manager (OLM) - powered from https://github.com/operator-framework/operator-lifecycle-manager - 
-is a platform. It extends Kubernetes to provide a declarative way to install, manage, and upgrade Operators within a Kubernetes cluster.
+Now the Operator Lifecycle Manager (OLM) - powered from https://github.com/operator-framework/operator-lifecycle-manager - is a platform! OLM extends Kubernetes to provide a declarative way to install, manage, and upgrade Operators within a Kubernetes cluster.
 
-https://olm.operatorframework.io/
-says OLM facilitates installation, upgrade, and role-based access control (RBAC) of operators within a cluster.
-
-
+References:
+   * https://olm.operatorframework.io/ says OLM facilitates installation, upgrade, and role-based access control (RBAC) of operators within a cluster.
+   * https://techbloc.net/archives/4372
+   <br /><br />
+  
 ## Operator Hub Registry
 
-https://operatorhub.io/?view=list provides, like Dockerhub (hub.docker.com), a registry (list) of Kubernetes Operators to install. 
+https://operatorhub.io/?view=list was <a target="_blank" href="https://www.redhat.com/en/blog/introducing-operatorhubio-place-finding-kubernetes-native-services">launched by Red Hat Feb 2019</a> as, like Dockerhub (hub.docker.com), a registry (list) of Kubernetes Operators to install. 
 It's powered by https://github.com/k8s-operatorhub/community-operators
 
 PROTIP: Note that many Operators are for <strong>Open Shift</strong>, Red Hat's proprietary flavor of Kubernetes.
@@ -63,6 +65,7 @@ QUESTION 3: How to get to Deep Insights and Auto Pilot?
 
 QUESTION 4: What are all the Operators that are needed to achieve full production utility within an enterprise?
 
+QUESTION 5: With Operators, how do we see version history of who changed what? How to analyze logs emitted?
 
 ## Kubernetes Operators?
 
@@ -302,26 +305,46 @@ spec:
 
    The command above generates a go.mod file.
 
-See https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/
-
+   References:
+   * https://github.com/alexcpn/go_operator_2022 is referenced by
+   * https://medium.com/techlogs/go-kubernetes-operator-963461e528c5 by Alex Punnen who recommands
+   * https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/
+   * https://medium.com/techlogs/go-kubernetes-operator-963461e528c5
+   * https://book.kubebuilder.io/quick-start.html
+   * https://book.kubebuilder.io/cronjob-tutorial/cronjob-tutorial.html
+   * Read till Section 1.7 https://book.kubebuilder.io/cronjob-tutorial/controller-implementation.html
+   <br /><br />
 
    ### Unit Testing
 
-1. Static tests consist of unit, formatting, and doc link tests.
+3. Static tests consist of unit, formatting, and doc link tests.
 
    https://sdk.operatorframework.io/docs/contribution-guidelines/testing/
 
-1. Docs only
+4. Docs only
 
    make test-static
 
-1. Code
+5. Code
 
    make test-all
 
+<hr />
+
+## Utilities
+
+* https://itnext.io/analyzing-value-of-operator-framework-for-kubernetes-community-5a65abc259ec
+
+  <img src="https://miro.medium.com/max/1400/1*f0fp4e7RhoKSzC5N7UTxSw.webp">
+
+* https://docs.tungsten.io/en/latest/tungsten-fabric-operator/working-with-kubernetes-operators-101.html
 
 ## Resources
 
+* https://learning.oreilly.com/library/view/kubernetes-in-production/9781800202450/
+* https://www.amazon.com/Kubernetes-Operators-Automating-Container-Orchestration/dp/1492048046
+* https://www.youtube.com/watch?v=i9V4oCa5f9I 
+* https://www.youtube.com/watch?v=ha3LjlD6g7g "Kubernetes Operator simply explained in 10 mins" by Nana
 * https://k21academy.com/docker-kubernetes/kubernetes-operator/
 * https://cloudark.medium.com/why-to-write-kubernetes-operators-9b1e32a24814 from 2018
 * https://www.linux.com/topic/cloud/demystifying-kubernetes-operators-operator-sdk-part-1/
