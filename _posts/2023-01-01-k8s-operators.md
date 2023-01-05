@@ -57,15 +57,13 @@ https://operatorhub.io/getting-started illustrates the different capability leve
 The declarative nature of Helm charts (and Terraform) are limited to "Day-1" concerns of installation, configuration, etc. 
 but not "Day-2" concerns of re-configuration, update, backup, failover, restore, etc.
 
-QUESTION 1: How to quickly bring a "standard" production-quality Kubernetes cluster up with a full set of Operators? In one command?
-
-QUESTION 2: How can one assure that all operators within Kubernetes all work well with each other?
-
-QUESTION 3: How to get to Deep Insights and Auto Pilot?
-
-QUESTION 4: What are all the Operators that are needed to achieve full production utility within an enterprise?
-
-QUESTION 5: With Operators, how do we see version history of who changed what? How to analyze logs emitted?
+QUESTIONS:
+1. How to make use of an existing Helm chart.
+2. How to quickly bring a "standard" production-quality Kubernetes cluster up with a full set of Operators? In one command?
+3. How can one assure that all operators within Kubernetes all work well with each other?
+4. How to get to Deep Insights and Auto Pilot?
+5. What are all the Operators that are needed to achieve full production utility within an enterprise?
+6. With Operators, how do we see version history of who changed what when? How to analyze logs emitted?
 
 ## Kubernetes Operators?
 
