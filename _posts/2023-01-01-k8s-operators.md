@@ -38,9 +38,9 @@ says OLM facilitates installation, upgrade, and role-based access control (RBAC)
 https://operatorhub.io/?view=list provides, like Dockerhub (hub.docker.com), a registry (list) of Kubernetes Operators to install. 
 It's powered by https://github.com/k8s-operatorhub/community-operators
 
-PROTIP: Note that many are for <strong>Open Shift</strong>, Red Hat's proprietary flavor of Kubernetes.
+PROTIP: Note that many Operators are for <strong>Open Shift</strong>, Red Hat's proprietary flavor of Kubernetes.
 
-Scroll down to filter among <strong>Capabilities</strong>:
+Scroll down to filter among <strong>Capability Levels</strong>:
 
 <img alt="k8s-operator-registry-capabilities-384x370" width="384" height="370" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899605/k8s-operator-registry-capabilities-384x370_uka3ju.jpg">
 
@@ -55,9 +55,14 @@ https://operatorhub.io/getting-started illustrates the different capability leve
 The declarative nature of Helm charts (and Terraform) are limited to "Day-1" concerns of installation, configuration, etc. 
 but not "Day-2" concerns of re-configuration, update, backup, failover, restore, etc.
 
-QUESTION 1: How can one bring a production-quality Kubernetes cluster up with a full set of operators?
+QUESTION 1: How to quickly bring a "standard" production-quality Kubernetes cluster up with a full set of Operators? In one command?
 
 QUESTION 2: How can one assure that all operators within Kubernetes all work well with each other?
+
+QUESTION 3: How to get to Deep Insights and Auto Pilot?
+
+QUESTION 4: What are all the Operators that are needed to achieve full production utility within an enterprise?
+
 
 ## Kubernetes Operators?
 

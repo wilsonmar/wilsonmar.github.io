@@ -16,7 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-The point of this page is to describe the utilities I created (based on docs and tutorials) so we all can use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
+HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (at vaultproject.io)</a> securely stores <a href="#Secrets">various type of secrets</a> in a High Availability approach, managed by a core team.
+
+The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
 ## This tutorial
 
@@ -163,18 +165,48 @@ Coverage of what features a secrets service should have:
 
 * Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
 
-https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
-
-https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
+   https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
 
 
-## Alternatives to secrets management
+## Alternatives to Vault secrets management
+zzz
+https://www.udemy.com/course/azure-key-vault-the-complete-introduction/
 
-Alternatives to HashiCorp Vault include:
+Azure has higher "Premium" prices for use of it HSM (Hardware Security Module)
 
-   * Cloud providers' own secret engines
+
+The necessity to make security information part of the code is eliminated by not needing to store security information in apps.
+RBAC
+
+scaling
+
+The key differentator for Vault is that it completely eliminates storage of secrets and periodic rotation of keys and passwords.
+
+
+
+by pros
+log each transaction to Azure Monitor for forensics 
+steam each transaction to an event hub to trigger immediate alerting and actions
+
+https://azure.microsoft.com/en-us/pricing/details/key-vault/
+ azure store up to 5,000 key vault keys and the ability to access their keys from any device. The subscription price for Azure key vault is $5 per user per month.
+ First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
+
+https://www.saasworthy.com/product/aws-secrets-manager/pricing
+
+https://www.saasworthy.com/product/hashicorp-vault/pricing
+
+https://www.saasworthy.com/product/cyberark-pas/pricing
+
+https://www.saasworthy.com/product/box-keysafe/pricing
+https://www.saasworthy.com/product/manageengine-key-manager-plus/pricing
+https://www.saasworthy.com/product/equinix-smartkey/pricing
+https://www.saasworthy.com/product/akeyless-vault
+
+
+A. Cloud providers' own secret engines
 	
-   * <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
+ <a target="_blank" href="https://www.cyberark.com/">CyberArk.com</a>, also a container-compatible secrets solution.
 
    * <a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
 
@@ -187,6 +219,12 @@ Alternatives to HashiCorp Vault include:
 
    PROTIP: However, this is NOT cool anymore because the value of variables (secrets) can end up in logs. All processes have access to secrets (no RBAC). 
    And this mechanism makes <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#credential-rotation-lifecycle">periodic key rotation</a> manually cumbersome.
+
+* Within Kubernetes:
+  
+   https://developer.hashicorp.com/vault/docs/platform/k8s/injector
+
+   https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar
 
 * <a target="_blank" href="https://docs.docker.com/engine/swarm/secrets/">Docker Secrets</a> was NOT designed for unlicensed (free) standalone containers<a target="_blank" href="https://medium.com/lucjuggery/from-env-variables-to-docker-secrets-bc8802cacdfd">*</a>, but for Enterprise licensed (paid) Docker Swarm services in commands such as:
 
@@ -310,50 +348,9 @@ Here are various roles used to <a target="_blank" href="https://developer.hashic
 
 <hr />
 
-## Competition
-
-https://www.udemy.com/course/azure-key-vault-the-complete-introduction/
-
-Azure has higher "Premium" prices for use of it HSM (Hardware Security Module)
-
-
-The necessity to make security information part of the code is eliminated by not needing to store security information in apps.
-RBAC
-
-scaling
-
-The key differentator for Vault is that it completely eliminates storage of secrets and periodic rotation of keys and passwords.
-
-
-
-by pros
-log each transaction to Azure Monitor for forensics 
-steam each transaction to an event hub to trigger immediate alerting and actions
-
-https://azure.microsoft.com/en-us/pricing/details/key-vault/
- azure store up to 5,000 key vault keys and the ability to access their keys from any device. The subscription price for Azure key vault is $5 per user per month.
- First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
-
-https://www.saasworthy.com/product/aws-secrets-manager/pricing
-
-https://www.saasworthy.com/product/hashicorp-vault/pricing
-
-https://www.saasworthy.com/product/cyberark-pas/pricing
-
-https://www.saasworthy.com/product/box-keysafe/pricing
-https://www.saasworthy.com/product/manageengine-key-manager-plus/pricing
-https://www.saasworthy.com/product/equinix-smartkey/pricing
-https://www.saasworthy.com/product/akeyless-vault
-
-
-<hr />
+<a name="Install"></a>
 
 ## Modes of Vault Installation
-
-Here is a hands-on tutorial about how to install and use HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (vaultproject.io)</a> to securely store <a href="#Secrets">secrets</a> key/value pairs, in a High Availability approach. 
-
-From easiest to more difficult:
-The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained.
 
    A. A <a href="#Pricing">paid/licensed</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
 
@@ -735,8 +732,8 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
    7e.	[Vault Enterprise] Describe and interpret multi-tenancy with namespaces
 
 8.	Configure Vault Agent<br />
-   8a.	Securely configure auto-auth and token sink<br />
-   8b.	Configure templating
+   8a.	Securely configure auto-auth using a token sink (referencing a file written by a method)<br />
+   8b.	Configure <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/vault-agent/agent-templates">templating</a> (formerly Consul-template)
 
 <hr />
 
@@ -791,7 +788,7 @@ The <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent">V
 
    * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
 
-   * Templating -- rendering of user supplied templates, using the token generated by the Auto-Auth step.
+   * Templating -- rendering of user-supplied <a target="_blank" href="https://www.vaultproject.io/docs/agent/template">template "moustache" markdown</a> , using the token generated by the Auto-Auth step. To dynamically renew destination file. Example at: https://banzaicloud.com/docs/bank-vaults/mutating-webhook/vault-agent-templating/
 
    * Secure delivery/storage of tokens (using mTLS communications in-transit).
 
@@ -1410,7 +1407,7 @@ NOTE: Labs timeout every 2 hours.
 }
    </pre>
 
-   PROTIP: Store Vault configuration files at <tt>/etc/vault.d/vault.hcl</tt>
+   PROTIP: Vault configuration files are at <tt>/etc/vault.d/vault.hcl</tt>
 
    NOTE: The Master Key remains memory-resident in a Vault Node memory and not stored.
 
@@ -2070,11 +2067,12 @@ Version: 0.7.0
    ### Enable Kubernetes Auth Method
 
    * https://kubernetes.io/docs/reference/access-authn-authz/rbac/#default-roles-and-role-bindings
+   * https://developer.hashicorp.com/vault/tutorials/kubernetes/agent-kubernetes
    <br /><br />
 
 4. On the Vault client, create the "vault-auth" service account to connect to the kubernetes cluster when validating JWT tokens:
 
-    kubectl create sa vault-auth
+   <pre><strong>kubectl create sa vault-auth</strong></pre>
    
 1. On the Vault client, apply ClusterRoleBinding :
 
