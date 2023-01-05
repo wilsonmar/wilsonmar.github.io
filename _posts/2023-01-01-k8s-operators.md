@@ -55,7 +55,9 @@ https://operatorhub.io/getting-started illustrates the different capability leve
 The declarative nature of Helm charts (and Terraform) are limited to "Day-1" concerns of installation, configuration, etc. 
 but not "Day-2" concerns of re-configuration, update, backup, failover, restore, etc.
 
-QUESTION: How can one assure that all operators within Kubernetes all work well with each other?
+QUESTION 1: How can one bring a production-quality Kubernetes cluster up with a full set of operators?
+
+QUESTION 2: How can one assure that all operators within Kubernetes all work well with each other?
 
 ## Kubernetes Operators?
 
@@ -204,18 +206,89 @@ Use "operator-sdk [command] --help" for more information about a command.
 
    ### Modify existing Operator
 
-   PROTIP: Deepak Singh Dhami <a target="_blank" href="https://www.techtarget.com/searchitoperations/tutorial/How-to-build-a-Kubernetes-operator">recommends</a>
+   PROTIP: Deepak Singh Dhami <a target="_blank" href="https://www.techtarget.com/searchitoperations/tutorial/How-to-build-a-Kubernetes-operator">recommends modifying one before creating your own</a>.
+
+   https://operatorhub.io/operator/vault at 
+   https://github.com/banzaicloud/bank-vaults/tree/main/operator
+   by <a target="_blank" href="https://www.linkedin.com/in/nandorkracser/">Nándor István Krácser</a> at <a target="_blank" href="https://banzaicloud.com/tags/vault/">Banzai Cloud</a> (acquired by Cisco).
    
+   The yaml sample as part of the <a target="_blank" href="https://github.com/banzaicloud/pipeline">Banzai Cloud Pipeline</a>
+
+   <pre>apiVersion: vault.banzaicloud.com/v1alpha1
+kind: Vault
+metadata:
+  name: vault
+spec:
+  size: 1
+  image: 'vault:1.0.0'
+  bankVaultsImage: 'banzaicloud/bank-vaults:latest'
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '9102'
+  serviceAccount: vault
+  serviceType: ClusterIP
+  ingress:
+    annotations: null
+    spec: {}
+  unsealConfig:
+    kubernetes:
+      secretNamespace: default
+  config:
+    storage:
+      file:
+        path: /vault/file
+    listener:
+      tcp:
+        address: '0.0.0.0:8200'
+        tls_cert_file: /vault/tls/server.crt
+        tls_key_file: /vault/tls/server.key
+    telemetry:
+      statsd_address: 'localhost:9125'
+    ui: true
+  externalConfig:
+    policies:
+      - name: allow_secrets
+        rules: >-
+          path "secret/*" { capabilities = ["create" "read" "update" "delete"
+          "list"] }
+    auth:
+      - type: kubernetes
+        roles:
+          - name: default
+            bound_service_account_names: default
+            bound_service_account_namespaces: default
+            policies: allow_secrets
+            ttl: 1h
+    secrets:
+      - path: secret
+        type: kv
+        description: General secrets.
+        options:
+          version: 2
+    startupSecrets:
+      - type: kv
+        path: secret/data/accounts/aws
+        data:
+          data:
+            AWS_ACCESS_KEY_ID: secretId
+            AWS_SECRET_ACCESS_KEY: s3cr3t
+  vaultEnvsConfig:
+    - name: VAULT_LOG_LEVEL
+      value: debug
+   </pre>
+
+   CAUTION: Using vault:1.0.0?
+
 
    ### New Go Operator
 
    https://sdk.operatorframework.io/build/
 
-3. Activate Go module support before using the SDK:
+1. Activate Go module support before using the SDK:
    
    <pre><strong>export GO111MODULE=on</strong></pre>
 
-4. To create a new Operator of your very own:
+2. To create a new Operator of your very own:
    
    <pre><strong>operator-sdk init --domain example.com --repo github.com/example/memcached-operator
    </strong></pre>
@@ -244,6 +317,14 @@ See https://sdk.operatorframework.io/docs/building-operators/golang/tutorial/
 
 ## Resources
 
+* https://k21academy.com/docker-kubernetes/kubernetes-operator/
+* https://cloudark.medium.com/why-to-write-kubernetes-operators-9b1e32a24814 from 2018
+* https://www.linux.com/topic/cloud/demystifying-kubernetes-operators-operator-sdk-part-1/
+* https://shipit.dev/posts/k8s-operators-with-python-part-1.html Creating CRDs
+* https://shipit.dev/posts/k8s-operators-with-python-part-2.html Implementing Controller
+* https://www.cncf.io/blog/2022/06/15/kubernetes-operators-what-are-they-some-examples/
+* https://nightlies.apache.org/flink/flink-kubernetes-operator-docs-main/
+* https://www.weave.works/blog/creating-custom-kubernetes-operators
 * https://cloud.redhat.com/blog/build-your-kubernetes-operator-with-the-right-tool
 * <a target="_blank" href="https://github.com/cncf/tag-app-delivery/blob/eece8f7307f2970f46f100f51932db106db46968/operator-wg/whitepaper/Operator-WhitePaper_v1-0.md">CNCF Operator white paper</a>
 
