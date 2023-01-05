@@ -52,13 +52,13 @@ Either way, base Enterprise capabilities include:
    * quicker "Premium" support world-wide in English, German, Japanese, etc.
    * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
    * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/perf-replication">Replication (for higher performance)</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Replication (for faster read performance across regions)</a>
    * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/high-avail-disaster-recover">Disaster Recovery</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp">Advanced Data Protection (ADP)</a> Transform Secrets Engine (that generates tokens in place of sensitive data such as credit card numbers)
    * Namespaces (to segment data between teams to limit lateral movement by hackers)
    * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
    <br /><br />
 
-HashiCorp's Vault Enterprise <strong>Advanced Data Protection (ADP) license</strong>
 
 <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
 Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
@@ -100,8 +100,6 @@ each a <a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-c
 
 * database credentials
 
-* PROTIP: Vault has a Secrets Engine that uses the industry-standard KMIP for back-end interconnctions.
-
 <a name="SecretsEngines"></a>
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
@@ -125,31 +123,32 @@ Supported secrets engines (alphabetically):
    * TOTP (Time-based One-time Password <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
    <br /><br />
 
+PROTIP: Vault also has a Secrets Engine that uses the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
+
 <hr />
 
 ## Secrets handling best practices
 
 <a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>: <strong>Security Posture</strong>
 
-1. Storing plain-text secrets hard-coded in program code within GitHub is like leaving packages sitting in front of your door for a long time.
-2. Don't respond to email links, unknown calls & text without verification.
-1. Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
-3. Enable MFA <strong>multi-factor authentication</strong> to block phising.
-4. Limit exposure if auth secrets disclosed. Use <strong>Least Privilege</strong> approach to restrict access to encrypted data, based on a need-to-know basis. RBAC (Role-based Access Control) provides each user only the rights for his/her specific job role.
-5. Distribute authentication secrets securely.
-6. Don't let authentication secrets live forever. Use single-use token with short TTL (Time To Live). 
+1. Storing plain-text secrets hard-coded in program code within GitHub is like leaving packages sitting in front of your door for a long time. Don't wait until "production" to use secure mechanisms.
+2. To avoid being a victim of phising, don't respond to email links, unknown calls & text without verification.
+4. Enable MFA <strong>multi-factor authentication</strong> to block phising.
+5. Limit exposure if auth secrets disclosed. Use <strong>Least Privilege</strong> approach to restrict access to encrypted data, based on a need-to-know basis. RBAC (Role-based Access Control) provides each user only the rights for his/her specific job role.
+6. Distribute authentication secrets securely.
+7. Don't let authentication secrets live forever. Use single-use token with short TTL (Time To Live). 
    Even if secrets are encrypted (using GPG), machines are powerful enough and hackers have enough time to figure out how to crack encryption algorithms, given enough time.
 
-7. <a href="#Centralized">Centralize</a> management of secrets.
-8. Comprehensively log activities for audit and forensics.
-9. Forward logs to a central SOC (Security Operations Center) for continuous, quick detection of and resonse to security incidents
-10. Steam each transaction to an event hub to trigger immediate alerting and actions
+8. <a href="#Centralized">Centralize</a> management of secrets.
+9. Comprehensively log activities for audit and forensics.
+10. Forward logs to a central SOC (Security Operations Center) for continuous, quick detection of and resonse to security incidents
+11. Steam each transaction to an event hub to trigger immediate alerting and actions
 
-11. <strong>Encrypt data in transit</strong> with Mutual authentication (mTLS).
-12. Encrypt data at rest.
-13. Rotate static secrets frequently. PROTIP: One can't simply remove a file in GitHub because old versions hidden in history may be decrypted using old keys.
-14. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
-15. Have a "break glass" procedure if auth secrets are stolen. Revocation.
+12. <strong>Encrypt data in transit</strong> with Mutual authentication (mTLS).
+13. Encrypt data at rest.
+14. Rotate static secrets frequently. PROTIP: One can't simply remove a file in GitHub because old versions hidden in history may be decrypted using old keys.
+15. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
+16. Have a "break glass" procedure if auth secrets are stolen. Revocation.
 <br /><br />
 
 ## Why is a system needed for secrets?
@@ -162,6 +161,11 @@ Questions for secrets management:
    1. How is a secret revoked?
    1. When were secrets used? (lookup in usage logs)
    1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
+   <br /><br />
+
+Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp products do:
+
+   * Consul: Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
    <br /><br />
 
 
@@ -218,30 +222,22 @@ Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
    https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
 
 
-## Alternatives to Vault secrets management
+## Alternatives to secrets management
 
 Vault provides a capability that most major cloud providers also provide in their own features:
 
- * AWS KMS (Key Management Server)
- * AWS Secrets Manager
- * AWS Key Service (AKS)
+* <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a managed service to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. It integrates with
+* <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a>  to encrypt secrets with a unique data key.
+* <a target="_blank" href="https://aws.amazon.com/aks/">AWS Key Service (AKS)</a>
 
- * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
+* <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
    See https://www.udemy.com/course/azure-key-vault-the-complete-introduction/
    Azure has higher "Premium" prices for use of it HSM (Hardware Security Module)
    <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
 
- * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
+* <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
 
-   References:
-   * https://www.saasworthy.com/product/aws-secrets-manager/pricing
-   * https://www.saasworthy.com/product/hashicorp-vault/pricing
-   * https://www.saasworthy.com/product/cyberark-pas/pricing
-   * https://www.saasworthy.com/product/box-keysafe/pricing
-   * https://www.saasworthy.com/product/manageengine-key-manager-plus/pricing
-   * https://www.saasworthy.com/product/equinix-smartkey/pricing
-   * https://www.saasworthy.com/product/akeyless-vault
-   <br /><br />
+Other alternatives:
 
 * <a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
 
@@ -303,6 +299,16 @@ database_password = get_secret('db_pass')
    returns:
 
    <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
+
+References:
+   * https://www.saasworthy.com/product/aws-secrets-manager/pricing
+   * https://www.saasworthy.com/product/hashicorp-vault/pricing
+   * https://www.saasworthy.com/product/cyberark-pas/pricing
+   * https://www.saasworthy.com/product/box-keysafe/pricing
+   * https://www.saasworthy.com/product/manageengine-key-manager-plus/pricing
+   * https://www.saasworthy.com/product/equinix-smartkey/pricing
+   * https://www.saasworthy.com/product/akeyless-vault
+   <br /><br />
 
 
 <hr />
