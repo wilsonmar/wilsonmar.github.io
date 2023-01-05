@@ -106,24 +106,29 @@ each a <a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-c
 
 PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
 
+PROTIP: Within Vault, key material and metadata about Secret Engines are stored as a root folder.
+
 Supported secrets engines (alphabetically):
    * Active Directory (AD)
+  
    * AliCloud
    * AWS
    * Azure (cloud from Microsoft)
+   * Consul (from HashiCorp)
    * GoogleCloud
    * GoogleCloud KMS (Key Managerment Service)
-   * Consul (from HashiCorp)
-   * Nomad (from HashiCorp)
+  
+   * <strong>kmip</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
+   * <strong>kv</strong> (Key/Value), the most basic to store password (like 1Password)
+   * <strong>nomad</strong> (from HashiCorp)
    * RabbitMQ messagging
-   * SSH (Secure Shell used by Linux)
-   * Transit (from HashiCorp)
-   * PKI (Public Key Infrastructure used by Microsoft, etc.)
-   * KV (Key/Value)
-   * TOTP (Time-based One-time Password <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
+   * <strong>pki</strong> (Public Key Infrastructure used by Microsoft, etc.)
+   * <strong>ssh</strong> (Secure Shell used by Linux)
+   * <strong>sys</strong> is the default system engine
+   * <strong>totp</strong> (Time-based One-time Password, as defined by <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
+   * <strong>transit</strong> (from HashiCorp)
    <br /><br />
 
-PROTIP: Vault also has a Secrets Engine that uses the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
 
 <hr />
 
@@ -169,7 +174,16 @@ Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp p
    <br /><br />
 
 
-## Advantages of HashiCorp Vault
+
+## HashiCorp Vault's Value Proposition
+
+The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+
+Toward that, HashiCorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a> to enterprises. 
+
+* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+* Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
 
 * Server installed in <strong>sealed mode</strong> (provides no access)
 
@@ -177,7 +191,7 @@ Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp p
 
 * Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
 
-* Rotate keys <strong>without rebooting</strong>. This is the strong point with Vault.
+* Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
 
    https://github.com/scarolan/painless-password-rotation
 
@@ -428,20 +442,6 @@ provides the technical content to support the Vault learn site.
 
 https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
 
-
-## Use cases
-
-Once a Vault instance is available, we dive into:
-
-   * <a href="#Config">Initialize and Configure Vault</a>
-   
-   * <a href="#SecretsCLI">Store and access secrets in Vault from a CLI</a>
-   * <a href="#AppProgramming">Store and access secrets in Vault within a Python program</a>
-   * Within a Golang program
-
-   * Obtain a certificate (instead of manually requesting a CSR and importing the certificate)
-
-
 ## HPC SaaS Install Configs
 
 Here are the configuration settings that installers of Vault need to specify:
@@ -518,21 +518,6 @@ Computers talk to each other using API calls. Vault provides to application prog
    
    4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
    <br /><br />
-
-
-## HashiCorp's Value Proposition
-
-As of this writing, a unique strong point with Vault is that it can
-change the value of an existing secret (key rotation) without rebooting. 
-
-The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-Toward that, HashiCorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a>> to enterprises. 
-
-Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
-
-Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
 
 <hr />
 	
@@ -696,7 +681,7 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp">These Enterprise Academy courses</a> are instructor-led, and primarily address the needs of Platform Operators using Enterprise Vault features. Individuals are signed up for these group classes using education credits as part of Enterprise Vault licensing.
 
-1. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/approle-auth-method">AppRole Authentication Method</a>   - configure and use Vault's AppRole authentication method.
+1. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/approle-auth-method">AppRole Authentication Method</a>   - configure and use Vault's AppRole authentication method. See https://developer.hashicorp.com/vault/docs/concepts/response-wrapping
 
 2. <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/aws-auth-method">AWS Authentication Method</a>   - configure and use Vault's AWS authentication method, which uses AWS IAM credentials to authenticate EC2 instances, Lambda functions, etc.
 

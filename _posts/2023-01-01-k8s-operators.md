@@ -46,10 +46,10 @@ Scroll down to filter among <strong>Capability Levels</strong>:
 
 <img alt="k8s-operator-registry-capabilities-384x370" width="384" height="370" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899605/k8s-operator-registry-capabilities-384x370_uka3ju.jpg">
 
-At time of this writing (January 2023), there are less than 300 vs. thousands in hub.docker.com and terraform.io modules.
+At time of this writing (January 2023), there are less than 300 vs. thousands in hub.docker.com,  terraform.io, etc.
+QUESTION: What are all the Operators that are needed to achieve full production utility within an enterprise? 
 
-https://operatorhub.io/getting-started illustrates the different capability levels:
-
+The different capability levels are <a target="_blank" href="https://operatorhub.io/getting-started"> illustrated by this</a>:
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899456/k8s-operator-2814x1154_g4ueml.jpg"><img alt="k8s-operator-2814x1154.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672899456/k8s-operator-2814x1154_g4ueml.jpg"></a>
 
 ### From Helm to Ansible to Golang
@@ -62,7 +62,6 @@ QUESTIONS:
 2. How to quickly bring a "standard" production-quality Kubernetes cluster up with a full set of Operators? In one command?
 3. How can one assure that all operators within Kubernetes all work well with each other?
 4. How to get to Deep Insights and Auto Pilot?
-5. What are all the Operators that are needed to achieve full production utility within an enterprise?
 6. With Operators, how do we see version history of who changed what when? How to analyze logs emitted?
 
 ## Kubernetes Operators?
