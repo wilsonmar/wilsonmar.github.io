@@ -92,7 +92,7 @@ each a <a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-c
 
 * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
 
-* Asymmetric X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA.
+* X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA. (The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as define in <a target="_blank" href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a DER-encoded PKCS 8 PrivateKeyInfo, as specified in <a target="_blank" href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>)
 
 * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
 
@@ -136,25 +136,40 @@ Supported secrets engines (alphabetically):
 
 <a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>: <strong>Security Posture</strong>
 
+SURVEY: How much do you agree whether each of these should be implemented?
+
 1. Storing plain-text secrets hard-coded in program code within GitHub is like leaving packages sitting in front of your door for a long time. Don't wait until "production" to use secure mechanisms.
-2. To avoid being a victim of phising, don't respond to email links, unknown calls & text without verification.
-4. Enable MFA <strong>multi-factor authentication</strong> to block phising.
-5. Limit exposure if auth secrets disclosed. Use <strong>Least Privilege</strong> approach to restrict access to encrypted data, based on a need-to-know basis. RBAC (Role-based Access Control) provides each user only the rights for his/her specific job role.
-6. Distribute authentication secrets securely.
-7. Don't let authentication secrets live forever. Use single-use token with short TTL (Time To Live). 
+
+   We have sample code you can incorporate into your code right away.
+
+2. Enable MFA <strong>multi-factor authentication</strong> to block use of stolen passwords.
+      
+3. Limit exposure if auth secrets disclosed. Use <strong>Least Privilege</strong> approach to restrict access to encrypted data, based on a need-to-know basis. RBAC (Role-based Access Control) provides each user only the rights for his/her specific job role.
+
+4. Distribute authentication secrets securely, using different channels.
+
+   Vault's "AppRole" distributes the equivalent of userid and password, but for machine authentication.
+
+5. Don't let secrets live forever. Use single-use token with short TTL (Time To Live). 
    Even if secrets are encrypted (using GPG), machines are powerful enough and hackers have enough time to figure out how to crack encryption algorithms, given enough time.
 
-8. <a href="#Centralized">Centralize</a> management of secrets.
-9. Comprehensively log activities for audit and forensics.
-10. Forward logs to a central SOC (Security Operations Center) for continuous, quick detection of and resonse to security incidents
-11. Steam each transaction to an event hub to trigger immediate alerting and actions
+6. <a href="#Centralized">Centralize</a> management of secrets.
+7.  Comprehensively log activities for audit and forensics.
+8.  Forward logs to a central SOC (Security Operations Center) for continuous, quick detection of and resonse to security incidents
+9.  Stream each transaction to an event hub to trigger immediate alerting and actions
 
-12. <strong>Encrypt data in transit</strong> with Mutual authentication (mTLS).
-13. Encrypt data at rest.
-14. Rotate static secrets frequently. PROTIP: One can't simply remove a file in GitHub because old versions hidden in history may be decrypted using old keys.
-15. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
-16. Have a "break glass" procedure if auth secrets are stolen. Revocation.
+10. <strong>Encrypt data in transit</strong> with Mutual authentication (mTLS).
+11. Encrypt data at rest.
+12. Rotate static secrets frequently. PROTIP: One can't simply remove a file in GitHub because old versions hidden in history may be decrypted using old keys.
+13. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
+14. Have a "break glass" procedure if auth secrets are stolen. Revocation.
 <br /><br />
+
+Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp products do:
+
+   * Consul: Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
+   * Simulated phising: Avoid being a victim of phishing. Don't respond to email links, unknown calls & text without verification.
+   <br /><br />
 
 ## Why is a system needed for secrets?
 
@@ -168,18 +183,11 @@ Questions for secrets management:
    1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
    <br /><br />
 
-Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp products do:
-
-   * Consul: Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
-   <br /><br />
-
 
 
 ## HashiCorp Vault's Value Proposition
 
-The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (asymetric X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-Toward that, HashiCorp provides an <a href="#CloudService">"Encryption as a Service" in the public cloud</a> to enterprises. 
+The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
 
 * Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
 
@@ -240,9 +248,11 @@ Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
 
 Vault provides a capability that most major cloud providers also provide in their own features:
 
-* <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a managed service to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. It integrates with
-* <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a>  to encrypt secrets with a unique data key.
-* <a target="_blank" href="https://aws.amazon.com/aks/">AWS Key Service (AKS)</a>
+* <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
+  
+* <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
+
+* AWS External Key Store (XKS)
 
 * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
    See https://www.udemy.com/course/azure-key-vault-the-complete-introduction/
@@ -324,6 +334,20 @@ References:
    * https://www.saasworthy.com/product/akeyless-vault
    <br /><br />
 
+
+<a name="Cost"></a>
+
+## Cost comparisons
+
+Each KMS key stored costs $1/month. The first 20,000 decrypt requests each month are free, then $0.03 per 10,000. An additional $1/month for each key being automatically rotated.
+
+Requests to the <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> and <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html">GenerateDataKeyPairWithoutPlaintext API</a> operations and requests to API operations such as Sign, Verify, Encrypt, Decrypt, and GetPublicKey that reference asymmetric KMS keys (such as RSA) are excluded from the free tier. 
+For AWS KMS: requests of some encryption algorithms cost more than others: 
+
+   $00.03 per 10,000 <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html">GenerateDataKeyPairWithoutPlaintext API</a> involving RSA 2048 keys<br />
+   $00.10 per 10,000 Elliptic Curve (ECC) GenerateDataKeyPair (for signing)<br />
+   $00.15 per 10,000 asymmetric (SM2) requests except RSA 2048<br />
+   $12.00 per 10,000 RSA <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> requests
 
 <hr />
 

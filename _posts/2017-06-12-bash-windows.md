@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-01-07"
+file: "bash-windows"
 title: "Bash shell running within Windows using Microsoft's WSL (Windows Subsystem for Linux)"
 excerpt: "It's less like Power Rangers clicking rings, more like living among expats in a foreign country"
 tags: [Bash, Windows, IoT]
-date: "2017-06-17"
-file: "bash-windows"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -16,10 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-I began looking into Microsoft's WSL (Windows Subsystem for Linux) at its first "beta" release on June 2017.
+June 2017 was the first "beta" release of Microsoft's WSL (Windows Subsystem for Linux).
 
-Around May 2019, Microsoft released <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/wsl2-about">
-WSL2</a>. 
+Around May 2019, Microsoft released <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/wsl2-about">WSL2</a> (version 2). 
 
 WSL is so much simpler than <a target="_blank" href="https://www.cygwin.com/">Cygwin</a>
 
@@ -28,9 +27,11 @@ WSL is so much simpler than <a target="_blank" href="https://www.cygwin.com/">Cy
 
 ## Architecture
 
-Here is the diagram for WSL1:
+The diagram for WSL1:  (TODO: Update for WSL2 needed)
 
    ![bash-windows-wsl file-system-graphic-1024x547](https://user-images.githubusercontent.com/300046/27129463-644687dc-50d0-11e7-92fc-f9862d9c04cd.png)
+
+   <tt>gcc</tt> is installed by ???. bash, git can be installed using Choclately.
 
    <tt>Lxcore.sys</tt> is the driver that recognizes Bash commands and other Linux utilities such as chmod
    to change permissions.
@@ -43,19 +44,27 @@ Here is the diagram for WSL1:
 
    <tt>NTFS</tt> (New Technology File System) is the file system controlling hard drives.
 
-WSL provides no GPU support, so it can’t run Linux GUI programs such as Gnome, KDE, etc.
+CAUTION: WSL provides <strong>no GPU support</strong>, so it can’t run Linux GUI programs such as Gnome, KDE, etc.
+
 
 ## Got 64-bit?
 
    Verify your PC's CPU architecture and Windows version/build number:
 
-0. Start: Click the Windows icon or keyboard key to 
-   open Settings, System, About. 
+1. Start: Click the Windows icon/keyboard key to open Settings, System, About (at the bottom of the list). 
 
+   Windows 11:
+   TBD
+
+   Windows 10:
    ![bash-windows-build-951x388](https://user-images.githubusercontent.com/300046/72775139-6e688e80-3bca-11ea-90f4-ed92a4754bba.png)
 
-   If your System type is not "64-bit", get a computer that is. 
-   The technical explanation is that WSL currently runs ELF64 Linux binaries.
+2. Get a newer computer if you don't see:
+
+   <tt>System type    64-bit operating system, x64-based processor.</tt>
+
+   The technical requirement is that WSL currently runs "ELF64 Linux binaries".
+
 
    ## Option A: Windows 10 Build #
 
@@ -76,13 +85,13 @@ OS Version: 10.0.22000 N/A Build 22000
    As of this writing, WSL is in Preview, so <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Register</a> to be in the <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Windows Insider</a>. (Beta was in the Windows 10 "Anniversary Update Creators Update", then "Fall Creators Update")
 
 1. Go to Settings > Update & Security > Windows Insider Program and click Get Started to access the latest build.
-1. Enter the account you used to sign into the Windows Insider Program.
-1. Follow the prompts to install.
+2. Enter the account you used to sign into the Windows Insider Program.
+3. Follow the prompts to install.
 
    As of this writing, Windows Insider version 19041.1 was available on the slow ring.
    You don’t need a fast ring build to get WSL 2. 
 
-1. Go to Settings > Update & Security > Windows Update and click Check for updates to install.
+4. Go to Settings > Update & Security > Windows Update and click Check for updates to install.
 
    <a target="_blank" href="https://download.docker.com/win/edge/40807/Docker%20Desktop%20Installer.exe">Docker Desktop Edge</a> 2.1.6.0 + requires Windows 10 Pro or Enterprise Insider Preview build 19018 or higher to integrate with WSL Linux. 
 
@@ -94,23 +103,23 @@ OS Version: 10.0.22000 N/A Build 22000
 
    ## Enable WSL Windows Feature
 
-0. Press the Windows Start button and immediately type in the search box that appears:
+5. Press the Windows Start button and immediately type in the search box that appears:
 
    <pre><strong>Turn Windows features on or off
    </strong></pre>
 
-0. Type enough until the option appears in the menu, then click on the option.
+6. Type enough until the option appears in the menu, then click on the option.
 
    Wait a while for all items to appear.
 
-0. Scroll down to check "Windows Subsystem for Linux", then
+7. Scroll down to check "Windows Subsystem for Linux", then
    click OK to exit dialog, then Restart your computer.
 
    (This option was added since the "Anniversary" and "Creators Update" of Windows 10.)
 
    ## Windows Terminal
 
-0. Click the Windows Start and get in the Microsoft Window Store to install the new <strong>Windows Terminal</strong>. It is like tmux - it makes it easy to open multiple panes with different prompts for bash, command prompt and PowerShell.
+8. Click the Windows Start and get in the Microsoft Window Store to install the new <strong>Windows Terminal</strong>. It is like tmux - it makes it easy to open multiple panes with different prompts for bash, command prompt and PowerShell.
 
 
    ## Download installer
@@ -211,6 +220,7 @@ OS Version: 10.0.22000 N/A Build 22000
 0. Click the shortcut so you don't have to type "bash".
 
    By default, the prompt is your Linux user name @ your machine name:/mnt/c/Users/%USERNAME%$
+
 
    ## Where is WSL?
 
@@ -448,6 +458,8 @@ https://medium.com/better-programming/make-bash-on-ubuntu-on-windows-10-look-lik
 
 https://medium.com/free-code-camp/how-to-set-up-docker-and-windows-subsystem-for-linux-a-love-story-35c856968991
 "Yeah, it seemed to have uninstalled linuxbrew as soon as I closed the Ubuntu shell. Although my path references in .profile seemed to persist"
+
+https://www.windowscentral.com/how-install-wsl2-windows-10
 
 ## More on DevOps #
 
