@@ -321,19 +321,35 @@ sudo install minikube /usr/local/bin
 
 ## FAQ
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-windows-getting-started-2021/table-of-contents">16 Nov 2021 "Getting Started with Docker on Windows"</a> 5h41m by Wes Higbee
-
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/managing-docker-windows-servers/table-of-contents">3 Feb 2021 "Managing Docker on Windows Servers"</a> 1h17m by Piotr Gaczkowski
-
 1. Read the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/faq">FAQ</a> for known weirdness.
 
    Bugs with WSL are reported to developers at <a target="_blank" href="https://github.com/microsoft/WSL">https://github.com/microsoft/WSL</a>
 
    https://docs.microsoft.com/en-us/windows/wsl/troubleshooting
 
+
+   ## Video Tutorials
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-windows-getting-started-2021/table-of-contents">16 Nov 2021 "Getting Started with Docker on Windows"</a> 5h41m by Wes Higbee
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/managing-docker-windows-servers/table-of-contents">3 Feb 2021 "Managing Docker on Windows Servers"</a> 1h17m by Piotr Gaczkowski referencing his <a target="_blank" href="https://github.com/DoomHammer/pluralsight-managing-docker-on-windows-servers">github.com/DoomHammer/pluralsight-managing-docker-on-windows-servers</a> for each tutorial module.
+
+1. Create a new container:
+
+   <pre><strong>docker run -v ${PWD}:C:\app --workdir /app mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet new mvc --auth Individual
+   </strong></pre>
+
+1. The <strong>Dockerignore</strong> file contains names of files and folders that won't be in container images, such as:
+
+   <pre>bin
+   obj
+   </pre>
+
+1. The <a target="_blank" href="https://github.com/search?q=repo%3ADoomHammer%2Fpluralsight-managing-docker-on-windows-servers%20dockerfile&type=code">Dockerfile in each tutorial module</a> defines the various base images from the Azure MCR.
+
    ## Profile to define prompt
 
-2. Open the Bash command prompt</strong> (click Windows Start and type Bash until you can select it from the list that arises).
+2. Open the Bash command prompt</strong> (click Windows Start and type Bash until you can select it from the list that arises):
 
    NOTE: You can <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/interop">run Linux binaries such as ls</a> from the Windows Command Prompt (CMD or PowerShell) by invoking <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/reference">wsl.exe</a> there. These are called interop features.
 
