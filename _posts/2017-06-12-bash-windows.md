@@ -519,7 +519,13 @@ sudo install minikube /usr/local/bin
    https://docs.microsoft.com/en-us/windows/wsl/troubleshooting
 
 
-   ## Video Tutorials
+<hr />
+
+## Kubespray (Ansible)
+
+
+
+## Video Tutorials
 
 * <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-windows-getting-started-2021/table-of-contents">16 Nov 2021 "Getting Started with Docker on Windows"</a> 5h41m by Wes Higbee
 
@@ -530,7 +536,7 @@ sudo install minikube /usr/local/bin
    <pre><strong>docker run -v ${PWD}:C:\app --workdir /app mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet new mvc --auth Individual
    </strong></pre>
 
-1. The <strong>Dockerignore</strong> file contains names of files and folders that won't be in container images, such as:
+1. The <strong>Dockerignore</strong> file contains names of files and folders that should not be in container images (because they are generated every time), such as:
 
    <pre>bin
    obj
@@ -538,20 +544,36 @@ sudo install minikube /usr/local/bin
 
 1. The <a target="_blank" href="https://github.com/search?q=repo%3ADoomHammer%2Fpluralsight-managing-docker-on-windows-servers%20dockerfile&type=code">Dockerfile in each tutorial module</a> defines the various base images from the Azure MCR.
 
+
+
+
    ### Docker Enterprise Components
 
 1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d0abd475-57b3-471c-963f-8fe8d9ccee08">VIDEO</a>: Enterprise licenses:
 
-   What was previously "Docker Engine" <a target="_blank" href="https://thenewstack.io/mirantis-acquires-docker-enterprise/">(and Docker's 30% pentration into the Fortune 500) was purchased Nov, 2019 by Mirantis</a> (the cloud consulting company with OpenStack roots). So it is now the <a target="_blank" href="https://docs.mirantis.com/mcr/20.10/overview.html">Mirantis Container Runtime</a>.
+   What was previously "Docker Engine" <a target="_blank" href="https://thenewstack.io/mirantis-acquires-docker-enterprise/">(and Docker's 30% pentration into the Fortune 500) was purchased Nov, 2019 by Mirantis</a> (the cloud consulting company with OpenStack roots). So it is now the <a target="_blank" href="https://docs.mirantis.com/mcr/20.10/overview.html">Mirantis Container Runtime</a>. 
+
+    Docker's "Universal Control Plane" is now Mirantis Kubenetes Engine (MKE), which provides RBAC & LDAP for centralized cluster management.
+
+   ### MCR
+   
+   Docker's "Trusted Registry" is now the Mirantis Secure Registry running MKE, hosting containers as a Linux server. It performs security scanning of image files.
+
+1. To install MCR on Windows Server 2019, in PowerShell:
+
+   <pre>[Net.ServicePointManager]::SecrurityProtocol - [Net.SecurityProtocolType]::Tls12
+   [Install-Module DockerMsftProvider] -Force
+   </pre>
+
+1. 
 
    https://github.com/Mirantis/cri-dockerd#build-and-install
 
-   Docker's "Universal Control Plane" is now Mirantis Kubenetes Engine (MKE), which provides RBAC & LDAP for centralized cluster management.
-
-   Docker's "Trusted Registry" is now the Mirantis Secure Registry running MKE, hosting containers as a Linux server. It performs security scanning of image files.
 
 
-   ## Docker Edge
+<hr />
+
+## Docker Edge (at Tech Preview)
 
 2. TODO: Use brew to install Docker Desktop Edge, in Technical Preview as of this writing.
 
@@ -616,16 +638,145 @@ sudo install minikube /usr/local/bin
 
 ## Akash Network
 
-All of the above is getting ready for preparing your machine to generate revenue as <strong>provider clusters</strong> used by others on the Akash.cloud network. Akash leases are deployed via Kubernetes pods.
+All of the above is getting ready for preparing your machine to generate revenue as <strong>provider clusters</strong> used by others on the Akash.cloud network. Leases of Akash resources are deployed via Kubernetes pods.
 
 The <a target="_blank" href="https://docs.akash.network/providers/community-solutions/praetor">
 Praetor application</a> from Akash builds an Akash Provider for small and medium sized environments.
 
-The <a target="_blank" href="https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers">steps</a> to build the provider’s Kubernetes control plane and worker nodes:
+On a Windows machine, Praetor runs after Kubespray (using RedHat Ansible) on an Ubuntu server within WSL2.
+References:
+   * https://github.com/kubernetes-sigs/kubespray
+   * <a target="_blank" href="https://www.youtube.com/watch?v=8Jh4yZQOVZU">VIDEO</a>: "Kube 65.1 ] Kubespray - Kubernetes cluster provisioning"
 
+   * https://www.techbeatly.com/2020/11/deploying-kubernetes-with-kubespray.html using Vagrant
+   * https://www.redhat.com/sysadmin/kubespray-deploy-kubernetes
+   * https://kubernetes.io/docs/setup/production-environment/tools/kubespray/
+   * https://www.densify.com/kubernetes-tools/kubespray
+   * https://adamtheautomator.com/kubespray/
+   * https://schoolofdevops.github.io/ultimate-kubernetes-bootcamp/cluster_setup_kubespray/
+   * https://slateci.io/docs/cluster/automated/install-kubernetes-with-kubespray.html
+   <br /><br />
 
+<a target="_blank" href="https://www.youtube.com/watch?v=CJ5G4GpqDy0">VIDEO</a>: "Deploying kubernetes using Kubespray" by Remko Deenik showing <a target="_blank" href="https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers">Steps</a> to build the provider’s Kubernetes control plane and worker nodes:
 
+1. Install Ansible on Ubuntu:
+   
+   <pre><strong>sudo apt-get update
+   sudo apt-get install ansible
+   </strong></pre>
 
+2. Install Python:
+   
+   <pre><strong>sudo pip3 install --upgrade pip
+   sudo apt-get install ansible
+   </strong></pre>
+
+3. Navigate/create a folder the folder where you will be cloning into.
+4. Clone the kubespray repository onto your server:
+
+   QUESTION: Fork this first?
+
+   <pre><strong>git clone https://github.com/kubernetes-sigs/kubespray.git
+   </strong></pre>
+
+5. Install (download) Python dependency packages:
+
+   <pre><strong>sudo pip install -r requirements.txt
+   </strong></pre>
+
+6. Create an Ansible inventory file in your kubespray directory:
+
+   <pre><strong>cd kubespray
+   cp -rfp inventory/sample inventory/mycluster
+   </strong></pre>
+
+3. Install the required dependencies:
+
+   <pre><strong>sudo ansible-galaxy install -r requirements.yml
+   </strong></pre>
+
+7. Specify the IP addresses of the servers of your cluster in a hosts.yml file:
+   
+   <pre><strong>declare -a IPS=(10.1.1.101 10.1.1.102 10.1.1.103 10.1.1.104 10.1.1.105 10.1.1.106)
+   edit inventory/mycluster/hosts.yml
+   </strong></pre>
+
+   An example of the hosts.yml:
+
+   <pre>hosts:
+  node1:
+    ansible_host: 10.1.1.101
+    ip: 10.1.1.101
+    access_ip: 10.1.1.101
+   ...
+   </pre>
+
+1. Define the permissions in hosts.yml:
+   
+   <pre>  kube-node:
+    hosts:
+      node1:
+      node2:
+      node3:
+      node4:
+      node5:
+      node6:
+    etcd:
+      hosts:
+        node1:
+        node2:
+        node3:
+    k8s-cluster:
+      children:
+        kube-master:
+        kube-node:
+    calico-rr:
+      hosts: {}
+   </pre>
+
+2. Specify the IP addresses of the servers of your cluster:
+   
+   <pre><strong>CONFIG_FILE=inventory/mycluster/hosts.yml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
+   </strong></pre>
+
+3. Review the configuration settings:
+
+   <pre><strong>vi inventory/mycluster/group_vars/all/all.yml
+   </strong></pre>
+
+3. Review the configuration settings:
+
+   <pre><strong>vi inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
+   </strong></pre>
+
+4. Deploy the cluster, using the cluster.yml playbook and the mycluster inventory file:
+
+   <pre><strong>ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml \
+   --become --become-user=root cluster.yml
+   </strong></pre>
+
+   The above took an hour to spit out a lot.
+
+5. Download kubectl:
+
+   <pre><strong>???
+   </strong></pre>
+   
+5. Use SSH to get files:
+
+   <pre><strong>ssh 10.1.1.101 sudo cp /etc/kubernetes/admin.conf "/home/$USERNAME/config"
+   ssh 10.1.1.101 sudo chmod +4 ~/config
+   scp 10.1.1.101:~/config .
+   mkdir .kube
+   mv config .kube/
+   ssh 10.1.1.101 sudo rm ~/config
+   </strong></pre>
+
+5. Verify access
+
+   <pre><strong>kubectl version
+   kubectl get nodes
+   </strong></pre>
 
 <hr />
 
