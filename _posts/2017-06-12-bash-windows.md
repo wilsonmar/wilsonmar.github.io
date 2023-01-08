@@ -53,9 +53,6 @@ CAUTION: WSL provides <strong>no GPU support</strong>, so it can’t run Linux G
 
 1. Start: Click the Windows icon/keyboard key to open Settings, System, About (at the bottom of the list). 
 
-   Windows 11:
-   TBD
-
    Windows 10:
    ![bash-windows-build-951x388](https://user-images.githubusercontent.com/300046/72775139-6e688e80-3bca-11ea-90f4-ed92a4754bba.png)
 
@@ -65,41 +62,38 @@ CAUTION: WSL provides <strong>no GPU support</strong>, so it can’t run Linux G
 
    The technical requirement is that WSL currently runs "ELF64 Linux binaries".
 
-
-   ## Option A: Windows 10 Build #
-
-   Alternately, if you have configured PowerShell to run commands,
+3. If you have configured PowerShell to run commands,
    get your Windows Server build number within PowerShell:
 
    <pre>systeminfo | Select-String "^OS Name","^OS Version"</pre>
 
    Example response:
+
    <pre>OS Name: Microsoft Windows 11 Home
-OS Version: 10.0.22000 N/A Build 22000
+OS Version: 10.0.22621 N/A Build 22621
    </pre>
 
-   If your OS Build is not <strong>18917</strong> or higher, update.
+4. Get the installer:    NOTE: We're not using the <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Register</a> to be in the <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Windows Insider Build</a>.
+   
+   <pre><strong>wsl --install</strong></pre>
 
-   ## Option B: Windows Insider Build
-
-   As of this writing, WSL is in Preview, so <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Register</a> to be in the <a target="_blank" href="https://insider.windows.com/en-us/getting-started/">Windows Insider</a>. (Beta was in the Windows 10 "Anniversary Update Creators Update", then "Fall Creators Update")
-
-1. Go to Settings > Update & Security > Windows Insider Program and click Get Started to access the latest build.
-2. Enter the account you used to sign into the Windows Insider Program.
-3. Follow the prompts to install.
-
-   As of this writing, Windows Insider version 19041.1 was available on the slow ring.
-   You don’t need a fast ring build to get WSL 2. 
-
-4. Go to Settings > Update & Security > Windows Update and click Check for updates to install.
-
-   <a target="_blank" href="https://download.docker.com/win/edge/40807/Docker%20Desktop%20Installer.exe">Docker Desktop Edge</a> 2.1.6.0 + requires Windows 10 Pro or Enterprise Insider Preview build 19018 or higher to integrate with WSL Linux. 
-
-   https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK
+   * Ubuntu-18.04 - CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2018.817.0_x64__79rhkp1fndgsc
+   * Ubuntu 18.04 ARM for running on Raspberry Pi?
+   * Ubuntu-16.04 - Ubuntu_1604.2019.523.0_x64.appx
+   * Debian GNU/Linux - DebianGNULinux_1-1-3-0_x64__76v4gfsz19hv4
+   * Kali Linux
+   * OpenSUSE Leap 42
+   * SUSE Linux Enterprise Server 12
+   * Fedora Remix for WSL (licensed)
+   * Pengwin is paid/licensed. Based on Debian.
+   * WLinux ???
+   <br /><br />
+   
 
    ### Virtualization
    
-   Virtualization must be enabled in the computer bios, instructions for this vary between manufacturers but it’s usually a simple on/off listing in the BIOS.
+   Virtualization must be enabled in the computer bios, instructions for this vary between manufacturers 
+   but it’s usually a simple on/off listing in the BIOS.
 
    ## Enable WSL Windows Feature
 
@@ -108,18 +102,18 @@ OS Version: 10.0.22000 N/A Build 22000
    <pre><strong>Turn Windows features on or off
    </strong></pre>
 
-6. Type enough until the option appears in the menu, then click on the option.
+6.  Type enough until the option appears in the menu, then click on the option.
 
    Wait a while for all items to appear.
 
-7. Scroll down to check "Windows Subsystem for Linux", then
+7.  Scroll down to check "Windows Subsystem for Linux", then
    click OK to exit dialog, then Restart your computer.
 
    (This option was added since the "Anniversary" and "Creators Update" of Windows 10.)
 
    ## Windows Terminal
 
-8. Click the Windows Start and get in the Microsoft Window Store to install the new <strong>Windows Terminal</strong>. It is like tmux - it makes it easy to open multiple panes with different prompts for bash, command prompt and PowerShell.
+8.  Click the Windows Start and get in the Microsoft Window Store to install the new <strong>Windows Terminal</strong>. It is like tmux - it makes it easy to open multiple panes with different prompts for bash, command prompt and PowerShell.
 
 
    ## Download installer
@@ -135,70 +129,110 @@ OS Version: 10.0.22000 N/A Build 22000
    <pre><strong>Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
    </strong></pre>
 
+   The response I got:
+
+   <pre>FeatureName      : Microsoft-Windows-Subsystem-Linux
+DisplayName      : Windows Subsystem for Linux
+Description      : Provides services and environments for running native user-mode Linux shells and tools on Windows.
+RestartRequired  : Possible
+State            : Enabled
+CustomProperties :
+                   ServerComponent\Description : Provides services and environments for running native user-mode
+                   Linux shells and tools on Windows.
+                   ServerComponent\DisplayName : Windows Subsystem for Linux
+                   ServerComponent\Id : 1033
+                   ServerComponent\Type : Feature
+                   ServerComponent\UniqueName : Microsoft-Windows-Subsystem-Linux
+                   ServerComponent\Deploys\Update\Name : Microsoft-Windows-Subsystem-Linux
+   </pre>
+
 
    ### Set Linux distro to be backed by WSL 2
 
-1. <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#install-your-linux-distribution-of-choice">PROTIP</a>: WSL provides a choice of Linux distributions. 
+1. <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10#install-your-linux-distribution-of-choice">PROTIP</a>: 
+   WSL provides a choice of Linux distributions. For a list:
 
    <pre><strong>wsl -l</strong></pre>
 
-   * Ubuntu-18.04 - CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2018.817.0_x64__79rhkp1fndgsc
-   * Ubuntu 18.04 ARM for running on Raspberry Pi?
-   * Ubuntu-16.04 - Ubuntu_1604.2019.523.0_x64.appx
-   * Debian GNU/Linux - DebianGNULinux_1-1-3-0_x64__76v4gfsz19hv4
-   * Kali Linux
-   * OpenSUSE Leap 42
-   * SUSE Linux Enterprise Server 12
-   * Fedora Remix for WSL (licensed)
-   * Pengwin is paid/licensed. Based on Debian.
-   * WLinux ???
-   <br /><br />
-   
+   <pre>Distributions:
+Ubuntu (Default)
+docker-desktop
+docker-desktop-data
+   </pre>
+
    PROTIP: Ubuntu was the first distro tested with WSL, so it's probably the most well tested.
    But it's not supported by Windows 10 S.
    Both Ubuntu and Debian make use of the <strong>apt-get</strong> (Advanced Packaging Tool) package manager and <strong>dpkg</strong> command.
 
    BTW Ubuntu is a Linux distribution from Canonical, Inc. which also created Virtualenv for Python.
 
-   Kali Linux is used by security researchers.
+   Kali Linux is used by security researchers (not for production use).
 
-1. From the Start menu, select the Microsoft Windows Store. Search for "Linux". Click Ubuntu, then ‘Install’:
+   ### Ubuntu version/release
+
+1. In a web browser, know what the latest version of Ubutu is:
+
+   https://releases.ubuntu.com
+
+   Note there is a name for each release.
+
+   WARNING: Time is needed for integration into Windows, so WSL probably does not support the very latest version of Ubuntu.
+
+2. From the Start menu, select the <strong>Microsoft Windows Store</strong>. 
+3. Search for Ubuntu:
+
+   Scroll to see the latest version of Ubuntu for Windows (such as 22.4.5 LTS).
+
+4. Click "Get":
 
    Once installed, the ‘Install’ button will change to ‘Launch’, click the ‘Launch’ button. 
 
-   Alternately, download the ".appx" installer by constructing the curl command for the Ubuntu version listed above, such as:
+   One can, but don't: alternately, download the ".appx" installer by constructing the curl command for the Ubuntu version listed above, such as:
 
    <pre><strong>curl -L -o ubuntu-1604.appx https://aka.ms/wsl-ubuntu-1604</strong></pre>
 
    This is instead of the Invoke-WebRequest PowerShell command or
    <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/enterprise">Microsoft Store for Business</a> used within enterprises.
 
-1. In PowerShell, construct the command using the name of the .appx file downloaded:
+<!-- 5. In PowerShell, construct the command using the name of the .appx file downloaded:
 
    <pre><strong>Add-AppxPackage .\Ubuntu_1604.2019.523.0_x64.appx</strong></pre>
+-->
 
-1. Set the distribution code for the Linux distro downloaded (I don't know why):
+6. Set the distribution code for the Linux distro downloaded (I don't know why):
 
    <pre><strong>wsl --set-version Ubuntu 2</strong></pre>
 
-1. Verify what versions of WSL your distros are using:
+7. Verify what versions of WSL your distros are using:
 
    <pre><strong>wsl -l -v</strong></pre>
 
-1. Make WSL 2 your default architecture (as if you'll ever want to go back):
+8. Make WSL 2 your default architecture (as if you'll ever want to go back):
 
-   <pre><strong>wsl --set-default-version 2</strong>
+   <pre><strong>wsl.exe --set-default-version 2</strong>
 
-   ## Launch and configure
+   ## Where is WSL?
 
-1. <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/initialize-distro">Launch</a> the new instance of WSL by from the Start menu section titled "WSL Linux Distros".
+   PROTIP: WSL runs within the <strong>Vemmem</strong> process.
 
-1. The first time a newly installed distro runs, a Console window opens, and you'll see
+1. Open Task Manager to see it.
+
+
+   ## Ubuntu Install, Launch, and configure
+
+   https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/
+
+9. In the Windows Start menu section titled "WSL Linux Distros",
+10. Scroll to "Ubuntu on Windows". Right-click and select "Pin to Start" 
+
+    <img alt="wsl-ubuntu-pin-259x170" width="259" height="170" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1673129058/wsl-ubuntu-pin-259x170_mifjw3.jpg">
+
+11. Repeat to select "Pin to taskbar" at the edge of every screen.
+12. Repeat to "Run as Administrator" or <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/initialize-distro">Launch</a> a new instance.
+
+13. The first time a newly installed distro runs, a Console window opens, and you'll see
 
    <pre>Installing, this may take a few minutes...</pre>
-
-   BTW: In previous versions, you had to go to Open Settings -> Update and Security -> For developers
-   to check the Developer Mode radio button to "install any signed app".
 
    Then...
 
@@ -207,30 +241,91 @@ OS Version: 10.0.22000 N/A Build 22000
    For more information visit: https://aka.ms/wslusers
    Enter new UNIX username: _</pre>
 
-1. Enter a username your make up.
+14. Enter a username your make up.
 
    PROTIP: The WSL user is not "root" with admin priviledges.
 
-1. PROTIP: Type the password in 1Password or other Password Manager, then copy it to paste in the screen.
+15. PROTIP: Get the password copied into your Clipboard from 1Password or other Password Manager, then paste onto the screen.
 
    A shortcut is added to your start menu named:
 
    `Bash on Ubuntu on Windows`
 
-0. Click the shortcut so you don't have to type "bash".
+16. Click the shortcut.
 
-   By default, the prompt is your Linux user name @ your machine name:/mnt/c/Users/%USERNAME%$
+    By default, the prompt is your Linux user name @ your machine name:/mnt/c/Users/%USERNAME%$
+
+    You should now see a pop-up window showing Ubuntu
+
+    ### Within Ubuntu
+
+1. Type your admin password.
+
+   <pre>su -l
+   </pre>
+
+2. Install latest release of <tt>kubectl</tt> on Ubuntu:
+
+   <pre>sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+   </pre>
+
+1. Install latest release of Minikube:
+   
+   <pre>curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube
+sudo install minikube /usr/local/bin
+   </pre>
+
+1. If you see this error: <tt>Exiting due to GUEST_MISSING_CONNTRACK: Sorry, Kubernetes 1.25.3 requires conntrack to be installed in root's path</tt> 
+
+   <pre><strong>sudo apt-get install conntrack
+   </strong></pre>
+
+3. In the Ubuntu Linux terminal, verify:
+
+   <pre><strong>minikube version
+   </strong></pre>
+
+   <pre>minikube version v1.28.0
+   commit: 986b1ebd987211ed16f8cc10aed7d2c42fc8392f
+   </pre>
+   
+3. In the Ubuntu Linux terminal, start minikube:
+
+   <pre>minikube start --vm-driver=none
+   </pre>
+
+   If you see:
+   <pre>😄  minikube v1.28.0 on Ubuntu 20.04 (amd64)
+✨  Using the none driver based on existing profile
+&nbsp;
+🤷  Exiting due to PROVIDER_NONE_NOT_FOUND: The 'none' provider was not found: running the 'none' driver as a regular user requires sudo permissions
+   </pre>
+
+   Alternately, (from CHATGPT4)
+
+   <pre><strong>sudo dockerd --exec-opt native.cgroupdriver=none
+   </strong></pre>
 
 
-   ## Where is WSL?
+   ### VSCode Extensions
 
-   PROTIP: WSL runs within the <strong>Vemmem</strong> process.
+4. In VSCode, "Trust and install" extensions Docker (from Microsoft), "Dev Containers", "Kubernetes".
 
-1. Open Task Manager to see it.
 
-   ## FAQ
 
-0. Read the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/faq">FAQ</a> for known weirdness.
+<hr />
+
+## FAQ
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-windows-getting-started-2021/table-of-contents">16 Nov 2021 "Getting Started with Docker on Windows"</a> 5h41m by Wes Higbee
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/managing-docker-windows-servers/table-of-contents">3 Feb 2021 "Managing Docker on Windows Servers"</a> 1h17m by Piotr Gaczkowski
+
+1. Read the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/faq">FAQ</a> for known weirdness.
 
    Bugs with WSL are reported to developers at <a target="_blank" href="https://github.com/microsoft/WSL">https://github.com/microsoft/WSL</a>
 
@@ -238,18 +333,18 @@ OS Version: 10.0.22000 N/A Build 22000
 
    ## Profile to define prompt
 
-0. Open the Bash command prompt</strong> (click Windows Start and type Bash until you can select it from the list that arises).
+2. Open the Bash command prompt</strong> (click Windows Start and type Bash until you can select it from the list that arises).
 
    NOTE: You can <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/interop">run Linux binaries such as ls</a> from the Windows Command Prompt (CMD or PowerShell) by invoking <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/reference">wsl.exe</a> there. These are called interop features.
 
-0. Open the Visual Studio Code text editor to the file in the $HOME folder, which is what ~ stands for, just like in macOS:
+3. Open the Visual Studio Code text editor to the file in the $HOME folder, which is what ~ stands for, just like in macOS:
 
    <pre><strong>code ~/.profile
    </strong></pre>
 
    By default, WSL reads and executes commands from the file <tt>/etc/profile</tt> if that file exists. After reading that file, it looks for ~/.bash_profile, ~/.bash_login, and ~/.profile, in that order, and reads and executes commands from the first one that exists and is readable. It skips the other files if one is found.
 
-0. Define keyboard aliases in a <strong>.bash_aliases</strong> file in the .bashrc file <a target="_blank" href="https://askubuntu.com/questions/29239/where-is-bash-profile/969923#969923">*</a>
+4. Define keyboard aliases in a <strong>.bash_aliases</strong> file in the .bashrc file <a target="_blank" href="https://askubuntu.com/questions/29239/where-is-bash-profile/969923#969923">*</a>
 
    <pre><strong>code ~/.bashrc
    </strong></pre>
@@ -262,7 +357,7 @@ OS Version: 10.0.22000 N/A Build 22000
 
    ## Linux commands
 
-1. Get to know the built-in Linux commands: cat, cd, chmod, chown, curl, df, diff, echo, exit, find, finger, grep, groups, gzip, head, history, kill, less, ls, man, mkdir, mv, passwd, ping, ps, pwd, shutdown, ssh, sudo, tail, tar, top, uname, w, whoami. There's also cp.
+5. Get to know the built-in Linux commands: cat, cd, chmod, chown, curl, df, diff, echo, exit, find, finger, grep, groups, gzip, head, history, kill, less, ls, man, mkdir, mv, passwd, ping, ps, pwd, shutdown, ssh, sudo, tail, tar, top, uname, w, whoami. There's also cp.
 
    * <a target="_blank" href="https://tutorials.ubuntu.com/tutorial/command-line-for-beginners#0">
    Ubuntu's "The Linux command line for beginners".
