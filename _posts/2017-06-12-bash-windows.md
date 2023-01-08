@@ -172,7 +172,7 @@ docker-desktop-data
 
 1. In a web browser, know what the latest version of Ubutu is:
 
-   https://releases.ubuntu.com
+   <a target="_blank" href="https://releases.ubuntu.com">https://releases.ubuntu.com</a>
 
    Note there is a name for each release.
 
@@ -255,14 +255,76 @@ docker-desktop-data
 
     By default, the prompt is your Linux user name @ your machine name:/mnt/c/Users/%USERNAME%$
 
-    You should now see a pop-up window showing Ubuntu
+    You should now see a pop-up window showing Ubuntu, such as this example:
+
+    <pre>The authenticity of host '192.168.1.16 (192.168.1.16)' can't be established.
+ED25519 key fingerprint is SHA256:j8f47S7QkzcnJ+hXpwnEQpL4RveqD2MQx79yVhiYXDE.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.1.16' (ED25519) to the list of known hosts.
+kermitv@192.168.1.16's password:
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-57-generic x86_64)
+&nbsp;
+* Documentation: https://help.ubuntu.com
+* Management: https://landscape.canonical.com
+* Support: https://ubuntu.com/advantage
+&nbsp;
+System information as of Sun Jan 8 01:00:39 AM UTC 2023
+&nbsp;
+System load: 1.12841796875 Processes: 235
+Usage of /: 43.5% of 9.75GB Users logged in: 0
+Memory usage: 22% IPv4 address for docker0: 172.17.0.1
+Swap usage: 0% IPv4 address for ens33: 192.168.1.16
+&nbsp;
+60 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+    </pre>
+
+17. You brave enough:
+
+    <pre><strong>apt list --upgradable
+    </strong></pre>
+
+    <pre><strong>sudo apt-get upgrade
+    </strong></pre>
+
+18. View details of the Linux distro currently running:
+    
+    <pre><strong>lsb_release -a
+    </strong></pre>
+
+   The version at time of this writing:
+
+   <pre>No LSB modules are available.
+Distributor ID: Ubuntu
+Description: Ubuntu 22.04.1 LTS
+Release: 22.04
+Codename: jammy
+   </pre>
+
+   ### Linux Folders and variables
+
+1. See where Ubuntu is installed using a Windows system variable
+   referenced using a Windows % wrapper rather than Bash $ prefix:
+
+   <pre><strong>%localappdata%\lxss\
+   </strong></pre>
+
+   Note the directory is marked as a hidden system folder.
+   That's a clue that you should not modify files in your bash environment using Windows File Explorer, console, or apps.
+
+   Creating and/or modifying files in this location using Windows tools and apps corrupts the system because it is read-locked. <a target="_blank" href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/">Here is an explanation</a>.
+    
 
     ### Within Ubuntu
 
-1. Type your admin password.
+18. Type your admin password for all subsequent commands:
 
    <pre>su -l
    </pre>
+
+
+   ### Install kubectl
 
 2. Install latest release of <tt>kubectl</tt> on Ubuntu:
 
@@ -305,49 +367,28 @@ sudo install minikube /usr/local/bin
 🤷  Exiting due to PROVIDER_NONE_NOT_FOUND: The 'none' provider was not found: running the 'none' driver as a regular user requires sudo permissions
    </pre>
 
-   Alternately, (from CHATGPT4)
+   Alternately, (from CHATGPT4) run the <tt>dockerd</tt> server:
 
    <pre><strong>sudo dockerd --exec-opt native.cgroupdriver=none
    </strong></pre>
 
 
-   ### VSCode Extensions
-
-4. In VSCode, "Trust and install" extensions Docker (from Microsoft), "Dev Containers", "Kubernetes".
-
-
-
 <hr />
 
-## FAQ
+## Install & Configure Utilities
 
-1. Read the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/faq">FAQ</a> for known weirdness.
+6. TODO: Use brew to install additional utilities: git, Python/pip, tree, jq, etc.
 
-   Bugs with WSL are reported to developers at <a target="_blank" href="https://github.com/microsoft/WSL">https://github.com/microsoft/WSL</a>
+   https://medium.com/swlh/wsl-2-docker-edge-tech-preview-native-linux-containers-w-o-emulation-b41667e6dbef
 
-   https://docs.microsoft.com/en-us/windows/wsl/troubleshooting
+7. Use pip to install Virtualenv.
 
+8. Install keyboard aliases to use custom commands:
 
-   ## Video Tutorials
+   <a target="_blank" href="https://blog.henrypoon.com/blog/2017/06/18/running-selenium-webdriver-on-bash-for-windows/">
+   NOTE</a>: To run Python for Selenium controlling Firefox, install Xming with gekoDriver.
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-windows-getting-started-2021/table-of-contents">16 Nov 2021 "Getting Started with Docker on Windows"</a> 5h41m by Wes Higbee
-
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/managing-docker-windows-servers/table-of-contents">3 Feb 2021 "Managing Docker on Windows Servers"</a> 1h17m by Piotr Gaczkowski referencing his <a target="_blank" href="https://github.com/DoomHammer/pluralsight-managing-docker-on-windows-servers">github.com/DoomHammer/pluralsight-managing-docker-on-windows-servers</a> for each tutorial module.
-
-1. Create a new container:
-
-   <pre><strong>docker run -v ${PWD}:C:\app --workdir /app mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet new mvc --auth Individual
-   </strong></pre>
-
-1. The <strong>Dockerignore</strong> file contains names of files and folders that won't be in container images, such as:
-
-   <pre>bin
-   obj
-   </pre>
-
-1. The <a target="_blank" href="https://github.com/search?q=repo%3ADoomHammer%2Fpluralsight-managing-docker-on-windows-servers%20dockerfile&type=code">Dockerfile in each tutorial module</a> defines the various base images from the Azure MCR.
-
-   ## Profile to define prompt
+   ### Profile to define prompt
 
 2. Open the Bash command prompt</strong> (click Windows Start and type Bash until you can select it from the list that arises):
 
@@ -367,11 +408,26 @@ sudo install minikube /usr/local/bin
 
    My list is in https://github.com/wilsonmar/git-utilities/master/aliases.sh
 
-   ## Zsh
+   ### Zsh
 
    See https://medium.com/@edwardbaeg9/using-homebrew-on-windows-10-with-windows-subsystem-for-linux-wsl-c7f1792f88b3
 
-   ## Linux commands
+
+   ### LinuxBrew vs. Homebrew for MacOS
+
+1. Install the LinuxBrew fork of Homebrew for macOS<a target="_blank" href="https://medium.com/@edwardbaeg9/using-homebrew-on-windows-10-with-windows-subsystem-for-linux-wsl-c7f1792f88b3">*</a>
+
+   "I found some apps that didn’t work well from apt-get worked flawlessly when installed with brew, like zplug. Inversely, I couldn’t get ranger to work with brew but got it working with apt-get. This very conveniently gives you multiple options for installing a package, potentially skipping the step of Googling vague errors. 
+   
+   To fix the patchelf error:
+
+   <pre>sudo apt-get update
+   sudo apt-get install build-essential
+   </pre>
+
+
+
+   ### Linux commands
 
 5. Get to know the built-in Linux commands: cat, cd, chmod, chown, curl, df, diff, echo, exit, find, finger, grep, groups, gzip, head, history, kill, less, ls, man, mkdir, mv, passwd, ping, ps, pwd, shutdown, ssh, sudo, tail, tar, top, uname, w, whoami. There's also cp.
 
@@ -386,7 +442,7 @@ sudo install minikube /usr/local/bin
 
    Sean Dearnaley <a target="_blank" href="https://medium.com/swlh/wsl-2-docker-edge-tech-preview-native-linux-containers-w-o-emulation-b41667e6dbef">points out</a> that since macOS currently doesn’t have good GPU support, if Windows introduces GPU support for WSL, Windows machines could become a very powerful machine learning development platform when running <a target="_blank" href="https://developer.nvidia.com/cuda-zone">Nvidia CUDA</a> based apps.
 
-   ## pwd file storage mounts
+   ### pwd file storage mounts
 
 0. To list drives mounted:
 
@@ -442,35 +498,62 @@ sudo install minikube /usr/local/bin
    type <strong>q</strong> to quit out.
 
 
-   ## Folders and variables
 
-0. See where Ubuntu is installed using a Windows system variable
-   referenced using a Windows % wrapper rather than Bash $ prefix:
+   ### VSCode Extensions
 
-   <pre><strong>%localappdata%\lxss\
+9. In VSCode, "Trust and install" extensions Docker (from Microsoft), "Dev Containers", "Kubernetes".
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=mIHprjsSO9o">VIDEO</a>:
+   Run and debug your Linux-based applications from within VSCode in Windows. Edit files in WSL or the mounted Windows filesystem (/mnt/c) without worrying about pathing issues, binary compatibility, or other cross-OS challenges.
+
+10. Install <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Visual Studio Code Remote — WSL extension at https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl</a>
+
+<hr />
+
+## FAQ
+
+1. Read the <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/faq">FAQ</a> for known weirdness.
+
+   Bugs with WSL are reported to developers at <a target="_blank" href="https://github.com/microsoft/WSL">https://github.com/microsoft/WSL</a>
+
+   https://docs.microsoft.com/en-us/windows/wsl/troubleshooting
+
+
+   ## Video Tutorials
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/docker-windows-getting-started-2021/table-of-contents">16 Nov 2021 "Getting Started with Docker on Windows"</a> 5h41m by Wes Higbee
+
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/managing-docker-windows-servers/table-of-contents">3 Feb 2021 "Managing Docker on Windows Servers"</a> 1h17m by Piotr Gaczkowski referencing his <a target="_blank" href="https://github.com/DoomHammer/pluralsight-managing-docker-on-windows-servers">github.com/DoomHammer/pluralsight-managing-docker-on-windows-servers</a> for each tutorial module.
+
+1. Create a new container:
+
+   <pre><strong>docker run -v ${PWD}:C:\app --workdir /app mcr.microsoft.com/dotnet/core/sdk:3.1 dotnet new mvc --auth Individual
    </strong></pre>
 
-   Note the directory is marked as a hidden system folder.
-   That's a clue that you should not modify files in your bash environment using Windows File Explorer, console, or apps.
+1. The <strong>Dockerignore</strong> file contains names of files and folders that won't be in container images, such as:
 
-   Creating and/or modifying files in this location using Windows tools and apps corrupts the system because it is read-locked. <a target="_blank" href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/">Here is an explanation</a>.
-    
-
-   ## Homebrew
-
-1. Install the LinuxBrew fork of Homebrew for macOS<a target="_blank" href="https://medium.com/@edwardbaeg9/using-homebrew-on-windows-10-with-windows-subsystem-for-linux-wsl-c7f1792f88b3">*</a>
-
-   "I found some apps that didn’t work well from apt-get worked flawlessly when installed with brew, like zplug. Inversely, I couldn’t get ranger to work with brew but got it working with apt-get. This very conveniently gives you multiple options for installing a package, potentially skipping the step of Googling vague errors. 
-   
-   To fix the patchelf error:
-
-   <pre>sudo apt-get update
-   sudo apt-get install build-essential
+   <pre>bin
+   obj
    </pre>
 
-   ## Docker
+1. The <a target="_blank" href="https://github.com/search?q=repo%3ADoomHammer%2Fpluralsight-managing-docker-on-windows-servers%20dockerfile&type=code">Dockerfile in each tutorial module</a> defines the various base images from the Azure MCR.
 
-1. TODO: Use brew to install Docker Desktop Edge, in Technical Preview as of this writing.
+   ### Docker Enterprise Components
+
+1. <a target="_blank" href="https://app.pluralsight.com/course-player?clipId=d0abd475-57b3-471c-963f-8fe8d9ccee08">VIDEO</a>: Enterprise licenses:
+
+   What was previously "Docker Engine" <a target="_blank" href="https://thenewstack.io/mirantis-acquires-docker-enterprise/">(and Docker's 30% pentration into the Fortune 500) was purchased Nov, 2019 by Mirantis</a> (the cloud consulting company with OpenStack roots). So it is now the <a target="_blank" href="https://docs.mirantis.com/mcr/20.10/overview.html">Mirantis Container Runtime</a>.
+
+   https://github.com/Mirantis/cri-dockerd#build-and-install
+
+   Docker's "Universal Control Plane" is now Mirantis Kubenetes Engine (MKE), which provides RBAC & LDAP for centralized cluster management.
+
+   Docker's "Trusted Registry" is now the Mirantis Secure Registry running MKE, hosting containers as a Linux server. It performs security scanning of image files.
+
+
+   ## Docker Edge
+
+2. TODO: Use brew to install Docker Desktop Edge, in Technical Preview as of this writing.
 
    <img width="320" alt="bash-windows-docker" src="https://user-images.githubusercontent.com/300046/72780943-5817fe00-3bdd-11ea-98cc-d42b3094a235.png">
 
@@ -479,31 +562,10 @@ sudo install minikube /usr/local/bin
    Sean Dearnaley <a target="_blank" href="https://medium.com/swlh/wsl-2-docker-edge-tech-preview-native-linux-containers-w-o-emulation-b41667e6dbef">provides pointers</a>.
    It now supports Kubernetes, offers VPN-friendly networking, provides an updated Docker daemon, and many new features.
 
-   ## Visual Studio Code
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=mIHprjsSO9o">VIDEO</a>:
-   Run and debug your Linux-based applications from within VSCode in Windows. Edit files in WSL or the mounted Windows filesystem (/mnt/c) without worrying about pathing issues, binary compatibility, or other cross-OS challenges.
+<hr />
 
-1. Install <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">
-   Visual Studio Code Remote — WSL extension at https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl</a>
-
-   ## Git
-
-1. TODO: Use brew to install additional utilities: git, Python/pip, tree, jq, etc.
-
-   https://medium.com/swlh/wsl-2-docker-edge-tech-preview-native-linux-containers-w-o-emulation-b41667e6dbef
-
-1. Use pip to install Virtualenv.
-
-1. Install keyboard aliases to use custom commands:
-
-   TODO: git-utilities
-
-
-   <a target="_blank" href="https://blog.henrypoon.com/blog/2017/06/18/running-selenium-webdriver-on-bash-for-windows/">
-   NOTE</a>: To run Python for Selenium controlling Firefox, install Xming with gekoDriver.
-
-   ## VHD size adjustment
+## VHD size adjustment
 
    WSL 2 stores Linux files inside of a VHD (Virtual Hard Disk) using the ext4 file system. VHD has an initial max size of 256GB. If your distro grows beyond that you will see errors stating that you've run out of disk space. <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/wsl2-ux-changes">To expand VHD size</a>:
 
@@ -521,7 +583,7 @@ sudo install minikube /usr/local/bin
 
    <pre><strong>%LOCALAPPDATA%\Packages\<em>PackageFamilyName</em>\LocalState\<em>disk</em>.vhdx</strong></pre>
 
-   ### Resize your WSL 2 VHD:
+### Resize your WSL 2 VHD:
 
 1. Open a command prompt Window with admin privileges and run the following commands:
    
@@ -548,6 +610,24 @@ sudo install minikube /usr/local/bin
 1. You may need to use: 
 
    <pre><strong>apt install resize2fs</strong></pre>
+
+
+<hr />
+
+## Akash Network
+
+All of the above is getting ready for preparing your machine to generate revenue as <strong>provider clusters</strong> used by others on the Akash.cloud network. Akash leases are deployed via Kubernetes pods.
+
+The <a target="_blank" href="https://docs.akash.network/providers/community-solutions/praetor">
+Praetor application</a> from Akash builds an Akash Provider for small and medium sized environments.
+
+The <a target="_blank" href="https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers">steps</a> to build the provider’s Kubernetes control plane and worker nodes:
+
+
+
+
+
+<hr />
 
 ## References
 
