@@ -654,7 +654,7 @@ References:
    * https://www.densify.com/kubernetes-tools/kubespray
    * https://adamtheautomator.com/kubespray/
    * https://schoolofdevops.github.io/ultimate-kubernetes-bootcamp/cluster_setup_kubespray/
-   * https://slateci.io/docs/cluster/automated/install-kubernetes-with-kubespray.html
+   * https://slateci.io/docs/cluster/automated/install-kubernetes-with-kubespray.html including metalLB
    <br /><br />
 
 <a target="_blank" href="https://www.youtube.com/watch?v=CJ5G4GpqDy0">VIDEO</a>: "Deploying kubernetes using Kubespray" by Remko Deenik showing <a target="_blank" href="https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers">Steps</a> to build the provider’s Kubernetes control plane and worker nodes:
@@ -739,17 +739,17 @@ References:
    <pre><strong>CONFIG_FILE=inventory/mycluster/hosts.yml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
    </strong></pre>
 
-3. Review the configuration settings:
+3. Review Kubespray configuration settings:
 
    <pre><strong>vi inventory/mycluster/group_vars/all/all.yml
    </strong></pre>
 
-3. Review the configuration settings:
+3. Review Kubernetes configuration settings:
 
    <pre><strong>vi inventory/mycluster/group_vars/k8s-cluster/k8s-cluster.yml
    </strong></pre>
 
-4. Deploy the cluster, using the cluster.yml playbook and the mycluster inventory file:
+4. Deploy the cluster using the cluster.yml playbook and the mycluster inventory file:
 
    <pre><strong>ansible-playbook -i inventory/mycluster/hosts.yml cluster.yml \
    --become --become-user=root cluster.yml
@@ -757,9 +757,9 @@ References:
 
    The above took an hour to spit out a lot.
 
-5. Download kubectl:
+5. Download latest kubectl:
 
-   <pre><strong>???
+   <pre><strong>curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
    </strong></pre>
    
 5. Use SSH to get files:
