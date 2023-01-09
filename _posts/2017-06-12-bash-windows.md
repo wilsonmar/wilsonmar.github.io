@@ -657,7 +657,7 @@ References:
    * https://slateci.io/docs/cluster/automated/install-kubernetes-with-kubespray.html including metalLB
    <br /><br />
 
-<a target="_blank" href="https://www.youtube.com/watch?v=CJ5G4GpqDy0">VIDEO</a>: "Deploying kubernetes using Kubespray" by Remko Deenik showing <a target="_blank" href="https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers">Steps</a> to build the provider’s Kubernetes control plane and worker nodes:
+<a target="_blank" href="https://www.youtube.com/watch?v=CJ5G4GpqDy0">VIDEO</a>: "Deploying kubernetes using Kubespray" by Remko Deenik <a target="_blank" href="https://adamtheautomator.com/kubespray/">illustrating</a> <a target="_blank" href="https://docs.akash.network/providers/build-a-cloud-provider/kubernetes-cluster-for-akash-providers">Steps</a> to build the provider’s Kubernetes control plane and worker nodes:
 
 1. Install Ansible on Ubuntu:
    
@@ -665,7 +665,7 @@ References:
    sudo apt-get install ansible
    </strong></pre>
 
-2. Install Python:
+2. Install Python: QUESTION: Virtualvenv?
    
    <pre><strong>sudo pip3 install --upgrade pip
    sudo apt-get install ansible
