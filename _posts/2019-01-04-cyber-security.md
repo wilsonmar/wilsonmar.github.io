@@ -2554,10 +2554,13 @@ https://h-isac.org/health-industry-cybersecurity-practices/  = Video & PDF of pr
 https://h-isac.org/wp-content/uploads/2019/09/405-vol1-508.pdf
 ISAC Certified Basics in Information Security (ICBIS) Course.
 
-
 CISC (Cyber Intelligence Sharing Center)
 
 https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
+
+https://podcasts.apple.com/us/podcast/hard-fork/id1528594034
+by the New York Times reporters talking about TikTok's Spying, ChatGPT
+
 
 ## More on Security #
 
