@@ -1,0 +1,216 @@
+---
+layout: post
+date: "2023-01-13"
+file: "dotnet-dev"
+title: ".Net Development"
+excerpt: "Code C# using Visual Studio to run Azure Functions and cross-platform apps on ASP.NET within the Microsoft ecosystem"
+tags: [vault, hashicorp, security, microsoft]
+image:
+# pic secret finger over mouth 1900x500
+  feature: https://cloud.githubusercontent.com/assets/300046/15807549/645e9404-2b1e-11e6-8e19-2368c5578015.jpg
+  credit: Forbes
+  creditlink: http://blogs-images.forbes.com/ricksmith/files/2014/11/secret.png
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
+
+The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you create with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
+
+{% include whatever.html %}
+
+## Build a complete stack now
+
+Anyone with an Azure account and internet access can create a production-worthy, scalable and resilient enterprise stack, thanks to Infrastructure as Code (HashiCorp Terraform templates) and other automation.
+
+<a href="#OnaMac">A. Build using a Mac laptop<br />
+B. Build in the Azure cloud from any laptop<br />
+C. Build on a Windows machine
+
+Let's install so concepts can be shown practically.
+
+<hr />
+
+## All the pieces
+
+A job description for a "Microsoft full stack developer" mentions uses dozens of technologies.
+Here is the order I recommend:
+
+1. .NET is the ecosystem based on the
+2. CLR (Common Language Runtime) equivalent to the JVM (Java Virtual Machine) that runs what was created by a compiler
+3. Nuget is the repository of packages online (equivalent to NPM, Maven, PyPi, etc.)
+4. <a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-7.0">ASP.NET Core</a> is for web development using the MVC (Model-View-Controller) programming pattern (equivalent to Node.Js)
+5. .NET Framework only runs on Windows
+6. .NET Core is cross-platform (on Linux, Mac, Windows)
+7. .NET Core SDK (Software Development Kit) are libraries referenced by programming languages
+
+8. Visual Studio Code is the free text editor (with lots of add-ons)
+9. Visual Studio 2022 for Windows is the licen$ed editor with powerful debugging features (runs only on Windows machines)
+10. C# (C-sharp) is the programming language
+11. F# (F-sharp)
+12. PowerShell CLI (equivalent to Bash Shell on Linux)
+  
+13. .NET MAUI to build apps running on iPhone and Android mobile devices
+14. Razor provides templating in code (equivalent to handle bars)
+15. Blazor to build user interface components run in internet browsers WebAssembly for near-native performance [<a target="_blank" href="https://www.youtube.com/watch?v=QKr1HPq6YlI">course</a>]
+16. Silverlight deprecated?
+17. EF Core (Enterprise Framework)
+18. SignalR to code real-time RPC (Remote Procedure Calls) using HTTP/2 protocol
+19. gRPC in ASP.NET Core to develop contract-first, high-performance web services
+20. Dapr (Distributed Application Runtime) apps are cloud-native event-driven, portable runtimes that can run within Kubernetes on most clouds
+
+21. MS-SQL is the database from Microsoft that runs on many platforms
+22. Azure Cosmos DB runs on the Azure cloud
+23. LINQ to query and manipulate data within databases (add-on to SQL language)
+<br /><br />
+
+Additionally, there are DevOps utilities created and managed by a platform team:
+
+* IAM for MFA and SSO
+* Secrets management (HashiCorp Vault)
+* Network management (Load Balancers, Gateways)
+* Git and GitHub
+* CI/CD
+* Code vulnerability scanners (SonarQube, etc.)
+  
+* Backup and restore
+* Kubernetes and Istio Service Mesh
+* Health checks
+* Monitoring and Observability
+* etc.
+<br /><br />
+
+
+
+<a name="OnaMac"></a>
+
+## A. Build using a Mac laptop
+
+https://www.youtube.com/watch?v=bEfBfBQq7EE
+
+1. Open a Terminal on your Mac
+2. Install VSCode
+3. Install .NET Core
+4. <a href="#dotnet_info">Use dotnet info CLI command</a>
+
+<hr />
+
+## Install .NET Core
+
+
+
+
+<a name="dotnet_info"></a>
+
+## dotnet info CLI commands
+
+Regardless of what environment:
+
+1. Get environment metadata:
+
+   <pre>dotnet --info</pre>
+
+   REMEMBER: Different version of .NET can run side-by-side within the same server.
+
+   ### .NET Release Schedule
+
+   Microsoft has planned the versioning and dates of .NET releases years in advance, for a cadence of one a year:
+
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1673564069/dotnet-versions-1154x227_gxzce1.jpg"><img alt="dotnet-versions-1154x227.jpg" width="1154" height="227" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1673564069/dotnet-versions-1154x227_gxzce1.jpg"></a>
+
+   * "LTS" (Long Term Support) releases are even numbered.
+   <br /><br />
+
+1. List specific dates for release availability and End of support (End of life).
+   
+   https://dotnet.microsoft.com/download/dotnet.core
+   
+
+## ASP.NET Core
+
+ASP.NET Core is a complete rewrite of the previous ASP.NET framework.
+
+ASP.NET Core is used for developing cloud-based such as web applications, mobile applications, and IoT applications.
+
+1. 
+
+   <pre>dotnet new</pre>
+
+<hr />
+
+
+
+## Thank you, Mark J. Price
+
+The most useful websites to code using the Microsoft stack:
+   * https://github.com/markjprice/cs11dotnet7
+   * https://github.com/markjprice/apps-services-net7
+   <br /><br />
+
+From <a target="_blank" href="https://www.linkedin.com/in/markjamesprice/">Mark J. Price</a>:
+"C# 11 and .NET 7 – Modern Cross-Platform Development Fundamentals: Start building websites and services with ASP.NET Core 7, Blazor, and EF Core 7, 7th Edition" published Nov 2022 by Packt.
+
+   * No additional cost if you have an OReilly.com subscription for <a target="_blank" href="https://learning.oreilly.com/library/view/c-11-and/9781803237800/">reading the 818 pages online</a>
+   * $5 for PDF during <a target="_blank" href="https://www.packtpub.com/product/c-11-and-net-7-modern-cross-platform-development-fundamentals-seventh-edition/9781803237800">Packt's January 2023 winter sale</a>
+   * <a target="_blank" href="https://www.amazon.com/11-NET-Cross-Platform-Development-Fundamentals/dp/1803237805/">$50 paperback from Amazon</a>
+   * <a target="_blank" href="https://www.goodreads.com/en/book/show/63259355-c-11-and-net-7-modern-cross-platform-development-fundamentals">Comments on GoodReads.com</a>
+   <br /><br />
+
+### C# 9
+
+14:00 into https://www.youtube.com/watch?v=bEfBfBQq7EE
+
+
+
+<hr />
+
+## News: Keep Up!
+
+https://github.com/dotnet-architecture/News
+A. News on .NET Architecture Guidance published at http://dot.net/architecture
+B. News on reference applications like:
+
+    * eShopOnContainers: https://github.com/dotnet-architecture/eShopOnContainers
+    * eShopModernizing: https://github.com/dotnet-architecture/eShopModernizing
+    * eShopOnWeb: https://github.com/dotnet-architecture/eShopOnWeb
+    * eShopUWP: https://github.com/dotnet-architecture/eShopOnUWP
+    * eShopOnContainersAI: https://github.com/dotnet-architecture/eShopOnContainersAI
+    * Other samples under https://github.com/dotnet-architecture
+    <br /><br />
+
+ 
+## eShopOnWeb sample app
+
+https://aka.ms/MicroservicesEbook
+NET-Microservices-Architecture-for-Containerized-NET-Applications-(Microsoft-eBook).pdf
+
+https://github.com/dotnet-architecture/eShopOnWeb
+
+https://github.com/dotnet-architecture/eShopOnContainers
+	https://aka.ms/microservicesarchitecture
+
+This reference application is meant to support the free
+
+https://github.com/dotnet-architecture/eShopOnWeb/wiki/Getting-Started-for-Beginners
+ .PDF download ebook: Architecting Modern Web Applications with ASP.NET Core and Azure
+also https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/index
+
+    Installing Visual Studio 2019
+    Creating an ASP.NET Core Web App
+    Working with data using EF Core
+    Exposing a Web API
+    Deploying and hosting the app in Azure
+
+
+https://dotnet.microsoft.com/download/thank-you/aspnet-ebook
+Architecting Modern Web Applications with ASP.NET Core and Azure.pdf
+by Steve "ardalis" Smith
+
+
+
+## Secrets
+
+https://wilsonmar.github.io/hello-vault
+https://github.com/hashicorp/hello-vault-dotnet
+

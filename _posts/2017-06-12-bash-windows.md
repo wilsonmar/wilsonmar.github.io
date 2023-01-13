@@ -16,6 +16,8 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
+
 June 2017 was the first "beta" release of Microsoft's WSL (Windows Subsystem for Linux).
 
 Around May 2019, Microsoft released <a target="_blank" href="https://docs.microsoft.com/en-us/windows/wsl/wsl2-about">WSL2</a> (version 2). 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-20"
+date: "2023-01-12"
 file: "text-editors"
 title: "Text Editors (on the Mac)"
 excerpt: "nano, pico, vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
@@ -62,7 +62,7 @@ Free to start, then pop-ups asking for money:
 ## Licensed IDEs :
 
    * IntelliJ for Java, WebStorm and PhpStorm, $200 PyCharm for Python. All from JetBrains
-   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a> (ported from Visual Studio, which is licensed) for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a> and Unity apps in the C# language
+   * <a href="#VisualStudioForMac">Visual Studio 2019 for Mac from Microsoft</a>, ported from Visual Studio (for Windows), for developing <a target="_blank" href="https://wilsonmar.github.io/xamarion/">Xamarin</a>, MAUI, and Unity (3D) apps in the C# language
    * $49.99 <a target="_blank" href="https://www.barebones.com/products/bbedit/">BBEdit</a> has a 30-day evaluation period.
    * <a target="_blank" href="https://www.activestate.com/products/komodo-ide/">multi-platform Komodo IDE</a> since 2018 is "free" as is part of an ActiveState Platform subscription. Its plug-ins are based on Mozilla add-ons such as a DOM Inspector.
 
@@ -1231,7 +1231,7 @@ complete
 
 ## Visual Studio for Mac #
 
-0. If you type "https://visualstudio.com" (the previous URL) you are redirected to:
+1. If you type "https://visualstudio.com" (the previous URL) you are redirected to:
    <a target="_blank" href="https://visualstudio.microsoft.com/">https://visualstudio.microsoft.com</a>
 
    * "Visual Studio Code" is free software for both Windows and Macs. It is used to develop code in NodeJs, Python, SQL, etc.
@@ -1250,6 +1250,11 @@ complete
 
    * <a target="_blank" href="https://visualstudio.microsoft.com/vs/enterprise/">Visual Studio for Mac -- Enterprise Edition"</a> costs $250/month but $150/month Azure credit. <a target="_blank" href="https://visualstudio.microsoft.com/vs/compare/">Enterprise Edition adds</a> Power BI Pro, Live Dependency Validation, Snapshot Debugger, Time Travel Debugging, Fakes, Code Coverage, IntelliTest, IntelliTrace, Code Map Debugger Integration,  .NET Memory Dump Analysis, Xamarin Inspector, Xamarin Profiler</a>.
    <br /><br />
+
+   See https://www.youtube.com/visualstudio
+
+   
+   <a name="VS_Ent"></a>
 
    ### Enterprise features
 

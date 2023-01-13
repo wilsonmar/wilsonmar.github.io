@@ -20,6 +20,8 @@ HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (at vaul
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
+{% include whatever.html %}
+
 ## This tutorial
 
    1. Cloud Providers
@@ -3180,6 +3182,8 @@ https://holdmybeersecurity.com/2020/11/24/integrating-vault-secrets-into-jupyter
 
 ### Vault CLI Katakoda hands-on lab
 
+<a target="_blank" href="https://medium.com/itnext/katacoda-to-killercoda-migration-guide-d21961fc0c9b">
+Migrated to Killercoda</a>?
 The hands-on Katakoda lab <a target="_blank" href="https://katacoda.com/courses/docker-security/vault-secrets">Store Secrets using HashiCorp Vault</a>  makes use of a <tt>vault.hcl</tt> file:
 
 <pre>backend "consul" {
