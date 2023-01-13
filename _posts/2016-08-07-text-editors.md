@@ -1094,7 +1094,7 @@ Videos:
 from IntelliJ IDEA
    <br /><br />
 
-
+https://www.jetbrains.com/rider/ is the .NET IDE
 
 ### IntelliJ Control Key Shortcuts
 
@@ -1253,7 +1253,7 @@ complete
 
    See https://www.youtube.com/visualstudio
 
-   
+
    <a name="VS_Ent"></a>
 
    ### Enterprise features
