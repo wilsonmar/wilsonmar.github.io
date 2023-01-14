@@ -51,7 +51,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    </td><td>* <a href="#DP-900">DP-900 Azure Data Fundamentals</a><br />
    * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
    * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
-   * <a target="_blank" href="https://wilsonmar.github.io/azure-data">DP-300 Azure Database Administrator Associate</a>><br />
+   * <a target="_blank" href="https://wilsonmar.github.io/azure-data">DP-300 Azure Database Administrator Associate</a><br />
    <br />
    * PL-200 Power Platform Functional Consultant<br />
    * PL-400 Power Platform Developer<br />
@@ -73,7 +73,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
-   * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a>
+   * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a><br />
    * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a><br />
    </td></tr>
 </table>
@@ -734,10 +734,12 @@ https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect
 <br /><br />
 
 References:
-* <a target="_blank" href="https://www.youtube.com/watch?v=q85FTkSpR1E" title="by kiran-kumar-nr-1292054">VIDEO</a>: <a target="_blank" href="https://aka.ms/MCRA/">aka.ms/MCRA</a> => <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft Cybersecurity Reference Architectures (MCRA)</a> <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">PPTX</a>
+* <a target="_blank" href="https://www.youtube.com/watch?v=q85FTkSpR1E" title="by kiran-kumar-nr-1292054">VIDEO</a>: <a target="_blank" href="https://aka.ms/MCRA/">aka.ms/MCRA</a> => <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft Cybersecurity Reference Architectures (MCRA)</a> <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">PPTX</a> by Mark Simos [<a target="_blank" href="https://github.com/MarkSimos/MicrosoftSecurity/">GitHub</a>]
 * Secure Access Service Edge (SASE)
 * Cloud Adoption Framework (CAF)
 * Microsoft Defender for Cloud
+  
+* <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/(U)ZT_RA_v2.0(U)_Sep22.pdf">Department of Defense (DoD) Zero Trust Reference Architecture Version 2.0 July 2022</a>
 <br /><br />
 
 <hr />
