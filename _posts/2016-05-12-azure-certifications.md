@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Azure (Microsoft's cloud) certifications"
-excerpt: "Collect them all! Microsoft provides free hands-on (gamified) tutorials and free time"
-tags: [cloud]
-date: "2021-02-22"
+date: "2023-01-12"
 file: "azure-certifications"
+title: "Azure (Microsoft's cloud) certifications"
+excerpt: "Microsoft provides free hands-on (gamified) tutorials and free time"
+tags: [cloud]
 image:
 # azure ms logo wait 1900x500-39kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
@@ -42,7 +42,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
 <tr valign="top"><td> AI Engineer
    </td><td>* <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-900">AI-900 AI Fundamentals</a><br />
-     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a>
+     * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-100">AI-100 Azure AI Engineer Associate</a><br />
      * <a target="_blank" href="https://wilsonmar.github.io/microsoft-ai#AI-102">AI-102 Azure AI Engineer</a><br />
      * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a>
    </td></tr>
@@ -70,10 +70,11 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
 
 <tr valign="top"><td> Security Engineer
    </td><td>* <a href="#SC-900">SC-900 Security, Compliance, and Identity Fundamentals</a><br />
-    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
-    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
-    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
-    * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a></a>
+   * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
+   * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
+   * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
+   * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a>
+   * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a><br />
    </td></tr>
 </table>
 
@@ -536,7 +537,7 @@ See <a target="_blank" href="https://wilsonmar.github.io/security-certifications
 ### SC-900 Security
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-900">
-SC-900</a> (in beta) takes 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
+SC-900</a> takes 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
 Includes M365 Defender and Compliance Center.
 
 Domains:
@@ -550,6 +551,7 @@ Videos:
 
    * aka.ms/az500labs
    https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
+
 
 
 
@@ -688,6 +690,55 @@ https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection
 
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
+
+
+<a name="SC-100"></a>
+
+### SC-100 Microsoft Cybersecurity Architect 
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-100">
+SC-100</a> takes 60 minutes to answer 50 single-line mulitple-choice questions about features (not configuration).
+Includes M365 Defender and Compliance Center, so
+<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/cybersecurity-architect-expert/">first earn</a> ONE of <a href="#SC-200">SC-200</a>, <a href="#SC-300">SC-300</a>, <a href="#AZ-500">AZ-500</a>, or <a href="#MS-500">MS-500</a>.
+
+The Microsoft cybersecurity architect has subject matter expertise in designing and evolving the cybersecurity strategy to protect an organization's mission and business processes across all aspects of the enterprise architecture. The cybersecurity architect designs a Zero Trust strategy and architecture, including security strategies for data, applications, access management, identity, and infrastructure. The cybersecurity architect also evaluates Governance Risk Compliance (GRC) technical strategies and security operations strategies.
+
+The cybersecurity architect continuously collaborates with leaders and practitioners in IT security, privacy, and other roles across an organization to plan and implement a cybersecurity strategy that meets the business needs of an organization.
+
+A candidate for this exam should have advanced experience and knowledge in a wide range of security engineering areas including identity and access, platform protection, security operations, securing data and securing applications. They should also have experience with hybrid and cloud implementations.
+
+<a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWVbXN">PDF</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/sc-100-design-zero-trust-strategy-architecture/">Free tutorials</a>:
+* Design a Zero Trust strategy and architecture</a> (30–35%)
+* Evaluate Governance Risk Compliance (GRC) technical strategies and security operations
+strategies (10–15%)
+* Design security for infrastructure (10–15%)
+* Design a strategy for data and applications (15–20%)
+* Recommend security best practices and priorities (20–25%)
+<br /><br />
+
+https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect
+
+* Case study introduction (Tailwind Traders)
+* Build overall security strategy (MCRA for MFA)
+* Design security operations strategy
+* Design identity security strategy
+  
+* Evaluate a regulatory compliance strategy
+* Evaluate security posture and recommend technical strategies
+  
+* Understand architecture best practices
+* Design a strategy for securing server and client endpoints
+* Design a strategy for security PaaS, IaaS and SaaS services
+* Specify security requirements for applications
+* Design a strategy for securing data
+<br /><br />
+
+References:
+* <a target="_blank" href="https://www.youtube.com/watch?v=q85FTkSpR1E" title="by kiran-kumar-nr-1292054">VIDEO</a>: <a target="_blank" href="https://aka.ms/MCRA/">aka.ms/MCRA</a> => <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft Cybersecurity Reference Architectures (MCRA)</a> <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">PPTX</a>
+* Secure Access Service Edge (SASE)
+* Cloud Adoption Framework (CAF)
+* Microsoft Defender for Cloud
+<br /><br />
 
 <hr />
 
