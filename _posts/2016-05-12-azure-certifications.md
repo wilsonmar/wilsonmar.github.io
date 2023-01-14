@@ -73,7 +73,7 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * <a href="#SC-200">SC-200 Security Operations Analyst Associate</a><br />
    * <a href="#SC-300">SC-300 Identity and Access Administrator Associate</a><br />
    * <a href="#SC-400">SC-400 Information Protection Administrator</a><br />
-   * <a href="#SC-500">AZ-500 Azure Security Engineer Associate</a><br />
+   * <a href="#AZ-500">AZ-500 Azure Security Engineer Associate</a><br />
    * <a href="#SC-100">SC-100 Microsoft Cybersecurity Architect</a><br />
    </td></tr>
 </table>
@@ -468,7 +468,7 @@ by Tim Warner with <a target="_blank" href="https://www.kaplanlearn.com/educatio
 Ask the Experts: New Microsoft Security Compliance, Identity Training and Certification Portfolio</a> from Ignite March 2021
 
 
-<a name="MS-900"></a>
+<a name="MS-500"></a>
 
 ## MS-500 Microsoft 365 Security Admin
 
@@ -484,7 +484,6 @@ https://vladtalkstech.com/ms-500-study-guide-microsoft-365-security-administrati
 <a target="_blank" href="https://www.udemy.com/course/microsoft-365-security-administration-exam-ms-500/">
 on Udemy: Microsoft 365 Security Administration (Exam MS-500)</a>
 
-
 https://spvlad.com/2OxcZIJ
 Planning and Designing Microsoft 365 Identity Strategy
 
@@ -492,16 +491,17 @@ Planning and Designing Microsoft 365 Identity Strategy
 VIDEO: Protecting Devices and Applications in Microsoft 365</a>
 By Robert McMillen
 
-
 https://github.com/zaalion/oreilly-azure-app-security
 
 https://github.com/MicrosoftLearning/MS-030-Office365Administrator
+
+<hr />
 
 <a name="AZ-400"></a>
 
 ## AZ-400 DevOps Engineer Expert
 
-A pre-requisite is AZ-104 OR AZ-204 to get this Expert certification.
+A pre-requisite is <a href="#AZ-104">AZ-104</a> OR <a href="#AZ-204">AZ-204</a> to get this Expert certification.
 
 https://docs.microsoft.com/en-us/learn/certifications/devops-engineer/
 
@@ -793,6 +793,9 @@ https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
 <a name="AZ-204"></a>
 
 ## AZ-204 Developing Solutions for Microsoft Azure
+
+The 70-xx series of Microsoft Certified Solutions Associate (MCSA), Microsoft Certified Solutions Developer (MCSD), Microsoft Certified Solutions Expert (MCSE) retired on January 31, 2021.
+The 98-xxx series of MTA (Windows Server) exams retired on June 30, 2022.
 
 Pass this one exam to become a "Microsoft Certified: Azure Developer Associate".
 
