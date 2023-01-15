@@ -731,10 +731,58 @@ https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect ha
 1. Design a strategy for security PaaS, IaaS and SaaS services
 1. Specify security requirements for applications
 1. Design a strategy for securing data
+
+1. Best practices with MCRA and MCSB
+1. Secure methodology with CAF
+1. Ransomware strategy
 <br /><br />
 
-References:
-* <a target="_blank" href="https://www.youtube.com/watch?v=q85FTkSpR1E" title="by kiran-kumar-nr-1292054">VIDEO</a>: <a target="_blank" href="https://aka.ms/MCRA/">aka.ms/MCRA</a> => <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft Cybersecurity Reference Architectures (MCRA)</a> <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">PPTX</a> by Mark Simos [<a target="_blank" href="https://github.com/MarkSimos/MicrosoftSecurity/">GitHub</a>]
+<a name="MCRA"></a>
+
+### MCRA
+
+<a target="_blank" href="https://www.youtube.com/watch?v=q85FTkSpR1E" title="by kiran-kumar-nr-1292054">VIDEO</a>: <a target="_blank" href="https://aka.ms/MCRA/">aka.ms/MCRA</a> => <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft Cybersecurity Reference Architectures (MCRA)</a> <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">PPTX</a> by Mark Simos [<a target="_blank" href="https://github.com/MarkSimos/MicrosoftSecurity/">GitHub</a>]
+
+<a name="MCSB"></a>
+
+### MCSB
+
+<a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/blob/master/Azure%20Security%20Benchmark/3.0/azure-security-benchmark-v3.0.xlsx">XLSX file</a> for v1 of the <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">Microsoft Cloud Security Benchmark</a> was released 12/07/2022 to provide prescriptive best practices and recommendations to help improve the security of workloads, data, and services on Azure and multi-cloud environments. 
+
+MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 2022.
+
+"Benchmark" is browed from the CIS Controls Benchmark documents organized into 12 control domains:
+
+1. Network security (NS) - secure and protect networks, including securing virtual networks, establishing private connections, preventing, and mitigating external attacks, and securing DNS.
+
+2. Identity Management (IM) - establish a secure identity and access controls using identity and access management systems, including the use of single sign-on, strong authentications, managed identities (and service principals) for applications, conditional access, and account anomalies monitoring.
+
+3. Privileged Access (PA) - protect privileged access to your tenant and resources, including a range of controls to protect your administrative model, administrative accounts, and privileged access workstations against deliberate and inadvertent risk.
+
+4. Data Protection (DP) - at rest, in transit, and via authorized access mechanisms, including discover, classify, protect, and monitor sensitive data assets using access control, encryption, key management and certificate management.
+
+5. Asset Management (AM) - ensure security visibility and governance over your resources, including recommendations on permissions for security personnel, security access to asset inventory, and managing approvals for services and resources (inventory, track, and correct).
+
+6. Logging and Threat Detection (LT) - detecting threats on cloud, and enabling, collecting, and storing audit logs for cloud services, including enabling detection, investigation, and remediation processes with controls to generate high-quality alerts with native threat detection in cloud services; it also includes collecting logs with a cloud monitoring service, centralizing security analysis with a SIEM, time synchronization, and log retention.
+
+7. Incident Response (IR) - preparation, detection and analysis, containment, and post-incident activities, including using Azure services (such as Microsoft Defender for Cloud and Sentinel) and/or other cloud services to automate the incident response process.
+
+8. Posture and Vulnerability Management (PV) - assessing and improving cloud security posture, including vulnerability scanning, penetration testing and remediation, as well as security configuration tracking, reporting, and correction in cloud resources.
+
+9. Endpoint Security (ES) - detection and response, including use of endpoint detection and response (EDR) and anti-malware service for endpoints in cloud environments.
+
+10. Backup and Recovery (BR) - data and configuration backups at the different service tiers are performed, validated, and protected.
+
+11. DevOps Security (DS) - security engineering and operations in the DevOps processes, including deployment of critical security checks (such as static application security testing, vulnerability management) prior to the deployment phase to ensure the security throughout the DevOps process; it also includes common topics such as threat modeling and software supply security.
+
+12. Governance and Strategy (GS) - ensuring a coherent security strategy and documented governance approach to guide and sustain security assurance, including establishing roles and responsibilities for the different cloud security functions, unified technical strategy, and supporting policies and standards.
+
+
+<a name="ASVS"></a>
+
+ASVS (Application Security Verfication System)
+
+References
 * Secure Access Service Edge (SASE)
 * Cloud Adoption Framework (CAF)
 * Microsoft Defender for Cloud
