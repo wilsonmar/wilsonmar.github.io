@@ -737,6 +737,11 @@ https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect ha
 1. Ransomware strategy
 <br /><br />
 
+
+References
+* Secure Access Service Edge (SASE)
+* Cloud Adoption Framework (CAF)
+
 <a name="MCRA"></a>
 
 ### MCRA
@@ -748,6 +753,8 @@ https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect ha
 ### MCSB
 
 <a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/blob/master/Azure%20Security%20Benchmark/3.0/azure-security-benchmark-v3.0.xlsx">XLSX file</a> for v1 of the <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">Microsoft Cloud Security Benchmark</a> was released 12/07/2022 to provide prescriptive best practices and recommendations to help improve the security of workloads, data, and services on Azure and multi-cloud environments. 
+
+https://learn.microsoft.com/en-us/security/benchmark/azure/overview
 
 MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 2022.
 
@@ -782,11 +789,10 @@ MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 20
 
 ASVS (Application Security Verfication System)
 
-References
-* Secure Access Service Edge (SASE)
-* Cloud Adoption Framework (CAF)
 * Microsoft Defender for Cloud
-  
+* <a target="_blank" href="https://www.pumascan.com/installation/">PumaScan</a> [<a target="_blank" href="https://github.com/pumasecurity/puma-scan">GitHub</a>, <a target="_blank" href="https://pumascan.com/configuration/">Config</a>] - $300 Pro for Visual Studio & VSCode (vsix), $5000 server, $6000 devops
+* Roslyn API
+
 * <a target="_blank" href="https://dodcio.defense.gov/Portals/0/Documents/Library/(U)ZT_RA_v2.0(U)_Sep22.pdf">Department of Defense (DoD) Zero Trust Reference Architecture Version 2.0 July 2022</a>
 <br /><br />
 
@@ -1065,47 +1071,43 @@ detailed by azurebarry.com</a>, who created a <a target="_blank" href="https://a
    <br /><br />
 
 Labs created by Microsoft for its live classes at <a target="_blank" href="https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design">https://github.com/MicrosoftLearning/AZ-304-Microsoft-Azure-Architect-Design</a> :
+1. Module 1 Design a Compute Solution
+1. Module 2 Design a Network Solution
+1. Module 3 Design for Migration
 
-Module 1 Design a Compute Solution
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
+   
+1. Module 4 Design Authentication and Authorization
 
-Module 2 Design a Network Solution
-
-Module 3 Design for Migration
-
-   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_3_Lab.html">3. Migrating Hyper-V VMs to Azure by using Azure Migrate</a>
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a> using PowerShell through a Bastion blade, using Azure AD Premium P2 licensing to integrate an AD DS forest with an Azure AD tenant with Azure AD Connect, all to set conditional access.
    <br /><br />
 
-Module 4 Design Authentication and Authorization
+1. Module 5 Design Governance
 
-   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_4_Lab.html">4. Managing Azure AD Authentication and Authorization</a> using PowerShell through a Bastion blade, using Azure AD Premium P2 licensing to integrate an AD DS forest with an Azure AD tenant with Azure AD Connect, all to set conditional access.
-   <br /><br />
+1. Module 6 Design a Solution for Databases
 
-Module 5 Design Governance
-
-Module 6 Design a Solution for Databases
-
-   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>:
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_6_Lab.html">6. Implementing Azure SQL Database-Based Applications</a>:
    Create Azure SQL Database. Connect to it. Query it using a .NET Core console app behind a firewall.
    <br /><br />
 
-Module 7 Select an Appropriate Storage Account
+1. Module 7 Select an Appropriate Storage Account
 
-Module 8 Design Data Integration
+1. Module 8 Design Data Integration
 
-Module 9 Design a Solution for Logging and Monitoring
+1. Module 9 Design a Solution for Logging and Monitoring
 
-Module 10 Design a Solution for Backup and Recovery
+1. Module 10 Design a Solution for Backup and Recovery
 
-Module 11 Design for High Availability
+1. Module 11 Design for High Availability
 
-Module 12 Design for Cost Optimization
+1. Module 12 Design for Cost Optimization
 
-Module 13 Design an Application Architecture
+1. Module 13 Design an Application Architecture
 
-   * <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_13_Lab_a.html">13. Implement Azure Logic Apps Integration with Azure Event Grid</a> which uses PowerShell to create Resource Groups and Encrypt Passwords.
+   <a target="_blank" href="https://microsoftlearning.github.io/AZ-304-Microsoft-Azure-Architect-Design/Instructions/Labs/Module_13_Lab_a.html">13. Implement Azure Logic Apps Integration with Azure Event Grid</a> which uses PowerShell to create Resource Groups and Encrypt Passwords.
    <br /><br />
 
-Module 14 Design Security for Applications
+1. Module 14 Design Security for Applications
 
 Others courses on AZ-304:
 
