@@ -93,8 +93,9 @@ https://github.com/MicrosoftLearning/AZ-301-MicrosoftAzureArchitectDesign
 
 ## Rebranding to roles
 
-Microsoft has rebranded certification coding of "70-x" series to role-based Azure "AZ-x" series.
-Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retire a long list of exams at a brisk rate</a>:
+The 70-xx series of Microsoft Certified Solutions Associate (MCSA), Microsoft Certified Solutions Developer (MCSD), Microsoft Certified Solutions Expert (MCSE) retired on January 31, 2021.
+The 98-xxx series of MTA (Windows Server) exams retired on June 30, 2022.
+Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/retired-certification-exams">retired</a>:
 
    * 70-532 - Developing Microsoft Azure Solutions
    * 70-533 - Implementing Microsoft Azure Infrastructure Solutions
@@ -104,12 +105,14 @@ Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us
    <br /><br />
 
 
+
 <hr />
 
 ## Training vendors
 
 Among https://docs.microsoft.com/en-us/learn/certifications/partners
 
+* ASP.NET Core Identity Roles
 
 ### Microsoft Learning
 
@@ -760,9 +763,7 @@ References
 
 https://learn.microsoft.com/en-us/security/benchmark/azure/overview
 
-MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 2022.
-
-"Benchmark" is browed from the CIS Controls Benchmark documents organized into 12 control domains:
+MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 2022. "Benchmark" is browed from the CIS Controls Benchmark documents organized into 12 control domains:
 
 1. NS-10 (Network security) - secure and protect networks, including securing virtual networks, establishing private connections, preventing, and mitigating external attacks, and securing DNS.
 
@@ -770,23 +771,23 @@ MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 20
 
 2. IM-9 (Identity Management) - establish a secure identity and access controls using identity and access management systems, including the use of single sign-on, strong authentications, managed identities (and service principals) for applications, conditional access, and account anomalies monitoring.
 
-3. PA-8 (Privileged Access) - protect privileged access to your tenant and resources, including a range of controls to protect your administrative model, administrative accounts, and privileged access workstations against deliberate and inadvertent risk.
+3. PA-8 (Privileged Access) - protect privileged access to tenant and resources, including a range of controls to protect your administrative model, administrative accounts, and privileged access workstations against deliberate and inadvertent risk.
 
-8. PV-7 (Posture and Vulnerability Management) - assessing and improving cloud security posture, including vulnerability scanning, penetration testing and remediation, as well as security configuration tracking, reporting, and correction in cloud resources.
+4. PV-7 (Posture and Vulnerability Management) - assessing and improving cloud security posture, including vulnerability scanning, penetration testing and remediation, as well as security configuration tracking, reporting, and correction in cloud resources.
 
-6. LT-7 (Logging and Threat Detection) - detecting threats on cloud, and enabling, collecting, and storing audit logs for cloud services, including enabling detection, investigation, and remediation processes with controls to generate high-quality alerts with native threat detection in cloud services; it also includes collecting logs with a cloud monitoring service, centralizing security analysis with a SIEM, time synchronization, and log retention.
+5. LT-7 (Logging and Threat Detection) - detecting threats on cloud, and enabling, collecting, and storing audit logs for cloud services, including enabling detection, investigation, and remediation processes with controls to generate high-quality alerts with native threat detection in cloud services; it also includes collecting logs with a cloud monitoring service, centralizing security analysis with a SIEM, time synchronization, and log retention.
 
-5. AM-5 (Asset Management) - ensure security visibility and governance over your resources, including recommendations on permissions for security personnel, security access to asset inventory, and managing approvals for services and resources (inventory, track, and correct).
+6. AM-5 (Asset Management) - ensure security visibility and governance over your resources, including recommendations on permissions for security personnel, security access to asset inventory, and managing approvals for services and resources (inventory, track, and correct).
 
-9. ES-3 (Endpoint Security) - detection and response, including use of endpoint detection and response (EDR) and anti-malware service for endpoints in cloud environments.
+7. ES-3 (Endpoint Security) - detection and response, including use of endpoint detection and response (EDR) and anti-malware service for endpoints in cloud environments.
 
-10. BR-4 (Backup and Recovery) - data and configuration backups at the different service tiers are performed, validated, and protected.
+8.  BR-4 (Backup and Recovery) - data and configuration backups at the different service tiers are performed, validated, and protected.
 
-7. IR-7 (Incident Response) - preparation, detection and analysis, containment, and post-incident activities, including using Azure services (such as Microsoft Defender for Cloud and Sentinel) and/or other cloud services to automate the incident response process.
+9. IR-7 (Incident Response) - preparation, detection and analysis, containment, and post-incident activities, including using Azure services (such as Microsoft Defender for Cloud and Sentinel) and/or other cloud services to automate the incident response process.
 
-11. DS-7 (DevOps Security) - security engineering and operations in the DevOps processes, including deployment of critical security checks (such as static application security testing, vulnerability management) prior to the deployment phase to ensure the security throughout the DevOps process; it also includes common topics such as threat modeling and software supply security.
+10. DS-7 (DevOps Security) - security engineering and operations in the DevOps processes, including deployment of critical security checks (such as static application security testing, vulnerability management) prior to the deployment phase to ensure the security throughout the DevOps process; it also includes common topics such as threat modeling and software supply security.
 
-12. GS-10 (Governance and Strategy) - ensuring a coherent security strategy and documented governance approach to guide and sustain security assurance, including establishing roles and responsibilities for the different cloud security functions, unified technical strategy, and supporting policies and standards.
+11. GS-10 (Governance and Strategy) - ensuring a coherent security strategy and documented governance approach to guide and sustain security assurance, including establishing roles and responsibilities for the different cloud security functions, unified technical strategy, and supporting policies and standards.
 
 
 <a name="ASVS"></a>
@@ -794,6 +795,7 @@ MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 20
 ASVS (Application Security Verfication System)
 
 * Microsoft Defender for Cloud
+  
 * <a target="_blank" href="https://www.pumascan.com/installation/">PumaScan</a> [<a target="_blank" href="https://github.com/pumasecurity/puma-scan">GitHub</a>, <a target="_blank" href="https://pumascan.com/configuration/">Config</a>] - $300 Pro for Visual Studio & VSCode (vsix), $5000 server, $6000 devops
 * Roslyn API
 <br /><br />
@@ -814,6 +816,8 @@ https://github.com/OWASP/ASVS Controls:
 13. API and Web Services
 14. Configuration
 <br /><br />
+
+Prevent IDOR (Insecure Direct Object Reference)
 
 <hr />
 
@@ -866,9 +870,6 @@ https://www.whizlabs.com/learn/course/microsoft-azure-ms-900/
 <a name="AZ-204"></a>
 
 ## AZ-204 Developing Solutions for Microsoft Azure
-
-The 70-xx series of Microsoft Certified Solutions Associate (MCSA), Microsoft Certified Solutions Developer (MCSD), Microsoft Certified Solutions Expert (MCSE) retired on January 31, 2021.
-The 98-xxx series of MTA (Windows Server) exams retired on June 30, 2022.
 
 Pass this one exam to become a "Microsoft Certified: Azure Developer Associate".
 
