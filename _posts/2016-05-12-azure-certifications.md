@@ -718,7 +718,7 @@ strategies (10–15%)
 <br /><br />
 
 https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect has these hands-on labs:
-* Case study introduction (Tailwind Traders)
+\0. Case study introduction (Tailwind Traders)
 1. Build overall security strategy (MCRA for MFA)
 1. Design security operations strategy
 1. Design identity security strategy
