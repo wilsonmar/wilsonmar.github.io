@@ -17,7 +17,7 @@ comments: true
 {% include _toc.html %}
 
 
-PROTIP: <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">Tweet #azurecertified</a> or #MicrosoftCertified when you pass each exam.
+PROTIP: When you pass each exam, Tweet <a target="_blank" href="https://twitter.com/search?q=%23azurecertified&src=typed_query">#azurecertified</a> and/or <a target="_blank" href="https://twitter.com/search?q=%23MicrosoftCertified&src=typed_query">#MicrosoftCertified</a>.
 
 NOTE: Groupings of Microsoft's certifications by roles below, people still take exams based on product:
 
@@ -112,7 +112,6 @@ Microsoft continues to <a target="_blank" href="https://docs.microsoft.com/en-us
 
 Among https://docs.microsoft.com/en-us/learn/certifications/partners
 
-* ASP.NET Core Identity Roles
 
 ### Microsoft Learning
 
@@ -796,9 +795,10 @@ ASVS (Application Security Verfication System)
 
 * Microsoft Defender for Cloud
   
-* <a target="_blank" href="https://www.pumascan.com/installation/">PumaScan</a> [<a target="_blank" href="https://github.com/pumasecurity/puma-scan">GitHub</a>, <a target="_blank" href="https://pumascan.com/configuration/">Config</a>] - $300 Pro for Visual Studio & VSCode (vsix), $5000 server, $6000 devops
-* Roslyn API
-<br /><br />
+<a target="_blank" href="https://www.youtube.com/watch?v=qlRENC3wOj8">VIDEO</a>: <a target="_blank" href="https://www.pumascan.com/installation/">PumaScan</a> [<a target="_blank" href="https://github.com/pumasecurity/puma-scan">GitHub</a>, <a target="_blank" href="https://pumascan.com/configuration/">Config</a>] - $300 Pro for Visual Studio & VSCode (vsix), $5000 server, $6000 devops. Just 55 security rules.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Y8JKVjY-7T0" title="Nov 13, 2016 by Eric Johnson">Roslyn API</a> - .NET Compiler Platform (aka “Roslyn”) exposes a set of code analysis APIs capable of querying the source code
+
 
 https://github.com/OWASP/ASVS Controls: 
 1. Architecture, Design, and Threat Modeling
