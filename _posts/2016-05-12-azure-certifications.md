@@ -554,44 +554,13 @@ Videos:
 
 
 
-<a name="AZ-500"></a>
-
-### AZ-500 Security certification
-
-https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies has these hands-on labs:
-
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md"> Lab 01: Role-Based Access Control </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md"> Lab 02: Azure Policy </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md"> Lab 03: Resource Manager Locks </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md"> Lab 04: MFA, Conditional Access and AAD Identity Protection </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_05_PIM.md"> Lab 05: Azure AD Privileged Identity Management </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md"> Lab 06: Implement Directory Synchronization </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_07_NSGs.md"> Lab 07: Network Security Groups and Application Security Groups </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md"> Lab 08: Azure Firewall </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/LabsLAB_09_ConfiguringandSecuringACRandAKS.MD"> Lab 09: Configuring and Securing ACR and AKS </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_10_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.md"> Lab 10: Key Vault (Implementing Secure Data by setting up Always Encrypted) </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD"> Lab 11: Securing Azure SQL Database </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD"> Lab 12: Service Endpoints and Securing Storage </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_13_Azure Monitor.md"> Lab 13: Azure Monitor </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Security Center.md"> Lab 14: Microsoft Defender for Cloud </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Azure Sentinel.md"> Lab 15: Microsoft Sentinel </a>
-<br /><br />
-
-References:
-   * https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
-   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
-   * https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
-   <br /><br />
-
-<hr />
-
 <a name="SC-200"></a>
 
 ### SC-200
 
-Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst"</a>.
+Taking this one <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/sc-200">SC-200 exam</a> makes you a <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/security-operations-analyst/">Microsoft Security Operations Analyst</a>.
 
-This exam measures your ability to mitigate threats using Microsoft 365 Defender; mitigate threats using Azure Defender; and mitigate threats using Azure Sentinel.
+This exam measures your ability to mitigate threats using Microsoft 365 Defender, Azure Defender, and Azure Sentinel.
 
 <a target="_blank" href="https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst">Class SC-200T00</a> has these hands-on labs:
 
@@ -692,6 +661,38 @@ https://github.com/MicrosoftLearning/SC-400T00A-Microsoft-Information-Protection
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 
 
+
+<a name="AZ-500"></a>
+
+### AZ-500 Security certification
+
+https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies has these hands-on labs:
+
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md"> Lab 01: Role-Based Access Control </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md"> Lab 02: Azure Policy </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md"> Lab 03: Resource Manager Locks </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md"> Lab 04: MFA, Conditional Access and AAD Identity Protection </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_05_PIM.md"> Lab 05: Azure AD Privileged Identity Management </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md"> Lab 06: Implement Directory Synchronization </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_07_NSGs.md"> Lab 07: Network Security Groups and Application Security Groups </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md"> Lab 08: Azure Firewall </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/LabsLAB_09_ConfiguringandSecuringACRandAKS.MD"> Lab 09: Configuring and Securing ACR and AKS </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_10_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.md"> Lab 10: Key Vault (Implementing Secure Data by setting up Always Encrypted) </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD"> Lab 11: Securing Azure SQL Database </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD"> Lab 12: Service Endpoints and Securing Storage </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_13_Azure Monitor.md"> Lab 13: Azure Monitor </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Security Center.md"> Lab 14: Microsoft Defender for Cloud </a>
+1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Azure Sentinel.md"> Lab 15: Microsoft Sentinel </a>
+<br /><br />
+
+References:
+   * https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
+   * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
+   <br /><br />
+
+<hr />
+
 <a name="SC-100"></a>
 
 ### SC-100 Microsoft Cybersecurity Architect 
@@ -708,7 +709,7 @@ The cybersecurity architect continuously collaborates with leaders and practitio
 A candidate for this exam should have advanced experience and knowledge in a wide range of security engineering areas including identity and access, platform protection, security operations, securing data and securing applications. They should also have experience with hybrid and cloud implementations.
 
 <a target="_blank" href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWVbXN">PDF</a>: <a target="_blank" href="https://learn.microsoft.com/en-us/training/paths/sc-100-design-zero-trust-strategy-architecture/">Free tutorials</a>:
-* Design a Zero Trust strategy and architecture</a> (30–35%)
+* Design a Zero Trust strategy and architecture (30–35%)
 * Evaluate Governance Risk Compliance (GRC) technical strategies and security operations
 strategies (10–15%)
 * Design security for infrastructure (10–15%)
@@ -716,21 +717,20 @@ strategies (10–15%)
 * Recommend security best practices and priorities (20–25%)
 <br /><br />
 
-https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect
-
+https://github.com/MicrosoftLearning/SC-100-Microsoft-Cybersecurity-Architect has these hands-on labs:
 * Case study introduction (Tailwind Traders)
-* Build overall security strategy (MCRA for MFA)
-* Design security operations strategy
-* Design identity security strategy
+1. Build overall security strategy (MCRA for MFA)
+1. Design security operations strategy
+1. Design identity security strategy
   
-* Evaluate a regulatory compliance strategy
-* Evaluate security posture and recommend technical strategies
+1. Evaluate a regulatory compliance strategy
+1. Evaluate security posture and recommend technical strategies
   
-* Understand architecture best practices
-* Design a strategy for securing server and client endpoints
-* Design a strategy for security PaaS, IaaS and SaaS services
-* Specify security requirements for applications
-* Design a strategy for securing data
+1. Understand architecture best practices
+1. Design a strategy for securing server and client endpoints
+1. Design a strategy for security PaaS, IaaS and SaaS services
+1. Specify security requirements for applications
+1. Design a strategy for securing data
 <br /><br />
 
 References:
