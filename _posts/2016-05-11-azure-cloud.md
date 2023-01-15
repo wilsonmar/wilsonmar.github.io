@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Azure Cloud"
-excerpt: "Challenger becomes a leader"
-tags: [cloud]
-date: "2016-05-11"
+date: "2023-10-11"
 file: "azure-cloud"
+title: "Azure Cloud"
+excerpt: "The #2 public cloud is a leader as well"
+tags: [cloud]
 image:
 # azure ms logo wait 1900x500-39kb.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/18188069/153fbcca-706c-11e6-983d-0783da57f75c.jpg
@@ -28,6 +28,8 @@ Microsoft's Azure cloud was first announced in 2008 and released in 2010.
 
 ## Why?
 
+ <a target="_blank" href="https://wilsonmar.github.io/cloud-comparisons">My Cloud Comparison article</a> defines the why:
+
 * Money Cost (OpEx vs. CapEx)
 * Time - Speed (Quick provisioning)
 * Global scale
@@ -36,19 +38,6 @@ Microsoft's Azure cloud was first announced in 2008 and released in 2010.
 * Reliability (data backup, disaster recovery, and business continuity easier and less expensive because data can be mirrored at multiple redundant sites on the cloud provider’s network)
 <br /><br />
 
-
-
-## Web services
-
-The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/3-tour-of-azure-services">big picture of Azure services</a>:
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg"><img alt="azure-big-picture-1923x1083-160564.jpg" src="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg">
-<em>Click diagram for full-frame pop-up</em></a><br />
-
-This is missing some new services such as DevOps.
-
-https://docs.microsoft.com/en-us/azure/architecture/icons/
-
-<a target="_blank" href="https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~profile~devprogram_attach&workflowid=devprogram&mkt=en-us">Visual Studio Dev Essentials</a> provides a list of tools and ecosystem.
 
 ## Architectural components #
 
@@ -91,19 +80,133 @@ components for "High Control":
 
 <strong>Azure Stack</strong> runs Azure runs within a private data center.
 
-## Plan
 
-Module:  <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview of the Microsoft Cloud Operating Model</a> covers business, people, and technology strategies to identify where an organization is in the digital transformation journey, identify <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/3-modernization-triggers">triggers</a> and opportunities for cloud migration, and recognize these components needed to develop a digital transformation strategy.
 
-A. Meet business requirements
-B. Assess organization maturity
-C. Strategize business impact
-D. Upgrade business processes
-E. Identify skills gap
-F. Identify migration portfolio
-G. Perform migration
+## Web services
+
+The <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/welcome-to-azure/3-tour-of-azure-services">big picture of Azure services</a>:
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg"><img alt="azure-big-picture-1923x1083-160564.jpg" src="https://user-images.githubusercontent.com/300046/56084247-94683380-5ded-11e9-9ff2-c246e3e9c530.jpg">
+<em>Click diagram for full-frame pop-up</em></a><br />
+
+This is missing some new services such as DevOps.
+
+https://docs.microsoft.com/en-us/azure/architecture/icons/
+
+<a target="_blank" href="https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~profile~devprogram_attach&workflowid=devprogram&mkt=en-us">Visual Studio Dev Essentials</a> provides a list of tools and ecosystem.
+
+
+<hr />
+
+<a name="COM"></a>
+
+## Cloud Operating Model (COM)
+
+<a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/">Overview</a>: Microsoft's Cloud Operating Model covers business, people, and technology strategies to identify where an organization is in the digital transformation journey, identify <a target="_blank" href="https://docs.microsoft.com/en-us/learn/modules/cloud-operating-model/3-modernization-triggers">triggers</a> and opportunities for cloud migration, and recognize these components needed to develop a digital transformation strategy.
+
+A. Meet business requirements<br />
+B. Assess organization maturity<br />
+C. Strategize business impact<br />
+D. Upgrade business processes<br />
+E. Identify skills gap<br />
+F. Identify migration portfolio<br />
+G. Perform migration<br />
 H. Modernize the business
 
+
+<a name="CAF"></a>
+
+## Cloud Adoption Framework (CAF)
+
+Microsoft's CAF is used by Technical Leadership (CISO, CIO) to accelerate each stage of their cloud adoption journey.
+CAF organizes a set of tools, templates, guidance, and narratives - starting from why cloud, what to move, where to move, how to move, how to manage & operate in cloud.
+
+References:
+   * https://medium.com/microsoftazure/what-is-microsoft-cloud-adoption-framework-caf-for-azure-a619bfbedc0e
+   * <a target="_blank" href="https://medium.com/@musunurusharmila/ultimate-guide-for-azure-cloud-adoption-framework-for-enterprise-scale-landing-zone-bba2a385134d">Cloud Adoption Framework enterprise-scale landing zone</a> (CAF ESLZ)
+
+
+
+<a name="MCRA"></a>
+
+### MCRA
+
+<a target="_blank" href="https://www.youtube.com/watch?v=q85FTkSpR1E" title="by kiran-kumar-nr-1292054">VIDEO</a>: <a target="_blank" href="https://aka.ms/MCRA/">aka.ms/MCRA</a> => <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">Microsoft Cybersecurity Reference Architectures (MCRA)</a> <a target="_blank" href="https://learn.microsoft.com/en-us/security/cybersecurity-reference-architecture/mcra">PPTX</a> by Mark Simos [<a target="_blank" href="https://github.com/MarkSimos/MicrosoftSecurity/">GitHub</a>]
+
+
+<a name="MCSB"></a>
+
+### MCSB
+
+v1 of the <a target="_blank" href="https://learn.microsoft.com/en-us/security/benchmark/azure/overview">Microsoft Cloud Security Benchmark</a> was released 12/07/2022 to provide prescriptive best practices and recommendations to help improve the security of workloads, data, and services on Azure and multi-cloud environments. 
+
+https://learn.microsoft.com/en-us/security/benchmark/azure/overview
+
+MCSB succeeds Microsoft's Azure Security Benchmark (ASB) rebranded in October 2022. "Benchmark" is borrowed from the <a target="_blank" href="https://www.cisecurity.org/cis-benchmarks/">Center for Internet Security (CIS) Benchmarks</a>
+
+The <a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks/raw/master/Azure%20Security%20Benchmark/3.0/azure-security-benchmark-v3.0.xlsx">MCSB XLSX (Excel) file</a> is organized into 12 control domains:
+
+1. NS-10 (Network security) - secure and protect networks, including securing virtual networks, establishing private connections, preventing, and mitigating external attacks, and securing DNS.
+
+2. DP-8 (Data Protection) - at rest, in transit, and via authorized access mechanisms, including discover, classify, protect, and monitor sensitive data assets using access control, encryption, key management and certificate management.
+
+3. IM-9 (Identity Management) - establish a secure identity and access controls using identity and access management systems, including the use of single sign-on, strong authentications, managed identities (and service principals) for applications, conditional access, and account anomalies monitoring.
+
+4. PA-8 (Privileged Access) - protect privileged access to tenant and resources, including a range of controls to protect your administrative model, administrative accounts, and privileged access workstations against deliberate and inadvertent risk.
+
+5. PV-7 (Posture and Vulnerability Management) - assessing and improving cloud security posture, including vulnerability scanning, penetration testing and remediation, as well as security configuration tracking, reporting, and correction in cloud resources.
+
+6. LT-7 (Logging and Threat Detection) - detecting threats on cloud, and enabling, collecting, and storing audit logs for cloud services, including enabling detection, investigation, and remediation processes with controls to generate high-quality alerts with native threat detection in cloud services; it also includes collecting logs with a cloud monitoring service, centralizing security analysis with a SIEM, time synchronization, and log retention.
+
+7. AM-5 (Asset Management) - ensure security visibility and governance over your resources, including recommendations on permissions for security personnel, security access to asset inventory, and managing approvals for services and resources (inventory, track, and correct).
+
+8. ES-3 (Endpoint Security) - detection and response, including use of endpoint detection and response (EDR) and anti-malware service for endpoints in cloud environments.
+
+9.  BR-4 (Backup and Recovery) - data and configuration backups at the different service tiers are performed, validated, and protected.
+
+10. IR-7 (Incident Response) - preparation, detection and analysis, containment, and post-incident activities, including using Azure services (such as Microsoft Defender for Cloud and Sentinel) and/or other cloud services to automate the incident response process.
+
+11. DS-7 (DevOps Security) - security engineering and operations in the DevOps processes, including deployment of critical security checks (such as static application security testing, vulnerability management) prior to the deployment phase to ensure the security throughout the DevOps process; it also includes common topics such as threat modeling and software supply security.
+
+12. GS-10 (Governance and Strategy) - ensuring a coherent security strategy and documented governance approach to guide and sustain security assurance, including establishing roles and responsibilities for the different cloud security functions, unified technical strategy, and supporting policies and standards.
+
+
+<a name="ASVS"></a>
+
+ASVS (Application Security Verfication System)
+
+* Microsoft Defender for Cloud
+  
+<a target="_blank" href="https://www.youtube.com/watch?v=qlRENC3wOj8">VIDEO</a>: <a target="_blank" href="https://www.pumascan.com/installation/">PumaScan</a> [<a target="_blank" href="https://github.com/pumasecurity/puma-scan">GitHub</a>, <a target="_blank" href="https://pumascan.com/configuration/">Config</a>] - $300 Pro for Visual Studio & VSCode (vsix), $5000 server, $6000 devops. Just 55 security rules.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Y8JKVjY-7T0" title="Nov 13, 2016 by Eric Johnson">Roslyn API</a> - .NET Compiler Platform (aka “Roslyn”) exposes a set of code analysis APIs capable of querying the source code
+
+
+https://github.com/OWASP/ASVS Controls: 
+1. Architecture, Design, and Threat Modeling
+2. Authentication
+3. Session Management
+4. Access Control
+5. Validation, Sanitization, and Encoding
+6. Stored Cryptography
+7. Error Handling and Logging
+8. Data Protection
+9. Communication
+10. Malicious Code
+11. Business Logic
+12. Files and Resources
+13. API and Web Services
+14. Configuration
+<br /><br />
+
+
+## Terraform
+
+https://blog.devgenius.io/how-to-implement-azure-landing-zone-using-caf-terraform-part-2-4c5a06127d05
+
+
+
+
+<hr />
 
 ## Microsoft Learning Account
 
@@ -167,6 +270,10 @@ Cloud scale analytics:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/56159297-8cd99380-5f81-11e9-8182-0c5199db763f.jpg">
 <img alt="azure-dataw-648x239-10988" width="649" height="239" src="https://user-images.githubusercontent.com/300046/56159297-8cd99380-5f81-11e9-8182-0c5199db763f.jpg"></a>
 
+
+<hr />
+
+TODO: Incorporate into Azure IAM page:
 
 ## Azure account and dashboard
 
