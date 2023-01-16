@@ -174,9 +174,25 @@ The <a target="_blank" href="https://github.com/MicrosoftDocs/SecurityBenchmarks
 
 ASVS (Application Security Verfication System)
 
-* Microsoft Defender for Cloud
-  
+
+## Microsoft Defender for Cloud
+
+https://azure.microsoft.com/services/defender-for-cloud
+
+
+
+## Microsoft Secure Score
+
+<a target="_blank" href="https://www.microsoft.com/en-us/security/business/microsoft-secure-score?rtc=1">Microsoft Secure Score</a>
+
+aka.ms/StoppingRealAttacks
+
+
+## Puma Scan 
+
 <a target="_blank" href="https://www.youtube.com/watch?v=qlRENC3wOj8">VIDEO</a>: <a target="_blank" href="https://www.pumascan.com/installation/">PumaScan</a> [<a target="_blank" href="https://github.com/pumasecurity/puma-scan">GitHub</a>, <a target="_blank" href="https://pumascan.com/configuration/">Config</a>] - $300 Pro for Visual Studio & VSCode (vsix), $5000 server, $6000 devops. Just 55 security rules.
+
+
 
 <a target="_blank" href="https://www.youtube.com/watch?v=Y8JKVjY-7T0" title="Nov 13, 2016 by Eric Johnson">Roslyn API</a> - .NET Compiler Platform (aka “Roslyn”) exposes a set of code analysis APIs capable of querying the source code
 
@@ -198,12 +214,27 @@ https://github.com/OWASP/ASVS Controls:
 14. Configuration
 <br /><br />
 
+<hr />
+
+## Cloud Security Roles
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/organize/cloud-security">https://aka.ms/securityroles</a>
+
+Cloud security functions
+
 
 ## Terraform
 
 https://blog.devgenius.io/how-to-implement-azure-landing-zone-using-caf-terraform-part-2-4c5a06127d05
 
+https://registry.terraform.io/modules/aztfmod/caf/azurerm/latest
+https://github.com/aztfmod/terraform-azurerm-caf
+Terraform supermodule for the CAF Terraform landing zones part of Microsoft Cloud Adoption Framework for Azure.
+It includes the list of all Azure resources definitions you can create within an Azure Landing Zone. Variables are used as configuration input, and the deployment is done accordingly. caf_azurerm also utilizes another module, azurecaf_name, to ensure that the resources all follow the same naming convention. In addition, caf_azurerm has a framework in place for tag inheritance to guarantee that all resources are appropriately marked.
 
+
+https://github.com/Azure/terraform-azurerm-caf-enterprise-scale
+handle Azure at the organizational level. Management groups, subscriptions, access restrictions, policies, policy assignments, roles, and role assignments are all included. Use this module to arrange your Azure cloud resources and permissions and make sure that the necessary security is in place to stop malicious individuals from infiltrating your company.
 
 
 <hr />

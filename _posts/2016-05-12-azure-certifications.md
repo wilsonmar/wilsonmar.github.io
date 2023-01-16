@@ -590,6 +590,7 @@ This exam measures your ability to mitigate threats using Microsoft 365 Defender
 
 https://www.whizlabs.com/learn/course/microsoft-azure-sc-200/
 
+https://www.whizlabs.com/microsoft-security-operations-analyst-sc-200/
 
 <a name="SC-300"></a>
 
@@ -668,23 +669,38 @@ https://www.whizlabs.com/learn/course/microsoft-azure-sc-400/
 
 ### AZ-500 Security certification
 
-https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies has these hands-on labs:
+<a target="_blank" href="https://learn.microsoft.com/en-us/shows/exam-readiness-zone/preparing-for-az-500-manage-identity-and-access-1-of-4" title="by Ken Lawson">VIDEO</a>:
+To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certifications/azure-security-engineer/">Microsoft Certified: Azure Security Engineer Associate</a>, <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/az-500">read modules</a> and pass Microsoft Azure Security Technologies</a> domains:
 
+   <ul>Group 1: Manage identity and access (30-35%)
+   </ul>
+
+<a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies">hands-on labs</a>:
 1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_01_RBAC.md"> Lab 01: Role-Based Access Control </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md"> Lab 02: Azure Policy </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md"> Lab 03: Resource Manager Locks </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md"> Lab 04: MFA, Conditional Access and AAD Identity Protection </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_05_PIM.md"> Lab 05: Azure AD Privileged Identity Management </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md"> Lab 06: Implement Directory Synchronization </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_07_NSGs.md"> Lab 07: Network Security Groups and Application Security Groups </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md"> Lab 08: Azure Firewall </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/LabsLAB_09_ConfiguringandSecuringACRandAKS.MD"> Lab 09: Configuring and Securing ACR and AKS </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_10_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.md"> Lab 10: Key Vault (Implementing Secure Data by setting up Always Encrypted) </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD"> Lab 11: Securing Azure SQL Database </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD"> Lab 12: Service Endpoints and Securing Storage </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_13_Azure Monitor.md"> Lab 13: Azure Monitor </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Security Center.md"> Lab 14: Microsoft Defender for Cloud </a>
-1. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Azure Sentinel.md"> Lab 15: Microsoft Sentinel </a>
+2. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_02_AzurePolicy.md"> Lab 02: Azure Policy </a>
+3. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_03_AzureLocks.md"> Lab 03: Resource Manager Locks </a>
+
+4. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_04_MFAConditionalAccessandAADIdentityProtection.md"> Lab 04: MFA, Conditional Access and AAD Identity Protection </a>
+5. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_05_PIM.md"> Lab 05: Azure AD Privileged Identity Management </a>
+
+   Group 2: Implement platform protection (15-20%)
+
+6. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_06_ImplementDirectorySynchronization.md"> Lab 06: Implement Directory Synchronization </a>
+7. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_07_NSGs.md"> Lab 07: Network Security Groups and Application Security Groups</a>
+
+   Group 3: Manage security operations (25-30%)
+
+8. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_08_AzureFirewall.md"> Lab 08: Azure Firewall </a>
+9. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/LabsLAB_09_ConfiguringandSecuringACRandAKS.MD"> Lab 09: Configuring and Securing ACR and AKS </a>
+10. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_10_KeyVaultImplementingSecureDatabysettingupAlwaysEncrypted.md"> Lab 10: Key Vault (Implementing Secure Data by setting up Always Encrypted)</a>
+
+    Group 4: Secure data and applications (25-30%)
+
+11. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_11_SecuringAzureSQLDatabase.MD"> Lab 11: Securing Azure SQL Database </a>
+12. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_12_SecuringAzureStorage.MD"> Lab 12: Service Endpoints and Securing Storage </a>
+13. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_13_Azure Monitor.md"> Lab 13: Azure Monitor </a>
+14. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_14_Security Center.md"> Lab 14: Microsoft Defender for Cloud </a>
+15. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Azure Sentinel.md"> Lab 15: Microsoft Sentinel </a>
 <br /><br />
 
 References:
@@ -748,6 +764,7 @@ References
 
 
 Prevent IDOR (Insecure Direct Object Reference)
+
 
 <hr />
 
