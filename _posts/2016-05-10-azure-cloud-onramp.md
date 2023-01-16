@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-01-10"
+file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
 tags: [cloud, azure]
-date: "2021-06-10"
-file: "azure-cloud-onramp"
 image:
 # az-logo-2021-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/117658030-7fd70080-b157-11eb-9869-405a4d93ecf5.png
@@ -20,8 +20,9 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
 
 {% include whatever.html %}
 
-## URLs for Microsoft and Azure
+<a name="URLs"></a>
 
+## URLs for Microsoft and Azure
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Usage </th><th> URL (bookmark these) </th><th> Notes </th></tr>
@@ -162,20 +163,19 @@ This is a deep-dive hands-on tutorial with commentary along the way, covering ba
 
 ## PROTIP: Browser Profiles
 
+PROTIP: Setup and use different <strong>browser profiles</strong>, one for each account (email). Why? 
 Azure saves the account you're on in the browser "cookie" so that when you return you'll see the last account used. 
 
 However, if you switch among different accounts on the same browser, that's a hassle.
 
-The solution is to use different <strong>browser profiles</strong>, one for each account (email). 
-
-Click the avatar at the upper-right corner to create a different profile for each Azure account:
+1. To create a different profile for each Azure account, at the upper-right corner, click your avatar picture :
 
    * <a href="#MSAccount">Learn account</a> using your personal email (such as at gmail.com).
    * Account using your Visual Studio benefit (using your work email)
    * Work account to do your job as an Administrator.
    <br /><br />
 
-You'll need to do this for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
+Do this for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
 
 <a name="USGov"></a>
@@ -324,7 +324,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    The Azure Active Directory (AAD) is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. So AAD is also called an "Identity as a Service" (IDaaS). 
 
-   The old AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. These are provided by Azure Active Directory Domain Services (AD DS).
+   The old <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. These are provided by Azure Active Directory Domain Services (AD DS). AD DS uses Kuberos for authentication to Organization Units (OUs) and Group Policies (GPOs) instead of federation.
 
    Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
 
