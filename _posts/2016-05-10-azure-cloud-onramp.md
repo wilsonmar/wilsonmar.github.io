@@ -324,7 +324,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    The Azure Active Directory (AAD) is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. So AAD is also called an "Identity as a Service" (IDaaS). 
 
-   The old <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. These are provided by Azure Active Directory Domain Services (AD DS). AD DS uses Kuberos for authentication to Organization Units (OUs) and Group Policies (GPOs) instead of federation.
+   The old <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. These are provided by Azure Active Directory Domain Services (AD DS). AD DS uses Kuberos for authentication to hierarchical Organization Units (OUs) and Group Policies (GPOs) instead of federation.
 
    Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
 
@@ -2591,8 +2591,8 @@ https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azur
 https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
 
 
-## More on DevOps #
+## More about Azure #
 
-This is one of a series on DevOps:
+This is one of a series about Azure cloud:
 
-{% include devops_links.html %}
+{% include azure_links.html %}
