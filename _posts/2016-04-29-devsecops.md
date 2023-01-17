@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "About DevOps"
-excerpt: "You gotta do it for competitive speed"
-tags: [devops]
 date: "2016-04-29"
 file: "devsecops"
+title: "About DevSecOps"
+excerpt: "You gotta do it for competitive speed AND for improving Security Posture"
+tags: [devops]
 image:
 # feature: pic-brown-horses-running-forward-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14724047/445df2f0-07d1-11e6-9c26-782291fe2b47.jpg

@@ -5315,6 +5315,17 @@ https://github.com/gruberdev/tf-free/issues
 Use Terraform to create cloud-native resources which are free-of-charge on major cloud providers (AWS, Azure, Google).
 
 
+<a target="_blank" href="https://www.linkedin.com/in/robertjordan2/">Robert Jordan</a>, author of <a target="_blank" href="https://learning.oreilly.com/videos/developing-infrastructure-as/9780136608776/">Developing Infrastructure as Code with Terraform LiveLessons</a > discusses module design and unit testing (terratest) in his 
+<a target="_blank" href="https://learning.oreilly.com/live-events/next-level-terraform/0636920082739/0636920082738/">"Next-Level Terraform" live course</a> on OReilly
+<a target="_blank" href="https://github.com/bananalab/Next-Level-Terraform/blob/edb16f1cba145a103aec7f6602e78faa856e0c25/slides/Next-Level-Terraform.pdf">PDF</a>
+references
+https://github.com/bananalab/Next-Level-Terraform
+and
+https://github.com/bananalab/terraform-live-template
+
+In his <a target="_blank" href="https://learning.oreilly.com/live-events/learn-infrastructure-as-code-with-terraform/0636920077731/">Learn Infrastructure as Code with Terraform</a> 
+on Feb 13...
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
