@@ -54,7 +54,8 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data">DP-300 Azure Database Administrator Associate</a><br />
    </td></tr>
 
-<tr valign="top"><td> Power Platform </td><td>
+<tr valign="top"><td> <a href="#Power_Platform">Power Platform</a> </td><td>
+   * PL-900 Power Platform Fundamentals<br />
    * PL-200 Power Platform Functional Consultant<br />
    * PL-400 Power Platform Developer<br />
    * PL-100 Power Platform App-maker<br />
@@ -498,6 +499,43 @@ By Robert McMillen
 https://github.com/zaalion/oreilly-azure-app-security
 
 https://github.com/MicrosoftLearning/MS-030-Office365Administrator
+
+<hr />
+
+<a name="Power_Platform"></a>
+
+## Power Platform certifications
+
+<a name="PL-900"></a>
+As with other fundamentals certifications, it's $99 for
+https://learn.microsoft.com/en-us/certifications/exams/pl-900
+   * Describe the business value of Microsoft Power Platform (20–25%)
+   * Identify the core components of Microsoft Power Platform (10–15%)
+   * Demonstrate the capabilities of Power BI (20–25%)
+   * Demonstrate the capabilities of Power Apps (25–30%)
+   * Demonstrate the capabilities of Power Automate (10–15%)
+   * Demonstrate the capabilities of Power Virtual Agents (1–5%)
+   <br /><br />
+
+$165 for more advanced certs:
+
+<a name="PL-200"></a>
+
+   * https://learn.microsoft.com/en-us/certifications/exams/pl-200 Power Platform Functional Consultant
+
+<a name="PL-400"></a>
+
+   * https://learn.microsoft.com/en-us/certifications/exams/pl-400 Power Platform Developer
+
+<a name="PL-100"></a>
+
+   * https://learn.microsoft.com/en-us/certifications/exams/pl-100 Power Platform App-maker
+
+<a name="PL-600"></a>
+
+   * https://learn.microsoft.com/en-us/certifications/exams/pl-600 Power Platform Solution Architect Expert
+
+<a target="_blank" href="https://ravikirans.com/category/azure-certification/">Ravikiran</a> specializes in sample exams for the above.
 
 <hr />
 
@@ -1311,9 +1349,6 @@ https://mcp.microsoft.com/MCT/Enrollment?wa=wsignin1.0#/profile
 <hr />
 
 ## References
-
-<a target="_blank" href="https://ravikirans.com/category/azure-certification/">
-Ravikiran Azure Certs</a>
 
 <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/345">
 Linux Academy: Azure CLI Esssentials</a>   
