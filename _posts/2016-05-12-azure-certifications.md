@@ -52,7 +52,9 @@ NOTE: Groupings of Microsoft's certifications by roles below, people still take 
    * <a href="#DP-100">DP-100 Azure Data Scientist Associate</a><br />
    * <a href="#DP-203">DP-203 Azure Data Engineer Associate</a> (replaces DP-200 & DP-201)<br />
    * <a target="_blank" href="https://wilsonmar.github.io/azure-data">DP-300 Azure Database Administrator Associate</a><br />
-   <br />
+   </td></tr>
+
+<tr valign="top"><td> Power Platform
    * PL-200 Power Platform Functional Consultant<br />
    * PL-400 Power Platform Developer<br />
    * PL-100 Power Platform App-maker<br />
