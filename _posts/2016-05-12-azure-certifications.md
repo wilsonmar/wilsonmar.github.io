@@ -508,7 +508,7 @@ https://github.com/MicrosoftLearning/MS-030-Office365Administrator
 
 <a name="PL-900"></a>
 As with other fundamentals certifications, it's $99 for
-https://learn.microsoft.com/en-us/certifications/exams/pl-900
+* https://learn.microsoft.com/en-us/certifications/exams/pl-900
    * Describe the business value of Microsoft Power Platform (20–25%)
    * Identify the core components of Microsoft Power Platform (10–15%)
    * Demonstrate the capabilities of Power BI (20–25%)
@@ -517,15 +517,21 @@ https://learn.microsoft.com/en-us/certifications/exams/pl-900
    * Demonstrate the capabilities of Power Virtual Agents (1–5%)
    <br /><br />
 
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lpsre6vWzCc">YouTube: 2 hr "Full Course"</a> by Susanth Sutheesh
+   * <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-power-platform-fundamentals-pl-900">Pluralsight</a>
+   * <a target="_blank" href="https://www.udemy.com/course/pl-900-microsoft-power-platform-fundamentals-r/">8-hour Udemy</a>
+   * <a target="_blank" href="https://www.whizlabs.com/blog/pl-900-exam-preparation-guide/">WhizLabs</a>
+   <br /><br />
+
 $165 for more advanced certs:
 
 <a name="PL-200"></a>
 
-   * https://learn.microsoft.com/en-us/certifications/exams/pl-200 Power Platform Functional Consultant
+* https://learn.microsoft.com/en-us/certifications/exams/pl-200 Power Platform Functional Consultant
 
 <a name="PL-400"></a>
 
-   * https://learn.microsoft.com/en-us/certifications/exams/pl-400 Power Platform Developer
+* https://learn.microsoft.com/en-us/certifications/exams/pl-400 Power Platform Developer
 
 <a name="PL-100"></a>
 
