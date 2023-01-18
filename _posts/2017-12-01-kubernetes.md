@@ -657,6 +657,8 @@ Within Kubernetes are these auto-scaling mechanisms:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"><img alt="Desify" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"></a>
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=5h54dGdF74Y">VIDEO</a>: <a target="_blank" href="https://www.stormforge.io/">Stormforge.io</a> uses Machine Learning to adjust based on experiments conducted in a dev instance.
+  
 * Prometheus Adapter for Kubernetes API? 
 
 <a target="_blank" href="https://learning.oreilly.com/videos/kubernetes-and-cloud/9780137993413/9780137993413-KCN1_04_07_03/">VIDEO</a>: Install the Metrics Server from https://github.com/kubernetes-sigs/metrics-server
