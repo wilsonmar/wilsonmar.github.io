@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2022-11-27"
+date: "2023-01-18"
 file: "design-systems"
 title: "Design Systems"
-excerpt: "Specifications for look and feel by various tech companies"
+excerpt: "Specifications for look and feel by various tech companies, also providing secure UI libraries"
 tags: [API, text to speech, JavaScript, programming]
 image:
 # feature: pic easter island clenched-fist-1900x500
@@ -16,9 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-> "Design systems allow designers to make better decisions"
-
-Behind every major organization creating websites is a "Design System" publication which specifies the UX (User Experience) and provides tools for website designers that UX.
+Major organizations creating websites create a "Design System" publication which specifies the UX (User Experience) and provides tools for website designers to achieve a common UI (User Interface).
 
 {% include whatever.html %}
 
@@ -26,13 +24,16 @@ UX includes more than colors, fonts (typography), icons (iconography), <a href="
 Component blueprints provide examples to code components such as Accordion, Checkbox, etc. in the form of 
 
    * Bootstrap theme file 
-   * React component library
+   * React component library (JavaScript)
    * Custom font files
    * Sketch core library specifying fonts
    * Sketch icon library
    * Sketch Grid library
    * Sketch illustration library
+   * Sample code to use the Design System components to build a website
 	<br /><br />
+
+> Common use of a UI coding (JavaScript, etc.) library makes <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">scanning for security vulnerabilities (such as OWASP)</a> more efficient, so the security of each app's code is "built in" via the libraries used rather than individually tested out of custom code.
 
 To create design systems, many use the <a target="_blank" href="https://tailwindcss.com/docs">Tailwind CSS compiler</a>. It's called an "atomic/utility-first" CSS framework (UI-kit). It's <a target="_blank" href="https://blog.logrocket.com/tailwind-css-is-it-tomorrows-bootstrap-ebe560f9d00b/">best installed via npm</a>.
 For better performance, Tailwind removes unused CSS using PurgeCSS, which can be <a target="_blank" href="https://stevenwestmoreland.com/2021/01/using-tailwind-css-with-jekyll.html">incorporated into Jekyll</a> and <a target="_blank" href="https://www.youtube.com/watch?v=dc-zMDiANvg">themes</a>.
@@ -87,7 +88,7 @@ Same with Figma
 
 ## Design tokens
 
-> "You can think of a design token as a key that unlocks a specific value."
+> "think of a design token as a key that unlocks a specific value."
 
 Tokens are like nicknames for colors, opacity, shadows, etc. See <a target="_blank" href="https://www.youtube.com/watch?v=wtTstdiBuUk">VIDEO "What are Design Tokens"</a>. Alias tokens are diverged Global Tokens made for context-specific purpose, to separate concerns.
 
@@ -104,17 +105,14 @@ USDS defines the "measure" token to standardize line heights:
 * 2 =	60ex
 * 3 =	64ex
 * 4 =	68ex
-* 5 = 	72ex
+* 5 = 72ex
 * 6 =	88ex
 * 'none' =	no max width
 
 
 ## Resources #
 
-The Red Dot Design Award (at <a target="_blank" href="https://www.red-dot.org/">red-dot.org</a>) is a German international design prize awarded by Red Dot GmbH & Co. It is one of the most prestigious design awards worldwide and honors innovation, concepts and visions. 
-
-*  fully
-
+The Red Dot Design Award (at <a target="_blank" href="https://www.red-dot.org/">red-dot.org</a>) is a German international design prize awarded by Red Dot GmbH & Co. It is one of the most prestigious design awards worldwide and honors innovation, concepts and visions.
 
 
 ## More on front-end styling #
