@@ -67,7 +67,7 @@ Google Material Design
 
 Facebook
 
-<a target="_blank" href="https://design-system-components-hashicorp.vercel.app/">HashiCorp's Design System</a>
+<a target="_blank" href="https://helios.hashicorp.design/">https://helios.hashicorp.design</a> is the Design System for constructing HashiCorp.com.
 
 
 
