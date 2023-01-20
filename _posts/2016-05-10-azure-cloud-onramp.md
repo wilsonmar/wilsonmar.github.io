@@ -289,6 +289,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    * (Azure) Administrator
    * (Azure) Developer
    * (Azure) Solution Architect
+
    * Data Engineer
    * AI Engineer
    * Business Analyst
@@ -305,9 +306,9 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 <a name="Arch"></a>
 
-## Enterprise Architecture
+## Access AuthA & AuthN Subscriptions
 
-<a target="_blank" href="#Arch">This pdf</a> is how Azure's various authentication and authorization mechanisms all work together: 
+<a target="_blank" href="#Arch">This pdf</a> is how Azure's various enterprise authentication and authorization mechanisms relate to each other: 
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1674194496/az-ent-auth-arch-1365x1034_shnrvx.jpg"><img alt="az-ent-auth-arch-1365x1034.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674194496/az-ent-auth-arch-1365x1034_shnrvx.jpg"></a>
 
@@ -319,39 +320,53 @@ E. Connectivity subscription<br />
 F. Landing zone subscription<br />
 G. VM templates<br />
 H. Sandbox subscription<br />
-I. DevOps
-
+I. Azure DevOps (vs. GitHub Actions)
 
 <hr />
 
-<a name="AAD"></a>
+## It's confusing
 
-## AAD (Azure Active Directory)
+<a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw&t=24s" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
+AD = Active Directory<br />
+vs.<br />
+AAD = Azure AD = Azure Active Directory<br />
+vs.<br />
+AADC = Azure AD Connect<br />
+vs.<br />
+ADDS = Active Directory DS = Domain Services
 
-1. <a target="_blank" href="https://portal.azure.com">portal.azure.com</a>
+<hr />
 
-1. Press G+\ and type <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">"AAD" for the Azure Active Directory blade</a>
+### AD = Active Directory 
 
-   Licenses default to "Azure AD Free" to begin.
+Active Directory stores credentials for (older)
+run on Windows servers in on-prem data centers.
+This older <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. 
+It uses the AD Admin Center GUI.
 
-   License would show "Azure AD Premium P2" for production enterprises, which is needed for MFA.
-   P2 provides "Identity Protection" and "Identity Governance" features.
+### AAD = Azure Active Directory
 
-   P1 provides Conditional Access.
+Azure Active Directory (AAD) registers Users and Groups, plus apps and devices. 
+AAD is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. So AAD is also called an "Identity as a Service" (IDaaS). 
 
-   The Azure Active Directory (AAD) is a SaaS service, unlike "Active Directory" running on Windows servers in on-prem data centers. So AAD is also called an "Identity as a Service" (IDaaS). 
+   * Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
 
-   The old <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. These are provided by Azure Active Directory Domain Services (AD DS). AD DS uses Kuberos for authentication to hierarchical Organization Units (OUs) and Group Policies (GPOs) instead of federation.
+   * Because it's SaS, it’s also possible to use Azure AD for federation SSO (Single Sign On) - to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
 
-   Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
+<a name="Domains"></a>
 
-   It’s also possible to use Azure AD to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
+### Domains
 
-   "App Registrations" connects to web applications.
+   A domain is an area of a network organized by a single authentication database.
 
-   "Azure AD Connect" connects (syncs) on-prem AD user metadata with the SaaS AAD. Key features:
+   An Active Directory Domain is a logical grouping of AD objects on a network.
+
+   A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
+
+### AAD Connect
+
+<strong>Azure AD Connect</strong> synchronizes on-prem AD user metadata with the SaaS AAD. Key features of AAD Connect:
    * Password hash sych with AAD
    * Pass-through authentication which allows users to use the same password on-prem. and in the cloud.
    * Federation integration with AD FS for certificate renewal
@@ -359,45 +374,82 @@ I. DevOps
    * Health monitoring in a central location
    <br /><br />
 
-   REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
-   <img width="1920" height="534" alt="az-roles-vs-aad-roles-1920x534" src="https://user-images.githubusercontent.com/300046/118071390-e7ae6680-b364-11eb-8e73-673e3f5d593e.png">
 
-   Global Admins get access to Azure resources only after being granted User Access Admin role.
+<hr />
 
+<a name="PortalSearch"></a>
 
-   <a name="Tenants"></a>
+## Portal Search AAD
 
-   ### Tenants
+1.  <a target="_blank" href="https://portal.azure.com">portal.azure.com</a>
 
-1. Click "Manage tenants" in the horizontal command bar.
+2.  Press G and / to position the cursor to the Search field at the top.
 
-   REMEMBER: A Directory (as in AAD) is where your Tenant metadata is stored.
+    <a name="AAD"></a>
 
-1. Click the icon that looks like a notebook with a funnel.
+3.  Type <strong>AAD</strong> for the Services related to that name.
 
-   "All Directories" also lists the "Organizations". 
+4.  Click for the blade called <a target="_blank" href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">Azure Active Directory</a> .
+
+    https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview
+
+    <a name="Tenants"></a>
+
+    ### Tenants in AAD
+
+5.  Highlight and copy the value of the Name field, such as "<em>something</em>.onmicrosoft.com".
+
+6.  Notice the "Tenant ID" GUID below it.
+
+7.  Open another browser tab (temporarily) to find the Tenant ID based on DNS domain (web host) name such as "contoso.com" or "something.onmicrosoft.com":
+
+    <a target="_blank" href="https://www.whatismytenantid.com/">whatismytenantid.com</a>
+
+8.  Paste the name and click "Find my tenant ID".
+9.  Remember the last few characters of the GUID returned.
+10. Switch back to the browser Portal tab.
+
+    ### Tenant = Directory
+
+11. Click the icon at the top bar that looks like a notebook with a funnel.
+
+    https://portal.azure.com/#settings/directory
+
+    Notice the Directory ID GUID is the same as the Tenant ID GUID.
+
+    DEFINITION: A Directory (as in AAD) is where your Tenant metadata is stored.
+
+    Everything you do in Azure must be under some Tenant.
+
+    Each tenant is independent of all other tenants.
+
+    A tenant represents an organization in AAD.
    
-   A tenant represents an organization in AAD.
-   
-   Everything you do in Azure must be under some Tenant.
+    
+    ### Users, Groups, Apps
 
-   Each tenant is independent of all other tenants.
+    At the right is a count of Users, Groups, Applications, Devices managed under that Tenant.
 
-1. OPTIONAL: Open another browser tab temporarily to find the Tenant ID based on DNS domain name:
+    (From Tim Warner)
+    <img alt="az-aad-concepts-1194x954.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674198812/az-aad-concepts-1194x954_mivxuk.jpg">
 
-   <a target="_blank" href="https://www.whatismytenantid.com/">whatismytenantid.com</a>
+    Groups make authorization easier.
 
-1. Return to the Default Directory.
+    "Managed Identities" are also called "Service Accounts" used for authenticating automation services.
 
-   <a name="Domains"></a>
+    <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
 
-   ### Domains
+    Membership in "Dynamic" Users and Devices are completely controlled by Azure AD.
 
-   A domain is an area of a network organized by a single authentication database.
 
-   An Active Directory Domain is a logical grouping of AD objects on a network.
+    ### Tenant License
 
-   A Domain Controller (DC) is a server that authenticates user identities and authorizes their access to resources.
+    License defaults to "Azure AD Free" to begin.
+
+    License "Azure AD Premium P2" for production enterprises. P2 provides "Identity Protection" and "Identity Governance" features. P2 is needed for MFA (Multi-Factor Authentication).
+
+    P1 provides Conditional Access.
+
 
    <a name="Devices"></a>
 
@@ -414,14 +466,14 @@ I. DevOps
 
    Actions are also called "Operations" at different Scopes.
 
-1. See "Your role"? "Global Admin"
+12. See "Your role"? "Global Admin"
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
+13. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
    Click "+ Add" to create a new Tenant.
 
    PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
-1. Cancel out by searching for AAD again.
+14. Cancel out by searching for AAD again.
 
    Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
 
@@ -435,12 +487,18 @@ I. DevOps
 
    <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
+   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
+
    PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
 
    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
    So it's important to assign other more specific roles. 
 
+
+REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
+
+<img width="1920" height="534" alt="az-roles-vs-aad-roles-1920x534" src="https://user-images.githubusercontent.com/300046/118071390-e7ae6680-b364-11eb-8e73-673e3f5d593e.png">
 
 <a name="Built-inRoles"></a>
 
