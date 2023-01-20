@@ -184,6 +184,8 @@ Do this for each browser (Google Chrome, Microsoft Edge, Firefox, etc.).
 
    There is a separate <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/government/">Azure fed/state/local gov</a> is an isolated "soverign" DoD Level 5 cloud on US soil operated by US citizens. It has its own Marketplace of apps. <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome">What is gov?</a> 
 
+   https://azure.microsoft.com/en-us/explore/global-infrastructure/government/
+
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">DOC: Compare Global vs. Gov</a>
 
    For example, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/azure-government/compare-azure-government-global-azure">endpoints</a> for Speech Studio Speech translation :
@@ -221,25 +223,21 @@ Not a lot of people <a target="_blank" href="https://www.infoworld.com/article/2
    * <a href="#CloudAcademyLab">VM lab</a>
    <br /><br />
 
-1. Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE):
+   ### Azure first-timer deals
 
-   * $50/month credits for $39/mo Visual Studio Professional license
-   * $150/month credits for $79/mo Visual Studio Enterprise license
+2. Get a "Microsoft Learn"</a> account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a> 
+
+   After that instead of "Pay-As-You-Go",
+
+2. PROTIP: Obtain Azure credits as a benefit of a monthly license of Visual Studio (even though they don't intend on using the IDE). Azure Subscriptions (like Netflix, Disney+, etc.) are billed monthly.
+
+   * $50/month credits from a $39/mo Visual Studio Professional license
+   * $150/month credits from a $79/mo Visual Studio Enterprise license
    <br /><br />
 
    Visual Studio Subscriptions are, as of this writing, NOT offered in the Brazil South and Central India regions, as noted in <a target="_blank" href="https://azure.microsoft.com/en-us/regions/offers/">https://azure.microsoft.com/en-us/regions/offers/</a>.
 
-   Azure Subscriptions, like Netflix and Disney+, billed month.
-
-## Azure first-timer deals
-
-   * Get a "Microsoft Learn" account for $200 of credits to spend in 30 days and also a year of <a href="#FreeSvcs">free services</a>.
-
-   * After that instead of "Pay-As-You-Go",
-
-   * PROTIP: Buy a Visual Studio Professional license for $39/month and get $50/mo credit each month. Kinda like almost free. See <a target="_blank" href="https://docs.microsoft.com/en-us/learn/azure/">docs.microsoft.com/en-us/learn/azure/</a>.
-   * Buy a Visual Studio Enterprise license for $150/month credit on Azure.
-
+   
 
 <a name="FreeSvcs"></a>
 
@@ -305,6 +303,27 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 <hr />
 
+<a name="Arch"></a>
+
+## Enterprise Architecture
+
+<a target="_blank" href="#Arch">This pdf</a> is how Azure's various authentication and authorization mechanisms all work together: 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1674194496/az-ent-auth-arch-1365x1034_shnrvx.jpg"><img alt="az-ent-auth-arch-1365x1034.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674194496/az-ent-auth-arch-1365x1034_shnrvx.jpg"></a>
+
+A. Enterprise enrollment (to Dept, Account to Azure Active Directory & on-prem. Active Directory)<br />
+B. Identity and access management<br />
+C. Management group and subscription organization<br />
+D. Management subscription (to on-premises systems)<br />
+E. Connectivity subscription<br />
+F. Landing zone subscription<br />
+G. VM templates<br />
+H. Sandbox subscription<br />
+I. DevOps
+
+
+<hr />
+
 <a name="AAD"></a>
 
 ## AAD (Azure Active Directory)
@@ -340,7 +359,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    * Health monitoring in a central location
    <br /><br />
 
-   PROTIP: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
+   REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
    <img width="1920" height="534" alt="az-roles-vs-aad-roles-1920x534" src="https://user-images.githubusercontent.com/300046/118071390-e7ae6680-b364-11eb-8e73-673e3f5d593e.png">
 
    Global Admins get access to Azure resources only after being granted User Access Admin role.
@@ -352,11 +371,13 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 1. Click "Manage tenants" in the horizontal command bar.
 
-   NOTE: A Directory (as in AAD) is where your Tenant metadata is stored.
+   REMEMBER: A Directory (as in AAD) is where your Tenant metadata is stored.
 
 1. Click the icon that looks like a notebook with a funnel.
 
-   "All Directories" also lists the "Organizations". A tenant represents an organization in AAD.
+   "All Directories" also lists the "Organizations". 
+   
+   A tenant represents an organization in AAD.
    
    Everything you do in Azure must be under some Tenant.
 
@@ -425,8 +446,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 ## Built-in User Roles for RBAC 
 
-   PowerShell command:<br />
-   <tt>Get-AzureRMRoleDefinition</tt> lists 75:
+   PowerShell command lists 75 user roles:<br />
+   <tt>Get-AzureRMRoleDefinition</tt> 
 
    * Application Administrators can create and manage all aspects of enterprise applications, application registrations, and application proxy settings.
 
@@ -564,9 +585,9 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    </pre>
 
 
-   <a name="Scopes"></a>
+<a name="Scopes"></a>
 
-   ### Scopes
+### Scopes
 
    The "AssignableScope" in the JSON is illustrated at the lower-right of the diagram.
 
@@ -589,7 +610,7 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    A user inherits permissions from the <strong>management group</strong> to which the user has been assigned.
 
 
-   ### Management Group Policies
+### Management Group Policies
 
    In Azure, policies are for evaluating compliance among Resources and their properties, not to control access to resources.
 
@@ -599,8 +620,8 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. In preview are Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
 
 1. Navigate to the Policy blade.
-1. Definitions
-1. Select a category from Categories dropdown.
+2. Definitions
+3. Select a category from Categories dropdown.
 
    For example: Require a tag and its value on resources
 
@@ -608,27 +629,6 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
    To do remediation, define a Managed Identity.
 
-
-
-   <a name="Blueprints"></a>
-
-   ### Blueprints
-
-   TODO: Blueprints handle deny.
-
-   Blueprints orchestrates deployment of artifacts as policy.
-
-   Blueprints makes use of:
-   * Role assignments
-   * Policy assignments
-   * ARM templates
-   * Resource groups
-   <br /><br />
-
-   It's like HashiCorp's Terraform, which completely controls and maintains changes.
-
-   * https://github.com/timothywarner/az500/tree/master/blueprints
-   * https://github.com/terraform-providers/terraform-provider-azurerm
 
 
 ### Summary
@@ -646,6 +646,28 @@ Microsoft aligned these generic "job roles" with <a target="_blank" href="https:
 
 
 <hr />
+
+
+<a name="Blueprints"></a>
+
+## Azure Blueprints
+
+   TODO: Blueprints handle deny.
+
+   Blueprints orchestrates deployment of artifacts as policy.
+
+   Blueprints makes use of:
+   * Role assignments
+   * Policy assignments
+   * ARM templates
+   * Resource groups
+   <br /><br />
+
+   It's like HashiCorp's Terraform, which completely controls and maintains changes.
+
+   * https://github.com/timothywarner/az500/tree/master/blueprints
+   * https://github.com/terraform-providers/terraform-provider-azurerm
+
 
 <a name="Automation"></a>
 
@@ -689,12 +711,11 @@ Bash CLI or PowerShell.
 
 Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/automation-hybrid-runbook-worker/">Hybrid Runbook Worker feature</a>,
 <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
-Azure Automation</strong> securely reaches inside VMs in private networks and on-premises to execute PowerShell scripts/commands. It makes use of Windows PowerShell Remoting feature.
+<strong>Azure Automation</strong></a> securely reaches inside VMs in private networks and on-premises to execute PowerShell scripts/commands. It makes use of Windows PowerShell Remoting feature.
 
 However, PowerShell Remoting is not always a viable option.
-Where you have Azure-hosted VMs but cannot open a public WinRM port, a recent Microsoft blog post provides a runbook for running PowerShell commands  by utilizing the Azure VM Agent’s Custom Script Extension. <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
-This post</a> presents an extension for on-premises VMs.
-
+Where you have Azure-hosted VMs but cannot open a public WinRM port, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
+This post</a> presents a PowerShell extension runbook for on-premises VMs by utilizing the Azure VM Agent’s Custom Script Extension. 
 
 
 <hr />
@@ -759,7 +780,6 @@ PROTIP: It makes more sense to look at a live example populated with several res
 ### Microsoft Azure account setup
 
    * <a target="_blank" href="https://www.youtube.com/playlist?list=PLLasX02E8BPA5IgCPjqWms5ne5h4briK7">YouTube playlist on Azure</a> by Zach Kramer and Steve Michelotti
-   * https://azure.microsoft.com/en-us/global-infrastructure/government/
    <br /><br />
 
 1. PROTIP: Avoid using an email that you use for your own banking, shopping, social media, etc. For continuity with a real cloud, you'll need an email address that you can share and transfer to other people. That's so at a company, you will need to give someone else the password so that if you're ever go on vacation or get "run over a bus", your organization can continue.
@@ -821,11 +841,11 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    The Azure SaaS service separates different customers into different <strong>tenants</strong> (like tenants in an apartment building). Each tenant is a dedicated, isolated instance of the Azure Active Directory service, owned and managed by an organization. 
 
-   "Isolated" = ISE zzz
+   "Isolated" = ISE
 
    Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation to 
 
-2. For birthdate, make up an adult year: 2019 - 22 = 1997
+2. For birthdate, make up an adult year: 2023 - 22 = 2001
 
    PROTIP: Write it down for account recovery, such as in a 1Password entry.
    Also write down the date you created the account.
@@ -1207,16 +1227,16 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
    <br /><br />
 
 
-   <a name="ResourceGroups"></a>
+<a name="ResourceGroups"></a>
 
-   ### Resource Groups
+### Resource Groups
 
    Before any resource can be provisioned, you need a resource group for it to be placed in, for provisioning, monitoring, maintenance.
    Each resource must be in a resource group. 
 
    Resource groups can be created by using any of the following methods:
 
-   ### Automation options
+### Automation options
 
    * <a href="#Portal">Azure portal GUI</a>
    * Azure Bash CLI (az commands)
@@ -2589,6 +2609,13 @@ http://www.frankysnotes.com/2020/04/how-i-build-budget-friendly-url.html
 https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
 
 https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
+
+
+## Subscriptions
+
+https://www.hashicorp.com/blog/go-big-or-go-small-building-in-azure-caf-with-terraform-cloud
+Microsoft's Cloud Adoption Framework enterprise-scale landing zone architecture based on an Azure Virtual WAN network topology. The connectivity subscription uses a Virtual WAN hub.
+
 
 
 ## More about Azure #

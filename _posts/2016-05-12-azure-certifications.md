@@ -752,10 +752,47 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 15. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Microsoft%20Sentinel.md"> Lab 15: Microsoft Sentinel </a>
 <br /><br />
 
+Tim Warner's Microsoft empire includes:
+* TechTrainerTim.com
+* <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
+   * https://github.com/timothywarner/az500
+
+* <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
+    1. Manage Azure AD Identities
+    2. Manage Azure AD Secure Access
+    3. Manage Application Access
+    4. Manage Access Control
+    5. Implement Azure Firewall Security
+    6. Implement Network Load Balancer Security
+    7. Implement Storage and Application Security
+    8. Implement Virtual Network Security
+    9. Configure Advanced Security for Compute
+    10. Configure Data Encryption
+    11. Configure Centralized Policy Management
+    12. Configure and Manage Threat Protection
+    13. Configure and Manage Security Monitoring Solutions
+    14. Configure Security for Storage
+    15. Configure Security for Data
+    16. Configure and Manage Azure Key Vault
+   <br /><br />
+
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/9780137702039/">Video course</a> Jan 2022
+
+   <br /><br />
+
+Others on OReilly:
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/microsoft-azure-security-technologies-az-500-bootcamp/0636920080783/">Microsoft Azure Security Technologies (AZ-500) Bootcamp</a> by Reza Salehi
+   * <a target="_blank" href="https://learning.oreilly.com/api/v1/continue/9780137834280/">Exam Ref AZ-500 Microsoft Azure Security Technologies</a> by Yuri Diogenes and Orin Thomas
+   <br /><br />
+
+Sample tests:
+   * <a target="_blank" href="https://learning.oreilly.com/certifications/9780136965244/">Pearson's AZ-500 Practice Test on OReilly</a> is the most selectable. April 2022
+   * https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
+   <br /><br />
+
 References:
    * https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
-   * https://www.whizlabs.com/learn/course/microsoft-azure-az-500/
    <br /><br />
 
 <hr />
