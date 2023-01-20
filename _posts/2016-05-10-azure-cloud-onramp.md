@@ -324,7 +324,7 @@ I. Azure DevOps (vs. GitHub Actions)
 
 <hr />
 
-## It's confusing
+## It can be confusing
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw&t=24s" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
@@ -366,7 +366,7 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
 ### AAD Connect
 
-<strong>Azure AD Connect</strong> synchronizes on-prem AD user metadata with the SaaS AAD. Key features of AAD Connect:
+<strong>Azure AD Connect</strong> is a Windows service that synchronizes on-prem AD user metadata with the SaaS AAD. Key features of AAD Connect:
    * Password hash sych with AAD
    * Pass-through authentication which allows users to use the same password on-prem. and in the cloud.
    * Federation integration with AD FS for certificate renewal
@@ -403,11 +403,25 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
 7.  Open another browser tab (temporarily) to find the Tenant ID based on DNS domain (web host) name such as "contoso.com" or "something.onmicrosoft.com":
 
-    <a target="_blank" href="https://www.whatismytenantid.com/">whatismytenantid.com</a>
+    <a target="_blank" href="https://www.whatismytenantid.com/">https://www.whatismytenantid.com</a>
 
 8.  Paste the name and click "Find my tenant ID".
 9.  Remember the last few characters of the GUID returned.
 10. Switch back to the browser Portal tab.
+
+    <a name="TenantSwitch"></a>
+
+    ### Tenant Switching
+
+1. To switch among tenants in the Portal GUI, use the "Directory + subscription" filter at the top menu of every screen:
+
+   <img alt="az-onramp-subscrip-462x263" width="462" height="263" src="https://user-images.githubusercontent.com/300046/112444406-9cd48300-8d13-11eb-9aac-24feb64af66a.png">
+
+   Within PowerShell, define the default Tenant (if you need to sign into more than one Tenant):
+
+   <pre><strong>Set-AzureRmContext
+   </strong></pre>
+
 
     ### Tenant = Directory
 
@@ -435,13 +449,20 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     Groups make authorization easier.
 
-    "Managed Identities" are also called "Service Accounts" used for authenticating automation services.
+    "External Identity" are Guest users with a credential federated from another Identity Store (Facebook, Google, GitHub, etc.).
+
+    "Managed Identities" are also called "Service Accounts" used for authenticating automation services. Such accounts are assigned a GUID instead of email addresses for human users.
 
     <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
 
-    Membership in "Dynamic" Users and Devices are completely controlled by Azure AD.
+    Membership type "Dynamic" Users and Devices are completely (automatically) controlled by Azure AD, which populates membership based on user/device <strong>properties</strong>.
 
+    Membership type "Assigned" are <strong>manually</strong> selected into each group.
 
+    Groups can be nested under another Group.
+
+    <a name="License"></a>
+    
     ### Tenant License
 
     License defaults to "Azure AD Free" to begin.
@@ -450,50 +471,60 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     P1 provides Conditional Access.
 
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> minimizes the number of people who have access to secure information. It mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
 
-   <a name="Devices"></a>
+   "EMS (Enterprise Mobility + Security) E5" includes:
+   * AAD is the cloud-based IAM service to control access to internal and external applications
+   * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
+   * Azure Info Protection protects documents tagged to not be shared
+   * Microsoft Cloud App Security
+   * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
+   * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
+   <br /><br />
 
-   ### Devices on AAD
 
-   A "Registered" device is personally owned and signed in with a personal Microsoft or local account. It can access mobile and Windows 10 but not Windows Servers.
+    <a name="Devices"></a>
 
-   A "Joined" device exists only in the cloud to access Windows 10 and Windows Server 2019 VMs.
+    ### Devices on AAD
 
-   A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
+    A "Registered" device is personally owned and signed in with a personal Microsoft or local account. It can access mobile and Windows 10 but not Windows Servers.
+
+    A "Joined" device exists only in the cloud to access Windows 10 and Windows Server 2019 VMs.
+
+    A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
 
 
-   ### Role Assignments
+    ### Role Assignments
 
-   Actions are also called "Operations" at different Scopes.
+    Actions are also called "Operations" at different Scopes.
 
 12. See "Your role"? "Global Admin"
 
 13. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
-   Click "+ Add" to create a new Tenant.
+    Click "+ Add" to create a new Tenant.
 
-   PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
+    PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
 14. Cancel out by searching for AAD again.
 
-   Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+    Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+
+    READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
 
-   READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
+    <a name="GlobalAdmin"></a>
 
+    ### Global Admin Account
 
-   <a name="GlobalAdmin"></a>
+    <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
 
-   ### Global Admin Account
+    REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
 
-   <strong>Global Administrators</strong>, aka Company Administrators, in Azure AD have access to <strong>all services</strong> that use AAD identities (Microsoft 365 security center, Intune, Microsoft 365 compliance center, Exchange Online, SharePoint Online, Skype for Business Online, etc.).
+    PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
 
-   REMEMBER: Global Admins get access to Azure resources only after being granted User Access Admin role.
+    PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
 
-   PROTIP: Don't use the Global Admin account regularly. Set an Activity Alert when it is used. Have no MFA on it. Have 2-5 global admins. <a target="_blank" href="https://www.youtube.com/watch?v=vZ9uQtO7mSU&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=2">VIDEO</a> 
-
-   PROTIP: Global Admin privileges are needed to enable <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">AD PIM (Privileged Identity Management)</a> for a directory.
-
-   So it's important to assign other more specific roles. 
+    So it's important to assign other more specific roles. 
 
 
 REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=1h26m26s">VIDEO</a>: There is no spanning between AAD and AD RBAC roles:
@@ -2091,20 +2122,6 @@ There is a limit of 100 Management certs per Azure subscription (administrator).
    * Prod
 
 
-<a name="Tenant"></a>
-
-## Tenant
-
-1. To switch among tenants in the Portal GUI, use the "Directory + subscription" filter at the top menu of every screen:
-
-   <img alt="az-onramp-subscrip-462x263" width="462" height="263" src="https://user-images.githubusercontent.com/300046/112444406-9cd48300-8d13-11eb-9aac-24feb64af66a.png">
-
-   Within PowerShell, define the default Tenant (if you need to sign into more than one Tenant):
-
-   <pre><strong>Set-AzureRmContext
-   </strong></pre>
-
-
 <a name="Subscriptions"></a>
 
 ## Subscriptions
@@ -2179,10 +2196,17 @@ https://azure.microsoft.com/en-us/pricing/calculator/
 <img align="right" width="100" src="https://raw.githubusercontent.com/benc-uk/icon-collection/master/azure-patterns/cloud-shell.svg">
 
 
-1. <a target="_blank" href="https://www.youtube.com/watch?v=YlbFQtUFOY8&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=7" title="AZ Interactive mode by Dana Epps Oct 10, 2019">VIDEO</a> Azure provides contextual prompts in their:
+1.  <a target="_blank" href="https://www.youtube.com/watch?v=YlbFQtUFOY8&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=7" title="AZ Interactive mode by Dana Epps Oct 10, 2019">VIDEO</a> Azure provides contextual prompts in their:
 
-   <pre><strong>az interactive</strong></pre>
+    <pre><strong>az interactive</strong></pre>
 
+    Response:
+
+    <pre>This command is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
+    Installing the Interactive extension...
+    The installed extension 'interactive' is in preview.
+    Do you agree to sending telemetry (yes/no)? 
+    </pre>                          
 
 
 ### Create AZ Role
@@ -2457,20 +2481,13 @@ QUESTION: limits to total concurrent executions across all functions within a gi
    <br /><br />
 
 
-## Azure AD & PIM
 
-   Subscriptions include "Azure AD Premium P2" and "Enterprise Mobility + Security (EMS) E5".
+## Subscriptions
 
-   An additional paid subscription is <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> which minimizes the number of people who have access to secure information. It mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
+https://www.hashicorp.com/blog/go-big-or-go-small-building-in-azure-caf-with-terraform-cloud
+Microsoft's Cloud Adoption Framework enterprise-scale landing zone architecture based on an Azure Virtual WAN network topology. The connectivity subscription uses a Virtual WAN hub.
 
-   EMS (Enterprise Mobility + Security) includes:
-   * AAD is the cloud-based IAM service to control access to internal and external applications
-   * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
-   * Azure Info Protection protects documents tagged to not be shared
-   * Microsoft Cloud App Security
-   * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
-   * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
-   <br /><br />
+
 
 ## Azure AD B2B (Business-to-Business) 
 allows an organization to securely share company applications and company services with guest users from other orgs, while retaining control over company data. Auth policies protect corp. data. 
@@ -2544,6 +2561,8 @@ tfenv install latest
    </strong></pre>
 
 
+<a name="AADC"></a>
+
 ## Azure AD Connect
 
 Azure AD Join
@@ -2553,7 +2572,6 @@ Azure Policy
 Azure Role-Based Access Control (RBAC)
 
 Azure AD Roles
-
 
 
 
@@ -2667,13 +2685,6 @@ http://www.frankysnotes.com/2020/04/how-i-build-budget-friendly-url.html
 https://medium.com/marcus-tee-anytime/create-your-own-url-shortener-host-in-azure-almost-free-for-cloud-infrastructure-a74c9cc29720
 
 https://levelup.gitconnected.com/build-a-custom-url-shortener-using-azure-functions-and-cosmos-db-c20e59261375
-
-
-## Subscriptions
-
-https://www.hashicorp.com/blog/go-big-or-go-small-building-in-azure-caf-with-terraform-cloud
-Microsoft's Cloud Adoption Framework enterprise-scale landing zone architecture based on an Azure Virtual WAN network topology. The connectivity subscription uses a Virtual WAN hub.
-
 
 
 ## More about Azure #
