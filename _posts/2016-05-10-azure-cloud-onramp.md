@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-10"
+date: "2023-01-20"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -328,9 +328,9 @@ I. Azure DevOps (vs. GitHub Actions)
 
 <a target="_blank" href="https://www.youtube.com/watch?v=dBAflZZE6Gw&t=24s" title="Active Directory vs Azure AD vs Azure AD DS | MCSA | AZ-104">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=-a_-Seh27s4&">VIDEO Glossary</a>.
 
-AD = Active Directory<br />
+<a href="#AD">AD = Active Directory</a><br />
 vs.<br />
-AAD = Azure AD = Azure Active Directory<br />
+<a href="#AAD">AAD = Azure AD = Azure Active Directory</a><br />
 vs.<br />
 AADC = Azure AD Connect<br />
 vs.<br />
@@ -338,14 +338,18 @@ ADDS = Active Directory DS = Domain Services
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> - </th><th> on-prem. AD </th><th> Azure AD </th></tr>
+<tr valign="top"><td> Runs on: </td><td> 
+   Windows server </td><td> SaaS cloud </td></tr>
 <tr valign="top"><td> Structure: </td><td> 
    Org. Unit </td><td> Admin. Unit </td></tr>
-<tr valign="top"><td> Runs on: </td><td> 
-   Windows </td><td> SaaS </td></tr>
+<tr valign="top"><td> Authentication: </td><td> 
+   LDAP, Kerberos </td><td> - </td></tr>
 </table>
 
 
 <hr />
+
+<a name="AD"></a>
 
 ### AD = Active Directory 
 
@@ -353,6 +357,8 @@ Active Directory stores credentials for (older)
 run on Windows servers in on-prem data centers.
 This older <strong>on-prem</strong> AD provides "domain services" that include domain joins, group policies, LDAP, Kerberos / NTLM authentication. 
 It uses the AD Admin Center GUI.
+
+<a name="AAD"></a>
 
 ### AAD = Azure Active Directory
 
@@ -422,14 +428,14 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     ### Tenant Switching
 
-1. To switch among tenants in the Portal GUI, use the "Directory + subscription" filter at the top menu of every screen:
+1.  To switch among tenants in the Portal GUI, use the "Directory + subscription" filter at the top menu of every screen:
 
-   <img alt="az-onramp-subscrip-462x263" width="462" height="263" src="https://user-images.githubusercontent.com/300046/112444406-9cd48300-8d13-11eb-9aac-24feb64af66a.png">
+    <img alt="az-onramp-subscrip-462x263" width="462" height="263" src="https://user-images.githubusercontent.com/300046/112444406-9cd48300-8d13-11eb-9aac-24feb64af66a.png">
 
-   Within PowerShell, define the default Tenant (if you need to sign into more than one Tenant):
+    Within PowerShell, define the default Tenant (if you need to sign into more than one Tenant):
 
-   <pre><strong>Set-AzureRmContext
-   </strong></pre>
+    <pre><strong>Set-AzureRmContext
+    </strong></pre>
 
 
     ### Tenant = Directory
@@ -466,18 +472,28 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
     
     "Managed Identities" are also called "Service Accounts" used for authenticating automation services. Such accounts are assigned a GUID instead of email addresses for human users.
 
-    <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
+    ### Invitation from Federation
 
-    Groups make authorization easier.
+    (from Tim Warner)
+    <img alt="az-federation-1950x1716.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674268604/az-federation-1950x1716_nh17eb.jpg">
+
+    There are two types of Consent to Azure AD:
+    a) Federation<br />
+    b) Non-federated MSA (Microsoft Account)
+
+    DEFINITION: OTP (One-Time Password) is emailed to the user.
+
 
     <a name="CreateGroup"></a>
     
     ### Create New Group
 
+    Groups make authorization easier.
+
     Groups can be nested under another Group.
     
-1. Select "All Groups".
-2. Select "New Group".
+12. Select "All Groups".
+13. Select "New Group".
     
     Membership type "Assigned" are <strong>manually</strong> selected into each group.
 
@@ -488,7 +504,7 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     <pre>(user.city -eq "Tampa")</pre>
 
-1. Click "Create".
+14. Click "Create".
    
 
     <a name="License"></a>
@@ -499,29 +515,38 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     License defaults to "Azure AD Free" to begin.
 
-    License "Azure AD Premium P2" for production enterprises. P2 provides "Identity Protection" and "Identity Governance" features. P2 is needed for MFA (Multi-Factor Authentication).
-
     P1 provides Conditional Access.
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> minimizes the number of people who have access to secure information. It mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
+    "EMS (Enterprise Mobility + Security E5)" includes:
+    * AAD is the cloud-based IAM service to control access to internal and external applications
+    * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
+    * Azure Info Protection protects documents tagged to not be shared
+    * Microsoft Cloud App Security
+    * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
+    * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
+    <br /><br />
 
-   "EMS (Enterprise Mobility + Security E5)" includes:
-   * AAD is the cloud-based IAM service to control access to internal and external applications
-   * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
-   * Azure Info Protection protects documents tagged to not be shared
-   * Microsoft Cloud App Security
-   * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
-   * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
-   <br /><br />
+    "Microsoft 365 E5 Developer (without Windows and Audio Conferencing)"
 
-   "Microsoft 365 E5 Developer (without Windows and Audio Conferencing)"
+    "Microsoft Power Apps Plan 2 Trial"
 
-   "Microsoft Power Apps Plan 2 Trial"
+    "Microsoft Power Automate Free"
 
-   "Microsoft Power Automate Free"
+    "Power Virtual Agents Viral Trial"
 
-   "Power Virtual Agents Viral Trial"
+    License "Azure AD Premium P2" for production enterprises. P2 provides "Identity Protection" and "Identity Governance" features. P2 is needed for MFA (Multi-Factor Authentication) and PIM.
 
+    <a name="PIM"></a>
+
+    ### P2 PIM (Privileged Identity Management)
+
+    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> provides elevated access on a <strong>JIT (Just-in-Time)</strong> basis for a limited time. access. PIM provides audit logs to enable reviews of accesses. 
+
+    The Global Admin enables PIM after MFA sign-on.
+
+    Email is automatically sent when a role assignmnet is made outside of PIM. So do all access changes from the PIM UI, using "Privileged Authentication/Role Administrator" role assignments. Assignment can be permanent or based on time and date range.
+
+    
 
     <a name="Devices"></a>
 
@@ -533,25 +558,18 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
 
-    ### Federation
-
-    DEFINITION: MSA (Microsoft Account)
-
-    (from Tim Warner)
-
-
     ### Role Assignments
 
     REMEMBER: Actions are also called "Operations" at different Scopes.
 
-2.  See "Your role"? "Global Admin"
+15. See "Your role"? "Global Admin"
 
-3.  <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
+16. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
     Click "+ Add" to create a new Tenant.
 
     PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
-4.  Cancel out by searching for AAD again.
+17. Cancel out by searching for AAD again.
 
     Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
 
