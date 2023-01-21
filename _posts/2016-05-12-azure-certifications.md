@@ -752,37 +752,51 @@ To be a <a target="_blank" href="https://learn.microsoft.com/en-us/certification
 15. <a target="_blank" href="https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies/blob/master/Instructions/Labs/LAB_15_Microsoft%20Sentinel.md"> Lab 15: Microsoft Sentinel </a>
 <br /><br />
 
-Tim Warner's Microsoft empire includes:
+Tim Warner tends to jump around a bit, so his material is great for review:
 * TechTrainerTim.com
 * <a target="_blank" href="https://learning.oreilly.com/live-events/-/0636920360612/">Live Crash Course Jan 23 & 24, 2023</a> (previously April 26 & 27, 2021)
    * https://github.com/timothywarner/az500
 
 * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9780138041038/">15 pages: AZ-500 Microsoft Azure Security Technologies Guided Cert Prep Sep. 2022</a>
+
+    <ul>Section 1: Manage Identity and Access:</ul>
+
     1. Manage Azure AD Identities
     2. Manage Azure AD Secure Access
     3. Manage Application Access
     4. Manage Access Control
-    5. Implement Azure Firewall Security
-    6. Implement Network Load Balancer Security
-    7. Implement Storage and Application Security
+    
+       Section 2: Implement Platform Protection:
+
+    5. Implement Azure Firewall [Network] Security (+)
+    6. Implement Network Load Balancer Security (+)
+    7. Implement Storage and Application Security (+)  
     8. Implement Virtual Network Security
+   
     9. Configure Advanced Security for Compute
-    10. Configure Data Encryption
+    10. Configure Data Encryption (+)
+
+        Section 3: Manage security operations:
+
     11. Configure Centralized Policy Management
     12. Configure and Manage Threat Protection
     13. Configure and Manage Security Monitoring Solutions
+    
+        Section 4: Secure data and applications:
+
     14. Configure Security for Storage
     15. Configure Security for Data
     16. Configure and Manage Azure Key Vault
    <br /><br />
 
-* <a target="_blank" href="https://learning.oreilly.com/videos/-/9780137702039/">Video course</a> Jan 2022
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/9780137702039/">8h 34m Video course from Microsoft</a> Jan 2022
 
    <br /><br />
 
 Others on OReilly:
    * <a target="_blank" href="https://learning.oreilly.com/live-events/microsoft-azure-security-technologies-az-500-bootcamp/0636920080783/">Microsoft Azure Security Technologies (AZ-500) Bootcamp</a> by Reza Salehi
    * <a target="_blank" href="https://learning.oreilly.com/api/v1/continue/9780137834280/">Exam Ref AZ-500 Microsoft Azure Security Technologies</a> by Yuri Diogenes and Orin Thomas
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781119870371/">BOOK</a>: "MCA Microsoft Certified Associate Azure Security Engineer Study Guide" from Sybex November 2022 by Shimon Brathwaite 
    <br /><br />
 
 Sample tests:

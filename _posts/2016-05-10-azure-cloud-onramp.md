@@ -352,7 +352,7 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
    * Since Azure Microsoft Office 365 is SaaS, users are enrolled into AAD.
 
-   * Because it's SaS, it’s also possible to use Azure AD for federation SSO (Single Sign On) - to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
+   * Because it's SaSS, it’s also possible to use Azure AD for federation SSO (Single Sign On) - to manage third-party software applications (outside Microsoft), such as CRMs like Salesforce, SAP, etc.
 
 <a name="Domains"></a>
 
@@ -447,23 +447,46 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
     (From Tim Warner)
     <img alt="az-aad-concepts-1194x954.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674198812/az-aad-concepts-1194x954_mivxuk.jpg">
 
-    Groups make authorization easier.
-
+    ### Federated External Identity Guests
+    
     "External Identity" are Guest users with a credential federated from another Identity Store (Facebook, Google, GitHub, etc.).
 
+    (from Tim Warner)
+    <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
+
+    
     "Managed Identities" are also called "Service Accounts" used for authenticating automation services. Such accounts are assigned a GUID instead of email addresses for human users.
 
     <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
 
-    Membership type "Dynamic" Users and Devices are completely (automatically) controlled by Azure AD, which populates membership based on user/device <strong>properties</strong>.
+    Groups make authorization easier.
 
-    Membership type "Assigned" are <strong>manually</strong> selected into each group.
+    <a name="CreateGroup"></a>
+    
+    ### Create New Group
 
     Groups can be nested under another Group.
+    
+1. Select "All Groups".
+2. Select "New Group".
+    
+    Membership type "Assigned" are <strong>manually</strong> selected into each group.
+
+    Membership type "Dynamic" Users and Devices are completely (automatically) controlled by Azure AD, which populates membership based on user/device <strong>properties</strong>.
+
+    There are custom extension properties. 
+    Selecting Property: city Operator: Equals Value: Tampa yields Rule syntax:
+
+    <pre>(user.city -eq "Tampa")</pre>
+
+1. Click "Create".
+   
 
     <a name="License"></a>
     
     ### Tenant License
+
+    Each license has its own options.
 
     License defaults to "Azure AD Free" to begin.
 
@@ -473,7 +496,7 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> minimizes the number of people who have access to secure information. It mitigates the risk of excessive, unnecessary, or misused access rights and provides oversight of role assignments, self-service, and just-in-time role activation and Azure AD and Azure resource access reviews.
 
-   "EMS (Enterprise Mobility + Security) E5" includes:
+   "EMS (Enterprise Mobility + Security E5)" includes:
    * AAD is the cloud-based IAM service to control access to internal and external applications
    * Microsoft Intune is used for MDM (Mobile Device Management) but also PCs to remote reset and wipe. compliance status
    * Azure Info Protection protects documents tagged to not be shared
@@ -481,6 +504,14 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
    * Microsoft Advanced Thereat Analytics (ATA) is an on-prem. platform to protect against targeted cyber attacks along the "Cyber Kill Chain" attack process (Domain Dominance) by parsing network traffic to create a behavioral profile about user activities.
    * Azure Advanced Threat Protection is a cloud-based triage tool which displays incidents on a timeline 
    <br /><br />
+
+   "Microsoft 365 E5 Developer (without Windows and Audio Conferencing)"
+
+   "Microsoft Power Apps Plan 2 Trial"
+
+   "Microsoft Power Automate Free"
+
+   "Power Virtual Agents Viral Trial"
 
 
     <a name="Devices"></a>
@@ -493,19 +524,25 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
 
+    ### Federation
+
+    DEFINITION: MSA (Microsoft Account)
+
+    (from Tim Warner)
+
 
     ### Role Assignments
 
-    Actions are also called "Operations" at different Scopes.
+    REMEMBER: Actions are also called "Operations" at different Scopes.
 
-12. See "Your role"? "Global Admin"
+2.  See "Your role"? "Global Admin"
 
-13. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
+3.  <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
     Click "+ Add" to create a new Tenant.
 
     PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
-14. Cancel out by searching for AAD again.
+4.  Cancel out by searching for AAD again.
 
     Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
 
