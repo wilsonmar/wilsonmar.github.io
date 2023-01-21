@@ -577,7 +577,7 @@ https://techcommunity.microsoft.com/t5/security-compliance-identity/security-com
 
 https://techcommunity.microsoft.com/t5/security-compliance-identity/security-community-webinars/ba-p/927888
 
-See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">https://wilsonmar.github.io/security-certifications</a> - my blog on security certifications.
+See <a target="_blank" href="https://wilsonmar.github.io/security-certifications">my blog on security certifications at<br />https://wilsonmar.github.io/security-certs</a>
 
 
 <a name="SC-900"></a>
@@ -596,10 +596,6 @@ Domains:
 
 Videos:
    * <a target="_blank" href="https://www.youtube.com/watch?v=Bz-8jM3jg-8&list=RDCMUCpIn7ox7j7bH_OFj7tYouOQ&start_radio=1&t=5297">2hr John Savill</a>draws a <a target="_blank" href="https://github.com/johnthebrit/RandomStuff/blob/master/SC-900ReviewWhiteboard.svg">massive whiteboard</a> as massive as his muscles. One in a massive series with <a target="_blank" href="https://github.com/johnthebrit/AzureMasterClass">pdfs in GitHub</a>.
-
-   * aka.ms/az500labs
-   https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
-
 
 
 <a name="SC-200"></a>
@@ -789,14 +785,11 @@ Tim Warner tends to jump around a bit, so his material is great for review:
     16. Configure and Manage Azure Key Vault
    <br /><br />
 
-* <a target="_blank" href="https://learning.oreilly.com/videos/-/9780137702039/">8h 34m Video course from Microsoft</a> Jan 2022
-
-   <br /><br />
-
 Others on OReilly:
    * <a target="_blank" href="https://learning.oreilly.com/live-events/microsoft-azure-security-technologies-az-500-bootcamp/0636920080783/">Microsoft Azure Security Technologies (AZ-500) Bootcamp</a> by Reza Salehi
    * <a target="_blank" href="https://learning.oreilly.com/api/v1/continue/9780137834280/">Exam Ref AZ-500 Microsoft Azure Security Technologies</a> by Yuri Diogenes and Orin Thomas
    * <a target="_blank" href="https://learning.oreilly.com/library/view/-/9781119870371/">BOOK</a>: "MCA Microsoft Certified Associate Azure Security Engineer Study Guide" from Sybex November 2022 by Shimon Brathwaite 
+   * <a target="_blank" href="https://learning.oreilly.com/videos/-/9780137702039/">8h 34m Video course from Microsoft</a> Jan 2022
    <br /><br />
 
 Sample tests:
@@ -807,6 +800,9 @@ Sample tests:
 References:
    * https://www.thomasmaurer.ch/2020/05/az-500-study-guide-microsoft-azure-security-technologies-2021/
    * <a target="_blank" href="https://linuxacademy.com/cp/modules/view/id/367">Linux Academy Microsoft Azure Security Technologies</a> by Tia Williams
+   * aka.ms/az500labs
+   https://github.com/MicrosoftLearning/AZ500-AzureSecurityTechnologies
+
    <br /><br />
 
 <hr />

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-22"
+date: "2023-01-25"
 file: "hashicorp-boundary"
 title: "HashiCorp Boundary"
 excerpt: "Secure SSH accessing servers in AWS and other clouds: implement Zero-Trust with granular control of least-privilege just-in-time access using HashiCorp Boundary"
@@ -16,21 +16,16 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Zero-Trust is about shifting from obsolete assumptions, processes, and tools.
+The world is rushing to HashiCorp's Boundary due to the need to install <strong>Zero-Trust Networking</strong>,
+especially within the US federal government in repsonse to the White House Executive Order in 2020. 
 
-Do not leave <strong>long-term SSH keys</strong> around to be stolen?
+Zero-Trust is about shifting from obsolete assumptions, processes, and tools. For example:
+  
+> "What were we thinking creating a system that leaves  <strong>long-term SSH keys</strong> around to be stolen?"
 
-HashiCorp's Boundary is revolutionizing how we connect remotely into servers.
-
-HashiCorp first announced Boundary October 2020.
-
-There is a rush to Boundary due to the need to install <strong>Zero-Trust Networking</strong>,
-especially within the US federal government in repsonse to the White House Executive Order.
-
-Want to connect to a server (such as PostgreSQL, MySQL, etc.) within AWS, Azure, or other cloud?
+Since its announcement on October 2020, HashiCorp's Boundary is revolutionizing how we connect remotely into servers (such as PostgreSQL, MySQL, etc.) within AWS, Azure, Google, IBM, and other clouds.
 
 {% include whatever.html %}
-WARNING: This page is under construction!
 
 
 <a name="Why"></a>
@@ -48,11 +43,11 @@ The now "traditional" (<em>passe</em> security-wise) is to go through a Linux <s
    <ul><pre>ssh -L</pre>
    </ul>
 
-With Bastion hosts, you are essentially paying for an additonal server for hackers to access.
+> "What were we thinking when we create <strong>Bastion hosts</strong> -- essentially paying for an additonal server for hackers to access?
 
-SSH takes some work to setup securely - users would need to mess with another set of secrets to a <strong>specific IP address</strong>.
+Bastion host, users are not differentiated because the host provides "all or nothing" access.
 
-To a Bastion host, all users are not differentiated because the host provides "all or nothing" access.
+And SSH takes some <strong>work to setup</strong> securely - users would need to mess with another set of secrets to a <strong>specific IP address</strong>.
 
 ### No more VPN tunnels
 
@@ -74,13 +69,12 @@ That's why Boundary manages the "identity" of each user.
 
 <a name="targets"></a>
 
-Boundary is called "Software-Defined Perimeter (SDP)" software because it provides secure access into a private network's <strong>targets</strong> (app server endpoints).
+Boundary is called "Software-Defined Perimeter (SDP)" software because it provides secure access into a private network's <strong>targets</strong> (app server endpoints) you want to access.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=eRZuaw0AW0I&t=3m36s">VIDEO:</a>: 
-HashiCorp's Boundary eliminates the issues described above by authenticating & authorizing 
-based on the <strong>identity name</strong> of a server rather than its IP address and port number. (via OIDC protocol) with a 3rd-party IdP (trusted identity provider such as Okta, GitHub, Auth0, AWS, Azure, GCP, etc.). 
+HashiCorp's Boundary authenticates & authorizes based on the <strong>identity name</strong> of a server rather than its IP address and port number. (via OIDC protocol) with a 3rd-party IdP (trusted identity provider such as Okta, GitHub, Auth0, AWS, Azure, GCP, etc.). 
 
-Boundary automates service discovery as workloads are created or changed dynamically.
+Boundary automates service <strong>discovery</strong> as workloads are created or changed dynamically.
 
 Additionally, Boundary provides Just-In-Time network access.
 A user may be allowed access to a server for only, say, 5-minute session the same day.
@@ -94,7 +88,7 @@ In other words, HashiCorp's Boundary is an intelligent proxy.
 
 <hr />
 
-## Different ways to run Boundary Serer
+## Different ways to run Boundary Server
 
 There are different ways:
 
@@ -102,7 +96,7 @@ There are different ways:
 
    * <a href="#LocalInstall">Run Boundary in dev mode locally</a>.
 
-   * <a href="#OSS">Open-Source</a> - Support from HashiCorp is not currently available for those who install the free Open-Source edition.
+   * <a href="#OSS">Open-Source</a> - Support from HashiCorp Customer Success is not currently available for those who install the free Open-Source edition.
    <br /><br />
 
 <hr />
@@ -176,7 +170,7 @@ TODO: I'm working on a shell file that does the following with one command.
    brew install hashicorp/tap/boundary
    </strong></pre>
 
-   The installer recognizes whether you have a M1/M2 ARM or an Intel machine.
+   NOTE: The installer recognizes whether you have a M1/M2 ARM or an Intel machine.
 
 1. Install autocompletion to <tt>$HOME/.bash_profile </tt> and <tt> $HOME/.zshrc</tt> so this only needs to be done once:
 
@@ -204,30 +198,86 @@ credential-stores     logout                workers
    <pre><strong>boundary -v</strong></pre>
 
    <pre>Version information:
-  Git Revision:        1d42091e81ca11353376ce116275890e3ae67f6b
-  Version Number:      0.11.0
+  Git Revision:        02e410af7a2606ae242b8637d8a02754f0a5f43e
+  Version Number:      0.11.2
    </pre>
 
-   The Git Revision is the SHA for the git commit creating a release at:
-   https://github.com/hashicorp/boundary/releases
+   PROTIP: CLI code to get just the version ("0.11.2") is:
+
+   <pre>BOUNDARY_VERSION=$( boundary -v | grep "Version" | awk '{print $3}' )
+   echo "BOUNDARY_VERSION=$BOUNDARY_VERSION"
+   </pre>
+
+   NOTE: <tt>sed -n '4p'</tt> is an alternative to grep.
+
+1. View the latest and previous releases and its SHA for the git commit creating a release at:
+   
+   <a target="_blank" href="https://github.com/hashicorp/boundary/releases">https://github.com/hashicorp/boundary/releases</a>
+
 
    ### CLI Shortcuts
 
-1. Alternately, if you prefer less typing, for quicker invocation of "boundary", set an alias to use "bdy" instead
+2. Alternately, if you prefer less typing, for quicker invocation of "boundary", set an alias to use "bdy" instead
 
    <pre>alias bdy="boundary"</pre>
 
-1. That would enable you to spend less time typing:
+3. That would enable you to spend less time typing:
   
    <pre><strong>bdy version</strong></pre>
+
+
+   <a name="CommandList"></a>
+
+   ### Command List
+
+3. Use the alias to get a list of commands (and functionality from  Boundary):
+  
+   <pre><strong>bdy --help</strong></pre>
+
+   A menu of concepts in alphabetical order:
+  
+   <pre>Usage: boundary &LT;command> [args]
+&nbsp;
+Commands:
+    accounts                  Manage Boundary accounts
+    <a href="#auth-methods">auth-methods</a>              Manage Boundary auth methods
+    auth-tokens               Manage Boundary auth tokens
+    authenticate              Authenticate the Boundary command-line client
+    config                    Manage resources related to Boundary's local configuration
+    connect                   Connect to a target through a Boundary worker
+    credential-libraries      Manage Boundary credential librarys
+    credential-stores         Manage Boundary credential stores
+    credentials               Manage Boundary credentials
+    database                  Manage Boundary's database
+    dev                       Start a Boundary dev environment
+    groups                    Manage Boundary groups
+    <a href="#host-catalogs">host-catalogs</a>             Manage Boundary host catalogs
+    <a href="#host-sets">host-sets</a>                 Manage Boundary host sets
+    <a href="#hosts">hosts</a>                     Manage Boundary hosts
+    logout                    Delete the current token within Boundary and forget it locally
+    managed-groups            Manage Boundary managed groups
+    roles                     Manage Boundary roles
+    <a href="#scopes">scopes</a>                    Manage Boundary scopes
+    server                    Start a Boundary server
+    sessions                  Manage Boundary sessions
+    <a href="#targets">targets</a>                   Manage Boundary targets
+    <a href="#users">users</a>                     Manage Boundary users
+    workers                   Manage Boundary workers
+   </pre>
+
+   ### Documentation online
+
+   Clicking the question mark icon brings you to<br />
+   <a target="_blank" href="https://developer.hashicorp.com/boundary/docs/concepts/domain-model/scopes%23organizations">https://developer.hashicorp.com/boundary/docs/concepts/domain-model/scopes%23organizations</a>
 
 
    <a name="PostgresInDocker"></a>
 
    ### Postgres database in Docker
 
-1. After installing Docker Desktop and have it running on its default port,
-1. This command makes use of the container image in Docker Hub (https://hub.docker.com/_/postgres)
+1. Install Docker Desktop and have it running on its default port.
+
+2. Make use of the Docker container image in Docker Hub (https://hub.docker.com/_/postgres)
 
    <pre><strong>docker run --name postgres-db -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
    </strong></pre>
@@ -243,7 +293,7 @@ credential-stores     logout                workers
 
    <a name="controller"></a>
 
-1. Instantiate a Boundary controller-mode process locally on a Terminal session <strong>using default parameter values</strong>:
+3. Instantiate a Boundary controller-mode process locally on a Terminal session <strong>using default parameter values</strong>:
   
    <pre><strong>boundary dev</strong></pre>
 
@@ -262,8 +312,8 @@ credential-stores     logout                workers
      Controller Public Cluster Addr: 127.0.0.1:9201
              Dev Database Container: sleepy_wiles
                    Dev Database Url: postgres://postgres:password@localhost:55000/boundary?sslmode=disable
-         Generated Admin Login Name: admin
-           Generated Admin Password: password
+         <strong>Generated Admin Login Name: admin
+           Generated Admin Password: password</strong>
           Generated Host Catalog Id: hcst_1234567890
                   Generated Host Id: hst_1234567890
               Generated Host Set Id: hsst_1234567890
@@ -290,6 +340,8 @@ credential-stores     logout                workers
 ...
    </pre>
 
+   WARNING: Notice in the output above that Boundary in dev mode by default uses an (insecure) login name 'admin' and password 'password'. 
+
    <a target="_blank" href="https://www.youtube.com/watch?v=pGfSITzcTQ0&t=17m25s">VIDEO</a>: Alternately, specify parameters:
   
    <pre><strong>boundary dev \
@@ -299,8 +351,12 @@ credential-stores     logout                workers
    -worker-public-address=192.168.1.80
    </strong></pre>
 
-   Noticed that Generated are the Admin Login Name: "admin" and (insecure) Admin Password: "password",
-   which the GUI requests manually.
+   Alternately, run in background with the <tt>&</tt>:
+
+   <pre><strong>boundary dev -database-url=postgres://postgres:postgres@boundary-database:5432/postgres?sslmode=disable \
+   -cluster-listen-address=0.0.0.0 \
+   -api-listen-address=0.0.0.0 &
+   </strong></pre>
 
 
 1. Create a new Terminal window if you want to make any more CLI commands.
@@ -316,34 +372,133 @@ credential-stores     logout                workers
    <pre>export BOUNDARY_ADDR="https://11.22.33.44:9200"</pre>
 
 
-   <a name="Boundary.app_GUI"></a>
+   <a name="Authentication"></a>
 
-   ### Boundary.app GUI
+   ### Authentication
 
-3. To install the Desktop client, click the .dmg (64-bit) on macOS.
+   PROTIP: Craft and use a shell script so you don't have to remember this.
+
+3. Get a reminder:
+
+   <pre><strong>boundary authenticate help
+   </strong></pre>
+
+   <pre>Usage: boundary authenticate [sub command] [options] [args]
+&nbsp;
+  This command authenticates the Boundary commandline client using a specified auth
+  method. Examples:
+&nbsp;
+    Authenticate with a password auth method:
+&nbsp;
+      $ boundary authenticate password -auth-method-id ampw_1234567890 -login-name foo
+&nbsp;
+    Authenticate with an OIDC auth method:
+&nbsp;
+      $ boundary authenticate oidc -auth-method-id amoidc_1234567890
+&nbsp;
+  Please see the auth method subcommand help for detailed usage information.
+&nbsp;
+Subcommands:
+    oidc        Invoke the OIDC auth method to authenticate with Boundary
+    password    Invoke the password auth method to authenticate with Boundary
+   </pre>
+
+1. Authenticate!
+   
+   <pre>boundary authenticate password \
+     -auth-method-id=ampw_1234567890 \
+     -login-name=admin \
+     -password=password \
+     -keyring-type=none
+    </pre>
+   
+   If you see this error message:
+
+   <pre>Password flag must be used with env:// or file:// syntax or left empty for an interactive prompt
+   </pre>
+
+   The expected response is something like this:
+
+   <pre>      Authentication information:
+        Account ID:      apw_BPPNtEX82N
+        Auth Method ID:  ampw_1234567890
+        Expiration Time: Wed, 14 Oct 2020 18:30:40 PDT
+        Token:
+        at_6FOC0R3hDG_s1FFYccNfP479aLeEMpbGptDrQyG...snip...
+        User ID:         u_1234567890
+   </pre>
+
+<hr />
+   
+<a name="Boundary.app_GUI"></a>
+
+## Boundary.app GUI
+
+1. To install the Desktop client, click the .dmg (64-bit) on macOS.
 
    Drag the <strong>Boundary.app</strong> icon and drop on the app folder at:
 
    <pre>/Applications/Boundary.app</pre>
 
-4. If you access it often, drag the icon and drop it among others.
+2. If you access it often, drag the icon and drop it among others.
 
-5. Invoke the app by double-clicking or 
+3. Invoke the app by double-clicking or 
   
-6. Type the URI to the Boundary server:
+4. Type the URI to the Boundary server:
 
    <img alt="HashiCorp Boundary.app GUI Landing" width="800" height="494" src="https://i.pinimg.com/originals/c1/db/9f/c1db9f7193fa92b06d1790e1b73652a4.jpg">
 
-7. Login Authentication
+5. Login Authentication
 
    <img alt="HashiCorp Boundary Auth" width="476" height="562" src="https://i.pinimg.com/originals/a3/3d/96/a33d963a6364dd67a2f70fd0094e471e.jpg">
 
-Boundary automates and standardizes the workflow for on-boarding and off-boarding hosts and targets.
+   
+   Boundary automates and standardizes the workflow for on-boarding and off-boarding hosts and targets.
 
-It provides one-click deployment.
+   It provides one-click deployment.
+
+1. Select Roles.
+
+1. Select Administration and then click the Principals tab.
+
+   Notice that admin user is listed. User, group, and project are a type of principal which can be assigned to roles.
+
+1. Click on the Grants tab to view the permissions allowed on this role. Grants represent strings of actions on resources:
+
+   id=&LT;resource_id>; action=&LT;actions>
+
+   The grant for Administration role indicates that all actions (actions=*) on all resources (id=*;type=*) are permitted.
+
+1. Return to the Roles list and select Login and Default Grants role.
+
+1. Click the Grants to view its permissions
+
+   A role can have multiple grants defined. Those grants are deleted when the role is deleted. A grant is also deleted if its associated resource is deleted.
+
+1. Select Projects and then Generated project scope.
+
+   Notice that you can see Sessions, Targets and Host Catalogs.
+
+1. Select Host Catalogs.
+
+1. Select Generated host catalog.
+
+1. Click on the Host Sets tab and then Generated host set to view its details.
+
+1. Click on the Hosts tab to view attached hosts.
+
+   Currently, Generated host with ID, hst_1234567890 is the only host attached to this host set. From the Manage menu, you can add or delete hosts from the host set.
+
+1. Select Generated host. Its Address is set to localhost.
+
+1. Select Targets from the left-pane.
+
+1. Select Generated target. The generated target allows TCP connection, and its ID is ttcp_1234567890.
+
+   Using the Manage menu, you can add additional host sets to the target, or delete this target.
+
 
 <hr />
-
 
 <a name="SelfHosted"></a>
 
@@ -356,7 +511,7 @@ It provides one-click deployment.
 
    <pre>export PROJDIR="$HOME/<strike>github-wilsonmar</strike>"</pre>
 
-2. because there are many other branches (taking up space), clone so that only the master branch is downloaded:
+2. Because there are many other branches (taking up space), clone so that only the master branch is downloaded:
 
    <pre><strong>git clone git@github.com:hashicorp/boundary.git --depth 1
    cd boundary</strong></pre>
@@ -390,80 +545,31 @@ It provides one-click deployment.
 
 ## Configuring Boundary Cluster
 
-
 * <a target="_blank" href="https://learn.hashicorp.com/tutorials/boundary/oss-manage-scopes?in=boundary%2Fbasic-administration">Manage Scopes</a>
 * <a target="_blank" href="https://learn.hashicorp.com/tutorials/boundary/oss-manage-targets?in=boundary/oss-administration">Manage Targets</a>
 * <a target="_blank" href="https://learn.hashicorp.com/tutorials/boundary/oss-manage-targets?in=boundary/oss-administration">Manage Users and Groups</a>
 
-https://learn.hashicorp.com/boundary
+<hr />
+   
+<a name=scopes"></a>
+
+## Boundary Scope
+
+Scopes are the foundational part of Boundary. They allow users to <strong>partition resources</strong> and assign ownership of resources to principals. modeled as a container. 
+
+There are three type of scopes within Boundary: Global, Org, and Project. There is only one global scope, which is the entry point for initial administration/setup and to manage the org scopes.
+Under the global scope, you can create multiple org scopes. 
+
+   A scope can contain child scopes, forming a tree.
+
+<img alt="boundary-scopes-522x277.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674313295/boundary-scopes-522x277_kkeink.jpg">
+
+Org scopes are used to hold IAM-related resources and project scopes.
+
+Explore resources in the Generated org scope using Boundary's Admin Console.
 
 
-<a name="CLIMenu"></a>
-
-## CLI Menu
-
-For a full list of commands (and functionality of Boundary):
-
-1. In a Terminal, run boundary without parameters for a menu of concepts in alphabetical order:
-  
-   <pre>Usage: boundary <command> [args]
-&nbsp;
-Commands:
-    accounts                  Manage Boundary accounts
-    <a href="#auth-methods">auth-methods</a>              Manage Boundary auth methods
-    auth-tokens               Manage Boundary auth tokens
-    authenticate              Authenticate the Boundary command-line client
-    config                    Manage resources related to Boundary's local configuration
-    connect                   Connect to a target through a Boundary worker
-    credential-libraries      Manage Boundary credential librarys
-    credential-stores         Manage Boundary credential stores
-    credentials               Manage Boundary credentials
-    database                  Manage Boundary's database
-    dev                       Start a Boundary dev environment
-    groups                    Manage Boundary groups
-    <a href="#host-catalogs">host-catalogs</a>             Manage Boundary host catalogs
-    <a href="#host-sets">host-sets</a>                 Manage Boundary host sets
-    <a href="#hosts">hosts</a>                     Manage Boundary hosts
-    logout                    Delete the current token within Boundary and forget it locally
-    managed-groups            Manage Boundary managed groups
-    roles                     Manage Boundary roles
-    <a href="#scopes">scopes</a>                    Manage Boundary scopes
-    server                    Start a Boundary server
-    sessions                  Manage Boundary sessions
-    <a href="#targets">targets</a>                   Manage Boundary targets
-    <a href="#users">users</a>                     Manage Boundary users
-    workers                   Manage Boundary workers
-   </pre>
-
-   Using automation to create a Baseline Environment or these manual edits to configure
-   in this logical order:
-
-   <a name=scopes"></a>
-
-### Boundary Scope
-
-   A Boundary <strong>scope</strong> is an abstract boundary modeled as a container. A scope can contain socopes forming a tree.
-
-1. To migrate a throw-away instance:
-  
-   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
-   boundary database init -config $"{BOUNDARY_DB_CONFIG}" \
-      -skip-auth-method-creation \
-      -skip-scopes-creation \
-      -skip-initial-login-role-creation
-   </pre>
-
-   Additionally:<br />
-   <pre>export BOUNDARY_TLS_INSECURE=true</pre>
-
-   Alternately, to migrate a long-running instance, specify those 3 skips in the controller.hcl file:
-  
-   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
-   boundary database init -config $"{BOUNDARY_DB_CONFIG}"
-   </pre>
-
-
-### Organizations
+   ### Organization scope
 
    Each organization is a top-level container (scope) whichowns zero to many <strong>projects</strong> and zero to many authentication methods. An organization inherits from scope, allowing it to own zero to many groups, roles, policies, targets, host catalogs, or credential stores.
 
@@ -489,6 +595,28 @@ Commands:
 
    * Support - contains CSM (Customer Support Management) system to track communications with customers
    <br /><br />
+
+
+
+## Migrate
+
+1. To migrate a throw-away instance:
+  
+   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
+   boundary database init -config $"{BOUNDARY_DB_CONFIG}" \
+      -skip-auth-method-creation \
+      -skip-scopes-creation \
+      -skip-initial-login-role-creation
+   </pre>
+
+   Additionally:<br />
+   <pre>export BOUNDARY_TLS_INSECURE=true</pre>
+
+   Alternately, to migrate a long-running instance, specify those 3 skips in the controller.hcl file:
+  
+   <pre>export BOUNDARY_DB_CONFIG="/etc/boundary/controller.hcl"
+   boundary database init -config $"{BOUNDARY_DB_CONFIG}"
+   </pre>
 
 
    <a name="host-catalogs"></a>

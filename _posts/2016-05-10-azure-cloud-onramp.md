@@ -462,9 +462,15 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
     (From Tim Warner)
     <img alt="az-aad-concepts-1194x954.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674198812/az-aad-concepts-1194x954_mivxuk.jpg">
 
-    ### Federated External Identity Guests
-    
-    "External Identity" are Guest users with a credential federated from another Identity Store (Facebook, Google, GitHub, etc.).
+    ### Federation
+
+    <a name="EntApps"></a>
+
+    Microsoft has created integrations with Enterprise Applications such as Dropbox, Google Docs, AWS, Concur, etc.
+
+    "External Identity" are Guest users with a credential federated from another Identity Store (Facebook, Google Gmail, GitHub, etc.) or a new SAML/WS-Fed IdP.
+
+    After an IdP is defined, define User flows (see AD B2C).
 
     (from Tim Warner)
     <img alt="az-aad-groups-751x987.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1674201184/az-aad-groups-751x987_fasfn0.jpg">
@@ -479,7 +485,7 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     There are two types of Consent to Azure AD:
     a) Federation<br />
-    b) Non-federated MSA (Microsoft Account)
+    b) Non-federated MSA (Microsoft Account from Skype, XBox)
 
     DEFINITION: OTP (One-Time Password) is emailed to the user.
 
@@ -505,7 +511,9 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
     <pre>(user.city -eq "Tampa")</pre>
 
 14. Click "Create".
-   
+
+
+    <hr />
 
     <a name="License"></a>
     
@@ -536,44 +544,42 @@ AAD is a SaaS service, unlike "Active Directory" running on Windows servers in o
 
     License "Azure AD Premium P2" for production enterprises. P2 provides "Identity Protection" and "Identity Governance" features. P2 is needed for MFA (Multi-Factor Authentication) and PIM.
 
+
     <a name="PIM"></a>
 
     ### P2 PIM (Privileged Identity Management)
 
-    <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> provides elevated access on a <strong>JIT (Just-in-Time)</strong> basis for a limited time. access. PIM provides audit logs to enable reviews of accesses. 
-
-    The Global Admin enables PIM after MFA sign-on.
+    For those with a P2 license, <a target="_blank" href="https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure">Azure AD Privileged Identity Management (PIM)</a> provides elevated access on a <strong>JIT (Just-in-Time)</strong> basis for a limited time. access. PIM provides audit logs to enable reviews of accesses. 
 
     Email is automatically sent when a role assignmnet is made outside of PIM. So do all access changes from the PIM UI, using "Privileged Authentication/Role Administrator" role assignments. Assignment can be permanent or based on time and date range.
 
-    
+1. REMEMBER: PIM must be enabled by the <a href="#AdminUsers">Global Admin</a> after MFA sign-on.
 
-    <a name="Devices"></a>
+1.  Users search for PIM, Azure resources, to see <strong>assignments</strong> to <a target="_blank" href="https://learn.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-how-to-activate-role?WT.mc_id=Portal-Microsoft_Azure_Support">activate yourself</a>:
 
-    ### Devices on AAD
+    https://portal.azure.com/#view/Microsoft_Azure_PIMCommon/ActivationMenuBlade/~/azurerbac
 
-    A "Registered" device is personally owned and signed in with a personal Microsoft or local account. It can access mobile and Windows 10 but not Windows Servers.
+1.  PROTIP: Bookmark the above URL 
+1.  Admins approve
+2.  The user would see a Subscription with role "Specified access".
+3.  User should Deactivate after using rather than letting the clock run out.
 
-    A "Joined" device exists only in the cloud to access Windows 10 and Windows Server 2019 VMs.
+    <a name="ConditionalAccess"></a>
 
-    A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
+    ### Conditional Access Policy
 
-    ### Role Assignments
+    Another P1 or P2 feature to limit granting of user access to only designated IPs, geographic regions, types of computer, etc..
 
-    REMEMBER: Actions are also called "Operations" at different Scopes.
+    Those under this require use of MFA.
 
-15. See "Your role"? "Global Admin"
 
-16. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
-    Click "+ Add" to create a new Tenant.
 
-    PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
 
-17. Cancel out by searching for AAD again.
+<hr />
 
-    Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+<a name="AdminUsers"></a>
 
-    READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
+## Admin Users & Groups
 
 
     <a name="GlobalAdmin"></a>
@@ -602,7 +608,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
    PowerShell command lists 75 user roles:<br />
    <tt>Get-AzureRMRoleDefinition</tt> 
 
-   * Application Administrators can create and manage all aspects of enterprise applications, application registrations, and application proxy settings.
+   * Application Administrators can create and manage all aspects of <a href="#EntApps">enterprise applications</a>, application registrations, and application proxy settings.
 
    * Application Developers can create application registrations when the “Users can register applications” setting is set to No.
 
@@ -694,9 +700,13 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
    REMEMBER: There are four ways to assign resource rights to a user:
    * Direct assignment of user to resources.
    * Group assignment - all AAD group members access rights through user association with a group
-   * Rule-based assignment - when a resource owner creates a group and uses a rule to define which users are assigned to a specific resource, attaching a role definition to a user, group, service principal, or managed identity at a particular scope.
+   * Rule-based assignment - when a resource owner creates a group and uses a rule to define which users are assigned to a specific resource, attaching a role definition to a user, group, <a href="#SvcPrin">service principal</a>, or managed identity at a particular scope.
    * External authority assignment - such as on-prem. directory of SaaS app.
    <br /><br />
+
+   <a name="SvcPrin"></a>
+   
+   DEFINITION: Each Service Principal can request an Azure AD token to access Azure resources and assign users and groups.
 
    <a name="RoleAssignment"></a>
 
@@ -765,23 +775,53 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
 ### Management Group Policies
 
+1. Navigate to the "Policy" blade.
+2. Definitions
+
    In Azure, policies are for evaluating compliance among Resources and their properties, not to control access to resources.
 
    <a target="_blank" href="https://portal.cloudskills.io/products/azure-administrator-az-104-exam-prep-course/categories/4743678/posts/8980104">VIDEO</a>:
-   Policies can be assigned to scopes to limit what can be assigned to management levels and change what has been assigned:
+   Policies can be assigned to <strong>scopes</strong> to limit what can be assigned to management levels and change what has been assigned:
 
-   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. In preview are Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
+   <a target="_blank" href="https://docs.microsoft.com/en-us/azure/governance/policy/concepts/effects">Policy effects</a> include Append, Audit, Deny, Modify, etc. Also: Enforce OPA (Open Policy Agent) Constraint and Enforce Rego Policy.
 
-1. Navigate to the Policy blade.
-2. Definitions
 3. Select a category from Categories dropdown.
 
    For example: Require a tag and its value on resources
 
-   NOTE: Tags do not cascade via inheritance like permissions unless a policy allows that.
+   REMEMBER: Tags do not cascade via inheritance like permissions unless a policy allows that.
 
    To do remediation, define a Managed Identity.
 
+
+
+
+    <a name="Devices"></a>
+
+    ### Devices on AAD
+
+    A "Registered" device is personally owned and signed in with a personal Microsoft or local account. It can access mobile and Windows 10 but not Windows Servers.
+
+    A "Joined" device exists only in the cloud to access Windows 10 and Windows Server 2019 VMs.
+
+    A "Hybrid" AAD joined device can access on-prem Windows 7, 8.1, 10 and Server 2008 or newer.
+
+    ### Role Assignments
+
+    REMEMBER: Actions are also called "Operations" at different Scopes.
+
+15. See "Your role"? "Global Admin"
+
+16. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
+    Click "+ Add" to create a new Tenant.
+
+    PROTIP: Tenant Type "Azure Active Directory" by itself is actually "B2B" = Business to (2) Business. "B2C" means Business to (2) Consumers, or connection to External Identities on LinkedIn, Google, Facebook, etc.
+
+17. Cancel out by searching for AAD again.
+
+    Various roles can be can be defined for a tenant - LIMIT: Up to 2,000 roles per individual tenant.
+
+    READ: <a target="_blank" href="https://medium.com/microsoftazure/how-to-perform-role-assignments-on-azure-resources-from-an-azure-devops-pipeline-c9f4dc10d0a4">Role Assignments on Azure Resources from Azure Pipelines</a>
 
 
 ### Summary
@@ -996,7 +1036,7 @@ PROTIP: It makes more sense to look at a live example populated with several res
 
    "Isolated" = ISE
 
-   Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation to 
+   Azure AD supports auth protocols: OAuth, OpenID, SAML, WS-Federation.
 
 2. For birthdate, make up an adult year: 2023 - 22 = 2001
 
@@ -1396,7 +1436,7 @@ Abbreviations can serve as a way to inform policies, such as locking of producti
    * Azure Cloud Shell which enable: Azure PowerShell (Az modules)
    * JSON Templates IaC templates (by custom REST API clients)
    * <a href="#Bicep">Azure Bicep (like Terraform)</a>
-   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodeJs (JavaScript), etc.
+   * Azure programmatic SDKs using programming languages C# .NET, Java, Python, NodeJs (JavaScript), etc. calling APIs
    <br /><br />
 
    PROTIP: A resource group can contain resources from <strong>multiple regions</strong>.
