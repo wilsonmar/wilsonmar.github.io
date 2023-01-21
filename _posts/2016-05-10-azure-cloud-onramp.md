@@ -336,6 +336,15 @@ AADC = Azure AD Connect<br />
 vs.<br />
 ADDS = Active Directory DS = Domain Services
 
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> - </th><th> on-prem. AD </th><th> Azure AD </th></tr>
+<tr valign="top"><td> Structure: </td><td> 
+   Org. Unit </td><td> Admin. Unit </td></tr>
+<tr valign="top"><td> Runs on: </td><td> 
+   Windows </td><td> SaaS </td></tr>
+</table>
+
+
 <hr />
 
 ### AD = Active Directory 
