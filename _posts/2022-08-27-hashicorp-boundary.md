@@ -208,7 +208,7 @@ credential-stores     logout                workers
    echo "BOUNDARY_VERSION=$BOUNDARY_VERSION"
    </pre>
 
-   NOTE: <tt>sed -n '4p'</tt> is an alternative to grep.
+   NOTE: <tt>sed -n '4p'</tt> is a (counter-intuitive) alternative to grep.
 
 1. View the latest and previous releases and its SHA for the git commit creating a release at:
    
@@ -529,15 +529,6 @@ Subcommands:
    <pre><strong>boundary auth-methods list
    </strong></pre>
 
-## Use with AWS
-
-
-## Use with Azure
-
-
-## Use with GCP
-
-
 
 <hr />
 
@@ -839,8 +830,16 @@ On Linux, the worker service is specified in:
 
 <hr />
 
+## Connection Protocol Wrappers
 
+Boundary comes with built-in wrappers for popular layer 7 connection protocols, such as:
 
+   * ssh: defaults to the local SSH client (ssh)
+   * postgres: defaults to the official Postgres CLI client (psql)
+   * rdp: defaults to the built-in Windows RDP client (mstsc)
+   * http: defaults to curl
+   * kube: defaults to kubectl
+   <br /><br />
 
 ## Human-to-machine Access via Boundary
 
