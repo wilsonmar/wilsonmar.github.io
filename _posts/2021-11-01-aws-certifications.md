@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "AWS Certifications"
+date: "2023-01-22"
+file: "aws-certifications"
+title: "AWS (Professional) Certifications"
 excerpt: "Tips and tricks to get certified: links to tutorials, videos, practice exams."
 tags: [AWS, EC2, cloud, on-boarding]
-date: "2021-11-01"
-file: "aws-certifications"
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -81,6 +81,11 @@ Not covered:
 
 ### Specialty exams:
 
+> Design <strong>and deploy</strong> dynamically scalable, highly available, fault-tolerant, and reliable applications on AWS.
+
+The "and deploy" applies to Professional level exams.<br />
+Associate exams has just "design".
+
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-advanced-networking-specialty/">$300, 170-minute <br />AWS Certified Advanced Networking - Specialty</a>
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-data-analytics-specialty/AWS-Certified-Data-Analytics-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-data-analytics-specialty/">$300, 170-minute <br />AWS Certified Data Analytics - Specialty</a>
@@ -89,12 +94,8 @@ Not covered:
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-ml/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-machine-learning-specialty/">$300 to answer 65 questions in 180-minute <br />AWS Certified Machine Learning - Specialty</a>
 
-* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute <br />AWS Certified Security - Specialty</a>
-
-
-> Design <strong>and deploy</strong> dynamically scalable, highly available, fault-tolerant, and reliable applications on AWS.
-
-The "and deploy" applies to Professional. Associate has just "design".
+* <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute <br />AWS Certified Security - Specialty SCS-C01</a>
+   * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/aws-certified-security-specialty">Pluralsight</a>
 
 ## Social
 
