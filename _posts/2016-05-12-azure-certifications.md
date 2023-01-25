@@ -517,8 +517,11 @@ As with other fundamentals certifications, it's $99 for
    * Demonstrate the capabilities of Power Virtual Agents (1–5%)
    <br /><br />
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=lpsre6vWzCc">YouTube: 2 hr "Full Course"</a> by Susanth Sutheesh
-   * <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-power-platform-fundamentals-pl-900">Pluralsight</a>
+   <a target="_blank" href="https://microsoftlearning.github.io/PL-900-Microsoft-Power-Platform-Fundamentals/">Microsoft class: PL-900-Microsoft-Power-Platform-Fundamentals</a> 
+   [<a target="_blank" href="https://github.com/MicrosoftLearning/PL-900-Microsoft-Power-Platform-Fundamentals">GitHub</a>]
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=lpsre6vWzCc">YouTube: 2 hr "Full Course"</a> to <a target="_blank" href="https://ko-fi.com/s/cbd19025e9">$10+ PPT</a> by Susanth Sutheesh
+   * <a target="_blank" href="https://app.pluralsight.com/paths/skills/microsoft-power-platform-fundamentals-pl-900">On Pluralsight: Fundamentals</a> by Vlad Catrinescu
    * <a target="_blank" href="https://www.udemy.com/course/pl-900-microsoft-power-platform-fundamentals-r/">8-hour Udemy</a>
    * <a target="_blank" href="https://www.whizlabs.com/blog/pl-900-exam-preparation-guide/">WhizLabs</a>
    <br /><br />

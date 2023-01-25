@@ -271,6 +271,21 @@ Commands:
    <a target="_blank" href="https://developer.hashicorp.com/boundary/docs/concepts/domain-model/scopes%23organizations">https://developer.hashicorp.com/boundary/docs/concepts/domain-model/scopes%23organizations</a>
 
 
+
+<hr />
+
+## Connection Protocol Wrappers
+
+Boundary comes with built-in wrappers for popular layer 7 connection protocols, such as:
+
+   * ssh: defaults to the local SSH client (ssh)
+   * postgres: defaults to the official Postgres CLI client (psql)
+   * rdp: defaults to the built-in Windows RDP client (mstsc)
+   * http: defaults to curl
+   * kube: defaults to kubectl
+   <br /><br />
+
+
    <a name="PostgresInDocker"></a>
 
    ### Postgres database in Docker
@@ -827,19 +842,6 @@ On Linux, the worker service is specified in:
    -login-name admin \
    -recovery-config controller.hcl
    </strong></pre>
-
-<hr />
-
-## Connection Protocol Wrappers
-
-Boundary comes with built-in wrappers for popular layer 7 connection protocols, such as:
-
-   * ssh: defaults to the local SSH client (ssh)
-   * postgres: defaults to the official Postgres CLI client (psql)
-   * rdp: defaults to the built-in Windows RDP client (mstsc)
-   * http: defaults to curl
-   * kube: defaults to kubectl
-   <br /><br />
 
 ## Human-to-machine Access via Boundary
 

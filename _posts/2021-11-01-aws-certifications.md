@@ -96,6 +96,8 @@ Associate exams has just "design".
 
 * <a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf">PDF</a>: <a target="_blank" href="https://aws.amazon.com/certification/certified-security-specialty/">$300 to answer 65 questions in 170-minute <br />AWS Certified Security - Specialty SCS-C01</a>
    * <a target="_blank" href="https://app.pluralsight.com/paths/certificate/aws-certified-security-specialty">Pluralsight</a>
+   * https://github.com/acantril/aws-security-specialty
+   <br /><br />
 
 ## Social
 
