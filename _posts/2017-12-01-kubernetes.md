@@ -224,7 +224,7 @@ The website, and the Kubernetes code is maintained by the Linux Foundation, whic
 Versions of Kubernetes are listed at:
 
 * <a target="_blank" href="https://kubernetes.io/releases/">kubernetes.io/releases</a> website
-* <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a> where Kubernetes source code  is open-sourced, its releases</a>:
+* <a target="_blank" href="https://github.com/kubernetes/kubernetes/releases">github.com/kubernetes/kubernetes/releases</a> where Kubernetes source code  is open-sourced, its releases:
 <br /><br />
 
 History:
@@ -653,7 +653,16 @@ Within Kubernetes are these auto-scaling mechanisms:
 
    If configured, the VPA updater can automatically restart nodes to carry out its recommendations and <strong>increase or decrease existing pod containers</strong>. But that is not recommended in production because of concerns about churn disrupting reliability -- exceeding the <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">Kubernetes PodDisruptionBudget</a> (PDB) -- minAvailable and maxUnAvailable.
 
-* <a target="_blank" href="https://www.densify.com/product"k8>Densify.com</a> provides a commercially available (paid) option which uses sophisticated Machine Learning mechanisms. It provides an <a target="_blank" href="https://www.densify.com/docs-api/Content/APIHome.htm">API</a>.
+   Concerns about the VPA are: <a target="_blank" href="https://www.youtube.com/watch?v=cws0vKEPmVg&t=1m30s" title="StormForge">VIDEO</a>:
+   * Complex YAML-based configuration for each container?
+   * Limited practicality at scale?
+   * Basic, reactive statistical modeling?
+   * Limited time-frame (looks at 8 days, which misses monthly, quarterly, yearly seasonality cycles)?
+   * Resource slack to reduce risk risk of throttling & OOM errors?<br /><br />
+
+   Thus, Google has come up with their service.
+
+* <a target="_blank" href="https://www.densify.com/product">Densify.com</a> provides a commercially available (paid) option which uses sophisticated Machine Learning mechanisms. It provides an <a target="_blank" href="https://www.densify.com/docs-api/Content/APIHome.htm">API</a>.
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"><img alt="Desify" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1664817199/k8s-densify-w-1900_907_w3zujq.png"></a>
 
@@ -1273,7 +1282,7 @@ The programmatic approach of scripts mean that code is needed to check condition
 
 <a target="_blank" href="https://www.youtube.com/watch?v=7KUdmFyefSA&list=RDCMUCdngmbVKX1Tgre699-XLlUA&start_radio=1&t=526">VIDEO</a>: Kubernetes only need the Container Runtime from Docker's Engine, which Kubernetes created a "dockershim" to use Docker's Container Runtime. Then Docker extracted and gave to CNCF "containerd".
 
-This diagram is <a href=#Sanders">Sander</a> on a lightboard:
+This diagram of <a href="#Sanders">Sander</a> on a lightboard:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1668917299/k8s-docker-runtiimes-966x636_owe72k.jpg"><img alt="k8s-docker-runtiimes-966x636.jpg" width="966" width="636" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1668917299/k8s-docker-runtiimes-966x636_owe72k.jpg"></a>
 
