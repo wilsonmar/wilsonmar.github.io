@@ -43,6 +43,13 @@ Journeys Northward on <a href="#CattleDrives">Cattle Drives</a> in the 1880s.
 
 BTW, finding where each site is located resulted in a great geography and historical lesson for me.
 
+## References
+
+* <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
+* <a target="_blank" href="https://www.movie-locations.com/">movie-locations.com</a>
+* <a target="_blank" href="https://rs.locationshub.com/Home/Index?page=1">locationshub.com/#featured-filming-locations</a>
+* <a target="_blank" href="https://www.wikiwand.com/en/List_of_World_Heritage_Sites_in_the_United_States">24 UNESCO World Heritage Sites in the United State</a>
+
 ## Extreme corners
 
 <a target="_blank" href="https://ironbutt.org/rides/">Iron Butt</a> motocyle rallies award bonus points for reaching the four corners of the nation:

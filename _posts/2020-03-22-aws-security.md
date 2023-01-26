@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-01-17"
+file: "aws-security"
 title: "AWS Security"
 excerpt: "Securing secrets in Bash shell scripts while learning to pass the AWS Certified Security - Specialty (SCS-C01) exam"
 tags: [Security, DevOps]
-date: "2022-01-17"
-file: "aws-security"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -506,11 +506,6 @@ Hardening before creating AMI:
 
 ## Amazon/AWS Products
 
-### Amazon Detective
-
-new in 2020,
-uses Machine Learning and statistical analysis on outputs from Guard Duty, 
-
 ### AWS Firewall Manager
 
 etc. to simplify WAF admin <strong>across accounts</strong>.
@@ -619,11 +614,33 @@ Setup:
 
 ### AWS Guard Duty
 
-Identifies <strong>findings</strong> by using machine learning analyze <strong>logs</strong> from CloudTrail, VPC, DNS.
+Identifies <strong>findings</strong> by using machine learning to analyze <strong>logs</strong> from:
+* DNS logs
+* VPC flow logs
+* CloudTrail Event logs
+* CloudTrail Management Events
+* CloudTrail S3 Data Events
+<br /><br />
+
+Findings invoke CloudWatch Events EventBridge which send:
+* Notifications to SNS
+* Invocation of Lambda
+<br /><br />
 
 Enable for 30-day trial. Use sample files with Trusted IP Lists.
 member accounts.
 
+### Amazon Detective
+
+New in 2020, a Security Investigation services that uses Tailored Visualization (with Machine Learning and statistical analysis) to interactively explore and trace through time-based findings from Guard Duty:
+   * login attempts
+   * API calls (from CloudTrail)
+   * Network Traffic (VPC flows)
+   <br /><br />
+
+Org management Administrator delegates a Detective Administrator account for the org. Administrator invites members (even outside the org)
+
+Member accounts contributes data.
 
 <a name="AbuseNotice""></a>
 
@@ -753,7 +770,8 @@ https://www.youtube.com/watch?v=1JAx2npuprk&list=PLtK75qxsQaMIHQOaDd0Zl_jOuu1m3v
 ## Summary
 
 <a target="_blank" href="https://aws.amazon.com/artifact/">AWS Artifact</a> 
-is a no-cost self-service portal to AWS’ compliance reports.
+is a no-cost self-service portal to AWS’ compliance reports
+such as SOC2.
 
 
 ## Blog articles
