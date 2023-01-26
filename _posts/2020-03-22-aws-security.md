@@ -615,9 +615,9 @@ Setup:
 ### AWS Guard Duty
 
 Identifies <strong>findings</strong> by using machine learning to analyze <strong>logs</strong> from:
-* DNS logs
-* VPC flow logs
-* CloudTrail Event logs
+* DNS logs (login attempts?)
+* VPC flow logs (Network traffic)
+* CloudTrail Event logs (API calls)
 * CloudTrail Management Events
 * CloudTrail S3 Data Events
 <br /><br />
@@ -632,15 +632,16 @@ member accounts.
 
 ### Amazon Detective
 
-New in 2020, a Security Investigation services that uses Tailored Visualization (with Machine Learning and statistical analysis) to interactively explore and trace through time-based findings from Guard Duty:
+New in 2020, Amazon Detective enables an Org management Administrator to delegate a Detective Administrator account for the org. Administrator to invite members (even outside the org) to contribute data.
+
+Detective provides <strong>visualizations</strong> (with Machine Learning and statistical analysis) to <strong>interactively</strong> explore and trace through time-based findings from Guard Duty:
    * login attempts
    * API calls (from CloudTrail)
    * Network Traffic (VPC flows)
    <br /><br />
 
-Org management Administrator delegates a Detective Administrator account for the org. Administrator invites members (even outside the org)
+Detective is classified as a Security Investigation service. 
 
-Member accounts contributes data.
 
 <a name="AbuseNotice""></a>
 
