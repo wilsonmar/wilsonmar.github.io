@@ -354,3 +354,8 @@ STAR: Take the <a target="_blank" href="https://academy.styra.com/courses/opa-re
 
 
 
+## More on Amazon #
+
+This is one of a series on Amazon:
+
+{% include aws_links.html %}

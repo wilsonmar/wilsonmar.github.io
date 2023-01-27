@@ -4856,6 +4856,10 @@ CDK for Terraform
 
 ## Atlantis on Terraform
 
+   References:
+   * https://itnext.io/pains-in-terraform-collaboration-249a56b4534e
+   <br /><br />
+
 <a target="_blank" href="https://www.youtube.com/watch?v=bUWmJFzBh0A" title="Jan 24, 2021 by Agung Prasetya Dharma K">*</a>
 ensure code reviews.
 

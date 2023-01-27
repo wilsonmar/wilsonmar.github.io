@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-02"
+date: "2023-11-02"
 file: "aws-networking"
 title: "AWS Networking"
 excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, BGP, etc."
@@ -525,7 +525,6 @@ http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
 This is one of a series on Amazon:
 
 {% include aws_links.html %}
-
 
 
 ## More on DevOps #

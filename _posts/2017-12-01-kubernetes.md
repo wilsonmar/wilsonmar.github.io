@@ -95,10 +95,15 @@ Discovery,
 <a href="#Tolerations">Tolerations</a>,
 <a href="#Vim">Vim (tool)</a>,
 <a href="#Volumes">Volumes</a>,
+<a href="#SampleVPARec">VPA</a>,
 <a href="#Workloads">Workloads API</a>
 
 <strong>Bolded words</strong> are abbreviations assigned by Kubernetes. 
-Memorizing and using them while manually typing commands will save you much time.
+
+PROTIP: Memorizing and using abbreviations while manually typing commands will save you much time.
+
+They may come up during <a target="_blank" href="https://medium.com/@AceTheCloud-Abhishek/the-kubernetes-handbook-a-comprehensive-guide-of-100-q-a-e680199e6e22">
+basic interview questioning</a>.
 
 
 <a name="K8s_API"></a>
@@ -626,7 +631,8 @@ Within Kubernetes are these auto-scaling mechanisms:
 
 * <strong>Event-Driven Autoscaler</strong> is a Red Hat/Microsoft project that can scale a wide range of objects automatically.
   
-<a name="SampleVPARec"></a>
+   <a name="SampleVPARec"></a>
+
 * <strong>VPA (Vertical Pod Autoscaler)</strong> analyzes standard CPU and memory resource usage metrics to provide recommendations CPU and memory resource configuration to align cluster resource allotment with actual usage. An example of its recommendation output:
 
    <pre>
@@ -651,14 +657,14 @@ Within Kubernetes are these auto-scaling mechanisms:
 
    The <tt>lowerBound</tt> limit defines the minimum amount of resources that containers need. 
 
-   If configured, the VPA updater can automatically restart nodes to carry out its recommendations and <strong>increase or decrease existing pod containers</strong>. But that is not recommended in production because of concerns about churn disrupting reliability -- exceeding the <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">Kubernetes PodDisruptionBudget</a> (PDB) -- minAvailable and maxUnAvailable.
+   If configured, the VPA updater should be able to automatically restart nodes to carry out its recommendations and <strong>increase or decrease existing pod containers</strong>. But that is currently not recommended in production because of concerns about churn disrupting reliability -- exceeding the <a target="_blank" href="https://kubernetes.io/docs/tasks/run-application/configure-pdb/">Kubernetes PodDisruptionBudget</a> (PDB) -- minAvailable and maxUnAvailable.
 
-   Concerns about the VPA are: <a target="_blank" href="https://www.youtube.com/watch?v=cws0vKEPmVg&t=1m30s" title="StormForge">VIDEO</a>:
+   Concerns about VPAs are: <a target="_blank" href="https://www.youtube.com/watch?v=cws0vKEPmVg&t=1m30s" title="StormForge">VIDEO</a>:
    * Complex YAML-based configuration for each container?
    * Limited practicality at scale?
    * Basic, reactive statistical modeling?
    * Limited time-frame (looks at 8 days, which misses monthly, quarterly, yearly seasonality cycles)?
-   * Resource slack to reduce risk risk of throttling & OOM errors?<br /><br />
+   * Resource slack to reduce risk of throttling & OOM errors?<br /><br />
 
    Thus, Google has come up with their service.
 
