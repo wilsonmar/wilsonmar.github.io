@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-10-21"
+date: "2023-01-21"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -635,7 +635,7 @@ Hyperconvergence takes convergence a step further by utilizing software to perfo
 
 ### CompTIA CySA+
 
-CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes
+<a target="_blank" href="https://www.comptia.org/certifications/cybersecurity-analyst">CompTIA CySA+ (CSO-001) "Security Analyst" exam</a> launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes
 
 <a target="_blank" href="https://www.infosecinstitute.com/webinar/comptia-cysa-certification-changes-everything-you-need-to-know/?utm_status=success">VIDEO</a>:
 
@@ -670,8 +670,9 @@ CompTIA CySA+ (CSO-001) exam launched April 21, 2020 on Vue & Pearson online $35
    2. Given a scenario, apply security concepts in support of organizational risk mitigation
    3. Explain the importance of frameworks, policies, procedures and controls.
    
-https://www.udemy.com/course/comptiacsaplus/learn/lecture/21082126#overview
+<a target="_blank" href="https://www.udemy.com/course/comptiacsaplus/learn/lecture/21082126#overview">Udemy course</a>
 
+<hr />
 
 ## Cisco CCIE
 
