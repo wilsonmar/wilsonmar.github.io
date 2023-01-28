@@ -635,7 +635,7 @@ Hyperconvergence takes convergence a step further by utilizing software to perfo
 
 ### CompTIA CySA+
 
-<a target="_blank" href="https://www.comptia.org/certifications/cybersecurity-analyst">CompTIA CySA+ (CSO-001) "Security Analyst" exam</a> launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes
+<a target="_blank" href="https://www.comptia.org/certifications/cybersecurity-analyst">CompTIA CySA+ (CSO-001) "Security Analyst" exam</a> launched April 21, 2020 on Vue & Pearson online $359 to answer 75% of 85 questions in 165 minutes.
 
 <a target="_blank" href="https://www.infosecinstitute.com/webinar/comptia-cysa-certification-changes-everything-you-need-to-know/?utm_status=success">VIDEO</a>:
 
