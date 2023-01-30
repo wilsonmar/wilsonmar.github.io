@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-11-02"
+date: "2023-01-39"
 file: "aws-networking"
 title: "AWS Networking"
 excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, BGP, etc."
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial covers how to access servers and other resources within AWS.
+This tutorial covers how to manage Security Groups and other AWS network security features to access servers and other resources within AWS.
 
 {% include whatever.html %}
 
