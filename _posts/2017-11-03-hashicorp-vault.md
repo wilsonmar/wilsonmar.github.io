@@ -1006,7 +1006,11 @@ Secrets engines are Vault plugins that store, generate, or encrypt data. Secrets
 <a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>:
 Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
 
-### Get in
+Read HCP Vault documentation at:<br />
+   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a>
+   <br /><br />
+
+### Get in HCP
 
 1. At <a target="_blank" href="https://portal.cloud.hashicorp.com/sign-up?product_intent=vault">https://portal.cloud.hashicorp.com/sign-up?product_intent=vault</a>
    
@@ -1032,11 +1036,11 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     ### HCP Tier Pricing
 
-9.  <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
+    <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
 
     <table border="1" cellpadding="4" cellspacing="0">
     <tr align="right"><th align="left"> Vault<br />Tier 
-       </th><th> $/hr </th><th> * 24 =<br />$/day </th><th> * 30 =<br />$/mo. </th><th> * 12 =<br />$/year
+       </th><th> <br />$/hr </th><th> * 24 =<br />$/day </th><th> * 30 =<br />$/mo. </th><th> * 12 =<br />$/year
        </th></tr>
     <tr valign="top" align="right"><td align="left"> Development 
        </td><td> $0.30
@@ -1110,16 +1114,16 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
        </td></tr>
     </table>
 
-10. Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
+9.  Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
 
-    <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which defines the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
+    <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which scopes the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
 
     References about CIDR VPC: 
     * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
     * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
     <br /><br />
 
-11. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
+10. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
 
     https://developer.hashicorp.com/vault/tutorials/cloud
 
@@ -1134,11 +1138,11 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <a name="getVAULT_NAMESPACE"></a>
 
-12. Enter the CLI menu by clicking:
+11. Enter the CLI menu by clicking:
 
     <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
 
-13. Click the icon for "Telling Vault where to find this cluster" 
+12. Click the icon for "Telling Vault where to find this cluster" 
 
     <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
 
@@ -1150,33 +1154,33 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     NOTE: In HCP, "admin" is equivalent to "root" as the Top-level Namespace.
 
-14. Switch to your Terminal and press command+V to paste it. Press Enter.
+13. Switch to your Terminal and press command+V to paste it. Press Enter.
 
     <a href="#getVAULT_TOKEN"></a>
 
-    ### Get VAULT_TOKEN to CLI
+    ### Get VAULT_TOKEN to client CLI
 
-15. Switch back to your browser.
-16. Click the icon for "Authenticating to Vault" to get into your Clipboard:
+14. Switch back to your browser.
+15. Click the icon for "Authenticating to Vault" to get into your Clipboard:
 
     <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]
     </pre>
 
-17. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
-18. Switch back to your browser to click "Close".
+16. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
+17. Switch back to your browser to click "Close".
 
-19. Click "Generate token" (Under "New admin token") and wait for "Fetching".
-20. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
-21. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
+18. Click "Generate token" (Under "New admin token") and wait for "Fetching".
+19. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
+20. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
 
     <pre>export VAULT_TOKEN=hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0
     </pre>
 
-22. Press Enter to invoke it.
+21. Press Enter to invoke it.
     
     REMEMBER: By default, it's enabled for <strong>6 hours</strong>.
 
-23. Perform a token lookup.
+22. Perform a token lookup.
 
     <pre><strong>curl --header "X-Vault-Token: $VAULT_TOKEN" \
    --header "X-Vault-Namespace: $VAULT_NAMESPACE" \
@@ -1238,17 +1242,12 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
    Connection between AWS VPC and HCP HVN is using VPC Peering.
 
-4.  Read HCP Vault documentation at:
-
-   https://cloud.hashicorp.com/docs/vault
-
-
-1. Click "Manage" to Import to Terraform:
+4. Click "Manage" to Import to Terraform:
 
    <pre>terraform import hcp_vault_cluster.&LT;RESOURCE_NAME> vault-cluster</pre>
 
-1. Click "Access Vault" for "Command-line (CLI)".
-1. Click "Use public URL" and click the copy icon to save to your Clipboard, for example:
+5. Click "Access Vault" for "Command-line (CLI)".
+6. Click "Use public URL" and click the copy icon to save to your Clipboard, for example:
 
    <pre>export VAULT_ADDR="https://vault-cluster.vault.a17838e5-60d2-4e49-a43b-cef519b694a5.aws.hashicorp.cloud:8200"; 
 export VAULT_NAMESPACE="admin"
@@ -1256,11 +1255,11 @@ export VAULT_NAMESPACE="admin"
 
 1. Paste the value ???
 
-1. Authenticate to Vault at https://www.vaultproject.io/docs/concepts/auth#authenticating
+2. Authenticate to Vault at https://www.vaultproject.io/docs/concepts/auth#authenticating
    
    <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]</pre>
 
-1. https://learn.hashicorp.com/tutorials/vault/getting-started-apis
+3. https://learn.hashicorp.com/tutorials/vault/getting-started-apis
 
 
 Provision a Dev Vault Cluster on AWS with Terraform
