@@ -1018,8 +1018,6 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
 2. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different HVN, IAM, Billing, and Settings specific to your organization.
 
-   <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which defines the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
-
    ### New Vault Cluster
 
 3. Click "View Vault".
@@ -1051,8 +1049,10 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
    
     ### HCP Cluster Size Pricing
 
+    Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
+
     <table border="1" cellpadding="4" cellspacing="0">
-    <tr><th> Cluster<br />Size </th><th> Cost </th><th> vCPUs </th><th> Store
+    <tr align="right"><th align="left"> Cluster<br />Size </th><th> Cost </th><th> vCPUs </th><th> Storage </th><th colspan="3"> Comparison
        </th></tr>
     <tr valign="top" align="right"><td align="left"> Small 
        </td><td> $1.578/hr 
@@ -1080,12 +1080,14 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
        </td></tr>
     </table>
 
-10. Confirm Network settings (such as CIDR block 172.25.16/0/20, a non-routable address space).
+10. Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
 
-   References about CIDR VPC: 
-   * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
-   * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
-   <br /><br />
+    <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which defines the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
+
+    References about CIDR VPC: 
+    * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
+    * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
+    <br /><br />
 
 11. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
 
