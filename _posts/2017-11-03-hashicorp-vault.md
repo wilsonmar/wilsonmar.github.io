@@ -513,7 +513,7 @@ Here are the configuration settings that installers of Vault need to specify:
 
 4. Define the process for cluster resizing and changing tiers. There is a current limitations that no production-grade clusters can be scaled down to the Development tier and you must have enough resources to scale down or delete them accordingly. HCP Vault allows you to change your clusters in place while maintaining the current configurations. 
 
-
+zzz
 <hr />
 
 
@@ -1028,13 +1028,13 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
    https://portal.cloud.hashicorp.com/services/vault/bonkers?project_id=211f5f56-93a1-42de-8db6-9bebcec81cc6
    
-6. Create a Vault Cluster ID (named "vault-cluster" by default). 
-7. Note the Network region (such as "Oregon us-west-2")
-8. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
+6.  Create a Vault Cluster ID (named "vault-cluster" by default). 
+7.  Note the Network region (such as "Oregon us-west-2")
+8.  Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
 
-   ### HCP Pricing
+    ### HCP Tier Pricing
 
-9. <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
+9.  <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
     
     * To start with, select Vault tier: "Development" to be associated with an "Extra Small" Cluster size of 2 vCPU/ 1GiB RAM for $0.30/hr = $7.20/day = $216/month (of 30 days) = $2,592/year
 
@@ -1049,6 +1049,37 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     * Plus of $1.844/hr = $44.26/day = $1327.68/month = $15,932.16/year
     <br /><br />
    
+    ### HCP Cluster Size Pricing
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> Cluster<br />Size </th><th> Cost </th><th> vCPUs </th><th> Store
+       </th></tr>
+    <tr valign="top" align="right"><td align="left"> Small 
+       </td><td> $1.578/hr 
+       </td><td> 2 vCPU
+       </td><td> 15 GB
+       </td><td align="center" colspan="3"> 1X
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Medium 
+       </td><td> $3.163/hr 
+       </td><td> 4 vCPU
+       </td><td> 30 GB
+
+       </td><td> 2X
+       </td><td> 2X
+       </td><td> 2X
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Large
+       </td><td> $7.849/hr 
+       </td><td> 8 vCPU
+       </td><td> 50 GB
+
+       </td><td> 5X
+       </td><td> 4X
+       </td><td> 3.3X
+       </td></tr>
+    </table>
+
 10. Confirm Network settings (such as CIDR block 172.25.16/0/20, a non-routable address space).
 
    References about CIDR VPC: 
