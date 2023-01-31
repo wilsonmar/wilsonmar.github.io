@@ -1064,18 +1064,12 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
        </td></tr>
     </table>
 
-    * To start with, select Vault tier: "Development" to be associated with an "Extra Small" Cluster size of 2 vCPU/ 1GiB RAM for $0.30/hr = $7.20/day = $216/month (of 30 days) = $2,592/year
+    REMEMBER: With "Development" at $0.30/hour, that $50 trial credit gets you about <strong>7 days</strong> of run time.
 
-       REMEMBER: With "Development" at $0.30/hour, that $50 trial credit gets you about <strong>7 days</strong> of run time.
+    PROTIP: Instead of letting instances sit idle accumulating cost, during development, <strong>delete the cluster</strong> and build it all again using Terraform.
 
-       PROTIP: During development, <strong>delete the cluster</strong> and build it again instead of letting instances sit idle.
+    Vault tier: "Development" is automatically associated with an "Extra Small" Cluster Size.
 
-    * Starter of $0.50/hr = $12/day = $360/month = $4,320/year
-
-    * Standard of $1.578/hr = $37.87/day = $1,136.16/month = $13,633.92/year for a <strong>3-node</strong> HA cluster (across 3 AZs) and storage snapshots on unlimited namespaces.
-    
-    * Plus of $1.844/hr = $44.26/day = $1327.68/month = $15,932.16/year
-    <br /><br />
    
     ### HCP Cluster Size Pricing
 
