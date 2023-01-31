@@ -1041,17 +1041,17 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     <tr valign="top" align="right"><td align="left"> Development 
        </td><td> $0.30
        </td><td> $7.20
-       </td><td> $216
-       </td><td> $2,592
+       </td><td> $216.00
+       </td><td> $2,592.00
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Starter 
        </td><td> $0.50
-       </td><td> $12
-       </td><td> $360
-       </td><td> $4,320
+       </td><td> $12.00
+       </td><td> $360.00
+       </td><td> $4,320.00
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Standard
-       </td><td> $1.578
+       </td><td> $1.58
        </td><td> $37.87
        </td><td> $1,136.16
        </td><td> $13,633.92
@@ -1060,7 +1060,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
        </td><td> $1.844
        </td><td> $44.26
        </td><td> $1,327.68
-       </td><td> $15,932
+       </td><td> $15,932.00
        </td></tr>
     </table>
 
@@ -1084,6 +1084,12 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     <table border="1" cellpadding="4" cellspacing="0">
     <tr align="right"><th align="left"> Cluster<br />Size </th><th> Cost </th><th> vCPUs </th><th> Storage </th><th colspan="3"> Comparison
        </th></tr>
+    <tr valign="top" align="right"><td align="left"> Extra-Small 
+       </td><td> -
+       </td><td> -
+       </td><td> -
+       </td><td align="center" colspan="3"> -
+       </td></tr>
     <tr valign="top" align="right"><td align="left"> Small 
        </td><td> $1.578/hr 
        </td><td> 2 vCPU
