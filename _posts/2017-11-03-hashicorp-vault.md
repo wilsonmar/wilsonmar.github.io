@@ -263,9 +263,9 @@ Vault provides a capability that most major cloud providers also provide in thei
 * AWS External Key Store (XKS)
 
 * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
-   See https://www.udemy.com/course/azure-key-vault-the-complete-introduction/
-   Azure has higher "Premium" prices for use of it HSM (Hardware Security Module)
-   <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
+   
+   <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
+   Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
 
 * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
 
@@ -1033,12 +1033,42 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     ### HCP Tier Pricing
 
 9.  <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
-    
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr align="right"><th align="left"> Vault<br />Tier 
+       </th><th> $/hr </th><th> $/day </th><th> $/mo. </th><th>$/year
+       </th></tr>
+    <tr valign="top" align="right"><td align="left"> Development 
+       </td><td> $0.30
+       </td><td> $7.20
+       </td><td> $216
+       </td><td> $2,592
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Starter 
+       </td><td> $0.50
+       </td><td> $12
+       </td><td> $360
+       </td><td> $4,320
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Standard
+       </td><td> $1.578
+       </td><td> $37.87
+       </td><td> $1,136.16
+       </td><td> $13,633.92
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Plus
+       </td><td> $1.844
+       </td><td> $44.26
+       </td><td> $1,327.68
+       </td><td> $15,932
+       </td></tr>
+    </table>
+
     * To start with, select Vault tier: "Development" to be associated with an "Extra Small" Cluster size of 2 vCPU/ 1GiB RAM for $0.30/hr = $7.20/day = $216/month (of 30 days) = $2,592/year
 
-    REMEMBER: With "Development" at $0.30/hour, that $50 trial credit gets you about <strong>7 days</strong> of run time.
+       REMEMBER: With "Development" at $0.30/hour, that $50 trial credit gets you about <strong>7 days</strong> of run time.
 
-    PROTIP: During development, <strong>delete the cluster</strong> and build it again instead of letting instances sit idle.
+       PROTIP: During development, <strong>delete the cluster</strong> and build it again instead of letting instances sit idle.
 
     * Starter of $0.50/hr = $12/day = $360/month = $4,320/year
 
