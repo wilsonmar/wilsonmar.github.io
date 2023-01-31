@@ -78,6 +78,7 @@ HashiCorp makes money from licensing its on-prem (self-managed) enterprise softw
 
 The GUI that comes with licensed editions provide a consistent user experience to enable organizations to get up and running quickly, plus achieve scale easily -- without the complexity and overhead of self-managed instances. Each "organization" hosted within HCP is isolated and secured from other organizations.
 
+<a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Performance Replication</a> is available with "HCP Vault Plus" licensing.
 
 ### Enterprise worthy?
 
@@ -1043,7 +1044,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     * Starter of $0.50/hr = $12/day = $360/month = $4,320/year
 
-    * Standard of $1.578/hr = $37.87/day = $1,136.16/month = $13,633.92/year
+    * Standard of $1.578/hr = $37.87/day = $1,136.16/month = $13,633.92/year for a <strong>3-node</strong> HA cluster (across 3 AZs) and storage snapshots on unlimited namespaces.
     
     * Plus of $1.844/hr = $44.26/day = $1327.68/month = $15,932.16/year
     <br /><br />
@@ -1057,12 +1058,13 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
 11. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
 
+    https://developer.hashicorp.com/vault/tutorials/cloud
 
     ### Access HCP Vault from CLI
 
-    Three environment variables:
+    Access to a Vault client requires these environment variables:
 
-    * VAULT_ADDR
+    * VAULT_ADDR (the URL to the Vault cluster)
     * <a href="#getVAULT_NAMESPACE">VAULT_NAMESPACE</a>
     * <a href="#getVAULT_TOKEN">VAULT_TOKEN</a> (equivalent to a password)
     <br /><br />
@@ -1082,6 +1084,8 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     <pre>export VAULT_ADDR="https://bonkers-private-vault-c6443333.9d787275.z1.hashicorp.cloud:8200"; 
     export VAULT_NAMESPACE="admin"
     </pre>
+
+    NOTE: In HCP, "admin" is equivalent to "root" as the Top-level Namespace.
 
 14. Switch to your Terminal and press command+V to paste it. Press Enter.
 
@@ -1148,12 +1152,14 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     ### Seal the cluster
 
+    <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud/vault-introduction">NOTE</a>: 
+    Auto-unseal is configured. A unique Key Management Service (KMS) key is created for each cluster.
 
     <a name="Config"></a>
 
     ### Configure for Authentication
 
-20. Configure at least one audit device to write log (before completing the request):
+2.  Configure at least one audit device to write log (before completing the request):
 
     <pre><strong>vault audit enable file file_path=/var/log/vault_audit.log</strong></pre>
 
@@ -1165,11 +1171,11 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-provider-vault?in=vault/cloud-ops">Tutorial: Deploy HCP Vault with Terraform</a> example scenario automatically deploys an AWS VPC, and peers it with your HashiCorp Virtual Network (HVN).
 
-21. To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
+3.  To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
 
    Connection between AWS VPC and HCP HVN is using VPC Peering.
 
-22. Read HCP Vault documentation at:
+4.  Read HCP Vault documentation at:
 
    https://cloud.hashicorp.com/docs/vault
 
