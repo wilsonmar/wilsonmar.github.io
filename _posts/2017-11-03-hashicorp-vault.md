@@ -1036,7 +1036,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <table border="1" cellpadding="4" cellspacing="0">
     <tr align="right"><th align="left"> Vault<br />Tier 
-       </th><th> $/hr </th><th> $/day </th><th> $/mo. </th><th>$/year
+       </th><th> $/hr </th><th> * 24 =<br />$/day </th><th> * 30 =<br />$/mo. </th><th> * 12 =<br />$/year
        </th></tr>
     <tr valign="top" align="right"><td align="left"> Development 
        </td><td> $0.30
@@ -1076,7 +1076,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
 
     <table border="1" cellpadding="4" cellspacing="0">
-    <tr align="right"><th align="left"> Cluster<br />Size </th><th> Cost </th><th> vCPUs </th><th> Storage </th><th colspan="3"> Comparison
+    <tr align="right"><th align="left"> Cluster Size </th><th> Cost </th><th> vCPUs </th><th> Storage </th><th colspan="3" align="center"> Comparison
        </th></tr>
     <tr valign="top" align="right"><td align="left"> Extra-Small 
        </td><td> -
