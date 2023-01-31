@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-01"
+date: "2023-01-30"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-HashiCorp's <a target="_blank" href="https://www.vaultproject.io">Vault (at vaultproject.io)</a> securely stores <a href="#Secrets">various type of secrets</a> in a High Availability approach, managed by a core team.
+HashiCorp's Vault securely stores <a href="#Secrets">various type of secrets</a> in a way that spans multiple clouds.
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
@@ -42,16 +42,78 @@ Vault was first released as open-source software in 2015 at:
 
 HashiCorp provides Vault free under open-source licensing with community support.
 
-## Vault Enterprise & HCP
+<a name="ValueProp"></a>
 
-HashiCorp makes money from licensing of its on-prem (self-managed) enterprise capabilities.
+## HashiCorp Vault's Value Proposition
 
-Vault HCP (HashiCorp Cloud Platform), <a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">announced Oct. 14 2020</a>, is a hosted (SaaS) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise. 
+HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
 
-The Enterprise cloud GUI (providing a consistent user experience) enable organizations to get up and running quickly, plus achieve scale easily -- without the complexity and overhead of self-managed instances. Each "organization" hosted within HCP is isolated and secured from other organizations.
+Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
+This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
-Either way, base Enterprise capabilities include:
-   * quicker "Premium" support world-wide in English, German, Japanese, etc.
+The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+
+* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+* Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+
+* Server installed in <strong>sealed mode</strong> (provides no access)
+
+   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
+
+* Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+
+* Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
+
+   https://github.com/scarolan/painless-password-rotation
+
+* Change value of an existing secret (key rotation) without rebooting.
+   This is the strong point with Vault.
+
+   https://github.com/scarolan/painless-password-rotation
+
+## Vault Enterprise & HCP SaaS
+
+HashiCorp makes money from licensing its on-prem (self-managed) enterprise software and from <strong>Vault HCP</strong> (HashiCorp Cloud Platform), <a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">announced Oct. 14 2020</a>, is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
+
+The GUI that comes with licensed editions provide a consistent user experience to enable organizations to get up and running quickly, plus achieve scale easily -- without the complexity and overhead of self-managed instances. Each "organization" hosted within HCP is isolated and secured from other organizations.
+
+
+### Enterprise worthy?
+
+HashiCorp's Vault is popular among large enterprises (the "Global 2000") because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
+Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
+
+There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
+<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
+
+HashiCorp provides a fully enterprise-level 24/7 support worldwide.
+HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
+Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
+(next to the Salesforce Transit Center).
+
+Vault supports PKI (Private Key Infrastructure) used to handle certificates.
+
+All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
+
+Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
+and responds to security events.
+
+Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
+   https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
+
+Also, HashiCorp supports its enterprise services partners via a team specializing in partner technical support worldwide.
+
+Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
+
+
+<a name="EntCapabilities"></a>
+
+## Vault Enterprise Capabilities
+
+Either way, base Enterprise capabilities adds:
+
+   * Quicker "Premium" customer support world-wide in English, German, Japanese, etc.
    * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
    * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
    * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Replication (for faster read performance across regions)</a>
@@ -61,13 +123,7 @@ Either way, base Enterprise capabilities include:
    * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
    <br /><br />
 
-
-<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
-Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
-
-Also, HashiCorp supports its enterprise services partners via a team specializing in partner technical support worldwide.
-
-References to HCP: 
+   References to HCP: 
    * <a target="_blank" href="https://cloud.hashicorp.com/products/vault">https://cloud.hashicorp.com/products/vault</a>
    * https://developer.hashicorp.com/hcp/docs/hcp#how-does-hcp-work
    * https://developer.hashicorp.com/hcp/docs/vault
@@ -78,12 +134,24 @@ References to HCP:
    * https://portal.cloud.hashicorp.com/sign-in
    <br /><br />
 
+## HCP Pricing
+
+<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
+Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
+
+
+
+
 
 <hr />
 
 <a name="Secrets"></a>
 
-## Types of secrets 
+## Types of secrets engines
+
+<a name="SecretsEngines"></a>
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
 
 Vault provides <a href="#SecretsEngines">secrets engines</a> to work with each type of secret,
 each a <a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-cases">"use case"</a> for the Vault product:
@@ -101,14 +169,6 @@ each a <a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-c
 * API Keys provided by programs to obtain data from servers
 
 * database credentials
-
-<a name="SecretsEngines"></a>
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
-
-PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
-
-PROTIP: Within Vault, key material and metadata about Secret Engines are stored as a root folder.
 
 Supported secrets engines (alphabetically):
    * Active Directory (AD)
@@ -130,6 +190,10 @@ Supported secrets engines (alphabetically):
    * <strong>totp</strong> (Time-based One-time Password, as defined by <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
    * <strong>transit</strong> (from HashiCorp)
    <br /><br />
+
+PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
+
+PROTIP: Within Vault, key material and metadata about Secret Engines are stored as a root folder.
 
 
 <hr />
@@ -187,65 +251,6 @@ Questions for secrets management:
 
 
 
-## HashiCorp Vault's Value Proposition
-
-The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
-
-* Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
-* Server installed in <strong>sealed mode</strong> (provides no access)
-
-   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
-
-* Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
-
-* Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
-
-   https://github.com/scarolan/painless-password-rotation
-
-* Change value of an existing secret (key rotation) without rebooting.
-   This is the strong point with Vault.
-
-   https://github.com/scarolan/painless-password-rotation
-
-
-### Enterprise Multi-platform, Multi-cloud
-
-HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
-
-Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
-This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
-
-Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
-
-
-### Enterprise worthy?
-
-HashiCorp's Vault is popular among large enterprises because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
-Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
-
-There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
-<strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
-
-HashiCorp provides a fully enterprise-level 24/7 support worldwide.
-
-HashiCorp began as a remote workforce and today HashiCorp people are in 47 countries.
-Just 15% of the 2,000 employees work in HashiCorp's San Francisco headquarters 
-(next to the Salesforce Transit Center).
-
-Vault supports PKI (Private Key Infrastructure) used to handle certificates.
-
-All HashiCorp's products provide a detailed <strong>audit logs</strong> needed for forensics.
-
-Enterprises send logs to a central repository (such as Splunk) where their SOC team monitors
-and responds to security events.
-
-Multi-cloud support in HCP started in 2022 with AWS, and moving to AZure.
-   https://developer.hashicorp.com/vault/tutorials/adp/key-management-secrets-engine-azure-key-vault
-
-
 ## Alternatives to secrets management
 
 Vault provides a capability that most major cloud providers also provide in their own features:
@@ -263,7 +268,23 @@ Vault provides a capability that most major cloud providers also provide in thei
 
 * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
 
-Other alternatives:
+
+<a name="Cost"></a>
+
+### Cost of Keys in Cloud
+
+Each KMS key stored costs $1/month. The first 20,000 decrypt requests each month are free, then $0.03 per 10,000. An additional $1/month for each key being automatically rotated.
+
+Requests to the <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> and <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html">GenerateDataKeyPairWithoutPlaintext API</a> operations and requests to API operations such as Sign, Verify, Encrypt, Decrypt, and GetPublicKey that reference asymmetric KMS keys (such as RSA) are excluded from the free tier. 
+For AWS KMS: requests of some encryption algorithms cost more than others: 
+
+   $00.03 per 10,000 <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html">GenerateDataKeyPairWithoutPlaintext API</a> involving RSA 2048 keys<br />
+   $00.10 per 10,000 Elliptic Curve (ECC) GenerateDataKeyPair (for signing)<br />
+   $00.15 per 10,000 asymmetric (SM2) requests except RSA 2048<br />
+   $12.00 per 10,000 RSA <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> requests
+
+
+### Other alternatives
 
 * <a target="_blank" href="https://medium.com/keycloak">Red-Hat Keycloak</a>
 
@@ -312,6 +333,7 @@ database_password = get_secret('db_pass')
    Within Kubernetes:
    * https://developer.hashicorp.com/vault/docs/platform/k8s/injector
    * https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-sidecar
+   <br /><br />
 
    RBAC (Role-based Access Control) has to be enabled in Kubernetes:
    <pre>--authorization-mode=RBAC</pre>
@@ -326,7 +348,7 @@ database_password = get_secret('db_pass')
 
    <pre>["SECRET={dev.vault-secret/password}","PATH=/usr/local/sbin:..."]</pre>
 
-References:
+   References:
    * https://www.saasworthy.com/product/aws-secrets-manager/pricing
    * https://www.saasworthy.com/product/hashicorp-vault/pricing
    * https://www.saasworthy.com/product/cyberark-pas/pricing
@@ -336,20 +358,6 @@ References:
    * https://www.saasworthy.com/product/akeyless-vault
    <br /><br />
 
-
-<a name="Cost"></a>
-
-## Cost comparisons
-
-Each KMS key stored costs $1/month. The first 20,000 decrypt requests each month are free, then $0.03 per 10,000. An additional $1/month for each key being automatically rotated.
-
-Requests to the <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> and <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html">GenerateDataKeyPairWithoutPlaintext API</a> operations and requests to API operations such as Sign, Verify, Encrypt, Decrypt, and GetPublicKey that reference asymmetric KMS keys (such as RSA) are excluded from the free tier. 
-For AWS KMS: requests of some encryption algorithms cost more than others: 
-
-   $00.03 per 10,000 <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPairWithoutPlaintext.html">GenerateDataKeyPairWithoutPlaintext API</a> involving RSA 2048 keys<br />
-   $00.10 per 10,000 Elliptic Curve (ECC) GenerateDataKeyPair (for signing)<br />
-   $00.15 per 10,000 asymmetric (SM2) requests except RSA 2048<br />
-   $12.00 per 10,000 RSA <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> requests
 
 <hr />
 
@@ -398,17 +406,17 @@ Enhancements to <a target="_blank" href="https://developer.hashicorp.com/hcp/doc
 <br /><br />
 
 PROTIP: Strategies include:
+<ul>
+   A. Define limited permissions to app developers (read and write but not delete data).
 
-A. Define limited permissions to app developers (read and write but not delete data).
+   B. Define separate admin accounts to delete audit logs and other data needed for forensics and disaster recovery.
 
-A. Define separate separate admin accounts to delete audit logs and other data needed for forensics and disaster recovery.
+   C. Define less restrictive permissions to enable creation of clusters
 
-B. Define less restrictive permissions to enable creation of clusters
+   D. Define separate permssions to accounts used to do scaling
 
-C. Define separate permssions to accounts used to do scaling
-
-D. separate Platform admin accounts
-
+   E. Separate Platform admin accounts, to limit impact of stolen credentials
+</ul>
 
 <a name="Roles"></a>
 
@@ -446,7 +454,7 @@ Here are various roles used to <a target="_blank" href="https://developer.hashic
 
 ## Modes of Vault Installation
 
-   A. A <a href="#Pricing">paid/licensed</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> without the need to employ people to keep that running 24/7.
+   A. A <a href="#Pricing">paid/licensed</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> and <a href="#EntCapabilities">other enterprise capabilities</a> without the need to employ people to keep that running 24/7.
 
    B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
 
@@ -457,18 +465,18 @@ Here are various roles used to <a target="_blank" href="https://developer.hashic
    E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
 
    F. Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
-
-   * Use Enterprise HCP
    <br /><br />
 
-<a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
-
-https://github.com/hashicorp/vault-guides
+References:
+   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
+   * https://github.com/hashicorp/vault-guides
 provides the technical content to support the Vault learn site.
+   * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+   <br /><br />
 
-https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+<a name="HCPstart"></a>
 
-## HPC SaaS Install Configs
+## HCP SaaS Install Configs
 
 Here are the configuration settings that installers of Vault need to specify:
 
@@ -846,6 +854,7 @@ Credentials required for successful login depend upon the constraints set on the
    http://127.0.0.1:8200/v1/auth/approle/login
    </pre>
 
+   https://github.com/hashicorp/vault-action
 
 1. Enable a secrets path for kv engine:
 
@@ -991,53 +1000,176 @@ Secrets engines are Vault plugins that store, generate, or encrypt data. Secrets
 
 <a name="VaultSaaS"></a>
 
-## Vault SaaS (HCP) first time with Dev public IP
+## HCP Vault first time with Dev public IP
 
 <a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>:
 Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
 
-1. At <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
-1. Obtain an account using your email and password.
+### Get in
+
+1. At <a target="_blank" href="https://portal.cloud.hashicorp.com/sign-up?product_intent=vault">https://portal.cloud.hashicorp.com/sign-up?product_intent=vault</a>
+   
+   Alternately, <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
+
+1. Click "Create an account" using your email and password.
 1. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
-1. At the "Overview" page, click "Deploy Vault" for your organization.
-1. Create a Vault Cluster ID (named "vault-cluster" by default). 
-1. Note the Network region (such as "Oregon us-west-2")
-1. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
-1. <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
-   * To start with, select Vault tier: "Development" to be associated with an "Extra Small" Cluster size of 2 vCPU/ 1GiB RAM for $0.30/hr = $7.20/day = $216/month (of 30 days) = $2,592/year
-   * Starter of $0.50/hr = $12/day = $360/month = $4,320/year
-   * Standard of $1.578/hr = $37.87/day = $1,136.16/month = $13,633.92/year
-   * Plus of $1.844/hr = $44.26/day = $1327.68/month = $15,932.16/year
+1. PROTIP: On your iPhone install the Authy to generate auth tokens.
+
+2. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different HVN, IAM, Billing, and Settings specific to your organization.
+
+   <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which defines the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
+
+   ### New Vault Cluster
+
+3. Click "View Vault".
+4. After <strong>projects</strong> are setup in a Provider (such as AWS), they appear in this page of Vault Clusters.
+5. Click the ID name (even though it isn't underlined) for that project's Overview page. PROTIP: Save this among your browser's bookmarks, within a Projects folder:
+
+   https://portal.cloud.hashicorp.com/services/vault/bonkers?project_id=211f5f56-93a1-42de-8db6-9bebcec81cc6
+   
+6. Create a Vault Cluster ID (named "vault-cluster" by default). 
+7. Note the Network region (such as "Oregon us-west-2")
+8. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
+
+   ### HCP Pricing
+
+9. <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
+    
+    * To start with, select Vault tier: "Development" to be associated with an "Extra Small" Cluster size of 2 vCPU/ 1GiB RAM for $0.30/hr = $7.20/day = $216/month (of 30 days) = $2,592/year
+
+    REMEMBER: With "Development" at $0.30/hour, that $50 trial credit gets you about <strong>7 days</strong> of run time.
+
+    PROTIP: During development, <strong>delete the cluster</strong> and build it again instead of letting instances sit idle.
+
+    * Starter of $0.50/hr = $12/day = $360/month = $4,320/year
+
+    * Standard of $1.578/hr = $37.87/day = $1,136.16/month = $13,633.92/year
+    
+    * Plus of $1.844/hr = $44.26/day = $1327.68/month = $15,932.16/year
+    <br /><br />
+   
+10. Confirm Network settings (such as CIDR block 172.25.16/0/20, a non-routable address space).
+
+   References about CIDR VPC: 
+   * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
+   * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
    <br /><br />
-1. Confirm Network settings (such as CIDR block 172.25.16/0/20, a non-routable address space).
-1. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
-1. PROTIP: <strong>Delete the cluster</strong> while you study the configuration process.
 
-   If you selected "Development" at $0.30/hour, that $50 trial gets you about <strong>7 days</strong> of run time.
-   <br /><br />
-
-   <a name="Config"></a>
-
-   ### Configure for Authentication
-
-1. Configure at least one audit device to write log (before completing the request):
-
-   <pre><strong>vault audit enable file file_path=/var/log/vault_audit.log</strong></pre>
+11. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
 
 
-   <a name="AWS"></a>
+    ### Access HCP Vault from CLI
 
-   ### AWS 
+    Three environment variables:
 
-   A prerequisite are AWS Credentials to an AWS account.
+    * VAULT_ADDR
+    * <a href="#getVAULT_NAMESPACE">VAULT_NAMESPACE</a>
+    * <a href="#getVAULT_TOKEN">VAULT_TOKEN</a> (equivalent to a password)
+    <br /><br />
 
-   <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-provider-vault?in=vault/cloud-ops">Tutorial: Deploy HCP Valut with Terraform</a> example scenario automatically deploys an AWS VPC, and peers it with your HashiCorp Virtual Network (HVN).
+    <a name="getVAULT_NAMESPACE"></a>
 
-1. To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
+12. Enter the CLI menu by clicking:
+
+    <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
+
+13. Click the icon for "Telling Vault where to find this cluster" 
+
+    <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
+
+    That gets you the VAULT_ADDR into your Clipboard:
+
+    <pre>export VAULT_ADDR="https://bonkers-private-vault-c6443333.9d787275.z1.hashicorp.cloud:8200"; 
+    export VAULT_NAMESPACE="admin"
+    </pre>
+
+14. Switch to your Terminal and press command+V to paste it. Press Enter.
+
+    <a href="#getVAULT_TOKEN"></a>
+
+    ### Get VAULT_TOKEN to CLI
+
+15. Switch back to your browser.
+16. Click the icon for "Authenticating to Vault" to get into your Clipboard:
+
+    <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]
+    </pre>
+
+17. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
+18. Switch back to your browser to click "Close".
+
+19. Click "Generate token" (Under "New admin token") and wait for "Fetching".
+20. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
+21. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
+
+    <pre>export VAULT_TOKEN=hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0
+    </pre>
+
+22. Press Enter to invoke it.
+    
+    REMEMBER: By default, it's enabled for <strong>6 hours</strong>.
+
+23. Perform a token lookup.
+
+    <pre><strong>curl --header "X-Vault-Token: $VAULT_TOKEN" \
+   --header "X-Vault-Namespace: $VAULT_NAMESPACE" \
+   $VAULT_ADDR/v1/auth/token/lookup-self | jq -r ".data"
+    </strong></pre>
+
+    <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud/vault-access-cluster">Sample output</a>:
+
+    <pre>{
+  "accessor": "CDeirnF8ijVMtkckQozs4hdk.J9q4g",
+  "creation_time": 1658343950,
+  "creation_ttl": 21600,
+  "display_name": "token-hcp-root",
+  "entity_id": "cebf4e89-8f68-36c1-3325-68060d0e5cf1",
+  "expire_time": "2023-07-21T01:05:50.84419125Z",
+  "explicit_max_ttl": 0,
+  "id": "hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0",
+  "issue_time": "2022-07-20T19:05:50.84421504Z",
+  "meta": null,
+  "namespace_path": "admin/",
+  "num_uses": 0,
+  "orphan": true,
+  "path": "auth/token/create/hcp-root",
+  "policies": [
+    "default",
+    "hcp-root"
+  ],
+  "renewable": false,
+  "role": "hcp-root",
+  "ttl": 19083,
+  "type": "service"
+}
+    </pre>
+
+1.  Switch back to your browser.
+
+    ### Seal the cluster
+
+
+    <a name="Config"></a>
+
+    ### Configure for Authentication
+
+20. Configure at least one audit device to write log (before completing the request):
+
+    <pre><strong>vault audit enable file file_path=/var/log/vault_audit.log</strong></pre>
+
+    <a name="AWS"></a>
+
+    ### AWS 
+
+    A prerequisite are AWS Credentials to an AWS account.
+
+    <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-provider-vault?in=vault/cloud-ops">Tutorial: Deploy HCP Vault with Terraform</a> example scenario automatically deploys an AWS VPC, and peers it with your HashiCorp Virtual Network (HVN).
+
+21. To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
 
    Connection between AWS VPC and HCP HVN is using VPC Peering.
 
-1. Read HCP Vault documentation at:
+22. Read HCP Vault documentation at:
 
    https://cloud.hashicorp.com/docs/vault
 
@@ -1063,6 +1195,7 @@ export VAULT_NAMESPACE="admin"
 
 
 Provision a Dev Vault Cluster on AWS with Terraform
+
 
 
 
