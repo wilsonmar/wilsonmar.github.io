@@ -997,14 +997,15 @@ The <a target="_blank" href="https://www.wikiwand.com/en/Lonesome_Dove_(miniseri
 ### The Pony Express
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
-Pony Express riders</a> (who include "Calamity Jane") delivered mail less than 2 years: 
-from April 3, 1860 to October 24, 1861.
-Their 1,900-mile (3,100 km) route went along 184 stations (10 miles apart) from St. Joseph, Missouri on the Missouri River to San Francisco, California:
+80 Pony Express riders</a> (who include "Calamity Jane") traveled day and night to deliver the mail from St. Joseph, Missouri on the Missouri River to San Francisco, California in only 10 days rather than the previous 24 days.
 
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
 <img alt="map of Pony Express route" src="https://cloud.githubusercontent.com/assets/300046/14632487/35bdb3e0-05d6-11e6-9e8f-3293fe2ffa5b.jpg" width="649" height="221"></a><br />
 <em>Map by William Henry Jackson, American artist. Text: Howard Roscoe Driggs. Scan: US Library of Congress. Photo <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">image</a> obtained/rendered by Gwillhickers. Restoration by Crisco 1492, Public Domain.</em>
 
+Their 1,900-mile (3,100 km) route went along 184 stations, each about 10-15 miles apart in order to switch horses who ran at a full gallop.
+
+But their service lasted for less than 2 years -- from April 3, 1860 to October 24, 1861 -- due to the invention of the electric telegraph along railroads during the volatile time leading up to the Civil War.
 
 
 <a id="WestwardVermont"></a>
