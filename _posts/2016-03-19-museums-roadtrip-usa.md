@@ -970,7 +970,7 @@ Harry S. Truman Presidential Library and Museum</a>, Independence</li>
 
 <a name="CattleDrives"></a>
 
-## Journeys Northward on Cattle Drives 
+## Northward on Cattle Drives 
 
 The <a target="_blank" href="https://www.paramountplus.com/shows/1883/">TV series "1883"</a> is about one of the cattle drives that brought Texas back from economic collapse after the end of the Civil War in 1865. The drive went from Fort Worth North toward Montana and Portland. Although a fictional story, the script mentions real locations: <a target="_blank" href="https://www.frontiertimesmagazine.com/blog/doans-store-red-river">Doan's Store</a> Red River Crossing, established 1878 along the Western Trail to Dodge City, Kansas where trains carried cattle East.
 
@@ -988,7 +988,7 @@ The <a target="_blank" href="https://www.wikiwand.com/en/Lonesome_Dove_(miniseri
 
 <a name="Westward"></a>
 
-## Journeys Westward on land
+## Westward on land
 
 "Go West, young Man, and grow up with the country!" is the advice widely <a target="_blank" href="https://blog.newspapers.library.in.gov/go-west-young-man-the-mystery-behind-the-famous-phrase/">(but wrongly)</a> attributed to New York Tribune Publisher Horace Greeley, who visited the West only once.
 
@@ -997,15 +997,15 @@ The <a target="_blank" href="https://www.wikiwand.com/en/Lonesome_Dove_(miniseri
 ### The Pony Express
 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Pony_Express#Pony_Express_route">
-80 Pony Express riders</a> (who include "Calamity Jane") traveled day and night to deliver the mail from St. Joseph, Missouri on the Missouri River to San Francisco, California in only 10 days rather than the previous 24 days.
+80 Pony Express riders</a> (who include <a target="_blank" href="https://en.wikipedia.org/wiki/Calamity_Jane">Calamity Jane</a>) traveled day and night to deliver mail from St. Joseph, Missouri on the Missouri River to San Francisco, California in only 10 days rather than the previous 24 days. They carried news of the volatile time leading up to the Civil War.
 
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14632396/b725f60a-05d5-11e6-8b45-7babd7649ae8.jpg">
 <img alt="map of Pony Express route" src="https://cloud.githubusercontent.com/assets/300046/14632487/35bdb3e0-05d6-11e6-9e8f-3293fe2ffa5b.jpg" width="649" height="221"></a><br />
-<em>Map by William Henry Jackson, American artist. Text: Howard Roscoe Driggs. Scan: US Library of Congress. Photo <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">image</a> obtained/rendered by Gwillhickers. Restoration by Crisco 1492, Public Domain.</em>
+<em>Photo source: <a target="_blank" href="https://commons.wikimedia.org/w/index.php?curid=10111804">Wikimedia</a>.</em>
 
-Their 1,900-mile (3,100 km) route went along 184 stations, each about 10-15 miles apart in order to switch horses who ran at a full gallop.
+The riders can run at full gallop along their 1,900-mile (3,100 km) route because they switch horses waiting at each of 184 stations, each about 10-15 miles apart.
 
-But their service lasted for less than 2 years -- from April 3, 1860 to October 24, 1861 -- due to the invention of the electric telegraph along railroads during the volatile time leading up to the Civil War.
+But their service lasted for less than 2 years -- from April 3, 1860 to October 24, 1861 -- due to the availability of the electric telegraph along railroads.
 
 
 <a id="WestwardVermont"></a>

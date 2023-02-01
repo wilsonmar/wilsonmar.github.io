@@ -1020,7 +1020,7 @@ Read HCP Vault documentation at:<br />
 1. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
 1. PROTIP: On your iPhone install the Authy to generate auth tokens.
 
-2. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different HVN, IAM, Billing, and Settings specific to your organization.
+2. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different <a href="#HVN">HVN</a>, IAM, Billing, and Settings specific to your organization.
 
    ### New Vault Cluster
 
@@ -1114,9 +1114,13 @@ Read HCP Vault documentation at:<br />
        </td></tr>
     </table>
 
+    <a name="HVN"></a>
+
 9.  Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
 
     <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which scopes the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=3m42s">VIDEO</a>: Think of HVN as a "secure holding area where your Vault instance is totally isolated from anyone else. Then as you provision new instances they can appear within the network. For example, a single-node developer instance or a multi-node cluster. HVN then gives you the option of how you want to connect.
 
     References about CIDR VPC: 
     * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
