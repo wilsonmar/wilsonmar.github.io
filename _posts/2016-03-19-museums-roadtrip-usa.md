@@ -43,7 +43,7 @@ Journeys Northward on <a href="#CattleDrives">Cattle Drives</a> in the 1880s.
 
 BTW, finding where each site is located resulted in a great geography and historical lesson for me.
 
-## References
+## References (Websites)
 
 * <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
 * <a target="_blank" href="https://www.movie-locations.com/">movie-locations.com</a>
@@ -63,7 +63,7 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 <a name="Google_route_map"></a>
 
-## Touching each state
+## Just Touching Each State
 
 <a target="_blank" href="http://goo.gl/maps/ZdUYQ">This Google route map</a> was actually used by <a target="_blank" href="http://www.datapointed.net/2012/08/fastest-route-to-visit-all-fifty-united-states/">recent finishers</a> to go around the 48 states in 6 days:
 
@@ -76,23 +76,28 @@ Notice the separation of green down the middle of the country?
 
 ## The Rain Shadow divide
 
-Today, the <strong>98th Meridian</strong> is shown by the green line in this map from <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a> (using <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>):<br />
+<a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 80% of Americans live East of the <strong>98th Meridian</strong>, as shown by a green straight line overlaid this map from <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
 
-"80% of Americans live East of that green line, which defines the extent wet storms reach from the East.
-That line also defines the limit of the "rain shadow" where the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) which blocks moisture from the Pacific West."
+That green line down the middle of America defines the extent wet storms reach from the East. That line also defines the "Rain Shadow" where the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) which blocks moisture from the Pacific West.
 
-When geologist John Westly Powell identified this phenomenon in 1890, that natural line was at the 100th Meridian (vs. 98th today).
+When geologist John Westly Powell identified this phenomenon across the "pairies" in 1890, that natural line was at the 100th Meridian (vs. 98th today).
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
 Also impact will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
 
-## Highway Refueling and ReCharging
 
-Notice the US interstate highway numbering system:
+<a name="freeways"></a>
+
+## US interstate highways
+
+East-west interstate highway numbers end with 0.<br />
+North-South interstate highway numbers end with 5.
 
 <img alt="East-West" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660663003/roadtrip-usa-east-west-hwy_dovluc.jpg">
 
 <img alt="North-South" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1660662994/roadtrip-usa-north-south-hwy_sontf7.jpg">
+
+## Refueling and ReCharging
 
 The number of <a target="_blank" href="https://www.tesla.com/supercharger">Tesla Supercharger locations</a> jumped to <a target="_blank" href="https://en.wikipedia.org/wiki/Tesla_Supercharger">2,966 in Q2 2021 from 1,587 at Q1 2019:<br />
 <img alt="map tesla charging stations 650x334-c59" width="650" height="334" src="https://cloud.githubusercontent.com/assets/300046/17037278/538ea0f8-4f4d-11e6-907a-6a0b65a807e5.jpg"></a>
@@ -140,7 +145,7 @@ When the Civil War ended in 1865, The Confederacy included the 11 Southern state
 <img width="600" height="300" alt="map-us-states-civil-war-323x227-c64.jpg"
 src="https://cloud.githubusercontent.com/assets/300046/16953089/fc8c99ba-4d88-11e6-9845-7b4120243ea4.jpg">
 
-The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri.
+The 5 "Border States" were Maryland, Delaware, West Virginia, Kentucky, and Missouri, where "brother fought brother".
 
 States in white (Oklahoma) did not fight for either side.
 Idaho <a target="_blank" href="https://www.wikiwand.com/en/Idaho_in_the_American_Civil_War">
@@ -148,6 +153,7 @@ volunteers did not fight against the Confederacy</a>.
 <a target="_blank" href="https://www.wikiwand.com/en/Confederate_Arizona">
 Areas in Arizona and New Mexico were claimed by both sides</a>.
 
+<hr />
 
 <a name="DownEastCoast"></a>
 
@@ -759,6 +765,7 @@ US Holocost Memorial Museum</a> 10-5:30 every day, but timed passes are necessar
 <li><a target="_blank" href="https://www.gulfcoastmuseum.org/">Gulf Coast Museum of Art</a>, Largo (the southern most point in the continental US)</li>
 </ul>
 
+<hr />
 
 <a name="DownMississippi"></a>
 
@@ -1519,8 +1526,9 @@ was established during the 1830s by mountain men in their fur trade, before moto
 <img alt="Oregon Trail Topo map NASA" width="500" height="310" src="https://cloud.githubusercontent.com/assets/300046/14081576/a8c6f05a-f4c8-11e5-92d6-61cbf9b8ce0e.jpg"></a>
 
 
-The trail begins from St. Louis and Independence, Missouri through Kansas and Nebraska to Fort Laramie, Wyoming. 
-It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
+The trail begins from St. Louis and Independence, Missouri through Kansas and Nebraska to <a target="_blank" href="https://www.nps.gov/fola/index.htm">Fort Laramie, Wyoming (1834-1890)</a>. 
+It then goes through Boise, Idaho to Portland, Oregon. 
+A map of the trail in 1907:
 
 <a target="_blank" href="https://upload.wikimedia.org/wikipedia/commons/1/19/Oregontrail_1907.jpg">
 <img alt="Oregon Trail 1907" width="1595" height="561" src="https://cloud.githubusercontent.com/assets/300046/14081352/93a3a5fc-f4c7-11e5-8b37-e37be9d713a0.jpg"></a>
@@ -1694,25 +1702,26 @@ It then goes through Boise, Idaho to Portland, Oregon. The map of it in 1907:
 
 ## Westward through the Southwest
 
+### Route 66
+
 <a target="_blank" href="https://www.amazon.com/Passport-World-Route-Donna-Bouche/dp/B088DZ79NH/">VIDEO</a>:
 <a target="_blank" href="https://en.wikipedia.org/wiki/U.S._Route_66#/media/File:Map_of_US_66.svg">Route 66</a> was one of the original highways within the U.S. starting in 1924.
 Thus its colloqual name the "Mother Road". It served as a military transport corridor during WWII.
-During post-war years, motels, diners, and gas stations along Route 66 became popular vacaction destinations.
-From 1956, interstates built provide a road without the need to slow down through towns.
+In post-war years, motels, diners, and gas stations along Route 66 became popular vacaction destinations.
 
 <a target="_blank" href="https://cloud.githubusercontent.com/assets/300046/14080916/1a0a42ca-f4c5-11e5-8230-cb0b95dde974.jpg"><img alt="!map beige route-66 600x200.jpg" width="600" height="200" src="https://cloud.githubusercontent.com/assets/300046/14080916/1a0a42ca-f4c5-11e5-8230-cb0b95dde974.jpg"></a>
 
-Route 66 begins in Michigan Avene in Chicago. Eat at Lou Mitchell's diner
-The route goes to St. Louis, Missouri, then through smaller road-side towns
-on the way to Tulsa and Oklahoma City, Amarillo TX, Alberquque New Mexico, then over mountains to Flagstaff AZ before ending on the Santa Monica pier in Los Angeles, California.
+Route 66 begins on Michigan Avene in Chicago, where you can eat at Lou Mitchell's diner.
+The route goes to St. Louis, Missouri, then through smaller road-side towns on the way to Tulsa and Oklahoma City, Amarillo TX, Alberquque New Mexico, then over mountains to Flagstaff AZ before ending on the Santa Monica pier in Los Angeles, California.
 
+However, <a href="#freeways">interstate freeways</a> built from 1956 enabled travel without the need to slow down through towns. That bypassed small businesses along Route 66.
 
 ### Chisolm Trail
 
 The <a target="_blank" href="https://en.wikipedia.org/wiki/Chisholm_Trail">Chisolm Trail</a> was used between 1867-1884 to drive cows to market from various cowtowns in Texas through Oklahoma Indian Territory to Abilene and other railheads in Kansas. The Lonesome Dove TV series depicts that time.
 
-Since <a href="#IL">Illinos</a> and <a href="#MO">Missouri</a> are already listed in our <a href="#DownMississippi">Mississippi route</a>,
-we begin from Oklahoma and take a long detour North to avoid too much desert along the way.
+<em>Since <a href="#IL">Illinos</a> and <a href="#MO">Missouri</a> are already listed in our <a href="#DownMississippi">Mississippi route</a>,
+here we begin from Oklahoma and take a long detour North to avoid too much desert along the way.</em>
 
 
 <a name="OK"></a>
