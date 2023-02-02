@@ -28,6 +28,9 @@ TODO: Add WAF. Make above diagram into a video.
 Consider the types of architectures:
 – Subnets vs. VPCs and VPC peering
 
+<a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">Subnet Calculator for IPv4 at
+https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
+
 ## VPCs
 
    * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
@@ -69,52 +72,88 @@ and adds additional PROTIPs and NOTEs.
 
 0. At https://console.aws.amazon.com/vpc/
 
-0. Select "Your VPC".
+0.  Select "Your VPC".
 
-0. Click the "Create VPC" blue button.
+0.  Click the "Create VPC" blue button.
 
-0. For Name tag, consider a naming convention to include:
+0.  For Name tag, consider a naming convention to include:
 
-   * "dev", "qa", "prod" since many use isolated VPCs for different environments.
+    * "dev", "qa", "prod" since many use isolated VPCs for different environments.
 
-   * "public" or "private" network access.
+    * "public" or "private" network access.
 
-0. For <a href="#CIDR">CIDR block, see below</a>.
+    <a name="NetmaskNodes"></a>
+
+    ### NetMask Nodes
+
+    This table of nodes for each <strong>netmask</strong> Amazon allows:
+
+    <table border="1">
+    <tr><th align="right"> # Nodes </th><th align="center"> Netmask </th><th align="left"> Subnet Mask </th></tr>
+    <tr><td align="right">     14 </td><td align="center"> /28 </td><td> 255.255.255.240 </td></tr>
+    <tr><td align="right">     30 </td><td align="center"> /27 </td><td> 255.255.255.224 </td></tr>
+    <tr><td align="right">     62 </td><td align="center"> /26 </td><td> 255.255.255.192 </td></tr>
+    <tr><td align="right">    126 </td><td align="center"> /25 </td><td> 255.255.255.128 </td></tr>
+    <tr><td align="right">    254 </td><td align="center"> /24 </td><td> 255.255.255.0   </td></tr>
+    <tr><td align="right">    510 </td><td align="center"> /23 </td><td> 255.255.254.0   </td></tr>
+    <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 </td></tr>
+    </table>
+
+   For example, if all you'll need are 14 nodes, specify `/28`.
+   Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
    <a name="CIDR"></a>
 
    ### CIDR Ranges
 
+0. For CIDR block, see below</a>.
+
    An example CIDR block looks like this:
 
-   <pre><strong>
-   10.0.1.0/18
+   <pre><strong>10.0.??.0/20
    </strong></pre>
 
-   PROTIP: To avoid naming conflicts, some organizations use a convention replacing the "1"
-   in the address with other numbers for each separate environment and <strong>tier</strong>
-   as well as duplicate zones:
-
-   | Env | Tier | zone A | zone B | Routes |
-   | :-- | :--- | --- | --- | ------ |
-   | Prd | ELB  |   1 |   11 | Public |
-   | Prd | WEB  |   2 |   12 | Private |
-   | Prd | APP  |   3 |   13 | Private |
-   | Prd | Cache  |  4 |  14 | Private |
-   | Prd | DB     |  5 |  15 | Private |
-   | Dev | ELB  |   21 |  31 | Public |
-   | Dev | WEB  |   22 |  32 | Private |
-   | Dev | APP  |   23 |  33 | Private |
-   | Dev | Cache  |  24 |  34 | Private |
-   | Dev | DB     |  25 |  35 | Private |
-
-   PROTIP: Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
+   To make naming conflicts more avoidable:
 
    PROTIP: Some organizations allocate the bottom half of the 255 possibilities to private and upper half to public addresses:
 
    * private       10.1.0.0/24 &nbsp; (< 129)
    * public &nbsp; 10.129.0.0/24 (> 128)
    <br /><br />
+
+   PROTIP: Alternataely, use a <strong>convention</strong> replacing the "??" in the IP address above with a <strong>pre-defined</strong> set of numbers for each separate environment and architectural <strong>tier</strong>, with duplicate zones:
+
+   | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Routes |
+   | :-- | :--- | --- | --- | --- | ------ |
+   | Prd | ELB  | 00 |  1 |  8 | 15 | <strong>Public</strong> |
+   | Prd | WEB  | 01 |  2 |  9 | 16 | Private |
+   | Prd | APP  | 02 |  3 | 10 | 17 | Private |
+   | Prd | Cache  | 03 |  4 | 11 | 18 | Private |
+   | Prd | DB     | 04 |  5 | 12 | 19 | Private |
+   | Prd | Reserved | 05 |  6 | 13 | 20 | Private |
+   | Prd | Reserved | 06 |  7 | 14 | 21 | Private |
+   
+   | Dev | ELB  | 07 | 22 | 29 | 36 | <strong>Public</strong> |
+   | Dev | WEB  | 08 | 23 | 30 | 37 | Private |
+   | Dev | APP  | 09 | 24 | 31 | 38 | Private |
+   | Dev | Cache  | 0A | 25 | 32 | 39 | Private |
+   | Dev | DB     | 0B | 26 | 33 | 40 | Private |
+   | Dev | Reserved | 0C | 27 | 34 | 41 | Private |
+   | Dev | Reserved | 0D | 28 | 35 | 42 | Private |
+
+   Each ELB (Elastic Load Balancer) is naturally on a Public subnet:
+   
+      <ul><tt>10.0.1.0/20</tt> in Production Availability Zone a<br />
+      <tt>10.0.8.0/20</tt> in Production Availability Zone b<br />
+      <tt>10.0.15.0/20</tt> in Production Availability Zone c<br />
+
+      <tt>10.0.22.0/20</tt> in Dev Availability Zone a<br />
+      <tt>10.0.29.0/20</tt> in Dev Availability Zone b<br />
+      <tt>10.0.36.0/20</tt> in Dev Availability Zone c<br />
+      </ul>
+   
+1. Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
+
 
    <a name="NonRouted"></a>
 
@@ -136,24 +175,6 @@ and adds additional PROTIPs and NOTEs.
    Once assigned, AWS VPC subnet blocks can’t be modified.
    If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
    then instantiate again.
-
-   <a name="NetmaskNodes"></a>
-
-   Refer to this table of nodes for each <strong>netmask</strong> Amazon allows:
-
-   <table border="1">
-   <tr><th align="right"> # Nodes </th><th align="center"> Netmask </th><th align="left"> Subnet Mask </th></tr>
-   <tr><td align="right">     14 </td><td align="center"> /28 </td><td> 255.255.255.240 </td></tr>
-   <tr><td align="right">     30 </td><td align="center"> /27 </td><td> 255.255.255.224 </td></tr>
-   <tr><td align="right">     62 </td><td align="center"> /26 </td><td> 255.255.255.192 </td></tr>
-   <tr><td align="right">    126 </td><td align="center"> /25 </td><td> 255.255.255.128 </td></tr>
-   <tr><td align="right">    254 </td><td align="center"> /24 </td><td> 255.255.255.0   </td></tr>
-   <tr><td align="right">    510 </td><td align="center"> /23 </td><td> 255.255.254.0   </td></tr>
-   <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 </td></tr>
-   </table>
-
-   For example, if all you'll need are 14 nodes, specify `/28`.
-   Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
    #### Bucket of Candies Analogy #
 

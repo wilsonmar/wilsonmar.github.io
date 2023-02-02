@@ -1226,6 +1226,8 @@ Read HCP Vault documentation at:<br />
     <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud/vault-introduction">NOTE</a>: 
     Auto-unseal is configured. A unique Key Management Service (KMS) key is created for each cluster.
 
+
+
     <a name="Config"></a>
 
     ### Configure for Authentication
@@ -1259,15 +1261,18 @@ export VAULT_NAMESPACE="admin"
 
 1. Paste the value ???
 
-2. Authenticate to Vault at https://www.vaultproject.io/docs/concepts/auth#authenticating
-   
-   <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]</pre>
-
-3. https://learn.hashicorp.com/tutorials/vault/getting-started-apis
 
 
-Provision a Dev Vault Cluster on AWS with Terraform
+## API
 
+   * https://learn.hashicorp.com/tutorials/vault/getting-started-apis
+   * https://github.com/hashicorp/hcp-sdk-go
+   <br /><br />
+
+Most HCP Go SDK make API calls based on environment variables:
+   * HCP_PROJECT_ID
+   * HCP_ORGANIZATION_ID
+   <br /><br />
 
 
 
