@@ -130,17 +130,17 @@ and adds additional PROTIPs and NOTEs.
 
 1.  For CIDR block, see below</a>.
 
-    To make naming conflicts more avoidable:
+    To make naming conflicts more avoidable, use a standard naming convention:
 
-    PROTIP: Some organizations allocate the bottom half of the 255 possibilities to private and upper half to public addresses:
+    PROTIP: The last two parts of VPC subnet always have ".0.0", with the bottom half of the 255 possibilities allocated to private and upper half to public addresses:
 
     * private       10.1.0.0/24 &nbsp; (< 129)
     * public &nbsp; 10.129.0.0/24 (> 128)
     <br /><br />
 
-    PROTIP: Alternataely, use a <strong>convention</strong> replacing the "??" in the IP address above with a <strong>pre-defined</strong> set of numbers for each separate environment and architectural <strong>tier</strong>, with duplicate zones. For example, if the VPC is assigned this CIDR:
+    PROTIP: In the subnet for each Availability Zone, replace the "??" in the IP address with a <strong>pre-defined</strong> set of numbers associated with each separate environment and architectural <strong>tier</strong>. For example, if the VPC is assigned this CIDR:
 
-    <pre><strong>10.16.??.0/20
+    <pre><strong>10.1.??.0/20
     </strong></pre>
 
     The ?? is replaced with one of the Zone numbers:
@@ -163,22 +163,23 @@ and adds additional PROTIPs and NOTEs.
     | Dev | Res-?    | 0C | 27 | 34 | 41 | Private |
     | Dev | Res-?    | 0D | 28 | 35 | 42 | Private |
 
-   Expanded, each ELB (Elastic Load Balancer) is naturally on a Public subnet:
+    Expanded, each ELB (Elastic Load Balancer) is naturally on a Public subnet:
    
-      <ul><tt>10.16.1.0/20</tt> in Production Availability Zone a<br />
-      <tt>10.16.8.0/20</tt> in Production Availability Zone b<br />
-      <tt>10.16.15.0/20</tt> in Production Availability Zone c<br />
+    <tt>10.16.1.0/20</tt> in Production Availability Zone a<br />
+    <tt>10.16.8.0/20</tt> in Production Availability Zone b<br />
+    <tt>10.16.15.0/20</tt> in Production Availability Zone c<br />
 
-      <tt>10.16.22.0/20</tt> in Dev Availability Zone a<br />
-      <tt>10.16.29.0/20</tt> in Dev Availability Zone b<br />
-      <tt>10.16.36.0/20</tt> in Dev Availability Zone c<br />
-      </ul>
+    <tt>10.16.22.0/20</tt> in Dev Availability Zone a<br />
+    <tt>10.16.29.0/20</tt> in Dev Availability Zone b<br />
+    <tt>10.16.36.0/20</tt> in Dev Availability Zone c<br />
+    </ul>
+    <br /><br />
 
-   The "IPv6" column is entered in the ___ in the VPC GUI "IPv6 CIDR block field such as:
+    The "IPv6" column is entered in the ___ in the VPC GUI "IPv6 CIDR block field such as:
 
-   <tt>2600:1f18:10e8:73___;;/64</tt>   
+    <tt>2600:1f18:10e8:73___;;/64</tt>   
    
-1. Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
+2. Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
 
 
    #### Bucket of Candies Analogy #
