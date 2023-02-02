@@ -179,9 +179,9 @@ https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
     <tt>10.16.22.0/20</tt> in Dev Availability Zone a<br />
     <tt>10.16.29.0/20</tt> in Dev Availability Zone b<br />
     <tt>10.16.36.0/20</tt> in Dev Availability Zone c<br />
-    <br /><br />
+    <br />
 
-    The "IPv6" column is entered in the <tt>___</tt> below in the VPC GUI "IPv6 CIDR block field such as:
+    The "IPv6" column is entered in the <tt>___</tt> below in the VPC GUI "IPv6 CIDR block" field such as:
 
     <tt>2600:1f18:10e8:73___;;/64</tt>   
    
