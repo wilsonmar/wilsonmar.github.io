@@ -28,9 +28,6 @@ TODO: Add WAF. Make above diagram into a video.
 Consider the types of architectures:
 – Subnets vs. VPCs and VPC peering
 
-<a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">Subnet Calculator for IPv4 at
-https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
-
 ## VPCs
 
    * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
@@ -41,6 +38,11 @@ Virtual Private Cloud ()
 VPC Public Networking
 
 ## IP DHCP
+
+<a target="_blank" href="https://learn.cantrill.io/courses/1723753/lectures/39153001">VIDEO</a>:
+The Dynamic Host Configuration Protocol is used for auto-configuration of network resources.
+
+A DHCP server is setup to listen for L2 broadcasts to get info from the DHCP server.
 
 ## Transit Gateway
 
@@ -81,6 +83,9 @@ and adds additional PROTIPs and NOTEs.
     * "dev", "qa", "prod" since many use isolated VPCs for different environments.
 
     * "public" or "private" network access.
+
+Use the <a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">Subnet Calculator for IPv4 at
+https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
 
     <a name="NetmaskNodes"></a>
 
@@ -138,15 +143,17 @@ and adds additional PROTIPs and NOTEs.
     * public &nbsp; 10.129.0.0/24 (> 128)
     <br /><br />
 
+    ### IP Subnets
+
     PROTIP: In the subnet for each Availability Zone, replace the "??" in the IP address with a <strong>pre-defined</strong> set of numbers associated with each separate environment and architectural <strong>tier</strong>. For example, if the VPC is assigned this CIDR:
 
     <pre><strong>10.1.??.0/20
     </strong></pre>
 
-    The ?? is replaced with one of the Zone numbers:
+    The ?? is replaced with one of the numbers within an (Availability) Zone column:
 
     | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Routes |
-    | :-- | :--- | --- | --- | --- | ------ |
+    | :-- | :--- | -- | --: | --: | --: | ------ |
     | Prd | ELB-?    | 00 |  1 |  8 | 15 | <strong>Public</strong> |
     | Prd | WEB-?    | 01 |  2 |  9 | 16 | Private |
     | Prd | APP-?    | 02 |  3 | 10 | 17 | Private |
@@ -178,10 +185,18 @@ and adds additional PROTIPs and NOTEs.
 
     <tt>2600:1f18:10e8:73___;;/64</tt>   
    
-2. Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
+2.  Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
 
+    ### VPC Subnet 
 
-   #### Bucket of Candies Analogy #
+3.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
+4.  Click "Actions" menu to select "Edit subnet settings".
+5.  Check "Enable auto-assign IPv6 addresses". 
+6.  Scroll to click the orange Save.
+
+    PROTIP: If the VPC is defined using Terraform instead of the GUI, the above can be coded one time for subsequent repeated use.
+
+    #### Bucket of Candies Analogy #
 
    If you must know why, here is my analogy (best for kinesthetic learners):
    When we say a sports star makes a "7 figure salary", we figure out what that means with a table like this:
