@@ -99,8 +99,8 @@ and adds additional PROTIPs and NOTEs.
     <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 </td></tr>
     </table>
 
-   For example, if all you'll need are 14 nodes, specify `/28`.
-   Notice that the larger the CIDR netmask, the less hosts in the subnet.
+    For example, if all you'll need are 14 nodes, specify `/28`.
+    Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
 
     <a name="NonRouted"></a>
@@ -172,10 +172,9 @@ and adds additional PROTIPs and NOTEs.
     <tt>10.16.22.0/20</tt> in Dev Availability Zone a<br />
     <tt>10.16.29.0/20</tt> in Dev Availability Zone b<br />
     <tt>10.16.36.0/20</tt> in Dev Availability Zone c<br />
-    </ul>
     <br /><br />
 
-    The "IPv6" column is entered in the ___ in the VPC GUI "IPv6 CIDR block field such as:
+    The "IPv6" column is entered in the <tt>___</tt> below in the VPC GUI "IPv6 CIDR block field such as:
 
     <tt>2600:1f18:10e8:73___;;/64</tt>   
    
