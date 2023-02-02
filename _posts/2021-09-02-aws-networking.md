@@ -102,79 +102,84 @@ and adds additional PROTIPs and NOTEs.
    For example, if all you'll need are 14 nodes, specify `/28`.
    Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
-   <a name="CIDR"></a>
 
-   ### CIDR Ranges
+    <a name="NonRouted"></a>
 
-0. For CIDR block, see below</a>.
+    Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
 
-   An example CIDR block looks like this:
+    * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
+    * 172.16.0.0 -> 172.31.255.255   within "Class B" addresses 127 -> 191
+    * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
+    <br /><br />
 
-   <pre><strong>10.0.??.0/20
-   </strong></pre>
+    <strong>REMEMBER: The CIDR block for a default VPC is always 172.31.0.0/16.</strong>
 
-   To make naming conflicts more avoidable:
+    PROTIP: Use addresses from different IP classes. For example, 
+    * use VPC CIDR 10.0.0.0/16 for production 
+    * use VPC CIDR 172.16.0.0/16 for DR regions
+    <br /><br />
 
-   PROTIP: Some organizations allocate the bottom half of the 255 possibilities to private and upper half to public addresses:
+    PROTIP: Carefully predict how many nodes each subnet might need.
+    Once assigned, AWS VPC subnet blocks can’t be modified.
+    If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
+    then instantiate again.
 
-   * private       10.1.0.0/24 &nbsp; (< 129)
-   * public &nbsp; 10.129.0.0/24 (> 128)
-   <br /><br />
+    <a name="CIDR"></a>
 
-   PROTIP: Alternataely, use a <strong>convention</strong> replacing the "??" in the IP address above with a <strong>pre-defined</strong> set of numbers for each separate environment and architectural <strong>tier</strong>, with duplicate zones:
+    ### CIDR Ranges
 
-   | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Routes |
-   | :-- | :--- | --- | --- | --- | ------ |
-   | Prd | ELB  | 00 |  1 |  8 | 15 | <strong>Public</strong> |
-   | Prd | WEB  | 01 |  2 |  9 | 16 | Private |
-   | Prd | APP  | 02 |  3 | 10 | 17 | Private |
-   | Prd | Cache  | 03 |  4 | 11 | 18 | Private |
-   | Prd | DB     | 04 |  5 | 12 | 19 | Private |
-   | Prd | Reserved | 05 |  6 | 13 | 20 | Private |
-   | Prd | Reserved | 06 |  7 | 14 | 21 | Private |
+1.  For CIDR block, see below</a>.
+
+    To make naming conflicts more avoidable:
+
+    PROTIP: Some organizations allocate the bottom half of the 255 possibilities to private and upper half to public addresses:
+
+    * private       10.1.0.0/24 &nbsp; (< 129)
+    * public &nbsp; 10.129.0.0/24 (> 128)
+    <br /><br />
+
+    PROTIP: Alternataely, use a <strong>convention</strong> replacing the "??" in the IP address above with a <strong>pre-defined</strong> set of numbers for each separate environment and architectural <strong>tier</strong>, with duplicate zones. For example, if the VPC is assigned this CIDR:
+
+    <pre><strong>10.16.??.0/20
+    </strong></pre>
+
+    The ?? is replaced with one of the Zone numbers:
+
+    | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Routes |
+    | :-- | :--- | --- | --- | --- | ------ |
+    | Prd | ELB-?    | 00 |  1 |  8 | 15 | <strong>Public</strong> |
+    | Prd | WEB-?    | 01 |  2 |  9 | 16 | Private |
+    | Prd | APP-?    | 02 |  3 | 10 | 17 | Private |
+    | Prd | Cache-?  | 03 |  4 | 11 | 18 | Private |
+    | Prd | DB-?     | 04 |  5 | 12 | 19 | Private |
+    | Prd | Res-?    | 05 |  6 | 13 | 20 | Private |
+    | Prd | Res-?    | 06 |  7 | 14 | 21 | Private |
+    | --- | -----    | -- | -- | -- | -- | ------- |
+    | Dev | ELB-?    | 07 | 22 | 29 | 36 | <strong>Public</strong> |
+    | Dev | WEB-?    | 08 | 23 | 30 | 37 | Private |
+    | Dev | APP-?    | 09 | 24 | 31 | 38 | Private |
+    | Dev | Cache-?  | 0A | 25 | 32 | 39 | Private |
+    | Dev | DB-?     | 0B | 26 | 33 | 40 | Private |
+    | Dev | Res-?    | 0C | 27 | 34 | 41 | Private |
+    | Dev | Res-?    | 0D | 28 | 35 | 42 | Private |
+
+   Expanded, each ELB (Elastic Load Balancer) is naturally on a Public subnet:
    
-   | Dev | ELB  | 07 | 22 | 29 | 36 | <strong>Public</strong> |
-   | Dev | WEB  | 08 | 23 | 30 | 37 | Private |
-   | Dev | APP  | 09 | 24 | 31 | 38 | Private |
-   | Dev | Cache  | 0A | 25 | 32 | 39 | Private |
-   | Dev | DB     | 0B | 26 | 33 | 40 | Private |
-   | Dev | Reserved | 0C | 27 | 34 | 41 | Private |
-   | Dev | Reserved | 0D | 28 | 35 | 42 | Private |
+      <ul><tt>10.16.1.0/20</tt> in Production Availability Zone a<br />
+      <tt>10.16.8.0/20</tt> in Production Availability Zone b<br />
+      <tt>10.16.15.0/20</tt> in Production Availability Zone c<br />
 
-   Each ELB (Elastic Load Balancer) is naturally on a Public subnet:
-   
-      <ul><tt>10.0.1.0/20</tt> in Production Availability Zone a<br />
-      <tt>10.0.8.0/20</tt> in Production Availability Zone b<br />
-      <tt>10.0.15.0/20</tt> in Production Availability Zone c<br />
-
-      <tt>10.0.22.0/20</tt> in Dev Availability Zone a<br />
-      <tt>10.0.29.0/20</tt> in Dev Availability Zone b<br />
-      <tt>10.0.36.0/20</tt> in Dev Availability Zone c<br />
+      <tt>10.16.22.0/20</tt> in Dev Availability Zone a<br />
+      <tt>10.16.29.0/20</tt> in Dev Availability Zone b<br />
+      <tt>10.16.36.0/20</tt> in Dev Availability Zone c<br />
       </ul>
+
+   The "IPv6" column is entered in the ___ in the VPC GUI "IPv6 CIDR block field such as:
+
+   <tt>2600:1f18:10e8:73___;;/64</tt>   
    
 1. Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
 
-
-   <a name="NonRouted"></a>
-
-   Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
-
-   * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
-   * 172.16.0.0 -> 172.31.255.255   within "Class B" addresses 127 -> 191
-   * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
-   <br /><br />
-
-   <strong>REMEMBER: The CIDR block for a default VPC is always 172.31.0.0/16.</strong>
-
-   PROTIP: Use addresses from different IP classes. For example, 
-   * use VPC CIDR 10.0.0.0/16 for production 
-   * use VPC CIDR 172.16.0.0/16 for DR regions
-   <br /><br />
-
-   PROTIP: Carefully predict how many nodes each subnet might need.
-   Once assigned, AWS VPC subnet blocks can’t be modified.
-   If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
-   then instantiate again.
 
    #### Bucket of Candies Analogy #
 
