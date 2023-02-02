@@ -484,24 +484,24 @@ Here are the configuration settings that installers of Vault need to specify:
 1. <strong>HCP Cloud provider region(s)</strong> support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
    
    <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Theater </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Region</a>
-      </th><th> <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Location</a> 
+   <tr><th> Theater </th><th> 7 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Regions</a>
+      </th><th> 14 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Locations</a> 
       </th></tr>
-   <tr valign="top"><td rowspan="4"> Americas
+   <tr valign="top"><td rowspan="5"> Americas
    </td><td> us-east-1 (Virginia)</td><td> eastus (Richmond, Virginia)</td></tr>
    <tr valign="top"><td> - </td><td> eastus2 (Richmond, Virginia)</td></tr>
    <tr valign="top"><td> - </td><td> centralus (Des Moines, Iowa)</td></tr>
    <tr valign="top"><td> us-west-2 (Oregon)</td><td> westus2 (Moses Lake, Washington)</td></tr>
    <tr valign="top"><td> - </td><td> canadacentral (Toronto)</td></tr>
 
-   <tr valign="top"><td rowspan="4"> EMEA
+   <tr valign="top"><td rowspan="5"> EMEA
    </td><td> eu-west-1 (Ireland)</td><td>northeurope (Dublin, Ireland)</td></tr>
    <tr valign="top"><td> eu-west-2 (London)</td><td>uksouth (London, UK)</td></tr>
    <tr valign="top"><td> - </td><td>westeurope (Amsterdam, Netherlands)</td></tr>
    <tr valign="top"><td> eu-central-1 (Frankfurt)</td><td>-</td></tr>
    <tr valign="top"><td> - </td><td>francecentral (Paris, France)</td></tr>
 
-   <tr valign="top"><td rowspan="2"> Asia<br />Pacific
+   <tr valign="top"><td rowspan="4"> Asia<br />Pacific
    </td><td> ap-southeast-1 (Singapore)</td><td>southeastasia (Singapore)</td></tr>
    <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td>australiasoutheast (Victoria)</td></tr>
    </td><td> -</td><td>japaneast (Tokyo, Saitama)</td></tr>
