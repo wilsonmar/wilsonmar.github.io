@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-30"
+date: "2023-02-01"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-HashiCorp's Vault securely stores <a href="#Secrets">various type of secrets</a> in a way that spans multiple clouds.
+HashiCorp's Vault securely stores <a href="#Secrets">most type of secrets</a> in a way that spans multiple clouds. 
 
 The unique contribution of this article is to provide a deep yet concise approach, done by using automation which are then explained, so you use HashiCorp Vault with less manual copy/paste and typing. Thus, quicker with less mistakes. All in one page for easy search.
 
@@ -24,12 +24,14 @@ The unique contribution of this article is to provide a deep yet concise approac
 
 ## This tutorial
 
-   1. Cloud Providers
-   2. Vault HCP SaaS
-   3. Install Vault Agent+Server app
-   4. Log into (authenticate into) Vault
-   5. <a href="#SecretsEngines">Secrets Engines</a>
+   1. Value Proposition
+   2. Cloud Providers
+   3. Vault HCP SaaS
+   4. Install Vault Agent+Server app
+   5. Log into (authenticate into) Vault
+   6. <a href="#SecretsEngines">Secrets Engines</a>
    <br /><br />
+
 
 ## Open Source Origins
 
@@ -40,28 +42,26 @@ Vault was first released as open-source software in 2015 at:
    * https://developer.hashicorp.com/vault
    <br /><br />
 
-HashiCorp provides Vault free under open-source licensing with community support.
+HashiCorp provides Vault free under open-source licensing, with community support.
 
 <a name="ValueProp"></a>
 
-## HashiCorp Vault's Value Proposition
+## Vault's Value
 
-HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
+HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
+
+Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
+
+## Multi-Cloud, Multi-Platform
+
+Each cloud vendor (AWS, Azure, GCP, etc.) have their own secrets handling offering.
+
+But HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
 
 Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
 This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
-The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
-
-* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
-
-* Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
-
-* Server installed in <strong>sealed mode</strong> (provides no access)
-
-   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
-
-* Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+Vault can generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
 
 * Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
 
@@ -72,18 +72,29 @@ The value that HashiCorp Vault offers is <strong>centralizing</strong> secrets h
 
    https://github.com/scarolan/painless-password-rotation
 
+
+
 ## Vault Enterprise & HCP SaaS
 
-HashiCorp makes money from licensing its on-prem (self-managed) enterprise software and from <strong>Vault HCP</strong> (HashiCorp Cloud Platform), <a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">announced Oct. 14 2020</a>, is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
+However, HashiCorp makes money from licensing its on-prem (self-managed) enterprise software and from <strong>Vault HCP</strong> (HashiCorp Cloud Platform), <a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">announced Oct. 14 2020</a>, is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
 
 The GUI that comes with licensed editions provide a consistent user experience to enable organizations to get up and running quickly, plus achieve scale easily -- without the complexity and overhead of self-managed instances. Each "organization" hosted within HCP is isolated and secured from other organizations.
 
 <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Performance Replication</a> is available with "HCP Vault Plus" licensing.
 
-### Enterprise worthy?
 
-HashiCorp's Vault is popular among large enterprises (the "Global 2000") because the product solves their <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
-Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
+But what HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
+
+* Vault provides high-level policy management, secret leasing, audit logging, and automatic revocation.
+
+* Vault from HashiCorp provides a unified interface to secrets while providing tight access control plus recording a detailed audit log.
+
+* Server installed in <strong>sealed mode</strong> (provides no access)
+
+   Only the storage backend (which durably stores encrypted data) and the HTTP API are outside the barrier which is sealed and unsealed.
+
+
+### Enterprise worthy?
 
 There is also various levels of paid "Enterprise" edition which companies install themselves in a cloud or on-prem. In large companies, Vault is usually installed, configured, and maintained by a 
 <strong>Platform Team</strong> (formerly "Administrators" or "SysAdmins").
@@ -110,7 +121,7 @@ Vault is FIPS-certified, so it does not require any special/proprietary hardware
 
 <a name="EntCapabilities"></a>
 
-## Vault Enterprise Capabilities
+### Vault Enterprise Capabilities
 
 Either way, base Enterprise capabilities adds:
 
@@ -134,15 +145,6 @@ Either way, base Enterprise capabilities adds:
    * https://cloud.hashicorp.com/products/vault/pricing
    * https://portal.cloud.hashicorp.com/sign-in
    <br /><br />
-
-## HCP Pricing
-
-<a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
-Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
-
-
-
-
 
 <hr />
 
@@ -982,7 +984,7 @@ Read HCP Vault documentation at:<br />
 
    <a name="HCPRegions"></a>
 
-   ## HCP Regions/Locations
+   ### HCP Regions/Locations
 
    AWS regions and Azure locations:
    * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
@@ -1040,6 +1042,12 @@ Read HCP Vault documentation at:<br />
 11. Note the Network region (such as "Oregon us-west-2")
 12. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
 
+    ### HCP Per-User Pricing
+
+    <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
+    Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
+
+
     ### HCP Tier Pricing
 
     <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
@@ -1061,7 +1069,7 @@ Read HCP Vault documentation at:<br />
        </td><td> $4,320.00
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Standard
-       </td><td> $1.58
+       </td><td> $1.578
        </td><td> $37.87
        </td><td> $1,136.16
        </td><td> $13,633.92
@@ -1086,39 +1094,51 @@ Read HCP Vault documentation at:<br />
     Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
 
     <table border="1" cellpadding="4" cellspacing="0">
-    <tr align="right"><th align="left"> Cluster Size </th><th> Cost </th><th> vCPUs </th><th> Storage </th><th colspan="3" align="center"> Comparison
+    <tr align="right"><th align="left"> Cluster Size </th><th> Per User Cost </th><th> Server Cost </th><th> vCPUs </th><th> RAM </th><th> Storage </th><th colspan="3" align="center"> Comparison
        </th></tr>
     <tr valign="top" align="right"><td align="left"> Extra-Small 
-       </td><td> -
-       </td><td> -
-       </td><td> -
-       </td><td align="center" colspan="3"> -
+       </td><td> $0.158/hr
+       </td><td> $0.03/hr
+       </td><td> 2 vCPU
+       </td><td> 1 GiB
+       </td><td> 1 GB
+       </td><td align="center" colspan="4"> X
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Small 
+       </td><td> $0.158/hr
        </td><td> $1.578/hr 
        </td><td> 2 vCPU
+       </td><td> 8 GiB
        </td><td> 15 GB
-       </td><td align="center" colspan="3"> 1X
+       </td><td align="center" colspan="4"> 1X
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Medium 
+       </td><td> $0.127/hr
        </td><td> $3.163/hr 
        </td><td> 4 vCPU
+       </td><td> 16 GiB
        </td><td> 30 GB
 
        </td><td> 2X
        </td><td> 2X
        </td><td> 2X
+       </td><td> 2X
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Large
+       </td><td> $0.075/hr
        </td><td> $7.849/hr 
        </td><td> 8 vCPU
+       </td><td> 32 GiB
        </td><td> 50 GB
 
        </td><td> 5X
        </td><td> 4X
+       </td><td> 4X
        </td><td> 3.3X
        </td></tr>
     </table>
+
+    
 
     <a name="HVN"></a>
 

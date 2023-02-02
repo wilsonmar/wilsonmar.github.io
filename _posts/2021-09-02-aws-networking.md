@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-29"
+date: "2023-02-01"
 file: "aws-networking"
 title: "AWS Networking"
 excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, BGP, etc."

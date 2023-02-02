@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-01-12"
+date: "2023-02-01"
 file: "text-editors"
 title: "Text Editors (on the Mac)"
-excerpt: "nano, pico, vim, subl, code, atom, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
+excerpt: "nano, pico, vim, subl, code, Eclipse, IntelliJ, Visual Studio, Cloud9, etc."
 tags: [apple, mac, setup]
 image:
 # feature: pic RichTextEditorToolBar 1900x500.jpg
@@ -29,7 +29,6 @@ Below is a list of text editors grouped by licensing term:
 ## Free to download and use :
 
    * <a href="#Code">Visual Studio Code</a> from Microsoft
-   * <a href="#atom">Atom</a> from GitHub (free, built using GitHub's Electron)
    * <a target="_blank" href="http://brackets.io/">
    Adobe Brackets</a> is on Windows too
    * <a target="_blank" href="http://barebones.com/products/textwrangler/">
@@ -161,8 +160,6 @@ For Vim users, you’re all set out of the box! Just don’t change your eol (en
 For Emacs users, add (setq require-final-newline t) to your .emacs or .emacs.d/init.el file.
 
 For Android Studio, RubyMine, PyCharm, and other IntelliJ, set “Ensure line feed at file end on Save” under “Editor.”
-
-For Atom, you’re also all set out of the box. Keep that via the Whitespace plugin.
 
 For VS Code, set <tt>"files.insertFinalNewline": true</tt>.
 
@@ -1129,6 +1126,8 @@ Web pages:
 <a name="#atom"></a>
 
 ## Atom #
+
+NOTE: Atom (built using GitHub's Electron) was discontinued by GitHub June 2022.
 
 0. Use an internet browser to <a target="_blank" href="https://atom.io/">atom.io</a>
 
