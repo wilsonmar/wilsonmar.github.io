@@ -42,7 +42,22 @@ VPC Public Networking
 <a target="_blank" href="https://learn.cantrill.io/courses/1723753/lectures/39153001">VIDEO</a>:
 The Dynamic Host Configuration Protocol is used for auto-configuration of network resources.
 
+When a VPC is created, AWS automatically create a set of DHCP options and associates them with the VPC. 
+The options include configuration parameters, including the domain name, domain name server, and the netbios-node-type.
+Configure your own DHCP options set for your VPC.
+   * IP address, Subnet Mask, Default Gateway
+   * DNS servers & AmazonProvidedDNS or Custom DNS domain
+   * NTP services, NetBios Name servers & Node type
+   <br /><br />
+
+DHCP Option Sets for each AZ are immutable.
+
+Associating a new option set is immediate, but changes require a DHCP Renew (which takes time).
+
 A DHCP server is setup to listen for L2 broadcasts to get info from the DHCP server.
+
+* VPC Router (Subnet+1)
+* R53 Resolver (Subnet+2)
 
 ## Transit Gateway
 
@@ -538,7 +553,7 @@ See http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.htm
 
 ## Direct Connect (DX)
 
-To Direct Connect to a customer's Router
+To Direct Connect to a customer's Router.
 in each DX Location, there is a port on a DX Router which is charged <strong>per hour</strong> of use.
 There are 1GB, 10GB, and 100GB wide pipes. The price is the same globally except for a few regions.
 
@@ -559,6 +574,56 @@ If the DX Location is in a different region, a <strong>DX Gateway</strong> is ne
 
 AMS needs to set limits
 http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
+
+## AWS Networking Certification
+
+AWS Certified Advanced Networking - Specialty exam ANS-C01
+https://aws.amazon.com/certification/certified-advanced-networking-specialty/
+
+<a target="_blank" href="https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Exam-Guide.pdf">PDF</a>: Domains and Task Statements:
+
+1. Network Design 30%
+
+2. Network Implementation 26%
+   
+3. Network Management and Operation 20%
+   
+4. Network Security, Compliance, and Governance 24%
+
+   4.1: Implement and maintain network features to meet security and compliance needs
+and requirements.
+
+   * Threat models
+   * Securing app flows
+   * Securing inbound traffic flows into AWS (AWS WAF, AWS Shield, Network Firewall)
+   * Securing outbound traffic flows from AWS (for example, Network Firewall, proxies, Gateway Load Balancers)
+   * Securing inter-VPC traffic within an account or across multiple accounts (security groups, network ACLs, VPC endpoint policies)
+   * Implementing an AWS network architecture to meet security and compliance requirements (untrusted network, perimeter VPC, three-tier architecture)
+   * Developing a threat model and identifying appropriate mitigation strategies for a given network architecture
+   * Testing compliance with the initial requirements (failover)
+   <br /><br />
+
+   4.3: Implement and maintain confidentiality of data and communications of the network:
+   
+   * Network encryption options that are available on AWS
+   * VPN connectivity over Direct Connect
+   * Encryption methods for data in transit (IPsec)
+   * Network encryption under the AWS shared responsibility model
+   * Security methods for DNS communications (DNSSEC)
+
+   * network encryption methods to meet application compliance requirements (IPsec, TLS)
+   * encryption solutions to secure data in transit (for example, CloudFront, Application Load Balancers and Network Load Balancers, VPN over Direct Connect, AWS managed databases, Amazon S3, custom solutions on Amazon EC2, Transit Gateway)
+   * a certificate management solution by using a certificate authority (ACM, AWS Certificate Manager Private Certificate Authority [ACM PCA])
+   * secure DNS communications
+   <br /><br />
+
+* Professional experience using AWS technology, AWS security best practices, AWS storage options and their underlying consistency models, and AWS networking nuances and how they relate to the integration of AWS services.
+
+* Knowledge of advanced networking architectures and interconnectivity options [e.g., IP VPN, multiprotocol label switching (MPLS), virtual private LAN service (VPLS)].
+
+* Familiarity with the development of automation scripts and tools. This should include the design, implementation, and optimization of the following: Routing architectures (including static and dynamic); multi-region solutions for a global enterprise; highly available connectivity solutions (e.g., AWS Direct Connect, VPN).
+
+* Knowledge of CIDR and sub-netting (IPv4 and IPv6); IPv6 transition challenges; and generic solutions for network security features, including AWS WAF, intrusion detection systems (IDS), intrusion prevention systems (IPS), DDoS protection, and economic denial of service/sustainability (EDoS).
 
 
 ## More on Amazon #
