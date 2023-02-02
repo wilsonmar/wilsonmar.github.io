@@ -475,53 +475,7 @@ provides the technical content to support the Vault learn site.
    * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
    <br /><br />
 
-<a name="HCPstart"></a>
-
-## HCP SaaS Install Configs
-
-Here are the configuration settings that installers of Vault need to specify:
-
-1. <strong>HCP Cloud provider region(s)</strong> support, PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
-   
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Theater </th><th> 7 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Regions</a>
-      </th><th> 14 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Locations</a> 
-      </th></tr>
-   <tr valign="top"><td rowspan="5"> Americas
-   </td><td> us-east-1 (Virginia)</td><td> eastus (Richmond, Virginia)</td></tr>
-   <tr valign="top"><td> - </td><td> eastus2 (Richmond, Virginia)</td></tr>
-   <tr valign="top"><td> - </td><td> centralus (Des Moines, Iowa)</td></tr>
-   <tr valign="top"><td> us-west-2 (Oregon)</td><td> westus2 (Moses Lake, Washington)</td></tr>
-   <tr valign="top"><td> - </td><td> canadacentral (Toronto)</td></tr>
-
-   <tr valign="top"><td rowspan="5"> EMEA
-   </td><td> eu-west-1 (Ireland)</td><td>northeurope (Dublin, Ireland)</td></tr>
-   <tr valign="top"><td> eu-west-2 (London)</td><td>uksouth (London, UK)</td></tr>
-   <tr valign="top"><td> - </td><td>westeurope (Amsterdam, Netherlands)</td></tr>
-   <tr valign="top"><td> eu-central-1 (Frankfurt)</td><td>-</td></tr>
-   <tr valign="top"><td> - </td><td>francecentral (Paris, France)</td></tr>
-
-   <tr valign="top"><td rowspan="4"> Asia<br />Pacific
-   </td><td> ap-southeast-1 (Singapore)</td><td>southeastasia (Singapore)</td></tr>
-   <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td>australiasoutheast (Victoria)</td></tr>
-   </td><td> -</td><td>japaneast (Tokyo, Saitama)</td></tr>
-   </td><td> -</td><td>centralindia (Pune)</td></tr>
-   </table>
-
-   Check HashiCorp websites for additional regions added over time:
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
-   * https://dgtlinfra.com/microsoft-azure-data-center-locations/
-   <br /><br />
-
-2. Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
-
-3. Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
-
-4. Define the process for cluster resizing and changing tiers. There is a current limitations that no production-grade clusters can be scaled down to the Development tier and you must have enough resources to scale down or delete them accordingly. HCP Vault allows you to change your clusters in place while maintaining the current configurations. 
-
-zzz
 <hr />
-
 
 ## Different ways to access secrets 
 
@@ -1022,23 +976,69 @@ Read HCP Vault documentation at:<br />
    
    Alternately, <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
 
-1. Click "Create an account" using your email and password.
-1. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
-1. PROTIP: On your iPhone install the Authy to generate auth tokens.
+2. Click "Create an account" using your email and password.
+3. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
+4. PROTIP: On your iPhone install the Authy app to generate auth tokens for MFA.
 
-2. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different <a href="#HVN">HVN</a>, IAM, Billing, and Settings specific to your organization.
+   <a name="HCPRegions"></a>
+
+   ## HCP Regions/Locations
+
+   AWS regions and Azure locations:
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+   * https://dgtlinfra.com/microsoft-azure-data-center-locations/
+   <br /><br />
+
+5. Check <strong>HCP Cloud provider region(s)</strong> for regions/locations supported.
+
+   PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
+   
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Theater </th><th> 7 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Regions</a>
+      </th><th> 14 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Locations</a> 
+      </th></tr>
+   <tr valign="top"><td rowspan="5"> Americas
+   </td><td> us-east-1 (Virginia)</td><td> eastus (Richmond, Virginia)</td></tr>
+   <tr valign="top"><td> - </td><td> eastus2 (Richmond, Virginia)</td></tr>
+   <tr valign="top"><td> - </td><td> centralus (Des Moines, Iowa)</td></tr>
+   <tr valign="top"><td> us-west-2 (Oregon)</td><td> westus2 (Moses Lake, Washington)</td></tr>
+   <tr valign="top"><td> - </td><td> canadacentral (Toronto)</td></tr>
+
+   <tr valign="top"><td rowspan="5"> EMEA
+   </td><td> eu-west-1 (Ireland)</td><td>northeurope (Dublin, Ireland)</td></tr>
+   <tr valign="top"><td> eu-west-2 (London)</td><td>uksouth (London, UK)</td></tr>
+   <tr valign="top"><td> - </td><td>westeurope (Amsterdam, Netherlands)</td></tr>
+   <tr valign="top"><td> eu-central-1 (Frankfurt)</td><td>-</td></tr>
+   <tr valign="top"><td> - </td><td>francecentral (Paris, France)</td></tr>
+
+   <tr valign="top"><td rowspan="4"> Asia<br />Pacific
+   </td><td> ap-southeast-1 (Singapore)</td><td>southeastasia (Singapore)</td></tr>
+   <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td>australiasoutheast (Victoria)</td></tr>
+   </td><td> -</td><td>japaneast (Tokyo, Saitama)</td></tr>
+   </td><td> -</td><td>centralindia (Pune)</td></tr>
+   </table>
+
+   Considerations:
+
+   * Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
+
+   * Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
+
+   * HCP Vault allows you to change your clusters in place while maintaining the current configurations. But currently, no production-grade clusters can be scaled down to the Development tier, so you must have enough resources to scale down or delete them accordingly. 
+
+6. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different <a href="#HVN">HVN</a>, IAM, Billing, and Settings specific to your organization.
 
    ### New Vault Cluster
 
-3. Click "View Vault".
-4. After <strong>projects</strong> are setup in a Provider (such as AWS), they appear in this page of Vault Clusters.
-5. Click the ID name (even though it isn't underlined) for that project's Overview page. PROTIP: Save this among your browser's bookmarks, within a Projects folder:
+7. Click "View Vault".
+8. After <strong>projects</strong> are setup in a Provider (such as AWS), they appear in this page of Vault Clusters.
+9.  Click the ID name (even though it isn't underlined) for that project's Overview page. PROTIP: Save this among your browser's bookmarks, within a Projects folder:
 
    https://portal.cloud.hashicorp.com/services/vault/bonkers?project_id=211f5f56-93a1-42de-8db6-9bebcec81cc6
    
-6.  Create a Vault Cluster ID (named "vault-cluster" by default). 
-7.  Note the Network region (such as "Oregon us-west-2")
-8.  Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
+10. Create a Vault Cluster ID (named "vault-cluster" by default). 
+11. Note the Network region (such as "Oregon us-west-2")
+12. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
 
     ### HCP Tier Pricing
 
@@ -1122,7 +1122,7 @@ Read HCP Vault documentation at:<br />
 
     <a name="HVN"></a>
 
-9.  Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
+13. Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
 
     <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which scopes the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
 
@@ -1133,7 +1133,7 @@ Read HCP Vault documentation at:<br />
     * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
     <br /><br />
 
-10. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
+14. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
 
     https://developer.hashicorp.com/vault/tutorials/cloud
 
@@ -1148,11 +1148,11 @@ Read HCP Vault documentation at:<br />
 
     <a name="getVAULT_NAMESPACE"></a>
 
-11. Enter the CLI menu by clicking:
+15. Enter the CLI menu by clicking:
 
     <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
 
-12. Click the icon for "Telling Vault where to find this cluster" 
+16. Click the icon for "Telling Vault where to find this cluster" 
 
     <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
 
@@ -1164,33 +1164,33 @@ Read HCP Vault documentation at:<br />
 
     NOTE: In HCP, "admin" is equivalent to "root" as the Top-level Namespace.
 
-13. Switch to your Terminal and press command+V to paste it. Press Enter.
+17. Switch to your Terminal and press command+V to paste it. Press Enter.
 
     <a href="#getVAULT_TOKEN"></a>
 
     ### Get VAULT_TOKEN to client CLI
 
-14. Switch back to your browser.
-15. Click the icon for "Authenticating to Vault" to get into your Clipboard:
+18. Switch back to your browser.
+19. Click the icon for "Authenticating to Vault" to get into your Clipboard:
 
     <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]
     </pre>
 
-16. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
-17. Switch back to your browser to click "Close".
+20. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
+21. Switch back to your browser to click "Close".
 
-18. Click "Generate token" (Under "New admin token") and wait for "Fetching".
-19. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
-20. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
+22. Click "Generate token" (Under "New admin token") and wait for "Fetching".
+23. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
+24. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
 
     <pre>export VAULT_TOKEN=hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0
     </pre>
 
-21. Press Enter to invoke it.
+25. Press Enter to invoke it.
     
     REMEMBER: By default, it's enabled for <strong>6 hours</strong>.
 
-22. Perform a token lookup.
+26. Perform a token lookup.
 
     <pre><strong>curl --header "X-Vault-Token: $VAULT_TOKEN" \
    --header "X-Vault-Namespace: $VAULT_NAMESPACE" \
