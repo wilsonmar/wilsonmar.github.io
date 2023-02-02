@@ -153,7 +153,7 @@ https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
     The ?? is replaced with one of the numbers within an (Availability) Zone column:
 
     | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Routes |
-    | :-- | :---     | -- | --: | --: | --: | :----- |
+    | :-- | :---     | -- | --: | --: | --: | -----: |
     | Prd | ELB-?    | 00 |  1 |  8 | 15 | <strong>Public</strong> |
     | Prd | WEB-?    | 01 |  2 |  9 | 16 | Private |
     | Prd | APP-?    | 02 |  3 | 10 | 17 | Private |
