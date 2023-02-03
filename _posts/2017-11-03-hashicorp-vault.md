@@ -319,7 +319,8 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
    
     ### HCP Cluster Size Pricing
 
-    Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
+    This compares increases in charges versus in capability for each level of Cluster Size,
+    with "Small" level as the baseline "1X".
 
     <table border="1" cellpadding="4" cellspacing="0">
     <tr align="right"><th align="left"> Cluster Size </th><th> Per User Cost </th><th> Server Cost </th><th> vCPUs </th><th> RAM GiB </th><th> Storage GB</th><th colspan="4" align="center"> Comparison
@@ -360,11 +361,15 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
        </td><td> 50
 
        </td><td> 5X
-       </td><td> 4Xs
+       </td><td> 4X
        </td><td> 4X
        </td><td> 3.3X
        </td></tr>
     </table>
+
+    The jump from Small to Medium had the price go up the same (2X) as the capabilities (vCPUs, RAM, Storage), all 2X.
+
+    However, the jump from Medium to Large costs 5X more but resulted in just 4X more vCPU and 3.3X more storage. That provides less value as the jump from Small to Medium, making more Medium servers a better value than going to a Large, if that were an available option.
 
     REMEMBER: HCP Vault allows you to change your clusters in place while maintaining the current configurations. But currently, no production-grade clusters can be scaled down to the Development tier, so you must have enough resources to scale down or delete them accordingly. 
 
@@ -372,7 +377,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     REMEMBER: How much is charged per-user depends on the cluster size used by the organization.
 
-    Vault HCP SaaS is billed by the <strong>count of active unique "clients"</strong> which has authenticated to Vault to do something anytime during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
+    Vault HCP SaaS is also billed by the <strong>count of active unique "clients"</strong> which has authenticated to Vault to do something anytime during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
 
 
     <a name="HVN"></a>
@@ -527,7 +532,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     TODO: If you get a response such as this:<br />
 
-    <tt>Error listing secrets engines: Error making API request.
+    <pre>Error listing secrets engines: Error making API request.
     &nbsp;
     URL: GET https://bonkers-public-vault-c6443333.9d787275.z1.hashicorp.cloud:8200/v1/sys/mounts
     Code: 403. Errors:
@@ -536,6 +541,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 	    * permission denied
     </pre>
 
+<hr />
 
 <a name="APICalls"></a>
 
