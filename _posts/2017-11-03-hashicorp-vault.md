@@ -29,7 +29,7 @@ The unique contribution of this article is to provide a deep yet concise approac
 
 Like all other data in computers, secrets are accessed and managed these ways:
 
-   * GUI on a website (by SaaS or on-prem/cloud server )
+   * GUI on a website (operated as SaaS or on-prem/cloud server)
    * CLI on a Terminal used by developers accessing a web service when dealing with files
    * API calls by application programs (including the Vault CLI agent program you install)
    <br /><br />
@@ -152,6 +152,9 @@ Enterprise capabilities add:
 Unique abilities of Vault are that it can:
 
 * Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+
+   * https://www.hashicorp.com/blog/dynamic-database-credentials-with-vault-and-kubernetes
+   <br /><br />
 
 * Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
 
