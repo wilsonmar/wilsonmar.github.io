@@ -285,6 +285,9 @@ Scan other machines
 
 0. Scan for vulnerabilities using nmap scripts.
 
+   <tt><strong>nmap -P0 35.87.188.71
+   </strong></tt>
+
 0. Scan for vulnerabilities using vulnerability scanners:
 
    OpenVAS

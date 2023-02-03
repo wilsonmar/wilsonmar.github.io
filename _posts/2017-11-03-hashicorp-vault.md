@@ -22,27 +22,6 @@ The unique contribution of this article is to provide a deep yet concise approac
 
 {% include whatever.html %}
 
-## This tutorial
-
-   1. Value Proposition
-   2. Cloud Providers
-   3. Vault HCP SaaS
-   4. Install Vault Agent+Server app
-   5. Log into (authenticate into) Vault
-   6. <a href="#SecretsEngines">Secrets Engines</a>
-   <br /><br />
-
-
-## Open Source Origins
-
-Vault was first released as open-source software in 2015 at:
-<a target="_blank" href="https://github.com/hashicorp/vault">https://github.com/hashicorp/vault</a>
-
-   * https://www.vaultproject.io/api-docs/ and https://learn.hashicorp.com/vault/ now redirects to
-   * https://developer.hashicorp.com/vault
-   <br /><br />
-
-HashiCorp provides Vault free under open-source licensing, with community support.
 
 <a name="ValueProp"></a>
 
@@ -50,18 +29,343 @@ HashiCorp provides Vault free under open-source licensing, with community suppor
 
 HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
 
-Ineffective secrets handling has resulted in billions paid in ransomware and the loss of reputation reducing the value of companies -- risks that are keeping CXOs up at night.
+Ineffective secrets handling has resulted in billions lost to ransoms and the loss of reputation, reducing the value of companies and jobs -- a situation that Vault helps to avoid.
 
-## Multi-Cloud, Multi-Platform
+<a name="Origins"></a>
+
+## Open Source Origins
+
+HashiCorp first released Vault as open-source software in 2015 at:<br />
+<a target="_blank" href="https://github.com/hashicorp/vault">https://github.com/hashicorp/vault</a>
+
+   Documentation:
+   * https://www.vaultproject.io/api-docs/ and https://learn.hashicorp.com/vault/ now redirects to
+   * https://developer.hashicorp.com/vault
+   <br /><br />
+
+HashiCorp continues to provide Vault free under open-source licensing, with community support.
+
+
+## Enterprise Ready
+
+However, HashiCorp makes money from licensing its on-prem (self-managed) enterprise software and from <strong>Vault HCP</strong> (HashiCorp Cloud Platform).
+
+Either way, licensed editions provide a GUI to ensure <strong>user self-service</strong>. That enables organizations to get up and running quickly.
+
+<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14 2020</a>, HCP Vault is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
+HCP Vault enables organizations to <strong>scale</strong> effortlessly, and without the complexity and overhead of self-managed instances.
+
+Moreover, each "organization" hosted within HCP is isolated and segmented from other organizations, to limit the "lateral movement" that exposes assess by hacked credentials.
+
+
+<a name="Install"></a>
+
+## Ways to Use Vault 
+
+Thus, HashiCorp Vault is made available several ways:
+
+Option A. The easiest way: <a href="#Pricing">Paid/licensed</a> <a href="#VaultSaaS">Vault SaaS environments in the public cloud</a> provided by HCP (HashiCorp's Cloud Platform) 
+   
+   "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> and <a href="#EntCapabilities">other enterprise capabilities</a> without the need to employ people to keep that running 24/7.
+
+Option B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
+
+Option C. Free <a href="#VaultCompose">on your laptop, install Vault server using Docker Compose</a>
+
+Option D. In AWS, install a "self-managed" Enterprise  <a href="HashiCups">HashiCups fictional sample app</a>  with a <strong>S3 backend</strong>.
+
+Option E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
+
+Option F. Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
+   <br /><br />
+
+   References:
+   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
+   * https://github.com/hashicorp/vault-guides provides the technical content to support the Vault learn site.
+   * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
+   <br /><br />
+
+<hr />
+
+
+<a name="VaultSaaS"></a>
+
+## Option A. The easiest way to Vault: HCP 
+
+<a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>:
+Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
+
+   BTW: Documentation on HCP Vault are at:
+   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a>
+   <br /><br />
+
+### Get in HCP first time
+
+1. At <a target="_blank" href="https://portal.cloud.hashicorp.com/sign-up?product_intent=vault">https://portal.cloud.hashicorp.com/sign-up?product_intent=vault</a> or, alternately, <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
+
+2. Click "Create an account" using your email and password.
+3. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
+4. PROTIP: On your iPhone install the Authy app to generate auth tokens for MFA.
+
+   <a name="HCPRegions"></a>
+
+   ### HCP Regions/Locations
+
+   Providers: AWS regions and Azure locations:
+   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+   * https://dgtlinfra.com/microsoft-azure-data-center-locations/
+   <br /><br />
+
+5. Check <strong>HCP Cloud provider region(s)</strong> for regions/locations supported.
+
+   PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
+   
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th> Theater </th><th> 7 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Regions</a>
+      </th><th> 14 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Locations</a> 
+      </th></tr>
+   <tr valign="top"><td rowspan="5"> Americas
+   </td><td> us-east-1 (Virginia)</td><td> eastus (Richmond, Virginia)</td></tr>
+   <tr valign="top"><td> - </td><td> eastus2 (Richmond, Virginia)</td></tr>
+   <tr valign="top"><td> - </td><td> centralus (Des Moines, Iowa)</td></tr>
+   <tr valign="top"><td> us-west-2 (Oregon)</td><td> westus2 (Moses Lake, Washington)</td></tr>
+   <tr valign="top"><td> - </td><td> canadacentral (Toronto)</td></tr>
+
+   <tr valign="top"><td rowspan="5"> EMEA
+   </td><td> eu-west-1 (Ireland)</td><td>northeurope (Dublin, Ireland)</td></tr>
+   <tr valign="top"><td> eu-west-2 (London)</td><td>uksouth (London, UK)</td></tr>
+   <tr valign="top"><td> - </td><td>westeurope (Amsterdam, Netherlands)</td></tr>
+   <tr valign="top"><td> eu-central-1 (Frankfurt)</td><td>-</td></tr>
+   <tr valign="top"><td> - </td><td>francecentral (Paris, France)</td></tr>
+
+   <tr valign="top"><td rowspan="4"> Asia<br />Pacific
+   </td><td> ap-southeast-1 (Singapore)</td><td>southeastasia (Singapore)</td></tr>
+   <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td>australiasoutheast (Victoria)</td></tr>
+   <tr valign="top"><td> - </td><td>japaneast (Tokyo, Saitama)</td></tr>
+   <tr valign="top"><td> - </td><td>centralindia (Pune)</td></tr>
+   </table>
+
+   Considerations:
+
+   * Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
+
+   * Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
+
+   * HCP Vault allows you to change your clusters in place while maintaining the current configurations. But currently, no production-grade clusters can be scaled down to the Development tier, so you must have enough resources to scale down or delete them accordingly. 
+
+   After you have signed up...
+
+   ### Sign in HCP
+
+6. Sign-in. 
+7. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different <a href="#HVN">HVN</a>, IAM, Billing, and Settings specific to your organization.
+
+   ### New Vault Cluster
+
+8. Click "View Vault".
+9. After <strong>projects</strong> are setup in a Provider (such as AWS), they appear in this page of Vault Clusters.
+10. Click the ID name (even though it isn't underlined) for that project's Overview page. PROTIP: Save this among your browser's bookmarks, within a Projects folder:
+
+    https://portal.cloud.hashicorp.com/services/vault/bonkers?project_id=211f5f56-93a1-42de-8db6-9bebcec81cc6
+   
+11. Create a Vault Cluster ID (named "vault-cluster" by default). 
+12. Note the Network region (such as "Oregon us-west-2")
+13. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
+
+    ### HCP Per-User Pricing
+
+    <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
+    Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
+
+
+    ### HCP Tier Pricing
+
+    <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr align="right"><th align="left"> Vault<br />Tier 
+       </th><th> <br />$/hr </th><th> * 24 =<br />$/day </th><th> * 30 =<br />$/mo. </th><th> * 12 =<br />$/year
+       </th></tr>
+    <tr valign="top" align="right"><td align="left"> Development 
+       </td><td> $0.30
+       </td><td> $7.20
+       </td><td> $216.00
+       </td><td> $2,592.00
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Starter 
+       </td><td> $0.50
+       </td><td> $12.00
+       </td><td> $360.00
+       </td><td> $4,320.00
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Standard
+       </td><td> $1.578
+       </td><td> $37.87
+       </td><td> $1,136.16
+       </td><td> $13,633.92
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Plus
+       </td><td> $1.844
+       </td><td> $44.26
+       </td><td> $1,327.68
+       </td><td> $15,932.00
+       </td></tr>
+    </table>
+
+    REMEMBER: With "Development" at $7.20/day, that $50 trial credit gets you about <strong>7 days</strong> of continuous run time.
+
+    PROTIP: Instead of letting instances sit idle accumulating cost, during development, <strong>delete the cluster</strong> and build it all again using Terraform.
+
+    Vault tier: "Development" is automatically associated with an "Extra Small" Cluster Size.
+
+   
+    ### HCP Cluster Size Pricing
+
+    Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr align="right"><th align="left"> Cluster Size </th><th> Per User Cost </th><th> Server Cost </th><th> vCPUs </th><th> RAM </th><th> Storage </th><th colspan="3" align="center"> Comparison
+       </th></tr>
+    <tr valign="top" align="right"><td align="left"> Extra-Small 
+       </td><td> $0.158/hr
+       </td><td> $0.03/hr
+       </td><td> 2 vCPU
+       </td><td> 1 GiB
+       </td><td> 1 GB
+       </td><td align="center" colspan="4"> X
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Small 
+       </td><td> $0.158/hr
+       </td><td> $1.578/hr 
+       </td><td> 2 vCPU
+       </td><td> 8 GiB
+       </td><td> 15 GB
+       </td><td align="center" colspan="4"> 1X
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Medium 
+       </td><td> $0.127/hr
+       </td><td> $3.163/hr 
+       </td><td> 4 vCPU
+       </td><td> 16 GiB
+       </td><td> 30 GB
+
+       </td><td> 2X
+       </td><td> 2X
+       </td><td> 2X
+       </td><td> 2X
+       </td></tr>
+    <tr valign="top" align="right"><td align="left"> Large
+       </td><td> $0.075/hr
+       </td><td> $7.849/hr 
+       </td><td> 8 vCPU
+       </td><td> 32 GiB
+       </td><td> 50 GB
+
+       </td><td> 5X
+       </td><td> 4Xs
+       </td><td> 4X
+       </td><td> 3.3X
+       </td></tr>
+    </table>
+
+    
+
+    <a name="HVN"></a>
+
+13. Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
+
+    <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which scopes the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=3m42s">VIDEO</a>: Think of HVN as a "secure holding area where your Vault instance is totally isolated from anyone else. Then as you provision new instances they can appear within the network. For example, a single-node developer instance or a multi-node cluster. HVN then gives you the option of how you want to connect.
+
+    References about CIDR VPC: 
+    * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
+    * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
+    <br /><br />
+
+14. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
+
+    https://developer.hashicorp.com/vault/tutorials/cloud
+
+    ### Access HCP Vault from CLI
+
+    Access to a Vault client requires these environment variables:
+
+    * VAULT_ADDR (the URL to the Vault cluster)
+    * <a href="#getVAULT_NAMESPACE">VAULT_NAMESPACE</a>
+    * <a href="#getVAULT_TOKEN">VAULT_TOKEN</a> (equivalent to a password)
+    <br /><br />
+
+    <a name="getVAULT_NAMESPACE"></a>
+
+15. Enter the CLI menu by clicking:
+
+    <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
+
+16. Click the icon for "Telling Vault where to find this cluster" 
+
+    <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
+
+    That gets you the VAULT_ADDR into your Clipboard:
+
+    <pre>export VAULT_ADDR="https://bonkers-private-vault-c6443333.9d787275.z1.hashicorp.cloud:8200"; 
+    export VAULT_NAMESPACE="admin"
+    </pre>
+
+    NOTE: In HCP, "admin" is equivalent to "root" as the Top-level Namespace.
+
+17. Switch to your Terminal and press command+V to paste it. Press Enter.
+
+
+
+<hr />
+
+### Simpler Enterprise on-prem
+
+Base Enterprise capabilities adds:
+
+   * Quicker "Premium" customer support world-wide in English, German, Japanese, etc.
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
+   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Replication (for faster read performance across regions)</a> <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Performance Replication</a> is available with "HCP Vault Plus" licensing.
+   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/high-avail-disaster-recover">Disaster Recovery</a>
+
+   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp">Advanced Data Protection (ADP)</a> Transform Secrets Engine (that generates tokens in place of sensitive data such as credit card numbers)
+   * Namespaces (to segment data between teams to limit lateral movement by hackers)
+   * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
+   <br /><br />
+
+
+### Multi-Platform
+
+Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
+
+### Multi-Cloud
 
 Each cloud vendor (AWS, Azure, GCP, etc.) have their own secrets handling offering.
+But HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>:
 
-But HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>. Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
+   * <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
+  
+   * <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
 
-Thus, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
+   * AWS External Key Store (XKS)
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
+   
+   <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
+   Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
+
+   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
+
+A particular secret can be added within AWS and then retrieved from within an Azure cloud.
 This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
-Vault can generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+### Dynamic secrets
+
+Unique abilities of Vault are that it can:
+
+* Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
 
 * Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
 
@@ -74,14 +378,7 @@ Vault can generate <a href="#DynamicSecrets">dynamic secrets</a> in databases an
 
 
 
-## Vault Enterprise & HCP SaaS
-
-However, HashiCorp makes money from licensing its on-prem (self-managed) enterprise software and from <strong>Vault HCP</strong> (HashiCorp Cloud Platform), <a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">announced Oct. 14 2020</a>, is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
-
-The GUI that comes with licensed editions provide a consistent user experience to enable organizations to get up and running quickly, plus achieve scale easily -- without the complexity and overhead of self-managed instances. Each "organization" hosted within HCP is isolated and secured from other organizations.
-
-<a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Performance Replication</a> is available with "HCP Vault Plus" licensing.
-
+### Centralization
 
 But what HashiCorp Vault offers is <strong>centralizing</strong> secrets handling across organizations by automating replacement of long-lived secrets with dynamically generated secrets (X.509 certificates) which have a controlled lease period. Vault forces a mandatory <strong>lease contract</strong> with clients. All secrets read from Vault have an associated lease to enable key usage auditing, perform key rolling, and ensure automatic revocation. Vault provides multiple revocation mechanisms to give operators a clear "break glass" procedure after a potential compromise.
 
@@ -123,17 +420,6 @@ Vault is FIPS-certified, so it does not require any special/proprietary hardware
 
 ### Vault Enterprise Capabilities
 
-Either way, base Enterprise capabilities adds:
-
-   * Quicker "Premium" customer support world-wide in English, German, Japanese, etc.
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/login-mfa">MFA (Multi-Factor Authentication) for human users</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/audit-log">Audit Log Management for Monitoring</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/cloud-ops/vault-replication">Replication (for faster read performance across regions)</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/vault/high-avail-disaster-recover">Disaster Recovery</a>
-   * <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp">Advanced Data Protection (ADP)</a> Transform Secrets Engine (that generates tokens in place of sensitive data such as credit card numbers)
-   * Namespaces (to segment data between teams to limit lateral movement by hackers)
-   * <a target="_blank" href="https://www.wikiwand.com/en/FIPS_140-2">FIPS 140-2</a>/3 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.140-2.pdf">PDF</a> by <a target="_blank" href="https://csrc.nist.gov/publications/detail/fips/140/2/final">US government computer security standard</a> (for testing/certifying cryptographic modules as being secure)
-   <br /><br />
 
    References to HCP: 
    * <a target="_blank" href="https://cloud.hashicorp.com/products/vault">https://cloud.hashicorp.com/products/vault</a>
@@ -253,25 +539,6 @@ Questions for secrets management:
    <br /><br />
 
 
-
-## Alternatives to secrets management
-
-Vault provides a capability that most major cloud providers also provide in their own features:
-
-* <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
-  
-* <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
-
-* AWS External Key Store (XKS)
-
-* <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
-   
-   <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
-   Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
-
-* <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
-
-
 <a name="Cost"></a>
 
 ### Cost of Keys in Cloud
@@ -364,7 +631,14 @@ database_password = get_secret('db_pass')
 
 <hr />
 
-<a name="Centralized"></a>
+
+<a name="Centralization"></a>
+
+## Centralization
+
+Centralization enables a common set of <strong>policies</strong> to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
+
+and policy management that is highly available and scaleable as the number of clients and their functional needs increase. 
 
 ### Centralized Security Pros
 
@@ -453,31 +727,6 @@ Here are various roles used to <a target="_blank" href="https://developer.hashic
 
 <hr />
 
-<a name="Install"></a>
-
-## Modes of Vault Installation
-
-   A. A <a href="#Pricing">paid/licensed</a> <a href="#VaultSaaS">Vault SaaS environment</a> provided by HCP (HashiCorp's Cloud Platform) "Developement" environment which requires only configuration and no binary installation. In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> and <a href="#EntCapabilities">other enterprise capabilities</a> without the need to employ people to keep that running 24/7.
-
-   B. Free <a href="#VaultAgent">on your laptop, install Vault Agent on your laptop</a>, which can also provide dev-mode Vault services running in memory. 
-
-   C. Free <a href="#VaultCompose">on your laptop, install Vault server using Docker Compose</a>
-
-   D. In AWS, install a "self-managed" Enterprise  <a href="HashiCups">HashiCups fictional sample app</a>  with a <strong>S3 backend</strong>.
-
-   E. <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>. This is in preparation for:
-
-   F. Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
-   <br /><br />
-
-References:
-   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a> summarizes the differences between "Self-managed" and HCP Vault cluster.
-   * https://github.com/hashicorp/vault-guides
-provides the technical content to support the Vault learn site.
-   * https://hashicorp-education.s3-us-west-2.amazonaws.com/courses/vault-101/Vault-101_LabBook.html
-   <br /><br />
-
-<hr />
 
 ## Different ways to access secrets 
 
@@ -961,234 +1210,32 @@ Secrets engines are Vault plugins that store, generate, or encrypt data. Secrets
 
 <hr />
 
-<a name="VaultSaaS"></a>
-
-## HCP Vault first time with Dev public IP
-
-<a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>:
-Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
-
-Read HCP Vault documentation at:<br />
-   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a>
-   <br /><br />
-
-### Get in HCP
-
-1. At <a target="_blank" href="https://portal.cloud.hashicorp.com/sign-up?product_intent=vault">https://portal.cloud.hashicorp.com/sign-up?product_intent=vault</a>
-   
-   Alternately, <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
-
-2. Click "Create an account" using your email and password.
-3. Define an <strong>Organization</strong> for $50 of Trial credits until you have to provide your credit card.
-4. PROTIP: On your iPhone install the Authy app to generate auth tokens for MFA.
-
-   <a name="HCPRegions"></a>
-
-   ### HCP Regions/Locations
-
-   AWS regions and Azure locations:
-   * https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
-   * https://dgtlinfra.com/microsoft-azure-data-center-locations/
-   <br /><br />
-
-5. Check <strong>HCP Cloud provider region(s)</strong> for regions/locations supported.
-
-   PROTIP: As of this writing, HCP addresses not all countries' GDPR data residency requirements. 
-   
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th> Theater </th><th> 7 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/aws">AWS Regions</a>
-      </th><th> 14 <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/supported-env/azure">Azure Locations</a> 
-      </th></tr>
-   <tr valign="top"><td rowspan="5"> Americas
-   </td><td> us-east-1 (Virginia)</td><td> eastus (Richmond, Virginia)</td></tr>
-   <tr valign="top"><td> - </td><td> eastus2 (Richmond, Virginia)</td></tr>
-   <tr valign="top"><td> - </td><td> centralus (Des Moines, Iowa)</td></tr>
-   <tr valign="top"><td> us-west-2 (Oregon)</td><td> westus2 (Moses Lake, Washington)</td></tr>
-   <tr valign="top"><td> - </td><td> canadacentral (Toronto)</td></tr>
-
-   <tr valign="top"><td rowspan="5"> EMEA
-   </td><td> eu-west-1 (Ireland)</td><td>northeurope (Dublin, Ireland)</td></tr>
-   <tr valign="top"><td> eu-west-2 (London)</td><td>uksouth (London, UK)</td></tr>
-   <tr valign="top"><td> - </td><td>westeurope (Amsterdam, Netherlands)</td></tr>
-   <tr valign="top"><td> eu-central-1 (Frankfurt)</td><td>-</td></tr>
-   <tr valign="top"><td> - </td><td>francecentral (Paris, France)</td></tr>
-
-   <tr valign="top"><td rowspan="4"> Asia<br />Pacific
-   </td><td> ap-southeast-1 (Singapore)</td><td>southeastasia (Singapore)</td></tr>
-   <tr valign="top"><td> ap-southeast-2 (Sydney, Australia)</td><td>australiasoutheast (Victoria)</td></tr>
-   </td><td> -</td><td>japaneast (Tokyo, Saitama)</td></tr>
-   </td><td> -</td><td>centralindia (Pune)</td></tr>
-   </table>
-
-   Considerations:
-
-   * Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
-
-   * Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
-
-   * HCP Vault allows you to change your clusters in place while maintaining the current configurations. But currently, no production-grade clusters can be scaled down to the Development tier, so you must have enough resources to scale down or delete them accordingly. 
-
-6. Above the "Overview" page title, notice the name of the "organization" you're using. On the left menu notice there is a different <a href="#HVN">HVN</a>, IAM, Billing, and Settings specific to your organization.
-
-   ### New Vault Cluster
-
-7. Click "View Vault".
-8. After <strong>projects</strong> are setup in a Provider (such as AWS), they appear in this page of Vault Clusters.
-9.  Click the ID name (even though it isn't underlined) for that project's Overview page. PROTIP: Save this among your browser's bookmarks, within a Projects folder:
-
-   https://portal.cloud.hashicorp.com/services/vault/bonkers?project_id=211f5f56-93a1-42de-8db6-9bebcec81cc6
-   
-10. Create a Vault Cluster ID (named "vault-cluster" by default). 
-11. Note the Network region (such as "Oregon us-west-2")
-12. Select "Allow public connections from outside your selected network" since you're in dev. mode this time.
-
-    ### HCP Per-User Pricing
-
-    <a target="_blank" href="https://www.hashicorp.com/products/vault/pricing/">Pricing</a>: 
-    Vault HCP SaaS is billed by the count of active unique "clients" which has authenticated to Vault to do something during a month. That includes people who login into the cluster to manage policies, set up dynamic secret rotation, etc. and every application, service, or any other machine-based system that authenticates to Vault.
-
-
-    ### HCP Tier Pricing
-
-    <a target="_blank" href="https://cloud.hashicorp.com/products/vault/pricing">Pricing</a>: 
-
-    <table border="1" cellpadding="4" cellspacing="0">
-    <tr align="right"><th align="left"> Vault<br />Tier 
-       </th><th> <br />$/hr </th><th> * 24 =<br />$/day </th><th> * 30 =<br />$/mo. </th><th> * 12 =<br />$/year
-       </th></tr>
-    <tr valign="top" align="right"><td align="left"> Development 
-       </td><td> $0.30
-       </td><td> $7.20
-       </td><td> $216.00
-       </td><td> $2,592.00
-       </td></tr>
-    <tr valign="top" align="right"><td align="left"> Starter 
-       </td><td> $0.50
-       </td><td> $12.00
-       </td><td> $360.00
-       </td><td> $4,320.00
-       </td></tr>
-    <tr valign="top" align="right"><td align="left"> Standard
-       </td><td> $1.578
-       </td><td> $37.87
-       </td><td> $1,136.16
-       </td><td> $13,633.92
-       </td></tr>
-    <tr valign="top" align="right"><td align="left"> Plus
-       </td><td> $1.844
-       </td><td> $44.26
-       </td><td> $1,327.68
-       </td><td> $15,932.00
-       </td></tr>
-    </table>
-
-    REMEMBER: With "Development" at $0.30/hour, that $50 trial credit gets you about <strong>7 days</strong> of run time.
-
-    PROTIP: Instead of letting instances sit idle accumulating cost, during development, <strong>delete the cluster</strong> and build it all again using Terraform.
-
-    Vault tier: "Development" is automatically associated with an "Extra Small" Cluster Size.
-
-   
-    ### HCP Cluster Size Pricing
-
-    Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
-
-    <table border="1" cellpadding="4" cellspacing="0">
-    <tr align="right"><th align="left"> Cluster Size </th><th> Per User Cost </th><th> Server Cost </th><th> vCPUs </th><th> RAM </th><th> Storage </th><th colspan="3" align="center"> Comparison
-       </th></tr>
-    <tr valign="top" align="right"><td align="left"> Extra-Small 
-       </td><td> $0.158/hr
-       </td><td> $0.03/hr
-       </td><td> 2 vCPU
-       </td><td> 1 GiB
-       </td><td> 1 GB
-       </td><td align="center" colspan="4"> X
-       </td></tr>
-    <tr valign="top" align="right"><td align="left"> Small 
-       </td><td> $0.158/hr
-       </td><td> $1.578/hr 
-       </td><td> 2 vCPU
-       </td><td> 8 GiB
-       </td><td> 15 GB
-       </td><td align="center" colspan="4"> 1X
-       </td></tr>
-    <tr valign="top" align="right"><td align="left"> Medium 
-       </td><td> $0.127/hr
-       </td><td> $3.163/hr 
-       </td><td> 4 vCPU
-       </td><td> 16 GiB
-       </td><td> 30 GB
-
-       </td><td> 2X
-       </td><td> 2X
-       </td><td> 2X
-       </td><td> 2X
-       </td></tr>
-    <tr valign="top" align="right"><td align="left"> Large
-       </td><td> $0.075/hr
-       </td><td> $7.849/hr 
-       </td><td> 8 vCPU
-       </td><td> 32 GiB
-       </td><td> 50 GB
-
-       </td><td> 5X
-       </td><td> 4X
-       </td><td> 4X
-       </td><td> 3.3X
-       </td></tr>
-    </table>
-
+### TODO: Backup cluster data
     
+    PROTIP: TODO: Before the cluster is deleted or destroyed, make it possible to restore the current state of data: automate the periodic capture of snapshots of data to a safe place. Then practice Disaster Recovery.
 
-    <a name="HVN"></a>
+    PROTIP: TODO: To ensure that hackers can't delete the backups so they can demand ransoms, set permissions so the account to create backups cannot be also used to delete them.
 
-13. Confirm Network settings (such as CIDR block 172.25.16/20, a "non-routable" address space).
+### Delete cluster
+    
+    PROTIP: Rather than letting the cluster sit idle racking up charges, delete it after taking a snapshot so that it can be used to restore the cluster the way it was.
 
-    <a target="_blank" href="https://developer.hashicorp.com/hcp/docs/hcp/network">DEFINITION</a>: A HVN (HashiCorp Virtual Network) defines the <a target="_blank" href="http://en.wikipedia.org/wiki/CIDR_notation" title="Classless Inter-Domain Routing">CIDR subnet range</a> which scopes the range of private IP addresses to be created in your cloud's network (<a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html">VPC</a> within AWS or VNet within Azure). 
+    <img alt="vault-hcp-manage-drop-410x306.jpg" width="410" height="306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675389154/vault-hcp-manage-drop-410x306_ehwn0c.jpg">
 
-    <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=3m42s">VIDEO</a>: Think of HVN as a "secure holding area where your Vault instance is totally isolated from anyone else. Then as you provision new instances they can appear within the network. For example, a single-node developer instance or a multi-node cluster. HVN then gives you the option of how you want to connect.
+    ### Restore cluster data
 
-    References about CIDR VPC: 
-    * https://www.linkedin.com/pulse/aws-ip-ranges-your-amazon-vpc-neal-davis/
-    * https://virtualizationreview.com/articles/2021/03/26/aws-subnetting.aspx
-    <br /><br />
+    TODO: To bring data from a previous instance ...
 
-14. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
+<hr />
 
-    https://developer.hashicorp.com/vault/tutorials/cloud
+<a name="ManualConfig"></a>
 
-    ### Access HCP Vault from CLI
+## Manual setup
 
-    Access to a Vault client requires these environment variables:
+This needs only be done manually once during setup, but not at all if 
+TODO: Terraform was programmed to capture the VAULT_TOKEN the cluster.
 
-    * VAULT_ADDR (the URL to the Vault cluster)
-    * <a href="#getVAULT_NAMESPACE">VAULT_NAMESPACE</a>
-    * <a href="#getVAULT_TOKEN">VAULT_TOKEN</a> (equivalent to a password)
-    <br /><br />
-
-    <a name="getVAULT_NAMESPACE"></a>
-
-15. Enter the CLI menu by clicking:
-
-    <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
-
-16. Click the icon for "Telling Vault where to find this cluster" 
-
-    <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
-
-    That gets you the VAULT_ADDR into your Clipboard:
-
-    <pre>export VAULT_ADDR="https://bonkers-private-vault-c6443333.9d787275.z1.hashicorp.cloud:8200"; 
-    export VAULT_NAMESPACE="admin"
-    </pre>
-
-    NOTE: In HCP, "admin" is equivalent to "root" as the Top-level Namespace.
-
-17. Switch to your Terminal and press command+V to paste it. Press Enter.
-
-    <a href="#getVAULT_TOKEN"></a>
-
-    ### Get VAULT_TOKEN to client CLI
+<a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=4m42s">VIDEO</a>:
 
 18. Switch back to your browser.
 19. Click the icon for "Authenticating to Vault" to get into your Clipboard:
@@ -1198,19 +1245,33 @@ Read HCP Vault documentation at:<br />
 
 20. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
 21. Switch back to your browser to click "Close".
+22. 
 
-22. Click "Generate token" (Under "New admin token") and wait for "Fetching".
-23. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
-24. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
+    <a name="getVAULT_TOKEN"></a>
+
+    ### Get VAULT_TOKEN for client CLI
+
+23. At the HCP Vault cluster Overview page for your project:
+24. Click "Generate token" (Under "New admin token") and wait a few seconds for "Fetching".
+25. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
+26. Switch to the "Sign in to Vault" browser page. Select Method "Token" and paste in the Token field. Click "Sign In".
+27. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
 
     <pre>export VAULT_TOKEN=hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0
     </pre>
 
-25. Press Enter to invoke it.
+28. Press Enter to invoke it.
     
-    REMEMBER: By default, it's enabled for <strong>6 hours</strong>.
+    REMEMBER: By default, the token is enabled only for <strong>6 hours</strong>.
 
-26. Perform a token lookup.
+
+<hr />
+
+<a name="UseVAULT_GUI"></a>
+
+## Use VAULT GUI
+
+29. Perform a token lookup based on variables defined in steps above:
 
     <pre><strong>curl --header "X-Vault-Token: $VAULT_TOKEN" \
    --header "X-Vault-Namespace: $VAULT_NAMESPACE" \
@@ -1303,15 +1364,6 @@ Most HCP Go SDK make API calls based on environment variables:
 
 
 <hr />
-
-<a name="Centralization"></a>
-
-## Centralization
-
-Centralization enables a common set of <strong>policies</strong> to be enforced globally, with a consistent set of secrets and keys are exposed to applications so they can interoperate.
-
- and policy management that is highly available and scaleable as the number of clients and their functional needs increase. 
-
 
 <a name="Replication"></a>
 
