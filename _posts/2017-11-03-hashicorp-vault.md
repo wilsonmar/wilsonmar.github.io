@@ -401,7 +401,9 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <a name="AccessVaultHCP"></a>
 
-    ### Setup HCP Vault Access from Web UI
+    ### Sign-In HCP Vault for Access
+
+    This is done every day or after expiration of temporary access credentials.
 
 16. Click "Access Vault" on the HCP Vault Overview page, at the upper-right.
 
@@ -414,7 +416,7 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     * <a href="#APICalls">API</a> (REST calls invoked by the CLI and by application programs written in Python, Go, etc.)
     <br /><br />
 
-    We show each in sequence below.
+    We show each in sequence below, starting from the Web UI, then CLI and API.
 
     <a name="WebUI"></a>
 
@@ -457,10 +459,25 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <img alt="vault-hcp-main-menu-485x53.jpg" width="485" height="53" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675399191/vault-hcp-main-menu-485x53_lhdolz.jpg">
 
-    ### MFA & Sign Out
+    Vault administrators use this menu to master all aspects of Vault on behalf of users:
 
-    TODO:
+    * Click <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675424226/vault-hcp-access-menu-212x267_qkyci7.jpg">Access</a> to manage Auth Methods, MFA, Entities, Groups, Leases, Namespaces, OIDC Proivder
+    
+    * Click "Tools" to transform secrets (Wrap, Lookup, Unwrap, Rewrap, Random, Hash)
+    
+    * Click "Secrets", then "Enable new engine +" to manage different Secrets Engines.
+    
+    * Click "Policies" to manage ACLs (Access Control Lists)
 
+    <a name="SignOut"></a>
+    
+    ### Sign Out
+
+    PROTIP: Don't keep sessions open when you don't need it.
+
+23. Click on the head icon at the upper-right corner and select "Sign Out":
+
+    <img alt="vault-hcp-signout-231x217.jpg" width="231" height="217" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675424348/vault-hcp-signout-231x217_syf1oq.jpg">
 
 
     <a name="AccessCLI"></a>
@@ -476,17 +493,17 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <a name="getVAULT_NAMESPACE"></a>
 
-17. Click "Command-line (CLI)" from the "Access Vault":
+2.  Click "Command-line (CLI)" from the "Access Vault":
 
     <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
 
-18. Click the icon for "Telling Vault where to find this cluster" 
+3.  Click the icon for "Telling Vault where to find this cluster" 
 
     <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
 
     That gets you the VAULT_ADDR into your Clipboard:
 
-19. Switch to your Terminal and press command+V to paste it. Press Enter.
+4.  Switch to your Terminal and press command+V to paste it. Press Enter.
 
     <pre>export VAULT_ADDR="https://bonkers-private-vault-c6443333.9d787275.z1.hashicorp.cloud:8200"; 
     export VAULT_NAMESPACE="admin"
@@ -500,19 +517,19 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     ### Get VAULT_TOKEN
 
-20. Switch back to your browser.
-21. Click the icon for "Authenticating to Vault" to get into your Clipboard:
+5.  Switch back to your browser.
+6.  Click the icon for "Authenticating to Vault" to get into your Clipboard:
 
     <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]
     </pre>
 
-22. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
-23. Highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
+7.  Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
+8.  Highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
 
     <pre>export VAULT_TOKEN=hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0
     </pre>
 
-24. Press Enter to invoke it.
+9.  Press Enter to invoke it.
     
     REMEMBER: By default, the token is enabled only for <strong>6 hours</strong>.
 
@@ -520,9 +537,9 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     ### Secrets List on CLI & GUI
 
-25. After you sign into the Vault GUI, you are presented with a list of paths.
+10. After you sign into the Vault GUI, you are presented with a list of paths.
 
-26. Switch to the CLI to get that list:
+11. Switch to the CLI to get that list:
 
     <pre><strong>vault secrets list</strong></pre>
 
