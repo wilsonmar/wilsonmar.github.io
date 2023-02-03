@@ -257,12 +257,6 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
    <tr valign="top"><td> - </td><td>centralindia (Pune)</td></tr>
    </table>
 
-   Considerations:
-
-   * Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
-
-   * Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
-
    After you have signed up...
 
    ### Sign in HCP
@@ -328,30 +322,30 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     Based on the "bang for the comparison" below, while going from Small to Medium is par for the price, going to Large is 5X the price to get just 4X more vCPU and 3.3X more storage.
 
     <table border="1" cellpadding="4" cellspacing="0">
-    <tr align="right"><th align="left"> Cluster Size </th><th> Per User Cost </th><th> Server Cost </th><th> vCPUs </th><th> RAM </th><th> Storage </th><th colspan="4" align="center"> Comparison
+    <tr align="right"><th align="left"> Cluster Size </th><th> Per User Cost </th><th> Server Cost </th><th> vCPUs </th><th> RAM GiB </th><th> Storage GB</th><th colspan="4" align="center"> Comparison
        </th></tr>
     <tr valign="top" align="right"><td align="left"> Extra-Small 
        </td><td> $0.158/hr
        </td><td> $0.03/hr
-       </td><td> 2 vCPU
-       </td><td> 1 GiB
-       </td><td> 1 GB
-       </td><td align="center" colspan="4"> X
+       </td><td> 2
+       </td><td> 1 
+       </td><td> 1 
+       </td><td align="center" colspan="4"> -
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Small 
        </td><td> $0.158/hr
        </td><td> $1.578/hr 
-       </td><td> 2 vCPU
-       </td><td> 8 GiB
-       </td><td> 15 GB
+       </td><td> 2 
+       </td><td> 8 
+       </td><td> 15
        </td><td align="center" colspan="4"> 1X
        </td></tr>
     <tr valign="top" align="right"><td align="left"> Medium 
        </td><td> $0.127/hr
        </td><td> $3.163/hr 
-       </td><td> 4 vCPU
-       </td><td> 16 GiB
-       </td><td> 30 GB
+       </td><td> 4
+       </td><td> 16
+       </td><td> 30
 
        </td><td> 2X
        </td><td> 2X
@@ -361,9 +355,9 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
     <tr valign="top" align="right"><td align="left"> Large
        </td><td> $0.075/hr
        </td><td> $7.849/hr 
-       </td><td> 8 vCPU
-       </td><td> 32 GiB
-       </td><td> 50 GB
+       </td><td> 8
+       </td><td> 32
+       </td><td> 50
 
        </td><td> 5X
        </td><td> 4Xs
@@ -398,6 +392,74 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
 15. Click "Create cluster" to see at <strong>https://portal.cloud.hashicorp.com</strong> show "Cluster initializing" turn (in 5-10 minutes).
 
+
+
+    <a name="AccessVaultHCP"></a>
+
+    ### Setup HCP Vault Access from Web UI
+
+16. Click "Access Vault" on the HCP Vault Overview page, at the upper-right.
+
+    <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
+
+    That lists the 3 ways to access secrets within HCP Vault described below:
+
+    * <a href="#WebUI">Web UI</a>
+    * <a href="#AccessCLI">Command-line (CLI)</a> Linux Terminal commands within Bash scripts
+    * <a href="#APICalls">API</a> (REST calls invoked by the CLI and by application programs written in Python, Go, etc.)
+    <br /><br />
+
+    We show each in sequence below.
+
+    <a name="WebUI"></a>
+
+17. "Web UI" under "Access Vault".
+
+    That is equivalent to clicking "Access web UI" Public link. Both open a new tab at URL such as:
+
+    https://bonkers-public-vault-c6443333.9d787275.z1.hashicorp.cloud:8200/
+
+    ### HCP Vault User Sign-In
+
+    <img alt="vault-hcp-signin-468x397.jpg" width="468" height="397" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675396720/vault-hcp-signin-468x397_g5twps.jpg">
+   
+
+    <a name="DefaultAuthMethods"></a>
+
+    ### Default Auth Methods
+
+    The authentication methods that Vault supports, out of the box:
+
+    <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"><img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
+   
+    * Token (Vault's default Auth Method)
+    * Username (such as an email address used on many legacy websites)
+    * LDAP auth method enables user authentication using an existing LDAP server while
+    * Okta (third-party identity provider)
+    * JWT
+    * OIDC
+    * RADIUS (legacy Windows Active Directory)
+    * GitHub (coordinated using OIDC protocol)
+    <br /><br />
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=4m42s">VIDEO</a>:
+19. At the HCP Vault cluster Overview page for your project:
+20. Click "Generate token" (Under "New admin token") and wait a few seconds for "Fetching".
+21. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
+22. Switch to the "Sign in to Vault" browser page. Select Method "Token" and paste in the Token field. Click "Sign In". You should now see a list of <strong>Secrets Engines</strong> with this top menu:
+
+    ### HCP GUI Menu
+
+    <img alt="vault-hcp-main-menu-485x53.jpg" width="485" height="53" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675399191/vault-hcp-main-menu-485x53_lhdolz.jpg">
+
+    ### MFA & Sign Out
+
+    TODO:
+
+
+
+    <a name="AccessCLI"></a>
+
     ### Setup HCP Vault Access from CLI
 
     Access to a Vault client from a CLI Terminal requires these environment variables:
@@ -409,41 +471,17 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     <a name="getVAULT_NAMESPACE"></a>
 
-16. Enter the CLI menu by clicking:
+17. Click "Command-line (CLI)" from the "Access Vault":
 
     <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
 
-17. Click the icon for "Telling Vault where to find this cluster" 
+18. Click the icon for "Telling Vault where to find this cluster" 
 
     <img alt="hcp-vault-cli-addr-575x414.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166746/hcp-vault-cli-addr-575x414_bv3afz.jpg">
 
     That gets you the VAULT_ADDR into your Clipboard:
 
-    ### HCP Vault User Sign-In
-
-16. Open a new browser tab or window and in the address field paste the VAULT_ADDR value:    
-
-    <img alt="vault-hcp-signin-468x397.jpg" width="468" height="397" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675396720/vault-hcp-signin-468x397_g5twps.jpg">
-
-    <a name="DefaultAuthMethods"></a>
-
-    ### Default Auth Methods
-
-    The authentication methods that Vault supports, out of the box:
-
-    <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"><img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
-   
-   * Token
-   * Username (such as an email address)
-   * LDAP auth method enables user authentication using an existing LDAP server while
-   * Okta (third-party identity provider)
-   * JWT
-   * OIDC
-   * RADIUS (legacy Windows Active Directory)
-   * GitHub (coordinated using OIDC protocol)
-   <br /><br />
-
-18. Switch to your Terminal and press command+V to paste it. Press Enter.
+19. Switch to your Terminal and press command+V to paste it. Press Enter.
 
     <pre>export VAULT_ADDR="https://bonkers-private-vault-c6443333.9d787275.z1.hashicorp.cloud:8200"; 
     export VAULT_NAMESPACE="admin"
@@ -457,149 +495,114 @@ Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault
 
     ### Get VAULT_TOKEN
 
-    This needs only be done manually once during setup, but not at all if 
-    TODO: Terraform was programmed to capture the VAULT_TOKEN the cluster.
-
-19. Switch back to your browser.
-20. Click the icon for "Authenticating to Vault" to get into your Clipboard:
+20. Switch back to your browser.
+21. Click the icon for "Authenticating to Vault" to get into your Clipboard:
 
     <pre>export VAULT_TOKEN=[ENTER_TOKEN_HERE]
     </pre>
 
-21. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
-22. Switch back to your browser to click "Close".
-
-    <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=4m42s">VIDEO</a>:
-
-23. At the HCP Vault cluster Overview page for your project:
-24. Click "Generate token" (Under "New admin token") and wait a few seconds for "Fetching".
-25. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
-26. Switch to the "Sign in to Vault" browser page. Select Method "Token" and paste in the Token field. Click "Sign In".
-27. Switch to your Terminal to highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
+22. Switch to your Terminal and press command+V to paste it. Don't press Enter yet.
+23. Highlight "[ENTER_TOKEN_HERE]" so pressing command+V replace it to end up with a command such as:
 
     <pre>export VAULT_TOKEN=hvs.123456789abcdefGS1zvuec7XupRBChRWHvQbjOmEwzM_AxsGicKImh2cy4xT1NoR3Q5UnpSckRBZjBzNVJyc3M5UGIuY1VzZ3kQ8y0
     </pre>
 
-28. Press Enter to invoke it.
+24. Press Enter to invoke it.
     
     REMEMBER: By default, the token is enabled only for <strong>6 hours</strong>.
 
-<hr />
+    <a name="SecretsList"></a>
 
-<a name="SecretsList"></a>
+    ### Secrets List on CLI & GUI
 
-## Secrets List
+25. After you sign into the Vault GUI, you are presented with a list of paths.
 
-1.  After you sign into the Vault GUI, you are presented with a list of paths.
-
-2.  Switch to the CLI to get that list:
+26. Switch to the CLI to get that list:
 
     <pre><strong>vault secrets list</strong></pre>
 
-    If you get a response such as this:
+    TODO: If you get a response such as this:<br />
+    
     <tt>Error listing secrets engines: Get "https://127.0.0.1:8200/v1/sys/mounts": dial tcp 127.0.0.1:8200: connect: connection refused</tt>
 
-    <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+    TODO: If you get a response such as this:<br />
+
+    <tt>Error listing secrets engines: Error making API request.
+    &nbsp;
+    URL: GET https://bonkers-public-vault-c6443333.9d787275.z1.hashicorp.cloud:8200/v1/sys/mounts
+    Code: 403. Errors:
+    &nbsp;
+    * 1 error occurred:
+	    * permission denied
+    </pre>
+
+
+<a name="APICalls"></a>
+
+## API calls
+
+Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
+
+   1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
+
+   2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
+   
+   3. Verification is obtained
+   
+   4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
+   <br /><br />
 
     <a name="SecretsEngines"></a>
 
     ## Types of secrets engines
 
     Vault provides <a href="#SecretsEngines">secrets engines</a> to work with each type of secret,
-    each a <a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-cases">"use case"</a> for the Vault product:
+    each a "<a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-cases">use case</a>" for the Vault product:
 
-    * Passwords associated with userids typed in to login web applications.
+    <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+
+    Behind its "cryptographic barrier", the <strong>KV</strong> Secrets Engine stores secrets such as these :
+    
+       * Passwords associated with userids typed in to login web applications. 
    
-    Vault can store such secrets behind its cryptographic barrier.
+       * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
 
-    * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
+       * X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA. (The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as define in <a target="_blank" href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a DER-encoded PKCS 8 PrivateKeyInfo, as specified in <a target="_blank" href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>)
 
-    * X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA. (The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as define in <a target="_blank" href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a DER-encoded PKCS 8 PrivateKeyInfo, as specified in <a target="_blank" href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>)
+       * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
 
-    * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
+       * API Keys provided by programs to obtain data from servers
 
-    * API Keys provided by programs to obtain data from servers
+       * database credentials
 
-    * database credentials
-
-    Supported secrets engines (alphabetically):
+    Secrets engines listed alphabetically:
    
-    * Active Directory (AD)
+       * Active Directory (AD)
   
-    * AliCloud
-    * AWS
-    * Azure (cloud from Microsoft)
-    * Consul (from HashiCorp)
-    * GoogleCloud
-    * GoogleCloud KMS (Key Managerment Service)
+       * AliCloud
+       * AWS
+       * Azure (cloud from Microsoft)
+       * Consul (from HashiCorp)
+       * GoogleCloud
+       * GoogleCloud KMS (Key Managerment Service)
   
-    * <strong>kmip</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
-    * <strong>kv</strong> (Key/Value), the most basic to store password (like 1Password)
-    * <strong>nomad</strong> (from HashiCorp)
-    * RabbitMQ messagging
-    * <strong>pki</strong> (Public Key Infrastructure used by Microsoft, etc.)
-    * <strong>ssh</strong> (Secure Shell used by Linux)
-    * <strong>sys</strong> is the default system engine
-    * <strong>totp</strong> (Time-based One-time Password, as defined by <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
-    * <strong>transit</strong> (from HashiCorp)
-    <br /><br />
+       * <strong>kmip</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
+    
+       * <strong>kv</strong> (Key/Value), the most basic to store password (like 1Password)
+       * <strong>nomad</strong> (from HashiCorp)
+       * RabbitMQ messagging
+       * <strong>pki</strong> (Public Key Infrastructure used by Microsoft, etc.)
+       * <strong>ssh</strong> (Secure Shell used by Linux)
+       * <strong>sys</strong> is the default system engine
+       * <strong>totp</strong> (Time-based One-time Password, as defined by <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
+       * <strong>transit</strong> (from HashiCorp)
+       <br /><br />
 
     PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
 
     PROTIP: Within Vault, key material and metadata about Secret Engines are stored as a root folder.
-
-<hr />
-
-## Secrets handling best practices
-
-<a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>: <strong>Security Posture</strong>
-
-SURVEY: How much do you agree whether each of these should be implemented?
-
-1. Storing plain-text secrets hard-coded in program code within GitHub is like leaving packages sitting in front of your door for a long time. Don't wait until "production" to use secure mechanisms.
-
-   We have sample code you can incorporate into your code right away.
-
-2. Enable MFA <strong>multi-factor authentication</strong> to block use of stolen passwords.
-      
-3. Limit exposure if auth secrets disclosed. Use <strong>Least Privilege</strong> approach to restrict access to encrypted data, based on a need-to-know basis. RBAC (Role-based Access Control) provides each user only the rights for his/her specific job role.
-
-4. Distribute authentication secrets securely, using different channels.
-
-   Vault's "AppRole" distributes the equivalent of userid and password, but for machine authentication.
-
-5. Don't let secrets live forever. Use single-use token with short TTL (Time To Live). 
-   Even if secrets are encrypted (using GPG), machines are powerful enough and hackers have enough time to figure out how to crack encryption algorithms, given enough time.
-
-6. <a href="#Centralized">Centralize</a> management of secrets.
-7.  Comprehensively log activities for audit and forensics.
-8.  Forward logs to a central SOC (Security Operations Center) for continuous, quick detection of and resonse to security incidents
-9.  Stream each transaction to an event hub to trigger immediate alerting and actions
-
-10. <strong>Encrypt data in transit</strong> with Mutual authentication (mTLS).
-11. Encrypt data at rest.
-12. Rotate static secrets frequently. PROTIP: One can't simply remove a file in GitHub because old versions hidden in history may be decrypted using old keys.
-13. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
-14. Have a "break glass" procedure if auth secrets are stolen. Revocation.
-<br /><br />
-
-Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp products do:
-
-   * Consul: Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
-   * Simulated phising: Avoid being a victim of phishing. Don't respond to email links, unknown calls & text without verification.
-   <br /><br />
-
-## Why is a system needed for secrets?
-
-Questions for secrets management:
-
-   1. How do applications get secrets?
-   1. How do humans acquire secrets?
-   1. How are secrets updated? (rotated)
-   1. How is a secret revoked?
-   1. When were secrets used? (lookup in usage logs)
-   1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
-   <br /><br />
 
 
 <a name="Cost"></a>
@@ -615,6 +618,7 @@ For AWS KMS: requests of some encryption algorithms cost more than others:
    $00.10 per 10,000 Elliptic Curve (ECC) GenerateDataKeyPair (for signing)<br />
    $00.15 per 10,000 asymmetric (SM2) requests except RSA 2048<br />
    $12.00 per 10,000 RSA <a target="_blank" href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKeyPair.html">GenerateDataKeyPair API</a> requests
+
 
 
 ### Other alternatives
@@ -690,6 +694,87 @@ database_password = get_secret('db_pass')
    * https://www.saasworthy.com/product/equinix-smartkey/pricing
    * https://www.saasworthy.com/product/akeyless-vault
    <br /><br />
+
+
+## Different ways to access secrets 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
+by Armon Dadgar, HashiCorp's CTO,
+is a whiteboard talk about avoiding "secret sprawl" living in clear text with
+empheral (temporary) passwords and cryptographic offload to a central service:
+<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
+
+1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
+what a machine is enabled to do.
+
+2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
+
+3. Human-to-machine access concerns how we control which humans are allowed to speak to which
+machines.
+
+4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
+
+Administrators and users can interact with Vault using its GUI, CLI, or API.
+Its CLI is a wrapper performing API calls.
+
+
+<hr />
+
+## Vault client install
+
+<hr />
+
+## Secrets handling best practices
+
+<a target="_blank" href="https://www.youtube.com/watch?v=bHz715dRCpg">VIDEO</a>: <strong>Security Posture</strong>
+
+SURVEY: How much do you agree whether each of these should be implemented?
+
+1. Storing plain-text secrets hard-coded in program code within GitHub is like leaving packages sitting in front of your door for a long time. Don't wait until "production" to use secure mechanisms.
+
+   We have sample code you can incorporate into your code right away.
+
+2. Enable MFA <strong>multi-factor authentication</strong> to block use of stolen passwords.
+      
+3. Limit exposure if auth secrets disclosed. Use <strong>Least Privilege</strong> approach to restrict access to encrypted data, based on a need-to-know basis. RBAC (Role-based Access Control) provides each user only the rights for his/her specific job role.
+
+4. Distribute authentication secrets securely, using different channels.
+
+   Vault's "AppRole" distributes the equivalent of userid and password, but for machine authentication.
+
+5. Don't let secrets live forever. Use single-use token with short TTL (Time To Live). 
+   Even if secrets are encrypted (using GPG), machines are powerful enough and hackers have enough time to figure out how to crack encryption algorithms, given enough time.
+
+6. <a href="#Centralized">Centralize</a> management of secrets.
+7.  Comprehensively log activities for audit and forensics.
+8.  Forward logs to a central SOC (Security Operations Center) for continuous, quick detection of and resonse to security incidents
+9.  Stream each transaction to an event hub to trigger immediate alerting and actions
+
+10. <strong>Encrypt data in transit</strong> with Mutual authentication (mTLS).
+11. Encrypt data at rest.
+12. Rotate static secrets frequently. PROTIP: One can't simply remove a file in GitHub because old versions hidden in history may be decrypted using old keys.
+13. Detect unauthorized access to auth secrets. App alert if secret is absent or not good.
+14. Have a "break glass" procedure if auth secrets are stolen. Revocation.
+<br /><br />
+
+Capabilities that Vault does not address (for Zero-Trust), but other HashiCorp products do:
+
+   * Consul: Replace perimeter-based security referencing static IP addresses with dynamic <strong>identity-based security</strong>
+   * Simulated phising: Avoid being a victim of phishing. Don't respond to email links, unknown calls & text without verification.
+   <br /><br />
+
+## Why is a system needed for secrets?
+
+Questions for secrets management:
+
+   1. How do applications get secrets?
+   1. How do humans acquire secrets?
+   1. How are secrets updated? (rotated)
+   1. How is a secret revoked?
+   1. When were secrets used? (lookup in usage logs)
+   1. What do we do in the event of compromise? (an unauthorized third-party, such as hackers, make use of the secret)
+   <br /><br />
+
 
 
 <hr />
@@ -788,45 +873,6 @@ Here are various roles used to <a target="_blank" href="https://developer.hashic
 
 <strong>Managed HSM Crypto Service Encryption User</strong>: Built-in roles are typically assigned to users or service principals who will use keys in Managed HSM to perform cryptographic activities. Crypto users can generate new keys but not delete existing ones.
 
-<hr />
-
-
-## Different ways to access secrets 
-
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM">VIDEO: Introduction to HashiCorp Vault</a> Mar 23, 2018
-by Armon Dadgar, HashiCorp's CTO,
-is a whiteboard talk about avoiding "secret sprawl" living in clear text with
-empheral (temporary) passwords and cryptographic offload to a central service:
-<a target="_blank" href="https://www.youtube.com/watch?v=VYfl-DpZ5wM"><img alt="hashicorp-vault-dadgar-927x522-94211" src="https://user-images.githubusercontent.com/300046/38281567-67193598-3768-11e8-9061-ebc6abbeb1e9.jpg"></a>
-
-1. Machine authentication and authorization focuses on proving a machine’s identity and authorizing
-what a machine is enabled to do.
-
-2. Machine-to-machine access is about controlling which machines are allowed to speak to one another.
-
-3. Human-to-machine access concerns how we control which humans are allowed to speak to which
-machines.
-
-4. Human authentication and authorization uses third-party identity tools to enable single sign-on. 
-
-Administrators and users can interact with Vault using its GUI, CLI, or API.
-Its CLI is a wrapper performing API calls.
-
-
-## API calls
-
-Computers talk to each other using API calls. Vault provides to application programs <a target="_blank" href="https://www.vaultproject.io/docs/concepts/tokens">client service tokens</a> needed to access databases and other services. Here are the steps for that:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
-
-   1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
-
-   2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
-   
-   3. Verification is obtained
-   
-   4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
-   <br /><br />
 
 <hr />
 	
@@ -1326,8 +1372,9 @@ export VAULT_NAMESPACE="admin"
 
 
 
-## API
+## API to access HCP Vault
 
+   * https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-apis
    * https://learn.hashicorp.com/tutorials/vault/getting-started-apis
    * https://github.com/hashicorp/hcp-sdk-go
    <br /><br />
@@ -1336,6 +1383,10 @@ Most HCP Go SDK make API calls based on environment variables:
    * HCP_PROJECT_ID
    * HCP_ORGANIZATION_ID
    <br /><br />
+
+   * Define what other origins (domain, scheme, or port) from which a browser should permit loading of resources with the /sys/config/cors <a target="_blank" href="https://developer.hashicorp.com/vault/api-docs/system/config-cors">Vault API</a> endpoint. This impacts <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) HTTP-headers</a>.
+
+   * Define custom UI headers for security using the API (which provides version controls not tracked by the HCP portal).
 
 
 
