@@ -23,25 +23,29 @@ The unique contribution of this article is to provide a deep yet concise approac
 {% include whatever.html %}
 
 
+<a name="Users"></a>
+
+## How to keep and use secrets
+
+Like all other data in computers, secrets are accessed and managed these ways:
+
+   * GUI on a website (by SaaS or on-prem/cloud server )
+   * CLI on a Terminal used by developers accessing a web service when dealing with files
+   * API calls by application programs (including the Vault CLI agent program you install)
+   <br /><br />
+
+HashiCorp's Vault provides tools to work with each of the above.
+
+NOTE: HashiCorp doesn't currently offer mobile apps.
+
+
 <a name="ValueProp"></a>
 
-## Vault's Value
+## Why Vault's Popular
 
 HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
 
 Ineffective secrets handling has resulted in billions lost to ransoms and the loss of reputation, reducing the value of companies and jobs -- a situation that Vault helps to avoid.
-
-
-<a name="Users"></a>
-
-## Users
-
-We manage secrets data these ways:
-
-   * GUI on a website or app (like 1Password)
-   * CLI on a Terminal used by developers
-   * API calls by a program
-   <br /><br />
 
 
 <a name="Origins"></a>
