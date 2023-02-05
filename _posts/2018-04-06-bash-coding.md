@@ -353,10 +353,38 @@ Either way, the "gunzip" file needs to be unzipped and verified.
 
     
     Unzip the package into a known location, 
-     ensuring the pact-go binary is on the PATH, next to the pact folder.
+    ensuring the pact-go binary is on the PATH, next to the pact folder.
     Run pact-go to see what options are available.
     Run go get -d github.com/pact-foundation/pact-go to install the source packages
 
+
+## Process ID list
+
+    NOTE: There is a command called "pidof" which can be downloaded, but it's safer to limit potential vulnerabilities. Same with the kill and killall commands.
+
+1.  To get information about a process named, for example, "python":
+
+    <pre><strong>ps -ef | grep python | grep -v grep 
+    </strong></pre>
+
+    The response is:
+
+    <pre>503 53758   723   0  9:54PM ttys004    0:00.05 /opt/homebrew/Cellar/python@3.10/3.10.9/Frameworks/Python.framework/Versions/3.10/Resources/Python.app/Contents/MacOS/Python
+    </pre>
+
+    The "grep -v grep" command eliminates the grep command itself from the response.
+
+1.  To get the ID of a process named, for example, "python" (such as "723") needed to kill that process:
+
+    <pre><strong>ps -ef | grep python | grep -v grep | cut -c 12-17 
+    </strong></pre>
+
+    That cut command extracts position 12 thru 17, which contains the process ID and the spaces around it.
+
+2.  To identify and kill the process in one command:
+   
+    <pre><strong>ps -ef | grep python | grep -v grep | cut -c 12-17 | xargs kill -s 9
+    </strong></pre>
 
 
 ## Process start/stop/kill

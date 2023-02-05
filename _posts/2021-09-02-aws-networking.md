@@ -28,14 +28,34 @@ TODO: Add WAF. Make above diagram into a video.
 Consider the types of architectures:
 – Subnets vs. VPCs and VPC peering
 
-## VPCs
+## VPCs (Virtual Private Cloud)
 
    * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
    <br /><br />
 
-Virtual Private Cloud ()
+PROTIP: AWS creates a default subnet for each region.
 
-VPC Public Networking
+1.  Delete the default VPC. It doesn't cost anything.
+
+    BLAH: At time of writing, AWS auto-assigns public IPv4 address.
+
+2.  "Create VPC".
+
+
+
+3.  Type Security Groups over "Search" at the top of every AWS Console GUI page.
+4.  Click "Security groups" among "Features of EC2", which means you see "Security Groups" on the left menu under EC2.
+
+    What makes a subnet public is a <strong>route table</strong> associated with each subnet created.
+
+5.  View Route Table feature.  
+    There is a Main route table designated as Yes.
+6.  Rename the Main "Public-IGW".
+
+    Subnets: Outbound rules: NACL (Network ACL) :
+
+7.  The rule which Allow/Deny Source 0.0.0.0/0 - Rename it "AllowEverything"
+
 
 ## IP DHCP
 

@@ -158,9 +158,10 @@ Unique abilities of Vault are that it can:
 
 * Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
 
-   https://github.com/scarolan/painless-password-rotation
+   * https://github.com/scarolan/painless-password-rotation
+   * <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/tokens-policies/challenges/create-a-renewable-token/notes">Auto-Renew tokens</a> before its TTL expires
+   <br /><br />
 
-* Change value of an existing secret (key rotation) without rebooting.
    This is the strong point with Vault.
 
    https://github.com/scarolan/painless-password-rotation
@@ -489,8 +490,6 @@ Documentation on HCP Vault are at:
 
     Vault administrators use this menu to master all aspects of Vault on behalf of users:
 
-    * Click <tt>Client count</tt> at the right to <a href="#HCPUsage">view and manage HCP usage</a>
-
     * Click <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675424226/vault-hcp-access-menu-212x267_qkyci7.jpg"><strong>Access</strong></a> to manage Authentication Methods, MFA, Entities, Groups, Leases, Namespaces, OIDC Proivder
     
     * Click <strong>Secrets</strong>, then "Enable new engine +" to manage different Secrets Engines.
@@ -499,14 +498,17 @@ Documentation on HCP Vault are at:
 
     * Click <strong>Tools</strong> to transform secrets data (Wrap, Lookup, Unwrap, Rewrap, Random, Hash)
     
+    ### Upper-right GUI menu
+
+    * Click <tt>Client count</tt> at the right to <a href="#HCPUsage">view and manage HCP usage</a>
 
     <a name="SignOut"></a>
     
     ### Sign Out
 
-    PROTIP: Don't keep sessions open when you don't need it.
+23. PROTIP: Don't keep sessions open when you don't need it.
 
-23. When you're done, click on the head icon at the upper-right corner and select "Sign Out":
+    Click on the head icon at the upper-right corner and select "Sign Out":
 
     <img alt="vault-hcp-signout-231x217.jpg" width="231" height="217" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675424348/vault-hcp-signout-231x217_syf1oq.jpg">
 
