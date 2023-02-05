@@ -3,7 +3,7 @@ layout: post
 date: "2023-02-05"
 file: "aws-networking"
 title: "AWS Networking"
-excerpt: "Setting AWS network VPC (Virtual Private Cloud), IPAM, DNS, Security Groups, WAF, BGP, etc. using CLI, GUI, Terraform, Cloud Formation"
+excerpt: "Setting up VPC (Virtual Private Cloud), IPAM, DNS, Security Groups, WAF, BGP, etc. using CLI, GUI, Terraform, Cloud Formation"
 tags: [AWS, EC2, cloud, VPC, Terraform]
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -131,19 +131,16 @@ and adds additional PROTIPs and NOTEs.
 
     1. The enterprise needs to be willing to pay for <a target="_blank" href="https://aws.amazon.com/vpc/pricing/">IPAM costs</a> charged for each active IP under its management, at $0.1944 per month ($0.00027 an hour x 24 x 30). Charges go to the $AWS_IPAM_ACCT specified because IP allocation can cross multiple accounts and VPCs based on configurable business rules. Thus the need for central administration.
 
-    2. Create a central asset management team with <strong>IPAM delegated administrators</strong> named within AWS. <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html">DOCS</a>: The centralization of CIDR management enables allocation requests to be centrally monitored and audited -- <strong>alerts</strong> about IP address overlap, IP address depletion, etc. can be received by a designated team email. IPAM automatically retains IP address monitoring data for up to three years. The team performs the above on the <strong>IPAM dashboard</strong> at 
+    2. Identify a central asset management team with <strong>IPAM delegated administrators</strong> named within AWS. <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html">DOCS</a>: The centralization of CIDR management enables allocation requests to be centrally monitored and audited -- <strong>alerts</strong> about IP address overlap, IP address depletion, etc. can be received by a designated team email. IPAM automatically retains IP address monitoring data for up to three years. The team performs the above on the <strong>IPAM dashboard</strong> at 
 
        https://console.aws.amazon.com/ipam/ which routes to a region-specific site such as:<br />
        https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#Home
 
        IPAM enables Administrators to reuse/reallocate IP addresses across multiple unconnected networks.
     
-    3. IPAM Delegated Administrators define a <strong>profile</strong> containing the business rules for allocating CIDRs among the two scopes from pools.
-    
-    4. For Cross-account access, define IAM roles using iam_assumable_role or iam_assumable_roles submodules in "resource AWS accounts (prod, staging, dev)" and IAM groups and users using iam-group-with-assumable-roles-policy submodule in "IAM AWS Account" to setup access controls between accounts. See iam-group-with-assumable-roles-policy example for more details.
-    
-       https://github.com/terraform-aws-modules/terraform-aws-iam
+    3. For Cross-account access, define IAM roles using Terraform iam_assumable_role or iam_assumable_roles submodules in "resource AWS accounts (prod, staging, dev)" and IAM groups and users using iam-group-with-assumable-roles-policy submodule in "IAM AWS Account" to setup access controls between accounts. See https://docs.aws.amazon.com/vpc/latest/ipam/choose-single-user-or-orgs-ipam.html
 
+    4. IPAM Delegated Administrators define a <strong>profile</strong> containing the business rules for allocating CIDRs among the two scopes from pools.
     5. To create <strong>a public and a private scope</strong> for a single VPC network within a particular operating Region, instead of <a target="_blank" href="https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#CreateIpam">using the Console GUI</a>, use this CLI command:
     
       <pre>AWS_REGION=us-west-2
@@ -166,7 +163,7 @@ and adds additional PROTIPs and NOTEs.
    
       An "allocation" can be a CIDR assignment from an IPAM pool to another resource or <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/tracking-ip-addresses-ipam.html">another IPAM pool</a>.
     
-    See https://docs.aws.amazon.com/vpc/latest/ipam/manually-allocate-ipam.html
+      See https://docs.aws.amazon.com/vpc/latest/ipam/manually-allocate-ipam.html
 
 6.  If you don't have IPAM setup, choose <strong>IPv4 For CIDR manual input</strong>
 
