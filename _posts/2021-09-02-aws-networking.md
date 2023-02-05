@@ -1,10 +1,10 @@
 ---
 layout: post
-date: "2023-02-01"
+date: "2023-02-05"
 file: "aws-networking"
 title: "AWS Networking"
-excerpt: "Setting AWS network VPC (Virtual Private Cloud), Security Groups, WAF, BGP, etc."
-tags: [AWS, EC2, cloud, VPC]
+excerpt: "Setting AWS network VPC (Virtual Private Cloud), IPAM, DNS, Security Groups, WAF, BGP, etc. using CLI, GUI, Terraform, Cloud Formation"
+tags: [AWS, EC2, cloud, VPC, Terraform]
 image:
 # feature: pic data center slice 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622043/8b1f9cce-0584-11e6-8b9f-4b6db5bb6e37.jpg
@@ -31,6 +31,13 @@ TODO: Add WAF. Make above diagram into a video.
 ## Terraform & CDK & CF
 
 This article describes use of Terraform and CDK as well as Cloud Formation to create resources within AWS.
+
+
+<a name="RoutingRules"></a>
+
+## Routing Rules #
+
+AWS VPC Routing Rules are what makes subnets public or private.
 
 ## VPCs (Virtual Private Cloud)
 
@@ -128,22 +135,32 @@ and adds additional PROTIPs and NOTEs.
 
        https://console.aws.amazon.com/ipam/ which routes to a region-specific site such as:<br />
        https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#Home
+
+       IPAM enables Administrators to reuse/reallocate IP addresses across multiple unconnected networks.
     
     3. IPAM Delegated Administrators define a <strong>profile</strong> containing the business rules for allocating CIDRs among the two scopes from pools.
+    
+    4. For Cross-account access, define IAM roles using iam_assumable_role or iam_assumable_roles submodules in "resource AWS accounts (prod, staging, dev)" and IAM groups and users using iam-group-with-assumable-roles-policy submodule in "IAM AWS Account" to setup access controls between accounts. See iam-group-with-assumable-roles-policy example for more details.
+    
+       https://github.com/terraform-aws-modules/terraform-aws-iam
 
-    4. This command creates <strong>a public and a private scope</strong> for a single VPC network within a particular operating Region, so that IP addresses can be reused across multiple unconnected networks.
+    5. To create <strong>a public and a private scope</strong> for a single VPC network within a particular operating Region, instead of <a target="_blank" href="https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#CreateIpam">using the Console GUI</a>, use this CLI command:
     
       <pre>AWS_REGION=us-west-2
+    AWS_OPERATING_REGIONS=us-west-2
     AWS_IPAM_POOL="prd-ipam"
     AWS_IPAM_ACCT="projA-ipam-acct"
     &nbsp;
     aws ec2 create-ipam --description "$AWS_IPAM_POOL" \
     --region "$AWS_REGION" \
-    --operating-regions RegionName="$AWS_REGION" \
+    --operating-regions RegionName="$AWS_OPERATING_REGIONS" \
     --profile "$AWS_IPAM_ACCT"
       </pre>
 
       Alternately, use the <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-ipam.html">IPAM API</a> from a custom program.
+
+      For easy repeatability, use the Terraform Registry<br />
+      https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest
     
    1. Define CIDRs within each top-level <strong>pools</strong> under the 2 IPAM scopes (public and private). 
    
@@ -190,12 +207,6 @@ and adds additional PROTIPs and NOTEs.
     then instantiate again.
 
 7.  For CIDR block, see below.
-
-
-<a name="CIDRs"></a>
-
-## CIDR Masks
-
 
     <a name="NetmaskNodes"></a>
 
@@ -268,14 +279,13 @@ and adds additional PROTIPs and NOTEs.
 
     <tt>2600:1f18:10e8:73___;;/64</tt>   
    
-2.  Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
 
     ### VPC Subnets
 
-3.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
-4.  Click "Actions" menu to select "Edit subnet settings".
-5.  Check "Enable auto-assign IPv6 addresses". 
-6.  Scroll to click the orange Save.
+8.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
+9.  Click "Actions" menu to select "Edit subnet settings".
+10. Check "Enable auto-assign IPv6 addresses". 
+11. Scroll to click the orange Save.
 
     PROTIP: If the VPC is defined using Terraform instead of the GUI, the above can be coded one time for subsequent repeated use.
 
@@ -381,7 +391,6 @@ Do you really know the above? Take <a target="_blank" href="https://learning.ore
 
    VPCs are really software-defined networks (SDN).
 
-
    {% highlight text %}
      "Resources" : {
         "VPC" : {
@@ -422,49 +431,40 @@ Do you really know the above? Take <a target="_blank" href="https://learning.ore
    NOTE: The use of static IP addresses in configurations in EC2
    can be an annoyance to some and a comfort to others.
 
-   Historically, working on a physical servers involves use of specific static IPs associated with particular purposes.
-   External monitoring server was manually configured with the IP assigned to each machine.
-   This also creates time pressure (panic) to get specific servers up and running.
-   This led to pressure for servers to be patched rather than risking losing configurations during rebuilds.
+   Historically, working on a physical servers involves use of specific static IPs associated with a particular purpose.
+   External monitoring servers were manually configured with the IP assigned to each machine.
+   This also creates time pressure (panic) to get specific servers up and running, which led to pressure for servers to be patched rather than risking losing configurations during rebuilds.
 
-   Static IPs needed to be protected as secrets because of their long-lived nature in traditional server environments.
+   SECURITY PROTIP: Static IPs needed to be protected as secrets because of their long-lived nature in traditional server environments.
 
-   A "paradigm shift" in thinking is necessary when moving to the "cloud" because there IP address assignments can be transitory ephemeral.
+   A "paradigm shift" in thinking is necessary when moving to the "cloud" because there IP address assignments can be transitory/ephemeral and thus more difficult to hack.
    When a server dies in a "12 factor app" environment,
    additional servers can be brought up automatically by auto-scaling from a common public pool.
 
-   AWS provides static IPs in their <strong>Elastic IP</strong> service.
-
-      WARNING: AWS charges $1 per month for reserved static IPs that are not assigned to a running instance.
+   AWS provides static IPs in their <strong>Elastic IP</strong> service, albeit for a charge of $1 per month for each reserved static IP not assigned to a running EC2 instance.
 
    PROTIP: Long-lived elastic static IPs are useful to
    avoid shared IPs that may have been black-listed due to abuse by others.
 
    Resources on this topic:
-
       * https://launchbylunch.com/posts/2014/Jan/29/aws-tips/
       * https://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/
 
+<hr />
 
 <a name="DNS"></a>
 
-## DNS #
+## DNS Route 53 #
 
-DNS servers maintain a database of host names to IP addresses.
+DNS servers maintain a database to translate host names to IP addresses.
 
-Amazon's DNS service is called Route 53 because the default part for DNS
+Amazon's public DNS service is called <strong>Route 53</strong> because the default part for DNS
 servers is TCP 53 / UDP 53.
 
 Its competitors include Dyn.com, GoDaddy, etc.
 
 <a target="_blank" href="https://github.com/acantril/learn-cantrill-io-labs/tree/master/aws-hybrid-dns">DIAGRAM: Advanced Demo - Hybrid DNS between AWS and Simulated On-Premises</a>
 
-
-<a name="RoutingRules"></a>
-
-## Routing Rules #
-
-AWS VPC Routing Rules are what makes subnets public or private.
 
 ## ELB vs. ALB
 
