@@ -23,15 +23,21 @@ This tutorial covers how to manage Security Groups and other AWS network securit
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11e6-8471-46d2602d3f39.jpg"></amp-img>
 
-TODO: Add WAF. Make above diagram into a video. 
-
 Consider the types of architectures:
 – Subnets vs. VPCs and VPC peering
 
+TODO: Add WAF. Make above diagram into a video. 
+
+## Terraform & CDK & CF
+
+This article describes use of Terraform and CDK as well as Cloud Formation to create resources within AWS.
+
 ## VPCs (Virtual Private Cloud)
 
+   * https://aws.amazon.com/vpc/faqs/
    * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
    <br /><br />
+
 
 PROTIP: AWS creates a default subnet for each region.
 
@@ -40,8 +46,6 @@ PROTIP: AWS creates a default subnet for each region.
     BLAH: At time of writing, AWS auto-assigns public IPv4 address.
 
 2.  "Create VPC".
-
-
 
 3.  Type Security Groups over "Search" at the top of every AWS Console GUI page.
 4.  Click "Security groups" among "Features of EC2", which means you see "Security Groups" on the left menu under EC2.
@@ -57,34 +61,9 @@ PROTIP: AWS creates a default subnet for each region.
 7.  The rule which Allow/Deny Source 0.0.0.0/0 - Rename it "AllowEverything"
 
 
-## IP DHCP
+### VPC Terraform
 
-<a target="_blank" href="https://learn.cantrill.io/courses/1723753/lectures/39153001">VIDEO</a>:
-The Dynamic Host Configuration Protocol is used for auto-configuration of network resources.
-
-When a VPC is created, AWS automatically create a set of DHCP options and associates them with the VPC. 
-The options include configuration parameters, including the domain name, domain name server, and the netbios-node-type.
-Configure your own DHCP options set for your VPC.
-   * IP address, Subnet Mask, Default Gateway
-   * DNS servers & AmazonProvidedDNS or Custom DNS domain
-   * NTP services, NetBios Name servers & Node type
-   <br /><br />
-
-DHCP Option Sets for each AZ are immutable.
-
-Associating a new option set is immediate, but changes require a DHCP Renew (which takes time).
-
-A DHCP server is setup to listen for L2 broadcasts to get info from the DHCP server.
-
-* VPC Router (Subnet+1)
-* R53 Resolver (Subnet+2)
-
-## Transit Gateway
-
-A transit gateway can simplify multi-VPC architectures significantly.
-
-### Terraform
-
+The provider for VPC is at
 https://www.terraform.io/docs/providers/aws/r/vpc.html
 
 https://wpengine.linuxacademy.com/amazon-web-services-2/learn-how-to-master-aws-vpc-inside-and-out/
@@ -100,27 +79,123 @@ resource "aws_vpc" "main" {
   }
 }</pre>
 
+
+
 ### Create VPCs using Management Console #
 
 This chapter condenses <a target="_blank" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html">Amazon's docs on this topic</a>
 and adds additional PROTIPs and NOTEs.
 
-1. A default VPC is a pre-requisite for setting up an EC2 server instance.
+1.  A default VPC is a pre-requisite for setting up an EC2 server instance.
 
-0. At https://console.aws.amazon.com/vpc/
+2.  At https://console.aws.amazon.com/vpc/
 
-0.  Select "Your VPC".
+3.  Select "Your VPC".
 
-0.  Click the "Create VPC" blue button.
+4.  Click the "Create VPC" blue button.
 
-0.  For Name tag, consider a naming convention to include:
+5.  PROTIP: For Name tag, consider a naming convention that specifies the decisions associated with each VPC:
 
-    * "dev", "qa", "prod" since many use isolated VPCs for different environments.
+    <tt>dev-public-ipam1</tt>
 
-    * "public" or "private" network access.
+    a. "public" or "private" network access <strong>scope</strong>.
 
-Use the <a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">Subnet Calculator for IPv4 at
-https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
+    b. "prod", "non-prod", "dev", "qa", etc. <strong>pool</strong>
+
+    c. "ipam" or "man" (manual management) of IP Addresses
+
+    These reflect the decisions selected on these fields:
+
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675624855/networking-cidr-350x382_mzwpyd.jpg"><img alt="networking-cidr-350x382.jpg" width="350" height="380" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675624855/networking-cidr-350x382_mzwpyd.jpg"></a>
+
+    When dealing with networks, a CIDR is always requested. 
+
+    Each CIDR defines a contiguous range of IP address.
+
+    CIDR specs are what keeps each IP address within a single subnet. Manual allocations can result in  misconfigurations. So many teams follow the same plan for allocating CIDRs.
+
+    <a name="IPAM"></a>
+
+    <strong>IPAM (IP Address Manager)</strong> is an AWS VPC feature that <strong>automatically allocate</strong> CIDRs to VPCs from <strong>pools</strong> of CIDRs it has <strong>provisioned</strong> into public and private <strong>scopes</strong> -- to make it easier to plan, track, and monitor IP addresses for AWS workloads, without causing IP address overlap or conflict. 
+    
+    Before individuals can specify that IP addresses be allocated automatically by selecting:
+
+    <strong>IPAM-allocated CIDR block</strong>
+
+    1. The enterprise needs to be willing to pay for <a target="_blank" href="https://aws.amazon.com/vpc/pricing/">IPAM costs</a> charged for each active IP under its management, at $0.1944 per month ($0.00027 an hour x 24 x 30). Charges go to the $AWS_IPAM_ACCT specified because IP allocation can cross multiple accounts and VPCs based on configurable business rules. Thus the need for central administration.
+
+    2. Create a central asset management team with <strong>IPAM delegated administrators</strong> named within AWS. <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html">DOCS</a>: The centralization of CIDR management enables allocation requests to be centrally monitored and audited -- <strong>alerts</strong> about IP address overlap, IP address depletion, etc. can be received by a designated team email. IPAM automatically retains IP address monitoring data for up to three years. The team performs the above on the <strong>IPAM dashboard</strong> at 
+
+       https://console.aws.amazon.com/ipam/ which routes to a region-specific site such as:<br />
+       https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#Home
+    
+    3. IPAM Delegated Administrators define a <strong>profile</strong> containing the business rules for allocating CIDRs among the two scopes from pools.
+
+    4. This command creates <strong>a public and a private scope</strong> for a single VPC network within a particular operating Region, so that IP addresses can be reused across multiple unconnected networks.
+    
+      <pre>AWS_REGION=us-west-2
+    AWS_IPAM_POOL="prd-ipam"
+    AWS_IPAM_ACCT="projA-ipam-acct"
+    &nbsp;
+    aws ec2 create-ipam --description "$AWS_IPAM_POOL" \
+    --region "$AWS_REGION" \
+    --operating-regions RegionName="$AWS_REGION" \
+    --profile "$AWS_IPAM_ACCT"
+      </pre>
+
+      Alternately, use the <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-ipam.html">IPAM API</a> from a custom program.
+    
+   1. Define CIDRs within each top-level <strong>pools</strong> under the 2 IPAM scopes (public and private). 
+   
+      An "allocation" can be a CIDR assignment from an IPAM pool to another resource or <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/tracking-ip-addresses-ipam.html">another IPAM pool</a>.
+    
+    See https://docs.aws.amazon.com/vpc/latest/ipam/manually-allocate-ipam.html
+
+6.  If you don't have IPAM setup, choose <strong>IPv4 For CIDR manual input</strong>
+
+    REMEMBER: CIDRs are called <strong>Masks</strong>.
+    The larger number after the slash, the more IP addresses it specfies.
+    <strong>16 is the largest mask allowed</strong>.
+
+    ### Subnet Calculators
+    
+    * <a target="_blank" href="https://subnet-calculator.com/">subnet-calculator.com</a> [has pop-up ads]
+    * <a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
+    * https://calculator.net/ip-subnet-calculator.html
+    <br /><br />
+
+    <a name="NetworkClasses"></a>
+    <a name="NonRouted"></a>
+
+    <strong>REMEMBER: The CIDR block for a default AWS VPC is always 172.31.0.0/16.</strong>
+
+    REMEMBER: 16 is the largest CIDR range allowed by AWS.
+
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675611924/networking-cidr-65534-433x314_cuhkfc.jpg"><img alt="networking-cidr-65534-433x314.jpg" width="433" height="314" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675611924/networking-cidr-65534-433x314_cuhkfc.jpg"></a>
+
+    PROTIP: Consider this convention:
+    * Use Class A VPC CIDR 10.0.0.0/16 for <strong>production</strong> regions
+    * Use Class B VPC CIDR 172.16.0.0/16 for <strong>DR (Disaster Recovery)</strong> regions
+    <br /><br />
+
+    Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
+    * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
+    * 172.16.0.0 -> 172.31.255.255   within "Class B" addresses 127 -> 191
+    * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
+    <br /><br />
+
+    PROTIP: Carefully predict how many nodes each subnet might need.
+    Once assigned, AWS VPC subnet blocks can’t be modified.
+    If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
+    then instantiate again.
+
+7.  For CIDR block, see below.
+
+
+<a name="CIDRs"></a>
+
+## CIDR Masks
+
 
     <a name="NetmaskNodes"></a>
 
@@ -142,33 +217,6 @@ https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
     For example, if all you'll need are 14 nodes, specify `/28`.
     Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
-
-    <a name="NonRouted"></a>
-
-    Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
-
-    * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
-    * 172.16.0.0 -> 172.31.255.255   within "Class B" addresses 127 -> 191
-    * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
-    <br /><br />
-
-    <strong>REMEMBER: The CIDR block for a default VPC is always 172.31.0.0/16.</strong>
-
-    PROTIP: Use addresses from different IP classes. For example, 
-    * use VPC CIDR 10.0.0.0/16 for production 
-    * use VPC CIDR 172.16.0.0/16 for DR regions
-    <br /><br />
-
-    PROTIP: Carefully predict how many nodes each subnet might need.
-    Once assigned, AWS VPC subnet blocks can’t be modified.
-    If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
-    then instantiate again.
-
-    <a name="CIDR"></a>
-
-    ### CIDR Ranges
-
-1.  For CIDR block, see below</a>.
 
     To make naming conflicts more avoidable, use a standard naming convention:
 
@@ -222,7 +270,7 @@ https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
    
 2.  Use the table above to pre-define your own numbering scheme, which can also be used as shortcuts in other names.
 
-    ### VPC Subnet 
+    ### VPC Subnets
 
 3.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
 4.  Click "Actions" menu to select "Edit subnet settings".
@@ -431,6 +479,17 @@ AWS VPC Routing Rules are what makes subnets public or private.
 
 ## AWS NAT #
 
+Only one NACL can be associated with a subnet, to deny specific IP addresses.
+Separate rules are for inbound and outbound.
+
+PROTIP: NACL rules are numbered to sepcify sequence.
+To allow for insertion, leave gaps in the numbers.
+For example, create the first two with 100, 200, etc.
+so you can later add 150 between 100 and 200.
+
+PROTIP: Remember that EC2 instances by default have Networking > Change Source/Dest. Check ON.
+But NAT instances require OFF or they wont' show up on VPC Route Tables.
+
 0. Launch an EC2 instance of a Community AMI built for NATting. Search for "NAT".
 
    NAT provides IP address assignment and DNS Proxy name resolution
@@ -470,26 +529,16 @@ AWS VPC Routing Rules are what makes subnets public or private.
    An <strong>AWS NAT Gateway</strong> SaaS supports <strong>bursts of up to 10Gbps</strong>. NAT Gateways are managed by AWS, so they don't have traffic metrics nor CloudWatch alarms, plus there is a <strong>per-hour</strong> charge for AWS to operate the NAT Gateway.
 
 
+
    A NAT instance can be configured for port forwarding, bastion hosts.
 
 <a name="Bastion"></a>
 
 ### Bastion host #
 
-Bastion hosts ???
+NOTE: Bastion Hosts
 
-PROTIP: Up to 5 different security groups can be applied to a single resource.
-
-Only one NACL can be associated with a subnet, to deny specific IP addresses.
-Separate rules are for inbound and outbound.
-
-PROTIP: NACL rules are numbered to sepcify sequence.
-To allow for insertion, leave gaps in the numbers.
-For example, create the first two with 100, 200, etc.
-so you can later add 150 between 100 and 200.
-
-PROTIP: Remember that EC2 instances by default have Networking > Change Source/Dest. Check ON.
-But NAT instances require OFF or they wont' show up on VPC Route Tables.
+PROTIP: Instead of the expense of standing up Bastion Hosts, consider HashiCorp Boundary.
 
 
 <a name="VPN"></a>
@@ -507,6 +556,7 @@ https://app.pluralsight.com/player?course=aws-certified-sysops-admin-associate&a
 Customer Gateway.
 
    It's attached to a VPN.
+
 
 <a name="Peering"></a>
 
@@ -538,6 +588,36 @@ One useful use case is for more secure interconnection among Active Directory, E
 0. Accept the Peering request on the target VPC.
 
 
+
+<hr />
+
+## IP DHCP
+
+<a target="_blank" href="https://learn.cantrill.io/courses/1723753/lectures/39153001">VIDEO</a>:
+The Dynamic Host Configuration Protocol is used for auto-configuration of network resources.
+
+When a VPC is created, AWS automatically create a set of DHCP options and associates them with the VPC. 
+The options include configuration parameters, including the domain name, domain name server, and the netbios-node-type.
+Configure your own DHCP options set for your VPC.
+   * IP address, Subnet Mask, Default Gateway
+   * DNS servers & AmazonProvidedDNS or Custom DNS domain
+   * NTP services, NetBios Name servers & Node type
+   <br /><br />
+
+DHCP Option Sets for each AZ are immutable.
+
+Associating a new option set is immediate, but changes require a DHCP Renew (which takes time).
+
+A DHCP server is setup to listen for L2 broadcasts to get info from the DHCP server.
+
+* VPC Router (Subnet+1)
+* R53 Resolver (Subnet+2)
+
+## Transit Gateway
+
+A transit gateway can simplify multi-VPC architectures significantly.
+
+
 ## ACLs #
 
 Access Control Lists
@@ -556,6 +636,8 @@ Block all the inbound and outbound ports. Only allow application request ports.
 
 These are stateless traffic filters that apply to all traffic inbound or outbound from a Subnet within VPC. AWS recommended Outbound rules
 
+REMEMBER:
+
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th> Security Group </th><th> NACLs </th></tr>
 <tr valign="top"><td> Applicable to instances </td><td> Operate on VPC subnets </td></tr>
@@ -565,7 +647,10 @@ These are stateless traffic filters that apply to all traffic inbound or outboun
 <tr valign="top"><td> Must be associated with an instance to apply </td><td> Apply automatically to all instances in a subnet</td></tr>
 </table>
 
-See http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html
+REMEMBER: Up to 5 different Security Groups can be applied to a single AWS resource.
+
+References:
+   * http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html
 
 
 
