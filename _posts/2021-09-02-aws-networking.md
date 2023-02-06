@@ -128,7 +128,7 @@ and adds additional PROTIPs and NOTEs.
 
     In an IPv4 address, the 4 sets of <strong>decimal</strong> numbers (between 4 dots) called an octet (of four). Together they total 32 binary bits (2^32) which can have 4.29 billion variations, each a specific IP address. All the IP addresses have now been assigned, leading to the address shortage issues we face today.
 
-    IPv6 addresses are represented by double <strong>hexadecimal</strong> numbers between colons totaling 128-bits (2^128) or 340,282,366,920,938,463,463,374,607,431,768,211,456 addresses -- 1,028 times more than IPv4. 
+    IPv6 addresses are represented by 8 double <strong>hexadecimal</strong> numbers (such as ABCD) between colons totaling 128-bits (2^128) or 340,282,366,920,938,463,463,374,607,431,768,211,456 addresses -- 1,028 times more than IPv4. 
     
     IPv4 has not been completely deprecated because not all devices and software have been upgraded to use IPv6 enhancements:
 
@@ -141,19 +141,24 @@ and adds additional PROTIPs and NOTEs.
     * Built-in IPSEC in the protocol for privacy 
 
     * The large address space allows every device to have its own IP address rather than be hidden behind a NAT (Network Address Translation) router.
-    * No more DHCP (auto renumber address configuration)
-    * No more private address collisions
-    * IP to MAC resolution using Multicast Neighbor Solicitation NDP (Neighbour Discovery Protocol) instead of Broadcast ARP
+    * DHCPv6 (RFC 8415) with auto renumber address configuration using DHCP servers/relays ff02::1:2.
+    * IP to MAC resolution using Multicast Neighbor Solicitation NDP (Neighbour Discovery Protocol) <a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/ipv6-on-aws/brief-ipv6-overview.html">instead of Broadcast</a> ARP
     * Built-in authentication support to make end-to-end connection integrity achievable
     * Multicast and anycast message transmission scheme is available (instead of broadcast)
+    * No more private address collisions
     <br /><br />
 
-    
+    <a name="awsvpc"></a>
+
+    <a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/ipv6-on-aws/amazon-vpc-design.html">DOC</a>: To enable dual-stack operation for your VPC, associate up to five IPv6 CIDR block ranges per VPC:
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675688112/aws-dual-stack-VPC-707x687_djyygy.png"><img alt="aws-dual-stack-VPC-707x687.png" width="707" height="687" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675688112/aws-dual-stack-VPC-707x687_djyygy.png"></a>
+
+
     <a name="IPAM"></a>
 
     ### IPAM
 
-    <strong>IPAM (IP Address Manager)</strong> is an AWS VPC feature that <strong>automatically allocate</strong> CIDRs to VPCs from <strong>pools</strong> of CIDRs it has <strong>provisioned</strong> into public and private <strong>scopes</strong> -- to make it easier to plan, track, and monitor IP addresses for AWS workloads, without causing IP address overlap or conflict. 
+    <a target="_blank" href="https://aws.amazon.com/blogs/networking-and-content-delivery/architect-dual-stack-amazon-vpc-with-multiple-ipv6-cidr-blocks/">IPAM (IP Address Manager)</a> is an AWS VPC feature that <strong>automatically allocate</strong> CIDRs to VPCs from <strong>pools</strong> of CIDRs it has <strong>provisioned</strong> into public and private <strong>scopes</strong> -- to make it easier to plan, track, and monitor IP addresses for AWS workloads, without causing IP address overlap or conflict. 
     
     Before individuals can specify that IP addresses be allocated automatically by selecting:
 
@@ -161,14 +166,14 @@ and adds additional PROTIPs and NOTEs.
 
     1. The enterprise needs to be willing to pay for <a target="_blank" href="https://aws.amazon.com/vpc/pricing/">IPAM costs</a> charged for each active IP under its management, at $0.1944 per month ($0.00027 an hour x 24 x 30). Charges go to the $AWS_IPAM_ACCT specified because IP allocation can cross multiple accounts and VPCs based on configurable business rules. Thus the need for central administration.
 
-    2. Identify a central asset management team with <strong>IPAM delegated administrators</strong> named within AWS. <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html">DOCS</a>: The centralization of CIDR management enables allocation requests to be centrally monitored and audited -- <strong>alerts</strong> about IP address overlap, IP address depletion, etc. can be received by a designated team email. IPAM automatically retains IP address monitoring data for up to three years. The team performs the above on the <strong>IPAM dashboard</strong> at 
+    2. <a target="_blank" href="https://www.youtube.com/watch?v=YP69a9WRobI">VIDEO</a>: Form a central asset management team with <strong>IPAM delegated administrators</strong> named within AWS. <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html">DOCS</a>: The centralization of CIDR management enables allocation requests to be centrally monitored and audited -- <strong>alerts</strong> about IP address overlap, IP address depletion, etc. can be received by a designated team email. IPAM automatically retains IP address monitoring data for up to three years. The team performs the above on the <strong>IPAM dashboard</strong> at 
 
-       https://console.aws.amazon.com/ipam/ which routes to a region-specific site such as:<br />
+       <a target="_blank" href="https://console.aws.amazon.com/ipam/">https://console.aws.amazon.com/ipam</a> routes to a region-specific site such as:<br />
        https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#Home
 
        IPAM enables Administrators to reuse/reallocate IP addresses across multiple unconnected networks.
     
-    3. For Cross-account access, define IAM roles using Terraform iam_assumable_role or iam_assumable_roles submodules in "resource AWS accounts (prod, staging, dev)" and IAM groups and users using iam-group-with-assumable-roles-policy submodule in "IAM AWS Account" to setup access controls between accounts. See https://docs.aws.amazon.com/vpc/latest/ipam/choose-single-user-or-orgs-ipam.html
+    3. For cross-account access, define IAM roles using Terraform iam_assumable_role or iam_assumable_roles submodules in "resource AWS accounts (prod, staging, dev)" and IAM groups and users using iam-group-with-assumable-roles-policy submodule in "IAM AWS Account" to setup access controls between accounts. See https://docs.aws.amazon.com/vpc/latest/ipam/choose-single-user-or-orgs-ipam.html
 
     4. IPAM Delegated Administrators define a <strong>profile</strong> containing the business rules for allocating CIDRs among the two scopes from pools.
    
@@ -223,15 +228,61 @@ and adds additional PROTIPs and NOTEs.
 
     CIDR specs are what keeps each IP address within a single subnet. Manual allocations can result in  misconfigurations. So many teams follow the same plan for allocating CIDRs.
 
+    <a name="Scopes"></a>
+
+    ### Public vs. Private Scope
+
+    There are separate scopes of IP addresses for public vs. private use.
+
+    <a name="NonRouted"></a>
+
+    <table border="1" cellpadding="4" cellspacing="0">
+    <tr><th> Public Routed Address</th><th>Private Non-Routed Address</th></tr>
+    <tr valign="top"><td> Connected with the Internet network
+       </td><td> Connected with a LAN
+       </td></tr>
+    <tr valign="top"><td> Publicly registered with Network Information Center
+       </td><td> Is not registered with Network Information Center
+       </td></tr>
+    <tr valign="top"><td> Requires a Modem to connect to a network
+       </td><td> Requires a network switch to connect to a network
+       </td></tr>
+    <tr valign="top"><td> Assigned by the ISP to identify a home or business network from the outside	
+       </td><td> Allotted by the client and are given by the client’s switch such as a Gigabit Ethernet switch
+       </td></tr>
+    </table>
+
+
+    <a name="NATGateway"></a>
+
+    ### NAT Gateway #
+
+    A <strong>NAT Gateway</strong> is used for private subnets to reach the public internet.
+
+    An <strong>AWS NAT Gateway</strong> SaaS supports <strong>bursts of up to 10Gbps</strong>. NAT Gateways are managed by AWS, so they don't have traffic metrics nor CloudWatch alarms, plus there is a <strong>per-hour</strong> charge for AWS to operate the NAT Gateway.
+
+    A NAT instance can be configured for port forwarding, bastion hosts.
+
+    <a name="Bastion"></a>
+
+    ### Bastion host #
+
+    NOTE: Bastion Hosts
+
+    PROTIP: Instead of the expense of standing up Bastion Hosts, consider HashiCorp Boundary.
+
+
     <a name="Avoid"></a>
 
     ### IP Ranges commonly used
 
-    Ranges used by specific cloud vendors:
-    * 10.0.0.0/16 AWS
+    PROTIP: Ranges used by specific cloud vendors:
+    * 10.0.0.0/16 or 2001:db8:1234:1a00::/56 by AWS (see <a href="#awsvpc">diagram</a>)
     * 10.128.0.0./9 Google
     * 172.31.0.0/16 Azure
     <br /><br />
+
+    <strong>REMEMBER: The CIDR block for a default AWS VPC is always 172.31.0.0/16???</strong>
 
     Ranges used by specific geographies:
     * 192.168.10.0/24
@@ -240,6 +291,7 @@ and adds additional PROTIPs and NOTEs.
     * 192.168.25.0/24 Seattle
     <br /><br />
 
+
     ### Subnet Calculators
     
     * <a target="_blank" href="https://subnet-calculator.com/">subnet-calculator.com</a> [has pop-up ads]
@@ -247,32 +299,30 @@ and adds additional PROTIPs and NOTEs.
     * https://calculator.net/ip-subnet-calculator.html
     <br /><br />
 
-    <a name="NetworkClasses"></a>
-    <a name="NonRouted"></a>
-
-    <strong>REMEMBER: The CIDR block for a default AWS VPC is always 172.31.0.0/16.</strong>
-
-    REMEMBER: 16 is the largest CIDR range allowed by AWS.
-
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675611924/networking-cidr-65534-433x314_cuhkfc.jpg"><img alt="networking-cidr-65534-433x314.jpg" width="433" height="314" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675611924/networking-cidr-65534-433x314_cuhkfc.jpg"></a>
 
-    PROTIP: Consider this convention:
-    * Use Class A VPC CIDR 10.0.0.0/16 for <strong>production</strong> regions
-    * Use Class B VPC CIDR 172.16.0.0/16 for <strong>DR (Disaster Recovery)</strong> regions
-    <br /><br />
+
+    <a name="NetworkClasses"></a>
+
+    ### Classes
 
     Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
     * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
     * 172.16.0.0 -> 172.31.255.255   within "Class B" addresses 127 -> 191
     * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
     <br /><br />
+    
+    PROTIP: Consider this convention:
+    * Use Class A VPC CIDR 10.0.0.0/16 for <strong>production</strong> regions
+    * Use Class B VPC CIDR 172.16.0.0/16 for <strong>DR (Disaster Recovery)</strong> regions
+    <br /><br />
+
+    REMEMBER: 16 is the largest CIDR range allowed by AWS.
 
     PROTIP: Carefully predict how many nodes each subnet might need.
     Once assigned, AWS VPC subnet blocks can’t be modified.
     If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
     then instantiate again.
-
-7.  For CIDR block, see below.
 
     <a name="NetmaskNodes"></a>
 
@@ -313,23 +363,23 @@ and adds additional PROTIPs and NOTEs.
 
     The ?? is replaced with one of the numbers within an (Availability) Zone column:
 
-    | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Routes |
-    | :-- | :---     | -- | --: | --: | --: | -----: |
-    | Prd | ELB-?    | 00 |  1 |  8 | 15 | <strong>Public</strong> |
-    | Prd | WEB-?    | 01 |  2 |  9 | 16 | Private |
-    | Prd | APP-?    | 02 |  3 | 10 | 17 | Private |
-    | Prd | Cache-?  | 03 |  4 | 11 | 18 | Private |
-    | Prd | DB-?     | 04 |  5 | 12 | 19 | Private |
-    | Prd | Res-?    | 05 |  6 | 13 | 20 | Private |
-    | Prd | Res-?    | 06 |  7 | 14 | 21 | Private |
-    | --- | -----    | -- | -- | -- | -- | ------- |
-    | Dev | ELB-?    | 07 | 22 | 29 | 36 | <strong>Public</strong> |
-    | Dev | WEB-?    | 08 | 23 | 30 | 37 | Private |
-    | Dev | APP-?    | 09 | 24 | 31 | 38 | Private |
-    | Dev | Cache-?  | 0A | 25 | 32 | 39 | Private |
-    | Dev | DB-?     | 0B | 26 | 33 | 40 | Private |
-    | Dev | Res-?    | 0C | 27 | 34 | 41 | Private |
-    | Dev | Res-?    | 0D | 28 | 35 | 42 | Private |
+    | Env | Tier | IPv6 | Zone a | Zone b | Zone c | Future | Routes |
+    | :-- | :---     | -- | --: | --: | --: | --: | -----: |
+    | Prd | ELB-?    | 00 |  1 | 11 | 21 | 31 | <strong>Public</strong> |
+    | Prd | WEB-?    | 01 |  2 | 12 | 22 | 32 | Private |
+    | Prd | APP-?    | 02 |  3 | 13 | 23 | 33 | Private |
+    | Prd | Cache-?  | 03 |  4 | 14 | 24 | 34 | Private |
+    | Prd | DB-?     | 04 |  5 | 15 | 25 | 35 | Private |
+    | Prd | Res-?    | 05 |  6 | 16 | 26 | 36 | Private |
+    | Prd | Res-?    | 06 |  7 | 17 | 27 | 37 | Private |
+    | --- | -----    | -- | -- | -- | -- | -- | ------- |
+    | Dev | ELB-?    | 41 | 51 | 61 | 71 | 81 | <strong>Public</strong> |
+    | Dev | WEB-?    | 42 | 52 | 62 | 72 | 82 | Private |
+    | Dev | APP-?    | 43 | 53 | 63 | 73 | 83 | Private |
+    | Dev | Cache-?  | 44 | 54 | 64 | 74 | 84 | Private |
+    | Dev | DB-?     | 45 | 55 | 65 | 75 | 85 | Private |
+    | Dev | Res-?    | 46 | 56 | 56 | 76 | 86 | Private |
+    | Dev | Res-?    | 47 | 57 | 57 | 77 | 87 | Private |
 
     Expanded, each ELB (Elastic Load Balancer) is naturally on a Public subnet:
    
@@ -349,10 +399,10 @@ and adds additional PROTIPs and NOTEs.
 
     ### VPC Subnets
 
-8.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
-9.  Click "Actions" menu to select "Edit subnet settings".
-10. Check "Enable auto-assign IPv6 addresses". 
-11. Scroll to click the orange Save.
+7.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
+8.  Click "Actions" menu to select "Edit subnet settings".
+9.  Check "Enable auto-assign IPv6 addresses". 
+10. Scroll to click the orange Save.
 
     PROTIP: If the VPC is defined using Terraform instead of the GUI, the above can be coded one time for subsequent repeated use.
 
@@ -587,25 +637,6 @@ But NAT instances require OFF or they wont' show up on VPC Route Tables.
    <a target="_blank" href="https://aws.amazon.com/articles/2781451301784570/">
    to manage Subnet failover to another NAT in this Amazon article</a>.
 
-<a name="NATGateway"></a>
-
-### NAT Gateway #
-
-   A <strong>NAT Gateway</strong> is used for private subnets to reach the public internet.
-
-   An <strong>AWS NAT Gateway</strong> SaaS supports <strong>bursts of up to 10Gbps</strong>. NAT Gateways are managed by AWS, so they don't have traffic metrics nor CloudWatch alarms, plus there is a <strong>per-hour</strong> charge for AWS to operate the NAT Gateway.
-
-
-
-   A NAT instance can be configured for port forwarding, bastion hosts.
-
-<a name="Bastion"></a>
-
-### Bastion host #
-
-NOTE: Bastion Hosts
-
-PROTIP: Instead of the expense of standing up Bastion Hosts, consider HashiCorp Boundary.
 
 
 <a name="VPN"></a>
@@ -721,8 +752,6 @@ References:
 
 
 
-
-
 ## Direct Connect (DX)
 
 To Direct Connect to a customer's Router.
@@ -746,6 +775,7 @@ If the DX Location is in a different region, a <strong>DX Gateway</strong> is ne
 
 AMS needs to set limits
 http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
+
 
 ## AWS Networking Certification
 
