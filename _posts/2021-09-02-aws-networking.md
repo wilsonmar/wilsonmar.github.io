@@ -103,25 +103,55 @@ and adds additional PROTIPs and NOTEs.
 
 5.  PROTIP: For Name tag, consider a naming convention that specifies the decisions associated with each VPC:
 
-    <tt>dev-public-ipam1</tt>
+    <tt>dev-public-v6-ipam1</tt>
 
     a. "public" or "private" network access <strong>scope</strong>.
 
-    b. "prod", "non-prod", "dev", "qa", etc. <strong>pool</strong>
+    b. "prod", "<a href="">DR</a>", "non-prod", "dev", "qa", etc. <strong>pool</strong>
 
-    c. "ipam" or "man" (manual management) of IP Addresses
+    c. <a href="#IPv4v6">"v4" or "v6"</a>
 
-    These reflect the decisions selected on these fields:
+    d. "<a href="#IPAM">ipam</a> or "<a href="#manu">manu</a>" (manual management) of IP Addresses
+
+    The name reflects decisions selected on these fields:
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675624855/networking-cidr-350x382_mzwpyd.jpg"><img alt="networking-cidr-350x382.jpg" width="350" height="380" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675624855/networking-cidr-350x382_mzwpyd.jpg"></a>
 
-    When dealing with networks, a CIDR is always requested. 
+    <a name="IPv4v6"></a>
 
-    Each CIDR defines a contiguous range of IP address.
+    ### IPv4 or IPv6 CIDR block?
 
-    CIDR specs are what keeps each IP address within a single subnet. Manual allocations can result in  misconfigurations. So many teams follow the same plan for allocating CIDRs.
+    Data packets are routed across the internet between devices addressed (sorta like telephone numbers):
+    * IPv4 (Internet Protocol version 4) addresses are in the form of 99.48.227.227<br />
+    * IPv6 (Internet Protocol version 6) addresses are in the form of ABCD:0000:3238:DFE1:0063:0000:0000:FEFB<br />
+    <br /><br />
 
+    In an IPv4 address, the 4 sets of <strong>decimal</strong> numbers (between 4 dots) called an octet (of four). Together they total 32 binary bits (2^32) which can have 4.29 billion variations, each a specific IP address. All the IP addresses have now been assigned, leading to the address shortage issues we face today.
+
+    IPv6 addresses are represented by double <strong>hexadecimal</strong> numbers between colons totaling 128-bits (2^128) or 340,282,366,920,938,463,463,374,607,431,768,211,456 addresses -- 1,028 times more than IPv4. 
+    
+    IPv4 has not been completely deprecated because not all devices and software have been upgraded to use IPv6 enhancements:
+
+    * SNMP does not support IPv6
+    * IBM implementation of QoS (Quality of Service) to request packet priority and bandwidth for TCP/IP applications does not support IPv6, which uses "flow labeling"
+    * IPv6 no longer supports VLSM (Variable Length Subnet Mask) jumbogram
+    * Simpler header format (fixed 40 bytes vs. 20-60 bytes) for less bandwidth usage
+    * Faster performance from less overhead processing: Instead of IPv4 options placed in the header, IPv6 options are put into a separate and extended header which are not be processed until a router is specified.
+    * Flexible options and extensions: IPv6 (up to 40 bytes for IPv4 options) and new options can be introduced, such as support for IP layer security (IPSEC), jumbogram, mobile IP, etc.
+    * Built-in IPSEC in the protocol for privacy 
+
+    * The large address space allows every device to have its own IP address rather than be hidden behind a NAT (Network Address Translation) router.
+    * No more DHCP (auto renumber address configuration)
+    * No more private address collisions
+    * IP to MAC resolution using Multicast Neighbor Solicitation NDP (Neighbour Discovery Protocol) instead of Broadcast ARP
+    * Built-in authentication support to make end-to-end connection integrity achievable
+    * Multicast and anycast message transmission scheme is available (instead of broadcast)
+    <br /><br />
+
+    
     <a name="IPAM"></a>
+
+    ### IPAM
 
     <strong>IPAM (IP Address Manager)</strong> is an AWS VPC feature that <strong>automatically allocate</strong> CIDRs to VPCs from <strong>pools</strong> of CIDRs it has <strong>provisioned</strong> into public and private <strong>scopes</strong> -- to make it easier to plan, track, and monitor IP addresses for AWS workloads, without causing IP address overlap or conflict. 
     
@@ -141,35 +171,74 @@ and adds additional PROTIPs and NOTEs.
     3. For Cross-account access, define IAM roles using Terraform iam_assumable_role or iam_assumable_roles submodules in "resource AWS accounts (prod, staging, dev)" and IAM groups and users using iam-group-with-assumable-roles-policy submodule in "IAM AWS Account" to setup access controls between accounts. See https://docs.aws.amazon.com/vpc/latest/ipam/choose-single-user-or-orgs-ipam.html
 
     4. IPAM Delegated Administrators define a <strong>profile</strong> containing the business rules for allocating CIDRs among the two scopes from pools.
+   
     5. To create <strong>a public and a private scope</strong> for a single VPC network within a particular operating Region, instead of <a target="_blank" href="https://us-west-2.console.aws.amazon.com/ipam/home?region=us-west-2#CreateIpam">using the Console GUI</a>, use this CLI command:
     
-      <pre>AWS_REGION=us-west-2
-    AWS_OPERATING_REGIONS=us-west-2
-    AWS_IPAM_POOL="prd-ipam"
-    AWS_IPAM_ACCT="projA-ipam-acct"
-    &nbsp;
-    aws ec2 create-ipam --description "$AWS_IPAM_POOL" \
-    --region "$AWS_REGION" \
-    --operating-regions RegionName="$AWS_OPERATING_REGIONS" \
-    --profile "$AWS_IPAM_ACCT"
-      </pre>
+       <pre>AWS_REGION=us-west-2
+       AWS_OPERATING_REGIONS=us-west-2
+       AWS_IPAM_POOL="prd-ipam"
+       AWS_IPAM_ACCT="projA-ipam-acct"
+       &nbsp;
+       aws ec2 create-ipam --description "$AWS_IPAM_POOL" \
+       --region "$AWS_REGION" \
+       --operating-regions RegionName="$AWS_OPERATING_REGIONS" \
+       --profile "$AWS_IPAM_ACCT"
+       </pre>
 
-      Alternately, use the <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-ipam.html">IPAM API</a> from a custom program.
+       Alternately, use the <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-ipam.html">IPAM API</a> from a custom program.
 
-      For easy repeatability, use the Terraform Registry<br />
-      https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest
+       For easy repeatability, use the Terraform Registry<br />
+       https://registry.terraform.io/modules/terraform-aws-modules/iam/aws/latest
     
-   1. Define CIDRs within each top-level <strong>pools</strong> under the 2 IPAM scopes (public and private). 
+    6. Define CIDRs within each top-level <strong>pools</strong> under the 2 IPAM scopes (public and private). 
    
-      An "allocation" can be a CIDR assignment from an IPAM pool to another resource or <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/tracking-ip-addresses-ipam.html">another IPAM pool</a>.
+       An "allocation" can be a CIDR assignment from an IPAM pool to another resource or <a target="_blank" href="https://docs.aws.amazon.com/vpc/latest/ipam/tracking-ip-addresses-ipam.html">another IPAM pool</a>.
     
-      See https://docs.aws.amazon.com/vpc/latest/ipam/manually-allocate-ipam.html
+       See https://docs.aws.amazon.com/vpc/latest/ipam/manually-allocate-ipam.html
 
-6.  If you don't have IPAM setup, choose <strong>IPv4 For CIDR manual input</strong>
+
+6.  If you don't have <a href="#IPAM">IPAM</a> setup, you can choose 
+    
+    <a name="AmazonIPv6"></a>
+
+    <strong>Amazon-provided IPv6 CIDR block</strong>
+
+    <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2023/01/amazon-provided-contiguous-ipv6-cidr-blocks/">Announced in January 2023</a>,
+    <strong>IPv6 CIDR owned by me</strong> is Bring your own IP addresses (BYOIP) range which a customer organization has purchase from a Regional Internet Registry (RIR).
+
+
+    <a name="manu"></a>
+
+    ### Manual CIDR assigment
+
+6.  If you don't have <a href="#IPAM">IPAM</a> setup, choose <strong>IPv4 For CIDR manual input</strong>
 
     REMEMBER: CIDRs are called <strong>Masks</strong>.
     The larger number after the slash, the more IP addresses it specfies.
     <strong>16 is the largest mask allowed</strong>.
+
+    When dealing with networks, a CIDR is always requested. 
+
+    Each CIDR defines a contiguous range of IP address.
+
+    CIDR specs are what keeps each IP address within a single subnet. Manual allocations can result in  misconfigurations. So many teams follow the same plan for allocating CIDRs.
+
+    <a name="Avoid"></a>
+
+    ### IP Ranges commonly used
+
+    Ranges used by specific cloud vendors:
+    * 10.0.0.0/16 AWS
+    * 10.128.0.0./9 Google
+    * 172.31.0.0/16 Azure
+    <br /><br />
+
+    Ranges used by specific geographies:
+    * 192.168.10.0/24
+    * 192.168.15.0/24 London
+    * 192.168.20.0/24 New York
+    * 192.168.25.0/24 Seattle
+    <br /><br />
 
     ### Subnet Calculators
     
@@ -222,9 +291,10 @@ and adds additional PROTIPs and NOTEs.
     <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 </td></tr>
     </table>
 
-    For example, if all you'll need are 14 nodes, specify `/28`.
     Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
+    If all you'll need are 14 nodes, specify `/28`.
+    REMEMBER: There are actually 16 addresses, but the first and last address are reserved.
 
     To make naming conflicts more avoidable, use a standard naming convention:
 
