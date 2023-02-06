@@ -344,15 +344,16 @@ and adds additional PROTIPs and NOTEs.
     Notice that the larger the CIDR netmask, the less hosts in the subnet.
 
     If all you'll need are 14 nodes, specify `/28`.
+    
     REMEMBER: There are actually 16 addresses, but the first and last address are reserved.
-
-    To make naming conflicts more avoidable, use a standard naming convention:
-
-    PROTIP: The last two parts of VPC subnet always have ".0.0", with the bottom half of the 255 possibilities allocated to private and upper half to public addresses:
-
-    * private       10.1.0.0/24 &nbsp; (< 129)
-    * public &nbsp; 10.129.0.0/24 (> 128)
+    * subnet+1 are for default GW via DHCP Option Set
     <br /><br />
+
+    PROTIP: To make naming conflicts more avoidable, use a standard naming convention:
+    of top and bottom half of the 255 possibilities allocated to private and upper half to public addresses:
+       * private       10.1.0.0/24 &nbsp; (< 129)
+       * public &nbsp; 10.129.0.0/24 (> 128)
+       <br /><br />
 
     ### IP Subnets
 

@@ -3,7 +3,7 @@ layout: post
 date: "2023-02-01"
 file: "firewalls"
 title: "Firewalls"
-excerpt: "How to keep. PiHole."
+excerpt: "Filter out ads and malware sites on your home network using PiHole."
 tags: [security]
 image:
 # pic secret finger over mouth 1900x500
@@ -170,13 +170,15 @@ Raspberry Pi 4 Getting Started</a> by Crosstalk Solutions
 
     ### Audit log
 
-4. Click the "Audit Log" menu item.
+4.  Click the "Audit Log" menu item.
 
     ### Backup
 
-5. In Tools, click "Backup".
-6. Copy the backed up file to a USB drive and/or cloud.
-7. If you're running 2 Pi-Holes, install the backup onto the 2nd Pi-Hole.
+5.  In Tools, click "Backup".
+6.  Copy the backed up file to a USB drive and/or cloud.
+7.  If you're running 2 Pi-Holes, install the backup onto the 2nd Pi-Hole. Sync using:
+
+    https://github.com/vmstan/gravity-sync
 
     ### Install Unbound DNS route proxy
 
@@ -239,29 +241,38 @@ https://www.youtube.com/watch?v=gyMpI8csWis
 
 ### Update the Pi-hole
 
-Run a chron job to ...
+Run a chron (crontab) job to Once a week or month to apply updates (if one becomes available):
 
-9.  once a week or month to apply updates if there is one:
-  
-    ### Do regular speedtests
+1.  Edit in <tt>/etc/cron.d/pihole</tt>
 
-9.  Every hour run:
-
-    <a target="_blank" href="https://www.youtube.com/watch?v=J-rfC84xdOE">VIDEO</a>: <a target="_blank" href="https://openspeedtest.com/">openspeedtest.com</a> server run within a Docker image downloaded.
-
-    <pre>sudo docker run --restart=unless-stopped \
-    --name=openspeedtest -d -p 80:8080 openspeedtest/latest
+    <pre>30 2 * * 1   root    /usr/bin/curl -sSl https://raw.githubusercontent.com/mmotti/pihole-regex/master/install.py | /usr/bin/python3  >> /var/log/piholeupdate 2>&1
+    &nbsp;
+    30 2 * * 1   root    cd /usr/local/src/whitelist/scripts && git pull&& ./whitelist.sh >> /var/log/piholeupdate 2>&1
     </pre>
 
-    Change the port to something other than 8080 if your prefer.
+    ### Do regular speedtests
 
-1.  Run on browser at URL http://192.168.200.122
+10. Every hour run:
+
+     <a target="_blank" href="https://www.youtube.com/watch?v=J-rfC84xdOE">VIDEO</a>: <a target="_blank" href="https://openspeedtest.com/">openspeedtest.com</a> server run within a Docker image downloaded.
+
+     <pre>sudo docker run --restart=unless-stopped \
+     --name=openspeedtest -d -p 80:8080 openspeedtest/latest
+     </pre>
+
+     Change the port to something other than 8080 if your prefer.
+
+11. Display
+
+      https://github.com/Brandawg93/Pi-Hole-Monitoring
+
+11. Run on browser at URL http://192.168.200.122
   
-    Record to a file.
+     Record to a file.
 
-    Instead of a chip, get an SSD drive.
+     Instead of a chip, get an SSD drive.
 
-2.  View analysis: Are evenings more overloaded?
+12. View analysis: Are evenings more overloaded?
 
 <hr />
 
