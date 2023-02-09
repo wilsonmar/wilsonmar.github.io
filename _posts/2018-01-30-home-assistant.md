@@ -131,6 +131,11 @@ https://github.com/onesaitplatform
 
 ioBroker, but its available only in Germany!
 
+https://www.youtube.com/watch?v=rXc_zGRYhLo
+"I found an Excellent Raspberry Pi Replacement for Home Assistant / IOTstack (incl. Proxmox)"
+by Andreas Spiess
+
+
 ## More on IoT #
 
 This is one of a series on IoT:

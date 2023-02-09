@@ -1315,7 +1315,7 @@ Alternative repo:
 1. Click the copy icon to save each generated value to your Clipboard (for example):
 
    <pre>export HCP_CLIENT_ID=kdNNiD8IbU0FZH8juZ10CgkvE6OvLCZK
-export HCP_CLIENT_SECRET=6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDqp35OkYSoA
+export HCP_CLIENT_SECRET=hvs.6BHGXSErAzsPjdaimnERGDrG9DXBYTGhdBQQ8HuOJaykG9Jhw_bJgDqp35OkYSoA
    </pre>
 
    Alternately, copy-paste the values directly into provider config file:

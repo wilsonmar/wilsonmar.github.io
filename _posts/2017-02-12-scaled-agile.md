@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Scaled Agile"
-excerpt: "You're SAFe with Agile!"
-tags: [Agile]
-date: "2022-02-12"
+date: "2023-02-08"
 file: "scaled-agile"
+title: "Scaled Agile"
+excerpt: "Are organizations really more Agile with SAFe?"
+tags: [Agile]
 image:
 # pic green easter island 2 hillside 1920x1080
   feature: https://cloud.githubusercontent.com/assets/300046/15217452/d8d04062-1818-11e6-9a57-215db66655d2.jpg
@@ -22,6 +22,12 @@ the Scaled Agile Framework for enterprises (or SAFe), which are
 systems development at enterprise scale,
 in the <em>context</em> of using CA Agile Central.
 
+## Detractors of SAFe
+
+https://seandexter1.medium.com/beware-safe-the-scaled-agile-framework-for-enterprise-an-unholy-incarnation-of-darkness-bf6819f6943f
+
+## Summary
+
 This page also reconciles the use of CA Agile Central for SAFe.
 The on-line tool was renamed from 
 <strong>Rally</strong> after CA bought it in 2015. CA offers online classes at 
@@ -38,7 +44,6 @@ SAFe Version 1.0 was first published in 2011.
 The framework's name was changed in January 2016 to<br />
 <a target="_blank" href="http://www.scaledagileframework.com/">
 "SAFe 4.0 for Lean Software and Systems Engineering" on ScaledAgileFramework.com</a>:
-
 
 ## v5
 

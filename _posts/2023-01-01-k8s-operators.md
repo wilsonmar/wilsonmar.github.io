@@ -216,7 +216,6 @@ Use "operator-sdk [command] --help" for more information about a command.
    https://operatorhub.io/operator/vault at 
    https://github.com/banzaicloud/bank-vaults/tree/main/operator
    by <a target="_blank" href="https://www.linkedin.com/in/nandorkracser/">Nándor István Krácser</a> at <a target="_blank" href="https://banzaicloud.com/tags/vault/">Banzai Cloud</a> (acquired by Cisco).
-   
    The yaml sample as part of the <a target="_blank" href="https://github.com/banzaicloud/pipeline">Banzai Cloud Pipeline</a>
 
    <pre>apiVersion: vault.banzaicloud.com/v1alpha1
@@ -285,9 +284,13 @@ spec:
    CAUTION: Using vault:1.0.0?
 
 
-   ### New Go Operator
+<hr />
+
+## New Go Operator
 
    https://sdk.operatorframework.io/build/
+
+   https://devenes.medium.com/discovering-the-power-of-go-for-kubernetes-5-open-source-tools-to-try-d8b5eb328075
 
 1. Activate Go module support before using the SDK:
    

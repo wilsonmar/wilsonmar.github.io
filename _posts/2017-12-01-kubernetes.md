@@ -236,7 +236,7 @@ History:
    * v1.0 (first commit by <a target="_blank" href="https://www.linkedin.com/in/jbeda/">Joe Beda</a> within GitHub) for first release on July 21, <strong>2015</strong>
    * v1.6 was led by a CoreOS developer
    * v1.7 was led by a Googler
-   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the CNCF July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
+   * v1.8 was led by <a target="_blank" href="https://www.linkedin.com/in/jaicesinger/">Jaice Singer DuMars</a> (<a target="_blank" href="https://twitter.com/jaicesd">@jaicesd</a>) after Microsoft joined the <a href="#CNCF">CNCF</a> July 2017 <a target="_blank" href="https://twitter.com/jaydumars?lang=en">VIDEO</a>
    * v1.22 - containerD replaces Docker as the default container runtime (Red Hat uses CRI-O instead)
    * {{ page.k8s_version }} 
    <br /><br />
@@ -267,7 +267,30 @@ History:
 
 Kubernetes was created inside Google (using the [Golang](/Golang/) programming language).
 Kubernetes was used inside Google for over a decade before being open-sourced in 2014 to the Cloud Native Computing Foundation (<a target="_blank" href="https://www.cncf.io/">cncf.io</a>) collective.
-See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>
+
+<a name="CNCF"></a>
+
+## CNCF
+
+Linux Foundation project (founded in 2000) founded CNCF in 2015 to advance container technology.
+
+The (now removed) <a target="_blank" href="https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png">Cloud Native Trail Map</a> lists this sequence:
+   1. Containerization
+   2. CI/CD
+   3. Orchestration & Application Definition
+   4. Observability & Analysis
+   5. Service Proxy, Discovery, Mesh
+   6. Networking, Prolicy, Security
+   7. Distributed database & storage
+   8. Streaming & messaging
+   9. Container Registry & runtime
+   10. Software Distribution
+   <br /><br />
+
+See <a target="_blank" href="https://landscape.cncf.io">landscape.cncf.io</a>.
+
+
+## Predecessor to K8s
 
 <a target="_blank" href="https://cloudplatform.googleblog.com/2016/07/from-Google-to-the-world-the-Kubernetes-origin-story.html">This blog</a> and
 <a target="_blank" href="http://softwareengineeringdaily.com/2016/07/20/kubernetes-origins-with-craig-mcluckie/">podcast</a> 
@@ -285,7 +308,7 @@ See <a target="_blank" href="https://blog.risingstack.com/the-history-of-kuberne
 
 <a name="Clouds"></a>
 
-## Public Cloud Kubernetes Services
+## Kubernetes CSPs
 
 Kubernetes can run within private on-premises data centers on "bare metal" machines.
 
@@ -355,7 +378,7 @@ A subscription is needed on some.
 KubeDNS is running at https://172.17.0.17:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
    </pre>
 
-   Notice "master". That's what runs the control plane.
+   Notice "master". That's what runs the control plane. To be culturally sensitive, "Master Node" has been renamed to "Control Plane Node".
 
    "KubeDNS"
 
@@ -901,7 +924,23 @@ If the admission controller is up and running, but there is no indication of it 
 
    <a target="_blank" href="https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/FAQ.md">Parameters to above in FAQ</a>. 
 
-1. To verify that it works, deploy the hamster.yaml Vertical Pod Autoscaler:
+
+   <a name="Podspecs"></a>
+
+   <tt>kind: Pod</tt> are defined by a PodSpec configuration file such as:
+
+   <pre>kind: Pod
+   metadata:
+     name: nginx
+   spec:
+     containers:
+     - name: nginx
+       image: nginx:1.14.2
+       ports:
+       - containerPort: 80
+   </pre>
+
+2. To verify that it works, deploy the hamster.yaml Vertical Pod Autoscaler:
 
    <pre><strong>kubectl apply -f examples/hamster.yaml
    </strong></pre>
@@ -941,7 +980,7 @@ spec:
    hamster-c7d89d6db-znvz5   1/1     Running   0          48s
    </pre>
 
-1. Describe one of the pods to view its cpu and memory reservation to replace "c7d89d6db-rglf5" with one of the IDs returned in from the previous step:
+2. Describe one of the pods to view its cpu and memory reservation to replace "c7d89d6db-rglf5" with one of the IDs returned in from the previous step:
 
    <pre><strong>kubectl describe pod hamster-c7d89d6db-rglf5
    </strong></pre>
@@ -971,7 +1010,7 @@ spec:
 
    See that the original pod reserves 100 millicpu of CPU and 50 mebibytes of memory. For this example application, 100 millicpu is less than the pod needs to run, so it is CPU-constrained. It also reserves much less memory than it needs. The Vertical Pod Autoscaler vpa-recommender deployment analyzes the hamster pods to see if the CPU and memory requirements are appropriate. If adjustments are needed, the vpa-updater relaunches the pods with updated values.
 
-1. Wait for the vpa-updater to launch a new hamster pod. This should take a minute or two. You can monitor the pods:
+3. Wait for the vpa-updater to launch a new hamster pod. This should take a minute or two. You can monitor the pods:
 
    Note: If you are not sure that a new pod has launched, compare the pod names with your previous list. When the new pod launches, you will see a new pod name.
 
@@ -980,7 +1019,7 @@ spec:
 
    The response is a pod ID such as "hamster-c7d89d6db-jxgfv".
 
-1. When a new hamster pod is started, describe it and view the updated CPU and memory reservations.
+4. When a new hamster pod is started, describe it and view the updated CPU and memory reservations.
 
    <pre><strong>kubectl describe pod hamster-c7d89d6db-jxgfv
    </strong></pre>
@@ -1031,7 +1070,7 @@ spec:
     	memory: 8000k
    </pre>
 
-1. View the new recommendation:
+2. View the new recommendation:
 
    <pre><strong>kubectl describe vpa/hamster-vpa
    </strong></pre>
@@ -1084,7 +1123,7 @@ Events:          &LT;none>
    <pre><strong>./hack/vpa-process-yamls.sh print
    </strong></pre>
 
-1. Delete it by running the same yaml file as used to create it:
+2. Delete it by running the same yaml file as used to create it:
 
    <pre><strong>
    kubectl delete -f examples/hamster.yaml
@@ -1320,6 +1359,19 @@ Within Kubernetes are four types of network traffic:
 * External-to-Service traffic is handled by kube-proxy and node-based packet filters (such as Consul)
 <br /><br />
 
+<a name="Endpoints"></a>
+
+## Endpoints
+
+Pods expose themselves to services via endpoints.
+
+Kubernetes keeps a pool of endpoints
+
+<pre>kubectl get endpoints</pre>
+
+Endpoint Slices breakup endpoints into smaller, more manageable segments.
+
+Each endpoint Slice is limited to 100 pods.
 
 <hr />
 
@@ -1335,6 +1387,23 @@ The <strong>aggregation layer</strong> lets you install additional Kubernetes-st
    * Node auto-repair to maintain node health and availability
    * Logging and Monitoring with Cloud Monitoring for visibility into your cluster
 
+
+<hr />
+
+## What's CNCF?
+
+> CNCF DEFINITION: "Cloud Native technologies" emplower organizations to build and run scalable applications in modern, dynamic, environments such as public, private, and hybrid clouds. Containers, services, meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach. 
+
+These techniques enable loosely coupled systems that are resilient, manageable, and observable.
+
+Combined with robust automation, they allow engineers, to make high impact changes, frequently and predictably with minimal toil.
+
+The Cloud Native Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendor-neutral projects.
+
+We democratize state-of-the-art patterns to make these innovations acdessible for everyone.
+
+## Container Orchestration?
+
 Kubernetes is called "container orchestration" software because it automates the deployment, scaling, and management of <strong>containerized</strong> applications<a target="_blank" href="https://en.wikipedia.org/wiki/Kubernetes">[Wikipedia]</a>. 
 
    * Authentication -> Authorization -> <a href="#Admission">Admission Control</a>
@@ -1349,26 +1418,66 @@ Kubernetes is called "container orchestration" software because it automates the
 
 ## KCNA Exam 
 
-The Kubernetes and Cloud Native Associate is the entry level certification in Kubernetes.
+The Kubernetes and Cloud Native Associate is the <strong>entry level</strong> certification in Kubernetes. But it's very <strong>hands-on</strong> with Terminal kubctl command experience.
 
-https://www.cncf.io/certification/kcna/
+<a target="_blank" href="https://www.cncf.io/certification/kcna/">https://www.cncf.io/certification/kcna</a>
 
 <a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/frequently-asked-questions-kcna">FAQ</a>:
-The $250 closed-book exam is proctored by PSI online. Answer 75% of 90 multiple-choice questions in 1.5 hours.
+The $250 closed-book exam is proctored by PSI online for two tries.
+Allocate 120 minutes of seat time.
+Answer 75% for 90 minutes to answer 60 multiple-choice questions in 1.5 hours (1.5 minutes/question).
 Good for 3 years.
 
 <a target="_blank" href="https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2">
-The exam Handbook</a> lists:
+The PDF exam Handbook</a> lists:
 
-   * Kubernetes Fundamentals 46%
-   * Container Orchestration 22%
-   * Cloud Native Architecture 16%
-   * Cloud Native Observability 8%
-   * Cloud Native Application Delivery 8%
+1. Kubernetes Fundamentals 46% (27-28 questions)
+   * Kubernetes Resources
+   * Kubernetes Architecture
+   * Kubernetes API
+   * Containers
+   * Scheduling
+2. Container Orchestration 22% (25 questions)
+   * Container Orchestration Fundamentals
+   * Runtime
+   * Security
+   * Networking
+   * Service Mesh
+   * Storage
+3. Cloud Native Architecture 16% (25 questions)
+   * Autoscaling
+   * Serverless
+   * Community and Governance
+   * Roles and Peronas
+   * Open Standards
+5. Cloud Native Observability 8% (4-5 questions)
+
+6. Cloud Native Application Delivery 8% (4-5 questions)
+   * Application Delivery Fundamentals
+   * <a target="_blank" href="https://wilsonmar.github.io/gitops">GitOps</a>
+   * CI/CD
+<br /><br />
+
+<a target="_blank" href="https://github.com/cncf/curriculum/blob/master/kcna/README.md">
+The CNCF Curriculum page</a> recommends these resources:
+
+   * https://training.linuxfoundation.org/training/kubernetes-and-cloud-native-essentials-lfs250/
+   * https://www.edx.org/course/introduction-to-cloud-infrastructure-technologies
+   * https://www.edx.org/course/introduction-to-kubernetes
+   * https://www.edx.org/course/introduction-to-kubernetes-on-edge-with-k3s
+   * https://kube.academy
+   * https://www.edx.org/course/introduction-to-linux
+   * https://civo.com/academy
+   * KCNA Course Overview *KCNA study course on freeCodeCamp
    <br /><br />
 
 
+### Andrew Brown (FreeCodeCamp)
 
+<a target="_blank" href="https://www.linkedin.com/in/andrew-wc-brown/">Andrew Brown</a> (@andrewbrown) creates/sells Exampro practice exams, but he created in May 2022 a <a target="_blank" href="https://www.youtube.com/watch?v=AplluksKvzI">14-hour VIDEO</a> associated with his <a target="_blank" href="https://www.freecodecamp.org/news/cncf-kubernetes-cloud-native-associate-exam-course/">curriculum at FreeCodeCamp.com</a>.
+
+
+<hr />
 
 <a name="CKAD_ExamDomains"></a>
 
@@ -2780,20 +2889,31 @@ You don't need to create or think about the default namespace.
 
    Out of the box, without creating anything:
 
+   ### Namespaces
+   
    <pre><strong>k get ns
-kubectl get namespaces</strong></pre>
+kubectl get namespace</strong></pre>
 
    * <strong>default</strong> holds resources users create without specifying a namespace
 
    * <strong>kube-public</strong> contains publically accessible (without auth) <a href="#ConfigMaps">ConfigMaps</a> ? which contain cluster info (kubectl cluster-info)
 
-   * <strong>kube-system</strong> holds k8s internal system processes (master, kubectl, etc.) manages objects created by the system itself (Controllers, ConfigMap, Secrets, Deployments)
+   * <strong>kube-system</strong> holds k8s internal system processes (master, kubectl, etc.) manages objects created by the system itself (Controllers, ConfigMap, Secrets, Deployments). Engineers deploying apps are not supposed to mess with this namespace.
 
-   * <strong>kube-node-lease</strong> holds lease objects containing heartbeats of nodes and the availability of nodes 
+   * <strong>kube-node-lease</strong> holds lease objects containing heartbeats of nodes and the availability of nodes since it's used to detect node failures by sending heartbeats.
 
    * <a href="#Dashboard"><strong>kubernetes-dashboard</strong></a> is created only within minikube.
    <br /><br />
 
+   <pre><strong>kubectl create namespace production</strong></pre>
+
+   TODO: apply system quota restrictions (of mem, compute) on a namespace to avoid overuse.
+
+   Resource names need to be unique within a namespace.
+
+   REMEMBER: ConfigMaps and Secrets cannot be shared across namespaces.<br />
+   Global Volumes and Nodes cannot be bound to a namespace.<br />
+   A service and pods can belong to multiple namespaces. 
 
 ### imperative kubectl run command
 
@@ -2807,7 +2927,7 @@ kubectl get namespaces</strong></pre>
 
 1. 
 
-   <pre><strong>kubectl get pods
+   <pre><strong>kubectl get pods -o wide
    </strong></pre>
 
    <pre>NAME   READY   STATUS    RESTARTS   AGE
@@ -3131,6 +3251,8 @@ spec:
    Alternately, Improbable.io makes use of crd for its etcdclusters (apiVersion: etcd.improbable.io).
    For examaple: <tt>kubectl tree etcdcluster example</tt>
 
+   See my <a target="_blank" href="https://wilsonmar.github.io/k8s-operators/">Kubernetes Operators</a> and Red Hat's OperatorHub.io holding Helm, Ansible, and Go operators.
+
 #### Terraform Provider Alpha
 
    For a dynamic way to manage any Kubernetes API resource using HashiCorp Terraform.
@@ -3398,28 +3520,18 @@ k get deployments.app
 Practice test with quiz about deployments: https://kodekloud.com/courses/kubernetes-certification-course-labs/lectures/12039434
 
 
-<a name="StatefulSets"></a>
+<a name="Stateless"></a>
    
-### Stateful Sets
-   
-   If you need to deploy applications that maintain <strong>local state</strong>, StatefulSet is a better option. A StatefulSet is similar to a Deployment in that the Pods use the same container spec. The Pods created through Deployment are not given persistent identities, however; by contrast, Pods created using StatefulSet have unique <strong>persistent</strong> identities with stable network identity and persistent disk storage.
-
-
-<hr />
-
-<a name="StatefulSets"></a>
-
-## Deploy StatefulSet components
-
-   <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sts-128.png?raw=true">
-
-<a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>
-   * <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com: Stateful Sets</a>
+## Stateless apps
 
 Stateless apps don't keep a record of state (such as shopping cart items).
 Each request is completely new, without regard for what activity occured before.
 So they can be defined using deployment components:
 Standard Pods are identical and interchangeable, with the same service name, created in random order with random <a href="#Hashes">hashes</a>. Data passes through NodeJs.
+
+<a name="StatefulApps"></a>
+
+## Stateful Apps
 
 Each Stateful app (such as mysql-app) that stores data (updates a database such as MongoDB) about the state of each transaction
 are defined using Kubernetes StatefulSets (STS) components:
@@ -3434,6 +3546,67 @@ Add pods can read. But only Master pods can write.
 To ensure each Pod maintains the latest state in local storage, 
 <strong>continuous data sync</strong> occurs from master to slaves.
 
+
+<a name="StatefulSets"></a>
+
+## Stateful Sets
+   
+<img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/sts-128.png?raw=true">
+   * <a target="_blank" href="https://www.youtube.com/watch?v=X48VuDVv0do&t=2h58m38s">VIDEO</a>: <a target="_blank" href="https://kubernetesbyexample.com//statefulset/">kubernetesbyexample.com</a>.
+   <br /><br .>
+
+Use of a StatefulSet is preferred over a Deployment to deploy applications that maintain <strong>local state</strong>, with traffic sent to a <strong>specific pod</strong>.
+
+Pods created by StatefulSet and Deployments use the same container spec. But:
+Pods created through Deployment are NOT given persistent identities.<br />
+Pods created using StatefulSet have unique <strong>persistent</strong> identities with stable network identity and persistent disk storage. 
+If a pod is rescheduled, the original PV is mounted to ensure data integrity and consistency.
+
+REMEMBER: StatefulSets require a "headless" service to 1) manage network identities and 2) provide read access to pods.
+
+Each StatefulSet has a unique and predictable name and address.
+
+A StatefulSet assigns to each Pod an ordinal index number.
+StatefulSet pods always start in the same order, and are terminated in reverse order.
+
+<pre>apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: nginx  # has to match .spec.templatemetadata.labels below
+    serviceName: "nginx"
+    replicas: 3  # 1 by default
+    minReadySeconds: 10  # 0 by default
+    template:
+      metadata:
+        labels:
+          app: nginx  # has to match .spec.selector.matchLabels above
+      spec:
+        terminationGracePeriodSeconds: 10
+        containers:
+          name: nginx
+          image: k8s.gcr.io/nginx-slim:0.8
+          ports:
+          - containerPort: 80
+            name: web
+          volumeMounts:
+          - name: www
+            mountPath: /usr/share/nginx/html
+   volumeClaimTemplates:
+   - metadata:
+       name: www
+     spec:
+       accessModes: [ "ReadWriteOnce" ]
+       storageClassName: "my-storage-class"
+       resources:
+         requests:
+           storage: 1Gi
+</pre>
+
+<hr />
 
 <a name="DaemonSets"></a>
 
@@ -3639,7 +3812,18 @@ data:
 ### Kind: Job
 
 <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/job-128.png?raw=true">
-Batch jobs are supervisor processes that run once and immediately completed.
+Batch (background) jobs</a> are "one off" supervisor processes that run once and immediately completed.
+
+1. To execute a CronJob based on a repeating schedule:
+   
+   <pre><strong>kubectl create cronjob repeater --image=busybox --schedule="*/1 * * * *" -- echo "Hello World"
+   </strong></pre>
+
+2. To create pods and keep retrying until a specified number of pods successfully terminate:
+   
+   <pre><strong>kubectl create job something --image=busybox -- echo "Hello World"
+   </strong></pre>
+
 The Job controller within the Control Plane creates one or more Pods required to run a task. 
 
    <tt>spec: completions: 5</tt> defines the number of pods started within a job.
@@ -3657,10 +3841,10 @@ The Job controller within the Control Plane creates one or more Pods required to
    * completions=1 & parallelism=m for n jobs work queue started until 1 completed (rarely used)
    <br /><br />
 
-If a node fails while a Job is executing on that node, Kubernetes restarts the Job on a node that is still running.
+If a node fails while a Job is executing on that node, 
+Kubernetes restarts the Job on a node that is still running.
 
 To fail jobs that don't finish within a set number seconds:
-
 <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/13235441?parent=lti_session">This example-job.yaml</a> uses perl language built-in command to compute the value of Pi to 2,000 places and then prints the result:
 
    <pre>apiVersion: batch/v1
@@ -3682,11 +3866,11 @@ spec:
       restartPolicy: Never
    </pre>
 
-kubectl apply -f example-job.yaml
+<pre><strong>kubectl apply -f example-job.yaml</strong></pre>
 
-1. For the job's start time and success status, describe the job
+1. For the job's start time and success status, describe the job:
 
-   <pre>Start Time:     Thu, 20 Dec 2018 14:34:09 +0000
+   <pre>Start Time:     Thu, 20 Dec 2023 14:34:09 +0000
 Pods Statuses:  0 Running / 1 Succeeded / 0 Failed
    </pre>
 
@@ -3704,11 +3888,11 @@ spec:
    
    <pre>ttlSecondsAfterFinished: 20</pre>
 
-1. When a job is completed, the Job terminates Pods used unless:
+2. When a job is completed, the Job terminates Pods used unless:
 
    <pre><strong>kubectl delete job <em>job-name</em> --cascade false </strong></pre>
 
-1. After running, check the status of jobs
+3. After running, check the status of jobs
    
    <pre><strong>kubectl get jobs </strong></pre>
 
@@ -5424,11 +5608,9 @@ spec:
 
    <img align="right" width="128" src="https://github.com/kubernetes/community/blob/master/icons/png/resources/labeled/ing-128.png?raw=true">
 
-   An <strong>"Ingress"</strong> is a collection of rules that allow inbound connections to reach the cluster services.
+   REMEMBER: A <strong>Kubernetes "Ingress"</strong> is a collection of <strong>rules</strong> that allow inbound connections to reach the cluster services. <strong>"Ingress Resource"</strong> defines the connection rules.
 
-   <strong>Ingress Resource</strong> defines the connection rules.
-
-   In Kubernetes the <strong>Ingress Controller</strong> could be a NGINX container providing reverse proxy capabilities.
+   In Kubernetes the <strong>Ingress Controller</strong> could be a NGINX container providing <strong>reverse proxy</strong> capabilities.
 
 In Google Kubernetes Engine, by default LoadBalancers give access to a regional Network Load Balancing configuration. 
 To get access to a global HTTP(S) Load Balancing configuration, use an Ingress object.
@@ -6393,26 +6575,65 @@ Sample labels and values:
 
    https://kubernetes.io/docs/reference/kubectl/cheatsheet/#formatting-output
 
-   <a name="Selectors"></a>
-
-   ### Selectors
-
-1. show pods labeled with values matching in list of values:
-
-   k get pods -l 'release-version in (1.0, 2.0)'
 
    <a name="Selectors"></a>
+
+   ### Label Selectors
+
+   for pods defined with:
+
+   <pre>metadata:
+   name: nginx-web
+   labels:
+     env: prod
+     app: nginx-web
+     app.kubernetes.io/name: mysql
+     app.kubernetes.io/component: database
+     app.kubernetes.io/managed-by: helm
+     app.kubernetes.io/created-by: controller-manager
+   ...
+   </pre>
+
+1. Show labels defined for pods running:
+
+   <pre><strong>kubectl get pods --show-labels</strong></pre>
+
+1. Select K8s object based on the label applied to pods, with values matching in list of values:
+
+   <pre><strong>k get pods -l 'release-version in (1.0, 2.0)'</strong></pre>
 
    Label Selectors above select a set of objects using a single statement.
 
+   ## Delete pods using selector
+
+   Delete pods using <tt>--selector</tt> rather than <tt>-l</tt>
+
+   <pre>k delete pods --selector application-level=1.0</pre>
+
    "=", "!=", IN, NOTIN, EXISTS are valid selectors.
 
-1. Delete pods
+   NOTE: After a pod is deleted, Kubernetes automatically creates another one to ensure the number of replicas are fulfilled.
 
-   <pre>k delete pods -l application-level=1.0</pre>
+2. Field selector selects k8s objects based on object data (such as Metadata, status, etc.)
 
-NOTE: After a pod is deleted, Kubernetes automatically creates another one to ensure the number of replicas are fulfilled.
+3. Node selector selects nodes for very specific pod placement.
 
+<a name="Annotations"></a>
+
+## Annotations
+
+Annotations are arbitrary non-identifying metadata attached to objects.
+
+Some tool and library clients such a Ingress use the <tt>rewrite-target</tt> annotation to communicate with Ingress Controllers.
+
+<pre>kind: Ingress
+metadata:
+  name: minimal-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+</pre>
+
+<hr />
 
 <a name="rc"></a>
 
@@ -6751,6 +6972,10 @@ The container engine pulls images and stopping/starting containers.
 
    * https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/
 
+### Plugins
+
+In Cloud Native projects, "in-tree" refers to plugins in the main repository.
+"Out-of-tree" plugins are external, so must be installed to extend or replace default behavior.
 
 ### CNI Plugins
 
@@ -7470,6 +7695,12 @@ edX.org publishes some courses from Linux Academy.
 
 <a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
 
+### CNCF
+
+<a target="_blank" href="https://www.cncf.io/certification/training/">https://www.cncf.io/certification/training</a>
+
+https://github.com/cncf/curriculum
+
 
 ### O'Reilly
 
@@ -7542,8 +7773,6 @@ Nigel Poulton (@NigelPoulton, <a target="_blank" href="https://www.nigelpoulton.
 3. <a target="_blank" href="https://www.coursera.org/learn/deploying-workloads-google-kubernetes-engine-gke">Architecting with Google Kubernetes Engine: Workloads</a> by Alex Hanna. Covers: GKE Cluster; Deployments;Jobs and Cronjobs; Cluster Scaling; Pod placement; Pod Autoscaling and Node Pools; Pod networking; Services, Ingress; Load balancing; Network security; Volumes, Stateful Sets; ConfigMaps; Secrets; Persistent Data; 
 
 4. <a target="_blank" href="https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production">Architecting with Google Kubernetes Engine: Production</a>
-
-
 
 ### LinkedIn Learning (formerly Lynda)
 
@@ -7678,6 +7907,7 @@ https://medium.com/@rupeshthakur/logging-guide-in-kubernetes-4293e3748038
 
 https://blog.devops.dev/kubernetes-complete-reference-badbc2ed9834
 
+Cloud Native IT being responsible by GitOps, compared against who are responsible the Shared Responsiblity Model -- <a target="_blank" href="https://www.linkedin.com/in/lachlan-white/">Lachlan White (@LachieWhite7)</a>
 <hr />
 
 ## More on DevOps #

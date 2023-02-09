@@ -101,11 +101,13 @@ and adds additional PROTIPs and NOTEs.
 
 4.  Click the "Create VPC" blue button.
 
-5.  PROTIP: For Name tag, consider a naming convention that specifies the decisions associated with each VPC:
+5.  PROTIP: For Name tag, consider a naming convention that specifies the decisions associated with each VPC, such as:
 
     <tt>dev-public-v6-ipam1</tt>
 
-    a. "public" or "private" network access <strong>scope</strong>.
+    The above example consists of these components:
+
+    a. <a href="#Scopes">"public" or "private" network access <strong>scope</strong></a>.
 
     b. "prod", "<a href="">DR</a>", "non-prod", "dev", "qa", etc. <strong>pool</strong>
 
