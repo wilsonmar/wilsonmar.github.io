@@ -164,11 +164,9 @@ and adds additional PROTIPs and NOTEs.
     
     That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
-    Unfortunately, that is also what hackers steal to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment. 
+    Unfortunately, that feature is also a <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">CVE-2021-21311 vulnerability hackers used in "UNC2903"</a> attacks which download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment. 
 
-    IMDS makes the AWS credentials available to <strong>any IAM role</strong> attached to the instance. So IAM roles and local firewall rules are needed to restrict access to IMDS. 
-    
-   <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>:
+   <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
    Such data is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
 
    <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
@@ -222,17 +220,26 @@ and adds additional PROTIPs and NOTEs.
 
     To ensure that only requests from the EC2 instance itself will work, and prevent transport to external attackers, IMDSv2 requests have a built-in hop count (TTL) of 1 (rather than the default 255):
     
-    To insist on using the more secure IMDSv2, use this <a target="_blank" href="https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-metadata-options.html">AWS CLI command</a>:
+    To insist on using the more secure IMDSv2 after creation, use this <a target="_blank" href="https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-metadata-options.html">AWS CLI command</a>:
     
     <tt>aws ec2 modify-instance-metadata-options --instance "$IID" \
     --http-endpoint enabled --http-tokens required
     </tt>
     
-    The above is also <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options">defined within Terraform</a> like this:
+    To use IMDSv2 during <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html">EC2 instance creation using aws CLI</a>:
+
+    <tt>aws ec2 run-instances \
+    --image-id ami-0abcdef1234567890 \
+    --instance-type t3.large \
+    ...
+    --metadata-options "HttpEndpoint=enabled,HttpProtocolIpv6=enabled"
+    </tt>
+
+    Alternatively, to use IMDSv2 when <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options">creating EC2 instance using Terraform</a>:
 
     <pre>resource "aws_instance" "good_example" {
-     ami           = "ami-005e54dee72cc1d00"
-     instance_type = "t2.micro"
+     ami           = "ami-0abcdef1234567890"
+     instance_type = "t3.large"
      metadata_options {
        http_endpoint = "enabled"
        http_tokens = "required"
@@ -240,9 +247,9 @@ and adds additional PROTIPs and NOTEs.
     }
     </pre>
 
-    If not defined as "required", TFSec issues its <a target="_blank" href="https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/">"aws_instance should activate session tokens for Instance Metadata Service."</a> error. Trend Micro also issues a <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/require-imds-v2.html">similar error</a>.
+    If not defined as "required", TFSec issues its <a target="_blank" href="https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/">"aws_instance should activate session tokens for Instance Metadata Service."</a> error. Similar errors are also issued by <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/require-imds-v2.html">Trend Micro</a> and <a target="_blank" href="https://blog.checkpoint.com/2020/12/07/aws-instance-metadata-service-imds-best-practices/">Checkpoint</a> scanners.
 
-    PROTIP: The Terraform module defaults to "http_tokens = optional", so the setting must be specified in your <tt>main.tf</tt> file.
+    PROTIP: The Terraform module defaults to <tt>http_tokens = optional</tt>, so the setting must be <strong>explicitly specified</strong> in your <tt>main.tf</tt> file.
 
     PROTIP: The "required" setting is also required for use by Nitro instances which process IPv6 addresses. So these AWS IAM and Organizational SCP (Service Control Policies) condition keys
 
@@ -253,6 +260,12 @@ and adds additional PROTIPs and NOTEs.
 
     AWS EC2 instances can perform AWS actions based on the instance profile IAM role permissions.
     
+    IMDS makes the AWS credentials available to <strong>any IAM role</strong> attached to the instance. So IAM roles and local firewall rules are needed to restrict access to IMDS. 
+    
+    Lock Down IMDS to be accessed only to users with root privileges:
+
+    <pre><strong>ip-lockdown 169.254.169.254 root</strong></pre>
+
     <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=29m54s">VIDEO</a>:
     AWS credentials provided by IMDSv2 contain "2.0" in the <tt>ec2:RoleDelivery</tt> IAM context key.
     So policies can look for that when delivering EC2 Role credentials:
@@ -263,9 +276,12 @@ and adds additional PROTIPs and NOTEs.
     The <a target="_blank" href="https://github.com/aws/aws-sdk-js/issues/3584">aws-sdk-js was fixed on Dec 17, 2020</a>
 
     References:
+    * https://www.sans.org/blog/cloud-instance-metadata-services-imds-/
+    * https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903
     * https://medium.com/sai-ops/upgrading-from-aws-ec2-imdsv1-to-imdsv2-d96bbf4a2031
     * https://www.cloudyali.io/blogs/understanding-instance-metadata-service-imds
     * https://docs.databricks.com/administration-guide/cloud-configurations/aws/imdsv2.html
+    * https://www.element7.io/2023/01/shift-left-security-why-you-should-use-aws-imdsv2-explained-in-detail/
     * https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/
     <br /><br />
 
