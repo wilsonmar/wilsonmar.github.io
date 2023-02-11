@@ -3071,11 +3071,22 @@ PROTIP: Install <a target="_blank" href="https://github.com/ahmetb/kubectx">http
 
 ### OpenShift project wall namespaces
 
-Red Hat's OpenShift product adds <strong>Projects as "walls" between namespaces</strong>, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding <strong>security annotations</strong> which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
+> "OpenShift can be considered the distribution of a container platform that works with Kubernetes as the ‘kernel’." -- https://itnext.io/openshift-vs-kubernetes-what-is-the-difference-cadee96497b7
+
+<a target="_blank" href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat's OpenShift product</a> runs only on top of Red Hat Enterprise Linux Atomic Host (RHELAH), Fedora, or CentOS. 
+
+<a target="_blank" href="https://docs.openshift.com/container-platform/3.11/welcome/oce_about.html">
+OpenShift</a> adds <strong>Projects as "walls" between namespaces</strong>, ensuring that users or applications can only see and access what they are allowed to. OpenShift projects wrap a namespace by adding <strong>security annotations</strong> which control access to that namespace. Access is controlled through an authentication and authorization model based on users and groups. 
 
    <a target="_blank" href="https://docs.openshift.com/enterprise/3.2/architecture/core_concepts/routes.html">
    This diagram</a> illustrates what OpenShift adds: 
    ![kubernetes-openshift-502x375-107638](https://user-images.githubusercontent.com/300046/42333404-e3f5953a-8037-11e8-9691-0172a8a96388.jpg)
+
+OpenShift's CLI command <tt>oc</tt>
+
+OpenShift uses DeploymentConfig (DC), which is equivalent to a Kubernetes Deployment.
+
+Red Hat offer support only for OpenShift enterprise, not <a target="_blank" href="https://www.okd.io/">OpenShift's  OKD (Origin Key Distribution)</a> (aka "Origin"), the community distribution of Kubernetes that powers Red Hat OpenShift. Origin supports Go, Node.js, Ruby, Python, PHP, Perl, and Java. OKD is a sibling Kubernetes distribution to Red Hat OpenShift. 
 
 
 <a name="Kustomize"></a>

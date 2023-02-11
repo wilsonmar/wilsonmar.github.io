@@ -150,6 +150,126 @@ and adds additional PROTIPs and NOTEs.
     * No more private address collisions
     <br /><br />
 
+    <a name="Nitro"></a>
+
+    ### Nitro for IPv6
+
+    <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Within AWS</a>, IPv6 addresses are only accessible on <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">AWS EC2 instances built on its Nitro System</a> (rather than Xen hypervisor/dom0). Such instances run on hardware with a Nitro card and security chip which reference a Nitro hypervisor managing memory and CPU allocation with access to low-level hardware features that are not available or fully supported in previous virtualized environments (for example, Intel VT).
+
+    <a name="IMDSv2"></a>
+
+    ### IMDSv2
+
+    AWS atttaches locally to every EC2 instance a "<strong>link local</strong>" static IPv4 address of <strong>169.254.169.254</strong> (IPv6: fd00:ec2::254) which only software running within the instance can access for <strong>introspection</strong> about its execution environment (its dynamic host name, events, Security Group, storage, etc.).
+    
+    That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
+
+    Unfortunately, that is also what hackers steal to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment. 
+
+    IMDS makes the AWS credentials available to <strong>any IAM role</strong> attached to the instance. So IAM roles and local firewall rules are needed to restrict access to IMDS. 
+    
+   <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>:
+   Such data is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
+
+   <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
+    
+   <tt>http://169.254.169.254/latest/dynamic/</tt>
+    
+    To be more secure, <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">AWS IMDSv2</a> uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token:
+    
+    <tt>TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" \
+    -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
+    </tt>
+
+    <tt>21600</tt> (6 hours) is the maxiumum number of seconds which a sessions can last, but a shorter duration can be specified (such as 600 for 10 minutes). Use of expired tokens result in "HTTP/1.1 401 Unauthorized" response.
+
+    The token is specific to an instance and is not stored by IMDSv2. 
+    
+    The secret token returned is used like a password to make subsequent PUT/POST/PATCH requests to IMDSv2 to obtain the list of metadata:
+    
+    <tt>curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+    -v http://169.254.169.254/latest/dynamic/instance-identity/
+    </tt>
+    
+    The AWS CLI command associated with IMDSv2 is <tt>ec2_instance_metadata</tt>, which does not retrieve temporary security credentials.
+
+    Notice that protocol HTTP (not HTTPS) is used in the above, which WAFs (Web Application Firewall) rarely support. So the IMDSv2 service requires a PUT request at the beginning of a session to prevent open WAFs from being abused to access IMDS.
+
+    Also, reverse proxies (such as Apache httpd or Squid) can be misconfigured to allow external requests to reach internal resources by sending <tt>X-Forwarded-For</tt> HTTP headers to pass the IP address of the original caller. So to block unauthorized access, IMDSv2 returns "HTTP/1.1 403 Forbidden" to calls with an <tt>X-Forwarded-For</tt> header.
+
+    To obtain <tt>InstanceMetadataOptions</tt> for an Instance ID (<a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/require-imds-v2.html">obtained from a describe-instances CLI call</a>) :
+
+    <tt>aws ec2 describe-instances
+    --region us-east-1
+    --instance-ids i-01234abcd1234abcd
+    --query 'Reservations[*].Instances[*].MetadataOptions.HttpTokens[]'
+    </tt>
+    
+    Alternately:
+    
+    <tt>aws ec2 modify-instance-metadata-options --instance "$IID"
+    </tt>
+    
+    The response JSON contains metrics (available in <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">Amazon CloudWatch instance-level metric "EC2:MetadataNoToken"</a>):
+
+    <tt>"InstanceMetadataOptions": {
+    "State": "pending",
+    "HttpEndpoint": "enabled",
+    "HttpTokens": "optional",
+    "HttpPutResponseHopLimit: 1
+    }
+    </tt>
+
+    To ensure that only requests from the EC2 instance itself will work, and prevent transport to external attackers, IMDSv2 requests have a built-in hop count (TTL) of 1 (rather than the default 255):
+    
+    To insist on using the more secure IMDSv2, use this <a target="_blank" href="https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-metadata-options.html">AWS CLI command</a>:
+    
+    <tt>aws ec2 modify-instance-metadata-options --instance "$IID" \
+    --http-endpoint enabled --http-tokens required
+    </tt>
+    
+    The above is also <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options">defined within Terraform</a> like this:
+
+    <pre>resource "aws_instance" "good_example" {
+     ami           = "ami-005e54dee72cc1d00"
+     instance_type = "t2.micro"
+     metadata_options {
+       http_endpoint = "enabled"
+       http_tokens = "required"
+       }  
+    }
+    </pre>
+
+    If not defined as "required", TFSec issues its <a target="_blank" href="https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/">"aws_instance should activate session tokens for Instance Metadata Service."</a> error. Trend Micro also issues a <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/require-imds-v2.html">similar error</a>.
+
+    PROTIP: The Terraform module defaults to "http_tokens = optional", so the setting must be specified in your <tt>main.tf</tt> file.
+
+    PROTIP: The "required" setting is also required for use by Nitro instances which process IPv6 addresses. So these AWS IAM and Organizational SCP (Service Control Policies) condition keys
+
+    <pre>"stringEquals": {"ec2:MetadataHttpEndpoint": "enabled"}
+    "stringEquals": {"ec2:MetadataHttpTokens": "required"}
+    "NumericLessThan": {"ec2:MetadataHttpPutResponseHopLimit": "1-64"}
+    </pre>
+
+    AWS EC2 instances can perform AWS actions based on the instance profile IAM role permissions.
+    
+    <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=29m54s">VIDEO</a>:
+    AWS credentials provided by IMDSv2 contain "2.0" in the <tt>ec2:RoleDelivery</tt> IAM context key.
+    So policies can look for that when delivering EC2 Role credentials:
+
+    <tt>"NumericGreaterThan": {ec2:RoleDelivery": "1.0 [ | 2.0]"}</tt>
+
+    CAUTION: This "required" setting can cause breaking changes in apps. So test!
+    The <a target="_blank" href="https://github.com/aws/aws-sdk-js/issues/3584">aws-sdk-js was fixed on Dec 17, 2020</a>
+
+    References:
+    * https://medium.com/sai-ops/upgrading-from-aws-ec2-imdsv1-to-imdsv2-d96bbf4a2031
+    * https://www.cloudyali.io/blogs/understanding-instance-metadata-service-imds
+    * https://docs.databricks.com/administration-guide/cloud-configurations/aws/imdsv2.html
+    * https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/
+    <br /><br />
+
+
     <a name="awsvpc"></a>
 
     <a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/ipv6-on-aws/amazon-vpc-design.html">DOC</a>: To enable dual-stack operation for your VPC, associate up to five IPv6 CIDR block ranges per VPC:
@@ -296,10 +416,10 @@ and adds additional PROTIPs and NOTEs.
 
     ### Subnet Calculators
     
-    * <a target="_blank" href="https://subnet-calculator.com/">subnet-calculator.com</a> [has pop-up ads]
-    * <a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
-    * https://calculator.net/ip-subnet-calculator.html
-    <br /><br />
+       * <a target="_blank" href="https://subnet-calculator.com/">subnet-calculator.com</a> [has pop-up ads]
+       * <a target="_blank" href="https://www.site24x7.com/tools/ipv4-subnetcalculator.html">https://www.site24x7.com/tools/ipv4-subnetcalculator.html</a>
+       * https://calculator.net/ip-subnet-calculator.html
+       <br /><br />
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675611924/networking-cidr-65534-433x314_cuhkfc.jpg"><img alt="networking-cidr-65534-433x314.jpg" width="433" height="314" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675611924/networking-cidr-65534-433x314_cuhkfc.jpg"></a>
 
