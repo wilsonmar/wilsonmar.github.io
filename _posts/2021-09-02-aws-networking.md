@@ -1,9 +1,9 @@
 ---
 layout: post
-date: "2023-02-05"
+date: "2023-02-11"
 file: "aws-networking"
 title: "AWS Networking"
-excerpt: "Setting up VPC (Virtual Private Cloud), IPAM, DNS, Security Groups, WAF, BGP, etc. using CLI, GUI, Terraform, Cloud Formation"
+excerpt: "Setting up VPC (Virtual Private Cloud), IPv6, IMDSv2, IPAM, DNS, Security Groups, WAF, BGP, etc. using CLI, GUI, Terraform, Cloud Formation"
 tags: [AWS, EC2, cloud, VPC, Terraform]
 image:
 # feature: pic data center slice 1900x500.jpg
@@ -164,14 +164,18 @@ and adds additional PROTIPs and NOTEs.
     
     That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
-    Unfortunately, that feature is also a <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">CVE-2021-21311 vulnerability hackers used in "UNC2903"</a> attacks which download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment. 
+    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">CVE-2021-21311 vulnerability hackers used in "UNC2903"</a> attacks with this call:
 
-   <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
-   Such data is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
+    <tt>http://169.254.169[.]254/latest/meta-data/iam/security-credentials/</tt>
 
-   <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
+    The above call exposes credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment. 
+
+    <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
+    Such data is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
+
+    <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
     
-   <tt>http://169.254.169.254/latest/dynamic/</tt>
+    <tt>http://169.254.169.254/latest/dynamic/</tt>
     
     To be more secure, <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">AWS IMDSv2</a> uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token:
     
