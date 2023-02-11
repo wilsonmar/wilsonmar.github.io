@@ -156,34 +156,39 @@ and adds additional PROTIPs and NOTEs.
 
     <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Within AWS</a>, IPv6 addresses are only accessible on <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">AWS EC2 instances built on its Nitro System</a> (rather than Xen hypervisor/dom0). Such instances run on hardware with a Nitro card and security chip which reference a Nitro hypervisor managing memory and CPU allocation with access to low-level hardware features that are not available or fully supported in previous virtualized environments (for example, Intel VT).
 
-    <a name="IMDSv2"></a>
+    <a name="IMDS"></a>
 
-    ### IMDSv2
+    ### IMDS
 
     AWS atttaches locally to every EC2 instance a "<strong>link local</strong>" static IPv4 address of <strong>169.254.169.254</strong> (IPv6: fd00:ec2::254) which only software running within the instance can access for <strong>introspection</strong> about its execution environment (its dynamic host name, events, Security Group, storage, etc.).
     
     That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
-    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">CVE-2021-21311 vulnerability hackers used in "UNC2903"</a> attacks with this call:
+    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed the <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">July, 2019 vulnerability CVE-2021-21311 hackers used in "UNC2903"</a> attacks of <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the hack</a> involves exposure of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
 
-    <tt>http://169.254.169[.]254/latest/meta-data/iam/security-credentials/</tt>
+    <tt>http://169.254.169.254/latest/meta-data/iam/security-credentials/</tt>
 
-    The above call exposes credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment. 
+    <a name="IMDSv2"></a>
+
+    ### IMDSv2
 
     <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
-    Such data is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
+    EC2 instance metadata is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
 
     <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
     
     <tt>http://169.254.169.254/latest/dynamic/</tt>
     
-    To be more secure, <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">AWS IMDSv2</a> uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token:
-    
-    <tt>TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" \
-    -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
-    </tt>
+    BTW, <a target="_blank" href="https://cloud.google.com/compute/docs/storing-retrieving-metadata">GCP has also has an instance metadata service</a>.
 
-    <tt>21600</tt> (6 hours) is the maxiumum number of seconds which a sessions can last, but a shorter duration can be specified (such as 600 for 10 minutes). Use of expired tokens result in "HTTP/1.1 401 Unauthorized" response.
+    <a target="_blank" href="http://www.thecloudavenue.com/2019/11/changes-to-aws-ec2-instance-metadata-service.html">100 days after the attack</a>, AWS released <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">IMDSv2</a>, which uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token:
+    
+    <pre><strong>TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" \
+    -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
+    </strong></pre>
+
+    <tt>21600</tt> seconds (6 hours) is the maxiumum number of seconds which AWS allows a sessions to last, but a shorter duration can be specified (such as 600 for 10 minutes). 
+    Use of an expired token would result in a "HTTP/1.1 401 Unauthorized" response.
 
     The token is specific to an instance and is not stored by IMDSv2. 
     
@@ -201,16 +206,16 @@ and adds additional PROTIPs and NOTEs.
 
     To obtain <tt>InstanceMetadataOptions</tt> for an Instance ID (<a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/require-imds-v2.html">obtained from a describe-instances CLI call</a>) :
 
-    <tt>aws ec2 describe-instances
-    --region us-east-1
-    --instance-ids i-01234abcd1234abcd
+    <pre><strong>aws ec2 describe-instances \
+    --region us-east-1 \
+    --instance-ids i-01234abcd1234abcd \
     --query 'Reservations[*].Instances[*].MetadataOptions.HttpTokens[]'
-    </tt>
+    </strong></pre>
     
     Alternately:
     
-    <tt>aws ec2 modify-instance-metadata-options --instance "$IID"
-    </tt>
+    <pre>aws ec2 modify-instance-metadata-options --instance "$IID"
+    </pre>
     
     The response JSON contains metrics (available in <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html">Amazon CloudWatch instance-level metric "EC2:MetadataNoToken"</a>):
 
@@ -226,22 +231,22 @@ and adds additional PROTIPs and NOTEs.
     
     To insist on using the more secure IMDSv2 after creation, use this <a target="_blank" href="https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-metadata-options.html">AWS CLI command</a>:
     
-    <tt>aws ec2 modify-instance-metadata-options --instance "$IID" \
+    <pre><strong>aws ec2 modify-instance-metadata-options --instance "$IID" \
     --http-endpoint enabled --http-tokens required
-    </tt>
+    </strong></tt>
     
     To use IMDSv2 during <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html">EC2 instance creation using aws CLI</a>:
 
-    <tt>aws ec2 run-instances \
+    <pre><strong>aws ec2 run-instances \
     --image-id ami-0abcdef1234567890 \
     --instance-type t3.large \
     ...
     --metadata-options "HttpEndpoint=enabled,HttpProtocolIpv6=enabled"
-    </tt>
+    </strong></pre>
 
     Alternatively, to use IMDSv2 when <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options">creating EC2 instance using Terraform</a>:
 
-    <pre>resource "aws_instance" "good_example" {
+    <pre><strong>resource "aws_instance" "good_example" {
      ami           = "ami-0abcdef1234567890"
      instance_type = "t3.large"
      metadata_options {
@@ -249,7 +254,7 @@ and adds additional PROTIPs and NOTEs.
        http_tokens = "required"
        }  
     }
-    </pre>
+    </strong></pre>
 
     If not defined as "required", TFSec issues its <a target="_blank" href="https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/">"aws_instance should activate session tokens for Instance Metadata Service."</a> error. Similar errors are also issued by <a target="_blank" href="https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EC2/require-imds-v2.html">Trend Micro</a> and <a target="_blank" href="https://blog.checkpoint.com/2020/12/07/aws-instance-metadata-service-imds-best-practices/">Checkpoint</a> scanners.
 
@@ -266,7 +271,7 @@ and adds additional PROTIPs and NOTEs.
     
     IMDS makes the AWS credentials available to <strong>any IAM role</strong> attached to the instance. So IAM roles and local firewall rules are needed to restrict access to IMDS. 
     
-    Lock Down IMDS to be accessed only to users with root privileges:
+    Lock Down IMDS to be accessed only to the root user with root privileges:
 
     <pre><strong>ip-lockdown 169.254.169.254 root</strong></pre>
 
@@ -291,6 +296,8 @@ and adds additional PROTIPs and NOTEs.
 
 
     <a name="awsvpc"></a>
+
+    ### CIDR for VPC
 
     <a target="_blank" href="https://docs.aws.amazon.com/whitepapers/latest/ipv6-on-aws/amazon-vpc-design.html">DOC</a>: To enable dual-stack operation for your VPC, associate up to five IPv6 CIDR block ranges per VPC:
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1675688112/aws-dual-stack-VPC-707x687_djyygy.png"><img alt="aws-dual-stack-VPC-707x687.png" width="707" height="687" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675688112/aws-dual-stack-VPC-707x687_djyygy.png"></a>
@@ -459,8 +466,6 @@ and adds additional PROTIPs and NOTEs.
     * Use Class B VPC CIDR 172.16.0.0/16 for <strong>DR (Disaster Recovery)</strong> regions
     <br /><br />
 
-    REMEMBER: 16 is the largest CIDR range allowed by AWS.
-
     PROTIP: Carefully predict how many nodes each subnet might need.
     Once assigned, AWS VPC subnet blocks can’t be modified.
     If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
@@ -473,29 +478,44 @@ and adds additional PROTIPs and NOTEs.
     This table of nodes for each <strong>netmask</strong> Amazon allows:
 
     <table border="1">
-    <tr><th align="right"> # Nodes </th><th align="center"> Netmask </th><th align="left"> Subnet Mask </th></tr>
-    <tr><td align="right">     14 </td><td align="center"> /28 </td><td> 255.255.255.240 </td></tr>
-    <tr><td align="right">     30 </td><td align="center"> /27 </td><td> 255.255.255.224 </td></tr>
-    <tr><td align="right">     62 </td><td align="center"> /26 </td><td> 255.255.255.192 </td></tr>
-    <tr><td align="right">    126 </td><td align="center"> /25 </td><td> 255.255.255.128 </td></tr>
-    <tr><td align="right">    254 </td><td align="center"> /24 </td><td> 255.255.255.0   </td></tr>
-    <tr><td align="right">    510 </td><td align="center"> /23 </td><td> 255.255.254.0   </td></tr>
-    <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 </td></tr>
+    <tr><th align="right"> # Nodes </th><th align="center"> Netmask </th><th align="left"> Subnet Mask </th><th> Note </th></tr>
+    <tr><td align="right">     14 </td><td align="center"> /28 </td><td> 255.255.255.240 
+       </td><td> Smallest </td></tr>
+    <tr><td align="right">     30 </td><td align="center"> /27 </td><td> 255.255.255.224 
+       </td><td> - </td></tr>
+    <tr><td align="right">     62 </td><td align="center"> /26 </td><td> 255.255.255.192 
+       </td><td> - </td></tr>
+    <tr><td align="right">    126 </td><td align="center"> /25 </td><td> 255.255.255.128 
+       </td><td> - </td></tr>
+    <tr><td align="right">    254 </td><td align="center"> /24 </td><td> 255.255.255.0   
+       </td><td> - </td></tr>
+    <tr><td align="right">    510 </td><td align="center"> /23 </td><td> 255.255.254.0   
+       </td><td> - </td></tr>
+    <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 
+       </td><td> Largest </td></tr>
     </table>
 
-    Notice that the larger the CIDR netmask, the less hosts in the subnet.
+    REMEMBER: The larger the CIDR netmask, the less hosts in the subnet.
 
-    If all you'll need are 14 nodes, specify `/28`.
-    
-    REMEMBER: There are actually 16 addresses, but the first and last address are reserved.
+    REMEMBER: 16 is the largest CIDR range allowed by AWS.
+
+    REMEMBER: If all you'll need are 14 nodes, specify `/28`.
+    That actually allocates 16 addresses, but the first and last address are reserved.
     * subnet+1 are for default GW via DHCP Option Set
+    * the last subnet is for broadcasts.
     <br /><br />
 
-    PROTIP: To make naming conflicts more avoidable, use a standard naming convention:
-    of top and bottom half of the 255 possibilities allocated to private and upper half to public addresses:
+    PROTIP: 24 is a common one:
+
        * private       10.1.0.0/24 &nbsp; (< 129)
        * public &nbsp; 10.129.0.0/24 (> 128)
        <br /><br />
+
+    PROTIP: To avoid naming conflicts, use a standard naming convention:<br />
+    Of the 255 possibilities in /24:<br />
+    allocate the top half to private addresses:<br />
+    allocate the bottom half to public addresses:
+
 
     ### IP Subnets
 
@@ -551,103 +571,103 @@ and adds additional PROTIPs and NOTEs.
 
     #### Bucket of Candies Analogy #
 
-   If you must know why, here is my analogy (best for kinesthetic learners):
-   When we say a sports star makes a "7 figure salary", we figure out what that means with a table like this:
+    If you must know why, here is my analogy (best for kinesthetic learners):
+    When we say someone makes a "7 figure salary", we figure out what that means with a table like this:
 
-   | Figure:   |         7 |       6 |      5 |     4 |   3 |  2 |  1 |
-   | --------- | --------: | ------: | -----: | ----: | --: | -: | -: |
-   | # Values: | 1,000,000 | 100,000 | 10,000 | 1,000 | 100 | 10 |  1 |
+    | Figure:   |         7 |       6 |      5 |     4 |   3 |  2 |  1 |
+    | :-------- | --------: | ------: | -----: | ----: | --: | -: | -: |
+    | # Values: | 1,000,000 | 100,000 | 10,000 | 1,000 | 100 | 10 |  1 |
 
-   Now imagine a bucket for each figure level, a different size bucket containing candies of various colors and patterns, unique one for each possible value.
-   People earning 7 figures can choose from the bucket holding a million possible values.
+    Now imagine a bucket for each figure level, a different size bucket containing candies of various colors and patterns, unique one for each possible value.
+    People earning 7 figures can choose from the bucket holding a million possible values.
 
-   If we add up the values (colors) possible in the right-most 3 buckets,
-   we would have 100 + 10 + 1 = 111 possibilities.
+    If we add up the values (colors) possible in the right-most 3 buckets,
+    we would have 100 + 10 + 1 = 111 possibilities.
 
-   #### Counting in Base 2 #
+    #### Counting in Base 2 #
 
-   Instead of the way bankers do arithmetic
-   where ten $1 bills is equivalent to a 10 dollar bill (called "base 10" or decimal calculation),
-   computers count using "base 2" or binary arithmetic using 0's and 1's.
-   So each of their "buckets" have a different number of possibility values:
+    Instead of the way bankers do arithmetic
+    where ten $1 bills is equivalent to a 10 dollar bill (called "base 10" or decimal calculation),
+    computers count using "base 2" or binary arithmetic using 0's and 1's.
+    So each of their "buckets" have a different number of possibility values:
 
-   | Position:      |   8 |   7 |   6 |   5 |   4 |   3 |   2 |   1 |
-   | -------------- | --: | --: | --: | --: | --: | --: | --: | --: |
-   | # Values:      | 254 | 128 |  64 |  32 |  16 |   8 |   4 |   2 |
-   | Cumulative possible addresses: | 510 | 254 | 126 |  62 |  30 |  14 |   6 |   2 |
+    | Position:      |   8 |   7 |   6 |   5 |   4 |   3 |   2 |   1 |
+    | -------------- | --: | --: | --: | --: | --: | --: | --: | --: |
+    | # Values:      | 254 | 128 |  64 |  32 |  16 |   8 |   4 |   2 |
+    | Cumulative possible addresses: | 510 | 254 | 126 |  62 |  30 |  14 |   6 |   2 |
 
-   If we add up the possible addresses just from the <strong>right-most</strong> 3 buckets (from right to left),
-   we would have 2 + 4 + 8 = 14 possibilities.
+    If we add up the possible addresses just from the <strong>right-most</strong> 3 buckets (from right to left),
+    we would have 2 + 4 + 8 = 14 possibilities.
 
-   Look back above at <a href="#NetmaskNodes">the table of nodes</a>,
-   we see 14 possibilities can be obtained from a specification of 28 bits.
+    Look back above at <a href="#NetmaskNodes">the table of nodes</a>,
+    we see 14 possibilities can be obtained from a specification of 28 bits.
 
-   This is all one needs to know to use AWS VPC.
+    This is all one needs to know to use AWS VPC.
 
-   But if you would like to know how we get 3 buckets from the 28 bit specification,
-   read on.
+    But if you would like to know how we get 3 buckets from the 28 bit specification,
+    read on.
 
-   #### IP address octets #
+    #### IP address octets #  
 
-   IPV4 subnet addresses such as "127.10.138.128" are 4 sets of there are 32 "buckets" separated by dots into four 8 bit "octets":
-   <amp-img width="600" height="72" alt="fig ip octets base 10 and 2-600x72.jpg"
-layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16169053/db2765f8-34dc-11e6-8a62-68de3f320899.jpg"></amp-img>
-   The 127 in the figure above is obtained by adding the base 10 value of each bit "bucket".
-   Looking at a single octet of 8 bits:
+    IPV4 subnet addresses such as "127.10.138.128" are 4 sets of there are 32 "buckets" separated by dots into four 8 bit "octets":
+    <amp-img width="600" height="72" alt="fig ip octets base 10 and 2-600x72.jpg" layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16169053/db2765f8-34dc-11e6-8a62-68de3f320899.jpg"></amp-img>
 
-   | "Bucket" position:                 |   8 |   7 |   6 |   5 |   4 |   3 |   2 |   1 |
-   | ----------------                   | --: | --: | --: | --: | --: | --: | --: | --: |
-   | Base 10 value of each bucket:      | 128 |  64 |  32 |  16 |   8 |   4 |   2 |   1 |
-   | Cumulative base 10 (left to right) | 255 | 127 |  63 |  31 |  15 |   7 |   3 |   1 |
-   | Base 2 for 127 in base 10          |   1 |   1 |   0 |   1 |   1 |   0 |   0 |   1 |
-   | Cumulative base 10 (left to right) | 217 |  89 |  25 |  25 |   9 |   1 |   1 |   1 |
+    The 127 in the figure above is obtained by adding the base 10 value of each bit "bucket".
+    Looking at a single octet of 8 bits:
 
-   To translate a base 2 number of all 1's ("1111111") to a base 10 value of 255
-   we accumulate base 10 values for each "bucket", left to right.
+    | "Bucket" position:                 |   8 |   7 |   6 |   5 |   4 |   3 |   2 |   1 |
+    | ----------------                   | --: | --: | --: | --: | --: | --: | --: | --: |
+    | Base 10 value of each bucket:      | 128 |  64 |  32 |  16 |   8 |   4 |   2 |   1 |
+    | Cumulative base 10 (left to right) | 255 | 127 |  63 |  31 |  15 |   7 |   3 |   1 |
+    | Base 2 for 127 in base 10          |   1 |   1 |   0 |   1 |   1 |   0 |   0 |   1 |
+    | Cumulative base 10 (left to right) | 217 |  89 |  25 |  25 |   9 |   1 |   1 |   1 |
 
-   To translate the Base 2 set of 1's and 0's to a base 10 number of 217,
-   we accumulate the equivalent base 10 number at each position where there is a 1.
+    To translate a base 2 number of all 1's ("1111111") to a base 10 value of 255
+    we accumulate base 10 values for each "bucket", left to right.
 
-   Now let's look at the relationship between /28 and the "255.255.255.240" <strong>subnet mask</strong> associated with the /28
-   in the <a href="#NetmaskNodes">table of nodes</a> above.
+    To translate the Base 2 set of 1's and 0's to a base 10 number of 217,
+    we accumulate the equivalent base 10 number at each position where there is a 1.
 
-   The "240" base 10 number in the right-most quartet is equivalent to "11110000" in base 2.
+    Now let's look at the relationship between <tt>/28</tt> and the "255.255.255.240" <strong>subnet mask</strong> associated with the <tt>/28</tt>
+    in the <a href="#NetmaskNodes">table of nodes</a> above.
 
-   | "Bucket" position:                 |   8 |   7 |   6 |   5 |   4 |   3 |   2 |   1 |
-   |  ----------------                  | --: | --: | --: | --: | --: | --: | --: | --: |
-   | Base 10 value of bucket:           | 128 |  64 |  32 |  16 |   8 |   4 |   2 |   1 |
-   | Base 2 for 240 in base 10          |   1 |   1 |   1 |   1 |   0 |   0 |   0 |   0 |
-   | Cumulative base 10 (left to right) | 240 | 122 |  48 |  16 |   0 |   0 |   0 |   0 |
+    The "240" base 10 number in the right-most quartet is equivalent to "11110000" in base 2.
 
-   Putting the three 255 and 240 together we get a continuous set of 1's followed by four 0's:
+    | "Bucket" position:                 |   8 |   7 |   6 |   5 |   4 |   3 |   2 |   1 |
+    |  ----------------                  | --: | --: | --: | --: | --: | --: | --: | --: |
+    | Base 10 value of bucket:           | 128 |  64 |  32 |  16 |   8 |   4 |   2 |   1 |
+    | Base 2 for 240 in base 10          |   1 |   1 |   1 |   1 |   0 |   0 |   0 |   0 |
+    | Cumulative base 10 (left to right) | 240 | 122 |  48 |  16 |   0 |   0 |   0 |   0 |
+
+    Putting the three 255 and 240 together we get a continuous set of 1's followed by four 0's:
 
       11111111.11111111.1111111.11110000
 
-   * The 1's "buckets" on the left side are used to address <strong>subnets</strong> managed by Amazon.
+    * The 1's "buckets" on the left side are used to address <strong>subnets</strong> managed by Amazon.
 
-   * The 0's buckets on the right side are used to address your individual nodes.
+    * The 0's buckets on the right side are used to address your individual nodes.
 
-   REMEMBER: Although there are four 0's buckets, only 3 are used to specify node addresses because
-   <strong>one digit (two values) are reserved for network broadcast use</strong>
-   (addresses containing all 0's and all 1's).
+    REMEMBER: Although there are four 0's buckets, only 3 are used to specify node addresses because
+    <strong>one digit (two values) are reserved for network broadcast use</strong>
+    (addresses containing all 0's and all 1's).
 
-   More on CIDR (Classless Inter-Domain Routing), aka "supernetting":
+    More on CIDR (Classless Inter-Domain Routing), aka "supernetting":
 
-   * https://www.youtube.com/watch?v=POPoAjWFkGg
-     IP Subnetting from CIDR Notations (getting network and broadcast addresses).
+    * <a target="_blank" href="https://www.youtube.com/watch?v=POPoAjWFkGg">VIDEO</a>: IP Subnetting from CIDR Notations (getting network and broadcast addresses).
 
-   * http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html
+    * http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html
 
-   * VLSM (Variable Length Subnet Mask)
+    * VLSM (Variable Length Subnet Mask)
 
-   * https://cloudacademy.com/amazon-web-services/amazon-vpc-networking-course/build-and-configure-a-nat-instance.html
+    * https://cloudacademy.com/amazon-web-services/amazon-vpc-networking-course/build-and-configure-a-nat-instance.html
 
-Do you really know the above? Take <a target="_blank" href="https://learning.oreilly.com/certifications/9780136757078/">Pearson's IP Subnetting exam on OReilly.com</a> [subscription required]
+    Do you really know the above? Take <a target="_blank" href="https://learning.oreilly.com/certifications/9780136757078/">Pearson's IP Subnetting exam on OReilly.com</a> [subscription required]
 
+<hr />
 
-   <a name="CF-VPC"></a>
+<a name="CF-VPC"></a>
 
-   ### Automatically create VPC using CloudFormation #
+## Automatically create VPC using CloudFormation #
 
    VPCs are really software-defined networks (SDN).
 
@@ -684,9 +704,9 @@ Do you really know the above? Take <a target="_blank" href="https://learning.ore
    the public DNS resolves corporate host names to.
 
 
-   <a name="StaticIPs"></a>
+<a name="StaticIPs"></a>
 
-   ## Static Elastic IPs #
+## Static Elastic IPs #
 
    NOTE: The use of static IP addresses in configurations in EC2
    can be an annoyance to some and a comfort to others.
@@ -732,8 +752,7 @@ Its competitors include Dyn.com, GoDaddy, etc.
    * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31664425" title="by Cantrill">VIDEO</a>:
    <br /><br />
 
-
-
+<hr />
 
 <a name="NAT"></a>
 
@@ -781,6 +800,7 @@ But NAT instances require OFF or they wont' show up on VPC Route Tables.
    to manage Subnet failover to another NAT in this Amazon article</a>.
 
 
+<hr />
 
 <a name="VPN"></a>
 
@@ -798,6 +818,8 @@ Customer Gateway.
 
    It's attached to a VPN.
 
+
+<hr />
 
 <a name="Peering"></a>
 
@@ -827,7 +849,6 @@ One useful use case is for more secure interconnection among Active Directory, E
 0. Setup Peering in VPC
 
 0. Accept the Peering request on the target VPC.
-
 
 
 <hr />
