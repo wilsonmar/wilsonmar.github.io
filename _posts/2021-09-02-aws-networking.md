@@ -20,6 +20,14 @@ This tutorial covers how to manage Security Groups and other AWS network securit
 
 {% include whatever.html %}
 
+This article describes use of Terraform and CDK as well as Cloud Formation to create resources within AWS.
+
+## VPCs (Virtual Private Cloud)
+
+   * https://aws.amazon.com/vpc/faqs/
+   * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
+   <br /><br />
+
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11e6-8471-46d2602d3f39.jpg"></amp-img>
 
@@ -28,47 +36,8 @@ Consider the types of architectures:
 
 TODO: Add WAF. Make above diagram into a video. 
 
-## Terraform & CDK & CF
 
-This article describes use of Terraform and CDK as well as Cloud Formation to create resources within AWS.
-
-
-<a name="RoutingRules"></a>
-
-## Routing Rules #
-
-AWS VPC Routing Rules are what makes subnets public or private.
-
-## VPCs (Virtual Private Cloud)
-
-   * https://aws.amazon.com/vpc/faqs/
-   * <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31757251" title="by Cantrill">TUTORIAL</a>
-   <br /><br />
-
-
-PROTIP: AWS creates a default subnet for each region.
-
-1.  Delete the default VPC. It doesn't cost anything.
-
-    BLAH: At time of writing, AWS auto-assigns public IPv4 address.
-
-2.  "Create VPC".
-
-3.  Type Security Groups over "Search" at the top of every AWS Console GUI page.
-4.  Click "Security groups" among "Features of EC2", which means you see "Security Groups" on the left menu under EC2.
-
-    What makes a subnet public is a <strong>route table</strong> associated with each subnet created.
-
-5.  View Route Table feature.  
-    There is a Main route table designated as Yes.
-6.  Rename the Main "Public-IGW".
-
-    Subnets: Outbound rules: NACL (Network ACL) :
-
-7.  The rule which Allow/Deny Source 0.0.0.0/0 - Rename it "AllowEverything"
-
-
-### VPC Terraform
+### Terraform to create VPC #
 
 The provider for VPC is at
 https://www.terraform.io/docs/providers/aws/r/vpc.html
@@ -86,6 +55,45 @@ resource "aws_vpc" "main" {
   }
 }</pre>
 
+
+
+<a name="CF-VPC"></a>
+
+### CloudFormation to create VPC #
+
+   VPCs are really software-defined networks (SDN).
+
+   {% highlight text %}
+     "Resources" : {
+        "VPC" : {
+         "Type" : "AWS::EC2::VPC",
+         "Properties" : {
+           "CidrBlock" : "10.0.0.0/16"
+         }
+       },
+
+       "InternetGateway" : {
+         "Type" : "AWS::EC2::InternetGateway",
+         "Properties" : {
+         }
+       },
+
+       "AttachGateway" : {
+          "Type" : "AWS::EC2::VPCGatewayAttachment",
+          "Properties" : {
+            "VpcId" : { "Ref" : "VPC" },
+            "InternetGatewayId" : { "Ref" : "InternetGateway" }
+          }
+       },
+   {% endhighlight %}
+
+   In the CF JSON to define a VPC, CF automatically populates the
+      "VpcId" : { "Ref" : "VPC" },
+
+      REMEMBER: There is one VPC per Availability Zone.
+
+   A single Gateway serves all VPCs because that is the address
+   the public DNS resolves corporate host names to.
 
 
 ### Create VPCs using Management Console #
@@ -359,6 +367,34 @@ and adds additional PROTIPs and NOTEs.
 
     <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2023/01/amazon-provided-contiguous-ipv6-cidr-blocks/">Announced in January 2023</a>,
     <strong>IPv6 CIDR owned by me</strong> is Bring your own IP addresses (BYOIP) range which a customer organization has purchase from a Regional Internet Registry (RIR).
+
+
+<a name="RoutingRules"></a>
+
+## Routing Rules #
+
+AWS VPC Routing Rules are what makes subnets public or private.
+
+PROTIP: AWS creates a default subnet for each region.
+
+1.  Delete the default VPC. It doesn't cost anything.
+
+    BLAH: At time of writing, AWS auto-assigns public IPv4 address.
+
+2.  "Create VPC".
+
+3.  Type Security Groups over "Search" at the top of every AWS Console GUI page.
+4.  Click "Security groups" among "Features of EC2", which means you see "Security Groups" on the left menu under EC2.
+
+    What makes a subnet public is a <strong>route table</strong> associated with each subnet created.
+
+5.  View Route Table feature.  
+    There is a Main route table designated as Yes.
+6.  Rename the Main "Public-IGW".
+
+    Subnets: Outbound rules: NACL (Network ACL) :
+
+7.  The rule which Allow/Deny Source 0.0.0.0/0 - Rename it "AllowEverything"
 
 
     <a name="manu"></a>
@@ -664,45 +700,6 @@ and adds additional PROTIPs and NOTEs.
     Do you really know the above? Take <a target="_blank" href="https://learning.oreilly.com/certifications/9780136757078/">Pearson's IP Subnetting exam on OReilly.com</a> [subscription required]
 
 <hr />
-
-<a name="CF-VPC"></a>
-
-## Automatically create VPC using CloudFormation #
-
-   VPCs are really software-defined networks (SDN).
-
-   {% highlight text %}
-     "Resources" : {
-        "VPC" : {
-         "Type" : "AWS::EC2::VPC",
-         "Properties" : {
-           "CidrBlock" : "10.0.0.0/16"
-         }
-       },
-
-       "InternetGateway" : {
-         "Type" : "AWS::EC2::InternetGateway",
-         "Properties" : {
-         }
-       },
-
-       "AttachGateway" : {
-          "Type" : "AWS::EC2::VPCGatewayAttachment",
-          "Properties" : {
-            "VpcId" : { "Ref" : "VPC" },
-            "InternetGatewayId" : { "Ref" : "InternetGateway" }
-          }
-       },
-   {% endhighlight %}
-
-   In the CF JSON to define a VPC, CF automatically populates the
-      "VpcId" : { "Ref" : "VPC" },
-
-      REMEMBER: There is one VPC per Availability Zone.
-
-   A single Gateway serves all VPCs because that is the address
-   the public DNS resolves corporate host names to.
-
 
 <a name="StaticIPs"></a>
 
