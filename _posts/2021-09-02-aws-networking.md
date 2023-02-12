@@ -199,9 +199,15 @@ and adds additional PROTIPs and NOTEs.
     
     That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
-    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed the <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">July, 2019 vulnerability CVE-2021-21311 hackers used in "UNC2903"</a> attacks of <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the hack</a> involves exposure of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
+    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed the vulnerability hackers used in <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">"UNC2903" attacks</a> of <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the hack</a> involves exposure of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
 
-    <tt>http://169.254.169.254/latest/meta-data/iam/security-credentials/</tt>
+    <tt>http://169.254.169.254/latest/meta-data/iam/security-credentials/<em>$IAM_USER_ROLE</em></tt>
+
+    <a target="_blank" href="https://rhinosecuritylabs.com/cloud-security/aws-security-vulnerabilities-perspective/">RhinoSecurity describes the service</a>:
+    "when your application wants to access assets, it can query the metadata service to get a set of temporary access credentials. The temporary credentials can then be used to access your S3 assets and other services. Another purpose of this metadata service is to store the user data supplied when launching your instance, in-turn configuring your application as it launches."
+
+    Using the vulnerability to obtain credentials is <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw">demonstrated</a> by <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a> by <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a>.
+
 
     <a name="IMDSv2"></a>
 
