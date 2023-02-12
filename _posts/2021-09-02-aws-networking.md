@@ -199,14 +199,14 @@ and adds additional PROTIPs and NOTEs.
     
     That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
-    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed the vulnerability hackers used in <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">"UNC2903" attacks</a> of <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the hack</a> involves exposure of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
+    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed among <a target="_blank" href="https://www.cvedetails.com/vulnerability-list/vendor_id-12126/Amazon.html">AWS vulnerabilities</a> hackers used in <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">"UNC2903" attacks</a> of <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the hack</a> <a target="_blank" href="https://www.youtube.com/watch?v=mjQ2klZ0NQo&t=392s">VIDEO</a> involves exposure of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
 
     <tt>http://169.254.169.254/latest/meta-data/iam/security-credentials/<em>$IAM_USER_ROLE</em></tt>
 
     <a target="_blank" href="https://rhinosecuritylabs.com/cloud-security/aws-security-vulnerabilities-perspective/">RhinoSecurity describes the service</a>:
     "when your application wants to access assets, it can query the metadata service to get a set of temporary access credentials. The temporary credentials can then be used to access your S3 assets and other services. Another purpose of this metadata service is to store the user data supplied when launching your instance, in-turn configuring your application as it launches."
 
-    Using the vulnerability to obtain credentials is <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw">demonstrated</a> by <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a> by <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a>.
+    Using the vulnerability to obtain credentials is <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> by <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a> by <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a>.
 
 
     <a name="IMDSv2"></a>
@@ -950,13 +950,55 @@ References:
 
 ## Direct Connect (DX)
 
+   * https://aws.amazon.com/directconnect/sla/
+   <br /><br />
+
 To Direct Connect to a customer's Router.
 in each DX Location, there is a port on a DX Router which is charged <strong>per hour</strong> of use.
-There are 1GB, 10GB, and 100GB wide pipes. The price is the same globally except for a few regions.
-
+The price is the same globally except for a few regions.
 Outgoing data transfer charges apply, too, but cheaper than going through the public internet.
 
+There are 1GB, 10GB, and 100GB wide pipes. 
+
+For redundancy and higher capacity, many deploy two or more DX connections. 
+
 If the DX Location is in a different region, a <strong>DX Gateway</strong> is needed.
+
+Common patterns involve using a combination of 
+   * Private Virtual Interfaces (PrivateVIF) and Direct Connect Gateway (DXGW) or
+   * Transit Virtual Interfaces (TransitVIF) and DXGW
+   <br /><br />
+
+Active-passive Border Gateway Protocol (BGP) connections are created based on 
+<a target="_blank" href="https://tools.ietf.org/html/rfc4271">RFC 4271</a>.
+
+Border Gateway Protocol (BGP) is an Exterior Gateway Routing protocol (EGP).
+An EGP is concerned with <strong>advertising</strong> address information between Autonomous Systems (AS) -- an administrative unit responsible for the address space within.
+
+Each AS is identified by a special 16 bit or 32 bit number. 
+
+Unlike Interior Gateway routing Protocols (IGP) that work within an AS and concern themselves with link-states or interface costs, EGPs focus on the paths to destination. 
+Thus they are sometimes called <strong>Path Vector Routing</strong> protocols. 
+When BGP speakers, or peers, advertise Network Layer Reachability Information (NLRI) to each other, they also advertise a series of constructs called <strong>Path Attributes (PA)</strong> sent in a BGP Update message. 
+
+The <strong>best-path algorithm</strong> that runs as part of BGP considers all routes it receives and tries to select the best ones. It uses configured policies and received path attributes when stepping through the logic until an appropriate route (or routes) are found.
+
+BGP path attributes can materially affect routing behavior, in both directions, over a DX connection.
+
+A commonly-used mnemonic about the top 8 priorities of BGP best-path algorithms over a DX connection:
+
+<ul>We Love Oranges AS Oranges Mean Pure Refreshment</ul>
+
+which translates to:
+
+<ul>Weight, Local Pref, Originate, AS_Path, Origin, MED, Paths, RouterID</ul>
+
+   * Local Pref path attribute is considered right at the start of the best-path algorithm, and as such, is an optimal tuning parameter. This is used for both Inbound and Outbound tuning. Higher values are preferred.
+
+   * AS_Path attribute is a concatenation of all the AS numbers the advertisement has passed through. It is used as a loop avoidance mechanism on the one hand and as an indication of distance on the other. This is used for both Inbound and Outbound tuning. Shorter AS_Path lengths are preferred.
+
+   * MED path attribute uses a metric as well. MED is typically used by an AS which is multi-homed to instruct an external AS it is peered with). That makes for a preferred entry point for a particular network address block. MED can be used for inbound tuning. Lower metric values are preferred.
+
 
 ## Resources #
 

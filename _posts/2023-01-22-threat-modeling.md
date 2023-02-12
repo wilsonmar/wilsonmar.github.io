@@ -109,6 +109,9 @@ has a <a target="_blank" href="https://www.synopsys.com/glossary/what-is-threat-
 
 ## References
 
+https://www.appsecengineer.com/blog-categories/threat-modeling
+
+
 <hr />
 
 ## More on Security #
