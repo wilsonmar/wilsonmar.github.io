@@ -31,29 +31,55 @@ This article describes use of Terraform and CDK as well as Cloud Formation to cr
 <amp-img width="650" height="483" alt="fig-aws-enterprise-v02-650x483-80"
 layout="responsive" src="https://cloud.githubusercontent.com/assets/300046/16263954/1389b3ba-3834-11e6-8471-46d2602d3f39.jpg"></amp-img>
 
-Consider the types of architectures:
-– Subnets vs. VPCs and VPC peering
+REMEMBER: There is one VPC per Availability Zone.
+
+A single IGW (Internet GateWay) serves all VPCs because that is the address the public DNS resolves corporate host names to.
+
+Types of architectures: Subnets vs. VPCs and VPC peering
 
 TODO: Add WAF. Make above diagram into a video. 
 
+## TL;DR Si,,aru
 
-### Terraform to create VPC #
+To create a VPC:
+   * Use Infrastructure as Code (IaC)
+   * Use Terraform for multi-cloud
+   * AWS CloudFormation
+   * Avoid "Management Console" GUI - it creates "drift" in IaC
+Learnings:
+   * IPv4 vs. IPv6
+   
+<hr />
 
-The provider for VPC is at
+<a name="IaC"></a>
+
+## Infrastructure a Code (IaC)
+
+To define resources, enterprise teams use Infrastructure as Code (IaC) that is <strong>versioned</strong> in GitHub and thus available for team review. More importantly, IaC makes resource creation <strong>repeatable</strong> to create, which reduces human error on a GUI.
+
+### Terraform for VPC #
+
+The most popular IaC is Terraform (HCL coding defined by HashiCorp) due to its multi-cloud format.
+See my https://wilsonmar.github.io/terraform about how to run Terraform IaC.
+
+IaC code is grouped into modules, such as the module for VPC at:
+
 https://www.terraform.io/docs/providers/aws/r/vpc.html
 
-https://wpengine.linuxacademy.com/amazon-web-services-2/learn-how-to-master-aws-vpc-inside-and-out/
-Basic usage with tags:
+Here is an extract to highlight concepts:
 
-<pre>
-resource "aws_vpc" "main" {
+<pre>resource "aws_vpc" "main" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "dedicated"
 &nbsp;
   tags {
     Name = "main"
   }
-}</pre>
+}
+</pre>
+
+https://wpengine.linuxacademy.com/amazon-web-services-2/learn-how-to-master-aws-vpc-inside-and-out/
+Basic usage with tags:
 
 
 
@@ -90,13 +116,10 @@ resource "aws_vpc" "main" {
    In the CF JSON to define a VPC, CF automatically populates the
       "VpcId" : { "Ref" : "VPC" },
 
-      REMEMBER: There is one VPC per Availability Zone.
 
-   A single Gateway serves all VPCs because that is the address
-   the public DNS resolves corporate host names to.
+<hr />
 
-
-### Create VPCs using Management Console #
+## Create VPCs using Management Console #
 
 This chapter condenses <a target="_blank" href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html">Amazon's docs on this topic</a>
 and adds additional PROTIPs and NOTEs.
@@ -158,11 +181,15 @@ and adds additional PROTIPs and NOTEs.
     * No more private address collisions
     <br /><br />
 
+    
+
     <a name="Nitro"></a>
 
     ### Nitro for IPv6
 
     <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Within AWS</a>, IPv6 addresses are only accessible on <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">AWS EC2 instances built on its Nitro System</a> (rather than Xen hypervisor/dom0). Such instances run on hardware with a Nitro card and security chip which reference a Nitro hypervisor managing memory and CPU allocation with access to low-level hardware features that are not available or fully supported in previous virtualized environments (for example, Intel VT).
+
+    For IPv6, EC2 instances must have IMDSv2 required.
 
     <a name="IMDS"></a>
 
@@ -179,6 +206,8 @@ and adds additional PROTIPs and NOTEs.
     <a name="IMDSv2"></a>
 
     ### IMDSv2
+
+    https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/
 
     <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
     EC2 instance metadata is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
@@ -252,7 +281,7 @@ and adds additional PROTIPs and NOTEs.
     --metadata-options "HttpEndpoint=enabled,HttpProtocolIpv6=enabled"
     </strong></pre>
 
-    Alternatively, to use IMDSv2 when <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options">creating EC2 instance using Terraform</a>:
+    Preferrably, set IMDSv2 when <a target="_blank" href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options">creating EC2 instance using Terraform</a>:
 
     <pre><strong>resource "aws_instance" "good_example" {
      ami           = "ami-0abcdef1234567890"
@@ -268,7 +297,7 @@ and adds additional PROTIPs and NOTEs.
 
     PROTIP: The Terraform module defaults to <tt>http_tokens = optional</tt>, so the setting must be <strong>explicitly specified</strong> in your <tt>main.tf</tt> file.
 
-    PROTIP: The "required" setting is also required for use by Nitro instances which process IPv6 addresses. So these AWS IAM and Organizational SCP (Service Control Policies) condition keys
+    PROTIP: The "required" setting is also required for use by Nitro instances which process IPv6 addresses. So set these AWS IAM and Organizational SCP (Service Control Policies) condition keys:
 
     <pre>"stringEquals": {"ec2:MetadataHttpEndpoint": "enabled"}
     "stringEquals": {"ec2:MetadataHttpTokens": "required"}
