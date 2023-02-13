@@ -280,7 +280,7 @@ and adds additional PROTIPs and NOTEs.
     
     <pre><strong>aws ec2 modify-instance-metadata-options --instance "$IID" \
     --http-endpoint enabled --http-tokens required
-    </strong></tt>
+    </strong></pre>
     
     To use IMDSv2 during <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html">EC2 instance creation using aws CLI</a>:
 
@@ -542,14 +542,6 @@ PROTIP: AWS creates a default subnet for each region.
 
 8.  Allocate ranges by geographical regions:
 
-    Ranges used by specific geographies:
-    * 192.168.10.0/24
-    * 192.168.15.0/24 London
-    * 192.168.20.0/24 New York
-    * 192.168.25.0/24 Seattle
-    <br /><br />
-    
-    For example:
     * 10.16 for US1
     * 10.32 for US2
     * 10.48 for US3
@@ -557,6 +549,13 @@ PROTIP: AWS creates a default subnet for each region.
     * 10.80 Australia
     <br /><br />
 
+    Ranges used by specific geographies:
+    * 192.168.10.0/24
+    * 192.168.15.0/24 London
+    * 192.168.20.0/24 New York
+    * 192.168.25.0/24 Seattle
+    <br /><br />
+    
 9.  Allocate ranges for production vs. DR vs. testing:
 
     PROTIP: Consider this convention:
