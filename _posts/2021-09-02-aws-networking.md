@@ -516,16 +516,22 @@ PROTIP: AWS creates a default subnet for each region.
 
     ### Private Non-Routed Classes
 
-    Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
+    Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>) first octet addresses:
     * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
     * 172.16.0.0 -> 172.31.255.255   within "Class B" addresses 127 -> 191
     * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
+    * D 224 -> 239
+    * E 240 -> 255
     <br /><br />
     
     <a name="Avoid"></a>
 
     ### IP Ranges commonly used
 
+    * 127.0.0.0 is reserved for loopback and IPC on the local host
+    * 224.0.0.0 -> 239.255.255.255 is reserved for multicast addresses
+    <br /><br />
+   
     PROTIP: Ranges used by specific cloud vendors:
     * 10.0.0.0/16 or 2001:db8:1234:1a00::/56 by AWS (see <a href="#awsvpc">diagram</a>)
     * 10.128.0.0./9 Google
@@ -558,53 +564,59 @@ PROTIP: AWS creates a default subnet for each region.
     * Use Class B VPC CIDR 172.16.0.0/16 for <strong>DR (Disaster Recovery)</strong> regions
     <br /><br />
 
-
     <a name="NetmaskNodes"></a>
 
     ### NetMask Nodes
 
+    The Default Mask is different for each class.
+
     <a target="_blank" href="https://www.youtube.com/watch?v=s_Ntt6eTn94">VIDEO</a>:
-    This table of nodes for each <strong>netmask</strong> Amazon allows:
+    <a target="_blank" href="https://www.cloudaccess.net/cloud-control-panel-ccp/157-dns-management/322-subnet-masks-reference-table.html">This table</a> of nodes for each <strong>netmask</strong> Amazon allows:
 
     <table border="1" cellpadding="4" cellspacing="0">
-    <tr><th align="right"> Netmask </th><th> # IPs </th><th> # Nodes </th><th> Subnet<br />Size </th><th align="left"> Subnet Mask </th><th> Note </th></tr>
-    <tr><td align="right"> /28 </td><td>   - </td><td> 14 
+    <tr><th align="right"> Hosts/<br />Subnet</th><th>Netmask </th><th> # IPs </th><th> # Nodes </th><th> Subnet<br />Size </th><th align="left"> Subnet Mask </th><th> Note </th></tr>
+    <tr><td align="right"> - </td><td> /28 </td><td> 14 </td><td>- 
       </td><td> /31 </td><td> 255.255.255.240 
        </td><td> Minimum </td></tr>
-    <tr><td align="right"> /27 </td><td>  - </td><td>    30 
+    <tr><td align="right"> - </td><td> /27 </td><td> 30 </td><td> -
        </td><td> /30 </td><td> 255.255.255.224 
        </td><td> - </td></tr>
-    <tr><td align="right"> /26 </td><td>   - </td><td>   62 
+    <tr><td align="right"> - </td><td> /26 </td><td> 62 </td><td>   -
        </td><td> /29 </td><td> 255.255.255.192 
        </td><td> - </td></tr>
-    <tr><td align="right"> /25 </td><td>  - </td><td>   126 
+    <tr><td align="right"> - </td><td> /25 </td><td> 126</td><td>  -
        </td><td> /28 </td><td> 255.255.255.128 
        </td><td> - </td></tr>
-    <tr><td align="right"> /24 </td><td> 254</td><td>   216 
-       </td><td> /27 </td><td> 255.255.255.?   
+    <tr><td align="right"> - </td><td> /24 </td><td> 254</td><td>  -
+       </td><td> /27 </td><td> 255.255.255.0   
        </td><td> Small </td></tr>
-    <tr><td align="right"> /23 </td><td>  - </td><td>   510 
-      </td><td> /26 </td><td> 255.255.254.?   
+    <tr><td align="right"> - </td><td> /23 </td><td>510</td><td>   ?
+      </td><td> /26 </td><td> 255.255.254.0   
        </td><td> - </td></tr>
-    <tr><td align="right"> /22 </td><td>   - </td><td> ?
-       </td><td> /25 </td><td> 255.255.254.?   
+    <tr><td align="right">  - </td><td>/22 </td><td>1,022</td><td> ?
+       </td><td> /25 </td><td> 255.255.252.0   
+       </td><td> - </td></tr>
+    <tr><td align="right"> - </td><td> /21 </td><td>2,046</td><td> 2,008 
+       </td><td> /24 </td><td> 255.255.248.0   
+       </td><td> Small </td></tr>
+    <tr><td align="right"> - </td><td> /20 </td><td>4,094</td><td> 4,091 
+       </td><td> /23 </td><td> 255.255.240.0   
+       </td><td> - </td></tr>
+    <tr><td align="right"> - </td><td> /19 </td><td>8,190</td><td> 8,152 
+       </td><td> /22 </td><td> 255.255.224.0   
        </td><td> Medium </td></tr>
-    <tr><td align="right"> /21 </td><td>   - </td><td> 2,008 
-       </td><td> /24 </td><td> 255.255.254.?   
+    <tr><td align="right"> - </td><td> /18 </td><td>16,382 </td><td> 16,344 
+       </td><td> /21 </td><td> 255.255.192.0   
        </td><td> Large </td></tr>
-    <tr><td align="right"> /20 </td><td>   - </td><td> 4,091 
-       </td><td> /23 </td><td> 255.255.254.?   
+    <tr><td align="right"> - </td><td> /17 </td><td>32,766 </td><td> -
+       </td><td> /21 </td><td> 255.255.128.0
        </td><td> - </td></tr>
-    <tr><td align="right"> /19 </td><td>   - </td><td> 8,152 
-       </td><td> /22 </td><td> 255.255.254.?   
-       </td><td> - </td></tr>
-    <tr><td align="right"> /18 </td><td>   - </td><td> 16,344 
-       </td><td> /21 </td><td> 255.255.254.?   
-       </td><td> - </td></tr>
-    <tr><td align="right"> /16 </td><td> 65,534 </td><td>65,456 
-       </td><td> /20 </td><td> 255.255.255.240 
-       </td><td> Maximum </td></tr>
+    <tr><td align="right"> - </td><td> /16 </td><td> 65,534 </td><td>65,456 
+       </td><td> /20 </td><td> 255.255.0.0 
+       </td><td> Maximum: Extra Large </td></tr>
     </table>
+
+    <a target="_blank" href="https://learn.cantrill.io/courses/aws-certified-advanced-networking-specialty/lectures/31662793">Hosts/subnet</a>?
 
     REMEMBER: The larger the CIDR netmask, the less hosts in the subnet.
 
@@ -626,6 +638,9 @@ PROTIP: AWS creates a default subnet for each region.
     Of the 255 possibilities in /24:<br />
     allocate the top half to private addresses:<br />
     allocate the bottom half to public addresses:
+
+    * https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13790-8.html
+    * https://www.dnsstuff.com/subnet-ip-subnetting-guide
 
 
     ### IP Subnets
