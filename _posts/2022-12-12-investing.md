@@ -23,6 +23,8 @@ There is continuing supply chain delays, a growing war in Europe.
 
 {% include whatever.html %}
 
+WARNING: This article is for informational purposes only; it should not be considered financial, tax or legal advice. You can consult a financial professional before making any significant financial decisions.
+
 I am blessed to have a job that pays well enough so that -- if I don't waste too much money -- I have some left over to invest for the future.
 
 ## Cash strategy

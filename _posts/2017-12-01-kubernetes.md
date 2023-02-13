@@ -7702,9 +7702,24 @@ covers how to set up K8s clusters from scratch and configure logging with Elasti
 
 ### EdX
 
-edX.org publishes some courses from Linux Academy.
+CNCF offers classes through edx.org at
+https://www.cncf.io/certification/training/
+free without certificates ($149 for certificate):
+reference https://github.com/cncf/curriculum/
 
-<a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
+   * <a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes#!">Introduction to Kubernetes</a> by Chris Pokorni vs. <a target="_blank" href="https://www.edx.org/course/introduction-to-kubernetes"><strong>LFS158x</strong>: Introduction to Kubernetes</a>
+   * Kubernetes Fundamentals
+   * Kubernetes for Developers
+   * Kubernetes Security Essentials
+   * Monitoring Systems and Services with Prometheus
+   * Cloud Native Logging with Fluentd
+   * Service Mesh Fundamentals
+   * Managing Kubernetes Applications with Helm
+   * Introduction to Serverless on Kubernetes
+   <br /><br />
+
+edX.org publishes some courses from Linux Founcation.
+
 
 ### CNCF
 

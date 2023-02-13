@@ -195,9 +195,9 @@ and adds additional PROTIPs and NOTEs.
 
     ### IMDS
 
-    AWS atttaches locally to every EC2 instance a "<strong>link local</strong>" static IPv4 address of <strong>169.254.169.254</strong> (IPv6: fd00:ec2::254) which only software running within the instance can access for <strong>introspection</strong> about its execution environment (its dynamic host name, events, Security Group, storage, etc.).
+    AWS atttaches locally to every EC2 instance a "<strong>link local</strong>" static IPv4 address of <strong>169.254.169.254</strong> (IPv6: fd00:ec2::254) which only software running within the instance can access for <strong>introspection</strong> about its execution environment (host name, events, Security Group, storage, etc.).
     
-    That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
+    It's also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
     <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat modeling</a>:
     Among <a target="_blank" href="https://www.cvedetails.com/vulnerability-list/vendor_id-12126/Amazon.html">AWS vulnerabilities</a>, in June 2019, attacks at <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the attack</a> <a target="_blank" href="https://www.youtube.com/watch?v=mjQ2klZ0NQo&t=392s">VIDEO</a> involves <a target="_blank" href="https://www.techtarget.com/searchsecurity/news/252516796/Hackers-exploit-vulnerable-Adminer-for-AWS-database-thefts">exposure of metadata</a> that led to leak of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
@@ -495,26 +495,12 @@ PROTIP: AWS creates a default subnet for each region.
 
     PROTIP: Instead of the expense of standing up Bastion Hosts, consider HashiCorp Boundary.
 
+7.  Consider private non-routed addresses ranges.
 
-    <a name="Avoid"></a>
-
-    ### IP Ranges commonly used
-
-    PROTIP: Ranges used by specific cloud vendors:
-    * 10.0.0.0/16 or 2001:db8:1234:1a00::/56 by AWS (see <a href="#awsvpc">diagram</a>)
-    * 10.128.0.0./9 Google
-    * 172.31.0.0/16 Azure
-    <br /><br />
-
-    <strong>REMEMBER: The CIDR block for a default AWS VPC is always 172.31.0.0/16???</strong>
-
-    Ranges used by specific geographies:
-    * 192.168.10.0/24
-    * 192.168.15.0/24 London
-    * 192.168.20.0/24 New York
-    * 192.168.25.0/24 Seattle
-    <br /><br />
-
+    PROTIP: Carefully predict how many nodes each subnet might need.
+    Once assigned, AWS VPC subnet blocks can’t be modified.
+    If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
+    then instantiate again.
 
     ### Subnet Calculators
     
@@ -528,7 +514,7 @@ PROTIP: AWS creates a default subnet for each region.
 
     <a name="NetworkClasses"></a>
 
-    ### Classes
+    ### Private Non-Routed Classes
 
     Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>):
     * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
@@ -536,15 +522,41 @@ PROTIP: AWS creates a default subnet for each region.
     * 192.168.0.0 -> 192.168.255.255 within "Class C" addresses 192 -> 223
     <br /><br />
     
+    <a name="Avoid"></a>
+
+    ### IP Ranges commonly used
+
+    PROTIP: Ranges used by specific cloud vendors:
+    * 10.0.0.0/16 or 2001:db8:1234:1a00::/56 by AWS (see <a href="#awsvpc">diagram</a>)
+    * 10.128.0.0./9 Google
+    * 172.31.0.0/16 Azure
+    <br /><br />
+
+    <strong>REMEMBER: The CIDR block for a default AWS VPC is always 172.31.0.0/16???</strong>
+
+8.  Allocate ranges by geographical regions:
+
+    Ranges used by specific geographies:
+    * 192.168.10.0/24
+    * 192.168.15.0/24 London
+    * 192.168.20.0/24 New York
+    * 192.168.25.0/24 Seattle
+    <br /><br />
+    
+    For example:
+    * 10.16 for US1
+    * 10.32 for US2
+    * 10.48 for US3
+    * 10.64 for EU
+    * 10.80 Australia
+    <br /><br />
+
+9.  Allocate ranges for production vs. DR vs. testing:
+
     PROTIP: Consider this convention:
     * Use Class A VPC CIDR 10.0.0.0/16 for <strong>production</strong> regions
     * Use Class B VPC CIDR 172.16.0.0/16 for <strong>DR (Disaster Recovery)</strong> regions
     <br /><br />
-
-    PROTIP: Carefully predict how many nodes each subnet might need.
-    Once assigned, AWS VPC subnet blocks can’t be modified.
-    If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
-    then instantiate again.
 
 
     <a name="NetmaskNodes"></a>
@@ -555,21 +567,43 @@ PROTIP: AWS creates a default subnet for each region.
     This table of nodes for each <strong>netmask</strong> Amazon allows:
 
     <table border="1" cellpadding="4" cellspacing="0">
-    <tr><th align="right"> # Nodes </th><th align="center"> Netmask </th><th align="left"> Subnet Mask </th><th> Note </th></tr>
-    <tr><td align="right">     14 </td><td align="center"> /28 </td><td> 255.255.255.240 
-       </td><td> Smallest </td></tr>
-    <tr><td align="right">     30 </td><td align="center"> /27 </td><td> 255.255.255.224 
+    <tr><th align="right"> Netmask </th><th> # IPs </th><th> # Nodes </th><th> Subnet<br />Size </th><th align="left"> Subnet Mask </th><th> Note </th></tr>
+    <tr><td align="right"> /28 </td><td>   - </td><td> 14 
+      </td><td> /31 </td><td> 255.255.255.240 
+       </td><td> Minimum </td></tr>
+    <tr><td align="right"> /27 </td><td>  - </td><td>    30 
+       </td><td> /30 </td><td> 255.255.255.224 
        </td><td> - </td></tr>
-    <tr><td align="right">     62 </td><td align="center"> /26 </td><td> 255.255.255.192 
+    <tr><td align="right"> /26 </td><td>   - </td><td>   62 
+       </td><td> /29 </td><td> 255.255.255.192 
        </td><td> - </td></tr>
-    <tr><td align="right">    126 </td><td align="center"> /25 </td><td> 255.255.255.128 
+    <tr><td align="right"> /25 </td><td>  - </td><td>   126 
+       </td><td> /28 </td><td> 255.255.255.128 
        </td><td> - </td></tr>
-    <tr><td align="right">    254 </td><td align="center"> /24 </td><td> 255.255.255.0   
+    <tr><td align="right"> /24 </td><td> 254</td><td>   216 
+       </td><td> /27 </td><td> 255.255.255.?   
+       </td><td> Small </td></tr>
+    <tr><td align="right"> /23 </td><td>  - </td><td>   510 
+      </td><td> /26 </td><td> 255.255.254.?   
        </td><td> - </td></tr>
-    <tr><td align="right">    510 </td><td align="center"> /23 </td><td> 255.255.254.0   
+    <tr><td align="right"> /22 </td><td>   - </td><td> ?
+       </td><td> /25 </td><td> 255.255.254.?   
+       </td><td> Medium </td></tr>
+    <tr><td align="right"> /21 </td><td>   - </td><td> 2,008 
+       </td><td> /24 </td><td> 255.255.254.?   
+       </td><td> Large </td></tr>
+    <tr><td align="right"> /20 </td><td>   - </td><td> 4,091 
+       </td><td> /23 </td><td> 255.255.254.?   
        </td><td> - </td></tr>
-    <tr><td align="right"> 65,534 </td><td align="center"> /16 </td><td> 255.255.255.240 
-       </td><td> Largest </td></tr>
+    <tr><td align="right"> /19 </td><td>   - </td><td> 8,152 
+       </td><td> /22 </td><td> 255.255.254.?   
+       </td><td> - </td></tr>
+    <tr><td align="right"> /18 </td><td>   - </td><td> 16,344 
+       </td><td> /21 </td><td> 255.255.254.?   
+       </td><td> - </td></tr>
+    <tr><td align="right"> /16 </td><td> 65,534 </td><td>65,456 
+       </td><td> /20 </td><td> 255.255.255.240 
+       </td><td> Maximum </td></tr>
     </table>
 
     REMEMBER: The larger the CIDR netmask, the less hosts in the subnet.
@@ -639,10 +673,10 @@ PROTIP: AWS creates a default subnet for each region.
 
     ### VPC Subnets
 
-7.  In the AWS Console GUI VPC Subnets, select each subnet defined above.
-8.  Click "Actions" menu to select "Edit subnet settings".
-9.  Check "Enable auto-assign IPv6 addresses". 
-10. Scroll to click the orange Save.
+10. In the AWS Console GUI VPC Subnets, select each subnet defined above.
+11. Click "Actions" menu to select "Edit subnet settings".
+12. Check "Enable auto-assign IPv6 addresses". 
+13. Scroll to click the orange Save.
 
     PROTIP: If the VPC is defined using Terraform instead of the GUI, the above can be coded one time for subsequent repeated use.
 
@@ -994,13 +1028,15 @@ Sub-AS can be formed inside each AS.
 
 Running within an AS (for a company) are Interior Gateway routing Protocols (IGP) -- RIP, OSPF, EIGRP, IS-IS -- concern themselves with link-states or interface costs.
 
-### EGP
+### BGP EGP
 
-BGP is sometimes called a <strong>Path Vector Routing</strong> protocol. 
+https://aws.amazon.com/blogs/networking-and-content-delivery/creating-active-passive-bgp-connections-over-aws-direct-connect/
 
 There is an iBGP (internal Border Gateway Protocol) that is a full mesh, but doesn't scale.
 
-BGP routers form "neighborships" by explicit configuration that point to each other.
+BGP is sometimes called a <strong>Path Vector Routing</strong> protocol. 
+
+BGP routers form <strong>neighborships by explicit configuration</strong> that point to each other.
 A TCP session over port 179 is established with neighbors to exchange network status.
 Handshake: Open Sent, Open Confirm, Established.
 BGP has default Keepalive of 60 seconds with 160 second hold time.
@@ -1038,32 +1074,32 @@ The <strong>best-path algorithm</strong> that runs as part of BGP considers all 
 BGP path attributes can materially affect routing behavior, in both directions, over a DX connection.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=_aLmzq-23pE">VIDEO</a>:
-REMEMBER: A commonly-used mnemonic about the top 8 <string>attributes</strong> used to prioritize BGP best-path algorithms over a DX connection:
+REMEMBER: A commonly-used mnemonic about the <string>top 8 attributes</strong> used to prioritize BGP best-path algorithms over a DX connection:
 
-<ul>We Love Oranges AS Oranges Mean Pure Refreshment</ul>
+<ul>We Love Oranges As Oranges Mean Pure Refreshment</ul>
 
 which translates to path attributes:
 
 <ul>Weight, Local Pref, Originate, AS_Path length, Origin type, MED, Paths, RouterID</ul>
 
-<a target="_blank" href="https://www.youtube.com/watch?v=SVo6cDnQQm0&t=59m32s"><em>From VIDEO by Kevin Wallace:</a><br />
+<a target="_blank" href="https://www.youtube.com/watch?v=SVo6cDnQQm0&t=59m32s"><em>From VIDEO by Kevin Wallace:</em></a><br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1676259051/bgp-memonic-2230x1008_yendkx.jpg"><img alt="bgp-memonic-2230x1008.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1676259051/bgp-memonic-2230x1008_yendkx.jpg"></a>
 
-   * Weight is a locally significant Cisco-specific parameter that a router can set when receiving updates. Commonly used to influence outbound routing decisions (based on bandwidth). A higher weight is preferred. 
+   * We: Weight is a locally significant parameter that a Cisco-specific router can set when receiving updates. Commonly used to influence outbound routing decisions (based on bandwidth). A higher weight is preferred. 
    
-   * Local Preference is considered right at the start of the best-path algorithm, and as such, is an optimal tuning parameter. It's considered throughout a single AS. This is used for both Inbound and Outbound tuning. Higher values are preferred.
+   * Love: Local Preference is considered right at the start of the best-path algorithm, and as such, is an optimal tuning parameter. It's considered throughout a single AS. This is used for both Inbound and Outbound tuning. Higher values are preferred.
 
-   * Originate specifies paths sourced locally are preferred.
+   * Oranges: Originate specifies paths sourced locally are preferred.
    
-   * AS_Path Length (like a hop count) is the number of AS in the AS_PATH attribute -- a concatenation of all the AS numbers the advertisement has passed through. It's used as a loop avoidance mechanism and as an indication of distance on the other. Prepending influences incoming. This is used for both Inbound and Outbound tuning. Shorter AS_Path lengths are preferred.
+   * As: AS_Path Length (like a hop count) is the number of AS in the AS_PATH attribute -- a concatenation of all the AS numbers the advertisement has passed through. It's used as a loop avoidance mechanism and as an indication of distance on the other. Prepending influences incoming. This is used for both Inbound and Outbound tuning. Shorter AS_Path lengths are preferred.
 
-   * Origin Type indicates how the route was injected into BGP i (network command) is preferred to e (EGP) is preferred to ? (redistributed).
+   * Oranges: Origin Type indicates how the route was injected into BGP i (network command) is preferred to e (EGP) is preferred to ? (redistributed).
 
-   * MED (Multi-Exit Discriminator) uses a metric as well. MED is typically used by an AS which is multi-homed to instruct an external AS it is peered with). That makes for a preferred entry point for a particular network address block. MED can be used for inbound tuning. Lower metric values are preferred.
+   * Mean: MED (Multi-Exit Discriminator) uses a metric as well. MED is typically used by an AS which is multi-homed to instruct an external AS it is peered with). That makes for a preferred entry point for a particular network address block. MED can be used for inbound tuning. Lower metric values are preferred.
 
-   * Paths - prefer eBGP over iBGP path.
+   * Pure: Paths - prefer eBGP over iBGP path.
 
-   * Router ID - a tie breaker. The lowest router ID is preferred.
+   * Refreshment: Router ID - a tie breaker. The lowest router ID is preferred.
 
 ## Resources #
 
