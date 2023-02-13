@@ -199,21 +199,17 @@ and adds additional PROTIPs and NOTEs.
     
     That address is also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
-    Unfortunately, <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">threat modeling</a> revealed among <a target="_blank" href="https://www.cvedetails.com/vulnerability-list/vendor_id-12126/Amazon.html">AWS vulnerabilities</a> hackers used in <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">"UNC2903" attacks</a> of <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the hack</a> <a target="_blank" href="https://www.youtube.com/watch?v=mjQ2klZ0NQo&t=392s">VIDEO</a> involves exposure of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
+    <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat modeling</a>:
+    Among <a target="_blank" href="https://www.cvedetails.com/vulnerability-list/vendor_id-12126/Amazon.html">AWS vulnerabilities</a>, in June 2019, attacks at <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the attack</a> <a target="_blank" href="https://www.youtube.com/watch?v=mjQ2klZ0NQo&t=392s">VIDEO</a> involves <a target="_blank" href="https://www.techtarget.com/searchsecurity/news/252516796/Hackers-exploit-vulnerable-Adminer-for-AWS-database-thefts">exposure of metadata</a> that led to leak of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
 
     <tt>http://169.254.169.254/latest/meta-data/iam/security-credentials/<em>$IAM_USER_ROLE</em></tt>
 
     <a target="_blank" href="https://rhinosecuritylabs.com/cloud-security/aws-security-vulnerabilities-perspective/">RhinoSecurity describes the service</a>:
     "when your application wants to access assets, it can query the metadata service to get a set of temporary access credentials. The temporary credentials can then be used to access your S3 assets and other services. Another purpose of this metadata service is to store the user data supplied when launching your instance, in-turn configuring your application as it launches."
 
-    Using the vulnerability to obtain credentials is <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> by <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a> by <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a>.
+    Using the vulnerability to obtain credentials is also <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> by <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a> by <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a>.
 
-
-    <a name="IMDSv2"></a>
-
-    ### IMDSv2
-
-    https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/
+    <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">In June 2021, Mandiant identified</a> attacks by threat group "UNC2903" which leveraged a vulnerability in the Adminer program. CVE-2021-21311 returns cloud metadata access keys in an error message.
 
     <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
     EC2 instance metadata is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
@@ -224,7 +220,15 @@ and adds additional PROTIPs and NOTEs.
     
     BTW, <a target="_blank" href="https://cloud.google.com/compute/docs/storing-retrieving-metadata">GCP has also has an instance metadata service</a>.
 
-    <a target="_blank" href="http://www.thecloudavenue.com/2019/11/changes-to-aws-ec2-instance-metadata-service.html">100 days after the attack</a>, AWS released <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">IMDSv2</a>, which uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token:
+
+    <a name="IMDSv2"></a>
+
+    ### IMDSv2
+
+       * https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/
+       <br /><br />
+
+    <a target="_blank" href="http://www.thecloudavenue.com/2019/11/changes-to-aws-ec2-instance-metadata-service.html">100 days after the attack</a>, AWS released <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">IMDSv2</a>, which uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token <tt>x-aws-ec2-metadata-token</tt>:
     
     <pre><strong>TOKEN=`curl -X PUT "http://169.254.169.254/latest/api/token" \
     -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"`
@@ -542,13 +546,15 @@ PROTIP: AWS creates a default subnet for each region.
     If you find an established VPC is too small, you’ll need to terminate all of the instances of the VPC, delete it, and then create a new, larger VPC,
     then instantiate again.
 
+
     <a name="NetmaskNodes"></a>
 
     ### NetMask Nodes
 
+    <a target="_blank" href="https://www.youtube.com/watch?v=s_Ntt6eTn94">VIDEO</a>:
     This table of nodes for each <strong>netmask</strong> Amazon allows:
 
-    <table border="1">
+    <table border="1" cellpadding="4" cellspacing="0">
     <tr><th align="right"> # Nodes </th><th align="center"> Netmask </th><th align="left"> Subnet Mask </th><th> Note </th></tr>
     <tr><td align="right">     14 </td><td align="center"> /28 </td><td> 255.255.255.240 
        </td><td> Smallest </td></tr>
@@ -945,16 +951,19 @@ REMEMBER: Up to 5 different Security Groups can be applied to a single AWS resou
 
 References:
    * http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_NACLs.html
-
+   * https://www.cidr-report.org/ reports nearly a million routes in 2023
 
 
 ## Direct Connect (DX)
 
    * https://aws.amazon.com/directconnect/sla/
+   * <a target="_blank" href="https://www.youtube.com/watch?v=_Z29ZzKeZHc">VIDEO</a>: BGP summary by F5
+   * <a target="_blank" href="https://www.youtube.com/watch?v=SVo6cDnQQm0">VIDEO</a>: BGP Deep Dive by Kevin Wallace
    <br /><br />
 
-To Direct Connect to a customer's Router.
-in each DX Location, there is a port on a DX Router which is charged <strong>per hour</strong> of use.
+On-premises locations reach AWS using the BGP (Border Gateway Protocol) though a DX (Direct Connect) router onsite.
+
+In each DX Location, there is a port on a DX Router which is charged <strong>per hour</strong> of use.
 The price is the same globally except for a few regions.
 Outgoing data transfer charges apply, too, but cheaper than going through the public internet.
 
@@ -964,41 +973,97 @@ For redundancy and higher capacity, many deploy two or more DX connections.
 
 If the DX Location is in a different region, a <strong>DX Gateway</strong> is needed.
 
-Common patterns involve using a combination of 
+BGP peering is configured between opposite ends of AWS Virtual Interfaces. 
+
+https://docs.aws.amazon.com/directconnect/latest/UserGuide/WorkingWithConnections.html
+
+Common patterns involve using a combination of <a target="_blank" href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/WorkingWithVirtualInterfaces.html">Virtual Interfaces (VIF)</a>:
    * Private Virtual Interfaces (PrivateVIF) and Direct Connect Gateway (DXGW) or
-   * Transit Virtual Interfaces (TransitVIF) and DXGW
+   * Transit attaches to Direct Connect Gateway
+   * Public VIF attaches to an Account Construct with AS_Path BGP PA support
    <br /><br />
+
+BGP peering is configured between opposite ends of AWS Virtual Interfaces. 
+
+### AS & IGP
+
+Each AS (Autonomous System) -- such as AT&T, Verizon, CenturyLink, etc. --
+is identified by a special 16 bit or 32 bit number such as 65500.
+
+Sub-AS can be formed inside each AS.
+
+Running within an AS (for a company) are Interior Gateway routing Protocols (IGP) -- RIP, OSPF, EIGRP, IS-IS -- concern themselves with link-states or interface costs.
+
+### EGP
+
+BGP is sometimes called a <strong>Path Vector Routing</strong> protocol. 
+
+There is an iBGP (internal Border Gateway Protocol) that is a full mesh, but doesn't scale.
+
+BGP routers form "neighborships" by explicit configuration that point to each other.
+A TCP session over port 179 is established with neighbors to exchange network status.
+Handshake: Open Sent, Open Confirm, Established.
+BGP has default Keepalive of 60 seconds with 160 second hold time.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=O6tCoD5c_U0" title="Computerphile">VIDEO</a>:
+Border Gateway Protocol (BGP) typically runs as an <strong>Exterior</strong> Gateway Routing protocol (EGP) connecting inter-domain ISP (Internet Service Providers).
+
+The "believability" (the lower the better):
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Routing Source </th><th> Administrative Distance </th></tr>
+<tr valign="top" align="center"><td> Connected </td><td> 0 </td></tr>
+<tr valign="top" align="center"><td> Static </td><td> 1 </td></tr>
+<tr valign="top" align="center"><td> eBGP </td><td> 20 </td></tr>
+<tr valign="top" align="center"><td> EIGRP (internal) </td><td> 90 </td></tr>
+<tr valign="top" align="center"><td> OSPF </td><td> 110 </td></tr>
+<tr valign="top" align="center"><td> IS-IS </td><td> 115 </td></tr>
+<tr valign="top" align="center"><td> RIP </td><td> 120 </td></tr>
+<tr valign="top" align="center"><td> EIGRP (external) </td><td> 190 </td></tr>
+<tr valign="top" align="center"><td> iBGP </td><td> 200 </td></tr>
+</table>
+
+An EGP is concerned with <strong>advertising</strong> address information between 
+<strong>Autonomous Systems (AS)</strong> -- responsible for the address space within.
+EGPs focus on the paths to destination. 
+
+When BGP speakers, or peers, advertise to each other Address Prefix and Length, called NLRI (Network Layer Reachability Information). 
+
+They also advertise a series of constructs called <strong>Path Attributes (PA)</strong> for Path Selection, sent in a BGP Update message. 
 
 Active-passive Border Gateway Protocol (BGP) connections are created based on 
 <a target="_blank" href="https://tools.ietf.org/html/rfc4271">RFC 4271</a>.
-
-Border Gateway Protocol (BGP) is an Exterior Gateway Routing protocol (EGP).
-An EGP is concerned with <strong>advertising</strong> address information between Autonomous Systems (AS) -- an administrative unit responsible for the address space within.
-
-Each AS is identified by a special 16 bit or 32 bit number. 
-
-Unlike Interior Gateway routing Protocols (IGP) that work within an AS and concern themselves with link-states or interface costs, EGPs focus on the paths to destination. 
-Thus they are sometimes called <strong>Path Vector Routing</strong> protocols. 
-When BGP speakers, or peers, advertise Network Layer Reachability Information (NLRI) to each other, they also advertise a series of constructs called <strong>Path Attributes (PA)</strong> sent in a BGP Update message. 
 
 The <strong>best-path algorithm</strong> that runs as part of BGP considers all routes it receives and tries to select the best ones. It uses configured policies and received path attributes when stepping through the logic until an appropriate route (or routes) are found.
 
 BGP path attributes can materially affect routing behavior, in both directions, over a DX connection.
 
-A commonly-used mnemonic about the top 8 priorities of BGP best-path algorithms over a DX connection:
+<a target="_blank" href="https://www.youtube.com/watch?v=_aLmzq-23pE">VIDEO</a>:
+REMEMBER: A commonly-used mnemonic about the top 8 <string>attributes</strong> used to prioritize BGP best-path algorithms over a DX connection:
 
 <ul>We Love Oranges AS Oranges Mean Pure Refreshment</ul>
 
-which translates to:
+which translates to path attributes:
 
-<ul>Weight, Local Pref, Originate, AS_Path, Origin, MED, Paths, RouterID</ul>
+<ul>Weight, Local Pref, Originate, AS_Path length, Origin type, MED, Paths, RouterID</ul>
 
-   * Local Pref path attribute is considered right at the start of the best-path algorithm, and as such, is an optimal tuning parameter. This is used for both Inbound and Outbound tuning. Higher values are preferred.
+<a target="_blank" href="https://www.youtube.com/watch?v=SVo6cDnQQm0&t=59m32s"><em>From VIDEO by Kevin Wallace:</a><br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1676259051/bgp-memonic-2230x1008_yendkx.jpg"><img alt="bgp-memonic-2230x1008.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1676259051/bgp-memonic-2230x1008_yendkx.jpg"></a>
 
-   * AS_Path attribute is a concatenation of all the AS numbers the advertisement has passed through. It is used as a loop avoidance mechanism on the one hand and as an indication of distance on the other. This is used for both Inbound and Outbound tuning. Shorter AS_Path lengths are preferred.
+   * Weight is a locally significant Cisco-specific parameter that a router can set when receiving updates. Commonly used to influence outbound routing decisions (based on bandwidth). A higher weight is preferred. 
+   
+   * Local Preference is considered right at the start of the best-path algorithm, and as such, is an optimal tuning parameter. It's considered throughout a single AS. This is used for both Inbound and Outbound tuning. Higher values are preferred.
 
-   * MED path attribute uses a metric as well. MED is typically used by an AS which is multi-homed to instruct an external AS it is peered with). That makes for a preferred entry point for a particular network address block. MED can be used for inbound tuning. Lower metric values are preferred.
+   * Originate specifies paths sourced locally are preferred.
+   
+   * AS_Path Length (like a hop count) is the number of AS in the AS_PATH attribute -- a concatenation of all the AS numbers the advertisement has passed through. It's used as a loop avoidance mechanism and as an indication of distance on the other. Prepending influences incoming. This is used for both Inbound and Outbound tuning. Shorter AS_Path lengths are preferred.
 
+   * Origin Type indicates how the route was injected into BGP i (network command) is preferred to e (EGP) is preferred to ? (redistributed).
+
+   * MED (Multi-Exit Discriminator) uses a metric as well. MED is typically used by an AS which is multi-homed to instruct an external AS it is peered with). That makes for a preferred entry point for a particular network address block. MED can be used for inbound tuning. Lower metric values are preferred.
+
+   * Paths - prefer eBGP over iBGP path.
+
+   * Router ID - a tie breaker. The lowest router ID is preferred.
 
 ## Resources #
 
