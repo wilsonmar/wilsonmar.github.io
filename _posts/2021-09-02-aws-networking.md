@@ -199,6 +199,14 @@ and adds additional PROTIPs and NOTEs.
     
     It's also called by the AWS <strong>IMDS</strong> (Instance Metadata Service) service to obtain <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">metadata</a> about each instance, including <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-categories.html#dynamic-data-categories">dynamic data</a> inserted into <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">user data</a> (of up to 16KB after base64-decoding) specified during creation of the instance.
 
+    <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
+    EC2 instance metadata is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
+
+    <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
+    
+    <tt>http://169.254.169.254/latest/dynamic/</tt>
+    
+
     <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat modeling</a>:
     Among <a target="_blank" href="https://www.cvedetails.com/vulnerability-list/vendor_id-12126/Amazon.html">AWS vulnerabilities</a>, in June 2019, attacks at <a target="_blank" href="https://www.capitalone.com/digital/facts2019/">CapitalOne</a> and 30 others (by an ex-AWS employee). <a target="_blank" href="http://www.thecloudavenue.com/2019/08/how-capital-one-hack-was-achieved-in-aws.html">Recreation of the attack</a> <a target="_blank" href="https://www.youtube.com/watch?v=mjQ2klZ0NQo&t=392s">VIDEO</a> involves <a target="_blank" href="https://www.techtarget.com/searchsecurity/news/252516796/Hackers-exploit-vulnerable-Adminer-for-AWS-database-thefts">exposure of metadata</a> that led to leak of credentials used to download S3 buckets or perform queries on DynamoDB or RDS databases from outside the AWS environment, starting with this call:
 
@@ -207,25 +215,24 @@ and adds additional PROTIPs and NOTEs.
     <a target="_blank" href="https://rhinosecuritylabs.com/cloud-security/aws-security-vulnerabilities-perspective/">RhinoSecurity describes the service</a>:
     "when your application wants to access assets, it can query the metadata service to get a set of temporary access credentials. The temporary credentials can then be used to access your S3 assets and other services. Another purpose of this metadata service is to store the user data supplied when launching your instance, in-turn configuring your application as it launches."
 
-    Using the vulnerability to obtain credentials is also <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> by <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a> by <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a>.
+    Since 2015, <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a> has <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> the potential vulnerability to obtain credentials with his <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a>.
 
     <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">In June 2021, Mandiant identified</a> attacks by threat group "UNC2903" which leveraged a vulnerability in the Adminer program. CVE-2021-21311 returns cloud metadata access keys in an error message.
 
-    <a target="_blank" href="https://www.youtube.com/watch?v=2B5bhZzayjI&t=22m16s" title="2019 re:Invent session by Mark Myland">DEMO</a>, <a target="_blank" href="https://d1.awsstatic.com/events/reinvent/2019/Security_best_practices_for_the_Amazon_EC2_instance_metadata_service_SEC310.pdf">PDF</a>:
-    EC2 instance metadata is <a target="_blank" href="https://www.tenchisecurity.com/blog/abusing-the-osquery-curl-table-for-pivoting-into-cloud-environments">vulnerable to</a> SSRF (Server-Side Request Forgery) attacks because when IMDSv1 was created in a less hostile world 10 years ago, it used insecure <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-dynamic-data-retrieval.html">HTTP GET requests such as</a> this (from CLI inside an EC2 instance) to list metadata keys:
+    Within Terraform, the metadata lookup HCL is:
 
-    <tt>http://169.254.169.254/latest/meta-data/ && echo</tt>
+    <pre>resource "aws_instance" "this" {
+       http_tokens = lookup(metadata_options.value, "http_tokens", "optional") ("optional")
+    }
+    </pre>
+
     
-    <tt>http://169.254.169.254/latest/dynamic/</tt>
-    
-    BTW, <a target="_blank" href="https://cloud.google.com/compute/docs/storing-retrieving-metadata">GCP has also has an instance metadata service</a>.
-
-
     <a name="IMDSv2"></a>
 
     ### IMDSv2
 
        * https://aquasecurity.github.io/tfsec/v1.28.1/checks/aws/ec2/enforce-http-token-imds/
+       * <a target="_blank" href="https://www.youtube.com/watch?v=bi3bIs92xE0" title="Feb 2022">VIDEO by Cloudnaut</a>
        <br /><br />
 
     <a target="_blank" href="http://www.thecloudavenue.com/2019/11/changes-to-aws-ec2-instance-metadata-service.html">100 days after the attack</a>, AWS released <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html">IMDSv2</a>, which uses a multi-step <strong>session-oriented</strong> handshake that starts with a PUT request to retrieve a cryptographic token <tt>x-aws-ec2-metadata-token</tt>:
@@ -340,6 +347,8 @@ and adds additional PROTIPs and NOTEs.
     * https://www.element7.io/2023/01/shift-left-security-why-you-should-use-aws-imdsv2-explained-in-detail/
     * https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/
     <br /><br />
+
+    BTW, <a target="_blank" href="https://cloud.google.com/compute/docs/storing-retrieving-metadata">GCP has also has an instance metadata service</a>.
 
 
     <a name="awsvpc"></a>
