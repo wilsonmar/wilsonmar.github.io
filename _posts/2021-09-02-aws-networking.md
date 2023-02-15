@@ -212,19 +212,19 @@ and adds additional PROTIPs and NOTEs.
 
     <tt>http://169.254.169.254/latest/meta-data/iam/security-credentials/<em>$IAM_USER_ROLE</em></tt>
 
-    <a target="_blank" href="https://rhinosecuritylabs.com/cloud-security/aws-security-vulnerabilities-perspective/">RhinoSecurity describes the service</a>:
-    "when your application wants to access assets, it can query the metadata service to get a set of temporary access credentials. The temporary credentials can then be used to access your S3 assets and other services. Another purpose of this metadata service is to store the user data supplied when launching your instance, in-turn configuring your application as it launches."
-
-    Since 2015, <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a> has <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> the potential vulnerability to obtain credentials with his <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a>.
-
-    <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">In June 2021, Mandiant identified</a> attacks by threat group "UNC2903" which leveraged a vulnerability in the Adminer program. CVE-2021-21311 returns cloud metadata access keys in an error message.
-
     Within Terraform, the metadata lookup HCL is:
 
     <pre>resource "aws_instance" "this" {
        http_tokens = lookup(metadata_options.value, "http_tokens", "optional") ("optional")
     }
     </pre>
+
+    <a target="_blank" href="https://rhinosecuritylabs.com/cloud-security/aws-security-vulnerabilities-perspective/">RhinoSecurity describes the service</a>:
+    "when your application wants to access assets, it can query the metadata service to get a set of temporary access credentials. The temporary credentials can then be used to access your S3 assets and other services. Another purpose of this metadata service is to store the user data supplied when launching your instance, in-turn configuring your application as it launches."
+
+    Since 2015, <a target="_blank" href="https://www.linkedin.com/in/andres-riancho/">Andres Riancho</a> has <a target="_blank" href="https://www.youtube.com/watch?v=2NF4LjjwoZw" title="Mar 13, 2015">demonstrated</a> the potential vulnerability to obtain credentials with his <a target="_blank" href="https://github.com/andresriancho/nimbostratus">"nimbostratus" tool</a>.
+
+    <a target="_blank" href="https://www.mandiant.com/resources/blog/cloud-metadata-abuse-unc2903">In June 2021, Mandiant identified</a> attacks by threat group "UNC2903" which leveraged a vulnerability in the Adminer program. CVE-2021-21311 returns cloud metadata access keys in an error message.
 
     
     <a name="IMDSv2"></a>
