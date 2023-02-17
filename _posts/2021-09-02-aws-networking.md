@@ -248,9 +248,9 @@ and adds additional PROTIPs and NOTEs.
     
     The secret token returned is used like a password to make subsequent PUT/POST/PATCH requests to IMDSv2 to obtain the list of metadata:
     
-    <tt>curl -H "X-aws-ec2-metadata-token: $TOKEN" \
+    <pre><strong>curl -H "X-aws-ec2-metadata-token: $TOKEN" \
     -v http://169.254.169.254/latest/dynamic/instance-identity/
-    </tt>
+    </strong></pre>
     
     The AWS CLI command associated with IMDSv2 is <tt>ec2_instance_metadata</tt>, which does not retrieve temporary security credentials.
 
@@ -523,7 +523,7 @@ PROTIP: AWS creates a default subnet for each region.
 
     <a name="NetworkClasses"></a>
 
-    ### Private Non-Routed Classes
+    ### Private Non-Routed IPv4 Classes
 
     Address ranges for private (non-routed) use (per <a target="_blank" href="http://info.internet.isi.edu/in-notes/rfc/files/rfc1918.txt">RFC 1918</a>) first octet addresses:
     * 10.0.0.0 -> 10.255.255.255     within "Class A" addresses 1 -> 126
@@ -533,6 +533,10 @@ PROTIP: AWS creates a default subnet for each region.
     * E 240 -> 255
     <br /><br />
     
+    Private IPv4 address reach public networks via a NAT.
+
+    All IPv6 addressess are publicly addressible.
+
     <a name="Avoid"></a>
 
     ### IP Ranges commonly used
