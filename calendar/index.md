@@ -3,7 +3,7 @@ layout: page
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
-date: "2022-01-03"
+date: "2023-03-10"
 file: "calendar"
 image:
 # pic white calendar 1900x500-c28.jpg
@@ -202,12 +202,21 @@ NOTE: This is a modification of
 this article</a>.
 
 
+<a name="OnePage"></a>
+
+## One Page Calendar
+
+Instead of staring at a different picture (of cats, in my wife's case) each month on the back of a traditional 12-page calendar, <a target="_blank" href="https://medium.com/starts-with-a-bang/this-one-page-calendar-will-change-how-you-view-the-year-b8ecad85eebd">NASA columnist Evan Siegel</a> <a target="_blank" href="https://bigthink.com/starts-with-a-bang/one-page-calendar/">presents</a> this for 2023, which <a target="_blank" href="https://www.timeanddate.com/calendar/repeating.html">repeats</a> on 2034, 2045, 2051, 2062, 2073, 2079, 2090, 2102, 2113, 2119, etc.:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1678644599/calendar-2023-ex_qvsd8g.webp"><img src="https://res.cloudinary.com/dcajqrroq/image/upload/v1678644599/calendar-2023-ex_qvsd8g.webp"></a>
+
+Also see: <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1678646464/calendar-2024-ly-ex_klxyh9.webp">2024</a>, <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1678646507/calendar-2025-nly-ex_qgkbun.webp">2025</a>, <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1678646612/calendar-20267_jzww6n.webp">26/27</a>, and <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1678646593/calendar-2028-ly-ex_qgsj1q.webp">2028</a>.
+
 ## Most Creative Time Each Day
 
 <a target="_blank" href="http://www.businessinsider.com/different-chronotypes-have-separate-dna-sleep-cycle-circadian-rhythm-genes-2015-9">
 NOTE</a>: Each individual has a propensity to sleep and wake at particular times during a 24 hour period. Whether you are a "morning" or "evening person" is called your "chronotype", which is biologically set in each person's unique DNA.
 
-<img width="1150" alt="calendar-chronotype-2300x660" src="https://user-images.githubusercontent.com/300046/115262953-3c5a1b00-a0f2-11eb-9fd0-d37555c31601.png">
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/115262953-3c5a1b00-a0f2-11eb-9fd0-d37555c31601.png"><img width="1150" alt="calendar-chronotype-2300x660" src="https://user-images.githubusercontent.com/300046/115262953-3c5a1b00-a0f2-11eb-9fd0-d37555c31601.png"></a>
 
 There is wide variation among various famous creatives when each go about various aspects of their lives, <a target="_blank" href="https://podio.com/site/creative-routines">
 visualized by this</a>, based on the 
