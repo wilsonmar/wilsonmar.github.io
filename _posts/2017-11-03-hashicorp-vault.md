@@ -45,7 +45,38 @@ NOTE: HashiCorp doesn't currently offer mobile apps.
 
 HashiCorp's Vault is popular because the product solves the <strong>secrets sprawl</strong> problem -- where employees create and store secrets that last too long sitting on unsecure locations such as laptops and in publicly accessible files.
 
-Ineffective secrets handling has resulted in billions lost to ransoms and the loss of reputation, reducing the value of companies and jobs -- a situation that Vault helps to avoid.
+Ineffective secrets handling has resulted in billions lost to ransoms 
+and the loss of reputation, reducing the value of companies and jobs 
+-- a situation that Vault helps to avoid.
+
+Within enterprises, Vault has a major role in achieving "<strong>Zero Trust</strong>", 
+which include ensuring that all transactions are authenticated and authorized.
+Vault provides the encryption and decryption of data in transit and at rest.
+
+
+### Dynamic secrets
+
+Vault collaborates with many other technologies (especially Enterprise ones)
+to create <strong>temporary</strong> credentials (username and password) 
+so that users do not have their <strong>static</strong> credentials sitting around waiting to be stolen.
+
+Unique abilities of Vault are that it can:
+
+* Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+
+   * https://www.hashicorp.com/blog/dynamic-database-credentials-with-vault-and-kubernetes
+   <br /><br />
+
+* Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
+
+   * https://github.com/scarolan/painless-password-rotation
+   * <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/tokens-policies/challenges/create-a-renewable-token/notes">Auto-Renew tokens</a> before its TTL expires
+   <br /><br />
+
+   This is the strong point with Vault.
+
+   https://github.com/scarolan/painless-password-rotation
+
 
 
 <a name="Origins"></a>
@@ -62,63 +93,40 @@ HashiCorp first released Vault as open-source software in 2015 at:<br />
 
 HashiCorp continues to provide Vault free under open-source licensing, with community support.
 
+<a href="#OSSVaultInstall">To install the open-source edition of Vault</a>, 
+use Homebrew on macOS, etc. 
 
-## Enterprise Ready
-
-However, HashiCorp makes money from licensing its on-prem (self-managed) enterprise software and from <strong>Vault HCP</strong> (HashiCorp Cloud Platform).
-
-Either way, licensed editions provide a GUI to ensure <strong>user self-service</strong>. That enables organizations to get up and running quickly.
-
-<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14 2020</a>, HCP Vault is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
-HCP Vault enables organizations to <strong>scale</strong> effortlessly, and without the complexity and overhead of self-managed instances.
-
-Moreover, each "organization" hosted within HCP is isolated and segmented from other organizations, to limit the "lateral movement" that exposes assess by hacked credentials.
+NOTE: HashiCorp does not offer support contracts (in addition to community support)
+on its open-source software.
 
 
-<a name="VaultSvcInstall"></a>
+## Multi-Platform
 
-## Ways to get a Vault service
+HashiCorp continues to support the largest set of operating systems.
 
-<a href="#OptionA">Option A</a>: The easiest way: Paid/licensed <a href="#VaultSaaS">Vault SaaS environments in the public cloud</a> provided by HCP (HashiCorp Cloud Platform) Vault, setup automatically using shell scripts and Terraform.
-
-<a href="#OptionB">Option B</a>: Free: <a href="#VaultAgent">install dev-mode Vault Agent on your laptop</a>, which can also provide Vault services running in memory. 
-
-<a href="#OptionC">Option C</a>: Free: <a href="#VaultCompose">on your laptop, install dev-mode Vault server using Docker Compose</a>.
-
-<a href="#OptionD">Option D</a>: <a href="#InstallServer">Install</a> a "self-managed" <strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your laptop/local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>.
-
-<a href="#OptionE">Option E</a>: Install a "self-managed" <strong>multi-node</strong> OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
-
-<a href="#OptionF">Option F</a>: In AWS, install a licensed, "self-managed" Enterprise Vault instance supporting the <a href="HashiCups">HashiCups fictional sample app</a> with a <strong>S3 backend</strong>.
-
-<hr />
-
-### Multi-Platform
-
-Vault is designed to be deployed to <strong>all major platforms</strong> (Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). This is a feature appreciated by enterprise who have legacy systems.
+Vault is designed to be deployed to <strong>all major platforms</strong> 
+(Windows, macOS, Red Hat and Ubuntu Linux, within Docker, etc.). 
+This is a feature appreciated by enterprise who have legacy systems.
 
 
-### Multi-Cloud
+## Enterprise Ready SaaS
 
-Each cloud vendor (AWS, Azure, GCP, etc.) have their own secrets handling offering.
+However, HashiCorp makes money from licensing and supporting its 
+   * on-prem (self-managed) enterprise software installed by customers, and
+   * the same enterprise software installed by HashiCorp SREs in HashiCorp's cloud <strong>Vault HCP</strong> (HashiCorp Cloud Platform).
+   <br />
 
-But HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>:
+Either way, licensed editions provide a GUI (Graphic User Interface of web pages) 
+to ensure <strong>user self-service</strong>. 
+That enables organizations to get up and running quickly.
 
-   * <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
-  
-   * <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
+Each "organization" hosted within Enterprise Vault is isolated and <strong>segmented</strong> 
+into different <strong>workspaces</strong> for different teams and projects. 
+This limits the exposure of "lateral movement" possible with stolen credentials.
 
-   * AWS External Key Store (XKS)
-
-   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
-   
-      <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
-      Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
-
-   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
-
-With Vault, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
-This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
+<a target="_blank" href="https://www.hashicorp.com/blog/vault-on-the-hashicorp-cloud-platform">Announced Oct. 14, 2020</a>, HCP Vault is a hosted SaaS (Software as a Service like Salesforce) operated by HashiCorp SREs, using the same binary as self-hosted Vault Enterprise, but with enhancements. 
+HCP Vault enables organizations to <strong>scale</strong> effortlessly, 
+and without the complexity and overhead of self-managed instances.
 
 
 <a name="EntCapabilities"></a>
@@ -146,25 +154,89 @@ Enterprise capabilities add:
    <br /><br />
 
 
+<a name="OptionB"></a>
+<a name="VaultAgent"></a>
 
-### Dynamic secrets
+## Vault Agent on laptops
 
-Unique abilities of Vault are that it can:
+REMEMBER: There are <strong>different executable editions</strong> of the Vault program 
+for open source vs. Enterprise (licensed/more secure) versions of Vault.
 
-* Generate <a href="#DynamicSecrets">dynamic secrets</a> in databases and applications which are alive too short a time to steal. Vault can replace static long-running secrets (to be stolen) with <a href="#DynamicSecrets">dynamic secrets</a> with a Time to Live (TTL) of a few hours. The system max TTL default is 32 days. The bulk of work by Vault is renewing tokens and rotating secret keys. All so that risk of unauthorized access can be minimized.
+With all Enterprise options, you would also <a href="#EntVaultInstall">install the Enterprise edition of Vault</a> on clients
+accessing Vault servers with a paid license file from HashiCorp.
+This install involves use of GPG to verify signatures of the installer.
 
-   * https://www.hashicorp.com/blog/dynamic-database-credentials-with-vault-and-kubernetes
-   <br /><br />
+REMEMBER: The Vault program can act as both a server and a client.
 
-* Rotate keys <strong>without rebooting</strong>. This is a competitive strong point with Vault.
+Installed as a client, the Vault program acts as a <strong>cache</strong> (like Redis) 
+to a central Vault server, responding to requests that can be served locally when secrets have not expired.
 
-   * https://github.com/scarolan/painless-password-rotation
-   * <a target="_blank" href="https://play.instruqt.com/study-room/invites/lkoiapro4tqp/HashiCorp-EA/tracks/tokens-policies/challenges/create-a-renewable-token/notes">Auto-Renew tokens</a> before its TTL expires
-   <br /><br />
+The <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent">Vault Agent</a> 
+is a client daemon that provides:
 
-   This is the strong point with Vault.
+   * <strong>Caching</strong> of client-side responses containing newly created tokens and responses containing leased secrets generated off of these newly created tokens.
 
-   https://github.com/scarolan/painless-password-rotation
+   * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
+
+   * Templating -- rendering of user-supplied <a target="_blank" href="https://www.vaultproject.io/docs/agent/template">template "moustache" markdown</a> , using the token generated by the Auto-Auth step. To dynamically renew destination file. Example at: https://banzaicloud.com/docs/bank-vaults/mutating-webhook/vault-agent-templating/
+
+   * Secure delivery/storage of tokens (using mTLS communications in-transit).
+
+   * Lifecycle management (renewal and re-authentication) of tokens.
+
+
+<a name="VaultSvcInstall"></a>
+
+## Ways to get a Vault service
+
+<a href="#OptionA">Option A</a>: The easiest way: use just your internet browser to access 
+<a href="#VaultSaaS"><strong>Vault SaaS environments in the public cloud</strong></a>,
+setup by HCP (HashiCorp Cloud Platform) SREs.
+
+<a href="#OptionB">Option B</a>: Free: 
+<a href="#VaultAgent">install a free <strong>dev-mode Vault server on your laptop</strong></a><br />
+to provide Vault services and data running in memory only for demos and training purposes.
+
+<a href="#OptionC">Option C</a>: Free: 
+<a href="#VaultCompose">Install Docker Compose on your laptop</a>, also<br />
+to provide Vault services and data running in memory only for demos and training purposes.
+
+<a href="#OptionD">Option D</a>: 
+<a href="#InstallServer">Install</a> a "self-managed" 
+<strong>single-node</strong> OSS Vault server using Packer to create a <strong>Docker image</strong> you install in your laptop/local machine for developer learning, based on <a target="_blank" href="https://github.com/hashicorp/vault-guides/blob/master/operations/provision-vault/best-practices/terraform-aws">"Provision a Best Practices Vault & Consul Cluster on AWS with Terraform"</a>.
+
+<a href="#OptionE">Option E</a>: Install a "self-managed" <strong>multi-node</strong> 
+OSS Vault server you install in your cloud environment (<a href="#AWS">AWS</a>, Azure, GCP, etc.). For HA (High Availability), <a target="_blank" href="https://learn.hashicorp.com/vault/operations/raft-reference-architecture">the "Vault with Integrated Storage Reference Architecture" document</a> recommends a Consul cluster with 5 Vault nodes over 3 availability zones (within a single Region). <a href="#InstallEKS">AWS EKS cluster</a>. Each node would use a TLS certificate for HTTPS protocol use.
+
+<a href="#OptionF">Option F</a>: Install a <strong>production</strong>, licensed, "self-managed" 
+Enterprise Vault instance. Various example configurations make use of various "feature flags" 
+and defaults to compose a particular combination consisting of, for example:
+   * AWS, Azure, GCP cloud
+   * Number of nodes in Kubernetes (EKS, AKS, GKE)
+   * inclusion of <a href="HashiCups">HashiCups fictional sample app</a> with a database
+   * etc.
+
+### Multi-Cloud
+
+Each cloud vendor (AWS, Azure, GCP, etc.) have their own secrets handling offering.
+
+But HashiCorp Vault adds the distinct advantage of being able to <strong>work either inside and outside each of several clouds</strong>:
+
+   * <a target="_blank" href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a> is a service (managed by AWS) to rotate, manage, and retrieve any credentials, API keys, or secrets to encrypt EBS volumes, Dynamo DB, S3 objects. I
+  
+   * <a target="_blank" href="https://aws.amazon.com/kms/">AWS KMS (Key Management Server)</a> is used by AWS Secrets Manager and other services to generate new keys using various encryption algorithms based onn imported key material. See https://github.com/awsdocs/aws-kms-developer-guide/tree/master/doc_source
+
+   * AWS External Key Store (XKS)
+
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/services/key-vault/">Azure Key Vault</a>
+   
+      <a target="_blank" href="https://www.udemy.com/course/azure-key-vault-the-complete-introduction/">NOTE</a>:
+      Azure has higher "Premium" prices for use of it HSM (Hardware Security Module), which <a target="_blank" href="https://azure.microsoft.com/en-us/pricing/details/key-vault/">stores up to 5,000 key vault keys and the ability to access their keys from any device.</a> The subscription price for Azure key vault is $5 per user per month. First 250 keys are $5 per month. For more keys, it costs $2.50 per month, and then 90 cents per month.
+
+   * <a target="_blank" href="https://cloud.google.com/secret-manager">GCP Secret Manager</a>
+
+With Vault, a particular secret can be added within AWS and then retrieved from within an Azure cloud.
+This is a requirement for true enterprise capability, due to needs imposed by corporate mergers and acquisitions.
 
 
 ### Centralized Administration of Secrets
@@ -205,7 +277,25 @@ Also, HashiCorp supports its enterprise services partners via a team specializin
 Vault is FIPS-certified, so it does not require any special/proprietary hardware such as physical HSMs (Hardware Security Modules).
 
 
-   References to HCP: 
+<hr />
+
+<em>Let's start with the easiest way:</em>
+
+<a name="OptionA"></a>
+<a name="VaultSaaS"></a>
+
+## Option A. The easiest way to Vault: HCP 
+
+In 2021, Vault SaaS on AWS became available from HashiCorp 
+so that companies can now obtain the benefit of 
+<strong>multi-region stand-by disaster recovery</strong> 
+and <a href="#EntCapabilities">other enterprise capabilities</a> 
+without the need to employ people to keep that running 24/7.
+
+Documentation on HCP Vault in the cloud:
+   * <a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>: Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
+   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a>
+   * https://developer.hashicorp.com/vault/tutorials/cloud
    * <a target="_blank" href="https://cloud.hashicorp.com/products/vault">https://cloud.hashicorp.com/products/vault</a>
    * https://developer.hashicorp.com/hcp/docs/hcp#how-does-hcp-work
    * https://developer.hashicorp.com/hcp/docs/vault
@@ -216,23 +306,6 @@ Vault is FIPS-certified, so it does not require any special/proprietary hardware
    * https://portal.cloud.hashicorp.com/sign-in
    <br /><br />
 
-<hr />
-
-<em>Let's start with the easiest way:</em>
-
-<a name="OptionA"></a>
-<a name="VaultSaaS"></a>
-
-## Option A. The easiest way to Vault: HCP 
-
-In 2021, Vault SaaS became available from HashiCorp so that companies can now obtain the benefit of <strong>multi-region stand-by disaster recovery</strong> and <a href="#EntCapabilities">other enterprise capabilities</a> without the need to employ people to keep that running 24/7.
-
-Documentation on HCP Vault are at:
-   * <a target="_blank" href="https://github.com/hashicorp/vault-guides/tree/master/operations/provision-vault/dev/terraform-aws">BLOG</a>: Start iteracting with a Vault instance, even on a Chromebook, by getting a Vault cloud instance:
-   * <a target="_blank" href="https://cloud.hashicorp.com/docs/vault">https://cloud.hashicorp.com/docs/vault</a>
-   * https://developer.hashicorp.com/vault/tutorials/cloud
-   <br /><br />
-   
 ### Get in HCP first time
 
 1. At <a target="_blank" href="https://portal.cloud.hashicorp.com/sign-up?product_intent=vault">https://portal.cloud.hashicorp.com/sign-up?product_intent=vault</a> or, alternately, <a target="_blank" href="https://www.vaultproject.io/">https://www.vaultproject.io</a> click <strong>Try Cloud</strong>.
@@ -449,40 +522,31 @@ Documentation on HCP Vault are at:
 
     <a name="WebUI"></a>
 
+    #### WebUI by people
+
 17. "Web UI" under "Access Vault".
 
-    That is equivalent to clicking "Access web UI" Public link. Both open a new tab at URL such as:
+    That is equivalent to clicking "Access web UI" Public link. 
+    Both open a new tab at URL such as:
 
     https://bonkers-public-vault-c6443333.9d787275.z1.hashicorp.cloud:8200/
 
-    ### HCP Vault User Sign-In
+
+    <a name="HCPAdminSignIn"></a>
+
+    ### HCP Vault Admin User Sign-In
 
     <img alt="vault-hcp-signin-468x397.jpg" width="468" height="397" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675396720/vault-hcp-signin-468x397_g5twps.jpg">
    
+    The "Method" is also called the "Auth" (Authentication) Method.
 
-    <a name="DefaultAuthMethods"></a>
-
-    ### Default Auth Methods
-
-    The authentication methods that Vault supports, out of the box:
-
-    <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"><img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
-   
-    * Token (Vault's default Auth Method)
-    * Username (such as an email address used on many legacy websites)
-    * LDAP auth method enables user authentication using an existing LDAP server while
-    * Okta (third-party identity provider)
-    * JWT
-    * OIDC
-    * RADIUS (legacy Windows Active Directory)
-    * GitHub (coordinated using OIDC protocol)
-    <br /><br />
+    <a href="#DefaultAuthMethods">Details about other default Auth Methods in a section below</a>.
 
     <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE&t=4m42s">VIDEO</a>:
-19. At the HCP Vault cluster Overview page for your project:
-20. Click "Generate token" (Under "New admin token") and wait a few seconds for "Fetching".
-21. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
-22. Switch to the "Sign in to Vault" browser page. Select Method "Token" and paste in the Token field. Click "Sign In". You should now see a list of <strong>Secrets Engines</strong> with this top menu:
+18. At the HCP Vault cluster Overview page for your project:
+19. Click "Generate token" (Under "New admin token") and wait a few seconds for "Fetching".
+20. Click "Copy" for "Copied" (when the VAULT_TOKEN is copied into your Clipboard).
+21. Switch to the "Sign in to Vault" browser page. Select Method "Token" and paste in the Token field. Click "Sign In". You should now see a list of <strong>Secrets Engines</strong> with this top menu:
 
     ### HCP GUI Menu
 
@@ -506,7 +570,7 @@ Documentation on HCP Vault are at:
     
     ### Sign Out
 
-23. PROTIP: Don't keep sessions open when you don't need it.
+22. PROTIP: Don't keep sessions open when you don't need it.
 
     Click on the head icon at the upper-right corner and select "Sign Out":
 
@@ -517,18 +581,18 @@ Documentation on HCP Vault are at:
 
     ### Setup HCP Vault Access from CLI
 
+    <a name="getVAULT_NAMESPACE"></a>
+
+    This is for after clicking "Command-line (CLI)" from the HCP "Access Vault":
+
+    <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
+
     Access to a Vault client from a CLI Terminal requires these environment variables:
 
     * VAULT_ADDR (the URL to the Vault cluster)
     * <a href="#getVAULT_NAMESPACE">VAULT_NAMESPACE</a>
     * <a href="#getVAULT_TOKEN">VAULT_TOKEN</a> (equivalent to a password)
     <br /><br />
-
-    <a name="getVAULT_NAMESPACE"></a>
-
-2.  Click "Command-line (CLI)" from the "Access Vault":
-
-    <img alt="hcp-vault-menu-cli-211x199.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675166449/hcp-vault-menu-cli-211x199_hrlxpf.jpg">
 
 3.  Click the icon for "Telling Vault where to find this cluster" 
 
@@ -601,64 +665,63 @@ Computers talk to each other using API calls. Vault provides to application prog
 
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"><img alt="hashicorp-vault-auth-flow-1018x268" src="https://user-images.githubusercontent.com/300046/147319306-482e5d40-16cb-4184-baee-71d9a4224aab.png"></a>
 
-   1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
+1. Application Authenticate with Vault (which coordinates with enterprise email, SMIL, and LDAP systems)
 
-   2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
+2. Vault verifies the identity of the application with a Trusted Platform (AWS, etc.)
    
-   3. Verification is obtained
+3. Verification is obtained
    
-   4. Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
+4.  Return a client token for the application. The token has an <a href="#AttachedPolicy">attached policy</a>, which is mapped at authentication time, as the policy is deny all capabilities by default.
+
+<a name="SecretsEngines"></a>
+
+## Types of secrets engines
+
+Vault provides <a href="#SecretsEngines">secrets engines</a> to work with each type of secret,
+each a "<a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-cases">use case</a>" for the Vault product:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
+
+Behind its "cryptographic barrier", the <strong>KV</strong> Secrets Engine stores secrets such as these :
+
+   * Passwords associated with userids typed in to login web applications. 
+
+   * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
+
+   * X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA. (The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as define in <a target="_blank" href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a DER-encoded PKCS 8 PrivateKeyInfo, as specified in <a target="_blank" href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>)
+
+   * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
+
+   * API Keys provided by programs to obtain data from servers
+
+   * database credentials
+
+Secrets engines listed alphabetically:
+
+   * Active Directory (AD)
+
+   * AliCloud
+   * AWS
+   * Azure (cloud from Microsoft)
+   * Consul (from HashiCorp)
+   * GoogleCloud
+   * GoogleCloud KMS (Key Managerment Service)
+
+   * <strong>kmip</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
+
+   * <strong>kv</strong> (Key/Value), the most basic to store password (like 1Password)
+   * <strong>nomad</strong> (from HashiCorp)
+   * RabbitMQ messagging
+   * <strong>pki</strong> (Public Key Infrastructure used by Microsoft, etc.)
+   * <strong>ssh</strong> (Secure Shell used by Linux)
+   * <strong>sys</strong> is the default system engine
+   * <strong>totp</strong> (Time-based One-time Password, as defined by <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
+   * <strong>transit</strong> (from HashiCorp)
    <br /><br />
 
-    <a name="SecretsEngines"></a>
+PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
 
-    ## Types of secrets engines
-
-    Vault provides <a href="#SecretsEngines">secrets engines</a> to work with each type of secret,
-    each a "<a target="_blank" href="https://developer.hashicorp.com/vault/docs/use-cases">use case</a>" for the Vault product:
-
-    <a target="_blank" href="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"><img width="1460" alt="vault-secrets-engines-1460x1048" src="https://user-images.githubusercontent.com/300046/159198787-3125663a-58fc-4b2e-9322-2591327f0a4a.png"></a>
-
-    Behind its "cryptographic barrier", the <strong>KV</strong> Secrets Engine stores secrets such as these :
-    
-       * Passwords associated with userids typed in to login web applications. 
-   
-       * Tokens - a sensitive value created for an unrelated value, such as <a target="_blank" href="https://learn.hashicorp.com/tutorials/nomad/hashicorp-enterprise-license?in=vault/enterprise">enterprise software license keys</a>
-
-       * X.509 certificates for SSL/TLS (traceabile to public root CAs) to encrypt and decrypt data in transit, but generated without going through the manual process of generating a private key and CSR submitted to a root CA. (The public key is a DER-encoded X.509 SubjectPublicKeyInfo, as define in <a target="_blank" href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a DER-encoded PKCS 8 PrivateKeyInfo, as specified in <a target="_blank" href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>)
-
-       * Asymmetric Keys to encrypt and decrypt data stored (at-rest)
-
-       * API Keys provided by programs to obtain data from servers
-
-       * database credentials
-
-    Secrets engines listed alphabetically:
-   
-       * Active Directory (AD)
-  
-       * AliCloud
-       * AWS
-       * Azure (cloud from Microsoft)
-       * Consul (from HashiCorp)
-       * GoogleCloud
-       * GoogleCloud KMS (Key Managerment Service)
-  
-       * <strong>kmip</strong> is the <a target="_blank" href="http://docs.oasis-open.org/kmip/spec/v1.4/kmip-spec-v1.4.html">OASIS-defined</a> industry-standard <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/adp/kmip-engine">KMIP</a> (Key Management Interoperability Protocol) to secure transfer (delegation) of secrets among different systems.
-    
-       * <strong>kv</strong> (Key/Value), the most basic to store password (like 1Password)
-       * <strong>nomad</strong> (from HashiCorp)
-       * RabbitMQ messagging
-       * <strong>pki</strong> (Public Key Infrastructure used by Microsoft, etc.)
-       * <strong>ssh</strong> (Secure Shell used by Linux)
-       * <strong>sys</strong> is the default system engine
-       * <strong>totp</strong> (Time-based One-time Password, as defined by <a target="_blank" href="https://datatracker.ietf.org/doc/html/rfc6238)">RFC 6238</a>)
-       * <strong>transit</strong> (from HashiCorp)
-       <br /><br />
-
-    PROTIP: Some secrets engines, such as Microsoft AD (Active Directory) and KMIP, are managed using only CLI/API rather than GUI.
-
-    PROTIP: Within Vault, key material and metadata about Secret Engines are stored as a root folder.
+PROTIP: Within Vault, key material and metadata about Secret Engines are stored as a root folder.
 
 
 <a name="Cost"></a>
@@ -1129,65 +1192,71 @@ The $295 exam fee <a target="_blank" href="https://hashicorp-certifications.zend
 
 <hr />
 
-<a name="OptionB"></a>
-<a name="VaultAgent"></a>
-
-## Vault Agent on laptops
-
-The <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent">Vault Agent</a> is a client daemon that provides:
-
-   * Caching of client-side responses containing newly created tokens and responses containing leased secrets generated off of these newly created tokens.
-
-   * Automatic authentication to Vault -- manage the token renewal process for locally-retrieved <a href="#DynamicSecrets">dynamic secrets</a>.
-
-   * Templating -- rendering of user-supplied <a target="_blank" href="https://www.vaultproject.io/docs/agent/template">template "moustache" markdown</a> , using the token generated by the Auto-Auth step. To dynamically renew destination file. Example at: https://banzaicloud.com/docs/bank-vaults/mutating-webhook/vault-agent-templating/
-
-   * Secure delivery/storage of tokens (using mTLS communications in-transit).
-
-   * Lifecycle management (renewal and re-authentication) of tokens.
-
-
 <a name="Protocols"></a>
 <a name="AuthMethods"></a>
 
-## Auth Methods
+<a name="DefaultAuthMethods"></a>
 
-Auth methods perform authentication to verify the user or machine-supplied information. 
+## Auth Methods for people
 
-A protocol for Auth Methods is selected by each user (if configured):
+Auth (authorization) methods perform authentication to verify the user or machine-supplied information. 
 
-1. When logged into Vault, the default method is Token:
+* On a GUI, click inside the Authentication Method value for a drop-down of what Vault supports, out of the box:
+
+    <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"><img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
+   
+    The default method is "Token", such as the one issued to the Administrator when the Vault server was created.
+    
+    Auth methods are also named by the <strong>protocol</strong> used to communicate
+    (such as LDAP, OIDC, JWT), the software (such as "RADIUS"),
+    and the name of companies offering software (such as "Okta" and "GitHub").
+
+    * Token (Vault's default Auth Method)
+    * Username (such as an email address used on many legacy websites)
+    
+    * LDAP auth method enables user authentication using an existing LDAP server while
+    * Okta (third-party identity provider)
+    * JWT
+    * OIDC
+    
+    * RADIUS (legacy Windows Active Directory)
+    * GitHub (coordinated using OIDC protocol)
+    <br /><br />
+
+    REMEMBER: An Auth Methods shown to users in a drop-down may be <strong>enabled</strong> 
+    on the Vault server.
+
+    In addition the above, Vault supports the <a href="#AppRole">"AppRole" Auth Method</a> 
+    used between computer-to-computer APIs.
+
+* The list above is also shown on the Admin's Terminal from this command:
 
    <tt>vault auth list</tt>
+
+   Sample output:
 
    <pre>Path    Type   Accessor             Description              Version
    ----    ----   --------             -----------              -------
    token/  token  auth_token_c635dfe4  token based credentials  n/a
    </pre>
 
-    <a title="_blank" href="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"><img width="439" alt="vault-sign-in-878x646" src="https://user-images.githubusercontent.com/300046/159199057-97054080-4b15-4a43-b47d-984336e2c0ae.png"></a>
-   
-   * Token
-   * Username
-   * LDAP auth method enables user authentication using an existing LDAP server while
-   * Okta
-   * JWT
-   * OIDC
-   * RADIUS
-   * GitHub
-   <br /><br />
-
    * AppRole auth method is recommended for server machines or apps handling automated workflows
    <br /><br />
+
+   ## Login with Default Auth Token
+
+1. Log into Vault using the vault CLI:
+
+   <pre><strong>vault login -method=github token="${VAULT_TOKEN}
+   </strong></pre>   
+
+   ### Adding Auth Method
 
 2. On developer machines, the GitHub auth method (<tt>auth/github</tt>) is easiest to use. 
 
    <tt>vault auth enable github</tt>
 
-3. Log into Vault using the vault CLI:
-
-   <pre><strong>vault login -method=github token="${VAULT_TOKEN}
-   </strong></pre>   
+   ### Cubbyhole
 
    To ensure that no secret value is transmitted across the wire, Vault's <strong>cubbyhole response wrapping</strong> is used where the initial token is stored in the cubbyhole <a href="#SecretsEngines">secrets engines</a>. 
    A reference to the secret within a cubbyhole.
@@ -1201,10 +1270,12 @@ A protocol for Auth Methods is selected by each user (if configured):
    
    However, secrets in the key/value <a href="#SecretsEngines">secrets engine</a> are accessible to other tokens if its policy allows it.
 
-4. Configure GitHub engineering team authentication to be granted the default and application policies:
+3. Configure GitHub engineering team authentication to be granted the default and application policies:
 
    <pre>vault write auth/github/map/teams/engineering value=default,applications</pre>
 
+
+<hr />
 
 <a name="AppRole"></a>
 
@@ -1378,27 +1449,27 @@ Secrets engines are Vault plugins that store, generate, or encrypt data. Secrets
 
 ### TODO: Backup cluster data
     
-    PROTIP: TODO: Before the cluster is deleted or destroyed, make it possible to restore the current state of data: automate the periodic capture of snapshots of data to a safe place. Then practice Disaster Recovery.
+PROTIP: TODO: Before the cluster is deleted or destroyed, make it possible to restore the current state of data: automate the periodic capture of snapshots of data to a safe place. Then practice Disaster Recovery.
 
-    PROTIP: TODO: To ensure that hackers can't delete the backups so they can demand ransoms, set permissions so the account to create backups cannot be also used to delete them.
+PROTIP: TODO: To ensure that hackers can't delete the backups so they can demand ransoms, set permissions so the account to create backups cannot be also used to delete them.
 
 ### Delete cluster
     
-    PROTIP: Rather than letting the cluster sit idle racking up charges, delete it after taking a snapshot so that it can be used to restore the cluster the way it was.
+PROTIP: Rather than letting the cluster sit idle racking up charges, delete it after taking a snapshot so that it can be used to restore the cluster the way it was.
 
-    <img alt="vault-hcp-manage-drop-410x306.jpg" width="410" height="306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675389154/vault-hcp-manage-drop-410x306_ehwn0c.jpg">
+<img alt="vault-hcp-manage-drop-410x306.jpg" width="410" height="306" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1675389154/vault-hcp-manage-drop-410x306_ehwn0c.jpg">
 
-    ### Restore cluster data
+### Restore cluster data
 
-    TODO: To bring data from a previous instance ...
+TODO: To bring data from a previous instance ...
 
 <hr />
 
-    <a name="Config"></a>
+<a name="Config"></a>
 
-    ### Configure for Authentication
+### Configure for Authentication
 
-2.  Configure at least one audit device to write log (before completing the request):
+1.  Configure at least one audit device to write log (before completing the request):
 
     <pre><strong>vault audit enable file file_path=/var/log/vault_audit.log</strong></pre>
 
@@ -1410,16 +1481,16 @@ Secrets engines are Vault plugins that store, generate, or encrypt data. Secrets
 
     <a target="_blank" href="https://learn.hashicorp.com/tutorials/cloud/terraform-hcp-provider-vault?in=vault/cloud-ops">Tutorial: Deploy HCP Vault with Terraform</a> example scenario automatically deploys an AWS VPC, and peers it with your HashiCorp Virtual Network (HVN).
 
-3.  To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
+2.  To learn Vault configuration, view <a target="_blank" href="https://www.youtube.com/watch?v=FxcUf2spssE">VIDEO: A Quickstart Guide</a>
 
    Connection between AWS VPC and HCP HVN is using VPC Peering.
 
-4. Click "Manage" to Import to Terraform:
+3. Click "Manage" to Import to Terraform:
 
    <pre>terraform import hcp_vault_cluster.&LT;RESOURCE_NAME> vault-cluster</pre>
 
-5. Click "Access Vault" for "Command-line (CLI)".
-6. Click "Use public URL" and click the copy icon to save to your Clipboard, for example:
+4. Click "Access Vault" for "Command-line (CLI)".
+5. Click "Use public URL" and click the copy icon to save to your Clipboard, for example:
 
    <pre>export VAULT_ADDR="https://vault-cluster.vault.a17838e5-60d2-4e49-a43b-cef519b694a5.aws.hashicorp.cloud:8200"; 
 export VAULT_NAMESPACE="admin"
@@ -1880,7 +1951,8 @@ cluster_name = "my_cluster"
 ## Using Vaultenv with GitHub 
 
 <a target="_blank" href="https://github.com/channable/vaultenv">
-https://github.com/channable/vaultenv</a> populates values in OS environment variables referenced within programming code by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv does not run anymore.
+https://github.com/channable/vaultenv</a> populates values in OS environment variables 
+referenced within programming code by making a syscall from the exec family. Vaultenv replaces its own process with your app. After your service has started, vaultenv does not run anymore.
 
 Vaultenv retrieves secrets using REST API calls of KV (Key Value) pairs based on "behavior configuration files" specified in the following files traveling with the programming code:
 
@@ -2087,15 +2159,7 @@ kubectl apply -f k8s/products-api.yml
    </pre>
 
 
-<a name="InstallClient"></a>
-
-### B. Vault on clients
-
-REMEMBER: There are different executable editions of the Vault program for open source vs. Enterprise (licensed/more secure) versions of Vault.
-
-a. <a href="#EntVaultInstall">To install the Enterprise edition of Vault</a>, install a license file from HashiCorp and GPG to verify signatures of the installer.
-b. <a href="#OSSVaultInstall">To install the open-source edition of Vault</a>, you can use Homebrew (described below)
-<br /><br />
+yyy
 
 <hr />
 
