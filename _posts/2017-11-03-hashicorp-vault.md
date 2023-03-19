@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-02-01"
+date: "2023-03-18"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
@@ -1932,11 +1932,11 @@ A. <a href="#CloudService">Vault cloud service</a>
    * Azure Vault (https://jpvelasco.com/test-driving-the-azure-key-vault-client-samples/)
    <br /><br />
 
-B. <a href="Homebrew">Use Homebrew to install Vault locally on MacOS</a>.
+B. <a href="InstallClient">Install the Vault client locally on MacOS using a license and GPG</a>.
 
 C. <a href="#DockerHub">Pull an image from Docker Hub</a> 
 
-D. <a href="#BinaryInstall">Download from HashiCorp to install locally</a>.
+D. <a href="#EntVaultInstall">Download from HashiCorp to install locally</a>.
 
 E. <a href="#Dockerfile">Use a Dockerfile to build your own Docker image.</a> 
    if you're not using vault frequently, and want to get the latest when you do.
@@ -2086,14 +2086,31 @@ vault kv delete kv/db/postgres/product-db-creds
 kubectl apply -f k8s/products-api.yml
    </pre>
 
-<a name="Homebrew"></a>
 
-### B. Homebrew on MacOS
+<a name="InstallClient"></a>
 
-   If you're going to be using Vault a lot on your Mac, install using Homebrew:
+### B. Vault on clients
 
-1. In a Terminal...
-1. See that there are several packages with the name "vault":
+REMEMBER: There are different executable editions of the Vault program for open source vs. Enterprise (licensed/more secure) versions of Vault.
+
+a. <a href="#EntVaultInstall">To install the Enterprise edition of Vault</a>, install a license file from HashiCorp and GPG to verify signatures of the installer.
+b. <a href="#OSSVaultInstall">To install the open-source edition of Vault</a>, you can use Homebrew (described below)
+<br /><br />
+
+<hr />
+
+<a name="OSSVaultInstall"></a>
+
+#### B.a. Open Sourced Vault Install
+
+1. Vault is open-sourced at 
+
+   <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a><br />
+   with a marketing home page at<br />
+   <a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
+
+2. In a Terminal...
+3. See that there are several packages with the name "vault":
 
    <pre><strong>brew search vault</strong></pre>
 
@@ -2112,7 +2129,7 @@ If you meant "vault" specifically:
 It was migrated from homebrew/cask to homebrew/core.
    </pre>
 
-2. Verify the source:
+4. Verify the source:
 
    <pre><strong>brew info vault</strong></pre>
 
@@ -2152,9 +2169,9 @@ build-error: 6 (30 days)
 
    Notice from above that "Go" is a pre-requisite. So...
 
-2. <a target="_blank" href="https://wilsonmar.github.io/golang">Install pre-requisite Go language</a>:
+5. <a target="_blank" href="https://wilsonmar.github.io/golang">Install pre-requisite Go language</a>:
 
-2. Install Vault client on MacOS using Homebrew:
+6. Install Vault client on MacOS using Homebrew:
 
    <pre><strong>brew install vault</strong></pre>
 
@@ -2189,10 +2206,64 @@ Removing: /usr/local/Cellar/vault/1.9.2... (8 files, 178.7MB)
   Built from source on 2019-11-18 at 05:05:44
    </pre>
 
-1. The great thing with Homebrew is you can upgrade and uninstall easily.
+7. The great thing with Homebrew is you can upgrade and uninstall easily.
 
    <pre><strong>brew upgrade vault
    </strong></pre>
+
+8. <a href="#VerifyClientInstall">Verify install of Vault client</a>.
+
+<hr />
+
+<a name="EntVaultInstall"></a>
+
+### B.b. Vault Enterprise client install
+
+1. HashiCorp's steps for installing Vault are at
+
+   <a target="_blank" href="https://vaultproject.io/docs/install/">
+   https://vaultproject.io/docs/install</a>.
+
+2. Installers for a large number of operating systems are downloaded from HashiCorp's website:
+
+   <a target="_blank" href="https://www.vaultproject.io/downloads.html">
+   https://www.vaultproject.io/downloads.html</a>
+
+   * vault_0.7.3_darwin_amd64.zip for Mac 64 expands to a vault app of 59.6 MB.
+   <br /><br />
+
+3. Verify the SHA256 hash to ensure that not a single bit was lost during download.
+
+4. On a Mac, drag and drop the Vault.app file to your root Applications folder.
+
+5. <a target="_blank" href="https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux">Set the PATH</a> to Vault.
+
+6. Double-click on the vault app.
+
+   If you get an error that the binary could not be found, then your PATH environment variable was not setup properly. 
+
+   This automated script should install vault at version 0.1.2 into folder:
+
+   <strong>/opt/vault_0.1.2</strong>
+
+   (the current version for you will likely be different that 0.1.2).
+
+   The installer configures itself by default to listen on localhost port 8200, 
+   and registers it as a service called vault-server.
+
+   NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5.6/lib/train/transports/clients/azure/vault.rb</tt>
+
+7. To uninstall, move that folder to trash.
+
+8. <a href="#VerifyClientInstall">Verify install of Vault client</a>.
+
+<hr />
+
+<a name="VerifyClientInstall"></a>
+
+### Verify Vault client install
+
+   <em>No matter how it was installed:</em>
 
 1. Verify version
 
@@ -2232,25 +2303,139 @@ Vault v1.9.4 ('fcbe948b2542a13ee8036ad07dd8ebf8554f56cb+CHANGES')
 
    <pre>/usr/local/bin/vault</pre>
 
-   
-   ### Install Autocompletes
 
-4. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
+   ### Run Vault in dev mode
+
+4. <a target="_blank" href="https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-dev-server">Start Vault in Developer mode</a>
+
+   <pre><strong>vault server -dev
+   </strong></pre>
+
+   Sample response:
+
+   <pre>WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
+and starts unsealed with a single unseal key. The root token is already
+authenticated to the CLI, so you can immediately begin using Vault.
+&nbsp;
+You may need to set the following environment variable:
+&nbsp;
+    $ export VAULT_ADDR='http://127.0.0.1:8200'
+&nbsp;
+The unseal key and root token are displayed below in case you want to
+seal/unseal the Vault or re-authenticate.
+&nbsp;
+Unseal Key: qvAfCZEkFHS1dYYba8adz5wXHSQe1I9LjoHUbxCrEo4=
+Root Token: s.dqqznrQAJNiLrU9mX3eT8q2p
+&nbsp;
+Development mode should NOT be used in production installations!
+   </pre>
+
+   REMEMBER: Like other programs run from a Terminal command, 
+   the session runs until you press <strong>control+C</strong> to stop it.
+
+   Alternately, if you want to configure the port used (instead of the default 8200):
+
+   <pre><strong>vault server -dev -dev-listen-address=0.0.0.0:8300 \
+   -dev-root-token-id=root
+   </strong></pre>
+
+   Alternately, define complex parameters in a hcl file in the current folder:
+
+   <pre><strong>vault server -config=config-file.hcl
+   </strong></pre>
+
+   <a name="CheckSealStatus"></a>
+
+   ### Check Vault Seal Status
+
+   TODO: Run <tt>ps</tt>
+
+1. Open a new Terminal session to verify whether Vault is sealed (from usage) or unsealed (default Sealed = false):
+
+   <pre><strong>vault status
+   </strong></pre>
+
+   If the Vault service is not running, you'll see:
+   <pre>Error checking seal status: Get "https://127.0.0.1:8200/v1/sys/seal-status": dial tcp 127.0.0.1:8200: connect: connection refused</pre>
+
+   If the Vault service is unsealed, the expected response is:
+
+   <pre>Key               Value
+   ---                    -----
+   Recovery Seal Type     shamir
+   Initialized            true
+   <strong>S
+   /aled                  false</strong>
+   Total Recovery Shares  5
+   Threshold              3
+   Version                  1.9.4+ent
+   Storage Type             raft
+   Cluster Name             vault-cluster-ac95e06f
+   Cluster ID               30255f02-0dd4-cc7e-9bad-616790463be9
+   HA Enabled               true
+   HA Cluster               https://vault-server:8201
+   HA Mode                  active
+   Active Since             2022-06-19T16:49:41.486917632Z
+   Raft Committed Index     149
+   Raft Applied Index       149
+   Last WAL                 21
+   </pre>
+
+   Shell scripts capture the above using:
+   <pre><strong>RESPONSE=$( vault status )
+   </strong></pre>
+
+1. In a browser, open the Vault UI:
+
+   <pre>http://127.0.0.1:8200</pre>
+
+   TODO: Show photo of UI here.
+
+2. In a browser, open the web page URL:
+
+   <pre>http://127.0.0.1:8200/vault/init</pre>
+   
+   If the server has not been unsealed (see below), the expected response is JSON:
+   <tt>errors: []</tt>
+
+3. In a browser, check Vault seal status:
+
+   <pre>https://127.0.0.1:8200/v1/sys/seal-status</pre>
+
+
+
+<hr />
+
+<a name="BasicCommands"></a>
+
+Once you have Vault program installed:
+
+#### Install Autocompletes
+
+1. <a target="_blank" href="https://www.vaultproject.io/docs/commands/#autocompletion">Install auto completions</a>:
 
    <pre><strong>complete -C $( which vault )
    vault -autocomplete-install
    </strong></pre>
 
-   No message is returned. Otherwise, if already installed once:
+   No message is returned. Otherwise, if already installed once (on a Mac):
 
    <pre>Error executing CLI: 2 errors occurred:
 	* already installed in /Users/wilsonmar/.bash_profile
 	* already installed in /Users/wilsonmar/.zshrc
    </pre>
 
-   ### Basic Vault commands
+2. Use autocomplete by typing `vault k` 
 
-5. See menu of commands by running the command without parameters:
+   Auto-complete is working if you can press tab to complete:
+
+   <pre><strong>vault kv
+   </strong></pre>
+
+
+   #### Basic Vault commands
+
+1. See menu of commands by running the command without parameters:
 
    <pre><strong>vault
    </strong></pre>
@@ -2326,21 +2511,9 @@ Subcommands:
    <pre><strong>vault read -h
    </strong></pre>
 
-   <pre>
-   </pre>
-
 2. Restart your Terminal.app (and provide password):
 
    <pre><strong>exec $SHELL
-   </strong></pre>
-
-   ### Auto-complete
-
-3. Use autocomplete by typing `vault k` 
-
-   Auto-complete is working if you can press tab to complete:
-
-   <pre><strong>vault kv
    </strong></pre>
 
    
@@ -2420,7 +2593,8 @@ Version: 0.7.0
    
 1. On the Vault client, apply ClusterRoleBinding :
 
-   kubectl apply -f vault/lab_k8s/k8s/vault-auth-cluster-role-binding.yml
+   <pre><strong>kubectl apply -f vault/lab_k8s/k8s/vault-auth-cluster-role-binding.yml
+   </strong></pre>
 
    <pre>---
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -2436,7 +2610,7 @@ subjects:
 - kind: ServiceAccount
   name: vault-auth
   namespace: default
-  </pre>
+   </pre>
 
 1. Extract service account (sa):
 
@@ -3110,7 +3284,7 @@ log files:
 
    NOTE: At startup, the server reads .hcl and .json configuration files from the <tt>/vault/config</tt> folder. Information passed into VAULT_LOCAL_CONFIG is written into local.json in this directory and read as part of reading the directory for configuration files.
 
-0. Start consul container with web ui on default port 8500:
+0. Start Consul container with web ui on default port 8500:
 
    <pre><strong>docker run -p 8400:8400 -p 8500:8500 -p 8600:53/udp \
     --hostname consul \
@@ -3118,96 +3292,6 @@ log files:
     -server -bootstrap -ui-dir /ui
    </strong></pre>
 
-
-<a name="BinaryInstall"></a>
-
-### Binary install
-
-Vault is open-sourced at <a target="_blank" href="https://github.com/hashicorp/vault/">https://github.com/hashicorp/vault</a> with a marketing home page at
-<a target="_blank" href="https://vaultproject.io/">https://vaultproject.io</a>.
-
-
-1. HashiCorp's steps for installing Vault are at
-   <a target="_blank" href="https://vaultproject.io/docs/install/">
-   https://vaultproject.io/docs/install</a>.
-
-0. Installers for a large number of operating systems are downloaded from HashiCorp's website:
-
-   <a target="_blank" href="https://www.vaultproject.io/downloads.html">
-   https://www.vaultproject.io/downloads.html</a>
-
-   * vault_0.7.3_darwin_amd64.zip for Mac 64 expands to a vault app of 59.6 MB.
-   <br /><br />
-
-0. Verify the SHA256 hash to ensure that not a single bit was lost during download.
-
-0. On a Mac, drag and drop the Vault.app file to your root Applications folder.
-
-0. <a target="_blank" href="https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux">Set the PATH</a> to Vault.
-
-0. Double-click on the vault app.
-
-   If you get an error that the binary could not be found, then your PATH environment variable was not setup properly. 
-
-   This automated script should install vault at version 0.1.2 into folder:
-
-   <strong>/opt/vault_0.1.2</strong>
-
-   (the current version for you will likely be different that 0.1.2).
-
-   The installer configures itself by default to listen on localhost port 8200, 
-   and registers it as a service called vault-server.
-
-To uninstall, move that folder to trash.
-
-NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5.6/lib/train/transports/clients/azure/vault.rb</tt>
-
-
-
-<a name="VerifyInstall"></a>
-
-## Verify install
-
-   No matter how it was installed:
-
-1. Check Vault seal status:
-
-   <pre>https://127.0.0.1:8200/v1/sys/seal-status</pre>
-
-1. Open a new Terminal window to Verify whether it's unsealed (Sealed = false):
-
-   <pre><strong>vault status
-   </strong></pre>
-
-   If the Vault service is not running, you'll see:
-   <pre>Error checking seal status: Get "https://127.0.0.1:8200/v1/sys/seal-status": dial tcp 127.0.0.1:8200: connect: connection refused</pre>
-
-   The expected response:
-
-   <pre>Key               Value
-   ---                    -----
-   Recovery Seal Type     shamir
-   Initialized            true
-   <strong>S
-   /aled                  false</strong>
-   Total Recovery Shares  5
-   Threshold              3
-   Version                  1.9.4+ent
-   Storage Type             raft
-   Cluster Name             vault-cluster-ac95e06f
-   Cluster ID               30255f02-0dd4-cc7e-9bad-616790463be9
-   HA Enabled               true
-   HA Cluster               https://vault-server:8201
-   HA Mode                  active
-   Active Since             2022-06-19T16:49:41.486917632Z
-   Raft Committed Index     149
-   Raft Applied Index       149
-   Last WAL                 21
-   </pre>
-
-   <pre><strong>RESPONSE=$( vault status )
-
-   </strong></pre>
 
 
 
@@ -3219,52 +3303,6 @@ NOTE: Also found vault in <tt>chefdk/embedded/lib/ruby/gems/2.5.0/gems/train-1.5
 
    <pre><strong>sudo journalctl -u </strong></pre>
 
-
-   ### Start Dev Server
-
-   * https://www.vaultproject.io/docs/concepts/dev-server/
-
-0. Start the Dev Server per <a target="_blank" href="https://www.vaultproject.io/intro/getting-started/dev-server.html">https://www.vaultproject.io/intro/getting-started/dev-server.html</a>
-
-   <pre><strong>vault server -dev
-   </strong></pre>
-
-   PROTIP: This is the command put in a server start-up script.
-
-   <pre><strong>vault server -dev -dev-listen-address=0.0.0.0:8200 \
-   -dev-root-token-id=root
-   </strong></pre>
-
-   Alternately, pull in parameters defined in a hcl file in the current folder:
-
-   <pre><strong>vault server -config=config-file.hcl
-   </strong></pre>
-
-   Sample response:
-
-   <pre>WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory
-and starts unsealed with a single unseal key. The root token is already
-authenticated to the CLI, so you can immediately begin using Vault.
-&nbsp;
-You may need to set the following environment variable:
-&nbsp;
-    $ export VAULT_ADDR='http://127.0.0.1:8200'
-&nbsp;
-The unseal key and root token are displayed below in case you want to
-seal/unseal the Vault or re-authenticate.
-&nbsp;
-Unseal Key: qvAfCZEkFHS1dYYba8adz5wXHSQe1I9LjoHUbxCrEo4=
-Root Token: s.dqqznrQAJNiLrU9mX3eT8q2p
-&nbsp;
-Development mode should NOT be used in production installations!
-   </pre>
-
-1. In a browser, open the web page URL:
-
-   <pre>http://127.0.0.1:8200/vault/init</pre>
-   
-   If the server has not been unsealed (see below), the expected response is JSON:
-   <tt>errors: []</tt>
 
    ### Restart Vault on Linux
 
