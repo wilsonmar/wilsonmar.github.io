@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "GitHub Actions (for free CI/CD)"
-excerpt: "Run pipelines from within GitHub, for free (instead of Jenkins, CircleCI, etc.)"
-tags: [GitHub]
-date: "2020-05-09"
+date: "2023-02-19"
 file: "github-actions"
+title: "GitHub Actions"
+excerpt: "Run pipelines from within GitHub, for free (instead of Jenkins, CircleCI, etc.)"
+tags: [GitHub, GitOps]
 image:
 # github-mess-1900x500
   feature: https://user-images.githubusercontent.com/300046/81472787-5cc9e780-91b7-11ea-89a3-d7ddd2ab8b65.png
@@ -16,99 +16,275 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This tutorial is a step-by-step <strong>hands-on deep yet succinct</strong> introduction to using GitHub's Actions to build at <a href="#JobCost">low cost</a>, quickly.
+This article describes a <strong>production-worthy baseline</strong> professional developers and DevSecOps platform engineers can collaborate on refining over time. 
+
+<a target="_blank" href="https://github.com/bomonike/gha-baseline">https://github.com/bomonike/gha-baseline</a>
+
+At the bottom of this article is my list of <a href="#VideoClasses">video classes</a>, <a href="#YouTubes">YouTube videos</a>, <a href="#Blogs">blogs</a>, and <a href="#Docs">vendor documentation</a> about learning this topic from scratch. 
+
+So this aims to be <strong>hands-on and deep, yet succinct</strong>.
+
+
+<a href="#Baseline">Here we start with our Baseline code</a>.
 
 {% include whatever.html %}
 
+<a name="Baseline"></a>
+
+## Baseline Production example
+
+1.  Create a new Git repo (with a README.md).
+
+
+<hr />
+
+<a name="FromScratch"></a>
+
+## From-scratch Tutorials
+
+This section summarizes their content.
+
+GitHub added an "Actions" tab to repos (in 2019) to perform Continuous Integration (CI) like Jenkins.
+
 GitHub Actions enables software development teams to configure Infrastructure as Code (IaC) for Continuous Integration <a target="_blank" href="https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions">for NodeJs</a> and a wide range of programming languages.
 
-When developers can merge and deploy code many times in a single day, they can achieve Agile DevOps.
+When developers can merge and deploy code many times in a single day, 
+they can achieve Agile DevSecOps.
 
-## Documentation
-
-GitHub Actions Documentation is at
-<a target="_blank" href="
-   https://help.github.com/en/actions">
-   https://help.github.com/en/actions</a>
-
-<a target="_blank" href="https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions">
-   Setup Continuous Integrations</a>
-
-<a target="_blank" href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">
-https://help.github.com/en/categories/automating-your-workflow-with-github-actions</a>
-
-<a target="_blank" href="https://help.github.com/en/actions/configuring-and-managing-workflows">
-https://help.github.com/en/actions/configuring-and-managing-workflows</a> 
-
-<a target="_blank" href="https://help.github.com/en/actions/language-and-framework-guides">
-https://help.github.com/en/actions/language-and-framework-guides</a>
-
-<a target="_blank" href="https://help.github.com/en/actions/migrating-to-github-actions">
-https://help.github.com/en/actions/migrating-to-github-actions</a>
+<hr />
 
 
 ## Actions in Jobs triggering Workflows
 
+The "Actions" tab within a repository display Workflows stored within the repo's <tt>.github</tt> folder. Notice the leading dot to specify a hidden folder.
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><img alt="github-actions-diagram-550x368.jpg" width="550" height="368" src="https://user-images.githubusercontent.com/300046/81487219-edd0ab00-9217-11ea-823d-b879aba42e28.jpg"><br /><em>Click image to pop-up full-size display.</em></a>
 
-DEFINITION: In GitHub Actions, a workflow is a configurable automated process made up of one or more <strong>jobs</strong>.
+Within the <tt>.github</tt> folder is a <tt>workflows</tt> folder whichcontain <strong>declarative yml</strong> files. Each "workflow" is a separate yaml file, each an automated process that contain one or more logically related jobs. 
 
-DEFINITION: Workflows are run (invoked) by <strong>Runners</strong> within a GitHub hosted environment or a self-hosted environment.
+Each <strong>jobs</strong> contains one or more <strong>steps</strong> -- tasks executed through a GitHub Actions YAML config file, such as building source code, run tests, or deploy the code that has been built to some remote server.
 
-Actions are individual steps within a job.
+Build and run tests jobs can be in the same workflow, with the 
+deployment job into a different workflow.
+
+PROTIP: Within a Workflow file named (for example) "build_and_test.yml", specify a corresponding name such as:
+
+<pre>name: Build and Test</pre>
+
+A <strong>runner</strong> is the remote computer that GitHub Actions uses to execute the jobs.
+Runners can be local, in AWS. Runners are specified by <tt>runs-on:</tt> lines such as:
+
+<pre>runs-on: ubuntu-latest</pre>
+
+In addition to Ubuntu, GitHub provides Microsoft Windows, and macOS runners.
+
+A job is trigged for execution by a GitHub Action when some <strong>event</strong> occurs.
+Jobs can be scheduled too. Events are specified by the <tt>on:</tt> section.
+
+<pre>on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+</pre>
+
+DEFINITION: <strong>Actions</strong> are individual steps within a job -- commands that can be <strong>reused</strong> in your config file. You can write your custom actions or use existing ones.
+
+Each step has a hyphen and <tt>name:</tt> and <tt>uses:</tt>. For an example running Python:
+
+<pre>    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Python Environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Tests
+      run: |
+        python manage.py test
+</pre>
+
+The <tt>Scripts</tt> folder contain <strong>programmatic sh</strong> (Bash shell) files which carry out actions.
 
 
 ## Run locally
 
-Actually, you can run GitHub Actions locally on your laptop using <a target="_blank" href="https://github.com/nektos/act/">github.com/nektos/act</a>.
+You can run GitHub Actions locally on your laptop using <a target="_blank" href="https://github.com/nektos/act/">github.com/nektos/act</a>.
 
 https://github.com/cplee/github-actions-demo
 
+<hr />
 
-## Hello World
+<a name="Baseline"></a>
 
-1. Create a new Git repo.
+## Baseline Production example
 
+1.  At github.com, navigate to the repo you want to add GitHub Actions:
 
-1. Create a <strong>.github</strong> folder within your repository.
+2.  Create new file <strong>.github/workflows</strong> folder path from the root of your repo.
 
-   This follows the same convention as <tt>.circleci</tt>.
+    This follows the same convention as <tt>.circleci</tt>.
 
-1. Create a <strong>workflows</strong> folder within your repository.
+    Each workflow is defined by a yaml-formatted file.
 
-   Each workflow is defined by a yaml-formatted file.
+3.  Create a workflow yml file named <tt>main.yml</tt>
 
-   PROTIP: To start, rather than creating your own a yaml-formatted file to define each Workflow configuration.
+    PROTIP: To start, rather than creating your own a yaml-formatted file to define each Workflow configuration.
+    An example (using NodeJs) from https://github.com/cplee/github-actions-demo/blob/master/.github/workflows/main.yml
 
-   An example (using NodeJs) from https://github.com/cplee/github-actions-demo/blob/master/.github/workflows/main.yml
+4.  PROTIP: Create in your internet browser a bookmark so you can return to this quickly.
 
-   <pre>name: CI
-on: push
+5.  Edit the <tt>main.yml</tt> workflow file:
+
+    <pre>name: 'baseline-workflow'
+# **What it does**: Scan Terraform code. Save results on S3 buckets based on credentials from HashiCorp Vault.
+# **Why we have it**: So secrets are not static in GitHub Actions GUI, needing to be repeated in each Action.
+# **Who does it impact**: Docs content.
+on: [push]
 jobs:
-  test:
+  test-job:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: 🚀 Conditions at start
+      run: echo "Stats at start of job ..."
+    - name: 🫶 Get code
+      uses: actions/checkout@v2
     - uses: actions/setup-node@v1
-    - run: npm install
+    - run: 🎉 npm install
     - run: npm test
+    - name: 🫶 Conditions at end
+      run: echo "Stats at end of job ..."
+  deploy:
+    needs: test-job
+  ...
    </pre>
 
-1. To view the status of workflows, press the <strong>Actions</strong> tab at the top menu.
 
-   PROTIP: To get to the top of the screen to see GitHub's Tabs, on macOS, press command + up_arrow.
+    ### Job name & environment
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
+    PROTIP: The name value should match the name of the yml file. 
+    Encase the name value in single quotes if there is a space or other special character.
 
-1. Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
+    See https://docs.github.com/en/actions/using-jobs/using-environments-for-jobs
 
-   PROTIP: You can create and share templates for use by others in your own organization. See <a target="_blank" href="https://help.github.com/en/actions/hosting-your-own-runners">https://help.github.com/en/actions/hosting-your-own-runners</a>
+    Notice indents are two spaces by default.
+
+    PROTIP: Add "-job" at the end of job names 
+
+    ### on: triggers
+
+    <tt>on: push</tt> defines one of the <a target="_blank" href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">>events that trigger</a> a workflow to start:
+
+    * watch (repo starred)
+    * fork (repo forked)
+    * issues (opened or deleted)
+    * issue_commment
+    * create (branch or tag)
+    * pull_request (opened or closed)
+
+    * push (of a commit)
+    * workflow_dispatch
+    <br /><br />
+
+    ### Runners Pricing
+    
+    REMEMBER: Each job has its own runner (virtual machine isolated from other jobs)
+
+    <tt>runs-on:</tt> defines the <a target="_blank" href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners">runner</a> within a GitHub hosted environment. Instead of <tt>ubuntu-latest</tt> a version specification can be specified. Alternately, <a href="#MatrixVariations">several versions</a>.
+
+    <tt>with:</tt> configures the runner.
+
+    CAUTION: See <a target="_blank" href="https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions">cost implications</a> depending on the platform, number CPU cores, etc.
+    
+    GiHub pre-installs Clang, Bash, Python, Node, etc. for use on each runner.
+
+    ### Steps with emojis
+
+    PROTIP: Use emoji's to visually differentiate step names.
+    ❤️ Initial greeting<br />
+    👀 Verify Terraform<br />
+    🫶 Goodbye<br />
+
+    * https://emojipedia.org/
+
+    ### Sample code
+
+    https://github.com/SamGallagher95/best-terraform-cd-article/tree/main/terraform
+    
+    <a name="Marketplace"></a>
+
+    ### Actions Marketplace
+
+    CAUTION: GitHub currently does not dynamically scan 3rd-party actions for malicious activity.
+
+    Among 3rd-party Actions in GitHub's public Marketplace, <a target="_blank" href="https://github.com/marketplace?category=&query=sort%3Apopularity-desc&type=actions&verification=">sorted by number of stars</a>:
+
+    * https://github.com/marketplace/actions/super-linter (from GitHub)
+    * https://github.com/marketplace/actions/trufflehog-oss to scan for leaked secrets
+    * https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions
+    * https://github.com/marketplace/actions/checkout to a specific version of your GitHub repo
+    </br /><br />
+
+    "Verified creator" only means that GitHub has been able to contact the creator.
+
+    <tt>needs: test</tt> enforces a dependency to finish successfully.
+
+    ### Environment secrets
+
+    To create buckets in S3 or other AWS services, sepecify:
+
+    <pre>env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    </pre>
+
+1.  Save the changes with a comment. Click the green "Start commit".
+3.  To view the status of workflows, press the <strong>Actions</strong> tab at the top menu.
+
+    PROTIP: To get to the top of the screen to see GitHub's Tabs, on macOS, press command + up_arrow.
+
+    <a target="_blank" href="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"><img alt="github-actions-menu-939x225.jpg" src="https://user-images.githubusercontent.com/300046/81493305-8a1ca100-925c-11ea-9e4f-7fbadf800585.png"></a>
+
+4.  Wait past "Queued" to click the run at the top of the list.
+5.  Click a job box with green check icon to see step info.
+
+    <tt>Set up job</tt> and <tt>Complete job</tt> ("Cleaning up orphan processes") are added by GitHub.
+
+    ### PAT
+    
+6.  In GitHub Settings > Developer Settings > Define a PAT (Personal Access Token) for expiration in 30 days.
+
+    PROTIP: For note, add a time stamp such as "expires 23-12-31".
+
+    Select <strong>scopes</strong> <tt>repo</tt> and <tt>workflow</tt>
+
+4.  Click "Set up a workflow yourself" or select a <strong>template</strong> containing pre-populated yml files from various people.
+
+    PROTIP: You can create and share templates for use by others in your own organization. See <a target="_blank" href="https://help.github.com/en/actions/hosting-your-own-runners">https://help.github.com/en/actions/hosting-your-own-runners</a>
  
+1.  PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
 
-1. PROTIP: Protect the master branch so it can't be inadvertently deleted or broken.
+1.  PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
 
-1. PROTIP: Setup required reviews so that any pull requests are double checked by teammates.
+    <a name="MatrixVariations"></a>
+    
+    ## Strategy Matrix of variations
 
+    The "ubuntu-vers" job in the code here run each possible combination of variables, one for each combination of the version and os.
+
+    <pre>jobs:
+  ubuntu-vers:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
+        os: [ubuntu-latest]
+    </pre>
+
+    See https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
 
 
 ## Community
@@ -503,7 +679,6 @@ VIDEO: Continuous integration with GitHub Actions</a> [1:55:24] at GitHub Satell
 
 
 
-
 ## Create Badge
 
 Within Actions tab:
@@ -511,13 +686,82 @@ Within Actions tab:
 <img width="332" alt="github-create-status-badge-664x766" src="https://user-images.githubusercontent.com/300046/81487058-10ae8f80-9217-11ea-8968-e71c5da077cf.png">
 
 
-## References
+## AWS in GitHub Actions
 
+First, preconfigure the IAM IdP in your AWS account (see Assuming a Role for details).
+
+Configure your AWS credentials and region environment variables for use in GitHub Actions,
+add action https://github.com/aws-actions/configure-aws-credentials
+
+<pre>    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        role-to-assume: arn:aws:iam::123456789100:role/my-github-actions-role
+        aws-region: us-east-2
+</pre>
+
+the action implements the AWS SDK credential resolution chain and 
+exports environment variables for other Actions to use.
+
+v2 of the action uses the Node 16 runtime by default. 
+
+This causes the action to perform an <tt>AssumeRoleWithWebIdentity</tt> call and return temporary security credentials for use by other actions. 
+
+https://www.freecodecamp.org/news/how-to-setup-a-ci-cd-pipeline-with-github-actions-and-aws/
+
+Environment variable exports are detected by both the AWS SDKs and the AWS CLI for AWS API calls.
+
+https://github.com/aws-actions
+
+
+Alternately, https://www.freecodecamp.org/news/how-to-setup-a-ci-cd-pipeline-with-github-actions-and-aws/
+Use the <a target="_blank" href="https://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk compute service</a> pulled from AWS S3 buckets uploaded from GitHub.
+
+1. Setup an AWS Account
+2. Get into Elastic Beanstalk environment
+   https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/welcome
+3. "Create Application" (formerly "Create a New Environment").
+4. Application name: PROTIP: Type your name so it's unique.
+5. Application tags
+6. Platform: Choose Python if you like.
+7. Platform branch
+8. Platform version
+9. Application code: select "Sample application" or "Upload your code".
+10. Click "Create application".
+11. Grab the application name and the environment name at the upper-left:
+    Wilson230321-env<br />
+    http://wilson230321-env.eba-iqusqyih.us-west-2.elasticbeanstalk.com/
+
+What's Next? 
+* <a target="_blank" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html">AWS Elastic Beanstalk overview</a> - What is AWS Elastic Beanstalk?
+* <a target="_blank" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.html">AWS Elastic Beanstalk concepts</a>
+* <a target="_blank" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html">Deploying a Django Application to AWS Elastic Beanstalk</a>
+* <a target="_blank" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html">Deploy a Flask Application to AWS Elastic Beanstalk</a>
+* <a target="_blank" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html">Using the Elastic Beanstalk Python platform (Customizing and Configuring a Python Container)</a>
+* <a target="_blank" href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.logging.html">Working with Logs</a>
+
+The new Elastic Beanstalk environment management console described at:<br />
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environments-console.html
+such as:<br />
+https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environments
+
+<hr />
+
+<a name="VideoClasses"></a>
+## Video classes #
+
+https://www.udemy.com/course/github-actions-the-complete-guide/
+10.5 hour $16.99 GitHub Actions - The Complete Guide Nov 2022
+referencing https://github.com/academind/github-actions-course-resources
+by <a target="_blank" href="https://www.linkedin.com/in/maximilian-schwarzmueller/">Maximilian Schwarzmuller</a>
+
+<a name="YouTubes"></a> 
+
+## YouTube videos #
 
 https://www.youtube.com/watch?v=T6sW1Dk9B4E
 What every GitHub user should know about VS Code - GitHub Satellite 2020
 24:08
-
 
 <a target="_blank" href="https://www.youtube.com/watch?v=cyh8DU2QPzg">
 Continuous integration with GitHub Actions</a> 
@@ -564,9 +808,7 @@ https://www.youtube.com/watch?v=2Ym94MfScZ4
 GitHub Actions CI/CD Workflow for a Laravel Application - Part 1: Introduction
 Oh See Media
 
-
-https://coletiv.com/blog/how-to-setup-continuous-integration-and-deployment-workflows-for-reactjs-using-github-actions/
-
+<a href="Blogs"></a>
 
 <a target="_blank" href="https://www.brighttalk.com/webcast/18268/406190">
 VIDEO: Unlocking the Cloud Operating Model with GitHub Actions</a>
@@ -587,8 +829,45 @@ by Davide 'CoderDave' Benvegnù
 * <a target="_blank" href="https://www.youtube.com/watch?v=X3F3El_yvFg">VIDEO</a>: Automatic Deployment With Github Actions
 Traversy Media
 
+* https://sanderknape.com/2021/01/go-crazy-github-actions/
 
-https://sanderknape.com/2021/01/go-crazy-github-actions/
+* <a target="_blank" href="https://learning.oreilly.com/videos/-/50105VIDEOPAIML/" title="Pragmatic AI Solutions February 2021">Github Actions and GitOps in One Hour Video Course</a> by <a target="_blank" href="https://github.com/alfredodeza">Alfredo Deza</a> and Noah Gift
+
+
+
+
+<hr />
+
+<a hame="Blogs"></a>
+
+## Blogs
+
+https://coletiv.com/blog/how-to-setup-continuous-integration-and-deployment-workflows-for-reactjs-using-github-actions/
+
+
+<a name="Documentation"></a>
+## Documentation
+
+GitHub Actions Documentation is at
+<a target="_blank" href="
+   https://help.github.com/en/actions">
+   https://help.github.com/en/actions</a>
+
+<a target="_blank" href="https://help.github.com/en/actions/building-and-testing-code-with-continuous-integration/setting-up-continuous-integration-using-github-actions">
+   Setup Continuous Integrations</a>
+
+<a target="_blank" href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">
+https://help.github.com/en/categories/automating-your-workflow-with-github-actions</a>
+
+<a target="_blank" href="https://help.github.com/en/actions/configuring-and-managing-workflows">
+https://help.github.com/en/actions/configuring-and-managing-workflows</a> 
+
+<a target="_blank" href="https://help.github.com/en/actions/language-and-framework-guides">
+https://help.github.com/en/actions/language-and-framework-guides</a>
+
+<a target="_blank" href="https://help.github.com/en/actions/migrating-to-github-actions">
+https://help.github.com/en/actions/migrating-to-github-actions</a>
+
 
 ## More #
 
