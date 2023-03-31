@@ -17,12 +17,14 @@ image:
 
 ## Time Zones
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680267635/calendar-timezones-1644x264_ggzft9.jpg"><img alt="calendar-timezones-1644x264.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680267635/calendar-timezones-1644x264_ggzft9.jpg"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"><img alt="calendar-timezones-1648x356.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"></a>
 
 I use the above to quickly identify when is 9am-5pm working times around the world, based on<br />
 <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
 
-However, I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
+WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
+
+NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
 
 ## Talk to me!
 
