@@ -19,7 +19,8 @@ image:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680267635/calendar-timezones-1644x264_ggzft9.jpg"><img alt="calendar-timezones-1644x264.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680267635/calendar-timezones-1644x264_ggzft9.jpg"></a>
 
-I use the above to quickly identify when is 9am-5pm working times around the world.
+I use the above to quickly identify when is 9am-5pm working times around the world, based on<br />
+<a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
 
 However, I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
 
@@ -27,8 +28,8 @@ However, I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am
 
 Pick an open time using this as the basis for creating a meeting using your own calendar system:
 
-<ul><a target="_blank" href="https://calendly.com/wilsonmar">https://calendly.com/wilsonmar</a>
-<br />
+<ul><a target="_blank" href="https://calendly.com/wilsonmar"><strong>https://calendly.com/wilsonmar</strong></a>
+<br /><br />
    Calendly.com <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">only offers email customer service</a>, and their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a>.
 </ul>
 
@@ -36,8 +37,11 @@ Blocked out are both my work and personal meetings already set with meetings I d
 
 <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
 Here</a> is a less user-friendly UI to my Google calendar:
+
 1. The yellow column is today. Scroll to see the red line which marks the current time.
+
 2. Be aware of the time zone at the lower left corner of the screen.
+
 3. Click on the <u><strong>This Week</strong></u> blue link at the upper right corner.
 
    ![google-calendar-week-256x41](https://cloud.githubusercontent.com/assets/300046/26534343/5618a71c-43f1-11e7-9ea8-d721acb5fc42.png)
