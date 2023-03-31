@@ -17,7 +17,7 @@ image:
 
 ## Time Zones
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680266738/calendar-timezones-1362x268_ya6yap.jpg"><img alt="calendar-timezones-1362x268.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680266738/calendar-timezones-1362x268_ya6yap.jpg"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680267635/calendar-timezones-1644x264_ggzft9.jpg"><img alt="calendar-timezones-1644x264.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680267635/calendar-timezones-1644x264_ggzft9.jpg"></a>
 
 I use the above to quickly identify when is 9am-5pm working times around the world.
 
