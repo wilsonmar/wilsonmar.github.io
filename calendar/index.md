@@ -19,7 +19,7 @@ image:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"><img alt="calendar-timezones-1648x356.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"></a>
 
-I use the above to quickly identify when is 9am-5pm working times around the world, based on<br />
+I use the above (based on <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>) to quickly identify when is 9am-5pm working times around the world, based on<br />
 <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
 
 WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
@@ -30,10 +30,7 @@ NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Ea
 
 Pick an open time using this as the basis for creating a meeting using your own calendar system:
 
-<ul><a target="_blank" href="https://calendly.com/wilsonmar"><strong>https://calendly.com/wilsonmar</strong></a>
-<br /><br />
-   Calendly.com <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">only offers email customer service</a>, and their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a>.
-</ul>
+<ul><a target="_blank" href="https://calendly.com/wilsonmar"><strong>https://calendly.com/wilsonmar</strong></a></ul>
 
 Blocked out are both my work and personal meetings already set with meetings I don't wish to move.
 
@@ -55,9 +52,9 @@ Here</a> is a less user-friendly UI to my Google calendar:
 
 There are several services that enable others to pick a time to meet with you:
 
-* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> is popular. 
+* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> only offers <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">customer service by email</a>, and their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a>.
 
-* x.ai
+* x.ai ?
 
 If you're using Microsoft Outlook, to minimize the back and forth emails in scheduling, <a target="_blank" href="https://docs.microsoft.com/en-us/microsoft-365/admin/manage/share-calendars-with-external-users?view=o365-worldwide">enable calendar sharing using the Microsoft 365 admin center</a>, then <a target="_blank" href="https://www.magenium.com/resources/how-create-link-your-outlook-calendar-email-signatures/">
 create a link to Your Outlook Calendar in your email signature</a>.
