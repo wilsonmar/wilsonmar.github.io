@@ -3,7 +3,7 @@ layout: page
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
-date: "2023-03-10"
+date: "2023-03-31"
 file: "calendar"
 image:
 # pic white calendar 1900x500-c28.jpg
@@ -15,31 +15,41 @@ image:
 {% include l18n.html %}
 {% include _toc.html %}
 
-Pick a time from <a target="_blank" href="https://calendly.com/wilsonmar">https://calendly.com/wilsonmar</a> or <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
-<strong>my public Google calendar</strong> at<br />
+## Time Zones
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680266738/calendar-timezones-1362x268_ya6yap.jpg"><img alt="calendar-timezones-1362x268.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680266738/calendar-timezones-1362x268_ya6yap.jpg"></a>
+
+I use the above to quickly identify when is 9am-5pm working times around the world.
+
+However, I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Eastern).
+
+## Talk to me!
+
+Pick an open time using this as the basis for creating a meeting using your own calendar system:
+
+<ul><a target="_blank" href="https://calendly.com/wilsonmar">https://calendly.com/wilsonmar</a>
+<br />
+   Calendly.com <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">only offers email customer service</a>, and their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a>.
+</ul>
+
+Blocked out are both my work and personal meetings already set with meetings I don't wish to move.
+
 <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
-https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com</a>
-
-NOTE: I usually am up by 5 am Mountain (4 am Pacific Time, 6 am Central, 7 am Eastern).
-
-0. The yellow column is today. Scroll to see the red line which marks the current time.
-
-0. Be aware of the time zone at the lower left corner of the screen.
-
-0. Click on the <u><strong>This Week</strong></u> blue link at the upper right corner.
+Here</a> is a less user-friendly UI to my Google calendar:
+1. The yellow column is today. Scroll to see the red line which marks the current time.
+2. Be aware of the time zone at the lower left corner of the screen.
+3. Click on the <u><strong>This Week</strong></u> blue link at the upper right corner.
 
    ![google-calendar-week-256x41](https://cloud.githubusercontent.com/assets/300046/26534343/5618a71c-43f1-11e7-9ea8-d721acb5fc42.png)
 
-0. Switch back and forward between your own calendar and this one to identify a mutually open time.
+4. Switch back and forward between your own calendar and this one to identify a mutually open time.
 
-NOTE: In this calendar I keep only the times I cannot move.
-I have a separate calendar I use to plan my day.
 
 ## Calendar services
 
 There are several services that enable others to pick a time to meet with you:
 
-* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> is popular. But their <a target="_blank" href="https://calendly.com/privacy">privacy policy</a> is <a target="_blank" href="https://privacyspy.org/product/calendly/">rated 3.5/10</a> and <a target="_blank" href="https://www.trustpilot.com/review/calendly.com">they only offer email customer service</a>.
+* <a target="_blank" href="https://www.calendly.com/">calendly.com</a> is popular. 
 
 * x.ai
 
