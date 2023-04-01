@@ -17,7 +17,7 @@ image:
 
 ## Time Zones
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"><img alt="calendar-timezones-1648x356.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg"><img alt="calendar-timezones-2206x426.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg"></a>
 
 I use the above (based on <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>) to quickly identify when is 9am-5pm working times around the world, based on<br />
 <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
