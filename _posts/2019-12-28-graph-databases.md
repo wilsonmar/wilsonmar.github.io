@@ -31,11 +31,35 @@ Graph type databases is the latest in the evolution of data storage mechanisms t
 
 PROTIP: People using graph databases call themselves "Graphistas".
 
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th>Types:</th><th>Key-value store</th><th>Column store</th><th>Document</th><th>Relational</th><th>Graph</th></tr>
+<tr><th>Types:</th><th></th><th></th><th>Flexibility</th><th>Complexity</th></tr>
+<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>-</td><td>variable</td></tr>
+<tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>-</td><td>variable</td></tr>
+<tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>-</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Complexity</td><td>none</td><td>low</td><td>low</td><td>-</td><td>high</td></tr>
+</table> 
+
+## Faster and Better?
+
+It is time consuming for traditional relational databases to process complex indexed queries (even if it's all in cache). However, graph databases can process complex data structures efficiently because it uses pointers instead of table lookups (for "index free adjacency"). A <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=1h1m31s">comparison VIDEO</a>:
+
+   <table border="1" cellpadding="4" cellspacing="0">
+   <tr><th>&nbsp;</th><th># persons</th><th>query time</th></tr>
+   <tr valign="top" align="right"><td>Relational database</td><td>1,000</td><td>200 ms</td></tr>
+   <tr valign="top" align="right"><td>Neo4j</td><td>1,000</td><td>2 ms</td></tr>
+   <tr valign="top" align="right"><td>"Supernodes" in Neo4j</td><td>1,000,000</td><td>2 ms</td></tr>
+   </table> 
+
+
+## Where graphs are needed
+
 Graphs can provide insights not easily found using other technologies.
 
 Graph databases provides an alternative way to to store data. Instead of static predefined schemas which require shutdown to change, graph databases can be configured dynamically while running.
 
-Graphs are important to visualizing AI/Machine Learning algorithms:
+Where graphs are important to visualizing AI/Machine Learning algorithms:
+
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/69905392-ce884480-1380-11ea-9d0b-c145a2a6e51b.png"><img width="823" alt="neo4j-ai-graphs-823x589" src="https://user-images.githubusercontent.com/300046/69905392-ce884480-1380-11ea-9d0b-c145a2a6e51b.png"></a>
 
 Directed acyclic (one-way) graphs (DAGs) are used in Git, scheduling algorithms, and form the heart of many neuro network (Tensor) models in many other modern applications. Its representation of dependencies (precedence relationships) enable its use in the Airflow task processing app.
@@ -49,17 +73,8 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
    Writing SQL to represent a <strong>social graph</strong> containing 1,000 persons averaging 50 friends each can be difficult due to the need for joins and "de-normalized" physical structures. 
    
-   ## Graph Faster
 
-   It is time consuming for traditional relational databases to process complex indexed queries (even if it's all in cache). However, graph databases can process complex data structures efficiently because it uses pointers instead of table lookups (for "index free adjacency"). A  <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=1h1m31s">comparison VIDEO</a>:<br />
-   <table border="1" cellpadding="4" cellspacing="0">
-   <tr><th>&nbsp;</th><th># persons</th><th>query time</th></tr>
-   <tr valign="top" align="right"><td>Relational database</td><td>1,000</td><td>200 ms</td></tr>
-   <tr valign="top" align="right"><td>Neo4j</td><td>1,000</td><td>2 ms</td></tr>
-   <tr valign="top" align="right"><td>"Supernodes" in Neo4j</td><td>1,000,000</td><td>2 ms</td></tr>
-   </table> 
-
-   ## More relational than relational databases
+## More relational than relational databases
 
    Whereas SQL data is stored in separate tables joined together using complex queries, Graph databases are "white-board friendly" because it stores data the same way as illustrated by its data model. Graph database diagrams look like ER (Entity-Relation) diagrams for SQL databases. The example below uses data from <a target="_blank" href="https://grouplens.org/datasets/movielens/">Movielens database</a> containing 62,000 movies with 25 million ratings and one million tag applications applied by 162,000 users:
 
@@ -156,6 +171,10 @@ Instead of a local instance, if you're working as a team of developers, consider
       - Turtle to load SPARQL
       <br /><br />
 
+   * AnzoGraph DB from Cambridge Semantics - a Massively Parallel Processing (MPP) native graph database built for data harmonization and analytics. Horizontally scalable graph database built for online analytics and data harmonization. Take on data harmonization and linked data challenges. It uses SPARQL*/OWL for semantic graphs but also supports Labeled Property Graphs (LPGs). <a target="_blank" href="https://www.youtube.com/watch?v=YDI-Xb0VDrE">VIDEO</a>
+
+   * ArangoDB = Natively store data for graph, document and search needs. Utilize feature-rich access with one query language. Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort. Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.
+
 ## Microsoft Cosmos
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/spark-connector-graph">Microsoft's Cosmos graph database</a> running within a Azure HDInsight Spark cluster 2.0. <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o" title="2 hours on Mar 25, 2019 by M David Allen">VIDEO</a>, <a target="_blank" href="https://www.microsoft.com/en-us/research/uploads/prod/2019/03/41970_Introduction_to_Neo4j_and_Graph_Databases.pdf">slides</a>
@@ -174,10 +193,11 @@ Instead of a local instance, if you're working as a team of developers, consider
 <a target="_blank" href="https://learn.microsoft.com/en-us/graph/overview">
 Microsoft "Graph" product</a>
 stores user metadata from its 365 product (documents, emails, etc).
-* https://azure.microsoft.com/en-us/products/graph-data-connect
-* https://github.com/microsoftgraph/dataconnect-solutions
 
-* https://www.infoworld.com/article/3231658/making-sense-of-microsofts-graph-database-strategy.html
+  * https://azure.microsoft.com/en-us/products/graph-data-connect
+  * https://github.com/microsoftgraph/dataconnect-solutions
+  * https://blog.pragmaticworks.com/what-is-microsoft-graph
+  * https://www.infoworld.com/article/3231658/making-sense-of-microsofts-graph-database-strategy.html
 
 ### Microsoft SQL Server
 
