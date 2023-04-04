@@ -18,6 +18,8 @@ comments: true
 
 The contribution of this article is a maticulously sequenced presentation that curates concise yet deep insights from the many resources about this topic.
 
+https://en.wikipedia.org/wiki/Graph_database
+
 {% include whatever.html %}
 
 ## Graph databases: the latest thing
@@ -107,20 +109,35 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680596363/graph-databases-23-04-04_epnjy6.jpg"><img alt="graph-databases-2106x1074-23-04-04.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680596363/graph-databases-23-04-04_epnjy6.jpg"></a>
 
+https://db-engines.com/en/system/GraphDB%3BMicrosoft+Azure+Cosmos+DB%3BNeo4j
+
 Notice that Cosmos and others are called "Multi-model" (providing a Document store, Key-value store, wide-column store as well as graph database).
 
-The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin language</a> traversal machine (GTM) is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. Gremlin was developed (beginning in 2009) by Apache TinkerPop of the Apache Software Foundation. Thus, it is Apache-2 licensed.
+<hr />
+
+## Gremlin language
+
+The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin language</a> traversal machine (GTM) is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. The Gremlin language is implemented by a wide variety of vendors, including Neo4j. Gremlin is popular largely because it is supported (beginning in 2009) by the open-source Apache <a target="_blank" href="http://tinkerpop.apache.org/">Tinkerpop</a>/TinkerGraph (<a target="_blank" href="http://tinkerpop.apache.org/docs/3.2.4/reference/#traversal">docs</a> <a target="_blank" href="https://www.zdnet.com/article/graph-databases-advance-tigergraph-announces-32-million-series-b-funding-plus-cloud-based-platform/" title="September 25, 2019">TigerGraph analytics cloud</a>). Thus, it is Apache-2 licensed.<strong>Tinkerpop</strong> is one of two open-source graph databases that include @JanusGraph (<a target="_blank" href="http://janusgraph.org/">http://janusgraph.org</a>), open-sourced in 2017 under The Linux Foundation, with participants from Google, Hortonworks, IBM, Amazon, GRAKN.AI, <a target="_blank" href="https://www.experolabs.com/">Expero Labs</a>, etc. Its distributed graph database has multiple scalable storage backends:
+
+   * Apache Cassandra®
+   * Apache HBase®
+   * Google Cloud Bigtable
+   * Oracle BerkeleyDB
+   <br /><br />
+
+> "It's harder to get started with Gremlin than Neo4j's Cypher. Gremlin has a SQL-like syntax (SELECT, WHERE, etc.). But Gremlin helps you understand graphs better than Cypher. And it's available on free open-source software and most portable and available among vendors." -- <a target="_blank" href="https://linkedin.com/in/JohnPtacek">John Ptacek</a> [24:25] into <a target="_blank" title="6 Sep 2019 [53m]" href="https://app.pluralsight.com/library/courses/that-conference-2019-session-60/table-of-contents">"THAT Conference '19: Introduction to Graph Databases"</a>
 
 
 ### Cloud SaaS Graph database services
 
 Instead of a local instance, if you're working as a team of developers, consider always-on availability, on-demand scalability, and support:
 
-   * <a target="_blank" href="https://graphstory.com/">GraphStory.com</a> provides single-node Cloud Graph Neo4j databases from Azure, AWS, and GCP with their dashboard for $299/month (and up). $899/month and up with monitoring with HA multi-zone failover protection.
+   * <a target="_blank" href="https://neo4j.com/aura/">Neo4j's own Aura cloud offering</a> runs on GCP.
 
-   * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/spark-connector-graph">Microsoft's Cosmos graph database</a>
-   running within a Azure HDInsight Spark cluster 2.0.
-   <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o" title="2 hours on Mar 25, 2019 by M David Allen">VIDEO</a>, <a target="_blank" href="https://www.microsoft.com/en-us/research/uploads/prod/2019/03/41970_Introduction_to_Neo4j_and_Graph_Databases.pdf">slides</a>
+   * <a target="_blank" href="https://graphstory.com/">GraphStory.com</a> provides single-node Cloud Graph Neo4j databases from Azure, AWS, and GCP with their dashboard for $299/month (and up). $899/month and up with monitoring with HA multi-zone failover protection. <a target="_blank" href="https://graphstory.com/blog/2018/08/enterprise-neo4j-on-google-cloud-platform">GraphStory can stand up</a> Enterprise Neo4j <a target="_blank" href="https://neo4j.com/docs/operations-manual/current/clustering/introduction/">Causal Clusters</a> on Google Cloud Platform. Also on the <a target="_blank" href="https://neo4j.com/developer/neo4j-google-cloud-launcher/">GCP Marketplace</a>.  <a target="_blank" href="https://www.youtube.com/watch?v=QG1CgwIWLUs" title="[2:59] Mar 14, 2019 by David Allen">INTRO VIDEO</a>
+
+   * <a href="#Cosmos">Microsoft's Cosmos graph database</a> processes Gremlin queries.
+   * <a target="_blank" href="https://neo4j.com/partners/microsoft-azure/">Neo4j VMs on MS Azure Marketplace</a> in <a target="_blank" href="https://neo4j.com/partners/microsoft/">partnership</a> <a target="_blank" href="https://www.youtube.com/watch?v=NOgvz-fv9VI">VIDEO: Graph DataConnect</a>
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction">Apache TinkerPop Gremlin</a> queries on DataStax Enterprise Graph
 
@@ -139,28 +156,108 @@ Instead of a local instance, if you're working as a team of developers, consider
       - Turtle to load SPARQL
       <br /><br />
 
-   * <a target="_blank" href="https://graphstory.com/blog/2018/08/enterprise-neo4j-on-google-cloud-platform">GraphStory can stand up</a> Enterprise Neo4j <a target="_blank" href="https://neo4j.com/docs/operations-manual/current/clustering/introduction/">Causal Clusters</a> on Google Cloud Platform. Also on the <a target="_blank" href="https://neo4j.com/developer/neo4j-google-cloud-launcher/">GCP Marketplace</a>.  <a target="_blank" href="https://www.youtube.com/watch?v=QG1CgwIWLUs" title="[2:59] Mar 14, 2019 by David Allen">INTRO VIDEO</a>
+## Microsoft Cosmos
 
-   * <a target="_blank" href="https://neo4j.com/aura/">Neo4j's own Aura cloud offering</a> runs on GCP.
+<a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/spark-connector-graph">Microsoft's Cosmos graph database</a> running within a Azure HDInsight Spark cluster 2.0. <a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o" title="2 hours on Mar 25, 2019 by M David Allen">VIDEO</a>, <a target="_blank" href="https://www.microsoft.com/en-us/research/uploads/prod/2019/03/41970_Introduction_to_Neo4j_and_Graph_Databases.pdf">slides</a>
+
+* https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/introduction
+* https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/support
+* https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/modeling
+* https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/partitioning
+  
+* https://www.tomsawyer.com/graph-database-browser/azure
+* https://towardsdatascience.com/getting-started-with-graph-databases-in-azure-cosmos-db-cbfbf708cda5
+<br /><br />
+
+### Microsoft Graph 365
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/graph/overview">
+Microsoft "Graph" product</a>
+stores user metadata from its 365 product (documents, emails, etc).
+* https://azure.microsoft.com/en-us/products/graph-data-connect
+* https://github.com/microsoftgraph/dataconnect-solutions
+
+* https://www.infoworld.com/article/3231658/making-sense-of-microsofts-graph-database-strategy.html
+
+### Microsoft SQL Server
+
+SQL Server offers graph database capabilities to model many-to-many relationships. The graph relationships are integrated into Transact-SQL and receive the benefits of using SQL Server as the foundational database management system.
+
+Transact-SQL Graph extensions are fully integrated in Microsoft's SQL Server engine. Use the same storage engine, metadata, query processor, etc. to store and query graph data. Query across graph and relational data in a single query. Combining graph capabilities with other SQL Server technologies like columnstore, HA, R services, etc. SQL graph database also supports all the security and compliance features available with SQL Server. 
+
+All graph operations supported on relational tables are supported on node or edge table. 
+A node table is collection of similar type of nodes.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598246/graph-db-mssql-arch-421x452_zttvqy.png"><img alt="graph-db-mssql-arch-421x452.png" width="421" height="452" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598246/graph-db-mssql-arch-421x452_zttvqy.png"></a>
+
+Transact-SQL Graph extensions allow users to create node or edge tables. <a target="_blank" href="https://learn.microsoft.com/en-us/sql/relational-databases/graphs/sql-graph-overview?view=sql-server-ver16">Here is an example</a>:
+
+<pre>CREATE TABLE Person (ID INTEGER PRIMARY KEY, Name VARCHAR(100), Age INT) AS NODE;
+CREATE TABLE friends (StartDate date) AS EDGE;
+</pre>
+
+A graph is a collection of node and edge tables.  
+One graph per database.
+Node or edge tables can be created under any schema in the database, but they all belong to one logical graph. 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598366/graph-db-sample-person-cities-restaurants-435x351_rphkxx.png"><img alt="graph-db-sample-person-cities-restaurants-435x351.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598366/graph-db-sample-person-cities-restaurants-435x351_rphkxx.png"></a>
+
+### MATCH clause
+
+The new MATCH clause supports <strong>pattern matching and multi-hop navigation</strong> through the graph. It uses ASCII-art style syntax for pattern matching:
+
+<pre>-- Find friends of John
+SELECT Person2.Name 
+FROM Person Person1, Friends, Person Person2
+WHERE MATCH(Person1-(Friends)->Person2)
+AND Person1.Name = 'John';
+</pre>
+
+The Person node table holds all the Person nodes belonging to a graph. 
+An edge table is a collection of similar type of edges. 
+A Friends edge table holds all the edges that connect a Person to another Person. 
+
+Since nodes and edges are stored in tables, most of the operations supported on regular tables are supported on node or edge tables.
+
+Both nodes and edges can have properties associated to them.
+
+### Sample code
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/sql/relational-databases/graphs/sql-graph-sample?view=sql-server-ver16">Sample code</a>
+
+https://www.sqlshack.com/introduction-sql-server-2017-graph-database/
+
+QUESTION: Sample template code for a web app built using C# .NET referencing graph SQL?
 
 
-### Gremlin language
+### SHORTEST_PATH
 
-The <strong>Gremlin</strong> language is implemented by a wide variety of vendors, including Neo4j. Gremlin is popular largely because it is supported by the open-source Apache <a target="_blank" href="http://tinkerpop.apache.org/">Tinkerpop</a>/TinkerGraph (<a target="_blank" href="http://tinkerpop.apache.org/docs/3.2.4/reference/#traversal">docs</a> <a target="_blank" href="https://www.zdnet.com/article/graph-databases-advance-tigergraph-announces-32-million-series-b-funding-plus-cloud-based-platform/" title="September 25, 2019">TigerGraph analytics cloud</a>). <strong>Tinkerpop</strong> is one of two open-source graph databases that include @JanusGraph (<a target="_blank" href="http://janusgraph.org/">http://janusgraph.org</a>), open-sourced in 2017 under The Linux Foundation, with participants from Google, Hortonworks, IBM, Amazon, GRAKN.AI, <a target="_blank" href="https://www.experolabs.com/">Expero Labs</a>, etc. Its distributed graph database has multiple scalable storage backends:
+The <a target="_blank" href="https://learn.microsoft.com/en-us/sql/relational-databases/graphs/sql-graph-shortest-path?view=sql-server-ver16">SHORTEST_PATH</a> function finds the shortest path between any 2 nodes in a graph or starting from a given node to all the other nodes in the graph. It can also be used to find a transitive closure or for arbitrary length traversals in the graph.
 
-   * Apache Cassandra®
-   * Apache HBase®
-   * Google Cloud Bigtable
-   * Oracle BerkeleyDB
-   <br /><br />
+### Edge constraints
 
-> "It's harder to get started with Gremlin than Neo4j's Cypher. Gremlin has a SQL-like syntax (SELECT, WHERE, etc.). But Gremlin helps you understand graphs better than Cypher. And it's available on free open-source software and most portable and available among vendors." -- <a target="_blank" href="https://linkedin.com/in/JohnPtacek">John Ptacek</a> [24:25] into <a target="_blank" title="6 Sep 2019 [53m]" href="https://app.pluralsight.com/library/courses/that-conference-2019-session-60/table-of-contents">"THAT Conference '19: Introduction to Graph Databases"</a>
+To enforce data integrity and specific semantics on the edge tables in SQL Server graph database, use <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598366/graph-db-sample-person-cities-restaurants-435x351_rphkxx.png">edge constraints</a> to <strong>edge tables</a> so that when a new edge is added, the Database Engine enforces that the nodes which the edge is trying to connect, exist in the proper node tables. It is also ensured that a node cannot be dropped, if it is still referenced by an edge. Example:
+
+<pre>CONSTRAINT EC_BOUGHT CONNECTION (Customer TO Product, Customer TO Product)
+</pre>
+
+   * <tt>EC_BOUGHT</tt> is the constraint_name.
+   * Within parenteses are clauses that define the edge constraint.
+   <br />
+
+<hr />
+
+## Jobs
+
+https://www.linkedin.com/jobs/microsoft-graph-science-jobs/
 
 ## Resources
 
-* <a target="_blank" href="https://app.pluralsight.com/library/courses/graph-algorithms-python/exercise-files">"Working with Graph Algorithms in Python"</a> video tutorial on Pluralsigh by Janani Ravi explains sample Python 3.5.1 code (not using Neo4J or Gremlin).
+* <a target="_blank" href="https://app.pluralsight.com/library/courses/graph-algorithms-python/exercise-files">"Working with Graph Algorithms in Python"</a> video tutorial on Pluralsight by Janani Ravi explains sample Python 3.5.1 code (not using Neo4J or Gremlin).
 
 * See my <a target="_blank" href="https://wilsonmar.github.io/neo4j">Neo4j Cypher language tutorial</a>
+
+* QUESTION: Sample code for a web app using Neo4j and Python? <a target="_blank" href="https://stackoverflow.com/questions/49610086/sample-code-for-a-web-app-using-neo4j-and-python">Stack Overflow</a>
 
 
 ## More about Python
