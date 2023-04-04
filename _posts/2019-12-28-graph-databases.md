@@ -3,7 +3,7 @@ layout: post
 title: "Graph databases"
 excerpt: "It's more relational than relational databases"
 tags: [Database, Mac]
-date: "2021-12-28"
+date: "2023-04-04"
 file: "graph-databases"
 image:
 # feature: pic white robots woman 1900x500.jpg
@@ -103,7 +103,11 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
 ## Which graph database and language?
 
-<a target="_blank" href="https://db-engines.com/en/ranking_trend/graph+dbms">This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Cosmos catching up quickly. Notice that Cosmos and others are called "Multi-model" (providing a Document store, Key-value store, wide-column store as well as graph database).
+<a target="_blank" href="https://db-engines.com/en/ranking_trend/graph+dbms">This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Cosmos catching up quickly. 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680596363/graph-databases-23-04-04_epnjy6.jpg"><img alt="graph-databases-2106x1074-23-04-04.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680596363/graph-databases-23-04-04_epnjy6.jpg"></a>
+
+Notice that Cosmos and others are called "Multi-model" (providing a Document store, Key-value store, wide-column store as well as graph database).
 
 The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin language</a> traversal machine (GTM) is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. Gremlin was developed (beginning in 2009) by Apache TinkerPop of the Apache Software Foundation. Thus, it is Apache-2 licensed.
 
