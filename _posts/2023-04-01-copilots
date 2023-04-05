@@ -1,0 +1,80 @@
+---
+layout: post
+date: "2023-04-01"
+file: "copilots"
+title: "copilots"
+excerpt: "Damn Automcomplete on strioids - AI tools that provides helps you write code and other tricks."
+tags: [AI, devops, evaluation]
+Categories: Devops
+image:
+  feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
+  credit: And Beyond
+  creditlink: http://www.andbeyond.com/chile/places-to-go/easter-island.htm
+comments: true
+---
+<i>{{ page.excerpt }}</i>
+
+On an airplane, a "co-pilot" takes over when the captain goes to the bathroom.
+
+Big tech companies have been working since 2000 to create AI. 
+Microsoft funded OpenAI to create GPT-3, a language model used to generate complex text from complex queries. OpenAI's <strong>Codex</strong> translates natural language into programming code. GPT-3 (Generative Pre-trained Transformer 3&4) uses large models created using Deep Learning techniques to produce human-link text. Uses for GPT-3:
+
+   * Duolingo uses GPT-3 to correct grammar.
+   * Convert descriptions of colors into hex codes
+   * Turn comments (natural language) into runnable code
+   * Translate one language to others
+   * Autofill repetitive code
+   * Show alternatives ways to code
+   * Explain code (in English)
+   <br />
+
+
+## Microsoft Copilot
+
+But Microsoft co-opted the word as a brand name for AI tools that Microsoft has embedded in its line of products:
+   * Visual Studio Code (VS Code) text editor provides prompts, as "AI pair programming" 
+   * Outlook emails
+   * Calendar entries
+   * OneNote notes
+   * OneDrive files
+   * LinkedIn profiles, messages, recommedation, etc.
+   * LinkedIn Learning course content
+   * GitHub code repositories
+   <br /><br />
+
+Microsoft's AI is eerily smart becuase it knows your user metadata from all the above apps Microsoft has been saving in its Microsoft Graph database: email, calendar, contacts, and files. 
+
+WARNING: For a long time, Microsoft, Google, any tool are always listening. It's always watching. It's always learning. It's always recording. It's always saving. It's always sharing. It's always spying. It's always tracking. It's always analyzing. It's always predicting. It's always profiling. It's always targeting.
+
+
+## See Copilot Work
+
+Because CoPilot "knows" you, it leverages the context of you're typing to provide <strong>suggestions</strong> that help you write code faster.
+
+When you type a function, it separates the different words of a concatenated function name.
+
+## Keys to Efficient Usage
+
+PROTIP: To avoid autopilot, type a period and cursor left to type in front of it.
+
+REMEMBER: With Copilot: Accept suggestions by pressing the Tab key. Reject with the Esc key.
+
+More frequent use of the Tab and Esc keys made keyboard automation more worthwhile.
+
+PROTIP: It's literally a stretch to reach the Esc key, so I remapped the Caps Lock key to the Esc key.
+
+PROTIP: I mappped my 3-key foot pedal to Esc on the left and Tab on the right.
+
+## Cautions
+
+PROTIP: Write tests to ensure that you're getting what you want.
+
+## Configure Copilot
+
+To block use of public code.
+
+## Videos
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/level-up-with-github-copilot/0636920090759/0636920090758/">Level Up with GitHub Copilot</a> 2023-04-03
+by <a target="_blank" href="https://www.linkedin.com/in/rizel-bobb-semple/">Rizel Scarlett</a> (@blackgirlbytes, https://github.com/galaxy-bytes).
+
