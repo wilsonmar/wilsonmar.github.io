@@ -1,11 +1,11 @@
 ---
 layout: post
-date: "2023-04-01"
+date: "2023-04-04"
 file: "copilots"
 title: "copilots"
 excerpt: "Damn Automcomplete on strioids - AI tools that provides helps you write code and other tricks."
-tags: [AI, devops, evaluation]
-Categories: Devops
+tags: [AI, Microsoft]
+Categories: Microsoft
 image:
   feature: https://cloud.githubusercontent.com/assets/300046/14612210/373cb4e2-0553-11e6-8a1a-4b5e1dabe181.jpg
   credit: And Beyond
@@ -26,8 +26,10 @@ Microsoft funded OpenAI to create GPT-3, a language model used to generate compl
    * Autofill repetitive code
    * Show alternatives ways to code
    * Explain code (in English)
+   * Generate RegEx code when presented with data
    <br />
 
+{% include whatever.html %}
 
 ## Microsoft Copilot
 
@@ -37,6 +39,7 @@ But Microsoft co-opted the word as a brand name for AI tools that Microsoft has 
    * Calendar entries
    * OneNote notes
    * OneDrive files
+   * Powerpoint presentations
    * LinkedIn profiles, messages, recommedation, etc.
    * LinkedIn Learning course content
    * GitHub code repositories
@@ -69,9 +72,16 @@ PROTIP: I mappped my 3-key foot pedal to Esc on the left and Tab on the right.
 
 PROTIP: Write tests to ensure that you're getting what you want.
 
-## Configure Copilot
+Microsoft offers paid Business licenses which include a "Copilot" license, at $50 per user per year.
+Such a license enables suggestions based only on private information -- to block use of public code.
 
-To block use of public code.
+## GithubNext.com
+
+Sign up at <a target="_blank" href="https://githubnext.com/">GithubNext.com</a> to get early access to Copilot.
+
+Copilot X (in beta as of this writing) is a paid service that provides access to Copilot for VS Code, Outlook, and OneNote.
+
+Copilot Voice is voice recognition software that allows you to speak code into your computer.
 
 ## Videos
 
