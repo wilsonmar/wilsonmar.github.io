@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-04-04"
+file: "graph-databases"
 title: "Graph databases"
 excerpt: "It's more relational than relational databases"
 tags: [Database, Mac]
-date: "2023-04-04"
-file: "graph-databases"
 image:
 # feature: pic white robots woman 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622167/45abd918-0585-11e6-8537-a58e0b55e3ec.jpg
@@ -31,14 +31,19 @@ Graph type databases is the latest in the evolution of data storage mechanisms t
 
 PROTIP: People using graph databases call themselves "Graphistas".
 
+Below is a (probably controversial) table comparing the different types of stores and their strengths and weaknesses.
+
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th>Types:</th><th>Key-value store</th><th>Column store</th><th>Document</th><th>Relational</th><th>Graph</th></tr>
-<tr><th>Types:</th><th></th><th></th><th>Flexibility</th><th>Complexity</th></tr>
-<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>-</td><td>variable</td></tr>
-<tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>-</td><td>variable</td></tr>
-<tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>-</td><td>high</td></tr>
-<tr valign="top" align="center"><td>Complexity</td><td>none</td><td>low</td><td>low</td><td>-</td><td>high</td></tr>
+<tr><th>Types:</th><th>Key-value</th><th>Column</th><th>Document</th><th>Relational</th><th>Graph</th></tr>
+<tr valign="top" align="center"><td>Complexity</td><td>none</td><td>low</td><td>low</td><td>moderate</td><td>high</td></tr>
+<tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>high</td><td>variable</td></tr>
+<tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>high</td><td>variable</td></tr>
+<tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td></tr>
 </table> 
+
+   * https://itnext.io/getting-started-with-graph-databases-azure-cosmosdb-with-gremlin-api-and-python-80e57cbd1c5e
+   * https://www.c-sharpcorner.com/article/what-is-a-graph-database/
+
 
 ## Faster and Better?
 
@@ -63,6 +68,9 @@ Where graphs are important to visualizing AI/Machine Learning algorithms:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/69905392-ce884480-1380-11ea-9d0b-c145a2a6e51b.png"><img width="823" alt="neo4j-ai-graphs-823x589" src="https://user-images.githubusercontent.com/300046/69905392-ce884480-1380-11ea-9d0b-c145a2a6e51b.png"></a>
 
 Directed acyclic (one-way) graphs (DAGs) are used in Git, scheduling algorithms, and form the heart of many neuro network (Tensor) models in many other modern applications. Its representation of dependencies (precedence relationships) enable its use in the Airflow task processing app.
+
+* https://www.techtarget.com/searchcio/tip/Expect-graph-database-use-cases-for-the-enterprise-to-take-off
+
 
 ## Simpler complex connections, naturally
 
@@ -142,8 +150,14 @@ The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_la
 
 > "It's harder to get started with Gremlin than Neo4j's Cypher. Gremlin has a SQL-like syntax (SELECT, WHERE, etc.). But Gremlin helps you understand graphs better than Cypher. And it's available on free open-source software and most portable and available among vendors." -- <a target="_blank" href="https://linkedin.com/in/JohnPtacek">John Ptacek</a> [24:25] into <a target="_blank" title="6 Sep 2019 [53m]" href="https://app.pluralsight.com/library/courses/that-conference-2019-session-60/table-of-contents">"THAT Conference '19: Introduction to Graph Databases"</a>
 
+* https://www.codeproject.com/Articles/1066378/Introduction-to-Graph-Databases-using-Neo-J-and-it
+
 
 ### Cloud SaaS Graph database services
+
+* https://www.g2.com/categories/graph-databases
+* https://www.g2.com/categories/graph-databases#grid
+<br /><br />  
 
 Instead of a local instance, if you're working as a team of developers, consider always-on availability, on-demand scalability, and support:
 
@@ -173,7 +187,7 @@ Instead of a local instance, if you're working as a team of developers, consider
 
    * AnzoGraph DB from Cambridge Semantics - a Massively Parallel Processing (MPP) native graph database built for data harmonization and analytics. Horizontally scalable graph database built for online analytics and data harmonization. Take on data harmonization and linked data challenges. It uses SPARQL*/OWL for semantic graphs but also supports Labeled Property Graphs (LPGs). <a target="_blank" href="https://www.youtube.com/watch?v=YDI-Xb0VDrE">VIDEO</a>
 
-   * ArangoDB = Natively store data for graph, document and search needs. Utilize feature-rich access with one query language. Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort. Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.
+   * ArangoDB earned high performance scores from Gartner. Natively store data for graph, document and search needs. Utilize feature-rich access with one query language. Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort. Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.
 
 ## Microsoft Cosmos
 
@@ -194,10 +208,19 @@ Instead of a local instance, if you're working as a team of developers, consider
 Microsoft "Graph" product</a>
 stores user metadata from its 365 product (documents, emails, etc).
 
-  * https://azure.microsoft.com/en-us/products/graph-data-connect
-  * https://github.com/microsoftgraph/dataconnect-solutions
-  * https://blog.pragmaticworks.com/what-is-microsoft-graph
-  * https://www.infoworld.com/article/3231658/making-sense-of-microsofts-graph-database-strategy.html
+It has an API.
+
+   * https://azure.microsoft.com/en-us/products/graph-data-connect
+   * https://github.com/microsoftgraph/dataconnect-solutions
+   * https://blog.pragmaticworks.com/what-is-microsoft-graph
+   * https://www.infoworld.com/article/3231658/making-sense-of-microsofts-graph-database-strategy.html
+   * https://blog.victoriaholt.co.uk/2018/06/microsoft-graph-useful-tool.html
+   * https://laurakokkarinen.com/the-ultimate-beginners-guide-to-microsoft-graph/
+   * https://blog.ciaops.com/2019/04/17/using-interactive-powershell-to-access-the-microsoft-graph/
+   * https://www.red-gate.com/simple-talk/development/dotnet-development/getting-started-with-microsoft-graph-api/
+   * https://www.epcgroup.net/microsoft-graph-data-connect-pricing-and-features-guide/
+   * https://blog.codewithdan.com/getting-started-calling-the-microsoft-graph-api/
+
 
 ### Microsoft SQL Server
 
@@ -221,6 +244,11 @@ One graph per database.
 Node or edge tables can be created under any schema in the database, but they all belong to one logical graph. 
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598366/graph-db-sample-person-cities-restaurants-435x351_rphkxx.png"><img alt="graph-db-sample-person-cities-restaurants-435x351.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680598366/graph-db-sample-person-cities-restaurants-435x351_rphkxx.png"></a>
+
+A more complex <a target="_blank" href="https://bvisual.net/2018/02/09/using-visio-and-powerbi-with-graphdatabase-in-sqlserver/">diagram using Visio and PowerBI</a>:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680603132/graph-db-diagram-609x460_t9zmwe.jpg"><img alt="graph-db-diagram-609x460.jpg" width="609" height="460" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680603132/graph-db-diagram-609x460_t9zmwe.jpg"></a>
+
 
 ### MATCH clause
 
@@ -249,6 +277,8 @@ https://www.sqlshack.com/introduction-sql-server-2017-graph-database/
 
 QUESTION: Sample template code for a web app built using C# .NET referencing graph SQL?
 
+   * https://guyinacube.com/2020/10/08/visualize-graph-data-in-power-bi/
+
 
 ### SHORTEST_PATH
 
@@ -265,6 +295,9 @@ To enforce data integrity and specific semantics on the edge tables in SQL Serve
    * Within parenteses are clauses that define the edge constraint.
    <br />
 
+* https://bvisual.net/2018/02/09/using-visio-and-powerbi-with-graphdatabase-in-sqlserver/
+
+
 <hr />
 
 ## Jobs
@@ -279,10 +312,4 @@ https://www.linkedin.com/jobs/microsoft-graph-science-jobs/
 
 * QUESTION: Sample code for a web app using Neo4j and Python? <a target="_blank" href="https://stackoverflow.com/questions/49610086/sample-code-for-a-web-app-using-neo4j-and-python">Stack Overflow</a>
 
-
-## More about Python
-
-This is one of a series about Python:
-
-{% include python_links.html %}
 
