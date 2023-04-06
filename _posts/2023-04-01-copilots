@@ -13,6 +13,8 @@ image:
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
+{% include l18n.html %}
+{% include _toc.html %}
 
 On an airplane, a "co-pilot" takes over when the captain goes to the bathroom.
 
