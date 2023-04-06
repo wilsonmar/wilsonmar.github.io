@@ -15,20 +15,3 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
-
-On an airplane, a "co-pilot" takes over when the captain goes to the bathroom.
-
-Big tech companies have been working since 2000 to create AI. 
-Microsoft funded OpenAI to create GPT-3, a language model used to generate complex text from complex queries. OpenAI's <strong>Codex</strong> translates natural language into programming code. GPT-3 (Generative Pre-trained Transformer 3&4) uses large models created using Deep Learning techniques to produce human-link text. Uses for GPT-3:
-
-   * Duolingo uses GPT-3 to correct grammar.
-   * Convert descriptions of colors into hex codes
-   * Turn comments (natural language) into runnable code
-   * Translate one language to others
-   * Autofill repetitive code
-   * Show alternatives ways to code
-   * Explain code (in English)
-   * Generate RegEx code when presented with data
-   <br />
-
-{% include whatever.html %}
