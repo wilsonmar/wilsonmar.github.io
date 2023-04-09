@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-21"
+date: "2023-04-09"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -162,13 +162,67 @@ Domain 14: Related Technologies
 
 ISC2.org (a non-profit), publishes a Code of Ethics at <a target="_blank" href="https://www.isc2.org/ethics">https://www.isc2.org/ethics</a>
 
+https://www.isc2.org/Certifications/Qualification-Pathfinder
+
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">Prices for exams</a> taken at Pearson Vue test centers:
+
+### CC: Certified in Cybersecurity (CC)
+$199
 
 <a name="SSCP"></a>
 
 ### SSCP
 
 <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$249 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/SSCP">SSCP (Systems Security Certified Practitioner)</a>
+
+### CGRC
+
+<a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CGRC">CGRC (Certified Government Risk and Compliance) professional</a> -- previously CAP (Certified Authorization Professionl) until Feb 23, 2023 -- is for individuals with 2+ years of experience being responsible for the implementation and management of information security risk management and compliance programs. Pass 70% of 125 questons over 3 hours at a <a target="_blank" href="https://www.pearsonvue.com/isc2/">Pearson VUE Testing Center</a>.
+
+CGRC Content maps to the NIST SP 800-37 RMF (Risk Management Framework)
+<a target="_blank" href="https://nira.com/nist-csf-categories/">categories</a>:
+   * "Left of boom": Identify, Protect, 
+   * Detect, Respond, Recover.
+
+CGRC is taken from a broad spectrum of vendor-neutral topics in the CGRC Common Body of Knowledge (CBK®) over <a target="_blank" href="https://www.isc2.org/-/media/ISC2/Certifications/Exam-Outlines/2021/CAP-Exam-Outline.ashx">7 domains</a>:
+   1. Information Security Risk Management Program 
+      * Control Objectives for Information and Related Technology (COBIT)
+      * International Organization for Standardization (ISO) 27001, 
+      * International Organization for Standardization (ISO) 31000, 
+      * Federal Information Security Modernization Act (FISMA), 
+      * Federal Risk and Authorization Management Program (FedRAMP), 
+      * General Data Protection Regulation (GDPR), 
+      * Health Insurance Portability and Accountability Act (HIPAA)
+   2. Scope of the Information System:
+      * Federal Information Processing Standards (FIPS) 199, 
+      * International Organization for Standardization/International Electrotechnical Commission (ISO/IEC) 27002, 
+      * data protection impact assessment
+   3. Selection and Approval of Security and Privacy Controls: baseline and inherited controls; control enhancements (e.g., security practices, overlays, countermeasures); continuous control monitoring strategy (e.g., implementation, timeline, effectiveness); Information Security Management System (ISMS) 
+   4. Implementation of Security and Privacy Controls
+      * Information Technology Security Guidance ITSG-33 – Annex 3A, 
+      * Technical Guideline for Minimum Security Measures, 
+      * United States Government Configuration Baseline (USGCB), 
+      * National Institute of Standards and Technology (NIST) checklists, 
+      * Security Technical Implementation Guides (STIGs)
+      * Center for Internet Security (CIS) benchmarks, 
+      * General Data Protection Regulation (GDPR)
+   5. Assessment/Audit of Security and Privacy Controls
+      * Risk treatment options (i.e., accept, avoid, transfer, mitigate, share)
+   6. Authorization/Approval of Information System
+   7. Continuous Monitoring
+   <br /><br />
+
+   * https://www.isc2.org/certifications/References#
+   * https://www.isc2.org/Certifications/CAP/experience-requirements
+   * https://resources.infosecinstitute.com/overview/cgrc/ reports there are 4,157 CGRC/CAP holders
+   <br /><br />
+
+<a target="_blank" href="https://www.linkedin.com/in/geraldauger/">Gerald Auger, PhD</a> (<a target="_blank" href="https://SimplyCyber.io">SimplyCyber.io</a>, publisher of the  <a target="_blank" href="https://simplycyber.teachable.com/">$30 GRC (Governance, Risk management, and Compliance) Analyst Master Class</a>. The first scholarly research on GRC was published in 2007 where GRC was formally defined as "the integrated collection of capabilities that enable an organization to reliably achieve objectives, address uncertainty, and act with integrity." Good governance <a target="_blank" href="https://aws.amazon.com/what-is/grc/">includes</a>:
+   * Ethics and accountability
+   * Transparent information sharing
+   * Conflict resolution policies
+   * Resource management
+   <br /><br />
 
 
 <a name="CISSP"></a>
@@ -275,7 +329,6 @@ Video prep courses view:
    * <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">Pearson CSSLP practice test provides questions. The <a target="_blank" href="https://pearsontestprep.com/#/examsettings">PearsonTestPrep.com</a> software enables display of individual domains from all 4 tests at once, showing only questions you missed before. Explanations are given as to why each response is correct or not.
 
    * <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$599 USD</a> <a target="_blank" href="https://www.isc2.org/Certifications/CSSLP">CSSLP (Certified Secure Software Lifecycle Professional)</a> is the secure <strong>software development</strong> certification. The 15 Sep 2020 edition is NOT covered in the <a target="_blank" href="https://learning.oreilly.com/library/view/csslp-certification-all-in-one/9781260441697/">All-in-One book</a> by Wm. Arthur Conklin, Daniel Paul Shoemaker. 
-
 
    <a target="_blank" href="https://www.linkedin.com/in/slandail?trk=lil_course">Jerod Brennen</a> created video courses (on LinkedIn Learning) for each domain:
 
@@ -427,17 +480,35 @@ Bragging:
 
 <a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a> asks for a $50 test application processing fee in addition to membership fee for a US$185 discount to the US$760 online, remotely-proctored exam fee. 
 
-   * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">CSX Fundamentals</a>
+* <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">CSX Fundamentals</a>
 
-   * CRISC (Certified in Risk and Information Systems Control)
+* CRISC (Certified in Risk and Information Systems Control)
 
-   * $50 <a target="_blank" href="https://www.isaca.org/credentialing/cism">CISM (Certified Information Security Manager)</a>
+* <a target="_blank" href="https://www.isaca.org/credentialing/cism">CISM (Certified Information Security Manager)</a> <a target="_blank" href="[2020-10-02-security-certs.md](https://learning.oreilly.com/live-events/cism-crash-superreview-by-allen-keele/0636920055226/0636920086120/)">VIDEO: CISM Crash SuperReview</a> by <a target="_blank" href="https://www.linkedin.com/in/allenkeele/">Allen Keele</a> of a 40-hour class at certifiedinfosec.com
 
-   * CGEIT (Certified in the Governance of Enterprise IT)
+   * 17% Information Security Governance
+   Organizational Culture<br />
+   Legal, Regulatory, and Contractual Requirements<br />
+   Organizational Structure, Roles, and Responsibilties<br />
+   * 20% Information Security Risk Management
+   * 33% Information Security Program
+   * 30% Incident Management
+   <br /><br />
 
-   * <a target="_blank" href="https://www.isaca.org/credentialing/certified-data-privacy-solutions-engineer">CDPSE (Certified Data Privacy Solutions Engineer)</a> covers privacy governance, privacy architecture, data lifecycle
+* ISO 31000 Internal Controls Risk Analyst (CICRA) <a target="_blank" href="https://learning.oreilly.com/live-events/certified-iso-31000-internal-controls-risk-analyst-cicra-crash-superreview-by-allen-keele/0636920071393/0636920086127/">VIDEO: Crash SuperReview</a> by Allen Keele
 
-   * <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a> is derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyberframework</a> is 4 hours.
+* Certified ISO 22301 Business Continuity Manager
+
+* Certified ISO 27001 Lead Implementer, Internal Controls Architect and Lead Auditor (LI/CICA/CLA)
+
+* CGEIT (Certified in the Governance of Enterprise IT)
+
+* <a target="_blank" href="https://www.isaca.org/credentialing/certified-data-privacy-solutions-engineer">CDPSE (Certified Data Privacy Solutions Engineer)</a> covers privacy governance, privacy architecture, data lifecycle
+
+* <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a>, derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyber framework</a> is 4 hours.
+
+Exec Order 14028 update of 13366
+
 
 ### ISACA CSX
 
@@ -503,14 +574,14 @@ https://www.whizlabs.com/comptia-pentest/
 ### CASP+
 
 <a target="_blank" href="https://www.comptia.org/certifications/comptia-advanced-security-practitioner">
-CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is a hands-on, performance-based certification for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
-For $396 for COMPTia members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "performance-based" questions, for pass/fail grading. The domains:
+CASP+ (CompTIA Advanced Security Practioner) exam CAS-003</a> is for practitioners — not managers — at the advanced skill level of cybersecurity -- implementing solutions policies and frameworks. 
+For $396 for COMPTia members or $466 USD (or $799 with retake and $849 with Labs), you'll have 165 minutes to answer 90 multiple-choice and "hands-on, performance-based" questions, for pass/fail grading. The domains:
 
    1. 19% Risk Management  
-   1. 25% Enterprise Security Architecture  
-   1. 20% Enterprise Security Operations  
-   1. 23% Technical Integration of Enterprise Security  
-   1. 13% Research, Development, and Collaboration 
+   2. 25% Enterprise Security Architecture  
+   3. 20% Enterprise Security Operations  
+   4. 23% Technical Integration of Enterprise Security  
+   5. 13% Research, Development, and Collaboration 
    <br /><br />
 
 <a target="_blank" href="https://www.comptia.org/testing/testing-options/about-comptia-performance-exams/performance-based-questions-explained">Performance-based questions (PBQs)</a> test a candidate’s ability to solve problems in a simulated environment that approximates a virtual environment with a firewall, network diagram, terminal window, or operating system.
@@ -541,7 +612,9 @@ by Nadean H. Tanner (at Puppet, Metasploit)
    * <a target="_blank" href="https://www.pentesterlab.com/exercises/">PentesterLab</a> provides subscription-based access to penetration testing exercises
    <br /><br />
 
-<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">O'Reilly video 18+ hours</a> released Jan. 2018 by Michael J. Shannon
+O'Reilly <a target="_blank" href="https://learning.oreilly.com/live-events/casp-cas-004-exam-crash-course/0636920080448/0636920087073/">Live Video Crash Course</a> by Dean Bushmiller.
+ 
+<a target="_blank" href="https://learning.oreilly.com/learning-paths/learning-path-comptia/9780135945025/">video 18+ hours</a> released Jan. 2018 by Michael J. Shannon:
 
 1. Risk Management
 
