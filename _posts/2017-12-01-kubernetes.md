@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-02"
+date: "2023-04-02"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -21,7 +21,6 @@ k8s_version: 1.26
 This article I wrote both while I prepared for the CKAD and while on the job.
 
 {% include whatever.html %}
-
 
 <a name="Keywords"></a>
 
@@ -4494,7 +4493,7 @@ https://inlets.dev/blog/2020/12/15/multi-cluster-monitoring.html
 
 1. To connect to the cluster, click the Editor left menu icon which has the name "CLOUD CODE - KUBERNETES".
 
-1. Click "Add a clustser to the KubeConfig" blue box.
+1. Click "Add a cluster to the KubeConfig" blue box.
 
 1. Select "Google Kubernetes Engine".
 
