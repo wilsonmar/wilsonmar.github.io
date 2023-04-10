@@ -917,6 +917,24 @@ SP 800-40 Guide to Enterpise Patch Management Technologies
    6. Monitor security controls
    <br /><br />
 
+Using <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>: a mnemonic based on the first letter of each step:
+
+"Cats Select Icy Aardvarks And Monkeys"
+
+   * "Cats" stands for "Categorize"
+   * "Select" represents "Select"
+   * "Icy" stands for "Implement"
+   * "Aardvarks" represents "Assess"
+   * "And" stands for "Authorize"
+   * "Monkeys" represents "Monitor"
+   <br /><br />
+
+Alternately, a memorable story I made up:
+<ul><strong>Categorize</strong> clothing to <strong>select</strong> one to wear for <strong>implementing</strong> the <strong>assessment</strong> in order to <strong>authorize</strong> a <strong>monitor</strong>.</ul>
+
+
+## NIST documents
+
 📓NIST SP 800-39<br />
 Offers structured and flexible guidance for managing information security risk across an organization's operations, assets, individuals, and other organizations, providing an integrated and complementary approach to other risk-related activities, processes, or approaches that organizations have implemented or intend to implement.
 
