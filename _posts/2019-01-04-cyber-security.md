@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-11"
+date: "2023-04-07"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -21,6 +21,9 @@ Here are my notes on resources for Cyber Security, which is a vast field. But ne
 > “Security is always excessive until it's not enough.” – Robbie Sinclair
 
 {% include whatever.html %}
+
+PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
+
 
 <hr />
 
@@ -834,6 +837,14 @@ NIST also publishes SP1800 (Cybersecurity practice guides) and the broader SP 50
 
 ### FedRAMP/FISMA compliance
 
+In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from a security assessment conducted by an independent 3PAO (Third-Party Assessor Organization). 
+
+A <strong>System Security Plan (SSP)</strong>  -- submitted in both Word and PDF formats -- is required by the OMB Security Authorization of Information Systems in Cloud Computing
+<a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>. 
+
+Each SSP authorization package can be in a machine-readable (JSON or XML format) <a target="_blank" href="https://github.com/usnistgov/OSCAL/">https://github.com/usnistgov/OSCAL</a> Open Security Controls Assessment Language - based on <a target="_blank" href="https://www.fedramp.gov/using-the-fedramp-oscal-resources-and-templates/">templates</a> created based on <a target="_blank" href="https://github.com/GSA/fedramp-automation/blob/master/documents/FedRAMP_OSCAL_Registry.xlsx">this Excel xlsx file</a> which defines fields (extensions), identifiers, and values in the <a target="_blank" href="https://github.com/GSA/fedramp-automation">FedRAMP Registry at https://github.com/GSA/fedramp-automation</a>. The template is from FedRAMP PMO and <a target="_blank" href="https://www.nist.gov/oscal/">NIST</a>.
+
+
 <a target="_blank" href="https://www.youtube.com/channel/UCkUuvNigxkKnk3SffjdbmQg">VIDEOS</a> from info.fedramp.gov
 
 Every federal agency is covered by the FISMA (Federal Information Security Management Act) of 2002 law. It's implemented according to NIST (National Institute of Standards and Technology) Special Publication (SP) <a target="_blank" href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">800-53 [pdf]</a>. The security controls development framework contains of 157 controls within 19 control families. Each control is designated as low, moderate, or high impact. 
@@ -866,6 +877,10 @@ Control Families:
 * SA - System and Services Acquisition
 <br /><br />
 
+
+
+## NIST
+
 NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
 <a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.
 
@@ -894,22 +909,31 @@ SP 800-34
 SP 800-40 Guide to Enterpise Patch Management Technologies
 
 800-34 RMF (Risk Management Framework) - to obtain cATO (continuous Authority To Operate):
-   1. Categorize
+   1. Categorize information system
    2. Select security controls
-   3. Implement controls
-   4. Assess controls
-   5. Authorize
-   6. Monitor
+   3. Implement security controls
+   4. Assess security controls 
+   5. Authorize information system
+   6. Monitor security controls
+   <br /><br />
 
-### FedRAMP
+📓NIST SP 800-39<br />
+Offers structured and flexible guidance for managing information security risk across an organization's operations, assets, individuals, and other organizations, providing an integrated and complementary approach to other risk-related activities, processes, or approaches that organizations have implemented or intend to implement.
 
-In 2011 a "cloud first" policy was defined in the Federal Risk and Authorization Program (FedRAMP) <a target="_blank" href="https://cio.gov/wp-content/uploads/downloads/2012/09/Federal-Cloud-Computing-Strategy.pdf">[pdf]</a> where federal agencies make use of cloud service providers (CSPs) given authority to operate (ATO) after receiving system authorization from an independent security assessment conducted by a 3PAO (third-party Assessor). 
+📓NIST SP 800-161<br />
+provides guidance for organizations to identify, assess, and mitigate cybersecurity risks associated with products and services throughout the supply chain, integrating cybersecurity supply chain risk management (C-SCRM) into risk management activities at all levels, and offering guidance on C-SCRM strategy implementation plans, policies, plans, and risk assessments.
 
-A <strong>System Security Plan (SSP)</strong> is required by the
-OMB Security Authorization of Information Systems in Cloud Computing
-<a target="_blank" href="https://cio.gov/wp-content/uploads/2012/09/fedrampmemo.pdf">[pdf]</a>. 
+📓NIST SP 800-53<br />
+outlines a set of security and privacy controls that organizations can implement to protect against potential threats and vulnerabilities. The controls are organized into families, and each control includes a description, implementation guidance, and assessment procedures.
 
-Each SSP authorization package can be in a machine-readable (JSON or XML format) <a target="_blank" href="https://github.com/usnistgov/OSCAL/">https://github.com/usnistgov/OSCAL</a> Open Security Controls Assessment Language - based on <a target="_blank" href="https://www.fedramp.gov/using-the-fedramp-oscal-resources-and-templates/">templates</a> created based on <a target="_blank" href="https://github.com/GSA/fedramp-automation/blob/master/documents/FedRAMP_OSCAL_Registry.xlsx">this Excel xlsx file</a> which defines fields (extensions), identifiers, and values in the <a target="_blank" href="https://github.com/GSA/fedramp-automation">FedRAMP Registry at https://github.com/GSA/fedramp-automation</a>. The template is from FedRAMP PMO and <a target="_blank" href="https://www.nist.gov/oscal/">NIST</a>.
+📓NIST SP 800-53A<br />
+provides a methodology for assessing the security controls of federal information systems.
+
+📓NIST SP 800-53B<br />
+is based on the security and privacy controls outlined in NIST SP 800-53 and provides a set of control baselines that organizations can use to tailor their security controls to meet their specific needs.
+
+📓NIST 800-30<br />
+offers a structured approach for identifying, evaluating, and prioritizing information security risks through risk assessments.
 
 
 ## DISA SIST & SRG
@@ -958,7 +982,7 @@ EU Cookie Law <a target="_blank" href="http://ec.europa.eu/ipg/basics/legal/cook
 
 Canada's 
 
-eDiscovery EDRM (electronic Discovery Reference Model):
+eDiscovery EDRM (electronic Discovery Reference Model) A framework that provides guidance for gathering and assimilating electronic data during the legal process:
    * Preserving
    * Collection
    * Processing
@@ -1222,7 +1246,7 @@ NIST SP 800-122 gives guidelines on protecting the confidentiality of PII (Perso
 U.S. federal agencies use the SBU (Sensitive But Unclassified) designation for information not secret but still needs to be protected and requires strict controls over its distribution.
 
 <a target="_blank" href="http://ethics-wg.org/framework.htm">http://ethics-wg.org/framework.htm</a> says:
-"Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the(ISC)2 code of ethics preamble.
+"Do not appropriate other people’s intellectual output" is one of the Computer Ethics Institute (CEI) Ten Commandments of Computer Ethics, but is not part of the (ISC)2 code of ethics preamble.
 
 Components of configuration management:
    * configuration control
@@ -1557,7 +1581,7 @@ Focus of security awareness training:
    * Regular staff: responsibilities regarding security for performing day-to-day tasks in a secure manner. 
    <br /><br />
 
-<a target="_blank" href="https://www.ferma.eu/">FERMA (Federation of European Risk Management Associatitions)</a> provides guidelines for managing risk in an organization.
+<a target="_blank" href="https://www.ferma.eu/">FERMA (Federation of European Risk Management Associations)</a> provides guidelines for managing risk in an organization.
 
 The "PASTA" methodology provides a seven-step process for analyzing applications to align business objectives and technical requirements. This method provides a threat identification, enumeration, and scoring process. It is intended to provide an attacker-centric view of the application and infrastructure from which defenders can develop an asset-centric mitigation strategy.
 
@@ -1610,9 +1634,9 @@ Software Capability Maturity Model (SCCM) - REMEMBER: Memonic: I Read Data Maps 
    5. <strong>Optimized</strong> - process management includes deliberate process optimization/improvement.
     <br /><br />
 
-Process improvement approaches:
+Like the Capability Maturity Model Integration (CMMI) addresses development, services, and acquisitions. 
 
-   * Capability Maturity Model Integration (CMMI) addresses development, services, and acquisitions. 
+Process improvement approaches:
 
    * Six Sigma includes methodologies DMAIC (Define, Measure, Analyze, Improve existing, Control process) or DMADV (Define, Measure, Analyze, Design, Verify new customer)
 
@@ -1620,7 +1644,7 @@ Process improvement approaches:
 
    * Department of Defense Architecture Framework (DoDAF) is an architecture framework that organizes a set of products under eight viewpoints: Capability Viewpoint (CV), Data and Information Viewpoint (DIV), Operation viewpoint (OV), Project Viewpoint (PV), SerViCes Viewpoint (SvcV), STanDards Viewpoint (STDV), and Systems viewpoint (SV), All Viewpoint (required) (AV).
 
-   * British Ministry of Defense Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: STrategic viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
+   * British Ministry of Defense Architecture Framework (MODAF) is an architecture framework that divides information into seven viewpoints: Strategic Viewpoint (StV), Operational Viewpoint (OV), Service-Oriented Viewpoint (SOV), Acquisition Viewpoint (AcV), Technical viewpoint (TV), Systems Viewpoint (SV), All viewpoint (AV).
 
    * DHS (Department of Homeland Security) is involved in promoting <a target="_blank" href="https://flylib.com/books/en/2.845.1.97/1/">software security best practices</a>. Its <a target="_blank" href="https://us-cert.cisa.gov/bsi">Build Security In (BSI) initiative</a> promotes a process-agnostic approach that makes security recommendations with regard to architectures, testing methods, code reviews, and management processes.
    ![cyber-sec-bsi-500x331](https://user-images.githubusercontent.com/300046/117125753-2f2a6680-ad57-11eb-8042-d305bd727855.jpg)
