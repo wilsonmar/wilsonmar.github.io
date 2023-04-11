@@ -896,7 +896,8 @@ SP 800-30 steps for a risk assessment:
    6. Determine risk as a combination of likelihood and impact.
    <br /><br />
 
-SP 800-34 
+SP 800-34
+
    * A CIP (critical infrastructure protection) plan is a set of policies and procedures that serve to protect and recover assets and mitigate risks and vulnerabilities.
 
    * An OEP (occupant emergency plan) outlines first-response procedures for occupants of a facility in the event of a threat or incident to the health and safety of personnel, the environment, or property.
@@ -905,8 +906,6 @@ SP 800-34
 
    * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
    <br /><br />
-
-SP 800-40 Guide to Enterpise Patch Management Technologies
 
 800-34 RMF (Risk Management Framework) - to obtain cATO (continuous Authority To Operate):
    1. Categorize information system
@@ -917,7 +916,12 @@ SP 800-40 Guide to Enterpise Patch Management Technologies
    6. Monitor security controls
    <br /><br />
 
-Using <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>: a mnemonic based on the first letter of each step:
+PROTIP: Notice that Categorize and Authorize refer to information systems. The rest refer to security controls.
+
+PROTIP: <em>A memonic story I made up:</em>
+<ul><strong>Categorize</strong> clothing choices to <strong>select</strong> one to <strong>implement</strong> on the Oscars red carpet for <strong>assessment</strong> by magazines who <strong>authorize</strong> mine as the best and for fans to <strong>monitor</strong>.</ul>
+
+Alternately, using <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>: a mnemonic based on the first letter of each step:
 
 "Cats Select Icy Aardvarks And Monkeys"
 
@@ -928,9 +932,6 @@ Using <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>: a mnemonic
    * "And" stands for "Authorize"
    * "Monkeys" represents "Monitor"
    <br /><br />
-
-Alternately, a memorable story I made up:
-<ul><strong>Categorize</strong> clothing to <strong>select</strong> one to wear for <strong>implementing</strong> the <strong>assessment</strong> in order to <strong>authorize</strong> a <strong>monitor</strong>.</ul>
 
 
 ## NIST documents
@@ -952,6 +953,9 @@ is based on the security and privacy controls outlined in NIST SP 800-53 and pro
 
 📓NIST 800-30<br />
 offers a structured approach for identifying, evaluating, and prioritizing information security risks through risk assessments.
+
+NIST SP 800-40<br />
+Guide to Enterpise Patch Management Technologies
 
 
 ## DISA SIST & SRG
