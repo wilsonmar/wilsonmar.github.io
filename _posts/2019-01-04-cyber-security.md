@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-07"
+date: "2023-04-11"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -877,26 +877,31 @@ Control Families:
 * SA - System and Services Acquisition
 <br /><br />
 
-
-
-## NIST
-
-NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
-<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.
+## CMMC
 
 Cybersecurity Maturity Model Certification (CMMC) framework
-March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https://www.acq.osd.mil/cmmc</a>
+March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https://www.acq.osd.mil/cmmc</a> developed by US DoD aims to address supply chain risks.
+
+
+## NIST documents
+
+### NIST SP 800-30
+
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf">📓</a> 
+<a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final">NIST 800-30 Rev. 1 September 2012</a> "Guide for Conducting Risk Assessments"
+offers a structured approach for identifying, evaluating, and prioritizing information security risks through risk assessments.
 
 SP 800-30 steps for a risk assessment: 
-   1. Identify the assets and their value. 
-   2. Identify threats. 
-   3. Identify vulnerabilities. 
-   4. Determine likelihood. 
-   5. Identify impact. 
-   6. Determine risk as a combination of likelihood and impact.
+   1. Identify the <strong>assets</strong> and their value. 
+   2. Identify <strong>threats</strong>.
+   3. Identify <strong>vulnerabilities</strong>.
+   4. Determine <strong>likelihood</strong>.
+   5. Identify <strong>impact</strong>. 
+   6. Determine <strong>risk as a combination</strong> of likelihood and impact.
    <br /><br />
 
-SP 800-34
+
+### NIST SP 800-34
 
    * A CIP (critical infrastructure protection) plan is a set of policies and procedures that serve to protect and recover assets and mitigate risks and vulnerabilities.
 
@@ -919,43 +924,43 @@ SP 800-34
 PROTIP: Notice that Categorize and Authorize refer to information systems. The rest refer to security controls.
 
 PROTIP: <em>A memonic story I made up:</em>
-<ul><strong>Categorize</strong> clothing choices to <strong>select</strong> one to <strong>implement</strong> on the Oscars red carpet for <strong>assessment</strong> by magazines who <strong>authorize</strong> mine as the best and for fans to <strong>monitor</strong>.</ul>
-
-Alternately, using <a target="_blank" href="https://chat.openai.com/">ChatGPT</a>: a mnemonic based on the first letter of each step:
-
-"Cats Select Icy Aardvarks And Monkeys"
-
-   * "Cats" stands for "Categorize"
-   * "Select" represents "Select"
-   * "Icy" stands for "Implement"
-   * "Aardvarks" represents "Assess"
-   * "And" stands for "Authorize"
-   * "Monkeys" represents "Monitor"
-   <br /><br />
+<ul><strong>Categorize</strong> clothing choices to <strong>select</strong> one to <strong>implement</strong> on the Oscars red carpet for magazines who <strong>assess</strong>  mine as the best so I can <strong>authorize</strong> it for sales to fans who <strong>monitor</strong> who's wearing it too.</ul>
 
 
-## NIST documents
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171r2.pdf">📓</a> NIST SP 800-171 Rev 2<br />
+Audit Prep, Logistics (Who, Require SOP/Policies), Audit (show me evidence), Post-Audit Reconciliation, Analysis, Reporting, Remediation, and Continuous Monitoring
+SP 800-171 Rev 2 replaces 
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1.pdf">📓</a> NIST SP 800-161 "Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations" 
+which was withdrawn on May 05, 2022. 161 provides guidance for organizations to identify, assess, and mitigate cybersecurity risks associated with products and services throughout the supply chain, integrating cybersecurity supply chain risk management (C-SCRM) into risk management activities at all levels, and offering guidance on C-SCRM strategy implementation plans, policies, plans, and risk assessments.
 
-📓NIST SP 800-39<br />
-Offers structured and flexible guidance for managing information security risk across an organization's operations, assets, individuals, and other organizations, providing an integrated and complementary approach to other risk-related activities, processes, or approaches that organizations have implemented or intend to implement.
 
-📓NIST SP 800-161<br />
-provides guidance for organizations to identify, assess, and mitigate cybersecurity risks associated with products and services throughout the supply chain, integrating cybersecurity supply chain risk management (C-SCRM) into risk management activities at all levels, and offering guidance on C-SCRM strategy implementation plans, policies, plans, and risk assessments.
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-39.pdf">📓</a> NIST SP 800-39 (March 2011) "Managing Information Security Risk:
+Organization, Mission, and Information System View"
+offers structured and flexible guidance for managing information security risk across an organization's operations, assets, individuals, and other organizations, providing an integrated and complementary approach to other risk-related activities, processes, or approaches that organizations have implemented or intend to implement.
 
-📓NIST SP 800-53<br />
+### NIST SP 800-40
+
+NIST SP 800-40<br />
+Guide to Enterpise Patch Management Technologies
+
+
+### NIST SP 800-53 
+
+https://www.cybersaint.io/blog/nist-800-53-control-families
+
+<a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf">📓</a> NIST SP 800-53 Rev 5 September 2020 "Security and Privacy Controls for Information Systems and Organizations" 
 outlines a set of security and privacy controls that organizations can implement to protect against potential threats and vulnerabilities. The controls are organized into families, and each control includes a description, implementation guidance, and assessment procedures.
+
+<a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2023/03/aws-security-hub-support-nist-sp-800-53-rev-5/">Its 121 requirements are supported among the 36 AWS Services by AWS Security Hub</a>.
+
+NIST SP 800-53 is within section 4 SECURITY CONTROL SELECTION of 
+<a target="_blank" href="https://csrc.nist.gov/publications/fips">https://csrc.nist.gov/publications/fips</a> NISP FIPS-200 and 201-3 catagorizes by impact.
 
 📓NIST SP 800-53A<br />
 provides a methodology for assessing the security controls of federal information systems.
 
 📓NIST SP 800-53B<br />
 is based on the security and privacy controls outlined in NIST SP 800-53 and provides a set of control baselines that organizations can use to tailor their security controls to meet their specific needs.
-
-📓NIST 800-30<br />
-offers a structured approach for identifying, evaluating, and prioritizing information security risks through risk assessments.
-
-NIST SP 800-40<br />
-Guide to Enterpise Patch Management Technologies
 
 
 ## DISA SIST & SRG
@@ -1188,7 +1193,7 @@ NIACAP (National Information Assurance Certification and Accreditation Process) 
 
 <a name="CSF"></a>
 
-CSF Functions and Categories maps NIST 800-53 to CIS Controls:
+CSF Functions and Categories maps NIST 800-53 to <a href="#CIS">CIS Controls</a>:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg"><img alt="cybersecurity-nist-342x275" width="342" height="275" src="https://user-images.githubusercontent.com/300046/55505643-c8cf3900-5610-11e9-8f79-3e7bec5cfe7c.jpg"></a>
 
 NIST SP 800-39 provides guidance for an integrated, organization-wide program for managing information security risk to organizational operations (i.e., mission, functions, image, and reputation), organizational assets, individuals, other organizations, and the nation resulting from the operation and use of federal information systems.
@@ -1579,7 +1584,7 @@ See https://www.caida.org/research/security/code-red/
    * Polymorphic can change to avoid detection.
    <br /><br />
 
-## Risk ratings
+## DREAD Risk ratings
 
 DREAD is a mnemonic for categories used to rate security threats for a given issue:
    * Damage
@@ -1592,6 +1597,87 @@ DREAD is a mnemonic for categories used to rate security threats for a given iss
 Each category is given a rating from 1 to 10. The sum of all ratings is used to prioritize among different issues.
 
 CVSS
+
+## CIS (Center for Internet Security)
+
+<a target="_blank" href="https://learn.cisecurity.org/cis-controls-download">CIS Controls</a> (at v8 at time of writing) presents 18 must-have controls for cybersecurity.
+
+https://www.networkworld.com/article/2992503/sans-20-critical-security-controls-you-need-to-add.html
+
+Control 1: Inventory and control of enterprise assets
+
+Actively manage inventories, track, and correct all end-user devices, including portable and mobile; network devices; non-computing/Internet of Things (IoT) devices; and servers that connect to the infrastructure physically, virtually, remotely, and those within cloud environments. The inventory helps identify devices to remove or remediate.
+
+Control 2: Inventory and control of software assets
+
+Actively inventory, track, and correct all operating systems and applications on the network to spot and block unauthorized and unmanaged software so that only authorized software is installed and can execute.
+
+Control 3: Data protection
+
+Identify, classify, securely handle, retain, and dispose of data.
+
+The ideal for this is to put data of the same sensitivity level on the same network and isolated from data with other sensitivity levels. Firewalls would control access to each segment, and access would be granted only to users with a business need to access them.
+
+Control 4: Secure configuration of assets and software
+
+Secure configuration of end-user devices, including portable and mobile; network devices; non-computing/IoT devices; servers; operating systems and applications should be established, stored, and maintained. Installing VPNs in front of servers and using DNS servers that are controlled by the enterprise are recommended.
+
+Contol 5: Account management
+
+This recommends using processes and tools to manage authorization to enterprise assets and software. These include administrator and service accounts. One recommendation calls for restricting administrator privileges to dedicated administrator accounts and granting those privileges only to those who actually administer network assets. These admins should also have separate accounts that they use for accessing email, web  browsing and productivity apps.
+
+Control 6: Access-control management
+
+Enterprises should use processes and tools to create, assign, manage, and revoke access credentials and privileges for user, administrator, and service accounts for enterprise assets and software. Role-based access should be assigned to each account based on need-to-know, least privilege, privacy requirements, and separation of duties.
+
+Control 7: Continuous vulnerability management
+
+Vulnerabilities should be continuously assessed and tracked on enterprise infrastructure so they can be remediated in a timely fashion that minimizes the window of opportunity for attackers to exploit them. Public and private industry sources of new threat and vulnerability information should be used to help this process.
+
+Control 8: Audit log management
+
+Audit logs should be collected, reviewed and retained to document events and help detect, understand, and recover from attacks. Logs can show when and how attacks occur, what information was accessed, and if data was exfiltrated. Retention of logs is critical for follow-up investigations or to understand attacks that remain undetected for a long period of time.
+
+Control 9: Email and web browser protections
+
+Improve protections and detections of email and web threats that can manipulate human behavior through direct engagement; these are prime targets for both malicious code and social engineering. Safeguards include use of DNS-filtering services to reduce exposure and enforcement of network-based URL filters>
+
+Control 10: Malware defenses
+
+Prevent or control the installation, spread, and execution of software on enterprise assets, using methods that include anti-malware software on all enterprise assets, scanning for malware on removable media such as thumb drives, and enabling anti-exploitation features “such as Microsoft® Data Execution Prevention (DEP), Windows® Defender Exploit Guard (WDEG), or Apple® System Integrity Protection (SIP) and Gatekeeper™.”
+
+Control 11: Data recovery
+
+Data-recovery practices sufficient to restore in-scope enterprise assets to a pre-incident and trusted state. Because configuration changes can create vulnerabilities for attackers to exploit, it is important to have recent backups to recover enterprise assets and data back to a known trusted state.
+
+Control 12: Network infrastructure management
+
+Track, report, and correct network devices, to prevent attackers from exploiting network services and points of access. The infrastructure includes physical and virtual gateways, firewalls, wireless access points, routers, and switches. These measures should address vulnerabilities that can be introduced by using default settings, monitoring for changes, and reassessing current configurations. One example is running the latest stable release of software or using currently supported network-as-a-service (NaaS) offerings.
+
+Further, enterprises should maintain network diagrams and other system documentation, and review and update them annually. Computing resources used for administrative tasks should be physically or logically separated from the primary enterprise network and isolated from internet access.
+
+Control 13: Network monitoring and defense
+
+Comprehensive network monitoring and defenses against threats should be established, including intrusion detection, traffic filtering between network segments, and deploying port-level controls such as those supported by 802.1x authentication.
+Control 14: Security-awareness and skills training
+
+A security awareness program should be established create security consciousness among the workforce and provide them the skills to reduce cybersecurity risks.
+
+Control 15: Service provider management
+
+A process to evaluate service providers who hold sensitive data or are responsible critical enterprise-IT platforms or processes should be set up to ensure they are providing appropriate protection. Enterprises should set requirements for service providers, which might include minimum security programs, security incident and data-breach notification and response, data-encryption requirements, and data-disposal commitments. Enterprises should review service provider contracts annually to ensure they include the requirements.
+
+Control 16: Application software security
+
+Manage the security life cycle of in-house developed, hosted, or acquired software to prevent, detect, and remediate security weaknesses before they affect the enterprise. Organizations should also use standard, industry-recommended configuration templates to harden underlying servers, databases, and web servers. This also applies to cloud containers, platform-as-a-service components, and SaaS components.
+
+Control 17: Incident-response management
+
+Key roles and responsibilities should be assigned for incident response, including staff from legal, IT, information security, facilities, public relations, human resources, incident responders, and analysts, as applicable. The plan should be review annually or when significant enterprise changes occur that could affect incident response.
+
+Control 18: Penetration testing
+
+A penetration testing program should simulate the actions of an attacker to identify and exploit weaknesses among people, processes, and technology. The program should be appropriate to the size, complexity, and maturity of the enterprise. Vulnerabilities should be remediated based on the enterprise’s policy for remediation scope and prioritization.
 
 
 ## Models & Lifecycles
@@ -1760,6 +1846,7 @@ Order evidence should be saved: REMEMBER: ephemeral first
    <br /><br />
 
 ### Cohesion is opposite of Coupling
+
    * <strong>Low cohesion</strong> describes a module that carries out <strong>many tasks</strong>, making it harder to maintain and reuse.
    * High cohesion describes a software module that does NOT affect many other modules, so is easier to update.
 
@@ -2084,7 +2171,7 @@ Rounds of computations: REMEMBER:
    * RC4 is a symmetric stream cipher, so does not have a block size.
    <br /><br />
 
-<strong>Block symmetric cipher</strong> modes use IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
+<strong>Block symmetric cipher</strong> modes use of IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
    * Block ciphers are generally less susceptible to security issues.
    * Block ciphers are generally used more in software implementations.
 
@@ -2105,7 +2192,7 @@ Public-key cryptosystems are convenient in that they do not require the sender a
    5. The receiver decrypts the symmetric key and uses the symmetric key to decrypt the message.
    <br /><br />
 
-Implementation of Confusion is the process of changing a key value during each round of encryption.
+<strong>Implementation of Confusion</strong> is the process of changing a key value during each round of encryption.
    * 3DES-EEE3 encrypts each block of data three times, each time with a different key. 
    * 3DES-EDE3 encrypts each block of data with the first key, decrypts each block with the second key, and encrypts each block with the third key.
    * 3DES-EDE2 encrypts each block of data with the first key, decrypts each block with the second key, and then encrypts each block with the first key.
@@ -2118,6 +2205,9 @@ PKI (Public Key Infrastructure):
    * A verifier is an entity that verifies a public key chain.
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
+
+"Homomorphic encryption" allows computations to be performed on encrypted data without first having to decrypt it. It can be used for privacy-preserving outsourced storage and computation. This allows data to be encrypted and out-sourced to commercial cloud environments for processing, all while encrypted.
+Even if a service provider's system is compromised, the data would remain secure.
 
 
 <a name="NetworkProtocols"></a>
@@ -2541,7 +2631,7 @@ https://thorteaches.com/the-memory-palace-prashant-mohan/
 https://thorteaches.com/wp-content/uploads/2021/06/The-Memory-Palace-CISSP-by-Prashant-Mohan-4th-edition.pdf
 One large PDF of what to remember while taking the CISSP exam.
 
-### 
+### Open-source intelligence (OSINT)
 
 Open-source intelligence feeds:
    * Malware Information Sharing Project (MISP)
