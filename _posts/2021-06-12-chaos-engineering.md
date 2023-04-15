@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-04-12"
+file: "chaos-engineering"
 title: "Chaos Engineering"
 excerpt: "Use Gremlin, Chaos Monkey, and monitoring tools (such as Datadog) to measure and improve MTTD and MTTR"
 tags: [devops, devsecops]
-date: "2021-06-12"
-file: "chaos-engineering"
 image:
 # chaos-engineering-hero-1900x500
   feature: https://user-images.githubusercontent.com/300046/133199858-1c9e5eb5-cf3a-43c5-a3b7-93ecdeb894b8.png
@@ -34,7 +34,13 @@ Vendor Gremlin's definition:
 
 https://github.com/dastergon/awesome-chaos-engineering
 
-The speed to detect and respond to anomalies is a key part of the "Operational Efficiency" pillar of Well-Architected cloud frameworks by both Amazon and Microsoft. 
+### Making bad things happen 
+
+Chaos Engineering is an <strong>investment</strong> in moving from a reactive to <strong>proactive</strong> approach to reliability engineering.
+
+Instead of waiting for an outage to "see what happens", 
+it involves conducting <strong>experiments</strong> to expose systemic weaknesses do not become aberrant behaviors in production.
+
 
 <a name="Hypotheses"></a>
 
@@ -42,86 +48,98 @@ The speed to detect and respond to anomalies is a key part of the "Operational E
 
 Real world "chaos" in Virtual Machines (and how to inject failure):
 
+   * Misconfiguration of network and server resources (in Terraform HCL, CloudFormation, etc.)
+   * System time Change (by "Time Travel" utility)
+
    * CPU usage spike (sidecar program making complex calculations)
    * Memory RAM usage spike (sidecar program consuming memory)
    * Hard drive free space available (program consuming disk space)
    * Disk I/O (competiting)
+   
+   * DNS resolution failure (by operating system command)
    * Transaction latency (by proxy holding requests)
    * Network bandwidth (competing program hogs bandwidth)
    * Network connections severed (by operating system command)
    * Network TCP packet Loss 
+   
    * Specific app process killed (by operating system command)
-   * System time Change (by "Time Travel" utility)
    * Server shutdown (by operating system command)
-   * DNS
    <br /><br />
 
 Potential failures possible (based on <a target="_blank" href="https://principlesofchaos.org/">principlesofchaos.org</a>):
 
-   * improper fallback settings when a service is unavailable (such as the system not being in a safe state after failure)
-   * retry storms from improperly tuned timeouts
-   * outages when a downstream dependency receives too much traffic
-   * cascading failures when a single point of failure crashes
+   * Single point of failure (SPOF) crashes with <strong>no fallback</strong>
+   * Improper or ineffective <strong>fallback settings</strong> when a service is unavailable (such as the system not being in a safe state after failure)
+   * <strong>Retry storms</strong> from improperly tuned timeouts
+   * <strong>Cascading outages</strong> when a downstream dependency receives too much traffic
    <br /><br />
 
+See <a href="#FailureModes">Failure Modes</a> (below).
 
-## Making it happen 
-
-Chaos Engineering is an <strong>investment</strong> in moving from a reactive to <strong>proactive</strong> approach to reliability engineering.
-
-Instead of waiting for an outage to "see what happens", 
-it involves conducting <strong>experiments</strong> to expose systemic weaknesses do not become aberrant behaviors in production.
-
-A sample Acceptance Criteria statement for work on Chaos Engineering is confidence in our production deployments despite the complexity that they represent:
-
-   * RTO and RPO expected and architecture/processes to achieve them are defined and approved by leadership.
-
-   * Proof that failure of key resources in each environment results in recovery within RTO and RPO timeframes.
- 
-   * Improved availability (reduced unplanned down time) and development velocity.
-
-## Preparations
-
-Preparations for Chaos Engineering effort:
-
-   * Pitch
-   * Executive sponsor. If your leadership's attitude is to do the minimal and just recover when needed, this is not for you.
-   * Team assembled and trained
-   * Cloud accounts provisioned
-   * Systems are created (using IaC) and running in "steady state"
-   * Monitoring systems and procedures are in place to produce <a href="#Metrics">metrics (see below)</a>
-   * Baseline metrics
-   <br /><br />
 
 <a name="Metrics"></a>
 
 ## Metrics
 
-   * Availability (unplanned downtime)
-   * Transaction throughput per hour/day/week/month/quarter/year
-   * Latency (response time to user requests) percentiles
+The <strong>speed to detect and respond</strong> to anomalies is a key part of the "Operational Efficiency" pillar of <a target="_blank" href="https://wilsonmar.github.io/well-architected-cloud/">Well-Architected cloud</a> "best practice" implementation and evaluation frameworks by Amazon, Microsoft, and Google. 
+
+A sample <strong>Acceptance Criteria</strong> statement for work on Chaos Engineering is "confidence in our production deployments" despite the complexity that they represent.
+
+Specific metrics to measure:
+
+   * Availability (unplanned downtime per year/month/week/day/hour). Components of this include:
+
+      * Transaction throughput per hour/day/week/month/quarter/year
+
+      * Latency (response time to user requests) percentiles
 
    * MTTD (Mean Time to Detect) - How long did it take for someone to realize there is a problem? The starting point is an event that may not be specifically logged, but inferred from other observations.
 
    * MTTM (Mean Time to reMediate) - How long did it take for the interruption (vulnerability) to be corrected in production?
 
-   * MTTR (Mean Time to Repair/Recover) - How long did it take for the interruption to be repaired? 
-
    * MTTI (Mean Total Time of Impact) to operations.
 
    * MTBF (Mean Time Between Failures) - How quickly and frequently engineers deploy?
 
-   * RTO (Re time Objective)
+   * RTO (Recovery Time Objective) aka MTTR (Mean Time to Repair/Recover) - How long for interruptions to be repaired? 
 
-   * RPO (re P Objective) 
+   * RPO (Recovery Point Objective) - how far back data can be recovered. If there is dependence on recovery from backups,  the RPO would be the time between backups are taken, which can be a day.
 
-Several vendors offer products and SaaS services:
+
+<a name="Monitoring_Vendors"></a>
+
+## Monitoring Vendors
+
+Vendors offering products and SaaS services:
 
    * Datadog
    * Dynatrace
    * New Relic
    * Elastic
+   * Splunk
+   * etc.
+   <br /><br />
 
+PROTIP: Summarized metric reports provide executives of an enterprise the <strong>resiliency posture</strong> of its systems.
+
+
+## Preparations and efforts
+
+Steps in a Chaos Engineering effort:
+
+   1. Pitch executives to get buy-in (this involves an "elevator pitch", "business case", and "proof of concept")
+   2. Executive sponsor. If your leadership's attitude is to do the minimal and just recover when needed, this is not for you.
+   3. Team assembled 
+   4. Cloud accounts provisioned with budget and adequate permissions
+   5. Team trained
+   6. Systems are created (using IaC) and running in "steady state"
+   7. Install monitoring systems and procedures (currently in place) to produce "as is" baseline <a href="#Metrics">metrics (see below)</a>
+   9. Analyze baseline metrics with visual analytics to identify and demonstrate "weaknesses" as "opportunities"
+   10. Define plan of action (design experiments)
+
+   11. Implement plan of action (conduct experiments on <a href="#GameDay">Game Days</a>)
+   12. Analyze evolving metrics to determine if the plan of action is working, and adjust as necessary
+   <br /><br />
 
 
 <a name="Experiments"></a>
@@ -141,26 +159,26 @@ Chaos engineering experiments follow an approach:
     
 <hr />
 
-<a name="Vendors"></a>
+<a name="Chaos_Vendors"></a>
 
-## Automation Vendors
+## Chaos Automation Vendors
 
-Sure, one can inject "perturbation" by manually shutting down a server to see what happens.
+Sure, "perturbations" can be injected manually on a CLI, such as a server shut down command, to see what happens.
 
-Chaos engineering utilities (systems) enable more experiments to be conducted <strong>quicker, for higher coverage, with better reporting, at scale</strong> (running hundreds or thousands of servers), providing daily, weekly, monthly, and annual reports about the <strong>resiliency posture</strong> of the systems.
+Chaos engineering utilities (systems) enable more experiments to be conducted <strong>quicker, for higher coverage, with better repeatability, at scale</strong> (running hundreds or thousands of servers), providing daily, weekly, monthly, and annual reports.
 
 This article draws from several vendors.
 
-Vendors who offer products and services to automate chaos engineering:
+The timeline at the top of this page depict vendors who offer products and services to automate chaos engineering:
 
-   * Chaos Monkey from Netflix
-   * Gremlin (freemium)
+   * <a href="#ChaosMonkey">"Chaos Monkey" from Netflix</a>
+   * <a href="#Gremlin">Gremlin (freemium)</a>
    * <a href="#CNCFLitmus">CNCF Litmus with services by ChaosNative</a>
-   * AWS Fault Injection Simulator,
+   * AWS Fault Injection Simulator
    * others
    <br /><br />
 
-To maintain a postmortem to display a Postmortum Dashboard to display timelines and metrics.
+"Postmortem Dashboards" display timelines and metrics are presented by these vendors to help teams learn from failures:
    * Jira 
    * "Fire Hydrant"
    * Blameless
@@ -212,9 +230,11 @@ LitmusChaos was orginally developed for use on Kubernetes.
 
 Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
 
+
+
 <hr />
 
-## Gremlin's approach
+<a name="GameDay"></a>
 
 ### Roles for "Game Day"
 
@@ -357,5 +377,3 @@ https://medium.com/the-cloud-architect/what-is-aws-fault-injection-simulator-and
 This is one of a series on DevSecOps:
 
 {% include devops_links.html %}
-
-
