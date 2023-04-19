@@ -1,10 +1,10 @@
 ---
 layout: page
+date: "2016-06-14"
+file: "social-media-strategy"
 title: Social media strategy
 excerpt: "Tell them well"
 tags: [social media, evangelism]
-date: "2016-06-14"
-file: "social-media-strategy"
 image:
 # pic blue networkers social 1900x500-c21.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/16904951/0e5ebb1a-4c5c-11e6-8741-778edab0dd85.jpg
@@ -15,6 +15,8 @@ comments: true
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
+
+{% include whatever.html %}
 
 The first photo uploaded to an app by Instagram, on July 16 2010, by co-founder Kevin Systrom:
 
@@ -54,12 +56,14 @@ Some websites "gamify" their site with reward points for visitors to do the abov
 ## Measurements #
 
 <strong>1st Level Connections</strong> on LinkedIn are the number of others who have connected to an individual user.
-An average LinkedIn user has about 1300 contacts within this distribution in 2018:<a target="_blank" href="http://tradeshows.academy/interesting-statistics-on-the-number-of-linkedin-connections-per-user/">*</a>
+An average LinkedIn user has about 1,300 contacts within this distribution in 2018:<a target="_blank" href="http://tradeshows.academy/interesting-statistics-on-the-number-of-linkedin-connections-per-user/">*</a>
 
 ![social-media-strategy-linkedin-648x431-13031](https://user-images.githubusercontent.com/300046/51442384-06772380-1caa-11e9-8277-007214c6fb80.jpg)
 
 Among its 500 Million LinkedIn users, 70% are outside the USA, according to OmnicoreAgency.com.
 
+<a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/49650">A LinkedIn answer said</a> there are 500 LinkedIn Influencers worldwide (called <a target="_blank" href="https://www.linkedin.com/help/linkedin/answer/a776208">"Top Voice"</a> since October 2022)
+Among the invitation-only <a target="_blank" href="https://omr.com/en/daily/linkedin-ranking-omr/">the top 20 influencers</a>, Bill Gates is #1 with 36 million (as of April 2023).
 
 <strong>Number of Followers</strong> are also tracked on LinkedIn.
 
