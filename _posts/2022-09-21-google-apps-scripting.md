@@ -3,7 +3,7 @@ layout: post
 date: "2022-09-22"
 file: "google-apps-scripting"
 title: "Google Apps Scripting"
-excerpt: "Because Microsoft Word and Excel files can go in and out of Google Docs and Sheets (mostly) well, you can now extract lines from Google Docs into Google Sheets. Generate HTML from Google Sheets."
+excerpt: "If you liked Microsoft's VB script for Word, Excel, you'll love Google App Script for Google Docs and Sheets"
 tags: [Automation, Google]
 image:
 # pic silver robot white skin handshake 1900x500
@@ -19,6 +19,14 @@ comments: true
 This can be a common situation needing automation.
 
 {% include whatever.html %}
+
+## Video Courses
+
+<a target="_blank" href="https://www.linkedin.com/in/benlcollins/">Ben Collin</a>'s 
+<a target="_blank" href="https://courses.benlcollins.com/p/beginner-apps-script?coupon_code=BEGINNERSCRIPT">
+$198 for 25 examples over 70 videos on Google Apps Script</a>
+
+
 
 ## My project: sync between Google Doc and Google Sheet
 
