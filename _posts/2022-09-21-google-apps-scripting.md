@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-22"
+date: "2023-04-18"
 file: "google-apps-scripting"
 title: "Google Apps Scripting"
 excerpt: "If you liked Microsoft's VB script for Word, Excel, you'll love Google App Script for Google Docs and Sheets"
@@ -26,6 +26,7 @@ This can be a common situation needing automation.
 <a target="_blank" href="https://courses.benlcollins.com/p/beginner-apps-script?coupon_code=BEGINNERSCRIPT">
 $198 for 25 examples over 70 videos on Google Apps Script</a>
 
+<a target="_blank" href="https://www.linkedin.com/in/jameshle13/">James Le</a>'s <a target="_blank" href="https://www.youtube.com/@heythisisjames">VIDEOS</a>
 
 
 ## My project: sync between Google Doc and Google Sheet
