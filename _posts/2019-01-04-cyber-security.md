@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-11"
+date: "2023-04-19"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -900,6 +900,8 @@ SP 800-30 steps for a risk assessment:
    6. Determine <strong>risk as a combination</strong> of likelihood and impact.
    <br /><br />
 
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1681357302/nist-800-30-risk-steps-688x439_prk30g.jpg"><img alt="nist-800-30-risk-steps-688x439.jpg" width="688" height="439" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1681357302/nist-800-30-risk-steps-688x439_prk30g.jpg"></a>
+
 
 ### NIST SP 800-34
 
@@ -1002,12 +1004,11 @@ International Organization for Standardization (ISO) and the International Elect
 PLA (Privacy Level Agreement)
 
 GDPR (General Data Protection Regulation) states that the data gathered for private individuals should be used only for the purpose for which it is collected. The European Union (EU) Principles on Privacy state that data gathered for private individuals should be used only for the purpose for which it is collected.
+As of May 25, 2018, European privacy law GDPR (General Data Protection Regulation) imposes new rules on companies, government agencies, non-profits, and other organizations that offer goods and services to people in the European Union (EU), or that collect and analyze data tied to EU residents. But the GDPR applies no matter where they are located.
 
 EU Cookie Law <a target="_blank" href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm</a>
 
 <a target="_blank" href="https://www.oecd.org/">OECD.org</a> Privacy Principles for Canada, Mexico, EU GDPR
-
-Canada's 
 
 eDiscovery EDRM (electronic Discovery Reference Model) A framework that provides guidance for gathering and assimilating electronic data during the legal process:
    * Preserving
@@ -1040,8 +1041,6 @@ CSA (Cloud Security Alliance) guidelines
 QUESTION: How does CIS relate to ITIL?
 
 Criminal Justice Information Services (CJIS) Security Policy compliance for any US state or local agency that wants to access the FBI’s CJIS database.
-
-As of May 25, 2018, European privacy law GDPR (General Data Protection Regulation) imposes new rules on companies, government agencies, non-profits, and other organizations that offer goods and services to people in the European Union (EU), or that collect and analyze data tied to EU residents. But the GDPR applies no matter where they are located.
 
 UK Government G-Cloud is a cloud computing certification for services used by government entities in the United Kingdom.
 
@@ -1395,21 +1394,6 @@ Education/Experience Requirements:
 <br /><br />
 
 
-<a name="HSM"></a>
-
-Hierarchical storage management (HSM) is type of backup management system that provides a continuous online backup by using optical or tape “jukeboxes.” 
-
-<a name="RAID"></a>
-RAID (Redundant Array of Independent Disks): parity information is used to regenerate the data in the case of a single drive failure. 
-   * RAID-0 Striping of data parts over 2 drives
-   * RAID-1 Mirroring of 2 drives
-   * RAID-10 Mirroring+Striping
-   * RAID-2 stripes the data across all drives at the bit level rather than the byte level.
-   * RAID-3 parity information is written to a single dedicated drive. Data is written across all drives like striping.
-   * RAID-5 Parity information is written across all drives like striping as well. Min. 3 drives?
-   * RAID-6 Parity of 2 
-   * RAID-7 enables the drive array to continue to operate if any disk or any path to any disk fails. The multiple disks in the array operate as a single virtual disk.
-   <br /><br />
 
 <a name="Threats"></a>
 
@@ -2101,8 +2085,6 @@ Model:
    <br /><br />
 
 
-## Cryptography
-
 Ciphers:
    * A concealment cipher occurs when plaintext is interspersed somewhere within other written material. Also called "Null" cipher.
    * Vigenere cipher <a target="_blank" href="https://www.youtube.com/watch?v=SkJcmCaHqS0">VIDEO</a> was used by US Confederates using a brass cipher disk. It aims to defeat simple frequency analysis.
@@ -2206,9 +2188,31 @@ PKI (Public Key Infrastructure):
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
 
-"Homomorphic encryption" allows computations to be performed on encrypted data without first having to decrypt it. It can be used for privacy-preserving outsourced storage and computation. This allows data to be encrypted and out-sourced to commercial cloud environments for processing, all while encrypted.
+<a target="_blank" href="https://en.wikipedia.org/wiki/Homomorphic_encryption">Homomorphic encryption</a> allows computations to be performed on encrypted data without first having to decrypt it. It can be used for privacy-preserving outsourced storage and computation. This allows data to be encrypted and out-sourced to commercial cloud environments for processing, all while encrypted.
 Even if a service provider's system is compromised, the data would remain secure.
 
+<a name="HSM"></a>
+
+### HSM
+
+Hierarchical storage management (HSM) is type of backup management system that provides a continuous online backup by using optical or tape "jukeboxes."
+
+<a name="RAID"></a>
+### RAID
+
+RAID (Redundant Array of Independent Disks): parity information is used to regenerate the data in the case of a single drive failure. 
+   * RAID-0 Striping of data parts over 2 drives
+   * RAID-1 Mirroring of 2 drives
+   * RAID-10 Mirroring+Striping
+   * RAID-2 stripes the data across all drives at the bit level rather than the byte level.
+   * RAID-3 parity information is written to a single dedicated drive. Data is written across all drives like striping.
+   * RAID-5 Parity information is written across all drives like striping as well. Min. 3 drives?
+   * RAID-6 Parity of 2 
+   * RAID-7 enables the drive array to continue to operate if any disk or any path to any disk fails. The multiple disks in the array operate as a single virtual disk.
+   <br /><br />
+
+
+<hr />
 
 <a name="NetworkProtocols"></a>
 
@@ -2367,7 +2371,8 @@ Shibboleth is a SAML standards-based open source software for web single sign-on
 
 OAuth2 is an auth framework that enables apps to obtain limited access to user account on an HTTP service.
 
-SAML
+OIDC (OpenID Connect) is an authentication layer on top of OAuth 2.0.
+
 
 ## Access Control IAAA
 
@@ -2529,7 +2534,7 @@ In 2016, DROWN vulnerability (Decrypting RSA with Obsolete and Weakened eNcrypti
 Implementing an IPS is more expensive than implementing an IDS.
    * IPS (intrusion prevention system) is a network device that detects a network intrusion and prevents the network intrusion.
    * IDS (An intrusion detection system) is a network device that detects network intrusion attempts and either logs the intrusion or contacts the appropriate personnel. 
-   <br /><br />>
+   <br /><br />
 
 Network access control (NAC) ensures that the computers on the network meet an organization's security policies. 
  A virtual private network (VPN) is a private network that users can connect to over a public network. Internet Protocol Security (IPsec) is a protocol that secures IP communication over a private or public network. A demilitarized zone (DMZ) is a section of a network that is isolated from the rest of the network with firewalls.
@@ -2572,9 +2577,64 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * A <strong>bastion host</strong> is a hardened machine that usually resides on a demilitarized zone (DMZ) open to the public.
 
 
+## Acceptable Use Policy (AUP)
+
+An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
+
+
+### Open-source intelligence (OSINT)
+
+Open-source intelligence feeds:
+   * <a target="_blank" href="https://www.misp-project.org/">Malware Information Sharing Project (MISP)</a> [<a target="_blank" href="https://en.wikipedia.org/wiki/Malware_Information_Sharing_Platform">Wikipedia</a>]
+   * <a target="_blank" href="https://cybersecurity.att.com/open-threat-exchange">AT&T Security (Alien Vault Open Threat Exchange)</a>
+   * <a target="_blank" href="https://www.spamhaus.org/">Spamhaus.org</a>
+   * <a target="_blank" href="https://isc.sans.edu/diary/Suspending+Suspicious+Domain+Feed+Update+to+Researcher+IP+Feed/26204">SANS ISC Suspicious Domains</a>
+   * VirusTotal
+   * us-cert.gov/ncas = NCAS (National Cyber Awareness System) - <a target="_blank" href="https://www.cisa.gov/news-events/cybersecurity-advisories">alerts</a>
+   <br /><br />
+
+Closed-source or proprietary intelligence sources:
+   * IBM X-Force Exchange
+   * Recorded Future
+   * FireEye
+   <br /><br />
+
+
+## Incident Response (DFIR)
+
+DFIR (Digital Forensics and Incident Response) is the process of collecting, preserving, analyzing, and reporting on digital evidence in a way that is legally admissible.
+
+DFIR is useful to answer <a target="_blank" href="https://www.cybereason.com/fundamentals/what-is-dfir">questions such as</a>:
+
+   * Who attacked? (Attribution)
+   * What is the full scope and impact of the incident?
+   * How did the attacker get in?
+   * What steps were taken to escalate the operation?
+   * How do we ensure this type of attack won’t occur again?
+   * How do we fully remediate the existing issue to restore trust?
+   <br /><br />
+
+Forest Monsen and Kevin Glisson in Netflix's Security Intelligence and Response Team (SIRT):
+   * <a target="_blank" href="https://github.com/Netflix-Skunkworks/diffy">open-sourced</a> their <a target="_blank" href="https://netflixtechblog.com/netflix-sirt-releases-diffy-a-differencing-engine-for-digital-forensics-in-the-cloud-37b71abd2698">"Diffy" Differencing Engine for Digital Forensics in the Cloud</a> tool, which include "osquery" to collect and retain a functional baseline against comparison with all running instances. See https://diffy.readthedocs.io/
+
+   * <a target="_blank" href="https://github.com/Netflix/dispatch">open-sourced</a> their <a target="_blank" href="https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072">"Dispatch" crisis management orchestration</a> tool, which leverages existing familiarity with existing tools used throughout an organization (Slack, GSuite, Jira, etc.). Dispatch focuses on managing metadata (incident context) about responses and resources, assembling participants, sending out notifications, tracking tasks, assisting with post-incident reviews, etc. The system builds on past incidents to speed up the resolution of future incidents. It's made using Python, VueJs, Postgres. Available as a <a target="_blank" href="https://github.com/Netflix/dispatch-docker">Docker image</a>. See https://hawkins.gitbook.io/dispatch/
+
+
+UEBA (User and Entity Behavior Analytics), such as Splunk and Microsoft Advanced Threat Analysis provides automated id. of suspicious activity by user accounts and computer hosts, using AI/ML techniques.
+
+tcpdump options:
+   * -e includes the ethernet header during packet capture
+   * -n flag shows the IP addresses in numeric form
+   * -nn shows IP addresses and ports in numeric format
+   * -X captures the packet's payload in hex and ASCII formats
+   <br /><br />
+
+
 <hr />
 
 ## Resources
+
+* https://opensoc.io/ Network Defense Range (NDR) - a free, open-source, and community-driven project that provides a virtualized environment for security professionals to practice their skills in a safe and controlled environment. The NDR is a collection of virtual machines (VMs) that are pre-configured to simulate a real-world network. The NDR is designed to be used by security professionals to practice their skills in a safe and controlled environment. 
 
 * <a target="_blank" href="https://isc.sans.edu/podcast.html">PODCAST: SANS.edu Internet Storm Center daily</a>
 * <a target="_blank" href="https://www.cyberaces.org/">SANS Cyber Aces</a>
@@ -2623,51 +2683,11 @@ A kernel proxy firewall is an example of a fifth generation firewall. It inspect
 * Pass the <a target="_blank" href="https://open.hpi.de/courses/cybersec-exam-4">
 Cybersecurity Exam</a> in 3 courses from the Hasso Plattner Institut (HPI) free Open university in Germany.
 
-## Miscellaneous
-
-An AUP (acceptable use policy) details appropriate use of information systems, handling standards, monitoring, and privacy expectations.
-
-https://thorteaches.com/the-memory-palace-prashant-mohan/
+* https://thorteaches.com/the-memory-palace-prashant-mohan/
 https://thorteaches.com/wp-content/uploads/2021/06/The-Memory-Palace-CISSP-by-Prashant-Mohan-4th-edition.pdf
 One large PDF of what to remember while taking the CISSP exam.
 
-### Open-source intelligence (OSINT)
-
-Open-source intelligence feeds:
-   * Malware Information Sharing Project (MISP)
-   * AT&T Security (Alien Vault Open Threat Exchange)
-   * Spamhaus
-   * SANS ISC Suspicious Domains, VirusTotal, an
-   * NCAS by US0CERT
-   <br /><br />
-
-Closed-source or proprietary intelligence sources:
-   * IBM X-Force Exchange
-   * Recorded Future
-   * FireEye
-   <br /><br />
-
-
-## Incident Response (DFIR)
-
-tcpdump options:
-   * -e includes the ethernet header during packet capture
-   * -n flag shows the IP addresses in numeric form
-   * -nn shows IP addresses and ports in numeric format
-   * -X captures the packet's payload in hex and ASCII formats
-   <br /><br />
-
-Forest Monsen and Kevin Glisson in Netflix's Security Intelligence and Response Team (SIRT):
-   * <a target="_blank" href="https://github.com/Netflix-Skunkworks/diffy">open-sourced</a> their <a target="_blank" href="https://netflixtechblog.com/netflix-sirt-releases-diffy-a-differencing-engine-for-digital-forensics-in-the-cloud-37b71abd2698">"Diffy" Differencing Engine for Digital Forensics in the Cloud</a> tool, which include "osquery" to collect and retain a functional baseline against comparison with all running instances. See https://diffy.readthedocs.io/
-
-   * <a target="_blank" href="https://github.com/Netflix/dispatch">open-sourced</a> their <a target="_blank" href="https://netflixtechblog.com/introducing-dispatch-da4b8a2a8072">"Dispatch" crisis management orchestration</a> tool, which leverages existing familiarity with existing tools used throughout an organization (Slack, GSuite, Jira, etc.). Dispatch focuses on managing metadata (incident context) about responses and resources, assembling participants, sending out notifications, tracking tasks, assisting with post-incident reviews, etc. The system builds on past incidents to speed up the resolution of future incidents. It's made using Python, VueJs, Postgres. Available as a <a target="_blank" href="https://github.com/Netflix/dispatch-docker">Docker image</a>. See https://hawkins.gitbook.io/dispatch/
-
-
-UEBA (User and Entity Behavior Analytics), such as Splunk and Microsoft Advanced Threat Analysis provides automated id. of suspicious activity by user accounts and computer hosts, using AI/ML techniques.
-
-## Resources
-
-At Cisco, <a target="_blank" href="https://www.linkedin.com/in/-rontaylor/">Ron Taylor</a> <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">https://github.com/The-Art-of-Hacking/h4cker</a> (<a target="_blank" href="https://h4cker.org/github/">by</a> <a target="_blank" href="https://www.linkedin.com/in/santosomar/">Omar Santos</a> used in <a target="_blank" href="https://dcloud.cisco.com/">Cisco's Cyber Defense Clinic Lab</a> <a target="_blank" href="https://dcloud2-sjc.cisco.com/content/catalogue">catalog</a>
+* At Cisco, <a target="_blank" href="https://www.linkedin.com/in/-rontaylor/">Ron Taylor</a> <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">https://github.com/The-Art-of-Hacking/h4cker</a> (<a target="_blank" href="https://h4cker.org/github/">by</a> <a target="_blank" href="https://www.linkedin.com/in/santosomar/">Omar Santos</a> used in <a target="_blank" href="https://dcloud.cisco.com/">Cisco's Cyber Defense Clinic Lab</a> <a target="_blank" href="https://dcloud2-sjc.cisco.com/content/catalogue">catalog</a>
 
    * NetFlow uses less disk space than full packete capture.
    <br /><br />
@@ -2696,6 +2716,33 @@ https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
 
 https://podcasts.apple.com/us/podcast/hard-fork/id1528594034
 by the New York Times reporters talking about TikTok's Spying, ChatGPT
+
+Gerald Auger</a>'s <a target="_blank" href="https://www.youtube.com/@SimplyCyber/streams">Daily Cyber Threat Brief videos</a> within his <a target="_blank" href="https://www.youtube.com/channel/UC0ArlFuFYMpEewyRBzdLHiw">Simply Cyber YouTube channel</a>.
+
+
+## Discord channels
+
+Blackhills Infosec https://discord.gg/BHIS
+https://www.youtube.com/c/blackhillsinformationsecurity
+John Strand, Ean Meyer, and the whole Blackhills gang have a super supportive and valuable server. The one knock is its SO BIG thats it very busy and can be tough to make connections.
+
+Recon Infosec https://discord.gg/aCArEkb7
+is focused on Blue Team and SOC Analyst life. They are a security company led by security people.  Its guaranteed good times.
+
+Simply Cyber https://discord.gg/SimplyCyber
+is Gerald's server. He strives to make safe spaces for asking questions and getting answers without criticism. A high level of help, knowledge share, and networking on this server.
+
+DC Cybersec https://discord.gg/v8ZVhEDv
+Same as the YouTuber of the same name, DC Cybersec provides real talk on cybersecurity and promotes an inclusive good times community.
+
+Cyber Job Hunting https://discord.gg/tjVaFdgu
+Led by UK cyber recruiters, this server is all about helping people get jobs in the field and make sure their resume is tight and their mind is right for the job hunting process.
+
+https://medium.com/@KillSwitchX7/cyber-security-discord-servers-7d9c0b7cd7cb
+
+https://www.simplycyber.io/post/5-vetted-discord-cyber-communities-you-should-join
+
+https://github.com/INIT6Source/Hacker_Hiring_Discords
 
 
 ## More on Security #
