@@ -1,10 +1,10 @@
 ---
 layout: page
+date: "2023-04-24"
+file: "calendar"
 title: Please send me an appointment
 tags: [calendar, contact, Jekyll]
 comments: true
-date: "2023-03-31"
-file: "calendar"
 image:
 # pic white calendar 1900x500-c28.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/16904663/5adbca78-4c57-11e6-9fa7-973731b8927a.jpg
@@ -17,7 +17,7 @@ image:
 
 ## Time Zones
 
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg"><img alt="calendar-timezones-2206x426.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg"></a>
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"><img alt="calendar-timezones-1648x356.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680268594/calendar-timezones-1648x356_isyy7n.jpg"></a>
 
 I use the above (based on <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>) to quickly identify when is 9am-5pm working times around the world, based on<br />
 <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
@@ -28,24 +28,33 @@ NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Ea
 
 ## Talk to me!
 
-Pick an open time using this as the basis for creating a meeting using your own calendar system:
+1. Pick an open time using this as the basis for creating a meeting using your own calendar system:
 
-<ul><a target="_blank" href="https://calendly.com/wilsonmar"><strong>https://calendly.com/wilsonmar</strong></a></ul>
+   <a target="_blank" href="https://calendly.com/wilsonmar"><strong>https://calendly.com/wilsonmar</strong></a>
+ 
+   (Blocked out are both my work and personal meetings already set with meetings I don't wish to move.)
 
-Blocked out are both my work and personal meetings already set with meetings I don't wish to move.
+2. PROTIP: It helps if you have two screens to reduce switching back and forward between your own calendar and mine to identify a mutually open time.
 
-<a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">
-Here</a> is a less user-friendly UI to my Google calendar:
+3. Send me an invite with your Zoom link.
 
-1. The yellow column is today. Scroll to see the red line which marks the current time.
+3. If we have not exchanged emails before, please, in LinkedIn Message me the email you used, due to Google's new spam mechanism:
 
-2. Be aware of the time zone at the lower left corner of the screen.
+   <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1682369657/calendar-unknown-sender-1700x414_frss4y.png"><img alt="calendar-unknown-sender-1700x414.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1682369657/calendar-unknown-sender-1700x414_frss4y.png"></a>
 
-3. Click on the <u><strong>This Week</strong></u> blue link at the upper right corner.
+Alternately, Google calendar has a (less nice) UI to show open slots:
+
+1. <a target="_blank" href="https://www.google.com/calendar/embed?src=wilsonmar%40gmail.com">Click here</a>
+
+   The yellow column is today. Scroll to see the red line which marks the current time.
+
+   Be aware of the time zone at the lower left corner of the screen.
+
+2. Click on the <u><strong>This Week</strong></u> blue link at the upper right corner.
 
    ![google-calendar-week-256x41](https://cloud.githubusercontent.com/assets/300046/26534343/5618a71c-43f1-11e7-9ea8-d721acb5fc42.png)
 
-4. Switch back and forward between your own calendar and this one to identify a mutually open time.
+3. Switch back and forward between your own calendar and this one to identify a mutually open time.
 
 
 ## Calendar services
