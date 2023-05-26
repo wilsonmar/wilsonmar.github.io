@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-05-26"
+file: "python-tutorials"
 title: "Python Tutorials"
 excerpt: "Who will teach you to code in python"
 tags: [python, apple, mac, setup]
-date: "2022-03-30"
-file: "python-tutorials"
 image:
 # pic white python logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14622164/4230c848-0585-11e6-957b-be11147346e6.jpg
@@ -18,7 +18,9 @@ comments: true
 
 Here are the classes I've seen that teach Python programming.
 
-## Official documentation
+{% include whatever.html %}
+
+## Python Official documentation
 
 <a target="_blank" href="https://docs.python.org/3/tutorial/">https://docs.python.org/3/tutorial</a> 
 is the official tutorial.
@@ -30,6 +32,21 @@ is the official tutorial.
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
 from <a target="_blank" href="http://www.seleniumframework.com/python-course/">http://www.seleniumframework.com/python-course</a>
 
+## Harvard CS 50P on YouTube
+
+[This Harvard University's CS50P: Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4) is a comprehensive course tailored to teach Python programming from scratch. It's taught by the energetic <a target="_blank" href="https://www.linkedin.com/in/malan/">Dr. David J. Malan</a>, offering a unique and immersive learning experience. One 16-hour HD YouTube 2160p 4K video via FreeCodeCamp.org: 
+
+* Introduction https://cs50.dev/ explain highlighted code
+* <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=4m48s">0. Functions, Variables</a> 
+1. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=1h50m24s">Conditionals</a> 
+2. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=2h46m23s">Loops</a>
+3. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=4h7m10s">Exceptions</a>
+4. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=4h51m45s">Libraries</a>
+5. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=6h9m15s">Unit Tests</a>
+6. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=7h0m22s">File I/O</a>
+7. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=8h32m32s">Regular Expressions</a>
+8. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=10h37m35s">Object-Oriented Programming</a>
+9. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=13h28m47s">Et Cetera</a>
 
 ## Free Tutorials about Python
 
@@ -371,7 +388,7 @@ are gamified lessons covering vulnerable coding and how to mitigate:
    * Command Injections
    * XPath Injections
 
-FreeCodeCamp.org
+
 
 
 ## Community
@@ -398,7 +415,6 @@ https://dev.to/sewinter/25-best-github-repos-for-python-developers-5419?utm_sour
 https://github.com/GeekTrainer/Introduction-Programming-Python
 by Christopher Harrison, Program Manager at Microsoft Cloud & AI.
 
-## References
 
 <a target="_blank" href="https://kodekloud.com/community/c/python/18">KodeKloud's Q&A about the Python Entry Level Programmer Certification and Certified Associate in Python Programming</a>
 
