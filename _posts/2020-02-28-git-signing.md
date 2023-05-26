@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-14"
+date: "2023-05-26"
 file: "git-signing"
 title: "Git Signing"
 excerpt: "Sign git commits and tags (for non-repudiation) in GitHub using GPG, Vault, Yubikey, Keybase"
@@ -22,6 +22,77 @@ comments: true
 
 The contribution of this article is a logical ordering of <strong>deep-dive</strong> concepts presented in a succinct way, as a hands-on narrated scenic tour. "PROTIP" flags advice from hard-won experience such as relevant keyboard shortcuts and things to remember, available only here for you.
 
+
+<a name="SignWithSSH"></a>
+
+## Sign using SSH
+
+Protect your SSH key within 1Password. See 
+https://developer.1password.com/docs/ssh/git-commit-signing/
+
+Thanks to https://blog.artis3nal.com/blog/sign-commits-github-ssh/
+
+1.  <a target="_blank" href="https://www.ssh.com/academy/ssh/keygen">Create (Edwards-curve DSA) SSH key pair in a Terminal window</a>, overriding default -filename "id_ed25519":
+
+    <pre><strong>cd ~/.ssh
+    NEW_KEY_FILE="wilson-mac22-23-02-19"
+    MY_EMAIL="johndoe@gmail.com"
+    &nbsp;
+    ssh-keygen -t ed25519 -o -C "$MY_EMAIL" -f "$NEW_KEY_FILE" 
+    # no pass phrase
+    </strong></pre>
+
+    NOTE: <tt>-t rsa -b 4096</tt> are now obsolete.
+
+    Alternately, use <tt>ed25519-sk</tt> or <tt>ecdsa-sk</tt> for a hardware security key.
+
+2.  Add your SSH private key to the ssh-agent and store your passphrase in the keychain. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_ed25519 in the command with the name of your private key file.
+
+    <pre><strong>ssh-add --apple-use-keychain ~/.ssh/$NEW_KEY_FILE
+    </strong></pre>
+
+    Example response:
+    <pre>Identity added: /Users/johndoe/.ssh/johndoe-mac22-23-02-19 (johndoe@gmail.com)</pre>
+
+3.  Get the Public Key:
+
+    <pre><strong>git config --global gpg.format ssh
+    PUBLICKEY=$( cat ~/.ssh/$NEW_KEY_FILE.pub )
+    echo "PUBLICKEY=$PUBLICKEY"
+    </strong></pre>
+    Example value of PUBLICKEY:
+    <pre>ssh-ed25519 AAAAC3ZzaC1lZDI1NTE5AAAAIAndbpxphGOfHN+R1lidpUY04E3ZukHpo2q93C9HvSfK johndoe@gmail.com</pre>
+
+3.  Configure the Public Key:
+
+    <pre><strong>
+    git config --global user.signingkey "key::$PUBLICKEY"
+    git config --global commit.gpgsign true
+    git config --global gpg.ssh.allowedSignersFile ~/.ssh/allowed_signers
+    # Extract email address:
+    email=$(git config --global --list | grep "user.email" | awk '{split($0, a,"="); print a[2]}')
+    echo "$email $publickey" >> ~/.ssh/allowed_signers
+    </strong></pre>
+
+3. Add to SSH Agent:
+
+    <pre><strong>#eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/$NEW_KEY_FILE.pub
+    # TODO: echo $0
+    &nbsp;
+    ssh-add -l
+   </strong></pre>
+
+4. Add the SSH key to your account on GitHub.
+
+5. Navigate to a GitHub repo folder.
+6. Commit something.
+7. Verify
+
+    <pre><strong>git log --show-signature
+    </strong></pre>
+
+<hr />
 
 <a name="Variations"></a>
 
