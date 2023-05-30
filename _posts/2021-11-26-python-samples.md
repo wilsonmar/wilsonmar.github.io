@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-14"
+date: "2023-05-29"
 file: "python-samples"
 title: "Python Samples"
 excerpt: "My collection of useful ways to use Python securely in a production setting"
@@ -29,16 +29,24 @@ It has been reported that much sample code lacks security, editing, internationa
 
 This page contains "deep-dive" commentary which references code in that repos, which contain these files:
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py"><strong>api-sample.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
    * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.sh"><strong>python-samples.sh</strong></a> - a shell script which sets up the environment with Conda and installs Python packages needed. Common Python installation and configuration issues and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.env"><strong>api-sample.env</strong></a> which stores environment variables used by the Python program.
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.env"><strong>python-samples.env</strong></a> which stores key/value pairs the <tt>python-samples.py</tt> Python program retrieves into variables to provide configuration settings and to control program execution. Since some values are secrets (such as API keys), the .env file should be copied away from the GitHub repo to the user's $HOME folder before being customized. So code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
 
-   * <strong>.gitignore</strong> contains 
+   This use of .env enables fine-grained control of what is executed. However, the sequence of execution is hard-coded.
+
+   Hard-coded default values defined in the Python code provide a default value if a value is not defined in the .env file. Boolean-valued flags to allow execution of application features are False by default. If a flow is True, it will be executed by the Python unitest framework.
+
+
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/.gitignore"><strong>.gitignore</strong></a> defines files and folders which are not to be uploaded back into GitHub.
+
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/.country_info.csv"><strong>country_info.csv</strong></a>, which is loaded into database.sqlite database that comes with Python.
+
+   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/.country_info.xls"><strong>country_info.xls</strong></a> is loaded into Microsoft Excel to create country_info.csv.
 
    * <a target="_blank" href="https://wilsonmar.github.com/github-actions">workflow files for use within GitHub Actions</a>
-
 
 Other Python project templates:
 
@@ -49,7 +57,7 @@ Other Python project templates:
 
 <hr /> 
 
-## Install
+## Install using python-samples.sh
 
 Before being able to run the code on a particular machine (laptop), several utilities need to be installed on top of the Operating System.
 
@@ -57,7 +65,7 @@ On a macOS Terminal or
 
 A. To view the code online, use a browser at address:
 
-   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py">https://github.com/wilsonmar/python-samples/blob/master/api-sample.py</a>
+   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.py">https://github.com/wilsonmar/python-samples/blob/master/python-samples.py</a>
 
 B. Alternately, edit the code online using Cloud9
 
@@ -67,19 +75,19 @@ C. Alternately, to work with the whole repo on your laptop,
 
 1. Open your macOS Terminal which has been installed a git program, and:
 
-   <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/api-sample.py">https://github.com/wilsonmar/python-samples/blob/master/api-sample.py</a></strong></pre>
+   <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples.git</a></strong></pre>
 
 1. Navigate into the folder created:
 
-   <pre>cd Python-samples</pre>
+   <pre>cd python-samples</pre>
 
 1. Using "code" (VSCode), or other editor (IDE) to open the whole folder by specifying a dot:
 
    <pre><strong>code . </strong></pre>
 
-   PyCharm, 
+   Alternately, PyCharm editor.
 
-1. Within your editor, in the left menu, click on <strong>api-sample.py</strong> to open it for edit.
+1. Within your editor, in the left menu, click on <strong>python-samples.py</strong> to open it for edit.
 
 ### Virtualenv
 
@@ -122,13 +130,13 @@ But variable <tt>my_venv_folder</tt> is used in case you want customization.
    Within Python:
     check whether the VIRTUAL_ENV environment variable is set to the path of the virtual environment:
 
-
    * Outside a virtual environment, sys.prefix points to the system python installation and sys.real_prefix is not defined.
 
    * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
 
+1. Identify:
    
-<pre>conda info --envs</pre>
+   <pre><strong>conda info --envs</strong></pre>
 
 
 ### Bandit vulnerability checker
@@ -147,185 +155,82 @@ Running with <tt>debug=True</tt> exposes the Werkzeug debugger which can execute
 
 Bandit flags this with "201:flask_debug_true".
 
-On production servers, set <tt>__debug__ == False</tt> which disables assert statements.
-
-
-
-<hr />
-
-## Access Google Sheets
-
-   * https://medium.com/analytics-vidhya/how-to-read-and-write-data-to-google-spreadsheet-using-python-ebf54d51a72c
-   <br /><br />
-
-One way to reduce risk of data loss is to store data in cloud environments managed by pros.
-
-Here is how to do it within Google Cloud (whose business is to sell metadata about their users):
-
-1. If you haven't already, get a Google account (with a email address Gmail.com).
-1. Get in the Google API Console at <a target="_blank" href="https://console.developers.google.com/">
-   https://console.developers.google.com</a> or https://console.cloud.google.com
-
-   You will be brought to your default project, such as:<br />
-   https://console.cloud.google.com/apis/dashboard?pli=1&project=weather-454da
-
-1. Click your project name at the upper-right for the "Select a project".
-1. Click "NEW PROJECT". CREATE. The name you provide is combined with the project code generated by Google to create the globally unique service name, which is like an email address. Such as:
-
-   <tt>XXX-compute@developer.gserviceaccount.com</tt>
-
-1. Click "ENABLE APIS AND SERVICES".
-1. Search for <strong>Google Drive API</strong>. Click on it among results. Click "ENABLE".
-1. In the sidebar, click Credentials. 
-
-   <img alt="Google API Sidebar" width="251" height="352" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663166088/google-api-sidemenu-251x352_em3moa.jpg">
-
-1. Click CREATE CREDENTIALS at the top. Select "Service account" (Enables server-to-server, app-level authentication using robot accounts).
-
-   <img alt="Google API" width="700" height="712" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663163448/google-api-for-python-samples_o9a9ly.png">
-
-1. <a target="_blank" href="https://www.youtube.com/watch?v=rWcLDax-VmM">VIDEO</a>: Click the "hamberger" icon at the upper-left for "IAM & Admin" -> "Service Accounts" -> "CREATE SERVICE ACCOUNT".
-1. For "Service account name", come up with a name.
-   
-   The "Service account ID" and email are generated based on your input above.
-
-1. Type a Service account description.
-1. Click "CREATE AND CONTINUE".
-1. Select a role. Full access is granted to Basic -> Owner.
-1. CONTINUE. DONE.
-1. Click the three-dot icon to the right of the service account just created to<br />select Manage Keys.
-1. ADD KEY to select "Create new key". Select "JSON" (instead of P12). CREATE.
-1. Save it to your personal folder, not within a GitHub repo. CLOSE the confirmation pop-up.
-
-   PROTIP: If you have several Google projects, keep a list of the names Google assigned.
-
-   CAUTION: Notice that the Key expiration date is year "9999".
-
-   PROTIP: Instead of using a service account key, <a target="_blank" href="https://cloud.google.com/iam/docs/workload-identity-federation?_ga=2.134675316.-461044631.1663165563">use workload identity federation</a> to grant Google Cloud access to external multi-cloud workloads (AWS, Azure OIDC, SAML 2.0, etc.). It uses temporary tokens from workload identity pools.
-
-1. ??? Principal??? Select Compute Engine service default, JSON, hit create.
-
-1. Open up the JSON file, share your spreadsheet with the API ID.
-
-1. Save the credentials file (formatted in JSON) for the Python program below to read. For example:
-
-   /Users/johndoe/github-johndoe/repo1/creds.json
-
-Google provides the API for:
-   * Bulk document creation
-   * Content Management
-   * Workflow Management
-   <br /><br />
-
-Python code samples make use of the Pandas library.
-
-TODO: In a Google Doc, find a marker such as "QUESTION:" and extract the sentence next to it,
-then paste that sentence in a Google Sheet. Perhaps using the SpaCy library, https://spacy.io/ - a Python library for Natural Language Processing (NLP) to recognize the meaning of tokens within each sentence, as described in https://towardsdatascience.com/how-to-extract-structured-information-from-a-text-through-python-spacy-749b311161e
-using https://github.com/alod83/data-science/tree/master/TextAnalysis
-
-### Access Google Docs
-
-   <em>* https://developers.google.com/docs
-   * https://developers.google.com/docs/api/quickstart/python
-   * https://towardsdatascience.com/how-to-load-the-content-of-a-google-document-in-python-1d23fd8d8e52
-   </em><br /><br />
-
-
-### Access Google Sheets
-
-   <em>
-   * https://developers.google.com/sheets/api/quickstart/python
-   * https://erikrood.com/Posts/py_gsheets.html
-   * https://www.youtube.com/watch?v=cnPlKLEGR7E
-   * https://blog.coupler.io/python-to-google-sheets/#Python_script_to_export_Excel_to_Google_Sheets
-   * https://www.youtube.com/watch?v=4ssigWmExak
-   </em><br /><br />
-
-
-1. Examine the library: https://github.com/nithinmurali/pygsheets
-
-1. On a Mac Terminal with Python installed,
-
-   <pre><strong>pip install pygsheets
-   </strong></pre>
-
-1. Create a Google Sheet.
-
-1. The code 
-
-   <pre>
-import pygsheets
-import pandas as pd
-GOOGLE_CREDS_FILE="/Users/erikrood/desktop/QS_Model/creds.json"
-#authorization
-gc = pygsheets.authorize(service_file=GOOGLE_CREDS_FILE)
-&nbsp;
-# Create empty dataframe
-df = pd.DataFrame()
-&nbsp;
-# Create a column
-df['name'] = ['John', 'Steve', 'Sarah']
-&nbsp;
-#open the google spreadsheet (where 'PY to Gsheet Test' is the name of my sheet)
-sh = gc.open('PY to Gsheet Test')
-&nbsp;
-#select the first sheet in the file:
-wks = sh[0]
-&nbsp;
-#update the first sheet with df, starting at cell B2. 
-wks.set_dataframe(df,(1,1))
-   </pre>   
-
-
-### Image to Text
-
-https://developer.ibm.com/tutorials/document-scanner/
+Setting  <tt>__debug__ == False</tt> disables assert statements on production servers.
 
 
 <hr />
 
 <a name="Execution"></a>
 
-## Program Execution Feature Flags
+## Top of coding file in python-samples.py
 
-In a terminal:
+## Change permissions to make file executable
 
-   <ul><pre><strong>python api-sample.py
+1. In a terminal, change OS permissions to enable execute:
+
+   <ul><pre><strong>chmod +x python-samples.py
    </strong></pre></ul>
+
+2. To execute the script, instead of:
+
+   <ul><pre><strong>python python-samples.py
+   </strong></pre>
+   </ul>
+
+   NOTE: This line at the top of python-samples.py 
+
+   <pre>#!/usr/bin/env python3</pre>
+
+   enables execution as a file using this command:
+
+   <ul><pre><strong>./python-samples.py
+   </strong></pre>
+   </ul>
+
+
+## Feature Flags
+
+Inside the program are <strong>feature flags<strong> which the program references to determine whether each feature is executed during a particular run.
 
 No parameters need to be specified because the program has hard-coded defaults for each feature flag, with ALL features enabled. 
 
-Inside the program are <strong>feature flags<strong> which the program references to determine whether each feature is executed during a particular run.
 
 <a name="Sections"></a>
 
 ## Sections of code (and their feature flags)
 
-   0. Define program attributes.
-   1. Import libraries
-   2. <a href="#StartingTime">Capture starting time and set default global values</a>
-   3. <a href="#ParseArguments">Parse arguments that control program operation</a>
-   4. Define utilities for printing (in <a href="#PrintColors">color</a>), <a href="#Logging">logging</a>
-   5. <a href="#SQLLite">Local machine in-memory SQL database  = SQLLite</a>
-   5. <a href="#run_env">Obtain run control data from .env file in the user's $HOME folder</a>
-   6. <a href="#Localization">Define Localization (to translate text to the specified locale)</a>
-   7. <a href="#DefineUtils">Define utilities for managing data storage folders and files</a>
-      1. <a href="#ManageFolders">Create, navigate to, and remove local working folders</a>
+   1. <a href="#PgmMetadata">Set metadata about this program</a>
+   2. <a href="#Imports">Import libraries (in alphabetical order)</a>
+   3. <a href="#StartingTime">Capture pgm start date/time</a>
+   4. <a href="#PrintColors">Define utilities for printing</a>
+   5. <a href="#FileMgmt">Utilities for managing data storage folders and files</a>
+      * <a href="#ManageFolders">Create, navigate to, and remove local working folders</a>   
+   6. <a href="#run_env">Get pgm run env data</a>
+   
+   7. <a href="#envFile">Obtain run control data from .env file (in the user's $HOME folder)</a>
+   8: <a href="#envLoad">Load .env values or hard-coded default values (in order of code)</a>
+   9. <a href="#ParseArguments">Parse arguments that control program operation</a>
+   10. <a href="#FeatureDefaults">Default Feature flag settings (in order of code)</a>
+   11. <a href="#Localize">Localize/translate text to the specified locale</a>
+   12. <a href="#SQLLite">Local machine in-memory SQL database SQLLite</a>
 
-   8. Display run conditions: datetime, OS, Python version, etc.
-      1. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
-      2. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
-      3. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
-      4. <a href="#show_weather">Retrieve Weather info from zip code or lat/long  = show_weather</a>
+   App utility calculations for hashing, encryption, etc.
 
-   9. Generate various calculations for hashing, encryption, etc.
-      1. <a href="#gen_hash">Generate Hash from a file & text         = gen_hash</a>
-      2. <a href="#gen_salt">Generate a random salt                   = gen_salt</a>
-      3. <a href="#gen_1_in_100">Generate a random percent of 100         = gen_1_in_100</a>
-      4. <a href="#process_romans">Convert between Roman numerals & decimal = process_romans</a> (case structure)
-      5. <a href="#gen_jwt">Generate JWT (Json Web Token)            = gen_jwt</a>
-      6. <a href="#gen_lotto">Generate Lotto America Numbers           = gen_lotto</a>
-      7. <a href="#gen_magic_8ball">Generate Magic 8-ball numbers            = gen_magic_8ball</a>
+   13. <a href="#gen_hash">Generate Hash from a file & text         = gen_hash</a>
+
+   14. Display run conditions: datetime, OS, Python version, etc.
+
+   1. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
+   2. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
+   3. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
+   4. <a href="#show_weather">Retrieve Weather info from zip code or lat/long  = show_weather</a>
+
+   13. <a href="#gen_salt">Generate a random salt                   = gen_salt</a>
+   3. <a href="#gen_1_in_100">Generate a random percent of 100         = gen_1_in_100</a>
+   4. <a href="#process_romans">Convert between Roman numerals & decimal = process_romans</a> (case structure)
+   5. <a href="#gen_jwt">Generate JWT (Json Web Token)            = gen_jwt</a>
+   6. <a href="#gen_lotto">Generate Lotto America Numbers           = gen_lotto</a>
+   7. <a href="#gen_magic_8ball">Generate Magic 8-ball numbers            = gen_magic_8ball</a>
 
    10. Get in the cloud:
       1. <a href="use_azure">Retrieve secrets from Azure Key Vault  = use_azure</a>
@@ -341,14 +246,16 @@ Inside the program are <strong>feature flags<strong> which the program reference
 
    12. Make use of cloud services:
       1. Create/Reuse container folder for img app to use
+   
    19. <a href="#download_imgs">Download img application files           = download_imgs</a>
    20. <a href="#process_img">Manipulate image (OpenCV OCR extract)    = process_img</a>
-   21. <a href="#send_slack_msgs">Send message to Slack                    = send_slack_msgs</a>  (TODO:)
-   22. <a href="#send_email">Send email                    = send_email</a>  (TODO:)
+   21. <a href="#send_slack_msgs">Send message to Slack                = send_slack_msgs</a>  (TODO:)
+   22. <a href="#send_email">Send email                                = send_email</a>  (TODO:)
    
    98. <a href="#cleanup_img_files">Remove (clean-up) folder/files created   = cleanup_img_files</a>
    99. <a href="#display_run_stats">Display run time stats at end of program = display_run_stats</a>
 
+   1. <a href="#Logging">logging</a>
 
 ### Input Data specification
 
@@ -371,8 +278,8 @@ The default sample output:
 
 <pre>*** env_path LOCALE 'en_EN' overrides OS LOCALE ('en_US', 'UTF-8')
 &nbsp;
-*** api-sample.py v0.0.33 Created: Saturday 27 Nov 2021 01:23:18 PM   
-*** at /Users/wilsonmar/gmail_acct/python-samples/api-sample.py 
+*** python-samples.py v0.0.33 Created: Saturday 27 Nov 2021 01:23:18 PM   
+*** at /Users/wilsonmar/gmail_acct/python-samples/python-samples.py 
 *** on /Users/wilsonmar/miniconda3/envs/py3k/lib/python3.8/site-packages 
 *** Started Saturday 27 Nov 2021 08:33:41 PM   (epoch=1638070421.006971) 
 *** macOS version=10.16 ['Big Sur', 2020] process ID=10298
@@ -412,7 +319,7 @@ Images/
     google.ico
 &nbsp;
 *** Ended Saturday 27 Nov 2022 08:34:26 PM   (epoch=1638070466.103145) 
-*** api-sample.py done in 0.77 seconds. 
+*** python-samples.py done in 0.77 seconds. 
 </pre>
 
 
@@ -422,12 +329,6 @@ Images/
 <a name="TheCoding"></a>
 
 <a name="PythonFiles"></a>
-
-## Top of coding file in api-sample.py
-
-1. QUESTION: Why is the top line needed?
-
-   <pre>#!/usr/bin/env python</pre>
 
 
 <a name="Imports"></a>
@@ -743,7 +644,7 @@ t.start()
 
 ## 3. Parse arguments that control program operation
 
-Since api-sample.py was written to be used as the starting point for building other programs, it has a large <strong>scope</strong> of features coded. 
+Since python-samples.py was written to be used as the starting point for building other programs, it has a large <strong>scope</strong> of features coded. 
 
    * The IP Address is obtained using the requests library.
    * Geolocation information based on IP address is obtained using an API usig the urllib2 library.
@@ -969,9 +870,9 @@ See https://python-secrets.readthedocs.io/en/latest/readme.html
 
 <hr />
 
-<a name="Localization"></a>
+<a name="Localize"></a>
 
-##  6. Localization
+## Localization
 
 NOTE: For localized presentation, use these specialized functions which understands LOCALE localization :
     # atof (convert a string to a floating point number),
@@ -998,7 +899,7 @@ There are several ways to get the IP address addressed by the program.
 
 
 
-<a name="DefineUtils"></a>
+<a name="FileMgmt"></a>
 
 ##  7. Define utilities for managing data storage folders and files
 
@@ -1631,7 +1532,96 @@ References:
 
 <a name="use_gcp"></a>
 
-##  16. Retrieve secrets from GCP Secret Manager            = use_gcp
+## Run from GCP (Google Cloud Platform) Cloud Shell              = use_gcp
+
+See https://wilsonmar.github.io/gcp
+
+1.  In a browser (such as Google Chrome), click on this URL  navigate to one of your projects:
+
+    <pre><strong><a target="_blank" href="https://console.cloud.google.com/">https://console.cloud.google.com/</a></strong></pre>
+
+    Alternately, to go directly to the Compute:
+
+    <pre><strong><a target="_blank" href="https://console.developers.google.com/apis/api/compute.">https://console.developers.google.com/apis/api/compute</a></strong></pre>
+
+2.  Navigate to the Google project you would like to use.
+
+3.  Use <a target="_blank" href="https://developers.google.com/identity/protocols/application-default-credentials">Google's ADC (Application Default Credentials)</a> to automatically finds credentials based on the application environment. With ADC, code can run in either a development or production environment without changing how your application authenticates to Google Cloud services and APIs. GOOGLE_APPLICATION_CREDENTIALS environment variable 
+
+    <pre><strong>gcloud auth application-default login</strong></pre>
+
+    The above command causes the default browser to open for you to designate an account and provide its password. 
+    
+4.  If you are running inside a Google Compute Engine virtual machine, <a target="_blank" href="https://www.youtube.com/watch?v=yXVI59-xNKY&t=4m54s">VIDEO</a>: press Y. Copy the link. Switch to a another tab to paste in its address bar. 
+
+5.  Choose the Google account you want to use. Click Allow. You'll see 
+    https://cloud.google.com/sdk/auth_success
+
+6.  If you are running inside a Google Compute Engine virtual machine, <a target="_blank" href="https://www.youtube.com/watch?v=yXVI59-xNKY&t=4m54s">VIDEO</a>: click Copy. Switch back to the Cloud Shell. Press command+V to "Enter authorization code".
+
+7.  Click the "Activate Cloud Shell" icon at the top. 
+8.  Adjust the shell screen area by dragging its edge up.
+9.  PROTIP: Change the prompt from "...@cloudshell":
+
+10.  <tt>pwd</tt> to see the folder path
+
+11.  Get the python-samples.py there by copying this command and pasting in the Cloud Shell.
+
+    <pre><strong>git clone https://github.com/wilsonmar/python-samples.git
+    cd python-samples
+    ls
+    </strong></pre>
+   
+12.  Open the GCP editor to edit file the enviornment configuration file:
+
+    <pre><strong>edit python-samples.env</strong></pre>
+
+13. Many prefer the smoother editing experience on their local machine, then copy and paste the file's contents into the Cloud Shell Editor.
+
+    <pre>GCP_PROJECT_ID="???"
+GCP_REGION_ID="???"
+GCP_ZONE_ID="???"
+GCP_INSTANCE="???"
+    </pre>
+
+14. Enable the Google service, such as the Compute Engine.
+15. Run my handly shell script to download and install utilities needed:
+
+    <pre>chmod +x python-samples.sh
+    ./python-samples.sh
+    </pre>
+   
+    The script automatically runs <tt>python-samplex.py</tt> based on the .env file.
+
+16. Use the GUI to view your Google project.
+
+17. Craft the command to invoke features you want:
+
+    <pre>./python-samples.py -gcp -list
+    </pre>
+      
+### Run from MacOS Terminal
+
+1.  Install gcloud on your local CLI Terminal:
+
+    <pre><strong>pip3 install google-api-python-client</strong></pre>
+
+(instead of <tt>gcloud login</tt>) 
+
+References:
+   * https://cloud.google.com/python
+   * <a target="_blank" href="https://www.youtube.com/watch?v=yXVI59-xNKY">VIDEO</a>
+   Goole API Explorer
+   * <a target="_blank" href="https://cloud.google.com/python/docs/reference">
+Python Cloud Client Libraries:<br />
+https://cloud.google.com/python/docs/reference</a> at<br />
+https://github.com/googleapis/google-cloud-python<br />
+<a target="_blank" href="https://cloud.google.com/apis/docs/client-libraries-explained">
+Explained</a>
+
+### Retrieve secrets from GCP Secret Manager            = get_gcp_secrets
+
+* https://cloud.google.com/code/docs/vscode/secret-manager
 
 * https://cloud.google.com/docs/authentication
 * https://cloud.google.com/docs/authentication#strategies
@@ -1641,8 +1631,6 @@ References:
 GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application.
 
 https://cloud.google.com/docs/authentication/production - using service accounts
-
-https://cloud.google.com/code/docs/vscode/secret-manager
 
 https://stackoverflow.com/questions/35159967/setting-google-application-credentials-for-bigquery-python-cli
 
@@ -1693,12 +1681,6 @@ gcloud iam service-accounts keys create "${GCP_SVC_ACCT_NAME}.json" --iam-accoun
    * <a target="_blank" href="https://www.youtube.com/watch?v=Eh0mJwFo9Ak">"GCP - Workload Identity Federation - Access GCS Bucket From AWS Lambda Function"</a> Apr 30, 2021 by Cloud Monkey
    * <a target="_blank" href="https://www.youtube.com/watch?v=s4NYEJDFc0M">"Keyless Entry: Securely Access GCP Services From Kubernetes" (at Cloud Next Aug. '19)</a> by Google Cloud Tech 
    <br /><br />
-
-1. After installing gcloud, in a CLI Terminal, login
-
-   <pre>gcloud login</pre>
-
-   The above command causes the default browser to open for you to designate an account and provide its password.
 
 1. Define values:
 
@@ -2466,6 +2448,137 @@ It is included in many libraries today like Xarray, Prefect, RAPIDS, and XGBoost
 
 
 Adam Breindel held on OReilly <a target="_blank" href="https://learning.oreilly.com/live-events/scale-your-python-processing-with-dask/0636920310099/0636920080246/">"Scale your Python processing with Dask"</a> Oct. 28, 2022. Dask array; Dask Bag.
+
+
+<hr />
+
+## Access Google Sheets
+
+   * https://medium.com/analytics-vidhya/how-to-read-and-write-data-to-google-spreadsheet-using-python-ebf54d51a72c
+   <br /><br />
+
+One way to reduce risk of data loss is to store data in cloud environments managed by pros.
+
+Here is how to do it within Google Cloud (whose business is to sell metadata about their users):
+
+1. If you haven't already, get a Google account (with a email address Gmail.com).
+1. Get in the Google API Console at <a target="_blank" href="https://console.developers.google.com/">
+   https://console.developers.google.com</a> or https://console.cloud.google.com
+
+   You will be brought to your default project, such as:<br />
+   https://console.cloud.google.com/apis/dashboard?pli=1&project=weather-454da
+
+1. Click your project name at the upper-right for the "Select a project".
+1. Click "NEW PROJECT". CREATE. The name you provide is combined with the project code generated by Google to create the globally unique service name, which is like an email address. Such as:
+
+   <tt>XXX-compute@developer.gserviceaccount.com</tt>
+
+1. Click "ENABLE APIS AND SERVICES".
+1. Search for <strong>Google Drive API</strong>. Click on it among results. Click "ENABLE".
+1. In the sidebar, click Credentials. 
+
+   <img alt="Google API Sidebar" width="251" height="352" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663166088/google-api-sidemenu-251x352_em3moa.jpg">
+
+1. Click CREATE CREDENTIALS at the top. Select "Service account" (Enables server-to-server, app-level authentication using robot accounts).
+
+   <img alt="Google API" width="700" height="712" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1663163448/google-api-for-python-samples_o9a9ly.png">
+
+1. <a target="_blank" href="https://www.youtube.com/watch?v=rWcLDax-VmM">VIDEO</a>: Click the "hamberger" icon at the upper-left for "IAM & Admin" -> "Service Accounts" -> "CREATE SERVICE ACCOUNT".
+1. For "Service account name", come up with a name.
+   
+   The "Service account ID" and email are generated based on your input above.
+
+1. Type a Service account description.
+1. Click "CREATE AND CONTINUE".
+1. Select a role. Full access is granted to Basic -> Owner.
+1. CONTINUE. DONE.
+1. Click the three-dot icon to the right of the service account just created to<br />select Manage Keys.
+1. ADD KEY to select "Create new key". Select "JSON" (instead of P12). CREATE.
+1. Save it to your personal folder, not within a GitHub repo. CLOSE the confirmation pop-up.
+
+   PROTIP: If you have several Google projects, keep a list of the names Google assigned.
+
+   CAUTION: Notice that the Key expiration date is year "9999".
+
+   PROTIP: Instead of using a service account key, <a target="_blank" href="https://cloud.google.com/iam/docs/workload-identity-federation?_ga=2.134675316.-461044631.1663165563">use workload identity federation</a> to grant Google Cloud access to external multi-cloud workloads (AWS, Azure OIDC, SAML 2.0, etc.). It uses temporary tokens from workload identity pools.
+
+1. ??? Principal??? Select Compute Engine service default, JSON, hit create.
+
+1. Open up the JSON file, share your spreadsheet with the API ID.
+
+1. Save the credentials file (formatted in JSON) for the Python program below to read. For example:
+
+   /Users/johndoe/github-johndoe/repo1/creds.json
+
+Google provides the API for:
+   * Bulk document creation
+   * Content Management
+   * Workflow Management
+   <br /><br />
+
+Python code samples make use of the Pandas library.
+
+TODO: In a Google Doc, find a marker such as "QUESTION:" and extract the sentence next to it,
+then paste that sentence in a Google Sheet. Perhaps using the SpaCy library, https://spacy.io/ - a Python library for Natural Language Processing (NLP) to recognize the meaning of tokens within each sentence, as described in https://towardsdatascience.com/how-to-extract-structured-information-from-a-text-through-python-spacy-749b311161e
+using https://github.com/alod83/data-science/tree/master/TextAnalysis
+
+### Access Google Docs
+
+   <em>* https://developers.google.com/docs
+   * https://developers.google.com/docs/api/quickstart/python
+   * https://towardsdatascience.com/how-to-load-the-content-of-a-google-document-in-python-1d23fd8d8e52
+   </em><br /><br />
+
+
+### Access Google Sheets
+
+   <em>
+   * https://developers.google.com/sheets/api/quickstart/python
+   * https://erikrood.com/Posts/py_gsheets.html
+   * https://www.youtube.com/watch?v=cnPlKLEGR7E
+   * https://blog.coupler.io/python-to-google-sheets/#Python_script_to_export_Excel_to_Google_Sheets
+   * https://www.youtube.com/watch?v=4ssigWmExak
+   </em><br /><br />
+
+
+1. Examine the library: https://github.com/nithinmurali/pygsheets
+
+1. On a Mac Terminal with Python installed,
+
+   <pre><strong>pip install pygsheets
+   </strong></pre>
+
+1. Create a Google Sheet.
+
+1. The code 
+
+   <pre>
+import pygsheets
+import pandas as pd
+GOOGLE_CREDS_FILE="/Users/erikrood/desktop/QS_Model/creds.json"
+#authorization
+gc = pygsheets.authorize(service_file=GOOGLE_CREDS_FILE)
+&nbsp;
+# Create empty dataframe
+df = pd.DataFrame()
+&nbsp;
+# Create a column
+df['name'] = ['John', 'Steve', 'Sarah']
+&nbsp;
+#open the google spreadsheet (where 'PY to Gsheet Test' is the name of my sheet)
+sh = gc.open('PY to Gsheet Test')
+&nbsp;
+#select the first sheet in the file:
+wks = sh[0]
+&nbsp;
+#update the first sheet with df, starting at cell B2. 
+wks.set_dataframe(df,(1,1))
+   </pre>   
+
+
+### Image to Text
+
+https://developer.ibm.com/tutorials/document-scanner/
 
 
 ## References
