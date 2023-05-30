@@ -16,60 +16,78 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is implementation of suggestions in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>:
-
-> It's no longer impressive to have open-source libraries under your name. Concern about malicious libraries and their unsecure transitive dependencies has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
-
 {% include whatever.html %}
 
-It has been reported that much sample code lacks security, editing, internationalization, etc. So, along with some friends, we created this repo containing coding that has various features all (safely) working together in one program file:
+## Why this?
+
+> Concern about malicious libraries and their unsecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
+
+But many say that much programming code lacks needed security, performance, internationalization, etc. 
+
+So I wrote this to fill that gap a little.
+
+I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
+
+But many DevSecOps jobs evaluate programming skill (using HackerRank, etc.) even though such skill never be used in a position. So here we are.
+
+
+## What's This?
+
+This article describes Python programming code at:
 
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>
 
-This page contains "deep-dive" commentary which references code in that repos, which contain these files:
+The program has various capabilities I've had need for.
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
+Code here implements many suggestions in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>.
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.sh"><strong>python-samples.sh</strong></a> - a shell script which sets up the environment with Conda and installs Python packages needed. Common Python installation and configuration issues and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
+## Repo folders and files
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.env"><strong>python-samples.env</strong></a> which stores key/value pairs the <tt>python-samples.py</tt> Python program retrieves into variables to provide configuration settings and to control program execution. Since some values are secrets (such as API keys), the .env file should be copied away from the GitHub repo to the user's $HOME folder before being customized. So code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
+Key files within the repo:
 
-   This use of .env enables fine-grained control of what is executed. However, the sequence of execution is hard-coded.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> - a shell script which sets up the environment with Conda and installs Python packages needed. Common Python installation and configuration issues and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs the <tt>python-samples.py</tt> Python program retrieves into variables that provide both configuration values and <a href="#FeatureFlags">"feature flag" variables</a> that control execution. 
+
+   Use of .env enables fine-grained control of what is executed within the program. However, the sequence of execution is hard-coded and thus always the same.
+
+   Until the program is coded to use a Vault, to keep secrets (such as API keys) from being sent up to a GitHub repo for public exposure, the .env file used by the program is copied away from the GitHub repo -- in the user's $HOME folder, where it's edited/customized. Thus, code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
+
+   Making .env a symlink to ~/.envs/foobar/dev is an added precaution to listing it in .gititgnore. If for whatever reasons the file were to be checked into version control, its contents would just show that it's a link to another file.
 
    Hard-coded default values defined in the Python code provide a default value if a value is not defined in the .env file. Boolean-valued flags to allow execution of application features are False by default. If a flow is True, it will be executed by the Python unitest framework.
 
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.gitignore"><strong>.gitignore</strong></a> defines files and folders which are not to be uploaded back into GitHub.
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/.gitignore"><strong>.gitignore</strong></a> defines files and folders which are not to be uploaded back into GitHub.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> is loaded into Microsoft Excel to create file <tt>country_info.csv</tt>.
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/.country_info.csv"><strong>country_info.csv</strong></a>, which is loaded into database.sqlite database that comes with Python.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a> is loaded into database.sqlite database that comes with Python.
 
-   * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/.country_info.xls"><strong>country_info.xls</strong></a> is loaded into Microsoft Excel to create country_info.csv.
-
-   * <a target="_blank" href="https://wilsonmar.github.com/github-actions">workflow files for use within GitHub Actions</a>
-
-Other Python project templates:
-
-   * https://github.com/MartinHeinz/python-project-blueprint by Martin Heinz in Russia
-
-   * https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
-
+* Within the <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong> folder</a> are files used by GitHub Actions for automation (Continuous Integration).
 
 <hr /> 
 
 ## Install using python-samples.sh
 
-Before being able to run the code on a particular machine (laptop), several utilities need to be installed on top of the Operating System.
+Before being able to run the code, several utilities need to be installed on top of the macOS Operating System:
 
-On a macOS Terminal or 
+   * macOS utilities jq, git, gh, etc.
+   * Python and <a href="#Virtualenv">Virtualenv</a>
+   * Download of foolders and files from github.com
+   <br /><br />
+
+Open a macOS Terminal.
 
 A. To view the code online, use a browser at address:
 
-   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/master/python-samples.py">https://github.com/wilsonmar/python-samples/blob/master/python-samples.py</a>
+   <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py">https://github.com/wilsonmar/python-samples/blob/main/python-samples.py</a>
 
 B. Alternately, edit the code online using Cloud9
 
-C. Alternately, to work with the whole repo on your laptop, 
+C. Alternately, to work with the whole repo on your laptop:
 
 1. navigate to where you want the repo added and
 
@@ -95,15 +113,8 @@ A virtual environment enables a specific set of Python dependencies to be instal
 
 When installing venv:
 
-<pre>created virtual environment CPython3.9.8.final.0-64 in 5940ms
-  creator CPython3Posix(dest=/Users/wilson_mar/gmail_acct/python-samples/venv, clear=False, no_vcs_ignore=False, global=False)
-  seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/Users/wilson_mar/Library/Application Support/virtualenv)
-    added seed packages: pip==21.3.1, setuptools==58.5.3, wheel==0.37.0
-  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
-</pre>
-
 "venv" is the preferred name of an environment.
-But variable <tt>my_venv_folder</tt> is used in case you want customization.
+But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
 1. Detect whether the folder (defined by variable <tt>my_venv_folder</tt>) has been created:
 
@@ -134,41 +145,21 @@ But variable <tt>my_venv_folder</tt> is used in case you want customization.
 
    * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
 
-1. Identify:
+1. List conda enviornments on your computer:
    
    <pre><strong>conda info --envs</strong></pre>
 
+   WARNING: Each conda environment contains its own set of Python libraries for a specific version of Python. So each conda enviornment consumes a significant of disk space.
 
-### Bandit vulnerability checker
-
-   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
-   * https://bandit.readthedocs.io/en/latest/plugins/index.html
-   <br /><br />
-
-Bandit transforms code into an abstract syntax tree (AST) to analyze vulnerabilities
-https://snyk.io/learn/security-vulnerability-exploits-threats/
-
-
-## Running in debug mode
-
-Running with <tt>debug=True</tt> exposes the Werkzeug debugger which can execute arbitrary code.
-
-Bandit flags this with "201:flask_debug_true".
-
-Setting  <tt>__debug__ == False</tt> disables assert statements on production servers.
-
-
-<hr />
 
 <a name="Execution"></a>
 
-## Top of coding file in python-samples.py
-
-## Change permissions to make file executable
+### Manual setup actions 
 
 1. In a terminal, change OS permissions to enable execute:
 
-   <ul><pre><strong>chmod +x python-samples.py
+   <ul><pre><strong>chmod +x python-samples.sh
+   chmod +x python-samples.py
    </strong></pre></ul>
 
 2. To execute the script, instead of:
@@ -187,17 +178,62 @@ Setting  <tt>__debug__ == False</tt> disables assert statements on production se
    </strong></pre>
    </ul>
 
+The above needs to be done only once on each computer.
 
-## Feature Flags
 
-Inside the program are <strong>feature flags<strong> which the program references to determine whether each feature is executed during a particular run.
+<hr />
 
-No parameters need to be specified because the program has hard-coded defaults for each feature flag, with ALL features enabled. 
+<a name="FeatureFlags"></a>
+
+## Edit .env file
+
+Use your favorite text editor (such as VSCode) to edit file <tt>python-samples.env</strong></tt>.
+
+There are two types of variables defined in the .env file:
+
+   * Configuration setting strings
+   * Feature flags, usually True/False boolean values
+   <br /><br />
+
+<strong>Feature flags<strong> program code references to determine whether each feature is executed during a particular run.
+
+   * use_... controls whether a capability is setup
+   * run_... controls whether a capability is invoked
+   * show_... controls whether output is displayed
+   <br /><br />
+
+Most use and run flags have a <strong>default of False</strong>, to NOT use/run.
+
+
+### Show flags
+
+Most show flags have a <strong>default of True</strong>, to display output.
+
+The program is coded to display various types of messages.
+
+* show_fatal of FATAL conditions
+* show_error of ERROR conditions
+* show_warning of WARNING conditions
+* show_info of INFO conditions
+* show_verbose of VERBOSE text of data users might be interested in
+* show_trace of TRACE conditions internal to the program for developers
+* show_todo of TODO (by developers)
+<br /><br />
+
+There are additional show flags to control display of 
+
+* show_pgminfo
+etc.
+<br /><br />
+
+> Some programmers prefer to not code shows of values, and instead dynamically set IDE breakpoints to view values. But I prefer to show so that during runs there is a historical record of what has occurred, for troubleshooting.
 
 
 <a name="Sections"></a>
 
 ## Sections of code (and their feature flags)
+
+Initialization:
 
    1. <a href="#PgmMetadata">Set metadata about this program</a>
    2. <a href="#Imports">Import libraries (in alphabetical order)</a>
@@ -270,11 +306,7 @@ The program precedence of override:
    <br /><br />
 
 
-### Output specification
-
-What the program outputs to the Terminal can be precisely specified.
-
-The default sample output:
+### when all features are enabled
 
 <pre>*** env_path LOCALE 'en_EN' overrides OS LOCALE ('en_US', 'UTF-8')
 &nbsp;
@@ -334,6 +366,11 @@ Images/
 <a name="Imports"></a>
 
 ## Imports
+
+NOTE: all Python imports are from pypi.org. For example, python-dotenv is drawn from:
+
+   <ul>https://pypi.org/project/python-dotenv/
+   </ul>
 
 1. Internal or external Python modules need to be specified for their classes, functions, and methods to be referenced.
 
@@ -1127,7 +1164,7 @@ The increase in Fibonucci return values <strong>grow exponentially</strong>.
       return fibonacci_memoized_cache[n]
 </pre>
 
-Based on bottom_up_fib(n) in https://github.com/samgh/DynamicProgrammingEbook/blob/master/python/Fibonacci.py
+Based on bottom_up_fib(n) in https://github.com/samgh/DynamicProgrammingEbook/blob/main/python/Fibonacci.py
 
 
 <a name="AzureCacheforRedis"></a>
@@ -1824,7 +1861,7 @@ On Ubuntu:
 
    ### App coding for single instance
 
-   https://github.com/dmcteer/vault-ha/blob/master/vault-noha.py
+   https://github.com/dmcteer/vault-ha/blob/main/vault-noha.py
    does not cache secrets in memory to reduce frequent requests to retrieve them nor
    manage TTLs inside of the application so that a secret is only requested at the time that it is expected to change.
 
@@ -1866,7 +1903,7 @@ On Ubuntu:
 
 1. Use the additional 19 lines of code 
 
-   https://github.com/dmcteer/vault-ha/blob/master/vault-ha.py
+   https://github.com/dmcteer/vault-ha/blob/main/vault-ha.py
 
 1. Conduct "chaos engineering":
 
@@ -2319,7 +2356,7 @@ My <a target="_blank" href="https://github.com/elmoallistair/google-it-automatio
    * Week 3: Working with Remotes, Introduction to GitHub, Using a Remote Repository, Solving Conflicts
    * Week 4: Collaboration, Pull Requests, Code Reviews, Managing Projects
 
-   * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/master/Course3/Lab4/validations.py">validations.py</a>
+   * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/main/Course3/Lab4/validations.py">validations.py</a>
    <br /><br />
 
 4. <a target="_blank" href="https://www.coursera.org/learn/troubleshooting-debugging-techniques/home/welcome">Troubleshooting and Debugging Techniques</a> (by Amanda Ballas, Google Security Systems Administrator)
@@ -2361,7 +2398,7 @@ My <a target="_blank" href="https://github.com/elmoallistair/google-it-automatio
    * Puppet facts are stored in hashes. If we wanted to use a conditional statement to perform a specific action based on a fact value, what symbol must precede the facts variable for the Puppet DSL to recognize it?
    * 1:30:00 lab - Debug Puppet
 
-   * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/master/Course5/Lab3/hello_cloud.py">hello-cloud.py</a> "A simple Hello World type app which can serve on port 8000."
+   * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/main/Course5/Lab3/hello_cloud.py">hello-cloud.py</a> "A simple Hello World type app which can serve on port 8000."
    <br /><br />
 
 6. <a target="_blank" href="https://www.coursera.org/learn/automating-real-world-tasks-python?specialization=google-it-automation">"Automating Real-World Tasks with Python"</a> by SRE Matt Gaunt - how to extend the capabilities of your python code by using some modules and libraries such as python image library (PIL) to work with images and also learn how to communicate with the world outside of your network such as using APIs and more.
@@ -2581,7 +2618,32 @@ wks.set_dataframe(df,(1,1))
 https://developer.ibm.com/tutorials/document-scanner/
 
 
+### Bandit vulnerability checker
+
+   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
+   * https://bandit.readthedocs.io/en/latest/plugins/index.html
+   <br /><br />
+
+Bandit transforms code into an abstract syntax tree (AST) to analyze vulnerabilities
+https://snyk.io/learn/security-vulnerability-exploits-threats/
+
+
+## Running in debug mode
+
+Running with <tt>debug=True</tt> exposes the Werkzeug debugger which can execute arbitrary code.
+
+Bandit flags this with "201:flask_debug_true".
+
+Setting  <tt>__debug__ == False</tt> disables assert statements on production servers.
+
+
 ## References
+
+Other Python project templates:
+
+   * https://github.com/MartinHeinz/python-project-blueprint by Martin Heinz in Russia
+
+   * https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
 
 https://towardsthecloud.com/update-macos-packages-single-command
 Update your macOS packages with a single command | Towards the Cloud
