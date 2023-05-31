@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-04"
+date: "2023-05-31"
 file: "graph-databases"
 title: "Graph databases"
 excerpt: "It's more relational than relational databases"
@@ -17,8 +17,6 @@ comments: true
 {% include _toc.html %}
 
 The contribution of this article is a maticulously sequenced presentation that curates concise yet deep insights from the many resources about this topic.
-
-https://en.wikipedia.org/wiki/Graph_database
 
 {% include whatever.html %}
 
@@ -39,8 +37,14 @@ Below is a (probably controversial) table comparing the different types of store
 <tr valign="top" align="center"><td>Performance</td><td>high</td><td>high</td><td>high</td><td>high</td><td>variable</td></tr>
 <tr valign="top" align="center"><td>Scalability</td><td>high</td><td>high</td><td>high / variable</td><td>high</td><td>variable</td></tr>
 <tr valign="top" align="center"><td>Flexibility</td><td>high</td><td>moderate</td><td>high</td><td>high</td><td>high</td></tr>
-</table> 
+</table>
 
+<a target="_blank" href="https://cloud.google.com/spanner/">Google Cloud Spanner</a> 
+is a cloud-based relational database that's a horizontally scalable, globally immediate consistent.
+Released in 2017.
+
+References:
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Graph_database">Wikipedia: Graph_database</a>
    * https://itnext.io/getting-started-with-graph-databases-azure-cosmosdb-with-gremlin-api-and-python-80e57cbd1c5e
    * https://www.c-sharpcorner.com/article/what-is-a-graph-database/
 
@@ -57,7 +61,7 @@ It is time consuming for traditional relational databases to process complex ind
    </table> 
 
 
-## Where graphs are needed
+## Where graph databases are needed
 
 Graphs can provide insights not easily found using other technologies.
 
@@ -69,7 +73,7 @@ Where graphs are important to visualizing AI/Machine Learning algorithms:
 
 Directed acyclic (one-way) graphs (DAGs) are used in Git, scheduling algorithms, and form the heart of many neuro network (Tensor) models in many other modern applications. Its representation of dependencies (precedence relationships) enable its use in the Airflow task processing app.
 
-* https://www.techtarget.com/searchcio/tip/Expect-graph-database-use-cases-for-the-enterprise-to-take-off
+   * https://www.techtarget.com/searchcio/tip/Expect-graph-database-use-cases-for-the-enterprise-to-take-off
 
 
 ## Simpler complex connections, naturally
@@ -79,10 +83,9 @@ It's difficult for SQL to answer questions that were not already expected ahead 
 SQL databases from Oracle, MySQL, etc. need to join physical tables together using foreign keys and link tables.<a target="_blank" href="https://www.youtube.com/watch?v=oRtVdXvtD3o&time=23m50s">*</a><br />
 <img alt="neo4j-link-table-488x264.jpg" src="https://user-images.githubusercontent.com/300046/69884353-05d5f300-12a6-11ea-91ed-1e2dcc0e8b28.jpg">
 
-   Writing SQL to represent a <strong>social graph</strong> containing 1,000 persons averaging 50 friends each can be difficult due to the need for joins and "de-normalized" physical structures. 
-   
+   Writing SQL to represent a <strong>social graph</strong> containing 1,000 persons averaging 50 friends each can be difficult due to the need for joins and "de-normalized" physical structures.
 
-## More relational than relational databases
+## More relational than relational databases?
 
    Whereas SQL data is stored in separate tables joined together using complex queries, Graph databases are "white-board friendly" because it stores data the same way as illustrated by its data model. Graph database diagrams look like ER (Entity-Relation) diagrams for SQL databases. The example below uses data from <a target="_blank" href="https://grouplens.org/datasets/movielens/">Movielens database</a> containing 62,000 movies with 25 million ratings and one million tag applications applied by 162,000 users:
 
@@ -128,7 +131,7 @@ SQL databases from Oracle, MySQL, etc. need to join physical tables together usi
 
 ## Which graph database and language?
 
-<a target="_blank" href="https://db-engines.com/en/ranking_trend/graph+dbms">This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Cosmos catching up quickly. 
+<a target="_blank" href="https://db-engines.com/en/ranking_trend/graph+dbms">This ranking by db-engines.com</a> lists Neo4j as the most popular graph database, with Microsoft Azure Cosmos catching up quickly. 
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680596363/graph-databases-23-04-04_epnjy6.jpg"><img alt="graph-databases-2106x1074-23-04-04.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680596363/graph-databases-23-04-04_epnjy6.jpg"></a>
 
@@ -140,7 +143,30 @@ Notice that Cosmos and others are called "Multi-model" (providing a Document sto
 
 ## Gremlin language
 
-The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin language</a> traversal machine (GTM) is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. The Gremlin language is implemented by a wide variety of vendors, including Neo4j. Gremlin is popular largely because it is supported (beginning in 2009) by the open-source Apache <a target="_blank" href="http://tinkerpop.apache.org/">Tinkerpop</a>/TinkerGraph (<a target="_blank" href="http://tinkerpop.apache.org/docs/3.2.4/reference/#traversal">docs</a> <a target="_blank" href="https://www.zdnet.com/article/graph-databases-advance-tigergraph-announces-32-million-series-b-funding-plus-cloud-based-platform/" title="September 25, 2019">TigerGraph analytics cloud</a>). Thus, it is Apache-2 licensed.<strong>Tinkerpop</strong> is one of two open-source graph databases that include @JanusGraph (<a target="_blank" href="http://janusgraph.org/">http://janusgraph.org</a>), open-sourced in 2017 under The Linux Foundation, with participants from Google, Hortonworks, IBM, Amazon, GRAKN.AI, <a target="_blank" href="https://www.experolabs.com/">Expero Labs</a>, etc. Its distributed graph database has multiple scalable storage backends:
+The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_language)">Gremlin language</a> traversal machine (GTM) is to graph computing as what the Java virtual machine (JVM) is to general purpose computing. The Gremlin language is implemented by a wide variety of vendors, including Neo4j. Gremlin is popular largely because it is supported (beginning in 2009) by the open-source Apache <a target="_blank" href="http://tinkerpop.apache.org/">Tinkerpop</a>/TinkerGraph (<a target="_blank" href="http://tinkerpop.apache.org/docs/3.2.4/reference/#traversal">docs</a> 
+
+
+> "It's harder to get started with Gremlin than Neo4j's Cypher. Gremlin has a SQL-like syntax (SELECT, WHERE, etc.). But Gremlin helps you understand graphs better than Cypher. And it's available on free open-source software and most portable and available among vendors." -- <a target="_blank" href="https://linkedin.com/in/JohnPtacek">John Ptacek</a> [24:25] into <a target="_blank" title="6 Sep 2019 [53m]" href="https://app.pluralsight.com/library/courses/that-conference-2019-session-60/table-of-contents">"THAT Conference '19: Introduction to Graph Databases"</a>
+
+References:
+   * https://www.codeproject.com/Articles/1066378/Introduction-to-Graph-Databases-using-Neo-J-and-it
+   <br /><br />
+
+
+## TigerGraph
+
+<a target="_blank" href="https://www.zdnet.com/article/graph-databases-advance-tigergraph-announces-32-million-series-b-funding-plus-cloud-based-platform/" title="September 25, 2019">TigerGraph analytics cloud</a> calls itself "the most scalable graph database-as-a-service for your connected data analytics". It is Apache-2 licensed. It's purpose-built for loading terabytes of data in hours and, in real-time, analyzing 10+ hops deep in to relationships.
+
+   * https://www.tigergraph.com/google-cloud/
+   * https://docs.tigergraph.com/tigergraph-server/current/getting-started/cloud-images/gcp
+   <br /><br />
+
+## JanusGraph on GKE with Cloud Bigtable
+
+<a target="_blank" href="http://janusgraph.org/">http://janusgraph.org</a> was open-sourced in 2017 under The Linux Foundation, with participants from Google, Hortonworks, IBM, Amazon, GRAKN.AI, <a target="_blank" href="https://www.experolabs.com/">Expero Labs</a>, etc. 
+Named customers include Ebay and Target.
+
+The Janusgraph distributed graph database has multiple scalable storage backends:
 
    * Apache Cassandra®
    * Apache HBase®
@@ -148,16 +174,41 @@ The <a target="_blank" href="https://www.wikiwand.com/en/Gremlin_(programming_la
    * Oracle BerkeleyDB
    <br /><br />
 
-> "It's harder to get started with Gremlin than Neo4j's Cypher. Gremlin has a SQL-like syntax (SELECT, WHERE, etc.). But Gremlin helps you understand graphs better than Cypher. And it's available on free open-source software and most portable and available among vendors." -- <a target="_blank" href="https://linkedin.com/in/JohnPtacek">John Ptacek</a> [24:25] into <a target="_blank" title="6 Sep 2019 [53m]" href="https://app.pluralsight.com/library/courses/that-conference-2019-session-60/table-of-contents">"THAT Conference '19: Introduction to Graph Databases"</a>
+https://db-engines.com/en/system/Google+Cloud+Datastore%3BGraphDB%3BNeo4j
+Google Cloud Datastore
 
-* https://www.codeproject.com/Articles/1066378/Introduction-to-Graph-Databases-using-Neo-J-and-it
+JanusGraph uses a pluggable indexing backend to provide full-text indexing for vertex and edge properties.
 
+Janusgraph runs within GKE with ElasticSearch as the indexing backend running in Pods in a StatefulSet.
+
+Bigtable as the underlying backend storage layer.
+
+For fast and deep graph traversals among relationships, JanusGraph stores data as an <strong>adjacency list</strong>.
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1685527712/graphdb-janus-struc-720x161_isbv2y.webp"><img alt="graphdb-janus-struc-720x161.webp" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1685527712/graphdb-janus-struc-720x161_isbv2y.webp"></a>
+
+The above diagram[1] shows the logical storage structure for a small graph fragment with two vertex rows. Two example rows represent two vertices. The first vertex is labeled with a single vertex property and is related to two other vertices by two separate edges. The second vertex holds columns containing two properties and one edge.
+
+Each row represents a vertex, any adjacent vertices (edges), and property metadata about the vertices and edges. A <strong>row key</strong> is the unique identifier for each vertex. Each relationship between the vertex and another vertex and any properties that further define the relationship are stored as an edge or edge-property column. Both the column qualifier and column value store data that defines the edge, in accordance with Bigtable best practices. Each vertex property is stored as a separate column, again using both the column qualifier and the column value to define the property.
+
+<a target="_blank" href="https://db-engines.com/en/system/Google+Cloud+Spanner%3BGraphDB%3BNeo4j">db-engine's popularity ranking</> says
+GraphDB is schema-free and OWL/RDFS-schema support; RDF shapes
+
+References:
+   * [1] https://connectsaurabhmishra.medium.com/how-google-cloud-deals-with-graph-databases-19790cd1d43e
+   * https://connectsaurabhmishra.medium.com/neo4j-aura-graph-database-extension-on-google-cloud-1b2c7f11fbd2
+   * https://cloud.google.com/architecture/running-janusgraph-with-bigtable
+
+Neo4j Aura:
+   * https://console.cloud.google.com/marketplace/product/endpoints/prod.n4gcp.neo4j.io?project=glass-bridge-285601
+   * https://connectsaurabhmishra.medium.com/neo4j-aura-graph-database-extension-on-google-cloud-1b2c7f11fbd2
 
 ### Cloud SaaS Graph database services
 
-* https://www.g2.com/categories/graph-databases
-* https://www.g2.com/categories/graph-databases#grid
-<br /><br />  
+References:
+   * https://www.g2.com/categories/graph-databases
+   * https://www.g2.com/categories/graph-databases#grid
+   <br /><br />  
 
 Instead of a local instance, if you're working as a team of developers, consider always-on availability, on-demand scalability, and support:
 
@@ -170,7 +221,7 @@ Instead of a local instance, if you're working as a team of developers, consider
 
    * <a target="_blank" href="https://docs.microsoft.com/en-us/azure/cosmos-db/graph-introduction">Apache TinkerPop Gremlin</a> queries on DataStax Enterprise Graph
 
-   * <a target="_blank" href="https://aws.amazon.com/neptune/">Neptune</a> (named the ice planet in our solar system) is Amazon's graph database managed cloud service (<a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/">documentation</a>). <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-amazon-neptune-graph-database/table-of-contents">Pluralsight video course</a> by <a target="_blank" href="https://hoppertech.net/">Jeff Hoopper</a> covers use of (non-prod) CloudFormation to establish a cluster of <strong>$250/month</strong> db.r4.large (or larger) EC2 instances in several availability zones within a region. IAM is used, but is accessible only via a VPC from a Lambda service. The read-only Reader can access Up to 16 read replicas behind separate IP addresses. The modules used in the course are release 2018.3:
+   * <a target="_blank" href="https://aws.amazon.com/neptune/">AWS Neptune</a> (named the ice planet in our solar system) is Amazon's graph database managed cloud service (<a target="_blank" href="https://docs.aws.amazon.com/neptune/latest/userguide/">documentation</a>). <a target="_blank" href="https://app.pluralsight.com/library/courses/aws-amazon-neptune-graph-database/table-of-contents">Pluralsight video course</a> by <a target="_blank" href="https://hoppertech.net/">Jeff Hoopper</a> covers use of (non-prod) CloudFormation to establish a cluster of <strong>$250/month</strong> db.r4.large (or larger) EC2 instances in several availability zones within a region. IAM is used, but is accessible only via a VPC from a Lambda service. The read-only Reader can access Up to 16 read replicas behind separate IP addresses. The modules used in the course are release 2018.3:
 
       - apache-tinkerpop-gremlin-console-3.3.2 for Gremlin queries
       - eclipse-rd4jf-2.3.2 for SPARQL queries <a href="#Triplestore">Triplestore</a>
@@ -185,9 +236,10 @@ Instead of a local instance, if you're working as a team of developers, consider
       - Turtle to load SPARQL
       <br /><br />
 
-   * AnzoGraph DB from Cambridge Semantics - a Massively Parallel Processing (MPP) native graph database built for data harmonization and analytics. Horizontally scalable graph database built for online analytics and data harmonization. Take on data harmonization and linked data challenges. It uses SPARQL*/OWL for semantic graphs but also supports Labeled Property Graphs (LPGs). <a target="_blank" href="https://www.youtube.com/watch?v=YDI-Xb0VDrE">VIDEO</a>
+   * <strong>AnzoGraph DB</strong> from Cambridge Semantics - a Massively Parallel Processing (MPP) native graph database built for data harmonization and analytics. Horizontally scalable graph database built for online analytics and data harmonization. Take on data harmonization and linked data challenges. It uses SPARQL*/OWL for semantic graphs but also supports Labeled Property Graphs (LPGs). <a target="_blank" href="https://www.youtube.com/watch?v=YDI-Xb0VDrE">VIDEO</a>
 
-   * ArangoDB earned high performance scores from Gartner. Natively store data for graph, document and search needs. Utilize feature-rich access with one query language. Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort. Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.
+   * <strong>ArangoDB</strong> earned high performance scores from Gartner. Natively store data for graph, document and search needs. Utilize feature-rich access with one query language. Map data natively to the database and access it with the best patterns for the job – traversals, joins, search, ranking, geospatial, aggregations – you name it. Polyglot persistence without the costs. Easily design, scale and adapt your architectures to changing needs and with much less effort. Combine the flexibility of JSON with semantic search and graph technology for next generation feature extraction even for large datasets.
+
 
 ## Microsoft Cosmos
 
@@ -311,5 +363,4 @@ https://www.linkedin.com/jobs/microsoft-graph-science-jobs/
 * See my <a target="_blank" href="https://wilsonmar.github.io/neo4j">Neo4j Cypher language tutorial</a>
 
 * QUESTION: Sample code for a web app using Neo4j and Python? <a target="_blank" href="https://stackoverflow.com/questions/49610086/sample-code-for-a-web-app-using-neo4j-and-python">Stack Overflow</a>
-
 
