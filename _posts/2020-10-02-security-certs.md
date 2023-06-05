@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-09"
+date: "2023-05-27"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -30,7 +30,7 @@ This map is from <a target="_blank" href="https://pauljerimy.com/category/book-r
 
 <a target="_blank" href="https://cloudsecurityalliance.org/education/ccsk/">The Certificate of Cloud Security Knowledge (CCSK)</a> is marketed as a complement to other credentials (CCAK, CISA, CISSP, CCSP) by the Seattle-based <a target="_blank" href="https://cloudsecurityalliance.org/">Cloud Security Alliance (CSA)</a> which also markets <a target="_blank" href="https://cloudsecurityalliance.org/education/#_ccsk">training</a>. 
 
-QUESTION: The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype inactive?</a>
+QUESTION: The CSA <a target="_blank" href="https://github.com/cloudsecurityalliance/ctpd">Cloud Trust Protocol Daemon protoype</a> is inactive?
 
 <a target="_blank" href="https://www.whizlabs.com/learn/course/ccsk-pt/">
 Whizlabs has sample tests</a> but questionable quality with too many double negative questions and answers.
@@ -230,12 +230,12 @@ CGRC is taken from a broad spectrum of vendor-neutral topics in the CGRC Common 
 ### CISSP
 
 <img align="right" alt="CISSP-logo- Square-131x131" width="131" height="131" src="https://user-images.githubusercontent.com/300046/116986846-8531d800-ac8b-11eb-83af-651083c07bb3.png">
-Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> (pronouced "sis pee") is a sought-after certification on leadership in cybersecurity. It is the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
+Even at <a target="_blank" href="https://www.isc2.org/Register-for-Exam/ISC2-Exam-Pricing">$749 USD</a>, the <a target="_blank" href="https://www.isc2.org/Certifications/CISSP">Certified Information Systems Security Professional exam</a> (pronouced "sis pee") is a sought-after technical certification in cybersecurity leaders as the "gold standard" of vendor-neutral cybersecurity certifications. Earning it proves you understand cybersecurity from a management viewpoint -— a requirement if your organization is subject to PCI, GDPR, HIPAA, SOX, ISO 27001, or other regulations. 
 
 The first version of the Common Body of Knowledge (CBK) was finalized in 1992 and the CISSP credential was launched in 1994.
-Since it's an internationally recognized, there are questions about Canada, UK, EU, etc.
+Since it's an internationally recognized, there are questions about cybersecurity regulations in Canada, UK, EU, etc.
 
-Rather than the previous 250 questions over 6 hourse, the CISSP exam is now adaptive, asking 100-150 questions, depending on whether answers are correct. 
+Rather than the previous 250 questions over 6 hourse, the CISSP exam is now <strong>adaptive</strong>, asking 100-150 questions, depending on whether answers are correct. 
 PROTIP: With Adaptive Testing, your objective is to get hard questions. So study as if you'll get all hard questions. The better you are, the harder the test is. If you aced the first 10 questions, you'll be put into "brutal mode".
 With CAT (Computer Adaptive Testing), the more one aces every question, the quicker she would get done before the 3 hours.
 <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
@@ -245,16 +245,19 @@ There is a 5 year experience requirement, attested by other professionals.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 
-PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw/videos">on YouTube</a>) provide the most detailed, best sequenced learning, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated for the May 2021 BOK</a>. He includes demos of the most popular software. Numbers to the right of his videos by domain are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
+PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw/videos">on YouTube</a>) provide the most detailed, best sequenced introductory lectures, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated for the May 2021 BOK</a>. He includes demos of the most popular software. 
+Links to each CISSP domains contains a link to his tutorial on that domain. 
+
+Numbers to the right of his videos are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
    1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
    Security and Risk Management</a> - 334
    2. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
    Asset Security</a> - 44
    3. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
-   Security Architecture and Engineering</a> - 268
+   Security (Architecture and) Engineering</a> - 268
    4. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
-   Communication and Network Security</a> - 114 on OSI model
+   (Communication and) Network Security</a> - 114 on OSI model
    5. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
    Identity and Access Management (IAM)</a> - 82 on biometrics
    6. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
@@ -262,8 +265,12 @@ PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="
    7. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
    Security Operations</a> - 245 
    8. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
-   Secure Software Development Lifecycle</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
+   Secure Software Security (Development Lifecycle)</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
    <br /><br />
+
+Parentheses in domain names contain words removed in the 2023 version of CISSP.
+
+   "Every domains are interconnected. It's swimming with overlap."
 
 Official Flash cards of definitions:
 
@@ -278,6 +285,9 @@ Official Flash cards of definitions:
 
    * <a target="_blank" href="https://www.isc2.org//Training/Self-Study-Resources/Flashcards/CISSP/Software-Development-Security">Putting it All Together</a> - 34 items
    <br /><br >
+
+https://learning.oreilly.com/search/?q=cissp&type=*&rows=10
+Search on OReilly.com
 
 Quizzes on CloudAcademy.com by exam domain:
 
@@ -313,16 +323,31 @@ Written References:
 
    * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
 
-   * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-ahmed-446601133/">Luke Ahmed</a>, who is dedicated to CISSP education.
+   * <a target="_blank" href="https://www.studynotesandtheory.com/single-post/practice-question-security-testing">VIDEO</a> at <a target="_blank" href="https://www.studynotesandtheory.com/​">studynotesandtheory.com</a> by <a target="_blank" href="https://www.linkedin.com/in/luke-ahmed-%F0%9F%9A%80-446601133/">Luke Ahmed</a>, who is dedicated to CISSP education (since 2013). (@securityengineer on <a target="_blank" href="https://www.facebook.com/studynotesandtheory/">Facebook</a>, <a target="_blank" href="https://t.me/+V3KJK22nXNsyMTVk">Telegram</a>).
+   PROTIP: I found his native-sounding English excellent. 
+   I think his <a target="_blank" href="https://studynotesandtheory.mykajabi.com/products/study-notes-and-theory-a-cissp-study-guide">videos</a>, flash cards, and practice questions are worth the $49 per month (less when buying for a year) because his focus is on how to study and remember content for the exam. He helps by providing memorable conceptual hooks.
+   He is the only one I know who compares differences between content in Shon Harris 7th vs. Sybex books.
+   He provides detailed analysis of why each answer is correct or not.
+   But I can do without the 10 seconds of intro music each module.
+   And it's annoying to have to reset speed and quality every module.
 
    * https://learning.oreilly.com/videos/cissp-certification-training/9781771373753/9781771373753-video212908
+
+   * <a target="_blank" href="https://www.cbtnuggets.com/learn/it-training/playlist/nrn:playlist:certification:5c26ad6349417f090094f404">cbtnuggets 11 hrs 56 mins</a> $599.00 USD/year by Keith Barker	
+
+   * Michael Gregg's CISSP Practice Questions on OReilly 2016 are in text.
+
+Not yet updated to CISSP 01 May 2021 changes:
+
+   * <a target="_blank" href="https://www.cbtnuggets.com/learn/it-training/playlist/nrn:playlist:certification:5c26ad6349417f090094f404">
+   CBTNubbets</a> by Keith Barker and Ben Finkel.
 
 
 Video prep courses view:
 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics. From 2020.
-
    * <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">OReilly LiveSessions CISSP</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) I think is indeed the most thorough (deep dive) of all video courses I've viewed. 26 hours. A quize of terms at the end of each video. From 2018.
+
+   * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics. From 2020.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">YouTube playlist on CISSP FREE</a> by "Skillset" provides a good overview, but it's from 2016.
 
@@ -478,11 +503,14 @@ Bragging:
 
 ## ISACA.org
 
-<a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a> asks for a $50 test application processing fee in addition to membership fee for a US$185 discount to the US$760 online, remotely-proctored exam fee. 
+<a target="_blank" href="http://www.isaca.org/CERTIFICATION/Pages/default.aspx">ISACA.org</a> was created by CISA, a consortium of cloud companies who also maintains a Vulnerability Catalog, the CAIQ, and hold the Digital Trust World conference. It asks for a $50 test application processing fee in addition to USD $145 annual membership fee <a target="_blank" href="https://www.isaca.org/-/media/files/isacadp/project/isaca/membership/isaca-chapter-dues.pdf">plus up to $50 monthly local chapter dues</a>. Members get a $185 discount to the $760 online, remotely-proctored exam fee to Pearson Vue. Its website uses Salesforce Authenticator for 2FA. There's also a $45 annual maintenance fee for each certification, plus $50 for each recertification. And costs for continuing education.
+
 
 * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">CSX Fundamentals</a>
 
-* CRISC (Certified in Risk and Information Systems Control)
+* <a target="_blank" href="https://www.isaca.org/credentialing/cisa">CISA (Certified Information Systems Auditor)</a>
+
+* CRISC (Certified in Risk and Information Systems Control)</a>
 
 * <a target="_blank" href="https://www.isaca.org/credentialing/cism">CISM (Certified Information Security Manager)</a> <a target="_blank" href="[2020-10-02-security-certs.md](https://learning.oreilly.com/live-events/cism-crash-superreview-by-allen-keele/0636920055226/0636920086120/)">VIDEO: CISM Crash SuperReview</a> by <a target="_blank" href="https://www.linkedin.com/in/allenkeele/">Allen Keele</a> of a 40-hour class at certifiedinfosec.com
 
@@ -501,14 +529,13 @@ Bragging:
 
 * Certified ISO 27001 Lead Implementer, Internal Controls Architect and Lead Auditor (LI/CICA/CLA)
 
-* CGEIT (Certified in the Governance of Enterprise IT)
+* <a target="_blank" href="https://www.isaca.org/credentialing/cgeit">CGEIT (Certified in the Governance of Enterprise IT)</a>
 
 * <a target="_blank" href="https://www.isaca.org/credentialing/certified-data-privacy-solutions-engineer">CDPSE (Certified Data Privacy Solutions Engineer)</a> covers privacy governance, privacy architecture, data lifecycle
 
-* <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a>, derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyber framework</a> is 4 hours.
+* <a target="_blank" href="https://www.isaca.org/credentialing/csx-p">CSX-P (Cybersecurity Practitioner)</a>, derived from the <a target="_blank" href="https://www.nist.gov/cyberframework">NIST Cyber framework</a> is 4 hours. ISACA has sunset this on 30 April 2023 while it develops a new Cybersecurity Certification Exam.
 
 Exec Order 14028 update of 13366
-
 
 ### ISACA CSX
 
@@ -516,12 +543,23 @@ ISACA's <a target="_blank" href="https://www.isaca.org/credentialing/cybersecuri
 
    * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-fundamentals-certificate">Security Fundamentals</a>
 
+   * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-practitioner-certificate">Security Practitioner</a>
+
+   * <a target="_blank" href="https://www.isaca.org/credentialing/cybersecurity/csx-associate-certificate">Security Associate</a>
+
+
+## Zero Point Security CRTO
+
+The Certified Red Team Operator (CRTO) course and certification
+is 48 hours of lab time spread across a 4 day event where the student has to find and submit 8 flags (6 flags to pass) within Snap Labs.
+
+https://medium.com/@adamgoss/certified-red-team-operator-crto-review-71ea4edef62a
 
 ## Offensive Security
 
 Offensive Security is a for-profit company offering courses with labs and certifications:
 
-   * OSCP (Certified Professional) is one of the most difficult to pass because it is part hazing ritual, proctored via webcam. It is a 24-hour time-boxed test where you penetrate of as many machines as you can within a massive virtual environment, using Kali Linux. 
+   * $495 OSCP (Certified Professional) is one of the most difficult to pass because it is part "hazing ritual" and part proctored via webcam. It is a 24-hour time-boxed test where you penetrate of as many machines as you can within a massive virtual environment (which includes Active Directory), using Kali Linux. That's followed by another 24-hour time frame to write (with screenshots) an exam report. You must also pass a background check. The PWK prep course is $1,295. <a target="_blank" href="https://medium.com/@anuragmewar/how-not-to-fail-oscp-on-your-first-attempt-ad-special-b0819523e3">More</a>
 
    * <a target="_blank" href="https://www.offensive-security.com/awe-osee/">OSEE (Offensive Security Exploitation Expert)</a> covers DEP, ASLR evasion, heap spraying, function pointer overwrites. OSEE holders must complete the Advanced Windows Exploitation (AWE) course by Offensive Security held in a live hands-on environment at a Black Hat conference in Las Vegas, NV.
    
@@ -747,12 +785,40 @@ Hyperconvergence takes convergence a step further by utilizing software to perfo
 
 <hr />
 
-## Cisco CCIE
+## Cisco 
 
-<a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html">CCIE - Cisco</a>
+Cisco (the networking company) has several certifications attained by 4,000 people world-wide:
 
-Only 4,000 people have passed it world-wide.
+* CCNA Associate
+* Cisco CyberOps: Associate, Professional (no Expert yet)
+* Cisco DevNet: Associate, Professional, Expert
 
+* CCNP Enterprise and <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html">CCIE (Expert level)</a> Enterprise Infrastructure, Enterprise Wireless
+* CCNP and CCIE: Security, Collaboration, Data Center, Service Provider
+<br /><br />
+
+The prerequisite is earning the Cisco Certified Specialist - Security Core certification by passing the their 120-minute <a target="_blank" href="https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/scor-350-701.html">$400 350-701 SCOR <strong>Cisco Security Core Technologies</strong> exam</a>.
+   * https://learningnetwork.cisco.com/s/scor-exam-topics
+   * Cisco has a FREE <a target="_blank" href="https://u.cisco.com/path/6">Implementing and Operating SCOR 1.0 prep. class</a>:
+   
+      1. Network Security Concepts 1h 15m
+      2. Network Security Controls 8h 45m
+      3. Endpoints and Systems 2h 30m
+      4. Identity Access Management 1h
+      5. Secure Transport 8h 45m
+      6. Secure Network Infrastructure and Telemetry 3h
+      7. Cloud Security Concepts 1h 30m
+      8. Security Automation 1h
+      <br /><br />
+
+      <a target="_blank" href="https://talosintelligence.com/">Talos</a> (formerly Thousand Eyes) Intelligence Group</a> security intelligence feed [<a target="_blank" href="https://en.wikipedia.org/wiki/Cisco_Talos">Wikipedia</a>]
+
+   * [22-hour YouTube course by Ratner Part 1](https://www.youtube.com/watch?v=Kulc-wowfVs&list=RDCMUCBTwpzRHf_PYj3iyuNH05eQ&start_radio=1&rv=Kulc-wowfVs)
+   * [30-hour $50 video course by Sikandar Shaik on Udemy](https://www.udemy.com/course/scor-350-701/)
+   * [36-hour $50 CBTNuggets video class](https://www.cbtnuggets.com/learn/it-training/playlist/nrn:playlist:certification:5e8264a8695220001457924e/1?autostart=1)
+   * https://www.linkedin.com/learning/paths/ccnp-security-prepare-for-the-implementing-and-operating-cisco-security-core-technologies-350-701-scor-exam
+
+<a name="EC-Council"></a>
 
 ## EC-Council Penetration Tester
 
