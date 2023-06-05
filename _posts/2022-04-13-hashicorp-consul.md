@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-04"
+date: "2023-06-04"
 file: "hashicorp-consul"
 title: "HashiCorp Consul"
 excerpt: "Enterprise-grade secure Zero-Trust routing to replace East-West load-balancing using service names rather than static IP addresses. Enhance Service Mesh with mTLS and health-based APIs in AWS, Azure, GCP, and other clouds running Kubernetes as well as ECS, EKS, VMs, databases, even mainframes outside Kubernetes"
@@ -2272,7 +2272,7 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    Alternately,
 
    <pre><strong>consul agent -dev -datacenter="aws-1234567890" \
-   -data-dir=/opt/consul  -encrypt="<em>key</em>" \
+   -data-dir=/opt/consul  -encrypt="key" \
    -join="10.0.10.11,10.1.2.3" \
    -bind="127.0.0.1" -node machine</strong></pre>
 
@@ -2281,11 +2281,11 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    PROTIP: In production, use configuration file to <strong>auto-join</strong>:
 
    <pre>{
-  "bootstrap": false,
-  "boostrap_expect": 3,
-  "server": true,
-  "retry_join": ["10.0.10.11,"10.1.2.3"]
-}
+   "bootstrap": false,
+   "boostrap_expect": 3,
+   "server": true,
+   "retry_join": ["10.0.10.11,"10.1.2.3"]
+   }
    </pre>
 
    <a name="bind"></a>
@@ -2294,7 +2294,7 @@ wilsonmar-N2NYQJN46F.node.consul. 0 IN	TXT	"consul-network-segment="
    
    For cluster communications within <tt>nodes/conf/server.hcl</tt> the <tt>bine_addr</tt> is .
 
-   <pre>bind_addr = "{{ GetPrivateInterfaces | include \"network\" \"10.0.0.0/16\" | attr \"address\" }}"</pre>
+   <pre>bind_addr = "/{/{ GetPrivateInterfaces | include \"network\" \"10.0.0.0/16\" | attr \"address\" }}"</pre>
 
    For client communications (via UI,DNS,API):
 
@@ -2714,13 +2714,13 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 Consul-template is a separate binary/executable which reads a template file to substitute variables defined between \{\{ \}\} ("moustashe quotes") and replace each with values. An example:
 
    <pre>[client]
-host={{ env "DB_HOSTNAME" }}
-port={{ env "DB_PORT" }}
-{{ with secret "database/cred/my-backend" }}
-user={{ .Data.username }}
-password={{ .Data.password }}
-# Lease: {{ .LeaseID }}
-{{ end }}
+host=/{/{ env "DB_HOSTNAME" }}
+port=/{/{ env "DB_PORT" }}
+/{/{ with secret "database/cred/my-backend" }}
+user=/{/{ .Data.username }}
+password=/{/{ .Data.password }}
+# Lease: /{/{ .LeaseID }}
+/{/{ end }}
    </pre>
 
    <a target="_blank" href="https://medium.com/@serg-digitalis/cassandra-ssl-certificates-rotation-e4ff6fe86493">
@@ -3074,7 +3074,7 @@ So data in a Consul agent has to be captured in complete point-in-time snapshots
      },
    "aws_storage": {
       "s3_region": "us-east-1",
-      "s3_bucket": "<em>my-consul-snapshots-bucket</em>"   
+      "s3_bucket": "my-consul-snapshots-bucket"
     }
   }
 }
