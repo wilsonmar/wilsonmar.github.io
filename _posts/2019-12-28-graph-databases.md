@@ -47,7 +47,7 @@ References:
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Graph_database">Wikipedia: Graph_database</a>
    * https://itnext.io/getting-started-with-graph-databases-azure-cosmosdb-with-gremlin-api-and-python-80e57cbd1c5e
    * https://www.c-sharpcorner.com/article/what-is-a-graph-database/
-
+   * <a target="_blank" href="https://www.youtube.com/watch?v=QG1CgwIWLUs">VIDEO: Neo4j on GKE via GCP Marketplace</a> at https://bit.ly/2u6ryt3
 
 ## Faster and Better?
 
@@ -364,3 +364,4 @@ https://www.linkedin.com/jobs/microsoft-graph-science-jobs/
 
 * QUESTION: Sample code for a web app using Neo4j and Python? <a target="_blank" href="https://stackoverflow.com/questions/49610086/sample-code-for-a-web-app-using-neo4j-and-python">Stack Overflow</a>
 
+* <a target="_blank" href="https://www.youtube.com/watch?v=YB723cp9jgM&list=PL9Hl4pk2FsvVmKhfc1Lqo2n2qsX_Si4WY&pp=iAQB">VIDEO</a> Neo4j CTO Jim Webber

@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-05-26"
+file: "regression"
 title: "(Statistical Multi-Variate) Regression"
 excerpt: "How to calculate a formula from multiple variables in Excel, and stistics to evaluate them"
 tags: [apple, mac, setup]
-date: "2016-02-20"
-file: "regression"
 image:
 # regression-190x500
   feature: https://user-images.githubusercontent.com/300046/133376673-1bc5fa13-ee2c-441a-9005-388bc34b11c5.png
@@ -18,6 +18,8 @@ comments: true
 
 Here are my notes on how to create a multi-variate Linear Regression formula
 using Microsoft Excel and <a href="#PythonRegression">Python programs</a>.
+
+{% include whatever.html %}
 
 <a name="Evaluation"></a>
 
@@ -185,10 +187,13 @@ Add two, three, and even more numeric explanatory variables to a linear model.
 
 The nice thing about datacamp's videos is that one can highlight and copy text from videos, such as this:
 
-   <pre>
-ggplot(data = mpg_manuals, aes(x = factor(year), y = hwy)) + 
+   <pre>ggplot(data = mpg_manuals, aes(x = factor(year), y = hwy)) + 
   geom_boxplot()
    </pre>
+
+[This 10-hour course on YouTube about Regression Analysis](https://www.freecodecamp.org/news/master-regression-analysis-for-machine-learning/
+) helps you understand relationships in your data. Learn concepts that underpin many machine learning algorithms, such as Linear Regression, Polynomial Regression, Feature Engineering, and more. Code several Python projects.
+
 
 <a name="References"></a>
 

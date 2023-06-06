@@ -152,19 +152,25 @@ Here are the <strong>concerns</strong> enterprises have that need to be addresse
 
    The SOC (Security Operations Center) ensures that software is configured to send logs and metrics from all machines into a SIEM (Security Information and Event Management) system such as Splunk, Azure Sentinel, etc. Such systems commonly maintains several times more data than the systems themselves. Machine Learning techniques and advanced statistical analysis are becoming common with such systems. All that enables the SOC team to correlate events across the enterprise to detect intrusion and exploits.
 
-   Logs, especially are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
+   Logs, especially, are also used by external auditors to determine actual compliance with policies. Those with access to SIEM data can elicit actual, detailed, real-time insights on inflows and outflows between different parts of the organization and systems -- a magical tool to identify bottlenecks and predict trends. We look forward to 3D dynamic projections in Mixed reality glasses from Microsoft, Apple, Facebook, etc. 
 
 ## 9. Quick and complete recovery from disasters
 
-   Many legacy applications were created when it took months to obtain additional capacity. So systems were designed to simply fail when overwhelmed.
+   Many legacy applications were created when hardware capacity was static. It took months to obtain additional capacity. Even with over-bought capacity, such systems were designed to fail when overwhelmed.
 
-   With cloud, enterprise licensing typically involves providing High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. 
+   Use of shared public clouds enables enterprise to use High Availability (HA) features, which means running simultaneously in <strong>multiple locations</strong>. Such operations require real-time coordination of data created across multiple sites. 
 
    <a target="_blank" href="https://www.slideshare.net/renatadavidson/d-rvs-bcp-34018845" title="From Davidson Consulting">This timeline</a> illustrates the complexity ignored by other diagrams on the same topic, especially the interplay between customer-facing business teams and ICT (Information and Communication Technology) organizations:
 
    <a target="_blank" title="dr-plan-davidson-consulting-1029x618.png" href="https://user-images.githubusercontent.com/300046/138092441-4c61139d-e8bd-4772-9a9b-537a489565ac.png"><img alt="dr-plan-davidson-consulting-638x385.png" width="638" height="385" src="https://user-images.githubusercontent.com/300046/113962529-1aed5b00-97e5-11eb-85c2-3e0b905ec855.png"></a>
 
-   The success of a BCP (Business Continuity Plan) is realizing for each incident the MTPoD (Minimum Tolerable Period of Disruption), aka MTD (Maximum Tolerable Downtime), to reach the minimal level of business process resumption. That ideally are defined before a disaster.
+   The success of a BCP (Business Continuity Plan) for Continuation of Operations (COOP) is realizing for each incident the MTPoD (Minimum Tolerable Period of Disruption), aka MTD (Maximum Tolerable Downtime), to reach the minimal level of business process resumption. MTD (MaximumTolderable Downtime) is the maximum number of hours an organization has to recover from a disaster, until it has passed the point of no return.
+
+   RTO (Recovery Time Objective) is the maximum number of hours an organization has to recover from a disaster, without suffering too much damage.
+
+   RPO (Recovery Point Objective) refers to how far back to recover. This should be defined based on what processes can achieve. An organization that takes backups weekly stands to lose up to a week of data. Thus, enterprises typically setup their databases to perform "log shipping" where individual changes to each database are forwarded keep a mirror database on standy in another region.
+   
+   All these are ideally defined before a disaster (receiving a ransomware notice).
 
    Notice in that green line a possible disconnect between the two organization's measurements?
    A technical definition of what is measurable "Start of recovery" and "Incident ended" can be very different due to manual processes. What is the DRP (Diaster Recovery Plan) to business personnel?

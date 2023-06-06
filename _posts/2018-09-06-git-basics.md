@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-27"
+date: "2023-06-04"
 file: "git-basics"
 title: "Git basics (client-based workflow)"
 excerpt: "Here is a quick way to learn Git version control for contributing to open source"
@@ -1933,6 +1933,13 @@ by <a target="_blank" href="https://www.linkedin.com/in/subkamran/">Kamran Ayub<
    4. Collaborating Effectively on Pull Requests
    5. Staying Updated With Social Features
 
+https://www.youtube.com/watch?v=YwG8C0jPapE
+making your own custom git commands (intermediate) on @anthonywritescode
+
+Mike Hartl (of Learn Enough series of books)
+offers a thoughtful set of git commands at July 2023
+https://learning.oreilly.com/library/view/learn-enough-python/9780138051143/
+https://github.com/mhartl/git-utils
 
 ## More #
 

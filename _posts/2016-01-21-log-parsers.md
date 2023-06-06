@@ -1,10 +1,10 @@
 ---
 layout: post
-date: "2023-05-30"
-file: "log-parsers"
 title: "Log Parsers"
 excerpt: "Analyze without agents"
 tags: [Clouds, Java]
+date: "2016-01-21"
+file: "log-parsers"
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -19,7 +19,7 @@ comments: true
 Here are my notes toward building an "unsupervised" machine-learning framework 
 to identify patterns in various logs.
 
-Logs are produced by programs:
+Logs are produced by each program components:
 
    * <a href="#OSLogs">Operating system logs</a>
    * <a href="#WebSvrLogs">Web Server logs</a>
@@ -31,47 +31,81 @@ Logs are produced by programs:
 https://sematext.github.io/logagent-js/parser/
 detects log formats based on a pattern library (yaml file) and converts it to a JSON Object.
 
-## Vendors
 
-Commercial vendors include:
-
-* Splunk
-* QRadar (IBM)
-* ArcSight (Micro Focus/HP)
-* LogRhythm
-* McAfee Enterprise Security Manager
-* RSA Security Analytics
-* Sentinel (Microsoft)
-* Exabeam
-* Securonix
-* Rapid7
-* Grurucul
-* RSA
-* Fireeye
-<br /><br />
-
-## Strategy vs. Current Offering
-
-In <a target="_blank" href="https://www.microsoft.com/en-us/security/blog/2020/12/01/azure-sentinel-achieves-a-leader-placement-in-forrester-wave-with-top-ranking-in-strategy/
-">2020 Forrester</a> rated Microsoft as leading the market in strategy but rated IBM the strongest offering. Splunk is up there as well.
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1685464884/log-parsers-Forrester-2020-774x1024_iwzhje.jpg"><img alt="log-parsers-Forrester-2020-774x1024.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1685464884/log-parsers-Forrester-2020-774x1024_iwzhje.jpg"></a>
-
-
-## Microsoft's Sentinel
-
-https://learn.microsoft.com/en-us/azure/sentinel/skill-up-resources
-
-
-
-## Visualizations 
+## Trend Visualizations 
 
 The value to keeping logs is to provide <strong>insights</strong> to what is being logged.
 
-That is usually about the pattern and anomalies of occurances <strong>over time</strong>.
+That is usually about the pattern (trends) <strong>over time</strong>.
 
 SIEM systems collect and analyze logs over time to detect persistent threats.
 
+<a target="_blank" href="https://landing.google.com/sre/books/">Google's Site Reliability Engineering book</a> identified these quantitative data about a system:
+   * Server lifetimes
+   * Processing times = Latency
+   * Traffic volume
+   * Query counts and types = Saturation (to capacity)
+   * Error counts and types
+
+Each of the 4 "golden signals" consist of measures at various points in the system.
+
+Latency is measured at different points in the system:
+   * Time to first response
+   * Page load by end-users
+   * Requests queuing waiting for a thread
+   * Query duration
+   * Service reponse time
+   * Transaction duration
+   * Time to complete data return
+
+Traffic is a key denominator for calculating infrastructure spend.
+   * Dollars cost per transaction
+   * HTTP requests per second
+   * Number of transactions per second
+   * Number of retrievals per second from the database
+
+   * Network I/O
+   * Number of concurrent sessions
+   * Number of active requests
+   * Number of active connections
+
+   * Number of write opps
+   * Number of read ops
+
+Saturation metrics measure the utilization of the capacity in various components of the system:
+   * % memory utilization
+   * % thread pool utilization
+   * % cache utilization
+   * % disk utilization
+   * % CPU utilization
+   * % disk free space
+
+   * Disk quota
+   * Memory quota
+   * Number of available connections
+   * Number of users on the system
+
+Errors:
+   * Incorrect content or wrong answers
+   * Number of HTTP errors (400 & 500 series)
+   * Number of failed requests
+   * Number of exceptions
+   * Number of stack traces generated
+   * Number of servers that fail liveness checks
+   * Number of dropped connections in the network
+
+   * Each SLI (Service Level Indicator) is a ratio (percent) of good events divided by all valid  events, as in 99% good!
+   * Each SLO (Service Level Objective) is an internal expectation of employees
+   * Each SLA (Service Level Agreement) is an agreement with customers
+
+
+
+## Alerts from Monitoring
+
+Knowing trends enable detection of <strong>anomalies</strong> occuring.
+For example, violations of predefined SLOs and SLAs.
+
+Monitoring also enables analysis of incident response.
 
 
 <a name="OSLogs"></a>
@@ -161,6 +195,8 @@ It makes use of PowerShell v2.0 or greater
 which uses 
 Microsoft Chart Controls for Microsoft .NET Framework 3.5 Service Pack 1
 
+
+
 <a name="AppLogs"></a>
 
 ## Custom application logs
@@ -172,15 +208,42 @@ https://www.arcgis.com/home/item.html?id=90134fb0f1c148a48c65319287dde2f7
 
 ## Log gathering
 
-Due to their size, systems "rotate" logs, meaning new file names are created when the 
-allocated disk space for each file is used.
+Due to their size, systems "rotate" logs. 
+When the allocated disk space for each file is used up,
+"rollover" to a new file name.
 
 
-## References
-
-Log parsing
+## Log parsing
 
 http://stackoverflow.com/questions/3328688/need-some-ideas-on-how-to-code-my-log-parser
+
+
+## Utah parser (Java)
+
+https://github.com/sonalake/utah-parser<br />
+is a Java library for parsing semi-structured text files to JSON maps
+based on an XML configuration 'template' file
+which are applied to lines that satisfies a specific regular expression.
+
+https://github.com/google/textfsm<br />
+uses Python.
+
+
+## GoogleRefine.org
+
+http://openrefine.org/
+by Google
+is a free, open source, powerful program for working with messy data.
+It runs on your desktop (not a SaaS web service).
+
+Clean-up Field values
+
+Text facets groups together cells and provides a convenient way to group various
+values into a single one.
+
+The tool also has a way to apply common transforms such as removing trailing spaces.
+
+References: Packt BOOK: Using OpenRefine, by Ruben Verborgh and Max De Wilde, 
 
 
 ## More on Security #

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-26"
+date: "2023-06-05"
 file: "python-tutorials"
 title: "Python Tutorials"
 excerpt: "Who will teach you to code in python"
@@ -32,12 +32,18 @@ is the official tutorial.
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"><img alt="PythonFundamentalsCourse-MindMap-1.png" width="1066" height="719" src="https://user-images.githubusercontent.com/300046/76685523-223e3700-65da-11ea-8177-925d3041ef99.png"></a>
 from <a target="_blank" href="http://www.seleniumframework.com/python-course/">http://www.seleniumframework.com/python-course</a>
 
-## Harvard CS 50P on YouTube
+## Harvard CS50P on YouTube
 
-[This Harvard University's CS50P: Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4) is a comprehensive course tailored to teach Python programming from scratch. It's taught by the energetic <a target="_blank" href="https://www.linkedin.com/in/malan/">Dr. David J. Malan</a>, offering a unique and immersive learning experience. One 16-hour HD YouTube 2160p 4K video via FreeCodeCamp.org: 
+[This Harvard University's CS50P: Introduction to Programming with Python](https://youtu.be/nLRL_NcnK-4) - in a single 16-hour HD YouTube 2160p 4K video - is a comprehensive course tailored to teach Python programming from scratch. It's taught by the energetic <a target="_blank" href="https://www.linkedin.com/in/malan/">Dr. David J. Malan</a>, offering a unique and immersive learning experience: 
 
 * Introduction https://cs50.dev/ explain highlighted code
-* <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=4m48s">0. Functions, Variables</a> 
+
+* <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=4m48s">0. Functions, Variables</a> print()
+
+   https://docs.python.org/3/library/functions.html
+
+   <pre>print(*objects, sep=' ', end='\n', file=sys.stdout, flash=false)</pre>
+
 1. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=1h50m24s">Conditionals</a> 
 2. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=2h46m23s">Loops</a>
 3. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=4h7m10s">Exceptions</a>
@@ -46,7 +52,7 @@ from <a target="_blank" href="http://www.seleniumframework.com/python-course/">h
 6. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=7h0m22s">File I/O</a>
 7. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=8h32m32s">Regular Expressions</a>
 8. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=10h37m35s">Object-Oriented Programming</a>
-9. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=13h28m47s">Et Cetera</a>
+9. <a target="_blank" href="https://www.youtube.com/watch?v=nLRL_NcnK-4&t=13h29m7s">Et Cetera</a>: sets to filter out duplicates.
 
 ## Free Tutorials about Python
 
@@ -92,8 +98,50 @@ May 2019 <a target="_blank" href="https://www.py4e.com/">Python for Everybody (p
 1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=9h21m22s">Databases</a>
 1. <a target="_blank" href="https://www.youtube.com/watch?v=8DvywoWv6fI&t=11h42m35s">Data Visualization?</a> (using D3.js)
 
+## AWS
 
-### Google
+AWS has Boto3 library.
+https://www.youtube.com/watch?v=SmilJDG4B_8
+
+## Azure
+
+Among [CBTNuggets training for Azure](https://www.cbtnuggets.com/it-training/microsoft-azure) is 
+https://www.cbtnuggets.com/blog/new-skills/new-training-python3-with-the-azure-python-sdk
+5 videos in 26 minutes of training created in May 2020
+by Michael Levan
+
+180+ Azure Python SDK libraries are open-sourced at
+https://azure.github.io/azure-sdk/releases/latest/python.html
+to provision, manage and use Azure resources from within your Python applications, whether they reside on the cloud or on-premise.
+
+The Python packages from pipy and conda from
+https://aka.ms/azsdk/python/docs
+https://github.com/azure/azure-sdk-for-python/
+
+There are two distinct types of libraries in the SDK: 
+* management libraries relate to the management plane of your infrastructure to provision and manage Azure resources
+* client libraries relate to the data plane of your infrastructure to connect and use resources.
+
+When using the SDK, develop your applications locally, then deploy them to the cloud. To configure your local development environment, install necessary components, such as Python and the Azure CLI, then configure authentication to the Azure resources to access.
+
+[Authenticating to Azure with Python azcli](https://www.youtube.com/watch?v=we1pcMRQwD8)
+
+Listing Virtual Machines with Python
+
+Creating a Key Vault with Python
+
+https://www.youtube.com/watch?v=xWLdzQNDrTg
+Introduction to Python SDK Azure: How to get list of resource groups and resources using Python
+https://github.com/wilsonmar/python-sdk-azure/blob/main/resourcegroup.py
+
+
+https://www.youtube.com/watch?v=wAIZn6RDSJg
+
+
+[Jie Jenn](https://www.linkedin.com/in/jiejenn/) has produced a [vast series of videos spanning Python, SQL, Microsoft, Google, AI, Salesforce](https://www.youtube.com/@jiejenn/playlists)
+
+
+## Google
 
 <a target="_blank" href="https://developers.google.com/edu/python/">
 https://developers.google.com/edu/python</a><br />
@@ -388,7 +436,7 @@ are gamified lessons covering vulnerable coding and how to mitigate:
    * Command Injections
    * XPath Injections
 
-
+FreeCodeCamp.org
 
 
 ## Community
@@ -408,6 +456,25 @@ py2app/py2exe
 
 pyInstaller
 
+<a name="
+
+## API
+
+From among <a target="_blank" href="https://www.freecodecamp.org/learn/back-end-development-and-apis/#back-end-development-and-apis-projects">
+FreeCodeCamp.org Python Back-end projects</a> is <a target="_blank" href="https://www.youtube.com/watch?v=WXsD0ZgxjRw">3-hr "APIs for Beginners 2023 - How to use an API "</a> 
+by Craig Dennis.
+
+"Swagger" refers to tools open-sourced by Tony Tam in 2011,  but then licensed from SmartBear.
+
+Since 2016, at Swagger 3.0, "OpenAPI" refers to the API specification defined & maintained by the OpenAPI initiative.
+
+SmartBear's licensed tools include SwaggerHub, Inspector.
+
+SmartBear's free tools include SwaggerUI, Swagger Editor, Swagger Codegen.
+
+
+<hr />
+
 ## References
 
 https://dev.to/sewinter/25-best-github-repos-for-python-developers-5419?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email
@@ -415,6 +482,7 @@ https://dev.to/sewinter/25-best-github-repos-for-python-developers-5419?utm_sour
 https://github.com/GeekTrainer/Introduction-Programming-Python
 by Christopher Harrison, Program Manager at Microsoft Cloud & AI.
 
+[Learn Python With This ONE Project! by Tech With Tim](https://www.youtube.com/watch?v=th4OBktqK1I)
 
 <a target="_blank" href="https://kodekloud.com/community/c/python/18">KodeKloud's Q&A about the Python Entry Level Programmer Certification and Certified Associate in Python Programming</a>
 

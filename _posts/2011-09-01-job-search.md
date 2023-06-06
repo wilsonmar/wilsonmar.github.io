@@ -1,11 +1,10 @@
 ---
 layout: post
-title: "Job search"
-excerpt: "with an emphasis on remote jobs"
-tags: [search]
-shorturl: "https://goo.gl/TY7bSn"
-date: "2011-09-01"
+date: "2023-05-22"
 file: "job-search"
+title: "Job search"
+excerpt: "The procedures I've found helping landing a remote job within an acknowledged Great Place to Work"
+tags: [search]
 image:
 # job-search-1900x500
   feature: https://user-images.githubusercontent.com/300046/160238693-7b00a4ce-8291-4bb7-962e-367141773cd0.png
@@ -17,22 +16,32 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Here are my notes on finding a way to earn money that fits your desired lifestyle.
+"Great Place to Work" is the key. It's futile to work in toxic workplaces because I won't last long anywhere.
+
+So I have sought the highly rated employers. 
 
 
 ## Major Job Websites
 
-* <a target="_blank" href="https://www.Indeed.com/">Indeed.com</a> aggregates job postings 
+Major job sites 
 
-* <a target="_blank" href="https://www.LinkedIn.com/">LinkedIn.com</a> (now owned by Microsoft) leverages the LinkedIn social platform of profiles for top companies (who can afford it) search for candidates based on . It provides salary information.
+* <a target="_blank" href="https://www.LinkedIn.com/">LinkedIn.com</a> (owned by Microsoft) leverages the LinkedIn social platform of profiles for companies (who can afford it) to search for candidates. It provides salary information. But it doesn't provide employee satisfaction ratings for employers it recommends to you.
+
+* <a target="_blank" href="https://www.Indeed.com/">Indeed.com</a> aggregates job postings 
 
 * <a target="_blank" href="https://www.Glassdoor.com/">Glassdoor.com</a> has 
 
-* <a target="_blank" href="https://www.AngelList.com">AngelList.com</a> is a meeting place for start-ups, which often hire less experienced candidates
+* <a target="_blank" href="https://www.AngelList.com">AngelList.com</a> is a meeting place for start-ups, which often hire less experienced candidates.
 
 * <a target="_blank" href="https://www.Ladders.com/">Ladders.com</a> (a subscription site)
 
-* Monster I ocassionally hear from, so I update my resume there.
+* Monster.com is used by old-school companies that don't know any better. So I update my resume there.
+
+* Turing.com matches part-time contractors with 
+
+* FlexJobs.com
+
+* Jobvite
 
 
 ## Remote work job sites

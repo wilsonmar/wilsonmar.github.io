@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-02-19"
+date: "2023-06-02"
 file: "github-actions"
 title: "GitHub Actions"
 excerpt: "Run pipelines from within GitHub, for free (instead of Jenkins, CircleCI, etc.)"
@@ -833,7 +833,7 @@ Traversy Media
 
 * <a target="_blank" href="https://learning.oreilly.com/videos/-/50105VIDEOPAIML/" title="Pragmatic AI Solutions February 2021">Github Actions and GitOps in One Hour Video Course</a> by <a target="_blank" href="https://github.com/alfredodeza">Alfredo Deza</a> and Noah Gift
 
-
+* Sample app: https://github.com/bsommardahl/anyhasher
 
 
 <hr />
@@ -867,6 +867,14 @@ https://help.github.com/en/actions/language-and-framework-guides</a>
 
 <a target="_blank" href="https://help.github.com/en/actions/migrating-to-github-actions">
 https://help.github.com/en/actions/migrating-to-github-actions</a>
+
+https://www.youtube.com/watch?v=qy_HaIaNbkE
+Automate your CI/CD workflows with GitHub Actions
+https://resources.github.com/devops/ci-cd-with-github-actions/
+Ray Ploski, Field CTO, HashiCorp
+Peter McCarron, Sr. Technical Marketing Engineer, LaunchDarkly
+Kassen Qian, Product Manager, Datadog
+Vanessa Yan, Staff Product Manager, OctoML
 
 
 ## More #

@@ -54,9 +54,13 @@ For better performance, Tailwind removes unused CSS using PurgeCSS, which can be
 
 US Government has the U.S. Web Design System (USWDS) at <a target="_blank" href="https://designsystem.digital.gov/">designsystem.digital.gov</a> (Slack channel <a target="_blank" href="https://chat.18f.gov/">chat.18f.gov</a>)
 
-AWS products and services uses <a target="_blank" href="https://cloudscape.design/">cloudscape.design</a> since 2016.
-It's open-sourced at <a target="_blank" href="https://github.com/cloudscape-design">github.com/cloudscape-design</a>.
+AWS products and services uses <a target="_blank" href="https://cloudscape.design/">cloudscape.design</a> since 2016 (so it's mature). It's open-sourced at <a target="_blank" href="https://github.com/cloudscape-design">github.com/cloudscape-design</a>.
 It's used in <a target="_blank" href="https://github.com/aws-solutions-library-samples/guidance-for-crossregion-failover-and-graceful-failback-and-observability-on-aws">this solution</a>.
+<a target="_blank" href="https://www.linkedin.com/in/gethinwebster/">Gethin Webster</a> <a target="_blank" href="https://github.com/cloudscape-design/demos">coded a demo app</a> with <a target="_blank" href="https://github.com/cloudscape-design/demos/blob/main/src/pages/cards/cards-config.jsx">React JSX</a> which has <a target="_blank" href="https://cloudscape.design/demos/">a lot of features on many pages</a>.
+https://www.w3schools.com/react/react_jsx.asp
+The app also has internationalization!
+
+<a target="_blank" href="https://www.linkedin.com/in/derekwbingham/">Derek Bingham</a> is its Developer Advocate.
 
 Salesforce has their Salesforce Lightning Design System (SLDS) at <a target="_blank" href="https://www.lightningdesignsystem.com/">lightningdesignsystem.com</a>
 

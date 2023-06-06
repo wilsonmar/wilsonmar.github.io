@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-19"
+date: "2023-06-05"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -18,12 +18,14 @@ comments: true
 
 Here are my notes on resources for Cyber Security, which is a vast field. But nevertheless all the info is on this single page to make for easy searching.
 
-> “Security is always excessive until it's not enough.” – Robbie Sinclair
+> “Security is always excessive until it's not enough.” –-Robbie Sinclair
 
 {% include whatever.html %}
 
 PROTIP: Acronyms here are in my <a target="_blank" href="https://quizlet.com/159167491/acronyms-for-secure-iot-flash-cards/">444 item Quizlet flashcards for Cyber Security</a> for you to study more efficient.
 
+From <a target="_blank" href="https://aka.ms/SecurityRoles/">https://aka.ms/SecurityRoles</a>:<br />
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1686006843/securityroles-1280x720_hy4ydf.png"><img alt="securityroles-1280x720.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1686006843/securityroles-1280x720_hy4ydf.png"></a>
 
 <hr />
 
@@ -145,11 +147,22 @@ Cloud Security Posture Management (CSPM) monitors continuously identifies and re
 
 The newer acronym CIEM (Cloud Infrastructure Entitlements Management) was coined by <a target="_blank" href="https://ermetic.com/">ermetic.com</a> for their product which ensures that identities (both human and machine)  do not have excessive permissions that can be exploited by threat actors or malicious insiders.
 
+   1. Identify risk
+   2. Factors for estimating likelihood
+   3. Factors for estimating impact
+   4. Determine Severity for risk
+   5. Deciding what do fix
+   <br /><br />
+
+
 ## Jericho Commandments
 
 <a target="_blank" href="https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf">
-https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> define the 11 areas and principles that must be observed when planning for a de-perimeterized future in cloud environments. 
+https://collaboration.opengroup.org/jericho/commandments_v1.2.pdf</a> 
+define the 11 areas and principles that must be observed when planning for a 
+de-perimeterized future in cloud environments. 
 
+4pGiTpJNYjjbtTVcxGU9Aoztb6DRjFJ7
 ## Vendor Compliance
 
 <a target="_blank" href="https://aws.amazon.com/compliance/">aws.Amazon.com/Compliance</a>
@@ -591,7 +604,7 @@ by Matthew Bishop, PhD at UCDavis
 
 <strong>AG. Software Vulnerability Scanning Tool</strong>
 
-   * 18.7	Apply Static and Dynamic Code Analysis Tools
+   * 18.7	Apply Static and Dynamic Code Analysis Tools: SonarQube, Fortify, .NET, SpotBugs, IBM AppScan, Breakman
    * 18.8	Establish a Process to Accept and Address Reports of Software Vulnerabilities
 
 <strong>AH. Software Whitelisting System</strong>
@@ -785,6 +798,10 @@ chmod: Unable to change file mode on /Users/wilsonmar/projects/WM/bin/jad.readme
 
 <hr />
 
+Security Information and Event Management (SIEM) tools help analysts better understand security threats, risks, and vulnerabilities. 
+When security analysts need to review vulnerabilities, they conduct a <strong>periodic security audit</strong>, which reviews an organization’s records, activities, and related documents. 
+
+
 <a name="ChangeMgmt"></a>
 
 ## Change management
@@ -882,6 +899,30 @@ Control Families:
 Cybersecurity Maturity Model Certification (CMMC) framework
 March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https://www.acq.osd.mil/cmmc</a> developed by US DoD aims to address supply chain risks.
 
+The OSI (Open System Interconnect) networking model 7-layers:
+   * App Layer 7 protocols SNMP, TFTP 
+   *  Layer 6
+   *  Layer 5 
+   *  Layer 4 
+   * IP Layer 3 routers
+   * MAC Layer 2 switches (outputs to a specific port)
+   *  Layer 1 hub (multi-port repeater outputs to all ports)
+   <br /><br />
+The sending computer encapsulates data and 
+the receiving computer de-encapsulates the data.
+Encapsulation means that as data flows from one layer to the next, headers and footers are added to tell the receiving system how to process the data at each layer.
+
+FTP & TELNET protocols do not encrypt data in transit.
+
+The DoD (Department of Defense) Networking Model has a 4-layer stack:
+   1. Process/Application layer accepts and processes user-level functions, such as mail delivery, file transfer and remote administration.
+   2. Host-to-Host layer manages connections, flow control, retransmissions, error correction, etc. 
+   3. Internet layer manages data delivery across networks (routing) and related functions.
+   4. Network Access layer takes data to the wire (or wireless) and back up through the "stack".
+
+192 in binary = 110000000
+
+<hr />
 
 ## NIST documents
 
@@ -890,6 +931,8 @@ March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https:
 <a target="_blank" href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-30r1.pdf">📓</a> 
 <a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final">NIST 800-30 Rev. 1 September 2012</a> "Guide for Conducting Risk Assessments"
 offers a structured approach for identifying, evaluating, and prioritizing information security risks through risk assessments.
+The government of Canada has a harmonized TRA Methodology.
+Mozilla offers a RRA (Rapid Risk Assessment) guidance.
 
 SP 800-30 steps for a risk assessment: 
    1. Identify the <strong>assets</strong> and their value. 
@@ -993,7 +1036,14 @@ The Top Five Security Metrics</a>
 
 ## International 
 
-International Organization for Standardization (ISO) and the International Electrotechnical Commission <a target="_blank" href="https://www.iso27001security.com/html/27018.html"><strong>(IEC) 27018:2019</strong></a> Code of practice for protection of Personally Identifiable Information (PII) in public clouds acting as PII processors  covers the processing of personal information by cloud service providers. 27018 interprets rather than duplicates <a target="_blank" href="https://www.iso27001security.com/html/27002.html">``ISO/IEC 27002:2013</a>. For example, advising cloud service providers to advise their customers if they use sub-contractors.
+International Organization for Standardization (ISO) and the International Electrotechnical Commission <a target="_blank" href="https://www.iso27001security.com/html/27018.html"><strong>(IEC) 27018:2019</strong></a> Code of practice for protection of Personally Identifiable Information (PII) in public clouds acting as PII processors  covers the processing of personal information by cloud service providers. 27018 interprets rather than duplicates <a target="_blank" href="https://www.iso27001security.com/html/27002.html">ISO/IEC 27002:2013</a>. For example, advising cloud service providers to advise their customers if they use sub-contractors.
+
+PII includes Social Security numbers, Drivers license, Passport or Alien Registration numbers, Financial account numbers, biometric identifiers.
+
+<a target="_blank" href="https://www.dhs.gov/sites/default/files/publications/dhs%20policy%20directive%20047-01-007%20handbook%20for%20safeguarding%20sensitive%20PII%2012-4-2017.pdf">PDF</a>:
+SPII (Sensitive Personally Identifiable Information) includes what, if lost, compromised, or disclosed without authorization, could result in substantial harm, embarrassment, inconvenience, or unfairness to an individual.
+
+Not considered private are last names, email addresses.
 
 <strong>MTCS</strong> (Multi-Tier Cloud Security) Singapore 584:2013 Certification covers 
    * Infrastructure as a Service (IaaS), 
@@ -1044,7 +1094,9 @@ Criminal Justice Information Services (CJIS) Security Policy compliance for any 
 
 UK Government G-Cloud is a cloud computing certification for services used by government entities in the United Kingdom.
 
-HIPAA (Health Insurance Portability and Accountability Act) is a US federal law that regulates patient Protected Health Information (PHI). A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and the Health Information Technology for Economic and Clinical Health Act (HITECH) Act. HIPAA security rules prevent medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
+<strong>HIPAA</strong> (Health Insurance Portability and Accountability Act) is a US federal law that regulates patient Protected Health Information (PHI). HIPAA security rules prevent medical organizations (including health insurance companies, hospitals, and doctors’ offices) from sharing patient healthcare information without consent. 
+
+The HIPAA Omibus Final Rule in 2013 combined HIPPA with HITECH (Health Information Technology for Economic and Clinical Health Act), which defined mandatory penalties of up to $1.5 million for HIPAA-covered entitites. A Business Associate Agreement (BAA) stipulates adherence to security and privacy provisions in HIPAA and HITECH. The HIPPA Breach Notification Rule requires entities to issue notifications within 60 days of discovery. In 2011 a HITECH-required Rule allows patients to request access reports.
 
 Service Organization Controls (SOC) 1, 2, and 3 report is a framework by independent third-party <strong>auditors</strong> covering controls for data security, availability, processing integrity, and confidentiality as applicable to in-scope trust principles for each service.
 SOC reports are internal control reports on the services provided by a service organization.
@@ -1094,12 +1146,33 @@ Others:
 
    * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders.
 
-   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for the major credit card companies.
+   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for a major credit card company (VISA, MasterCard, Amex, etc.). Each year each merchant submits a SAQ (Self-Assessment Questionaire) to its transaction bank. A QSA (Qualified Security Accesor) certified by the PCI Security Standards Council issues a ROC (Report on Compliance) form. PCI DSS compliance:
+      1. Build and maintain a secure network and systems
+      2. Protect cardholder data
+      3. Maintain a vulnerability management program
+      4. Implement strong access control measures
+      5. Regularly monitor and test networks
+      6. Maintain an information security policy
+      <br /><br />
+   Objectives:
+      * Minimize the Attack Surface
+      * Software Protection Mechanisms
+      * Secure Software Operations
+      * Secure Software Lifecycle Management
+      <br /><br />
 
-   * COPPA - online collection and use of data for minors under 13
+Attacks are classified by the method and vector:
+   * Method is how an attack is executed, or “the mechanism that was used”.
+   * Vector is how an attack is carried out, or “the course that was taken”.
+For example, in a ransomware attack, ransomware itself is the method, but the vector may have been email.
+
+   * COPPA (???) - online collection and use of data for minors under 13
 
    * FERPA (Family Educational Rights and Privacy Act) requires educational institutions to protect the privacy of student records.
    <br /><br />
+
+Be careful of the "color of law" who may not be the right people at the appropriate time so they don't become a hinderance.
+
 
 ## Reporting
 
@@ -1130,19 +1203,39 @@ FIPS 199 says federal organizations
    3. apply the appropriately tailored set of baseline security controls in NIST Special Publication 800-53 Rev. 4.
    <br /><br />
 
-Military classifications: 
-   * Unclassified, 
-   * Controlled Unclassified (CUI), 
-   * Confidential, 
-   * Secret, 
-   * Top-secret
-   <br /><br />
+## Data Classification
 
-CUI (Controlled Unclassified) previously marked: 
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Impact (damaged) from release </th><th> Military Government </th><th> Commercial 
+   </th><th> Classification </th></tr>
+<tr valign="top"><td> Exceptionally Grave </td><td> Top-secret </td><td> Confidential Proprietary 
+   </td><td> Class 3</td></tr>
+<tr valign="top"><td> Serious </td><td> Secret </td><td> Private 
+   </td><td> Class 2</td></tr>
+<tr valign="top"><td> Damage </td><td> Confidential / Controlled Unclassified (CUI)  </td><td> Sensitive 
+   </td><td> Class 1</td></tr>
+<tr valign="top"><td> No damage</td><td> Unclassified </td><td> Public 
+   </td><td> Class 0 </td></tr>
+</table>
+
+<a target="_blank" href="https://www.spirion.com/data-classification/">Commercial data classification levels</a>:
+
+   \0. <strong>Public = freely available</strong> Information that is accessible to the public without any restrictions or adverse consequences, such as marketing material, corporate contact information, customer service contracts, and website data.
+
+   \1. <strong>Internal = Non-sensitive</strong> data with low security requirements, but not meant for public disclosure, such as client communications, sales playbooks, and organizational charts. Unauthorized disclosure of such information can lead to short-term embarrassment and loss of competitive advantage.
+
+   \2. <strong>Confidential = Sensitive</strong> data that, if compromised, could negatively impact operations, including harming the company, its customers, partners, or employees. Examples include trade secrets, vendor contracts, employee reviews and salaries, and customer information.
+
+   \3. <strong>Restricted = Highly sensitive</strong> information that, if compromised, could put the organization at financial, legal, regulatory, and reputational risk. Examples include customers’ PII, PHI, employee ID number, and credit card information.
+
+   Private = Medical information
+
+CUI (Controlled Unclassified) previously marked:
    * For Official Use Only (FOUO)
    * Sensitive But Unclassified (SBU)
    * Dozens of other "sensitive" labels used by different U.S. agencies
    * Sensitive Security Information (SSI)
+   <br /><br />
 
 Data classification program:
    1. Define the classification levels. 
@@ -1162,17 +1255,7 @@ Data classification program:
    * Security administrator maintains security devices and software, including firewalls, antivirus software, etc.
    <br /><br />
 
-<a target="_blank" href="https://www.spirion.com/data-classification/">Commercial data classification levels</a>:
-   1. Public — Information that is freely available and accessible to the public without any restrictions or adverse consequences, such as marketing material, corporate contact information, customer service contracts, and website data.
-
-   2. Internal — Data with low security requirements, but not meant for public disclosure, such as client communications, sales playbooks, and organizational charts. Unauthorized disclosure of such information can lead to short-term embarrassment and loss of competitive advantage.
-
-   3. Confidential — Sensitive data that, if compromised, could negatively impact operations, including harming the company, its customers, partners, or employees. Examples include trade secrets, vendor contracts, employee reviews and salaries, and customer information.
-
-   4. Restricted — Highly sensitive corporate data that if compromised could put the organization at financial, legal, regulatory, and reputational risk. Examples include customers’ PII, PHI, employee ID number, and credit card information.
-
-   * Private = Medical information
-
+<hr />
 
 <a name="NIST"></a>
 
@@ -1317,6 +1400,13 @@ COSCO (Committee of Sponsoring Organizations) broadly defines ERM (Enterprise Ri
 
 The organization, its divisions, and business units are depicted as the third dimension of the matrix for applying the framework.
 
+Levels of testing:
+   * Small Unit Tests at functional level by input and output
+   * Medium Integration Tests for functional dependencies
+   * Large System Tests of critical components only - Tackle the APIs, leave the UI untested
+   * Manual validation of every commit, exploratory testing
+   <br /><br />
+
 ## RFCs
 
 RFC's https://tools.ietf.org/html/rfc1087
@@ -1326,6 +1416,7 @@ RFC's https://tools.ietf.org/html/rfc1087
    * RFC 1150 F.Y.I. on F.Y.I.
    <br /><br />
 
+<hr />
 
 ## Credential Rotation Lifecycle
 
@@ -1419,10 +1510,10 @@ Costs include annual maintenance.
 
 ### Microsoft's STRIDE
 
-Microsoft Threat Model Tool uses "STRIDE" as a mnemonic  for classification of threats in an application:
+Microsoft Threat Model Tool uses "STRIDE" as a mnemonic for classification of threats in an application:
    * Spoofing of user identity
-   * Tampering
-   * Repudiation
+   * Tampering of data, source code, or program binary code
+   * Repudiation 
    * Information disclosure (privacy breach or data leak)
    * Denial of service (DoS)
    * Elevation of privilege
@@ -1570,7 +1661,7 @@ See https://www.caida.org/research/security/code-red/
 
 ## DREAD Risk ratings
 
-DREAD is a mnemonic for categories used to rate security threats for a given issue:
+REMEMBER: DREAD is a mnemonic for categories used to rate security threats for a given issue:
    * Damage
    * Reproducibility
    * Exploitability, such as allowing RCE (Remote Control Execution)
@@ -1643,6 +1734,16 @@ Further, enterprises should maintain network diagrams and other system documenta
 Control 13: Network monitoring and defense
 
 Comprehensive network monitoring and defenses against threats should be established, including intrusion detection, traffic filtering between network segments, and deploying port-level controls such as those supported by 802.1x authentication.
+
+
+Network segmentation and isolation are different. 
+Network segmentation primarily uses VLANs to segment network traffic and does not place restrictions based on applications, ports, or data. 
+Segmentation decisions are made a Layer 2 (Data Link) of the OSI Model.
+
+Network isolation is much more secure and is a requirement to restrict lateral movement within the network.
+When configured properly, it only permits network traffic that is explicitly required and authorized for organizational operations. Network isolation can be implemented to work at all layers of the OSI model, but can me more difficult to manage because the organization will need an intimate understanding of the network, the systems on the network, and the applications on the systems on the network. Thus, Network isolation requires data flow diagrams and is part of a Zero Trust Architecture (or ZTA).
+
+
 Control 14: Security-awareness and skills training
 
 A security awareness program should be established create security consciousness among the workforce and provide them the skills to reduce cybersecurity risks.
@@ -1680,8 +1781,10 @@ The "PASTA" methodology provides a seven-step process for analyzing applications
 <a target="_blank" href="https://www.isaca.org/resources/isaca-journal/issues/2017/volume-4/enterprise-security-architecturea-top-down-approach">
 SABSA, COBIT and TOGAF together make up the Enterprise Security Architecture</a>:
 
-The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. 
+<a name="TOGAF"></a>
+The Open Group Architecture Framework (TOGAF) is an enterprise architecture framework that is based on four interrelated domains: technology, applications, data, and business. They have a certification on that.
 
+<a name="SABSA"></a>
 Sherwood Applied Business Security Architecture (SABSA) is a framework in addition to a methodology in that it prescribes the processes to follow to build and maintain the architecture. It uses the six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers (operational, component, physical, logical, conceptual, and contextual). The SABSA (Sherwood Applied Business Security Architecture) is a "customizable" framework and methodology for enterprises,   based on business requirements (like NIST for private businesses). The framework uses six communication questions (What, Where, When, Why, Who, and How) that intersect with six layers of Enterprise Security Architecture (ESA) (operational, component, physical, logical, conceptual, and contextual):
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png"><img width="682" alt="cyber-scaba-matrix" src="https://user-images.githubusercontent.com/300046/89186535-29e68400-d559-11ea-9532-ac57a3f6d306.png"></a>
@@ -1797,6 +1900,13 @@ Change control process of each change:
    6. Remediate (root cause) so all components affected by the incident to ensure that all traces of the incident have been removed.
    7. Lessons Learned review of the incident and document all findings (to prevent reccurence)
    <br /><br />
+
+Types of Network intrusion systems:
+   * Network-based Intrusion Detection System (NIDS) - Monitors the network and alerts to potential malicious traffic. 
+   * Network-based Intrusion Prevention (NIPS) - Monitors the network and blocks potentially malicious traffic.
+   
+   * Host-based Intrusion Detection (HIDS) - Monitors the host and alerts to potential malicious activity.
+   * Host-based Intrusion Prevention (HIPS) - Monitors the host and blocks potentially malicious activity.
 
 Incident response:
    1. Triage: The incident response team examines the incident to see what was affected and sets priorities. 
@@ -1960,9 +2070,25 @@ entities, attributes, credentials, and entitlements.
 
 Covert channel analysis is introduced at B2 and above.
 
-ISO 15408 2005 = Common Criteria on TOE (Target of Evaulation) for Security Target report satisfies independently verified by NIAP (National Information Assurance Partnership) to
-"compliant" instead of previous EAL (Evaluation Assurance Levels) 1 - 7 highest: REMEMBER:
-   1. A user wants the system to operate but ignore security threats.
+
+Security controls from requirements:
+
+### Common Criteria
+
+ISO 15408 2005 = Common Criteria on TOE (Target of Evaluation) for Security Target report satisfies independently verified by NIAP (National Information Assurance Partnership).
+
+Previous EAL (Evaluation Assurance Levels) 1 - 7 highest: REMEMBER:
+   * EAL1 = Functionally tested
+   * EAL2 = Structurally tested
+   * EAL3 = Methodically tested and checked
+   * EAL4 = <strong>Methodically designed</strong>, tested, and reviewed
+   * EAL5 = Semi-formally designed and tested
+   * EAL6 = <strong>Semi-formally verified</strong>, designed, and tested
+   * EAL7 = <strong>Formally</strong> verified, designed, and tested
+   <br /><br />
+
+Now "compliant" levels instead:
+   1. Users want the system to operate but ignores security threats.
    2. Developers use good design practices but security is not a high priority.
    4. Security configuration is based on good commercial development. This level is the common benchmark for commercial systems, including operating systems and products.
    5. Security is implemented starting in early design. Provides high levels of security assurance.
@@ -1970,8 +2096,10 @@ ISO 15408 2005 = Common Criteria on TOE (Target of Evaulation) for Security Targ
    7. Extremely high levels of security are provided. This level requires extensive testing, measurement, and independent testing.
    <br /><br />
 
-Security Models: <a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw&t=15m32s" title="CISSP Memorization Tips and Techniques (ultimate guide) by Jan 25, 2021">REMEMBER</a> <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
-   * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). MEMONIC: Bell. It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
+## Security Models
+
+<a target="_blank" href="https://www.youtube.com/watch?v=LGqZbiitiDw&t=15m32s" title="CISSP Memorization Tips and Techniques (ultimate guide) by Jan 25, 2021">REMEMBER</a> <a target="_blank" href="https://www.youtube.com/watch?v=qZB6_lp9M30&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=3">VIDEO</a>: <a target="_blank" href="https://www.youtube.com/watch?v=FRi73kodf_c&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=2">2</a>,<a target="_blank" title="2016" href="https://www.youtube.com/watch?v=4esHgEOmTqU&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR">3</a> 
+   * The <a target="_blank" href="https://www.wikiwand.com/en/Bell%E2%80%93LaPadula_model">Bell-LaPadula (BLP) model</a> focuses on data confidentiality and controlled access to classified information. It uses a state machine with transition functions to control information flow, characterized by the phrase "write up, read down" (WURD). MEMONIC: Bell. It uses security labels (Top Secret to Public). It was the first mathematical model of a multilevel system for enforcing access control. Not dynamic. It's a multilevel security model because it allows simultaneous processing of classified information across the security levels.
    
    * The Brewer-Nash (Chinese Wall) model introduced the concept of allowing <strong>dynamic</strong> access controls based on a user’s previous actions (conflicts of interest). Based on RBAC.
 
@@ -2102,6 +2230,8 @@ REMEMBER Algorithms: https://competitions.cry.yp.to/aes.html
 
 http://thedigitalstandard.blogspot.com/2009/11/why-fuzzy-hashing-is-really-cool.html
 
+https://www.thesslstore.com/blog/how-do-digital-signatures-work-a-look-at-how-a-pki-signature-works/
+
 <strong>Hashing</strong> digital signatures: 
    * MD5 (128-bit)
    * RIPEMD-160 (originally based on MD4, obsoleted)
@@ -2109,8 +2239,14 @@ http://thedigitalstandard.blogspot.com/2009/11/why-fuzzy-hashing-is-really-cool.
    * Whirlpool 512 hash
    <br /><br />
 
-<strong>Symmetric</strong> algorithms (same key for encrypt/decrypt, so one time),
-uses a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
+Cryptographically strong hash algorithm:
+   * Argon2id
+   * scrypt
+   * bcrypt
+   * PBKDF2
+   <br /><br />
+
+<strong>Symmetric</strong> encryption algorithms (same key for encrypt/decrypt, so one time), use a private or secret key that must remain secret between the two parties. It provides confidentiality but NOT authentication or nonrepudiation.
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Data_Encryption_Standard">DES</a> uses a 64-bit block size. 56 bits.
    * 3DES, 
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES (Rijndael)</a>, 
@@ -2121,21 +2257,25 @@ uses a private or secret key that must remain secret between the two parties. It
    * SAFER, CAST-128, 
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Serpent_%28cipher%29">Serpent</a>
    * <a target="_blank" href="https://en.wikipedia.org/wiki/ElGamal_encryption">El Gamal</a> (slowest)
-
    * <a target="_blank" href="https://en.wikipedia.org/wiki/Tiny_Encryption_Algorithm">TEA (Tiny Encryption Algorithm)</a> has 128 bit keys. Presented in Cambridge 1994.
    <br /><br />
 
-<strong>Asymmetic</strong> (2 keys) include both stream-based and block ciphers:
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange">Diffie-Hellman key exchange</a> published 1976. First public/private key.
+DES was first cracked as part of the DES Challenge ("DESCHALL") in 1997. The winner of DESCHALL announced they were able to crack a DES encrypted message in 96 days. Then in 2017 a chosen-plaintext attack utilizing a rainbow table was able recover the DES key for a single specific chosen plaintext 1122334455667788 in 25 seconds. 
+
+<strong>Asymmetic</strong> encryption algorithms meaning it uses a public key and a private key (i.e two different, mathematically linked keys). 
+They include both stream-based and block ciphers:
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange">Diffie-Hellman key exchange</a> published 1976 -- one of the first public-key protocols in wide use. Used to exchange crypto keys for symmetric encryption algorithms like AES used by HTTPS.
    * <a target="_blank" href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a> is defacto commercial asymmetic algorithm
-   * <a target="_blank" href="https://en.wikipedia.org/wiki/Elliptic_curve_cryptography">ECC (Elliptic Curve Cryptosystem)</a> is US govt. std asymmetric (efficient) support digital signatures and encryption. 
-   * DSA, 
+   * <a target="_blank" href="https://en.wikipedia.org/wiki/Elliptic_curve_cryptography">ECC (Elliptic Curve Cryptosystem)</a> is US govt. standard asymmetric (efficient) support digital signatures and encryption. 
+   * DSA (???)
    * Knapsack 
 
    * IDEA provides a key size up to 128 bits.
    * 3DES provides a key size up to 168 bits. 3 costly rounds. Not widely used.
    * <a target="_blank" href="https://www.youtube.com/watch?v=O4xNJsjtN6E">AES</a> supports a 128-, 192-, or 256-bit (16 byte) block size, weaved through data blocks. Subset of Rijndael, winner of NIST contest for faster in 1998.
    * <a target="_blank" href="https://en.wikipedia.org/wiki/RC6">RC6</a> (written by Ron Rivest) provides the <strong>largest key size</strong> up to 2,048 bits. From NSA. RC6 supports a 32-, 64-, or 128-bit block size. 
+
+   * Quantum crypto replaces the 1 and 0 of binary computing with multidimentional qubits for faster mathematical solutions.
    <br /><br />
 
 Rounds of computations: REMEMBER: 
@@ -2149,10 +2289,6 @@ Rounds of computations: REMEMBER:
    * SHA-256 performs 64
    <br /><br />
 
-<strong>Stream</strong> ciphers are generally cheaper to implement than block ciphers.
-   * RC4 is a symmetric stream cipher, so does not have a block size.
-   <br /><br />
-
 <strong>Block symmetric cipher</strong> modes use of IVs to ensure that patterns are not produced during encryption. But IVs are not modes. 
    * Block ciphers are generally less susceptible to security issues.
    * Block ciphers are generally used more in software implementations.
@@ -2162,6 +2298,10 @@ Rounds of computations: REMEMBER:
    * CBC (Cipher Block Chaining) can have pipeline stalls
    * CFB (Cipher FeedBack) 
    * GCM (Galois field/Counter Mode) parallel 128 bits https://www.wikiwand.com/en/Galois/Counter_Mode
+   <br /><br />
+
+<strong>Stream</strong> ciphers are generally cheaper to implement than block ciphers.
+   * RC4 is a symmetric stream cipher, so does not have a block size.
    <br /><br />
 
 <a target="_blank" href="https://www.youtube.com/watch?v=VPvZbMXfv_0">VIDEO</a>: Hybrid cryptography combines the convenience of a public-key cryptosystem with the efficiency of a symmetric-key cryptosystem. 
@@ -2188,6 +2328,8 @@ PKI (Public Key Infrastructure):
    * A trust anchor is a public key that verifies the certificate used in a digital signature. 
    <br /><br />
 
+<a name="Homomorphic"></a>
+For data in use within memory flushing: 
 <a target="_blank" href="https://en.wikipedia.org/wiki/Homomorphic_encryption">Homomorphic encryption</a> allows computations to be performed on encrypted data without first having to decrypt it. It can be used for privacy-preserving outsourced storage and computation. This allows data to be encrypted and out-sourced to commercial cloud environments for processing, all while encrypted.
 Even if a service provider's system is compromised, the data would remain secure.
 
@@ -2225,7 +2367,7 @@ VRRP group
 
 RARP (Reverse Address Resolution Protocol) when communicating for the first time to find the IP address matching the MAC.
 
-OCSP (Online Certificate Status Protocol) is the Internet protocol that obtains the revocation status of an X.509 digital certificate. A certificate revocation list (CRL) contains a list of all the certificates that have been revoked. 
+OCSP (Online Certificate Status Protocol) is the Internet protocol that obtains the revocation status of an X.509 digital certificate. A certificate revocation list (CRL) contains a list of all the certificates that have been revoked. In reality, many browsers have stopped accessing it.
 Pinned.
 
 Key clustering occurs when different encryption keys generate the same ciphertext from the same plaintext message. 
@@ -2291,7 +2433,7 @@ RAM
    <br /><br />
 
 
-### Physical Security
+### Physical Security (DOMAIN 3)
 
 [<a target="_blank" href="https://www.youtube.com/watch?v=7ESQwNJ9HXU&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=11&t=16s">MINDMAP</a>]
 
@@ -2310,9 +2452,14 @@ CPTED (Crime Prevention Through Environmental Design):
 
 Perimeter of two lines: sterile zone
 
-Default to lock: fail-secure
+   * Fail-Safe protects human life over systems (opening doors after a power failure)
+   * Fail-Secure locks the system for default secure when a failure occurs (doors lock after power failure) -- prioritizes systems over human life
 
-Fail-soft is the capability of a system to terminate non-critical processes when a failure occurs.
+   * Fail-Open ensures Availability to continue to operate when a failure occurs
+   * Fail-Close closes (terminates/shuts all non-critical) processes when a failure occurs
+   <br /><br />
+
+Avoid Single point of failure. The weakest link jeopardizes the whole.
 
 Gates:
    * Class 1 gates are suitable for residential use. 
@@ -2336,16 +2483,18 @@ Fail-over testing:
    * An evacuation drill has personnel follow the exiting or shelter-in-place guidelines for a particular disaster type.
    <br /><br />
 
-Fire extinguisher classes:
-   * Class A - ordinary combustibles. 
-   * Class B - flammable liquids and flammable gases. 
-   * Class C - electrical equipment. 
-   * Class D - combustible metals.
-   * Class K - cooking oil or fat.
+Fire extinguisher classes and suppression:
+   * Class A - ordinary combustibles (paper, wood) - Water, soda acid powders
+   * Class B - flammable liquids and flammable gases - CO2, Halon, soda acid
+   * Class C - electrical equipment - CO2, Halon
+   * Class D - combustible metals - Dry powder
+   * Class K - cooking oil or fat (grease, oil) - Alkaline mixture
    <br /><br />
 
+Incipient smoke detection detects chemicals released during early stage of fire.
+
 A dry pipe system (filled with pressurized air.
-<strong>Preaction</strong> extinguisher pipe sprinkler heads holds a thermal-fusible link that melts before the water is released. This is currently the recommended system for a computer room.
+<strong>Preaction</strong> extinguisher pipe sprinkler heads holds a thermal-fusible link that melts before the water is released. This is currently the recommended system for computer rooms.
 
 Locks:
    * A warded lock has a spring-loaded bolt with a notch in it. The lock has wards or metal projections inside the lock with which the key will match and enable opening the lock. 
@@ -2371,21 +2520,50 @@ Shibboleth is a SAML standards-based open source software for web single sign-on
 
 OAuth2 is an auth framework that enables apps to obtain limited access to user account on an HTTP service.
 
-OIDC (OpenID Connect) is an authentication layer on top of OAuth 2.0.
-
+OIDC (OpenID Connect) version 1.0 is a authentication layer on top of OAuth 2.0,
+from the non-profit OpenID foundation.
+It allows users to be authenticated by co-operating sites known as Relying Parties (RP) providing SSO.
+It's decentralized in that a traditional central authority is NOT required for authentication.
+User Passwords are given only to an identify provider (IdP) to confirm, who then vouches for you to various web-based mobile JavScript clients.
+The spec. is extensible to add discovery of OpenID providers, encryption of identity data, session management, etc.
+Resource Server 
+OIDC version 2 ???
+XACML can be used to define authorization policies (such as managers can view certain docs in their regions).
 
 ## Access Control IAAA
 
-   1. Identification is the act of a user professing an identity to an access control system.
-   2. Authentication is the act of validating a user with a unique identifier by providing the appropriate credentials.
-   3. Authorization
+Entities include a human user, program, service, or computer.<br />
+An object is an entity that provides information to a subject.<br />
+A subject is an entity that accesses an object to retrieve information about the object.
+
+   * Identification is the act of a subject professing an identity to an access control system.
+   * Authentication (AuthN) is the act of <strong>validating</strong> a user with a unique identifier by providing the appropriate credentials.
+   * Authorization (AuthZ) determines what <strong>access</strong> you have.
+
+   * Accountability is not a step in access control.<br />Accountability is the capability of an organization to hold users responsible for their actions.
    <br /><br />
 
-   Accountability is not a step in access control.<br />
-   Accountability is the capability of an organization to hold users responsible for their actions.
-
-* Remote Authentication Dial-In User Service (RADIUS) is a standard published in RFC 2138
+* Remote Authentication Dial-In User Service (RADIUS) is a standard published in RFC 2138.
 * Terminal Access Controller Access-Control System Plus (TACACS+) is a Cisco-proprietary method.
+<br /><br/>
+
+MFA (Multi-Factor Authentication) types:
+
+   * Type 1 – Something You <strong>Know</strong> (remember)– includes passwords, PINs, combinations, code words, or secret handshakes. Anything that you can type, say, do, perform, or otherwise recall when needed falls into this category.
+
+   * Type 2 – Something You <strong>Have</strong> (possssion) – includes all items that are physical objects, such as keys, smart phones, smart cards, USB drives, and TOTP token devices. (A token device produces a <strong>time-based</strong> PIN or can compute a response from a challenge number issued by the server.).
+
+   * Type 3 – Something You <strong>Are</strong> (characteristic) – includes any part of the human body that can be offered for verification using biometrics such as fingerprints, palm scanning, facial recognition, retina scans (used by CLEAR), iris scans, and voice verification.
+   <br /><br />
+
+Other Authentication Factors:
+
+   * Somewhere you are - location determined by IP address from wi-fi, GPS.
+
+CAUTION: Knowledge-based authentication (such as previous address, mother's maiden name) can be cracked by information on social media, data brokers, or vendors on dark web offering information stolen from websites or social engineering. PROTIP: Give a different fake mother's maiden names to each organization who asks, and record that on your 1Password.
+   "Cognitive" passwords are something inforation you know, such as your favorite sport, food, etc.
+
+A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
 
 In a MAC (Mandatory access control) environment: <a target="_blank" href="https://www.youtube.com/watch?v=mNN-fEboRAA&list=ULpxsrZMHAL8w&index=4846">VIDEO</a>
    * a label is required for each subject and object. Each file is an object. Users are subjects. Clearance is a privilege.
@@ -2397,15 +2575,7 @@ In a MAC (Mandatory access control) environment: <a target="_blank" href="https:
    * In the compartmented security mode, all users must possess the highest security clearance (as in both dedicated and system high security), but they must also have a valid need-to-know clearance, a signed NDA, and formal approval for all information to which they have access.
    <br /><br />
 
-MFA (Multi-Factor Authentication) types:
-   * Type 1 – Something You <strong>Know</strong> (remember)– includes passwords, PINs, combinations, code words, or secret handshakes. Anything that you can type, say, do, perform, or otherwise recall when needed falls into this category.
-
-   * Type 2 – Something You <strong>Have</strong> (possssion) – includes all items that are physical objects, such as keys, smart phones, smart cards, USB drives, and TOTP token devices. (A token device produces a time-based PIN or can compute a response from a challenge number issued by the server.).
-
-   * Type 3 – Something You <strong>Are</strong> (characteristic) – includes any part of the human body that can be offered for verification, such as fingerprints, palm scanning, facial recognition, retina scans, iris scans, and voice verification.
-   <br /><br />
-
-A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
+CAUTION: TOOL: Type a password you type into <a target="_blank" href="https://password.kaspersky.com/">password.kaspersky.com</a> to see whether it has been found in a dark database of passwords found in the wild and how long it would take to crack that password. However, whatever you type is also logged and stored in their database, which may be accessed by the Russia government.
 
 A capability table lists the access rights that a particular subject has to objects.
 
@@ -2418,6 +2588,8 @@ Derived PIV credentials stored securely on mobile device in a TPM.
 The user private key encrypts a challenge regnerated by the computer.
 
 ### Type 3 Are Biometrics
+
+Biometrics are PHI (Protected Health Information):
 
 Facial recognition:
    * In an <strong>eigenfaces</strong> facial scan, measurements of facial components are gathered and compared to a set of standard eigenfaces.
@@ -2500,7 +2672,7 @@ Fibre Channel over Ethernet (FCoE) encapsulates Fibre Channel frames over Ethern
 
 CSMA/CD (Carrier-sense multiple access with collision detection) Ethernet
 
-<a target="_blank" href="https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html">Network Address Translation (NAT)</a> was originally designed for IPv4 address conservation, for private IP networks to use unregistered IP addresses to connect to the Internet. 
+<a target="_blank" href="https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html">Network Address Translation (NAT)</a> was originally designed for IPv4 address conservation, so private IP networks can use unregistered IP addresses to connect to the Internet. 
 The NAT service can operate on a router or by a server to connect two networks together, and translates the private (not globally unique) addresses in the internal network into legal addresses, before packets are forwarded to another network.
 For additional security, NAT in remote-access environments can be configured to advertise only one address for the entire network to the outside world.
 (??? Static Address, Dedicated Address, Port Address)
@@ -2512,10 +2684,12 @@ IPv6 uses 128 bits, has built-in IPSec. Sends Solicited Node (ICMP) Multicast Ad
 concatenated with 104-bit addr. SLAAC (StateLess Address Auto Configuration) to auto configure based on network prefix.
 
 Private addresses: REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=se14Kog6raE&list=PLBpnwlO9U5unYmbZp2DJETNOHg8s_yW37&index=72">VIDEO QUZ</a>
-   * Class A 10.x.x.x (to 10.255.255.255)
-   * Class B 172.16.x.x (to 172.31.255.255)
-   * Class C 192.168.x.x (to 192.168.255.255) in range of addresses is from 192.0.0.0 to 223.255.255.255.
+   * Class A 10.x.x.x/16 (to 10.255.255.255)
+   * Class B 172.16.x.x/20 (to 172.31.255.255)
+   * Class C 192.168.x.x/ (to 192.168.255.255) in range of addresses is from 192.0.0.0 to 223.255.255.255.
    <br /><br />
+
+An IPv4 address is comprised of a network address and a host address. A subnet mask is used to determine what part of the IP address belongs to which. This is important because it determines whether the host will communicate directly with another host or send communication through a router.
 
 802.11ac includes multi-user multiple-input, multiple-output (MU MIMO).
 
@@ -2525,7 +2699,11 @@ Secure HTTP (S-HTTP) encrypts only a single message.
 Hypertext Transfer Protocol Secure (HTTPS) establishes a session using a digital certificate and encrypts an entire session. 
 Secure Electronic Transaction (SET) secures credit card transaction information over the Internet. 
 
-Internet Protocol Security (IPsec) protects data transmitted over a VPN. HMAC (Hashed Message Authentication Code), used by TLS, includes a symmetric key to provie data integrity and data origin auth.
+<a target="_blank" href="https://www.sciencedirect.com/topics/computer-science/transport-mode#:~:text=IPSec%20operates%20in%20two%20modes,header%20and%20the%20IP%20payload">Internet Protocol Security (IPsec)</a> protects data transmitted over a VPN. HMAC (Hashed Message Authentication Code), used by TLS, includes a symmetric key to provide data integrity and data origin auth.
+
+   * In Transport Mode, the original IP header is retained. The payload data transmitted within the original IP packet is protected, but not the IP header. Encrypted traffic is sent directly between two hosts that previously established a secure IPsec tunnel.
+  
+   * In Tunnel Mode, the entire original IP packet is encapsulated to become the payload of a new IP packet. Additionally, a new IP header is added on top of the original IP packet. Since a new packet is created using the original information, tunnel mode is useful for protecting traffic between different networks. This establishs a “tunnel” between two secure IPsec gateways.
 
 TLS 1.3 server cert. is encrypted when sent to client, which hides the name of the server.
 
@@ -2743,6 +2921,47 @@ https://medium.com/@KillSwitchX7/cyber-security-discord-servers-7d9c0b7cd7cb
 https://www.simplycyber.io/post/5-vetted-discord-cyber-communities-you-should-join
 
 https://github.com/INIT6Source/Hacker_Hiring_Discords
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_XS9gr5OAwc">VIDEO</a>:
+The SKF (Security Knowledge Framework) <a target="_blank" href="https://demo.SecurityKnowledgeFramework.org">demo.SecurityKnowledgeFramework.org</a> 
+admin/secure-skf
+now redirects to <a target="_blank" href="https://securityby.design/">https://securityby.design</a>
+for security-by-design using the OWASP ASVS (Application Security Verification Standard).
+defensive coding design patterns and code examples for ASP, java, PHP, Flask, Django, Go, Ruby, Nodejs. 
+It provides checklist.
+
+Proxies:
+   * Browser "Developer Tools"
+   * https://www.charlesproxy.com
+   * https://www.telerik.com/fiddler
+   * https://httptoolkit.tech/
+   <br /><br />
+
+DAST (Dynamic App Security Testing) analyzes how the program binary runs, dynamically. So source code is not needed. So it can be used by hackers. Tool vendors:
+   * White Hat
+   * OWASP ZAP proxy
+   * Qualys
+   * Veracode
+   * Arachni web application security scanner framework
+   <br /><br />
+   
+   https://juice-shop.herokuapp.com
+
+IAST (Interactive App Security Testing) instruments software after installing an agent. Runs based on access to code, HTTP traffic, library, backend connections.
+   * Checkmarx
+   * Synopsys
+   * Acunetix
+   <br /><br />
+
+RASP (Run-time App Secrity Protection) combines DAST and IAST. It can be configured to block or monitor traffic.
+   * Arxan
+   * Imperva
+   * Wallarm
+   <br /><br />
+
+WAF (Web Application Firewall) applies rules to bi-directional HTTP traffic, to detect XSS, SQL injection, Cookie poisoning, Unvalidated input, DoS, web scraping. But not all security issues. 
+It can have performance issues.
+AKA Application Security Manager. Can be configured as a reverse proxy that accepts traffic on a virtual IP address to proxy the traffic to a back-end server network behind the WAF. 
 
 
 ## More on Security #

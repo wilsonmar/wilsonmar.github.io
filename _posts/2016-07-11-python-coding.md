@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-05-25"
+file: "python-coding"
 title: "Python Coding"
 excerpt: "The rules shown in samples using Keywords, arguments, Exception Handling, OS commands, Strings, Lists, Sets, Tuples, Files, Timers"
 tags: [python, coding]
-date: "2021-12-11"
-file: "python-coding"
 image:
 # python-samples-1900x500.jpg
   feature: https://user-images.githubusercontent.com/300046/145717691-60b8c765-e0a3-4d63-bf7f-0cb89492c0ee.png
@@ -16,8 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
+{% include whatever.html %}
 
-## This is Therapy for me
+## This is Therapy for me?
 
 > I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
 
@@ -69,7 +70,7 @@ On IDE such as VSCode you can see key/value pairs without typing <tt>print</tt> 
 
 <hr />
 
-## Scan for vulnerable code
+## Scan for vulnerable Python code
 
 https://github.com/PyCQA/bandit
 
@@ -91,7 +92,7 @@ PROTIP: Research and find out what each is about:
 *	class
 *	continue - force loop again next iteration
 *	def - define function
-*	<tt>del list1[2]</tt> # delete 3rd list item
+*	del - <tt>del list1[2]</tt> # delete 3rd list item, starting from 0.
 *	elif - else if
 *	else
 *	except
@@ -109,11 +110,11 @@ PROTIP: Research and find out what each is about:
 *	nonlocal
 *	not
 *	or
-*	pass - instruction to do nothing (instead of return or yield with value)
-*	<tt>raise NotImplementedError()</tt> throws an exception purposely
+*	pass - (as in the game Bridge) instruction to do nothing (instead of return or yield with value)
+* raise - <tt>raise NotImplementedError()</tt> throws an exception purposely
 *	return
 *	True - Boolean
-*	try - https://www.youtube.com/watch?v=NIWwJbo-9_8
+*	try - [VIDEO](https://www.youtube.com/watch?v=NIWwJbo-9_8)
 *	while
 *	with
 *	yield - resumes after returning a value back to the caller to produce a series of values over time.
@@ -1064,22 +1065,60 @@ if __name__ == "__main__":
    * <a target="_blank" href="https://www.botmetric.com/blog/aws-cloud-automation-python-boto3-scripts/">Intro to Boto3</a>
    * https://linuxacademy.com/howtoguides/posts/show/topic/14209-automating-aws-with-python-and-boto3 has a whole video course
    * <a target="_blank" href="https://realpython.com/python-boto3-aws-s3/">Python, Boto3, and AWS S3: Demystified</a> by Ralu Bolovan
-   <br /><br />
+   * [DataCamp's intro to AWS and Boto3 VIDEO](https://www.youtube.com/watch?v=SmilJDG4B_8)
+   * [Johnny Chiver's Beginner's Guide](https://www.youtube.com/watch?v=aSLhZHZQz1I) makes use of Cloud9 in his main.py:
 
+<pre>import boto3
+s3_client = boto3.client('s3')
+s3_client.create_bucket(Bucket="johnny-chivers-test-1-boto", CreateBucketConfiguration={'LocationConstraint':'eu-west-1'})
+response = s3_client.list_buckets()
+print(response)
+</pre>
+
+   * [Sandip Das's Boto3 with CI CD](https://www.youtube.com/watch?v=iLv1vJd4URg)
+   * [Automating AWS IAM user creation by Prashant Kakhera](https://www.youtube.com/watch?v=AZBoqleMUDM)
+   * [AWS has App Runner](https://aws.amazon.com/apprunner) [Overview](https://www.youtube.com/watch?v=zbJnuArKAuY)
+   [Hands-on lab](https://www.youtube.com/watch?v=Muq3m0tzbQI)
+   <br /><br />
 
 ### On Azure:
 
-   * <a target="_blank" href="https://github.com/Azure/azure-sdk-for-python/">https://github.com/Azure/azure-sdk-for-python/pulls</a> has a large set of libraries so you can install each individually. To install them all:
-
-   <pre>pip install azure</pre>
-
+   * [Microsoft Azure Overview: Introduction series by Alex at Sigma Coding](https://www.youtube.com/watch?v=Jne4L3Dbzd8&list=PLcFcktZ0wnNk7XuHP9_il8LzS3lkaq-ZG) references https://github.com/areed1192/azure-sql-data-project covers Azure (Serverless) Functions in Python
    * https://docs.microsoft.com/python/azure/
    * https://azure.microsoft.com/resources/samples/?platform=python
    * https://github.com/Azure/azure-sdk-for-python/wiki/Contributing-to-the-tests
    * https://azure.microsoft.com/en-us/support/community/
    <br /><br />
 
+1. https://portal.azure.com/
+1. Sign in
+1. https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade
+1. https://aka.ms/azsdk/python/all lists available packages.
+   
+   <tt>pip install azure</tt> has been deprecated from 
+   <a target="_blank" href="https://github.com/Azure/azure-sdk-for-python/">https://github.com/Azure/azure-sdk-for-python/pulls</a> 
 
+   ### New Program Authorization
+
+   PROTIP: Each Azure services have different authenticate.
+
+1. [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) for MacOS:
+
+   brew install azure-cli
+
+   https://www.cbtnuggets.com/it-training/skills/python3-azure-python-sdk by Michael Levan
+   https://www.youtube.com/watch?v=we1pcMRQwD8
+
+   <pre>from azure.cli.core import get_default_cli as azcli
+   # Instead of > az vm list -g Dev2
+   azcli().invoke(['vm','list','-g', 'Dev2'])
+   </pre>
+
+   ### 
+
+   <br /><br />
+
+[Using Digital Blueprints with Terraform and Microsoft Azure](https://www.youtube.com/watch?v=Xd2lOwipmNA&t=313s)
 
 <a name="Sets"></a>
 
@@ -1467,11 +1506,14 @@ by Barron Stone and Olivia Chiu Stone Advanced
    A Semaphore can be acquired/released by different threads.
 
 
-
-## Vectors instead of loops
+### Vectors instead of loops
 
 https://medium.com/codex/say-goodbye-to-loops-in-python-and-welcome-vectorization-e4df66615a52
 
+
+## Referenes
+
+https://python.plainenglish.io/the-easiest-ways-to-generate-a-side-income-with-python-60104ad36998
 
 ## More about Python
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-27"
+date: "2023-06-05"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -444,17 +444,17 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
    * Business Continuity Management (BCM): https://www.youtube.com/watch?v=oAjNL3I_3-E​&t=30s
    <br /><br />
 
-8.
-   * Secure Software Development: https://youtu.be/fS5WWjuyFmQ​&t=30s
+8. Secure Software Development (Lifecycle)
+   * https://youtu.be/fS5WWjuyFmQ​&t=30s
    * Databases: https://youtu.be/-70DBd6cNDw&t=30s
    <br /><br />
 
 Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
 
+<a target="_blank" href="https://www.youtube.com/watch?v=_nyZhYnCNLA">8-hour VIDEO from Inside Cloude and Security</a>
+
 posted by SANS Blue Team Ops:
-
    * <a target="_blank" href="https://www.youtube.com/watch?v=bopYRxAyTU8">CISSP Cram Session</a> Jun 28, 2020. Slides at <a target="_blank" href="https://www.EricConrad.com/">EricConrad.com</a>, author of <a target="_blank" href="https://mtg414.com/">MGT414.com</a>: SANS Training Program for CISSP® Certification, as well as the <a target="_blank" href="https://www.amazon.com/CISSP-Study-Guide-Third-Conrad/dp/0128024372">CISSP® Study Guide (Syngress)</a>.
-
    * <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">Test-Taking Tactics</a>
 
 Flash cards:
@@ -467,6 +467,8 @@ Suggestions:
    Ignore the Orange Book</a>. Focus on 15408 Common Criteria on how to build computers based on Bella-Padua. 
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=tjOjjXVPQeU">Graph your progress</a> from <a target="_blank" href="https://www.sageknowsit.com/">sageknowsit.com</a>
+
+<hr />
 
 ### CCSP
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-20"
+date: "2023-05-25"
 file: "azure-cloud-onramp"
 title: "Azure Cloud Onramp"
 excerpt: "Azure URLs, Subscriptions, Support plans, Tenants, Directories, ARM portal Keyboard Shortcuts, CLI Bash & PowerShell scripting"
@@ -810,7 +810,7 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 
     REMEMBER: Actions are also called "Operations" at different Scopes.
 
-15. See "Your role"? "Global Admin"
+15. See "Your role"? (avoid using "Global Admin")
 
 16. <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t=32m23s">VIDEO</a>:
     Click "+ Add" to create a new Tenant.
@@ -837,34 +837,9 @@ REMEMBER: <a target="_blank" href="https://www.youtube.com/watch?v=10PbGbTUSAg&t
 7. If the user doesn't have a role with the action at the requested scope, access is not granted. Otherwise, Azure Resource Manager checks if ta deny assignment applies.
 8. If a deny assignment applies, access is blocked. Otherwise access is granted.
 
-
 <hr />
 
-
-<a name="Blueprints"></a>
-
-## Azure Blueprints
-
-   TODO: Blueprints handle deny.
-
-   Blueprints orchestrates deployment of artifacts as policy.
-
-   Blueprints makes use of:
-   * Role assignments
-   * Policy assignments
-   * ARM templates
-   * Resource groups
-   <br /><br />
-
-   It's like HashiCorp's Terraform, which completely controls and maintains changes.
-
-   * https://github.com/timothywarner/az500/tree/master/blueprints
-   * https://github.com/terraform-providers/terraform-provider-azurerm
-
-
-<a name="Automation"></a>
-
-## Automation programmatically
+## My Azure-quickly
 
 My repo <a target="_blank" href=" 
 https://github.com/wilsonmar/azure-quickly">
@@ -890,17 +865,40 @@ There are many ways to automate the creation of resources within Azure:
 Utility script code enable the scripts to run from Linux and Git Shell on Windows laptops. 
 
 The scripts are also useful for learning Azure. 
-PROTIP: The objective of this document is to 
 
 
 ### Cloud Shell
 
-<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
-
 Bash CLI or PowerShell.
 
+<a target="_blank" href="https://www.youtube.com/watch?v=x2aIVYxim-A&list=PLWag0-UcFD4HacGTnNVUzUMIsIF1CXySQ&index=6" title="by Dana Epps Oct 3, 2019">VIDEO</a>: Cloud Shell
 
-### Azure on-prem Automation
+<hr />
+
+<a name="Automation"></a>
+
+## Automation programmatically
+
+Microsoft provides several mechanisms to automate away manual toil.
+
+   * Bash shell scripts running in CLI
+   * PowerShell scripts running in CLI
+   * API calls from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell, Python running in CLI
+
+   * API calls from custom programming running within a container
+
+   * Power apps
+   * Azure Power Automation
+   * (Serverless) Functions
+   <br /><br />
+
+### Azure Power Automation
+
+   * [Azure Automation](https://www.youtube.com/watch?v=9Jv3ThPqVco&list=RDCMUCuB24cID6NnypDWSLe4gfqA&start_radio=1&rv=9Jv3ThPqVco)
+   * [Power Automate Add Azure AD users and managers](https://www.youtube.com/watch?v=hrNm4kLeAnY)
+   * [Automation of Creating Users with Microsoft Power Automate and Graph API by Nick Romanek](https://www.youtube.com/watch?v=hrNm4kLeAnY)
+   * Employee on-boarding process using Microsoft Forms and Flow https://www.youtube.com/watch?v=vYnvQgKSWcg
+   <br /><br />
 
 Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/en-us/documentation/articles/automation-hybrid-runbook-worker/">Hybrid Runbook Worker feature</a>,
 <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
@@ -909,6 +907,44 @@ Although deprecated by the <a target="_blank" href="https://azure.microsoft.com/
 However, PowerShell Remoting is not always a viable option.
 Where you have Azure-hosted VMs but cannot open a public WinRM port, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/managing-on-premises-systems-with-azure-automation/">
 This post</a> presents a PowerShell extension runbook for on-premises VMs by utilizing the Azure VM Agent’s Custom Script Extension. 
+
+## Python
+
+https://learn.microsoft.com/en-us/azure/developer/python/?view=azure-python
+
+   * API calls such as [Create User](https://learn.microsoft.com/en-us/graph/api/user-post-users?view=graph-rest-1.0&tabs=http) from custom programming languages C#, Go, Java, JavaScript, PHP, PowerShell BUT NOT Python
+
+Editors:
+* Visual Studio for Mac does not support Python.
+* Visual Studio 2022 users: install PTVS (Python Tools for Visual Studio)
+* Visual Studio Code users: https://code.visualstudio.com/docs/languages/python
+
+   * https://code.visualstudio.com/docs/python/python-tutorial
+   * [On macOS, make sure the location of your VS Code installation is included in your PATH environment variable.](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line) in your .bash_profile:
+
+   <pre>export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"</pre>
+
+<hr />
+
+<a name="Blueprints"></a>
+
+## Azure Blueprints
+
+   Blueprints orchestrates deployment of artifacts as policy.
+
+   Blueprints makes use of:
+   * Role assignments
+   * Policy assignments
+   * ARM templates
+   * Resource groups
+   <br /><br />
+
+   It's like HashiCorp's Terraform, which completely controls and maintains changes.
+
+   * https://github.com/timothywarner/az500/tree/master/blueprints
+   * https://github.com/terraform-providers/terraform-provider-azurerm
+
+   TODO: Blueprints handle deny.
 
 
 <hr />
@@ -1633,13 +1669,13 @@ References on naming conventions:
 
 1. Obtain a copy of my repository containing Bash CLI scripts for use in Azure:
 
-   <pre><strong>git clone https://github.com/wilson-mar/azure-quickly
+   <pre><strong>git clone https://github.com/wilsonmar/azure-quickly
    cd azure-quickly
    </strong></pre>
 
    NOTE: If you work with a private repo, you'll need to create a SSH key, paste the contents of the public key in GitHub GUI, and use a different command, such as:
 
-   <pre><strong>git clone git-123456@wilson-mar/azure-quickly
+   <pre><strong>git clone git-123456@wilsonmar/azure-quickly
    cd azure-quickly
    </strong></pre>
 

@@ -26,7 +26,7 @@ But many say that much programming code lacks needed security, performance, inte
 
 So I wrote this to fill that gap a little.
 
-I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
+> I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
 
 But many DevSecOps jobs evaluate programming skill (using HackerRank, etc.) even though such skill never be used in a position. So here we are.
 
@@ -38,9 +38,12 @@ This article describes Python programming code at:
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>
 
-The program has various capabilities I've had need for.
+The program has <a href="#Capabilities">various capabilities</a> I've had need for.
 
-Code here implements many suggestions in <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>.
+Code here implements many suggestions in 
+   * <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>
+   * <a target="_blank" href="pep8.org">pep8.org</a>
+
 
 ## Repo folders and files
 
@@ -64,7 +67,9 @@ Key files within the repo:
 
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> is loaded into Microsoft Excel to create file <tt>country_info.csv</tt>.
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a> is loaded into database.sqlite database that comes with Python.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a> is loaded into ...
+
+* database.sqlite that comes with Python.
 
 * Within the <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong> folder</a> are files used by GitHub Actions for automation (Continuous Integration).
 
@@ -174,9 +179,8 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
    enables execution as a file using this command:
 
-   <ul><pre><strong>./python-samples.py
+   <pre><strong>./python-samples.py
    </strong></pre>
-   </ul>
 
 The above needs to be done only once on each computer.
 
@@ -195,7 +199,7 @@ There are two types of variables defined in the .env file:
    * Feature flags, usually True/False boolean values
    <br /><br />
 
-<strong>Feature flags<strong> program code references to determine whether each feature is executed during a particular run.
+<strong>Feature flags</strong> program code references to determine whether each feature is executed during a particular run.
 
    * use_... controls whether a capability is setup
    * run_... controls whether a capability is invoked
@@ -563,8 +567,8 @@ At the top of the program file I added metadata about the file:
 __author__ = "Wilson Mar"
 __copyright__ = "See the file LICENSE for copyright and license info"
 __license__ = "See the file LICENSE for copyright and license info"
-__version__ = "0.0.58"  # change on every push - Semver.org format per PEP440
 __linkedin__ = "https://linkedin.com/in/WilsonMar"
+__version__ = "0.0.58"  # change on every push - Semver.org format per PEP440
 </pre>
 
 Variables defined with double underlines are commonly called "dunder" variables.
@@ -934,7 +938,17 @@ my_encoding = "utf-8"  # default: or "cp860" or "latin" or "ascii"
 There are several ways to get the IP address addressed by the program.
 
 
+<a name="lookup_ipaddr"></a>
 
+### Lookup Geolocation based on IP address
+
+Online, several websites lookup geolocation (city, region (US state), country, latitude, longitude):
+   * https://iplocation.com/
+   * https://www.iplocation.net/
+   <br /><br />
+There are several reasons the response can be not the actual physical location:
+   * If a VPN is active. It's whole job is to proxy traffic.
+   * T-Mobile routes traffic to regional locations
 
 <a name="FileMgmt"></a>
 
@@ -1555,7 +1569,6 @@ To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS,
 
    * Asymmetric CMK: AWS KMS generates a <strong>key pair</strong> where the private key never leaves AWS KMS unencrypted.
 
-
 References:
    * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
    * https://towardsdatascience.com/python-and-aws-ssm-parameter-store-7f0e211bb91e
@@ -1565,9 +1578,243 @@ References:
    * https://towardsdatascience.com/python-and-aws-ssm-parameter-store-7f0e211bb91e
    * <a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-18/">Rotating IAM Keys using Boto3</a>
    * <a target="_blank" href="https://www.101daysofdevops.com/courses/101-days-of-devops/lessons/day-23/">stop/start EC2 instances on a scheduled basis to save cost using AWS Lambda and CloudWatch</a>
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/python-essentials-for/9781804610060/">Python Essentials for AWS Cloud Developers</a> May 2023 by Serkan Sakinmaz explores APIs for AWS Lambda, EC2, Elastic Beanstalk, and S3. Plus using NoSQL and DynamoDB.
 
+
+
+<hr />
 
 <a name="use_gcp"></a>
+
+## GCP Authentication                                            = use_gcp
+
+### Google Cloud Endpoints
+
+https://cloud.google.com/endpoints
+
+Simply upload an OpenAPI specification and deploy Google's containerized proxy.
+
+Google Cloud Endpoints let you manage and control access to your own APIs. 
+You can keep APIs private or share them with partners, and you can monitor API usage.
+
+Portal: https://console.cloud.google.com/endpoints/v2
+
+<a target="_blank" href="https://cloud.google.com/endpoints/docs/choose-endpoints-option">Choose within a matrix</a>
+Cloud Endpoints uses one of two open source proxy to provide API management.
+   * Extensible Service Proxy V1 (ESP) for App Engine v1 flexible env
+   * Extensible Service Proxy V2 (ESPv2) must be used by Cloud Functions, Cloud Run. AppEnginev2, 
+   <br /><br />
+one of these Google Cloud Endpoints options to manage/host API and the type of communications protocol your API uses:
+
+    * <a target="_blank" href="https://cloud.google.com/endpoints/docs/frameworks/tutorials">Cloud Endpoints Frameworks</a> for the legacy App Engine v1 standard environment using legacy Java 8 and Python 2.7 runtimes.
+    * <a href="#OpenAPI">Cloud Endpoints for OpenAPI</a> with Cloud Functions must use ESPv2.
+    * <a target="_blank" href="https://cloud.google.com/endpoints/docs/grpc/tutorials">Cloud Endpoints for gRPC</a> can be used by Compute Engine, GKE, etc. through either ESP or ESPv2.
+    
+<hr />
+
+<a name="OpenAPI"></a>
+
+### Cloud Endpoints for OpenAPI 
+
+<a target="_blank" href="https://cloud.google.com/endpoints/docs/openapi/tutorials">Cloud Endpoints for OpenAPI</a>
+
+The OpenAPI Initiative is an industry-wide effort to standardize the description of REST APIs. Endpoints supports APIs that are described using version 2.0 of the OpenAPI Specification (formerly the Swagger Specification). You describe the surface of your API in a JSON or YAML file (referred to as an OpenAPI document). You can implement your API using any publicly available REST framework such as Django or Jersey. 
+If you are unfamiliar with the OpenAPI Specification, see <a target="_blank" href="https://cloud.google.com/endpoints/docs/openapi/openapi-overview">OpenAPI overview</a>.
+
+1.  Create a new project so it can be deleted later.
+
+    https://console.cloud.google.com/cloud-resource-manager
+
+    IMPORTANT: Have "Enpoints" in the name because the script enables services when it finds that specific text.
+
+1.  Click "SELECT PROJECT" associated with the new project at the right panel.
+
+1.  Enable billing for the project. Endpoints charges by its calls to Service Control. 
+    Each API call processed by the Extensible Service Proxy (ESP) or the Cloud Endpoints Frameworks are reported as a tracked operation by the Service Control API and is listed as line item for Service Control on your bill.
+
+1.  Open Cloud Shell or use your macOS after installing Google Cloud CLI.
+
+1.  In the CLI, specify the project variables:
+
+    <pre>export MY_GCP_ACCOUNT_EMAIL=johndoe@gmail.com
+    export MY_GCP_CONFIG_NAME=???  # default
+    export MY_GCP_PROJECT_NUMBER=123456789012
+    export MY_GCP_PROJECT_NAME="cp100"
+    export MY_GCP_PROJECT_ID=cp100-1094
+    export MY_GCP_LOCATION=US
+    export MY_GCP_REGION=us-central1
+    export MY_GCP_ZONE=us-central1-c
+    </pre>
+
+1.  Prepare the Terminal: Copy and paste this to run on your Terminal/shell:
+
+    <pre><strong>sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilsonmar/gcp-samples/main/gcpinfo.sh)"</strong></pre>
+
+    It runs "gcloud components update", etc.
+
+    RESPONSE:
+    Operation "operations/acat.p2-..." finished successfully.
+
+    It recognizes "Endpoints" in the Project Name, it would enable services related to it:
+
+    <pre>gcloud services enable servicemanagement.googleapis.com
+    gcloud services enable servicecontrol.googleapis.com
+    gcloud services enable endpoints.googleapis.com
+    </pre>
+
+1.  Get the scripts for Enpoints:
+
+    <pre><strong>git clone https://github.com/GoogleCloudPlatform/endpoints-quickstart --depth 1
+    cd endpoints-quickstart
+    </strong></pre>
+
+    CAUTION: At the top of the repo is this notice:
+    
+    <strong>This repository has been archived by the owner on Jan 13, 2023. It is now read-only.</strong>
+
+    If you prefer to fork before:<br />
+    git remote add upstream https://github.com/GoogleCloudPlatform/endpoints-quickstart
+
+1.  Edit the pre-configured OpenAPI specification file <tt>openapi.yaml</tt> at the root of the repo:
+
+    <pre><strong>code openapi.yaml</strong></pre> 
+
+    The API has a single request: "Get the airport name for a given IATA code."
+
+    The API expects one query parameter, iataCode, that is set to a valid IATA airport code such as SEA or JFK. For example:
+
+1.  Change "YOUR-PROJECT-ID" to the value of $MY_GCP_PROJECT_ID, such as "ninth-matter-388922":
+
+    NOTE: For some reason I am getting an error using the sed (Stream Editor) Linux utility to replace host: "YOUR-PROJECT-ID.appspot.com" with your $MY_GCP_PROJECT_ID
+    See https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
+
+    <pre><strong>sed -i 's/YOUR-PROJECT-ID/ninth-matter-388922/g' openapi.yaml
+    </strong></pre>
+
+    Endpoints use the host field in the OpenAPI configuration file to identify the service. 
+    
+1.  Run:
+
+    <pre>cd scripts
+    chmod +x deploy_api.sh
+    ./deploy_api.sh
+    </pre>
+
+    Within the script, <tt>source util.sh</tt> runs the shell file.
+
+    RESPONSE: <pre>Deploying ../openapi.yaml...
+    gcloud endpoints services deploy ../openapi.yaml
+    Waiting for async operation operations/services.ninth-matter-388922.appspot.com-0 to complete...
+    Waiting for async operation operations/serviceConfigs.ninth-matter-388922.appspot.com:a9bab33c-b504-4e16-b405-3b4c98555fad to complete...
+    Operation finished successfully. The following command can describe the Operation details:
+    gcloud endpoints operations describe operations/serviceConfigs.ninth-matter-388922.appspot.com:a9bab33c-b504-4e16-b405-3b4c98555fad
+    &nbsp;
+    Waiting for async operation operations/rollouts.ninth-matter-388922.appspot.com:fc24e8b3-9a52-4f32-a0b7-c520092f8049 to complete...
+    Operation finished successfully. The following command can describe the Operation details:
+    gcloud endpoints operations describe operations/rollouts.ninth-matter-388922.appspot.com:fc24e8b3-9a52-4f32-a0b7-c520092f8049
+    &nbsp;
+    Enabling service [ninth-matter-388922.appspot.com] on project [ninth-matter-388922]...
+    Operation "operations/acat.p2-429760259033-2f8518bb-d9a8-47d0-9f99-035fb2d14f84" finished successfully.
+    </pre>
+
+    The script then deploys the OpenAPI configuration to Service Management by using the command: 
+    
+    <pre>gcloud endpoints services deploy openapi.yaml</pre>
+
+    As it creates and configures the service, Service Management outputs information to the Google Cloud console. 
+    You can safely ignore the warnings about the paths in openapi.yaml not requiring an API key. 
+
+1.  On successful completion, a line similar to this should displays the service configuration ID and the service name:
+    
+    <pre>Service Configuration [2023-06-05r0] uploaded for service [ninth-matter-388922.appspot.com]
+    &nbsp;
+    To manage your API, go to: https://console.cloud.google.com/endpoints/api/ninth-matter-388922.appspot.com/overview?project=ninth-matter-388922
+    </pre>
+    
+1.  Copy the URL and switch to a browser to go to it, such as:
+
+    https://console.cloud.google.com/endpoints/api/ninth-matter-388922.appspot.com/overview?project=ninth-matter-388922) 
+
+1.  Back at the Terminal, see Enpoints at:
+
+    https://console.cloud.google.com/endpoints/v2
+
+1.  Enable your Enpoints service:
+
+    gcloud services enable "$MY_GCP_PROJECT_ID.appspot.com"
+
+1.  Send requests to it by running the following script:
+
+    <pre><strong>./query_api.sh SFO</strong></pre>
+
+    The script echoes the curl command that it uses to send a request to the API, and then displays the result. The output is:
+   
+    <pre>curl "https://example-project.appspot.com/airportName?iataCode=SFO"</pre>
+
+    RESPONSE: San Francisco International Airport
+
+1.  Set paramter expected by the script:
+
+    <pre><strong>export project_id="$MY_GCP_PROJECT_ID"</strong></pre>
+
+1.  To avoid error: FIXME: declare: usage: declare [-afFirtx] [-p] [name[=value] ...]
+
+    comment out:
+    
+    <pre># declare -A codes</pre>
+
+1.  I've posted a question about the above on the "Google Serverless | General Dev" chat group (there's no "Endpoints" group):
+
+    https://www.googlecloudcommunity.com/gc/forums/filteredbylabelpage/board-id/cloud_serverless/label-name/App%2520Dev%2520General
+
+    Formerly:<br />
+    https://groups.google.com/g/google-cloud-endpoints
+
+    
+1.  Generate traffic to track API activity:
+
+    <pre><strong>chmod +x generate_traffic.sh
+    ./generate_traffic.sh</strong></pre>
+
+    RESPONSE:
+    <pre>This command will exit automatically in 300 seconds.
+Generating traffic to https://ninth-matter-388922.appspot.com/airportName?iataCode=SFO...
+Press Ctrl-C to stop.
+Served 25 requests.
+Served 50 requests.
+Served 75 requests.
+Served 100 requests.
+Served 125 requests.
+Served 150 requests.
+Served 175 requests.
+    </pre>
+
+1.  If you don't want to wait the whole 5 minutes, stop the run by pressing control+C.
+
+    <pre>HTTP status codes received from https://ninth-matter-388922.appspot.com/airportName?iataCode=SFO:
+    404: 216
+    </pre>
+
+1.  Delete the project created for this back at the Resource Manager:
+
+    https://console.cloud.google.com/cloud-resource-manager
+
+Using an OpenAPI Specification or one of Google's API frameworks, Cloud Endpoints gives you the tools you need for API development 
+and provides insight with Cloud Logging, Cloud Monitoring, and Cloud Trace.
+
+Control who has access to your API and validate every call with JSON Web Tokens and Google API keys. 
+Integration with Auth0 and Firebase Authentication lets you identify the users of your web or mobile application.
+
+* https://cloud.google.com/blog/products/gcp/google-cloud-endpoints-now-ga-a-fast-scalable-api-gateway
+
+* https://cloud.google.com/endpoints/pricing
+* https://cloud.google.com/endpoints/pricing-and-quotas
+* https://cloud.google.com/products/calculator
+
+* https://cloud.google.com/endpoints/docs
+* https://cloud.google.com/endpoints/docs/deploy-api
+* https://cloud.google.com/endpoints/docs/openapi/how-to
+
 
 ## Run from GCP (Google Cloud Platform) Cloud Shell              = use_gcp
 
@@ -2494,9 +2741,9 @@ Adam Breindel held on OReilly <a target="_blank" href="https://learning.oreilly.
    * https://medium.com/analytics-vidhya/how-to-read-and-write-data-to-google-spreadsheet-using-python-ebf54d51a72c
    <br /><br />
 
-One way to reduce risk of data loss is to store data in cloud environments managed by pros.
+Reduce risk of data loss on your laptop by storing data in cloud environments managed by pros.
 
-Here is how to do it within Google Cloud (whose business is to sell metadata about their users):
+Here is how to do it with Google Sheets, which is FREE using your Gmail account:
 
 1. If you haven't already, get a Google account (with a email address Gmail.com).
 1. Get in the Google API Console at <a target="_blank" href="https://console.developers.google.com/">
@@ -2617,8 +2864,8 @@ wks.set_dataframe(df,(1,1))
 
 https://developer.ibm.com/tutorials/document-scanner/
 
-
 ### Bandit vulnerability checker
+
 
    * https://soshace.com/how-to-secure-python-web-app-using-bandit/
    * https://bandit.readthedocs.io/en/latest/plugins/index.html
@@ -2648,6 +2895,10 @@ Other Python project templates:
 https://towardsthecloud.com/update-macos-packages-single-command
 Update your macOS packages with a single command | Towards the Cloud
 
+https://learning.oreilly.com/library/view/learn-enough-python/9780138051143/
+Learn Enough Python to Be Dangerous: Software Development, Flask Web Apps, and Beginning Data Science with Python
+by <a target="_blank" href="https://www.linkedin.com/in/michaeldhartl/">Michael Hartl</a>
+has code at https://github.com/learnenough/learn_enough_python_code_listings
 
 <hr />
 
