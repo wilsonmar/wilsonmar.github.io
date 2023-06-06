@@ -942,29 +942,47 @@ There are several ways to get the IP address addressed by the program.
 
 ### Lookup Geolocation based on IP address
 
-Online, several websites lookup geolocation (city, region (US state), country, latitude, longitude):
-   * https://iplocation.com/
+https://rapidapi.com/blog/ip-geolocation-api/
+
+Online, several websites lookup geolocation (city, region (US state), country, zip/postal code, latitude, longitude, ):
+   * https://www.ipaddress.my/
    * https://www.iplocation.net/
+   * https://whatismyipaddress.com/
+   * https://iplocation.io/
+   * https://www.whatismyip.com/ip-address-lookup/
+   * https://www.geolocation.com/ also provides the district/county name
+   * https://www.ip2location.com/ which also provides elevation, time zone, Weather Station, AS number for carrier.
    <br /><br />
 There are several reasons the response can be not the actual physical location:
    * If a VPN is active. It's whole job is to proxy traffic.
    * T-Mobile routes traffic to regional locations
+   <br /><br />
+The code here in this program references a periodically updated file from:
+    * https://www.melissa.com/developer/ip-locator
+    * https://www.ip2location.com/database/ip2location for $49+/year
+
+Among APIs cataloged at https://catalog.data.gov/dataset?q=-aapi+api+OR++res_format%3Aapi
+https://project-open-data.cio.gov/
+
 
 <a name="FileMgmt"></a>
 
 ##  7. Define utilities for managing data storage folders and files
 
+
 <a name="ManageFolders"></a>
 
 ### 7.1. Create, navigate to, and remove local working folders
 
-## Front-end
+<hr />
+
+## 8.  Front-end
 
 To obtain user input:
 
    * PythonCard
 
-
+<hr />
 
 ##  9. Generate various calculations for hashing, encryption, etc.
 
