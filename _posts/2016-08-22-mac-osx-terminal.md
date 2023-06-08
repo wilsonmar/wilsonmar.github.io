@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-09-11"
+date: "2023-06-07"
 file: "mac-osx-terminal"
 title: "Mac OSX Terminal (command-line tips and tricks)"
 excerpt: "Make things happen quickly without touching the mouse"

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-22"
+date: "2023-06-07"
 file: "cloud-services-comparisons"
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
@@ -222,17 +222,17 @@ So here I'm adding additional commentary here.
 
 ## Additionally...
 
-As of June 6, 2021;
+As of June 7, 2023;
 
 Factor | AWS  | Azure | GCP |
 :----- | :--- | :----- | :----- |
 Company | Amazon | Microsoft | Google |
-Initial appearance | 2006 | 2010 |
-Granularity of billing | per hour | per minute |
+Initial appearance | 2006 | 2010 | 2012 |
+Granularity of billing | per hour | per minute | per second |
 Entrepreneurial Discount | - | BizSpark |
-\# Regions | 24 | <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/">46</a> |
+\# Regions | 24 | <a target="_blank" href="https://azure.microsoft.com/en-us/global-infrastructure/services/">46</a> | 34 |
 \# Data centers | 24 | 100 |
-\# zones | 33 | 100 |
+\# zones | 33 | 100 | 103 |
 Largest \# vCPUs cores | <a target="_blank" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html" title="u-6tb1.112xlarge, u-9tb1.112xlarge, u-12tb1.112xlarge">448</a> | 32 |
 Largest RAM GB | <a target="_blank" href="https://aws.amazon.com/about-aws/whats-new/2016/05/now-available-x1-instances-the-largest-amazon-ec2-memory-optimized-instance-with-2-tb-of-memory/" title="x1.32xlarge">1,952 GB</a> | 448 GB |
 

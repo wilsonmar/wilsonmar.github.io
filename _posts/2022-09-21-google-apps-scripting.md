@@ -1,10 +1,10 @@
 ---
 layout: post
-date: "2023-04-18"
+date: "2023-06-07"
 file: "google-apps-scripting"
 title: "Google Apps Scripting"
 excerpt: "If you liked Microsoft's VB script for Word, Excel, you'll love Google App Script for Google Docs and Sheets"
-tags: [Automation, Google]
+tags: [Automation, Google, SaaS]
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -16,9 +16,13 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This can be a common situation needing automation.
+Google's FREE SaaS (Software as a Service) offering which competes with Microsoft's Office 365.
 
 {% include whatever.html %}
+
+<a target="_blank" href="https://www.youtube.com/watch?v=MlF1mf6s94w&t=40s">VIDEO: How To Make A Web App In 7 Minutes</a>
+
+This can be a common situation needing automation:
 
 ## Video Courses
 
