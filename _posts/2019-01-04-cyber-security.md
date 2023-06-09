@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-05"
+date: "2023-06-09"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -1577,6 +1577,14 @@ Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</
    </td></tr>
 </table>
 
+<hr />
+
+<a name="Attackers"></a>
+
+## Attackers
+
+<a target="_blank" href="https://www.mandiant.com/resources/insights/apt-groups">Mandiant's list of known APT (Advanced Persistent Threat) actors</a>. AVT (Advanced Volatile Threat) 
+
 
 <a name="Attacks"></a>
 
@@ -1587,8 +1595,6 @@ Attacks: attempts to violate an organization’s security or privacy: REMEMBER:
 <strong>Cryptoanalytic</strong> attacks try to deduce the key via brute-force (dictionary most likely)
 
 <strong>Cryptographic</strong> attacks: man-in-the-middle, replay, timing, radiation,
-
-APT (Advanced Persistent Threat) and AVT (Advanced Volatile Threat) describe a general class of modern fileless/"live off the land" malware that evade detection and continually evolve. <a target="_blank" href=<a target="_blank" href="https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware/what-is-fileless-malware.html">Low Observable Characteristics (LOC) attack</a>.
 
    * A <strong>smurf</strong> attack uses a type of ping packet called an ICMP ECHO REQUEST. 
    * In a <strong>side-channel</strong> attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
@@ -1609,6 +1615,9 @@ APT (Advanced Persistent Threat) and AVT (Advanced Volatile Threat) describe a g
    * A salami attack is when small changes to data are made over time.
    * Data diddling is when changes to data are made before and after an attack.
    <br /><br />
+
+"Live off the land" malware have <a target="_blank" href="https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware/what-is-fileless-malware.html">Low Observable Characteristics (LOC)</a>.
+They are called "fileless". So they can evade traditional anti-virus signature detection. They can also continually evolve. 
 
 Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a> [<a target="_blank" href="https://www.youtube.com/watch?v=-70DBd6cNDw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=29&t=11s">MINDMAP</a>]
    * An <strong>inference attack</strong> is the development of a detailed version of an object from another object using different values in the new object, such as the difference between totals versus details allowed. A countermeasure is <strong>Polyinstantiation</strong> which prevents low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples (rows) with the same primary keys, with each instance distinguished by a security level. [<a target="_blank" href="https://www.wikiwand.com/en/Inference_attack">WIKIPEDIA</a>]

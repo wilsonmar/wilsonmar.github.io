@@ -964,6 +964,9 @@ The code here in this program references a periodically updated file from:
 Among APIs cataloged at https://catalog.data.gov/dataset?q=-aapi+api+OR++res_format%3Aapi
 https://project-open-data.cio.gov/
 
+At time of writing, there were 566 <a target="_blank" href="https://github.com/orgs/googleapis/repositories?q=&type=source&language=&sort=
+">repositories in the github.com/googleapis account/organization</a>:
+
 
 <a name="FileMgmt"></a>
 
@@ -2882,25 +2885,140 @@ wks.set_dataframe(df,(1,1))
 
 https://developer.ibm.com/tutorials/document-scanner/
 
-### Bandit vulnerability checker
 
+<a name="Bandit"></a>
 
-   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
-   * https://bandit.readthedocs.io/en/latest/plugins/index.html
-   <br /><br />
+## Bandit vulnerability checker
 
 Bandit transforms code into an abstract syntax tree (AST) to analyze vulnerabilities
 https://snyk.io/learn/security-vulnerability-exploits-threats/
 
+Bandit error message flag "201:flask_debug_true" notes that 
+running with <tt>debug=True</tt> exposes the Werkzeug debugger, which can execute arbitrary code.
 
-## Running in debug mode
+PROTIP: On production servers, set <tt>__debug__ == False</tt> to disable assert statements.
 
-Running with <tt>debug=True</tt> exposes the Werkzeug debugger which can execute arbitrary code.
+Resources:
+   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
+   * https://bandit.readthedocs.io/en/latest/plugins/index.html
+   <br /><br />
 
-Bandit flags this with "201:flask_debug_true".
+## Image manipulation
 
-Setting  <tt>__debug__ == False</tt> disables assert statements on production servers.
+https://googlecoursera.qwiklabs.com/focuses/28467918?parent=lti_session
+is a tutorial about using Pillow library
 
+<hr />
+
+## Working with GCP
+
+### API libraries
+
+Google has two libraries <a target="_blank" href="https://cloud.google.com/apis/docs/client-libraries-explained">explained</a>:
+
+    * "Google API Python client library" at<br />https://github.com/googleapis/google-api-python-client<br />is a large (200 MB+) containing <strong>all APIs</strong>. Install it by<br /><tt>pip3 install google-api-python-client</tt><br />It supports only REST, not gRPC.
+
+    * "Cloud Client Libraries for Python" at<br />https://github.com/googleapis/google-cloud-python supports gRPC as well as REST. So use this recommended one, described at https://cloud.google.com/apis/docs/cloud-client-libraries
+
+Each APIs listed alphabetically (with links) at:
+    <ul>
+    https://cloud.google.com/python/docs/reference
+    </ul>
+
+Only a subset of the services listed above are implemented as a Python package named the same (with dashes) at:
+    <ul>
+    https://github.com/googleapis/google-cloud-python/tree/main/packages
+    </ul>
+But some are not in GitHub, such as "Google Tasks" = google-cloud-tasks at 
+    <ul>
+    https://cloud.google.com/python/docs/reference/cloudtasks/latest<br />
+    which describes itself as "a fully managed service that allows you to manage the execution, dispatch and delivery of a large number of distributed tasks. You can asynchronously perform work outside of a user request. Your tasks can be executed on App Engine or any arbitrary HTTP endpoint."
+    <br /><br />
+
+So I scraped the two to create a reconciliation Google Sheet CSV file.
+
+
+Auth: https://cloud.google.com/tasks/docs/reference/libraries#python
+
+
+    </ul>
+
+For a list of Service APIs:
+
+    https://cloud.google.com/python/references/apis
+
+
+https://developers.google.com/discovery/v1/using#build
+Google API Discovery Service
+
+### Auth to GCP
+
+
+### Sample Code for GCP
+
+For a list of sample code snippets, see 
+
+    https://cloud.google.com/docs/samples?l=python 
+
+
+### Working with Google Workspace SaaS apps
+
+    * https://developers.google.com/docs/api/quickstart/python
+    * https://developers.google.com/workspace/products
+    * https://cloud.google.com/python/docs/reference
+    * https://github.com/googleapis/google-cloud-python
+
+Select a service at https://console.cloud.google.com/apis/library
+
+    * Admin Console => https://console.cloud.google.com/apis/library/admin.googleapis.com
+    * Apps Script => https://console.cloud.google.com/apis/library/script.googleapis.com
+    * Classroom => https://console.cloud.google.com/apis/library/classroom.googleapis.com
+    * Cloud Search => https://console.cloud.google.com/apis/library/cloudsearch.googleapis.com
+    * Drive => https://console.cloud.google.com/apis/library/drive.googleapis.com
+    * Drive Labels => https://console.cloud.google.com/apis/library/drivelabels.googleapis.com
+    * Calendar => https://console.cloud.google.com/apis/library/calendar-json.googleapis.com
+    * CalDAV => https://console.cloud.google.com/apis/library/caldav.googleapis.com
+    * Cloud Identity => https://console.cloud.google.com/apis/library/cloudidentity.googleapis.com
+    * Chat
+    * Docs => https://console.cloud.google.com/apis/library/docs.googleapis.com
+    * Drive => https://console.cloud.google.com/apis/library/drive.googleapis.com
+    * Drive Activity => https://console.cloud.google.com/apis/library/driveactivity.googleapis.com
+    * Forms => https://console.cloud.google.com/apis/library/forms.googleapis.com
+    * Gmail => https://console.cloud.google.com/apis/library/gmail.googleapis.com
+    * Groups => https://console.cloud.google.com/apis/library/groupssettings.googleapis.com
+    * Keep => https://console.cloud.google.com/apis/library/keep.googleapis.com
+    * Meet ? => https://console.cloud.google.com/apis/library/meet.googleapis.com
+    * People => https://console.cloud.google.com/apis/library/people.googleapis.com
+    * Reseller => https://console.cloud.google.com/apis/library/reseller.googleapis.com
+    * Sheets => https://console.cloud.google.com/apis/library/sheets.googleapis.com
+    * Sites ? => https://console.cloud.google.com/apis/library/sites.googleapis.com
+    * Slides => https://console.cloud.google.com/apis/library/slides.googleapis.com
+    * Tasks => https://console.cloud.google.com/apis/library/tasks.googleapis.com
+    * Vault => https://console.cloud.google.com/apis/library/vault.googleapis.com Data management and eDiscovery for Google Workspace.
+    * Workspace Marketplace => https://console.cloud.google.com/apis/library/appsmarket-component.googleapis.com <a target="_blank" href="https://googlecoursera.qwiklabs.com/focuses/28468512?parent=lti_session">HANDS-ON</a>
+
+Tutorials:
+   * https://hands-on.cloud/python-google-sheets-api/
+
+
+## Performance Testing
+
+Will the app break under heavy load?
+
+Python developers use Locust at https://github.com/locustio/locust 
+-- a simple-to-use, distributed load-testing tool.
+
+Locust (at <a target="_blank" href="https://locust.io/">https://locust.io</a>) 
+was created by Jonatan Heyman and is maintained by <a target="_blank" href="https://www.linkedin.com/in/redshirt/">Lars Holmberg</a>
+based in Stockholm.
+
+Resources:
+   * https://content.microfocus.com/performance-engineering-tb/performance-engineering-resources
+
+## 
+
+https://github.com/r-lib/gargle/
+for R
 
 ## References
 
@@ -2910,13 +3028,15 @@ Other Python project templates:
 
    * https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6
 
-https://towardsthecloud.com/update-macos-packages-single-command
-Update your macOS packages with a single command | Towards the Cloud
+<a target="_blank" href="https://towardsthecloud.com/update-macos-packages-single-command">
+Update your macOS packages with a single command | Towards the Cloud</a>
 
-https://learning.oreilly.com/library/view/learn-enough-python/9780138051143/
-Learn Enough Python to Be Dangerous: Software Development, Flask Web Apps, and Beginning Data Science with Python
+<a target="_blank" href="https://learning.oreilly.com/library/view/learn-enough-python/9780138051143/">
+Learn Enough Python to Be Dangerous</a>: Software Development, Flask Web Apps, and Beginning Data Science with Python
 by <a target="_blank" href="https://www.linkedin.com/in/michaeldhartl/">Michael Hartl</a>
 has code at https://github.com/learnenough/learn_enough_python_code_listings
+
+pip install python-dotenv
 
 <hr />
 

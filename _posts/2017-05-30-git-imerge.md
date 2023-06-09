@@ -516,24 +516,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 
    <pre>
 A1
-<<<<<<< HEAD
 B2 feature1
-=======
-B2 master
->>>>>>> master
 C3
 D4
 E5
 F6
-<<<<<<< HEAD
 G7 feature1
 H8
 I9 feature1
-=======
-G7 master
-H8
-I9 master
->>>>>>> master
    </pre>
 
    The format of above markers for a two-way merge is:
@@ -716,11 +706,7 @@ error: you need to resolve your current index first
 
    <pre>
 A1
-<<<<<<< HEAD
 B2 feature1
-=======
-B2 master
->>>>>>> 1905858068225d58f2f36fdce243bc2a663ced36
    </pre>
 
    The ======= separates content were inserted by Git to divide
@@ -770,12 +756,8 @@ Merge is complete!
 
    <pre>
 A1
-<<<<<<< HEAD
 B2 master
 C3
-=======
-B2 feature1
->>>>>>> 94e7ec48c4cd902c0512ae69ae44d8d9ffa057a2
    </pre>   
 
    And so on:
@@ -787,11 +769,7 @@ C3
 D4
 E5
 F6
-<<<<<<< HEAD
 G7 master
-=======
-G7 feature1
->>>>>>> c4d21840f2bcd6cd51060b101dac9289b782fbde
    </pre>   
 
    QUESTION: Why again?
@@ -803,12 +781,8 @@ C3
 D4
 E5
 F6
-<<<<<<< HEAD
 G7 master
 H8
-=======
-G7 feature1
->>>>>>> 303e8288568ecc67b7e8bc248359c32122a46808
    </pre>
 
   The last one:
@@ -822,11 +796,7 @@ E5
 F6
 G7 feature1
 H8
-<<<<<<< HEAD
 I9 master
-=======
-I9 feature1
->>>>>>> 195454a77bb6805954f70de5bb76879fe026210b
   </pre>
 
    ### Diagram

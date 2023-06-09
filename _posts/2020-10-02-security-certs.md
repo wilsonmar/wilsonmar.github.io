@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-05"
+date: "2023-06-07"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -451,7 +451,9 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
 
 Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
 
-<a target="_blank" href="https://www.youtube.com/watch?v=_nyZhYnCNLA">8-hour VIDEO from Inside Cloude and Security</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=_nyZhYnCNLA&list=PL7XJSuT7Dq_XPK_qmYMqfiBjbtHJRWigD">8-hour VIDEO CISSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=kFZWMZIy5LM&list=PL7XJSuT7Dq_X0AupQwU8YOGV3TsoPAcD0">12-hour VIDEO CCSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
 
 posted by SANS Blue Team Ops:
    * <a target="_blank" href="https://www.youtube.com/watch?v=bopYRxAyTU8">CISSP Cram Session</a> Jun 28, 2020. Slides at <a target="_blank" href="https://www.EricConrad.com/">EricConrad.com</a>, author of <a target="_blank" href="https://mtg414.com/">MGT414.com</a>: SANS Training Program for CISSP® Certification, as well as the <a target="_blank" href="https://www.amazon.com/CISSP-Study-Guide-Third-Conrad/dp/0128024372">CISSP® Study Guide (Syngress)</a>.
