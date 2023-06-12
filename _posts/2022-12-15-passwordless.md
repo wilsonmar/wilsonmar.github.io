@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-12-15"
+date: "2023-06-10"
 file: "passkey"
 title: "(FIDO) Passkey"
 excerpt: "Block the most common vector for stolen credentials used to inflict ransomware and killware - stolen credentials - by using Passkey and temporary passwords from Vault"
@@ -24,11 +24,12 @@ This article presents a guided tour with commentary to describe the latest mecha
 
 ## Static Passwords Suck
 
-1. Visit <a target="_blank" href="https://www.haveibeenpwned.com/">haveibeenpwned.com</a> and type in your email. Chances are, because of so many leaks of user data from many websites over the years (Facebook, LinkedIn, Yahoo, etc.), your private information have been leaked by some website.
+1. Visit <a target="_blank" href="https://www.haveibeenpwned.com/">haveibeenpwned.com</a> and type in your email. Chances are, because of so many leaks of user data from many websites over the years (Facebook, LinkedIn, Yahoo, etc.), your private information (email, residence address, birthdate, Social Security Number, etc.) have been leaked by some website. Leaked information are then sold to data brokers and aggregators who provide subscriptions to anyone.
 
    CAUTION: Users who <strong>reuse the same password</strong> (or use a simple pattern of different passwords) on several sites are providing hackers a very easy way to be hacked everywhere.
 
-   ## 1Password 
+
+   ## 1Password
 
    So security-conscious people store passwords in a vault such as in the 1Password app, which can either only store secrets locally or store in their 1Password cloud.
    
@@ -211,13 +212,14 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    But with Passkeys, the best ease-of-use is to have you use the same operating system and app used to register with the website because the private key generated for use with each website are stored in the operating system's specific secrets store.
 
-   REMEMBER: A Passkey created on Google's Chrome browser will NOT be ordinarily be recognized on your Apple iPhone.
+   REMEMBER: A Passkey created on Google's Chrome browser will NOT be ordinarily be recognized on your Apple iPhone, macOS Safari browser, or any Windows device.
 
    When using Apple's iPhone, iPad, or macOS, it's easiest if you use Apple's Safari browser.<br />
    When you use Google's Android, it's easiest if you use Google's Chrome browser.
 
    Where does that put alternative browser vendors such as Firefox, Brave, etc.? 
-   DoesFIDO2 Passkeys hinder them?
+   DoesFIDO2 Passkeys hinder them? I think so.
+
 
 ## Cross-platform authentication
    
@@ -257,6 +259,8 @@ This article presents a guided tour with commentary to describe the latest mecha
 
    PROTIP: "this device" means the crypto storage mechanism for the operating system you're using.
    
+<a target="_blank" href="https://developers.google.com/codelabs/passkey-form-autofill?hl=en">Implement passkeys with form autofill in a web app</a>
+
 
 <hr />
 
