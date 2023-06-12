@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-03-18"
+date: "2023-06-12"
 file: "hashicorp-vault"
 title: "HashiCorp Vault"
 excerpt: "How to keep secrets secret (in a central place), but still shared and refreshed."
@@ -3164,8 +3164,7 @@ On a macOS:
 
 1. Add Docker's public GPG key for the Trusty version:
 
-   <pre><strong>sudo apt-get install -y xserver-xorg-lts-trusty libgl1-mesa-glx-lts-trusty
-   </strong></pre>
+   <pre><strong>sudo apt-get install -y xserver-xorg-lts-trusty libgl1-mesa-glx-lts-trusty</strong></pre>
 
 
 On a Linux server instance's Terminal CLI:
