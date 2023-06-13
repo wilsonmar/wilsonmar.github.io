@@ -3164,7 +3164,8 @@ On a macOS:
 
 1. Add Docker's public GPG key for the Trusty version:
 
-   <pre><strong>sudo apt-get install -y xserver-xorg-lts-trusty libgl1-mesa-glx-lts-trusty</strong></pre>
+   <pre><strong>sudo apt-get install -y \
+   xserver-xorg-lts-trusty libgl1-mesa-glx-lts-trusty</strong></pre>
 
 
 On a Linux server instance's Terminal CLI:

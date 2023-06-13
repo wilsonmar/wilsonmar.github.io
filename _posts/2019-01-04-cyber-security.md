@@ -182,7 +182,11 @@ de-perimeterized future in cloud environments.
 
 ## Adobe Common Control Framework
 
-Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its <a target="_blank" href="https://blogs.adobe.com/security/2017/05/open-source-ccf.html">own Common Control Framework</a> which encompasses several security frameworks. Adobe's CCF covers <a href="#iso27002">ISO 27001/27002</a>, SOC, FedRAMP, PCI DSS, GLBA, FERPA, and others. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>. Adobe's control families is most comprehensive:
+Adobe <a target="_blank" href="https://adobe.allegiancetech.com/cgi-bin/qwebcorporate.dll?idx=VM6HD7">open-sourced</a> its own comprehensive <a target="_blank" href="https://www.adobe.com/trust/compliance/adobe-ccf.html">Common Control Framework</a>. 
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1686682411/cybersecurity-adobe-891x359_xoqqis.png"><img alt="" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1686682411/cybersecurity-adobe-891x359_xoqqis.png"></a>
+
+Like the <a target="_blank" href="https://wilsonmar.github.io/caiq">CAIQ</a>, it aggregates questions and answers for several audit requirements: <a href="#iso27002">ISO 27001/27002</a>, SOC, FedRAMP, PCI DSS, GLBA, FERPA, etc. <a target="_blank" href="https://www.adobe.com/security/compliance/ccf-download.html">Download</a> the <a target="_blank" href="https://www.adobe.com/pdf/Open_Source_CCF.pdf">pdf</a>.
 
    1. Asset management
    2. Business Continuity

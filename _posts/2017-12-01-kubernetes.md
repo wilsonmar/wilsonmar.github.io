@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-02"
+date: "2023-06-12"
 file: "kubernetes"
 title: "Kubernetes (K8s)"
 excerpt: "Get certified in how to orchestrate containers, especially in clouds, including OpenShift"
@@ -1131,6 +1131,15 @@ Events:          &LT;none>
 
 
 <hr />
+
+<a name="K8Security"></a>
+
+## Kubernetes Security Hardening
+
+<a target="_blank" href="https://learning.oreilly.com/library/view/hacking-kubernetes/9781492081722/">BOOK</a>: Hacking Kubernetes by Andrew Martin, Michael Hausenblas
+
+<a target="_blank" href="https://learning.oreilly.com/live-events/kubernetes-security/0636920289104/0636920087513/" title="Jun 12, 2023">LIVE</a>: "Attacking and Defending Kubernetes" by Marco De Benedictis
+
 
 <a name="SideroTalos"></a>
 
