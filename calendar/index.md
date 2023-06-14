@@ -14,14 +14,7 @@ image:
 {% include l18n.html %}
 {% include _toc.html %}
 
-# pic white calendar 1900x500-c28.jpg
-#  feature: https://cloud.githubusercontent.com/assets/300046/16904663/5adbca78-4c57-11e6-9fa7-973731b8927a.jpg
-
-## Time Zones
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg"><img alt="calendar-timezones-1648x356.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg"></a>
-
-I use the above (based on <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>) to quickly identify when is 9am-5pm working times around the world, based on<br />
+I use the <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg">graphic at the top of this page</a> (created from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>) to quickly identify when is 9am-5pm working times around the world, based on<br />
 <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
 
 WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
