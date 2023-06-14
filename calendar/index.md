@@ -14,8 +14,7 @@ image:
 {% include l18n.html %}
 {% include _toc.html %}
 
-I use the <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg">graphic at the top of this page</a> (created from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>) to quickly identify when is 9am-5pm working times around the world, based on<br />
-<a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>.
+To quickly identify when is 9am-5pm working times around the world I use the <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1680358479/instant-2206x426_ehe1zl.jpg">graphic at the top of this page</a> (created from <a target="_blank" href="https://docs.google.com/spreadsheets/d/1VXBvh6cGmvjiNlbu1GxfPB75bA0RPr5G/edit?usp=share_link&ouid=115769195423285623664&rtpof=true&sd=true">my Excel sheet</a>, based on <a target="_blank" href="https://www.timeanddate.com/worldclock/meeting.html">timeanddate.com</a>). To toggle display of the list of topics at the upper-right corner, click "OVERVIEW".
 
 WARNING: Adjustment is needed for Summer Time (Daylight Savings) in some countries.
 

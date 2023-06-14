@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-09"
+date: "2023-06-13"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
