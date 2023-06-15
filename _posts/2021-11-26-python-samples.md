@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-05-29"
+date: "2023-06-14"
 file: "python-samples"
 title: "Python Samples"
 excerpt: "My collection of useful ways to use Python securely in a production setting"
@@ -17,6 +17,8 @@ comments: true
 {% include _toc.html %}
 
 {% include whatever.html %}
+
+<a name="Why"></a>
 
 ## Why this?
 
@@ -47,31 +49,27 @@ Code here implements many suggestions in
 
 ## Repo folders and files
 
-Key files within the repo:
+The most important files within the repo:
 
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> - a shell script which sets up the environment with Conda and installs Python packages needed. Common Python installation and configuration issues and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> is the shell script which <strong>sets up the environment</strong> our Python program needs. Common Python installation and configuration issues (of Miniconda) and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs the <tt>python-samples.py</tt> Python program retrieves into variables that provide both configuration values and <a href="#FeatureFlags">"feature flag" variables</a> that control execution. 
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs our Python program retrieves into <a href="#FeatureFlags">variables</a> that control program execution.
 
-   Use of .env enables fine-grained control of what is executed within the program. However, the sequence of execution is hard-coded and thus always the same.
+   Note the sequence of feature execution (at the bottom of the Python code) is hard-coded to be always the same.
 
    Until the program is coded to use a Vault, to keep secrets (such as API keys) from being sent up to a GitHub repo for public exposure, the .env file used by the program is copied away from the GitHub repo -- in the user's $HOME folder, where it's edited/customized. Thus, code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
 
-   Making .env a symlink to ~/.envs/foobar/dev is an added precaution to listing it in .gititgnore. If for whatever reasons the file were to be checked into version control, its contents would just show that it's a link to another file.
+   Making .env a symlink to ~/.envs/foobar/dev is an added precaution to listing it in .gititgnore. If for whatever reason the file were to be put into version control, its contents would show that it's a link to another file.
 
    Hard-coded default values defined in the Python code provide a default value if a value is not defined in the .env file. Boolean-valued flags to allow execution of application features are False by default. If a flow is True, it will be executed by the Python unitest framework.
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.gitignore"><strong>.gitignore</strong></a> defines files and folders which are not to be uploaded back into GitHub.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.gitignore"><strong>.gitignore</strong></a> defines files and folders (such as python-samples.env noted above) and those recreated during each run -- what git does NOT push back into GitHub.
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> is loaded into Microsoft Excel to create file <tt>country_info.csv</tt>.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> and Google Sheet are both generated from and created using file<br /><a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a>, which contain relatively static information about each country in the world, such as currency codes, mobile phone prefix, etc. Such data can be a use case for an in-memory database / caching service. Our Python code sample uses the .csv file to create the <br />database.sqlite file for reference by the sqlite functionality the comes with Python.
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a> is loaded into ...
-
-* database.sqlite that comes with Python.
-
-* Within the <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong> folder</a> are files used by GitHub Actions for automation (Continuous Integration).
+* <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation.
 
 <hr /> 
 
@@ -150,11 +148,15 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
    * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
 
-1. List conda enviornments on your computer:
+1. List conda environments on your computer:
    
    <pre><strong>conda info --envs</strong></pre>
 
    WARNING: Each conda environment contains its own set of Python libraries for a specific version of Python. So each conda enviornment consumes a significant of disk space.
+
+1.  When it's time, update conda:
+
+    <pre><strong>conda update -n base -c defaults conda</strong></pre>
 
 
 <a name="Execution"></a>
@@ -169,9 +171,7 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
 2. To execute the script, instead of:
 
-   <ul><pre><strong>python python-samples.py
-   </strong></pre>
-   </ul>
+   <pre><strong>python python-samples.pyy</strong></pre>
 
    NOTE: This line at the top of python-samples.py 
 
@@ -205,32 +205,6 @@ There are two types of variables defined in the .env file:
    * run_... controls whether a capability is invoked
    * show_... controls whether output is displayed
    <br /><br />
-
-Most use and run flags have a <strong>default of False</strong>, to NOT use/run.
-
-
-### Show flags
-
-Most show flags have a <strong>default of True</strong>, to display output.
-
-The program is coded to display various types of messages.
-
-* show_fatal of FATAL conditions
-* show_error of ERROR conditions
-* show_warning of WARNING conditions
-* show_info of INFO conditions
-* show_verbose of VERBOSE text of data users might be interested in
-* show_trace of TRACE conditions internal to the program for developers
-* show_todo of TODO (by developers)
-<br /><br />
-
-There are additional show flags to control display of 
-
-* show_pgminfo
-etc.
-<br /><br />
-
-> Some programmers prefer to not code shows of values, and instead dynamically set IDE breakpoints to view values. But I prefer to show so that during runs there is a historical record of what has occurred, for troubleshooting.
 
 
 <a name="Sections"></a>
@@ -297,7 +271,9 @@ Initialization:
 
    1. <a href="#Logging">logging</a>
 
-### Input Data specification
+<a name="LevelsofControl"></a>
+
+### Levels of control specification
 
 The program precedence of override:
    1. Prompts of the user from inside the running program (such as for Zip Code) overrides
@@ -309,54 +285,140 @@ The program precedence of override:
    7. what is obtained from the operating system.
    <br /><br />
 
+<a name="RunIt"></a>
 
-### when all features are enabled
+## Run it already
 
-<pre>*** env_path LOCALE 'en_EN' overrides OS LOCALE ('en_US', 'UTF-8')
-&nbsp;
-*** python-samples.py v0.0.33 Created: Saturday 27 Nov 2021 01:23:18 PM   
-*** at /Users/wilsonmar/gmail_acct/python-samples/python-samples.py 
-*** on /Users/wilsonmar/miniconda3/envs/py3k/lib/python3.8/site-packages 
-*** Started Saturday 27 Nov 2021 08:33:41 PM   (epoch=1638070421.006971) 
-*** macOS version=10.16 ['Big Sur', 2020] process ID=10298
-*** Disk space free: 42.0 / 122.1 GB 
-*** Python version="3.8.12 | packaged by conda-forge | (default, Sep 29 2021, 19:44:33) 
-[Clang 11.1.0 ]
-&nbsp; 
-*** env_path=/Users/wilsonmar/python-samples.env
-&nbsp;
-*** Lotto America: 5 lucky numbers between 1 and 52 and 1 Star number between 1 and 10:
-*** 20 6 24 4 38 6 
-&nbsp; 
-*** uuid.uuid4()=3d9a8c08-c354-4712-8e7d-d8dae320a1be 
-*** x.time=509684474424495112 
-*** Path: "/Users/wilsonmar/Projects" 
-*** Directory "Images" created Thursday 25 Nov 2021 09:23:20 PM MST -0700
-&nbsp;
-*** Longitude: -97.822 Latitude: 37.751 in US America/Chicago USD (VPN).
-*** Using hard-coded default zip code "59041".
-*** Longitude: -108.9922 Latitude: 45.4941 in US Joliet 59041 
-*** Minimum temperature: 44.42°F (6.90°C), Sunrise: 2021-11-23 07:26:23 AM 
-*** Currently: 49.57°F (9.76°C), 26% humidity, overcast clouds, visibility: 10000 feet
-*** Maximum temperature: 56.61°F (13.67°C),  Sunset: 2021-11-23 04:38:57 PM 
-*** Wind Speed: 1.97 (Gusts: 4.14) mph from direction: WNW (259/360) 
-*** Atmospheric pressure: 1000 hPa (hectopascals) 
- &nbsp;
-*** Script executing at path: '/Users/wilsonmar/Projects' 
-*** Downloading to directory: '/Users/wilsonmar/Projects/Images' 
-*** Directory "Images" created Thursday 25 Nov 2021 09:23:21 PM MST -0700
-Images/
-    google.ico
-*** Downloading to file path: '/Users/wilsonmar/Projects/Images/google.ico' 
-*** No downloading as file can be accessed.
-*** Download of 5,430-byte google.ico 
-*** After this run: /Users/wilsonmar/Projects/Images 
-Images/
-    google.ico
-&nbsp;
-*** Ended Saturday 27 Nov 2022 08:34:26 PM   (epoch=1638070466.103145) 
-*** python-samples.py done in 0.77 seconds. 
-</pre>
+1.  Set permisssion to make the program runnable:
+
+    <pre><strong>chmod +x python-samples.py</strong></pre>
+
+1.  Run the program
+
+    <pre><strong>./python-samples.py</strong></pre>
+
+    <a name="show_print_samples"></a>
+
+    ### show_print_samples
+
+    If you have <strong>show_print_samples</strong> <a href="#EnablingFeatures">enabled</a>, you should see lines with different colors instead of this:
+
+    <pre>***  <u>show_print_samples</u>
+***  FAIL: sample fail
+***  sample error
+***  sample warning
+***  TODO: sample task to do
+***  sample info
+***  sample verbose
+***  sample trace
+***  SECRET:  1234...............................
+    </pre>
+    
+    I show sample outputs together so you can learn to differentiate the different colors, which are likely to look different on each developer's Terminal window due to customizations.
+
+    There is a flag to control whether each type of message is displayed:
+
+    * <tt><strong>show_heading</strong></tt> is underlined to differentiate output from different functions and sections of code
+    * <tt><strong>show_fatal</strong></tt> to display conditions where the program must abruptly stop
+    * <tt><strong>show_todo</strong></tt> to display to developers caveats and fixes necessary
+    * <tt><strong>show_error</strong></tt> to display data which should be fixed
+    * <tt><strong>show_warning</strong></tt> to display concerns not severe enough to stop processing
+    * <tt><strong>show_info</strong></tt> to display information users would be interested in
+    * <tt><strong>show_verbose</strong></tt> to display more detailed data to users
+    * <tt><strong>show_trace</strong></tt> eminated from within processing functions
+    <br /><br />
+
+    These flags have a <strong>default of True</strong>, to display output.
+
+    PROTIP: Some programmers prefer to not code shows of values, and instead dynamically set IDE breakpoints to view values. But I prefer to show so that during runs there is a historical record of what has occurred, for troubleshooting perhaps months after the run.
+
+    <a name="show_env"></a>
+
+    ### show_env
+    
+    If you have <strong>show_env</strong> <a href="#EnablingFeatures">enabled</a>,
+    you should see metadata about conditions of the run. This is helpful for troubleshooting perhaps months after the run.
+    
+    <pre>***  <u>show during initialization</u>
+***  platform_system=Darwin
+***  my_os_platform=macOS
+***  my_os_version=22.5.0
+***  my_os_process=73426
+***  my_platform_node=Wilsons-MacBook-Pro-2.local
+***  my_os_uname=posix.uname_result(sysname='Darwin', nodename='Wilsons-MacBook-Pro-2.local', release='22.5.0', version='Darwin Kernel Version 22.5.0: Mon Apr 24 20:51:50 PDT 2023; root:xnu-8796.121.2~5/RELEASE_X86_64', machine='x86_64')
+***  pwuid_shell=/bin/zsh
+***  pwuid_gid=20 (process group ID number)
+***  pwuid_uid=501 (process user ID number)
+***  pwuid_name=wilsonmar
+***  pwuid_dir=/Users/wilsonmar
+***  user_home_dir_path=/Users/wilsonmar
+***  this_pgm_name=python-samples.py
+***  this_pgm_last_commit=python-samples.py 0.3.7 gcp_login from gcpinfo.sh
+***  this_pgm_os_path=/Users/wilsonmar/github-wilsonmar/python-samples/python-samples.py
+***  site_packages_path=/Users/wilsonmar/miniconda3/envs/py3k/lib/python3.8/site-packages
+***  this_pgm_last_modified_epoch=1686772574.9863806
+***  this_pgm_last_modified_datetime=2023-06-14 13:56:14.986381 (local time)
+***  python_ver=3.8.12
+***  python_version=3.8.12 | packaged by conda-forge | (default, Sep 29 2021, 19:44:33) [Clang 11.1.0 ]
+***  python_version_info=sys.version_info(major=3, minor=8, micro=12, releaselevel='final', serial=0)
+***  venv at /Users/wilsonmar/miniconda3/envs/py3k
+    </pre>
+
+    <a name="PythonVersion"></a>
+
+    ### Python version in conda venv
+
+    Of special interest is the version of Python.
+
+    The shell script to prepare conditions follow the advice of <a target="_blank" href="https://www.practicaldatascience.org/html/setup_python.html">this well-respected website</a>. I have a more detailed explanation in <a target="_blank" href="https://wilsonmar.github.io/python-install/">my article about installing Python</a>. 
+    
+    So the python-samples.sh script includes this command:
+
+    <pre>conda config --add channels conda-forge
+    conda config --set channel_priority strict
+    </pre>
+
+    PROTIP: We do not have pyenv installed because conda is used to control what versions of Python are installed.
+
+1.  Google's examples state that Python 3.10 is required. So the python-samples.sh script includes this command:
+
+    <pre><strong>conda install python=3.10</strong></pre>
+
+
+    ### A more secure Footprint
+
+    PROTIP: In today's hostile internet, we do not recommend installing <tt>anaconda</tt> because, although convenient, its massive number of libraries would inevitably have one that is malicious. The <tt>Miniconda</tt> installed only contains the bare minimum, leaving it up to you to install additional conda components. 
+    
+    In the shell file, instead of using <tt>pip</tt> or <tt>pip3</tt> we install Python libraries using:
+
+    <pre><strong>conda install numpy</strong></pip>
+
+    ### requirements.txt
+
+    The <tt>requirements.txt</tt> contains a list of specific versions of each Python library referenced by <tt>import</tt> statements within the Python program code.
+
+1.  REMEMBER: When you update the program, create a new requirements.txt</tt> file to specify current versions:
+
+    <pre><strong>conda ???</strong></pre>
+
+    REMEMBER: Add, commit, and push the update along with changed Python code (as a set).
+
+
+    <a name="show_config"></a>
+
+    ### show_config
+
+    If you have <strong>show_config</strong> <a href="#EnablingFeatures">enabled</a>,
+    you should see metadata about settings to <strong>configure</strong> how the run is controlled.
+    
+    <pre>***  <u>show_config</u>:
+***  env_file=python-samples.env
+    </pre>
+
+    PROTIP: The program is coded to ???
+
+
+Most use and run flags have a <strong>default of False</strong>, to NOT use/run.
 
 
 <hr />
@@ -424,6 +486,45 @@ from ..some_package import some_function
    If a malicious module specified is found in the system path, it will be imported into your program.
 
 <a target="_blank" href="https://www.linkedin.com/learning/secure-coding-in-python/developing-securely?autoAdvance=true&autoSkip=false&autoplay=true&resume=true">LinkedIn.com video course by Ronnie Sheer</a>
+
+<hr />
+
+<a href="CommandLine"></a>
+
+## Click Framework (not Argparse)
+
+This program uses the <a target="_blank" href="https://click.palletsprojects.com/en/8.1.x/why/">Click framework</a> (by the prolific <a target="_blank" href="https://lucumr.pocoo.org/about/">Armin Ronacher</a>) to present and process command-line parameters.
+
+This is instead of <tt>argparse</tt> that comes with Python itself.
+
+
+## Deploy ML Model Titanic dataset on GCP
+
+https://learning.oreilly.com/library/view/productionizing-ai-how/9781484288177/
+by Barry Walsh
+
+https://learning.oreilly.com/library/view/productionizing-ai-how/9781484288177/html/527966_1_En_9_Chapter.xhtml
+
+1.	Create a project on GCP https://console.cloud.google.com
+ 
+2.	Create an app using App Engine at the link below: https://console.cloud.google.com/appengine
+ 
+3.	Start GCP cloud shell and connect to the project
+ 
+4.	Clone (in Cloud Shell) the sample model at the GitHub link below:
+
+   https://github.com/opeyemibami/deployment-of-titanic-on-google-cloud
+ 
+5.	Initialize gcloud in the project directory by running gcloud init.
+
+6.	Deploy the app following the steps in the link below:
+
+    https://heartbeat.comet.ml/deploying-machine-learning-models-on-google-cloud-platform-gcp-7b1ff8140144
+
+ 
+7.	Download Postman Desktop version from the link below: www.postman.com/downloads/
+
+
 
 
 ## Date and Time Handling
@@ -1602,12 +1703,29 @@ References:
    * <a target="_blank" href="https://learning.oreilly.com/library/view/python-essentials-for/9781804610060/">Python Essentials for AWS Cloud Developers</a> May 2023 by Serkan Sakinmaz explores APIs for AWS Lambda, EC2, Elastic Beanstalk, and S3. Plus using NoSQL and DynamoDB.
 
 
-
 <hr />
 
 <a name="use_gcp"></a>
 
-## GCP Authentication                                            = use_gcp
+## Using GCP (Google Cloud Platform)                        = use_gcp
+
+Background information about Google's APIs relevant to all programming languages (such as professional certifications) are in my article at<br /><a target="_blank" href="https://wilsonmar.github.io/gcp/">https://wilsonmar.github.io/gcp</a>
+
+Information and advice about Python coding on GCP are presented in this article.
+
+Under the <a target="_blank" href="https://github.com/googleapis/googleapis">googleapis organization on GitHub</a> is <a target="_blank" href="https://github.com/googleapis/google-cloud-python#libraries">https://github.com/googleapis/google-cloud-python#libraries</a> which provides (at time of this writing) 113 stable and preview versions of Python client code to Google's many services APIs to make REST API and gRPC calls.
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=hnqeYOYDRYY">Step-by-step guide Python - Google Cloud Function</a> by ForDevelopers
+   * <a target="_blank" href="https://www.youtube.com/watch?v=FpqV-QeWeCI">Python API intro</a> by Python 360
+
+
+### GCP Login and Authentication
+
+https://readthedocs.org/projects/google-auth/downloads/pdf/latest/
+google-auth-readthedocs-io-en-latest
+
+<a name="GCPEndpoints"></a>
 
 ### Google Cloud Endpoints
 
@@ -2837,13 +2955,12 @@ using https://github.com/alod83/data-science/tree/master/TextAnalysis
 
 ### Access Google Sheets
 
-   <em>
    * https://developers.google.com/sheets/api/quickstart/python
    * https://erikrood.com/Posts/py_gsheets.html
    * https://www.youtube.com/watch?v=cnPlKLEGR7E
    * https://blog.coupler.io/python-to-google-sheets/#Python_script_to_export_Excel_to_Google_Sheets
    * https://www.youtube.com/watch?v=4ssigWmExak
-   </em><br /><br />
+   <br /><br />
 
 
 1. Examine the library: https://github.com/nithinmurali/pygsheets
