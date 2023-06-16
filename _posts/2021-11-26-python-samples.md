@@ -3,7 +3,7 @@ layout: post
 date: "2023-06-14"
 file: "python-samples"
 title: "Python Samples"
-excerpt: "My collection of useful ways to use Python securely in a production setting"
+excerpt: "Useful ways to use Python securely on AWS, Azure, GCP, in a production setting"
 tags: [python, coding]
 image:
 # python-samples-1900x500.jpg
@@ -16,36 +16,94 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-{% include whatever.html %}
-
 <a name="Why"></a>
+
+This article describes my Python programming code at:
+
+   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
+   </ul>
+
+{% include whatever.html %}
 
 ## Why this?
 
-> Concern about malicious libraries and their unsecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
+Inexplicably, many companies make candidates suffer through evaluations of programming skills (using HackerRank, etc.) even though such skills are rarely used in some DevSecOps jobs. So here we are.
 
-But many say that much programming code lacks needed security, performance, internationalization, etc. 
+Concern about malicious libraries and their unsecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
 
 So I wrote this to fill that gap a little.
 
 > I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
 
-But many DevSecOps jobs evaluate programming skill (using HackerRank, etc.) even though such skill never be used in a position. So here we are.
-
-
 ## What's This?
 
-This article describes Python programming code at:
+This program began as a way to organize implementations of various coding tricks:
 
-   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
-   </ul>
+1.  <a href="#gen_fibonacci">gen_fibonacci</a> = Generate Fibonacci with memoization (saving results in a file to improve speed)
+2.  <a href="#make_change">make_change</a> = Make change using "Dynamic Programming"
+3.  <a href="#fill_knapsack">fill_knapsack</a> = Fill knapsack
 
-The program has <a href="#Capabilities">various capabilities</a> I've had need for.
+    I then added -- in one place -- utility features such as:
 
-Code here implements many suggestions in 
-   * <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>
-   * <a target="_blank" href="pep8.org">pep8.org</a>
+1.  <a href="#display_run_stats">display_run_stats</a> = Display run time stats comparing time stamps at the beginning and end of program run
+1.  <a href="#show_env">show_env</a> = Show the program's running environment (OS, Python version, <a href="#get_ipaddr">IP address</a>, etc.
+1.  <a href="#lookup_ipaddr">lookup_ipaddr</a> = Lookup geolocation info from IP Address
+1.  <a href="#lookup_zipinfo">lookup_zipinfo</a> = Obtain Zip Code to retrieve Weather info
+1.  <a href="#show_weather">show_weather</a> = Retrieve Weather info from zip code or lat/long
 
+1.  <a href="#categorize_bmi">categorize_bmi</a> Calculate BMI using metric vs. imperial units of measure based on the user's country. I know that only two countries in the world uses the antiquatd imperial units Americans use. But it's an excuse to show how a csv file (Country codes included in the repo) can be loaded into a SQLite database or in-memory one for lookup.
+
+1. <a href="#gen_hash">gen_hash</a> = Generate Hash from a file & text
+1. <a href="#gen_salt">gen_salt</a> = Generate a random salt
+1. <a href="#gen_jwt">gen_jwt</a> = Generate JWT (JSON Web Token)
+1. <a href="#gen_1_in_100">gen_1_in_100</a> = Generate a random percent of 100
+
+    More Python coding tricks:
+
+1.  <a href="#process_romans">process_romans</a> = Convert between Roman numerals & decimal as an example of the new case structure in Python 3.10
+1.  <a href="#gen_lotto">gen_lotto</a> = Generate Lotto America Numbers
+1.  <a href="#gen_magic_8ball">gen_magic_8ball</a> = Generate Magic 8-ball numbers (to help you make a decision)
+
+    Some things that can be done (perhaps cheaper and faster) on a local machine than in the cloud:
+
+1.  <a href="#gen_sound">gen_sound</a> = Generate text to speech locally to a mp3 sound file
+1.  <a href="#download_imgs">download_imgs</a> = Download img application files
+1.  <a href="#process_img">process_img</a> = Manipulate image (using OpenCV OCR extract)
+1. <a href="#cleanup_img_files">cleanup_img_files</a> = Remove (clean-up) folder/files created
+
+1.  <a href="#send_sms">send_sms</a> = Send SMS text to a mobile phone (via Twillio)
+1.  <a href="#send_slack_msgs">send_slack_msgs</a> = Send messages into Slack
+1.  <a href="#send_email">send_email</a> = Send email (via Gmail)
+1.  <a href="#send_fax">send_fax</a> = Send a fax (via Gmail)
+
+1.  <a href="#Logging">logging</a> = Send logs to a SIEM (Splunk, Datadog, etc.)
+
+1.  <a href="#InfiniteLoop">main_loop_runs_requested=1</a> specifies how many times the program repeats, with a default of one, which means it works like regular programs. Setting it to zero makes the program run infinitely (until cancelled manually).
+1. <tt>main_loop_pause_seconds=0</tt> specifies how long the program sleeps after each iteration. Setting it to 999 would be recognized by the program to stop for a manual prompt after every iteration.
+
+    ### Configuration settings and Secrets
+
+1.  <a href="#use_env">use_env</a> = Retrieve secrets and configuration settings from an .env file
+1.  <a href="#use_vault">use_vault</a> = Store/Retrieve secrets from HashiCorp Vault
+
+    ### Multi-Cloud
+    
+    The thing we're working on now is having one codebase that can do the same thing across major cloud service providers (CSPs) -- AWS, Azure, Google. 
+    
+1.  <a href="use_azure">use_azure</a> = Store/Retrieve secrets from Azure Key Vault
+1.  <a href="use_aws">use_aws</a> = Store/Retrieve secrets from AWS KMS
+1.  <a href="#use_gcp">use_gcp</a> = Store/Retrieve secrets from GCP Secrets Manager
+
+    All that enables the ability to compare how different clouds work:
+
+* Login
+* List resources
+* Save/Retrieve files, folders
+* Pub/Sub events
+* Create/read SQL databases
+ 
+
+<a name="RepoFiles"></a>
 
 ## Repo folders and files
 
@@ -70,6 +128,7 @@ The most important files within the repo:
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> and Google Sheet are both generated from and created using file<br /><a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a>, which contain relatively static information about each country in the world, such as currency codes, mobile phone prefix, etc. Such data can be a use case for an in-memory database / caching service. Our Python code sample uses the .csv file to create the <br />database.sqlite file for reference by the sqlite functionality the comes with Python.
 
 * <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation.
+
 
 <hr /> 
 
@@ -110,6 +169,32 @@ C. Alternately, to work with the whole repo on your laptop:
 
 1. Within your editor, in the left menu, click on <strong>python-samples.py</strong> to open it for edit.
 
+
+<a name="CodeScanning"></a>
+
+## View Code scanning
+
+The code has been scanned by <a target="_blank" href="https://www.pep8.org/">PEP8</a>, <a target="_blank" href="https://bandit.readthedocs.io/en/latest/">Badit</a>, <a target="_blank" href="https://pyup.io/">$99/month PyUp</a>, <a target="_blank" href="https://pypi.org/project/requires.io/">Requires</a>, and others mentioned at https://geekflare.com/find-python-security-vulnerabilities/
+
+Lines such as these requests exemption from some rules:
+
+* [B303:blacklist] Use of insecure MD2, MD4, MD5, or SHA1 hash function.
+
+* [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue. More Info: https://bandit.readthedocs.io/en/latest/plugins/b605_start_process_with_a_shell.html
+   <pre>lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
+   </pre>
+
+* [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes. in gen_1_in_100, gen_lotto, and gen_magic_8ball.
+
+* [B602:subprocess_popen_with_shell_equals_true] subprocess call with shell=True identified,
+
+* [B105:hardcoded_password_string] Possible hardcoded password: 'dev-only-token'
+
+See:
+   * <a target="_blank" href="https://www.linkedin.com/pulse/how-shine-coding-challenges-wilson-mar-/">my article on "How to shine at coding challenges"</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/owasp-testing">my article on code scanning for OWASP</a>
+
+
 ### Virtualenv
 
 A virtual environment enables a specific set of Python dependencies to be installed, so no weird, difficult-to-debug  dependency issues arise.
@@ -139,7 +224,7 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
 1. To check if a virtual environment is active, In CLI, <tt>(venv)</tt> appears. The path of the venv folder should appear:
 
-   <pre>echo ${VIRTUAL_ENV}</pre>
+   <pre>echo "$CONDA_ENV_NAME"</pre>
 
    Within Python:
     check whether the VIRTUAL_ENV environment variable is set to the path of the virtual environment:
@@ -148,16 +233,104 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
    * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
 
-1. List conda environments on your computer:
-   
-   <pre><strong>conda info --envs</strong></pre>
+1.  Create the Conda enviornment:
 
-   WARNING: Each conda environment contains its own set of Python libraries for a specific version of Python. So each conda enviornment consumes a significant of disk space.
+    <pre><strong>conda create -n "$CONDA_ENV_NAME" python=3.10</strong></pre>
+
+    <pre>bzip2              conda-forge/osx-64::bzip2-1.0.8-h0d85af4_4
+  ca-certificates    conda-forge/osx-64::ca-certificates-2023.5.7-h8857fd0_0
+  libffi             conda-forge/osx-64::libffi-3.4.2-h0d85af4_5
+  libsqlite          conda-forge/osx-64::libsqlite-3.42.0-h58db7d2_0
+  libzlib            conda-forge/osx-64::libzlib-1.2.13-h8a1eda9_5
+  ncurses            conda-forge/osx-64::ncurses-6.4-hf0c8a7f_0
+  openssl            conda-forge/osx-64::openssl-3.1.1-h8a1eda9_1
+  pip                conda-forge/noarch::pip-23.1.2-pyhd8ed1ab_0
+  python             conda-forge/osx-64::python-3.10.11-he7542f4_0_cpython
+  readline           conda-forge/osx-64::readline-8.2-h9e318b2_1
+  setuptools         conda-forge/noarch::setuptools-67.7.2-pyhd8ed1ab_0
+  tk                 conda-forge/osx-64::tk-8.6.12-h5dbffcc_0
+  tzdata             conda-forge/noarch::tzdata-2023c-h71feb2d_0
+  wheel              conda-forge/noarch::wheel-0.40.0-pyhd8ed1ab_0
+  xz                 conda-forge/osx-64::xz-5.2.6-h775f41a_0
+    </pre>
+
+1.  Get a list of all that was installed:
+   
+    <pre><strong>pip freeze >requirements.txt</strong></pre>
+
+1.  Activate:
+   
+    <pre><strong>conda activate "$CONDA_ENV_NAME"</strong></pre>
+
+    You should now see "(py310)" under every prompt.
+
+1.  Verify:
+   
+    <pre><strong>python --version</strong></pre>
+
+    You shoul see:
+
+    <pre>Python 3.10.11</pre>
+
+1.  To avoid <a target="_blank" href="https://stackoverflow.com/questions/58219956/how-to-fix-resolvepackagenotfound-error-when-creating-conda-environment">errors</a>:
+
+    <pre><strong>conda config --set restore_free_channel true
+    conda config --set offline false
+    </strong></pre>
+
+1.  List conda environments on your computer:
+   
+    <pre><strong>conda info --envs
+    </strong></pre>
+
+    WARNING: Each conda environment contains its own set of Python libraries for a specific version of Python. So each conda enviornment consumes a significant of disk space.
+
+1.  IMPORTANT: Use <tt>conda</tt> instead of <tt>pip</tt> to install libraries. For example:
+
+    <pre><strong>conda install azure-core</strong></pre>
+
+    <pre>  azure-core         conda-forge/noarch::azure-core-1.27.1-pyhd8ed1ab_0
+  brotli             conda-forge/osx-64::brotli-1.0.9-hb7f2c08_8
+  brotli-bin         conda-forge/osx-64::brotli-bin-1.0.9-hb7f2c08_8
+  certifi            conda-forge/noarch::certifi-2023.5.7-pyhd8ed1ab_0
+  charset-normalizer conda-forge/noarch::charset-normalizer-3.1.0-pyhd8ed1ab_0
+  idna               conda-forge/noarch::idna-3.4-pyhd8ed1ab_0
+  libbrotlicommon    conda-forge/osx-64::libbrotlicommon-1.0.9-hb7f2c08_8
+  libbrotlidec       conda-forge/osx-64::libbrotlidec-1.0.9-hb7f2c08_8
+  libbrotlienc       conda-forge/osx-64::libbrotlienc-1.0.9-hb7f2c08_8
+  pysocks            conda-forge/noarch::pysocks-1.7.1-pyha2e5f31_6
+  requests           conda-forge/noarch::requests-2.31.0-pyhd8ed1ab_0
+  six                conda-forge/noarch::six-1.16.0-pyh6c4a22f_0
+  typing-extensions  conda-forge/noarch::typing-extensions-4.6.3-hd8ed1ab_0
+  typing_extensions  conda-forge/noarch::typing_extensions-4.6.3-pyha770c72_0
+  urllib3            conda-forge/noarch::urllib3-2.0.3-pyhd8ed1ab_0
+    </pre>
+
+    PROTIP: Notice that the library is named "azure-core" (with the dash separator) when inside Python it's <tt>import azure.core</tt> with the dot separator.
+
+1.  If Conda does not find a library it displays:
+    
+    <pre>Solving environment: unsuccessful initial attempt using frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): /
+    </pre>
+
+    So use <tt>pip install</tt> instead.
+
+    <pre>ERROR: Could not find a version that satisfies the requirement base64 (from versions: none)
+ERROR: No matching distribution found for base64
+    </pre>
 
 1.  When it's time, update conda:
 
     <pre><strong>conda update -n base -c defaults conda</strong></pre>
 
+1.  If you within an environment, first deactivate it:
+
+    conda deactivate
+
+1.  To remove an environment named (such as "training"):
+
+    <pre><strong>conda remove --name "$CONDA_ENV_NAME" --all</strong></pre>
 
 <a name="Execution"></a>
 
@@ -227,49 +400,6 @@ Initialization:
    10. <a href="#FeatureDefaults">Default Feature flag settings (in order of code)</a>
    11. <a href="#Localize">Localize/translate text to the specified locale</a>
    12. <a href="#SQLLite">Local machine in-memory SQL database SQLLite</a>
-
-   App utility calculations for hashing, encryption, etc.
-
-   13. <a href="#gen_hash">Generate Hash from a file & text         = gen_hash</a>
-
-   14. Display run conditions: datetime, OS, Python version, etc.
-
-   1. <a href="#get_ipaddr">Retrieve client IP address               = get_ipaddr</a>
-   2. <a href="#lookup_ipaddr">Lookup geolocation info from IP Address  = lookup_ipaddr</a>
-   3. <a href="#lookup_zipinfo">Obtain Zip Code to retrieve Weather info = lookup_zipinfo</a>
-   4. <a href="#show_weather">Retrieve Weather info from zip code or lat/long  = show_weather</a>
-
-   13. <a href="#gen_salt">Generate a random salt                   = gen_salt</a>
-   3. <a href="#gen_1_in_100">Generate a random percent of 100         = gen_1_in_100</a>
-   4. <a href="#process_romans">Convert between Roman numerals & decimal = process_romans</a> (case structure)
-   5. <a href="#gen_jwt">Generate JWT (Json Web Token)            = gen_jwt</a>
-   6. <a href="#gen_lotto">Generate Lotto America Numbers           = gen_lotto</a>
-   7. <a href="#gen_magic_8ball">Generate Magic 8-ball numbers            = gen_magic_8ball</a>
-
-   10. Get in the cloud:
-      1. <a href="use_azure">Retrieve secrets from Azure Key Vault  = use_azure</a>
-      2. <a href="use_aws">Retrieve secrets from AWS KMS         = use_aws</a>
-      3. <a href="#use_gcp">Retrieve secrets from GCP             = use_gcp</a>
-      4. <a href="#use_vault">Retrieve secrets from HashiCorp Vault = use_vault</a>
-
-   11. Applications processing user input with persistance:
-      1. <a href="#categorize_bmi">Calculte BMI using units of measure based on country = categorize_bmi</a>
-      2. <a href="#gen_fibonacci">Generate Fibonacci with memoization      = gen_fibonacci</a>
-      3. <a href="#make_change">Make change using Dynamic Programming     = make_change</a>
-      4. <a href="#fill_knapsack">Fill knapsack     = fill_knapsack</a>
-
-   12. Make use of cloud services:
-      1. Create/Reuse container folder for img app to use
-   
-   19. <a href="#download_imgs">Download img application files           = download_imgs</a>
-   20. <a href="#process_img">Manipulate image (OpenCV OCR extract)    = process_img</a>
-   21. <a href="#send_slack_msgs">Send message to Slack                = send_slack_msgs</a>  (TODO:)
-   22. <a href="#send_email">Send email                                = send_email</a>  (TODO:)
-   
-   98. <a href="#cleanup_img_files">Remove (clean-up) folder/files created   = cleanup_img_files</a>
-   99. <a href="#display_run_stats">Display run time stats at end of program = display_run_stats</a>
-
-   1. <a href="#Logging">logging</a>
 
 <a name="LevelsofControl"></a>
 
@@ -383,6 +513,8 @@ The program precedence of override:
 1.  Google's examples state that Python 3.10 is required. So the python-samples.sh script includes this command:
 
     <pre><strong>conda install python=3.10</strong></pre>
+
+    CAUTION: Conda can take several hours to "solve" environments.
 
 
     ### A more secure Footprint
@@ -1582,9 +1714,38 @@ We then check the active keyring and proceed with adding a password into it. Eac
 ##  14. Retrieve secrets from GitHub Action   = use_github_actions
 
 
+<a name="use_azure"></a>
+
+## use_azure
+
+<a target="_blank" href="https://www.youtube.com/watch?v=4xoJLCFP4_4">VIDEO</a>:
+https://azure.com/sdk rerouts to
+https://azure.microsoft.com/en-us/downloads/
+<a target="_blank" href="https://azure.github.io/azure-sdk/releases/latest/python.html">Get the SDK</a>,
+<a target="_blank" href="https://aka.ms/azsdk/python/docs">https://aka.ms/azsdk/python/docs for  Documentation</a>, and<br />
+<a target="_blank" href="https://github.com/azure/azure-sdk-for-python/">https://github.com/azure/azure-sdk-for-python</a> which references<br />
+<a target="_blank" href="https://learn.microsoft.com/en-us/azure/developer/python/">https://learn.microsoft.com/en-us/azure/developer/python</a>
+
+https://github.com/Azure/azure-functions-python-library
+Triggers / Bindings : HTTP, Blob, Queue, Timer, Cosmos DB, Event Grid, Event Hubs and Service Bus
+
+* Python Worker	Programming Model, Triggers & Bindings
+* Linux	Base Docker Images
+* Runtime	Script Host & Language Extensibility
+* VSCode	VSCode Extension for Azure Functions
+* Core Tools	Command Line Interface for Local Development
+* Portal	User Interface or Experience Issue
+* Templates	Code Issues with Creation Template
+
+https://github.com/Azure/azure-functions-python-library/tree/dev/azure/functions
+
+
+
 <a name="AzureKeyVault"></a>
 
-##  14. Retrieve secrets from Azure Key Vault  = use_azure
+###  Retrieve secrets from Azure Key Vault 
+
+https://journeyofthegeek.com/2020/06/30/azure-key-vault-certificates-and-pythons-oh-my/
 
 https://docs.microsoft.com/en-us/python/api/overview/azure/identity-readme?view=azure-python
 
