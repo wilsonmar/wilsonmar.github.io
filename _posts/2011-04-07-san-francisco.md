@@ -44,6 +44,8 @@ BTW The above version skips past starting lyrics in earlier versions which conta
 
 ## PROTIP: Before you go
 
+1.  Print off a few dozen cards containing lyrics to the <a href="#LeftMyHeart">song above</a> so you can pass them out for a sing along while you're together in a Cable Car.
+
 1.  Two airports are both around 45 minutes from downtown San Francisco:
 
     * SFO from the south
@@ -52,19 +54,20 @@ BTW The above version skips past starting lyrics in earlier versions which conta
 
     Don't fly into San Jose airport. You'll have a long and slow ride to San Francisco.
 
-1.  Print off a few dozen cards containing lyrics to the <a href="#LeftMyHeart">song above</a> so you can pass them out for a sing-along while you're in a Cable Car.
-
 1.  <a target="_blank" href="https://www.clippercard.com/ClipperWeb/pay-with-phone">Load a Clipper card</a> into your phone's wallet (for $20) so you can just wave your phone to enter and exit. It's also good on Muni buses and streetcars (one of which is named "Desire").
 
-1.   Install the <a target="_blank" href="https://www.sfmta.com/getting-around/muni/fares/munimobile">Muni app</a> to get their one-day pass, which includes cable cars.
+1.  Install the <a target="_blank" href="https://www.sfmta.com/getting-around/muni/fares/munimobile">Muni app</a> to get their one-day pass, which includes cable cars.
    
-1.   On Google Maps, load a map so you can access it offline.
+1.  On Google Maps, load a map so you can access it offline.
 
-1.   Download the <a target="_blank" href="https://www.sfmta.com/maps/powellhyde-cable-car-pdf-map">PDF map</a> of cable car routes.
+1.  Download the <a target="_blank" href="https://www.sfmta.com/maps/powellhyde-cable-car-pdf-map">PDF map</a> of cable car routes.
 
-1.   Watch tourist vlogs about the city.
+1.  Watch tourist vlogs about the city.
 
-1.   Watch movies and TV shows filmed in the city. It's a thrill to recognize locations.
+    * <a target="_blank" href="https://www.youtube.com/watch?v=pWFYEvhl0rg">8K VR/360 tour with commentary</a> for your VR glasses. One of <a target="_blank" href="https://www.youtube.com/@OrbitianMedia">many cities</a>.
+    <br /><br />
+
+1.  Watch movies and TV shows filmed in the city. It's a thrill to recognize locations.
 
 
 <a name="FilmLocations"></a>
@@ -111,15 +114,16 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
 
 <hr />
 
-## Google Maps
+## My Google Tour Map
 
 I actually wrote this page while I tried to A <a target="_blank" href="https://support.google.com/maps/answer/144339?hl=en&co=GENIE.Platform%3DDesktop">figure out</a> how you can use <a target="_blank" href="https://www.google.com/maps/d/edit?mid=1tnHzLbNZhH6g87lR5odSs2un4Zpi63Q&usp=sharing">my Google Route titled "San Francisco highlights"<br />
-<img alt="san-francisco-tour-1862x1270.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687015655/san-francisco-tour-1862x1270_iw6poz.png"></a>
+<img alt="san-francisco-tour-1862x1270.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687015655/san-francisco-tour-1862x1270_iw6poz.png"><br />
+Click here to save it to your mobile phone!</a>
 
 <a target="_blank" href="https://earth.google.com/web/@37.79750162,-122.40825038,26.86756628a,5098.90184797d,30y,0h,0t,0r/data=MigKJgokCiAxdG5IekxiTlpoSDZnODdsUjVvZFNzMnVuNFpwaTYzUSAC">View it on Google (satellite) Maps</a>
 
 
-## My tour route
+## My geeky food tour route
 
 1.  At SFO or OAK airport, walk to the BART station to take the BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station.
 
@@ -127,11 +131,15 @@ I actually wrote this page while I tried to A <a target="_blank" href="https://s
 
 1.  If you have the time, visit the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign to visit unique shops and eats (including dog treats and caviar).
 
-1.  Take a Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to see and hear the resident <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">sea lions</a> say "mine mine".
+1.  The Exploratorium (science museum) is not just for kids.
+
+1.  Take a Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to <a target="_blank" href="https://www.pier39.com/sealions/" title="webcam">see</a> and hear the <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">icon resident sea lions</a> <a target="_blank" href="https://www.sftravel.com/article/everything-you-need-know-about-san-franciscos-sea-lions">(not seals)</a> say "mine mine".
 
 1.  Order an Uber/Lyft or hire a tricycle to <a target="_blank" href="https://boudinbakery.com/location/boudin-bakery-bakers-hall/">Boudine's</a> (8am-9pm) for <a target="_blank" href="https://order.boudinbakery.com/menu/boudin-bakery-pier-39/products/34947045">New England-Style clam chowder in a sourdough bread bowl. Order online and add bacon</a>.
 
-1.  Walk Westward along the marina. You can get a $35 windbreaker with "San Francisco" on it.
+1.  <a target="_blank" href="https://museemecanique.com/">Musée Mécanique</a> has old-school mechanical coin-operated games and oddities. Free to enter!
+
+1.  Walk Westward along the marina, where every time I buy a $35 windbreaker with "San Francisco" on it.
 
 1.  In Ghirardelli Square is the modern <a target="_blank" href="https://goo.gl/maps/zdJfguTamhiMvSoPA">Palette Tea House</a>, which serves Chinese dim sum with bay views.
 
@@ -171,4 +179,4 @@ Here are other sights:
 
     * Adobe
     * Salesforce
-
+    * etc.
