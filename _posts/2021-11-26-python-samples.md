@@ -37,7 +37,7 @@ So I wrote this to fill that gap a little.
 
 ## What's This?
 
-This program began as a way to organize implementations of various coding tricks:
+&nbsp; &nbsp; &nbsp; &nbsp; This program began as a way to organize implementations of various coding tricks:
 
 1.  <a href="#gen_fibonacci">gen_fibonacci</a> = Generate Fibonacci with memoization (saving results in a file to improve speed)
 2.  <a href="#make_change">make_change</a> = Make change using "Dynamic Programming"
@@ -78,8 +78,11 @@ This program began as a way to organize implementations of various coding tricks
 
 1.  <a href="#Logging">logging</a> = Send logs to a SIEM (Splunk, Datadog, etc.)
 
+1.  The program can be initiated with different arguments.
+
 1.  <a href="#InfiniteLoop">main_loop_runs_requested=1</a> specifies how many times the program repeats, with a default of one, which means it works like regular programs. Setting it to zero makes the program run infinitely (until cancelled manually).
 1. <tt>main_loop_pause_seconds=0</tt> specifies how long the program sleeps after each iteration. Setting it to 999 would be recognized by the program to stop for a manual prompt after every iteration.
+
 
     ### Configuration settings and Secrets
 
@@ -314,7 +317,7 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 Collecting package metadata (repodata.json): /
     </pre>
 
-    So use <tt>pip install</tt> instead.
+    So use <tt>pip3 install</tt> instead.
 
     <pre>ERROR: Could not find a version that satisfies the requirement base64 (from versions: none)
 ERROR: No matching distribution found for base64
@@ -326,11 +329,42 @@ ERROR: No matching distribution found for base64
 
 1.  If you within an environment, first deactivate it:
 
-    conda deactivate
+    <pre><strong>conda deactivate</strong></pre>
 
 1.  To remove an environment named (such as "training"):
 
     <pre><strong>conda remove --name "$CONDA_ENV_NAME" --all</strong></pre>
+
+1.  Verify:
+
+    See https://github.com/Azure/azure-functions-python-library
+    
+    <pre>> az --version
+    azure-cli                         2.49.0
+    &nbsp;
+    core                              2.49.0
+    telemetry                          1.0.8
+    &nbsp;
+    Extensions:
+    azure-devops                      0.18.0
+    azure-iot                        0.10.14
+    timeseriesinsights                 0.2.1
+    &nbsp;
+    Dependencies:
+    msal                              1.20.0
+    azure-mgmt-resource               22.0.0
+    &nbsp;
+    Python location '/usr/local/Cellar/azure-cli/2.49.0/libexec/bin/python'
+    Extensions directory '/Users/johndoe/.azure/cliextensions'
+    &nbsp;
+    Python (Darwin) 3.10.11 (main, Apr  7 2023, 07:31:31) [Clang 14.0.0 (clang-1400.0.29.202)]
+    &nbsp;
+    Legal docs and information: aka.ms/AzureCliLegal
+    &nbsp;
+    Your CLI is up-to-date.
+    </pre>
+
+<hr />
 
 <a name="Execution"></a>
 
@@ -2948,19 +2982,15 @@ My <a target="_blank" href="https://github.com/elmoallistair/google-it-automatio
    * <a target="_blank" href="https://github.com/google/it-cert-automation-practice/blob/main/Course5/Lab3/hello_cloud.py">hello-cloud.py</a> "A simple Hello World type app which can serve on port 8000."
    <br /><br />
 
-6. <a target="_blank" href="https://www.coursera.org/learn/automating-real-world-tasks-python?specialization=google-it-automation">"Automating Real-World Tasks with Python"</a> by SRE Matt Gaunt - how to extend the capabilities of your python code by using some modules and libraries such as python image library (PIL) to work with images and also learn how to communicate with the world outside of your network such as using APIs and more.
-
-   1. Use the Pillow <a target="_blank" href="https://pillow.readthedocs.io/en/stable/handbook/tutorial.html">Python Imaging Library</a> (import PIL) to do the following to a batch of images: Open an image, Rotate an image, Resize an image, Save an image in a specific format in a separate directory.
-   2. Python Requests two programs to communicate with each other. Data serialization to a Comma-Separated Value (CSV) or JSON (JavaScript Object Notation) file.
-   <br /><br />
-
-   * https://github.com/wilsonmar/systematic -  a collection of OS level and programming tools for python, mainly just packing stuff I use all the time to one place.
 
 
 
 <hr />
 
-## References
+## Strings interned?
+
+<a target="_blank" href="https://www.securecoding.com/blog/python-security-practices-you-should-maintain/">
+This provides an example of secure string handling</a>
 
 Decrypting and encrypting strings in Python doesn't work because strings and Integers are <strong>interned</strong> and thus persistent.
 
@@ -2981,6 +3011,7 @@ To be safe, to dynamically resize a data structure, create a new one, copy data,
 </pre>
 
 For immutable data, <a target="_blank" href="https://stackoverflow.com/questions/982682/mark-data-as-sensitive-in-python/983525#983525">mark data as sensitive</a> using the memset C function within a C module.
+
 <a target="_blank" href="https://stackoverflow.com/questions/728164/securely-erasing-password-in-memory-python">This</a> is highly dependent on internal interpreter details such as: id having the same value as the object pointer, the offset of string data from the object pointer, etc. Incredibly brittle; do not recommend. On Linux:
 
 <pre>import sys 
@@ -2992,9 +3023,6 @@ def nuke(var_to_nuke):
     ctypes.memset(id(var_to_nuke) + offset, 0, strlen)
     del var_to_nuke               # derefrencing the pointer.
 </pre>
-
-<a target="_blank" href="https://www.securecoding.com/blog/python-security-practices-you-should-maintain/">
-This provides an example of secure string handling</a>
 
 http://web.archive.org/web/20100929111257/http://www.codexon.com/posts/clearing-passwords-in-memory-with-python
 
@@ -3017,22 +3045,51 @@ https://python-course.eu/applications-python/levenshtein-distance.php
 
 https://machinelearningmastery.com/profiling-python-code/
 
-## Knonwn-bad sample Python code
+
+
+<hr />
+
+<a name="Bandit"></a>
+
+## Bandit vulnerability checker
+
+Bandit transforms code into an abstract syntax tree (AST) to analyze vulnerabilities
+https://snyk.io/learn/security-vulnerability-exploits-threats/
+
+Bandit error message flag "201:flask_debug_true" notes that 
+running with <tt>debug=True</tt> exposes the Werkzeug debugger, which can execute arbitrary code.
+
+PROTIP: On production servers, set <tt>__debug__ == False</tt> to disable assert statements.
+
+Resources:
+   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
+   * https://bandit.readthedocs.io/en/latest/plugins/index.html
+   <br /><br />
+
+### Knonwn-bad sample Python code
 
 https://github.com/Contrast-Security-OSS/vulnpy
 is a library of purposely-vulnerable Python functions to install as extensions in a framework (Flask, Django, Pyramid, Falcon, WSGI, Bottle, FastAPI).
 These serve as a foundation for creating insecure web applications, to be used for security testing and demonstration of vulnerability scanners.
 
-## Parallel
+
+## Parallel programming
 
 <a target="_blank" href="https://www.dask.org/">dask.org</a> Futures
 is used to scale Python libraries that you know and love (NumPy, pandas, and scikit-learn).
 Dask is used throughout the PyData ecosystem for parallel processing.
 It is included in many libraries today like Xarray, Prefect, RAPIDS, and XGBoost.
 
-
 Adam Breindel held on OReilly <a target="_blank" href="https://learning.oreilly.com/live-events/scale-your-python-processing-with-dask/0636920310099/0636920080246/">"Scale your Python processing with Dask"</a> Oct. 28, 2022. Dask array; Dask Bag.
 
+## AzureML
+
+<pre>az ml run submit-script test.py \
+   --target compute-instance-test \
+   --experiment-name test_example \
+   --resource-group ex-test-rg \
+   --workspace-name test-ws
+</pre>
 
 <hr />
 
@@ -3164,27 +3221,21 @@ wks.set_dataframe(df,(1,1))
 https://developer.ibm.com/tutorials/document-scanner/
 
 
-<a name="Bandit"></a>
-
-## Bandit vulnerability checker
-
-Bandit transforms code into an abstract syntax tree (AST) to analyze vulnerabilities
-https://snyk.io/learn/security-vulnerability-exploits-threats/
-
-Bandit error message flag "201:flask_debug_true" notes that 
-running with <tt>debug=True</tt> exposes the Werkzeug debugger, which can execute arbitrary code.
-
-PROTIP: On production servers, set <tt>__debug__ == False</tt> to disable assert statements.
-
-Resources:
-   * https://soshace.com/how-to-secure-python-web-app-using-bandit/
-   * https://bandit.readthedocs.io/en/latest/plugins/index.html
-   <br /><br />
 
 ## Image manipulation
 
 https://googlecoursera.qwiklabs.com/focuses/28467918?parent=lti_session
-is a tutorial about using Pillow library
+tutorial about using Pillow library</a>
+
+<a target="_blank" href="https://www.coursera.org/learn/automating-real-world-tasks-python?specialization=google-it-automation">"Automating Real-World Tasks with Python"</a> by SRE Matt Gaunt - how to extend the capabilities of your python code by using some modules and libraries such as Python image library (PIL) to work with images and also learn how to communicate with the world outside of your network such as using APIs and more.
+
+   1. Use the Pillow <a target="_blank" href="https://pillow.readthedocs.io/en/stable/handbook/tutorial.html">Python Imaging Library</a> (import PIL) to do the following to a batch of images: Open an image, Rotate an image, Resize an image, Save an image in a specific format in a separate directory.
+   2. Python Requests two programs to communicate with each other. Data serialization to a Comma-Separated Value (CSV) or JSON (JavaScript Object Notation) file.
+   <br /><br />
+
+   * https://github.com/wilsonmar/systematic -  a collection of OS level and programming tools for python, mainly just packing stuff I use all the time to one place.
+
+zzzz
 
 <hr />
 
