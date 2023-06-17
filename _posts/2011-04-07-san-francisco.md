@@ -22,20 +22,21 @@ First of all, have some respect. Say "San Franciso", not "frisco" if you don't w
 
 Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-filmed-in-san-francisco.html">50+ movies and TV shows</a> <a target="_blank" href="https://www.sftravel.com/article/san-francisco-screen-where-famous-films-and-tv-shows-were-shot-around-city">filmed in San Francisco</a>:
 
-* The Maltese Falcon (1941)</a> with Humphrey Bogart
-* <a target="_blank" href="https://www.imdb.com/title/tt0052357/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_Vertigo">Vertigo 1958</a> with James Stewart
-* <a target="_blank" href="https://www.imdb.com/title/tt0062765/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_Bullitt">Bullitt 1968</a> with the car chase
+* The Maltese Falcon (1941) with Humphrey Bogart
+* <a target="_blank" href="https://www.justwatch.com/us/movie/vertigo">Vertigo (1958)</a> with James Stewart
+* <a target="_blank" href="https://www.justwatch.com/us/movie/bullitt">Bullitt (1968)</a> with the car chase
 * Dirty Harry 1971 with Clint Eastwood
 * What's Up, Doc? (1972)
 * High Anxiety (1977) with Mel Brooks
 * Invasion of the Body Snatchers (1978)
 * Escape from Alcatraz (1979) with Sean Connery
 * Sudden Impact (1983) with Clint Eastwood
-* The Presidio
+* The Woman in Red (1984) with Gene Wilder
 * A View to a Kill (1985) James Bond
 * Big Trouble in Little China (1986)
 * Star Trek IV: The Voyage Home (1986)
 * The Dead Pool (1988)
+* <a target="_blank" href="https://www.justwatch.com/us/movie/the-presidio">The Presidio (1988)</a> with Sean Connery
 * Pacific Heights (1990)
 * Basic Instinct (1992)
 * Bicentennial Man (1992) with Robin Williams
@@ -44,16 +45,15 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
 * The Rock (1996)
 * The Game (1997) with Michael Douglas
 * Full House TV (Alamo Square)
-* The Woman in Red (1984) with Gene Wilder
 * Mrs. Doubtfire (1993) with Robin Williams in Pacific Heights 2640 Steiner Street
-* <a target="_blank" href="https://www.imdb.com/title/tt0312172/?ref_=nv_sr_srsg_0_tt_3_nm_5_q_Monk">Monk TV (2002-2009)</a>
-* <a target="_blank" href="https://www.imdb.com/title/tt0368226/?ref_=fn_al_tt_1">The Room (2003)</a>
-* <a target="_blank" href="https://www.imdb.com/title/tt1188996/?ref_=fn_al_tt_1">My Name Is Khan (2010)</a> with SRK
-* Contagion (2011)
-* <a target="_blank" href="https://movie-locations.com/movies/m/Mission-Impossible-Ghost-Protocol.php">Mission Impossible: Ghost Protocol (2011)</a> <a target="_blank" href="https://www.paramountplus.com/movies/video/xKyXExegLnRwJ8mXEyYy_dc9X9m4DVZC/">Streamin on Paramount+</a>
-* <a target="_blank" href="https://www.imdb.com/title/tt2334873/?ref_=fn_al_tt_1">Blue Jasmine (2013)</a> with Kate Blanchett, Alec Baldwin
-* Ant-Man (2015), Ant-Man and the Wasp (2018), & Ant-Man and the Wasp: Quantumania (2023)
+* <a target="_blank" href="https://www.justwatch.com/us/tv-show/monk">Monk TV (2002-2009)</a>
+* <a target="_blank" href="https://www.justwatch.com/us/movie/the-room-2003">The Room (2003)</a>
 * Milk (2008)
+* <a target="_blank" href="https://www.justwatch.com/us/movie/khan">My Name Is Khan (2010)</a> with SRK
+* <a target="_blank" href="https://www.justwatch.com/us/movie/contagion">Contagion (2011)</a>
+* <a target="_blank" href="https://movie-locations.com/movies/m/Mission-Impossible-Ghost-Protocol.php">Mission Impossible: Ghost Protocol (2011)</a> <a target="_blank" href="https://www.paramountplus.com/movies/video/xKyXExegLnRwJ8mXEyYy_dc9X9m4DVZC/">Streamin on Paramount+</a>
+* <a target="_blank" href="https://www.justwatch.com/us/movie/blue-jasmine">Blue Jasmine (2013)</a> with Kate Blanchett, Alec Baldwin
+* Ant-Man (2015), Ant-Man and the Wasp (2018), & Ant-Man and the Wasp: Quantumania (2023)
 * Always Be My Maybe (2019)
 * Matrix Resurrections (2021)
 <br /><br />
@@ -116,8 +116,6 @@ The above version skips past starting lyrics in earlier versions which contain l
 
     This route has a view of the Golden Gate Bridge behind you. PROTIP: I print off a stack of little cards with <a href="#LeftMyHeart">lyrics to a famous song</a> for people on the cable car to sing.
 
-    The ride ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a> where you can take the BART back to the airport.
-
 1.  Get off to walk through Chinatown for souvenirs and Chinese dim sum.
 
     <a target="_blank" href="https://www.youtube.com/watch?v=dkjC2qQLfjY&t=19s">VIDEO</a>: Golden Gate Fortune Cookie Factory. Free tote bag with a purchase?
@@ -136,5 +134,7 @@ The above version skips past starting lyrics in earlier versions which contain l
 
     The Hilton has a Skybar with great views of the city.
 
-1.  At the Powell Station, if you want to first get some eats from a choice of premium vendors, walk across Market Street into the Westfield mall basement.
+1.  The Cable Car route ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a> where you can take the BART back to the airport.
+
+1.  At the Powell Station, if you want to first get some eats from a choice of premium vendors, walk across Market Street into the Westfield mall's basement.
 
