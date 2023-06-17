@@ -3,7 +3,7 @@ layout: post
 date: "2023-06-15"
 file: "san-francisco"
 title: "San Francisco"
-excerpt: "How you can eat your way through top spots in the City by the Bay, in one day"
+excerpt: "How you can eat your way through top experiences in the City by the Bay, in one day"
 tags: [travel]
 image:
 # feature: Xcode-1900x500-37236
@@ -58,27 +58,55 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
 * Matrix Resurrections (2021)
 <br /><br />
 
+<hr />
+
+<a name="LeftMyHeart"></a>
+
+## I Left My Heart in San Francisco
+
+Before I go, I print off a few cards containing lyrics to this song:
+
+<a target="_blank" href="https://www.youtube.com/watch?v=r6DUwMnDxEs">
+On YouTube: Tony Bennet</a> 
+
+<pre>I left my heart in San Francisco.
+High on a hill, it calls to me.
+To be where little cable cars
+climb halfway to the stars!
+And the morning fog will chill the air.
+I don't care.
+My love waits there in San Francisco,
+Above the blue and windy sea....
+When I come home to you, San Francisco,
+Your golden sun will shine for me!
+</pre>
+
+The above version skips past starting lyrics in earlier versions which contain lines about other cities and containing the word "gay" which had a different meaning when Tony Bennett sang it in 1964.
+
+<hr />
+
 ## My one-day tour
 
 1.  Two airports are both around 45 minutes from downtown San Francisco:
     * SFO from the south
     * OAK (Oakland) from the East Bay
     <br /><br />
+
     You'll have a long and slow ride from the San Jose airport.
 
 1.  At SFO or OAK airport, walk to the BART station to take the BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station.
 
-    PROTIP: Ahead of time, buy a Clipper card into your phone's wallet (for $20) so you can just wave your phone to enter and exit. It's also good on Muni buses and streetcars (one of which is named "Desire").
+    PROTIP: Ahead of time, <a target="_blank" href="https://www.clippercard.com/ClipperWeb/pay-with-phone">buy a Clipper card</a> into your phone's wallet (for $20) so you can just wave your phone to enter and exit. It's also good on Muni buses and streetcars (one of which is named "Desire").
 
 1.  Walk 4 blocks North or take a Muni street car along The Embarcadero toward Fisherman's Wharf.
 
-    PROTIP: Ahead of time, install the Muni app to get their one-day pass which includes cable cars.
+    PROTIP: Ahead of time, install the <a target="_blank" href="https://www.sfmta.com/getting-around/muni/fares/munimobile">Muni app</a> to get their one-day pass, which includes cable cars.
    
 1.  If you have the time, visit the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign to visit unique shops and eats (including dog treats and caviar).
 
 1.  Take a Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to see and hear the resident <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">sea lions</a> say "mine mine".
 
-1.  Hail a taxi or tricycle to Bodine's for clam chowder in a sourdough bread bowl.
+1.  Hail a taxi or tricycle to <a target="_blank" href="https://boudinbakery.com/location/boudin-bakery-bakers-hall/">Boudine's</a> (8am-9pm) for <a target="_blank" href="https://order.boudinbakery.com/menu/boudin-bakery-pier-39/products/34947045">New England-Style clam chowder in a sourdough bread bowl. Order online and add bacon</a>.
 
 1.  Walk Westward along the marina. You can get a $35 windbreaker with "San Francisco" on it.
 
@@ -109,27 +137,4 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
     The Hilton has a Skybar with great views of the city.
 
 1.  At the Powell Station, if you want to first get some eats from a choice of premium vendors, walk across Market Street into the Westfield mall basement.
-
-<hr />
-
-<a name="LeftMyHeart"></a>
-
-## I Left My Heart in San Francisco
-
-<a target="_blank" href="https://www.youtube.com/watch?v=r6DUwMnDxEs">
-On YouTube: Tony Bennet</a> 
-
-<pre>I left my heart in San Francisco.
-High on a hill, it calls to me.
-To be where little cable cars
-climb halfway to the stars!
-And the morning fog will chill the air.
-I don't care.
-My love waits there in San Francisco,
-Above the blue and windy sea....
-When I come home to you, San Francisco,
-Your golden sun will shine for me!
-</pre>
-
-The above version skips past starting lyrics in earlier versions which contain lines about other cities and containing the word "gay" which had a different meaning when Tony Bennett sang it in 1964.
 
