@@ -3,7 +3,7 @@ layout: post
 date: "2023-06-15"
 file: "san-francisco"
 title: "San Francisco"
-excerpt: "Eat and geek your way through walking in the City by the Bay, all in one day"
+excerpt: "Eat and geek your way through walking and riding historic trains in the City by the Bay, all in one day"
 tags: [travel]
 image:
 # feature: Xcode-1900x500-37236
@@ -85,6 +85,7 @@ BTW The above video skips past starting lyrics in earlier versions which contain
 
 Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-filmed-in-san-francisco.html">50+ movies and TV shows</a> <a target="_blank" href="https://www.sftravel.com/article/san-francisco-screen-where-famous-films-and-tv-shows-were-shot-around-city">filmed in San Francisco</a>:
 
+* <a target="_blank" href="https://www.justwatch.com/us/movie/frisco-kid">Frisco Kid (1935)</a> with James Cagney
 * The Maltese Falcon (1941) with Humphrey Bogart
 * <a target="_blank" href="https://www.justwatch.com/us/movie/vertigo">Vertigo (1958)</a> with James Stewart
 * <a target="_blank" href="https://www.justwatch.com/us/movie/bullitt">Bullitt (1968)</a> with the car chase
@@ -176,7 +177,8 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" width="200"  alt="san-francisco-sundial-403x448.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE."
 
-1.  Walk back up (West) on Chestnut Street to get back on the Cable Car (or get an Uber) to get off Washington Street if you want to talk with retired Cable Car operators where they hang out, in the <a target="_blank" href="https://goo.gl/maps/CS5f9ktm1k5jjzSp6">Cable Car Museum</a>.
+1.  Walk back up (West) on Chestnut Street to get back on the Cable Car.
+1.  Hop off at Washington Street to talk with retired Cable Car operators where they hang out, in the <a target="_blank" href="https://goo.gl/maps/CS5f9ktm1k5jjzSp6">Cable Car Museum</a>.
 
 1.  Walk 5 minutes (0.3 miles) (or get a Uber/Lyft past not much) East on Washington Street to get a drink (to go) at the <a target="_blank" href="https://goo.gl/maps/G5b654wY44LhaeuL8">Yifang Taiwan Fruit Tea</a>.
 
@@ -186,7 +188,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
     Walk East on Jackson to compare pastries at the <a target="_blank" href="https://goo.gl/maps/N1BsPF46dNNXzPga8">Goog Mong Kok Bakery</a>.
 
-1.  Walk down Stockton Street to take a selfie at the <a target="_blank" href="https://goo.gl/maps/oq4myqC6e69UqoL79">Chinatown arch</a>. West of it is the <a target="_blank" href="https://goo.gl/maps/h4fiGMq8upQvxqCp7">lowest-priced Marriott hotel</a> a block North from the edge of the <a target="_blank" href="https://goo.gl/maps/AkSaUtT4FXhRDnsk7">Tenderloin district</a> (of mental illness, drugs, crime, homelessness on sidewalks). <a target="_blank" href="https://www.youtube.com/watch?v=j-8nhA-j2yo">VIDEO</a>
+1.  Walk down Stockton Street to take a selfie under the <a target="_blank" href="https://goo.gl/maps/oq4myqC6e69UqoL79">Chinatown arch</a>. West of it is the <a target="_blank" href="https://goo.gl/maps/h4fiGMq8upQvxqCp7">lowest-priced Marriott hotel</a> a block North from the edge of the <a target="_blank" href="https://goo.gl/maps/AkSaUtT4FXhRDnsk7">Tenderloin district</a> (of mental illness, drugs, crime, homelessness on sidewalks). <a target="_blank" href="https://www.youtube.com/watch?v=j-8nhA-j2yo">VIDEO</a>
 
 1.  Walk a half-block North on Stockton Street to get on the lightrail train going underground South at the <a target="_blank" href="https://goo.gl/maps/Wn6bhWhFKnduPwow8">Chinatown Rose Pak Station</a>.
 
