@@ -114,27 +114,31 @@ Specific metrics to measure:
 <a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw" title="by Mitigant">VIDEO</a>
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="top"><th> Factor </th><th> Red/Blue/Purple Team </th><th> Security
+<tr valign="top" align="left"><th> Factor </th><th> Red/Blue/Purple Team </th><th> Chaos Engineering
    </th></tr>
-<tr valign="top"><td> By: </td><td> external consultants 
+<tr valign="top"><td> By: </td><td> external contractors 
    </td><td> in-house staff </td></tr>
-<tr valign="top"><td> Technical Scope: </td><td> external interfaces
-   </td><td> internal and external </td></tr>
+<tr valign="top"><td> Interfaces: Scope: </td><td> external-facing
+   </td><td> internal and external facing </td></tr>
 <tr valign="top"><td> Frequency: </td><td> periodically (annually)
    </td><td> continuously </td></tr>
-<tr valign="top"><td> Goals: </td><td> identify issues
-   </td><td> iterative improvement </td></tr>
 <tr valign="top"><td> Tools: </td><td> manual
-   </td><td> automated  </td></tr>
+   </td><td> automated (in CI/CD, perf test) </td></tr>
+<tr valign="top"><td> Goals: </td><td> judgement
+   </td><td> iterative improvement of <strong>resilence</strong> </td></tr>
 <tr valign="top"><td> Expected Outcome: </td><td> confirmation of posture
-   </td><td> high definition insights about processes </td></tr>
+   </td><td> high definition insights about <strong>processes</strong> </td></tr>
 <tr valign="top"><td> Objective: </td><td> not for learning
-   </td><td> create learning opportunities </td></tr>
-<tr valign="top"><td> Involvement: </td><td> Security &amp; Ops
+   </td><td> create <strong>learning</strong> opportunities </td></tr>
+<tr valign="top"><td> Beneficiaries: </td><td> Security &amp; Ops
    </td><td> company-wide Incident Management </td></tr>
 <tr valign="top"><td> - </td><td> NOT cloud native
    </td><td> cloud native </td></tr>
 </table>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=mfEMXKSFtaQ" title="with John Engel-Kemnetz">Azure enablement show: "Under Chaos Engineering"</a> 
+* Chaos Engineering https://aka.ms/azenable/79/01
+* Understanding Chaos Engineering and Resilience https://aka.ms/azenable/79/02 
 
 
 <a name="Monitoring_Vendors"></a>

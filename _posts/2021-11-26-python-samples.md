@@ -37,7 +37,7 @@ So I wrote this to fill that gap a little.
 
 ## What's This?
 
-&nbsp; &nbsp; &nbsp; &nbsp; This program began as a way to organize implementations of various coding tricks:
+&nbsp; &nbsp; &nbsp; &nbsp; This program began as a way to organize implementations of various coding tricks, to ensure that I can import of the various base dependencies:
 
 1.  <a href="#gen_fibonacci">gen_fibonacci</a> = Generate Fibonacci with memoization (saving results in a file to improve speed)
 2.  <a href="#make_change">make_change</a> = Make change using "Dynamic Programming"
@@ -259,6 +259,8 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
   xz                 conda-forge/osx-64::xz-5.2.6-h775f41a_0
     </pre>
 
+    NOTE: The above don't need to be imported.
+
 1.  Get a list of all that was installed:
    
     <pre><strong>pip freeze >requirements.txt</strong></pre>
@@ -301,7 +303,15 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
 1.  IMPORTANT: Use <tt>conda</tt> instead of <tt>pip</tt> to install libraries. For example:
 
-    <pre><strong>conda install azure-core</strong></pre>
+
+    <a name="PackagesInstalled"></a>
+
+    <pre><strong>conda install -c conda-forge azure-core</strong></pre>
+
+    PROTIP: Notice that the library is named "azure-core" (with the dash separator) when inside Python it's <tt>import azure.core</tt> with the dot separator.
+
+    PROTIP: The command draws from:
+    https://anaconda.org/conda-forge/azure-core
 
     <pre>  azure-core         conda-forge/noarch::azure-core-1.27.1-pyhd8ed1ab_0
   brotli             conda-forge/osx-64::brotli-1.0.9-hb7f2c08_8
@@ -320,7 +330,76 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
   urllib3            conda-forge/noarch::urllib3-2.0.3-pyhd8ed1ab_0
     </pre>
 
-    PROTIP: Notice that the library is named "azure-core" (with the dash separator) when inside Python it's <tt>import azure.core</tt> with the dot separator.
+    <pre>conda install -c conda-forge azure-cli-core
+    </pre>
+
+    <pre>  adal               conda-forge/noarch::adal-1.2.7-pyhd8ed1ab_0
+  antlr-python-runt~ conda-forge/noarch::antlr-python-runtime-4.13.0-pyhd8ed1ab_0
+  applicationinsigh~ conda-forge/noarch::applicationinsights-0.11.9-py_0
+  argcomplete        conda-forge/noarch::argcomplete-3.1.1-pyhd8ed1ab_0
+  azure-cli-core     conda-forge/noarch::azure-cli-core-2.0.61-py_0
+  azure-cli-telemet~ conda-forge/osx-64::azure-cli-telemetry-1.0.2-py310h2ec42d9_4
+  azure-common       conda-forge/noarch::azure-common-1.1.28-pyhd8ed1ab_0
+  azure-mgmt-resour~ conda-forge/noarch::azure-mgmt-resource-2.1.0-py_0
+  bcrypt             conda-forge/osx-64::bcrypt-3.2.2-py310h90acd4f_1
+  blinker            conda-forge/noarch::blinker-1.6.2-pyhd8ed1ab_0
+  cffi               conda-forge/osx-64::cffi-1.15.1-py310ha78151a_3
+  colorama           conda-forge/noarch::colorama-0.4.6-pyhd8ed1ab_0
+  cryptography       conda-forge/osx-64::cryptography-41.0.1-py310ha1817de_0
+  humanfriendly      conda-forge/osx-64::humanfriendly-10.0-py310h2ec42d9_4
+  isodate            conda-forge/noarch::isodate-0.6.1-pyhd8ed1ab_0
+  jmespath           conda-forge/noarch::jmespath-1.0.1-pyhd8ed1ab_0
+  knack              conda-forge/noarch::knack-0.5.1-py_0
+  libsodium          conda-forge/osx-64::libsodium-1.0.18-hbcb3906_1
+  msrest             conda-forge/noarch::msrest-0.7.1-pyhd8ed1ab_0
+  msrestazure        conda-forge/noarch::msrestazure-0.6.4-pyhd8ed1ab_0
+  oauthlib           conda-forge/noarch::oauthlib-3.2.2-pyhd8ed1ab_0
+  paramiko           conda-forge/noarch::paramiko-3.2.0-pyhd8ed1ab_0
+  portalocker        conda-forge/noarch::portalocker-1.2.1-py_0
+  pycparser          conda-forge/noarch::pycparser-2.21-pyhd8ed1ab_0
+  pygments           conda-forge/noarch::pygments-2.15.1-pyhd8ed1ab_0
+  pyjwt              conda-forge/noarch::pyjwt-2.7.0-pyhd8ed1ab_0
+  pynacl             conda-forge/osx-64::pynacl-1.5.0-py310h90acd4f_2
+  pyopenssl          conda-forge/noarch::pyopenssl-23.2.0-pyhd8ed1ab_1
+  python-dateutil    conda-forge/noarch::python-dateutil-2.8.2-pyhd8ed1ab_0
+  python_abi         conda-forge/osx-64::python_abi-3.10-3_cp310
+  pyyaml             conda-forge/osx-64::pyyaml-6.0-py310h90acd4f_5
+  requests-oauthlib  conda-forge/noarch::requests-oauthlib-1.3.1-pyhd8ed1ab_0
+  tabulate           conda-forge/noarch::tabulate-0.8.2-py_0
+  yaml               conda-forge/osx-64::yaml-0.2.5-h0d85af4_2
+    </pre>
+
+    <pre>conda install -c conda-forge azure-identity
+  azure-identity     conda-forge/noarch::azure-identity-1.12.0-pyhd8ed1ab_0
+  msal               conda-forge/noarch::msal-1.22.0-pyhd8ed1ab_0
+  msal_extensions    conda-forge/noarch::msal_extensions-0.3.0-pyh9f0ad1d_0
+    </pre>
+
+    <pre>conda install -c conda-forge azure-storage
+  azure-storage      conda-forge/osx-64::azure-storage-0.36.0-py310h2ec42d9_1004    
+    </pre>
+
+    <pre>The following NEW packages will be INSTALLED:
+  boto3              conda-forge/noarch::boto3-1.26.155-pyhd8ed1ab_0
+  botocore           conda-forge/noarch::botocore-1.29.155-pyhd8ed1ab_0
+  brotlipy           conda-forge/osx-64::brotlipy-0.7.0-py310h90acd4f_1005
+  s3transfer         conda-forge/noarch::s3transfer-0.6.1-pyhd8ed1ab_0
+The following packages will be DOWNGRADED:
+  urllib3                                2.0.3-pyhd8ed1ab_0 --> 1.26.15-pyhd8ed1ab_0
+    </pre>
+
+    <pre>conda install -c conda-forge click
+  click              conda-forge/noarch::click-8.1.3-unix_pyhd8ed1ab_2    
+    </pre>
+
+
+
+
+
+
+
+
+    IMPORTANT: All the above are done just once to estabblish the requirements.txt file, which conda can use to download dependencies in the future.
 
 1.  Confirm what packages have been installed:
     
@@ -3382,7 +3461,10 @@ has code at https://github.com/learnenough/learn_enough_python_code_listings
 
 pip install python-dotenv
 
-## Code Formatter
+
+<a name="CodeFormatting"></a>
+
+## Code Formatting Tools
 
 https://prettier.io/
 
