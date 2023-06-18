@@ -207,34 +207,34 @@ When installing venv:
 "venv" is the preferred name of an environment.
 But if you want customization, variable <tt>my_venv_folder</tt> is used.
 
-1. Detect whether the folder (defined by variable <tt>my_venv_folder</tt>) has been created:
+1.  Detect whether the folder (defined by variable <tt>my_venv_folder</tt>) has been created:
 
-   PROTIP: Python code running a Linux operating system command.
+    PROTIP: Python code running a Linux operating system command.
 
-   <pre>if run("which python3").find(my_venv_folder) == -1:  # not found:
+    <pre>if run("which python3").find(my_venv_folder) == -1:  # not found:
    # Such as /Users/wilsonmar/miniconda3/envs/py3k/bin/python3
    # So create the folder inside the program's folder:
    python3 -m venv ${my_venv_folder}
-   </pre>
+    </pre>
 
-1. Activation is necessary. To activate on a Mac:
+1.  Activation is necessary. To activate on a Mac:
 
-   <pre>source "{my_venv_folder}"/bin/activate</pre>
+    <pre>source "{my_venv_folder}"/bin/activate</pre>
 
-   On Windows:
+    On Windows:
 
-   <pre>venv\Scripts\activate.bat</pre>
+    <pre>venv\Scripts\activate.bat</pre>
 
-1. To check if a virtual environment is active, In CLI, <tt>(venv)</tt> appears. The path of the venv folder should appear:
+1.  To check if a virtual environment is active, In CLI, <tt>(venv)</tt> appears. The path of the venv folder should appear:
 
-   <pre>echo "$CONDA_ENV_NAME"</pre>
+    <pre>echo "$CONDA_ENV_NAME"</pre>
 
-   Within Python:
+    Within Python:
     check whether the VIRTUAL_ENV environment variable is set to the path of the virtual environment:
 
-   * Outside a virtual environment, sys.prefix points to the system python installation and sys.real_prefix is not defined.
+    * Outside a virtual environment, sys.prefix points to the system python installation and sys.real_prefix is not defined.
 
-   * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
+    * Inside a virtual environment, sys.prefix points to the virtual environment python installation and sys.real_prefix  points to the system python installation.
 
 1.  Create the Conda enviornment:
 
@@ -261,6 +261,8 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
    
     <pre><strong>pip freeze >requirements.txt</strong></pre>
 
+    Repeat this command after more packages are added.
+
 1.  Activate:
    
     <pre><strong>conda activate "$CONDA_ENV_NAME"</strong></pre>
@@ -271,9 +273,14 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
    
     <pre><strong>python --version</strong></pre>
 
-    You shoul see:
+    You should see:
 
     <pre>Python 3.10.11</pre>
+
+1.  If you don't want it anymore:
+
+    <pre>conda deactivate
+    conda remove --name "$CONDA_ENV_NAME" --all</pre>
 
 1.  To avoid <a target="_blank" href="https://stackoverflow.com/questions/58219956/how-to-fix-resolvepackagenotfound-error-when-creating-conda-environment">errors</a>:
 
@@ -310,6 +317,10 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
     </pre>
 
     PROTIP: Notice that the library is named "azure-core" (with the dash separator) when inside Python it's <tt>import azure.core</tt> with the dot separator.
+
+1.  Confirm what packages have been installed:
+    
+    <pre><strong>conda list</strong></pre>
 
 1.  If Conda does not find a library it displays:
     

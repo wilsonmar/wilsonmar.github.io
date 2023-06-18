@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-First of all, this is about doing the most touristy things. So say "frisco" rather than "San Franciso" and watch natives roll their eyes.
+First of all, this is about doing the most touristy things. So don't say "frisco" instead of "San Franciso" if you don't want to see city natives roll their eyes.
 
 <a name="LeftMyHeart"></a>
 
@@ -27,24 +27,27 @@ This theme song to San Francisco is this:
 <a target="_blank" href="https://www.youtube.com/watch?v=r6DUwMnDxEs">On YouTube: Tony Bennet:<br /><img alt="san-francisco-song-qr-300x300.png" width="300" height="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687009564/san-francisco-song-qr-300x300_mwcimn.png"></a>
 
 <pre>I left my heart in San Francisco.
-High on a hill, it calls to me.
+High on a <strong>hill</strong>, it calls to <strong>me</strong>.
 To be where little cable cars
 climb halfway to the stars!
-And the morning fog will chill the air.
+And the <strong>morning</strong> fog may chill the <strong>air</strong>.
 I don't care.
 My love waits there in San Francisco,
-Above the blue and windy seaaaaaa
-When I come home to you, San Francisco,
-Your golden sun will shine for me!
+Above the blue and windy <strong>sea</strong>
+When I come <strong>home</strong> to you, San Francisco,
+Your golden <strong>sun</strong> will <strong>shine</strong> for me!
 </pre>
 
-BTW The above version skips past starting lyrics in earlier versions which contain lines about other cities and containing the word "gay" which had a different meaning when Tony Bennett sang it in 1964.
+Raise your hand when you have fun sustaining the words in bold,
+especially that long "sea" and those last words of the song.
+
+BTW The above version skips past starting lyrics in earlier versions which contain lines about other cities and containing the word "gay" which had a different meaning when Tony Bennett first sang it in 1964. Tony <a target="_blank" href="https://www.youtube.com/watch?v=7QdvNjOAfUY&t=55m24s">gives the history about the song durig his Live concert December 10, 2002</a> - 20 songs in an hour (at age 76).
 
 <hr />
 
 ## PROTIP: Before you go
 
-1.  Print off a few dozen cards containing lyrics to the <a href="#LeftMyHeart">song above</a> so you can pass them out for a sing along while you're together in a Cable Car.
+1.  Print off a few dozen cards containing lyrics to the <a href="#LeftMyHeart">song above</a> so you can pass them out for a sing-along while you're together in a Cable Car.
 
 1.  Two airports are both around 45 minutes from downtown San Francisco:
 
@@ -112,6 +115,9 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
 * Matrix Resurrections (2021)
 <br /><br />
 
+Viator offers <a target="_blank" href="https://www.viator.com/tours/San-Francisco/San-Francisco-Movie-Sights-City-Tour/d651-25298P1">$67 Movie Sights tour</a> with commentary.
+
+
 <hr />
 
 ## My Google Tour Map
@@ -147,36 +153,56 @@ Click here to save it to your mobile phone!</a>
 
     This route has a view of the Golden Gate Bridge behind you. PROTIP: Here's where you hand out to others that stack of <a href="#LeftMyHeart">lyrics that song</a> you printed out.
 
-1.  Get off on <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> to walk down the "Worlds Crookest Street".
+1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookest Street". You end up on Leavenworth Street.
 
-1.  Get off on Washington Street to visit the Cable Car Museum if you have time.
+1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" alt="san-francisco-sundial-403x448.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO COME."
 
-1.  Walk East to <a target="_blank" href="https://goo.gl/maps/KVRdu6ZMe9bpmWzMA">56 Ross Alley</a>, between Jackson Street and Washington Street, <a target="_blank" href="https://www.youtube.com/watch?v=dkjC2qQLfjY&t=19s">VIDEO</a>: get the freshest fortune cookies possible, warm from the cast-iron machines at the <a target="_blank" href="https://www.goldengatefortunecookies.com/">Golden Gate Fortune Cookie Factory</a>. [<a target="_blank" href="https://www.wikiwand.com/en/Golden_Gate_Fortune_Cookie_Company">Wikiwand</a>] Free tote bag with a purchase?
+1.  Walk back up (West) on Chestnut Street to get back on the Cable Car (or get an Uber) to get off Washington Street if you want to talk with retired Cable Car operators where they hang out, in the <a target="_blank" href="https://goo.gl/maps/CS5f9ktm1k5jjzSp6">Cable Car Museum</a>.
 
-1.  Follow the aroma across Jackson to the Wong Lee Bakery selling <a target="_blank" href="https://www.seriouseats.com/chinese-bakery-pastries-buns-egg-tarts-guide">Chinese bakery treats</a>. It's the closest of <a target="_blank" href="https://www.theinfatuation.com/san-francisco/guides/best-chinese-bakeries-san-francisco">Chinese bakeries</a>.
+1.  Walk 5 minutes (0.3 miles) to walk (or get a Uber/Lyft) East on Washington Street to get a drink (to go) at the <a target="_blank" href="https://goo.gl/maps/G5b654wY44LhaeuL8">Yifang Taiwan Fruit Tea</a>.
+
+1. Walk a block East to turn left (toward Jackson Street) to walk under the <a target="_blank" href="https://goo.gl/maps/ArSWWtEGqRs5wNoG9">red lanterns</a> at <a target="_blank" href="https://goo.gl/maps/KVRdu6ZMe9bpmWzMA">Ross Alley</a> for <a target="_blank" href="https://www.youtube.com/watch?v=dkjC2qQLfjY&t=19s">VIDEO</a>: the freshest fortune cookies possible, warm from the cast-iron machines at the <a target="_blank" href="https://www.goldengatefortunecookies.com/">Golden Gate Fortune Cookie Factory</a>. [<a target="_blank" href="https://www.wikiwand.com/en/Golden_Gate_Fortune_Cookie_Company">Wikiwand</a>] Free tote bag with a purchase?
+
+1.  Follow the aroma across Jackson to the <a target="_blank" href="https://goo.gl/maps/HZEm47z8RQhUbQyp7">Wong Lee Bakery</a>. It's one of <a target="_blank" href="https://www.theinfatuation.com/san-francisco/guides/best-chinese-bakeries-san-francisco">many Chinese bakeries</a> selling <a target="_blank" href="https://www.seriouseats.com/chinese-bakery-pastries-buns-egg-tarts-guide">Chinese bakery treats</a>.
+
+    Walk East on Jackson to compare pastries at the 
 
     PROTIP: There isn't much to see around the <a target="_blank" href="https://goo.gl/maps/oq4myqC6e69UqoL79">Chinatown arch</a>. West of it is the lowest-priced Marriott hotel at the edge of the Tenderloin district (mental illness, drugs, crime, homelessness on sidewalks). <a target="_blank" href="https://www.youtube.com/watch?v=j-8nhA-j2yo">VIDEO</a>
 
-1.  <a target="_blank" href="https://www.sfmta.com/maps/powellhyde-cable-car-pdf-map">PDF map</a>: The cable car runs past the grand Fairmont hotel on Union Square.
+1.  Get on the lightrail train going underground South at the <a target="_blank" href="https://goo.gl/maps/Wn6bhWhFKnduPwow8">Chinatown Rose Pak Station</a> 
 
-    Inside the Apple Store is a great view of the square.
+1.  Get off at the <a target="_blank" href="https://goo.gl/maps/sFxcAGanJD9ZXXkf8">Union Square Market St Station</a>. Union Square is the center of San Francisco.
 
-    Inside Neiman Marcus on Union Square, The Rotunda restaurant serves Afternoon tea daily from 2:30 to 4 p.m. (if you have reservations).
+    Both the grand Fairmont hotel and the Rotunda restaurant in Neiman Marcus serve Afternoon tea daily from 2:30 to 4 p.m. (if you have reservations).
 
-    The Hilton has a Skybar with great views of the city.
+    There is also a great view of the square from inside the big windows inside the Apple Store at the North side of the square.
 
-1.  The Cable Car route ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a> where you can take the BART back to the airport.
+    Nearby, the Hilton has a Skybar with great views of the city.
 
-1.  At the Powell Station, if you want to first get some eats from a choice of premium vendors, walk across Market Street into the Westfield mall's basement.
+1.  If you have time, until you take the BART back to the airport, walk across Market, South to <a target="_blank" href="https://goo.gl/maps/YpJNREPrbtrtFaEQA">San Francisco Museum of Modern Art</a> and other museums, plus shopping around Yerba Buena Gardens:
+
+    * <a target="_blank" href="https://goo.gl/maps/jzyooSm7tNsmLmVS7">Metron mall</a> which ayb big-box stores and IMax movie theaters
+    * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Trader Joe's</a>
+    * Westfield mall, which has a basement food court
+    <br /><br /> 
+
+Across Market Street is where the Cable Car route ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a>. 
+
+Have a safe flight home!
 
 ## Have More Days?
 
 Here are other sights:
 
-* On the West is the Height-Asbury district "hippies" near Golden Gate Park's museums. Have tea at the Japanese Tea Garden. There is where the Chinese Fortune Cookie was really invented (by a Japanese).
+* On the West is the Height-Asbury district "hippies" near Golden Gate Park's museums. Have tea at the tranquil <a target="_blank" href="https://goo.gl/maps/BCXftWURbwg4HrxFA">Japanese Tea Garden</a>, where the Chinese Fortune Cookie was really invented (by a Japanese).
+
+   * A two-day <a target="_blank" href="https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps">hop-on hop-off BigBus</a> gets you to them.
+   * The <a target="_blank" href="https://goo.gl/maps/8TdbbHg5DFbRhotf9">16th Avenue Tiled Steps</a> three long blocks south of the Botanical Gardens in Gold Gate Park.
+   <br /><br />
 
 * Get selfies in front or even inside the many tech companies in SF. That's another route for me in the future. See https://www.builtinsf.com/companies
 
     * Adobe
     * Salesforce
     * etc.
+    <br /><br />
