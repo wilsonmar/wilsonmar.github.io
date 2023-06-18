@@ -3,7 +3,7 @@ layout: post
 date: "2023-06-15"
 file: "san-francisco"
 title: "San Francisco"
-excerpt: "How to eat your way through top experiences in the City by the Bay, in one day"
+excerpt: "Eat and geek your way through top experiences walking in the City by the Bay, all in one day"
 tags: [travel]
 image:
 # feature: Xcode-1900x500-37236
@@ -31,16 +31,17 @@ by Tony Bennett<br />
 <br />
 I left my heart in San Francisco.<br />
 High on a <strong>hill</strong>, it calls to <strong>me</strong>.<br />
-To be where little cable cars<br />
-climb halfway to the stars!<br />
-And the <strong>morning</strong> fog may chill the <strong>air</strong>.<br />
+To be where little cable <strong>cars</strong><br />
+climb halfway to the <strong>stars</strong>!<br />
+<strong>Morning</strong> fog may chill the <strong>air</strong>.<br />
 I don't care.<br />
-My love waits there in San Francisco,<br />
-Above the blue and windy <strong>sea</strong><br />
+My love waits <strong>there</strong>, in San Francisco,<br />
+Above the blue and windy <strong>seaaaaaa</strong>.<br />
 When I come <strong>home</strong> to you, San Francisco,<br />
 Your golden <strong>sun</strong> will <strong>shine</strong> for me!
+<hr />
 
-
+Ham it up!
 Raise your hand when you have fun sustaining the words in bold,
 especially that long "sea" and those last words of the song.
 
@@ -67,6 +68,8 @@ BTW The above version skips past starting lyrics in earlier versions which conta
 1.  On Google Maps, load a map so you can access it offline.
 
 1.  Download the <a target="_blank" href="https://www.sfmta.com/maps/powellhyde-cable-car-pdf-map">PDF map</a> of cable car routes.
+
+1.  Wear layers and a wind jacket. "The coldest Winter I ever spent was a Summer in San Francisco" was <a target="_blank" href="https://www.snopes.com/fact-check/and-never-the-twain-shall-tweet/">not by Mark Twain</a>.
 
 1.  Watch tourist vlogs about the city.
 
@@ -132,7 +135,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 * <a target="_blank" href="https://earth.google.com/web/@37.79750162,-122.40825038,26.86756628a,5098.90184797d,30y,0h,0t,0r/data=MigKJgokCiAxdG5IekxiTlpoSDZnODdsUjVvZFNzMnVuNFpwaTYzUSAC">View it on Google Earth  (satellite) Maps</a>
 
 
-## My geeky food tour route
+## My geeky foodie walking tour
 
 1.  At SFO or OAK airport, walk to the BART station to take the BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station.
 
