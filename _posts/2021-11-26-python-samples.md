@@ -141,7 +141,7 @@ Before being able to run the code, several utilities need to be installed on top
 
    * macOS utilities jq, git, gh, etc.
    * Python and <a href="#Virtualenv">Virtualenv</a>
-   * Download of foolders and files from github.com
+   * Download of folders and files from github.com
    <br /><br />
 
 Open a macOS Terminal.
@@ -153,6 +153,8 @@ A. To view the code online, use a browser at address:
 B. Alternately, edit the code online using Cloud9
 
 C. Alternately, to work with the whole repo on your laptop:
+
+<hr />
 
 1. navigate to where you want the repo added and
 
@@ -276,6 +278,8 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
     You should see:
 
     <pre>Python 3.10.11</pre>
+
+    Any other version means that you're in the wrong env (such as base).
 
 1.  If you don't want it anymore:
 
@@ -3377,6 +3381,10 @@ by <a target="_blank" href="https://www.linkedin.com/in/michaeldhartl/">Michael 
 has code at https://github.com/learnenough/learn_enough_python_code_listings
 
 pip install python-dotenv
+
+## Code Formatter
+
+https://prettier.io/
 
 <hr />
 

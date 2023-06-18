@@ -26,17 +26,20 @@ This theme song to San Francisco is this:
 
 <a target="_blank" href="https://www.youtube.com/watch?v=r6DUwMnDxEs">On YouTube: Tony Bennet:<br /><img alt="san-francisco-song-qr-300x300.png" width="300" height="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687009564/san-francisco-song-qr-300x300_mwcimn.png"></a>
 
-<pre>I left my heart in San Francisco.
-High on a <strong>hill</strong>, it calls to <strong>me</strong>.
-To be where little cable cars
-climb halfway to the stars!
-And the <strong>morning</strong> fog may chill the <strong>air</strong>.
-I don't care.
-My love waits there in San Francisco,
-Above the blue and windy <strong>sea</strong>
-When I come <strong>home</strong> to you, San Francisco,
+<strong>I Left My Heart in San Francisco</strong><br />
+by Tony Bennett<br />
+<br />
+I left my heart in San Francisco.<br />
+High on a <strong>hill</strong>, it calls to <strong>me</strong>.<br />
+To be where little cable cars<br />
+climb halfway to the stars!<br />
+And the <strong>morning</strong> fog may chill the <strong>air</strong>.<br />
+I don't care.<br />
+My love waits there in San Francisco,<br />
+Above the blue and windy <strong>sea</strong><br />
+When I come <strong>home</strong> to you, San Francisco,<br />
 Your golden <strong>sun</strong> will <strong>shine</strong> for me!
-</pre>
+
 
 Raise your hand when you have fun sustaining the words in bold,
 especially that long "sea" and those last words of the song.
@@ -169,7 +172,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Walk down Stockton Street to take a selfie at the <a target="_blank" href="https://goo.gl/maps/oq4myqC6e69UqoL79">Chinatown arch</a>. West of it is the <a target="_blank" href="https://goo.gl/maps/h4fiGMq8upQvxqCp7">lowest-priced Marriott hotel</a> a block North from the edge of the <a target="_blank" href="https://goo.gl/maps/AkSaUtT4FXhRDnsk7">Tenderloin district</a> (of mental illness, drugs, crime, homelessness on sidewalks). <a target="_blank" href="https://www.youtube.com/watch?v=j-8nhA-j2yo">VIDEO</a>
 
-1.  Walk a half-block North on Stockton Street to get on the lightrail train going underground South at the <a target="_blank" href="https://goo.gl/maps/Wn6bhWhFKnduPwow8">Chinatown Rose Pak Station</a> 
+1.  Walk a half-block North on Stockton Street to get on the lightrail train going underground South at the <a target="_blank" href="https://goo.gl/maps/Wn6bhWhFKnduPwow8">Chinatown Rose Pak Station</a>.
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/sFxcAGanJD9ZXXkf8">Union Square Market St Station</a>. Union Square is the center of San Francisco.
 
