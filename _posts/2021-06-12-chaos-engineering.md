@@ -109,26 +109,29 @@ Specific metrics to measure:
 
 <a name="Security"></a>
 
-## Security
+## Security Chaos Engineering
 
-<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw">VIDEO</a>
+<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw" title="by Mitigant">VIDEO</a>
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr valign="top"><td> Factor </td><td> Red/Blue/Purple Team </td><td> Security
-   </td></tr>
-<tr valign="top"><td> Frequency: </td><td> periodically (bi-annually)
+<tr valign="top"><th> Factor </th><th> Red/Blue/Purple Team </th><th> Security
+   </th></tr>
+<tr valign="top"><td> By: </td><td> external consultants 
+   </td><td> in-house staff </td></tr>
+<tr valign="top"><td> Frequency: </td><td> periodically (annually)
    </td><td> continuously </td></tr>
+<tr valign="top"><td> Technical Scope: </td><td> external interfaces
+   </td><td> internal and external </td></tr>
 <tr valign="top"><td> Tools: </td><td> manual
    </td><td> automation </td></tr>
-<tr valign="top"><td> By: </td><td> external consultants 
-   </td><td> in-house staff </td></tr>
-<tr valign="top"><td> Objective: </td><td> not designed to provide learning opportunities
-   </td><td> designed to provide learning opportunities </td></tr>
-<tr valign="top"><td> By: </td><td> external consultants 
-   </td><td> in-house staff </td></tr>
-<tr valign="top"><td> - </td><td> not cloud native
+<tr valign="top"><td> Goals: </td><td> identify issues
+   </td><td> iterative improvement </td></tr>
+<tr valign="top"><td> Objective: </td><td> not for learning
+   </td><td> create learning opportunities </td></tr>
+<tr valign="top"><td> Involvement: </td><td> Security &amp; Ops
+   </td><td> company-wide </td></tr>
+<tr valign="top"><td> - </td><td> NOT cloud native
    </td><td> cloud native </td></tr>
-</tr>
 </table>
 
 
