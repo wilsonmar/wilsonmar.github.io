@@ -151,17 +151,17 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> and walk to <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a> into the gift shop within the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> to buy their famous mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation".
 
-No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
+    No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
 
     <strong>Ring the bell</strong> when you're approaching your stop by pulling the metal cord that runs along the side walls.
 
-1.  Hungry already? Walk SouthEast kitty-corner for superlative traditional dim sum in or to go at <a target="_blank" href="https://goo.gl/maps/tawNRfSj2xPPxFaH8">Yank Sing (Spear Street)</a>.
+1.  Hungry already? Walk SouthEast kitty-corner for superlative traditional dim sum at <a target="_blank" href="https://goo.gl/maps/tawNRfSj2xPPxFaH8">Yank Sing (Spear Street)</a> (dine in or to go).
 
 1.  Even better, walk NorthEast across The Embarcadero for the amazing gourmet market inside the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign: <a target="_blank" href="https://www.mercato.com/shop/ferry-building">fancy breads, dog treats, mushrooms, chocolates from around the world, caviar, etc.</a>.
 
-1.  The <a target="_blank" href="https://goo.gl/maps/LN6UL7123Dvn2EsE9">Exploratorium</a> (hands-on science museum) is not just for kids.
+1.  Get on another street car and off at the <a target="_blank" href="https://goo.gl/maps/LN6UL7123Dvn2EsE9">Exploratorium</a> (a hands-on science museum not just for kids).
 
-1.  Take a Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to <a target="_blank" href="https://www.pier39.com/sealions/" title="webcam">see</a> and hear the <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">icon resident sea lions</a> <a target="_blank" href="https://www.sftravel.com/article/everything-you-need-know-about-san-franciscos-sea-lions">(not seals)</a>.
+1.  Take yet another Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to <a target="_blank" href="https://www.pier39.com/sealions/" title="webcam">see</a> and hear the <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">icon resident sea lions</a> <a target="_blank" href="https://www.sftravel.com/article/everything-you-need-know-about-san-franciscos-sea-lions">(not seals)</a>.
 
 1.  Stop at <a target="_blank" href="https://boudinbakery.com/location/boudin-bakery-bakers-hall/">Boudine's</a> (8am-9pm) for <a target="_blank" href="https://order.boudinbakery.com/menu/boudin-bakery-pier-39/products/34947045">New England-Style clam chowder in a sourdough bread bowl. Order online and add bacon</a>.
 
