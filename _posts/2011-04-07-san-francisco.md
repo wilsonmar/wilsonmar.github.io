@@ -148,7 +148,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
     <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"><img align="right" width="200"  alt="san-francisco-mask-329x301.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"></a> NOTE: Masks continue to be advised for all transit riders, including on Muni’s historic streetcars and cable cars.
 
-1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> to visit the gift shop in the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> (at <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a>) to buy their famous yellow mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation". No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
+1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> to buy their famous yellow mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation". It's in the gift shop within the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> (at <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a>). No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
 
     <strong>Ring the bell</strong> when you're approaching your stop by pulling the metal cord that runs along the side walls.
 
@@ -172,7 +172,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
     This route has a view of the Golden Gate Bridge behind you. PROTIP: Here's where you hand out to others that stack of <a href="#LeftMyHeart">lyrics that song</a> you printed out.
 
-1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookest Street". You end up on Leavenworth Street.
+1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookedest Street". You end up on Leavenworth Street.
 
 1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" width="200"  alt="san-francisco-sundial-403x448.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE."
 
