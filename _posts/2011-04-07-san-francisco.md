@@ -124,16 +124,16 @@ Viator offers <a target="_blank" href="https://www.viator.com/tours/San-Francisc
 
 I actually wrote this page while I tried to A <a target="_blank" href="https://support.google.com/maps/answer/144339?hl=en&co=GENIE.Platform%3DDesktop">figure out</a> how you can use <a target="_blank" href="https://www.google.com/maps/d/edit?mid=1tnHzLbNZhH6g87lR5odSs2un4Zpi63Q&usp=sharing">my Google Route titled "San Francisco highlights"<br />
 <img alt="san-francisco-tour-1862x1270.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687015655/san-francisco-tour-1862x1270_iw6poz.png"><br />
-Click here to save it to your mobile phone!</a>
+Click here to save it to the Google Maps app on your mobile phone!</a>
 
-<a target="_blank" href="https://earth.google.com/web/@37.79750162,-122.40825038,26.86756628a,5098.90184797d,30y,0h,0t,0r/data=MigKJgokCiAxdG5IekxiTlpoSDZnODdsUjVvZFNzMnVuNFpwaTYzUSAC">View it on Google (satellite) Maps</a>
+* <a target="_blank" href="https://earth.google.com/web/@37.79750162,-122.40825038,26.86756628a,5098.90184797d,30y,0h,0t,0r/data=MigKJgokCiAxdG5IekxiTlpoSDZnODdsUjVvZFNzMnVuNFpwaTYzUSAC">View it on Google Earth  (satellite) Maps</a>
 
 
 ## My geeky food tour route
 
 1.  At SFO or OAK airport, walk to the BART station to take the BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station.
 
-1.  Walk 4 blocks North or take a Muni street car along The Embarcadero toward Fisherman's Wharf.
+1.  Walk 4 blocks NorthEast or take a Muni street car along The Embarcadero toward Fisherman's Wharf.
 
 1.  If you have the time, visit the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign to visit unique shops and eats (including dog treats and caviar).
 
@@ -155,21 +155,21 @@ Click here to save it to your mobile phone!</a>
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookest Street". You end up on Leavenworth Street.
 
-1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" alt="san-francisco-sundial-403x448.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO COME."
+1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" alt="san-francisco-sundial-403x448.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE."
 
 1.  Walk back up (West) on Chestnut Street to get back on the Cable Car (or get an Uber) to get off Washington Street if you want to talk with retired Cable Car operators where they hang out, in the <a target="_blank" href="https://goo.gl/maps/CS5f9ktm1k5jjzSp6">Cable Car Museum</a>.
 
-1.  Walk 5 minutes (0.3 miles) to walk (or get a Uber/Lyft) East on Washington Street to get a drink (to go) at the <a target="_blank" href="https://goo.gl/maps/G5b654wY44LhaeuL8">Yifang Taiwan Fruit Tea</a>.
+1.  Walk 5 minutes (0.3 miles) (or get a Uber/Lyft past not much) East on Washington Street to get a drink (to go) at the <a target="_blank" href="https://goo.gl/maps/G5b654wY44LhaeuL8">Yifang Taiwan Fruit Tea</a>.
 
-1. Walk a block East to turn left (toward Jackson Street) to walk under the <a target="_blank" href="https://goo.gl/maps/ArSWWtEGqRs5wNoG9">red lanterns</a> at <a target="_blank" href="https://goo.gl/maps/KVRdu6ZMe9bpmWzMA">Ross Alley</a> for <a target="_blank" href="https://www.youtube.com/watch?v=dkjC2qQLfjY&t=19s">VIDEO</a>: the freshest fortune cookies possible, warm from the cast-iron machines at the <a target="_blank" href="https://www.goldengatefortunecookies.com/">Golden Gate Fortune Cookie Factory</a>. [<a target="_blank" href="https://www.wikiwand.com/en/Golden_Gate_Fortune_Cookie_Company">Wikiwand</a>] Free tote bag with a purchase?
+1. Walk a block East to turn left (toward Jackson Street) to walk under the <a target="_blank" href="https://goo.gl/maps/ArSWWtEGqRs5wNoG9">red lanterns</a> at <a target="_blank" href="https://goo.gl/maps/KVRdu6ZMe9bpmWzMA">Ross Alley</a> for the freshest fortune cookies possible, warm from the cast-iron machines at the <a target="_blank" href="https://www.goldengatefortunecookies.com/">Golden Gate Fortune Cookie Factory</a>. [<a target="_blank" href="https://www.wikiwand.com/en/Golden_Gate_Fortune_Cookie_Company">Wikiwand</a>, <a target="_blank" href="https://www.youtube.com/watch?v=dkjC2qQLfjY&t=19s">VIDEO</a>] 
 
-1.  Follow the aroma across Jackson to the <a target="_blank" href="https://goo.gl/maps/HZEm47z8RQhUbQyp7">Wong Lee Bakery</a>. It's one of <a target="_blank" href="https://www.theinfatuation.com/san-francisco/guides/best-chinese-bakeries-san-francisco">many Chinese bakeries</a> selling <a target="_blank" href="https://www.seriouseats.com/chinese-bakery-pastries-buns-egg-tarts-guide">Chinese bakery treats</a>.
+1.  Follow the aroma NorthEast across Jackson Street to the <a target="_blank" href="https://goo.gl/maps/HZEm47z8RQhUbQyp7">Wong Lee Bakery</a>. It's one of <a target="_blank" href="https://www.theinfatuation.com/san-francisco/guides/best-chinese-bakeries-san-francisco">many Chinese bakeries</a> selling <a target="_blank" href="https://www.seriouseats.com/chinese-bakery-pastries-buns-egg-tarts-guide">Chinese bakery treats</a>.
 
-    Walk East on Jackson to compare pastries at the 
+    Walk East on Jackson to compare pastries at the <a target="_blank" href="https://goo.gl/maps/N1BsPF46dNNXzPga8">Goog Mong Kok Bakery</a>.
 
-    PROTIP: There isn't much to see around the <a target="_blank" href="https://goo.gl/maps/oq4myqC6e69UqoL79">Chinatown arch</a>. West of it is the lowest-priced Marriott hotel at the edge of the Tenderloin district (mental illness, drugs, crime, homelessness on sidewalks). <a target="_blank" href="https://www.youtube.com/watch?v=j-8nhA-j2yo">VIDEO</a>
+1.  Walk down Stockton Street to take a selfie at the <a target="_blank" href="https://goo.gl/maps/oq4myqC6e69UqoL79">Chinatown arch</a>. West of it is the <a target="_blank" href="https://goo.gl/maps/h4fiGMq8upQvxqCp7">lowest-priced Marriott hotel</a> a block North from the edge of the <a target="_blank" href="https://goo.gl/maps/AkSaUtT4FXhRDnsk7">Tenderloin district</a> (of mental illness, drugs, crime, homelessness on sidewalks). <a target="_blank" href="https://www.youtube.com/watch?v=j-8nhA-j2yo">VIDEO</a>
 
-1.  Get on the lightrail train going underground South at the <a target="_blank" href="https://goo.gl/maps/Wn6bhWhFKnduPwow8">Chinatown Rose Pak Station</a> 
+1.  Walk a half-block North on Stockton Street to get on the lightrail train going underground South at the <a target="_blank" href="https://goo.gl/maps/Wn6bhWhFKnduPwow8">Chinatown Rose Pak Station</a> 
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/sFxcAGanJD9ZXXkf8">Union Square Market St Station</a>. Union Square is the center of San Francisco.
 
@@ -196,7 +196,8 @@ Here are other sights:
 
 * On the West is the Height-Asbury district "hippies" near Golden Gate Park's museums. Have tea at the tranquil <a target="_blank" href="https://goo.gl/maps/BCXftWURbwg4HrxFA">Japanese Tea Garden</a>, where the Chinese Fortune Cookie was really invented (by a Japanese).
 
-   * A two-day <a target="_blank" href="https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps">hop-on hop-off BigBus</a> gets you to them.
+   * A two-day <a target="_blank" href="https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps">hop-on hop-off BigBus</a> gets you to them. They also go West to see the <a target="_blank" href="https://goo.gl/maps/woTQ8Bxsgoq6MPT99">"Painted Ladies"</a> on Alamo Square.
+
    * The <a target="_blank" href="https://goo.gl/maps/8TdbbHg5DFbRhotf9">16th Avenue Tiled Steps</a> three long blocks south of the Botanical Gardens in Gold Gate Park.
    <br /><br />
 
