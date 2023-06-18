@@ -151,13 +151,13 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> and walk to <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a> into the gift shop within the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> to buy their famous mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation".
 
-    No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
-
-    <strong>Ring the bell</strong> when you're approaching your stop by pulling the metal cord that runs along the side walls.
+    No time? Buy it from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
 
 1.  Hungry already? Walk SouthEast kitty-corner for superlative traditional dim sum at <a target="_blank" href="https://goo.gl/maps/tawNRfSj2xPPxFaH8">Yank Sing (Spear Street)</a> (dine in or to go).
 
 1.  Even better, walk NorthEast across The Embarcadero for the amazing gourmet market inside the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign: <a target="_blank" href="https://www.mercato.com/shop/ferry-building">fancy breads, dog treats, mushrooms, chocolates from around the world, caviar, etc.</a>.
+
+    <strong>Ring the bell</strong> when you're approaching your stop by pulling the metal cord that runs along the side walls.
 
 1.  Get on another street car and off at the <a target="_blank" href="https://goo.gl/maps/LN6UL7123Dvn2EsE9">Exploratorium</a> (a hands-on science museum not just for kids).
 
@@ -177,7 +177,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookedest Street". You end up on Leavenworth Street.
 
-1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" width="200"  alt="san-francisco-sundial-403x448.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE."
+1.  <a target="_blank" href="https://www.amazon.com/dp/B0BD8NY7CM/"><img align="right" width="200"  alt="san-francisco-sundial-403x448.png on Amazon" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE." (by Robert Browning)
 
 1.  Walk back up (West) on Chestnut Street to get back on the Cable Car.
 1.  Hop off at Washington Street to talk with retired Cable Car operators where they hang out, in the <a target="_blank" href="https://goo.gl/maps/CS5f9ktm1k5jjzSp6">Cable Car Museum</a>.
