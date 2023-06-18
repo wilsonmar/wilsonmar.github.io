@@ -24,7 +24,7 @@ First of all, this is about doing the most touristy things. So don't say "frisco
 
 This theme song to San Francisco is this:
 
-<a target="_blank" href="https://www.youtube.com/watch?v=r6DUwMnDxEs">On YouTube: Tony Bennet:<br /><img alt="san-francisco-song-qr-300x300.png" width="300" height="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687009564/san-francisco-song-qr-300x300_mwcimn.png"></a>
+<a target="_blank" href="https://www.youtube.com/watch?v=r6DUwMnDxEs">Click here to see Tony Bennett perform the song on YouTube:<br /><img alt="san-francisco-song-qr-300x300.png" width="300" height="300" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687009564/san-francisco-song-qr-300x300_mwcimn.png"></a>
 
 <strong>I Left My Heart in San Francisco</strong><br />
 by Tony Bennett<br />
@@ -45,7 +45,7 @@ Ham it up!
 Raise your hand when you have fun sustaining the words in bold,
 especially that long "sea" and those last words of the song.
 
-BTW The above version skips past starting lyrics in earlier versions which contain lines about other cities and containing the word "gay" which had a different meaning when Tony Bennett first sang it in 1964. Tony <a target="_blank" href="https://www.youtube.com/watch?v=7QdvNjOAfUY&t=55m24s">gives the history about the song durig his Live concert December 10, 2002</a> - 20 songs in an hour (at age 76).
+BTW The above video skips past starting lyrics in earlier versions which contain lines about other cities and containing the word "gay" which had a different meaning when Tony Bennett first sang it in 1964. Tony <a target="_blank" href="https://www.youtube.com/watch?v=7QdvNjOAfUY&t=55m24s">gives the history about the song durig his Live concert December 10, 2002</a> - 20 songs in an hour (at age 76).
 
 <hr />
 
@@ -119,6 +119,7 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
 * Ant-Man (2015), Ant-Man and the Wasp (2018), & Ant-Man and the Wasp: Quantumania (2023)
 * Always Be My Maybe (2019)
 * Matrix Resurrections (2021)
+* <a target="_blank" href="https://tv.apple.com/us/show/the-last-thing-he-told-me/" title="Streaming on AppleTV">The Last Thing He Told Me</a>
 <br /><br />
 
 Viator offers <a target="_blank" href="https://www.viator.com/tours/San-Francisco/San-Francisco-Movie-Sights-City-Tour/d651-25298P1">$67 Movie Sights tour</a> with commentary.
@@ -137,11 +138,15 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 ## My geeky foodie walking tour
 
-1.  At SFO or OAK airport, walk to the BART station to take the BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station.
+1.  At SFO or OAK airport, walk to the BART station to take either BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station. One way, it's $10 from SFO, $11.40 from OAK.
+
+1.  Have luggage? I've given it (with $10) to the <a target="_blank" href="https://goo.gl/maps/NwriyskXjjJvM94XA">Hyatt Regency hotel at Embarcadero</a> or <a target="_blank" href="https://goo.gl/maps/scwDkDr1NTMDXMKV8">5-star 1 Hotel</a>.
+
+1.  Hungry already? <a target="_blank" href="https://goo.gl/maps/tawNRfSj2xPPxFaH8">Yank Sing</a> serves superlative traditional dim sum in or to go. There's a gourmet market inside the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign. 
+
+    <a target="_blank" href="https://www.mercato.com/shop/ferry-building">fancy breads, dog treats, mushrooms, chocolates from around the world, caviar, etc.</a>.
 
 1.  Walk 4 blocks NorthEast or take a Muni street car along The Embarcadero toward Fisherman's Wharf.
-
-1.  If you have the time, visit the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign to visit unique shops and eats (including dog treats and caviar).
 
 1.  The Exploratorium (science museum) is not just for kids.
 
@@ -179,22 +184,21 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/sFxcAGanJD9ZXXkf8">Union Square Market St Station</a>. Union Square is the center of San Francisco.
 
-    Both the grand Fairmont hotel and the Rotunda restaurant in Neiman Marcus serve Afternoon tea daily from 2:30 to 4 p.m. (if you have reservations).
+    The <a target="_blank" href="https://goo.gl/maps/3R33KnbFn3rpGRaQA">St. Fancis hotel</a> and the <a target="_blank" href="https://goo.gl/maps/zcSCoNExTZS3dPEQ8">Rotunda restaurant</a> in Neiman Marcus serve Afternoon tea daily from 2:30 to 4 p.m. (if you have reservations).
 
-    There is also a great view of the square from inside the big windows inside the Apple Store at the North side of the square.
-
-    Nearby, the Hilton has a Skybar with great views of the city.
+    There is also an expansive view through big windows inside the <a target="_blank" href="https://goo.gl/maps/dFZ9fvHpaEeWQtKr9">Apple Store</a> at the North side of the square.
 
 1.  If you have time, until you take the BART back to the airport, walk across Market, South to <a target="_blank" href="https://goo.gl/maps/YpJNREPrbtrtFaEQA">San Francisco Museum of Modern Art</a> and other museums, plus shopping around Yerba Buena Gardens:
 
-    * <a target="_blank" href="https://goo.gl/maps/jzyooSm7tNsmLmVS7">Metron mall</a> which ayb big-box stores and IMax movie theaters
-    * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Trader Joe's</a>
-    * Westfield mall, which has a basement food court
-    <br /><br /> 
+     * <a target="_blank" href="https://goo.gl/maps/jzyooSm7tNsmLmVS7">Metron mall</a> which ayb big-box stores and IMax movie theaters
+     * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Trader Joe's</a>
+     * Westfield mall, which has a basement food court
+     <br /><br /> 
 
 Across Market Street is where the Cable Car route ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a>. 
 
 Have a safe flight home!
+
 
 ## Have More Days?
 
@@ -202,10 +206,9 @@ Here are other sights:
 
 * On the West is the Height-Asbury district "hippies" near Golden Gate Park's museums. Have tea at the tranquil <a target="_blank" href="https://goo.gl/maps/BCXftWURbwg4HrxFA">Japanese Tea Garden</a>, where the Chinese Fortune Cookie was really invented (by a Japanese).
 
-   * A two-day <a target="_blank" href="https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps">hop-on hop-off BigBus</a> gets you to them. They also go West to see the <a target="_blank" href="https://goo.gl/maps/woTQ8Bxsgoq6MPT99">"Painted Ladies"</a> on Alamo Square.
+    * A two-day <a target="_blank" href="https://www.bigbustours.com/en/san-francisco/san-francisco-routes-and-tour-maps">hop-on hop-off BigBus</a> gets you to them. They also go West to see the <a target="_blank" href="https://goo.gl/maps/woTQ8Bxsgoq6MPT99">"Painted Ladies"</a> on Alamo Square.
 
-   * The <a target="_blank" href="https://goo.gl/maps/8TdbbHg5DFbRhotf9">16th Avenue Tiled Steps</a> three long blocks south of the Botanical Gardens in Gold Gate Park.
-   <br /><br />
+    * The <a target="_blank" href="https://goo.gl/maps/8TdbbHg5DFbRhotf9">16th Avenue Tiled Steps</a> three long blocks south of the Botanical Gardens in Gold Gate Park.
 
 * Get selfies in front or even inside the many tech companies in SF. That's another route for me in the future. See https://www.builtinsf.com/companies
 
@@ -213,3 +216,11 @@ Here are other sights:
     * Salesforce
     * etc.
     <br /><br />
+
+* If you like spending $400 per person (before wine) at meticulous restaurants rated three stars by <a target="_blank" href="https://guide.michelin.com/us/en/california/san-francisco/restaurants">Michelin Guides</a>, make reservations months ahead at:
+
+    * <a target="_blank" href="https://www.ateliercrenn.com/">Atelier Crenn</a> at <a target="_blank" href="https://goo.gl/maps/ZXKgRGs213bjXNpDA">3127 Fillmore St</a>, led by TV superstar French vegetarian Iron Chef who has her own show on <a target="_blank" href="https://www.masterclass.com/classes/dominique-crenn-teaches-modern-vegetarian-cooking">Masterclass.com</a>.
+    
+    * <a target="_blank" href="https://www.benusf.com/">Benu</a> at <a target="_blank" href="https://goo.gl/maps/481ojigFdgKS5GALA">22 Hawthorne St</a>
+   
+    * <a target="_blank" href="https://www.quincerestaurant.com/">Qunice</a> (closed 2023)

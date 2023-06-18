@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-03-03"
+date: "2022-06-17"
 file: "python-install"
 title: "Python Install (Conda Anaconda Miniconda Pip) on MacOS"
 excerpt: "Confusion and errors from too many alternatives and options"
@@ -36,31 +36,25 @@ and put them here in context.
 There are two separate versions of Python: 2 and 3. 
 <a href="#CommandVersions"> some Python functions in one version do not work with commands in another version</a>.
 
-This has given rise to several versions of Python frameworks being maintained in parallel. For example, the web application development framework for Python exists as both Django 1.3 and Django 1.0.
+This has given rise to several versions of Python frameworks being maintained in parallel. For example, both Django 1.3 and Django 1.0 the web application development framework for Python need to be maintained at the same time.
 
-Adding to the confusion is that <a href="#Packaging">various methods of installing Python</a> are incompatible with each other.
-This has given rise to the need for <strong>package managers</strong> such as pip (Python Installation Packager) that enable one to switch among different versions of Python installed.
-
-MacOS does not come installed with a package manager for Python
-until pip.
-
-<a href="#PIPz">pip</a> (Python Installation Packager) is built on top of <strong>setuptools</strong> which is what downloads and installs Python packages from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
-
-Setuptools itself is installed using <a href="#easy_install">easy_install</a>.
-
+PROTIP: <a href="#Packaging">Various methods of installing Python</a> are incompatible with each other. This has given rise to the need for <strong>package managers</strong> such as pip (Python Installation Packager) that enable one to switch among different versions of Python installed.
 
 This complexity necessitates the packaging of whole <a href="virtualenv">virtual environments</a> to <strong>isolate</strong>
 within a folder (directory) everything (all dependencies) that each Python **project** (application) needs to run.
 This means duplicated files for each Python application, which consume more disk space.
 
-An additional complication is that there are several alternative virtual environment packagers such as
-<a href="#easy_install">easy_install</a>, virtualenv, and pipenv.
+An additional complication is that there are several alternative virtual environment packagers such as <a href="#easy_install">easy_install</a>, virtualenv, and pipenv.
 
-* <a href="#PIPz">pip</a> (Python Installation Packager) is a package manager.
+* MacOS does not come installed with a package manager for Python
+until pip.
+* <a href="#PIPz">pip</a> (Python Installation Packager) is a package manager built on top of <strong>setuptools</strong> which is what downloads and installs Python packages from the <strong>PyPI (Python Package Index)</strong> library online at <a target="_blank" href="https://pypi.org/">https://pypi.org</a>. 
+
+* Setuptools itself is installed using <a href="#easy_install">easy_install</a>.
+* <a href="#easy_install">easy_install</a> is an environment manager.
+
 * Virtualenv (venv) is an environment manager for Python.
 * <a href="#Conda">Conda</a> does both, and is language agnostic (not just for Python).
-
-* <a href="#easy_install">easy_install</a> is an environment manager.
 
 * <a href="#MiniConda">Miniconda</a> is a lightweight distribution of Conda, and uses conda commands.
 * Anaconda is installed on top of miniconda to provide a curated collection of <a target="_blank" href="https://docs.continuum.io/anaconda/pkgs.html">over 720 "common" packages</a> for scientific Python users. It is no longer recommended due to the security vulnerabilities in that many packages. So it's best to install the base Miniconda and add only the packages you actually use.
@@ -1297,76 +1291,17 @@ The response I got is this:
    </tt>
 
 
-<a name="Miniconda"></a>
-
-## Miniconda install #
-
-Below is a more "hands-on" description than what
-<a target="_blank" href="http://conda.pydata.org/docs/install/quick.html">
-pydata.org</a> and
-<a target="_blank" href="http://kylepurdon.com/blog/using-continuum-analytics-conda-as-a-replacement-for-virtualenv-pyenv-and-more.html">
-Kyle Purdon</a> offers.
-
-0. Use an internet browser to visit the <a target="_blank" href="http://conda.pydata.org/miniconda.html">
-   Miniconda Download page at http://conda.pydata.org/miniconda.html</a>
-
-   Alternately, download:
-
-   <tt><strong>cd ~/Downloads<br />
-   wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-   </strong></tt>
-
-0. Select version to download. For Python 2.7:
-
-   | Version    | File                               | Size    |
-   | :--------- | :--------------------------------- | ------: |
-   | Python 2.7 | miniconda3-latest-MacOSX-x86_64.sh | 20.3 MB |
-   | Python 3.5 | Miniconda3-latest-MacOSX-x86_64.sh | 23.4 MB |
-
-   NOTE: Python3 is not backward compatible with Version 2.
-
-   Notice the ".sh" means these are shell scripts.
-
-0. Open a Terminal shell window to
-   navigate to your Downloads folder and run the Python 2.7 script:
-
-   <tt><strong>cd ~/Downloads<br />
-   bash miniconda3-latest-MacOSX-x86_64.sh -b
-   </strong></tt>
-
-   PROTIP: The "-b" option specifies unattended with defaults.
-
-   The response:
-
-   <pre>
-Welcome to miniconda3 4.0.5 (by Continuum Analytics, Inc.)
-&nbsp;
-In order to continue the installation process, please review the license
-agreement.
-Please, press ENTER to continue
->>> 
-   </pre>
-
-0. Press Enter to accept the license.
-0. Press "q" to the ":" prompt.
-0. Type yes.
-
-   "ERROR: File or directory already exists:"
-   appears if miniconda was already installed.
-
-0. <a href="#CondaVersion">Confirm conda version</a>.
-
-
 <hr />
 
 <a name="AnacondaInstall"></a>
 
 ## Anaconda Install 
 
-<a target="_blank" href="https://www.youtube.com/watch?v=YJC6ldI3hWk">
-This video</a> by Corey Schafer explains it well.
+PROTIP: Skip to <a href=#Miniconda-install">install Miniconda</a> instead
+because there is so much in Anaconda that there is inevitably vulnerabilities lurking there.
 
-<a target="_blank" href="https://docs.continuum.io/anaconda/install">https://docs.continuum.io/anaconda/install</a>
+   * <a target="_blank" href="https://www.youtube.com/watch?v=YJC6ldI3hWk">This video</a> by Corey Schafer explains it well.
+   * <a target="_blank" href="https://docs.continuum.io/anaconda/install">https://docs.continuum.io/anaconda/install</a>
 
 0. Go to web page:
 
@@ -1446,11 +1381,114 @@ to PATH in your /Users/mac/.bash_profile ? [yes|no]
    </pre>
 
 
+<a name="Miniconda"></a>
+
+## Miniconda install #
+
+1. Automated install from https://github.com/wilsonmar/mac-setup/blob/master/mac-setup.zsh
+
+   <pre><strong>./mac-setup.zsh</strong></pre>
+
+1. Setup run-time Environment variables:
+   https://github.com/wilsonmar/mac-setup/blob/master/.zshrc
+
+Below is a more "hands-on" description than what
+<a target="_blank" href="http://conda.pydata.org/docs/install/quick.html">
+pydata.org</a> and
+<a target="_blank" href="http://kylepurdon.com/blog/using-continuum-analytics-conda-as-a-replacement-for-virtualenv-pyenv-and-more.html">
+Kyle Purdon</a> offers.
+
+0. Use an internet browser to visit the <a target="_blank" href="http://conda.pydata.org/miniconda.html">Miniconda Download page at http://conda.pydata.org/miniconda.html</a>
+
+   Alternately, download:
+
+   <tt><strong>cd ~/Downloads<br />
+   wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+   </strong></tt>
+
+0. Select version to download. For various versions of Python:
+
+   | Version    | File                               | Size    |
+   | :--------- | :--------------------------------- | ------: |
+   | Python 3.10 | Miniconda3-latest-MacOSX-x86_64.sh | 53.9 MB |
+   | Python 3.9 | Miniconda3-latest-MacOSX-x86_64.sh | 67.8 MB |
+   | Python 3.5 | Miniconda3-latest-MacOSX-x86_64.sh | 23.4 MB |
+   | Python 2.7 | miniconda3-latest-MacOSX-x86_64.sh | 20.3 MB |
+
+   NOTE: Python3 is not backward compatible with Version 2.
+
+   Notice the ".sh" means these are shell scripts.
+
+0. Open a Terminal shell window to
+   navigate to your Downloads folder and run the Python 2.7 script:
+
+   <tt><strong>cd ~/Downloads<br />
+   bash miniconda3-latest-MacOSX-x86_64.sh -b
+   </strong></tt>
+
+   PROTIP: The "-b" option specifies unattended with defaults.
+
+   The response:
+
+   <pre>
+Welcome to miniconda3 4.0.5 (by Continuum Analytics, Inc.)
+&nbsp;
+In order to continue the installation process, please review the license
+agreement.
+Please, press ENTER to continue
+>>> 
+   </pre>
+
+0. Press Enter to accept the license.
+0. Press "q" to the ":" prompt.
+0. Type yes.
+
+   "ERROR: File or directory already exists:"
+   appears if miniconda was already installed.
+
+0. <a href="#CondaVersion">Confirm conda version</a>.
+
+<a name="MinicondaUninstall"></a>
+
+## Miniconda Uninstall #
+
+1.  Install a package to uninstall itself:
+
+    <pre><strong>conda install anaconda-clean
+anaconda-clean --yes
+    </strong></pre>
+
+    find / -name anaconda3 2>/dev/null
+
+1.  Delete the anaconda install folder, which is usually under your home dir:
+
+    <pre><strong>rm -rf /usr/local/anaconda2
+    rm -rf /usr/local/anaconda3
+    </strong></pre>
+
+<a name="CondaUninstall"></a>
+
+## Conda Uninstall #
+
+1.  Install a package to uninstall itself:
+
+    <pre><strong>conda install anaconda-clean
+anaconda-clean --yes
+    </strong></pre>
+
+    find / -name anaconda3 2>/dev/null
+
+1.  Delete the anaconda install folder, which is usually under your home dir:
+
+    <pre><strong>rm -rf /usr/local/anaconda2
+    rm -rf /usr/local/anaconda3
+    </strong></pre>
+
 <hr />
 
 <a name="CondaVersion"></a>
 
-## Conda verson #
+## Conda version #
 
    See <a target="_blank" href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/">https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/</a>
 
