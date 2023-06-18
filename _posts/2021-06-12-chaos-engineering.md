@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-04-12"
+date: "2023-06-18"
 file: "chaos-engineering"
 title: "Chaos Engineering"
 excerpt: "Use Gremlin, Chaos Monkey, and monitoring tools (such as Datadog) to measure and improve MTTD and MTTR"
@@ -104,6 +104,32 @@ Specific metrics to measure:
    * RTO (Recovery Time Objective) aka MTTR (Mean Time to Repair/Recover) - How long for interruptions to be repaired? 
 
    * RPO (Recovery Point Objective) - how far back data can be recovered. If there is dependence on recovery from backups,  the RPO would be the time between backups are taken, which can be a day.
+
+<hr />
+
+<a name="Security"></a>
+
+## Security
+
+<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw">VIDEO</a>
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top"><td> Factor </td><td> Red/Blue/Purple Team </td><td> Security
+   </td></tr>
+<tr valign="top"><td> Frequency: </td><td> periodically (bi-annually)
+   </td><td> continuously </td></tr>
+<tr valign="top"><td> Tools: </td><td> manual
+   </td><td> automation </td></tr>
+<tr valign="top"><td> By: </td><td> external consultants 
+   </td><td> in-house staff </td></tr>
+<tr valign="top"><td> Objective: </td><td> not designed to provide learning opportunities
+   </td><td> designed to provide learning opportunities </td></tr>
+<tr valign="top"><td> By: </td><td> external consultants 
+   </td><td> in-house staff </td></tr>
+<tr valign="top"><td> - </td><td> not cloud native
+   </td><td> cloud native </td></tr>
+</tr>
+</table>
 
 
 <a name="Monitoring_Vendors"></a>
