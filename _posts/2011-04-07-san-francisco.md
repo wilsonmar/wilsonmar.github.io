@@ -147,9 +147,11 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
     
     PROTIP: Use <a target="_blank" href="https://streetcar.live/">streetcar.live website</a> or the <a target="_blank" href="https://apps.apple.com/us/app/moovit-your-local-transit/id498477945">Moovit mobile app</a> to time which historic car you will ride. The F line features <a target="_blank" href="https://www.streetcar.org/san-franciscos-historic-streetcars/">old cars bought from around the world</a>: Milan, Italy (in 1928), Melbourne, Australia, London, and Mexico City, Philadelphia, Baltimore, Pittsburgh, Los Angeles, etc. It's a <a target="_blank" href="https://www.streetcar.org/museum/">museum</a> in motion!
 
-    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"><img align="right" width="200"  alt="san-francisco-mask-329x301.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"></a> NOTE: Masks continue to be advised for all transit riders, including on Muni’s historic streetcars and cable cars.
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"><img align="right" width="200"  alt="san-francisco-mask-329x301.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"></a> NOTE: Masks continue to be advised for all transit riders.
 
-1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> to buy their famous yellow mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation". It's in the gift shop within the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> (at <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a>). No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
+1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> and walk to <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a> into the gift shop within the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> to buy their famous mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation".
+
+No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
 
     <strong>Ring the bell</strong> when you're approaching your stop by pulling the metal cord that runs along the side walls.
 
