@@ -3,7 +3,7 @@ layout: post
 date: "2023-06-15"
 file: "san-francisco"
 title: "San Francisco"
-excerpt: "Eat and geek your way through top experiences walking in the City by the Bay, all in one day"
+excerpt: "Eat and geek your way through walking in the City by the Bay, all in one day"
 tags: [travel]
 image:
 # feature: Xcode-1900x500-37236
@@ -114,12 +114,12 @@ Watch some of the <a target="_blank" href="https://www.sftourismtips.com/movies-
 * Milk (2008)
 * <a target="_blank" href="https://www.justwatch.com/us/movie/khan">My Name Is Khan (2010)</a> with SRK
 * <a target="_blank" href="https://www.justwatch.com/us/movie/contagion">Contagion (2011)</a>
-* <a target="_blank" href="https://movie-locations.com/movies/m/Mission-Impossible-Ghost-Protocol.php">Mission Impossible: Ghost Protocol (2011)</a> <a target="_blank" href="https://www.paramountplus.com/movies/video/xKyXExegLnRwJ8mXEyYy_dc9X9m4DVZC/">Streamin on Paramount+</a>
+* <a target="_blank" href="https://movie-locations.com/movies/m/Mission-Impossible-Ghost-Protocol.php">Mission Impossible: Ghost Protocol (2011)</a> <a target="_blank" href="https://www.paramountplus.com/movies/video/xKyXExegLnRwJ8mXEyYy_dc9X9m4DVZC/">Streaming on Paramount+</a>
 * <a target="_blank" href="https://www.justwatch.com/us/movie/blue-jasmine">Blue Jasmine (2013)</a> with Kate Blanchett, Alec Baldwin
 * Ant-Man (2015), Ant-Man and the Wasp (2018), & Ant-Man and the Wasp: Quantumania (2023)
 * Always Be My Maybe (2019)
 * Matrix Resurrections (2021)
-* <a target="_blank" href="https://tv.apple.com/us/show/the-last-thing-he-told-me/" title="Streaming on AppleTV">The Last Thing He Told Me</a>
+* <a target="_blank" href="https://tv.apple.com/us/show/the-last-thing-he-told-me/" title="Streaming on AppleTV">The Last Thing He Told Me</a> with Jennifer Garner
 <br /><br />
 
 Viator offers <a target="_blank" href="https://www.viator.com/tours/San-Francisco/San-Francisco-Movie-Sights-City-Tour/d651-25298P1">$67 Movie Sights tour</a> with commentary.
@@ -140,19 +140,27 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  At SFO or OAK airport, walk to the BART station to take either BART train (that leaves every 15 minutes) to the <a target="_blank" href="https://goo.gl/maps/rbZbkbMN7cTCDqiu7">Embarcado</a> station. One way, it's $10 from SFO, $11.40 from OAK.
 
-1.  Have luggage? I've given it (with $10) to the <a target="_blank" href="https://goo.gl/maps/NwriyskXjjJvM94XA">Hyatt Regency hotel at Embarcadero</a> or <a target="_blank" href="https://goo.gl/maps/scwDkDr1NTMDXMKV8">5-star 1 Hotel</a>.
+1.  Have luggage? I've walked it (with $10) to the <a target="_blank" href="https://goo.gl/maps/NwriyskXjjJvM94XA">Hyatt Regency hotel at Embarcadero</a> or the <a target="_blank" href="https://goo.gl/maps/scwDkDr1NTMDXMKV8">5-star 1 Hotel</a>.
 
-1.  Hungry already? <a target="_blank" href="https://goo.gl/maps/tawNRfSj2xPPxFaH8">Yank Sing</a> serves superlative traditional dim sum in or to go. There's a gourmet market inside the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign. 
+1.  Wait for a vintage Muni street car at the <a target="_blank" href="https://goo.gl/maps/ihtgMLU4X7Pw6Jkt7">Embarcadero stop</a> of <a target="_blank" href="https://www.sfmta.com/maps/f-market-and-wharves-accessible-stops">F line</a> that runs between Fisherman's Wharf to the North and Castro district to the West. Just $2.25 off your Clipper card.
+    
+    PROTIP: Use <a target="_blank" href="https://streetcar.live/">streetcar.live website</a> or the <a target="_blank" href="https://apps.apple.com/us/app/moovit-your-local-transit/id498477945">Moovit mobile app</a> to time which historic car you will ride. The F line features <a target="_blank" href="https://www.streetcar.org/san-franciscos-historic-streetcars/">old cars bought from around the world</a>: Milan, Italy (in 1928), Melbourne, Australia, London, and Mexico City, Philadelphia, Baltimore, Pittsburgh, Los Angeles, etc. It's a <a target="_blank" href="https://www.streetcar.org/museum/">museum</a> in motion!
 
-    <a target="_blank" href="https://www.mercato.com/shop/ferry-building">fancy breads, dog treats, mushrooms, chocolates from around the world, caviar, etc.</a>.
+    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"><img align="right" width="200"  alt="san-francisco-mask-329x301.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687098684/san-francisco-mask-329x301_epmkae.png"></a> NOTE: Masks continue to be advised for all transit riders, including on Muni’s historic streetcars and cable cars.
 
-1.  Walk 4 blocks NorthEast or take a Muni street car along The Embarcadero toward Fisherman's Wharf.
+1.  Get off the <a target="_blank" href="https://goo.gl/maps/pcTJBZjqWg82SuHB9">Don Chee Way & Steuart St stop</a> to visit the gift shop in the <a target="_blank" href="https://www.streetcar.org/museum/">Railway Museum</a> (at <a target="_blank" href="https://goo.gl/maps/tzPNye5M1coB152r5">177 Steuart</a>) to buy their famous yellow mask for introverts: "Information Gladly Given, But Safety Requires Avoiding Unnecessary Conversation". No time? buy from their <a target="_blank" href="https://www.streetcar.org/product-category/store-main/">virtual gift shop</a>.
 
-1.  The Exploratorium (science museum) is not just for kids.
+    <strong>Ring the bell</strong> when you're approaching your stop by pulling the metal cord that runs along the side walls.
 
-1.  Take a Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to <a target="_blank" href="https://www.pier39.com/sealions/" title="webcam">see</a> and hear the <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">icon resident sea lions</a> <a target="_blank" href="https://www.sftravel.com/article/everything-you-need-know-about-san-franciscos-sea-lions">(not seals)</a> say "mine mine".
+1.  Hungry already? Walk SouthEast kitty-corner for superlative traditional dim sum in or to go at <a target="_blank" href="https://goo.gl/maps/tawNRfSj2xPPxFaH8">Yank Sing (Spear Street)</a>.
 
-1.  Order an Uber/Lyft or hire a tricycle to <a target="_blank" href="https://boudinbakery.com/location/boudin-bakery-bakers-hall/">Boudine's</a> (8am-9pm) for <a target="_blank" href="https://order.boudinbakery.com/menu/boudin-bakery-pier-39/products/34947045">New England-Style clam chowder in a sourdough bread bowl. Order online and add bacon</a>.
+1.  Even better, walk NorthEast across The Embarcadero for the amazing gourmet market inside the <a target="_blank" href="https://goo.gl/maps/GMg5oVC8EswCZ2Yd8">Ferry Building</a> under the clock tower and "Port of San Franciso" sign: <a target="_blank" href="https://www.mercato.com/shop/ferry-building">fancy breads, dog treats, mushrooms, chocolates from around the world, caviar, etc.</a>.
+
+1.  The <a target="_blank" href="https://goo.gl/maps/LN6UL7123Dvn2EsE9">Exploratorium</a> (hands-on science museum) is not just for kids.
+
+1.  Take a Muni streetcar to <a target="_blank" href="https://goo.gl/maps/stJvWWiLfaUzwWg96">Pier 39</a> to <a target="_blank" href="https://www.pier39.com/sealions/" title="webcam">see</a> and hear the <a target="_blank" href="https://goo.gl/maps/GWB7mYJK5SVUzWS46">icon resident sea lions</a> <a target="_blank" href="https://www.sftravel.com/article/everything-you-need-know-about-san-franciscos-sea-lions">(not seals)</a>.
+
+1.  Stop at <a target="_blank" href="https://boudinbakery.com/location/boudin-bakery-bakers-hall/">Boudine's</a> (8am-9pm) for <a target="_blank" href="https://order.boudinbakery.com/menu/boudin-bakery-pier-39/products/34947045">New England-Style clam chowder in a sourdough bread bowl. Order online and add bacon</a>.
 
 1.  <a target="_blank" href="https://museemecanique.com/">Musée Mécanique</a> has old-school mechanical coin-operated games and oddities. Free to enter!
 
@@ -166,7 +174,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookest Street". You end up on Leavenworth Street.
 
-1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" alt="san-francisco-sundial-403x448.png" width="200" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE."
+1.  <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"><img align="right" width="200"  alt="san-francisco-sundial-403x448.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687060183/san-francisco-sundial-403x448_oj79o6.png"></a> If you'd like to propose to someone at a quiet place, walk a half block North to read the words on the sundial in the little <a target="_blank" href="https://goo.gl/maps/LjGNcLZzmDtd4KPZ8">Fay Park</a>: "GROW OLD ALONG WITH ME. THE BEST IS YET TO BE."
 
 1.  Walk back up (West) on Chestnut Street to get back on the Cable Car (or get an Uber) to get off Washington Street if you want to talk with retired Cable Car operators where they hang out, in the <a target="_blank" href="https://goo.gl/maps/CS5f9ktm1k5jjzSp6">Cable Car Museum</a>.
 
