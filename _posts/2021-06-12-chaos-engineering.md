@@ -118,14 +118,16 @@ Specific metrics to measure:
    </th></tr>
 <tr valign="top"><td> By: </td><td> external consultants 
    </td><td> in-house staff </td></tr>
-<tr valign="top"><td> Frequency: </td><td> periodically (annually)
-   </td><td> continuously </td></tr>
 <tr valign="top"><td> Technical Scope: </td><td> external interfaces
    </td><td> internal and external </td></tr>
-<tr valign="top"><td> Tools: </td><td> manual
-   </td><td> automation </td></tr>
+<tr valign="top"><td> Frequency: </td><td> periodically (annually)
+   </td><td> continuously </td></tr>
 <tr valign="top"><td> Goals: </td><td> identify issues
    </td><td> iterative improvement </td></tr>
+<tr valign="top"><td> Tools: </td><td> manual
+   </td><td> automated  </td></tr>
+<tr valign="top"><td> Expected Outcome: </td><td> confirmation of posture
+   </td><td> high definition insights about processes </td></tr>
 <tr valign="top"><td> Objective: </td><td> not for learning
    </td><td> create learning opportunities </td></tr>
 <tr valign="top"><td> Involvement: </td><td> Security &amp; Ops
