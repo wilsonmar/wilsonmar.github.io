@@ -129,7 +129,7 @@ Specific metrics to measure:
 <tr valign="top"><td> Objective: </td><td> not for learning
    </td><td> create learning opportunities </td></tr>
 <tr valign="top"><td> Involvement: </td><td> Security &amp; Ops
-   </td><td> company-wide </td></tr>
+   </td><td> company-wide Incident Management </td></tr>
 <tr valign="top"><td> - </td><td> NOT cloud native
    </td><td> cloud native </td></tr>
 </table>
