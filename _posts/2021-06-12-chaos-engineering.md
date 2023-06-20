@@ -40,14 +40,14 @@ https://github.com/dastergon/awesome-chaos-engineering
 Chaos Engineering is an <strong>investment</strong> in moving from a reactive to <strong>proactive</strong> approach to reliability engineering.
 
 Instead of waiting for an outage to "see what happens", 
-it involves conducting <strong>experiments</strong> to expose systemic weaknesses do not become aberrant behaviors in production.
+it involves conducting <strong>experiments</strong> to expose systemic weaknesses that do not become aberrant behaviors in production.
 
 
 <a name="Security"></a>
 
 ## Security Chaos Engineering
 
-<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw" title="by Mitigant">VIDEO</a> compares traditonal Audit and Test (aka Red/Blue/Purple Team) against modern Chaos Engineering:
+<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw" title="by Mitigant">VIDEO</a> compares traditional Audit and Test (aka Red/Blue/Purple Team) against modern Chaos Engineering:
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr valign="top" align="left"><th> Factor </th><th> Test/Audit </th><th> Chaos Engineering
@@ -189,9 +189,9 @@ Chaos engineering experiments follow an approach:
 
 2. Hypothesize that this steady state will continue in both the control group and the experimental group.
 
-4. Introduce variables that reflect real world events like servers that crash, hard drives that malfunction, network connections that are severed, etc.
+4. Introduce variables that reflect real-world events like servers that crash, hard drives that malfunction, network connections that are severed, etc.
 
-5. Try to disprove the hypothesis by looking for a difference in steady state between the control group and the experimental group.
+5. Try to disprove the hypothesis by looking for a difference in steady-state between the control group and the experimental group.
     
     
 <hr />
@@ -206,7 +206,7 @@ Chaos engineering utilities (systems) enable more experiments to be conducted <s
 
 This article draws from several vendors.
 
-The timeline at the top of this page depict vendors who offer products and services to automate chaos engineering:
+The timeline at the top of this page depicts vendors who offer products and services to automate chaos engineering:
 
    * <a href="#ChaosMonkey">"Chaos Monkey" from Netflix</a>
    * <a href="#Gremlin">Gremlin (freemium)</a>
@@ -301,7 +301,7 @@ Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
    * K8s Containers Orchestration
    * AWS Cloud Compute
    * Datadog monitoring
-   * Messageing
+   * Messaging
    * Databases
    * ALFI (Application-Level Failure Injection), such as on AWS RDS (<a target="_blank" href="https://www.youtube.com/watch?v=o1Uyf8bhwyI">VIDEO</a>)
    <br /><br />
@@ -324,7 +324,7 @@ Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
    * Windows
    <br /><br />
 
-1. Add Gremlin in server build process. On Windows:
+1. Add Gremlin in the server build process. On Windows:
 
    <pre>msiexec /package https://windows.gremlin.com/installer/latest/gramlin_installer.msi</pre>
 
@@ -341,7 +341,7 @@ Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
 
 1. Set alerts to be sent via email, Slack, SMS text, etc.
 
-1. Set daily, weekly, monthly, annual statistical reports to be sent to a distribution list.
+1. Set daily, weekly, monthly, and annual statistical reports to be sent to a distribution list.
 
 1. Choose attack mode:
 
@@ -369,7 +369,7 @@ Documentation is at https://litmusdocs-beta.netlify.app/docs/introduction/
 
    1. At 50 ms, the system has enough memory to absorb higher loads without degradation. However, the 
    
-   2. At 100 ms, requests begins to be queued, so response times reflect time in queue.
+   2. At 100 ms, requests begin to be queued, so response times reflect time in queue.
    
    3. At 300 ms, requests cannot be processed and responses reflect the handling of failed transactions.
    <br /><br />
