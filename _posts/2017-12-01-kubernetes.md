@@ -2023,7 +2023,7 @@ More about drivers:
 
 1. Verify your Docker container type:
 
-   <pre>docker info --format '{{.OSType}}'</pre>
+   <pre>docker info --format '\{\{.OSType\}\}'</pre>
 
    On macOS, the response is "Linux".
 

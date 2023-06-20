@@ -34,12 +34,47 @@ Vendor Gremlin's definition:
 
 https://github.com/dastergon/awesome-chaos-engineering
 
+
 ### Making bad things happen 
 
 Chaos Engineering is an <strong>investment</strong> in moving from a reactive to <strong>proactive</strong> approach to reliability engineering.
 
 Instead of waiting for an outage to "see what happens", 
 it involves conducting <strong>experiments</strong> to expose systemic weaknesses do not become aberrant behaviors in production.
+
+
+<a name="Security"></a>
+
+## Security Chaos Engineering
+
+<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw" title="by Mitigant">VIDEO</a> compares traditonal Audit and Test (aka Red/Blue/Purple Team) against modern Chaos Engineering:
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr valign="top" align="left"><th> Factor </th><th> Test/Audit </th><th> Chaos Engineering
+   </th></tr>
+<tr valign="top"><td> By: </td><td> external contractors 
+   </td><td> in-house staff </td></tr>
+<tr valign="top"><td> Interfaces: Scope: </td><td> external-facing
+   </td><td> internal and external facing </td></tr>
+<tr valign="top"><td> Frequency: </td><td> periodically (annually)
+   </td><td> continuously </td></tr>
+<tr valign="top"><td> Tools: </td><td> manual
+   </td><td> automated (in CI/CD, perf test) </td></tr>
+<tr valign="top"><td> Goals: </td><td> judgement
+   </td><td> iterative improvement of <strong>resilence</strong> </td></tr>
+<tr valign="top"><td> Expected Outcome: </td><td> confirmation of posture
+   </td><td> high definition insights about <strong>processes</strong> </td></tr>
+<tr valign="top"><td> Objective: </td><td> not for learning
+   </td><td> create <strong>learning</strong> opportunities </td></tr>
+<tr valign="top"><td> Beneficiaries: </td><td> Security &amp; Ops
+   </td><td> company-wide Incident Management </td></tr>
+<tr valign="top"><td> - </td><td> NOT cloud native
+   </td><td> cloud native </td></tr>
+</table>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=mfEMXKSFtaQ" title="with John Engel-Kemnetz">Azure enablement show: "Under Chaos Engineering"</a> 
+* Chaos Engineering https://aka.ms/azenable/79/01
+* Understanding Chaos Engineering and Resilience https://aka.ms/azenable/79/02 
 
 
 <a name="Hypotheses"></a>
@@ -106,39 +141,6 @@ Specific metrics to measure:
    * RPO (Recovery Point Objective) - how far back data can be recovered. If there is dependence on recovery from backups,  the RPO would be the time between backups are taken, which can be a day.
 
 <hr />
-
-<a name="Security"></a>
-
-## Security Chaos Engineering
-
-<a target="_blank" href="https://www.youtube.com/watch?v=hfSN_gApNmw" title="by Mitigant">VIDEO</a>
-
-<table border="1" cellpadding="4" cellspacing="0">
-<tr valign="top" align="left"><th> Factor </th><th> Red/Blue/Purple Team </th><th> Chaos Engineering
-   </th></tr>
-<tr valign="top"><td> By: </td><td> external contractors 
-   </td><td> in-house staff </td></tr>
-<tr valign="top"><td> Interfaces: Scope: </td><td> external-facing
-   </td><td> internal and external facing </td></tr>
-<tr valign="top"><td> Frequency: </td><td> periodically (annually)
-   </td><td> continuously </td></tr>
-<tr valign="top"><td> Tools: </td><td> manual
-   </td><td> automated (in CI/CD, perf test) </td></tr>
-<tr valign="top"><td> Goals: </td><td> judgement
-   </td><td> iterative improvement of <strong>resilence</strong> </td></tr>
-<tr valign="top"><td> Expected Outcome: </td><td> confirmation of posture
-   </td><td> high definition insights about <strong>processes</strong> </td></tr>
-<tr valign="top"><td> Objective: </td><td> not for learning
-   </td><td> create <strong>learning</strong> opportunities </td></tr>
-<tr valign="top"><td> Beneficiaries: </td><td> Security &amp; Ops
-   </td><td> company-wide Incident Management </td></tr>
-<tr valign="top"><td> - </td><td> NOT cloud native
-   </td><td> cloud native </td></tr>
-</table>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=mfEMXKSFtaQ" title="with John Engel-Kemnetz">Azure enablement show: "Under Chaos Engineering"</a> 
-* Chaos Engineering https://aka.ms/azenable/79/01
-* Understanding Chaos Engineering and Resilience https://aka.ms/azenable/79/02 
 
 
 <a name="Monitoring_Vendors"></a>

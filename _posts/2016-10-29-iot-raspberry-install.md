@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-17"
+date: "2023-06-17"
 file: "iot-raspberry-install"
 title: "IoT Raspberry Install"
 excerpt: "How to setup a Raspberry Pi on macOS with Raspbian, Python, Node, Ansible, Kubernetes"
@@ -805,7 +805,7 @@ map auto_home    0Bi    0Bi    0Bi   100%       0                   0  100%   /h
    CONGRATULATIONS: Isn't it exciting to see the screen appear on a new computer?
 
    <a target="_blank" href="https://www.youtube.com/watch?v=RBpAkTvBbYg">
-   Christopher Barnatt has a nice 9-minute about the PIXEL GUI</a>.
+   Christopher Barnatt has a nice 9-minute about the PIXEL GUI</a>
 
    TECHNICAL NOTE: To prevent starting from a really bad date,
    at shutdown, Raspbian saves a file containing a date at

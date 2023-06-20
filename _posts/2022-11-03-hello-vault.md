@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-02"
+date: "2023-06-17"
 file: "hello-vault"
 title: "Hello-Vault"
 excerpt: "How to code your app to use HashiCorp Vault to get rid of static database passwords by generating credentials in Secret_ID temporarily in cubbyholes, wrapped for transfer, and accessed using AppRole"
@@ -816,7 +816,7 @@ services:
 1. If you commented out, you can obtain the commands used to create each Docker process along with each of their ports. To avoid widening the width of the Terminal, specify columns using this command:
 
    <!--
-   <pre><strong>docker ps --format "table {{.Names}}\t{{.Ports}}"
+   <pre><strong>docker ps --format "table \{\{.Names\}\}\t\{\{.Ports\}\}"
    </strong></pre>
    -->
 
@@ -915,7 +915,7 @@ sample-app-database-1               "docker-entrypoint.s…"
    <pre>vault write database/config/aiven-for-postgresql-database \
     plugin_name=postgresql-database-plugin \
     allowed_roles="metrics-readwrite" \
-    connection_url="postgresql://{{username}}:{{password}}@[HOST]:[PORT]/defaultdb" \
+    connection_url="postgresql://\{\{username\}\}:\{\{password\}\}@[HOST]:[PORT]/defaultdb" \
     username=[USER] \
     password=[PASSWORD]
     </pre>
@@ -1347,7 +1347,7 @@ associated blog of the same name</a> by Nic Jackson with Anubhav Mishra referenc
 3. Establish database: Vault connects to database for the first time, using initial credentials, no SSL (which are OK since there is not data yet):
 
    <pre>vault write database/config/wizard plugin_name=postgresql-database-plugin \
-   connection_url="postgresql://{username}}:{{password}}@postgres:5432/wizard/sslmode=disable" \
+   connection_url="postgresql://\{username\}\}:\{\{password\}\}@postgres:5432/wizard/sslmode=disable" \
    verify_connection=false \
    allowed_roles="*" \
    username="iampostgres" password="password"
@@ -1380,9 +1380,9 @@ associated blog of the same name</a> by Nic Jackson with Anubhav Mishra referenc
 
    <pre>vault write database/roles/db-app 
    db_name=wizard \
-   connection_statements="CREATE ROLE \"{{name}}\";\" WITH LOGIN PASSWORD {{password}}' VALID UNTIL {{expiration}}'; \
-   GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"{{name}}\";\" \
-   revocation_statements="ALTER ROLE \"{{name}}\" NOLOGIN;" \
+   connection_statements="CREATE ROLE \"\{\{name\}\}\";\" WITH LOGIN PASSWORD \{\{password\}\}' VALID UNTIL \{\{expiration\}\}'; \
+   GRANT SELECT ON ALL TABLES IN SCHEMA public TO \"\{\{name\}\}\";\" \
+   revocation_statements="ALTER ROLE \"\{\{name\}\}\" NOLOGIN;" \
    default_ttl="1h" \
    max_ttl="24h"
    </pre>

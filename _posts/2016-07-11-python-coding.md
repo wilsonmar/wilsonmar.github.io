@@ -16,20 +16,9 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-{% include whatever.html %}
+This is one of my series of articles about Python:
 
-## This is Therapy for me?
-
-> I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
-
-Maybe it's fear of not doing well on coding interviews. 
-That's weird because as an SRE I don't have a job where I'm programming Python every day. 
-Yet employers make people go through coding challenges anyway like it was a fraternity hazing ritual.
-
-So to get over my Python phobia, like any other aversion therapy, 
-I needed to de-sensitize myself and do the very thing I fear. My notes on the various activities:
-
-   * Analyze the intricacies of <strong>installing Python</strong> and associated utilities at:<br /><a target="_blank" href="https://wilsonmar.github.io/jupyter">wilsonmar.github.io/jupyter</a>
+   * Analyze the intricacies of <strong>installing Python</strong> and associated utilities at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>
 
    * Analyze the intricacies of <strong>installing Jupyter</strong> which runs Python at:<br /><a target="_blank" href="https://wilsonmar.github.io/jupyter">wilsonmar.github.io/jupyter</a>
 
@@ -41,10 +30,18 @@ I needed to de-sensitize myself and do the very thing I fear. My notes on the va
 
    * Put to work what I've learned about programming Python in this blog article:<br /><a target="_blank" href="https://wilsonmar.github.io/python-samples">wilsonmar.github.io/python-samples</a>
 
+{% include whatever.html %}
 
-## References
+## This is Therapy for me?
 
-https://learnpython.com/blog/9-best-python-online-resources-start-learning/
+> I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
+
+Maybe it's fear of not doing well on coding interviews. 
+That's weird because as an SRE I don't have a job where I'm programming Python every day. 
+Yet employers make people go through coding challenges anyway like it was a fraternity hazing ritual.
+
+So to get over my Python phobia, like any other aversion therapy, 
+I needed to de-sensitize myself and do the very thing I fear. 
 
 
 ## Setup an IDE 
@@ -201,15 +198,42 @@ print(solution([7, 2, 8, 3, 5], 2))
 Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/CodilityInPython/blob/master/solutions/euclideanalgorithm/chocolates_by_numbers.py">this</a>
 
 
+<a name="WhenNow"></a>
+
+## What Day and Time is it?
+
+There are several ways to present date and time. 
+The ISO 8601 format is: 
+   <ul>2022-02-22T07:53:19.051615-05:00</ul>
+
+References:
+   * https://www.geeksforgeeks.org/get-current-time-in-different-timezone-using-python/
+
+
 <a name="DurationCalcs"></a>
 
 ## Duration calculations
 
-There are several ways to present date and time. The ISO 8601 format is: 2022-02-22T07:53:19.051615-05:00
+Several packages, functions, and methods are available. They differ by:
+   * the type of duration they report: wall-clock time or CPU time
+   * how they treat time zone changes during the recording period
+   * how much <strong>precision</strong> they report (down to microseconds)
+   <br /><br />
 
-There are several ways to capture how long a particular function or the whole program took to run.
+* <strong>Wall-clock time</strong> (aka clock time or wall time) is the total time <strong>elapsed</strong> you can measure with a stopwatch. It is the difference between the time at which a program finished its execution and the time at which the program started. It <strong>includes waiting time</strong> for resources.
 
-To time the difference between calculation strategies, new in Python 3.7 is <a target="_blank" href="https://www.python.org/dev/peps/pep-0564/">PEP 564</a>
+* <strong>CPU Time</strong> is how much time the CPU was <strong>busy processing</strong> programming instructions, not including time waiting for other task to complete (like I/O operations).
+
+We want both reported.
+
+timeit.default_timer() is time.perf_counter() on Python 3.3+. 
+
+The same program run several times would report similar CPU time but varying wall-clock times due to differences in what else was taking up resources during the runs.
+
+* time.time() returns wall-clock time.
+* time.process_time() returns CPU execution time.
+
+To time the difference between calculation strategies, new since Python 3.7 is <a target="_blank" href="https://www.python.org/dev/peps/pep-0564/">PEP 564</a>.
 
 <tt><strong>time.perf_counter()</strong></tt> (abbreviation of performance counter) measures the elapsed time of short duration because it returns 82 nano-second resolution on Fedora 4.12. It is based on <strong>Wall-Clock Time</strong> which includes time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of consecutive calls is valid.
 See https://docs.python.org/3/library/time.html#time.perf_counter
@@ -226,9 +250,37 @@ print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
 </pre>
 </ul>
 
+### timeit()
 
-<tt><strong>timeit.timer()</strong></tt> provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
-See https://docs.python.org/3/library/timeit.html and https://www.guru99.com/timeit-python-examples.html
+For more accurate wall-time capture, the timeit() functions disable the garbage collector.
+
+<tt><strong>timeit.timer()</strong></tt> 
+provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
+   * https://pynative.com/python-get-execution-time-of-program/
+   * https://docs.python.org/3/library/timeit.html 
+   * https://www.guru99.com/timeit-python-examples.html
+   <br /><br />
+
+<pre># Based on: pip3 install timeit  # not in conda
+import timeit
+&nbsp;
+# print addition of first 1 million numbers
+def addition():
+    print('Addition:', sum(range(1000000)))
+&nbsp;
+# run same code 5 times to get measurable data
+n = 5
+&nbsp;
+# calculate total execution time
+result = timeit.timeit(stmt='addition()', globals=globals(), number=n)
+&nbsp;
+# calculate the execution time
+# get the average execution time
+print(f"Execution time is {result / n} seconds")
+</pre>
+
+<pre>timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)
+</pre>
 
 <ul><pre># from timeit import default_timer as timer
 # from datetime import timedelta
@@ -273,6 +325,9 @@ References:
    * See https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
    * See https://www.codingeek.com/tutorials/python/datetime-strftime/
    * use the .st_birthtime attribute of the result of a call to os.stat().
+   * Obtain pgm start to obtain run duration at end:
+   * See https://www.webucator.com/article/python-clocks-explained/
+   * for wall-clock time (includes any sleep).
    <br /><br />
 
 ### Timezone handling
@@ -1514,6 +1569,8 @@ https://medium.com/codex/say-goodbye-to-loops-in-python-and-welcome-vectorizatio
 ## Referenes
 
 https://python.plainenglish.io/the-easiest-ways-to-generate-a-side-income-with-python-60104ad36998
+
+https://learnpython.com/blog/9-best-python-online-resources-start-learning/
 
 ## More about Python
 

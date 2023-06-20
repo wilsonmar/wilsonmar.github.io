@@ -392,11 +392,109 @@ The following packages will be DOWNGRADED:
   click              conda-forge/noarch::click-8.1.3-unix_pyhd8ed1ab_2    
     </pre>
 
+    <pre>pip3 install datetime
+    Successfully installed datetime-5.1 pytz-2023.3 zope.interface-6.0
+    </pre>
 
+    <pre>conda install -c conda-forge flask
+  flask              conda-forge/noarch::flask-2.3.2-pyhd8ed1ab_0
+  importlib-metadata conda-forge/noarch::importlib-metadata-6.6.0-pyha770c72_0
+  itsdangerous       conda-forge/noarch::itsdangerous-2.1.2-pyhd8ed1ab_0
+  jinja2             conda-forge/noarch::jinja2-3.1.2-pyhd8ed1ab_1
+  markupsafe         conda-forge/osx-64::markupsafe-2.1.3-py310h6729b98_0
+  werkzeug           conda-forge/noarch::werkzeug-2.3.6-pyhd8ed1ab_0
+  zipp               conda-forge/noarch::zipp-3.15.0-pyhd8ed1ab_0
+    </pre>
 
+    <pre>conda install -c conda-forge google-auth
+  aiohttp            conda-forge/osx-64::aiohttp-3.8.4-py310h6729b98_1
+  aiosignal          conda-forge/noarch::aiosignal-1.3.1-pyhd8ed1ab_0
+  async-timeout      conda-forge/noarch::async-timeout-4.0.2-pyhd8ed1ab_0
+  attrs              conda-forge/noarch::attrs-23.1.0-pyh71513ae_1
+  cachetools         conda-forge/noarch::cachetools-5.3.0-pyhd8ed1ab_0
+  frozenlist         conda-forge/osx-64::frozenlist-1.3.3-py310h90acd4f_0
+  google-auth        conda-forge/noarch::google-auth-2.20.0-pyh1a96a4e_0
+  multidict          conda-forge/osx-64::multidict-6.0.4-py310h90acd4f_0
+  pyasn1             conda-forge/noarch::pyasn1-0.4.8-py_0
+  pyasn1-modules     conda-forge/noarch::pyasn1-modules-0.2.7-py_0
+  pyu2f              conda-forge/noarch::pyu2f-0.1.5-pyhd8ed1ab_0
+  rsa                conda-forge/noarch::rsa-4.9-pyhd8ed1ab_0
+  yarl               conda-forge/osx-64::yarl-1.9.2-py310h6729b98_0    
+    </pre>
 
+    <pre>conda install -c conda-forge google-cloud-core
+  c-ares             conda-forge/osx-64::c-ares-1.19.1-h0dc2134_0
+  google-api-core    conda-forge/noarch::google-api-core-2.11.1-pyhd8ed1ab_0
+  google-cloud-core  conda-forge/noarch::google-cloud-core-2.3.2-pyhd8ed1ab_0
+  googleapis-common~ conda-forge/noarch::googleapis-common-protos-1.59.1-pyhd8ed1ab_0
+  grpcio             conda-forge/osx-64::grpcio-1.55.1-py310hd8379ad_1
+  libabseil          conda-forge/osx-64::libabseil-20230125.2-cxx17_h000cb23_2
+  libcxx             conda-forge/osx-64::libcxx-16.0.6-hd57cbcb_0
+  libgrpc            conda-forge/osx-64::libgrpc-1.55.1-h73e6b18_1
+  libprotobuf        conda-forge/osx-64::libprotobuf-4.23.2-h5feb325_5
+  protobuf           conda-forge/osx-64::protobuf-4.23.2-py310h4e8a696_1
+  re2                conda-forge/osx-64::re2-2023.03.02-h096449b_0
+    </pre>
+   
+    <pre>conda install -c conda-forge google-cloud-vision
+  google-api-core-g~ conda-forge/noarch::google-api-core-grpc-2.11.1-hd8ed1ab_0
+  google-cloud-visi~ conda-forge/noarch::google-cloud-vision-3.4.2-pyhd8ed1ab_0
+  grpcio-status      conda-forge/noarch::grpcio-status-1.54.2-pyhd8ed1ab_0
+  proto-plus         conda-forge/noarch::proto-plus-1.22.2-pyhd8ed1ab_0
+    </pre>
 
+    <pre>conda install -c conda-forge hvac
+  hvac               conda-forge/noarch::hvac-0.11.2-pyhd8ed1ab_0
+    </pre>
 
+    <pre>conda install -c conda-forge keyring
+  importlib_metadata conda-forge/noarch::importlib_metadata-6.6.0-hd8ed1ab_0
+  jaraco.classes     conda-forge/noarch::jaraco.classes-3.2.3-pyhd8ed1ab_0
+  keyring            conda-forge/osx-64::keyring-23.13.1-py310h2ec42d9_0
+  more-itertools     conda-forge/noarch::more-itertools-9.1.0-pyhd8ed1ab_0    
+    </pre>
+
+    <pre>conda install -c conda-forge pathlib
+  pathlib            conda-forge/osx-64::pathlib-1.0.1-py310h2ec42d9_7
+    </pre>
+
+    <pre>conda install -c conda-forge pytz
+  pytz               conda-forge/noarch::pytz-2023.3-pyhd8ed1ab_0
+    </pre>
+
+    <pre>conda install -c conda-forge redis
+  redis              pkgs/main/osx-64::redis-5.0.3-h1de35cc_0
+    </pre>
+
+    <pre>conda install -c conda-forge textblob
+  joblib             conda-forge/noarch::joblib-1.2.0-pyhd8ed1ab_0
+  nltk               conda-forge/noarch::nltk-3.8.1-pyhd8ed1ab_0
+  regex              conda-forge/osx-64::regex-2023.6.3-py310h6729b98_0
+  textblob           conda-forge/noarch::textblob-0.15.3-py_0
+  tqdm               conda-forge/noarch::tqdm-4.65.0-pyhd8ed1ab_1
+    </pre>
+
+    <pre>conda install -c conda-forge time
+  time               conda-forge/osx-64::time-1.8-h01d97ff_0
+    </pre>
+
+    <pre>conda install python-dotenv
+  python-dotenv      conda-forge/noarch::python-dotenv-1.0.0-pyhd8ed1ab_0
+    </pre>
+
+    <pre>conda install oauth2client
+  httplib2           conda-forge/noarch::httplib2-0.22.0-pyhd8ed1ab_0
+  oauth2client       conda-forge/noarch::oauth2client-4.1.3-py_0
+  pyparsing          conda-forge/noarch::pyparsing-3.1.0-pyhd8ed1ab_0
+    </pre>
+
+    <pre> conda install -c conda-forge psutil
+  psutil             conda-forge/osx-64::psutil-5.9.5-py310h90acd4f_0
+    </pre>
+
+    <pre>pip3 install redis
+  Using cached redis-4.5.5-py3-none-any.whl (240 kB)
+    </pre>
 
 
     IMPORTANT: All the above are done just once to estabblish the requirements.txt file, which conda can use to download dependencies in the future.
@@ -692,6 +790,80 @@ Most use and run flags have a <strong>default of False</strong>, to NOT use/run.
 <a name="Imports"></a>
 
 ## Imports
+
+The text below assumes that you've familiar with the technical background at my https://wilsonmar.github.io/python-install/
+
+> Imports are always put at the top of the file, just after any module comments and docstrings, and before module globals and constants. -- PEP 8.
+
+PEP8 also asks that imports be grouped in this order:
+   A. Standard library imports (Python’s built-in modules)<br />
+   B. Related third party imports.<br />
+   C. Local application/library-specific imports
+
+Reasons for following it:
+
+1. Utilities will raise an error if it's not followed.
+2. Programmers are used to doing it this way.
+3. It avoids errors where imports are done before being used.
+4. Imports can be used by several functions. So having them inside functions would repeat import with each invocation, which is unnecessary overhead. Module importing is fast, but not instant. (between 0.2 and 1 second).
+<br /><br />
+
+   PROTIP: This program runs a timer to identify how much time was taken.
+
+5. A long list of imports gives a basis for judging whether the program file is "too heavy".
+
+Reasons for not following:
+
+1. The list of imports in code is not where we look anymore mow that utilities are run to generate SBOMs used to look up vulnerabilities by individual package.
+
+   PROTIP: Imports in this program are sorted alphabetically to make it easier to find. 
+
+2. The application starts faster if modules are imported only when needed. Importing a module both loads the contents and creates a namespace containing the contents. 
+
+References:
+   * https://realpython.com/python-import/
+   * https://towardsdatascience.com/understanding-python-imports-init-py-and-pythonpath-once-and-for-all-4c5249ab6355
+
+
+### Conda or venv?
+
+Conda packages include Python libraries (NumPy or matplotlib), C libraries (libjpeg), and executables (like C compilers, and even the Python interpreter itself). The purpose:
+
+* Portability across operating systems: Instead of installing Python in three different ways on Linux, macOS, and Windows, you can use the same environment.yml on all three.
+
+Reproducibility: It’s possible to pin almost the whole stack, from the Python interpreter upwards.
+
+Consistent configuration: You don’t need to install system packages and Python packages in two different ways; (almost) everything can go in one file, the environment.yml.
+
+Packages in Conda may have gone through some additional vetting than just being in pypi.org?
+
+There are multiple package repositories in channel Conda-Forge.
+https://conda-forge.org/
+
+https://pythonspeed.com/articles/conda-vs-pip/
+
+If the conda env is "py39"
+
+conda install -c conda-forge folium
+puts the package in:
+
+./miniconda3/envs/[name env]/lib/python3.9/site-packages/folium
+
+pip install folium
+(with a conda env activated), puts the package in:
+
+./miniconda3/lib/python3.9/site-packages/folium
+
+
+### Other
+
+PROTIP: Notes are added above each import on whether it was found by Conda & pip venv.
+
+When I tried to make use of Python 3.10, Conda does not have these packages:
+
+   * locale
+
+requirements.txt are at the package level.
 
 NOTE: all Python imports are from pypi.org. For example, python-dotenv is drawn from:
 
