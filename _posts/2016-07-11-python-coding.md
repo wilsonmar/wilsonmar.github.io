@@ -261,8 +261,8 @@ provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
    * https://www.guru99.com/timeit-python-examples.html
    <br /><br />
 
-<pre># Based on: pip3 install timeit  # not in conda
-import timeit
+<pre>
+import timeit   # built-in
 &nbsp;
 # print addition of first 1 million numbers
 def addition():

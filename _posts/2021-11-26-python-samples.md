@@ -27,11 +27,18 @@ This article describes my Python programming code at:
 
 ## Why this?
 
-Inexplicably, many companies make candidates suffer through evaluations of programming skills (using HackerRank, etc.) even though such skills are rarely used in some DevSecOps jobs. So here we are.
+So I wrote this to fill several gaps.
 
-Concern about malicious libraries and their unsecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
+A. Many companies make candidates suffer through evaluations of programming skills (using HackerRank, etc.) even though such skills are rarely used in some jobs. 
 
-So I wrote this to fill that gap a little.
+   So no matter what job we have, we need to keep our programming skills up to get the next job.
+
+B. Programming is a fun hobby.
+
+C. Concern about malicious libraries and their unsecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
+
+D. I like working toward being a <strong>craftsman</strong> at programming, like a painter who creates intricate artwork.
+This article presents an example of my experiments on how to  handle complexity for <strong>resilency</strong>.
 
 > I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
 
