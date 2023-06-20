@@ -16,28 +16,32 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This is one of my series of articles about Python:
+This is:
 
-   * Analyze the intricacies of <strong>installing Python</strong> and associated utilities at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>
+   * Put learning and creativity to work on the <tt>python-samples.py</tt> program described at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-samples">wilsonmar.github.io/python-samples</a>
+   <br /><br />
 
-   * Analyze the intricacies of <strong>installing Jupyter</strong> which runs Python at:<br /><a target="_blank" href="https://wilsonmar.github.io/jupyter">wilsonmar.github.io/jupyter</a>
+This is the last in my series of articles about Python:
 
-   * Identify Python <strong>coding tutorials</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-tutorials">wilsonmar.github.io/python-tutorials</a>
+   * Handle the intricacies of <strong>installing Python</strong> and associated utilities (pyenv, pip, venv, conda, etc.) at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>
 
-   * Describe Python <strong>coding tricks and techniques</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-coding">wilsonmar.github.io/python-coding</a>
+   * Handle the intricacies of <strong>installing Jupyter</strong> which runs Python at:<br /><a target="_blank" href="https://wilsonmar.github.io/jupyter">wilsonmar.github.io/jupyter</a>
+
+   * Know who provides Python <strong>coding tutorials</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-tutorials">wilsonmar.github.io/python-tutorials</a>
 
    * Analyze the topics covered in <strong>certification tests</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-certs">wilsonmar.github.io/python-certs</a>
 
-   * Put to work what I've learned about programming Python in this blog article:<br /><a target="_blank" href="https://wilsonmar.github.io/python-samples">wilsonmar.github.io/python-samples</a>
+   * Know Python language <strong>coding tricks and techniques</strong> at:<br /><a target="_blank" href="https://wilsonmar.github.io/python-coding">wilsonmar.github.io/python-coding</a>
 
 {% include whatever.html %}
 
-## This is Therapy for me?
+## This is Therapy?
 
-> I wrote this because I have a mental block about programming Python. It's like I'm afraid of snakes.
+> I wrote this because I have a mental block about programming Python. I'm afraid of Python like I'm afraid of real snakes.
 
 Maybe it's fear of not doing well on coding interviews. 
 That's weird because as an SRE I don't have a job where I'm programming Python every day. 
+
 Yet employers make people go through coding challenges anyway like it was a fraternity hazing ritual.
 
 So to get over my Python phobia, like any other aversion therapy, 
@@ -47,10 +51,13 @@ I needed to de-sensitize myself and do the very thing I fear.
 ## Setup an IDE 
 
 The most popular IDEs for Python are:
-   * VSCode from Microsoft (free)
    * <a href="https://www.jetbrains.com/pycharm/buy/#personal">PyCharm</a> (FREE or PRO $89/$71/$53 year)
+
+   * VSCode from Microsoft (free) has add-ons for Python, but some fear vulnerabilities from unknown authors 
+
    * Cloud9 free on-line on AWS (which automatically generates new credentials every 5 minutes or on browser Reset<a target="_blank" href="https://www.coursera.org/learn/building-modern-python-applications-on-aws/lecture/UdnyB/using-temporary-credentials-in-aws-cloud9">*</a>)
-   <br /><br />
+
+   * Stryker?
 
 <a target="_blank" href="https://app.pluralsight.com/guides/visual-studio-code-for-python-development">
 BLOG: Setup VSCode for Python Development</a>
@@ -65,12 +72,15 @@ On IDE such as VSCode you can see key/value pairs without typing <tt>print</tt> 
 1. Under <tt>Globals</tt> are its special variable (such as __file__ for the file path of the program) and class variables, plus an entry for each class defined in the code (such as unittest).
 1. 
 
+### Scan for vulnerable Python code
+
+A. PEP8
+
+B. https://github.com/PyCQA/bandit
+
+C. Check for dependencies containing vulnerabilities
+
 <hr />
-
-## Scan for vulnerable Python code
-
-https://github.com/PyCQA/bandit
-
 
 <a name="ReservedKeywords"></a>
 
@@ -88,18 +98,18 @@ PROTIP: Research and find out what each is about:
 *	break - force escape from for/while loop
 *	class
 *	continue - force loop again next iteration
-*	def - define function
+*	def - define a custom function
 *	del - <tt>del list1[2]</tt> # delete 3rd list item, starting from 0.
 *	elif - else if
 *	else
 *	except
 *	False - boolean
 *	finally - of a try 
-*	for
+*	for = iterate through a loop
 *	from
-*	global
+*	global = defines a variable global in scope
 *	if
-*	import
+*	import = make the specified package available 
 *	in
 *	is
 *	lambda - if/then/else in one line
@@ -164,6 +174,8 @@ The value passed through when calling the function is called an <strong>argument
 ## Operators
 
 ### Floor division Operators
+
+This is a feature in Python 3.
 
 <tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> the <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">"Prefix Sums CountDiv" coding interview challenge</a>: "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K":
 
@@ -424,14 +436,17 @@ if we have solutions for its sub-problems.
 
 ## Built-in Methods/Functions
 
+Don't create custom functions with these function names reserved.
+
+Know what they do. See 
 https://docs.python.org/3/library/functions.html
 
-   * abs()
+   * abs() = return absolute value
    * any()
    * all()
    * ascii()
    * bin()
-   * bool()
+   * bool() = convert to boolean data type
    * bytearray()
    * callable()
    * bytes()
@@ -446,37 +461,37 @@ https://docs.python.org/3/library/functions.html
    * enumerate()
    * staticmethod()
    * filter()
-   * eval()
-   * float()
+   * eval() = dynamically execute code
+   * float() = convert to floating point data type
    * format()
    * frozenset()
-   * getattr()
+   * getattr() = get attribute
    * globals()
    * exec()
    * hasattr()
    * help()
-   * hex()
+   * hex() = hexadecimal counting
    * hash()
-   * input()
+   * input() from human user
    * id()
    * <a target="_blank" href="https://www.programiz.com/python-programming/methods/built-in/isinstance">isinstance()</a> - checks if the object (first argument) is an instance or subclass of classinfo class (second argument). True/False
-   * int()
+   * int() = integer
    * issubclass()
    * iter()
-   * list() Function
+   * list() = function
    * locals()
    * <tt>len([1, 2, 3])</tt> is 3.
-   * max()
-   * min()
+   * max() = maximum value
+   * min() = minimum value
    * map()
    * next()
    * memoryview()
    * object()
-   * oct()
+   * oct() = octa (8) counting
    * ord()
    * open()
    * pow()
-   * print()
+   * print() = output to CLI terminal
    * property()
    * range()
    * repr()
@@ -486,24 +501,18 @@ https://docs.python.org/3/library/functions.html
    * setattr()
    * slice() - extract substring
    * sorted()
-   * str()
+   * str() = convert to string data type
    * sum()
    * tuple() Function
-   * type()
+   * type() = display the type
    * vars()
-   * zip() - combine two interable arrays
+   * zip() = combine two interable arrays
    * _import_()
    * super()
 
-## class functions
-
-using .maketrans() and .translate()
-
-  * a.find('a') returns the index where 'a' is found.
-
 <hr />
 
-## if/then/else
+## if/then/else logic
 
 ### Avoid divide by zero errors
 
@@ -516,7 +525,7 @@ Use this in every division to ensure that a zero denominator results in falling 
 
 <hr />
 
-## Environment Variables
+## Environment Variable Cleansing
 
 To read a file named ".env" at the $HOME folder, and obtain the value from "MY_EMAIL":
 
@@ -536,6 +545,14 @@ There is the "load_dotenv" package that can do the above, but using native comma
 Remember that attackers can use directory traversal sequences (../) to fetch the sensitive files from the server.
 
 Sanitize the user input using “shlex”
+
+<hr />
+
+## Object-oriented class functions
+
+using .maketrans() and .translate()
+
+  * a.find('a') returns the index where 'a' is found.
 
 <hr />
 
@@ -563,7 +580,6 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-py
 
 NOTE: Update of azure-storage-blob deprecates blockblobservice.
 
-
 <a target="_blank" href="https://www.youtube.com/watch?v=enhJfb_6KYU">VIDEO</a>:
 https://pypi.org/project/azure-storage-blob/
 
@@ -573,7 +589,7 @@ https://github.com/Azure/azure-sdk-for-python/issues/12744
 exists() new feature
 <pre>
 import asyncio
-
+&nbsp;
 async def check():
     from azure.storage.blob.aio import BlobClient
     blob = BlobClient.from_connection_string(conn_str="my_connection_string", container_name="mycontainer", blob_name="myblob")
@@ -594,6 +610,7 @@ https://gcloud.readthedocs.io/en/latest/storage-blobs.html
 
 https://cloud.google.com/appengine/docs/standard/python/blobstore
 
+<hr />
 
 ## OpenCV
 

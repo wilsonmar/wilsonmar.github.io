@@ -42,107 +42,10 @@ This article presents an example of my experiments on how to  handle complexity 
 
 > I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
 
-## What's This?
 
-&nbsp; &nbsp; &nbsp; &nbsp; This program began as a way to organize implementations of various coding tricks, to ensure that I can import of the various base dependencies:
+<hr />
 
-1.  <a href="#gen_fibonacci">gen_fibonacci</a> = Generate Fibonacci with memoization (saving results in a file to improve speed)
-2.  <a href="#make_change">make_change</a> = Make change using "Dynamic Programming"
-3.  <a href="#fill_knapsack">fill_knapsack</a> = Fill knapsack
-
-    I then added -- in one place -- utility features such as:
-
-1.  <a href="#display_run_stats">display_run_stats</a> = Display run time stats comparing time stamps at the beginning and end of program run
-1.  <a href="#show_env">show_env</a> = Show the program's running environment (OS, Python version, <a href="#get_ipaddr">IP address</a>, etc.
-1.  <a href="#lookup_ipaddr">lookup_ipaddr</a> = Lookup geolocation info from IP Address
-1.  <a href="#lookup_zipinfo">lookup_zipinfo</a> = Obtain Zip Code to retrieve Weather info
-1.  <a href="#show_weather">show_weather</a> = Retrieve Weather info from zip code or lat/long
-
-1.  <a href="#categorize_bmi">categorize_bmi</a> Calculate BMI using metric vs. imperial units of measure based on the user's country. I know that only two countries in the world uses the antiquatd imperial units Americans use. But it's an excuse to show how a csv file (Country codes included in the repo) can be loaded into a SQLite database or in-memory one for lookup.
-
-1. <a href="#gen_hash">gen_hash</a> = Generate Hash from a file & text
-1. <a href="#gen_salt">gen_salt</a> = Generate a random salt
-1. <a href="#gen_jwt">gen_jwt</a> = Generate JWT (JSON Web Token)
-1. <a href="#gen_1_in_100">gen_1_in_100</a> = Generate a random percent of 100
-
-    More Python coding tricks:
-
-1.  <a href="#process_romans">process_romans</a> = Convert between Roman numerals & decimal as an example of the new case structure in Python 3.10
-1.  <a href="#gen_lotto">gen_lotto</a> = Generate Lotto America Numbers
-1.  <a href="#gen_magic_8ball">gen_magic_8ball</a> = Generate Magic 8-ball numbers (to help you make a decision)
-
-    Some things that can be done (perhaps cheaper and faster) on a local machine than in the cloud:
-
-1.  <a href="#gen_sound">gen_sound</a> = Generate text to speech locally to a mp3 sound file
-1.  <a href="#download_imgs">download_imgs</a> = Download img application files
-1.  <a href="#process_img">process_img</a> = Manipulate image (using OpenCV OCR extract)
-1. <a href="#cleanup_img_files">cleanup_img_files</a> = Remove (clean-up) folder/files created
-
-1.  <a href="#send_sms">send_sms</a> = Send SMS text to a mobile phone (via Twillio)
-1.  <a href="#send_slack_msgs">send_slack_msgs</a> = Send messages into Slack
-1.  <a href="#send_email">send_email</a> = Send email (via Gmail)
-1.  <a href="#send_fax">send_fax</a> = Send a fax (via Gmail)
-
-1.  <a href="#Logging">logging</a> = Send logs to a SIEM (Splunk, Datadog, etc.)
-
-1.  The program can be initiated with different arguments.
-
-1.  <a href="#InfiniteLoop">main_loop_runs_requested=1</a> specifies how many times the program repeats, with a default of one, which means it works like regular programs. Setting it to zero makes the program run infinitely (until cancelled manually).
-1. <tt>main_loop_pause_seconds=0</tt> specifies how long the program sleeps after each iteration. Setting it to 999 would be recognized by the program to stop for a manual prompt after every iteration.
-
-
-    ### Configuration settings and Secrets
-
-1.  <a href="#use_env">use_env</a> = Retrieve secrets and configuration settings from an .env file
-1.  <a href="#use_vault">use_vault</a> = Store/Retrieve secrets from HashiCorp Vault
-
-    ### Multi-Cloud
-    
-    The thing we're working on now is having one codebase that can do the same thing across major cloud service providers (CSPs) -- AWS, Azure, Google. 
-    
-1.  <a href="use_azure">use_azure</a> = Store/Retrieve secrets from Azure Key Vault
-1.  <a href="use_aws">use_aws</a> = Store/Retrieve secrets from AWS KMS
-1.  <a href="#use_gcp">use_gcp</a> = Store/Retrieve secrets from GCP Secrets Manager
-
-    All that enables the ability to compare how different clouds work:
-
-* Login
-* List resources
-* Save/Retrieve files, folders
-* Pub/Sub events
-* Create/read SQL databases
- 
-
-<a name="RepoFiles"></a>
-
-## Repo folders and files
-
-The most important files within the repo:
-
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
-
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> is the shell script which <strong>sets up the environment</strong> our Python program needs. Common Python installation and configuration issues (of Miniconda) and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
-
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs our Python program retrieves into <a href="#FeatureFlags">variables</a> that control program execution.
-
-   Note the sequence of feature execution (at the bottom of the Python code) is hard-coded to be always the same.
-
-   Until the program is coded to use a Vault, to keep secrets (such as API keys) from being sent up to a GitHub repo for public exposure, the .env file used by the program is copied away from the GitHub repo -- in the user's $HOME folder, where it's edited/customized. Thus, code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
-
-   Making .env a symlink to ~/.envs/foobar/dev is an added precaution to listing it in .gititgnore. If for whatever reason the file were to be put into version control, its contents would show that it's a link to another file.
-
-   Hard-coded default values defined in the Python code provide a default value if a value is not defined in the .env file. Boolean-valued flags to allow execution of application features are False by default. If a flow is True, it will be executed by the Python unitest framework.
-
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.gitignore"><strong>.gitignore</strong></a> defines files and folders (such as python-samples.env noted above) and those recreated during each run -- what git does NOT push back into GitHub.
-
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> and Google Sheet are both generated from and created using file<br /><a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a>, which contain relatively static information about each country in the world, such as currency codes, mobile phone prefix, etc. Such data can be a use case for an in-memory database / caching service. Our Python code sample uses the .csv file to create the <br />database.sqlite file for reference by the sqlite functionality the comes with Python.
-
-* <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation.
-
-
-<hr /> 
-
-## Install using python-samples.sh
+## Get it from GitHub NOW! 
 
 Before being able to run the code, several utilities need to be installed on top of the macOS Operating System:
 
@@ -180,6 +83,151 @@ C. Alternately, to work with the whole repo on your laptop:
    Alternately, PyCharm editor.
 
 1. Within your editor, in the left menu, click on <strong>python-samples.py</strong> to open it for edit.
+
+
+<a name="RepoFiles"></a>
+
+## Repo folders and files
+
+The most important files within the repo:
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> is the shell script which <strong>sets up the environment</strong> our Python program needs. Common Python installation and configuration issues (of Miniconda) and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs our Python program retrieves into <a href="#FeatureFlags">variables</a> that control program execution.
+
+   Note the sequence of feature execution (at the bottom of the Python code) is hard-coded to be always the same.
+
+   Until the program is coded to use a Vault, to keep secrets (such as API keys) from being sent up to a GitHub repo for public exposure, the .env file used by the program is copied away from the GitHub repo -- in the user's $HOME folder, where it's edited/customized. Thus, code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
+
+   Making .env a symlink to ~/.envs/foobar/dev is an added precaution to listing it in .gititgnore. If for whatever reason the file were to be put into version control, its contents would show that it's a link to another file.
+
+   Hard-coded default values defined in the Python code provide a default value if a value is not defined in the .env file. Boolean-valued flags to allow execution of application features are False by default. If a flow is True, it will be executed by the Python unitest framework.
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.gitignore"><strong>.gitignore</strong></a> defines files and folders (such as python-samples.env noted above) and those recreated during each run -- what git does NOT push back into GitHub.
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> and Google Sheet are both generated from and created using file<br /><a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a>, which contain relatively static information about each country in the world, such as currency codes, mobile phone prefix, etc. Such data can be a use case for an in-memory database / caching service. Our Python code sample uses the .csv file to create the <br />database.sqlite file for reference by the sqlite functionality the comes with Python.
+
+* <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation.
+
+<hr />
+
+## What's Special about this program
+
+There are several special designs used within the sample program:
+
+A. The main loop is an infinite loop controlled by two variables:
+
+   * number of iterations repeated (default of one)
+   * number of average seconds between each iteration (default of zero)
+   * whether time between iteration is varied randomly (default False)
+   <br /><br />
+
+   This enables the program to be used for performance testing.
+
+B. "Feature flags" read from an .env file, then referenced inside functions executed -- as a type of "kill switch". Different run conditions (in different env specification files) can be used for each different iteration.
+
+   Fine-grained control means one boolean variable per function.
+
+C. Code is built-in to measure the time and memory used by each  of several individual <a href="#Sections">sections of the program</>, each separate iteration, as well as the program as a whole.
+
+D. Among variables that can be specified in env files are geolocation variables (country, locale, language, etc.). 
+
+E. Load from CSV into a built-in SQLite a database of information about each country in the world (country codes for websites and phones, land and population size, etc.).
+
+F. Make API calls to dynamically obtain localized text, external IP address, geocoding, weather by IP address or zip code, etc.
+
+G. Make API calls to securely <strong>retrieve secrets</strong> online from:
+   * HashiCorp Vault
+   * <a href="use_azure">use_azure</a> Azure Key Vault
+   * <a href="use_aws">use_aws</a> = AWS KMS (Key Management Service)
+   * <a href="#use_gcp">use_gcp</a>GCP Secrets Manager
+   <br /><br />
+
+H. When the program starts, "metadata" about the conditions of the run are captured for historical comparison later.
+
+I. Metrics captured can be sent to a time-series database for analysis and trend analytics by online cloud services:
+   * AWS Cloud
+   * Azure
+   * Google
+   * Splunk
+   * Datadog
+   <br /><br />
+
+
+<hr />
+
+<a name="Sections"></a>
+
+## Sections
+
+&nbsp; &nbsp; &nbsp; &nbsp; This program began as a way to organize implementations of various coding tricks, to ensure that I can import of the various base dependencies:
+
+1. <a href="#gen_1_in_100">gen_1_in_100</a> = Generate a random percent of 100 - to determine how often a specific feature is run
+
+1.  <a href="#gen_fibonacci">gen_fibonacci</a> = Generate Fibonacci with memoization (saving results in a file to improve speed)
+2.  <a href="#make_change">make_change</a> = Make change using "Dynamic Programming"
+3.  <a href="#fill_knapsack">fill_knapsack</a> = Fill knapsack
+
+    I then added -- in one place -- utility features such as:
+
+1.  <a href="#display_run_stats">display_run_stats</a> = Display run time stats comparing time stamps at the beginning and end of program run
+1.  <a href="#show_env">show_env</a> = Show the program's running environment (OS, Python version, <a href="#get_ipaddr">IP address</a>, etc.
+1.  <a href="#lookup_ipaddr">lookup_ipaddr</a> = Lookup geolocation info from IP Address
+1.  <a href="#lookup_zipinfo">lookup_zipinfo</a> = Obtain Zip Code to retrieve Weather info
+1.  <a href="#show_weather">show_weather</a> = Retrieve Weather info from zip code or lat/long
+
+1.  <a href="#categorize_bmi">categorize_bmi</a> Calculate BMI using metric vs. imperial units of measure based on the user's country. I know that only two countries in the world uses the antiquatd imperial units Americans use. But it's an excuse to show how a csv file (Country codes included in the repo) can be loaded into a SQLite database or in-memory one for lookup.
+
+1. <a href="#gen_hash">gen_hash</a> = Generate Hash from a file & text
+1. <a href="#gen_salt">gen_salt</a> = Generate a random salt
+1. <a href="#gen_jwt">gen_jwt</a> = Generate JWT (JSON Web Token)
+
+    More Python coding tricks:
+
+1.  <a href="#process_romans">process_romans</a> = Convert between Roman numerals & decimal as an example of the new case structure in Python 3.10
+1.  <a href="#gen_lotto">gen_lotto</a> = Generate Lotto America Numbers
+1.  <a href="#gen_magic_8ball">gen_magic_8ball</a> = Generate Magic 8-ball numbers (to help you make a decision)
+
+    Some things that can be done (perhaps cheaper and faster) on a local machine than in the cloud:
+
+1.  <a href="#gen_sound">gen_sound</a> = Generate text to speech locally to a mp3 sound file
+1.  <a href="#download_imgs">download_imgs</a> = Download img application files
+1.  <a href="#process_img">process_img</a> = Manipulate image (using OpenCV OCR extract)
+1. <a href="#cleanup_img_files">cleanup_img_files</a> = Remove (clean-up) folder/files created
+
+1.  <a href="#send_sms">send_sms</a> = Send SMS text to a mobile phone (via Twillio)
+1.  <a href="#send_slack_msgs">send_slack_msgs</a> = Send messages into Slack
+1.  <a href="#send_email">send_email</a> = Send email (via Gmail)
+1.  <a href="#send_fax">send_fax</a> = Send a fax (via Gmail)
+
+1.  <a href="#Logging">logging</a> = Send logs to a SIEM (Splunk, Datadog, etc.)
+
+1.  The program can be initiated with different arguments.
+
+1.  <a href="#InfiniteLoop">main_loop_runs_requested=1</a> specifies how many times the program repeats, with a default of one, which means it works like regular programs. Setting it to zero makes the program run infinitely (until cancelled manually).
+1. <tt>main_loop_pause_seconds=0</tt> specifies how long the program sleeps after each iteration. Setting it to 999 would be recognized by the program to stop for a manual prompt after every iteration.
+
+
+    ### Configuration settings and Secrets
+
+1.  <a href="#use_env">use_env</a> = Retrieve secrets and configuration settings from an .env file
+1.  <a href="#use_vault">use_vault</a> = Store/Retrieve secrets from HashiCorp Vault
+
+    ### Multi-Cloud
+    
+    The thing we're working on now is having one codebase that can do the same thing across major cloud service providers (CSPs) -- AWS, Azure, Google. 
+    
+
+    All that enables the ability to compare how different clouds work:
+
+* Login
+* List resources
+* Save/Retrieve files, folders
+* Pub/Sub events
+* Create/read SQL databases
+ 
 
 
 <a name="CodeScanning"></a>
@@ -756,7 +804,7 @@ The program precedence of override:
     
     In the shell file, instead of using <tt>pip</tt> or <tt>pip3</tt> we install Python libraries using:
 
-    <pre><strong>conda install numpy</strong></pip>
+    <pre><strong>conda install numpy</strong></pre>
 
     ### requirements.txt
 
@@ -930,12 +978,13 @@ from ..some_package import some_function
 
 <a href="CommandLine"></a>
 
-## Click Framework (not Argparse)
+## Parameters in Click Framework (not Argparse)
 
 This program uses the <a target="_blank" href="https://click.palletsprojects.com/en/8.1.x/why/">Click framework</a> (by the prolific <a target="_blank" href="https://lucumr.pocoo.org/about/">Armin Ronacher</a>) to present and process command-line parameters.
 
 This is instead of <tt>argparse</tt> that comes with Python itself.
 
+<hr />
 
 ## Deploy ML Model Titanic dataset on GCP
 
@@ -963,8 +1012,7 @@ https://learning.oreilly.com/library/view/productionizing-ai-how/9781484288177/h
  
 7.	Download Postman Desktop version from the link below: www.postman.com/downloads/
 
-
-
+<hr />
 
 ## Date and Time Handling
 
