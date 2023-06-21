@@ -116,7 +116,7 @@ The most important files within the python-samples repo:
 
 There are several aspects about python-samples.py that are special:
 
-A. Near the bottom of the file, the main loop is an infinite loop controlled by two variables:
+A. Near the bottom of the file, the <strong>main is an infinite loop</strong>, controlled by two variables:
 
    * number of iterations repeated (default of one)
    * number of average seconds between each iteration (default of zero)
@@ -125,20 +125,20 @@ A. Near the bottom of the file, the main loop is an infinite loop controlled by 
 
    This enables the program to be used for testing (functional and capacity/performance).
 
-B. "Feature flag" variables are referenced <strong>inside functions</strong> to act as a type of "kill switch" to determine whether the function is actually executed each run.
+B. <strong>Feature control variables</strong> are referenced <strong>inside functions</strong> to act as a type of "kill switch" to determine whether the function is actually executed each run.
 
    Fine-grained control means control variable per function.
 
-C. A set of feature flags are defined in each of several .env files.
-
-   Different env specification files can be specified for each iteration.
-
-D. Each function control variable can have these values:
+C. Each function control variable can have of of these values:
 
    * True or 100 = run every time
    * False or 0 = never run
    * 36 (or whatever number) = run 36% of the time
    <br /><br />
+
+D. A set of feature flags are defined in each of several .env/config files.
+
+   Different env/config specification files can be specified for each iteration and evironment (local, test, primary production, DR production, etc.).
 
 E. Variables also include secrets (API keys), geolocation variables (country, locale, language, etc.). 
 
@@ -151,6 +151,8 @@ F. API calls securely <strong>retrieve secrets</strong> online from:
 
 G. API calls to dynamically obtain localized text, external IP address, geocoding, weather by IP address or zip code, etc.
 
+   <a target="_blank" href="https://realpython.com/flask-blueprint/">Flask Blueprints</a> are used to reduce API resilience amid complexity.
+
 H. Dynamic custom text can optionally be sent to:
    * a local text-to-speech engine to be voiced in an mp3 file
    * to a mobile phone via SMS (using Twillio.com)
@@ -160,18 +162,24 @@ H. Dynamic custom text can optionally be sent to:
 
 I. Program code included measures the <strong>wall time and memory used</strong> by each of several individual <a href="#Sections">sections of the program</>, each separate iteration, as well as the program as a whole.
 
-J. When the program starts, "metadata" about the conditions of the run are captured for historical comparison later.
+J. When the program is invoked in a CLI terminal, flags can be specified to <strong>control the verbosity</strong> of what the program displays.
 
-K. Metrics captured can be sent to <a href="#MetricsDBs">various cloud-based time-series databases</a> for analysis and trend analytics on online cloud services: 
+K. When the program starts, "metadata" about the conditions of the run are output for troubleshooting or historical comparison.
 
+L. Metrics captured can be sent to <a href="#MetricsDBs">various cloud-based time-series databases</a> for analysis and trend analytics on online cloud services: 
+
+References:
+   * <a target="_blank" href="https://medium.com/red-buffer/python-production-level-coding-practices-4c39246e0233">"Python: Production-Level Coding Practices"</a>
 
 <hr />
 
 <a name="Sections"></a>
 
-## Sections
+## Sections grouping functions
 
 &nbsp; &nbsp; &nbsp; &nbsp; This program began as a way to organize implementations of various coding tricks, to ensure that I can import of the various base dependencies:
+
+PROTIP: Related functions are grouped together.
 
 1. <a href="#gen_1_in_100">gen_1_in_100</a> = Generate a random percent of 100 - to determine how often a specific feature is run
 

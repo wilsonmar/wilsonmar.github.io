@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-07"
+date: "2023-06-20"
 file: "google-apps-scripting"
 title: "Google Apps Scripting"
 excerpt: "If you liked Microsoft's VB script for Word, Excel, you'll love Google App Script for Google Docs and Sheets"
@@ -261,6 +261,10 @@ https://railsware.com/blog/google-apps-script-gotchas-to-develop-an-add%E2%80%91
 
 https://xfanatical.com/blog/how-to-add-an-apps-script-to-my-google-doc-sheets-forms-slides/
 (outdated)
+
+## References
+
+https://developers.google.com/apps-script
 
 
 ## More on MacOS
