@@ -33,12 +33,11 @@ A. Many companies make candidates suffer through evaluations of programming skil
 
    So no matter what job we have, we need to keep our programming skills up to get the next job.
 
-B. Programming is a fun hobby.
+B. Programming is a fun hobby. For me. This is especially facinating in the age of AI bots.
 
-C. Concern about malicious libraries and their unsecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>.
+C. Concern about potential malicious libraries among insecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>. So funtionality needs to be brought back in from external libraries.
 
-D. I like working toward being a <strong>craftsman</strong> at programming, like a painter who creates intricate artwork.
-This article presents an example of my experiments on how to  handle complexity for <strong>resilency</strong>.
+D. I like working toward being a <strong>craftsman</strong> at programming, like a painter who creates intricate artwork. This article presents an example of my experiments on how to handle complexity for <strong>resilency</strong>.
 
 > I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
 
@@ -49,26 +48,28 @@ This article presents an example of my experiments on how to  handle complexity 
 
 Before being able to run the code, several utilities need to be installed on top of the macOS Operating System:
 
-   * macOS utilities jq, git, gh, etc.
+   * macOS utilities gcc, make, brew, conda/Python, jq, git, gh, etc.
    * Python and <a href="#Virtualenv">Virtualenv</a>
    * Download of folders and files from github.com
    <br /><br />
 
-Open a macOS Terminal.
+1. Open a macOS Terminal.
 
-A. To view the code online, use a browser at address:
+1. To view the code 
+
+* in GitHub online at:
 
    <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py">https://github.com/wilsonmar/python-samples/blob/main/python-samples.py</a>
 
-B. Alternately, edit the code online using Cloud9
+* on your laptop after download from GitHub
 
-C. Alternately, to work with the whole repo on your laptop:
+* using Cloud9 online
 
 <hr />
 
-1. navigate to where you want the repo added and
+1. navigate to where you want the repo added 
 
-1. Open your macOS Terminal which has been installed a git program, and:
+1. Open your macOS Terminal to use that git program installed:
 
    <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples.git</a></strong></pre>
 
@@ -76,20 +77,18 @@ C. Alternately, to work with the whole repo on your laptop:
 
    <pre>cd python-samples</pre>
 
-1. Using "code" (VSCode), or other editor (IDE) to open the whole folder by specifying a dot:
+1. Using <a target="_blank" href="https://wilsonmar.github.io/text-editors/">"code" (VSCode), PyCharm, or other editor (IDE)</a> to open the whole folder. For vscode it's with a dot to specify the whole folder:
 
    <pre><strong>code . </strong></pre>
 
-   Alternately, PyCharm editor.
-
-1. Within your editor, in the left menu, click on <strong>python-samples.py</strong> to open it for edit.
+1. Within your editor's left menu, click on <strong>python-samples.py</strong> to open it for edit.
 
 
 <a name="RepoFiles"></a>
 
 ## Repo folders and files
 
-The most important files within the repo:
+The most important files within the python-samples repo:
 
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
 
@@ -115,45 +114,55 @@ The most important files within the repo:
 
 ## What's Special about this program
 
-There are several special designs used within the sample program:
+There are several aspects about python-samples.py that are special:
 
-A. The main loop is an infinite loop controlled by two variables:
+A. Near the bottom of the file, the main loop is an infinite loop controlled by two variables:
 
    * number of iterations repeated (default of one)
    * number of average seconds between each iteration (default of zero)
    * whether time between iteration is varied randomly (default False)
    <br /><br />
 
-   This enables the program to be used for performance testing.
+   This enables the program to be used for testing (functional and capacity/performance).
 
-B. "Feature flags" read from an .env file, then referenced inside functions executed -- as a type of "kill switch". Different run conditions (in different env specification files) can be used for each different iteration.
+B. "Feature flag" variables are referenced <strong>inside functions</strong> to act as a type of "kill switch" to determine whether the function is actually executed each run.
 
-   Fine-grained control means one boolean variable per function.
+   Fine-grained control means control variable per function.
 
-C. Code is built-in to measure the time and memory used by each  of several individual <a href="#Sections">sections of the program</>, each separate iteration, as well as the program as a whole.
+C. A set of feature flags are defined in each of several .env files.
 
-D. Among variables that can be specified in env files are geolocation variables (country, locale, language, etc.). 
+   Different env specification files can be specified for each iteration.
 
-E. Load from CSV into a built-in SQLite a database of information about each country in the world (country codes for websites and phones, land and population size, etc.).
+D. Each function control variable can have these values:
 
-F. Make API calls to dynamically obtain localized text, external IP address, geocoding, weather by IP address or zip code, etc.
+   * True or 100 = run every time
+   * False or 0 = never run
+   * 36 (or whatever number) = run 36% of the time
+   <br /><br />
 
-G. Make API calls to securely <strong>retrieve secrets</strong> online from:
+E. Variables also include secrets (API keys), geolocation variables (country, locale, language, etc.). 
+
+F. API calls securely <strong>retrieve secrets</strong> online from:
    * HashiCorp Vault
    * <a href="use_azure">use_azure</a> Azure Key Vault
    * <a href="use_aws">use_aws</a> = AWS KMS (Key Management Service)
    * <a href="#use_gcp">use_gcp</a>GCP Secrets Manager
    <br /><br />
 
-H. When the program starts, "metadata" about the conditions of the run are captured for historical comparison later.
+G. API calls to dynamically obtain localized text, external IP address, geocoding, weather by IP address or zip code, etc.
 
-I. Metrics captured can be sent to a time-series database for analysis and trend analytics by online cloud services:
-   * AWS Cloud
-   * Azure
-   * Google
-   * Splunk
-   * Datadog
+H. Dynamic custom text can optionally be sent to:
+   * a local text-to-speech engine to be voiced in an mp3 file
+   * to a mobile phone via SMS (using Twillio.com)
+   * to an email address via SMTP
+   * to a Slack channel
    <br /><br />
+
+I. Program code included measures the <strong>wall time and memory used</strong> by each of several individual <a href="#Sections">sections of the program</>, each separate iteration, as well as the program as a whole.
+
+J. When the program starts, "metadata" about the conditions of the run are captured for historical comparison later.
+
+K. Metrics captured can be sent to <a href="#MetricsDBs">various cloud-based time-series databases</a> for analysis and trend analytics on online cloud services: 
 
 
 <hr />
@@ -3688,6 +3697,28 @@ has code at https://github.com/learnenough/learn_enough_python_code_listings
 
 pip install python-dotenv
 
+<hr />
+
+<a name="MetricsDBs"></a>
+
+## Run metrics databases online
+
+Here are the various cloud-based time-series databases for collection and trending/analytics of custom metrics (using free trials):
+
+   * <a target="_blank" href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a>
+   * <a target="_blank" href="https://azure.microsoft.com/en-us/products/monitor">Azure Monitor</a>
+   * <a target="_blank" href="https://cloud.google.com/products/operations">Google Cloud Operations Suite (formerly Stackdriver)</a>
+
+   * <a target="_blank" href="https://www.alteryx.com/products/metrics-store">Alteryx Metrics Store</a>
+   * <a target="_blank" href="https://www.solarwinds.com/appoptics/">AppOptics (Solar Winds)</a>
+   * <a target="_blank" href="https://www.datadoghq.com/">Datadog</a>
+   * <a target="_blank" href="https://www.dynatrace.com/">Dynatrace</a>
+   * <a target="_blank" href="https://www.manageengine.com/products/applications_manager/google-cloud-monitoring.html">ManageEngine</a>
+   * <a target="_blank" href="https://www.site24x7.com/">ManageEngine Site24x7</a> ($9/month)
+   * <a target="_blank" href="https://www.opsview.com/">Opsview</a>
+   * <a target="_blank" href="https://www.comparitech.com/go/paessler-gcp-monitoring-learn-more-best-gcp-monitoring-tools/l/">Paessler PRTG</a>
+   * <a target="_blank" href="https://wilsonmar.github.io/splunk/">Splunk</a>
+   <br /><br />
 
 <a name="CodeFormatting"></a>
 
