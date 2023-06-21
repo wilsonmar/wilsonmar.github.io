@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-14"
+date: "2023-06-20"
 file: "python-samples"
 title: "Python Samples"
 excerpt: "Useful ways to use Python securely on AWS, Azure, GCP, in a production setting"
@@ -18,10 +18,23 @@ comments: true
 
 <a name="Why"></a>
 
-This article describes my Python programming code at:
+This article describes my work on the repo at:
 
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>
+
+The Python program is invoked by you running shell file:
+
+   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
+   </ul>
+
+The program is invoked by you running shell file:
+
+   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
+   </ul>
+
+> I'd love to get your opinion on all this, as my professional focus has not been on programming but DevSecOps.
+
 
 {% include whatever.html %}
 
@@ -38,8 +51,6 @@ B. Programming is a fun hobby. For me. This is especially facinating in the age 
 C. Concern about potential malicious libraries among insecure transitive dependencies (in the supply chain) has forced products such as Walmart Labs' <a target="_blank" href="https://github.com/hapijs">Hapi.js</a> to <a target="_blank" href="https://hapi.dev/#security">not use any external libraries</a>. So funtionality needs to be brought back in from external libraries.
 
 D. I like working toward being a <strong>craftsman</strong> at programming, like a painter who creates intricate artwork. This article presents an example of my experiments on how to handle complexity for <strong>resilency</strong>.
-
-> I'd love to get your opinion on this, as I'm not a professional programmer. My time has been spent mainly on DevSecOps.
 
 
 <hr />
@@ -67,7 +78,7 @@ Before being able to run the code, several utilities need to be installed on top
 
 <hr />
 
-1. navigate to where you want the repo added 
+1. navigate to where you want the repo added.
 
 1. Open your macOS Terminal to use that git program installed:
 
@@ -90,31 +101,29 @@ Before being able to run the code, several utilities need to be installed on top
 
 The most important files within the python-samples repo:
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> - the star of this show - <a href="#TheCoding">the coding</a>
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.py"><strong>python-samples.py</strong></a> is a template containing <a href="#TheCoding">the base coding</a> for  "production-worthy" coding, based on coding tricks explained in my blog article at <a target="_blank" href="https://wilsonmar.github.io/python-coding">wilsonmar.github.io/python-coding</a>.
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> is the shell script which <strong>sets up the environment</strong> our Python program needs. Common Python installation and configuration issues (of Miniconda) and procedures are described in my blog article <a target="_blank" href="https://wilsonmar.github.io/python-install">wilsonmar.github.io/python-install</a>.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> is a Bash shell script which <strong>installs</strong> It installs <a target="_blank" href="https://wilsonmar.github.io/python-install">all the utilities and run folders the Python program needs</a>. Also, calls for human manual authentication (such as az and gcloud login) are done before invoking the Python program. The script was developed on macOS. TODO: Adaptation and testing on Linux & Windows. 
 
-* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs our Python program retrieves into <a href="#FeatureFlags">variables</a> that control program execution.
+   The shell file copies file <tt>python-samples.env</tt> in the repo to the user's $HOME folder (if it's not already there) for customization (user's email address, etc.). This is so secrets in cannot be pushed back into the public cloud.
 
-   Note the sequence of feature execution (at the bottom of the Python code) is hard-coded to be always the same.
-
-   Until the program is coded to use a Vault, to keep secrets (such as API keys) from being sent up to a GitHub repo for public exposure, the .env file used by the program is copied away from the GitHub repo -- in the user's $HOME folder, where it's edited/customized. Thus, code in <tt>python-samples.py</tt> reads the <tt>.env</tt> file from the user's $HOME folder rather than in its own folder. 
-
-   Making .env a symlink to ~/.envs/foobar/dev is an added precaution to listing it in .gititgnore. If for whatever reason the file were to be put into version control, its contents would show that it's a link to another file.
-
-   Hard-coded default values defined in the Python code provide a default value if a value is not defined in the .env file. Boolean-valued flags to allow execution of application features are False by default. If a flow is True, it will be executed by the Python unitest framework.
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs our Python program retrieves into variables that <a href="#FeatureFlags">control program execution</a>. More about this below.
 
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.gitignore"><strong>.gitignore</strong></a> defines files and folders (such as python-samples.env noted above) and those recreated during each run -- what git does NOT push back into GitHub.
 
+   PROTIP: <tt>python-samples.sh</tt> being specified in .gitignore is an additional precaution. Others mention making that a symlink (to $HOME/....env) so that its contents would show where that file actually resides. But I don't do that because I prefer that the program NOT access the .env file in that folder.
+
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.xls"><strong>country_info.xls</strong></a> and Google Sheet are both generated from and created using file<br /><a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/.country_info.csv"><strong>country_info.csv</strong></a>, which contain relatively static information about each country in the world, such as currency codes, mobile phone prefix, etc. Such data can be a use case for an in-memory database / caching service. Our Python code sample uses the .csv file to create the <br />database.sqlite file for reference by the sqlite functionality the comes with Python.
 
-* <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation.
+* <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation. Others may add <tt>circlci</tt>, <tt>travis</tt>, etc. for other automation.
 
 <hr />
 
-## What's Special about this program
+<a name="PythonFeatures"></a>
 
-There are several aspects about python-samples.py that are special:
+## What's special about this Python program
+
+Let's walk though python-samples.py to highlight what are unusual and controversial:
 
 A. Near the bottom of the file, the <strong>main is an infinite loop</strong>, controlled by two variables:
 

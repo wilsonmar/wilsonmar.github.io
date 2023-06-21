@@ -32,7 +32,7 @@ NOTE: I am usually up by 6 am Mountain (5 am Pacific Time, 7 am Central, 8 am Ea
 
 3. Send me an invite with your Zoom link.
 
-3. If we have not exchanged emails before, please, in LinkedIn Message me the email you used, due to Google's new spam mechanism:
+3. If we have not exchanged emails before, please tell me on <a target="_blank" href="https://www.linkedin.com/messaging/">LinkedIn Messaging</a> the email you sent, due to Google's new spam mechanism:
 
    <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1682369657/calendar-unknown-sender-1700x414_frss4y.png"><img alt="calendar-unknown-sender-1700x414.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1682369657/calendar-unknown-sender-1700x414_frss4y.png"></a>
 
@@ -49,6 +49,30 @@ Alternately, Google calendar has a (less nice) UI to show open slots:
    ![google-calendar-week-256x41](https://cloud.githubusercontent.com/assets/300046/26534343/5618a71c-43f1-11e7-9ea8-d721acb5fc42.png)
 
 3. Switch back and forward between your own calendar and this one to identify a mutually open time.
+
+
+## Import .ics file
+
+If I (or someone else) sends you an <strong>.ics</strong> file containing calendar entries, here's how you can import it into your calendar app:
+
+If you use <a target="_blank" href="https://calendar.google.com">Google Calendar</a>:
+1. In the email or other app you got the .ics file, save the file to your Downloads folder.
+1. In Google Calendar, click "+" to the right of "Other calendars".
+1. Click "Import".
+1. Click "Select file from your computer".
+1. In the pop-up, navigate to the folder where you saved the .ics file.
+1. Select the file and click Open.
+1. You should now see individual events specified in the .ics file.
+<br /><br />
+
+If you use Microsoft Outlook:
+1. Go to “File” (i.e. the main menu).
+1. Click “Open & Export”.
+1. Select “Import/Export”.
+1. In Import and Export Wizard box, select “Import an iCalendar (.ics) or vCalendar file (.vcs)”, and then click “Next”.
+1. Select the calendar file from your PC and select “OK”.
+1. Select “Open as New”.
+<br /><br />
 
 
 ## Calendar services
