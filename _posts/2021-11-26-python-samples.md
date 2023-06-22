@@ -3,7 +3,7 @@ layout: post
 date: "2023-06-21"
 file: "python-samples"
 title: "Python Samples"
-excerpt: "Useful ways to use Python securely on AWS, Azure, GCP, in a production setting"
+excerpt: "My experiments at coding Python for production use of Vault on AWS, Azure, GCP, in a production setting"
 tags: [python, coding]
 image:
 # python-samples-1900x500.jpg
@@ -18,14 +18,14 @@ comments: true
 
 <a name="Why"></a>
 
-This article describes my work on the repo at:
+This article describes my work on the Python source code at:
 
-   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
+   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a>
    </ul>
 
-The Python program is invoked by you running shell file:
+The Python program is installed (along with utilities), then invoked by you running shell file:
 
-   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
+   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a><br /><a href="#GetShell">Get it from GitHub</a> 
    </ul>
 
 The program is invoked by you running shell file:
@@ -33,14 +33,14 @@ The program is invoked by you running shell file:
    <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a> 
    </ul>
 
-> I'd love to get your opinion on all this, as my professional focus has not been on programming but DevSecOps.
+> I'd love to get your opinion on all this.
 
 
 {% include whatever.html %}
 
 ## Why this?
 
-So I wrote this to fill several gaps.
+I created this to fill several gaps.
 
 A. Many companies make candidates suffer through evaluations of programming skills (using HackerRank, etc.) even though such skills are rarely used in some jobs. 
 
@@ -55,7 +55,9 @@ D. I like working toward being a <strong>craftsman</strong> at programming, like
 
 <hr />
 
-## Get it from GitHub NOW! 
+<a name="GetShell"></a>
+
+## Get it from GitHub
 
 Before being able to run the code, several utilities need to be installed on top of the macOS Operating System:
 
