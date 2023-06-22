@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-06-21"
+file: "classification"
 title: "Classification"
 excerpt: "Statistics to evaluate classification: Confusion Matrix, Specificity, ROC, and AUC, etc."
 tags: [microsoft, azure, machine learning, AI]
-date: "2021-09-04"
-file: "classification"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -28,7 +28,7 @@ This graphic is from a <a target="_blank" href="https://wilsonmar.github.io/azur
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png">
    <img alt="az-ml-eval-roc-841x503.png" width="841" height="503" src="https://user-images.githubusercontent.com/300046/120211396-2316b500-c1ee-11eb-88e9-0eb39ae5eaff.png"></a>
 
-Azure does not present all the statistics, which we cover here.
+Azure does not present all the statistics which we cover here.
 
 
 <a name="Evaluation"></a>
@@ -132,3 +132,52 @@ The larger the AUC to 1.0 the better the model is at separating classes. Thus, t
 
 References:
    * https://towardsdatascience.com/the-roc-curve-unveiled-81296e1577b
+   <br /><br />
+
+
+## Outlier Z-Scores
+
+Outlier detection refers to identifying data points which deviate from a general data distribution.
+
+A Z-score is a statistical measure of variation from a mean. 
+
+Such existing unsupervised approaches often suffer from high computational cost, complex hyperparameter tuning, and limited interpretability, especially when working with large, high-dimensional datasets.
+
+<a name="ECOD"></a>
+
+## ECOD 
+
+More complex calculations include Unsupervised Outlier Detection with ECOD (Empirical Cumulative Distribution Functions). 
+ECOD a simple yet effective algorithm to focus on outliers as "rare events" that appear in the tails of a distribution. 
+
+ECOD works by first estimating the underlying distribution of the input data in a nonparametric fashion -- by computing the empirical cumulative distribution per dimension of the data. ECOD then uses these empirical distributions to estimate <strong>tail probabilities per dimension for each data point</strong>. 
+
+Finally, ECOD computes an <strong>outlier score</strong> for each data point by aggregating estimated tail probabilities across dimensions. 
+
+<a target="_blank" href="https://ieeexplore.ieee.org/document/9737003">This IEEE</a> document <a target="_blank" href="https://arxiv.org/pdf/2201.00382.pdf">published 16 March 2022</a> proposed ECOD as parameter-free and easy to interpret.
+The paper showed that ECOD outperformed 11 of 30 benchmark datasets in terms of accuracy, efficiency, and scalability.
+A easy-to-use and scalable Python implementation is released with the report, for accessibility and reproducibility.
+
+References:
+   * https://www.linkedin.com/pulse/handbook-anomaly-detection-python-outlier-3-ecod-kuo-ph-d-cpcu/
+   * https://ieeexplore.ieee.org/document/9737003
+
+
+<a name="Isolation"></a>
+
+## Isolation Forests (iForest)
+
+Isolation forests are a variation of random forests that can be used in an unsupervised setting for anomaly detection.
+
+Isolation Forest detects anomalies using binary trees. The algorithm has a linear time complexity and a low memory requirement, with linear time complexity. 
+So it works well with high-volumes of data.
+
+The algorithm was initially developed by Fei Tony Liu and Zhi-Hua Zhou in 2008. 
+
+
+
+References:
+   * https://www.wikiwand.com/en/Isolation_forest
+   * https://machinelearninginterview.com/topics/machine-learning/explain-isolation-forests-for-anomaly-detection/
+
+
