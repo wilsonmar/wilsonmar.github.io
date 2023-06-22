@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-20"
+date: "2023-06-21"
 file: "python-samples"
 title: "Python Samples"
 excerpt: "Useful ways to use Python securely on AWS, Azure, GCP, in a production setting"
@@ -105,7 +105,11 @@ The most important files within the python-samples repo:
 
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh"><strong>python-samples.sh</strong></a> is a Bash shell script which <strong>installs</strong> It installs <a target="_blank" href="https://wilsonmar.github.io/python-install">all the utilities and run folders the Python program needs</a>. Also, calls for human manual authentication (such as az and gcloud login) are done before invoking the Python program. The script was developed on macOS. TODO: Adaptation and testing on Linux & Windows. 
 
-   The shell file copies file <tt>python-samples.env</tt> in the repo to the user's $HOME folder (if it's not already there) for customization (user's email address, etc.). This is so secrets in cannot be pushed back into the public cloud.
+   For users of HashiCorp Vault, the shell file installs and runs (in background) a Vault Agent as a localhost "webapp-through-agent" proxy to <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent/caching#using-auto-auth-token">cache responses</a> from a  corporate Vault server, in order to both reduce network traffic and automate lease renewals.
+
+   The shell file also copies file <tt>python-samples.env</tt> in the repo to the user's $HOME folder (if it's not already there) for customization (user's email address, etc.). This is so secrets in cannot be pushed back into the public cloud.
+
+* <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/vault-agent.hcl"><strong>vault-agent.hcl</strong></a> is accessed by the local HashiCorp Vault Agent (running <a target="_blank" href="https://developer.hashicorp.com/vault/docs/agent-and-proxy/agent/caching/">persistant caching of leased secrets</a> locally).
 
 * <a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.env"><strong>python-samples.env</strong></a> stores key/value pairs our Python program retrieves into variables that <a href="#FeatureFlags">control program execution</a>. More about this below.
 
@@ -117,6 +121,7 @@ The most important files within the python-samples repo:
 
 * <a target="_blank" href="https://wilsonmar.github.com/github-actions"><strong>workflow</strong></a> is a folder containing files used by GitHub Actions for CI/CD (Continuous Integration) automation. Others may add <tt>circlci</tt>, <tt>travis</tt>, etc. for other automation.
 
+
 <hr />
 
 <a name="PythonFeatures"></a>
@@ -125,20 +130,21 @@ The most important files within the python-samples repo:
 
 Let's walk though python-samples.py to highlight what are unusual and controversial:
 
-A. Near the bottom of the file, the <strong>main is an infinite loop</strong>, controlled by two variables:
+A. PROTIP: Many errors are not apparent until the logic is run more than once. So, near the bottom of the source file, the <strong>main is an infinite loop</strong>, controlled by these variables:
 
-   * number of iterations repeated (default of one)
-   * number of average seconds between each iteration (default of zero)
-   * whether time between iteration is varied randomly (default False)
+   * <strong>main_loop_runs_requested=1</strong> = number of iterations to repeat (default of one) 
+   * <strong>main_loop_run_pct=100</strong> = the percentage of time between iteration is varied randomly
+   * <strong>main_loop_pause_seconds=0</strong> = number of average seconds between each iteration (default of zero)
    <br /><br />
 
    This enables the program to be used for testing (functional and capacity/performance).
+   
 
 B. <strong>Feature control variables</strong> are referenced <strong>inside functions</strong> to act as a type of "kill switch" to determine whether the function is actually executed each run.
 
    Fine-grained control means control variable per function.
 
-C. Each function control variable can have of of these values:
+C. Each control variable can have of of these values:
 
    * True or 100 = run every time
    * False or 0 = never run
@@ -176,6 +182,53 @@ J. When the program is invoked in a CLI terminal, flags can be specified to <str
 K. When the program starts, "metadata" about the conditions of the run are output for troubleshooting or historical comparison.
 
 L. Metrics captured can be sent to <a href="#MetricsDBs">various cloud-based time-series databases</a> for analysis and trend analytics on online cloud services: 
+   * Time to load imports
+   * Time taken by each function (along with amount of data processed)
+   <br /><br />
+
+M. TODO: Federated cloud authentication:
+   * OAuth
+   * Okta
+   * Ping Identity
+   * AWS Cognito
+   * Google Firebase
+   * Facebook
+   * Instabram
+   * LinkedIn
+
+N. TODO: Access cloud database through a ORM (Object Relational Mapping) layer
+   * SQL Alchemy for Python with rich API for complext queries to MySQL, Postgres, SQLite, Oracle https://realpython.com/flask-connexion-rest-api/ https://realpython.com/flask-connexion-rest-api-part-3/
+   * Prisma client supports many databases via easy relation API
+   * Mongoose for MongoDB & NodeJs to create models & schemas middlewear
+   * Sequelize for MySWL & NodeJs with migrations, model associations, hooks
+
+O. TODO: Cloud databases
+   * <a target="_blank" href="https://supabase.com/">Supabase.io</a> (<a target="_blank" href="https://github.com/supabase/supabase">open-source</a> alternative to Firebase - no company lock-in - auth, auto-gen APIs, PostgreSQL Dino/TypeScript Edge Functions, subscriptions, Vector embeddings, row-level security)
+   * Google Firebase (closed source) NoSQL with auth, )
+   * MongoDB Atlas
+   * Google Firebase (closed source) NoSQL with  auth
+   * Google Spanner
+   * FaunaDB (ACID for SQL, NoSQL, GraphQL)
+
+P. TODO: <a target="_blank" href="https://docs.python.org/3/library/tkinter.html">Tkinter</a> tk GUI macOS desktop apps with Python and <a target="_blank" href="https://realpython.com/mobile-app-kivy-python/">Kivy</a> on iOS & Android mobile
+
+Q. TODO: Each function is defined with a PyDoc description that <a target="_blank" href="https://www.sphinx-doc.org/">Sphix</a> <a target="_blank" href="https://realpython.com/courses/python-sphinx/">reads to create</a>  <a target="_blank" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText (RST) markup language</a> docs hosted by <a target="_blank" href="https://readthedocs.org/">Read the Docs.org</a>.
+
+R. Call based on generated JSON/YAML via an OpenAPI gateway (Apigee Swagger)
+
+S. Google Developer Portal
+
+https://realpython.com/courses/zipfile-python/
+
+https://realpython.com/courses/python-file-system-exercises/
+
+https://realpython.com/python-folium-web-maps-from-data/
+
+https://realpython.com/generate-images-with-dalle-openai-api/
+
+https://realpython.com/python-get-current-time/
+
+https://realpython.com/python-web-scraping-practical-introduction/
 
 References:
    * <a target="_blank" href="https://medium.com/red-buffer/python-production-level-coding-practices-4c39246e0233">"Python: Production-Level Coding Practices"</a>
@@ -412,9 +465,7 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
     </pre>
 
     <pre>conda install -c conda-forge azure-cli-core
-    </pre>
-
-    <pre>  adal               conda-forge/noarch::adal-1.2.7-pyhd8ed1ab_0
+  adal               conda-forge/noarch::adal-1.2.7-pyhd8ed1ab_0
   antlr-python-runt~ conda-forge/noarch::antlr-python-runtime-4.13.0-pyhd8ed1ab_0
   applicationinsigh~ conda-forge/noarch::applicationinsights-0.11.9-py_0
   argcomplete        conda-forge/noarch::argcomplete-3.1.1-pyhd8ed1ab_0
@@ -466,6 +517,16 @@ But if you want customization, variable <tt>my_venv_folder</tt> is used.
   brotlipy           conda-forge/osx-64::brotlipy-0.7.0-py310h90acd4f_1005
   s3transfer         conda-forge/noarch::s3transfer-0.6.1-pyhd8ed1ab_0
 The following packages will be DOWNGRADED:
+  urllib3                                2.0.3-pyhd8ed1ab_0 --> 1.26.15-pyhd8ed1ab_0
+    </pre>
+
+    <pre>conda install -c conda-forge boto3
+  boto3              conda-forge/noarch::boto3-1.26.157-pyhd8ed1ab_0
+  botocore           conda-forge/noarch::botocore-1.29.157-pyhd8ed1ab_0
+  brotlipy           conda-forge/osx-64::brotlipy-0.7.0-py39ha30fb19_1005
+  jmespath           conda-forge/noarch::jmespath-1.0.1-pyhd8ed1ab_0
+  python-dateutil    conda-forge/noarch::python-dateutil-2.8.2-pyhd8ed1ab_0
+  s3transfer         conda-forge/noarch::s3transfer-0.6.1-pyhd8ed1ab_0
   urllib3                                2.0.3-pyhd8ed1ab_0 --> 1.26.15-pyhd8ed1ab_0
     </pre>
 
@@ -2144,7 +2205,8 @@ from azure.keyvault.secrets import SecretClient:
 
 1. If you already have a key vault, make sure it allows template deployments:
    
-   az keyvault update  --name ExampleVault --enabled-for-template-deployment true
+   <pre>az keyvault update  --name ExampleVault --enabled-for-template-deployment true
+   </pre>
 
 1. Create a new key vault and add a secret:
 
@@ -2917,6 +2979,12 @@ References:
 <a name="use_vault"></a>
 
 ##  17. Retrieve secrets from HashiCorp Vault = use_vault
+
+https://wilsonmar.github.io/hashicorp-vault
+
+<a target="_blank" href="https://www.youtube.com/watch?v=wogkvUnaFtk">
+VIDEO</a>: How to use Python HVAC for Hashicorp Vault CRUD Operations
+https://github.com/jakefurlong/vault
 
 https://www.amazon.com/Running-HashiCorp-Vault-Production-McTeer-ebook/dp/B08JJLGMZ3/
 

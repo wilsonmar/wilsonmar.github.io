@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-11-02"
+date: "2023-06-21"
 file: "making-videos"
 title: "Making videos"
 excerpt: "Tediously using Camtasia, Audacity, OBS, and automating animated PowerPoint on a Mac"
@@ -543,3 +543,4 @@ Talking head in circle with shadow in Camtasia 2020 | Camtasia Circular Video Tu
 https://www.youtube.com/watch?v=mzUIeq1PX7o
 Put a video on a Powerpoint slide deck - Add your personal touch as a presenter
 
+https://realpython.com/how-to-make-programming-videos/
