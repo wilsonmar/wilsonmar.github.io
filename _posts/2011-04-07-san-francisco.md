@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-15"
+date: "2023-06-22"
 file: "san-francisco"
 title: "San Francisco"
 excerpt: "Eat and geek your way through walking and riding historic trains in the City by the Bay, all in one day"
@@ -169,11 +169,13 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
 1.  Walk Westward along the marina, where every time I buy a $35 windbreaker with "San Francisco" on it.
 
-1.  In Ghirardelli Square is the modern <a target="_blank" href="https://goo.gl/maps/zdJfguTamhiMvSoPA">Palette Tea House</a>, which serves Chinese dim sum with bay views.
+1.  The "Experience" store is the only Ghirardelli shop where tourists can buy chocolates made in the store, with freshly roasted almonds and hazelnuts. Make a Sundae. Create your own mix among 40 different types of chocolate squares.
+
+1.  Also in Ghirardelli Square is the modern <a target="_blank" href="https://goo.gl/maps/zdJfguTamhiMvSoPA">Palette Tea House</a>, which serves Chinese dim sum with bay views.
 
 1.  Take the <a target="_blank" href="https://goo.gl/maps/d5bKyWiuKoUxcB9k9">Powell/Mason Cable Car Turnaround</a> to go up and over Mason Street. It runs from 7am - 11pm daily. $8 per ride. 
 
-    This route has a view of the Golden Gate Bridge behind you. PROTIP: Here's where you hand out to others that stack of <a href="#LeftMyHeart">lyrics that song</a> you printed out.
+    This route has a view of the bay behind you. PROTIP: Here's where you get cable car passengers to sing from those <a href="#LeftMyHeart">lyrics sheets</a> you printed out.
 
 1.  Get off at the <a target="_blank" href="https://goo.gl/maps/XYVox7URETyvXzn87">Hyde St & Chestnut St stop</a> to walk down (West to East) <a target="_blank" href="https://goo.gl/maps/HZvdtHbN3EtMFJKS8">Lombard Street</a> -- the "Worlds Crookedest Street". You end up on Leavenworth Street.
 

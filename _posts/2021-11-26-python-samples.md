@@ -25,7 +25,7 @@ This article describes my work on the Python source code at:
 
 The Python program is installed (along with utilities), then invoked by you running shell file:
 
-   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples.git">https://github.com/wilsonmar/python-samples</a><br /><a href="#GetShell">Get it from GitHub</a> 
+   <ul><a target="_blank" href="https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh">https://github.com/wilsonmar/python-samples/blob/main/python-samples.sh</a><br /><br /><a href="#GetShell">Get it on your laptop</a> 
    </ul>
 
 The program is invoked by you running shell file:
@@ -52,12 +52,12 @@ C. Concern about potential malicious libraries among insecure transitive depende
 
 D. I like working toward being a <strong>craftsman</strong> at programming, like a painter who creates intricate artwork. This article presents an example of my experiments on how to handle complexity for <strong>resilency</strong>.
 
-
+g
 <hr />
 
 <a name="GetShell"></a>
 
-## Get it from GitHub
+## Get it on your laptop
 
 Before being able to run the code, several utilities need to be installed on top of the macOS Operating System:
 
@@ -177,7 +177,7 @@ H. Dynamic custom text can optionally be sent to:
    * to a Slack channel
    <br /><br />
 
-I. Program code included measures the <strong>wall time and memory used</strong> by each of several individual <a href="#Sections">sections of the program</>, each separate iteration, as well as the program as a whole.
+I. Program code included measures the <strong>wall time and memory used</strong> by each of several individual <a href="#Sections">sections of the program</a>, each separate iteration, as well as the program as a whole.
 
 J. When the program is invoked in a CLI terminal, flags can be specified to <strong>control the verbosity</strong> of what the program displays.
 
@@ -188,15 +188,16 @@ L. Metrics captured can be sent to <a href="#MetricsDBs">various cloud-based tim
    * Time taken by each function (along with amount of data processed)
    <br /><br />
 
-M. TODO: Federated cloud authentication:
-   * OAuth
+M. TODO: Federated cloud authentication (Single Sign On):
    * Okta
+   * OAuth
    * Ping Identity
    * AWS Cognito
    * Google Firebase
    * Facebook
-   * Instabram
+   * Instagram
    * LinkedIn
+   * Salesforce
 
 N. TODO: Access cloud database through a ORM (Object Relational Mapping) layer
    * SQL Alchemy for Python with rich API for complext queries to MySQL, Postgres, SQLite, Oracle https://realpython.com/flask-connexion-rest-api/ https://realpython.com/flask-connexion-rest-api-part-3/
