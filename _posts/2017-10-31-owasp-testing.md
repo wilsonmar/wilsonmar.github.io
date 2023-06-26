@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-There are several standards:
+There are several websites which defines specific examples of insecure code turned secure:
 
 <a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
 is the result of a non-profit team.
@@ -41,7 +41,7 @@ OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href
    17. End Survey, Alert, and Log Review
    <br /><br />
 
-OSSTMM five channels or operational areas:
+OSSTMM has five channels or operational areas:
 
    * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
    * Physical Security: The OSSTMM tests physical security, defined as any tangible element of security that takes physical effort to operate
@@ -103,6 +103,23 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
 
 Also: Cross-Site Request Forgery (CSRF)
 
+## others
+
+   CWE Top 25
+   
+   PCI DSS
+   
+   MISRA®
+   
+   CERT C/C++, CERT Java, CERT Python?
+   
+   DISA STIG, 
+   
+   ISO 26262
+   
+   ISO/IEC TS 17961
+   
+   AUTOSAR®
 
 ## API Security 
 
@@ -163,13 +180,6 @@ Additionally:
 
 ## Software Security Testing
 
-The different types:
-
-   * SAST (Static Application Security Testing) looks at code
-   * <a name="DAST">DAST</a> (Dynamic Application Security Testing) looks at running code
-   * IAST (Interactive Application Security Testing) looks at agents running code
-   <br /><br />
-
 <a name="IAST"></a>
 
 IAST (Interactive App Security Testing) was invented by Checkmarx, which adds an agent running along the app to report to a central "Security Handler".
@@ -213,39 +223,6 @@ SAST (Static App Security Testing) tools focus on <strong>scanning application s
 
 Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
 
-
-<a name="Synopsys"></a>
-
-## Synopsys SNPS
-
-Synopsys [on <a target="_blank" href="https://www.linkedin.com/showcase/sw_integrity/">LinkedIn</a>] has two seemingly different markets: EDA (Electronic Design Automation) used to build SoC (Systems on a Chip) and
-<a target="_blank" href="https://www.youtube.com/@SynopsysSoftwareIntegrity">"Software Integrity"</a>
-Polaris product line
-
-
-The all-in-one AppSec platform optimized for DevSecOps
-and Software Quality.
-
-Gartner's Magic Quadrant for SDA has Synpsys on top:
-
-<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"><img alt="owasp-gartner-23.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"></a>
-
-<a target="_blank" href="https://www.glassdoor.com/Reviews/Synopsys-Reviews-E2143.htm">80%</a>
-
-<a target="_blank" href="https://www.youtube.com/watch?v=Heor8BVa4A0&list=RDLVHeor8BVa4A0&start_radio=1&rv=Heor8BVa4A0&t=178" title="Dr. Jared DeMott of VDA Labs">VIDEO</a>:
-Static code analysis: pattern matching, procedural, data flow, and statistical analysis. 
-Also included are examples of common software vulnerabilities such as memory corruption, buffer overflow and over reads, script injection, XSS and CSRF, command injection, and misconfigurations.
-
-<a target="_blank" href="https://www.youtube.com/watch?v=mBQaUiq6rbQ">
-AppSec Decoded: the worst DevSecOps practices</a>
-by Tanya Janca (SheHacksPurple Academy)
-with Taylor Armerding, Security Advocate
- 
-
-## Test Scope
-
-As a "black box" approach,
-DAST cannot identify non-reflective vulnerabilities (i.e – Cross-Site Scripting) that don’t generate feedback when triggered.
 
 ## Get sample broken app
 

@@ -22,7 +22,7 @@ Let's start off with the <a target="_blank" href="https://www.synopsys.com/softw
 
 <a name="Synopsys"></a>
 
-## Synopsys range
+## Synopsys's range
 
 Synopsys [on <a target="_blank" href="https://www.linkedin.com/showcase/sw_integrity/">LinkedIn</a>] 
 operates in two seemingly different markets: EDA (Electronic Design Automation) used to build SoC (Systems on a Chip), and
@@ -33,14 +33,19 @@ Synpsys achieved its upper-right leader position through corporate acquisitions,
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687696954/devsecops-synopsys-2274x1154_g3cdpv.png"><img alt="devsecops-synopsys-2274x1154.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687696954/devsecops-synopsys-2274x1154_g3cdpv.png"><br /><em>Click here for full screen</em></a>
 
 
-## Mature Approachings to Scanning
+<a name="Mature"></a>
 
-<a target="_blank" href="https://www.synopsys.com/software-integrity/engage/">Gartner is concerned</a> about complex UI to what is sold as "all-in-one" but in reality are what can be a patchwork of products combined from different teams and thus work differently from each other.
+## A Mature Approach to Scanning
+
+<a target="_blank" href="https://www.synopsys.com/software-integrity/engage/">Gartner is concerned</a> about complex UI to what is sold as "all-in-one" but in reality are what can be a "patchwork" of products combined from different teams and thus work differently from each other.
+
+However, Synopsys users have a single support organization versus needing to coordinate among various vendors on their own.
+
 <a target="_blank" href="https://www.glassdoor.com/Reviews/Synopsys-Reviews-E2143.htm">Synopsys</a> has six products that span the same middle stages of the SDLC:
 
-   * Coverity <a name="SAST">SAST (Static Application Security Testing)</a> looks at code (as stored statically in GitHub)
+   * Coverity <a name="SAST">SAST (Static Application Security Testing)</a> looks at code (as stored statically in GitHub) [<a target="_blank" href="https://www.gartner.com/reviews/market/application-security-testing/vendor/synopsys/product/coverity-sast">review</a>]
    * WhiteHat <a name="DAST">DAST (Dynamic Application Security Testing)</a> looks at running code
-   * Seeker <a name="IAST">IAST (Interactive Application Security Testing)</a> looks at agents running code dynamically
+   * Seeker <a name="IAST">IAST (Interactive Application Security Testing)</a> looks at agents running code dynamically [<a target="_blank" href="https://www.gartner.com/reviews/market/application-security-testing/vendor/synopsys/product/seeker-iast">review</a>]
    * Black Duck <a href="#SCA">SCA (Software Composition Analysis)</a> identifies open source packages which have been flagged with vulnerabilities in the US  National Vulnerability Database (NVD).
    <br /><br />
 
@@ -54,7 +59,35 @@ Synopsys combined separate tools into its <a target="_blank" href="https://www.s
    * Code Dx ASPM
    * Defensics (form. Codenomicon)
 
-However, Synopsys users have a single support organization versus needing to coordinate among various vendors on their own.
+Other offerings:
+
+  * <a target="_blank" href="https://www.gartner.com/reviews/market/mobile-application-security-testing/vendor/checkmarx/product/checkmarx-sast">Checkmarx</a>
+
+
+
+<hr />
+
+## What are Scanners looking for?
+
+   OWASP Top 10
+   
+   API Top 20
+
+   CWE Top 25
+   
+   PCI DSS
+   
+   MISRA®
+   
+   CERT C/C++, CERT Java, CERT Python?
+   
+   DISA STIG, 
+   
+   ISO 26262
+   
+   ISO/IEC TS 17961
+   
+   AUTOSAR®
 
 <hr />
 
@@ -66,11 +99,17 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
 
    PROTIP: Professional-level skill cannot be obtained alone but requires mentoring and sharing of techiques from several others as part of life-long apprenticeships free of competition.
 
-   Developers practice recognizing and <a target="_blank" href="https://github.com/teamed/quiz.git">fixing</a> <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/"><strong>sample known-bad</strong> coding containing OWASP Top 10, API Top 20, etc.</a>
+   Scanning finds "low hanging fruit" but fail to find all false negatives. 
+   
+   Scanners often report what can be "false positives", but whether each is or not requires time to investigate, which can be frustrating for some.
 
-   PROTIP: A culture of zealousness at refining and adopting security requires #blameless psychological safety.
+2. PROTIP: A culture of zealousness at refining and adopting security requires #blameless psychological safety.
 
-2. Inclusion of security considerations <strong>within the IDE (Integrated Development Environment)</strong>, such as <a target="_blank" href="https://wilsonmar.github.io/copilots/">coding CoPilot</a> AI code generators (using GPT, etc.)
+   It's been said that DevOps is about culture. That also applies even more to DevSecOps.
+
+   Like firemen practicing drills, developers can practice recognizing and <a target="_blank" href="https://github.com/teamed/quiz.git">fixing</a> <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/"><strong>sample known-bad</strong> coding containing OWASP Top 10, API Top 20, etc.</a>
+
+3. Inclusion of security considerations <strong>within the IDE (Integrated Development Environment)</strong>, such as <a target="_blank" href="https://wilsonmar.github.io/copilots/">coding CoPilot</a> AI code generators (using GPT, etc.)
 
    * PROTIP: <a target="_blank" href="https://wilsonmar.github.io/copilots/">My notes on GitHub and Microsoft CoPilot</a>
    * <a target="_blank" href="https://www.synopsys.com/blogs/software-security/introducing-black-duck-copilot/">Black Duck CoPilot</a>, 
@@ -78,13 +117,13 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
    * <a target="_blank" href="https://wilsonmar.github.io/text_editors">Microsoft's Visual Studio Code</a> add-on
    <br /><br />
 
-3. <strong>Priorities of what is coded is driven using an Issues Tracker</strong> that balances time on various objectives.
+4. <strong>Priorities of what is coded is driven using an Issues Tracker</strong> that balances time on various objectives.
 
    Synopsys AppSec Risk Insight. <a target="_blank" href="https://wilsonmar.github.io/jira">Atlassian Jira</a>, ServiceNow, etc.
 
    PROTIP: <strong>Transparency about defects and other debt is an indicator</strong> of organizational maturity, not a driver of it.
 
-4. Provide advanced training and automation to manage complex code as a team <strong>SCM (Source Code Management)</strong> using a common repository 
+5. Provide advanced training and automation to manage complex code as a team <strong>SCM (Source Code Management)</strong> using a common repository 
 
    * write commit messages in GitHub (GitLab) to make troubleshooting easier
    * reconcile conflicts in code from different times and locations and people
@@ -94,11 +133,11 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
    PROTIP: Common and disciplined application of coding standards requires a <strong>social contract</strong> as well as a technical one.
    The book [High Tech, High Touch](http://www.amazon.com/High-Tech-Touch-John-Naisbitt/dp/0767905415) popularized the concept (as I understand it) that more real personal physical attention is needed with heightened technology use.
 
-5. Build tools (Maven, Gradle, Scala Build Tool, NuGet, etc.) run within <strong>CI/CD pipelines</strong> (Jenkins, Travis CI, Circle CI, AppVeyor, GitHub Actions, etc.)
+6. Build tools (Maven, Gradle, Scala Build Tool, NuGet, etc.) run within <strong>CI/CD pipelines</strong> (Jenkins, Travis CI, Circle CI, AppVeyor, GitHub Actions, etc.)
 
    https://www.synopsys.com/software-integrity/integrations.html
 
-6. Code linters and <a href="#Scanners">scanners</a> (for each type of file) in CI/CD that <strong>stops a branch from being deployed</strong> if that branch doesn't meet all the rules.
+7. Code linters and <a href="#Scanners">scanners</a> (for each type of file) in CI/CD that <strong>stops a branch from being deployed</strong> if that branch doesn't meet all the rules.
    
    * SonarQube, Perforce
    * Terraform HCL IaC scanned using tfsec, Sonatype, etc.
@@ -109,18 +148,18 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
 
    PROTIP: Even if develpers can catch all vulnerabilities, one advantage of feeback from automated scanners is that their criticism cannot be perceived as a personal attack and thus cause animosity within the team. Feedback from scanners is impartial, and does not take into account personality conflicts and prejudices.
 
-6. <strong>Make it easy to use a private store of binary files</strong> (installers, Docker container images for Kubernetes, and other binary files)
+8. <strong>Make it easy to use a private store of binary files</strong> (installers, Docker container images for Kubernetes, and other binary files)
  
    <a target="_blank" href="https://wilsonmar.github.io/jfrog">JFrog Artifactory</a>
 
-7. Run policy-as-code checkers (using <a target="_blank" href="Open Policy Agent (OPA)</a>):
+9. Run policy-as-code checkers (using <a target="_blank" href="Open Policy Agent (OPA)</a>):
 
    * How to enforce use of tags
    <br /><br />
 
-8. Verify that <strong>unauthorized changes have not occurred</strong> by referencing assets using hashes of file contents rather than file names and versions.
+10. Verify that <strong>unauthorized changes have not occurred</strong> by referencing assets using hashes of file contents rather than file names and versions.
 
-9. Provide an <strong>easy way to create documents</strong> - writing docstrings in code so indexes of functions can be automatically generated; blogs
+11. Provide an <strong>easy way to create documents</strong> - writing docstrings in code so indexes of functions can be automatically generated; blogs
 
 
 References:

@@ -129,9 +129,11 @@ https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/ma
 
 <a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">CAUTION</a>: as COVID lockdowns relax, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
 
+<a name="Mighty5"></a>
+
 Many "Western" movies were filmed in iconic "Mighty 5" parks below Salt Lake City in Utah: <a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?msa=0&mid=16KbY2hCvDQEAAPsK6bwyEDjPZyc&ll=37.542383125235986%2C-110.57365010534873&z=8">Las Vegas from the South and Denver from the North <img width="841" alt="us-might5-route-1682x1014" src="https://user-images.githubusercontent.com/300046/134821783-60f33b47-ccea-4ab0-a12f-69505411c763.png">322 miles in 5 hours without stopping (click for Google Map)</a>. But you'll want to stop and marvel the views at each park:
-   1. <a target="_blank" href="https://www.youtube.com/results?search_query=zion+national+park++360+4k">4K 360 VIDEO</a>: Zion 
-   2. <a target="_blank" href="https://www.nps.gov/brca/index.htm">Bryce Canyon</a> <a target="_blank" href="https://www.youtube.com/brycecanyonnps">VIDEO</a>
+   1. <a target="_blank" href="https://www.youtube.com/results?search_query=zion+national+park++360+4k">4K 360 VIDEO</a>: <a target="_blank" href="https://www.nps.gov/zion/index.htm">Zion</a> (Utah's first National Park)
+   2. <a target="_blank" href="https://www.youtube.com/results?search_query=4k+360+bryce+canyon">4K 360 VIDEO</a>: <a target="_blank" href="https://www.nps.gov/brca/index.htm">Bryce Canyon</a> <a target="_blank" href="https://www.youtube.com/brycecanyonnps">VIDEO</a>
    3. <a target="_blank" href="https://www.youtube.com/results?search_query=capital+reef+national+park++360+4k">4K 360 VIDEO</a>: Capital Reef 
    4. <a target="_blank" href="https://www.youtube.com/results?search_query=Arches+national+park++360+4k">4K 360 VIDEO</a>: Arches 
    5. <a target="_blank" href="https://www.youtube.com/results?search_query=Canyonlands++360+4k">4K 360 VIDEO</a>: Canyonlands 
@@ -139,7 +141,7 @@ Many "Western" movies were filmed in iconic "Mighty 5" parks below Salt Lake Cit
 
 <a name="CivilWar"></a>
 
-## Civil War Confedrates
+## Civil War Confederates
 
 When the Civil War ended in 1865, The Confederacy included the 11 Southern states of Texas, Arkansas, Louisiana, Tennessee, Mississippi, Alabama, Georgia, Florida, South Carolina, North Carolina, and Virginia. 
 

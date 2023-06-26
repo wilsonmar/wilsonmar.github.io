@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-06-22"
+file: "python-certs"
 title: "Python Certs"
 excerpt: "The topics for learning the Python language thoroughly, for professional status"
 tags: [python, coding]
-date: "2021-10-09"
-file: "python-certs"
 image:
 #python-cert-31-02-1900x500
   feature: https://user-images.githubusercontent.com/300046/136653262-49c4cd56-f860-43a7-9663-c3ff144b7071.png
@@ -331,6 +331,21 @@ The <a target="_blank" href="https://pythoninstitute.org/certification/pcap-cert
    <br /><br />
 
 
+## Retired Python certs
+
+<a target="_blank" href="https://learn.microsoft.com/en-us/certifications/exams/98-381/">
+Microsoft's exam 98-381 "Introduction to Programming Using Python" was retired June 30, 2022</a>
+
+Skills measured
+
+   * Perform Operations using Data Types and Operators
+   * Control Flow with Decisions and Loops
+   * Perform Input and Output Operations
+   * Document and Structure Code
+   * Perform Troubleshooting and Error Handling
+   * Perform Operations Using Modules and Tools
+
+
 ## Video courses
 
 The most friendly and enthusiastically delivered <a target="_blank" href="https://kodekloud.com/courses/certified-associate-in-python-programming/">"PCAP – Python Certification Course"</a> I think is by 20-something <a target="_blank" href="https://www.linkedin.com/in/lydia-hallie/">Lydia Hallie living in Scandanavia</a> (https://www.lydiahallie.io). The content is delivered in enthusiastic, perfect English by the 20-something developer whiz, who presents "visualized" diagrams. As with other KodeKloud (subscription) video courses, this clas includes labs, Quizzes, Mock Exams, 
@@ -348,6 +363,10 @@ includes a practice exam.
 https://www.udemy.com/topic/certified-associate-in-python-programming-pcap/
 Udemy.com's mock PCAP tests 
 
+
+## References
+
+https://www.dataquest.io/blog/python-certification/
 
 
 ## More about Python
