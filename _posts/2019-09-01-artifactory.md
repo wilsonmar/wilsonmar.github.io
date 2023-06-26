@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2023-06-21"
+file: "artifactory"
 title: "Artifactory (with X-Ray security scan)"
 excerpt: "Privately store and retrieve binary artifacts vetted of vulnerabilities, instead of public DockerHub, PiPI, etc."
 tags: [devops]
-date: "2019-09-01"
-file: "artifactory"
 image:
 # artifactory-flow-1900x500
   feature: https://user-images.githubusercontent.com/300046/64661721-cc62b980-d413-11e9-9ff5-fbdd2d0ef39e.png
@@ -25,6 +25,12 @@ Wikipedia categorizes it as a <a target="_blank" href="https://www.wikiwand.com/
 Artifactory works with another JFrog product: X-Ray, which identifies vulnerabilities in transitive dependencies calling 3rd-party open-source libraries.
 
 <a target="_blank" href="https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory">User Guide: https://www.jfrog.com/confluence/display/RTF/Welcome+to+Artifactory</a>
+
+## Competitors
+
+Other Package Management systems (which store binary files) include 
+Sonatype's Nexus.    Sonatype's "Lifecycle" product competes with CI/CD projects such as Jenkins, GitHub Actions, etc.
+
 
 
 ## Workflow by edition and license

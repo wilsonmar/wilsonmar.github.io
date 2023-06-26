@@ -1,10 +1,10 @@
 ---
 layout: post
-date: "2016-04-29"
+date: "2023-06-22"
 file: "devsecops"
-title: "About DevSecOps"
-excerpt: "You gotta do it for competitive speed AND for improving Security Posture"
-tags: [devops]
+title: "DevSecOps"
+excerpt: "How to get people to use products and processes that yield faster competitive speed AND improved Security Posture throughout a secure SDLC"
+tags: [devops, devsecops]
 image:
 # feature: pic-brown-horses-running-forward-1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14724047/445df2f0-07d1-11e6-9c26-782291fe2b47.jpg
@@ -16,140 +16,239 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-This page is about the series on DevOps.
+Let's start off with Gartner's Magic Quadrant for the SDA (Sofware):
 
-{% include devops_links.html %}
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"><img alt="owasp-gartner-23.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"></a>
 
-## DevOps Certifications
+<a name="Synopsys"></a>
 
-PROTIP: My personal opinion is to spend time and money getting certified in technical tools from (such as RedHat, Cloudbees). That's unless your employer requests it.
+## Synopsys range
 
-There are several organizations providing certification exams and training based on DevOps:
+Synopsys [on <a target="_blank" href="https://www.linkedin.com/showcase/sw_integrity/">LinkedIn</a>] 
+operates in two seemingly different markets: EDA (Electronic Design Automation) used to build SoC (Systems on a Chip), and
+<a target="_blank" href="https://www.youtube.com/@SynopsysSoftwareIntegrity">"Software Integrity"</a>.
 
-### DASA
+Synpsys achieved its upper-right leader position through corporate acquisitions, which assembled a full set of tools to enhance security at each step in a secure software development lifecycle:
 
-* The DASA (DevOps Compentence Association) defined its  <a target="_blank" href="https://www.devopsagileskills.org/dasa-devops-principles/">6 principles of DevOps</a> and has a <a target="_blank" href="https://scan.devopsagileskills.org/">24 question QuickScan</a> for you to self-assess your own level in each of the <a target="_blank" href="https://www.devopsagileskills.org/dasa-competence-model/">12 (4 skill areas and 8 knowledge) areas of their DevOps Compentence Model</a> :
-
-   ![devops-dasa-results-541x537](https://user-images.githubusercontent.com/300046/63097332-5f9bf280-bf2d-11e9-977b-22cb1cde1da7.png)
-
-   PROTIP: Questions in the QuickScan contain statements about what each person can actually do to reach the highest levels in each area (such as being proactive vs. reactive, on a daily basis, inside and outside the organization, etc.). These statements are gold because they make the DevOps journey real. Make an appointment with yourself to review these statements once a week to document <strong>proof</strong> of how you personally are achieving them.
-
-   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Business Value Optimization: Use of the IT service in real life, including direct feedback loop of user comments to team, service level management, definition of done, business activity/performance monitoring, business case management:
-   
-   1. I am aware of the organizational goals and objectives and I constantly ensure that  requested features align with goals and objectives.
-   2. I have intimate knowledge. I have proven experience with (supporting) the business process.
-
-      Business Analysis: Evangelism, coaching, self-confidence, proactivity, reflection, trust, open discussions, experimentation, fail fast, courage to change:
-
-   3. I have proven experience of structuring and organizing requirements, using techniques to specify and model requirements and facilitating refinement meetings.
-   4. I proactively collect feedback and communicate it with the team through a structured method. I have well developed communication, facilitation, and negotiation skills.
-
-      Architecture and Design: Ensuring fit between developments and current situation, overall service design, patterns & styles:
-
-   5. Extensive Knowledge - Within the team, I ensure that architecture guidelines and rules are followed and that feedback is proactively given to Enterprise Architectural guidelines and rules.
-   6. Extensive knowledge - I extensively understand the Current State Architecture and the team maintains the Current State Architecture.
-
-      Test specification: Design of test cases, test concepts:
-
-   7. I have proven experience with all listed types of testing.
-   8. I have proven experience with setting up, using, and maintaining automated testing.
-
-      Programming: Software engineering mastery, everything as code, data management:
-
-   9. I have considerable experience in developing software and I can apply best practices to the software I develop.
-   9. (I have) 6 or more years of experience (writing code from scratch, using: i.e. common architectural patterns (MVC, SOA, etc.); software design patterns (i.e. Facade, Abstract factory, etc.); common frameworks (Spring, Hibernate, etc.)
-
-      Continuous Delivery: Automated testing, deployment and release management, configuration management, version control, cloud, containerization, featuredriven delivery:
-
-   9. I have extensive knowledge and experience (of version control).
-   9. I have proven expertise (of the continuous delivery process and setting up an automated pipeline for deployments)
-
-      Infrastructure engineering: Technical monitoring, performance management (e.g. load balancing etc.), capacity and availability management, reliability engineering, cloud, containerization:
-
-   9. I have proven experience and I am able to guide others (with technical monitoring of infrastructure components).
-   9. I have proven experience with availability and capacity management.
-
-      Security, Risk, and Compliance: Security, service continuity planning:
-
-   9. I apply secure coding standards and practices in my work and educate my colleagues on alternatives in case insecure coding practices are identified.
-   9. I take responsibility for security, risk & compliance within my team. Security, risk & compliance are fully integrated in the way we deliver services.
-
-      Courage: Evangelism, coaching, self-confidence, proactivity, reflection, trust, open discussions, experimentation, fail fast, courage to change:
-
-   9. I take actions in most situations because I am trusted to do so based on my knowledge and experience.
-   9. I encounter the unexpected situations with full confidence and work to fix them in a structured way. Also, I coach others in becoming more aware of unexpected situations.
-
-      Team Building: Understand the other’s point of view, collaboration, mutual accountability, common purpose, ability to integrally support the service/product:
-
-   9. I actively seek cooperation to share knowledge and experience and I help others to do the same.
-   9. No problem (taking over the role of others in the team). I have experience in multiple roles and I help my team members to achieve the same.
-
-      DevOps Leadership: Facilitating teams to high performance, humility, transparency, Service lifecycle mindset, Stakeholder management:
-
-   9. I structurally stimulate others inside and outside the team to reflect and take ownership for the results.
-   9. I involve my team members when I need to take a decision and I stimulate others in my team to act in the same way.
-
-      Continuous Improvement: Today we do our work better than yesterday, kaizen mindset, quality at the source, first time right, knowledge-sharing, ability to adapt:
-
-   9. I actively look for problems/impediments, discuss them in the team and take action to solve them with a structured problem-solving method on a daily basis.
-   9. Yes, I reserve explicit time and structurally plan for improvement activities regardless of the situation.
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687696954/devsecops-synopsys-2274x1154_g3cdpv.png"><img alt="devsecops-synopsys-2274x1154.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687696954/devsecops-synopsys-2274x1154_g3cdpv.png"><br /><em>Click here for full screen</em></a>
 
 
-   The results are rotated and mixed up from their model diagram:
+## Mature Approachings to Scanning
 
-   <a target="_blank" href="https://user-images.githubusercontent.com/300046/63094616-2f9d2100-bf26-11e9-9c67-c61977f31620.png"><img alt="devops-dasa-model-800x800" width="800" height="800" src="https://user-images.githubusercontent.com/300046/63094616-2f9d2100-bf26-11e9-9c67-c61977f31620.png"></a>
+<a target="_blank" href="https://www.synopsys.com/software-integrity/engage/">Gartner is concerned</a> about complex UI to what is sold as "all-in-one" but in reality are what can be a patchwork of products combined from different teams and thus work differently from each other.
+<a target="_blank" href="https://www.glassdoor.com/Reviews/Synopsys-Reviews-E2143.htm">Synopsys</a> has six products that span the same middle stages of the SDLC:
 
-   DASA speaks of 7 exams in their <a target="_blank" href="https://www.devopsagileskills.org/certifications/">DASA certification scheme</a> implemented by <a target="_blank" href="https://isqi.org/us/en/">iSQLI</a> (which also handles ISQTB QA, Lean Six Sigma, and other certifications).
-
-   The elegant <a target="_blank" href="https://www.linkedin.com/in/deborahburton/">Deborah Burton in the Netherlands</a> is the Executive Director. [<a target="_blank" href="https://www.slideshare.net/IevgeniiKatsan/1-deborah-burton-why-the-testing-community-should-care-about-dev-ops">SlideShare</a>]
-
-### International DevOps Certification Academy
-
-* <a target="_blank" href="https://www.devops-certification.org/Register_DevOps_Certification_Program.php">devops-certification.org</a> (non-profit International DevOps Certification Academy) provides up to 10 free retakes and a <a target="_blank" href="https://www.devops-certification.org/International_DevOps_Certification_Academy_Certificate_Validation_Tool.php">verification portal</a> for those to prove that they passed online exams of 50 multiple-choice over 60 minutes. The cost of $99 - $249 which include access to a 43-page PDF and training videos. Their certs:
-
-   * DevOps-GEN $99 Generalist
-   * DevOps-EXEC $249 Executive
-   * DevOps-PM $199 Project Manager
-   * DevOps-PO $199 Product Owner
-   
-   * DevOps-ARCH $149 Architect
-   * DevOps-DEV $149 Developer
-   * DevOps-OPS $149 Operations Engineer
-   * DevOps-QA $149 Quality Assurance Engineer
-   * DevOps-SEC $149 Information Security Engineer
-   * DevOps-RM $149 Release Manager
-
-   * DevOps-TRA $199 Trainer
-   * DevOps-COA $199 Coach
+   * Coverity <a name="SAST">SAST (Static Application Security Testing)</a> looks at code (as stored statically in GitHub)
+   * WhiteHat <a name="DAST">DAST (Dynamic Application Security Testing)</a> looks at running code
+   * Seeker <a name="IAST">IAST (Interactive Application Security Testing)</a> looks at agents running code dynamically
+   * Black Duck <a href="#SCA">SCA (Software Composition Analysis)</a> identifies open source packages which have been flagged with vulnerabilities in the US  National Vulnerability Database (NVD).
    <br /><br />
 
-   <a target="_blank" href="https://www.quora.com/Whats-your-opinion-on-devops-certification-org-Is-it-worth-the-money">Comments on Quora</a>
-   are positive. But all of them were posted the same day (August 24, 2018), so I'm very suspect of
-   <a target="_blank" href="https://www.linkedin.com/in/yeliz-obergfell/">Yeliz Obergfell in Switzerland</a>. E. Sutculer
+Synopsys combined separate tools into its <a target="_blank" href="https://www.synopsys.com/blogs/software-security/polaris-fast-static-sca/">Polaris fAST</a> (Application Security Testing) offering -- a cloud-based web/SaaS based on Synopsys Coverity® SAST, which includes services:
 
-### Devops Institute
-
-* <a target="_blank" href="https://devopsinstitute.com/certifications/">devopsinstitute.com</a>  (for-profit) offers <a target="_blank" href="https://devopsinstitute.com/certifications/devops-foundation/">7  certifications</a>.
-
-   Its $289 Foundation certification 50-question 60-minute exam is proctored by
-   <a target="_blank" href="https://www.peoplecert.org/en/browse-certifications/devops/DevOps-13/devops-foundation-2457">PeopleCert</a> in English, French, and German (no Asian languages). 
-   <a target="_blanK" href="https://www.youtube.com/channel/UCiqgwRodneKQeMx6ndPR7yw">VIDEO</a> had 289 views.
-   Learning objectives of its <a target="_blank" href="https://www.peoplecert.org/en/browse-certifications/devops/DevOps-13/devops-foundation-2457">foundation exam</a>:
-
-   * DevOps objectives and vocabulary
-   * Benefits to the business and IT
-   * Principles and practices including Continuous Integration, Continuous Delivery, testing, security and the Three Ways
-   * DevOps relationship to Agile, Lean and ITSM
-   * Improved workflows, communication and feedback loops
-   * Automation practices, including deployment pipelines and DevOps toolchains
-   * Scaling DevOps for the enterprise
-   * Critical success factors and key performance indicators
-   * Real-life examples and results
+   * Onboarding and adoption services, which help teams bring new applications and team members onto the platform quickly
+   * Triage services to help tune and remove noise from scan results
+   * Troubleshooting services that provide automatic monitoring and fixing of interrupted scans
    <br /><br />
 
-   Its <a target="_blank" href="https://www.youtube.com/watch?time_continue=2&v=mQpcaQ_eCzA">
-   VIDEO</a>: <a target="_blank" title="Jul 9, 2018" href="https://devopsinstitute.com/certifications/devops-foundation/">16-hour prep class</a> are taught at Cloudbees conferences for $1,500.
+   * Code Dx ASPM
+   * Defensics (form. Codenomicon)
 
+However, Synopsys users have a single support organization versus needing to coordinate among various vendors on their own.
+
+<hr />
+
+## TL;DR: What it takes
+
+Here are the various tools and processes a fully <strong>mature secure-minded organization</strong> would adopt:
+
+1. The ultimate objective is for secure and efficient coding techniques to be <strong>applied when code is created</strong> rather than being "inspect into" products.
+
+   PROTIP: Professional-level skill cannot be obtained alone but requires mentoring and sharing of techiques from several others as part of life-long apprenticeships free of competition.
+
+   Developers practice recognizing and <a target="_blank" href="https://github.com/teamed/quiz.git">fixing</a> <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/"><strong>sample known-bad</strong> coding containing OWASP Top 10, API Top 20, etc.</a>
+
+   PROTIP: Zealousness at refining and adopting standards requires #blameless psychological safety.
+
+2. Inclusion of security considerations <strong>within the IDE (Integrated Development Environment)</strong>, such as <a target="_blank" href="https://wilsonmar.github.io/copilots/">coding CoPilot</a> AI code generators (using GPT, etc.)
+
+   * PROTIP: <a target="_blank" href="https://wilsonmar.github.io/copilots/">My notes on GitHub and Microsoft CoPilot</a>
+   * <a target="_blank" href="https://www.synopsys.com/blogs/software-security/introducing-black-duck-copilot/">Black Duck CoPilot</a>, 
+   * Code Sight, 
+   * <a target="_blank" href="https://wilsonmar.github.io/text_editors">Microsoft's Visual Studio Code</a> add-on
+   <br /><br />
+
+3. <strong>Priorities of what is coded is driven using an Issues Tracker</strong> that balances time on various objectives.
+
+   AppSec Risk Insight. <a target="_blank" href="https://wilsonmar.github.io/jira">Atlassian Jira</a>, ServiceNow, etc.
+
+   PROTIP: <strong>Transparency about defects and other debt is an indicator</strong> of organizational maturity, not a driver of it.
+
+4. Provide advanced training and automation to manage complex code as a team <strong>SCM (Source Code Management)</strong> using a common repository 
+
+   * write commit messages in GitHub (GitLab) to make troubleshooting easier
+   * reconcile conflicts in code from different times and locations and people
+   * use a central vault to store and retrieve secret values (rather than plain text on laptops waiting to be stolen)
+   <br /><br />
+
+   PROTIP: Common and disciplined application of coding standards requires a <strong>social contract</strong> as well as a technical one.
+   The book [High Tech, High Touch](http://www.amazon.com/High-Tech-Touch-John-Naisbitt/dp/0767905415) popularized the concept (as I understand it) that more real personal physical attention is needed with heightened technology use.
+
+5. Build tools (Maven, Gradle, Scala Build Tool, NuGet, etc.) run within <strong>CI/CD pipelines</strong> (Jenkins, Travis CI, Circle CI, AppVeyor, GitHub Actions, etc.)
+
+   https://www.synopsys.com/software-integrity/integrations.html
+
+6. Code linters and <a href="#Scanners">scanners</a> (for each type of file) in CI/CD that <strong>stops a branch from being deployed</strong> if that branch doesn't meet all the rules.
+   
+   * SonarQube, Perforce
+   * Terraform HCL IaC scanned using tfsec, Sonatype, etc.
+   * Python code scanned using PEP8, Bandit, etc.
+   * Java [Qulice](http://www.qulice.com/) (quality police) combines several scanners to apply **over 900** rules on just Java code.
+   * etc.
+   <br /><br />
+
+   PROTIP: Even if develpers can catch all vulnerabilities, one advantage of feeback from automated scanners is that their criticism cannot be perceived as a personal attack and thus cause animosity within the team. Feedback from scanners is impartial, and does not take into account personality conflicts and prejudices.
+
+6. <strong>Make it easy to use a private store of binary files</strong> (installers, Docker container images for Kubernetes, and other binary files)
+ 
+   <a target="_blank" href="https://wilsonmar.github.io/jfrog">JFrog Artifactory</a>
+
+7. Run policy-as-code checkers (using <a target="_blank" href="Open Policy Agent (OPA)</a>):
+
+   * How to enforce use of tags
+   <br /><br />
+
+8. Verify that <strong>unauthorized changes have not occurred</strong> by referencing assets using hashes of file contents rather than file names and versions.
+
+9. Provide an <strong>easy way to create documents</strong> - writing docstrings in code so indexes of functions can be automatically generated; blogs
+
+
+References:
+   * <a target="_blank" href="https://www.youtube.com/watch?v=Heor8BVa4A0&list=RDLVHeor8BVa4A0&start_radio=1&rv=Heor8BVa4A0&t=178" title="Dr. Jared DeMott of VDA Labs">VIDEO</a>:
+Static code analysis: pattern matching, procedural, data flow, and statistical analysis. 
+Also included are examples of common software vulnerabilities such as memory corruption, buffer overflow and over reads, script injection, XSS and CSRF, command injection, and misconfigurations.
+   * <a target="_blank" href="https://www.youtube.com/watch?v=mBQaUiq6rbQ">AppSec Decoded: the worst DevSecOps practices</a> by <a target="_blank" href="https://www.linkedin.com/in/tanya-janca/">RSA keynoter Tanya Janca</a> (SheHacksPurple Academy), with Taylor Armerding, Security Advocate.
+ 
+
+
+
+
+[This blog](http://www.yegor256.com/2014/04/27/typical-mistakes-in-java-code.html)
+identifies some Java naming standards considered "anti-patterns", such as 
+
+   * "no method names beginning with get"
+
+   * "no class names ending in -er".
+
+   * "method names shouldn't start with a verb"
+
+   
+
+
+## Automatically applied
+
+These programs can be invoked as part of a "Continuous Integration/Continuous Deployment" toolchain
+that stops a branch from being deployed if that branch doesn't meet all the rules.
+
+This rather Draconian approach makes sense to some people because
+each piece of new code needs to work with existing code.
+
+## Where is the creativity?
+
+Some may brissle at this "take it or leave it" approach
+from <a target="_blank" href="http://www.yegor256.com/2014/08/13/strict-code-quality-control.html">
+some</a>.
+
+Does that stifle creativity?
+
+I'm personally thinking the ends justifies the means.
+
+I think creativity is merely **shifted**. 
+Perhaps to the arrangement of classes, to the UI, and other aspects machines cannot currently fathom.
+
+When all code is known to follow a certain set of rules, 
+the code is more **maintainable**.
+
+There's another, perhaps future benefit.
+
+**Automated refactoring** of the entire code base at once can occur with less worry and work.
+
+What's more, when code is inevitably generated by machines,
+the scanners will be there to catch their errors,
+and thus accelerate results.
+
+Thus, scanners ensure the conditions for speed and rapid adoption of innovation.
+
+## Who can know them all?
+
+The concern for organizations is how to "wire" the rules as code is typed out.
+
+To avoid bad quality code from its inception, developers can invoke static code scanners 
+on their local machine before committing their code to the team gauntlet.
+
+The source of coding violations can often be attributed to the training provided.
+In an effort to simplify concepts for learning, examples provided in tutorials
+are often not "production-worthy". Nevertheless, those examples are used out of habit.
+
+In order for the automatic scanner to be a patient tutor,
+it needs to explain how to do it correctly -- how to correct the errant code given --
+rather than simply complaining and dismissing errant code.
+
+And that's where live human tutoring is helpful -- to provide the nurturing,
+the explanation of "why" in a way that the learner would best understand.
+
+> MY PROPOSAL: A wiki with an entry that explains each rule, 
+with links to explanations of underlying knowledge.
+Such a public forum is where debates about the merits of each rule.
+
+> I think Where understanding abouds, acceptance will florish.
+
+## Empathetic, specific, and kind feedback?
+
+Some time back, a book named [High Tech, High Touch](http://www.amazon.com/High-Tech-Touch-John-Naisbitt/dp/0767905415) popularized
+the concept (as I understand it) that more real personal physical attention
+is needed with heightened technology use.
+
+The feedback from scanners is impartial, and does not take into account personality conflicts
+and prejudices.
+
+This I think is where automated scanners 
+can enhance developers doing pair programming.
+
+When one introduces a know bad piece of code, the other doesn't have to say a word,
+and just let the scanner do the rejection.
+
+This way, feeback cannot be perceived as a personal attack and thus cause animosity.
+
+Discussions about code can then transcend from whether someone is a good person depending on whether they use spaces or tabs.
+
+
+## Try it - install 
+
+0. Install Maven. On a Mac:
+
+   ```
+   brew install maven
+   ```
+
+0. Get Qulice
+
+   ```
+   git clone https://github.com/teamed/qulice.git
+   ```
+
+0. Navigate to it. We'll use the tool to check itself.
+
+   ```
+   git clone https://github.com/teamed/quiz.git
+   ```
+
+0. Add the plugin dependency in the project's pom.xml file.
+
+   Assuming you have java installed...
+   
+   
+<hr />
 
 ## References
 
@@ -168,4 +267,10 @@ Rather than repeating others, let me link to the most influencial pieces about D
 * <a href="https://www.amazon.com/Practice-Cloud-System-Administration-Practices/dp/032194318X">Practice of Cloud System Administration: Designing and Operating Large Distributed Systems</a>
 * <a target="_blank" href="http://download.microsoft.com/download/C/4/A/C4A14099-FEA4-4CB3-8A8F-A0C2BE5A1219/The%20Release%20Pipeline%20Model.pdf">Microsoft's Release Pipeline Model - Download PDF</a> is a high-level description before Azure DevOps appeared.
 * https://continuousdelivery.com/implementing/patterns/
+
+<hr />
+
+## More about DevOps
+
+{% include devops_links.html %}
 

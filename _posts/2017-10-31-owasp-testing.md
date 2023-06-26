@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "DAST for OWASP using SonarQube, ZAP on the Broken Web App, and other tools"
-excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
-tags: [API, devsecops]
 date: "2021-08-21"
 file: "owasp-testing"
+title: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
+excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
+tags: [API, devsecops]
 image:
 # owasp-2021-1900x500.png
   feature: https://user-images.githubusercontent.com/300046/134340802-9a5f0729-f3a2-4ed1-817b-4e29973730a1.png
@@ -19,7 +19,7 @@ comments: true
 There are several standards:
 
 <a target="_blank" href="https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project">OWASP (Open Web Application Security Project) Top 10</a> - <a target="_blank" href="https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf">2017 PDF</a>:
-is the result of non-profit team.
+is the result of a non-profit team.
 
 OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href="https://www.isecom.org/OSSTMM.3.pdf">v3 PDF</a> updated every six months by the <a target="_blank" href="https://www.isecom.org/research.html">ISECOM (Institute for Security and Open Methodologies)</a>. It was developed in an open community, and subjected to peer and cross-disciplinary review. ISECOM's <a target="_blank" href="https://www.isecom.org/STAR.3.pdf">PDF: Security Test Audit Report (STAR)</a> is a standardized form to summarize results of a security or penetration test - providing precise calculations of the Attack Surface, details of what was tested and how, and indemnification for testing organization.:
    1. Posture review
@@ -31,10 +31,10 @@ OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href
    7. Controls Verification
    8. Process Verification
    9. Configuration and Training Verification
-   10. Property Valiidation
+   10. Property Validation
    11. Segregation Review
    12. Exposure Verification
-   13. Competitve Intelligence Scouting
+   13. Competitive Intelligence Scouting
    14. Quarantine Verification
    15. Privileges Audit
    16. Survivability Validation and Service Continuity
@@ -44,29 +44,30 @@ OSSTMM (Open Source Security Testing Methodology Manual) <a target="_blank" href
 OSSTMM five channels or operational areas:
 
    * Human Security: The security of human interaction and communication is evaluated operationally as a means of testing
-   * Physical Security: The OSSTMM tests physical security defined as any tangible element of security that takes physical effort to operate
+   * Physical Security: The OSSTMM tests physical security, defined as any tangible element of security that takes physical effort to operate
    * Wireless Communications: Electronic communications, signals, and emanations are all considered wireless communications that are part of the operational security testing
-   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines are tested in the OSSTMM
+   * Telecommunications: Whether the telecommunication network is digital or analog, any communication conducted over telephone or network lines is tested in the OSSTMM
    * Data Networks: The security testing of data networks includes electronic systems and data networks that are used for communication or interaction via cable and wired network lines
    <br /><br />
 
 <a target="_blank" href="http://www.pentest-standard.org/index.php/Main_Page">PTES (Penetration Testing Execution Standard)</a> in 2009 defined phases of a pen-test engagement:
 
-   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Pre-engagement Interactions</a>
-   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Intelligence Gathering</a>
-   3. <a target="_blank" href="hhttp://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
+   1. <a target="_blank" href="http://www.pentest-standard.org/index.php/Intelligence_Gathering">Intelligence Gathering</a>
+   2. <a target="_blank" href="http://www.pentest-standard.org/index.php/Pre-engagement">Pre-engagement Interactions</a>
+   3. <a target="_blank" href="http://www.pentest-standard.org/index.php/Threat_Modeling">Threat Modeling</a>
    4. <a target="_blank" href="http://www.pentest-standard.org/index.php/Vulnerability_Analysis">Vulnerability Analysis</a>
    5. <a target="_blank" href="http://www.pentest-standard.org/index.php/Exploitation">Exploitation</a>
    6. <a target="_blank" href="http://www.pentest-standard.org/index.php/Post_Exploitation">Post Exploitation</a>
    7. <a target="_blank" href="http://www.pentest-standard.org/index.php/Reporting">Reporting</a>
    <br /><br />
 
-The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" because it's from 2014.
+The PTES <a target="_blank" href="http://www.pentest-standard.org/index.php/PTES_Technical_Guidelines">Technical Guidelines</a> is an "oldie but goodie" from 2014, but still has good wisdom.
 
+
+<a name="OWASP_Items"></a>
 
 ## OWASP items
 
-These will be changed soon.
 YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWASP):
 
    1. <a target="_blank" href="https://www.youtube.com/watch?v=rWHvp7rUka8&index=82&list=PLyqga7AXMtPMfBejtyw1vJOHspvsNRJkC">VIDEO:
@@ -101,49 +102,6 @@ YouTube videos from F5 DevCentral 2017 by John Wagnon (and Description from OWAS
    <br /><br />
 
 Also: Cross-Site Request Forgery (CSRF)
-
-
-
-
-There are different types of Pentration Testing:
-
-   * SAST (Static Application Security Testing)
-   * DAST (Dynamic Application Security Testing)
-   <br /><br />
-
-
-## DAST (Dynamic Application Security Testing)
-
-DAST watches application behavior while user actions are performed by automated scripts in a test environment, where various combinations of input actions are tried. This aims to expose security weaknesses.
-
-The main targets of a DAST system involve what offer a front door to attackers: HTTP and HTML -- protocols that drive the World Wide Web. 
-
-<a target="_blank" href="https://www.comparitech.com/net-admin/dast-tools/">Among DAST tools</a>: <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
-
-A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
-is offered free, and is actively maintained by hundreds of international volunteers. 
-Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
-
-   <img alt="web proxy" src="https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png">
-
-B. WebInspect from MicroFocus (formerly HP).
-
-C. <a target="_blank" href="">Burp Suite from Portswagger</a> ($399/year Pro) with <a target="_blank" href="https://github.com/snoopysecurity/awesome-burp-extensions">extensions</a>, <a target="_blank" href="https://deltarisk.com/blog/how-to-use-burp-suite-professional-for-web-application-security-part-one/">running on Kali Linux with FoxyProxy on Firefox, JPython, JRuby</a>
-
-D. Dirtbuster
-
-E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VIDEO</a>: ForAllSecure 
-
-
-## vs. SAST
-
-By contrast SAST (Static App Security Testing) tools focus on scanning <strong>application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include Veracode, Perforce, http://www.castsoftware.com/ and Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
-
-Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
-
-## OWASP Top 10
-
-DAST (like ZAP) look for vulnerabilities described by the 
 
 
 ## API Security 
@@ -190,7 +148,6 @@ DAST (like ZAP) look for vulnerabilities described by the
 
     Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems to tamper with, extract, or destroy data. Most breach studies demonstrate the time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.
 
-
 There is also SAN's <a target="_blank" href="https://www.sans.org/top25-software-errors/">Top 25 Software Errors</a> that include
 Insecure Interaction Between Components,
 Risky Resource Management, and
@@ -200,6 +157,90 @@ Additionally:
 * Payment Card Industry Data Security Standard (PCI DSS)
 * Health Insurance Portability and Accountability Act (HIPAA)
 * Motor Industry Software Reliability Association (MISRA) C/C++ coding standards
+
+
+<hr />
+
+## Software Security Testing
+
+The different types:
+
+   * SAST (Static Application Security Testing) looks at code
+   * <a name="DAST">DAST</a> (Dynamic Application Security Testing) looks at running code
+   * IAST (Interactive Application Security Testing) looks at agents running code
+   <br /><br />
+
+<a name="IAST"></a>
+
+IAST (Interactive App Security Testing) was invented by Checkmarx, which adds an agent running along the app to report to a central "Security Handler".
+
+
+<a name="DAST"></a>
+
+## DAST (Dynamic Application Security Testing)
+
+DAST aims to expose security weaknesses by watching application behavior while user actions are performed by automated scripts in a test environment, where various combinations of input actions are tried. 
+
+The main targets of a DAST system involve what offers a front door to attackers: HTTP and HTML -- protocols that drive the World Wide Web. 
+
+<a target="_blank" href="https://www.comparitech.com/net-admin/dast-tools/">Among DAST tools</a>: <a target="_blank" href=" https://www.owasp.org/index.php/Appendix_A:_Testing_Tools">web app penetration testing tools</a>:
+
+A. The <a target="_blank" href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy (ZAP)</a>
+is offered free, and is actively maintained by hundreds of international volunteers. 
+Use it to scan for security vulnerabilities in your web applications while you are developing and testing your applications. 
+
+   <img alt="web proxy" src="https://user-images.githubusercontent.com/300046/32320696-dd1e8f82-bf7b-11e7-891b-6b248fba5a0a.png">
+
+B. WebInspect from MicroFocus (formerly HP).
+
+C. <a target="_blank" href="">Burp Suite from Portswagger</a> ($399/year Pro) with <a target="_blank" href="https://github.com/snoopysecurity/awesome-burp-extensions">extensions</a>, <a target="_blank" href="https://deltarisk.com/blog/how-to-use-burp-suite-professional-for-web-application-security-part-one/">running on Kali Linux with FoxyProxy on Firefox, JPython, JRuby</a>
+
+D. Dirtbuster
+
+E. <a target="_blank" href="https://www.brighttalk.com/webcast/17668/423557">VIDEO</a>: ForAllSecure 
+
+
+<a name="SAST"></a>
+
+## SAST
+
+SAST (Static App Security Testing) tools focus on <strong>scanning application source code</strong> for vulnerabilities in coding. Static Application Security Testing (SAST) vendors include:
+   * Veracode
+   * Perforce
+   * http://www.castsoftware.com/
+   * Checkmarx, which adds an agent running along the app to report to a central Security Handler, called Interactive App Security Testing (IAST).
+   <br /><br />
+
+Security tests should also cover the efficacy of Runtime Application Self-Protection (RASP) built within apps, rather than relying completely on the infrastructure Web Application Firewall (WAF).
+
+
+<a name="Synopsys"></a>
+
+## Synopsys SNPS
+
+Synopsys [on <a target="_blank" href="https://www.linkedin.com/showcase/sw_integrity/">LinkedIn</a>] has two seemingly different markets: EDA (Electronic Design Automation) used to build SoC (Systems on a Chip) and
+<a target="_blank" href="https://www.youtube.com/@SynopsysSoftwareIntegrity">"Software Integrity"</a>
+Polaris product line
+
+
+The all-in-one AppSec platform optimized for DevSecOps
+and Software Quality.
+
+Gartner's Magic Quadrant for SDA has Synpsys on top:
+
+<a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"><img alt="owasp-gartner-23.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"></a>
+
+<a target="_blank" href="https://www.glassdoor.com/Reviews/Synopsys-Reviews-E2143.htm">80%</a>
+
+<a target="_blank" href="https://www.youtube.com/watch?v=Heor8BVa4A0&list=RDLVHeor8BVa4A0&start_radio=1&rv=Heor8BVa4A0&t=178" title="Dr. Jared DeMott of VDA Labs">VIDEO</a>:
+Static code analysis: pattern matching, procedural, data flow, and statistical analysis. 
+Also included are examples of common software vulnerabilities such as memory corruption, buffer overflow and over reads, script injection, XSS and CSRF, command injection, and misconfigurations.
+
+<a target="_blank" href="https://www.youtube.com/watch?v=mBQaUiq6rbQ">
+AppSec Decoded: the worst DevSecOps practices</a>
+by Tanya Janca (SheHacksPurple Academy)
+with Taylor Armerding, Security Advocate
+ 
 
 ## Test Scope
 
@@ -290,13 +331,14 @@ There are several ways to obtain and instantiate a proxy server.
 
 QUESTION: Who are SaaS vendors operating on public cloud?
 
+
 ### From Docker Hub
 
 For those working on public clouds:
 
-0. Bring up Docker
-0. In a Terminal, 
-0. Use the Docker image provided by the OWASP organization at
+1. Bring up Docker
+2. In a Terminal, 
+3. Use the Docker image provided by the OWASP organization at
    https://hub.docker.com/r/owasp/zap2docker-stable/
 
    <pre><strong>
@@ -320,7 +362,7 @@ For those working on public clouds:
    His lecture on 2 Jun 2015 [59:59]:
    https://www.youtube.com/watch?v=_MmDWenz-6U
 
-0. Start ZAP in with xvfb (X virtual frame buffer) which allows add-ons that use Selenium (like the Ajax Spider and DOM XSS scanner) to run in a headless environment. Firefox is also installed so can be used with these add-ons.
+4. Start ZAP in with xvfb (X virtual frame buffer) which allows add-ons that use Selenium (like the Ajax Spider and DOM XSS scanner) to run in a headless environment. Firefox is also installed so can be used with these add-ons.
 
    Alternately: Start ZAP in headless mode with following command:
 
@@ -332,6 +374,7 @@ Blogs about this:
 
    * https://github.com/zaproxy/zaproxy/wiki/Docker
 
+
 ### On private servers
 
 1. Download
@@ -342,14 +385,14 @@ Blogs about this:
 
    CAUTION: Enterprise security should review this.
 
-0. Un-tar
+2. Un-tar
 
    <tt><strong>
    tar zxf - -C /opt
    ln -s /opt/ZAP_2.4.3 /opt/zap
    </strong></tt>
 
-0. Since ZAP does not come with a script, this script for Debian:
+3. Since ZAP does not come with a script, this script for Debian:
 
    <tt><strong>
    wget -q -O /etc/init.d/zap https://raw.githubusercontent.com/stelligent/zap/master/packer/roles/zap/files/zap-init.sh
@@ -447,18 +490,36 @@ You can also:
 2. Run as Pre-Build as part of a Selenium Build
 3. Generate Reports (.xhtml, .xml, .json)
 
+
+## Vendors
+
+### Sonatype
+
+<a target="_blank" href="https://www.youtube.com/watch?v=_tn1dDmxiBw&list=RDCMUCrXr49kBvXJeQMMl2693c4g&index=1">
+by TheDevOpsSchool</a>
+Fundamental Tutorial for Beginners by Rajesh Kumar 
+
+### SonarQube
+
+<a title="_blank" href="https://www.youtube.com/watch?v=y8UF7rgtDEo&list=RDCMUCrXr49kBvXJeQMMl2693c4g&index=8">
+Sonarqube</a>
+
+SCA (Software Composition Analysis)
+
+
 ## Other DAST vendors
 
   https://en.wikipedia.org/wiki/List_of_tools_for_static_code_analysis
 
 1. <a target="_blank" href="https://en.wikipedia.org/wiki/Veracode">Veracode</a> <a target="_blank" href="https://www.veracode.com/security/vulnerability-scanning-tools">Vulnerability Scanning Tools</a> which only scans Java, were acquired on Nov 5 2018 from Broadcom by private equity firm Thoma Bravo who also funded Compuware and Dynatrace, Solar Winds and McAfee <a target="_blank" href="https://thomabravo.com/2018/11/05/thoma-bravo-to-acquire-veracode-software-from-broadcom-inc-nasdaqavgo/">*</a>
 
-2. WebInspect from MicroFocus (formerly HP), a part of the <a target="_blank" href="https://en.wikipedia.org/wiki/Fortify_Software">Fortify suite</a>, which consists of Fortify the SAST product.
+2. WebInspect from OpenText (formerly  MicroFocus, formerly HP, formerly Mercury), a part of the <a target="_blank" href="https://en.wikipedia.org/wiki/Fortify_Software">Fortify suite</a>, which consists of Fortify the SAST product.
    
 3. <a target="_blank" href="https://www.checkmarx.com/">Checkmarx.com</a>, based in Israel, offers <a target="_blank" href="https://www.checkmarx.com/products/codebashing">Codebashing</a>, a developer education platform for secure coding training.
 
-4. <a target="_blank" href="https://www.Synopsys.com/">Synopsys.com</a> acquired Black Duck, Coverity, and  
-   <a target="_blank" href="https://en.wikipedia.org/wiki/Cigital">Cigital SecureAssist</a>, a lightweight IDE plugin that points out common security vulnerabilities in real time.
+4. <a target="_blank" href="https://www.Synopsys.com/">Synopsys.com</a> [<a target="_blank" href="https://www.wikiwand.com/en/Synopsys">Wikipedia</a>] acquired CodeDX, Black Duck, Coverity, and <a target="_blank" href="https://en.wikipedia.org/wiki/Cigital">Cigital SecureAssist</a> (a lightweight IDE plugin that points out common security vulnerabilities in real time).
+
+   
 
 5. IBM AppScan
 
@@ -479,14 +540,15 @@ STAR: https://python-security.readthedocs.io/security.html
 https://www.securecoding.com/blog/python-security-practices-you-should-maintain/
 
 
+## More on Security #
+
+This is one of a series on Security in DevSecOps:
+
+{% include security_links.html %}
+
 ## More on DevOps #
 
 This is one of a series on DevOps:
 
 {% include devops_links.html %}
 
-## More on Security #
-
-This is one of a series on Security in DevSecOps:
-
-{% include security_links.html %}
