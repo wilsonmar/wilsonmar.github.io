@@ -69,7 +69,7 @@ Other offerings:
 
 ## What are Scanners looking for?
 
-   OWASP Top 10
+   See my <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10 items</a> (with videos)
    
    API Top 20
 
@@ -99,7 +99,7 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
 
    PROTIP: Professional-level skill cannot be obtained alone but requires mentoring and sharing of techiques from several others as part of life-long apprenticeships free of competition.
 
-   Scanning finds "low hanging fruit" but fail to find all false negatives. 
+   Scanners are good at finding "low hanging fruit" (obvious ones that are easy to identify), but commonly fail to find many false negatives in custom code.
    
    Scanners often report what can be "false positives", but whether each is or not requires time to investigate, which can be frustrating for some.
 
@@ -110,6 +110,8 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
    Like firemen practicing drills, developers can practice recognizing and <a target="_blank" href="https://github.com/teamed/quiz.git">fixing</a> <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/"><strong>sample known-bad</strong> coding containing OWASP Top 10, API Top 20, etc.</a>
 
 3. Inclusion of security considerations <strong>within the IDE (Integrated Development Environment)</strong>, such as <a target="_blank" href="https://wilsonmar.github.io/copilots/">coding CoPilot</a> AI code generators (using GPT, etc.)
+
+   Security alerts within the IDE provides a safe (individualized) way to reveal criticisms without public shaming.
 
    * PROTIP: <a target="_blank" href="https://wilsonmar.github.io/copilots/">My notes on GitHub and Microsoft CoPilot</a>
    * <a target="_blank" href="https://www.synopsys.com/blogs/software-security/introducing-black-duck-copilot/">Black Duck CoPilot</a>, 
