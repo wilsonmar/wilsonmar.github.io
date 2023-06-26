@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-01"
+date: "2023-06-21"
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
@@ -72,18 +72,18 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 To deter reckless driving among Extreme Road-trippers, the <a target="_blank" href="https://www.guinnessworldrecords.com/news/2015/8/60-years-on-the-categories-that-guinness-world-records-no-longer-monitors-393758">Guinness World Records discontinued listing speed records in 1996</a>. But that didn't stop the <a target="_blank" href="https://allfiftyclub.com/members/record-holders-fast-to-50/">All Fifty States Club</a> website. 
 
-Notice the separation of green down the middle of the country?
-
 ## The Rain Shadow divide
+
+Notice the transition between yellow to green down the middle of the country?
 
 <a target="_blank" href="https://www.youtube.com/watch?v=ki-hoy-3ea8&t=7m50s">VIDEO</a>: 80% of Americans live East of the <strong>98th Meridian</strong>, as shown by a green straight line overlaid this map from <a target="_blank" href="https://blackmarble.gsfc.nasa.gov/">NASA's BlackMarble satellite images of the nigh sky worldwide</a>:<br />
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"><img alt="usa-frontier-1920x1800.jpg" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1672456116/usa-frontier-1920x1080_a2urp2.jpg"></a>
 
-That green line down the middle of America defines the extent wet storms reach from the East. That line also defines the "Rain Shadow" where the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) which blocks moisture from the Pacific West.
+That green line down the middle of America defines the extent wet storms reach from the East. West of that is the "Rain Shadow" of limited moisture from the Pacific West blocked by the tall Rocky Mountains (West of <a target="_blank" href="https://www.google.com/maps/place/Denver,+CO/@39.7584783,-113.8531857,5z/">Denver, Colorado</a>) 
 
 When geologist John Westly Powell identified this phenomenon across the "pairies" in 1890, that natural line was at the 100th Meridian (vs. 98th today).
 Since then, "Climate change" continues to shift to the East. So expect less rain from Winnapeg (Canada) to Forth Worth, Ausin, and San Antonio Texas.
-Also impact will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
+Also impacted will be agriculture around Winnipeg (Manitoba, Canada), Fargo, Sioux Falls, Omaha, Lincoln, Wichita, Oklahoma City. 
 
 
 <a name="freeways"></a>
@@ -101,6 +101,8 @@ North-South interstate highway numbers end with 5.
 
 The number of <a target="_blank" href="https://www.tesla.com/supercharger">Tesla Supercharger locations</a> jumped to <a target="_blank" href="https://en.wikipedia.org/wiki/Tesla_Supercharger">2,966 in Q2 2021 from 1,587 at Q1 2019:<br />
 <img alt="map tesla charging stations 650x334-c59" width="650" height="334" src="https://cloud.githubusercontent.com/assets/300046/17037278/538ea0f8-4f4d-11e6-907a-6a0b65a807e5.jpg"></a>
+
+In 2023 Ford and GM ironed out an agreement to enable their electric cars to use Tesla's charging ports and stations.
 
 A map of stations offering <strong>Ethanol-free</strong> premium gasoline (at higher prices) is at <a target="_blank" href="https://www.pure-gas.org/extensions/map.html">pure-gas.org/extensions/map.html</a>. My wife used it to figure out where I should stop along a route from Florida to Montana. It was difficult because we had to figure out where I was on the website's map. She also had to calculate how much further I could go with remaining gas. Somehow we managed to stay married after that.
 
@@ -127,12 +129,12 @@ https://github.com/wilsonmar/Data-Analysis-and-Machine-Learning-Projects/blob/ma
 
 <a target="_blank" href="https://rvlife.com/national-park-camping-reservations/">CAUTION</a>: as COVID lockdowns relax, reservations are at all-time highs at <a target="_blank" href="https://www.recreation.gov/">recreation.gov/</a>, <a target="_blank" href="https://koa.com/">KOA</a>, <a target="_blank" href="https://www.reserveamerica.com/">ReserveAmerica.com</a>, and state camping sites.
 
-Many "Western" movies were filmed in iconic "Mighty 5" parks below Salt Lake City in Utah: <a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?msa=0&mid=16KbY2hCvDQEAAPsK6bwyEDjPZyc&ll=37.542383125235986%2C-110.57365010534873&z=8">Las Vegas from the South and Denver from the North <img width="841" alt="us-might5-route-1682x1014" src="https://user-images.githubusercontent.com/300046/134821783-60f33b47-ccea-4ab0-a12f-69505411c763.png">322 miles in 5 hours without stopping (click for Google Map)</a>:
-   1. Zion 
+Many "Western" movies were filmed in iconic "Mighty 5" parks below Salt Lake City in Utah: <a target="_blank" href="https://www.google.com/maps/d/u/0/viewer?msa=0&mid=16KbY2hCvDQEAAPsK6bwyEDjPZyc&ll=37.542383125235986%2C-110.57365010534873&z=8">Las Vegas from the South and Denver from the North <img width="841" alt="us-might5-route-1682x1014" src="https://user-images.githubusercontent.com/300046/134821783-60f33b47-ccea-4ab0-a12f-69505411c763.png">322 miles in 5 hours without stopping (click for Google Map)</a>. But you'll want to stop and marvel the views at each park:
+   1. <a target="_blank" href="https://www.youtube.com/results?search_query=zion+national+park++360+4k">4K 360 VIDEO</a>: Zion 
    2. <a target="_blank" href="https://www.nps.gov/brca/index.htm">Bryce Canyon</a> <a target="_blank" href="https://www.youtube.com/brycecanyonnps">VIDEO</a>
-   3. Capital Reef
-   4. Arches
-   5. Canyonlands
+   3. <a target="_blank" href="https://www.youtube.com/results?search_query=capital+reef+national+park++360+4k">4K 360 VIDEO</a>: Capital Reef 
+   4. <a target="_blank" href="https://www.youtube.com/results?search_query=Arches+national+park++360+4k">4K 360 VIDEO</a>: Arches 
+   5. <a target="_blank" href="https://www.youtube.com/results?search_query=Canyonlands++360+4k">4K 360 VIDEO</a>: Canyonlands 
    <br /><br />
 
 <a name="CivilWar"></a>

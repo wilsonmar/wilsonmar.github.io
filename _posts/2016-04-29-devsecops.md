@@ -16,7 +16,7 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-Let's start off with Gartner's Magic Quadrant for the SDA (Sofware):
+Let's start off with the <a target="_blank" href="https://www.synopsys.com/software-integrity/engage/gartner-mq-auto/">2023 Gartner's Magic Quadrant for Application Security Testing</a>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"><img alt="owasp-gartner-23.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"></a>
 
@@ -62,13 +62,13 @@ However, Synopsys users have a single support organization versus needing to coo
 
 Here are the various tools and processes a fully <strong>mature secure-minded organization</strong> would adopt:
 
-1. The ultimate objective is for secure and efficient coding techniques to be <strong>applied when code is created</strong> rather than being "inspect into" products.
+1. The ultimate objective is for secure and efficient coding techniques to be <strong>applied while code is created</strong> rather than having security "inspected into" products.
 
    PROTIP: Professional-level skill cannot be obtained alone but requires mentoring and sharing of techiques from several others as part of life-long apprenticeships free of competition.
 
    Developers practice recognizing and <a target="_blank" href="https://github.com/teamed/quiz.git">fixing</a> <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/"><strong>sample known-bad</strong> coding containing OWASP Top 10, API Top 20, etc.</a>
 
-   PROTIP: Zealousness at refining and adopting standards requires #blameless psychological safety.
+   PROTIP: A culture of zealousness at refining and adopting security requires #blameless psychological safety.
 
 2. Inclusion of security considerations <strong>within the IDE (Integrated Development Environment)</strong>, such as <a target="_blank" href="https://wilsonmar.github.io/copilots/">coding CoPilot</a> AI code generators (using GPT, etc.)
 
@@ -80,7 +80,7 @@ Here are the various tools and processes a fully <strong>mature secure-minded or
 
 3. <strong>Priorities of what is coded is driven using an Issues Tracker</strong> that balances time on various objectives.
 
-   AppSec Risk Insight. <a target="_blank" href="https://wilsonmar.github.io/jira">Atlassian Jira</a>, ServiceNow, etc.
+   Synopsys AppSec Risk Insight. <a target="_blank" href="https://wilsonmar.github.io/jira">Atlassian Jira</a>, ServiceNow, etc.
 
    PROTIP: <strong>Transparency about defects and other debt is an indicator</strong> of organizational maturity, not a driver of it.
 
