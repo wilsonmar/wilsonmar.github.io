@@ -2,8 +2,8 @@
 layout: post
 date: "2023-05-22"
 file: "job-search"
-title: "Job search"
-excerpt: "The procedures I've found helping landing a remote job within an acknowledged Great Place to Work"
+title: "Job Search"
+excerpt: "The procedures I've found helping land a remote job within an acknowledged Great Place to Work"
 tags: [search]
 image:
 # job-search-1900x500
@@ -71,9 +71,12 @@ There are several aspects:
 
    * Where the company stands among competitors according to Gartner, Forrester, G2, etc.
 
-   * Profitabity of the company versus competitors in the same industry
+   * Profitability of the company versus competitors in the same industry
 
    * Locations of company HQ and branches
 
    * Benefits deductions and limits in Medical, Dental, Disability, etc.
 
+## Best Places to Work
+
+https://www.computerworld.com/article/3681081/best-places-to-work-in-it-2023.html
