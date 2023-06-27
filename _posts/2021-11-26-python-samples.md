@@ -2290,7 +2290,104 @@ https://devblogs.microsoft.com/microsoft365dev/new-python-quick-start-and-sample
 
 <a name="use_aws"></a>
 
-##  15. Retrieve secrets from AWS KMS         = use_aws
+## use_aws
+
+1. Install packages needed by running python-samples.sh
+2. <a href="#VSCodeSetup">Setup IDE VSCode for Python</a>
+3. Look at sample code
+4. Run with default values by running python-samples.py
+5. Customize
+<hr />
+
+### Install packages
+
+I've made it easier for you to install Python in AWS cloud:
+
+In python-samples.sh, setup Python programs to access AWS by installing:
+
+   * <tt>boto3</tt> included in the Boto3 library for Python.
+   * <tt>awscrt</tt> => AWS CRT (Common RunTime) SDK at https://github.com/awslabs/aws-crt-python
+   <br /><br />
+
+The code is a <strong>submodule</strong>:
+
+<pre>git clone https://github.com/awslabs/aws-crt-python.git
+cd aws-crt-python
+git submodule update --init
+# conda or python3 -m pip install .
+</pre>
+
+
+<pre>
+  conda install botocore
+  botocore                            1.29.155-pyhd8ed1ab_0 --> 1.29.161-pyhd8ed1ab_0
+ 
+  conda install awscrt
+  aws-c-auth         conda-forge/osx-64::aws-c-auth-0.6.28-hb1389d5_5
+  aws-c-cal          conda-forge/osx-64::aws-c-cal-0.5.27-h1a35643_0
+  aws-c-common       conda-forge/osx-64::aws-c-common-0.8.20-h0dc2134_0
+  aws-c-compression  conda-forge/osx-64::aws-c-compression-0.2.17-h0ead7ca_0
+  aws-c-event-stream conda-forge/osx-64::aws-c-event-stream-0.3.0-h3f5e915_6
+  aws-c-http         conda-forge/osx-64::aws-c-http-0.7.8-h7d0dcbb_4
+  aws-c-io           conda-forge/osx-64::aws-c-io-0.13.26-ha48b2be_0
+  aws-c-mqtt         conda-forge/osx-64::aws-c-mqtt-0.8.13-h4efb563_2
+  aws-c-s3           conda-forge/osx-64::aws-c-s3-0.3.4-hefe73a3_5
+  aws-c-sdkutils     conda-forge/osx-64::aws-c-sdkutils-0.1.10-h0ead7ca_0
+  aws-checksums      conda-forge/osx-64::aws-checksums-0.1.16-h0ead7ca_0
+  awscrt             conda-forge/osx-64::awscrt-0.16.21-py310hacc69eb_0
+
+  conda install s3transfer
+
+  conda install jmespath
+
+  conda install python-dateutil
+
+  conda install six
+
+  conda install urllib3
+
+
+<a name="VSCodeSetup"></a>
+
+### Setup IDE VSCode for Python
+
+Setup VSCode https://github.com/awslabs/aws-crt-python/blob/main/guides/dev/README.md
+
+https://towardsdatascience.com/introducing-icecream-never-use-print-to-debug-your-python-code-again-d8f2e5719f8a
+
+The Azure tools extension for Visual Studio Code (find it under VS Code extensions and click install).
+
+https://azure.github.io/azure-sdk-for-python/
+
+https://www.cisin.com/coffee-break/technology/why-exactly-should-you-choose-python-development-on-microsoft-azure.html
+
+</pre>
+
+### Python sample code
+
+Sandip Das's
+<a target="_blank" href="https://www.youtube.com/watch?v=iLv1vJd4URg&list=RDCMUClA0CospcdBGppfVUx99WwQ&start_radio=1&rv=iLv1vJd4URg">
+VIDEO</a>: 
+
+https://github.com/sd031/python-for-cloud
+
+https://medium.com/enefitit/tutorial-of-python-in-azure-app-service-ed348887dfc0
+
+### AWS Documentation
+
+Our use case is to (securely) read and write objects in/out of S3 buckets.
+
+Tutorial of Python in Azure App Service
+Publish your code as a production-ready app without the traditional server setup
+
+Versioned developer docs:<br />
+https://azure.github.io/azure-sdk-for-python/
+
+Public developer docs at:<br />
+https://docs.microsoft.com/python/azure/
+
+
+### AWS KMS
 
 To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS, AWS uses <strong>two types of CMK (Customer Master Key)</strong> to encrypt up to 4KB of data:
 
@@ -3783,7 +3880,7 @@ Learn Enough Python to Be Dangerous</a>: Software Development, Flask Web Apps, a
 by <a target="_blank" href="https://www.linkedin.com/in/michaeldhartl/">Michael Hartl</a>
 has code at https://github.com/learnenough/learn_enough_python_code_listings
 
-pip install python-dotenv
+
 
 <hr />
 
@@ -3791,7 +3888,7 @@ pip install python-dotenv
 
 ## Run metrics databases online
 
-Here are the various cloud-based time-series databases for collection and trending/analytics of custom metrics (using free trials):
+Here are the various cloud-based time-series databases for the collection and trending/analytics of custom metrics (using free trials):
 
    * <a target="_blank" href="https://aws.amazon.com/cloudwatch/">Amazon CloudWatch</a>
    * <a target="_blank" href="https://azure.microsoft.com/en-us/products/monitor">Azure Monitor</a>
@@ -3808,11 +3905,24 @@ Here are the various cloud-based time-series databases for collection and trendi
    * <a target="_blank" href="https://wilsonmar.github.io/splunk/">Splunk</a>
    <br /><br />
 
+## Keep processing messages from appearing 
+
+https://app.dataquest.io/c/114/m/605/python-programming/1/learning-data-science?path=2&slug=data-scientist&version=2
+
+## 100 Days of Code
+
+https://www.geeksforgeeks.org/100-days-of-code-a-complete-guide-for-beginners-and-experienced/#100%20days%20of%20code%20for%20experienced
+
+
 <a name="CodeFormatting"></a>
 
 ## Code Formatting Tools
 
 https://prettier.io/
+
+## Debugging
+
+https://towardsdatascience.com/introducing-icecream-never-use-print-to-debug-your-python-code-again-d8f2e5719f8a
 
 <hr />
 
