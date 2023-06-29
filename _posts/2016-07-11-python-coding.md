@@ -137,302 +137,6 @@ The list above can be retrieved (as an array) by this code after typing <tt>pyth
 
 Press control+D to exit anytime.
 
-<a name="None"></a>
-
-### Use Not None Reserved Word
-
-Returning 0 on error can be confused with the number 0 as a valid response.
-
-To avoid the confusion, return the Python reserved word "None":
-
-<pre>result = safe_square_root(4)
-<strong>if result is not None:</strong>   # happy path:
-   value = result.pop()  # pop up from stack.
-   print(value)
-else:  # notice we're not checking for None.
-    # calling function does not need to handle error:
-    # an error occurred, but encapsulated to be forwarded and processed upstream:
-    print("unable to compute square root")
-</pre>
-
-Function:
-
-<pre>def safe_square_root(x):
-    try:
-        return [math.sqrt(x)]   # in a stack.
-    except ValueError:
-        return None   # using reserved word.
-</pre>
-
-The <strong>parameter</strong> (x) is what is declared going into the function.
-
-The value passed through when calling the function is called an <strong>argument</strong>.
-
-
-<a name="Operators"></a>
-
-## Operators
-
-### Floor division Operators
-
-This is a feature in Python 3.
-
-<tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> the <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">"Prefix Sums CountDiv" coding interview challenge</a>: "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K":
-
-   <pre>def solution(a, b, k):
-    return 0 if b == 0 else int(b // k - (a - 1) // k)
-   </pre>
-
-Instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
-
-
-<a name="Modulo"></a>
-
-### Modulo operator
-
-<tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
-Modulus is used in circular buffers and hashing algorithms.
-
-<pre>def solution(A, K):
-    # A is the array.
-    # K is the increment to move.
-    result = [None] * len(A)   # initialize result array for # items in array
-&nbsp;
-    for i in range(len(A)):
-        # Use % modulo operator to calculate new index position 0 - 9:
-        result[(i + K) % len(A)] = A[i]   
-        print(f'i={i} A[i]={A[i]} K={K} result={result} ')
-    return result
-&nbsp;
-print(solution([7, 2, 8, 3, 5], 2))
-</pre>
-
-Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/CodilityInPython/blob/master/solutions/euclideanalgorithm/chocolates_by_numbers.py">this</a>
-
-
-<a name="WhenNow"></a>
-
-## What Day and Time is it?
-
-There are several ways to present date and time. 
-The ISO 8601 format is: 
-   <ul>2022-02-22T07:53:19.051615-05:00</ul>
-
-References:
-   * https://www.geeksforgeeks.org/get-current-time-in-different-timezone-using-python/
-
-
-<a name="DurationCalcs"></a>
-
-## Duration calculations
-
-Several packages, functions, and methods are available. They differ by:
-   * the type of duration they report: wall-clock time or CPU time
-   * how they treat time zone changes during the recording period
-   * how much <strong>precision</strong> they report (down to microseconds)
-   <br /><br />
-
-* <strong>Wall-clock time</strong> (aka clock time or wall time) is the total time <strong>elapsed</strong> you can measure with a stopwatch. It is the difference between the time at which a program finished its execution and the time at which the program started. It <strong>includes waiting time</strong> for resources.
-
-* <strong>CPU Time</strong> is how much time the CPU was <strong>busy processing</strong> programming instructions, not including time waiting for other task to complete (like I/O operations).
-
-We want both reported.
-
-timeit.default_timer() is time.perf_counter() on Python 3.3+. 
-
-The same program run several times would report similar CPU time but varying wall-clock times due to differences in what else was taking up resources during the runs.
-
-* time.time() returns wall-clock time.
-* time.process_time() returns CPU execution time.
-
-To time the difference between calculation strategies, new since Python 3.7 is <a target="_blank" href="https://www.python.org/dev/peps/pep-0564/">PEP 564</a>.
-
-<tt><strong>time.perf_counter()</strong></tt> (abbreviation of performance counter) measures the elapsed time of short duration because it returns 82 nano-second resolution on Fedora 4.12. It is based on <strong>Wall-Clock Time</strong> which includes time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of consecutive calls is valid.
-See https://docs.python.org/3/library/time.html#time.perf_counter
-
-<tt><strong>time.clock</strong></tt> is no longer available since Python 3.8.
-
-<tt><strong>time.time()</strong></tt> has a resolution of <strong>whole seconds</strong>. And in a measurement period  between start and stop times, if the system time is disrupted (such as for daylight savings) its counting is disrupted. time.time() resolution will only become larger (worse) as years pass since every day adds 86,400,000,000,000 nanoseconds to the system clock, which increases the precision loss. It is called "non-monotonic" because falling back on daylight savings would cause it to report time going backwards:
-
-<ul><pre>start_time = time.time()
-# your code
-e = time.time() - start_time
-time.strftime("%H:%M:%S", time.gmtime(e))  # for hours:minutes:seconds
-print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
-</pre>
-</ul>
-
-### timeit()
-
-For more accurate wall-time capture, the timeit() functions disable the garbage collector.
-
-<tt><strong>timeit.timer()</strong></tt> 
-provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
-   * https://pynative.com/python-get-execution-time-of-program/
-   * https://docs.python.org/3/library/timeit.html 
-   * https://www.guru99.com/timeit-python-examples.html
-   <br /><br />
-
-<pre>
-import timeit   # built-in
-&nbsp;
-# print addition of first 1 million numbers
-def addition():
-    print('Addition:', sum(range(1000000)))
-&nbsp;
-# run same code 5 times to get measurable data
-n = 5
-&nbsp;
-# calculate total execution time
-result = timeit.timeit(stmt='addition()', globals=globals(), number=n)
-&nbsp;
-# calculate the execution time
-# get the average execution time
-print(f"Execution time is {result / n} seconds")
-</pre>
-
-<pre>timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)
-</pre>
-
-<ul><pre># from timeit import default_timer as timer
-# from datetime import timedelta
-start = timer()
-# do some stuff ...
-end = timer()
-print(timedelta(seconds=end-start))
-</pre></ul>
-
-
-<a target="_blank" href="https://www.python.org/dev/peps/pep-0418">PEP-418</a> in Python 3.3 added three timers:
-
-<tt><strong>time.process_time()</strong></tt> offers 1 nano-second resolution on Linux 4.12. It does not include time during sleep.
-
-<pre>
-# import time
-t = time.process_time()
-# do some stuff ...
-elapsed_time = time.process_time() - t
-</pre>
-
-<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days, when you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward.
-See https://docs.python.org/3/library/time.html#time.monotonic
-
-
-<tt><strong>datetime.datetime.now()</strong></tt> provides <strong>microsecond</strong> precision:
-
-<ul><pre>
-# import datetime
-start = datetime.datetime.now()
-# do some stuff ...
-end = datetime.datetime.now()
-elapsed = end - start
-print(elapsed)
-# or
-print(elapsed.seconds,":",elapsed.microseconds) 
-</pre></ul>
-
-References:
-   * https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
-   * https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module/47637891#47637891
-   * See https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
-   * See https://www.codingeek.com/tutorials/python/datetime-strftime/
-   * use the .st_birthtime attribute of the result of a call to os.stat().
-   * Obtain pgm start to obtain run duration at end:
-   * See https://www.webucator.com/article/python-clocks-explained/
-   * for wall-clock time (includes any sleep).
-   <br /><br />
-
-### Timezone handling
-
-NOTE: On macOS, timezone data are in a binary file at <tt>/etc/localtime</tt>.
-
-Once a datetime has a tzinfo, the astimezone() strategy supplants new tzinfo.
-
-### Timing Attacks
-
-A malicious use of precise microseconds timing code is used by <a target="_blank" href="https://codahale.com/a-lesson-in-timing-attacks/">Timing Attacks</a> based on the time it takes for an application to authenticate a password to determine the algorithm used to process the password. In the case of <a target="_blank" href="http://rdist.root.org/2009/05/28/timing-attack-in-google-keyczar-library/">Keyczar vulnerability found by Nate Lawson</a>, a simple break-on-inequality algorithm was used to compare a candidate HMAC digest with the calculated digest. A value which shares no bytes in common with the secret digest returns immediately; a value which shares the first 15 bytes will return 15 compares later. 
-
-Similarly, <a target="_blank" href="https://belitsoft.com/assets/python-security.pdf">PDF: entropy</a>
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/146260721-42584e8b-25d4-4853-a073-295dbbd9ac24.png">
-<img alt="python-sample-entropy-times-957x402" src="https://user-images.githubusercontent.com/300046/146260721-42584e8b-25d4-4853-a073-295dbbd9ac24.png"></a>
-
-PROTIP: Use the <a target="_blank" href="https://docs.python.org/3/library/secrets.html#secrets.compare_digest">secrets.compare_digest module</a> (introduced in Python 3.5) to check passwords and other private values. It uses a <strong>constant amount of time</strong> to process every request.
-
-Functions hmac.compare_digest() and secrets.compare_digest() are designed to mitigate against timing attacks.
-
-http://pypi.python.org/pypi/profilehooks
-
-Depth-First Seach (DFS) uses a stack, whereas
-Breadth-First Search (BFS) use a queue.
-
-
-<a name="TimeComplexity"></a>
-
-### Time Complexity
-
-Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
-
-Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
-
-Depth-first trees would have steeper (logarithmic) Time Complexity:
-
-<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
-<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
-
-In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
-
-
-<a name="Sorting"></a>
-
-### Sorting
-
-To swap values, here's a straight-forward function:
-
-<pre>def swap1(var1,var2):
-    var1,var2 = var2,var1
-    return var1, var2
-</pre>
-
-<pre>>>> swap1(10,20)
->>> 2 1
-</pre>
-
-<pre>def swap2(x,y):
-    x = x ^ y
-    y = x ^ y
-    x = x ^ y
-    return x, y
-</pre>
-
-<pre>>>> swap2(10,20)
-(20,10)
-</pre>
-
-
-### Reduce Space Complexity with Dynamic programming
-
-Techniques for calculation of <strong>nested loops</strong> is often used to shown how to reduce run times by using techniques that use more memory space.  Rather than "brute-force" repeatitive computations as in the definition of how to calculate <a target="_blank" href="https://www.youtube.com/watch?v=Nki9hhW-tAI&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=4">Fibonacci numbers</a>, which by definition is based on numbers preceding it.
-
-   <ul><pre>fib(5) = fib(4) + fib(3)</pre></ul>
-
-Memoization  (sounds  like  memorization)  is  the  technique of  writing  a  function  that  remembers  the  results  of  previous computations. 
-
-Longest Increasing Subsequence (LIS)
-
-That's a technique of "Dynamic Programming" (See https://www.wikiwand.com/en/Dynamic_programming)
-
-Dynamic programming is a catch phrase for solutions based on solving 
-successively similar but smaller problems, using algorithmic tasks in which 
-the solution of a bigger problem is relatively easy to find, 
-if we have solutions for its sub-problems.
-
-
-<a name="MakingChange"></a>
-
-### Making change
-
-
-<hr />
 
 ## Built-in Methods/Functions
 
@@ -511,6 +215,308 @@ https://docs.python.org/3/library/functions.html
    * super()
 
 <hr />
+
+<a name="None"></a>
+
+### Use Not None Reserved Word
+
+Returning 0 on error can be confused with the number 0 as a valid response.
+
+To avoid the confusion, return the Python reserved word "None":
+
+<pre>result = safe_square_root(4)
+<strong>if result is not None:</strong>   # happy path:
+   value = result.pop()  # pop up from stack.
+   print(value)
+else:  # notice we're not checking for None.
+    # calling function does not need to handle error:
+    # an error occurred, but encapsulated to be forwarded and processed upstream:
+    print("unable to compute square root")
+</pre>
+
+Function:
+
+<pre>def safe_square_root(x):
+    try:
+        return [math.sqrt(x)]   # in a stack.
+    except ValueError:
+        return None   # using reserved word.
+</pre>
+
+The <strong>parameter</strong> (x) is what is declared going into the function.
+
+The value passed through when calling the function is called an <strong>argument</strong>.
+
+
+<a name="Operators"></a>
+
+## Operators
+
+### Floor division Operators
+
+This is a feature in Python 3.
+
+<tt>11 // 5</tt> uses <a target="_blank" href="https://python-reference.readthedocs.io/en/latest/docs/operators/floor_division.html">"floor division"</a> to return just the integer (integral part) of 2, discarding the remainder. This can be useful to <a target="_blank" href="https://medium.com/geekculture/solving-a-respectable-codility-challenge-in-one-line-of-code-6c331deff8bb">efficiently solve</a> the <a target="_blank" href="https://app.codility.com/programmers/lessons/5-prefix_sums/count_div/">"Prefix Sums CountDiv" coding interview challenge</a>: "Write a function … that, given three integers A, B and K, returns the number of integers within the range [A..B] that are divisible by K":
+
+   <pre>def solution(a, b, k):
+    return 0 if b == 0 else int(b // k - (a - 1) // k)
+   </pre>
+
+Instead of a "brute force" approach which has linear time complexity — O(n), the solution using floor division is constant time - O(1).
+
+
+<a name="Modulo"></a>
+
+### Modulo operator
+
+<tt>11 % 5</tt> uses the (percent sign), the <strong>modulo operator</strong> to divide 11 by the quotient 5 in order to return 1 because two 5s can go into 11, leaving 1 left over, the remainder.
+Modulus is used in circular buffers and hashing algorithms.
+
+<pre>def solution(A, K):
+    # A is the array.
+    # K is the increment to move.
+    result = [None] * len(A)   # initialize result array for # items in array
+&nbsp;
+    for i in range(len(A)):
+        # Use % modulo operator to calculate new index position 0 - 9:
+        result[(i + K) % len(A)] = A[i]   
+        print(f'i={i} A[i]={A[i]} K={K} result={result} ')
+    return result
+&nbsp;
+print(solution([7, 2, 8, 3, 5], 2))
+</pre>
+
+Modulu is also used in <a target="_blank" href="https://github.com/wilsonmar/CodilityInPython/blob/master/solutions/euclideanalgorithm/chocolates_by_numbers.py">this</a>
+
+
+<a name="WhenNow"></a>
+
+## What Day and Time is it?
+
+The ISO 8601 format contains 6-digit microseconds ("123456") and a Time Zone offset ("-5.00" being five hours West of UTC):
+
+   <ul>2024-02-22T07:53:19.123456-05:00</ul>
+
+<ul><pre>
+# import datetime
+start = datetime.datetime.now()
+# do some stuff ...
+end = datetime.datetime.now()
+elapsed = end - start
+print(elapsed)
+# or
+print(elapsed.seconds,":",elapsed.microseconds) 
+</pre></ul>
+
+Some prefer to display local time with a Time Zone code from Python package pytz or zulu.
+
+PROTIP: Logs should be output in UTC time rather than local time, so would not have the "Zulu" Time Zone reference:
+
+   <ul>2024-02-22T12:53:19.123456</ul>
+
+<tt><strong>datetime.datetime.now()</strong></tt> provides <strong>microsecond</strong> precision:
+
+References:
+   * https://www.geeksforgeeks.org/get-current-time-in-different-timezone-using-python/
+
+### Timezone handling
+
+NOTE: On macOS, timezone data are in a binary file at <tt>/etc/localtime</tt>.
+
+Once a datetime has a tzinfo, the astimezone() strategy supplants new tzinfo.
+
+### Timing Attacks
+
+A malicious use of precise microseconds timing code is used by <a target="_blank" href="https://codahale.com/a-lesson-in-timing-attacks/">Timing Attacks</a> based on the time it takes for an application to authenticate a password to determine the algorithm used to process the password. In the case of <a target="_blank" href="http://rdist.root.org/2009/05/28/timing-attack-in-google-keyczar-library/">Keyczar vulnerability found by Nate Lawson</a>, a simple break-on-inequality algorithm was used to compare a candidate HMAC digest with the calculated digest. A value which shares no bytes in common with the secret digest returns immediately; a value which shares the first 15 bytes will return 15 compares later. 
+
+Similarly, <a target="_blank" href="https://belitsoft.com/assets/python-security.pdf">PDF: entropy</a>
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/146260721-42584e8b-25d4-4853-a073-295dbbd9ac24.png">
+<img alt="python-sample-entropy-times-957x402" src="https://user-images.githubusercontent.com/300046/146260721-42584e8b-25d4-4853-a073-295dbbd9ac24.png"></a>
+
+PROTIP: Use the <a target="_blank" href="https://docs.python.org/3/library/secrets.html#secrets.compare_digest">secrets.compare_digest module</a> (introduced in Python 3.5) to check passwords and other private values. It uses a <strong>constant amount of time</strong> to process every request.
+
+Functions hmac.compare_digest() and secrets.compare_digest() are designed to mitigate against timing attacks.
+
+http://pypi.python.org/pypi/profilehooks
+
+Depth-First Seach (DFS) uses a stack, whereas
+Breadth-First Search (BFS) use a queue.
+
+<a name="DurationCalcs"></a>
+
+## Duration calculations
+
+Several packages, functions, and methods are available. They differ by:
+   * the type of duration they report: wall-clock time or CPU time
+   * how they treat time zone changes during the recording period
+   * how much <strong>precision</strong> they report (down to microseconds)
+   <br /><br />
+
+* <strong>Wall-clock time</strong> (aka clock time or wall time) is the total time <strong>elapsed</strong> you can measure with a stopwatch. It is the difference between the time at which a program finished its execution and the time at which the program started. It <strong>includes waiting time</strong> for resources.
+
+* <strong>CPU Time</strong> is how much time the CPU was <strong>busy processing</strong> programming instructions, not including time waiting for other task to complete (like I/O operations).
+
+We want both reported.
+
+timeit.default_timer() is time.perf_counter() on Python 3.3+. 
+
+The same program run several times would report similar CPU time but varying wall-clock times due to differences in what else was taking up resources during the runs.
+
+* time.time() returns wall-clock time.
+* time.process_time() returns CPU execution time.
+
+To time the difference between calculation strategies, new since Python 3.7 is <a target="_blank" href="https://www.python.org/dev/peps/pep-0564/">PEP 564</a>.
+
+<tt><strong>time.perf_counter()</strong></tt> (abbreviation of performance counter) measures the elapsed time of short duration because it returns 82 nano-second resolution on Fedora 4.12. It is based on <strong>Wall-Clock Time</strong> which includes time elapsed during sleep and is system-wide. The reference point of the returned value is undefined, so that only the difference between the results of consecutive calls is valid.
+See https://docs.python.org/3/library/time.html#time.perf_counter
+
+<tt><strong>time.clock</strong></tt> is no longer available since Python 3.8.
+
+<tt><strong>time.time()</strong></tt> has a resolution of <strong>whole seconds</strong>. And in a measurement period  between start and stop times, if the system time is disrupted (such as for daylight savings) its counting is disrupted. time.time() resolution will only become larger (worse) as years pass since every day adds 86,400,000,000,000 nanoseconds to the system clock, which increases the precision loss. It is called "non-monotonic" because falling back on daylight savings would cause it to report time going backwards:
+
+<ul><pre>start_time = time.time()
+# your code
+e = time.time() - start_time
+time.strftime("%H:%M:%S", time.gmtime(e))  # for hours:minutes:seconds
+print('{:02d}:{:02d}:{:02d}'.format(e // 3600, (e % 3600 // 60), e % 60))
+</pre>
+</ul>
+
+### timeit()
+
+For more accurate wall-time capture, the timeit() functions disable the garbage collector.
+
+<tt><strong>timeit.timer()</strong></tt> 
+provides a nice output format of <tt>0:00:01.946339</tt> for almost 2 seconds.
+   * https://pynative.com/python-get-execution-time-of-program/
+   * https://docs.python.org/3/library/timeit.html 
+   * https://www.guru99.com/timeit-python-examples.html
+   <br /><br />
+
+<pre>import timeit   # built-in
+&nbsp;
+# print addition of first 1 million numbers
+def addition():
+    print('Addition:', sum(range(1000000)))
+&nbsp;
+# run same code 5 times to get measurable data
+n = 5
+&nbsp;
+# calculate total execution time
+result = timeit.timeit(stmt='addition()', globals=globals(), number=n)
+&nbsp;
+# calculate the execution time
+# get the average execution time
+print(f"Execution time is {result / n} seconds")
+</pre>
+
+<pre>timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)
+</pre>
+
+<ul><pre># from timeit import default_timer as timer
+# from datetime import timedelta
+start = timer()
+# do some stuff ...
+end = timer()
+print(timedelta(seconds=end-start))
+</pre></ul>
+
+
+<a target="_blank" href="https://www.python.org/dev/peps/pep-0418">PEP-418</a> in Python 3.3 added three timers:
+
+<tt><strong>time.process_time()</strong></tt> offers 1 nano-second resolution on Linux 4.12. It does not include time during sleep.
+
+<pre>
+# import time
+t = time.process_time()
+# do some stuff ...
+elapsed_time = time.process_time() - t
+</pre>
+
+<tt><strong>time.monotonic()</strong></tt> is used for measurements on the order of hours/days, when you don't care about sub-second resolution. It has 81 ns resolution on Fedora 4.12. BTW "monotonic" = only goes forward.
+See https://docs.python.org/3/library/time.html#time.monotonic
+
+
+
+References:
+   * https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python
+   * https://stackoverflow.com/questions/3620943/measuring-elapsed-time-with-the-time-module/47637891#47637891
+   * See https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+   * See https://www.codingeek.com/tutorials/python/datetime-strftime/
+   * use the .st_birthtime attribute of the result of a call to os.stat().
+   * Obtain pgm start to obtain run duration at end:
+   * See https://www.webucator.com/article/python-clocks-explained/
+   * for wall-clock time (includes any sleep).
+   <br /><br />
+
+
+<hr />
+
+<a name="TimeComplexity"></a>
+
+### Time Complexity
+
+Time complexity analysis estimates how long it will take for an algorithm to complete its assigned job based on its structure.
+
+Use of Modulus would result in "O(n)" (linear) growth in time to run as the dataset grows. 
+
+Depth-first trees would have steeper (logarithmic) Time Complexity:
+
+<a target="_blank" href="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png">
+<img alt="python-coding-time-complexity-1222x945" src="https://user-images.githubusercontent.com/300046/141355255-b2b990cf-46d9-415e-b21a-2c06a156c3eb.png"></a>
+
+In <a target="_blank" href="https://bigocheatsheet.com/">https://bigocheatsheet.com</a>, in the list of Big O values for sorting, 
+
+
+<a name="Sorting"></a>
+
+### Sorting
+
+To swap values, here's a straight-forward function:
+
+<pre>def swap1(var1,var2):
+    var1,var2 = var2,var1
+    return var1, var2
+</pre>
+
+<pre>>>> swap1(10,20)
+>>> 2 1
+</pre>
+
+<pre>def swap2(x,y):
+    x = x ^ y
+    y = x ^ y
+    x = x ^ y
+    return x, y
+</pre>
+
+<pre>>>> swap2(10,20)
+(20,10)
+</pre>
+
+
+### Reduce Space Complexity with Dynamic programming
+
+Techniques for calculation of <strong>nested loops</strong> is often used to shown how to reduce run times by using techniques that use more memory space.  Rather than "brute-force" repeatitive computations as in the definition of how to calculate <a target="_blank" href="https://www.youtube.com/watch?v=Nki9hhW-tAI&list=PLNmW52ef0uws098xXRbALoadgcc4bNkDm&index=4">Fibonacci numbers</a>, which by definition is based on numbers preceding it.
+
+   <ul><pre>fib(5) = fib(4) + fib(3)</pre></ul>
+
+Memoization  (sounds  like  memorization)  is  the  technique of  writing  a  function  that  remembers  the  results  of  previous computations. 
+
+Longest Increasing Subsequence (LIS)
+
+That's a technique of "Dynamic Programming" (See https://www.wikiwand.com/en/Dynamic_programming)
+
+Dynamic programming is a catch phrase for solutions based on solving 
+successively similar but smaller problems, using algorithmic tasks in which 
+the solution of a bigger problem is relatively easy to find, 
+if we have solutions for its sub-problems.
+
+
+<a name="MakingChange"></a>
+
+### Making change
+
 
 ## if/then/else logic
 
@@ -653,6 +659,16 @@ greeting = greeting_template.substitute(name=”Hayley”)
    </pre>
 
 So use a way that's less flexible with types and doesn’t evaluate Python statements.
+
+### Data Types
+
+In Python 2, there was an internal limit to how large an integer value could be: 2^63 - 1.
+
+But that limit was removed in Python 3. So there now is no explicitly defined limit, but the amount of available address space forms a practical limit depending on the machine Python runs on. 64-bit
+
+<tt>0xa5</tt> (two character bits) represents a hexdidecimal number 
+
+<tt>3.2e-12</tt> expresses as a a constant exponential value.
 
 ### Slicing
 
@@ -1213,10 +1229,19 @@ for index in range(8):
     x += 1
 </pre>
 
+<a name="Lists"></a>
+
 ## Lists
 
 Use a list instead for a collection of similar objects.
 
+<a target="_blank" href="https://python.plainenglish.io/python-probably-more-than-90-of-coders-are-missing-this-easy-trick-1f5e1c2d8561">
+Prefix what to print with an asterisk</a> so it is passed as separate values so a space is added in between each value.
+
+<pre>li = [10, 20, 30, 40, 50]
+li = list(map(int, input().split()))
+print(*li)
+</pre>
 
 ## Tuples
 

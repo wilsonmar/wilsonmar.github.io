@@ -22,8 +22,7 @@ For security professionals, there are several expensive overlapping certificatio
 {% include whatever.html %}
 
 This map is from <a target="_blank" href="https://pauljerimy.com/category/book-reviews/">security techo thriller book reviewer</a> Paul Jerimy at <a target="_blank" href="https://pauljerimy.com/security-certification-roadmap/">https://pauljerimy.com/security-certification-roadmap:
-<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"></a>
-<em>Click for full screen image.</em>
+<img width="1613" alt="security-cert-landscape" src="https://user-images.githubusercontent.com/300046/101941672-91ff4380-3ba5-11eb-8b16-1368f9ce1349.png"><br /><em>Click for full screen image.</em></a>
 
 
 ## CCSK (Cloud Security Alliance Certificate of Security Knowledge)
@@ -241,32 +240,36 @@ With CAT (Computer Adaptive Testing), the more one aces every question, the quic
 <a target="_blank" href="https://www.youtube.com/watch?v=5nqqL1rjIY4">VIDEO</a>:
 This also means you won't be able to go back and change answers in previous questions answered.
 
-There is a 5 year experience requirement, attested by other professionals.
+There is a 5 year experience requirement, attested by other professionals after you pass the exam.
 
 You need to pass at least 70% on <em>each</em> of the eight CISSP domains. 
 
-PROTIP: I think Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw/videos">on YouTube</a>) provide the most detailed, best sequenced introductory lectures, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated for the May 2021 BOK</a>. He includes demos of the most popular software. 
-Links to each CISSP domains contains a link to his tutorial on that domain. 
+### CISSP Domains
+
+   1. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
+   Security and Risk Management</a> - 334
+   2. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
+   Asset Security</a> - 44
+   3. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a>  <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
+   Security (Architecture and) Engineering</a> - 268
+   4. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
+   (Communication and) Network Security</a> - 114 on OSI model
+   5. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   Identity and Access Management (IAM)</a> - 82 on biometrics
+   6. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
+   Security Assessment and Testing</a> - 41 on NIST SP 800-92
+   7. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
+   Security Operations</a> - 245 
+   8. <a target="_blank" href="https://wilsonmar.github.io/cyber-security">></a> <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
+   Secure Software Security (Development Lifecycle)</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
+   <br /><br />
+
+Click on ">>" in front of each link to reach my notes at <a target="_blank" href="https://wilsonmar.github.io/cyber-security">https://wilsonmar.github.io/cyber-security</a>
 
 Numbers to the right of his videos are counts of questions in the <a target="_blank" href="https://learning.oreilly.com/certifications/9780135955444/">OReilly/Pearson bank</a>:
 
-   1. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-1-security-and-risk-management" title=" 2h 52m">
-   Security and Risk Management</a> - 334
-   2. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-2-asset-security">
-   Asset Security</a> - 44
-   3. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-3-security-architecture-and-engineering">
-   Security (Architecture and) Engineering</a> - 268
-   4. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-4-communication-and-network-security">
-   (Communication and) Network Security</a> - 114 on OSI model
-   5. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
-   Identity and Access Management (IAM)</a> - 82 on biometrics
-   6. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-5-identity-and-access-management">
-   Security Assessment and Testing</a> - 41 on NIST SP 800-92
-   7. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-7-security-operations">
-   Security Operations</a> - 245 
-   8. <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/" title="Released: 4/19/2021">
-   Secure Software Security (Development Lifecycle)</a> - 164 includes a <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/fuzz-testing">demo of ZAP Proxy for fuzzing</a>, <a target="_blank" href="https://www.linkedin.com/learning/cissp-cert-prep-2021-8-software-development-security/code-repositories">Git & GitHub</a>.
-   <br /><br />
+Links under each domain title are to Mike Chapple's 33-hour LinkedIn Learning videos (and <a target="_blank" href="https://www.youtube.com/channel/UCcefHUoPp8aKB7vaafrulgw/videos">on YouTube</a>). He provides detailed, sequenced lectures, <a target="_blank" href="https://www.youtube.com/watch?v=ERi6uB6qyHQ">updated for the May 2021 BOK</a>. He includes demos of the most popular software. 
+Links to each CISSP domains contains a link to his tutorial on that domain. 
 
 Parentheses in domain names contain words removed in the 2023 version of CISSP.
 

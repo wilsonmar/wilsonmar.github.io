@@ -701,6 +701,70 @@ ERROR: No matching distribution found for base64
     Your CLI is up-to-date.
     </pre>
 
+
+
+1.  List what versions of compilers/interpreters are available for Linux & Windows on Azure:
+
+    <pre><strong>az webapp list-runtimes</strong></pre>
+
+    <pre>{
+  "linux": [
+    "DOTNETCORE:7.0",
+    "DOTNETCORE:6.0",
+    "NODE:18-lts",
+    "NODE:16-lts",
+    "NODE:14-lts",
+    "PYTHON:3.11",
+    "PYTHON:3.10",
+    "PYTHON:3.9",
+    "PYTHON:3.8",
+    "PYTHON:3.7",
+    "PHP:8.2",
+    "PHP:8.1",
+    "PHP:8.0",
+    "RUBY:2.7",
+    "JAVA:17-java17",
+    "JAVA:11-java11",
+    "JAVA:8-jre8",
+    "JBOSSEAP:7-java11",
+    "JBOSSEAP:7-java8",
+    "TOMCAT:10.0-java17",
+    "TOMCAT:10.0-java11",
+    "TOMCAT:10.0-jre8",
+    "TOMCAT:9.0-java17",
+    "TOMCAT:9.0-java11",
+    "TOMCAT:9.0-jre8",
+    "TOMCAT:8.5-java11",
+    "TOMCAT:8.5-jre8",
+    "GO:1.19"
+  ],
+  "windows": [
+    "dotnet:7",
+    "dotnet:6",
+    "ASPNET:V4.8",
+    "ASPNET:V3.5",
+    "NODE:18LTS",
+    "NODE:16LTS",
+    "NODE:14LTS",
+    "java:1.8:Java SE:8",
+    "java:11:Java SE:11",
+    "java:17:Java SE:17",
+    "java:1.8:TOMCAT:10.0",
+    "java:11:TOMCAT:10.0",
+    "java:17:TOMCAT:10.0",
+    "java:1.8:TOMCAT:9.0",
+    "java:11:TOMCAT:9.0",
+    "java:17:TOMCAT:9.0",
+    "java:1.8:TOMCAT:8.5",
+    "java:11:TOMCAT:8.5",
+    "java:17:TOMCAT:8.5"
+  ]
+}
+    </pre>
+
+References:
+   * <a target="_blank" href="https://medium.com/@saurabh.dasgupta1/developing-and-deploying-a-python-azure-function-step-by-step-83c5066a2531">Python run Azure Functions</a> (rather than C#)
+
 <hr />
 
 <a name="Execution"></a>
@@ -2413,15 +2477,21 @@ References:
 
 ## Using GCP (Google Cloud Platform)                        = use_gcp
 
-Background information about Google's APIs relevant to all programming languages (such as professional certifications) are in my article at<br /><a target="_blank" href="https://wilsonmar.github.io/gcp/">https://wilsonmar.github.io/gcp</a>
-
-Information and advice about Python coding on GCP are presented in this article.
+Background information about Google's APIs relevant to all programming languages (such as professional certifications) is in my article at<br /><a target="_blank" href="https://wilsonmar.github.io/gcp/">https://wilsonmar.github.io/gcp</a>
 
 Under the <a target="_blank" href="https://github.com/googleapis/googleapis">googleapis organization on GitHub</a> is <a target="_blank" href="https://github.com/googleapis/google-cloud-python#libraries">https://github.com/googleapis/google-cloud-python#libraries</a> which provides (at time of this writing) 113 stable and preview versions of Python client code to Google's many services APIs to make REST API and gRPC calls.
+
+Why Python? For one, Google's Policy Troubleshooter accessed from API & CLI handles more complex issues than the GUI:
+<a target="_blank" href="https://www.youtube.com/watch?v=geqSzNvZOuk&list=PLIivdWyY5sqLlgyC_e8NSkVzc9pOBMe1R&index=40&pp=iAQB">How to use</a> 
+
+Since many servers have ICMP ping commands disabled to block malicious scanners,
+a Python program can periodically reach an IP address to see if it's active, and measure round-trip speed.
+Those measurements can be saved for availability trending over time.
 
 References:
    * <a target="_blank" href="https://www.youtube.com/watch?v=hnqeYOYDRYY">Step-by-step guide Python - Google Cloud Function</a> by ForDevelopers
    * <a target="_blank" href="https://www.youtube.com/watch?v=FpqV-QeWeCI">Python API intro</a> by Python 360
+
 
 
 ### GCP Login and Authentication
