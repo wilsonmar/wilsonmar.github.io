@@ -670,6 +670,10 @@ But that limit was removed in Python 3. So there now is no explicitly defined li
 
 <tt>3.2e-12</tt> expresses as a a constant exponential value.
 
+Define a d
+
+'foo\'bar' 
+
 ### Slicing
 
 For flexibility with alternative languages such as Cyrillic (Russian) character set, 

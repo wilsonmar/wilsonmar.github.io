@@ -6,17 +6,37 @@ title: "DevSecOps"
 excerpt: "How to get people to use products and processes that yield faster competitive speed AND improved Security Posture throughout a secure SDLC"
 tags: [devops, devsecops]
 image:
-# feature: pic-brown-horses-running-forward-1900x500
-  feature: https://cloud.githubusercontent.com/assets/300046/14724047/445df2f0-07d1-11e6-9c26-782291fe2b47.jpg
-  credit: 
-  creditlink: 
+# feature: devsecops-1900x500.png
+  feature: https://res.cloudinary.com/dcajqrroq/image/upload/v1688241741/devsecops-1900x500_gzm9lu.png
+  credit: public.cyber.mil/devsecops
+  creditlink: https://public.cyber.mil/devsecops/
 comments: true
 ---
 <i>{{ page.excerpt }}</i>
 {% include l18n.html %}
 {% include _toc.html %}
 
-Let's start off with the <a target="_blank" href="https://www.synopsys.com/software-integrity/engage/gartner-mq-auto/">2023 Gartner's Magic Quadrant for Application Security Testing</a>:
+> "DevSecOps is a set of software development practices that combines software development (Dev), security (Sec), and information technology operations (Ops) to secure the outcome and shorten the development lifecycle."
+
+The diagram above identifies 14 processes across the various pillars of the software development lifecycle (SDLC)
+(Develop, Build, Test, Release & Deploy, and Runtime) for a secure posture with the focus being on automation and integration:
+1. PLAN: Threat Model
+1. DEVELOP: Secure Coding
+1. DEVELOP: Security as Code
+1. BUILD: SAST
+1. TEST: DAST (IAST)
+1. TEST: Penetration Test
+1. RELEASE: Digital Signing (Hashes)
+1. DELIVER: Secure Transfer
+1. DEPLOY: Security Configuration
+1. DEPLOY: Security Scan (Component Analysis)
+1. OPERATE: Security Patch
+1. OPERATE: Security Audit (RASP)
+1. MONITOR: Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)
+1. FEEDBACK: Security Analysis
+<br /><br />
+
+Gartner lumps the various activities together into their <a target="_blank" href="https://www.synopsys.com/software-integrity/engage/gartner-mq-auto/">2023 Gartner's Magic Quadrant for Application Security Testing</a>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"><img alt="owasp-gartner-23.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"></a>
 

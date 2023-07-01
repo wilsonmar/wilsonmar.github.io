@@ -600,14 +600,60 @@ So compliance with <a target="_blank" href="https://public.cyber.mil/cw/cwmp/dod
 CompTIA certifications were designed for compliance with ISO 17024 standards and approved by the US DoD to meet directive 8140/8570.01-M requirements. Regulators and government rely on ANSI accreditation, because it provides confidence and trust in the outputs of an accredited program. Over 2.3 million CompTIA ISO/ANSI-accredited exams have been delivered since January 1, 2011.
 
 
+<a name="Security+"></a>
+
 ### Security+
 
-<a target="_blank" href="https://www.comptia.org/certifications/security">Security+</a> 
-is considered an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals. 
+<a target="_blank" href="https://www.comptia.org/certifications/security">Security+ exam SY0-601 at comptia.org/certifications/security</a> 
+is described an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals.
 
-PROTIP: I passed the Security+ after studying literally 4 years, on and off. What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+PROTIP: I passed the Security+ March 2020 after studying literally 4 years, on and off, due to its expensive $340 test fee and annual renewal fees. What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
 
-https://public.cyber.mil/devsecops/
+1. Threats, Attacks, and Vulnerabilities
+   1.1 – Social Engineering<br />
+   1.2 – Attack Types<br />
+   1.3 – Application Attacks<br />
+   1.4 – Network Attacks<br />
+   1.5 – Threat Actors and Vectors<br />
+   1.6 – Vulnerabilities<br />
+   1.7 – Security Assessments<br />
+   1.8 – Penetration Testing
+2. Architecture and Design
+   2.1 – Enterprise Security<br />
+   2.2 – Virtualization and Cloud Computing<br />
+   2.3 – Secure Application Development<br />
+   2.4 – Authentication and Authorization<br />
+   2.5 – Resilience<br />
+   2.6 – Embedded Systems<br />
+   2.7 – Physical Security Controls<br />
+   2.8 – Cryptographic Concepts
+3. Implementation
+   3.1 – Secure Protocols<br />
+   3.2 – Host and Application Security<br />
+   3.3 – Secure Network Designs<br />
+   3.4 – Wireless Security<br />
+   3.5 – Mobile Security<br />
+   3.6 – Cloud Security<br />
+   3.7 – Identity and Account Management<br />
+   3.8 – Authentication and Authorization Services<br />
+   3.9 – Public Key Infrastructure
+4. Operations and Incident Response
+   4.1 – Security Tools<br />
+   4.2 – Incident Response<br />
+   4.3 – Investigations<br />
+   4.4 – Securing an Environment<br />
+   4.5 – Digital Forensics
+5. Governance, Risk, and Compliance (GRC)
+   5.1 – Security Controls<br />
+   5.2 – Regulations, Standards, and Frameworks<br />
+   5.3 – Organizational Security Policies<br />
+   5.4 – Risk Management<br />
+   5.5 – Data Privacy
+<br /><br />
+
+<a target="_blank" href="https://www.linkedin.com/in/joshmadakor/">Josh Madakor of Seattle</a> (a Western Governors University graduate) offers visitors to <a target="_blank" href="https://www.youtube.com/@JoshMadakor">his YouTube</a> free <a target="_blank" href="https://mailchi.mp/joshmadakor.tech/comptia-security-plus-practice-questions">1000 question deck</a>, referencing <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">Professor Messer</a>. That's a teaser for his $497 video tutorials using Azure cloud hands-on (built using ChatGPT).
+Topics include building a mini-SOC and other aspects of your security portfolio of NIST 800-53 policies, to apply for a job.
+
 
 ### PenTest+
 
