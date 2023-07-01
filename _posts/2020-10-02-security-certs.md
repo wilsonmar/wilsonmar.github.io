@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-07"
+date: "2023-06-27"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -348,7 +348,7 @@ Not yet updated to CISSP 01 May 2021 changes:
 
 Video prep courses view:
 
-   * <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">OReilly LiveSessions CISSP</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) I think is indeed the most thorough (deep dive) of all video courses I've viewed. 26 hours. A quize of terms at the end of each video. From 2018.
+   * <a target="_blank" href="https://learning.oreilly.com/live-events/cissp-crash-course/0636920123187/">OReilly Live</a> and <a target="_blank" href="https://learning.oreilly.com/videos/cissp-second-edition/9780135180488">LiveSessions book</a> by Sari Greene (<a target="_blank" href="https://www.sarigreene.com/">sarigreene.com</a>) provides a deep dive of all video courses I've viewed. 26 hours. A quiz of terms at the end of each video. From 2018.
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=M1_v5HBVHWo">FreeCodeCamp</a> has a single 13 hour video FREE on YouTube to cover all topics. From 2020.
 
@@ -394,8 +394,8 @@ Quizzing Tests:
 
    * Mindmap videos: https://www.youtube.com/channel/UCXk6...​ 
 
-   * <a target="_blank" href="https://www.Cissprep.net">Cissprep.net Memorisation sheet</a>
-   * Exam tips: https://www.youtube.com/watch?v=HWg2g...​  
+   * <a target="_blank" href="https://www.cissprep.net">$24.99 Cissprep.net Memorisation sheet</a> calls itself "The Best and Most Accurate CISSP Practice Exams" provides Study tips, 28 30-minute quick quizzes, four 1-hour exams, 
+
    * <a target="_blank" href="https://www.youtube.com/watch?v=Igq9Q3r00uk">CISSP MasterClass™ Mission</a> by Sagar Bansal
 
    * <a target="_blank" href="https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template/">https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template</a>$14.99 eBook: InfoSec Brain Dump Template w/Study Schedule
@@ -410,12 +410,12 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=geGALIfOxtI​&t=30s">Security & Risk Management</a>
 
-2. 
-   * <a target="_blank" href="https://www.youtube.com/watch?v=aN9zkmzYTmQ​&t=30s">Asset Classification</a>
-   * <a target="_blank" href="https://www.youtube.com/watch?v=lrI4QIa8S2I​&t=30s">Privacy:</a>
-   <br /><br />
+2. <a target="_blank" href="https://www.youtube.com/watch?v=aN9zkmzYTmQ​&t=30s">Asset Classification</a>
+  <a target="_blank" href="https://www.youtube.com/watch?v=lrI4QIa8S2I​&t=30s">Privacy:</a>
 
-3.
+3. Identity and Assess Management
+
+4. Security Architecture and Engineering:
    * Models and Frameworks: https://www.youtube.com/watch?v=qZB6_lp9M30​&t=30s
    * Evaluation Criteria: https://www.youtube.com/watch?v=WqHmDL7YAvw​&t=30s
    * Trusted Computing Base: https://www.youtube.com/watch?v=fwU7n_3h058​&t=30s
@@ -427,13 +427,10 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
    * Physical Security: https://www.youtube.com/watch?v=7ESQwNJ9HXU​&t=30s
    <br /><br />
 
-5.
-   * Access Control Overview: https://www.youtube.com/watch?v=BUcoABZzeQ4​&t=30s
-   * Single Sign-on & Federated Access: https://www.youtube.com/watch?v=_U4QMIxVk8M​&t=30s
-   <br /><br />
+5. Access Control Overview: https://www.youtube.com/watch?v=BUcoABZzeQ4​&t=30s
+   Single Sign-on & Federated Access: https://www.youtube.com/watch?v=_U4QMIxVk8M​&t=30s
 
-6.
-   * Security Assessment and Testing Overview: https://www.youtube.com/watch?v=eDVZvw5NziA​&t=30s
+6. Security Assessment and Testing Overview: https://www.youtube.com/watch?v=eDVZvw5NziA​&t=30s
    * Vulnerability Assessment and Penetration Testing: https://www.youtube.com/watch?v=vZ0S8GdWiIk​&t=30s
    * Logging & Monitoring: https://www.youtube.com/watch?v=cwcARccyWyY​&t=30s
    <br /><br />
@@ -451,6 +448,7 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
    * https://youtu.be/fS5WWjuyFmQ​&t=30s
    * Databases: https://youtu.be/-70DBd6cNDw&t=30s
    <br /><br />
+
 
 Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
 

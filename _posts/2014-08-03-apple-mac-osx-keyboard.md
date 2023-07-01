@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-08-12"
+date: "2023-06-30"
 file: "apple-mac-osx-keyboard"
 title: "Apple Mac OSX Keyboard Shortcuts"
 excerpt: "Stay focused and do things faster with Keyboard Shortcuts, HotKeys, and StreamDeck buttons"
@@ -1112,6 +1112,10 @@ homebrew/cask-drivers/elgato-wave-link
    https://www.startpage.com/sp/search
 
    NOTE: Stream Deck allows you to define two states for every key (e.g. on and off).
+
+   ### Hardware upgrade
+
+   ifixit.com has a <a target="_blank" href="https://www.ifixit.com/products/micron-2400-nvme-pcie-gen4-2230-ssd">$84.99 Stream Deck Upgrade Kit</a> takes the 64GB to 512GB with a faster Micron processor.
 
    ### Icons 
    

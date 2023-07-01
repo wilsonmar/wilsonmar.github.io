@@ -3950,7 +3950,11 @@ Learn Enough Python to Be Dangerous</a>: Software Development, Flask Web Apps, a
 by <a target="_blank" href="https://www.linkedin.com/in/michaeldhartl/">Michael Hartl</a>
 has code at https://github.com/learnenough/learn_enough_python_code_listings
 
+## Other APIs
 
+Google Firebase for authentication
+
+Plaid for Bank Transactions
 
 <hr />
 

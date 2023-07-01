@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-13"
+date: "2023-06-28"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -878,30 +878,35 @@ came up with this count of controls:
 
 FedRAMP added 144 control to 728 in FISMA, for a total of 872 controls.
 Control Families:
-* AC - Access Control
-* AU - Audit and Accountability
-* AT - Awareness and Training
-* CM - Configuration Management
-* CP - Contingency Planning
-* IA - Identification and Authentication
-* IR - Incident Response
-* MA - Maintenance
-* MP - Media Protection
-* PS - Personnel Security
-* PE - Physical and Environmental Protection
+* AC - Access Control [<a href="#CMMC">CMMC</a>]
+* AU - Audit and Accountability [<a href="#CMMC">CMMC</a>]
+* AT - Awareness and Training [<a href="#CMMC">CMMC</a>]
+* CM - Configuration Management [<a href="#CMMC">CMMC</a>]
+* CP - Contingency Planning 
+* IA - Identification and Authentication [<a href="#CMMC">CMMC</a>]
+* IR - Incident Response [<a href="#CMMC">CMMC</a>]
+* MA - Maintenance [<a href="#CMMC">CMMC</a>]
+* MP - Media Protection [<a href="#CMMC">CMMC</a>]
+* PS - Personnel Security [<a href="#CMMC">CMMC</a>]
+* PE - Physical and Environmental Protection [<a href="#CMMC">CMMC</a>]
 * PL - Planning
 * PM - Program Management
-* RA - Risk Assessment
-* CA - Security Assessment and Authorization
+* RA - Risk Assessment [<a href="#CMMC">CMMC</a>]
+* CA - Security Assessment and Authorization [<a href="#CMMC">CMMC</a>]
 * SC - System and Communications Protection
-* SI - System and Information Integrity
+* SI - System and Information Integrity [<a href="#CMMC">CMMC</a>]
 * SA - System and Services Acquisition
 <br /><br />
 
+<a name="CMMC"></a>
+
 ## CMMC
 
-Cybersecurity Maturity Model Certification (CMMC) framework
-March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https://www.acq.osd.mil/cmmc</a> developed by US DoD aims to address supply chain risks.
+The Cybersecurity Maturity Model Certification (CMMC) framework consists of <a target="_blank" href="https://ndisac.org/dibscc/cyberassist/cybersecurity-maturity-model-certification/">14 domains</a> that align with the families specified in NIST SP 800-171.
+
+I was first published March 18, 2020 at <a target="_blank" href="https://www.acq.osd.mil/cmmc/">https://www.acq.osd.mil/cmmc</a> by US DoD aims to address supply chain risks.
+
+CMMC has <a target="_blank" href="https://ndisac.org/dibscc/cyberassist/cybersecurity-maturity-model-certification/level-1/">3 layers</a>.
 
 The OSI (Open System Interconnect) networking model 7-layers:
    * App Layer 7 protocols SNMP, TFTP 
@@ -2960,13 +2965,13 @@ DAST (Dynamic App Security Testing) analyzes how the program binary runs, dynami
    
    https://juice-shop.herokuapp.com
 
-IAST (Interactive App Security Testing) instruments software after installing an agent. Runs based on access to code, HTTP traffic, library, backend connections.
+IAST (Interactive App Security Testing) instruments software after installing an agent. Runs based on access to code, HTTP traffic, library, back-end connections.
    * Checkmarx
    * Synopsys
    * Acunetix
    <br /><br />
 
-RASP (Run-time App Secrity Protection) combines DAST and IAST. It can be configured to block or monitor traffic.
+RASP (Run-time App Secruity Protection) combines DAST and IAST. It can be configured to block or monitor traffic.
    * Arxan
    * Imperva
    * Wallarm
@@ -2976,6 +2981,10 @@ WAF (Web Application Firewall) applies rules to bi-directional HTTP traffic, to 
 It can have performance issues.
 AKA Application Security Manager. Can be configured as a reverse proxy that accepts traffic on a virtual IP address to proxy the traffic to a back-end server network behind the WAF. 
 
+
+## CISO-targeted
+
+https://www.pulseconferences.com/
 
 ## More on Security #
 

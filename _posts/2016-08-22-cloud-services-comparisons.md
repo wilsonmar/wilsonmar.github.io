@@ -704,7 +704,7 @@ Here are the names of brand names, some with links to marketing or documentation
     <td>-</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left">Analytics/Hadoop Options</th><td><a target="_blank" href="http://azure.microsoft.com/en-us/services/hdinsight/">HDInsight (Hadoop)</a></td><td><a target="_blank" href="http://aws.amazon.com/elasticmapreduce/">Elastic MapReduce (EMR)</a></td>
-    <td>-</td></tr>
+    <td>Dataproc</td></tr>
 
 <tr valign="top" class="tblEven"><th align="left"><a target="_blank" href="https://wilsonmar.github.io/elastic-ecosystem/">ElasticSearch</a></th><td><a target="_blank" href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/elastic.elasticsearch/">in Marketplace</a>
 </td><td><a target="_blank" href="https://aws.amazon.com/elasticsearch-service/">ElasticSearch</a> </td>
