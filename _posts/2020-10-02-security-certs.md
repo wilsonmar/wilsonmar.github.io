@@ -607,7 +607,12 @@ CompTIA certifications were designed for compliance with ISO 17024 standards and
 <a target="_blank" href="https://www.comptia.org/certifications/security">Security+ exam SY0-601 at comptia.org/certifications/security</a> 
 is described an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals.
 
-PROTIP: I passed the Security+ March 2020 after studying literally 4 years, on and off, due to its expensive $340 test fee and annual renewal fees. What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+PROTIP: I passed the Security+ March 2020 after studying literally 4 years, on and off. I held off due to its <a target="_blank" href="https://store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C">$392 test fee</a> plus annual renewal fees. 
+PROTIP: Buy their <a target="_blank" href="https://store.comptia.org/comptia-store-club/p/ITPR-0020-ANNS-2019">$49 annual Club</a> for a $78 discount (20% off all CompTIA products). Students get a 40% discount.
+
+What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+
+Concepts in the five exam objectives are covered in <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">videos by Professor Messer</a> <a target="_blank" href="https://www.youtube.com/watch?v=9NE33fpQuw8&list=PLG49S3nxzAnkL2ulFS3132mOVKuzzBxA8">on YouTube</a>:
 
 1. Threats, Attacks, and Vulnerabilities
    1.1 – Social Engineering<br />
@@ -651,7 +656,9 @@ PROTIP: I passed the Security+ March 2020 after studying literally 4 years, on a
    5.5 – Data Privacy
 <br /><br />
 
-<a target="_blank" href="https://www.linkedin.com/in/joshmadakor/">Josh Madakor of Seattle</a> (a Western Governors University graduate) offers visitors to <a target="_blank" href="https://www.youtube.com/@JoshMadakor">his YouTube</a> free <a target="_blank" href="https://mailchi.mp/joshmadakor.tech/comptia-security-plus-practice-questions">1000 question deck</a>, referencing <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">Professor Messer</a>. That's a teaser for his $497 video tutorials using Azure cloud hands-on (built using ChatGPT).
+<a target="_blank" href="https://www.linkedin.com/in/joshmadakor/">Josh Madakor of Seattle</a> (a 2020 Western Governors University graduate) offers visitors to <a target="_blank" href="https://www.youtube.com/@JoshMadakor">his YouTube</a> free <a target="_blank" href="https://mailchi.mp/joshmadakor.tech/comptia-security-plus-practice-questions">1000 question deck</a> presented by the <a target="_blank" href="https://apps.ankiweb.net/">free Anki Q&A app</a>. NOTE: There is an <tt>brew install anki-beta</tt>
+
+It references <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">Professor Messer</a>. Also, it's a teaser for his $497 SOC Analyst video training using Azure cloud hands-on (built using ChatGPT).
 Topics include building a mini-SOC and other aspects of your security portfolio of NIST 800-53 policies, to apply for a job.
 
 
