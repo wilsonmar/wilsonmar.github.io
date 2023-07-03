@@ -2451,6 +2451,9 @@ Public developer docs at:<br />
 https://docs.microsoft.com/python/azure/
 
 
+
+<a name="KMS"></a>
+
 ### AWS KMS
 
 To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS, AWS uses <strong>two types of CMK (Customer Master Key)</strong> to encrypt up to 4KB of data:
@@ -2460,6 +2463,7 @@ To generate, encrypt, and decrypt data keys that can be used outside of AWS KMS,
    * Asymmetric CMK: AWS KMS generates a <strong>key pair</strong> where the private key never leaves AWS KMS unencrypted.
 
 References:
+   * https://www.youtube.com/watch?v=RL-mQWFWJcM any Boto3
    * https://www.learnaws.org/2021/02/20/aws-kms-boto3-guide/
    * https://towardsdatascience.com/python-and-aws-ssm-parameter-store-7f0e211bb91e
    AWS Systems Manager’s Parameter Store

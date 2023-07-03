@@ -1926,7 +1926,10 @@ Types of Network intrusion systems:
    * Host-based Intrusion Detection (HIDS) - Monitors the host and alerts to potential malicious activity.
    * Host-based Intrusion Prevention (HIPS) - Monitors the host and blocks potentially malicious activity.
 
-Incident response:
+<a name="IR"></a>
+
+### Incident response:
+
    1. Triage: The incident response team examines the incident to see what was affected and sets priorities. 
    1. Investigation: Involves the collection of relevant data.
    1. Containment: The damage is mitigated or contained.
@@ -1934,6 +1937,17 @@ Incident response:
    1. Tracking: Where the <strong>source</strong> (user or device) of the incident is determined.
    1. Post-mortem review: Record lessons learned.
    1. Recovery: Necessary adjustments or enhancements are made to policies and procedures.
+   <br /><br />
+
+Alternately:
+   1. Preparation – the preparatory activities related to incident response, such as policy and procedures, and hiring an adequately skilled IR team.
+   1. Detection – intake and incident discovery.
+   1. Analysis – looking at the evidence of a reported potential incident.
+   1. Response – has containment, eradication, and recovery (NIST 800-61).
+   1. Mitigation – has containment and eradication.
+   1. Reporting – notifying management that systems are ready for normal operations.
+   1. Recovery and remediation – recovery is going back to normal operations, and remediation is taking care of other areas that may be vulnerable.
+   1. Review and improvement – this is the lessons learned step.
    <br /><br />
 
    See ASD (Australian) Mitigations
@@ -2569,9 +2583,9 @@ MFA (Multi-Factor Authentication) types:
 
    * Type 1 – Something You <strong>Know</strong> (remember)– includes passwords, PINs, combinations, code words, or secret handshakes. Anything that you can type, say, do, perform, or otherwise recall when needed falls into this category.
 
-   * Type 2 – Something You <strong>Have</strong> (possssion) – includes all items that are physical objects, such as keys, smart phones, smart cards, USB drives, and TOTP token devices. (A token device produces a <strong>time-based</strong> PIN or can compute a response from a challenge number issued by the server.).
+   * <a href="#Type2">Type 2</a> – Something You <strong>Have</strong> (possssion) – includes all items that are physical objects, such as keys, smart phones, smart cards, USB drives, and TOTP token devices. (A token device produces a <strong>time-based</strong> PIN or can compute a response from a challenge number issued by the server.).
 
-   * Type 3 – Something You <strong>Are</strong> (characteristic) – includes any part of the human body that can be offered for verification using biometrics such as fingerprints, palm scanning, facial recognition, retina scans (used by CLEAR), iris scans, and voice verification.
+   * <a href="#Type3">Type 3</a> – Something You <strong>Are</strong> (characteristic) – includes any part of the human body that can be offered for verification using biometrics such as fingerprints, palm scanning, facial recognition, retina scans (used by CLEAR), iris scans, and voice verification.
    <br /><br />
 
 Other Authentication Factors:
@@ -2601,9 +2615,13 @@ PIV (Personal Identity Verification) card, call "CAC" card by the US military. h
 Derived PIV credentials stored securely on mobile device in a TPM.
 
 
+<a name="Type2"></a>
+
 ## Type 2 Have Smart Cards
 
 The user private key encrypts a challenge regnerated by the computer.
+
+<a name="Type3"></a>
 
 ### Type 3 Are Biometrics
 
@@ -2624,21 +2642,22 @@ Facial recognition:
 A characteristics factor for authentication?
 
 Biometric Errors:
-   * A Type I error is false rejection rate (FRR) increases with sensitivity
-   * A Type II error is false acceptance rate (FAR) reduces with sensitivity
-   * Crossover error rate (CER) is the point at which FRR equals FAR. 
+   * A Type I error -- False Rejection Rate (FRR) -- increases with sensitivity
+   * A Type II error -- False Acceptance Rate (FAR) -- reduces with sensitivity
+   * Crossover Error Rate (CER) is the point at which FRR equals FAR. 
    * Throughput rate is the rate at which users are authenticated.
    <br /><br />
 
 Desktop sessions can be managed through screensavers, timeouts, logon, and schedule limitations. 
 Federal Information Processing Standards (FIPS) Publication 201.2 and NIST Special Publication 800-79-2 are documents that provide guidance on proof of identity.
+
 In Kerberos, the Key Distribution Center (KDC) issues a ticket-granting ticket (TGT) to the principal. 
 The principal sends the TGT to the ticket-granting service (TGS) when the principal needs to connect to another entity.
 
 In a MAC environment, each subject and object is given a label. 
-   * The term for a file in a mandatory access control (MAC) environment is an object. 
-   * The term for a user in an MAC environment is a subject. 
-   * The term for a clearance in a MAC environment is a privilege.
+   * A file in a mandatory access control (MAC) environment is an object. 
+   * A user in an MAC environment is a subject. 
+   * A clearance in a MAC environment is a privilege.
    <br /><br />
 
 DAC controls are determined by the data owner.

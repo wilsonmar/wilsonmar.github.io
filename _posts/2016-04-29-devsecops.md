@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-22"
+date: "2023-07-01"
 file: "devsecops"
 title: "DevSecOps"
 excerpt: "How to get people to use products and processes that yield faster competitive speed AND improved Security Posture throughout a secure SDLC"
@@ -18,27 +18,37 @@ comments: true
 
 > "DevSecOps is a set of software development practices that combines software development (Dev), security (Sec), and information technology operations (Ops) to secure the outcome and shorten the development lifecycle."
 
-The diagram above identifies 14 processes across the various pillars of the software development lifecycle (SDLC)
-(Develop, Build, Test, Release & Deploy, and Runtime) for a secure posture with the focus being on automation and integration:
-1. PLAN: Threat Model
-1. DEVELOP: Secure Coding
-1. DEVELOP: Security as Code
-1. BUILD: SAST
-1. TEST: DAST (IAST)
-1. TEST: Penetration Test
-1. RELEASE: Digital Signing (Hashes)
-1. DELIVER: Secure Transfer
-1. DEPLOY: Security Configuration
-1. DEPLOY: Security Scan (Component Analysis)
-1. OPERATE: Security Patch
-1. OPERATE: Security Audit (RASP)
+## Do you have it covered?
+
+The <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1688269750/DevSecOps-1092x511_fqmi5f.png">diagram above</a> identifies 14 processes (with a focus on automation and integration) across the various pillars of the software development lifecycle (SDLC)
+(Develop, Build, Test, Release & Deploy, and Runtime) to achieve a <strong>secure posture</strong>.
+
+PROTIP: Here are links to my deep-dive notes on each:
+
+1. PLAN: <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat Modeling</a>
+1. DEVELOP: Secure Coding (secrets in source code, OWASP Top 10, etc.)
+1. DEVELOP: Security as Code (policies (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)
+1. BUILD: <a href="#SAST">SAST</a>
+1. TEST: <a href="#DAST">DAST</a> (and <a href="#IAST">IAST</a>)
+1. TEST: <a href="#PenTest">Penetration Testing</a>
+1. RELEASE: Digital Signing (generate Hashes to identify changes)
+1. DELIVER: Secure Transfer of (encrypted) data
+1. DEPLOY: Security Configuration (in Terraform IaC)
+1. DEPLOY: Security Scan (Component Analysis and SBOM)
+1. OPERATE: Security Patching (Configuration Management)
+1. OPERATE: Security Audit includes RASP (Run-time App Security Protection) to monitor and block production traffic.
 1. MONITOR: Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)
 1. FEEDBACK: Security Analysis
 <br /><br />
 
+Who does what?
+
+## The Major brands
+
 Gartner lumps the various activities together into their <a target="_blank" href="https://www.synopsys.com/software-integrity/engage/gartner-mq-auto/">2023 Gartner's Magic Quadrant for Application Security Testing</a>:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"><img alt="owasp-gartner-23.png" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1687657345/owasp-gartner-23_eysgj7.png"></a>
+
 
 <a name="Synopsys"></a>
 
@@ -113,6 +123,42 @@ Other offerings:
    AUTOSAR®
 
 <hr />
+
+<a name="DAST"></a>
+
+## DAST
+
+DAST (Dynamic App Security Testing) analyzes how the program binary runs, dynamically. So source code is not needed. So it can be used by hackers. Tool vendors:
+   * White Hat
+   * OWASP ZAP proxy
+   * Qualys
+   * Veracode
+   * Arachni web application security scanner framework
+   <br /><br />
+   
+   https://juice-shop.herokuapp.com
+
+<a name="IAST"></a>
+
+## IAST
+
+IAST (Interactive App Security Testing) instruments software after installing an agent. Runs based on access to code, HTTP traffic, library, back-end connections.
+   * Synopsys
+   * Checkmarx
+   * Acunetix
+   <br /><br />
+
+
+<a name="RASP"></a>
+
+## RASP
+
+RASP (Run-time App Security Protection) combines DAST and IAST. It can be configured to block or monitor traffic.
+   * Arxan
+   * Imperva
+   * Wallarm
+   <br /><br />
+
 
 ## TL;DR: What it takes
 

@@ -206,7 +206,7 @@ Click here to save it to the Google Maps app on your mobile phone!</a>
 
      * <a target="_blank" href="https://goo.gl/maps/jzyooSm7tNsmLmVS7">Metron mall</a> which ayb big-box stores and IMax movie theaters
      * <a target="_blank" href="https://goo.gl/maps/3YYYJ6nX87U5RqCSA">Trader Joe's</a>
-     * Westfield mall, which has a basement food court
+     * <a target="_blank" href="https://www.youtube.com/watch?v=H4qWXHuYqf8">VIDEO</a>: The Westfield mall, which had a basement food court, was closed in 2023.
      <br /><br /> 
 
 Across Market Street is where the Cable Car route ends at <a target="_blank" href="https://goo.gl/maps/wvmYXWiyFYn43jvq6">Powell station</a>. 

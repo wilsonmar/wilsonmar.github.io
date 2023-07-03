@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-27"
+date: "2023-07-02"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -607,10 +607,12 @@ CompTIA certifications were designed for compliance with ISO 17024 standards and
 <a target="_blank" href="https://www.comptia.org/certifications/security">Security+ exam SY0-601 at comptia.org/certifications/security</a> 
 is described an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals.
 
-PROTIP: I passed the Security+ March 2020 after studying literally 4 years, on and off. I held off due to its <a target="_blank" href="https://store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C">$392 test fee</a> plus annual renewal fees. 
-PROTIP: Buy their <a target="_blank" href="https://store.comptia.org/comptia-store-club/p/ITPR-0020-ANNS-2019">$49 annual Club</a> for a $78 discount (20% off all CompTIA products). Students get a 40% discount.
+PROTIP: I passed the 90-question Security+ March 2020 after studying literally 4 years, on and off. I held off due to its <a target="_blank" href="https://store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C">$392 test fee</a> plus annual renewal fees. 
+PROTIP: Buy their <a target="_blank" href="https://store.comptia.org/comptia-store-club/p/ITPR-0020-ANNS-2019">$49 annual Club</a> for a $78 discount (20% off all CompTIA products). Students get a 40% discount at a different website.
 
 What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+
+PROTIP: Security+ is a vendor-neutral, but to be useful on the job, get trained in specific tools and in cloud computing as well.
 
 Concepts in the five exam objectives are covered in <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">videos by Professor Messer</a> <a target="_blank" href="https://www.youtube.com/watch?v=9NE33fpQuw8&list=PLG49S3nxzAnkL2ulFS3132mOVKuzzBxA8">on YouTube</a>:
 
@@ -661,6 +663,10 @@ Concepts in the five exam objectives are covered in <a target="_blank" href="htt
 It references <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">Professor Messer</a>. Also, it's a teaser for his $497 SOC Analyst video training using Azure cloud hands-on (built using ChatGPT).
 Topics include building a mini-SOC and other aspects of your security portfolio of NIST 800-53 policies, to apply for a job.
 
+
+
+
+<a name="PenTest"></a>
 
 ### PenTest+
 
