@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-21"
+date: "2023-07-01"
 file: "museums-roadtrip-usa"
 title: "Museums Roadtrip USA"
 excerpt: "Visual, architectural, and culinary art in every state and major city, mapped by Machine Learning"
@@ -19,7 +19,7 @@ comments: true
 This page lists where one can visit, see, and eat at the most important cultural artifacts in America. 
 I created this page as "bucket list" so that even if I can't visit each one and perhaps enjoy on-site, I can still visit their web pages. Someday soon everyone can see treasures from anywhere using VR (Virtual Reality) glasses providing 360-degree views in High Definition.
 
-> Do you have a roadtrip map or story? Please send it to me for posting here.
+> Do you have a road trip map or story? Please send it to me for posting here.
 
 {% include whatever.html %}
 
@@ -47,6 +47,7 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 * <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
 * <a target="_blank" href="https://www.movie-locations.com/">movie-locations.com</a>
+* <a target="_blank" href="https://www.flixist.com/a-rundown-of-every-major-theater-chains-premium-screen-options/">Premium screens in the US</a> (Imax, 70mm, etc.)
 * <a target="_blank" href="https://rs.locationshub.com/Home/Index?page=1">locationshub.com/#featured-filming-locations</a>
 * <a target="_blank" href="https://www.wikiwand.com/en/List_of_World_Heritage_Sites_in_the_United_States">24 UNESCO World Heritage Sites in the United State</a>
 

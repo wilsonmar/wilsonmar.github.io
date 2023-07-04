@@ -292,17 +292,22 @@ Official Flash cards of definitions:
 https://learning.oreilly.com/search/?q=cissp&type=*&rows=10
 Search on OReilly.com
 
+<a target="_blank" href="https://www.linkedin.com/in/deanbushmiller/">Dean Bushmiller</a> (of ExpandingSecurity.com) has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp on OReilly.com</a> where he goes over his <a target="_blank" href="https://github.com/deanbushmiller/CISSP-Bootcamp/wiki/">wiki on GitHub</a>. It contains his glossary, notes, and <a target="_blank" href="https://drive.google.com/drive/folders/1-0qj1lmbI0x89ZPTC_sPEmMdLDBTvE3F" title="1@vmlt.com">proprietary visual "mind maps"</a>. 888.225-0888
+
+   1. SRM = <a target="_blank" href="https://cloudacademy.com/quiz/35709/">Security and Risk Assessment</a>
+   2. ANT = <a target="_blank" href="https://cloudacademy.com/quiz/35788/">Asset Security</a>
+   3. SAE = <a target="_blank" href="https://cloudacademy.com/quiz/35824/">Security Architecture and Engineering</a>
+   4. CNS = <a target="_blank" href="https://cloudacademy.com/quiz/35869/">Communication and Network Security</a>
+   5. IAM = <a target="_blank" href="https://cloudacademy.com/quiz/36014/">Identity and Access Management</a>
+   6.  = <a target="_blank" href="https://cloudacademy.com/quiz/36540/">Security Testing and Assessment</a>
+   7. OPS = <a target="_blank" href="https://cloudacademy.com/quiz/36541/">Security Operations</a>
+   8. DEV = <a target="_blank" href="https://cloudacademy.com/quiz/36542/">Security Development Security</a>
+   <br /><br />
+
+KAS = Knowledge Asset Security
+
 Quizzes on CloudAcademy.com by exam domain:
 
-   1. <a target="_blank" href="https://cloudacademy.com/quiz/35709/">Security and Risk Assessment</a>
-   2. <a target="_blank" href="https://cloudacademy.com/quiz/35788/">Asset Security</a>
-   3. <a target="_blank" href="https://cloudacademy.com/quiz/35824/">Security Architecture and Engineering</a>
-   4. <a target="_blank" href="https://cloudacademy.com/quiz/35869/">Communication and Network Security</a>
-   5. <a target="_blank" href="https://cloudacademy.com/quiz/36014/">Identity and Access Management</a>
-   6. <a target="_blank" href="https://cloudacademy.com/quiz/36540/">Security Testing and Assessment</a>
-   7. <a target="_blank" href="https://cloudacademy.com/quiz/36541/">Security Operations</a>
-   8. <a target="_blank" href="https://cloudacademy.com/quiz/36542/">Security Development Security</a>
-   <br /><br />
 
 Written References:
 
@@ -321,8 +326,6 @@ Written References:
    * <a target="_blank" href="https://insidethemicrosoftcloud.com/cissp-practice-quiz/">50 question CISSP Practice Quiz online</a>
    
    * <a target="_blank" href="https://www.youtube.com/channel/UCAr0yk0um7lwLjmrKfzwyig/videos">On Youtube</a>
-
-   * For 20 years, <a target="_blank" href="https://www.linkedin.com/in/deanbushmiller/">Dean Bushmiller</a> has a live <a target="_blank" href="https://learning.oreilly.com/live-training/courses/cissp-bootcamp/0636920483199/">CISSP Bootcamp on OReilly.com</a> includes a set of <a target="_blank" href="https://drive.google.com/drive/folders/1-0qj1lmbI0x89ZPTC_sPEmMdLDBTvE3F" title="1@vmlt.com">proprietary visual "mind maps"</a> to collect, practice, and verify your knowledge, <a target="_blank" href="https://github.com/deanbushmiller/CISSP-Bootcamp">on GitHub</a>.
 
    * <a target="_blank" href="https://www.sunflower-cissp.com/glossary/cissp/5497/download-sunflower-cissp-2019-pdf-document">PDF: Sunflower CISSP</a>
 
@@ -663,8 +666,9 @@ Concepts in the five exam objectives are covered in <a target="_blank" href="htt
 It references <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">Professor Messer</a>. Also, it's a teaser for his $497 SOC Analyst video training using Azure cloud hands-on (built using ChatGPT).
 Topics include building a mini-SOC and other aspects of your security portfolio of NIST 800-53 policies, to apply for a job.
 
-
-
+<a target="_blank" href="https://www.youtube.com/watch?v=9Hd8QJmZQUc&list=PL7XJSuT7Dq_VD3eHXQf3Ld2ceBSFCayns">
+20-hour CompTIA Security+ Exam Cram - SY0-601 (Full Training Course - All 5 Domains)</a>
+by Pete Zerger
 
 <a name="PenTest"></a>
 

@@ -2,8 +2,8 @@
 layout: post
 date: "2023-07-01"
 file: "owasp-testing"
-title: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
-excerpt: "Practice penetration testing identifying security vulnerabilities in sample BWA app"
+title: "OWASP"
+excerpt: "Practice finding security vulnerabilities within ZAP or the Broken Web App by running SCA, SAST, DAST, IAST using open-source SonarQube, Sonatype, Synopsys and other tools"
 tags: [API, devsecops]
 image:
 # owasp-2021-1900x500.png
@@ -507,8 +507,8 @@ SCA (Software Composition Analysis)
 
 ## Resources
 
-<a target="_blank" href="https://www.coursera.org/videos/owasp-top-10-risks-1-5/6CUGQ?authProvider=mckinsey&query=infosec&source=search">
-VIDEO: Overview of the OWASP Top 10</a> by John Wagnon at Fortinet
+<a target="_blank" href="https://www.coursera.org/learn/owasp-top-10-risks-1-5/home/week/1">
+VIDEO: Overview of the 2021 OWASP Top 10</a> by <a target="_blank" href="https://www.linkedin.com/in/johnwagnon/">John Wagnon</a> while he was at F5.
 
 STAR: Daniel Miessler's <a target="_blank" href="https://danielmiessler.com/projects/webappsec_testing_resources/">https://danielmiessler.com/projects/webappsec_testing_resources</a>
 

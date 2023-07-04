@@ -1,10 +1,10 @@
 ---
 layout: post
+date: "2021-05-31"
+file: "microsoft-ai"
 title: "Microsoft AI (Azure Cognitive Services)"
 excerpt: "Notes for before and after getting AI-900, AI-100, AI-102 certified, as we automate AI workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
-date: "2021-05-31"
-file: "microsoft-ai"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14623876/07afd066-0593-11e6-933a-2e596511ac67.jpg
@@ -402,7 +402,7 @@ which reflected "All Microsoft all the time" using proprietary "pickle" (pkl) mo
 
 <a target="_blank" href="https://docs.microsoft.com/en-us/learn/certifications/exams/dp-203">DP-203 Data Engineering on Microsoft Azure</a> goes into how to use machine learning in Synapse Analytics.
 
-<a target="_blank"" href="https://www.coursera.org/learn/developing-ai-applications-azure">
+<a target="_blank" href="https://www.coursera.org/learn/developing-ai-applications-azure">
 Coursera video course: Developing AI Applications on Azure</a> 
 by Ronald J. Daskevich at LearnQuest is structured for 5 weeks.
 Coursera's videos shows the text at each point of its videos.
@@ -470,7 +470,9 @@ Practice tests:
 
 ### AI-102
 
-The AI-102 is intended for <strong>software developers</strong> wanting to build AI infused applications. So first setup development environments which include:
+The AI-102 is intended for <strong>software developers</strong> wanting to build AI-infused applications. 
+
+First setup development environments:
    * Visual Studio Code and add-ons for C#, Python, 
    * NodeJs for Bot Framework Composer and Bot Framework Emulator
    <br /><br />
