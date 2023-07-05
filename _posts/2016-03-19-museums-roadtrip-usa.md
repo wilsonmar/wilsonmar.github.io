@@ -47,7 +47,7 @@ BTW, finding where each site is located resulted in a great geography and histor
 
 * <a target="_blank" href="https://www.hmdb.org/">hmdb.org  = Historical Marker Database</a>
 * <a target="_blank" href="https://www.movie-locations.com/">movie-locations.com</a>
-* <a target="_blank" href="https://www.flixist.com/a-rundown-of-every-major-theater-chains-premium-screen-options/">Premium screens in the US</a> (Imax, 70mm, etc.)
+* <a target="_blank" href="https://www.flixist.com/a-rundown-of-every-major-theater-chains-premium-screen-options/">Premium screens in the US</a> (Imax, <a target="_blank" href="https://www.sprocketschool.org/wiki/List_of_70mm_film_exhibitors">70mm</a>, etc.)
 * <a target="_blank" href="https://rs.locationshub.com/Home/Index?page=1">locationshub.com/#featured-filming-locations</a>
 * <a target="_blank" href="https://www.wikiwand.com/en/List_of_World_Heritage_Sites_in_the_United_States">24 UNESCO World Heritage Sites in the United State</a>
 

@@ -299,12 +299,10 @@ Search on OReilly.com
    3. SAE = <a target="_blank" href="https://cloudacademy.com/quiz/35824/">Security Architecture and Engineering</a>
    4. CNS = <a target="_blank" href="https://cloudacademy.com/quiz/35869/">Communication and Network Security</a>
    5. IAM = <a target="_blank" href="https://cloudacademy.com/quiz/36014/">Identity and Access Management</a>
-   6.  = <a target="_blank" href="https://cloudacademy.com/quiz/36540/">Security Testing and Assessment</a>
+   6. KAS = <a target="_blank" href="https://cloudacademy.com/quiz/36540/">Security Testing and Assessment</a> = Knowledge Asset Security?
    7. OPS = <a target="_blank" href="https://cloudacademy.com/quiz/36541/">Security Operations</a>
    8. DEV = <a target="_blank" href="https://cloudacademy.com/quiz/36542/">Security Development Security</a>
    <br /><br />
-
-KAS = Knowledge Asset Security
 
 Quizzes on CloudAcademy.com by exam domain:
 
@@ -456,6 +454,7 @@ YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank
 Bootcamp: <a target="_blank" href="https://www.youtube.com/watch?v=pgEn1h_too0&list=PLETKkWHNA3qgWGW54totIqfHpAwQT574b&index=12">13 day 2 hours each from April 13, 2020 FRSecure CISSP Mentor Program (12th year) streaming by <a target="_blank" href="https://twitter.com/evanfrancen?lang=en">@evanfrancen</a>. S2me.io
 
 <a target="_blank" href="https://www.youtube.com/watch?v=_nyZhYnCNLA&list=PL7XJSuT7Dq_XPK_qmYMqfiBjbtHJRWigD">8-hour VIDEO CISSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
+   
 
 <a target="_blank" href="https://www.youtube.com/watch?v=kFZWMZIy5LM&list=PL7XJSuT7Dq_X0AupQwU8YOGV3TsoPAcD0">12-hour VIDEO CCSP Exam Cram from Pete Zerger's Inside Cloud and Security (2022 edition)</a>
 
@@ -613,13 +612,13 @@ is described an "entry level" exam but its detailed coverage of some obscure enc
 PROTIP: I passed the 90-question Security+ March 2020 after studying literally 4 years, on and off. I held off due to its <a target="_blank" href="https://store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C">$392 test fee</a> plus annual renewal fees. 
 PROTIP: Buy their <a target="_blank" href="https://store.comptia.org/comptia-store-club/p/ITPR-0020-ANNS-2019">$49 annual Club</a> for a $78 discount (20% off all CompTIA products). Students get a 40% discount at a different website.
 
-What helped me get over the intimidation is to seek out the trick questions and delight in them as an intellectual curiosity.
+What helped me get over the intimidation is to seek out the <strong>trick questions and delight in them</strong> as an intellectual curiosity.
 
-PROTIP: Security+ is a vendor-neutral, but to be useful on the job, get trained in specific tools and in cloud computing as well.
+PROTIP: Security+ is vendor-neutral, but to be useful on the job, get trained in specific tools and in cloud computing as well.
 
 Concepts in the five exam objectives are covered in <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">videos by Professor Messer</a> <a target="_blank" href="https://www.youtube.com/watch?v=9NE33fpQuw8&list=PLG49S3nxzAnkL2ulFS3132mOVKuzzBxA8">on YouTube</a>:
 
-1. Threats, Attacks, and Vulnerabilities
+1. <a target="_blank" href="https://www.youtube.com/watch?v=4HGQ0uYeSaA" title="2h InsideCloud">VIDEO</a>: Threats, Attacks, and Vulnerabilities 
    1.1 – Social Engineering<br />
    1.2 – Attack Types<br />
    1.3 – Application Attacks<br />
@@ -628,7 +627,7 @@ Concepts in the five exam objectives are covered in <a target="_blank" href="htt
    1.6 – Vulnerabilities<br />
    1.7 – Security Assessments<br />
    1.8 – Penetration Testing
-2. Architecture and Design
+2. <a target="_blank" href="https://www.youtube.com/watch?v=tvzfD9ET-Lk" title="2h InsideCloud">VIDEO</a>: Architecture and Design
    2.1 – Enterprise Security<br />
    2.2 – Virtualization and Cloud Computing<br />
    2.3 – Secure Application Development<br />
@@ -637,7 +636,7 @@ Concepts in the five exam objectives are covered in <a target="_blank" href="htt
    2.6 – Embedded Systems<br />
    2.7 – Physical Security Controls<br />
    2.8 – Cryptographic Concepts
-3. Implementation
+3. <a target="_blank" href="https://www.youtube.com/watch?v=CdBD5aFLUEc" title="2h InsideCloud">VIDEO</a>: Implementation
    3.1 – Secure Protocols<br />
    3.2 – Host and Application Security<br />
    3.3 – Secure Network Designs<br />
@@ -647,13 +646,13 @@ Concepts in the five exam objectives are covered in <a target="_blank" href="htt
    3.7 – Identity and Account Management<br />
    3.8 – Authentication and Authorization Services<br />
    3.9 – Public Key Infrastructure
-4. Operations and Incident Response
+4. <a target="_blank" href="https://www.youtube.com/watch?v=sA8_tsJh3zU" title="2h InsideCloud">VIDEO</a>: Operations and Incident Response
    4.1 – Security Tools<br />
    4.2 – Incident Response<br />
    4.3 – Investigations<br />
    4.4 – Securing an Environment<br />
    4.5 – Digital Forensics
-5. Governance, Risk, and Compliance (GRC)
+5. <a target="_blank" href="https://www.youtube.com/watch?v=pTGOL5I2-gs" title="2h InsideCloud">VIDEO</a>: Governance, Risk, and Compliance (GRC)
    5.1 – Security Controls<br />
    5.2 – Regulations, Standards, and Frameworks<br />
    5.3 – Organizational Security Policies<br />
@@ -1181,6 +1180,10 @@ References SAMM 2.0, OWASP Top 10.
 * <a target="_blank" href="https://www.beyond20.com/blog/best-cyber-security-certification-path-for-a-great-career/">
 
 Podcast: Evan Francen's Unsecurity
+
+<a target="_blank" href="https://www.youtube.com/watch?v=P9wz0Sted_I">
+TOP 5 Cyber Security Projects to go on Your Resume!</a> by Josh Madakor
+
 
 
 ## More on Security #

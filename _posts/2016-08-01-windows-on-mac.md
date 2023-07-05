@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Windows on Apple MacOS laptops"
-excerpt: "RDP to EC2, Amazon WorkSpaces, Vagrant, BootCamp, VMWare Fusion, Docker"
+date: "2023-07-04"
+file: "windows-on-mac"
+title: "Windows on Apple macOS"
+excerpt: "Where to run Windows from a Mac: RDP to EC2, Amazon WorkSpaces, Vagrant, BootCamp, VMWare Fusion, Docker"
 tags: [apple, mac, setup, VMWare, Fusion]
-date: "2021-05-01"
-file: "windows-on-apple-mac-osx"
 image:
 # feature: pic gray apple logo 1900x500.jpg
   feature: https://cloud.githubusercontent.com/assets/300046/14625335/52952250-059f-11e6-84c8-5ae2d289c486.jpg
@@ -878,43 +878,201 @@ Through trial and error, I found a number of things that could be disabled to im
 
 ## VMware Fusion #
 
-With VMWare Fusion, you can run quickly switch among Windows or Linux on a MacOSX machine using VMWare Fusion.
+VMware Fusion enables you to experiment with setups on a fresh instance of Windows.
 
-This would enable you to experiment with setups -- a fresh instance of Windows.
+With VMWare Fusion, you can quickly switch among macOS, Windows, or Linux on a MacOSX machine.
 
-1. The marketing page for VMWare's Fusion is at
+   Unlike ___, you don't need to reboot to switch.
+
+1. The marketing page for VMWare's Fusion is at:
 
    <a target="_blank" href="https://www.vmware.com/products/fusion.html">https://www.vmware.com/products/fusion.html</a>
 
-   The Pro edition costs $395 enables you to share images.
+   The Pro edition costs $395 if you need to share images.
 
-1. Buy it to get the license key so you don't get nagged later.
+1. PROTIP: VMware Fusion currently supports macOS 12 Monterey or 13 Ventura but NOT 14.
+
+   That's why I keep an older 2017 MacBook Pro around for this.
+
+
+   ### Precautions Before
+
+1. Buy a USB drive and take a full backup of your whole laptop so you can fall back.
+
+1. So you'll have enough disk space for the GB-large VMware image files (at least 10 GB free), move other unneeded files to a cloud or USB drive.
+
+   
+   ### Remove previous VMware Fusion
+
+1. Press command+Tab to switch to the Finder. Navigate to folder "/Applications".
+1. If "VMware Fusion.app" is there, right-click on it and select "Move to Trash".
+
+   HISTORICAL NOTE: VMware Fusion 7 worked great. But when I upgraded my Mac to Yosemite, 
+   VMware Support was not able to figure it out until <a target="_blank" href="https://unix.stackexchange.com/questions/169623/yosemite-fusion-7-0-1-now-gets-could-not-open-dev-vmmon-no-such-file-or-dir">Some</a> found that uninstalling Vagrant fixed the problem. 
+
 
    ### Installing Fusion
 
-1. Un-install Vagrant.app (in /Applications) to avoid issues.
+   I prefer using package managers so that I can uninstall with a single command.
+   Homebrew automatically verifies download files so I don't have to do it manually.
 
-   VMware Fusion 7 worked great. But when I upgraded my Mac to Yosemite, 
-   VMware Sopport was not able to figure it out until <a target="_blank" href="https://unix.stackexchange.com/questions/169623/yosemite-fusion-7-0-1-now-gets-could-not-open-dev-vmmon-no-such-file-or-dir">Some</a> found that uninstalling Vagrant fixed the problem. 
+0. Install Homebrew. See [my instructions](/macos-homebrew/)
+0. Install a Git client.
+0. ssh.exe (like putty for Windows).
 
-1. There are several versions on Brew:
+1. Get information about it on Homebrew:
 
-   <pre><strong>brew search fusion</strong></pre>
+   <pre><strong>brew info vmware-fusion</strong></pre>
 
-   <pre>autodesk-fusion360                            suitcase-fusion                               vmware-fusion10
-macfusion                                     vmware-fusion                                 vmware-fusion7
-macfusion-ng                                  vmware-fusion-tech-preview                    vmware-fusion8
+   <pre>==> vmware-fusion: 13.0.2,21581413 (auto_updates)
+https://www.vmware.com/products/fusion.html
+Not installed
+From: https://github.com/Homebrew/homebrew-cask/blob/HEAD/Casks/vmware-fusion.rb
+==> Name
+VMware Fusion
+==> Description
+Create, manage, and run virtual machines
+==> Artifacts
+VMware Fusion.app (App)
+==> Analytics
+install: 211 (30 days), 212 (90 days), 212 (365 days)
    </pre>
 
 1. Install the latest version of VMWare Fusion:
 
    <pre><strong>brew install --cask vmware-fusion</strong></pre>
 
-   <a target="_blank" href="https://developer.apple.com/library/content/technotes/tn2459/_index.html">  https://developer.apple.com/library/content/technotes/tn2459/_index.html</a>
+   <pre>==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-cask/8ed7aa4
+Already downloaded: /Users/johndoe/Library/Caches/Homebrew/downloads/8976eded57c3c79fed520419d49c675949e67141d74647dabebc34a6ad75112b--vmware-fusion.rb
+==> Downloading https://download3.vmware.com/software/FUS-1302/VMware-Fusion-13.
+Already downloaded: /Users/johndoe/Library/Caches/Homebrew/downloads/86f7c23de61d4ee020bb5e7754695769322424164acff8ab281a4b3347e53f84--VMware-Fusion-13.0.2-21581413_universal.dmg
+==> Installing Cask vmware-fusion
+==> Moving App 'VMware Fusion.app' to '/Users/johndoe/Applications/VMware Fusi
+==> Linking Binary 'vmnet-cfgcli' to '/usr/local/bin/vmnet-cfgcli'
+==> Linking Binary 'vmnet-cli' to '/usr/local/bin/vmnet-cli'
+==> Linking Binary 'vmnet-dhcpd' to '/usr/local/bin/vmnet-dhcpd'
+==> Linking Binary 'vmnet-natd' to '/usr/local/bin/vmnet-natd'
+==> Linking Binary 'vmnet-netifup' to '/usr/local/bin/vmnet-netifup'
+==> Linking Binary 'vmnet-sniffer' to '/usr/local/bin/vmnet-sniffer'
+==> Linking Binary 'vmrest' to '/usr/local/bin/vmrest'
+==> Linking Binary 'vmrun' to '/usr/local/bin/vmrun'
+==> Linking Binary 'vmss2core' to '/usr/local/bin/vmss2core'
+==> Linking Binary 'ovftool' to '/usr/local/bin/ovftool'
+==> Linking Binary 'vmware-aewp' to '/usr/local/bin/vmware-aewp'
+==> Linking Binary 'vmware-authd' to '/usr/local/bin/vmware-authd'
+==> Linking Binary 'vmware-id' to '/usr/local/bin/vmware-id'
+==> Linking Binary 'vmware-ntfs' to '/usr/local/bin/vmware-ntfs'
+==> Linking Binary 'vmware-rawdiskAuthTool' to '/usr/local/bin/vmware-rawdiskAut
+==> Linking Binary 'vmware-rawdiskCreator' to '/usr/local/bin/vmware-rawdiskCrea
+==> Linking Binary 'vmware-remotemks' to '/usr/local/bin/vmware-remotemks'
+==> Linking Binary 'vmware-usbarbitrator' to '/usr/local/bin/vmware-usbarbitrato
+==> Linking Binary 'vmware-vdiskmanager' to '/usr/local/bin/vmware-vdiskmanager'
+==> Linking Binary 'vmware-vmdkserver' to '/usr/local/bin/vmware-vmdkserver'
+==> Linking Binary 'vmware-vmx' to '/usr/local/bin/vmware-vmx'
+==> Linking Binary 'vmware-vmx-debug' to '/usr/local/bin/vmware-vmx-debug'
+==> Linking Binary 'vmware-vmx-stats' to '/usr/local/bin/vmware-vmx-stats'
+==> Linking Binary 'vmware-cloneBootCamp' to '/usr/local/bin/vmware-cloneBootCam
+==> Linking Binary 'vctl' to '/usr/local/bin/vctl'
+==> Linking Binary 'vmnet-bridge' to '/usr/local/bin/vmnet-bridge'
+🍺  vmware-fusion was successfully installed!
+   </pre>
 
-1. You'll be prompted for your password, then:
 
-   <pre>🍺  vmware-fusion was successfully installed!</pre>
+Skip to <a href="#ConfigVFusion">Configure Fusion</a> if you want to, instead of above, install using the manual alternate:
+
+1. Visit the VMware Fusion installer (not the Pro edition) at:
+
+   <a target="_blank" href="https://www.vmware.com/products/fusion/fusion-evaluation.html">https://www.vmware.com/products/fusion/fusion-evaluation.html</a>
+
+1. Register for a "Personal Use License". Create an account if you don't already have one.
+
+1. Click "Register Here". Fill out the info. Click "START FREE TRIAL".
+1. Highlight and copy the LICENSE KEY and save it in 1Password.
+
+   * VMware Fusion 13.0.2 (for Intel-based and Apple silicon Macs) 2023-04-25 13.0.2 672.09 MB dmg 
+   * VMware-Fusion-11.1.0-13668589.dmg was 520.1 MB
+   * VMware-Fusion-8.5.8-5824040.dmg was 467 MB
+   <br /><br />
+
+   NOTE: I've been using VMWare Fusion since its version 6 in 2016.
+
+   <a target="_blank" href="https://kb.vmware.com/s/article/2109701">PROTIP</a>: The default location of virtual machine images changed in Fusion 11.x "$HOME/VirtualMachines⁩" from "$HOME/Documents/VirtualMachines" in Fusion 8.x and 10.x.
+
+1. Click "Manually Download".
+1. Verify whether the file you downloaded is what the developers intended to store on the website:
+
+   1. Press command+Tab to switch to a Terminal window. 
+
+   1. List the file name of the .dmg file you downloaded into the Downloads folder:
+
+   <ul><pre><strong>ls $HOME/Downloads/VM*</strong></ul>
+
+   You should see something like:
+
+   <ul><pre>/Users/johndoe/Downloads/VMware-Fusion-13.0.2-21581413_universal.dmg</pre></ul>
+
+   1. Highlight the file name and press command+C to copy that path into your hidden Clipboard:
+
+   1. Construct a command such as:
+   
+   <ul><pre><strong>shasum -a 256 VMware-Fusion-13.0.2-21581413_universal.dmg</strong><br />
+   It should return a line such as this:
+   c86b40823b97334f20b4e6b475b488ec23faf06c986e291965b9e56f7b44c042  VMware-Fusion-13.0.2-21581413_universal.dmg
+   </ul>
+
+   1. If the hash value generated is NOT the same as what the website shows, try downloading again. If it's still different, create a support ticket.
+
+1. At the VMWare webpage, press command+W to close that tab.
+
+1. In the Terminal, remove the VMWare installer: Double-click on the file name to copy it. Construct a command:
+
+   <pre><strong>rm VMware-Fusion-13.0.2-21581413_universal.dmg</strong></pre>
+
+
+<a name="ConfigVFusion"></a>
+
+### Configure Ways to Invoke VMware Fusion
+
+Enable Fusion to be opened different ways:
+
+1. Configure your aliases setup file with this:
+
+   <pre>alias vfusion='open -a "/Applications/VMware Fusion.app"'</pre>
+
+   That enables you to invoke VMware Fusion from the command line.
+
+   1. I click "Don't Allow" to the pop-up "VMware Fusion.app" would like to access the microphone.
+
+   1. Click to dismiss the "Background Items Added" message appear on the upper right corner.
+   1. Click "OK" to the "Legacy System Extension" message.
+
+   1. Type <strong>vfusion</strong> in the Terminal
+
+1. To make Fusion available from the Apple Dock, on the Touchpad pinch 4 fingers together and drag the app icon to drop it in the mac's Dock.
+
+1. Press command+Tab to switch to the Finder. Navigate to folder "/Applications". Click "VMware Fusion.app".
+
+   ### First-time steps
+
+1. The first time a new version opens, click "Open" to "VMware Fusion.app" is an app downloaded from the Internet.
+1. Click Agree.
+1. <strong>Type</strong> the License Key into the dialog. PROTIP: I was not able to paste the License Key.
+1. Click "Done" to dismiss the installer.
+1. Click "OK" to access Accessibility.
+
+1. Mouse up to select "VMware Fusion", Settings.
+1. "When closing a virtual machine": choose "Power off the virtual machine".
+1. Check "Enable keyboard shortcut".
+1. Click the "x" to exit.
+
+   ### VMware Fusion files
+
+
+
+0. In Finder, on the left pane, scroll to the "Locations" section to click the exit icon to the right of "VMware Fusion".
+
+
+
 
 1. When done, open /Applications folder, sort by Name, and scroll to see "VMWare Fusion.app".
 
