@@ -1183,7 +1183,11 @@ Podcast: Evan Francen's Unsecurity
 
 <a target="_blank" href="https://www.youtube.com/watch?v=P9wz0Sted_I">
 TOP 5 Cyber Security Projects to go on Your Resume!</a> by Josh Madakor
-
+   * SIEM in Azure Sentinel
+   * Active Directory enviornment
+   * File Integrity Monitor
+   * Vulnerability Management Lab
+   * simple REST API
 
 
 ## More on Security #
