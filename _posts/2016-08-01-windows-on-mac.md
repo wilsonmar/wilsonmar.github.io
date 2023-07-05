@@ -884,11 +884,13 @@ With VMWare Fusion, you can quickly switch among macOS, Windows, or Linux on a M
 
    Unlike ___, you don't need to reboot to switch.
 
-1. The marketing page for VMWare's Fusion is at:
+1. The marketing page for VMWare's Fusion for Mac is at:
 
    <a target="_blank" href="https://www.vmware.com/products/fusion.html">https://www.vmware.com/products/fusion.html</a>
 
-   The Pro edition costs $395 if you need to share images.
+   PROTIP: The Pro edition costs $395 if you need to share images.
+
+   This is the Mac edition of the <a target="_blank" href="https://www.vmware.com/products/workstation-pro/workstation-pro-evaluation.html">VMware Workstation 17 Pro for Windows/Linux</a>.
 
 1. PROTIP: VMware Fusion currently supports macOS 12 Monterey or 13 Ventura but NOT 14.
 
@@ -899,7 +901,7 @@ With VMWare Fusion, you can quickly switch among macOS, Windows, or Linux on a M
 
 1. Buy a USB drive and take a full backup of your whole laptop so you can fall back.
 
-1. So you'll have enough disk space for the GB-large VMware image files (at least 10 GB free), move other unneeded files to a cloud or USB drive.
+1. So you'll have enough disk space for the GB-large VMware image files (at least 80-200 GB free), move other unneeded files to a cloud or USB drive.
 
    
    ### Remove previous VMware Fusion
@@ -988,7 +990,8 @@ Skip to <a href="#ConfigVFusion">Configure Fusion</a> if you want to, instead of
 
 1. Click "Register Here". Fill out the info. Click "START FREE TRIAL".
 1. Highlight and copy the LICENSE KEY and save it in 1Password.
-
+   
+   PROTIP: Historically:
    * VMware Fusion 13.0.2 (for Intel-based and Apple silicon Macs) 2023-04-25 13.0.2 672.09 MB dmg 
    * VMware-Fusion-11.1.0-13668589.dmg was 520.1 MB
    * VMware-Fusion-8.5.8-5824040.dmg was 467 MB
@@ -1033,13 +1036,11 @@ Skip to <a href="#ConfigVFusion">Configure Fusion</a> if you want to, instead of
 
 ### Configure Ways to Invoke VMware Fusion
 
-Enable Fusion to be opened different ways:
+Enable Fusion to be opened in different ways:
 
-1. Configure your aliases setup file with this:
+1. To invoke Fusion at a Terminal command line, configure your aliases setup file with this:
 
-   <pre>alias vfusion='open -a "/Applications/VMware Fusion.app"'</pre>
-
-   That enables you to invoke VMware Fusion from the command line.
+   <pre>alias vfusion='open -a "$HOME/Applications/VMware Fusion.app"'</pre>
 
    1. I click "Don't Allow" to the pop-up "VMware Fusion.app" would like to access the microphone.
 
@@ -1067,16 +1068,12 @@ Enable Fusion to be opened different ways:
 
    ### VMware Fusion files
 
-
-
-0. In Finder, on the left pane, scroll to the "Locations" section to click the exit icon to the right of "VMware Fusion".
-
-
-
-
-1. When done, open /Applications folder, sort by Name, and scroll to see "VMWare Fusion.app".
+<a target="_blank" href="https://www.youtube.com/watch?v=BBTlKrYU0HQ">Install Windows as a SOC Analyst</a>
 
    PROTIP: Apps in the /Applications folder are sorted by the date when the app was created, not when it was installed on your laptop.
+
+1. In Finder, on the left pane, scroll to the "Locations" section to click the exit icon to the right of "VMware Fusion".
+
 
 1. Click OK to "System Extention Blocked".
 1. Click Agree to Terms & Conditions.
@@ -1094,16 +1091,59 @@ Enable Fusion to be opened different ways:
 1. Click "Cancel" at the "Select the Installation Method" screen because you'll see it again.
 1. To open the app, on the Touchpad squeeze four fingers together and use two fingers to scroll. Click "VMWare Fusion".
 
-   ### Get Windows image
+   
+   ### Get Ubuntu Server 22.04.01 installer image
 
-1. See my article <a target="_blank" href="https://wilsonmar.github.io/packer/">Packer from HashiCorp within macOS</a> to create an ISO image of Windows with a license for the Windows operating system.
+   See my article <a target="_blank" href="https://wilsonmar.github.io/packer/">Packer from HashiCorp within macOS</a> to create an ISO image of Windows with a license for the Windows operating system.
+
+1. Identify the version of Ubuntu to use. 
+
+   <a target="_blank" href="https://www.youtube.com/watch?v=BBTlKrYU0HQ">VIDEO</a>: Gerald Auger explains <a target="_blank" href="https://blog.ecapuano.com/p/so-you-want-to-be-a-soc-analyst-part">these instructions</a> by Eric Capuano.
+
+1. Download the 14 GB .iso image file:
+
+   https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-live-server-amd64.iso
+
+1. PROTIP: Move large .iso files to a <strong>fast SSD USB drive</strong> to make room on your laptop's hard drive.
+
+   Samsung's <a target="_blank" href="https://semiconductor.samsung.com/us/consumer-storage/support/faqs/portable/">SSD Magician software</a> is only for Windows. To get Samsung's <a target="_blank" href="https://drive.google.com/file/d/1gWKO7ckLNIdUdKeZfQvJWjm5ovwr47F6/view">T7 SSD Factory Reset Tool for Mac</a>, call their 800.726-7864. The app only works when Apple System Settings Appearance is set to Light.
+
+1. Invoke VMware Fusion. Click Continue.
+1. In "Create a New Virtual Machine", drag and drop the .iso file. Click Continue.
+1. Click "UEFI", not "UEFI Secure Boot". Continue.
+1. Click "Customize Settings". 
+
+   Notice that a "Virtual Machines" folder was created to store "vmwarevm" image files.
+
+1. Click Save.
+
+   TODO: for 2 CPU cores & 2GB RAM like https://kb.vmware.com/s/article/1018415
+
+1. Click the big arrow button.
+1. Check "Never show this dialog again", then click OK to "You are running this virtual machine with side channel mitigations enabled. Side channel mitigations provide enhanced security but also lower performance. To disable mitigations, change the side channel mitigations setting in the advanced panel of the virtual machine settings. Refer to VMware KB article 79832 at https://kb.vmware.com/s/article/79832 for more details."
+
+   ### Ubuntu GNU GRUP Boot
+
+1. TODO:
+   
+
+   ### Get Windows installer image
+
+1. TODO:
+
+   ### Keyboard
+
+   To press the Windows key, press the command key.
+
+   To press F keys (F2, etc.), hold down the fn key and press F2, etc.
+   at the top row.
 
 
    ### Troubleshooting
 
-   My Fusion instance has been more stable that my Windows PC laptop.
+   PROTIP: My Fusion instance has been more stable than my Windows PC laptop.
    
-   <a target="_blank" href="https://apple.stackexchange.com/questions/155109/vmware-fusion-could-not-open-dev-vmmon-error">Others</a> suggested:
+1. <a target="_blank" href="https://apple.stackexchange.com/questions/155109/vmware-fusion-could-not-open-dev-vmmon-error">Others</a> suggested:
 
    <tt><strong>sudo kextunload -b com.intel.kext.intelhaxm
    </strong></tt>
@@ -1120,13 +1160,7 @@ Enable Fusion to be opened different ways:
    Defragmenting, shrinking, and cleaning up VMware Fusion virtual machine disks</a>
    <br /><br />
 
-   ### Keyboard
-
-   To press the Windows key, press the command key.
-
-   To press F keys (F2, etc.), hold down the fn key and press F2, etc.
-   at the top row.
-
+   
    ### Settings
 
    Several topics below refer to use of VMWare Tools installed from inside Windows.
