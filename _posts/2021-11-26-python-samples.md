@@ -4002,6 +4002,21 @@ https://prettier.io/
 
 https://towardsdatascience.com/introducing-icecream-never-use-print-to-debug-your-python-code-again-d8f2e5719f8a
 
+## Security operations
+
+Log analysis
+
+Malware analysis
+
+Access control list management
+
+Intrusion detection
+
+Compliance checks
+
+Network scanning
+
+
 <hr />
 
 ## More about Python

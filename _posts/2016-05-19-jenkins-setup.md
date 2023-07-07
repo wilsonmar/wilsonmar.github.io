@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Jenkins Setup"
-excerpt: "Make your robot butler"
-tags: [Jenkins, setup]
-date: "2021-03-29"
+date: "2023-07-05"
 file: "jenkins-setup"
+title: "Jenkins Setup"
+excerpt: "Make your robot butler for CI/CD DevOps"
+tags: [Jenkins, setup]
 image:
 # pic silver robot white skin handshake 1900x500
   feature: https://cloud.githubusercontent.com/assets/300046/14622149/306629f0-0585-11e6-961a-dc8f60dadbf6.jpg
@@ -103,16 +103,29 @@ Nectar</a>,
 a supported and enhanced on-premise version of Jenkins that automatically scales on VMWare virtual machines.
 Cloudbees has a professional certification exam on this product.
 
-<a target="_blank" href="https://hub.docker.com/r/cloudbees/workflow-demo/">
+1. Create a bridge network in Docker using the following docker network create command:
+
+   <pre><strong>docker network create jenkins</strong></pre>
+
+2. <a target="_blank" href="https://hub.docker.com/r/cloudbees/workflow-demo/">
 https://hub.docker.com/r/cloudbees/workflow-demo</a><br />
 is the demo Docker image for Jenkins workflow with Jenkins Enterprise by CloudBees proprietary extension
 for <strong>checkpoint</strong>.
 
-   <tt><strong>
-   docker run -p 8080:8080 -p 8081:8081 -p 8022:22 -p 9418:9418 -ti cloudbees/workflow-demo
+   <tt><strong>docker run -it -p 8080:8080 jenkins/jenkins:lts
+   </strong></tt>
+
+   Alternately:
+
+   <tt><strong>docker run -p 8080:8080 -p 8081:8081 -p 8022:22 -p 9418:9418 -ti cloudbees/workflow-demo
    </strong></tt>
 
    See <a href="#PortForwardings">Port forwardings</a>
+
+3. To keep data after reboot, set up a volume to start the Jenkins instance data:
+
+   https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
+
 
 
 <a name="DockerInstall"></a>

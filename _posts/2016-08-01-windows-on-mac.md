@@ -1106,7 +1106,7 @@ Enable Fusion to be opened in different ways:
 
 1. PROTIP: Move large .iso files to a <strong>fast SSD USB drive</strong> to make room on your laptop's hard drive.
 
-   Samsung's <a target="_blank" href="https://semiconductor.samsung.com/us/consumer-storage/support/faqs/portable/">SSD Magician software</a> is only for Windows. To get Samsung's <a target="_blank" href="https://drive.google.com/file/d/1gWKO7ckLNIdUdKeZfQvJWjm5ovwr47F6/view">T7 SSD Factory Reset Tool for Mac</a>, call their 800.726-7864. The app only works when Apple System Settings Appearance is set to Light.
+   Samsung's <a target="_blank" href="https://semiconductor.samsung.com/us/consumer-storage/support/faqs/portable/">SSD Magician software</a> is only for Windows. To get Samsung's <a target="_blank" href="https://drive.google.com/file/d/1gWKO7ckLNIdUdKeZfQvJWjm5ovwr47F6/view">T7 SSD Factory Reset Tool for Mac</a>, call their 800.726-7864. The app only works when Apple System Settings Appearance is set to Light (not Dark).
 
 1. Invoke VMware Fusion. Click Continue.
 1. In "Create a New Virtual Machine", drag and drop the .iso file. Click Continue.

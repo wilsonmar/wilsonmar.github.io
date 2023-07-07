@@ -669,6 +669,10 @@ Topics include building a mini-SOC and other aspects of your security portfolio 
 20-hour CompTIA Security+ Exam Cram - SY0-601 (Full Training Course - All 5 Domains)</a>
 by Pete Zerger
 
+Among <a target="_blank" href="https://learning.oreilly.com/certifications/guides/CompTIA-Security+/636920558217/">OReilly.com's prep resources</a>
+
+
+
 <a name="PenTest"></a>
 
 ### PenTest+
@@ -1184,7 +1188,7 @@ Podcast: Evan Francen's Unsecurity
 <a target="_blank" href="https://www.youtube.com/watch?v=P9wz0Sted_I">
 TOP 5 Cyber Security Projects to go on Your Resume!</a> by Josh Madakor
    * SIEM in Azure Sentinel
-   * Active Directory enviornment
+   * Active Directory environment
    * File Integrity Monitor
    * Vulnerability Management Lab
    * simple REST API

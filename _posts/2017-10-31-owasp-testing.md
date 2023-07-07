@@ -481,8 +481,6 @@ Fundamental Tutorial for Beginners by Rajesh Kumar
 <a title="_blank" href="https://www.youtube.com/watch?v=y8UF7rgtDEo&list=RDCMUCrXr49kBvXJeQMMl2693c4g&index=8">
 Sonarqube</a>
 
-SCA (Software Composition Analysis)
-
 
 ## Other DAST vendors
 
@@ -495,8 +493,6 @@ SCA (Software Composition Analysis)
 3. <a target="_blank" href="https://www.checkmarx.com/">Checkmarx.com</a>, based in Israel, offers <a target="_blank" href="https://www.checkmarx.com/products/codebashing">Codebashing</a>, a developer education platform for secure coding training.
 
 4. <a target="_blank" href="https://www.Synopsys.com/">Synopsys.com</a> [<a target="_blank" href="https://www.wikiwand.com/en/Synopsys">Wikipedia</a>] acquired CodeDX, Black Duck, Coverity, and <a target="_blank" href="https://en.wikipedia.org/wiki/Cigital">Cigital SecureAssist</a> (a lightweight IDE plugin that points out common security vulnerabilities in real time).
-
-   
 
 5. IBM AppScan
 

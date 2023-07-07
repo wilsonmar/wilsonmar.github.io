@@ -876,6 +876,10 @@ Peter McCarron, Sr. Technical Marketing Engineer, LaunchDarkly
 Kassen Qian, Product Manager, Datadog
 Vanessa Yan, Staff Product Manager, OctoML
 
+https://www.youtube.com/watch?v=TLB5MY9BBa4&pp=ygUJQ29kZXJEYXZl
+GitHub Actions Tutorial | From Zero to Hero in 90 minutes (Environments, Secrets, Runners, etc)
+by CoderDave (<a target="_blank" href="https://www.linkedin.com/in/davidebenvegnu/">David Benvegnu</a>)
+
 
 ## More #
 

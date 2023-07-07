@@ -23,23 +23,23 @@ comments: true
 The <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1688269750/DevSecOps-1092x511_fqmi5f.png">diagram above</a> identifies 14 processes (with a focus on automation and integration) across the various pillars of the software development lifecycle (SDLC)
 (Develop, Build, Test, Release & Deploy, and Runtime) to achieve a <strong>secure posture</strong>.
 
-PROTIP: Here are links to my deep-dive notes on each:
-
 1. PLAN: <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat Modeling</a>
-1. DEVELOP: Secure Coding (secrets in source code, OWASP Top 10, etc.)
-1. DEVELOP: Security as Code (policies (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)
+1. DEVELOP: Secure Coding (<a target="_blank" href="https://wilsonmar.github.io/github-data-security/">secrets in source code</a>, <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10</a>, etc.)
+1. DEVELOP: Security as Code (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)
 1. BUILD: <a href="#SAST">SAST</a>
 1. TEST: <a href="#DAST">DAST</a> (and <a href="#IAST">IAST</a>)
 1. TEST: <a href="#PenTest">Penetration Testing</a>
 1. RELEASE: Digital Signing (generate Hashes to identify changes)
 1. DELIVER: Secure Transfer of (encrypted) data
-1. DEPLOY: Security Configuration (in Terraform IaC)
+1. DEPLOY: Security Configuration (in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-terraform/">Terraform IaC</a>)
 1. DEPLOY: Security Scan (Component Analysis and SBOM)
-1. OPERATE: Security Patching (Configuration Management)
-1. OPERATE: Security Audit includes RASP (Run-time App Security Protection) to monitor and block production traffic.
+1. OPERATE: Security Patching <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management
+1. OPERATE: Security Audit includes Run-time App Security Protection (RASP) to monitor and block production traffic. 
 1. MONITOR: Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)
-1. FEEDBACK: Security Analysis
+1. FEEDBACK: Security Analysis and Bug Bounty programs
 <br /><br />
+
+PROTIP: Here are links to my deep-dive notes on each.
 
 Who does what?
 

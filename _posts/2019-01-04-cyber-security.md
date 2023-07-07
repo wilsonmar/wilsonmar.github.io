@@ -2974,27 +2974,6 @@ Proxies:
    * https://httptoolkit.tech/
    <br /><br />
 
-DAST (Dynamic App Security Testing) analyzes how the program binary runs, dynamically. So source code is not needed. So it can be used by hackers. Tool vendors:
-   * White Hat
-   * OWASP ZAP proxy
-   * Qualys
-   * Veracode
-   * Arachni web application security scanner framework
-   <br /><br />
-   
-   https://juice-shop.herokuapp.com
-
-IAST (Interactive App Security Testing) instruments software after installing an agent. Runs based on access to code, HTTP traffic, library, back-end connections.
-   * Checkmarx
-   * Synopsys
-   * Acunetix
-   <br /><br />
-
-RASP (Run-time App Secruity Protection) combines DAST and IAST. It can be configured to block or monitor traffic.
-   * Arxan
-   * Imperva
-   * Wallarm
-   <br /><br />
 
 WAF (Web Application Firewall) applies rules to bi-directional HTTP traffic, to detect XSS, SQL injection, Cookie poisoning, Unvalidated input, DoS, web scraping. But not all security issues. 
 It can have performance issues.
