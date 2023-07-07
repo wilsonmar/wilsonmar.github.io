@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-07"
+date: "2023-07-07"
 file: "cloud-services-comparisons"
 title: "Cloud services comparisons"
 excerpt: "Which cloud is best? Azure vs. AWS vs. Google"
@@ -168,7 +168,9 @@ So many individual technologists need to select the cloud vendor which provides 
 
 * Due to competitive reasons, companies in retail, music, etc. use other clouds: Target, Best Buy, eBay, Sony Music, etc. use Google. WalMart uses Azure. Since Amazon is moving into agriculture (building urban farms to provide Whole Foods and Amazong Go stores) plus health care, established competitors in those industries would not want to use AWS.
 
-* If you're moving a lot of data on networks, Google offers fast fiber networks that don't limit what large machines can achieve. Plus Google is ahead in Machine Learning with its popular Tensorflow in Python.
+* If you're moving a lot of data on networks, Google offers fast fiber networks that don't limit what large machines can achieve. 
+
+* AI and Machine Learning are at the forefront now. Google's TensorFlow competes with Facebook's open-source PyTorch.
 
 * Google's SSD drives are expensive, though needed for speed.
 
@@ -327,7 +329,7 @@ The Yellowdog Updater, modified (YUM), is a free and open-source command-line pa
 
 ## Network speed comparisons
 
-Under ideal conditions, latency over networks are limited by speed of light traveling within fiber-optic cables, which is roughly 202562 km/s or or 125866 miles/s. (Actual reachable speed is still a bit lower than that).
+Under ideal conditions, latency over networks are limited by speed of light traveling within fiber-optic cables, which is roughly 202,562 km/s (125,866 miles/s). Actual reachable speed is still a bit lower than that.
 
 To estimate distance between terrestial locations, use <a target="_blank" href="https://www.daftlogic.com/projects-google-maps-distance-calculator.htm">Distance Calculator website</a>
 
@@ -346,6 +348,9 @@ Google has laid its own fiber-optic wires around the world:
 <a target="_blank" href="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"><img alt="google-cables-1533x861.png" width="1533" src="https://user-images.githubusercontent.com/300046/62699138-1af7e080-b99c-11e9-859f-f3d4a4c88105.png"></a>
 
 Entry into Western Africa is Nigeria. 
+
+<a target="_blank" href="https://www.youtube.com/watch?v=yd1JhZzoS6A">VIDEO</a>: 
+<a target="_blank" href="https://www.submarinecablemap.com/">submarinecablemap.com</A> show undersea cables capable of transmitting 100Gb/s to 400gb/s.
 
 PROTIP: As of this writing, latency between Google's EU and Asia locations is very high (slow) because Google Compute Engine does not have a direct link between them.
 
