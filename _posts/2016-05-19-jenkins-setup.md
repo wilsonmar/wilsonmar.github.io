@@ -35,6 +35,8 @@ such as to ensure that components already unit-tested can be integrated together
 
 For scaling, several slaves can be setup to run simultaneously.
 
+https://www.harness.io/blog/chaos-engineering-with-jenkins
+
 
 <a id="Alternatives"></a>
 
@@ -44,8 +46,7 @@ For scaling, several slaves can be setup to run simultaneously.
 
    * [My list of CI tools](/devops-choices/#CITaskRunner/)
 
-Jenkins began in 2010 as a fork of Oracle Hudson into Github from java.net 
-after its acquisition by Oracle's purchase of Sun.
+Jenkins originated in 2005 as a simple CI site which Kohsuke Kawaguchi called "Hudson". As a Sun employee creation, Hudson was among copyrights acquired by Oracle Corporation in 2010. At that time, the community forked the open-source project on java.net as "Jenkins" for the Eclipse Foundation to acquire in 2011. Development on Hudson ceased in 2016.
 See <a target="_blank" href="http://jenkins-ci.org/content/whos-driving-thing">*</a>
 and <a target="_blank" href="https://isotope11.com/blog/continuous-deployment-at-isotope11-an-update">*</a>
 
@@ -103,6 +104,12 @@ Nectar</a>,
 a supported and enhanced on-premise version of Jenkins that automatically scales on VMWare virtual machines.
 Cloudbees has a professional certification exam on this product.
 
+https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
+
+   <tt><strong>docker run -it -p 8080:8080 jenkins/jenkins:lts
+   </strong></tt>
+
+
 1. Create a bridge network in Docker using the following docker network create command:
 
    <pre><strong>docker network create jenkins</strong></pre>
@@ -111,11 +118,6 @@ Cloudbees has a professional certification exam on this product.
 https://hub.docker.com/r/cloudbees/workflow-demo</a><br />
 is the demo Docker image for Jenkins workflow with Jenkins Enterprise by CloudBees proprietary extension
 for <strong>checkpoint</strong>.
-
-   <tt><strong>docker run -it -p 8080:8080 jenkins/jenkins:lts
-   </strong></tt>
-
-   Alternately:
 
    <tt><strong>docker run -p 8080:8080 -p 8081:8081 -p 8022:22 -p 9418:9418 -ti cloudbees/workflow-demo
    </strong></tt>
@@ -126,7 +128,12 @@ for <strong>checkpoint</strong>.
 
    https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose
 
+https://livebook.manning.com/book/pipeline-as-code/chapter-14/v-4/1
+"Pipeline as Code" book
 
+https://gist.github.com/ivdunin/cd536db94860076872dd6d2c60c80fa0
+
+https://github.com/wardviaene/jenkins-course/blob/master/docker-compose/docker-compose.yml
 
 <a name="DockerInstall"></a>
 

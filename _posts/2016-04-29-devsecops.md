@@ -23,21 +23,39 @@ comments: true
 The <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1688269750/DevSecOps-1092x511_fqmi5f.png">diagram above</a> identifies 14 processes (with a focus on automation and integration) across the various pillars of the software development lifecycle (SDLC)
 (Develop, Build, Test, Release & Deploy, and Runtime) to achieve a <strong>secure posture</strong>.
 
-1. PLAN: <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat Modeling</a>
-1. DEVELOP: Secure Coding (<a target="_blank" href="https://wilsonmar.github.io/github-data-security/">secrets in source code</a>, <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10</a>, etc.)
-1. DEVELOP: Security as Code (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)
-1. BUILD: <a href="#SAST">SAST</a>
-1. TEST: <a href="#DAST">DAST</a> (and <a href="#IAST">IAST</a>)
-1. TEST: <a href="#PenTest">Penetration Testing</a>
-1. RELEASE: Digital Signing (generate Hashes to identify changes)
-1. DELIVER: Secure Transfer of (encrypted) data
-1. DEPLOY: Security Configuration (in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-terraform/">Terraform IaC</a>)
-1. DEPLOY: Security Scan (Component Analysis and SBOM)
-1. OPERATE: Security Patching <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management
-1. OPERATE: Security Audit (such as <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2/ISO 27xxx</a>) reference Run-time App Security Protection (RASP) to monitor and block production traffic. 
-1. MONITOR: Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)
-1. FEEDBACK: Security Analysis and Bug Bounty programs
-<br /><br />
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> # </th><th> Pillar </th><th> % </th><th> Process </th></tr>
+<tr valign="top"><td> 1. </td><td> PLAN: </td><td align="right"> 15% </td><td>
+   <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat Modeling</a>
+<tr valign="top"><td> 2. </td><td> DEVELOP: </td><td align="right"> 15% </td><td>
+    Secure Coding (<a target="_blank" href="https://wilsonmar.github.io/github-data-security/">secrets in source code</a>, <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10</a>, etc.)
+<tr valign="top"><td> 3. </td><td> DEVELOP:  </td><td align="right"> 15% </td><td>
+   Security as Code (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)
+<tr valign="top"><td> 4. </td><td> BUILD:  </td><td align="right"> 15% </td><td>
+   <a href="#SAST">SAST</a> within CI/CD <a target="_blank" href="https://wilsonmar.github.io/jenkins/">Jenkins</a> & SonarQube) pipelines
+<tr valign="top"><td> 5. </td><td> TEST:  </td><td align="right"> 15% </td><td>
+   <a href="#DAST">DAST</a> (and <a href="#IAST">IAST</a>) of each file type
+<tr valign="top"><td> 6. </td><td> TEST: </td><td align="right"> 15% </td><td>
+   <a href="#PenTest">Penetration Testing</a>
+<tr valign="top"><td> 7. </td><td> RELEASE: </td><td align="right"> 15% </td><td>
+   Digital Signing (generate Hashes to identify changes)
+<tr valign="top"><td> 8. </td><td> DELIVER: </td><td align="right"> 15% </td><td>
+    Secure Transfer of (encrypted) data
+<tr valign="top"><td> 9. </td><td> DEPLOY: </td><td align="right"> 15% </td><td>
+    Security Configuration (IaC by <a target="_blank" href="https://wilsonmar.github.io/hashicorp-terraform/">declarative Terraform</a>, <a target="_blank" href="https://wilsonmar.github.io/pulumi/">declarative Pulumi</a>)
+<tr valign="top"><td> 10. </td><td> DEPLOY: </td><td align="right"> 15% </td><td>
+    Security Scan - SBOM (Sofware Bill of Materials) for SCA (Sofware Component Analysis)
+<tr valign="top"><td> 11. </td><td> OPERATE: </td><td align="right"> 15% </td><td>
+    Security Patching <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management
+<tr valign="top"><td> 12. </td><td> OPERATE: </td><td align="right"> 15% </td><td>
+    Security Audit (such as <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2/ISO 27xxx</a>) reference Run-time App Security Protection (RASP) to monitor and block production traffic. 
+<tr valign="top"><td> 13. </td><td> MONITOR: </td><td align="right"> 15% </td><td>
+    Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)
+<tr valign="top"><td> 14. </td><td> FEEDBACK: </td><td align="right"> 15% </td><td>
+    Security Analysis and Bug Bounty programs
+<tr valign="top"><td> --- </td><td> --- </td><td align="right"> 100% </td><td>
+    = Total current completion.
+</table>
 
 PROTIP: Here are links to my deep-dive notes on each.
 
