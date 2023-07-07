@@ -34,7 +34,7 @@ The <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v
 1. DEPLOY: Security Configuration (in <a target="_blank" href="https://wilsonmar.github.io/hashicorp-terraform/">Terraform IaC</a>)
 1. DEPLOY: Security Scan (Component Analysis and SBOM)
 1. OPERATE: Security Patching <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management
-1. OPERATE: Security Audit includes Run-time App Security Protection (RASP) to monitor and block production traffic. 
+1. OPERATE: Security Audit (such as <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2/ISO 27xxx</a>) reference Run-time App Security Protection (RASP) to monitor and block production traffic. 
 1. MONITOR: Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)
 1. FEEDBACK: Security Analysis and Bug Bounty programs
 <br /><br />
