@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2022-07-21"
+date: "2023-07-08"
 file: "jekyll-site-development"
 title: "Jekyll (JAM) site development"
 excerpt: "Getting started with Jekyll"
@@ -15,6 +15,9 @@ comments: true
 <i>{{ page.excerpt }}</i> 
 {% include l18n.html %}
 {% include _toc.html %}
+
+NOTICE: 
+<a target="_blank" href="https://kubernetes.io/blog/2018/05/05/hugo-migration/">Kubernetes.io moved their docs to Hugo in 2018</a>.
 
 This article contains notes on getting started with Jekyll and other static websites.
 

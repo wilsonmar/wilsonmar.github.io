@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-06-28"
+date: "2023-07-08"
 file: "cyber-security"
 title: "Cyber Security"
 excerpt: "Enterprise data risks and vulnerabilities and how to mitigate them with controls"
@@ -45,6 +45,8 @@ and endpoints which request services (user, machine, app, etc.) each must also p
 "Zero Trust" needs to be all-encompassing in its vigilence. The current state of assets, network infrastructure, and communications are continuously collected for forensics in case of breach and for analysis to improves the "security posture" of each device, user, and enterprise as a whole.
 
 Because service accounts and authorization are tightly coupled with the application, it often makes sense to set up identities and policies as part of the application infrastructure deployment. Delegating this authority to the development team allows it to iterate quickly on application development (the DevSecOps model).
+
+The Cybersecurity Enhancement Act of 2014 (CEA), aka Public Law No. 113-274, provide a voluntary public-private partnership to improve cybersecurity.
 
 
 ## Security Engineer
@@ -131,6 +133,14 @@ ALE is the annual loss expectancy =
 
 <strong>Residual risk</strong> = total risk – countermeasures.
 
+Impact from loss of confidentiality:
+   * Fines and criminal lawsuits based on information protected by privacy laws
+   * Civil suits against the enterprise
+   * Loss of public confidence (brand value)
+   * Loss of competitive advantage
+   * Interference with national security
+   <br /><br />
+
 <a name="CIA">CIA</a> triad tenents: +IAAA
    * Confidentiality vs. Disclosure (IPSec encryption in transit, social engineering)
    * Integrity vs. Alteration (shared among authorized persons or organizations)
@@ -138,6 +148,17 @@ ALE is the annual loss expectancy =
    <br /><br />
 
    * Accountability (auditing)
+
+Elements of Confidentiality:
+   * Sensitivity
+   * Discretion
+   * Criticality
+   * Concealment
+   * Secrecy
+   * Privacy
+   * Seclusion
+   * Isolation
+   <br /><br />
 
 Privacy Threshold Assesssment is used to identify PI and determine how to treat the data.
 
@@ -212,10 +233,12 @@ Like the <a target="_blank" href="https://wilsonmar.github.io/caiq">CAIQ</a>, it
 
 <a name="HITRUST"></a>
 
-## HITRUST CSF
+## HITRUST Common Security Framework
 
-<a target="_blank" href="https://hitrustalliance.net/understanding-leveraging-csf/">
-HITRUST Common Security Framework (CSF)</a> includes, harmonizes, and cross-references existing, globally recognized standards, regulations, and business requirements, including ISO, EU GDPR, <a href="#NIST">NIST</a>, and PCI.
+<a target="_blank" href="https://hitrustalliance.net/understanding-leveraging-csf/">HITRUST Common Security Framework</a> includes, harmonizes, and cross-references existing, globally recognized standards, regulations, and business requirements, including ISO, EU GDPR, <a href="#NIST">NIST</a>, and PCI.
+
+Through a validated assessment performed by the <a href="#HITRUST">Health Information Trust Alliance (HITRUST)</a>, a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the <a href="#NIST">NIST</a> <a href="#CSF">CSF</a>.
+
 
 <hr />
 
@@ -941,7 +964,7 @@ The DoD (Department of Defense) Networking Model has a 4-layer stack:
 <a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final">NIST 800-30 Rev. 1 September 2012</a> "Guide for Conducting Risk Assessments"
 offers a structured approach for identifying, evaluating, and prioritizing information security risks through risk assessments.
 The government of Canada has a harmonized TRA Methodology.
-Mozilla offers a RRA (Rapid Risk Assessment) guidance.
+Mozilla offers RRA (Rapid Risk Assessment) guidance.
 
 SP 800-30 steps for a risk assessment: 
    1. Identify the <strong>assets</strong> and their value. 
@@ -954,6 +977,7 @@ SP 800-30 steps for a risk assessment:
 
 <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1681357302/nist-800-30-risk-steps-688x439_prk30g.jpg"><img alt="nist-800-30-risk-steps-688x439.jpg" width="688" height="439" src="https://res.cloudinary.com/dcajqrroq/image/upload/v1681357302/nist-800-30-risk-steps-688x439_prk30g.jpg"></a>
 
+SP 800-34 defines "vulnerability" as "an inherent weakness in an information system, security procedures, internal controls, or implementation that could be exploited by a threat source."
 
 ### NIST SP 800-34
 
@@ -966,13 +990,15 @@ SP 800-30 steps for a risk assessment:
    * A COOP (Continuity Of Operations) plan focuses on restoring an organization’s mission-essential functions (MEFs) at an alternate site and performing those functions for up to 30 days before returning to normal operations.
    <br /><br />
 
-800-34 RMF (Risk Management Framework) - to obtain cATO (continuous Authority To Operate):
-   1. Categorize information system
-   2. Select security controls
-   3. Implement security controls
-   4. Assess security controls 
-   5. Authorize information system
-   6. Monitor security controls
+### NIST SP 800-37
+
+800-37 RMF (Risk Management Framework) - to obtain cATO (continuous Authority To Operate):
+   1. Categorize information system based on impact FIPS 199 doc
+   2. Select a baseline set of security controls using FIPS 200, SP 800-30, SP  800-53
+   3. Implement security controls SP 800-18, 800-34, 800-70
+   4. Assess the effectivenss of security controls SP 800-53A
+   5. Authorize the information system to operate SP-800-37
+   6. Monitor security controls for the protection they provide SP-800-37, SP-800-53A
    <br /><br />
 
 PROTIP: Notice that Categorize and Authorize refer to information systems. The rest refer to security controls.
@@ -1268,16 +1294,28 @@ Data classification program:
 
 <a name="NIST"></a>
 
-### NIST
+### NIST CSF
 
+<a target="_blank" href="https://www.nist.gov/itl">SUBSCRIBE: 
+NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
 NIST CSRC (Computer Security Resource Center)
 
-<a target="_blank" href="https://www.nist.gov/itl">
-NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
+Executive Order 13636: Improving Critical Infrastructure Cybersecurity
+is a mandate from the Obama White House charging the US National Institute of Standards and Technology (NIST) to develop the Cybersecurity Framework (CSF) as a prescriptive standard mandatory for federal agencies but a <strong>voluntary</strong> framework for commercial organizations. CSF does not tell organizations how much risk is tolerable.
 
-The National Institute of Standards and Technology (NIST) Cybersecurity Framework (CSF) is a voluntary Framework that consists of standards, guidelines, and best practices to manage cybersecurity-related risks. 
+Executive Order 13800 "Strengthening the Cybersecurity of Federal Networks and Critical Infrastructure" was signed by President Donald J. Trump on May 11, 2017. The order aims to improve the nation's cyber posture and capabilities in the face of intensifying cybersecurity threats. Sections: 1) Federal Networks, 2) Critical Infrastructure, 3) the nation.
 
-Through a validated assessment performed by the <a href="#HITRUST">Health Information Trust Alliance (HITRUST)</a>, a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the <a href="#NIST">NIST</a> <a href="#CSF">CSF</a>.
+(1) Executive Order on Strengthening the Cybersecurity of Federal ... - CISA. https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-strengthening-cybersecurity-federal-networks-and-critical-infrastructure.
+(2) Strengthening the Cybersecurity of Federal Networks and Critical .... https://trumpwhitehouse.archives.gov/articles/strengthening-the-cybersecurity-of-federal-networks-and-critical-infrastructure/.
+(3) Executive Order 13800—Strengthening the Cybersecurity of ... - GovInfo. https://www.govinfo.gov/content/pkg/DCPD-201700327/pdf/DCPD-201700327.pdf.
+(4) Executive Order 13800: Growing and Sustaining the Cybersecurity .... https://www.nist.gov/itl/applied-cybersecurity/nice/resources/executive-order-13800.
+(5) Strengthening the Cybersecurity of Federal Networks and Critical .... https://www.federalregister.gov/documents/2017/05/16/2017-10004/strengthening-the-cybersecurity-of-federal-networks-and-critical-infrastructure.
+
+The current version, CSF 1.1, was released April 2018.
+
+The CSF provides a common Language and systematic methodology for managing cyber risk with "best practices".
+
+The CSF consists of standards, guidelines, and best practices to manage cybersecurity-related risks. 
 
 NIACAP (National Information Assurance Certification and Accreditation Process) evaluates an application or system that is <strong>distributed</strong> to a number of different locations. System accreditation evaluates an application or support system. Site accreditation evaluates the application or system at a specific self-contained location. 
 
@@ -1290,6 +1328,7 @@ CSF Functions and Categories maps NIST 800-53 to <a href="#CIS">CIS Controls</a>
 NIST SP 800-39 provides guidance for an integrated, organization-wide program for managing information security risk to organizational operations (i.e., mission, functions, image, and reputation), organizational assets, individuals, other organizations, and the nation resulting from the operation and use of federal information systems.
 
 Among <a target="_blank" href="https://csrc.nist.gov/publications/sp800">The many NIST SP 800 documents</a>:
+
    * <a target="_blank" href="https://csrc.nist.gov/publications/detail/sp/800-60/vol-1-rev-1/final">
    NIST SP 800-60</a> provides guidelines for mapping types of information and information systems to security categories.
    * SP 800-183 describes the Internet of Things (IoT).
@@ -1324,15 +1363,97 @@ Tiers in an organization defined by SP 800-139
    * Tier 3 is the information systems view, which includes operational systems, systems under development, systems undergoing modification, and systems in some phase of the system development life cycle.
    <br /><br />
 
+CSF process:
+1. Prioritize and scope. Varying risk tolerances may be defined for each implementation tier. Inputs, Activities, Outputs
+2. Orient
+3. Create a Current Profile
+4. Conduct Risk Assessment
+5. Create Target Profile
+6. Determine, Analyze, Prioritize gaps
+7. Implementation Action Pln
+
+
 SP 800-139 Functions to implement the appropriate safeguards to ensure delivery of critical infrastructure services
    * Identify (ID): Develop the organizational understanding to manage cybersecurity risk to systems, assets, data, and capabilities.
-   * Protect (PR): Develop and implement the appropriate safeguards to ensure delivery of critical infrastructure services.
+   * Protect (PR): Develop and implement the appropriate safeguards to ensure the delivery of critical infrastructure services.
    * Detect (DE): Develop and implement the appropriate activities to identify the occurrence of a cybersecurity event.
    * Respond (RS): Develop and implement the appropriate activities to take action regarding a detected cybersecurity event.
    * Recover (RC): Develop and implement the appropriate activities to maintain plans for resilience and to restore any capabilities or services that were impaired due to a cybersecurity event.
    <br /><br />
 
-   SP 800-139 framework implementation maturity tiers:
+<a name="CSFtable"></a>
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Core Function </th><th> ID </th><th> 23 Category </th><th> CIS </th></tr>
+<tr valign="top"><td rowspan="6"> IDENTIFY (What processes & assets need protection?)
+   </td><td> ID.AM </td><td> Asset Management
+   #1, #2 </td></tr>
+<tr valign="top"><td> ID.AM </td><td> Asset Management
+   - </td></tr>
+<tr valign="top"><td> ID.BE </td><td> Business Environment
+   - </td></tr>
+<tr valign="top"><td> ID.GV </td><td> Governance
+   - </td></tr>
+<tr valign="top"><td> ID.RA </td><td> Risk Assessment
+   #3 </td></tr>
+<tr valign="top"><td> ID.RM </td><td> Risk Management Strategy
+   - </td></tr>
+<tr valign="top"><td> ID.SC </td><td> Supply Chain Risk Management
+   - </td></tr>
+
+<tr valign="top"><td rowspan="7"> PROTECT 
+   </td><td> PR.AC </td><td> Identity Management & Access Control
+   #4, 9, 11, 12, 13, 14, 16 </td></tr>
+<tr valign="top"><td> PR.AT </td><td> Asset Management
+   - </td></tr>
+<tr valign="top"><td> PR.AM </td><td> Awareness and Training
+   #4, 17 </td></tr>
+<tr valign="top"><td> PR.DS </td><td> Data Security
+   #1, 2, 13, 14, 18 </td></tr>
+<tr valign="top"><td> PR.IP </td><td> Information Protection Processes & Procedures
+   #3, 5, 7, 10, 11 </td></tr>
+<tr valign="top"><td> PR.MA </td><td> Maintenance
+   #4, 12 </td></tr>
+<tr valign="top"><td> PR.PT </td><td> Protective Technology
+   #4, 6, 8, 11, 13, 14, 16 </td></tr>
+
+<tr valign="top"><td rowspan="3"> DETECT 
+   </td><td> DE.AE </td><td> Anomalies and Events
+   #6, 9, 12, 19 </td></tr>
+<tr valign="top"><td> DE.CM </td><td> Security Continuous Monitoring
+   #3, 8, 19 </td></tr>
+<tr valign="top"><td> DE.DP </td><td> Detection Processes
+   #6 </td></tr>
+
+<tr valign="top"><td rowspan="5"> RESPOND 
+   </td><td> RS.RP </td><td> Response Planning
+   #19 </td></tr>
+<tr valign="top"><td> RS.CO </td><td> Communications
+   #19 </td></tr>
+<tr valign="top"><td> RS.AN </td><td> Analysis
+   #3, 19 </td></tr>
+<tr valign="top"><td> RS.MI </td><td> Mitigation
+   #3, 19 </td></tr>
+<tr valign="top"><td> RS.IM </td><td> Improvements
+   #19 </td></tr>
+
+<tr valign="top"><td rowspan="3"> RECOVER 
+   </td><td> RC.RP </td><td> Response Planning
+   #19 </td></tr>
+<tr valign="top"><td> RC.IM </td><td> Improvements
+   #19 </td></tr>
+<tr valign="top"><td> RC.CO </td><td> Communications
+   #19 </td></tr>
+</table>
+
+"Communications" occur early in RESPOND but later in RECOVER.
+
+Notice that "Improvements" is in both RESPOND and RECOVER.
+
+There are also 108 (previously 97) subcategories.
+
+In the NIST CSF, "Informative References" citations relate to more technical activities from other standards or guidelines, to provide additional information on how to achieve outcomes described in Subcategories.
+
+   SP 800-139 framework implementation (maturity) tiers:
    * Tier 1: <strong>Partial</strong> - risk management practices are not formalized, and risk is managed in an ad hoc and sometimes reactive manner.
    * Tier 2: Risk <strong>Informed</strong> - risk management practices are approved by management but may not be established as organizational-wide policy.
    * Tier 3: <strong>Repeatable</strong> - the organization’s risk management practices are formally approved and expressed as policy.

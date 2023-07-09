@@ -20,44 +20,45 @@ comments: true
 
 ## Do you have it covered?
 
-The <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1688269750/DevSecOps-1092x511_fqmi5f.png">diagram above</a> identifies 14 processes (with a focus on automation and integration) across the various pillars of the software development lifecycle (SDLC)
-(Develop, Build, Test, Release & Deploy, and Runtime) to achieve a <strong>secure posture</strong>.
+The <a target="_blank" href="https://res.cloudinary.com/dcajqrroq/image/upload/v1688269750/DevSecOps-1092x511_fqmi5f.png">diagram above</a> identifies 14 processes (with a focus on automation and integration) to achieve a stronger <strong>secure posture</strong> across the various "pillars" of the software development lifecycle (SDLC): Develop, Build, Test, Release & Deploy, and Runtime.
+
+What is the adoption completion percentage for each process/tool at your organization?
 
 <table border="1" cellpadding="4" cellspacing="0">
-<tr><th> # </th><th> Pillar </th><th> % </th><th> Process </th></tr>
-<tr valign="top"><td> 1. </td><td> PLAN: </td><td align="right"> 15% </td><td>
+<tr><th> # </th><th> Pillar </th><th align="left"> <a href="#CompletionPct" title="Percentage of Completion">%</a> </th><th> Process </th></tr>
+<tr valign="top"><td> 1. </td><td> PLAN: </td><td align="right"> __% </td><td>
    <a target="_blank" href="https://wilsonmar.github.io/threat-modeling/">Threat Modeling</a></td></tr>
-<tr valign="top"><td> 2. </td><td> DEVELOP: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 2. </td><td> DEVELOP: </td><td align="right"> __% </td><td>
     Secure Coding (<a target="_blank" href="https://wilsonmar.github.io/github-data-security/">secrets in source code</a>, <a target="_blank" href="https://wilsonmar.github.io/owasp-testing/">OWASP Top 10</a>, etc.)</td></tr>
-<tr valign="top"><td> 3. </td><td> DEVELOP:  </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 3. </td><td> DEVELOP:  </td><td align="right"> __% </td><td>
    Security as Code (<a target="_blank" href="https://wilsonmar.github.io/opa-rego/">OPA processing Rego policies</a>)</td></tr>
-<tr valign="top"><td> 4. </td><td> BUILD:  </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 4. </td><td> BUILD:  </td><td align="right"> __% </td><td>
    <a href="#SAST">SAST</a> within CI/CD <a target="_blank" href="https://wilsonmar.github.io/jenkins/">Jenkins</a> & SonarQube) pipelines</td></tr>
-<tr valign="top"><td> 5. </td><td> TEST:  </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 5. </td><td> TEST:  </td><td align="right"> __% </td><td>
    <a href="#DAST">DAST</a> (and <a href="#IAST">IAST</a>) of each file type</td></tr>
-<tr valign="top"><td> 6. </td><td> TEST: </td><td align="right"> 15% </td><td>
-   <a href="#PenTest">Penetration Testing</a></td></tr>
-<tr valign="top"><td> 7. </td><td> RELEASE: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 6. </td><td> TEST: </td><td align="right"> __% </td><td>
+   (Network and app) <a href="#PenTest">Penetration Testing</a></td></tr>
+<tr valign="top"><td> 7. </td><td> RELEASE: </td><td align="right"> __% </td><td>
    Digital Signing (generate Hashes to identify changes)</td></tr>
-<tr valign="top"><td> 8. </td><td> DELIVER: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 8. </td><td> DELIVER: </td><td align="right"> __% </td><td>
     Secure Transfer of (encrypted) data</td></tr>
-<tr valign="top"><td> 9. </td><td> DEPLOY: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 9. </td><td> DEPLOY: </td><td align="right"> __% </td><td>
     Security Configuration (IaC by <a target="_blank" href="https://wilsonmar.github.io/hashicorp-terraform/">declarative Terraform</a>, <a target="_blank" href="https://wilsonmar.github.io/pulumi/">declarative Pulumi</a>)</td></tr>
-<tr valign="top"><td> 10. </td><td> DEPLOY: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 10. </td><td> DEPLOY: </td><td align="right"> __% </td><td>
     Security Scan - SBOM (Sofware Bill of Materials) for SCA (Sofware Component Analysis)</td></tr>
-<tr valign="top"><td> 11. </td><td> OPERATE: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 11. </td><td> OPERATE: </td><td align="right"> __% </td><td>
     Security Patching <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management</td></tr>
-<tr valign="top"><td> 12. </td><td> OPERATE: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 12. </td><td> OPERATE: </td><td align="right"> __% </td><td>
     Security Audit (such as <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2/ISO 27xxx</a>) reference Run-time App Security Protection (RASP) to monitor and block production traffic. </td></tr>
-<tr valign="top"><td> 13. </td><td> MONITOR: </td><td align="right"> 15% </td><td>
+<tr valign="top"><td> 13. </td><td> MONITOR: </td><td align="right"> __% </td><td>
     Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)</td></tr>
-<tr valign="top"><td> 14. </td><td> FEEDBACK: </td><td align="right"> 15% </td><td>
-    Security Analysis and Bug Bounty programs</td></tr>
-<tr valign="top"><td> --- </td><td> --- </td><td align="right"> 100% </td><td>
-    = Total current completion. </td></tr>
+<tr valign="top"><td> 14. </td><td> FEEDBACK: </td><td align="right"> __% </td><td>
+    Security <strong>Trend Analytics</strong> Analysis; Bug Bounty programs</td></tr>
 </table>
 
-PROTIP: Here are links to my deep-dive notes on each.
+<a name="CompletionPct"></a>
+The "%" column contains the current Percentage of Completion,
+within a trend line over time.
 
 Who does what?
 

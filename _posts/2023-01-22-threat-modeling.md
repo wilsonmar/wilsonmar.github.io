@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-02-12"
+date: "2023-07-08"
 file: "threat-modeling"
 title: "Threat Modeling"
 excerpt: "This is perhaps the most impactful analysis, considering the importance and urgency of keeping your organization from being stolen"
@@ -16,38 +16,29 @@ comments: true
 {% include l18n.html %}
 {% include _toc.html %}
 
-UNDER CONSTRUCTION: Each line and box in the busy flowchart above will be converted to a video with gradual reveal.
-
-This is a <strong>deep dive</strong> with commentry and warnings.
-
 {% include whatever.html %}  
 
 <hr />
 
 There are MANY approaches:
 
-## OWASP
+## OWASP's Threat Modeling
 
-Let's start with <a target="_blank" href="https://owasp.org/www-community/Threat_Modeling_Process">OWASP</a>'s 
-summary of the process:
+Let's start with <a target="_blank" href="https://owasp.org/www-community/Threat_Modeling_Process">OWASP</a>'s summary of the process:
 
    * Step 1: <strong>Decompose</strong> the Application (Data Flow Diagrams showing External Dependencies, Entry Points, Exit Points, Assets, Trust Levels)
 
-   * Step 2: Determine and <strong>Rank Threats</strong> (such as Microsoft's STRIDE)
+   * Step 2: Determine and <strong>Rank Threats</strong> (such as <a href="#STRIDE">Microsoft's STRIDE (below)</a>)
 
    * Step 3: Determine <strong>Countermeasures and Mitigation</strong> (such as ASF)
 
 https://www.wikiwand.com/en/Threat_model
 
-## Micosoft
-
-https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling
-
-
 ### Microsoft's STRIDE
 
 1999, cybersecurity professionals Loren Kohnfelder and Praerit Garg at
-Microsoft developed the acrostic "STRIDE" for their Threat Model Tool used to classify threats in applications:
+Microsoft developed the acrostic "STRIDE" for their Threat Model Tool used to classify threats in applications: [<a target="_blank" href="https://www.wikiwand.com/en/STRIDE_(security)">Wikiwand</a>]:
+
    * Spoofing of user identity
    * Tampering
    * Repudiation
@@ -56,17 +47,15 @@ Microsoft developed the acrostic "STRIDE" for their Threat Model Tool used to cl
    * Elevation of privilege
    <br /><br />
 
-https://www.wikiwand.com/en/STRIDE_(security)
-
 In 2004, Frank Swiderski and Window Snyder wrote “Threat Modeling,” by Microsoft press. In it they developed the concept of using threat models to create secure applications.
 
-https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-getting-started
+   * https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-getting-started
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-feature-overview
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats
+   * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-mitigations
 
-https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-feature-overview
-
-https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats
-
-https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-mitigations
+<a name="PASTA"></a>
 
 ## PASTA
 
@@ -80,12 +69,11 @@ Defenders then take an asset-centric mitigation strategy around applications and
 
 
 
-## Utilities needed
+## Synopsys Utilities needed
 
-But if you're serious about this (and you need to be), you'll need a utility to store all the data for dicing and slicing (visualization).
+<a target="_blank" href="https://www.synopsys.com/software-integrity/solutions/devsecops.html">Synopsys.com</a> sells a utility to store all your threat data for dicing and slicing (visualization). 
 
-<a target="_blank" href="https://www.synopsys.com/software-integrity/solutions/devsecops.html">Synopsis.com</a>
-has a <a target="_blank" href="https://www.synopsys.com/glossary/what-is-threat-modeling.html">5-step approach</a> (for your money's worth):
+They offer a <a target="_blank" href="https://www.synopsys.com/glossary/what-is-threat-modeling.html">5-step approach</a>:
 
 1.  Define the <strong>scope and depth</strong> of analysis. Determine the scope with stakeholders, then break down the depth of analysis for individual development teams so they can threat model the software.
 
@@ -106,6 +94,47 @@ has a <a target="_blank" href="https://www.synopsys.com/glossary/what-is-threat-
     If you reach the software asset without going through a security control, that’s a potential attack. 
 
     If you go through a control, consider whether it would halt a threat agent or whether the agent would have methods to bypass it.
+
+## Threat Maps
+
+Listed at https://hackersonlineclub.com/live-cyber-attack-maps/
+
+* <a target="_blank" href="https://livethreatmap.radware.com/">livethreatmap.radware.com</a> shows top scanned TCP ports (5900, 22, 23, 80).
+
+* <a target="_blank" href="https://www.deteque.com/live-threat-map/">deteque.com/live-threat-map</a> lists botnet threats by country (China, India, US, etc.) and by ISP (ril.com).
+
+* <a target="_blank" href="https://threatmap.checkpoint.com/">threatmap.checkpoint.com</a> gets my prize for the clearest map. The top targeted countries and industries are listed.
+
+* <a target="_blank" href="https://threatmap.bitdefender.com/">threatmap.bitdefender.com</a> features infections, attacks, and spam.
+
+* <a target="_blank" href="https://talosintelligence.com/fullpage_maps/pulse">Talos</a> shows top senders of spam and malware (country and organization).
+
+* <a target="_blank" href="https://securitycenter.sonicwall.com/m/page/worldwide-attacks">securitycenter.sonicwall.com/m/page/worldwide-attacks</a>
+shows top attack origins (US, Austria, Denmark) and targets (US, UK, India).
+
+* <a target="_blank" href="https://www.digitalattackmap.com/#anim=1&color=0&country=US&list=0&time=18212&view=map">digitalattackmap.com</a> is a part of Jigsaw (formerly Google Ideas) provides a gallery of past attacks. The map is based on Arbor's ATLAS threat intelligence system with data sourced from over 300 ISP customers and 130 Tbps of global traffic.
+
+* <a target="_blank" href="https://www.akamai.com/internet-station/cyber-attacks">akamai.com/internet-station/cyber-attacks</a> is now a blog rather than Real-Time Web Monitor.
+
+* <a target="_blank" href="https://www.redlegg.com/blog/cyber-threat-maps">Subscribe</a> to <a target="_blank" href="https://www.redlegg.com/blog">RedLegg's monthly Security Vulnerability Bulletin</a>
+
+* <a target="_blank" href="https://threatmap.fortiguard.com/">threatmap.fortiguard.com</a> shows attacks from and to points (countries) on a map.
+
+* <a target="_blank" href="https://www.digitalattackmap.com/#anim=1&color=0&country=ALL&list=0&time=18763&view=map">digitalattackmap.com</a> shows DDoS attacks worldwide.
+
+* <a target="_blank" href="https://cybermap.kaspersky.com/">cybermap.kaspersky.com</a> Real-Time Map shows, by country, detections observed by these <a target="_blank" href="https://cybermap.kaspersky.com/subsystems">subsystems showing malware detection flow</a>:
+   * OAS (On-Access Scan) - when objects are accessed during open, copy, run, or save operations.
+   * ODS (On Demand Scanner) - when the user manually selects the ’Scan for viruses’ option in the context menu.
+   * MAV (Mail Anti-Virus) - when new objects appear in an email application (Outlook, The Bat, Thunderbird).
+   * WAV (Web Anti-Virus) - when the html page of a website opens or a file is downloaded. It checks the ports specified in the Web Anti-Virus settings.
+   * IDS (Intrusion Detection System) shows network attacks detection flow.
+   * VUL (Vulnerability Scan) shows vulnerability detection flow.
+   * KAS (Kaspersky Anti-Spam) shows suspicious and unwanted email traffic discovered by Kaspersky’s Reputation Filtering technology.
+   * BAD (Botnet Activity Detection) shows statistics on identified IP-addresses of DDoS-attacks victims and botnet C&C (Command-and-Control) servers. These statistics were acquired with the help of the DDoS Intelligence system (part of the solution Kaspersky DDoS Protection).
+   * RMW (Ransomware) shows ransomware detection flow.
+
+* <a target="_blank" href="https://www.fireeye.com/cyber-map/threat-map.html">fireeye.com/cyber-map/threat-map.html</a> returns a 404.
+
 
 ## References
 
