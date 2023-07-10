@@ -1454,7 +1454,34 @@ SP 800-139 Functions to implement the appropriate safeguards to ensure delivery 
 
 Notice that "Improvements" is in both RESPOND and RECOVER.
 
-There are also 108 (previously 97) subcategories.
+There are also 108 (previously 97) subcategories. 
+
+The Category IDs are different from the 18 family identifiers used by RMF SP 800-53.
+
+<table border="1" cellpadding="4" cellspacing="0">
+<tr><th> Class </th><th> ID </th><th> RMF Family </th></tr>
+<tr valign="top"><td rowspan="5"> Management </td><td> CA </td><td> Security Assessment and Authorization </td></tr>
+<tr valign="top"><td> PL </td><td> Planning </td></tr>
+<tr valign="top"><td> RA </td><td> Risk Assessment </td></tr>
+<tr valign="top"><td> SA </td><td> System and Services Acquisition </td></tr>
+<tr valign="top"><td> PM </td><td> Program Management </td></tr>
+
+<tr valign="top"><td rowspan="9"> Operational </td><td> AT </td><td> Awareness and Training </td></tr>
+<tr valign="top"><td> CM </td><td> Configuration Management </td></tr>
+<tr valign="top"><td> CP </td><td> Contingency Planning </td></tr>
+<tr valign="top"><td> IR </td><td> Incident Response </td></tr>
+<tr valign="top"><td> MA </td><td> Maintenance </td></tr>
+<tr valign="top"><td> MP </td><td> Media Protection </td></tr>
+<tr valign="top"><td> PE </td><td> Physical and Environmental Protection </td></tr>
+<tr valign="top"><td> PS </td><td> Personnel Security </td></tr>
+<tr valign="top"><td> SI </td><td> System and Infomration Integrity </td></tr>
+
+<tr valign="top"><td rowspan="5"> Technical </td><td> AT </td><td> Awareness and Training </td></tr>
+<tr valign="top"><td> AC </td><td> Access Control </td></tr>
+<tr valign="top"><td> AU </td><td> Audit and Accountability </td></tr>
+<tr valign="top"><td> IA </td><td> Identification and Authentication </td></tr>
+<tr valign="top"><td> SC </td><td> System and Communications Protection </td></tr>
+</table>
 
 In the NIST CSF, "Informative References" citations relate to more technical activities from other standards or guidelines, to provide additional information on how to achieve outcomes described in Subcategories.
 
