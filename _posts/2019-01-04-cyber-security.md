@@ -237,6 +237,8 @@ Like the <a target="_blank" href="https://wilsonmar.github.io/caiq">CAIQ</a>, it
 
 <a target="_blank" href="https://hitrustalliance.net/understanding-leveraging-csf/">HITRUST Common Security Framework</a> includes, harmonizes, and cross-references existing, globally recognized standards, regulations, and business requirements, including ISO, EU GDPR, <a href="#NIST">NIST</a>, and PCI.
 
+It's a part of the 2009 ARRA (American Recovery and Reinvestment Act).
+
 Through a validated assessment performed by the <a href="#HITRUST">Health Information Trust Alliance (HITRUST)</a>, a leading security and privacy standards development and accreditation organization, Office 365 is certified to the objectives specified in the <a href="#NIST">NIST</a> <a href="#CSF">CSF</a>.
 
 
@@ -1161,9 +1163,11 @@ Others:
 
    * The Federal Intelligence Surveillance Act (FISA) of 1978 affects law enforcement and intelligence agencies and gives procedures for the physical and electronic surveillance and collection of “foreign intelligence information” between “foreign powers” and “agents of foreign powers.”
 
-   * 1986 Computer Fraud and Abuse Act (CFAA) affects any entities that may engage in hacking of <strong>"protected computers"</strong> as defined in the Act. It was the first law written to require a formal computer security plan. It also requires appropriate training of system users or owners where the systems house sensitive information. 
+   * 1986 Computer Fraud and Abuse Act (CFAA) was the first law that required a formal computer security plan. It also requires appropriate training of system users or owners where the systems house sensitive information. Although <strong>"protected computers"</strong> was initially applicable to feds and financial institutions, court cases have expanded coverage to any computer in "interstate commerce".
 
    * 1986 Electronic Communications Privacy Act (ECPA) extended government restrictions on wiretaps from telephone calls to include transmissions of electronic data by computer.
+
+   * 1987 Public Law 100-235 Title 101, Statute 1724 applies to federal systems
 
    * 1991 United States Federal Sentencing Guidelines of affects individuals and organizations convicted of felonies and serious (Class A) misdemeanors. It provides guidelines to prevent sentencing disparities that existed across the United States.
 
@@ -1171,15 +1175,17 @@ Others:
 
    * 1994 Communications Assistance for Law Enforcement Act (CALEA) requires telecommunications carriers and manufacturers of telecommunications equipment to modify and design their equipment, facilities, and services to ensure that they have built-in surveillance capabilities.
 
-   * 1999 GLBA (Gramm-Leach-Bliley Act) affects all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers. 
+   * 1996 Clinger-Cohen Act requires a CIO for each agency to oversee adoption of the Department of Defense Architecture Framework (DODAF) Federal Enterprise Architecture (FEA)
+
+   * 1999 GLBA (Gramm-Leach-Bliley Act) requires all financial institutions, including banks, loan companies, insurance companies, investment companies, and credit card providers to explain practices to consumers.
 
    * The Personal Information Protection and Electronic Documents Act (PIPEDA) affects private sector organizations that collect, use, and disclose personal information in the course of commercial business in Canada. 
 
-   * The Federal Information Security Management Act (FISMA) of 2002 affects every federal agency. It requires the federal agencies to develop, document, and implement an agency-wide information security program. It requires the federal agencies to develop, document, and implement an agency-wide information security program. 
+   * 2002 & 2014 Federal Information Security Management Act (FISMA) affects every federal agency. It requires federal agencies to develop, document, and implement an agency-wide information security program. It requires federal agencies to develop, document, and implement an agency-wide information security program. 
 
    * Basel II affects financial institutions and addresses minimum capital requirements, supervisory review, and market discipline. 
 
-   * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders.
+   * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders and retention of record storage. (to prevent another Enron)
 
    * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for a major credit card company (VISA, MasterCard, Amex, etc.). Each year each merchant submits a SAQ (Self-Assessment Questionaire) to its transaction bank. A QSA (Qualified Security Accesor) certified by the PCI Security Standards Council issues a ROC (Report on Compliance) form. PCI DSS compliance:
       1. Build and maintain a secure network and systems
@@ -1300,20 +1306,19 @@ Data classification program:
 NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
 NIST CSRC (Computer Security Resource Center)
 
-Executive Order 13636: Improving Critical Infrastructure Cybersecurity
-is a mandate from the Obama White House charging the US National Institute of Standards and Technology (NIST) to develop the Cybersecurity Framework (CSF) as a prescriptive standard mandatory for federal agencies but a <strong>voluntary</strong> framework for commercial organizations. CSF does not tell organizations how much risk is tolerable.
+Executive Order 13636: "Improving Critical Infrastructure Cybersecurity"
+issued by the Obama White House on Feb 2013 charged the US National Institute of Standards and Technology (NIST) to develop the Cybersecurity Framework (CSF) as a prescriptive standard mandatory for federal agencies but a <strong>voluntary</strong> framework for commercial organizations. CSF does not tell organizations how much risk is tolerable.
 
-Executive Order 13800 "Strengthening the Cybersecurity of Federal Networks and Critical Infrastructure" was signed by President Donald J. Trump on May 11, 2017. The order aims to improve the nation's cyber posture and capabilities in the face of intensifying cybersecurity threats. Sections: 1) Federal Networks, 2) Critical Infrastructure, 3) the nation.
+<a target="_blank" href="https://www.nist.gov/itl/applied-cybersecurity/nice/resources/executive-order-13800">Executive Order 13800</a>: "Strengthening the Cybersecurity of Federal Networks and Critical Infrastructure" <a target="_blank" href="https://www.govinfo.gov/content/pkg/DCPD-201700327/pdf/DCPD-201700327.pdf">PDF</a> from the Trump White House on May 11, 2017 aims to improve the nation's cyber posture and capabilities in the face of intensifying cybersecurity threats. Sections: 1) Federal Networks, 2) Critical Infrastructure, 3) the nation.
+* Homeland Security Directive 7 (HSPD-7) "Critical Infrastructure Identification, Prioritization, and Protection".
+   * https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-strengthening-cybersecurity-federal-networks-and-critical-infrastructure
+   * https://trumpwhitehouse.archives.gov/articles/strengthening-the-cybersecurity-of-federal-networks-and-critical-infrastructure/
+   * https://www.federalregister.gov/documents/2017/05/16/2017-10004/strengthening-the-cybersecurity-of-federal-networks-and-critical-infrastructure
+   <br /><br />
 
-(1) Executive Order on Strengthening the Cybersecurity of Federal ... - CISA. https://www.cisa.gov/topics/cybersecurity-best-practices/executive-order-strengthening-cybersecurity-federal-networks-and-critical-infrastructure.
-(2) Strengthening the Cybersecurity of Federal Networks and Critical .... https://trumpwhitehouse.archives.gov/articles/strengthening-the-cybersecurity-of-federal-networks-and-critical-infrastructure/.
-(3) Executive Order 13800—Strengthening the Cybersecurity of ... - GovInfo. https://www.govinfo.gov/content/pkg/DCPD-201700327/pdf/DCPD-201700327.pdf.
-(4) Executive Order 13800: Growing and Sustaining the Cybersecurity .... https://www.nist.gov/itl/applied-cybersecurity/nice/resources/executive-order-13800.
-(5) Strengthening the Cybersecurity of Federal Networks and Critical .... https://www.federalregister.gov/documents/2017/05/16/2017-10004/strengthening-the-cybersecurity-of-federal-networks-and-critical-infrastructure.
+The current CSF version 1.1, was released April 2018.
 
-The current version, CSF 1.1, was released April 2018.
-
-The CSF provides a common Language and systematic methodology for managing cyber risk with "best practices".
+The CSF provides a common Language and systematic methodology for managing cyber risk management with "best practices".
 
 The CSF consists of standards, guidelines, and best practices to manage cybersecurity-related risks. 
 
