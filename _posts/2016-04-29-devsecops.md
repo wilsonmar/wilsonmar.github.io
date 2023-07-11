@@ -47,11 +47,11 @@ What is the adoption completion percentage for each process/tool at your organiz
 <tr valign="top"><td> 10. </td><td> DEPLOY: </td><td align="right"> __% </td><td>
     Security Scan - SBOM (Sofware Bill of Materials) for SCA (Sofware Component Analysis)</td></tr>
 <tr valign="top"><td> 11. </td><td> OPERATE: </td><td align="right"> __% </td><td>
-    Security Patching <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management</td></tr>
+    Security Patching NIST SP 800-40 <a target="_blank" href="https://wilsonmar.github.io/jfrog/">SCA (Software Composition Analysis)</a>, Configuration Management</td></tr>
 <tr valign="top"><td> 12. </td><td> OPERATE: </td><td align="right"> __% </td><td>
     Security Audit (such as <a target="_blank" href="https://wilsonmar.github.io/soc2/">SOC2/ISO 27xxx</a>) reference Run-time App Security Protection (RASP) to monitor and block production traffic. </td></tr>
 <tr valign="top"><td> 13. </td><td> MONITOR: </td><td align="right"> __% </td><td>
-    Security Monitoring (and forwarding to central SIEM/SOAR system for alerting)</td></tr>
+    Security Monitoring (and forwarding to central SIEM/SOAR system for alerting) NIST SP 800-92</td></tr>
 <tr valign="top"><td> 14. </td><td> FEEDBACK: </td><td align="right"> __% </td><td>
     Security <strong>Trend Analytics</strong> Analysis; Bug Bounty programs</td></tr>
 </table>

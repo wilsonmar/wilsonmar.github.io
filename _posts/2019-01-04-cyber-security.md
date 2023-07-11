@@ -1476,12 +1476,21 @@ The Category IDs are different from the 18 family identifiers used by RMF SP 800
 <tr valign="top"><td> PS </td><td> Personnel Security </td></tr>
 <tr valign="top"><td> SI </td><td> System and Infomration Integrity </td></tr>
 
-<tr valign="top"><td rowspan="5"> Technical </td><td> AT </td><td> Awareness and Training </td></tr>
-<tr valign="top"><td> AC </td><td> Access Control </td></tr>
+<tr valign="top"><td rowspan="4"> Technical </td><td> AC </td><td> Access Control </td></tr>
 <tr valign="top"><td> AU </td><td> Audit and Accountability </td></tr>
 <tr valign="top"><td> IA </td><td> Identification and Authentication </td></tr>
 <tr valign="top"><td> SC </td><td> System and Communications Protection </td></tr>
 </table>
+
+<a target="_blank" href="https://csrc.nist.gov/Projects/risk-management/about-rmf">RMF</a> <a target="_blank" href="https://ipkeys.com/blog/rmf-steps/">steps</a>:
+1. Prepare (added by SP 800-37 Rev 2)
+2. Categorize SPSCRs
+3. Select 800-53 Rev 5
+4. Implement
+5. Assess
+6. Authorize
+7. Monitor
+<br /><br />
 
 In the NIST CSF, "Informative References" citations relate to more technical activities from other standards or guidelines, to provide additional information on how to achieve outcomes described in Subcategories.
 
@@ -1930,6 +1939,17 @@ Manage the security life cycle of in-house developed, hosted, or acquired softwa
 Control 17: Incident-response management
 
 Key roles and responsibilities should be assigned for incident response, including staff from legal, IT, information security, facilities, public relations, human resources, incident responders, and analysts, as applicable. The plan should be review annually or when significant enterprise changes occur that could affect incident response.
+
+RMF Incident Response severity/priorities:
+* CAT 0 - Exercise/network defense testing
+* CAT 1 - *Unauthorized access
+* CAT 2 - *Denial of Service (DoS)
+* CAT 3 - *Malicious code
+* CAT 4 - *Inappropriate usage
+* CAT 5 - Scans/probes/attempted access
+* CAT 6 - Investigation
+<br /><br />
+
 
 Control 18: Penetration testing
 

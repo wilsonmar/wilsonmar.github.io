@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-02"
+date: "2023-07-10"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -395,7 +395,7 @@ Quizzing Tests:
 
    * Mindmap videos: https://www.youtube.com/channel/UCXk6...​ 
 
-   * <a target="_blank" href="https://www.cissprep.net">$24.99 Cissprep.net Memorisation sheet</a> calls itself "The Best and Most Accurate CISSP Practice Exams" provides Study tips, 28 30-minute quick quizzes, four 1-hour exams, 
+   * <a target="_blank" href="https://www.cissprep.net">$24.99 Cissprep.net Memorisation sheet</a> calls itself "The Best and Most Accurate CISSP Practice Exams" provides Study tips, 28 30-minute quick quizzes, four 1-hour exams, <a target="_blank" href="https://community.isc2.org/t5/CISSP-Study-Group/gh-p/CISSP_Study_Group_Hub">StudyGroup</a>
 
    * <a target="_blank" href="https://www.youtube.com/watch?v=Igq9Q3r00uk">CISSP MasterClass™ Mission</a> by Sagar Bansal
 
