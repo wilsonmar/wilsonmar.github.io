@@ -379,6 +379,12 @@ Video prep courses view:
 
 Quizzing Tests:
 
+   * <a target="_blank" href="https://www.amazon.co.uk/CISSP-Official-ISC-Practice-Tests-ebook/dp/B07D8FZN8M/">BOOK: ISC2 official practice tests</a>
+
+
+   * Kelly Handerhan, the "Mister Rogers of CISSP" <a target="_blank" href="https://www.youtube.com/watch?v=v2Y6Zog8h2A">"Why you will pass the CISSP" video</a> among her <a target="_blank" href="https://www.youtube.com/watch?v=-99b1YUFx0A&list=PLJ-B2OMLT_K89_2YNVj2I7UJMIwuxZydg">YouTube playlist</a> on <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> 
+   which include accompanying mp3 for listening.
+
    * <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">Official 20-item</a> CSSLP Flashcards on Quizlet vs. <a target="_blank" href="https://quizlet.com/54298697/csslp-flash-cards/">89-item</a>
 
    * https://github.com/deanbushmiller/CISSP-Bootcamp
@@ -400,12 +406,6 @@ Quizzing Tests:
    * <a target="_blank" href="https://www.youtube.com/watch?v=Igq9Q3r00uk">CISSP MasterClass™ Mission</a> by Sagar Bansal
 
    * <a target="_blank" href="https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template/">https://www.sageknowsit.com/product/ebook-infosec-brain-dump-template</a>$14.99 eBook: InfoSec Brain Dump Template w/Study Schedule
-
-   * Kelly Handerhan, the "Mister Rogers of CISSP" <a target="_blank" href="https://www.youtube.com/watch?v=v2Y6Zog8h2A">"Why you will pass the CISSP" video</a> among her <a target="_blank" href="https://www.youtube.com/watch?v=-99b1YUFx0A&list=PLJ-B2OMLT_K89_2YNVj2I7UJMIwuxZydg">YouTube CyberTrain.IT playlist</a> 
-
-   * <a target="_blank" href="https://www.cybrary.it/">cybrary.it</a> 
-
-   * <a target="_blank" href="https://www.amazon.co.uk/CISSP-Official-ISC-Practice-Tests-ebook/dp/B07D8FZN8M/">BOOK: ISC2 official practice tests</a>
 
 YouTube videos with content index (and ads) by Rob Richa, with <a target="_blank" href="https://www.linkedin.com/in/jberti/">John Berti</a> of Destination Certifications:
 

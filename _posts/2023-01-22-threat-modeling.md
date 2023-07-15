@@ -55,6 +55,7 @@ In 2004, Frank Swiderski and Window Snyder wrote “Threat Modeling,” by Micro
    * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-threats
    * https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool-mitigations
 
+
 <a name="PASTA"></a>
 
 ## PASTA
@@ -135,6 +136,11 @@ shows top attack origins (US, Austria, Denmark) and targets (US, UK, India).
 
 * <a target="_blank" href="https://www.fireeye.com/cyber-map/threat-map.html">fireeye.com/cyber-map/threat-map.html</a> returns a 404.
 
+
+## Code repositories
+
+https://github.com/ParrotSec/mimikatz
+extracts plaintexts passwords, hash, PIN code and kerberos tickets from memory.
 
 ## References
 
