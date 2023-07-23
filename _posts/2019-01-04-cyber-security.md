@@ -1306,8 +1306,8 @@ Data classification program:
 NIST Information Technology Laboratory</a> emails out <a target="_blank" href="https://public.govdelivery.com/accounts/USNIST/subscriber/new?qsp=USNIST_3">bulletins about vulnerabilities</a>
 NIST CSRC (Computer Security Resource Center)
 
-Executive Order 13636: "Improving Critical Infrastructure Cybersecurity"
-issued by the Obama White House on Feb 2013 charged the US National Institute of Standards and Technology (NIST) to develop the Cybersecurity Framework (CSF) as a prescriptive standard mandatory for federal agencies but a <strong>voluntary</strong> framework for commercial organizations. CSF does not tell organizations how much risk is tolerable.
+<a target="_blank" href="https://obamawhitehouse.archives.gov/the-press-office/2013/02/12/executive-order-improving-critical-infrastructure-cybersecurity">Executive Order 13636</a>: "Improving Critical Infrastructure Cybersecurity"
+issued by the Obama White House on Feb 2013 charged the US National Institute of Standards and Technology (NIST) to develop their <a target="_blank" href="https://www.nist.gov/cyberframework">Cybersecurity Framework (CSF)</a> as a prescriptive standard mandatory for federal agencies but a <strong>voluntary</strong> framework for commercial organizations. CSF does not tell organizations how much risk is tolerable.
 
 <a target="_blank" href="https://www.nist.gov/itl/applied-cybersecurity/nice/resources/executive-order-13800">Executive Order 13800</a>: "Strengthening the Cybersecurity of Federal Networks and Critical Infrastructure" <a target="_blank" href="https://www.govinfo.gov/content/pkg/DCPD-201700327/pdf/DCPD-201700327.pdf">PDF</a> from the Trump White House on May 11, 2017 aims to improve the nation's cyber posture and capabilities in the face of intensifying cybersecurity threats. Sections: 1) Federal Networks, 2) Critical Infrastructure, 3) the nation.
 * Homeland Security Directive 7 (HSPD-7) "Critical Infrastructure Identification, Prioritization, and Protection".
@@ -1697,6 +1697,8 @@ Microsoft Threat Model Tool uses "STRIDE" as a mnemonic for classification of th
 Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</a> process looks at Tactics, Techniques, and Procedures (TTPs) for Enterprise IT. PROTIP: Click on the icon to the right of each item for additional info.
 
 <a target="_blank" href="https://www.dragos.com/">Dragos</a> <a target="_blank" href="https://hub.dragos.com/hubfs/Whitepaper-Downloads/Mapping-Industrial-Cybersecurity-Threats-to-MITRE-ATTACK-for-ICS.pdf">PDF: ATT&CK for IoC</a> (Industrial Control Systems)
+
+### Cyber Kill Chain: MITRE ATT&CK
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr><th><a target="_blank" href="https://attack.mitre.org/">MITRE</a>
@@ -3078,34 +3080,39 @@ One large PDF of what to remember while taking the CISSP exam.
 * At Cisco, <a target="_blank" href="https://www.linkedin.com/in/-rontaylor/">Ron Taylor</a> <a target="_blank" href="https://github.com/The-Art-of-Hacking/h4cker">https://github.com/The-Art-of-Hacking/h4cker</a> (<a target="_blank" href="https://h4cker.org/github/">by</a> <a target="_blank" href="https://www.linkedin.com/in/santosomar/">Omar Santos</a> used in <a target="_blank" href="https://dcloud.cisco.com/">Cisco's Cyber Defense Clinic Lab</a> <a target="_blank" href="https://dcloud2-sjc.cisco.com/content/catalogue">catalog</a>
 
    * NetFlow uses less disk space than full packete capture.
+
+   Ron also created the https://cyberresiliencebootcamp.com/
+   uses <a target="_blank" href="https://dcloud.cisco.com/">Cisco's Cyber Defense Clinic Lab at https://dcloud.cisco.com</a>
+   referencing https://github.com/The-Art-of-Hacking/h4cker
    <br /><br />
 
 <a target="_blank" href="https://www.microsoft.com/en-us/securityengineering/sdl">Microsoft's Security Development Lifecycle</a>
 
 https://flaksec.com/not-all-metrics-are-created-equal-a-gitlab-security-case-study/
 
+
 ## Sharing groups
 
-https://www.nationalisacs.org/
+* Gerald Auger</a>'s <a target="_blank" href="https://www.youtube.com/@SimplyCyber/streams">Daily Cyber Threat Brief videos</a> within his <a target="_blank" href="https://www.youtube.com/channel/UC0ArlFuFYMpEewyRBzdLHiw">Simply Cyber YouTube channel</a>.
+
+* https://www.nationalisacs.org/
 ISAC (Information Sharing and Analysis Center)
-https://www.nationalisacs.org/member-isacs-3
+* https://www.nationalisacs.org/member-isacs-3
 www.it-isac.org
-https://www.linkedin.com/company/isacindia/
-https://www.linkedin.com/company/it-isac/
-https://www.linkedin.com/company/health-isac/
+* https://www.linkedin.com/company/isacindia/
+* https://www.linkedin.com/company/it-isac/
+* https://www.linkedin.com/company/health-isac/
       contact@h-isac.org
-https://h-isac.org/health-industry-cybersecurity-practices/  = Video & PDF of practices
-https://h-isac.org/wp-content/uploads/2019/09/405-vol1-508.pdf
+* https://h-isac.org/health-industry-cybersecurity-practices/  = Video & PDF of practices
+* https://h-isac.org/wp-content/uploads/2019/09/405-vol1-508.pdf
 ISAC Certified Basics in Information Security (ICBIS) Course.
 
-CISC (Cyber Intelligence Sharing Center)
+* CISC (Cyber Intelligence Sharing Center)
 
-https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
+*  https://www.cio.com/article/2600345/11-steps-attackers-took-to-crack-target.html
 
-https://podcasts.apple.com/us/podcast/hard-fork/id1528594034
+* https://podcasts.apple.com/us/podcast/hard-fork/id1528594034
 by the New York Times reporters talking about TikTok's Spying, ChatGPT
-
-Gerald Auger</a>'s <a target="_blank" href="https://www.youtube.com/@SimplyCyber/streams">Daily Cyber Threat Brief videos</a> within his <a target="_blank" href="https://www.youtube.com/channel/UC0ArlFuFYMpEewyRBzdLHiw">Simply Cyber YouTube channel</a>.
 
 
 ## Discord channels
@@ -3156,6 +3163,10 @@ AKA Application Security Manager. Can be configured as a reverse proxy that acce
 ## CISO-targeted
 
 https://www.pulseconferences.com/
+
+
+## Resources
+
 
 ## More on Security #
 

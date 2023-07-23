@@ -3,7 +3,7 @@ layout: post
 title: "Azure Machine Learning"
 excerpt: "Notes for before and after getting AI-900, AI-102, and DP-100 certified, as we automate ML workflows in the Azure PaaS cloud"
 tags: [microsoft, azure, machine learning, AI]
-date: "2021-09-04"
+date: "2023-07-21"
 file: "azure-machine-learning"
 image:
 # feature: pic green matrix hallway 1900x500.jpg
@@ -51,13 +51,14 @@ A complete sample app is Microsoft' Northwinds Traders consumer ecommerce store.
 <a target="_blank" href="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/northwind-install">install</a>
 But where is it used in the course?
 
-Tim Warner's <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Powershell scripts</a>:
+Although it's from 2021, <a target="_blank" href="https://github.com/timothywarner/ai100">https://github.com/timothywarner/ai100</a> by Tim Warner includes <a target="_blank" href="https://github.com/timothywarner/ai100/tree/master/powershell-cli">Python and Powershell (ps1) scripts</a>:
 
+   * ssh-to-aks.md - SSH into AKS cluster nodes
    * keyvault-soft-delete-purge.ps1
    * keyvault-storage-account.ps1
-   * python-keyvault.py
-   * ssh-to-aks.md - SSH into AKS cluster nodes
    * xiot-edge-windows.ps1
+   
+   * python-keyvault.py
    * autoprice.py
    <br /><br />
 

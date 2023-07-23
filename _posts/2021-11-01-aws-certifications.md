@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-01-22"
+date: "2023-07-22"
 file: "aws-certifications"
 title: "AWS (Professional) Certifications"
 excerpt: "Tips and tricks to get certified: links to tutorials, videos, practice exams."
@@ -49,10 +49,11 @@ Covered only in specialty exams:
    * Mobile Hub, SDK
    * IoT 
 
-Not covered:
-   * Amazon Chime, SES (Simple Email Service)
-   * Amazon CloudSearch
-   * Amazon Connect
+Not covered in exams:
+   * <a target="_blank" href="https://aws.amazon.com/chime/">Amazon Chime</a>
+   * Amazon SES (Simple Email Service)
+   * <a target="_blank" href="https://aws.amazon.com/cloudsearch/">Amazon CloudSearch</a> to add rich search capabilities to your website or application.
+   * <a target="_blank" href="https://aws.amazon.com/connect/">Amazon Connect</a> to provide customer service with a cloud contact center GUI
 
 
 <hr />
