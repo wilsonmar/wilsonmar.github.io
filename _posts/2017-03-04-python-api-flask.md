@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2017-03-04"
+date: "2023-07-23"
 file: "python-api-flask"
 title: "Python API flask"
 excerpt: "Step-by-step using the Flask REST API library using SQLite3 locally in venv on a Mac"
@@ -406,16 +406,16 @@ https://github.com/nickjj/build-a-saas-app-with-flask.git</a>
 
 Actions include folder navigation and creation, virtualenv, etc.
 
-0. <a target="_blank" href="https://wilsonmar.github.io/terminal">Open a Terminal shell window on Mac</a> or cmd window on Windows.
+1. <a target="_blank" href="https://wilsonmar.github.io/terminal">Open a Terminal shell window on Mac</a> or cmd window on Windows.
 
-0. Create a folder where you hold various projects under your user home folder. On a Mac:
+1. Create a folder where you hold various projects under your user home folder. On a Mac:
 
    <pre><strong>cd ~ && mkdir -p gits
    </strong></pre>
 
    Alternately, use the workspace you use with a text editor or IDE.
 
-0. Create and/or navigate into a folder holding where git will create repositories (substituting "wilsonmar" below with your GitHub account name):
+1. Create and/or navigate into a folder holding where git will create repositories (substituting "wilsonmar" below with your GitHub account name):
 
    <pre><strong>mkdir wilsonmar && cd wilsonmar 
    </strong></pre>
@@ -433,7 +433,7 @@ Actions include folder navigation and creation, virtualenv, etc.
    Note the repository was <strong>forked</strong> from GitHub user "sagaragarwal94" = 
    Sagar Chand Agarwal (<a target="_blank" href="https://twitter.com/sagaragarwal94?lang=en">@sagaragarwal94</a>).
 
-0. Have Git create a folder and download code from GitHub:
+1. Have Git create a folder and download code from GitHub:
 
    <pre><strong>git clone <a target="_blank" href="https://github.com/wilsonmar/python-api-flask">https://github.com/wilsonmar/python-api-flask</a>
    cd python-api-flask
@@ -467,12 +467,12 @@ Actions include folder navigation and creation, virtualenv, etc.
 
    <a name="PythonEnv"></a>
 
-   ## Viraual Environment
+   ## Visual Environment
 
    PROTIP: The `standup.sh` file in the repo from GitHub performs the steps below automatically. The script can be run repeatedly.
 
-0. Install virtualenv.
-0. Create a simple virtual environment folder named "venv":
+1. Install virtualenv.
+1. Create a simple virtual environment folder named "venv":
 
    <pre><strong>virtualenv venv
    cd venv
@@ -497,7 +497,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
    PROTIP: `venv` is specified in the `.gitignore` file so the folder isn't uploaded up to GitHub, since it's created each time.
 
-0. Manually activate if you do not use the .env file:
+1. Manually activate if you do not use the .env file:
 
    <pre><strong>source venv/bin/activate
    </strong></pre>
@@ -506,7 +506,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
    <pre>(venv)
    </pre>
 
-0. When the virtual environment is active:
+1. When the virtual environment is active:
 
    <pre><strong>python --version</strong></pre>
 
@@ -514,7 +514,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
    <pre>Python 3.7.5</pre>
 
-0. BTW, to get out of a virtualenv environment:
+1. BTW, to get out of a virtualenv environment:
 
    <pre><strong>deactivate
    </strong></pre>
@@ -529,7 +529,7 @@ export DATABASE_URL="postgresql://localhost/flask_api"
 
    ### Dependencies in Requirements.txt
 
-0. Install dependencies within venv: 
+1. Install dependencies within venv: 
 
    <pre><strong>pip install flask flask-jsonpify flask-sqlalchemy flask-restful
    </strong></pre>
@@ -568,7 +568,7 @@ SQLAlchemy==1.1.14
 Werkzeug==0.12.2
    </pre>
 
-0. Download and install Python dependencies specified:
+1. Download and install Python dependencies specified:
 
    <pre><strong>pip install -r requirements.txt
    </strong></pre>
@@ -648,7 +648,7 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
 
    ### Flask home page
 
-0. Read the description the Flask Framework at <a target="_blank" href="http://flask.pocoo.org/">http://flask.pocoo.org</a> 
+1. Read the description the Flask Framework at <a target="_blank" href="http://flask.pocoo.org/">http://flask.pocoo.org</a> 
 
    Additional information about the Flask framework is at:
 
@@ -680,7 +680,7 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
 
    ### Establish Database
 
-0. Install SQLite3 on MacOS from the internet:
+1. Install SQLite3 on MacOS from the internet:
 
    <pre><strong>brew install sqlite3
    </strong></pre>
@@ -692,11 +692,11 @@ ERROR: Cannot uninstall 'six'. It is a distutils installed project and thus we c
    <a target="_blank" href="http://www.sqlitetutorial.net/download/sqlite-sample-database/?wpdmdl=94">
    http://www.sqlitetutorial.net/download/sqlite-sample-database/?wpdmdl=94</a>
 
-   0. Unzip file to obtain file "chinook.db" which contains the database.
-   0. Move the chinook.db file to the `python_rest` folder.
+   1. Unzip file to obtain file "chinook.db" which contains the database.
+   1. Move the chinook.db file to the `python_rest` folder.
    <br /><br />
    
-0. Open the database using SQLite:
+1. Open the database using SQLite:
 
    <pre><strong>sqlite3  chinook.db  &
    </strong></pre>
@@ -708,7 +708,7 @@ Enter ".help" for usage hints.
    sqlite> 
    </pre>
 
-0. Open another Terminal to list commands:
+1. Open another Terminal to list commands:
 
    <pre><strong> sqlite> .help
    </strong></pre>
@@ -786,7 +786,7 @@ Enter ".help" for usage hints.
                          Negative values right-justify
     </pre>
 
-0. List the 11 custom data tables in the sample chinook database loaded:
+1. List the 11 custom data tables in the sample chinook database loaded:
 
    <pre><strong> sqlite> .tables
    </strong></pre>
@@ -805,7 +805,7 @@ Enter ".help" for usage hints.
 
    <a target="_blank" href="https://user-images.githubusercontent.com/300046/31187951-48433100-a8e8-11e7-8cfb-6298fc1db760.jpg"><img alt="sqlite-sample-database-color-650x327-82797" width="650" heigh="327" src="https://user-images.githubusercontent.com/300046/31187951-48433100-a8e8-11e7-8cfb-6298fc1db760.jpg"></a>
 
-0. For more information from the <a target="_blank" href="http://www.sqlitetutorial.net/sqlite-sample-database/">SQLite Tutorial website</a>.
+1. For more information from the <a target="_blank" href="http://www.sqlitetutorial.net/sqlite-sample-database/">SQLite Tutorial website</a>.
 
    <ul>
    <li> <code>employees</code> table stores employees data such as employee id, last name, first name, etc. It also has a field named <code>ReportsTo</code> to specify who reports to whom.</li>
@@ -821,18 +821,18 @@ Enter ".help" for usage hints.
 
    ### invoke
 
-0. <strong>Open another Terminal</strong> shell window so that the database remains running.
-0. Navigate to the directory you are using:
+1. <strong>Open another Terminal</strong> shell window so that the database remains running.
+1. Navigate to the directory you are using:
 
    <pre><strong>cd ~/gits/wilsonmar/python-api-flask
    </strong></pre>
 
-0. Ensure permissions: On a Mac:
+1. Ensure permissions: On a Mac:
 
    <pre><strong>chmod a+x server.py
    </strong></pre>
 
-0. Initiate the Python web service:
+1. Initiate the Python web service:
 
    <pre><strong>python server.py
    </strong></pre>
@@ -862,12 +862,12 @@ ImportError: No module named flask</pre>
 
    ### Run Flask Compile and Preview 
 
-0. Define the environment variable recognized by Flask and run flask:
+1. Define the environment variable recognized by Flask and run flask:
 
    <pre><strong>export FLASK_APP=server.py
    </strong></pre>
 
-0. Compile using Flask
+1. Compile using Flask
 
    <pre><strong>flask run
    </strong></pre>
@@ -877,7 +877,7 @@ ImportError: No module named flask</pre>
    <pre><strong>python -m flask run
    </strong></pre>
 
-0. In a browser visit the web page on the designated port:
+1. In a browser visit the web page on the designated port:
 
    <pre><strong>open https://localhost:5000/tracks
    </strong></pre>
@@ -887,7 +887,7 @@ ImportError: No module named flask</pre>
    ![python-flask-response-687x272](https://user-images.githubusercontent.com/300046/71012315-2d053080-20ac-11ea-927f-c231476a8b56.png)
 
 
-0. If you are following along <a href="#TomBellProjects">Tom Bell's projects on Pluralsight</a>, see his preview at:
+1. If you are following along <a href="#TomBellProjects">Tom Bell's projects on Pluralsight</a>, see his preview at:
 
    <a target="_blank" href="https://pfjb.thomasbell.org">https://pfjb.thomasbell.org</a>
 
@@ -916,8 +916,8 @@ ImportError: No module named flask</pre>
 
    Tests are coded first in a BDD (Behavior Driven Design):
 
-0. Open `tests.py` in a text editor.
-0. View the bottom of the program where code to invoke it is defined:
+1. Open `tests.py` in a text editor.
+1. View the bottom of the program where code to invoke it is defined:
 
    <pre>if __name__ == '__main__':
      app.run
@@ -925,8 +925,8 @@ ImportError: No module named flask</pre>
 
    ## Routes Walkthough
 
-0. Open `server.py` in a text editor.
-0. View the bottom of the program where code to invoke it is defined:
+1. Open `server.py` in a text editor.
+1. View the bottom of the program where code to invoke it is defined:
 
    <pre>if __name__ == '__main__':
      app.run
@@ -941,7 +941,7 @@ ImportError: No module named flask</pre>
 
    ### Get Tracks
 
-0. In your browser, go to the URL with "tracks":
+1. In your browser, go to the URL with "tracks":
 
    <a target="_blank" href="http://127.0.0.1:5000/tracks">http://127.0.0.1:5000/tracks</a>
 
@@ -963,7 +963,7 @@ ImportError: No module named flask</pre>
     }, 
    </pre>
 
-0. In the Terminal/Console, notice the detailed logging:
+1. In the Terminal/Console, notice the detailed logging:
 
    <pre>127.0.0.1 - - [09/Dec/2019 21:10:32] "GET / HTTP/1.1" 404 -
 127.0.0.1 - - [09/Dec/2019 21:10:32] "GET /favicon.ico HTTP/1.1" 404 -
@@ -981,7 +981,7 @@ ImportError: No module named flask</pre>
 
 ## Review outputs
 
-0. Review this output from a database query to obtain a result returned:
+1. Review this output from a database query to obtain a result returned:
 
    <pre>
 class Tracks(Resource):
@@ -1014,7 +1014,7 @@ class Tracks(Resource):
 
    ### List Employees
 
-0. In your browser, go to the URL accessing the "employees" list route:
+1. In your browser, go to the URL accessing the "employees" list route:
 
    <a target="_blank" href="http://127.0.0.1:5000/employees">http://127.0.0.1:5000/employees</a>
 
@@ -1033,7 +1033,7 @@ class Tracks(Resource):
 
    ### List specific employee
 
-0. In your browser, go to the URL accessing the employees/item route:
+1. In your browser, go to the URL accessing the employees/item route:
 
    <a target="_blank" href="http://127.0.0.1:5000/employees/8">http://127.0.0.1:5000/employees/8</a> 
 
@@ -1076,7 +1076,7 @@ class Tracks(Resource):
         return {'employees': [i[0] for i in query.cursor.fetchall()]} # Fetches first column that is Employee ID
    </pre>
 
-0. Instead of "8", use annother number to obtain data for another employee.
+1. Instead of "8", use annother number to obtain data for another employee.
 
    PROTIP: This is no longer considered a secure design. Services now use hashed values instead of allowing incrementable numbers to identify specific rows.
 
@@ -1235,6 +1235,62 @@ https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
 https://github.com/alexdebrie/serverless-flask
 
 https://stackabuse.com/serving-static-files-with-flask/
+
+## Cisco PSIRT
+
+The <a target="_blank" href="https://developer.cisco.com/psirt/
+">Product Security Incident Response Team (PSIRT) at Cisco</a> has open-sourced:
+
+   <ul>https://github.com/CiscoPSIRT/openVulnAPI</ul>
+
+The openVuln API is a RESTful API for technical staff and programmers to build tools that to keep up with security vulnerability information.
+It uses open security standards OVAL, CVRF, CVSS, CVE, CWE
+
+1. Obtain a Cisco account
+2. Sign in at 
+
+   <a target="_blank" href="https://apiconsole.cisco.com/">https://apiconsole.cisco.com</a>
+
+3. Review posts in the <a target="_blank" href="https://community.cisco.com/t5/custom/page/page-id/CustomFilteredByMultiLabel/page/1?board=j-disc-dev-services&labels=Cisco%20Product%20Security%20Incident%20Response%20Team%20(PSIRT)">PSIRT Community</a>
+
+4. Register Your Application with selected APIs to receive your OAuth2.0 credentials.
+5. Get Access Tokens for your application using
+
+   https://id.cisco.com/oauth2/default/v1/token
+
+6. Store Access Tokens securely (such as in Vault)
+
+7. Read about the latest changes:
+
+   https://raw.githubusercontent.com/api-at-cisco/Images/master/Whats_New_Doc.pdf
+
+8. Interactive try the "Hello World" API manually using Postman GUI or curl CLI at 
+   
+   <a target="_blank" href="https://apiconsole.cisco.com/io-docs/">https://apiconsole.cisco.com/io-docs</a>
+
+   NOTE: Token URL: https://cloudsso.cisco.com/as/token.oauth2
+
+   https://api.cisco.com/security/advisories/v2/all
+
+   interaction with https://api.cisco.com, see:
+
+9. Click the download icon to download JSON output.
+
+10. View all API endpoints at:
+
+   https://developer.cisco.com/docs/psirt/#!api-reference/api-reference
+
+   REMEMBER: Limitations:
+   * Endpoint /all is removed due to the amount of data that it returns.
+   * Requests that result in large amount of data being returned may hang/timeout.
+
+11. Code your app to make API Calls using your token and get access to your data.
+
+12. Contact the developer by posting an issue.
+
+https://apiconsole.cisco.com/docs/read/overview/Platform_Introduction
+
+
 
 ## API
 

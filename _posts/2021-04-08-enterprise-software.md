@@ -2,8 +2,8 @@
 layout: post
 date: "2023-07-18"
 file: "enterprise-software"
-title: "If you're trying to sell software to enterprises, please have these features."
-excerpt: "How to meet enterprise needs with multi-dimensional offerings with no limits of scale and geography, and complexity"
+title: "Your offering enterprise-worthy?"
+excerpt: "How to provide enterprises multi-dimensional offerings with no limits of scale, geography, and complexity"
 tags: [security, cloud, analytics]
 image:
 # enterprise-office-1900x500.png

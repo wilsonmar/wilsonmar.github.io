@@ -49,6 +49,45 @@ Because service accounts and authorization are tightly coupled with the applicat
 The Cybersecurity Enhancement Act of 2014 (CEA), aka Public Law No. 113-274, provide a voluntary public-private partnership to improve cybersecurity.
 
 
+## Security Processes
+
+* Asset management
+   * Assets inventory
+   * Assets acceptable use and return policies
+   * Assets ownership
+   * Assets classification
+   * Assets labeling Assets handling
+   * Media management
+
+* Configuration management
+   * NIST SP 800-128
+   * Configuration Item
+   * Configuration Management Database (DMD
+   * Security-focused configuration management (SecCM)
+
+* Mobile device management (MDM)
+   * Restrict user application access
+   * Limit or prevent access to organization assets
+   * Monitor, alert and report on policy violation
+   * Encrypt data
+   * Remote wipe
+   * Remote lock
+   * DLP
+
+* Patch management
+   * Identify the systems (workflow)
+   * Prioritize the systems
+   * Evaluate countermeasures
+   * Start change process
+   * Update configuration records
+
+* Vulnerability management
+   1. Identification
+   2. Analysis & Prioritization
+   3. Remediation
+
+<hr />
+
 ## Security Engineer
 
 Here are "Essential Job Functions" based on various job descriptions:
@@ -83,7 +122,7 @@ Education/Experience Requirements:
 * Demonstrated ability to develop effective working relationships that improved the quality of work products.
 * Should be well organized, thorough, and able to handle competing priorities.
 * Ability to maintain focus and develop proficiency in new skills rapidly.
-* Ability to work in a fast paced environment.
+* Ability to work in a fast-paced environment.
 * In-depth knowledge of more than one Information Security principle and discipline.
 <br /><br />
 
@@ -92,10 +131,10 @@ Education/Experience Requirements:
 <a target="_blank" href="https://quizlet.com/222277746/devsecops-acronyms-and-buzzwords-flash-cards/">
 My Quizlet of Cyber Security Aconyms</a>
 
+   * Guidelines - recommended actions to follow
    * Policies - general statements from management
    * Standards - specific mandatory security controls
    * Procedures - step-by-step instructions
-   * Guidelines - recommended actions to follow
    <br /><br />
 
 <a name="Threats"></a>
@@ -105,18 +144,17 @@ Definitions: REMEMBER:
    * A threat agent (a malicious actor) is an individual or group that can manifest a threat.
    * A threat event is a specific instance of a threat
 
-   * A vulnerability is a (potentially expliotable) weakness where there is absence of a countermeasure in place.
+   * A vulnerability is a (potentially exploitable) weakness where there is the absence of a countermeasure in place.
    * An exposure is an instance of being subjected or exposed to losses from a threat.
    * A trigger is an event that indicates that a risk has occurred or is about to occur. 
    * <strong>Enticements</strong> are apparent flaws deliberately made available for penetration and exploitation.
 
    * <a href="#Attacks">Attacks</a> are attempts to violate an organization’s security or privacy
-   * An exploit is when a threat agent successfully takes advantage of a vulnerability
-   * A breach is an attack that has been successful in reaching its goal. 
+   * An <strong>exploit</strong> is when a threat agent successfully takes advantage of a vulnerability
+   * Likelihood (of occurrence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
+   * Level of risk before treatment is the <strong>inherent risk</strong>
+   * A <strong>breach</strong> is an attack that has been successful in reaching its goal.    
    * Impact is the magnitude of harm caused by a threat source
-
-   * Likelihood (of occurence) is a weighted factor that a given threat agent is capable of exploiting a given vulnerability
-   * Level of risk before treatment is the inherent risk
    <br /><br />
 
 ## Quantitative risk analysis: 
@@ -142,7 +180,7 @@ Impact from loss of confidentiality:
    <br /><br />
 
 <a name="CIA">CIA</a> triad tenents: +IAAA
-   * Confidentiality vs. Disclosure (IPSec encryption in transit, social engineering)
+   * Confidentiality vs. Disclosure (IPSec encryption in transit, <a href="#SocialEngineering">social engineering</a>)
    * Integrity vs. Alteration (shared among authorized persons or organizations)
    * Availability vs. Destruction (RAID-5, DDoS)
    <br /><br />
@@ -682,7 +720,7 @@ by Matthew Bishop, PhD at UCDavis
    * 17.3	Implement a Security Awareness Program
    * 17.4	Update Awareness Content Frequently
    * 17.5	Train Workforce on Secure Authentication
-   * 17.6	Train Workforce on Identifying Social Engineering Attacks
+   * 17.6	Train Workforce on Identifying <a href="#SocialEngineering">social engineering</a> Attacks
    * 17.7	Train Workforce on Sensitive Data Handling
    * 17.8	Train Workforce on Causes of Unintentional Data Exposure
    * 17.9	Train Workforce Members on Identifying and Reporting Incidents
@@ -1071,6 +1109,46 @@ The Top Five Security Metrics</a>
 
 (At the top of the list is Debian.)
 
+<a name="SocialEngineering"></a>
+
+### Social Engineering
+
+* Tailgating / piggybacking
+
+Credential harvesting:
+* Eliciting information
+* Impersonation
+
+* Phishing, Spear-phishing, whaling
+* Vishing (via a voicemail by phone )
+* Smishing, aka SMS phishing, uses phishing methods through text messaging
+* Watering Hole Attack attacks a site that the target frequently visits. 
+* Pharming redirects victims to a bogus website
+
+* Invoice scam
+* Pretexting
+* Credential harvesting
+
+* Prepending - adding something to the front of something else, such as adding an asterisk to the front of code or prepending text to the subject line or body of an email. 
+
+* "Hybrid warfare": Influencing campaign, propaganda, disinformation, hoaxes
+* Manufacturing consent
+
+Lures:
+
+* Authority (posing as government, customer)
+* Scarcity
+* Familiarity/liking
+* Urgency
+
+Hoax
+
+Influence campaign
+
+Watering hole attack
+
+Typo squatting
+
 ## International 
 
 International Organization for Standardization (ISO) and the International Electrotechnical Commission <a target="_blank" href="https://www.iso27001security.com/html/27018.html"><strong>(IEC) 27018:2019</strong></a> Code of practice for protection of Personally Identifiable Information (PII) in public clouds acting as PII processors  covers the processing of personal information by cloud service providers. 27018 interprets rather than duplicates <a target="_blank" href="https://www.iso27001security.com/html/27002.html">ISO/IEC 27002:2013</a>. For example, advising cloud service providers to advise their customers if they use sub-contractors.
@@ -1187,7 +1265,7 @@ Others:
 
    * The Sarbanes-Oxley (SOX) Act provides guidelines on accurately reporting corporate financial data to shareholders and retention of record storage. (to prevent another Enron)
 
-   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for a major credit card company (VISA, MasterCard, Amex, etc.). Each year each merchant submits a SAQ (Self-Assessment Questionaire) to its transaction bank. A QSA (Qualified Security Accesor) certified by the PCI Security Standards Council issues a ROC (Report on Compliance) form. PCI DSS compliance:
+   * The Payment Card Industry Data Security Standard (PCI DSS) affects any organizations that handle cardholder information for a major credit card company (VISA, MasterCard, Amex, etc.). Each year each merchant submits a SAQ (Self-Assessment Questionaire) to its transaction bank. A QSA (Qualified Security Assessor) certified by the PCI Security Standards Council issues a ROC (Report on Compliance) form. PCI DSS compliance:
       1. Build and maintain a secure network and systems
       2. Protect cardholder data
       3. Maintain a vulnerability management program
@@ -1201,11 +1279,6 @@ Others:
       * Secure Software Operations
       * Secure Software Lifecycle Management
       <br /><br />
-
-Attacks are classified by the method and vector:
-   * Method is how an attack is executed, or “the mechanism that was used”.
-   * Vector is how an attack is carried out, or “the course that was taken”.
-For example, in a ransomware attack, ransomware itself is the method, but the vector may have been email.
 
    * COPPA (???) - online collection and use of data for minors under 13
 
@@ -1501,6 +1574,8 @@ In the NIST CSF, "Informative References" citations relate to more technical act
    * Tier 4: <strong>Adaptive</strong> - the organization adapts its cybersecurity practices based on lessons learned and predictive indicators derived from previous and current cybersecurity activities through a process of continuous improvement.
    <br /><br />
 
+<a name="SP800-154"></a>
+
 NIST SP 800-154 is a draft publication for data-centric system threat modeling. Its steps:
    1. Identify and characterize the system and data of interest.
    2. Identify and select the attack vectors to be included in the model.
@@ -1765,9 +1840,17 @@ Since 2013, <a target="_blank" href="https://attack.mitre.org/">MITRE's ATT&CK</
 
 Attacks: attempts to violate an organization’s security or privacy: REMEMBER: 
 
-<strong>Cryptoanalytic</strong> attacks try to deduce the key via brute-force (dictionary most likely)
+Attacks are classified by the method and vector:
+   * Method is how an attack is executed, or “the mechanism that was used”. Example: ransomware
+   * Vector is how an attack is carried out, or “the course that was taken”. Example: email
+   <br /><br />
 
-<strong>Cryptographic</strong> attacks: man-in-the-middle, replay, timing, radiation,
+<strong>Cryptoanalytic</strong> attacks try to deduce the key via brute force 
+   * a dictionary of common passwords
+   * a Rainbow Table - a very large set of precomputed hash values for every possible combination of characters that is able to reverse cryptographic hash functions
+   <br /><br />
+
+<strong>Cryptographic</strong> attacks: man-in-the-middle, replay, timing, radiation
 
    * A <strong>smurf</strong> attack uses a type of ping packet called an ICMP ECHO REQUEST. 
    * In a <strong>side-channel</strong> attack, the attacker gains information about the encryption algorithms from the cryptosystem that is implemented in the network.
@@ -1790,7 +1873,23 @@ Attacks: attempts to violate an organization’s security or privacy: REMEMBER:
    <br /><br />
 
 "Live off the land" malware have <a target="_blank" href="https://www.mcafee.com/enterprise/en-us/security-awareness/ransomware/what-is-fileless-malware.html">Low Observable Characteristics (LOC)</a>.
-They are called "fileless". So they can evade traditional anti-virus signature detection. They can also continually evolve. 
+They are called "fileless". So they can evade traditional anti-virus signature detection. They can also continually evolve.
+
+Bluejacking is when a user’s device gets paired with an attacker’s device, and the user’s device makes its data available for unauthorized access, modification, or deletion. Bluejacking enables the receipt of unsolicited photos or messages from a nearby device to another Bluetooth-enabled device, such as a smartphone. 
+
+Bluesnarfing is also a Bluetooth attack, but it involves unauthorized pairing and access to the device.
+
+Jamming is an attack on a wireless network that is performed by setting up a nearby access point and using a dedicated wireless jamming device to block Wi-Fi signals. 
+
+An initialization vector (IV) is a fixed-size input of a random or pseudo-random value used with block cipher modes. Some Wi-Fi technologies are susceptible to IV attack, which uses passive statistical analysis. An IV is an input to a cryptographic algorithm, which is essentially a random number. Ideally, an IV should be unique and unpredictable. “It should be short” is incorrect because an IV attack can occur when the IV is too short. The attack is possible when the IV is not long enough, which means it has a high probability of repeating itself after only a small number of packets.
+
+An evil twin is a wireless access point fraudulently installed to perform a man-in-the-middle attack and often used for eavesdropping. 
+
+Maneuvering enables a security team to completely disrupt an attacker or quickly mitigate an attacker's ability to move across the attack chain. 
+
+Intelligence fusion brings together internal and external threat feeds.
+
+A zero-day attack or threat is a computer threat that tries to exploit computer application vulnerabilities that are unknown to others and possibly even the software developer.
 
 Attacks to data and databases <a target="_blank" href="https://www.youtube.com/watch?v=YqFhKlzAABE&list=PLWqLeluv2Rq2jH70NFPYm0PB8sDMJ8gJR&index=27">VIDEO</a> [<a target="_blank" href="https://www.youtube.com/watch?v=-70DBd6cNDw&list=PLZKdGEfEyJhKWyryIvx_jm1jn6ZMTi7gW&index=29&t=11s">MINDMAP</a>]
    * An <strong>inference attack</strong> is the development of a detailed version of an object from another object using different values in the new object, such as the difference between totals versus details allowed. A countermeasure is <strong>Polyinstantiation</strong> which prevents low-level database users from inferring the existence of higher-level data. It enables a relation to contain multiple tuples (rows) with the same primary keys, with each instance distinguished by a security level. [<a target="_blank" href="https://www.wikiwand.com/en/Inference_attack">WIKIPEDIA</a>]
@@ -1815,6 +1914,7 @@ Events: System-level, application-level, or user-level? REMEMBER
 <a name="Malware"></a>
 
 ### Malware (malicious software - malware):
+
 See https://www.caida.org/research/security/code-red/
    
    * <strong>Password spraying</strong> is a horizontal brute-force online attack, where the attacker tries common passwords in conjunction with multiple usernames.
@@ -1853,7 +1953,17 @@ REMEMBER: DREAD is a mnemonic for categories used to rate security threats for a
 
 Each category is given a rating from 1 to 10. The sum of all ratings is used to prioritize among different issues.
 
-CVSS
+<a name="CVSS"></a>
+
+## CVSS
+
+* Attack vector
+* Attack complexity
+* Privileges required
+* User interaction
+* Scope
+
+<a name="CIS"></a>
 
 ## CIS (Center for Internet Security)
 
@@ -1897,7 +2007,7 @@ Audit logs should be collected, reviewed and retained to document events and hel
 
 Control 9: Email and web browser protections
 
-Improve protections and detections of email and web threats that can manipulate human behavior through direct engagement; these are prime targets for both malicious code and social engineering. Safeguards include use of DNS-filtering services to reduce exposure and enforcement of network-based URL filters>
+Improve protections and detections of email and web threats that can manipulate human behavior through direct engagement; these are prime targets for both malicious code and <a href="#SocialEngineering">social engineering</a>. Safeguards include the use of DNS-filtering services to reduce exposure and enforcement of network-based URL filters.
 
 Control 10: Malware defenses
 
@@ -2282,7 +2392,7 @@ Security controls from requirements:
 
 ### Common Criteria
 
-ISO 15408 2005 = Common Criteria on TOE (Target of Evaluation) for Security Target report satisfies independently verified by NIAP (National Information Assurance Partnership).
+ISO 15408 2005 = Common Criteria on TOE (Target of Evaluation) for Security Target report satisfies independently verified by the NIAP (National Information Assurance Partnership).
 
 Previous EAL (Evaluation Assurance Levels) 1 - 7 highest: REMEMBER:
    * EAL1 = Functionally tested
@@ -2567,7 +2677,7 @@ RAID (Redundant Array of Independent Disks): parity information is used to regen
 
 ## Network Protocols
 
-CHAP (Challenge Auth Protocol) from Microsoft negotiates a 3-way handshake asymmetric algorithm to supports mutual auth. can randomly require re-auth. Based on username and password, so is vulnerable.
+CHAP (Challenge Auth Protocol) from Microsoft negotiates a 3-way handshake asymmetric algorithm to support mutual auth. can randomly require re-auth. Based on the username and password, so is vulnerable.
 
 FHRP (First Hop Redundancy Protocol) for shared IP routing redundancy
 VRRP group
@@ -2580,6 +2690,8 @@ Pinned.
 Key clustering occurs when different encryption keys generate the same ciphertext from the same plaintext message. 
 Cryptanalysis is the science of decrypting ciphertext without prior knowledge of the key or cryptosystem used. 
 A keyspace is all the possible key values when using a particular algorithm or other security measure. 
+
+<a name="TPM"></a>
 
 A TPM (Trusted Platform Module) protects the contents of an encrypted hard drive by storing the decryption key in the host computer. If the hard drive is removed, the data cannot be decrypted.
 
@@ -2767,10 +2879,11 @@ Other Authentication Factors:
 
    * Somewhere you are - location determined by IP address from wi-fi, GPS.
 
-CAUTION: Knowledge-based authentication (such as previous address, mother's maiden name) can be cracked by information on social media, data brokers, or vendors on dark web offering information stolen from websites or social engineering. PROTIP: Give a different fake mother's maiden names to each organization who asks, and record that on your 1Password.
-   "Cognitive" passwords are something inforation you know, such as your favorite sport, food, etc.
+CAUTION: Knowledge-based authentication (such as previous address, mother's maiden name) can be cracked by information on social media, data brokers, or vendors on dark web offering information stolen from websites, or by <a href="#SocialEngineering">social engineering</a>. PROTIP: Give a different fake mother's maiden name to each organization who asks, and record that on your 1Password.
 
-A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
+"Cognitive" passwords are something information you know, such as your favorite sport, food, etc.
+
+REMEMBER: A password and pin combo includes only a single knowledge authentication factor type, so is not 2FA.
 
 In a MAC (Mandatory access control) environment: <a target="_blank" href="https://www.youtube.com/watch?v=mNN-fEboRAA&list=ULpxsrZMHAL8w&index=4846">VIDEO</a>
    * a label is required for each subject and object. Each file is an object. Users are subjects. Clearance is a privilege.
@@ -2784,7 +2897,7 @@ In a MAC (Mandatory access control) environment: <a target="_blank" href="https:
 
 CAUTION: TOOL: Type a password you type into <a target="_blank" href="https://password.kaspersky.com/">password.kaspersky.com</a> to see whether it has been found in a dark database of passwords found in the wild and how long it would take to crack that password. However, whatever you type is also logged and stored in their database, which may be accessed by the Russia government.
 
-A capability table lists the access rights that a particular subject has to objects.
+A <strong>capability table</strong> lists the access rights that a particular subject has to objects.
 
 PIV (Personal Identity Verification) card, call "CAC" card by the US military. https://piv.idmanagement.gov/
 Derived PIV credentials stored securely on mobile device in a TPM.
@@ -2859,7 +2972,9 @@ PDUs (Process Data Units)
 7. Application data - encapsulation of content HTTP, FTP, SSH, SMTP, API Gateways, Proxy servers doing conversions. It receives the raw data from the application in use and provides services, such as file transfer and message exchange to the application
 <br /><br />
 
-Access control lists (ACL) are typically used on routers, which map to layer 3 of the OSI model.
+<a name="ACLs"></a>
+
+Access control lists (ACLs) are typically used on routers, which map to layer 3 of the OSI model.
 The Link layer of the TCP/IP model corresponds to the Data Link and Physical layers of the OSI model. 
 The Transport layer of the TCP/IP model corresponds to the Transport layer of the OSI model. 
 
@@ -3118,14 +3233,14 @@ by the New York Times reporters talking about TikTok's Spying, ChatGPT
 ## Discord channels
 
 Blackhills Infosec https://discord.gg/BHIS
-https://www.youtube.com/c/blackhillsinformationsecurity
-John Strand, Ean Meyer, and the whole Blackhills gang have a super supportive and valuable server. The one knock is its SO BIG thats it very busy and can be tough to make connections.
+<a target="_blank" href="https://www.youtube.com/c/blackhillsinformationsecurity">VIDEO</a>:
+John Strand, Ean Meyer, etc run a supportive and valuable server. The one knock is it's SO big and busy that it can be tough to make connections.
 
 Recon Infosec https://discord.gg/aCArEkb7
-is focused on Blue Team and SOC Analyst life. They are a security company led by security people.  Its guaranteed good times.
+is focused on Blue Team and SOC Analyst life. They are a security company led by security people.  "guaranteed good times".
 
 Simply Cyber https://discord.gg/SimplyCyber
-is Gerald's server. He strives to make safe spaces for asking questions and getting answers without criticism. A high level of help, knowledge share, and networking on this server.
+is Gerald's server. He strives to make safe spaces for asking questions and getting answers without criticism.
 
 DC Cybersec https://discord.gg/v8ZVhEDv
 Same as the YouTuber of the same name, DC Cybersec provides real talk on cybersecurity and promotes an inclusive good times community.

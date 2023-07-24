@@ -1,6 +1,6 @@
 ---
 layout: post
-date: "2023-07-10"
+date: "2023-07-23"
 file: "security-certs"
 title: "Security Certifications"
 excerpt: "There are several (overlapping) ones. Collect them all!"
@@ -607,17 +607,59 @@ CompTIA certifications were designed for compliance with ISO 17024 standards and
 ### Security+
 
 <a target="_blank" href="https://www.comptia.org/certifications/security">Security+ exam SY0-601 at comptia.org/certifications/security</a> 
-is described an "entry level" exam but its detailed coverage of some obscure encryption protocols makes it difficult even for professionals.
+is described an "entry level" exam. But its detailed coverage of some obscure encryption protocols and tricky questions make it difficult even for professionals.
 
-PROTIP: I passed the 90-question Security+ March 2020 after studying literally 4 years, on and off. I held off due to its <a target="_blank" href="https://store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C">$392 test fee</a> plus annual renewal fees. 
-PROTIP: Buy their <a target="_blank" href="https://store.comptia.org/comptia-store-club/p/ITPR-0020-ANNS-2019">$49 annual Club</a> for a $78 discount (20% off all CompTIA products). Students get a 40% discount at a different website.
+NOTE: I first answered over <strong>75% the 90-question</strong> Security+ March 2020 after studying literally 4 years, on and off. I held off due to its <a target="_blank" href="https://store.comptia.org/comptia-security-plus-exam-voucher/p/SEC-601-TSTV-20-C">$392 test fee</a> plus annual renewal fees. 
+PROTIP: They offer a <a target="_blank" href="https://store.comptia.org/comptia-store-club/p/ITPR-0020-ANNS-2019">$49 annual Club</a> for a $78 discount (20% off all CompTIA products). Students get a 40% discount at a different website.
 
 What helped me get over the intimidation is to seek out the <strong>trick questions and delight in them</strong> as an intellectual curiosity.
+
+   * <a target="_blank" href="https://learning.oreilly.com/library/view/comptia-security-sy0-601/9780136770091/">CompTIA Security+ SY0-601 Cert Guide, 5th Edition</a> by Omar Santos, Ron Taylor, Joseph Mlodzianowski.
+   <br /><br />
+
+PROTIP: If you have an OReilly subscription, <a target="_blank" href="https://learning.oreilly.com/certifications/9780137421268/">Pearson Practice Test</a> provides filtering to individual exam topic category objectives:
+   1. <a target="_blank" href="https://wilsonmar.github.io/cyber-security/#SocialEngineering">Social Engineering Techniques</a> - 17
+   2. Attack Basics - 23
+   3. Application Attacks - 20
+   4. Network Attacks
+   5. Threat Actors, Vectors, and Intelligence Sources
+   6. Vulnerabilities
+   7. Security Assessment Techniques
+   8. Penetration Testing Techniques
+   9. Enterprise Security Concepts
+   10. Virtualization and Cloud Computing
+   11. Secure Application Development, Deployment, and Automation
+   12. Authentication and Authorization Design
+   13. Cybersecurity Resilience
+   14. Embedded and Specialized Systems
+   15. Physical Security Controls
+   16. Cryptographic Concepts
+   17. Secure Protocols
+   18. Host and Application Security Solutions
+   19. Secure Network Design
+   20. Wireless Security Settings
+   21. Secure Mobile Solutions
+   22. Cloud Cybersecurity Solutions
+   23. Identity and Account Management Controls
+   24. Authentication and Authorization Solutions
+   25. Public Key Infrastructure
+   26. Organizational Security
+   27. Incident Response
+   28. Incident Investigation
+   29. Incident Mitigation
+   30. Digital Forensics
+   31. Control Types
+   32. Regulations, Standards, and Frameworks
+   33. Organizational Security Policies
+   34. Risk Management
+   35. Sensitive Data and Privacy
+   <br /><br />
 
 PROTIP: Security+ is vendor-neutral, but to be useful on the job, get trained in specific tools and in cloud computing as well.
 
 Concepts in the five exam objectives are covered in <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">videos by Professor Messer</a> <a target="_blank" href="https://www.youtube.com/watch?v=9NE33fpQuw8&list=PLG49S3nxzAnkL2ulFS3132mOVKuzzBxA8">on YouTube</a>:
 
+ 
 1. <a target="_blank" href="https://www.youtube.com/watch?v=4HGQ0uYeSaA" title="2h InsideCloud">VIDEO</a>: Threats, Attacks, and Vulnerabilities 
    1.1 – Social Engineering<br />
    1.2 – Attack Types<br />
@@ -665,12 +707,11 @@ Concepts in the five exam objectives are covered in <a target="_blank" href="htt
 It references <a target="_blank" href="https://www.professormesser.com/security-plus/sy0-601/sy0-601-video/sy0-601-comptia-security-plus-course/">Professor Messer</a>. Also, it's a teaser for his $497 SOC Analyst video training using Azure cloud hands-on (built using ChatGPT).
 Topics include building a mini-SOC and other aspects of your security portfolio of NIST 800-53 policies, to apply for a job.
 
-<a target="_blank" href="https://www.youtube.com/watch?v=9Hd8QJmZQUc&list=PL7XJSuT7Dq_VD3eHXQf3Ld2ceBSFCayns">
+<a target="_blank" href="https://www.youtube.com/watch?v=9Hd8QJmZQUc&list=PL7XJSuT7Dq_VD3eHXQf3Ld2ceBSFCayns">VIDEO:
 20-hour CompTIA Security+ Exam Cram - SY0-601 (Full Training Course - All 5 Domains)</a>
 by Pete Zerger
 
 Among <a target="_blank" href="https://learning.oreilly.com/certifications/guides/CompTIA-Security+/636920558217/">OReilly.com's prep resources</a>
-
 
 
 <a name="PenTest"></a>
